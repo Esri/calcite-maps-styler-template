@@ -41,7 +41,7 @@
       }
     },
     user: {
-      all: "ķ_All_ū",
+      all: "ķ_All__ū",
       mgrs: "MGRS",
       usng: "USNG",
       utm: "UTM",
@@ -120,9 +120,8 @@
       fileTooLargeError: "Pārāk liels pievienojamais fails",
       exceededFileCountError: "Pārsniegts maksimālais atļautais pielikumu skaits",
       selectFileTitle: "Izvēlieties failu",
-      btnSelectFileText: "ķ_Select File_ū",
-      btnViewSubmissions: "Skatīt iesniegumus",
-      dateFormat: "MM/DD/GGGG h:mm a"
+      btnSelectFileText: "ķ_Select File____ū",
+      btnViewSubmissions: "Skatīt iesniegumus"
     },
     builder: {
       invalidUser: "Atvainojiet, jums nav atļaujas skatīt šo vienību",
@@ -151,8 +150,8 @@
       layerTabTitleText: "Atlasiet rediģējamu slāni",
       selectLayerLabelText: "Slānis",
       selectLayerDefaultOptionText: "Atlasīt slāni",
-      enableBasemapToggle: "ķ_Show Basemap Toggle_ū",
-      enableBasemapToggleDescription: "ķ_You can configure the GeoForm to Show/Hide the Basemap Toggle_ū",
+      enableBasemapToggle: "ķ_Show Basemap Toggle_______ū",
+      enableBasemapToggleDescription: "ķ_You can configure the GeoForm to Show/Hide the Basemap Toggle___________________ū",
       defaultBasemap: "Pamatkartes pārslēgšana",
       secondaryBasemap: "Noklusējuma pamatkarte",
       detailsTabTitleText: "Formas detaļas",
@@ -235,7 +234,7 @@
       allLayerSelectOptionText: "Viss",
       disableViewer: "Deaktivizēt skatītāju",
       disableViewerDescription: "Varat konfigurēt GeoForm, lai deaktivizētu/aktivizētu skatītāju",
-      displayFieldHintText: "ķ_Selected display field will be shown in the viewer as a title_ū"
+      displayFieldHintText: "ķ_Selected display field will be shown in the viewer as a title___________________ū"
     },
     viewer: {
       geocoderCancelText: "Atcelt",

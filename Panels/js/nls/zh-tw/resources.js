@@ -2,16 +2,16 @@
    ({
   viewer:{
     main:{
-      scaleBarUnits: "試_english_驗", //"english (for miles) or "metric" (for km) - don't translate.
-      legendLabel: "試_Legend_驗",
-      descriptionLabel: "試_Description_驗"
+      scaleBarUnits: "英語", //"english (for miles) or "metric" (for km) - don't translate.
+      legendLabel: "圖例",
+      descriptionLabel: "描述"
     },
     errors:{
-      createMap: "試_Unable to create map_驗",
-      general: "試_Error_驗"
+      createMap: "無法建立地圖",
+      general: "錯誤"
     },
     footer:{
-    	label: "試_A map from_驗:"
+    	label: "地圖來自:"
     }
   }
 })

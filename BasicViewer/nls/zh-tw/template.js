@@ -2,48 +2,48 @@
    ({
   viewer: {
     main: {
-      scaleBarUnits: "試_english_驗" //"english (for miles) or "metric" (for km) - don't translate.
+      scaleBarUnits: "英語" //"english (for miles) or "metric" (for km) - don't translate.
     },
     errors: {
-      createMap: "試_Unable to create map_驗",
-      bitly: '試_bitly is used to shorten the url for sharing. View the readme file for details on creating and using a bitly key_驗',
-      general: "試_Error_驗"
+      createMap: "無法建立地圖",
+      bitly: 'bitly 用於縮短 url 以便進行共用。有關建立和使用 bitly 金鑰的詳細資訊，請查看 readme 文件',
+      general: "錯誤"
     }
   },
   tools: {
     basemap: {
-    title: "試_Switch Basemap_驗",
-    label: "試_Basemap_驗"
+    title: "切換底圖",
+    label: "底圖"
     },
     print: {
     layouts:{
-      label1: '試_Landscape (PDF)_驗',
-      label2: '試_Portrait (PDF)_驗',
-      label3: '試_Landscape (Image)_驗',
-      label4: '試_Portrait (Image)_驗'
+      label1: '橫向(PDF)',
+      label2: '縱向(PDF)',
+      label3: '橫向(圖像)',
+      label4: '縱向(圖像)'
     },
-    title: "試_Print Map_驗",
-    label: "試_Print_驗"
+    title: "列印地圖",
+    label: "列印"
     },
     share: {
-    title: "試_Share Map_驗",
-    label: "試_Share_驗",
+    title: "共用地圖",
+    label: "共用",
     menu: {
       facebook: {
-        label: "試_Facebook_驗"
+        label: "Facebook"
        },
       twitter: {
-        label: "試_Twitter_驗"
+        label: "Twitter"
       },
       email: {
-        label: "試_Email_驗",
-        message: "試_Check out this map_驗"
+        label: "電子郵件",
+        message: "簽出該地圖"
       }    
     }
     },
     measure: {
-      title: "試_Measure_驗",
-      label: "試_Measure_驗"
+      title: "測量",
+      label: "測量"
     },
     time: {
       // doc about date and time patterns: http://dojotoolkit.org/reference-guide/dojo/date/locale/format.html
@@ -55,53 +55,53 @@
       // H: hours by 0-23, e.g. 6 or 23 ("HH" would be 06 or 23)
       // ss: seconds, e.g. 08 or 37 (just "s" would be 8 or 37)
       // SSS: milliseconds, e.g. 006 or 123 (just "S" would be 6 or 123)
-      datePattern: "試_MMMM d, yyyy_驗",
-      yearPattern: "試_yyyy_驗",
-      hourTimePattern: "試_h a_驗",
-      minuteTimePattern: "試_h:mm a_驗",
-      secondTimePattern: "試_h:m:s.SSS a_驗",
+      datePattern: "年月日",
+      yearPattern: "年",
+      hourTimePattern: "h a",
+      minuteTimePattern: "h:mm a",
+      secondTimePattern: "h:m:s.SSS a",
       millisecondTimePattern:"h:m:ss.SSS a",
-      title: "試_Display Time Slider_驗",
-      label: "試_Time_驗",
-      timeRange: "試_${start_time} to ${end_time}_驗",
-      timeRangeSingle: "試_<b>Time Range:</b> ${time}_驗"
+      title: "顯示時間滑桿",
+      label: "時間",
+      timeRange: "${start_time} 至 ${end_time}",
+      timeRangeSingle: "<b>時間範圍:</b> ${time}"
     },
     editor: {
-      title: "試_Display Editor_驗",
-      label: "試_Editor_驗"
+      title: "顯示編輯器",
+      label: "編輯器"
     },
     legend: {
-      title: "試_Display Legend_驗",
-      label: "試_Legend_驗"
+      title: "顯示圖例",
+      label: "圖例"
     },
     details: {
-      title: "試_Display Map Details_驗",
-      label: "試_Details_驗"
+      title: "顯示地圖詳細資訊",
+      label: "詳細資訊"
     },
     bookmark:{
-      title: "試_Display Bookmarks_驗",
-      label: "試_Bookmarks_驗",
-      details: "試_Click a bookmark to navigate to the location_驗"
+      title: "顯示書簽",
+      label: "書簽",
+      details: "按一下書簽瀏覽至該位置"
     },
     layers: {
-      title: "試_Display layer list_驗",
-      label: "試_Layers_驗"
+      title: "顯示圖層清單",
+      label: "圖層"
     },
     search: {
-      title: "試_Find address or place_驗",
-      popupTitle: "試_Location_驗",
-      currentLocation: "試_Current location_驗",
-      notWhatYouWanted: "試_Not what you wanted_驗?" ,
-      selectAnother: "試_Select another location_驗",
+      title: "查詢地址或地點",
+      popupTitle: "位置",
+      currentLocation: "目前位置",
+      notWhatYouWanted: "不是您想要的位置?" ,
+      selectAnother: "選擇其他位置",
       errors:{
-       missingLocation: "試_Location not found_驗"
+       missingLocation: "未找到位置"
       }
     }
   },
   panel: {
     close: {
-      title: "試_Close Panel_驗",
-      label: "試_Close_驗"
+      title: "關閉面板",
+      label: "關閉"
     }
   }
 })

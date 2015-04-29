@@ -2,119 +2,119 @@
      ({
         "viewer": {
             "main": {
-                "scaleBarUnits": "試_english_驗",
-                "clearSearch": "試_Clear_驗",
-                "datePattern": "試_MMM d, yyyy_驗" // added 2.5.2013
+                "scaleBarUnits": "英語",
+                "clearSearch": "清除",
+                "datePattern": "年月日" // added 2.5.2013
             },
             "errors": {
-                "createMap": "試_Unable to create map_驗",
-                "general": "試_Error_驗",
-                "bingError": "試_Deploying this application requires your own Bing Maps key_驗.",
-                "noLayers": "試_No operational layers_驗",
-                "noSearchResults": "試_Sorry, no results were found_驗.",
-                "noGroupResults": "試_The group could not be found_驗.",
-                "noMatches": "試_No matches found_驗.",
-                "noMapsFound": "試_No maps were found_驗."
+                "createMap": "無法建立地圖",
+                "general": "錯誤",
+                "bingError": "部署此應用程式需要輸入您自己的 Bing 地圖金鑰。",
+                "noLayers": "無可作業的圖層",
+                "noSearchResults": "抱歉，未找到任何結果。",
+                "noGroupResults": "找不到該群組。",
+                "noMatches": "未找到任何匹配項。",
+                "noMapsFound": "未找到任何地圖。"
             },
             "sidePanel": {
-                "title": "試_Legend_驗",
-                "legendButton": "試_Legend_驗",
-                "layersButton": "試_Layers_驗", // new
-                "legendButtonTitle": "試_Map Legend_驗",
-                "aboutButton": "試_About_驗",
-                "aboutButtonTitle": "試_About Map_驗",
-                "message": "試_No operational layers_驗"
+                "title": "圖例",
+                "legendButton": "圖例",
+                "layersButton": "圖層", // new
+                "legendButtonTitle": "地圖圖例",
+                "aboutButton": "關於",
+                "aboutButtonTitle": "關於地圖",
+                "message": "無可作業的圖層"
             },
             "groupPage": {
-                "showAllMaps": "試_Show all maps_驗",
-                "searchTitle": "試_Search this group_驗",
-                "searchTitleShort": "試_Search_驗",
-                "searchPlaceholder": "試_Search maps_驗",
-                "itemTitle": "試_View map_驗",
-                "gridSwitch": "試_Switch to Grid View_驗",
-                "listSwitch": "試_Switch to List View_驗",
-                "loadingText": "試_Loading Maps&hellip;_驗"
+                "showAllMaps": "顯示所有地圖",
+                "searchTitle": "搜尋此群組",
+                "searchTitleShort": "搜尋",
+                "searchPlaceholder": "搜尋地圖",
+                "itemTitle": "檢視地圖",
+                "gridSwitch": "切換到方格檢視",
+                "listSwitch": "切換到清單檢視",
+                "loadingText": "正在載入地圖&hellip;"
             },
             "sortFields": {
-                "sortBy": "試_Sort by_驗",
-                "modified": "試_Date_驗",
-                "title": "試_Title_驗",
-                "type": "試_Type_驗",
-                "numRatings": "試_Ratings_驗",
-                "avgRating": "試_Avg. Rating_驗",
-                "numComments": "試_Comments_驗",
-                "numViews": "試_Views_驗"
+                "sortBy": "排序方式",
+                "modified": "日期",
+                "title": "標題",
+                "type": "類型",
+                "numRatings": "評級",
+                "avgRating": "平均評級",
+                "numComments": "評論",
+                "numViews": "視圖"
             },
             "comments": {
-                "commentsHeader": "試_Comments_驗",
-                "posted": "試_Posted_驗",
-                "by": "試_by_驗",
-                "deleteComment": "試_delete_驗",
-                "editComment": "試_edit_驗",
-                "noComments": "試_No comments_驗",
-                "addCommentButton": "試_Add Comment_驗",
-                "signIn": "試_Sign In_驗",
-                "register": "試_Register_驗",
-                "or": "試_or_驗",
-                "toPost": "試_to post a comment_驗."
+                "commentsHeader": "評論",
+                "posted": "已發表",
+                "by": "擁有者",
+                "deleteComment": "刪除",
+                "editComment": "編輯",
+                "noComments": "無評論",
+                "addCommentButton": "新增評論",
+                "signIn": "登錄",
+                "register": "註冊",
+                "or": "或",
+                "toPost": "發表評論。"
             },
             "buttons": {
-                "cancel": "試_Cancel_驗",
-                "submit": "試_Submit_驗"
+                "cancel": "取消",
+                "submit": "提交"
             },
             "rating": {
-                "signIn": "試_Sign In_驗",
-                "toRate": "試_to rate_驗."
+                "signIn": "登錄",
+                "toRate": "以進行評級。"
             },
             "itemInfo": {
-                "createdLabel": "試_created_驗",
-                "ratingsLabel": "試_rating_驗",
-                "ratingsLabelPlural": "試_ratings_驗",
-                "viewsLabel": "試_view_驗",
-                "viewsLabelPlural": "試_views_驗",
-                "commentsLabel": "試_comment_驗",
-                "commentsLabelPlural": "試_comments_驗",
-                "modifiedLabel": "試_Last Modified_驗",
-                "by": "試_by_驗",
-                "separator": "試__驗,"
+                "createdLabel": "已建立",
+                "ratingsLabel": "評級",
+                "ratingsLabelPlural": "次評級",
+                "viewsLabel": "檢視",
+                "viewsLabelPlural": "次檢視",
+                "commentsLabel": "評論",
+                "commentsLabelPlural": "次評論",
+                "modifiedLabel": "上次修改時間",
+                "by": "擁有者",
+                "separator": ","
             },
             "mapPage": {
-                "findLocation": "試_Find a location_驗",
-                "findPlaceholder": "試_Locate an address_驗",
-                "aboutHeader": "試_About this map_驗",
-                "layersHeader": "試_Layers_驗",
-                "enterFullscreen": "試_Fullscreen View_驗",
-                "exitFullscreen": "試_Exit Fullscreen_驗",
-                "arcgisLink": "試_Item Details_驗",
-                "moreInformation": "試_More Information_驗",
-                "geoLocateTitle": "試_Use Current Location_驗",
-                "openInMobile": "試_Open in Mobile App_驗",
+                "findLocation": "查詢位置",
+                "findPlaceholder": "查詢地址",
+                "aboutHeader": "關於本地圖",
+                "layersHeader": "圖層",
+                "enterFullscreen": "全螢幕視圖",
+                "exitFullscreen": "退出全螢幕模式",
+                "arcgisLink": "項目詳細資訊",
+                "moreInformation": "更多資訊",
+                "geoLocateTitle": "使用目前的位置",
+                "openInMobile": "在行動應用程式中開啟",
                 "openInArcGIS": "Map Viewer",
                 "openInExplorer": "Explorer Online",
-                "ownerHeader": "試_Owner_驗:",
-                "switchBasemap": "試_Switch Basemap_驗",
-                "getMobileApp": "試_Get App_驗",
-                "constraintsHeading": "試_Use Constraints_驗",
-                "createdLabel": "試_Created_驗",
-                "noDescription": "試_No description_驗.",
-                "detailsLabel": "試_Details_驗"
+                "ownerHeader": "擁有者:",
+                "switchBasemap": "切換底圖",
+                "getMobileApp": "獲取應用程式",
+                "constraintsHeading": "使用限制",
+                "createdLabel": "建立日期",
+                "noDescription": "無描述。",
+                "detailsLabel": "詳細資訊"
             },
             "filterItems": {
-                "show": "試_Show_驗",
-                "all": "試_All Results_驗",
-                "maps": "試_Maps_驗",
-                "layers": "試_Layers_驗",
-                "applications": "試_Applications_驗",
-                "tools": "試_Tools_驗",
-                "files": "試_Files_驗"
+                "show": "顯示",
+                "all": "所有結果",
+                "maps": "地圖",
+                "layers": "圖層",
+                "applications": "應用程式",
+                "tools": "工具",
+                "files": "檔案"
             },
             "pagination": {
-                "previous": "試_Previous_驗",
-                "next": "試_Next_驗",
-                "first": "試_First Page_驗",
-                "last": "試_Last Page_驗",
+                "previous": "上一步",
+                "next": "下一步",
+                "first": "第一頁",
+                "last": "最後一頁",
                 "helip": "&hellip;",
-                "page": "試_Page_驗"
+                "page": "頁"
             }
         }
     })

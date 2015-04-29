@@ -35,8 +35,8 @@ define(
 			      "label4": 'Κατακόρυφος προσανατολισμός'
 			    },
 			    "legend": "Προσθήκη υπομνήματος στο αποτέλεσμα",
-                "title": "Đ_Title_ớ",
-                "titlePrompt": "Đ_Add custom title_ớ"
+                "title": "Đ_Title___ớ",
+                "titlePrompt": "Đ_Add custom title______ớ"
             },
 			"share": {
 				"extent": "Χρήση τρέχουσας έκτασης χάρτη",

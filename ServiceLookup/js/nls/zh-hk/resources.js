@@ -1,30 +1,30 @@
 ﻿define(
      ({
         map: {
-            error: "試_Unable to create map_驗",
-            mouseToolTip: "試_Click on the map to check for service_驗"
+            error: "無法建立地圖",
+            mouseToolTip: "按一下地圖以檢查服務"
         },
         geocoder: {
-            defaultText: "試_Enter an address or point of interest_驗"
+            defaultText: "輸入地址或景點"
         },
         error: {
-            layerNotFound: "試_Layer is not in the webmap_驗",
-            fieldNotFound: "試_Field not found_驗",
-            popupNotSet: "試_Popup not enabled for this layer_驗",
-            noLayersSet: "試_No layers defined in the config, the search box will not work_驗"
+            layerNotFound: "圖層不在 webmap 中",
+            fieldNotFound: "未找到欄位",
+            popupNotSet: "此圖層未啟用快顯",
+            noLayersSet: "配置中未定義任何圖層，搜尋方塊將無法使用"
         },
         page: {
-            title: "試_Information Lookup_驗",
+            title: "資訊查詢",
         },
 
         splashscreen: {
-            buttonText: "試_OK_驗",
+            buttonText: "確定",
         },
         ui:{
-            basemapButton: "試_Basemap_驗"
+            basemapButton: "底圖"
         },
         popup: {
-            urlMoreInfo: "試_More Info_驗"
+            urlMoreInfo: "詳細資訊"
         }
 
     })

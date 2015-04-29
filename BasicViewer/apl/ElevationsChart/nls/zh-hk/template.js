@@ -1,48 +1,48 @@
 ﻿define(
    ({
   display: {
-    elevationProfileTitle: "試_Elevation Profile_驗",
-    showMe: "試_show me_驗",
-    selectLine: "試_Select a feature in the map_驗.",
-    popupRequirement: "試_NOTE: the feature needs to be in a Feature Layer or be part of a map service that has Popups enabled_驗.",
-    digitizeDistanceMeasureTool: "試_Use the <b>Measure</b> button_驗.",
-    selectFeatureHelpUrl: "試_http://help.arcgis.com/en/arcgisonline/help/index.html#//010q0000004s000000#ESRI_SECTION1_DAA22E89DF67448E8F3682309F39BE5D_驗",
-    measureToolHelpUrl: "試_http://help.arcgis.com/en/arcgisonline/help/index.html#//010q00000096000000_驗",
-    hoverOver: "試_Hover over_驗 ",
-    touchIPad: "試_touch on iPad_驗",
-    locationOnMap: "試_the Elevation Profile chart to display elevations and show location on map_驗."
+    elevationProfileTitle: "高程剖面圖",
+    showMe: "顯示",
+    selectLine: "在地圖中選擇圖徵。",
+    popupRequirement: "注意：該圖徵必須位於圖徵圖層中或是已啟用快顯之地圖服務的一部分。",
+    digitizeDistanceMeasureTool: "使用<b>測量</b>按鈕。",
+    selectFeatureHelpUrl: "http://help.arcgis.com/en/arcgisonline/help/index.html#//010q0000004s000000#ESRI_SECTION1_DAA22E89DF67448E8F3682309F39BE5D",
+    measureToolHelpUrl: "http://help.arcgis.com/en/arcgisonline/help/index.html#//010q00000096000000",
+    hoverOver: "將滑鼠懸停在 ",
+    touchIPad: "觸碰 iPad",
+    locationOnMap: "用於顯示海拔並註明其在地圖上對應位置的高程剖面圖圖表。"
   },
   // DO **NOT** CHANGE TEXT WITHIN CURLY BARCKETS //
-  locationResultTemplate: "試_Elevation: {0} meters_驗",
+  locationResultTemplate: "海拔: {0} 公尺",
   chart: {
-    title: "試_Elevation Profile_驗",
+    title: "高程剖面圖",
     // DO **NOT** CHANGE TEXT WITHIN CURLY BARCKETS //
-    elevationTitleTemplate: "試_Elevation in {0}_驗",
+    elevationTitleTemplate: "海拔 (以 {0} 為單位)",
     // DO **NOT** CHANGE TEXT WITHIN CURLY BARCKETS //
-    distanceTitleTemplate: "試_Distance in {0}_驗",
+    distanceTitleTemplate: "距離(以 {0} 為單位)",
     // DO **NOT** CHANGE TEXT WITHIN CURLY BARCKETS //
-    gainLossTemplate: "試_Min:{min}   Max:{max}   Start:{start}   End:{end}   Change:{gainloss}_驗"
+    gainLossTemplate: "最小值:{min}   最大值:{max}   起始值:{start}   終止值:{end}   變化值:{gainloss}"
   },
   errors: {
     InvalidConfiguration: {
-      name: '試_Invalid Configuration Error_驗',
-      message: '試_Invalid configuration_驗.'
+      name: '無效配置錯誤',
+      message: '無效的配置。'
     },
     MissingConstructorParameters: {
-      name: '試_Missing Constructor Parameters Error_驗',
-      message: '試_Missing constructor parameter_驗.'
+      name: '缺少建構函式參數錯誤',
+      message: '缺少建構函式參數。'
     },
     MissingInitParameter: {
-      name: '試_Missing Init Parameter Error_驗',
-      message: '試_Missing init parameter_驗.'
+      name: '缺少初始化參數錯誤',
+      message: '缺少初始參數。'
     },
     SOEOperationNotSupported: {
-      name: '試_Operation Not Supported Error_驗',
-      message: '試_This version of the SOE does NOT support this operation_驗.'
+      name: '操作不受支援錯誤',
+      message: '此版本的 SOE 不支援此操作。'
     },
     SOEMultiPartGeometriesNotSupported: {
-      name: '試_Multi-part Geometries Not Supported Error_驗',
-      message: "試_CAUTION: multi-part lines are currently NOT supported_驗."
+      name: '多元件幾何不受支援錯誤',
+      message: "注意: 目前不支援多元件線。"
     }
   }
 })

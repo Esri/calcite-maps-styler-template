@@ -35,8 +35,8 @@ define(
 			      "label4": 'Hướng dọc'
 			    },
 			    "legend": "Thêm chú giải vào kết quả đầu ra",
-                "title": "Đ_Title_ớ",
-                "titlePrompt": "Đ_Add custom title_ớ"
+                "title": "Đ_Title___ớ",
+                "titlePrompt": "Đ_Add custom title______ớ"
             },
 			"share": {
 				"extent": "Sử dụng phạm vi bản đồ hiện tại",

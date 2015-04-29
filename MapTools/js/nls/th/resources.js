@@ -36,8 +36,8 @@ define(
                   "label3": 'แนวนอน',
                   "label4": 'แนวตั้ง'
             },
-            printTitle: "ก้_Title_ษฺ",
-            printTitlePrompt: "ก้_Add custom title_ษฺ"
+            printTitle: "ก้_Title___ษฺ",
+            printTitlePrompt: "ก้_Add custom title______ษฺ"
         }
     })
 );

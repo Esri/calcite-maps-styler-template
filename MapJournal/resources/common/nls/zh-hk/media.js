@@ -2,115 +2,115 @@
 	 ({
 		commonMedia: {
 			mediaSelector: {
-				lblSelect1: "試_Media_驗",
-				lblSelect2: "試_Content_驗",
-				lblMap: "試_Map_驗",
-				lblImage: "試_Image_驗",
-				lblVideo: "試_Video_驗",
-				lblExternal: "試_Web page_驗",
-				disabled: "試_This feature has been disabled by the Administrator_驗",
-				url: "試_To manually enter the web address of an image_驗",
-				userLookup: "試_Load albums_驗",
-				notImplemented: "試_Not implemented yet_驗.",
-				noData: "試_No public album found_驗"
+				lblSelect1: "媒體",
+				lblSelect2: "內容",
+				lblMap: "地圖",
+				lblImage: "影像",
+				lblVideo: "影片",
+				lblExternal: "Web 頁面",
+				disabled: "管理員已停用此功能",
+				url: "要手動輸入圖像的 web 地址",
+				userLookup: "載入圖片集",
+				notImplemented: "尚未實作。",
+				noData: "未找到公開圖片集"
 			},
 			imageSelector: {
-				lblStep1: "試_Choose the service_驗",
-				lblStep2: "試_Select your media_驗",
-				lblStep3: "試_Configure_驗"
+				lblStep1: "選擇服務",
+				lblStep2: "選擇媒體",
+				lblStep3: "配置"
 			},
 			imageSelectorHome: {
-				explain: "試_Load images from social media, <br /> or directly from a URL_驗"
+				explain: "從社交媒體載入圖像，<br /> 或直接從 URL 進行載入"
 			},
 			imageSelectorFlickr: {
-				userInputLbl: "試_User name_驗",
-				signInMsg2: "試_User not found_驗",
-				loadingFailed: "試_Loading failed_驗"
+				userInputLbl: "使用者名稱",
+				signInMsg2: "未找到使用者",
+				loadingFailed: "載入失敗"
 			},
 			imageSelectorFacebook: {
-				leftHeader: "試_Facebook User_驗",
-				rightHeader: "試_Facebook Page_驗",
-				pageExplain: "試_A Facebook page is a public brand/product or celebrity like <b>esrigis</b>. You can get the page name after the first '/' in the page URL_驗.",
-				pageInputLbl: "試_Page name_驗",
-				lookupMsgError: "試_Page not found_驗"
+				leftHeader: "Facebook 使用者",
+				rightHeader: "Facebook 頁面",
+				pageExplain: "Facebook 頁面屬￿公開品牌/產品或像 <b>esrigis</b> 一樣的名品。您可以在 URL 頁面的第一個 '/' 後面取得頁面名稱。",
+				pageInputLbl: "頁面名稱",
+				lookupMsgError: "未找到頁面"
 			},
 			imageSelectorPicasa: {
-				userInputLbl: "試_Email or Picasa/Google+ ID_驗",
-				signInMsg2: "試_Account not found_驗",
-				howToFind: "試_How to find a Picasa or Google+ account ID_驗",
-				howToFind2: "試_Copy digits between the first and second '/' of any Picasa or G+ page_驗"
+				userInputLbl: "電子郵件或 Picasa/Google+ ID",
+				signInMsg2: "未找到帳戶",
+				howToFind: "如何查詢 Picasa 或 Google+ 帳戶 ID",
+				howToFind2: "複製任何 Picasa 或 G+ 頁面第一個和第二個 '/' 之間的數字"
 			},
 			videoSelectorCommon: {
-				check: "試_Check_驗",
-				notFound: "試_Video not found_驗",
-				found: "試_Video found_驗",
-				select: "試_Select this video_驗"
+				check: "勾選",
+				notFound: "未找到影片",
+				found: "已找到影片",
+				select: "選擇此影片"
 			},
 			videoSelectorHome: {
-				other: "試_Other_驗"
+				other: "其他"
 			},
 			videoSelectorYoutube: {
-				url: "試_URL of a Youtube video_驗",
-				pageInputLbl: "試_User name_驗",
-				lookupMsgError: "試_User not found_驗",
-				howToFind: "試_How to find a YouTube user name_驗",
-				howToFind2: "試_User name is displayed under videos_驗",
-				found: "試_Found_驗",
-				noData: "試_No public videos found_驗"
+				url: "Youtube 影片的 URL",
+				pageInputLbl: "使用者名稱",
+				lookupMsgError: "未找到使用者",
+				howToFind: "如何查詢 YouTube 使用者名稱",
+				howToFind2: "使用者名稱顯示在影片下方",
+				found: "已找到",
+				noData: "未找到公開影片"
 			},
 			videoSelectorVimeo: {
-				url: "試_URL of a Vimeo video_驗"
+				url: "Vimeo 影片的 URL"
 			},
 			videoSelectorOther: {
-				explain1: "試_The application cannot play raw videos (e.g., avi, mpeg) but it can play hosted video files that have built-in players (e.g., YouTube or Vimeo)_驗.",
-				explain2: "試_Most online video hosting services offer that feature, you have to find the option to embed the video, copy the given code and use the %WEBPAGE%_驗.",
-				explain3: "試_Alternatively, if you want host the video yourself, you can create an HTML page that uses a video player like %EXAMPLE%, host that page and also use the %WEBPAGE%_驗.",
-				webpage: "試_Web page feature_驗"
+				explain1: "此應用程式無法播放原始影片(例如 avi、mpeg)，但可以播放帶有內建播放器的託管影片文件(例如 YouTube 或 Vimeo)。",
+				explain2: "大多數線上影片託管服務均提供此功能，您必須查詢此選項以嵌入影片，複製給定代碼並使用 %WEBPAGE%。",
+				explain3: "或者，如果您希望自己託管影片，則可以建立使用影片播放器(如 %EXAMPLE%)的 HTML 頁面，託管此頁面並同樣使用 %WEBPAGE%。",
+				webpage: "網頁圖徵"
 			},
 			webpageSelectorHome: {
-				lblUrl: "試_Webpage URL_驗",
-				lblEmbed: "試_Embed code_驗",
-				lblOR: "試_OR_驗",
-				lblError1: "試_Error, clear one of the two input fields_驗.",
-				lblError2: "試_Embed code can only contain one %IFRAMETAG%_驗",
-				configure: "試_Configure_驗"
+				lblUrl: "網頁 URL",
+				lblEmbed: "嵌入代碼",
+				lblOR: "OR",
+				lblError1: "錯誤，請清除其中一個輸入欄位。",
+				lblError2: "嵌入代碼僅可包含一個 %IFRAMETAG%",
+				configure: "配置"
 			},
 			mediaConfigure: {
-				lblURL: "試_URL_驗",
-				lblURLPH: "試_An image URL should start with http:// and end with .jpg or .png_驗",
-				lblURLError: "試_This image does not seem to be valid. Please specify a direct link to an image file (your URL will usually end with .jpg or .png). Links to a web page that contains an image won't work_驗.",
-				lblURLCheck: "試_Checking image_驗...",
-				lblLabel: "試_Image Caption_驗",
-				lblLabel1: "試_Caption_驗",
-				lblLabel2: "試_Hover text_驗",
-				lblLabel3: "試_None_驗",
-				lblLabelPH: "試_Enter some text_驗...",
-				lblMaximize: "試_Include a maximize button in the corner of the image_驗",
-				lblMaximizeHelp: "試_Recommended only for high quality photos_驗",
-				lblPosition: "試_Position_驗",
-				lblPosition1: "試_Center_驗",
-				lblPosition2: "試_Fill_驗",
-				lblPosition3: "試_Fit_驗",
-				lblPosition4: "試_Stretch_驗",
-				lblPosition5: "試_Custom_驗",
-				tooltipDimension: "試_The value can be specified in 'px' or '%'_驗",
-				tooltipDimension2: "試_The value has to be specified in 'px'_驗",
-				lblPosition2Explain: "試_(may crop)_驗",
-				lblPosition3Explain: "試_(won't crop)_驗",
-				lblPosition3Explain2: "試_(width will always fit the panel)_驗",
-				lblPosition4Explain: "試_(may distort)_驗",
-				unloadLbl: "試_Unload when reader navigates away_驗",
-				unloadHelp: "試_If the Web Page has audio or video media, keep this option checked to stop that content from playing when the reader navigates away. Uncheck it for example to keep a soundtrack playing as the reader advances through the story.<br />If the Web Page is an application, uncheck this option so that the application does not reload if the reader returns to it_驗."
+				lblURL: "URL",
+				lblURLPH: "圖像 URL 應該以 http:// 開始，以 .jpg 或 .png 結束",
+				lblURLError: "此圖像可能無效。請指定圖像文件的直接連結(URL 通常以 .jpg 或 .png 結尾)。包含圖像的網頁連結無法使用。",
+				lblURLCheck: "正在檢查圖像...",
+				lblLabel: "圖像標題",
+				lblLabel1: "說明文字",
+				lblLabel2: "懸停文字",
+				lblLabel3: "無",
+				lblLabelPH: "請輸入文字...",
+				lblMaximize: "在圖像角落位置放置一個最大化按鈕",
+				lblMaximizeHelp: "建議僅用於高品質照片",
+				lblPosition: "位置",
+				lblPosition1: "中心",
+				lblPosition2: "填充",
+				lblPosition3: "適合",
+				lblPosition4: "自動縮放",
+				lblPosition5: "自訂",
+				tooltipDimension: "可使用 'px' 或 '%' 指定值",
+				tooltipDimension2: "值必須在 'px'中指定",
+				lblPosition2Explain: "（可裁切）",
+				lblPosition3Explain: "（不裁切）",
+				lblPosition3Explain2: "(寬度將始終適合面板)",
+				lblPosition4Explain: "（可變形）",
+				unloadLbl: "讀者定位到其他部分時進行卸載",
+				unloadHelp: "如果網頁中包含音頻或影片介質，請將該選項選中以在讀者定位到其他部分時停止內容播放。取消勾選該選項可使讀者在瀏覽故事的同時持續播放音軌。<br />如果網頁是應用程式，請取消勾選該選項，這樣應用程式不必在讀者返回此部分時重新載入。"
 			},
 			editorActionGeocode: {
-				lblTitle: "試_Locate an address or place_驗",
-				mapMarkerExplain: "試_User will see a map marker when clicking the link_驗"
+				lblTitle: "定位地址或地點",
+				mapMarkerExplain: "使用者在按一下連結時會看到地圖標記"
 			},
 			editorActionMedia: {
-				lblTitle: "試_Change the Main Stage content_驗"
+				lblTitle: "變更主舞台內容"
 			},
 			editorInlineMedia: {
-				lblTitle: "試_Insert an image, video or web page_驗"
+				lblTitle: "插入圖像、影片或網頁"
 			}
 		}
 	})

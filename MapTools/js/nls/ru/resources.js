@@ -36,8 +36,8 @@ define(
                   "label3": 'Альбомная',
                   "label4": 'Книжная'
             },
-            printTitle: "Ж_Title_Я",
-            printTitlePrompt: "Ж_Add custom title_Я"
+            printTitle: "Ж_Title___Я",
+            printTitlePrompt: "Ж_Add custom title______Я"
         }
     })
 );

@@ -35,8 +35,8 @@ define(
 			      "label4": 'Книжная'
 			    },
 			    "legend": "Добавить легенду в выходные данные",
-                "title": "Ж_Title_Я",
-                "titlePrompt": "Ж_Add custom title_Я"
+                "title": "Ж_Title___Я",
+                "titlePrompt": "Ж_Add custom title______Я"
             },
 			"share": {
 				"extent": "Использовать текущий экстент карты",

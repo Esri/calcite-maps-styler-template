@@ -41,7 +41,7 @@
       }
     },
     user: {
-      all: "Đ_All_ớ",
+      all: "Đ_All__ớ",
       mgrs: "MGRS",
       usng: "USNG",
       utm: "UTM",
@@ -120,9 +120,8 @@
       fileTooLargeError: "Το αρχείο είναι πολύ μεγάλο για επισύναψη",
       exceededFileCountError: "Έχει ξεπεραστεί ο μέγιστος επιτρεπτός αριθμός συνημμένων",
       selectFileTitle: "Επιλέξτε ένα αρχείο",
-      btnSelectFileText: "Đ_Select File_ớ",
-      btnViewSubmissions: "Προβολή υποβολών",
-      dateFormat: "DD/ΜΜ/YYYY hh:mm"
+      btnSelectFileText: "Đ_Select File____ớ",
+      btnViewSubmissions: "Προβολή υποβολών"
     },
     builder: {
       invalidUser: "Λυπούμαστε, δεν έχετε δικαίωμα προβολής αυτού του αντικειμένου",
@@ -151,8 +150,8 @@
       layerTabTitleText: "Επιλογή επεξεργάσιμου επιπέδου",
       selectLayerLabelText: "Θεματικό επίπεδο",
       selectLayerDefaultOptionText: "Επιλογή θεματικού επιπέδου",
-      enableBasemapToggle: "Đ_Show Basemap Toggle_ớ",
-      enableBasemapToggleDescription: "Đ_You can configure the GeoForm to Show/Hide the Basemap Toggle_ớ",
+      enableBasemapToggle: "Đ_Show Basemap Toggle_______ớ",
+      enableBasemapToggleDescription: "Đ_You can configure the GeoForm to Show/Hide the Basemap Toggle___________________ớ",
       defaultBasemap: "Εναλλαγή υποβάθρου",
       secondaryBasemap: "Προκαθορισμένο υπόβαθρο",
       detailsTabTitleText: "Λεπτομέρειες φόρμας",
@@ -235,7 +234,7 @@
       allLayerSelectOptionText: "Όλα",
       disableViewer: "Απενεργοποίηση εργαλείου προβολής",
       disableViewerDescription: "Μπορείτε να διαμορφώσετε το GeoForm ώστε να γίνεται απενεργοποίηση/ενεργοποίηση του εργαλείου προβολής",
-      displayFieldHintText: "Đ_Selected display field will be shown in the viewer as a title_ớ"
+      displayFieldHintText: "Đ_Selected display field will be shown in the viewer as a title___________________ớ"
     },
     viewer: {
       geocoderCancelText: "Άκυρο",

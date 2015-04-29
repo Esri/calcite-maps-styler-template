@@ -41,7 +41,7 @@
       }
     },
     user: {
-      all: "Ĳ_All_ä",
+      all: "Ĳ_All__ä",
       mgrs: "MGRS",
       usng: "USNG",
       utm: "UTM",
@@ -120,9 +120,8 @@
       fileTooLargeError: "Bestand te groot om bij te voegen",
       exceededFileCountError: "Maximaal aantal toegestane bijlagen overschreden",
       selectFileTitle: "Een bestand selecteren",
-      btnSelectFileText: "Ĳ_Select File_ä",
-      btnViewSubmissions: "Meldingen bekijken",
-      dateFormat: "MM/DD/YYYY h:mm a"
+      btnSelectFileText: "Ĳ_Select File____ä",
+      btnViewSubmissions: "Meldingen bekijken"
     },
     builder: {
       invalidUser: "U beschikt niet over de nodige machtigingen om dit item te bekijken",
@@ -151,8 +150,8 @@
       layerTabTitleText: "Bewerkbare kaartlaag selecteren",
       selectLayerLabelText: "Kaartlaag",
       selectLayerDefaultOptionText: "Kaartlaag selecteren",
-      enableBasemapToggle: "Ĳ_Show Basemap Toggle_ä",
-      enableBasemapToggleDescription: "Ĳ_You can configure the GeoForm to Show/Hide the Basemap Toggle_ä",
+      enableBasemapToggle: "Ĳ_Show Basemap Toggle_______ä",
+      enableBasemapToggleDescription: "Ĳ_You can configure the GeoForm to Show/Hide the Basemap Toggle___________________ä",
       defaultBasemap: "Basiskaart wisselen",
       secondaryBasemap: "Standaard basiskaart",
       detailsTabTitleText: "Details van het formulier",
@@ -235,7 +234,7 @@
       allLayerSelectOptionText: "Alle",
       disableViewer: "Viewer uitschakelen",
       disableViewerDescription: "U kunt het Geo-formulier configureren om de viewer uit/in te schakelen",
-      displayFieldHintText: "Ĳ_Selected display field will be shown in the viewer as a title_ä"
+      displayFieldHintText: "Ĳ_Selected display field will be shown in the viewer as a title___________________ä"
     },
     viewer: {
       geocoderCancelText: "Annuleren",

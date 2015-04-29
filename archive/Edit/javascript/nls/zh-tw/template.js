@@ -1,11 +1,11 @@
 ﻿define(
    ({
     viewer: {
-      legend_title: "試_Legend_驗",
-      content_title: "試_Editor_驗",
+      legend_title: "圖例",
+      content_title: "編輯器",
       errors:{
-        message: "試_Problem creating the editing application_驗",
-        no_editable_layers_message: "試_Web map does not contain any editable layers_驗."
+        message: "建立和編輯應用程式時出現問題",
+        no_editable_layers_message: "Web 地圖不包含任何可編輯圖層。"
       }
     }
   })

@@ -1,14 +1,14 @@
 ﻿define(
    ({
   app:{
-   title:"試_Map Carousel_驗",
-    scaleBarUnits: "試_english_驗", //"english (for miles) or "metric" (for km) - don't translate.
+   title:"地圖轉盤",
+    scaleBarUnits: "英語", //"english (for miles) or "metric" (for km) - don't translate.
     errors:{
-      createMap: "試_Unable to create map_驗",
-      bitly: '試_bitly is used to shorten the url for sharing. View the readme file for details on creating and using a bitly key_驗',
-      general: "試_Error_驗"
+      createMap: "無法建立地圖",
+      bitly: 'bitly 用於縮短 url 以便進行共用。有關建立和使用 bitly 金鑰的詳細資訊，請查看 readme 文件',
+      general: "錯誤"
     },
-    mapcount: "試_Map ${page} of  ${total}_驗"
+    mapcount: "地圖 ${page}/${total}"
   }
 })
 );

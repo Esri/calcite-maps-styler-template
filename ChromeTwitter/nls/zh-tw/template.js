@@ -2,22 +2,22 @@
    ({
   viewer: {
     main: {
-      ownerText: "試_A map from_驗: ",
-      scaleBarUnits: "試_english_驗" //"english (for miles) or "metric" (for km) - don't translate.
+      ownerText: "地圖來自: ",
+      scaleBarUnits: "英語" //"english (for miles) or "metric" (for km) - don't translate.
     },
    sidePanel: {
-   	label: "試_Description_驗"
+   	label: "描述"
     },
     errors: {
-      createMap: "試_Unable to create map_驗",
-      general: "試_Error_驗"
+      createMap: "無法建立地圖",
+      general: "錯誤"
     }
   },
   tools: {
     tweets: {
-    "screenName": "試_Screen name_驗",
-    "signIn": "試_Sign in_驗",
-    "switchAccount": "試_Switch account_驗",
+    "screenName": "螢幕名稱",
+    "signIn": "登錄",
+    "switchAccount": "切換帳戶",
     // doc about date and time patterns: http://dojotoolkit.org/reference-guide/dojo/date/locale/format.html
     // yyyy: full year, e.g. 2011
     // MMMM: full month name, e.g. December
@@ -27,36 +27,36 @@
     // H: hours by 0-23, e.g. 6 or 23 ("HH" would be 06 or 23)
     // ss: seconds, e.g. 08 or 37 (just "s" would be 8 or 37)
     // SSS: milliseconds, e.g. 006 or 123 (just "S" would be 6 or 123)
-    datePattern: "試_d MMM yy_驗",
-    timePattern: "試_h:mma_驗",
-    reply: "試_Reply_驗",
-    retweet:"試_Retweet_驗",
-    favorite:"試_Favorite_驗",
-    label: "試_Tweets_驗",
-    title: "試_Tweets_驗",
-    error: "試_No results found, try another search term or location_驗",
+    datePattern: "年月日",
+    timePattern: "h:mma",
+    reply: "回覆",
+    retweet:"轉推",
+    favorite:"最愛",
+    label: "推文",
+    title: "推文",
+    error: "未找到任何結果，請嘗試其他搜尋詞彙或位置",
 		search: {
-			label: "試_Search_驗",
-			title: "試_Search Twitter_驗",
-			placeholder: '試_Keywords to search_驗'
+			label: "搜尋",
+			title: "搜尋 Twitter",
+			placeholder: '要搜尋的關鍵字'
 		},
 		clear: {
-			label: "試_Clear_驗",
-			title: "試_Clear Map_驗"
+			label: "清除",
+			title: "清除地圖"
 		},
 		share: {
-			label: "試_Share Map_驗:",
+			label: "共用地圖:",
 			email:{
-				title: "試_Email_驗",
-				label: "試_Email_驗"
+				title: "電子郵件",
+				label: "電子郵件"
 			},
 			twitter: {
-				title: "試_Twitter_驗",
-				label: "試_Twitter_驗"
+				title: "Twitter",
+				label: "Twitter"
 			},
 			facebook: {
-				title: "試_Facebook_驗",
-				label: "試_Facebook_驗"
+				title: "Facebook",
+				label: "Facebook"
 			}
 		}
 	 }

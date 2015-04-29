@@ -17,27 +17,27 @@
 define(
      ({
         map: {
-            error: "試_Unable to create map_驗"
+            error: "無法建立地圖"
         },
         tools:{
-            basemapTool: "試_Basemaps_驗",
-            legendTool: "試_Legend_驗",
-            detailsTool: "試_Details_驗",
-            measureTool: "試_Measure_驗",
-            shareTool: "試_Share_驗",
-            layerTool: "試_Layers_驗",
-            tableTool: "試_Table_驗",
-            editTool: "試_Edit_驗",
-            printTool: "試_Print_驗",
-            printLegend: "試_Add legend to output_驗",
+            basemapTool: "底圖",
+            legendTool: "圖例",
+            detailsTool: "詳細資訊",
+            measureTool: "測量",
+            shareTool: "共用",
+            layerTool: "圖層",
+            tableTool: "表",
+            editTool: "編輯",
+            printTool: "列印",
+            printLegend: "在輸出新增圖例",
             printLayouts: {
-                  "label1": '試_Landscape_驗',
-                  "label2": '試_Portrait_驗',
-                  "label3": '試_Landscape_驗',
-                  "label4": '試_Portrait_驗'
+                  "label1": '橫向',
+                  "label2": '縱向',
+                  "label3": '橫向',
+                  "label4": '縱向'
             },
-            printTitle: "試_Title_驗",
-            printTitlePrompt: "試_Add custom title_驗"
+            printTitle: "試_Title___驗",
+            printTitlePrompt: "試_Add custom title______驗"
         }
     })
 );

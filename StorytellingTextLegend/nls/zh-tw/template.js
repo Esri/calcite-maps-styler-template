@@ -2,26 +2,26 @@
    ({
     viewer: {
       main: {
-        scaleBarUnits: "試_english_驗" //"english (for miles) or "metric" (for km) - don't translate.
+        scaleBarUnits: "英語" //"english (for miles) or "metric" (for km) - don't translate.
       },
       errors: {
-        createMap: "試_Unable to create map_驗:",
-        general:"試_Error_驗",
-        timeout:"試_Please choose another tab to begin_驗"
+        createMap: "無法建立地圖:",
+        general:"錯誤",
+        timeout:"請選擇其他標記開始"
       },
       loading: {
-        message: "試_Loading maps_驗"
+        message: "正在載入地圖"
       },
       sidePanel: {
-        legendHeader: "試_LEGEND_驗"
+        legendHeader: "圖例"
       },
       datePatterns: {
-        datePattern: "試_MMMM d, yyyy_驗",
-        yearPattern: "試_yyyy_驗",
-        hourTimePattern: "試_h a_驗",
-        minuteTimePattern: "試_h:mm a_驗",
-        secondTimePattern: "試_h:mm:ss a_驗",
-        millisecondTimePattern: "試_h:mm:ss:SSS a_驗"
+        datePattern: "年月日",
+        yearPattern: "年",
+        hourTimePattern: "h a",
+        minuteTimePattern: "h:mm a",
+        secondTimePattern: "h:mm:ss a",
+        millisecondTimePattern: "h:mm:ss:SSS a"
       }
     }
   })

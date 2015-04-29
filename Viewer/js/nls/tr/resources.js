@@ -35,8 +35,8 @@ define(
 			      "label4": 'Dikey'
 			    },
 			    "legend": "Çıktıya gösterim ekle",
-                "title": "ı_Title_İ",
-                "titlePrompt": "ı_Add custom title_İ"
+                "title": "ı_Title___İ",
+                "titlePrompt": "ı_Add custom title______İ"
             },
 			"share": {
 				"extent": "Geçerli harita yayılımını kullan",

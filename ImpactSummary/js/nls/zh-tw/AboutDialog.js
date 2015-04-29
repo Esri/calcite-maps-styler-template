@@ -2,13 +2,13 @@
      ({
         "widgets": {
             "AboutDialog": {
-                "title": "試_About_驗",
-                "itemInfo": "試_View this item_驗",
-                "itemInfoLink": "試_on ArcGIS Online_驗.",
-                "licenseHeader":"試_License_驗",
-                "dateCreated":"試_Created_驗:",
-                "dateModified":"試_Last modified_驗",
-                "moreInfoHeader":"試_More Information_驗"
+                "title": "關於",
+                "itemInfo": "查看此項目",
+                "itemInfoLink": "在 ArcGIS Online 上。",
+                "licenseHeader":"授權",
+                "dateCreated":"建立日期:",
+                "dateModified":"上次修改時間",
+                "moreInfoHeader":"更多資訊"
             }
         }
     })

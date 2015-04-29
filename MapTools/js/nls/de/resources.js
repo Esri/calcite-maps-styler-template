@@ -36,8 +36,8 @@ define(
                   "label3": 'Querformat',
                   "label4": 'Hochformat'
             },
-            printTitle: "ä_Title_Ü",
-            printTitlePrompt: "ä_Add custom title_Ü"
+            printTitle: "ä_Title_____________________________________________________________Ü",
+            printTitlePrompt: "ä_Add custom title______Ü"
         }
     })
 );

@@ -41,7 +41,7 @@
       }
     },
     user: {
-      all: "Ă_All_ș",
+      all: "Ă_All__ș",
       mgrs: "MGRS",
       usng: "USNG",
       utm: "UTM",
@@ -120,9 +120,8 @@
       fileTooLargeError: "Fişier prea mare pentru ataşare",
       exceededFileCountError: "S-a depăşit numărul maxim de ataşări permis.",
       selectFileTitle: "Selectaţi un fişier",
-      btnSelectFileText: "Ă_Select File_ș",
-      btnViewSubmissions: "Vizualizare trimiteri",
-      dateFormat: "LL/ZZ/AAAA h:mm a"
+      btnSelectFileText: "Ă_Select File____ș",
+      btnViewSubmissions: "Vizualizare trimiteri"
     },
     builder: {
       invalidUser: "Ne pare rău, nu aveţi permisiunea de a vizualiza acest element",
@@ -151,8 +150,8 @@
       layerTabTitleText: "Selectare strat tematic editabil",
       selectLayerLabelText: "Strat tematic",
       selectLayerDefaultOptionText: "Selectare strat tematic",
-      enableBasemapToggle: "Ă_Show Basemap Toggle_ș",
-      enableBasemapToggleDescription: "Ă_You can configure the GeoForm to Show/Hide the Basemap Toggle_ș",
+      enableBasemapToggle: "Ă_Show Basemap Toggle_______ș",
+      enableBasemapToggleDescription: "Ă_You can configure the GeoForm to Show/Hide the Basemap Toggle___________________ș",
       defaultBasemap: "Comutare hartă fundal",
       secondaryBasemap: "Hartă fundal implicită",
       detailsTabTitleText: "Detalii formular",
@@ -235,7 +234,7 @@
       allLayerSelectOptionText: "Toate",
       disableViewer: "Dezactivare vizualizator",
       disableViewerDescription: "Puteţi configura GeoForm pentru a afişa/ascunde aplicaţia de vizualizare",
-      displayFieldHintText: "Ă_Selected display field will be shown in the viewer as a title_ș"
+      displayFieldHintText: "Ă_Selected display field will be shown in the viewer as a title___________________ș"
     },
     viewer: {
       geocoderCancelText: "Anulare",

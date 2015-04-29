@@ -35,8 +35,8 @@ define(
 			      "label4": 'Portrait'
 			    },
 			    "legend": "Ajouter la légende à la sortie",
-                "title": "æ_Title_Â",
-                "titlePrompt": "æ_Add custom title_Â"
+                "title": "æ_Title___Â",
+                "titlePrompt": "æ_Add custom title______Â"
             },
 			"share": {
 				"extent": "Utiliser l’étendue courante de la carte",

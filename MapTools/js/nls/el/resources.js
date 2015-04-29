@@ -36,8 +36,8 @@ define(
                   "label3": 'Οριζόντιος προσανατολισμός',
                   "label4": 'Κατακόρυφος προσανατολισμός'
             },
-            printTitle: "Đ_Title_ớ",
-            printTitlePrompt: "Đ_Add custom title_ớ"
+            printTitle: "Đ_Title___ớ",
+            printTitlePrompt: "Đ_Add custom title______ớ"
         }
     })
 );

@@ -41,7 +41,7 @@
       }
     },
     user: {
-      all: "Å_All_ö",
+      all: "Å_All__ö",
       mgrs: "MGRS",
       usng: "USNG",
       utm: "UTM",
@@ -120,9 +120,8 @@
       fileTooLargeError: "Tiedosto on liian suuri liitettäväksi",
       exceededFileCountError: "Liitteiden sallittu enimmäismäärä on ylittynyt",
       selectFileTitle: "Valitse tiedosto",
-      btnSelectFileText: "Å_Select File_ö",
-      btnViewSubmissions: "Näytä lähetykset",
-      dateFormat: "DD/MM/YYYY h:mm a"
+      btnSelectFileText: "Å_Select File____ö",
+      btnViewSubmissions: "Näytä lähetykset"
     },
     builder: {
       invalidUser: "Sinulla ei ole oikeuksia tarkastella tätä kohdetta",
@@ -151,8 +150,8 @@
       layerTabTitleText: "Valitse muokattava karttataso",
       selectLayerLabelText: "Karttataso",
       selectLayerDefaultOptionText: "Valitse karttataso",
-      enableBasemapToggle: "Å_Show Basemap Toggle_ö",
-      enableBasemapToggleDescription: "Å_You can configure the GeoForm to Show/Hide the Basemap Toggle_ö",
+      enableBasemapToggle: "Å_Show Basemap Toggle_______ö",
+      enableBasemapToggleDescription: "Å_You can configure the GeoForm to Show/Hide the Basemap Toggle___________________ö",
       defaultBasemap: "Taustakartan vaihto",
       secondaryBasemap: "Oletustaustakartta",
       detailsTabTitleText: "Lomakkeen tiedot",
@@ -235,7 +234,7 @@
       allLayerSelectOptionText: "Kaikki",
       disableViewer: "Poista katseluohjelma käytöstä",
       disableViewerDescription: "Voit määrittää GeoForm-lomakkeen poistamaan katseluohjelman käytöstä tai ottamaan sen käyttöön",
-      displayFieldHintText: "Å_Selected display field will be shown in the viewer as a title_ö"
+      displayFieldHintText: "Å_Selected display field will be shown in the viewer as a title___________________ö"
     },
     viewer: {
       geocoderCancelText: "Peruuta",

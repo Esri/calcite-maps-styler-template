@@ -36,8 +36,8 @@ define(
                   "label3": 'أفقي',
                   "label4": 'عمودي'
             },
-            printTitle: "بيت_Title_لاحقة",
-            printTitlePrompt: "بيت_Add custom title_لاحقة"
+            printTitle: "بيت_Title___لاحقة",
+            printTitlePrompt: "بيت_Add custom title______لاحقة"
         }
     })
 );

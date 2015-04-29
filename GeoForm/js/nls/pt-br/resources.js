@@ -41,7 +41,7 @@
       }
     },
     user: {
-      all: "ã_All_Ç",
+      all: "ã_All__Ç",
       mgrs: "MGRS",
       usng: "USNG",
       utm: "UTM",
@@ -120,9 +120,8 @@
       fileTooLargeError: "Arquivo muito grande para anexar",
       exceededFileCountError: "Número máximo de anexos permitidos excecido",
       selectFileTitle: "Selecione um arquivo",
-      btnSelectFileText: "ã_Select File_Ç",
-      btnViewSubmissions: "Visualizar Submissões",
-      dateFormat: "MM/DD/YYYY h:mm a"
+      btnSelectFileText: "ã_Select File____Ç",
+      btnViewSubmissions: "Visualizar Submissões"
     },
     builder: {
       invalidUser: "Desculpe, você não tem permissão para visualizar este item",
@@ -151,8 +150,8 @@
       layerTabTitleText: "Selecionar Camada Editável",
       selectLayerLabelText: "Camada",
       selectLayerDefaultOptionText: "Selecionar Camada",
-      enableBasemapToggle: "ã_Show Basemap Toggle_Ç",
-      enableBasemapToggleDescription: "ã_You can configure the GeoForm to Show/Hide the Basemap Toggle_Ç",
+      enableBasemapToggle: "ã_Show Basemap Toggle_______Ç",
+      enableBasemapToggleDescription: "ã_You can configure the GeoForm to Show/Hide the Basemap Toggle___________________Ç",
       defaultBasemap: "Alternar Mapa da Web",
       secondaryBasemap: "Mapa Base Padrão",
       detailsTabTitleText: "Detalhes do Formulário",
@@ -235,7 +234,7 @@
       allLayerSelectOptionText: "Todos",
       disableViewer: "Desabilitar Visualizador",
       disableViewerDescription: "Você pode configurar o GeoForm para desabilitar/habilitar o Visualizador",
-      displayFieldHintText: "ã_Selected display field will be shown in the viewer as a title_Ç"
+      displayFieldHintText: "ã_Selected display field will be shown in the viewer as a title___________________Ç"
     },
     viewer: {
       geocoderCancelText: "Cancelar",

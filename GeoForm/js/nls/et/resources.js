@@ -41,7 +41,7 @@
       }
     },
     user: {
-      all: "Š_All_ä",
+      all: "Š_All__ä",
       mgrs: "MGRS",
       usng: "USNG",
       utm: "UTM",
@@ -120,9 +120,8 @@
       fileTooLargeError: "Fail on manustamiseks liiga suur",
       exceededFileCountError: "Manuste suurim lubatud arv on täis",
       selectFileTitle: "Faili valimine",
-      btnSelectFileText: "Š_Select File_ä",
-      btnViewSubmissions: "Kuva edastused",
-      dateFormat: "MM/DD/YYYY h:mm a"
+      btnSelectFileText: "Š_Select File____ä",
+      btnViewSubmissions: "Kuva edastused"
     },
     builder: {
       invalidUser: "Kahjuks pole Teil selle sisuobjekti vaatamiseks õigusi",
@@ -151,8 +150,8 @@
       layerTabTitleText: "Vali muudetav kiht",
       selectLayerLabelText: "Kiht",
       selectLayerDefaultOptionText: "Vali kiht",
-      enableBasemapToggle: "Š_Show Basemap Toggle_ä",
-      enableBasemapToggleDescription: "Š_You can configure the GeoForm to Show/Hide the Basemap Toggle_ä",
+      enableBasemapToggle: "Š_Show Basemap Toggle_______ä",
+      enableBasemapToggleDescription: "Š_You can configure the GeoForm to Show/Hide the Basemap Toggle___________________ä",
       defaultBasemap: "Aluskaardi vahetamine",
       secondaryBasemap: "Vaikimisi aluskaart",
       detailsTabTitleText: "Vormi üksikasjad",
@@ -235,7 +234,7 @@
       allLayerSelectOptionText: "Kõik",
       disableViewer: "Keela vaatur",
       disableViewerDescription: "GeoFormi saab konfigureerida vaaturit kuvama/peitma",
-      displayFieldHintText: "Š_Selected display field will be shown in the viewer as a title_ä"
+      displayFieldHintText: "Š_Selected display field will be shown in the viewer as a title___________________ä"
     },
     viewer: {
       geocoderCancelText: "Tühista",

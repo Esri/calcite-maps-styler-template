@@ -35,8 +35,8 @@ define(
 			      "label4": 'Portret'
 			    },
 			    "legend": "Adăugare legendă în rezultate",
-                "title": "Ă_Title_ș",
-                "titlePrompt": "Ă_Add custom title_ș"
+                "title": "Ă_Title___ș",
+                "titlePrompt": "Ă_Add custom title______ș"
             },
 			"share": {
 				"extent": "Utilizare extindere curentă a hărţii",

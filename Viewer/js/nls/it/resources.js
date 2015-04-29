@@ -35,8 +35,8 @@ define(
 			      "label4": 'Verticale'
 			    },
 			    "legend": "Aggiungi legenda all\'output",
-                "title": "é_Title_È",
-                "titlePrompt": "é_Add custom title_È"
+                "title": "é_Title___È",
+                "titlePrompt": "é_Add custom title______È"
             },
 			"share": {
 				"extent": "Usa estensione mappa corrente",

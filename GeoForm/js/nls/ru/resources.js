@@ -41,7 +41,7 @@
       }
     },
     user: {
-      all: "Ж_All_Я",
+      all: "Ж_All__Я",
       mgrs: "MGRS",
       usng: "USNG",
       utm: "UTM",
@@ -120,9 +120,8 @@
       fileTooLargeError: "Слишком большой файл для вложения",
       exceededFileCountError: "Превышено максимальное количество вложений",
       selectFileTitle: "Выбрать файл",
-      btnSelectFileText: "Ж_Select File_Я",
-      btnViewSubmissions: "Посмотреть отправки",
-      dateFormat: "ДД/ММ/ГГ  ч:мм"
+      btnSelectFileText: "Ж_Select File____Я",
+      btnViewSubmissions: "Посмотреть отправки"
     },
     builder: {
       invalidUser: "Извините, у вас нет прав на просмотр этого элемента",
@@ -151,8 +150,8 @@
       layerTabTitleText: "Выбрать редактируемый слой",
       selectLayerLabelText: "Слой",
       selectLayerDefaultOptionText: "Выбрать слой",
-      enableBasemapToggle: "Ж_Show Basemap Toggle_Я",
-      enableBasemapToggleDescription: "Ж_You can configure the GeoForm to Show/Hide the Basemap Toggle_Я",
+      enableBasemapToggle: "Ж_Show Basemap Toggle_______Я",
+      enableBasemapToggleDescription: "Ж_You can configure the GeoForm to Show/Hide the Basemap Toggle___________________Я",
       defaultBasemap: "Переключатель базовых карт",
       secondaryBasemap: "Базовая карта по умолчанию",
       detailsTabTitleText: "Детали формы",
@@ -235,7 +234,7 @@
       allLayerSelectOptionText: "Все",
       disableViewer: "Отключить вьюер",
       disableViewerDescription: "Можно настроить GeoForm для включения/отключения вьюера",
-      displayFieldHintText: "Ж_Selected display field will be shown in the viewer as a title_Я"
+      displayFieldHintText: "Ж_Selected display field will be shown in the viewer as a title___________________Я"
     },
     viewer: {
       geocoderCancelText: "Отмена",

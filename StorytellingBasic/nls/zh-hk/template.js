@@ -2,18 +2,18 @@
    ({
   viewer:{
     main:{
-      scaleBarUnits: "試_english_驗" //"english (for miles) or "metric" (for km) - don't translate.
+      scaleBarUnits: "英語" //"english (for miles) or "metric" (for km) - don't translate.
     },
     errors:{
-      createMap: "試_Unable to create map_驗: ",
-      general:"試_Error_驗"
+      createMap: "無法建立地圖: ",
+      general:"錯誤"
     },
 	legToggle:{
-	  up:"試_MAP LEGEND â–²_驗",
-	  down:"試_MAP LEGEND â–¼_驗"
+	  up:"地圖圖例 â–²",
+	  down:"地圖圖例 â–¼"
 	},
 	loading:{
-		message: "試_Loading map_驗"
+		message: "正在載入地圖"
 	}
   }
 })

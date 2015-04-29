@@ -1,30 +1,30 @@
 ﻿define(
    ({
     display: {
-      elevationProfileTitle: "試_Elevations Profile_驗",
-      showMe: "試_show me_驗",
-      selectLine: "試_<b>Select</b> a feature in the map_驗.",
-      popupRequirement: "試_NOTE: the feature must be in a layer with Popups enabled_驗.",
-      digitizeDistanceMeasureTool: "試_Use the <b>Measure</b> tools_驗.",
-      selectFeatureHelpUrl: "試_http://help.arcgis.com/en/arcgisonline/help/010q/010q0000004s000000.htm#ESRI_SECTION1_DAA22E89DF67448E8F3682309F39BE5D_驗",
-      measureToolHelpUrl: "試_http://help.arcgis.com/en/arcgisonline/help/index.html#//010q00000096000000_驗",
-      hoverOver: "試_Hover over or touch the Elevations Profile chart to display elevations and show location on map_驗."
+      elevationProfileTitle: "高程剖面圖",
+      showMe: "顯示",
+      selectLine: "<b>選擇</b>地圖中的圖徵。",
+      popupRequirement: "注意: 該圖徵必須位於已啟用快顯的圖層中。",
+      digitizeDistanceMeasureTool: "使用<b>測量</b>工具。",
+      selectFeatureHelpUrl: "http://help.arcgis.com/zh-cn/arcgisonline/help/010q/010q0000004s000000.htm#ESRI_SECTION1_DAA22E89DF67448E8F3682309F39BE5D",
+      measureToolHelpUrl: "http://help.arcgis.com/en/arcgisonline/help/index.html#//010q00000096000000",
+      hoverOver: "將滑鼠懸停或觸碰高程剖面圖圖表以顯示海拔和地圖上的位置。"
     },
     buttons: {
-      measureLabel: "試_Measure_驗",
-      helpLabel: "試_Help_驗"
+      measureLabel: "測量",
+      helpLabel: "說明"
     },
     chart: {
-      title: "試_Elevations Profile_驗",
-      demResolution: "試_DEM Resolution_驗",
-      elevationTitleTemplate: "試_Elevation in {0}_驗",
-      distanceTitleTemplate: "試_Distance in {0}_驗",
-      gainLossTemplate: "試_Min:{min}   Max:{max}   Start:{start}   End:{end}   Change:{gainloss}_驗"
+      title: "高程剖面圖",
+      demResolution: "DEM 解析度",
+      elevationTitleTemplate: "海拔 (以 {0} 為單位)",
+      distanceTitleTemplate: "距離(以 {0} 為單位)",
+      gainLossTemplate: "最小值:{min}   最大值:{max}   起始值:{start}   終止值:{end}   變化值:{gainloss}"
     },
     errors: {
-      MissingConstructorParameters: "試_Missing constructor parameter_驗.",
-      InvalidConfiguration: "試_Invalid configuration_驗.",
-      UnableToProcessResults: "試_Unable to process analysis results_驗."
+      MissingConstructorParameters: "缺少建構函式參數。",
+      InvalidConfiguration: "無效的配置。",
+      UnableToProcessResults: "無法處理分析結果。"
     }
   })
 );

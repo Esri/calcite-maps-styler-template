@@ -35,8 +35,8 @@ define(
 			      "label4": 'وضع عمودي'
 			    },
 			    "legend": "إضافة وسيلة الإيضاح إلى الناتج",
-                "title": "بيت_Title_لاحقة",
-                "titlePrompt": "بيت_Add custom title_لاحقة"
+                "title": "بيت_Title___لاحقة",
+                "titlePrompt": "بيت_Add custom title______لاحقة"
             },
 			"share": {
 				"extent": "استخدم مدى الخريطة الحالية",

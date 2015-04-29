@@ -36,8 +36,8 @@ define(
                   "label3": 'Hướng ngang',
                   "label4": 'Hướng dọc'
             },
-            printTitle: "Đ_Title_ớ",
-            printTitlePrompt: "Đ_Add custom title_ớ"
+            printTitle: "Đ_Title___ớ",
+            printTitlePrompt: "Đ_Add custom title______ớ"
         }
     })
 );

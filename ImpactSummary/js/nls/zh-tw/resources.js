@@ -1,50 +1,50 @@
 ﻿define(
      ({
         map: {
-            error: "試_Unable to create map_驗"
+            error: "無法建立地圖"
         },
         general: {
-            map: "試_Map_驗",
-            mapInfo: "試_Map Information_驗",
-            legend: "試_Legend_驗",
-            layers: "試_Layers_驗",
-            rendererTitle: "試_Display information for this area_驗",
-            summarize: "試_Entire Area_驗",
-            summarizeTitle: "試_Display summarized information for all areas_驗",
-            share: "試_Share_驗",
-            about: "試_About_驗",
-            find: "試_Zip Code, city, etc_驗.",
-            noSearchResult: "試_No result found_驗",
-            impactArea: "試_Impact Area_驗",
-            dateModified: "試_Modified_驗",
-            moreInfo: "試_Find out more_驗",
+            map: "地圖",
+            mapInfo: "地圖資訊",
+            legend: "圖例",
+            layers: "圖層",
+            rendererTitle: "顯示該區域的資訊",
+            summarize: "整個區域",
+            summarizeTitle: "顯示所有區域的摘要資訊",
+            share: "共用",
+            about: "關於",
+            find: "郵遞區號、城市等",
+            noSearchResult: "未找到結果",
+            impactArea: "影響區域",
+            dateModified: "修改日期",
+            moreInfo: "查詢詳細資訊",
         },
         configure: {
             mapdlg: {
                 items: {
-                    organizationLabel: "試_My Organization_驗",
-                    onlineLabel: "試_ArcGIS Online_驗",
-                    contentLabel: "試_My Content_驗",
-                    favoritesLabel: "試_My Favorites_驗"
+                    organizationLabel: "我的組織",
+                    onlineLabel: "ArcGIS Online",
+                    contentLabel: "我的內容",
+                    favoritesLabel: "我的最愛"
                 },
-                title: "試_Select Web Map_驗",
-                searchTitle: "試_Search_驗",
-                ok: "試_Ok_驗",
-                cancel: "試_Cancel_驗",
-                placeholder: "試_Enter search term_驗"
+                title: "選擇 Web 地圖",
+                searchTitle: "搜尋",
+                ok: "確定",
+                cancel: "取消",
+                placeholder: "輸入搜尋詞彙"
             },
             groupdlg: {
                 items: {
-                    organizationLabel: "試_My Organization_驗",
-                    onlineLabel: "試_ArcGIS Online_驗",
-                    contentLabel: "試_My Content_驗",
-                    favoritesLabel: "試_My Favorites_驗"
+                    organizationLabel: "我的組織",
+                    onlineLabel: "ArcGIS Online",
+                    contentLabel: "我的內容",
+                    favoritesLabel: "我的最愛"
                 },
-                title: "試_Select Group_驗",
-                searchTitle: "試_Search_驗",
-                ok: "試_Ok_驗",
-                cancel: "試_Cancel_驗",
-                placeholder: "試_Enter search term_驗"
+                title: "選擇群組",
+                searchTitle: "搜尋",
+                ok: "確定",
+                cancel: "取消",
+                placeholder: "輸入搜尋詞彙"
             }
         }
     })

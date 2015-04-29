@@ -1,18 +1,18 @@
 ﻿define(
      ({
         map: {
-            error: "試_Unable to create map_驗"
+            error: "無法建立地圖"
         }, 
         tools: {         
             search: {
-                error: "試_Location could not be found_驗",
-                notWhatYouWanted: "試_Not what you wanted_驗?",
-                selectAnother: "試_Select another location_驗",
-                currentLocation: "試_Current Location_驗",
-                title: "試_Location_驗"
+                error: "無法找到位置",
+                notWhatYouWanted: "不是您想要的位置?",
+                selectAnother: "選擇其他位置",
+                currentLocation: "目前位置",
+                title: "位置"
             },
-        	legend: "試_Legend_驗",
-        	 about: "試_About_驗"
+        	legend: "圖例",
+        	 about: "關於"
         }
     })
 );

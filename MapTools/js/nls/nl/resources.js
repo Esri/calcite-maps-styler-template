@@ -36,8 +36,8 @@ define(
                   "label3": 'Liggend',
                   "label4": 'Staand'
             },
-            printTitle: "Ĳ_Title_ä",
-            printTitlePrompt: "Ĳ_Add custom title_ä"
+            printTitle: "Ĳ_Title___ä",
+            printTitlePrompt: "Ĳ_Add custom title______ä"
         }
     })
 );

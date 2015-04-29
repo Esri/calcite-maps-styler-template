@@ -35,8 +35,8 @@ define(
 			      "label4": 'Stående'
 			    },
 			    "legend": "Lägg till teckenförklaring i utdata",
-                "title": "Å_Title_ö",
-                "titlePrompt": "Å_Add custom title_ö"
+                "title": "Å_Title___ö",
+                "titlePrompt": "Å_Add custom title______ö"
             },
 			"share": {
 				"extent": "Använd aktuell kartutbredning",

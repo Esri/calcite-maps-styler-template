@@ -36,8 +36,8 @@ define(
                   "label3": 'Liggande',
                   "label4": 'Stående'
             },
-            printTitle: "Å_Title_ö",
-            printTitlePrompt: "Å_Add custom title_ö"
+            printTitle: "Å_Title___ö",
+            printTitlePrompt: "Å_Add custom title______ö"
         }
     })
 );

@@ -36,8 +36,8 @@ define(
                   "label3": 'Yatay',
                   "label4": 'Dikey'
             },
-            printTitle: "ı_Title_İ",
-            printTitlePrompt: "ı_Add custom title_İ"
+            printTitle: "ı_Title___İ",
+            printTitlePrompt: "ı_Add custom title______İ"
         }
     })
 );

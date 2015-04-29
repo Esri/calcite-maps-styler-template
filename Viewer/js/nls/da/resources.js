@@ -35,8 +35,8 @@ define(
 			      "label4": 'På højkant'
 			    },
 			    "legend": "Føj signaturforklaring til output",
-                "title": "ø_Title_å",
-                "titlePrompt": "ø_Add custom title_å"
+                "title": "ø_Title___å",
+                "titlePrompt": "ø_Add custom title______å"
             },
 			"share": {
 				"extent": "Gem aktuelt kortområde",

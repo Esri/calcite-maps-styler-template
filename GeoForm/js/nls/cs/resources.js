@@ -41,7 +41,7 @@
       }
     },
     user: {
-      all: "Ř_All_ů",
+      all: "Ř_All__ů",
       mgrs: "MGRS",
       usng: "USNG",
       utm: "UTM",
@@ -120,9 +120,8 @@
       fileTooLargeError: "Soubor nelze připojit, protože je příliš velký.",
       exceededFileCountError: "Překročili jste maximální povolený počet příloh",
       selectFileTitle: "Vyberte soubor",
-      btnSelectFileText: "Ř_Select File_ů",
-      btnViewSubmissions: "Zobrazit odeslané položky",
-      dateFormat: "MM/DD/RRRR h:mm a"
+      btnSelectFileText: "Ř_Select File____ů",
+      btnViewSubmissions: "Zobrazit odeslané položky"
     },
     builder: {
       invalidUser: "Nemáte bohužel oprávnění prohlížet tuto položku.",
@@ -151,8 +150,8 @@
       layerTabTitleText: "Vybrat editovatelnou vrstvu",
       selectLayerLabelText: "Vrstva",
       selectLayerDefaultOptionText: "Vybrat vrstvu",
-      enableBasemapToggle: "Ř_Show Basemap Toggle_ů",
-      enableBasemapToggleDescription: "Ř_You can configure the GeoForm to Show/Hide the Basemap Toggle_ů",
+      enableBasemapToggle: "Ř_Show Basemap Toggle_______ů",
+      enableBasemapToggleDescription: "Ř_You can configure the GeoForm to Show/Hide the Basemap Toggle___________________ů",
       defaultBasemap: "Přepnout podkladovou mapu",
       secondaryBasemap: "Výchozí podkladová mapa",
       detailsTabTitleText: "Podrobnosti formuláře",
@@ -235,7 +234,7 @@
       allLayerSelectOptionText: "Vše",
       disableViewer: "Zakázat prohlížeč",
       disableViewerDescription: "Umožňuje nastavit povolení nebo zakázání prohlížeče formuláře GeoForm.",
-      displayFieldHintText: "Ř_Selected display field will be shown in the viewer as a title_ů"
+      displayFieldHintText: "Ř_Selected display field will be shown in the viewer as a title___________________ů"
     },
     viewer: {
       geocoderCancelText: "Zrušit",

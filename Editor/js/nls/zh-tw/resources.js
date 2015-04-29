@@ -17,13 +17,13 @@
 define(
    ({
     map: {
-      noEditLayers: "試_This web map does not contain any editable layers_驗.",
-      error: "試_Unable to create map_驗"
+      noEditLayers: "此 Web 地圖不包含任何可編輯圖層。",
+      error: "無法建立地圖"
     },
     tools: {
     "popup": {
-            "title": "試_Info_驗",
-            "instructions": "試_Select a feature on the map to view details_驗."
+            "title": "資訊",
+            "instructions": "在地圖上選擇圖徵以查看詳細資訊。"
         } 
     }
   })

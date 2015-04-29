@@ -2,107 +2,107 @@
 	 ({
 		builder: {
 			layouts: {
-				mainStage: "試_Main Stage_驗",
-				sideTitle: "試_Side Panel_驗",
-				sideDescr: "試_A layout for a text intensive story that excels at combining your photos, videos, and maps in a clear focused message_驗.",
-				floatTitle: "試_Floating Panel_驗",
-				floatDescr: "試_A layout that puts your cartography in focus while allowing a transparent short form text panel to help tell the story_驗."
+				mainStage: "主舞台",
+				sideTitle: "側面板",
+				sideDescr: "文字密集型故事的版面配置，以焦點明確的訊息結合照片、影片和地圖，將會非常突出。",
+				floatTitle: "浮動面板",
+				floatDescr: "一種版面配置，以製圖為重點，同時借助格式簡單明瞭的文字面板來講述故事。"
 			},
 			common: {
-				lblStatus1: "試_Published_驗",
-				lblStatus2: "試_Draft_驗",
-				lblStatus3: "試_Hidden_驗"
+				lblStatus1: "已發佈",
+				lblStatus2: "草稿",
+				lblStatus3: "隱藏"
 			},
 			settingsLayoutOptions: {
-				title: "試_Layout options_驗",
-				cfgLeft: "試_Left_驗",
-				cfgRight: "試_Right_驗",
-				cfgSmall: "試_Small_驗",
-				cfgMedium: "試_Medium_驗",
-				cfgLarge: "試_Large_驗",
-				socialLinksLabel: "試_Display sharing links at the bottom of each section_驗",
-				socialLinksDescr: "試_This enables readers to reference and promote specific sections of your %TPL_NAME%. For instance, if you use a sections share icon, readers will land at that specific %TPL_NAME% section rather than the beginning of your story. Your readers can use the social media link in the title section to promote your entire %TPL_NAME% (header tab) and have them land at the start of the %TPL_NAME%_驗."
+				title: "版面配置選項",
+				cfgLeft: "左對齊",
+				cfgRight: "右對齊",
+				cfgSmall: "小",
+				cfgMedium: "中",
+				cfgLarge: "大",
+				socialLinksLabel: "在每節底部顯示共用連結",
+				socialLinksDescr: "這使讀者可以引用並提升 %TPL_NAME% 的特定章節。例如，如果使用章節共用圖示，讀者將會定位到該特定 %TPL_NAME% 章節，而並非定位到故事的開頭。讀者可使用標題章節中的社交媒體連結來提升整個 %TPL_NAME%（標題索引標籤）並定位到 %TPL_NAME% 的開頭。"
 			},
 			settingsLayoutFonts: {
-				title: "試_Fonts_驗",
-				defaultLbl: "試_Default_驗",
-				sectionTitleLbl: "試_Section title_驗",
-				sectionContentLbl: "試_Section content_驗"
+				title: "字體",
+				defaultLbl: "預設",
+				sectionTitleLbl: "章節標題",
+				sectionContentLbl: "章節內容"
 			},
 			initPopup: {
-				title: "試_Welcome to_驗"
+				title: "歡迎使用"
 			},
 			addEditPopup: {
-				disabled: "試_Add Section is disabled because the maximum number of allowed sections has been reached_驗.",
-				titleAdd: "試_Add Section_驗",
-				titleAddHome: "試_Add Home Section_驗",
-				titleEdit: "試_Edit Section_驗",
-				step: "試_Step_驗",
-				stepMainStageExplain: "試_Main Stage Content_驗",
-				stepPanelExplain: "試_Content_驗",
-				stepMainStageNextTooltip: "試_Enter the section title and select the Main Stage content_驗",
-				stepMainStageNextTooltip2: "試_Select the Main Stage content_驗",
-				step2NextTooltip: "試_Enter the section title and %LAYOUT-TYPE% content_驗",
-				stepNextTooltipNext: "試_to go to the next step_驗",
-				stepNextTooltipAdd: "試_to add the section_驗",
-				firstAddExplain: "試_This first section is your Home Section, think of it as the 'cover page' to your story. The title you just defined will be displayed with large fonts_驗.",
-				firstAddLeanMore: "試_Learn More_驗",
-				titlePlaceholder: "試_Section title_驗..."
+				disabled: "由於允許的部分已達到最大數量，因此停用\\“新增部分\\”。",
+				titleAdd: "新增章節",
+				titleAddHome: "新增首頁章節",
+				titleEdit: "編輯章節",
+				step: "步驟",
+				stepMainStageExplain: "主舞台內容",
+				stepPanelExplain: "內容",
+				stepMainStageNextTooltip: "輸入章節標題並選擇主舞台內容",
+				stepMainStageNextTooltip2: "選擇主舞台內容",
+				step2NextTooltip: "輸入章節標題和 %LAYOUT-TYPE% 內容",
+				stepNextTooltipNext: "要進行下一步",
+				stepNextTooltipAdd: "要新增章節",
+				firstAddExplain: "第一部分是首頁章節，可將其看做故事\\“封面\\”。剛剛定義的標題將顯示為大號字體。",
+				firstAddLeanMore: "瞭解詳細資訊",
+				titlePlaceholder: "章節標題..."
 			},
 			addEditViewText: {
-				editorPlaceholder: "試_Add text, links, and small graphics here_驗.",
-				editorActionsTitle: "試_Main Stage Actions_驗",
-				editorActionsHelpDescr: "試_Use these controls to create links that will change the main stage. For example, when the reader clicks a link, you may want to zoom the map to a specific location, display another web map or display an image_驗.",
-				mainStageDisabled: "試_Main Stage Actions are disabled when the editor is maximized_驗"
+				editorPlaceholder: "在此新增文字、連結和小圖形。",
+				editorActionsTitle: "主舞台操作",
+				editorActionsHelpDescr: "使用這些控制項來建立將變更主舞台的連結。例如，當讀者按一下某連結時，您會希望地圖縮放至特定位置，顯示其他 Web 地圖或顯示圖像。",
+				mainStageDisabled: "編輯器最大化時將停用主舞台操作"
 			},
 			organizePopup: {
-				title: "試_Organize_驗",
-				lblHeader: "試_Drag and drop sections to organize your content_驗.",
-				lblColTitle: "試_Title_驗",
-				lblColPubDate: "試_Publication date_驗",
-				lblColStatus: "試_Status_驗",
-				checkDisplayReverse: "試_Display sections in reverse order_驗",
-				btnApplyWarning: "試_Confirm deletion of %NB% section(s)_驗",
-				deleteTooltip: "試_Delete_驗",
-				firstSectionExplain: "試_(The home section cannot be moved)_驗",
-				exportMainStage: "試_Main Stage content_驗",
-				exportPanel: "試_Panel content_驗",
-				exportActions: "試_Main Stage actions_驗"
+				title: "組織",
+				lblHeader: "拖放章節以組織內容。",
+				lblColTitle: "標題",
+				lblColPubDate: "發佈日期",
+				lblColStatus: "狀態",
+				checkDisplayReverse: "以相反順序顯示章節",
+				btnApplyWarning: "確認刪除 %NB% 章節",
+				deleteTooltip: "刪除",
+				firstSectionExplain: "(無法移動首頁章節)",
+				exportMainStage: "主舞台內容",
+				exportPanel: "面板內容",
+				exportActions: "主舞台操作"
 			},
 			exportData: {
-				btn: "試_Export content_驗",
-				tooltip: "試_Exporting your content allows you to view and create a back-up of your content should you accidentally delete it. Simply copy and paste the content from the page into any word processor_驗."
+				btn: "匯出內容",
+				tooltip: "透過匯出內容您可以查看並建立意外刪除內容的備份。只需將頁面內容複製貼上文書處理器中即可。"
 			},
 			help: {
-				lblHelp: "試_Help_驗",
-				lblAdd: "試_Add Section_驗",
-				lblSettings: "試_Settings_驗",
-				lblOrga: "試_Organize content_驗",
-				lblEdit: "試_Edits_驗",
-				lblPublish: "試_Share_驗",
-				lblTips: "試_Tips_驗",
-				lblMore: "試_Want more_驗?",
-				lblLink: "試_Visit the Esri Story Maps website_驗.",
-				content1Div1: "試_You can integrate a variety of styles when building your story. The <strong>%LAYOUT_TITLE%</strong> typically holds your text, images, and video while your maps tend go on the <strong>Main Stage</strong>. However, the %TPL_NAME% allows you to feature images, charts, and video within the main stage as well_驗.",
-				content1Div2: "試_Adding sections allows you to truly customize your storytelling experience. As readers scroll through your %LAYOUT_TITLE% text, a map on the Main Stage can pan or zoom to key points, or new maps and images can automatically toggle to support your message_驗.",
-				content2Div1: "試_The Settings dialog is where you can change the appearance of your %TPL_NAME%. You change the layout, choose a different color scheme, change the text font, etc_驗.",
-				content2Div2: "試_You can also replace the Esri logo with your own logo to reflect your brand. You can also specify the website that will be launched if readers click your logo, so they can get more information_驗.",
-				content3Div1: "試_Your content is organized into sections. You can have as many sections as you like (think of them like mini chapters). The flow of those chapters is important; within Organize you can reorder or delete sections as you wish_驗.",
-				content4Div1: "試_Found a mistake or want to change your material? No worries. Look for the edit icon throughout the app to make changes to your content. Youâ€™ll use the edit functions many times as you develop your %TPL_NAME%_驗!",
-				content5Div1: "試_When you save your %TPL_NAME% it is private initially. Use the Share button to share it with others. You can share your %TPL_NAME% publicly so anyone can access it_驗.",
-				content5Div2: "試_Depending on your account, you may also have the option to share your %TPL_NAME% just to people within your organization, so others can't access it_驗.",
-				content6Div1: "試_The title of your Home section is also the title of your journal; think of your the Home section as  the 'cover page' to your story. The Home Section title will remain visible when your readers will navigate the Journal_驗.",
-				content6Div2: "試_Your %LAYOUT_TITLE% doesn't have to be just text, consider including photos and videos to help bring the story alive, and to break-up long sections of text_驗!"
+				lblHelp: "說明",
+				lblAdd: "新增章節",
+				lblSettings: "設定",
+				lblOrga: "組織內容",
+				lblEdit: "編輯",
+				lblPublish: "共用",
+				lblTips: "提示",
+				lblMore: "是否想瞭解更多資訊?",
+				lblLink: "存取 Esri Story Maps 網站。",
+				content1Div1: "構建故事時，可集成各種風格。<strong>%LAYOUT_TITLE%</strong> 通常在地圖要發佈在<strong>主舞台</strong>時會保留文字、圖像和影片。但 %TPL_NAME% 也可以在主舞台中展示圖像、圖表和影片。",
+				content1Div2: "新增章節可以使您真正自訂提供資訊的經驗。在讀者捲動 %LAYOUT_TITLE% 文字時，主舞台上的地圖可平移或縮放至關鍵點或新地圖，圖像也可以自動切換以支援訊息。",
+				content2Div1: "可在\\“設置\\”對話方塊中變更 %TPL_NAME% 的外觀。變更版面配置，選擇其他配色方案和變更文字字體等等。",
+				content2Div2: "您還可以使用自己的標誌取代 Esri 標誌，以反映您的品牌。也可以指定當讀者按一下您的標誌時所啟動的網站，以便讀者取得詳細資訊。",
+				content3Div1: "您的內容將組織成章節。您可擁有任意數量的章節(可將其視為微型章節)。這些章節流十分重要；可在組織內根據需要重新排序或刪除章節。",
+				content4Div1: "發現錯誤或需要變更內容？別擔心。在整個應用程式中查詢編輯圖示，以對內容進行變更。在開發 %TPL_NAME% 時，您可多次使用編輯功能！",
+				content5Div1: "儲存 %TPL_NAME% 時，最初狀態為私有。使用“共用”按鈕將其共用給其他人。您可以將 %TPL_NAME% 公開共用，讓所有人都可對其進行存取。",
+				content5Div2: "根據您的帳戶，您還可以選擇將 %TPL_NAME% 僅共用給組織內的人員，這樣其他人便無法對其進行存取。",
+				content6Div1: "主目錄章節的標題也是您日誌的標題；將主目錄章節做為故事的\\“封面\\”。讀者瀏覽日誌時仍然可見主目錄章節標題。",
+				content6Div2: "您的 %LAYOUT_TITLE% 無需僅包含文字，可考慮納入照片和影片，更生動地展現故事並穿插於長篇文字章節之間!"
 			},
 			landing: {
-				lblAdd: "試_What do you want to call your Map Journal_驗?",
-				phAdd: "試_Enter your title_驗...",
-				lblOR: "試_Or_驗",
-				lblHelp: "試_Take a Tour_驗"
+				lblAdd: "您的地圖日誌要取什麼名稱?",
+				phAdd: "輸入標題...",
+				lblOR: "或",
+				lblHelp: "進行導覽"
 			},
 			firstAddSplash: {
-				thisis: "試_This is the_驗",
-				lblMain: "試_This is the %BR% Main Stage_驗"
+				thisis: "這是",
+				lblMain: "這是 %BR% 主舞台"
 			}
         }
     })

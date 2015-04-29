@@ -41,7 +41,7 @@
       }
     },
     user: {
-      all: "é_All_È",
+      all: "é_All__È",
       mgrs: "MGRS",
       usng: "USNG",
       utm: "UTM",
@@ -120,9 +120,8 @@
       fileTooLargeError: "File da allegare troppo grande",
       exceededFileCountError: "È stato superato il numero massimo di allegati consentito",
       selectFileTitle: "Seleziona un file",
-      btnSelectFileText: "é_Select File_È",
-      btnViewSubmissions: "Visualizza invii",
-      dateFormat: "dd/MM/yyyy h.mm a"
+      btnSelectFileText: "é_Select File____È",
+      btnViewSubmissions: "Visualizza invii"
     },
     builder: {
       invalidUser: "Non si dispone dell\'autorizzazione per visualizzare questo elemento",
@@ -151,8 +150,8 @@
       layerTabTitleText: "Seleziona layer modificabile",
       selectLayerLabelText: "Layer",
       selectLayerDefaultOptionText: "Seleziona layer",
-      enableBasemapToggle: "é_Show Basemap Toggle_È",
-      enableBasemapToggleDescription: "é_You can configure the GeoForm to Show/Hide the Basemap Toggle_È",
+      enableBasemapToggle: "é_Show Basemap Toggle_______È",
+      enableBasemapToggleDescription: "é_You can configure the GeoForm to Show/Hide the Basemap Toggle___________________È",
       defaultBasemap: "Attivazione/disattivazione mappa base",
       secondaryBasemap: "Mappa di base predefinita",
       detailsTabTitleText: "Dettagli modulo",
@@ -235,7 +234,7 @@
       allLayerSelectOptionText: "Tutti",
       disableViewer: "Disabilita viewer",
       disableViewerDescription: "È possibile configurare il GeoForm in modo che il viewer venga abilitato/disabilitato.",
-      displayFieldHintText: "é_Selected display field will be shown in the viewer as a title_È"
+      displayFieldHintText: "é_Selected display field will be shown in the viewer as a title___________________È"
     },
     viewer: {
       geocoderCancelText: "Annulla",

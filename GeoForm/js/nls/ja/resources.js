@@ -41,7 +41,7 @@
       }
     },
     user: {
-      all: "須_All_鷗",
+      all: "須_All__鷗",
       mgrs: "MGRS",
       usng: "USNG",
       utm: "UTM",
@@ -120,9 +120,8 @@
       fileTooLargeError: "ファイルが大きすぎて添付できません",
       exceededFileCountError: "アタッチメントの最大許容数を超えました",
       selectFileTitle: "ファイルの選択",
-      btnSelectFileText: "須_Select File_鷗",
-      btnViewSubmissions: "送信内容の表示",
-      dateFormat: "MM/DD/YYYY h:mm a"
+      btnSelectFileText: "須_Select File____鷗",
+      btnViewSubmissions: "送信内容の表示"
     },
     builder: {
       invalidUser: "このアイテムを表示する権限がありません",
@@ -151,8 +150,8 @@
       layerTabTitleText: "編集可能レイヤの選択",
       selectLayerLabelText: "レイヤ",
       selectLayerDefaultOptionText: "レイヤの選択",
-      enableBasemapToggle: "須_Show Basemap Toggle_鷗",
-      enableBasemapToggleDescription: "須_You can configure the GeoForm to Show/Hide the Basemap Toggle_鷗",
+      enableBasemapToggle: "須_Show Basemap Toggle_______鷗",
+      enableBasemapToggleDescription: "須_You can configure the GeoForm to Show/Hide the Basemap Toggle___________________鷗",
       defaultBasemap: "ベースマップの切り替え",
       secondaryBasemap: "デフォルト ベースマップ",
       detailsTabTitleText: "フォームの詳細",
@@ -235,7 +234,7 @@
       allLayerSelectOptionText: "すべて",
       disableViewer: "ビューアの無効化",
       disableViewerDescription: "ビューアを有効化/無効化することができます",
-      displayFieldHintText: "須_Selected display field will be shown in the viewer as a title_鷗"
+      displayFieldHintText: "須_Selected display field will be shown in the viewer as a title___________________鷗"
     },
     viewer: {
       geocoderCancelText: "キャンセル",

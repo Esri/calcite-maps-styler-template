@@ -35,8 +35,8 @@ define(
 			      "label4": 'Vertikaalpaigutus'
 			    },
 			    "legend": "Lisa väljundile legend",
-                "title": "Š_Title_ä",
-                "titlePrompt": "Š_Add custom title_ä"
+                "title": "Š_Title___ä",
+                "titlePrompt": "Š_Add custom title______ä"
             },
 			"share": {
 				"extent": "Kasuta praeguse kaardi ulatust",

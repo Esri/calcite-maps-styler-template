@@ -35,8 +35,8 @@ define(
 			      "label4": 'לאורך'
 			    },
 			    "legend": "הוסף מקרא למפה",
-                "title": "כן_Title_ש",
-                "titlePrompt": "כן_Add custom title_ש"
+                "title": "כן_Title___ש",
+                "titlePrompt": "כן_Add custom title______ש"
             },
 			"share": {
 				"extent": "השתמש בתיחום המפה הנוכחי",

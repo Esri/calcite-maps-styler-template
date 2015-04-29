@@ -1,17 +1,17 @@
 ﻿define(
    ({
   	map: {
-  		error: "試_Unable to create map_驗"
+  		error: "無法建立地圖"
   	},
     viewer: {
-      content_title: "試_Filter_驗",
-      button_text: "試_Apply_驗",
-      filterInstructions: "試_Filter the layer by specifying values_驗.",
-      filterOr: "試_Any of the following expressions must be true_驗.",
-      filterAnd: "試_All of the following expressions must be true_驗.",
+      content_title: "篩選",
+      button_text: "套用",
+      filterInstructions: "透過指定值篩選圖層。",
+      filterOr: "以下任意表達式必須為 true。",
+      filterAnd: "以下表達式必須全部為 true。",
       filterNo:  "Web map does not contain any interactive filters.",
       errors:{
-        message: "試_Problem creating the filters application_驗"
+        message: "建立篩選應用程式時出現問題"
       }
     }
   })

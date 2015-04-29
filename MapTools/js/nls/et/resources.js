@@ -36,8 +36,8 @@ define(
                   "label3": 'Horisontaalpaigutus',
                   "label4": 'Vertikaalpaigutus'
             },
-            printTitle: "Š_Title_ä",
-            printTitlePrompt: "Š_Add custom title_ä"
+            printTitle: "Š_Title___ä",
+            printTitlePrompt: "Š_Add custom title______ä"
         }
     })
 );

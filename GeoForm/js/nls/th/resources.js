@@ -41,7 +41,7 @@
       }
     },
     user: {
-      all: "ก้_All_ษฺ",
+      all: "ก้_All__ษฺ",
       mgrs: "หน่วยอ้างอิงทางทหาร MGRS",
       usng: "หน่วย USNG",
       utm: "UTM",
@@ -120,9 +120,8 @@
       fileTooLargeError: "ไฟล์ที่แนบมาใหญ่เกินไป",
       exceededFileCountError: "จำนวนไฟล์แนบมากเกินกว่าที่จำนวนที่อนุญาต",
       selectFileTitle: "เลือกไฟล์",
-      btnSelectFileText: "ก้_Select File_ษฺ",
-      btnViewSubmissions: "ดูการส่ง",
-      dateFormat: "วว/ดด/ปปปป ชั่วโมง:นาที"
+      btnSelectFileText: "ก้_Select File____ษฺ",
+      btnViewSubmissions: "ดูการส่ง"
     },
     builder: {
       invalidUser: "ขออภัย คุณไม่ได้สิทธิในการดูรายการนี้",
@@ -151,8 +150,8 @@
       layerTabTitleText: "เลือกชั้นข้อมูลที่แก้ไขได้",
       selectLayerLabelText: "ชั้นข้อมูล",
       selectLayerDefaultOptionText: "เลือกชั้นข้อมูล",
-      enableBasemapToggle: "ก้_Show Basemap Toggle_ษฺ",
-      enableBasemapToggleDescription: "ก้_You can configure the GeoForm to Show/Hide the Basemap Toggle_ษฺ",
+      enableBasemapToggle: "ก้_Show Basemap Toggle_______ษฺ",
+      enableBasemapToggleDescription: "ก้_You can configure the GeoForm to Show/Hide the Basemap Toggle___________________ษฺ",
       defaultBasemap: "เปิดปิดแผนที่ฐาน",
       secondaryBasemap: "แผนที่ฐานเริ่มต้น",
       detailsTabTitleText: "แบบฟอร์มรายละเอียด",
@@ -235,7 +234,7 @@
       allLayerSelectOptionText: "ทั้งหมด",
       disableViewer: "ปิดการใช้งานหน้าต่างแสดงผล",
       disableViewerDescription: "คุณสามารถกำหนดค่า GeoForm เพื่อปิด / เปิดหน้าต่างแสดงผล",
-      displayFieldHintText: "ก้_Selected display field will be shown in the viewer as a title_ษฺ"
+      displayFieldHintText: "ก้_Selected display field will be shown in the viewer as a title___________________ษฺ"
     },
     viewer: {
       geocoderCancelText: "ยกเลิก",

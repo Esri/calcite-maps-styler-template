@@ -2,16 +2,16 @@
      ({
         widgets: {
             ShareDialog: {
-                title: "試_Share_驗",
-                heading: "試_Share this map_驗",
-                url: "試_Map Link_驗",
-                embed: "試_Embed Map_驗",
-                extent: "試_Share current map extent_驗",
-                size: "試_Size (width/height)_驗:",
-                facebookTooltip: "試_Facebook_驗",
-                twitterTooltip: "試_Twitter_驗",
-                gplusTooltip: "試_Google Plus_驗",
-                emailTooltip: "試_Email_驗"
+                title: "共用",
+                heading: "共用此地圖",
+                url: "地圖連結",
+                embed: "嵌入地圖",
+                extent: "共用目前地圖範圍",
+                size: "大小(寬度/高度):",
+                facebookTooltip: "Facebook",
+                twitterTooltip: "Twitter",
+                gplusTooltip: "Google Plus",
+                emailTooltip: "電子郵件"
             }
         }
     })

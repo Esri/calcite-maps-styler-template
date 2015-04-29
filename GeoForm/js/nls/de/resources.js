@@ -41,7 +41,7 @@
       }
     },
     user: {
-      all: "ä_All_Ü",
+      all: "ä_All_____________________________________Ü",
       mgrs: "MGRS",
       usng: "USNG",
       utm: "UTM",
@@ -120,9 +120,8 @@
       fileTooLargeError: "Datei ist zu groß, um sie anzuhängen",
       exceededFileCountError: "Maximal zulässige Anzahl von Anlagen wurde überschritten",
       selectFileTitle: "Datei auswählen",
-      btnSelectFileText: "ä_Select File_Ü",
-      btnViewSubmissions: "Übermittlungen anzeigen",
-      dateFormat: "MM/TT/JJJJ h:mm a"
+      btnSelectFileText: "ä_Select File____Ü",
+      btnViewSubmissions: "Übermittlungen anzeigen"
     },
     builder: {
       invalidUser: "Sie verfügen leider nicht über die Berechtigungen zum Anzeigen dieses Elements",
@@ -151,8 +150,8 @@
       layerTabTitleText: "Editierbaren Layer auswählen",
       selectLayerLabelText: "Layer",
       selectLayerDefaultOptionText: "Layer auswählen",
-      enableBasemapToggle: "ä_Show Basemap Toggle_Ü",
-      enableBasemapToggleDescription: "ä_You can configure the GeoForm to Show/Hide the Basemap Toggle_Ü",
+      enableBasemapToggle: "ä_Show Basemap Toggle_______Ü",
+      enableBasemapToggleDescription: "ä_You can configure the GeoForm to Show/Hide the Basemap Toggle___________________Ü",
       defaultBasemap: "Grundkarte wechseln",
       secondaryBasemap: "Standardgrundkarte",
       detailsTabTitleText: "Formulardetails",
@@ -235,7 +234,7 @@
       allLayerSelectOptionText: "Alle",
       disableViewer: "Viewer deaktivieren",
       disableViewerDescription: "Sie können das GeoForm konfigurieren, um den Viewer zu deaktivieren/aktivieren",
-      displayFieldHintText: "ä_Selected display field will be shown in the viewer as a title_Ü"
+      displayFieldHintText: "ä_Selected display field will be shown in the viewer as a title___________________Ü"
     },
     viewer: {
       geocoderCancelText: "Abbrechen",

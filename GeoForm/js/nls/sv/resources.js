@@ -41,7 +41,7 @@
       }
     },
     user: {
-      all: "Å_All_ö",
+      all: "Å_All__ö",
       mgrs: "MGRS",
       usng: "USNG",
       utm: "UTM",
@@ -120,9 +120,8 @@
       fileTooLargeError: "Filen är för stor för att bifoga",
       exceededFileCountError: "Överskrider högsta antalet tillåtna bilagor",
       selectFileTitle: "Välj en fil",
-      btnSelectFileText: "Å_Select File_ö",
-      btnViewSubmissions: "Visa bidrag",
-      dateFormat: "yyyy-MM-dd H:mm"
+      btnSelectFileText: "Å_Select File____ö",
+      btnViewSubmissions: "Visa bidrag"
     },
     builder: {
       invalidUser: "Du har tyvärr inte behörighet att visa det här objektet",
@@ -151,8 +150,8 @@
       layerTabTitleText: "Välj redigerbart lager",
       selectLayerLabelText: "Lager",
       selectLayerDefaultOptionText: "Välj lager",
-      enableBasemapToggle: "Å_Show Basemap Toggle_ö",
-      enableBasemapToggleDescription: "Å_You can configure the GeoForm to Show/Hide the Basemap Toggle_ö",
+      enableBasemapToggle: "Å_Show Basemap Toggle_______ö",
+      enableBasemapToggleDescription: "Å_You can configure the GeoForm to Show/Hide the Basemap Toggle___________________ö",
       defaultBasemap: "Växla baskarta",
       secondaryBasemap: "Standardbaskarta",
       detailsTabTitleText: "Formulärinformation",
@@ -235,7 +234,7 @@
       allLayerSelectOptionText: "Alla",
       disableViewer: "Inaktivera vy",
       disableViewerDescription: "Du kan konfigurera din GeoForm så att vyn aktiveras/inaktiveras",
-      displayFieldHintText: "Å_Selected display field will be shown in the viewer as a title_ö"
+      displayFieldHintText: "Å_Selected display field will be shown in the viewer as a title___________________ö"
     },
     viewer: {
       geocoderCancelText: "Avbryt",

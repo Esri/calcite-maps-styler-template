@@ -41,7 +41,7 @@
       }
     },
     user: {
-      all: "Đ_All_ớ",
+      all: "Đ_All__ớ",
       mgrs: "MGRS",
       usng: "USNG",
       utm: "UTM",
@@ -120,9 +120,8 @@
       fileTooLargeError: "Tệp quá lớn để đính kèm",
       exceededFileCountError: "Vượt quá số lượng tệp đính kèm tối đa được cho phép",
       selectFileTitle: "Chọn một tệp",
-      btnSelectFileText: "Đ_Select File_ớ",
-      btnViewSubmissions: "Xem Các đệ trình",
-      dateFormat: "MM/DD/YYYY h:mm a"
+      btnSelectFileText: "Đ_Select File____ớ",
+      btnViewSubmissions: "Xem Các đệ trình"
     },
     builder: {
       invalidUser: "Rất tiếc, bạn không có quyền xem mục này",
@@ -151,8 +150,8 @@
       layerTabTitleText: "Chọn Lớp có thể chỉnh sửa được",
       selectLayerLabelText: "Lớp",
       selectLayerDefaultOptionText: "Chọn Lớp",
-      enableBasemapToggle: "Đ_Show Basemap Toggle_ớ",
-      enableBasemapToggleDescription: "Đ_You can configure the GeoForm to Show/Hide the Basemap Toggle_ớ",
+      enableBasemapToggle: "Đ_Show Basemap Toggle_______ớ",
+      enableBasemapToggleDescription: "Đ_You can configure the GeoForm to Show/Hide the Basemap Toggle___________________ớ",
       defaultBasemap: "Chuyển đổi bản đồ nền",
       secondaryBasemap: "Bản đồ nền mặc định",
       detailsTabTitleText: "Chi tiết Biểu mẫu",
@@ -235,7 +234,7 @@
       allLayerSelectOptionText: "Tất cả",
       disableViewer: "Tắt Trình xem",
       disableViewerDescription: "Bạn có thể cấu hình GeoForm để tắt/bật Trình xem",
-      displayFieldHintText: "Đ_Selected display field will be shown in the viewer as a title_ớ"
+      displayFieldHintText: "Đ_Selected display field will be shown in the viewer as a title___________________ớ"
     },
     viewer: {
       geocoderCancelText: "Hủy",

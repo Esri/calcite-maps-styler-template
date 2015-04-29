@@ -41,7 +41,7 @@
       }
     },
     user: {
-      all: "æ_All_Â",
+      all: "æ_All__Â",
       mgrs: "MGRS",
       usng: "USNG",
       utm: "UTM",
@@ -120,9 +120,8 @@
       fileTooLargeError: "Fichier trop volumineux pour être joint",
       exceededFileCountError: "Le nombre maximum de pièces jointes autorisées a été dépassé",
       selectFileTitle: "Sélectionner un fichier",
-      btnSelectFileText: "æ_Select File_Â",
-      btnViewSubmissions: "Consulter les envois",
-      dateFormat: "DD/MM/YYYY h:mm a"
+      btnSelectFileText: "æ_Select File____Â",
+      btnViewSubmissions: "Consulter les envois"
     },
     builder: {
       invalidUser: "Vous n'êtes pas autorisé à consulter cet élément",
@@ -151,8 +150,8 @@
       layerTabTitleText: "Sélectionner une couche modifiable",
       selectLayerLabelText: "Couche",
       selectLayerDefaultOptionText: "Sélectionner une couche",
-      enableBasemapToggle: "æ_Show Basemap Toggle_Â",
-      enableBasemapToggleDescription: "æ_You can configure the GeoForm to Show/Hide the Basemap Toggle_Â",
+      enableBasemapToggle: "æ_Show Basemap Toggle_______Â",
+      enableBasemapToggleDescription: "æ_You can configure the GeoForm to Show/Hide the Basemap Toggle___________________Â",
       defaultBasemap: "Activer/Désactiver les fonds de carte",
       secondaryBasemap: "Fond de carte par défaut",
       detailsTabTitleText: "Détails du formulaire",
@@ -235,7 +234,7 @@
       allLayerSelectOptionText: "Tout",
       disableViewer: "Désactiver la visionneuse",
       disableViewerDescription: "Vous pouvez configurer le formulaire géographique de façon à activer/désactiver la visionneuse",
-      displayFieldHintText: "æ_Selected display field will be shown in the viewer as a title_Â"
+      displayFieldHintText: "æ_Selected display field will be shown in the viewer as a title___________________Â"
     },
     viewer: {
       geocoderCancelText: "Annuler",

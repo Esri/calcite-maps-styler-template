@@ -35,8 +35,8 @@ define(
 			      "label4": 'แนวตั้ง'
 			    },
 			    "legend": "เพิ่มคำอธิบายแผนที่ไปยังส่วนผลลัพธ์",
-                "title": "ก้_Title_ษฺ",
-                "titlePrompt": "ก้_Add custom title_ษฺ"
+                "title": "ก้_Title___ษฺ",
+                "titlePrompt": "ก้_Add custom title______ษฺ"
             },
 			"share": {
 				"extent": "ใช้ขนาดของแแผนที่ปัจจุบัน",

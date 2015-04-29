@@ -17,16 +17,16 @@
 define(
      ({
         map: {
-            error: "試_Unable to create map_驗"
+            error: "無法建立地圖"
         },
         tools: {
             info: {
-                label: "試_Info_驗",
-                tooltip: "試_Toggle map info_驗"
+                label: "資訊",
+                tooltip: "切換地圖資訊"
             },
             sync: {
-                label: "試_Sync Map Extent_驗",
-                tooltip: "試_Sync to extent of this map_驗"
+                label: "同步地圖範圍",
+                tooltip: "與此地圖的範圍保持同步"
             }
         }
     })

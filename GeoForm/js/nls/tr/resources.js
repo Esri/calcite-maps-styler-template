@@ -41,7 +41,7 @@
       }
     },
     user: {
-      all: "ı_All_İ",
+      all: "ı_All__İ",
       mgrs: "MGRS",
       usng: "USNG",
       utm: "UTM",
@@ -120,9 +120,8 @@
       fileTooLargeError: "Dosya eklenemeyecek kadar büyük",
       exceededFileCountError: "İzin verilen ek sayısı üst sınırı aşıldı",
       selectFileTitle: "Dosya seç",
-      btnSelectFileText: "ı_Select File_İ",
-      btnViewSubmissions: "Gönderimleri Görüntüle",
-      dateFormat: "DD/MM/YYYY h:mm a"
+      btnSelectFileText: "ı_Select File____İ",
+      btnViewSubmissions: "Gönderimleri Görüntüle"
     },
     builder: {
       invalidUser: "Üzgünüz, bu öğeyi görüntüleme izniniz yok",
@@ -151,8 +150,8 @@
       layerTabTitleText: "Düzenlenebilir Katman Seç",
       selectLayerLabelText: "Katman",
       selectLayerDefaultOptionText: "Katman seç",
-      enableBasemapToggle: "ı_Show Basemap Toggle_İ",
-      enableBasemapToggleDescription: "ı_You can configure the GeoForm to Show/Hide the Basemap Toggle_İ",
+      enableBasemapToggle: "ı_Show Basemap Toggle_______İ",
+      enableBasemapToggleDescription: "ı_You can configure the GeoForm to Show/Hide the Basemap Toggle___________________İ",
       defaultBasemap: "Altlık Harita Geçişi",
       secondaryBasemap: "Varsayılan Altlık Harita",
       detailsTabTitleText: "Form Ayrıntıları",
@@ -235,7 +234,7 @@
       allLayerSelectOptionText: "Tümü",
       disableViewer: "Görüntüleyiciyi Devre Dışı Bırak",
       disableViewerDescription: "GeoForm öğesini, Görüntüleyiciyi devre dışı bırakacak/etkinleştirecek biçimde yapılandırabilirsiniz",
-      displayFieldHintText: "ı_Selected display field will be shown in the viewer as a title_İ"
+      displayFieldHintText: "ı_Selected display field will be shown in the viewer as a title___________________İ"
     },
     viewer: {
       geocoderCancelText: "İptal",

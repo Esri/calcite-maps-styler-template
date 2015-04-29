@@ -41,7 +41,7 @@
       }
     },
     user: {
-      all: "כן_All_ש",
+      all: "כן_All__ש",
       mgrs: "MGRS",
       usng: "USNG",
       utm: "UTM",
@@ -120,9 +120,8 @@
       fileTooLargeError: "הקובץ גדול מדי ולא ניתן לצרף אותו",
       exceededFileCountError: "חריגה מהמספר המרבי המותר של קבצים מצורפים",
       selectFileTitle: "בחר קובץ",
-      btnSelectFileText: "כן_Select File_ש",
-      btnViewSubmissions: "הצג הגשות",
-      dateFormat: "MM/DD/YYYY‏ h:mm a"
+      btnSelectFileText: "כן_Select File____ש",
+      btnViewSubmissions: "הצג הגשות"
     },
     builder: {
       invalidUser: "מצטערים, איך לך הרשאה לצפייה בפריט זה",
@@ -151,8 +150,8 @@
       layerTabTitleText: "בחר שכבה ניתנת לעריכה",
       selectLayerLabelText: "שכבה",
       selectLayerDefaultOptionText: "בחר שכבה",
-      enableBasemapToggle: "כן_Show Basemap Toggle_ש",
-      enableBasemapToggleDescription: "כן_You can configure the GeoForm to Show/Hide the Basemap Toggle_ש",
+      enableBasemapToggle: "כן_Show Basemap Toggle_______ש",
+      enableBasemapToggleDescription: "כן_You can configure the GeoForm to Show/Hide the Basemap Toggle___________________ש",
       defaultBasemap: "שנה מצב מפת בסיס",
       secondaryBasemap: "מפת בסיס המהווה ברירת מחדל",
       detailsTabTitleText: "פרטי טופס",
@@ -235,7 +234,7 @@
       allLayerSelectOptionText: "הכל",
       disableViewer: "השבת צפיין",
       disableViewerDescription: "אתה יכול להגדיר את ה-GeoForm להשבית/להפעיל את הצפיין",
-      displayFieldHintText: "כן_Selected display field will be shown in the viewer as a title_ש"
+      displayFieldHintText: "כן_Selected display field will be shown in the viewer as a title___________________ש"
     },
     viewer: {
       geocoderCancelText: "ביטול",

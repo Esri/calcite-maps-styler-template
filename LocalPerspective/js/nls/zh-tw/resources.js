@@ -17,25 +17,25 @@
 define(
     ({
       "map" : {
-         "error" : "試_Unable to create map_驗"
+         "error" : "無法建立地圖"
       },
       "days" : {
-         "now" : "試_NOW_驗",
-         "sun" : "試_SUN_驗",
-         "mon" : "試_MON_驗",
-         "tue" : "試_TUE_驗",
-         "wed" : "試_WED_驗",
-         "thu" : "試_THU_驗",
-         "fri" : "試_FRI_驗",
-         "sat" : "試_SAT_驗"
+         "now" : "目前",
+         "sun" : "星期日",
+         "mon" : "星期一",
+         "tue" : "星期二",
+         "wed" : "星期三",
+         "thu" : "星期四",
+         "fri" : "星期五",
+         "sat" : "星期六"
       },
       "tooltips" : {
-         "logo" : "試_Logo_驗",
-         "menu" : "試_Menu_驗",
-         "close" : "試_Close_驗",
-         "previous" : "試_Previous_驗",
-         "next" : "試_Next_驗",
-         "directions" : "試_Directions_驗"
+         "logo" : "標誌",
+         "menu" : "功能表",
+         "close" : "關閉",
+         "previous" : "上一步",
+         "next" : "下一步",
+         "directions" : "方向"
       }
    })
 );
