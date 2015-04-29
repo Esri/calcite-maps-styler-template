@@ -28,7 +28,7 @@ define({
   "proxyurl": "",
   "bingKey": "", //Enter the url to your organizations bing maps key if you want to use bing basemaps
   //Defaults to arcgis.com. Set this value to your portal or organization host name.
-  "sharinghost": location.protocol + "//" + "devext.arcgis.com",
+  "sharinghost": location.protocol + "//" + "www.arcgis.com",
   "units": null,
   "time": true,
   //Overwrite the calculated date time format with a custom value. 
