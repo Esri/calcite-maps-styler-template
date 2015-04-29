@@ -128,6 +128,23 @@
                "fieldName": "slidercolor",
                "tooltip": "Color for the time slider bar",
                "label": "Time slider color"
+            }, {
+               "type": "string",
+               "fieldName": "timeposition",
+               "tooltip": "Select location for time control",
+               "label": "Time control location",
+               "options":[
+                  {
+                     "label":"Bottom center",
+                     "value":"bottom-center"
+                  },{
+                     "label": "Bottom right",
+                     "value": "bottom-right"
+                  },{
+                     "label": "Bottom left",
+                     "value": "bottom-left"
+                  }
+               ]
             }
          ]
       },
@@ -148,28 +165,6 @@
                "type":"boolean",
                "fieldName":"scale",
                "label":"Add scalebar"
-            }
-         ]
-      },{
-         "category": "Positioning",
-         "fields":[
-            {
-               "type": "string",
-               "fieldName": "timeposition",
-               "tooltip": "Select location for time control",
-               "label": "Time control location",
-               "options":[
-                  {
-                     "label":"Bottom center",
-                     "value":"bottom-center"
-                  },{
-                     "label": "Bottom right",
-                     "value": "bottom-right"
-                  },{
-                     "label": "Bottom left",
-                     "value": "bottom-left"
-                  }
-               ]
             }
          ]
       },{
