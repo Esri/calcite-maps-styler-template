@@ -463,7 +463,9 @@ declare, lang, query, on, string, locale, domConstruct, array, arcgisUtils, esri
             } else {
                 //hide play and slider controls and add message about no 
                 //time 
+                domClass.remove(dom.byId("timeControls"), "controlCont");
                 domClass.add(dom.byId("timeControls"), "hide");
+                domClass.add("timeContainer", "window-bottom-center");
                 dom.byId("timeSliderDiv").innerHTML = this.config.i18n.time.enableTimeMessage;
                 domClass.add(dom.byId("timeSliderDiv"), "error-text");
             }
