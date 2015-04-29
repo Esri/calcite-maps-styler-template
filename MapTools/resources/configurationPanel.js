@@ -26,6 +26,13 @@
                "tooltip": "Specify title font size",
                "fieldName": "titlefontsize",
                "placeHolder": "20px"
+            },{
+               "type": "paragraph",
+               "value": "Specify a custom logo image and link. If you check Logo in header the logo image will display to the left of the map title. If you don't select this the logo will be displayed in the lower-right corner of the map."
+            },{
+               "label": "Logo in header",
+               "fieldName": "logointitle",
+               "type": "boolean"
             },
             {  
                "label":"Map logo:",
@@ -288,6 +295,7 @@
       "printlayouts":true,
       "printlegend":true,
       "iconcolortheme":"#fff",
+      "logointitle": false,
       "color":"#fff",
       "titlecolor":"#333",
       "theme":"#545454"

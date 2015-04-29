@@ -425,7 +425,7 @@ declare, win, array, Color, all, Deferred, lang, domUtils, esriRequest, esriLang
                 }, domConstruct.create("div"));
 
 
-                domConstruct.place(titleNode, printDiv);
+                domConstruct.place(titleNode, "printDiv");
 
                 this.config.printformat = this.config.printformat.toLowerCase();
                 if (this.config.printlegend) {
@@ -763,7 +763,7 @@ declare, win, array, Color, all, Deferred, lang, domUtils, esriRequest, esriLang
             var options = {
                 slider: this.config.zoom,
                 sliderPosition: this.config.zoom_position,
-                logo: (this.config.logoimage === null) ? true : false
+                logo: (this.config.logoimage === null || this.config.logointitle === true) ? true : false
             };
 
             //specify center and zoom if provided as url params 
@@ -787,24 +787,51 @@ declare, win, array, Color, all, Deferred, lang, domUtils, esriRequest, esriLang
                 this.config.response = response;
 
                 if (this.config.logoimage) {
+                    var logoNode = null;
 
-                    query(".esriControlsBR").forEach(lang.hitch(this, function (node) {
-                        var link = null;
-                        if (this.config.logolink) {
-                            link = domConstruct.create("a", {
-                                href: this.config.logolink,
-                                target: "_blank"
-                            }, node);
+                    if (this.config.logointitle === true && this.config.showtitle) {
+                        //add logo to title 
+                        logoNode = domConstruct.create("div", {
+                            id: "title-logo"
+                        });
+                        domConstruct.place(logoNode, dom.byId("header"), "first");
+                        //resize logo if font-size is resized. 
+                        if (this.config.titlefontsize) {
+                            domStyle.set(logoNode, "width", this.config.titlefontsize);
+                            domStyle.set(logoNode, "height", this.config.titlefontsize);
+                            domStyle.set(logoNode, "line-height", this.config.titlefontsize);
                         }
 
-                        var logoimg = domConstruct.create("img", {
-                            width: "65px",
-                            height: "36px",
-                            src: this.config.logoimage,
-                            "class": "logo"
-                        }, link || node);
 
-                    }));
+                    } else {
+                        //add logo to map 
+                        query(".esriControlsBR").forEach(lang.hitch(this, function (node) {
+                            logoNode = node;
+                        }));
+                    }
+
+
+                    var link = null;
+                    if (this.config.logolink) {
+                        link = domConstruct.create("a", {
+                            href: this.config.logolink,
+                            target: "_blank"
+                        }, logoNode);
+                    }
+
+                    domConstruct.create("img", {
+                        width: "65px",
+                        height: "36px",
+                        id: "logo-image",
+                        src: this.config.logoimage,
+                        "class": "logo"
+                    }, link || logoNode);
+                    if (this.config.titlefontsize) {
+                        query("#logo-image").forEach(lang.hitch(this, function (node) {
+                            domStyle.set(node, "width", this.config.titlefontsize);
+                            domStyle.set(node, "height", this.config.titlefontsize);
+                        }));
+                    }
                 }
 
 
@@ -827,8 +854,8 @@ declare, win, array, Color, all, Deferred, lang, domUtils, esriRequest, esriLang
                     var title_node = dom.byId("titleDiv");
                     title_node.innerHTML = this.config.title;
 
-                    if(this.config.titlefontsize){
-                        domStyle.set(title_node, "font-size", this.config.titlefontsize);    
+                    if (this.config.titlefontsize) {
+                        domStyle.set(title_node, "font-size", this.config.titlefontsize);
                     }
                 } else {
                     domClass.add(document.body, "no-title");
