@@ -16,6 +16,8 @@ define([], function() {
         //Theme defines the background color of the title bar and also the background color of the popup
         //title bar. 
         "theme": "#949494",
+        "find": null,
+        "feature":null,
         //Specify the color used for the closeable drawer titles.  
         "paneltheme": "#ededed",
         "bingmapskey": "", //Enter the url to your organizations bing maps key if you want to use bing basemaps

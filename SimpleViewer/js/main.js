@@ -201,6 +201,60 @@ ready, declare, lang, array, Color, arcgisUtils, on, has, sniff, registry, Drawe
 
             }
 
+            //Feature Search or find (if no search widget)
+            if((this.config.find || this.config.feature)){
+                require(["esri/dijit/Search"], lang.hitch(this, function(Search){
+                    //get the search value
+                    var feature = null, find = null, source = null, value = null;
+                    if(this.config.feature){
+                       feature = decodeURIComponent(this.config.feature);
+                        if(feature){
+                          var splitFeature = feature.split(";");
+                          if(splitFeature.length && splitFeature.length !== 3){
+                            splitFeature = feature.split(",");
+                          }
+                          feature = splitFeature;
+                          if(feature && feature.length && feature.length === 3){
+                             var layerId = feature[0],attribute = feature[1], featureId = feature[2],searchLayer = null;
+                             searchLayer = this.map.getLayer(layerId);
+                             if(searchLayer){
+                                source = {
+                                    exactMatch: true,
+                                    outFields: ["*"],
+                                    featureLayer: searchLayer,
+                                    displayField: attribute,
+                                    searchFields: [attribute] 
+                                };
+                                value = featureId;
+                             }
+    
+                          }
+                        }         
+                    }
+                    if(this.config.find){
+                        value = decodeURIComponent(this.config.find);
+                    }
+                    var urlSearch = new Search({
+                        map: this.map
+                    });
+                    urlSearch.sources;
+       
+                    if(source){
+                        urlSearch.set("sources", [source]);
+                    }
+                    urlSearch.on("load", lang.hitch(this, function(){
+                        urlSearch.search(value).then(lang.hitch(this, function(){
+                            on.once(this.map.infoWindow, "hide", lang.hitch(this, function(){
+                                urlSearch.clear();
+                                urlSearch.destroy();
+                            }));
+                        }));
+                    }));
+                    urlSearch.startup();
+        
+                }));
+            }
+
             //Add the location button if enabled
             if (this.config.locate) {
                 var location = new LocateButton({
