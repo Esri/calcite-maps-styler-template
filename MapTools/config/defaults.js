@@ -77,6 +77,8 @@ define({
     "share": false,
     "level": null,
     "center": null,
+    "find": null,
+    "feature": null,
     "basemapgroup": {
         "title": null,
         "owner": null
