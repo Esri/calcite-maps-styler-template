@@ -33,6 +33,8 @@ define({
     //from the javascript/nls/resource files.
     //Note that we've included a placeholder nls folder and a resource file with one error string
     //to show how to setup the strings file.
+    "find": null,
+    "feature": null,
     "localize": true,
     "units": null,
     //Theme defines the background color of the title area and tool dialog
