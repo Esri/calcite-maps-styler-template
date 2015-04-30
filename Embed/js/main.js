@@ -131,7 +131,7 @@ ready, parser, domAttr, domGeometry, on, array, declare, lang, query, dom, domCl
             }
 
             //Feature Search or find (if no search widget)
-            if((this.config.find || this.config.feature) && this.config.search === false){
+            if((this.config.find || this.config.feature)){
                 require(["esri/dijit/Search"], lang.hitch(this, function(Search){
                     //get the search value
                     var feature = null, find = null, source = null, value = null;
