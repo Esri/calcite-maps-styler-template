@@ -139,19 +139,20 @@ ready, parser, domAttr, domGeometry, on, array, declare, lang, query, dom, domCl
                        feature = decodeURIComponent(this.config.feature);
                         if(feature){
                           var splitFeature = feature.split(";");
-                          if(splitFeature.length && splitFeature.length !== 2){
+                          if(splitFeature.length && splitFeature.length !== 3){
                             splitFeature = feature.split(",");
                           }
                           feature = splitFeature;
-                          if(feature && feature.length && feature.length === 2){
-                             var layerId = feature[0], featureId = feature[1],searchLayer = null;
+                          if(feature && feature.length && feature.length === 3){
+                             var layerId = feature[0],attribute = feature[1], featureId = feature[2],searchLayer = null;
                              searchLayer = this.map.getLayer(layerId);
                              if(searchLayer){
                                 source = {
                                     exactMatch: true,
+                                    outFields: ["*"],
                                     featureLayer: searchLayer,
-                                    displayField: searchLayer.objectIdField,
-                                    searchFields: [searchLayer.objectIdField]
+                                    displayField: attribute,//searchLayer.objectIdField,
+                                    searchFields: [attribute] //[searchLayer.objectIdField]
                                 };
                                 value = featureId;
                              }
@@ -169,9 +170,6 @@ ready, parser, domAttr, domGeometry, on, array, declare, lang, query, dom, domCl
                     });
                     urlSearch.startup();
                     if(source){
-                        if(source.featureLayer && source.featureLayer.infoTemplate){
-                            urlSearch.set("infoTemplate", source.featureLayer.infoTemplate);
-                        }
                         urlSearch.set("sources", [source]);
                     }
                     urlSearch.startup();
