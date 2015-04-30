@@ -21,7 +21,7 @@ mkdir %BUILD_OUTPUT%\Compare\storytelling_tabbed
 mkdir %BUILD_OUTPUT%\CompareMaps
 mkdir %BUILD_OUTPUT%\CrowdsourceReporter
 mkdir %BUILD_OUTPUT%\CrowdsourceManager
-mkdir %BUILD_OUTPUT%\CrowdSourcePolling
+mkdir %BUILD_OUTPUT%\CrowdsourcePolling
 mkdir %BUILD_OUTPUT%\Edit
 mkdir %BUILD_OUTPUT%\Editor
 mkdir %BUILD_OUTPUT%\Editor\Chrome
