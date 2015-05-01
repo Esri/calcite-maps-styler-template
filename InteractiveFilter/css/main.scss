@@ -1,6 +1,8 @@
 /* Main Application */
 @import "template_mixin.scss";
+@import "Filter.scss";
 @import "Drawer.scss";
+
 html,body {
     padding: 0;
     margin: 0;

@@ -29,17 +29,6 @@
   }
 
 }
-.styled-select {
-  padding-top: 5px;
-}
-.styled-select select {
-  width: 280px;
-  background: transparent;
-  padding: 5px;
-  height: 34px;
-  font: 16px Arial, Helvetica !important;
-}
-
 .esriRTL .top-bar-title{
   float:right;
   padding-right:10px;
@@ -50,32 +39,7 @@
   left:2px;
   cursor: pointer;
 }
-.cancelButton{
-  cursor: pointer;
-  outline: 0;
-  width: 16px;
-  height: 16px;
-  margin-left:10px;
-  margin-right:4px;
-  display: inline-block;
-  @include no-select;
-}
-.cancelButton:hover{
-  @include opacity(0.3);
-}
-.zoomButton{
-  cursor: pointer;
-  outline: 0;
-  width: 16px;
-  height: 16px;
-  margin-left:10px;
-  margin-right:4px;
-  display: inline-block;
-  @include no-select;
-}
-.zoomButton:hover{
-  @include opacity(0.3);
-}
+
 .hamburger-button:hover{
   @include opacity(0.3);
 }
@@ -92,131 +56,6 @@
   border: 0;
   overflow: hidden;
 }
-/*Filter panel styles */
-  legend {
-    background: none repeat scroll 0 0 transparent;
-    color: #003366;
-    font-size: 1.3 em;
-    font-weight: bold;
-    margin: .5em 0;
-    padding: 0 0.5 em;
-  }
-  .instructions {
-    margin: .5em 0;
-    color: #999;
-  }
-
-  #container {
-    margin: 0 auto;
-    padding: 1em;
-    text-align: left;
-    position: relative;
-  }
-.content-pane-left {
-  width: 0px;
-  max-width: $panel-width;
-  height: 100%;
-  padding: 5px;
-  font-size:1em;
-  margin: 0;
-  border: 0;
-  background: #fff;
-  overflow: hidden;
-  @include transition(width, 250ms, ease);
-  @include respond-to(760){
-    max-width:340px;
-  }
-
-
-}
-  #container.esriRtl {
-    text-align: right;
-  }
-
-  .filter {
-    display: block;
-  }
-
-  .row input {
-      width: 250px;
-      @include respond-to(760){
-        max-width:280px;
-    }
-  }
-
-  .selectedFilter {
-    border: solid 1px #BBFFFF;
-  }
-
-
-  label {
-    width: 100%;
-    padding: 0 .5em .4em 0;
-  }
-
-  #container.esriRtl label.hint {
-    text-align: right;
-    float: right;
-  }
-
-  .hint {
-    font-style: italic;
-    font-size: 9pt;
-    width: 100%;
-    padding: 0 1em .4em .5em;
-    text-align: left;
-    float: left;
-    color: #999;
-
-  }
-
-  #container.esriRtl .row {
-    text-align: right;
-  }
-
-  #container.esriLtr .row {
-    text-align: left;
-  }
-
-  .row {
-    padding: .4em;
-    width: 100%;
-  }
-
-  .clearBoth {
-    width: 100%;
-    height: 1px;
-    margin: 0 0 -1px;
-    clear: both;
-  }
-
-  input {
-    border-color: #ccc;
-    border-style: solid;
-    border-width: 1px;
-    color: #333;
-    padding: 1px;
-    width: 150px;
-    padding:4px;
-    @include border-radius(4px);
-  }
-
-  .loader {
-    position: absolute;
-    top: 50%;
-    right: 50%;
-    z-index: 100;
-    display: none;
-  }
-  .startLoader{
-    display:block;
-  }
-  .submitButton {
-    border:none;
-    font-size: 100%;
-    padding: 9px;
-    cursor: pointer;
-  }
 
 .app-loading .content-pane-left {
   width: 0;

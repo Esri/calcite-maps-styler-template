@@ -2,6 +2,7 @@ var gulp = require("gulp");
 var jshint = require("gulp-jshint");
 var beautify = require("gulp-beautify");
 var sass = require("gulp-sass");
+var compass = require("gulp-compass");
 var cssbeautify = require("gulp-cssbeautify");
 var uncss = require("gulp-uncss"); 
 var minifycss = require("gulp-minify-css");

@@ -1,31 +1,10 @@
+@charset "UTF-8";
 /* Main Application */
-/* Drawer */
-.top-bar {
-  position: absolute;
-  z-index: 36;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 34px;
-  color: #333; }
+.calcite label {
+  margin-bottom: 0 !important; }
 
-.esriRTL .top-bar {
-  left: auto;
-  right: 0; }
-
-.top-bar-title {
-  display: none;
-  font-size: 1.2em;
-  overflow: hidden;
-  margin-left: 40px;
-  margin-top: 6px;
-  max-width: 50%;
-  white-space: nowrap;
-  text-overflow: ellipsis; }
-
-@media only screen and (min-width: 760px) {
-  .top-bar-title {
-    display: block; } }
+.panel_content {
+  padding: 4px; }
 
 .styled-select {
   padding-top: 5px; }
@@ -37,15 +16,8 @@
   height: 34px;
   font: 16px Arial, Helvetica !important; }
 
-.esriRTL .top-bar-title {
-  float: right;
-  padding-right: 10px; }
-
-.hamburger-button {
-  position: absolute;
-  top: 9px;
-  left: 2px;
-  cursor: pointer; }
+.filter-content {
+  padding: 4px; }
 
 .cancelButton {
   cursor: pointer;
@@ -54,13 +26,7 @@
   height: 16px;
   margin-left: 10px;
   margin-right: 4px;
-  display: inline-block;
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none; }
+  display: inline-block; }
 
 .cancelButton:hover {
   opacity: 0.3;
@@ -73,33 +39,11 @@
   height: 16px;
   margin-left: 10px;
   margin-right: 4px;
-  display: inline-block;
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none; }
+  display: inline-block; }
 
 .zoomButton:hover {
   opacity: 0.3;
   filter: alpha(opacity=30); }
-
-.hamburger-button:hover {
-  opacity: 0.3;
-  filter: alpha(opacity=30); }
-
-.esriRTL .hamburger-button {
-  float: right;
-  right: 5px; }
-
-.border-container-outer {
-  width: 100%;
-  height: 100%;
-  padding: 0;
-  margin: 0;
-  border: 0;
-  overflow: hidden; }
 
 /*Filter panel styles */
 legend {
@@ -107,11 +51,11 @@ legend {
   color: #003366;
   font-size: 1.3 em;
   font-weight: bold;
-  margin: 0.5em 0;
+  margin: .5em 0;
   padding: 0 0.5 em; }
 
 .instructions {
-  margin: 0.5em 0;
+  margin: .5em 0;
   color: #999; }
 
 #container {
@@ -158,7 +102,7 @@ legend {
 
 label {
   width: 100%;
-  padding: 0 0.5em 0.4em 0; }
+  padding: 0 .5em .4em 0; }
 
 #container.esriRtl label.hint {
   text-align: right;
@@ -168,7 +112,7 @@ label {
   font-style: italic;
   font-size: 9pt;
   width: 100%;
-  padding: 0 1em 0.4em 0.5em;
+  padding: 0 1em .4em .5em;
   text-align: left;
   float: left;
   color: #999; }
@@ -180,7 +124,7 @@ label {
   text-align: left; }
 
 .row {
-  padding: 0.4em;
+  padding: .4em;
   width: 100%; }
 
 .clearBoth {
@@ -218,6 +162,60 @@ input {
   padding: 9px;
   cursor: pointer; }
 
+/* Drawer */
+.top-bar {
+  position: absolute;
+  z-index: 36;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 34px;
+  color: #333; }
+
+.esriRTL .top-bar {
+  left: auto;
+  right: 0; }
+
+.top-bar-title {
+  display: none;
+  font-size: 1.2em;
+  overflow: hidden;
+  margin-left: 40px;
+  margin-top: 6px;
+  max-width: 50%;
+  white-space: nowrap;
+  text-overflow: ellipsis; }
+
+@media only screen and (min-width: 760px) {
+  .top-bar-title {
+    display: block; } }
+
+.esriRTL .top-bar-title {
+  float: right;
+  padding-right: 10px; }
+
+.hamburger-button {
+  position: absolute;
+  top: 9px;
+  left: 2px;
+  cursor: pointer; }
+
+.hamburger-button:hover {
+  opacity: 0.3;
+  filter: alpha(opacity=30); }
+
+.esriRTL .hamburger-button {
+  float: right;
+  right: 5px; }
+
+.border-container-outer {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  overflow: hidden; }
+
 .app-loading .content-pane-left {
   width: 0; }
 
@@ -244,7 +242,7 @@ html, body {
   margin: 0;
   height: 100%;
   width: 100%;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Arial,Helvetica,sans-serif;
   color: #545454; }
 
 #mapDiv {
@@ -271,13 +269,11 @@ html, body {
   .esriSimpleSlider {
     display: block; } }
 
-#search{
-    position:absolute;
-    top:0;
-    right:0;
-    width:333px;
-}
-
+#search {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 333px; }
 
 .filter-content {
   padding: 4px; }
@@ -290,9 +286,10 @@ html, body {
   .open-drawer {
     display: block; } }
 
-/* Esri Jvascript API*/
+/* Esri Javascript API*/
 .esriPopup .pointer.bottom, .esriPopup .pointer.bottomLeft, .esriPopup .pointer.bottomRight {
   background: #f7f7f7 !important; }
+
 .esriPopup.light .actionsPane .action.zoomTo {
   background-position: 0 -224px; }
 
@@ -306,6 +303,7 @@ html, body {
   width: 12px;
   height: 12px;
   text-indent: -9999px; }
+
 #locateDiv {
   position: absolute;
   top: 55px;
@@ -347,7 +345,7 @@ html, body {
   display: inline-block;
   text-decoration: inherit;
   width: 1em;
-  margin-right: 0.2em;
+  margin-right: .2em;
   text-align: center;
   /* opacity: .8; */
   /* For safety - reset parent styles, that can break glyph codes*/
@@ -357,21 +355,21 @@ html, body {
   line-height: 1em;
   /* Animation center compensation - margins should be symmetric */
   /* remove if not needed */
-  margin-left: 0.2em; }
+  margin-left: .2em; }
 
 .icon-search:before {
   content: '\e800'; }
 
-/* ' ' */
+/* '' */
 .icon-cancel:before {
   content: '\e801'; }
 
-/* '' */
+/* '' */
 .icon-menu:before {
   content: '\e802'; }
 
-/* '' */
+/* '' */
 .icon-buffer:before {
   content: '\e809'; }
 
-/* '	' */
+/* '' */
