@@ -171,15 +171,12 @@ declare, Color, parser, has, query, registry, win, all, lang, arcgisUtils, dom, 
                             }, result.map.id + "_root");
 
                             var sync = domConstruct.create("div", {
+                                "id": "sync_" + i,
                                 "class": "icon-sync",
                                 "title": this.config.i18n.tools.sync.tooltip,
                                 "click": lang.hitch(this, this._syncMaps, result.map)
                             }, container);
-                            //if auto sync is enabled then we'll sync the other 
-                            //maps to the first map in the list
-                            if (this.config.auto_sync && i === 0) {
-                                sync.click();
-                            }
+              
                         }
 
                         //Add the search button if enabled
@@ -304,12 +301,21 @@ declare, Color, parser, has, query, registry, win, all, lang, arcgisUtils, dom, 
 
                     }
                 }
+
+                //Auto sync maps if configured to do so
+                if (this.config.auto_sync) {
+                    query("#sync_0").some(lang.hitch(this,function(node){
+                        node.click();
+                        return true;
+                    }));
+                }
                 //update theme
                 this._updateTheme();
+                //remove after all maps have loaded. 
+                domClass.remove(document.body, "app-loading");
+
             }));
 
-            //remove after all maps have loaded. 
-            domClass.remove(document.body, "app-loading");
         },
         _createCell: function (count, cols, row, i) {
             //Create a cell for each map and size to fit the number of rows
