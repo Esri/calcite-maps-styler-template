@@ -263,15 +263,28 @@ ready, parser, domAttr, domGeometry, on, array, declare, lang, query, dom, domCl
 
                                 });
                             }
+                            //Do we already have a feature layer 
+                            var mapLayer = this.map.getLayer(layer.id);
+                            if(mapLayer && mapLayer.type === "Feature Layer"){
+                                source.featureLayer = mapLayer;
+                                if(mapLayer.infoTemplate){
+                                    source.infoTemplate = mapLayer.infoTemplate;
+                                }
+                            }else{  
+                             //create a new feature layer
+                             source.featureLayer = new FeatureLayer(url);
+                            }
 
-                            source.featureLayer = new FeatureLayer(url);
 
                             source.name = layer.title || layer.name;
+
 
                             source.exactMatch = searchLayer.field.exactMatch;
                             source.searchFields = [searchLayer.field.name];
                             source.displayField = searchLayer.field.name;
+                            source.outFields = ["*"];
                             source.placeholder = searchOptions.hintText;
+                            
                             defaultSources.push(source);
                             searchLayers = true;
                         }
