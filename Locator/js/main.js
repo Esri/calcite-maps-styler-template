@@ -148,12 +148,12 @@ define([
                      proxyUrl : this.config.proxyurl
                   });
                }
-               if (this.config.routeUtility) {
-                  urlUtils.addProxyRule({
-                     urlPrefix : this.config.routeUtility,
-                     proxyUrl : this.config.proxyurl
-                  });
-               }
+               // if (this.config.routeUtility) {
+                  // urlUtils.addProxyRule({
+                     // urlPrefix : this.config.routeUtility,
+                     // proxyUrl : this.config.proxyurl
+                  // });
+               // }
             }
             // document ready
             ready(lang.hitch(this, function() {
@@ -631,11 +631,11 @@ define([
             routeSymbol : routeSym,
             segmentSymbol : segmentSym
          };
-         console.log("Routing", this.config);
-         if (this.config.helperServices.route && this.config.helperServices.route.url)
+         if (this.config.helperServices.route && this.config.helperServices.route.url != "")
             options.routeTaskUrl = this.config.helperServices.route.url;
-         if (this.config.routeUtility)
+         if (this.config.routeUtility != "")
            options.routeTaskUrl = this.config.routeUtility;
+         console.log("Routing", this.config, options);
          this.dirWidget = new Directions(options, "resultsDirections");
          //on(this.dirWidget, "directions-clear", lang.hitch(this, this._directionsCleared));
          on(this.dirWidget, "directions-finish", lang.hitch(this, this._directionsFinished));
