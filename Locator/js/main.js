@@ -326,10 +326,14 @@ define([
 
       // Calculate Offset
       _calculateOffset : function(response) {
-         var lods = response.itemInfo.itemData.baseMap.baseMapLayers[0].layerObject.tileInfo.lods;
-         var lod = lods[this.config.defaultZoomLevel || 13];
-         var res = lod.resolution;
-         this.offset = res * 320;
+         try {
+            var lods = response.itemInfo.itemData.baseMap.baseMapLayers[0].layerObject.tileInfo.lods;
+            var lod = lods[this.config.defaultZoomLevel || 13];
+            var res = lod.resolution;
+            this.offset = res * 320;
+         } catch (e) {
+            this.offset = 320;
+         }
       },
 
       // Map Loaded - Map is ready
