@@ -622,6 +622,7 @@ define([
             //maxStops : 2,
             showTravelModesOption : false,
             showTrafficOption : true,
+            geocoderOptions : geocoderOptions,
             routeParams : {
                //directionsLanguage : userLang,
                directionsLengthUnits : units
