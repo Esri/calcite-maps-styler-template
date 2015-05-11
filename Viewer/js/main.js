@@ -293,7 +293,6 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
                     return;
                 }
 
-
                 //add field infos if necessary. Field infos will contain hints if defined in the popup and hide fields where visible is set
                 //to false. The popup logic takes care of this for the info window but not the edit window.
                 array.forEach(this.editableLayers, lang.hitch(this, function (layer) {
@@ -722,7 +721,6 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
                     domAttr.set("btnLocate", "data-title", this.config.i18n.tooltips.locate);
                 }
 
-
                 geoLocate.startup();
 
             }
@@ -756,6 +754,18 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
                 var defaultSources = sources.createSources();
 
                 search.set("sources", defaultSources);
+                search.on("select-result", lang.hitch(this, function(){
+                    //if edit tool is enabled we'll have to delete/create 
+                    //so info window behaves correctly. 
+                 on.once(this.map.infoWindow, "hide", lang.hitch(this, function(){
+                    search.clear();
+                    if(this.editor){
+                        this._destroyEditor();
+                        this._createEditor();
+                    }
+                 }));
+
+                }));
                 search.startup();
 
                 //set the first non esri layer as active if search layers are defined. 
@@ -811,6 +821,10 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
                             on.once(this.map.infoWindow, "hide", lang.hitch(this, function () {
                                 urlSearch.clear();
                                 urlSearch.destroy();
+                                if(this.editor){
+                                    this._destroyEditor();
+                                    this._createEditor();
+                                }
                             }));
                         }));
                     }));
