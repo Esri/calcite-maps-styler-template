@@ -320,10 +320,12 @@ ready, declare, lang, array, Color, arcgisUtils, on, has, sniff, registry, Drawe
         },
         //create a map based on the input web map id
         _createWebMap: function (itemInfo) {
+            itemInfo = this._setExtent(itemInfo);
+            var mapOptions = {};
+            mapOptions = this._setLevel(mapOptions);
+            mapOptions = this._setCenter(mapOptions);
             arcgisUtils.createMap(itemInfo, "mapDiv", {
-                mapOptions: {
-
-                },
+                mapOptions: mapOptions,
                 editable:false,
                 usePopupManager: true,
                 bingMapsKey: this.config.bingmapskey
@@ -402,6 +404,38 @@ ready, declare, lang, array, Color, arcgisUtils, on, has, sniff, registry, Drawe
 
             this._drawer.resize();
             registry.byId("border_container").resize();
+        },
+    _setLevel: function (options) {
+      var level = this.config.level;
+      //specify center and zoom if provided as url params 
+      if (level) {
+        options.zoom = level;
+      }
+      return options;
+    },
+
+    _setCenter: function (options) {
+      var center = this.config.center;
+      if (center) {
+        var points = center.split(",");
+        if (points && points.length === 2) {
+          options.center = [parseFloat(points[0]), parseFloat(points[1])];
         }
+      }
+      return options;
+    },
+
+    _setExtent: function (info) {
+      var e = this.config.extent;
+      //If a custom extent is set as a url parameter handle that before creating the map
+      if (e) {
+        var extArray = e.split(",");
+        var extLength = extArray.length;
+        if (extLength === 4) {
+          info.item.extent = [[parseFloat(extArray[0]), parseFloat(extArray[1])], [parseFloat(extArray[2]), parseFloat(extArray[3])]];
+        }
+      }
+      return info;
+    }
     });
 });
