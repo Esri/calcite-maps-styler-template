@@ -587,23 +587,18 @@ declare, lang, query, on, string, locale, domConstruct, array, arcgisUtils, esri
         },
         // create a map based on the input web map id
         _createWebMap: function (itemInfo) {
-            var options = {};
-            options.slider = this.config.zoomslider;
+            itemInfo = this._setExtent(itemInfo);
+            var mapOptions = {};
+            mapOptions = this._setLevel(mapOptions);
+            mapOptions = this._setCenter(mapOptions);
+            mapOptions.slider = this.config.zoomslider;
+
             if (this.config.zoomslider === false) {
                 domClass.add(document.body, "nozoom");
             }
-            //specify center and zoom if provided as url params 
-            if (this.config.level) {
-                options.zoom = this.config.level;
-            }
-            if (this.config.center) {
-                var points = this.config.center.split(",");
-                if (points && points.length === 2) {
-                    options.center = [parseFloat(points[0]), parseFloat(points[1])];
-                }
-            }
+  
             arcgisUtils.createMap(itemInfo, "mapDiv", {
-                mapOptions: options,
+                mapOptions: mapOptions,
                 usePopupManager: true,
                 editable: false,
                 bingMapsKey: this.config.bingKey
@@ -619,6 +614,38 @@ declare, lang, query, on, string, locale, domConstruct, array, arcgisUtils, esri
                     domClass.add(dom.byId("timeContainer"), "hide");
                 }
             }), this.reportError);
+        },
+    _setLevel: function (options) {
+      var level = this.config.level;
+      //specify center and zoom if provided as url params 
+      if (level) {
+        options.zoom = level;
+      }
+      return options;
+    },
+
+    _setCenter: function (options) {
+      var center = this.config.center;
+      if (center) {
+        var points = center.split(",");
+        if (points && points.length === 2) {
+          options.center = [parseFloat(points[0]), parseFloat(points[1])];
         }
+      }
+      return options;
+    },
+
+    _setExtent: function (info) {
+      var e = this.config.extent;
+      //If a custom extent is set as a url parameter handle that before creating the map
+      if (e) {
+        var extArray = e.split(",");
+        var extLength = extArray.length;
+        if (extLength === 4) {
+          info.item.extent = [[parseFloat(extArray[0]), parseFloat(extArray[1])], [parseFloat(extArray[2]), parseFloat(extArray[3])]];
+        }
+      }
+      return info;
+    }
     });
 });
