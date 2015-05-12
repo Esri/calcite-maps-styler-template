@@ -808,38 +808,17 @@ declare, win, array, Color, all, Deferred, lang, domUtils, esriRequest, esriLang
         },
         // create a map based on the input web map id
         _createWebMap: function (itemInfo) {
-
-            //modify the extent if provided via url params
-            if (this.config.extent) {
-                var extent = decodeURIComponent(this.config.extent).split(",");
-                if (extent && extent.length && extent.length === 4) {
-                    itemInfo.item.extent = [
-                        [parseFloat(extent[0]), parseFloat(extent[1])],
-                        [parseFloat(extent[2]), parseFloat(extent[3])]
-                    ];
-                }
-            }
-
-            //Define map options
-            var options = {
+            itemInfo = this._setExtent(itemInfo);
+            var mapOptions = {
                 slider: this.config.zoom,
                 sliderPosition: this.config.zoom_position,
                 logo: (this.config.logoimage === null || this.config.logointitle === true) ? true : false
             };
+            mapOptions = this._setLevel(mapOptions);
+            mapOptions = this._setCenter(mapOptions);
 
-            //specify center and zoom if provided as url params 
-            if (this.config.level) {
-                options.zoom = this.config.level;
-            }
-            if (this.config.center) {
-                var points = this.config.center.split(",");
-                if (points && points.length === 2) {
-                    options.center = [parseFloat(points[0]), parseFloat(points[1])];
-                }
-
-            }
             arcgisUtils.createMap(itemInfo, "mapDiv", {
-                mapOptions: options,
+                mapOptions: mapOptions,
                 usePopupManager: true,
                 editable: this.config.editable,
                 bingMapsKey: this.config.bingKey
@@ -1216,6 +1195,38 @@ declare, win, array, Color, all, Deferred, lang, domUtils, esriRequest, esriLang
             }
 
 
+        },
+    _setLevel: function (options) {
+      var level = this.config.level;
+      //specify center and zoom if provided as url params 
+      if (level) {
+        options.zoom = level;
+      }
+      return options;
+    },
+
+    _setCenter: function (options) {
+      var center = this.config.center;
+      if (center) {
+        var points = center.split(",");
+        if (points && points.length === 2) {
+          options.center = [parseFloat(points[0]), parseFloat(points[1])];
         }
+      }
+      return options;
+    },
+
+    _setExtent: function (info) {
+      var e = this.config.extent;
+      //If a custom extent is set as a url parameter handle that before creating the map
+      if (e) {
+        var extArray = e.split(",");
+        var extLength = extArray.length;
+        if (extLength === 4) {
+          info.item.extent = [[parseFloat(extArray[0]), parseFloat(extArray[1])], [parseFloat(extArray[2]), parseFloat(extArray[3])]];
+        }
+      }
+      return info;
+    }
     });
 });
