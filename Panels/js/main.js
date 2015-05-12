@@ -272,7 +272,8 @@ function(
                     //turn the slider off, display info windows, disable wraparound 180, slider position and more.
                 },
                 editable: false,
-                bingMapsKey: this.config.bingmapskey
+                bingMapsKey: this.config.bingmapskey,
+                usePopupManager: true
             }).then(lang.hitch(this, function(response) {
                 //Once the map is created we get access to the response which provides important info
                 //such as the map, operational layers, popup info and more. This object will also contain
