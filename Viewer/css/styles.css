@@ -351,10 +351,13 @@ html, body {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#4D000000,endColorstr=#4D000000);
   zoom: 1;
   color: #fff; }
-
+@media only screen and (max-width: 400px){
+  .arcgisSearch .searchGroup .searchInput{
+    width:130px;
+  }
+}
 @media only screen and (min-width: 800px) {
   .arcgisSearch .searchGroup .searchInput {
-    max-width: 190px;
     display: block; } }
 
 .arcgisSearch .searchClear {
