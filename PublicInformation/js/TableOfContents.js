@@ -71,7 +71,7 @@ define([
       postCreate: function () {
         var _self = this;
         // when checkbox is clicked
-        this.own(on(this._layersNode, "." + this.css.checkbox + ":change", function () {
+        this.own(on(this._layersNode, "." + this.css.checkbox + ":click", function () {
           var data, subData;
           // layer index
           data = domAttr.get(this, "data-layer-index");
@@ -95,6 +95,7 @@ define([
           }
         } else {
           this._init();
+
         }
       },
 
@@ -127,10 +128,6 @@ define([
         var layers = this.layers;
         // store nodes here
         this._nodes = [];
-        // kill events
-        this._removeEvents();
-        // clear node
-        this._layersNode.innerHTML = "";
         var promises = [];
         // if we got layers
         if (layers && layers.length) {
@@ -141,8 +138,10 @@ define([
         // wait for layers to load or fail
         var pL = new promiseList(promises).always(lang.hitch(this, function (response) {
           this._loadedLayers = response;
+          this._removeEvents();
           this._createLayerNodes();
           this._setLayerEvents();
+          this.emit("refresh", {});
         }));
         // return promise
         return pL;
@@ -243,6 +242,8 @@ define([
       },
 
       _createLayerNodes: function () {
+        // clear node
+        this._layersNode.innerHTML = "";
         var loadedLayers = this._loadedLayers;
         // create nodes for each layer
         for (var i = 0; i < loadedLayers.length; i++) {
@@ -258,7 +259,7 @@ define([
                 className: this.css.layer
               });
               // currently visible layer
-              if (!layer.visibleAtMapScale) {
+              if (layer && !layer.visibleAtMapScale) {
                 domClass.add(layerNode, this.css.layerScaleInvisible);
               }
               domConstruct.place(layerNode, this._layersNode, "first");
@@ -281,24 +282,24 @@ define([
                 type: "checkbox",
                 id: id,
                 "data-layer-index": layerIndex,
-                checked: status,
                 className: this.css.checkbox
               }, titleContainerNode);
+              domAttr.set(checkboxNode, "checked", status);
               // optional settings icon
               var settingsNode;
               if (layerInfo.settingsId) {
                 settingsNode = domConstruct.create("div", {
                   id: layerInfo.settingsId,
-                  className: this.css.icon + " " + this.css.settingsIcon + " " + this.css.settings,
+                  className: this.css.icon + " " + this.css.settingsIcon + " " + this.css.settings
                 }, titleContainerNode);
               }
               // Title text
               var title = this._getLayerTitle(response);
               var labelNode = domConstruct.create("label", {
-                for: id,
                 className: this.css.label,
                 textContent: title
               }, titleContainerNode);
+              domAttr.set(labelNode, "for", id);
               // clear css
               var clearNode = domConstruct.create("div", {
                 className: this.css.clear
@@ -385,16 +386,16 @@ define([
                       id: subId,
                       "data-layer-index": layerIndex,
                       "data-sublayer-index": subLayerIndex,
-                      checked: subChecked,
                       className: this.css.checkbox
                     }, subTitleContainerNode);
+                    domAttr.set(subCheckboxNode, "checked", subChecked);
                     // subLayer Title text
                     var subTitle = subLayer.name || "";
                     var subLabelNode = domConstruct.create("label", {
-                      for: subId,
                       className: this.css.label,
                       textContent: subTitle
                     }, subTitleContainerNode);
+                    domAttr.set(subLabelNode, "for", subId);
                     // subLayer clear css
                     var subClearNode = domConstruct.create("div", {
                       className: this.css.clear
@@ -430,6 +431,15 @@ define([
         this._layerEvents = [];
       },
 
+      _setMapEvents: function () {
+        this.own(on(this.map, "layer-add", lang.hitch(this, function () {
+          this.refresh();
+        })));
+        this.own(on(this.map, "layer-remove", lang.hitch(this, function () {
+          this.refresh();
+        })));
+      },
+
       _toggleVisible: function (index, subIndex, visible) {
         // if its a sublayer
         if (subIndex !== null) {
@@ -455,7 +465,7 @@ define([
         // layer is a feature collection
         if (featureCollection) {
           // all subLayers
-          var fcLayers = layer.featureCollection.layers;
+          var fcLayers = response.layerInfo.featureCollection.layers;
           // current layer object to setup event for
           layer = fcLayers[subLayerIndex].layerObject;
         } else {
@@ -666,6 +676,7 @@ define([
       _init: function () {
         this._visible();
         this.refresh().always(lang.hitch(this, function () {
+          this._setMapEvents();
           this.set("loaded", true);
           this.emit("load", {});
         }));
