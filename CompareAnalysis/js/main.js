@@ -15,8 +15,8 @@
  | See the License for the specific language governing permissions and
  | limitations under the License.
  */
-define(["dojo/_base/declare", "dojo/_base/Color", "dojo/parser", "dojo/has", "dojo/query", "dijit/registry", "dojo/window", "dojo/promise/all", "dojo/_base/lang", "esri/arcgis/utils", "dojo/dom", "dojo/dom-attr", "dojo/dom-construct", "dojo/dom-style", "dojo/dom-class", "dojo/on", "esri/dijit/Legend", "esri/layers/FeatureLayer", "esri/dijit/Search", "esri/tasks/locator", "dojo/_base/array", "esri/dijit/HomeButton", "esri/lang", "dijit/layout/ContentPane", "dojox/layout/ExpandoPane", "dojo/domReady!"], function (
-declare, Color, parser, has, query, registry, win, all, lang, arcgisUtils, dom, domAttr, domConstruct, domStyle, domClass, on, Legend, FeatureLayer, Search, Locator, array, HomeButton, esriLang, ContentPane, ExpandoPane) {
+define(["dojo/_base/declare", "dojo/_base/Color", "dojo/parser", "dojo/has", "dojo/query", "dijit/registry", "dojo/window", "dojo/promise/all", "dojo/_base/lang", "esri/arcgis/utils", "dojo/dom", "dojo/dom-attr", "dojo/dom-construct", "dojo/dom-style", "dojo/dom-class", "dojo/on", "esri/dijit/Legend", "esri/layers/FeatureLayer", "esri/dijit/Search", "esri/tasks/locator", "dojo/_base/array", "esri/dijit/HomeButton", "esri/lang", "dijit/layout/ContentPane", "application/SearchSources", "dojox/layout/ExpandoPane", "dojo/domReady!"], function (
+declare, Color, parser, has, query, registry, win, all, lang, arcgisUtils, dom, domAttr, domConstruct, domStyle, domClass, on, Legend, FeatureLayer, Search, Locator, array, HomeButton, esriLang, ContentPane, SearchSources, ExpandoPane) {
     return declare(null, {
         config: {},
         mapInfo: [],
@@ -180,120 +180,22 @@ declare, Color, parser, has, query, registry, win, all, lang, arcgisUtils, dom, 
 
                         //Add the search button if enabled
                         if (this.config.search) {
-                            // require(["esri/dijit/Search", "esri/tasks/locator","dojo/_base/array"], lang.hitch(this, function (Search, Locator,array) {
-                            //  if (!Search && !locator) {
-                            //      return;
-                            //  }
-                            var searchLayers = null;
+
                             var searchContainer = domConstruct.create("div", {
                                 "class": "search-container"
                             }, result.map.id + "_root");
 
-                            var search = new Search({
+                            var searchSources = new SearchSources({
                                 map: result.map,
-                                enableButtonMode: true
-                            }, searchContainer);
-                            var defaultSources = [];
-                            //setup geocoders defined in common config 
-                            if (this.config.helperServices.geocode) {
-                                var geocoders = lang.clone(this.config.helperServices.geocode);
-                                array.forEach(geocoders, lang.hitch(this, function (geocoder) {
-                                    if (geocoder.url.indexOf(".arcgis.com/arcgis/rest/services/World/GeocodeServer") > -1) {
+                                useMapExtent: this.config.searchExtent,
+                                geocoders: this.config.helperServices.geocode || [],
+                                itemData: result.itemInfo.itemData
+                            });
+                            var createdOptions = searchSources.createOptions();
+                            createdOptions.enableButtonMode = true;
 
-                                        geocoder.hasEsri = true;
-                                        geocoder.locator = new Locator(geocoder.url);
-
-                                        geocoder.singleLineFieldName = "SingleLine";
-                                        geocoder.placeholder = "Select a location";
-                                        geocoder.name = geocoder.name || "Esri World Geocoder";
-
-                                        if (this.config.searchExtent) {
-                                            geocoder.searchExtent = result.map.extent;
-                                            geocoder.localSearchOptions = {
-                                                minScale: 300000,
-                                                distance: 50000
-                                            };
-                                        }
-                                        defaultSources.push(geocoder);
-                                    } else if (esriLang.isDefined(geocoder.singleLineFieldName)) {
-
-                                        //Add geocoders with a singleLineFieldName defined 
-                                        geocoder.locator = new Locator(geocoder.url);
-
-                                        defaultSources.push(geocoder);
-                                    }
-                                }));
-                            }
-
-                            //Add search layers defined on the web map item 
-                            if (result.itemInfo.itemData && result.itemInfo.itemData.applicationProperties && result.itemInfo.itemData.applicationProperties.viewing && result.itemInfo.itemData.applicationProperties.viewing.search) {
-                                var searchOptions = result.itemInfo.itemData.applicationProperties.viewing.search;
-
-                                array.forEach(searchOptions.layers, lang.hitch(this, function (searchLayer) {
-                                    //we do this so we can get the title specified in the item
-                                    var operationalLayers = result.itemInfo.itemData.operationalLayers;
-                                    var layer = null;
-                                    array.some(operationalLayers, function (opLayer) {
-                                        if (opLayer.id === searchLayer.id) {
-                                            layer = opLayer;
-                                            return true;
-                                        }
-                                    });
-
-                                    if (layer && layer.hasOwnProperty("url")) {
-                                        var source = {};
-                                        var url = layer.url;
-                                        var name = layer.title || layer.name;
-
-                                        if (esriLang.isDefined(searchLayer.subLayer)) {
-                                            url = url + "/" + searchLayer.subLayer;
-                                            array.some(layer.layerObject.layerInfos, function (info) {
-                                                if (info.id == searchLayer.subLayer) {
-                                                    name += " - " + layer.layerObject.layerInfos[searchLayer.subLayer].name;
-                                                    return true;
-                                                }
-                                            });
-                                        }
-
-                                        source.featureLayer = new FeatureLayer(url);
-
-
-                                        source.name = name;
-
-
-                                        source.exactMatch = searchLayer.field.exactMatch;
-                                        source.displayField = searchLayer.field.name;
-                                        source.searchFields = [searchLayer.field.name];
-                                        source.placeholder = searchOptions.hintText;
-                                        defaultSources.push(source);
-                                        searchLayers = true;
-                                    }
-
-                                }));
-                            }
-
-                            search.set("sources", defaultSources);
-
+                            var search = new Search(createdOptions, searchContainer);
                             search.startup();
-
-                            //set the first non esri layer as active if search layers are defined. 
-                            var activeIndex = 0;
-                            if (searchLayers) {
-                                array.some(defaultSources, function (s, index) {
-                                    if (!s.hasEsri) {
-                                        activeIndex = index;
-                                        return true;
-                                    }
-                                });
-
-
-                                if (activeIndex > 0) {
-                                    search.set("activeSourceIndex", activeIndex);
-                                }
-                            }
-
-
-                            // }));
                         }
 
                     }
