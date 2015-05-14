@@ -46,6 +46,9 @@ define([
 
         postCreate: function () {
             topic.subscribe("portalSignIn", lang.hitch(this, this.portalSignIn));
+            topic.subscribe("onSignIn", lang.hitch(this, this.onSignIn));
+            topic.subscribe("queryGroupItem", dojo.hitch(this, this.queryGroupForItems));
+            topic.subscribe("queryItemInfo", dojo.hitch(this, this.queryItemInfo));
             this._initializeApplication();
         },
 
@@ -54,71 +57,53 @@ define([
         * @memberOf widgets/searchAGOLGroupItems/searchAGOLGroupItems
         */
         initializePortal: function () {
-            // query to check access type of the group
-            esriRequest({
-                // group rest URL
-                url: dojo.configData.values.portalURL + '/sharing/rest/portals/self',
-                content: {
-                    'f': 'json'
-                },
-                callbackParamName: 'callback',
-                load: lang.hitch(this, function (response) {
-                    dojo.locatorURL = response.helperServices.geocode[0].url;
-                    dojo.configData.values.geometryService = response.helperServices.geometry.url;
-                    dojo.privateBaseMapGroup = true;
-                    dojo.BaseMapGroupQuery = response.basemapGalleryGroupQuery;
-                    // check if 'suggest' property is available for geocoder services
-                    if (response.helperServices.geocode[0].suggest) {
-                        dojo.enableGeocodeSuggest = response.helperServices.geocode[0].suggest;
-                    } else {
-                        dojo.enableGeocodeSuggest = true;
-                    }
-                }),
-                error: function (response) {
-                    alert(response.message);
-                    topic.publish("hideProgressIndicator");
+            var def = new Deferred();
+            this.createPortal().then(lang.hitch(this, function () {
+                dojo.locatorURL = this._portal.helperServices.geocode[0].url;
+                dojo.configData.values.geometryService = this._portal.helperServices.geometry.url;
+                dojo.privateBaseMapGroup = true;
+                dojo.BaseMapGroupQuery = this._portal.basemapGalleryGroupQuery;
+                // check if 'suggest' property is available for geocoder services
+                if (this._portal.helperServices.geocode[0].suggest) {
+                    dojo.enableGeocodeSuggest = this._portal.helperServices.geocode[0].suggest;
+                } else {
+                    dojo.enableGeocodeSuggest = true;
                 }
-            });
-
-            // query to check access type of the group
-            esriRequest({
-                // group rest URL
-                url: dojo.configData.values.portalURL + '/sharing/rest/community/groups?q=' + dojo.configData.values.group,
-                content: {
-                    'f': 'json'
-                },
-                callbackParamName: 'callback',
-                load: lang.hitch(this, function (response) {
-                    if (response.results.length > 0) {
-                        // executed if group is public
-                        dojo.isPrivateGroup = false;
-                        dojo.privateBaseMapGroup = true;
-                        this.createPortal().then(lang.hitch(this, function () {
+                esriRequest({
+                    // group rest URL
+                    url: dojo.configData.values.portalURL + '/sharing/rest/community/groups?q=' + dojo.configData.values.group,
+                    content: {
+                        'f': 'json'
+                    },
+                    callbackParamName: 'callback',
+                    load: lang.hitch(this, function (response) {
+                        // to check access type of the group
+                        if (response.results.length > 0) {
+                            // executed if group is public
+                            this.isPrivateGroup = false;
+                            dojo.privateBaseMapGroup = true;
                             this.queryGroup().then(lang.hitch(this, function () {
-                                topic.subscribe("queryGroupItem", dojo.hitch(this._portal, this.queryGroupForItems));
-                                topic.subscribe("queryItemInfo", dojo.hitch(this._portal, this.queryItemInfo));
                                 var leftPanelObj = new LeftPanelCollection();
                                 leftPanelObj.startup();
                             }));
-                        }));
-                    } else {
-                        // executed if group is private
-                        dojo.isPrivateGroup = true;
-                        dojo.privateBaseMapGroup = false;
-                        this.createPortal().then(lang.hitch(this, function () {
-                            topic.subscribe("queryGroupItem", dojo.hitch(this._portal, this.queryGroupForItems));
-                            topic.subscribe("queryItemInfo", dojo.hitch(this._portal, this.queryItemInfo));
+                        } else {
+                            // executed if group is private
+                            this.isPrivateGroup = true;
+                            dojo.privateBaseMapGroup = false;
                             this._setApplicationHeaderIcon();
                             var leftPanelObj = new LeftPanelCollection();
                             leftPanelObj.startup();
-                        }));
+                        }
+                        def.resolve();
+                    }),
+                    error: function (response) {
+                        alert(response.message);
+                        topic.publish("hideProgressIndicator");
+                        def.resolve();
                     }
-                }),
-                error: function (response) {
-                    alert(response.message);
-                    topic.publish("hideProgressIndicator");
-                }
-            });
+                });
+            }));
+            return def;
         },
 
         _initializeApplication: function () {
@@ -145,7 +130,6 @@ define([
         */
         fetchAppIdSettings: function () {
             var def = new Deferred(), settings, info, appSettings;
-
             settings = urlUtils.urlToObject(window.location.href);
             lang.mixin(dojo.configData.values, settings.query);
             if (dojo.configData.values.appid) {
@@ -171,17 +155,16 @@ define([
                     if (IdentityManager.credentials[0]) {
                         dojo.configData.values.token = IdentityManager.credentials[0].token;
                     }
+
                     // check sign-in status
-                    IdentityManager.checkSignInStatus(dojo.configData.values.portalURL).then(lang.hitch(this, function () {
-                        this._setSignInBtnText();
-                    })).otherwise(function () {
-                        // handle when user is not signed-in
-                        query(".signin");
-                    });
-                    // set other config options from app id
-                    dojo.configPrev = lang.clone(dojo.configData.values);
-                    lang.mixin(dojo.configData.values, appSettings);
-                    def.resolve();
+                    var signedIn = IdentityManager.checkSignInStatus(dojo.configData.values.portalURL + "/sharing");
+                    // resolve regardless of signed in or not.
+                    signedIn.promise.always(lang.hitch(this, function (res) {
+                        // set other config options from app id
+                        dojo.configPrev = lang.clone(dojo.configData.values);
+                        lang.mixin(dojo.configData.values, appSettings);
+                        def.resolve(res);
+                    }));
                     /**
                     * on error
                     */
@@ -193,21 +176,6 @@ define([
                 def.resolve();
             }
             return def;
-        },
-
-        /**
-        * change sign-in button text when user is authenticated through oauth
-        * @memberOf widgets/searchAGOLGroupItems/searchAGOLGroupItems
-        */
-        _setSignInBtnText: function () {
-            this._portal = new portal.Portal(dojo.configData.values.portalURL);
-            this.own(on(this._portal, "Load", lang.hitch(this, function () {
-                this._portal.signIn().then(function () {
-                    domAttr.set(query(".esriCTSignIn")[0], "title", nls.title.signOutBtnTitle);
-                    domAttr.set(query(".signin")[0], "innerHTML", nls.signOutText);
-                    domClass.replace(query(".esriCTSignInIcon")[0], "icon-logout", "icon-login");
-                });
-            })));
         },
 
         /**
@@ -254,42 +222,9 @@ define([
             /**
             * portal loaded
             */
-            this.own(on(this._portal, "Load", function () {
+            this.own(on(this._portal, "load", function (response) {
                 def.resolve();
             }));
-            return def;
-        },
-
-        /**
-        * query group to fetch the group details
-        * @memberOf widgets/searchAGOLGroupItems/searchAGOLGroupItems
-        */
-        queryGroup: function () {
-            var _self = this, def = new Deferred();
-            /**
-            * query group info
-            */
-            _self.queryAGOLGroupInfo({
-                /**
-                * Settings
-                */
-                id_group: dojo.configData.values.group
-            }).then(function (data) {
-                if (data) {
-                    if (data.results.length > 0) {
-                        /**
-                        * set group content
-                        */
-                        _self.setGroupContent(data.results[0]);
-                        def.resolve();
-                    } else {
-                        alert(nls.errorMessages.emptyGroup);
-                        def.resolve();
-                    }
-                } else {
-                    def.resolve();
-                }
-            });
             return def;
         },
 
@@ -390,54 +325,44 @@ define([
         * query arcgis group info
         * @memberOf widgets/searchAGOLGroupItems/searchAGOLGroupItems
         */
-        queryAGOLGroupInfo: function (obj) {
-            var _self = this, def = new Deferred(), settings;
+        queryGroup: function (obj) {
+            var def = new Deferred();
 
-            /**
-            * default values
-            */
-            settings = {
-                // set group id for web maps
-                id_group: '',
-                // format
-                dataType: 'json'
-            };
-            /**
-            * If options exist, lets merge them with our default settings
-            */
-            if (obj) {
-                lang.mixin(settings, obj);
-            }
             /**
             * first, request the group to see if it's public or private
             */
             esriRequest({
                 // group rest URL
-                url: dojo.configData.values.portalURL + '/sharing/rest/community/groups/' + settings.id_group,
+                url: dojo.configData.values.portalURL + '/sharing/rest/community/groups/' + dojo.configData.values.group,
                 content: {
-                    'f': settings.dataType
+                    'f': 'json'
                 },
                 callbackParamName: 'callback',
-                load: function () {
+                load: lang.hitch(this, function () {
                     var q, params;
 
-                    // query
-                    q = 'id:"' + settings.id_group + '"';
+                    // query group
+                    q = 'id:"' + dojo.configData.values.group + '"';
                     params = {
                         q: q,
                         token: dojo.configData.values.token,
-                        f: settings.dataType
+                        f: 'json'
                     };
-                    _self._portal.queryGroups(params).then(function (data) {
-                        // fetch basemap group query for private items
-                        dojo.privateBaseMapGroup = true;
-                        if (data.results.length > 0) {
-                            dojo.BaseMapGroupQuery = data.results[0].portal.basemapGalleryGroupQuery;
+                    this._portal.queryGroups(params).then(lang.hitch(this, function (data) {
+                        if (data) {
+                            // fetch basemap group query for private items
+                            dojo.privateBaseMapGroup = true;
+                            if (data.results.length > 0) {
+                                dojo.BaseMapGroupQuery = data.results[0].portal.basemapGalleryGroupQuery;
+                                this.setGroupContent(data.results[0]);
+                            }
+                            dojo.configData.values.baseMapLayers = null;
+                            def.resolve();
+                        } else {
+                            def.resolve();
                         }
-                        dojo.configData.values.baseMapLayers = null;
-                        def.resolve(data);
-                    });
-                },
+                    }));
+                }),
                 error: function (response) {
                     alert(response.message);
                     topic.publish("hideProgressIndicator");
@@ -463,7 +388,8 @@ define([
             } else {
                 params = nextQuery;
             }
-            this.queryItems(params).then(function (data) {
+
+            this._portal.queryItems(params).then(function (data) {
                 deferedObj.resolve(data);
             });
             return deferedObj;
@@ -503,7 +429,6 @@ define([
         * @memberOf widgets/searchAGOLGroupItems/searchAGOLGroupItems
         */
         setSignInContainerText: function () {
-            var _self = this;
             setTimeout(function () {
                 if (query(".dijitDialogTitle")[0]) {
                     query(".dijitDialogTitle")[0].innerHTML = nls.signInText;
@@ -513,12 +438,12 @@ define([
                     domStyle.set(query(".dijitDialogPaneContentArea")[0].childNodes[1], "height", "0px");
                 }
                 if (query(".esriIdSubmit")[0]) {
-                    _self.own(on(query(".esriIdSubmit")[0], "click", lang.hitch(this, function () {
+                    on(query(".esriIdSubmit")[0], "click", lang.hitch(this, function () {
                         if (lang.trim(query(".dijitInputInner")[0].value) === "" && lang.trim(query(".dijitInputInner")[1].value) === "") {
                             domAttr.set(query(".esriErrorMsg")[0], "innerHTML", nls.errorMessages.emptyUsernamePassword);
                             domStyle.set(query(".esriErrorMsg")[0], "display", "block");
                         }
-                    })));
+                    }));
                 }
             }, 1000);
         },
@@ -528,87 +453,55 @@ define([
         * @memberOf widgets/searchAGOLGroupItems/searchAGOLGroupItems
         */
         portalSignIn: function (def, flag) {
-            var _self = this;
             if (!def) {
                 def = new Deferred();
             }
             if (query(".signin")[0]) {
                 if (query(".signin")[0].innerHTML === nls.signInText) {
-                    _self._portal = new portal.Portal(dojo.configData.values.portalURL);
-                    _self.own(on(_self._portal, "Load", function () {
-                        _self._portal.signIn().then(function (loggedInUser) {
-                            if (document.activeElement) {
-                                document.activeElement.blur();
-                            }
-                            domAttr.set(query(".esriCTSignIn")[0], "title", nls.title.signOutBtnTitle);
-                            topic.publish("showProgressIndicator");
-                            if (loggedInUser) {
-                                if (!dojo.configData.values.token) {
-                                    dojo.configData.values.token = loggedInUser.credential.token;
-                                }
-                                if (flag) {
-                                    _self.queryGroup().then(lang.hitch(this, function () {
-                                        domClass.add(query(".esriCTMenuTabRight")[0], "displayBlockAll");
-                                        domClass.add(query(".esriCTInnerRightPanelDetails")[0], "displayNoneAll");
-                                        domClass.remove(query(".esriCTGalleryContent")[0], "displayNoneAll");
-                                        domClass.remove(query(".esriCTInnerRightPanel")[0], "displayNoneAll");
-                                        domClass.remove(query(".esriCTApplicationIcon")[0], "esriCTCursorPointer");
-                                        domClass.remove(query(".esriCTMenuTabLeft")[0], "esriCTCursorPointer");
-                                        topic.publish("queryItemPods");
-                                    }));
-                                } else {
-                                    _self.queryGroup().then(lang.hitch(this, function () {
-                                        var leftPanelObj = new LeftPanelCollection();
-                                        leftPanelObj.startup();
-                                    }));
-                                }
-
-                                domAttr.set(query(".signin")[0], "innerHTML", nls.signOutText);
-                                domClass.replace(query(".esriCTSignInIcon")[0], "icon-logout", "icon-login");
-                                _self.globalUser = loggedInUser;
-                                def.resolve();
-                            }
-                        }, function (e) {
-                            if (e.httpCode === 403) {
-                                alert(nls.errorMessages.notMemberOfOrg);
-                                IdentityManager.destroyCredentials();
-                            }
-                        });
+                    this._portal = new portal.Portal(dojo.configData.values.portalURL);
+                    on(this._portal, "load", lang.hitch(this, function () {
+                        this.onSignIn(def, flag);
                     }));
                 } else {
-                    _self._portal.signOut().then(function () {
-                        if (dojo.configData.values.token) {
-                            dojo.configData.values.token = null;
-                        }
-                        IdentityManager.destroyCredentials();
-                        if (dojo.isPrivateGroup) {
-                            dojo.configData.groupTitle = null;
-                            dojo.configData.groupDescription = null;
-                            dojo.configData.groupIcon = null;
-                            _self._setApplicationHeaderIcon();
-                        }
-
-                        dojo.privateBaseMapGroup = false;
-                        dojo.configData.values.baseMapLayers = null;
-                        domAttr.set(query(".signin")[0], "innerHTML", nls.signInText);
-                        domClass.replace(query(".esriCTSignInIcon")[0], "icon-login", "icon-logout");
-                        _self.globalUser = null;
-                        if (dojo.configPrev) {
-                            dojo.configData.values = dojo.configPrev;
-                        }
-                        if (dojo.configData.values.appid) {
-                            _self.fetchAppIdSettings();
-                        } else {
-                            if (flag) {
-                                _self.portalSignIn(def, true);
-                            } else {
-                                /**
-                                * query to check if the group has any public items to be displayed on sign out
-                                */
-                                def.resolve();
+                    this._portal.signOut().then(lang.hitch(this, function () {
+                        this._portal = new portal.Portal(dojo.configData.values.portalURL);
+                        on(this._portal, "load", lang.hitch(this, function () {
+                            if (dojo.configData.values.token) {
+                                dojo.configData.values.token = null;
                             }
-                        }
-                    });
+                            topic.publish("showProgressIndicator");
+                            IdentityManager.destroyCredentials();
+                            if (this.isPrivateGroup) {
+                                dojo.configData.groupTitle = null;
+                                dojo.configData.groupDescription = null;
+                                dojo.configData.groupIcon = null;
+                                this._setApplicationHeaderIcon();
+                            }
+
+                            dojo.privateBaseMapGroup = false;
+                            dojo.configData.values.baseMapLayers = null;
+                            domAttr.set(query(".signin")[0], "innerHTML", nls.signInText);
+                            domClass.replace(query(".esriCTSignInIcon")[0], "icon-login", "icon-logout");
+                            if (dojo.configPrev) {
+                                dojo.configData.values = dojo.configPrev;
+                            }
+                            if (dojo.configData.values.appid) {
+                                this.fetchAppIdSettings().then(lang.hitch(this, function (response) {
+                                    this.initializePortal();
+                                }));
+                            } else {
+                                if (flag) {
+                                    this.portalSignIn(def, true);
+                                } else {
+                                    /**
+                                    * query to check if the group has any public items to be displayed on sign out
+                                    */
+                                    def.resolve();
+                                    topic.publish("hideProgressIndicator");
+                                }
+                            }
+                        }));
+                    }));
                 }
             }
             topic.publish("setDefaultTextboxValue");
@@ -617,6 +510,54 @@ define([
             }
             this.setSignInContainerText();
             return def;
+        },
+
+        onSignIn: function (def, flag) {
+            this._portal.signIn().then(lang.hitch(this, function (loggedInUser) {
+                if (document.activeElement) {
+                    document.activeElement.blur();
+                }
+                domAttr.set(query(".esriCTSignIn")[0], "title", nls.title.signOutBtnTitle);
+                topic.publish("showProgressIndicator");
+                if (loggedInUser) {
+                    if (!dojo.configData.values.token) {
+                        dojo.configData.values.token = loggedInUser.credential.token;
+                    }
+                    if (flag) {
+                        this.queryGroup().then(lang.hitch(this, function () {
+                            domClass.add(query(".esriCTMenuTabRight")[0], "displayBlockAll");
+                            if (query(".esriCTInnerRightPanelDetails")[0]) {
+                                domClass.add(query(".esriCTInnerRightPanelDetails")[0], "displayNoneAll");
+                            }
+                            if (query(".esriCTGalleryContent")[0]) {
+                                domClass.remove(query(".esriCTGalleryContent")[0], "displayNoneAll");
+                            }
+                            if (query(".esriCTInnerRightPanel")[0]) {
+                                domClass.remove(query(".esriCTInnerRightPanel")[0], "displayNoneAll");
+                            }
+                            domClass.remove(query(".esriCTApplicationIcon")[0], "esriCTCursorPointer");
+                            domClass.remove(query(".esriCTMenuTabLeft")[0], "esriCTCursorPointer");
+                            topic.publish("queryItemPods");
+                        }));
+                    } else {
+                        this.queryGroup().then(lang.hitch(this, function () {
+                            var leftPanelObj = new LeftPanelCollection();
+                            leftPanelObj.startup();
+                        }));
+                    }
+                    domAttr.set(query(".signin")[0], "innerHTML", nls.signOutText);
+                    domClass.replace(query(".esriCTSignInIcon")[0], "icon-logout", "icon-login");
+                    if (def) {
+                        def.resolve();
+                    }
+                }
+            }), function (e) {
+                if (e.httpCode === 403) {
+                    alert(nls.errorMessages.notMemberOfOrg);
+                    IdentityManager.destroyCredentials();
+                }
+            });
         }
     });
 });
+

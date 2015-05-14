@@ -24,13 +24,14 @@ define([
     "dojo/_base/lang",
     "dojo/Deferred",
     "dojo/promise/all",
+    "dojo/topic",
     "dojo/i18n!nls/localizedStrings",
     "dojo/query",
     "dojo/dom-class",
     "esri/urlUtils",
     "esri/arcgis/utils",
     "widgets/searchAGOLGroupItems/searchAGOLGroupItems"
-], function (declare, _WidgetBase, AppHeader, array, lang, Deferred, all, nls, query, domClass, urlUtils, arcgisUtils, PortalSignin) {
+], function (declare, _WidgetBase, AppHeader, array, lang, Deferred, all, topic, nls, query, domClass, urlUtils, arcgisUtils, PortalSignin) {
 
     return declare([_WidgetBase], {
         nls: nls,
@@ -65,19 +66,22 @@ define([
                 deferredArray.push(deferred.promise);
             });
             all(deferredArray).then(lang.hitch(this, function () {
-
                 try {
                     /**
                     * create application header
                     */
-                    var self = this, portalSigninWidgetLoader;
+                    var portalSigninWidgetLoader;
                     // set app ID settings and call init after
                     portalSigninWidgetLoader = new PortalSignin();
-                    portalSigninWidgetLoader.fetchAppIdSettings().then(function () {
-                        portalSigninWidgetLoader.initializePortal();
-                        self._applicationThemeLoader();
-                        self._createApplicationHeader(widgets);
-                    });
+                    portalSigninWidgetLoader.fetchAppIdSettings().then(lang.hitch(this, function (response) {
+                        this._createApplicationHeader(widgets);
+                        portalSigninWidgetLoader.initializePortal().then(lang.hitch(this, function () {
+                            this._applicationThemeLoader();
+                            if (dojo.configData.values.appid && response.token) {
+                                topic.publish("onSignIn", null, true);
+                            }
+                        }));
+                    }));
                 } catch (ex) {
                     alert(nls.errorMessages.widgetNotLoaded);
                 }

@@ -1,4 +1,4 @@
-﻿/*global define,dojo,alert,unescape,ItemInfoPage */
+﻿/*global define,dojo,alert,unescape */
 /*jslint browser:true,sloppy:true,nomen:true,unparam:true,plusplus:true,indent:4 */
 /*
  | Copyright 2014 Esri
@@ -34,9 +34,8 @@ define([
     "dojo/number",
     "dojo/topic",
     "dojo/dom-style",
-    "esri/arcgis/utils",
     "dojo/dom-geometry"
-], function (declare, domConstruct, lang, domAttr, template, _WidgetBase, _TemplatedMixin, _WidgetsInTemplateMixin, nls, ItemDetails, query, domClass, on, Deferred, number, topic, domStyle, utils, domGeom) {
+], function (declare, domConstruct, lang, domAttr, template, _WidgetBase, _TemplatedMixin, _WidgetsInTemplateMixin, nls, ItemDetails, query, domClass, on, Deferred, number, topic, domStyle, domGeom) {
 
     declare("ItemGallery", [_WidgetBase, _TemplatedMixin, _WidgetsInTemplateMixin], {
         templateString: template,
@@ -48,6 +47,8 @@ define([
         postCreate: function () {
             domConstruct.place(this.galleryView, query(".esriCTGalleryContent")[0]);
             this.own(topic.subscribe("createPods", lang.hitch(this, this.createItemPods)));
+
+            // Check if the default layout set in the configuration file is list or grid and display the gallery accordingly
             if (dojo.configData.values.defaultLayout.toLowerCase() === "list") {
                 dojo.gridView = false;
                 domClass.replace(query(".icon-header")[0], "icon-grid", "icon-list");
@@ -60,26 +61,26 @@ define([
                     dojo.gridView = false;
                 }
             }
-
+            // Show more items from the group on click of 'Show more' button
             this.own(on(this.galleryNext, "click", lang.hitch(this, function () {
-                var defObj, _self;
+                var defObj;
                 topic.publish("showProgressIndicator");
                 defObj = new Deferred();
-                _self = this;
                 topic.publish("queryGroupItem", null, null, null, defObj, dojo.nextQuery);
-                defObj.then(function (data) {
+                defObj.then(lang.hitch(this, function (data) {
                     var i;
                     dojo.nextQuery = data.nextQueryParams;
                     for (i = 0; i < data.results.length; i++) {
                         dojo.results.push(data.results[i]);
                     }
-                    _self.createItemPods(data.results);
-                }, function (err) {
+                    this.createItemPods(data.results);
+                }), function (err) {
                     topic.publish("hideProgressIndicator");
                     alert(err.message);
                 });
             })));
 
+            // Handle click event to navigate to gallery view on click of application header, when user is at item details page or map page
             this.own(on(query(".esriCTMenuTabLeft")[0], "click", lang.hitch(this, function () {
                 if (query(".esriCTitemDetails")[0]) {
                     dojo.destroy(query(".esriCTitemDetails")[0]);
@@ -97,8 +98,10 @@ define([
                 }
             })));
 
+            // Resize containers on window resize
             on(window, "resize", lang.hitch(this, function () {
-                var leftPanelDescHeight, containerHeight, innerLeftPanelHeight, tagContainerHeight, descHeight, descContainerHeight;
+                var leftPanelDescHeight, containerHeight, innerLeftPanelHeight, tagContainerHeight, descHeight, descContainerHeight,
+                    listSortMenu, i, j;
                 if (domClass.contains(query(".esriCTInnerLeftPanelBottom")[0], "esriCTInnerLeftPanelBottomShift")) {
                     innerLeftPanelHeight = dojo.window.getBox().h + "px";
                     domStyle.set(query(".esriCTInnerLeftPanelBottom")[0], "height", innerLeftPanelHeight);
@@ -113,6 +116,7 @@ define([
                 containerHeight = (window.innerHeight - domGeom.position(query(".esriCTMenuTab")[0]).h - 20) + "px";
                 domStyle.set(query(".esriCTInnerRightPanel")[0], "height", containerHeight);
 
+                // Resize group description container
                 if (dojo.configData.groupDescription) {
                     if (domStyle.get(query(".esriCTSignInIcon")[0], "display") === "none") {
                         domClass.remove(query(".esriCTGroupDesc")[0], "esriCTLeftTextReadLess");
@@ -127,6 +131,8 @@ define([
                         domStyle.set(query(".esriCTExpand")[0], "display", "block");
                     }
                 }
+
+                // Resize tag cloud container
                 if (dojo.configData.values.showTagCloud) {
                     if (domClass.contains(query(".esriCTSignIn")[0], "displayNone")) {
                         tagContainerHeight = window.innerHeight - (domGeom.position(query(".sortByLabelMbl")[0]).h + domGeom.position(query(".esriCTCategoriesHeader")[0]).h + 40) + "px";
@@ -135,6 +141,25 @@ define([
                         tagContainerHeight = window.innerHeight - (domGeom.position(query(".esriCTCategoriesHeader")[0]).h + domGeom.position(query(".esriCTMenuTab")[0]).h + domGeom.position(query(".esriCTInnerLeftPanelTop")[0]).h + 30) + "px";
                         domStyle.set(query(".esriCTPadding")[0], "height", tagContainerHeight);
                     }
+                }
+                if (query(".esriCTListSelected")[0]) {
+                    setTimeout(lang.hitch(this, function () {
+                        if (query(".esriCTSortMenuListSelected")[0] && domAttr.get(query(".esriCTSortMenuListSelected")[0].parentElement.parentElement, "sortValue") !== dojo.sortBy && domAttr.get(query(".esriCTSortMenuListSelected")[0].parentElement, "sortOrder") !== dojo.sortOrder) {
+                            listSortMenu = query(".esriCTSortMenuListSelected")[0].parentElement.parentElement.parentElement;
+                            for (i = 0; i < listSortMenu.children.length; i++) {
+                                if (domAttr.get(listSortMenu.children[i], "sortValue") === dojo.sortBy) {
+                                    for (j = 0; j < listSortMenu.children[i].children.length; j++) {
+                                        if (domAttr.get(listSortMenu.children[i].children[j], "sortOrder") === dojo.sortOrder) {
+                                            domClass.remove(query(".esriCTSortMenuListSelected")[0], "esriCTSortMenuListSelected");
+                                            domClass.add(listSortMenu.children[i].children[j].children[0], "esriCTSortMenuListSelected");
+                                            break;
+                                        }
+                                    }
+                                    break;
+                                }
+                            }
+                        }
+                    }), 100);
                 }
             }));
             var panelHeight = (window.innerHeight - domGeom.position(query(".esriCTMenuTab")[0]).h - 20) + "px";
@@ -151,6 +176,7 @@ define([
             if (clearContainerFlag) {
                 domConstruct.empty(this.itemPodsList);
             }
+            // Display 'show more' button if number of items in the group are more than 100
             if (query(".esriCTShowMoreResults")[0]) {
                 if (itemResults.length < 100 || (itemResults.length === 100 && dojo.groupItems.length === 100)) {
                     domClass.replace(query(".esriCTShowMoreResults")[0], "displayNoneAll", "displayBlockAll");
@@ -158,7 +184,7 @@ define([
                     domClass.replace(query(".esriCTShowMoreResults")[0], "displayBlockAll", "displayNoneAll");
                 }
             }
-
+            // Display gallery in list view or grid view
             for (i = 0; i < itemResults.length; i++) {
                 if (!dojo.gridView) {
                     divPodParentList = domConstruct.create('div', { "class": "esriCTApplicationListBox" }, this.itemPodsList);
@@ -188,6 +214,7 @@ define([
             spanItemType = domConstruct.create('div', { "class": "esriCTInnerGridItemType" }, divItemType);
             domAttr.set(spanItemType, "innerHTML", (itemResult.type) || (nls.showNullValue));
             domAttr.set(spanItemType, "title", (itemResult.type) || (nls.showNullValue));
+            // If showViews flag is set to true in the configuration file, display number of times the item has been viewed
             if (dojo.configData.values.showViews) {
                 divItemWatchEye = domConstruct.create('div', { "class": "esriCTEyeNumViews esriCTEyeNumViewsGrid" }, divItemType);
                 domConstruct.create('span', { "class": "esriCTEyeIcon icon-eye" }, divItemWatchEye);
@@ -197,9 +224,10 @@ define([
             } else {
                 domClass.add(spanItemType, "esriCTGridItemTypeNoViews");
             }
+            // Handle item title click in grid layout
             this.own(on(divItemTitleText, "click", lang.hitch(this, function () {
                 topic.publish("showProgressIndicator");
-                this.showInfoPage(this, itemResult, true);
+                this.showInfoPage(itemResult, true);
             })));
         },
 
@@ -229,12 +257,14 @@ define([
             if (dojo.configData.values.displaySharingAttribute) {
                 this._accessLogoType(itemResult, divTagContent);
             }
+
+            // Handle thumbnail image click
             this.own(on(divThumbnailImage, "click", lang.hitch(this, function () {
                 dataType = itemResult.type.toLowerCase();
                 if (((dataType !== "map service") && (dataType !== "web map") && (dataType !== "feature service") && (dataType !== "image service") && (dataType !== "kml") && (dataType !== "wms")) || (dataType === "operation view")) {
                     dojo.downloadWindow = window.open('', "_blank");
                 }
-                this.showInfoPage(this, itemResult, false);
+                this.showInfoPage(itemResult, false);
             })));
         },
 
@@ -261,10 +291,13 @@ define([
                     }
                 } else {
                     topic.publish("hideProgressIndicator");
+                    // If item has URL, open the URL in a new tab
                     if (data.url) {
                         dojo.downloadWindow.location = data.url;
                     } else if (data.itemType.toLowerCase() === "file" && data.type.toLowerCase() === "cityengine web scene") {
                         dojo.downloadWindow.location = dojo.configData.values.portalURL + "/apps/CEWebViewer/viewer.html?3dWebScene=" + data.id;
+                    } else if (data.itemType.toLowerCase() === "text" && data.type.toLowerCase() === "web scene") {
+                        dojo.downloadWindow.location = dojo.configData.values.portalURL + "/home/webscene/viewer.html?webscene=" + data.id;
                     } else if (data.itemType.toLowerCase() === "file") {
                         if (dojo.configData.values.token) {
                             tokenString2 = "?token=" + dojo.configData.values.token;
@@ -345,6 +378,7 @@ define([
 
             divItemType = domConstruct.create('div', { "class": "esriCTListItemType" }, divItemInfo);
             domAttr.set(divItemType, "innerHTML", (itemResult.type) || (nls.showNullValue));
+            // If showRatings flag is set to true in the configuration file, create rating stars
             if (dojo.configData.values.showRatings) {
                 divRatings = domConstruct.create('div', { "class": "esriCTRatingsDiv" }, divItemInfo);
                 numberStars = Math.round(itemResult.avgRating);
@@ -359,6 +393,7 @@ define([
                     }
                 }
             }
+            // If showViews flag is set to true in the configuration file, display the number of times the item has been viewed
             if (dojo.configData.values.showViews) {
                 divItemWatchEye = domConstruct.create('div', { "class": "esriCTEyeNumViews esriCTEyeNumViewsList" }, divItemInfo);
                 divEyeIcon = domConstruct.create('span', { "class": "esriCTEyeIcon icon-eye" }, divItemWatchEye);
@@ -374,24 +409,26 @@ define([
                 spanItemReadMore = domConstruct.create('span', {}, divItemSnippet);
                 domAttr.set(spanItemReadMore, "innerHTML", itemResult.snippet);
             }
+            // Handle item title click in list layout
             this.own(on(divItemTitleText, "click", lang.hitch(this, function () {
                 topic.publish("showProgressIndicator");
-                this.showInfoPage(this, itemResult, true);
+                this.showInfoPage(itemResult, true);
             })));
         },
 
-        showInfoPage: function (_self, itemResult, itemFlag) {
-            var infoPage = new ItemInfoPage();
-            infoPage.displayPanel(itemResult, _self, itemFlag);
-        }
-    });
+        /**
+        * Show item info page
+        * @memberOf widgets/gallery/gallery
+        */
+        showInfoPage: function (itemResult, itemFlag) {
+            this.displayPanel(itemResult, itemFlag);
+        },
 
-    declare("ItemInfoPage", null, {
         /**
         * Create the HTML for item info page
         * @memberOf widgets/gallery/gallery
         */
-        displayPanel: function (itemResult, _self, itemFlag) {
+        displayPanel: function (itemResult, itemFlag) {
             var numberOfComments, numberOfRatings, numberOfViews, itemReviewDetails, itemDescription, accessContainer, accessInfo, itemCommentDetails, itemViewDetails, itemText, containerHeight, dataArray, itemUrl, defObject, tokenString, dataType;
 
             if (dojo.configData.values.token) {
@@ -403,10 +440,13 @@ define([
             defObject = new Deferred();
             defObject.then(lang.hitch(this, function (data) {
                 if (data) {
+                    // Check if 'download' or 'try it' button should be displayed in item info page
+                    // Download button would be displayed for item of type file, operation view
+                    // Try it button would be displayed for rest of the items 
                     dataArray = {};
                     if (data.itemType === "file" && data.type.toLowerCase() !== "kml" && data.type.toLowerCase() !== "cityengine web scene") {
-                        domAttr.set(_self.btnTryItNow, "innerHTML", nls.downloadButtonText);
-                        domClass.add(_self.btnTryItNow, "esriCTDownloadButton");
+                        domAttr.set(this.btnTryItNow, "innerHTML", nls.downloadButtonText);
+                        domClass.add(this.btnTryItNow, "esriCTDownloadButton");
                     } else if (data.type.toLowerCase() === "operation view") {
                         if (dojo.configData.values.token) {
                             tokenString = "&token=" + dojo.configData.values.token;
@@ -418,14 +458,14 @@ define([
                         topic.publish("queryItemInfo", itemUrl, defObject);
                         defObject.then(lang.hitch(this, function (result) {
                             if (result.desktopLayout) {
-                                domAttr.set(_self.btnTryItNow, "innerHTML", nls.downloadButtonText);
+                                domAttr.set(this.btnTryItNow, "innerHTML", nls.downloadButtonText);
                             } else if (result.tabletLayout) {
-                                domAttr.set(_self.btnTryItNow, "innerHTML", nls.tryItButtonText);
+                                domAttr.set(this.btnTryItNow, "innerHTML", nls.tryItButtonText);
                             }
                         }));
                     } else {
-                        domAttr.set(_self.btnTryItNow, "innerHTML", nls.tryItButtonText);
-                        domClass.remove(_self.btnTryItNow, "esriCTDownloadButton");
+                        domAttr.set(this.btnTryItNow, "innerHTML", nls.tryItButtonText);
+                        domClass.remove(this.btnTryItNow, "esriCTDownloadButton");
                     }
 
                     dataArray = {
@@ -436,18 +476,18 @@ define([
                         title: data.title,
                         description: data.description
                     };
-
+                    // itemFlag indicates if item details page should be displayed or the item should be opened up
                     if (itemFlag) {
-                        this._createPropertiesContent(data, _self.detailsContent);
+                        this._createPropertiesContent(data, this.detailsContent);
                     } else {
-                        _self._showItemOverview(itemResult.id, itemResult.thumbnailUrl, itemResult, dataArray);
+                        this._showItemOverview(itemResult.id, itemResult.thumbnailUrl, itemResult, dataArray);
                     }
 
                     /**
-                    * if showComments flag is set to true in config file
+                    * if showComments flag is set to true in configuration file, display list of comments in comments container
                     */
                     if (dojo.configData.values.showComments) {
-                        this._createCommentsContainer(itemResult, _self.detailsContent);
+                        this._createCommentsContainer(itemResult, this.detailsContent);
                     }
                 }
                 topic.publish("hideProgressIndicator");
@@ -457,35 +497,40 @@ define([
             });
             topic.publish("queryItemInfo", itemUrl, defObject);
 
+            // itemFlag indicates if item details page should be displayed or the item should be opened up
             if (itemFlag) {
                 domClass.replace(query(".esriCTApplicationIcon")[0], "esriCTCursorPointer", "esriCTCursorDefault");
                 domClass.replace(query(".esriCTMenuTabLeft")[0], "esriCTCursorPointer", "esriCTCursorDefault");
                 domClass.replace(query(".esriCTMenuTabRight")[0], "displayNoneAll", "displayBlockAll");
                 domClass.replace(query(".esriCTInnerRightPanel")[0], "displayNoneAll", "displayBlockAll");
                 domClass.remove(query(".esriCTInnerRightPanelDetails")[0], "displayNoneAll");
-                domConstruct.empty(_self.detailsContent);
-                domConstruct.empty(_self.ratingsContainer);
+                domConstruct.empty(this.detailsContent);
+                domConstruct.empty(this.ratingsContainer);
                 containerHeight = (window.innerHeight - domGeom.position(query(".esriCTMenuTab")[0]).h - 25) + "px";
                 domStyle.set(query(".esriCTInnerRightPanelDetails")[0], "height", containerHeight);
 
+                // If thumbnail is present for the item, display it or display no thumbnail image
                 if (itemResult.thumbnailUrl) {
-                    domClass.remove(_self.appThumbnail, "esriCTNoThumbnailImage");
-                    domStyle.set(_self.appThumbnail, "background", 'url(' + itemResult.thumbnailUrl + ') no-repeat center center');
+                    domClass.remove(this.appThumbnail, "esriCTNoThumbnailImage");
+                    domStyle.set(this.appThumbnail, "background", 'url(' + itemResult.thumbnailUrl + ') no-repeat center center');
                 } else {
-                    domClass.add(_self.appThumbnail, "esriCTNoThumbnailImage");
+                    domClass.add(this.appThumbnail, "esriCTNoThumbnailImage");
                 }
 
-                domAttr.set(_self.applicationType, "innerHTML", (itemResult.type) || (nls.showNullValue));
-                domAttr.set(_self.appTitle, "innerHTML", itemResult.title || "");
+                domAttr.set(this.applicationType, "innerHTML", (itemResult.type) || (nls.showNullValue));
+                domAttr.set(this.appTitle, "innerHTML", itemResult.title || "");
+                // If showViews flag is set to true in the configuration file, display the number of times the item has been viewed
                 if (dojo.configData.values.showViews) {
                     numberOfComments = (itemResult.numComments) || "0";
                     numberOfRatings = (itemResult.numRatings) || "0";
                     numberOfViews = (itemResult.numViews) ? (number.format(parseInt(itemResult.numViews, 10))) : "0";
+                    // If showViews flag is set to true in the configuration file, show comments text beside number of comments
                     if (dojo.configData.values.showComments) {
                         itemCommentDetails = numberOfComments + " " + nls.numberOfCommentsText + ", ";
                     } else {
                         itemCommentDetails = "";
                     }
+                    // If showRatings flag is set to true in the configuration file, show ratings text beside number of ratings
                     if (dojo.configData.values.showRatings) {
                         itemReviewDetails = numberOfRatings + " " + nls.numberOfRatingsText + ", ";
                     } else {
@@ -493,54 +538,56 @@ define([
                     }
                     itemViewDetails = numberOfViews + " " + nls.numberOfViewsText;
                     itemText = "(" + itemCommentDetails + itemReviewDetails + itemViewDetails + ")";
-                    domAttr.set(_self.numOfCommentsViews, "innerHTML", itemText);
+                    domAttr.set(this.numOfCommentsViews, "innerHTML", itemText);
                 }
-                domAttr.set(_self.itemSnippet, "innerHTML", itemResult.snippet || "");
-                domConstruct.create('div', { "class": "esriCTReviewHeader", "innerHTML": nls.appDesText }, _self.detailsContent);
-                itemDescription = domConstruct.create('div', { "class": "esriCTText esriCTReviewContainer esriCTBottomBorder" }, _self.detailsContent);
+                domAttr.set(this.itemSnippet, "innerHTML", itemResult.snippet || "");
+                domConstruct.create('div', { "class": "esriCTReviewHeader", "innerHTML": nls.appDesText }, this.detailsContent);
+                itemDescription = domConstruct.create('div', { "class": "esriCTText esriCTReviewContainer esriCTBottomBorder" }, this.detailsContent);
+
+                // If showLicenseInfo flag is set to true in the configuration file, show licensing information of the item
                 if (dojo.configData.values.showLicenseInfo) {
-                    accessContainer = domConstruct.create('div', { "class": "esriCTReviewContainer esriCTBottomBorder" }, _self.detailsContent);
+                    accessContainer = domConstruct.create('div', { "class": "esriCTReviewContainer esriCTBottomBorder" }, this.detailsContent);
                     domConstruct.create('div', { "class": "esriCTReviewHeader", "innerHTML": nls.accessConstraintsText }, accessContainer);
                     accessInfo = domConstruct.create('div', { "class": "esriCTText" }, accessContainer);
                     domAttr.set(accessInfo, "innerHTML", itemResult.licenseInfo || "");
                 }
-                domAttr.set(_self.btnTryItNow, "innerHTML", "");
-                this._createItemDescription(itemResult, _self, itemDescription);
-                if (_self._btnTryItNowHandle) {
+                domAttr.set(this.btnTryItNow, "innerHTML", "");
+                this._createItemDescription(itemResult, itemDescription);
+                if (this._btnTryItNowHandle) {
                     /**
                     * remove the click event handler if it already exists, to prevent the binding of the event multiple times
                     */
-                    _self._btnTryItNowHandle.remove();
+                    this._btnTryItNowHandle.remove();
                 }
                 dataType = itemResult.type.toLowerCase();
-                _self._btnTryItNowHandle = on(_self.btnTryItNow, "click", lang.hitch(this, function () {
-                    if ((domAttr.get(_self.btnTryItNow, "innerHTML") === nls.downloadButtonText) || ((dataType !== "map service") && (dataType !== "web map") && (dataType !== "feature service") && (dataType !== "image service") && (dataType !== "kml") && (dataType !== "wms"))) {
+                this._btnTryItNowHandle = on(this.btnTryItNow, "click", lang.hitch(this, function () {
+                    if ((domAttr.get(this.btnTryItNow, "innerHTML") === nls.downloadButtonText) || ((dataType !== "map service") && (dataType !== "web map") && (dataType !== "feature service") && (dataType !== "image service") && (dataType !== "kml") && (dataType !== "wms"))) {
                         dojo.downloadWindow = window.open('', "_blank");
                     }
-                    this._showTryItNowView(_self.btnTryItNow, itemResult, _self, dataArray);
+                    this._showTryItNowView(this.btnTryItNow, itemResult, dataArray);
                 }));
 
-                if (_self._appThumbnailClickHandle) {
+                if (this._appThumbnailClickHandle) {
                     /**
                     * remove the click event handler if it already exists, to prevent the binding of the event multiple times
                     */
-                    _self._appThumbnailClickHandle.remove();
+                    this._appThumbnailClickHandle.remove();
                 }
-                _self._appThumbnailClickHandle = on(_self.appThumbnail, "click", lang.hitch(this, function () {
+                this._appThumbnailClickHandle = on(this.appThumbnail, "click", lang.hitch(this, function () {
                     if ((dataType !== "map service") && (dataType !== "web map") && (dataType !== "feature service") && (dataType !== "image service") && (dataType !== "kml") && (dataType !== "wms")) {
                         dojo.downloadWindow = window.open('', "_blank");
                     }
-                    this._showTryItNowView(_self.appThumbnail, itemResult, _self, dataArray);
+                    this._showTryItNowView(this.appThumbnail, itemResult, dataArray);
                 }));
             }
         },
 
-        _showTryItNowView: function (container, itemResult, _self, dataArray) {
+        _showTryItNowView: function (container, itemResult, dataArray) {
             var itemId, thumbnailUrl;
             topic.publish("showProgressIndicator");
             itemId = domAttr.get(container, "selectedItem");
             thumbnailUrl = domAttr.get(container, "selectedThumbnail");
-            _self._showItemOverview(itemId, thumbnailUrl, itemResult, dataArray);
+            this._showItemOverview(itemId, thumbnailUrl, itemResult, dataArray);
         },
 
         /**
@@ -578,10 +625,10 @@ define([
         * Create the item description container
         * @memberOf widgets/gallery/gallery
         */
-        _createItemDescription: function (itemResult, _self, itemDescription) {
+        _createItemDescription: function (itemResult, itemDescription) {
             var numberStars, i, imgRating;
             domAttr.set(itemDescription, "innerHTML", itemResult.description || "");
-            domAttr.set(_self.itemSubmittedBy, "innerHTML", (itemResult.owner) || (nls.showNullValue));
+            domAttr.set(this.itemSubmittedBy, "innerHTML", (itemResult.owner) || (nls.showNullValue));
 
             /**
             * if showRatings flag is set to true in config file
@@ -591,7 +638,7 @@ define([
                 for (i = 0; i < 5; i++) {
                     imgRating = document.createElement("span");
                     imgRating.value = (i + 1);
-                    _self.ratingsContainer.appendChild(imgRating);
+                    this.ratingsContainer.appendChild(imgRating);
                     if (i < numberStars) {
                         domClass.add(imgRating, "icon-star esriCTRatingStarIcon esriCTRatingStarIconColor");
                     } else {
@@ -599,11 +646,11 @@ define([
                     }
                 }
             }
-            domAttr.set(_self.btnTryItNow, "selectedItem", itemResult.id);
-            domAttr.set(_self.btnTryItNow, "selectedThumbnail", itemResult.thumbnailUrl);
+            domAttr.set(this.btnTryItNow, "selectedItem", itemResult.id);
+            domAttr.set(this.btnTryItNow, "selectedThumbnail", itemResult.thumbnailUrl);
 
-            domAttr.set(_self.appThumbnail, "selectedItem", itemResult.id);
-            domAttr.set(_self.appThumbnail, "selectedThumbnail", itemResult.thumbnailUrl);
+            domAttr.set(this.appThumbnail, "selectedItem", itemResult.id);
+            domAttr.set(this.appThumbnail, "selectedThumbnail", itemResult.thumbnailUrl);
         },
 
         /**
@@ -615,7 +662,7 @@ define([
             domConstruct.create('div', { "class": "esriCTReviewHeader", "innerHTML": nls.reviewText }, reviewContainer);
             itemResult.getComments().then(function (result) {
                 var i, divReview, divReviewHeader, divReviewText, comment;
-
+                // If comments are present for the item, display comments in comment container else display empty comments container
                 if (result.length > 0) {
                     for (i = 0; i < result.length; i++) {
                         divReview = domConstruct.create('div', { "class": "esriCTReview" }, reviewContainer);

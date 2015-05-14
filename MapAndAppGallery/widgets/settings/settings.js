@@ -42,42 +42,91 @@ define([
             this.domNode.title = nls.title.settingsBtnTitle;
             this.own(on(this.settingsIcon, "click", lang.hitch(this, function () {
                 if (query(".esriCTSortByContainer")[0].children.length <= 0) {
-                    var sortByTitle, sortMenu, listSortMenu, viewMbl, dateMbl, titleMbl, i;
+                    var sortByTitle, sortMenu, listSortMenu, viewMbl, dateMbl, titleMbl, i, j, sortMenuListViewsAsc, sortMenuListViewsDesc, sortMenuListDateAsc,
+                        sortMenuListDateDesc, sortMenuListTitleAsc, sortMenuListTitleDesc;
                     sortByTitle = domConstruct.create('div', { "class": "esriCTSortByTitle" }, query(".esriCTSortByContainer")[0]);
                     domConstruct.create('div', { "class": "esriCTSortHeader", "innerHTML": nls.sortByText }, sortByTitle);
                     sortMenu = domConstruct.create('div', { "class": "esriCTSortMenu" }, sortByTitle);
                     listSortMenu = domConstruct.create('ul', {}, sortMenu);
-                    viewMbl = domConstruct.create('li', { "class": "sortByViewMbl", "innerHTML": nls.sortByViewText, "sortValue": "numViews" }, listSortMenu);
-                    dateMbl = domConstruct.create('li', { "class": "sortByDateMbl", "innerHTML": nls.sortByDateText, "sortValue": "modified" }, listSortMenu);
-                    titleMbl = domConstruct.create('li', { "class": "sortByNameMbl", "innerHTML": nls.sortByNameText, "sortValue": "title" }, listSortMenu);
-                    for (i = 0; i < listSortMenu.children.length; i++) {
-                        if (domAttr.get(listSortMenu.children[i], "sortValue") === dojo.sortBy) {
-                            domClass.add(listSortMenu.children[i], "esriCTListSelected");
+                    viewMbl = domConstruct.create('li', { "class": "sortByViewMbl", "sortValue": "numViews" }, listSortMenu);
+
+                    sortMenuListViewsAsc = domConstruct.create('div', { "class": "esriCTSortAsc", "sortOrder": "asc" }, viewMbl);
+                    domConstruct.create('div', { "class": "esriCTSortAscImgMbl" }, sortMenuListViewsAsc);
+                    domConstruct.create('div', { "class": "esriCTSortListText", "innerHTML": nls.sortByViewText, "sortValue": "numViews" }, viewMbl);
+                    sortMenuListViewsDesc = domConstruct.create('div', { "class": "esriCTSortDesc", "sortOrder": "desc" }, viewMbl);
+                    domConstruct.create('div', { "class": "esriCTSortDescImgMbl" }, sortMenuListViewsDesc);
+
+                    dateMbl = domConstruct.create('li', { "class": "sortByDateMbl", "sortValue": "modified" }, listSortMenu);
+
+                    sortMenuListDateAsc = domConstruct.create('div', { "class": "esriCTSortAsc", "sortOrder": "asc" }, dateMbl);
+                    domConstruct.create('div', { "class": "esriCTSortAscImgMbl" }, sortMenuListDateAsc);
+                    domConstruct.create('div', { "class": "esriCTSortListText", "innerHTML": nls.sortByDateText, "sortValue": "modified" }, dateMbl);
+                    sortMenuListDateDesc = domConstruct.create('div', { "class": "esriCTSortDesc", "sortOrder": "desc" }, dateMbl);
+                    domConstruct.create('div', { "class": "esriCTSortDescImgMbl" }, sortMenuListDateDesc);
+
+                    titleMbl = domConstruct.create('li', { "class": "sortByNameMbl", "sortValue": "title" }, listSortMenu);
+
+                    sortMenuListTitleAsc = domConstruct.create('div', { "class": "esriCTSortAsc", "sortOrder": "asc" }, titleMbl);
+                    domConstruct.create('div', { "class": "esriCTSortAscImgMbl" }, sortMenuListTitleAsc);
+                    domConstruct.create('div', { "class": "esriCTSortListText", "innerHTML": nls.sortByNameText, "sortValue": "title" }, titleMbl);
+                    sortMenuListTitleDesc = domConstruct.create('div', { "class": "esriCTSortDesc", "sortOrder": "desc" }, titleMbl);
+                    domConstruct.create('div', { "class": "esriCTSortDescImgMbl" }, sortMenuListTitleDesc);
+
+                    for (i = 0; i < listSortMenu.childNodes.length; i++) {
+                        if (domAttr.get(listSortMenu.childNodes[i], "sortValue") === dojo.sortBy) {
+                            for (j = 0; j < listSortMenu.childNodes[i].childNodes.length; j++) {
+                                if (domAttr.get(listSortMenu.childNodes[i].childNodes[j], "sortOrder") === dojo.sortOrder) {
+                                    domClass.add(listSortMenu.childNodes[i].childNodes[j], "esriCTListSelected");
+                                    break;
+                                }
+                            }
+                            break;
                         }
                     }
-                    this.own(on(viewMbl, "click", lang.hitch(this, function () {
-                        dojo.sortBy = "numViews";
-                        topic.publish("sortGallery");
-                        domClass.remove(query(".esriCTListSelected")[0], "esriCTListSelected");
-                        domClass.add(query(".sortByViewMbl")[0], "esriCTListSelected");
+
+                    // Handle mobile click of ascending arrow of 'views' section from the sort by dropdown menu
+                    this.own(on(sortMenuListViewsAsc, "click", lang.hitch(this, function (evt) {
+                        this._setSelectedSorting(sortMenuListViewsAsc);
                     })));
-                    this.own(on(dateMbl, "click", lang.hitch(this, function () {
-                        dojo.sortBy = "modified";
-                        topic.publish("sortGallery");
-                        domClass.remove(query(".esriCTListSelected")[0], "esriCTListSelected");
-                        domClass.add(query(".sortByDateMbl")[0], "esriCTListSelected");
+                    // Handle click of descending arrow of 'views' section from the sort by dropdown menu
+                    this.own(on(sortMenuListViewsDesc, "click", lang.hitch(this, function (evt) {
+                        this._setSelectedSorting(sortMenuListViewsDesc);
                     })));
-                    this.own(on(titleMbl, "click", lang.hitch(this, function () {
-                        dojo.sortBy = "title";
-                        topic.publish("sortGallery");
-                        domClass.remove(query(".esriCTListSelected")[0], "esriCTListSelected");
-                        domClass.add(query(".sortByNameMbl")[0], "esriCTListSelected");
+
+                    // Handle click of ascending arrow of 'date' section from the sort by dropdown menu
+                    this.own(on(sortMenuListDateAsc, "click", lang.hitch(this, function (evt) {
+                        this._setSelectedSorting(sortMenuListDateAsc);
+                    })));
+                    // Handle click of descending arrow of 'date' section from the sort by dropdown menu
+                    this.own(on(sortMenuListDateDesc, "click", lang.hitch(this, function (evt) {
+                        this._setSelectedSorting(sortMenuListDateDesc);
+                    })));
+
+                    // Handle click of ascending arrow of 'title' section from the sort by dropdown menu
+                    this.own(on(sortMenuListTitleAsc, "click", lang.hitch(this, function (evt) {
+                        this._setSelectedSorting(sortMenuListTitleAsc);
+
+                    })));
+                    // Handle click of descending arrow of 'title' section from the sort by dropdown menu
+                    this.own(on(sortMenuListTitleDesc, "click", lang.hitch(this, function (evt) {
+                        this._setSelectedSorting(sortMenuListTitleDesc);
                     })));
                 } else {
                     domConstruct.empty(query(".esriCTSortByContainer")[0]);
                 }
                 this._slideLeftPanel();
             })));
+        },
+
+      /**
+      * set the clicked node value for sorting. Only for smart phone devices.
+      */
+        _setSelectedSorting: function (selectedNode) {
+            domClass.remove(query(".esriCTListSelected")[0], "esriCTListSelected");
+            domClass.add(selectedNode, "esriCTListSelected");
+            dojo.sortBy = domAttr.get(selectedNode.parentElement, "sortValue");
+            dojo.sortOrder = domAttr.get(selectedNode, "sortOrder");
+            topic.publish("sortGallery");
         },
 
         /**

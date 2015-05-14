@@ -302,25 +302,78 @@ font
 
 .esriCTSortViews ul li.list
 {
-    text-align: left;
-    text-decoration: none;
-    text-indent: 38px;
     border-bottom: 1px solid #fff;
+    display: table;
+}
+
+.esriCTSortMenuListSelected, .esriCTListSelected
+{
+    border: 1px solid #fff;
+}
+
+.esriCTSortAsc
+{
+    display: table-cell;
+    padding: 4px;
+    vertical-align: middle;
+    border: 2px solid transparent;
+}
+
+.esriCTSortAscImg
+{
+    background-image: url("../images/upArrow.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 10px;
+    padding: 8px 4px;
     cursor: pointer;
 }
 
-.esriCTSortMenuListSelected
+.esriCTSortDescImg
 {
-    background-image: url(../images/tickWhite.png);
+    background-image: url("../images/downArrow.png");
     background-repeat: no-repeat;
-    background-position: 10px center;
+    background-position: center;
+    width: 10px;
+    padding: 8px 4px;
+    cursor: pointer;
 }
 
+.esriCTSortListText
+{
+    display: table-cell;
+    text-align: center;
+    width: 100px;
+    vertical-align: middle;
+}
+
+.esriCTSortDesc
+{
+    display: table-cell;
+    padding: 0 5px;
+    vertical-align: middle;
+    border: 2px solid transparent;
+}
+
+.esriCTMenuImg
+{
+    background-image: url("../images/upDown.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-right: 10px;
+    height: 38px;
+}
 /* End of application header Styles */
 
 /* Left Panel Styles */
 
 .esriCTLeftPanel
+{
+    float: left;
+    width: 265px;
+}
+
+.esriCTMapLeftPanel
 {
     float: left;
     width: 295px;
@@ -335,12 +388,12 @@ font
 
 .esriCTInnerLeftPanelTop
 {
-    padding: 15px 30px 0px 15px;
+    padding: 15px 0px 0px 15px;
 }
 
 .esriCTInnerLeftPanelBottom
 {
-    padding: 0px 30px 0px 15px;
+    padding: 0px 0px 0px 15px;
 }
 
 .esriCTLogo
@@ -414,7 +467,7 @@ font
 
 .esriCTRightPanel
 {
-    margin-left: 305px;
+    margin-left: 270px;
     background: #fff;
     padding-top: 0px;
 }
@@ -436,10 +489,16 @@ font
     position: relative;
 }
 
+.esriCTApplicationListBox, .esriCTNoResults
+{
+    clear: both;
+    margin-left: 2.5%;
+}
+
 .esriCTApplicationBox
 {
     float: left;
-    margin: 0 2.5% 0 0;
+    margin: 0 0 0 2.5%;
     width: 200px;
 }
 
@@ -510,11 +569,6 @@ font
 /* End of right panel Styles */
 
 /* Gallery Styles */
-
-.esriCTApplicationListBox
-{
-    clear: both;
-}
 
 .esriCTImageContainerList
 {
@@ -750,7 +804,7 @@ font
 
 .esriCTSortText
 {
-    width: 100px;
+    width: 80px;
     text-align: center;
 }
 
@@ -1214,12 +1268,11 @@ font
 {
     float: left;
     color: #fff;
-    padding-top: 10px;
     white-space: nowrap;
     cursor: pointer;
     width: auto;
     margin: 0 2% 0 0;
-    height: 100%;
+    line-height: 44px;
 }
 
 .esriCTBackToMapBtnLegend
@@ -1237,12 +1290,35 @@ font
 {
     font-size: 19px;
     float: left;
+    line-height: 52px;
 }
 
 .esriCTBackBtnText
 {
     padding-top: 4px;
     float: left;
+}
+
+.esriCTItemTitle
+{
+    color: #fff;
+    white-space: nowrap;
+    float: left;
+    padding-left: 10px;
+    margin: 0 2% 0 0;
+    line-height: 44px;
+    border-left: 1px solid #fff;
+    font-weight: bold;
+}
+
+.esriCTItemTitleText
+{
+    padding-top: 4px;
+    float: left;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: inline-block;
+    white-space: nowrap;
 }
 
 .esriCTTabGroup div.esriCTTabContainer

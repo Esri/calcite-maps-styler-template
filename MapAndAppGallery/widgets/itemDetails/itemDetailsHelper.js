@@ -27,6 +27,7 @@ define([
     "dojo/i18n!nls/localizedStrings",
     "dojo/dom-class",
     "dojo/on",
+    "dojo/keys",
     "dojo/topic",
     "esri/tasks/locator",
     "dojo/string",
@@ -37,7 +38,7 @@ define([
     "esri/request",
     "esri/symbols/PictureMarkerSymbol",
     "dojo/text!./templates/itemDetails.html"
-], function (declare, domConstruct, lang, domAttr, _WidgetBase, _TemplatedMixin, _WidgetsInTemplateMixin, nls, domClass, on, topic, Locator, string, domStyle, domGeom, Point, Graphic, esriRequest, PictureMarkerSymbol) {
+], function (declare, domConstruct, lang, domAttr, _WidgetBase, _TemplatedMixin, _WidgetsInTemplateMixin, nls, domClass, on, keys, topic, Locator, string, domStyle, domGeom, Point, Graphic, esriRequest, PictureMarkerSymbol) {
 
     return declare([_WidgetBase, _TemplatedMixin, _WidgetsInTemplateMixin], {
         basemapLayer: null,
@@ -98,7 +99,7 @@ define([
         * @memberOf widgets/itemDetails/itemDetailsHelper
         */
         _submitAddress: function (evt) {
-            var locationValue, _this;
+            var locationValue;
             if (evt) {
                 locationValue = this.map.extent.getCenter();
                 this.location = { "x": locationValue.x, "y": locationValue.y, "spatialReference": this.map.spatialReference };
@@ -120,7 +121,7 @@ define([
                 * backspace is pressed
                 * @memberOf widgets/itemDetails/itemDetailsHelper
                 */
-                if ((!((evt.keyCode >= 46 && evt.keyCode < 58) || (evt.keyCode > 64 && evt.keyCode < 91) || (evt.keyCode > 95 && evt.keyCode < 106) || evt.keyCode === 8 || evt.keyCode === 110 || evt.keyCode === 188)) || (evt.keyCode === 86 && evt.ctrlKey) || (evt.keyCode === 88 && evt.ctrlKey)) {
+                if (evt.ctrlKey || evt.altKey || evt.keyCode === keys.UP_ARROW || evt.keyCode === keys.DOWN_ARROW || evt.keyCode === keys.LEFT_ARROW || evt.keyCode === keys.RIGHT_ARROW || evt.keyCode === keys.HOME || evt.keyCode === keys.END || evt.keyCode === keys.CTRL || evt.keyCode === keys.SHIFT) {
                     evt.cancelBubble = true;
                     if (evt.stopPropagation) {
                         evt.stopPropagation();
@@ -135,7 +136,6 @@ define([
                 if (lang.trim(this.txtAddressSearch.value) !== '') {
                     if (this.lastSearchString !== lang.trim(this.txtAddressSearch.value)) {
                         this.lastSearchString = lang.trim(this.txtAddressSearch.value);
-                        _this = this;
 
                         /**
                         * clear any staged search
@@ -147,9 +147,9 @@ define([
                             * stage a new search, which will launch if no new searches show up
                             * before the timeout
                             */
-                            this.stagedSearch = setTimeout(function () {
-                                _this._suggestAddress();
-                            }, 500);
+                            this.stagedSearch = setTimeout(lang.hitch(this, function () {
+                                this._suggestAddress();
+                            }), 500);
                         }
                     }
                 } else {
@@ -218,7 +218,7 @@ define([
         * @memberOf widgets/itemDetails/itemDetailsHelper
         */
         _displayValidLocations: function (candidate) {
-            var tdData, _this = this;
+            var tdData;
             tdData = domConstruct.create("div", { "class": "esriCTBottomBorder esriCTCursorPointer" }, this.autocompleteResults);
             try {
                 /**
@@ -231,17 +231,19 @@ define([
             } catch (err) {
                 alert(nls.errorMessages.falseConfigParams);
             }
-            tdData.onclick = function () {
+            on(tdData, "click", lang.hitch(this, function (evt) {
+                var target, candidateMagicKey;
+                target = evt.currentTarget || evt.srcElement;
                 /**
                 * display result on map on click of search result
                 */
-                var candidateMagicKey = domAttr.get(this, "magicKey");
-                _this.txtAddressSearch.value = this.innerHTML;
-                domAttr.set(_this.txtAddressSearch, "defaultAddress", this.innerHTML);
-                domConstruct.empty(_this.autocompleteResults);
-                domClass.replace(_this.autocompleteResults, "displayNoneAll", "displayBlockAll");
-                _this._locateAddress(candidateMagicKey);
-            };
+                candidateMagicKey = domAttr.get(target, "magicKey");
+                this.txtAddressSearch.value = target.innerHTML;
+                domAttr.set(this.txtAddressSearch, "defaultAddress", target.innerHTML);
+                domConstruct.empty(this.autocompleteResults);
+                domClass.replace(this.autocompleteResults, "displayNoneAll", "displayBlockAll");
+                this._locateAddress(candidateMagicKey);
+            }));
             return true;
         },
 

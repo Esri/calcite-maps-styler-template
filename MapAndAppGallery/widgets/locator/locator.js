@@ -22,6 +22,7 @@ define([
     "dojo/dom-attr",
     "dojo/_base/lang",
     "dojo/on",
+    "dojo/keys",
     "dojo/text!./templates/locatorTemplate.html",
     "dojo/i18n!nls/localizedStrings",
     "dijit/_WidgetBase",
@@ -33,7 +34,7 @@ define([
     "dojo/dom-class",
     "dojo/query",
     "dojo/dom-geometry"
-], function (declare, domStyle, domAttr, lang, on, template, nls, _WidgetBase, _TemplatedMixin, _WidgetsInTemplateMixin, Deferred, domConstruct, topic, domClass, query, domGeom) {
+], function (declare, domStyle, domAttr, lang, on, keys, template, nls, _WidgetBase, _TemplatedMixin, _WidgetsInTemplateMixin, Deferred, domConstruct, topic, domClass, query, domGeom) {
 
     return declare([_WidgetBase, _TemplatedMixin, _WidgetsInTemplateMixin], {
         templateString: template,
@@ -106,7 +107,7 @@ define([
                     * numbers,numpad keys,comma,ctl+v,ctrl +x,delete or
                     * backspace is pressed
                     */
-                    if ((!((evt.keyCode >= 46 && evt.keyCode < 58) || (evt.keyCode > 64 && evt.keyCode < 91) || (evt.keyCode > 95 && evt.keyCode < 106) || evt.keyCode === 8 || evt.keyCode === 110 || evt.keyCode === 188)) || (evt.keyCode === 86 && evt.ctrlKey) || (evt.keyCode === 88 && evt.ctrlKey)) {
+                    if (evt.ctrlKey || evt.altKey || evt.keyCode === keys.UP_ARROW || evt.keyCode === keys.DOWN_ARROW || evt.keyCode === keys.LEFT_ARROW || evt.keyCode === keys.RIGHT_ARROW || evt.keyCode === keys.HOME || evt.keyCode === keys.END || evt.keyCode === keys.CTRL || evt.keyCode === keys.SHIFT) {
                         evt.cancelBubble = true;
                         if (evt.stopPropagation) {
                             evt.stopPropagation();
@@ -116,8 +117,6 @@ define([
                     if (lang.trim(this.txtItemSearch.value) !== '') {
                         if (this.lastSearchString !== lang.trim(this.txtItemSearch.value)) {
                             this.lastSearchString = lang.trim(this.txtItemSearch.value);
-                            var _self = this;
-
                             /**
                             * clear any staged search
                             */
@@ -128,21 +127,31 @@ define([
                                 * stage a new search, which will launch if no new searches show up
                                 * before the timeout
                                 */
-                                this.stagedSearch = setTimeout(function () {
-                                    _self._locateItems(_self.autoResults, false);
-                                }, 500);
+                                this.stagedSearch = setTimeout(lang.hitch(this, function () {
+                                    this._locateItems(this.autoResults, false);
+                                }), 500);
                             }
                         }
                     } else {
-                        this.lastSearchString = lang.trim(this.txtItemSearch.value);
-                        domConstruct.empty(this.autoResults);
-                        domClass.replace(this.autoResults, "displayNoneAll", "displayBlockAll");
+                        clearTimeout(this.stagedSearch);
+                        this.stagedSearch = setTimeout(lang.hitch(this, function () {
+                            this._hideText();
+                            if (this.lastSearchString !== lang.trim(this.txtItemSearch.value)) {
+                                this._clearFilter(true);
+                            }
+                            this.lastSearchString = lang.trim(this.txtItemSearch.value);
+                            domConstruct.empty(this.autoResults);
+                            domClass.replace(this.autoResults, "displayNoneAll", "displayBlockAll");
+                        }), 500);
                     }
                 }
             }
         },
 
-        //Clears the text in the textbox
+        /**
+        * Clears the text in the textbox
+        * @memberOf widgets/locator/locator
+        */
         _hideText: function () {
             this.txtItemSearch.value = '';
             domStyle.set(this.hideText, "display", "none");
@@ -152,40 +161,42 @@ define([
             }
         },
 
-        //Locate the searched item
+        /**
+        * Locate the searched item
+        * @memberOf widgets/locator/locator
+        */
         _locateItems: function (node, flag) {
-            var _self = this, queryString, defObj;
-
+            var queryString, defObj;
 
             defObj = new Deferred();
             dojo.queryString = this.txtItemSearch.value + ' AND group:("' + dojo.configData.values.group + '")';
             queryString = dojo.queryString;
-            topic.publish("queryGroupItem", dojo.queryString, dojo.sortBy, dojo.configData.values.sortOrder.toLowerCase(), defObj);
-            defObj.then(function (data) {
+            topic.publish("queryGroupItem", dojo.queryString, dojo.sortBy, dojo.sortOrder, defObj);
+            defObj.then(lang.hitch(this, function (data) {
                 var i;
 
-                domConstruct.empty(_self.autoResults);
-                _self._clearFilter(false, data.results.length);
+                domConstruct.empty(this.autoResults);
+                this._clearFilter(false, data.results.length);
                 if (data.results.length > 0) {
-                    domClass.replace(_self.autoResults, "displayBlockAll", "displayNoneAll");
+                    domClass.replace(this.autoResults, "displayBlockAll", "displayNoneAll");
                     for (i in data.results) {
                         if (data.results.hasOwnProperty(i)) {
                             this.spanResults = domConstruct.create('div', { "innerHTML": data.results[i].title }, node);
                             domAttr.set(this.spanResults, "searchedItem", data.results[i].id);
-                            _self.own(on(this.spanResults, "click", _self._makeSelectedSearchResultHandler()));
+                            this.own(on(this.spanResults, "click", this._makeSelectedSearchResultHandler()));
                         }
                     }
                     if (flag) {
                         dojo.nextQuery = data.nextQueryParams;
                         dojo.results = data.results;
-                        domClass.replace(_self.autoResults, "displayNoneAll", "displayBlockAll");
+                        domClass.replace(this.autoResults, "displayNoneAll", "displayBlockAll");
                         topic.publish("createPods", data.results, true);
                     }
                 } else {
                     dojo.queryString = queryString;
-                    _self._locatorErrBack();
+                    this._locatorErrBack();
                 }
-            }, function (err) {
+            }), function (err) {
                 alert(err.message);
             });
         },
@@ -197,18 +208,19 @@ define([
         _makeSelectedSearchResultHandler: function () {
             var _self = this;
 
+            // Display only the selected item in gallery
             return function () {
-                var itemId, defObj2;
+                var itemId, defObj;
 
                 domClass.remove(query(".esriCTInnerRightPanel")[0], "displayNoneAll");
                 if (query(".esriCTNoResults")[0]) {
                     domConstruct.destroy(query(".esriCTNoResults")[0]);
                 }
                 itemId = domAttr.get(this, "searchedItem");
-                defObj2 = new Deferred();
+                defObj = new Deferred();
                 dojo.queryString = 'group:("' + dojo.configData.values.group + '")' + ' AND (id: ("' + itemId + '"))';
-                topic.publish("queryGroupItem", dojo.queryString, dojo.sortBy, dojo.configData.values.sortOrder.toLowerCase(), defObj2);
-                defObj2.then(function (data) {
+                topic.publish("queryGroupItem", dojo.queryString, dojo.sortBy, dojo.sortOrder, defObj);
+                defObj.then(function (data) {
                     dojo.results = data.results;
                     topic.publish("createPods", data.results, true);
                     domClass.replace(query(".esriCTShowMoreResults")[0], "displayNoneAll", "displayBlockAll");
@@ -233,6 +245,7 @@ define([
             dojo.configData.values.searchString = '';
             dojo.configData.values.searchType = '';
 
+            // If flag is true, remove all the filters and reset the gallery
             if (flag) {
                 var defObj = new Deferred();
                 if (dojo.selectedTags !== "") {
@@ -240,11 +253,17 @@ define([
                 } else {
                     dojo.queryString = 'group:("' + dojo.configData.values.group + '")';
                 }
-                topic.publish("queryGroupItem", dojo.queryString, dojo.sortBy, dojo.configData.values.sortOrder.toLowerCase(), defObj);
+                topic.publish("queryGroupItem", dojo.queryString, dojo.sortBy, dojo.sortOrder, defObj);
                 defObj.then(function (data) {
+                    // If no items found, show no results container
                     if (data.total === 0) {
-                        topic.publish("createNoDataContainer");
+                        if (dojo.results.length > 0) {
+                            topic.publish("createNoDataContainer");
+                        } else {
+                            topic.publish("hideProgressIndicator");
+                        }
                     } else {
+                        // Create gallery from items found
                         if (query(".esriCTNoResults")[0]) {
                             domConstruct.destroy(query(".esriCTNoResults")[0]);
                         }

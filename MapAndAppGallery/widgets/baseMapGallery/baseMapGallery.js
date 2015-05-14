@@ -40,7 +40,8 @@ define([
 
     return declare([_WidgetBase, _TemplatedMixin, _WidgetsInTemplateMixin], {
         templateString: template,
-        enableToggling: true,
+        enableToggling: false,
+        isBasemapLayerRemoved: false,
         /**
         * create baseMapGallery widget
         *
@@ -48,8 +49,25 @@ define([
         * @name widgets/baseMapGallery/baseMapGallery
         */
         postCreate: function () {
-            query(".esriCTRightPanelMap")[0].appendChild(this.esriCTDivLayerContainer);
-            this.layerList.appendChild(this._createBaseMapElement());
+            //add basemap layer if old basemap is removed
+            this.map.on("layer-remove", lang.hitch(this, function (layer) {
+                if (this.enableToggling && this.isBasemapLayerRemoved) {
+                    this.isBasemapLayerRemoved = false;
+                    this._addBasemapLayerOnMap();
+                }
+            }));
+            this.map.on("layer-add", lang.hitch(this, function () {
+                this.enableToggling = true;
+            }));
+            //do not display basemap toggle widget if only one basemap is found
+            if (dojo.configData.values.baseMapLayers.length > 1) {
+                query(".esriCTRightPanelMap")[0].appendChild(this.esriCTDivLayerContainer);
+                this.layerList.appendChild(this._createBaseMapElement());
+            }
+            if (!this.isWebmap) {
+                //add default basemap on map if it is not a webmap
+                this._addBasemapLayerOnMap();
+            }
         },
 
         /**
@@ -58,12 +76,13 @@ define([
         */
         _createBaseMapElement: function () {
             var divContainer, imgThumbnail, thumbnailPath, basemap;
+            this.enableToggling = true;
             if (dojo.selectedBasemapIndex === dojo.configData.values.baseMapLayers.length - 1) {
                 basemap = dojo.configData.values.baseMapLayers[0];
             } else {
                 basemap = dojo.configData.values.baseMapLayers[dojo.selectedBasemapIndex + 1];
             }
-
+            //set basemap thumbnail URL
             if (basemap.length) {
                 thumbnailPath = basemap[0].ThumbnailSource;
             } else {
@@ -71,8 +90,10 @@ define([
             }
             divContainer = domConstruct.create("div", { "class": "esriCTbaseMapContainerNode" });
             imgThumbnail = domConstruct.create("img", { "class": "esriCTBasemapThumbnail", "src": thumbnailPath }, null);
+            //attach click event to basemap toggle div
             on(imgThumbnail, "click", lang.hitch(this, function () {
                 if (this.enableToggling) {
+                    //change basemap index
                     dojo.selectedBasemapIndex++;
                     this._changeBasemapThumbnail();
                 }
@@ -86,30 +107,27 @@ define([
         * @memberOf widgets/baseMapGallery/baseMapGallery
         */
         _changeBaseMap: function (preLayerIndex) {
-            var basemap, basemapLayers, basemapLayerId = "defaultBasemap";
-            this.enableToggling = false;
+            var basemap, basemapLayers;
             basemapLayers = dojo.configData.values.baseMapLayers[preLayerIndex];
-            this.map.onLayerRemove = lang.hitch(this, function () {
-                if (this.enableToggling) {
-                    this._addBasemapLayerOnMap(basemapLayerId);
-                }
-            });
-
+            this.enableToggling = false;
+            //check if previous basemap has multilayer
             if (basemapLayers.length) {
                 array.forEach(basemapLayers, lang.hitch(this, function (layer, index) {
-                    basemap = this.map.getLayer(basemapLayerId + index);
+                    basemap = this.map.getLayer(layer.BasemapId);
+                    if (basemapLayers.length - 1 === index) {
+                        this.enableToggling = true;
+                    }
                     if (basemap) {
-                        if (index === basemapLayers.length - 1) {
-                            this.enableToggling = true;
-                        }
+                        this.isBasemapLayerRemoved = true;
                         this.map.removeLayer(basemap);
                     }
-
                 }));
             } else {
-                basemap = this.map.getLayer(basemapLayerId);
+                //remove previous basemap layer from map
+                basemap = this.map.getLayer(basemapLayers.BasemapId);
                 if (basemap) {
                     this.enableToggling = true;
+                    this.isBasemapLayerRemoved = true;
                     this.map.removeLayer(basemap);
                 }
             }
@@ -121,35 +139,37 @@ define([
         */
         _addBasemapLayerOnMap: function (basemapLayerId) {
             var layer, params, imageParameters, basemapLayers = dojo.configData.values.baseMapLayers[dojo.selectedBasemapIndex];
-            this.map.onLayerAdd = lang.hitch(this, function () {
-                this.enableToggling = true;
-            });
+
+            //check if basemap has multilayer
             if (basemapLayers.length) {
                 array.forEach(basemapLayers, lang.hitch(this, function (basemap, index) {
                     this.enableToggling = false;
-                    layer = new ArcGISTiledMapServiceLayer(basemap.MapURL, { id: basemapLayerId + index, visible: true });
+                    layer = new ArcGISTiledMapServiceLayer(basemap.MapURL, { id: basemap.BasemapId, visible: true });
                     this.map.addLayer(layer, index);
                 }));
             } else {
                 this.enableToggling = false;
+                //add basemap layer on map
                 if (basemapLayers.layerType === "OpenStreetMap") {
-                    layer = new OpenStreetMapLayer({ id: basemapLayerId, visible: true });
+                    //add basemap as open street layer
+                    layer = new OpenStreetMapLayer({ id: basemapLayers.BasemapId, visible: true });
                 } else if (basemapLayers.layerType === "ArcGISMapServiceLayer") {
                     imageParameters = new ImageParameters();
                     layer = new ArcGISDynamicMapServiceLayer(basemapLayers.MapURL, {
                         "imageParameters": imageParameters,
-                        id: basemapLayerId
+                        id: basemapLayers.BasemapId
                     });
                 } else if (basemapLayers.layerType === "ArcGISImageServiceLayer") {
+                    //add basemap as image service layer
                     params = new ImageServiceParameters();
-                    params.noData = 0;
                     layer = new ArcGISImageServiceLayer(basemapLayers.MapURL, {
                         imageServiceParameters: params,
-                        id: basemapLayerId,
+                        id: basemapLayers.BasemapId,
                         opacity: 0.75
                     });
                 } else {
-                    layer = new ArcGISTiledMapServiceLayer(basemapLayers.MapURL, { id: basemapLayerId, visible: true });
+                    //add basemap as tiled service layer
+                    layer = new ArcGISTiledMapServiceLayer(basemapLayers.MapURL, { id: basemapLayers.BasemapId, visible: true });
                 }
                 this.map.addLayer(layer, 0);
             }
@@ -163,26 +183,32 @@ define([
             var baseMapURLCount, presentThumbNail, preLayerIndex, thumbnailPath;
             baseMapURLCount = dojo.configData.values.baseMapLayers.length;
             preLayerIndex = dojo.selectedBasemapIndex - 1;
-
+            //show first basemap map if previous basemap is the last basemap in basemap array
             if (dojo.selectedBasemapIndex === baseMapURLCount) {
                 dojo.selectedBasemapIndex = 0;
             }
+            //set previous basemap index
             if (dojo.selectedBasemapIndex === 0) {
                 preLayerIndex = baseMapURLCount - 1;
             }
+            //show basemap thumbnail of next basemap
             presentThumbNail = dojo.selectedBasemapIndex + 1;
+            //show first basemap map if previous basemap thumbnail is the last basemap in basemap array
             if (dojo.selectedBasemapIndex === baseMapURLCount - 1) {
                 presentThumbNail = 0;
             }
-            if (preIndex) {
+            //display shared basemap
+            if (preIndex || preIndex === 0) {
                 preLayerIndex = preIndex;
             }
             this._changeBaseMap(preLayerIndex);
+            //check if current basemap is a multilayer basemap or not
             if (dojo.configData.values.baseMapLayers[presentThumbNail].length) {
                 thumbnailPath = dojo.configData.values.baseMapLayers[presentThumbNail][0].ThumbnailSource;
             } else {
                 thumbnailPath = dojo.configData.values.baseMapLayers[presentThumbNail].ThumbnailSource;
             }
+            //set basemap thumbnail URL
             query('.esriCTBasemapThumbnail')[0].src = thumbnailPath;
         }
 

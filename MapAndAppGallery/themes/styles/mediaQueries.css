@@ -20,6 +20,11 @@
     {
         font-size: 14px !important;
     }
+
+    .esriCTInnerRightPanelDetails
+    {
+        margin-left: 5%;
+    }
 }
 
 @media only screen and (min-device-width : 641px)
@@ -51,6 +56,10 @@
         width: 240px;
     }
 
+    .esriCTInnerRightPanelDetails
+    {
+        margin-right: 20px;
+    }
 }
 
 @media screen and (min-device-width: 1024px)
@@ -86,14 +95,19 @@
         line-height: 16px;
     }
 
-    .esriCTApplicationBox
+    .esriCTApplicationBox, .esriCTApplicationListBox, .esriCTNoResults
     {
-        margin-right: 5% !important;
+        margin-left: 5%;
     }
 
     .esriControlsBR
     {
         position: fixed !important;
+    }
+
+    .esriCTInnerRightPanelDetails
+    {
+        margin-left: 5%;
     }
 }
 
@@ -145,9 +159,9 @@
         width: 179px;
     }
 
-    .esriCTApplicationBox
+    .esriCTApplicationBox, .esriCTApplicationListBox, .esriCTNoResults
     {
-        margin: 0 4% 0 0;
+        margin: 0 0 0 4%;
     }
 
     .esriCTListContent, .esriCTDetailsListContent
@@ -167,6 +181,11 @@
         overflow: hidden;
         display: inline-block;
         white-space: nowrap;
+    }
+
+    .esriCTInnerRightPanelDetails
+    {
+        margin-left: 5%;
     }
 }
 
@@ -191,6 +210,11 @@
     {
         font-family: 'Lato' ,sans-serif !important;
         font-size: 12px !important;
+    }
+
+    .esriCTInnerRightPanelDetails
+    {
+        margin-left: 5%;
     }
 }
 
@@ -237,9 +261,9 @@
         width: 149px;
     }
 
-    .esriCTApplicationBox
+    .esriCTApplicationBox, .esriCTApplicationListBox
     {
-        padding: 0 12% 0 0;
+        padding: 0 0 0 12%;
     }
 
     .esriCTGalleryName
@@ -260,6 +284,11 @@
     .esriControlsBR
     {
         position: fixed !important;
+    }
+
+    .esriCTInnerRightPanelDetails
+    {
+        margin-left: 5%;
     }
 }
 
@@ -333,6 +362,7 @@
     .esriCTInnerRightPanelDetails
     {
         margin-top: 49px;
+        margin-left: 0px;
     }
 
     .esriCTMenuIcon
@@ -354,7 +384,7 @@
         color: white;
     }
 
-    .esriCTLeftPanel
+    .esriCTLeftPanel, .esriCTMapLeftPanel
     {
         width: 100%;
         float: none;
@@ -415,10 +445,11 @@
         margin-left: 0px;
     }
 
-    .esriCTApplicationListBox
+    .esriCTApplicationListBox, .esriCTNoResults
     {
         padding-left: 10px !important;
         margin-bottom: 10px;
+        margin-left: 0px;
     }
 
     .esriCTImageContainerList
@@ -842,6 +873,29 @@
     {
         background-color: #fff;
     }
+
+    .esriCTSortAscImgMbl
+    {
+        background: url("../images/upArrowMbl.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        width: 20px;
+        padding: 8px 4px;
+        cursor: pointer;
+        background-size: 100%;
+    }
+
+    .esriCTSortDescImgMbl
+    {
+        background: url("../images/downArrowMbl.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        width: 20px;
+        padding: 8px 4px;
+        cursor: pointer;
+        background-size: 100%;
+    }
+
     /* Blue theme styles */
 
     .blueTheme .esriCTMenuTabRight div span.esriCTMenulbl
@@ -914,10 +968,7 @@
 
     .blueTheme .esriCTListSelected
     {
-        background: url("../images/tick.png");
-        background-repeat: no-repeat;
-        background-position: left center;
-        background-position: 90%;
+        border: 2px solid #007ac2;
     }
 
     .blueTheme .esriCTInnerLeftPanelBottom
@@ -930,6 +981,11 @@
     {
         background: none repeat scroll 0 0 #007AC2;
         border-bottom: 1px solid #007AC2;
+    }
+
+    .blueTheme .esriCTSortAscImgMbl, .blueTheme .esriCTSortDescImgMbl
+    {
+        background-color: #007ac2;
     }
 
     /* End of blue theme styles */
@@ -983,6 +1039,11 @@
         color: #6e6e6e;
     }
 
+    .greenTheme .esriCTListSelected
+    {
+        border: 2px solid #028d6a;
+    }
+
     .greenTheme .esriCTSortMenu
     {
         color: #6e6e6e;
@@ -992,14 +1053,6 @@
     {
         background-color: #fff;
         border-bottom: 1px solid #efefef;
-    }
-
-    .greenTheme .esriCTListSelected
-    {
-        background: url("../images/tick.png");
-        background-repeat: no-repeat;
-        background-position: left center;
-        background-position: 90%;
     }
 
     .greenTheme .esriCTInnerLeftPanelBottom
@@ -1012,6 +1065,11 @@
     {
         background: none repeat scroll 0 0 #028d6a;
         border-bottom: 1px solid #028d6a;
+    }
+
+    .greenTheme .esriCTSortAscImgMbl, .greenTheme .esriCTSortDescImgMbl
+    {
+        background-color: #028d6a;
     }
 
     /* End of green theme styles */
@@ -1070,18 +1128,15 @@
         color: #6e6e6e;
     }
 
+    .redTheme .esriCTListSelected
+    {
+        border: 2px solid #800000;
+    }
+
     .redTheme .esriCTSortMenu ul li
     {
         background-color: #fff;
         border-bottom: 1px solid #efefef;
-    }
-
-    .redTheme .esriCTListSelected
-    {
-        background: url("../images/tick.png");
-        background-repeat: no-repeat;
-        background-position: left center;
-        background-position: 90%;
     }
 
     .redTheme .esriCTInnerLeftPanelBottom
@@ -1099,6 +1154,11 @@
     {
         background: none repeat scroll 0 0 #800000;
         border-bottom: 1px solid #800000;
+    }
+
+    .redTheme .esriCTSortAscImgMbl, .redTheme .esriCTSortDescImgMbl
+    {
+        background-color: #800000;
     }
 }
 
@@ -1154,6 +1214,7 @@
     .esriCTInnerRightPanelDetails
     {
         margin-top: 49px;
+        margin-left: 0px;
     }
 
     .esriCTMenuTabTable
@@ -1187,7 +1248,7 @@
         color: white;
     }
 
-    .esriCTLeftPanel
+    .esriCTLeftPanel, .esriCTMapLeftPanel
     {
         width: 100%;
         float: none;
@@ -1259,6 +1320,7 @@
     {
         padding-left: 10px !important;
         margin-bottom: 10px;
+        margin-left: 0px;
     }
 
     .esriCTListContent
@@ -1415,7 +1477,28 @@
     .esriCTSortMenu ul li
     {
         padding: 5px 15px;
+    }
+
+    .esriCTSortAscImgMbl
+    {
+        background: url("../images/upArrowMbl.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        width: 20px;
+        padding: 8px 4px;
         cursor: pointer;
+        background-size: 100%;
+    }
+
+    .esriCTSortDescImgMbl
+    {
+        background: url("../images/downArrowMbl.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        width: 20px;
+        padding: 8px 4px;
+        cursor: pointer;
+        background-size: 100%;
     }
 
     .esriCTShiftRight
@@ -1754,14 +1837,6 @@
         border-bottom: 1px solid #efefef;
     }
 
-    .blueTheme .esriCTListSelected
-    {
-        background: url("../images/tick.png");
-        background-repeat: no-repeat;
-        background-position: left center;
-        background-position: 90%;
-    }
-
     .blueTheme .esriCTInnerLeftPanelBottom
     {
         background: #fff;
@@ -1779,6 +1854,15 @@
         border-bottom: 1px solid #007AC2;
     }
 
+    .blueTheme .esriCTSortAscImgMbl, .blueTheme .esriCTSortDescImgMbl
+    {
+        background-color: #007AC2;
+    }
+
+    .blueTheme .esriCTListSelected
+    {
+        border: 2px solid #007ac2;
+    }
     /* End of blue theme styles */
 
     /* Green theme styles */
@@ -1841,12 +1925,14 @@
         border-bottom: 1px solid #efefef;
     }
 
+    .greenTheme .esriCTSortAscImgMbl, .greenTheme .esriCTSortDescImgMbl
+    {
+        background-color: #028d6a;
+    }
+
     .greenTheme .esriCTListSelected
     {
-        background: url("../images/tick.png");
-        background-repeat: no-repeat;
-        background-position: left center;
-        background-position: 90%;
+        border: 2px solid #028d6a;
     }
 
     .greenTheme .esriCTInnerLeftPanelBottom
@@ -1923,14 +2009,6 @@
         border-bottom: 1px solid #efefef;
     }
 
-    .redTheme .esriCTListSelected
-    {
-        background: url("../images/tick.png");
-        background-repeat: no-repeat;
-        background-position: left center;
-        background-position: 90%;
-    }
-
     .redTheme .esriCTInnerLeftPanelBottom
     {
         background: #fff;
@@ -1946,6 +2024,16 @@
     {
         background: none repeat scroll 0 0 #800000;
         border-bottom: 1px solid #800000;
+    }
+
+    .redTheme .esriCTSortAscImgMbl, .redTheme .esriCTSortDescImgMbl
+    {
+        background-color: #800000;
+    }
+
+    .redTheme .esriCTListSelected
+    {
+        border: 2px solid #800000;
     }
 }
 
@@ -1970,6 +2058,7 @@
         display: table-cell;
         width: 100%;
     }
+
     .esriCTSearchInput
     {
         width: 95%;

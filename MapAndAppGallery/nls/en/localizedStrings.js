@@ -66,7 +66,9 @@ define({
         layoutBtnTitle: "Layout",
         signInBtnTitle: "Sign In",
         signOutBtnTitle: "Sign Out",
-        geolocationBtnTitle: "Geolocation"
+        geolocationBtnTitle: "Geolocation",
+        ascendingSort: "Ascending",
+        descendingSort: "Descending"
     },
     errorMessages: {
         emptyGroup: "The configured group is not having any data to perform query.",
