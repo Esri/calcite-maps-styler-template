@@ -163,7 +163,6 @@ Evented, declare, lang, _WidgetBase, on, dom, domStyle, domClass, domConstruct, 
                 this._borderContainer.addChild(this._contentPaneCenter);
                 // leading panel
                 if (this.displayDrawer) {
-
                     this._contentPaneSide = new ContentPane({
                         region: "leading",
                         id: "cp_left",

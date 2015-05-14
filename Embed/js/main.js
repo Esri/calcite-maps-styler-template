@@ -16,13 +16,13 @@ ready, parser, domAttr, domGeometry, on, array, declare, lang, query, dom, domCl
                     domClass.add(document.body, "no-title");
                     return;
                 }
+
                 this._drawer = new Drawer({
                     borderContainer: "border_container",
                     // border container node id
                     contentPaneCenter: "cp_center",
                     // center content pane node id
                     direction: this.config.i18n.direction,
-                    // i18n direction "ltr" or "rtl",
                     config: this.config,
                     displayDrawer: (this.config.legend || this.config.details || this.config.popup_sidepanel),
                     drawerOpen: this.config.show_panel
@@ -187,135 +187,24 @@ ready, parser, domAttr, domGeometry, on, array, declare, lang, query, dom, domCl
             }
 
             //Add the location search widget
-            require(["application/sniff!search?esri/dijit/Search", "application/sniff!search?esri/tasks/locator"], lang.hitch(this, function (Search, Locator) {
-                if (!Search && !Locator) {
+            require(["application/sniff!search?esri/dijit/Search", "application/sniff!search?esri/tasks/locator","application/sniff!search?application/SearchSources"], lang.hitch(this, function (Search, Locator, SearchSources) {
+                if (!Search && !Locator && !SearchSources) {
                     return;
                 }
 
-                var options = {
+                var searchSources = new SearchSources({
                     map: this.map,
-                    addLayersFromMap: false
-                };
-                var searchLayers = false;
-                var search = new Search(options, domConstruct.create("div", {
+                    useMapExtent: this.config.searchextent,
+                    geocoders: this.config.helperServices.geocode || [],
+                    itemData: this.config.response.itemInfo.itemData
+                });
+                var createdOptions = searchSources.createOptions();
+                var search = new Search(createdOptions, domConstruct.create("div", {
                     id: "search"
                 }, "mapDiv"));
+
                 domClass.add(dom.byId("search"), "simpleGeocoder");
-                var defaultSources = [];
-
-                //setup geocoders defined in common config 
-                if (this.config.helperServices.geocode) {
-                    var geocoders = lang.clone(this.config.helperServices.geocode);
-                    array.forEach(geocoders, lang.hitch(this, function (geocoder) {
-                        if (geocoder.url.indexOf(".arcgis.com/arcgis/rest/services/World/GeocodeServer") > -1) {
-
-                            geocoder.hasEsri = true;
-                            geocoder.locator = new Locator(geocoder.url);
-
-                            geocoder.singleLineFieldName = "SingleLine";
-
-                            geocoder.name = geocoder.name || "Esri World Geocoder";
-
-                            if (this.config.searchextent) {
-                                geocoder.searchExtent = this.map.extent;
-                                geocoder.localSearchOptions = {
-                                    minScale: 300000,
-                                    distance: 50000
-                                };
-                            }
-                            defaultSources.push(geocoder);
-                        } else if (esriLang.isDefined(geocoder.singleLineFieldName)) {
-
-                            //Add geocoders with a singleLineFieldName defined 
-                            geocoder.locator = new Locator(geocoder.url);
-
-                            defaultSources.push(geocoder);
-                        }
-                    }));
-                }
-
-                //Add search layers defined on the web map item 
-                if (this.config.response.itemInfo.itemData && this.config.response.itemInfo.itemData.applicationProperties && this.config.response.itemInfo.itemData.applicationProperties.viewing && this.config.response.itemInfo.itemData.applicationProperties.viewing.search) {
-                    var searchOptions = this.config.response.itemInfo.itemData.applicationProperties.viewing.search;
-
-                    array.forEach(searchOptions.layers, lang.hitch(this, function (searchLayer) {
-                        //we do this so we can get the title specified in the item
-                        var operationalLayers = this.config.itemInfo.itemData.operationalLayers;
-                        var layer = null;
-                        array.some(operationalLayers, function (opLayer) {
-                            if (opLayer.id === searchLayer.id) {
-                                layer = opLayer;
-                                return true;
-                            }
-                        });
-
-                        if (layer && layer.url) {
-                            var source = {};
-                            var url = layer.url;
-
-                            if (esriLang.isDefined(searchLayer.subLayer)) {
-                                url = url + "/" + searchLayer.subLayer;
-                                array.some(layer.layerObject.layerInfos, function (info) {
-                                    if (info.id == searchLayer.subLayer) {
-                                        name += " - " + layer.layerObject.layerInfos[searchLayer.subLayer].name;
-                                        return true;
-                                    }
-
-                                });
-                            }
-                            //Do we already have a feature layer 
-                            var mapLayer = this.map.getLayer(layer.id);
-                            if(mapLayer && mapLayer.type === "Feature Layer"){
-                                source.featureLayer = mapLayer;
-                                if(mapLayer.infoTemplate){
-                                    source.infoTemplate = mapLayer.infoTemplate;
-                                }
-                            }else{  
-                             //create a new feature layer
-                             source.featureLayer = new FeatureLayer(url);
-                            }
-
-
-                            source.name = layer.title || layer.name;
-
-
-                            source.exactMatch = searchLayer.field.exactMatch;
-                            source.searchFields = [searchLayer.field.name];
-                            source.displayField = searchLayer.field.name;
-                            source.outFields = ["*"];
-                            source.placeholder = searchOptions.hintText;
-                            
-                            defaultSources.push(source);
-                            searchLayers = true;
-                        }
-
-                    }));
-                }
-                //workaround to handle bug with pagination remove at 3.14
-                array.forEach(defaultSources, lang.hitch(this, function(s){
-                    var paging = this._supportsPagination(s);
-                    if(!paging){
-                        s.maxResults = "foo";
-                    }
-                }));
-                search.set("sources", defaultSources);
-                //set the first non esri layer as active if search layers are defined. 
-                var activeIndex = 0;
-                if (searchLayers) {
-                    array.some(defaultSources, lang.hitch(this, function (s, index) {
-                        if (!s.hasEsri) {
-                            activeIndex = index;
-                            return true;
-                        }
-                    }));
-
-
-                    if (activeIndex > 0) {
-                        search.set("activeSourceIndex", activeIndex);
-                    }
-                }
-
-
+        
                 search.startup();
                 //use search if its available.
                 if(this.config.find){
