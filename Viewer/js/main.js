@@ -733,27 +733,22 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
                     return;
                 }
 
-                var options = {
-                    map: this.map,
-                    addLayersFromMap: false
-                };
+        
 
-                var search = new Search(options, domConstruct.create("div", {
-                    id: "search"
-                }, "mapDiv"));
                 var configuredSearchLayers = (this.config.searchLayers instanceof Array) ? this.config.searchLayers : JSON.parse(this.config.searchLayers);
-
-                var sources = new SearchSources({
+                var searchSources = new SearchSources({
                     map: this.map,
-                    esriSource: search.sources[0],
                     useMapExtent: this.config.searchExtent,
                     geocoders: this.config.locationSearch ? this.config.helperServices.geocode : [],
                     itemData: this.config.response.itemInfo.itemData,
                     configuredSearchLayers: configuredSearchLayers
                 });
-                var defaultSources = sources.createSources();
+                var createdOptions = searchSources.createOptions();
 
-                search.set("sources", defaultSources);
+                var search = new Search(createdOptions, domConstruct.create("div", {
+                    id: "search"
+                }, "mapDiv"));
+
                 search.on("select-result", lang.hitch(this, function(){
                     //if edit tool is enabled we'll have to delete/create 
                     //so info window behaves correctly. 
@@ -768,11 +763,6 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
                 }));
                 search.startup();
 
-                //set the first non esri layer as active if search layers are defined. 
-                var activeIndex = sources.getActiveSource(defaultSources);
-                if (activeIndex) {
-                    search.set("activeSourceIndex", activeIndex);
-                }
                 if (search && search.domNode) {
                     domConstruct.place(search.domNode, "panelGeocoder");
                 }
