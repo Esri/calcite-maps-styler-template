@@ -99,200 +99,25 @@ declare, win, array, Color, all, Deferred, lang, domUtils, esriRequest, esriLang
 
                 }));
             }
-            require(["application/sniff!search?esri/dijit/Search", "application/sniff!search?esri/tasks/locator"], lang.hitch(this, function (Search, Locator) {
-                if (!Search && !Locator) {
+            require(["application/sniff!search?esri/dijit/Search", "application/sniff!search?esri/tasks/locator", "application/sniff!search?application/SearchSources"], lang.hitch(this, function (Search, Locator, SearchSources) {
+                if (!Search && !Locator && !SearchSources) {
                     return;
                 }
-                var options = {
+                var configuredSearchLayers = (this.config.searchLayers instanceof Array) ? this.config.searchLayers : JSON.parse(this.config.searchLayers);
+                var searchSources = new SearchSources({
                     map: this.map,
-                    enableButtonMode: true,
-                    expanded: false,
-                    addLayersFromMap: false
-                };
-                var searchLayers = false;
-                var search = new Search(options, domConstruct.create("div", {
+                    useMapExtent: this.config.searchExtent,
+                    geocoders: this.config.locationSearch ? this.config.helperServices.geocode : [],
+                    itemData: this.config.response.itemInfo.itemData,
+                    configuredSearchLayers: configuredSearchLayers
+                });
+                var createdOptions = searchSources.createOptions();
+                createdOptions.enableButtonMode = true;
+                var search = new Search(createdOptions, domConstruct.create("div", {
                     id: "search"
                 }, "mapDiv"));
-                var defaultSources = [];
 
-                //setup geocoders defined in common config 
-                if (this.config.helperServices.geocode && this.config.locationSearch) {
-                    var geocoders = lang.clone(this.config.helperServices.geocode);
-                    array.forEach(geocoders, lang.hitch(this, function (geocoder) {
-                        if (geocoder.url.indexOf(".arcgis.com/arcgis/rest/services/World/GeocodeServer") > -1) {
-
-                            geocoder.hasEsri = true;
-                            geocoder.locator = new Locator(geocoder.url);
-
-                            geocoder.singleLineFieldName = "SingleLine";
-
-                            geocoder.name = geocoder.name || "Esri World Geocoder";
-
-                            if (this.config.searchExtent) {
-                                geocoder.searchExtent = this.map.extent;
-                                geocoder.localSearchOptions = {
-                                    minScale: 300000,
-                                    distance: 50000
-                                };
-                            }
-                            defaultSources.push(geocoder);
-                        } else if (esriLang.isDefined(geocoder.singleLineFieldName)) {
-
-                            //Add geocoders with a singleLineFieldName defined 
-                            geocoder.locator = new Locator(geocoder.url);
-
-                            defaultSources.push(geocoder);
-                        }
-                    }));
-                }
-                //add configured search layers to the search widget 
-                var configuredSearchLayers = (this.config.searchLayers instanceof Array) ? this.config.searchLayers : JSON.parse(this.config.searchLayers);
-
-                array.forEach(configuredSearchLayers, lang.hitch(this, function (layer) {
-
-                    var mapLayer = this.map.getLayer(layer.id);
-                    if (mapLayer) {
-                        var source = {};
-                        source.featureLayer = mapLayer;
-
-                        if (layer.fields && layer.fields.length && layer.fields.length > 0) {
-                            source.searchFields = layer.fields;
-                            source.displayField = layer.fields[0];
-                            source.outFields = ["*"];
-                            searchLayers = true;
-                            defaultSources.push(source);
-                            if (mapLayer.infoTemplate) {
-                                source.infoTemplate = mapLayer.infoTemplate;
-                            }
-                        }
-                    }
-                }));
-
-                //Add search layers defined on the web map item 
-                if (this.config.response.itemInfo.itemData && this.config.response.itemInfo.itemData.applicationProperties && this.config.response.itemInfo.itemData.applicationProperties.viewing && this.config.response.itemInfo.itemData.applicationProperties.viewing.search) {
-                    var searchOptions = this.config.response.itemInfo.itemData.applicationProperties.viewing.search;
-
-                    array.forEach(searchOptions.layers, lang.hitch(this, function (searchLayer) {
-                        //we do this so we can get the title specified in the item
-                        var operationalLayers = this.config.itemInfo.itemData.operationalLayers;
-                        var layer = null;
-                        array.some(operationalLayers, function (opLayer) {
-                            if (opLayer.id === searchLayer.id) {
-                                layer = opLayer;
-                                return true;
-                            }
-                        });
-
-                        if (layer && layer.hasOwnProperty("url")) {
-                            var source = {};
-                            var url = layer.url;
-                            var name = layer.title || layer.name;
-
-                            if (esriLang.isDefined(searchLayer.subLayer)) {
-                                url = url + "/" + searchLayer.subLayer;
-                                array.some(layer.layerObject.layerInfos, function (info) {
-                                    if (info.id == searchLayer.subLayer) {
-                                        name += " - " + layer.layerObject.layerInfos[searchLayer.subLayer].name;
-                                        return true;
-                                    }
-                                });
-                            }
-
-                            source.featureLayer = new FeatureLayer(url);
-
-
-                            source.name = name;
-
-
-                            source.exactMatch = searchLayer.field.exactMatch;
-                            source.displayField = searchLayer.field.name;
-                            source.searchFields = [searchLayer.field.name];
-                            source.placeholder = searchOptions.hintText;
-                            defaultSources.push(source);
-                            searchLayers = true;
-                        }
-
-                    }));
-                }
-
-
-                search.set("sources", defaultSources);
                 search.startup();
-
-                //set the first non esri layer as active if search layers are defined. 
-                var activeIndex = 0;
-                if (searchLayers) {
-                    array.some(defaultSources, function (s, index) {
-                        if (!s.hasEsri) {
-                            activeIndex = index;
-                            return true;
-                        }
-                    });
-
-                    if (activeIndex > 0) {
-                        search.set("activeSourceIndex", activeIndex);
-                    }
-                }
-
-
-                //Feature Search or find (if no search widget)
-                if ((this.config.find || this.config.feature)) {
-                    require(["esri/dijit/Search"], lang.hitch(this, function (Search) {
-                        //get the search value
-                        var feature = null,
-                            source = null,
-                            value = null;
-                        if (this.config.feature) {
-                            feature = decodeURIComponent(this.config.feature);
-                            if (feature) {
-                                var splitFeature = feature.split(";");
-                                if (splitFeature.length && splitFeature.length !== 3) {
-                                    splitFeature = feature.split(",");
-                                }
-                                feature = splitFeature;
-                                if (feature && feature.length && feature.length === 3) {
-                                    var layerId = feature[0],
-                                        attribute = feature[1],
-                                        featureId = feature[2],
-                                        searchLayer = null;
-                                    searchLayer = this.map.getLayer(layerId);
-                                    if (searchLayer) {
-                                        source = {
-                                            exactMatch: true,
-                                            outFields: ["*"],
-                                            featureLayer: searchLayer,
-                                            displayField: attribute,
-                                            searchFields: [attribute]
-                                        };
-                                        value = featureId;
-                                    }
-
-                                }
-                            }
-                        }
-                        if (this.config.find) {
-                            value = decodeURIComponent(this.config.find);
-                        }
-                        var urlSearch = new Search({
-                            map: this.map
-                        });
-                        urlSearch.sources;
-
-                        if (source) {
-                            urlSearch.set("sources", [source]);
-                        }
-                        urlSearch.on("load", lang.hitch(this, function () {
-                            urlSearch.search(value).then(lang.hitch(this, function () {
-                                on.once(this.map.infoWindow, "hide", lang.hitch(this, function () {
-                                    urlSearch.clear();
-                                    urlSearch.destroy();
-                                }));
-                            }));
-                        }));
-                        urlSearch.startup();
-
-                    }));
-                }
 
 
                 query(".arcgisSearch .searchBtn").style("backgroundColor", this.config.theme.toString());
@@ -303,6 +128,52 @@ declare, win, array, Color, all, Deferred, lang, domUtils, esriRequest, esriLang
 
 
             }));
+
+
+            //Feature Search or find (if no search widget)
+            if ((this.config.find || (this.config.customUrlLayer.id !== null && this.config.customUrlLayer.fields.length > 0 && this.config.customUrlParam !== null))) {
+                require(["esri/dijit/Search", "esri/urlUtils"], lang.hitch(this, function (Search, urlUtils) {
+                    var source = null,
+                        value = null,
+                        searchLayer = null;
+
+                    var urlObject = urlUtils.urlToObject(document.location.href);
+                    urlObject.query = urlObject.query || {};
+                    urlObject.query = esriLang.stripTags(urlObject.query);
+                    //Support find or custom url param 
+                    if (this.config.find) {
+                        value = decodeURIComponent(this.config.find);
+                    } else if (urlObject.query[this.config.customUrlParam.toLowerCase()]) {
+                        value = urlObject.query[this.config.customUrlParam.toLowerCase()];
+
+                        searchLayer = this.map.getLayer(this.config.customUrlLayer.id);
+                        if (searchLayer) {
+
+                            var searchFields = this.config.customUrlLayer.fields[0].fields;
+                            source = {
+                                exactMatch: true,
+                                outFields: ["*"],
+                                featureLayer: searchLayer,
+                                displayField: searchFields[0],
+                                searchFields: searchFields
+                            };
+                        }
+                    }
+                    var urlSearch = new Search({
+                        map: this.map
+                    });
+
+                    if (source) {
+                        urlSearch.set("sources", [source]);
+                    }
+                    urlSearch.on("load", lang.hitch(this, function () {
+                        urlSearch.search(value);
+                    }));
+   
+                    urlSearch.startup();
+
+                }));
+            }
 
             require(["application/sniff!locate?esri/dijit/LocateButton"], lang.hitch(this, function (LocateButton) {
                 if (!LocateButton) {

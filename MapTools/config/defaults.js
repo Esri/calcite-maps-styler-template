@@ -77,8 +77,16 @@ define({
     "share": false,
     "level": null,
     "center": null,
-    "find": null,
-    "feature": null,
+    //Setup the app to support a custom url parameter. Use this if you want users
+    //to be able to search for a string field in a layer. For example if the web map
+    //has parcel data and you'd like to be able to zoom to a feature using its parcel id
+    //you could add a custom url param named parcel then users could enter 
+    //a value for that param in the url. index.html?parcel=3203
+    "customUrlLayer":{
+        "id": null,//id of the search layer as defined in the web map
+        "fields": []//Name of the string field to search 
+    },
+    "customUrlParam": null,//Name of url param. For example parcels
     "basemapgroup": {
         "title": null,
         "owner": null
