@@ -159,7 +159,9 @@ declare, lang, query, on, string, locale, domConstruct, array, arcgisUtils, esri
                     var legendButton = dom.byId("legendButton");
                     var legendContainer = dom.byId("legendContainer");
                     var timeContainer = dom.byId("timeContainer");
+
                     on(legendButton, "click", lang.hitch(this, function () {
+
                         if (domClass.contains(legendButton, "icon-menu-open")) {
                             domClass.add(legendButton, ["icon-menu-close", "move"]);
                             domClass.remove(legendButton, "icon-menu-open");
@@ -193,7 +195,7 @@ declare, lang, query, on, string, locale, domConstruct, array, arcgisUtils, esri
 
                     legend.startup();
                     dom.byId("legendButton").title = this.config.i18n.legend.title;
-                    domClass.add(legendContainer, "window-" + this.config.legendposition);
+                    domClass.add(legendContainer, "window-top-right");
 
                 }));
             } else {
@@ -354,9 +356,11 @@ declare, lang, query, on, string, locale, domConstruct, array, arcgisUtils, esri
             }
 
             if (this.config.timecolor) {
-                query(".tc").style("color", this.config.timecolor);
-                query(".dijitSliderImageHandleH").style("backgroundColor", this.config.timecolor.toString());
-                query(".dijitSliderImageHandleH").style("borderColor", this.config.timecolor.toString());
+                var c = this.config.timecolor.toString();
+                query(".tc").style("color", c);
+                query(".dijitSliderImageHandleH").style("background-color", c);
+                //query(".dijitSliderImageHandleH").style("border-color", c);
+               // query(".dijitSliderImageHandle").style("background", c);
             }
             if (this.config.slidercolor) {
                 query(".dijitSliderProgressBarH").style("backgroundColor", this.config.slidercolor.toString());
@@ -403,8 +407,6 @@ declare, lang, query, on, string, locale, domConstruct, array, arcgisUtils, esri
                 if (this.config.noslider) {
                     //hide the play and slider controls
                     domClass.add(dom.byId("timeContainer"), "noslider");
-                }else{
-                    console.log("Time Container")
                 }
                 //Show the time navigation controls (prev,  next)
                 if (this.config.timenav) {
@@ -596,7 +598,7 @@ declare, lang, query, on, string, locale, domConstruct, array, arcgisUtils, esri
             if (this.config.zoomslider === false) {
                 domClass.add(document.body, "nozoom");
             }
-  
+
             arcgisUtils.createMap(itemInfo, "mapDiv", {
                 mapOptions: mapOptions,
                 usePopupManager: true,
@@ -615,37 +617,40 @@ declare, lang, query, on, string, locale, domConstruct, array, arcgisUtils, esri
                 }
             }), this.reportError);
         },
-    _setLevel: function (options) {
-      var level = this.config.level;
-      //specify center and zoom if provided as url params 
-      if (level) {
-        options.zoom = level;
-      }
-      return options;
-    },
+        _setLevel: function (options) {
+            var level = this.config.level;
+            //specify center and zoom if provided as url params 
+            if (level) {
+                options.zoom = level;
+            }
+            return options;
+        },
 
-    _setCenter: function (options) {
-      var center = this.config.center;
-      if (center) {
-        var points = center.split(",");
-        if (points && points.length === 2) {
-          options.center = [parseFloat(points[0]), parseFloat(points[1])];
-        }
-      }
-      return options;
-    },
+        _setCenter: function (options) {
+            var center = this.config.center;
+            if (center) {
+                var points = center.split(",");
+                if (points && points.length === 2) {
+                    options.center = [parseFloat(points[0]), parseFloat(points[1])];
+                }
+            }
+            return options;
+        },
 
-    _setExtent: function (info) {
-      var e = this.config.extent;
-      //If a custom extent is set as a url parameter handle that before creating the map
-      if (e) {
-        var extArray = e.split(",");
-        var extLength = extArray.length;
-        if (extLength === 4) {
-          info.item.extent = [[parseFloat(extArray[0]), parseFloat(extArray[1])], [parseFloat(extArray[2]), parseFloat(extArray[3])]];
+        _setExtent: function (info) {
+            var e = this.config.extent;
+            //If a custom extent is set as a url parameter handle that before creating the map
+            if (e) {
+                var extArray = e.split(",");
+                var extLength = extArray.length;
+                if (extLength === 4) {
+                    info.item.extent = [
+                        [parseFloat(extArray[0]), parseFloat(extArray[1])],
+                        [parseFloat(extArray[2]), parseFloat(extArray[3])]
+                    ];
+                }
+            }
+            return info;
         }
-      }
-      return info;
-    }
     });
 });

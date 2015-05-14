@@ -234,7 +234,6 @@
       "search": true,
       "locationSearch": true,
       "searchExtent":false,
-      "legendposition": "top-right",
       "timeposition": "bottom-center"
    }
 }

@@ -128,6 +128,11 @@
 .claro .dialog-content .twitter-auth-status {
     margin-bottom: 20px;
 }
+@media screen and (max-width: 450px) {
+   .claro .dijitDialog {
+        max-width:310px;
+    }
+}
 @media screen and (max-width: 850px) {
     .drawer-open .claro .dialog-content {
         width: auto;

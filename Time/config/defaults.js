@@ -19,7 +19,7 @@ define({
   //Default configuration settings for the application. This is where you'll define things like a bing maps key,
   //default web map, default app color theme and more. These values can be overwritten by template configuration settings and url parameters.
   "appid": "",
-  "webmap": "3c226baaa63f4616a423e0d8bc8e59c9",
+  "webmap": "2375ec0542814e498cb97faecd9c0065",
   "oauthappid": null, //"AFTKRmv16wj14N3z",
   //Group templates must support a group url parameter. This will contain the id of the group.
   "group": "",
@@ -40,15 +40,13 @@ define({
   "sliderrate": 500, //rate at which time slider plays in milliseconds.
   "noslider":false, //hide slider and play controls and just show time
   "timenav": false, //When true show the time navigation (next previous arrows)
-  //position time and legend containers. Valid values are top-right, bottom-right, top-left
-  //bottom-left, top-center, bottom-center. Note that if you set both to the same value they'll occupy the same space and the 
-  //layout won't position correctly.
+  //position time container. Valid values are  bottom-right, 
+  //bottom-left, bottom-center. 
   "timeposition":"bottom-center", 
-  "legendposition": "top-right",
   "panelbackground": "#575757", //panel and title bar background color as hex value
   "panelcolor":"#FFF", //text color as hex value 
-  "timecolor": "#4992CD", //color for play and slider controls
-  "slidercolor": "#7CC5FF", //color for the slider bar on time slider
+  "timecolor": "#a8a8a8", //#007AC2 //color for play and slider controls
+  "slidercolor": "#a8a8a8", //color for the slider bar on time slider
   "legend": true, //Add legend to map 
   "title": true, //add title
   "titletext": null, //specify title text 
@@ -72,7 +70,7 @@ define({
       "id": "",
       "fields": []
   }],
-  "scale": false, //display a scale bar on the map 
+  "scale": true, //display a scale bar on the map 
   "helperServices": {
     "geometry": {
       "url": null
