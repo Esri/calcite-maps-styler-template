@@ -88,37 +88,44 @@ declare, Deferred, all, lang, array, arcgisUtils, esriLang, PrintTemplate, esriR
                         plate.layoutOptions = this.printConfig.layoutOptions;
                         return plate;
                     }));
-
                     deferred.resolve(true);
-                    return;
                 }));
             } else {
-                this.templates = [{
-                    layout: "Letter ANSI A Landscape",
-                    layoutOptions: this.printConfig.layoutOptions,
-                    label: this.printConfig.printi18n.layouts.label1 + " ( " + this.printConfig.format + " )",
-                    format: this.printConfig.format
-                },
-                {
-                    layout: "Letter ANSI A Portrait",
-                    layoutOptions: this.printConfig.layoutOptions,
-                    label: this.printConfig.printi18n.layouts.label2 + " ( " + this.printConfig.format + " )",
-                    format: this.printConfig.format
-                },
-                {
-                    layout: "Letter ANSI A Landscape",
-                    layoutOptions: this.printConfig.layoutOptions,
-                    label: this.printConfig.printi18n.layouts.label3 + " ( image )",
-                    format: "PNG32"
-                },
-                {
-                    layout: "Letter ANSI A Portrait",
-                    layoutOptions: this.printConfig.layoutOptions,
-                    label: this.printConfig.printi18n.layouts.label4 + " ( image )",
-                    format: "PNG32"
-                }];
+                //var letterAnsiAPlate = new PrintTemplate();
+               // letterAnsiAPlate.layout = "Letter ANSI A Landscape";
+ 
+                var landscapeFormat = new PrintTemplate();
+                landscapeFormat.layout = "Letter ANSI A Landscape";
+                landscapeFormat.layoutOptions = this.printConfig.layoutOptions;
+                landscapeFormat.format = this.printConfig.format;
+                landscapeFormat.label = this.printConfig.printi18n.layouts.label1 + " ( " + this.printConfig.format + " )";
+                
+                var portraitFormat = new PrintTemplate();
+                portraitFormat.layout = "Letter ANSI A Portrait";
+                portraitFormat.layoutOptions = this.printConfig.layoutOptions;
+                portraitFormat.format = this.printConfig.format;
+                portraitFormat.label = this.printConfig.printi18n.layouts.label2 + " ( " + this.printConfig.format + " )";
+
+ 
+                var landscapeImage = new PrintTemplate();
+                landscapeImage.layout = "Letter ANSI A Landscape";
+                landscapeImage.layoutOptions = this.printConfig.layoutOptions;
+                landscapeImage.format = this.printConfig.format;
+                landscapeImage.label = this.printConfig.printi18n.layouts.label3 +  " ( image )";
+
+     
+               var portraitImage = new PrintTemplate();
+                portraitImage.layout = "Letter ANSI A Portrait";
+                portraitImage.layoutOptions = this.printConfig.layoutOptions;
+                portraitImage.format = this.printConfig.format;
+                portraitImage.label = this.printConfig.printi18n.layouts.label4 + " ( image )";
+
+     
+
+                this.templates = [landscapeFormat, portraitFormat, landscapeImage, portraitImage];
+          
                 deferred.resolve(true);
-                return;
+
             }
             return deferred.promise;
 
