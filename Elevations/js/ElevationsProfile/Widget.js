@@ -82,10 +82,9 @@ define(["dojo/Evented", "dijit/_WidgetBase", "dijit/_OnDijitClickMixin", "dijit/
         postCreate: function () {
             this.inherited(arguments);
             this.own(
-              on(this._helpNode, "click", lang.partial(this._showHelp, false)), 
+            on(this._helpNode, "click", lang.partial(this._showHelp, false)),
 
-              aspect.after(registry.getEnclosingWidget(this.domNode), "resize", lang.hitch(this, this._resizeChart), true)
-            );
+            aspect.after(registry.getEnclosingWidget(this.domNode), "resize", lang.hitch(this, this._resizeChart), true));
 
         },
 
@@ -207,12 +206,12 @@ define(["dojo/Evented", "dijit/_WidgetBase", "dijit/_OnDijitClickMixin", "dijit/
             this.measureTool.hideTool("location");
 
             //Activate then deactivate the distance tool to enable the measure units 
-            on.once(this.measureTool, "tool-change", lang.hitch(this, function(){
+            on.once(this.measureTool, "tool-change", lang.hitch(this, function () {
                 this.measureTool.setTool("distance", false);
                 this.measureTool.clearResult();
             }));
             this.measureTool.setTool("distance", true);
-            
+
             // Create profile on measure end 
             this.measureTool.on("measure-end", lang.hitch(this, this._onMeasureEnd));
 
@@ -404,15 +403,15 @@ define(["dojo/Evented", "dijit/_WidgetBase", "dijit/_OnDijitClickMixin", "dijit/
                 this.emit("error", error);
             }));
         },
-        _unitsChanged: function(){
-         //Check to see if the measure tool is active. If so call update profile chart 
-         if(this.measureTool._distanceButton.checked){
-          //measure tool
-          this._updateProfileChart();
-         }else{
-          //Feature Selection
-          this._mapFeatureSelectionChange();
-         }
+        _unitsChanged: function () {
+            //Check to see if the measure tool is active. If so call update profile chart 
+            if (this.measureTool._distanceButton.checked) {
+                //measure tool
+                this._updateProfileChart();
+            } else {
+                //Feature Selection
+                this._mapFeatureSelectionChange();
+            }
         },
         /**
          * CREATE PROFILE CHART
@@ -530,8 +529,8 @@ define(["dojo/Evented", "dijit/_WidgetBase", "dijit/_OnDijitClickMixin", "dijit/
                     fill: this.chartRenderingOptions.indicatorFillColor,
                     fillFunc: lang.hitch(this, function (obj) {
                         var elevIndex = this.distances.indexOf(obj.x);
-                        if(elevIndex === -1){
-                          return null;
+                        if (elevIndex === -1) {
+                            return null;
                         }
                         var elev = this.elevationData[elevIndex].y;
                         return (elev >= elevFirst) ? "green" : "red";
@@ -542,8 +541,8 @@ define(["dojo/Evented", "dijit/_WidgetBase", "dijit/_OnDijitClickMixin", "dijit/
                     },
                     labelFunc: lang.hitch(this, function (obj) {
                         var elevIndex = this.distances.indexOf(obj.x);
-                        if(elevIndex === -1){
-                          return null;
+                        if (elevIndex === -1) {
+                            return null;
                         }
                         var elev = this.elevationData[elevIndex].y;
                         var elevChangeLabel = number.format(elev - elevFirst, detailsNumberFormat);
