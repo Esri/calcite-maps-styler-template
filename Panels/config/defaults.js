@@ -30,7 +30,7 @@ define([], function() {
         "subtitle": null,
         //FOOTER: When true and footer_text is supplied a footer section is added to the map. 
         "footer": false,
-        "footer_text": "ahasfdas",
+        "footer_text": "",
         //DESCRIPTION: Display content in a panel on the right or left side of the map. If no description_content
         //is provided the web map description is used. 
         //Use the description_side option to specify the side of the map the content will display. If both the legend
