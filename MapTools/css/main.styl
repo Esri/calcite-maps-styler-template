@@ -493,105 +493,116 @@ html,body {
 }
 
 .TableOfContents {
-    position:relative;
-    width: 280px;
-    max-height:300px;
-    overflow:auto;
+  position: relative;
+  width: 280px;
+  max-height: 300px;
+  border-radius:4px;
+  overflow: auto;
 }
-.TableOfContents .toc-title {
-    border-bottom: 1px solid #e0e0e0;
-    font-size: 16px;
-    line-height: 16px;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    user-select: none;
+.TableOfContents .tocList {
+  background-color: #f8f8f8;
+  border-top: 1px solid #e0e0e0;
 }
-.TableOfContents .toc-first-layer .toc-title {
-    border-top: 1px solid #e0e0e0;
+
+.TableOfContents .tocList ul {
+  background-color: #d3d3d3;
+  background-color: rgba(0, 0, 0, 0.025);
 }
-.TableOfContents .toc-title-container {
-    background: none;
-    color: #555;
-    position: relative;
-    zoom: 1;
+
+.TableOfContents .tocList,
+.TableOfContents .tocLayer,
+.TableOfContents .tocSubList,
+.TableOfContents .tocSubListLayer {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
-.TableOfContents .toc-text {
-    float: left;
-    padding: 12px 0;
-    margin: 0;
-    text-overflow: ellipsis;
-    width: 200px;
-    white-space: nowrap;
-    overflow-x: hidden;
-    line-height: 16px;
-    height: 16px;
-    border: 1px solid transparent;
-    vertical-align: middle;
+
+.TableOfContents .tocSubList {
+  margin: 0 0 0 12px;
 }
-.esriRTL .TableOfContents .toc-text {
-    float: right;
+
+.dj_rtl .TableOfContents .tocSubList {
+  margin: 0 20px 0 0;
 }
-.TableOfContents .toc-checkbox {
-    float: left;
-    height: 16px;
-    width: 16px;
-    border: 1px solid #bababa;
-    margin: 12px 8px;
-    vertical-align: middle;
-    font-size: 12px;
-    line-height: 16px;
-    background-color: #fff;
-    color: #000;
-    cursor: pointer;
+
+.TableOfContents .tocTitle {
+  /*border-bottom: 1px solid #e0e0e0;*/
+  font-size: 16px;
+  line-height: 20px;
+  background-color: #f8f8f8;
+  color: #555;
 }
-.esriRTL .TableOfContents .toc-checkbox {
-    float: right;
+
+.TableOfContents .tocLabel {
+  display: block;
+  padding: 10px 20px 10px 32px;
+  margin: 0;
+  font-weight: 600;
 }
-.TableOfContents .toc-checkbox:hover {
-    color: #555;
+/*make sub layers a little smaller and normal font*/
+.TableOfContents .tocLabel.sub{
+  font-weight: normal;
+  font-size: 14px;
 }
-.TableOfContents .toc-checkbox:active {
-    color: #999;
+.dj_rtl .TableOfContents .tocLabel {
+  padding: 10px 32px 10px 20px;
 }
-.TableOfContents .toc-check:before{
-    content: "\2713";
-    color:#333;
-    text-shadow: 1px 1px 1px rgba(0, 0, 0, .2);
-    font-size: 18px;   
+
+.TableOfContents .tocScaleInvisible .tocLabel {
+  color: #999;
 }
-.toc-settings {
-    cursor: pointer;
-    padding: 12px 0;
-    float: right;
-    margin-right: 15px;
-    color: #999;
+
+.TableOfContents .tocCheckbox {
+  float: left;
+  height: 16px;
+  width: 16px;
+  padding: 0;
+  margin: 12px 5px 12px 10px;
 }
-.toc-settings:hover {
-    color: #333;
+
+.dj_rtl .TableOfContents .tocCheckbox {
+  float: right;
+  margin: 12px 10px 12px 5px;
 }
-.toc-settings:active {
-    color: #97cbec;
+
+.TableOfContents .tocSettings {
+  float: right;
+  margin: 0 11px 0 0;
+  padding: 10px;
+  font-size: 16px;
+  line-height: 20px;
+  cursor: pointer;
+  color: #999;
 }
-.esriRTL .toc-settings {
-    margin-right: 0;
-    float: left;
-    margin-left: 15px;
+
+.TableOfContents .tocSettings:hover,
+.TableOfContents .tocSettings:active {
+  color: #333;
 }
-.toc-account {
-    margin-left: 4px;
-    cursor: pointer;
-    text-decoration: none;
+
+.TableOfContents .tocCustomContent {
+  margin: 0 20px 5px 32px;
 }
-.esriRTL .toc-account {
-    margin-left: 0;
-    margin-right: 4px;
+
+.dj_rtl .TableOfContents .tocCustomContent {
+  margin: 0 32px 5px 20px;
 }
-@media screen and (max-width:300px) {
-    .TableOfContents {
-    width: auto;
+
+.dj_rtl .TableOfContents .tocSettings {
+  float: left;
+  margin: 0 0 0 11px;
 }
-.TableOfContents .toc-text {
-    width: 60%}
-}.clear {
-    clear: both;
+
+.tocClear {
+  clear: both;
 }
+
+@media screen and (max-width: 300px) {
+  .TableOfContents {
+    width: auto; }
+  .TableOfContents .toc-text {
+    width: 60%; } }
+
+.clear {
+  clear: both; }
