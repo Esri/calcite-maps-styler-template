@@ -129,9 +129,14 @@ define([
             this.buttonConflict = $.fn.button.noConflict();
             var $tabs = $('.tab-links li');
             domClass.add($('.navigationTabs')[0], "activeTab");
-            modalTemplate = string.substitute(modalTemplate, nls);
+            var modalTemplateSub = string.substitute(modalTemplate, {
+              id: "myModal",
+              title: "",
+              labelId: "myModalLabel",
+              close: nls.user.close
+            });
             // place modal code
-            domConstruct.place(modalTemplate, document.body, 'last');
+            domConstruct.place(modalTemplateSub, document.body, 'last');
             $('.prevtab').on('click', lang.hitch(this, function () {
                 $tabs.filter('.active').prev('li').find('a[data-toggle="tab"]').tab('show');
             }));
@@ -264,7 +269,7 @@ define([
             }
             on(dom.byId("selectLayer"), "change", lang.hitch(this, function (evt) {
                 //support for all layers in webmap
-                if (evt.currentTarget.value === nls.builder.allLayerSelectOptionText) {
+                if (evt.currentTarget.value === "all") {
                     domStyle.set(dom.byId("layerSelectPane"), 'display', 'block');
                     array.forEach(dom.byId("layerSelect").options, lang.hitch(this, function (opt) {
                         this._populateFields(opt.value);
@@ -272,7 +277,7 @@ define([
                         this.previousValue = opt.value;
                     }));
                     dom.byId("layerSelect")[dom.byId("layerSelect").options.length - 1].selected = true;
-                    this.currentConfig.form_layer.id = nls.builder.allLayerSelectOptionText;
+                    this.currentConfig.form_layer.id = "all";
                     $("#ShowHideLayerOption")[0].checked = false;
                     $("#ShowHideLayerOption")[0].disabled = true;
                 } else if (evt.currentTarget.value !== "") {
@@ -301,6 +306,7 @@ define([
                         }
                     }));
                 }
+              this._viewerSettings();
             }));
 
             on(dom.byId("layerSelect"), "change", lang.hitch(this, function (evt) {
@@ -341,6 +347,67 @@ define([
             if (this.config && this.config.i18n && this.config.i18n.direction == "rtl") {
                 this._swapContents();
             }
+        },
+      
+        _viewerFields: function(layerInfo, layer){
+          var layerName = layerInfo.id;
+          var fields = layer.fields;
+            var container = domConstruct.create("div", {
+              className: "form-group"
+            });
+            var label = domConstruct.create("label", {
+              textContent: layer.name +  " " + nls.builder.displayFieldText
+            }, container);
+            var select = domConstruct.create("select", {
+              className: "form-control"
+            }, container);
+            for(var j = 0; j < fields.length; j++){
+              var field = fields[j];
+              var opt = domConstruct.create("option", {
+                value: field.name,
+                textContent: field.alias || field.name
+              }, select);
+              var selectedField = this.currentConfig.selectedTitleField[layerName];
+              if(!selectedField){
+                selectedField = layer.displayField; 
+              }
+              this.currentConfig.selectedTitleField[layerName] = selectedField;
+              if (selectedField) {
+                  if (field.name === selectedField) {
+                    domAttr.set(opt, "selected", true);
+                  }
+              }
+            }
+            on(select, "change", lang.hitch(this, function(evt){
+              this.currentConfig.selectedTitleField[layerName] = evt.currentTarget.value;
+            }));
+            var help = domConstruct.create("div", {
+              className: "help-block",
+              textContent: nls.builder.displayFieldHintText
+            }, container);
+          return container;
+        },
+      
+        _viewerSettings: function(){
+          var layers = this._validLayers;
+          var responseLayers = this._validLayersResponse;
+          var selectLayer = dom.byId("selectLayer");
+          var displayFieldArea = dom.byId("displayFieldArea");
+          displayFieldArea.innerHTML = "";
+          for(var i = 0; i < layers.length; i++){
+            var layer = layers[i];
+            var layerObject = responseLayers[i];
+            var node;
+            if(this.currentConfig.form_layer.id === "all"){
+              node = this._viewerFields(layer, layerObject);
+              domConstruct.place(node, displayFieldArea);
+            }
+            else if(this.currentConfig.form_layer.id === layer.id){
+              node = this._viewerFields(layer, layerObject);
+              domConstruct.place(node, displayFieldArea);
+              break;
+            }
+          }
         },
 
         _enableDisableLogo: function () {
@@ -395,15 +462,16 @@ define([
 
         //function will validate and add operational layers in dropdown
         _addOperationalLayers: function (isLoadRequired) {
-            var layerListArray = [],
+            var layerListArray = [], validLayers = [],
                 attribute;
             this._clearLayerOptions();
             array.forEach(this.currentConfig.itemInfo.itemData.operationalLayers, lang.hitch(this, function (currentLayer) {
                 if (currentLayer.layerType && currentLayer.layerType === "ArcGISFeatureLayer") {
                     layerListArray.push(this._queryLayer(currentLayer.url, currentLayer.id));
+                    validLayers.push(currentLayer);
                 }
             }));
-            all(layerListArray).then(lang.hitch(this, function () {
+            all(layerListArray).then(lang.hitch(this, function (response) {
                 this._checkForLayers();
                 if (dom.byId("selectLayer").options.length <= 1) {
                     domAttr.set(dom.byId("selectLayer"), "disabled", true);
@@ -435,7 +503,7 @@ define([
                         domAttr.set(dom.byId("selectLayer"), "disabled", false);
                         domStyle.set(dom.byId("layerSelectPane"), 'display', 'block');
                         dom.byId("layerSelect")[dom.byId("layerSelect").options.length - 1].selected = true;
-                        this.currentConfig.form_layer.id = nls.builder.allLayerSelectOptionText;
+                        this.currentConfig.form_layer.id = "all";
                     } else {
                         this.previousValue = this.currentConfig.form_layer.id;
 
@@ -452,6 +520,11 @@ define([
                     }));
                 }
                 this._populateShowLayerOption(this.currentConfig.showLayer);
+              
+                this._validLayers = validLayers;
+                this._validLayersResponse = response;
+              
+                this._viewerSettings();
             }));
         },
 
@@ -547,7 +620,7 @@ define([
 
         _populateShowLayerOption: function (showlayeropt) {
             array.some(dom.byId("selectLayer").options, function (currentElement) {
-                if (currentElement.value === nls.builder.allLayerSelectOptionText && currentElement.selected) {
+                if (currentElement.value === "all" && currentElement.selected) {
                         $("#ShowHideLayerOption")[0].checked = false;
                         $("#ShowHideLayerOption")[0].disabled = true;
                         return true;
@@ -591,40 +664,16 @@ define([
 
         //function will populate all editable fields with validations
         _populateFields: function (layerName) {
-            var fieldRow, fieldName, fieldLabel, fieldLabelInput, fieldDescription, fieldDescriptionInput, fieldCheckBox,
+            var fieldRow, fieldName, fieldModal, fieldModalContent, fieldConfigure, fieldConfigureButton, fieldConfigureIcon, fieldLabel, fieldLabelInput, fieldDescription, fieldDescriptionInput, fieldCheckBox,
                 fieldCheckBoxInput, layerIndex, fieldDNDIndicatorTD, fieldDNDIndicatorIcon, matchingField = false,
                 newAddedFields = [],
                 sortedFields = [],
-                fieldPlaceholder, fieldPlaceholderInput, fieldType, typeSelect, labelPopupContent, helpTextPopupContent, placeholderPopupContent, displayFieldInfoContent, tdFieldRadioButton, fieldRadioButtonInput;
+                fieldPlaceholder, fieldPlaceholderInput, fieldType, typeSelect, labelPopupContent, helpTextPopupContent, placeholderPopupContent;
             var formFieldsNode = dom.byId('geoFormFieldsTable');
             labelPopupContent = '<div class="form-group"><label class="text-danger">'+nls.builder.labelHelpMessage +'</label><input type="text" class="form-control" data-input-type="String" placeholder="' +nls.builder.placeHolderHintMessage +'" data-display-type="text"><p class="help-block">' + nls.builder.placeHolderHelpMessage + '</p></div>';
             helpTextPopupContent = '<div class="form-group"><label>' + nls.builder.labelHelpMessage + '</label><input type="text" class="form-control" data-input-type="String" placeholder="' + nls.builder.placeHolderHintMessage + '" data-display-type="text"><p class="text-danger">' + nls.builder.placeHolderHelpMessage + '</p></div>';
             placeholderPopupContent = '<div class="form-group"><label>' + nls.builder.labelHelpMessage + '</label><input type="text" class="form-control hintBackgroundColor" data-input-type="String" placeholder="' + nls.builder.placeHolderHintMessage + '" data-display-type="text"><p class="help-block">' + nls.builder.placeHolderHelpMessage + '</p></div>';
-            displayFieldInfoContent = nls.builder.displayFieldHintText;
-            $('#LabelInfo').popover({ placement: 'bottom', content: labelPopupContent, html: true, trigger: 'click' });
-            $('#helpTextInfo').popover({ placement: 'bottom', content: helpTextPopupContent, html: true, trigger: 'click' });
-            $('#hintTextInfo').popover({ placement: 'bottom', content: placeholderPopupContent, html: true, trigger: 'click' });
-            $('#displayFieldInfo').popover({ placement: 'bottom', content: displayFieldInfoContent, html: true, trigger: 'click' });
-            on($('#LabelInfo'), 'click', lang.hitch(this, function () {
-                $("#helpTextInfo").popover('hide');
-                $("#hintTextInfo").popover('hide');
-                $("#displayFieldInfo").popover('hide');
-            }));
-            on($('#helpTextInfo'), 'click', lang.hitch(this, function () {
-                $("#LabelInfo").popover('hide');
-                $("#hintTextInfo").popover('hide');
-                $("#displayFieldInfo").popover('hide');
-            }));
-            on($('#hintTextInfo'), 'click', lang.hitch(this, function () {
-                $("#LabelInfo").popover('hide');
-                $("#helpTextInfo").popover('hide');
-                $("#displayFieldInfo").popover('hide');
-            }));
-            on($("#displayFieldInfo"), 'click', lang.hitch(this, function () {
-                $("#LabelInfo").popover('hide');
-                $("#helpTextInfo").popover('hide');
-                $("#hintTextInfo").popover('hide');
-            }));
+            $('#LabelInfo').popover({ placement: 'bottom', content: labelPopupContent, html: true, trigger: 'focus' });
             if (formFieldsNode) {
                 domConstruct.empty(formFieldsNode);
             }
@@ -635,7 +684,9 @@ define([
             $(document).ready(function () {
                 var tbody = $('#geoFormFieldsTable');
                 if (tbody) {
-                    tbody.sortable();
+                    tbody.sortable({
+                      handle: ".drag-cursor"
+                    });
                 }
             });
 
@@ -716,72 +767,112 @@ define([
                     }
                     this._getFieldCheckboxState();
                 }));
-                tdFieldRadioButton = domConstruct.create("td", {}, fieldRow);
-                if (currentField.type === "esriFieldTypeString") {
-                    fieldRadioButtonInput = domConstruct.create("input", {
-                        className: "fieldRadiobutton",
-                        type: "radio",
-                        name: 'optionsRadios',
-                        index: currentIndex
-                    }, tdFieldRadioButton);
-                    if (this.currentConfig.selectedTitleField[layerName]) {
-                        if (currentField.name === this.currentConfig.selectedTitleField[layerName]) {
-                            fieldRadioButtonInput.checked = true;
-                        }
-                    }
-                    else {
-                        if (this.fieldInfo[layerName].displayField && currentField.name === this.fieldInfo[layerName].displayField) {
-                            fieldRadioButtonInput.checked = true;
-                            this.currentConfig.selectedTitleField[layerName] = this.fieldInfo[layerName].displayField;
-                        }
-                    }
-                    domAttr.set(fieldRadioButtonInput, "value", currentField.name);
-                    on(fieldRadioButtonInput, "change", lang.hitch(this, function (evt) {
-                        this.currentConfig.selectedTitleField[layerName] = evt.currentTarget.value;
-                    }));
-                }
-
+              
                 fieldName = domConstruct.create("td", {
                     className: "fieldName layerFieldsName",
                     innerHTML: currentField.name,
                     index: currentIndex
                 }, fieldRow);
                 fieldLabel = domConstruct.create("td", {}, fieldRow);
-                fieldLabelInput = domConstruct.create("input", {
+              
+              fieldLabelInput = domConstruct.create("input", {
                     className: "form-control fieldLabel",
                     index: currentIndex,
                     value: currentField.alias
                 }, fieldLabel);
-                fieldDescription = domConstruct.create("td", {}, fieldRow);
+              
+                fieldConfigure = domConstruct.create("td", {}, fieldRow);
+              
+                fieldConfigureButton = domConstruct.create("span", {
+                    className: "btn btn-default"
+                }, fieldConfigure);
+              
+                fieldConfigureIcon = domConstruct.create("span", {
+                    className: "glyphicon glyphicon-cog"
+                }, fieldConfigureButton);
+              
+                on(fieldConfigureButton, "click", function(){
+                  $("#configure_modal_" + currentIndex).modal("show");
+                });
+              
+              
+              
+              
+              fieldModal = domConstruct.create("div", {
+                innerHTML: string.substitute(modalTemplate, {
+                  id: "configure_modal_" + currentIndex,
+                  labelId: "configure_modal_label_" + currentIndex,
+                  title: string.substitute(nls.builder.configureField, { fieldName: currentField.name}),
+                  close: nls.user.close
+                })
+              }, fieldConfigure);
+              
+              fieldModalContent = dom.byId("configure_modal_" + currentIndex + "_modal_body");
+              
+                var descriptionControl = domConstruct.create("div", {
+                   className: "form-group"
+                }, fieldModalContent);
+              
+                 domConstruct.create("label", {
+                   innerHTML: nls.builder.fieldDescriptionLabelText
+                }, descriptionControl);
+              
+                domConstruct.create("span", {
+                   innerHTML: " <a tabindex=\"0\" data-toggle=\"popover\" class=\"helpTextInfo glyphicon glyphicon-info-sign\"></a>"
+                }, descriptionControl);
+                
+ 
                 fieldDescriptionInput = domConstruct.create("input", {
                     className: "form-control fieldDescription",
-                    value: ""
-                }, fieldDescription);
-                fieldPlaceholder = domConstruct.create("td", {}, fieldRow);
-
+                    value: currentField.fieldDescription || ""
+                }, descriptionControl);
+              
+              
+  
                 if (!currentField.domain) {
+                  
+                  var hintControl = domConstruct.create("div", {
+                   className: "form-group"
+                }, fieldModalContent);
+                  
+                  domConstruct.create("label", {
+                   innerHTML: nls.builder.fieldTabPlaceHolderHeaderText
+                }, hintControl);
+                  
+                  domConstruct.create("span", {
+                   innerHTML: " <a tabindex=\"0\" data-toggle=\"popover\" class=\"hintTextInfo glyphicon glyphicon-info-sign\"></a>"
+                }, hintControl);
+                  
                     fieldPlaceholderInput = domConstruct.create("input", {
                         className: "form-control fieldPlaceholder",
                         index: currentIndex
-                    }, fieldPlaceholder);
+                    }, hintControl);
                     if (currentField.tooltip) {
                         fieldPlaceholderInput.value = currentField.tooltip;
                     }
                 }
-                fieldType = domConstruct.create("td", {}, fieldRow);
+              
+              var displayAsControl = domConstruct.create("div", {
+                   className: "form-group"
+                }, fieldModalContent);
+                
+                domConstruct.create("label", {
+                   innerHTML: nls.builder.fieldTabDisplayTypeHeaderText
+                }, displayAsControl);
+              
                 if (currentField.type === "esriFieldTypeDate") {
                     domConstruct.create("input", {
                         "class": "form-control",
                         "value": nls.builder.selectDateOption,
                         "disabled": "disabled"
-                    }, fieldType);
+                    }, displayAsControl);
                     return;
                 }
                 if ((currentField.domain && currentField.domain.codedValues) || (currentField.name === this.fieldInfo[layerName].typeIdField)) {
                     if ((currentField.domain && currentField.domain.codedValues && currentField.domain.codedValues.length <= 4) || (currentField.name === this.fieldInfo[layerName].typeIdField && this.fieldInfo[layerName].types && this.fieldInfo[layerName].types.length <= 4)) {
                         typeSelect = domConstruct.create("select", {
                             "class": "form-control displayType"
-                        }, fieldType);
+                        }, displayAsControl);
                         domConstruct.create("option", {
                             innerHTML: nls.builder.selectMenuOption,
                             value: "dropdown"
@@ -794,7 +885,7 @@ define([
                     else {
                         typeSelect = domConstruct.create("select", {
                             "class": "form-control displayType"
-                        }, fieldType);
+                        }, displayAsControl);
                         domConstruct.create("option", {
                             innerHTML: nls.builder.selectMenuOption,
                             value: "dropdown"
@@ -809,7 +900,7 @@ define([
                         if (currentField.type == "esriFieldTypeSmallInteger" || currentField.type == "esriFieldTypeInteger" || currentField.type == "esriFieldTypeSingle" || currentField.type == "esriFieldTypeDouble") {
                             typeSelect = domConstruct.create("select", {
                                 "class": "form-control displayType"
-                            }, fieldType);
+                            }, displayAsControl);
                             domConstruct.create("option", {
                                 innerHTML: nls.builder.selectTextOption,
                                 value: "textbox"
@@ -832,7 +923,7 @@ define([
                             if (currentField.type == "esriFieldTypeString" && currentField.length >= 20) {
                                 typeSelect = domConstruct.create("select", {
                                     "class": "form-control displayType"
-                                }, fieldType);
+                                }, displayAsControl);
                                 domConstruct.create("option", {
                                     innerHTML: nls.builder.selectTextOption,
                                     value: "text"
@@ -855,7 +946,7 @@ define([
                                     "class": "form-control",
                                     "value": nls.builder.selectTextOption,
                                     "disabled": "disabled"
-                                }, fieldType);
+                                }, displayAsControl);
                             }
                         }
                     }
@@ -864,7 +955,7 @@ define([
                             "class": "form-control",
                             "value": nls.builder.selectRangeOption,
                             "disabled": "disabled"
-                        }, fieldType);
+                        }, displayAsControl);
 
                     }
                 }
@@ -881,9 +972,11 @@ define([
                     });
                 }
                 domAttr.set(fieldLabelInput, "value", currentField.alias);
+              
                 if (currentField.fieldDescription) {
                     domAttr.set(fieldDescriptionInput, "value", currentField.fieldDescription);
                 }
+              
             }));
             if (query(".fieldCheckbox:checked").length == query(".fieldCheckbox").length) {
                 dom.byId('selectAll').checked = true;
@@ -899,15 +992,17 @@ define([
                     this.currentConfig.attachmentInfo[layerName].attachmentLabel = "";
                     this.currentConfig.attachmentInfo[layerName].attachmentHelpText = "";
                 }
-                this.currentConfig.attachmentInfo[layerName].enableAttachments ? this.currentConfig.attachmentInfo[layerName].enableAttachments : true;
-                this.currentConfig.attachmentInfo[layerName].attachmentIsRequired ? this.currentConfig.attachmentInfo[layerName].attachmentIsRequired : false;
-                this.currentConfig.attachmentInfo[layerName].attachmentLabel ? this.currentConfig.attachmentInfo[layerName].attachmentLabel : "";
-                this.currentConfig.attachmentInfo[layerName].attachmentHelpText ? this.currentConfig.attachmentInfo[layerName].attachmentHelpText : "";
+                this.currentConfig.attachmentInfo[layerName].enableAttachments = this.currentConfig.attachmentInfo[layerName].enableAttachments ? this.currentConfig.attachmentInfo[layerName].enableAttachments : true;
+                this.currentConfig.attachmentInfo[layerName].attachmentIsRequired = this.currentConfig.attachmentInfo[layerName].attachmentIsRequired ? this.currentConfig.attachmentInfo[layerName].attachmentIsRequired : false;
+                this.currentConfig.attachmentInfo[layerName].attachmentLabel = this.currentConfig.attachmentInfo[layerName].attachmentLabel ? this.currentConfig.attachmentInfo[layerName].attachmentLabel : "";
+                this.currentConfig.attachmentInfo[layerName].attachmentHelpText = this.currentConfig.attachmentInfo[layerName].attachmentHelpText ? this.currentConfig.attachmentInfo[layerName].attachmentHelpText : "";
                 this._createAttachmentInput(this.fieldInfo[layerName].layerUrl, this.currentConfig.attachmentInfo[layerName], this.fieldInfo[layerName].hasAttachments);
             }
             var currentLayer = [];
             currentLayer[layerName] = lang.clone(formFieldsNode);
             this.currentSelectedLayer = currentLayer[layerName];
+          $('.helpTextInfo').popover({content: helpTextPopupContent, html: true, trigger: 'focus' });
+            $('.hintTextInfo').popover({ content: placeholderPopupContent, html: true, trigger: 'focus' });
         },
 
         //To make the configured type as selected
@@ -929,43 +1024,40 @@ define([
                 on(layer, "load", lang.hitch(this, function () {
                     capabilities = layer.getEditCapabilities();
                     this._validateFeatureServer(layer, capabilities.canCreate, layerId);
-                    layerDeferred.resolve(true);
+                    layerDeferred.resolve(layer);
                 }));
                 on(layer, "error", function () {
-                    layerDeferred.resolve(true);
+                    layerDeferred.resolve();
                 });
                 return layerDeferred.promise;
             }
         },
 
         _checkForLayers: function () {
-            var filteredLayer = document.createElement("option");
-            if (dom.byId("selectLayer").options.length > 2) {
-                var fLayer = document.createElement("option");
-                filteredLayer.text = fLayer.text = nls.builder.allLayerSelectOptionText;
-                filteredLayer.value = fLayer.value = nls.builder.allLayerSelectOptionText;
-                dom.byId("selectLayer").appendChild(filteredLayer);
+            if (!this.currentConfig.form_layer.id) {
+              this.currentConfig.form_layer.id = "all";
             }
-            if (this.currentConfig.form_layer.id == nls.builder.allLayerSelectOptionText) {
+            var filteredLayer = document.createElement("option");
+            filteredLayer.text = nls.builder.allLayerSelectOptionText;
+            filteredLayer.value = "all";
+            domConstruct.place(filteredLayer, dom.byId("selectLayer"), "first");
+            array.some(dom.byId("selectLayer").options, lang.hitch(this, function (currentOption) {
+                if (currentOption.value == this.currentConfig.form_layer.id) {
+                    currentOption.selected = true;
+                    return true;
+                }
+            }));
+            if (this.currentConfig.form_layer.id == "all") {
                 domStyle.set(dom.byId("layerSelectPane"), "display", "block");
-                filteredLayer.selected = true;
                 for (var key in this.fieldInfo) {
                     this._populateFields(key);
                 }
-            } else {
-                if (this.currentConfig.form_layer.id !== "") {
-                    array.some(dom.byId("selectLayer").options, lang.hitch(this, function (currentOption) {
-                        if (currentOption.value == this.currentConfig.form_layer.id) {
-                            currentOption.selected = true;
-                            return true;
-                        }
-
-
-                    }));
-                    this._populateFields(this.currentConfig.form_layer.id);
-                    domStyle.set(dom.byId("layerSelectPane"), "display", "none");
-                }
             }
+            else{
+              this._populateFields(this.currentConfig.form_layer.id);
+              domStyle.set(dom.byId("layerSelectPane"), "display", "none");
+            }
+          
         },
 
         //function to filter editable layers from all the layers in webmap
@@ -1094,7 +1186,7 @@ define([
                 this.currentConfig.details.Description = $('#detailDescriptionInput').code();
                 break;
             case "fields":
-                    if (layerObj !== nls.builder.allLayerSelectOptionText) {
+                    if (layerObj !== "all") {
                     var innerObj = [];
                     var fieldName, fieldLabel, fieldDescription, visible;
                     this.currentSelectedLayer[layerObj] = dom.byId('geoFormFieldsTable');
@@ -1307,19 +1399,23 @@ define([
             }
             domAttr.set(currentTab, "data-toggle", "");
         },
+      
+      _currentFieldVisible: function(currentField){
+        if (!currentField.visible) {
+            return true;
+        }
+      },
 
         _getFieldCheckboxState: function () {
             array.forEach(query(".navigationTabs"), lang.hitch(this, function (currentTab) {
                 if ((domAttr.get(currentTab, "tab") === "preview" || domAttr.get(currentTab, "tab") === "publish") && (query(".fieldCheckbox:checked").length === 0)) {
-                    if (this.config.form_layer.id == nls.builder.allLayerSelectOptionText) {
+                    if (this.config.form_layer.id == "all") {
                       var isFieldEmpty = false;
                         for (var layerId in this.config.fields) {
-                            array.some(this.config.fields[layerId], lang.hitch(this, function (currentField) {
-                                if (!currentField.visible) {
-                                    isFieldEmpty = true;
-                                    return true;
-                                }
-                            }));
+                            var val = array.some(this.config.fields[layerId], lang.hitch(this, this._currentFieldVisible));
+                          if(val){
+                            isFieldEmpty = true; 
+                          }
                         }
                         if (isFieldEmpty) {
                             this._disableTab(currentTab);

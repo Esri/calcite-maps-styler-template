@@ -8,7 +8,6 @@ define([
     "esri/dijit/BasemapToggle",
     "esri/arcgis/utils",
     "esri/config",
-    "esri/lang",
     "dojo/dom",
     "dojo/dom-class",
     "dojo/dom-style",
@@ -25,8 +24,6 @@ define([
     "dojo/text!views/modal.html",
     "dojo/text!views/user.html",
     "dojo/i18n!application/nls/resources",
-    "esri/tasks/locator",
-    "esri/layers/FeatureLayer",
     "esri/tasks/ProjectParameters",
     "esri/geometry/webMercatorUtils",
     "esri/geometry/Point",
@@ -40,6 +37,7 @@ define([
     "esri/dijit/Popup",
     "application/themes",
     "application/pushpins",
+    "application/SearchSources",
     "vendor/usng",
     "dojo/NodeList-traverse",
     "application/wrapper/main-jquery-deps",
@@ -52,7 +50,6 @@ define([
     basemapToggle,
     arcgisUtils,
     esriConfig,
-    esriLang,
     dom,
     domClass, domStyle,
     on,
@@ -67,7 +64,7 @@ define([
     Search,
     modalTemplate,
     userTemplate,
-    nls, Locator, FeatureLayer, ProjectParameters, webMercatorUtils, Point, GraphicsLayer, ShareModal, localStorageHelper, Graphic, PictureMarkerSymbol, editToolbar, InfoTemplate, Popup, theme, pushpins, usng) {
+    nls, ProjectParameters, webMercatorUtils, Point, GraphicsLayer, ShareModal, localStorageHelper, Graphic, PictureMarkerSymbol, editToolbar, InfoTemplate, Popup, theme, pushpins, SearchSources, usng) {
     return declare([], {
         arrPendingAttachments: [],
         objFailedAttachments: {},
@@ -104,9 +101,14 @@ define([
                 // create localstorage helper
                 this.localStorageSupport = new localStorageHelper();
                 // modal i18n
-                modalTemplate = string.substitute(modalTemplate, nls);
+                var modalTemplateSub = string.substitute(modalTemplate, {
+                  id: "myModal",
+                  title: "",
+                  labelId: "myModalLabel",
+                  close: nls.user.close
+                });
                 // place modal code
-                domConstruct.place(modalTemplate, document.body, 'last');
+                domConstruct.place(modalTemplateSub, document.body, 'last');
                 //supply either the webmap id or, if available, the item info
                 if (isPreview) {
                     this._initPreview(node);
@@ -179,7 +181,10 @@ define([
             // on iframe load
             node.onload = function () {
                 var frame = document.getElementById("iframeContainer").contentWindow.document;
-                domConstruct.place(cssStyle, frame.getElementsByTagName('head')[0], "last");
+                var h = frame.getElementsByTagName('head')[0];
+                if(h && cssStyle){
+                  domConstruct.place(cssStyle, h, "last");
+                }
             };
         },
         _submitForm: function () {
@@ -1517,7 +1522,7 @@ define([
                 if (this.config.details && this.config.details.Title) {
                     window.document.title = this.config.details.Title;
                 }
-                if (this.config.form_layer.id == nls.user.selectedLayerText) {
+                if (this.config.form_layer.id == "all") {
                     var webmapLayers, deferredListArray = [];
                     this.layerCollection = {};
                     webmapLayers = domConstruct.create("select", { "class": "form-control selectDomain allLayerList" }, dom.byId("multipleLayers"));
@@ -1765,12 +1770,9 @@ define([
                 }
                 //disable viewSubmissionsButton
                 if (this.config.disableViewer) {
-                    domAttr.set(dom.byId("viewSubmissionsButton"), 'disabled', 'disabled');
+                    domClass.add(dom.byId("viewSubmissionsButton"), 'hidden');
                 }
-                //Open Viewer Mode
-                on(dom.byId("viewSubmissionsButton"), "click", lang.hitch(this, function () {
-                    this._viewSubmissions();
-                }));
+                domAttr.set(dom.byId("viewSubmissionsButton"), "href", this._viewSubmissions());
                 // set location options
                 this._populateLocationsOptions();
                 // resize map
@@ -1797,11 +1799,14 @@ define([
 
         //this function opens viewer page
         _viewSubmissions: function(){
-                var urlString = "viewer.html";
-                if (this.config.appid) {
-                    urlString += "?appid=" + this.config.appid;
-                }
-                window.location.assign(urlString);
+          var urlString = "viewer.html";
+          if (this.config.appid) {
+            urlString += "?appid=" + this.config.appid;
+          }
+          else if(this.config.webmap){
+            urlString += "?webmap=" + this.config.webmap;
+          }
+          return urlString;
         },
 
         //this function ensures that the layer is either loaded or throws an error in console naming the layer that did not load successfully
@@ -1858,7 +1863,7 @@ define([
         },
         _createGeoformSections: function () {
             array.forEach(query(".geoformSection"), lang.hitch(this, function (currentSection, index) {
-                if (this.config.form_layer.id === nls.user.selectedLayerText) {
+                if (this.config.form_layer.id === "all") {
                     currentSection.innerHTML = string.substitute(currentSection.innerHTML, { formSection: ++index + "." });
                 } else {
                     if (index !== 0) {
@@ -2122,89 +2127,19 @@ define([
             }));
         },
 
-      _templateSearchOptions: function(w){
-        var sources = [];
-        var searchLayers;
-        //setup geocoders defined in common config
-        if (this.config.helperServices.geocode) {
-          var geocoders = lang.clone(this.config.helperServices.geocode);
-          array.forEach(geocoders, lang.hitch(this, function(geocoder) {
-            if (geocoder.url.indexOf(".arcgis.com/arcgis/rest/services/World/GeocodeServer") > -1) {
-              // use the default esri locator from the search widget
-              geocoder = lang.clone(w.sources[0]);
-              geocoder.hasEsri = true;
-              sources.push(geocoder);
-            } else if (esriLang.isDefined(geocoder.singleLineFieldName)) {
-              //Add geocoders with a singleLineFieldName defined
-              geocoder.locator = new Locator(geocoder.url);
-              sources.push(geocoder);
-            }
-          }));
-        }
-        //Add search layers defined on the web map item
-        if (this.config.itemInfo.itemData && this.config.itemInfo.itemData.applicationProperties && this.config.itemInfo.itemData.applicationProperties.viewing && this.config.itemInfo.itemData.applicationProperties.viewing.search) {
-          var searchOptions = this.config.itemInfo.itemData.applicationProperties.viewing.search;
-          array.forEach(searchOptions.layers, lang.hitch(this, function(searchLayer) {
-            //we do this so we can get the title specified in the item
-            var operationalLayers = this.config.itemInfo.itemData.operationalLayers;
-            var layer = null;
-            array.some(operationalLayers, function(opLayer) {
-              if (opLayer.id === searchLayer.id) {
-                layer = opLayer;
-                return true;
-              }
-            });
-            if (layer && layer.url) {
-              var source = {};
-              var url = layer.url;
-              if (esriLang.isDefined(searchLayer.subLayer)) {
-                url = url + "/" + searchLayer.subLayer;
-                array.some(layer.layerObject.layerInfos, function(info) {
-                  if (info.id == searchLayer.subLayer) {
-                    return true;
-                  }
-                });
-              }
-              source.featureLayer = new FeatureLayer(url);
-              source.name = layer.title || layer.name;
-              source.exactMatch = searchLayer.field.exactMatch;
-              source.searchFields = [searchLayer.field.name];
-              source.placeholder = searchOptions.hintText;
-              sources.push(source);
-              searchLayers = true;
-            }
-          }));
-        }
-        //set the first non esri layer as active if search layers are defined.
-        var activeIndex = 0;
-        if (searchLayers) {
-          array.some(sources, function(s, index) {
-            if (!s.hasEsri) {
-              activeIndex = index;
-              return true;
-            }
-          });
-        }
-        // get back the sources and active index
-        return {
-          sources: sources,
-          activeSourceIndex: activeIndex
-        };
-      },
-
         // geocoder with bootstrap
         _createGeocoderButton: function () {
-            // create options
-            var options = {
-              enableHighlight: false,
-              enableInfoWindow: false,
-              map: this.map
-            };
+            var searchSources = new SearchSources({
+                map: this.map,
+                geocoders: this.config.helperServices.geocode || [],
+                itemData: this.config.itemInfo.itemData
+            });
+            // get options
+            var createdOptions = searchSources.createOptions();
+            createdOptions.enableHighlight = false;
+            createdOptions.enableInfoWindow = false;
             // create geocoder
-            this.geocodeAddress = new Search(options, "search-widget");
-            var templateOptions = this._templateSearchOptions(this.geocodeAddress);
-            this.geocodeAddress.set("sources", templateOptions.sources);
-            this.geocodeAddress.set("activeSourceIndex", templateOptions.activeSourceIndex);
+            this.geocodeAddress = new Search(createdOptions, "search-widget");
             this.geocodeAddress.startup();
             // on find
             on(this.geocodeAddress, "select-result", lang.hitch(this, function (evt) {
@@ -2494,9 +2429,7 @@ define([
             this._ShareModal.startup();
             // show modal
             $("#myModal").modal('show');
-            on(dom.byId("viewSubmissionsOption"), "click", lang.hitch(this, function () {
-                this._viewSubmissions();
-            }));
+            domAttr.set(dom.byId("viewSubmissionsOption"), "href", this._viewSubmissions());
         },
         // error modal content
         _openErrorModal: function () {
@@ -2523,8 +2456,8 @@ define([
 
             for (var i = 0; i < fileList.length; i++) {
                 fileUploadStatusMsgLi = domConstruct.create("li", { "class": "message alert alert-info fileInputUI" }, fileUploadStatusMsgUl);
-                fileUploadStatusMsgBadge = domConstruct.create("span", { "class": "right file-upload-status-badge glyphicon glyphicon-upload", "innerHTML": nls.user.uploadingBadge, "id": "badge" + i }, fileUploadStatusMsgLi);
-                fileUploadStatusMsgBadge = domConstruct.create("span", { "class": "right hide attachment-error-message", "innerHTML": nls.user.errorBadge }, fileUploadStatusMsgLi);
+                fileUploadStatusMsgBadge = domConstruct.create("span", { "class": "pull-right file-upload-status-badge glyphicon glyphicon-upload", "innerHTML": nls.user.uploadingBadge, "id": "badge" + i }, fileUploadStatusMsgLi);
+                fileUploadStatusMsgBadge = domConstruct.create("span", { "class": "pull-right hide attachment-error-message", "innerHTML": nls.user.errorBadge }, fileUploadStatusMsgLi);
                 fileUploadStatusMsgLi.innerHTML += fileList[i].value.split('\\').pop();
                 domAttr.set(dom.byId("badge" + i), "data-badge", fileList[i].id);
             }
@@ -2597,13 +2530,14 @@ define([
                 className: "form-control",
                 id: "shareMapUrlText"
             }, group);
-            domConstruct.create("button", {
+            domConstruct.create("a", {
                 className: "btn btn-default pull-left",
+                href: "#",
                 id: "viewSubmissionsOption",
                 innerHTML: nls.user.btnViewSubmissions
             }, query(".modal-footer")[0]);
             if (this.config.disableViewer) {
-                domAttr.set(dom.byId("viewSubmissionsOption"), 'disabled', 'disabled');
+                domClass.add(dom.byId("viewSubmissionsOption"), "hidden");
             }
         },
         // display error message
@@ -2707,7 +2641,7 @@ define([
                     this.config.fields[this._formLayer.id] = fieldsArray;
                 }
             } else {
-                if (this.config.form_layer.id !== nls.user.selectedLayerText) {
+                if (this.config.form_layer.id !== "all") {
                     error = new Error(nls.user.invalidLayerMessage);
                     this.reportError(error);
                     return;
@@ -2855,6 +2789,13 @@ define([
 
         _createDateField: function (parentNode, isRangeField, fieldname, currentField) {
             domClass.add(parentNode, "date");
+            var minDate, maxDate;
+            if(currentField && currentField.preventPast){
+              minDate = new Date();
+            }
+            if(currentField && currentField.preventFuture){
+              maxDate = new Date();
+            }
             var isDefaultDate = true;
             if (isRangeField){
                 isDefaultDate = false;
@@ -2877,6 +2818,8 @@ define([
             $(parentNode).datetimepicker({
                 useStrict: false,
                 locale: kernel.locale,
+                minDate: minDate,
+                maxDate: maxDate,
                 format: this.dateFormat,
                 useCurrent: isDefaultDate
             }).on('dp.show', function (evt) {
