@@ -390,7 +390,7 @@ body,html {
 
 /*Icon Font Styles (Play/Pause/Open/Close)*/
 @font-face {
-    font-family:timeicons;src:url(../fonts/icomoon.eot?-i18m8k);src:url(../fonts/icomoon.eot?#iefix-i18m8k) format('embedded-opentype'),url(../fonts/icomoon.woff?-i18m8k) format('woff'),url(../fonts/icomoon.ttf?-i18m8k) format('truetype'),url(../fonts/icomoon.svg?-i18m8k#icomoon) format('svg');font-weight:400;font-style:normal;
+    font-family:timeicons;src:url(../fonts/icomoon.eot?-qh6f3r);src:url(../fonts/icomoon.eot?#iefix-qh6f3r) format('embedded-opentype'),url(../fonts/icomoon.woff?-qh6f3r) format('woff'),url(../fonts/icomoon.ttf?-qh6f3r) format('truetype'),url(../fonts/icomoon.svg?-qh6f3r#icomoon) format('svg');font-weight:400;font-style:normal;
 }
 
 [class*=" icon-"],[class^=icon-] {
@@ -406,81 +406,94 @@ body,html {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
+.icon-share:before {
+    content: "\e604";
+}
 
-.icon-link:before {
+.dijitDialogCloseIcon:before {
+    content: "\e600";
+    font-family: "timeicons";
+}
+.esriRTL .icon-close:before,.esriRTL .icon-open:before {
+    float: left;
+}
+.icon-LeftArrow:before {
     content: "\e607";
 }
 
-.icon-gplus:before {
+.icon-RightArrow:before {
     content: "\e608";
+}
+
+.icon-CircledLeftArrow:before {
+    content: "\e616";
+}
+
+.icon-CircledRightArrow:before {
+    content: "\e617";
+}
+
+
+
+.icon-pause:before {
+    content: "\e625";
+}
+
+.icon-play:before {
+    content: "\e626";
+}
+/*.icon-previous:before {
+    content: "\e623";
+}
+.icon-next:before {
+    content: "\e628";
+}*/
+
+.icon-previous:before {
+    content: "\e62b";
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.icon-next:before {
+    content: "\e62c";
+    font-size:20px;
+    font-weight: bold;
+}
+
+.icon-menu-open:before {
+    content: "\e631";
+}
+
+.icon-menu-close:before {
+    content: "\e632";
+}
+
+.icon-info:before {
+    content: "\e63e";
+}
+
+.icon-link:before {
+    content: "\e605";
+}
+
+.icon-twitter:before {
+    content: "\e606";
 }
 
 .icon-facebook-squared:before {
     content: "\e609";
 }
 
-.icon-mail-alt:before {
+.icon-gplus:before {
     content: "\e60a";
 }
 
-.icon-twitter:before {
+.icon-mail-alt:before {
     content: "\e60b";
 }
 
-.icon-cross:before {
-    content: "\e60c";
-}
 
-.icon-pause:before {
-    content: "\e600";
-}
-
-.icon-play:before {
-    content: "\e601";
-}
-
-.icon-next:before {
-    content: "\e62c";
-}
-
-.icon-previous:before {
-    content: "\e62b";
-}
-
-.icon-close:before {
-    float: right;
-    content: "\e602";
-}
-
-.icon-open:before {
-    float: right;
-    content: "\e603";
-}
-
-.icon-share:before {
-    content: "\e604";
-}
-
-.icon-info:before {
-    content: "\e605";
-}
-
-.esriRTL .icon-close:before,.esriRTL .icon-open:before {
-    float: left;
-}
-
-.icon-menu-open:before {
-    content: "\63";
-}
-
-.icon-menu-close:before {
-    content: "\6d";
-}
-
-.dijitDialogCloseIcon:before {
-    font-family: "timeicons";
-    content: "\e60c";
-}
 /*Small screen modifications*/
 
 @media only screen and (max-width:450px) {
