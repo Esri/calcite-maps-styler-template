@@ -308,10 +308,10 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
                                     time: true
                                 };
                             }
-
-                            if (field.visible) {
-                                fieldInfos.push(field);
-                            }
+                            //Add all editable fields even if not visible. 
+                            //if (field.visible) {
+                            fieldInfos.push(field);
+                            //}
 
                         }));
 
