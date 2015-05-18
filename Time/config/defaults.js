@@ -32,7 +32,7 @@ define({
   "units": null,
   "time": true,
   //Overwrite the calculated date time format with a custom value. 
-  "datetimeformat": "yyyy",//"MMMM d yyyy, h:m:s.SSS a",
+  "datetimeformat": null,//"MMMM d yyyy, h:m:s.SSS a",
   //Disable slider ticks when true
   "sliderticks":false, //display slider tics
   "looptime": false,//loop through time 
