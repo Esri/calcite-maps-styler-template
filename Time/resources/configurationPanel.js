@@ -232,6 +232,7 @@
       "about": true,
       "legend": true,
       "search": true,
+      "scale":false,
       "locationSearch": true,
       "searchExtent":false,
       "timeposition": "bottom-center"
