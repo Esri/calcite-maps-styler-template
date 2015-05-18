@@ -733,7 +733,7 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
                     return;
                 }
 
-        
+
 
                 var configuredSearchLayers = (this.config.searchLayers instanceof Array) ? this.config.searchLayers : JSON.parse(this.config.searchLayers);
                 var searchSources = new SearchSources({
@@ -749,16 +749,16 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
                     id: "search"
                 }, "mapDiv"));
 
-                search.on("select-result", lang.hitch(this, function(){
+                search.on("select-result", lang.hitch(this, function () {
                     //if edit tool is enabled we'll have to delete/create 
                     //so info window behaves correctly. 
-                 on.once(this.map.infoWindow, "hide", lang.hitch(this, function(){
-                    search.clear();
-                    if(this.editor){
-                        this._destroyEditor();
-                        this._createEditor();
-                    }
-                 }));
+                    on.once(this.map.infoWindow, "hide", lang.hitch(this, function () {
+                        search.clear();
+                        if (this.editor) {
+                            this._destroyEditor();
+                            this._createEditor();
+                        }
+                    }));
 
                 }));
                 search.startup();
@@ -811,7 +811,7 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
                             on.once(this.map.infoWindow, "hide", lang.hitch(this, function () {
                                 urlSearch.clear();
                                 urlSearch.destroy();
-                                if(this.editor){
+                                if (this.editor) {
                                     this._destroyEditor();
                                     this._createEditor();
                                 }
