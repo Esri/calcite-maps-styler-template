@@ -36,4 +36,5 @@ BasicViewer\apl\ElevationsChart\nls
 MapSeries\resources\tpl\viewer\nls
 MapSeries\resources\common\nls
 MapSeries\resources\tpl\builder\nls
-
+ConstituentEngagement\js\nls
+ConstituentEngagementConsole\js\nls
