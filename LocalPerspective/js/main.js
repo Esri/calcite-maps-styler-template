@@ -30,9 +30,11 @@ define([
     "esri/dijit/Geocoder",
     "esri/dijit/LocateButton",
     "esri/dijit/Popup",
+    "esri/dijit/Search",
     "esri/lang",
     "esri/symbols/SimpleMarkerSymbol",
-    "esri/urlUtils"
+    "esri/urlUtils",
+    "application/SearchSources"
 ], function (
     ready,
     array,
@@ -48,9 +50,11 @@ define([
     Geocoder,
     LocateButton,
     Popup,
+    Search,
     esriLang,
     SimpleMarkerSymbol,
-    urlUtils
+    urlUtils,
+    SearchSources
 ) {
    
    return declare(null, {
@@ -159,6 +163,7 @@ define([
             bingMapsKey : this.config.bingKey
          }).then(lang.hitch(this, function(response) {
 
+            this.config.response = response;
             this.map = response.map;
             this.initExt = this.map.extent;
             this.config.opLayers = response.itemInfo.itemData.operationalLayers;
@@ -243,11 +248,28 @@ define([
          geoLocate.startup();
 
          // geocoder
-         var geocoderOptions = this._createGeocoderOptions();
-         var geocoder = new Geocoder(geocoderOptions, "panelGeocoder");
-         on(geocoder, "select", lang.hitch(this, this._geocoderSelect));
-         on(geocoder, "clear", lang.hitch(this, this._geocoderClear));
-         geocoder.startup();
+         // var geocoderOptions = this._createGeocoderOptions();
+         // var geocoder = new Geocoder(geocoderOptions, "panelGeocoder");
+         // on(geocoder, "select", lang.hitch(this, this._geocoderSelect));
+         // on(geocoder, "clear", lang.hitch(this, this._geocoderClear));
+         // geocoder.startup();
+         
+         // search
+         var searchSources = new SearchSources({
+              map: this.map,
+              useMapExtent: false,
+              geocoders: this.config.helperServices.geocode,
+              itemData: this.config.response.itemInfo.itemData
+          });
+          var searchOptions = searchSources.createOptions();
+          this.search = new Search(searchOptions, "panelGeocoder");
+
+          this.search.on("search-results", lang.hitch(this, function(event){
+              console.log("search-results", event); 
+          }));
+          this.search.on("select-result", lang.hitch(this, this._geocoderSelect));
+          this.search.on("clear-search", lang.hitch(this, this._geocoderClear));
+          this.search.startup();
          
          // map click
          on(this.map, "click", lang.hitch(this, this._mapClickHandler));
@@ -273,7 +295,7 @@ define([
                console.log(evt.error.message);
          }
       },
-      
+            
       // geocoder select
       _geocoderSelect : function(obj) {
          var result = obj.result;
@@ -289,6 +311,7 @@ define([
       
       // map click handler
       _mapClickHandler : function(event) {
+         console.log(event);
          this.ui.setLocation(event.mapPoint);
       },
       

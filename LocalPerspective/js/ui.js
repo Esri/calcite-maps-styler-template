@@ -625,6 +625,8 @@ define([
       // set location
       setLocation : function(pt) {
          this.location = pt;
+         if (this.dirMode)
+            this._toggleDirections();
          for (var i=0; i<this.pages.length; i++) {
             var pageObj = this.pages[i];
             pageObj.buffer = null;

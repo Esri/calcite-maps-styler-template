@@ -167,6 +167,82 @@ a, a:hover, a:visited{
 	background-color: rgba(0,0,0,0.9) !important;
 }
 
+/* Search */
+
+.arcgisSearch .searchGroup{
+	color: #ffffff;
+	background-color: #000000;
+	background-color: rgba(0,0,0,0.3);
+	width: auto;
+	height: 28px;
+	line-height: 28px;
+	border: 1px solid rgba(255,255,255, 0.5);
+	border-radius: 4px;
+}
+
+.arcgisSearch .searchBtn{
+	color: #ffffff;
+	background-color: transparent;
+	border: none;
+	outline: none;
+	padding: 4px 6px;
+}
+
+.arcgisSearch .searchBtn:hover, .arcgisSearch .searchBtn:focus, .arcgisSearch .searchBtn:active {
+  text-decoration: none;
+  background-color: rgba(0,0,0,0.3);
+  outline: none;
+}
+
+.arcgisSearch .searchGroup .searchInput {
+	color: #ffffff;
+	background-color: transparent;
+	border: none;
+	outline: none;
+	width: 175px !important;
+	padding: 4px 24px 4px 12px;
+}
+
+.arcgisSearch .searchClear {
+	color: #ffffff;
+	background-color: transparent;
+	border: none;
+	height: 24px;
+	line-height: 24px;
+}
+
+.arcgisSearch .searchClose, .arcgisSearch .searchSpinner {
+  font-size: 12px;
+  line-height: 24px;
+  width: 24px;
+  height: 24px;
+}
+
+.show-all-results {
+	display: none !important;
+	max-width: 280px;
+	text-overflow: ellipsis;
+}
+
+.arcgisSearch .searchMenu {
+	color: #6e6e6e;
+	font-size: 9pt;
+	max-width: 280px;
+}
+
+.arcgisSearch .searchGroup .searchInput::-webkit-input-placeholder {
+    color:    #e6e6e6;
+}
+.arcgisSearch .searchGroup .searchInput:-moz-placeholder {
+    color:    #e6e6e6;
+}
+.arcgisSearch .searchGroup .searchInput::-moz-placeholder {
+    color:    #e6e6e6;
+}
+.arcgisSearch .searchGroup .searchInput:-ms-input-placeholder {
+    color:    #e6e6e6;
+}
+
 .esriControlsBR {
 	position: absolute;
 	left: 0px;
@@ -598,9 +674,9 @@ a, a:hover, a:visited{
 	line-height: 14px;
 	line-height: 20px;
 	color: #6e6e6e;
-	background-image: url('../images/arrow.png');
+	background-image: url('../images/more.png');
 	background-repeat: no-repeat;
-	background-position: right center;
+	background-position: left top;
 	transition: 0.2s linear;
 	-webkit-transition: 0.2s linear;
 }
@@ -736,8 +812,9 @@ a, a:hover, a:visited{
 #panelSearch {
 	float: left;
 	margin: 0;
-	width: 227px;
-	height: 30px;
+	width: auto;
+	max-width: 285px;
+	height: 28px;
 	color: #6e6e6e;
 	/*overflow: hidden;*/
 }
