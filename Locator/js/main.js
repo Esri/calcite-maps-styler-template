@@ -33,12 +33,14 @@ define([
     "dojo/query",
     "dijit/layout/ContentPane",
     "dijit/registry",
+    "application/SearchSources",
     "application/TrackingPt",
     "esri/arcgis/utils",
     "esri/dijit/Directions",
     "esri/dijit/Geocoder",
     "esri/dijit/LocateButton",
     "esri/dijit/Popup",
+    "esri/dijit/Search",
     "esri/geometry/mathUtils",
     "esri/geometry/Point",
     "esri/graphic",
@@ -73,12 +75,14 @@ define([
     query,
     ContentPane,
     registry,
+    SearchSources,
     TrackingPt,
     arcgisUtils,
     Directions,
     Geocoder,
     LocateButton,
     Popup,
+    Search,
     mathUtils,
     Point,
     Graphic,
@@ -114,6 +118,7 @@ define([
       origin : null,
       originObj : null,
       geocoder : null,
+      search : null,
       dirWidget : null,
       selectedNum : null,
       trackingPt : null,
@@ -287,7 +292,8 @@ define([
             var appProps = response.itemInfo.itemData.applicationProperties;
             if (appProps && appProps.viewing && appProps.viewing.search)
                this.searchProps = appProps.viewing.search;
-
+            
+            this.config.response = response;
             this.map = response.map;
             this.map.setInfoWindowOnClick(true);
             this.initExt = this.map.extent;
@@ -512,58 +518,58 @@ define([
       },
       
       // Create Geofilter Options
-      _createGeofilterOptions : function() {
-         var options;
-         var searchLayers = [];
-         if (this.searchProps) {
-             array.forEach(this.searchProps.layers, lang.hitch(this, function (searchLayer) {
-                 var layer = null;
-                 var destId = this.config.destLayer.id;
-                 array.some(this.opLayers, function (lyr) {
-                     if (lyr.id === searchLayer.id && searchLayer.id == destId) {
-                         layer = lyr;
-                         return true;
-                     }
-                 });
-                 if (layer && layer.hasOwnProperty("url")) {
-                     var url = layer.url;
-                     var field = searchLayer.field.name;
-                     var name = layer.title;
-                     if (esriLang.isDefined(searchLayer.subLayer)) {
-                         url = url + "/" + searchLayer.subLayer;
-                         array.some(layer.layerObject.layerInfos, function (info) {
-                             if (info.id == searchLayer.subLayer) {
-                                 name += " - " + layer.layerObject.layerInfos[searchLayer.subLayer].name;
-                                 return true;
-                             }
-
-                         });
-                     }
-                     searchLayers.push({
-                         "name": name,
-                         "url": url,
-                         "field": field,
-                         "exactMatch": (searchLayer.field.exactMatch || false),
-                         "placeholder": this.searchProps.hintText,
-                         "outFields": "*",
-                         "type": "query",
-                         "layerId": searchLayer.id,
-                         "subLayerId": parseInt(searchLayer.subLayer) || null
-                     });
-                 }
-             }));
-         }
-         if(searchLayers.length > 0) {
-            options = {};
-            options.map = this.map;
-            options.autoNavigate = false;
-            options.autoComplete = false;
-            options.arcgisGeocoder = false;
-            options.maxLocations = 250;
-            options.geocoders = searchLayers;
-         }
-         return options;
-      },
+      // _createGeofilterOptions : function() {
+         // var options;
+         // var searchLayers = [];
+         // if (this.searchProps) {
+             // array.forEach(this.searchProps.layers, lang.hitch(this, function (searchLayer) {
+                 // var layer = null;
+                 // var destId = this.config.destLayer.id;
+                 // array.some(this.opLayers, function (lyr) {
+                     // if (lyr.id === searchLayer.id && searchLayer.id == destId) {
+                         // layer = lyr;
+                         // return true;
+                     // }
+                 // });
+                 // if (layer && layer.hasOwnProperty("url")) {
+                     // var url = layer.url;
+                     // var field = searchLayer.field.name;
+                     // var name = layer.title;
+                     // if (esriLang.isDefined(searchLayer.subLayer)) {
+                         // url = url + "/" + searchLayer.subLayer;
+                         // array.some(layer.layerObject.layerInfos, function (info) {
+                             // if (info.id == searchLayer.subLayer) {
+                                 // name += " - " + layer.layerObject.layerInfos[searchLayer.subLayer].name;
+                                 // return true;
+                             // }
+// 
+                         // });
+                     // }
+                     // searchLayers.push({
+                         // "name": name,
+                         // "url": url,
+                         // "field": field,
+                         // "exactMatch": (searchLayer.field.exactMatch || false),
+                         // "placeholder": this.searchProps.hintText,
+                         // "outFields": "*",
+                         // "type": "query",
+                         // "layerId": searchLayer.id,
+                         // "subLayerId": parseInt(searchLayer.subLayer) || null
+                     // });
+                 // }
+             // }));
+         // }
+         // if(searchLayers.length > 0) {
+            // options = {};
+            // options.map = this.map;
+            // options.autoNavigate = false;
+            // options.autoComplete = false;
+            // options.arcgisGeocoder = false;
+            // options.maxLocations = 250;
+            // options.geocoders = searchLayers;
+         // }
+         // return options;
+      // },
 
       // Configure Map UI
       _configureMapUI : function() {
@@ -585,25 +591,43 @@ define([
 
          // geocoder
          var geocoderOptions = this._createGeocoderOptions();
-         this.geocoder = new Geocoder(geocoderOptions, "panelGeocoder");
-         on(this.geocoder, "select", lang.hitch(this, this._geocoderSelect));
-         on(this.geocoder, "clear", lang.hitch(this, this._geocoderClear));
-         this.geocoder.startup();
-         var prompt = this.config.prompt || "";
-         domAttr.set("panelGeocoder_input", "placeholder", prompt);
+         // this.geocoder = new Geocoder(geocoderOptions, "panelGeocoder");
+         // on(this.geocoder, "select", lang.hitch(this, this._geocoderSelect));
+         // on(this.geocoder, "clear", lang.hitch(this, this._geocoderClear));
+         // this.geocoder.startup();
+         // var prompt = this.config.prompt || "";
+         // domAttr.set("panelGeocoder_input", "placeholder", prompt);
 
          // geofilter
-         var geofilterOptions;
-         if (this.searchProps) {
-            geofilterOptions = this._createGeofilterOptions();
-         }
-         if (geofilterOptions) {
-            this.geofilter = new Geocoder(geofilterOptions, "panelGeocoderFilter");
-            this.geofilter.startup();
-            domStyle.set("btnFilter", "display", "block");
-            on(this.geofilter, "find-results", lang.hitch(this, this._geofilterResults));
-            on(this.geofilter, "clear", lang.hitch(this, this._geofilterClear));
-         }
+         // var geofilterOptions;
+         // if (this.searchProps) {
+            // geofilterOptions = this._createGeofilterOptions();
+         // }
+         // if (geofilterOptions) {
+            // this.geofilter = new Geocoder(geofilterOptions, "panelGeocoderFilter");
+            // this.geofilter.startup();
+            // domStyle.set("btnFilter", "display", "block");
+            // on(this.geofilter, "find-results", lang.hitch(this, this._geofilterResults));
+            // on(this.geofilter, "clear", lang.hitch(this, this._geofilterClear));
+         // }
+         
+         // search
+         var searchSources = new SearchSources({
+              map: this.map,
+              useMapExtent: false,
+              geocoders: this.config.helperServices.geocode,
+              itemData: this.config.response.itemInfo.itemData
+              //configuredSearchLayers: configuredSearchLayers
+          });
+          var searchOptions = searchSources.createOptions();
+          this.search = new Search(searchOptions, "panelGeocoder");
+
+          this.search.on("search-results", lang.hitch(this, function(event){
+              console.log("search-results", event); 
+          }));
+          this.search.on("select-result", lang.hitch(this, this._searchSelect));
+          this.search.on("clear-search", lang.hitch(this, this._searchClear));
+          this.search.startup();
 
          // directions
          // var userLang = navigator.languages ? navigator.languages[0] : (navigator.language || navigator.userLanguage);
@@ -640,7 +664,6 @@ define([
             options.routeTaskUrl = this.config.helperServices.route.url;
          if (this.config.routeUtility != "")
            options.routeTaskUrl = this.config.routeUtility;
-         console.log("Routing", this.config, options);
          this.dirWidget = new Directions(options, "resultsDirections");
          //on(this.dirWidget, "directions-clear", lang.hitch(this, this._directionsCleared));
          on(this.dirWidget, "directions-finish", lang.hitch(this, this._directionsFinished));
@@ -682,12 +705,6 @@ define([
             btnReset.title = this.config.i18n.tooltips.reset;
          }
          on(btnReset, "click", lang.hitch(this, this._resetApp));
-         // filter
-         var btnFilter = dom.byId("btnFilter");
-         if (this.config && this.config.i18n) {
-            btnFilter.title = this.config.i18n.tooltips.filter;
-         }
-         on(btnFilter, "click", lang.hitch(this, this._showPage, 2));
          // reverse
          var btnReverse = dom.byId("btnReverse");
          if (this.config && this.config.i18n) {
@@ -729,12 +746,9 @@ define([
             domStyle.set("bodyFeatures", "display", "block");
             domStyle.set("bodyDirections", "display", "none");
             domStyle.set("btnClose", "display", "none");
-            if(this.geofilter)
-               domStyle.set("btnFilter", "display", "block");
             domStyle.set("btnReset", "display", "block");
             domStyle.set("panelDestination", "display", "none");
             domStyle.set("panelSearchBox", "display", "block");
-            domStyle.set("panelFilterBox", "display", "none");
             break;
          case 1:
             var tip = "Directions";
@@ -745,30 +759,21 @@ define([
             domStyle.set("bodyFeatures", "display", "none");
             domStyle.set("bodyDirections", "display", "block");
             domStyle.set("btnClose", "display", "block");
-            domStyle.set("btnFilter", "display", "none");
             domStyle.set("btnReset", "display", "none");
             domStyle.set("panelDestination", "display", "block");
             domStyle.set("panelSearchBox", "display", "block");
-            domStyle.set("panelFilterBox", "display", "none");
             break;
          case 2:
             var promise = this._clearDirections();
             promise.then(lang.hitch(this, function(){
                this.dirOK = true;
             }));
-            var tip = "Filter";
-            if (this.config && this.config.i18n) {
-               tip = this.config.i18n.tooltips.filter;
-            }
-            dom.byId("panelTitle").innerHTML = tip;
             domStyle.set("bodyFeatures", "display", "block");
             domStyle.set("bodyDirections", "display", "none");
             domStyle.set("btnClose", "display", "block");
-            domStyle.set("btnFilter", "display", "none");
             domStyle.set("btnReset", "display", "none");
             domStyle.set("panelDestination", "display", "none");
             domStyle.set("panelSearchBox", "display", "none");
-            domStyle.set("panelFilterBox", "display", "block");
             break;
          }
          this._updateRouteTools();
@@ -821,6 +826,25 @@ define([
 
       // geocoder clear
       _geocoderClear : function(event) {
+         if (this.dirOK) {
+            this._updateOrigin(null, null);
+         }
+      },
+      
+      // search select
+      _searchSelect : function(obj) {
+         var result = obj.result;
+         var pt = result.feature.geometry;
+         var label = result.name;
+         var sym = new PictureMarkerSymbol("images/start.png", 24, 24);
+         var gra = new Graphic(pt, sym, {
+            label : label
+         });
+         this._updateOrigin(gra, result);
+      },
+
+      // search clear
+      _searchClear : function(event) {
          if (this.dirOK) {
             this._updateOrigin(null, null);
          }
@@ -1152,9 +1176,9 @@ define([
          this._showPage(1);
          if (this.originObj) {
             var def = this.dirWidget.addStops([this.originObj, pt]);
-            def.then(lang.hitch(this, function() {
-               this.dirWidget.getDirections();
-            }));
+            // def.then(lang.hitch(this, function() {
+               // this.dirWidget.getDirections();
+            // }));
          }
       },
 
@@ -1166,9 +1190,9 @@ define([
          promise.then(lang.hitch(this, function(){
             this.dirOK = true;
             var def = this.dirWidget.addStops(stops);
-            def.then(lang.hitch(this, function() {
-               this.dirWidget.getDirections();
-            }));
+            // def.then(lang.hitch(this, function() {
+               // this.dirWidget.getDirections();
+            // }));
          }));
       },
 

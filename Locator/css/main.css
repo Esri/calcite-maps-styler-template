@@ -114,6 +114,7 @@ hr {
 	width: 30px;
 	height: 30px;
 	background-color: transparent;
+	background-image: url("../images/locate.png");
 	-webkit-user-select: none;
 	-moz-user-select: none;
 	-ms-user-select: none;
@@ -123,7 +124,7 @@ hr {
 	-moz-border-radius: 15px;
 	-o-border-radius: 15px;
 	border-radius: 15px;
-	background-size: 20px 20px;
+	background-size: 24px 24px;
 }
 
 .LocateButton .loading {
@@ -180,6 +181,84 @@ hr {
 .esriGeocoderResult:hover {
 	background-color: rgba(0,0,0,0.9) !important;
 }
+
+/* Search */
+
+.arcgisSearch .searchGroup{
+	color: #ffffff;
+	background-color: #000000;
+	background-color: rgba(0,0,0,0.3);
+	max-width: 310px;
+	border: 1px solid rgba(255,255,255, 0.5);
+	border-radius: 4px;
+}
+
+.arcgisSearch .searchBtn{
+	color: #ffffff;
+	background-color: transparent;
+	border: none;
+	outline: none;
+	padding: 6px;
+}
+
+.arcgisSearch .searchBtn:hover, .arcgisSearch .searchBtn:focus, .arcgisSearch .searchBtn:active {
+  text-decoration: none;
+  background-color: rgba(0,0,0,0.3);
+  outline: none;
+}
+
+.arcgisSearch .searchGroup .searchInput {
+	color: #ffffff;
+	background-color: transparent;
+	border: none;
+	outline: none;
+	width: 175px !important;
+}
+
+.arcgisSearch .searchClear {
+	color: #ffffff;
+	background-color: transparent;
+	border: none;
+}
+
+.arcgisSearch .searchClose, .arcgisSearch .searchSpinner {
+  font-size: 12px;
+}
+
+.show-all-results {
+	display: none !important;
+	max-width: 280px;
+	text-overflow: ellipsis;
+}
+
+.arcgisSearch .searchMenu {
+	color: #6e6e6e;
+	font-size: 9pt;
+	max-width: 280px;
+}
+
+.arcgisSearch .searchGroup .searchInput::-webkit-input-placeholder {
+    color:    #e6e6e6;
+}
+.arcgisSearch .searchGroup .searchInput:-moz-placeholder {
+    color:    #e6e6e6;
+}
+.arcgisSearch .searchGroup .searchInput::-moz-placeholder {
+    color:    #e6e6e6;
+}
+.arcgisSearch .searchGroup .searchInput:-ms-input-placeholder {
+    color:    #e6e6e6;
+}
+
+/*.arcgisSearch .searchGroup .searchInput {
+  width: 175px !important;
+}
+
+.arcgisSearch .searchBtn {
+  padding: 6px;
+}*/
+
+/* Controls BR */
 
 .esriControlsBR {
 	position: absolute;
@@ -443,20 +522,11 @@ hr {
 	background-repeat: no-repeat;
 }
 
-.btnFilter {
-	position: absolute;
-	top: 10px;
-	right: 37px;
-	background-image: url('../images/filter.png');
-	background-repeat: no-repeat;
-	display: none;
-}
-
 .btnClose {
 	position: absolute;
 	top: 10px;
 	right: 7px;
-	background-image: url('../images/close.png');
+	background-image: url('../images/back.png');
 	background-repeat: no-repeat;
 	display: none;
 }
@@ -498,7 +568,7 @@ hr {
 #panelSearch {
 	position: absolute;
 	left: 0px;
-	right: 40px;
+	right: 0px;
 	display: block;
 	height: 30px;
 	color: #6e6e6e;
@@ -511,28 +581,10 @@ hr {
 
 #btnLocate {
 	position: absolute;
-	right: 0px;
+	top: 10px;
+	right: 37px;
 	width: 30px;
 	height: 30px;
-}
-
-#panelFilterBox {
-	position: absolute;
-	left: 10px;
-	right: 7px;
-	top: 45px;
-	height: 30px;
-	color: #ffffff;
-	display: none;
-}
-
-#panelFilter {
-	position: absolute;
-	left: 0px;
-	right: 40px;
-	display: block;
-	height: 30px;
-	color: #6e6e6e;
 }
 
 #panelDestination {
@@ -592,9 +644,9 @@ hr {
 	display: block;
 	transition: 0.2s linear;
 	-webkit-transition: 0.2s linear;
-	background-image: url('../images/arrow.png');
+	background-image: url('../images/more.png');
 	background-repeat: no-repeat;
-	background-position: right top;
+	background-position: left top;
 }
 
 .recOpened {
