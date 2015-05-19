@@ -58,8 +58,7 @@ function (
                 rootContainer: 'template-builder-container'
             };
             this.webMapConfiguration = defaults.config.itemInfo;
-            delete defaults.config.itemInfo;
-            this.previousConfigObj = lang.clone(defaults.config);
+            this.previousConfigObj = lang.mixin({}, defaults.config);
         },
         // start widget. called by user
         startup: function () {
@@ -135,7 +134,7 @@ function (
             }));
           
           // open webmap config if default webmap
-          if(this.config.webmap === "21633896293248b7a40d4e3126c93621"){
+          if(!this.config.webmap || this.config.webmap === "21633896293248b7a40d4e3126c93621"){
             this._createConfigurationPanel(true);
           }
 
