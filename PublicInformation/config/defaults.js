@@ -30,8 +30,12 @@ define({
     "enableMoreInfo": true,
     "defaultBasemap": "topo",
     "nextBasemap": "hybrid",
+    "swipeLayer": [{
+      "fields": [],
+      "id": ""
+    }],
     "swipeType": "vertical",
-    "swipeInvertPlacement": true,
+    "swipeInvertPlacement": false,
     "hideNotesLayerPopups": true,
     "enableInstagram": true,
     "instagramVisible": false,
