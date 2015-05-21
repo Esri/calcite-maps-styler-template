@@ -442,7 +442,7 @@ define([
                 if (data) {
                     // Check if 'download' or 'try it' button should be displayed in item info page
                     // Download button would be displayed for item of type file, operation view
-                    // Try it button would be displayed for rest of the items 
+                    // Try it button would be displayed for rest of the items
                     dataArray = {};
                     if (data.itemType === "file" && data.type.toLowerCase() !== "kml" && data.type.toLowerCase() !== "cityengine web scene") {
                         domAttr.set(this.btnTryItNow, "innerHTML", nls.downloadButtonText);

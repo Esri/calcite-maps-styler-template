@@ -184,7 +184,7 @@ define([
                     callbackParamName: "callback"
                 });
                 groupRequest.then(lang.hitch(this, function (groupInfo) {
-                    // If basemap group is not present in the portal or the group is invalid, query org basemap group 
+                    // If basemap group is not present in the portal or the group is invalid, query org basemap group
                     if (groupInfo.results.length === 0) {
                         this._queryOrgBasemapGroup(tokenString, basemapDeferred);
                     } else {
@@ -252,7 +252,7 @@ define([
         },
 
         /**
-        * Fetch items from basemap group 
+        * Fetch items from basemap group
         * @memberOf widgets/itemDetails/itemDetails
         */
         _fetchBasemapDetails: function (basemapDeferred, groupInfo) {
