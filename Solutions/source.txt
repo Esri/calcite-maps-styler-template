@@ -1,8 +1,8 @@
-Built on 02/19/2015  6:48:47.85 from
+Built on 05/21/2015 15:25:45.12 from
 repository local-government-online-apps
-branch master
-commit f55635e79bae219899ff850a29fdcbca7d4d16be
+branch release
+commit 95a3c5a0b51dcb1e22ce021d9569384b1499906c
 Author: MikeTschudi <mtschudi@esri.com>
-Date:   Thu Feb 19 06:47:54 2015 -0800
+Date:   Thu May 21 15:25:00 2015 -0700
 
     Updated language files
