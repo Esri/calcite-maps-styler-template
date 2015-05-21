@@ -28,8 +28,6 @@
                "type":"string",
                "fieldName":"logolink",
                "label":"Logo url"
-            },{
-
             },
             {
                "type":"boolean",
