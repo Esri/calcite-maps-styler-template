@@ -111,7 +111,7 @@ top:4px;
 .gallery-thumbs-container{
 background:url('../images/bg.png') repeat scroll 0 0 transparent;
 position:absolute;
-z-index: 4;
+z-index: 51;
 height:100%;
 width:100%;
 overflow:auto;
