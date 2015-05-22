@@ -199,6 +199,8 @@ ready, parser, domAttr, domGeometry, on, array, declare, lang, query, dom, domCl
                     itemData: this.config.response.itemInfo.itemData
                 });
                 var createdOptions = searchSources.createOptions();
+                createdOptions.enableButtonMode = true;
+                createdOptions.expanded = true;
                 var search = new Search(createdOptions, domConstruct.create("div", {
                     id: "search"
                 }, "mapDiv"));
