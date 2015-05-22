@@ -243,6 +243,7 @@ body,html {
 
 /*Date-Time label*/
 #timeControls {
+    display:table;
     width: 100%;
     overflow: hidden;
     border-bottom: solid 1px;
@@ -250,6 +251,7 @@ body,html {
 }
 
 #timeLabel {
+    min-width: 300px;
     padding: 10px;
     display: table-cell;
     vertical-align: middle;
@@ -273,7 +275,7 @@ body,html {
 /*Time Slider Controls*/
 
 .controlCont {
-    display: table;
+    display: table-cell;
     width: 100%;
     overflow: hidden;
     height: 40px;
