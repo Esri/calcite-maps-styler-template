@@ -1,7 +1,7 @@
 @font-face {
   font-family: 'bv_template';
-  src: url("../fonts/icomoon.eot?-a7jfp1");
-  src: url("../fonts/icomoon.eot?#iefix-a7jfp1") format('embedded-opentype'), url("../fonts/icomoon.woff?-a7jfp1") format('woff'), url("../fonts/icomoon.ttf?-a7jfp1") format('truetype'), url("../fonts/icomoon.svg?-a7jfp1#icomoon") format('svg');
+  src: url("../fonts/icomoon.eot?-1s1wx8");
+  src: url("../fonts/icomoon.eot?#iefix-1s1wx8") format('embedded-opentype'), url("../fonts/icomoon.woff?-1s1wx8") format('woff'), url("../fonts/icomoon.ttf?-1s1wx8") format('truetype'), url("../fonts/icomoon.svg?-1s1wx8#icomoon") format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -9,6 +9,7 @@
 [class*=" icon-"] {
   font-family: 'bv_template' !important;
   speak: none;
+  font-size: 16px;
   font-style: normal;
   font-weight: normal;
   font-variant: normal;
@@ -19,14 +20,23 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-.icon-edit:before {
-  content: "\e60a";
+.icon-book:before {
+  content: "\e60c";
+}
+.icon-basemap:before {
+  content: "\61";
 }
 .icon-measure:before {
   content: "\e600";
 }
-.icon-table:before {
-  content: "\e609";
+.icon-share:before {
+  content: "\e601";
+}
+.icon-file-text:before {
+  content: "\e603";
+}
+.icon-link:before {
+  content: "\e604";
 }
 .icon-twitter:before {
   content: "\e605";
@@ -40,53 +50,48 @@
 .icon-mail:before {
   content: "\e608";
 }
-.icon-link:before {
-  content: "\e604";
+.icon-table:before {
+  content: "\e609";
 }
-.icon-file-text:before {
-  content: "\e603";
-}
-.icon-printer:before {
-  content: "\e602";
-}
-.icon-share:before {
-  content: "\e601";
-}
-.icon-basemap:before {
-  content: "\61";
+.icon-edit:before {
+  content: "\e60a";
 }
 .icon-close:before {
-  content: "\62";
-}
-.icon-previous:before {
-  content: "\63";
-}
-.icon-layers:before {
-  content: "\64";
-}
-.icon-home:before {
-  content: "\68";
-}
-.icon-legend:before {
-  content: "\69";
-}
-.icon-locate:before {
-  content: "\6a";
-}
-.icon-place:before {
-  content: "\6b";
-}
-.icon-next:before {
-  content: "\6d";
+  content: "\e602";
 }
 .icon-magnify:before {
-  content: "\6e";
+  content: "\e60b";
+}
+.icon-place:before {
+  content: "\e61e";
 }
 .icon-zoomin:before {
-  content: "\6f";
+  content: "\e621";
 }
 .icon-zoomout:before {
-  content: "\70";
+  content: "\e622";
+}
+.icon-home:before {
+  content: "\e62f";
+  font-size: 20px;
+}
+.icon-locate:before {
+  content: "\e630";
+}
+.icon-next:before {
+  content: "\e631";
+}
+.icon-previous:before {
+  content: "\e632";
+}
+.icon-legend:before {
+  content: "\e633";
+}
+.icon-layers:before {
+  content: "\e635";
+}
+.icon-printer:before {
+  content: "\e641";
 }
 html,
 body {
@@ -167,6 +172,9 @@ body {
 }
 #toolbar-trailing {
   margin: auto;
+}
+.toolbar [class^="icon-"] {
+  padding: 2px;
 }
 .toolbar button:active,
 .toolbar button:hover:enabled {
@@ -268,6 +276,9 @@ body {
 .claro .dijitContentPane {
   padding: 0 !important;
 }
+.esriSimpleSlider .div {
+  font-size: 20px;
+}
 .esriSimpleSlider span {
   display: none;
 }
@@ -293,6 +304,9 @@ body {
 }
 .arcgisSearch .searchCollapsed .searchSubmit {
   padding: 6px;
+}
+.arcgisSearch .searchIcon {
+  font-size: 22px;
 }
 .LocateButton {
   position: absolute;
@@ -333,7 +347,7 @@ body {
 }
 /*End map tools positioning section*/
 .LocateButton .zoomLocateButton {
-  font-size: 28px;
+  font-size: 22px;
   line-height: 28px;
   text-align: center;
   vertical-align: baseline;
@@ -436,6 +450,12 @@ body {
   background: #fff;
   border: 1px solid #333;
   z-index: 60;
+}
+.esriBookmarks {
+  border: 1px solid #333;
+  background: #fff;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
 }
 @media screen and (max-width: 640px) {
   #galleryDiv {
@@ -570,10 +590,6 @@ input[type=checkbox]:checked.share-dialog-checkbox + .share-dialog-checkbox:befo
 .TableOfContents .tocList {
   background-color: #f8f8f8;
   border-top: 1px solid #e0e0e0;
-}
-.TableOfContents .tocList ul {
-  background-color: #d3d3d3;
-  background-color: rgba(0,0,0,0.025);
 }
 .TableOfContents .tocList,
 .TableOfContents .tocLayer,

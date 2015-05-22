@@ -15,6 +15,14 @@ define(["dojo/has"], function (has) { /*App capabilities*/
         var scale = g.config.scale;
         return scale;
     });
+    has.add("bookmarks", function (g) {
+        var bookmarks = g.config.bookmarks;
+        if (!g.config.response.itemInfo.itemData.bookmarks) {
+            //if there aren't any basemaps set to false. 
+            basemaps = false;
+        }
+        return bookmarks;
+    });
     has.add("basemaps", function (g) {
         var basemaps = g.config.basemaps;
         return basemaps;

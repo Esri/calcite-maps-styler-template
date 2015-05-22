@@ -85,7 +85,9 @@ html,body {
 #toolbar-trailing{
     margin:auto;
 }
-
+.toolbar [class^="icon-"]{
+  padding:2px;
+}
 .toolbar button:active, .toolbar button:hover:enabled{
   box-shadow: 0 0 1px rgba(81, 203, 238, 1); 
   border-radius: 4px; 
@@ -134,6 +136,7 @@ html,body {
 .esriBasemapGalleryLabelContainer{
     font-size:12px;
 }
+
 #tableDiv{
     height:0;
     background-color: #eee;
@@ -180,8 +183,8 @@ html,body {
 .claro .dijitContentPane{
     padding:0 !important;
 }
-.esriSimpleSlider{
-
+.esriSimpleSlider .div{
+  font-size:20px;
 }
 .esriSimpleSlider span{
     display:none;
@@ -209,6 +212,9 @@ html,body {
 }
 .arcgisSearch .searchCollapsed .searchSubmit{
     padding:6px;
+}
+.arcgisSearch .searchIcon{
+  font-size:22px;
 }
 .LocateButton{
     position:absolute;
@@ -250,7 +256,7 @@ html,body {
 }
 /*End map tools positioning section*/
 .LocateButton .zoomLocateButton{
-    font-size:28px;
+    font-size:22px;
     line-height:28px;
     text-align:center;
     vertical-align:baseline;
@@ -360,7 +366,11 @@ html,body {
     border: 1px solid #333;
     z-index:60;
 }
-
+.esriBookmarks{
+    border: 1px solid #333;
+    background:#fff;
+    border-radius: 5px;  
+}
 @media screen and (max-width: 640px){
     #galleryDiv{
         width:140px;
@@ -505,8 +515,8 @@ html,body {
 }
 
 .TableOfContents .tocList ul {
-  background-color: #d3d3d3;
-  background-color: rgba(0, 0, 0, 0.025);
+ /* background-color: #d3d3d3;
+  background-color: rgba(0, 0, 0, 0.025);*/
 }
 
 .TableOfContents .tocList,

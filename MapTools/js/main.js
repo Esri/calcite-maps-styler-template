@@ -169,7 +169,7 @@ declare, win, array, Color, all, Deferred, lang, domUtils, esriRequest, esriLang
                     urlSearch.on("load", lang.hitch(this, function () {
                         urlSearch.search(value);
                     }));
-   
+
                     urlSearch.startup();
 
                 }));
@@ -199,8 +199,9 @@ declare, win, array, Color, all, Deferred, lang, domUtils, esriRequest, esriLang
                 basemapDef = new Deferred(),
                 layerDef = new Deferred(),
                 tableDef = new Deferred(),
-                printDef = new Deferred();
-            var toolDeferreds = [shareDef, tableDef, printDef, layerDef, basemapDef];
+                printDef = new Deferred(),
+                bookmarksDef = new Deferred();
+            var toolDeferreds = [shareDef, tableDef, printDef, layerDef, basemapDef, bookmarksDef];
 
             /*Toolbar widgets ( print, layers, share, basemap etc)*/
 
@@ -211,8 +212,8 @@ declare, win, array, Color, all, Deferred, lang, domUtils, esriRequest, esriLang
                     return;
                 }
                 this.tableHandler = null;
-/*Create the table if a layer and field have been defined or if there's a feature layer in the map
-                */
+                // Create the table if a layer and field have been 
+                // defined or if there's a feature layer in the map
                 var layer = null;
 
                 if (this.config.tableLayer && this.config.tableLayer.id) {
@@ -232,10 +233,10 @@ declare, win, array, Color, all, Deferred, lang, domUtils, esriRequest, esriLang
                 }
 
                 if (layer === null) {
-                    //get first feature layer from map if no feature layers then return
+                    // Get first feature layer from map if no feature layers then return
                     array.some(this.map.graphicsLayerIds, lang.hitch(this, function (id) {
                         var l = this.map.getLayer(id);
-                        if (l && l.type === "Feature Layer") {
+                        if (l && l.type === "Feature Layer" && l.supportsAdvancedQueries === true) {
                             layer = l;
                             return true;
                         }
@@ -243,6 +244,7 @@ declare, win, array, Color, all, Deferred, lang, domUtils, esriRequest, esriLang
                 }
                 //if no layer don't create table 
                 if (layer === null) {
+                    console.log("Configure the app to select a layer that supports Advanced Queries for the Table");
                     tableDef.resolve(null);
                     return;
                 }
@@ -278,7 +280,6 @@ declare, win, array, Color, all, Deferred, lang, domUtils, esriRequest, esriLang
                 }, "featureTable");
 
 
-
                 //Use the popup selection symbol (Need to test this)
                 //fillSymbol, lineSymbol, markerSymbol
                 var selectionSymbol = null;
@@ -300,22 +301,22 @@ declare, win, array, Color, all, Deferred, lang, domUtils, esriRequest, esriLang
                 this.tableHandler.pause();
 
                 table.startup();
-
-
-
-
                 //sync feature selection and table selection
                 on(table, "dgrid-select", lang.hitch(this, function (evt) {
                     if (evt && evt.length > 0) {
                         var id = evt[0].data[layer.objectIdField];
-
-                        for (var i = 0; i < layer.graphics.length; i++) {
-                            var f = layer.graphics[i];
-                            if (f.attributes[layer.objectIdField] === id) {
+                        var q = new esriQuery();
+                        q.objectIds = [id];
+                        q.outFields = ["*"];
+                        if (layer.graphics && layer.graphics.length && layer.graphics.length === 0) {
+                            console.log("No graphic associated with the selected row");
+                        }
+                        layer.queryFeatures(q).then(lang.hitch(this, function (e) {
+                            if (e.features && e.features.length && e.features.length > 0) {
+                                var f = e.features[0];
                                 this._zoomToFeature(f.geometry, selectionSymbol);
                             }
-                        }
-
+                        }));
                     } else {
                         return;
                     }
@@ -341,13 +342,11 @@ declare, win, array, Color, all, Deferred, lang, domUtils, esriRequest, esriLang
 
                 this._createContainer("print_container", "printDiv");
 
-
                 var layoutOptions = {
                     "titleText": this.config.title,
                     "scalebarUnit": this.config.units,
                     "legendLayers": []
                 };
-
 
                 //add text box for title to print dialog
                 var titleNode = domConstruct.create("input", {
@@ -526,11 +525,11 @@ declare, win, array, Color, all, Deferred, lang, domUtils, esriRequest, esriLang
             }));
 
             require(["application/sniff!basemaps?esri/dijit/BasemapGallery"], lang.hitch(this, function (BasemapGallery) {
-
                 if (!BasemapGallery) {
                     basemapDef.resolve(null);
                     return;
                 }
+
                 var galleryOptions = {
                     showArcGISBasemaps: true,
                     portalUrl: this.config.sharinghost,
@@ -554,7 +553,30 @@ declare, win, array, Color, all, Deferred, lang, domUtils, esriRequest, esriLang
                 return basemapDef.promise;
 
             }));
+            require(["application/sniff!bookmarks?esri/dijit/Bookmarks"], lang.hitch(this, function (Bookmarks) {
+                var webmapBookmarks = this.config.response.itemInfo.itemData.bookmarks || null;
+                if (!Bookmarks || !webmapBookmarks) {
+                    bookmarksDef.resolve(null);
+                    return;
+                }
 
+                var btn = this._createToolbarButton("bookmark_toggle", "icon-book", this.config.i18n.tools.bookmarkTool);
+
+                on(btn, "click", lang.hitch(this, function () {
+                    this._displayContainer("bookmark_container", "bookmark_toggle");
+                }));
+
+                this._createContainer("bookmark_container", "bookmarkDiv");
+
+                var bookmarkWidget = new Bookmarks({
+                    map: this.map,
+                    bookmarks: webmapBookmarks
+                }, domConstruct.create("div", {}, "bookmarkDiv"));
+
+                bookmarksDef.resolve(btn);
+                return bookmarksDef.promise;
+
+            }));
             require(["application/sniff!layerlist?application/TableOfContents"], lang.hitch(this, function (TableOfContents) {
 
                 if (!TableOfContents) {
@@ -1067,37 +1089,40 @@ declare, win, array, Color, all, Deferred, lang, domUtils, esriRequest, esriLang
 
 
         },
-    _setLevel: function (options) {
-      var level = this.config.level;
-      //specify center and zoom if provided as url params 
-      if (level) {
-        options.zoom = level;
-      }
-      return options;
-    },
+        _setLevel: function (options) {
+            var level = this.config.level;
+            //specify center and zoom if provided as url params 
+            if (level) {
+                options.zoom = level;
+            }
+            return options;
+        },
 
-    _setCenter: function (options) {
-      var center = this.config.center;
-      if (center) {
-        var points = center.split(",");
-        if (points && points.length === 2) {
-          options.center = [parseFloat(points[0]), parseFloat(points[1])];
-        }
-      }
-      return options;
-    },
+        _setCenter: function (options) {
+            var center = this.config.center;
+            if (center) {
+                var points = center.split(",");
+                if (points && points.length === 2) {
+                    options.center = [parseFloat(points[0]), parseFloat(points[1])];
+                }
+            }
+            return options;
+        },
 
-    _setExtent: function (info) {
-      var e = this.config.extent;
-      //If a custom extent is set as a url parameter handle that before creating the map
-      if (e) {
-        var extArray = e.split(",");
-        var extLength = extArray.length;
-        if (extLength === 4) {
-          info.item.extent = [[parseFloat(extArray[0]), parseFloat(extArray[1])], [parseFloat(extArray[2]), parseFloat(extArray[3])]];
+        _setExtent: function (info) {
+            var e = this.config.extent;
+            //If a custom extent is set as a url parameter handle that before creating the map
+            if (e) {
+                var extArray = e.split(",");
+                var extLength = extArray.length;
+                if (extLength === 4) {
+                    info.item.extent = [
+                        [parseFloat(extArray[0]), parseFloat(extArray[1])],
+                        [parseFloat(extArray[2]), parseFloat(extArray[3])]
+                    ];
+                }
+            }
+            return info;
         }
-      }
-      return info;
-    }
     });
 });
