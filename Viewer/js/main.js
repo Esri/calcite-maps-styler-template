@@ -883,6 +883,12 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
                 height = newHeight;
             }
             this.map.infoWindow.resize(width, height);
+            on(this.map.infoWindow, "show",lang.hitch(this, function(){
+              domClass.add(document.body, "noscroll");
+            }));
+            on(this.map.infoWindow, "hide", lang.hitch(this, function(){
+                domClass.remove(document.body, "noscroll");
+            }));
         },
         _createWebMap: function (itemInfo) {
 
