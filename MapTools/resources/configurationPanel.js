@@ -239,7 +239,12 @@
                },
                "fieldOptions":{  
                   "supportedTypes":[  
-                     "esriFieldTypeString"
+                     "esriFieldTypeString",                       
+                     "esriFieldTypeDate",
+                     "esriFieldTypeSmallInteger",
+                     "esriFieldTypeInteger",
+                     "esriFieldTypeSingle",
+                     "esriFieldTypeDouble"
                   ]
                }
             }
