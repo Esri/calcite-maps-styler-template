@@ -77,7 +77,9 @@ define(["dojo/ready", "dojo/_base/declare", "dojo/query", "dojo/dom-style", "doj
 
                 registry.byId("mainContainer").layout();
 
+                
                 dom.byId("descriptionNode").innerHTML = response.itemInfo.item.description || "";
+                
                 registry.byId("infoContainer").layout();
 
 
@@ -109,13 +111,17 @@ define(["dojo/ready", "dojo/_base/declare", "dojo/query", "dojo/dom-style", "doj
                         layerInfos: legendLayers
                     }, "legendNode");
                     legendDijit.startup();
+                }else{
 
+                    if(this.config.titleInHeader === true && response.itemInfo.item.description === null){
+                          domStyle.set(dom.byId("infoContainer"), "display", "none");
+                          registry.byId("mainContainer").layout();
+                    }
                 }
 
 
                 //Create the Geocoder
                 if (this.config.geocoder) {
-
                     //Add the location search widget
                     require(["esri/dijit/Search", "esri/tasks/locator", "application/SearchSources", "dojo/_base/array", "esri/lang"], lang.hitch(this, function (Search, Locator, SearchSources, array, esriLang) {
                         if (!Search && !Locator && !SearchSources) {
