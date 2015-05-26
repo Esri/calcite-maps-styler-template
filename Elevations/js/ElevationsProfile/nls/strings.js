@@ -1,7 +1,7 @@
 ﻿define({
   root: ({
     display: {
-      elevationProfileTitle: "Elevations Profile",
+      elevationProfileTitle: "Elevation Profile",
       showMe: "show me",
       selectLine: "<b>Select</b> a feature in the map.",
       popupRequirement: "NOTE: the feature must be in a layer with Popups enabled.",
