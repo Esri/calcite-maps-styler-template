@@ -540,10 +540,10 @@ declare, win, array, Color, all, Deferred, lang, domUtils, esriRequest, esriLang
                 var btn = this._createToolbarButton("basemap_toggle", "icon-basemap", this.config.i18n.tools.basemapTool);
 
                 on(btn, "click", lang.hitch(this, function () {
-                    this._displayContainer("gallery_container", "basemap_toggle");
+                    this._displayContainer("basemap_container", "basemap_toggle");
                 }));
 
-                this._createContainer("gallery_container", "galleryDiv");
+                this._createContainer("basemap_container", "galleryDiv");
 
                 var gallery = new BasemapGallery(galleryOptions, dom.byId("galleryDiv"));
 
@@ -640,11 +640,16 @@ declare, win, array, Color, all, Deferred, lang, domUtils, esriRequest, esriLang
             //Wait until all the tools have been created then position on the toolbar
             //otherwise we'd get the tools placed in a random order 
             all(toolDeferreds).then(lang.hitch(this, function (results) {
-                array.forEach(results, function (node) {
+                array.forEach(results, lang.hitch(this, function (node) {
                     if (node) {
-                        domConstruct.place(node, "toolbar-trailing");
+                        var li = domConstruct.create("li", {});
+                        domConstruct.place(node, li);
+                        domConstruct.place(li, "toolbar-menu");
+
+                        var ul = domConstruct.create("ul", {}, li, "last");
+                        domClass.add(ul, "tools-submenu");
                     }
-                });
+                }));
                 this._updateTheme();
             }));
 
@@ -883,6 +888,7 @@ declare, win, array, Color, all, Deferred, lang, domUtils, esriRequest, esriLang
                 title: label,
                 innerHTML: "<span aria-hidden=true class='icon-color " + icon + "'></span><span class='tool-label'>" + label + "</span>"
             });
+
             return button;
 
         },
@@ -931,13 +937,9 @@ declare, win, array, Color, all, Deferred, lang, domUtils, esriRequest, esriLang
             }
 
             var pos = domGeometry.position(dom.byId(button));
-            var winWidth = win.getBox();
-            var buttonSize = pos.x + pos.w;
-            if (buttonSize === winWidth.w) {
-                domStyle.set(node, "right", 0);
-            } else {
-                domStyle.set(node, "right", (pos.w) + "px");
-            }
+
+            //var winWidth = win.getBox();
+            domStyle.set(node, "right", (pos.w / 2) + "px");
         },
         _navigateStack: function (panelLabel, buttonLabel) {
             var stackContainer = registry.byId("stackContainer");

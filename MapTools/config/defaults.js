@@ -50,7 +50,7 @@ define({
     "editable": false,
     "editortoolbar": false,    
     "search": true,
-    "bookmarks": true,
+    "bookmarks": false,
     "locationSearch": true,
     "searchExtent": true,
     "searchLayers":[{

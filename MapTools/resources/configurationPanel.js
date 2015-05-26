@@ -108,6 +108,10 @@
                "type":"boolean",
                "fieldName": "basemaps",
                "label": "Basemap Gallery"
+            },{
+               "type": "boolean",
+               "fieldName": "bookmarks",
+               "label": "Bookmarks"
             },
             {  
                "type":"boolean",

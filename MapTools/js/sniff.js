@@ -18,8 +18,8 @@ define(["dojo/has"], function (has) { /*App capabilities*/
     has.add("bookmarks", function (g) {
         var bookmarks = g.config.bookmarks;
         if (!g.config.response.itemInfo.itemData.bookmarks) {
-            //if there aren't any basemaps set to false. 
-            basemaps = false;
+            //if there aren't any bookmarks set to false. 
+            bookmarks = false;
         }
         return bookmarks;
     });
