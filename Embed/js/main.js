@@ -557,7 +557,6 @@ ready, parser, domAttr, domGeometry, on, array, declare, lang, query, dom, domCl
 
                 }));
 
-
                 this.loadMapWidgets();
 
                 // map has been created. You can start using it.
@@ -589,6 +588,7 @@ ready, parser, domAttr, domGeometry, on, array, declare, lang, query, dom, domCl
                 } else {
                     this._displayPopupContent(popup.getSelectedFeature());
                 }
+
             }));
             popup.on("clear-features", lang.hitch(this, function () {
                 domUtils.hide(dom.byId("popupNav"));
@@ -603,9 +603,9 @@ ready, parser, domAttr, domGeometry, on, array, declare, lang, query, dom, domCl
                 var drawer = query(".drawer-open");
                 if (drawer && drawer.length === 0) {
                     //drawer is not open so open it  
-                    this._drawer.toggle();
+                    dom.byId("toggle_button").click();
+                    //this._drawer.toggle();
                 }
-
 
                 if (popup.features && popup.features.length > 1) {
                     this._displayPopupContent(popup.getSelectedFeature(), (popup.selectedIndex + 1), popup.count);
