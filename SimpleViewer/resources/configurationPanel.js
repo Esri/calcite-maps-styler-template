@@ -71,7 +71,15 @@
                   "geometryTypes": ["esriGeometryPoint", "esriGeometryLine", "esriGeometryPolyline", "esriGeometryPolygon"]
                },
                "fieldOptions":{
-                  "supportedTypes": ["esriFieldTypeString"]
+                  "supportedTypes": [
+                     "esriFieldTypeString",                       
+                     "esriFieldTypeDate",
+                     "esriFieldTypeSmallInteger",
+                     "esriFieldTypeInteger",
+                     "esriFieldTypeSingle",
+                     "esriFieldTypeDouble"                       
+                      
+                    ]
                }
             }
 
