@@ -27,6 +27,7 @@ define(["dojo/Evented", "dijit/_WidgetBase", "dijit/_OnDijitClickMixin", "dijit/
             this.showHelpAtStartup = options.showHelpAtStartup || null;
             this.chartColor = options.chartcolor;
             this.profileService = null;
+            this.chartTitle = options.chartTitle || null;
 
             //Make sure we have required parameters
             if ((!options.map) || (!options.profileTaskUrl) || (!options.scalebarUnits)) {
@@ -587,8 +588,9 @@ define(["dojo/Evented", "dijit/_WidgetBase", "dijit/_OnDijitClickMixin", "dijit/
                 }
 
                 // CREATE CHART //
+                var chartTitle = this.chartTitle || this.strings.chart.title;
                 this.profileChart = new Chart(this._chartNode, {
-                    title: this.strings.chart.title,
+                    title: chartTitle,
                     titlePos: "top",
                     titleGap: 10,
                     titleFont: lang.replace("normal normal bold {chartTitleFontSize}pt verdana", this.chartRenderingOptions),

@@ -13,10 +13,13 @@ define({
         "id": "",
         "fields": []
     }],
+    "title": null,  //specify a custom title. Defaults to web map title 
+    "subtitle": null, //specify a custom sub title. Defaults to web map snippet.
     "locationSearch": true,  
     "titleInHeader": true,  //true in config values 
     "displaypopups": true, //true in config values
     "showHelpOnLoad": true, //true in config values 
+    "elevationcharttitle": null,
     //end set config 
     "helperServices": {
     "geometry": {

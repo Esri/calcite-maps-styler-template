@@ -63,15 +63,18 @@ define(["dojo/ready", "dojo/_base/declare", "dojo/query", "dojo/dom-style", "doj
                     descNode = dom.byId("descriptionPane");
                     domStyle.set(dom.byId("topContainer"), "display", "none");
                 }
-
+                var title = this.config.title || response.itemInfo.item.title || "";
+                document.title = title;
                 domConstruct.create("div", {
                     id: "titleNode",
-                    innerHTML: response.itemInfo.item.title || ""
+                    innerHTML: title
                 }, descNode, "first");
+                var subtitle = this.config.subtitle || response.itemInfo.item.snippet || "";
                 domConstruct.create("div", {
                     id: "snippetNode",
-                    innerHTML: response.itemInfo.item.snippet || ""
+                    innerHTML: subtitle
                 }, descNode);
+
                 registry.byId("mainContainer").layout();
 
                 dom.byId("descriptionNode").innerHTML = response.itemInfo.item.description || "";
@@ -162,7 +165,8 @@ define(["dojo/ready", "dojo/_base/declare", "dojo/query", "dojo/dom-style", "doj
                     map: this.map,
                     profileTaskUrl: this.config.helperServices.elevationSync.url,
                     scalebarUnits: this.config.scalebarUnits,
-                    showHelpAtStartup: this.config.showHelpOnLoad
+                    showHelpAtStartup: this.config.showHelpOnLoad,
+                    chartTitle: this.config.elevationcharttitle
                 };
 
 
