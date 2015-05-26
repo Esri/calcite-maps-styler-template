@@ -1,5 +1,5 @@
-define(["dojo/ready", "dojo/_base/declare", "dojo/_base/lang", "dojo/_base/array", "dojo/_base/Color", "esri/arcgis/utils", "esri/urlUtils", "dojo/on", "dojo/has", "dojo/sniff", "dijit/registry", "application/Drawer", "esri/dijit/Search", "application/SearchSources", "esri/tasks/locator", "esri/lang", "esri/dijit/Legend", "dojo/dom-class", "dojo/dom", "dojo/query", "dojo/dom-construct", "esri/dijit/LocateButton", "esri/dijit/HomeButton", "esri/layers/FeatureLayer"], function (
-ready, declare, lang, array, Color, arcgisUtils, urlUtils, on, has, sniff, registry, Drawer, Search, SearchSources, Locator, esriLang, Legend, domClass, dom, query, domConstruct, LocateButton, HomeButton,FeatureLayer) {
+define(["dojo/ready", "dojo/_base/declare", "dojo/_base/lang", "dojo/_base/array", "dojo/_base/Color", "esri/arcgis/utils", "esri/urlUtils", "dojo/on", "dojo/has", "dojo/sniff", "dijit/registry", "application/Drawer", "esri/dijit/Search", "application/SearchSources", "esri/tasks/locator", "esri/lang", "esri/dijit/Legend", "dojo/dom-class", "dojo/dom-style", "dojo/dom", "dojo/query", "dojo/dom-construct", "esri/dijit/LocateButton", "esri/dijit/HomeButton", "esri/layers/FeatureLayer"], function (
+ready, declare, lang, array, Color, arcgisUtils, urlUtils, on, has, sniff, registry, Drawer, Search, SearchSources, Locator, esriLang, Legend, domClass, domStyle, dom, query, domConstruct, LocateButton, HomeButton,FeatureLayer) {
     return declare("", null, {
         config: {},
         theme: null,
@@ -176,6 +176,7 @@ ready, declare, lang, array, Color, arcgisUtils, urlUtils, on, has, sniff, regis
 
 
             //Define about panel content
+
             var about_content = this.config.about || this.config.itemInfo.item.description;
             if (about_content !== null && about_content !== "") {
                 dom.byId("about-label").innerHTML = this.config.i18n.tools.about;
@@ -192,6 +193,12 @@ ready, declare, lang, array, Color, arcgisUtils, urlUtils, on, has, sniff, regis
                 query(".ac-container").forEach(function(node){
                     domClass.add(node, "no-label");
                 });
+            }
+            if(noAbout && noLegend){ //hide drawer
+                domStyle.set(dom.byId("toggle_button"),"display","none");
+                domStyle.set(dom.byId("cp_left"),"display", "none");
+                query(".top-bar-title").style("margin-left", "5px");
+                registry.byId("border_container").layout();
             }
             this._updateTheme();
 
