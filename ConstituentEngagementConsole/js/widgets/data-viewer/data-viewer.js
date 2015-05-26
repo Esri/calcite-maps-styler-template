@@ -1,20 +1,20 @@
 ﻿/*global define,document,location,require,alert,console,dojo,$,setTimeout,selected,event,moment,dojoConfig */
 /*jslint browser:true,sloppy:true,nomen:true,unparam:true,plusplus:true,indent:4 */
 /*
-| Copyright 2014 Esri
-|
-| Licensed under the Apache License, Version 2.0 (the "License");
-| you may not use this file except in compliance with the License.
-| You may obtain a copy of the License at
-|
-|    http://www.apache.org/licenses/LICENSE-2.0
-|
-| Unless required by applicable law or agreed to in writing, software
-| distributed under the License is distributed on an "AS IS" BASIS,
-| WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-| See the License for the specific language governing permissions and
-| limitations under the License.
-*/
+ | Copyright 2014 Esri
+ |
+ | Licensed under the Apache License, Version 2.0 (the "License");
+ | you may not use this file except in compliance with the License.
+ | You may obtain a copy of the License at
+ |
+ |    http://www.apache.org/licenses/LICENSE-2.0
+ |
+ | Unless required by applicable law or agreed to in writing, software
+ | distributed under the License is distributed on an "AS IS" BASIS,
+ | WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ | See the License for the specific language governing permissions and
+ | limitations under the License.
+ */
 define([
     "dojo/_base/declare",
     "dojo/_base/lang",
@@ -46,7 +46,9 @@ define([
     "dojo/dom-style",
     "dojo/dom-geometry",
     "widgets/data-viewer/details-helper",
-    "dojo/Deferred"
+    "dojo/Deferred",
+    "esri/geometry/Polyline",
+    "esri/geometry/Polygon"
 ], function (
     declare,
     lang,
@@ -78,7 +80,9 @@ define([
     domStyle,
     domGeometry,
     DetailsHelper,
-    Deferred
+    Deferred,
+    Polyline,
+    Polygon
 ) {
     return declare([_WidgetBase, _TemplatedMixin, _WidgetsInTemplateMixin], {
         templateString: dijitTemplate,
@@ -108,6 +112,7 @@ define([
         _existingRowData: null, // to store internal row data of data-viewer that was last edited
         _detailsHelper: null, // to store object of details-helper
         _isCheckBoxClicked: false, // keeps track whether checkbox is clicked or row is clicked
+        _isManualRefreshClicked: false, // keeps track whether manual refresh is clicked or not
         objectIdColumnNumber: null, // to store column number which contains object id
         isOrientationChangedInListView: false, // to keep track whether orientation is changed in list view or not
         isMapViewClicked: false, // keep track whether map view option is clicked or not
@@ -162,6 +167,8 @@ define([
                 this.showLocationTab();
                 // If a new operational layer is selected by default show map panel and clear data of details tab
                 this._resetDetailsTab();
+                // To disable settings icon
+                this._changeSelectionOptionMode(false);
                 // If a new operational layer is selected hide show selected option
                 if (!domClass.contains(query(".esriCTShowSelected")[0], "esriCTVisible")) {
                     this.isShowSelectedClicked = false;
@@ -189,28 +196,13 @@ define([
             // to display only selected features
             // else display all features available in current extent
             if (this.isShowSelectedClicked) {
-                // if it is point feature than get selected feature from graphics layer
-                // if it is other than point feature get selected feature from feature layer
-                if (this._isPointLayer) {
-                    this._features = this._selectRowGraphicsLayer.graphics;
-                } else {
-                    // If selected operational exists.
-                    if (this._selectedOperationalLayer) {
-                        this._features = this._selectedOperationalLayer.getSelectedFeatures();
-                    }
-                }
+                this._features = this._selectRowGraphicsLayer.graphics;
                 this._createDataViewerPanel();
             } else {
                 // If selected operational exists.
                 if (this._selectedOperationalLayer) {
                     this._features = this._selectedOperationalLayer.graphics;
-                    // if it is point feature than get selected feature from graphics layer
-                    // if it is other than point feature get selected feature from feature layer
-                    if (this._isPointLayer) {
-                        selectedFeatureArr = this._selectRowGraphicsLayer.graphics;
-                    } else {
-                        selectedFeatureArr = this._selectedOperationalLayer.getSelectedFeatures();
-                    }
+                    selectedFeatureArr = this._selectRowGraphicsLayer.graphics;
                     // to combine both selected feature and new features in current extent
                     if (selectedFeatureArr.length > 0) {
                         this._features = this._features.concat(selectedFeatureArr);
@@ -224,6 +216,10 @@ define([
                         domClass.remove(this.noFeatureDiv, "esriCTHidden");
                         domClass.add(this.dataViewerParentDiv, "esriCTHidden");
                         this.noFeatureDiv.innerHTML = this.appConfig.i18n.dataviewer.noIssuesReported;
+                        if (this._isManualRefreshClicked) {
+                            this._isManualRefreshClicked = false;
+                            this.resizeMap();
+                        }
                         this.appUtils.hideLoadingIndicator();
                     }
                 }
@@ -300,6 +296,7 @@ define([
 
         /**
         * This function is used to redraw data-viewer on header click
+        * @param{object} table header to attach click event on it
         * @memberOf widgets/data-viewer/data-viewer
         */
         _onTableHeaderClick: function (tableHeader) {
@@ -504,6 +501,9 @@ define([
 
         /**
         * This function is used to add checkbox in data-viewer
+        * @param{integer} row index where check-box needs to be added
+        * @param{integer} existing id of check-box
+        * @param{boolean} to check/un-check the check-box
         * @memberOf widgets/data-viewer/data-viewer
         */
         _addCheckBox: function (index, id, checked) {
@@ -583,6 +583,10 @@ define([
             this._restrictSizeOfTableCellContent();
             this._retainSelectedFeature();
             this._setDataViewerHeight();
+            if (this._isManualRefreshClicked) {
+                this._isManualRefreshClicked = false;
+                this.resizeMap();
+            }
             this.appUtils.hideLoadingIndicator();
         },
 
@@ -599,6 +603,14 @@ define([
                     domClass.replace(tableBodyNodes[0], "dataTables_splitViewHeight", "dataTables_listViewHeight");
                 }
             }
+        },
+
+        /**
+        * This function is used to generate event for resizing of map
+        * @memberOf widgets/data-viewer/data-viewer
+        */
+        resizeMap: function () {
+            return null;
         },
 
         /**
@@ -623,7 +635,7 @@ define([
         * This function is used to destroy data-viewer table
         * @memberOf widgets/data-viewer/data-viewer
         */
-        destroyDataViewerTable: function (value) {
+        destroyDataViewerTable: function () {
             if (this._dataViewerTable) {
                 this._dataViewerTable.destroy();
             }
@@ -659,14 +671,11 @@ define([
         */
         showSelectedRecords: function () {
             var selectedFeaturesLength;
-            // if it is point feature than get selected feature length from graphics layer
-            // if it is other than point feature get selected feature length from feature layer
-            if (this._isPointLayer) {
-                selectedFeaturesLength = this._selectRowGraphicsLayer.graphics.length;
-            } else {
-                selectedFeaturesLength = this._selectedOperationalLayer.getSelectedFeatures().length;
-            }
+            selectedFeaturesLength = this._selectRowGraphicsLayer.graphics.length;
             if (selectedFeaturesLength > 0) {
+                this._clearActiveRowData();
+                this.showLocationTab();
+                this.isDetailsTabClicked = false;
                 this.toggleSelectionViewOption(true);
                 this.isShowSelectedClicked = true;
                 if (this.isMapViewClicked) {
@@ -704,26 +713,18 @@ define([
         * If show selected option is clicked than this functionality will be freezed
         * @memberOf widgets/data-viewer/data-viewer
         */
-        clearSelection: function (hideMessage, clearCheckBoxes) {
+        clearSelection: function () {
             // If user is in show selected mode than do not do clear selection.
             if (!this.isShowSelectedClicked) {
-                $(".esriCTRowSelected").removeClass("esriCTRowSelected");
-                // if it is point layer than clear feature from graphics layer
-                // else clear it from feature layer
-                if (this._isPointLayer) {
-                    this._activeRowGraphicsLayer.clear();
-                    if (clearCheckBoxes) {
-                        this._selectRowGraphicsLayer.clear();
-                    }
-                } else {
-                    this._selectedOperationalLayer.clearSelection();
-                }
-                this._resetDetailsTab(hideMessage);
+                $(".esriCTRowActivated").removeClass("esriCTRowActivated");
+                this._selectRowGraphicsLayer.clear();
+                this._activeRowGraphicsLayer.clear();
                 // If user is in edit mode and clicks clear selection than remove all the edited controls
                 this._removeControlsFromPreviousRow();
-                if (clearCheckBoxes) {
-                    this._unCheckAllCheckboxes();
-                }
+                this._unCheckAllCheckboxes();
+                this.showLocationTab();
+                this.isDetailsTabClicked = false;
+                this._resetDetailsTab();
             }
         },
 
@@ -732,16 +733,10 @@ define([
         * @memberOf widgets/data-viewer/data-viewer
         */
         _clearActiveRowData: function () {
-            if (!this.isShowSelectedClicked) {
-                $(".esriCTRowActivated").removeClass("esriCTRowActivated");
-                if (this._isPointLayer) {
-                    this._activeRowGraphicsLayer.clear();
-                } else {
-                    this._selectedOperationalLayer.clearSelection();
-                }
-                this._resetDetailsTab();
-                this._removeControlsFromPreviousRow();
-            }
+            $(".esriCTRowActivated").removeClass("esriCTRowActivated");
+            this._activeRowGraphicsLayer.clear();
+            this._resetDetailsTab();
+            this._removeControlsFromPreviousRow();
         },
 
         /**
@@ -761,22 +756,19 @@ define([
         * @memberOf widgets/data-viewer/data-viewer
         */
         zoomToSelected: function () {
+            this.appUtils.showLoadingIndicator();
             // If zoom to option is clicked, and if details tab is visible, then switched it to map panel
             if (this.isDetailsTabClicked) {
                 var selectedFeaturesLength;
-                // if it is point feature than get selected feature length from graphics layer
-                // if it is other than point feature get selected feature length from feature layer
-                if (this._isPointLayer) {
-                    selectedFeaturesLength = this._selectRowGraphicsLayer.graphics.length;
-                } else {
-                    selectedFeaturesLength = this._selectedOperationalLayer.getSelectedFeatures().length;
-                }
-                if (selectedFeaturesLength === 1) {
+                selectedFeaturesLength = this._selectRowGraphicsLayer.graphics.length;
+                if (selectedFeaturesLength > 0) {
                     this.showLocationTab();
                     this.isDetailsTabClicked = false;
                     this._resetDetailsTab();
                     // Zoom map extent to selected features
                     this._zoomMapExtentToSelectedFeature();
+                } else {
+                    this.appUtils.hideLoadingIndicator();
                 }
             } else {
                 // Zoom map extent to selected features
@@ -814,10 +806,6 @@ define([
         _showSelectedFeatureInDataViewer: function () {
             this.appUtils.showLoadingIndicator();
             this.createDataViewerUI(false);
-            // Highlight row that was selected previously
-            $('#dataViewerTable tr').each(function () {
-                $(this).addClass("esriCTRowSelected");
-            });
         },
 
         /**
@@ -836,21 +824,19 @@ define([
         * @memberOf widgets/data-viewer/data-viewer
         */
         _retainSelectedFeature: function () {
-            var i, objectID, selectedFeatureArr;
-            // if it is point feature than get selected feature from graphics layer
-            // if it is other than point feature get selected feature from feature layer
-            if (this._isPointLayer) {
-                selectedFeatureArr = this._activeRowGraphicsLayer.graphics;
-            } else {
-                // If selected operational layer exists.
-                if (this._selectedOperationalLayer) {
-                    selectedFeatureArr = this._selectedOperationalLayer.getSelectedFeatures();
-                }
-            }
+            var i, objectID, selectedFeatureArr, activatedFeatureArr;
+            selectedFeatureArr = this._selectRowGraphicsLayer.graphics;
+            activatedFeatureArr = this._activeRowGraphicsLayer.graphics;
             if (selectedFeatureArr) {
                 for (i = 0; i < selectedFeatureArr.length; i++) {
                     objectID = selectedFeatureArr[i].attributes[this._selectedOperationalLayer.objectIdField];
-                    this._highlightRowOnFeatureClick(objectID);
+                    this.highlightRowOnFeatureClick(objectID, true);
+                }
+            }
+            if (activatedFeatureArr) {
+                for (i = 0; i < activatedFeatureArr.length; i++) {
+                    objectID = activatedFeatureArr[i].attributes[this._selectedOperationalLayer.objectIdField];
+                    this.highlightRowOnFeatureClick(objectID, false);
                 }
             }
         },
@@ -860,30 +846,30 @@ define([
         * @memberOf widgets/data-viewer/data-viewer
         */
         _zoomMapExtentToSelectedFeature: function () {
-            var selectedFeatureArr, geometryService, selectedFeaturesGeometryArr = [],
-                i;
+            var selectedFeatureArr, geometryService, selectedFeaturesGeometryArr, i;
+            selectedFeaturesGeometryArr = [];
             geometryService = new GeometryService(this.appConfig.helperServices.geometry.url);
-            // if it is point feature than get selected feature from graphics layer
-            // if it is other than point feature get selected feature from feature layer
-            if (this._isPointLayer) {
-                selectedFeatureArr = this._selectRowGraphicsLayer.graphics;
-            } else {
-                selectedFeatureArr = this._selectedOperationalLayer.getSelectedFeatures();
-            }
+            selectedFeatureArr = this._selectRowGraphicsLayer.graphics;
             for (i = 0; i < selectedFeatureArr.length; i++) {
-                selectedFeaturesGeometryArr.push(selectedFeatureArr[i].geometry);
+                if (selectedFeatureArr[i].geometry) {
+                    selectedFeaturesGeometryArr.push(selectedFeatureArr[i].geometry);
+                }
             }
             // If single feature is selected, then zoom map to configure zoom level
             if (selectedFeaturesGeometryArr.length === 1 && this._isPointLayer) {
                 this.map.setLevel(this.appConfig.zoomLevel);
                 this.map.centerAt(selectedFeaturesGeometryArr[0]);
+                this.appUtils.hideLoadingIndicator();
             } else if (selectedFeaturesGeometryArr.length > 0) {
                 // If multiple features are selected, then do union of selected feature's geometry and set map extent of it
                 geometryService.union(selectedFeaturesGeometryArr).then(lang.hitch(this, function (response) {
                     this.map.setExtent(response.getExtent(), true);
-                }), function (err) {
-                    this.appUtils.showError(err.message);
-                });
+                    this.appUtils.hideLoadingIndicator();
+                }), lang.hitch(this, function (err) {
+                    this.appUtils.hideLoadingIndicator();
+                }));
+            } else {
+                this.appUtils.hideLoadingIndicator();
             }
         },
 
@@ -942,7 +928,7 @@ define([
             // If the value/search string exists than search it
             if (!this.isShowSelectedClicked && lang.trim($(".esriCTSearchBox")[0].value) !== "") {
                 $(".esriCTSearchBox")[0].value = lang.trim($(".esriCTSearchBox")[0].value);
-                this.clearSelection(false, true);
+                this.clearSelection();
                 // Before searching clear edit mode
                 this._removeControlsFromPreviousRow();
                 // Search records based on the value entered by the user
@@ -1098,9 +1084,9 @@ define([
             // do union of selected feature's geometry and set map extent to it
             geometryService.union(selectedFeaturesGeometryArr).then(lang.hitch(this, function (response) {
                 this.map.setExtent(response.getExtent(), true);
-            }), function (err) {
-                this.appUtils.showError(err.message);
-            });
+            }), lang.hitch(this, function (err) {
+                this.appUtils.hideLoadingIndicator();
+            }));
         },
 
         /**
@@ -1178,6 +1164,7 @@ define([
 
         /**
         * This function is used to get definition expression
+        * @param{string} search string
         * @memberOf widgets/data-viewer/data-viewer
         */
         _getDefinitionExpression: function (searchValue) {
@@ -1220,11 +1207,11 @@ define([
         * This function is used to reset details tab
         * @memberOf widgets/data-viewer/data-viewer
         */
-        _resetDetailsTab: function (hideMessage) {
+        _resetDetailsTab: function () {
             var parentDiv;
             parentDiv = dom.byId("detailsContentDiv");
-            if (!hideMessage) {
-                parentDiv.innerHTML = this.appConfig.i18n.dataviewer.activateFeature;
+            if (parentDiv) {
+                parentDiv.innerHTML = "";
             }
         },
 
@@ -1274,13 +1261,13 @@ define([
         */
         _addDataViewerGraphicsLayer: function () {
             try {
-                this._selectRowGraphicsLayer = this.map.getLayer("dataViewerGraphicsLayer");
+                this._selectRowGraphicsLayer = this.map.getLayer("selectedRowGraphicsLayer");
                 // if graphic layer is available than clear it else create it and add on map
                 if (this._selectRowGraphicsLayer) {
                     this._selectRowGraphicsLayer.clear();
                 } else {
                     this._selectRowGraphicsLayer = new GraphicsLayer({
-                        "id": "dataViewerGraphicsLayer"
+                        "id": "selectedRowGraphicsLayer"
                     });
                     this.attachEventToGraphicsLayer(this._selectRowGraphicsLayer);
                     // Create and add a graphic layer on the map
@@ -1295,7 +1282,9 @@ define([
         */
         _addActiveRowGraphicLayer: function () {
             try {
+                var cloneInfoTemplate;
                 this._activeRowGraphicsLayer = this.map.getLayer("activeRowGraphicsLayer");
+                cloneInfoTemplate = lang.clone(this._selectedOperationalLayer.infoTemplate);
                 // if graphic layer is available than clear it else create it and add on map
                 if (this._activeRowGraphicsLayer) {
                     this._activeRowGraphicsLayer.clear();
@@ -1303,6 +1292,7 @@ define([
                     this._activeRowGraphicsLayer = new GraphicsLayer({
                         "id": "activeRowGraphicsLayer"
                     });
+                    this._activeRowGraphicsLayer.setInfoTemplate(cloneInfoTemplate);
                     this.attachEventToActiveRowLayer(this._activeRowGraphicsLayer);
                     // Create and add a graphic layer on the map
                     this.map.addLayer(this._activeRowGraphicsLayer);
@@ -1312,6 +1302,7 @@ define([
 
         /**
         * This function is used to attach events to the graphics layer
+        * @param{object} graphics layer in which selected graphics are added
         * @memberOf widgets/data-viewer/data-viewer
         */
         attachEventToGraphicsLayer: function (graphicsLayer) {
@@ -1320,6 +1311,7 @@ define([
 
         /**
         * This function is used to attach events to the active row graphics layer
+        * @param{object} graphics layer in which activated graphics are added
         * @memberOf widgets/data-viewer/data-viewer
         */
         attachEventToActiveRowLayer: function (graphicsLayer) {
@@ -1328,22 +1320,22 @@ define([
 
         /**
         * This function is used to change details button to enabled or disabled mode
-        * @param{Boolean} to identify layer is graphic layer or feature layer
         * @memberOf widgets/data-viewer/data-viewer
         */
-        changeDetailsButtonMode: function (graphicsLayer) {
-            if (graphicsLayer) {
-                if (this._selectRowGraphicsLayer && this._selectRowGraphicsLayer.graphics && this._selectRowGraphicsLayer.graphics.length > 0) {
-                    this._changeSelectionOptionMode(true);
-                } else {
-                    this._changeSelectionOptionMode(false);
+        changeDetailsButtonMode: function () {
+            if (this._activeRowGraphicsLayer && this._activeRowGraphicsLayer.graphics && this._activeRowGraphicsLayer.graphics.length === 1) {
+                if (!this._isCheckBoxClicked) {
+                    domClass.remove("detailsBtnDiv", "esriCTDetailsBtnDisabled");
+                    domClass.add("detailsBtnDiv", "esriCTDetailsButton");
                 }
             } else {
-                if (this._selectedOperationalLayer && this._selectedOperationalLayer.getSelectedFeatures().length > 0) {
-                    this._changeSelectionOptionMode(true);
-                } else {
-                    this._changeSelectionOptionMode(false);
-                }
+                domClass.remove("detailsBtnDiv", "esriCTDetailsButton");
+                domClass.add("detailsBtnDiv", "esriCTDetailsBtnDisabled");
+            }
+            if (this._selectRowGraphicsLayer && this._selectRowGraphicsLayer.graphics && this._selectRowGraphicsLayer.graphics.length > 0) {
+                this._changeSelectionOptionMode(true);
+            } else {
+                this._changeSelectionOptionMode(false);
             }
         },
 
@@ -1352,31 +1344,24 @@ define([
         * @memberOf widgets/data-viewer/data-viewer
         */
         _changeSelectionOptionMode: function (toggle) {
-            var showAllOption, showSelectedOption, clearSelectionOption, zoomToSelectedOption;
-            showAllOption = query(".esriCTShowAll")[0];
-            showSelectedOption = query(".esriCTShowSelected")[0];
-            clearSelectionOption = query(".esriCTClearSelection")[0];
-            zoomToSelectedOption = query(".esriCTZoomToSelected")[0];
+            var settingsButton, settingsOption;
+            settingsButton = query(".esriCTSettingsButton")[0];
+            if (!settingsButton) {
+                settingsButton = query(".esriCTSettingsButtonDisabled")[0];
+            }
+            settingsOption = query(".esriCTSettingsOptions")[0];
             if (toggle) { // To enable selection options
-                if (this._selectRowGraphicsLayer && this._selectRowGraphicsLayer.graphics && this._selectRowGraphicsLayer.graphics.length > 0) {
-                    if (domClass.contains(showAllOption, "esriCTDisableShowAll")) {
-                        domClass.remove(showAllOption, "esriCTDisableShowAll");
-                    }
-                    if (domClass.contains(showSelectedOption, "esriCTDisableShowSelected")) {
-                        domClass.remove(showSelectedOption, "esriCTDisableShowSelected");
-                    }
-                    if (domClass.contains(clearSelectionOption, "esriCTDisableClearSelection")) {
-                        domClass.remove(clearSelectionOption, "esriCTDisableClearSelection");
-                    }
-                    if (domClass.contains(zoomToSelectedOption, "esriCTDisableCTZoomToSelected")) {
-                        domClass.remove(zoomToSelectedOption, "esriCTDisableCTZoomToSelected");
+                if ((this._selectRowGraphicsLayer && this._selectRowGraphicsLayer.graphics && this._selectRowGraphicsLayer.graphics.length > 0)) {
+                    if (domClass.contains(settingsButton, "esriCTSettingsButtonDisabled")) {
+                        domClass.remove(settingsButton, "esriCTSettingsButtonDisabled");
+                        domClass.add(settingsButton, "esriCTSettingsButton");
                     }
                 }
             } else { // To disable selection options
-                domClass.add(showAllOption, "esriCTDisableShowAll");
-                domClass.add(showSelectedOption, "esriCTDisableShowSelected");
-                domClass.add(clearSelectionOption, "esriCTDisableClearSelection");
-                domClass.add(zoomToSelectedOption, "esriCTDisableCTZoomToSelected");
+                domClass.remove(settingsOption, "esriCTVisible");
+                domClass.add(settingsOption, "esriCTHidden");
+                domClass.remove(settingsOption, "esriCTSettingsButton");
+                domClass.add(settingsButton, "esriCTSettingsButtonDisabled");
             }
         },
 
@@ -1638,7 +1623,8 @@ define([
                     useSeconds: false,
                     useStrict: false,
                     format: format,
-                    pickTime: showTime
+                    pickTime: showTime,
+                    useCurrent: false
                 });
                 // set date if not than set min,max date
                 if (min === "null" && max === "null") {
@@ -1895,7 +1881,7 @@ define([
         * @param{int} object id associated with each row
         * @memberOf widgets/data-viewer/data-viewer
         */
-        _highlightRowOnFeatureClick: function (objectId) {
+        highlightRowOnFeatureClick: function (objectId, selectRow) {
             setTimeout(lang.hitch(this, function () {
                 var objectIDFieldName, count, objectIdColumnNumber, rows, i, rowNumber;
                 count = 0;
@@ -1911,16 +1897,24 @@ define([
                 for (i = 0; i < rows.length; i++) {
                     if (parseInt($(rows[i]).find('td').eq(objectIdColumnNumber).text(), 10) === objectId) {
                         rowNumber = i;
-                        $(rows[i]).addClass("esriCTRowActivated");
-                        $(rows[i]).addClass("esriCTRowSelected");
+                        if (selectRow) {
+                            this._toggleCheckBox(true, rows[i]);
+                        } else {
+                            $(rows[i]).addClass("esriCTRowActivated");
+                        }
                     }
                 }
-                this._scrollToActivatedFeature(rowNumber);
-            }), 1500);
+                if (!selectRow) {
+                    this._scrollToActivatedFeature(rowNumber);
+                } else {
+                    this.appUtils.hideLoadingIndicator();
+                }
+            }), 100);
         },
 
         /**
         * This function is used to scroll data-viewer to activated row
+        * @param{integer} row number of data-viewer grid
         * @memberOf widgets/data-viewer/data-viewer
         */
         _scrollToActivatedFeature: function (rowNumber) {
@@ -1928,9 +1922,15 @@ define([
                 scrollTop: 0
             }, 0);
             setTimeout(lang.hitch(this, function () {
-                if (($('#dataViewerTable tbody tr').eq(rowNumber).offset()) && ($('#dataViewerTable tbody tr').eq(rowNumber).offset().top)) {
+                if ((($('#dataViewerTable tbody tr').eq(rowNumber).offset()) && ($('#dataViewerTable tbody tr').eq(rowNumber).offset().top)) || (this._selectedOperationalLayer.graphics.length === rowNumber)) {
+                    var scrollTopValue;
+                    if (this._selectedOperationalLayer.graphics.length === rowNumber) {
+                        scrollTopValue = 100000;
+                    } else {
+                        scrollTopValue = $('#dataViewerTable tbody tr').eq(rowNumber).offset().top - 140;
+                    }
                     $('.dataTables_scrollBody').animate({
-                        scrollTop: $('#dataViewerTable tbody tr').eq(rowNumber).offset().top - 140
+                        scrollTop: scrollTopValue
                     }, 400);
                 }
                 this.appUtils.hideLoadingIndicator();
@@ -1943,7 +1943,7 @@ define([
         * @memberOf widgets/data-viewer/data-viewer
         */
         _removeHighlightedRowOnFeatureClick: function (objectId) {
-            var objectIDFieldName, count, objectIdColumnNumber;
+            var objectIDFieldName, count, objectIdColumnNumber, rows, i;
             count = 0;
             objectIDFieldName = this._selectedOperationalLayer.objectIdField;
             // Track the object ID column number and fetched value from it
@@ -1953,11 +1953,13 @@ define([
                 }
                 count++;
             });
-            $('#dataViewerTable tr').each(function () {
-                if (parseInt($(this).find('td').eq(objectIdColumnNumber).text(), 10) === objectId) {
-                    $(this).removeClass("esriCTRowActivated");
+            rows = $('#dataViewerTable tr');
+            for (i = 0; i < rows.length; i++) {
+                if (parseInt($(rows[i]).find('td').eq(objectIdColumnNumber).text(), 10) === objectId) {
+                    this._toggleCheckBox(false, rows[i]);
+                    $(rows[i]).removeClass("esriCTRowActivated");
                 }
-            });
+            }
         },
 
         /** ROW SELECTION/DE-SELECTION **/
@@ -1965,8 +1967,35 @@ define([
         /** FEATURE SELECTION/DE-SELECTION **/
 
         /**
+        * This function is used to activate feature on map
+        * @param{object} feature that needs to be activated
+        * @memberOf widgets/data-viewer/data-viewer
+        */
+        _activateFeatureOnMapClick: function (feature) {
+            var objectId, featureQuery, featureLayer;
+            featureQuery = new Query();
+            objectId = feature.attributes[this._selectedOperationalLayer.objectIdField];
+            featureQuery.objectIds = [parseInt(objectId, 10)];
+            featureQuery.outSpatialReference = this.map.spatialReference;
+            featureQuery.returnGeometry = true;
+            featureQuery.outFields = ["*"];
+            // Consider if feature is selected & updated with certain value.
+            // Now if user selects same feature from the map and pans the map. Since we retain the selected features in the grid.
+            // So to maintain updated value of the selected feature, a new object of the feature layer is required.
+            // If a new object is not created than the previous value of feature appears and not the updated one.
+            featureLayer = new FeatureLayer(this._selectedOperationalLayer.url);
+            featureLayer.queryFeatures(featureQuery, lang.hitch(this, function (featureSet) {
+                this._getActivatedLayerOnTop();
+                this._activeRowGraphicsLayer.add(this._getHighLightSymbol(featureSet.features[0], true));
+                this.highlightRowOnFeatureClick(objectId);
+            }), lang.hitch(this, function (err) {
+                this.appUtils.hideLoadingIndicator();
+            }));
+        },
+
+        /**
         * This function is used to select feature on map
-        * @param{object} feature that needs to be highlighted
+        * @param{object} feature that needs to be selected
         * @memberOf widgets/data-viewer/data-viewer
         */
         _selectFeatureOnMapClick: function (feature) {
@@ -1983,48 +2012,29 @@ define([
             // If a new object is not created than the previous value of feature appears and not the updated one.
             featureLayer = new FeatureLayer(this._selectedOperationalLayer.url);
             featureLayer.queryFeatures(featureQuery, lang.hitch(this, function (featureSet) {
-                // if it is point feature than add selected feature on graphics layer
-                // if it is other than point feature than select feature using selectFeatures method & FeatureLayer.SELECTION_ADD option
-                if (this._isPointLayer) {
-                    this._activeRowGraphicsLayer.add(this._getHighLightSymbol(featureSet.features[0], true));
-                } else {
-                    this._selectedOperationalLayer.setSelectionSymbol(this._getHighLightSymbol(featureSet.features[0], true));
-                    this._selectedOperationalLayer.selectFeatures(featureQuery, FeatureLayer.SELECTION_ADD);
-                }
-                this._highlightRowOnFeatureClick(objectId);
-            }), function (err) {
+                this._getSelectedLayerOnTop();
+                this._selectRowGraphicsLayer.add(this._getHighLightSymbol(featureSet.features[0], false));
+                this.highlightRowOnFeatureClick(objectId, true);
+            }), lang.hitch(this, function (err) {
                 this.appUtils.hideLoadingIndicator();
-                this.appUtils.showError(err.message);
-            });
+            }));
         },
 
         /**
-        * This function is used to de-select feature on map
-        * @param{object} feature that needs to be de-selected
+        * This function is used check whether current feature is activated or not
+        * @param{object} feature that needs to be checked whether it is activated or not
         * @memberOf widgets/data-viewer/data-viewer
         */
-        _deSelectFeatureOnMapClick: function (feature) {
-            var objectId, i, objectID, featureQuery;
-            // if it is point feature than de-select it from graphics layer
-            // if it is other than point feature than de-select it from feature layer
-            if (this._isPointLayer) {
-                objectId = feature.attributes[this._selectedOperationalLayer.objectIdField];
-                for (i = 0; i < this._activeRowGraphicsLayer.graphics.length; i++) {
-                    objectID = this._activeRowGraphicsLayer.graphics[i].attributes[this._selectedOperationalLayer.objectIdField];
-                    if (parseInt(objectID, 10) === parseInt(objectId, 10)) {
-                        this._activeRowGraphicsLayer.remove(this._activeRowGraphicsLayer.graphics[i]);
-                        break;
-                    }
+        _isCurrentFeatureActivated: function (feature) {
+            var objectId, i, objectID;
+            objectId = feature.attributes[this._selectedOperationalLayer.objectIdField];
+            for (i = 0; i < this._activeRowGraphicsLayer.graphics.length; i++) {
+                objectID = this._activeRowGraphicsLayer.graphics[i].attributes[this._selectedOperationalLayer.objectIdField];
+                if (parseInt(objectID, 10) === parseInt(objectId, 10)) {
+                    return true;
                 }
-            } else {
-                featureQuery = new Query();
-                objectId = feature.attributes[this._selectedOperationalLayer.objectIdField];
-                featureQuery.objectIds = [parseInt(objectId, 10)];
-                featureQuery.outSpatialReference = this.map.spatialReference;
-                featureQuery.returnGeometry = false;
-                this._selectedOperationalLayer.selectFeatures(featureQuery, FeatureLayer.SELECTION_SUBTRACT);
             }
-            this._removeHighlightedRowOnFeatureClick(objectId);
+            return false;
         },
 
         /**
@@ -2033,23 +2043,12 @@ define([
         * @memberOf widgets/data-viewer/data-viewer
         */
         _isCurrentFeatureSelected: function (feature) {
-            var objectId, i, objectID, selectedFeatureArr;
-            // if it is point feature than get status whether feature is selected or not from graphics layer
-            // if it is other than point feature than get status whether feature is selected or not from feature layer
-            if (this._isPointLayer) {
-                objectId = feature.attributes[this._selectedOperationalLayer.objectIdField];
-                for (i = 0; i < this._activeRowGraphicsLayer.graphics.length; i++) {
-                    objectID = this._activeRowGraphicsLayer.graphics[i].attributes[this._selectedOperationalLayer.objectIdField];
-                    if (parseInt(objectID, 10) === parseInt(objectId, 10)) {
-                        return true;
-                    }
-                }
-            } else {
-                selectedFeatureArr = this._selectedOperationalLayer.getSelectedFeatures();
-                for (i = 0; i < selectedFeatureArr.length; i++) {
-                    if (feature === selectedFeatureArr[i]) {
-                        return true;
-                    }
+            var objectId, i, objectID;
+            objectId = feature.attributes[this._selectedOperationalLayer.objectIdField];
+            for (i = 0; i < this._selectRowGraphicsLayer.graphics.length; i++) {
+                objectID = this._selectRowGraphicsLayer.graphics[i].attributes[this._selectedOperationalLayer.objectIdField];
+                if (parseInt(objectID, 10) === parseInt(objectId, 10)) {
+                    return true;
                 }
             }
             return false;
@@ -2061,15 +2060,47 @@ define([
         */
         onFeatureClick: function (evt) {
             if (!this.isShowSelectedClicked) {
+                this.appUtils.showLoadingIndicator();
                 this._removeControlsFromPreviousRow();
                 if (this._isCurrentFeatureSelected(evt.graphic)) {
-                    this._deSelectFeatureOnMapClick(evt.graphic);
+                    this._clearSelectedFeaturesOfMap(evt.graphic.attributes[this._selectedOperationalLayer.objectIdField]);
+                    this.appUtils.hideLoadingIndicator();
                 } else {
-                    this.appUtils.showLoadingIndicator();
-                    this._clearActiveRowData();
-                    this._selectFeatureOnMapClick(evt.graphic);
+                    if (this._isCurrentFeatureActivated(evt.graphic)) {
+                        this._selectFeatureOnMapClick(evt.graphic);
+                    } else {
+                        this._clearActiveRowData();
+                        this._activateFeatureOnMapClick(evt.graphic);
+                    }
                 }
             }
+        },
+
+        /**
+        * This function is used to clear the selected feature
+        * @param{object} objectId of feature that needs to be cleared
+        * @memberOf widgets/data-viewer/data-viewer
+        */
+        _clearSelectedFeaturesOfMap: function (objectId) {
+            var i, objectID;
+            // if it is point feature than remove selected feature from graphics layer
+            // if it is other than point feature than remove selected feature using selectFeatures method & FeatureLayer.SELECTION_SUBTRACT option
+            for (i = 0; i < this._selectRowGraphicsLayer.graphics.length; i++) {
+                objectID = this._selectRowGraphicsLayer.graphics[i].attributes[this._selectedOperationalLayer.objectIdField];
+                if (parseInt(objectID, 10) === parseInt(objectId, 10)) {
+                    this._selectRowGraphicsLayer.remove(this._selectRowGraphicsLayer.graphics[i]);
+                    break;
+                }
+            }
+            for (i = 0; i < this._activeRowGraphicsLayer.graphics.length; i++) {
+                objectID = this._activeRowGraphicsLayer.graphics[i].attributes[this._selectedOperationalLayer.objectIdField];
+                if (parseInt(objectID, 10) === parseInt(objectId, 10)) {
+                    this._activeRowGraphicsLayer.remove(this._activeRowGraphicsLayer.graphics[i]);
+                    break;
+                }
+            }
+            this._removeHighlightedRowOnFeatureClick(objectId);
+            this.appUtils.hideLoadingIndicator();
         },
 
         /**
@@ -2078,34 +2109,25 @@ define([
         * @memberOf widgets/data-viewer/data-viewer
         */
         _removeHighLightedFeatureOnRowClick: function (objectId) {
-            var i, objectID, featureQuery;
-            // if it is point feature than remove selected feature from graphics layer
-            // if it is other than point feature than remove selected feature using selectFeatures method & FeatureLayer.SELECTION_SUBTRACT option
-            if (this._isPointLayer) {
-                if (this._isCheckBoxClicked) {
-                    for (i = 0; i < this._selectRowGraphicsLayer.graphics.length; i++) {
-                        objectID = this._selectRowGraphicsLayer.graphics[i].attributes[this._selectedOperationalLayer.objectIdField];
-                        if (parseInt(objectID, 10) === parseInt(objectId, 10)) {
-                            this._selectRowGraphicsLayer.remove(this._selectRowGraphicsLayer.graphics[i]);
-                            break;
-                        }
-                    }
-                } else {
-                    for (i = 0; i < this._activeRowGraphicsLayer.graphics.length; i++) {
-                        objectID = this._activeRowGraphicsLayer.graphics[i].attributes[this._selectedOperationalLayer.objectIdField];
-                        if (parseInt(objectID, 10) === parseInt(objectId, 10)) {
-                            this._activeRowGraphicsLayer.remove(this._activeRowGraphicsLayer.graphics[i]);
-                            break;
-                        }
+            var i, objectID;
+            if (this._isCheckBoxClicked) {
+                for (i = 0; i < this._selectRowGraphicsLayer.graphics.length; i++) {
+                    objectID = this._selectRowGraphicsLayer.graphics[i].attributes[this._selectedOperationalLayer.objectIdField];
+                    if (parseInt(objectID, 10) === parseInt(objectId, 10)) {
+                        this._selectRowGraphicsLayer.remove(this._selectRowGraphicsLayer.graphics[i]);
+                        break;
                     }
                 }
             } else {
-                featureQuery = new Query();
-                featureQuery.outSpatialReference = this.map.spatialReference;
-                featureQuery.objectIds = [parseInt(objectId, 10)];
-                featureQuery.returnGeometry = false;
-                this._selectedOperationalLayer.selectFeatures(featureQuery, FeatureLayer.SELECTION_SUBTRACT);
+                for (i = 0; i < this._activeRowGraphicsLayer.graphics.length; i++) {
+                    objectID = this._activeRowGraphicsLayer.graphics[i].attributes[this._selectedOperationalLayer.objectIdField];
+                    if (parseInt(objectID, 10) === parseInt(objectId, 10)) {
+                        this._activeRowGraphicsLayer.remove(this._activeRowGraphicsLayer.graphics[i]);
+                        break;
+                    }
+                }
             }
+            this.appUtils.hideLoadingIndicator();
         },
 
         /**
@@ -2130,24 +2152,54 @@ define([
                 // if it is other than point feature than select feature using selectFeatures method & FeatureLayer.SELECTION_ADD option
                 if (this._isPointLayer) {
                     if (this._isCheckBoxClicked) {
-                        this._selectRowGraphicsLayer.add(this._getHighLightSymbol(featureSet.features[0], false));
+                        this._getSelectedLayerOnTop();
+                        if (featureSet.features[0].geometry) {
+                            this._selectRowGraphicsLayer.add(this._getHighLightSymbol(featureSet.features[0], false));
+                        } else {
+                            this._selectRowGraphicsLayer.add(featureSet.features[0]);
+                            this.appUtils.showMessage(this.appConfig.i18n.dataviewer.noFeatureGeometry);
+                        }
                     } else {
                         if (this._activeRowGraphicsLayer) {
                             this._activeRowGraphicsLayer.clear();
                         }
-                        this._activeRowGraphicsLayer.add(this._getHighLightSymbol(featureSet.features[0], true));
-                        this.map.setLevel(this.appConfig.zoomLevel);
-                        this.map.centerAt(featureSet.features[0].geometry);
+                        this._getActivatedLayerOnTop();
+                        if (featureSet.features[0].geometry) {
+                            this._activeRowGraphicsLayer.add(this._getHighLightSymbol(featureSet.features[0], true));
+                            this.map.setLevel(this.appConfig.zoomLevel);
+                            this.map.centerAt(featureSet.features[0].geometry);
+                        } else {
+                            this._activeRowGraphicsLayer.add(featureSet.features[0]);
+                            this.appUtils.showMessage(this.appConfig.i18n.dataviewer.noFeatureGeometry);
+                        }
                     }
                 } else {
-                    this._selectedOperationalLayer.setSelectionSymbol(this._getHighLightSymbol(featureSet.features[0], true));
-                    this._selectedOperationalLayer.selectFeatures(featureQuery, FeatureLayer.SELECTION_ADD);
-                    this.map.setExtent(featureSet.features[0].geometry.getExtent(), true);
+                    if (this._isCheckBoxClicked) {
+                        this._getSelectedLayerOnTop();
+                        if (featureSet.features[0].geometry) {
+                            this._selectRowGraphicsLayer.add(this._getHighLightSymbol(featureSet.features[0], false));
+                        } else {
+                            this._selectRowGraphicsLayer.add(featureSet.features[0]);
+                            this.appUtils.showMessage(this.appConfig.i18n.dataviewer.noFeatureGeometry);
+                        }
+                    } else {
+                        if (this._activeRowGraphicsLayer) {
+                            this._activeRowGraphicsLayer.clear();
+                        }
+                        this._getActivatedLayerOnTop();
+                        if (featureSet.features[0].geometry) {
+                            this._activeRowGraphicsLayer.add(this._getHighLightSymbol(featureSet.features[0], true));
+                            this.map.setExtent(featureSet.features[0].geometry.getExtent(), true);
+                        } else {
+                            this._activeRowGraphicsLayer.add(featureSet.features[0]);
+                            this.appUtils.showMessage(this.appConfig.i18n.dataviewer.noFeatureGeometry);
+                        }
+                    }
                 }
                 // if details tab is displayed than display fields of feature in it
-                if (this.isDetailsTabClicked) {
+                if ((this.isDetailsTabClicked) && (!this._isCheckBoxClicked)) {
                     if (this._detailsHelper) {
-                        this._detailsHelper.showFeatureDetails(featureSet.features[0]);
+                        this._detailsHelper.validateDetailsData();
                     }
                 } else {
                     if (this._isCheckBoxClicked) {
@@ -2157,12 +2209,39 @@ define([
                         this._addControlsToRow(featureSet);
                     }
                 }
-            }), function (err) {
+                this.appUtils.hideLoadingIndicator();
+            }), lang.hitch(this, function (err) {
                 if (this._isCheckBoxClicked) {
                     this._isCheckBoxClicked = false;
                 }
-                this.appUtils.showError(err.message);
-            });
+                this.appUtils.showLoadingIndicator();
+            }));
+        },
+
+        /**
+        * This function is used to get activated layer on top
+        * @memberOf widgets/data-viewer/data-viewer
+        */
+        _getActivatedLayerOnTop: function () {
+            this.map.reorderLayer(this.map.getLayer("selectedRowGraphicsLayer"), 999);
+            this.map.reorderLayer(this.map.getLayer("activeRowGraphicsLayer"), 1000);
+        },
+
+        /**
+        * This function is used to get selected layer on top
+        * @memberOf widgets/data-viewer/data-viewer
+        */
+        _getSelectedLayerOnTop: function () {
+            this.map.reorderLayer(this.map.getLayer("activeRowGraphicsLayer"), 999);
+            this.map.reorderLayer(this.map.getLayer("selectedRowGraphicsLayer"), 1000);
+        },
+
+        /**
+        * This function is used to set activated layer at below
+        * @memberOf widgets/data-viewer/data-viewer
+        */
+        _setActivatedLayerAtBottom: function () {
+            this.map.reorderLayer(this.map.getLayer("activeRowGraphicsLayer"), 0);
         },
 
         /**
@@ -2175,55 +2254,45 @@ define([
                 this._featureObjectID = this._fetchObjectID(evt.currentTarget);
                 // Do not perform any operation if it is in show selected mode
                 if ((!this.isShowSelectedClicked) && (!this._isTextInputInFocus) && (!this._isDropDownClicked) && (!this._isDateTextInputInFocus)) {
-                    if (evt.target.tagName === "LABEL") {
-                        return;
-                    }
-                    if (domClass.contains(evt.currentTarget, "esriCTRowActivated")) {
-                        if (!this.isDetailsTabClicked) {
-                            this._clearActiveRowData();
-                            this._resetDetailsTab(false);
-                        }
-                    } else {
-                        this._clearActiveRowData();
-                        $(evt.currentTarget).toggleClass('esriCTRowActivated');
-                    }
+                    this.appUtils.showLoadingIndicator();
                     this._isCheckBoxClicked = false;
-                    if (this.isDetailsTabClicked) {
-                        this.clearSelection(true);
-                    }
-                    if (!((evt.currentTarget.childNodes[0].innerHTML.indexOf("checked") > -1) && (domClass.contains(evt.currentTarget, "esriCTRowSelected")) && (!this._isCheckBoxClicked))) {
-                        if (!(domClass.contains(evt.currentTarget, "esriCTRowActivated") && domClass.contains(evt.currentTarget, "esriCTRowSelected"))) {
-                            $(evt.currentTarget).toggleClass('esriCTRowSelected');
-                        } else {
-                            domClass.add(evt.currentTarget, "esriCTSelectedActive");
+                    if (evt.target.tagName === "LABEL") {
+                        this._isCheckBoxClicked = true;
+                        this._isCheckBoxChecked = false;
+                        if (evt.currentTarget.childNodes[0].innerHTML.indexOf("checked") > -1) {
+                            this._isCheckBoxChecked = true;
                         }
-                    } else {
-                        if (domClass.contains(evt.currentTarget, "esriCTSelectedActive")) {
-                            domClass.remove(evt.currentTarget, "esriCTSelectedActive");
-                            $(evt.currentTarget).toggleClass('esriCTRowSelected');
-                        } else {
-                            domClass.add(evt.currentTarget, "esriCTSelectedActive");
-                        }
-                    }
-                    if (domClass.contains(evt.currentTarget, "esriCTRowSelected")) {
-                        this._removeControlsFromPreviousRow();
-                        this._lastSelectedRow = evt;
-                        if (evt.target.tagName === "LABEL") {
+                        if ((this._isCheckBoxClicked) && (!this._isCheckBoxChecked)) {
+                            this._removeControlsFromPreviousRow();
+                            this._lastSelectedRow = evt;
                             this._toggleCheckBox(true, this._lastSelectedRow.currentTarget);
-                        }
-                        // to highlighted feature on map
-                        this._highLightFeatureOnRowClick(this._featureObjectID);
-                    } else {
-                        if ((evt.currentTarget.childNodes[0].innerHTML.indexOf("checked") > -1) && (!this._isCheckBoxClicked)) {
-                            $(evt.currentTarget).toggleClass('esriCTRowSelected');
-                        }
-                        this._removeControlsFromPreviousRow();
-                        this._lastSelectedRow = evt;
-                        if (evt.target.tagName === "LABEL") {
+                            this._highLightFeatureOnRowClick(this._featureObjectID);
+                        } else {
+                            this._removeControlsFromPreviousRow();
+                            this._lastSelectedRow = evt;
                             this._toggleCheckBox(false, this._lastSelectedRow.currentTarget);
+                            this._removeHighLightedFeatureOnRowClick(this._featureObjectID);
                         }
-                        // to remove highlighted feature from map
-                        this._removeHighLightedFeatureOnRowClick(this._featureObjectID);
+                    } else {
+                        if (domClass.contains(evt.currentTarget, "esriCTRowActivated")) {
+                            if (!this.isDetailsTabClicked) {
+                                domClass.remove(evt.currentTarget, "esriCTRowActivated");
+                                this._clearActiveRowData();
+                                this._resetDetailsTab();
+                                this._removeControlsFromPreviousRow();
+                                this._lastSelectedRow = evt;
+                                this._removeHighLightedFeatureOnRowClick(this._featureObjectID);
+                            } else {
+                                this.appUtils.hideLoadingIndicator();
+                            }
+                        } else {
+                            this._clearActiveRowData();
+                            this._resetDetailsTab();
+                            this._removeControlsFromPreviousRow();
+                            this._lastSelectedRow = evt;
+                            domClass.add(evt.currentTarget, "esriCTRowActivated");
+                            this._highLightFeatureOnRowClick(this._featureObjectID);
+                        }
                     }
                 }
             }));
@@ -2231,6 +2300,8 @@ define([
 
         /**
         * This function is used to activate checkbox on click of it
+        * @param{boolean} to check/uncheck the checkbox
+        * @param{object} row which contains checkbox
         * @memberOf widgets/data-viewer/data-viewer
         */
         _toggleCheckBox: function (checked, rowObject) {
@@ -2425,16 +2496,17 @@ define([
                                 } else {
                                     // If update fails then retain its old value
                                     this._retainOldValue();
-                                    this.appUtils.showError(updates[0].error.message);
+                                    this.appUtils.hideLoadingIndicator();
                                 }
                             }), lang.hitch(this, function (err) {
                                 // If update fails then retain its old value
                                 this._retainOldValue();
-                                this.appUtils.showError(err.message);
+                                this.appUtils.hideLoadingIndicator();
                             }));
                         } else {
                             // If update fails then retain its old value
                             this._retainOldValue();
+                            this.appUtils.hideLoadingIndicator();
                             this.appUtils.showError(obj.errorMessage);
                         }
                     } else {
@@ -2444,7 +2516,7 @@ define([
                 }), lang.hitch(this, function (err) {
                     // If update fails then retain its old value
                     this._retainOldValue();
-                    this.appUtils.showError(err.message);
+                    this.appUtils.hideLoadingIndicator();
                 }));
             } catch (err) {
                 // If update fails then retain its old value
@@ -2457,38 +2529,16 @@ define([
         * @memberOf widgets/data-viewer/data-viewer
         */
         _updateFieldInActivatedFeaturesList: function (field) {
-            var i, objectID, updatedObjectID, featureQuery, featureLayer;
+            var i, objectID, updatedObjectID;
             // If some features are selected and updated after that, so it also needs to be updated in the selected feature record list
-            if (this._isPointLayer) {
-                // Update value in selected features records containing point geometry
-                updatedObjectID = this._updatedGraphic.attributes[this._selectedOperationalLayer.objectIdField];
-                for (i = 0; i < this._activeRowGraphicsLayer.graphics.length; i++) {
-                    objectID = this._activeRowGraphicsLayer.graphics[i].attributes[this._selectedOperationalLayer.objectIdField];
-                    if (objectID === updatedObjectID) {
-                        this._activeRowGraphicsLayer.graphics[i].attributes[field] = this._updatedGraphic.attributes[field];
-                        break;
-                    }
+            // Update value in selected features records containing point geometry
+            updatedObjectID = this._updatedGraphic.attributes[this._selectedOperationalLayer.objectIdField];
+            for (i = 0; i < this._activeRowGraphicsLayer.graphics.length; i++) {
+                objectID = this._activeRowGraphicsLayer.graphics[i].attributes[this._selectedOperationalLayer.objectIdField];
+                if (objectID === updatedObjectID) {
+                    this._activeRowGraphicsLayer.graphics[i].attributes[field] = this._updatedGraphic.attributes[field];
+                    break;
                 }
-            } else {
-                // Update value in selected features records containing other than point geometry
-                featureQuery = new Query();
-                objectID = this._updatedGraphic.attributes[this._selectedOperationalLayer.objectIdField];
-                featureQuery.objectIds = [parseInt(objectID, 10)];
-                featureQuery.outSpatialReference = this.map.spatialReference;
-                featureQuery.returnGeometry = true;
-                featureQuery.outFields = ["*"];
-                this._selectedOperationalLayer.selectFeatures(featureQuery, FeatureLayer.SELECTION_SUBTRACT);
-                this.map.getLayer(this.selectedOperationalLayerID).refresh();
-                // Consider if feature is selected & updated with certain value.
-                // Then that particular value of feature needs to be updated in its selected feature memory.
-                // If a new object is not created than the previous value of feature appears and not the updated one.
-                featureLayer = new FeatureLayer(this._selectedOperationalLayer.url);
-                featureLayer.queryFeatures(featureQuery, lang.hitch(this, function (featureSet) {
-                    this._selectedOperationalLayer.setSelectionSymbol(this._getHighLightSymbol(featureSet.features[0]));
-                    this._selectedOperationalLayer.selectFeatures(featureQuery, FeatureLayer.SELECTION_ADD);
-                }), function (err) {
-                    this.appUtils.showError(err.message);
-                });
             }
         },
 
@@ -2585,26 +2635,7 @@ define([
         * @memberOf widgets/data-viewer/data-viewer
         */
         _updateInternalData: function (index, value) {
-            // After updating data internal cache data of data-viewer should also be updated so that sorting is executed properly
-            if ((this._existingRowData) && (this._existingRowData[index])) {
-                switch (typeof this._existingRowData[index]) {
-                case "string":
-                    if (typeof value === "string") {
-                        this._existingRowData[index] = value;
-                    }
-                    break;
-                case "object":
-                    if ((this._existingRowData[index] === null) && (value !== "" && value !== null)) {
-                        this._existingRowData[index] = value;
-                    }
-                    break;
-                case "number":
-                    if (typeof value === "number") {
-                        this._existingRowData[index] = value;
-                    }
-                    break;
-                }
-            } else if ((this._existingRowData) && (this._existingRowData[index] === null || this._existingRowData[index] === "") && (value !== "" && value !== null)) {
+            if ((this._existingRowData) && (index <= (this._existingRowData.length - 1))) {
                 this._existingRowData[index] = value;
             }
         },
@@ -2657,9 +2688,8 @@ define([
         * @memberOf widgets/data-viewer/data-viewer
         */
         _isValueInRange: function (field, value) {
-            var rangeObj = { "valueInRange": true, "errorMessage": null },
-                i,
-                error;
+            var rangeObj, i, error;
+            rangeObj = { "valueInRange": true, "errorMessage": null };
             for (i = 0; i < this._displayColumn.length; i++) {
                 if (this._displayColumn[i].fieldName === field) {
                     if (this._displayColumn[i].domain) {
@@ -2688,7 +2718,11 @@ define([
         * @memberOf widgets/data-viewer/data-viewer
         */
         _validateControl: function (inputType, field) {
-            var inputValue, className, typeCastedInputValue, decimal, float, rangeObj, obj = { "isValueValid": true, "errorMessage": null };
+            var inputValue, className, typeCastedInputValue, decimal, float, rangeObj, obj;
+            obj = {
+                "isValueValid": true,
+                "errorMessage": null
+            };
             decimal = /^[-+]?[0-9]+$/;
             float = /^[-+]?[0-9]+\.[0-9]+$/;
             if (this._lastEditedControl.currentTarget.className) {
@@ -2788,12 +2822,15 @@ define([
         * @memberOf widgets/data-viewer/data-viewer
         */
         _doManualRefresh: function () {
+            this._isManualRefreshClicked = true;
+            this.appUtils.showLoadingIndicator();
             var extentDeferred = new Deferred();
             extentDeferred = this.map.setExtent(this.lastSelectedWebMapExtent, true);
             extentDeferred.then(lang.hitch(this, function () {
                 var zoomLevelDeferred = new Deferred();
                 zoomLevelDeferred = this.map.setZoom(this.lastMapZoomLevel);
                 zoomLevelDeferred.then(lang.hitch(this, function () {
+                    this._removeControlsFromPreviousRow();
                     this._newDefinitionExpression = this._existingDefinitionExpression;
                     this._resetDefinitionExpression();
                 }));
@@ -2813,7 +2850,7 @@ define([
         * @memberOf widgets/data-viewer/data-viewer
         */
         _getHighLightSymbol: function (graphic, activeRow) {
-            var i, symbol, point, graphics, symbolWidth, symbolFillColor, height, width, size, isSymbolFound, graphicInfoValue, layerInfoValue;
+            var i, symbol, point, graphics, symbolWidth, symbolFillColor, height, width, size, isSymbolFound, graphicInfoValue, layerInfoValue, polyline, polygon;
             isSymbolFound = false;
             // If feature geometry is of type point, add a crosshair symbol
             // If feature geometry is of type polyline, highlight the line
@@ -2926,7 +2963,12 @@ define([
                 } else {
                     symbol = new SimpleLineSymbol(SimpleLineSymbol.STYLE_SOLID, new Color([0, 255, 255, 1]), symbolWidth);
                 }
-                return symbol;
+                polyline = new Polyline(new SpatialReference({
+                    wkid: graphic.geometry.spatialReference.wkid
+                }));
+                polyline.addPath(graphic.geometry.paths[0]);
+                graphics = new Graphic(polyline, symbol, graphic.attributes);
+                return graphics;
             case "polygon":
                 if (this._selectedOperationalLayer.renderer.symbol) {
                     symbolFillColor = this._selectedOperationalLayer.renderer.symbol.color;
@@ -2942,7 +2984,12 @@ define([
                 } else {
                     symbol = new SimpleFillSymbol(SimpleFillSymbol.STYLE_SOLID, new SimpleLineSymbol(SimpleLineSymbol.STYLE_SOLID, new Color([0, 255, 255, 1]), 4), symbolFillColor);
                 }
-                return symbol;
+                polygon = new Polygon(new SpatialReference({
+                    wkid: graphic.geometry.spatialReference.wkid
+                }));
+                polygon.rings = lang.clone(graphic.geometry.rings);
+                graphics = new Graphic(polygon, symbol, graphic.attributes);
+                return graphics;
             }
         }
 

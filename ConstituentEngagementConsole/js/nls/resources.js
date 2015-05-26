@@ -14,7 +14,6 @@
  | See the License for the specific language governing permissions and
  | limitations under the License.
  */
-//Lbl-Label, Txt-Text, Err-Error, Msg-Message
 define({
     root: ({
         map: {
@@ -56,8 +55,7 @@ define({
         },
         dataviewer: {
             noIssuesReported: "No issues reported for this layer", // Appears when no issues are available in current extent
-            activateFeature: "Please activate a single feature to view the item details", // Shown when user has not activated a single feature
-            photoAttachmentHeader: "Photo", // Appears when attachments are available for display in details tab
+            photoAttachmentHeader: "Attachments", // Appears when attachments are available for display in details tab
             invalidSmallNumber: "Please enter valid integer value between -32768 and 32767", // Shown when invalid integer value is entered while editing in data-viewer
             invalidNumber: "Please enter valid integer value between -2147483648 and 2147483647", // Shown when invalid integer value is entered while editing in data-viewer
             invalidFloat: "Please enter valid floating point value between -3.4E38 and 1.2E38", // Shown when invalid floating value is entered while editing in data-viewer
@@ -65,7 +63,10 @@ define({
             invalidString: "Please enter valid value", // Shown when user enters invalid string value
             invalidDate: "Please enter valid date", // Shown when user enters invalid date value
             invalidNumericRange: "Minimum value ${minValue} and Maximum value ${maxValue}", // Shown when user enters value which is out of range
-            moreInfolink: "Link" // Shown when value in field contains only URL.
+            moreInfolink: "Link", // Shown when value in field contains only URL.
+            commentsText: "Comments", // Appears when comments are available for display in details tab
+            noCommentsAvailable: "No comments available", // Appears when no comments are available
+            noFeatureGeometry: "Feature have no geometry to display" // Appears when user selects/activates a feature and geometry is available for that
         },
         config: {
             configNotDefined: "No configuration defined" // Shown when there is an issue with config file
@@ -82,6 +83,11 @@ define({
         signOutPage: {
             signOutMessage: "You've been successfully signed out.", // Appears when user is successfully signed-out from application
             reSignInMessage: "Click here to sign in" // Appears when user is signed-out from application and wants to sign-in again
+        },
+        preview: {
+            section1: "Crowdsource Manager, a companion group template to <a href='http://solutions.arcgis.com/local-government/help/crowdsource-reporter/' target='_blank'>Crowdsource Reporter</a>, is a responsive group application template (desktop and tablet devices) that allows users within an organization to review problems/observations submitted through the Manager app.", // Appears when preview page is loaded
+            section2: "The app presents one or more maps for users to review a problem or observation. Users can look for patterns and clusters, review problem details, update status, and assign responsibility.", // Appears when preview page is loaded
+            section3: "The application source code can be downloaded for further configuration. This additional configuration of the application can be applied back to an ArcGIS Online configurable web application item or hosted on your own web server.<br /> For more information on configuring this app, see the <a href='http://solutions.arcgis.com/local-government/help/crowdsource-manager/' target='_blank'>Crowdsource Manager</a> documentation." // Appears when preview page is loaded
         }
     }),
     "ar": 1,

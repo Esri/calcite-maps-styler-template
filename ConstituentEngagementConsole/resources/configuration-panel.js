@@ -6,6 +6,7 @@
         "applicationIcon": "",
         "applicationFavicon": "",
         "zoomLevel": 12,
+        "commentField": "COMMENTS",
         "webMapInfoDescription": true,
         "webMapInfoSnippet": false,
         "webMapInfoOwner": true,
@@ -54,6 +55,12 @@
                     "fieldName": "zoomLevel",
                     "label": "Zoom Level",
                     "tooltip": "Configure zoom level"
+                },
+                {
+                    "type": "string",
+                    "fieldName": "commentField",
+                    "label": "Comment Field (optional)",
+                    "tooltip": "Text field in the comments tables that stores feedback. Field name must be the same across all layers and maps."
                 },
                 {
                     "type": "color",

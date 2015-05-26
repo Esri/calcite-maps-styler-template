@@ -54,8 +54,7 @@ define(({
     },
     dataviewer: {
         noIssuesReported: "No issues reported for this layer",
-        activateFeature: "Please activate a single feature to view the item details",
-        photoAttachmentHeader: "Photo",
+        photoAttachmentHeader: "Attachments",
         invalidSmallNumber: "Please enter valid integer value between -32768 and 32767",
         invalidNumber: "Please enter valid integer value between -2147483648 and 2147483647",
         invalidFloat: "Please enter valid floating point value between -3.4E38 and 1.2E38",
@@ -63,7 +62,10 @@ define(({
         invalidString: "Please enter valid value",
         invalidDate: "Please enter valid date",
         invalidNumericRange: "Minimum value ${minValue} and Maximum value ${maxValue}",
-        moreInfolink: "Link"
+        moreInfolink: "Link",
+        commentsText: "Comments",
+        noCommentsAvailable: "No comments available",
+        noFeatureGeometry: "Feature have no geometry to display"
     },
     config: {
         configNotDefined: "No configuration defined"
@@ -80,5 +82,10 @@ define(({
     signOutPage: {
         signOutMessage: "You've been successfully signed out.",
         reSignInMessage: "Click here to sign in"
+    },
+    preview: {
+        section1: "Crowdsource Manager, a companion group template to <a href='http://solutions.arcgis.com/local-government/help/crowdsource-reporter/' target='_blank'>Crowdsource Reporter</a>, is a responsive group application template (desktop and tablet devices) that allows users within an organization to review problems/observations submitted through the Manager app.",
+        section2: "The app presents one or more maps for users to review a problem or observation. Users can look for patterns and clusters, review problem details, update status, and assign responsibility.",
+        section3: "The application source code can be downloaded for further configuration. This additional configuration of the application can be applied back to an ArcGIS Online configurable web application item or hosted on your own web server.<br /> For more information on configuring this app, see the <a href='http://solutions.arcgis.com/local-government/help/crowdsource-manager/' target='_blank'>Crowdsource Manager</a> documentation."
     }
 }));

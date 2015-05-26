@@ -1,20 +1,20 @@
 ﻿/*global define,dojo,dojoConfig,alert,$,confirm */
 /*jslint browser:true,sloppy:true,nomen:true,unparam:true,plusplus:true,indent:4 */
 /*
-| Copyright 2014 Esri
-|
-| Licensed under the Apache License, Version 2.0 (the "License");
-| you may not use this file except in compliance with the License.
-| You may obtain a copy of the License at
-|
-|    http://www.apache.org/licenses/LICENSE-2.0
-|
-| Unless required by applicable law or agreed to in writing, software
-| distributed under the License is distributed on an "AS IS" BASIS,
-| WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-| See the License for the specific language governing permissions and
-| limitations under the License.
-*/
+ | Copyright 2014 Esri
+ |
+ | Licensed under the Apache License, Version 2.0 (the "License");
+ | you may not use this file except in compliance with the License.
+ | You may obtain a copy of the License at
+ |
+ |    http://www.apache.org/licenses/LICENSE-2.0
+ |
+ | Unless required by applicable law or agreed to in writing, software
+ | distributed under the License is distributed on an "AS IS" BASIS,
+ | WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ | See the License for the specific language governing permissions and
+ | limitations under the License.
+ */
 //============================================================================================================================//
 define([
     "dojo/_base/declare",
@@ -156,28 +156,20 @@ define([
         */
         _attachEventHandlers: function () {
             on(this.esriCTShowSelected, "click", lang.hitch(this, function (event) {
-                if (!domClass.contains(event.currentTarget, "esriCTDisableShowSelected")) {
-                    this._toggleOptionsVisibility();
-                    this.onShowSelectedRecordsClick();
-                }
+                this._toggleOptionsVisibility();
+                this.onShowSelectedRecordsClick();
             }));
             on(this.esriCTShowAll, "click", lang.hitch(this, function (event) {
-                if (!domClass.contains(event.currentTarget, "esriCTDisableShowAll")) {
-                    this._toggleOptionsVisibility();
-                    this.onShowAllRecordsClick();
-                }
+                this._toggleOptionsVisibility();
+                this.onShowAllRecordsClick();
             }));
             on(this.esriCTClearSelection, "click", lang.hitch(this, function (event) {
-                if (!domClass.contains(event.currentTarget, "esriCTDisableClearSelection")) {
-                    this._toggleOptionsVisibility();
-                    this.onClearSelectionClick();
-                }
+                this._toggleOptionsVisibility();
+                this.onClearSelectionClick();
             }));
             on(this.esriCTZoomToSelected, "click", lang.hitch(this, function (event) {
-                if (!domClass.contains(event.currentTarget, "esriCTDisableCTZoomToSelected")) {
-                    this._toggleOptionsVisibility();
-                    this.onZoomToSelectedClick();
-                }
+                this._toggleOptionsVisibility();
+                this.onZoomToSelectedClick();
             }));
             on(this.listView, "click", lang.hitch(this, function (event) {
                 this._toggleViewModeOptionsVisibility();
@@ -212,6 +204,7 @@ define([
 
         /**
         * This function is used to show/hide setting options
+        * @param{boolean} to hide clear selection option
         * @memberOf widgets/app-header/app-header
         */
         toggleSelectionViewOption: function (hideClearSelection) {
@@ -338,11 +331,13 @@ define([
         */
         _onSettingsIconClick: function () {
             on(this.settingsDataViewerBtn, "click", lang.hitch(this, function (event) {
-                this._toggleOptionsVisibility();
-                domClass.replace(this.searchOptions, "esriCTHidden", "esriCTVisible");
-                domClass.replace(this.optionsViewMode, "esriCTHidden", "esriCTVisible");
-                domClass.remove(this.esriCTLoginOptionsDiv, "esriCTVisible");
-                domClass.add(this.esriCTLoginOptionsDiv, "esriCTHidden");
+                if (!domClass.contains(event.currentTarget, "esriCTSettingsButtonDisabled")) {
+                    this._toggleOptionsVisibility();
+                    domClass.replace(this.searchOptions, "esriCTHidden", "esriCTVisible");
+                    domClass.replace(this.optionsViewMode, "esriCTHidden", "esriCTVisible");
+                    domClass.remove(this.esriCTLoginOptionsDiv, "esriCTVisible");
+                    domClass.add(this.esriCTLoginOptionsDiv, "esriCTHidden");
+                }
             }));
         },
         /**
@@ -453,6 +448,7 @@ define([
 
         /**
         * This function is used to set operational name as layer title
+        * @param{string} layer title
         * @memberOf widgets/app-header/app-header
         */
         setLayerTitle: function (layerTitle) {

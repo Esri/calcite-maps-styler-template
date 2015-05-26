@@ -141,6 +141,11 @@
         background-image: url('../images/details-2x.png') !important;
     }
 
+    .esriCTDetailsBtnDisabled
+    {
+        background-image: url('../images/details-disabled-2x.png') !important;
+    }
+
     .esriCTLocationButton
     {
         background-image: url('../images/location-2x.png') !important;

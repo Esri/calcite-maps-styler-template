@@ -71,6 +71,8 @@ define({
     "webMapInfoNumViews": false,
     // to set rating field whether it needs to be displayed or not in web-map description area
     "webMapInfoAvgRating": false,
+    // to set field of comment to fetch data from it
+    "commentField": "COMMENTS",
     // to set the color of feature that is activated by selecting particular row
     "activeRow": "#C8C8C8"
 });

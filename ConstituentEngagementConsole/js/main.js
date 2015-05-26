@@ -15,7 +15,8 @@
  | See the License for the specific language governing permissions and
  | limitations under the License.
  */
-define(["dojo/_base/declare",
+define([
+    "dojo/_base/declare",
     "dojo/_base/lang",
     "dojo/dom",
     "dojo/dom-style",
@@ -32,6 +33,7 @@ define(["dojo/_base/declare",
     "dojo/query",
     "esri/layers/FeatureLayer",
     "esri/arcgis/Portal",
+    "esri/IdentityManager",
     "dojo/domReady!"
 ], function (
     declare,
@@ -50,7 +52,8 @@ define(["dojo/_base/declare",
     domClass,
     query,
     FeatureLayer,
-    esriPortal
+    esriPortal,
+    IdentityManager
 ) {
     return declare(null, {
         appConfig: {},
@@ -67,14 +70,19 @@ define(["dojo/_base/declare",
         _featureLayerClickHandle: null, // click handle of feature layer
         _dataViewerFeatureLayerSelectionCompleteHandle: null, // selection complete handle of feature layer
         _dataViewerFeatureLayerSelectionClearHandle: null, // selection clear handle of feature layer
-        _dataViewerGraphicsAddHandle: null, // adding graphics handle of graphics layer
-        _dataViewerGraphicsRemoveHandle: null, // removing graphics handle of graphics layer
-        _dataViewerGraphicsClearHandle: null, // clearing graphics handle of graphics layer
+        _selectRowGraphicsAddHandle: null, // adding graphics handle of selected layer
+        _selectRowGraphicsRemoveHandle: null, // removing graphics handle of selected layer
+        _selectRowGraphicsClearHandle: null, // clearing graphics handle of selected layer
+        _selectRowGraphicsClickHandle: null, // graphics click handle to select a feature
         _activeRowGraphicsAddHandle: null, // adding graphics handle of active row graphics layer
         _activeRowGraphicsRemoveHandle: null, // removing graphics handle of active row graphics layer
         _activeRowClearHandle: null, // clearing graphics handle of active row graphics layer
+        _activeRowGraphicsClickHandle: null, // graphics click handle to activate a feature
         _existingDefinitionExpression: null, // to store existing definition expression of layer
         _loggedInUser: null, // to store details of user that is signed in
+        _isCancelButtonClicked: false, // track whether cancel button is clicked or not in identity manager
+        _identityManagerCancelHandler: null, // stores cancel button click handler of identity manager
+        _selectedOperationalLayer: null, // stores selected operational layer
 
         /** WIDGET INSTANTIATION **/
 
@@ -198,7 +206,11 @@ define(["dojo/_base/declare",
         */
         _handleNoWebMapToDsiplay: function () {
             domClass.add(dom.byId("esriCTMainContainer"), "esriCTHidden");
-            domClass.add(query(".esriCTSettingsButton")[0], "esriCTHidden");
+            if (query(".esriCTSettingsButton")[0]) {
+                domClass.add(query(".esriCTSettingsButton")[0], "esriCTHidden");
+            } else {
+                domClass.add(query(".esriCTSettingsButtonDisabled")[0], "esriCTHidden");
+            }
             domClass.add(query(".esriCTViewMode")[0], "esriCTHidden");
             domClass.add(query(".esriCTSearchDisable")[0], "esriCTHidden");
             domClass.add(query(".esriCTManualRefreshButton")[0], "esriCTHidden");
@@ -391,15 +403,27 @@ define(["dojo/_base/declare",
             });
             // sign in user on click of sign-in option
             this._appHeader.signInUser = lang.hitch(this, function () {
+                ApplicationUtils.showLoadingIndicator();
+                if (this._identityManagerCancelHandler) {
+                    this._identityManagerCancelHandler.remove();
+                }
                 var portal = new esriPortal.Portal(this.appConfig.sharinghost);
                 portal.on("load", lang.hitch(this, function (evt) {
+                    ApplicationUtils.hideLoadingIndicator();
                     portal.signIn().then(lang.hitch(this, function (logInDetails) {
                         this._destroyWidgets();
                         this.reload(logInDetails);
                     }), lang.hitch(this, function (err) {
-                        ApplicationUtils.showError(err.message);
-                        location.reload();
+                        if (this._isCancelButtonClicked) {
+                            this._isCancelButtonClicked = false;
+                        } else {
+                            ApplicationUtils.showError(err.message);
+                            location.reload();
+                        }
                     }));
+                }));
+                this._identityManagerCancelHandler = on(IdentityManager, "dialog-cancel", lang.hitch(this, function (evt) {
+                    this._isCancelButtonClicked = true;
                 }));
             });
         },
@@ -477,10 +501,11 @@ define(["dojo/_base/declare",
 
         /**
         * This function is used to set the view of application to split-view.
-        * In which Grid-view will be 40% and map-view will be 605 of the screen height.
+        * In which Grid-view will be 40% and map-view will be 60% of the screen height.
         * @memberOf widgets/main/main
         */
         _showSplitView: function () {
+            var objectId;
             $("#UpperContainer").resizable("enable");
             this._isMapViewClicked = false;
             this._isGridViewClicked = false;
@@ -492,6 +517,10 @@ define(["dojo/_base/declare",
             this._setDefaultHeightOfUpperAndLowerContainer();
             this._setDataViewerHeight();
             this._resizeMap();
+            if ((this.map.getLayer("activeRowGraphicsLayer").graphics.length === 1) && (this._selectedOperationalLayer)) {
+                objectId = this.map.getLayer("activeRowGraphicsLayer").graphics[0].attributes[this._selectedOperationalLayer.objectIdField];
+                this._dataViewerWidget.highlightRowOnFeatureClick(objectId, false);
+            }
         },
 
         /** VIEWS **/
@@ -580,6 +609,7 @@ define(["dojo/_base/declare",
                     ApplicationUtils.showLoadingIndicator();
                     this._isGridViewClicked = false;
                     this.map = details.map;
+                    this._selectedOperationalLayer = this.map.getLayer(details.operationalLayerDetails.id);
                     this._mapViewer.addDetailsBtn();
                     this._createDataViewer(details);
                     this._appHeader.setLayerTitle(details.operationalLayerDetails.title);
@@ -603,10 +633,11 @@ define(["dojo/_base/declare",
 
         /**
         * This function is used to instantiate data-viewer widget.
+        * @param{object} details of newly selected layer
         * @memberOf widgets/main/main
         */
         _createDataViewer: function (details) {
-            var dataViewerConfigData, selectedOperationalLayer, layerUrl, layerID, cloneRenderer;
+            var dataViewerConfigData, selectedOperationalLayer, layerUrl, layerID, cloneRenderer, cloneInfoTemplate;
             // parameters that are passed to data-viewer widget
             dataViewerConfigData = {
                 "appConfig": this.appConfig,
@@ -624,10 +655,12 @@ define(["dojo/_base/declare",
             layerUrl = selectedOperationalLayer.url;
             layerID = details.operationalLayerDetails.id;
             cloneRenderer = lang.clone(selectedOperationalLayer.renderer);
+            cloneInfoTemplate = lang.clone(selectedOperationalLayer.infoTemplate);
             this._getExistingDefinitionExpression(details.itemInfo, selectedOperationalLayer);
             this.map.removeLayer(selectedOperationalLayer);
             selectedOperationalLayer = new FeatureLayer(layerUrl, { mode: FeatureLayer.MODE_SNAPSHOT, id: layerID, outFields: ["*"], definitionExpression: this._existingDefinitionExpression });
             selectedOperationalLayer.setRenderer(cloneRenderer);
+            selectedOperationalLayer.setInfoTemplate(cloneInfoTemplate);
             this._removeHandles();
             this._createHandles(selectedOperationalLayer);
             this._resetUpperContainer();
@@ -662,6 +695,7 @@ define(["dojo/_base/declare",
 
         /**
         * This function is used to create event handles
+        * @param{object} operational layer to which event needs to be attached
         * @memberOf widgets/main/main
         */
         _createHandles: function (selectedOperationalLayer) {
@@ -671,25 +705,19 @@ define(["dojo/_base/declare",
                 this._featureLayerClickHandle = on(selectedOperationalLayer, "click", lang.hitch(this, function (evt) {
                     this._dataViewerWidget.onFeatureClick(evt);
                 }));
-                // to enable/disable details button on selection complete of features
-                this._dataViewerFeatureLayerSelectionCompleteHandle = on(selectedOperationalLayer, "selection-complete", lang.hitch(this, function (evt) {
-                    this._dataViewerWidget.changeDetailsButtonMode(false);
-                }));
-                // to enable/disable details button on clear selection of features
-                this._dataViewerFeatureLayerSelectionClearHandle = on(selectedOperationalLayer, "selection-clear", lang.hitch(this, function (evt) {
-                    this._dataViewerWidget.changeDetailsButtonMode(false);
-                }));
                 this._dataViewerFeatureLayerUpdateEndHandle = on(selectedOperationalLayer, "update-end", lang.hitch(this, function (evt) {
-                    // create ui of data-viewer widget
-                    if ((evt.target._defnExpr === this._existingDefinitionExpression)) {
-                        this._dataViewerWidget.createDataViewerUI(true);
-                    } else {
-                        if (evt.target.graphics.length === 0) {
-                            this._dataViewerWidget.noResultFound = true;
-                            this._dataViewerWidget._displaySearchData();
+                    if (!this._isEditingFeatureOn()) {
+                        // create ui of data-viewer widget
+                        if ((evt.target._defnExpr === this._existingDefinitionExpression)) {
+                            this._dataViewerWidget.createDataViewerUI(true);
                         } else {
-                            this._dataViewerWidget._displaySearchData();
-                            this._dataViewerWidget.createDataViewerUI(false);
+                            if (evt.target.graphics.length === 0) {
+                                this._dataViewerWidget.noResultFound = true;
+                                this._dataViewerWidget._displaySearchData();
+                            } else {
+                                this._dataViewerWidget._displaySearchData();
+                                this._dataViewerWidget.createDataViewerUI(false);
+                            }
                         }
                     }
                 }));
@@ -739,28 +767,37 @@ define(["dojo/_base/declare",
             });
             this._dataViewerWidget.attachEventToGraphicsLayer = lang.hitch(this, function (graphicsLayer) {
                 // removes previous graphic's add handle
-                if (this._dataViewerGraphicsAddHandle) {
-                    this._dataViewerGraphicsAddHandle.remove();
+                if (this._selectRowGraphicsAddHandle) {
+                    this._selectRowGraphicsAddHandle.remove();
                 }
                 // removes previous graphic's remove handle
-                if (this._dataViewerGraphicsRemoveHandle) {
-                    this._dataViewerGraphicsRemoveHandle.remove();
+                if (this._selectRowGraphicsRemoveHandle) {
+                    this._selectRowGraphicsRemoveHandle.remove();
                 }
                 // removes previous graphic's clear handle
-                if (this._dataViewerGraphicsClearHandle) {
-                    this._dataViewerGraphicsClearHandle.remove();
+                if (this._selectRowGraphicsClearHandle) {
+                    this._selectRowGraphicsClearHandle.remove();
+                }
+                if (this._selectRowGraphicsClickHandle) {
+                    this._selectRowGraphicsClickHandle.remove();
                 }
                 // to enable/disable details button on add of graphics in graphics layer
-                this._dataViewerGraphicsAddHandle = on(graphicsLayer, "graphic-add", lang.hitch(this, function (evt) {
-                    this._dataViewerWidget.changeDetailsButtonMode(true);
+                this._selectRowGraphicsAddHandle = on(graphicsLayer, "graphic-add", lang.hitch(this, function (evt) {
+                    this._dataViewerWidget.changeDetailsButtonMode();
                 }));
                 // to enable/disable details button on remove of graphics in graphics layer
-                this._dataViewerGraphicsRemoveHandle = on(graphicsLayer, "graphic-remove", lang.hitch(this, function (evt) {
-                    this._dataViewerWidget.changeDetailsButtonMode(true);
+                this._selectRowGraphicsRemoveHandle = on(graphicsLayer, "graphic-remove", lang.hitch(this, function (evt) {
+                    this._dataViewerWidget.changeDetailsButtonMode();
                 }));
                 // to enable/disable details button on clearing of graphics
-                this._dataViewerGraphicsClearHandle = on(graphicsLayer, "graphics-clear", lang.hitch(this, function (evt) {
-                    this._dataViewerWidget.changeDetailsButtonMode(true);
+                this._selectRowGraphicsClearHandle = on(graphicsLayer, "graphics-clear", lang.hitch(this, function (evt) {
+                    this._dataViewerWidget.changeDetailsButtonMode();
+                }));
+                // to select graphics on click of activated feature
+                this._selectRowGraphicsClickHandle = on(graphicsLayer, "click", lang.hitch(this, function (evt) {
+                    if (evt.graphic.geometry.type !== "point") {
+                        this._dataViewerWidget.onFeatureClick(evt);
+                    }
                 }));
             });
             this._dataViewerWidget.attachEventToActiveRowLayer = lang.hitch(this, function (graphicsLayer) {
@@ -776,23 +813,40 @@ define(["dojo/_base/declare",
                 if (this._activeRowClearHandle) {
                     this._activeRowClearHandle.remove();
                 }
+                // removes previous graphic's click handle
+                if (this._activeRowGraphicsClickHandle) {
+                    this._activeRowGraphicsClickHandle.remove();
+                }
                 // to enable/disable details button on add of graphics in graphics layer
                 this._activeRowGraphicsAddHandle = on(graphicsLayer, "graphic-add", lang.hitch(this, function (evt) {
-                    this._dataViewerWidget.changeDetailsButtonMode(true);
+                    this._dataViewerWidget.changeDetailsButtonMode();
                 }));
                 // to enable/disable details button on remove of graphics in graphics layer
                 this._activeRowGraphicsRemoveHandle = on(graphicsLayer, "graphic-remove", lang.hitch(this, function (evt) {
-                    this._dataViewerWidget.changeDetailsButtonMode(true);
+                    this._dataViewerWidget.changeDetailsButtonMode();
                 }));
                 // to enable/disable details button on clearing of graphics
                 this._activeRowClearHandle = on(graphicsLayer, "graphics-clear", lang.hitch(this, function (evt) {
-                    this._dataViewerWidget.changeDetailsButtonMode(true);
+                    this._dataViewerWidget.changeDetailsButtonMode();
                 }));
+                // to select graphics on click of activated feature
+                this._activeRowGraphicsClickHandle = on(graphicsLayer, "click", lang.hitch(this, function (evt) {
+                    if (evt.graphic.geometry.type !== "point") {
+                        this._dataViewerWidget.onFeatureClick(evt);
+                    }
+                }));
+            });
+            // resize map
+            this._dataViewerWidget.resizeMap = lang.hitch(this, function () {
+                this._dataViewerWidget.isDetailsTabClicked = false;
+                this._resizeMap();
             });
         },
 
         /**
         * This function is used to set existing definition expression.
+        * @param{object} item info of selected operational layer
+        * @param{object} selected operational layer
         * @memberOf widgets/data-viewer/data-viewer
         */
         _getExistingDefinitionExpression: function (itemInfo, selectedOperationalLayer) {
@@ -807,6 +861,21 @@ define(["dojo/_base/declare",
                     }
                 }
             }
+        },
+
+        /**
+        * This function is used to track whether, user is currently editing any feature or not
+        * @memberOf widgets/data-viewer/data-viewer
+        */
+        _isEditingFeatureOn: function () {
+            var textInput, dropDown, datePicker;
+            textInput = $(".esriCTTextInput");
+            dropDown = $(".esriCTCodedDomain");
+            datePicker = $(".esriCTDateInputField");
+            if ((textInput.length === 0) && (dropDown.length === 0) && (datePicker.length === 0)) {
+                return false;
+            }
+            return true;
         }
 
         /** DATA-VIEWER WIDGET CREATION **/

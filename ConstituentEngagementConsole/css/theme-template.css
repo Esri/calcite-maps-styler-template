@@ -1,8 +1,4 @@
-﻿body
-{
-}
-
-.esriCTApplicationColor, .esriCTApplicationHeader
+﻿.esriCTApplicationColor, .esriCTApplicationHeader
 {
     color: ${SelectedThemeColor} !important;
 }

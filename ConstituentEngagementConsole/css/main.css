@@ -31,6 +31,11 @@
 
 /* esri API Overridden Styles */
 
+.claro .dijitContentPane
+{
+    padding: 8px 0px 0px 8px;
+}
+
 th
 {
     font-weight: normal !important;
@@ -77,6 +82,11 @@ th
 ::-ms-clear
 {
     display: none;
+}
+
+.mediaSection
+{
+    padding-bottom: 10px;
 }
 
 /* esri API End of Overridden Styles */
@@ -160,7 +170,7 @@ th
     display: none;
     height: 100%;
     width: 100%;
-    z-index: 500;
+    z-index: 9999;
     position: absolute;
     top: 0;
     left: 0;
@@ -178,6 +188,7 @@ th
     background-position: center center;
     background-image: url(../images/loading-indicator.gif);
     background-repeat: no-repeat;
+    background-size: 32px;
 }
 
 .esriCTHideLoadingIndicatorImage
@@ -192,6 +203,7 @@ th
 .esriCTMapViewerBody
 {
     height: 100%;
+    background: #f0f0f0;
 }
 
 .esriCTDetailsButton
@@ -199,6 +211,15 @@ th
     width: 32px;
     height: 31px;
     background-image: url(../images/details.png);
+    background-size: 32px 31px;
+}
+
+.esriCTDetailsBtnDisabled
+{
+    width: 32px;
+    height: 31px;
+    background-image: url('../images/details-disabled.png');
+    cursor: default !important;
     background-size: 32px 31px;
 }
 
@@ -211,7 +232,8 @@ th
     float: right;
     position: fixed;
     right: 20px;
-    margin-top: 5px;
+    margin-top: 10px;
+    z-index: 9998;
 }
 
 /* End of MapViewer*/
@@ -236,6 +258,7 @@ th
 .esriCTWebMapbgColor
 {
     background: #f0f0f0;
+    padding-right: 0px;
 }
 
 .esriCTWebMapImg
@@ -257,6 +280,11 @@ th
     display: block;
     background: #f0f0f0;
     padding: 5px;
+}
+
+.esriCTDisplayWebMapTemplate
+{
+    border-left: none !important;
 }
 
 .esriCTMediaBorder
@@ -324,7 +352,7 @@ th
 .esriCTDescription
 {
     color: #515151;
-    padding: 5px 0px 0px 15px;
+    padding: 3px 15px !important;
     overflow-x: auto;
 }
 
@@ -336,11 +364,11 @@ th
     max-height: 38.3px;
     max-width: 100%;
     word-break: break-word;
+    margin-left: 10px;
 }
 
 .esriCTMultiLineFill
 {
-    background: #f0f0f0;
     position: absolute;
     height: 100%;
     width: 100%;
@@ -360,6 +388,7 @@ th
 .esriCTSelectedItem
 {
     font-weight: bold;
+    background: #fff;
 }
 
 .esriCTDetailsContainerParent
@@ -522,14 +551,30 @@ table.dataTable thead .sorting_desc_disabled
 
 .esriCTDetailsTab
 {
-    padding-left: 5px;
-    padding-top: 5px;
+    height: 100%;
+    overflow: auto;
     -webkit-overflow-scrolling: touch;
+}
+
+.esriCTcommentsContainerDiv
+{
+    border-bottom: 1px solid #ccc;
+}
+
+.esriCTcommentsParentDiv
+{
+    background: #f0f0f0;
+    border-top: 1px solid #ccc;
+}
+
+.esriCTNoCommentsAvailable
+{
+    border-bottom: 0px !important;
 }
 
 .esriCTDetailsTabImgSpan
 {
-    margin: 0 5px 5px 0;
+    margin: 0 5px 5px 10px;
     float: left;
     max-width: 110px;
     max-height: 80px;
@@ -590,21 +635,35 @@ table.dataTable tbody td
     font-size: 11px;
 }
 
-.esriCTDetailsContent
+.esriCTPopupContent
 {
-    padding: 5px 0px 0px 15px;
+    background-color: #fff;
+    overflow: visible;
+    padding-bottom: 10px !important;
 }
 
+.esriCTDetailsContent
+{
+    padding-top: 15px;
+    background: #fff;
+}
+
+.esriCTAttachmentsContainer
+{
+    border-top: 1px solid #ccc;
+}
 .esriCTDetailsFieldHeader
 {
-    margin-bottom: 5px;
-    margin-top: 5px;
+    font-weight: bold;
+    margin: 10px 10px 5px 10px;
+    word-wrap: break-word;
 }
 
 .esriCTDetailsFieldValue
 {
-    padding-bottom: 5px;
-    border-bottom: 1px solid #dfdfdf;
+    padding: 5px 0 10px 0;
+    margin: 0 10px;
+    border-bottom: 1px solid #ccc;
 }
 
 .ui-resizable-s
@@ -654,6 +713,11 @@ table.dataTable thead .esriCTDataViewerTableHeaderCheckbox
     overflow: hidden;
     white-space: nowrap;
     width: 10px !important;
+}
+
+.attachmentsSection
+{
+    display: none;
 }
 
 /* End of data viewer */
@@ -910,24 +974,10 @@ table.dataTable thead .esriCTDataViewerTableHeaderCheckbox
     color: #555;
 }
 
-.esriCTDisableShowAll
+.esriCTSettingsButtonDisabled
 {
-    color: #808080;
-}
-
-.esriCTDisableShowSelected
-{
-    color: #808080;
-}
-
-.esriCTDisableClearSelection
-{
-    color: #808080;
-}
-
-.esriCTDisableCTZoomToSelected
-{
-    color: #808080;
+    background-image: url('../images/settings-disable.png') !important;
+    cursor: default !important;
 }
 
 /* End of application header styles */
@@ -987,10 +1037,10 @@ table.dataTable thead .esriCTDataViewerTableHeaderCheckbox
 /* checked mark aspect */
 [type="checkbox"]:not(:checked) + label:after, [type="checkbox"]:checked + label:after
 {
-    content: '✔';
+    content: url('../images/check-mark-14.png');
     position: absolute;
-    top: 0;
-    left: 4px;
+    top: 2px;
+    left: 3px;
     font-size: 14px;
     color: #09ad7e;
     transition: all .2s;

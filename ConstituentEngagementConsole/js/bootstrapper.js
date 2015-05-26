@@ -1,20 +1,20 @@
 ﻿/*global define,document,dojo,window,alert,setTimeout,$ */
 /*jslint browser:true,sloppy:true,nomen:true,unparam:true,plusplus:true,indent:4 */
 /*
-| Copyright 2014 Esri
-|
-| Licensed under the Apache License, Version 2.0 (the "License");
-| you may not use this file except in compliance with the License.
-| You may obtain a copy of the License at
-|
-|    http://www.apache.org/licenses/LICENSE-2.0
-|
-| Unless required by applicable law or agreed to in writing, software
-| distributed under the License is distributed on an "AS IS" BASIS,
-| WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-| See the License for the specific language governing permissions and
-| limitations under the License.
-*/
+ | Copyright 2014 Esri
+ |
+ | Licensed under the Apache License, Version 2.0 (the "License");
+ | you may not use this file except in compliance with the License.
+ | You may obtain a copy of the License at
+ |
+ |    http://www.apache.org/licenses/LICENSE-2.0
+ |
+ | Unless required by applicable law or agreed to in writing, software
+ | distributed under the License is distributed on an "AS IS" BASIS,
+ | WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ | See the License for the specific language governing permissions and
+ | limitations under the License.
+ */
 define([
     "dojo/_base/declare",
     "config/template-config",
@@ -28,7 +28,9 @@ define([
     "widgets/app-header/app-header",
     "dojo/dom-construct",
     "dojo/dom",
-    "application/utils/utils"
+    "application/utils/utils",
+    "esri/urlUtils",
+    "esri/lang"
 ], function (
     declare,
     templateConfig,
@@ -42,12 +44,15 @@ define([
     ApplicationHeader,
     domConstruct,
     dom,
-    ApplicationUtils
+    ApplicationUtils,
+    urlUtils,
+    esriLang
 ) {
     return declare(null, {
         _boilerPlateTemplateObject: null, // stores object of boilerPlateTemplateObject
         _appHeader: null, // stores object of application header
         _consoleApp: null, // stores object of main
+        _identityManagerCancelHandler: null, // stores cancel click handler of identity manager
 
         /**
         * This function is called when user needs to start operation of widget
@@ -63,25 +68,57 @@ define([
                 this.portal = new esriPortal.Portal(config.sharinghost);
                 this.portal.on("load", lang.hitch(this, function (evt) {
                     var signedIn;
-                    signedIn = IdentityManager.checkSignInStatus(config.sharinghost + "/sharing");
-                    signedIn.then(lang.hitch(this, function (response) {
-                        this.portal.signIn().then(lang.hitch(this, function (loggedInUser) {
-                            this._queryGroupInfo(loggedInUser, config);
+                    if ((this.portal.isPortal) && (!this._checkIfAppIDExist()) && (!this._checkIfGroupExist()) && (this._boilerPlateTemplateObject.templateConfig.esriEnvironment)) {
+                        window.location.assign("resources/preview/preview.html");
+                    } else {
+                        signedIn = IdentityManager.checkSignInStatus(config.sharinghost + "/sharing");
+                        signedIn.then(lang.hitch(this, function (response) {
+                            this.portal.signIn().then(lang.hitch(this, function (loggedInUser) {
+                                this._queryGroupInfo(loggedInUser, config);
+                            }));
+                        }), lang.hitch(this, function (error) {
+                            this._queryGroupInfo(null, config);
                         }));
-                    }), lang.hitch(this, function (error) {
-                        this._queryGroupInfo(null, config);
-                    }));
+
+                    }
                 }));
             }), lang.hitch(this, function (error) {
                 $(dom.byId("loadingIndicator")).addClass('esriCTHideLoadingIndicatorImage');
                 $(dom.byId("esriCTMainContainer")).addClass('esriCTHidden');
                 this.showMessageScreen(error);
             }));
-
-            //Show error on identity manger dialog is canceled
-            on(IdentityManager, "dialog-cancel", lang.hitch(this, function () {
+            // display's message screen on click of cancel button of identity manager
+            this._identityManagerCancelHandler = on(IdentityManager, "dialog-cancel", lang.hitch(this, function () {
                 this.showMessageScreen(null);
             }));
+        },
+
+        /**
+        * This function is used to check if application ID exists in URL or not
+        * @memberOf js/bootstrapper
+        */
+        _checkIfAppIDExist: function () {
+            var urlObject, url;
+            url = document.location.href;
+            urlObject = urlUtils.urlToObject(url);
+            urlObject.query = urlObject.query || {};
+            // remove any HTML tags from query item
+            urlObject.query = esriLang.stripTags(urlObject.query);
+            return urlObject.query.appid ? true : false;
+        },
+
+        /**
+        * This function is used to check if group exists in URL or not
+        * @memberOf js/bootstrapper
+        */
+        _checkIfGroupExist: function () {
+            var urlObject, url;
+            url = document.location.href;
+            urlObject = urlUtils.urlToObject(url);
+            urlObject.query = urlObject.query || {};
+            // remove any HTML tags from query item
+            urlObject.query = esriLang.stripTags(urlObject.query);
+            return urlObject.query.group ? true : false;
         },
 
         /**
@@ -91,6 +128,9 @@ define([
         * @memberOf js/bootstrapper
         */
         _queryGroupInfo: function (loggedInUser, config) {
+            if (this._identityManagerCancelHandler) {
+                this._identityManagerCancelHandler.remove();
+            }
             //As current version of boilerplate not handling the private Groups
             //once user is logged in query for the group info.
             this._boilerPlateTemplateObject.queryGroupInfo().then(lang.hitch(this, function (response) {
@@ -110,9 +150,7 @@ define([
             // create my main application. Start placing your logic in the main.js file.
             this._consoleApp = new Main();
             this._consoleApp.reload = lang.hitch(this, function (logInDetails) {
-                // domConstruct.destroy(this._consoleApp);
-                loggedInUser = { "fullName": logInDetails.credential.userId, "credential": { "token": logInDetails.credential.token} };
-                // this._consoleApp = new Main();
+                loggedInUser = { "fullName": logInDetails.fullName, "credential": { "token": logInDetails.credential.token} };
                 this._queryGroupInfo(loggedInUser, this._boilerPlateTemplateObject.config);
             });
             this._consoleApp.startup(this._boilerPlateTemplateObject, loggedInUser);
@@ -121,7 +159,6 @@ define([
         /**
         * This function is used to show message screen
         * @param{object} error that is to be displayed
-        * @param{object} configuration settings
         * @memberOf js/bootstrapper
         */
         showMessageScreen: function (error) {
@@ -153,7 +190,7 @@ define([
                         $(dom.byId("esriCTNoWebMapParentDiv")).addClass("esriCTHidden");
                         var loggedInUser;
                         this._appHeader.destroy();
-                        loggedInUser = { "fullName": logInDetails.credential.userId, "credential": { "token": logInDetails.credential.token} };
+                        loggedInUser = { "fullName": logInDetails.fullName, "credential": { "token": logInDetails.credential.token} };
                         this.initApplication(loggedInUser);
                     }));
                 });

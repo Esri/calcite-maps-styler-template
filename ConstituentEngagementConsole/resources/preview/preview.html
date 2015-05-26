@@ -1,0 +1,84 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <link rel="stylesheet" type="text/css" href="css/layout.css" />
+</head>
+<body>
+    <div id="content" style='display: block;'>
+        <div id="header">
+            <img id="titleImg" src="images/title-text.jpg" alt="" />
+            <a id="esri-logo" href="http://esri.com" target="_blank"></a>
+        </div>
+        <!--header-->
+        <table class="esriCTFeaturePane esriCTFirst">
+            <tr>
+                <td>
+                    <img class="esriCTScreenShot esriCTLeftSide" src="images/main-screen.png" alt="" />
+                </td>
+                <td>
+                    <p class="esriCTFeatureText" id="section1">
+                    </p>
+                </td>
+            </tr>
+        </table>
+        <hr />
+        <table class="esriCTFeaturePane esriCTSecond">
+            <tr>
+                <td>
+                    <p class="esriCTFeatureText" id="section2">
+                    </p>
+                </td>
+                <td>
+                    <img class="esriCTScreenShot esriCTRightSide" src="images/details-tab.png" alt="" />
+                </td>
+            </tr>
+        </table>
+        <hr />
+        <table class="esriCTFeaturePane esriCTThird">
+            <tr>
+                <td>
+                    <img class="esriCTScreenShot esriCTLeftSide" src="images/map-view.png" alt="" />
+                </td>
+                <td>
+                    <p class="esriCTFeatureText" id="section3">
+                    </p>
+                </td>
+            </tr>
+        </table>
+        <hr />
+    </div>
+    <!--content-->
+    <div id="backgroundStripe">
+        <img id="backgroundImg" src="images/stripe-image.jpg" alt="" />
+    </div>
+    <script type="text/javascript">
+        var root = location.href.slice(0, location.href.lastIndexOf('resources/preview'));
+        dojoConfig = {
+            parseOnLoad: true,
+            async: true,
+            baseURL: root,
+            packages: [{
+                name: "application",
+                location: root + 'js'
+            }]
+        };
+    </script>
+    <script type="text/javascript" src="//jsdev.arcgis.com/3.14/"></script>
+    <script type="text/javascript">
+        require([
+            "dojo/i18n!application/nls/resources",
+            "dojo/dom"
+        ], function (
+            i18n,
+            dom
+        ) {
+            dom.byId("section1").innerHTML = i18n.preview.section1;
+            dom.byId("section2").innerHTML = i18n.preview.section2;
+            dom.byId("section3").innerHTML = i18n.preview.section3;
+        });
+    </script>
+</body>
+</html>

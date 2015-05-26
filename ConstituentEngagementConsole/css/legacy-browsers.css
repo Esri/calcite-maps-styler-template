@@ -58,6 +58,11 @@
     background-image: url('../images/refresh-24.png');
 }
 
+.esriCTSettingsButtonDisabled
+{
+    background-image: url('../images/settings-disable-24.png') !important;
+}
+
 /* Header Icons */
 
 /* WebmapList */
