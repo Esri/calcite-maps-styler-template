@@ -15,7 +15,7 @@
       helpLabel: "Help"
     },
     chart: {
-      title: "Elevations Profile",
+      title: "Elevation Profile",
       demResolution: "DEM Resolution",
       elevationTitleTemplate: "Elevation in {0}",
       distanceTitleTemplate: "Distance in {0}",
