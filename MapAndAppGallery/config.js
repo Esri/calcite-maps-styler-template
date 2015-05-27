@@ -161,12 +161,6 @@
                     "tooltip": "Sorting order of gallery contents"
                 },
                 {
-                    "label": "Default Search Value",
-                    "fieldName": "itemSearchDefaultValue",
-                    "type": "string",
-                    "tooltip": "Default value for searching gallery content"
-                },
-                {
                     "label": "Show Tag Cloud",
                     "fieldName": "showTagCloud",
                     "type": "boolean",
@@ -203,7 +197,7 @@
                     "label": "Default Address",
                     "fieldName": "locatorDefaultAddress",
                     "type": "string",
-                    "tooltip": "Default address for the map search"
+                    "tooltip": "Default address for the map search in the Simple Viewer"
                 },
                 {
                     "label": "Alternate Basemap Group",
