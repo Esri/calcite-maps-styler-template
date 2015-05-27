@@ -542,6 +542,7 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
                     var titleNode = domConstruct.create("input", {
                         id: "print_title",
                         className: "printTitle",
+                        tabindex: "0",
                         placeholder: this.config.i18n.tools.print.titlePrompt
                     }, domConstruct.create("div"));
 

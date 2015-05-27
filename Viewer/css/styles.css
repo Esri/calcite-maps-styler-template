@@ -190,31 +190,14 @@ html, body {
 @media only screen and (min-width: 720px) {
   #pageBody_overview {
     max-height: 80%; } }
+    
 /*Styles for the print dialog checkbox*/
 #pageBody_print .checkbox {
   display: inline-block;
   cursor: pointer;
   line-height: 18px;
-}
-
-#pageBody_print input[type=checkbox].checkbox {
-  display: none; }
-
-#pageBody_print .checkbox:before {
-  content: "";
-  display: inline-block;
-  width: 18px;
   height: 18px;
-  vertical-align: middle;
-  background-color: #d3d3d3;
-  color: #f3f3f3;
-  text-align: center;
-  border-radius: 3px; }
-
-#pageBody_print input[type=checkbox]:checked.checkbox + .checkbox:before {
-  content: "\2713";
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
-  font-size: 15px; }
+}
 
 /*Layer list dialog*/
 .layer-menu {
@@ -1175,8 +1158,6 @@ img {
   margin: 0 0 0 5px; }
 
 .calcite .share-dialog-icon {
-  /*font-size: 32px;
-    line-height: 32px;*/
   font-size: 30px;
   line-height: 30px;
   float: left;
@@ -1237,29 +1218,13 @@ img {
   border: 1px solid #dcdcdc;
   margin: 0 0 10px; }
 
-.share-dialog-checkbox {
-  display: inline-block;
-  cursor: pointer;
-  padding: 8px; }
-
-input[type=checkbox].share-dialog-checkbox {
-  display: none; }
-
-.share-dialog-checkbox:before {
-  content: "";
-  display: inline-block;
-  width: 18px;
-  height: 18px;
-  vertical-align: middle;
-  background-color: #d3d3d3;
-  color: #f3f3f3;
-  text-align: center;
-  border-radius: 3px; }
-
-input[type=checkbox]:checked.share-dialog-checkbox + .share-dialog-checkbox:before {
-  content: "\2713";
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
-  font-size: 15px; }
+.share-dialog-extent{
+  height:30px;
+  line-height: 30px;
+}
+input[type=checkbox]{
+  font-size:2em;
+}
 
 /*Icon Fonts*/
 @font-face {
