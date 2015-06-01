@@ -734,18 +734,26 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
                     return;
                 }
 
-
-
-                var configuredSearchLayers = (this.config.searchLayers instanceof Array) ? this.config.searchLayers : JSON.parse(this.config.searchLayers);
-                var searchSources = new SearchSources({
+                var searchOptions = {
                     map: this.map,
                     useMapExtent: this.config.searchExtent,
-                    geocoders: this.config.locationSearch ? this.config.helperServices.geocode : [],
-                    itemData: this.config.response.itemInfo.itemData,
-                    configuredSearchLayers: configuredSearchLayers
-                });
+                    itemData: this.config.response.itemInfo.itemData
+                };
+
+               if(this.config.searchConfig ){  
+                searchOptions.applicationConfiguredSources = this.config.searchConfig.sources || [];
+               }else{
+                var configuredSearchLayers = (this.config.searchLayers instanceof Array) ? this.config.searchLayers : JSON.parse(this.config.searchLayers);
+                searchOptions.configuredSearchLayers = configuredSearchLayers;
+                searchOptions.geocoders = this.config.locationSearch ? this.config.helperServices.geocode : [];
+               }
+                var searchSources = new SearchSources(searchOptions);
                 var createdOptions = searchSources.createOptions();
 
+                if(this.config.searchConfig && this.config.searchConfig.activeSourceIndex){
+                    createdOptions.activeSourceIndex = this.config.searchConfig.activeSourceIndex;
+                }
+ 
                 var search = new Search(createdOptions, domConstruct.create("div", {
                     id: "search"
                 }, "mapDiv"));
