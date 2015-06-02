@@ -132,6 +132,10 @@
                "type":"boolean",
                "fieldName":"legend",
                "label":"Legend"
+            },{
+               "type": "boolean",
+               "fieldName": "measure",
+               "label": "Measure"
             },
             {  
                "type":"boolean",
@@ -338,6 +342,7 @@
       "bookmarks":false,
       "zoom":true,
       "home":true,
+      "measure":false,
       "locate":false,
       "scale":false,
       "share":false,

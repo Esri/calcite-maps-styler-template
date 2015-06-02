@@ -51,6 +51,7 @@ define({
     "editortoolbar": false,    
     "search": true,
     "bookmarks": false,
+    "measure": false,
     "locationSearch": true,
     "searchExtent": true,
     "searchLayers":[{

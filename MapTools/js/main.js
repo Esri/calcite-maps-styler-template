@@ -191,7 +191,6 @@ declare, win, array, Color, all, Deferred, lang, domUtils, esriRequest, esriLang
                 query(".LocateButton .zoomLocateButton").style("background-color", this.config.theme.toString());
 
             }));
-
         },
         _addToolbarWidgets: function () {
 
@@ -200,8 +199,9 @@ declare, win, array, Color, all, Deferred, lang, domUtils, esriRequest, esriLang
                 layerDef = new Deferred(),
                 tableDef = new Deferred(),
                 printDef = new Deferred(),
+                measureDef = new Deferred(),
                 bookmarksDef = new Deferred();
-            var toolDeferreds = [shareDef, tableDef, printDef, layerDef, basemapDef, bookmarksDef];
+            var toolDeferreds = [measureDef,shareDef, tableDef, printDef, layerDef, basemapDef, bookmarksDef];
 
             /*Toolbar widgets ( print, layers, share, basemap etc)*/
 
@@ -326,7 +326,7 @@ declare, win, array, Color, all, Deferred, lang, domUtils, esriRequest, esriLang
                 tableDef.resolve(btn);
                 return tableDef.promise;
             }));
-
+            
             require(["application/sniff!print?esri/dijit/Print", "application/sniff!print?esri/tasks/PrintTemplate"], lang.hitch(this, function (Print, PrintTemplate) {
 
                 if (!Print) {
@@ -523,7 +523,54 @@ declare, win, array, Color, all, Deferred, lang, domUtils, esriRequest, esriLang
                 printDef.resolve(btn);
                 return printDef.promise;
             }));
+            require(["application/sniff!measure?esri/dijit/Measurement"], lang.hitch(this, function (Measurement) {
+                if (!Measurement) {
+                    measureDef.resolve(null);
+                    return;
+                }
 
+
+                var btn = this._createToolbarButton("measure_toggle", "icon-measure", this.config.i18n.tools.measureTool);
+
+                on(btn, "click", lang.hitch(this, function () {
+                    this._displayContainer("measure_container", "measure_toggle");
+                }));
+ 
+                this._createContainer("measure_container", "measureDiv");
+                var areaUnit = (this.config.units === "metric") ? "esriSquareKilometers" : "esriSquareMiles";
+                var lengthUnit = (this.config.units === "metric") ? "esriKilometers" : "esriMiles";
+                var options = {
+                    map: this.map,
+                    defaultAreaUnit: areaUnit,
+                    defaultLengthUnit: lengthUnit
+                };
+                var measureWidget = new Measurement(options, dom.byId("measureDiv"));
+
+                measureWidget.startup();
+                query(".tools-menu").on("click", lang.hitch(this, function(e){
+                    if(e.target && e.target.parentNode && e.target.parentNode.id && e.target.parentNode.id !== "measure_toggle"){
+                        var tool = measureWidget.getTool();
+                        if(tool){
+                            measureWidget.setTool(tool.toolName, false);
+                            measureWidget.clearResult();
+                            //reactivate map click
+                            this.map.setInfoWindowOnClick(true);
+                        }
+                    }
+                }));
+                query(".esriMeasurement .dijitButtonNode").on("click", lang.hitch(this, function(e){
+                   var tool = measureWidget.getTool();
+
+                   if(tool){
+                    this.map.setInfoWindowOnClick(false);
+                   }else{
+                    this.map.setInfoWindowOnClick(true);
+                   }
+                }));
+                measureDef.resolve(btn);
+                return measureDef.promise;
+
+            }));
             require(["application/sniff!basemaps?esri/dijit/BasemapGallery"], lang.hitch(this, function (BasemapGallery) {
                 if (!BasemapGallery) {
                     basemapDef.resolve(null);
@@ -888,7 +935,6 @@ declare, win, array, Color, all, Deferred, lang, domUtils, esriRequest, esriLang
                 title: label,
                 innerHTML: "<span aria-hidden=true class='icon-color " + icon + "'></span><span class='tool-label'>" + label + "</span>"
             });
-
             return button;
 
         },
@@ -908,6 +954,7 @@ declare, win, array, Color, all, Deferred, lang, domUtils, esriRequest, esriLang
             query(".tool_container").forEach(lang.hitch(this, function (container_node) {
                 //close any open containers when another tool is open
                 var visible = domStyle.get(container_node, "display");
+
                 if (visible === "block" && (container !== container_node.id)) {
                     domUtils.hide(container_node);
                 }
@@ -927,6 +974,7 @@ declare, win, array, Color, all, Deferred, lang, domUtils, esriRequest, esriLang
 
             var node = dom.byId(container);
             domUtils.toggle(node);
+
 
             if (domStyle.get(node, "display") === "none") {
                 //remove tool selected style from node
