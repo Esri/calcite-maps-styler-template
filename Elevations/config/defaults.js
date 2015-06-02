@@ -13,6 +13,12 @@ define({
         "id": "",
         "fields": []
     }],
+    "backgroundColor": "#777", // #777
+    "textColor": "#eee",  // #eee
+    "borderColor": "#575757", // #575757;
+    "chartAxisFontColor": "#ccc", // #ccc
+    "chartSkyColor": "#4682B4",//#4682B4
+    "chartElevationColor": "#CD853F",//#CD853F
     "title": null,  //specify a custom title. Defaults to web map title 
     "subtitle": null, //specify a custom sub title. Defaults to web map snippet.
     "locationSearch": true,  

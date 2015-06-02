@@ -3,6 +3,24 @@ define(["dojo/ready", "dojo/_base/declare", "dojo/query", "dojo/dom-style", "doj
         config: {},
         startup: function (config) {
             this.config = config;
+
+            //update the color scheme
+            if(this.config.backgroundColor){
+                var container = dom.byId("mainContainer");
+                if(container){
+                    domStyle.set(container, "background-color", this.config.backgroundColor);
+                    domStyle.set(container, "color", this.config.textColor);
+                }
+                var top = dom.byId("topContainer");
+                if(top){
+                    domStyle.set(top, "border-color", this.config.borderColor);
+                    dojoQuery(".dijitSplitterH").style("background-color", this.config.borderColor);
+                }
+                //update sign-in dialog colors 
+                dojoQuery(".esriSignInDialog .dijitDialogPaneActionBar").style("background-color", this.config.backgroundColor);
+
+            }
+
             //supply either the webmap id or, if available, the item info
             var itemInfo = this.config.itemInfo || this.config.webmap;
             this._createWebMap(itemInfo);
@@ -53,7 +71,6 @@ define(["dojo/ready", "dojo/_base/declare", "dojo/query", "dojo/dom-style", "doj
             }).then(lang.hitch(this, function (response) {
                 this.config.response = response;
 
-
                 var descNode = null;
                 if (this.config.titleInHeader) {
                     descNode = dom.byId("topContainer");
@@ -85,6 +102,14 @@ define(["dojo/ready", "dojo/_base/declare", "dojo/query", "dojo/dom-style", "doj
 
                 this.map = response.map;
 
+                domClass.add(this.map.infoWindow.domNode, ["light","custom"]);
+                dojoQuery(".esriPopup.light .titlePane").style("background-color", this.config.backgroundColor);
+                dojoQuery(".esriPopup.light .titleButton").style("color", this.config.textColor);
+                dojoQuery(".esriPopup.light .titlePane .title").style("color", this.config.textColor);
+                on(this.map.infoWindow, "show",lang.hitch(this, function(){
+                    dojoQuery(".esriPopup.light .pointer.top").style("background", this.config.backgroundColor);
+                }));
+
                 //Enable snapping
                 this.map.enableSnapping();
 
@@ -112,7 +137,6 @@ define(["dojo/ready", "dojo/_base/declare", "dojo/query", "dojo/dom-style", "doj
                     }, "legendNode");
                     legendDijit.startup();
                 }else{
-
                     if(this.config.titleInHeader === true && response.itemInfo.item.description === null){
                           domStyle.set(dom.byId("infoContainer"), "display", "none");
                           registry.byId("mainContainer").layout();
@@ -172,7 +196,12 @@ define(["dojo/ready", "dojo/_base/declare", "dojo/query", "dojo/dom-style", "doj
                     profileTaskUrl: this.config.helperServices.elevationSync.url,
                     scalebarUnits: this.config.scalebarUnits,
                     showHelpAtStartup: this.config.showHelpOnLoad,
-                    chartTitle: this.config.elevationcharttitle
+                    chartTitle: this.config.elevationcharttitle,
+                    backgroundColor: this.config.backgroundColor,
+                    textColor: this.config.textColor,
+                    chartAxisFontColor: this.config.chartAxisFontColor,
+                    chartSkyColor: this.config.chartSkyColor,
+                    chartElevationColor: this.config.chartElevationColor
                 };
 
 
@@ -188,6 +217,7 @@ define(["dojo/ready", "dojo/_base/declare", "dojo/query", "dojo/dom-style", "doj
                     }
                 }));
                 elevationsProfile.startup();
+                dojoQuery(".elevationsProfileToolbar .dijitButtonText").style("color", this.config.textColor);
 
             }), lang.hitch(this, function (error) {
                 if (this.config && this.config.i18n) {

@@ -107,11 +107,40 @@
                     "tooltip": "Url to the Custom Elevation Profile Service",
 					          "placeHolder": "http://elevation.arcgis.com/arcgis/rest/services/Tools/ElevationSync/GPServer"
                 },{  
-                   "placeHolder":"Defaults to Elevation Profile",
                    "label":"Chart title:",
                    "fieldName":"elevationcharttitle",
                    "type":"string",
-                   "tooltip":"Defaults to Elevation Profile"
+                   "tooltip":"Enter chart title"
+                },{
+                  "type":"color",
+                  "fieldName": "backgroundColor",
+                  "tooltip": "Pick background color",
+                  "label": "Background Color"
+                },{
+                  "type":"color",
+                  "fieldName": "textColor",
+                  "tooltip": "Pick text color",
+                  "label": "Text Color"
+                },{
+                  "type":"color",
+                  "fieldName": "borderColor",
+                  "tooltip": "Pick border color",
+                  "label": "Border Color"
+                },{
+                  "type":"color",
+                  "fieldName": "chartSkyColor",
+                  "tooltip": "Chart sky color",
+                  "label": "Chart sky color"
+                },{
+                  "type":"color",
+                  "fieldName": "chartElevationColor",
+                  "tooltip": "Chart elevation color",
+                  "label": "Chart elevation color"
+                },{
+                  "type":"color",
+                  "fieldName": "chartAxisFontColor",
+                  "tooltip": "Axis text color",
+                  "label": "Chart axis text color"
                 }
             ]
         },{
@@ -138,6 +167,12 @@
     ],
     "values": {
         "showHelpOnLoad": true,
+        "backgroundColor": "#777",
+        "textColor": "#eee",
+        "borderColor": "#ccc",
+        "chartSkyColor": "4682B4",
+        "chartElevationColor":"CD853F",
+        "chartAxisFontColor": "#ccc",
         "titleInHeader": true,
         "displaypopups": true,
         "geocoder": false,
