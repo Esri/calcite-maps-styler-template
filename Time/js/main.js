@@ -251,8 +251,6 @@ declare, lang, query, on, string, locale, domConstruct, array, arcgisUtils, esri
                 var c = this.config.timecolor.toString();
                 query(".tc").style("color", c);
                 query(".dijitSliderImageHandleH").style("background-color", c);
-                //query(".dijitSliderImageHandleH").style("border-color", c);
-               // query(".dijitSliderImageHandle").style("background", c);
             }
             if (this.config.slidercolor) {
                 query(".dijitSliderProgressBarH").style("backgroundColor", this.config.slidercolor.toString());
@@ -266,7 +264,6 @@ declare, lang, query, on, string, locale, domConstruct, array, arcgisUtils, esri
         },
         _displayTime: function () {
             //position the time window 
-            console.log(this.config.timeposition);
             domClass.add("timeContainer", "window-" + this.config.timeposition);
             //Add the time slider the map is time aware or there are time aware layers
             var timeProperties = null,
@@ -357,10 +354,11 @@ declare, lang, query, on, string, locale, domConstruct, array, arcgisUtils, esri
             } else {
                 //hide play and slider controls and add message about no 
                 //time 
+                domClass.add(dom.byId("timeContainer"), "noslider");
                 domClass.remove(dom.byId("timeControls"), "controlCont");
-                domClass.add(dom.byId("timeControls"), "hide");
+                domClass.add(dom.byId("playControls"), "hide");
                 domClass.add("timeContainer", "window-bottom-center");
-                dom.byId("timeSliderDiv").innerHTML = this.config.i18n.time.enableTimeMessage;
+                dom.byId("timeLabel").innerHTML = this.config.i18n.time.enableTimeMessage;
                 domClass.add(dom.byId("timeSliderDiv"), "error-text");
             }
             this._updateTheme();
