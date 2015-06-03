@@ -23,7 +23,6 @@ define(["dojo/ready", "dojo/_base/declare", "dojo/query", "dojo/dom-style", "doj
 
             //supply either the webmap id or, if available, the item info
             var itemInfo = this.config.itemInfo || this.config.webmap;
-            this._createWebMap(itemInfo);
 
             if (config) {
                 this.config = config;
