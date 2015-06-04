@@ -135,22 +135,20 @@ ready, declare, dom, Color, query, lang, array, domConstruct, registry, has, sni
                         legend.startup();
                         // Show the legend open or closed 
                         // depending on config options. 
-                        if(this.config.legendOpen){
+                        if (this.config.legendOpen) {
                             query(".legend").removeClass("hide");
-                        }else{
+                        } else {
                             //closed when loading 
                             domClass.remove(dom.byId("submenu"), "hide");
                         }
-  
-                        
 
                         //prevent scroll
-                        on(dom.byId("legend"), mouse.enter, function () {
+                        on(dom.byId("legend"), mouse.enter, lang.hitch(this, function () {
                             domClass.add(document.body, "noscroll");
-                        });
-                        on(dom.byId("legend"), mouse.leave, function () {
+                        }));
+                        on(dom.byId("legend"), mouse.leave, lang.hitch(this, function () {
                             domClass.remove(document.body, "noscroll");
-                        });
+                        }));
 
                         var menuBtn = dom.byId("submenu");
                         var legendNode = dom.byId("legend");
