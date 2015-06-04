@@ -26,6 +26,10 @@ define([
   "esri/arcgis/utils",
   "esri/InfoTemplate",
 
+  "esri/dijit/Legend",
+
+  "dojo/i18n!application/nls/resources",
+
   "application/FeatureNav",
   "application/wrapper/main-jquery-deps",
 
@@ -35,6 +39,8 @@ define([
   on,
   dom, domClass,
   arcgisUtils, InfoTemplate,
+  Legend,
+  nls,
   FeatureNav
 ) {
   return declare(null, {
@@ -45,6 +51,10 @@ define([
       // any url parameters and any application specific configuration information.
       if (config) {
         this.config = config;
+
+        if (this.config.disableViewer) {
+          this._reportError(nls.viewer.appLoadingFailedMessage);
+        }
         //supply either the webmap id or, if available, the item info
         var itemInfo = this.config.itemInfo || this.config.webmap;
         this._createWebMap(itemInfo);
@@ -99,11 +109,78 @@ define([
 
     },
 
+    _setStrings: function () {
+
+
+
+      var node;
+      node = dom.byId("toggleNavText");
+      if (node) {
+        node.innerHTML = nls.viewer.toggleNavigationText;
+      }
+
+      node = dom.byId("appTitle");
+      var title = this.config.details.Title || this.itemInfo.item.title || "";
+      if (node) {
+        node.innerHTML = title;
+      }
+      window.document.title = title;
+
+
+      node = dom.byId("shareText");
+      if (node) {
+        node.innerHTML = nls.viewer.share;
+      }
+
+      node = dom.byId("submitReport");
+      if (node) {
+        node.innerHTML = nls.viewer.btnSubmitReportText;
+      }
+
+      node = dom.byId("reportsText");
+      if (node) {
+        node.innerHTML = nls.viewer.viewReportsTabText;
+      }
+
+      node = dom.byId("legendText");
+      if (node) {
+        node.innerHTML = nls.viewer.viewLegendTabText;
+      }
+
+      node = dom.byId("aboutText");
+      if (node) {
+        node.innerHTML = nls.viewer.viewAboutusTabText;
+      }
+
+      var desc = this.config.details.Description || this.itemInfo.item.description || "";
+      node = dom.byId("aboutTextBody");
+      if (node) {
+        node.innerHTML = desc;
+      }
+
+
+    },
+
+    _legend: function () {
+      this._mapLegend = new Legend({
+        map: this.map,
+        layerInfos: this.layerInfos
+      }, dom.byId("mapLegend"));
+      this._mapLegend.startup();
+    },
+
     // Sample function
     _viewer: function () {
+
+
+      domClass.remove(dom.byId("navbarTop"), "hidden");
+
+      this._setStrings();
+
+
       this.map.infoWindow.set("popupWindow", false);
 
-
+      this._legend();
 
       var popup = this.map.infoWindow;
 
@@ -160,7 +237,7 @@ define([
         visible: true,
         searchTerm: "",
         sources: [{
-          //template: "${Email} rated it a ${Rating}/5 on ${CreationDate}",
+          template: "${OBJECTID}",
           featureLayer: layer
         }],
       }, "featureNav");
@@ -191,6 +268,8 @@ define([
         // Here' we'll use it to update the application to match the specified color theme.
         // console.log(this.config);
         this.map = response.map;
+        this.itemInfo = response.itemInfo;
+        this.layerInfos = arcgisUtils.getLegendLayers(response);
         // remove loading class from body
         domClass.remove(document.body, "app-loading");
         // Start writing my code
