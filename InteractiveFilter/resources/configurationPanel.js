@@ -103,6 +103,14 @@
                "type":"boolean",
                "fieldName":"locate",
                "label":"Location button"
+            },{
+               "type":"boolean",
+               "fieldName": "legend",
+               "label": "Legend"
+            },{
+               "type": "boolean",
+               "fieldName": "legendOpen",
+               "label":"Open legend on load"
             }
          ]
       },{
@@ -169,7 +177,9 @@
       "filterDropdown":false,
       "filterOnLoad": true,
       "displayZoom": false,
-      "displayClear": false
+      "displayClear": false,
+      "legend": false,
+      "legendOpen": false
 
    }
 }

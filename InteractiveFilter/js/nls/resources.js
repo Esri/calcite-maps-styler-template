@@ -13,6 +13,9 @@ define({
       errors:{
         message: "Problem creating the filters application"
       }
+    },
+    legend:{
+      title: "Legend"
     }
   }),
   "ar": 1,

@@ -86,13 +86,13 @@ ready, declare, dom, Color, query, lang, array, domConstruct, registry, has, sni
                         itemData: this.config.response.itemInfo.itemData,
                         configuredSearchLayers: configuredSearchLayers
                     });
-  
+
                     var createdOptions = searchSources.createOptions();
 
                     var search = new Search(createdOptions, domConstruct.create("div", {
                         id: "search"
-                    }, "mapDiv"));
-            
+                    }));
+
                     search.startup();
 
                     if (search && search.domNode) {
@@ -122,16 +122,73 @@ ready, declare, dom, Color, query, lang, array, domConstruct, registry, has, sni
                 homeButton.startup();
             }
 
+            // Add legend if enabled
+            if (this.config.legend) {
+                // Do we have layers to display in the legend? 
+                var legendLayers = arcgisUtils.getLegendLayers(this.config.response);
+                if (legendLayers && legendLayers.length && legendLayers.length > 0) {
+                    require(["esri/dijit/Legend", "dojo/mouse", "dojo/fx", "dojo/_base/fx"], lang.hitch(this, function (Legend, mouse, coreFx, baseFx) {
+                        var legend = new Legend({
+                            map: this.map,
+                            layerInfos: legendLayers
+                        }, "legendDiv");
+                        legend.startup();
+                        // Show the legend open or closed 
+                        // depending on config options. 
+                        if(this.config.legendOpen){
+                            query(".legend").removeClass("hide");
+                        }else{
+                            //closed when loading 
+                            domClass.remove(dom.byId("submenu"), "hide");
+                        }
+  
+                        
+
+                        //prevent scroll
+                        on(dom.byId("legend"), mouse.enter, function () {
+                            domClass.add(document.body, "noscroll");
+                        });
+                        on(dom.byId("legend"), mouse.leave, function () {
+                            domClass.remove(document.body, "noscroll");
+                        });
+
+                        var menuBtn = dom.byId("submenu");
+                        var legendNode = dom.byId("legend");
+
+                        on(dom.byId("close-submenu"), "click", function () {
+                            domClass.remove(menuBtn, "hide");
+                            query(".legend").addClass("hide");
+                            coreFx.combine([
+                            baseFx.fadeIn({
+                                node: menuBtn
+                            }), baseFx.fadeOut({
+                                node: legendNode
+                            })]).play();
+                        });
+                        on(dom.byId("submenu"), "click", function () {
+                            domClass.add(menuBtn, "hide");
+                            query(".legend").removeClass("hide");
+                            coreFx.combine([
+                            baseFx.fadeIn({
+                                node: legendNode
+                            }), baseFx.fadeOut({
+                                node: menuBtn
+                            })]).play();
+                        });
+                    }));
+                }
+            }
+
             domClass.remove(dom.byId("loader"), "startLoader");
             this._updateTheme();
         },
 
         //create a map based on the input web map id
         _createWebMap: function (itemInfo) {
-                itemInfo = this._setExtent(itemInfo);
-                var mapOptions = {};
-                mapOptions = this._setLevel(mapOptions);
-                mapOptions = this._setCenter(mapOptions);
+            itemInfo = this._setExtent(itemInfo);
+            var mapOptions = {};
+            mapOptions = this._setLevel(mapOptions);
+            mapOptions = this._setCenter(mapOptions);
             arcgisUtils.createMap(itemInfo, "mapDiv", {
                 mapOptions: mapOptions,
                 editable: false,
@@ -198,37 +255,40 @@ ready, declare, dom, Color, query, lang, array, domConstruct, registry, has, sni
 
             registry.byId("border_container").resize();
         },
-    _setLevel: function (options) {
-      var level = this.config.level;
-      //specify center and zoom if provided as url params 
-      if (level) {
-        options.zoom = level;
-      }
-      return options;
-    },
+        _setLevel: function (options) {
+            var level = this.config.level;
+            //specify center and zoom if provided as url params 
+            if (level) {
+                options.zoom = level;
+            }
+            return options;
+        },
 
-    _setCenter: function (options) {
-      var center = this.config.center;
-      if (center) {
-        var points = center.split(",");
-        if (points && points.length === 2) {
-          options.center = [parseFloat(points[0]), parseFloat(points[1])];
-        }
-      }
-      return options;
-    },
+        _setCenter: function (options) {
+            var center = this.config.center;
+            if (center) {
+                var points = center.split(",");
+                if (points && points.length === 2) {
+                    options.center = [parseFloat(points[0]), parseFloat(points[1])];
+                }
+            }
+            return options;
+        },
 
-    _setExtent: function (info) {
-      var e = this.config.extent;
-      //If a custom extent is set as a url parameter handle that before creating the map
-      if (e) {
-        var extArray = e.split(",");
-        var extLength = extArray.length;
-        if (extLength === 4) {
-          info.item.extent = [[parseFloat(extArray[0]), parseFloat(extArray[1])], [parseFloat(extArray[2]), parseFloat(extArray[3])]];
+        _setExtent: function (info) {
+            var e = this.config.extent;
+            //If a custom extent is set as a url parameter handle that before creating the map
+            if (e) {
+                var extArray = e.split(",");
+                var extLength = extArray.length;
+                if (extLength === 4) {
+                    info.item.extent = [
+                        [parseFloat(extArray[0]), parseFloat(extArray[1])],
+                        [parseFloat(extArray[2]), parseFloat(extArray[3])]
+                    ];
+                }
+            }
+            return info;
         }
-      }
-      return info;
-    }
     });
 });

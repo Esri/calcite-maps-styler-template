@@ -1,12 +1,11 @@
-/* Drawer */
-@import "template_mixin.scss";
+@import "_mixin";
 .top-bar {
   position: absolute;
   z-index: 36;
   top: 0;
   left: 0;
   width: 100%;
-  height: 34px;
+  height: 36px;
   color: $font-color-dark;
 }
 

@@ -28,6 +28,10 @@ define([], function() {
         "home": true,
         //Add the geocoder search box to the title area .
         "search": true,
+        // Add a legend to the upper right corner of the map 
+        "legend": false,
+        // When legendOpen is true the legend displays toggled open at startup
+        "legendOpen": false,
         "locationSearch": true,
         //When searchExtent is true the locator will prioritize results within the current map extent.
         "searchExtent": false,

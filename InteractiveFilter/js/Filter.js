@@ -149,9 +149,6 @@ declare, array, lang, dojo, number, dom, dojoQuery, domConstruct, domStyle, domC
         _applyDefinitionExpression: function (layer, defExp) {
             //Apply the filter
             if (layer.layerType && layer.layerType === "ArcGISStreamLayer") {
-                // on(layer, "filter-change", lang.hitch(this, function(){
-                //    console.log("Change");
-                // }));
                 layer.layerObject.setDefinitionExpression(defExp);
                 this._stopIndicator();
             } else if (layer.layerObject) { //Image Service, Stream layer or Feature Layer
@@ -216,7 +213,7 @@ declare, array, lang, dojo, number, dom, dojoQuery, domConstruct, domStyle, domC
                     }
                     if (index < input.parameters.length - 1) {
                         //insert an AND into the expression
-                        paramInputs += " <div> AND</div> ";
+                        paramInputs += " <div class='connector'> AND</div> ";
                     }
                     domConstruct.place(paramInputs, pcontent);
                 });
@@ -351,7 +348,7 @@ declare, array, lang, dojo, number, dom, dojoQuery, domConstruct, domStyle, domC
                         } else {
                             this._applyDefinitionExpression(layer, null);
                         }
-                        if(this.map.infoWindow.isShowing){
+                        if (this.map.infoWindow.isShowing) {
                             this.map.infoWindow.hide();
                         }
                     }));

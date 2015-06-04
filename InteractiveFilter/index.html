@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, user-scalable=no">
     <meta charset="utf-8">
     <!--Use protocol relative urls that way if the browser is viewing the page via HTTPS the js/css file will be requested using the HTTPS protocol-->
-    <link rel="stylesheet" href="//jsdev.arcgis.com/3.14/esri/css/calcite/calcite.css">
+    <link rel="stylesheet" href="http://js.arcgis.com/3.13/dijit/themes/claro/claro.css">
     <link rel="stylesheet"  href="//jsdev.arcgis.com/3.14/esri/css/esri.css">
     <!--Load any application specific styles-->
     <link rel="stylesheet" href="css/main.css">
@@ -14,7 +14,7 @@
       <link rel="stylesheet" href="css/ie.css"/>
     <![endif]-->
 </head>
-<body class="calcite app-loading">
+<body class="claro app-loading">
   <div class="loading-indicator">
     <div class="loading-message" id="loading_message"></div>
   </div>
@@ -25,10 +25,22 @@
         <div id="cp_center" class="content-pane-center">
             <div class="top-bar bg">
                 <i id="toggle_button" class="hamburger-button icon-menu fc"></i> 
-                <div id="title" class="top-bar-title"></div>
                 <div id="search" class="geocoder"></div>
+                <div id="title" class="top-bar-title"></div>
             </div>
-         <div id="mapDiv" dir="ltr"></div>
+         <div id="mapDiv" dir="ltr">
+             <div id="legendContainer" class="legend hide">
+                <div id="submenu" title="Show Legend" class="icon-LayerList mini-submenu hide">
+                </div>
+                <div id="header" class="legend legend-header hide">
+                      <!--Add legend text here if needed-->
+                      <span id="close-submenu" class="icon-cancel" title="Hide Legend"></span>
+                </div>
+                <div id="legend" class="legend legend-content hide">
+                  <div id="legendDiv"  class="legend-item"></div>
+                </div>        
+            </div>         
+         </div>
         </div>
     </div>
     <script type="text/javascript">

@@ -1,4 +1,4 @@
-@import "template_mixin.scss";
+@import "_mixin";
 .calcite label{
     margin-bottom:0 !important;
 }
@@ -83,6 +83,12 @@
 
 
 }
+.connector{
+  text-transform:lowercase;
+  font-style: italic;
+  padding-left:.5em;
+
+}
   #container.esriRtl {
     text-align: right;
   }
@@ -93,6 +99,8 @@
 
   .row input {
       width: 250px;
+      margin-top:.5em;
+      margin-bottom:.5em;
       @include respond-to(760){
         max-width:280px;
     }
