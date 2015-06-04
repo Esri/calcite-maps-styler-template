@@ -24,8 +24,8 @@ define({
         },
         webMapList: {
             owner: "Owner", // Appears in web-map list description panel when it is set to true
-            created: "Created", // Appears in web-map list description panel when it is set to true
-            modified: "Modified", // Appears in web-map list description panel when it is set to true
+            created: "Date created", // Appears in web-map list description panel when it is set to true
+            modified: "Date modified", // Appears in web-map list description panel when it is set to true
             description: "Description", // Appears in web-map list description panel when it is set to true
             snippet: "Summary", // Appears in web-map list description panel when it is set to true
             licenseInfo: "Access and use constraints", // Appears in web-map list description panel when it is set to true
@@ -34,7 +34,7 @@ define({
             numViews: "Number of views", // Appears in web-map list description panel when it is set to true
             avgRating: "Rating", // Appears in web-map list description panel when it is set to true
             noWebMapInGroup: "Configured group is invalid or no items have been shared with this group yet", // Appears when invalid group in configured or no web-map is available in that group
-            infoBtnToolTip: "Map Information" // Display tool-tip on command button to display description of web-map
+            infoBtnToolTip: "Map information" // Display tool-tip on command button to display description of web-map
         },
         applicationHeader: {
             signOutOption: "Sign Out", // Command button to sign-out from the application
@@ -42,31 +42,31 @@ define({
             showSelectedOption: "Show Selected", // Command button to show selected records in data-viewer
             showAllOption: "Show All", // Command button to show all the records in data-viewer
             clearSelectionOption: "Clear Selection", // Command button to clear selected records in data-viewer
-            zoomToSelectedOption: "Zoom To Selected", // Command button to zoom map to selected records
+            zoomToSelectedOption: "Zoom to Selected", // Command button to zoom map to selected records
             gridViewOption: "List View", // Command button to display list view
             mapViewOption: "Map View", // Command button to display map view
             gridMapViewOption: "Split View", // Command button to display split view
-            settingsBtnToolTip: "Selection Options", // Display tool-tip on command button to open a list of settings options
-            viewModeBtnToolTip: "View Options", // Display tool-tip on command button to open a list of view options
-            searchModeBtnToolTip: "Layer Search", // Display tool-tip on command button to open a dialog box for finding a feature
+            settingsBtnToolTip: "Selection options", // Display tool-tip on command button to open a list of settings options
+            viewModeBtnToolTip: "Display options", // Display tool-tip on command button to open a list of view options
+            searchModeBtnToolTip: "Search this layer", // Display tool-tip on command button to open a dialog box for finding a feature
             manualRefreshBtnToolTip: "Refresh", // Display tool-tip on command button to manually refresh the selected operational layer
-            confirmManualRefeshText: "All changes/selections will be lost", // Appears when user wants to do manual refresh
-            signInOption: "Sign in" // Appears when user has not signed in
+            confirmManualRefeshText: "All selections and unsaved changes will be discarded", // Appears when user wants to do manual refresh
+            signInOption: "Sign In" // Appears when user has not signed in
         },
         dataviewer: {
-            noIssuesReported: "No issues reported for this layer", // Appears when no issues are available in current extent
+            noIssuesReported: "No reports available", // Appears when no issues are available in current extent
             photoAttachmentHeader: "Attachments", // Appears when attachments are available for display in details tab
-            invalidSmallNumber: "Please enter valid integer value between -32768 and 32767", // Shown when invalid integer value is entered while editing in data-viewer
-            invalidNumber: "Please enter valid integer value between -2147483648 and 2147483647", // Shown when invalid integer value is entered while editing in data-viewer
-            invalidFloat: "Please enter valid floating point value between -3.4E38 and 1.2E38", // Shown when invalid floating value is entered while editing in data-viewer
-            invalidDouble: "Please enter valid double value between -2.2E308 and 1.8E308", // Shown when invalid double value is entered while editing in data-viewer
-            invalidString: "Please enter valid value", // Shown when user enters invalid string value
-            invalidDate: "Please enter valid date", // Shown when user enters invalid date value
-            invalidNumericRange: "Minimum value ${minValue} and Maximum value ${maxValue}", // Shown when user enters value which is out of range
+            invalidSmallNumber: "Please enter an integer ", // Shown when invalid integer value is entered while editing in data-viewer (valid integer value between -32768 and 32767)
+            invalidNumber: "Please enter an integer", // Shown when invalid integer value is entered while editing in data-viewer (valid integer value between -2147483648 and 2147483647)
+            invalidFloat: "Please enter a number", // Shown when invalid floating value is entered while editing in data-viewer (floating point value between -3.4E38 and 1.2E38)
+            invalidDouble: "Please enter a number", // Shown when invalid double value is entered while editing in data-viewer (double value between -2.2E308 and 1.8E308)
+            invalidString: "Please enter a value", // Shown when user enters invalid string value
+            invalidDate: "Please enter a valid date", // Shown when user enters invalid date value
+            invalidNumericRange: "Please enter a value between ${minValue} and ${maxValue}", // Shown when user enters value which is out of range
             moreInfolink: "Link", // Shown when value in field contains only URL.
             commentsText: "Comments", // Appears when comments are available for display in details tab
             noCommentsAvailable: "No comments available", // Appears when no comments are available
-            noFeatureGeometry: "Feature have no geometry to display" // Appears when user selects/activates a feature and geometry is available for that
+            noFeatureGeometry: "Feature cannot be displayed" // Appears when user selects/activates a feature and geometry is available for that
         },
         config: {
             configNotDefined: "No configuration defined" // Shown when there is an issue with config file
@@ -75,13 +75,13 @@ define({
             noResultsFound: "No results found" // Appears when user search for features and no feature is found
         },
         mapViewer: {
-            detailsBtnToolTip: "View details for a single activated feature", // Display tool-tip on command button to view details of selected feature
-            locationBtnToolTip: "View Map", // Display tool-tip on command button to view map panel
-            zoomInToolTip: "Zoom In", // Display tool-tip on command button to zoom in map
-            zoomOutToolTip: "Zoom Out" // Display tool-tip on command button to zoom out map
+            detailsBtnToolTip: "View more details for the active feature", // Display tool-tip on command button to view details of selected feature
+            locationBtnToolTip: "View map", // Display tool-tip on command button to view map panel
+            zoomInToolTip: "Zoom in", // Display tool-tip on command button to zoom in map
+            zoomOutToolTip: "Zoom out" // Display tool-tip on command button to zoom out map
         },
         signOutPage: {
-            signOutMessage: "You've been successfully signed out.", // Appears when user is successfully signed-out from application
+            signOutMessage: "You've been successfully signed out", // Appears when user is successfully signed-out from application
             reSignInMessage: "Click here to sign in" // Appears when user is signed-out from application and wants to sign-in again
         },
         preview: {

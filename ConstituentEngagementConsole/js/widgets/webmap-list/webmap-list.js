@@ -515,8 +515,9 @@ define([
                     this._selectWebMapItem(webMapId);
                     operationalLayerId = domAttr.get(node, "operationalLayerID");
                     this._createMap(webMapId, this.mapDivID).then(lang.hitch(this, function (evt) {
+                        var obj;
                         this.lastSelectedWebMapExtent = evt.map.extent;
-                        var obj = {
+                        obj = {
                             "webMapId": webMapId,
                             "operationalLayerId": operationalLayerId,
                             "operationalLayerDetails": operationalLayerDetails,
@@ -589,6 +590,7 @@ define([
                     this.setDefaultHeightOfContainers();
                     this._selectWebMapItem(webMapId);
                     this._createMap(webMapId, this.mapDivID).then(lang.hitch(this, function (response) {
+                        var obj;
                         this.lastSelectedWebMapExtent = response.map.extent;
                         this.lastSelectedWebMapItemInfo = response.itemInfo;
                         obj = {

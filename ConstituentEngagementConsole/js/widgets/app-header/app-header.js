@@ -113,9 +113,10 @@ define([
             }
             applicationIcon = domAttr.get(this.applicationHeaderIcon, "src");
             // load application shortcut icons
-            this._loadIcons("apple-touch-icon-precomposed", applicationIcon);
-            this._loadIcons("apple-touch-icon", applicationIcon);
+
             this._setApplicationShortcutIcon();
+            this._loadIcons("apple-touch-icon-precomposed", applicationIcon);
+
             // if user logs in than display application header with different controls like setting, view, etc...
             // if user clicks cancel button than hide different and display sign-in button
             if (this.appConfig.logInDetails) {
@@ -204,22 +205,15 @@ define([
 
         /**
         * This function is used to show/hide setting options
-        * @param{boolean} to hide clear selection option
         * @memberOf widgets/app-header/app-header
         */
-        toggleSelectionViewOption: function (hideClearSelection) {
+        toggleSelectionViewOption: function () {
             if (domClass.contains(this.esriCTShowAll, "esriCTVisible")) {
                 domClass.replace(this.esriCTShowAll, "esriCTHidden", "esriCTVisible");
                 domClass.replace(this.esriCTShowSelected, "esriCTVisible", "esriCTHidden");
-                if (!hideClearSelection) {
-                    domClass.replace(this.esriCTClearSelection, "esriCTVisible", "esriCTHidden");
-                }
             } else {
                 domClass.replace(this.esriCTShowAll, "esriCTVisible", "esriCTHidden");
                 domClass.replace(this.esriCTShowSelected, "esriCTHidden", "esriCTVisible");
-                if (hideClearSelection) {
-                    domClass.replace(this.esriCTClearSelection, "esriCTHidden", "esriCTVisible");
-                }
             }
         },
 
@@ -228,9 +222,7 @@ define([
         * @memberOf widgets/app-header/app-header
         */
         _setApplicationShortcutIcon: function () {
-            if (this.appConfig.applicationFavicon && lang.trim(this.appConfig.applicationFavicon).length !== 0) {
-                this._loadIcons("shortcut icon", this.appConfig.applicationFavicon);
-            }
+            this._loadIcons("shortcut icon", this.applicationHeaderIcon.src);
         },
 
         /**

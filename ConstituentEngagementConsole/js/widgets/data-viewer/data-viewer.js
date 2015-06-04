@@ -113,6 +113,7 @@ define([
         _detailsHelper: null, // to store object of details-helper
         _isCheckBoxClicked: false, // keeps track whether checkbox is clicked or row is clicked
         _isManualRefreshClicked: false, // keeps track whether manual refresh is clicked or not
+        _isRowFound: false, // keeps track whether row is available in grid when user selects feature from map
         objectIdColumnNumber: null, // to store column number which contains object id
         isOrientationChangedInListView: false, // to keep track whether orientation is changed in list view or not
         isMapViewClicked: false, // keep track whether map view option is clicked or not
@@ -120,6 +121,7 @@ define([
         isDetailsTabClicked: false, // keep track whether details tab is clicked or not,
         isShowSelectedClicked: false, // keep track whether show selected option is clicked or not
         noResultFound: false, // keep track that after search results were found or not
+        isLayerRefreshed: false, // keep track whether layer is refreshed after editing is done
 
         /** WIDGET INSTANTIATION **/
 
@@ -172,7 +174,7 @@ define([
                 // If a new operational layer is selected hide show selected option
                 if (!domClass.contains(query(".esriCTShowSelected")[0], "esriCTVisible")) {
                     this.isShowSelectedClicked = false;
-                    this.toggleSelectionViewOption(false);
+                    this.toggleSelectionViewOption();
                 }
                 this._selectedOperationalLayer = this.map.getLayer(this.selectedOperationalLayerID);
                 // Add a graphic layer on a map which used in highlighting feature
@@ -676,7 +678,7 @@ define([
                 this._clearActiveRowData();
                 this.showLocationTab();
                 this.isDetailsTabClicked = false;
-                this.toggleSelectionViewOption(true);
+                this.toggleSelectionViewOption();
                 this.isShowSelectedClicked = true;
                 if (this.isMapViewClicked) {
                     this._isShowSelectedClickedInMapView = true;
@@ -694,7 +696,7 @@ define([
         */
         showAllRecords: function () {
             var i;
-            this.toggleSelectionViewOption(false);
+            this.toggleSelectionViewOption();
             this._showAllFeaturesInDataViewer();
             // After showing all the records in data-viewer, enabled/disable search functionality depending on layer search capability
             if (this.itemInfo.itemData.applicationProperties.viewing.search && this.itemInfo.itemData.applicationProperties.viewing.search.enabled) {
@@ -714,17 +716,22 @@ define([
         * @memberOf widgets/data-viewer/data-viewer
         */
         clearSelection: function () {
-            // If user is in show selected mode than do not do clear selection.
-            if (!this.isShowSelectedClicked) {
-                $(".esriCTRowActivated").removeClass("esriCTRowActivated");
-                this._selectRowGraphicsLayer.clear();
-                this._activeRowGraphicsLayer.clear();
-                // If user is in edit mode and clicks clear selection than remove all the edited controls
-                this._removeControlsFromPreviousRow();
-                this._unCheckAllCheckboxes();
-                this.showLocationTab();
-                this.isDetailsTabClicked = false;
-                this._resetDetailsTab();
+            this.appUtils.showLoadingIndicator();
+            $(".esriCTRowActivated").removeClass("esriCTRowActivated");
+            this._selectRowGraphicsLayer.clear();
+            this._activeRowGraphicsLayer.clear();
+            // If user is in edit mode and clicks clear selection than remove all the edited controls
+            this.removeControlsFromPreviousRow();
+            this._unCheckAllCheckboxes();
+            this.showLocationTab();
+            this.isDetailsTabClicked = false;
+            this._resetDetailsTab();
+            this.resizeMap();
+            if (this.isShowSelectedClicked) {
+                this.isShowSelectedClicked = false;
+                this.createDataViewerUI(false);
+            } else {
+                this.appUtils.hideLoadingIndicator();
             }
         },
 
@@ -736,7 +743,7 @@ define([
             $(".esriCTRowActivated").removeClass("esriCTRowActivated");
             this._activeRowGraphicsLayer.clear();
             this._resetDetailsTab();
-            this._removeControlsFromPreviousRow();
+            this.removeControlsFromPreviousRow();
         },
 
         /**
@@ -781,8 +788,8 @@ define([
         * @param{boolean} to hide clear selection option or not
         * @memberOf widgets/data-viewer/data-viewer
         */
-        toggleSelectionViewOption: function (hideClearSelection) {
-            return hideClearSelection;
+        toggleSelectionViewOption: function () {
+            return;
         },
 
         /**
@@ -930,7 +937,7 @@ define([
                 $(".esriCTSearchBox")[0].value = lang.trim($(".esriCTSearchBox")[0].value);
                 this.clearSelection();
                 // Before searching clear edit mode
-                this._removeControlsFromPreviousRow();
+                this.removeControlsFromPreviousRow();
                 // Search records based on the value entered by the user
                 this._searchData();
             } else {
@@ -966,7 +973,7 @@ define([
         * This function is used to display search data
         * @memberOf widgets/data-viewer/data-viewer
         */
-        _displaySearchData: function () {
+        displaySearchData: function () {
             var filteredIconNode;
             // If no records are found after search then display all existing records
             // And display message of no result
@@ -1228,7 +1235,7 @@ define([
                 // To show display tab
                 this._detailsHelper.displayDetailsTab = lang.hitch(this, this.setAndDisplayDetailsTab);
                 // If user is in edit mode than clear it first and switch it to details mode
-                this._detailsHelper.removeControlsFromPreviousRow = lang.hitch(this, this._removeControlsFromPreviousRow);
+                this._detailsHelper.removeControlsFromPreviousRow = lang.hitch(this, this.removeControlsFromPreviousRow);
                 // Check if numbers of records are selected properly to switch to details tab
                 this._detailsHelper.validateDetailsData();
             }
@@ -1324,10 +1331,8 @@ define([
         */
         changeDetailsButtonMode: function () {
             if (this._activeRowGraphicsLayer && this._activeRowGraphicsLayer.graphics && this._activeRowGraphicsLayer.graphics.length === 1) {
-                if (!this._isCheckBoxClicked) {
-                    domClass.remove("detailsBtnDiv", "esriCTDetailsBtnDisabled");
-                    domClass.add("detailsBtnDiv", "esriCTDetailsButton");
-                }
+                domClass.remove("detailsBtnDiv", "esriCTDetailsBtnDisabled");
+                domClass.add("detailsBtnDiv", "esriCTDetailsButton");
             } else {
                 domClass.remove("detailsBtnDiv", "esriCTDetailsButton");
                 domClass.add("detailsBtnDiv", "esriCTDetailsBtnDisabled");
@@ -1344,8 +1349,10 @@ define([
         * @memberOf widgets/data-viewer/data-viewer
         */
         _changeSelectionOptionMode: function (toggle) {
-            var settingsButton, settingsOption;
+            var settingsButton, settingsOption, showAllOption, showSelectedOption;
             settingsButton = query(".esriCTSettingsButton")[0];
+            showAllOption = query(".esriCTShowAll")[0];
+            showSelectedOption = query(".esriCTShowSelected")[0];
             if (!settingsButton) {
                 settingsButton = query(".esriCTSettingsButtonDisabled")[0];
             }
@@ -1362,6 +1369,8 @@ define([
                 domClass.add(settingsOption, "esriCTHidden");
                 domClass.remove(settingsOption, "esriCTSettingsButton");
                 domClass.add(settingsButton, "esriCTSettingsButtonDisabled");
+                domClass.replace(showAllOption, "esriCTHidden", "esriCTVisible");
+                domClass.replace(showSelectedOption, "esriCTVisible", "esriCTHidden");
             }
         },
 
@@ -1691,7 +1700,7 @@ define([
         * This function is used to remove controls from the row when user clicks on other row or user de-selects it etc...
         * @memberOf widgets/data-viewer/data-viewer
         */
-        _removeControlsFromPreviousRow: function () {
+        removeControlsFromPreviousRow: function () {
             var i, className, selectedIndex, value, date, dateFormat;
             this._existingRowData = null;
             if (this._lastSelectedRow) {
@@ -1756,7 +1765,12 @@ define([
                             format = this._displayColumn[j].format;
                             type = this._displayColumn[j].type;
                             length = this._displayColumn[j].length;
-                            value = featureSet.features[i].attributes[fieldName];
+                            if (typeof (featureSet.features[i].attributes[fieldName]) === "string") {
+                                value = featureSet.features[i].attributes[fieldName];
+                                value = value.replace(/(\r\n|\n|\r)/gm, " ");
+                            } else {
+                                value = featureSet.features[i].attributes[fieldName];
+                            }
                             dateFormat = this.appUtils.getDateFormat(format);
                             isFieldEditable = this._displayColumn[j].isFieldEditable;
                             switch (type) {
@@ -1882,34 +1896,36 @@ define([
         * @memberOf widgets/data-viewer/data-viewer
         */
         highlightRowOnFeatureClick: function (objectId, selectRow) {
-            setTimeout(lang.hitch(this, function () {
-                var objectIDFieldName, count, objectIdColumnNumber, rows, i, rowNumber;
-                count = 0;
-                objectIDFieldName = this._selectedOperationalLayer.objectIdField;
-                // Track the object ID column number and fetched value from it
-                $('#dataViewerTable th').each(function () {
-                    if ($(this)[0].attributes.fieldName.value === objectIDFieldName) {
-                        objectIdColumnNumber = count;
-                    }
-                    count++;
-                });
-                rows = $('#dataViewerTable tr');
-                for (i = 0; i < rows.length; i++) {
-                    if (parseInt($(rows[i]).find('td').eq(objectIdColumnNumber).text(), 10) === objectId) {
-                        rowNumber = i;
-                        if (selectRow) {
-                            this._toggleCheckBox(true, rows[i]);
-                        } else {
-                            $(rows[i]).addClass("esriCTRowActivated");
-                        }
+            var objectIDFieldName, count, objectIdColumnNumber, rows, i, rowNumber;
+            this._isRowFound = false;
+            count = 0;
+            objectIDFieldName = this._selectedOperationalLayer.objectIdField;
+            // Track the object ID column number and fetched value from it
+            $('#dataViewerTable th').each(function () {
+                if ($(this)[0].attributes.fieldName.value === objectIDFieldName) {
+                    objectIdColumnNumber = count;
+                }
+                count++;
+            });
+            rows = $('#dataViewerTable tr');
+            for (i = 0; i < rows.length; i++) {
+                if (parseInt($(rows[i]).find('td').eq(objectIdColumnNumber).text(), 10) === objectId) {
+                    this._isRowFound = true;
+                    rowNumber = i;
+                    if (selectRow) {
+                        this._toggleCheckBox(true, rows[i]);
+                    } else {
+                        $(rows[i]).addClass("esriCTRowActivated");
                     }
                 }
-                if (!selectRow) {
-                    this._scrollToActivatedFeature(rowNumber);
-                } else {
+            }
+            if (!selectRow) {
+                this._scrollToActivatedFeature(rowNumber);
+            } else {
+                if (this._isRowFound) {
                     this.appUtils.hideLoadingIndicator();
                 }
-            }), 100);
+            }
         },
 
         /**
@@ -1958,7 +1974,20 @@ define([
                 if (parseInt($(rows[i]).find('td').eq(objectIdColumnNumber).text(), 10) === objectId) {
                     this._toggleCheckBox(false, rows[i]);
                     $(rows[i]).removeClass("esriCTRowActivated");
+                    if (this.isShowSelectedClicked) {
+                        this._removeRowFromDataViewer(rows[i]);
+                    }
+                    break;
                 }
+            }
+            if ((this._selectRowGraphicsLayer.graphics.length === 0) && (this.isShowSelectedClicked)) {
+                this.isShowSelectedClicked = false;
+                this.isDetailsTabClicked = false;
+                this._activeRowGraphicsLayer.clear();
+                this.showLocationTab();
+                this.createDataViewerUI(false);
+            } else {
+                this.appUtils.hideLoadingIndicator();
             }
         },
 
@@ -2015,6 +2044,9 @@ define([
                 this._getSelectedLayerOnTop();
                 this._selectRowGraphicsLayer.add(this._getHighLightSymbol(featureSet.features[0], false));
                 this.highlightRowOnFeatureClick(objectId, true);
+                if (!this._isRowFound) {
+                    this.createDataViewerUI(false);
+                }
             }), lang.hitch(this, function (err) {
                 this.appUtils.hideLoadingIndicator();
             }));
@@ -2059,19 +2091,16 @@ define([
         * @memberOf widgets/data-viewer/data-viewer
         */
         onFeatureClick: function (evt) {
-            if (!this.isShowSelectedClicked) {
-                this.appUtils.showLoadingIndicator();
-                this._removeControlsFromPreviousRow();
-                if (this._isCurrentFeatureSelected(evt.graphic)) {
-                    this._clearSelectedFeaturesOfMap(evt.graphic.attributes[this._selectedOperationalLayer.objectIdField]);
-                    this.appUtils.hideLoadingIndicator();
+            this.appUtils.showLoadingIndicator();
+            this.removeControlsFromPreviousRow();
+            if (this._isCurrentFeatureSelected(evt.graphic)) {
+                this._clearSelectedFeaturesOfMap(evt.graphic.attributes[this._selectedOperationalLayer.objectIdField]);
+            } else {
+                if (this._isCurrentFeatureActivated(evt.graphic)) {
+                    this._selectFeatureOnMapClick(evt.graphic);
                 } else {
-                    if (this._isCurrentFeatureActivated(evt.graphic)) {
-                        this._selectFeatureOnMapClick(evt.graphic);
-                    } else {
-                        this._clearActiveRowData();
-                        this._activateFeatureOnMapClick(evt.graphic);
-                    }
+                    this._clearActiveRowData();
+                    this._activateFeatureOnMapClick(evt.graphic);
                 }
             }
         },
@@ -2100,7 +2129,6 @@ define([
                 }
             }
             this._removeHighlightedRowOnFeatureClick(objectId);
-            this.appUtils.hideLoadingIndicator();
         },
 
         /**
@@ -2109,7 +2137,7 @@ define([
         * @memberOf widgets/data-viewer/data-viewer
         */
         _removeHighLightedFeatureOnRowClick: function (objectId) {
-            var i, objectID;
+            var i, objectID, activatedRowArr;
             if (this._isCheckBoxClicked) {
                 for (i = 0; i < this._selectRowGraphicsLayer.graphics.length; i++) {
                     objectID = this._selectRowGraphicsLayer.graphics[i].attributes[this._selectedOperationalLayer.objectIdField];
@@ -2117,6 +2145,13 @@ define([
                         this._selectRowGraphicsLayer.remove(this._selectRowGraphicsLayer.graphics[i]);
                         break;
                     }
+                }
+                if (this.isShowSelectedClicked) {
+                    if (domClass.contains(this._lastSelectedRow.currentTarget, "esriCTRowActivated")) {
+                        this._activeRowGraphicsLayer.clear();
+                    }
+                    this._isCheckBoxClicked = false;
+                    this._removeRowFromDataViewer(this._lastSelectedRow.currentTarget);
                 }
             } else {
                 for (i = 0; i < this._activeRowGraphicsLayer.graphics.length; i++) {
@@ -2127,7 +2162,30 @@ define([
                     }
                 }
             }
-            this.appUtils.hideLoadingIndicator();
+            activatedRowArr = [];
+            activatedRowArr = $(".esriCTRowActivated");
+            if ((this._selectRowGraphicsLayer.graphics.length === 0) && (this.isShowSelectedClicked)) {
+                this.isShowSelectedClicked = false;
+                this.isDetailsTabClicked = false;
+                this._activeRowGraphicsLayer.clear();
+                this.showLocationTab();
+                this.createDataViewerUI(false);
+            } else if ((activatedRowArr.length === 0) && (this.isDetailsTabClicked) && (this.isShowSelectedClicked)) {
+                this.isDetailsTabClicked = false;
+                this._activeRowGraphicsLayer.clear();
+                this.showLocationTab();
+                this.appUtils.hideLoadingIndicator();
+            } else {
+                this.appUtils.hideLoadingIndicator();
+            }
+        },
+
+        /**
+        * This function is used to remove row from data-viewer when user un-selects checkbox in show selected mode
+        * @memberOf widgets/data-viewer/data-viewer
+        */
+        _removeRowFromDataViewer: function (rowObject) {
+            this._dataViewerTable.row(rowObject).remove().draw(false);
         },
 
         /**
@@ -2148,52 +2206,30 @@ define([
             // If a new object is not created than the previous value of feature appears and not the updated one.
             featureLayer = new FeatureLayer(this._selectedOperationalLayer.url);
             featureLayer.queryFeatures(featureQuery, lang.hitch(this, function (featureSet) {
-                // if it is point feature than add selected feature on graphics layer
-                // if it is other than point feature than select feature using selectFeatures method & FeatureLayer.SELECTION_ADD option
-                if (this._isPointLayer) {
-                    if (this._isCheckBoxClicked) {
-                        this._getSelectedLayerOnTop();
-                        if (featureSet.features[0].geometry) {
-                            this._selectRowGraphicsLayer.add(this._getHighLightSymbol(featureSet.features[0], false));
-                        } else {
-                            this._selectRowGraphicsLayer.add(featureSet.features[0]);
-                            this.appUtils.showMessage(this.appConfig.i18n.dataviewer.noFeatureGeometry);
-                        }
+                if (this._isCheckBoxClicked) {
+                    this._getSelectedLayerOnTop();
+                    if (featureSet.features[0].geometry) {
+                        this._selectRowGraphicsLayer.add(this._getHighLightSymbol(featureSet.features[0], false));
                     } else {
-                        if (this._activeRowGraphicsLayer) {
-                            this._activeRowGraphicsLayer.clear();
-                        }
-                        this._getActivatedLayerOnTop();
-                        if (featureSet.features[0].geometry) {
-                            this._activeRowGraphicsLayer.add(this._getHighLightSymbol(featureSet.features[0], true));
+                        this._selectRowGraphicsLayer.add(featureSet.features[0]);
+                        this.appUtils.showMessage(this.appConfig.i18n.dataviewer.noFeatureGeometry);
+                    }
+                } else {
+                    if (this._activeRowGraphicsLayer) {
+                        this._activeRowGraphicsLayer.clear();
+                    }
+                    this._getActivatedLayerOnTop();
+                    if (featureSet.features[0].geometry) {
+                        this._activeRowGraphicsLayer.add(this._getHighLightSymbol(featureSet.features[0], true));
+                        if (this._isPointLayer) {
                             this.map.setLevel(this.appConfig.zoomLevel);
                             this.map.centerAt(featureSet.features[0].geometry);
                         } else {
-                            this._activeRowGraphicsLayer.add(featureSet.features[0]);
-                            this.appUtils.showMessage(this.appConfig.i18n.dataviewer.noFeatureGeometry);
-                        }
-                    }
-                } else {
-                    if (this._isCheckBoxClicked) {
-                        this._getSelectedLayerOnTop();
-                        if (featureSet.features[0].geometry) {
-                            this._selectRowGraphicsLayer.add(this._getHighLightSymbol(featureSet.features[0], false));
-                        } else {
-                            this._selectRowGraphicsLayer.add(featureSet.features[0]);
-                            this.appUtils.showMessage(this.appConfig.i18n.dataviewer.noFeatureGeometry);
+                            this.map.setExtent(featureSet.features[0].geometry.getExtent(), true);
                         }
                     } else {
-                        if (this._activeRowGraphicsLayer) {
-                            this._activeRowGraphicsLayer.clear();
-                        }
-                        this._getActivatedLayerOnTop();
-                        if (featureSet.features[0].geometry) {
-                            this._activeRowGraphicsLayer.add(this._getHighLightSymbol(featureSet.features[0], true));
-                            this.map.setExtent(featureSet.features[0].geometry.getExtent(), true);
-                        } else {
-                            this._activeRowGraphicsLayer.add(featureSet.features[0]);
-                            this.appUtils.showMessage(this.appConfig.i18n.dataviewer.noFeatureGeometry);
-                        }
+                        this._activeRowGraphicsLayer.add(featureSet.features[0]);
+                        this.appUtils.showMessage(this.appConfig.i18n.dataviewer.noFeatureGeometry);
                     }
                 }
                 // if details tab is displayed than display fields of feature in it
@@ -2251,10 +2287,11 @@ define([
         _onRowClick: function () {
             $('#dataViewerTable tbody').on('click', 'tr', lang.hitch(this, function (evt) {
                 event.stop(evt);
-                this._featureObjectID = this._fetchObjectID(evt.currentTarget);
+                this.appUtils.showLoadingIndicator();
                 // Do not perform any operation if it is in show selected mode
-                if ((!this.isShowSelectedClicked) && (!this._isTextInputInFocus) && (!this._isDropDownClicked) && (!this._isDateTextInputInFocus)) {
+                if ((!this._isTextInputInFocus) && (!this._isDropDownClicked) && (!this._isDateTextInputInFocus)) {
                     this.appUtils.showLoadingIndicator();
+                    this._featureObjectID = this._fetchObjectID(evt.currentTarget);
                     this._isCheckBoxClicked = false;
                     if (evt.target.tagName === "LABEL") {
                         this._isCheckBoxClicked = true;
@@ -2263,12 +2300,12 @@ define([
                             this._isCheckBoxChecked = true;
                         }
                         if ((this._isCheckBoxClicked) && (!this._isCheckBoxChecked)) {
-                            this._removeControlsFromPreviousRow();
+                            this.removeControlsFromPreviousRow();
                             this._lastSelectedRow = evt;
                             this._toggleCheckBox(true, this._lastSelectedRow.currentTarget);
                             this._highLightFeatureOnRowClick(this._featureObjectID);
                         } else {
-                            this._removeControlsFromPreviousRow();
+                            this.removeControlsFromPreviousRow();
                             this._lastSelectedRow = evt;
                             this._toggleCheckBox(false, this._lastSelectedRow.currentTarget);
                             this._removeHighLightedFeatureOnRowClick(this._featureObjectID);
@@ -2279,7 +2316,7 @@ define([
                                 domClass.remove(evt.currentTarget, "esriCTRowActivated");
                                 this._clearActiveRowData();
                                 this._resetDetailsTab();
-                                this._removeControlsFromPreviousRow();
+                                this.removeControlsFromPreviousRow();
                                 this._lastSelectedRow = evt;
                                 this._removeHighLightedFeatureOnRowClick(this._featureObjectID);
                             } else {
@@ -2288,12 +2325,14 @@ define([
                         } else {
                             this._clearActiveRowData();
                             this._resetDetailsTab();
-                            this._removeControlsFromPreviousRow();
+                            this.removeControlsFromPreviousRow();
                             this._lastSelectedRow = evt;
                             domClass.add(evt.currentTarget, "esriCTRowActivated");
                             this._highLightFeatureOnRowClick(this._featureObjectID);
                         }
                     }
+                } else {
+                    this.appUtils.hideLoadingIndicator();
                 }
             }));
         },
@@ -2490,8 +2529,10 @@ define([
                                         this._updateDependentFieldControls();
                                     }
                                     // Refresh layer once its value gets updated
+                                    this.isLayerRefreshed = true;
                                     this.map.getLayer(this.selectedOperationalLayerID).refresh();
                                     this._updateFieldInActivatedFeaturesList(field);
+                                    this._updateFieldInSelectedFeaturesList(field);
                                     this.appUtils.hideLoadingIndicator();
                                 } else {
                                     // If update fails then retain its old value
@@ -2525,18 +2566,34 @@ define([
         },
 
         /**
-        * This function is used to update field in selected features list
+        * This function is used to update field in activated features list
         * @memberOf widgets/data-viewer/data-viewer
         */
         _updateFieldInActivatedFeaturesList: function (field) {
             var i, objectID, updatedObjectID;
-            // If some features are selected and updated after that, so it also needs to be updated in the selected feature record list
-            // Update value in selected features records containing point geometry
+            // If some features are selected and updated after that, so it also needs to be updated in the activated feature record list
             updatedObjectID = this._updatedGraphic.attributes[this._selectedOperationalLayer.objectIdField];
             for (i = 0; i < this._activeRowGraphicsLayer.graphics.length; i++) {
                 objectID = this._activeRowGraphicsLayer.graphics[i].attributes[this._selectedOperationalLayer.objectIdField];
                 if (objectID === updatedObjectID) {
                     this._activeRowGraphicsLayer.graphics[i].attributes[field] = this._updatedGraphic.attributes[field];
+                    break;
+                }
+            }
+        },
+
+        /**
+        * This function is used to update field in selected features list
+        * @memberOf widgets/data-viewer/data-viewer
+        */
+        _updateFieldInSelectedFeaturesList: function (field) {
+            var i, objectID, updatedObjectID;
+            // If some features are selected and updated after that, so it also needs to be updated in the selected feature record list
+            updatedObjectID = this._updatedGraphic.attributes[this._selectedOperationalLayer.objectIdField];
+            for (i = 0; i < this._selectRowGraphicsLayer.graphics.length; i++) {
+                objectID = this._selectRowGraphicsLayer.graphics[i].attributes[this._selectedOperationalLayer.objectIdField];
+                if (objectID === updatedObjectID) {
+                    this._selectRowGraphicsLayer.graphics[i].attributes[field] = this._updatedGraphic.attributes[field];
                     break;
                 }
             }
@@ -2822,15 +2879,17 @@ define([
         * @memberOf widgets/data-viewer/data-viewer
         */
         _doManualRefresh: function () {
-            this._isManualRefreshClicked = true;
             this.appUtils.showLoadingIndicator();
+            this._isManualRefreshClicked = true;
+            this.isShowSelectedClicked = false;
+            this.isLayerRefreshed = false;
             var extentDeferred = new Deferred();
             extentDeferred = this.map.setExtent(this.lastSelectedWebMapExtent, true);
             extentDeferred.then(lang.hitch(this, function () {
                 var zoomLevelDeferred = new Deferred();
                 zoomLevelDeferred = this.map.setZoom(this.lastMapZoomLevel);
                 zoomLevelDeferred.then(lang.hitch(this, function () {
-                    this._removeControlsFromPreviousRow();
+                    this.removeControlsFromPreviousRow();
                     this._newDefinitionExpression = this._existingDefinitionExpression;
                     this._resetDefinitionExpression();
                 }));
@@ -2847,44 +2906,88 @@ define([
         * of highlighting point symbol with cross-hair. Other than point geometry like polygon, polyline, etc...
         * selectFeatures method of feature layer is used which has the capability of highlighting it with cyan color
         * @param{object} selected feature which needs to be highlighted
+        * @param{boolean} whether feature is to be selected/activated
         * @memberOf widgets/data-viewer/data-viewer
         */
         _getHighLightSymbol: function (graphic, activeRow) {
-            var i, symbol, point, graphics, symbolWidth, symbolFillColor, height, width, size, isSymbolFound, graphicInfoValue, layerInfoValue, polyline, polygon;
-            isSymbolFound = false;
             // If feature geometry is of type point, add a crosshair symbol
             // If feature geometry is of type polyline, highlight the line
             // If feature geometry is of type polygon, highlight the boundary of the polygon
             switch (graphic.geometry.type) {
             case "point":
-                if (activeRow) {
-                    symbol = new SimpleMarkerSymbol(SimpleMarkerSymbol.STYLE_SQUARE, null, new SimpleLineSymbol(SimpleLineSymbol.STYLE_SOLID, new Color(this.appConfig.activeRow), 3));
-                } else {
-                    symbol = new SimpleMarkerSymbol(SimpleMarkerSymbol.STYLE_SQUARE, null, new SimpleLineSymbol(SimpleLineSymbol.STYLE_SOLID, new Color([0, 255, 255, 1]), 3));
-                }
-                symbol.setColor(null);
-                symbol.size = 30; //set default Symbol size which will be used in case symbol not found.
+                return this._getPointSymbol(graphic, activeRow);
+            case "polyline":
+                return this._getPolyLineSymbol(graphic, activeRow);
+            case "polygon":
+                return this._getPolygonSymbol(graphic, activeRow);
+            }
+        },
+
+        /**
+        * This function is used to get symbol for point geometry
+        * @param{object} selected feature which needs to be highlighted
+        * @param{boolean} whether feature is to be selected/activated
+        * @memberOf widgets/data-viewer/data-viewer
+        */
+        _getPointSymbol: function (graphic, activeRow) {
+            var symbol, isSymbolFound, graphics, point, graphicInfoValue, layerInfoValue, i;
+            isSymbolFound = false;
+            if (activeRow) {
+                symbol = new SimpleMarkerSymbol(SimpleMarkerSymbol.STYLE_SQUARE, null, new SimpleLineSymbol(SimpleLineSymbol.STYLE_SOLID, new Color(this.appConfig.activeRow), 3));
+            } else {
+                symbol = new SimpleMarkerSymbol(SimpleMarkerSymbol.STYLE_SQUARE, null, new SimpleLineSymbol(SimpleLineSymbol.STYLE_SOLID, new Color([0, 255, 255, 1]), 3));
+            }
+            symbol.setColor(null);
+            symbol.size = 30; //set default Symbol size which will be used in case symbol not found.
+            //check if layer is valid and have valid renderer object then only check for other symbol properties
+            if (this._selectedOperationalLayer && this._selectedOperationalLayer.renderer) {
                 if (this._selectedOperationalLayer.renderer.symbol) {
                     isSymbolFound = true;
-                    if (this._selectedOperationalLayer.renderer.symbol.hasOwnProperty("height") && this._selectedOperationalLayer.renderer.symbol.hasOwnProperty("width")) {
-                        height = this._selectedOperationalLayer.renderer.symbol.height;
-                        width = this._selectedOperationalLayer.renderer.symbol.width;
-                        // To display cross hair properly around feature its size needs to be calculated
-                        size = (height > width) ? height : width;
-                        size = size + 10;
-                        symbol.size = size;
-                    }
-                    if (this._selectedOperationalLayer.renderer.symbol.hasOwnProperty("size")) {
-                        if (!size || size < this._selectedOperationalLayer.renderer.symbol.size) {
-                            symbol.size = this._selectedOperationalLayer.renderer.symbol.size + 10;
+                    symbol = this._updatePointSymbolProperties(symbol, this._selectedOperationalLayer.renderer.symbol);
+                } else if (this._selectedOperationalLayer.renderer.infos && (this._selectedOperationalLayer.renderer.infos.length > 0)) {
+                    for (i = 0; i < this._selectedOperationalLayer.renderer.infos.length; i++) {
+                        if (this._selectedOperationalLayer.typeIdField) {
+                            graphicInfoValue = graphic.attributes[this._selectedOperationalLayer.typeIdField];
+                        } else if (this._selectedOperationalLayer.renderer.attributeField) {
+                            graphicInfoValue = graphic.attributes[this._selectedOperationalLayer.renderer.attributeField];
+                        }
+                        layerInfoValue = this._selectedOperationalLayer.renderer.infos[i].value;
+                        // To get properties of symbol when infos contains other than class break renderer.
+                        if (graphicInfoValue !== undefined && graphicInfoValue !== null && graphicInfoValue !== "" && layerInfoValue !== undefined && layerInfoValue !== null && layerInfoValue !== "") {
+                            if (graphicInfoValue.toString() === layerInfoValue.toString()) {
+                                isSymbolFound = true;
+                                symbol = this._updatePointSymbolProperties(symbol, this._selectedOperationalLayer.renderer.infos[i].symbol);
+                            }
                         }
                     }
-                    if (this._selectedOperationalLayer.renderer.symbol.hasOwnProperty("xoffset")) {
-                        symbol.xoffset = this._selectedOperationalLayer.renderer.symbol.xoffset;
+                    if (!isSymbolFound) {
+                        if (this._selectedOperationalLayer.renderer.defaultSymbol) {
+                            isSymbolFound = true;
+                            symbol = this._updatePointSymbolProperties(symbol, this._selectedOperationalLayer.renderer.defaultSymbol);
+                        }
                     }
-                    if (this._selectedOperationalLayer.renderer.symbol.hasOwnProperty("yoffset")) {
-                        symbol.yoffset = this._selectedOperationalLayer.renderer.symbol.yoffset;
-                    }
+                }
+            }
+            point = new Point(graphic.geometry.x, graphic.geometry.y, new SpatialReference({
+                wkid: graphic.geometry.spatialReference.wkid
+            }));
+            graphics = new Graphic(point, symbol, graphic.attributes);
+            return graphics;
+        },
+
+        /**
+        * This function is used to get symbol for polyline geometry
+        * @param{object} selected feature which needs to be highlighted
+        * @param{boolean} whether feature is to be selected/activated
+        * @memberOf widgets/data-viewer/data-viewer
+        */
+        _getPolyLineSymbol: function (graphic, activeRow) {
+            var symbol, graphics, polyline, symbolWidth, graphicInfoValue, layerInfoValue, i;
+            symbolWidth = 5; // default line width
+            //check if layer is valid and have valid renderer object then only check for other  symbol properties
+            if (this._selectedOperationalLayer && this._selectedOperationalLayer.renderer) {
+                if (this._selectedOperationalLayer.renderer.symbol && this._selectedOperationalLayer.renderer.symbol.hasOwnProperty("width")) {
+                    symbolWidth = this._selectedOperationalLayer.renderer.symbol.width;
                 } else if ((this._selectedOperationalLayer.renderer.infos) && (this._selectedOperationalLayer.renderer.infos.length > 0)) {
                     for (i = 0; i < this._selectedOperationalLayer.renderer.infos.length; i++) {
                         if (this._selectedOperationalLayer.typeIdField) {
@@ -2893,104 +2996,83 @@ define([
                             graphicInfoValue = graphic.attributes[this._selectedOperationalLayer.renderer.attributeField];
                         }
                         layerInfoValue = this._selectedOperationalLayer.renderer.infos[i].value;
-                        if (graphicInfoValue !== null && graphicInfoValue !== "") {
-                            if (graphicInfoValue.toString() === layerInfoValue.toString()) {
-                                isSymbolFound = true;
-                                if (this._selectedOperationalLayer.renderer.infos[i].symbol.hasOwnProperty("height") && this._selectedOperationalLayer.renderer.infos[i].symbol.hasOwnProperty("width")) {
-                                    height = this._selectedOperationalLayer.renderer.infos[i].symbol.height;
-                                    width = this._selectedOperationalLayer.renderer.infos[i].symbol.width;
-                                    // To display cross hair properly around feature its size needs to be calculated
-                                    size = (height > width) ? height : width;
-                                    size = size + 10;
-                                    symbol.size = size;
-                                }
-                                if (this._selectedOperationalLayer.renderer.infos[i].symbol.hasOwnProperty("size")) {
-                                    if (!size || size < this._selectedOperationalLayer.renderer.infos[i].symbol.size) {
-                                        symbol.size = this._selectedOperationalLayer.renderer.infos[i].symbol.size + 10;
-                                    }
-                                }
-                                if (this._selectedOperationalLayer.renderer.infos[i].symbol.hasOwnProperty("xoffset")) {
-                                    symbol.xoffset = this._selectedOperationalLayer.renderer.infos[i].symbol.xoffset;
-                                }
-                                if (this._selectedOperationalLayer.renderer.infos[i].symbol.hasOwnProperty("yoffset")) {
-                                    symbol.yoffset = this._selectedOperationalLayer.renderer.infos[i].symbol.yoffset;
-                                }
+                        // To get properties of symbol when infos contains other than class break renderer.
+                        if (graphicInfoValue !== undefined && graphicInfoValue !== null && graphicInfoValue !== "" && layerInfoValue !== undefined && layerInfoValue !== null && layerInfoValue !== "") {
+                            if (graphicInfoValue.toString() === layerInfoValue.toString() && this._selectedOperationalLayer.renderer.infos[i].symbol.hasOwnProperty("width")) {
+                                symbolWidth = this._selectedOperationalLayer.renderer.infos[i].symbol.width;
                             }
                         }
                     }
-                    if (!isSymbolFound) {
-                        if (this._selectedOperationalLayer.renderer.defaultSymbol) {
-                            isSymbolFound = true;
-                            if (this._selectedOperationalLayer.renderer.defaultSymbol.hasOwnProperty("height") && this._selectedOperationalLayer.renderer.defaultSymbol.hasOwnProperty("width")) {
-                                height = this._selectedOperationalLayer.renderer.defaultSymbol.height;
-                                width = this._selectedOperationalLayer.renderer.defaultSymbol.width;
-                                // To display cross hair properly around feature its size needs to be calculated
-                                size = (height > width) ? height : width;
-                                size = size + 10;
-                                symbol.size = size;
-                            }
-                            if (this._selectedOperationalLayer.renderer.defaultSymbol.hasOwnProperty("size")) {
-                                if (!size || size < this._selectedOperationalLayer.renderer.defaultSymbol.size) {
-                                    symbol.size = this._selectedOperationalLayer.renderer.defaultSymbol.size + 10;
-                                }
-                            }
-                            if (this._selectedOperationalLayer.renderer.defaultSymbol.hasOwnProperty("xoffset")) {
-                                symbol.xoffset = this._selectedOperationalLayer.renderer.defaultSymbol.xoffset;
-                            }
-                            if (this._selectedOperationalLayer.renderer.defaultSymbol.hasOwnProperty("yoffset")) {
-                                symbol.yoffset = this._selectedOperationalLayer.renderer.defaultSymbol.yoffset;
-                            }
-                        }
-                    }
+                } else if (this._selectedOperationalLayer.renderer.defaultSymbol && this._selectedOperationalLayer.renderer.defaultSymbol.hasOwnProperty("width")) {
+                    symbolWidth = this._selectedOperationalLayer.renderer.defaultSymbol.width;
                 }
-                point = new Point(graphic.geometry.x, graphic.geometry.y, new SpatialReference({
-                    wkid: graphic.geometry.spatialReference.wkid
-                }));
-                graphics = new Graphic(point, symbol, graphic.attributes);
-                return graphics;
-            case "polyline":
-                if (this._selectedOperationalLayer.renderer.symbol) {
-                    symbolWidth = this._selectedOperationalLayer.renderer.symbol.width;
-                } else if ((this._selectedOperationalLayer.renderer.infos) && (this._selectedOperationalLayer.renderer.infos.length > 1)) {
-                    for (i = 0; i < this._selectedOperationalLayer.renderer.infos.length; i++) {
-                        if (graphic.attributes[this._selectedOperationalLayer.typeIdField] === parseInt(this._selectedOperationalLayer.renderer.infos[i].value, 10)) {
-                            symbolWidth = this._selectedOperationalLayer.renderer.infos[i].symbol.width;
-                        }
-                    }
-                }
-                if (activeRow) {
-                    symbol = new SimpleLineSymbol(SimpleLineSymbol.STYLE_SOLID, new Color(this.appConfig.activeRow), symbolWidth);
-                } else {
-                    symbol = new SimpleLineSymbol(SimpleLineSymbol.STYLE_SOLID, new Color([0, 255, 255, 1]), symbolWidth);
-                }
-                polyline = new Polyline(new SpatialReference({
-                    wkid: graphic.geometry.spatialReference.wkid
-                }));
-                polyline.addPath(graphic.geometry.paths[0]);
-                graphics = new Graphic(polyline, symbol, graphic.attributes);
-                return graphics;
-            case "polygon":
-                if (this._selectedOperationalLayer.renderer.symbol) {
-                    symbolFillColor = this._selectedOperationalLayer.renderer.symbol.color;
-                } else if ((this._selectedOperationalLayer.renderer.infos) && (this._selectedOperationalLayer.renderer.infos.length > 1)) {
-                    for (i = 0; i < this._selectedOperationalLayer.renderer.infos.length; i++) {
-                        if (graphic.attributes[this._selectedOperationalLayer.typeIdField] === parseInt(this._selectedOperationalLayer.renderer.infos[i].value, 10)) {
-                            symbolFillColor = this._selectedOperationalLayer.renderer.infos[i].symbol.color;
-                        }
-                    }
-                }
-                if (activeRow) {
-                    symbol = new SimpleFillSymbol(SimpleFillSymbol.STYLE_SOLID, new SimpleLineSymbol(SimpleLineSymbol.STYLE_SOLID, new Color(this.appConfig.activeRow), 4), symbolFillColor);
-                } else {
-                    symbol = new SimpleFillSymbol(SimpleFillSymbol.STYLE_SOLID, new SimpleLineSymbol(SimpleLineSymbol.STYLE_SOLID, new Color([0, 255, 255, 1]), 4), symbolFillColor);
-                }
-                polygon = new Polygon(new SpatialReference({
-                    wkid: graphic.geometry.spatialReference.wkid
-                }));
-                polygon.rings = lang.clone(graphic.geometry.rings);
-                graphics = new Graphic(polygon, symbol, graphic.attributes);
-                return graphics;
             }
+            if (activeRow) {
+                symbol = new SimpleLineSymbol(SimpleLineSymbol.STYLE_SOLID, new Color(this.appConfig.activeRow), symbolWidth);
+            } else {
+                symbol = new SimpleLineSymbol(SimpleLineSymbol.STYLE_SOLID, new Color([0, 255, 255, 1]), symbolWidth);
+            }
+            polyline = new Polyline(new SpatialReference({
+                wkid: graphic.geometry.spatialReference.wkid
+            }));
+            if (graphic.geometry.paths && graphic.geometry.paths.length > 0) {
+                polyline.addPath(graphic.geometry.paths[0]);
+            }
+            graphics = new Graphic(polyline, symbol, graphic.attributes);
+            return graphics;
+        },
+
+        /**
+        * This function is used to get symbol for polygon geometry
+        * @param{object} selected feature which needs to be highlighted
+        * @param{boolean} whether feature is to be selected/activated
+        * @memberOf widgets/data-viewer/data-viewer
+        */
+        _getPolygonSymbol: function (graphic, activeRow) {
+            var symbol, graphics, polygon;
+            if (activeRow) {
+                symbol = new SimpleFillSymbol(SimpleFillSymbol.STYLE_SOLID, new SimpleLineSymbol(SimpleLineSymbol.STYLE_SOLID, new Color(this.appConfig.activeRow), 4), new Color([0, 0, 0, 0]));
+            } else {
+                symbol = new SimpleFillSymbol(SimpleFillSymbol.STYLE_SOLID, new SimpleLineSymbol(SimpleLineSymbol.STYLE_SOLID, new Color([0, 255, 255, 1]), 4), new Color([0, 0, 0, 0]));
+            }
+            polygon = new Polygon(new SpatialReference({
+                wkid: graphic.geometry.spatialReference.wkid
+            }));
+            if (graphic.geometry.rings) {
+                polygon.rings = lang.clone(graphic.geometry.rings);
+            }
+            graphics = new Graphic(polygon, symbol, graphic.attributes);
+            return graphics;
+        },
+
+        /**
+        * This function is used to update symbol properties
+        * @param{object} symbol that needs to be assigned to selected/activated feature
+        * @param{object} renderer layer Symbol
+        * @memberOf widgets/data-viewer/data-viewer
+        */
+        _updatePointSymbolProperties: function (symbol, layerSymbol) {
+            var height, width, size;
+            if (layerSymbol.hasOwnProperty("height") && layerSymbol.hasOwnProperty("width")) {
+                height = layerSymbol.height;
+                width = layerSymbol.width;
+                // To display cross hair properly around feature its size needs to be calculated
+                size = (height > width) ? height : width;
+                size = size + 10;
+                symbol.size = size;
+            }
+            if (layerSymbol.hasOwnProperty("size")) {
+                if (!size || size < layerSymbol.size) {
+                    symbol.size = layerSymbol.size + 10;
+                }
+            }
+            if (layerSymbol.hasOwnProperty("xoffset")) {
+                symbol.xoffset = layerSymbol.xoffset;
+            }
+            if (layerSymbol.hasOwnProperty("yoffset")) {
+                symbol.yoffset = layerSymbol.yoffset;
+            }
+            return symbol;
         }
 
         /** HIGHLIGHT SYMBOL **/

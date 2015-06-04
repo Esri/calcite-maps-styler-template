@@ -516,6 +516,7 @@ define([
             domStyle.set("LowerContainer", "display", "block");
             this._setDefaultHeightOfUpperAndLowerContainer();
             this._setDataViewerHeight();
+            this._dataViewerWidget.removeControlsFromPreviousRow();
             this._resizeMap();
             if ((this.map.getLayer("activeRowGraphicsLayer").graphics.length === 1) && (this._selectedOperationalLayer)) {
                 objectId = this.map.getLayer("activeRowGraphicsLayer").graphics[0].attributes[this._selectedOperationalLayer.objectIdField];
@@ -637,7 +638,7 @@ define([
         * @memberOf widgets/main/main
         */
         _createDataViewer: function (details) {
-            var dataViewerConfigData, selectedOperationalLayer, layerUrl, layerID, cloneRenderer, cloneInfoTemplate;
+            var dataViewerConfigData, selectedOperationalLayer, layerUrl, layerID, cloneRenderer, cloneInfoTemplate, layerOpacity;
             // parameters that are passed to data-viewer widget
             dataViewerConfigData = {
                 "appConfig": this.appConfig,
@@ -652,6 +653,7 @@ define([
                 "appUtils": ApplicationUtils
             };
             selectedOperationalLayer = this.map.getLayer(details.operationalLayerDetails.id);
+            layerOpacity = selectedOperationalLayer.opacity;
             layerUrl = selectedOperationalLayer.url;
             layerID = details.operationalLayerDetails.id;
             cloneRenderer = lang.clone(selectedOperationalLayer.renderer);
@@ -661,6 +663,7 @@ define([
             selectedOperationalLayer = new FeatureLayer(layerUrl, { mode: FeatureLayer.MODE_SNAPSHOT, id: layerID, outFields: ["*"], definitionExpression: this._existingDefinitionExpression });
             selectedOperationalLayer.setRenderer(cloneRenderer);
             selectedOperationalLayer.setInfoTemplate(cloneInfoTemplate);
+            selectedOperationalLayer.setOpacity(layerOpacity);
             this._removeHandles();
             this._createHandles(selectedOperationalLayer);
             this._resetUpperContainer();
@@ -707,16 +710,25 @@ define([
                 }));
                 this._dataViewerFeatureLayerUpdateEndHandle = on(selectedOperationalLayer, "update-end", lang.hitch(this, function (evt) {
                     if (!this._isEditingFeatureOn()) {
-                        // create ui of data-viewer widget
-                        if ((evt.target._defnExpr === this._existingDefinitionExpression)) {
-                            this._dataViewerWidget.createDataViewerUI(true);
+                        // When a row is removed in partially editing mode. Multiple operations like creating & editing
+                        // are performed in andriod enviroment. When layer is refreshed after editing its graphics are not rendered in
+                        // layer instantly. Due to which there are no graphics available in layer. When datatable is created without any
+                        // graphics then by default it creates a single row stating no data is available in table. To forbid this scenario
+                        // a flag stating whether layer is refreshed after editing needs to be analysed
+                        if (this._dataViewerWidget.isLayerRefreshed) {
+                            this._dataViewerWidget.isLayerRefreshed = false;
                         } else {
-                            if (evt.target.graphics.length === 0) {
-                                this._dataViewerWidget.noResultFound = true;
-                                this._dataViewerWidget._displaySearchData();
+                            // create ui of data-viewer widget
+                            if ((evt.target._defnExpr === this._existingDefinitionExpression) || (evt.target._defnExpr === null) || (evt.target._defnExpr === undefined)) {
+                                this._dataViewerWidget.createDataViewerUI(true);
                             } else {
-                                this._dataViewerWidget._displaySearchData();
-                                this._dataViewerWidget.createDataViewerUI(false);
+                                if (evt.target.graphics.length === 0) {
+                                    this._dataViewerWidget.noResultFound = true;
+                                    this._dataViewerWidget.displaySearchData();
+                                } else {
+                                    this._dataViewerWidget.displaySearchData();
+                                    this._dataViewerWidget.createDataViewerUI(false);
+                                }
                             }
                         }
                     }
@@ -730,8 +742,8 @@ define([
         */
         _attachDataViewerEventListener: function () {
             // hide/show settings options
-            this._dataViewerWidget.toggleSelectionViewOption = lang.hitch(this, function (hideClearSelection) {
-                this._appHeader.toggleSelectionViewOption(hideClearSelection);
+            this._dataViewerWidget.toggleSelectionViewOption = lang.hitch(this, function () {
+                this._appHeader.toggleSelectionViewOption();
             });
             // show details panel
             this._dataViewerWidget.showDetailsTab = lang.hitch(this, function () {
