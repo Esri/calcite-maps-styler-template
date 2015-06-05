@@ -308,7 +308,6 @@
       "tool_bookmarks":true,
       "tool_basemap":true,
       "tool_search":true,
-      "locationSearch": true,
-      "searchExtent":false
+      "locationSearch": true
    }
 }
