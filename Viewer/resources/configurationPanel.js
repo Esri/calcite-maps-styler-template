@@ -181,7 +181,7 @@
             {  
                "type":"boolean",
                "fieldName":"tool_search",
-               "label":"Address Finder"
+               "label":"Enable search tool"
             },{
                "type":"search",
                "fieldName": "searchConfig",
