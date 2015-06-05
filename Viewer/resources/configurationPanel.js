@@ -182,11 +182,6 @@
                "type":"boolean",
                "fieldName":"tool_search",
                "label":"Address Finder"
-            },
-            {  
-               "type":"boolean",
-               "fieldName":"searchExtent",
-               "label":"Prioritize search results in current extent."
             },{
                "type":"search",
                "fieldName": "searchConfig",
