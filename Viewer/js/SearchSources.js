@@ -141,6 +141,9 @@ declare, lang, array, dojoJson, domConstruct, esriLang, Locator, FeatureLayer, S
             var configSource = lang.clone(this.applicationConfiguredSources);
             array.forEach(configSource, lang.hitch(this, function(source){
                 if(source.locator){
+                    if(source.url === "https://geocodedev.arcgis.com/arcgis/rest/services/World/GeocodeServer"){
+                        source.url = "https://geocode.arcgis.com/arcgis/rest/services/World/GeocodeServer";
+                    }
                     source.locator = new Locator(source.url);              
                 }else if(source.featureLayer){
                     var featureLayer = null;
@@ -153,6 +156,9 @@ declare, lang, array, dojoJson, domConstruct, esriLang, Locator, FeatureLayer, S
                         });
                     }
                     source.featureLayer = featureLayer;
+                }
+                if(source.searchWithinMap){
+                    source.searchExtent = this.map.extent;
                 }
                 this.sources.push(source);
             }));
