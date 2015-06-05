@@ -141,18 +141,17 @@ declare, lang, array, dojoJson, domConstruct, esriLang, Locator, FeatureLayer, S
             var configSource = lang.clone(this.applicationConfiguredSources);
             array.forEach(configSource, lang.hitch(this, function(source){
                 if(source.locator){
-                    source.locator = new Locator(source.locator);
+                    source.locator = new Locator(source.url);              
                 }else if(source.featureLayer){
                     var featureLayer = null;
-                    if(source.layerId){
-                        featureLayer = this.map.getLayer(source.layerId);
+                    if(source.flayerId){
+                        featureLayer = this.map.getLayer(source.flayerId);
                     }
-                    if(!featureLayer){
+                    if(!featureLayer && source.url){
                         featureLayer = new FeatureLayer(source.url,{
                             outFields: ["*"]
                         });
                     }
-
                     source.featureLayer = featureLayer;
                 }
                 this.sources.push(source);
