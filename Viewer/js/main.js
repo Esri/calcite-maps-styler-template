@@ -36,9 +36,8 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
                 ready(lang.hitch(this, function () {
                     //supply either the webmap id or, if available, the item info
                     var itemInfo = this.config.itemInfo || this.config.webmap;
+
                     this._createWebMap(itemInfo);
-
-
                 }));
             } else {
                 var error = new Error("Main:: Config is not defined");
@@ -908,12 +907,24 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
             mapOptions = this._setLevel(mapOptions);
             mapOptions = this._setCenter(mapOptions);
 
+            if(this.config.appProxies){
+                var layerMixins = array.map(this.config.appProxies, function(p){
+                    return {
+                      "url": p.sourceUrl,
+                      "mixin":{
+                        "url": p.proxyUrl
+                      }
+                    }
+                });
+            }
+
             // create a map based on the input web map id
             arcgisUtils.createMap(itemInfo, "mapDiv", {
                 mapOptions: mapOptions,
                 editable: has("edit"),
                 //is the app editable
                 usePopupManager: true,
+                layerMixins: layerMixins,
                 bingMapsKey: this.config.bingKey
             }).then(lang.hitch(this, function (response) {
                 this.map = response.map;
