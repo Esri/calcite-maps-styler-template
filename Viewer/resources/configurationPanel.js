@@ -5,6 +5,8 @@
          "fields":[  
             {  
                "type":"webmap"
+            },{
+               "type": "appproxies"
             },
             {  
                "placeHolder":"Defaults to web map title",
