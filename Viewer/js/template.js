@@ -379,7 +379,15 @@ Evented, declare, kernel, array, lang, domClass, Deferred, all, arcgisUtils, url
                         this.appResponse = response;
                     }
                     if(response.item.appProxies){
-                        this.appConfig.appProxies = response.item.appProxies;
+                        var layerMixins = array.map(response.item.appProxies, function(p){
+                            return {
+                              "url": p.sourceUrl,
+                              "mixin":{
+                                "url": p.proxyUrl
+                              }
+                            }
+                        });
+                        this.appConfig.layerMixins = layerMixins;
                     }
                     // get the extent for the application item. This can be used to override the default web map extent
                     if (response.item && response.item.extent) {
