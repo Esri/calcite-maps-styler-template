@@ -3,10 +3,10 @@
         "title": "Crowdsource Polling",
         "displayText": "<p><b>Welcome to the crowdsource polling application</b></p><p>Use Crowdsource Polling to provide information and collect feedback on plans and issues around your community.</p><p>Search for a location or click an item in the list to get started.</p><hr/>",
         "color": "#206bdb",
-        "commentNameField": "",
+        "commentNameField": "COMMENTS",
         "allowFacebook": false,
         "allowGoogle": false,
-        "allowTwitter": false,
+        "allowTwitter": true,
         "facebookAppId": "",
         "googleplusClientId": "",
         "socialMediaDisclaimer": "Choose how you would like to sign in to this application. The name associated with your social media account will be added to any comments you post."

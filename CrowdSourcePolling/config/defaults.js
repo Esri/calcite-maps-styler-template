@@ -19,7 +19,7 @@ define({
     //Default configuration settings for the application. This is where you'll define things like a bing maps key,
     //default web map, default app color theme and more. These values can be overwritten by template configuration settings and url parameters.
     "appid": "",
-    "webmap": "3e738c780fcc43c1b1a5f123dd0d3f6c",
+    "webmap": "56197689ee7e4a8aa9f0d8da09ffe721",
     "oauthappid": null, //"AFTKRmv16wj14N3z",
     //Group templates must support a group url parameter. This will contain the id of the group.
     "group": "",
@@ -32,17 +32,17 @@ define({
     "displayText": "<p><b>Welcome to the crowdsource polling application</b></p><p>Use Crowdsource Polling to provide information and collect feedback on plans and issues around your community.</p><p>Search for a location or click an item in the list to get started.</p><hr/>",
     "color": "#206bdb",
     "featureLayer": {
-        "id": "CrowdsourcingLocations_3827",
+        "id": "LandUseCasesVotesComments_8488",
         "fields": [{
             "id": "itemVotesField",
-            "fields": ["popularity"]
+            "fields": ["VOTES"]
         }]
     },
     "commentNameField": "",
-    "itemVotesField": "",
+    "itemVotesField": "VOTES",
     "allowFacebook": false,
     "allowGoogle": false,
-    "allowTwitter": false,
+    "allowTwitter": true,
     "facebookAppId": "",
     "googleplusClientId": "",
     "socialMediaDisclaimer": "Choose how you would like to sign in to this application. The name associated with your social media account will be added to any comments you post.",
