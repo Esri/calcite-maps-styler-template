@@ -31,14 +31,20 @@ define({
     "title": "Crowdsource Polling",
     "displayText": "<p><b>Welcome to the crowdsource polling application</b></p><p>Use Crowdsource Polling to provide information and collect feedback on plans and issues around your community.</p><p>Search for a location or click an item in the list to get started.</p><hr/>",
     "color": "#206bdb",
-    "featureLayer": "",
+    "featureLayer": {
+        "id": "CrowdsourcingLocations_3827",
+        "fields": [{
+            "id": "itemVotesField",
+            "fields": ["popularity"]
+        }]
+    },
     "commentNameField": "",
     "itemVotesField": "",
     "allowFacebook": false,
     "allowGoogle": false,
     "allowTwitter": false,
-    "facebookAppId": "808394189204220",
-    "googleplusClientId": "862973275076-qadao43h9btc27oui3mfhj846rh4so6o.apps.googleusercontent.com",
+    "facebookAppId": "",
+    "googleplusClientId": "",
     "socialMediaDisclaimer": "Choose how you would like to sign in to this application. The name associated with your social media account will be added to any comments you post.",
 
     //Other template-specific properties
@@ -50,7 +56,6 @@ define({
     "galleryIcon": "[{'shape': {'type': 'path', 'path': 'M310.7,391.8v8.3h-9.4v-8.3H310.7 M311.5,391h-11v10h11V391L311.5,391z M302.1,398.5h7.9l-1.6-5l-2.4,3.3l-1.6-1.7 L302.1,398.5z M302.9,393.5c-0.4,0-0.8,0.4-0.8,0.8c0,0.5,0.4,0.8,0.8,0.8c0.4,0,0.8-0.4,0.8-0.8 C303.6,393.9,303.3,393.5,302.9,393.5z'},'fill':{'r':0,'g':0,'b':0,'a':.35}}]",
 
     "facebookAppScope": "public_profile",
-    "googleplusScope": "https://www.googleapis.com/auth/userinfo.profile",
     "twitterSigninUrl": location.protocol + "//utility.arcgis.com/tproxy/signin",
     "twitterUserUrl": location.protocol + "//utility.arcgis.com/tproxy/proxy/1.1/account/verify_credentials.json?q=&include_entities=true&skip_status=true&locale=en",
     "twitterCallbackPage": "/oauth-callback.html",
