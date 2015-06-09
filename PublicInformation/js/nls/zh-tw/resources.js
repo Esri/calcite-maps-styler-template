@@ -55,7 +55,7 @@
             legend: "圖例",
             featured: "主題位置",
             layers: "圖層",
-            share: "共用",
+            share: "分享",
             about: "關於",
             find: "郵遞區號、城市等",
             moreInfo: "更多資訊",

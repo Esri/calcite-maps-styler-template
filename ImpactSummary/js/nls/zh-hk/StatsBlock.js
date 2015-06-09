@@ -4,7 +4,7 @@
             "close": "關閉",
             "next": "下一步",
             "previous": "上一步",
-            "source":"數據源"
+            "source":"資料來源"
         }
     })
 );

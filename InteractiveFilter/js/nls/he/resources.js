@@ -13,6 +13,9 @@
       errors:{
         message: "בעיה ביצירת אפליקצית מסננים"
       }
+    },
+    legend:{
+      title: "כן_Legend___ש"
     }
   })
 );

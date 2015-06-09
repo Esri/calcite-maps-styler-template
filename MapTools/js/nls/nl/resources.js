@@ -20,6 +20,7 @@ define(
             error: "Kan geen kaart creëren"
         },
         tools:{
+            bookmarkTool: "Ĳ_Bookmarks____ä",
             basemapTool: "Basemaps",
             legendTool: "Legenda",
             detailsTool: "Details",

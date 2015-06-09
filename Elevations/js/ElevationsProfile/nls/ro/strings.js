@@ -1,9 +1,9 @@
 ﻿define(
    ({
     display: {
-      elevationProfileTitle: "Profil de niveluri",
+      elevationProfileTitle: "Ă_Elevation Profile______ș",
       showMe: "arată",
-      selectLine: "<b>Selectaţi</b> un obiect spaţial în hartă.",
+      selectLine: "Ă_<b>Select</b> a line feature in the map_____________ș.",
       popupRequirement: "NOTĂ: obiectul spaţial trebuie să facă parte dintr-un strat tematic pentru care sunt activate pop-upurile.",
       digitizeDistanceMeasureTool: "Utilizaţi instrumentele <b>Măsurare</b>.",
       selectFeatureHelpUrl: "http://help.arcgis.com/ro/arcgisonline/help/010q/010q0000004s000000.htm#ESRI_SECTION1_DAA22E89DF67448E8F3682309F39BE5D",
@@ -15,7 +15,7 @@
       helpLabel: "Ajutor"
     },
     chart: {
-      title: "Profil de niveluri",
+      title: "Ă_Elevation Profile______ș",
       demResolution: "Rezoluţie DEM",
       elevationTitleTemplate: "Elevaţie în {0}",
       distanceTitleTemplate: "Distanţă în {0}",

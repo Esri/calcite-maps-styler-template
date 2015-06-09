@@ -13,6 +13,9 @@
       errors:{
         message: "Problema ao criar a aplicação de filtros"
       }
+    },
+    legend:{
+      title: "ã_Legend___Ç"
     }
   })
 );

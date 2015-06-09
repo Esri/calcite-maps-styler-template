@@ -20,6 +20,7 @@ define(
             error: "يتعذر إنشاء الخريطة"
         },
         tools:{
+            bookmarkTool: "بيت_Bookmarks____لاحقة",
             basemapTool: "خرائط الأساس",
             legendTool: "وسيلة إيضاح",
             detailsTool: "التفاصيل",

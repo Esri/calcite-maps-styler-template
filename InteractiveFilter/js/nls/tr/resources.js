@@ -13,6 +13,9 @@
       errors:{
         message: "Filtre uygulaması oluşturmada sorun oluştu"
       }
+    },
+    legend:{
+      title: "ı_Legend___İ"
     }
   })
 );

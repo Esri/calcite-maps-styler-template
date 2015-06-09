@@ -20,6 +20,7 @@ define(
             error: "Harita oluşturulamıyor"
         },
         tools:{
+            bookmarkTool: "ı_Bookmarks____İ",
             basemapTool: "Altlık Haritalar",
             legendTool: "Gösterim",
             detailsTool: "Ayrıntılar",

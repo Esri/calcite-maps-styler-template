@@ -20,6 +20,7 @@ define(
             error: "Không thể tạo bản đồ"
         },
         tools:{
+            bookmarkTool: "Đ_Bookmarks____ớ",
             basemapTool: "Bản đồ nền",
             legendTool: "Chú giải",
             detailsTool: "Chi tiết",

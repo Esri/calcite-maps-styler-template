@@ -20,6 +20,7 @@ define(
             error: "ไม่สามารถสร้างแผนที่ได้"
         },
         tools:{
+            bookmarkTool: "ก้_Bookmarks____ษฺ",
             basemapTool: "แผนที่ฐาน",
             legendTool: "คำอธิบาย",
             detailsTool: "รายละเอียด",

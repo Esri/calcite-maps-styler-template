@@ -35,7 +35,7 @@ define(
 			      "label4": 'Hochformat'
 			    },
 			    "legend": "Legende zu Ausgabe hinzufügen",
-                "title": "ä_Title_____________________________________________________________Ü",
+                "title": "ä_Title___Ü",
                 "titlePrompt": "ä_Add custom title______Ü"
             },
 			"share": {

@@ -1,9 +1,9 @@
 ﻿define(
    ({
     display: {
-      elevationProfileTitle: "Profil wysokościowy",
+      elevationProfileTitle: "ł_Elevation Profile______ą",
       showMe: "pokaż mi",
-      selectLine: "<b>Wybierz</b> obiekt na mapie.",
+      selectLine: "ł_<b>Select</b> a line feature in the map_____________ą.",
       popupRequirement: "UWAGA: obiekt musi znajdować się w warstwie z włączonymi oknami podręcznymi.",
       digitizeDistanceMeasureTool: "Użyj narzędzi <b>pomiarowych</b>.",
       selectFeatureHelpUrl: "http://help.arcgis.com/pl/arcgisonline/help/010q/010q0000004s000000.htm#ESRI_SECTION1_DAA22E89DF67448E8F3682309F39BE5D",
@@ -15,7 +15,7 @@
       helpLabel: "Pomoc"
     },
     chart: {
-      title: "Profil wysokościowy",
+      title: "ł_Elevation Profile______ą",
       demResolution: "Rozdzielczość DEM",
       elevationTitleTemplate: "Wysokość w {0}",
       distanceTitleTemplate: "Odległość w {0}",

@@ -67,7 +67,9 @@ define(
             layoutBtnTitle: "Layout",
             signInBtnTitle: "Accedi",
             signOutBtnTitle: "Disconnetti",
-            geolocationBtnTitle: "Geoposizione"
+            geolocationBtnTitle: "Geoposizione",
+            ascendingSort: "é_Ascending____È",
+            descendingSort: "é_Descending____È"
         },
         errorMessages: {
             emptyGroup: "Per il gruppo configurato non sono disponibili dati per eseguire interrogazioni.",

@@ -20,6 +20,7 @@ define(
             error: "无法创建地图"
         },
         tools:{
+            bookmarkTool: "试_Bookmarks____验",
             basemapTool: "底图",
             legendTool: "图例",
             detailsTool: "详细信息",

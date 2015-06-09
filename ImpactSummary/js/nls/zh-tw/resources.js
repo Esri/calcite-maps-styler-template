@@ -11,7 +11,7 @@
             rendererTitle: "顯示該區域的資訊",
             summarize: "整個區域",
             summarizeTitle: "顯示所有區域的摘要資訊",
-            share: "共用",
+            share: "分享",
             about: "關於",
             find: "郵遞區號、城市等",
             noSearchResult: "未找到結果",

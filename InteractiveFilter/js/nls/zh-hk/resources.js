@@ -13,6 +13,9 @@
       errors:{
         message: "建立篩選應用程式時出現問題"
       }
+    },
+    legend:{
+      title: "試_Legend___驗"
     }
   })
 );

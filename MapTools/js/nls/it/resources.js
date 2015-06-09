@@ -20,6 +20,7 @@ define(
             error: "Impossibile creare la mappa"
         },
         tools:{
+            bookmarkTool: "é_Bookmarks____È",
             basemapTool: "Mappe di base",
             legendTool: "Legenda",
             detailsTool: "Dettagli",

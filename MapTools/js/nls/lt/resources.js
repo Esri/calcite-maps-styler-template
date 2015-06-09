@@ -20,6 +20,7 @@ define(
             error: "Žemėlapio sukurti nepavyko"
         },
         tools:{
+            bookmarkTool: "Į_Bookmarks____š",
             basemapTool: "Pagrindo žemėlapiai",
             legendTool: "Legenda",
             detailsTool: "Smulkesnė informacija",

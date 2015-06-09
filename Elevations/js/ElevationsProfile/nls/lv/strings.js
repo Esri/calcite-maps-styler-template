@@ -1,9 +1,9 @@
 ﻿define(
    ({
     display: {
-      elevationProfileTitle: "Pacēluma profils",
+      elevationProfileTitle: "ķ_Elevation Profile______ū",
       showMe: "parādiet man",
-      selectLine: "<b>Izvēlēties</b> elementu kartē.",
+      selectLine: "ķ_<b>Select</b> a line feature in the map_____________ū.",
       popupRequirement: "PIEZĪME: elementam jābūt slānī ar iespējotiem uznirstošajiem logiem.",
       digitizeDistanceMeasureTool: "Lietojiet <b>Mērīt</b> rīkus.",
       selectFeatureHelpUrl: "http://help.arcgis.com/en/arcgisonline/help/010q/010q0000004s000000.htm#ESRI_SECTION1_DAA22E89DF67448E8F3682309F39BE5D",
@@ -15,7 +15,7 @@
       helpLabel: "Palīdzība"
     },
     chart: {
-      title: "Pacēluma profils",
+      title: "ķ_Elevation Profile______ū",
       demResolution: "DEM izšķirtspēja",
       elevationTitleTemplate: "Pacēlums {0}",
       distanceTitleTemplate: "Distance {0}",

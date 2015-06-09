@@ -20,6 +20,7 @@ define(
             error: "Kan ikke opprette kart"
         },
         tools:{
+            bookmarkTool: "å_Bookmarks____ø",
             basemapTool: "Bakgrunnskart",
             legendTool: "Tegnforklaring",
             detailsTool: "Detaljer",

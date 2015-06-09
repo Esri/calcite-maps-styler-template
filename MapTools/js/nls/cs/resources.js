@@ -20,6 +20,7 @@ define(
             error: "Nelze vytvořit mapu"
         },
         tools:{
+            bookmarkTool: "Ř_Bookmarks____ů",
             basemapTool: "Podkladové mapy",
             legendTool: "Legenda",
             detailsTool: "Podrobnosti",

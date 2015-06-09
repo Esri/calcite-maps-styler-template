@@ -13,6 +13,9 @@
       errors:{
         message: "Det uppstod ett problem när filterprogrammet skulle skapas"
       }
+    },
+    legend:{
+      title: "Å_Legend___ö"
     }
   })
 );

@@ -12,21 +12,21 @@
 			signin: {
 				title: "需要進行身份驗證",
 				explainViewer: "請使用帳戶登錄 %PORTAL_LINK%，以存取應用程式。",
-				explainBuilder: "請使用帳戶登錄 %PORTAL_LINK%，以配置應用程式。"
+				explainBuilder: "請使用帳戶登錄 %PORTAL_LINK%，以設定應用程式。"
 			},
 			errors: {
 				boxTitle: "發生錯誤",
-				invalidConfig: "配置無效",
+				invalidConfig: "設定無效",
 				invalidConfigNoApp: "未在 index.html 中指定 Web 製圖應用程式識別碼。",
-				unspecifiedConfigOwner: "尚未配置授權的擁有者。",
+				unspecifiedConfigOwner: "尚未設定授權的擁有者。",
 				invalidConfigOwner: "未授權應用程式擁有者。",
 				createMap: "無法建立地圖",
 				invalidApp: "%TPL_NAME% 不存在或不可存取。",
 				appLoadingFail: "發生了一些錯誤， %TPL_NAME% 未正確載入。",
-				notConfiguredDesktop: "應用程式尚未配置。",
-				notConfiguredMobile: "%TPL_NAME% 構建器不支援此螢幕解析度。",
+				notConfiguredDesktop: "應用程式尚未設定。",
+				notConfiguredMobile: "%TPL_NAME% 建構器不支援此螢幕解析度。",
 				notAuthorized: "您未取得存取該應用程式的授權",
-				noBuilderIE: "低於版本 %VERSION% 的 Internet Explorer 不支援構建器。%UPGRADE%",
+				noBuilderIE: "低於版本 %VERSION% 的 Internet Explorer 不支援建構器。%UPGRADE%",
 				noViewerIE: "低於版本 %VERSION% 的 Internet Explorer 不支援該應用程式。%UPGRADE%",
 				upgradeBrowser: "<a href='http://browsehappy.com/' target='_blank'>請更新您的瀏覽器</a>。",
 				mapLoadingFail: "發生了一些錯誤，地圖未正確載入。",
@@ -49,7 +49,7 @@
 				bitlyTooltip: "取得應用程式的短連結",
 				templateTitle: "設置範本標題",
 				templateSubtitle: "設置範本子標題",
-				share: "共用"
+				share: "分享"
 			},
 			overviewFromCommon: {
 				title: "總覽圖"
