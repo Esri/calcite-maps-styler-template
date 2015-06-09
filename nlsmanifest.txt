@@ -20,7 +20,7 @@ StorytellingCompare\nls
 StorytellingTextLegend\nls
 SummaryViewer\js\nls
 StorytellingSwipe\resources\nls
-Time\nls
+Time\js\nls
 MapCarousel\nls
 MapAndAppGallery\nls
 PublicGallery\nls
