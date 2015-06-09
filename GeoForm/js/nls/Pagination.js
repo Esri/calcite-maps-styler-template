@@ -1,5 +1,5 @@
 define({
-  "root": ({
+  root: ({
     "pagination": {
       "page": "Page",
       "previousTitle": "Previous",
