@@ -6,7 +6,7 @@
     },
     errors: {
       createMap: "無法建立地圖",
-      bitly: 'bitly 用於縮短 url 以便進行共用。有關建立和使用 bitly 金鑰的詳細資訊，請查看 readme 文件',
+      bitly: 'bitly 用於縮短 url 以便進行分享。有關建立和使用 bitly 金鑰的詳細資訊，請查看 readme 文件',
       general: "錯誤"
     }
   },
@@ -26,8 +26,8 @@
     label: "列印"
     },
     share: {
-    title: "共用地圖",
-    label: "共用",
+    title: "分享地圖",
+    label: "分享",
     menu: {
       facebook: {
         label: "Facebook"

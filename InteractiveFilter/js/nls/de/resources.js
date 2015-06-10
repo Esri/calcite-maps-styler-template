@@ -13,6 +13,9 @@
       errors:{
         message: "Beim Erstellen der Filteranwendung ist ein Problem aufgetreten"
       }
+    },
+    legend:{
+      title: "ä_Legend___Ü"
     }
   })
 );

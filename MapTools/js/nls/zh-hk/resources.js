@@ -20,11 +20,12 @@ define(
             error: "無法建立地圖"
         },
         tools:{
+            bookmarkTool: "試_Bookmarks____驗",
             basemapTool: "底圖",
             legendTool: "圖例",
             detailsTool: "詳細資訊",
             measureTool: "測量",
-            shareTool: "共用",
+            shareTool: "分享",
             layerTool: "圖層",
             tableTool: "表",
             editTool: "編輯",

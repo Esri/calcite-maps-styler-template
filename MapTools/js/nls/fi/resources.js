@@ -20,6 +20,7 @@ define(
             error: "Karttaa ei voi luoda"
         },
         tools:{
+            bookmarkTool: "Å_Bookmarks____ö",
             basemapTool: "Taustakartat",
             legendTool: "Selite",
             detailsTool: "Yksityiskohdat",

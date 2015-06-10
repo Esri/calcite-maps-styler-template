@@ -67,7 +67,9 @@ define(
             layoutBtnTitle: "Układ",
             signInBtnTitle: "Zaloguj się",
             signOutBtnTitle: "Wyloguj się",
-            geolocationBtnTitle: "Geolokalizacja"
+            geolocationBtnTitle: "Geolokalizacja",
+            ascendingSort: "ł_Ascending____ą",
+            descendingSort: "ł_Descending____ą"
         },
         errorMessages: {
             emptyGroup: "Skonfigurowana grupa nie zawiera danych, których można użyć do wykonania zapytania.",

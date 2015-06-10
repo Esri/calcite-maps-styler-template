@@ -13,6 +13,9 @@
       errors:{
         message: "Filtrite rakenduse loomisel tekkis tõrge"
       }
+    },
+    legend:{
+      title: "Š_Legend___ä"
     }
   })
 );

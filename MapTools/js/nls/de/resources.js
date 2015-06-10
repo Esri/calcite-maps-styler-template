@@ -20,6 +20,7 @@ define(
             error: "Karte kann nicht erstellt werden"
         },
         tools:{
+            bookmarkTool: "ä_Bookmarks____Ü",
             basemapTool: "Grundkarten",
             legendTool: "Legende",
             detailsTool: "Details",
@@ -36,7 +37,7 @@ define(
                   "label3": 'Querformat',
                   "label4": 'Hochformat'
             },
-            printTitle: "ä_Title_____________________________________________________________Ü",
+            printTitle: "ä_Title___Ü",
             printTitlePrompt: "ä_Add custom title______Ü"
         }
     })

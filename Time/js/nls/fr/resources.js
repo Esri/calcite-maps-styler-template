@@ -1,4 +1,4 @@
-/*global define */
+﻿/*global define */
 /*
  | Copyright 2014 Esri
  |
@@ -14,8 +14,33 @@
  | See the License for the specific language governing permissions and
  | limitations under the License.
  */
-define(({
-  map: {
-    error: "Impossible de créer la carte"
-  }
-}));
+define(
+   ({
+    map: {
+      error: "æ_Unable to create map_______Â"
+    },
+    legend:{
+      title: "æ_Legend___Â"
+    },
+    share: {
+      title: "æ_Share___Â"
+    },
+    about: {
+      title: "æ_About___Â",
+      error: "æ_By default the web map description or snippet will be used. Configure the app to add a custom snippet for the about panel______________________________________Â."
+    },
+    time: {
+        enableTimeMessage: "æ_The specified web map does not contain any time enabled layers. View the <a target='_blank' href='http://doc.arcgis.com/en/arcgis-online/create-maps/configure-time.htm#ESRI_SECTION1_F1D4A275B4AB4CC79198CBA9D0AD8727'>Configure time settings</a> help topic for details. To use the template without displaying time use the configuration panel to disable the time option_______________________________________________________________________________________________________________Â.",
+        datePattern: "æ_MMMM d, yyyy_____Â",
+        hourTimePattern: "æ_h a__Â",
+        millisecondTimePattern: "æ_h:mm:ss a____Â",
+        minuteTimePattern: "æ_h:mm a___Â",
+        secondTimePattern: "æ_h:mm:ss a____Â",
+        timeRange: "æ_${startTime} to ${endTime}_________Â",
+        yearPattern: "æ_yyyy__Â"
+    },
+    histogram:{
+      error: "æ_No time-enabled feature layers, in snapshot mode, are available in the web map. Configure the app to use another web map or disable the histogram option_______________________________________________Â."
+    }
+  })
+);

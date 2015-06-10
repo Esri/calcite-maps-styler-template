@@ -13,6 +13,9 @@
       errors:{
         message: "Problemă la crearea aplicaţiei de filtrare"
       }
+    },
+    legend:{
+      title: "Ă_Legend___ș"
     }
   })
 );

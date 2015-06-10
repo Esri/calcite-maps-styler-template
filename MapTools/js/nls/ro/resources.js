@@ -20,6 +20,7 @@ define(
             error: "Nu se poate crea harta"
         },
         tools:{
+            bookmarkTool: "Ă_Bookmarks____ș",
             basemapTool: "Hărţi fundal",
             legendTool: "Legendă",
             detailsTool: "Detalii",

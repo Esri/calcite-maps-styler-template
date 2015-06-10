@@ -13,6 +13,9 @@
       errors:{
         message: "Nepavyko sukurti filtrų aplikacijos"
       }
+    },
+    legend:{
+      title: "Į_Legend___š"
     }
   })
 );

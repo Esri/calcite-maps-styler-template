@@ -20,6 +20,7 @@ define(
             error: "맵을 생성할 수 없음"
         },
         tools:{
+            bookmarkTool: "한_Bookmarks____빠",
             basemapTool: "베이스맵",
             legendTool: "범례",
             detailsTool: "세부정보",

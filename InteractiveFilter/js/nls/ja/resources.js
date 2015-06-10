@@ -13,6 +13,9 @@
       errors:{
         message: "フィルタ アプリケーションの作成中に問題が発生しました"
       }
+    },
+    legend:{
+      title: "須_Legend___鷗"
     }
   })
 );
