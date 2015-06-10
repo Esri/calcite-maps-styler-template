@@ -186,19 +186,25 @@ declare, has, lang, Color, array, on, registry, arcgisUtils, esriLang, dom, domA
                     if (!Search && !Locator) {
                         return;
                     }
-                    var configuredSearchLayers = (this.config.searchLayers instanceof Array) ? this.config.searchLayers : JSON.parse(this.config.searchLayers);
-                    var geocoders = this.config.locationSearch ? this.config.helperServices.geocode : [];
-                    var searchSources = new SearchSources({
-                        map: this.map,
-                        enableButtonMode: true,
-                        expanded: false,
-                        geocoders: geocoders || [],
-                        itemData: this.config.response.itemInfo.itemData,
-                        configuredSearchLayers: configuredSearchLayers,
-                        useMapExtent: this.config.searchExtent
-                    });
 
+                    var searchOptions = {
+                        map: this.map,
+                        useMapExtent: this.config.searchExtent,
+                        itemData: this.config.response.itemInfo.itemData
+                    };
+
+                    if (this.config.searchConfig) {
+                        searchOptions.applicationConfiguredSources = this.config.searchConfig.sources || [];
+                    } else if (this.config.searchLayers) {
+                        var configuredSearchLayers = (this.config.searchLayers instanceof Array) ? this.config.searchLayers : JSON.parse(this.config.searchLayers);
+                        searchOptions.configuredSearchLayers = configuredSearchLayers;
+                        searchOptions.geocoders = this.config.locationSearch ? this.config.helperServices.geocode : [];
+                    }
+                    var searchSources = new SearchSources(searchOptions);
                     var createdOptions = searchSources.createOptions();
+                    if (this.config.searchConfig && this.config.searchConfig.activeSourceIndex) {
+                        createdOptions.activeSourceIndex = this.config.searchConfig.activeSourceIndex;
+                    }
                     createdOptions.enableButtonMode = true;
                     createdOptions.expanded = false;
 
@@ -239,6 +245,7 @@ declare, has, lang, Color, array, on, registry, arcgisUtils, esriLang, dom, domA
                 mapOptions: mapOptions,
                 usePopupManager: true,
                 editable: this.config.editable,
+                layerMixins: this.config.layerMixins || [],
                 bingMapsKey: this.config.bingKey
             }).then(lang.hitch(this, function (response) {
                 // Once the map is created we get access to the response which provides important info

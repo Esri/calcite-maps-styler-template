@@ -311,7 +311,6 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
                             //if (field.visible) {
                             fieldInfos.push(field);
                             //}
-
                         }));
 
                         layer.fieldInfos = fieldInfos;
@@ -739,20 +738,20 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
                     itemData: this.config.response.itemInfo.itemData
                 };
 
-               if(this.config.searchConfig ){  
-                searchOptions.applicationConfiguredSources = this.config.searchConfig.sources || [];
-               }else{
-                var configuredSearchLayers = (this.config.searchLayers instanceof Array) ? this.config.searchLayers : JSON.parse(this.config.searchLayers);
-                searchOptions.configuredSearchLayers = configuredSearchLayers;
-                searchOptions.geocoders = this.config.locationSearch ? this.config.helperServices.geocode : [];
-               }
+                if (this.config.searchConfig) {
+                    searchOptions.applicationConfiguredSources = this.config.searchConfig.sources || [];
+                } else {
+                    var configuredSearchLayers = (this.config.searchLayers instanceof Array) ? this.config.searchLayers : JSON.parse(this.config.searchLayers);
+                    searchOptions.configuredSearchLayers = configuredSearchLayers;
+                    searchOptions.geocoders = this.config.locationSearch ? this.config.helperServices.geocode : [];
+                }
                 var searchSources = new SearchSources(searchOptions);
                 var createdOptions = searchSources.createOptions();
 
-                if(this.config.searchConfig && this.config.searchConfig.activeSourceIndex){
+                if (this.config.searchConfig && this.config.searchConfig.activeSourceIndex) {
                     createdOptions.activeSourceIndex = this.config.searchConfig.activeSourceIndex;
                 }
- 
+
                 var search = new Search(createdOptions, domConstruct.create("div", {
                     id: "search"
                 }, "mapDiv"));
@@ -891,10 +890,10 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
                 height = newHeight;
             }
             this.map.infoWindow.resize(width, height);
-            on(this.map.infoWindow, "show",lang.hitch(this, function(){
-              domClass.add(document.body, "noscroll");
+            on(this.map.infoWindow, "show", lang.hitch(this, function () {
+                domClass.add(document.body, "noscroll");
             }));
-            on(this.map.infoWindow, "hide", lang.hitch(this, function(){
+            on(this.map.infoWindow, "hide", lang.hitch(this, function () {
                 domClass.remove(document.body, "noscroll");
             }));
         },

@@ -1,6 +1,6 @@
 /*
-  Version 1.4
-  2/3/2015
+  Version 1.6
+  6/8/2015
 */
 
 /*global define,document,location,require */
@@ -381,12 +381,28 @@ array, declare, kernel, lang, Evented, Deferred, string, domClass, all, esriConf
                         this.itemConfig = cfg;
                         deferred.resolve(cfg);
                     }));
-                } else {
-                    // if webmap does not exist
-                    if (!this.config.webmap) {
-                        // use default webmap for boilerplate
-                        this.config.webmap = "24e01ef45d40423f95300ad2abc5038a";
-                    }
+                }
+                // no webmap is set and we have organization's info
+                else if (!this.config.webmap && this.config.orgInfo) {
+                    var defaultWebmap = {
+                        "item": {
+                            "title": "Default Webmap",
+                            "type": "Web Map",
+                            "description": "A webmap with the default basemap and extent.",
+                            "snippet": "A webmap with the default basemap and extent.",
+                            "extent": this.config.orgInfo.defaultExtent
+                        },
+                        "itemData": {
+                            "operationalLayers": [],
+                            "baseMap": this.config.orgInfo.defaultBasemap
+                        }
+                    };
+                    cfg.itemInfo = defaultWebmap;
+                    this.itemConfig = cfg;
+                    deferred.resolve(cfg);
+                }
+                // use webmap from id
+                else {
                     arcgisUtils.getItem(this.config.webmap).then(lang.hitch(this, function (itemInfo) {
                         // Set the itemInfo config option. This can be used when calling createMap instead of the webmap id
                         cfg.itemInfo = itemInfo;
@@ -422,6 +438,18 @@ array, declare, kernel, lang, Evented, Deferred, string, domClass, all, esriConf
                     // get the extent for the application item. This can be used to override the default web map extent
                     if (response.item && response.item.extent) {
                         cfg.application_extent = response.item.extent;
+                    }
+                    // get any app proxies defined on the application item
+                    if (response.item && response.item.appProxies) {
+                        var layerMixins = array.map(response.item.appProxies, function (p) {
+                            return {
+                                "url": p.sourceUrl,
+                                "mixin": {
+                                    "url": p.proxyUrl
+                                }
+                            };
+                        });
+                        cfg.layerMixins = layerMixins;
                     }
                     this.appConfig = cfg;
                     deferred.resolve(cfg);

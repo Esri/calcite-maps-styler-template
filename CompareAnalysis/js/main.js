@@ -110,6 +110,7 @@ declare, Color, parser, has, query, registry, win, all, lang, arcgisUtils, dom, 
 
                 var def = arcgisUtils.createMap(this.config.webmaps[i], cell.id, {
                     usePopupManager: true,
+                    layerMixins: this.config.layerMixins || [],
                     editable: this.config.editable,
                     bingMapsKey: this.config.bingKey
                 });

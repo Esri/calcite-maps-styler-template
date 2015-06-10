@@ -51,17 +51,25 @@ define(["dojo/Evented", "dijit/_WidgetBase", "dijit/_OnDijitClickMixin", "dijit/
                     axisLabelFontSize: 9,
                     indicatorFontColor: "#eee",
                     indicatorFillColor: "#666",
-                    titleFontColor: this.textColor,//"#eee",
-                    axisFontColor: this.chartAxisFontColor,//"#ccc",
+                    titleFontColor: this.textColor,
+                    //"#eee",
+                    axisFontColor: this.chartAxisFontColor,
+                    //"#ccc",
                     axisMajorTickColor: "#333",
-                    skyTopColor: this._createColor(this.chartSkyColor, 0.9),///"#B0E0E6",
-                    skyBottomColor: this.chartSkyColor,//"#4682B4",
+                    skyTopColor: this._createColor(this.chartSkyColor, 0.9),
+                    ///"#B0E0E6",
+                    skyBottomColor: this.chartSkyColor,
+                    //"#4682B4",
                     waterLineColor: "#eee",
-                    waterTopColor: this._createColor(this.chartSkyColor, 0.6),//"#ADD8E6",
-                    waterBottomColor: this.chartSkyColor,//"#0000FF",
-                    elevationLineColor: this._createColor(this.chartElevationColor, 0.2), //"#D2B48C", //bottom chart color (brown)
-                    elevationTopColor:  this._createColor(this.chartElevationColor, -0.4), // "#8B4513", //bottom chart color (brown)
-                    elevationBottomColor: this.chartElevationColor//"#CD853F" //bottom chart color (brown)
+                    waterTopColor: this._createColor(this.chartSkyColor, 0.6),
+                    //"#ADD8E6",
+                    waterBottomColor: this.chartSkyColor,
+                    //"#0000FF",
+                    elevationLineColor: this._createColor(this.chartElevationColor, 0.2),
+                    //"#D2B48C", //bottom chart color (brown)
+                    elevationTopColor: this._createColor(this.chartElevationColor, -0.4),
+                    // "#8B4513", //bottom chart color (brown)
+                    elevationBottomColor: this.chartElevationColor //"#CD853F" //bottom chart color (brown)
                 }, options.chartOptions || {});
 
                 // PROVIDE INSTANCE CONTEXT TO METHODS //
@@ -77,23 +85,24 @@ define(["dojo/Evented", "dijit/_WidgetBase", "dijit/_OnDijitClickMixin", "dijit/
             }
 
         },
-        _createColor: function(hex, lum){
+        _createColor: function (hex, lum) {
             // validate hex string
-            hex = String(hex).replace(/[^0-9a-f]/gi, '');
+            hex = String(hex).replace(/[^0-9a-f]/gi, "");
             if (hex.length < 6) {
-                hex = hex[0]+hex[0]+hex[1]+hex[1]+hex[2]+hex[2];
+                hex = hex[0] + hex[0] + hex[1] + hex[1] + hex[2] + hex[2];
             }
             lum = lum || 0;
 
             // convert to decimal and change luminosity
-            var rgb = "#", c, i;
+            var rgb = "#",
+                c, i;
             for (i = 0; i < 3; i++) {
-                c = parseInt(hex.substr(i*2,2), 16);
+                c = parseInt(hex.substr(i * 2, 2), 16);
                 c = Math.round(Math.min(Math.max(0, c + (c * lum)), 255)).toString(16);
-                rgb += ("00"+c).substr(c.length);
+                rgb += ("00" + c).substr(c.length);
             }
             var color = new Color(rgb);
-            return color.toHex();           
+            return color.toHex();
         },
         /**
          *  POSTCREATE - CONNECT UI ELEMENT EVENTS
@@ -607,7 +616,7 @@ define(["dojo/Evented", "dijit/_WidgetBase", "dijit/_OnDijitClickMixin", "dijit/
                 }
 
                 // CREATE CHART //
-                var chartTitle = this.chartTitle || " ";// || this.strings.chart.title;
+                var chartTitle = this.chartTitle || " "; // || this.strings.chart.title;
                 this.profileChart = new Chart(this._chartNode, {
                     title: chartTitle,
                     titlePos: "top",

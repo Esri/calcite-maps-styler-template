@@ -186,53 +186,14 @@
          "category":"<b>Search Settings</b>",
          "fields":[
             {
-               "type":"paragraph",
-               "value":"Enable the search widget and optionally specify on or more layers and fields to be searchable."
-            },
-            {
                "type":"boolean",
                "fieldName":"geocoder",
-               "label":"Place search"
-            },{  
-               "type":"boolean",
-               "fieldName":"searchExtent",
-               "label":"Prioritize search results in current extent."
+               "label":"Enable search tool"
             },{
-               "type":"paragraph",
-               "value": "When Location Search is true the search widget will allow users to search for addresses and locations using one or more locators and also search the layers and fields specified in the Search Layers configuration option. Unchecking the Location Search option will remove the locator search and only configured search layers will be displayed."
-            },{
-               "type": "boolean",
-               "fieldName": "locationSearch",
-               "label": "Location Search"
-            },{  
-               "label":"Select search layers and fields",
-               "fieldName":"searchLayers",
-               "type":"multilayerandfieldselector",
-               "tooltip":"Select layer and fields to search",
-               "layerOptions":{  
-                  "supportedTypes":[  
-                     "FeatureLayer"
-                  ],
-                  "geometryTypes":[  
-                     "esriGeometryPoint",
-                     "esriGeometryLine",
-                     "esriGeometryPolyline",
-                     "esriGeometryPolygon"
-                  ]
-               },
-               "fieldOptions":{  
-                  "supportedTypes":[  
-                     "esriFieldTypeString",                       
-                     "esriFieldTypeDate",
-                     "esriFieldTypeSmallInteger",
-                     "esriFieldTypeInteger",
-                     "esriFieldTypeSingle",
-                     "esriFieldTypeDouble"
-                  ]
-               }
+               "type": "search",
+               "fieldName": "searchConfig",
+               "label": "Configure search tool"
             }
-         ]
-      }
    ],
    "values":{
       "theme":"chrome",
@@ -244,8 +205,6 @@
       "legend_side":"right",
       "home_button":true,
       "locate_button":true,
-      "geocoder":true,
-      "searchExtent": true, 
-      "locationSearch": true
+      "geocoder":true
    }
 }

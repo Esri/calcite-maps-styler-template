@@ -127,15 +127,27 @@ function(
                     return;
                 }
 
-                var configuredSearchLayers = (this.config.searchLayers instanceof Array) ? this.config.searchLayers : JSON.parse(this.config.searchLayers);
-                var searchSources = new SearchSources({
+                var searchOptions = {
                     map: this.map,
                     useMapExtent: this.config.searchExtent,
-                    geocoders: this.config.locationSearch ? this.config.helperServices.geocode : [],
-                    itemData: this.config.response.itemInfo.itemData,
-                    configuredSearchLayers: configuredSearchLayers
-                });
+                    itemData: this.config.response.itemInfo.itemData
+                };
+
+               if(this.config.searchConfig ){  
+                searchOptions.applicationConfiguredSources = this.config.searchConfig.sources || [];
+               }else if(this.config.searchLayers){
+                var configuredSearchLayers = (this.config.searchLayers instanceof Array) ? this.config.searchLayers : JSON.parse(this.config.searchLayers);
+                searchOptions.configuredSearchLayers = configuredSearchLayers;
+                searchOptions.geocoders = this.config.locationSearch ? this.config.helperServices.geocode : [];
+               }
+
+
+                var searchSources = new SearchSources(searchOptions);
                 var createdOptions = searchSources.createOptions();
+
+                if(this.config.searchConfig && this.config.searchConfig.activeSourceIndex){
+                    createdOptions.activeSourceIndex = this.config.searchConfig.activeSourceIndex;
+                }            
                 createdOptions.enableButtonMode = true;
                 createdOptions.expanded = false;
 
@@ -158,6 +170,7 @@ function(
             arcgisUtils.createMap(itemInfo , "mapDiv", {
                 mapOptions: mapOptions,
                 editable: false,
+                layerMixins: this.config.layerMixins || [],
                 bingMapsKey: this.config.bingmapskey,
                 usePopupManager: true
             }).then(lang.hitch(this, function(response) {

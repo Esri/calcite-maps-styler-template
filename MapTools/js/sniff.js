@@ -10,7 +10,7 @@ define(["dojo/has"], function (has) { /*App capabilities*/
         var share = g.config.share;
         return share;
     });
-    has.add("measure", function(g){
+    has.add("measure", function (g) {
         var measure = g.config.measure;
         return measure;
     });

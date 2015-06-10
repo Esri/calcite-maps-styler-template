@@ -1,6 +1,6 @@
 /*
-  Version 1.4
-  2/3/2015
+  Version 1.6
+  6/8/2015
 */
 
 /*global define,document,location,require */
@@ -20,8 +20,22 @@
  | See the License for the specific language governing permissions and
  | limitations under the License.
  */
-define(["dojo/Evented", "dojo/_base/declare", "dojo/_base/kernel", "dojo/_base/array", "dojo/_base/lang", "dojo/dom-class", "dojo/Deferred", "dojo/promise/all", "esri/arcgis/utils", "esri/urlUtils", "esri/request", "esri/config", "esri/lang", "esri/IdentityManager", "esri/arcgis/Portal", "esri/arcgis/OAuthInfo", "esri/tasks/GeometryService", "config/defaults", "dojo/string"], function (
-Evented, declare, kernel, array, lang, domClass, Deferred, all, arcgisUtils, urlUtils, esriRequest, esriConfig, esriLang, IdentityManager, esriPortal, ArcGISOAuthInfo, GeometryService, defaults, string) {
+define(["dojo/_base/array", "dojo/_base/declare", "dojo/_base/kernel", "dojo/_base/lang",
+
+"dojo/Evented", "dojo/Deferred", "dojo/string",
+
+"dojo/dom-class",
+
+"dojo/promise/all",
+
+"esri/config", "esri/IdentityManager", "esri/lang", "esri/request", "esri/urlUtils",
+
+"esri/arcgis/Portal", "esri/arcgis/OAuthInfo", "esri/arcgis/utils",
+
+"esri/tasks/GeometryService",
+
+"config/defaults"], function (
+array, declare, kernel, lang, Evented, Deferred, string, domClass, all, esriConfig, IdentityManager, esriLang, esriRequest, urlUtils, esriPortal, ArcGISOAuthInfo, arcgisUtils, GeometryService, defaults) {
     return declare([Evented], {
         config: {},
         orgConfig: {},
@@ -161,7 +175,17 @@ Evented, declare, kernel, array, lang, domClass, Deferred, all, arcgisUtils, url
             if (urlObject && urlObject.query && items && items.length) {
                 for (i = 0; i < items.length; i++) {
                     if (urlObject.query[items[i]]) {
-                        obj[items[i]] = urlObject.query[items[i]];
+                        var item = urlObject.query[items[i]];
+                        switch (item.toLowerCase()) {
+                        case "true":
+                            obj[items[i]] = true;
+                            break;
+                        case "false":
+                            obj[items[i]] = false;
+                            break;
+                        default:
+                            obj[items[i]] = item;
+                        }
                     }
                 }
             }
@@ -357,12 +381,28 @@ Evented, declare, kernel, array, lang, domClass, Deferred, all, arcgisUtils, url
                         this.itemConfig = cfg;
                         deferred.resolve(cfg);
                     }));
-                } else {
-                    // if webmap does not exist
-                    if (!this.config.webmap) {
-                        // use default webmap for boilerplate
-                        this.config.webmap = "24e01ef45d40423f95300ad2abc5038a";
-                    }
+                }
+                // no webmap is set and we have organization's info
+                else if (!this.config.webmap && this.config.orgInfo) {
+                    var defaultWebmap = {
+                        "item": {
+                            "title": "Default Webmap",
+                            "type": "Web Map",
+                            "description": "A webmap with the default basemap and extent.",
+                            "snippet": "A webmap with the default basemap and extent.",
+                            "extent": this.config.orgInfo.defaultExtent
+                        },
+                        "itemData": {
+                            "operationalLayers": [],
+                            "baseMap": this.config.orgInfo.defaultBasemap
+                        }
+                    };
+                    cfg.itemInfo = defaultWebmap;
+                    this.itemConfig = cfg;
+                    deferred.resolve(cfg);
+                }
+                // use webmap from id
+                else {
                     arcgisUtils.getItem(this.config.webmap).then(lang.hitch(this, function (itemInfo) {
                         // Set the itemInfo config option. This can be used when calling createMap instead of the webmap id
                         cfg.itemInfo = itemInfo;
@@ -398,6 +438,18 @@ Evented, declare, kernel, array, lang, domClass, Deferred, all, arcgisUtils, url
                     // get the extent for the application item. This can be used to override the default web map extent
                     if (response.item && response.item.extent) {
                         cfg.application_extent = response.item.extent;
+                    }
+                    // get any app proxies defined on the application item
+                    if (response.item && response.item.appProxies) {
+                        var layerMixins = array.map(response.item.appProxies, function (p) {
+                            return {
+                                "url": p.sourceUrl,
+                                "mixin": {
+                                    "url": p.proxyUrl
+                                }
+                            };
+                        });
+                        cfg.layerMixins = layerMixins;
                     }
                     this.appConfig = cfg;
                     deferred.resolve(cfg);

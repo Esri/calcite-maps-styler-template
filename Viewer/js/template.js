@@ -378,14 +378,14 @@ Evented, declare, kernel, array, lang, domClass, Deferred, all, arcgisUtils, url
                         // save response
                         this.appResponse = response;
                     }
-                    if(response.item.appProxies){
-                        var layerMixins = array.map(response.item.appProxies, function(p){
+                    if (response.item.appProxies) {
+                        var layerMixins = array.map(response.item.appProxies, function (p) {
                             return {
-                              "url": p.sourceUrl,
-                              "mixin":{
-                                "url": p.proxyUrl
-                              }
-                            }
+                                "url": p.sourceUrl,
+                                "mixin": {
+                                    "url": p.proxyUrl
+                                }
+                            };
                         });
                         this.appConfig.layerMixins = layerMixins;
                     }

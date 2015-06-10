@@ -103,16 +103,25 @@ declare, win, array, Color, all, Deferred, lang, domUtils, esriRequest, esriLang
                 if (!Search && !Locator && !SearchSources) {
                     return;
                 }
-                var configuredSearchLayers = (this.config.searchLayers instanceof Array) ? this.config.searchLayers : JSON.parse(this.config.searchLayers);
-                var searchSources = new SearchSources({
+                var searchOptions = {
                     map: this.map,
                     useMapExtent: this.config.searchExtent,
-                    geocoders: this.config.locationSearch ? this.config.helperServices.geocode : [],
-                    itemData: this.config.response.itemInfo.itemData,
-                    configuredSearchLayers: configuredSearchLayers
-                });
+                    itemData: this.config.response.itemInfo.itemData
+                };
+
+                if (this.config.searchConfig) {
+                    searchOptions.applicationConfiguredSources = this.config.searchConfig.sources || [];
+                } else if (this.config.searchLayers) {
+                    var configuredSearchLayers = (this.config.searchLayers instanceof Array) ? this.config.searchLayers : JSON.parse(this.config.searchLayers);
+                    searchOptions.configuredSearchLayers = configuredSearchLayers;
+                    searchOptions.geocoders = this.config.locationSearch ? this.config.helperServices.geocode : [];
+                }
+                var searchSources = new SearchSources(searchOptions);
                 var createdOptions = searchSources.createOptions();
                 createdOptions.enableButtonMode = true;
+                if (this.config.searchConfig && this.config.searchConfig.activeSourceIndex) {
+                    createdOptions.activeSourceIndex = this.config.searchConfig.activeSourceIndex;
+                }
                 var search = new Search(createdOptions, domConstruct.create("div", {
                     id: "search"
                 }, "mapDiv"));
@@ -201,7 +210,7 @@ declare, win, array, Color, all, Deferred, lang, domUtils, esriRequest, esriLang
                 printDef = new Deferred(),
                 measureDef = new Deferred(),
                 bookmarksDef = new Deferred();
-            var toolDeferreds = [measureDef,shareDef, tableDef, printDef, layerDef, basemapDef, bookmarksDef];
+            var toolDeferreds = [measureDef, shareDef, tableDef, printDef, layerDef, basemapDef, bookmarksDef];
 
             /*Toolbar widgets ( print, layers, share, basemap etc)*/
 
@@ -326,7 +335,7 @@ declare, win, array, Color, all, Deferred, lang, domUtils, esriRequest, esriLang
                 tableDef.resolve(btn);
                 return tableDef.promise;
             }));
-            
+
             require(["application/sniff!print?esri/dijit/Print", "application/sniff!print?esri/tasks/PrintTemplate"], lang.hitch(this, function (Print, PrintTemplate) {
 
                 if (!Print) {
@@ -535,7 +544,7 @@ declare, win, array, Color, all, Deferred, lang, domUtils, esriRequest, esriLang
                 on(btn, "click", lang.hitch(this, function () {
                     this._displayContainer("measure_container", "measure_toggle");
                 }));
- 
+
                 this._createContainer("measure_container", "measureDiv");
                 var areaUnit = (this.config.units === "metric") ? "esriSquareKilometers" : "esriSquareMiles";
                 var lengthUnit = (this.config.units === "metric") ? "esriKilometers" : "esriMiles";
@@ -547,10 +556,10 @@ declare, win, array, Color, all, Deferred, lang, domUtils, esriRequest, esriLang
                 var measureWidget = new Measurement(options, dom.byId("measureDiv"));
 
                 measureWidget.startup();
-                query(".tools-menu").on("click", lang.hitch(this, function(e){
-                    if(e.target && e.target.parentNode && e.target.parentNode.id && e.target.parentNode.id !== "measure_toggle"){
+                query(".tools-menu").on("click", lang.hitch(this, function (e) {
+                    if (e.target && e.target.parentNode && e.target.parentNode.id && e.target.parentNode.id !== "measure_toggle") {
                         var tool = measureWidget.getTool();
-                        if(tool){
+                        if (tool) {
                             measureWidget.setTool(tool.toolName, false);
                             measureWidget.clearResult();
                             //reactivate map click
@@ -558,14 +567,14 @@ declare, win, array, Color, all, Deferred, lang, domUtils, esriRequest, esriLang
                         }
                     }
                 }));
-                query(".esriMeasurement .dijitButtonNode").on("click", lang.hitch(this, function(e){
-                   var tool = measureWidget.getTool();
+                query(".esriMeasurement .dijitButtonNode").on("click", lang.hitch(this, function (e) {
+                    var tool = measureWidget.getTool();
 
-                   if(tool){
-                    this.map.setInfoWindowOnClick(false);
-                   }else{
-                    this.map.setInfoWindowOnClick(true);
-                   }
+                    if (tool) {
+                        this.map.setInfoWindowOnClick(false);
+                    } else {
+                        this.map.setInfoWindowOnClick(true);
+                    }
                 }));
                 measureDef.resolve(btn);
                 return measureDef.promise;
@@ -765,6 +774,7 @@ declare, win, array, Color, all, Deferred, lang, domUtils, esriRequest, esriLang
             arcgisUtils.createMap(itemInfo, "mapDiv", {
                 mapOptions: mapOptions,
                 usePopupManager: true,
+                layerMixins: this.config.layerMixins || [],
                 editable: this.config.editable,
                 bingMapsKey: this.config.bingKey
             }).then(lang.hitch(this, function (response) {
@@ -827,7 +837,7 @@ declare, win, array, Color, all, Deferred, lang, domUtils, esriRequest, esriLang
 
                 //Set the font color using the configured color value
                 query(".esriPopup .titlePane").style("color", this.config.color.toString());
-                query(".esriPopup. .titleButton").style("color", this.config.color.toString());
+                query(".esriPopup .titleButton").style("color", this.config.color.toString());
 
 
                 //Add a title 

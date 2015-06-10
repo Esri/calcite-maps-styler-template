@@ -45,44 +45,12 @@
             {
                 "type": "boolean",
                 "fieldName": "search",
-                "label": "Address Finder"
+                "label": "Enable search tool"
             },{
-                "type": "boolean",
-                "fieldName": "searchExtent",
-                "label": "Search within current extent"
-            },{
-               "type":"paragraph",
-               "value": "When Location Search is true the search widget will allow users to search for addresses and locations using one or more locators and also search the layers and fields specified in the Search Layers configuration option. Unchecking the Location Search option will remove the locator search and only configured search layers will be displayed."
-            },{
-               "type": "boolean",
-               "fieldName": "locationSearch",
-               "label": "Location Search"
-            },{  
-               "type":"paragraph",
-               "value":"Select search layers and fields. These layers will appear in the search tool allowing application users to search for particular values in the specified layers and fields."
-            },
-            {
-               "label": "Select layers and fields",
-               "fieldName": "searchLayers",
-               "type": "multilayerandfieldselector",
-               "tooltip": "Select layer and fields to search",
-               "layerOptions":{
-                  "supportedTypes": ["FeatureLayer"],
-                  "geometryTypes": ["esriGeometryPoint", "esriGeometryLine", "esriGeometryPolyline", "esriGeometryPolygon"]
-               },
-               "fieldOptions":{
-                  "supportedTypes": [
-                     "esriFieldTypeString",                       
-                     "esriFieldTypeDate",
-                     "esriFieldTypeSmallInteger",
-                     "esriFieldTypeInteger",
-                     "esriFieldTypeSingle",
-                     "esriFieldTypeDouble"                       
-                      
-                    ]
-               }
+              "type": "search",
+              "fieldName": "searchConfig",
+              "label": "Configure search tool"
             }
-
       ]
     },{
         "category": "Tools",
@@ -142,8 +110,6 @@
       }],
     "values": {
         "search": true,
-        "searchExtent": true,
-        "locationSearch": true,
         "locate": true,
         "color": "#2f4f4f",
         "theme": "#949494",

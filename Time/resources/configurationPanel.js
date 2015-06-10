@@ -168,52 +168,14 @@
       },{
          "category": "Search Settings",
          "fields": [
-            {
-               "type": "paragraph",
-               "value": "Enable/disable the search tool and optionally select layers (and fields) to add to the search tool."
-            },
             {  
-               "label":"Select search layers and fields",
-               "fieldName":"searchLayers",
-               "type":"multilayerandfieldselector",
-               "tooltip":"Select layer and fields to search",
-               "layerOptions":{  
-                  "supportedTypes":[  
-                     "FeatureLayer"
-                  ],
-                  "geometryTypes":[  
-                     "esriGeometryPoint",
-                     "esriGeometryLine",
-                     "esriGeometryPolyline",
-                     "esriGeometryPolygon"
-                  ]
-               },
-               "fieldOptions":{  
-                  "supportedTypes":[  
-                     "esriFieldTypeString",                       
-                     "esriFieldTypeDate",
-                     "esriFieldTypeSmallInteger",
-                     "esriFieldTypeInteger",
-                     "esriFieldTypeSingle",
-                     "esriFieldTypeDouble"
-                  ]
-               }
-            },{  
                "type":"boolean",
                "fieldName":"search",
-               "label":"Search"
-            },
-            {  
-               "type":"boolean",
-               "fieldName":"searchExtent",
-               "label":"Prioritize search results in current extent."
+               "label":"Enable search tool"
             },{
-               "type":"paragraph",
-               "value": "When Location Search is true the search widget will allow users to search for addresses and locations using one or more locators and also search the layers and fields specified in the Search Layers configuration option. Unchecking the Location Search option will remove the locator search and only configured search layers will be displayed."
-            },{
-               "type": "boolean",
-               "fieldName": "locationSearch",
-               "label": "Location Search"
+               "type": "search",
+               "fieldName": "searchConfig",
+               "label": "Configure Search"
             }
          ]
       }
@@ -236,8 +198,6 @@
       "legend": true,
       "search": true,
       "scale":false,
-      "locationSearch": true,
-      "searchExtent":false,
       "timeposition": "bottom-center"
    }
 }

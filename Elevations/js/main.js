@@ -5,14 +5,14 @@ define(["dojo/ready", "dojo/_base/declare", "dojo/query", "dojo/dom-style", "doj
             this.config = config;
 
             //update the color scheme
-            if(this.config.backgroundColor){
+            if (this.config.backgroundColor) {
                 var container = dom.byId("mainContainer");
-                if(container){
+                if (container) {
                     domStyle.set(container, "background-color", this.config.backgroundColor);
                     domStyle.set(container, "color", this.config.textColor);
                 }
                 var top = dom.byId("topContainer");
-                if(top){
+                if (top) {
                     domStyle.set(top, "border-color", this.config.borderColor);
                     dojoQuery(".dijitSplitterH").style("background-color", this.config.borderColor);
                 }
@@ -65,6 +65,7 @@ define(["dojo/ready", "dojo/_base/declare", "dojo/query", "dojo/dom-style", "doj
                 mapOptions: mapOptions,
                 editable: false,
                 ignorePopups: false,
+                layerMixins: this.config.layerMixins || [],
                 usePopupManager: true,
                 bingMapsKey: this.config.bingmapskey
             }).then(lang.hitch(this, function (response) {
@@ -93,19 +94,19 @@ define(["dojo/ready", "dojo/_base/declare", "dojo/query", "dojo/dom-style", "doj
 
                 registry.byId("mainContainer").layout();
 
-                
+
                 dom.byId("descriptionNode").innerHTML = response.itemInfo.item.description || "";
-                
+
                 registry.byId("infoContainer").layout();
 
 
                 this.map = response.map;
 
-                domClass.add(this.map.infoWindow.domNode, ["light","custom"]);
+                domClass.add(this.map.infoWindow.domNode, ["light", "custom"]);
                 dojoQuery(".esriPopup.light .titlePane").style("background-color", this.config.backgroundColor);
                 dojoQuery(".esriPopup.light .titleButton").style("color", this.config.textColor);
                 dojoQuery(".esriPopup.light .titlePane .title").style("color", this.config.textColor);
-                on(this.map.infoWindow, "show",lang.hitch(this, function(){
+                on(this.map.infoWindow, "show", lang.hitch(this, function () {
                     dojoQuery(".esriPopup.light .pointer.top").style("background", this.config.backgroundColor);
                 }));
 
@@ -135,10 +136,10 @@ define(["dojo/ready", "dojo/_base/declare", "dojo/query", "dojo/dom-style", "doj
                         layerInfos: legendLayers
                     }, "legendNode");
                     legendDijit.startup();
-                }else{
-                    if(this.config.titleInHeader === true && response.itemInfo.item.description === null){
-                          domStyle.set(dom.byId("infoContainer"), "display", "none");
-                          registry.byId("mainContainer").layout();
+                } else {
+                    if (this.config.titleInHeader === true && response.itemInfo.item.description === null) {
+                        domStyle.set(dom.byId("infoContainer"), "display", "none");
+                        registry.byId("mainContainer").layout();
                     }
                 }
 
@@ -150,16 +151,25 @@ define(["dojo/ready", "dojo/_base/declare", "dojo/query", "dojo/dom-style", "doj
                         if (!Search && !Locator && !SearchSources) {
                             return;
                         }
-
-                        var configuredSearchLayers = (this.config.searchLayers instanceof Array) ? this.config.searchLayers : JSON.parse(this.config.searchLayers);
-                        var searchSources = new SearchSources({
+                        var searchOptions = {
                             map: this.map,
                             useMapExtent: this.config.searchExtent,
-                            geocoders: this.config.locationSearch ? this.config.helperServices.geocode : [],
-                            itemData: this.config.response.itemInfo.itemData,
-                            configuredSearchLayers: configuredSearchLayers
-                        });
+                            itemData: this.config.response.itemInfo.itemData
+                        };
+
+                        if (this.config.searchConfig) {
+                            searchOptions.applicationConfiguredSources = this.config.searchConfig.sources || [];
+                        } else if (this.config.searchLayers) {
+                            var configuredSearchLayers = (this.config.searchLayers instanceof Array) ? this.config.searchLayers : JSON.parse(this.config.searchLayers);
+                            searchOptions.configuredSearchLayers = configuredSearchLayers;
+                            searchOptions.geocoders = this.config.locationSearch ? this.config.helperServices.geocode : [];
+                        }
+                        var searchSources = new SearchSources(searchOptions);
                         var createdOptions = searchSources.createOptions();
+
+                        if (this.config.searchConfig && this.config.searchConfig.activeSourceIndex) {
+                            createdOptions.activeSourceIndex = this.config.searchConfig.activeSourceIndex;
+                        }
 
                         var search = new Search(createdOptions, domConstruct.create("div", {
                             id: "search"
