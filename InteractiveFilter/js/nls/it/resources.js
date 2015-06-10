@@ -13,9 +13,6 @@
       errors:{
         message: "Problema durante la creazione dell\'applicazione dei filtri"
       }
-    },
-    legend:{
-      title: "é_Legend___È"
     }
   })
 );

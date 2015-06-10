@@ -13,9 +13,6 @@
       errors:{
         message: "Ongelma luotaessa suodatinsovellusta"
       }
-    },
-    legend:{
-      title: "Å_Legend___ö"
     }
   })
 );

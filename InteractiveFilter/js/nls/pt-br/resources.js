@@ -13,9 +13,6 @@
       errors:{
         message: "Problema ao criar o aplicativo dos filtros"
       }
-    },
-    legend:{
-      title: "ã_Legend___Ç"
     }
   })
 );

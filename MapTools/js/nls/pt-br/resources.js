@@ -20,7 +20,6 @@ define(
             error: "Não foi possível criar o mapa"
         },
         tools:{
-            bookmarkTool: "ã_Bookmarks____Ç",
             basemapTool: "Mapas Base",
             legendTool: "Legenda",
             detailsTool: "Detalhes",

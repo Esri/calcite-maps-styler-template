@@ -27,10 +27,10 @@ define(
             dijitLegend: "顯示圖例",  //Display the legend
             filter: "篩選地圖圖層",  // Explains purpose of type-in box affiliated with template picker
             basemap: "切換底圖",  // Command button to open a dialog box for switching basemaps
-            share: "分享",  // Command button to open a dropdown menu for picking a type of sharing
-            shareViaEmail: "透過電子郵件分享",  // Command button to share the current map extents via email
-            shareViaFacebook: "透過 Facebook 分享",  // Command button to share the current map extents via a Facebook post: a URL is opened that permits the user to log into Facebook with a post that is ready to go
-            shareViaTwitter: "透過 Twitter 分享",  // Command button to share the current map extents via a Twitter tweet: a URL is opened that permits the user to log into Twitter with a tweet that is ready to go
+            share: "共用",  // Command button to open a dropdown menu for picking a type of sharing
+            shareViaEmail: "透過電子郵件共用",  // Command button to share the current map extents via email
+            shareViaFacebook: "透過 Facebook 共用",  // Command button to share the current map extents via a Facebook post: a URL is opened that permits the user to log into Facebook with a post that is ready to go
+            shareViaTwitter: "透過 Twitter 共用",  // Command button to share the current map extents via a Twitter tweet: a URL is opened that permits the user to log into Twitter with a tweet that is ready to go
             print: "列印地圖",  // Command button to open a dialog box for specifying print orientation, title, and author before printing; also used inside print dialog box
             fetchPrint: "檢視列印的地圖",  // Command button to open a PDF containing a map that was just printed by the print map command
             landscape: "橫向頁面方向",  // Command button in the print map dialog box to select the landscape page orientation
@@ -54,14 +54,14 @@ define(
             geolocationDenied: "該網站沒有取得目前位置的權限",  // Shown when the browser does not permit the app to get the current geographical position
             geolocationUnavailable: "瀏覽器無法取得目前位置",  // Shown when the browser returns an error instead of the current geographical position
             geolocationTimeout: "瀏覽器無法及時取得目前位置",  // Shown when the browser does not return within a configured time limit when asked for the current geographical position
-            noSearchLayerConfigured: "尚未設定任何查詢圖層",  // Appears before a list of map layers; shown when the app is not configured with any layers to use for the find command; works with the mapLayers prompt
+            noSearchLayerConfigured: "尚未配置任何查詢圖層",  // Appears before a list of map layers; shown when the app is not configured with any layers to use for the find command; works with the mapLayers prompt
             searchLayerMissing: "在地圖中未找到此查詢圖層",  // Appears before a list of map layers; shown when the app is not configured with the layer to use for the find command; works with the mapLayers prompt
             searchLayerNotSearchable: "無法找到地圖圖層的欄位。<br><br>請確認此圖層存在於地圖內容的根目錄。巢狀服務(例如 ArcGIS for Server 動態地圖服務)必須新增到地圖(一次新增到一個圖層)(包括圖層索引編號)，以做為\\“查詢圖層\\”。並排服務不能用作\\“查詢圖層\\”。",
             searchFieldMissing: "在地圖查詢圖層中未找到此欄位",  // Appears before a list of fields in the configured map find layer; shown when the app cannot find one or more of the fields that were configured for the find command; works with the layerFields prompt
             allSearchFieldsMissing: "在地圖查詢圖層中未找到這些欄位",  // Appears before a list of fields in the configured map find layer; shown when the app cannot find any of the fields that were configured for the find command; works with the layerFields prompt
             fieldNotFound: "此欄位不存在於任何地圖圖層中",  // Appears when a field used in the configuration was not found in any map layer
             yourContentSubmitted: "您的內容已提交。謝謝。",  // Appears after content has been added to the map and successfully submitted to the server
-            noConfiguration: "無法存取應用程式的設定",  // Appears if the app, during startup, cannot get access to or find the configuration information; without the information, it cannot build the UI
+            noConfiguration: "無法存取應用程式的配置",  // Appears if the app, during startup, cannot get access to or find the configuration information; without the information, it cannot build the UI
             unableToLaunchApp: "無法啟動應用程式"  // Appears for any failure to build the user interface
         }
     })

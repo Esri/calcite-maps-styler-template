@@ -20,7 +20,6 @@ define(
             error: "Не удалось создать карту"
         },
         tools:{
-            bookmarkTool: "Ж_Bookmarks____Я",
             basemapTool: "Базовые карты",
             legendTool: "Легенда",
             detailsTool: "Детали",

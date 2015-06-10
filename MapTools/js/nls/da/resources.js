@@ -20,7 +20,6 @@ define(
             error: "Kan ikke oprette kort"
         },
         tools:{
-            bookmarkTool: "ø_Bookmarks____å",
             basemapTool: "Basemaps",
             legendTool: "Signaturforklaring",
             detailsTool: "Oplysninger",

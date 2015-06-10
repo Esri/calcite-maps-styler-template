@@ -13,9 +13,6 @@
       errors:{
         message: "Probleem bij het maken van de applicatie van de filter"
       }
-    },
-    legend:{
-      title: "Ĳ_Legend___ä"
     }
   })
 );

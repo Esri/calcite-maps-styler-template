@@ -13,9 +13,6 @@
       errors:{
         message: "Problem med å opprette filterapplikasjonen"
       }
-    },
-    legend:{
-      title: "å_Legend___ø"
     }
   })
 );

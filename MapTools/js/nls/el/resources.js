@@ -20,7 +20,6 @@ define(
             error: "Δεν είναι δυνατή η δημιουργία χάρτη"
         },
         tools:{
-            bookmarkTool: "Đ_Bookmarks____ớ",
             basemapTool: "Υπόβαθρα",
             legendTool: "Υπόμνημα",
             detailsTool: "Λεπτομέρειες",

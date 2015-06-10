@@ -67,9 +67,7 @@ define(
             layoutBtnTitle: "Layout",
             signInBtnTitle: "Logga in",
             signOutBtnTitle: "Logga ut",
-            geolocationBtnTitle: "Geolokalisering",
-            ascendingSort: "Å_Ascending____ö",
-            descendingSort: "Å_Descending____ö"
+            geolocationBtnTitle: "Geolokalisering"
         },
         errorMessages: {
             emptyGroup: "Den konfigurerade gruppen innehåller inga data för att köra frågan.",

@@ -67,9 +67,7 @@ define(
             layoutBtnTitle: "Layout",
             signInBtnTitle: "Anmelden",
             signOutBtnTitle: "Abmelden",
-            geolocationBtnTitle: "Geolocation",
-            ascendingSort: "ä_Ascending____Ü",
-            descendingSort: "ä_Descending____Ü"
+            geolocationBtnTitle: "Geolocation"
         },
         errorMessages: {
             emptyGroup: "Die konfigurierte Gruppe verfügt über keine Daten, um die Abfrage auszuführen.",

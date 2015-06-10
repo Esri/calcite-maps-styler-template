@@ -25,8 +25,8 @@
   },
   errors: {
     InvalidConfiguration: {
-      name: '無效的設定錯誤',
-      message: '無效的設定。'
+      name: '無效配置錯誤',
+      message: '無效的配置。'
     },
     MissingConstructorParameters: {
       name: '缺少建構函式參數錯誤',

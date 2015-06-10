@@ -1,9 +1,9 @@
 ﻿define(
    ({
     display: {
-      elevationProfileTitle: "بيت_Elevation Profile______لاحقة",
+      elevationProfileTitle: "الملف التعريفي للارتفاعات",
       showMe: "عرض",
-      selectLine: "بيت_<b>Select</b> a line feature in the map_____________لاحقة.",
+      selectLine: "<b>تحديد</b> معلم في الخريطة.",
       popupRequirement: "ملاحظة: يجب وجود المعلم في طبقة مع تعطيل العناصر المنبثقة.",
       digitizeDistanceMeasureTool: "استخدم أدوات <b>قياس</b>",
       selectFeatureHelpUrl: "http://help.arcgis.com/ar/arcgisonline/help/010q/010q0000004s000000.htm#ESRI_SECTION1_DAA22E89DF67448E8F3682309F39BE5D",
@@ -15,7 +15,7 @@
       helpLabel: "تعليمات"
     },
     chart: {
-      title: "بيت_Elevation Profile______لاحقة",
+      title: "الملف التعريفي للارتفاعات",
       demResolution: "دقة DEM",
       elevationTitleTemplate: "الارتفاع بـ {0}",
       distanceTitleTemplate: "المسافة بـ {0}",

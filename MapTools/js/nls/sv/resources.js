@@ -20,7 +20,6 @@ define(
             error: "Det gick inte att skapa kartan"
         },
         tools:{
-            bookmarkTool: "Å_Bookmarks____ö",
             basemapTool: "Baskartor",
             legendTool: "Teckenförklaring",
             detailsTool: "Information",

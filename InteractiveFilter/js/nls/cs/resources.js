@@ -13,9 +13,6 @@
       errors:{
         message: "Při vytváření aplikace filtrů nastal problém."
       }
-    },
-    legend:{
-      title: "Ř_Legend___ů"
     }
   })
 );

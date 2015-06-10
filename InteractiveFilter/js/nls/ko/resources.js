@@ -13,9 +13,6 @@
       errors:{
         message: "필터 응용프로그램을 생성하는 중 문제가 발생했습니다."
       }
-    },
-    legend:{
-      title: "한_Legend___빠"
     }
   })
 );

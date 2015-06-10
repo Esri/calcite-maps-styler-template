@@ -40,7 +40,7 @@ define(
             },
 			"share": {
 				"extent": "使用目前地圖範圍",
-				"label": "分享此地圖",
+				"label": "共用此地圖",
 				"link": "地圖連結",
 				"facebook": "Facebook",
 				"twitter": "Twitter"
@@ -59,7 +59,7 @@ define(
         	"time": "時間",
         	"print": "列印",
         	"details": "詳細資訊",
-        	"share": "分享"
+        	"share": "共用"
         }
     })
 );

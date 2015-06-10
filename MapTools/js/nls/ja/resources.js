@@ -20,7 +20,6 @@ define(
             error: "マップを作成できません"
         },
         tools:{
-            bookmarkTool: "須_Bookmarks____鷗",
             basemapTool: "ベースマップ",
             legendTool: "凡例",
             detailsTool: "詳細",

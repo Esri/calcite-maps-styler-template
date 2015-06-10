@@ -1,5 +1,5 @@
-﻿define(
-   ({
+﻿define({
+  root: ({
   display: {
     elevationProfileTitle: "Elevation Profile",
     showMe: "show me",
@@ -25,25 +25,45 @@
   },
   errors: {
     InvalidConfiguration: {
+      code: 17056601,
       name: 'Invalid Configuration Error',
       message: 'Invalid configuration.'
     },
     MissingConstructorParameters: {
+      code: 17056602,
       name: 'Missing Constructor Parameters Error',
       message: 'Missing constructor parameter.'
     },
     MissingInitParameter: {
+      code: 17056603,
       name: 'Missing Init Parameter Error',
       message: 'Missing init parameter.'
     },
     SOEOperationNotSupported: {
+      code: 17056604,
       name: 'Operation Not Supported Error',
       message: 'This version of the SOE does NOT support this operation.'
     },
     SOEMultiPartGeometriesNotSupported: {
+      code: 17056605,
       name: 'Multi-part Geometries Not Supported Error',
       message: "CAUTION: multi-part lines are currently NOT supported."
     }
   }
-})
-);
+}),
+"ar": 1,
+"de": 1,
+"es": 1,
+"fr": 1,
+"it": 1,
+"ja": 1,
+"ko": 1,
+"nl": 1,
+"no": 1,
+"pl": 1,
+"pt-br": 1,
+"ro": 1,
+"ru": 1,
+"sv": 1,
+"zh-cn": 1
+});

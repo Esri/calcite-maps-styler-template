@@ -67,9 +67,7 @@ define(
             layoutBtnTitle: "Maketas",
             signInBtnTitle: "Prisijungti",
             signOutBtnTitle: "Atsijungti",
-            geolocationBtnTitle: "Geolokacija",
-            ascendingSort: "Į_Ascending____š",
-            descendingSort: "Į_Descending____š"
+            geolocationBtnTitle: "Geolokacija"
         },
         errorMessages: {
             emptyGroup: "Sukonfigūruotoje grupėje nėra duomenų užklausai įvykdyti.",

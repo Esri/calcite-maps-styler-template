@@ -20,7 +20,6 @@ define(
             error: "Nevar izveidot karti"
         },
         tools:{
-            bookmarkTool: "ķ_Bookmarks____ū",
             basemapTool: "Pamatkartes",
             legendTool: "Apzīmējumi",
             detailsTool: "Detaļas",

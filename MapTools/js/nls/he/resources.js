@@ -20,7 +20,6 @@ define(
             error: "לא ניתן ליצור מפה"
         },
         tools:{
-            bookmarkTool: "כן_Bookmarks____ש",
             basemapTool: "מפות בסיס",
             legendTool: "מקרא",
             detailsTool: "פרטים",

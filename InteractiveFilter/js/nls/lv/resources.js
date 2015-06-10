@@ -13,9 +13,6 @@
       errors:{
         message: "Problēma izveidojot filtra aplikāciju"
       }
-    },
-    legend:{
-      title: "ķ_Legend___ū"
     }
   })
 );

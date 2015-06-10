@@ -45,7 +45,7 @@
 			title: "清除地圖"
 		},
 		share: {
-			label: "分享地圖:",
+			label: "共用地圖:",
 			email:{
 				title: "電子郵件",
 				label: "電子郵件"

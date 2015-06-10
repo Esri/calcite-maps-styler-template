@@ -20,7 +20,6 @@ define(
             error: "Kaarti ei saa luua"
         },
         tools:{
-            bookmarkTool: "Š_Bookmarks____ä",
             basemapTool: "Aluskaardid",
             legendTool: "Legend",
             detailsTool: "Detailid",

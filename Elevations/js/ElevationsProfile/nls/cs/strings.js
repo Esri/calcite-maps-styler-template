@@ -1,9 +1,9 @@
 ﻿define(
    ({
     display: {
-      elevationProfileTitle: "Ř_Elevation Profile______ů",
+      elevationProfileTitle: "Profil nadmořských výšek",
       showMe: "ukaž mi",
-      selectLine: "Ř_<b>Select</b> a line feature in the map_____________ů.",
+      selectLine: "<b>Vyberte</b> prvek v mapě.",
       popupRequirement: "POZNÁMKA: prvek se musí nacházet ve vrstvě s povolenými vyskakovacími okny.",
       digitizeDistanceMeasureTool: "Použijte nástroje <b>Měření</b>.",
       selectFeatureHelpUrl: "http://help.arcgis.com/en/arcgisonline/help/010q/010q0000004s000000.htm#ESRI_SECTION1_DAA22E89DF67448E8F3682309F39BE5D",
@@ -15,7 +15,7 @@
       helpLabel: "Nápověda"
     },
     chart: {
-      title: "Ř_Elevation Profile______ů",
+      title: "Profil nadmořských výšek",
       demResolution: "Rozlišení DEM",
       elevationTitleTemplate: "Nadmořská výška v {0}",
       distanceTitleTemplate: "Vzdálenost v {0}",

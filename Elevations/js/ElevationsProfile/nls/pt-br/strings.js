@@ -1,9 +1,9 @@
 ﻿define(
    ({
     display: {
-      elevationProfileTitle: "ã_Elevation Profile______Ç",
+      elevationProfileTitle: "Perfil de Elevação",
       showMe: "mostre-me",
-      selectLine: "ã_<b>Select</b> a line feature in the map_____________Ç.",
+      selectLine: "<b>Selecione</b>uma feição no mapa.",
       popupRequirement: "OBSERVAÇÃO: a feição deve estar em uma camada com Pop-ups habilitados.",
       digitizeDistanceMeasureTool: "Utilize a ferramenta <b>Medir</b>.",
       selectFeatureHelpUrl: "http://help.arcgis.com/pt-br/arcgisonline/help/010q/010q0000004s000000.htm#ESRI_SECTION1_DAA22E89DF67448E8F3682309F39BE5D",
@@ -15,7 +15,7 @@
       helpLabel: "Ajuda"
     },
     chart: {
-      title: "ã_Elevation Profile______Ç",
+      title: "Perfil de Elevação",
       demResolution: "Resolução do DEM",
       elevationTitleTemplate: "Elevação em {0}",
       distanceTitleTemplate: "Distância em {0}",

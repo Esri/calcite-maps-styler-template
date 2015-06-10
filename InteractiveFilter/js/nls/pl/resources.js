@@ -13,9 +13,6 @@
       errors:{
         message: "Wystąpił problem podczas filtrowania aplikacji"
       }
-    },
-    legend:{
-      title: "ł_Legend___ą"
     }
   })
 );

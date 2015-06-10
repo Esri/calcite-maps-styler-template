@@ -13,9 +13,6 @@
       errors:{
         message: "Có lỗi khi tạo ứng dụng bộ lọc"
       }
-    },
-    legend:{
-      title: "Đ_Legend___ớ"
     }
   })
 );

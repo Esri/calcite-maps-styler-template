@@ -17,7 +17,7 @@
 define(
      ({
         map: {
-            error: "Nu se poate crea harta"
+            error: "Imposibil de creat harta"
         },
         tools: {
             info: {

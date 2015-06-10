@@ -1,9 +1,9 @@
 ﻿define(
    ({
     display: {
-      elevationProfileTitle: "試_Elevation Profile______驗",
+      elevationProfileTitle: "高程剖面圖",
       showMe: "顯示",
-      selectLine: "試_<b>Select</b> a line feature in the map_____________驗.",
+      selectLine: "<b>選擇</b>地圖中的圖徵。",
       popupRequirement: "注意: 該圖徵必須位於已啟用快顯的圖層中。",
       digitizeDistanceMeasureTool: "使用<b>測量</b>工具。",
       selectFeatureHelpUrl: "http://help.arcgis.com/zh-cn/arcgisonline/help/010q/010q0000004s000000.htm#ESRI_SECTION1_DAA22E89DF67448E8F3682309F39BE5D",
@@ -15,7 +15,7 @@
       helpLabel: "說明"
     },
     chart: {
-      title: "試_Elevation Profile______驗",
+      title: "高程剖面圖",
       demResolution: "DEM 解析度",
       elevationTitleTemplate: "海拔 (以 {0} 為單位)",
       distanceTitleTemplate: "距離(以 {0} 為單位)",
@@ -23,7 +23,7 @@
     },
     errors: {
       MissingConstructorParameters: "缺少建構函式參數。",
-      InvalidConfiguration: "無效的設定。",
+      InvalidConfiguration: "無效的配置。",
       UnableToProcessResults: "無法處理分析結果。"
     }
   })

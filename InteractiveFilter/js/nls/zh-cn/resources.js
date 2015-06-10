@@ -13,9 +13,6 @@
       errors:{
         message: "创建过滤器应用时出现问题"
       }
-    },
-    legend:{
-      title: "试_Legend___验"
     }
   })
 );

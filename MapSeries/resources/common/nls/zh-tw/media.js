@@ -17,7 +17,7 @@
 			imageSelector: {
 				lblStep1: "選擇服務",
 				lblStep2: "選擇媒體",
-				lblStep3: "設定"
+				lblStep3: "配置"
 			},
 			imageSelectorHome: {
 				explain: "從社交媒體載入圖像，<br /> 或直接從 URL 進行載入"
@@ -73,7 +73,7 @@
 				lblOR: "OR",
 				lblError1: "錯誤，請清除其中一個輸入欄位。",
 				lblError2: "嵌入代碼僅可包含一個 %IFRAMETAG%",
-				configure: "設定"
+				configure: "配置"
 			},
 			mediaConfigure: {
 				lblURL: "URL",

@@ -67,9 +67,7 @@ define(
             layoutBtnTitle: "แบบร่าง",
             signInBtnTitle: "ลงชื่อเข้า",
             signOutBtnTitle: "ลงชื่อออก",
-            geolocationBtnTitle: "ตำแหน่งเชิงพื้นที่",
-            ascendingSort: "ก้_Ascending____ษฺ",
-            descendingSort: "ก้_Descending____ษฺ"
+            geolocationBtnTitle: "ตำแหน่งเชิงพื้นที่"
         },
         errorMessages: {
             emptyGroup: "กลุ่มการกำหนดค่าไม่ได้มีข้อมูลใด ๆ ที่จะดำเนินการแบบสอบถาม",

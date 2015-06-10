@@ -13,9 +13,6 @@
       errors:{
         message: "Un problème est survenu lors de la création de l\'application de filtrage"
       }
-    },
-    legend:{
-      title: "æ_Legend___Â"
     }
   })
 );

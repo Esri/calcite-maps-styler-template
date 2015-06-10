@@ -20,7 +20,6 @@ define(
             error: "Impossible de créer la carte"
         },
         tools:{
-            bookmarkTool: "æ_Bookmarks____Â",
             basemapTool: "Fonds de carte",
             legendTool: "Légende",
             detailsTool: "Détails",
