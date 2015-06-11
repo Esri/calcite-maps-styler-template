@@ -63,6 +63,7 @@ dojo.require("social.twitter");
        nav: false,
        showAttribution:true
      },
+     layerMixins: configOptions.layerMixins || [],
      editable: false,
      ignorePopups: false,
      bingMapsKey: configOptions.bingMapsKey

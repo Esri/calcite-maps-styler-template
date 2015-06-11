@@ -245,6 +245,19 @@ define([
                                 this.config.webmap = response.itemData.values.webmap;
                             }
                         }
+                          // get any app proxies defined on the application item
+                          if (response.item && response.item.appProxies) {
+                            var layerMixins = array.map(response.item.appProxies, function (p) {
+                              return {
+                                "url": p.sourceUrl,
+                                "mixin": {
+                                  "url": p.proxyUrl
+                                }
+                              };
+                            });
+                            this.config.layerMixins = layerMixins;
+                          }
+
                         //get the extent for the application item. This can be used to override the default web map extent
                         if (response.item && response.item.extent) {
                             this.config.application_extent = response.item.extent;
