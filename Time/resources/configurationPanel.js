@@ -8,7 +8,7 @@
          ]
       },
       {  
-         "category":"<b>App Settings</b>",
+         "category":"<b>General</b>",
          "fields":[  
             {  
                "type":"webmap"
@@ -76,7 +76,7 @@
             }
          ]
       },{
-         "category": "Time Display Options",
+         "category": "Time Display",
          "fields":[{
                "type": "paragraph",
                "value": "If the selected web map is time aware use the options in this section to configure the time behavior for the application. To disable time in the app set <i>Display time</i> to false. "
@@ -154,26 +154,26 @@
          ]
       },
       {  
-         "category":"Tools",
+         "category":"Map Tools",
          "fields":[  
             {  
                "type":"boolean",
                "fieldName":"legend",
-               "label":"Add legend"
+               "label":"Legend"
             },
             {  
                "type":"boolean",
                "fieldName":"zoomslider",
-               "label":"Add zoom slider"
+               "label":"Zoom controls"
             },
             {  
                "type":"boolean",
                "fieldName":"scale",
-               "label":"Add scalebar"
+               "label":"Scalebar"
             }
          ]
       },{
-         "category": "Search Settings",
+         "category": "Search",
          "fields": [
             {  
                "type":"boolean",
