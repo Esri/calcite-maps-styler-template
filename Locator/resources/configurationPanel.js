@@ -1,10 +1,9 @@
 {  
-   "configurationSettings":[  
-      {  
-         "category":"<b>General Settings</b>",
-         "fields":[  
-          {  
-               "type":"appproxies",
+   "configurationSettings":[ {
+         "category": "Premium Content",
+         "fields": [
+            {
+               "type": "appproxies",
                "serviceProxies":[  
                   {  
                      "url":"http://route.arcgis.com/arcgis/rest/services/World/Route/NAServer/Route_World",
@@ -15,7 +14,12 @@
                      "title":"Traffic"
                   }
                ]
-            },
+            }
+         ]
+      },
+      {  
+         "category":"<b>App Settings</b>",
+         "fields":[  
             {  
                "type":"webmap",
                "label":"Select a map"
