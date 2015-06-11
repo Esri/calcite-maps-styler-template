@@ -1,6 +1,6 @@
 {  
    "configurationSettings":[ {
-         "category": "Premium Layers and Content",
+         "category": "Premium Content",
          "fields": [
             {
                "type": "appproxies"
