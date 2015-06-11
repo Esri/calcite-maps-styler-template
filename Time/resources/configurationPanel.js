@@ -1,7 +1,14 @@
 {  
-   "configurationSettings":[  
+   "configurationSettings":[{
+         "category": "Premium Content",
+         "fields": [
+            {
+               "type": "appproxies"
+            }
+         ]
+      },
       {  
-         "category":"<b>General Settings</b>",
+         "category":"<b>App Settings</b>",
          "fields":[  
             {  
                "type":"webmap"

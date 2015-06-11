@@ -1,6 +1,13 @@
 {
     "configurationSettings": [{
-        "category": "<b>Configure template</b>",
+         "category": "Premium Content",
+         "fields": [
+            {
+               "type": "appproxies"
+            }
+         ]
+         },{
+        "category": "<b>App settings</b>",
         "fields": [{
             "type": "webmap"
         },{

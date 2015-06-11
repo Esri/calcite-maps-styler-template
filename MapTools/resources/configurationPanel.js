@@ -1,5 +1,12 @@
 {  
-   "configurationSettings":[  
+   "configurationSettings":[ {
+         "category": "Premium Content",
+         "fields": [
+            {
+               "type": "appproxies"
+            }
+         ]
+      }, 
       {  
          "category":"<b>Map Settings</b>",
          "fields":[  
