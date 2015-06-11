@@ -1,13 +1,14 @@
 .TableOfContents .tocList {
-  background-color: #f8f8f8;
+  background-color: #fff;
   border-top: 1px solid #e0e0e0;
 }
 
 .TableOfContents .tocList ul {
-  background-color: #d3d3d3;
-  background-color: rgba(0, 0, 0, 0.025);
+  background-color: #fff;
 }
-
+#pageBody_layers{
+  background-color: #fff;
+}
 .TableOfContents .tocList,
 .TableOfContents .tocLayer,
 .TableOfContents .tocSubList,
@@ -29,7 +30,7 @@
   /*border-bottom: 1px solid #e0e0e0;*/
   font-size: 16px;
   line-height: 20px;
-  background-color: #f8f8f8;
+  background-color: #fff;
   color: #555;
 }
 
