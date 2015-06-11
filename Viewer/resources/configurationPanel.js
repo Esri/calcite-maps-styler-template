@@ -1,12 +1,17 @@
 {  
-   "configurationSettings":[  
+   "configurationSettings":[ {
+         "category": "Premium Layers and Content",
+         "fields": [
+            {
+               "type": "appproxies"
+            }
+         ]
+      },
       {  
-         "category":"<b>Configure template</b>",
+         "category":"<b>App Settings</b>",
          "fields":[  
             {  
                "type":"webmap"
-            },{
-               "type": "appproxies"
             },
             {  
                "placeHolder":"Defaults to web map title",
