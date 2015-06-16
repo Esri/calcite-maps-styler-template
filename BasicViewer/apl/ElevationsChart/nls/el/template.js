@@ -1,5 +1,5 @@
-﻿define(
-   ({
+﻿define({
+  root: ({
   display: {
     elevationProfileTitle: "Υψομετρικό προφίλ",
     showMe: "βοήθεια",
@@ -25,25 +25,45 @@
   },
   errors: {
     InvalidConfiguration: {
+      code: 17056601,
       name: 'Σφάλμα μη έγκυρης διαμόρφωσης',
       message: 'Μη έγκυρη διαμόρφωση.'
     },
     MissingConstructorParameters: {
+      code: 17056602,
       name: 'Σφάλμα απουσίας παραμέτρων κατασκευαστή',
       message: 'Απουσία παραμέτρου κατασκευαστή.'
     },
     MissingInitParameter: {
+      code: 17056603,
       name: 'Σφάλμα απουσίας παραμέτρου αρχικοποίησης',
       message: 'Απουσία παραμέτρου αρχικοποίησης.'
     },
     SOEOperationNotSupported: {
+      code: 17056604,
       name: 'Σφάλμα μη υποστηριζόμενης λειτουργίας',
       message: 'Αυτή η έκδοση του SOE ΔΕΝ υποστηρίζει αυτή τη λειτουργία.'
     },
     SOEMultiPartGeometriesNotSupported: {
+      code: 17056605,
       name: 'Σφάλμα μη υποστηριζόμενων γεωμετριών πολλαπλών τμημάτων (multi-part)',
       message: "ΠΡΟΣΟΧΗ: Προς το παρόν ΔΕΝ υποστηρίζονται γραμμές πολλαπλών τμημάτων (multi-part)."
     }
   }
-})
-);
+}),
+"ar": 1,
+"de": 1,
+"es": 1,
+"fr": 1,
+"it": 1,
+"ja": 1,
+"ko": 1,
+"nl": 1,
+"no": 1,
+"pl": 1,
+"pt-br": 1,
+"ro": 1,
+"ru": 1,
+"sv": 1,
+"zh-cn": 1
+});

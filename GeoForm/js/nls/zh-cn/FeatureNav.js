@@ -1,5 +1,5 @@
-﻿define(
-   ({
+﻿define({
+  root: ({
     layer: "试_Layer___验",
     sort: "试_Sort by___验",
     order: "试_Order___验",
@@ -11,5 +11,34 @@
     noResults: "试_No results____验",
     ascending: "试_Ascending____验",
     descending: "试_Descending____验"
-  })
-);
+  }),
+  "ar": 1,
+  "cs": 1,
+  "da": 1,
+  "de": 1,
+  "el": 1,
+  "es": 1,
+  "et": 1,
+  "fi": 1,
+  "fr": 1,
+  "he": 1,
+  "it": 1,
+  "ja": 1,
+  "ko": 1,
+  "lt": 1,
+  "lv": 1,
+  "nl": 1,
+  "nb": 1,
+  "pl": 1,
+  "pt-br": 1,
+  "pt-pt": 1,
+  "ro": 1,
+  "ru": 1,
+  "sv": 1,
+  "th": 1,
+  "tr": 1,
+  "vi": 1,
+  "zh-cn": 1,
+  "zh-hk": 1,
+  "zh-tw": 1
+});

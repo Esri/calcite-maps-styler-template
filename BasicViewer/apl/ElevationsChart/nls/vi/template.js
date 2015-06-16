@@ -1,5 +1,5 @@
-﻿define(
-   ({
+﻿define({
+  root: ({
   display: {
     elevationProfileTitle: "Cấu hình Độ cao",
     showMe: "hiển thị cho tôi",
@@ -25,25 +25,45 @@
   },
   errors: {
     InvalidConfiguration: {
+      code: 17056601,
       name: 'Lỗi Cấu hình không hợp lệ',
       message: 'Cấu hình không hợp lệ.'
     },
     MissingConstructorParameters: {
+      code: 17056602,
       name: 'Lỗi thiếu Tham số của Hàm dựng',
       message: 'Thiếu tham số của hàm dựng.'
     },
     MissingInitParameter: {
+      code: 17056603,
       name: 'Lỗi thiếu Tham số Khởi tạo',
       message: 'Thiếu tham số khởi tạo.'
     },
     SOEOperationNotSupported: {
+      code: 17056604,
       name: 'Lỗi Hoạt động không được Hỗ trợ',
       message: 'Phiên bản SOE này KHÔNG hỗ trợ hoạt động này.'
     },
     SOEMultiPartGeometriesNotSupported: {
+      code: 17056605,
       name: 'Lỗi Hình học nhiều phần không được Hỗ trợ',
       message: "CHÚ Ý: các dòng kẻ nhiều phần hiện KHÔNG được hỗ trợ."
     }
   }
-})
-);
+}),
+"ar": 1,
+"de": 1,
+"es": 1,
+"fr": 1,
+"it": 1,
+"ja": 1,
+"ko": 1,
+"nl": 1,
+"no": 1,
+"pl": 1,
+"pt-br": 1,
+"ro": 1,
+"ru": 1,
+"sv": 1,
+"zh-cn": 1
+});

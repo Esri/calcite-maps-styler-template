@@ -1,5 +1,5 @@
-﻿define(
-   ({
+﻿define({
+  root: ({
   display: {
     elevationProfileTitle: "Perfil de Elevação",
     showMe: "mostre-me",
@@ -25,25 +25,45 @@
   },
   errors: {
     InvalidConfiguration: {
+      code: 17056601,
       name: 'Erro de Configuração não válida',
       message: 'Configuração não válida.'
     },
     MissingConstructorParameters: {
+      code: 17056602,
       name: 'Erro de Parâmetros de Construção Ausentes',
       message: 'Parâmetro de construção ausente.'
     },
     MissingInitParameter: {
+      code: 17056603,
       name: 'Erro de Parâmetro Inicial Ausente',
       message: 'Parâmetro inicial ausente.'
     },
     SOEOperationNotSupported: {
+      code: 17056604,
       name: 'Erro de Operação Não Suportada',
       message: 'Esta versão de SOE, NÃO suporta este tipo de operação.'
     },
     SOEMultiPartGeometriesNotSupported: {
+      code: 17056605,
       name: 'Erro de Geometrias de Múltiplas Partes não suportadas.',
       message: "ATENÇÃO: linhas com múltiplas partes NÃO são suportadas atualmente."
     }
   }
-})
-);
+}),
+"ar": 1,
+"de": 1,
+"es": 1,
+"fr": 1,
+"it": 1,
+"ja": 1,
+"ko": 1,
+"nl": 1,
+"no": 1,
+"pl": 1,
+"pt-br": 1,
+"ro": 1,
+"ru": 1,
+"sv": 1,
+"zh-cn": 1
+});

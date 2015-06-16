@@ -1,5 +1,5 @@
-﻿define(
-   ({
+﻿define({
+  root: ({
   display: {
     elevationProfileTitle: "Yükselti Profili",
     showMe: "göster",
@@ -25,25 +25,45 @@
   },
   errors: {
     InvalidConfiguration: {
+      code: 17056601,
       name: 'Geçersiz Yapılandırma Hatası',
       message: 'Geçersiz yapılandırma.'
     },
     MissingConstructorParameters: {
+      code: 17056602,
       name: 'Eksik Yapıcı Parametreleri Hatası',
       message: 'Eksik yapıcı parametresi.'
     },
     MissingInitParameter: {
+      code: 17056603,
       name: 'Eksik İlk Değer Parametresi Hatası',
       message: 'Eksik ilk değer parametresi.'
     },
     SOEOperationNotSupported: {
+      code: 17056604,
       name: 'İşlem Desteklenmiyor Hatası',
       message: 'Bu SOE sürümü bu işlemi DESTEKLEMEZ.'
     },
     SOEMultiPartGeometriesNotSupported: {
+      code: 17056605,
       name: 'Çok Bölümlü Geometriler Desteklenmiyor Hatası',
       message: "DİKKAT: çok parçalı çizgiler henüz DESTEKLENMEMEKTEDİR."
     }
   }
-})
-);
+}),
+"ar": 1,
+"de": 1,
+"es": 1,
+"fr": 1,
+"it": 1,
+"ja": 1,
+"ko": 1,
+"nl": 1,
+"no": 1,
+"pl": 1,
+"pt-br": 1,
+"ro": 1,
+"ru": 1,
+"sv": 1,
+"zh-cn": 1
+});

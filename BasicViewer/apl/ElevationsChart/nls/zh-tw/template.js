@@ -1,5 +1,5 @@
-﻿define(
-   ({
+﻿define({
+  root: ({
   display: {
     elevationProfileTitle: "高程剖面圖",
     showMe: "顯示",
@@ -25,25 +25,45 @@
   },
   errors: {
     InvalidConfiguration: {
+      code: 17056601,
       name: '無效的設定錯誤',
       message: '無效的設定。'
     },
     MissingConstructorParameters: {
+      code: 17056602,
       name: '缺少建構函式參數錯誤',
       message: '缺少建構函式參數。'
     },
     MissingInitParameter: {
+      code: 17056603,
       name: '缺少初始化參數錯誤',
       message: '缺少初始參數。'
     },
     SOEOperationNotSupported: {
+      code: 17056604,
       name: '操作不受支援錯誤',
       message: '此版本的 SOE 不支援此操作。'
     },
     SOEMultiPartGeometriesNotSupported: {
+      code: 17056605,
       name: '多元件幾何不受支援錯誤',
       message: "注意: 目前不支援多元件線。"
     }
   }
-})
-);
+}),
+"ar": 1,
+"de": 1,
+"es": 1,
+"fr": 1,
+"it": 1,
+"ja": 1,
+"ko": 1,
+"nl": 1,
+"no": 1,
+"pl": 1,
+"pt-br": 1,
+"ro": 1,
+"ru": 1,
+"sv": 1,
+"zh-cn": 1
+});

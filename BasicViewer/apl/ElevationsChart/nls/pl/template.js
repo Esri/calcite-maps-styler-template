@@ -1,5 +1,5 @@
-﻿define(
-   ({
+﻿define({
+  root: ({
   display: {
     elevationProfileTitle: "Profil wysokościowy",
     showMe: "pokaż mi",
@@ -25,25 +25,45 @@
   },
   errors: {
     InvalidConfiguration: {
+      code: 17056601,
       name: 'Błąd — nieprawidłowa konfiguracja',
       message: 'Nieprawidłowa konfiguracja.'
     },
     MissingConstructorParameters: {
+      code: 17056602,
       name: 'Błąd — brak parametrów konstrukcyjnych',
       message: 'Brak parametru konstrukcyjnego.'
     },
     MissingInitParameter: {
+      code: 17056603,
       name: 'Błąd — brak parametru początkowego',
       message: 'Brak parametru początkowego.'
     },
     SOEOperationNotSupported: {
+      code: 17056604,
       name: 'Błąd — nieobsługiwana operacja',
       message: 'Ta wersja SOE NIE obsługuje żądanej operacji.'
     },
     SOEMultiPartGeometriesNotSupported: {
+      code: 17056605,
       name: 'Błąd — brak obsługi geometrii wieloczęściowych',
       message: "UWAGA: linie wieloczęściowe obecnie NIE są obsługiwane."
     }
   }
-})
-);
+}),
+"ar": 1,
+"de": 1,
+"es": 1,
+"fr": 1,
+"it": 1,
+"ja": 1,
+"ko": 1,
+"nl": 1,
+"no": 1,
+"pl": 1,
+"pt-br": 1,
+"ro": 1,
+"ru": 1,
+"sv": 1,
+"zh-cn": 1
+});
