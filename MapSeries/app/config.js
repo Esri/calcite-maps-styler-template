@@ -416,7 +416,7 @@ app.cfg = {
 	 */
 	
 	HELP_URL: "http://links.esri.com/storymaps/map_series_app",
-	HELP_URL_PORTAL: "http://links.esri.com/storymaps/map_series_app",
+	HELP_URL_PORTAL: "#/Story_Map_Series/0193000000vs000000/",
 	
 	// Control the authorized data source (for initialization and import screen)
 	AUTHORIZED_IMPORT_SOURCE: {
