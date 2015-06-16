@@ -996,8 +996,10 @@ declare, win, array, Color, all, Deferred, lang, domUtils, esriRequest, esriLang
 
             var pos = domGeometry.position(dom.byId(button));
 
-            //var winWidth = win.getBox();
-            domStyle.set(node, "right", (pos.w / 2) + "px");
+            var winWidth = win.getBox();
+            var loc = Math.abs(winWidth.w - pos.x);
+            loc = Math.abs(loc - pos.w);
+            domStyle.set(node, "right", Math.ceil(loc) + "px");
         },
         _navigateStack: function (panelLabel, buttonLabel) {
             var stackContainer = registry.byId("stackContainer");
