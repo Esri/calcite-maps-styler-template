@@ -660,7 +660,7 @@ declare, win, array, Color, all, Deferred, lang, domUtils, esriRequest, esriLang
                 }, domConstruct.create("div", {}, "layerDiv"));
                 toc.startup();
                 layerDef.resolve(btn);
-                return layerDef.proimse;
+                return layerDef.promise;
             }));
 
             require(["application/sniff!share?application/ShareDialog"], lang.hitch(this, function (ShareDialog) {
