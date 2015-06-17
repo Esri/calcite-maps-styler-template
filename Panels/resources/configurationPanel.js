@@ -1,7 +1,7 @@
 {
     "configurationSettings": [
         {
-            "category": "Premium Content",
+            "category": "Subscriber Content",
             "fields": [
                 {
                     "type": "appproxies"
