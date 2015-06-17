@@ -87,9 +87,6 @@
                "tooltip":"Url param search layer",
                "fields":[  
                   {  
-                     "supportedTypes":[  
-                        "esriFieldTypeString"
-                     ],
                      "multipleSelection":false,
                      "fieldName":"urlField",
                      "label":"URL param search field",
