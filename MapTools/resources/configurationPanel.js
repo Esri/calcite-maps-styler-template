@@ -1,15 +1,11 @@
 {  
-   "configurationSettings":[ {
-         "category": "Subscriber Content",
-         "fields": [
-            {
-               "type": "appproxies"
-            }
-         ]
-      }, 
+   "configurationSettings":[
       {  
          "category":"<b>Map Settings</b>",
          "fields":[  
+            {
+               "type": "appproxies"
+            },
             {  
                "type":"webmap"
             },

@@ -1,7 +1,7 @@
 {
     "configurationSettings": [
         {
-            "category": "Subscriber Content",
+            "category": "<b>App Settings</b>",
             "fields": [
                 {
                     "type": "appproxies",
@@ -15,12 +15,7 @@
                             "title": "Traffic"
                         }
                     ]
-                }
-            ]
-        },
-        {
-            "category": "<b>App Settings</b>",
-            "fields": [
+                },
                 {
                     "type": "webmap",
                     "label": "Select a map"

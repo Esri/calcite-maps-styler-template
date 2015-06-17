@@ -2,17 +2,13 @@
    "values":{
 
    },
-   "configurationSettings":[{
-         "category": "Subscriber Content",
-         "fields": [
-            {
-               "type": "appproxies"
-            }
-         ]
-      },
+   "configurationSettings":[
       {
          "category":"<b>App Settings</b>",
          "fields":[
+            {
+               "type": "appproxies"
+            },
             {
                "placeHolder":"Defaults to map name",
                "label":"Title Text:",

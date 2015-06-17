@@ -1,14 +1,9 @@
 {
     "configurationSettings": [{
-         "category": "Subscriber Content",
-         "fields": [
-            {
-               "type": "appproxies"
-            }
-         ]
-         },{
         "category": "<b>App settings</b>",
-        "fields": [{
+        "fields": [            {
+               "type": "appproxies"
+            },{
             "type": "webmap"
         },{
             "placeHolder": "Defaults to web map title",
