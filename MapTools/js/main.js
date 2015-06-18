@@ -633,14 +633,14 @@ declare, win, array, Color, all, Deferred, lang, domUtils, esriRequest, esriLang
                 return bookmarksDef.promise;
 
             }));
-            require(["application/sniff!layerlist?application/TableOfContents"], lang.hitch(this, function (TableOfContents) {
+            require(["application/sniff!layerlist?esri/dijit/LayerList" ], lang.hitch(this, function (LayerList) {
 
-                if (!TableOfContents) {
+                if (!LayerList) {
                     layerDef.resolve(null);
                     return;
                 }
 
-                var layers = this.config.response.itemInfo.itemData.operationalLayers;
+                var layers = arcgisUtils.getLayerList(this.config.response);
                 if (layers && layers.length && layers.length === 0) {
                     console.log("No Map Layers");
                     return;
@@ -654,7 +654,7 @@ declare, win, array, Color, all, Deferred, lang, domUtils, esriRequest, esriLang
                 this._createContainer("layer_container", "layerDiv");
 
 
-                var toc = new TableOfContents({
+                var toc = new LayerList({
                     map: this.map,
                     layers: layers
                 }, domConstruct.create("div", {}, "layerDiv"));
