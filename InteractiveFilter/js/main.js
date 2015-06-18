@@ -144,23 +144,19 @@ ready, declare, dom, Color, query, lang, array, domConstruct, registry, has, sni
                         // depending on config options. 
                         if (this.config.legendOpen) {
                             query(".legend").removeClass("hide");
+                            domClass.add(dom.byId("cp_center"), "noscroll");
                         } else {
                             //closed when loading 
                             domClass.remove(dom.byId("submenu"), "hide");
                         }
 
-                        //prevent scroll
-                        on(dom.byId("legend"), mouse.enter, lang.hitch(this, function () {
-                            domClass.add(document.body, "noscroll");
-                        }));
-                        on(dom.byId("legend"), mouse.leave, lang.hitch(this, function () {
-                            domClass.remove(document.body, "noscroll");
-                        }));
-
                         var menuBtn = dom.byId("submenu");
                         var legendNode = dom.byId("legend");
 
                         on(dom.byId("close-submenu"), "click", function () {
+                            //prevent scroll
+                            domClass.remove(dom.byId("cp_center"), "noscroll");
+
                             domClass.remove(menuBtn, "hide");
                             query(".legend").addClass("hide");
                             coreFx.combine([
@@ -171,6 +167,8 @@ ready, declare, dom, Color, query, lang, array, domConstruct, registry, has, sni
                             })]).play();
                         });
                         on(dom.byId("submenu"), "click", function () {
+                            //prevent scroll
+                            domClass.add(dom.byId("cp_center"), "noscroll");
                             domClass.add(menuBtn, "hide");
                             query(".legend").removeClass("hide");
                             coreFx.combine([
@@ -209,7 +207,6 @@ ready, declare, dom, Color, query, lang, array, domConstruct, registry, has, sni
                 var title = this.config.title || response.itemInfo.item.title;
                 dom.byId("title").innerHTML = title;
                 document.title = title;
-
 
                 // make sure map is loaded
                 if (this.map.loaded) {
