@@ -1,5 +1,5 @@
-﻿define({
-  root: ({
+﻿define(
+   ({
   display: {
     elevationProfileTitle: "Höhenprofil",
     showMe: "anzeigen",
@@ -25,45 +25,25 @@
   },
   errors: {
     InvalidConfiguration: {
-      code: 17056601,
       name: 'Ungültige Konfiguration - Fehler',
       message: 'Ungültige Konfiguration.'
     },
     MissingConstructorParameters: {
-      code: 17056602,
       name: 'Fehlende Konstruktorparameter - Fehler',
       message: 'Fehlender Konstruktorparameter.'
     },
     MissingInitParameter: {
-      code: 17056603,
       name: 'Fehlender Initialisierungsparameter - Fehler',
       message: 'Fehlende Initialisierungsparameter.'
     },
     SOEOperationNotSupported: {
-      code: 17056604,
       name: 'Vorgang wird nicht unterstützt - Fehler',
       message: 'Diese Version von SOE unterstützt diesen Vorgang NICHT.'
     },
     SOEMultiPartGeometriesNotSupported: {
-      code: 17056605,
       name: 'Multipart-Geometrien werden nicht unterstützt - Fehler',
       message: "ACHTUNG: Multipartlinien werden derzeit NICHT unterstützt."
     }
   }
-}),
-"ar": 1,
-"de": 1,
-"es": 1,
-"fr": 1,
-"it": 1,
-"ja": 1,
-"ko": 1,
-"nl": 1,
-"no": 1,
-"pl": 1,
-"pt-br": 1,
-"ro": 1,
-"ru": 1,
-"sv": 1,
-"zh-cn": 1
-});
+})
+);

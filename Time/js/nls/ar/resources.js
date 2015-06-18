@@ -14,8 +14,8 @@
  | See the License for the specific language governing permissions and
  | limitations under the License.
  */
-define({
-  root: ({
+define(
+   ({
     map: {
       error: "بيت_Unable to create map_______لاحقة"
     },
@@ -42,6 +42,5 @@ define({
     histogram:{
       error: "بيت_No time-enabled feature layers, in snapshot mode, are available in the web map. Configure the app to use another web map or disable the histogram option_______________________________________________لاحقة."
     }
-  }),
-  "fr": 1
-});
+  })
+);

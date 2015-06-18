@@ -1,5 +1,5 @@
-﻿define({
-  root: ({
+﻿define(
+   ({
   display: {
     elevationProfileTitle: "Výškový profil",
     showMe: "ukaž mi",
@@ -25,45 +25,25 @@
   },
   errors: {
     InvalidConfiguration: {
-      code: 17056601,
       name: 'Chyba: neplatná konfigurace',
       message: 'Neplatná konfigurace'
     },
     MissingConstructorParameters: {
-      code: 17056602,
       name: 'Chyba: chybí parametry konstruktéru.',
       message: 'Chybí parametry konstruktéru.'
     },
     MissingInitParameter: {
-      code: 17056603,
       name: 'Chyba: chybí inicializační parametr',
       message: 'Chybí inicializační parametr.'
     },
     SOEOperationNotSupported: {
-      code: 17056604,
       name: 'Chyba: operace není podporována.',
       message: 'Tato verze SOE tuto operaci nepodporuje.'
     },
     SOEMultiPartGeometriesNotSupported: {
-      code: 17056605,
       name: 'Chyba: vícenásobné geometrie nejsou podporovány.',
       message: "POZOR: vícenásobné linie v současnosti nejsou podporovány."
     }
   }
-}),
-"ar": 1,
-"de": 1,
-"es": 1,
-"fr": 1,
-"it": 1,
-"ja": 1,
-"ko": 1,
-"nl": 1,
-"no": 1,
-"pl": 1,
-"pt-br": 1,
-"ro": 1,
-"ru": 1,
-"sv": 1,
-"zh-cn": 1
-});
+})
+);

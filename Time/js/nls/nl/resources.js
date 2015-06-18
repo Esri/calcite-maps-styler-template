@@ -14,8 +14,8 @@
  | See the License for the specific language governing permissions and
  | limitations under the License.
  */
-define({
-  root: ({
+define(
+   ({
     map: {
       error: "Ĳ_Unable to create map_______ä"
     },
@@ -42,6 +42,5 @@ define({
     histogram:{
       error: "Ĳ_No time-enabled feature layers, in snapshot mode, are available in the web map. Configure the app to use another web map or disable the histogram option_______________________________________________ä."
     }
-  }),
-  "fr": 1
-});
+  })
+);
