@@ -8,7 +8,7 @@ define([
     "dojo/dom-style",
     "dojo/dom-attr",
     "dojo/dom-class",
-    "application/TableOfContents",
+    "esri/dijit/LayerList",
     "application/ShareDialog",
     "application/Drawer",
     "application/DrawerMenu",
@@ -35,7 +35,7 @@ function (
     domStyle,
     domAttr,
     domClass,
-    TableOfContents, ShareDialog, Drawer, DrawerMenu, SearchSources,
+    LayerList, ShareDialog, Drawer, DrawerMenu, SearchSources,
     HomeButton, LocateButton, BasemapToggle,
     Search,
     Popup,
@@ -141,10 +141,10 @@ function (
         },
         _initTOC: function () {
             // layers
-            var tocNode = dom.byId('TableOfContents');
+            var tocNode = dom.byId('LayerList');
             if (tocNode) {
                 var tocLayers = this.layers;
-                var toc = new TableOfContents({
+                var toc = new LayerList({
                     map: this.map,
                     layers: tocLayers
                 }, tocNode);
@@ -222,7 +222,7 @@ function (
                 content = '';
                 content += '<div class="' + this.css.panelHeader + '">' + this.config.i18n.general.layers + '</div>';
                 content += '<div class="' + this.css.panelContainer + '">';
-                content += '<div id="TableOfContents"></div>';
+                content += '<div id="LayerList"></div>';
                 content += '</div>';
                 // menu info
                 menuObj = {
@@ -541,7 +541,7 @@ function (
                 //any custom options you defined for the template. In this example that is the 'theme' property.
                 //Here' we'll use it to update the application to match the specified color theme.
                 this.map = response.map;
-                this.layers = response.itemInfo.itemData.operationalLayers;
+                this.layers = arcgisUtils.getLayerList(response);
                 this.item = response.itemInfo.item;
                 this.bookmarks = response.itemInfo.itemData.bookmarks;
                 this.layerInfos = arcgisUtils.getLegendLayers(response);
