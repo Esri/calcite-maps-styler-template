@@ -454,8 +454,8 @@ body {
   overflow-y: scroll;
 }
 .container_box {
-  -webkit-border-radius: 5px;
-  border-radius: 5px;
+  -webkit-border-radius: 0 0 4px 4px;
+  border-radius: 0 0 4px 4px;
   position: relative;
   background: #fff;
   border: 1px solid #333;
