@@ -1,5 +1,7 @@
-commit 872f36aed504e452012b4cd8c0fc329a521092e6
+From git branch 
+release
+commit c34375a354d3e07d43f03d2dd5091321f58434c8
 Author: MikeTschudi <mtschudi@esri.com>
-Date:   Tue Apr 28 16:10:16 2015 -0700
+Date:   Thu Jun 18 09:53:45 2015 -0700
 
-    Fixed typo
+    Add meta tag to make pages crawlable

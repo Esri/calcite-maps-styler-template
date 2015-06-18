@@ -37,9 +37,6 @@ define([
 ) {
     return declare([_WidgetBase, _TemplatedMixin], {
         templateString: template,
-        _panels: {},
-        _currentPanelName: null,
-        _currentPanel: null,
 
         /**
          * Widget constructor
@@ -47,6 +44,11 @@ define([
          *     appConfig: Application configuration
          * @constructor
          */
+        constructor: function () {
+            this._panels = {};
+            this._currentPanelName = null;
+            this._currentPanel = null;
+        },
 
         /**
          * Adds a panel to be controlled.

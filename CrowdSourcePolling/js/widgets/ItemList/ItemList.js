@@ -40,8 +40,16 @@ define([
 
     return declare([_WidgetBase, _TemplatedMixin], {
         templateString: template,
-        votesField: null,
 
+        /**
+         * Constructor for class.
+         * @param {object} appConfig App configuration object; see subclass for required parameter(s)
+         * @memberOf social#
+         * @constructor
+         */
+        constructor: function () {
+            this.votesField = null;
+        },
 
         /**
          * Widget post-create, called automatically in widget creation

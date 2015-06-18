@@ -47,11 +47,6 @@ define([
 ) {
     return declare([PopupWindow, _TemplatedMixin], {
         templateString: template,
-        _isAvailable: false,
-
-        // Description of signed-in user: "name" {string}, "canSignOut" {boolean}, "provider" {string};
-        // null indicates that no one is signed in
-        _signedInUser: {},
 
         /**
          * Widget constructor
@@ -59,6 +54,13 @@ define([
          *     appConfig: Application configuration
          * @constructor
          */
+        constructor: function () {
+            this._isAvailable = false;
+
+            // Description of signed-in user: "name" {string}, "canSignOut" {boolean}, "provider" {string};
+            // null indicates that no one is signed in
+            this._signedInUser = {};
+        },
 
         /**
          * Initializes the widget once the DOM structure is ready
@@ -193,7 +195,7 @@ define([
             this.disclaimer.innerHTML = this.appConfig.socialMediaDisclaimer;
 
             // Is there anything that can be logged into?
-            this._isAvailable = facebook || google || twitter;
+            this._isAvailable = (facebook !== undefined) || (google !== undefined) || (twitter !== undefined);
         },
 
         /**

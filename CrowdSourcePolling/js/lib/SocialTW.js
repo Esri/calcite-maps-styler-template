@@ -31,17 +31,16 @@ define([
     //========================================================================================================================//
 
     return declare([social], {
-        _timeout: null,
 
         /**
          * Constructor for class.
          * @param {object} config App configuration object; required parameters: twitterSigninUrl, twitterUserUrl,
-         * twitterCallbackPage
+         * twitterCallbackUrl
          * @memberOf socialTW#
          * @constructor
          */
-        constructor: function () {
-            return null;
+        constructor: function (config) {
+            this._timeout = null;
         },
 
         /**
@@ -84,7 +83,7 @@ define([
 
             baseUrl = this._config.twitterSigninUrl;
             package_path = window.location.pathname.substring(0, window.location.pathname.lastIndexOf('/'));
-            redirect_uri = encodeURIComponent(location.protocol + '//' + location.host + package_path + this._config.twitterCallbackPage);
+            redirect_uri = encodeURIComponent(location.protocol + '//' + location.host + package_path + this._config.twitterCallbackUrl);
             left = (screen.width / 2) - (w / 2);
             top = (screen.height / 2) - (h / 2);
             w = screen.width / 2;

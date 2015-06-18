@@ -143,16 +143,17 @@ define([
 
             // Complete wiring-up when all of the setups complete
             all([setupUI, createMap]).then(lang.hitch(this, function (statusList) {
-                var commentFields;
+                var configuredVotesField, commentFields;
 
                 //----- Merge map-loading info with UI items -----
-                if (this.config.itemVotesField && this.config.itemVotesField.length > 0) {
+                if (this.config.featureLayer && this.config.featureLayer.fields && this.config.featureLayer.fields.length > 0) {
+                    configuredVotesField = this.config.featureLayer.fields[0].fields[0];
                     // Make sure that the configured votes field exists
                     if (array.some(this._mapData.getItemFields(), lang.hitch(this, function (field) {
-                            return this.config.itemVotesField === field.name &&
+                            return configuredVotesField === field.name &&
                                 (field.type === "esriFieldTypeInteger" || field.type === "esriFieldTypeSmallInteger");
                         }))) {
-                        this._votesField = this.config.itemVotesField;
+                        this._votesField = configuredVotesField;
                     }
                 }
                 commentFields = this._mapData.getCommentFields();
@@ -480,7 +481,7 @@ define([
                 // Sidebar header
                 this._sidebarHdr = new SidebarHeader({
                     "appConfig": this.config,
-                    "showSignin": this._socialDialog.isAvailable && (this.config.commentNameField.trim().length > 0),
+                    "showSignin": this._socialDialog.isAvailable() && (this.config.commentNameField.trim().length > 0),
                     "showHelp": this.config.displayText.length > 0
                 }).placeAt("sidebarHeading"); // placeAt triggers a startup call to _sidebarHdr
 

@@ -54,18 +54,26 @@ define([
 
     return declare([_WidgetBase, _TemplatedMixin], {
         templateString: template,
-        id: 'itemDetail',
-        baseClass: 'itemDetail',
-        itemTitle: 'default title',
-        itemVotes: null,
-        actionVisibilities: {
-            "showVotes": false,
-            "showComments": false,
-            "showGallery": false
-        },
-        votesField: null,
-        commentFields: null,
 
+        /**
+         * Constructor for class.
+         * @param {object} appConfig App configuration object; see subclass for required parameter(s)
+         * @memberOf social#
+         * @constructor
+         */
+        constructor: function () {
+            this.id = 'itemDetail';
+            this.baseClass = 'itemDetail';
+            this.itemTitle = 'default title';
+            this.itemVotes = null;
+            this.actionVisibilities = {
+                "showVotes": false,
+                "showComments": false,
+                "showGallery": false
+            };
+            this.votesField = null;
+            this.commentFields = null;
+        },
 
         /**
          * Widget post-create, called automatically in widget creation

@@ -39,20 +39,6 @@ define([
 ) {
     return declare([_WidgetBase, _TemplatedMixin], {
         templateString: template,
-        baseClass: "popupWidget",
-        showClose: false,
-        minimumMargin: 10,
-        maxima: {  // default is no maximum in either direction
-            "width": 0,
-            "height": 0
-        },
-
-       /**
-        * Create an attribute 'displayText' and use _setDisplayTextAttr to map to DOM Node:PopupContent to display text
-        * Text to be displayed is added in the default.js.
-        */
-        displayText: "",
-        _setDisplayTextAttr: {node: "popupContent", type: "innerHTML"},
 
         /**
          * Widget constructor
@@ -67,6 +53,25 @@ define([
          *              of the document body and the minimum margin (defaults to {"width": 0, "height": 0})
          * @constructor
          */
+        constructor: function () {
+            this.baseClass = "popupWidget";
+            this.showClose = false;
+            this.minimumMargin = 10;
+            this.maxima = {  // default is no maximum in either direction
+                "width": 0,
+                "height": 0
+            };
+
+            /**
+             * Create an attribute 'displayText' and use _setDisplayTextAttr to map to DOM Node:PopupContent to display text
+             * Text to be displayed is added in the default.js.
+             */
+            this.displayText = "";
+            this._setDisplayTextAttr = {
+                node: "popupContent",
+                type: "innerHTML"
+            };
+        },
 
         /**
          * Initializes the widget once the DOM structure is ready

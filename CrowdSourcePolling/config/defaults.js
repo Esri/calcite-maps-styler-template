@@ -58,7 +58,7 @@ define({
     "facebookAppScope": "public_profile",
     "twitterSigninUrl": location.protocol + "//utility.arcgis.com/tproxy/signin",
     "twitterUserUrl": location.protocol + "//utility.arcgis.com/tproxy/proxy/1.1/account/verify_credentials.json?q=&include_entities=true&skip_status=true&locale=en",
-    "twitterCallbackPage": "/oauth-callback.html",
+    "twitterCallbackUrl": "/oauth-callback-twitter.html",
 
     "bingKey": "", //Enter the url to your organizations bing maps key if you want to use bing basemaps
     //Defaults to arcgis.com. Set this value to your portal or organization host name.

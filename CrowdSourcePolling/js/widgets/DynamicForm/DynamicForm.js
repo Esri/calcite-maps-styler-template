@@ -53,10 +53,6 @@ define([
 ) {
     return declare([_WidgetBase, _TemplatedMixin], {
         templateString: template,
-        _formFields : [],
-        _entryForm: [],
-        _presets: {},
-        _requiredFieldsStatus: 0,
 
         /**
          * Widget constructor
@@ -67,6 +63,12 @@ define([
          *     appConfig: Application configuration
          * @constructor
          */
+        constructor: function () {
+            this._formFields = [];
+            this._entryForm = [];
+            this._presets = {};
+            this._requiredFieldsStatus = 0;
+        },
 
         /**
          * Initializes the widget once the DOM structure is ready

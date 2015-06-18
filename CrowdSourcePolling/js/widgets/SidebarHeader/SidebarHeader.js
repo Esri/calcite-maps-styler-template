@@ -41,9 +41,6 @@ define([
 ) {
     return declare([_WidgetBase, _TemplatedMixin], {
         templateString: template,
-        _config: null,
-        _signInBtnOnClick: null,
-        _helpBtnOnClick: null,
 
         /**
          * Widget constructor
@@ -53,6 +50,10 @@ define([
          *     showHelp: {boolean} Indicates if help button is to be available
          * @constructor
          */
+        constructor: function () {
+            this._signInBtnOnClick = null;
+            this._helpBtnOnClick = null;
+        },
 
         /**
          * Initializes the widget once the DOM structure is ready.
@@ -82,7 +83,7 @@ define([
                 domStyle.set(this.helpBtn, "display", "none");
             }
 
-            this.appTitle.innerHTML = this.appConfig.title || "";
+            this.appTitle.innerHTML = this.appTitle.title = this.appConfig.title || "";
         },
 
         /**

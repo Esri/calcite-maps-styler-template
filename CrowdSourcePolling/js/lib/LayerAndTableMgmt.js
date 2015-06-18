@@ -54,7 +54,6 @@ define([
     //========================================================================================================================//
 
     return declare([], {
-        appConfig: null,
 
         /**
          * Encapsulates the management of a layer and its related table.
@@ -130,6 +129,11 @@ define([
                         }
                     }
                 }
+                if (iOpLayer === opLayers.length) {
+                    deferred.reject(this.appConfig.i18n.map.missingItemsFeatureLayer);
+                    return;
+                }
+
                 this._itemLayerInWebmap = opLayers[iOpLayer];
                 if (this._itemLayerInWebmap.errors) {//Add by Mike M, itemLayer is null on secure data if signed in with wrong user
 

@@ -29,7 +29,6 @@ define([
     //========================================================================================================================//
 
     return declare([social], {
-        _timeout: null,
 
         /**
          * Constructor for class.
@@ -37,8 +36,8 @@ define([
          * @memberOf socialFB#
          * @constructor
          */
-        constructor: function () {
-            return null;
+        constructor: function (config) {
+            this._timeout = null;
         },
 
         /**
