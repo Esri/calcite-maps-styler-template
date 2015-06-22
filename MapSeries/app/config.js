@@ -4,7 +4,7 @@ app.cfg = {
 	//
 	
 	// Maximum number of entries
-	MAX_NB_ENTRIES: 15,
+	MAX_NB_ENTRIES: 30,
 	
 	TIMEOUT_VIEWER_LOAD: 5000,
 	TIMEOUT_VIEWER_REQUEST: 12000,
