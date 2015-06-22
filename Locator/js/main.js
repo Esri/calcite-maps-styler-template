@@ -139,7 +139,7 @@ define([
                 this._setColor();
                 this._setProtocolHandler();
                 // proxy rules
-                if (this.config.proxyurl != "") {
+                if (this.config.proxyurl !== "") {
                     urlUtils.addProxyRule({
                         urlPrefix: "route.arcgis.com",
                         proxyUrl: this.config.proxyurl
@@ -684,7 +684,7 @@ define([
             };
 
 
-            if (this.config.helperServices.route && this.config.helperServices.route.url != "") {
+            if (this.config.helperServices.route && this.config.helperServices.route.url !== "") {
                 // do we have a proxied url? 
                 var routeUrl = null;
                 array.some(this.config.layerMixins, lang.hitch(this, function (layerMixin) {
@@ -695,7 +695,17 @@ define([
                 }));
                 options.routeTaskUrl = routeUrl || this.config.helperServices.route.url;
             }
-            if (this.config.routeUtility != "") options.routeTaskUrl = this.config.routeUtility;
+            if (this.config.routeUtility !== "") options.routeTaskUrl = this.config.routeUtility;
+
+            // traffic is proxied
+            array.some(this.config.layerMixins, lang.hitch(this, function(layerMixin) {
+                if (layerMixin.url.indexOf("traffic.arcgis.com") !== -1) {
+                  options.traffic = true;
+                  options.trafficLayer = layerMixin.mixin.url;
+                  return true;
+                }
+            }));
+
             this.dirWidget = new Directions(options, "resultsDirections");
             //on(this.dirWidget, "directions-clear", lang.hitch(this, this._directionsCleared));
             on(this.dirWidget, "directions-finish", lang.hitch(this, this._directionsFinished));
@@ -768,9 +778,10 @@ define([
         // Show Page
         _showPage: function (num) {
             this.page = num;
+            var promise;
             switch (num) {
             case 0:
-                var promise = this._clearDirections();
+                promise = this._clearDirections();
                 promise.then(lang.hitch(this, function () {
                     this.dirOK = true;
                 }));
@@ -796,7 +807,7 @@ define([
                 domStyle.set("panelSearchBox", "display", "block");
                 break;
             case 2:
-                var promise = this._clearDirections();
+                promise = this._clearDirections();
                 promise.then(lang.hitch(this, function () {
                     this.dirOK = true;
                 }));
@@ -1222,7 +1233,7 @@ define([
 
         // Directions Finished
         _directionsFinished: function (event) {
-            if (this.dirWidget.mergedRouteGraphic != undefined) {
+            if (this.dirWidget.mergedRouteGraphic !== undefined) {
                 var gra = this.dirWidget.mergedRouteGraphic;
                 var ext = gra.geometry.getExtent();
                 var ext2 = ext;
