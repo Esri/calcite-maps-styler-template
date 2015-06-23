@@ -7,7 +7,7 @@ define({
     "sharinghost": location.protocol + "//" + "www.arcgis.com",
     "scalebarUnits": "dual",
     //Set config properties for all of these 
-    "geocoder": true,  //false in config values 
+    "geocoder": false,  //false in config values 
     "searchExtent": false,
     "searchLayers":[{
         "id": "",
