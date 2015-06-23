@@ -364,7 +364,7 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
 
                     var toc = new LayerList({
                         map: this.map,
-                        layers: arcgisUtils.getLegendLayers(this.config.response)
+                        layers: arcgisUtils.getLayerList(this.config.response)
                     }, domConstruct.create("div", {}, layersDiv));
                     toc.startup();
 
