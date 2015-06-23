@@ -9,10 +9,6 @@
                         {
                             "url": "http://route.arcgis.com/arcgis/rest/services/World/Route/NAServer/Route_World",
                             "title": "Route"
-                        },
-                        {
-                            "url": "http://traffic.arcgis.com/arcgis/rest/services/World/Traffic/MapServer",
-                            "title": "Traffic"
                         }
                     ]
                 },
