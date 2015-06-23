@@ -128,6 +128,7 @@ define([
         searchProps: null,
         curStops: [],
         dirOK: true,
+        animTimer: null,
 
         // Startup
         startup: function (config) {
@@ -832,7 +833,7 @@ define([
                 this.locator.locationToAddress(pt, 500, lang.hitch(this, function (result) {
                     if (result.address) {
                         var label = result.address.Address;
-                        this.geocoder.set("value", label);
+                        this.search.set("value", label);
                         var sym = new PictureMarkerSymbol("images/start.png", 24, 24);
                         var gra = new Graphic(pt, sym, {
                             label: label
@@ -845,7 +846,7 @@ define([
                         this.dirOK = true;
                     }));
                     console.log(err.message);
-                    this.geocoder.set("value", "");
+                    this.search.set("value", "");
                 }));
             } else {
                 if (evt.error) console.log(evt.error.message);
@@ -1233,10 +1234,20 @@ define([
 
         // Directions Finished
         _directionsFinished: function (event) {
+            console.log("Directions Finished", event);
+            if (this.animTimer) {
+                clearTimeout(this.animTimer);
+                this.animTimer = null;
+            }
+            this.animTimer = setTimeout(lang.hitch(this, this._directionsFinishedOnce), 2000);
+        },
+
+        _directionsFinishedOnce: function () {
+            console.log("Directions Finished Once");
             if (this.dirWidget.mergedRouteGraphic !== undefined) {
                 var gra = this.dirWidget.mergedRouteGraphic;
                 var ext = gra.geometry.getExtent();
-                var ext2 = ext;
+                var ext2 = lang.clone(ext);
                 if (this.map.width > 570) {
                     var offset = ext.getWidth() * 320 / this.map.width;
                     ext2.update(ext.xmin, ext.ymin, ext.xmax + offset, ext.ymax, ext.spatialReference);
@@ -1349,7 +1360,7 @@ define([
             this.locator.locationToAddress(pt, 500, lang.hitch(this, function (result) {
                 if (result.address) {
                     var label = result.address.Address;
-                    this.geocoder.set("value", label);
+                    this.search.set("value", label);
                     var sym = new PictureMarkerSymbol("images/start.png", 24, 24);
                     var gra = new Graphic(pt, sym, {
                         label: label
@@ -1366,7 +1377,7 @@ define([
                 if (this.config && this.config.i18n) {
                     content = this.config.i18n.location.error;
                 }
-                this.geocoder.set("value", "");
+                this.search.set("value", "");
                 this.map.infoWindow.setContent(content);
                 this.map.infoWindow.show(pt);
             }));
