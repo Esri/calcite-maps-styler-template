@@ -120,10 +120,12 @@ declare, lang, array, dojoJson, domConstruct, esriLang, Locator, FeatureLayer, S
                         }
                         //Get existing layer or create new one
                         var mapLayer = this.map.getLayer(layer.id);
-                        if (mapLayer && mapLayer.type === "FeatureLayer") {
+                        if (mapLayer && (mapLayer.type === "Feature Layer"|| mayLayer.type === "FeatureLayer")) {
                             source.featureLayer = mapLayer;
                         } else {
-                            source.featureLayer = new FeatureLayer(url);
+                            source.featureLayer = new FeatureLayer(url,{
+                                outFields: ["*"]
+                            });
                         }
                         source.name = name;
                         source.exactMatch = searchLayer.field.exactMatch;

@@ -35,9 +35,9 @@ declare, lang, array, dojoJson, domConstruct, esriLang, Locator, FeatureLayer, S
 
         //optional array of additional search layers to configure from the application config process
         _createSources: function () {
-            if(this.applicationConfiguredSources){
+            if (this.applicationConfiguredSources) {
                 this._createAppConfigSources();
-            }else{
+            } else {
                 //Create services from org helper services 
                 //Create locators defined in web map item
                 //Create configured services. 
@@ -120,10 +120,12 @@ declare, lang, array, dojoJson, domConstruct, esriLang, Locator, FeatureLayer, S
                         }
                         //Get existing layer or create new one
                         var mapLayer = this.map.getLayer(layer.id);
-                        if (mapLayer && mapLayer.type === "FeatureLayer") {
+                        if (mapLayer && (mapLayer.type === "Feature Layer"|| mayLayer.type === "FeatureLayer")) {
                             source.featureLayer = mapLayer;
                         } else {
-                            source.featureLayer = new FeatureLayer(url);
+                            source.featureLayer = new FeatureLayer(url,{
+                                outFields: ["*"]
+                            });
                         }
                         source.name = name;
                         source.exactMatch = searchLayer.field.exactMatch;
@@ -136,34 +138,34 @@ declare, lang, array, dojoJson, domConstruct, esriLang, Locator, FeatureLayer, S
                 }));
             }
         },
-        _createAppConfigSources: function(){
+        _createAppConfigSources: function () {
             // Configured via the new Search Configuation widget
             var configSource = lang.clone(this.applicationConfiguredSources);
-            array.forEach(configSource, lang.hitch(this, function(source){
-                if(source.locator){
-                    source.locator = new Locator(source.url);              
-                }else if(source.featureLayer){
+            array.forEach(configSource, lang.hitch(this, function (source) {
+                if (source.locator) {
+                    source.locator = new Locator(source.url);
+                } else if (source.featureLayer) {
                     var featureLayer = null;
-                    if(source.flayerId){
+                    if (source.flayerId) {
                         featureLayer = this.map.getLayer(source.flayerId);
                     }
-                    if(!featureLayer && source.url){
-                        featureLayer = new FeatureLayer(source.url,{
+                    if (!featureLayer && source.url) {
+                        featureLayer = new FeatureLayer(source.url, {
                             outFields: ["*"]
                         });
                     }
                     source.featureLayer = featureLayer;
                 }
-                if(source.searchWithinMap){
+                if (source.searchWithinMap) {
                     source.searchExtent = this.map.extent;
                 }
                 this.sources.push(source);
             }));
 
         },
-        _createConfiguredSources: function() {
+        _createConfiguredSources: function () {
             // Old configuration using layer/field picker 
-            array.forEach(this.configuredSearchLayers, lang.hitch(this, function(layer) {
+            array.forEach(this.configuredSearchLayers, lang.hitch(this, function (layer) {
                 var mapLayer = this.map.getLayer(layer.id);
                 if (mapLayer) {
                     var source = {};
