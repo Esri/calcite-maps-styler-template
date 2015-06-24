@@ -732,8 +732,8 @@ img {
   margin-left: 5px;
 }
 .no-search #panelLogo img{
-  max-width:50px !important;
-  max-height:50px !important;
+  max-width:45px !important;
+  max-height:45px !important;
 }
 #panelLogo{
   display:none;
