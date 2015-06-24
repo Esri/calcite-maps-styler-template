@@ -343,6 +343,7 @@ body,html {
     border-radius: 4px;
     display: block;
     margin: auto;
+    padding:10px;
 }
 
 #legendHeader {
