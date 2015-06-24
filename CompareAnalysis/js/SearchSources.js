@@ -116,7 +116,7 @@ declare, lang, array, domConstruct, esriLang, Locator, FeatureLayer, Search) {
                         }
                         //Get existing layer or create new one
                         var mapLayer = this.map.getLayer(layer.id);
-                        if (mapLayer && (mapLayer.type === "Feature Layer"|| mayLayer.type === "FeatureLayer")) {
+                        if (mapLayer && (mapLayer.type === "Feature Layer"|| mapLayer.type === "FeatureLayer")) {
                             source.featureLayer = mapLayer;
                         } else {
                             source.featureLayer = new FeatureLayer(url,{
