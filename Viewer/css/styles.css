@@ -70,9 +70,6 @@ html, body {
   left: 0;
   text-align: center; 
 }
-.esriLayerList{
-  padding-bottom: 1em;
-}
 .esriLayerList .esriList{
   background-color: #f8f8f8
 }
@@ -652,7 +649,6 @@ img {
 .legend{
   margin:auto;
   max-width: 90%;
-  padding-bottom: 1em;
 }
 #pageBody_share {
   padding: 5px 20px;
@@ -1209,6 +1205,6 @@ input[type=checkbox]{
 .icon-angle-down:before {
   content: '\e809'; }
 
-/* '	' */
+/* '  ' */
 .icon-check-1:before {
   content: '\2713'; }
