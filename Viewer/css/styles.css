@@ -160,6 +160,7 @@ html, body {
   border-style: solid;
   padding: 5px;
   margin-bottom: 12px;
+  display:block;
 }
 .esriPrintout a {
   color: #5daddd; 
