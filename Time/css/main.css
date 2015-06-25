@@ -526,15 +526,15 @@ body,html {
         max-width: 50%;
     }
 
-    #legendDiv.legend-hide {
-        display: none;
+    #legendContainer.legend-hide {
+        display: none !important;
     }
 
-    #legendDiv.legend-show {
-        display: block
+    #legendContainer.legend-show {
+        display: block !important;
     }
 
-    #legendDiv {
+    #legendContainer {
         display: none;
     }
 
@@ -555,7 +555,7 @@ body,html {
     }
     /*Position the legend open/close button depending on legend window location */
     .legendButtonDiv.move {
-        right: 240px;
+        right: 260px;
     }
 
     #legendContainer.window-top-right {

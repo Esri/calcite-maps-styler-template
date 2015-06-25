@@ -165,8 +165,8 @@ declare, lang, query, on, string, locale, domConstruct, array, arcgisUtils, esri
                         if (domClass.contains(legendButton, "icon-menu-open")) {
                             domClass.add(legendButton, ["icon-menu-close", "move"]);
                             domClass.remove(legendButton, "icon-menu-open");
-                            domClass.remove("legendDiv", "legend-hide");
-                            domClass.add("legendDiv", "legend-show");
+                            domClass.remove(legendContainer, "legend-hide");
+                            domClass.add(legendContainer, "legend-show");
                             if (this.config.time) {
                                 domClass.remove(timeContainer, "show");
                                 domClass.add(timeContainer, "hide");
@@ -174,8 +174,8 @@ declare, lang, query, on, string, locale, domConstruct, array, arcgisUtils, esri
                         } else {
                             domClass.remove(legendButton, ["icon-menu-close", "move"]);
                             domClass.add(legendButton, "icon-menu-open");
-                            domClass.remove("legendDiv", "legend-show");
-                            domClass.add("legendDiv", "legend-hide");
+                            domClass.remove(legendContainer, "legend-show");
+                            domClass.add(legendContainer, "legend-hide");
                             if (this.config.time) {
                                 domClass.remove(timeContainer, "hide");
                                 domClass.add(timeContainer, "show");
