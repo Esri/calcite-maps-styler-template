@@ -17,132 +17,132 @@
 define(
      ({
         map: {
-            error: "Š_Unable to create map_______ä",
-            zoomInTooltip: "Š_Zoom in___ä",  // Command button to zoom in to the map
-            zoomOutTooltip: "Š_Zoom out___ä",  // Command button to zoom out of the map
-            geolocationTooltip: "Š_Current location______ä"  // Command button to navigate to the current geographical position
+            error: "Võimetu koostama kaarti",
+            zoomInTooltip: "Suurenda",  // Command button to zoom in to the map
+            zoomOutTooltip: "Vähenda",  // Command button to zoom out of the map
+            geolocationTooltip: "Praegune asukoht"  // Command button to navigate to the current geographical position
         },
         main: {
-            noGroup: "Š_No group configured_______ä", // Shown when no group is configured in the configuration file
-            submitReportButtonText: "Š_Submit a report______ä", //Submit report  text for buttons on map and list
-            gotoListViewTooltip: "Š_List view____ä", // Go to List view tooltip text
-            noFeatureGeomtery: "Š_Feature cannot be displayed_________ä" // Error message when geomtery is not available
+            noGroup: "Ühtki rühma ei ole konfigureeritud", // Shown when no group is configured in the configuration file
+            submitReportButtonText: "Esita aruanne", //Submit report  text for buttons on map and list
+            gotoListViewTooltip: "Loendivaade", // Go to List view tooltip text
+            noFeatureGeomtery: "Funktsiooni ei saa kuvada." // Error message when geomtery is not available
         },
         signin: {
-            guestSigninText: "Š_Proceed as Guest______ä", // Shown in the 'Sign in' page below the icon for accessing application as an anonymous user
-            signInOrText: "Š_Or__ä", // Or text on sign in screen
-            signinOptionsText: "Š_Sign in with_____ä:", // Shown in the 'Sign in' page above the icons for social media sign in
-            noGroupNameText: "Š_Please sign in_____ä", // Shown when the group title is not available or the group is private
-            guestLoginTooltip: "Š_Sign in as a guest______ä", // Command button to access the application as an anonymous user
-            facebookLoginTooltip: "Š_Sign in with Facebook_______ä", // Command button to access the application via Facebook login
-            twitterLoginTooltip: "Š_Sign in with Twitter_______ä", // Command button to access the application via Twitter login
-            googlePlusLoginTooltip: "Š_Sign in with Google+_______ä", // Command button to access the application via Google+ login
-            agolLoginTooltip: "Š_Sign in with ArcGIS_______ä" // Command button to access the application via AGOL login
+            guestSigninText: "Jätkake külalisena", // Shown in the 'Sign in' page below the icon for accessing application as an anonymous user
+            signInOrText: "või", // Or text on sign in screen
+            signinOptionsText: "Logige sisse", // Shown in the 'Sign in' page above the icons for social media sign in
+            noGroupNameText: "Palun logi sisse", // Shown when the group title is not available or the group is private
+            guestLoginTooltip: "Logige sisse külalisena", // Command button to access the application as an anonymous user
+            facebookLoginTooltip: "Logige sisse Facebooki konto kaudu", // Command button to access the application via Facebook login
+            twitterLoginTooltip: "Logige sisse Twitteri konto kaudu", // Command button to access the application via Twitter login
+            googlePlusLoginTooltip: "Logige sisse Google+ kasutajana", // Command button to access the application via Google+ login
+            agolLoginTooltip: "Logige sisse ArcGIS kasutajana" // Command button to access the application via AGOL login
         },
         webMapList: {
-            owner: "Š_Owner___ä", // Shown in the 'Map information' section indicating the owner of the webmap
-            created: "Š_Date dreated_____ä", // Shown in the 'Map information' section indicating the date when the webmap was created
-            modified: "Š_Date modified_____ä", // Shown in the 'Map information' section indicating the date when the webmap was modified
-            description: "Š_Description____ä", // Shown in the 'Map information' section describing the webmap
-            snippet: "Š_Summary___ä", // Shown in the 'Map information' section providing the summary of the webmap
-            licenseInfo: "Š_Access and use constraints_________ä", // Shown in the map information section indicating the webmap license information
-            accessInformation: "Š_Credits___ä", // Shown in the 'Map information' section indicating account credits
-            tags: "Š_Tags__ä", // Shown in the 'Map information' section indicating tags of the webmap
-            numViews: "Š_Number of views______ä", // Shown in the 'Map information' section indicating number of times the webmap has been viewed
-            avgRating: "Š_Rating___ä", // Shown in the 'Map information' section indicating webmap rating
-            noWebMapInGroup: "Š_Configured group is invalid or no items have been shared with this group yet________________________ä.", // Shown when the configured group is invalid/private or no items have been shared with the group
-            infoBtnToolTip: "Š_Map information______ä" // Command button to view the 'Map information'
+            owner: "Omanik", // Shown in the 'Map information' section indicating the owner of the webmap
+            created: "Kuupäev loodud", // Shown in the 'Map information' section indicating the date when the webmap was created
+            modified: "Muutmise kuupäev", // Shown in the 'Map information' section indicating the date when the webmap was modified
+            description: "Kirjeldus", // Shown in the 'Map information' section describing the webmap
+            snippet: "Kokkuvõte", // Shown in the 'Map information' section providing the summary of the webmap
+            licenseInfo: "Ligipääsu ja kasutuse piirangud", // Shown in the map information section indicating the webmap license information
+            accessInformation: "Krediidid", // Shown in the 'Map information' section indicating account credits
+            tags: "Märksõnad", // Shown in the 'Map information' section indicating tags of the webmap
+            numViews: "Vaatamiste arv", // Shown in the 'Map information' section indicating number of times the webmap has been viewed
+            avgRating: "Hinnang", // Shown in the 'Map information' section indicating webmap rating
+            noWebMapInGroup: "Konfigureeritud grupp ei kehti või ei ole selle grupiga veel objekte jagatud.", // Shown when the configured group is invalid/private or no items have been shared with the group
+            infoBtnToolTip: "Kaarditeave" // Command button to view the 'Map information'
         },
         issueWall: {
-            noResultsFound: "Š_No reports available in the current area_____________ä", // Shown in the issue wall when no issues are present in the current map extent
-            gotoWebmapListTooltip: "Š_Go to main list______ä", // Tooltip for back icon in list header
-            gotoMapViewTooltip: "Š_Map view___ä" // Tooltip for map-it icon in list header
+            noResultsFound: "Praeguses piirkonnas pole objekte", // Shown in the issue wall when no issues are present in the current map extent
+            gotoWebmapListTooltip: "Mine pealehele", // Tooltip for back icon in list header
+            gotoMapViewTooltip: "Kaardivaade" // Tooltip for map-it icon in list header
         },
         appHeader: {
-            myReport: "Š_My Reports____ä", // Command button shown in mobile menu list
-            signIn: "Š_Sign In___ä", // Command button shown in mobile menu list and in appheader
-            signOut: "Š_Sign Out___ä", // Command button shown in mobile menu list
-            help: "Š_Help__ä", // Command button shown in mobile menu list
-            signInTooltip: "Š_Sign in___ä", // Tooltip to 'Sign in' option
-            signOutTooltip: "Š_Sign out___ä", // Tooltip  to 'Sign out' option
-            myReportTooltip: "Š_View reports submitted by me_________ä", // Tooltip  to 'My Reports' option
-            helpTooltip: "Š_Help__ä" // Tooltip  to 'Help' option
+            myReport: "Minu aruanded", // Command button shown in mobile menu list
+            signIn: "Logi sisse", // Command button shown in mobile menu list and in appheader
+            signOut: "Logi välja", // Command button shown in mobile menu list
+            help: "Abi", // Command button shown in mobile menu list
+            signInTooltip: "Logi sisse", // Tooltip to 'Sign in' option
+            signOutTooltip: "Logi välja", // Tooltip  to 'Sign out' option
+            myReportTooltip: "Kuva minu poolt esitatud aruanded", // Tooltip  to 'My Reports' option
+            helpTooltip: "Abi" // Tooltip  to 'Help' option
         },
         geoform: {
-            enterInformation: "Š_Details___ä", // Shown as the first section of the geoform, where the user can enter details of the issue
-            selectAttachments: "Š_Attachments____ä", // Appears above 'Select file' button indicating option to attach files
-            selectFileText: "Š_Browse___ä", // Command button to open a dialog box to select file(s) to be attached
-            enterLocation: "Š_Location___ä", // Shown as the second section of the geoform, where the user can select a location on the map
-            reportItButton: "Š_Report It____ä", // Command button to submit the geoform to report an issue
-            cancelButton: "Š_Cancel___ä", //Command button to close the geoform
-            requiredField: "Š_(required)____ä", // Shown next to the field in which the data is mandatory
-            selectDefaultText: "Š_Select&hellip;_____ä", // Shown in the dropdown field indicating to select an option
-            invalidInputValue: "Š_Please enter valid value_________ä.", // Shown when user clicks/taps the required field but does not enter the data and comes out of the required field
-            noFieldsConfiguredMessage: "Š_Layer fields are not configured to capture data_______________ä", // Shown when all the fields of the selected layer are disabled
-            invalidSmallNumber: "Š_Please enter an integer________ä", // Shown when the entered value is beyond the specified range (valid ${openStrong}integer${closeStrong} value between -32768 and 32767.)
-            invalidNumber: "Š_Please enter an integer________ä", // Shown when the entered value is beyond the specified range (valid ${openStrong}integer${closeStrong} value between -2147483648 and 2147483647.)
-            invalidFloat: "Š_Please enter a number_______ä", // Shown when the entered value is beyond the specified range (valid ${openStrong}floating point${closeStrong} value between -3.4E38 and 1.2E38 )
-            invalidDouble: "Š_Please enter a number_______ä", // Shown when the entered value is beyond the specified range (valid ${openStrong}double${closeStrong} value between -2.2E308 and 1.8E308)
-            requiredFields: "Š_Please provide values for all required fields_______________ä", // Shown when user submits the geoform without entering data in the mandatory field(s)
-            selectLocation: "Š_Please select the location for your report______________ä", // Shown when user submits the geoform without selecting location on the map
-            numericRangeHintMessage: "Š_${openStrong}Hint:${closeStrong} Minimum value ${minValue} and Maximum value ${maxValue}___________________________ä", // Shown as a pop over above the fields with numeric values, indicating the minimum and maximum range
-            dateRangeHintMessage: "Š_${openStrong}Hint:${closeStrong} Minimum Date ${minValue} and Maximum Date ${maxValue}___________________________ä", // Shown as a pop over above the fields with date values, indicating the minimum and maximum date range
-            errorsInApplyEdits: "Š_Issue could not be reported_________ä", // Shown when there is an error in any of the services while submitting the geoform
-            attachmentSelectedMsg: "Š_attachment(s) selected________ä", // Shown besides the select file button indicating the number of files attached
-            attachmentUploadStatus: "Š_${failed} of ${total} attachment(s) failed to upload_________________ä", // Shown when there is error while uploading the attachment, while submitting the geoform
-            geoLocationError: "Š_Current location not available__________ä",  // Shown when the browser returns an error instead of the current geographical position
-            geoLocationOutOfExtent: "Š_Current location is out of basemap extent_____________ä",  // Shown when the current geographical position is out of the basemap extent
-            submitButtonTooltip: "Š_Report It____ä", // Command button to open the geoform
-            cancelButtonTooltip: "Š_Cancel___ä", //tooltip for cancel button
-            geoformBackButtonTooltip: "Š_Go to the report list_______ä" //tooltip for Geoform back button
+            enterInformation: "Detailid", // Shown as the first section of the geoform, where the user can enter details of the issue
+            selectAttachments: "Manused", // Appears above 'Select file' button indicating option to attach files
+            selectFileText: "Sirvi", // Command button to open a dialog box to select file(s) to be attached
+            enterLocation: "Asukoht", // Shown as the second section of the geoform, where the user can select a location on the map
+            reportItButton: "Aruanne It", // Command button to submit the geoform to report an issue
+            cancelButton: "Tühista", //Command button to close the geoform
+            requiredField: "(nõutud)", // Shown next to the field in which the data is mandatory
+            selectDefaultText: "Vali&hellip;", // Shown in the dropdown field indicating to select an option
+            invalidInputValue: "Sisestage kehtiv väärtus.", // Shown when user clicks/taps the required field but does not enter the data and comes out of the required field
+            noFieldsConfiguredMessage: "Kihi väljadele ei ole konfigureeritud andmete salvestamine.", // Shown when all the fields of the selected layer are disabled
+            invalidSmallNumber: "Palun sisestage täisarv", // Shown when the entered value is beyond the specified range (valid ${openStrong}integer${closeStrong} value between -32768 and 32767.)
+            invalidNumber: "Palun sisestage täisarv", // Shown when the entered value is beyond the specified range (valid ${openStrong}integer${closeStrong} value between -2147483648 and 2147483647.)
+            invalidFloat: "Palun sisestage arv", // Shown when the entered value is beyond the specified range (valid ${openStrong}floating point${closeStrong} value between -3.4E38 and 1.2E38 )
+            invalidDouble: "Palun sisestage arv", // Shown when the entered value is beyond the specified range (valid ${openStrong}double${closeStrong} value between -2.2E308 and 1.8E308)
+            requiredFields: "Palun sisestage väärtused kõigile nõutud väljadele.", // Shown when user submits the geoform without entering data in the mandatory field(s)
+            selectLocation: "Valige oma aruande asukoht.", // Shown when user submits the geoform without selecting location on the map
+            numericRangeHintMessage: "${openStrong}Vihje:${closeStrong} Miinimumväärtus ${minValue} ja maksimumväärtus ${maxValue}", // Shown as a pop over above the fields with numeric values, indicating the minimum and maximum range
+            dateRangeHintMessage: "${openStrong}Vihje:${closeStrong} Kuupäeva alampiir ${minValue} ja kuupäeva ülempiir ${maxValue}", // Shown as a pop over above the fields with date values, indicating the minimum and maximum date range
+            errorsInApplyEdits: "Probleemi kohta ei saa aruannet esitada.", // Shown when there is an error in any of the services while submitting the geoform
+            attachmentSelectedMsg: "valitud manus(ed)", // Shown besides the select file button indicating the number of files attached
+            attachmentUploadStatus: "Manust /kokku manusest ei õnnestunud üles laadida.", // Shown when there is error while uploading the attachment, while submitting the geoform
+            geoLocationError: "Hetke asukoht pole kättesaadav.",  // Shown when the browser returns an error instead of the current geographical position
+            geoLocationOutOfExtent: "Hetke asukoht on lubatud vahemikust väljas.",  // Shown when the current geographical position is out of the basemap extent
+            submitButtonTooltip: "Aruanne It", // Command button to open the geoform
+            cancelButtonTooltip: "Tühista", //tooltip for cancel button
+            geoformBackButtonTooltip: "Liigu aruande loendisse" //tooltip for Geoform back button
 
         },
         locator: {
-            addressText: "Š_Address___ä:", // Shown as a title for a group of addresses returned on performing unified search
-            usngText: "Š_USNG__ä", // Shown as a title for a group of USNG values returned on performing unified search
-            mgrsText: "Š_MGRS__ä", // Shown as a title for a group of MGRS values returned on performing unified search
-            latLongText: "Š_Latitude/Longitude______ä", // Shown as a title for a group of latitude longitude values returned on performing unified search
-            invalidSearch: "Š_No results found______ä", // Shown in the address container when no results are returned on performing unified search
-            locatorPlaceholder: "Š_Enter an address to search_________ä", // Shown in the address container textbox as a placeholder
-            locationOutOfExtent: "Š_Located address is out of basemap extent_____________ä", // Shown as an alert when the selected address in the search result is out of basemap extent
-            searchButtonTooltip: "Š_Search___ä", // Tooltip for search button
-            clearButtonTooltip: "Š_Clear search value______ä" // Tooltip for Geocoder clear button
+            addressText: "Aadress:", // Shown as a title for a group of addresses returned on performing unified search
+            usngText: "USNG", // Shown as a title for a group of USNG values returned on performing unified search
+            mgrsText: "MGRS", // Shown as a title for a group of MGRS values returned on performing unified search
+            latLongText: "Laius/Pikkus", // Shown as a title for a group of latitude longitude values returned on performing unified search
+            invalidSearch: "Tulemusi ei leitud", // Shown in the address container when no results are returned on performing unified search
+            locatorPlaceholder: "Sisesta otsingusse aadress", // Shown in the address container textbox as a placeholder
+            locationOutOfExtent: "Asukoht on väljaspool aluskaardi piirkonda.", // Shown as an alert when the selected address in the search result is out of basemap extent
+            searchButtonTooltip: "Otsi", // Tooltip for search button
+            clearButtonTooltip: "Tühjenda otsingu väärtus" // Tooltip for Geocoder clear button
         },
         myIssues: {
-            title: "Š_My Reports____ä", // Shown as a title in 'My issues' panel
-            myIssuesTooltip: "Š_My Reports____ä", // Command button to access issues reported by the logged in user
-            noResultsFound: "Š_No reports found______ä" // Shown when no issues are reported by the logged in user
+            title: "Minu aruanded", // Shown as a title in 'My issues' panel
+            myIssuesTooltip: "Minu aruanded", // Command button to access issues reported by the logged in user
+            noResultsFound: "Ühtki aruannet ei leitud" // Shown when no issues are reported by the logged in user
         },
         itemDetails: {  // Detailed information about an item and a list of its comments
-            likeButtonLabel: "Š_Like__ä", // Command button shown in details panel
-            likeButtonTooltip: "Š_Vote for this report_______ä",  // Tooltip for command button shown in details panel
-            commentButtonLabel: "Š_Comment___ä", // Command button shown in details panel
-            commentButtonTooltip: "Š_Comment on this report________ä", // Tooltip for command button shown in details panel
-            galleryButtonLabel: "Š_Gallery___ä", // Command button shown in details panel
-            galleryButtonTooltip: "Š_See attached documents________ä", // Tooltip for command button shown in details panel
-            mapButtonLabel: "Š_View on Map____ä", // Command button shown in details panel
-            mapButtonTooltip: "Š_View the location of this report___________ä", // Tooltip for command button shown in details panel
-            commentsListHeading: "Š_Comments___ä", // List heading for Comments section in details panel
-            unableToUpdateVoteField: "Š_Your vote cannot be added at this time_____________ä.", // Error message for feature unable to update
-            gotoIssueListTooltip: "Š_Go to the report list_______ä" // Tooltip for back icon in Issue list header
+            likeButtonLabel: "nagu", // Command button shown in details panel
+            likeButtonTooltip: "Hääletage selle aruande kohta",  // Tooltip for command button shown in details panel
+            commentButtonLabel: "Kommentaar", // Command button shown in details panel
+            commentButtonTooltip: "Kommenteerige seda aruannet", // Tooltip for command button shown in details panel
+            galleryButtonLabel: "Galerii", // Command button shown in details panel
+            galleryButtonTooltip: "Vaadake manustatud dokumente", // Tooltip for command button shown in details panel
+            mapButtonLabel: "Vaata kaardil", // Command button shown in details panel
+            mapButtonTooltip: "Vaata selle aruande asukohta", // Tooltip for command button shown in details panel
+            commentsListHeading: "Kommentaari", // List heading for Comments section in details panel
+            unableToUpdateVoteField: "Teie häält ei saa seekord lisada.", // Error message for feature unable to update
+            gotoIssueListTooltip: "Liigu aruande loendisse" // Tooltip for back icon in Issue list header
         },
         itemList: {  // List of feature layer items shown in my-issues and issue-wall
-            likesForThisItemTooltip: "Š_Votes for this report_______ä" //Shown on hovering of the like icon in my-issues and issue-wall
+            likesForThisItemTooltip: "Selle aruande kohta antud hääled." //Shown on hovering of the like icon in my-issues and issue-wall
         },
         comment: {
-            commentsFormText: "Š_Comment___ä",
-            commentsFormSubmitButton: "Š_Submit Comment_____ä",
-            commentsFormCancelButton: "Š_Cancel___ä",
-            errorInSubmittingComment: "Š_Comment could not be submitted__________ä.", // Shown when user is unable to add comments
-            emptyCommentMessage: "Š_Please enter a comment________ä.", // Shown when user submits a comment without any text/character
-            placeHolderText: "Š_Type a comment_____ä", // Shown as a placeholder in comments textbox
-            noCommentsAvailableText: "Š_No comments available_______ä", // Shown when no comments are available for the selected issue
-            remainingTextCount: "Š_${0} character(s) remain________ä", // Shown below the comments textbox indicating the number of characters that can be added
-            showNoText: "Š_No__ä" // Shown when comments character limit is exceeded
+            commentsFormText: "Kommentaar",
+            commentsFormSubmitButton: "Saada kommentaar",
+            commentsFormCancelButton: "Tühista",
+            errorInSubmittingComment: "Kommentaari ei saanud esitada.", // Shown when user is unable to add comments
+            emptyCommentMessage: "Palun sisestage kommentaar.", // Shown when user submits a comment without any text/character
+            placeHolderText: "Sisestage kommentaar", // Shown as a placeholder in comments textbox
+            noCommentsAvailableText: "Ühtki kommentaari ei ole saadaval.", // Shown when no comments are available for the selected issue
+            remainingTextCount: "${0} kasutamata tähemärgid", // Shown below the comments textbox indicating the number of characters that can be added
+            showNoText: "Ei" // Shown when comments character limit is exceeded
         },
         gallery: {
-            galleryHeaderText: "Š_Gallery___ä",
-            noAttachmentsAvailableText: "Š_No attachments found_______ä" // Shown when no comments are available for the selected issue
+            galleryHeaderText: "Galerii",
+            noAttachmentsAvailableText: "Manuseid ei leitud" // Shown when no comments are available for the selected issue
         }
     })
 );

@@ -1,9 +1,9 @@
 ﻿define(
    ({
     display: {
-      elevationProfileTitle: "Ĳ_Elevation Profile______ä",
+      elevationProfileTitle: "Hoogteprofiel",
       showMe: "mij tonen",
-      selectLine: "Ĳ_<b>Select</b> a line feature in the map_____________ä.",
+      selectLine: "<b>Selecteer</b> een lijnfeature in de kaart.",
       popupRequirement: "OPMERKING: het object moet in een laag liggen waarvoor pop-ups zijn ingeschakeld.",
       digitizeDistanceMeasureTool: "Gebruik de <b>Meettools</b>.",
       selectFeatureHelpUrl: "http://help.arcgis.com/nl/arcgisonline/help/010q/010q0000004s000000.htm#ESRI_SECTION1_DAA22E89DF67448E8F3682309F39BE5D",
@@ -15,7 +15,7 @@
       helpLabel: "Help"
     },
     chart: {
-      title: "Ĳ_Elevation Profile______ä",
+      title: "Hoogteprofiel",
       demResolution: "DEM-resolutie",
       elevationTitleTemplate: "Hoogte in {0}",
       distanceTitleTemplate: "Afstand in {0}",

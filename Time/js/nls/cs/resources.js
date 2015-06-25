@@ -17,30 +17,30 @@
 define(
    ({
     map: {
-      error: "Ř_Unable to create map_______ů"
+      error: "Nelze vytvořit mapu"
     },
     legend:{
-      title: "Ř_Legend___ů"
+      title: "Legenda"
     },
     share: {
-      title: "Ř_Share___ů"
+      title: "Sdílet"
     },
     about: {
-      title: "Ř_About___ů",
-      error: "Ř_By default the web map description or snippet will be used. Configure the app to add a custom snippet for the about panel______________________________________ů."
+      title: "O produktu",
+      error: "Ve výchozím nastavení se použije popis nebo fragment webové mapy. Vlastní fragment pro panel informací přidáte prostřednictvím konfigurace aplikace."
     },
     time: {
-        enableTimeMessage: "Ř_The specified web map does not contain any time enabled layers. View the <a target='_blank' href='http://doc.arcgis.com/en/arcgis-online/create-maps/configure-time.htm#ESRI_SECTION1_F1D4A275B4AB4CC79198CBA9D0AD8727'>Configure time settings</a> help topic for details. To use the template without displaying time use the configuration panel to disable the time option_______________________________________________________________________________________________________________ů.",
-        datePattern: "Ř_MMMM d, yyyy_____ů",
-        hourTimePattern: "Ř_h a__ů",
-        millisecondTimePattern: "Ř_h:mm:ss a____ů",
-        minuteTimePattern: "Ř_h:mm a___ů",
-        secondTimePattern: "Ř_h:mm:ss a____ů",
-        timeRange: "Ř_${startTime} to ${endTime}_________ů",
-        yearPattern: "Ř_yyyy__ů"
+        enableTimeMessage: "Zadaná webová mapa neobsahuje žádné vrstvy s časovými daty. Podrobnosti naleznete v tématu nápovědy <a target=\'_blank\' href=\'http://doc.arcgis.com/en/arcgis-online/create-maps/configure-time.htm#ESRI_SECTION1_F1D4A275B4AB4CC79198CBA9D0AD8727\'>Konfigurace nastavení času</a>. Chcete-li šablonu použít bez zobrazení času, vypněte v konfiguračním panelu možnost času.",
+        datePattern: "MMMM d, yyyy",
+        hourTimePattern: "H",
+        millisecondTimePattern: "H:mm:ss",
+        minuteTimePattern: "h:mm",
+        secondTimePattern: "H:mm:ss",
+        timeRange: "${startTime} do ${endTime}",
+        yearPattern: "yyyy"
     },
     histogram:{
-      error: "Ř_No time-enabled feature layers, in snapshot mode, are available in the web map. Configure the app to use another web map or disable the histogram option_______________________________________________ů."
+      error: "Ve webové mapě jsou k dispozici vrstvy prvků bez časových dat v režimu snímku. Chcete-li použít jinou webovou mapu nebo vypnout možnost histogramu, nakonfigurujte aplikaci."
     }
   })
 );

@@ -17,30 +17,30 @@
 define(
    ({
     map: {
-      error: "ı_Unable to create map_______İ"
+      error: "Harita oluşturulamıyor"
     },
     legend:{
-      title: "ı_Legend___İ"
+      title: "Açıklama"
     },
     share: {
-      title: "ı_Share___İ"
+      title: "Paylaş"
     },
     about: {
-      title: "ı_About___İ",
-      error: "ı_By default the web map description or snippet will be used. Configure the app to add a custom snippet for the about panel______________________________________İ."
+      title: "Hakkında",
+      error: "Varsayılan olarak web haritası açıklaması veya kod parçacığı kullanılacak. Uygulamayı hakkında panosuna özel bir kod parçacığı ekleyecek biçimde yapılandırın."
     },
     time: {
-        enableTimeMessage: "ı_The specified web map does not contain any time enabled layers. View the <a target='_blank' href='http://doc.arcgis.com/en/arcgis-online/create-maps/configure-time.htm#ESRI_SECTION1_F1D4A275B4AB4CC79198CBA9D0AD8727'>Configure time settings</a> help topic for details. To use the template without displaying time use the configuration panel to disable the time option_______________________________________________________________________________________________________________İ.",
-        datePattern: "ı_MMMM d, yyyy_____İ",
-        hourTimePattern: "ı_h a__İ",
-        millisecondTimePattern: "ı_h:mm:ss a____İ",
-        minuteTimePattern: "ı_h:mm a___İ",
-        secondTimePattern: "ı_h:mm:ss a____İ",
-        timeRange: "ı_${startTime} to ${endTime}_________İ",
-        yearPattern: "ı_yyyy__İ"
+        enableTimeMessage: "Belirtilen web haritasında zaman etkin katman yok. Ayrıntılar için <a target=\'_blank\' href=\'http://doc.arcgis.com/en/arcgis-online/create-maps/configure-time.htm#ESRI_SECTION1_F1D4A275B4AB4CC79198CBA9D0AD8727\'>Zaman ayarlarını yapılandırma</a> yardım konu başlığını inceleyin. Şablonu, zamanı görüntülemeden kullanmak için yapılandırma panosunu kullanarak zaman seçeneğini devre dışında bırakın.",
+        datePattern: "d MMMM yyyy",
+        hourTimePattern: "h a",
+        millisecondTimePattern: "h:mm:ss a",
+        minuteTimePattern: "h:mm a",
+        secondTimePattern: "h:mm:ss a",
+        timeRange: "${startTime} ile ${endTime} arası",
+        yearPattern: "yyyy"
     },
     histogram:{
-      error: "ı_No time-enabled feature layers, in snapshot mode, are available in the web map. Configure the app to use another web map or disable the histogram option_______________________________________________İ."
+      error: "Web haritasında, anlık görünüm modunda, zaman etkin detay katmanı yok. Uygulamayı başka bir web haritası kullanacak biçimde yapılandırın veya histogram seçeneğini devre dışı bırakın."
     }
   })
 );

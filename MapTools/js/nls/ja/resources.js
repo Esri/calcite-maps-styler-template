@@ -20,7 +20,7 @@ define(
             error: "マップを作成できません"
         },
         tools:{
-            bookmarkTool: "須_Bookmarks____鷗",
+            bookmarkTool: "ブックマーク",
             basemapTool: "ベースマップ",
             legendTool: "凡例",
             detailsTool: "詳細",
@@ -37,8 +37,8 @@ define(
                   "label3": '横',
                   "label4": '縦'
             },
-            printTitle: "須_Title___鷗",
-            printTitlePrompt: "須_Add custom title______鷗"
+            printTitle: "タイトル",
+            printTitlePrompt: "カスタム タイトルの追加"
         }
     })
 );

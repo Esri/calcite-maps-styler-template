@@ -68,8 +68,8 @@ define(
             signInBtnTitle: "Aanmelden",
             signOutBtnTitle: "Afmelden",
             geolocationBtnTitle: "Geografische locatie",
-            ascendingSort: "Ĳ_Ascending____ä",
-            descendingSort: "Ĳ_Descending____ä"
+            ascendingSort: "Oplopend",
+            descendingSort: "Aflopend"
         },
         errorMessages: {
             emptyGroup: "De geconfigureerde groep bevat geen gegevens om een query uit te voeren.",

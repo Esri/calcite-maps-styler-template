@@ -17,30 +17,30 @@
 define(
    ({
     map: {
-      error: "بيت_Unable to create map_______لاحقة"
+      error: "يتعذر إنشاء الخريطة"
     },
     legend:{
-      title: "بيت_Legend___لاحقة"
+      title: "مفتاح الخريطة"
     },
     share: {
-      title: "بيت_Share___لاحقة"
+      title: "مشاركة"
     },
     about: {
-      title: "بيت_About___لاحقة",
-      error: "بيت_By default the web map description or snippet will be used. Configure the app to add a custom snippet for the about panel______________________________________لاحقة."
+      title: "حول",
+      error: "سيتم استخدام وصف أو قصاصة خريطة الويب افتراضيًا. قم بتكوين التطبيق لإضافة قصاصة مخصصة للوحة."
     },
     time: {
-        enableTimeMessage: "بيت_The specified web map does not contain any time enabled layers. View the <a target='_blank' href='http://doc.arcgis.com/en/arcgis-online/create-maps/configure-time.htm#ESRI_SECTION1_F1D4A275B4AB4CC79198CBA9D0AD8727'>Configure time settings</a> help topic for details. To use the template without displaying time use the configuration panel to disable the time option_______________________________________________________________________________________________________________لاحقة.",
-        datePattern: "بيت_MMMM d, yyyy_____لاحقة",
-        hourTimePattern: "بيت_h a__لاحقة",
-        millisecondTimePattern: "بيت_h:mm:ss a____لاحقة",
-        minuteTimePattern: "بيت_h:mm a___لاحقة",
-        secondTimePattern: "بيت_h:mm:ss a____لاحقة",
-        timeRange: "بيت_${startTime} to ${endTime}_________لاحقة",
-        yearPattern: "بيت_yyyy__لاحقة"
+        enableTimeMessage: "لا تتضمن خريطة الويب المحددة أي طبقات مُمكنة زمنيًا. راجع موضوع تعليمات <a target=\'_blank\' href=\'http://doc.arcgis.com/en/arcgis-online/create-maps/configure-time.htm#ESRI_SECTION1_F1D4A275B4AB4CC79198CBA9D0AD8727\'>تكوين الإعدادات الزمنية</a> لمزيد من التفاصيل. لاستخدام القالب بدون عرض الزمن تفضل باستخدام لوحة التكوين لتعطيل الخيار الزمني.",
+        datePattern: "dd MMMM, yyyy",
+        hourTimePattern: "h a",
+        millisecondTimePattern: "h:mm:ss a",
+        minuteTimePattern: "h:mm a",
+        secondTimePattern: "h:mm:ss a",
+        timeRange: "${startTime} إلى ${endTime}",
+        yearPattern: "yyyy"
     },
     histogram:{
-      error: "بيت_No time-enabled feature layers, in snapshot mode, are available in the web map. Configure the app to use another web map or disable the histogram option_______________________________________________لاحقة."
+      error: "لا توجد طبقات معالم مُمكنة زمنيًا، في وضع اللقطة، متاحة في خريطة الويب. قم بتكوين التطبيق لاستخدام خريطة ويب أخرى أو تعطيل خيار المدرج التكراري."
     }
   })
 );

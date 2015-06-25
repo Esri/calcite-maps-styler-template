@@ -199,7 +199,7 @@
 				notJpg: "請選擇 jpeg 格式的照片",
 				errorNoPhoto: "選擇要上傳的圖像",
 				errorNoThumbnail: "選擇要上傳的縮圖",
-				errorInvalidPicUrl: "輸入有效圖片(以 http(s):// 開頭，以 jpg、png、gif 或 bmp 結尾)。可使用 '#isImage' 做為 URL 的結尾，以覆蓋該規則。",
+				errorInvalidPicUrl: "輸入有效圖片(以 http(s):// 開頭，以 jpg、png、gif 或 bmp 結尾)。可使用 \\\"#isImage\\\" 做為 URL 的結尾，以覆蓋該規則。",
 				errorInvalidThumbUrl: "輸入有效縮圖 (以 http(s):// 開頭，以 jpg、png、gif 或 bmp 結尾)。",
 				errorInvalidVideoUrl: "輸入有效影片 URL(以 http(s):// 開始)",
 				errorNoName: "輸入該導覽點的名稱",

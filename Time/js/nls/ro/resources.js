@@ -17,30 +17,30 @@
 define(
    ({
     map: {
-      error: "Ă_Unable to create map_______ș"
+      error: "Imposibil de creat harta"
     },
     legend:{
-      title: "Ă_Legend___ș"
+      title: "Legendă"
     },
     share: {
-      title: "Ă_Share___ș"
+      title: "Partajarea"
     },
     about: {
-      title: "Ă_About___ș",
-      error: "Ă_By default the web map description or snippet will be used. Configure the app to add a custom snippet for the about panel______________________________________ș."
+      title: "Despre",
+      error: "În mod implicit, este utilizată descrierea elementului hărţii web sau un snippet. Configuraţi aplicaţia pentru a adăuga un snippet particularizat pentru panoul Despre."
     },
     time: {
-        enableTimeMessage: "Ă_The specified web map does not contain any time enabled layers. View the <a target='_blank' href='http://doc.arcgis.com/en/arcgis-online/create-maps/configure-time.htm#ESRI_SECTION1_F1D4A275B4AB4CC79198CBA9D0AD8727'>Configure time settings</a> help topic for details. To use the template without displaying time use the configuration panel to disable the time option_______________________________________________________________________________________________________________ș.",
-        datePattern: "Ă_MMMM d, yyyy_____ș",
-        hourTimePattern: "Ă_h a__ș",
-        millisecondTimePattern: "Ă_h:mm:ss a____ș",
-        minuteTimePattern: "Ă_h:mm a___ș",
-        secondTimePattern: "Ă_h:mm:ss a____ș",
-        timeRange: "Ă_${startTime} to ${endTime}_________ș",
-        yearPattern: "Ă_yyyy__ș"
+        enableTimeMessage: "Harta web specificată nu conţine straturi tematice cu variaţie temporală. Vizualizaţi subiectul de ajutor <a target=\'_blank\' href=\'http://doc.arcgis.com/en/arcgis-online/create-maps/configure-time.htm#ESRI_SECTION1_F1D4A275B4AB4CC79198CBA9D0AD8727\'>Configurarea setărilor pentru timp</a> pentru detalii. Pentru a utiliza şablonul fără să afişaţi timpul, utilizaţi panoul de configurare pentru a dezactiva opţiunea pentru timp.",
+        datePattern: "d. MMMM yyyy",
+        hourTimePattern: "H",
+        millisecondTimePattern: "H:mm:ss",
+        minuteTimePattern: "H:mm",
+        secondTimePattern: "H:mm:ss",
+        timeRange: "De la ${startTime} la ${endTime}",
+        yearPattern: "yyyy"
     },
     histogram:{
-      error: "Ă_No time-enabled feature layers, in snapshot mode, are available in the web map. Configure the app to use another web map or disable the histogram option_______________________________________________ș."
+      error: "În harta web, în modul snapshot, nu sunt disponibile straturi tematice de obiecte spaţiale cu variaţie temporală. Configuraţi aplicaţia pentru a utiliza o altă hartă web sau dezactivaţi opţiunea pentru histogramă."
     }
   })
 );

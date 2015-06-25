@@ -68,8 +68,8 @@ define(
             signInBtnTitle: "Entrar",
             signOutBtnTitle: "Sair",
             geolocationBtnTitle: "Geolocalização",
-            ascendingSort: "ã_Ascending____Ç",
-            descendingSort: "ã_Descending____Ç"
+            ascendingSort: "Crescente",
+            descendingSort: "Descendente"
         },
         errorMessages: {
             emptyGroup: "O grupo configurado não tem quaisquer dados para executar a consulta.",

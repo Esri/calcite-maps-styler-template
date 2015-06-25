@@ -20,7 +20,7 @@ define(
             error: "Nevar izveidot karti"
         },
         tools:{
-            bookmarkTool: "ķ_Bookmarks____ū",
+            bookmarkTool: "Grāmatzīmes",
             basemapTool: "Pamatkartes",
             legendTool: "Apzīmējumi",
             detailsTool: "Detaļas",
@@ -37,8 +37,8 @@ define(
                   "label3": 'Ainava',
                   "label4": 'Portrets'
             },
-            printTitle: "ķ_Title___ū",
-            printTitlePrompt: "ķ_Add custom title______ū"
+            printTitle: "Nosaukums",
+            printTitlePrompt: "Pievienot pielāgotu virsrakstu"
         }
     })
 );

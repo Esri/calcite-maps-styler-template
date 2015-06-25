@@ -17,30 +17,30 @@
 define(
    ({
     map: {
-      error: "ก้_Unable to create map_______ษฺ"
+      error: "ไม่สามารถสร้างแผนที่ได้"
     },
     legend:{
-      title: "ก้_Legend___ษฺ"
+      title: "คำอธิบายสัญลักษณ์"
     },
     share: {
-      title: "ก้_Share___ษฺ"
+      title: "แชร์"
     },
     about: {
-      title: "ก้_About___ษฺ",
-      error: "ก้_By default the web map description or snippet will be used. Configure the app to add a custom snippet for the about panel______________________________________ษฺ."
+      title: "เกี่ยวกับ",
+      error: "โดยปกติแล้วคำอธิบายเวปแผนที่ หรือข้อความย่อยจะใช้เมื่อกำหนดแอพ สามารถกำหนดข้อความนี้สำหรับหน้าต่างเกี่ยวกับได้"
     },
     time: {
-        enableTimeMessage: "ก้_The specified web map does not contain any time enabled layers. View the <a target='_blank' href='http://doc.arcgis.com/en/arcgis-online/create-maps/configure-time.htm#ESRI_SECTION1_F1D4A275B4AB4CC79198CBA9D0AD8727'>Configure time settings</a> help topic for details. To use the template without displaying time use the configuration panel to disable the time option_______________________________________________________________________________________________________________ษฺ.",
-        datePattern: "ก้_MMMM d, yyyy_____ษฺ",
-        hourTimePattern: "ก้_h a__ษฺ",
-        millisecondTimePattern: "ก้_h:mm:ss a____ษฺ",
-        minuteTimePattern: "ก้_h:mm a___ษฺ",
-        secondTimePattern: "ก้_h:mm:ss a____ษฺ",
-        timeRange: "ก้_${startTime} to ${endTime}_________ษฺ",
-        yearPattern: "ก้_yyyy__ษฺ"
+        enableTimeMessage: "เวปแผนที่ที่ระบุไม่มีชั้นข้อมูลที่เปิดใช้การแสดงเวลา แสดง<a target=\'_blank\' href=\'http://doc.arcgis.com/en/arcgis-online/create-maps/configure-time.htm#ESRI_SECTION1_F1D4A275B4AB4CC79198CBA9D0AD8727\'>การวิธีกำหนดการแสดงเวลา </a> หัวข้อในส่วนช่วยเหลือนี้มีรายละเอียดในการสร้าง หากต้องการใช้เทมเพลตโดยไม่ต้องแสดงเวลาสามาระใช้หน้าต่างกำหนดค่า เพื่อปิดตัวเลือกด้านเวลาได้",
+        datePattern: "d MMMM,yyyy",
+        hourTimePattern: "h a",
+        millisecondTimePattern: "h:mm:ss a",
+        minuteTimePattern: "h:mm a",
+        secondTimePattern: "h:mm:ss a",
+        timeRange: "${startTime} ถึง ${endTime}",
+        yearPattern: "yyyy"
     },
     histogram:{
-      error: "ก้_No time-enabled feature layers, in snapshot mode, are available in the web map. Configure the app to use another web map or disable the histogram option_______________________________________________ษฺ."
+      error: "ไม่มีชั้นข้อมูลฟิเจอร์ที่เปิดแสดงเวลา ในโหมดสแนพช็อต อยู่ในเวปแผนที่ ให้กำหนดค่าของแอพใหม่เพื่อใช้งานเวปแผนที่อื่น หรือปิดตัวเลือกการแสดงฮิสโตแกรม"
     }
   })
 );

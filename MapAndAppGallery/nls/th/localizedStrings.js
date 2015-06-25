@@ -68,8 +68,8 @@ define(
             signInBtnTitle: "ลงชื่อเข้า",
             signOutBtnTitle: "ลงชื่อออก",
             geolocationBtnTitle: "ตำแหน่งเชิงพื้นที่",
-            ascendingSort: "ก้_Ascending____ษฺ",
-            descendingSort: "ก้_Descending____ษฺ"
+            ascendingSort: "เรียงจากน้อยไปมาก",
+            descendingSort: "เรียงจากมากไปน้อย"
         },
         errorMessages: {
             emptyGroup: "กลุ่มการกำหนดค่าไม่ได้มีข้อมูลใด ๆ ที่จะดำเนินการแบบสอบถาม",

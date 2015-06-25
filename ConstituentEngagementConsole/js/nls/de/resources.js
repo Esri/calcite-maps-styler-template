@@ -17,77 +17,77 @@
 define(
      ({
         map: {
-            error: "ä_Unable to create map_______Ü" // Shown when error occurs while creation of map
+            error: "Karte kann nicht erstellt werden" // Shown when error occurs while creation of map
         },
         main: {
-            noGroup: "ä_No group configured_______Ü" // Appears when no group is configured
+            noGroup: "Keine Gruppe konfiguriert" // Appears when no group is configured
         },
         webMapList: {
-            owner: "ä_Owner___Ü", // Appears in web-map list description panel when it is set to true
-            created: "ä_Date created_____Ü", // Appears in web-map list description panel when it is set to true
-            modified: "ä_Date modified_____Ü", // Appears in web-map list description panel when it is set to true
-            description: "ä_Description____Ü", // Appears in web-map list description panel when it is set to true
-            snippet: "ä_Summary___Ü", // Appears in web-map list description panel when it is set to true
-            licenseInfo: "ä_Access and use constraints_________Ü", // Appears in web-map list description panel when it is set to true
-            accessInformation: "ä_Credits___Ü", // Appears in web-map list description panel when it is set to true
-            tags: "ä_Tags__Ü", // Appears in web-map list description panel when it is set to true
-            numViews: "ä_Number of views______Ü", // Appears in web-map list description panel when it is set to true
-            avgRating: "ä_Rating___Ü", // Appears in web-map list description panel when it is set to true
-            noWebMapInGroup: "ä_Configured group is invalid or no items have been shared with this group yet________________________Ü", // Appears when invalid group in configured or no web-map is available in that group
-            infoBtnToolTip: "ä_Map information______Ü" // Display tool-tip on command button to display description of web-map
+            owner: "Besitzer", // Appears in web-map list description panel when it is set to true
+            created: "Erstellungsdatum", // Appears in web-map list description panel when it is set to true
+            modified: "Änderungsdatum", // Appears in web-map list description panel when it is set to true
+            description: "Beschreibung", // Appears in web-map list description panel when it is set to true
+            snippet: "Zusammenfassung", // Appears in web-map list description panel when it is set to true
+            licenseInfo: "Zugriffs- und Nutzungsbeschränkungen", // Appears in web-map list description panel when it is set to true
+            accessInformation: "Quellennachweise", // Appears in web-map list description panel when it is set to true
+            tags: "Tags", // Appears in web-map list description panel when it is set to true
+            numViews: "Anzahl der Ansichten", // Appears in web-map list description panel when it is set to true
+            avgRating: "Bewertung", // Appears in web-map list description panel when it is set to true
+            noWebMapInGroup: "Die konfigurierte Gruppe ist ungültig oder es wurden noch keine Elemente für diese Gruppe freigegeben", // Appears when invalid group in configured or no web-map is available in that group
+            infoBtnToolTip: "Karteninformationen" // Display tool-tip on command button to display description of web-map
         },
         applicationHeader: {
-            signOutOption: "ä_Sign Out___Ü", // Command button to sign-out from the application
-            pleaseSignInText: "ä_Please sign in_____Ü", // Appears when user needs to sign-in into the application
-            showSelectedOption: "ä_Show Selected_____Ü", // Command button to show selected records in data-viewer
-            showAllOption: "ä_Show All___Ü", // Command button to show all the records in data-viewer
-            clearSelectionOption: "ä_Clear Selection______Ü", // Command button to clear selected records in data-viewer
-            zoomToSelectedOption: "ä_Zoom to Selected______Ü", // Command button to zoom map to selected records
-            gridViewOption: "ä_List View____Ü", // Command button to display list view
-            mapViewOption: "ä_Map View___Ü", // Command button to display map view
-            gridMapViewOption: "ä_Split View____Ü", // Command button to display split view
-            settingsBtnToolTip: "ä_Selection options______Ü", // Display tool-tip on command button to open a list of settings options
-            viewModeBtnToolTip: "ä_Display options______Ü", // Display tool-tip on command button to open a list of view options
-            searchModeBtnToolTip: "ä_Search this layer______Ü", // Display tool-tip on command button to open a dialog box for finding a feature
-            manualRefreshBtnToolTip: "ä_Refresh___Ü", // Display tool-tip on command button to manually refresh the selected operational layer
-            confirmManualRefeshText: "ä_All selections and unsaved changes will be discarded_________________Ü", // Appears when user wants to do manual refresh
-            signInOption: "ä_Sign In___Ü" // Appears when user has not signed in
+            signOutOption: "Abmelden", // Command button to sign-out from the application
+            pleaseSignInText: "Melden Sie sich an", // Appears when user needs to sign-in into the application
+            showSelectedOption: "Ausgewählte anzeigen", // Command button to show selected records in data-viewer
+            showAllOption: "Alle anzeigen", // Command button to show all the records in data-viewer
+            clearSelectionOption: "Auswahl aufheben", // Command button to clear selected records in data-viewer
+            zoomToSelectedOption: "Auf Auswahl zoomen", // Command button to zoom map to selected records
+            gridViewOption: "Listenansicht", // Command button to display list view
+            mapViewOption: "Kartenansicht", // Command button to display map view
+            gridMapViewOption: "Split View", // Command button to display split view
+            settingsBtnToolTip: "Auswahloptionen", // Display tool-tip on command button to open a list of settings options
+            viewModeBtnToolTip: "Anzeigeoptionen", // Display tool-tip on command button to open a list of view options
+            searchModeBtnToolTip: "Diesen Layer durchsuchen", // Display tool-tip on command button to open a dialog box for finding a feature
+            manualRefreshBtnToolTip: "Aktualisieren", // Display tool-tip on command button to manually refresh the selected operational layer
+            confirmManualRefeshText: "Gesamte Auswahl und nicht gespeicherte Änderungen werden verworfen", // Appears when user wants to do manual refresh
+            signInOption: "Anmelden" // Appears when user has not signed in
         },
         dataviewer: {
-            noIssuesReported: "ä_No reports available_______Ü", // Appears when no issues are available in current extent
-            photoAttachmentHeader: "ä_Attachments____Ü", // Appears when attachments are available for display in details tab
-            invalidSmallNumber: "ä_Please enter an integer________Ü ", // Shown when invalid integer value is entered while editing in data-viewer (valid integer value between -32768 and 32767)
-            invalidNumber: "ä_Please enter an integer________Ü", // Shown when invalid integer value is entered while editing in data-viewer (valid integer value between -2147483648 and 2147483647)
-            invalidFloat: "ä_Please enter a number_______Ü", // Shown when invalid floating value is entered while editing in data-viewer (floating point value between -3.4E38 and 1.2E38)
-            invalidDouble: "ä_Please enter a number_______Ü", // Shown when invalid double value is entered while editing in data-viewer (double value between -2.2E308 and 1.8E308)
-            invalidString: "ä_Please enter a value_______Ü", // Shown when user enters invalid string value
-            invalidDate: "ä_Please enter a valid date_________Ü", // Shown when user enters invalid date value
-            invalidNumericRange: "ä_Please enter a value between ${minValue} and ${maxValue}__________________Ü", // Shown when user enters value which is out of range
-            moreInfolink: "ä_Link__Ü", // Shown when value in field contains only URL.
-            commentsText: "ä_Comments___Ü", // Appears when comments are available for display in details tab
-            noCommentsAvailable: "ä_No comments available_______Ü", // Appears when no comments are available
-            noFeatureGeometry: "ä_Feature cannot be displayed_________Ü" // Appears when user selects/activates a feature and geometry is available for that
+            noIssuesReported: "Keine Berichte verfügbar", // Appears when no issues are available in current extent
+            photoAttachmentHeader: "Anlagen", // Appears when attachments are available for display in details tab
+            invalidSmallNumber: "Geben Sie einen Ganzzahlwert ein ", // Shown when invalid integer value is entered while editing in data-viewer (valid integer value between -32768 and 32767)
+            invalidNumber: "Geben Sie einen Ganzzahlwert ein", // Shown when invalid integer value is entered while editing in data-viewer (valid integer value between -2147483648 and 2147483647)
+            invalidFloat: "Geben Sie eine Zahl ein", // Shown when invalid floating value is entered while editing in data-viewer (floating point value between -3.4E38 and 1.2E38)
+            invalidDouble: "Geben Sie eine Zahl ein", // Shown when invalid double value is entered while editing in data-viewer (double value between -2.2E308 and 1.8E308)
+            invalidString: "Geben Sie einen Wert ein", // Shown when user enters invalid string value
+            invalidDate: "Geben Sie ein gültiges Datum ein", // Shown when user enters invalid date value
+            invalidNumericRange: "Geben Sie einen gültigen Wert zwischen ${minValue} und ${maxValue} ein", // Shown when user enters value which is out of range
+            moreInfolink: "Link", // Shown when value in field contains only URL.
+            commentsText: "Bemerkungen", // Appears when comments are available for display in details tab
+            noCommentsAvailable: "Keine Kommentare verfügbar", // Appears when no comments are available
+            noFeatureGeometry: "Feature kann nicht angezeigt werden" // Appears when user selects/activates a feature and geometry is available for that
         },
         config: {
-            configNotDefined: "ä_No configuration defined________Ü" // Shown when there is an issue with config file
+            configNotDefined: "Keine Konfiguration definiert" // Shown when there is an issue with config file
         },
         searchPanel: {
-            noResultsFound: "ä_No results found______Ü" // Appears when user search for features and no feature is found
+            noResultsFound: "Keine Ergebnisse gefunden" // Appears when user search for features and no feature is found
         },
         mapViewer: {
-            detailsBtnToolTip: "ä_View more details for the active feature_____________Ü", // Display tool-tip on command button to view details of selected feature
-            locationBtnToolTip: "ä_View map___Ü", // Display tool-tip on command button to view map panel
-            zoomInToolTip: "ä_Zoom in___Ü", // Display tool-tip on command button to zoom in map
-            zoomOutToolTip: "ä_Zoom out___Ü" // Display tool-tip on command button to zoom out map
+            detailsBtnToolTip: "Weitere Einzelheiten für das aktive Feature anzeigen", // Display tool-tip on command button to view details of selected feature
+            locationBtnToolTip: "Karte anzeigen", // Display tool-tip on command button to view map panel
+            zoomInToolTip: "Vergrößern", // Display tool-tip on command button to zoom in map
+            zoomOutToolTip: "Verkleinern" // Display tool-tip on command button to zoom out map
         },
         signOutPage: {
-            signOutMessage: "ä_You've been successfully signed out____________Ü", // Appears when user is successfully signed-out from application
-            reSignInMessage: "ä_Click here to sign in_______Ü" // Appears when user is signed-out from application and wants to sign-in again
+            signOutMessage: "Sie wurden erfolgreich abgemeldet", // Appears when user is successfully signed-out from application
+            reSignInMessage: "Klicken Sie hier, um sich anzumelden" // Appears when user is signed-out from application and wants to sign-in again
         },
         preview: {
-            section1: "ä_Crowdsource Manager, a companion group template to <a href='http://solutions.arcgis.com/local-government/help/crowdsource-reporter/' target='_blank'>Crowdsource Reporter</a>, is a responsive group application template (desktop and tablet devices) that allows users within an organization to review problems/observations submitted through the Manager app___________________________________________________________________________________________________________Ü.", // Appears when preview page is loaded
-            section2: "ä_The app presents one or more maps for users to review a problem or observation. Users can look for patterns and clusters, review problem details, update status, and assign responsibility_________________________________________________________Ü.", // Appears when preview page is loaded
-            section3: "ä_The application source code can be downloaded for further configuration. This additional configuration of the application can be applied back to an ArcGIS Online configurable web application item or hosted on your own web server.<br /> For more information on configuring this app, see the <a href='http://solutions.arcgis.com/local-government/help/crowdsource-manager/' target='_blank'>Crowdsource Manager</a> documentation_________________________________________________________________________________________________________________________________Ü." // Appears when preview page is loaded
+            section1: "Crowdsource Manager, eine begleitende Gruppen-Vorlage zu <a href=\'http://solutions.arcgis.com/local-government/help/crowdsource-reporter/\' target=\'_blank\'>Crowdsource Reporter</a>, ist eine reaktionsfähige Gruppenanwendungsvorlage (Desktop und Tablet), die es Benutzern ermöglicht, über die Manager-App eingereichte Probleme und Beobachtungen auf Organisationsebene zu überprüfen.", // Appears when preview page is loaded
+            section2: "Die App hält eine oder mehrere Karten für Benutzer bereit, anhand derer sie ein Problem oder eine Beobachtung überprüfen können. Die Benutzer können nach Mustern oder Clustern suchen, Problemdetails überprüfen, den Status aktualisieren und Zuständigkeiten zuweisen.", // Appears when preview page is loaded
+            section3: "Der Quellcode der Anwendung kann zur weiteren Konfiguration heruntergeladen werden. Diese zusätzliche Konfiguration der Anwendung kann auf ein konfigurierbares Webanwendungselement von ArcGIS Online angewendet oder auf dem eigenen Webserver gehostet werden.<br /> Weitere Informationen zum Konfigurieren dieser App finden Sie in der Dokumentation zu <a href=\'http://solutions.arcgis.com/local-government/help/crowdsource-manager/\' target=\'_blank\'>Crowdsource Manager</a>." // Appears when preview page is loaded
         }
     })
 );

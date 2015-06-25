@@ -68,8 +68,8 @@ define(
             signInBtnTitle: "Oturum Aç",
             signOutBtnTitle: "Oturumu Kapat",
             geolocationBtnTitle: "Coğrafi Konum",
-            ascendingSort: "ı_Ascending____İ",
-            descendingSort: "ı_Descending____İ"
+            ascendingSort: "Artan",
+            descendingSort: "Azalan"
         },
         errorMessages: {
             emptyGroup: "Yapılandırılan grup için sorgu uygulanabilecek veri yok.",

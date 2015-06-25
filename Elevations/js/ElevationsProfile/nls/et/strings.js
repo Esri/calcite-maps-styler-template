@@ -1,9 +1,9 @@
 ﻿define(
    ({
     display: {
-      elevationProfileTitle: "Š_Elevation Profile______ä",
+      elevationProfileTitle: "Kõrgusprofiil",
       showMe: "näita",
-      selectLine: "Š_<b>Select</b> a line feature in the map_____________ä.",
+      selectLine: "<b>Valige</b> kaardil joonobjekt.",
       popupRequirement: "MÄRKUS: objekt peab olema kihil, millel on hüpikaknad aktiveeritud.",
       digitizeDistanceMeasureTool: "Kasuta <b>mõõtmise</b> töövahendeid.",
       selectFeatureHelpUrl: "http://help.arcgis.com/en/arcgisonline/help/010q/010q0000004s000000.htm#ESRI_SECTION1_DAA22E89DF67448E8F3682309F39BE5D",
@@ -15,7 +15,7 @@
       helpLabel: "Abi"
     },
     chart: {
-      title: "Š_Elevation Profile______ä",
+      title: "Kõrgusprofiil",
       demResolution: "DEM resolutsioon",
       elevationTitleTemplate: "Kõrgus {0}",
       distanceTitleTemplate: "Vahemaa {0}",

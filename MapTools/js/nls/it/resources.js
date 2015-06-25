@@ -20,7 +20,7 @@ define(
             error: "Impossibile creare la mappa"
         },
         tools:{
-            bookmarkTool: "é_Bookmarks____È",
+            bookmarkTool: "Segnalibri",
             basemapTool: "Mappe di base",
             legendTool: "Legenda",
             detailsTool: "Dettagli",
@@ -37,8 +37,8 @@ define(
                   "label3": 'Orizzontale',
                   "label4": 'Verticale'
             },
-            printTitle: "é_Title___È",
-            printTitlePrompt: "é_Add custom title______È"
+            printTitle: "Titolo",
+            printTitlePrompt: "Aggiungi titolo personalizzato"
         }
     })
 );

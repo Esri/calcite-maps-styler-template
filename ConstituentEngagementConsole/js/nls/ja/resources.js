@@ -17,77 +17,77 @@
 define(
      ({
         map: {
-            error: "須_Unable to create map_______鷗" // Shown when error occurs while creation of map
+            error: "マップを作成できません" // Shown when error occurs while creation of map
         },
         main: {
-            noGroup: "須_No group configured_______鷗" // Appears when no group is configured
+            noGroup: "グループが構成されていません" // Appears when no group is configured
         },
         webMapList: {
-            owner: "須_Owner___鷗", // Appears in web-map list description panel when it is set to true
-            created: "須_Date created_____鷗", // Appears in web-map list description panel when it is set to true
-            modified: "須_Date modified_____鷗", // Appears in web-map list description panel when it is set to true
-            description: "須_Description____鷗", // Appears in web-map list description panel when it is set to true
-            snippet: "須_Summary___鷗", // Appears in web-map list description panel when it is set to true
-            licenseInfo: "須_Access and use constraints_________鷗", // Appears in web-map list description panel when it is set to true
-            accessInformation: "須_Credits___鷗", // Appears in web-map list description panel when it is set to true
-            tags: "須_Tags__鷗", // Appears in web-map list description panel when it is set to true
-            numViews: "須_Number of views______鷗", // Appears in web-map list description panel when it is set to true
-            avgRating: "須_Rating___鷗", // Appears in web-map list description panel when it is set to true
-            noWebMapInGroup: "須_Configured group is invalid or no items have been shared with this group yet________________________鷗", // Appears when invalid group in configured or no web-map is available in that group
-            infoBtnToolTip: "須_Map information______鷗" // Display tool-tip on command button to display description of web-map
+            owner: "所有者", // Appears in web-map list description panel when it is set to true
+            created: "作成日", // Appears in web-map list description panel when it is set to true
+            modified: "更新日", // Appears in web-map list description panel when it is set to true
+            description: "説明", // Appears in web-map list description panel when it is set to true
+            snippet: "サマリー", // Appears in web-map list description panel when it is set to true
+            licenseInfo: "アクセスと使用の制限", // Appears in web-map list description panel when it is set to true
+            accessInformation: "著作権", // Appears in web-map list description panel when it is set to true
+            tags: "タグ", // Appears in web-map list description panel when it is set to true
+            numViews: "ビュー数", // Appears in web-map list description panel when it is set to true
+            avgRating: "評価", // Appears in web-map list description panel when it is set to true
+            noWebMapInGroup: "構成済みのグループが無効であるか、アイテムがこのグループと共有されていません", // Appears when invalid group in configured or no web-map is available in that group
+            infoBtnToolTip: "マップ情報" // Display tool-tip on command button to display description of web-map
         },
         applicationHeader: {
-            signOutOption: "須_Sign Out___鷗", // Command button to sign-out from the application
-            pleaseSignInText: "須_Please sign in_____鷗", // Appears when user needs to sign-in into the application
-            showSelectedOption: "須_Show Selected_____鷗", // Command button to show selected records in data-viewer
-            showAllOption: "須_Show All___鷗", // Command button to show all the records in data-viewer
-            clearSelectionOption: "須_Clear Selection______鷗", // Command button to clear selected records in data-viewer
-            zoomToSelectedOption: "須_Zoom to Selected______鷗", // Command button to zoom map to selected records
-            gridViewOption: "須_List View____鷗", // Command button to display list view
-            mapViewOption: "須_Map View___鷗", // Command button to display map view
-            gridMapViewOption: "須_Split View____鷗", // Command button to display split view
-            settingsBtnToolTip: "須_Selection options______鷗", // Display tool-tip on command button to open a list of settings options
-            viewModeBtnToolTip: "須_Display options______鷗", // Display tool-tip on command button to open a list of view options
-            searchModeBtnToolTip: "須_Search this layer______鷗", // Display tool-tip on command button to open a dialog box for finding a feature
-            manualRefreshBtnToolTip: "須_Refresh___鷗", // Display tool-tip on command button to manually refresh the selected operational layer
-            confirmManualRefeshText: "須_All selections and unsaved changes will be discarded_________________鷗", // Appears when user wants to do manual refresh
-            signInOption: "須_Sign In___鷗" // Appears when user has not signed in
+            signOutOption: "サイン アウト", // Command button to sign-out from the application
+            pleaseSignInText: "サイン インしてください", // Appears when user needs to sign-in into the application
+            showSelectedOption: "選択レイヤーの表示", // Command button to show selected records in data-viewer
+            showAllOption: "すべて表示", // Command button to show all the records in data-viewer
+            clearSelectionOption: "選択の解除", // Command button to clear selected records in data-viewer
+            zoomToSelectedOption: "選択セットにズーム", // Command button to zoom map to selected records
+            gridViewOption: "リスト ビュー", // Command button to display list view
+            mapViewOption: "マップ ビュー", // Command button to display map view
+            gridMapViewOption: "ビューの分割", // Command button to display split view
+            settingsBtnToolTip: "選択オプション", // Display tool-tip on command button to open a list of settings options
+            viewModeBtnToolTip: "表示オプション", // Display tool-tip on command button to open a list of view options
+            searchModeBtnToolTip: "このレイヤーを検索", // Display tool-tip on command button to open a dialog box for finding a feature
+            manualRefreshBtnToolTip: "更新", // Display tool-tip on command button to manually refresh the selected operational layer
+            confirmManualRefeshText: "すべての選択セットおよび保存されていない変更は破棄されます", // Appears when user wants to do manual refresh
+            signInOption: "サイン イン" // Appears when user has not signed in
         },
         dataviewer: {
-            noIssuesReported: "須_No reports available_______鷗", // Appears when no issues are available in current extent
-            photoAttachmentHeader: "須_Attachments____鷗", // Appears when attachments are available for display in details tab
-            invalidSmallNumber: "須_Please enter an integer________鷗 ", // Shown when invalid integer value is entered while editing in data-viewer (valid integer value between -32768 and 32767)
-            invalidNumber: "須_Please enter an integer________鷗", // Shown when invalid integer value is entered while editing in data-viewer (valid integer value between -2147483648 and 2147483647)
-            invalidFloat: "須_Please enter a number_______鷗", // Shown when invalid floating value is entered while editing in data-viewer (floating point value between -3.4E38 and 1.2E38)
-            invalidDouble: "須_Please enter a number_______鷗", // Shown when invalid double value is entered while editing in data-viewer (double value between -2.2E308 and 1.8E308)
-            invalidString: "須_Please enter a value_______鷗", // Shown when user enters invalid string value
-            invalidDate: "須_Please enter a valid date_________鷗", // Shown when user enters invalid date value
-            invalidNumericRange: "須_Please enter a value between ${minValue} and ${maxValue}__________________鷗", // Shown when user enters value which is out of range
-            moreInfolink: "須_Link__鷗", // Shown when value in field contains only URL.
-            commentsText: "須_Comments___鷗", // Appears when comments are available for display in details tab
-            noCommentsAvailable: "須_No comments available_______鷗", // Appears when no comments are available
-            noFeatureGeometry: "須_Feature cannot be displayed_________鷗" // Appears when user selects/activates a feature and geometry is available for that
+            noIssuesReported: "レポートがありません", // Appears when no issues are available in current extent
+            photoAttachmentHeader: "添付ファイル", // Appears when attachments are available for display in details tab
+            invalidSmallNumber: "整数を入力してください ", // Shown when invalid integer value is entered while editing in data-viewer (valid integer value between -32768 and 32767)
+            invalidNumber: "整数を入力してください", // Shown when invalid integer value is entered while editing in data-viewer (valid integer value between -2147483648 and 2147483647)
+            invalidFloat: "数字を入力してください", // Shown when invalid floating value is entered while editing in data-viewer (floating point value between -3.4E38 and 1.2E38)
+            invalidDouble: "数字を入力してください", // Shown when invalid double value is entered while editing in data-viewer (double value between -2.2E308 and 1.8E308)
+            invalidString: "値を入力してください。", // Shown when user enters invalid string value
+            invalidDate: "有効な日付を入力してください", // Shown when user enters invalid date value
+            invalidNumericRange: "${minValue} ～ ${maxValue} の値を入力してください", // Shown when user enters value which is out of range
+            moreInfolink: "リンク", // Shown when value in field contains only URL.
+            commentsText: "コメント", // Appears when comments are available for display in details tab
+            noCommentsAvailable: "コメントがありません", // Appears when no comments are available
+            noFeatureGeometry: "フィーチャを表示できません" // Appears when user selects/activates a feature and geometry is available for that
         },
         config: {
-            configNotDefined: "須_No configuration defined________鷗" // Shown when there is an issue with config file
+            configNotDefined: "構成が定義されていません" // Shown when there is an issue with config file
         },
         searchPanel: {
-            noResultsFound: "須_No results found______鷗" // Appears when user search for features and no feature is found
+            noResultsFound: "結果が見つかりません" // Appears when user search for features and no feature is found
         },
         mapViewer: {
-            detailsBtnToolTip: "須_View more details for the active feature_____________鷗", // Display tool-tip on command button to view details of selected feature
-            locationBtnToolTip: "須_View map___鷗", // Display tool-tip on command button to view map panel
-            zoomInToolTip: "須_Zoom in___鷗", // Display tool-tip on command button to zoom in map
-            zoomOutToolTip: "須_Zoom out___鷗" // Display tool-tip on command button to zoom out map
+            detailsBtnToolTip: "アクティブなフィーチャの詳細を表示", // Display tool-tip on command button to view details of selected feature
+            locationBtnToolTip: "マップの表示", // Display tool-tip on command button to view map panel
+            zoomInToolTip: "拡大", // Display tool-tip on command button to zoom in map
+            zoomOutToolTip: "縮小" // Display tool-tip on command button to zoom out map
         },
         signOutPage: {
-            signOutMessage: "須_You've been successfully signed out____________鷗", // Appears when user is successfully signed-out from application
-            reSignInMessage: "須_Click here to sign in_______鷗" // Appears when user is signed-out from application and wants to sign-in again
+            signOutMessage: "正常にサイン アウトしました", // Appears when user is successfully signed-out from application
+            reSignInMessage: "ここをクリックしてサイン インします" // Appears when user is signed-out from application and wants to sign-in again
         },
         preview: {
-            section1: "須_Crowdsource Manager, a companion group template to <a href='http://solutions.arcgis.com/local-government/help/crowdsource-reporter/' target='_blank'>Crowdsource Reporter</a>, is a responsive group application template (desktop and tablet devices) that allows users within an organization to review problems/observations submitted through the Manager app___________________________________________________________________________________________________________鷗.", // Appears when preview page is loaded
-            section2: "須_The app presents one or more maps for users to review a problem or observation. Users can look for patterns and clusters, review problem details, update status, and assign responsibility_________________________________________________________鷗.", // Appears when preview page is loaded
-            section3: "須_The application source code can be downloaded for further configuration. This additional configuration of the application can be applied back to an ArcGIS Online configurable web application item or hosted on your own web server.<br /> For more information on configuring this app, see the <a href='http://solutions.arcgis.com/local-government/help/crowdsource-manager/' target='_blank'>Crowdsource Manager</a> documentation_________________________________________________________________________________________________________________________________鷗." // Appears when preview page is loaded
+            section1: "Crowdsource Manager は、<a href=\'http://solutions.arcgis.com/local-government/help/crowdsource-reporter/\' target=\'_blank\'>Crowdsource Reporter</a> のコンパニオン グループ テンプレートであり、レスポンシブ グループ アプリケーション テンプレート (デスクトップおよびタブレット デバイス向け) です。組織内のユーザーは Manager アプリを使って送信された問題や観測を確認できます。", // Appears when preview page is loaded
+            section2: "アプリでは、ユーザーが問題や観測データを確認するためのマップが 1 つ以上表示されます。ユーザーは、パターンとクラスターの検索、問題詳細の確認、ステータスの更新、役割の割り当てを行うことができます。", // Appears when preview page is loaded
+            section3: "アプリケーションのソース コードをダウンロードして詳細に構成できます。アプリケーションのこの追加構成は、ArcGIS Online の構成可能な Web アプリケーション アイテムに適用し直したり、独自の Web サーバー上でホストしたりすることができます。<br />このアプリの構成の詳細については、<a href=\'http://solutions.arcgis.com/local-government/help/crowdsource-manager/\' target=\'_blank\'>Crowdsource Manager</a> のドキュメントをご参照ください。" // Appears when preview page is loaded
         }
     })
 );

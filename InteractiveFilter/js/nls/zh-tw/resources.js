@@ -15,7 +15,7 @@
       }
     },
     legend:{
-      title: "試_Legend___驗"
+      title: "圖例"
     }
   })
 );

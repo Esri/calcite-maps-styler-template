@@ -17,30 +17,30 @@
 define(
    ({
     map: {
-      error: "試_Unable to create map_______驗"
+      error: "無法建立地圖"
     },
     legend:{
-      title: "試_Legend___驗"
+      title: "圖例(L)"
     },
     share: {
-      title: "試_Share___驗"
+      title: "共用"
     },
     about: {
-      title: "試_About___驗",
-      error: "試_By default the web map description or snippet will be used. Configure the app to add a custom snippet for the about panel______________________________________驗."
+      title: "關於",
+      error: "預設情況下，將使用 web 地圖描述或代碼片段。配置應用程式來為關於面板新增自訂代碼片段。"
     },
     time: {
-        enableTimeMessage: "試_The specified web map does not contain any time enabled layers. View the <a target='_blank' href='http://doc.arcgis.com/en/arcgis-online/create-maps/configure-time.htm#ESRI_SECTION1_F1D4A275B4AB4CC79198CBA9D0AD8727'>Configure time settings</a> help topic for details. To use the template without displaying time use the configuration panel to disable the time option_______________________________________________________________________________________________________________驗.",
-        datePattern: "試_MMMM d, yyyy_____驗",
-        hourTimePattern: "試_h a__驗",
-        millisecondTimePattern: "試_h:mm:ss a____驗",
-        minuteTimePattern: "試_h:mm a___驗",
-        secondTimePattern: "試_h:mm:ss a____驗",
-        timeRange: "試_${startTime} to ${endTime}_________驗",
-        yearPattern: "試_yyyy__驗"
+        enableTimeMessage: "指定的 web 地圖不包含任何已啟用時間的圖層。有關詳細資訊，請參閱<a target=\'_blank\' href=\'http://doc.arcgis.com/en/arcgis-online/create-maps/configure-time.htm#ESRI_SECTION1_F1D4A275B4AB4CC79198CBA9D0AD8727\'>配置時間設定</a>說明主題。要使用範本而不顯示時間，請使用配置面板來停用時間選項。",
+        datePattern: "年 月 日",
+        hourTimePattern: "h a",
+        millisecondTimePattern: "h:mm:ss a",
+        minuteTimePattern: "h:mm a",
+        secondTimePattern: "h:mm:ss a",
+        timeRange: "${startTime} 至 ${endTime}",
+        yearPattern: "年"
     },
     histogram:{
-      error: "試_No time-enabled feature layers, in snapshot mode, are available in the web map. Configure the app to use another web map or disable the histogram option_______________________________________________驗."
+      error: "在快照模式下，web 地圖中的已啟用時間的圖徵層不可用。配置應用程式以使用另一個 web 地圖或停用長條圖選項。"
     }
   })
 );

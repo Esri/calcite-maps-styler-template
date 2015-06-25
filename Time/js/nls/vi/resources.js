@@ -17,30 +17,33 @@
 define(
    ({
     map: {
-      error: "Đ_Unable to create map_______ớ"
+      error: "Không thể tạo bản đồ"
     },
     legend:{
-      title: "Đ_Legend___ớ"
+      title: "Chú giải"
     },
     share: {
-      title: "Đ_Share___ớ"
+      title: "Chia sẻ"
     },
     about: {
-      title: "Đ_About___ớ",
-      error: "Đ_By default the web map description or snippet will be used. Configure the app to add a custom snippet for the about panel______________________________________ớ."
+      title: "Giới thiệu",
+      error: "Theo mặc định, mô tả bản đồ web hoặc đoạn trích sẽ được sử dụng. Cấu 
+hình ứng dụng để thêm một đoạn trích tùy chọn cho bảng điều khiển."
     },
     time: {
-        enableTimeMessage: "Đ_The specified web map does not contain any time enabled layers. View the <a target='_blank' href='http://doc.arcgis.com/en/arcgis-online/create-maps/configure-time.htm#ESRI_SECTION1_F1D4A275B4AB4CC79198CBA9D0AD8727'>Configure time settings</a> help topic for details. To use the template without displaying time use the configuration panel to disable the time option_______________________________________________________________________________________________________________ớ.",
-        datePattern: "Đ_MMMM d, yyyy_____ớ",
-        hourTimePattern: "Đ_h a__ớ",
-        millisecondTimePattern: "Đ_h:mm:ss a____ớ",
-        minuteTimePattern: "Đ_h:mm a___ớ",
-        secondTimePattern: "Đ_h:mm:ss a____ớ",
-        timeRange: "Đ_${startTime} to ${endTime}_________ớ",
-        yearPattern: "Đ_yyyy__ớ"
+        enableTimeMessage: "Bản đồ web không có chứa bất kỳ lớp nào có chức năng kích hoạt thời gian. Tham khảo chủ đề hỗ trợ <a target=\'_blank\' href=\'http://doc.arcgis.com/en/arcgis-online/create-maps/configure-time.htm#ESRI_SECTION1_F1D4A275B4AB4CC79198CBA9D0AD8727\'>Cấu hình thiết lập thời gian</a> để biết thêm chi tiết. Để sử dụng mẫu mà không hiển thị thời gian, sử dụng bảng điều khiển cấu hình để tắt tùy chọn thời gian.",
+        datePattern: "d MMMM, yyyy",
+        hourTimePattern: "h a",
+        millisecondTimePattern: "h:mm:ss a",
+        minuteTimePattern: "h:mm a",
+        secondTimePattern: "h:mm:ss a",
+        timeRange: "${startTime} đến ${endTime}",
+        yearPattern: "yyyy"
     },
     histogram:{
-      error: "Đ_No time-enabled feature layers, in snapshot mode, are available in the web map. Configure the app to use another web map or disable the histogram option_______________________________________________ớ."
+      error: "Không có lớp đối tượng nào có chức năng kích hoạt thời gian, trong chế 
+độ chụp nhanh, trên bản đồ web. Cấu hình ứng dụng để sử dụng một bản đồ 
+web khác hoặc tắt tùy chọn biểu đồ."
     }
   })
 );

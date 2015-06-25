@@ -68,8 +68,8 @@ define(
             signInBtnTitle: "サイン イン",
             signOutBtnTitle: "サイン アウト",
             geolocationBtnTitle: "ジオロケーション",
-            ascendingSort: "須_Ascending____鷗",
-            descendingSort: "須_Descending____鷗"
+            ascendingSort: "昇順",
+            descendingSort: "降順"
         },
         errorMessages: {
             emptyGroup: "構成済みのグループにクエリを実行するためのデータがありません。",

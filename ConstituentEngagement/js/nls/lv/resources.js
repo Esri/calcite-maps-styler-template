@@ -17,132 +17,132 @@
 define(
      ({
         map: {
-            error: "ķ_Unable to create map_______ū",
-            zoomInTooltip: "ķ_Zoom in___ū",  // Command button to zoom in to the map
-            zoomOutTooltip: "ķ_Zoom out___ū",  // Command button to zoom out of the map
-            geolocationTooltip: "ķ_Current location______ū"  // Command button to navigate to the current geographical position
+            error: "Nevar izveidot karti",
+            zoomInTooltip: "Pietuvināt",  // Command button to zoom in to the map
+            zoomOutTooltip: "Attālināt",  // Command button to zoom out of the map
+            geolocationTooltip: "Pašreizējais izvietojums"  // Command button to navigate to the current geographical position
         },
         main: {
-            noGroup: "ķ_No group configured_______ū", // Shown when no group is configured in the configuration file
-            submitReportButtonText: "ķ_Submit a report______ū", //Submit report  text for buttons on map and list
-            gotoListViewTooltip: "ķ_List view____ū", // Go to List view tooltip text
-            noFeatureGeomtery: "ķ_Feature cannot be displayed_________ū" // Error message when geomtery is not available
+            noGroup: "Nav konfigurētas grupas", // Shown when no group is configured in the configuration file
+            submitReportButtonText: "Iesniegt ziņojumu", //Submit report  text for buttons on map and list
+            gotoListViewTooltip: "Saraksta skats", // Go to List view tooltip text
+            noFeatureGeomtery: "Funkciju nevar parādīt" // Error message when geomtery is not available
         },
         signin: {
-            guestSigninText: "ķ_Proceed as Guest______ū", // Shown in the 'Sign in' page below the icon for accessing application as an anonymous user
-            signInOrText: "ķ_Or__ū", // Or text on sign in screen
-            signinOptionsText: "ķ_Sign in with_____ū:", // Shown in the 'Sign in' page above the icons for social media sign in
-            noGroupNameText: "ķ_Please sign in_____ū", // Shown when the group title is not available or the group is private
-            guestLoginTooltip: "ķ_Sign in as a guest______ū", // Command button to access the application as an anonymous user
-            facebookLoginTooltip: "ķ_Sign in with Facebook_______ū", // Command button to access the application via Facebook login
-            twitterLoginTooltip: "ķ_Sign in with Twitter_______ū", // Command button to access the application via Twitter login
-            googlePlusLoginTooltip: "ķ_Sign in with Google+_______ū", // Command button to access the application via Google+ login
-            agolLoginTooltip: "ķ_Sign in with ArcGIS_______ū" // Command button to access the application via AGOL login
+            guestSigninText: "Turpināt kā viesim", // Shown in the 'Sign in' page below the icon for accessing application as an anonymous user
+            signInOrText: "Vai", // Or text on sign in screen
+            signinOptionsText: "Pieteikties ar:", // Shown in the 'Sign in' page above the icons for social media sign in
+            noGroupNameText: "Lūdzu, pierakstieties", // Shown when the group title is not available or the group is private
+            guestLoginTooltip: "Pieteikties kā viesim", // Command button to access the application as an anonymous user
+            facebookLoginTooltip: "Pieteikties ar Facebook", // Command button to access the application via Facebook login
+            twitterLoginTooltip: "Pieteikties ar Twitter", // Command button to access the application via Twitter login
+            googlePlusLoginTooltip: "Pieteikties ar Google+", // Command button to access the application via Google+ login
+            agolLoginTooltip: "Pieteikties ar ArcGIS" // Command button to access the application via AGOL login
         },
         webMapList: {
-            owner: "ķ_Owner___ū", // Shown in the 'Map information' section indicating the owner of the webmap
-            created: "ķ_Date dreated_____ū", // Shown in the 'Map information' section indicating the date when the webmap was created
-            modified: "ķ_Date modified_____ū", // Shown in the 'Map information' section indicating the date when the webmap was modified
-            description: "ķ_Description____ū", // Shown in the 'Map information' section describing the webmap
-            snippet: "ķ_Summary___ū", // Shown in the 'Map information' section providing the summary of the webmap
-            licenseInfo: "ķ_Access and use constraints_________ū", // Shown in the map information section indicating the webmap license information
-            accessInformation: "ķ_Credits___ū", // Shown in the 'Map information' section indicating account credits
-            tags: "ķ_Tags__ū", // Shown in the 'Map information' section indicating tags of the webmap
-            numViews: "ķ_Number of views______ū", // Shown in the 'Map information' section indicating number of times the webmap has been viewed
-            avgRating: "ķ_Rating___ū", // Shown in the 'Map information' section indicating webmap rating
-            noWebMapInGroup: "ķ_Configured group is invalid or no items have been shared with this group yet________________________ū.", // Shown when the configured group is invalid/private or no items have been shared with the group
-            infoBtnToolTip: "ķ_Map information______ū" // Command button to view the 'Map information'
+            owner: "Īpašnieks", // Shown in the 'Map information' section indicating the owner of the webmap
+            created: "Izveides datums", // Shown in the 'Map information' section indicating the date when the webmap was created
+            modified: "Modificēšanas datums", // Shown in the 'Map information' section indicating the date when the webmap was modified
+            description: "Apraksts", // Shown in the 'Map information' section describing the webmap
+            snippet: "Kopsavilkums", // Shown in the 'Map information' section providing the summary of the webmap
+            licenseInfo: "Piekļuves un izmantošanas ierobežojumi", // Shown in the map information section indicating the webmap license information
+            accessInformation: "Kredīti", // Shown in the 'Map information' section indicating account credits
+            tags: "Tagi", // Shown in the 'Map information' section indicating tags of the webmap
+            numViews: "Skatījumu skaits", // Shown in the 'Map information' section indicating number of times the webmap has been viewed
+            avgRating: "Vērtējums", // Shown in the 'Map information' section indicating webmap rating
+            noWebMapInGroup: "Konfigurētā grupa nav derīga vai ar šo grupu vēl nav kopīgots neviens elements.", // Shown when the configured group is invalid/private or no items have been shared with the group
+            infoBtnToolTip: "Kartes informācija" // Command button to view the 'Map information'
         },
         issueWall: {
-            noResultsFound: "ķ_No reports available in the current area_____________ū", // Shown in the issue wall when no issues are present in the current map extent
-            gotoWebmapListTooltip: "ķ_Go to main list______ū", // Tooltip for back icon in list header
-            gotoMapViewTooltip: "ķ_Map view___ū" // Tooltip for map-it icon in list header
+            noResultsFound: "Pašreizējā apgabalā nav pieejamu ziņojumu", // Shown in the issue wall when no issues are present in the current map extent
+            gotoWebmapListTooltip: "Doties uz galveno sarakstu", // Tooltip for back icon in list header
+            gotoMapViewTooltip: "Kartes skats" // Tooltip for map-it icon in list header
         },
         appHeader: {
-            myReport: "ķ_My Reports____ū", // Command button shown in mobile menu list
-            signIn: "ķ_Sign In___ū", // Command button shown in mobile menu list and in appheader
-            signOut: "ķ_Sign Out___ū", // Command button shown in mobile menu list
-            help: "ķ_Help__ū", // Command button shown in mobile menu list
-            signInTooltip: "ķ_Sign in___ū", // Tooltip to 'Sign in' option
-            signOutTooltip: "ķ_Sign out___ū", // Tooltip  to 'Sign out' option
-            myReportTooltip: "ķ_View reports submitted by me_________ū", // Tooltip  to 'My Reports' option
-            helpTooltip: "ķ_Help__ū" // Tooltip  to 'Help' option
+            myReport: "Mani ziņojumi", // Command button shown in mobile menu list
+            signIn: "Pierakstīties", // Command button shown in mobile menu list and in appheader
+            signOut: "Izrakstīties", // Command button shown in mobile menu list
+            help: "Palīdzība", // Command button shown in mobile menu list
+            signInTooltip: "Pierakstīties", // Tooltip to 'Sign in' option
+            signOutTooltip: "Izrakstīties", // Tooltip  to 'Sign out' option
+            myReportTooltip: "Skatīt manus iesniegtos ziņojumus", // Tooltip  to 'My Reports' option
+            helpTooltip: "Palīdzība" // Tooltip  to 'Help' option
         },
         geoform: {
-            enterInformation: "ķ_Details___ū", // Shown as the first section of the geoform, where the user can enter details of the issue
-            selectAttachments: "ķ_Attachments____ū", // Appears above 'Select file' button indicating option to attach files
-            selectFileText: "ķ_Browse___ū", // Command button to open a dialog box to select file(s) to be attached
-            enterLocation: "ķ_Location___ū", // Shown as the second section of the geoform, where the user can select a location on the map
-            reportItButton: "ķ_Report It____ū", // Command button to submit the geoform to report an issue
-            cancelButton: "ķ_Cancel___ū", //Command button to close the geoform
-            requiredField: "ķ_(required)____ū", // Shown next to the field in which the data is mandatory
-            selectDefaultText: "ķ_Select&hellip;_____ū", // Shown in the dropdown field indicating to select an option
-            invalidInputValue: "ķ_Please enter valid value_________ū.", // Shown when user clicks/taps the required field but does not enter the data and comes out of the required field
-            noFieldsConfiguredMessage: "ķ_Layer fields are not configured to capture data_______________ū", // Shown when all the fields of the selected layer are disabled
-            invalidSmallNumber: "ķ_Please enter an integer________ū", // Shown when the entered value is beyond the specified range (valid ${openStrong}integer${closeStrong} value between -32768 and 32767.)
-            invalidNumber: "ķ_Please enter an integer________ū", // Shown when the entered value is beyond the specified range (valid ${openStrong}integer${closeStrong} value between -2147483648 and 2147483647.)
-            invalidFloat: "ķ_Please enter a number_______ū", // Shown when the entered value is beyond the specified range (valid ${openStrong}floating point${closeStrong} value between -3.4E38 and 1.2E38 )
-            invalidDouble: "ķ_Please enter a number_______ū", // Shown when the entered value is beyond the specified range (valid ${openStrong}double${closeStrong} value between -2.2E308 and 1.8E308)
-            requiredFields: "ķ_Please provide values for all required fields_______________ū", // Shown when user submits the geoform without entering data in the mandatory field(s)
-            selectLocation: "ķ_Please select the location for your report______________ū", // Shown when user submits the geoform without selecting location on the map
-            numericRangeHintMessage: "ķ_${openStrong}Hint:${closeStrong} Minimum value ${minValue} and Maximum value ${maxValue}___________________________ū", // Shown as a pop over above the fields with numeric values, indicating the minimum and maximum range
-            dateRangeHintMessage: "ķ_${openStrong}Hint:${closeStrong} Minimum Date ${minValue} and Maximum Date ${maxValue}___________________________ū", // Shown as a pop over above the fields with date values, indicating the minimum and maximum date range
-            errorsInApplyEdits: "ķ_Issue could not be reported_________ū", // Shown when there is an error in any of the services while submitting the geoform
-            attachmentSelectedMsg: "ķ_attachment(s) selected________ū", // Shown besides the select file button indicating the number of files attached
-            attachmentUploadStatus: "ķ_${failed} of ${total} attachment(s) failed to upload_________________ū", // Shown when there is error while uploading the attachment, while submitting the geoform
-            geoLocationError: "ķ_Current location not available__________ū",  // Shown when the browser returns an error instead of the current geographical position
-            geoLocationOutOfExtent: "ķ_Current location is out of basemap extent_____________ū",  // Shown when the current geographical position is out of the basemap extent
-            submitButtonTooltip: "ķ_Report It____ū", // Command button to open the geoform
-            cancelButtonTooltip: "ķ_Cancel___ū", //tooltip for cancel button
-            geoformBackButtonTooltip: "ķ_Go to the report list_______ū" //tooltip for Geoform back button
+            enterInformation: "Detaļas", // Shown as the first section of the geoform, where the user can enter details of the issue
+            selectAttachments: "Pielikumi", // Appears above 'Select file' button indicating option to attach files
+            selectFileText: "Pārlūks", // Command button to open a dialog box to select file(s) to be attached
+            enterLocation: "Izvietojums", // Shown as the second section of the geoform, where the user can select a location on the map
+            reportItButton: "Ziņot par to", // Command button to submit the geoform to report an issue
+            cancelButton: "Atcelt", //Command button to close the geoform
+            requiredField: "(nepieciešams)", // Shown next to the field in which the data is mandatory
+            selectDefaultText: "Izvēlēties&hellip;", // Shown in the dropdown field indicating to select an option
+            invalidInputValue: "Lūdzu, ievadiet derīgu vērtību.", // Shown when user clicks/taps the required field but does not enter the data and comes out of the required field
+            noFieldsConfiguredMessage: "Slāņa lauki nav konfigurēti datu tveršanai", // Shown when all the fields of the selected layer are disabled
+            invalidSmallNumber: "Lūdzu ievadiet veselu skaitli", // Shown when the entered value is beyond the specified range (valid ${openStrong}integer${closeStrong} value between -32768 and 32767.)
+            invalidNumber: "Lūdzu ievadiet veselu skaitli", // Shown when the entered value is beyond the specified range (valid ${openStrong}integer${closeStrong} value between -2147483648 and 2147483647.)
+            invalidFloat: "Lūdzu ievadiet numuru", // Shown when the entered value is beyond the specified range (valid ${openStrong}floating point${closeStrong} value between -3.4E38 and 1.2E38 )
+            invalidDouble: "Lūdzu ievadiet numuru", // Shown when the entered value is beyond the specified range (valid ${openStrong}double${closeStrong} value between -2.2E308 and 1.8E308)
+            requiredFields: "Lūdzu nodrošiniet vērtības visiem obligātajiem laukiem", // Shown when user submits the geoform without entering data in the mandatory field(s)
+            selectLocation: "Lūdzu atlasiet vietu savam ziņojumam", // Shown when user submits the geoform without selecting location on the map
+            numericRangeHintMessage: "${openStrong}Norāde:${closeStrong} minimālā vērtība ${minValue} un maksimālā vērtība ${maxValue}", // Shown as a pop over above the fields with numeric values, indicating the minimum and maximum range
+            dateRangeHintMessage: "${openStrong}Norāde:${closeStrong} minimālais datums ${minValue} un maksimālais datums ${maxValue}", // Shown as a pop over above the fields with date values, indicating the minimum and maximum date range
+            errorsInApplyEdits: "Par problēmu nevarēja ziņot", // Shown when there is an error in any of the services while submitting the geoform
+            attachmentSelectedMsg: "atlasītais(-ie) pielikums(-i)", // Shown besides the select file button indicating the number of files attached
+            attachmentUploadStatus: "${failed} no ${total} pielikuma(-iem) neizdevās augšupielādēt", // Shown when there is error while uploading the attachment, while submitting the geoform
+            geoLocationError: "Pašreizējā vieta nav pieejama",  // Shown when the browser returns an error instead of the current geographical position
+            geoLocationOutOfExtent: "Pašreizējā vieta ir ārpus pamatkartes tvēruma",  // Shown when the current geographical position is out of the basemap extent
+            submitButtonTooltip: "Ziņot par to", // Command button to open the geoform
+            cancelButtonTooltip: "Atcelt", //tooltip for cancel button
+            geoformBackButtonTooltip: "Doties uz ziņojumu sarakstu" //tooltip for Geoform back button
 
         },
         locator: {
-            addressText: "ķ_Address___ū:", // Shown as a title for a group of addresses returned on performing unified search
-            usngText: "ķ_USNG__ū", // Shown as a title for a group of USNG values returned on performing unified search
-            mgrsText: "ķ_MGRS__ū", // Shown as a title for a group of MGRS values returned on performing unified search
-            latLongText: "ķ_Latitude/Longitude______ū", // Shown as a title for a group of latitude longitude values returned on performing unified search
-            invalidSearch: "ķ_No results found______ū", // Shown in the address container when no results are returned on performing unified search
-            locatorPlaceholder: "ķ_Enter an address to search_________ū", // Shown in the address container textbox as a placeholder
-            locationOutOfExtent: "ķ_Located address is out of basemap extent_____________ū", // Shown as an alert when the selected address in the search result is out of basemap extent
-            searchButtonTooltip: "ķ_Search___ū", // Tooltip for search button
-            clearButtonTooltip: "ķ_Clear search value______ū" // Tooltip for Geocoder clear button
+            addressText: "Adrese:", // Shown as a title for a group of addresses returned on performing unified search
+            usngText: "USNG", // Shown as a title for a group of USNG values returned on performing unified search
+            mgrsText: "MGRS", // Shown as a title for a group of MGRS values returned on performing unified search
+            latLongText: "Platums/Garums", // Shown as a title for a group of latitude longitude values returned on performing unified search
+            invalidSearch: "Rezultāti nav atrasti", // Shown in the address container when no results are returned on performing unified search
+            locatorPlaceholder: "Ievadiet adresi meklēšanai", // Shown in the address container textbox as a placeholder
+            locationOutOfExtent: "Noteiktā adrese ir ārpus pamatkartes tvēruma", // Shown as an alert when the selected address in the search result is out of basemap extent
+            searchButtonTooltip: "Meklēšana", // Tooltip for search button
+            clearButtonTooltip: "Notīrīt meklēšanas vērtību" // Tooltip for Geocoder clear button
         },
         myIssues: {
-            title: "ķ_My Reports____ū", // Shown as a title in 'My issues' panel
-            myIssuesTooltip: "ķ_My Reports____ū", // Command button to access issues reported by the logged in user
-            noResultsFound: "ķ_No reports found______ū" // Shown when no issues are reported by the logged in user
+            title: "Mani ziņojumi", // Shown as a title in 'My issues' panel
+            myIssuesTooltip: "Mani ziņojumi", // Command button to access issues reported by the logged in user
+            noResultsFound: "Nav atrastu ziņojumu" // Shown when no issues are reported by the logged in user
         },
         itemDetails: {  // Detailed information about an item and a list of its comments
-            likeButtonLabel: "ķ_Like__ū", // Command button shown in details panel
-            likeButtonTooltip: "ķ_Vote for this report_______ū",  // Tooltip for command button shown in details panel
-            commentButtonLabel: "ķ_Comment___ū", // Command button shown in details panel
-            commentButtonTooltip: "ķ_Comment on this report________ū", // Tooltip for command button shown in details panel
-            galleryButtonLabel: "ķ_Gallery___ū", // Command button shown in details panel
-            galleryButtonTooltip: "ķ_See attached documents________ū", // Tooltip for command button shown in details panel
-            mapButtonLabel: "ķ_View on Map____ū", // Command button shown in details panel
-            mapButtonTooltip: "ķ_View the location of this report___________ū", // Tooltip for command button shown in details panel
-            commentsListHeading: "ķ_Comments___ū", // List heading for Comments section in details panel
-            unableToUpdateVoteField: "ķ_Your vote cannot be added at this time_____________ū.", // Error message for feature unable to update
-            gotoIssueListTooltip: "ķ_Go to the report list_______ū" // Tooltip for back icon in Issue list header
+            likeButtonLabel: "Patīk", // Command button shown in details panel
+            likeButtonTooltip: "Balsot par šo ziņojumu",  // Tooltip for command button shown in details panel
+            commentButtonLabel: "Komentārs", // Command button shown in details panel
+            commentButtonTooltip: "Komentēt šo ziņojumu", // Tooltip for command button shown in details panel
+            galleryButtonLabel: "Galerija", // Command button shown in details panel
+            galleryButtonTooltip: "Skatīt pievienotos dokumentus", // Tooltip for command button shown in details panel
+            mapButtonLabel: "Skatīt kartē", // Command button shown in details panel
+            mapButtonTooltip: "Skatiet šī ziņojuma vietu", // Tooltip for command button shown in details panel
+            commentsListHeading: "Komentāri", // List heading for Comments section in details panel
+            unableToUpdateVoteField: "Jūsu balsi šobrīd nevar pievienot.", // Error message for feature unable to update
+            gotoIssueListTooltip: "Doties uz ziņojumu sarakstu" // Tooltip for back icon in Issue list header
         },
         itemList: {  // List of feature layer items shown in my-issues and issue-wall
-            likesForThisItemTooltip: "ķ_Votes for this report_______ū" //Shown on hovering of the like icon in my-issues and issue-wall
+            likesForThisItemTooltip: "Balsis par šo ziņojumu" //Shown on hovering of the like icon in my-issues and issue-wall
         },
         comment: {
-            commentsFormText: "ķ_Comment___ū",
-            commentsFormSubmitButton: "ķ_Submit Comment_____ū",
-            commentsFormCancelButton: "ķ_Cancel___ū",
-            errorInSubmittingComment: "ķ_Comment could not be submitted__________ū.", // Shown when user is unable to add comments
-            emptyCommentMessage: "ķ_Please enter a comment________ū.", // Shown when user submits a comment without any text/character
-            placeHolderText: "ķ_Type a comment_____ū", // Shown as a placeholder in comments textbox
-            noCommentsAvailableText: "ķ_No comments available_______ū", // Shown when no comments are available for the selected issue
-            remainingTextCount: "ķ_${0} character(s) remain________ū", // Shown below the comments textbox indicating the number of characters that can be added
-            showNoText: "ķ_No__ū" // Shown when comments character limit is exceeded
+            commentsFormText: "Komentārs",
+            commentsFormSubmitButton: "Iesniegt komentāru",
+            commentsFormCancelButton: "Atcelt",
+            errorInSubmittingComment: "Komentāru nevarēja iesniegt.", // Shown when user is unable to add comments
+            emptyCommentMessage: "Lūdzu ievadiet komentāru.", // Shown when user submits a comment without any text/character
+            placeHolderText: "Ierakstiet komentāru", // Shown as a placeholder in comments textbox
+            noCommentsAvailableText: "Nav pieejamu komentāru", // Shown when no comments are available for the selected issue
+            remainingTextCount: "Palikusi(-šas) ${0} rakstzīme(-s)", // Shown below the comments textbox indicating the number of characters that can be added
+            showNoText: "Nē" // Shown when comments character limit is exceeded
         },
         gallery: {
-            galleryHeaderText: "ķ_Gallery___ū",
-            noAttachmentsAvailableText: "ķ_No attachments found_______ū" // Shown when no comments are available for the selected issue
+            galleryHeaderText: "Galerija",
+            noAttachmentsAvailableText: "Nav atrasta piesaiste" // Shown when no comments are available for the selected issue
         }
     })
 );

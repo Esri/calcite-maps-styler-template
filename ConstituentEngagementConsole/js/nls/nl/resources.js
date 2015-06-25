@@ -17,77 +17,77 @@
 define(
      ({
         map: {
-            error: "Ĳ_Unable to create map_______ä" // Shown when error occurs while creation of map
+            error: "Kaart kan niet gemaakt worden" // Shown when error occurs while creation of map
         },
         main: {
-            noGroup: "Ĳ_No group configured_______ä" // Appears when no group is configured
+            noGroup: "Geen groep geconfigureerd" // Appears when no group is configured
         },
         webMapList: {
-            owner: "Ĳ_Owner___ä", // Appears in web-map list description panel when it is set to true
-            created: "Ĳ_Date created_____ä", // Appears in web-map list description panel when it is set to true
-            modified: "Ĳ_Date modified_____ä", // Appears in web-map list description panel when it is set to true
-            description: "Ĳ_Description____ä", // Appears in web-map list description panel when it is set to true
-            snippet: "Ĳ_Summary___ä", // Appears in web-map list description panel when it is set to true
-            licenseInfo: "Ĳ_Access and use constraints_________ä", // Appears in web-map list description panel when it is set to true
-            accessInformation: "Ĳ_Credits___ä", // Appears in web-map list description panel when it is set to true
-            tags: "Ĳ_Tags__ä", // Appears in web-map list description panel when it is set to true
-            numViews: "Ĳ_Number of views______ä", // Appears in web-map list description panel when it is set to true
-            avgRating: "Ĳ_Rating___ä", // Appears in web-map list description panel when it is set to true
-            noWebMapInGroup: "Ĳ_Configured group is invalid or no items have been shared with this group yet________________________ä", // Appears when invalid group in configured or no web-map is available in that group
-            infoBtnToolTip: "Ĳ_Map information______ä" // Display tool-tip on command button to display description of web-map
+            owner: "Eigenaar", // Appears in web-map list description panel when it is set to true
+            created: "Aanmaakdatum", // Appears in web-map list description panel when it is set to true
+            modified: "Datum wijziging", // Appears in web-map list description panel when it is set to true
+            description: "Beschrijving", // Appears in web-map list description panel when it is set to true
+            snippet: "Samenvatting", // Appears in web-map list description panel when it is set to true
+            licenseInfo: "Gebruiks- en toegangsbeperkingen", // Appears in web-map list description panel when it is set to true
+            accessInformation: "Credits", // Appears in web-map list description panel when it is set to true
+            tags: "Labels", // Appears in web-map list description panel when it is set to true
+            numViews: "Aantal weergaven", // Appears in web-map list description panel when it is set to true
+            avgRating: "Beoordeling", // Appears in web-map list description panel when it is set to true
+            noWebMapInGroup: "Geconfigureerde groep is ongeldig of er worden nog geen items gedeeld met deze groep", // Appears when invalid group in configured or no web-map is available in that group
+            infoBtnToolTip: "Kaartinformatie" // Display tool-tip on command button to display description of web-map
         },
         applicationHeader: {
-            signOutOption: "Ĳ_Sign Out___ä", // Command button to sign-out from the application
-            pleaseSignInText: "Ĳ_Please sign in_____ä", // Appears when user needs to sign-in into the application
-            showSelectedOption: "Ĳ_Show Selected_____ä", // Command button to show selected records in data-viewer
-            showAllOption: "Ĳ_Show All___ä", // Command button to show all the records in data-viewer
-            clearSelectionOption: "Ĳ_Clear Selection______ä", // Command button to clear selected records in data-viewer
-            zoomToSelectedOption: "Ĳ_Zoom to Selected______ä", // Command button to zoom map to selected records
-            gridViewOption: "Ĳ_List View____ä", // Command button to display list view
-            mapViewOption: "Ĳ_Map View___ä", // Command button to display map view
-            gridMapViewOption: "Ĳ_Split View____ä", // Command button to display split view
-            settingsBtnToolTip: "Ĳ_Selection options______ä", // Display tool-tip on command button to open a list of settings options
-            viewModeBtnToolTip: "Ĳ_Display options______ä", // Display tool-tip on command button to open a list of view options
-            searchModeBtnToolTip: "Ĳ_Search this layer______ä", // Display tool-tip on command button to open a dialog box for finding a feature
-            manualRefreshBtnToolTip: "Ĳ_Refresh___ä", // Display tool-tip on command button to manually refresh the selected operational layer
-            confirmManualRefeshText: "Ĳ_All selections and unsaved changes will be discarded_________________ä", // Appears when user wants to do manual refresh
-            signInOption: "Ĳ_Sign In___ä" // Appears when user has not signed in
+            signOutOption: "Afmelden", // Command button to sign-out from the application
+            pleaseSignInText: "Meld u aan", // Appears when user needs to sign-in into the application
+            showSelectedOption: "Geef geselecteerde weer", // Command button to show selected records in data-viewer
+            showAllOption: "Show All", // Command button to show all the records in data-viewer
+            clearSelectionOption: "Selectie wissen", // Command button to clear selected records in data-viewer
+            zoomToSelectedOption: "Zoomen naar geselecteerd", // Command button to zoom map to selected records
+            gridViewOption: "Lijstweergave", // Command button to display list view
+            mapViewOption: "Kaartweergave", // Command button to display map view
+            gridMapViewOption: "Gesplitste weergave", // Command button to display split view
+            settingsBtnToolTip: "Opties selecteren", // Display tool-tip on command button to open a list of settings options
+            viewModeBtnToolTip: "Weergaveopties", // Display tool-tip on command button to open a list of view options
+            searchModeBtnToolTip: "Deze laag zoeken", // Display tool-tip on command button to open a dialog box for finding a feature
+            manualRefreshBtnToolTip: "Vernieuwen", // Display tool-tip on command button to manually refresh the selected operational layer
+            confirmManualRefeshText: "Alle selecties en onopgeslagen wijzigingen worden genegeerd", // Appears when user wants to do manual refresh
+            signInOption: "Aanmelden" // Appears when user has not signed in
         },
         dataviewer: {
-            noIssuesReported: "Ĳ_No reports available_______ä", // Appears when no issues are available in current extent
-            photoAttachmentHeader: "Ĳ_Attachments____ä", // Appears when attachments are available for display in details tab
-            invalidSmallNumber: "Ĳ_Please enter an integer________ä ", // Shown when invalid integer value is entered while editing in data-viewer (valid integer value between -32768 and 32767)
-            invalidNumber: "Ĳ_Please enter an integer________ä", // Shown when invalid integer value is entered while editing in data-viewer (valid integer value between -2147483648 and 2147483647)
-            invalidFloat: "Ĳ_Please enter a number_______ä", // Shown when invalid floating value is entered while editing in data-viewer (floating point value between -3.4E38 and 1.2E38)
-            invalidDouble: "Ĳ_Please enter a number_______ä", // Shown when invalid double value is entered while editing in data-viewer (double value between -2.2E308 and 1.8E308)
-            invalidString: "Ĳ_Please enter a value_______ä", // Shown when user enters invalid string value
-            invalidDate: "Ĳ_Please enter a valid date_________ä", // Shown when user enters invalid date value
-            invalidNumericRange: "Ĳ_Please enter a value between ${minValue} and ${maxValue}__________________ä", // Shown when user enters value which is out of range
-            moreInfolink: "Ĳ_Link__ä", // Shown when value in field contains only URL.
-            commentsText: "Ĳ_Comments___ä", // Appears when comments are available for display in details tab
-            noCommentsAvailable: "Ĳ_No comments available_______ä", // Appears when no comments are available
-            noFeatureGeometry: "Ĳ_Feature cannot be displayed_________ä" // Appears when user selects/activates a feature and geometry is available for that
+            noIssuesReported: "Geen rapporten beschikbaar", // Appears when no issues are available in current extent
+            photoAttachmentHeader: "Bijlagen", // Appears when attachments are available for display in details tab
+            invalidSmallNumber: "Een integer invoeren ", // Shown when invalid integer value is entered while editing in data-viewer (valid integer value between -32768 and 32767)
+            invalidNumber: "Een integer invoeren", // Shown when invalid integer value is entered while editing in data-viewer (valid integer value between -2147483648 and 2147483647)
+            invalidFloat: "Een nummer invoeren", // Shown when invalid floating value is entered while editing in data-viewer (floating point value between -3.4E38 and 1.2E38)
+            invalidDouble: "Een nummer invoeren", // Shown when invalid double value is entered while editing in data-viewer (double value between -2.2E308 and 1.8E308)
+            invalidString: "Voer een waarde in", // Shown when user enters invalid string value
+            invalidDate: "Voer een geldige datum in", // Shown when user enters invalid date value
+            invalidNumericRange: "Voer een waarde in tussen ${minValue} en ${maxValue}", // Shown when user enters value which is out of range
+            moreInfolink: "Koppeling", // Shown when value in field contains only URL.
+            commentsText: "Opmerkingen", // Appears when comments are available for display in details tab
+            noCommentsAvailable: "Geen reacties beschikbaar", // Appears when no comments are available
+            noFeatureGeometry: "Object kan niet worden weergegeven" // Appears when user selects/activates a feature and geometry is available for that
         },
         config: {
-            configNotDefined: "Ĳ_No configuration defined________ä" // Shown when there is an issue with config file
+            configNotDefined: "Geen configuratie gedefinieerd" // Shown when there is an issue with config file
         },
         searchPanel: {
-            noResultsFound: "Ĳ_No results found______ä" // Appears when user search for features and no feature is found
+            noResultsFound: "Geen resultaten gevonden" // Appears when user search for features and no feature is found
         },
         mapViewer: {
-            detailsBtnToolTip: "Ĳ_View more details for the active feature_____________ä", // Display tool-tip on command button to view details of selected feature
-            locationBtnToolTip: "Ĳ_View map___ä", // Display tool-tip on command button to view map panel
-            zoomInToolTip: "Ĳ_Zoom in___ä", // Display tool-tip on command button to zoom in map
-            zoomOutToolTip: "Ĳ_Zoom out___ä" // Display tool-tip on command button to zoom out map
+            detailsBtnToolTip: "Bekijk meer details voor het actieve object", // Display tool-tip on command button to view details of selected feature
+            locationBtnToolTip: "Kaart weergeven", // Display tool-tip on command button to view map panel
+            zoomInToolTip: "Inzoomen", // Display tool-tip on command button to zoom in map
+            zoomOutToolTip: "Uitzoomen" // Display tool-tip on command button to zoom out map
         },
         signOutPage: {
-            signOutMessage: "Ĳ_You've been successfully signed out____________ä", // Appears when user is successfully signed-out from application
-            reSignInMessage: "Ĳ_Click here to sign in_______ä" // Appears when user is signed-out from application and wants to sign-in again
+            signOutMessage: "U bent afgemeld.", // Appears when user is successfully signed-out from application
+            reSignInMessage: "Klik hier om u aan te melden." // Appears when user is signed-out from application and wants to sign-in again
         },
         preview: {
-            section1: "Ĳ_Crowdsource Manager, a companion group template to <a href='http://solutions.arcgis.com/local-government/help/crowdsource-reporter/' target='_blank'>Crowdsource Reporter</a>, is a responsive group application template (desktop and tablet devices) that allows users within an organization to review problems/observations submitted through the Manager app___________________________________________________________________________________________________________ä.", // Appears when preview page is loaded
-            section2: "Ĳ_The app presents one or more maps for users to review a problem or observation. Users can look for patterns and clusters, review problem details, update status, and assign responsibility_________________________________________________________ä.", // Appears when preview page is loaded
-            section3: "Ĳ_The application source code can be downloaded for further configuration. This additional configuration of the application can be applied back to an ArcGIS Online configurable web application item or hosted on your own web server.<br /> For more information on configuring this app, see the <a href='http://solutions.arcgis.com/local-government/help/crowdsource-manager/' target='_blank'>Crowdsource Manager</a> documentation_________________________________________________________________________________________________________________________________ä." // Appears when preview page is loaded
+            section1: "Crowdsource Manager, een companion group template voor <a href=\'http://solutions.arcgis.com/local-government/help/crowdsource-reporter/\' target=\'_blank\'>Crowdsource Reporter</a>, is een responsive group applicatie template voor desktop en tablets, dat gebruikers binnen een organisatie in staat stelt om problemen en observaties die via de Manager-app ingediend zijn te bekijken..", // Appears when preview page is loaded
+            section2: "De app presenteert ene of meerdere kaarten waarmee gebruikers een probleem of observatie kunnen rapporteren. Gebruikers kunnen patronen en clusters zoeken, probleemgegevens bekijken, status bijwerken en verantwoordelijkheden toewijzen.", // Appears when preview page is loaded
+            section3: "De broncode van de applicatie kan worden gedownload voor verdere configuratie. Deze aanvullende configuratie van de applicatie kan opnieuw worden toegepast op een configureerbaar ArcGIS Online-webapplicatie-item of op uw eigen webserver worden gehost.<br /> Voor meer informatie over het configureren van deze app, raadpleegt u de documentatie <a href=\'http://solutions.arcgis.com/local-government/help/crowdsource-manager/\' target=\'_blank\'>Crowdsource Manager</a>." // Appears when preview page is loaded
         }
     })
 );

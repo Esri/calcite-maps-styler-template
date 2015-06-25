@@ -17,30 +17,30 @@
 define(
    ({
     map: {
-      error: "Š_Unable to create map_______ä"
+      error: "Võimetu koostama kaarti"
     },
     legend:{
-      title: "Š_Legend___ä"
+      title: "Legendiga kaart"
     },
     share: {
-      title: "Š_Share___ä"
+      title: "Jaga"
     },
     about: {
-      title: "Š_About___ä",
-      error: "Š_By default the web map description or snippet will be used. Configure the app to add a custom snippet for the about panel______________________________________ä."
+      title: "Info",
+      error: "Vaikimisi kasutatakse veebikaardi kirjeldust või mingit osa sellest. Kohandage rakendust, lisades vastava tekstilõigu juhtpaneeli kohta."
     },
     time: {
-        enableTimeMessage: "Š_The specified web map does not contain any time enabled layers. View the <a target='_blank' href='http://doc.arcgis.com/en/arcgis-online/create-maps/configure-time.htm#ESRI_SECTION1_F1D4A275B4AB4CC79198CBA9D0AD8727'>Configure time settings</a> help topic for details. To use the template without displaying time use the configuration panel to disable the time option_______________________________________________________________________________________________________________ä.",
-        datePattern: "Š_MMMM d, yyyy_____ä",
-        hourTimePattern: "Š_h a__ä",
-        millisecondTimePattern: "Š_h:mm:ss a____ä",
-        minuteTimePattern: "Š_h:mm a___ä",
-        secondTimePattern: "Š_h:mm:ss a____ä",
-        timeRange: "Š_${startTime} to ${endTime}_________ä",
-        yearPattern: "Š_yyyy__ä"
+        enableTimeMessage: "Veebikaart ei sisalda kaardi tuuri jaoks sobivat kihti. Vaadake üksikasju <a target=\'_blank\' href=\'http://doc.arcgis.com/en/arcgis-online/create-maps/configure-time.htm#ESRI_SECTION1_F1D4A275B4AB4CC79198CBA9D0AD8727\'>Ajaseadete konfigureerimise</a> spikris. Malli kasutamiseks kellaaega kuvamata kasutage konfiguratsioonipaneeli, millel saate ajavaliku keelata.",
+        datePattern: "d. MMMM yyyy",
+        hourTimePattern: "H",
+        millisecondTimePattern: "h:mm:ss",
+        minuteTimePattern: "h:mm",
+        secondTimePattern: "h:mm:ss",
+        timeRange: "${startTime} kuni ${endTime}",
+        yearPattern: "aaaa"
     },
     histogram:{
-      error: "Š_No time-enabled feature layers, in snapshot mode, are available in the web map. Configure the app to use another web map or disable the histogram option_______________________________________________ä."
+      error: "Veebikaardi läbilõikerežiimis pole ajafunktsiooni kihid saadaval. Kohandage rakendus mõne muu veebikaardi kasutamiseks või keelake histogrammi valik."
     }
   })
 );

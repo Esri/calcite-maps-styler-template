@@ -20,7 +20,7 @@ define(
             error: "Žemėlapio sukurti nepavyko"
         },
         tools:{
-            bookmarkTool: "Į_Bookmarks____š",
+            bookmarkTool: "Žymės",
             basemapTool: "Pagrindo žemėlapiai",
             legendTool: "Legenda",
             detailsTool: "Smulkesnė informacija",
@@ -37,8 +37,8 @@ define(
                   "label3": 'Gulsčias',
                   "label4": 'Stačias'
             },
-            printTitle: "Į_Title___š",
-            printTitlePrompt: "Į_Add custom title______š"
+            printTitle: "Pavadinimas",
+            printTitlePrompt: "Pridėti adaptuotą pavadinimą"
         }
     })
 );

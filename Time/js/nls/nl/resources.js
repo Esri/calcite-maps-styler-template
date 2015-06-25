@@ -17,30 +17,30 @@
 define(
    ({
     map: {
-      error: "Ĳ_Unable to create map_______ä"
+      error: "Kaart kan niet gemaakt worden"
     },
     legend:{
-      title: "Ĳ_Legend___ä"
+      title: "Legenda"
     },
     share: {
-      title: "Ĳ_Share___ä"
+      title: "Delen"
     },
     about: {
-      title: "Ĳ_About___ä",
-      error: "Ĳ_By default the web map description or snippet will be used. Configure the app to add a custom snippet for the about panel______________________________________ä."
+      title: "Over",
+      error: "Standaard wordt de webmapbeschrijving of snippet gebruikt. Configureer de app om een aangepaste snippet toe te voegen voor het deelvenster Over."
     },
     time: {
-        enableTimeMessage: "Ĳ_The specified web map does not contain any time enabled layers. View the <a target='_blank' href='http://doc.arcgis.com/en/arcgis-online/create-maps/configure-time.htm#ESRI_SECTION1_F1D4A275B4AB4CC79198CBA9D0AD8727'>Configure time settings</a> help topic for details. To use the template without displaying time use the configuration panel to disable the time option_______________________________________________________________________________________________________________ä.",
-        datePattern: "Ĳ_MMMM d, yyyy_____ä",
-        hourTimePattern: "Ĳ_h a__ä",
-        millisecondTimePattern: "Ĳ_h:mm:ss a____ä",
-        minuteTimePattern: "Ĳ_h:mm a___ä",
-        secondTimePattern: "Ĳ_h:mm:ss a____ä",
-        timeRange: "Ĳ_${startTime} to ${endTime}_________ä",
-        yearPattern: "Ĳ_yyyy__ä"
+        enableTimeMessage: "De gespecificeerde webmap bevat geen lagen met tijdondersteuning. Zie het hulponderwep <a target=\'_blank\' href=\'http://doc.arcgis.com/en/arcgis-online/create-maps/configure-time.htm#ESRI_SECTION1_F1D4A275B4AB4CC79198CBA9D0AD8727\'>Tijdinstellingen configureren</a> voor details. Gebruik om de template te gebruiken zonder de tijd weer te geven het configuratiepaneel om de tijdoptie uit te schakelen.",
+        datePattern: "d. MMMM yyyy",
+        hourTimePattern: "H",
+        millisecondTimePattern: "H:mm:ss",
+        minuteTimePattern: "H:mm",
+        secondTimePattern: "H:mm:ss",
+        timeRange: "${startTime} tot ${endTime}",
+        yearPattern: "yyyy"
     },
     histogram:{
-      error: "Ĳ_No time-enabled feature layers, in snapshot mode, are available in the web map. Configure the app to use another web map or disable the histogram option_______________________________________________ä."
+      error: "Er zijn geen objectlagen met tijdondersteuning, in snapshotmodus, beschikbaar in de webmap. Configureer de app om een andere webmap te gebruiken of schakel de histogramoptie uit."
     }
   })
 );

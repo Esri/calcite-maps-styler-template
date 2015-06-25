@@ -35,8 +35,8 @@ define(
 			      "label4": '縱向'
 			    },
 			    "legend": "在輸出新增圖例",
-                "title": "試_Title___驗",
-                "titlePrompt": "試_Add custom title______驗"
+                "title": "標題",
+                "titlePrompt": "新增自訂標題"
             },
 			"share": {
 				"extent": "使用目前地圖範圍",

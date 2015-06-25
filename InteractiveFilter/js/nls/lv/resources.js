@@ -15,7 +15,7 @@
       }
     },
     legend:{
-      title: "ķ_Legend___ū"
+      title: "Apzīmējumi"
     }
   })
 );

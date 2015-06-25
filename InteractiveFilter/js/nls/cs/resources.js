@@ -15,7 +15,7 @@
       }
     },
     legend:{
-      title: "Ř_Legend___ů"
+      title: "Legenda"
     }
   })
 );

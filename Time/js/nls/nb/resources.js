@@ -17,30 +17,30 @@
 define(
    ({
     map: {
-      error: "å_Unable to create map_______ø"
+      error: "Kan ikke opprette kart"
     },
     legend:{
-      title: "å_Legend___ø"
+      title: "Tegnforklaring"
     },
     share: {
-      title: "å_Share___ø"
+      title: "Dele"
     },
     about: {
-      title: "å_About___ø",
-      error: "å_By default the web map description or snippet will be used. Configure the app to add a custom snippet for the about panel______________________________________ø."
+      title: "Om",
+      error: "Som standard brukes webkartbeskrivelsen eller snutten. Konfigurer appen slik at det legges til en egendefinert snutt om panelet."
     },
     time: {
-        enableTimeMessage: "å_The specified web map does not contain any time enabled layers. View the <a target='_blank' href='http://doc.arcgis.com/en/arcgis-online/create-maps/configure-time.htm#ESRI_SECTION1_F1D4A275B4AB4CC79198CBA9D0AD8727'>Configure time settings</a> help topic for details. To use the template without displaying time use the configuration panel to disable the time option_______________________________________________________________________________________________________________ø.",
-        datePattern: "å_MMMM d, yyyy_____ø",
-        hourTimePattern: "å_h a__ø",
-        millisecondTimePattern: "å_h:mm:ss a____ø",
-        minuteTimePattern: "å_h:mm a___ø",
-        secondTimePattern: "å_h:mm:ss a____ø",
-        timeRange: "å_${startTime} to ${endTime}_________ø",
-        yearPattern: "å_yyyy__ø"
+        enableTimeMessage: "Det angitte webkartet inneholder ikke noen tidsaktiverte lag. Vis hjelpeemnet <a target=\'_blank\' href=\'http://doc.arcgis.com/en/arcgis-online/create-maps/configure-time.htm#ESRI_SECTION1_F1D4A275B4AB4CC79198CBA9D0AD8727\'>Konfigurer tidsinnstillinger</a> hvis du vil ha flere opplysninger. Hvis du vil bruke malen uten å vise tid, bruker du konfigurasjonspanelet til å deaktivere tidsalternativet.",
+        datePattern: "MMMM d, åååå",
+        hourTimePattern: "H",
+        millisecondTimePattern: "H.mm.ss",
+        minuteTimePattern: "H.mm",
+        secondTimePattern: "H.mm.ss",
+        timeRange: "${startTime} til ${endTime}",
+        yearPattern: "åååå"
     },
     histogram:{
-      error: "å_No time-enabled feature layers, in snapshot mode, are available in the web map. Configure the app to use another web map or disable the histogram option_______________________________________________ø."
+      error: "Ingen tidsaktiverte geoobjektlag i øyeblikksbildemodus er tilgjengelige i webkartet. Konfigurer appen slik at den bruker et annet webkart, eller deaktiver histogramalternativet."
     }
   })
 );

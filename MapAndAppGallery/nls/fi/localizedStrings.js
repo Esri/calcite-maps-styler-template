@@ -68,8 +68,8 @@ define(
             signInBtnTitle: "Kirjaudu sisään",
             signOutBtnTitle: "Kirjaudu ulos",
             geolocationBtnTitle: "Geosijainti",
-            ascendingSort: "Å_Ascending____ö",
-            descendingSort: "Å_Descending____ö"
+            ascendingSort: "Nouseva",
+            descendingSort: "Laskeva"
         },
         errorMessages: {
             emptyGroup: "Määritetyssä ryhmässä ei ole aineistoa, jonka perusteella kyselyn voi suorittaa.",

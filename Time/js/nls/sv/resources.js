@@ -17,30 +17,30 @@
 define(
    ({
     map: {
-      error: "Å_Unable to create map_______ö"
+      error: "Det går inte att skapa kartan"
     },
     legend:{
-      title: "Å_Legend___ö"
+      title: "Teckenförklaring"
     },
     share: {
-      title: "Å_Share___ö"
+      title: "Dela"
     },
     about: {
-      title: "Å_About___ö",
-      error: "Å_By default the web map description or snippet will be used. Configure the app to add a custom snippet for the about panel______________________________________ö."
+      title: "Om",
+      error: "Som standard används webbkartbeskrivningen eller snippet. Konfigurera appen för att lägga till en anpassad snippet för panelen Om."
     },
     time: {
-        enableTimeMessage: "Å_The specified web map does not contain any time enabled layers. View the <a target='_blank' href='http://doc.arcgis.com/en/arcgis-online/create-maps/configure-time.htm#ESRI_SECTION1_F1D4A275B4AB4CC79198CBA9D0AD8727'>Configure time settings</a> help topic for details. To use the template without displaying time use the configuration panel to disable the time option_______________________________________________________________________________________________________________ö.",
-        datePattern: "Å_MMMM d, yyyy_____ö",
-        hourTimePattern: "Å_h a__ö",
-        millisecondTimePattern: "Å_h:mm:ss a____ö",
-        minuteTimePattern: "Å_h:mm a___ö",
-        secondTimePattern: "Å_h:mm:ss a____ö",
-        timeRange: "Å_${startTime} to ${endTime}_________ö",
-        yearPattern: "Å_yyyy__ö"
+        enableTimeMessage: "Den angivna webbkartan innehåller inga tidsaktiverade lager. Se hjälpavsnittet <a target=\'_blank\' href=\'http://doc.arcgis.com/en/arcgis-online/create-maps/configure-time.htm#ESRI_SECTION1_F1D4A275B4AB4CC79198CBA9D0AD8727\'>Konfigurera tidsinställningar</a> för mer information. Om du vill använda mallen utan att visa tid använder du konfigurationspanelen för att inaktivera tidsalternativet.",
+        datePattern: "mmmm d, åååå",
+        hourTimePattern: "h a",
+        millisecondTimePattern: "h:mm:ss a",
+        minuteTimePattern: "h:mm a",
+        secondTimePattern: "h:mm:ss a",
+        timeRange: "${startTime} till ${endTime}",
+        yearPattern: "åååå"
     },
     histogram:{
-      error: "Å_No time-enabled feature layers, in snapshot mode, are available in the web map. Configure the app to use another web map or disable the histogram option_______________________________________________ö."
+      error: "Inga tidsaktiverade geoobjektslager, i snapshotläge, finns tillgängliga i webbkartan. Konfigurera appen att använda en annan webbkarta eller inaktivera histogramalternativet."
     }
   })
 );

@@ -15,7 +15,7 @@
       }
     },
     legend:{
-      title: "כן_Legend___ש"
+      title: "מקרא"
     }
   })
 );

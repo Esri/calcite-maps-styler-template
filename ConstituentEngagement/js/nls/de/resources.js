@@ -17,132 +17,132 @@
 define(
      ({
         map: {
-            error: "ä_Unable to create map_______Ü",
-            zoomInTooltip: "ä_Zoom in___Ü",  // Command button to zoom in to the map
-            zoomOutTooltip: "ä_Zoom out___Ü",  // Command button to zoom out of the map
-            geolocationTooltip: "ä_Current location______Ü"  // Command button to navigate to the current geographical position
+            error: "Karte kann nicht erstellt werden",
+            zoomInTooltip: "Vergrößern",  // Command button to zoom in to the map
+            zoomOutTooltip: "Verkleinern",  // Command button to zoom out of the map
+            geolocationTooltip: "Aktueller Standort"  // Command button to navigate to the current geographical position
         },
         main: {
-            noGroup: "ä_No group configured_______Ü", // Shown when no group is configured in the configuration file
-            submitReportButtonText: "ä_Submit a report______Ü", //Submit report  text for buttons on map and list
-            gotoListViewTooltip: "ä_List view____Ü", // Go to List view tooltip text
-            noFeatureGeomtery: "ä_Feature cannot be displayed_________Ü" // Error message when geomtery is not available
+            noGroup: "Keine Gruppe konfiguriert", // Shown when no group is configured in the configuration file
+            submitReportButtonText: "Bericht senden", //Submit report  text for buttons on map and list
+            gotoListViewTooltip: "Listenansicht", // Go to List view tooltip text
+            noFeatureGeomtery: "Feature kann nicht angezeigt werden" // Error message when geomtery is not available
         },
         signin: {
-            guestSigninText: "ä_Proceed as Guest______Ü", // Shown in the 'Sign in' page below the icon for accessing application as an anonymous user
-            signInOrText: "ä_Or__Ü", // Or text on sign in screen
-            signinOptionsText: "ä_Sign in with_____Ü:", // Shown in the 'Sign in' page above the icons for social media sign in
-            noGroupNameText: "ä_Please sign in_____Ü", // Shown when the group title is not available or the group is private
-            guestLoginTooltip: "ä_Sign in as a guest______Ü", // Command button to access the application as an anonymous user
-            facebookLoginTooltip: "ä_Sign in with Facebook_______Ü", // Command button to access the application via Facebook login
-            twitterLoginTooltip: "ä_Sign in with Twitter_______Ü", // Command button to access the application via Twitter login
-            googlePlusLoginTooltip: "ä_Sign in with Google+_______Ü", // Command button to access the application via Google+ login
-            agolLoginTooltip: "ä_Sign in with ArcGIS_______Ü" // Command button to access the application via AGOL login
+            guestSigninText: "Vorgang als Gast fortsetzen", // Shown in the 'Sign in' page below the icon for accessing application as an anonymous user
+            signInOrText: "Oder", // Or text on sign in screen
+            signinOptionsText: "Anmelden mit:", // Shown in the 'Sign in' page above the icons for social media sign in
+            noGroupNameText: "Melden Sie sich an", // Shown when the group title is not available or the group is private
+            guestLoginTooltip: "Als Gast anmelden", // Command button to access the application as an anonymous user
+            facebookLoginTooltip: "Mit Facebook anmelden", // Command button to access the application via Facebook login
+            twitterLoginTooltip: "Mit Twitter anmelden", // Command button to access the application via Twitter login
+            googlePlusLoginTooltip: "Mit Google+ anmelden", // Command button to access the application via Google+ login
+            agolLoginTooltip: "Mit ArcGIS anmelden" // Command button to access the application via AGOL login
         },
         webMapList: {
-            owner: "ä_Owner___Ü", // Shown in the 'Map information' section indicating the owner of the webmap
-            created: "ä_Date dreated_____Ü", // Shown in the 'Map information' section indicating the date when the webmap was created
-            modified: "ä_Date modified_____Ü", // Shown in the 'Map information' section indicating the date when the webmap was modified
-            description: "ä_Description____Ü", // Shown in the 'Map information' section describing the webmap
-            snippet: "ä_Summary___Ü", // Shown in the 'Map information' section providing the summary of the webmap
-            licenseInfo: "ä_Access and use constraints_________Ü", // Shown in the map information section indicating the webmap license information
-            accessInformation: "ä_Credits___Ü", // Shown in the 'Map information' section indicating account credits
-            tags: "ä_Tags__Ü", // Shown in the 'Map information' section indicating tags of the webmap
-            numViews: "ä_Number of views______Ü", // Shown in the 'Map information' section indicating number of times the webmap has been viewed
-            avgRating: "ä_Rating___Ü", // Shown in the 'Map information' section indicating webmap rating
-            noWebMapInGroup: "ä_Configured group is invalid or no items have been shared with this group yet________________________Ü.", // Shown when the configured group is invalid/private or no items have been shared with the group
-            infoBtnToolTip: "ä_Map information______Ü" // Command button to view the 'Map information'
+            owner: "Besitzer", // Shown in the 'Map information' section indicating the owner of the webmap
+            created: "Erstellungsdatum", // Shown in the 'Map information' section indicating the date when the webmap was created
+            modified: "Änderungsdatum", // Shown in the 'Map information' section indicating the date when the webmap was modified
+            description: "Beschreibung", // Shown in the 'Map information' section describing the webmap
+            snippet: "Zusammenfassung", // Shown in the 'Map information' section providing the summary of the webmap
+            licenseInfo: "Zugriffs- und Nutzungsbeschränkungen", // Shown in the map information section indicating the webmap license information
+            accessInformation: "Quellennachweise", // Shown in the 'Map information' section indicating account credits
+            tags: "Tags", // Shown in the 'Map information' section indicating tags of the webmap
+            numViews: "Anzahl der Ansichten", // Shown in the 'Map information' section indicating number of times the webmap has been viewed
+            avgRating: "Bewertung", // Shown in the 'Map information' section indicating webmap rating
+            noWebMapInGroup: "Die konfigurierte Gruppe ist ungültig oder es wurden noch keine Elemente für diese Gruppe freigegeben.", // Shown when the configured group is invalid/private or no items have been shared with the group
+            infoBtnToolTip: "Karteninformationen" // Command button to view the 'Map information'
         },
         issueWall: {
-            noResultsFound: "ä_No reports available in the current area_____________Ü", // Shown in the issue wall when no issues are present in the current map extent
-            gotoWebmapListTooltip: "ä_Go to main list______Ü", // Tooltip for back icon in list header
-            gotoMapViewTooltip: "ä_Map view___Ü" // Tooltip for map-it icon in list header
+            noResultsFound: "Keine Berichte im aktuellen Bereich verfügbar", // Shown in the issue wall when no issues are present in the current map extent
+            gotoWebmapListTooltip: "Zur Hauptliste wechseln", // Tooltip for back icon in list header
+            gotoMapViewTooltip: "Kartenansicht" // Tooltip for map-it icon in list header
         },
         appHeader: {
-            myReport: "ä_My Reports____Ü", // Command button shown in mobile menu list
-            signIn: "ä_Sign In___Ü", // Command button shown in mobile menu list and in appheader
-            signOut: "ä_Sign Out___Ü", // Command button shown in mobile menu list
-            help: "ä_Help__Ü", // Command button shown in mobile menu list
-            signInTooltip: "ä_Sign in___Ü", // Tooltip to 'Sign in' option
-            signOutTooltip: "ä_Sign out___Ü", // Tooltip  to 'Sign out' option
-            myReportTooltip: "ä_View reports submitted by me_________Ü", // Tooltip  to 'My Reports' option
-            helpTooltip: "ä_Help__Ü" // Tooltip  to 'Help' option
+            myReport: "Eigene Berichte", // Command button shown in mobile menu list
+            signIn: "Anmelden", // Command button shown in mobile menu list and in appheader
+            signOut: "Abmelden", // Command button shown in mobile menu list
+            help: "Hilfe", // Command button shown in mobile menu list
+            signInTooltip: "Anmelden", // Tooltip to 'Sign in' option
+            signOutTooltip: "Abmelden", // Tooltip  to 'Sign out' option
+            myReportTooltip: "Von mir gesendete Berichte anzeigen", // Tooltip  to 'My Reports' option
+            helpTooltip: "Hilfe" // Tooltip  to 'Help' option
         },
         geoform: {
-            enterInformation: "ä_Details___Ü", // Shown as the first section of the geoform, where the user can enter details of the issue
-            selectAttachments: "ä_Attachments____Ü", // Appears above 'Select file' button indicating option to attach files
-            selectFileText: "ä_Browse___Ü", // Command button to open a dialog box to select file(s) to be attached
-            enterLocation: "ä_Location___Ü", // Shown as the second section of the geoform, where the user can select a location on the map
-            reportItButton: "ä_Report It____Ü", // Command button to submit the geoform to report an issue
-            cancelButton: "ä_Cancel___Ü", //Command button to close the geoform
-            requiredField: "ä_(required)____Ü", // Shown next to the field in which the data is mandatory
-            selectDefaultText: "ä_Select&hellip;_____Ü", // Shown in the dropdown field indicating to select an option
-            invalidInputValue: "ä_Please enter valid value_________Ü.", // Shown when user clicks/taps the required field but does not enter the data and comes out of the required field
-            noFieldsConfiguredMessage: "ä_Layer fields are not configured to capture data_______________Ü", // Shown when all the fields of the selected layer are disabled
-            invalidSmallNumber: "ä_Please enter an integer________Ü", // Shown when the entered value is beyond the specified range (valid ${openStrong}integer${closeStrong} value between -32768 and 32767.)
-            invalidNumber: "ä_Please enter an integer________Ü", // Shown when the entered value is beyond the specified range (valid ${openStrong}integer${closeStrong} value between -2147483648 and 2147483647.)
-            invalidFloat: "ä_Please enter a number_______Ü", // Shown when the entered value is beyond the specified range (valid ${openStrong}floating point${closeStrong} value between -3.4E38 and 1.2E38 )
-            invalidDouble: "ä_Please enter a number_______Ü", // Shown when the entered value is beyond the specified range (valid ${openStrong}double${closeStrong} value between -2.2E308 and 1.8E308)
-            requiredFields: "ä_Please provide values for all required fields_______________Ü", // Shown when user submits the geoform without entering data in the mandatory field(s)
-            selectLocation: "ä_Please select the location for your report______________Ü", // Shown when user submits the geoform without selecting location on the map
-            numericRangeHintMessage: "ä_${openStrong}Hint:${closeStrong} Minimum value ${minValue} and Maximum value ${maxValue}___________________________Ü", // Shown as a pop over above the fields with numeric values, indicating the minimum and maximum range
-            dateRangeHintMessage: "ä_${openStrong}Hint:${closeStrong} Minimum Date ${minValue} and Maximum Date ${maxValue}___________________________Ü", // Shown as a pop over above the fields with date values, indicating the minimum and maximum date range
-            errorsInApplyEdits: "ä_Issue could not be reported_________Ü", // Shown when there is an error in any of the services while submitting the geoform
-            attachmentSelectedMsg: "ä_attachment(s) selected________Ü", // Shown besides the select file button indicating the number of files attached
-            attachmentUploadStatus: "ä_${failed} of ${total} attachment(s) failed to upload_________________Ü", // Shown when there is error while uploading the attachment, while submitting the geoform
-            geoLocationError: "ä_Current location not available__________Ü",  // Shown when the browser returns an error instead of the current geographical position
-            geoLocationOutOfExtent: "ä_Current location is out of basemap extent_____________Ü",  // Shown when the current geographical position is out of the basemap extent
-            submitButtonTooltip: "ä_Report It____Ü", // Command button to open the geoform
-            cancelButtonTooltip: "ä_Cancel___Ü", //tooltip for cancel button
-            geoformBackButtonTooltip: "ä_Go to the report list_______Ü" //tooltip for Geoform back button
+            enterInformation: "Details", // Shown as the first section of the geoform, where the user can enter details of the issue
+            selectAttachments: "Anlagen", // Appears above 'Select file' button indicating option to attach files
+            selectFileText: "Durchsuchen", // Command button to open a dialog box to select file(s) to be attached
+            enterLocation: "Speicherort", // Shown as the second section of the geoform, where the user can select a location on the map
+            reportItButton: "Melden", // Command button to submit the geoform to report an issue
+            cancelButton: "Abbrechen", //Command button to close the geoform
+            requiredField: "(erforderlich)", // Shown next to the field in which the data is mandatory
+            selectDefaultText: "Auswählen&hellip;", // Shown in the dropdown field indicating to select an option
+            invalidInputValue: "Geben Sie einen gültigen Wert ein.", // Shown when user clicks/taps the required field but does not enter the data and comes out of the required field
+            noFieldsConfiguredMessage: "Layer-Felder sind nicht für die Erfassung von Daten konfiguriert", // Shown when all the fields of the selected layer are disabled
+            invalidSmallNumber: "Geben Sie einen Ganzzahlwert ein", // Shown when the entered value is beyond the specified range (valid ${openStrong}integer${closeStrong} value between -32768 and 32767.)
+            invalidNumber: "Geben Sie einen Ganzzahlwert ein", // Shown when the entered value is beyond the specified range (valid ${openStrong}integer${closeStrong} value between -2147483648 and 2147483647.)
+            invalidFloat: "Geben Sie eine Zahl ein", // Shown when the entered value is beyond the specified range (valid ${openStrong}floating point${closeStrong} value between -3.4E38 and 1.2E38 )
+            invalidDouble: "Geben Sie eine Zahl ein", // Shown when the entered value is beyond the specified range (valid ${openStrong}double${closeStrong} value between -2.2E308 and 1.8E308)
+            requiredFields: "Geben Sie Werte für alle erforderlichen Felder ein", // Shown when user submits the geoform without entering data in the mandatory field(s)
+            selectLocation: "Wählen Sie den Speicherort für Ihren Bericht aus", // Shown when user submits the geoform without selecting location on the map
+            numericRangeHintMessage: "${openStrong}Hinweis:${closeStrong} Minimalwert ${minValue} und Maximalwert ${maxValue}", // Shown as a pop over above the fields with numeric values, indicating the minimum and maximum range
+            dateRangeHintMessage: "${openStrong}Hinweis:${closeStrong} Mindestdatum ${minValue} und maximal auswählbares Datum ${maxValue}", // Shown as a pop over above the fields with date values, indicating the minimum and maximum date range
+            errorsInApplyEdits: "Problem konnte nicht gemeldet werden", // Shown when there is an error in any of the services while submitting the geoform
+            attachmentSelectedMsg: "Anlage(n) ausgewählt", // Shown besides the select file button indicating the number of files attached
+            attachmentUploadStatus: "${failed} von ${total} Anlage(n) konnte(n) nicht hochgeladen werden", // Shown when there is error while uploading the attachment, while submitting the geoform
+            geoLocationError: "Aktuelle Position ist nicht verfügbar",  // Shown when the browser returns an error instead of the current geographical position
+            geoLocationOutOfExtent: "Aktuelle Position befindet sich außerhalb der Grundkartenausdehnung",  // Shown when the current geographical position is out of the basemap extent
+            submitButtonTooltip: "Melden", // Command button to open the geoform
+            cancelButtonTooltip: "Abbrechen", //tooltip for cancel button
+            geoformBackButtonTooltip: "Zur Berichtsliste wechseln" //tooltip for Geoform back button
 
         },
         locator: {
-            addressText: "ä_Address___Ü:", // Shown as a title for a group of addresses returned on performing unified search
-            usngText: "ä_USNG__Ü", // Shown as a title for a group of USNG values returned on performing unified search
-            mgrsText: "ä_MGRS__Ü", // Shown as a title for a group of MGRS values returned on performing unified search
-            latLongText: "ä_Latitude/Longitude______Ü", // Shown as a title for a group of latitude longitude values returned on performing unified search
-            invalidSearch: "ä_No results found______Ü", // Shown in the address container when no results are returned on performing unified search
-            locatorPlaceholder: "ä_Enter an address to search_________Ü", // Shown in the address container textbox as a placeholder
-            locationOutOfExtent: "ä_Located address is out of basemap extent_____________Ü", // Shown as an alert when the selected address in the search result is out of basemap extent
-            searchButtonTooltip: "ä_Search___Ü", // Tooltip for search button
-            clearButtonTooltip: "ä_Clear search value______Ü" // Tooltip for Geocoder clear button
+            addressText: "Adresse:", // Shown as a title for a group of addresses returned on performing unified search
+            usngText: "USNG", // Shown as a title for a group of USNG values returned on performing unified search
+            mgrsText: "MGRS", // Shown as a title for a group of MGRS values returned on performing unified search
+            latLongText: "Breitengrad/Längengrad", // Shown as a title for a group of latitude longitude values returned on performing unified search
+            invalidSearch: "Keine Ergebnisse gefunden", // Shown in the address container when no results are returned on performing unified search
+            locatorPlaceholder: "Zu suchende Adresse eingeben", // Shown in the address container textbox as a placeholder
+            locationOutOfExtent: "Verortete Adresse befindet sich außerhalb der Grundkartenausdehnung", // Shown as an alert when the selected address in the search result is out of basemap extent
+            searchButtonTooltip: "Suche", // Tooltip for search button
+            clearButtonTooltip: "Suchwert löschen" // Tooltip for Geocoder clear button
         },
         myIssues: {
-            title: "ä_My Reports____Ü", // Shown as a title in 'My issues' panel
-            myIssuesTooltip: "ä_My Reports____Ü", // Command button to access issues reported by the logged in user
-            noResultsFound: "ä_No reports found______Ü" // Shown when no issues are reported by the logged in user
+            title: "Eigene Berichte", // Shown as a title in 'My issues' panel
+            myIssuesTooltip: "Eigene Berichte", // Command button to access issues reported by the logged in user
+            noResultsFound: "Keine Berichte gefunden" // Shown when no issues are reported by the logged in user
         },
         itemDetails: {  // Detailed information about an item and a list of its comments
-            likeButtonLabel: "ä_Like__Ü", // Command button shown in details panel
-            likeButtonTooltip: "ä_Vote for this report_______Ü",  // Tooltip for command button shown in details panel
-            commentButtonLabel: "ä_Comment___Ü", // Command button shown in details panel
-            commentButtonTooltip: "ä_Comment on this report________Ü", // Tooltip for command button shown in details panel
-            galleryButtonLabel: "ä_Gallery___Ü", // Command button shown in details panel
-            galleryButtonTooltip: "ä_See attached documents________Ü", // Tooltip for command button shown in details panel
-            mapButtonLabel: "ä_View on Map____Ü", // Command button shown in details panel
-            mapButtonTooltip: "ä_View the location of this report___________Ü", // Tooltip for command button shown in details panel
-            commentsListHeading: "ä_Comments___Ü", // List heading for Comments section in details panel
-            unableToUpdateVoteField: "ä_Your vote cannot be added at this time_____________Ü.", // Error message for feature unable to update
-            gotoIssueListTooltip: "ä_Go to the report list_______Ü" // Tooltip for back icon in Issue list header
+            likeButtonLabel: "Wie", // Command button shown in details panel
+            likeButtonTooltip: "Für diesen Bericht stimmen",  // Tooltip for command button shown in details panel
+            commentButtonLabel: "Kommentar", // Command button shown in details panel
+            commentButtonTooltip: "Diesen Bericht kommentieren", // Tooltip for command button shown in details panel
+            galleryButtonLabel: "Galerie", // Command button shown in details panel
+            galleryButtonTooltip: "Angehängte Dokumente anzeigen", // Tooltip for command button shown in details panel
+            mapButtonLabel: "Auf Karte anzeigen", // Command button shown in details panel
+            mapButtonTooltip: "Speicherort dieses Berichts anzeigen", // Tooltip for command button shown in details panel
+            commentsListHeading: "Bemerkungen", // List heading for Comments section in details panel
+            unableToUpdateVoteField: "Ihre Stimme kann zurzeit nicht hinzugefügt werden.", // Error message for feature unable to update
+            gotoIssueListTooltip: "Zur Berichtsliste wechseln" // Tooltip for back icon in Issue list header
         },
         itemList: {  // List of feature layer items shown in my-issues and issue-wall
-            likesForThisItemTooltip: "ä_Votes for this report_______Ü" //Shown on hovering of the like icon in my-issues and issue-wall
+            likesForThisItemTooltip: "Stimmen für diesen Bericht" //Shown on hovering of the like icon in my-issues and issue-wall
         },
         comment: {
-            commentsFormText: "ä_Comment___Ü",
-            commentsFormSubmitButton: "ä_Submit Comment_____Ü",
-            commentsFormCancelButton: "ä_Cancel___Ü",
-            errorInSubmittingComment: "ä_Comment could not be submitted__________Ü.", // Shown when user is unable to add comments
-            emptyCommentMessage: "ä_Please enter a comment________Ü.", // Shown when user submits a comment without any text/character
-            placeHolderText: "ä_Type a comment_____Ü", // Shown as a placeholder in comments textbox
-            noCommentsAvailableText: "ä_No comments available_______Ü", // Shown when no comments are available for the selected issue
-            remainingTextCount: "ä_${0} character(s) remain________Ü", // Shown below the comments textbox indicating the number of characters that can be added
-            showNoText: "ä_No__Ü" // Shown when comments character limit is exceeded
+            commentsFormText: "Kommentar",
+            commentsFormSubmitButton: "Kommentar senden",
+            commentsFormCancelButton: "Abbrechen",
+            errorInSubmittingComment: "Kommentar konnte nicht gesendet werden.", // Shown when user is unable to add comments
+            emptyCommentMessage: "Geben Sie einen Kommentar ein.", // Shown when user submits a comment without any text/character
+            placeHolderText: "Kommentar eingeben", // Shown as a placeholder in comments textbox
+            noCommentsAvailableText: "Keine Kommentare verfügbar", // Shown when no comments are available for the selected issue
+            remainingTextCount: "${0} Zeichen verbleiben", // Shown below the comments textbox indicating the number of characters that can be added
+            showNoText: "Nein" // Shown when comments character limit is exceeded
         },
         gallery: {
-            galleryHeaderText: "ä_Gallery___Ü",
-            noAttachmentsAvailableText: "ä_No attachments found_______Ü" // Shown when no comments are available for the selected issue
+            galleryHeaderText: "Galerie",
+            noAttachmentsAvailableText: "Keine Anlagen gefunden" // Shown when no comments are available for the selected issue
         }
     })
 );

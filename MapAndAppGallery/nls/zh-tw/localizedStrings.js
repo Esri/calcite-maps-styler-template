@@ -68,8 +68,8 @@ define(
             signInBtnTitle: "登錄",
             signOutBtnTitle: "登出",
             geolocationBtnTitle: "地理位置",
-            ascendingSort: "試_Ascending____驗",
-            descendingSort: "試_Descending____驗"
+            ascendingSort: "升冪",
+            descendingSort: "降冪"
         },
         errorMessages: {
             emptyGroup: "已設定的群組沒有任何用於執行查詢的資料。",

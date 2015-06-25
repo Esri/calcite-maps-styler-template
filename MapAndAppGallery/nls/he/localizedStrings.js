@@ -68,8 +68,8 @@ define(
             signInBtnTitle: "התחבר",
             signOutBtnTitle: "התנתק",
             geolocationBtnTitle: "מיקום מרחבי",
-            ascendingSort: "כן_Ascending____ש",
-            descendingSort: "כן_Descending____ש"
+            ascendingSort: "עולה",
+            descendingSort: "יורד"
         },
         errorMessages: {
             emptyGroup: "אין לקבוצה שהוגדרה נתונים בכדי לבצע את השאילתא.",

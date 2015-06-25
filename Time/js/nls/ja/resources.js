@@ -17,30 +17,30 @@
 define(
    ({
     map: {
-      error: "須_Unable to create map_______鷗"
+      error: "マップを作成できません"
     },
     legend:{
-      title: "須_Legend___鷗"
+      title: "凡例"
     },
     share: {
-      title: "須_Share___鷗"
+      title: "共有"
     },
     about: {
-      title: "須_About___鷗",
-      error: "須_By default the web map description or snippet will be used. Configure the app to add a custom snippet for the about panel______________________________________鷗."
+      title: "情報",
+      error: "デフォルトで Web マップの説明またはスニペットが使用されます。情報パネル用にカスタム スニペットを追加するようにアプリを構成します。"
     },
     time: {
-        enableTimeMessage: "須_The specified web map does not contain any time enabled layers. View the <a target='_blank' href='http://doc.arcgis.com/en/arcgis-online/create-maps/configure-time.htm#ESRI_SECTION1_F1D4A275B4AB4CC79198CBA9D0AD8727'>Configure time settings</a> help topic for details. To use the template without displaying time use the configuration panel to disable the time option_______________________________________________________________________________________________________________鷗.",
-        datePattern: "須_MMMM d, yyyy_____鷗",
-        hourTimePattern: "須_h a__鷗",
-        millisecondTimePattern: "須_h:mm:ss a____鷗",
-        minuteTimePattern: "須_h:mm a___鷗",
-        secondTimePattern: "須_h:mm:ss a____鷗",
-        timeRange: "須_${startTime} to ${endTime}_________鷗",
-        yearPattern: "須_yyyy__鷗"
+        enableTimeMessage: "指定した Web マップに時間対応レイヤーが含まれていません。詳細については、「<a target=\'_blank\' href=\'http://doc.arcgis.com/en/arcgis-online/create-maps/configure-time.htm#ESRI_SECTION1_F1D4A275B4AB4CC79198CBA9D0AD8727\'>時間設定の構成</a>」ヘルプ トピックをご参照ください。時間を表示せずにこのテンプレートを使用するには、構成パネルを使用して時間オプションを無効にします。",
+        datePattern: "yyyy\'年\'M\'月\'d\'日\'",
+        hourTimePattern: "h a",
+        millisecondTimePattern: "h:mm:ss a",
+        minuteTimePattern: "h:mm a",
+        secondTimePattern: "h:mm:ss a",
+        timeRange: "${startTime} ～ ${endTime}",
+        yearPattern: "yyyy"
     },
     histogram:{
-      error: "須_No time-enabled feature layers, in snapshot mode, are available in the web map. Configure the app to use another web map or disable the histogram option_______________________________________________鷗."
+      error: "スナップショット モードの時間対応フィーチャ レイヤーを Web マップで使用できません。別の Web マップを使用するようにアプリを構成するか、ヒストグラム オプションを無効にします。"
     }
   })
 );

@@ -15,7 +15,7 @@
       }
     },
     legend:{
-      title: "ø_Legend___å"
+      title: "Signaturforklaring"
     }
   })
 );

@@ -68,8 +68,8 @@ define(
             signInBtnTitle: "Logi sisse",
             signOutBtnTitle: "Logi välja",
             geolocationBtnTitle: "Geoasukoht",
-            ascendingSort: "Š_Ascending____ä",
-            descendingSort: "Š_Descending____ä"
+            ascendingSort: "Kahanev",
+            descendingSort: "Kahanev"
         },
         errorMessages: {
             emptyGroup: "Konfigureeritud rühmas pole päringu sooritamiseks andmeid.",

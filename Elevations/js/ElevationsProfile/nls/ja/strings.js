@@ -1,9 +1,9 @@
 ﻿define(
    ({
     display: {
-      elevationProfileTitle: "須_Elevation Profile______鷗",
+      elevationProfileTitle: "標高グラフ",
       showMe: "表示",
-      selectLine: "須_<b>Select</b> a line feature in the map_____________鷗.",
+      selectLine: "マップ内のライン フィーチャを<b>選択</b>します。",
       popupRequirement: "注意: フィーチャはポップアップが有効になっているレイヤ内にある必要があります。",
       digitizeDistanceMeasureTool: "<b>計測</b>ツールを使用します。",
       selectFeatureHelpUrl: "http://help.arcgis.com/ja/arcgisonline/help/010q/010q0000004s000000.htm#ESRI_SECTION1_DAA22E89DF67448E8F3682309F39BE5D",
@@ -15,7 +15,7 @@
       helpLabel: "ヘルプ"
     },
     chart: {
-      title: "須_Elevation Profile______鷗",
+      title: "標高グラフ",
       demResolution: "DEM 解像度",
       elevationTitleTemplate: "標高 ({0})",
       distanceTitleTemplate: "距離 ({0})",

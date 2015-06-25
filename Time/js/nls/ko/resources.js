@@ -17,30 +17,30 @@
 define(
    ({
     map: {
-      error: "한_Unable to create map_______빠"
+      error: "맵을 생성할 수 없음"
     },
     legend:{
-      title: "한_Legend___빠"
+      title: "범례"
     },
     share: {
-      title: "한_Share___빠"
+      title: "공유"
     },
     about: {
-      title: "한_About___빠",
-      error: "한_By default the web map description or snippet will be used. Configure the app to add a custom snippet for the about panel______________________________________빠."
+      title: "정보",
+      error: "기본 설정으로 웹 맵 설명이나 스니펫이 사용됩니다. 정보 패널에 대한 사용자 정의 스니펫을 추가하도록 앱을 구성합니다."
     },
     time: {
-        enableTimeMessage: "한_The specified web map does not contain any time enabled layers. View the <a target='_blank' href='http://doc.arcgis.com/en/arcgis-online/create-maps/configure-time.htm#ESRI_SECTION1_F1D4A275B4AB4CC79198CBA9D0AD8727'>Configure time settings</a> help topic for details. To use the template without displaying time use the configuration panel to disable the time option_______________________________________________________________________________________________________________빠.",
-        datePattern: "한_MMMM d, yyyy_____빠",
-        hourTimePattern: "한_h a__빠",
-        millisecondTimePattern: "한_h:mm:ss a____빠",
-        minuteTimePattern: "한_h:mm a___빠",
-        secondTimePattern: "한_h:mm:ss a____빠",
-        timeRange: "한_${startTime} to ${endTime}_________빠",
-        yearPattern: "한_yyyy__빠"
+        enableTimeMessage: "지정한 웹 맵에 시계열 레이어가 포함되어 있지 않습니다. 자세한 내용은 <a target=\'_blank\' href=\'http://doc.arcgis.com/en/arcgis-online/create-maps/configure-time.htm#ESRI_SECTION1_F1D4A275B4AB4CC79198CBA9D0AD8727\'>시간 설정 구성</a> 도움말 항목을 확인하세요. 시간을 표시하지 않고 템플릿을 사용하려면 구성 패널을 사용하여 시간 옵션을 비활성화하세요.",
+        datePattern: "yyyy MMMM d",
+        hourTimePattern: "a h",
+        millisecondTimePattern: "a h:mm:ss",
+        minuteTimePattern: "a h:mm",
+        secondTimePattern: "a h:mm:ss",
+        timeRange: "${startTime} ~ ${endTime}",
+        yearPattern: "yyyy"
     },
     histogram:{
-      error: "한_No time-enabled feature layers, in snapshot mode, are available in the web map. Configure the app to use another web map or disable the histogram option_______________________________________________빠."
+      error: "스냅샷 모드에서는 웹 맵에서 사용할 수 있는 시간 활성화 피처 레이어가 없습니다. 히스토그램 옵션을 비활성화하거나 다른 웹 맵을 사용하도록 앱을 구성하세요."
     }
   })
 );

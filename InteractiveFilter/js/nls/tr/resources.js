@@ -15,7 +15,7 @@
       }
     },
     legend:{
-      title: "ı_Legend___İ"
+      title: "Açıklama"
     }
   })
 );

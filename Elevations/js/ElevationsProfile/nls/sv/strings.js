@@ -1,9 +1,9 @@
 ﻿define(
    ({
     display: {
-      elevationProfileTitle: "Å_Elevation Profile______ö",
+      elevationProfileTitle: "Profil för höjdkurva",
       showMe: "visa mig",
-      selectLine: "Å_<b>Select</b> a line feature in the map_____________ö.",
+      selectLine: "<b>Välj</b> ett linjegeoobjekt på kartan.",
       popupRequirement: "Obs! Geoobjektet måste finnas i ett lager där popupfönster har aktiverats.",
       digitizeDistanceMeasureTool: "Använd <b>Mät</b>-verktygen.",
       selectFeatureHelpUrl: "http://help.arcgis.com/sv/arcgisonline/help/010q/010q0000004s000000.htm#ESRI_SECTION1_DAA22E89DF67448E8F3682309F39BE5D",
@@ -15,7 +15,7 @@
       helpLabel: "Hjälp"
     },
     chart: {
-      title: "Å_Elevation Profile______ö",
+      title: "Profil för höjdkurva",
       demResolution: "DEM-upplösning",
       elevationTitleTemplate: "Höjd i {0}",
       distanceTitleTemplate: "Avstånd i {0}",

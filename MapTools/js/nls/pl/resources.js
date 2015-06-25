@@ -20,7 +20,7 @@ define(
             error: "Nie można utworzyć mapy"
         },
         tools:{
-            bookmarkTool: "ł_Bookmarks____ą",
+            bookmarkTool: "Zakładki",
             basemapTool: "Mapy bazowe",
             legendTool: "Legenda",
             detailsTool: "Szczegóły",
@@ -37,8 +37,8 @@ define(
                   "label3": 'Poziomo',
                   "label4": 'Pionowo'
             },
-            printTitle: "ł_Title___ą",
-            printTitlePrompt: "ł_Add custom title______ą"
+            printTitle: "Tytuł",
+            printTitlePrompt: "Dodaj niestandardowy tytuł"
         }
     })
 );

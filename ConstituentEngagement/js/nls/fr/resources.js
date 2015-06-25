@@ -17,132 +17,132 @@
 define(
      ({
         map: {
-            error: "æ_Unable to create map_______Â",
-            zoomInTooltip: "æ_Zoom in___Â",  // Command button to zoom in to the map
-            zoomOutTooltip: "æ_Zoom out___Â",  // Command button to zoom out of the map
-            geolocationTooltip: "æ_Current location______Â"  // Command button to navigate to the current geographical position
+            error: "Impossible de créer la carte",
+            zoomInTooltip: "Zoom avant",  // Command button to zoom in to the map
+            zoomOutTooltip: "Zoom arrière",  // Command button to zoom out of the map
+            geolocationTooltip: "Position actuelle"  // Command button to navigate to the current geographical position
         },
         main: {
-            noGroup: "æ_No group configured_______Â", // Shown when no group is configured in the configuration file
-            submitReportButtonText: "æ_Submit a report______Â", //Submit report  text for buttons on map and list
-            gotoListViewTooltip: "æ_List view____Â", // Go to List view tooltip text
-            noFeatureGeomtery: "æ_Feature cannot be displayed_________Â" // Error message when geomtery is not available
+            noGroup: "Aucun groupe configuré", // Shown when no group is configured in the configuration file
+            submitReportButtonText: "Envoyer un rapport", //Submit report  text for buttons on map and list
+            gotoListViewTooltip: "Vue Liste", // Go to List view tooltip text
+            noFeatureGeomtery: "Impossible d\'afficher l\'entité" // Error message when geomtery is not available
         },
         signin: {
-            guestSigninText: "æ_Proceed as Guest______Â", // Shown in the 'Sign in' page below the icon for accessing application as an anonymous user
-            signInOrText: "æ_Or__Â", // Or text on sign in screen
-            signinOptionsText: "æ_Sign in with_____Â:", // Shown in the 'Sign in' page above the icons for social media sign in
-            noGroupNameText: "æ_Please sign in_____Â", // Shown when the group title is not available or the group is private
-            guestLoginTooltip: "æ_Sign in as a guest______Â", // Command button to access the application as an anonymous user
-            facebookLoginTooltip: "æ_Sign in with Facebook_______Â", // Command button to access the application via Facebook login
-            twitterLoginTooltip: "æ_Sign in with Twitter_______Â", // Command button to access the application via Twitter login
-            googlePlusLoginTooltip: "æ_Sign in with Google+_______Â", // Command button to access the application via Google+ login
-            agolLoginTooltip: "æ_Sign in with ArcGIS_______Â" // Command button to access the application via AGOL login
+            guestSigninText: "Continuer comme invité", // Shown in the 'Sign in' page below the icon for accessing application as an anonymous user
+            signInOrText: "Ou", // Or text on sign in screen
+            signinOptionsText: "Se connecter avec :", // Shown in the 'Sign in' page above the icons for social media sign in
+            noGroupNameText: "Connectez-vous", // Shown when the group title is not available or the group is private
+            guestLoginTooltip: "Se connecter comme invité", // Command button to access the application as an anonymous user
+            facebookLoginTooltip: "Se connecter avec Facebook", // Command button to access the application via Facebook login
+            twitterLoginTooltip: "Se connecter avec Twitter", // Command button to access the application via Twitter login
+            googlePlusLoginTooltip: "Se connecter avec Google+", // Command button to access the application via Google+ login
+            agolLoginTooltip: "Se connecter avec ArcGIS" // Command button to access the application via AGOL login
         },
         webMapList: {
-            owner: "æ_Owner___Â", // Shown in the 'Map information' section indicating the owner of the webmap
-            created: "æ_Date dreated_____Â", // Shown in the 'Map information' section indicating the date when the webmap was created
-            modified: "æ_Date modified_____Â", // Shown in the 'Map information' section indicating the date when the webmap was modified
-            description: "æ_Description____Â", // Shown in the 'Map information' section describing the webmap
-            snippet: "æ_Summary___Â", // Shown in the 'Map information' section providing the summary of the webmap
-            licenseInfo: "æ_Access and use constraints_________Â", // Shown in the map information section indicating the webmap license information
-            accessInformation: "æ_Credits___Â", // Shown in the 'Map information' section indicating account credits
-            tags: "æ_Tags__Â", // Shown in the 'Map information' section indicating tags of the webmap
-            numViews: "æ_Number of views______Â", // Shown in the 'Map information' section indicating number of times the webmap has been viewed
-            avgRating: "æ_Rating___Â", // Shown in the 'Map information' section indicating webmap rating
-            noWebMapInGroup: "æ_Configured group is invalid or no items have been shared with this group yet________________________Â.", // Shown when the configured group is invalid/private or no items have been shared with the group
-            infoBtnToolTip: "æ_Map information______Â" // Command button to view the 'Map information'
+            owner: "Propriétaire", // Shown in the 'Map information' section indicating the owner of the webmap
+            created: "Date de création", // Shown in the 'Map information' section indicating the date when the webmap was created
+            modified: "Date de modification", // Shown in the 'Map information' section indicating the date when the webmap was modified
+            description: "Description", // Shown in the 'Map information' section describing the webmap
+            snippet: "Résumé", // Shown in the 'Map information' section providing the summary of the webmap
+            licenseInfo: "Restrictions d\'accès et d\'utilisation", // Shown in the map information section indicating the webmap license information
+            accessInformation: "Crédits", // Shown in the 'Map information' section indicating account credits
+            tags: "Balises", // Shown in the 'Map information' section indicating tags of the webmap
+            numViews: "Nombre de vues", // Shown in the 'Map information' section indicating number of times the webmap has been viewed
+            avgRating: "Evaluation", // Shown in the 'Map information' section indicating webmap rating
+            noWebMapInGroup: "Le groupe configuré n\'est pas valide ou aucun élément n\'a encore été partagé avec ce groupe.", // Shown when the configured group is invalid/private or no items have been shared with the group
+            infoBtnToolTip: "Informations sur la carte" // Command button to view the 'Map information'
         },
         issueWall: {
-            noResultsFound: "æ_No reports available in the current area_____________Â", // Shown in the issue wall when no issues are present in the current map extent
-            gotoWebmapListTooltip: "æ_Go to main list______Â", // Tooltip for back icon in list header
-            gotoMapViewTooltip: "æ_Map view___Â" // Tooltip for map-it icon in list header
+            noResultsFound: "Aucun rapport n\'est disponible dans la zone actuelle", // Shown in the issue wall when no issues are present in the current map extent
+            gotoWebmapListTooltip: "Accéder à la liste principale", // Tooltip for back icon in list header
+            gotoMapViewTooltip: "Vue cartographique" // Tooltip for map-it icon in list header
         },
         appHeader: {
-            myReport: "æ_My Reports____Â", // Command button shown in mobile menu list
-            signIn: "æ_Sign In___Â", // Command button shown in mobile menu list and in appheader
-            signOut: "æ_Sign Out___Â", // Command button shown in mobile menu list
-            help: "æ_Help__Â", // Command button shown in mobile menu list
-            signInTooltip: "æ_Sign in___Â", // Tooltip to 'Sign in' option
-            signOutTooltip: "æ_Sign out___Â", // Tooltip  to 'Sign out' option
-            myReportTooltip: "æ_View reports submitted by me_________Â", // Tooltip  to 'My Reports' option
-            helpTooltip: "æ_Help__Â" // Tooltip  to 'Help' option
+            myReport: "Mes rapports", // Command button shown in mobile menu list
+            signIn: "Connexion", // Command button shown in mobile menu list and in appheader
+            signOut: "Déconnexion", // Command button shown in mobile menu list
+            help: "Aide", // Command button shown in mobile menu list
+            signInTooltip: "Connexion", // Tooltip to 'Sign in' option
+            signOutTooltip: "Déconnexion", // Tooltip  to 'Sign out' option
+            myReportTooltip: "Afficher les rapports que j\'ai envoyés", // Tooltip  to 'My Reports' option
+            helpTooltip: "Aide" // Tooltip  to 'Help' option
         },
         geoform: {
-            enterInformation: "æ_Details___Â", // Shown as the first section of the geoform, where the user can enter details of the issue
-            selectAttachments: "æ_Attachments____Â", // Appears above 'Select file' button indicating option to attach files
-            selectFileText: "æ_Browse___Â", // Command button to open a dialog box to select file(s) to be attached
-            enterLocation: "æ_Location___Â", // Shown as the second section of the geoform, where the user can select a location on the map
-            reportItButton: "æ_Report It____Â", // Command button to submit the geoform to report an issue
-            cancelButton: "æ_Cancel___Â", //Command button to close the geoform
-            requiredField: "æ_(required)____Â", // Shown next to the field in which the data is mandatory
-            selectDefaultText: "æ_Select&hellip;_____Â", // Shown in the dropdown field indicating to select an option
-            invalidInputValue: "æ_Please enter valid value_________Â.", // Shown when user clicks/taps the required field but does not enter the data and comes out of the required field
-            noFieldsConfiguredMessage: "æ_Layer fields are not configured to capture data_______________Â", // Shown when all the fields of the selected layer are disabled
-            invalidSmallNumber: "æ_Please enter an integer________Â", // Shown when the entered value is beyond the specified range (valid ${openStrong}integer${closeStrong} value between -32768 and 32767.)
-            invalidNumber: "æ_Please enter an integer________Â", // Shown when the entered value is beyond the specified range (valid ${openStrong}integer${closeStrong} value between -2147483648 and 2147483647.)
-            invalidFloat: "æ_Please enter a number_______Â", // Shown when the entered value is beyond the specified range (valid ${openStrong}floating point${closeStrong} value between -3.4E38 and 1.2E38 )
-            invalidDouble: "æ_Please enter a number_______Â", // Shown when the entered value is beyond the specified range (valid ${openStrong}double${closeStrong} value between -2.2E308 and 1.8E308)
-            requiredFields: "æ_Please provide values for all required fields_______________Â", // Shown when user submits the geoform without entering data in the mandatory field(s)
-            selectLocation: "æ_Please select the location for your report______________Â", // Shown when user submits the geoform without selecting location on the map
-            numericRangeHintMessage: "æ_${openStrong}Hint:${closeStrong} Minimum value ${minValue} and Maximum value ${maxValue}___________________________Â", // Shown as a pop over above the fields with numeric values, indicating the minimum and maximum range
-            dateRangeHintMessage: "æ_${openStrong}Hint:${closeStrong} Minimum Date ${minValue} and Maximum Date ${maxValue}___________________________Â", // Shown as a pop over above the fields with date values, indicating the minimum and maximum date range
-            errorsInApplyEdits: "æ_Issue could not be reported_________Â", // Shown when there is an error in any of the services while submitting the geoform
-            attachmentSelectedMsg: "æ_attachment(s) selected________Â", // Shown besides the select file button indicating the number of files attached
-            attachmentUploadStatus: "æ_${failed} of ${total} attachment(s) failed to upload_________________Â", // Shown when there is error while uploading the attachment, while submitting the geoform
-            geoLocationError: "æ_Current location not available__________Â",  // Shown when the browser returns an error instead of the current geographical position
-            geoLocationOutOfExtent: "æ_Current location is out of basemap extent_____________Â",  // Shown when the current geographical position is out of the basemap extent
-            submitButtonTooltip: "æ_Report It____Â", // Command button to open the geoform
-            cancelButtonTooltip: "æ_Cancel___Â", //tooltip for cancel button
-            geoformBackButtonTooltip: "æ_Go to the report list_______Â" //tooltip for Geoform back button
+            enterInformation: "Détails", // Shown as the first section of the geoform, where the user can enter details of the issue
+            selectAttachments: "Pièces jointes", // Appears above 'Select file' button indicating option to attach files
+            selectFileText: "Parcourir", // Command button to open a dialog box to select file(s) to be attached
+            enterLocation: "Emplacement", // Shown as the second section of the geoform, where the user can select a location on the map
+            reportItButton: "Signaler", // Command button to submit the geoform to report an issue
+            cancelButton: "Annuler", //Command button to close the geoform
+            requiredField: "(requis)", // Shown next to the field in which the data is mandatory
+            selectDefaultText: "Sélectionner&hellip;", // Shown in the dropdown field indicating to select an option
+            invalidInputValue: "Entrez une valeur valide.", // Shown when user clicks/taps the required field but does not enter the data and comes out of the required field
+            noFieldsConfiguredMessage: "Les champs de couche ne sont pas configurés pour capturer les données", // Shown when all the fields of the selected layer are disabled
+            invalidSmallNumber: "Entrez un entier", // Shown when the entered value is beyond the specified range (valid ${openStrong}integer${closeStrong} value between -32768 and 32767.)
+            invalidNumber: "Entrez un entier", // Shown when the entered value is beyond the specified range (valid ${openStrong}integer${closeStrong} value between -2147483648 and 2147483647.)
+            invalidFloat: "Please enter a number", // Shown when the entered value is beyond the specified range (valid ${openStrong}floating point${closeStrong} value between -3.4E38 and 1.2E38 )
+            invalidDouble: "Please enter a number", // Shown when the entered value is beyond the specified range (valid ${openStrong}double${closeStrong} value between -2.2E308 and 1.8E308)
+            requiredFields: "Indiquez des valeurs pour tous les champs requis", // Shown when user submits the geoform without entering data in the mandatory field(s)
+            selectLocation: "Sélectionnez l\'emplacement de votre rapport", // Shown when user submits the geoform without selecting location on the map
+            numericRangeHintMessage: "${openStrong}Astuce :${closeStrong} valeur minimale ${minValue} et valeur maximale ${maxValue}", // Shown as a pop over above the fields with numeric values, indicating the minimum and maximum range
+            dateRangeHintMessage: "${openStrong}Astuce :${closeStrong} date minimum ${minValue} et date maximum ${maxValue}", // Shown as a pop over above the fields with date values, indicating the minimum and maximum date range
+            errorsInApplyEdits: "Impossible de signaler le problème", // Shown when there is an error in any of the services while submitting the geoform
+            attachmentSelectedMsg: "pièce(s) jointe(s) sélectionnée(s)", // Shown besides the select file button indicating the number of files attached
+            attachmentUploadStatus: "Echec du chargement de ${failed} sur ${total} pièce(s) jointe(s)", // Shown when there is error while uploading the attachment, while submitting the geoform
+            geoLocationError: "Localisant actuel non disponible",  // Shown when the browser returns an error instead of the current geographical position
+            geoLocationOutOfExtent: "L\'étendue courante est en dehors de l\'étendue du fond de carte",  // Shown when the current geographical position is out of the basemap extent
+            submitButtonTooltip: "Signaler", // Command button to open the geoform
+            cancelButtonTooltip: "Annuler", //tooltip for cancel button
+            geoformBackButtonTooltip: "Accéder à la liste des rapports" //tooltip for Geoform back button
 
         },
         locator: {
-            addressText: "æ_Address___Â:", // Shown as a title for a group of addresses returned on performing unified search
-            usngText: "æ_USNG__Â", // Shown as a title for a group of USNG values returned on performing unified search
-            mgrsText: "æ_MGRS__Â", // Shown as a title for a group of MGRS values returned on performing unified search
-            latLongText: "æ_Latitude/Longitude______Â", // Shown as a title for a group of latitude longitude values returned on performing unified search
-            invalidSearch: "æ_No results found______Â", // Shown in the address container when no results are returned on performing unified search
-            locatorPlaceholder: "æ_Enter an address to search_________Â", // Shown in the address container textbox as a placeholder
-            locationOutOfExtent: "æ_Located address is out of basemap extent_____________Â", // Shown as an alert when the selected address in the search result is out of basemap extent
-            searchButtonTooltip: "æ_Search___Â", // Tooltip for search button
-            clearButtonTooltip: "æ_Clear search value______Â" // Tooltip for Geocoder clear button
+            addressText: "Adresse :", // Shown as a title for a group of addresses returned on performing unified search
+            usngText: "USNG", // Shown as a title for a group of USNG values returned on performing unified search
+            mgrsText: "MGRS", // Shown as a title for a group of MGRS values returned on performing unified search
+            latLongText: "Latitude/Longitude", // Shown as a title for a group of latitude longitude values returned on performing unified search
+            invalidSearch: "Aucun résultat trouvé", // Shown in the address container when no results are returned on performing unified search
+            locatorPlaceholder: "Entrer une adresse à rechercher", // Shown in the address container textbox as a placeholder
+            locationOutOfExtent: "L\'adresse localisée est en dehors de l\'étendue du fond de carte", // Shown as an alert when the selected address in the search result is out of basemap extent
+            searchButtonTooltip: "Rechercher", // Tooltip for search button
+            clearButtonTooltip: "Effacer la valeur de recherche" // Tooltip for Geocoder clear button
         },
         myIssues: {
-            title: "æ_My Reports____Â", // Shown as a title in 'My issues' panel
-            myIssuesTooltip: "æ_My Reports____Â", // Command button to access issues reported by the logged in user
-            noResultsFound: "æ_No reports found______Â" // Shown when no issues are reported by the logged in user
+            title: "Mes rapports", // Shown as a title in 'My issues' panel
+            myIssuesTooltip: "Mes rapports", // Command button to access issues reported by the logged in user
+            noResultsFound: "Aucun rapport trouvé" // Shown when no issues are reported by the logged in user
         },
         itemDetails: {  // Detailed information about an item and a list of its comments
-            likeButtonLabel: "æ_Like__Â", // Command button shown in details panel
-            likeButtonTooltip: "æ_Vote for this report_______Â",  // Tooltip for command button shown in details panel
-            commentButtonLabel: "æ_Comment___Â", // Command button shown in details panel
-            commentButtonTooltip: "æ_Comment on this report________Â", // Tooltip for command button shown in details panel
-            galleryButtonLabel: "æ_Gallery___Â", // Command button shown in details panel
-            galleryButtonTooltip: "æ_See attached documents________Â", // Tooltip for command button shown in details panel
-            mapButtonLabel: "æ_View on Map____Â", // Command button shown in details panel
-            mapButtonTooltip: "æ_View the location of this report___________Â", // Tooltip for command button shown in details panel
-            commentsListHeading: "æ_Comments___Â", // List heading for Comments section in details panel
-            unableToUpdateVoteField: "æ_Your vote cannot be added at this time_____________Â.", // Error message for feature unable to update
-            gotoIssueListTooltip: "æ_Go to the report list_______Â" // Tooltip for back icon in Issue list header
+            likeButtonLabel: "Comme", // Command button shown in details panel
+            likeButtonTooltip: "Voter pour ce rapport",  // Tooltip for command button shown in details panel
+            commentButtonLabel: "Commentaire", // Command button shown in details panel
+            commentButtonTooltip: "Commenter ce rapport", // Tooltip for command button shown in details panel
+            galleryButtonLabel: "Bibliothèque", // Command button shown in details panel
+            galleryButtonTooltip: "Voir les documents joints", // Tooltip for command button shown in details panel
+            mapButtonLabel: "Afficher sur la carte", // Command button shown in details panel
+            mapButtonTooltip: "Afficher l\'emplacement de ce rapport", // Tooltip for command button shown in details panel
+            commentsListHeading: "Commentaires", // List heading for Comments section in details panel
+            unableToUpdateVoteField: "Il est actuellement impossible d\'ajouter votre vote.", // Error message for feature unable to update
+            gotoIssueListTooltip: "Accéder à la liste des rapports" // Tooltip for back icon in Issue list header
         },
         itemList: {  // List of feature layer items shown in my-issues and issue-wall
-            likesForThisItemTooltip: "æ_Votes for this report_______Â" //Shown on hovering of the like icon in my-issues and issue-wall
+            likesForThisItemTooltip: "Votes pour ce rapport" //Shown on hovering of the like icon in my-issues and issue-wall
         },
         comment: {
-            commentsFormText: "æ_Comment___Â",
-            commentsFormSubmitButton: "æ_Submit Comment_____Â",
-            commentsFormCancelButton: "æ_Cancel___Â",
-            errorInSubmittingComment: "æ_Comment could not be submitted__________Â.", // Shown when user is unable to add comments
-            emptyCommentMessage: "æ_Please enter a comment________Â.", // Shown when user submits a comment without any text/character
-            placeHolderText: "æ_Type a comment_____Â", // Shown as a placeholder in comments textbox
-            noCommentsAvailableText: "æ_No comments available_______Â", // Shown when no comments are available for the selected issue
-            remainingTextCount: "æ_${0} character(s) remain________Â", // Shown below the comments textbox indicating the number of characters that can be added
-            showNoText: "æ_No__Â" // Shown when comments character limit is exceeded
+            commentsFormText: "Commentaire",
+            commentsFormSubmitButton: "Envoyer un commentaire",
+            commentsFormCancelButton: "Annuler",
+            errorInSubmittingComment: "Impossible d\'envoyer le commentaire.", // Shown when user is unable to add comments
+            emptyCommentMessage: "Saisissez un commentaire.", // Shown when user submits a comment without any text/character
+            placeHolderText: "Saisir un commentaire", // Shown as a placeholder in comments textbox
+            noCommentsAvailableText: "Aucun commentaire disponible", // Shown when no comments are available for the selected issue
+            remainingTextCount: "${0} caractère(s) restant(s)", // Shown below the comments textbox indicating the number of characters that can be added
+            showNoText: "Non" // Shown when comments character limit is exceeded
         },
         gallery: {
-            galleryHeaderText: "æ_Gallery___Â",
-            noAttachmentsAvailableText: "æ_No attachments found_______Â" // Shown when no comments are available for the selected issue
+            galleryHeaderText: "Bibliothèque",
+            noAttachmentsAvailableText: "Aucune pièce jointe trouvée" // Shown when no comments are available for the selected issue
         }
     })
 );

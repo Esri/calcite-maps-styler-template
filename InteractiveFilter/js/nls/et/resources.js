@@ -15,7 +15,7 @@
       }
     },
     legend:{
-      title: "Š_Legend___ä"
+      title: "Legendiga kaart"
     }
   })
 );

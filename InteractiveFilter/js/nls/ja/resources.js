@@ -15,7 +15,7 @@
       }
     },
     legend:{
-      title: "須_Legend___鷗"
+      title: "凡例"
     }
   })
 );

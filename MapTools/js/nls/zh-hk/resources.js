@@ -20,7 +20,7 @@ define(
             error: "無法建立地圖"
         },
         tools:{
-            bookmarkTool: "試_Bookmarks____驗",
+            bookmarkTool: "書簽",
             basemapTool: "底圖",
             legendTool: "圖例",
             detailsTool: "詳細資訊",
@@ -37,8 +37,8 @@ define(
                   "label3": '橫向',
                   "label4": '縱向'
             },
-            printTitle: "試_Title___驗",
-            printTitlePrompt: "試_Add custom title______驗"
+            printTitle: "標題",
+            printTitlePrompt: "新增自訂標題"
         }
     })
 );

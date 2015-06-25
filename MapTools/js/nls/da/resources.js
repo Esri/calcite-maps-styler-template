@@ -20,7 +20,7 @@ define(
             error: "Kan ikke oprette kort"
         },
         tools:{
-            bookmarkTool: "ø_Bookmarks____å",
+            bookmarkTool: "Bogmærker",
             basemapTool: "Basemaps",
             legendTool: "Signaturforklaring",
             detailsTool: "Oplysninger",
@@ -37,8 +37,8 @@ define(
                   "label3": 'På langs',
                   "label4": 'På højkant'
             },
-            printTitle: "ø_Title___å",
-            printTitlePrompt: "ø_Add custom title______å"
+            printTitle: "Titel",
+            printTitlePrompt: "Tilføj brugerdefineret titel"
         }
     })
 );

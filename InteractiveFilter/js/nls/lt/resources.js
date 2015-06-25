@@ -15,7 +15,7 @@
       }
     },
     legend:{
-      title: "Į_Legend___š"
+      title: "Legenda"
     }
   })
 );

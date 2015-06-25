@@ -17,77 +17,77 @@
 define(
      ({
         map: {
-            error: "ķ_Unable to create map_______ū" // Shown when error occurs while creation of map
+            error: "Nevar izveidot karti" // Shown when error occurs while creation of map
         },
         main: {
-            noGroup: "ķ_No group configured_______ū" // Appears when no group is configured
+            noGroup: "Nav konfigurētas grupas" // Appears when no group is configured
         },
         webMapList: {
-            owner: "ķ_Owner___ū", // Appears in web-map list description panel when it is set to true
-            created: "ķ_Date created_____ū", // Appears in web-map list description panel when it is set to true
-            modified: "ķ_Date modified_____ū", // Appears in web-map list description panel when it is set to true
-            description: "ķ_Description____ū", // Appears in web-map list description panel when it is set to true
-            snippet: "ķ_Summary___ū", // Appears in web-map list description panel when it is set to true
-            licenseInfo: "ķ_Access and use constraints_________ū", // Appears in web-map list description panel when it is set to true
-            accessInformation: "ķ_Credits___ū", // Appears in web-map list description panel when it is set to true
-            tags: "ķ_Tags__ū", // Appears in web-map list description panel when it is set to true
-            numViews: "ķ_Number of views______ū", // Appears in web-map list description panel when it is set to true
-            avgRating: "ķ_Rating___ū", // Appears in web-map list description panel when it is set to true
-            noWebMapInGroup: "ķ_Configured group is invalid or no items have been shared with this group yet________________________ū", // Appears when invalid group in configured or no web-map is available in that group
-            infoBtnToolTip: "ķ_Map information______ū" // Display tool-tip on command button to display description of web-map
+            owner: "Īpašnieks", // Appears in web-map list description panel when it is set to true
+            created: "Izveides datums", // Appears in web-map list description panel when it is set to true
+            modified: "Modificēšanas datums", // Appears in web-map list description panel when it is set to true
+            description: "Apraksts", // Appears in web-map list description panel when it is set to true
+            snippet: "Kopsavilkums", // Appears in web-map list description panel when it is set to true
+            licenseInfo: "Piekļuves un izmantošanas ierobežojumi", // Appears in web-map list description panel when it is set to true
+            accessInformation: "Kredīti", // Appears in web-map list description panel when it is set to true
+            tags: "Tagi", // Appears in web-map list description panel when it is set to true
+            numViews: "Skatījumu skaits", // Appears in web-map list description panel when it is set to true
+            avgRating: "Vērtējums", // Appears in web-map list description panel when it is set to true
+            noWebMapInGroup: "Konfigurētā grupa nav derīga vai ar šo grupu vēl nav kopīgots neviens elements", // Appears when invalid group in configured or no web-map is available in that group
+            infoBtnToolTip: "Kartes informācija" // Display tool-tip on command button to display description of web-map
         },
         applicationHeader: {
-            signOutOption: "ķ_Sign Out___ū", // Command button to sign-out from the application
-            pleaseSignInText: "ķ_Please sign in_____ū", // Appears when user needs to sign-in into the application
-            showSelectedOption: "ķ_Show Selected_____ū", // Command button to show selected records in data-viewer
-            showAllOption: "ķ_Show All___ū", // Command button to show all the records in data-viewer
-            clearSelectionOption: "ķ_Clear Selection______ū", // Command button to clear selected records in data-viewer
-            zoomToSelectedOption: "ķ_Zoom to Selected______ū", // Command button to zoom map to selected records
-            gridViewOption: "ķ_List View____ū", // Command button to display list view
-            mapViewOption: "ķ_Map View___ū", // Command button to display map view
-            gridMapViewOption: "ķ_Split View____ū", // Command button to display split view
-            settingsBtnToolTip: "ķ_Selection options______ū", // Display tool-tip on command button to open a list of settings options
-            viewModeBtnToolTip: "ķ_Display options______ū", // Display tool-tip on command button to open a list of view options
-            searchModeBtnToolTip: "ķ_Search this layer______ū", // Display tool-tip on command button to open a dialog box for finding a feature
-            manualRefreshBtnToolTip: "ķ_Refresh___ū", // Display tool-tip on command button to manually refresh the selected operational layer
-            confirmManualRefeshText: "ķ_All selections and unsaved changes will be discarded_________________ū", // Appears when user wants to do manual refresh
-            signInOption: "ķ_Sign In___ū" // Appears when user has not signed in
+            signOutOption: "Izrakstīties", // Command button to sign-out from the application
+            pleaseSignInText: "Lūdzu, pierakstieties", // Appears when user needs to sign-in into the application
+            showSelectedOption: "Rādīt izvēlētos", // Command button to show selected records in data-viewer
+            showAllOption: "Rādīt visus", // Command button to show all the records in data-viewer
+            clearSelectionOption: "Notīrīt izvēlēto", // Command button to clear selected records in data-viewer
+            zoomToSelectedOption: "Tālummainīt atlasīto", // Command button to zoom map to selected records
+            gridViewOption: "Saraksta skats", // Command button to display list view
+            mapViewOption: "Kartes skats", // Command button to display map view
+            gridMapViewOption: "Sadalīt skatu", // Command button to display split view
+            settingsBtnToolTip: "Atlasīšanas opcijas", // Display tool-tip on command button to open a list of settings options
+            viewModeBtnToolTip: "Displeja opcijas", // Display tool-tip on command button to open a list of view options
+            searchModeBtnToolTip: "Meklēt šo slāni", // Display tool-tip on command button to open a dialog box for finding a feature
+            manualRefreshBtnToolTip: "Atjaunot", // Display tool-tip on command button to manually refresh the selected operational layer
+            confirmManualRefeshText: "Visas atlases un nesaglabātās izmaiņas tiks atmestas", // Appears when user wants to do manual refresh
+            signInOption: "Pierakstīties" // Appears when user has not signed in
         },
         dataviewer: {
-            noIssuesReported: "ķ_No reports available_______ū", // Appears when no issues are available in current extent
-            photoAttachmentHeader: "ķ_Attachments____ū", // Appears when attachments are available for display in details tab
-            invalidSmallNumber: "ķ_Please enter an integer________ū ", // Shown when invalid integer value is entered while editing in data-viewer (valid integer value between -32768 and 32767)
-            invalidNumber: "ķ_Please enter an integer________ū", // Shown when invalid integer value is entered while editing in data-viewer (valid integer value between -2147483648 and 2147483647)
-            invalidFloat: "ķ_Please enter a number_______ū", // Shown when invalid floating value is entered while editing in data-viewer (floating point value between -3.4E38 and 1.2E38)
-            invalidDouble: "ķ_Please enter a number_______ū", // Shown when invalid double value is entered while editing in data-viewer (double value between -2.2E308 and 1.8E308)
-            invalidString: "ķ_Please enter a value_______ū", // Shown when user enters invalid string value
-            invalidDate: "ķ_Please enter a valid date_________ū", // Shown when user enters invalid date value
-            invalidNumericRange: "ķ_Please enter a value between ${minValue} and ${maxValue}__________________ū", // Shown when user enters value which is out of range
-            moreInfolink: "ķ_Link__ū", // Shown when value in field contains only URL.
-            commentsText: "ķ_Comments___ū", // Appears when comments are available for display in details tab
-            noCommentsAvailable: "ķ_No comments available_______ū", // Appears when no comments are available
-            noFeatureGeometry: "ķ_Feature cannot be displayed_________ū" // Appears when user selects/activates a feature and geometry is available for that
+            noIssuesReported: "Nav pieejamu ziņojumu", // Appears when no issues are available in current extent
+            photoAttachmentHeader: "Pielikumi", // Appears when attachments are available for display in details tab
+            invalidSmallNumber: "Lūdzu ievadiet veselu skaitli ", // Shown when invalid integer value is entered while editing in data-viewer (valid integer value between -32768 and 32767)
+            invalidNumber: "Lūdzu ievadiet veselu skaitli", // Shown when invalid integer value is entered while editing in data-viewer (valid integer value between -2147483648 and 2147483647)
+            invalidFloat: "Lūdzu ievadiet numuru", // Shown when invalid floating value is entered while editing in data-viewer (floating point value between -3.4E38 and 1.2E38)
+            invalidDouble: "Lūdzu ievadiet numuru", // Shown when invalid double value is entered while editing in data-viewer (double value between -2.2E308 and 1.8E308)
+            invalidString: "Lūdzu ievadiet vērtību", // Shown when user enters invalid string value
+            invalidDate: "Lūdzu ievadiet derīgu datumu", // Shown when user enters invalid date value
+            invalidNumericRange: "Lūdzu ievadiet vērtību no ${minValue} līdz ${maxValue}", // Shown when user enters value which is out of range
+            moreInfolink: "Saite", // Shown when value in field contains only URL.
+            commentsText: "Komentāri", // Appears when comments are available for display in details tab
+            noCommentsAvailable: "Nav pieejamu komentāru", // Appears when no comments are available
+            noFeatureGeometry: "Funkciju nevar parādīt" // Appears when user selects/activates a feature and geometry is available for that
         },
         config: {
-            configNotDefined: "ķ_No configuration defined________ū" // Shown when there is an issue with config file
+            configNotDefined: "Nav noteiktas konfigurācijas" // Shown when there is an issue with config file
         },
         searchPanel: {
-            noResultsFound: "ķ_No results found______ū" // Appears when user search for features and no feature is found
+            noResultsFound: "Rezultāti nav atrasti" // Appears when user search for features and no feature is found
         },
         mapViewer: {
-            detailsBtnToolTip: "ķ_View more details for the active feature_____________ū", // Display tool-tip on command button to view details of selected feature
-            locationBtnToolTip: "ķ_View map___ū", // Display tool-tip on command button to view map panel
-            zoomInToolTip: "ķ_Zoom in___ū", // Display tool-tip on command button to zoom in map
-            zoomOutToolTip: "ķ_Zoom out___ū" // Display tool-tip on command button to zoom out map
+            detailsBtnToolTip: "Skatiet papildinformāciju par aktīvo elementu", // Display tool-tip on command button to view details of selected feature
+            locationBtnToolTip: "Skatīt karti", // Display tool-tip on command button to view map panel
+            zoomInToolTip: "Pietuvināt", // Display tool-tip on command button to zoom in map
+            zoomOutToolTip: "Attālināt" // Display tool-tip on command button to zoom out map
         },
         signOutPage: {
-            signOutMessage: "ķ_You've been successfully signed out____________ū", // Appears when user is successfully signed-out from application
-            reSignInMessage: "ķ_Click here to sign in_______ū" // Appears when user is signed-out from application and wants to sign-in again
+            signOutMessage: "Jūs esat veiksmīgi izrakstījies", // Appears when user is successfully signed-out from application
+            reSignInMessage: "Noklikšķiniet šeit, lai pierakstītos" // Appears when user is signed-out from application and wants to sign-in again
         },
         preview: {
-            section1: "ķ_Crowdsource Manager, a companion group template to <a href='http://solutions.arcgis.com/local-government/help/crowdsource-reporter/' target='_blank'>Crowdsource Reporter</a>, is a responsive group application template (desktop and tablet devices) that allows users within an organization to review problems/observations submitted through the Manager app___________________________________________________________________________________________________________ū.", // Appears when preview page is loaded
-            section2: "ķ_The app presents one or more maps for users to review a problem or observation. Users can look for patterns and clusters, review problem details, update status, and assign responsibility_________________________________________________________ū.", // Appears when preview page is loaded
-            section3: "ķ_The application source code can be downloaded for further configuration. This additional configuration of the application can be applied back to an ArcGIS Online configurable web application item or hosted on your own web server.<br /> For more information on configuring this app, see the <a href='http://solutions.arcgis.com/local-government/help/crowdsource-manager/' target='_blank'>Crowdsource Manager</a> documentation_________________________________________________________________________________________________________________________________ū." // Appears when preview page is loaded
+            section1: "<a href=\'http://solutions.arcgis.com/local-government/help/crowdsource-reporter/\' target=\'_blank\'>Crowdsource Reporter</a> uzņēmuma grupas veidne Crowdsource Manager ir reaģējoša grupas lietojumprogrammas veidne (darbvirsmas un planšetes ierīcēm), kas organizācijas iekšējiem lietotājiem ļauj pārskatīt problēmas/novērojumus, kas iesniegti, izmantojot lietotni Manager.", // Appears when preview page is loaded
+            section2: "Lietotne parāda lietotājiem vienu vai vairākas kartes, lai pārskatītu problēmu vai novērojumu. Lietotāji var meklēt sistēmas un kopas, pārskatīt problēmas informāciju, atjaunināt statusu un piešķirt pienākumus.", // Appears when preview page is loaded
+            section3: "Lietojumprogrammas avota kodu var lejupielādēt papildu konfigurācijai. Šo lietojumprogrammas papildu konfigurāciju var izmantot ArcGIS Online konfigurējamam tīmekļa lietojumprogrammas vienumam vai viesot savā tīmekļa serverī.<br /> Papildinformāciju par šīs lietotnes konfigurēšanu skatiet <a href=\'http://solutions.arcgis.com/local-government/help/crowdsource-manager/\' target=\'_blank\'>Crowdsource Manager</a> dokumentācijā." // Appears when preview page is loaded
         }
     })
 );

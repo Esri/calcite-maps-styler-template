@@ -15,7 +15,7 @@
       }
     },
     legend:{
-      title: "Ĳ_Legend___ä"
+      title: "Legenda"
     }
   })
 );

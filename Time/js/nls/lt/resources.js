@@ -17,30 +17,30 @@
 define(
    ({
     map: {
-      error: "Į_Unable to create map_______š"
+      error: "Žemėlapio sukurti nepavyko"
     },
     legend:{
-      title: "Į_Legend___š"
+      title: "Legenda"
     },
     share: {
-      title: "Į_Share___š"
+      title: "Bendrinti"
     },
     about: {
-      title: "Į_About___š",
-      error: "Į_By default the web map description or snippet will be used. Configure the app to add a custom snippet for the about panel______________________________________š."
+      title: "Apie",
+      error: "Pagal numatytuosius nustatymus bus naudojamas internetinio žemėlapio aprašas arba fragmentas. Konfigūruokite aplikaciją, jei norite pridėti adaptuotą skydelio fragmentą."
     },
     time: {
-        enableTimeMessage: "Į_The specified web map does not contain any time enabled layers. View the <a target='_blank' href='http://doc.arcgis.com/en/arcgis-online/create-maps/configure-time.htm#ESRI_SECTION1_F1D4A275B4AB4CC79198CBA9D0AD8727'>Configure time settings</a> help topic for details. To use the template without displaying time use the configuration panel to disable the time option_______________________________________________________________________________________________________________š.",
-        datePattern: "Į_MMMM d, yyyy_____š",
-        hourTimePattern: "Į_h a__š",
-        millisecondTimePattern: "Į_h:mm:ss a____š",
-        minuteTimePattern: "Į_h:mm a___š",
-        secondTimePattern: "Į_h:mm:ss a____š",
-        timeRange: "Į_${startTime} to ${endTime}_________š",
-        yearPattern: "Į_yyyy__š"
+        enableTimeMessage: "Nurodytame internetiniame žemėlapyje nėra sluoksnių su laiko informacija. Daugiau informacijos žr. pagalbos temoje <a target=\'_blank\' href=\'http://doc.arcgis.com/en/arcgis-online/create-maps/configure-time.htm#ESRI_SECTION1_F1D4A275B4AB4CC79198CBA9D0AD8727\'>Laiko nustatymų konfigūravimas</a>. Jei norite, kad šablone nebūtų rodomas laikas, konfigūravimo skydelyje išjunkite laiko parinktį.",
+        datePattern: "yyyy MMMM dd",
+        hourTimePattern: "H a",
+        millisecondTimePattern: "HH:mm:ss",
+        minuteTimePattern: "HH:mm",
+        secondTimePattern: "HH:mm:ss",
+        timeRange: "${startTime} iki ${endTime}",
+        yearPattern: "yyyy"
     },
     histogram:{
-      error: "Į_No time-enabled feature layers, in snapshot mode, are available in the web map. Configure the app to use another web map or disable the histogram option_______________________________________________š."
+      error: "Snapshot režimu internetiniame žemėlapyje nėra sluoksnių su laiku. Sukonfigūruokite aplikaciją naudoti kitą internetinį žemėlapį arba išjunkite histogramos parinktį."
     }
   })
 );

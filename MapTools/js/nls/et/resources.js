@@ -20,7 +20,7 @@ define(
             error: "Kaarti ei saa luua"
         },
         tools:{
-            bookmarkTool: "Š_Bookmarks____ä",
+            bookmarkTool: "Järjehoidjad",
             basemapTool: "Aluskaardid",
             legendTool: "Legend",
             detailsTool: "Detailid",
@@ -37,8 +37,8 @@ define(
                   "label3": 'Horisontaalpaigutus',
                   "label4": 'Vertikaalpaigutus'
             },
-            printTitle: "Š_Title___ä",
-            printTitlePrompt: "Š_Add custom title______ä"
+            printTitle: "Pealkiri",
+            printTitlePrompt: "Lisa kohandatud pealkiri"
         }
     })
 );

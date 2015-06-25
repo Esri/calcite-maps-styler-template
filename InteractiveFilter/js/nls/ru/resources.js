@@ -15,7 +15,7 @@
       }
     },
     legend:{
-      title: "Ж_Legend___Я"
+      title: "Легенда"
     }
   })
 );

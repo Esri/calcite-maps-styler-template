@@ -1,9 +1,9 @@
 ﻿define(
    ({
     display: {
-      elevationProfileTitle: "Ж_Elevation Profile______Я",
+      elevationProfileTitle: "Профиль рельефа",
       showMe: "показать",
-      selectLine: "Ж_<b>Select</b> a line feature in the map_____________Я.",
+      selectLine: "<b>Выберите</b> линейный объект на карте.",
       popupRequirement: "Примечание: объект должен быть в слое с включенными всплывающими окнами.",
       digitizeDistanceMeasureTool: "Используйте инструменты группы <b>Измерение</b>.",
       selectFeatureHelpUrl: "http://help.arcgis.com/ru/arcgisonline/help/010q/010q0000004s000000.htm#ESRI_SECTION1_DAA22E89DF67448E8F3682309F39BE5D",
@@ -15,7 +15,7 @@
       helpLabel: "Справка"
     },
     chart: {
-      title: "Ж_Elevation Profile______Я",
+      title: "Профиль рельефа",
       demResolution: "Разрешение ЦМР",
       elevationTitleTemplate: "Высота в {0}",
       distanceTitleTemplate: "Расстояние в {0}",

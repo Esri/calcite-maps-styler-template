@@ -1,9 +1,9 @@
 ﻿define(
    ({
     display: {
-      elevationProfileTitle: "Đ_Elevation Profile______ớ",
+      elevationProfileTitle: "Υψομετρικό προφίλ",
       showMe: "βοήθεια",
-      selectLine: "Đ_<b>Select</b> a line feature in the map_____________ớ.",
+      selectLine: "<b>Επιλέξτε</b> ένα γραμμικό στοιχείο στο χάρτη.",
       popupRequirement: "ΣΗΜΕΙΩΣΗ: Το στοχείο πρέπει να βρίσκεται σε ένα θεματικό επίπεδο με ενεργοποιημένα τα αναδυόμενα παράθυρα.",
       digitizeDistanceMeasureTool: "Χρησιμοποιήστε τα εργαλεία <b>Μέτρηση</b>.",
       selectFeatureHelpUrl: "http://help.arcgis.com/el/arcgisonline/help/010q/010q0000004s000000.htm#ESRI_SECTION1_DAA22E89DF67448E8F3682309F39BE5D",
@@ -15,7 +15,7 @@
       helpLabel: "Βοήθεια"
     },
     chart: {
-      title: "Đ_Elevation Profile______ớ",
+      title: "Υψομετρικό προφίλ",
       demResolution: "Ανάλυση DEM",
       elevationTitleTemplate: "Υψόμετρο σε {0}",
       distanceTitleTemplate: "Απόσταση σε {0}",

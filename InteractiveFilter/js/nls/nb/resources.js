@@ -15,7 +15,7 @@
       }
     },
     legend:{
-      title: "å_Legend___ø"
+      title: "Tegnforklaring"
     }
   })
 );

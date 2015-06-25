@@ -20,7 +20,7 @@ define(
             error: "Не удалось создать карту"
         },
         tools:{
-            bookmarkTool: "Ж_Bookmarks____Я",
+            bookmarkTool: "Закладки",
             basemapTool: "Базовые карты",
             legendTool: "Легенда",
             detailsTool: "Детали",
@@ -37,8 +37,8 @@ define(
                   "label3": 'Альбомная',
                   "label4": 'Книжная'
             },
-            printTitle: "Ж_Title___Я",
-            printTitlePrompt: "Ж_Add custom title______Я"
+            printTitle: "Название",
+            printTitlePrompt: "Добавить пользовательское название"
         }
     })
 );

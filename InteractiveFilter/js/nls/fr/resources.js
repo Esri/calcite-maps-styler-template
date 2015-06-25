@@ -15,7 +15,7 @@
       }
     },
     legend:{
-      title: "æ_Legend___Â"
+      title: "Légende"
     }
   })
 );

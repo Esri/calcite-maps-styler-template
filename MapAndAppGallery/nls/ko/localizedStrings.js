@@ -68,8 +68,8 @@ define(
             signInBtnTitle: "로그인",
             signOutBtnTitle: "로그아웃",
             geolocationBtnTitle: "지오로케이션",
-            ascendingSort: "한_Ascending____빠",
-            descendingSort: "한_Descending____빠"
+            ascendingSort: "오름차순",
+            descendingSort: "내림차순"
         },
         errorMessages: {
             emptyGroup: "구성된 그룹에 쿼리를 수행할 데이터가 없습니다.",

@@ -68,8 +68,8 @@ define(
             signInBtnTitle: "تسجيل الدخول",
             signOutBtnTitle: "تسجيل الخروج",
             geolocationBtnTitle: "الموقع الجغرافي",
-            ascendingSort: "بيت_Ascending____لاحقة",
-            descendingSort: "بيت_Descending____لاحقة"
+            ascendingSort: "تصاعدي",
+            descendingSort: "تنازليًا"
         },
         errorMessages: {
             emptyGroup: "الطبقة التي يتم تكوينها ليس بها أي بيانات للقيام بالاستعلام.",

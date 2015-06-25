@@ -20,7 +20,7 @@ define(
             error: "Δεν είναι δυνατή η δημιουργία χάρτη"
         },
         tools:{
-            bookmarkTool: "Đ_Bookmarks____ớ",
+            bookmarkTool: "Σελ/κτες.",
             basemapTool: "Υπόβαθρα",
             legendTool: "Υπόμνημα",
             detailsTool: "Λεπτομέρειες",
@@ -37,8 +37,8 @@ define(
                   "label3": 'Οριζόντιος προσανατολισμός',
                   "label4": 'Κατακόρυφος προσανατολισμός'
             },
-            printTitle: "Đ_Title___ớ",
-            printTitlePrompt: "Đ_Add custom title______ớ"
+            printTitle: "Τίτλος",
+            printTitlePrompt: "Προσθήκη προσαρμοσμένου τίτλου"
         }
     })
 );

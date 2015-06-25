@@ -15,7 +15,7 @@
       }
     },
     legend:{
-      title: "Đ_Legend___ớ"
+      title: "Chú giải"
     }
   })
 );

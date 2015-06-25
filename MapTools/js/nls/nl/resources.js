@@ -20,7 +20,7 @@ define(
             error: "Kan geen kaart creëren"
         },
         tools:{
-            bookmarkTool: "Ĳ_Bookmarks____ä",
+            bookmarkTool: "Bladwijzers",
             basemapTool: "Basemaps",
             legendTool: "Legenda",
             detailsTool: "Details",
@@ -37,8 +37,8 @@ define(
                   "label3": 'Liggend',
                   "label4": 'Staand'
             },
-            printTitle: "Ĳ_Title___ä",
-            printTitlePrompt: "Ĳ_Add custom title______ä"
+            printTitle: "Titel",
+            printTitlePrompt: "Aangepaste titel toevoegen"
         }
     })
 );

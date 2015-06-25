@@ -20,7 +20,7 @@ define(
             error: "Nu se poate crea harta"
         },
         tools:{
-            bookmarkTool: "Ă_Bookmarks____ș",
+            bookmarkTool: "Semne de carte",
             basemapTool: "Hărţi fundal",
             legendTool: "Legendă",
             detailsTool: "Detalii",
@@ -37,8 +37,8 @@ define(
                   "label3": 'Peisaj',
                   "label4": 'Portret'
             },
-            printTitle: "Ă_Title___ș",
-            printTitlePrompt: "Ă_Add custom title______ș"
+            printTitle: "Titlu",
+            printTitlePrompt: "Adăugare titlu particularizat"
         }
     })
 );

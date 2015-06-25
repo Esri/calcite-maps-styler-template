@@ -20,7 +20,7 @@ define(
             error: "לא ניתן ליצור מפה"
         },
         tools:{
-            bookmarkTool: "כן_Bookmarks____ש",
+            bookmarkTool: "סימניות",
             basemapTool: "מפות בסיס",
             legendTool: "מקרא",
             detailsTool: "פרטים",
@@ -37,8 +37,8 @@ define(
                   "label3": 'לרוחב',
                   "label4": 'לאורך'
             },
-            printTitle: "כן_Title___ש",
-            printTitlePrompt: "כן_Add custom title______ש"
+            printTitle: "כותרת",
+            printTitlePrompt: "הוסף כותרת מותאמת אישית"
         }
     })
 );

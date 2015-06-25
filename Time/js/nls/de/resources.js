@@ -17,30 +17,30 @@
 define(
    ({
     map: {
-      error: "ä_Unable to create map_______Ü"
+      error: "Karte kann nicht erstellt werden"
     },
     legend:{
-      title: "ä_Legend___Ü"
+      title: "Legende"
     },
     share: {
-      title: "ä_Share___Ü"
+      title: "Freigeben"
     },
     about: {
-      title: "ä_About___Ü",
-      error: "ä_By default the web map description or snippet will be used. Configure the app to add a custom snippet for the about panel______________________________________Ü."
+      title: "Informationen zu",
+      error: "Die Beschreibung oder der Ausschnitt der Webkarte wird standardmäßig verwendet. Konfigurieren Sie die App, um einen benutzerdefinierten Abschnitt für das Fenster \"Info\" hinzuzufügen."
     },
     time: {
-        enableTimeMessage: "ä_The specified web map does not contain any time enabled layers. View the <a target='_blank' href='http://doc.arcgis.com/en/arcgis-online/create-maps/configure-time.htm#ESRI_SECTION1_F1D4A275B4AB4CC79198CBA9D0AD8727'>Configure time settings</a> help topic for details. To use the template without displaying time use the configuration panel to disable the time option_______________________________________________________________________________________________________________Ü.",
-        datePattern: "ä_MMMM d, yyyy_____Ü",
-        hourTimePattern: "ä_h a__Ü",
-        millisecondTimePattern: "ä_h:mm:ss a____Ü",
-        minuteTimePattern: "ä_h:mm a___Ü",
-        secondTimePattern: "ä_h:mm:ss a____Ü",
-        timeRange: "ä_${startTime} to ${endTime}_________Ü",
-        yearPattern: "ä_yyyy__Ü"
+        enableTimeMessage: "Die angegebene Webkarte enthält keine Layer mit aktivierten Zeiteigenschaften. Weitere Informationen finden Sie im Hilfethema <a target=\'_blank\' href=\'http://doc.arcgis.com/en/arcgis-online/create-maps/configure-time.htm#ESRI_SECTION1_F1D4A275B4AB4CC79198CBA9D0AD8727\'>Konfigurieren von Zeiteinstellungen</a>. Um die Vorlage ohne Zeitanzeige zu verwenden, deaktivieren Sie die Zeitoption im Fenster \"Konfiguration\".",
+        datePattern: "d. MMMM yyyy",
+        hourTimePattern: "H",
+        millisecondTimePattern: "H:mm:ss",
+        minuteTimePattern: "H:mm",
+        secondTimePattern: "H:mm:ss",
+        timeRange: "${startTime} bis ${endTime}",
+        yearPattern: "JJJJ"
     },
     histogram:{
-      error: "ä_No time-enabled feature layers, in snapshot mode, are available in the web map. Configure the app to use another web map or disable the histogram option_______________________________________________Ü."
+      error: "In der Webkarte sind keine Feature-Layer mit aktivierten Zeiteigenschaften im Snapshot-Modus verfügbar. Konfigurieren Sie die App, um eine andere Webkarte zu verwenden, oder deaktivieren Sie die Histogramm-Option."
     }
   })
 );

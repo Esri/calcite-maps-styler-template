@@ -15,7 +15,7 @@
       }
     },
     legend:{
-      title: "한_Legend___빠"
+      title: "범례"
     }
   })
 );
