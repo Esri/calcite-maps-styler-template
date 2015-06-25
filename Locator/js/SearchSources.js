@@ -1,22 +1,8 @@
-define([
-    "dojo/_base/declare",
-    "dojo/_base/lang",
-    "dojo/_base/array",
-    "dojo/dom-construct",
-    "esri/lang",
-    "esri/tasks/locator",
-    "esri/layers/FeatureLayer",
-    "esri/dijit/Search"
-], function(
-    declare, lang, array,
-    domConstruct,
-    esriLang,
-    Locator, FeatureLayer,
-    Search
-) {
+define(["dojo/_base/declare", "dojo/_base/lang", "dojo/_base/array", "dojo/_base/json", "dojo/dom-construct", "esri/lang", "esri/tasks/locator", "esri/layers/FeatureLayer", "esri/dijit/Search"], function (
+declare, lang, array, dojoJson, domConstruct, esriLang, Locator, FeatureLayer, Search) {
     return declare(null, {
 
-        constructor: function(parameters) {
+        constructor: function (parameters) {
 
             var defaults = {
                 sources: [],
@@ -37,41 +23,42 @@ define([
 
         /* Public Methods */
 
-        createOptions: function() {
+        createOptions: function () {
             return {
                 map: this.map,
-                autoNavigate: false,
-                enableHighlight: false,
-                enableInfoWindow: false,
                 sources: this._createSources(),
-                activeSourceIndex: "all"
+                activeSourceIndex: this._getActiveSource()
             };
         },
 
         /* Private Methods */
 
         //optional array of additional search layers to configure from the application config process
-        _createSources: function() {
-            //Create services from org helper services 
-            //Create locators defined in web map item
-            //Create configured services. 
-            this._createHelperServiceSources();
-            if (this.itemData) {
-                console.log(this.itemData);
-                this._createWebMapItemSources();
+        _createSources: function () {
+            if (this.applicationConfiguredSources) {
+                this._createAppConfigSources();
+            } else {
+                //Create services from org helper services 
+                //Create locators defined in web map item
+                //Create configured services. 
+                this._createHelperServiceSources();
+                if (this.itemData) {
+                    this._createWebMapItemSources();
+                }
+                if (this.configuredSearchLayers.length > 0) {
+                    this._createConfiguredSources();
+                }
             }
-            if (this.configuredSearchLayers.length > 0) {
-                this._createConfiguredSources();
-            }
+
             return this.sources;
         },
 
-        _getActiveSource: function() {
+        _getActiveSource: function () {
             var activeIndex = 0;
             if (this.sources && this.sources.length > 1) {
                 activeIndex = "all";
             }
-            array.some(this.sources, function(s, index) {
+            array.some(this.sources, function (s, index) {
                 if (!s.hasEsri && s.featureLayer) {
                     activeIndex = index;
                     return true;
@@ -79,10 +66,9 @@ define([
             });
             return activeIndex;
         },
-
-        _createHelperServiceSources: function() {
+        _createHelperServiceSources: function () {
             var geocoders = lang.clone(this.geocoders);
-            array.forEach(geocoders, lang.hitch(this, function(geocoder) {
+            array.forEach(geocoders, lang.hitch(this, function (geocoder) {
                 if (geocoder.url.indexOf(".arcgis.com/arcgis/rest/services/World/GeocodeServer") > -1) {
                     var s = new Search();
                     var esriSource = s.defaultSource;
@@ -105,15 +91,15 @@ define([
             }));
         },
 
-        _createWebMapItemSources: function() {
+        _createWebMapItemSources: function () {
             if (this.itemData && this.itemData.applicationProperties && this.itemData.applicationProperties.viewing && this.itemData.applicationProperties.viewing.search) {
                 //search is configured on the web map item 
                 var searchOptions = this.itemData.applicationProperties.viewing.search;
-                array.forEach(searchOptions.layers, lang.hitch(this, function(searchLayer) {
+                array.forEach(searchOptions.layers, lang.hitch(this, function (searchLayer) {
                     //get the title specified in the item
                     var operationalLayers = this.itemData.operationalLayers,
                         layer = null;
-                    array.some(operationalLayers, function(opLayer) {
+                    array.some(operationalLayers, function (opLayer) {
                         if (opLayer.id === searchLayer.id) {
                             layer = opLayer;
                             return true;
@@ -125,7 +111,7 @@ define([
                             name = layer.title || layer.name;
                         if (esriLang.isDefined(searchLayer.subLayer)) {
                             url = url + "/" + searchLayer.subLayer;
-                            array.some(layer.layerObject.layerInfos, function(info) {
+                            array.some(layer.layerObject.layerInfos, function (info) {
                                 if (info.id === searchLayer.subLayer) {
                                     name += " - " + layer.layerObject.layerInfos[searchLayer.subLayer].name;
                                     return true;
@@ -134,10 +120,12 @@ define([
                         }
                         //Get existing layer or create new one
                         var mapLayer = this.map.getLayer(layer.id);
-                        if (mapLayer && mapLayer.type === "FeatureLayer") {
+                        if (mapLayer && (mapLayer.type === "Feature Layer"|| mapLayer.type === "FeatureLayer")) {
                             source.featureLayer = mapLayer;
                         } else {
-                            source.featureLayer = new FeatureLayer(url);
+                            source.featureLayer = new FeatureLayer(url,{
+                                outFields: ["*"]
+                            });
                         }
                         source.name = name;
                         source.exactMatch = searchLayer.field.exactMatch;
@@ -150,9 +138,34 @@ define([
                 }));
             }
         },
+        _createAppConfigSources: function () {
+            // Configured via the new Search Configuation widget
+            var configSource = lang.clone(this.applicationConfiguredSources);
+            array.forEach(configSource, lang.hitch(this, function (source) {
+                if (source.locator) {
+                    source.locator = new Locator(source.url);
+                } else if (source.featureLayer) {
+                    var featureLayer = null;
+                    if (source.flayerId) {
+                        featureLayer = this.map.getLayer(source.flayerId);
+                    }
+                    if (!featureLayer && source.url) {
+                        featureLayer = new FeatureLayer(source.url, {
+                            outFields: ["*"]
+                        });
+                    }
+                    source.featureLayer = featureLayer;
+                }
+                if (source.searchWithinMap) {
+                    source.searchExtent = this.map.extent;
+                }
+                this.sources.push(source);
+            }));
 
-        _createConfiguredSources: function() {
-            array.forEach(this.configuredSearchLayers, lang.hitch(this, function(layer) {
+        },
+        _createConfiguredSources: function () {
+            // Old configuration using layer/field picker 
+            array.forEach(this.configuredSearchLayers, lang.hitch(this, function (layer) {
                 var mapLayer = this.map.getLayer(layer.id);
                 if (mapLayer) {
                     var source = {};
