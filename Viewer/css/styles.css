@@ -530,11 +530,6 @@ img {
   width: 300px;
   display: block;
   overflow: hidden;
-
-  /*overflow-y:auto;*/
-
-  /*overflow: hidden;
-  max-height: 305px;*/
   top: 100px;
   background-color: transparent;
   background-color: white;
@@ -647,10 +642,16 @@ img {
 #pageBody_legend {
   padding-top: 20px;
 }
+@media only screen and (max-width: 480px) {
+  #pageBody_legend {
+    max-height:250px;
+     } }
 .legend{
   margin:auto;
   max-width: 90%;
 }
+
+
 #pageBody_share {
   padding: 5px 20px;
   overflow-y: auto; 
