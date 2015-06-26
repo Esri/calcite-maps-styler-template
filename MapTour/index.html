@@ -69,7 +69,7 @@
 		</script>
 
 		<script type="text/javascript">
-			var version = '2.2.9-062215';
+			var version = '2.2.9-062615';
 			var isProduction = true;
 
 			function loadJS(url, isExternal)
@@ -96,8 +96,8 @@
 				document.getElementsByTagName("head")[0].appendChild(el);
 			}
 
-			loadCSS("//jsdev.arcgis.com/3.14/esri/css/esri.css", true);
-			loadCSS("//jsdev.arcgis.com/3.14/dijit/themes/claro/claro.css", true);			
+			loadCSS("//js.arcgis.com/3.14/esri/css/esri.css", true);
+			loadCSS("//js.arcgis.com/3.14/dijit/themes/claro/claro.css", true);			
 
 			if( isProduction ) {
 				loadCSS("app/maptour-min.css");
@@ -1074,7 +1074,7 @@
 		</div>
 		
 		<script type="text/javascript">
-			loadJS('//jsdev.arcgis.com/3.14/init.js', true);
+			loadJS('//js.arcgis.com/3.14/init.js', true);
 			loadJS('app/maptour-config.js');
 			
 			function getUrlVar(name)
