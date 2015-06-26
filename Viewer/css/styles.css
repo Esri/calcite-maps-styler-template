@@ -645,7 +645,11 @@ img {
 @media only screen and (max-width: 480px) {
   #pageBody_legend {
     max-height:250px;
-     } }
+  }
+  .pageBody{
+    max-height: 250px;
+  } 
+}
 .legend{
   margin:auto;
   max-width: 90%;
