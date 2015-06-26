@@ -8,6 +8,8 @@
          "fields":[
             {
                "type": "appproxies"
+            },{
+               "type": "webmap"
             },
             {
                "placeHolder":"Defaults to map name",
