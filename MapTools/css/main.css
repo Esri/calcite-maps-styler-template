@@ -593,6 +593,9 @@ input[type=checkbox]:checked.share-dialog-checkbox + .share-dialog-checkbox:befo
   background-color: #fff;
   border-bottom: none;
 }
+.esriLayerList .esriList{
+    border-top:none;
+}
 .esriLayerList .esriList ul {
   background-color: #fff;
 }
