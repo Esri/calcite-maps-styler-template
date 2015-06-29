@@ -586,11 +586,15 @@ input[type=checkbox]:checked.share-dialog-checkbox + .share-dialog-checkbox:befo
   max-height: 300px;
   overflow: hidden;
 }
-.esriLayerList .esriList {
-  background-color: #f8f8f8;
+.esriLayer {
+  background-color: #fff;
 }
 .esriLayerList .esriTitle {
-  border: none;
+  background-color: #fff;
+  border-bottom: none;
+}
+.esriLayerList .esriList ul {
+  background-color: #fff;
 }
 .esriLayerList {
   position: relative;
