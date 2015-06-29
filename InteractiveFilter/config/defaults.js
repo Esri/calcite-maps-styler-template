@@ -4,7 +4,7 @@ define([], function() {
     //and url parameters.
     var defaults = {
         "appid": "",
-        "webmap": "b0b40376c3584657878d8cf5cb5581fa",
+        "webmap": "06a4bd5fa1e34ce28f4fb281abb53f38",
         "oauthappid": null, //"AFTKRmv16wj14N3z",
         //Group templates must support a group url parameter. This will contain the id of the group.
         //group: "",
