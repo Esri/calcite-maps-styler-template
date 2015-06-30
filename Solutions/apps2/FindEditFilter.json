@@ -19,7 +19,7 @@
         "http://solutions.arcgis.com/local-government/help/find-edit-filter/"
     ],
     "values": {
-        "webmap": "796c572e6dcb4c88b77c024ae003bd88",
+        "webmap": "5f6354220f8f45f0a08f31aa5424725a",
         "titleBar.title": "Find, Edit, and Filter",
         "titleBar.iconUrl": "images/onlineapp.png",
         "colorizer.theme": "EarthBrowns",
@@ -167,7 +167,7 @@
         "classname": "js.LGNotes",
         "config": {
             "notes": [
-                "commit 95a3c5a0b51dcb1e 2015-05-21 15:25:00 -0700"
+                "@@@commit@@@"
             ]
         }
     }, {

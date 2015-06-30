@@ -19,7 +19,7 @@
         "http://solutions.arcgis.com/local-government/help/find-edit-filter/"
     ],
     "values": {
-        "webmap": "b5dda2c5afda4b7cb77a07be97100a84",
+        "webmap": "5f6354220f8f45f0a08f31aa5424725a",
         "titleBar.title": "Find, Edit, and Filter Try-It",
         "titleBar.iconUrl": "images/onlineapp.png",
         "colorizer.theme": "EarthBrowns",
@@ -27,8 +27,8 @@
         "filter.fieldname1": "FLOOR",
         "filter.value1": "1",
         "searchBox.hint": "Plan #",
-        "featureSearcher.searchLayersString": "[{\"id\":\"FirstDuePreIncidentPlanning_4659\",\"fields\":[\"COMPLEXID\",\"PLANID\"],\"type\":\"FeatureLayer\"},{\"id\":\"FirstDuePreIncidentPlanning_1692\",\"fields\":[\"COMPLEXID\",\"PLANID\"],\"type\":\"FeatureLayer\"},{\"id\":\"FirstDuePreIncidentPlanning_2108\",\"fields\":[\"COMPLEXID\",\"PLANID\"],\"type\":\"FeatureLayer\"},{\"id\":\"FirstDuePreIncidentPlanning_928\",\"fields\":[\"COMPLEXID\",\"PLANID\"],\"type\":\"FeatureLayer\"},{\"id\":\"FirstDuePreIncidentPlanning_5653\",\"fields\":[\"COMPLEXID\",\"PLANID\"],\"type\":\"FeatureLayer\"},{\"id\":\"FirstDuePreIncidentPlanning_3433\",\"fields\":[\"COMPLEXID\",\"PLANID\"],\"type\":\"FeatureLayer\"},{\"id\":\"FirstDuePreIncidentPlanning_8329\",\"fields\":[\"COMPLEXID\",\"PLACENAME\"],\"type\":\"FeatureLayer\"},{\"id\":\"FirstDuePreIncidentPlanning_2882\",\"fields\":[\"PLANID\",\"COMPLEXID\",\"PLACENAME\"],\"type\":\"FeatureLayer\"}]",
-        "featureSearcher.displayLayersString": "[{\"id\":\"FirstDuePreIncidentPlanning_8329\",\"fields\":[\"PLACENAME\"],\"type\":\"FeatureLayer\"},{\"id\":\"FirstDuePreIncidentPlanning_2882\",\"fields\":[\"PLACENAME\"],\"type\":\"FeatureLayer\"}]",
+        "featureSearcher.searchLayersString": "[{\"id\":\"FirstDuePreIncidentPlanning_8549\",\"fields\":[\"COMPLEXID\",\"PLACENAME\"],\"type\":\"FeatureLayer\"},{\"id\":\"FirstDuePreIncidentPlanning_3963\",\"fields\":[\"PLANID\",\"PLACENAME\"],\"type\":\"FeatureLayer\"}]",
+        "featureSearcher.displayLayersString": "[{\"id\":\"FirstDuePreIncidentPlanning_8549\",\"fields\":[\"COMPLEXID\",\"PLACENAME\",\"POCNAME\",\"POCPHONE\"],\"type\":\"FeatureLayer\"},{\"id\":\"FirstDuePreIncidentPlanning_3963\",\"fields\":[\"PLANID\",\"COMPLEXID\",\"PLACENAME\",\"POCNAME\",\"POCPHONE\"],\"type\":\"FeatureLayer\"}]",
         "highlighter.highlightZoomLevel": 18,
         "basemapBox.basemapgroupTitle": "",
         "basemapBox.basemapgroupOwner": "",
@@ -167,7 +167,7 @@
         "classname": "js.LGNotes",
         "config": {
             "notes": [
-                "commit 95a3c5a0b51dcb1e 2015-05-21 15:25:00 -0700"
+                "@@@commit@@@"
             ]
         }
     }, {
