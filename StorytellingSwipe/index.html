@@ -127,7 +127,7 @@
 		</script>
 
 		<script type="text/javascript">
-			var version = '1.4.5-062415-2';
+			var version = '1.4.5-063015';
 			var isProduction = true;
 
 			function loadJS(url, isExternal)
@@ -382,8 +382,62 @@
 
 		<!-- Loading indicator -->
 		<div id="loadingOverlay"></div>
-		<div id="loadingIndicator"></div>
+		<div id="loadingIndicator" class="loadingIndicator">
+			<img src="resources/icons/loading-light.gif" />
+		</div>
 		<div id="loadingMessage"></div>
+		
+		<!-- Loading -->
+		<style>
+			#loadingOverlay {
+				position: absolute; 
+				top: 0; 
+				left: 0; 
+				z-index: 500; 
+				width: 100%; 
+				height: 100%; 
+				overflow: hidden; 
+				background-color: #E5E5E5; 
+				-webkit-box-shadow: inset 0px 0px 82px 19px rgba(0,0,0,0.3); 
+				-moz-box-shadow: inset 0px 0px 82px 19px rgba(0,0,0,0.3); 
+				box-shadow: inset 0px 0px 82px 19px rgba(0,0,0,0.3);
+			}
+			
+			@keyframes fadein { from { opacity: 0; } to { opacity: 1; } }
+			@-moz-keyframes fadein { from { opacity: 0; } to { opacity: 1; } }
+			@-webkit-keyframes fadein { from { opacity: 0; } to { opacity: 1; } }
+			@-ms-keyframes fadein { from { opacity: 0; } to { opacity: 1; } }
+			@-o-keyframes fadein { from { opacity: 0; } to { opacity: 1; } }
+			
+			@keyframes fadeout { from { opacity: 1; } to { opacity: 0; } }
+			@-moz-keyframes fadeout { from { opacity: 1; } to { opacity: 0; } }
+			@-webkit-keyframes fadeout { from { opacity: 1; } to { opacity: 0; } }
+			@-ms-keyframes fadeout { from { opacity: 1; } to { opacity: 0; } }
+			@-o-keyframes fadeout { from { opacity: 1; } to { opacity: 0; } }
+			
+			#loadingOverlay.fadeOut {
+				-webkit-animation: fadeout 1.1s;
+				-moz-animation: fadeout 1.1s;
+				-ms-animation: fadeout 1.1s;
+				-o-animation: fadeout 1.1s;
+				animation: fadeout 1.1s;
+				-webkit-animation-fill-mode:forwards;
+				-moz-animation-fill-mode:forwards;
+				animation-fill-mode:forwards;
+			}
+			
+			#loadingIndicator {
+				position: fixed;
+				top: 50%;
+				left: 50%;
+				z-index: 700;
+			}
+			
+			.loadingIndicator {
+				margin-left: -17px;
+				margin-top: -35px;
+			}
+		</style>
 
 		<!-- Settings popup -->
 		<div class="modal hide" id="settingsPopup" data-backdrop="static" tabindex="-1">
@@ -801,7 +855,6 @@
 				loadJS('lib/_jquery.1.9.1.min.js');
 				loadJS('lib/animateClip.js');
 				loadJS('lib/bootstrap/js/bootstrap.min.js');
-				loadJS('lib/spin.min.js');
 				loadJS('lib/history.min.js');
 				loadJS('lib/cubiq.swipeview.js');
 				loadJS('lib/jquery.fastClick.js');
@@ -853,8 +906,7 @@
 							urlUtils
 						){
 							i18n = _i18n;
-							loadingIndicator = new LoadingIndicator("loadingIndicator", "loadingMessage");
-					 		loadingIndicator.init();
+							loadingIndicator = new LoadingIndicator("", "loadingMessage");
 							loadingIndicator.setMessage(i18n.viewer.loading.step1);
 							
 						 	require(["storymaps/core/Core", "storymaps/swipe/core/MainView", "storymaps/utils/Helper"], function(Core, MainView, Helper){
