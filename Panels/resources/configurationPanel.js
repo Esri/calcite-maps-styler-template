@@ -202,7 +202,7 @@
                     "fieldName": "searchConfig",
                     "label": "Configure search tool"
                 }
-            ],
+            ]}],
             "values": {
                 "theme": "chrome",
                 "header": true,
@@ -215,6 +215,4 @@
                 "locate_button": true,
                 "geocoder": true
             }
-        }
-    ]
 }
