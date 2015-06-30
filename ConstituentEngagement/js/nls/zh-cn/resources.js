@@ -41,7 +41,7 @@ define(
         },
         webMapList: {
             owner: "所有者", // Shown in the 'Map information' section indicating the owner of the webmap
-            created: "创建日期", // Shown in the 'Map information' section indicating the date when the webmap was created
+            created: "试_Date created_____验", // Shown in the 'Map information' section indicating the date when the webmap was created
             modified: "修改日期", // Shown in the 'Map information' section indicating the date when the webmap was modified
             description: "描述", // Shown in the 'Map information' section describing the webmap
             snippet: "摘要", // Shown in the 'Map information' section providing the summary of the webmap

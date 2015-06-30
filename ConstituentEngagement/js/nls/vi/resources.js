@@ -41,7 +41,7 @@ define(
         },
         webMapList: {
             owner: "Chủ sở hữu", // Shown in the 'Map information' section indicating the owner of the webmap
-            created: "Ngày tạo", // Shown in the 'Map information' section indicating the date when the webmap was created
+            created: "Đ_Date created_____ớ", // Shown in the 'Map information' section indicating the date when the webmap was created
             modified: "Ngày sửa đổi", // Shown in the 'Map information' section indicating the date when the webmap was modified
             description: "Mô tả", // Shown in the 'Map information' section describing the webmap
             snippet: "Tóm tắt", // Shown in the 'Map information' section providing the summary of the webmap
