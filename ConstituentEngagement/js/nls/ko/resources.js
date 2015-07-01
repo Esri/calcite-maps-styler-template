@@ -41,7 +41,7 @@ define(
         },
         webMapList: {
             owner: "소유자", // Shown in the 'Map information' section indicating the owner of the webmap
-            created: "한_Date created_____빠", // Shown in the 'Map information' section indicating the date when the webmap was created
+            created: "생성일", // Shown in the 'Map information' section indicating the date when the webmap was created
             modified: "수정된 날짜", // Shown in the 'Map information' section indicating the date when the webmap was modified
             description: "설명", // Shown in the 'Map information' section describing the webmap
             snippet: "요약", // Shown in the 'Map information' section providing the summary of the webmap

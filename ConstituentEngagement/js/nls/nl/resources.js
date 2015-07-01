@@ -41,7 +41,7 @@ define(
         },
         webMapList: {
             owner: "Eigenaar", // Shown in the 'Map information' section indicating the owner of the webmap
-            created: "Ĳ_Date created_____ä", // Shown in the 'Map information' section indicating the date when the webmap was created
+            created: "Aanmaakdatum", // Shown in the 'Map information' section indicating the date when the webmap was created
             modified: "Datum wijziging", // Shown in the 'Map information' section indicating the date when the webmap was modified
             description: "Beschrijving", // Shown in the 'Map information' section describing the webmap
             snippet: "Samenvatting", // Shown in the 'Map information' section providing the summary of the webmap

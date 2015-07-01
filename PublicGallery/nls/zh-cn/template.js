@@ -1,5 +1,5 @@
 ﻿define(
-    ({
+     ({
         "viewer": {
             "main": {
                 "scaleBarUnits": "metric",
