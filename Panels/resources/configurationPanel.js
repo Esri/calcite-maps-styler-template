@@ -193,6 +193,10 @@
             "category": "<b>Search Settings</b>",
             "fields": [
                 {
+                    "type":"paragraph",
+                    "value": "Enable search to allow users to find a location or data in the map. Configure the search settings to refine the experience in your app by setting the default search resource, placeholder text, etc."
+                },
+                {
                     "type": "boolean",
                     "fieldName": "geocoder",
                     "label": "Enable search tool"
