@@ -500,7 +500,7 @@ define([
         * @memberOf widgets/leftPanel/leftPanel
         */
         _expandGroupdescEvent: function (node, _self) {
-            on(node, "click", lang.hitch(this, function (evt) {
+            on(node, "click", lang.hitch(node, function (evt) {
                 var tagContainerHeight, descHeight, height;
                 if (this.innerHTML === nls.expandGroupDescText) {
                     domAttr.set(this, "innerHTML", nls.shrinkGroupDescText);

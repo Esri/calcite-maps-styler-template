@@ -127,6 +127,7 @@ define([
                         domStyle.set(query(".esriCTGroupDesc")[0], "height", "");
                         if (query(query(".esriCTGroupDesc")[0]).text().length > 400) {
                             domClass.add(query(".esriCTGroupDesc")[0], "esriCTLeftTextReadLess");
+                            domAttr.set(query(".esriCTExpand")[0], "innerHTML", nls.expandGroupDescText);
                         }
                         domStyle.set(query(".esriCTExpand")[0], "display", "block");
                     }
