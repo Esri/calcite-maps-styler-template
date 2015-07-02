@@ -196,6 +196,7 @@ declare, Color, parser, has, query, registry, win, all, lang, arcgisUtils, dom, 
                             createdOptions.enableButtonMode = true;
 
                             var search = new Search(createdOptions, searchContainer);
+                            domClass.add(search.domNode, "search-container");
                             search.startup();
                         }
 
