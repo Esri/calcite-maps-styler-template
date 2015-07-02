@@ -500,7 +500,11 @@ body,html {
 
 
 /*Small screen modifications*/
-
+@media only screen and (min-width: 450px){
+    #timeContainer{
+        display:block;
+    }
+}
 @media only screen and (max-width:450px) {
     #timeSliderDiv {
         width: 310px;
