@@ -12,14 +12,14 @@
 
 # crowdsource-manager
 
-Crowdsource Manager, a companion group template to Crowdsource Reporter, allows users within an organization to review problems or observations submitted through the Reporter application. 
+Crowdsource Manager, a companion group template to Crowdsource Reporter, allows users within an organization to review problems or observations submitted through the Reporter application.
 
 ![][Thumbnail]
 
 ## Features
 * Presents editable layers from one or more maps that have been shared with the ArcGIS Online/Portal group configured in the application.
 * Users authenticate with their ArcGIS credentials to review problem details, update status, and assign responsibility for issues submitted to these layers through the Reporter app.
-* The application is optimized for display on desktops and tablet devices using [all browsers supported by ArcGIS Online][supported browsers]. 
+* The application is optimized for display on desktops and tablet devices using [all browsers supported by ArcGIS Online][supported browsers].
 
 ## Requirements
 
@@ -32,7 +32,7 @@ Crowdsource Manager, a companion group template to Crowdsource Reporter, allows 
 * ArcGIS Online subscription or ArcGIS Portal
 
 ### Browser Compatibility
-* The application is optimized for display on desktops and tablet devices using [all browsers supported by ArcGIS Online][supported browsers]. 
+* The application is optimized for display on desktops and tablet devices using [all browsers supported by ArcGIS Online][supported browsers].
 
 ## Instructions
 
@@ -59,7 +59,7 @@ Learn more about Esri's [ArcGIS for Local Government maps and apps][].
 
 Show me a list of other [Local Government GitHub repositories][].
 
-This application uses the 3.13 version of [Esri's ArcGIS API for JavaScript][]; see the site for concepts, samples, and a reference for using the API to create mapping web sites.
+This application uses the 3.14 version of [Esri's ArcGIS API for JavaScript][]; see the site for concepts, samples, and a reference for using the API to create mapping web sites.
 
 [Esri's ArcGIS Online Help][] site describes how to create web maps and web map applications in the ArcGIS Online ecosystem.
 
