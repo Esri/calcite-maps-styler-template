@@ -5,8 +5,8 @@ origin	git@github.com:Esri/crowdsource-reporter.git (push)
 branch 
 develop
 . 
-commit cf41764cb3260fda749c8d50fe319155598eb7e7
+commit 5b11157fbca5c061a6db389806361242ff039896
 Author: MikeTschudi <mtschudi@esri.com>
-Date:   Wed Jul 1 20:06:26 2015 -0700
+Date:   Wed Jul 1 20:19:02 2015 -0700
 
-    Updated JSAPI version number in README
+    Added translation files
