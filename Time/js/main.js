@@ -99,7 +99,7 @@ declare, lang, query, on, string, locale, domConstruct, array, arcgisUtils, esri
                 var link = null;
                 if (this.config.logolink) {
                     link = domConstruct.create("a", {
-                        href: "http://www.arcgis.com",
+                        href: this.config.logolink,
                         target: "_blank"
                     }, dom.byId("logo"));
                 }
