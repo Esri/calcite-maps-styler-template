@@ -95,7 +95,7 @@ body {
 }
 .mapTitle {
   width: 100%;
-  padding: 3px 2px 3px 2px;
+  padding: 2px 2px 0 2px;
   z-index: 40;
   margin: auto;
   position: absolute;
