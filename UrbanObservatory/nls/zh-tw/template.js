@@ -29,7 +29,7 @@
     "protocolMismatchError": "通訊協定不匹配錯誤... 是否仍要繼續？",
     "problematicWebmap": "目前此地圖遇到了技術問題: ",
     /* DO NOT REPLACE TEXT INSIDE CURLY BRACKETS */
-    "invalidDefaultThemeTemplate": "\\“{groupName}\\”組中的預設主題\\“{theme}\\”無法使用。",
+    "invalidDefaultThemeTemplate": "\“{groupName}\”組中的預設主題\“{theme}\”無法使用。",
     "mapHasNoLODs": "此地圖沒有定義的 LOD: ",
     "errorCreatingMap": "建立地圖時出錯: ",
     "cantFindWebmap": "無法找到 web 地圖: ",

@@ -32,7 +32,7 @@ define(
             guestSigninText: "Continua come ospite", // Shown in the 'Sign in' page below the icon for accessing application as an anonymous user
             signInOrText: "Oppure", // Or text on sign in screen
             signinOptionsText: "Accedi con:", // Shown in the 'Sign in' page above the icons for social media sign in
-            noGroupNameText: "Effettuare l\\'accesso", // Shown when the group title is not available or the group is private
+            noGroupNameText: "Effettuare l\'accesso", // Shown when the group title is not available or the group is private
             guestLoginTooltip: "Accedi come ospite", // Command button to access the application as an anonymous user
             facebookLoginTooltip: "Accedi con Facebook", // Command button to access the application via Facebook login
             twitterLoginTooltip: "Accedi con Twitter", // Command button to access the application via Twitter login
@@ -63,7 +63,7 @@ define(
             signIn: "Accedi", // Command button shown in mobile menu list and in appheader
             signOut: "Esci", // Command button shown in mobile menu list
             help: "?", // Command button shown in mobile menu list
-            signInTooltip: "l\\'accesso", // Tooltip to 'Sign in' option
+            signInTooltip: "l\'accesso", // Tooltip to 'Sign in' option
             signOutTooltip: "Disconnetti", // Tooltip  to 'Sign out' option
             myReportTooltip: "Visualizza report inviati da me", // Tooltip  to 'My Reports' option
             helpTooltip: "?" // Tooltip  to 'Help' option

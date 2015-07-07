@@ -31,7 +31,7 @@ define(
     },
     time: {
         enableTimeMessage: "O mapa da web especificado não contém quaisquer camadas habilitadas para tempo. Visualize o tópico de ajuda <a target=\'_blank\' href=\'http://doc.arcgis.com/en/arcgis-online/create-maps/configure-time.htm#ESRI_SECTION1_F1D4A275B4AB4CC79198CBA9D0AD8727\'>Configurar parâmetros de tempo</a> para detalhes. Para utilizar o modelo sem exibir o tempo, utilize o painel de configuração para desabilitar a opção de tempo.",
-        datePattern: "d\\' de \\'MMMM\\' de \\'yyyy",
+        datePattern: "d\' de \'MMMM\' de \'yyyy",
         hourTimePattern: "H",
         millisecondTimePattern: "H:mm:ss",
         minuteTimePattern: "h:mm a",

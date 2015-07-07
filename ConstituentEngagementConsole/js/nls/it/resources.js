@@ -38,7 +38,7 @@ define(
         },
         applicationHeader: {
             signOutOption: "Esci", // Command button to sign-out from the application
-            pleaseSignInText: "Effettuare l\\'accesso", // Appears when user needs to sign-in into the application
+            pleaseSignInText: "Effettuare l\'accesso", // Appears when user needs to sign-in into the application
             showSelectedOption: "Mostra selezionate", // Command button to show selected records in data-viewer
             showAllOption: "Mostra tutto", // Command button to show all the records in data-viewer
             clearSelectionOption: "Cancella selezione", // Command button to clear selected records in data-viewer
