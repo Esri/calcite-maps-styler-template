@@ -1,12 +1,12 @@
-From git repository 
-origin	git@github.com:Esri/crowdsource-reporter.git (fetch)
-origin	git@github.com:Esri/crowdsource-reporter.git (push)
-. 
-branch 
+From git repository
+origin  git@github.com:Esri/crowdsource-reporter.git (fetch)
+origin  git@github.com:Esri/crowdsource-reporter.git (push)
+.
+branch
 develop
-. 
-commit 5b11157fbca5c061a6db389806361242ff039896
+.
+commit 5c2569f1c038416ec401082fc6fb7e96dd14f2f4
 Author: MikeTschudi <mtschudi@esri.com>
-Date:   Wed Jul 1 20:19:02 2015 -0700
+Date:   Mon Jul 6 20:24:37 2015 -0700
 
-    Added translation files
+    Switched AGOL identity from org + username to username
