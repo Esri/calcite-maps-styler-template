@@ -62,11 +62,11 @@ define(
             myReport: "I miei report", // Command button shown in mobile menu list
             signIn: "Accedi", // Command button shown in mobile menu list and in appheader
             signOut: "Esci", // Command button shown in mobile menu list
-            help: "?", // Command button shown in mobile menu list
+            help: "Guida", // Command button shown in mobile menu list
             signInTooltip: "l\'accesso", // Tooltip to 'Sign in' option
             signOutTooltip: "Disconnetti", // Tooltip  to 'Sign out' option
             myReportTooltip: "Visualizza report inviati da me", // Tooltip  to 'My Reports' option
-            helpTooltip: "?" // Tooltip  to 'Help' option
+            helpTooltip: "Guida" // Tooltip  to 'Help' option
         },
         geoform: {
             enterInformation: "Dettagli", // Shown as the first section of the geoform, where the user can enter details of the issue
