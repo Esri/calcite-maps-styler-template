@@ -60,7 +60,7 @@ define({
     "youtubeVisible": false,
     "youtubeSearch": "",
     "youtubeTime": "all_time", // today, this_week, this_month, all_time
-    "youtube_key": "AI39si5AmNrzX3VKNKo4Kcet9BVemrvyjl4B13ezBbNLsvKOlw9Vh3eL_57dZ2vC6M9PwV9i3bHm6emtZLr_BhQ8qtnTbvwzCw",
+    "youtube_key": "AIzaSyBvrlsx50mxX_W-Ra2cJ8PB0jKt0jACZfg",
     "enableDialogModal": false,
     "dialogModalContent": "",
     "dialogModalTitle": "",
