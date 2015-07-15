@@ -15,8 +15,8 @@
  | See the License for the specific language governing permissions and
  | limitations under the License.
  */
-define(["dojo/_base/declare", "dojo/_base/lang", "dojo/query", "dojo/on", "dojo/string", "dojo/date/locale", "dojo/dom-construct", "dojo/_base/array", "esri/arcgis/utils", "esri/lang", "esri/layers/FeatureLayer", "esri/TimeExtent", "esri/dijit/TimeSlider", "dojo/dom", "dojo/dom-class", "dojo/domReady!"], function (
-declare, lang, query, on, string, locale, domConstruct, array, arcgisUtils, esriLang, FeatureLayer, TimeExtent, TimeSlider, dom, domClass) {
+define(["dojo/_base/declare", "dojo/_base/lang", "dojo/query", "dojo/on", "dojo/string", "dojo/date/locale", "dojo/dom-construct", "dojo/dom-style", "dojo/_base/array", "esri/arcgis/utils", "esri/lang", "esri/layers/FeatureLayer", "esri/TimeExtent", "esri/dijit/TimeSlider", "dojo/dom", "dojo/dom-class", "dojo/domReady!"], function (
+declare, lang, query, on, string, locale, domConstruct, domStyle, array, arcgisUtils, esriLang, FeatureLayer, TimeExtent, TimeSlider, dom, domClass) {
     return declare(null, {
         config: {},
         startup: function (config) {
@@ -185,7 +185,8 @@ declare, lang, query, on, string, locale, domConstruct, array, arcgisUtils, esri
                     }));
                     var legendLayers = arcgisUtils.getLegendLayers(this.config.response);
                     if (legendLayers.length < 1) {
-                        domClass.add(legendContainer, "hide");
+                        domClass.add(legendContainer, "legend-hide");
+                        domStyle.set("legendContainer","display", "none");     
                         return;
                     }
                     var legend = new Legend({
@@ -199,6 +200,8 @@ declare, lang, query, on, string, locale, domConstruct, array, arcgisUtils, esri
 
                 }));
             } else {
+                domClass.add(dom.byId("legendContainer"), "legend-hide");
+                domStyle.set("legendContainer","display", "none");
                 domClass.add(dom.byId("legendContainer"), "hide");
                 domClass.add(dom.byId("legendButton"), "hide");
                 domClass.remove(dom.byId("legendButton"), "legendButtonDiv");
