@@ -657,22 +657,47 @@ define([
                 }
             },
             _zoomToFeature: function (type, fs) {
-                switch (type) {
-                    case "No Zoom":
-                        this.map.centerAt(graphicsUtils.graphicsExtent(fs).getCenter());
-                        break;
-                    case "Zoom to extent":
-                        this.map.setExtent(graphicsUtils.graphicsExtent(fs), true);
-                        break;
-                    default:
-                        if (this.previousFeatures == "Entire Area") {
-                            this.map.setExtent(graphicsUtils.graphicsExtent(fs), true);
-                        } else {
-                            this.map.setScale(type);
-                            this.map.centerAt(graphicsUtils.graphicsExtent(fs).getCenter());
-                            break;
-                        }
+              if (fs) {
+                var e, center;
+                e = graphicsUtils.graphicsExtent(fs);
+                center = e.getCenter();
+                // get extent width
+                var w = e.getWidth();
+                // if the extent width is huge. It probably crosses the date line
+                if (w > 30000000) {
+                  var geometry = fs[0].geometry;
+                  if (geometry.type === "polygon" || geometry.type === "polyline" || geometry.type === "multipoint") {
+                    // don't use extent.
+                    e = null;
+                    // use one point of the geometry to zoom to
+                    center = geometry.getPoint(0, 0);
+                  }
                 }
+                switch (type) {
+                case "No Zoom":
+                  this.map.centerAt(center);
+                  break;
+                case "Zoom to extent":
+                  if (e) {
+                    this.map.setExtent(e, true);
+                  } else {
+                    this.map.centerAt(center);
+                  }
+                  break;
+                default:
+                  if (this.previousFeatures == "Entire Area") {
+                    if (e) {
+                      this.map.setExtent(e, true);
+                    } else {
+                      this.map.centerAt(center);
+                    }
+                  } else {
+                    this.map.setScale(type);
+                    this.map.centerAt(center);
+                    break;
+                  }
+                }
+              }
             }
-        });
-    });
+      });
+  });
