@@ -23,6 +23,18 @@ body,html {
     display: block;
 }
 
+@-webkit-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+@-moz-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+@keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+#mapDiv_gc circle, #mapDiv_gc path, #mapDiv_gc image, #mapDiv_gc g{
+    animation-duration:1s;
+    animation-name: fadeIn;
+    animation-timing-function:linear;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-name: fadeIn;
+    -webkit-animation-timing-function: linear;
+}
+
 /*Map Navigation Widgets (zoom slider, search, home)*/
 #logo {
     float: left;
@@ -46,14 +58,44 @@ body,html {
 }
 
 #search {
-    top: 95px;
     position: absolute;
-    left: 20px;
     display: block;
     z-index: 40;
 }
-
-.showtitle #search {
+#search.window-top-right{
+    top: 95px;
+    left:20px;
+}
+#search.window-top-left{
+    top:95px;
+    right:20px;
+}
+.arcgisSearch .searchCollapsed .searchSubmit{
+    border-radius: 1px;   
+}
+.arcgisSearch .searchBtn{
+    padding: 6px 5px;
+}
+.esriSimpleSlider div{
+    font-size: 22px;
+    font-family: 'lato', sans-serif;
+    line-height: 22px;
+}
+.esriSimpleSliderVertical .esriSimpleSliderIncrementButton {
+    border-bottom: 1px solid #999;
+}
+.esriSimpleSliderVertical .esriSimpleSliderDecrementButton, .esriSimpleSliderVertical .esriSimpleSliderIncrementButton{
+    border-radius: 1px;
+}
+.esriSimpleSlider, .arcgisSearch .searchBtn{
+    font-size: 22px;
+    font-family: 'lato', sans-serif;
+    line-height: 22px;
+    border: 1px solid #999;
+    color:#999;
+    border-radius: 1px;
+}
+.showtitle #search.window-top-left, .showtitle #search.window-top-right{
     top: 115px;
 }
 
@@ -129,7 +171,6 @@ body,html {
     display: inline-block;
     line-height: 20px;
     vertical-align: top;
-    x
 }
 
 .aboutLabel {
@@ -147,9 +188,11 @@ body,html {
 }
 /*Window Positioning (top, left, bottom, right,center)*/
 .showtitle .window-top-left,.showtitle .window-top-right, .showtitle .window-top-center {
-    top: 50px !important;
+    top: 50px;
 }
-
+.window-top-left, .window-top-right {
+    top: 20px;
+}
 .nozoom .window-top-left {
     left: 20px !important;
 }
@@ -202,17 +245,10 @@ body,html {
     text-align: center;
 }
 
-.window-top-left {
-    top: 20px;
-    left: 80px;
-}
-
-.window-top-right {
-    top: 20px;
-    right: 20px;
-}
-
 /*Time Slider Container*/
+ .digital{
+
+ }
 /*Turn off the time slider prev/next buttons*/
 #timeSliderDiv > table > tbody > tr > td[align="left"], th {
     display: none;
@@ -253,13 +289,15 @@ body,html {
 }
 
 #timeLabel {
+    font-family: "Roboto Mono";
     min-width: 300px;
-    padding: 10px;
     display: table-cell;
     vertical-align: middle;
     font-size: .9em;
     text-align: center;
     white-space: normal;
+    max-width: 400px;
+    margin: 0 auto;
 }
 
 .time {
@@ -345,7 +383,12 @@ body,html {
     margin: auto;
     padding:10px;
 }
-
+#legendContainer.window-top-right{
+    right:20px;
+}
+#legendContainer.window-top-left{
+    left:20px;
+}
 #legendHeader {
     font-size: 1em;
     height: auto;
@@ -555,11 +598,19 @@ body,html {
         display: inline-block;
         position: absolute;
         top: 20px;
-        right: 0;
+    }
+    .legendButtonDiv.window-top-right{
+        right:0;
+    }
+    .legendButtonDiv.window-top-left{
+        left:0;
     }
     /*Position the legend open/close button depending on legend window location */
-    .legendButtonDiv.move {
+    .legendButtonDiv.move.window-top-right {
         right: 260px;
+    }
+    .legendButtonDiv.move.window-top-left{
+        left:260px;
     }
 
     #legendContainer.window-top-right {
@@ -570,7 +621,12 @@ body,html {
         right: 0;
     }
 
-
+    #legendContainer.window-top-right > .legendButtonDiv {
+        left: 0;
+    }
+    #legendContainer.window-top-left{
+        left:0;
+    }
 }
 /*Loading Indicator Customizations*/
 .loading-indicator {
@@ -742,6 +798,7 @@ input[type=checkbox]:checked.share-dialog-checkbox + .share-dialog-checkbox:befo
 
 .esriTimeSlider {
     /*min-width: 450px;*/
+    padding:0 4px;
     margin: auto;
     width: auto;
     z-index: 850;

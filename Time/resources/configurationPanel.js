@@ -77,7 +77,7 @@
                "type": "paragraph",
                "value": "If the selected web map is time aware use the options in this section to configure the time behavior for the application. To disable time in the app set <i>Display time</i> to false. "
             },
-            {
+            {  
                "type":"boolean",
                "fieldName": "time",
                "label": "Display time"
@@ -89,6 +89,17 @@
                "type": "boolean",
                "fieldName": "autoplay",
                "label": "Automatically play slider"
+            },{
+               "type": "paragraph",
+               "value": "Set 'Update time immediately' to true if you want to see time data update as you drag the time slider handles. Note: if your dataset is large you may see performance decrease with this enabled."
+            },{
+               "type": "boolean",
+               "fieldName": "intermediatechanges",
+               "label": "Update time immediately"
+            },{
+               "type": "boolean",
+               "fieldName": "endtimenewline",
+               "label": "Show end time on new line"
             },{
                "type": "paragraph",
                "value": "Set <i>Hide slider control</i> to true to hide the slider portion of the time display and show just the play control and date."
@@ -112,7 +123,75 @@
                "tooltip":"Rate at which slider plays (in milliseconds)"
             },{
                "type":"paragraph",
-               "value":"By default the application will calculate an appropriate date format as the time slider progresses based on the time extent. Alternatively you can specify a custom date/time extent by providing a custom date string. See the examples in the <a href='http://dojotoolkit.org/reference-guide/1.10/dojo/date/locale/format.html'>dojo date format help</a> for more information. "
+               "value":"By default the application will calculate an appropriate date format as the time slider progresses based on the time extent. Alternatively you can choose a pre-defined date/timem format or specify a custom date/time extent by providing a custom date string. See the examples in the <a href='http://dojotoolkit.org/reference-guide/1.10/dojo/date/locale/format.html'>dojo date format help</a> for more information. "
+            },{
+               "type": "string",
+               "fieldName": "dateformat",
+               "tooltip": "Select a pre-set date format",
+               "label": "Date Format",
+               "options":[{
+                     "label": "none",
+                     "value": null
+                  },
+                  {
+                     "label": "July 2015",
+                     "value": "MMMM/yyyy"
+                  },{
+                     "label": "Jul 2015",
+                     "value": "MMM yyyy"
+                  },{
+                     "label":"July 21,2015",
+                     "value":"MMMM d,yyyy"
+                  },{
+                     "label":"Tue Jul 21,2015",
+                     "value": "EE MMM dd,yyyy"
+                  },{
+                     "label": "7/21/2015",
+                     "value": "M/dd/yyyy"
+                  },{
+                     "label": "2015/7/21",
+                     "value": "yyyy/M/dd"
+                  },{
+                     "label": "7/21/15",
+                     "value": "M/dd/yy "
+                  },{
+                     "label": "2015",
+                     "value": "yyyy"
+                  }
+               ]
+            },{
+               "type": "string",
+               "fieldName": "timeformat",
+               "tooltip": "Select a pre-set time format",
+               "label": "Time Format",
+               "options":[
+                  {
+                     "label": "none",
+                     "value": null
+                  },
+                  {
+                     "label": "17:16",
+                     "value": "HH:mm"
+                  },{
+                     "label": "17:16:00",
+                     "value": "HH:mm:ss"
+                  },{
+                     "label":"17:16 PDT",
+                     "value":"H:mm v"
+                  },{
+                     "label":"8:46 AM",
+                     "value":"h:m a"
+                  },{
+                     "label":"8:46 AM PDT",
+                     "value":"h:m a v"
+                  },{
+                     "label":"08:46 AM",
+                     "value": "hh:mm a"
+                  },{
+                     "label": "8:46:00 AM",
+                     "value": "h:mm:ss a"
+                  }
+               ]
             },{
                "type":"string",
                "label": "Date Format",
@@ -156,6 +235,19 @@
                "type":"boolean",
                "fieldName":"legend",
                "label":"Legend"
+            },{
+               "type": "string",
+               "fieldName": "legendposition",
+               "tooltip": "Select location for legend",
+               "label": "Legend location",
+               "options":[{
+                     "label": "Top right",
+                     "value": "top-right"
+                  },{
+                     "label": "Top left",
+                     "value": "top-left"
+                  }
+               ]
             },
             {  
                "type":"boolean",
@@ -198,13 +290,17 @@
       "sliderrate": 500,
       "noslider": false,
       "timenav": false,
+      "intermediatechanges": false,
+      "endtimenewline": false,
       "scale":false,
       "zoomslider": true,
       "share": true,
       "about": true,
       "legend": true,
+      "legendposition": "top-right",
       "search": true,
       "scale":false,
-      "timeposition": "bottom-center"
+      "timeposition": "bottom-center",
+      "endtimenewline": false
    }
 }

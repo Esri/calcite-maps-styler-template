@@ -31,7 +31,8 @@ define({
   "sharinghost": location.protocol + "//" + "www.arcgis.com",
   "units": null,
   "time": true,
-  //Overwrite the calculated date time format with a custom value. 
+  "clock": null, //analog, digital or null (time slider) Not implemented
+  //Overwrite the calculated date time format with a custom value.
   "datetimeformat": null,//"MMMM d yyyy, h:m:s.SSS a",
   //Disable slider ticks when true
   "sliderticks":false, //display slider tics
@@ -39,10 +40,13 @@ define({
   "autoplay": false, //auto play the slider when app starts 
   "sliderrate": 500, //rate at which time slider plays in milliseconds.
   "noslider":false, //hide slider and play controls and just show time
+  "intermediatechanges": true, // update map as the slider is moved. When false map doesn't update until slider thumb is dropped. 
   "timenav": false, //When true show the time navigation (next previous arrows)
   //position time container. Valid values are  bottom-right, 
   //bottom-left, bottom-center. 
   "timeposition":"bottom-center", 
+  "endtimenewline": false, //when true the end time is displayed on a new line
+  "legendposition": null, //valid values are top-right and top-left
   "panelbackground": "#575757", //panel and title bar background color as hex value
   "panelcolor":"#FFF", //text color as hex value 
   "timecolor": "#a8a8a8", //#007AC2 //color for play and slider controls
