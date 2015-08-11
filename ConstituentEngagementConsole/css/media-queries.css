@@ -22,7 +22,6 @@
         min-height: 60px;
         min-width: 60px;
         max-height: 60px;
-        max-width: 60px;
     }
 
     .esriCTHeaderFont
@@ -53,12 +52,6 @@
         height: calc(100% - 58px);
     }
 
-    .esriCTMenuTabLeft
-    {
-        line-height: 50px;
-        margin-top: -2px;
-    }
-
     /* Application Header Styles */
 
     .esriCTCaretIcon
@@ -67,9 +60,27 @@
         margin-top: 23px;
     }
 
+    .esriCTViewModeCaretIcon
+    {
+        font-size: 14px;
+        margin-top: 23px;
+    }
+
+    .esriCTSettingsButtonCaretIcon
+    {
+        font-size: 14px;
+        margin-top: 23px;
+    }
+
+    .esriCTSettingsButtonCaretIconDisabled
+    {
+        font-size: 14px;
+        margin-top: 23px;
+    }
+
     .esriCTOperationalLayerName
     {
-        margin-top: 22px;
+        margin-top: 19px;
         height: 30px;
         width: calc(100% - 490px);
     }
@@ -87,6 +98,12 @@
     .esriCTLoginUserNameDiv
     {
         margin-top: 23px;
+        max-width: 135px;
+    }
+
+    .esriCTLoginUserNamePotraitMode
+    {
+        max-width: 90px !important;
     }
 
     .esriCTSettingsOptions
@@ -104,14 +121,33 @@
         right: 110px;
     }
 
-    .esriCTMenuTabLeft
-    {
-        width: calc(100% - 60px);
-    }
-
     .esriCTHomeIcon
     {
-        width: 60px;
+        max-width: 100%;
+        height: 60px;
+    }
+
+    .esriCTViewMode
+    {
+        float: left;
+        margin-right: 0px;
+    }
+
+    .esriCTSettingsButton
+    {
+        float: left;
+        margin-right: 0px;
+    }
+
+    .esriCTSettingsButtonDisabled
+    {
+        float: left;
+        margin-right: 0px;
+    }
+
+    .esriCTMenuTabLeft
+    {
+        padding: 15px 0px 5px 10px;
     }
 
     /* End of application header styles */
@@ -153,7 +189,27 @@
 
     .esriCTClearBtn
     {
-        background-image: url('../images/clear-text-2x.png') !impotant;
+        background-image: url('../images/clear-text-2x.png') !important;
+    }
+
+    .esriCTIncrementButton
+    {
+        background-image: url('../images/increment-2x.png');
+    }
+
+    .esriCTDecrementButton
+    {
+        background-image: url('../images/decrement-2x.png');
+    }
+
+    .esriSimpleSliderIncrementButton.esriCTIncrementButton.esriCTPointerCursor.esriSimpleSliderDisabledButton
+    {
+        background-image: url('../images/increment-disabled-2x.png') !important;
+    }
+
+    .esriSimpleSliderDecrementButton.esriCTDecrementButton.esriCTPointerCursor.esriSimpleSliderDisabledButton
+    {
+        background-image: url('../images/decrement-disabled-2x.png') !important;
     }
 }
 

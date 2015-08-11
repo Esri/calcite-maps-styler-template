@@ -1,12 +1,2 @@
-From git repository 
-origin	git@github.com:Esri/crowdsource-manager.git (fetch)
-origin	git@github.com:Esri/crowdsource-manager.git (push)
-. 
-branch 
-develop
-. 
-commit 2c28675721239e5df7640538a0f849bfb18af27a
-Author: MikeTschudi <mtschudi@esri.com>
-Date:   Wed Jul 1 20:12:04 2015 -0700
-
-    Added translation files
+v 1.1
+8/11/2015

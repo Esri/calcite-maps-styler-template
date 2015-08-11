@@ -114,6 +114,7 @@ define([
         _isCheckBoxClicked: false, // keeps track whether checkbox is clicked or row is clicked
         _isManualRefreshClicked: false, // keeps track whether manual refresh is clicked or not
         _isRowFound: false, // keeps track whether row is available in grid when user selects feature from map
+        _rowInstance: null, // to store row that needs to be removed if its edited value does not fall under definition expression of the layer
         objectIdColumnNumber: null, // to store column number which contains object id
         isOrientationChangedInListView: false, // to keep track whether orientation is changed in list view or not
         isMapViewClicked: false, // keep track whether map view option is clicked or not
@@ -122,6 +123,7 @@ define([
         isShowSelectedClicked: false, // keep track whether show selected option is clicked or not
         noResultFound: false, // keep track that after search results were found or not
         isLayerRefreshed: false, // keep track whether layer is refreshed after editing is done
+        isRowRemoved: false, // keep track whether row is removed from data-viewer list after edit is performed
 
         /** WIDGET INSTANTIATION **/
 
@@ -695,18 +697,9 @@ define([
         * @memberOf widgets/data-viewer/data-viewer
         */
         showAllRecords: function () {
-            var i;
             this.toggleSelectionViewOption();
             this._showAllFeaturesInDataViewer();
-            // After showing all the records in data-viewer, enabled/disable search functionality depending on layer search capability
-            if (this.itemInfo.itemData.applicationProperties.viewing.search && this.itemInfo.itemData.applicationProperties.viewing.search.enabled) {
-                for (i = 0; i < this.itemInfo.itemData.applicationProperties.viewing.search.layers.length; i++) {
-                    if (this.selectedOperationalLayerID === this.itemInfo.itemData.applicationProperties.viewing.search.layers[i].id) {
-                        this._addRegularSearchIcon();
-                        break;
-                    }
-                }
-            }
+            this._enableSearchIcon();
         },
 
         /**
@@ -1349,13 +1342,22 @@ define([
         * @memberOf widgets/data-viewer/data-viewer
         */
         _changeSelectionOptionMode: function (toggle) {
-            var settingsButton, settingsOption, showAllOption, showSelectedOption;
+            var settingsButton, settingsOption, showAllOption, showSelectedOption, settingsButtonCaretIcon;
+
             settingsButton = query(".esriCTSettingsButton")[0];
+            settingsButtonCaretIcon = query(".esriCTSettingsButtonCaretIcon")[0];
+
             showAllOption = query(".esriCTShowAll")[0];
             showSelectedOption = query(".esriCTShowSelected")[0];
+
             if (!settingsButton) {
                 settingsButton = query(".esriCTSettingsButtonDisabled")[0];
             }
+
+            if (!settingsButtonCaretIcon) {
+                settingsButtonCaretIcon = query(".esriCTSettingsButtonCaretIconDisabled")[0];
+            }
+
             settingsOption = query(".esriCTSettingsOptions")[0];
             if (toggle) { // To enable selection options
                 if ((this._selectRowGraphicsLayer && this._selectRowGraphicsLayer.graphics && this._selectRowGraphicsLayer.graphics.length > 0)) {
@@ -1363,12 +1365,21 @@ define([
                         domClass.remove(settingsButton, "esriCTSettingsButtonDisabled");
                         domClass.add(settingsButton, "esriCTSettingsButton");
                     }
+                    if (domClass.contains(settingsButtonCaretIcon, "esriCTSettingsButtonCaretIconDisabled")) {
+                        domClass.remove(settingsButtonCaretIcon, "esriCTSettingsButtonCaretIconDisabled");
+                        domClass.add(settingsButtonCaretIcon, "esriCTSettingsButtonCaretIcon");
+                    }
                 }
             } else { // To disable selection options
                 domClass.remove(settingsOption, "esriCTVisible");
                 domClass.add(settingsOption, "esriCTHidden");
-                domClass.remove(settingsOption, "esriCTSettingsButton");
+
+                domClass.remove(settingsButton, "esriCTSettingsButton");
                 domClass.add(settingsButton, "esriCTSettingsButtonDisabled");
+
+                domClass.remove(settingsButtonCaretIcon, "esriCTSettingsButtonCaretIcon");
+                domClass.add(settingsButtonCaretIcon, "esriCTSettingsButtonCaretIconDisabled");
+
                 domClass.replace(showAllOption, "esriCTHidden", "esriCTVisible");
                 domClass.replace(showSelectedOption, "esriCTVisible", "esriCTHidden");
             }
@@ -2181,6 +2192,23 @@ define([
         },
 
         /**
+        * This function is used to enable search icon if layer has search capability.
+        * @memberOf widgets/data-viewer/data-viewer
+        */
+        _enableSearchIcon: function () {
+            var i;
+            // After showing all the records in data-viewer, enabled/disable search functionality depending on layer search capability
+            if (this.itemInfo.itemData.applicationProperties.viewing.search && this.itemInfo.itemData.applicationProperties.viewing.search.enabled) {
+                for (i = 0; i < this.itemInfo.itemData.applicationProperties.viewing.search.layers.length; i++) {
+                    if (this.selectedOperationalLayerID === this.itemInfo.itemData.applicationProperties.viewing.search.layers[i].id) {
+                        this._addRegularSearchIcon();
+                        break;
+                    }
+                }
+            }
+        },
+
+        /**
         * This function is used to remove row from data-viewer when user un-selects checkbox in show selected mode
         * @memberOf widgets/data-viewer/data-viewer
         */
@@ -2449,6 +2477,8 @@ define([
         _updateFeature: function (newValue, field) {
             try {
                 var featureLayerQuery;
+                this._rowInstance = null;
+                this._rowInstance = this._lastSelectedRow;
                 featureLayerQuery = new Query();
                 featureLayerQuery.outSpatialReference = this.map.spatialReference;
                 featureLayerQuery.objectIds = [parseInt(this._featureObjectID, 10)];
@@ -2499,41 +2529,69 @@ define([
                             // Once a feature is created with its updated value do apply edits
                             this._selectedOperationalLayer.applyEdits(null, [this._updatedGraphic], null, lang.hitch(this, function (adds, updates, deletes) {
                                 if (updates[0].success) {
-                                    // Update value that is stored inside date picker control
-                                    var className, newValueArr, newValueStr;
-                                    className = this._lastEditedControl.currentTarget.className;
-                                    if (className.indexOf("esriCTDateTimePicker") > -1) {
-                                        if (this._lastEditedControl.currentTarget.parentElement && this._lastEditedControl.currentTarget.parentElement.childNodes && this._lastEditedControl.currentTarget.parentElement.childNodes[0] && this._lastEditedControl.currentTarget.parentElement.childNodes[0].childNodes && this._lastEditedControl.currentTarget.parentElement.childNodes[0].childNodes[0]) {
-                                            newValueArr = this._lastEditedControl.currentTarget.parentElement.childNodes[0].childNodes[0].name.split('|');
-                                            if (newValue) {
-                                                newValueStr = newValueArr[0] + "|" + parseInt(newValue, 10) + "|" + newValueArr[2];
-                                            } else {
-                                                newValueStr = newValueArr[0] + "||" + newValueArr[2];
+                                    // query to check whether updated record falls under definition expression that is applied to the layer.
+                                    // If not, than remove that row from data-viewer table
+                                    featureLayerQuery = new Query();
+                                    featureLayerQuery.outSpatialReference = this.map.spatialReference;
+                                    featureLayerQuery.objectIds = [parseInt(this._featureObjectID, 10)];
+                                    featureLayerQuery.returnGeometry = false;
+                                    featureLayerQuery.where = this._selectedOperationalLayer._defnExpr;
+                                    this._selectedOperationalLayer.queryFeatures(featureLayerQuery, lang.hitch(this, function (featureSet) {
+                                        // if record falls under definition expression that is applied to the layer.
+                                        if (featureSet.features.length > 0) {
+                                            // Update value that is stored inside date picker control
+                                            var className, newValueArr, newValueStr;
+                                            className = this._lastEditedControl.currentTarget.className;
+                                            if (className.indexOf("esriCTDateTimePicker") > -1) {
+                                                if (this._lastEditedControl.currentTarget.parentElement && this._lastEditedControl.currentTarget.parentElement.childNodes && this._lastEditedControl.currentTarget.parentElement.childNodes[0] && this._lastEditedControl.currentTarget.parentElement.childNodes[0].childNodes && this._lastEditedControl.currentTarget.parentElement.childNodes[0].childNodes[0]) {
+                                                    newValueArr = this._lastEditedControl.currentTarget.parentElement.childNodes[0].childNodes[0].name.split('|');
+                                                    if (newValue) {
+                                                        newValueStr = newValueArr[0] + "|" + parseInt(newValue, 10) + "|" + newValueArr[2];
+                                                    } else {
+                                                        newValueStr = newValueArr[0] + "||" + newValueArr[2];
+                                                    }
+                                                    this._lastEditedControl.currentTarget.parentElement.childNodes[0].childNodes[0].name = newValueStr;
+                                                }
                                             }
-                                            this._lastEditedControl.currentTarget.parentElement.childNodes[0].childNodes[0].name = newValueStr;
+                                            // Update value that is stored inside text input control
+                                            if (className.indexOf("esriCTTextInput") > -1) {
+                                                this._lastEditedControl.currentTarget.defaultValue = this._lastEditedControl.currentTarget.value;
+                                            }
+                                            // Update value that is stored inside drop down control
+                                            if (className.indexOf("esriCTCodedDomain") > -1) {
+                                                this._lastEditedControl.currentTarget.name = newValue;
+                                            }
+                                            if (this._isDropDownClicked) {
+                                                this._isDropDownClicked = false;
+                                            }
+                                            // Update value that is stored inside dependent controls
+                                            if (!$.isEmptyObject(this._updatedFieldAttribute)) {
+                                                this._updateDependentFieldControls();
+                                            }
+                                            // Refresh layer once its value gets updated
+                                            this.isLayerRefreshed = true;
+                                            this.map.getLayer(this.selectedOperationalLayerID).refresh();
+                                            this._updateFieldInActivatedFeaturesList(field);
+                                            this._updateFieldInSelectedFeaturesList(field);
+                                            this.appUtils.hideLoadingIndicator();
+                                        } else { // remove record from data-viewer table
+                                            if (this._isDropDownClicked) {
+                                                this._isDropDownClicked = false;
+                                            }
+                                            this.isLayerRefreshed = true;
+                                            if (this._lastSelectedRow) {
+                                                this._removeRowFromDataViewer(this._lastSelectedRow.currentTarget);
+                                            } else {
+                                                this._removeRowFromDataViewer(this._rowInstance.currentTarget);
+                                            }
+                                            this.isRowRemoved = true;
+                                            this.map.getLayer(this.selectedOperationalLayerID).refresh();
+                                            this._removeFeatureFromActivatedFeaturesList();
+                                            this._removeFeatureFromSelectedFeaturesList();
                                         }
-                                    }
-                                    // Update value that is stored inside text input control
-                                    if (className.indexOf("esriCTTextInput") > -1) {
-                                        this._lastEditedControl.currentTarget.defaultValue = this._lastEditedControl.currentTarget.value;
-                                    }
-                                    // Update value that is stored inside drop down control
-                                    if (className.indexOf("esriCTCodedDomain") > -1) {
-                                        this._lastEditedControl.currentTarget.name = newValue;
-                                    }
-                                    if (this._isDropDownClicked) {
-                                        this._isDropDownClicked = false;
-                                    }
-                                    // Update value that is stored inside dependent controls
-                                    if (!$.isEmptyObject(this._updatedFieldAttribute)) {
-                                        this._updateDependentFieldControls();
-                                    }
-                                    // Refresh layer once its value gets updated
-                                    this.isLayerRefreshed = true;
-                                    this.map.getLayer(this.selectedOperationalLayerID).refresh();
-                                    this._updateFieldInActivatedFeaturesList(field);
-                                    this._updateFieldInSelectedFeaturesList(field);
-                                    this.appUtils.hideLoadingIndicator();
+                                    }), lang.hitch(this, function (err) {
+                                        this.appUtils.hideLoadingIndicator();
+                                    }));
                                 } else {
                                     // If update fails then retain its old value
                                     this._retainOldValue();
@@ -2596,6 +2654,66 @@ define([
                     this._selectRowGraphicsLayer.graphics[i].attributes[field] = this._updatedGraphic.attributes[field];
                     break;
                 }
+            }
+        },
+
+        /**
+        * This function is used to remove feature from activated features list.
+        * Once edit is performed & if feature does not fall under specified definition expression of layer. Than remove it
+        * from data list & this list also.
+        * @memberOf widgets/data-viewer/data-viewer
+        */
+        _removeFeatureFromActivatedFeaturesList: function () {
+            var i, objectID, updatedObjectID;
+            // If some features are selected and updated after that, so it also needs to be updated in the activated feature record list
+            updatedObjectID = this._updatedGraphic.attributes[this._selectedOperationalLayer.objectIdField];
+            for (i = 0; i < this._activeRowGraphicsLayer.graphics.length; i++) {
+                objectID = this._activeRowGraphicsLayer.graphics[i].attributes[this._selectedOperationalLayer.objectIdField];
+                if (objectID === updatedObjectID) {
+                    this._activeRowGraphicsLayer.remove(this._activeRowGraphicsLayer.graphics[i]);
+                    break;
+                }
+            }
+        },
+
+        /**
+        * This function is used to remove feature from selected features list.
+        * Once edit is performed & if feature does not fall under specified definition expression of layer. Than remove it
+        * from data list & this list also.
+        * @memberOf widgets/data-viewer/data-viewer
+        */
+        _removeFeatureFromSelectedFeaturesList: function (field) {
+            var i, objectID, updatedObjectID;
+            // If some features are selected and updated after that, so it also needs to be updated in the selected feature record list
+            updatedObjectID = this._updatedGraphic.attributes[this._selectedOperationalLayer.objectIdField];
+            for (i = 0; i < this._selectRowGraphicsLayer.graphics.length; i++) {
+                objectID = this._selectRowGraphicsLayer.graphics[i].attributes[this._selectedOperationalLayer.objectIdField];
+                if (objectID === updatedObjectID) {
+                    this._selectRowGraphicsLayer.remove(this._selectRowGraphicsLayer.graphics[i]);
+                    break;
+                }
+            }
+        },
+
+        /**
+        * This function is used to display message when no features are available to display. This check is performed
+        * if row containing particular feature is removed after edit is performed. It occurs when feature does not fall under
+        * specified definition expression of layer
+        * @memberOf widgets/data-viewer/data-viewer
+        */
+        checkForNoFeatures: function () {
+            if (this._selectedOperationalLayer.graphics.length === 0) {
+                domClass.remove(this.noFeatureDiv, "esriCTHidden");
+                domClass.add(this.dataViewerParentDiv, "esriCTHidden");
+                this.noFeatureDiv.innerHTML = this.appConfig.i18n.dataviewer.noIssuesReported;
+                this.appUtils.hideLoadingIndicator();
+            } else if (this.isShowSelectedClicked && (this._selectRowGraphicsLayer.graphics.length === 0)) {
+                this.isShowSelectedClicked = false;
+                this.isDetailsTabClicked = false;
+                this._enableSearchIcon();
+                this.createDataViewerUI(false);
+            } else {
+                this.appUtils.hideLoadingIndicator();
             }
         },
 

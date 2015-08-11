@@ -7,9 +7,9 @@
             <div data-dojo-attach-point="applicationHeaderName" class="esriCTMenuTabLeft">
             </div>
         </div>
-        <div class="esriCTheaderRight">
-            <div class="esriCTMenuTabRight">
-                <div class="esriCTUserControlContainer">
+        <div class="esriCTheaderRight" data-dojo-attach-point="esriCTheaderRight">
+            <div class="esriCTMenuTabRight" data-dojo-attach-point="esriCTMenuTabRight">
+                <div class="esriCTUserControlContainer" data-dojo-attach-point="userControlContainer">
                     <div data-dojo-attach-point="esriCTLoginDetailsDiv">
                         <div class="esriCTLoginCredentialsDiv" data-dojo-attach-point="esriCTLoginCredentialsDiv">
                             <div>
@@ -30,23 +30,31 @@
                 </div>
                 <div class="esriCTSettingIconContainer">
                     <div data-dojo-attach-point="applicationHeaderWidgetsContainer">
-                        <div class="esriCTHeaderIcons esriCTSettingsButtonDisabled esriCTBGColor esriCTPointerCursor"
-                            data-dojo-attach-point="settingsDataViewerBtn">
+                        <div class="esriCTSettingsButtonParentContainer" data-dojo-attach-point="settingsButtonParentContainer">
+                            <div class="esriCTHeaderIcons esriCTSettingsButtonDisabled esriCTBGColor esriCTPointerCursor"
+                                data-dojo-attach-point="settingsDataViewerBtn">
+                            </div>
+                            <div class="esriCTSettingsButtonCaretIconDisabled  esriCTPointerCursor" data-dojo-attach-point="settingsDataViewerCaretIcon">
+                                &#9660;
+                            </div>
                         </div>
                         <div class="esriCTOptions esriCTSettingsOptions esriCTBorder esriCTPointerCursor esriCTApplicationColor esriCTHidden"
                             data-dojo-attach-point="esriCTSettingsOptionsItemDiv">
                             <div class="esriCTItems esriCTHidden esriCTShowAll" data-dojo-attach-point="esriCTShowAll">
                             </div>
-                            <div class="esriCTItems esriCTVisible esriCTShowSelected"
-                                data-dojo-attach-point="esriCTShowSelected">
+                            <div class="esriCTItems esriCTVisible esriCTShowSelected" data-dojo-attach-point="esriCTShowSelected">
                             </div>
-                            <div class="esriCTItems esriCTVisible esriCTClearSelection"
-                                data-dojo-attach-point="esriCTClearSelection">
+                            <div class="esriCTItems esriCTVisible esriCTClearSelection" data-dojo-attach-point="esriCTClearSelection">
                             </div>
                             <div class="esriCTItems esriCTZoomToSelected" data-dojo-attach-point="esriCTZoomToSelected">
                             </div>
                         </div>
-                        <div class="esriCTHeaderIcons esriCTViewMode esriCTBGColor esriCTPointerCursor" data-dojo-attach-point="viewModeBtn">
+                        <div class="esriCTViewModeParentContainer" data-dojo-attach-point="viewModeParentContainer">
+                            <div class="esriCTHeaderIcons esriCTViewMode esriCTBGColor esriCTPointerCursor" data-dojo-attach-point="viewModeBtn">
+                            </div>
+                            <div class="esriCTViewModeCaretIcon  esriCTPointerCursor" data-dojo-attach-point="viewModeCaretIcon">
+                                &#9660;
+                            </div>
                         </div>
                         <div class="esriCTOptions esriCTOptionsViewMode esriCTBorder esriCTPointerCursor esriCTApplicationColor  esriCTHidden"
                             data-dojo-attach-point="optionsViewMode">

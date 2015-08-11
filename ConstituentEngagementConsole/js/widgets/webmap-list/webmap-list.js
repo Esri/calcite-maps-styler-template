@@ -590,7 +590,6 @@ define([
                     this.setDefaultHeightOfContainers();
                     this._selectWebMapItem(webMapId);
                     this._createMap(webMapId, this.mapDivID).then(lang.hitch(this, function (response) {
-                        var obj;
                         this.lastSelectedWebMapExtent = response.map.extent;
                         this.lastSelectedWebMapItemInfo = response.itemInfo;
                         obj = {

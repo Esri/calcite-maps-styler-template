@@ -109,13 +109,13 @@ define([
             var incrementButton, detailsDiv, decrementButton;
             domConstruct.destroy("detailsBtnDiv");
             // details tab button that needs to be added
-            detailsDiv = domConstruct.create("div", {
-                "class": "esriCTBGColor esriCTDetailsBtnDisabled",
-                "id": "detailsBtnDiv",
-                "title": this.appConfig.i18n.mapViewer.detailsBtnToolTip
-            });
+            detailsDiv = domConstruct.create("div", { "class": "esriCTBGColor esriCTDetailsBtnDisabled", "id": "detailsBtnDiv", "title": this.appConfig.i18n.mapViewer.detailsBtnToolTip });
             incrementButton = query(".esriSimpleSliderIncrementButton", dom.byId("mapDiv"));
+            domConstruct.empty(incrementButton[0]);
+            domClass.add(incrementButton[0], "esriCTIncrementButton esriCTPointerCursor");
             decrementButton = query(".esriSimpleSliderDecrementButton", dom.byId("mapDiv"));
+            domConstruct.empty(decrementButton[0]);
+            domClass.add(decrementButton[0], "esriCTDecrementButton esriCTPointerCursor");
             if (incrementButton.length > 0) {
                 domAttr.set(incrementButton[0], "title", this.appConfig.i18n.mapViewer.zoomInToolTip);
             }

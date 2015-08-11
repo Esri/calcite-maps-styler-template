@@ -236,6 +236,38 @@ th
     z-index: 948;
 }
 
+.esriCTIncrementButton
+{
+    width: 32px;
+    height: 31px;
+    background-image: url('../images/increment.png');
+    background-size: 32px 31px;
+}
+
+.esriCTDecrementButton
+{
+    width: 32px;
+    height: 31px;
+    background-image: url('../images/decrement.png');
+    background-size: 32px 31px;
+}
+
+.esriSimpleSliderIncrementButton.esriCTIncrementButton.esriCTPointerCursor.esriSimpleSliderDisabledButton
+{
+    width: 32px;
+    height: 31px;
+    background-image: url('../images/increment-disabled.png') !important;
+    background-size: 32px 31px;
+}
+
+.esriSimpleSliderDecrementButton.esriCTDecrementButton.esriCTPointerCursor.esriSimpleSliderDisabledButton
+{
+    width: 32px;
+    height: 31px;
+    background-image: url('../images/decrement-disabled.png') !important;
+    background-size: 32px 31px;
+}
+
 /* End of MapViewer*/
 
 /* Web Map List */
@@ -482,6 +514,7 @@ th
 {
     padding-left: 5px;
     padding-top: 10px;
+    cursor: default;
 }
 
 table.dataTable thead > tr > th
@@ -754,11 +787,15 @@ table.dataTable thead .esriCTDataViewerTableHeaderCheckbox
 .esriCTViewMode
 {
     background-image: url('../images/mode.png');
+    float: left;
+    margin-right: 0px;
 }
 
 .esriCTSettingsButton
 {
     background-image: url('../images/settings.png');
+    float: left;
+    margin-right: 0px;
 }
 
 .esriCTManualRefreshButton
@@ -818,6 +855,7 @@ table.dataTable thead .esriCTDataViewerTableHeaderCheckbox
     width: 30%;
     float: left;
     border-right: 1px solid #fff;
+    height: 100%;
 }
 .esriCTheaderRight
 {
@@ -828,7 +866,9 @@ table.dataTable thead .esriCTDataViewerTableHeaderCheckbox
 .esriCTHomeIcon
 {
     float: left;
-    width: 50px;
+    height: 48px;
+    max-width: 100%;
+    overflow: hidden;
 }
 
 .esriCTMenuTabLeft
@@ -839,8 +879,6 @@ table.dataTable thead .esriCTDataViewerTableHeaderCheckbox
     overflow: hidden;
     text-overflow: ellipsis;
     padding: 9px 0px 5px 10px;
-    float: left;
-    width: calc(100% - 50px);
     color: #fff;
 }
 
@@ -860,7 +898,6 @@ table.dataTable thead .esriCTDataViewerTableHeaderCheckbox
     min-height: 48px;
     min-width: 48px;
     max-height: 48px;
-    max-width: 48px;
 }
 
 .esriCTUserControlContainer
@@ -921,6 +958,46 @@ table.dataTable thead .esriCTDataViewerTableHeaderCheckbox
     color: #fff;
 }
 
+.esriCTViewModeCaretIcon
+{
+    height: 18px;
+    width: 18px;
+    background-position: center;
+    margin-top: 17px;
+    display: inline-block;
+    float: left;
+    margin-left: 5px;
+    font-size: 12px;
+    color: #fff;
+}
+
+.esriCTSettingsButtonCaretIcon
+{
+    height: 18px;
+    width: 18px;
+    background-position: center;
+    margin-top: 17px;
+    display: inline-block;
+    float: left;
+    margin-left: 5px;
+    font-size: 12px;
+    color: #fff;
+}
+
+.esriCTSettingsButtonCaretIconDisabled
+{
+    height: 18px;
+    width: 18px;
+    background-position: center;
+    margin-top: 17px;
+    display: inline-block;
+    float: left;
+    margin-left: 5px;
+    font-size: 12px;
+    color: #CACACA;
+    cursor: default !important;
+}
+
 .esriCTLoginCredentialsDiv
 {
     float: right;
@@ -978,6 +1055,18 @@ table.dataTable thead .esriCTDataViewerTableHeaderCheckbox
 {
     background-image: url('../images/settings-disable.png') !important;
     cursor: default !important;
+    float: left;
+    margin-right: 0px;
+}
+
+.esriCTViewModeParentContainer
+{
+    float: right;
+}
+
+.esriCTSettingsButtonParentContainer
+{
+    float: right;
 }
 
 /* End of application header styles */

@@ -211,7 +211,13 @@ define([
             } else {
                 domClass.add(query(".esriCTSettingsButtonDisabled")[0], "esriCTHidden");
             }
+            if (query(".esriCTSettingsButtonCaretIcon")[0]) {
+                domClass.add(query(".esriCTSettingsButtonCaretIcon")[0], "esriCTHidden");
+            } else {
+                domClass.add(query(".esriCTSettingsButtonCaretIconDisabled")[0], "esriCTHidden");
+            }
             domClass.add(query(".esriCTViewMode")[0], "esriCTHidden");
+            domClass.add(query(".esriCTViewModeCaretIcon")[0], "esriCTHidden");
             domClass.add(query(".esriCTSearchDisable")[0], "esriCTHidden");
             domClass.add(query(".esriCTManualRefreshButton")[0], "esriCTHidden");
             domClass.remove(dom.byId("esriCTNoWebMapParentDiv"), "esriCTHidden");
@@ -248,6 +254,14 @@ define([
         * @memberOf widgets/main/main
         */
         _onWindowResize: function () {
+            // Due to high resolution of iPad long username was not getting displayed properly.
+            // So it detects orientation in iPad and long username gets displayed properly in landscape & potrait mode.
+            // This is done by changing the width of username dynamically.
+            if ((ApplicationUtils.isIos()) && (window.orientation === 0 || window.orientation === 180)) { // landscape mode
+                domClass.remove(query(".esriCTLoginUserNameDiv")[0], "esriCTLoginUserNamePotraitMode");
+            } else if ((ApplicationUtils.isIos()) && (window.orientation === 90 || window.orientation === -90)) { // potrait mode
+                domClass.add(query(".esriCTLoginUserNameDiv")[0], "esriCTLoginUserNamePotraitMode");
+            }
             if (this._isEditingOnAndroid) {
                 this._dataViewerWidget.OnEditingComplete();
             }
@@ -272,6 +286,10 @@ define([
                 this._setDataViewerHeight();
                 this._resizeMap();
             }
+            this._appHeader.resetOperationalLayerNameWidth();
+            this._appHeader.resetViewModeOptionsPosition();
+            this._appHeader.resetSettingsOptionsPosition();
+            this._appHeader.resetDataSearchPosition();
         },
 
         /**
@@ -717,6 +735,10 @@ define([
                         // a flag stating whether layer is refreshed after editing needs to be analysed
                         if (this._dataViewerWidget.isLayerRefreshed) {
                             this._dataViewerWidget.isLayerRefreshed = false;
+                            if (this._dataViewerWidget.isRowRemoved) {
+                                this._dataViewerWidget.isRowRemoved = false;
+                                this._dataViewerWidget.checkForNoFeatures();
+                            }
                         } else {
                             // create ui of data-viewer widget
                             if ((evt.target._defnExpr === this._existingDefinitionExpression) || (evt.target._defnExpr === null) || (evt.target._defnExpr === undefined)) {

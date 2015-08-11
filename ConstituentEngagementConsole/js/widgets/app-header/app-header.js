@@ -117,6 +117,13 @@ define([
             this._setApplicationShortcutIcon();
             this._loadIcons("apple-touch-icon-precomposed", applicationIcon);
 
+            // Due to high resolution of iPad long username was not getting displayed properly.
+            // So it detects orientation in iPad and long username gets displayed properly in landscape & potrait mode.
+            // This is done by changing the width of username dynamically.
+            if (this.appUtils.isIos() && (window.orientation === 0 || window.orientation === 180)) {
+                domClass.add(query(".esriCTLoginUserNameDiv")[0], "esriCTLoginUserNamePotraitMode");
+            }
+
             // if user logs in than display application header with different controls like setting, view, etc...
             // if user clicks cancel button than hide different and display sign-in button
             if (this.appConfig.logInDetails) {
@@ -149,6 +156,55 @@ define([
             this._onViewModeClick();
             this._setViewModeOptionText();
             this._onSearchIconClick();
+            this.resetOperationalLayerNameWidth();
+            this.resetViewModeOptionsPosition();
+            this.resetSettingsOptionsPosition();
+            this.resetDataSearchPosition();
+        },
+
+        /**
+        * This function is used to reset the width of operational layer name dynamically.
+        * @memberOf widgets/app-header/app-header
+        */
+        resetOperationalLayerNameWidth: function () {
+            var headerWidth, menuTabWidth;
+            headerWidth = parseFloat(domStyle.get(this.esriCTheaderRight, "width"));
+            menuTabWidth = parseFloat(domStyle.get(this.esriCTMenuTabRight, "width"));
+            domStyle.set(this.operationalLayerTitle, "width", ((headerWidth - menuTabWidth) - 15) + "px");
+        },
+
+        /**
+        * This function is used to reset the position of settings options list.
+        * @memberOf widgets/app-header/app-header
+        */
+        resetSettingsOptionsPosition: function () {
+            var userNameWidth, userNameCaretIconWidth;
+            userNameWidth = parseFloat(domStyle.get(this.esriCTLoginUserNameDiv, "width"));
+            userNameCaretIconWidth = parseFloat(domStyle.get(this.esriCTCaretIcon, "width"));
+            domStyle.set(this.esriCTSettingsOptionsItemDiv, "right", (userNameWidth + userNameCaretIconWidth) + "px");
+        },
+
+        /**
+        * This function is used to reset the position of view mode options list.
+        * @memberOf widgets/app-header/app-header
+        */
+        resetViewModeOptionsPosition: function () {
+            var userNameWidth, userNameCaretIconWidth, settingsButtonContainerWidth;
+            userNameWidth = parseFloat(domStyle.get(this.esriCTLoginUserNameDiv, "width"));
+            userNameCaretIconWidth = parseFloat(domStyle.get(this.esriCTCaretIcon, "width"));
+            settingsButtonContainerWidth = parseFloat(domStyle.get(this.settingsButtonParentContainer, "width"));
+            domStyle.set(this.optionsViewMode, "right", (userNameWidth + userNameCaretIconWidth + settingsButtonContainerWidth) + "px");
+        },
+
+        /**
+        * This function is used to reset the position of data search.
+        * @memberOf widgets/app-header/app-header
+        */
+        resetDataSearchPosition: function () {
+            var userNameWidth, userNameCaretIconWidth;
+            userNameWidth = parseFloat(domStyle.get(this.esriCTLoginUserNameDiv, "width"));
+            userNameCaretIconWidth = parseFloat(domStyle.get(this.esriCTCaretIcon, "width"));
+            domStyle.set(this.searchOptions, "right", (userNameWidth + userNameCaretIconWidth) + "px");
         },
 
         /**
@@ -323,15 +379,29 @@ define([
         */
         _onSettingsIconClick: function () {
             on(this.settingsDataViewerBtn, "click", lang.hitch(this, function (event) {
-                if (!domClass.contains(event.currentTarget, "esriCTSettingsButtonDisabled")) {
-                    this._toggleOptionsVisibility();
-                    domClass.replace(this.searchOptions, "esriCTHidden", "esriCTVisible");
-                    domClass.replace(this.optionsViewMode, "esriCTHidden", "esriCTVisible");
-                    domClass.remove(this.esriCTLoginOptionsDiv, "esriCTVisible");
-                    domClass.add(this.esriCTLoginOptionsDiv, "esriCTHidden");
+                if (!domClass.contains(this.settingsDataViewerBtn, "esriCTSettingsButtonDisabled")) {
+                    this._toggleSettingsBtnIcon();
+                }
+            }));
+            on(this.settingsDataViewerCaretIcon, "click", lang.hitch(this, function (event) {
+                if (!domClass.contains(this.settingsDataViewerBtn, "esriCTSettingsButtonDisabled")) {
+                    this._toggleSettingsBtnIcon();
                 }
             }));
         },
+
+        /**
+        * This function is used to enable/disable settings icon
+        * @memberOf widgets/app-header/app-header
+        */
+        _toggleSettingsBtnIcon: function () {
+            this._toggleOptionsVisibility();
+            domClass.replace(this.searchOptions, "esriCTHidden", "esriCTVisible");
+            domClass.replace(this.optionsViewMode, "esriCTHidden", "esriCTVisible");
+            domClass.remove(this.esriCTLoginOptionsDiv, "esriCTVisible");
+            domClass.add(this.esriCTLoginOptionsDiv, "esriCTHidden");
+        },
+
         /**
         * This function is used to display search option
         * @memberOf widgets/app-header/app-header
@@ -365,12 +435,23 @@ define([
         */
         _onViewModeClick: function () {
             on(this.viewModeBtn, "click", lang.hitch(this, function (event) {
-                this._toggleViewModeOptionsVisibility();
-                domClass.replace(this.esriCTSettingsOptionsItemDiv, "esriCTHidden", "esriCTVisible");
-                domClass.replace(this.searchOptions, "esriCTHidden", "esriCTVisible");
-                domClass.remove(this.esriCTLoginOptionsDiv, "esriCTVisible");
-                domClass.add(this.esriCTLoginOptionsDiv, "esriCTHidden");
+                this._toggleViewModeIcon();
             }));
+            on(this.viewModeCaretIcon, "click", lang.hitch(this, function (event) {
+                this._toggleViewModeIcon();
+            }));
+        },
+
+        /**
+        * This function is used to enable/disable view mode
+        * @memberOf widgets/app-header/app-header
+        */
+        _toggleViewModeIcon: function () {
+            this._toggleViewModeOptionsVisibility();
+            domClass.replace(this.esriCTSettingsOptionsItemDiv, "esriCTHidden", "esriCTVisible");
+            domClass.replace(this.searchOptions, "esriCTHidden", "esriCTVisible");
+            domClass.remove(this.esriCTLoginOptionsDiv, "esriCTVisible");
+            domClass.add(this.esriCTLoginOptionsDiv, "esriCTHidden");
         },
 
         /**

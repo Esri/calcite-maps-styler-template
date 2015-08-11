@@ -13,6 +13,11 @@
     border-color: ${SelectedThemeColor};
 }
 
+.esriCTheaderRight
+{
+    background-color: ${SelectedThemeColor} !important;
+}
+
 /* esri API Overriden Styles */
 
 .esriSimpleSliderDecrementButton, .esriSimpleSliderIncrementButton
