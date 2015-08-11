@@ -4,9 +4,6 @@ define({
             error: "Unable to create map",
             mouseToolTip: "Click on the map to check for service"
         },
-        geocoder: {
-            defaultText: "Enter an address or point of interest"
-        },
         error: {
             layerNotFound: "Layer is not in the webmap",
             fieldNotFound: "Field not found",
@@ -16,16 +13,13 @@ define({
         page: {
             title: "Information Lookup",
         },
-
-        splashscreen: {
-            buttonText: "OK",
-        },
         ui:{
             basemapButton: "Basemap"
         },
         popup: {
             urlMoreInfo: "More Info"
         }
+
 
     }),
     "ar": 1,

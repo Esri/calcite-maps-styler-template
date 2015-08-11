@@ -1,0 +1,53 @@
+﻿.divSplashScreenContainer {
+    top: 0;
+    left: 0;
+    background: rgba(224,224,224,0.65);
+    position: absolute;
+    z-index: 1003;
+    width: 100%;
+    height: 100%;
+  
+    
+}
+
+.splashTextContainer {
+      -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    /*-webkit-box-shadow: 0 0 20px #ffffff;
+    -moz-box-shadow: 0 0 20px #ffffff;
+    -o-box-shadow: 0 0 20px #ffffff;
+    box-shadow: 0 0 20px #ffffff;*/
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin:auto;
+    position: absolute;
+    overflow: auto;
+   
+}
+
+.splashTextContainerMobile {
+    width: 95%;
+    height: 95%;
+  
+}
+
+.splashTextContainerWeb {
+    width: 350px;
+    height: 290px;
+  
+}
+
+.splashTextContent {
+    
+    overflow: hidden;
+    padding-top:10px;
+ padding-left:10px;
+  padding-right:10px;
+ width: 330px;
+    height: 280px;
+    font-size:larger;
+   
+}

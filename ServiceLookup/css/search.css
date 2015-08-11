@@ -2,25 +2,8 @@
 .searchControl {
     display: block;
     position: absolute;
-    z-index: 1000;
+    z-index: 39;
     top: 20px;
     left: 15px;
    
    }
-/*.search-input-group{
-    width:90%
-}
-.arcgis-search .search-group .search-input {
-   
-    width: -moz-calc(100% - 12px) !important;
-  
-    width: -webkit-calc(100% - 12px) !important;
-    
-    width: -o-calc(100% - 12px) !important;
-   
-    width: calc(100% - 12px) !important;
-    padding-right: 0;
-    margin-right: 0;
-    overflow: hidden;
-
-}*/
