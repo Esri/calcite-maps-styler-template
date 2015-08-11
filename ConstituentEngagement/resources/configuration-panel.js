@@ -130,8 +130,8 @@
                 {
                     "type": "string",
                     "fieldName": "reportedByField",
-                    "label": "Reporter Name Field (optional)",
-                    "tooltip": "Text field that stores the username of the person who created the feature. Field name must be the same across all layers and maps."
+                    "label": "Reporter ID Field (optional)",
+                    "tooltip": "Text field that stores the ID of the person who created the feature. Field name must be the same across all layers and maps."
                 },
                 {
                     "type": "string",
@@ -242,6 +242,40 @@
                     "fieldName": "enableLatLongSearch",
                     "label": "Latitude/Longitude",
                     "tooltip": "Enable Latitude Longitude Search"
+                }
+            ]
+        },
+        {
+            "category": "<b>Help Settings</b>",
+            "fields": [
+                {
+                    "type": "paragraph",
+                    "value": "Configure content of help dialog"
+                },
+                {
+                    "type": "boolean",
+                    "fieldName": "enableHelp",
+                    "label": "Show help",
+                    "tooltip": "Show help"
+                },
+                {
+                    "type": "string",
+                    "fieldName": "helpLinkText",
+                    "label": "Help link",
+                    "tooltip": "Help link"
+                },
+                {
+                    "type": "string",
+                    "fieldName": "helpDialogTitle",
+                    "label": "Title",
+                    "tooltip": "Title"
+                },
+                {
+                    "type": "string",
+                    "fieldName": "helpDialogContent",
+                    "label": "Dialog content",
+                    "stringFieldOption": "richtext",
+                    "tooltip": "Dialog content"
                 }
             ]
         }
