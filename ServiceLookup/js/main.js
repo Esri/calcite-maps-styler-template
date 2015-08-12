@@ -23,6 +23,7 @@ define([
   "esri/arcgis/utils",
   "dojo/dom",
   "dojo/dom-class",
+  "dojo/dom-construct",
   "dojo/on",
   "dojo/topic",
   "dojo/query",
@@ -43,6 +44,7 @@ function (
     arcgisUtils,
     dom,
     domClass,
+    domConstruct,
     on,
     topic,
     query,
@@ -67,6 +69,7 @@ function (
 
       if (config) {
         this.config = config;
+        this._setApplicationShortcutIcon();
         var itemInfo = this.config.itemInfo || this.config.webmap;
 
         this._drawer = new Drawer({
@@ -105,7 +108,8 @@ function (
               if (this.config.backcolor !== null &&
                 this.config.backcolor !== undefined) {
                 query(".splashTextContent").style({
-                  "backgroundColor": this.config.backcolor.toString()}
+                  "backgroundColor": this.config.backcolor.toString()
+                }
                 );
               }
               if (this.config.color !== null &&
@@ -241,7 +245,6 @@ function (
 
       img.src = url; // fires off loading of image
     },
-
     _initDrawer: function () {
       if (this.config.showUI !== undefined && this.config.showUI === false) {
         this._drawer.hideBar();
@@ -270,7 +273,6 @@ function (
 
 
     },
-
     reportError: function (error) {
       // remove loading class from body
       domClass.remove(document.body, "app-loading");
@@ -301,7 +303,6 @@ function (
       clearTimeout(this.resizeTimeout);
 
     },
-
     _mapLoaded: function () {
       // Map is ready
       try {
@@ -370,7 +371,6 @@ function (
         domClass.remove(document.body, "app-loading");
       }
     },
-
     _checkEditing: function () {
       if (this.config.editingAllowed === null ||
         this.config.editingAllowed === undefined) {
@@ -398,8 +398,6 @@ function (
       return this.config.editingAllowed;
 
     },
-
-
     // create a map based on the input web map id
     _createWebMap: function (itemInfo) {
       // set extent from config/url
@@ -445,7 +443,6 @@ function (
         // If you need map to be loaded, listen for it's load event.
       }), this.reportError);
     },
-
     _setLevel: function (options) {
       var level = this.config.level;
       //specify center and zoom if provided as url params
@@ -454,7 +451,6 @@ function (
       }
       return options;
     },
-
     _setCenter: function (options) {
       var center = this.config.center;
       if (center) {
@@ -465,7 +461,6 @@ function (
       }
       return options;
     },
-
     _setExtent: function (info) {
       var e = this.config.extent;
       //If a custom extent is set as a url parameter handle that before creating the map
@@ -480,6 +475,24 @@ function (
         }
       }
       return info;
+    },
+    _setApplicationShortcutIcon: function () {
+      if (this.config.applicationFavicon && lang.trim(this.config.applicationFavicon).length !== 0) {
+        this._loadIcons("shortcut icon", this.config.applicationFavicon);
+      }
+    },
+    _loadIcons: function (rel, iconPath) {
+      var root = location.href.slice(0, location.href.lastIndexOf('/'));
+      var icon;
+      icon = domConstruct.create("link");
+      icon.rel = rel;
+      icon.type = "image/x-icon";
+      if (iconPath.indexOf("http") === 0) {
+        icon.href = iconPath;
+      } else {
+        icon.href = root + iconPath;
+      }
+      document.getElementsByTagName('head')[0].appendChild(icon);
     }
 
   });
