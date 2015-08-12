@@ -909,7 +909,7 @@ define([
                 if (obj[key] === fieldName && (matchName || key === "normalizeField")) {
                   obj[key] = layerName + "_" + oid + "_" + fieldName;
                 } else {
-                  re = new RegExp("{" + fieldName + "}", "g");
+                  re = new RegExp("{" + fieldName + "}", "gi");
                   if (typeof obj[key] === 'string') {
                     obj[key] = obj[key].replace(re, "{" +
                       layerName + "_" + oid +
@@ -1054,7 +1054,7 @@ define([
 
             if (popupInfo.description === null ||
               popupInfo.description === undefined) {
-              re = new RegExp("{" + layerFields[g].fieldName + "}", "g");
+              re = new RegExp("{" + layerFields[g].fieldName + "}", "ig");
 
               popupTitle = popupTitle.replace(re, "{" +
                 replaceVal + "_" + feature.attributes.OBJECTID + "_" +
@@ -1079,7 +1079,7 @@ define([
               }
 
             } else {
-              re = new RegExp("{" + layerFields[g].fieldName + "}", "g");
+              re = new RegExp("{" + layerFields[g].fieldName + "}", "gi");
 
               layerDescription = layerDescription.replace(re, "{" + replaceVal + "_" +
                 feature.attributes.OBJECTID + "_" + layerFields[g].fieldName + "}");
@@ -1095,9 +1095,11 @@ define([
                 if (popupInfo.description === null ||
                   popupInfo.description === undefined) {
                   resultFeature[replaceVal + "_" +
+                     feature.attributes.OBJECTID + "_" +
                     layerFields[g].fieldName + "_" + "Hyper"] =
                     "<a target='_blank' href='" + fldVal + "'>" +
                     i18n.popup.urlMoreInfo + "</a>";
+
                   if (layFldTable.indexOf("{" + replaceVal +
                     "_" + feature.attributes.OBJECTID +
                     "_" + layerFields[g].fieldName + "}") >= 0) {
@@ -1253,7 +1255,7 @@ define([
           var regex;
           if (this.config.popPreMessage !== null) {
             if (this.config.popPreMessage.indexOf('{<') > 0) {
-              regex = new RegExp('{<', "g");
+              regex = new RegExp('{<', "gi");
               console.warn("Invalid text in the beginning pop up description." +
                 " Removing bad value.  This might be caused by string formatting between {}." +
                 " Character " + this.config.popPreMessage.indexOf('{<').toString());
@@ -1265,7 +1267,7 @@ define([
               if (key !== null && key !== undefined) {
 
                 find = "{" + key + "}";
-                regex = new RegExp(find, "g");
+                regex = new RegExp(find, "gi");
                 tmpMsg = tmpMsg.replace(regex, resultSum[key]);
 
               }
@@ -1275,7 +1277,7 @@ define([
           if (this.config.popPostMessage !== null &&
             this.config.popPostMessage !== undefined) {
             if (this.config.popPostMessage.indexOf('{<') > 0) {
-              regex = new RegExp('{<', "g");
+              regex = new RegExp('{<', "gi");
               console.warn("Invalid text in the beginning pop up description." +
                 " Removing bad value.  This might be caused by string formatting between {}." +
                 " Character " + this.config.popPostMessage.indexOf('{<').toString());
@@ -1289,7 +1291,7 @@ define([
               if (key !== null && key !== undefined) {
 
                 find = "{" + key + "}";
-                regex = new RegExp(find, "g");
+                regex = new RegExp(find, "gi");
                 tmpMsg = tmpMsg.replace(regex, resultSum[key]);
 
               }
@@ -1312,7 +1314,7 @@ define([
                 if (key !== null && key !== undefined) {
                   var fldname = "{" + key + "}";
                   if (allDescriptions.indexOf(fldname) >= 0) {
-                    regex = new RegExp(fldname, "g");
+                    regex = new RegExp(fldname, "gi");
                     allDescriptions = allDescriptions.replace(regex,
                       this.searchByFeature.attributes[key]);
                   }

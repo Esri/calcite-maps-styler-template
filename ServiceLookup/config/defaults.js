@@ -5,7 +5,7 @@ define([], function () {
   //and url parameters.
   var defaults = {
     "appid": "",
-    "webmap": "9881ce9c84ba42b193801fa47ea8a649",
+    "webmap": "25660c0facdb419191c8b2dec5da74d7",
     "oauthappid": null, //"AFTKRmv16wj14N3z",
     //Group templates must support a group url parameter. This will contain the id of the group.
     //group: "",
@@ -17,7 +17,7 @@ define([], function () {
 
     "bingKey": "", //Enter the url to your organizations bing maps key if you want to use bing basemaps
     //Defaults to arcgis.com. Set this value to your portal or organization host name.
-    "sharinghost": location.protocol + "//" + "www.arcgis.com",
+    "sharinghost":  location.protocol + "//" + "www.arcgis.com",
 
     "helperServices": {
       "geometry": {
