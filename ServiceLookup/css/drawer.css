@@ -133,7 +133,12 @@
     -o-transition: width 250ms ease;
     transition: width 250ms ease;
 }
-
+    .content-pane-left a, a:visited, a:hover, a:active {
+        text-decoration: none;
+line-height: 1.5em;
+ color: inherit;
+    }
+    
 .left .content-pane-display {
     border-right-width: 1px;
     border-right-style: solid;

@@ -1054,7 +1054,7 @@ define([
     },
     _onQueryAttachmentInfosComplete: function (response) {
       try {
-        var listHtml = "<span><a href='${href}' target='_blank'>${name}</a>";
+        var listHtml = "<span><a class='attachLinks' href='${href}' target='_blank'>${name}</a>";
         var endHtml = "<br/></span>";
         var htmlMarkup = listHtml + endHtml;
         links = array.map(response, lang.hitch(this, function (info) {
@@ -1413,9 +1413,9 @@ define([
           var finalDes = allDescriptions.replace(/&amp;/gi, "&").replace(/&lt;/gi, "<").replace(/&gt;/gi, ">").replace(/&quot;/gi, "'");
           if (this.promises.length > 0) {
             all(this.promises).then(lang.hitch(this, function (results) {
-              var linktext = "<br/><span>" + i18n.popup.attachments + ":" + "<br/></span>" + this.attLinks.replace(/&amp;/gi, "&")
+              var attachmentText = "<br/><span><b>" + i18n.popup.attachments + ":" + "</b><br/></span>" + this.attLinks.replace(/&amp;/gi, "&")
                 .replace(/&lt;/gi, "<").replace(/&gt;/gi, ">").replace(/&quot;/gi, "'");
-              finalDes = finalDes + linktext;
+              finalDes = finalDes + attachmentText;
               this._showFinalResults(
                 this.config.popupTitle,
                 allFields,
@@ -1515,6 +1515,11 @@ define([
 
           djquery(".esriViewPopup .hzLine").style("border-color",
             this.config.color.toString() + " !important");
+
+          // dojoNS.query("a", this._description)
+
+         
+
           topic.publish("app.contentSet", false);
         } else {
 

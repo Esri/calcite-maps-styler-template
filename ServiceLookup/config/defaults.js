@@ -59,6 +59,7 @@ define([], function () {
     "splashText": "<center>Information Lookup is a configurable web application template that can be used to provide the general public, internal staff and other interested parties the with information about a location. If no features are found at that location, a general message is displayed. Optionally, the location entered can be stored in a point layer. The template can be configured using the ArcGIS Online Configuration dialog.</center>",
     "color": null,
     "backcolor": null,
+    "hypercolor": "#0000EE",
     "uidirection": "left",
     "showUI": false,
     "popupSide": false,

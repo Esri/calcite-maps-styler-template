@@ -287,6 +287,12 @@
           "label": "Theme Color:"
         },
         {
+          "type": "color",
+          "fieldName": "hypercolor",
+          "tooltip": "Hyperlink color",
+          "label": "Hyperlink Color:"
+        },
+        {
           "type": "boolean",
           "fieldName": "showSplash",
           "label": "Display Splash Screen on Startup",
@@ -376,6 +382,7 @@
     "title": "Information Lookup",
     "color": "#FFFFFF",
     "backcolor": "#000000",
+    "hypercolor":"#0000EE",
     "uidirection": "left",
     "showUI": false,
     "popupSide": false,

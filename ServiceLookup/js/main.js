@@ -328,6 +328,7 @@ function (
           {
             contentID: contentID
           });
+        topic.subscribe("app.contentSet", lang.hitch(this, this._styleHyper));
 
         this.popup.startup();
         this.popup.enableMapClick();
@@ -354,6 +355,12 @@ function (
       }
       catch (e) {
         this.reportError(e);
+      }
+    },
+    _styleHyper: function () {
+      if (this.config.hypercolor) {
+        query("a", dom.byId("cp_left"))
+          .style("color", this.config.hypercolor.toString());
       }
     },
     _mapLocate: function () {
@@ -478,8 +485,7 @@ function (
     },
     _setApplicationShortcutIcon: function () {
       if (this.config.applicationFavicon &&
-        lang.trim(this.config.applicationFavicon).length !== 0)
-      {
+        lang.trim(this.config.applicationFavicon).length !== 0) {
         this._loadIcons("shortcut icon", this.config.applicationFavicon);
       }
     },

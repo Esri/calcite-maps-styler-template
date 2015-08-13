@@ -249,6 +249,7 @@ function (
       }
     },
     _showPanel: function () {
+ 
       var currentlyOpen = domClass.contains(document.body, this.css.drawerOpen);
       if (currentlyOpen === false) {
         this.toggle();
