@@ -78,7 +78,6 @@ define([], function () {
       "id": "",
       "fields": []
     }],
-    "applicationIcon": "",
     "applicationFavicon": "/images/favicon.ico"
 
   };

@@ -9,6 +9,7 @@ define([
   "dojo/topic",
   "dojo/io-query",
   "dojo/query",
+  "dojo/promise/all",
   "esri/geometry/Extent",
   "esri/geometry/Point",
   "esri/graphic",
@@ -34,6 +35,7 @@ define([
   topic,
   ioQuery,
   djquery,
+  all,
   Extent,
   Point,
   Graphic,
@@ -114,7 +116,7 @@ define([
           var tmpLay = this._findLayer(arguments[0].layerId);
           this.tempPopUp = null;
           if (tmpLay !== null) {
-            this.tempPopUp = tmpLay.popupInfo;
+            this.tempPopUp = tmpLay;
 
           }
           this.showPopupGeo(arguments[0].feature.geometry, arguments[0].feature);
@@ -127,7 +129,7 @@ define([
 
           }
           else {
-            this.tempPopUp = this.searchByLayer.popupInfo;
+            this.tempPopUp = this.searchByLayer;
             this.showPopupGeo(arguments[0].feature.geometry, arguments[0].feature);
 
           }
@@ -586,6 +588,7 @@ define([
                   layDetails.name = subLyrs.layerObject.name;
                   layDetails.layerOrder = f;
                   layDetails.url = subLyrs.layerObject.url;
+                  layDetails.layerObject = layer.layerObject;
                   layDetails.layer = subLyrs;
                   if (subLyrs.layerDefinition) {
                     if (subLyrs.layerDefinition.definitionExpression) {
@@ -638,7 +641,7 @@ define([
                 layDetails.name = subLyrs.name;
                 layDetails.layerOrder = f;
                 layDetails.url = layer.layerObject.url + "/" + subLyrs.id;
-
+                layDetails.layerObject = layer.layerObject;
                 console.log(serviceAreaLayerNames + " " + "set");
 
                 if (layer.layers !== null &&
@@ -692,6 +695,7 @@ define([
               layDetails.popupInfo = layer.popupInfo;
               layDetails.name = layer.title;
               layDetails.url = layer.layerObject.url;
+              layDetails.layerObject = layer.layerObject;
               layDetails.layerOrder = f;
               if (layer.layerDefinition) {
                 if (layer.layerDefinition.definitionExpression) {
@@ -975,7 +979,7 @@ define([
               this.searchLoc = finalFeature.geometry;
             }
             this.event = finalFeature.geometry;
-            this.tempPopUp = this.searchByLayer.popupInfo;
+            this.tempPopUp = this.searchByLayer;
             this.showPopupGeo(finalFeature.geometry, finalFeature);
             return;
           }
@@ -1027,13 +1031,80 @@ define([
       }
       return s;
     },
-    _getPopupForResult: function (feature, popupInfo) {
+    promises: [],
+    attLinks: "",
+    _getAttachments: function (feature, layer) {
+
+      if (!layer || !layer.layerObject) {
+        return;
+      }
+      if (!layer.layerObject.queryAttachmentInfos) {
+        return;
+      }
+      if (layer.layerObject.hasAttachments && layer.layerObject.hasAttachments === true) {
+        this.promises.push(layer.layerObject.queryAttachmentInfos(
+          feature.attributes.OBJECTID,
+          lang.hitch(this, this._onQueryAttachmentInfosComplete),
+          lang.hitch(this, this._onQueryAttachmentsError))
+          );
+      }
+    },
+    _onQueryAttachmentsError: function (response) {
+      console.log(response);
+    },
+    _onQueryAttachmentInfosComplete: function (response) {
       try {
+        var listHtml = "<span><a href='${href}' target='_blank'>${name}</a>";
+        var endHtml = "<br/></span>";
+        var htmlMarkup = listHtml + endHtml;
+        links = array.map(response, lang.hitch(this, function (info) {
+          return djString.substitute(htmlMarkup, {
+            href: info.url,
+            name: info.name
+          });
+        }));
+        this.attLinks = this.attLinks + links.join("");
+      } catch (err) {
+        console.log("_onQueryAttachmentInfosComplete error:" + err);
+      }
+
+      //this._uploadForm.style.display = "block";
+      //if ((!this._featureCanUpdate && this._layerEditingCap[this._currentLayerId].canUpdate) ||
+      //   (!this._layerEditingCap[this._currentLayerId].canCreate && !this._layerEditingCap[this._currentLayerId].canUpdate)) {
+      //  htmlMarkup = this._listHtml + this._endHtml;
+      //  this._uploadForm.style.display = "none";
+      //}
+      //else if (this._layerEditingCap[this._currentLayerId].canCreate && !this._layerEditingCap[this._currentLayerId].canUpdate) {
+      //  htmlMarkup = this._listHtml + this._endHtml;
+      //}
+      //var list = this._attachmentList,
+      //    links = array.map(response, lang.hitch(this, function (info) {
+      //      return esriLang.substitute({
+      //        href: info.url,
+      //        name: info.name,
+      //        oid: info.objectId,
+      //        attid: info.id
+      //      }, htmlMarkup);
+      //    }));
+
+      //list.innerHTML = links.join("") || this.NLS_none;
+      //this._updateConnects();
+    },
+
+    _getPopupForResult: function (feature, layer) {
+      try {
+
+        var popupInfo = layer.popupInfo;
+        var rUrl = new RegExp("^(?:[a-z]+:)?//", "i");
+        //var rFile = new RegExp("^([a-zA-Z]:|\\\\[a-z]+)?(\\|\/|\\\\|//)", "i");
 
         var replaceVal = Math.random().toString(36).substr(2, 5);
 
         var resultFeature = {};
         if (popupInfo !== null && popupInfo !== undefined) {
+          if (popupInfo.showAttachments == true) {
+            this._getAttachments(feature, layer);
+          }
           var layerFields = lang.clone(popupInfo.fieldInfos);
 
           var layerDescription = lang.clone(popupInfo.description);
@@ -1042,6 +1113,19 @@ define([
 
           var layFldTable = "";
           var re = null;
+
+          //var popupTemplate = new PopupTemplate(popupInfo);
+          //var featureArray = [];
+          //var content;
+          //var editGraphic = new Graphic(feature.geometry, null,
+          //  feature.attributes, popupTemplate);
+
+
+          //featureArray.push(editGraphic);
+          //this.map.infoWindow.setFeatures(featureArray);
+          //this.map.infoWindow.resize();
+          //content = this.map.infoWindow.getSelectedFeature().getContent();
+
           for (var g = 0, gl = layerFields.length; g < gl; g++) {
             if (mediaInfos !== null) {
               array.forEach(mediaInfos, function (mediaInfo) {
@@ -1054,6 +1138,7 @@ define([
 
             if (popupInfo.description === null ||
               popupInfo.description === undefined) {
+
               re = new RegExp("{" + layerFields[g].fieldName + "}", "ig");
 
               popupTitle = popupTitle.replace(re, "{" +
@@ -1063,7 +1148,7 @@ define([
               if (layerFields[g].visible === true) {
 
                 layFldTable = layFldTable + "<tr valign='top'>";
-                if (layerFields[g].label !== null) {
+                if (layerFields[g].label !== null && layerFields[g].label !== "") {
                   layFldTable = layFldTable + "<td class='popName'>" +
                     layerFields[g].label + "</td>";
                 } else {
@@ -1090,8 +1175,9 @@ define([
 
 
               fldVal = fldVal.toString();
-              if (fldVal.indexOf("http://") >= 0 || fldVal.indexOf("https://") >= 0 ||
-                fldVal.indexOf("www.") >= 0) {
+
+              if (rUrl.test(fldVal)) {
+
                 if (popupInfo.description === null ||
                   popupInfo.description === undefined) {
                   resultFeature[replaceVal + "_" +
@@ -1172,7 +1258,8 @@ define([
     },
     _allQueriesComplate: function () {
       try {
-        var atts = {};
+        this.promises = [];
+        this.attLinks = "";
         var allFields = [];
 
         var allDescriptions = "";
@@ -1207,7 +1294,7 @@ define([
               else {
                 resultSum[layerName] = 1;
               }
-              var popDet = this._getPopupForResult(feature, layer.popupInfo);
+              var popDet = this._getPopupForResult(feature, layer);
               allFields = allFields.concat(popDet.fields);
               resultFeature = lang.mixin(resultFeature, popDet.feature);
               mediaArray[result.Layer.layerOrder][feature.attributes.OBJECTID] = popDet.media;
@@ -1324,88 +1411,117 @@ define([
           }
 
           var finalDes = allDescriptions.replace(/&amp;/gi, "&").replace(/&lt;/gi, "<").replace(/&gt;/gi, ">").replace(/&quot;/gi, "'");
-
-          ////Make single Array of fields
-          this.popupTemplate = new PopupTemplate({
-            title: this.config.popupTitle,
-            fieldInfos: allFields,
-            description: finalDes,
-            mediaInfos: finalMedArr
-          });
-          valToStore = this.config.serviceRequestLayerAvailibiltyFieldValueAvail;
-
-        }
-        else {
-          this.popupTemplate = new PopupTemplate({
-            title: this.config.serviceUnavailableTitle,
-            fieldInfos: allFields,
-            description: this.config.serviceUnavailableMessage.replace(/&amp;/gi, "&")
-              .replace(/&lt;/gi, "<").replace(/&gt;/gi, ">").replace(/&quot;/gi, "'"),
-            mediaInfos: mediaArray
-          });
-          valToStore = this.config.serviceRequestLayerAvailibiltyFieldValueNotAvail;
-
-        }
-        var featureArray = [];
-        var content;
-        var editGraphic = new Graphic(this.event, this._getSymbol(),
-          resultFeature, this.popupTemplate);
-
-        if (this.showGraphic === true) {
-          this.map.graphics.add(editGraphic);
-        }
-        featureArray.push(editGraphic);
-
-        this.map.infoWindow.setFeatures(featureArray);
-        if (this.config.popupWidth !== null && this.config.popupHeight !== null) {
-          this.map.infoWindow.resize(this.config.popupWidth, this.config.popupHeight);
-        } else if (this.config.popupWidth !== null) {
-          this.map.infoWindow.resize(this.config.popupWidth, this.map.infoWindow._maxHeight);
-        } else {
-          this.map.infoWindow.resize();
-        }
-        if (this.config.storeLocation === true && this.config.editingAllowed) {
-          atts[this.config.serviceRequestLayerAvailibiltyField] = valToStore;
-          this._logRequest(centr, atts);
-        }
-        var def;
-        var ext = this._getExtent(this.event);
-        if (ext === null) {
-          def = this.map.centerAndZoom(centr, this.config.zoomLevel);
-
-        } else {
-          if (this.map._fixExtent(ext, true).lod.level > this.config.zoomLevel) {
-            def = this.map.centerAndZoom(centr, this.config.zoomLevel);
+          if (this.promises.length > 0) {
+            all(this.promises).then(lang.hitch(this, function (results) {
+              var linktext = "<br/><span>" + i18n.popup.attachments + ":" + "<br/></span>" + this.attLinks.replace(/&amp;/gi, "&")
+                .replace(/&lt;/gi, "<").replace(/&gt;/gi, ">").replace(/&quot;/gi, "'");
+              finalDes = finalDes + linktext;
+              this._showFinalResults(
+                this.config.popupTitle,
+                allFields,
+                finalDes,
+                finalMedArr,
+                this.config.serviceRequestLayerAvailibiltyFieldValueAvail,
+                resultFeature,
+                centr
+                );
+            }));
           }
           else {
-            def = this.map.setExtent(ext, true);
+            this._showFinalResults(
+              this.config.popupTitle,
+              allFields,
+              finalDes,
+              finalMedArr,
+              this.config.serviceRequestLayerAvailibiltyFieldValueAvail,
+              resultFeature,
+              centr
+              );
           }
-
-
         }
-        //
-
-        def.addCallback(lang.hitch(this, function () {
-          this.tempPopUp = null;
-          if (this.contentWindow) {
-            content = this.map.infoWindow.getSelectedFeature().getContent();
-
-            this.contentWindow.set("content", content);
-            djquery(".hzLinePopUp").style("border-color",
-              this.config.color.toString() + " !important");
-
-            djquery(".esriViewPopup .hzLine").style("border-color",
-              this.config.color.toString() + " !important");
-            topic.publish("app.contentSet", false);
-          } else {
-
-            this.map.infoWindow.show(centr);
-          }
-        }));
+        else {
+          this._showFinalResults(
+          this.config.serviceUnavailableTitle,
+          allFields,
+          this.config.serviceUnavailableMessage.replace(/&amp;/gi, "&")
+            .replace(/&lt;/gi, "<").replace(/&gt;/gi, ">").replace(/&quot;/gi, "'"),
+          mediaArray,
+          this.config.serviceRequestLayerAvailibiltyFieldValueNotAvail,
+          resultFeature,
+          centr
+          );
+        }
 
       } catch (err) {
         console.log(err);
       }
+    },
+    _showFinalResults: function (title, fieldInfos, description, mediaInfos, valToStore, resultFeature, centr) {
+      var atts = {};
+
+      this.popupTemplate = new PopupTemplate({
+        title: title,
+        fieldInfos: fieldInfos,
+        description: description,
+        mediaInfos: mediaInfos
+      });
+      valToStore = valToStore;
+
+      var featureArray = [];
+      var content;
+      var editGraphic = new Graphic(this.event, this._getSymbol(),
+        resultFeature, this.popupTemplate);
+
+      if (this.showGraphic === true) {
+        this.map.graphics.add(editGraphic);
+      }
+      featureArray.push(editGraphic);
+
+      this.map.infoWindow.setFeatures(featureArray);
+      if (this.config.popupWidth !== null && this.config.popupHeight !== null) {
+        this.map.infoWindow.resize(this.config.popupWidth, this.config.popupHeight);
+      } else if (this.config.popupWidth !== null) {
+        this.map.infoWindow.resize(this.config.popupWidth, this.map.infoWindow._maxHeight);
+      } else {
+        this.map.infoWindow.resize();
+      }
+      if (this.config.storeLocation === true && this.config.editingAllowed) {
+        atts[this.config.serviceRequestLayerAvailibiltyField] = valToStore;
+        this._logRequest(centr, atts);
+      }
+      var def;
+      var ext = this._getExtent(this.event);
+      if (ext === null) {
+        def = this.map.centerAndZoom(centr, this.config.zoomLevel);
+
+      } else {
+        if (this.map._fixExtent(ext, true).lod.level > this.config.zoomLevel) {
+          def = this.map.centerAndZoom(centr, this.config.zoomLevel);
+        }
+        else {
+          def = this.map.setExtent(ext, true);
+        }
+
+
+      }
+      def.addCallback(lang.hitch(this, function () {
+        this.tempPopUp = null;
+        if (this.contentWindow) {
+          content = this.map.infoWindow.getSelectedFeature().getContent();
+
+          this.contentWindow.set("content", content);
+          djquery(".hzLinePopUp").style("border-color",
+            this.config.color.toString() + " !important");
+
+          djquery(".esriViewPopup .hzLine").style("border-color",
+            this.config.color.toString() + " !important");
+          topic.publish("app.contentSet", false);
+        } else {
+
+          this.map.infoWindow.show(centr);
+        }
+      }));
+
     },
     _showNoSearchFeatureFound: function () {
       var centr = this._getCenter(this.searchLoc);

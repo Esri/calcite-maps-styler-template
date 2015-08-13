@@ -477,7 +477,9 @@ function (
       return info;
     },
     _setApplicationShortcutIcon: function () {
-      if (this.config.applicationFavicon && lang.trim(this.config.applicationFavicon).length !== 0) {
+      if (this.config.applicationFavicon &&
+        lang.trim(this.config.applicationFavicon).length !== 0)
+      {
         this._loadIcons("shortcut icon", this.config.applicationFavicon);
       }
     },

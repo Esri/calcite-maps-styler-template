@@ -17,7 +17,8 @@ define({
             basemapButton: "Basemap"
         },
         popup: {
-            urlMoreInfo: "More Info"
+          urlMoreInfo: "More Info",
+          attachments: "Attachments"
         }
 
 
