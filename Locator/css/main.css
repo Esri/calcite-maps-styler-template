@@ -188,7 +188,7 @@ hr {
 	color: #ffffff;
 	background-color: #000000;
 	background-color: rgba(0,0,0,0.3);
-	max-width: 310px;
+	/*max-width: 310px;*/
 	border: 1px solid rgba(255,255,255, 0.5);
 	border-radius: 4px;
 }
@@ -199,6 +199,10 @@ hr {
 	border: none;
 	outline: none;
 	padding: 6px;
+}
+
+.arcgisSearch .searchSubmit{
+	float: right !important;
 }
 
 .arcgisSearch .searchBtn:hover, .arcgisSearch .searchBtn:focus, .arcgisSearch .searchBtn:active {
@@ -212,7 +216,7 @@ hr {
 	background-color: transparent;
 	border: none;
 	outline: none;
-	width: 175px !important;
+	width: 180px !important;
 }
 
 .arcgisSearch .searchClear {
@@ -227,14 +231,14 @@ hr {
 
 .show-all-results {
 	display: none !important;
-	max-width: 280px;
+	/*max-width: 280px;*/
 	text-overflow: ellipsis;
 }
 
 .arcgisSearch .searchMenu {
 	color: #6e6e6e;
 	font-size: 9pt;
-	max-width: 280px;
+	/*max-width: 280px;*/
 }
 
 .arcgisSearch .searchGroup .searchInput::-webkit-input-placeholder {
