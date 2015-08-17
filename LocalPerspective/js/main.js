@@ -35,7 +35,7 @@ define([
     "esri/symbols/SimpleMarkerSymbol",
     "esri/urlUtils",
     "application/SearchSources"
-], function (
+], function(
     ready,
     array,
     Color,
@@ -56,144 +56,161 @@ define([
     urlUtils,
     SearchSources
 ) {
-   
-   return declare(null, {
 
-      config : {},
+    return declare(null, {
 
-      map : null,
+        config: {},
 
-      initExt : null,
-      
-      opLayers : [],
+        map: null,
 
-      mapExt : null,
-      
-      ui : null,
+        initExt: null,
 
-      // Startup
-      startup : function(config) {
-         // config will contain application and user defined info for the template such as i18n strings, the web map id
-         // and application id
-         // any url parameters and any application specific configuration information.
-         if (config) {
-            this.config = config;
-            this._setColor();
-            this._setProtocolHandler();
-            // proxy rules
-            urlUtils.addProxyRule({
-               urlPrefix: "route.arcgis.com",
-               proxyUrl: this.config.proxyurl
-            });
-            urlUtils.addProxyRule({
-               urlPrefix: "traffic.arcgis.com",
-               proxyUrl: this.config.proxyurl
-            });
-            // document ready
-            ready(lang.hitch(this, function() {
-               //supply either the webmap id or, if available, the item info
-               var itemInfo = this.config.itemInfo || this.config.webmap;
-               //If a custom extent is set as a url parameter handle that before creating the map
-               if (this.config.extent) {
-                  var extArray = decodeURIComponent(this.config.extent).split(",");
-                  if (extArray.length === 4) {
-                     itemInfo.item.extent = [[parseFloat(extArray[0]), parseFloat(extArray[1])], [parseFloat(extArray[2]), parseFloat(extArray[3])]];
-                  }
-               }
-               this._createWebMap(itemInfo);
+        opLayers: [],
 
-            }));
-         } else {
-            var error = new Error("Main:: Config is not defined");
-            this.reportError(error);
-         }
-      },
+        mapExt: null,
 
-      // Report error
-      reportError : function(error) {
-         // remove loading class from body
-         domClass.remove(document.body, "app-loading");
-         domClass.add(document.body, "app-error");
-         // an error occurred - notify the user. In this example we pull the string from the
-         // resource.js file located in the nls folder because we've set the application up
-         // for localization. If you don't need to support multiple languages you can hardcode the
-         // strings here and comment out the call in index.html to get the localization strings.
-         // set message
-         var node = dom.byId("loading_message");
-         if (node) {
-            if (this.config && this.config.i18n) {
-               node.innerHTML = this.config.i18n.map.error + ": " + error.message;
+        ui: null,
+
+        // Startup
+        startup: function(config) {
+            // config will contain application and user defined info for the template such as i18n strings, the web map id
+            // and application id
+            // any url parameters and any application specific configuration information.
+            if (config) {
+                this.config = config;
+                console.log(config);
+                this._setColor();
+                this._setProtocolHandler();
+                // proxy rules
+                urlUtils.addProxyRule({
+                    urlPrefix: "route.arcgis.com",
+                    proxyUrl: this.config.proxyurl
+                });
+                urlUtils.addProxyRule({
+                    urlPrefix: "traffic.arcgis.com",
+                    proxyUrl: this.config.proxyurl
+                });
+                if (this.config.helperServices.route && this.config.helperServices.route.url) {
+                    var routeUrl = null;
+                    array.some(this.config.layerMixins, lang.hitch(this, function(layerMixin) {
+                        if (layerMixin.url === this.config.helperServices.route.url) {
+                            routeUrl = layerMixin.mixin.url;
+                            return true;
+                        }
+                    }));
+                    urlUtils.addProxyRule({
+                        urlPrefix: routeUrl || this.config.helperServices.route.url,
+                        proxyUrl: this.config.proxyurl
+                    });
+                }
+                // document ready
+                ready(lang.hitch(this, function() {
+                    //supply either the webmap id or, if available, the item info
+                    var itemInfo = this.config.itemInfo || this.config.webmap;
+                    //If a custom extent is set as a url parameter handle that before creating the map
+                    if (this.config.extent) {
+                        var extArray = decodeURIComponent(this.config.extent).split(",");
+                        if (extArray.length === 4) {
+                            itemInfo.item.extent = [
+                                [parseFloat(extArray[0]), parseFloat(extArray[1])],
+                                [parseFloat(extArray[2]), parseFloat(extArray[3])]
+                            ];
+                        }
+                    }
+                    this._createWebMap(itemInfo);
+
+                }));
             } else {
-               node.innerHTML = "Unable to create map: " + error.message;
+                var error = new Error("Main:: Config is not defined");
+                this.reportError(error);
             }
-         }
-      },
+        },
 
-      // Set Color
-      _setColor : function() {
-         if (this.config.cycleColors === true) {
-            this.config.color = this.config.colors[0];
-         }
-      },
-      
-      // set protocol handler
-      _setProtocolHandler : function() {
-         esri.id.setProtocolErrorHandler(function() {
-            console.log("protocol");
-            if (window.confirm("Your browser is not CORS enabled. You need to redirect to HTTPS. Continue?")) {
-               window.location = window.location.href.replace("http:", "https:");
+        // Report error
+        reportError: function(error) {
+            // remove loading class from body
+            domClass.remove(document.body, "app-loading");
+            domClass.add(document.body, "app-error");
+            // an error occurred - notify the user. In this example we pull the string from the
+            // resource.js file located in the nls folder because we've set the application up
+            // for localization. If you don't need to support multiple languages you can hardcode the
+            // strings here and comment out the call in index.html to get the localization strings.
+            // set message
+            var node = dom.byId("loading_message");
+            if (node) {
+                if (this.config && this.config.i18n) {
+                    node.innerHTML = this.config.i18n.map.error + ": " + error.message;
+                } else {
+                    node.innerHTML = "Unable to create map: " + error.message;
+                }
             }
-         });
-      },
+        },
 
-      // Create web map based on the input web map id
-      _createWebMap : function(itemInfo) {
-         // popup
-         var popupSym = new SimpleMarkerSymbol("circle", 2, null, new Color.fromArray([0, 0, 0, 0.1]));
-         var popup = new Popup({
-            markerSymbol : popupSym,
-            anchor : "top"
-         }, dom.byId("panelPopup"));
-         
-         arcgisUtils.createMap(itemInfo, "mapDiv", {
-            mapOptions : {
-               editable: false,
-               infoWindow: popup
-            },
-            bingMapsKey : this.config.bingKey
-         }).then(lang.hitch(this, function(response) {
-
-            this.config.response = response;
-            this.map = response.map;
-            this.initExt = this.map.extent;
-            this.config.opLayers = response.itemInfo.itemData.operationalLayers;
-            
-            this._createMapUI();
-            // make sure map is loaded
-            if (this.map.loaded) {
-               // do something with the map
-               this._mapLoaded();
-            } else {
-               on.once(this.map, "load", lang.hitch(this, function() {
-                  // do something with the map
-                  this._mapLoaded();
-               }));
+        // Set Color
+        _setColor: function() {
+            if (this.config.cycleColors === true) {
+                this.config.color = this.config.colors[0];
             }
-         }), this.reportError);
-      },
+        },
 
-      // Map Loaded - Map is ready
-      _mapLoaded : function() {
-         query(".esriSimpleSlider").style("backgroundColor", this.config.color.toString());
-         // remove loading class from body
-         domClass.remove(document.body, "app-loading");
-      },
-      
-      // Create Geocoder Options
-      _createGeocoderOptions: function () {
+        // set protocol handler
+        _setProtocolHandler: function() {
+            esri.id.setProtocolErrorHandler(function() {
+                console.log("protocol");
+                if (window.confirm("Your browser is not CORS enabled. You need to redirect to HTTPS. Continue?")) {
+                    window.location = window.location.href.replace("http:", "https:");
+                }
+            });
+        },
+
+        // Create web map based on the input web map id
+        _createWebMap: function(itemInfo) {
+            // popup
+            var popupSym = new SimpleMarkerSymbol("circle", 2, null, new Color.fromArray([0, 0, 0, 0.1]));
+            var popup = new Popup({
+                markerSymbol: popupSym,
+                anchor: "top"
+            }, dom.byId("panelPopup"));
+
+            arcgisUtils.createMap(itemInfo, "mapDiv", {
+                mapOptions: {
+                    editable: false,
+                    infoWindow: popup
+                },
+                bingMapsKey: this.config.bingKey
+            }).then(lang.hitch(this, function(response) {
+
+                this.config.response = response;
+                this.map = response.map;
+                this.initExt = this.map.extent;
+                this.config.opLayers = response.itemInfo.itemData.operationalLayers;
+
+                this._createMapUI();
+                // make sure map is loaded
+                if (this.map.loaded) {
+                    // do something with the map
+                    this._mapLoaded();
+                } else {
+                    on.once(this.map, "load", lang.hitch(this, function() {
+                        // do something with the map
+                        this._mapLoaded();
+                    }));
+                }
+            }), this.reportError);
+        },
+
+        // Map Loaded - Map is ready
+        _mapLoaded: function() {
+            query(".esriSimpleSlider").style("backgroundColor", this.config.color.toString());
+            // remove loading class from body
+            domClass.remove(document.body, "app-loading");
+        },
+
+        // Create Geocoder Options
+        _createGeocoderOptions: function() {
             var hasEsri = false;
             var geocoders = lang.clone(this.config.helperServices.geocode);
-            array.forEach(geocoders, lang.hitch(this, function (geocoder) {
+            array.forEach(geocoders, lang.hitch(this, function(geocoder) {
                 if (geocoder.url.indexOf(".arcgis.com/arcgis/rest/services/World/GeocodeServer") > -1) {
                     hasEsri = true;
                     geocoder.name = "Esri World Geocoder";
@@ -203,7 +220,7 @@ define([
                 }
             }));
             //only use geocoders with a singleLineFieldName 
-            geocoders = array.filter(geocoders, function (geocoder) {
+            geocoders = array.filter(geocoders, function(geocoder) {
                 return (esriLang.isDefined(geocoder.singleLineFieldName));
             });
             var esriIdx;
@@ -229,116 +246,115 @@ define([
             return options;
         },
 
-      // Create Map UI
-      _createMapUI : function() {
+        // Create Map UI
+        _createMapUI: function() {
 
-         // home
-         // var home = new HomeButton({
-         // map : this.map
-         // }, "btnHome");
-         // home.startup();
+            // home
+            // var home = new HomeButton({
+            // map : this.map
+            // }, "btnHome");
+            // home.startup();
 
-         // geolocate
-         var geoLocate = new LocateButton({
-            map : this.map,
-            autoNavigate : false,
-            highlightLocation : false
-         }, "btnLocate");
-         on(geoLocate, "locate", lang.hitch(this, this._geoLocated));
-         geoLocate.startup();
+            // geolocate
+            var geoLocate = new LocateButton({
+                map: this.map,
+                autoNavigate: false,
+                highlightLocation: false
+            }, "btnLocate");
+            on(geoLocate, "locate", lang.hitch(this, this._geoLocated));
+            geoLocate.startup();
 
-         // geocoder
-         // var geocoderOptions = this._createGeocoderOptions();
-         // var geocoder = new Geocoder(geocoderOptions, "panelGeocoder");
-         // on(geocoder, "select", lang.hitch(this, this._geocoderSelect));
-         // on(geocoder, "clear", lang.hitch(this, this._geocoderClear));
-         // geocoder.startup();
-         
-         // search
-         var searchSources = new SearchSources({
-              map: this.map,
-              useMapExtent: false,
-              geocoders: this.config.helperServices.geocode,
-              itemData: this.config.response.itemInfo.itemData
-          });
-          var searchOptions = searchSources.createOptions();
-          this.search = new Search(searchOptions, "panelGeocoder");
+            // geocoder
+            // var geocoderOptions = this._createGeocoderOptions();
+            // var geocoder = new Geocoder(geocoderOptions, "panelGeocoder");
+            // on(geocoder, "select", lang.hitch(this, this._geocoderSelect));
+            // on(geocoder, "clear", lang.hitch(this, this._geocoderClear));
+            // geocoder.startup();
 
-          this.search.on("search-results", lang.hitch(this, function(event){
-              console.log("search-results", event); 
-          }));
-          this.search.on("select-result", lang.hitch(this, this._geocoderSelect));
-          this.search.on("clear-search", lang.hitch(this, this._geocoderClear));
-          this.search.startup();
-         
-         // map click
-         on(this.map, "click", lang.hitch(this, this._mapClickHandler));
+            // search
+            var searchSources = new SearchSources({
+                map: this.map,
+                useMapExtent: false,
+                geocoders: this.config.helperServices.geocode,
+                itemData: this.config.response.itemInfo.itemData
+            });
+            var searchOptions = searchSources.createOptions();
+            this.search = new Search(searchOptions, "panelGeocoder");
 
-         //create ui
-         this._createUI();
+            this.search.on("search-results", lang.hitch(this, function(event) {
+                console.log("search-results", event);
+            }));
+            this.search.on("select-result", lang.hitch(this, this._geocoderSelect));
+            this.search.on("clear-search", lang.hitch(this, this._geocoderClear));
+            this.search.startup();
 
-         // update theme
-         this._updateTheme();
-         
-         // set default location
-         if (this.config.defaultToCenter)
-            this._setDefaultLocation();
-      },
-      
-      // geoLocated
-      _geoLocated : function(evt) {
-         if (evt.graphic) {
-            var geom = evt.graphic.geometry;
+            // map click
+            on(this.map, "click", lang.hitch(this, this._mapClickHandler));
+
+            //create ui
+            this._createUI();
+
+            // update theme
+            this._updateTheme();
+
+            // set default location
+            if (this.config.defaultToCenter)
+                this._setDefaultLocation();
+        },
+
+        // geoLocated
+        _geoLocated: function(evt) {
+            if (evt.graphic) {
+                var geom = evt.graphic.geometry;
+                this.ui.setLocation(geom);
+            } else {
+                if (evt.error)
+                    console.log(evt.error.message);
+            }
+        },
+
+        // geocoder select
+        _geocoderSelect: function(obj) {
+            var result = obj.result;
+            var geom = result.feature.geometry;
             this.ui.setLocation(geom);
-         } else {
-            if (evt.error)
-               console.log(evt.error.message);
-         }
-      },
-            
-      // geocoder select
-      _geocoderSelect : function(obj) {
-         var result = obj.result;
-         var geom = result.feature.geometry;
-         this.ui.setLocation(geom);
-      },
-      
-      // geocoder clear
-      _geocoderClear : function() {
-         if(this.ui.location)
-            this.ui.setLocation(null);
-      },
-      
-      // map click handler
-      _mapClickHandler : function(event) {
-         console.log(event);
-         this.ui.setLocation(event.mapPoint);
-      },
-      
-       // Create UI
-      _createUI : function() {
-         if (this.config.title !== "")
-            document.title = this.config.title;
+        },
+
+        // geocoder clear
+        _geocoderClear: function() {
+            if (this.ui.location)
+                this.ui.setLocation(null);
+        },
+
+        // map click handler
+        _mapClickHandler: function(event) {
+            this.ui.setLocation(event.mapPoint);
+        },
+
+        // Create UI
+        _createUI: function() {
+            if (this.config.title !== "")
+                document.title = this.config.title;
             dom.byId("panelText").innerHTML = this.config.title;
-         if (this.config.logo !== "")
-            dom.byId("logo").src = this.config.logo;
-         this.ui = new UI(this.config);
-         this.ui.map = this.map;
-         this.ui.startup();
-      },
+            if (this.config.logo !== "")
+                dom.byId("logo").src = this.config.logo;
+            this.ui = new UI(this.config);
+            this.ui.map = this.map;
+            this.ui.startup();
+        },
 
-      // Update Theme
-      _updateTheme : function() {
-         query(".bg").style("backgroundColor", this.config.color.toString());
-         query(".esriPopup .titlePane").style("backgroundColor", this.config.color.toString());
-      },
+        // Update Theme
+        _updateTheme: function() {
+            query(".bg").style("backgroundColor", this.config.color.toString());
+            query(".esriPopup .titlePane").style("backgroundColor", this.config.color.toString());
+        },
 
-      // set default location
-      _setDefaultLocation : function() {
-         var pt = this.map.extent.getCenter();
-         this.ui.setLocation(pt);
-         this.map.resize();
-      }
-      
-   });
+        // set default location
+        _setDefaultLocation: function() {
+            var pt = this.map.extent.getCenter();
+            this.ui.setLocation(pt);
+            this.map.resize();
+        }
+
+    });
 });
