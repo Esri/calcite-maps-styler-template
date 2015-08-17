@@ -144,6 +144,7 @@ define([
       }
     },
     showPopup: function (evt, info) {
+      topic.publish("app.toggleIndicator", true);
       this.event = evt;//this._getCenter(evt);
       this.searchLoc = evt;
       this.map.infoWindow.hide();
@@ -207,15 +208,19 @@ define([
       this.searchByFeature = searchByFeature;
 
       if (this.lookupLayers === undefined) {
+        topic.publish("app.toggleIndicator", false);
         return;
       }
       if (this.lookupLayers === null) {
+        topic.publish("app.toggleIndicator", false);
         return;
       }
       if (this.lookupLayers.length === 0) {
+        topic.publish("app.toggleIndicator", false);
         return;
       }
       topic.publish("app.toggleIndicator", true);
+
       this.map.infoWindow.hide();
       //this.map.infoWindow.highlight = false;
       if (this.showGraphic === true) {
@@ -298,7 +303,6 @@ define([
       this.defCnt = this.defCnt - 1;
       if (this.defCnt === 0) {
         this._allQueriesComplate();
-        topic.publish("app.toggleIndicator", false);
       }
 
 
@@ -377,7 +381,7 @@ define([
         layerQueryTask.on("complete", lang.hitch(this, this._layerSearchComplete(geo)));
         layerQueryTask.on("error", lang.hitch(this, function (error) {
           console.log(error);
-
+          topic.publish("app.toggleIndicator", false);
         }));
 
         layerQueryTask.execute(query);
@@ -631,7 +635,7 @@ define([
               else if (serviceAreaLayerNames.indexOf(".") > 0) {
                 serName = serviceAreaLayerNames.split(".");
                 if (layer.id === serName[0]) {
-                  if (subLyrs.id === serName[1]) {
+                  if (subLyrs.id.toString() === serName[1].toString()) {
                     matches = true;
                   }
                 }
@@ -1009,7 +1013,7 @@ define([
         this.defCnt = this.defCnt - 1;
         if (this.defCnt === 0) {
           this._allQueriesComplate();
-          topic.publish("app.toggleIndicator", false);
+          
         }
 
       };
@@ -1454,6 +1458,7 @@ define([
 
       } catch (err) {
         console.log(err);
+
       }
     },
     _showFinalResults: function (title, fieldInfos, description, mediaInfos, valToStore, resultFeature, centr) {
@@ -1505,6 +1510,8 @@ define([
 
       }
       def.addCallback(lang.hitch(this, function () {
+        topic.publish("app.toggleIndicator", false);
+
         this.tempPopUp = null;
         if (this.contentWindow) {
           content = this.map.infoWindow.getSelectedFeature().getContent();
@@ -1603,6 +1610,8 @@ define([
 
       }
       def.addCallback(lang.hitch(this, function () {
+        topic.publish("app.toggleIndicator", false);
+
         if (this.contentWindow) {
           this.contentWindow.set("content",
             this.map.infoWindow.getSelectedFeature().getContent());

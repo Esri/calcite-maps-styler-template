@@ -229,9 +229,10 @@ function (
     },
     testImage: function (url) {
       var img = new Image();
+      var myImgNode = query("#page_icon_image")[0];
       var myNode = query("#page_icon")[0];
       img.onload = lang.hitch(this, function () {
-        domStyle.set(myNode,
+        domStyle.set(myImgNode,
        "background-image",
        "url(" + url + ")");
       });
@@ -251,12 +252,15 @@ function (
         this._drawer.hideSide();
         return;
       }
-      this.testImage(this.config.pageIcon);
-      var myNode = query("#page_icon")[0];
-      if (this.config.pageIcon !== null && this.config.pageIcon !== "") {
+   
+      if (this.config.pageIcon !== null &&
+        this.config.pageIcon !== undefined &&
+        this.config.pageIcon !== "") {
         this.testImage(this.config.pageIcon);
       }
       else {
+        var myNode = query("#page_icon")[0];
+
         domStyle.set(myNode,
           {
             "visibility": "hidden",
@@ -372,10 +376,15 @@ function (
       console.log(evt.Name + " created");
     },
     _toggleIndicator: function (events) {
-      if (events) {
-        domClass.add(document.body, "app-loading");
+      if (events === true) {
+
+        if (domClass.contains(document.body, "app-loading") === false) {
+          domClass.add(document.body, "app-loading");
+        }
       } else {
-        domClass.remove(document.body, "app-loading");
+        if (domClass.contains(document.body, "app-loading") === true) {
+          domClass.remove(document.body, "app-loading");
+        }
       }
     },
     _checkEditing: function () {

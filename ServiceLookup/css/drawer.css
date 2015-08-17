@@ -6,7 +6,7 @@
     padding: 0 !important;
     margin: 0 !important;
     border-bottom: 1px solid !important;
-    border-top:none !important;
+    border-top: none !important;
     border-left: none !important;
     border-right: none !important;
 }
@@ -36,7 +36,6 @@
 
 .esriRTL .app-title {
     float: right;
-  
 }
 
 .title-text {
@@ -51,17 +50,19 @@
     float: left;
     height: 64px;
     width: 64px;
-    max-width:100%;
-    max-height:100%;
     margin-right: 10px;
     margin-left: 10px;
+    
+    overflow: hidden;
+}
+.page-icon-image {
+    height: 100%;
+    width: 100%;
     background-position: center center;
     background-repeat: no-repeat;
-    overflow: hidden;
-
+    background-size: contain;
 }
-
-.esriRTL  .page-icon {
+.esriRTL .page-icon {
     float: right;
 }
 
@@ -133,12 +134,13 @@
     -o-transition: width 250ms ease;
     transition: width 250ms ease;
 }
+
     .content-pane-left a, a:visited, a:hover, a:active {
         text-decoration: none;
-line-height: 1.5em;
- color: inherit;
+        line-height: 1.5em;
+        color: inherit;
     }
-    
+
 .left .content-pane-display {
     border-right-width: 1px;
     border-right-style: solid;
