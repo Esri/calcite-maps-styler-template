@@ -109,14 +109,14 @@ declare, Deferred, all, lang, array, arcgisUtils, esriLang, PrintTemplate, esriR
                 var landscapeImage = new PrintTemplate();
                 landscapeImage.layout = "Letter ANSI A Landscape";
                 landscapeImage.layoutOptions = this.printConfig.layoutOptions;
-                landscapeImage.format = this.printConfig.format;
+                landscapeImage.format = "png32";
                 landscapeImage.label = this.printConfig.printi18n.layouts.label3 + " ( image )";
 
 
                 var portraitImage = new PrintTemplate();
                 portraitImage.layout = "Letter ANSI A Portrait";
                 portraitImage.layoutOptions = this.printConfig.layoutOptions;
-                portraitImage.format = this.printConfig.format;
+                portraitImage.format = "png32";
                 portraitImage.label = this.printConfig.printi18n.layouts.label4 + " ( image )";
 
 
