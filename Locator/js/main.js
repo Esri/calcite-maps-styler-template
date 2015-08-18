@@ -212,27 +212,6 @@ define([
             }
         },
 
-        // Set Color Old
-        _setColorOld: function () {
-            this.color = this.config.color;
-            var style = document.createElement('style');
-            style.type = 'text/css';
-            style.innerHTML = '.bg {background-color: ' + this.color + '};';
-            document.getElementsByTagName('head')[0].appendChild(style);
-            if (this.config.styleBasemap == 1) {
-                var style2 = document.createElement('style');
-                style2.type = 'text/css';
-                style2.innerHTML = '.layerTile {filter: url(css/filters.svg#grayscale); filter: gray; -webkit-filter: grayscale(1); -ms-filter: grayscale(100%); -moz-opacity: 0.7; -khtml-opacity: 0.7; opacity: 0.7;}';
-                document.getElementsByTagName('head')[0].appendChild(style2);
-            }
-            // rec opened
-            var recColor = Color.blendColors(Color.fromString("#ffffff"), Color.fromString(this.color), 0.3);
-            var style3 = document.createElement('style');
-            style3.type = 'text/css';
-            style3.innerHTML = '.recOpened {background-color:' + recColor.toCss() + ';}';
-            document.getElementsByTagName('head')[0].appendChild(style3);
-        },
-
         // Set Color
         _setColor: function () {
             this.color = this.config.color;
@@ -545,67 +524,9 @@ define([
             return options;
         },
 
-        // Create Geofilter Options
-        // _createGeofilterOptions : function() {
-        // var options;
-        // var searchLayers = [];
-        // if (this.searchProps) {
-        // array.forEach(this.searchProps.layers, lang.hitch(this, function (searchLayer) {
-        // var layer = null;
-        // var destId = this.config.destLayer.id;
-        // array.some(this.opLayers, function (lyr) {
-        // if (lyr.id === searchLayer.id && searchLayer.id == destId) {
-        // layer = lyr;
-        // return true;
-        // }
-        // });
-        // if (layer && layer.hasOwnProperty("url")) {
-        // var url = layer.url;
-        // var field = searchLayer.field.name;
-        // var name = layer.title;
-        // if (esriLang.isDefined(searchLayer.subLayer)) {
-        // url = url + "/" + searchLayer.subLayer;
-        // array.some(layer.layerObject.layerInfos, function (info) {
-        // if (info.id == searchLayer.subLayer) {
-        // name += " - " + layer.layerObject.layerInfos[searchLayer.subLayer].name;
-        // return true;
-        // }
-        // 
-        // });
-        // }
-        // searchLayers.push({
-        // "name": name,
-        // "url": url,
-        // "field": field,
-        // "exactMatch": (searchLayer.field.exactMatch || false),
-        // "placeholder": this.searchProps.hintText,
-        // "outFields": "*",
-        // "type": "query",
-        // "layerId": searchLayer.id,
-        // "subLayerId": parseInt(searchLayer.subLayer) || null
-        // });
-        // }
-        // }));
-        // }
-        // if(searchLayers.length > 0) {
-        // options = {};
-        // options.map = this.map;
-        // options.autoNavigate = false;
-        // options.autoComplete = false;
-        // options.arcgisGeocoder = false;
-        // options.maxLocations = 250;
-        // options.geocoders = searchLayers;
-        // }
-        // return options;
-        // },
         // Configure Map UI
         _configureMapUI: function () {
 
-            // home
-            // var home = new HomeButton({
-            // map : this.map
-            // }, "btnHome");
-            // home.startup();
             // geolocate
             var geoLocate = new LocateButton({
                 map: this.map,
@@ -617,24 +538,7 @@ define([
 
             // geocoder
             var geocoderOptions = this._createGeocoderOptions();
-            // this.geocoder = new Geocoder(geocoderOptions, "panelGeocoder");
-            // on(this.geocoder, "select", lang.hitch(this, this._geocoderSelect));
-            // on(this.geocoder, "clear", lang.hitch(this, this._geocoderClear));
-            // this.geocoder.startup();
-            // var prompt = this.config.prompt || "";
-            // domAttr.set("panelGeocoder_input", "placeholder", prompt);
-            // geofilter
-            // var geofilterOptions;
-            // if (this.searchProps) {
-            // geofilterOptions = this._createGeofilterOptions();
-            // }
-            // if (geofilterOptions) {
-            // this.geofilter = new Geocoder(geofilterOptions, "panelGeocoderFilter");
-            // this.geofilter.startup();
-            // domStyle.set("btnFilter", "display", "block");
-            // on(this.geofilter, "find-results", lang.hitch(this, this._geofilterResults));
-            // on(this.geofilter, "clear", lang.hitch(this, this._geofilterClear));
-            // }
+            
             // search
             var searchSources = new SearchSources({
                 map: this.map,
@@ -644,6 +548,9 @@ define([
                 //configuredSearchLayers: configuredSearchLayers
             });
             var searchOptions = searchSources.createOptions();
+            array.forEach(searchOptions.sources, lang.hitch(this, function(source){
+                source.placeholder = this.config.prompt;
+            }));
             this.search = new Search(searchOptions, "panelGeocoder");
 
             this.search.on("search-results", lang.hitch(this, function (event) {
@@ -730,6 +637,12 @@ define([
                 dom.byId("panelTitle").innerHTML = this.config.title;
             }
 
+            var tip = "Directions";
+            if (this.config && this.config.i18n) {
+                tip = this.config.i18n.tooltips.directions;
+            }
+            dom.byId("panelTitleDir").innerHTML = tip;
+
             // toggle
             var btnToggle = dom.byId("btnToggle");
             if (this.config && this.config.i18n) {
@@ -787,38 +700,32 @@ define([
                 promise.then(lang.hitch(this, function () {
                     this.dirOK = true;
                 }));
-                dom.byId("panelTitle").innerHTML = this.config.title;
-                domStyle.set("bodyFeatures", "display", "block");
-                domStyle.set("bodyDirections", "display", "none");
-                domStyle.set("btnClose", "display", "none");
-                domStyle.set("btnReset", "display", "block");
-                domStyle.set("panelDestination", "display", "none");
-                domStyle.set("panelSearchBox", "display", "block");
+                // dom.byId("panelTitle").innerHTML = this.config.title;
+                // domStyle.set("bodyFeatures", "display", "block");
+                // domStyle.set("bodyDirections", "display", "none");
+                // domStyle.set("btnClose", "display", "none");
+                // domStyle.set("btnReset", "display", "block");
+                // domStyle.set("panelOrigin", "display", "none");
+                // domStyle.set("panelDestination", "display", "none");
+                // domStyle.set("panelSearchBox", "display", "block");
+                domStyle.set("panelFeatures", "display", "block");
+                domStyle.set("panelDirections", "display", "none");
                 break;
             case 1:
-                var tip = "Directions";
-                if (this.config && this.config.i18n) {
-                    tip = this.config.i18n.tooltips.directions;
-                }
-                dom.byId("panelTitle").innerHTML = tip;
-                domStyle.set("bodyFeatures", "display", "none");
-                domStyle.set("bodyDirections", "display", "block");
-                domStyle.set("btnClose", "display", "block");
-                domStyle.set("btnReset", "display", "none");
-                domStyle.set("panelDestination", "display", "block");
-                domStyle.set("panelSearchBox", "display", "block");
-                break;
-            case 2:
-                promise = this._clearDirections();
-                promise.then(lang.hitch(this, function () {
-                    this.dirOK = true;
-                }));
-                domStyle.set("bodyFeatures", "display", "block");
-                domStyle.set("bodyDirections", "display", "none");
-                domStyle.set("btnClose", "display", "block");
-                domStyle.set("btnReset", "display", "none");
-                domStyle.set("panelDestination", "display", "none");
-                domStyle.set("panelSearchBox", "display", "none");
+                // var tip = "Directions";
+                // if (this.config && this.config.i18n) {
+                //     tip = this.config.i18n.tooltips.directions;
+                // }
+                // dom.byId("panelTitle").innerHTML = tip;
+                // domStyle.set("bodyFeatures", "display", "none");
+                // domStyle.set("bodyDirections", "display", "block");
+                // domStyle.set("btnClose", "display", "block");
+                // domStyle.set("btnReset", "display", "none");
+                // domStyle.set("panelOrigin", "display", "block");
+                // domStyle.set("panelDestination", "display", "block");
+                // domStyle.set("panelSearchBox", "display", "none");
+                domStyle.set("panelFeatures", "display", "none");
+                domStyle.set("panelDirections", "display", "block");
                 break;
             }
             this._updateRouteTools();
@@ -855,25 +762,6 @@ define([
             this._updateOrigin(gra, pt);
         },
 
-        // geocoder select
-        _geocoderSelect: function (obj) {
-            var result = obj.result;
-            var pt = result.feature.geometry;
-            var label = result.name;
-            var sym = new PictureMarkerSymbol("images/start.png", 24, 24);
-            var gra = new Graphic(pt, sym, {
-                label: label
-            });
-            this._updateOrigin(gra, result);
-        },
-
-        // geocoder clear
-        _geocoderClear: function (event) {
-            if (this.dirOK) {
-                this._updateOrigin(null, null);
-            }
-        },
-
         // search select
         _searchSelect: function (obj) {
             var result = obj.result;
@@ -891,26 +779,6 @@ define([
             if (this.dirOK) {
                 this._updateOrigin(null, null);
             }
-        },
-
-        // geofilter results
-        _geofilterResults: function (obj) {
-            this._unselectRecords();
-            var features = [];
-            if (obj.results && obj.results.results.length > 0) {
-                var results = obj.results.results;
-                array.forEach(results, function (rec) {
-                    features.push(rec.feature);
-                });
-            }
-            this.opFeatures = features;
-            this._processDestinationFeatures();
-        },
-
-        // geofilter clear
-        _geofilterClear: function () {
-            this._unselectRecords();
-            this._queryDestinations();
         },
 
         // ** QUERY FUNCTIONS ** //
@@ -1213,6 +1081,10 @@ define([
 
         // Reverse Directions
         _reverseDirections: function () {
+            var val1 = dom.byId("panelOrigin").innerHTML;
+            var val2 = dom.byId("panelDestination").innerHTML;
+            dom.byId("panelOrigin").innerHTML = val2;
+            dom.byId("panelDestination").innerHTML = val1;
             var stops = this.dirWidget.stops.slice();
             stops.reverse();
             var promise = this._clearDirections();
@@ -1295,7 +1167,8 @@ define([
                     }
                 }
             }));
-            this._updateRouteTools();
+            dom.byId("panelOrigin").innerHTML = this.search.value;
+            //this._updateRouteTools();
         },
 
         // Update Route Tools
