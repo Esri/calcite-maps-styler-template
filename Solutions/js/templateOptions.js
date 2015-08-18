@@ -46,6 +46,6 @@ define({
     "urlItems": [
         "app", // the file containing the app's UI
         "ex", // extents parameter ex=xmin,ymin,xmax,ymax[,wkid=102100], e.g., ex=-9279312,5238092,-9259324,5256972,102100, or ex=wkt
-        "obj" // object id
+        "find" // search string
     ]
 });

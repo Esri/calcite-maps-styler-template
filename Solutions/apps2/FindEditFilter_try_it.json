@@ -167,7 +167,7 @@
         "classname": "js.LGNotes",
         "config": {
             "notes": [
-                "@@@commit@@@"
+                "commit 396537b9a7f84c99 2015-08-17 08:57:42 -0700"
             ]
         }
     }, {
