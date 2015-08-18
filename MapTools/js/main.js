@@ -899,7 +899,7 @@ declare, win, array, Color, all, Deferred, lang, domUtils, esriRequest, esriLang
 
             }));
             this.config.description = this.config.description || itemInfo.item.description;
-            if (this.config.description) {
+            if (this.config.description && this.config.showdescription) {
                 //add the desc button to the toolbar
                 var btn = this._createToolbarButton("details_toggle", "icon-file-text", this.config.i18n.tools.detailsTool);
                 domConstruct.place(btn, "toolbar-leading");
