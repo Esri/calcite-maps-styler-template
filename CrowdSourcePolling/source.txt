@@ -1,7 +1,8 @@
-From git branch 
-release
-commit c34375a354d3e07d43f03d2dd5091321f58434c8
+From git branch
+develop
+commit 1e473b778eabb656e80ea9326ba7964a21825dfa
+Merge: e737baf d722bb3
 Author: MikeTschudi <mtschudi@esri.com>
-Date:   Thu Jun 18 09:53:45 2015 -0700
+Date:   Tue Aug 18 15:06:52 2015 -0700
 
-    Add meta tag to make pages crawlable
+    Merge branch 'webmap-configured-search' into develop

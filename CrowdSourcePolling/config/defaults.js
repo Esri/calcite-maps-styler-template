@@ -38,8 +38,7 @@ define({
             "fields": ["VOTES"]
         }]
     },
-    "commentNameField": "",
-    "itemVotesField": "VOTES",
+    "commentNameField": "COMMENTS",
     "allowFacebook": false,
     "allowGoogle": false,
     "allowTwitter": true,

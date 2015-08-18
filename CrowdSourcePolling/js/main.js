@@ -34,8 +34,8 @@ define([
     "esri/arcgis/utils",
     "esri/config",
     "esri/dijit/LocateButton",
-    "esri/dijit/Search",
     "application/lib/LayerAndTableMgmt",
+    "application/lib/SearchDijitHelper",
     "application/widgets/ItemDetails/ItemDetailsController",
     "application/widgets/ItemList/ItemList",
     "application/widgets/PopupWindow/PopupWindow",
@@ -65,8 +65,8 @@ define([
     arcgisUtils,
     esriConfig,
     LocateButton,
-    Search,
     LayerAndTableMgmt,
+    SearchDijitHelper,
     ItemDetails,
     ItemList,
     PopupWindow,
@@ -581,16 +581,14 @@ define([
                 this._mapData.load().then(lang.hitch(this, function (hasCommentTable) {
                     this._hasCommentTable = hasCommentTable;
 
-                    // Add search control to search world places as well as GIS Day feature service
-                    var searchControl = new Search({
-                        addLayersFromMap: true,
-                        enableButtonMode: true,
-                        enableInfoWindow: false,
-                        map: this.map
-                    }, "SearchButton");
-                    searchControl.startup();
-
                     mapDataReadyDeferred.resolve("map data");
+
+                    // Add search control
+                    SearchDijitHelper.createSearchDijit(
+                        this.map, this.config.itemInfo.itemData.operationalLayers,
+                        this.config.helperServices.geocode, this.config.itemInfo.itemData.applicationProperties,
+                        "SearchButton");
+
                 }), lang.hitch(this, function (err) {
                     mapDataReadyDeferred.reject(this.config.i18n.map.layerLoad + (err ? ": " + err : ""));
                 }));
