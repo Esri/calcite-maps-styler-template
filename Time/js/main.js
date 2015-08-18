@@ -15,8 +15,8 @@
  | See the License for the specific language governing permissions and
  | limitations under the License.
  */
-define(["dojo/_base/declare", "dojo/_base/lang", "dojo/query", "dojo/on", "dojo/string", "dojo/date/locale", "dojo/dom-construct", "dojo/dom-style", "dojo/_base/array", "esri/arcgis/utils", "esri/lang", "esri/layers/FeatureLayer", "esri/TimeExtent", "esri/dijit/TimeSlider", "dojo/dom", "dojo/dom-class", "dojo/domReady!"], function (
-declare, lang, query, on, string, locale, domConstruct, domStyle, array, arcgisUtils, esriLang, FeatureLayer, TimeExtent, TimeSlider, dom, domClass) {
+define(["dojo/_base/declare", "dojo/_base/lang", "dojo/query", "dijit/registry", "dojo/on", "dojo/string", "dojo/date/locale", "dojo/dom-construct", "dojo/dom-style", "dojo/_base/array", "esri/arcgis/utils", "esri/lang", "esri/layers/FeatureLayer", "esri/TimeExtent", "esri/dijit/TimeSlider", "dojo/dom", "dojo/dom-class", "dojo/domReady!"], function (
+declare, lang, query, registry, on, string, locale, domConstruct, domStyle, array, arcgisUtils, esriLang, FeatureLayer, TimeExtent, TimeSlider, dom, domClass) {
     return declare(null, {
         config: {},
         startup: function (config) {
@@ -282,6 +282,23 @@ declare, lang, query, on, string, locale, domConstruct, domStyle, array, arcgisU
             var play = dom.byId("playSlider");
             domClass.remove(play, remove);
             domClass.add(play, add);
+
+            // if loop is disabled and if 
+            // slider is at end reset if 
+            // play/pause button is pressed. 
+            if(!this.config.looptime){
+                var slider = registry.byId("timeSlider");
+                if(slider._slider.value == slider._slider.maximum){
+                    slider.pause();
+                    slider._slider.reset();
+                    domClass.remove(play, "icon-pause");
+                    domClass.add(play, "icon-play");
+                }
+            }
+
+
+
+
         },
         _displayTime: function () {
             //position the time window 
@@ -305,7 +322,8 @@ declare, lang, query, on, string, locale, domConstruct, domStyle, array, arcgisU
                     this._createClock();
                 }else{
                     timeSlider = new TimeSlider({
-                        loop: this.config.looptime
+                        loop: this.config.looptime,
+                        id: "timeSlider"
                     }, "timeSliderDiv");
                     domClass.add(timeSlider.domNode, "templateTimeSlider");
 
@@ -360,7 +378,7 @@ declare, lang, query, on, string, locale, domConstruct, domStyle, array, arcgisU
                     this._updatePlayButton(addClass, removeClass);
 
                 }));
-
+      
                 //Listen for time extent changes
                 on(timeSlider, "time-extent-change", lang.hitch(this, function (e) {
                     if(this.config.clock !== null){
@@ -369,7 +387,6 @@ declare, lang, query, on, string, locale, domConstruct, domStyle, array, arcgisU
                         var timeInfo = this._formatLabel(e);
                         this._updateLabel(timeInfo);
                     }
-
                 }));
 
                 //Hide the play controls if configured. 
