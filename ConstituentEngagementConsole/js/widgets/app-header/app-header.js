@@ -31,7 +31,8 @@ define([
     "dijit/_WidgetsInTemplateMixin",
     "dojo/text!css/theme-template.css",
     "dojo/string",
-    "dojo/query"
+    "dojo/query",
+    "dojo/has"
 ], function (
     declare,
     domConstruct,
@@ -47,7 +48,8 @@ define([
     _WidgetsInTemplateMixin,
     ThemeCss,
     string,
-    query
+    query,
+    has
 ) {
     return declare([_WidgetBase, _TemplatedMixin, _WidgetsInTemplateMixin], {
         templateString: template,
@@ -257,6 +259,32 @@ define([
                     this.onSearchRecordsClick();
                 }
             }));
+            on(this.searchBox, "blur", lang.hitch(this, function () {
+                if (has("ie") === 9) {
+                    this.displayPlaceHolderText();
+                }
+            }));
+            on(this.searchBox, "focus", lang.hitch(this, function () {
+                if (has("ie") === 9) {
+                    this.removePlaceHolderText();
+                }
+            }));
+        },
+
+        /**
+        * This function is used to display placeholder text in search bar
+        * @memberOf widgets/app-header/app-header
+        */
+        displayPlaceHolderText: function () {
+            return;
+        },
+
+        /**
+        * This function is used to remove placeholder text in search bar
+        * @memberOf widgets/app-header/app-header
+        */
+        removePlaceHolderText: function () {
+            return;
         },
 
         /**

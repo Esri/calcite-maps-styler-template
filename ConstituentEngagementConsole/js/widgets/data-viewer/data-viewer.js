@@ -48,7 +48,8 @@ define([
     "widgets/data-viewer/details-helper",
     "dojo/Deferred",
     "esri/geometry/Polyline",
-    "esri/geometry/Polygon"
+    "esri/geometry/Polygon",
+    "dojo/has"
 ], function (
     declare,
     lang,
@@ -82,7 +83,8 @@ define([
     DetailsHelper,
     Deferred,
     Polyline,
-    Polygon
+    Polygon,
+    has
 ) {
     return declare([_WidgetBase, _TemplatedMixin, _WidgetsInTemplateMixin], {
         templateString: dijitTemplate,
@@ -90,6 +92,7 @@ define([
         _features: [], // store features that are selected
         _selectedOperationalLayer: null, // store object of feature layer that is selected by user
         _selectRowGraphicsLayer: null, // store object of graphics layer needed for highlighting point feature
+        _activeRowGraphicsLayer: null, // layer that stores activated features
         _isPointLayer: false, // keep track whether operational layer that is selected by user if of type point or polygon or polyline etc...
         _isTextInputInFocus: false, // keep track whether text input is in focus or not
         _isDropDownClicked: false, // keep track whether drop-down of coded domain value is clicked or not
@@ -115,6 +118,10 @@ define([
         _isManualRefreshClicked: false, // keeps track whether manual refresh is clicked or not
         _isRowFound: false, // keeps track whether row is available in grid when user selects feature from map
         _rowInstance: null, // to store row that needs to be removed if its edited value does not fall under definition expression of the layer
+        _lastStateDetailsObj: {}, // to store details about last state consisting of vertical scrollbar position, searched filtered value
+        _searchFilteredValue: null, // to store search filtered value
+        _sortedField: null, // to store sorted field
+        _sortedFieldOrder: null, // to store sorting order of field
         objectIdColumnNumber: null, // to store column number which contains object id
         isOrientationChangedInListView: false, // to keep track whether orientation is changed in list view or not
         isMapViewClicked: false, // keep track whether map view option is clicked or not
@@ -218,6 +225,8 @@ define([
                     } else {
                         // Display message if no feature is available in current map extent for display
                         domClass.remove(this.noFeatureDiv, "esriCTHidden");
+                        $(".esriCTSearchBox")[0].value = "";
+                        this.displayPlaceHolderText();
                         domClass.add(this.dataViewerParentDiv, "esriCTHidden");
                         this.noFeatureDiv.innerHTML = this.appConfig.i18n.dataviewer.noIssuesReported;
                         if (this._isManualRefreshClicked) {
@@ -304,9 +313,17 @@ define([
         * @memberOf widgets/data-viewer/data-viewer
         */
         _onTableHeaderClick: function (tableHeader) {
-            on(tableHeader, "click", lang.hitch(this, function () {
+            on(tableHeader, "click", lang.hitch(this, function (evt) {
                 // If data-viewer table exists.
                 if (this._dataViewerTable) {
+                    this._sortedField = evt.currentTarget.innerHTML;
+                    if (domClass.contains(evt.currentTarget, "sorting")) {
+                        this._sortedFieldOrder = "asc";
+                    } else if (domClass.contains(evt.currentTarget, "sorting_asc")) {
+                        this._sortedFieldOrder = "desc";
+                    } else {
+                        this._sortedFieldOrder = "asc";
+                    }
                     // To sort data properly
                     this._dataViewerTable.draw();
                 }
@@ -534,7 +551,7 @@ define([
         * @memberOf widgets/data-viewer/data-viewer
         */
         _convertHtmlTableToDataTable: function (entireFeatureDataArr) {
-            var domNodeWidth, columnWidth, displayColumnCount, objectIdFieldClass, i;
+            var domNodeWidth, columnWidth, displayColumnCount, objectIdFieldClass, i, sortedField, sortedFieldIndex;
             domNodeWidth = domGeometry.getMarginBox(this.dataViewerParentDiv).w;
             columnWidth = "250px";
             if (this._displayColumn.length > 0) {
@@ -551,6 +568,9 @@ define([
                             this.objectIdColumnNumber = i;
                         }
                     }
+                    if ((this._isManualRefreshClicked) && (this._lastStateDetailsObj) && (this._lastStateDetailsObj.hasOwnProperty("sortedField")) && ((this._lastStateDetailsObj.sortedField === this._displayColumn[i].label))) {
+                        sortedFieldIndex = i;
+                    }
                 }
             }
             // The minimum width of each column is 250px.
@@ -559,6 +579,11 @@ define([
             if ((displayColumnCount * 250) < domNodeWidth) {
                 columnWidth = (domNodeWidth / displayColumnCount) + 10;
                 columnWidth += "px";
+            }
+            if ((this._isManualRefreshClicked) && sortedFieldIndex) {
+                sortedField = [[sortedFieldIndex, this._lastStateDetailsObj.sortedFieldOrder]];
+            } else {
+                sortedField = [];
             }
             this._dataViewerTable = $('#dataViewerTable').DataTable({
                 "destroy": true,
@@ -580,16 +605,38 @@ define([
                     "sWidth": columnWidth, // width of each columns
                     "aTargets": "_all" // to apply condition to all column when no data is there to display,
                 }],
-                "autoWidth": true
+                "autoWidth": true,
+                "order": sortedField
             });
             // Attach a click event to rows
             this._onRowClick();
             this._restrictSizeOfTableCellContent();
             this._retainSelectedFeature();
             this._setDataViewerHeight();
+            // Check if manual refresh was clicked so that last state can be regained.
             if (this._isManualRefreshClicked) {
                 this._isManualRefreshClicked = false;
+                // To regain last state of vertical scrollbar position, searched filtered value.
+                this._regainLastState();
+                this._enableSearchIcon();
+                this._lastStateDetailsObj = {};
                 this.resizeMap();
+            }
+            this.appUtils.hideLoadingIndicator();
+        },
+
+        /**
+        * This function is used to regain last state of vertical scrollbar position, search filtered value.
+        * @memberOf widgets/data-viewer/data-viewer
+        */
+        _regainLastState: function () {
+            // Regain vertical scroll position
+            if (this._lastStateDetailsObj.isShowAllClicked) {
+                $('.dataTables_scrollBody').animate({ scrollTop: this._lastStateDetailsObj.verticalScrollPosition });
+            }
+            // Set search text if filtered is applied & data is returned
+            if (this._lastStateDetailsObj.isSearchFilteredApplied) {
+                $(".esriCTSearchBox")[0].value = this._lastStateDetailsObj.searchFilterValue;
             }
             this.appUtils.hideLoadingIndicator();
         },
@@ -926,7 +973,7 @@ define([
         searchDataInDataViewer: function () {
             $(".esriCTNoResults").addClass("esriCTHidden");
             // If the value/search string exists than search it
-            if (!this.isShowSelectedClicked && lang.trim($(".esriCTSearchBox")[0].value) !== "") {
+            if (!this.isShowSelectedClicked && lang.trim($(".esriCTSearchBox")[0].value) !== "" && (!domClass.contains($(".esriCTSearchBox")[0], "esriCTPlaceholder"))) {
                 $(".esriCTSearchBox")[0].value = lang.trim($(".esriCTSearchBox")[0].value);
                 this.clearSelection();
                 // Before searching clear edit mode
@@ -935,6 +982,7 @@ define([
                 this._searchData();
             } else {
                 $(".esriCTSearchBox")[0].value = "";
+                this.displayPlaceHolderText();
             }
         },
 
@@ -955,6 +1003,7 @@ define([
             // If the search string exists.
             if (searchValue) {
                 this._newDefinitionExpression = this._getDefinitionExpression(searchValue);
+                this._searchFilteredValue = searchValue;
             } else {
                 $(".esriCTNoResults").addClass("esriCTHidden");
                 this._newDefinitionExpression = this._existingDefinitionExpression;
@@ -970,9 +1019,10 @@ define([
             var filteredIconNode;
             // If no records are found after search then display all existing records
             // And display message of no result
-            if (this._selectedOperationalLayer.graphics.length === 0) {
+            if ((this._selectedOperationalLayer.graphics.length === 0) && (!this._lastStateDetailsObj.isSearchFilteredApplied)) {
                 $(".esriCTNoResults").removeClass("esriCTHidden");
                 $(".esriCTSearchBox")[0].value = "";
+                this.displayPlaceHolderText();
                 this._newDefinitionExpression = this._existingDefinitionExpression;
                 this._resetDefinitionExpression();
                 filteredIconNode = query(".esriCTSearchFiltered");
@@ -985,6 +1035,17 @@ define([
                     this._addRegularSearchIcon();
                 }
                 this.appUtils.hideLoadingIndicator();
+            } else if ((this._selectedOperationalLayer.graphics.length === 0) && (this._lastStateDetailsObj.isSearchFilteredApplied)) {
+                this._isManualRefreshClicked = false;
+                this._lastStateDetailsObj.isSearchFilteredApplied = false;
+                this._lastStateDetailsObj.searchFilterValue = null;
+                this._resetSearchPanel();
+                this._newDefinitionExpression = this._existingDefinitionExpression;
+                this._resetDefinitionExpression();
+            } else if ((this._selectedOperationalLayer.graphics.length > 0) && (this._lastStateDetailsObj.isSearchFilteredApplied)) {
+                this._isManualRefreshClicked = false;
+                this._lastStateDetailsObj = {};
+                this._enableSearchIcon();
             } else {
                 // If records are found after a search than display it and set map extent to selected records
                 if (this._newDefinitionExpression === this._existingDefinitionExpression) {
@@ -1025,6 +1086,7 @@ define([
                 $(".esriCTSearchBox")[0].value = "";
             }
             filteredIconNode = query(".esriCTSearchFiltered");
+            this.displayPlaceHolderText();
             // After clearing searched data re-set data-viewer to all existing records
             if (filteredIconNode.length > 0) {
                 this._searchData();
@@ -1036,7 +1098,7 @@ define([
         * @memberOf widgets/data-viewer/data-viewer
         */
         _resetSearchPanel: function () {
-            var i;
+            var i, searchBox;
             if ($(".esriCTSearchBox").length > 0) {
                 $(".esriCTSearchBox")[0].value = "";
                 $(".esriCTSearchBox")[0].placeholder = "";
@@ -1052,9 +1114,11 @@ define([
                         // Enable search functionality
                         this._addRegularSearchIcon();
                         if ($(".esriCTSearchBox").length > 0 && this.itemInfo.itemData.applicationProperties.viewing.search.hintText) {
-                            $(".esriCTSearchBox")[0].placeholder = this.itemInfo.itemData.applicationProperties.viewing.search.hintText;
-                            if (typeof $(".esriCTSearchBox, textarea").placeholder === 'function') {
-                                $(".esriCTSearchBox, textarea").placeholder();
+                            searchBox = $(".esriCTSearchBox")[0];
+                            searchBox.placeholder = this.itemInfo.itemData.applicationProperties.viewing.search.hintText;
+                            if (has("ie") === 9) {
+                                searchBox.value = this.itemInfo.itemData.applicationProperties.viewing.search.hintText;
+                                domClass.add(searchBox, "esriCTPlaceholder");
                             }
                         }
                         break;
@@ -1063,6 +1127,34 @@ define([
             } else {
                 // Disbale search functionality
                 this._addDisabledSearchIcon();
+            }
+        },
+
+        /**
+        * This function is used to display place holder text in search bar
+        * @memberOf widgets/data-viewer/data-viewer
+        */
+        displayPlaceHolderText: function () {
+            if (has("ie") === 9) {
+                var searchBox;
+                searchBox = $(".esriCTSearchBox")[0];
+                if (lang.trim(searchBox.value) === "") {
+                    searchBox.value = this.itemInfo.itemData.applicationProperties.viewing.search.hintText;
+                    domClass.add(searchBox, "esriCTPlaceholder");
+                }
+            }
+        },
+
+        /**
+        * This function is used to remove place holder text in search bar
+        * @memberOf widgets/data-viewer/data-viewer
+        */
+        removePlaceHolderText: function () {
+            var searchBox;
+            searchBox = $(".esriCTSearchBox")[0];
+            if (domClass.contains(searchBox, "esriCTPlaceholder")) {
+                searchBox.value = "";
+                domClass.remove(searchBox, "esriCTPlaceholder");
             }
         },
 
@@ -1178,18 +1270,18 @@ define([
                             definitionExpression = this._existingDefinitionExpression;
                             if (layerObject.field.exactMatch) {
                                 // For exact match case
-                                definitionExpression += " AND " + layerObject.field.name.toUpperCase() + " = '" + lang.trim(searchValue).toUpperCase() + "'";
+                                definitionExpression += " AND " + layerObject.field.name.toUpperCase() + " = '" + lang.trim(searchValue) + "'";
                             } else {
                                 // For contains case
-                                definitionExpression += " AND " + layerObject.field.name.toUpperCase() + " LIKE '%" + lang.trim(searchValue).toUpperCase() + "%'";
+                                definitionExpression += " AND " + layerObject.field.name.toUpperCase() + " LIKE '%" + lang.trim(searchValue) + "%'";
                             }
                         } else {
                             if (layerObject.field.exactMatch) {
                                 // For exact match case
-                                definitionExpression = layerObject.field.name.toUpperCase() + " = '" + lang.trim(searchValue).toUpperCase() + "'";
+                                definitionExpression = layerObject.field.name.toUpperCase() + " = '" + lang.trim(searchValue) + "'";
                             } else {
                                 // For contains case
-                                definitionExpression = layerObject.field.name.toUpperCase() + " LIKE '%" + lang.trim(searchValue).toUpperCase() + "%'";
+                                definitionExpression = layerObject.field.name.toUpperCase() + " LIKE '%" + lang.trim(searchValue) + "%'";
                             }
                         }
                         return definitionExpression;
@@ -1995,6 +2087,7 @@ define([
                 this.isShowSelectedClicked = false;
                 this.isDetailsTabClicked = false;
                 this._activeRowGraphicsLayer.clear();
+                this._enableSearchIcon();
                 this.showLocationTab();
                 this.createDataViewerUI(false);
             } else {
@@ -2180,6 +2273,7 @@ define([
                 this.isDetailsTabClicked = false;
                 this._activeRowGraphicsLayer.clear();
                 this.showLocationTab();
+                this._enableSearchIcon();
                 this.createDataViewerUI(false);
             } else if ((activatedRowArr.length === 0) && (this.isDetailsTabClicked) && (this.isShowSelectedClicked)) {
                 this.isDetailsTabClicked = false;
@@ -2704,6 +2798,8 @@ define([
         checkForNoFeatures: function () {
             if (this._selectedOperationalLayer.graphics.length === 0) {
                 domClass.remove(this.noFeatureDiv, "esriCTHidden");
+                $(".esriCTSearchBox")[0].value = "";
+                this.displayPlaceHolderText();
                 domClass.add(this.dataViewerParentDiv, "esriCTHidden");
                 this.noFeatureDiv.innerHTML = this.appConfig.i18n.dataviewer.noIssuesReported;
                 this.appUtils.hideLoadingIndicator();
@@ -2993,25 +3089,79 @@ define([
         /** MANUAL REFRESH **/
 
         /**
-        * This function is used to do manual refresh
+        * This function is used to do manual refresh. After refresh following things are regained & discarded.
+        * 1. Regains map view
+        * 2. Regains list view
+        * 3. Regains split view
+        * 4. Regains the resized height of the grid
+        * 5. All selected features are cleared
+        * 6. Removes edit mode
+        * 7. All activated feature are cleared
+        * 8. Map is displayed in place of details view
+        * 9. Selections option icon is disabled
+        * 10. Show selected option is converted to show all mode
+        * 11. View in show selected mode is regained
+        * 12. Regains position of vertical scrollbar
+        * 13. Regains map extent
+        * 14. Search mode is closed
+        * 15. Regains search filter
+        * 16. Resets search mode & displays all records if filter does not return any feature
+        * 17. After filter if show selected mode is applied, than only filter & view is regained
+        * 18. Regains sorted field
         * @memberOf widgets/data-viewer/data-viewer
         */
-        _doManualRefresh: function () {
+        doManualRefresh: function () {
             this.appUtils.showLoadingIndicator();
+            // To keep track that manual refresh was clicked.
             this._isManualRefreshClicked = true;
-            this.isShowSelectedClicked = false;
+            // Since editing is not performed layer refresh flag would be false
             this.isLayerRefreshed = false;
-            var extentDeferred = new Deferred();
-            extentDeferred = this.map.setExtent(this.lastSelectedWebMapExtent, true);
-            extentDeferred.then(lang.hitch(this, function () {
-                var zoomLevelDeferred = new Deferred();
-                zoomLevelDeferred = this.map.setZoom(this.lastMapZoomLevel);
-                zoomLevelDeferred.then(lang.hitch(this, function () {
-                    this.removeControlsFromPreviousRow();
-                    this._newDefinitionExpression = this._existingDefinitionExpression;
-                    this._resetDefinitionExpression();
-                }));
-            }));
+            // Removes details panel track, stating whether user is in details panel/location panel
+            this.isDetailsTabClicked = false;
+            // Clears all selected feature
+            this._selectRowGraphicsLayer.clear();
+            // Removes edit mode.
+            this.removeControlsFromPreviousRow();
+            // Clears all activated feature
+            this._activeRowGraphicsLayer.clear();
+            // Get the details of the last state of vertical scrollbar position, searched filtered value.
+            this._getLastStateDetails();
+            // Remove track, stating whether user in show selected mode/show all mode
+            this.isShowSelectedClicked = false;
+            // Close search mode
+            $(".esriCTOptionsSearchMode").removeClass("esriCTVisible");
+            $(".esriCTOptionsSearchMode").addClass("esriCTHidden");
+            // Reset definition expression
+            this._resetDefinitionExpression();
+        },
+
+        /**
+        * This function is used to get details of last state of vertical scrollbar position, searched filtered value.
+        * @memberOf widgets/data-viewer/data-viewer
+        */
+        _getLastStateDetails: function () {
+            this._lastStateDetailsObj = {};
+            // Get vertical scrollbar position
+            if ($('.dataTables_scrollBody').length > 0) {
+                this._lastStateDetailsObj.verticalScrollPosition = $('.dataTables_scrollBody')[0].scrollTop;
+            } else {
+                this._lastStateDetailsObj.verticalScrollPosition = 0;
+            }
+            // Get searched filtered value
+            if (this._newDefinitionExpression !== this._existingDefinitionExpression) {
+                this._lastStateDetailsObj.isSearchFilteredApplied = true;
+                this._lastStateDetailsObj.searchFilterValue = this._searchFilteredValue;
+            } else {
+                this._lastStateDetailsObj.isSearchFilteredApplied = false;
+                this._lastStateDetailsObj.searchFilterValue = null;
+            }
+            this._lastStateDetailsObj.sortedField = this._sortedField;
+            this._lastStateDetailsObj.sortedFieldOrder = this._sortedFieldOrder;
+            if (this.isShowSelectedClicked) {
+                this._lastStateDetailsObj.isShowAllClicked = false;
+            } else {
+                this._lastStateDetailsObj.isShowAllClicked = true;
+            }
         },
 
         /** MANUAL REFRESH **/
