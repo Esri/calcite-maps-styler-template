@@ -285,7 +285,7 @@
       "timecolor": "#4992CD",
       "slidercolor":"#7CC5FF",
       "sliderticks":false,
-      "looptime":true,
+      "looptime":false,
       "autoplay": false,
       "sliderrate": 500,
       "noslider": false,
