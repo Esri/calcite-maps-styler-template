@@ -597,7 +597,6 @@ define([
         fileInput = domConstruct.create("input", {
           "type": "file",
           "class": "hideFileInputUI",
-          "accept": "image/*",
           "title": nls.user.selectFileTitle,
           "name": "attachment"
         }, fileForm);
@@ -672,7 +671,6 @@ define([
       fileInput = domConstruct.create("input", {
         "type": "file",
         "class": "hideFileInputUI",
-        "accept": "image/*",
         "title": nls.user.selectFileTitle,
         "name": "attachment"
       }, fileForm);
@@ -1088,6 +1086,10 @@ define([
         inputContent.setAttribute("aria-required", true);
         inputContent.setAttribute("required", "");
       }
+      if(currentField.defaultValue){
+        // store default value
+        domAttr.set(inputContent, "data-default-value", currentField.defaultValue);
+      }
       var helpHTML;
       if (currentField.isNewField) {
         // make sure popup info and fields are defined
@@ -1248,6 +1250,7 @@ define([
             if (fieldAttribute.toLowerCase() === field.name.toLowerCase()) {
               defaultValue = selectedType.templates[0].prototype.attributes[fieldAttribute];
               field.defaultValue = defaultValue;
+              domAttr.set(currentTarget, "data-default-value", defaultValue);
               break;
             }
           }
@@ -1400,57 +1403,7 @@ define([
     },
     // reset form fields
     _clearFormFields: function () {
-      //For Filter Select
-      array.forEach(query(".filterSelect"), lang.hitch(this, function (currentInput) {
-        if (currentInput.value) {
-          $("#" + currentInput.id).val("").trigger("change");
-          domClass.remove(currentInput, "has-success");
-        }
-      }));
-      // each form field
-      array.forEach(query(".form-control"), function (currentInput) {
-        var node = currentInput.parentElement;
-        if (!domClass.contains(currentInput, "selectDomain")) {
-          domAttr.set(currentInput, "value", "");
-          domClass.remove(node, "has-error");
-          domClass.remove(node, "has-success");
-        } else {
-          if (!domClass.contains(currentInput, "allLayerList")) {
-            currentInput.options[0].selected = true;
-            domClass.remove(node, "has-success");
-          }
-        }
-      });
-      array.forEach(query(".geoFormQuestionare .input-group"), function (currentInput) {
-        domClass.remove(currentInput.parentElement, "has-error");
-        domClass.remove(currentInput.parentElement, "has-success");
-      });
-      // each radio
-      array.forEach(query(".geoFormQuestionare .radioContainer"), function (currentField) {
-        domClass.remove(currentField.parentNode, "has-success");
-        array.forEach(query("input", currentField), function () {
-          var index = arguments[1];
-          domAttr.set(query("input", currentField)[index], "checked", false);
-        });
-      });
-      // each checkbox
-      array.forEach(query(".checkboxInput:checked"), function (currentField) {
-        domAttr.set(currentField, "checked", false);
-        domClass.remove(query(".checkboxContainer")[domAttr.get(currentField, "data-checkbox-index")].parentNode, "has-success");
-      });
-      // clear attachment
-      var attachNode = dom.byId("geoFormAttachment");
-      if (attachNode && attachNode.value) {
-        //We are adding attachNode.value= "" again to clear the attachment text in Firefox
-        domAttr.set(attachNode, "value", "");
-        //Below line works in all the browsers except Firefox
-        //Since attachNode.value= "" was not working in IE8, we added this code to clear the attachment text
-        //This is just work around and we are searching for single solution which will work in all the browsers
-        $(dom.byId("geoFormAttachment")).replaceWith($(dom.byId("geoFormAttachment")).clone(true));
-      }
-      query('.alert-dismissable').forEach(function (node) {
-        domConstruct.destroy(node);
-      });
+      this._createForm(this._savedFields);
     },
     // validate form input
     _validateUserInput: function (error, node, inputValue, iskeyPress) {
@@ -1556,11 +1509,12 @@ define([
             if (webmapLayers.options[0]) {
               webmapLayers.options[0].selected = true;
               this._formLayer = this.layerCollection[webmapLayers.options[0].value];
-              this._createForm(this.config.fields[webmapLayers.options[0].value]);
+              this._savedFields = this.config.fields[webmapLayers.options[0].value];
+              this._createForm(this._savedFields);
               on(webmapLayers, "change", lang.hitch(this, function (evt) {
-                var fields = this.config.fields[evt.currentTarget.value];
+                this._savedFields = this.config.fields[evt.currentTarget.value];
                 this._formLayer = this.layerCollection[evt.currentTarget.value];
-                this._createForm(fields);
+                this._createForm(this._savedFields);
                 this._resizeMap();
               }));
             } else {
@@ -1570,8 +1524,9 @@ define([
           }));
         } else {
           if (this._formLayer) {
+            this._savedFields = this.config.fields[this._formLayer.id];
             // create form fields
-            this._createForm(this.config.fields[this._formLayer.id]);
+            this._createForm(this._savedFields);
           }
         }
         // create locate button
@@ -2192,15 +2147,15 @@ define([
 
     // submit form with applyedits
     _addFeatureToLayer: function () {
-      var userFormNode, featureData, key, value;
+      var userFormNode, featureData, key, value, defaultValue;
       userFormNode = dom.byId('userForm');
       //To populate data for apply edits
       featureData = new Graphic();
       featureData.attributes = {};
       //condition to filter out radio inputs
       array.forEach(query(".geoFormQuestionare .form-control"), function (currentField) {
+        key = domAttr.get(currentField, "id");
         if (currentField.value !== "") {
-          key = domAttr.get(currentField, "id");
           if (domClass.contains(currentField, "hasDatetimepicker")) {
             var picker = $(currentField.parentNode).data('DateTimePicker');
             var d = picker.date();
@@ -2211,18 +2166,28 @@ define([
           }
           featureData.attributes[key] = value;
         }
+        else if(domAttr.has(currentField, "data-default-value")){
+          defaultValue = domAttr.get(currentField, "data-default-value");
+          value = defaultValue;
+          featureData.attributes[key] = value;
+        }
       });
       array.forEach(query(".filterSelect"), function (currentField) {
+        key = domAttr.get(currentField, "id");
         if (currentField.value) {
-          key = domAttr.get(currentField, "id");
           value = lang.trim(currentField.value);
+          featureData.attributes[key] = value;
+        }
+        else if(domAttr.has(currentField, "data-default-value")){
+          defaultValue = domAttr.get(currentField, "data-default-value");
+          value = defaultValue;
           featureData.attributes[key] = value;
         }
       });
       // each radio button
       array.forEach(query(".geoFormQuestionare .radioContainer"), function (currentField) {
+        key = query(".radioInput:checked", currentField)[0].name;
         if (query(".radioInput:checked", currentField).length !== 0) {
-          key = query(".radioInput:checked", currentField)[0].name;
           value = lang.trim(query(".radioInput:checked", currentField)[0].value);
           featureData.attributes[key] = value;
         }
@@ -2630,7 +2595,9 @@ define([
               this.config.form_layer.id = currentLayer.id;
               //Add the default fields in the fields object
               //This case will work when application is running without app id
-              this.config.fields[this.config.form_layer.id] = this.map.getLayer(this.config.form_layer.id).fields;
+              if(!this.config.fields.hasOwnProperty(this.config.form_layer.id)){
+                this.config.fields[this.config.form_layer.id] = this.map.getLayer(this.config.form_layer.id).fields;
+              }
               return true;
             } else {
               flagPointFeatureLayer = false;
@@ -2861,6 +2828,7 @@ define([
         locale: kernel.locale,
         minDate: minDate,
         maxDate: maxDate,
+        extraFormats: ["M/D/YYYY", "M-D-YYYY", "M.D.YYYY", "M D YYYY"],
         format: this.dateFormat,
         defaultDate: defaultDate,
         useCurrent: true
