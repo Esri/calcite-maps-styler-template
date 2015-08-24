@@ -37,7 +37,9 @@
 			desktopView: {
 				storymapsText: "Een kaartverhaal",
 				builderButton: "Omschakelen naar buildermodus",
-				bitlyTooltip: "Een korte koppeling naar de applicatie maken"
+				facebookTooltip: "Ĳ_Share on Facebook______ä",
+				twitterTooltip: "Ĳ_Share on Twitter______ä",
+				bitlyTooltip: "Ĳ_Get a short link______ä"
 			}
 		},
 		builder: {

@@ -4,9 +4,6 @@
             error: "ไม่สามารถสร้างแผนที่ได้",
             mouseToolTip: "คลิกบนแผนที่เพื่อตรวจสอบเซอร์วิส"
         },
-        geocoder: {
-            defaultText: "ใส่ที่อยู่หรือตำแหน่งที่สนใจ"
-        },
         error: {
             layerNotFound: "ชั้นช้อมูลพื้นที่การให้บริการไม่ปรากฎในเว็บแมพ",
             fieldNotFound: "ไม่พบฟิลด์",
@@ -16,16 +13,14 @@
         page: {
             title: "ข้อมูลในตาราง",
         },
-
-        splashscreen: {
-            buttonText: "ตกลง",
-        },
         ui:{
             basemapButton: "แผนที่ฐาน"
         },
         popup: {
-            urlMoreInfo: "ข้อมูลเพิ่มเติม"
+          urlMoreInfo: "ก้_More Info____ษฺ",
+          attachments: "ก้_Attachments____ษฺ"
         }
+
 
     })
 );

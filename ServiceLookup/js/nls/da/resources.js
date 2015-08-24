@@ -4,9 +4,6 @@
             error: "Kan ikke oprette kort",
             mouseToolTip: "Klik på kortet for at kontrollere tjenesten"
         },
-        geocoder: {
-            defaultText: "Indtast en adresse eller et interessepunkt"
-        },
         error: {
             layerNotFound: "Laget findes ikke i webkortet",
             fieldNotFound: "Felt ikke fundet",
@@ -16,16 +13,14 @@
         page: {
             title: "Informationssøgning",
         },
-
-        splashscreen: {
-            buttonText: "OK",
-        },
         ui:{
             basemapButton: "Baggrundskort"
         },
         popup: {
-            urlMoreInfo: "Flere oplysninger"
+          urlMoreInfo: "ø_More Info____å",
+          attachments: "ø_Attachments____å"
         }
+
 
     })
 );

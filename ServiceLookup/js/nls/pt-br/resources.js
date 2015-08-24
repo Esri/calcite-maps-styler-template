@@ -4,9 +4,6 @@
             error: "Não foi possível criar o mapa",
             mouseToolTip: "Clique no mapa para verificar por serviço"
         },
-        geocoder: {
-            defaultText: "Insira um endereço ou ponto de interesse"
-        },
         error: {
             layerNotFound: "A camada não está no mapa da web",
             fieldNotFound: "Campo não localizado",
@@ -16,16 +13,14 @@
         page: {
             title: "Consultar Informações",
         },
-
-        splashscreen: {
-            buttonText: "OK",
-        },
         ui:{
             basemapButton: "Mapa Base"
         },
         popup: {
-            urlMoreInfo: "Mais informações"
+          urlMoreInfo: "ã_More Info____Ç",
+          attachments: "ã_Attachments____Ç"
         }
+
 
     })
 );

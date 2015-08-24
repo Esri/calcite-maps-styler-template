@@ -46,7 +46,9 @@
 			headerFromCommon: {
 				storymapsText: "Eine Story Map",
 				builderButton: "Bearbeiten",
-				bitlyTooltip: "Kurzlink zur Anwendung abrufen",
+				facebookTooltip: "ä_Share on Facebook______Ü",
+				twitterTooltip: "ä_Share on Twitter______Ü",
+				bitlyTooltip: "ä_Get a short link______Ü",
 				templateTitle: "Vorlagentitel festlegen",
 				templateSubtitle: "Untertitel der Vorlage festlegen",
 				share: "Freigeben"

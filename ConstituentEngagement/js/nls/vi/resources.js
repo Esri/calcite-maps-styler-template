@@ -62,11 +62,9 @@ define(
             myReport: "Báo cáo của tôi", // Command button shown in mobile menu list
             signIn: "Đăng nhập", // Command button shown in mobile menu list and in appheader
             signOut: "Đăng xuất", // Command button shown in mobile menu list
-            help: "Trợ giúp", // Command button shown in mobile menu list
             signInTooltip: "Đăng nhập", // Tooltip to 'Sign in' option
             signOutTooltip: "Đăng xuất", // Tooltip  to 'Sign out' option
-            myReportTooltip: "Xem các báo cáo tôi đã gửi", // Tooltip  to 'My Reports' option
-            helpTooltip: "Trợ giúp" // Tooltip  to 'Help' option
+            myReportTooltip: "Xem các báo cáo tôi đã gửi" // Tooltip  to 'My Reports' option
         },
         geoform: {
             enterInformation: "Chi tiết", // Shown as the first section of the geoform, where the user can enter details of the issue

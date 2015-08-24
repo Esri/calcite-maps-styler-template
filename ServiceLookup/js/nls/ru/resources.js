@@ -4,9 +4,6 @@
             error: "Не удалось создать карту",
             mouseToolTip: "Щелкните на карте, чтобы проверить сервис"
         },
-        geocoder: {
-            defaultText: "Введите адрес или интересующую тему"
-        },
         error: {
             layerNotFound: "Слой отсутствует в веб-карте",
             fieldNotFound: "Поле не найдено",
@@ -16,16 +13,14 @@
         page: {
             title: "Поиск сведений",
         },
-
-        splashscreen: {
-            buttonText: "OK",
-        },
         ui:{
             basemapButton: "Базовая карта"
         },
         popup: {
-            urlMoreInfo: "Больше информации"
+          urlMoreInfo: "Ж_More Info____Я",
+          attachments: "Ж_Attachments____Я"
         }
+
 
     })
 );

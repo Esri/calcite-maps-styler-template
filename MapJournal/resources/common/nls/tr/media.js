@@ -56,7 +56,9 @@
 				howToFind: "YouTube kullanıcı adı bulma",
 				howToFind2: "Kullanıcı adı bu videoların altında gösterilir",
 				found: "Bulundu",
-				noData: "Hiçbir genel video bulunamadı"
+				noData: "Hiçbir genel video bulunamadı",
+				videoNotChecked: "ı_The video hasn't been checked on YouTube but its address looks good_____________________İ.",
+				checkFailedAPI: "ı_YouTube check has failed, please check YouTube API key__________________İ."
 			},
 			videoSelectorVimeo: {
 				url: "Bir Vimeo videosu URL\'si"

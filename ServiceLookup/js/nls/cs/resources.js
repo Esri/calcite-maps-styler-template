@@ -4,9 +4,6 @@
             error: "Nelze vytvořit mapu",
             mouseToolTip: "Kliknutím na mapu službu zkontrolujete."
         },
-        geocoder: {
-            defaultText: "Zadejte adresu nebo bod zájmu"
-        },
         error: {
             layerNotFound: "Vrstva není ve webové mapě",
             fieldNotFound: "Pole nenalezeno",
@@ -16,16 +13,14 @@
         page: {
             title: "Vyhledávání informací",
         },
-
-        splashscreen: {
-            buttonText: "OK",
-        },
         ui:{
             basemapButton: "Podkladová mapa"
         },
         popup: {
-            urlMoreInfo: "Další informace"
+          urlMoreInfo: "Ř_More Info____ů",
+          attachments: "Ř_Attachments____ů"
         }
+
 
     })
 );

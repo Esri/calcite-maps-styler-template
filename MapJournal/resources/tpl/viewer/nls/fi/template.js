@@ -55,7 +55,9 @@
 			headerFromCommon: {
 				storymapsText: "Tarinakartta",
 				builderButton: "Muokkaa",
-				bitlyTooltip: "Hanki lyhyt linkki sovellukseen",
+				facebookTooltip: "Å_Share on Facebook______ö",
+				twitterTooltip: "Å_Share on Twitter______ö",
+				bitlyTooltip: "Å_Get a short link______ö",
 				templateTitle: "Määritä mallin nimi",
 				templateSubtitle: "Määritä mallin alaotsikko",
 				share: "Jaa"

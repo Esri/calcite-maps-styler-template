@@ -56,7 +56,9 @@
 				howToFind: "Sådan finder du et YouTube-brugernavn",
 				howToFind2: "Brugernavnet vises under videoer",
 				found: "Fundet",
-				noData: "Ingen offentlige videoer fundet"
+				noData: "Ingen offentlige videoer fundet",
+				videoNotChecked: "ø_The video hasn't been checked on YouTube but its address looks good_____________________å.",
+				checkFailedAPI: "ø_YouTube check has failed, please check YouTube API key__________________å."
 			},
 			videoSelectorVimeo: {
 				url: "URL til en Vimeo-video"

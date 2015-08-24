@@ -56,7 +56,9 @@
 				howToFind: "איך למצוא שם משתמש ב-YouTube",
 				howToFind2: "שם המשתמש מוצג תחת קטעי וידאו",
 				found: "נמצא",
-				noData: "לא נמצאו סרטונים ציבוריים"
+				noData: "לא נמצאו סרטונים ציבוריים",
+				videoNotChecked: "כן_The video hasn't been checked on YouTube but its address looks good_____________________ש.",
+				checkFailedAPI: "כן_YouTube check has failed, please check YouTube API key__________________ש."
 			},
 			videoSelectorVimeo: {
 				url: "URL של וידאו של Vimeo"

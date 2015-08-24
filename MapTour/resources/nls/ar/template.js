@@ -45,7 +45,9 @@
 			desktopHTML: {
 				storymapsText: "قصة داخل خريطة",
 				builderButton: "الانتقال إلى وضع المنشئ",
-				bitlyTooltip: "الحصول على رابط قصير إلى التطبيق",
+				facebookTooltip: "بيت_Share on Facebook______لاحقة",
+				twitterTooltip: "بيت_Share on Twitter______لاحقة",
+				bitlyTooltip: "بيت_Get a short link______لاحقة",
 				bitlyStartIndex: "الارتباط بالمكان الحالي"
 			},
 			builderHTML: {

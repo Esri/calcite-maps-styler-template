@@ -56,7 +56,9 @@
 				howToFind: "Como encontrar um nome de usuário do YouTube",
 				howToFind2: "O nome de usuário é exibido abaixo dos vídeos",
 				found: "Localizado",
-				noData: "Nenhum vídeo público localizado"
+				noData: "Nenhum vídeo público localizado",
+				videoNotChecked: "ã_The video hasn't been checked on YouTube but its address looks good_____________________Ç.",
+				checkFailedAPI: "ã_YouTube check has failed, please check YouTube API key__________________Ç."
 			},
 			videoSelectorVimeo: {
 				url: "URL de um vídeo do Vimeo"

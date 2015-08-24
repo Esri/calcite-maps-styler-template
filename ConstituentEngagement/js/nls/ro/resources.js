@@ -41,7 +41,7 @@ define(
         },
         webMapList: {
             owner: "Proprietar", // Shown in the 'Map information' section indicating the owner of the webmap
-            created: "Data creării", // Shown in the 'Map information' section indicating the date when the webmap was created
+            created: "Ă_Date created_____ș", // Shown in the 'Map information' section indicating the date when the webmap was created
             modified: "Dată modificată", // Shown in the 'Map information' section indicating the date when the webmap was modified
             description: "Descriere", // Shown in the 'Map information' section describing the webmap
             snippet: "Rezumat", // Shown in the 'Map information' section providing the summary of the webmap
@@ -62,11 +62,9 @@ define(
             myReport: "Rapoartele mele", // Command button shown in mobile menu list
             signIn: "Autentificare", // Command button shown in mobile menu list and in appheader
             signOut: "Deconectare", // Command button shown in mobile menu list
-            help: "Ajutor", // Command button shown in mobile menu list
             signInTooltip: "Autentificaţi-vă", // Tooltip to 'Sign in' option
             signOutTooltip: "Deconectare", // Tooltip  to 'Sign out' option
-            myReportTooltip: "Vizualizează rapoartele transmise de mine", // Tooltip  to 'My Reports' option
-            helpTooltip: "Ajutor" // Tooltip  to 'Help' option
+            myReportTooltip: "Vizualizează rapoartele transmise de mine" // Tooltip  to 'My Reports' option
         },
         geoform: {
             enterInformation: "Detalii", // Shown as the first section of the geoform, where the user can enter details of the issue

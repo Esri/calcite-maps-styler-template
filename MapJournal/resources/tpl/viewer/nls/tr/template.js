@@ -55,7 +55,9 @@
 			headerFromCommon: {
 				storymapsText: "Hikaye haritası",
 				builderButton: "Düzenle",
-				bitlyTooltip: "Uygulamaya bir kısa bağlantı alın",
+				facebookTooltip: "ı_Share on Facebook______İ",
+				twitterTooltip: "ı_Share on Twitter______İ",
+				bitlyTooltip: "ı_Get a short link______İ",
 				templateTitle: "Şablon başlığını ayarla",
 				templateSubtitle: "Şablon altyazısını ayarla",
 				share: "Paylaş"

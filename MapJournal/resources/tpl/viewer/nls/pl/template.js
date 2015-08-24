@@ -55,7 +55,9 @@
 			headerFromCommon: {
 				storymapsText: "Mapa narracji (Story Map)",
 				builderButton: "Edytuj",
-				bitlyTooltip: "Pobierz skrócone łącze do aplikacji",
+				facebookTooltip: "ł_Share on Facebook______ą",
+				twitterTooltip: "ł_Share on Twitter______ą",
+				bitlyTooltip: "ł_Get a short link______ą",
 				templateTitle: "Skonfiguruj tytuł szablonu",
 				templateSubtitle: "Skonfiguruj podtytuł szablonu",
 				share: "Udostępnij"

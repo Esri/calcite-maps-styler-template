@@ -46,7 +46,7 @@ define(
             description: "Beskrivelse", // Shown in the 'Map information' section describing the webmap
             snippet: "Sammendrag", // Shown in the 'Map information' section providing the summary of the webmap
             licenseInfo: "Begrensning av tilgang og bruk", // Shown in the map information section indicating the webmap license information
-            accessInformation: "Krediteringer", // Shown in the 'Map information' section indicating account credits
+            accessInformation: "Credits", // Shown in the 'Map information' section indicating account credits
             tags: "Merker", // Shown in the 'Map information' section indicating tags of the webmap
             numViews: "Antall visninger", // Shown in the 'Map information' section indicating number of times the webmap has been viewed
             avgRating: "Vurdering", // Shown in the 'Map information' section indicating webmap rating
@@ -62,11 +62,9 @@ define(
             myReport: "Mine rapporter", // Command button shown in mobile menu list
             signIn: "Logg på", // Command button shown in mobile menu list and in appheader
             signOut: "Logg ut", // Command button shown in mobile menu list
-            help: "Hjelp", // Command button shown in mobile menu list
             signInTooltip: "Logg på", // Tooltip to 'Sign in' option
             signOutTooltip: "Logg av", // Tooltip  to 'Sign out' option
-            myReportTooltip: "Vis rapporter jeg har sendt", // Tooltip  to 'My Reports' option
-            helpTooltip: "Hjelp" // Tooltip  to 'Help' option
+            myReportTooltip: "Vis rapporter jeg har sendt" // Tooltip  to 'My Reports' option
         },
         geoform: {
             enterInformation: "Detaljer", // Shown as the first section of the geoform, where the user can enter details of the issue

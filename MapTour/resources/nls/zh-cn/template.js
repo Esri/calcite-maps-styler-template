@@ -45,7 +45,9 @@
 			desktopHTML: {
 				storymapsText: "故事地图",
 				builderButton: "切换到构建器模式",
-				bitlyTooltip: "获取应用程序的短链接",
+				facebookTooltip: "试_Share on Facebook______验",
+				twitterTooltip: "试_Share on Twitter______验",
+				bitlyTooltip: "试_Get a short link______验",
 				bitlyStartIndex: "当前地点的链接"
 			},
 			builderHTML: {

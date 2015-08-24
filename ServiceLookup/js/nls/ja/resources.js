@@ -4,9 +4,6 @@
             error: "マップを作成できません",
             mouseToolTip: "マップをクリックしてサービスをチェック"
         },
-        geocoder: {
-            defaultText: "アドレスまたは対象ポイントの入力"
-        },
         error: {
             layerNotFound: "Web マップにレイヤがありません",
             fieldNotFound: "フィールドが見つかりません",
@@ -16,16 +13,14 @@
         page: {
             title: "情報検索",
         },
-
-        splashscreen: {
-            buttonText: "OK",
-        },
         ui:{
             basemapButton: "ベースマップ"
         },
         popup: {
-            urlMoreInfo: "詳細情報"
+          urlMoreInfo: "須_More Info____鷗",
+          attachments: "須_Attachments____鷗"
         }
+
 
     })
 );

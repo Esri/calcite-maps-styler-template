@@ -4,9 +4,6 @@
             error: "Nu se poate crea harta",
             mouseToolTip: "Faceţi clic pe hartă pentru a căuta servicii"
         },
-        geocoder: {
-            defaultText: "Introduceţi o adresă sau un punct de interes"
-        },
         error: {
             layerNotFound: "Stratul tematic nu se găseşte pe harta Web",
             fieldNotFound: "Nu s-a găsit câmpul",
@@ -16,16 +13,14 @@
         page: {
             title: "Căutare informaţii",
         },
-
-        splashscreen: {
-            buttonText: "OK",
-        },
         ui:{
             basemapButton: "Hartă fundal"
         },
         popup: {
-            urlMoreInfo: "Mai multe informaţii"
+          urlMoreInfo: "Ă_More Info____ș",
+          attachments: "Ă_Attachments____ș"
         }
+
 
     })
 );

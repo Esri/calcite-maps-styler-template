@@ -62,11 +62,9 @@ define(
             myReport: "Mano ataskaitos", // Command button shown in mobile menu list
             signIn: "Prisijungti", // Command button shown in mobile menu list and in appheader
             signOut: "Atsijungti", // Command button shown in mobile menu list
-            help: "Pagalba", // Command button shown in mobile menu list
             signInTooltip: "Prisijunkite", // Tooltip to 'Sign in' option
             signOutTooltip: "Atsijungti", // Tooltip  to 'Sign out' option
-            myReportTooltip: "Peržiūrėti savo pateiktas ataskaitas", // Tooltip  to 'My Reports' option
-            helpTooltip: "Pagalba" // Tooltip  to 'Help' option
+            myReportTooltip: "Peržiūrėti savo pateiktas ataskaitas" // Tooltip  to 'My Reports' option
         },
         geoform: {
             enterInformation: "Išsamiau", // Shown as the first section of the geoform, where the user can enter details of the issue

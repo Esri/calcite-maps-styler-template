@@ -62,11 +62,9 @@ define(
             myReport: "הדוחות שלי", // Command button shown in mobile menu list
             signIn: "הירשם", // Command button shown in mobile menu list and in appheader
             signOut: "התנתק", // Command button shown in mobile menu list
-            help: "עזרה", // Command button shown in mobile menu list
             signInTooltip: "הרשם", // Tooltip to 'Sign in' option
             signOutTooltip: "יציאה", // Tooltip  to 'Sign out' option
-            myReportTooltip: "הצג דוחות ששלחתי", // Tooltip  to 'My Reports' option
-            helpTooltip: "עזרה" // Tooltip  to 'Help' option
+            myReportTooltip: "הצג דוחות ששלחתי" // Tooltip  to 'My Reports' option
         },
         geoform: {
             enterInformation: "פרטים", // Shown as the first section of the geoform, where the user can enter details of the issue

@@ -9,8 +9,8 @@
       general:"Klaida"
     },
 	legToggle:{
-	  up:"ŽEMĖLAPIO LEGENDA ā–²",
-	  down:"ŽEMĖLAPIO LEGENDA ā–¼"
+	  up:"ŽEMĖLAPIO LEGENDA â–²",
+	  down:"ŽEMĖLAPIO LEGENDA â–¼"
 	},
 	loading:{
 		message: "Įkeliamas žemėlapis"

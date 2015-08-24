@@ -27,7 +27,7 @@ define(
             created: "Luontipäivämäärä", // Appears in web-map list description panel when it is set to true
             modified: "Muokkauspäivämäärä", // Appears in web-map list description panel when it is set to true
             description: "Kuvaus", // Appears in web-map list description panel when it is set to true
-            snippet: "Yhteenveto", // Appears in web-map list description panel when it is set to true
+            snippet: "Summary", // Appears in web-map list description panel when it is set to true
             licenseInfo: "Käyttörajoitukset", // Appears in web-map list description panel when it is set to true
             accessInformation: "Krediitit", // Appears in web-map list description panel when it is set to true
             tags: "Tunnisteet", // Appears in web-map list description panel when it is set to true
@@ -64,7 +64,7 @@ define(
             invalidDate: "Kirjoita kelvollinen päivämäärä", // Shown when user enters invalid date value
             invalidNumericRange: "Kirjoita arvo väliltä ${minValue}–${maxValue}", // Shown when user enters value which is out of range
             moreInfolink: "Linkki", // Shown when value in field contains only URL.
-            commentsText: "Kommentit", // Appears when comments are available for display in details tab
+            commentsText: "Comments", // Appears when comments are available for display in details tab
             noCommentsAvailable: "Yhtään kommenttia ei ole saatavilla", // Appears when no comments are available
             noFeatureGeometry: "Kohdetta ei voi näyttää" // Appears when user selects/activates a feature and geometry is available for that
         },

@@ -41,7 +41,7 @@ define(
         },
         webMapList: {
             owner: "เจ้าของ", // Shown in the 'Map information' section indicating the owner of the webmap
-            created: "วันที่สร้าง", // Shown in the 'Map information' section indicating the date when the webmap was created
+            created: "ก้_Date created_____ษฺ", // Shown in the 'Map information' section indicating the date when the webmap was created
             modified: "วันที่แก้ไข", // Shown in the 'Map information' section indicating the date when the webmap was modified
             description: "คำบรรยาย", // Shown in the 'Map information' section describing the webmap
             snippet: "สรุป", // Shown in the 'Map information' section providing the summary of the webmap
@@ -62,11 +62,9 @@ define(
             myReport: "รายงาน", // Command button shown in mobile menu list
             signIn: "ลงชื่อเข้าใช้", // Command button shown in mobile menu list and in appheader
             signOut: "ลงชื่อออก", // Command button shown in mobile menu list
-            help: "ช่วยเหลือ", // Command button shown in mobile menu list
             signInTooltip: "ลงชื่อเข้าใช้", // Tooltip to 'Sign in' option
             signOutTooltip: "ออกจากระบบ", // Tooltip  to 'Sign out' option
-            myReportTooltip: "แสดงรายการที่ส่ง", // Tooltip  to 'My Reports' option
-            helpTooltip: "ช่วยเหลือ" // Tooltip  to 'Help' option
+            myReportTooltip: "แสดงรายการที่ส่ง" // Tooltip  to 'My Reports' option
         },
         geoform: {
             enterInformation: "รายละเอียด", // Shown as the first section of the geoform, where the user can enter details of the issue

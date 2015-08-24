@@ -4,9 +4,6 @@
             error: "Δεν είναι δυνατή η δημιουργία χάρτη",
             mouseToolTip: "Κάντε κλικ στο χάρτη για να ελέγξετε για την υπηρεσία"
         },
-        geocoder: {
-            defaultText: "Εισαγάγετε μια διεύθυνση ή ένα σημείο ενδιαφέροντος"
-        },
         error: {
             layerNotFound: "Το θεματικό επίπεδο δεν είναι στο web χάρτη",
             fieldNotFound: "Το πεδίο δεν βρέθηκε",
@@ -16,16 +13,14 @@
         page: {
             title: "Αναζήτηση πληροφοριών",
         },
-
-        splashscreen: {
-            buttonText: "OK",
-        },
         ui:{
             basemapButton: "Υπόβαθρο"
         },
         popup: {
-            urlMoreInfo: "Περισσότερες πληροφορίες"
+          urlMoreInfo: "Đ_More Info____ớ",
+          attachments: "Đ_Attachments____ớ"
         }
+
 
     })
 );

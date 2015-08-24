@@ -37,7 +37,9 @@
 			desktopView: {
 				storymapsText: "ストーリー マップ",
 				builderButton: "ビルダ モードに切り替え",
-				bitlyTooltip: "アプリケーションへのショート リンクを取得"
+				facebookTooltip: "須_Share on Facebook______鷗",
+				twitterTooltip: "須_Share on Twitter______鷗",
+				bitlyTooltip: "須_Get a short link______鷗"
 			}
 		},
 		builder: {

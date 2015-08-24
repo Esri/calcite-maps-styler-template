@@ -62,11 +62,9 @@ define(
             myReport: "マイ レポート", // Command button shown in mobile menu list
             signIn: "サイン イン", // Command button shown in mobile menu list and in appheader
             signOut: "サイン アウト", // Command button shown in mobile menu list
-            help: "ヘルプ", // Command button shown in mobile menu list
             signInTooltip: "サイン イン", // Tooltip to 'Sign in' option
             signOutTooltip: "サイン アウト", // Tooltip  to 'Sign out' option
-            myReportTooltip: "自分が送信したレポートを表示", // Tooltip  to 'My Reports' option
-            helpTooltip: "ヘルプ" // Tooltip  to 'Help' option
+            myReportTooltip: "自分が送信したレポートを表示" // Tooltip  to 'My Reports' option
         },
         geoform: {
             enterInformation: "詳細", // Shown as the first section of the geoform, where the user can enter details of the issue

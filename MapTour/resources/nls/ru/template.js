@@ -45,7 +45,9 @@
 			desktopHTML: {
 				storymapsText: "Карта истории",
 				builderButton: "Переключиться в режим компоновки",
-				bitlyTooltip: "Получить короткую ссылку на приложение",
+				facebookTooltip: "Ж_Share on Facebook______Я",
+				twitterTooltip: "Ж_Share on Twitter______Я",
+				bitlyTooltip: "Ж_Get a short link______Я",
 				bitlyStartIndex: "Ссылка на текущее местоположение"
 			},
 			builderHTML: {

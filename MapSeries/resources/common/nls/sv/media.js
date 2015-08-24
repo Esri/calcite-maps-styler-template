@@ -56,7 +56,9 @@
 				howToFind: "Så här hittar du ett YouTube-användarnamn",
 				howToFind2: "Användarnamnet visas under videoklippen",
 				found: "Hittade",
-				noData: "Inga offentliga videoklipp hittades"
+				noData: "Inga offentliga videoklipp hittades",
+				videoNotChecked: "Å_The video hasn't been checked on YouTube but its address looks good_____________________ö.",
+				checkFailedAPI: "Å_YouTube check has failed, please check YouTube API key__________________ö."
 			},
 			videoSelectorVimeo: {
 				url: "URL till en Vimeo-video"

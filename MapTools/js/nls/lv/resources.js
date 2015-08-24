@@ -24,7 +24,7 @@ define(
             basemapTool: "Pamatkartes",
             legendTool: "Apzīmējumi",
             detailsTool: "Detaļas",
-            measureTool: "IzmÄ“rÄ«t",
+            measureTool: "Izmērīt",
             shareTool: "Kopīgot",
             layerTool: "Slāņi",
             tableTool: "Tabula",

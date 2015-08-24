@@ -62,11 +62,9 @@ define(
             myReport: "Mina rapporter", // Command button shown in mobile menu list
             signIn: "Logga in", // Command button shown in mobile menu list and in appheader
             signOut: "Logga ut", // Command button shown in mobile menu list
-            help: "Hjälp", // Command button shown in mobile menu list
             signInTooltip: "Logga in", // Tooltip to 'Sign in' option
             signOutTooltip: "Logga ut", // Tooltip  to 'Sign out' option
-            myReportTooltip: "Visa rapporter som skickats av mig", // Tooltip  to 'My Reports' option
-            helpTooltip: "Hjälp" // Tooltip  to 'Help' option
+            myReportTooltip: "Visa rapporter som skickats av mig" // Tooltip  to 'My Reports' option
         },
         geoform: {
             enterInformation: "Detaljer", // Shown as the first section of the geoform, where the user can enter details of the issue

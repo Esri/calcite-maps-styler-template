@@ -62,11 +62,9 @@ define(
             myReport: "Mani ziņojumi", // Command button shown in mobile menu list
             signIn: "Pierakstīties", // Command button shown in mobile menu list and in appheader
             signOut: "Izrakstīties", // Command button shown in mobile menu list
-            help: "Palīdzība", // Command button shown in mobile menu list
             signInTooltip: "Pierakstīties", // Tooltip to 'Sign in' option
             signOutTooltip: "Izrakstīties", // Tooltip  to 'Sign out' option
-            myReportTooltip: "Skatīt manus iesniegtos ziņojumus", // Tooltip  to 'My Reports' option
-            helpTooltip: "Palīdzība" // Tooltip  to 'Help' option
+            myReportTooltip: "Skatīt manus iesniegtos ziņojumus" // Tooltip  to 'My Reports' option
         },
         geoform: {
             enterInformation: "Detaļas", // Shown as the first section of the geoform, where the user can enter details of the issue

@@ -55,7 +55,9 @@
 			headerFromCommon: {
 				storymapsText: "Mapa s příběhem",
 				builderButton: "Editovat",
-				bitlyTooltip: "Získejte krátký odkaz k aplikaci",
+				facebookTooltip: "Ř_Share on Facebook______ů",
+				twitterTooltip: "Ř_Share on Twitter______ů",
+				bitlyTooltip: "Ř_Get a short link______ů",
 				templateTitle: "Nastavit název šablony",
 				templateSubtitle: "Nastavit podnadpis šablony",
 				share: "Sdílet"

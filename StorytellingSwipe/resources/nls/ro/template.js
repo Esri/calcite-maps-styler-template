@@ -37,7 +37,9 @@
 			desktopView: {
 				storymapsText: "O hartă informativă",
 				builderButton: "Comutare la modul Instrument de creare",
-				bitlyTooltip: "Obţinere link scurt către aplicaţie"
+				facebookTooltip: "Ă_Share on Facebook______ș",
+				twitterTooltip: "Ă_Share on Twitter______ș",
+				bitlyTooltip: "Ă_Get a short link______ș"
 			}
 		},
 		builder: {

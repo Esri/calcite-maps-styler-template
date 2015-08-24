@@ -37,7 +37,9 @@
 			desktopView: {
 				storymapsText: "故事地圖",
 				builderButton: "切換到建構器模式",
-				bitlyTooltip: "取得應用程式的短連結"
+				facebookTooltip: "試_Share on Facebook______驗",
+				twitterTooltip: "試_Share on Twitter______驗",
+				bitlyTooltip: "試_Get a short link______驗"
 			}
 		},
 		builder: {

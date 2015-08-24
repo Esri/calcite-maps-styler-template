@@ -55,7 +55,9 @@
 			headerFromCommon: {
 				storymapsText: "O hartă informativă",
 				builderButton: "Editare",
-				bitlyTooltip: "Obţinere link scurt către aplicaţie",
+				facebookTooltip: "Ă_Share on Facebook______ș",
+				twitterTooltip: "Ă_Share on Twitter______ș",
+				bitlyTooltip: "Ă_Get a short link______ș",
 				templateTitle: "Setare titlu şablon",
 				templateSubtitle: "Setare subtitlu şablon",
 				share: "Partajare"

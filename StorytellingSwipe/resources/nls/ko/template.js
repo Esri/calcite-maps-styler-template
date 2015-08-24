@@ -37,7 +37,9 @@
 			desktopView: {
 				storymapsText: "스토리 맵",
 				builderButton: "빌더 모드로 전환",
-				bitlyTooltip: "응용프로그램의 짧은 링크를 가져옵니다."
+				facebookTooltip: "한_Share on Facebook______빠",
+				twitterTooltip: "한_Share on Twitter______빠",
+				bitlyTooltip: "한_Get a short link______빠"
 			}
 		},
 		builder: {

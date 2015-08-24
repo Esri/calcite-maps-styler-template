@@ -37,7 +37,9 @@
 			desktopView: {
 				storymapsText: "Mapa s příběhem",
 				builderButton: "Přepnout do režimu tvorby",
-				bitlyTooltip: "Získejte krátký odkaz k aplikaci"
+				facebookTooltip: "Ř_Share on Facebook______ů",
+				twitterTooltip: "Ř_Share on Twitter______ů",
+				bitlyTooltip: "Ř_Get a short link______ů"
 			}
 		},
 		builder: {

@@ -46,7 +46,9 @@
 			headerFromCommon: {
 				storymapsText: "Story map",
 				builderButton: "Chỉnh sửa",
-				bitlyTooltip: "Tải liên kết ngắn đến ứng dụng",
+				facebookTooltip: "Đ_Share on Facebook______ớ",
+				twitterTooltip: "Đ_Share on Twitter______ớ",
+				bitlyTooltip: "Đ_Get a short link______ớ",
 				templateTitle: "Thiết lập tiêu đề mẫu",
 				templateSubtitle: "Thiết lập phụ đề mẫu",
 				share: "Chia sẻ"

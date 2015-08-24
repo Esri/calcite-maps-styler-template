@@ -62,11 +62,9 @@ define(
             myReport: "Minu aruanded", // Command button shown in mobile menu list
             signIn: "Logi sisse", // Command button shown in mobile menu list and in appheader
             signOut: "Logi välja", // Command button shown in mobile menu list
-            help: "Abi", // Command button shown in mobile menu list
             signInTooltip: "Logi sisse", // Tooltip to 'Sign in' option
             signOutTooltip: "Logi välja", // Tooltip  to 'Sign out' option
-            myReportTooltip: "Kuva minu poolt esitatud aruanded", // Tooltip  to 'My Reports' option
-            helpTooltip: "Abi" // Tooltip  to 'Help' option
+            myReportTooltip: "Kuva minu poolt esitatud aruanded" // Tooltip  to 'My Reports' option
         },
         geoform: {
             enterInformation: "Detailid", // Shown as the first section of the geoform, where the user can enter details of the issue

@@ -62,11 +62,9 @@ define(
             myReport: "我的报告", // Command button shown in mobile menu list
             signIn: "登录", // Command button shown in mobile menu list and in appheader
             signOut: "登出", // Command button shown in mobile menu list
-            help: "帮助", // Command button shown in mobile menu list
             signInTooltip: "登录", // Tooltip to 'Sign in' option
             signOutTooltip: "登出", // Tooltip  to 'Sign out' option
-            myReportTooltip: "查看我提交的报告", // Tooltip  to 'My Reports' option
-            helpTooltip: "帮助" // Tooltip  to 'Help' option
+            myReportTooltip: "查看我提交的报告" // Tooltip  to 'My Reports' option
         },
         geoform: {
             enterInformation: "详细信息", // Shown as the first section of the geoform, where the user can enter details of the issue

@@ -55,7 +55,9 @@
 			headerFromCommon: {
 				storymapsText: "스토리 맵",
 				builderButton: "편집",
-				bitlyTooltip: "응용프로그램의 짧은 링크를 가져옵니다.",
+				facebookTooltip: "한_Share on Facebook______빠",
+				twitterTooltip: "한_Share on Twitter______빠",
+				bitlyTooltip: "한_Get a short link______빠",
 				templateTitle: "템플릿 제목 설정",
 				templateSubtitle: "템플릿 부제목 설정",
 				share: "공유"

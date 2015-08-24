@@ -10,7 +10,7 @@
     measureToolHelpUrl: "http://help.arcgis.com/en/arcgisonline/help/index.html#//010q00000096000000",
     hoverOver: "Užveskite ant ",
     touchIPad: "Palieskite iPad ekrane",
-    locationOnMap: "aukščių profilio diagrama, skirta  parodyti aukščio reik6m3 ir vietą žemėlapyje."
+    locationOnMap: "aukščių profilio diagrama, skirta  parodyti aukščio reikšmę ir vietą žemėlapyje."
   },
   // DO **NOT** CHANGE TEXT WITHIN CURLY BARCKETS //
   locationResultTemplate: "Aukštis: {0} metrų",
@@ -34,7 +34,7 @@
     },
     MissingInitParameter: {
       name: 'Trūkstamo init parametro klaida',
-      message: 'Trūkstama parametro init.'
+      message: 'Trūksta init parametro.'
     },
     SOEOperationNotSupported: {
       name: 'Nepalaikomos operacijos klaida',

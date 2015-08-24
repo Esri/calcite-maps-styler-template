@@ -62,11 +62,9 @@ define(
             myReport: "내 보고서", // Command button shown in mobile menu list
             signIn: "로그인", // Command button shown in mobile menu list and in appheader
             signOut: "로그아웃", // Command button shown in mobile menu list
-            help: "도움말", // Command button shown in mobile menu list
             signInTooltip: "로그인", // Tooltip to 'Sign in' option
             signOutTooltip: "로그아웃", // Tooltip  to 'Sign out' option
-            myReportTooltip: "내가 제출한 보고서 보기", // Tooltip  to 'My Reports' option
-            helpTooltip: "도움말" // Tooltip  to 'Help' option
+            myReportTooltip: "내가 제출한 보고서 보기" // Tooltip  to 'My Reports' option
         },
         geoform: {
             enterInformation: "세부정보", // Shown as the first section of the geoform, where the user can enter details of the issue

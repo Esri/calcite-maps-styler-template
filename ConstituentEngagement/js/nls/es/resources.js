@@ -62,11 +62,9 @@ define(
             myReport: "Mis informes", // Command button shown in mobile menu list
             signIn: "Iniciar sesión", // Command button shown in mobile menu list and in appheader
             signOut: "Cerrar sesión", // Command button shown in mobile menu list
-            help: "Ayuda", // Command button shown in mobile menu list
             signInTooltip: "Iniciar sesión", // Tooltip to 'Sign in' option
             signOutTooltip: "Cerrar sesión", // Tooltip  to 'Sign out' option
-            myReportTooltip: "Ver informes enviados por mí", // Tooltip  to 'My Reports' option
-            helpTooltip: "Ayuda" // Tooltip  to 'Help' option
+            myReportTooltip: "Ver informes enviados por mí" // Tooltip  to 'My Reports' option
         },
         geoform: {
             enterInformation: "Detalles", // Shown as the first section of the geoform, where the user can enter details of the issue

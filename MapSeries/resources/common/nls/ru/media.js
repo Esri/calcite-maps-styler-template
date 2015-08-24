@@ -56,7 +56,9 @@
 				howToFind: "Как найти имя пользователя YouTube",
 				howToFind2: "Имя пользователя отображается под видео",
 				found: "Найдено",
-				noData: "Общедоступных видео не найдено"
+				noData: "Общедоступных видео не найдено",
+				videoNotChecked: "Ж_The video hasn't been checked on YouTube but its address looks good_____________________Я.",
+				checkFailedAPI: "Ж_YouTube check has failed, please check YouTube API key__________________Я."
 			},
 			videoSelectorVimeo: {
 				url: "URL видео на Vimeo"

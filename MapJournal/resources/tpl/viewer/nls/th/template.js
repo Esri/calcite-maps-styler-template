@@ -55,7 +55,9 @@
 			headerFromCommon: {
 				storymapsText: "A story map",
 				builderButton: "แก้ไข",
-				bitlyTooltip: "รับลิ้งแบบสั้นสำหรับโปรแกรมนี้",
+				facebookTooltip: "ก้_Share on Facebook______ษฺ",
+				twitterTooltip: "ก้_Share on Twitter______ษฺ",
+				bitlyTooltip: "ก้_Get a short link______ษฺ",
 				templateTitle: "ตั้งค่าหัวเรื่องเทมเพลต",
 				templateSubtitle: "ตั้งค่าชื่อรองของเทมเพลต",
 				share: "แบ่งปัน"

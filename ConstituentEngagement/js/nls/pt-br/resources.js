@@ -41,7 +41,7 @@ define(
         },
         webMapList: {
             owner: "Proprietário", // Shown in the 'Map information' section indicating the owner of the webmap
-            created: "Data de criação", // Shown in the 'Map information' section indicating the date when the webmap was created
+            created: "ã_Date created_____Ç", // Shown in the 'Map information' section indicating the date when the webmap was created
             modified: "Data modificada", // Shown in the 'Map information' section indicating the date when the webmap was modified
             description: "Descrição", // Shown in the 'Map information' section describing the webmap
             snippet: "Resumo", // Shown in the 'Map information' section providing the summary of the webmap
@@ -62,11 +62,9 @@ define(
             myReport: "Meus Relatórios", // Command button shown in mobile menu list
             signIn: "Acessar", // Command button shown in mobile menu list and in appheader
             signOut: "Sair", // Command button shown in mobile menu list
-            help: "Ajuda", // Command button shown in mobile menu list
             signInTooltip: "Registrar", // Tooltip to 'Sign in' option
             signOutTooltip: "Sair", // Tooltip  to 'Sign out' option
-            myReportTooltip: "Visualizar relatórios enviador por mim", // Tooltip  to 'My Reports' option
-            helpTooltip: "Ajuda" // Tooltip  to 'Help' option
+            myReportTooltip: "Visualizar relatórios enviador por mim" // Tooltip  to 'My Reports' option
         },
         geoform: {
             enterInformation: "Detalhes", // Shown as the first section of the geoform, where the user can enter details of the issue

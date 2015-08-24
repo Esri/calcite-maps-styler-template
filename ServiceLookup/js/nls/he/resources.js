@@ -4,9 +4,6 @@
             error: "לא ניתן ליצור מפה",
             mouseToolTip: "הקש על המפה כדי לבדוק שירות"
         },
-        geocoder: {
-            defaultText: "הכנס כתובת או נקודת עניין"
-        },
         error: {
             layerNotFound: "השכבה לא נימצאת ב webmap",
             fieldNotFound: "שדה לא נמצא",
@@ -16,16 +13,14 @@
         page: {
             title: "בדיקת מידע",
         },
-
-        splashscreen: {
-            buttonText: "אישור",
-        },
         ui:{
             basemapButton: "מפת בסיס"
         },
         popup: {
-            urlMoreInfo: "מידע נוסף"
+          urlMoreInfo: "כן_More Info____ש",
+          attachments: "כן_Attachments____ש"
         }
+
 
     })
 );

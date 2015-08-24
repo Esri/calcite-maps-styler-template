@@ -37,7 +37,9 @@
 			desktopView: {
 				storymapsText: "Et historiekort",
 				builderButton: "Skift til builder-tilstand",
-				bitlyTooltip: "Hent et kortere link til applikationen"
+				facebookTooltip: "ø_Share on Facebook______å",
+				twitterTooltip: "ø_Share on Twitter______å",
+				bitlyTooltip: "ø_Get a short link______å"
 			}
 		},
 		builder: {

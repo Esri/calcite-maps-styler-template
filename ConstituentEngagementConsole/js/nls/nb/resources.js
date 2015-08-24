@@ -29,7 +29,7 @@ define(
             description: "Beskrivelse", // Appears in web-map list description panel when it is set to true
             snippet: "Sammendrag", // Appears in web-map list description panel when it is set to true
             licenseInfo: "Begrensning av tilgang og bruk", // Appears in web-map list description panel when it is set to true
-            accessInformation: "Krediteringer", // Appears in web-map list description panel when it is set to true
+            accessInformation: "Credits", // Appears in web-map list description panel when it is set to true
             tags: "Merker", // Appears in web-map list description panel when it is set to true
             numViews: "Antall visninger", // Appears in web-map list description panel when it is set to true
             avgRating: "Vurdering", // Appears in web-map list description panel when it is set to true

@@ -4,9 +4,6 @@
             error: "Nevar izveidot karti",
             mouseToolTip: "Klikšķiniet uz kartes, lai pārbaudītu servisus"
         },
-        geocoder: {
-            defaultText: "Ievadiet adresi vai interešu punktu"
-        },
         error: {
             layerNotFound: "Slānis neatrodas web kartē",
             fieldNotFound: "Lauks netika atrasts",
@@ -16,16 +13,14 @@
         page: {
             title: "Informācijas meklēšana",
         },
-
-        splashscreen: {
-            buttonText: "Labi",
-        },
         ui:{
             basemapButton: "Pamatkarte"
         },
         popup: {
-            urlMoreInfo: "Papildinformācija"
+          urlMoreInfo: "ķ_More Info____ū",
+          attachments: "ķ_Attachments____ū"
         }
+
 
     })
 );

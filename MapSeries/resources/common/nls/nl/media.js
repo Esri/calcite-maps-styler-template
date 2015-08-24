@@ -56,7 +56,9 @@
 				howToFind: "Hoe een YouTube-gebruikersnaam vinden",
 				howToFind2: "Gebruikersnaam wordt weergegeven onder video\'s",
 				found: "Gevonden",
-				noData: "Geen openbare video\'s gevonden"
+				noData: "Geen openbare video\'s gevonden",
+				videoNotChecked: "Ĳ_The video hasn't been checked on YouTube but its address looks good_____________________ä.",
+				checkFailedAPI: "Ĳ_YouTube check has failed, please check YouTube API key__________________ä."
 			},
 			videoSelectorVimeo: {
 				url: "URL van een Vimeo-video"

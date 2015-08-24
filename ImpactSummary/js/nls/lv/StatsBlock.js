@@ -3,7 +3,7 @@
         "StatsBlock": {
             "close": "aizvērt",
             "next": "Tālāk",
-            "previous": "Iepriekšējs",
+            "previous": "Iepriekšējais",
             "source":"Datu avots"
         }
     })

@@ -45,7 +45,9 @@
 			desktopHTML: {
 				storymapsText: "Stāstu karte",
 				builderButton: "Pārslēgties uz veidotāja režīmu",
-				bitlyTooltip: "Iegūt īssaiti uz aplikāciju",
+				facebookTooltip: "ķ_Share on Facebook______ū",
+				twitterTooltip: "ķ_Share on Twitter______ū",
+				bitlyTooltip: "ķ_Get a short link______ū",
 				bitlyStartIndex: "Saite uz pašreizējo vietu"
 			},
 			builderHTML: {

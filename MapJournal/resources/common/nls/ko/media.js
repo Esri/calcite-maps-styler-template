@@ -56,7 +56,9 @@
 				howToFind: "YouTube 사용자 이름을 찾는 방법",
 				howToFind2: "동영상 아래에 사용자 이름 표시",
 				found: "찾음",
-				noData: "공개된 동영상 없음"
+				noData: "공개된 동영상 없음",
+				videoNotChecked: "한_The video hasn't been checked on YouTube but its address looks good_____________________빠.",
+				checkFailedAPI: "한_YouTube check has failed, please check YouTube API key__________________빠."
 			},
 			videoSelectorVimeo: {
 				url: "Vimeo 비디오 URL"

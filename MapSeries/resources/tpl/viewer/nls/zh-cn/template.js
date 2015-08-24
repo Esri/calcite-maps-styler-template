@@ -46,7 +46,9 @@
 			headerFromCommon: {
 				storymapsText: "故事地图",
 				builderButton: "编辑",
-				bitlyTooltip: "获取应用程序的短链接",
+				facebookTooltip: "试_Share on Facebook______验",
+				twitterTooltip: "试_Share on Twitter______验",
+				bitlyTooltip: "试_Get a short link______验",
 				templateTitle: "设置模板标题",
 				templateSubtitle: "设置模板子标题",
 				share: "共享"

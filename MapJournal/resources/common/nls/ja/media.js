@@ -56,7 +56,9 @@
 				howToFind: "YouTube のユーザ名の検索方法",
 				howToFind2: "ビデオの下にユーザ名が表示されます",
 				found: "見つかりました",
-				noData: "パブリックなビデオが見つかりませんでした"
+				noData: "パブリックなビデオが見つかりませんでした",
+				videoNotChecked: "須_The video hasn't been checked on YouTube but its address looks good_____________________鷗.",
+				checkFailedAPI: "須_YouTube check has failed, please check YouTube API key__________________鷗."
 			},
 			videoSelectorVimeo: {
 				url: "Vimeo ビデオの URL"

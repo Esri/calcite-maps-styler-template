@@ -45,7 +45,9 @@
 			desktopHTML: {
 				storymapsText: "Kaardilugu",
 				builderButton: "Vaheta muutmise režiimile",
-				bitlyTooltip: "Tekita kiirlink rakendusele",
+				facebookTooltip: "Š_Share on Facebook______ä",
+				twitterTooltip: "Š_Share on Twitter______ä",
+				bitlyTooltip: "Š_Get a short link______ä",
 				bitlyStartIndex: "Link hetke asukohale"
 			},
 			builderHTML: {

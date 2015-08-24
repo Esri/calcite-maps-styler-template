@@ -4,9 +4,6 @@
             error: "Không thể tạo bản đồ",
             mouseToolTip: "Bấm vào bản đồ để kiểm tra dịch vụ"
         },
-        geocoder: {
-            defaultText: "Nhập địa chỉ hoặc điểm quan tâm"
-        },
         error: {
             layerNotFound: "Lớp không có trong bản đồ web",
             fieldNotFound: "Không tìm thấy trường",
@@ -16,16 +13,14 @@
         page: {
             title: "Tìm kiếm thông tin",
         },
-
-        splashscreen: {
-            buttonText: "OK",
-        },
         ui:{
             basemapButton: "Bản đồ nền"
         },
         popup: {
-            urlMoreInfo: "Thông tin Khác"
+          urlMoreInfo: "Đ_More Info____ớ",
+          attachments: "Đ_Attachments____ớ"
         }
+
 
     })
 );

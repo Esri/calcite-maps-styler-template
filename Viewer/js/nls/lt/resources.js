@@ -53,7 +53,7 @@ define(
         	"bookmarks": "Žymės",
         	"layers": "Sluoksniai",
         	"basemap": "Pagrindo žemėlapių galerija",
-        	"overview": "Apžvalgos žemėlapis",
+        	"overview": "Apžvalga",
         	"measure": "Matuoti",
         	"edit": "Redaguoti",
         	"time": "Laikas",

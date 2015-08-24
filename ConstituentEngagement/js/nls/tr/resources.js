@@ -62,11 +62,9 @@ define(
             myReport: "Raporlarım", // Command button shown in mobile menu list
             signIn: "Oturum Açma", // Command button shown in mobile menu list and in appheader
             signOut: "Oturum Kapat", // Command button shown in mobile menu list
-            help: "Yardım", // Command button shown in mobile menu list
             signInTooltip: "Hesabınıza", // Tooltip to 'Sign in' option
             signOutTooltip: "Oturumu kapat", // Tooltip  to 'Sign out' option
-            myReportTooltip: "Kendi gönderdiğim raporları görüntüle", // Tooltip  to 'My Reports' option
-            helpTooltip: "Yardım" // Tooltip  to 'Help' option
+            myReportTooltip: "Kendi gönderdiğim raporları görüntüle" // Tooltip  to 'My Reports' option
         },
         geoform: {
             enterInformation: "Ayrıntılar", // Shown as the first section of the geoform, where the user can enter details of the issue

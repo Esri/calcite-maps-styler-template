@@ -46,13 +46,15 @@
 			headerFromCommon: {
 				storymapsText: "Žemėlapis su pasakojimu",
 				builderButton: "Redaguoti",
-				bitlyTooltip: "Gauti sutrumpintą aplikacijos nuorodą",
+				facebookTooltip: "Į_Share on Facebook______š",
+				twitterTooltip: "Į_Share on Twitter______š",
+				bitlyTooltip: "Į_Get a short link______š",
 				templateTitle: "Nustatyti šablono antraštę",
 				templateSubtitle: "Nustatyti šablono paantraštę",
 				share: "Bendrinti"
 			},
 			overviewFromCommon: {
-				title: "Apžvalgos žemėlapis"
+				title: "Apžvalga"
 			},
 			legendFromCommon: {
 				title: "Legenda"

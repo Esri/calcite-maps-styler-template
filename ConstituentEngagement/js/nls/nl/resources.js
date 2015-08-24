@@ -62,11 +62,9 @@ define(
             myReport: "Mijn Rapporten", // Command button shown in mobile menu list
             signIn: "Aanmelden", // Command button shown in mobile menu list and in appheader
             signOut: "Afmelden", // Command button shown in mobile menu list
-            help: "Help", // Command button shown in mobile menu list
             signInTooltip: "Aanmelden", // Tooltip to 'Sign in' option
             signOutTooltip: "Meld u af", // Tooltip  to 'Sign out' option
-            myReportTooltip: "Rapporten door mij ingediend bekijken", // Tooltip  to 'My Reports' option
-            helpTooltip: "Help" // Tooltip  to 'Help' option
+            myReportTooltip: "Rapporten door mij ingediend bekijken" // Tooltip  to 'My Reports' option
         },
         geoform: {
             enterInformation: "Details", // Shown as the first section of the geoform, where the user can enter details of the issue
@@ -118,7 +116,7 @@ define(
             likeButtonTooltip: "Op dit rapport stemmen",  // Tooltip for command button shown in details panel
             commentButtonLabel: "Opmerking", // Command button shown in details panel
             commentButtonTooltip: "Op dit rapporten reageren", // Tooltip for command button shown in details panel
-            galleryButtonLabel: "Galerij", // Command button shown in details panel
+            galleryButtonLabel: "Gallery", // Command button shown in details panel
             galleryButtonTooltip: "Zie bijgesloten documenten", // Tooltip for command button shown in details panel
             mapButtonLabel: "Op kaart weergeven", // Command button shown in details panel
             mapButtonTooltip: "Bekijk de locatie van dit rapport", // Tooltip for command button shown in details panel
@@ -141,7 +139,7 @@ define(
             showNoText: "Nee" // Shown when comments character limit is exceeded
         },
         gallery: {
-            galleryHeaderText: "Galerij",
+            galleryHeaderText: "Gallery",
             noAttachmentsAvailableText: "Geen bijlagen gevonden" // Shown when no comments are available for the selected issue
         }
     })

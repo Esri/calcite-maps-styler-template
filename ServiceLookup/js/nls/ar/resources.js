@@ -4,9 +4,6 @@
             error: "يتعذر إنشاء الخريطة",
             mouseToolTip: "انقر فوق الخريطة للتحقق من الخدمة"
         },
-        geocoder: {
-            defaultText: "أدخل العنوان أو نقاط الاهتمام"
-        },
         error: {
             layerNotFound: "الطبقة ليست موجودة في خريطة الويب",
             fieldNotFound: "يتعذر إيجاد الحقل",
@@ -16,16 +13,14 @@
         page: {
             title: "البحث عن المعلومات",
         },
-
-        splashscreen: {
-            buttonText: "موافق",
-        },
         ui:{
             basemapButton: "خريطة أساس"
         },
         popup: {
-            urlMoreInfo: "مزيد من المعلومات"
+          urlMoreInfo: "بيت_More Info____لاحقة",
+          attachments: "بيت_Attachments____لاحقة"
         }
+
 
     })
 );

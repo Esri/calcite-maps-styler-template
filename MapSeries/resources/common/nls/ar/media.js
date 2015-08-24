@@ -56,7 +56,9 @@
 				howToFind: "كيفية إيجاد اسم مستخدم YouTube",
 				howToFind2: "يتم عرض اسم المستخدم أسفل الفيديوهات",
 				found: "تم العثور",
-				noData: "لم يتم العثور على الفيديوهات العامة"
+				noData: "لم يتم العثور على الفيديوهات العامة",
+				videoNotChecked: "بيت_The video hasn't been checked on YouTube but its address looks good_____________________لاحقة.",
+				checkFailedAPI: "بيت_YouTube check has failed, please check YouTube API key__________________لاحقة."
 			},
 			videoSelectorVimeo: {
 				url: "عنوان URL لفيديو Vimeo"

@@ -62,11 +62,9 @@ define(
             myReport: "Οι αναφορές μου", // Command button shown in mobile menu list
             signIn: "Είσοδος", // Command button shown in mobile menu list and in appheader
             signOut: "Έξοδος", // Command button shown in mobile menu list
-            help: "Βοήθεια", // Command button shown in mobile menu list
             signInTooltip: "Εισέλθετε", // Tooltip to 'Sign in' option
             signOutTooltip: "Έξοδος", // Tooltip  to 'Sign out' option
-            myReportTooltip: "Προβολή αναφορών που έχουν υποβληθεί από εμένα", // Tooltip  to 'My Reports' option
-            helpTooltip: "Βοήθεια" // Tooltip  to 'Help' option
+            myReportTooltip: "Προβολή αναφορών που έχουν υποβληθεί από εμένα" // Tooltip  to 'My Reports' option
         },
         geoform: {
             enterInformation: "ΛΕΠΤΟΜΕΡΕΙΕΣ", // Shown as the first section of the geoform, where the user can enter details of the issue

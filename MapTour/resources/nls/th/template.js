@@ -45,7 +45,9 @@
 			desktopHTML: {
 				storymapsText: "แผนที่แสดงเรื่องราว",
 				builderButton: "เปลี่ยนไปยังโหมดของผู้สร้าง",
-				bitlyTooltip: "ให้ลิงก์แบบสั้นสำหรับโปรแกรมประยุกต์",
+				facebookTooltip: "ก้_Share on Facebook______ษฺ",
+				twitterTooltip: "ก้_Share on Twitter______ษฺ",
+				bitlyTooltip: "ก้_Get a short link______ษฺ",
 				bitlyStartIndex: "ลิงก์ไปยังสถานที่ปัจจุบัน"
 			},
 			builderHTML: {

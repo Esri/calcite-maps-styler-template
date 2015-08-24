@@ -45,7 +45,9 @@
 			desktopHTML: {
 				storymapsText: "Bir öykü haritası",
 				builderButton: "Derleyici moduna geç",
-				bitlyTooltip: "Uygulamaya bir kısa bağlantı alın",
+				facebookTooltip: "ı_Share on Facebook______İ",
+				twitterTooltip: "ı_Share on Twitter______İ",
+				bitlyTooltip: "ı_Get a short link______İ",
 				bitlyStartIndex: "Geçerli yere bağlantı kur"
 			},
 			builderHTML: {

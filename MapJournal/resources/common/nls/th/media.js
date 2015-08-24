@@ -56,7 +56,9 @@
 				howToFind: "วิธีการค้นหาชื่อ YouTube",
 				howToFind2: "ชื่อผู้ใช้ไม่แสดงอยู่ด้านล่างวิดีโอ",
 				found: "พบ",
-				noData: "ไม่พบวิดีโอสาธารณะ"
+				noData: "ไม่พบวิดีโอสาธารณะ",
+				videoNotChecked: "ก้_The video hasn't been checked on YouTube but its address looks good_____________________ษฺ.",
+				checkFailedAPI: "ก้_YouTube check has failed, please check YouTube API key__________________ษฺ."
 			},
 			videoSelectorVimeo: {
 				url: "URL ของวิดีโอจาก Vimeo"

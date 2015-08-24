@@ -4,9 +4,6 @@
             error: "Karttaa ei voi luoda",
             mouseToolTip: "Tarkista palvelu napsauttamalla karttaa"
         },
-        geocoder: {
-            defaultText: "Anna osoite tai kiinnostava paikka"
-        },
         error: {
             layerNotFound: "Karttataso ei ole Web-kartassa",
             fieldNotFound: "Kenttää ei löydy",
@@ -16,16 +13,14 @@
         page: {
             title: "Tietohaku",
         },
-
-        splashscreen: {
-            buttonText: "OK",
-        },
         ui:{
             basemapButton: "Taustakartta"
         },
         popup: {
-            urlMoreInfo: "Lisätietoja"
+          urlMoreInfo: "Å_More Info____ö",
+          attachments: "Å_Attachments____ö"
         }
+
 
     })
 );

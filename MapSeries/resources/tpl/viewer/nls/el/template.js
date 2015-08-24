@@ -46,7 +46,9 @@
 			headerFromCommon: {
 				storymapsText: "Ένα story map",
 				builderButton: "Επεξεργασία",
-				bitlyTooltip: "Λήψη ενός σύντομου συνδέσμου της εφαρμογής",
+				facebookTooltip: "Đ_Share on Facebook______ớ",
+				twitterTooltip: "Đ_Share on Twitter______ớ",
+				bitlyTooltip: "Đ_Get a short link______ớ",
 				templateTitle: "Ορισμός τίτλου προτύπου",
 				templateSubtitle: "Ορισμός υπότιτλου προτύπου",
 				share: "Κοινοποίηση"

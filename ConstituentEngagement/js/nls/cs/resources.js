@@ -62,11 +62,9 @@ define(
             myReport: "Moje zprávy", // Command button shown in mobile menu list
             signIn: "Přihlásit", // Command button shown in mobile menu list and in appheader
             signOut: "Odhlásit", // Command button shown in mobile menu list
-            help: "Nápověda", // Command button shown in mobile menu list
             signInTooltip: "Přihlásit se", // Tooltip to 'Sign in' option
             signOutTooltip: "Odhlásit se", // Tooltip  to 'Sign out' option
-            myReportTooltip: "Zobrazit mnou odeslané zprávy", // Tooltip  to 'My Reports' option
-            helpTooltip: "Nápověda" // Tooltip  to 'Help' option
+            myReportTooltip: "Zobrazit mnou odeslané zprávy" // Tooltip  to 'My Reports' option
         },
         geoform: {
             enterInformation: "Podrobnosti", // Shown as the first section of the geoform, where the user can enter details of the issue

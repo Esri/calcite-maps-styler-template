@@ -62,11 +62,9 @@ define(
             myReport: "Мои отчеты", // Command button shown in mobile menu list
             signIn: "Вход", // Command button shown in mobile menu list and in appheader
             signOut: "Выход", // Command button shown in mobile menu list
-            help: "Справка", // Command button shown in mobile menu list
             signInTooltip: "Вход", // Tooltip to 'Sign in' option
             signOutTooltip: "Выход", // Tooltip  to 'Sign out' option
-            myReportTooltip: "Просмотреть отчеты, созданные мной", // Tooltip  to 'My Reports' option
-            helpTooltip: "Справка" // Tooltip  to 'Help' option
+            myReportTooltip: "Просмотреть отчеты, созданные мной" // Tooltip  to 'My Reports' option
         },
         geoform: {
             enterInformation: "Подробности", // Shown as the first section of the geoform, where the user can enter details of the issue
