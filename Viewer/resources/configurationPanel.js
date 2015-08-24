@@ -151,6 +151,10 @@
                "type":"boolean",
                "fieldName":"tool_layers",
                "label":"Layer List"
+            },{
+               "type":"boolean",
+               "fieldName": "tool_sublayers",
+               "label": "Include sublayers in Layer List"
             },
             {  
                "type":"boolean",
@@ -305,6 +309,7 @@
       "tool_details":true,
       "tool_legend":true,
       "tool_layers":true,
+      "tool_sublayers": true,
       "tool_home":true,
       "tool_locate":true,
       "tool_edit":true,

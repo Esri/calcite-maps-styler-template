@@ -95,6 +95,7 @@ define(["dojo/has"], function (has) {
         }
         return layers;
     });
+
     has.add("legend", function (g) {
         var legend = getTool("legend", g.config);
         //overwrite the default with app settings

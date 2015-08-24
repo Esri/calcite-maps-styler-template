@@ -351,7 +351,6 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
             } else {
                 if (has("layers")) {
 
-
                     //Use small panel class if layer layer is less than 5
                     if (layers.length < 5) {
                         panelClass = "small";
@@ -362,8 +361,10 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
                     }
                     var layersDiv = toolbar.createTool(tool, panelClass);
 
+
                     var toc = new LayerList({
                         map: this.map,
+                        subLayers: this.config.tool_sublayers || true,
                         layers: arcgisUtils.getLayerList(this.config.response)
                     }, domConstruct.create("div", {}, layersDiv));
                     toc.startup();
