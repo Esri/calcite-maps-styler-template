@@ -58,9 +58,11 @@
       var myTemplate = new Template(templateConfig);
       // create my main application. Start placing your logic in the main.js file.
       var myApp = new Main();
-      myApp.on("ready", function(response){
-        console.log(response)
-        console.log("APP READY");
+      myApp.on("ready", function(results){
+        console.log(results);
+        if (typeof window.callPhantom === 'function') {
+          window.callPhantom({ response: results });
+        }
       });
       // start template
       myTemplate.startup().then(function (config) {
