@@ -66,6 +66,7 @@ define({
         ]
     },
     "layerlist": true,
+    "includesublayers":true,
     "basemaps": true,
     "print": true,
     "printlegend": true,

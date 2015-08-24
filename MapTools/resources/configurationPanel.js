@@ -130,6 +130,10 @@
                "type":"boolean",
                "fieldName":"layerlist",
                "label":"Layer List"
+            },{
+               "type":"boolean",
+               "fieldName": "includesublayers",
+               "label":"Include sub layers in Layer List"
             },
             {  
                "type":"boolean",
@@ -301,6 +305,7 @@
       "legend":true,
       "table":true,
       "layerlist":true,
+      "includesublayers":true,
       "bookmarks":false,
       "zoom":true,
       "home":true,
