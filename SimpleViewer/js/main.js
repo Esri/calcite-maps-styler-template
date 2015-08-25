@@ -98,12 +98,21 @@ ready, declare, lang, array, Color, arcgisUtils, urlUtils, on, has, sniff, regis
                     var urlObject = urlUtils.urlToObject(document.location.href);
                     urlObject.query = urlObject.query || {};
                     urlObject.query = esriLang.stripTags(urlObject.query);
+                    var customUrl = null;
+                    for(var prop in urlObject.query){
+                        if(urlObject.query.hasOwnProperty(prop)){
+                            if(prop.toUpperCase() === this.config.customUrlParam.toUpperCase()){
+                                customUrl = prop;
+                            }
+                        }
+                    }
+
                     //Support find or custom url param 
                     if (this.config.find) {
                         value = decodeURIComponent(this.config.find);
-                    } else if (urlObject.query[this.config.customUrlParam.toLowerCase()]) {
-                        value = urlObject.query[this.config.customUrlParam.toLowerCase()];
-
+                    } else if (customUrl){
+                 
+                        value = urlObject.query[customUrl];
                         searchLayer = this.map.getLayer(this.config.customUrlLayer.id);
                         if (searchLayer) {
 
