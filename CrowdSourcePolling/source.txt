@@ -1,8 +1,7 @@
-From git branch
-develop
-commit 1e473b778eabb656e80ea9326ba7964a21825dfa
-Merge: e737baf d722bb3
+From git branch 
+Sep_2015_release
+commit 19fb8777a45506e99c2fe38e42dab82c41d77da8
 Author: MikeTschudi <mtschudi@esri.com>
-Date:   Tue Aug 18 15:06:52 2015 -0700
+Date:   Mon Aug 24 20:51:38 2015 -0700
 
-    Merge branch 'webmap-configured-search' into develop
+    Restored defaults for feature layer and voting field

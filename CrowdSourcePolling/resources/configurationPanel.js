@@ -3,7 +3,6 @@
         "title": "Crowdsource Polling",
         "displayText": "<p><b>Welcome to the crowdsource polling application</b></p><p>Use Crowdsource Polling to provide information and collect feedback on plans and issues around your community.</p><p>Search for a location or click an item in the list to get started.</p><hr/>",
         "color": "#206bdb",
-        "commentNameField": "COMMENTS",
         "allowFacebook": false,
         "allowGoogle": false,
         "allowTwitter": true,
@@ -14,7 +13,10 @@
     "configurationSettings": [{
         "category": "<b>General Settings</b>",
         "fields": [{
-            "type": "webmap"
+            "label": "Select a map",
+            "fieldName": "webmap",
+            "type": "webmap",
+            "tooltip": "Web map displayed in the application"
         }, {
             "label": "Title",
             "fieldName": "title",

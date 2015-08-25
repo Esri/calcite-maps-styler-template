@@ -130,6 +130,7 @@ define([
         _launch: function (itemInfo) {
             var setupUI, createMap;
 
+            document.title = this.config.title || "";
             this.config.isIE8 = this._createIE8Test();
 
             // Perform setups in parallel
