@@ -1,11 +1,26 @@
-﻿.esriPopup a{
-text-decoration: none;
-line-height: 1.5em;
+﻿.esriPopup a {
+    text-decoration: none;
+    line-height: 1.5em;
+    color: #0000FF;
 }
-.esriPopup{
-text-decoration: none;
-line-height: 1.5em;
-}
+
+    .esriPopup a:active {
+        text-decoration: none;
+        line-height: 1.5em;
+        color: #FF0000;
+    }
+
+    .esriPopup a:hover {
+        text-decoration: none;
+        line-height: 1.5em;
+        color: #FF0000;
+    }
+
+    .esriPopup a:visited {
+        text-decoration: none;
+        line-height: 1.5em;
+        color: #800080;
+    }
 
 .esriPopup .actionsPane .zoomTo {
     display: none;
@@ -19,8 +34,8 @@ line-height: 1.5em;
     margin-left: 2px;
     margin-right: 2px;
     border: none;
-    color:#333333 !important;
-    text-decoration:none !important;
+    color: #333333 !important;
+    text-decoration: none !important;
     font-size: 24px !important;
 }
 
@@ -33,9 +48,9 @@ line-height: 1.5em;
     margin-left: 2px;
     margin-right: 2px;
     border: none;
-    color:#333333 !important;
-    text-decoration:none !important;
-    font-size: 24px !important
+    color: #333333 !important;
+    text-decoration: none !important;
+    font-size: 24px !important;
 }
 
 .esriPopup .titleButton.maximize {
@@ -98,17 +113,17 @@ line-height: 1.5em;
         /*width: 70px;*/
     }
 
-    
+
 
 .hzLinePopUp {
-    border-top-width:1px;
-    border-top-style:solid;
+    border-top-width: 1px;
+    border-top-style: solid;
     margin-top: 4px;
     margin-bottom: 4px;
-    padding-bottom:4px;
+    padding-bottom: 4px;
 }
 
 .headerPopUp {
     font-weight: bold;
-    padding-bottom:3px;
+    padding-bottom: 3px;
 }
