@@ -1,3 +1,6 @@
+<<<<<<< HEAD
+8/25/2015 @11:36 AM
+=======
 From git branch 
 Sep_2015_release
 commit 19fb8777a45506e99c2fe38e42dab82c41d77da8
@@ -5,3 +8,4 @@ Author: MikeTschudi <mtschudi@esri.com>
 Date:   Mon Aug 24 20:51:38 2015 -0700
 
     Restored defaults for feature layer and voting field
+>>>>>>> origin/master
