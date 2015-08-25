@@ -1,11 +1,7 @@
-<<<<<<< HEAD
-8/25/2015 @11:36 AM
-=======
 From git branch 
 Sep_2015_release
-commit 19fb8777a45506e99c2fe38e42dab82c41d77da8
-Author: MikeTschudi <mtschudi@esri.com>
-Date:   Mon Aug 24 20:51:38 2015 -0700
+commit e8977ebe526197cfc42df634f24454dbff7a69ea
+Author: Allison Muise <amuise@esri.com>
+Date:   Tue Aug 25 12:04:42 2015 -0700
 
-    Restored defaults for feature layer and voting field
->>>>>>> origin/master
+    fixed missing comma
