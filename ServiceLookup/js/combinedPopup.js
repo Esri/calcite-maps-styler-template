@@ -1517,15 +1517,13 @@ define([
           content = this.map.infoWindow.getSelectedFeature().getContent();
 
           this.contentWindow.set("content", content);
-          djquery(".hzLinePopUp").style("border-color",
-            this.config.color.toString() + " !important");
+          if (this.config.color !== null && this.config.color !== undefined) {
+            djquery(".hzLinePopUp").style("border-color",
+              this.config.color.toString() + " !important");
 
-          djquery(".esriViewPopup .hzLine").style("border-color",
-            this.config.color.toString() + " !important");
-
-          // dojoNS.query("a", this._description)
-
-         
+            djquery(".esriViewPopup .hzLine").style("border-color",
+              this.config.color.toString() + " !important");
+          }
 
           topic.publish("app.contentSet", false);
         } else {
@@ -1615,10 +1613,13 @@ define([
         if (this.contentWindow) {
           this.contentWindow.set("content",
             this.map.infoWindow.getSelectedFeature().getContent());
-          djquery(".hzLinePopUp").style("border-color", this.config.color.toString() +
-            " !important");
-          djquery(".esriViewPopup .hzLine").style("border-color",
-            this.config.color.toString() + " !important");
+          if (this.config.color !== null && this.config.color !== undefined) {
+            djquery(".hzLinePopUp").style("border-color",
+              this.config.color.toString() + " !important");
+
+            djquery(".esriViewPopup .hzLine").style("border-color",
+              this.config.color.toString() + " !important");
+          }
 
           topic.publish("app.contentSet", false);
         } else {

@@ -349,7 +349,7 @@ function (
           //query(".esriPopup .pointer").style("backgroundColor", this.config.backcolor.toString());
 
         }
-        if (this.config.color) {
+        if (this.config.color !== null && this.config.color !== undefined) {
           themeElements.style("border-color", this.config.color.toString());
           themeElements.style("color", this.config.color.toString());
           //query(".esriPopup .titlePane").style("color", this.config.color.toString());
