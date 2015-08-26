@@ -137,7 +137,7 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
                         domConstruct.destroy("panelTools");
                         domStyle.set("panelContent", "display", "none");
                         domStyle.set("panelTitle", "border-bottom", "none");
-                        domStyle.set("panelTop", "height", "52px");
+                        domStyle.set("panelTop", "height", "60px");
                         query(".esriSimpleSlider").addClass("notools");
                         this._updateTheme();
                         return;
