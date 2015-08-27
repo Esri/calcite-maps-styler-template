@@ -288,9 +288,22 @@ declare, lang, query, registry, on, string, locale, domConstruct, domStyle, arra
             // play/pause button is pressed. 
             if(!this.config.looptime){
                 var slider = registry.byId("timeSlider");
-                if(slider._slider.value == slider._slider.maximum){
+                //get slider value 
+                var val = null;
+                if(lang.isArray(slider._slider.value)){
+                    val = slider._slider.value[1];
+                }else{
+                    val = slider._slider.value;
+                }
+            
+                if(val == slider._slider.maximum){
                     slider.pause();
-                    slider._slider.reset();
+                    if(slider.thumbCount > 1){
+                        slider.setThumbIndexes([0,1]);
+                    }else{
+                        slider.setThumbIndexes(0);
+                    }
+
                     domClass.remove(play, "icon-pause");
                     domClass.add(play, "icon-play");
                 }
