@@ -552,6 +552,7 @@ define([
                 source.placeholder = this.config.prompt;
             }));
             this.search = new Search(searchOptions, "panelGeocoder");
+            this.search.defaultSource.placeholder = this.config.prompt;
             this.search.allPlaceholder = this.config.prompt;
 
             this.search.on("search-results", lang.hitch(this, function (event) {
