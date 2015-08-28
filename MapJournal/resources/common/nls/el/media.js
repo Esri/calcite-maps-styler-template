@@ -57,8 +57,8 @@
 				howToFind2: "Το όνομα χρήστη εμφανίζεται κάτω από τα βίντεο",
 				found: "Βρέθηκαν",
 				noData: "Δεν βρέθηκαν δημόσια βίντεο",
-				videoNotChecked: "Đ_The video hasn't been checked on YouTube but its address looks good_____________________ớ.",
-				checkFailedAPI: "Đ_YouTube check has failed, please check YouTube API key__________________ớ."
+				videoNotChecked: "Το βίντεο δεν έχει ελεγχθεί στο YouTube αλλά η διεύθυνσή του φαίνεται εντάξει.",
+				checkFailedAPI: "Ο έλεγχος στο YouTube απέτυχε, ελέγξτε το κλειδί API του YouTube."
 			},
 			videoSelectorVimeo: {
 				url: "URL ενός Vimeo βίντεο"

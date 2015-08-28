@@ -17,8 +17,8 @@
             basemapButton: "底图"
         },
         popup: {
-          urlMoreInfo: "试_More Info____验",
-          attachments: "试_Attachments____验"
+          urlMoreInfo: "详细信息",
+          attachments: "附件"
         }
 
 

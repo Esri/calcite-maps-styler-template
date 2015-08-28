@@ -17,8 +17,8 @@
             basemapButton: "Taustakartta"
         },
         popup: {
-          urlMoreInfo: "Å_More Info____ö",
-          attachments: "Å_Attachments____ö"
+          urlMoreInfo: "Lisätietoja",
+          attachments: "Liitteet"
         }
 
 

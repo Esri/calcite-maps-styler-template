@@ -17,8 +17,8 @@
             basemapButton: "Mapa base"
         },
         popup: {
-          urlMoreInfo: "á_More Info____Ó",
-          attachments: "á_Attachments____Ó"
+          urlMoreInfo: "Más información",
+          attachments: "Adjuntos"
         }
 
 

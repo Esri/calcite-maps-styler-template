@@ -45,9 +45,9 @@
 			desktopHTML: {
 				storymapsText: "Et historiekort",
 				builderButton: "Skift til builder-tilstand",
-				facebookTooltip: "ø_Share on Facebook______å",
-				twitterTooltip: "ø_Share on Twitter______å",
-				bitlyTooltip: "ø_Get a short link______å",
+				facebookTooltip: "Del på Facebook",
+				twitterTooltip: "Del på Twitter",
+				bitlyTooltip: "Hent et kort link",
 				bitlyStartIndex: "Link til aktuelt sted"
 			},
 			builderHTML: {

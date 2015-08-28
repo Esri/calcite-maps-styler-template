@@ -46,9 +46,9 @@
 			headerFromCommon: {
 				storymapsText: "A story map",
 				builderButton: "แก้ไข",
-				facebookTooltip: "ก้_Share on Facebook______ษฺ",
-				twitterTooltip: "ก้_Share on Twitter______ษฺ",
-				bitlyTooltip: "ก้_Get a short link______ษฺ",
+				facebookTooltip: "แชร์ผ่าน Facebook",
+				twitterTooltip: "แชร์ผ่าน Twitter",
+				bitlyTooltip: "รับเป็นลิงค์สั้นๆ",
 				templateTitle: "ตั้งค่าหัวเรื่องเทมเพลต",
 				templateSubtitle: "ตั้งค่าชื่อรองของเทมเพลต",
 				share: "แชร์"

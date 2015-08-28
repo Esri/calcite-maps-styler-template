@@ -57,8 +57,8 @@
 				howToFind2: "Tên đăng nhập được hiển thị dưới video",
 				found: "Tìm thấy",
 				noData: "Không tìm thấy video công khai",
-				videoNotChecked: "Đ_The video hasn't been checked on YouTube but its address looks good_____________________ớ.",
-				checkFailedAPI: "Đ_YouTube check has failed, please check YouTube API key__________________ớ."
+				videoNotChecked: "Video chưa được kiểm tra trên YouTube nhưng địa chỉ của nó có vẻ ổn.",
+				checkFailedAPI: "Kiểm tra YouTube thất bại, vui lòng kiểm tra khóa API của YouTube."
 			},
 			videoSelectorVimeo: {
 				url: "URL của một video trên Vimeo"

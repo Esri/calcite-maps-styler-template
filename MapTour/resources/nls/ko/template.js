@@ -45,9 +45,9 @@
 			desktopHTML: {
 				storymapsText: "스토리 맵",
 				builderButton: "빌더 모드로 전환",
-				facebookTooltip: "한_Share on Facebook______빠",
-				twitterTooltip: "한_Share on Twitter______빠",
-				bitlyTooltip: "한_Get a short link______빠",
+				facebookTooltip: "Facebook에서 공유",
+				twitterTooltip: "Twitter에서 공유",
+				bitlyTooltip: "짧은 링크 가져오기",
 				bitlyStartIndex: "현재 장소에 연결"
 			},
 			builderHTML: {

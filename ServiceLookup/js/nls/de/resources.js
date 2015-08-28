@@ -17,8 +17,8 @@
             basemapButton: "Grundkarte"
         },
         popup: {
-          urlMoreInfo: "ä_More Info____Ü",
-          attachments: "ä_Attachments____Ü"
+          urlMoreInfo: "Weitere Infos",
+          attachments: "Anlagen"
         }
 
 

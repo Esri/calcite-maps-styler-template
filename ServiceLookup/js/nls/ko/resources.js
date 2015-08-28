@@ -17,8 +17,8 @@
             basemapButton: "베이스맵"
         },
         popup: {
-          urlMoreInfo: "한_More Info____빠",
-          attachments: "한_Attachments____빠"
+          urlMoreInfo: "추가 정보",
+          attachments: "첨부 파일"
         }
 
 

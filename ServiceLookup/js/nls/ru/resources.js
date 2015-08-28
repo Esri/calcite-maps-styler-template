@@ -17,8 +17,8 @@
             basemapButton: "Базовая карта"
         },
         popup: {
-          urlMoreInfo: "Ж_More Info____Я",
-          attachments: "Ж_Attachments____Я"
+          urlMoreInfo: "Больше информации",
+          attachments: "Вложения"
         }
 
 

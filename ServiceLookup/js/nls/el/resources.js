@@ -17,8 +17,8 @@
             basemapButton: "Υπόβαθρο"
         },
         popup: {
-          urlMoreInfo: "Đ_More Info____ớ",
-          attachments: "Đ_Attachments____ớ"
+          urlMoreInfo: "Περισσότερες πληροφορίες",
+          attachments: "Συνημμένα"
         }
 
 

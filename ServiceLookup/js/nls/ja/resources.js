@@ -17,8 +17,8 @@
             basemapButton: "ベースマップ"
         },
         popup: {
-          urlMoreInfo: "須_More Info____鷗",
-          attachments: "須_Attachments____鷗"
+          urlMoreInfo: "詳細",
+          attachments: "添付ファイル"
         }
 
 

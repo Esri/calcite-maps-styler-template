@@ -55,9 +55,9 @@
 			headerFromCommon: {
 				storymapsText: "Et fortellingskart",
 				builderButton: "Rediger",
-				facebookTooltip: "å_Share on Facebook______ø",
-				twitterTooltip: "å_Share on Twitter______ø",
-				bitlyTooltip: "å_Get a short link______ø",
+				facebookTooltip: "Del på Facebook",
+				twitterTooltip: "Del på Twitter",
+				bitlyTooltip: "Få en kort kobling",
 				templateTitle: "Angi tittel på malen",
 				templateSubtitle: "Angi undertittel for malen",
 				share: "Del"

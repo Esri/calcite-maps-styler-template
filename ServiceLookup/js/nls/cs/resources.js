@@ -17,8 +17,8 @@
             basemapButton: "Podkladová mapa"
         },
         popup: {
-          urlMoreInfo: "Ř_More Info____ů",
-          attachments: "Ř_Attachments____ů"
+          urlMoreInfo: "Další informace",
+          attachments: "Přílohy"
         }
 
 

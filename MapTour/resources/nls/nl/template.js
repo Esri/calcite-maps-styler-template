@@ -45,9 +45,9 @@
 			desktopHTML: {
 				storymapsText: "Een kaartverhaal",
 				builderButton: "Omschakelen naar buildermodus",
-				facebookTooltip: "Ĳ_Share on Facebook______ä",
-				twitterTooltip: "Ĳ_Share on Twitter______ä",
-				bitlyTooltip: "Ĳ_Get a short link______ä",
+				facebookTooltip: "Delen op Facebook",
+				twitterTooltip: "Delen op Twitter",
+				bitlyTooltip: "Ontvang een snelkoppeling",
 				bitlyStartIndex: "Koppeling naar huidige plaats"
 			},
 			builderHTML: {

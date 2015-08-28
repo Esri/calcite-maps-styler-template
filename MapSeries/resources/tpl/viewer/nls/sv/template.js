@@ -46,9 +46,9 @@
 			headerFromCommon: {
 				storymapsText: "En berättelsekarta",
 				builderButton: "Redigera",
-				facebookTooltip: "Å_Share on Facebook______ö",
-				twitterTooltip: "Å_Share on Twitter______ö",
-				bitlyTooltip: "Å_Get a short link______ö",
+				facebookTooltip: "Dela på Facebook",
+				twitterTooltip: "Dela på Twitter",
+				bitlyTooltip: "Hämta en kort länk",
 				templateTitle: "Ange malltitel",
 				templateSubtitle: "Ange underrubrik för mallen",
 				share: "Dela"

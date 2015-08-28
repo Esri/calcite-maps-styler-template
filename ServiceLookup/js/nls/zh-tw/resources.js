@@ -17,8 +17,8 @@
             basemapButton: "底圖"
         },
         popup: {
-          urlMoreInfo: "試_More Info____驗",
-          attachments: "試_Attachments____驗"
+          urlMoreInfo: "詳細資訊",
+          attachments: "附件(A)"
         }
 
 

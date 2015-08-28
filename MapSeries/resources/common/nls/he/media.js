@@ -57,8 +57,8 @@
 				howToFind2: "שם המשתמש מוצג תחת קטעי וידאו",
 				found: "נמצא",
 				noData: "לא נמצאו סרטונים ציבוריים",
-				videoNotChecked: "כן_The video hasn't been checked on YouTube but its address looks good_____________________ש.",
-				checkFailedAPI: "כן_YouTube check has failed, please check YouTube API key__________________ש."
+				videoNotChecked: "הווידאו לא נבדק ב-YouTube אך הכתובת שלו נראית בסדר.",
+				checkFailedAPI: "הבדיקה של YouTube נכשלה, בדוק את מפתח ה-API של YouTube."
 			},
 			videoSelectorVimeo: {
 				url: "URL של וידאו של Vimeo"

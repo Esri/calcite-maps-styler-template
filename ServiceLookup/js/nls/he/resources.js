@@ -17,8 +17,8 @@
             basemapButton: "מפת בסיס"
         },
         popup: {
-          urlMoreInfo: "כן_More Info____ש",
-          attachments: "כן_Attachments____ש"
+          urlMoreInfo: "עוד מידע",
+          attachments: "קישורים"
         }
 
 

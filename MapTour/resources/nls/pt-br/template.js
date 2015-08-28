@@ -45,9 +45,9 @@
 			desktopHTML: {
 				storymapsText: "Um mapa histórico",
 				builderButton: "Trocar para modo do construtor",
-				facebookTooltip: "ã_Share on Facebook______Ç",
-				twitterTooltip: "ã_Share on Twitter______Ç",
-				bitlyTooltip: "ã_Get a short link______Ç",
+				facebookTooltip: "Compartilhar no Facebook",
+				twitterTooltip: "Compartilhar no Twitter",
+				bitlyTooltip: "Obter um link curto",
 				bitlyStartIndex: "Link para local atual"
 			},
 			builderHTML: {

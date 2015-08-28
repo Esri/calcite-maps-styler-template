@@ -17,8 +17,8 @@
             basemapButton: "Basiskaart"
         },
         popup: {
-          urlMoreInfo: "Ĳ_More Info____ä",
-          attachments: "Ĳ_Attachments____ä"
+          urlMoreInfo: "Meer informatie",
+          attachments: "Bijlagen"
         }
 
 

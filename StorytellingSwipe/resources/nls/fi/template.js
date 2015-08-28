@@ -37,9 +37,9 @@
 			desktopView: {
 				storymapsText: "Tarinakartta",
 				builderButton: "Vaihda muodostusohjelman tilaan",
-				facebookTooltip: "Å_Share on Facebook______ö",
-				twitterTooltip: "Å_Share on Twitter______ö",
-				bitlyTooltip: "Å_Get a short link______ö"
+				facebookTooltip: "Jaa Facebookissa",
+				twitterTooltip: "Jaa Twitterissä",
+				bitlyTooltip: "Hanki lyhyt linkki"
 			}
 		},
 		builder: {

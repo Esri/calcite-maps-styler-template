@@ -37,9 +37,9 @@
 			desktopView: {
 				storymapsText: "En berättelsekarta",
 				builderButton: "Växla till byggläget",
-				facebookTooltip: "Å_Share on Facebook______ö",
-				twitterTooltip: "Å_Share on Twitter______ö",
-				bitlyTooltip: "Å_Get a short link______ö"
+				facebookTooltip: "Dela på Facebook",
+				twitterTooltip: "Dela på Twitter",
+				bitlyTooltip: "Hämta en kort länk"
 			}
 		},
 		builder: {

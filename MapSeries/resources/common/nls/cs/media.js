@@ -57,8 +57,8 @@
 				howToFind2: "Uživatelské jméno se zobrazuje pod videi",
 				found: "Nalezeno",
 				noData: "Nenalezena žádná veřejná videa",
-				videoNotChecked: "Ř_The video hasn't been checked on YouTube but its address looks good_____________________ů.",
-				checkFailedAPI: "Ř_YouTube check has failed, please check YouTube API key__________________ů."
+				videoNotChecked: "Video nebylo zkontrolováno na YouTube, ale jeho adresa vypadá správně.",
+				checkFailedAPI: "Kontrola na YouTube se nezdařila, zkontrolujte klíč YouTube API."
 			},
 			videoSelectorVimeo: {
 				url: "Adresa URL videa ke službě Vimeo"

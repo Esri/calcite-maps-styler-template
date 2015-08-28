@@ -37,9 +37,9 @@
 			desktopView: {
 				storymapsText: "แผนที่เรื่องราว",
 				builderButton: "เปลี่ยนไปยังโหมดการสร้าง",
-				facebookTooltip: "ก้_Share on Facebook______ษฺ",
-				twitterTooltip: "ก้_Share on Twitter______ษฺ",
-				bitlyTooltip: "ก้_Get a short link______ษฺ"
+				facebookTooltip: "แชร์ผ่าน Facebook",
+				twitterTooltip: "แชร์ผ่าน Twitter",
+				bitlyTooltip: "รับเป็นลิงค์สั้นๆ"
 			}
 		},
 		builder: {

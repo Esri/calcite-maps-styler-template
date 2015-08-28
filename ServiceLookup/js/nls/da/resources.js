@@ -17,8 +17,8 @@
             basemapButton: "Baggrundskort"
         },
         popup: {
-          urlMoreInfo: "ø_More Info____å",
-          attachments: "ø_Attachments____å"
+          urlMoreInfo: "Flere oplysninger",
+          attachments: "Vedhæftninger"
         }
 
 

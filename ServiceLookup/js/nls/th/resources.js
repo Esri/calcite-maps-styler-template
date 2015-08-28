@@ -17,8 +17,8 @@
             basemapButton: "แผนที่ฐาน"
         },
         popup: {
-          urlMoreInfo: "ก้_More Info____ษฺ",
-          attachments: "ก้_Attachments____ษฺ"
+          urlMoreInfo: "ข้อมูลเพิ่มเติม",
+          attachments: "เอกสารแนบ"
         }
 
 

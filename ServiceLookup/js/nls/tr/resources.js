@@ -17,8 +17,8 @@
             basemapButton: "Altlık Haritası"
         },
         popup: {
-          urlMoreInfo: "ı_More Info____İ",
-          attachments: "ı_Attachments____İ"
+          urlMoreInfo: "Daha Fazla Bilgi",
+          attachments: "Eklentiler"
         }
 
 

@@ -17,8 +17,8 @@
             basemapButton: "Bản đồ nền"
         },
         popup: {
-          urlMoreInfo: "Đ_More Info____ớ",
-          attachments: "Đ_Attachments____ớ"
+          urlMoreInfo: "Thông tin Khác",
+          attachments: "Tệp đính kèm"
         }
 
 

@@ -37,9 +37,9 @@
 			desktopView: {
 				storymapsText: "Un mapa de historias",
 				builderButton: "Cambiar a modo de builder",
-				facebookTooltip: "á_Share on Facebook______Ó",
-				twitterTooltip: "á_Share on Twitter______Ó",
-				bitlyTooltip: "á_Get a short link______Ó"
+				facebookTooltip: "Compartir en Facebook",
+				twitterTooltip: "Compartir en Twitter",
+				bitlyTooltip: "Obtenga un vínculo corto"
 			}
 		},
 		builder: {

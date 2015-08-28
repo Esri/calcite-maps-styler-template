@@ -57,8 +57,8 @@
 				howToFind2: "Brukernavnet vises under videoer",
 				found: "Funnet",
 				noData: "Finner ingen offentlige videoer",
-				videoNotChecked: "å_The video hasn't been checked on YouTube but its address looks good_____________________ø.",
-				checkFailedAPI: "å_YouTube check has failed, please check YouTube API key__________________ø."
+				videoNotChecked: "Videoen er ikke kontrollert på YouTube, men adressen ser riktig ut.",
+				checkFailedAPI: "YouTube-kontrollen mislyktes. Sjekk YouTube API-nøkkelen."
 			},
 			videoSelectorVimeo: {
 				url: "Nettadressen for en Vimeo-video"
