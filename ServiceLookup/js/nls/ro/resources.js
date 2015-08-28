@@ -17,8 +17,8 @@
             basemapButton: "Hartă fundal"
         },
         popup: {
-          urlMoreInfo: "Ă_More Info____ș",
-          attachments: "Ă_Attachments____ș"
+          urlMoreInfo: "Mai multe informaţii",
+          attachments: "Fișiere atașate"
         }
 
 
