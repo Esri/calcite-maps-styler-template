@@ -110,7 +110,7 @@ function (
       this._LocateButtonLight.clear();
 
       if (location.error !== null && location.error !== undefined) {
-        alert(location.error);
+        alert(location.error.message);
 
       } else {
         var point = new Geometry.Point({
