@@ -192,6 +192,10 @@ a[data-storymaps] {
 /*
  * Iframe style
  */
+ 
+iframe {
+	border: none;
+}
 
 .image-container > span.cke_widget_wrapper:after,
 .cke_widget_element > span.cke_image_resizer_wrapper:after,
