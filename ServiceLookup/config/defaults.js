@@ -79,8 +79,8 @@ define([], function () {
       "id": "",
       "fields": []
     }],
-    "applicationFavicon": "/images/favicon.ico"
-
+    "applicationFavicon": "/images/favicon.ico",
+    "linksInPopup":false
   };
   return defaults;
 });

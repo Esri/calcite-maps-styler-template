@@ -36,7 +36,7 @@
         },
         {
           "type": "paragraph",
-          "value": "The following two option allow you to add text to the beginning and end of the pop up when results are found.  The following parameters are supported:<br />&nbsp; - {IL_SEARCHBY} pop up from the search by layer.<br />&nbsp; - {&lt;FieldName&gt;} for a field from the search by layer<br />&nbsp; - {&lt;LayerName&gt;} for a count of the features from each look up layer.<br />&nbsp; - {IL_LAT},{IL_LONG} ,{IL_XCOORD} ,{IL_YCOORD} for coordinates from the lookup location, centroid it used a line or polygon"
+          "value": "The following two option allow you to add text to the beginning and end of the pop up when results are found.  The following parameters are supported:<br />&nbsp; - {IL_SEARCHBY} pop up from the search by layer.<br />&nbsp; - {&lt;FieldName&gt;} for a field from the search by layer<br />&nbsp; - {&lt;LayerName&gt;} for a count of the features from each look up layer.<br />&nbsp; - {IL_LAT}, {IL_LONG}, {IL_XCOORD}, {IL_YCOORD} for coordinates from the lookup location, the centroid is used a line or polygon"
         },
         {
           "type": "string",
@@ -217,6 +217,12 @@
           }
         },
         {
+          "type": "boolean",
+          "fieldName": "linksInPopup",
+          "label": "Email and Link option in the pop up",
+          "tooltip": "Replace the zoom to with email and link buttons.  Only valid when the pop up is displayed on the map."
+        },
+        {
           "type": "string",
           "fieldName": "serviceUnavailableTitle",
           "label": "Unavailable Popup Title:",
@@ -382,11 +388,12 @@
     "title": "Information Lookup",
     "color": "#FFFFFF",
     "backcolor": "#000000",
-    "hypercolor":"#0000EE",
+    "hypercolor": "#0000EE",
     "uidirection": "left",
     "showUI": false,
     "popupSide": false,
     "popPostMessage": "",
-    "popPreMessage": ""
+    "popPreMessage": "",
+    "linksInPopup": false
   }
 }
