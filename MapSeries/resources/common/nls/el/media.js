@@ -58,7 +58,7 @@
 				found: "Βρέθηκαν",
 				noData: "Δεν βρέθηκαν δημόσια βίντεο",
 				videoNotChecked: "Το βίντεο δεν έχει ελεγχθεί στο YouTube αλλά η διεύθυνσή του φαίνεται εντάξει.",
-				checkFailedAPI: "Ο έλεγχος στο YouTube απέτυχε, ελέγξτε το κλειδί API του YouTube."
+				checkFailedAPI: "Ο έλεγχος στο YouTube απέτυχε, ελέγξτε το API κλειδί του YouTube."
 			},
 			videoSelectorVimeo: {
 				url: "URL ενός Vimeo βίντεο"

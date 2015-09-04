@@ -57,7 +57,7 @@
 				howToFind2: "El nombre de usuario se muestra bajo los vídeos",
 				found: "Encontrado",
 				noData: "No se han encontrado vídeos públicos",
-				videoNotChecked: "El vídeo no se ha comprobado en YouTube pero la dirección se ve bien.",
+				videoNotChecked: "El vídeo no se ha comprobado en YouTube pero la dirección parece estar bien.",
 				checkFailedAPI: "La comprobación de YouTube ha dado error, compruebe la clave API para YouTube."
 			},
 			videoSelectorVimeo: {

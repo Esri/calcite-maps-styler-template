@@ -46,9 +46,9 @@
 			headerFromCommon: {
 				storymapsText: "Story Map",
 				builderButton: "Mettre à jour",
-				facebookTooltip: "æ_Share on Facebook______Â",
-				twitterTooltip: "æ_Share on Twitter______Â",
-				bitlyTooltip: "æ_Get a short link______Â",
+				facebookTooltip: "Partager sur Facebook",
+				twitterTooltip: "Partager sur Twitter",
+				bitlyTooltip: "Obtenir un lien court",
 				templateTitle: "Définir le titre du modèle",
 				templateSubtitle: "Définir le sous-titre du modèle",
 				share: "Partager"

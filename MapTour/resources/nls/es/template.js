@@ -47,7 +47,7 @@
 				builderButton: "Cambiar a modo de builder",
 				facebookTooltip: "Compartir en Facebook",
 				twitterTooltip: "Compartir en Twitter",
-				bitlyTooltip: "Obtenga un vínculo corto",
+				bitlyTooltip: "Obtén un vínculo corto",
 				bitlyStartIndex: "Enlazar al lugar actual"
 			},
 			builderHTML: {

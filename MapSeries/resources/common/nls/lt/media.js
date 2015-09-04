@@ -57,8 +57,8 @@
 				howToFind2: "Vartotojo vardas rodomas po video",
 				found: "Surasta",
 				noData: "Nerasta viešų video",
-				videoNotChecked: "Į_The video hasn't been checked on YouTube but its address looks good_____________________š.",
-				checkFailedAPI: "Į_YouTube check has failed, please check YouTube API key__________________š."
+				videoNotChecked: "Vaizdo įrašas nebuvo patikrintas „YouTube“, bet jo adresas atrodo tinkamas.",
+				checkFailedAPI: "„YouTube“ patikra nepavyko, patikrinkite „YouTube“ API raktą."
 			},
 			videoSelectorVimeo: {
 				url: "Vimeo vaizdo įrašo URL"

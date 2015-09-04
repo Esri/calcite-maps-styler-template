@@ -17,8 +17,8 @@
             basemapButton: "خريطة أساس"
         },
         popup: {
-          urlMoreInfo: "بيت_More Info____لاحقة",
-          attachments: "بيت_Attachments____لاحقة"
+          urlMoreInfo: "المزيد من المعلومات",
+          attachments: "المرفقات"
         }
 
 

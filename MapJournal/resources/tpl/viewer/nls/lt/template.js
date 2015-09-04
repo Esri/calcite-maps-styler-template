@@ -55,9 +55,9 @@
 			headerFromCommon: {
 				storymapsText: "Pristatomasis žemėlapis",
 				builderButton: "Redaguoti",
-				facebookTooltip: "Į_Share on Facebook______š",
-				twitterTooltip: "Į_Share on Twitter______š",
-				bitlyTooltip: "Į_Get a short link______š",
+				facebookTooltip: "Dalintis Facebook",
+				twitterTooltip: "Dalintis Twitter",
+				bitlyTooltip: "Gauti trumpą nuorodą",
 				templateTitle: "Nustatyti šablono pavadinimą",
 				templateSubtitle: "Nustatyti šablono antraštę",
 				share: "Bendrinti"

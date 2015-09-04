@@ -47,7 +47,7 @@
 				builderButton: "Omschakelen naar buildermodus",
 				facebookTooltip: "Delen op Facebook",
 				twitterTooltip: "Delen op Twitter",
-				bitlyTooltip: "Ontvang een snelkoppeling",
+				bitlyTooltip: "Ontvang een korte URL",
 				bitlyStartIndex: "Koppeling naar huidige plaats"
 			},
 			builderHTML: {
