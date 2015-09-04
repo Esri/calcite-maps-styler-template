@@ -37,8 +37,8 @@
 			desktopView: {
 				storymapsText: "스토리 맵",
 				builderButton: "빌더 모드로 전환",
-				facebookTooltip: "Facebook에서 공유",
-				twitterTooltip: "Twitter에서 공유",
+				facebookTooltip: "Facebook에  공유",
+				twitterTooltip: "Twitter에 공유",
 				bitlyTooltip: "짧은 링크 가져오기"
 			}
 		},

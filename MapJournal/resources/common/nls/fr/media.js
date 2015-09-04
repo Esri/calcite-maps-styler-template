@@ -57,8 +57,8 @@
 				howToFind2: "Le nom d\'utilisateur est affiché sous les vidéos",
 				found: "Trouvé(e)",
 				noData: "Aucune vidéo publique trouvée",
-				videoNotChecked: "æ_The video hasn't been checked on YouTube but its address looks good_____________________Â.",
-				checkFailedAPI: "æ_YouTube check has failed, please check YouTube API key__________________Â."
+				videoNotChecked: "La vidéo n\'a pas été vérifiée sur YouTube mais son adresse semble correcte.",
+				checkFailedAPI: "La vérification YouTube a échoué, vérifiez votre clé d\'API YouTube."
 			},
 			videoSelectorVimeo: {
 				url: "URL d\'une vidéo Vimeo"

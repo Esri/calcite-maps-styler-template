@@ -48,7 +48,7 @@
 				builderButton: "Modifica",
 				facebookTooltip: "Condividi su Facebook",
 				twitterTooltip: "Condividi su Twitter",
-				bitlyTooltip: "Ottieni un collegamento breve",
+				bitlyTooltip: "Crea un link breve",
 				templateTitle: "Imposta titolo modello",
 				templateSubtitle: "Imposta sottotitolo modello",
 				share: "Condividi"

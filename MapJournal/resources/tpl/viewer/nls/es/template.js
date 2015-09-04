@@ -57,7 +57,7 @@
 				builderButton: "Editar",
 				facebookTooltip: "Compartir en Facebook",
 				twitterTooltip: "Compartir en Twitter",
-				bitlyTooltip: "Obtenga un vínculo corto",
+				bitlyTooltip: "Obtén un vínculo corto",
 				templateTitle: "Establecer título de plantilla",
 				templateSubtitle: "Establecer subtítulo de plantilla",
 				share: "Compartir"

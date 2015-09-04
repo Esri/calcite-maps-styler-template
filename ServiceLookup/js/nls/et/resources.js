@@ -17,8 +17,8 @@
             basemapButton: "Aluskaart"
         },
         popup: {
-          urlMoreInfo: "Š_More Info____ä",
-          attachments: "Š_Attachments____ä"
+          urlMoreInfo: "Rohkem teavet",
+          attachments: "Manused"
         }
 
 

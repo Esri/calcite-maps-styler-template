@@ -46,9 +46,9 @@
 			headerFromCommon: {
 				storymapsText: "خريطة قصة",
 				builderButton: "تحرير",
-				facebookTooltip: "بيت_Share on Facebook______لاحقة",
-				twitterTooltip: "بيت_Share on Twitter______لاحقة",
-				bitlyTooltip: "بيت_Get a short link______لاحقة",
+				facebookTooltip: "مشاركة على الفيس بوك",
+				twitterTooltip: "مشاركة على تويتر",
+				bitlyTooltip: "الحصول على رابط قصير",
 				templateTitle: "تعيين عنوان للقالب",
 				templateSubtitle: "تعيين عنوان فرعي للقالب",
 				share: "مشاركة"

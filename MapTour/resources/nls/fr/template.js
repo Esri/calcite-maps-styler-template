@@ -45,9 +45,9 @@
 			desktopHTML: {
 				storymapsText: "Une Story Map",
 				builderButton: "Mode de générateur",
-				facebookTooltip: "æ_Share on Facebook______Â",
-				twitterTooltip: "æ_Share on Twitter______Â",
-				bitlyTooltip: "æ_Get a short link______Â",
+				facebookTooltip: "Partager sur Facebook",
+				twitterTooltip: "Partager sur Twitter",
+				bitlyTooltip: "Obtenir un lien court",
 				bitlyStartIndex: "Relier au site actuel"
 			},
 			builderHTML: {

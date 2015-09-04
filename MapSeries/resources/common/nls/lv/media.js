@@ -57,8 +57,8 @@
 				howToFind2: "Lietotāja vārds ir attēlots zem video",
 				found: "Atrasts",
 				noData: "Nav atrasti publiski video",
-				videoNotChecked: "ķ_The video hasn't been checked on YouTube but its address looks good_____________________ū.",
-				checkFailedAPI: "ķ_YouTube check has failed, please check YouTube API key__________________ū."
+				videoNotChecked: "Video nav pārbaudīts vietnē YouTube, bet tā adrese šķiet droša.",
+				checkFailedAPI: "Pārbaude YouTube neizdevās. Pārbaudiet YouTube API atslēgu."
 			},
 			videoSelectorVimeo: {
 				url: "Vimeo video URL"
