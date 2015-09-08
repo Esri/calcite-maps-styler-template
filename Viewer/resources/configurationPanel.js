@@ -64,6 +64,14 @@
                      "value":"black"
                   }
                ]
+            },{
+               "type":"paragraph",
+               "value": "Use the Custom css option to paste css that overwrites rules in the app."
+            },{
+               "type":"string",
+               "fieldName": "customstyle",
+               "tooltip":"Custom css",
+               "label": "Custom css"
             }
          ]
       },
