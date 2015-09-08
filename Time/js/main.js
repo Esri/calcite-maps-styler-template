@@ -557,7 +557,7 @@ declare, lang, query, registry, on, string, locale, domConstruct, domStyle, arra
                         startDatePattern = this.config.i18n.time.datePattern;
                         endDatePattern = this.config.i18n.time.datePattern;
                     }
-                } else if (end && end.getFullYear() - start.getFullYear() > 2) {
+                } else if (end && end.getFullYear() - start.getFullYear() > 10) {
                     startDatePattern = this.config.i18n.time.yearPattern;
                     endDatePattern = this.config.i18n.time.yearPattern;
                 } else {
