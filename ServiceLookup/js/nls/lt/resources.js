@@ -17,8 +17,8 @@
             basemapButton: "Pagrindo žemėlapis"
         },
         popup: {
-          urlMoreInfo: "Į_More Info____š",
-          attachments: "Į_Attachments____š"
+          urlMoreInfo: "Plačiau",
+          attachments: "Priedai"
         }
 
 

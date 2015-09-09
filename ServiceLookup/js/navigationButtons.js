@@ -113,16 +113,16 @@ function (
         alert(location.error.message);
 
       } else {
-        var point = new Geometry.Point({
-          "x": location.position.coords.longitude,
-          "y": location.position.coords.latitude,
-          "spatialReference": {
-            "wkid": 4326
-          }
-        });
+        //var point = new Geometry.Point({
+        //  "x": location.position.coords.longitude,
+        //  "y": location.position.coords.latitude,
+        //  "spatialReference": {
+        //    "wkid": 4326
+        //  }
+        //});
 
-        this.map.centerAndZoom(point, this.zoomScale);
-        var msg = { "geometry": point, "layerId": "GPS" };
+        //this.map.centerAndZoom(point, this.zoomScale);
+        var msg = { "geometry": location.graphic.geometry, "layerId": "GPS" };
 
         topic.publish("app.mapLocate", msg);
 

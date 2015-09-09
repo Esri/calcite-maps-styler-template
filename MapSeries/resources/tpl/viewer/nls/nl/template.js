@@ -48,7 +48,7 @@
 				builderButton: "Bewerken",
 				facebookTooltip: "Delen op Facebook",
 				twitterTooltip: "Delen op Twitter",
-				bitlyTooltip: "Ontvang een snelkoppeling",
+				bitlyTooltip: "Ontvang een korte URL",
 				templateTitle: "Titel voor template instellen",
 				templateSubtitle: "Subtitel voor template instellen",
 				share: "Delen"

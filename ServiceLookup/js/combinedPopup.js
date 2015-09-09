@@ -140,6 +140,15 @@ define([
 
       }
       else if ('geometry' in arguments[0]) {
+      
+        if ("wkid" in arguments[0].geometry.spatialReference && "wkid" in this.map.spatialReference) {
+          if (arguments[0].geometry.spatialReference.wkid !== this.map.spatialReference.wkid) {
+            if (webMercatorUtils.canProject(arguments[0].geometry, this.map.spatialReference)) {
+              arguments[0].geometry = webMercatorUtils.project(arguments[0].geometry, this.map.spatialReference);
+            }
+         
+          }
+        }
         this.showPopup(arguments[0].geometry, arguments[0].layerId);
       }
     },
@@ -330,7 +339,7 @@ define([
                    point.y - toleraceInMapCoords,
                    point.x + toleraceInMapCoords,
                    point.y + toleraceInMapCoords,
-                   this.map.spatialReference);
+                   point.spatialReference);
     },
     searchLayerForPopup: function (geo) {
       var query = new Query();

@@ -28,7 +28,7 @@
 				notAuthorized: "Neturite teisių pasiekti šią aplikaciją",
 				oldBrowserTitle: "Naršyklė nėra pilnai palaikoma",
 				noBuilderIE8: "Kelionės žemėlapyje kūrimo įrankis nepalaikomas versijose žemesnėse nei Internet Explorer 9.",
-				ie10Win7Explain: "Kelionės žemėlapyje kūrimas nepalaikomas naudojant Internet Explorer 10 su Windows 7 kai duomenų šaltinis yra Elementų servisas su priedais. Norėdami naudoti Elementų servisą su priedais, turite <a target='_blank' href='http://msdn.microsoft.com/en-us/library/ie/hh920756(v=vs.85).aspx'>rankiniu būdu nustatyti naudotis Internet Explorer 9 standartu</a>, <a target='_blank' href='http://news.softpedia.com/news/How-to-Remove-IE10-and-Get-Back-to-IE9-on-Windows-7-308998.shtml'>pažeminti į Internet Explorer 9 versiją</a> arba atsinaujinti į Windows 8.",
+				ie10Win7Explain: "Kelionės žemėlapyje kūrimas nepalaikomas naudojant Internet Explorer 10 su Windows 7 kai duomenų šaltinis yra Elementų servisas su priedais. Norėdami naudoti Elementų servisą su priedais, turite <a target=\'_blank\' href=\'http://msdn.microsoft.com/en-us/library/ie/hh920756(v=vs.85).aspx\'>rankiniu būdu nustatyti naudotis Internet Explorer 9 standartu</a>, <a target=\'_blank\' href=\'http://news.softpedia.com/news/How-to-Remove-IE10-and-Get-Back-to-IE9-on-Windows-7-308998.shtml\'>pažeminti į Internet Explorer 9 versiją</a> arba atsinaujinti į Windows 8.",
 				oldBrowserExplain: "Ši naršyklė nepalaiko automatinio miniatiūrų iš į kelionės žemėlapyje įkeltų paveikslėlių kūrimo. Galite kurti kelionę žemėlapyje naudojant šią naršyklę, tačiau turėsite kiekvienam įkeltam paveikslėliui nurodyti atskirą miniatiūros paveikslėlį.",
 				oldBrowserExplain2: "Naršymo pagerinimui, <a href='http://browsehappy.com/' target='_blank'>atnaujinkite savo naršyklę</a> arba <a href='http://www.google.com/chromeframe/?redirect=true' target='_blank'>aktyvinkite Google Chrome Frame skirtą Internet Explorer</a>.",
 				oldBrowserExplain3: "Kelionės žemėlapyje kūrėjas neveikia naudojant Internet Explorer 10 su Windows XP.",
@@ -45,9 +45,9 @@
 			desktopHTML: {
 				storymapsText: "Pristatomasis žemėlapis",
 				builderButton: "Perjungti į kūrimo būseną",
-				facebookTooltip: "Į_Share on Facebook______š",
-				twitterTooltip: "Į_Share on Twitter______š",
-				bitlyTooltip: "Į_Get a short link______š",
+				facebookTooltip: "Dalintis Facebook",
+				twitterTooltip: "Dalintis Twitter",
+				bitlyTooltip: "Gauti trumpą nuorodą",
 				bitlyStartIndex: "Nuoroda į esamą vietą"
 			},
 			builderHTML: {

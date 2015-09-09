@@ -58,7 +58,7 @@
 				found: "Gevonden",
 				noData: "Geen openbare video\'s gevonden",
 				videoNotChecked: "De video is niet gecontroleerd op Youtube maar het adres ervan lijkt in orde.",
-				checkFailedAPI: "YouTube-controle mislukt, controleer de YouTube API-sleutel."
+				checkFailedAPI: "YouTube-controle mislukt, controleer de YouTube API-key."
 			},
 			videoSelectorVimeo: {
 				url: "URL van een Vimeo-video"

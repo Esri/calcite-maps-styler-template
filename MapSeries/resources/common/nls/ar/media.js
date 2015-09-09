@@ -57,8 +57,8 @@
 				howToFind2: "يتم عرض اسم المستخدم أسفل الفيديوهات",
 				found: "تم العثور",
 				noData: "لم يتم العثور على الفيديوهات العامة",
-				videoNotChecked: "بيت_The video hasn't been checked on YouTube but its address looks good_____________________لاحقة.",
-				checkFailedAPI: "بيت_YouTube check has failed, please check YouTube API key__________________لاحقة."
+				videoNotChecked: "لم يتم فحص مقطع الفيديو في موقع YouTube، إلا أن عنوانه يبدو جيدًا.",
+				checkFailedAPI: "فشل فحص YouTube، يرجى فحص مفتاح YouTube API."
 			},
 			videoSelectorVimeo: {
 				url: "عنوان URL لفيديو Vimeo"
