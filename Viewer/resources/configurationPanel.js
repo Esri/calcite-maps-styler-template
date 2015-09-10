@@ -72,6 +72,10 @@
                "fieldName": "customstyle",
                "tooltip":"Custom css",
                "label": "Custom css"
+            },{
+               "type": "boolean",
+               "fieldName": "popupPanel",
+               "label": "Display popup content in floating panel"
             }
          ]
       },
@@ -325,6 +329,7 @@
       "tool_bookmarks":true,
       "tool_basemap":true,
       "tool_search":true,
-      "locationSearch": true
+      "locationSearch": true,
+      "popupPanel": false
    }
 }
