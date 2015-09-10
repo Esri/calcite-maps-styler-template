@@ -13,8 +13,74 @@
  | See the License for the specific language governing permissions and
  | limitations under the License.
  */
-define(["dojo/ready", "dojo/json", "dojo/_base/array", "dojo/_base/Color", "dojo/_base/declare", "dojo/_base/lang", "dojo/dom", "dojo/dom-geometry", "dojo/dom-attr", "dojo/dom-class", "dojo/dom-construct", "dojo/dom-style", "dojo/on", "dojo/Deferred", "dojo/promise/all", "dojo/query", "dijit/registry", "dijit/Menu", "dijit/CheckedMenuItem", "application/toolbar", "application/has-config", "esri/arcgis/utils", "esri/lang", "esri/urlUtils", "esri/dijit/HomeButton", "esri/dijit/LocateButton", "esri/dijit/Legend", "esri/dijit/BasemapGallery", "esri/dijit/Measurement", "esri/dijit/OverviewMap", "esri/geometry/Extent", "esri/layers/FeatureLayer", "esri/dijit/LayerList", "application/ShareDialog", "application/SearchSources"], function (
-ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, domConstruct, domStyle, on, Deferred, all, query, registry, Menu, CheckedMenuItem, Toolbar, has, arcgisUtils, esriLang, urlUtils, HomeButton, LocateButton, Legend, BasemapGallery, Measurement, OverviewMap, Extent, FeatureLayer, LayerList, ShareDialog, SearchSources) {
+define([
+    "dojo/ready", 
+    "dojo/json", 
+
+    "dojo/_base/array", 
+    "dojo/_base/Color", 
+    "dojo/_base/declare", 
+    "dojo/_base/lang", 
+
+    "dojo/dom", 
+    "dojo/dom-geometry", 
+    "dojo/dom-attr", 
+    "dojo/dom-class", 
+    "dojo/dom-construct", 
+    "dojo/dom-style", 
+
+    "dojo/on", 
+    "dojo/Deferred", 
+    "dojo/promise/all", 
+    "dojo/query", 
+
+    "dijit/registry", 
+    "dijit/Menu", 
+    "dijit/CheckedMenuItem", 
+
+    "application/toolbar", 
+    "application/has-config",
+    "application/ShareDialog", 
+    "application/SearchSources",
+
+    "esri/arcgis/utils", 
+    "esri/lang", 
+    "esri/urlUtils", 
+
+    "esri/dijit/HomeButton", 
+    "esri/dijit/LocateButton", 
+    "esri/dijit/Legend", 
+    "esri/dijit/BasemapGallery", 
+    "esri/dijit/Measurement", 
+    "esri/dijit/OverviewMap", 
+    "esri/dijit/LayerList", 
+
+    "esri/geometry/Extent", 
+    "esri/layers/FeatureLayer"
+    ], function (
+        ready,JSON,
+
+        array, Color, declare, lang, 
+
+        dom, domGeometry, domAttr, domClass, 
+        domConstruct, domStyle, 
+
+        on, Deferred, all, query, 
+
+        registry, Menu, CheckedMenuItem, 
+
+        Toolbar, has,
+        ShareDialog, SearchSources,
+
+        arcgisUtils, esriLang, urlUtils, 
+
+        HomeButton, LocateButton, Legend, 
+        BasemapGallery, Measurement, 
+        OverviewMap, LayerList, 
+
+        Extent, FeatureLayer
+
+        ) {
     return declare(null, {
         config: {},
         color: null,
@@ -32,6 +98,14 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
                 this.config = config;
                 this.color = this._setColor(this.config.color);
                 this.theme = this._setColor(this.config.theme);
+
+                // Create and add custom style sheet
+                if(this.config.customstyle){
+                    var style = document.createElement("style");
+                    style.appendChild(document.createTextNode(this.config.customstyle));
+                    document.head.appendChild(style);    
+                }
+
                 // document ready
                 ready(lang.hitch(this, function () {
                     //supply either the webmap id or, if available, the item info
@@ -68,8 +142,12 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
             query(".esriSimpleSlider").style("backgroundColor", this.theme.toString());
             // remove loading class from body
             domClass.remove(document.body, "app-loading");
-            on(window, "orientationchange", lang.hitch(this, this._adjustPopupSize));
-            this._adjustPopupSize();
+            if(!this.config.popupPanel){
+                //on(this.map.infoWindow, "selection-change", lang.hitch(this, this._movePopup));
+                on(window, "orientationchange", lang.hitch(this, this._adjustPopupSize));
+                this._adjustPopupSize();
+            }
+
         },
 
         // Create UI
@@ -81,6 +159,18 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
 
                 // set map so that it can be repositioned when page is scrolled
                 toolbar.map = this.map;
+
+                if(this.config.popupPanel){
+                    require(["application/PopupPanel"], lang.hitch(this, function(PopupPanel){
+                        this.map.infoWindow.set("popupWindow", false);
+                        var popupPane = new PopupPanel({
+                            popup: this.map.infoWindow,
+                            srcNode: "popupContainer",
+                            toolbar: toolbar
+                        });
+                        popupPane.initPopup();
+                    }));
+                }
 
                 var toolList = [];
                 for (var i = 0; i < this.config.tools.length; i++) {
@@ -150,9 +240,8 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
                     if (this.config.activeTool !== "") {
                         toolbar.activateTool(this.config.activeTool);
                     } else {
-                        toolbar._closePage();
+                        toolbar.closePage();
                     }
-
 
                     on(toolbar, "updateTool", lang.hitch(this, function (name) {
                         if (name === "measure") {
@@ -415,7 +504,7 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
                     if (this.config.activeTool !== "") {
                         toolbar.activateTool(this.config.activeTool || "legend");
                     } else {
-                        toolbar._closePage();
+                        toolbar.closePage();
                     }
                     deferred.resolve(true);
 
@@ -884,12 +973,13 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
             }
 
         },
-
         _adjustPopupSize: function () {
+
             //Set the popup size to be half the widget and .35% of the map height
             if (!this.map) {
                 return;
             }
+
             var box = domGeometry.getContentBox(this.map.container);
 
             var width = 270,
@@ -909,6 +999,7 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
             on(this.map.infoWindow, "hide", lang.hitch(this, function () {
                 domClass.remove(document.body, "noscroll");
             }));
+
         },
         _createWebMap: function (itemInfo) {
 
@@ -928,8 +1019,11 @@ ready, JSON, array, Color, declare, lang, dom, domGeometry, domAttr, domClass, d
                 layerMixins: this.config.layerMixins,
                 bingMapsKey: this.config.bingKey
             }).then(lang.hitch(this, function (response) {
+
                 this.map = response.map;
+            
                 domClass.add(this.map.infoWindow.domNode, "light");
+
                 this._updateTheme();
 
                 //Add a logo if provided

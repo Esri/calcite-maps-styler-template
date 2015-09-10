@@ -554,8 +554,100 @@ img {
   .pageContent {
     top: 10px;
    } }
-
-
+/*Rules for popup when displayed in panel*/
+.panelPopup{
+  display: none;
+}
+.hidden{
+  display:none;
+}
+.popupHeader{
+  font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+  font-size:12px;
+  font-weight: bold;
+}
+#popupContainer{
+  font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+  font-size:12px;
+  width:100%;
+  height: 100%;
+}
+#popupFooter > .action:before{
+  content:"\e800";
+  font-family: "popup";
+}
+#popupFooter > .action:hover:before{
+  color:#6b6b6b;
+}
+#popupFooter > .action{
+  padding: 0 10px 10px 10px;
+  text-decoration: none;
+  color: #000;
+}
+.popupTitle{
+  width:100%;
+  padding:10px;
+  font-size: 12px;
+  line-height: 16px;
+}
+.popupButton{
+  position: absolute;
+  text-align: center;
+  width:16px;
+  height: 16px;
+  background:none;
+  font-size: 12px;
+  line-height: 16px;
+  top:10px;
+  cursor:pointer;
+}
+.popupButton:hover{
+  /*match out of the box hover color for home and locate*/
+  background-color: transparent;
+  background-color: rgba(102, 102, 102, 0.6);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#E6666666,endColorstr=#E6666666);
+  zoom: 1;
+  border-radius: 4px;
+}
+.popupButton.next:before{
+  font-family: "popup";
+  content:"\e808";
+}
+.popupButton.prev{
+  right:73px;
+}
+.popupButton.next{
+  right:55px;
+}
+.popupButton.close{
+  right:35px;
+}
+.popupButton.prev:before{
+  font-family: "popup";
+  content:"\e809";
+}
+.popupButton.close:before{
+  font-family: "popup";
+  content:"\e806";
+}
+#pageBody_popup{
+  overflow-x:auto !important;
+  height:auto;
+}
+#popupFooter{
+  padding:4px;
+}
+.popupTitle{
+  position: absolute;
+  left:5px;
+}
+.popupHeader{
+  position: relative;
+  display: block;
+  width:100%;
+  height: 40px;
+  line-height: 40px;
+}
 .pageHeader {
   position: relative;
   width: 100%;

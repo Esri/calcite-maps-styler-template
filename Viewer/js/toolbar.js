@@ -185,7 +185,7 @@ Evented, declare, win, fx, html, lang, has, dom, domClass, domStyle, domAttr, do
                 var pageClose = domConstruct.create("div", {
                     className: "pageClose"
                 }, "pageHeader_" + name);
-                on(pageClose, "click", lang.hitch(this, this._closePage));
+                on(pageClose, "click", lang.hitch(this, this.closePage));
 
                 var pageUp = domConstruct.create("div", {
                     className: "pageUp"
@@ -248,6 +248,7 @@ Evented, declare, win, fx, html, lang, has, dom, domClass, domStyle, domAttr, do
         _showPreviousPage: function (name) {
             var num = this._getPageNum(name);
             this._scrollToPage(num);
+
         },
 
         _showNextPage: function (name) {
@@ -255,7 +256,7 @@ Evented, declare, win, fx, html, lang, has, dom, domClass, domStyle, domAttr, do
             this._scrollToPage(num);
         },
 
-        _closePage: function () {
+        closePage: function () {
             this._scrollToPage(-1);
         },
         _scrollToPage: function (num) {
@@ -349,9 +350,6 @@ Evented, declare, win, fx, html, lang, has, dom, domClass, domStyle, domAttr, do
                 domClass.add("panelTool_" + name, "panelToolActive");
             }
             this.emit("updateTool", name);
-
-
-
         },
         _updateMap: function () {
             if (this.map) {
@@ -369,7 +367,7 @@ Evented, declare, win, fx, html, lang, has, dom, domClass, domStyle, domAttr, do
         _menuClick: function () {
             if (query("#panelTools").style("display") == "block") {
                 query("#panelTools").style("display", "none");
-                this._closePage();
+                this.closePage();
 
             } else {
                 query("#panelTools").style("display", "block");

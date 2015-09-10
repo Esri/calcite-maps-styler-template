@@ -11,9 +11,9 @@
 		<meta name="apple-mobile-web-app-status-bar-style" content="default">
 		<!-- End Responsive -->
 		<!-- Use protocol relative urls that way if the browser is viewing the page via HTTPS the js/css file will be requested using the HTTPS protocol -->
-		<link rel="stylesheet" href="//js.arcgis.com/3.14/esri/css/calcite/calcite.css">
+		<link rel="stylesheet" href="//jsdev.arcgis.com/3.14/esri/css/calcite/calcite.css">
 	
-    <link rel="stylesheet"  href="//js.arcgis.com/3.14/esri/css/esri.css">
+    <link rel="stylesheet"  href="//jsdev.arcgis.com/3.14/esri/css/esri.css">
 		<!-- Load any application specific styles -->
 		<link rel="stylesheet" href="css/styles.css">
 		<!--[if IE 8]>
@@ -31,18 +31,32 @@
 		<div id="mapDiv" dir="ltr"></div>
 
 		<!-- Panel Content -->
+
 		<div id="panelContent">
 			<div id="panelPages"></div>
-		</div>
-
+      <div class="pageContent rounded shadow medium panelPopup" id="pageContent_popup">
+        <div id="pageHeader_popup" class="popupHeader bg roundedTop">
+          <div class="popupTitle fc">
+            <div id="popupTitle"></div>
+            <div class="popupButton prev" title="Previous feature"></div>
+            <div class="popupButton next" title="Next feature"></div>
+            <div class="popupButton close" title="Close"></div>  
+          </div>
+        </div>
+        <div class="pageBody" id="pageBody_popup">
+          <div id="popupContainer" data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region:'center'" class="popupContent"></div>
+          <div id="popupFooter"></div>
+        </div>
+      </div>
+      </div>
 		<!-- Panel Top -->
 		<div id="panelTop" class="bg rounded shadow">
 			<!-- Panel Title -->
 			 <div id="panelTitle">
 				<div class="fc" id="panelText">
-                    <div id="title"></div>
-                    <div id="subtitle"></div>            
-                </div>
+            <div id="title"></div>
+            <div id="subtitle"></div>            
+        </div>
 				<div id="panelSearch">
 					<div id="panelGeocoder"></div>
 				</div>
@@ -73,7 +87,7 @@
             }]
          };
 		</script>
-		<script type="text/javascript" src="//js.arcgis.com/3.14/"></script>
+		<script type="text/javascript" src="//jsdev.arcgis.com/3.14/"></script>
         <script type="text/javascript">
         require([
             "dojo/parser",
@@ -82,7 +96,6 @@
             "application/main",
             "dijit/layout/BorderContainer",
             "dijit/layout/ContentPane",
-            "dijit/layout/StackContainer"
         ], function(
             parser,
             templateConfig,
