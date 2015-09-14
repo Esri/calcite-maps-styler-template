@@ -233,6 +233,10 @@ define([
           this.config.proxyurl = location.protocol + "//" + location.host + instance + "/sharing/proxy";
         }
       }
+      //if a custom url for sharinghost is set let's overwrite sharinghost value 
+      if(this.customUrlConfig && this.customUrlConfig.sharinghost){
+        this.config.sharinghost = this.customUrlConfig;
+      }
       arcgisUtils.arcgisUrl = this.config.sharinghost + "/sharing/rest/content/items";
       // Define the proxy url for the app
       if (this.config.proxyurl) {
