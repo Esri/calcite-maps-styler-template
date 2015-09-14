@@ -553,6 +553,16 @@ declare, win, array, Color, all, Deferred, lang, domUtils, esriRequest, esriLang
 
                 on(btn, "click", lang.hitch(this, function () {
                     this._displayContainer("measure_container", "measure_toggle");
+                    var measureDisp = domStyle.get("measure_container", "display");
+                    if(measureDisp && measureWidget && measureDisp === "none"){
+                            var tool = measureWidget.getTool();
+                            if(tool && tool.toolName){
+                                measureWidget.setTool(tool.toolName, false);
+                                measureWidget.clearResult();
+                                //reactivate map click
+                                this.map.setInfoWindowOnClick(true); 
+                            }
+                    }
                 }));
 
                 this._createContainer("measure_container", "measureDiv");
@@ -995,7 +1005,6 @@ declare, win, array, Color, all, Deferred, lang, domUtils, esriRequest, esriLang
 
             var node = dom.byId(container);
             domUtils.toggle(node);
-
 
             if (domStyle.get(node, "display") === "none") {
                 //remove tool selected style from node
