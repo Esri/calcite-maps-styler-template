@@ -235,7 +235,7 @@ define([
       }
       //if a custom url for sharinghost is set let's overwrite sharinghost value 
       if(this.customUrlConfig && this.customUrlConfig.sharinghost){
-        this.config.sharinghost = this.customUrlConfig;
+        this.config.sharinghost = this.customUrlConfig.sharinghost;
       }
       arcgisUtils.arcgisUrl = this.config.sharinghost + "/sharing/rest/content/items";
       // Define the proxy url for the app
