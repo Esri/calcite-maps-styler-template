@@ -567,20 +567,26 @@ declare, lang, query, registry, on, string, locale, domConstruct, domStyle, arra
 
             }
 
-            var startTime = locale.format(start, {
-                datePattern: startDatePattern,
-                timePattern: startTimePattern,
-                selector: (startDatePattern && startTimePattern) ? null : (startDatePattern ? "date" : "time")
-            });
-            var endTime = null;
-            if (end) {
-                endTime = locale.format(end, {
-                    datePattern: endDatePattern,
-                    timePattern: endTimePattern,
-                    selector: (endDatePattern && endTimePattern) ? null : (endDatePattern ? "date" : "time")
+           try{
+                var startTime = locale.format(start, {
+                    datePattern: startDatePattern,
+                    timePattern: startTimePattern,
+                    selector: (startDatePattern && startTimePattern) ? null : (startDatePattern ? "date" : "time")
                 });
-            }
+           
 
+                var endTime = null;
+                if (end) {
+                    endTime = locale.format(end, {
+                        datePattern: endDatePattern,
+                        timePattern: endTimePattern,
+                        selector: (endDatePattern && endTimePattern) ? null : (endDatePattern ? "date" : "time")
+                    });
+        
+                }
+            }catch(err){
+                this.reportError(err);
+           }
             return {
                 startTime: startTime,
                 endTime: endTime,
