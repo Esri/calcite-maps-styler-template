@@ -453,7 +453,13 @@ html, body {
   border-radius: 13px; }
 
 img {
-  border: 0; }
+  border: 0; 
+}
+.LocateButton .tracking {
+    background-image: none !important;
+    color:rgba(0,0,0,0.3);
+    font-size:20px;
+}
 
 /*custom tooltips for toolbar tools. Test on early IE*/
 [data-title]:hover:after {

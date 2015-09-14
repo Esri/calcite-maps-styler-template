@@ -148,6 +148,10 @@
                "type":"boolean",
                "fieldName":"tool_locate",
                "label":"Find Location"
+            },{
+               "type": "boolean",
+               "fieldName": "locate_track",
+               "label": "Enable tracking"
             },
             {  
                "type":"boolean",
@@ -324,6 +328,7 @@
       "tool_sublayers": true,
       "tool_home":true,
       "tool_locate":true,
+      "locate_track": false,
       "tool_edit":true,
       "tool_edit_toolbar":false,
       "tool_bookmarks":true,

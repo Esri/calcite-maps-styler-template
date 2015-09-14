@@ -806,7 +806,8 @@ define([
                     innerHTML: "<div id='btnLocate'></div>"
                 }, dom.byId("panelTools"), 1);
                 var geoLocate = new LocateButton({
-                    map: this.map
+                    map: this.map,
+                    useTracking: this.config.locate_track
                 }, dom.byId("btnLocate"));
                 if (!has("touch")) {
                     //add a tooltip
