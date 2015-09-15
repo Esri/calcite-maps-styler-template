@@ -92,7 +92,7 @@ mkdir %BUILD_OUTPUT%\MapJournal
 mkdir %BUILD_OUTPUT%\MapSeries
 mkdir %BUILD_OUTPUT%\StorytellingBasic
 mkdir %BUILD_OUTPUT%\Viewer
-mkdir %BUILD_OUTPUT%\bv_build
+
 
 xcopy %TEMPLATES_ROOT%\archive\CompareConfigure                 %BUILD_OUTPUT%\Compare\Configure                    /E /Y
 xcopy %TEMPLATES_ROOT%\archive\CompareMultiviewer               %BUILD_OUTPUT%\Compare\Multiviewer                  /E /Y
@@ -172,14 +172,13 @@ xcopy %TEMPLATES_ROOT%\Viewer                                   %BUILD_OUTPUT%\V
 xcopy %TEMPLATES_ROOT%\Locator                                  %BUILD_OUTPUT%\Directions                           /E /Y
 xcopy %TEMPLATES_ROOT%\Time                                     %BUILD_OUTPUT%\Time                                 /E /Y
 xcopy %TEMPLATES_ROOT%\ThumbnailGenerator                       %BUILD_OUTPUT%\ThumbnailGenerator                   /E /Y
-xcopy %TEMPLATES_ROOT%\bv_build\src                             %BUILD_OUTPUT%\bv_build                             /E /Y
+
 
 
 REM Finally copy assorted files in the root directory
 copy /Y %TEMPLATES_ROOT%\*.*  %BUILD_OUTPUT%
 
 REM Copy the common config to the template config directory
-copy /Y %TEMPLATES_ROOT%\commonConfig.js                          %BUILD_OUTPUT%\bv_build\commonConfig.js
 copy /Y %TEMPLATES_ROOT%\commonConfig.js                          %BUILD_OUTPUT%\LocalPerspective\config\commonConfig.js
 echo ########## BUILD END TIME: %date% - %time% ##########
 
