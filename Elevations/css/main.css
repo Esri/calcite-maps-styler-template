@@ -120,65 +120,34 @@ a {
 }
 
 /* Esri SignIn Dialog */
-
 .esriSignInDialog {
-    color: #eee !important;
-    border: solid 1px #666 !important;
     border-radius: 6px;
 }
 
-.esriSignInDialog .dijitDialogTitleBar {
-    border: none !important;
-    background: #555 none !important;
+.esriSignInDialog .dijitDialogTitleBar{
+    background-image: none;
     border: none !important;
     border-radius: 4px 4px 0 0;
 }
-
 .esriSignInDialog .dijitDialogTitle {
-    color: #eee;
     font-weight: bolder !important;
 }
 
 .esriSignInDialog .dijitDialogPaneContent {
     border: none !important;
-    background-color: #555 !important;
     border-radius: 0 0 4px 4px;
 }
 
 .esriSignInDialog .dijitDialogPaneContentArea {
-    background-color: #555 !important;
-    */
     border: none !important;
 }
 
 .esriSignInDialog .dijitDialogPaneActionBar {
-    background-color: #555 !important;
     border: none !important;
     border-radius: 0 0 4px 4px;
 }
-
-.esriSignInDialog .dijitButtonNode {
-    background: #333 !important;
-    border-color: #555 !important;
-}
-
-.esriSignInDialog .dijitButtonNode:hover {
-    box-shadow: 0 0 5px #222;
-}
-
-.esriSignInDialog .dijitButtonText {
-    color: #ccc !important;
-}
-
-.esriSignInDialog .dijitButtonText:hover {
-    color: #eee !important;
-}
-
-.esriSignInDialog a {
-    color: #eee !important;
-}
-
 .elevationsProfileMeasurePane .dijitDialogCloseIcon {
     z-index: 99;
 }
- 
+
+

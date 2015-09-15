@@ -5,21 +5,7 @@ define(["dojo/ready", "dojo/_base/declare", "dojo/query", "dojo/dom-style", "doj
             this.config = config;
 
             //update the color scheme
-            if (this.config.backgroundColor) {
-                var container = dom.byId("mainContainer");
-                if (container) {
-                    domStyle.set(container, "background-color", this.config.backgroundColor);
-                    domStyle.set(container, "color", this.config.textColor);
-                }
-                var top = dom.byId("topContainer");
-                if (top) {
-                    domStyle.set(top, "border-color", this.config.borderColor);
-                    dojoQuery(".dijitSplitterH").style("background-color", this.config.borderColor);
-                }
-                //update sign-in dialog colors 
-                dojoQuery(".esriSignInDialog .dijitDialogPaneActionBar").style("background-color", this.config.backgroundColor);
-
-            }
+            //this._updateTheme();
 
             //supply either the webmap id or, if available, the item info
             var itemInfo = this.config.itemInfo || this.config.webmap;
@@ -228,6 +214,9 @@ define(["dojo/ready", "dojo/_base/declare", "dojo/query", "dojo/dom-style", "doj
                 elevationsProfile.startup();
                 dojoQuery(".elevationsProfileToolbar .dijitButtonText").style("color", this.config.textColor);
 
+                this._updateTheme();
+
+
             }), lang.hitch(this, function (error) {
                 if (this.config && this.config.i18n) {
                     alert(this.config.i18n.map.error + ": " + error.message);
@@ -235,6 +224,33 @@ define(["dojo/ready", "dojo/_base/declare", "dojo/query", "dojo/dom-style", "doj
                     alert("Unable to create map: " + error.message);
                 }
             }));
+        },
+        _updateTheme: function(){
+        if (this.config.backgroundColor) {
+            var container = dom.byId("mainContainer");
+            if (container) {
+                domStyle.set(container, "background-color", this.config.backgroundColor);
+                domStyle.set(container, "color", this.config.textColor);
+            }
+            var top = dom.byId("topContainer");
+            if (top) {
+                domStyle.set(top, "border-color", this.config.borderColor);
+                dojoQuery(".dijitSplitterH").style("background-color", this.config.borderColor);
+            }
+            //update sign-in dialog colors 
+            dojoQuery(".esriSignInDialog .dijitDialogPaneActionBar").style("background-color", this.config.backgroundColor);
+            dojoQuery(".esriSignInDialog .dijitDialogPaneActionBar").style("border-color", this.config.borderColor);
+            dojoQuery(".bg").style("background-color", this.config.backgroundColor);
+            dojoQuery(".bg .dijitDialogTitleBar").style("background-color",this.config.backgroundColor);
+            dojoQuery(".fg .dijitDialogTitleBar").style("color",this.config.color);
+            dojoQuery(".esriSignInDialog .dijitDialogTitle ").style("color", this.config.textColor);
+            dojoQuery(".esriSignInDialog .dijitButtonNode").style("background", this.config.backgroundColor);
+            dojoQuery(".esriSignInDialog .dijitButtonNode").style("border-color", this.config.borderColor);
+
+            dojoQuery(".esriSignInDialog .dijitButtonText").style("color", this.config.textColor);
+
+        }
+
         },
         _setLevel: function (options) {
             var level = this.config.level;

@@ -114,6 +114,8 @@ Evented, declare, win, fx, html, lang, has, dom, domClass, domStyle, domAttr, do
             // add tool
             var pTool = domConstruct.create("div", {
                 className: "panelTool",
+                role: "button",
+                tabindex: "0",
                 id: "panelTool_" + name
             }, this.pTools);
 
@@ -183,20 +185,23 @@ Evented, declare, win, fx, html, lang, has, dom, domClass, domStyle, domAttr, do
             for (var i = 0; i < this.tools.length; i++) {
                 var name = this.tools[i];
                 var pageClose = domConstruct.create("div", {
-                    className: "pageClose"
+                    className: "pageClose",
+                    tabindex: "0"
                 }, "pageHeader_" + name);
-                on(pageClose, "click", lang.hitch(this, this.closePage));
+                on(pageClose, "click, keypress", lang.hitch(this, this.closePage));
 
                 var pageUp = domConstruct.create("div", {
-                    className: "pageUp"
+                    className: "pageUp",
+                    tabindex: "0"
                 }, "pageHeader_" + name);
-                on(pageUp, "click", lang.hitch(this, this._showPreviousPage, name));
+                on(pageUp, "click, keypress", lang.hitch(this, this._showPreviousPage, name));
 
                 if (name != this.tools[this.tools.length - 1]) {
                     var pageDown = domConstruct.create("div", {
-                        className: "pageDown"
+                        className: "pageDown",
+                        tabindex: "0"
                     }, "pageHeader_" + name);
-                    on(pageDown, "click", lang.hitch(this, this._showNextPage, name));
+                    on(pageDown, "click, keypress", lang.hitch(this, this._showNextPage, name));
                 }
 
             }
@@ -256,7 +261,7 @@ Evented, declare, win, fx, html, lang, has, dom, domClass, domStyle, domAttr, do
             this._scrollToPage(num);
         },
 
-        closePage: function () {
+        closePage: function (e) {
             this._scrollToPage(-1);
         },
         _scrollToPage: function (num) {

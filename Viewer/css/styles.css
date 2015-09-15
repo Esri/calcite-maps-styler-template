@@ -863,6 +863,10 @@ img {
   height:50px;
   line-height: 50px;
 }
+h1, h2{
+  margin:0;
+}
+
 #title{
   overflow: hidden;
   text-overflow:ellipsis;

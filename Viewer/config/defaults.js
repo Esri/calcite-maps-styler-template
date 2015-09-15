@@ -89,7 +89,7 @@ define({
     "home": true,
     //Add the geolocation button on the toolbar. Only displayed if browser supports geolocation
     "locate": true,
-    "locate_track": true,
+    "locate_track": false,
     //When true display a scalebar on the map
     "scalebar": false,
     //Specify a title for the application. If not provided the web map title is used.
