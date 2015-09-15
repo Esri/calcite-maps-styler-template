@@ -3,14 +3,16 @@
   "dojo",
   "dojo/_base/declare",
   "dojo/_base/lang",
-  "dojo/dom-construct"
+  "dojo/dom-construct",
+  "dojo/dom-style"
 ],
 function (
    Evented,
     dojo,
     declare,
     lang,
-    domConstruct
+    domConstruct,
+    domStyle
 ) {
   return declare([Evented], {
     options : {
@@ -43,8 +45,10 @@ function (
       }, dojo.byId(this.options.domNode));
 
       var deviceClass = "splashTextContainerWeb";
+      var textClass = "splashTextContentWeb";
       if (this.deviceInfo.isMobileDevice) {
         deviceClass = "splashTextContainerMobile";
+        textClass = "splashTextContentMobile"
       }
       var splashTextContainer = domConstruct.create("div", {
         id : "splashTextContainer",
@@ -52,8 +56,32 @@ function (
       }, this.splashContainer, "first");
       var splashTextContent = domConstruct.create("div", {
         id : "splashTextContent",
-        "class" : "splashTextContent " + deviceClass
+        "class": "splashTextContent " + textClass
       }, splashTextContainer, "first");
+
+      contSize = {};
+      textContSize = {};
+      if (!this.deviceInfo.isMobileDevice) {
+        if (this.options.config.splashWidth !== null && this.options.config.splashWidth !== undefined) {
+          textContSize['width'] = (parseInt(this.options.config.splashWidth) - 20) + "px";
+          contSize['width'] = this.options.config.splashWidth + "px";
+
+        } else { 
+          textContSize['width'] = "330px";
+          contSize['width'] = "350px";
+        }
+        if (this.options.config.splashHeight !== null && this.options.config.splashHeight !== undefined)
+        {
+          textContSize['height'] = (parseInt(this.options.config.splashHeight) - 10) + "px";
+          contSize['height'] = this.options.config.splashHeight + "px";
+          
+        } else {
+          textContSize['height'] = "280px";
+          contSize['height'] = "290px";
+        }
+        domStyle.set(splashTextContainer, contSize);
+        domStyle.set(splashTextContent, textContSize);
+      }
       dojo.connect(this.splashContainer, "onclick", lang.hitch(this, this._closeSplash));
 
       splashTextContent.innerHTML = this.options.config.splashText;

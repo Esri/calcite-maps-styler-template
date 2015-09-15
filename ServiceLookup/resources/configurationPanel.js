@@ -310,6 +310,26 @@
           "label": "Splash Screen message",
           "tooltip": "Message to display when application is loaded",
           "stringFieldOption": "richtext"
+        },
+        {
+          "type": "number",
+          "fieldName": "splashWidth",
+          "label": "Splash Screen Width",
+          "tooltip": "Splash Screen width",
+          "constraints": {
+            "min": 0,
+            "places": 0
+          }
+        },
+        {
+          "type": "number",
+          "fieldName": "splashHeight",
+          "label": "Splash Screen Height",
+          "tooltip": "Splash Screen height",
+          "constraints": {
+            "min": 0,
+            "places": 0
+          }
         }
       ]
     },

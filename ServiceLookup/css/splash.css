@@ -31,23 +31,30 @@
 .splashTextContainerMobile {
     width: 95%;
     height: 95%;
-  
+      overflow:hidden;
 }
 
 .splashTextContainerWeb {
-    width: 350px;
-    height: 290px;
-  
 }
-
 .splashTextContent {
+}
+.splashTextContentWeb {
     
     overflow: hidden;
     padding-top:10px;
  padding-left:10px;
   padding-right:10px;
- width: 330px;
-    height: 280px;
-    font-size:larger;
+    font-size:large;
    
 }
+
+.splashTextContentMobile {
+  
+    width: 96%;
+    height: 100%;
+    padding-top:2%;
+ padding-left:2%;
+  padding-right:2%;
+    font-size:medium;  
+}
+
