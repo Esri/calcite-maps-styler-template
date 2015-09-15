@@ -127,7 +127,7 @@
 		</script>
 
 		<script type="text/javascript">
-			var version = '1.7.0-091115';
+			var version = '1.7.0-091515';
 			var isProduction = true;
 
 			function loadJS(url, isExternal)
@@ -230,6 +230,11 @@
 					['text', 'lib-build/text']
 				]
 			};
+			
+			var urlLocale = location.search.match(/locale=([\w\-]+)/) ? RegExp.$1 : null;
+			if( urlLocale ){
+				dojoConfig.locale = urlLocale;
+			}
 		</script>
 		<!--[if IE 7]>
 			<link rel="stylesheet" href="resources/font/storymaps-icons-ie7.css">
@@ -529,7 +534,7 @@
 							<div class="control-group">
 								<label class="control-label" for="selectSocialText"></label>
 								<div class="controls">
-									<input id="selectSocialText" type="text" spellcheck="true"/>
+									<input id="selectSocialText" type="text" spellcheck="true" />
 								</div>
 							</div>
 							<div class="control-group">
