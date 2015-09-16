@@ -27,7 +27,7 @@
 
 .esriRTL .top-bar-title {
   float: right;
-  padding-right: 10px; }
+  padding-right: 45px; }
 
 .hamburger-button {
   position: absolute;
@@ -41,7 +41,7 @@
 
 .esriRTL .hamburger-button {
   float: right;
-  right: 5px; }
+  right: 250px; }
 
 .border-container-outer {
   width: 100%;

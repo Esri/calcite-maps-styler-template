@@ -193,11 +193,13 @@ input {
 
 @media only screen and (min-width: 760px) {
   .top-bar-title {
-    display: block; } }
+    display: block; } 
+
+  }
 
 .esriRTL .top-bar-title {
   float: right;
-  padding-right: 10px; }
+  padding-right: 45px; }
 
 .hamburger-button {
   position: absolute;
@@ -210,8 +212,11 @@ input {
   filter: alpha(opacity=30); }
 
 .esriRTL .hamburger-button {
-  float: right;
-  right: 5px; }
+  float: left;}
+.esriRTL .hamburger-button.nosearch{
+  float:left;
+  right:5px;
+}
 
 .border-container-outer {
   width: 100%;
@@ -365,6 +370,7 @@ html, body {
 .drawer-open #search {
   /*Hide geocoder for small screen sizes when drawer is open*/
   display: none; }
+
 
 @media only screen and (min-width: 450px) {
   .drawer-open #search {

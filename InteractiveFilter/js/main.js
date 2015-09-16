@@ -107,6 +107,8 @@ ready, declare, dom, Color, query, lang, array, domConstruct, registry, has, sni
                     }
 
                 }));
+            }else{
+                domClass.add(dom.byId("toggle_button"), "nosearch");
             }
 
             //Add the location button if enabled
