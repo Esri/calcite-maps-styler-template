@@ -158,8 +158,9 @@ ready, declare, lang, array, Color, arcgisUtils, urlUtils, on, has, sniff, regis
                     id: "locateDiv"
                 }, "mapDiv"));
                 location.startup();
+            }else{
+               domClass.add(document.body, "nolocate");
             }
-
             //Add the home button if configured
             if (this.config.home) {
                 var homeButton = new HomeButton({

@@ -271,9 +271,16 @@ html, body {
   left: 4px;
   z-index: 50; }
 
+.nolocate #homeDiv{
+  top:55px;
+}
 @media only screen and (min-width: 850px) {
   #homeDiv {
-    top: 175px; } }
+    top: 175px; } 
+  .nolocate #homeDiv{
+    top:130px;
+  }
+}
 
 .esriSimpleSlider {
   top: 55px;

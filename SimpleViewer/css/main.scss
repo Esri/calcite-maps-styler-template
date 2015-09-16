@@ -170,6 +170,12 @@ text-indent: -9999px;
     top:175px;
   }
 }
+.nolocate #homeDiv{
+  top:55px;
+  @include respond-to(850){
+    top:130px;
+  }
+}
 .esriSimpleSlider {
     top: 55px;
     left:4px;
