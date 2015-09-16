@@ -400,7 +400,6 @@ declare, win, array, Color, all, Deferred, lang, domUtils, esriRequest, esriLang
 
                     on(legendNode, "change", lang.hitch(this, function (arg) {
 
-
                         if (legendNode.checked) {
                             var layers = arcgisUtils.getLegendLayers(this.config.response);
                             var legendLayers = array.map(layers, function (layer) {
@@ -414,7 +413,6 @@ declare, win, array, Color, all, Deferred, lang, domUtils, esriRequest, esriLang
                             array.forEach(print.templates, function (template) {
                                 template.layoutOptions = layoutOptions;
                             });
-
 
                         } else {
                             array.forEach(print.templates, function (template) {
@@ -431,7 +429,10 @@ declare, win, array, Color, all, Deferred, lang, domUtils, esriRequest, esriLang
                 } else {
                     domStyle.set("printDiv", "height", "80px");
                 }
-
+                // if org has print templates defined use those. 
+                if(this.config.helperServices.printTask && this.config.helperServices.printTask.templates && this.config.helperServices.printTask.templates.length && this.config.helperServices.printTask.templates.length > 0){
+                    this.config.printlayouts = false;
+                }
                 if (this.config.printlayouts) {
                     esriRequest({
                         url: this.config.helperServices.printTask.url,
@@ -493,31 +494,38 @@ declare, win, array, Color, all, Deferred, lang, domUtils, esriRequest, esriLang
 
 
                     }));
-                } else { //use the default layouts 
-                    var templates = [{
-                        layout: "Letter ANSI A Landscape",
-                        layoutOptions: layoutOptions,
-                        label: this.config.i18n.tools.printLayouts.label1 + " ( " + this.config.printformat + " )",
-                        format: this.config.printformat
-                    },
-                    {
-                        layout: "Letter ANSI A Portrait",
-                        layoutOptions: layoutOptions,
-                        label: this.config.i18n.tools.printLayouts.label2 + " ( " + this.config.printformat + " )",
-                        format: this.config.printformat
-                    },
-                    {
-                        layout: "Letter ANSI A Landscape",
-                        layoutOptions: layoutOptions,
-                        label: this.config.i18n.tools.printLayouts.label3 + " ( image )",
-                        format: "PNG32"
-                    },
-                    {
-                        layout: "Letter ANSI A Portrait",
-                        layoutOptions: layoutOptions,
-                        label: this.config.i18n.tools.printLayouts.label4 + " ( image )",
-                        format: "PNG32"
-                    }];
+                } else { //use the default layouts  or org layouts
+      
+                    var templates = null;
+                    if(this.config.helperServices.printTask && this.config.helperServices.printTask.templates){
+                        templates = this.config.helperServices.printTask.templates;
+                    }else{
+                        templates = [{
+                            layout: "Letter ANSI A Landscape",
+                            layoutOptions: layoutOptions,
+                            label: this.config.i18n.tools.printLayouts.label1 + " ( " + this.config.printformat + " )",
+                            format: this.config.printformat
+                        },
+                        {
+                            layout: "Letter ANSI A Portrait",
+                            layoutOptions: layoutOptions,
+                            label: this.config.i18n.tools.printLayouts.label2 + " ( " + this.config.printformat + " )",
+                            format: this.config.printformat
+                        },
+                        {
+                            layout: "Letter ANSI A Landscape",
+                            layoutOptions: layoutOptions,
+                            label: this.config.i18n.tools.printLayouts.label3 + " ( image )",
+                            format: "PNG32"
+                        },
+                        {
+                            layout: "Letter ANSI A Portrait",
+                            layoutOptions: layoutOptions,
+                            label: this.config.i18n.tools.printLayouts.label4 + " ( image )",
+                            format: "PNG32"
+                        }];
+                    }                 
+
                     print = new Print({
                         map: this.map,
                         id: "printButton",
