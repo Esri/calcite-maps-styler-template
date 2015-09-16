@@ -9,6 +9,7 @@ declare, Deferred, all, lang, array, arcgisUtils, esriLang, PrintTemplate, esriR
         //************
         //defaultFormat: "pdf",
         printConfig: {
+            templates: null,
             layouts: false,
             legendLayers: [],
             printi18n: null,
@@ -51,7 +52,13 @@ declare, Deferred, all, lang, array, arcgisUtils, esriLang, PrintTemplate, esriR
         },
         _buildPrintLayouts: function () {
             var deferred = new Deferred();
-            if (this.printConfig.layouts) {
+            if(this.printConfig.templates){
+                this.templates = this.printConfig.templates;
+                array.forEach(this.templates, lang.hitch(this, function(template){
+                    template.layoutOptions = this.printConfig.layoutOptions;
+                }));
+                deferred.resolve(true);
+            }else if (this.printConfig.layouts) {
                 esriRequest({
                     url: this.printConfig.printTaskUrl,
                     content: {

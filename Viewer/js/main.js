@@ -616,15 +616,18 @@ define([
                     "scalebarUnit": this.config.units,
                     "legendLayers": []
                 };
-
-                var printConfig = new PrintConfig({
+                var printOptions = {
                     legendLayers: this.config.response,
                     layouts: has("print-layouts"),
                     format: format.toLowerCase() || null,
                     printTaskUrl: this.config.helperServices.printTask.url,
                     printi18n: this.config.i18n.tools.print,
                     layoutOptions: layoutOptions
-                });
+                };
+                if(this.config.helperServices.printTask && this.config.helperServices.printTask.templates){
+                    printOptions.templates = this.config.helperServices.printTask.templates;
+                }
+                var printConfig = new PrintConfig(printOptions);
                 printConfig.createPrintOptions().then(lang.hitch(this, function (results) {
                     var templates = results.templates;
                     var legendLayers = results.legendLayers;
@@ -671,12 +674,16 @@ define([
                     } else {
                         domStyle.set("pageBody_print", "height", "90px");
                     }
-                    this.print = new Print({
+                    var printOptions = {
                         map: this.map,
                         id: "printButton",
-                        templates: templates,
+                        //templates: templates,
                         url: this.config.helperServices.printTask.url
-                    }, domConstruct.create("div"));
+                    };
+                    if(templates){
+                        printOptions.templates = templates;
+                    }
+                    this.print = new Print(printOptions, domConstruct.create("div"));
                     domConstruct.place(this.print.printDomNode, printDiv, "first");
 
                     this.print.on("print-start", lang.hitch(this, function () {
