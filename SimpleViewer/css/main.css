@@ -66,6 +66,15 @@
   -ms-transition: width 250ms ease;
   -o-transition: width 250ms ease;
   transition: width 250ms ease; }
+.app-loading .loading-indicator, .app-error .loading-indicator {
+  /* Show this class when loading or error */
+  display: block; }
+
+.app-loading .loading-indicator {
+  /* Loading image */
+  background-position: center center;
+  background-image: url(../images/ajax-loader.gif);
+  background-repeat: no-repeat; }
 
 .app-loading .content-pane-left {
   width: 0; }
