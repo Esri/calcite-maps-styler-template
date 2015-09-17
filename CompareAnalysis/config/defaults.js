@@ -36,6 +36,7 @@ define({
     "theme_color":"#575757",
     "theme_bg_color": "#d3d3d3",
     //when true will auto sync to the first map 
+    "sync": true,
     "auto_sync": true,
     "search": false,
     "searchExtent": true,

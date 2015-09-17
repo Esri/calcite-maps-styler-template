@@ -35,8 +35,6 @@
         var package_path = window.location.pathname.substring(0, window.location.pathname.lastIndexOf('/'));
         var dojoConfig = {
             async: true,
-            // The locationPath logic below may look confusing but all its doing is
-            // enabling us to load the api from a CDN and load local modules from the correct location.
             packages: [{
                 name: "application",
                 location: package_path + '/js'
@@ -54,7 +52,7 @@
          }
     </script>
     <script type="text/javascript" src="//jsdev.arcgis.com/3.15/"></script>
-    <script type="text/javascrißpt">
+    <script type="text/javascript">
         require([
             "config/templateConfig",
             "application/template",

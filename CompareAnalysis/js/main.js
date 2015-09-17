@@ -166,16 +166,19 @@ declare, Color, parser, has, query, registry, win, all, lang, arcgisUtils, dom, 
                         //when clicked it will sync other maps to that extent. 
                         //if only one map don't enable
                         if (results && results.length > 1) {
-                            var container = domConstruct.create("div", {
-                                "class": "icon-sync-container"
-                            }, result.map.id + "_root");
+                            if(this.config.sync){
+                                var container = domConstruct.create("div", {
+                                    "class": "icon-sync-container"
+                                }, result.map.id + "_root");
 
-                            domConstruct.create("div", {
-                                "id": "sync_" + i,
-                                "class": "icon-sync",
-                                "title": this.config.i18n.tools.sync.tooltip,
-                                "click": lang.hitch(this, this._syncMaps, result.map)
-                            }, container);
+                                domConstruct.create("div", {
+                                    "id": "sync_" + i,
+                                    "class": "icon-sync",
+                                    "title": this.config.i18n.tools.sync.tooltip,
+                                    "click": lang.hitch(this, this._syncMaps, result.map)
+                                }, container);
+                            }
+
 
                         }
 

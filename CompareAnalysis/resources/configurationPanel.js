@@ -11,6 +11,11 @@
                     "selection": "multiple"
                 },{
                     "type":"boolean",
+                    "fieldName": "sync",
+                    "label": "Add sync tool",
+                    "tooltip": "When true sync option will show on map"
+                },{
+                    "type":"boolean",
                     "fieldName": "auto_sync",
                     "label": "Auto sync maps",
                     "tooltip": "When true maps will be synced to the extent of the first map."
@@ -101,6 +106,7 @@
         "theme_bg_color": "#fff",
         "openPanelOnLoad": true,
         "showTitleAndDescription": true,
+        "sync": true,
         "auto_sync": true,
         "search": false,
         "searchExtent": true
