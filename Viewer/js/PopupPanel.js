@@ -51,6 +51,11 @@ function(
       on(this.popup, "clear-features", lang.hitch(this, this._clearPopupSelection));
       on(this.popup, "set-features", lang.hitch(this, this._displayPopupContent));
       
+      //setup title text for popup buttons
+      console.log(esriStrings.widgets.popup);
+      dom.byId("popupButtonClose").title = esriStrings.widgets.popup.NLS_close;
+      dom.byId("popupButtonNext").title = esriStrings.widgets.popup.NLS_nextFeature;
+      dom.byId("popupButtonPrev").title = esriStrings.widgets.popup.NLS_prevFeature;
       // make nav links clickable
       on(query(".popupButton"), "click", lang.hitch(this, function(e){
         if(e.target.className === "popupButton close"){
