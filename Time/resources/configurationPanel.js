@@ -194,7 +194,7 @@
                ]
             },{
                "type":"string",
-               "label": "Date Format",
+               "label": "Custom Date Format",
                "fieldName": "datetimeformat",
                "placeHolder": "yyyy-MM-dd"
             },
