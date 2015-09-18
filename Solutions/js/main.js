@@ -1,4 +1,4 @@
-﻿/*global define,dojo,esri,js,unescape,console,require,jsapi_i18n:true */
+﻿/*global define,dojo,esri,js,unescape,console,require */
 /*jslint browser:true,sloppy:true,nomen:true,unparam:true,plusplus:true,evil:true,regexp:true */
 /*
  | Copyright 2014 Esri
@@ -16,10 +16,23 @@
  | limitations under the License.
  */
 //============================================================================================================================//
-define(["dojo/_base/declare", "dojo/_base/lang", "esri/arcgis/utils", "dojo/dom", "dojo/dom-class", "dojo/on",
-    "application/templateOptions", "dojo/Deferred", "dojo/request/xhr", "dojo/_base/array",
-    "dojo/_base/fx", "dojo/topic", "esri/lang", "dojo/i18n!esri/nls/jsapi",
-    "dojo/domReady!"], function (
+define([
+    "dojo/_base/declare",
+    "dojo/_base/lang",
+    "esri/arcgis/utils",
+    "dojo/dom",
+    "dojo/dom-class",
+    "dojo/on",
+    "config/templateConfig",
+    "dojo/Deferred",
+    "dojo/request/xhr",
+    "dojo/_base/array",
+    "dojo/_base/fx",
+    "dojo/topic",
+    "esri/lang",
+    "dojo/i18n!esri/nls/jsapi",
+    "dojo/domReady!"
+], function (
     declare,
     lang,
     arcgisUtils,
@@ -37,7 +50,7 @@ define(["dojo/_base/declare", "dojo/_base/lang", "esri/arcgis/utils", "dojo/dom"
 ) {
     return declare(null, {
         config: {},
-        startup: function (config, appResponse) {
+        startup: function (config) {
             var filename, waitForUI = new Deferred(), uiSource = "none";
 
             // config will contain application and user defined info for the template such as i18n strings, the web map id
@@ -45,24 +58,6 @@ define(["dojo/_base/declare", "dojo/_base/lang", "esri/arcgis/utils", "dojo/dom"
             // any url parameters and any application specific configuration information.
             if (config) {
                 this.config = config;
-                jsapi_i18n = jsapiBundle;
-                this.config.SendToTest = this._checkTestpoint("SendToTest");
-                this.config.SaveToTest = this._checkTestpoint("SaveToTest");
-
-                // Testpoint #1: boilerplate configured
-                if (this.config.SendToTest) {
-                    window.external[this.config.SendToTest]("status 1. boilerplate configured");
-                    window.external[this.config.SendToTest]("json " + JSON.stringify(this.config, [
-                        "webmap", "appid", "group", "oauthappid", // template param items
-                        "proxyurl", "bingKey", "sharinghost", // defaults
-                        "appResponse", // response from appid query
-                        "app", "ex"  // templateOptions urlItems
-                    ]));
-                    window.external[this.config.SendToTest]("json " + JSON.stringify(this.config.helperServices.printTask, ["url"]));
-                    window.external[this.config.SendToTest]("json " + JSON.stringify(this.config.i18n, ["$locale", "direction"]));
-                    window.external[this.config.SendToTest]("json " + JSON.stringify(this.config.i18n.map, ["error"]));
-                    window.external[this.config.SendToTest]("json " + JSON.stringify(this.config.i18n.messages, ["unableToLaunchApp"]));
-                }
 
                 // Get the UI elements code
                 this.uiElementsReady = this._getUIElements();
@@ -81,28 +76,28 @@ define(["dojo/_base/declare", "dojo/_base/lang", "esri/arcgis/utils", "dojo/dom"
                 //    apps2/GeneralMap
                 //
                 // Case #1 (appid)
-                if (esriLang.isDefined(this.config.appid) && esriLang.isDefined(appResponse)) {
-                    if (appResponse.itemData && appResponse.itemData.source) {
+                if (esriLang.isDefined(this.config.appid) && esriLang.isDefined(config.appResponse)) {
+                    if (config.appResponse.itemData && config.appResponse.itemData.source) {
                         // The webmap associated with the appid is the one that we want, not the one in
                         // the URL as selected in the template.js
-                        if (appResponse.itemData.values && appResponse.itemData.values.webmap !== "") {
-                            this.config.webmap = appResponse.itemData.values.webmap;
+                        if (config.appResponse.itemData.values && config.appResponse.itemData.values.webmap !== "") {
+                            this.config.webmap = config.appResponse.itemData.values.webmap;
                         }
 
                         // Get application's AGOL-based template
-                        arcgisUtils.getItem(appResponse.itemData.source).then(
+                        arcgisUtils.getItem(config.appResponse.itemData.source).then(
                             lang.hitch(this, function (templateResponse) {
                                 if (templateResponse.item && templateResponse.itemData && templateResponse.itemData.values) {
                                     this.config.ui = templateResponse.itemData.ui || {};
                                     this.config.appValues = templateResponse.itemData.values || {};
-                                    lang.mixin(this.config.appValues, appResponse.itemData.values || {});
+                                    lang.mixin(this.config.appValues, config.appResponse.itemData.values || {});
 
                                     // If no webmap id was supplied in the URL or configured for the app, use the webmap in the file
                                     if (!this.config.webmap) {
                                         this.config.webmap = this.config.appValues.webmap;
                                     }
 
-                                    uiSource = "Using app specification in " + this.config.appid;
+                                    uiSource = this.config.appid;
                                     waitForUI.resolve();
                                 } else {
                                     waitForUI.reject(this._configurationError());
@@ -144,7 +139,7 @@ define(["dojo/_base/declare", "dojo/_base/lang", "esri/arcgis/utils", "dojo/dom"
                             if ((templateConfig.queryForCommonConfig && !this.config.orgInfo.isPortal) || !this.config.webmap) {
                                 this.config.webmap = fileTemplate.values.webmap;
                             }
-                            uiSource = "Using app specification in " + filename;
+                            uiSource = filename;
                             waitForUI.resolve();
                         }),
                         lang.hitch(this, function () {
@@ -173,16 +168,8 @@ define(["dojo/_base/declare", "dojo/_base/lang", "esri/arcgis/utils", "dojo/dom"
                         // For creating the webmap, supply either the webmap id or, if available, the item info
                         var itemInfo = this.config.itemInfo || this.config.webmap;
 
-                        console.log(uiSource);
-                        // Testpoint #2: UI selected; ready to create map
-                        if (this.config.SendToTest) {
-                            window.external[this.config.SendToTest]("status 2. UI and webmap retrieved; ready to create map; " + uiSource);
-                            window.external[this.config.SendToTest]("json " + JSON.stringify(itemInfo.item, ["id", "owner", "title"]));
-                            window.external[this.config.SendToTest]("json " + JSON.stringify(itemInfo.itemData, ["applicationProperties"]));
-                        }
-
                         // Create the webmap
-                        this._createWebMap(itemInfo);
+                        this._createWebMap(itemInfo, uiSource);
                     }), lang.hitch(this, function (error) {
                         this.reportError(error || new Error("Error retrieving webmap."));
                     }));
@@ -246,19 +233,6 @@ define(["dojo/_base/declare", "dojo/_base/lang", "esri/arcgis/utils", "dojo/dom"
                 }
             }
             return error;
-        },
-
-        // Checks for the presence of an ActiveX callback in a way that both works and passes JSLint
-        _checkTestpoint: function (testpointName) {
-            var ext, testpoint;
-            ext = typeof window.external;
-            if (ext !== "undefined") {
-                testpoint = typeof window.external[testpointName];
-                if (testpoint !== "undefined") {
-                    return testpointName;
-                }
-            }
-            return null;
         },
 
         // Get the UI elements
@@ -440,21 +414,9 @@ define(["dojo/_base/declare", "dojo/_base/lang", "esri/arcgis/utils", "dojo/dom"
             console.log("Application id " + (this.config.appid || "(none)"));
             console.log("Webmap id " + (this.config.webmap || "(none)"));
 
-            // Testpoint #3: map constructed
-            if (this.config.SendToTest) {
-                window.external[this.config.SendToTest]("status 3. map constructed");
-                window.external[this.config.SendToTest]("json " + JSON.stringify(this.config, ["appid", "webmap"]));
-            }
-
             // When the UI elements are ready, we can build the UI
             this.uiElementsReady.then(
                 lang.hitch(this, function (results) {
-                    // Testpoint #4: UI elements ready
-                    if (this.config.SendToTest) {
-                        window.external[this.config.SendToTest]("status 4. UI elements ready");
-                        window.external[this.config.SendToTest]("json " + JSON.stringify(this.config.appValues));
-                    }
-
                     this.config.appValues = this._organizeConfigValues(this.config.appValues);
 
                     // Add in some useful content from creating the map
@@ -477,9 +439,7 @@ define(["dojo/_base/declare", "dojo/_base/lang", "esri/arcgis/utils", "dojo/dom"
                     });
 
                     // Build the UI
-                    array.forEach(this.config.ui, lang.hitch(this, function (component) {
-                        this._instantiateClass(component);
-                    }));
+                    this._buildUI(this.config.ui);
 
                     // Switch error flag to the one that the script will use and publish any accumulated errors
                     // as a single report using the script's error-handler mechanism, e.g., LGPublishEcho
@@ -499,12 +459,6 @@ define(["dojo/_base/declare", "dojo/_base/lang", "esri/arcgis/utils", "dojo/dom"
 
                     console.log("Application is ready");
                     this._revealApp();
-
-                    // Testpoint #5: UI constructed
-                    if (this.config.SendToTest) {
-                        window.external[this.config.SendToTest]("status 5. UI constructed");
-                        window.external[this.config.SendToTest]("status ready");
-                    }
                 }),
                 lang.hitch(this, function (error) {
                     console.log(error ? error.message : this._launchError().message);
@@ -513,13 +467,28 @@ define(["dojo/_base/declare", "dojo/_base/lang", "esri/arcgis/utils", "dojo/dom"
             );
         },
 
+        _buildUI: function (uiConfig) {
+            array.forEach(uiConfig, lang.hitch(this, this._instantiateClass));
+        },
+
         // create a map based on the input web map id
-        _createWebMap: function (itemInfo) {
-            arcgisUtils.createMap(itemInfo, "mapDiv", {
-                mapOptions: {
-                    // Optionally define additional map config here for example you can
-                    // turn the slider off, display info windows, disable wraparound 180, slider position and more.
-                },
+        _createWebMap: function (itemInfo, uiSource) {
+            // set extent from config/url
+            itemInfo = this._setExtent(itemInfo);
+            console.log("Using app specification in " + uiSource);
+            // Optionally define additional map config here for example you can
+            // turn the slider off, display info windows, disable wraparound 180, slider position and more.
+            var mapOptions = {};
+            // set zoom level from config/url
+            mapOptions = this._setLevel(mapOptions);
+            // set map center from config/url
+            mapOptions = this._setCenter(mapOptions);
+            // create webmap from item
+            return arcgisUtils.createMap(itemInfo, "mapDiv", {
+                mapOptions: mapOptions,
+                usePopupManager: true,
+                layerMixins: this.config.layerMixins || [],
+                editable: this.config.editable,
                 bingMapsKey: this.config.bingKey
             }).then(lang.hitch(this, function (response) {
                 // Once the map is created we get access to the response which provides important info
@@ -543,6 +512,43 @@ define(["dojo/_base/declare", "dojo/_base/lang", "esri/arcgis/utils", "dojo/dom"
                     }));
                 }
             }), this.reportError);
+        },
+
+        _setLevel: function (options) {
+            var level = this.config.level;
+            //specify center and zoom if provided as url params
+            if (level) {
+                options.zoom = level;
+            }
+            return options;
+        },
+
+        _setCenter: function (options) {
+            var points, center = this.config.center;
+            if (center) {
+                points = center.split(",");
+                if (points && points.length === 2) {
+                    options.center = [parseFloat(points[0]), parseFloat(points[1])];
+                }
+            }
+            return options;
+        },
+
+        _setExtent: function (info) {
+            var extArray, extLength, e = this.config.extent;
+            //If a custom extent is set as a url parameter handle that before creating the map
+            if (e) {
+                extArray = e.split(",");
+                extLength = extArray.length;
+                if (extLength === 4) {
+                    info.item.extent = [
+                        [parseFloat(extArray[0]), parseFloat(extArray[1])],
+                        [parseFloat(extArray[2]), parseFloat(extArray[3])]
+                    ];
+                }
+            }
+            return info;
         }
+
     });
 });

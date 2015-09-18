@@ -15,7 +15,7 @@
         " | limitations under the License."
     ],
     "values": {
-        "webmap": "8a6fbb42a541479c86eae137845128b2",
+        "webmap": "3c33240fbacd42339547a06a966dcbf7",
         "titleBar.title": "",
         "titleBar.iconUrl": "images/onlineapp.png",
         "colorizer.theme": "SeaBlues",
@@ -85,7 +85,7 @@
         "classname": "js.LGNotes",
         "config": {
             "notes": [
-                "commit 396537b9a7f84c99 2015-08-17 08:57:42 -0700"
+                "3ec0bfb5c6423e2b 2015-09-18 15:39:36 -0700"
             ]
         }
     }, {
@@ -439,3 +439,4 @@
         }
     }]
 }
+

@@ -1,8 +1,8 @@
-Built on 08/18/2015 15:17:45.96 from
+Built on 09/18/2015 15:41:16.34 from
 repository local-government-online-apps
 branch develop
-commit 396537b9a7f84c99d0dca34f857800eb7c950eb9
+commit 3ec0bfb5c6423e2bdc17b9fa53203427168b85f5
 Author: MikeTschudi <mtschudi@esri.com>
-Date:   Mon Aug 17 08:57:42 2015 -0700
+Date:   Fri Sep 18 15:39:36 2015 -0700
 
-    Added address-searching sample
+    Update tests for boilerplate interface change

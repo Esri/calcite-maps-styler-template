@@ -1,0 +1,4 @@
+﻿#testsOut{position:absolute;left:8px;top:0px;height:8px;overflow:hidden;z-index:99;font-size:8px;line-height:8px;background-color:white}
+#testsAnchor{width:8px;height:8px;vertical-align:top}
+#testsStatus{display:inline-block}
+.testStatusBlock{width:8px;height:8px;background-color:gray;margin:0 1px;display:inline-block}

@@ -1,5 +1,5 @@
-commit d1ed0e81c2b8b54e362d8b31bca1c83bc953983e
-Author: Matt Driscoll <MDriscoll@esri.com>
-Date:   Fri Aug 8 13:06:54 2014 -0700
+commit b6c9bec02f10e2fbeefc86706d27aa04dba905f1
+Author: Kelly Hutchins <khutchins@esri.com>
+Date:   Mon Sep 14 17:12:55 2015 -0700
 
-    remove appREsponse
+    Update index.html

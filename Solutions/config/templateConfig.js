@@ -1,4 +1,4 @@
-﻿/*global define */
+/*global define */
 /*jslint sloppy:true */
 /*
  | Copyright 2014 Esri
@@ -22,6 +22,10 @@ define({
     "queryForGroupInfo": false,
     // When true, the template will query arcgis.com for the items contained within the group
     "queryForGroupItems": false,
+    // Use a local hosted webmap instead of a webmap on ArcGIS or portal.
+    "useLocalWebmap": false,
+    // Webmap file to use for the local webmap
+    "localWebmapFile": "config/demoMap",
     //When true the template will query arcgis.com for default settings for helper services, units etc. If you
     //want to use custom settings for units or any of the helper services set queryForOrg to false then enter
     //default values for any items you need using the helper services and units properties.
@@ -31,10 +35,9 @@ define({
     //Note that we've included a placeholder nls folder and a resource file with one error string
     //to show how to setup the strings file.
     "queryForLocale": true,
-    // When true, this will query and mixin a common config file from the path specified in the index.html dojo packages
-    "queryForCommonConfig": true,
     // These are the options specified for querying items within the group. Modify these to get more items. You can also call the public template.queryGroupItems() method with these options as a parameter.
     "groupParams": {
+        q: "group:\"${groupid}\" AND -type:\"Code Attachment\"",
         "sortField": "modified",
         "sortOrder": "desc",
         "num": 9,
@@ -46,6 +49,11 @@ define({
     "urlItems": [
         "app", // the file containing the app's UI
         "ex", // extents parameter ex=xmin,ymin,xmax,ymax[,wkid=102100], e.g., ex=-9279312,5238092,-9259324,5256972,102100, or ex=wkt
-        "find" // search string
-    ]
+        "find", // search string
+        "center",
+        "extent",
+        "level"
+    ],
+    // Most users will not need to modify this value. For esri hosting environments only. Will automatically create a "sharinghost" and "proxyurl" for the application. Only set this is to true if the app is going to be stored on Esri's hosting servers. If you are using your own custom hosted portal, set the "sharinghost" in defaults.js instead of setting this to true.
+    esriEnvironment: false
 });
