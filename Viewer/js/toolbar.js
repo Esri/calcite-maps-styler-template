@@ -185,22 +185,34 @@ Evented, declare, win, fx, html, lang, has, dom, domClass, domStyle, domAttr, do
             for (var i = 0; i < this.tools.length; i++) {
                 var name = this.tools[i];
                 var pageClose = domConstruct.create("div", {
-                    className: "pageClose",
-                    tabindex: "0"
+                    className: "pageNav pageClose",
+                    tabindex: "0",
+                    title: this.config.i18n.nav.close
                 }, "pageHeader_" + name);
+                if(this.config.icons === "black"){
+                    domClass.add(pageClose, "icons-dark");
+                }
                 on(pageClose, "click, keypress", lang.hitch(this, this.closePage));
 
                 var pageUp = domConstruct.create("div", {
-                    className: "pageUp",
-                    tabindex: "0"
+                    className: "pageNav pageUp",
+                    tabindex: "0",
+                    title: this.config.i18n.nav.previous
                 }, "pageHeader_" + name);
+                if(this.config.icons === "black"){
+                    domClass.add(pageUp, "icons-dark");
+                }                
                 on(pageUp, "click, keypress", lang.hitch(this, this._showPreviousPage, name));
 
                 if (name != this.tools[this.tools.length - 1]) {
                     var pageDown = domConstruct.create("div", {
-                        className: "pageDown",
-                        tabindex: "0"
+                        className: "pageNav pageDown",
+                        tabindex: "0",
+                        title: this.config.i18n.nav.next
                     }, "pageHeader_" + name);
+                    if(this.config.icons === "black"){
+                        domClass.add(pageDown, "icons-dark");
+                    }
                     on(pageDown, "click, keypress", lang.hitch(this, this._showNextPage, name));
                 }
 

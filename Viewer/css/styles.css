@@ -375,6 +375,9 @@ html, body {
   user-select: none;
   padding: 6px; }
 
+.esriBookmarks .dojoDndItem{
+  border-bottom: none;
+}
 .esriBookmarkLabel {
   font-size: 16px; }
 
@@ -416,24 +419,23 @@ html, body {
   left: 25px;
   bottom: 40px; }
 
-.HomeButton .home:before {
+.LocateButton .zoomLocateButton:before ,.HomeButton .home:before  {
+  font-size: 18px;
   width: 24px;
   height: 24px;
-  content: "\e800";
+  line-height: 24px;
   position: absolute;
   font-family: "tool-icons";
   text-align: center;
-  speak: none; }
+  speak: none;
+}
+.HomeButton .home:before {
+  content: "\e800";
+}
 
 .LocateButton .zoomLocateButton:before {
-  content: "\e80c";
-  font-size: 20px;
-  width: 24px;
-  height: 24px;
-  position: absolute;
-  font-family: "tool-icons";
-  text-align: center;
-  speak: none; }
+  content: "\e630";
+ }
 
 .LocateButton .zoomLocateButton {
   padding: 0;
@@ -694,39 +696,44 @@ img {
   width: 40px;
   height: 40px; }
 
-.pageClose {
+.pageNav{
+  color:#ccc;
   cursor: pointer;
   position: absolute;
-  right: 5px;
+  right:5px;
+  display: block;
+}
+.pageClose {
   top: 9px;
-  background: url(../images/close.png) no-repeat;
-  background-size: 24px;
-  width: 24px;
-  height: 24px;
-  display: block; }
+ }
 
 .pageUp {
-  position: absolute;
   top: 35px;
-  right: 5px;
-  background: url(../images/up.png) no-repeat;
-  background-size: 24px;
-  cursor: pointer;
-  width: 24px;
-  height: 24px;
-  display: block; }
+ }
 
+.pageDown:before, .pageUp:before, .pageClose:before{
+  font-family: "tool-icons";
+  font-size:12px;
+  line-height: 14px;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 20px;
+  padding:4px;
+}
 .pageDown {
-  position: absolute;
   top: 60px;
-  right: 5px;
-  background: url(../images/down.png) no-repeat;
-  background-size: 24px;
-  cursor: pointer;
-  width: 24px;
-  height: 24px;
-  display: block; }
-
+}
+.pageClose:before{
+  content:"\e600";
+}
+.pageUp:before{
+  content: "\e682";
+}
+.pageDown:before{
+  content: "\e681";
+}
+.icons-dark{
+  color:#333;
+}
 .pageBody {
   position: relative;
   top: 0;
@@ -983,7 +990,8 @@ h1, h2{
   float: left;
   width: 24px;
   height: 24px;
-  margin-left: 0px;
+  line-height: 24px;
+  margin-left: 0;
   margin-top: 3px; }
 
 /*Calcite updates keep list and submit issues*/
@@ -1245,8 +1253,8 @@ input[type=checkbox]{
 /*Icon Fonts*/
 @font-face {
   font-family: 'tool-icons';
-  src: url('../fonts/tool-icons.eot?23344103');
-  src: url('../fonts/tool-icons.eot?23344103#iefix') format('embedded-opentype'), url('../fonts/tool-icons.woff?23344103') format('woff'), url('../fonts/tool-icons.ttf?23344103') format('truetype'), url('../fonts/tool-icons.svg?23344103#tool-icons') format('svg');
+  src: url('../fonts/tool-icons.eot?3smunh');
+  src: url('../fonts/tool-icons.eot?3smunh#iefix') format('embedded-opentype'), url('../fonts/tool-icons.woff?3smunh') format('woff'), url('../fonts/tool-icons.ttf?3smunh') format('truetype'), url('../fonts/tool-icons.svg?3smunh#tool-icons') format('svg');
   font-weight: normal;
   font-style: normal; }
 
@@ -1286,10 +1294,6 @@ input[type=checkbox]{
 .icon-home-1:before {
   content: '\e800'; }
 
-/* ' ' */
-.icon-menu:before {
-  content: '\e801'; }
-
 /* '' */
 .icon-twitter:before {
   content: '\e802'; }
@@ -1316,12 +1320,15 @@ input[type=checkbox]{
 
 /* '' */
 .icon-target:before {
-  content: '\e80c'; }
-
+  content: "\e630";
+}
 /* '' */
-.icon-angle-down:before {
-  content: '\e809'; }
+.icon-down:before {
+  content: '\681'; }
 
-/* '  ' */
-.icon-check-1:before {
-  content: '\2713'; }
+.icon-up:before {
+  content: "\e682";
+}
+.icon-close:before {
+  content: "\e600";
+}
