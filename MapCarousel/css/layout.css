@@ -39,7 +39,7 @@ background-color:#fff;
 .map{
 height:100% !important;
 }
-.map .container {
+.map .esriMapContainer {
 height:100% !important;
 position:absolute;
 }
