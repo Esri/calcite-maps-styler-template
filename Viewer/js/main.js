@@ -17,6 +17,8 @@ define([
     "dojo/ready", 
     "dojo/json", 
 
+    "dojo/i18n!esri/nls/jsapi",
+
     "dojo/_base/array", 
     "dojo/_base/Color", 
     "dojo/_base/declare", 
@@ -59,6 +61,8 @@ define([
     "esri/layers/FeatureLayer"
     ], function (
         ready,JSON,
+
+        esriBundle,
 
         array, Color, declare, lang, 
 
@@ -677,13 +681,15 @@ define([
                     var printOptions = {
                         map: this.map,
                         id: "printButton",
-                        //templates: templates,
                         url: this.config.helperServices.printTask.url
                     };
                     if(templates){
                         printOptions.templates = templates;
                     }
+                    // Add a loading indicator to the Printing label
+                    esriBundle.widgets.print.NLS_printing = "<img class='loadPrint' src='./images/loading-small.png'/> " + esriBundle.widgets.print.NLS_printing;
                     this.print = new Print(printOptions, domConstruct.create("div"));
+
                     domConstruct.place(this.print.printDomNode, printDiv, "first");
 
                     this.print.on("print-start", lang.hitch(this, function () {

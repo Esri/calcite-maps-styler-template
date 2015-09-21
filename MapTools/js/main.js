@@ -346,7 +346,7 @@ declare, win, array, Color, all, Deferred, lang, domUtils, esriRequest, esriLang
                 return tableDef.promise;
             }));
 
-            require(["application/sniff!print?esri/dijit/Print", "application/sniff!print?esri/tasks/PrintTemplate"], lang.hitch(this, function (Print, PrintTemplate) {
+            require(["application/sniff!print?esri/dijit/Print", "application/sniff!print?esri/tasks/PrintTemplate","application/sniff!print?dojo/i18n!esri/nls/jsapi"], lang.hitch(this, function (Print, PrintTemplate, esriBundle) {
 
                 if (!Print) {
                     printDef.resolve(null);
@@ -354,6 +354,9 @@ declare, win, array, Color, all, Deferred, lang, domUtils, esriRequest, esriLang
                 }
                 var print = null;
                 var btn = this._createToolbarButton("print_toggle", "icon-printer", this.config.i18n.tools.printTool);
+
+                // Add a loading indicator to the Printing label
+                esriBundle.widgets.print.NLS_printing = "<img class='loadPrint' src='./images/loading-small.png'/>" + esriBundle.widgets.print.NLS_printing;
 
                 on(btn, "click", lang.hitch(this, function () {
                     this._displayContainer("print_container", "print_toggle");

@@ -171,16 +171,50 @@ html, body {
   margin-bottom: 12px;
   display:block;
 }
+.esriPrintout{
+  font-size:20px;
+}
 .esriPrintout a {
   color: #5daddd; 
 }
-
 .esriPrint {
   position: absolute;
   bottom:5px;
   right: 20px;
   padding:5px;
+  color:#fff;
 }
+
+.loadPrint{
+    padding-right:4px;
+    -webkit-animation-name: rotate; 
+    -webkit-animation-duration: 1s; 
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+    -moz-animation-name: rotate; 
+    -moz-animation-duration: 1s; 
+    -moz-animation-iteration-count: infinite;
+    -moz-animation-timing-function: linear;
+    animation-name: rotate; 
+    animation-duration: 1s; 
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+@-webkit-keyframes rotate {
+    from {-webkit-transform: rotate(0deg);}
+    to {-webkit-transform: rotate(360deg);}
+}
+
+@-moz-keyframes rotate {
+    from {-moz-transform: rotate(0deg);}
+    to {-moz-transform: rotate(360deg);}
+}
+
+@keyframes rotate {
+    from {transform: rotate(0deg);}
+    to {transform: rotate(360deg);}
+}
+
 .esriMeasurement .esriMeasurementResultTable{
   padding:6px;
 }
@@ -1247,7 +1281,7 @@ h1, h2{
   line-height: 30px;
 }
 input[type=checkbox]{
-  font-size:2em;
+  font-size:1em;
 }
 
 /*Icon Fonts*/
