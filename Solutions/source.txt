@@ -1,8 +1,8 @@
-Built on 09/18/2015 15:41:16.34 from
+Built on 09/22/2015 11:29:29.46 from
 repository local-government-online-apps
 branch develop
-commit 3ec0bfb5c6423e2bdc17b9fa53203427168b85f5
+commit dbaa4c09ee273ee65e576747b504be03ac188e03
 Author: MikeTschudi <mtschudi@esri.com>
-Date:   Fri Sep 18 15:39:36 2015 -0700
+Date:   Tue Sep 22 11:28:07 2015 -0700
 
-    Update tests for boilerplate interface change
+    Updated boilerplate

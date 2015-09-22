@@ -511,7 +511,20 @@ define([
                     },
                     callbackParamName: "callback"
                 }).then(lang.hitch(this, function (response) {
-                    var cfg = {};
+                    var i, cfg = {};
+
+                    if (this.templateConfig.webTierSecurity) {
+                        // Iterate over the list of authorizedCrossOriginDomains
+                        // and add each as a javascript obj to the corsEnabledServers
+                        if (response.authorizedCrossOriginDomains && response.authorizedCrossOriginDomains.length) {
+                            for (i = 0; i < response.authorizedCrossOriginDomains.length; i++) {
+                                esriConfig.defaults.io.corsEnabledServers.push({
+                                    host: response.authorizedCrossOriginDomains[i],
+                                    withCredentials: true
+                                });
+                            }
+                        }
+                    }
                     // save organization information
                     cfg.orgInfo = response;
                     // get units defined by the org or the org user
