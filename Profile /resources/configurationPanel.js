@@ -119,6 +119,11 @@
         "fieldName": "color",
         "tooltip": "Choose a text color",
         "label": "Text color"
+      },{
+        "type": "string",
+        "fieldName": "customstyle",
+        "tooltip": "Enter custom css",
+        "label": "Custom css"
       }]
     }
   ],
