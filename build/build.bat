@@ -69,6 +69,7 @@ mkdir %BUILD_OUTPUT%\OnePane\gpx
 mkdir %BUILD_OUTPUT%\Panels
 mkdir %BUILD_OUTPUT%\PanelsLegend
 mkdir %BUILD_OUTPUT%\PublicGallery
+mkdir %BUILD_OUTPUT%\Profile
 mkdir %BUILD_OUTPUT%\ServiceLookup
 mkdir %BUILD_OUTPUT%\InformationLookup
 mkdir %BUILD_OUTPUT%\SimpleMapViewer
@@ -149,6 +150,7 @@ xcopy %TEMPLATES_ROOT%\archive\TwitterTimeline                  %BUILD_OUTPUT%\O
 xcopy %TEMPLATES_ROOT%\archive\Swipe                            %BUILD_OUTPUT%\OnePane\swipe                        /E /Y
 xcopy %TEMPLATES_ROOT%\archive\GPX                              %BUILD_OUTPUT%\OnePane\gpx                          /E /Y
 xcopy %TEMPLATES_ROOT%\PublicGallery                            %BUILD_OUTPUT%\PublicGallery                        /E /Y
+xcopy %TEMPLATES_ROOT%\Profile                                  %BUILD_OUTPUT%\Profile                              /E /Y
 xcopy %TEMPLATES_ROOT%\ServiceLookup                            %BUILD_OUTPUT%\ServiceLookup                        /E /Y
 xcopy %TEMPLATES_ROOT%\ServiceLookup                            %BUILD_OUTPUT%\InformationLookup                    /E /Y
 xcopy %TEMPLATES_ROOT%\archive\SimpleMapViewer                  %BUILD_OUTPUT%\SimpleMapViewer                      /E /Y
