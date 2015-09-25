@@ -500,7 +500,7 @@ display:none;
 .app-loading .loading-indicator {
     display: block;
     background-position: center center;
-    background-image: url(../images/ajax-loader.gif);
+    background-image: url(../images/loading.gif);
     background-repeat: no-repeat;
 }
 .app-error .loading-indicator {
