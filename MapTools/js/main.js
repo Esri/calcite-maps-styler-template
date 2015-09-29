@@ -422,7 +422,6 @@ declare, win, array, Color, all, Deferred, lang, domUtils, esriRequest, esriLang
                                 if (template.layoutOptions && template.layoutOptions.legendLayers) {
                                     template.layoutOptions.legendLayers = [];
                                 }
-
                             });
                         }
 
@@ -469,7 +468,7 @@ declare, win, array, Color, all, Deferred, lang, domUtils, esriRequest, esriLang
                             var plate = new PrintTemplate();
                             plate.layout = plate.label = name;
                             plate.format = this.config.printformat;
-
+    
                             plate.layoutOptions = layoutOptions;
                             return plate;
                         }));
@@ -528,7 +527,15 @@ declare, win, array, Color, all, Deferred, lang, domUtils, esriRequest, esriLang
                             format: "PNG32"
                         }];
                     }                 
-
+                    array.forEach(templates, lang.hitch(this, function(template){
+                        if(template.layout === "MAP_ONLY"){
+                            template.exportOptions = {
+                                width:670,
+                                height:500,
+                                dpi:96
+                            };
+                        }
+                    }));
                     print = new Print({
                         map: this.map,
                         id: "printButton",

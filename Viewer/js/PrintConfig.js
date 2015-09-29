@@ -55,6 +55,13 @@ declare, Deferred, all, lang, array, arcgisUtils, esriLang, PrintTemplate, esriR
             if(this.printConfig.templates){
                 this.templates = this.printConfig.templates;
                 array.forEach(this.templates, lang.hitch(this, function(template){
+                    if(template.layout === "MAP_ONLY"){
+                        template.exportOptions = {
+                            width:670,
+                            height:500,
+                            dpi:96
+                        };
+                    }
                     template.layoutOptions = this.printConfig.layoutOptions;
                 }));
                 deferred.resolve(true);
