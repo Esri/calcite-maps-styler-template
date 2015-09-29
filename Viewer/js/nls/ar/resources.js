@@ -19,6 +19,11 @@ define(
         "map": {
             "error": "يتعذر إنشاء الخريطة"
         },
+        "nav":{
+            "next": "بيت_Next__لاحقة",
+            "previous": "بيت_Previous___لاحقة",
+            "close": "بيت_Close___لاحقة"
+        },
         "tools":{
             "search":{
                 "error": "تعذر العثور على الموقع",

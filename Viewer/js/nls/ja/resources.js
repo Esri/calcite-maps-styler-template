@@ -19,6 +19,11 @@ define(
         "map": {
             "error": "マップを作成できません"
         },
+        "nav":{
+            "next": "須_Next__鷗",
+            "previous": "須_Previous___鷗",
+            "close": "須_Close___鷗"
+        },
         "tools":{
             "search":{
                 "error": "場所が見つかりませんでした",

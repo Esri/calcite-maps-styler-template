@@ -19,6 +19,11 @@ define(
         "map": {
             "error": "Harita oluşturulamıyor"
         },
+        "nav":{
+            "next": "ı_Next__İ",
+            "previous": "ı_Previous___İ",
+            "close": "ı_Close___İ"
+        },
         "tools":{
             "search":{
                 "error": "Konum bulunamadı",

@@ -19,6 +19,11 @@ define(
         "map": {
             "error": "Karttaa ei voi luoda"
         },
+        "nav":{
+            "next": "Å_Next__ö",
+            "previous": "Å_Previous___ö",
+            "close": "Å_Close___ö"
+        },
         "tools":{
             "search":{
                 "error": "Sijaintia ei löytynyt",

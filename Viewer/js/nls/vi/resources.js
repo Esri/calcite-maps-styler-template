@@ -19,6 +19,11 @@ define(
         "map": {
             "error": "Không thể tạo bản đồ"
         },
+        "nav":{
+            "next": "Đ_Next__ớ",
+            "previous": "Đ_Previous___ớ",
+            "close": "Đ_Close___ớ"
+        },
         "tools":{
             "search":{
                 "error": "Không thể tìm thấy vị trí",

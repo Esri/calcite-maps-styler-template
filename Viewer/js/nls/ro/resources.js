@@ -19,6 +19,11 @@ define(
         "map": {
             "error": "Nu se poate crea harta"
         },
+        "nav":{
+            "next": "Ă_Next__ș",
+            "previous": "Ă_Previous___ș",
+            "close": "Ă_Close___ș"
+        },
         "tools":{
             "search":{
                 "error": "Locaţia nu a putut fi găsită",

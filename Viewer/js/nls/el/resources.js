@@ -19,6 +19,11 @@ define(
         "map": {
             "error": "Δεν είναι δυνατή η δημιουργία χάρτη"
         },
+        "nav":{
+            "next": "Đ_Next__ớ",
+            "previous": "Đ_Previous___ớ",
+            "close": "Đ_Close___ớ"
+        },
         "tools":{
             "search":{
                 "error": "Δεν ήταν δυνατή η εύρεση της τοποθεσίας",

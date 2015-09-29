@@ -19,6 +19,11 @@ define(
         "map": {
             "error": "Não foi possível criar o mapa"
         },
+        "nav":{
+            "next": "ã_Next__Ç",
+            "previous": "ã_Previous___Ç",
+            "close": "ã_Close___Ç"
+        },
         "tools":{
             "search":{
                 "error": "A localização não pode ser encontrada",

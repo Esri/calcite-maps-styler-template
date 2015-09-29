@@ -19,6 +19,11 @@ define(
         "map": {
             "error": "无法创建地图"
         },
+        "nav":{
+            "next": "试_Next__验",
+            "previous": "试_Previous___验",
+            "close": "试_Close___验"
+        },
         "tools":{
             "search":{
                 "error": "无法找到位置",

@@ -19,6 +19,11 @@ define(
         "map": {
             "error": "Kan kaart niet maken"
         },
+        "nav":{
+            "next": "Ĳ_Next__ä",
+            "previous": "Ĳ_Previous___ä",
+            "close": "Ĳ_Close___ä"
+        },
         "tools":{
             "search":{
                 "error": "Locatie is niet gevonden",

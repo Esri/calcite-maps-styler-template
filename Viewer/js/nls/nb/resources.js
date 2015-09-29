@@ -19,6 +19,11 @@ define(
         "map": {
             "error": "Kan ikke opprette kart"
         },
+        "nav":{
+            "next": "å_Next__ø",
+            "previous": "å_Previous___ø",
+            "close": "å_Close___ø"
+        },
         "tools":{
             "search":{
                 "error": "Finner ikke lokasjonen",

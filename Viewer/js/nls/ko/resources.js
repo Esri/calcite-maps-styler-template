@@ -19,6 +19,11 @@ define(
         "map": {
             "error": "맵을 생성할 수 없음"
         },
+        "nav":{
+            "next": "한_Next__빠",
+            "previous": "한_Previous___빠",
+            "close": "한_Close___빠"
+        },
         "tools":{
             "search":{
                 "error": "위치를 찾을 수 없습니다.",

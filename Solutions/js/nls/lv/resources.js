@@ -15,7 +15,7 @@
  | limitations under the License.
  */
 define(
-    ({
+     ({
         map: {
             error: "Nevar izveidot karti"
         },

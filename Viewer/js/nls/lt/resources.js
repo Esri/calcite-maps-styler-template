@@ -19,6 +19,11 @@ define(
         "map": {
             "error": "Žemėlapio sukurti nepavyko"
         },
+        "nav":{
+            "next": "Į_Next__š",
+            "previous": "Į_Previous___š",
+            "close": "Į_Close___š"
+        },
         "tools":{
             "search":{
                 "error": "Vietos surasti nepavyko",

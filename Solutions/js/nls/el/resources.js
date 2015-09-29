@@ -15,7 +15,7 @@
  | limitations under the License.
  */
 define(
-    ({
+     ({
         map: {
             error: "Δεν είναι δυνατή η δημιουργία χάρτη"
         },

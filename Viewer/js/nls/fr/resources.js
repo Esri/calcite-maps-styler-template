@@ -19,6 +19,11 @@ define(
         "map": {
             "error": "Impossible de créer la carte"
         },
+        "nav":{
+            "next": "æ_Next__Â",
+            "previous": "æ_Previous___Â",
+            "close": "æ_Close___Â"
+        },
         "tools":{
             "search":{
                 "error": "Emplacement introuvable",
