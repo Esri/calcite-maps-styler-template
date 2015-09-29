@@ -1,3 +1,19 @@
+/*
+ | Copyright 2015 Esri
+ |
+ | Licensed under the Apache License, Version 2.0 (the "License");
+ | you may not use this file except in compliance with the License.
+ | You may obtain a copy of the License at
+ |
+ |    http://www.apache.org/licenses/LICENSE-2.0
+ |
+ | Unless required by applicable law or agreed to in writing, software
+ | distributed under the License is distributed on an "AS IS" BASIS,
+ | WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ | See the License for the specific language governing permissions and
+ | limitations under the License.
+ */
+
 /* application-boilerplate */
 html,
 body {
@@ -52,8 +68,54 @@ body {
   left: 0;
   text-align: center;
 }
+.absoluteCover {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    right: 10px;
+    left: 10px;
+}
 
 /*============================================================================================================================*/
+
+/* Dojo mods */
+textarea {
+    height: 100px!important;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+}
+.mblBackground {
+  background-color: white;
+}
+.mblSwitchBg {
+    font-weight: normal;
+}
+
+.mblSwitch, .mblSwitchInner, .mblSwitchBg, .mblSwitchKnob, .mblSwitchText {
+    height: 24px;
+}
+.mblSwRoundShape1 .mblSwitchKnob {
+    width: 24px;
+    border-radius: 12px;
+}
+.mblSwRoundShape1 .mblSwitchBg {
+    border-radius: 12px;
+}
+.mblSwRoundShape1 {
+    width: 40px;
+}
+.mblSwitchBgLeft {
+    background-color: #007ac2;
+    background-image: none;
+}
+.mblSwitchKnob {
+    background-color: #eee;
+    background-image: none;
+}
+.mblSwitchBgRight {
+    background-color: #eee;
+    background-image: none;
+}
 
 /* application-boilerplate mods */
 
@@ -65,8 +127,8 @@ body {
 
 #LocateButton {
     position: absolute;
-    top: 95px;
-    left: 20px;
+    top: 185px;
+    left: 16px;
     z-index: 50;
 }
 
@@ -88,10 +150,24 @@ body {
     opacity: 0.0;filter:Alpha(opacity=0);
 }
 
-#sidebar {
-    width: 320px;
+#sidebarContent {
+    width: 50%;
     border-left: 1px solid #ccc;
     z-index: 40;
+    overflow: hidden;
+}
+@media only screen and (max-width: 640px) {
+    #mapDiv {
+        display: none;
+    }
+    #sidebarContent {
+        width: 100%;
+    }
+}
+@media only screen and (min-width: 1025px) {
+    #sidebarContent {
+        width: 30%;
+    }
 }
 
 .busy {
@@ -105,21 +181,63 @@ body {
   right: 0px;
   top: 0px;
   bottom: 0px;
+
 }
 
-/* light locate button */
-
-.LocateButtonLight {
-    margin-top: 6px;
+.esriSimpleSlider, .esriSimpleSliderVertical .esriSimpleSliderIncrementButton, .esriSimpleSliderVertical .esriSimpleSliderDecrementButton {
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    -o-border-radius: 0px;
+    border-radius: 0px;
 }
 
-.LocateButtonLight span {
+.esriSimpleSliderTL {
+    left: 16px;
+    top: 70px;
+}
+
+.esriSimpleSliderVertical .esriSimpleSliderDecrementButton {
+    top: 130px;
+}
+
+.arcgisSearch .searchCollapsed .searchSubmit, .arcgisSearch .searchToggle, .arcgisSearch .searchBtn {
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    -o-border-radius: 0px;
+    border-radius: 0px;
+}
+
+.arcgisSearch .searchBtn {
+    padding: 5px;
+}
+.arcgisSearch .searchGroup .searchInput {
+    padding: 5px 24px 5px 12px;
+}
+
+.arcgisSearch .hasButtonMode .searchExpandContainer {
+    height: 32px;
+}
+
+.arcgisSearch .hasButtonMode.searchExpanded .searchExpandContainer, .arcgisSearch .hasButtonMode.searchExpanded.hasMultipleSources .searchExpandContainer, .arcgisSearch .hasButtonMode.hasMultipleSources .searchAnimate {
+    width: 268px;
+}
+
+.arcgisSearch .searchClear {
+    top: 1px;
+}
+
+/* light home & locate buttons */
+
+.HomeButtonLight {
+    border-bottom: 1px solid #57585A;
+}
+
+.HomeButtonLight span, .LocateButtonLight span {
     display: none;
 }
 
-.LocateButtonLight .zoomLocateButton {
+.HomeButtonLight .homeContainer, .LocateButtonLight .zoomLocateButton {
     background-position: center center;
-    background-image: url(../images/locate_dark2.png);
     background-repeat: no-repeat;
     width: 22px;
     height: 22px;
@@ -128,13 +246,19 @@ body {
     background-color: #fff;
     background-color: rgba(255,255,255,1);
 }
+.HomeButtonLight .homeContainer {
+    background-image: url(../images/home.png);
+}
+.LocateButtonLight .zoomLocateButton {
+    background-image: url(../images/current-location.png);
+}
 
-.LocateButtonLight .zoomLocateButton:hover {
+.HomeButtonLight .homeContainer:hover, .LocateButtonLight .zoomLocateButton:hover {
     background-color: #eee;
     color: #333;
 }
 
-.LocateButtonLight .locateContainer {
+.HomeButtonLight .homeContainer, .LocateButtonLight .locateContainer {
     text-align: center;
     background-color: #fff;
     -webkit-user-select: none;
@@ -142,28 +266,26 @@ body {
     -ms-user-select: none;
     user-select: none;
     cursor: pointer;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    -o-border-radius: 5px;
-    border-radius: 5px;
-    border: 1px solid #57585A;
     color: #4c4c4c;
-    width: 30px;
-    height: 30px;
     overflow: hidden;
 }
+.LocateButtonLight .locateContainer {
+    border: 1px solid #57585A;
+    width: 30px;
+    height: 30px;
+}
 
-.LocateButtonLight .locateContainer:hover {
+.HomeButtonLight .homeContainer:hover, .LocateButtonLight .locateContainer:hover {
     background-color: #eee;
     color: #333;
 }
 
-.LocateButtonLight .locateContainer:active {
+.HomeButtonLight .homeContainer:active, .LocateButtonLight .locateContainer:active {
     color: #007ac2;
     background-color: #ddd;
 }
 
-.LocateButtonLight .loading:before {
+.HomeButtonLight .loading:before, .LocateButtonLight .loading:before {
     content: '';
     display: block;
     position: relative;
@@ -181,9 +303,9 @@ body {
 
 #SearchButton {
     position: absolute;
-    left: 20px;
-    top: 151px;
-    z-index: 20;
+    left: 16px;
+    top: 16px;
+    z-index: 40;
 }
 
 /*============================================================================================================================*/
@@ -191,52 +313,103 @@ body {
 /* ---------- SidebarHeader ---------- */
 
 #sidebarHeading {
-    height: 100px;
+    height: 32px;
     border-bottom: 1px solid #ccc;
     overflow: hidden;
 }
 
 .sideHdrBtns {
-    height: 27px;
+    height: 32px;
+    float: right;
+}
+.sideHdrOptions {
+    display: none;
+    width: 32px;
+    height: 32px;
+    float: right;
+    cursor: pointer;
+    background: url(../images/options.png) no-repeat;
+    background-size: contain;
+}
+.sideHdrOptionsDropdown {
+    display: none;
+    position: fixed;
+    top: 49px;
+    right: 0px;
+    border: 1px solid #ccc;
+    z-index: 100;
+}
+.sideHdrOptionsMenuItem {
     padding: 5px;
+}
+@media only screen and (max-width: 640px) {
+    .sideHdrBtns {
+        display: none;
+    }
+    .sideHdrOptions {
+        display: block;
+    }
 }
 
 .sideHdrSign {
-    color: #007ac2;
-    display: inline-block;
-    padding: 4px;
-    float: left;
-    font-size: 15px;
-    font-weight: bold;
-    cursor: pointer;
+    margin-left: 12px;
+    float: right;
 }
 
-.sideHdrSign:hover {
-    background-color: #007ac2;
-    color: white;
+.textButton {
+    display: block;
+    cursor: pointer;
+    font-size: 15px;
+    line-height: 32px;
+    padding: 0 4px;
+}
+.textButtonLabel {
+    display: inline-block;
+    font-size: 15px;
+    line-height: 28px;
+    padding: 0 0 0 4px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    text-align: right;
+    float: right;
+    margin: 3px;
 }
 
 .sideHdrHelp {
-    display: inline-block;
+    display: none;
+    width: 20px;
+    height: 20px;
     float: right;
     cursor: pointer;
-    padding-top: 4px;
-    padding-right: 4px;
+    margin: 5px 0 0 12px;
+    background: url(../images/help.png) no-repeat;
+    background-size: contain;
 }
 
 .sideHdrTitle {
-    height: 60px;
-    line-height: 60px;
-    font-size: 22px;
-    font-weight: bold;
-    text-align: center;
-    color: #333;
+    font-size: 24px;
+    line-height: 32px;
+    color: #007ac2;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
     padding: 0px 5px 0px 5px;
 }
 
+.bannerImgDiv {
+    display: inline-block;
+    float: left;
+    margin: -8px 0 -8px -8px;
+}
+.bannerImg {
+    height: 48px;
+}
+@media only screen and (max-width: 640px) {
+    .bannerImgDiv {
+        display: none;
+    }
+}
 
 /* ---------- SidebarContentController ---------- */
 
@@ -247,23 +420,43 @@ body {
 
 /* ---------- ItemList ---------- */
 
-.itemList {
-  font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
-  font-weight: bold;
-  font-size: 16px;
-  background-color: #eee;
-}
-
 .itemListActions {
-    height: 20px;
-    font-size: 12px;
-    padding: 6px;
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    height: 33px;
     background-color: white;
     border-bottom: 1px solid #ccc;
 }
-
 .itemListAction {
     vertical-align: middle;
+}
+.linkToggleBtn {
+    float: right;
+    margin: 4px;
+    cursor: pointer;
+}
+
+.itemListBox {
+    position: absolute;
+    top: 34px;
+    bottom: 0px;
+    width: 100%;
+    overflow-y: auto;
+}
+.itemList {
+    font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+    background-color: #eee;
+}
+@media only screen and (max-width: 640px) {
+    .itemListActions {
+        display: none;
+    }
+    .itemListBox {
+        top: 0px;
+    }
 }
 
 .itemList .itemSummary {
@@ -281,14 +474,22 @@ body {
 }
 
 .itemSummary .itemTitle {
-  width: 80%;
+  width: 75%;
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow-x: hidden;
 }
 
 .itemListTitleOverride {
-    width: 76%!important;
+    width: 70%!important;
+}
+@media only screen and (max-width: 400px) {
+    .itemSummary .itemTitle {
+        width: 65%;
+    }
+    .itemListTitleOverride {
+        width: 60%!important;
+    }
 }
 
 .itemList .itemTitle,
@@ -307,8 +508,9 @@ body {
 .itemSummary .itemFav {
   float: right;
   font-size: 20px;
-  color: rgb(150, 150, 150);
-  color: rgba(0, 0, 0, 0.35);
+  color: rgb(150, 150, 150)!important;
+  color: rgba(0, 0, 0, 0.35)!important;
+  padding-left: 8px;
 }
 
 .itemList .itemVotes {
@@ -393,7 +595,6 @@ label.css-label
     background-position: 0 -16px;
 }
 
-
 /* ---------- itemDetail ---------- */
 
 .itemDetail {
@@ -449,12 +650,16 @@ label.css-label
 }
 
 .itemDetail .btn {
+  width: 15%;
+  max-width: 80px;
+  height: 18px;
   border: 1px solid #ccc;
   display: inline-block;
   margin-right: 5px;
   padding: 4px 6px;
   border-radius: 2px;
   cursor: pointer;
+  text-align: center;
 }
 
 .itemDetail .btnNormal {
@@ -480,6 +685,23 @@ label.css-label
 
 .itemDetail .btnInverse ::-moz-selection {
     color: white;
+}
+
+.itemDetailsBox {
+    position: absolute;
+    top: 40px;
+    bottom: 0px;
+    width: 100%;
+    overflow-y: auto;
+}
+
+.itemDetail .smallScreenOnly {
+    display: none;
+}
+@media only screen and (max-width: 640px) {
+    .itemDetail .smallScreenOnly {
+        display: inline-block;
+    }
 }
 
 .itemDescFooter {
@@ -562,6 +784,10 @@ label.css-label
 .popupTitle {
     height: 32px;
     line-height: 32px;
+}
+.popupTitleEmpty {
+    height: 0px;
+    line-height: 0px;
 }
 .popupContent {
     margin: 10px;
@@ -649,6 +875,13 @@ img {
     font-size: 12px;
 }
 
+.dynamicFormDropdownCtl {
+    width: 100%;
+    height: 30px;
+    font-size: 12px;
+    color: #555;
+}
+
 .dynamicFormActions {
     font-size: 14px;
     height: 35px;
@@ -664,20 +897,17 @@ img {
 
 .dynamicFormAction span {
     width: 48%;
+    height: 33px;
     display: table-cell;
     vertical-align: middle;
+    border: 1px solid #ccc;
 }
 
 .dynamicFormActionLeft {
     float: left;
-    height: 35px;
-    color: #007ac2;  /* IE8 workaround */
     font-weight: bold;
 }
 
 .dynamicFormActionRight {
     float: right;
-    height: 33px;
-    color: #007ac2;
-    border: 1px solid #ccc;
 }

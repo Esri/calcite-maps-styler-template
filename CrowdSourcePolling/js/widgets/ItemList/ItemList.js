@@ -19,26 +19,29 @@ define([
     'dojo/_base/declare',
     'dojo/_base/lang',
     'dojo/_base/array',
-    "dojo/dom-attr",
     'dojo/dom-construct',
     'dojo/dom-style',
     'dojo/dom-class',
+    "dojo/dom-geometry",
     'dojo/on',
+    'dojo/query',
     'dojo/topic',
     'dojo/NodeList-dom',
+    'dojox/mobile/Switch',  // pre-loaded as required by Dojo
 
     'application/lib/SvgHelper',
 
     'dijit/_WidgetBase',
     'dijit/_TemplatedMixin',
+    'dijit/_WidgetsInTemplateMixin',
 
     'dojo/text!./ItemListView.html'
-], function (declare, lang, array, domAttr, domConstruct, domStyle, domClass, on, topic, nld,
+], function (declare, lang, array, domConstruct, domStyle, domClass, domGeom, on, query, topic, nld, Switch,
     SvgHelper,
-    _WidgetBase, _TemplatedMixin,
+    _WidgetBase, _TemplatedMixin, _WidgetsInTemplateMixin,
     template) {
 
-    return declare([_WidgetBase, _TemplatedMixin], {
+    return declare([_WidgetBase, _TemplatedMixin, _WidgetsInTemplateMixin], {
         templateString: template,
 
         /**
@@ -49,37 +52,93 @@ define([
          */
         constructor: function () {
             this.votesField = null;
+            this.linkToMapViewIsTemporarilyOff = false;
         },
 
         /**
-         * Widget post-create, called automatically in widget creation
+         * Widget postCreate, called automatically in widget creation
          * life cycle, after constructor. Sets class variables.
          */
         postCreate: function () {
-            var linkActionBox;
-
             this.inherited(arguments);
             this.i18n = this.appConfig.i18n.item_list;
             this.hide();
 
-            // Create the checkbox for linking the item list to the map extents
-            linkActionBox = domConstruct.create("input", { "type": "checkbox", "class": "esriCTChkBox", id: "linkToMap", "value": "linkToMap" }, this.itemListActionBar);
-            domConstruct.create("label", { "class": "css-label", "for": "linkToMap", innerHTML: this.i18n.linkToMapViewOptionLabel }, this.itemListActionBar);
-            this.own(on(linkActionBox, "change", lang.hitch(this, function () {
-                topic.publish("linkToMapViewChanged", linkActionBox.checked);
-            })));
-            linkActionBox.checked = this.linkToMapView;
+            // Adjust the toggle for linking the item list to the map extents
+            this.linkToggleLabel.innerHTML = this.i18n.linkToMapViewOptionLabel;
+
+            this.linkToggleBtn.set("leftLabel", "");
+            this.linkToggleBtn.set("rightLabel", "");
+            this.linkToggleBtn.set("value", this.linkToMapView
+                ? "on"
+                : "off");
+            this.linkToggleBtn.set("title", this.i18n.linkToMapViewOptionTooltip);
+
+            this.inherited(arguments);
         },
 
         /**
-         * Shows the widget with a simple display: ''
+         * Widget startup, called automatically in widget creation
+         * life cycle, after postCreate. Prepares for resizing now
+         * that widget has been added to DOM.
+         */
+        startup: function () {
+            this.inherited(arguments);
+            this.linkToggleBtn.resize();
+
+            this.own(on(window, 'resize', lang.hitch(this, function () {
+                this.fitFilterLabelToContainer();
+            })));
+
+            this.linkToggleBtn.on("stateChanged", lang.hitch(this, function (newState) {
+                this.linkToMapView = newState === "on";
+                topic.publish("linkToMapViewChanged", this.linkToMapView);
+            }));
+
+            array.forEach(query(".mblSwitchBgLeft", this.itemListActionBar), function (item) {
+                domClass.add(item, "appTheme");
+            });
+        },
+
+        /**
+         * Adjusts the width of the filter-to-map label based on the size of its container.
+         */
+        fitFilterLabelToContainer: function () {
+            var actionBarBounds, switchBounds, newWidth;
+
+            actionBarBounds = domGeom.getMarginBox(this.itemListActionBar);
+            switchBounds = domGeom.getMarginBox(this.linkToggleBtn.domNode);
+
+            newWidth = actionBarBounds.w - switchBounds.w - 12/*margins*/ - 8;/*padding*/
+            if (newWidth > 0) {
+                domStyle.set(this.linkToggleLabel, "width", newWidth + "px");
+
+                // If the screen is wide enough to show map and list, restore the linkage of
+                // map to list if it was on the last time that we could see the action bar
+                if (this.linkToMapViewIsTemporarilyOff) {
+                    this.linkToMapViewIsTemporarilyOff = false;
+                    if (this.linkToMapView) {
+                        topic.publish("linkToMapViewChanged", true);
+                    }
+                }
+            // If the screen is narrow enough that we're not showing the action bar,
+            // turn off linking the list to the map
+            } else if (!this.linkToMapViewIsTemporarilyOff) {
+                this.linkToMapViewIsTemporarilyOff = true;
+                topic.publish("linkToMapViewChanged", false);
+            }
+        },
+
+        /**
+         * Shows the widget.
          */
         show: function () {
-            domStyle.set(this.domNode, 'display', '');
+            domStyle.set(this.domNode, 'display', 'block');
+            this.fitFilterLabelToContainer();
         },
 
         /**
-         * Hides the widget with a simple display: 'none'
+         * Hides the widget.
          */
         hide: function () {
             domStyle.set(this.domNode, 'display', 'none');
@@ -132,7 +191,7 @@ define([
          */
         buildItemSummary: function (item) {
 
-            var itemTitle, itemVotes, itemSummaryDiv, itemTitleDiv, favDiv, iconDiv, likeIconSurf;
+            var itemTitle, itemVotes, itemSummaryDiv, itemTitleDiv, favDiv, iconDiv;
 
             itemTitle = this.getItemTitle(item) || "&nbsp;";
 
@@ -170,16 +229,12 @@ define([
                     'class': 'fav'
                 }, favDiv);
 
-                likeIconSurf = SvgHelper.createSVGItem(this.appConfig.likeIcon, iconDiv, 12, 12);
+                SvgHelper.createSVGItem(this.appConfig.likeIcon, iconDiv, 12, 12);
             }
 
             // If this item's OID matches the current selection, apply the theme to highlight it
             if (this.selectedItemOID === item.attributes[item._layer.objectIdField]) {
-                domClass.add(itemSummaryDiv, "appTheme");
-                if (favDiv) {
-                    domClass.add(favDiv, "appThemeAccentText");
-                    SvgHelper.changeColor(likeIconSurf, this.appConfig.theme.accentText);
-                }
+                domClass.add(itemSummaryDiv, "appTheme appThemeHover");
             }
         },
 
@@ -189,7 +244,17 @@ define([
          * @return {string} The title of the feature
          */
         getItemTitle: function (item) {
-            return item.getTitle ? item.getTitle() : "";
+            return item.getTitle ? this.stripTags(item.getTitle()) : "";
+        },
+
+        /**
+         * Removes HTML tags from a string
+         * @param {string} str String possibly containing HTML tags
+         * @return {string} Cleaned string
+         * @see http://dojo-toolkit.33424.n3.nabble.com/Stripping-HTML-tags-from-a-string-tp3999505p3999576.html
+         */
+        stripTags: function (str) {
+            return domConstruct.create("div", { innerHTML: str }).textContent;
         },
 
         /**
@@ -205,11 +270,19 @@ define([
 
             if (this.votesField) {
                 votes = item.attributes[this.votesField] || 0;
+
                 if (votes > 999) {
                     if (votes > 99999) {
                         needSpace = true;
                     }
-                    if (votes > 999999) {
+                    // Using SI prefixes from http://physics.nist.gov/cuu/pdf/sp811.pdf
+                    if (votes > 999999999999999) {
+                        votes = Math.floor(votes / 1000000000000000) + "P";
+                    } else if (votes > 999999999999) {
+                        votes = Math.floor(votes / 1000000000000) + "T";
+                    } else if (votes > 999999999) {
+                        votes = Math.floor(votes / 1000000000) + "G";
+                    } else if (votes > 999999) {
                         votes = Math.floor(votes / 1000000) + "M";
                     } else {
                         votes = Math.floor(votes / 1000) + "k";

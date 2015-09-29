@@ -22,8 +22,7 @@ define([
     "dojo/_base/lang",
     "esri/dijit/Search",
     "esri/layers/FeatureLayer",
-    "esri/tasks/locator",
-    "dojo/domReady!"
+    "esri/tasks/locator"
 ], function (
     declare,
     array,

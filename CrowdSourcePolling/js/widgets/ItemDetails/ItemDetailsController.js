@@ -103,6 +103,7 @@ define([
         show: function () {
             if (!this.actionVisibilities.showVotes || !this.votesField) {
                 domStyle.set(this.likeButton, 'display', 'none');
+                domStyle.set(this.itemVotesGroup, 'display', 'none');
             }
             if (!this.actionVisibilities.showComments || !this.commentFields) {
                 domStyle.set(this.commentButton, 'display', 'none');
@@ -135,16 +136,18 @@ define([
                 SvgHelper.changeColor(backIconSurface, this.appConfig.theme.foreground);
             }
 
+            SvgHelper.createSVGItem(this.appConfig.likeIcon, this.itemVotesIcon, 12, 12);
+
             domAttr.set(this.likeIcon, "src", "images/likeBlue.png");
-            this.likeLabel.innerHTML = this.i18n.likeButtonLabel;
             this.likeButton.title = this.i18n.likeButtonTooltip;
 
             domAttr.set(this.commentIcon, "src", "images/commentBlue.png");
-            this.commentLabel.innerHTML = this.i18n.commentButtonLabel;
             this.commentButton.title = this.i18n.commentButtonTooltip;
 
+            domAttr.set(this.mapIcon, "src", "images/mapmarkerBlue.png");
+            this.mapButton.title = this.i18n.gotoMapViewTooltip;
+
             domAttr.set(this.galleryIcon, "src", "images/galleryBlue.png");
-            this.galleryLabel.innerHTML = this.i18n.galleryButtonLabel;
             this.galleryButton.title = this.i18n.galleryButtonTooltip;
         },
 
@@ -191,6 +194,9 @@ define([
                 })),
                 on(this.commentButton, 'click', function () {
                     topic.publish('getComment', self.item);
+                }),
+                on(this.mapButton, 'click', function () {
+                    topic.publish('showMapViewClicked');
                 }),
                 on(this.galleryButton, 'click', lang.hitch(this, function () {
                     topic.publish('showGallery', self.item);
@@ -460,7 +466,17 @@ define([
          * @return {string}      The title of the feature
          */
         getItemTitle: function (item) {
-            return item.getTitle ? item.getTitle() : "";
+            return item.getTitle ? this.stripTags(item.getTitle()) : "";
+        },
+
+        /**
+         * Removes HTML tags from a string
+         * @param {string} str String possibly containing HTML tags
+         * @return {string} Cleaned string
+         * @see http://dojo-toolkit.33424.n3.nabble.com/Stripping-HTML-tags-from-a-string-tp3999505p3999576.html
+         */
+        stripTags: function (str) {
+            return domConstruct.create("div", { innerHTML: str }).textContent;
         },
 
         /**

@@ -29,11 +29,26 @@
   <!-- End Responsive -->
   <meta name="fragment" content="!">
   <!-- Use protocol relative urls that way if the browser is viewing the page via HTTPS the js/css file will be requested using the HTTPS protocol -->
+  <link rel="stylesheet" href="//jsdev.arcgis.com/3.15/dojox/mobile/themes/iphone/iphone.css">
   <link rel="stylesheet" href="//jsdev.arcgis.com/3.15/dijit/themes/claro/claro.css">
   <link rel="stylesheet" href="//jsdev.arcgis.com/3.15/esri/css/esri.css">
   <!-- Load any application specific styles -->
   <link rel="stylesheet" href="css/main.css">
   <script src="js/lib/modernizr.custom.62855.js"></script>
+  <!-- App icons -->
+  <link rel="shortcut icon" sizes="57x57" href="images/icon-57x57.png" />
+  <link rel="shortcut icon" sizes="72x72" href="images/icon-72x72.png" />
+  <link rel="shortcut icon" sizes="114x114" href="images/icon-114x114.png" />
+  <link rel="shortcut icon" sizes="144x144" href="images/icon-144x144.png" />
+  <link rel="shortcut icon" sizes="192x192" href="images/icon-192x192.png">
+  <link rel="shortcut icon" sizes="196x196" href="images/icon-196x196.png">
+  <link rel="apple-touch-icon" sizes="57x57" href="images/icon-57x57.png" />
+  <link rel="apple-touch-icon" sizes="72x72" href="images/icon-72x72.png" />
+  <link rel="apple-touch-icon" sizes="114x114" href="images/icon-114x114.png" />
+  <link rel="apple-touch-icon" sizes="144x144" href="images/icon-144x144.png" />
+  <link rel="apple-touch-icon" sizes="192x192" href="images/icon-192x192.png">
+  <link rel="apple-touch-icon" sizes="196x196" href="images/icon-196x196.png">
+  <link rel="icon" sizes="16x16" type='image/x-icon' href='favicon.ico' />
 </head>
 
 <body class="claro app-loading">
@@ -45,15 +60,15 @@
       <span>This site requires JavaScript.</span>
     </div>
   </noscript>
-  <div id="contentDiv" class="fill transparent" data-dojo-type="dijit/layout/LayoutContainer" data-dojo-props="design: 'sidebar'">
-    <!-- The ArcGIS API for JavaScript provides bidirectional support.  When viewing the application in an right to left (rtl) language like Hebrew and Arabic the map needs to remain in left-to-right (ltr) mode. Specify this by setting the dir attribute on the div to ltr. -->
-    <div id="mapDiv" dir="ltr" data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region:'center'">
-        <div id="LocateButton"></div>
-        <div id="SearchButton"></div>
-    </div>
-    <div id="sidebar" class="fill" data-dojo-type="dijit/layout/LayoutContainer" data-dojo-props="region:'right', design: 'headline'">
-      <div id="sidebarHeading" class="fill" data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region:'top'"></div>
-      <div id="sidebarContent" class="fill" data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region:'center'"></div>
+  <div id="contentDiv" class="fill transparent" data-dojo-type="dijit/layout/LayoutContainer" data-dojo-props="design: 'headline'">
+    <div id="sidebarHeading" class="appThemeInverted" data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region:'top'"></div>
+    <div id="mainContent" class="fill" data-dojo-type="dijit/layout/LayoutContainer" data-dojo-props="region:'center'">
+        <div id="mapDiv" dir="ltr" data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region:'center'">
+            <div id="HomeButton"></div>
+            <div id="LocateButton"></div>
+            <div id="SearchButton"></div>
+        </div>
+        <div id="sidebarContent" class="fill" data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region:'right'"></div>
     </div>
   </div>
   <script type="text/javascript">

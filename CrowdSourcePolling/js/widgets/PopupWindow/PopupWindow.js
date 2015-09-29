@@ -23,6 +23,7 @@ define([
     "dojo/text!./PopupWindow.html",
     "dojo/_base/array",
     "dojo/_base/lang",
+    "dojo/dom-class",
     "dojo/dom-geometry",
     "dojo/dom-style",
     "dojo/on"
@@ -33,6 +34,7 @@ define([
     template,
     array,
     lang,
+    domClass,
     domGeom,
     domStyle,
     on
@@ -99,6 +101,9 @@ define([
          * Causes the widget to become visible and positions it to the center of the page.
          */
         show: function () {
+            // Collapse title if empty
+            domClass.add("popupTitleDiv", "popupTitleEmpty");
+
             // Change display from none to block
             this.domNode.style.display = "block";
             this.fitToWindow();

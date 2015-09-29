@@ -31,8 +31,7 @@ define([
     "esri/layers/FeatureLayer",
     "esri/tasks/query",
     "esri/tasks/QueryTask",
-    "esri/tasks/RelationshipQuery",
-    "dojo/domReady!"
+    "esri/tasks/RelationshipQuery"
 ], function (
     declare,
     array,
@@ -121,6 +120,7 @@ define([
                     return;
                 }
 
+                // Find the configured layer; if not yet configured, use the first
                 opLayers = this.appConfig.itemInfo.itemData.operationalLayers;
                 if (this.appConfig.featureLayer && this.appConfig.featureLayer.id) {
                     for (iOpLayer = 0; iOpLayer < opLayers.length; iOpLayer++) {
@@ -129,11 +129,13 @@ define([
                         }
                     }
                 }
+
+                // Or if configured to an unmatching feature layer, use the first
                 if (iOpLayer === opLayers.length) {
-                    deferred.reject(this.appConfig.i18n.map.missingItemsFeatureLayer);
-                    return;
+                    iOpLayer = 0;
                 }
 
+                // Get the layer definition
                 this._itemLayerInWebmap = opLayers[iOpLayer];
                 if (this._itemLayerInWebmap.errors) {//Add by Mike M, itemLayer is null on secure data if signed in with wrong user
 
@@ -150,8 +152,8 @@ define([
 
                 // Provides _itemFields[n].{alias, editable, length, name, nullable, type} after adjusting
                 // to the presence of editing and visibility controls in the optional popup
-                this._itemFields = this.applyWebmapControlsToFields(
-                    this._itemLayer.fields,
+                this._itemFields = this.amendFieldInformation(
+                    this._itemLayer,
                     this._itemLayerInWebmap.popupInfo
                 );
 
@@ -160,7 +162,7 @@ define([
                         this._itemLayer.relationships.length > 0) {
 
                     // Try to find the table that's in this relationship. We'll do parallel searches in
-                    // the hope that it'll be on averge faster than serially stepping through the tables.
+                    // the hope that it'll be on average faster than serially stepping through the tables.
                     array.forEach(this.appConfig.itemInfo.itemData.tables, lang.hitch(this, function (table) {
                         var commentTableURL, commentTableInWebmap = table, commentTable, loadDeferred = new Deferred();
 
@@ -214,8 +216,8 @@ define([
                                 this._commentTableRelateID = result.commentTableRelateID;
                                 // Provides _commentFields[n].{alias, editable, length, name, nullable, type} after adjusting
                                 // to the presence of editing and visibility controls in the optional popup
-                                this._commentFields = this.applyWebmapControlsToFields(
-                                    this._commentTable.fields,
+                                this._commentFields = this.amendFieldInformation(
+                                    this._commentTable,
                                     this._commentTableInWebmap.popupInfo
                                 );
 
@@ -258,24 +260,47 @@ define([
         },
 
         /**
-         * Amends fields in fields list with popup editing and visibility settings.
-         * @param {array} fields Fields associated with layer or table
+         * Amends fields in fields list with popup editing and visibility settings, domains, defaults.
+         * @param {object} featureSvc Feature service containing fields
          * @param {object} [webmapPopup] Popup associated with layer or table
          * @return {array} Amends list with "dtIsEditable" and "dtIsVisible"; if webmapPopup or its fieldInfos
          * property are undefined, dtIsEditable is a copy of "editable" and dtIsVisible is true; otherwise,
          * dtIsEditable is a copy of the popup's fieldInfo's "isEditable" and dtIsVisible is a copy of its
          * "visible" (we have to use dtIs* to avoid conflicts with the API's use of "editable")
+         * Amendments:
+         *   dtIsEditable: {boolean}
+         *   dtIsVisible: {boolean}
+         *   dtStringFieldOption: {string} copied from popup
+         *   dtTooltip: {null|string} copied from popup
+         *   dtDefault: {null|value}
          */
-        applyWebmapControlsToFields: function (fields, webmapPopup) {
-            var sortedFields, fieldInfos = webmapPopup ? webmapPopup.fieldInfos : null;
+        amendFieldInformation: function (featureSvc, webmapPopup) {
+            var fields = featureSvc.fields, defaults = null, sortedFields, fieldInfos = webmapPopup ? webmapPopup.fieldInfos : null;
+
+            // Do we have defaults in this feature service?
+            if (featureSvc.templates && featureSvc.templates.length > 0 && featureSvc.templates[0].prototype.attributes) {
+                defaults = featureSvc.templates[0].prototype.attributes;
+            }
 
             // Amend fields
-            array.forEach(fields, function (field) {
+            array.forEach(fields, lang.hitch(this, function (field) {
                 // Cover no-popup and unmatched fieldname cases
                 field.dtIsEditable = field.editable;
                 field.dtIsVisible = true;
                 field.dtStringFieldOption = null;
                 field.dtTooltip = null;
+
+                // Add in default either from template or from field itself, falling back to null
+                if (defaults && defaults[field.name]) {
+                    field.dtDefault = field.defaultValue || defaults[field.name];
+                } else {
+                    field.dtDefault = field.defaultValue || null;
+                }
+
+                // Convert dates from ArcGIS format of days since 12/31/1899 to JavaScript format of days since 1/1/1970
+                if (field.type === "esriFieldTypeDate") {
+                    field.dtDefault = this.convertArcGISDaysToLocalDays(field.dtDefault);
+                }
 
                 // If we have a popup, seek to update settings
                 if (fieldInfos) {
@@ -293,7 +318,7 @@ define([
                         return false;
                     });
                 }
-            });
+            }));
 
             // Reorder fields to match popup
             if (fieldInfos) {
@@ -311,6 +336,24 @@ define([
             }
 
             return fields;
+        },
+
+        /**
+         * Converts from ArcGIS format of days since 12/31/1899 to JavaScript format of days since 1/1/1970
+         * @param {number} arcGISDays Days in the ArcGIS format
+         * @return {number} Days in the JavaScript format
+         **/
+        convertArcGISDaysToLocalDays: function (arcGISDays) {
+            if (!arcGISDays) {
+                return arcGISDays;
+            }
+            return new Date(
+                ((arcGISDays
+                    - 25569)  // days from 12/31/1899 to 1/1/1970
+                    * 86400000)  // milliseconds in a day
+                    + ((new Date()).getTimezoneOffset()  // minutes to add to time so that it is interpreted as local
+                    * 60000)  // milliseconds in a minute
+            );
         },
 
         /**
@@ -355,7 +398,7 @@ define([
             this._commentTable.applyEdits([gra], null, null,
                 lang.hitch(this, function (results) {
                     if (results.length === 0) {
-                        topic.publish("commentAddFailed", "missing field");  //???
+                        topic.publish("commentAddFailed", "missing field");
                     } else if (results[0].error) {
                         topic.publish("commentAddFailed", results[0].error);
                     } else {
@@ -379,7 +422,7 @@ define([
                     topic.publish("updatedAttachments", item, attachments);
                 }),
                 lang.hitch(this, function (err) {
-                    console.log(err.message || "queryAttachmentInfos");  //???
+                    console.log(err.message || "queryAttachmentInfos");
                 })
             );
         },
@@ -425,7 +468,7 @@ define([
                 }
                 topic.publish("updatedCommentsList", item, features);
             }), lang.hitch(this, function (err) {
-                console.log(err.message || "queryRelatedFeatures");  //???
+                console.log(err.message || "queryRelatedFeatures");
             }));
         },
 

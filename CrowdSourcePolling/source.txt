@@ -1,7 +1,7 @@
 From git branch 
-Sep_2015_release
-commit e8977ebe526197cfc42df634f24454dbff7a69ea
-Author: Allison Muise <amuise@esri.com>
-Date:   Tue Aug 25 12:04:42 2015 -0700
+develop
+commit b3263db18304b6715a540c38f42541c51b68a819
+Author: MikeTschudi <mtschudi@esri.com>
+Date:   Tue Sep 29 11:10:34 2015 -0700
 
-    fixed missing comma
+    Removed domReady dependency from library routines

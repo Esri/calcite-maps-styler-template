@@ -20,8 +20,7 @@ define([
     "dojo/_base/declare",
     "dojox/gfx",
     "dojox/gfx/utils",
-    "dojo/_base/array",
-    "dojo/domReady!"
+    "dojo/_base/array"
 ], function (
     declare,
     gfx,

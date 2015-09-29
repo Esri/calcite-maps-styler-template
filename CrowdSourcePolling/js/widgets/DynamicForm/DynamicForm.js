@@ -1,5 +1,6 @@
 ﻿/*global define,dojo */
 /*jslint browser:true,sloppy:true,nomen:true,unparam:true,plusplus:true,bitwise:true */
+/* Known JSLint complaint about "Expected a string and instead saw 'typeof'." on line 292; not an error, but can't be ignored. */
 /*
  | Copyright 2015 Esri
  |
@@ -20,6 +21,10 @@ define([
     "dojo/_base/declare",
     "dijit/_WidgetBase",
     "dijit/_TemplatedMixin",
+    "dijit/form/NumberTextBox",
+    "dijit/form/Select",
+    "application/lib/ValidationTextarea",
+    "dijit/form/ValidationTextBox",
     "dojo/text!./DynamicForm.html",
     "dojo/_base/array",
     "dojo/_base/lang",
@@ -37,6 +42,10 @@ define([
     declare,
     _WidgetBase,
     _TemplatedMixin,
+    NumberTextBox,
+    Select,
+    ValidationTextArea,
+    ValidationTextBox,
     template,
     array,
     lang,
@@ -179,14 +188,13 @@ define([
 
             // Submit
             this.dynamicFormSubmit = domConstruct.create("div", {
-                className: "dynamicFormAction"
+                className: "dynamicFormAction dynamicFormActionLeft appTheme appThemeHover"
             }, actionsBar);
-            domClass.add(this.dynamicFormSubmit, "dynamicFormActionLeft");
-            domClass.add(this.dynamicFormSubmit, "appTheme");
             on(this.dynamicFormSubmit, "click", lang.hitch(this, function () {
                 var submission = this.assembleFormValues(this._entryForm);
                 topic.publish("submitForm", this._item, submission);
             }));
+            domStyle.set(this.dynamicFormSubmit, "border-color", this.appConfig.theme.background);
 
             domConstruct.create("span", {
                 innerHTML: this.appConfig.i18n.dynamic_form.submitButtonLabel
@@ -194,9 +202,8 @@ define([
 
             // Cancel
             dynamicFormCancel = domConstruct.create("div", {
-                className: "dynamicFormAction"
+                className: "dynamicFormAction dynamicFormActionRight appThemeInverted appThemeInvertedHover"
             }, actionsBar);
-            domClass.add(dynamicFormCancel, "dynamicFormActionRight");
             on(dynamicFormCancel, "click", lang.hitch(this, function () {
                 topic.publish("cancelForm");
             }));
@@ -212,7 +219,7 @@ define([
             // Find the editable attributes and create a form from them
             form = [];
             array.forEach(fields, lang.hitch(this, function (field) {
-                var row, inputItem, count, useTextArea;
+                var row, inputItem, count, useTextArea, options, choices, pattern;
 
                 /**
                  * Creates a div to hold a visual row.
@@ -230,10 +237,13 @@ define([
                  * size of an input length and the number of characters that it contains.
                  */
                 function updateCharactersCount() {
-                    if (field.length < inputItem.value.length) {
-                        inputItem.value = inputItem.value.substr(0, field.length);
+                    var value = inputItem.get("value");
+                    if (field.length < value.length) {
+                        inputItem.set("value", value.substr(0, field.length));
+                        count.innerHTML = 0;
+                    } else {
+                        count.innerHTML = field.length - value.length;
                     }
-                    count.innerHTML = field.length - inputItem.value.length;
                 }
 
                 /**
@@ -241,22 +251,30 @@ define([
                  */
                 function updateRequiredFieldStatus() {
                     if (row.requiredFieldFlag) {
-                        // Update the field for this item
-                        if (inputItem.attr) {  // Dojo item
-                            if (inputItem.attr("value") !== null) {
-                                // Have value, so clear spot in mask
-                                pThis._requiredFieldsStatus &= ~(row.requiredFieldFlag);
-                            } else {
-                                // No value, so set spot in mask
-                                pThis._requiredFieldsStatus |= (row.requiredFieldFlag);
+                        var value = null;
+
+                        // The input item has an empty state value when it passes the dijit's validation checks.
+                        // Other possible states are "Error" and "Incomplete"
+                        if (inputItem.state.length === 0) {
+                            // If the dijit reports that the value is valid
+                            value = inputItem.get("value");
+                            if (value !== null && (value !== value || (typeof value === "undefined"))) {
+                                value = null;
                             }
-                        } else {               // HTML item
-                            if (inputItem.value.toString().trim().length > 0) {
-                                // Have value, so clear spot in mask
-                                pThis._requiredFieldsStatus &= ~(row.requiredFieldFlag);
-                            } else {
-                                // No value, so set spot in mask
-                                pThis._requiredFieldsStatus |= (row.requiredFieldFlag);
+                        }
+
+                        // Update the field for this item
+                        if (value !== null) {
+                            // Have value, so clear spot in mask
+                            pThis._requiredFieldsStatus &= ~(row.requiredFieldFlag);
+                            if (inputItem.dtManualValidationFlag) {
+                                domClass.remove(inputItem.domNode, "dijitTextBoxError");
+                            }
+                        } else {
+                            // No value, so set spot in mask
+                            pThis._requiredFieldsStatus |= (row.requiredFieldFlag);
+                            if (inputItem.dtManualValidationFlag) {
+                                domClass.add(inputItem.domNode, "dijitTextBoxError");
                             }
                         }
                     }
@@ -270,7 +288,37 @@ define([
                 // Editable fields get added to the form, even if they're not visible in the popup
                 if (field.dtIsEditable) {
 
-                    if (field.type === "esriFieldTypeString") {
+                    // See if we have a multiple-choice instead of free values
+                    if (field.domain && field.domain.type === "codedValue") {
+                        row = createRow();
+
+                        // Default to first coded value if we don't have a valid default
+                        if ((typeof field.dtDefault) !== (typeof field.domain.codedValues[0].code)) {
+                            field.dtDefault = field.domain.codedValues[0].code;
+                        }
+
+                        domConstruct.create("br", {}, row);
+                        choices = [];
+                        array.forEach(field.domain.codedValues, function (choice, i) {
+                            choices.push({
+                                label: choice.name,
+                                value: i,
+                                selected: choice.code === field.dtDefault
+                            });
+                        });
+                        options = {
+                            required: !field.nullable,
+                            options: choices,
+                            style: "width: 101%"
+                        };
+                        if (field.dtTooltip && field.dtTooltip.length > 0) {
+                            options.title = field.dtTooltip;
+                        }
+                        inputItem = new Select(options, domConstruct.create("div", {}, row));
+                        inputItem.startup();
+
+                    // Free text
+                    } else if (field.type === "esriFieldTypeString") {
                         row = createRow();
 
                         // Create a characters-remaining counter
@@ -283,8 +331,8 @@ define([
                         domConstruct.create("br", {}, row);
 
                         // If the popup has defined a text-entry type, we'll use it;
-                        // otherwise, we'll choose based on a field length that will fit into
-                        // a single line versus one that will not
+                        // otherwise, we'll choose based on a field length that will
+                        // approximately fit into a single line versus one that will not
                         if (field.dtStringFieldOption) {
                             useTextArea = field.dtStringFieldOption === "textarea" ||
                                 field.dtStringFieldOption === "richtext";
@@ -292,50 +340,84 @@ define([
                             useTextArea = field.length > 32;
                         }
 
+                        options = {
+                            required: !field.nullable,
+                            maxlength: field.length
+                        };
+                        if (field.dtDefault) {
+                            options.value = field.dtDefault;
+                        }
+                        if (field.dtTooltip && field.dtTooltip.length > 0) {
+                            options.title = field.dtTooltip;
+                        }
                         if (useTextArea) {
-                            inputItem = domConstruct.create("textArea", {
-                                placeholder: field.dtTooltip || "",
-                                className: "dynamicFormTextAreaCtl"
-                            }, row);
+                            options.rows = 4;
+                            inputItem = new ValidationTextArea(options, domConstruct.create("div", {}, row));
+                            inputItem.startup();
                         } else {
-                            inputItem = domConstruct.create("input", {
-                                type: "text",
-                                placeholder: field.dtTooltip || "",
-                                className: "dynamicFormInputCtl"
-                            }, row);
+                            inputItem = new ValidationTextBox(options, domConstruct.create("div", {}, row));
+                            inputItem.startup();
                         }
 
                         // Keep the content within the field's length limit
                         this.setInputWatchers(inputItem, updateCharactersCount);
 
+                    // Free numerics or a date picker
                     } else {
-                        if (field.type === "esriFieldTypeSmallInteger" || field.type === "esriFieldTypeInteger") {
+                        if (field.type === "esriFieldTypeSmallInteger" || field.type === "esriFieldTypeInteger"
+                                || field.type === "esriFieldTypeSingle" || field.type === "esriFieldTypeDouble") {
                             row = createRow();
                             domConstruct.create("br", {}, row);
-                            inputItem = domConstruct.create("input", {
-                                type: "text",
-                                className: "dynamicFormInputCtl",
-                                placeholder: field.dtTooltip || "",
-                                pattern: "[\\+\\-]?[0-9]*"
-                            }, row);
-                        } else if (field.type === "esriFieldTypeSingle" || field.type === "esriFieldTypeDouble") {
-                            row = createRow();
-                            domConstruct.create("br", {}, row);
-                            inputItem = domConstruct.create("input", {
-                                type: "text",
-                                className: "dynamicFormInputCtl",
-                                placeholder: field.dtTooltip || "",
-                                pattern: "[\\+\\-]?[0-9]*[\\.,]?[0-9]*"
-                            }, row);
+
+                            switch (field.type) {
+                            case "esriFieldTypeSmallInteger":
+                                pattern = "####0";
+                                break;
+                            case "esriFieldTypeInteger":
+                                pattern = "#########0";
+                                break;
+                            default:
+                                pattern = "########0.######";
+                                break;
+                            }
+
+                            options = {
+                                constraints: {pattern: pattern},
+                                required: !field.nullable
+                            };
+                            if (field.dtDefault) {
+                                options.value = field.dtDefault;
+                            }
+                            if (field.dtTooltip && field.dtTooltip.length > 0) {
+                                options.title = field.dtTooltip;
+                            }
+                            if (field.domain && field.domain.type === "range") {
+                                options.constraints.min = field.domain.minValue;
+                                options.constraints.max = field.domain.maxValue;
+                            }
+                            inputItem = new NumberTextBox(options, domConstruct.create("div", {}, row));
+                            inputItem.startup();
+
                         } else if (field.type === "esriFieldTypeDate") {
                             row = createRow();
                             domConstruct.create("br", {}, row);
-                            inputItem = new DateTextBox({}, domConstruct.create("div", {}, row));
+                            options = {};
+                            if (field.dtDefault) {
+                                options.value = field.dtDefault;
+                            } else {
+                                options.value = new Date();
+                            }
+                            if (field.dtTooltip && field.dtTooltip.length > 0) {
+                                options.title = field.dtTooltip;
+                            }
+                            inputItem = new DateTextBox(options, domConstruct.create("div", {}, row));
+                            inputItem.startup();
+                            inputItem.dtManualValidationFlag = true;
                         }
                     }
 
                     if (esriLang.isDefined(inputItem)) {
-                        // Set its initial value if supplied
+                        // Set its initial value if supplied and trigger the 'change' event
                         if (this._presets[field.name]) {
                             if (inputItem.set) {  // Dojo item
                                 inputItem.set("value", this._presets[field.name]);
@@ -346,15 +428,6 @@ define([
                                 "bubbles": true,
                                 "cancelable": false
                             });
-                        }
-
-                        // Apply the tooltip if we have one
-                        if (field.dtTooltip && field.dtTooltip.length > 0) {
-                            if (inputItem.set) {  // Dojo item
-                                inputItem.set("title", field.dtTooltip);
-                            } else {              // HTML item
-                                inputItem.title = field.dtTooltip;
-                            }
                         }
 
                         // If required, set its status in the required-value status flag
@@ -413,10 +486,14 @@ define([
             if (form.length > 0) {
                 // Assemble the attributes for the submission from the form
                 array.forEach(form, lang.hitch(this, function (entry) {
-                    if (entry.input) {
-                        attr[entry.field.name] = entry.input.value;
-                    } else if (entry.value) {
-                        attr[entry.field.name] = entry.value;
+                    var value = entry.input.get("value");
+
+                    if (entry.field.domain && entry.field.domain.type === "codedValue") {
+                        // Convert list selection into the coded value
+                        attr[entry.field.name] = entry.field.domain.codedValues[parseInt(value, 10)].code;
+                    } else {
+                        // Get the value
+                        attr[entry.field.name] = value;
                     }
                 }));
             }

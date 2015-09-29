@@ -24,16 +24,20 @@ define([
     "dojo/Deferred",
     "dojo/dom",
     "dojo/dom-class",
+    "dojo/dom-construct",
     "dojo/dom-style",
     "dojo/json",
     "dojo/on",
     "dojo/parser",
     "dojo/promise/all",
     "dojo/promise/first",
+    "dojo/query",
     "dojo/topic",
     "esri/arcgis/utils",
     "esri/config",
+    "esri/dijit/HomeButton",
     "esri/dijit/LocateButton",
+    "dijit/registry",
     "application/lib/LayerAndTableMgmt",
     "application/lib/SearchDijitHelper",
     "application/widgets/ItemDetails/ItemDetailsController",
@@ -55,16 +59,20 @@ define([
     Deferred,
     dom,
     domClass,
+    domConstruct,
     domStyle,
     JSON,
     on,
     parser,
     all,
     first,
+    query,
     topic,
     arcgisUtils,
     esriConfig,
+    HomeButton,
     LocateButton,
+    registry,
     LayerAndTableMgmt,
     SearchDijitHelper,
     ItemDetails,
@@ -103,21 +111,33 @@ define([
         },
 
         reportError: function (error) {
-            // remove loading class from body
+            // remove loading class from body and the busy cursor from the sidebar controller
             domClass.remove(document.body, "app-loading");
-            domClass.add(document.body, "app-error");
-            // an error occurred - notify the user. In this example we pull the string from the
-            // resource.js file located in the nls folder because we've set the application up
-            // for localization. If you don't need to support multiple languages you can hardcode the
-            // strings here and comment out the call in index.html to get the localization strings.
-            // set message
-            var node = dom.byId("loading_message");
-            if (node) {
-                if (this.config && this.config.i18n) {
-                    node.innerHTML = this.config.i18n.map.error + ": " + ((error && error.message) || error || "");
-                } else {
-                    node.innerHTML = "Unable to create map: " + ((error && error.message) || error || "");
+
+            // Get the text of the message
+            if (error) {
+                if (error.message) {
+                    error = error.message;
                 }
+            } else {
+                error = this.config.i18n.map.error;
+            }
+
+            // Do we have a UI yet?
+            if (this._sidebarCnt) {
+                this._sidebarCnt.showBusy(false);
+
+                // Display the error to the side of the map
+                var messageNode = domConstruct.create("div", {
+                    className: "absoluteCover",
+                    innerHTML: error
+                }, "sidebarContent", "first");
+
+            // Otherwise, we need to use the backup middle-of-screen error display
+            } else {
+                domStyle.set("contentDiv", "display", "none");
+                domClass.add(document.body, "app-error");
+                dom.byId("loading_message").innerHTML = error;
             }
         },
 
@@ -144,7 +164,7 @@ define([
 
             // Complete wiring-up when all of the setups complete
             all([setupUI, createMap]).then(lang.hitch(this, function (statusList) {
-                var configuredVotesField, commentFields;
+                var configuredVotesField, commentFields, contentContainer, needToggleCleanup;
 
                 //----- Merge map-loading info with UI items -----
                 if (this.config.featureLayer && this.config.featureLayer.fields && this.config.featureLayer.fields.length > 0) {
@@ -168,14 +188,12 @@ define([
                  * @param {object} item Item whose vote was updated
                  */
                 topic.subscribe("addLike", lang.hitch(this, function (item) {
-                    console.log(">addLike>", item);  //???
                     if (this._votesField) {
                         this._mapData.incrementVote(item, this._votesField);
                     }
                 }));
 
                 topic.subscribe("cancelForm", lang.hitch(this, function () {
-                    console.log(">cancelForm>");  //???
                     this._itemDetails.destroyCommentForm();
                     this._currentlyCommenting = false;
                 }));
@@ -184,7 +202,6 @@ define([
                  * @param {object} item Item that received a comment
                  */
                 topic.subscribe("commentAdded", lang.hitch(this, function (item) {
-                    console.log(">commentAdded>", item);  //???
                     topic.publish("updateComments", item);
                 }));
 
@@ -192,13 +209,11 @@ define([
                  * @param {string} err Error message for when an item's comment add failed
                  */
                 topic.subscribe("commentAddFailed", lang.hitch(this, function (err) {
-                    console.log(">commentAddFailed>", err);  //???
                     this._sidebarCnt.showBusy(false);
                     topic.publish("showError", err);
                 }));
 
                 topic.subscribe("detailsCancel", lang.hitch(this, function () {
-                    console.log(">detailsCancel>");  //???
                     topic.publish("showPanel", "itemsList");
                 }));
 
@@ -207,7 +222,6 @@ define([
                  */
                 topic.subscribe("getComment", lang.hitch(this, function (item) {
                     var userInfo;
-                    console.log(">getComment>", item);  //???
 
                     if (this._currentlyCommenting) {
                         topic.publish("cancelForm");
@@ -219,16 +233,15 @@ define([
                 }));
 
                 topic.subscribe("helpSelected", lang.hitch(this, function () {
-                    console.log(">helpSelected>");  //???
                     this._helpDialogContainer.set("displayText", this.config.displayText);
                     this._helpDialogContainer.show();
                 }));
+                this._sidebarHdr.updateHelp(true);
 
                 /**
                  * @param {object} item Item to find out more about
                  */
                 topic.subscribe("itemSelected", lang.hitch(this, function (item) {
-                    console.log(">itemSelected>", item);  //???
                     var itemExtent;
 
                     this._currentItem = item;
@@ -258,13 +271,16 @@ define([
                         this.map.centerAndZoom(item.geometry,
                             Math.min(2 + this.map.getZoom(), this.map.getMaxZoom()));
                     }
+
+                    // If the screen is narrow, switch to the list view; if it isn't, switching to list view is
+                    // a no-op because that's the normal state for wider windows
+                    topic.publish("showListViewClicked");
                 }));
 
                 /**
                  * @param {boolean} isSelected New state of setting
                  */
                 topic.subscribe("linkToMapViewChanged", lang.hitch(this, function (isSelected) {
-                    console.log(">linkToMapViewChanged>", isSelected);  //???
                     this._linkToMapView = isSelected;
                     topic.publish("updateItems");
                 }));
@@ -273,7 +289,6 @@ define([
                  * @param {string} err Error message to display
                  */
                 topic.subscribe("showError", lang.hitch(this, function (err) {
-                    console.log(">showError>", err);  //???
                     this._helpDialogContainer.set("displayText", err);
                     this._helpDialogContainer.show();
                 }));
@@ -282,7 +297,6 @@ define([
                  * @param {string} name Name of sidebar content panel to switch to
                  */
                 topic.subscribe("showPanel", lang.hitch(this, function (name) {
-                    console.log(">showPanel>", name);  //???
                     this._sidebarCnt.showPanel(name);
 
                     if (name === "itemsList") {
@@ -292,12 +306,10 @@ define([
                 }));
 
                 topic.subscribe("signinUpdate", lang.hitch(this, function () {
-                    console.log(">signinUpdate>");  //???
                     this._sidebarHdr.updateSignin(this._socialDialog.getSignedInUser());
                 }));
 
                 topic.subscribe("socialSelected", lang.hitch(this, function () {
-                    console.log(">socialSelected>");  //???
                     var signedInUser = this._socialDialog.getSignedInUser();
                     if (!signedInUser) {
                         // Show the social media sign-in screen so that the user can sign in
@@ -313,7 +325,6 @@ define([
                  * @param {object} comment Comment to add to item
                  */
                 topic.subscribe("submitForm", lang.hitch(this, function (item, comment) {
-                    console.log(">submitForm>", item, comment);  //???
                     this._sidebarCnt.showBusy(true);
                     this._mapData.addComment(item, comment);
                     this._itemDetails.destroyCommentForm();
@@ -324,7 +335,6 @@ define([
                  * @param {object} item Item whose attachments are to be refreshed
                  */
                 topic.subscribe("updateAttachments", lang.hitch(this, function (item) {
-                    console.log(">updateAttachments>", item);  //???
                     this._sidebarCnt.showBusy(true);
                     this._mapData.queryAttachments(item);
                 }));
@@ -333,7 +343,6 @@ define([
                  * @param {object} item Item whose comments list is to be refreshed
                  */
                 topic.subscribe("updateComments", lang.hitch(this, function (item) {
-                    console.log(">updateComments>", item);  //???
                     if (this._hasCommentTable) {
                         this._sidebarCnt.showBusy(true);
                         this._mapData.queryComments(item);
@@ -345,7 +354,6 @@ define([
                  * @param {array} attachments List of attachments for the current item
                  */
                 topic.subscribe("updatedAttachments", lang.hitch(this, function (item, attachments) {
-                    console.log(">updatedAttachments>", attachments);  //???
                     if (this._currentItem &&
                             this._currentItem.attributes[this._currentItem._layer.objectIdField] ===
                             item.attributes[item._layer.objectIdField]) {
@@ -359,7 +367,6 @@ define([
                  * @param {array} comments List of comments for the current item
                  */
                 topic.subscribe("updatedCommentsList", lang.hitch(this, function (item, comments) {
-                    console.log(">updatedCommentsList>", comments);  //???
                     if (this._currentItem &&
                             this._currentItem.attributes[this._currentItem._layer.objectIdField] ===
                             item.attributes[item._layer.objectIdField]) {
@@ -372,13 +379,11 @@ define([
                  * @param {array} items List of items matching update request
                  */
                 topic.subscribe("updatedItemsList", lang.hitch(this, function (items) {
-                    console.log(">updatedItemsList>", items);  //???
                     this._itemsList.setItems(items);
                     this._sidebarCnt.showBusy(false);
                 }));
 
                 topic.subscribe("updateItems", lang.hitch(this, function () {
-                    console.log(">updateItems>");  //???
                     this._sidebarCnt.showBusy(true);
                     this._mapData.queryItems(this._linkToMapView ? this.map.extent : null);
                 }));
@@ -387,7 +392,6 @@ define([
                  * @param {object} item Item whose votes count was changed
                  */
                 topic.subscribe("voteUpdated", lang.hitch(this, function (item) {
-                    console.log(">voteUpdated>", item);  //???
                     this._itemDetails.updateItemVotes(item);
                 }));
 
@@ -395,7 +399,6 @@ define([
                  * @param {string} err Error message for when an item's votes count change failed
                  */
                 topic.subscribe("voteUpdateFailed", lang.hitch(this, function (err) {
-                    console.log(">voteUpdateFailed>", err);  //???
                     topic.publish("showError", err);
                 }));
 
@@ -422,6 +425,41 @@ define([
                 topic.publish("showPanel", "itemsList");
                 topic.publish("signinUpdate");
 
+                // Handle the switch between list and map views for narrow screens
+                contentContainer = registry.byId("contentDiv");
+                needToggleCleanup = true;
+                topic.subscribe("showMapViewClicked", lang.hitch(this, function (err) {
+                    // Reduce the sidebar as much as possible wihout breaking the Layout Container
+                    // and show the map
+                    domStyle.set("sidebarContent", 'display', 'none');
+                    domStyle.set("mapDiv", 'display', 'block');
+                    contentContainer.resize();
+                    this._sidebarHdr.setViewToggle(false);
+                    needToggleCleanup = true;
+                }));
+                topic.subscribe("showListViewClicked", lang.hitch(this, function (err) {
+                    // Hide the map and restore the sidebar to the display that it has for this
+                    // browser width
+                    domStyle.set("mapDiv", 'display', '');
+                    domStyle.set("sidebarContent", 'display', '');
+                    domStyle.set("sidebarContent", 'width', '');
+                    contentContainer.resize();
+                    this._sidebarHdr.setViewToggle(true);
+                    needToggleCleanup = true;
+                }));
+                on(window, "resize", lang.hitch(this, function (event) {
+                    // If we've tinkered with the Layout Container for the narrow screen
+                    // and now the screen is wider than the single-panel threshold, reset
+                    // the Layout Container
+                    if (needToggleCleanup && event.currentTarget.innerWidth > 640) {
+                        domStyle.set("mapDiv", 'display', '');
+                        domStyle.set("sidebarContent", 'display', '');
+                        domStyle.set("sidebarContent", 'width', '');
+                        contentContainer.resize();
+                        this._sidebarHdr.setViewToggle(true);
+                        needToggleCleanup = false;
+                    }
+                }));
 
                 //----- Done -----
                 console.log("app is ready");
@@ -458,13 +496,15 @@ define([
 
                 // Set the theme
                 styleString += ".appTheme{color:" + this.config.theme.foreground + ";background-color:" + this.config.theme.background + "}";
-                styleString += ".appTheme:hover{color:" + this.config.theme.foreground + ";background-color:" + this.config.theme.background + "!important}";
+                styleString += ".appThemeHover:hover{color:" + this.config.theme.background + ";background-color:" + this.config.theme.foreground + "!important}";
+                styleString += ".appThemeInverted{color:" + this.config.theme.background + ";background-color:" + this.config.theme.foreground + "}";
+                styleString += ".appThemeInvertedHover:hover{color:" + this.config.theme.foreground + ";background-color:" + this.config.theme.background + "!important}";
                 styleString += ".appThemeAccentBkgd{background-color:" + this.config.theme.accentBkgd + "}";
                 styleString += ".appThemeAccentText{color:" + this.config.theme.accentText + "!important}";
                 this.injectCSS(styleString);
 
                 // Apply the theme to the sidebar
-                domStyle.set("sidebar", "border-left-color", this.config.theme.background);
+                domStyle.set("sidebarContent", "border-left-color", this.config.theme.background);
 
 
                 //----- Add the widgets -----
@@ -477,14 +517,14 @@ define([
                         "width": 350,
                         "height": 300
                     }
-                }).placeAt(document.body); // placeAt triggers a startup call to _socialDialog
+                }).placeAt(document.body);
 
                 // Sidebar header
                 this._sidebarHdr = new SidebarHeader({
                     "appConfig": this.config,
                     "showSignin": this._socialDialog.isAvailable() && (this.config.commentNameField.trim().length > 0),
-                    "showHelp": this.config.displayText.length > 0
-                }).placeAt("sidebarHeading"); // placeAt triggers a startup call to _sidebarHdr
+                    "showHelp": this.config.displayText
+                }).placeAt("sidebarHeading");
 
                 // Popup window for help, error messages, social media
                 this._helpDialogContainer = new PopupWindow({
@@ -494,24 +534,24 @@ define([
                         "width": 350,
                         "height": 300
                     }
-                }).placeAt(document.body); // placeAt triggers a startup call to _helpDialogContainer
+                }).placeAt(document.body);
 
                 // Sidebar content controller
                 this._sidebarCnt = new SidebarContentController({
                     "appConfig": this.config
-                }).placeAt("sidebarContent"); // placeAt triggers a startup call to _sidebarCnt
+                }).placeAt("sidebarContent");
 
                 // Items list
                 this._itemsList = new ItemList({
                     "appConfig": this.config,
                     "linkToMapView": this._linkToMapView
-                }).placeAt("sidebarContent"); // placeAt triggers a startup call to _itemsList
+                }).placeAt("sidebarContent");
                 this._sidebarCnt.addPanel("itemsList", this._itemsList);
 
                 // Item details
                 this._itemDetails = new ItemDetails({
                     "appConfig": this.config
-                }).placeAt("sidebarContent"); // placeAt triggers a startup call to _itemDetails
+                }).placeAt("sidebarContent");
                 this._itemDetails.hide();
                 this._sidebarCnt.addPanel("itemDetails", this._itemDetails);
 
@@ -542,7 +582,7 @@ define([
                 editable: this.config.editable,
                 bingMapsKey: this.config.bingKey
             }).then(lang.hitch(this, function (response) {
-                var geoLocate;
+                var homeButton, geoLocate;
 
                 // Once the map is created we get access to the response which provides important info
                 // such as the map, operational layers, popup info and more. This object will also contain
@@ -550,7 +590,15 @@ define([
                 // Here we'll use it to update the application to match the specified color theme.
                 this.map = response.map;
 
-                // start up locate widget
+                // Start up home widget
+                homeButton = new HomeButton({
+                    map: this.map,
+                    theme: "HomeButtonLight"
+                }, "HomeButton");
+                domConstruct.place(homeButton.domNode, query(".esriSimpleSliderIncrementButton", "mapDiv_zoom_slider")[0], "after");
+                homeButton.startup();
+
+                // Start up locate widget
                 geoLocate = new LocateButton({
                     map: this.map,
                     theme: "LocateButtonLight"
@@ -571,7 +619,7 @@ define([
                     }));
                 }
             }), function (err) {
-                mapCreateDeferred.reject((err ? ": " + err : ""));
+                mapCreateDeferred.reject(err || this.config.i18n.map.error);
             });
 
             // Once the map and its first layer are loaded, get the layer's data
@@ -591,10 +639,10 @@ define([
                         "SearchButton");
 
                 }), lang.hitch(this, function (err) {
-                    mapDataReadyDeferred.reject(this.config.i18n.map.layerLoad + (err ? ": " + err : ""));
+                    mapDataReadyDeferred.reject(err || this.config.i18n.map.layerLoad);
                 }));
             }), lang.hitch(this, function (err) {
-                mapDataReadyDeferred.reject(this.config.i18n.map.layerLoad + (err ? ": " + err : ""));
+                mapDataReadyDeferred.reject(err || this.config.i18n.map.layerLoad);
             }));
 
             return mapDataReadyDeferred.promise;
