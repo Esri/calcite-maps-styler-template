@@ -1,0 +1,151 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+
+<head>
+<meta charset="utf-8">
+<meta name="fragment" content="!">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=7,IE=9,IE=10">
+<title></title>
+<link rel="stylesheet" type="text/css" href="//jsdev.arcgis.com/3.15/dijit/themes/tundra/tundra.css">
+<link rel="stylesheet" type="text/css" href="//jsdev.arcgis.com/3.15/esri/css/esri.css" />
+<link rel="stylesheet" type="text/css" href="css/layout.css" />
+<script type="text/javascript">
+var path_location = location.pathname.replace(/\/[^/]+$/, '');
+var dojoConfig = {
+  parseOnLoad: true,
+  packages:[
+      {
+      name:"esriTemplate",
+      location: path_location
+    },
+    {
+      name:"utilities",
+      location: path_location + "/javascript" 
+    },
+    {
+     name: "templateConfig",
+      location: path_location.substr(0,path_location.lastIndexOf('/')) 
+    }
+  ]
+};
+</script>
+
+<script type="text/javascript" src="//jsdev.arcgis.com/3.15/"></script>
+<script type="text/javascript" src="javascript/jquery.min.js"></script>
+<script type="text/javascript" src="javascript/map.js"></script>
+<script type="text/javascript" src="javascript/layout.js"></script>
+<script type="text/javascript">
+function init() {
+    dojo.require("utilities.app");
+    dojo.require("templateConfig.commonConfig");
+
+        var defaults = {
+            //The ID for the map from ArcGIS.com
+            webmaps: [{
+                    "id": "e433e25a1e354552b04ba348a3f4d5c5"
+                }
+            ],
+            //Enter a title, if no title is specified, the webmap's title is used.
+            title: "",
+            //Enter a subtitle, if not specified the ArcGIS.com web map's summary is used
+            subtitle: "",
+            //Enter a description, if not specified the ArcGIS.com web map's summary is used (Works only when using one map)
+            description: "",
+            //Enter the titles to be displayed on tabs, if none are provided the webmap's titles will be used
+            tabTitles: [{
+                    "title": ""
+                }
+            ],
+            //Display description in side panel
+            displayDescription: true,
+            //Display legend in side panel with description or if no if you choose not to display a description, the legend will display in a dropdown panel
+            displayLegend: true,
+            //Loop through time animation: choose true or false
+            loop: true,
+            //Sync maps scale and location: choose true or false
+            syncMaps: true,
+            //specify a proxy url if needed
+            proxyurl: "",
+            //Modify this to point to your sharing service URL if you are using the portal
+            sharingurl: "",
+            //add default template options. This includes the bing key, sharing url, proxy url, 
+            //and any service urls (geometry, geocode, print) 
+            //that may be needed by the template.
+            bingmapskey: commonConfig.bingMapsKey,
+            helperServices:commonConfig.helperServices   
+        };
+
+            var app = new utilities.App(defaults);
+            app.init().then(function(options){
+              initMap(options);
+            });
+    }
+
+//show map on load
+dojo.addOnLoad(init);
+</script>
+</head>
+
+<body onResize="resetLayout()" class="tundra">
+<div id="mainWindow" dojotype="dijit.layout.BorderContainer" design="headline" gutters="false">
+<!--Banner-->
+<div id="banner" dojotype="dijit.layout.BorderContainer" gutters="false" region="top">
+<!--Header-->
+<div id="headerArea" dojotype="dijit.layout.BorderContainer" region="top">
+    <div id="titleText" dojotype="dijit.layout.ContentPane" region="center">
+          <h1 id="title"></h1>
+
+        <p id="subtitle"></p>
+    </div>
+    <!--/titleText-->
+    <div id="logoArea" dojotype="dijit.layout.ContentPane" region="right"></div>
+    <!--/logoArea-->
+</div>
+<!--/header-->
+<!--Time Slider-->
+<div id="timeSliderArea" dojotype="dijit.layout.ContentPane" region="center" dir="ltr">
+    <div id="timeSliderDiv"></div>
+</div>
+<!--/timeSliderArea-->
+<!--Tab Area-->
+<div id="tabArea" dojotype="dijit.layout.ContentPane" region="bottom"></div>
+<!--/tabArea-->
+</div>
+<!--/banner-->
+<!--Content-->
+<div id="content" dojotype="dijit.layout.BorderContainer" gutters="false" region="center">
+<!--Sidebar Section-->
+<div dojotype="dijit.layout.ContentPane" id="leftPane" region="left">
+    <div id="descriptionPanel"></div>
+    <!--/descriptionPanel-->
+    <div id="legendHeader">
+         <h4 id="legendHeaderText"></h4>
+
+    </div>
+    <!--/legendHeader-->
+    <div id="legendPanel"></div>
+    <!--/legendPanel-->
+</div>
+<!--/leftPane-->
+<!--Map Section-->
+<div dojotype="dijit.layout.ContentPane" id="mapPane" region="center" dir="ltr">
+    <div id="mapBlind"></div>
+    <div id="timeDisplay"></div>
+</div>
+<!--mapPane-->
+</div>
+<!--/content-->
+</div>
+<!--/main-->
+<!--Loading Panel-->
+<div id="loadingCon">
+<div id="loadingDialog">
+<div id="loadingHeader"></div>
+<div id="loading"></div>
+<img id="loadingImg" alt="" src="images/progressBar.gif">
+</div>
+</div>
+</body>
+
+</html>
