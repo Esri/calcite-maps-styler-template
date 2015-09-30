@@ -494,12 +494,12 @@ ready, parser, domAttr, domGeometry, on, array, declare, lang, query, dom, domCl
                 if (points && points.length === 2) {
                     options.center = [parseFloat(points[0]), parseFloat(points[1])];
                 }
-
             }
             arcgisUtils.createMap(itemInfo, "mapDiv", {
                 mapOptions: options,
                 usePopupManager: true,
                 editable: false,
+                layerMixins: this.config.layerMixins || [],
                 bingMapsKey: this.config.bingKey
             }).then(lang.hitch(this, function (response) {
                 this.map = response.map;
