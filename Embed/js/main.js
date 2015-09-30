@@ -131,11 +131,38 @@ ready, parser, domAttr, domGeometry, on, array, declare, lang, query, dom, domCl
             }
 
             //Feature Search or find (if no search widget)
-            if((this.config.find || this.config.feature)){
-                require(["esri/dijit/Search"], lang.hitch(this, function(Search){
+            if(this.config.find || this.config.feature || (this.config.customUrlLayer.id !== null && this.config.customUrlLayer.fields.length > 0 && this.config.customUrlParam !== null)){
+                require(["esri/dijit/Search", "esri/urlUtils"], lang.hitch(this, function(Search, urlUtils){
+
                     //get the search value
                     var feature = null, find = null, source = null, value = null;
-                    if(this.config.feature){
+  
+                    if((this.config.customUrlLayer.id !== null && this.config.customUrlLayer.fields.length > 0 && this.config.customUrlParam !== null)){
+                        var urlObject = urlUtils.urlToObject(document.location.href);
+                        urlObject.query = urlObject.query || {};
+                        urlObject.query = esriLang.stripTags(urlObject.query);
+                        var customUrl = null;
+                        for(var prop in urlObject.query){
+                            if(urlObject.query.hasOwnProperty(prop)){
+                                if(prop.toUpperCase() === this.config.customUrlParam.toUpperCase()){
+                                    customUrl = prop;
+                                }
+                            }
+                        }
+                        value = urlObject.query[customUrl];
+                        searchLayer = this.map.getLayer(this.config.customUrlLayer.id);
+                        if (searchLayer) {
+
+                            var searchFields = this.config.customUrlLayer.fields[0].fields;
+                            source = {
+                                exactMatch: true,
+                                outFields: ["*"],
+                                featureLayer: searchLayer,
+                                displayField: searchFields[0],
+                                searchFields: searchFields
+                            };
+                        }
+                    }else if(this.config.feature){
                        feature = decodeURIComponent(this.config.feature);
                         if(feature){
                           var splitFeature = feature.split(";");
