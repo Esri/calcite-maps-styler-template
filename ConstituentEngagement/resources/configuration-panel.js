@@ -23,9 +23,12 @@
         "webMapInfoTags": false,
         "webMapInfoNumViews": false,
         "webMapInfoAvgRating": false,
+        "bufferRadius": 3,
+        "bufferUnit": "miles",
         "submitMessage": "Thank you! Your report has been submitted.",
         "likeField": "NUMVOTES",
         "commentField": "COMMENTS",
+        "usePopupConfigurationForComment":false,
         "reportedByField": "USERID",
         "zoomLevel": 12,
         "enableUSNGSearch": false,
@@ -79,7 +82,6 @@
                     "label": "Facebook AppId",
                     "tooltip": "Facebook AppId"
                 },
-
                 {
                     "type": "boolean",
                     "fieldName": "enableGoogleplus",
@@ -97,7 +99,6 @@
         {
             "category": "<b>Application Settings</b>",
             "fields": [
-
                 {
                     "type": "string",
                     "fieldName": "applicationIcon",
@@ -145,7 +146,12 @@
                     "label": "Comment Field (optional)",
                     "tooltip": "Text field in the comments tables that stores feedback. Field name must be the same across all layers and maps."
                 },
-
+                {
+                    "type": "boolean",
+                    "fieldName": "usePopupConfigurationForComment",
+                    "label": "Comment Popup Configuration",
+                    "tooltip": "Allow users to choose between default or custom popup configuration for comments"
+                },
                 {
                     "type": "string",
                     "fieldName": "zoomLevel",
@@ -215,6 +221,36 @@
                     "fieldName": "webMapInfoAvgRating",
                     "label": "Average Rating",
                     "tooltip": "Enable to show webmap average rating"
+                },
+                {
+                    "type": "string",
+                    "fieldName": "bufferRadius",
+                    "label": "Buffer Radius",
+                    "tooltip": "Buffer Radius"
+                },
+                {
+                    "type": "options",
+                    "fieldName": "bufferUnit",
+                    "tooltip": "Unit to be used for buffer",
+                    "label": "Buffer Unit:",
+                    "options": [
+                        {
+                            "label": "Miles",
+                            "value": "miles"
+                        },
+                        {
+                            "label": "Kilometers",
+                            "value": "kilometers"
+                        },
+                        {
+                            "label": "Meters",
+                            "value": "meters"
+                        },
+                        {
+                            "label": "Feets",
+                            "value": "feet"
+                        }
+                    ]
                 }
             ]
         },
