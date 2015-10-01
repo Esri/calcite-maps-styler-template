@@ -175,11 +175,7 @@ th
     top: 0;
     left: 0;
     overflow: hidden;
-    filter: alpha(opacity = 40);
-    -moz-opacity: 0.4;
-    -khtml-opacity: 0.4;
-    opacity: 0.4;
-    background-color: #000;
+    background-color: #8e8e8e;
 }
 
 .app-loading .loading-indicator
@@ -188,7 +184,6 @@ th
     background-position: center center;
     background-image: url(../images/loading-indicator.gif);
     background-repeat: no-repeat;
-    background-size: 32px;
 }
 
 .esriCTHideLoadingIndicatorImage
