@@ -298,6 +298,8 @@ body,html {
     white-space: normal;
     max-width: 400px;
     margin: 0 auto;
+    padding-right:1em;
+    padding-left:1em;
 }
 
 .time {
