@@ -267,6 +267,11 @@ body {
   -o-text-overflow: normal;
   text-overflow: normal;
 }
+.esriRTL .claro .dojoxExpandoClosed .dojoxExpandoTitleNode {
+  padding-top:0 !important;
+  margin-top:170px !important;
+  transform-origin: 39% 84% !important;
+}
 .claro .dojoxExpandoIcon {
   z-index: 500;
   cursor: pointer;
