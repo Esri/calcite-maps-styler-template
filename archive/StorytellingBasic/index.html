@@ -1,107 +1,138 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+   "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<head>
-  <title></title>
-  <meta charset="utf-8">   
-  <meta name="fragment" content="!">
-  <!-- Define the versions of IE that will be used to render the page. See Microsoft documentation for details. Optional. -->
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <!-- Responsive -->
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-  <meta name="mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="default">
-  <!-- End Responsive -->
-  <!-- Use protocol relative urls that way if the browser is viewing the page via HTTPS the js/css file will be requested using the HTTPS protocol -->
-  <!-- 
-    To correctly reference your application in search engine:
-     - create and fill out extensively an ArcGIS Online item that link to your final application
-     - edit the following four tags as well as the title tag above on line 4
-  -->
-  <meta name="description" content="This story map was created with the Story Map Basic application in ArcGIS Online.">
-  
-  <!-- Facebook sharing -->
-  <meta property="og:type" content="article"/>
-  <meta property="og:title" content="Story Map Basic"/>
-  <meta property="og:description" content="This story map was created with the Story Map Basic application in ArcGIS Online."/>
-  <meta property="og:image" content="http://www.arcgis.com/apps/OnePane/storytelling_basic/images/esriGlobeLogow.png"/>
+  <head>
+    <meta charset="utf-8">
+    <meta name="fragment" content="!">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title></title>
+    <meta http-equiv="X-UA-Compatible" content="IE=9, IE=10">
+	
+	<meta name="fragment" content="!">
+	<link type="image/ico" rel="shortcut icon" href="//resources.esri.com/favicon.ico">
+	<link type="image/ico" rel="icon"  href="//resources.esri.com/favicon.ico">
+	
+	<!-- 
+		To correctly reference your application in search engine:
+		 - create and fill out extensively an ArcGIS Online item that link to your final application
+		 - edit the following four tags as well as the title tag above on line 4
+	-->
+	<meta name="description" content="This story map was created with the Story Map Basic application in ArcGIS Online.">
+	
+	<!-- Facebook sharing -->
+	<meta property="og:type" content="article"/>
+	<meta property="og:title" content="Story Map Basic"/>
+	<meta property="og:description" content="This story map was created with the Story Map Basic application in ArcGIS Online."/>
+	<meta property="og:image" content="http://www.arcgis.com/apps/OnePane/storytelling_basic/images/esriGlobeLogow.png"/>
+	
+	
+    <link rel="stylesheet" type="text/css" href="//jsdev.arcgis.com/3.15/esri/css/esri.css" />
+    <link rel="stylesheet" type="text/css" href="css/layout.css">
 
-  <link rel="stylesheet" href="//jsdev.arcgis.com/3.15/dijit/themes/claro/claro.css">
-  <link rel="stylesheet" href="//jsdev.arcgis.com/3.15/esri/css/esri.css">
-  <!-- Load any application specific styles -->
-  <link rel="stylesheet" href="css/main.css">
-</head>
-
-<body class="claro app-loading">
-  <div class="loading-indicator">
-    <div class="loading-message" id="loading_message"></div>
-  </div>
-  <div id="mainWindow" dojotype="dijit/layout/BorderContainer" data-dojo-props="design:'headline',gutters:false" style="height:width:100%;height:100%;">
-    <!-- Header Section-->
-    <div id="header" class="bg fg" dojotype="dijit/layout/ContentPane" data-dojo-props="region:'top'">
-      <div id="headerText">
-        <div id="title"></div>
-        <div id="subtitle"></div>
-      </div>
-      <div id="logoArea"></div>
-    </div>
-    <!-- Map Section -->
-    <div id="mapDiv" dojotype="dijit/layout/ContentPane" data-dojo-props="region:'center'" dir="ltr">
-      <div id="legendCon"  dir="ltr">
-        <div id="legendToggle" class="lbg"><p class="fg" id="legTogText"></p></div>
-        <div id="legendDiv"></div>
-      </div>
-      <div id="search"></div>
-    </div>
-  </div>
-  <script type="text/javascript">
-    var package_path = window.location.pathname.substring(0, window.location.pathname.lastIndexOf('/'));
+   <script type="text/javascript">
+    var path_location = location.pathname.replace(/\/[^/]+$/, '');
     var dojoConfig = {
-      async: true,
-      parseOnLoad:true,
-      // The locationPath logic below may look confusing but all its doing is
-      // enabling us to load the api from a CDN and load local modules from the correct location.
-      packages: [{
-        name: "application",
-        location: package_path + '/js'
-            }, {
-        name: "config",
-        location: package_path + '/config'
-            }, {
-        name: "arcgis_templates",
-        location: package_path + '/..'
-            }]
+      parseOnLoad: true,
+      packages:[
+        {
+          name:"esriTemplate",
+          location: path_location
+        },
+        {
+          name:"utilities",
+          location: path_location + "/javascript" 
+        },
+        {
+         name: "templateConfig",
+          location: path_location.substr(0,path_location.lastIndexOf('/OnePane')) 
+        }
+      ]
     };
   </script>
-  <script type="text/javascript" src="//jsdev.arcgis.com/3.15/"></script>
-  <script type="text/javascript">
-    require([
-        "config/templateConfig",
-        "application/template",
-        "application/main",
-        "dijit/layout/BorderContainer",
-        "dijit/layout/ContentPane"
-    ], function (
-      templateConfig,
-      Template,
-      Main
-    ) {
-      // create the template. This will take care of all the logic required for template applications
-      var myTemplate = new Template(templateConfig);
-      // create my main application. Start placing your logic in the main.js file.
-      var myApp = new Main();
-      // start template
-      myTemplate.startup().then(function (config) {
-        // The config object contains the following properties: helper services, (optionally)
-        // i18n, appid, webmap and any custom values defined by the application.
-        // In this example we have one called theme.
-        myApp.startup(config);
-      }, function (error) {
-        // something went wrong. Let's report it.
-        myApp.reportError(error);
-      });
-    });
-  </script>
-</body>
+    <script type="text/javascript" src="//jsdev.arcgis.com/3.15/"></script>
+    <script type="text/javascript" src="javascript/jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="javascript/layout.js"></script>
+    <script type="text/javascript">
 
-</html>
+
+  
+    function init(){
+     dojo.require("utilities.app");
+     dojo.require("templateConfig.commonConfig");
+
+      var defaults = {
+        //The ID for the map from ArcGIS.com
+        webmap : "9aae75bf5d2c4ce7ad8341e3c291f724",
+		    //The id for the web mapping applciation item that contains configuration info - in most
+        //cases this will be null.
+        appid:"",
+        //Enter a title, if no title is specified, the webmap's title is used.
+        title : "",
+        //Enter a subtitle, if not specified the ArcGIS.com web map's summary is used
+        subtitle : "",
+    	 //Display legend
+        legend : "true",
+        //specify a proxy url if needed
+        proxyurl:"",
+        //Modify this to point to your sharing service URL if you are using the portal
+        sharingurl :"",
+        //add default template options. This includes the bing key, sharing url, proxy url, 
+        //and any service urls (geometry, geocode, print) 
+        //that may be needed by the template.
+        bingmapskey: commonConfig.bingMapsKey,
+        helperServices:commonConfig.helperServices 
+      };
+      var app = new utilities.App(defaults);
+      app.init().then(function(options){
+        initMap(options);
+      });
+    }
+
+    //show map on load
+    dojo.addOnLoad(init);
+    </script>
+  </head>
+
+      <body class="tundra">
+        <div id="mainWindow" dojotype="dijit.layout.BorderContainer" design="headline"
+        gutters="false" style="width:100%; height:100%;">
+
+          <!-- Header Section-->
+          <div id="header" dojotype="dijit.layout.ContentPane" region="top">
+          	<div id="headerText">
+              <div id="title"></div>
+              <div id="subtitle"></div>
+            </div>
+            <div id="logoArea">
+            </div>
+        <div id="header_flourish"></div>
+
+          </div>
+
+          <!-- Map Section -->
+          <div id="map" dojotype="dijit.layout.ContentPane" region="center" dir="ltr">
+            <div id="legendCon"  dir="ltr">
+              	<div id="legendToggle"><p id="legTogText"></p></div>
+             	<div id="legendDiv"></div>
+            </div>
+          </div>
+
+        </div>
+
+        <!--Loading Panel-->
+        <div id="loadingCon">
+    		<div id="loadingDialog">
+     			<div id="loadingHeader"></div>
+     			 <div id="loading"></div>
+       			 <img id="loadingImg" alt="" src="images/progressBar.gif">
+   		    </div>
+ 		  </div>
+
+       </body>
+
+  </html></div>
+ 		  </div>
+
+       </body>
+
+  </html>
