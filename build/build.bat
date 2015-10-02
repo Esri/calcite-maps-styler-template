@@ -145,7 +145,7 @@ xcopy %TEMPLATES_ROOT%\archive\OnePaneChrome                    %BUILD_OUTPUT%\O
 xcopy %TEMPLATES_ROOT%\archive\OnePanePavement                  %BUILD_OUTPUT%\OnePane\pavement                     /E /Y
 xcopy %TEMPLATES_ROOT%\archive\OnePaneSeaside                   %BUILD_OUTPUT%\OnePane\seaside                      /E /Y
 xcopy %TEMPLATES_ROOT%\archive\Splash                           %BUILD_OUTPUT%\OnePane\splash                       /E /Y
-xcopy %TEMPLATES_ROOT%\StorytellingBasic                        %BUILD_OUTPUT%\OnePane\storytelling_basic           /E /Y
+xcopy %TEMPLATES_ROOT%\archive\StorytellingBasic                %BUILD_OUTPUT%\OnePane\storytelling_basic           /E /Y
 xcopy %TEMPLATES_ROOT%\archive\TwitterTimeline                  %BUILD_OUTPUT%\OnePane\twittertimeline              /E /Y
 xcopy %TEMPLATES_ROOT%\archive\Swipe                            %BUILD_OUTPUT%\OnePane\swipe                        /E /Y
 xcopy %TEMPLATES_ROOT%\archive\GPX                              %BUILD_OUTPUT%\OnePane\gpx                          /E /Y
@@ -158,6 +158,7 @@ xcopy %TEMPLATES_ROOT%\SimpleViewer                             %BUILD_OUTPUT%\S
 xcopy %TEMPLATES_ROOT%\archive\SocialMedia                      %BUILD_OUTPUT%\SocialMedia                          /E /Y
 xcopy %TEMPLATES_ROOT%\Solutions                                %BUILD_OUTPUT%\Solutions                            /E /Y
 xcopy %TEMPLATES_ROOT%\StorytellingSwipe                        %BUILD_OUTPUT%\StorytellingSwipe                    /E /Y
+xcopy %TEMPLATES_ROOT%\StorytellingBasic                        %BUILD_OUTPUT%\StorytellingBasic                    /E /Y
 xcopy %TEMPLATES_ROOT%\archive\StorytellingTextLegend           %BUILD_OUTPUT%\StorytellingTextLegend               /E /Y
 xcopy %TEMPLATES_ROOT%\archive\TwoPane                          %BUILD_OUTPUT%\TwoPane\main                         /E /Y
 xcopy %TEMPLATES_ROOT%\archive\TwoPaneChrome                    %BUILD_OUTPUT%\TwoPane\Chrome                       /E /Y
