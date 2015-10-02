@@ -14,6 +14,7 @@ LocalPerspective\js\nls
 MapJournal\resources\common\nls
 MapTour\resources\nls
 PublicInformation\js\nls
+Profile\js\nls
 SimpleViewer\js\nls
 StorytellingBasic\nls
 StorytellingCompare\nls
