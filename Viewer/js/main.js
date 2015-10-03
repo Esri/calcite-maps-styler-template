@@ -880,6 +880,12 @@ define([
                 if (search && search.domNode) {
                     domConstruct.place(search.domNode, "panelGeocoder");
                 }
+             // update the search placeholder text color and dropdown
+             // to match the icon text 
+             if(this.config.icons === "black"){
+                query(".arcgisSearch .searchIcon").style("color", "#000");
+                domClass.add(dom.byId("search_input"),"dark");
+             }
 
             }));
 

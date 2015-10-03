@@ -286,6 +286,22 @@ html, body {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#4D000000,endColorstr=#4D000000);
   zoom: 1;
   color: #fff; }
+
+#search_input.dark::-webkit-input-placeholder{
+  color:    #000;
+}
+
+#search_input.dark:-moz-placeholder{
+  color:    #000;
+}
+
+#search_input.dark::-moz-placeholder{
+  color:    #000;
+}
+
+#search_input.dark:-ms-input-placeholder{
+  color:    #000;
+}
 @media only screen and (max-width: 400px){
   .arcgisSearch .searchGroup .searchInput{
     width:130px;
