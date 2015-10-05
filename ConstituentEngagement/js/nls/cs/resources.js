@@ -54,7 +54,9 @@ define(
             infoBtnToolTip: "Informace o mapě" // Command button to view the 'Map information'
         },
         issueWall: {
-            noResultsFound: "V aktuální oblasti nejsou k dispozici žádné zprávy.", // Shown in the issue wall when no issues are present in the current map extent
+            noResultsFound: "Ř_No features found______ů", // Shown in the issue wall when no issues are present in layer
+            noResultsFoundInCurrentBuffer: "Ř_No features found near you_________ů", // Shown in the issue wall when no issues are present in the current buffer extent
+            unableToFetchFeatureError: "Ř_Unable to complete operation_________ů", // Shown in the issue wall when layer does not return any features and throws an error
             gotoWebmapListTooltip: "Jít na hlavní seznam", // Tooltip for back icon in list header
             gotoMapViewTooltip: "Zobrazení mapy" // Tooltip for map-it icon in list header
         },
@@ -109,7 +111,7 @@ define(
         myIssues: {
             title: "Moje zprávy", // Shown as a title in 'My issues' panel
             myIssuesTooltip: "Moje zprávy", // Command button to access issues reported by the logged in user
-            noResultsFound: "Nebyly nalezeny žádné zprávy." // Shown when no issues are reported by the logged in user
+            noResultsFound: "Ř_No reports found______ů" // Shown when no issues are reported by the logged in user
         },
         itemDetails: {  // Detailed information about an item and a list of its comments
             likeButtonLabel: "Líbí se mi", // Command button shown in details panel
@@ -125,10 +127,10 @@ define(
             gotoIssueListTooltip: "Přejít na seznam zpráv" // Tooltip for back icon in Issue list header
         },
         itemList: {  // List of feature layer items shown in my-issues and issue-wall
-            likesForThisItemTooltip: "Hlasy pro tuto zprávu" //Shown on hovering of the like icon in my-issues and issue-wall
+            likesForThisItemTooltip: "Hlasy pro tuto zprávu", //Shown on hovering of the like icon in my-issues and issue-wall
+            loadMoreButtonText: "Ř_Load More_____ů..." //Text for load more button
         },
         comment: {
-            commentsFormText: "Komentář",
             commentsFormSubmitButton: "Odeslat komentář",
             commentsFormCancelButton: "Storno",
             errorInSubmittingComment: "Komentář se nepodařilo odeslat.", // Shown when user is unable to add comments

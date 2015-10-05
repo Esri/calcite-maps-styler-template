@@ -54,7 +54,9 @@ define(
             infoBtnToolTip: "Informacje o mapie" // Command button to view the 'Map information'
         },
         issueWall: {
-            noResultsFound: "Brak raportów w obecnym obszarze", // Shown in the issue wall when no issues are present in the current map extent
+            noResultsFound: "ł_No features found______ą", // Shown in the issue wall when no issues are present in layer
+            noResultsFoundInCurrentBuffer: "ł_No features found near you_________ą", // Shown in the issue wall when no issues are present in the current buffer extent
+            unableToFetchFeatureError: "ł_Unable to complete operation_________ą", // Shown in the issue wall when layer does not return any features and throws an error
             gotoWebmapListTooltip: "Przejdź do głównej listy", // Tooltip for back icon in list header
             gotoMapViewTooltip: "Widok mapy" // Tooltip for map-it icon in list header
         },
@@ -109,7 +111,7 @@ define(
         myIssues: {
             title: "Moje raporty", // Shown as a title in 'My issues' panel
             myIssuesTooltip: "Moje raporty", // Command button to access issues reported by the logged in user
-            noResultsFound: "Nie znaleziono raportów" // Shown when no issues are reported by the logged in user
+            noResultsFound: "ł_No reports found______ą" // Shown when no issues are reported by the logged in user
         },
         itemDetails: {  // Detailed information about an item and a list of its comments
             likeButtonLabel: "Lubię to", // Command button shown in details panel
@@ -125,10 +127,10 @@ define(
             gotoIssueListTooltip: "Przejdź do listy raportów" // Tooltip for back icon in Issue list header
         },
         itemList: {  // List of feature layer items shown in my-issues and issue-wall
-            likesForThisItemTooltip: "Głosy na ten raport" //Shown on hovering of the like icon in my-issues and issue-wall
+            likesForThisItemTooltip: "Głosy na ten raport", //Shown on hovering of the like icon in my-issues and issue-wall
+            loadMoreButtonText: "ł_Load More_____ą..." //Text for load more button
         },
         comment: {
-            commentsFormText: "Komentarz",
             commentsFormSubmitButton: "Prześlij komentarz",
             commentsFormCancelButton: "Anuluj",
             errorInSubmittingComment: "Nie można przesłać komentarza.", // Shown when user is unable to add comments

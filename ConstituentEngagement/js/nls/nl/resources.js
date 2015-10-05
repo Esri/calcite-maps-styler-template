@@ -54,7 +54,9 @@ define(
             infoBtnToolTip: "Kaartinformatie" // Command button to view the 'Map information'
         },
         issueWall: {
-            noResultsFound: "Er zijn geen rapporten beschikbaar in het huidige gebied", // Shown in the issue wall when no issues are present in the current map extent
+            noResultsFound: "Ĳ_No features found______ä", // Shown in the issue wall when no issues are present in layer
+            noResultsFoundInCurrentBuffer: "Ĳ_No features found near you_________ä", // Shown in the issue wall when no issues are present in the current buffer extent
+            unableToFetchFeatureError: "Ĳ_Unable to complete operation_________ä", // Shown in the issue wall when layer does not return any features and throws an error
             gotoWebmapListTooltip: "Ga naar de hoofdlijst", // Tooltip for back icon in list header
             gotoMapViewTooltip: "Kaartweergave" // Tooltip for map-it icon in list header
         },
@@ -109,7 +111,7 @@ define(
         myIssues: {
             title: "Mijn Rapporten", // Shown as a title in 'My issues' panel
             myIssuesTooltip: "Mijn Rapporten", // Command button to access issues reported by the logged in user
-            noResultsFound: "Geen rapporten gevonden" // Shown when no issues are reported by the logged in user
+            noResultsFound: "Ĳ_No reports found______ä" // Shown when no issues are reported by the logged in user
         },
         itemDetails: {  // Detailed information about an item and a list of its comments
             likeButtonLabel: "Zoals", // Command button shown in details panel
@@ -125,10 +127,10 @@ define(
             gotoIssueListTooltip: "Ga naar de meldlijst" // Tooltip for back icon in Issue list header
         },
         itemList: {  // List of feature layer items shown in my-issues and issue-wall
-            likesForThisItemTooltip: "Stemmen op dit rapport" //Shown on hovering of the like icon in my-issues and issue-wall
+            likesForThisItemTooltip: "Stemmen op dit rapport", //Shown on hovering of the like icon in my-issues and issue-wall
+            loadMoreButtonText: "Ĳ_Load More_____ä..." //Text for load more button
         },
         comment: {
-            commentsFormText: "Opmerking",
             commentsFormSubmitButton: "Opmerking verzenden",
             commentsFormCancelButton: "Annuleren",
             errorInSubmittingComment: "Reactie kon niet worden ingediend.", // Shown when user is unable to add comments

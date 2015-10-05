@@ -54,7 +54,9 @@ define(
             infoBtnToolTip: "Kortoplysninger" // Command button to view the 'Map information'
         },
         issueWall: {
-            noResultsFound: "Ingen rapporter er tilgængelige i det aktuelle område", // Shown in the issue wall when no issues are present in the current map extent
+            noResultsFound: "ø_No features found______å", // Shown in the issue wall when no issues are present in layer
+            noResultsFoundInCurrentBuffer: "ø_No features found near you_________å", // Shown in the issue wall when no issues are present in the current buffer extent
+            unableToFetchFeatureError: "ø_Unable to complete operation_________å", // Shown in the issue wall when layer does not return any features and throws an error
             gotoWebmapListTooltip: "Gå til hovedlisten", // Tooltip for back icon in list header
             gotoMapViewTooltip: "Kortvisning" // Tooltip for map-it icon in list header
         },
@@ -109,7 +111,7 @@ define(
         myIssues: {
             title: "Mine rapporter", // Shown as a title in 'My issues' panel
             myIssuesTooltip: "Mine rapporter", // Command button to access issues reported by the logged in user
-            noResultsFound: "ingen rapporter fundet" // Shown when no issues are reported by the logged in user
+            noResultsFound: "ø_No reports found______å" // Shown when no issues are reported by the logged in user
         },
         itemDetails: {  // Detailed information about an item and a list of its comments
             likeButtonLabel: "Synes godt om", // Command button shown in details panel
@@ -125,10 +127,10 @@ define(
             gotoIssueListTooltip: "Gå til rapportlisten" // Tooltip for back icon in Issue list header
         },
         itemList: {  // List of feature layer items shown in my-issues and issue-wall
-            likesForThisItemTooltip: "Stemmer på denne rapport" //Shown on hovering of the like icon in my-issues and issue-wall
+            likesForThisItemTooltip: "Stemmer på denne rapport", //Shown on hovering of the like icon in my-issues and issue-wall
+            loadMoreButtonText: "ø_Load More_____å..." //Text for load more button
         },
         comment: {
-            commentsFormText: "Kommentar",
             commentsFormSubmitButton: "Send kommentar",
             commentsFormCancelButton: "Annuller",
             errorInSubmittingComment: "Kommentar kunne ikke indsendes.", // Shown when user is unable to add comments

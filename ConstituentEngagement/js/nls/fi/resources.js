@@ -54,7 +54,9 @@ define(
             infoBtnToolTip: "Kartan tiedot" // Command button to view the 'Map information'
         },
         issueWall: {
-            noResultsFound: "Nykyiseltä alueelta ei ole raportteja käytettävissä", // Shown in the issue wall when no issues are present in the current map extent
+            noResultsFound: "Å_No features found______ö", // Shown in the issue wall when no issues are present in layer
+            noResultsFoundInCurrentBuffer: "Å_No features found near you_________ö", // Shown in the issue wall when no issues are present in the current buffer extent
+            unableToFetchFeatureError: "Å_Unable to complete operation_________ö", // Shown in the issue wall when layer does not return any features and throws an error
             gotoWebmapListTooltip: "Siirry pääluetteloon", // Tooltip for back icon in list header
             gotoMapViewTooltip: "Karttanäkymä" // Tooltip for map-it icon in list header
         },
@@ -109,7 +111,7 @@ define(
         myIssues: {
             title: "Omat raportit", // Shown as a title in 'My issues' panel
             myIssuesTooltip: "Omat raportit", // Command button to access issues reported by the logged in user
-            noResultsFound: "Yhtään raporttia ei löytynyt" // Shown when no issues are reported by the logged in user
+            noResultsFound: "Å_No reports found______ö" // Shown when no issues are reported by the logged in user
         },
         itemDetails: {  // Detailed information about an item and a list of its comments
             likeButtonLabel: "Kuten", // Command button shown in details panel
@@ -125,10 +127,10 @@ define(
             gotoIssueListTooltip: "Siirry raporttiluetteloon" // Tooltip for back icon in Issue list header
         },
         itemList: {  // List of feature layer items shown in my-issues and issue-wall
-            likesForThisItemTooltip: "Tämän raportin äänet" //Shown on hovering of the like icon in my-issues and issue-wall
+            likesForThisItemTooltip: "Tämän raportin äänet", //Shown on hovering of the like icon in my-issues and issue-wall
+            loadMoreButtonText: "Å_Load More_____ö..." //Text for load more button
         },
         comment: {
-            commentsFormText: "Kommentti",
             commentsFormSubmitButton: "Lähetä kommentti",
             commentsFormCancelButton: "Peruuta",
             errorInSubmittingComment: "Kommentin lähetys ei onnistunut.", // Shown when user is unable to add comments

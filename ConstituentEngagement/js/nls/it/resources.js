@@ -54,7 +54,9 @@ define(
             infoBtnToolTip: "Informazioni mappa" // Command button to view the 'Map information'
         },
         issueWall: {
-            noResultsFound: "Nessun report disponibile nell\'area corrente", // Shown in the issue wall when no issues are present in the current map extent
+            noResultsFound: "é_No features found______È", // Shown in the issue wall when no issues are present in layer
+            noResultsFoundInCurrentBuffer: "é_No features found near you_________È", // Shown in the issue wall when no issues are present in the current buffer extent
+            unableToFetchFeatureError: "é_Unable to complete operation_________È", // Shown in the issue wall when layer does not return any features and throws an error
             gotoWebmapListTooltip: "Vai all\'elenco principale", // Tooltip for back icon in list header
             gotoMapViewTooltip: "Vista mappa" // Tooltip for map-it icon in list header
         },
@@ -109,7 +111,7 @@ define(
         myIssues: {
             title: "I miei report", // Shown as a title in 'My issues' panel
             myIssuesTooltip: "I miei report", // Command button to access issues reported by the logged in user
-            noResultsFound: "Nessun report trovato" // Shown when no issues are reported by the logged in user
+            noResultsFound: "é_No reports found______È" // Shown when no issues are reported by the logged in user
         },
         itemDetails: {  // Detailed information about an item and a list of its comments
             likeButtonLabel: "Come", // Command button shown in details panel
@@ -125,10 +127,10 @@ define(
             gotoIssueListTooltip: "Vai all\'elenco dei report" // Tooltip for back icon in Issue list header
         },
         itemList: {  // List of feature layer items shown in my-issues and issue-wall
-            likesForThisItemTooltip: "Voti per questo report" //Shown on hovering of the like icon in my-issues and issue-wall
+            likesForThisItemTooltip: "Voti per questo report", //Shown on hovering of the like icon in my-issues and issue-wall
+            loadMoreButtonText: "é_Load More_____È..." //Text for load more button
         },
         comment: {
-            commentsFormText: "Commento",
             commentsFormSubmitButton: "Invia commento",
             commentsFormCancelButton: "Annulla",
             errorInSubmittingComment: "Impossibile inviare il commento.", // Shown when user is unable to add comments
