@@ -436,7 +436,8 @@ declare, lang, query, registry, on, string, locale, domConstruct, domStyle, arra
                 domClass.remove(dom.byId("timeControls"), "controlCont");
                 domClass.add(dom.byId("playControls"), "hide");
                 domClass.add("timeContainer", "window-bottom-center");
-                dom.byId("timeLabel").innerHTML = this.config.i18n.time.enableTimeMessage;
+                var timeMessage = string.substitute(this.config.i18n.time.enableTimeMessage,{"link":"<a target='_blank' href='" + this.config.i18n.time.enableTimeMessageLink  +"'>" + this.config.i18n.time.enableTimeMessageLink + "</a>"});
+                dom.byId("timeLabel").innerHTML = timeMessage;
                 domClass.add(dom.byId("timeSliderDiv"), "error-text");
             }
             this._updateTheme();
