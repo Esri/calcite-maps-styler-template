@@ -60,7 +60,7 @@ define([
       if (config) {
         this.config = config;
         // Hide legend container if not enabled
-        dom.byId("legTogText").innerHTML = this.config.i18n.legendToggle.down;
+        dom.byId("legTogText").innerHTML = this.config.i18n.legendToggle.label + " ▼";
         if(!this.config.legend){
           domUtils.hide(dom.byId("legendCon"));
         }
@@ -191,10 +191,10 @@ define([
           on(dom.byId("legendToggle"), "click", lang.hitch(this, function(){
             var displayMode = domStyle.get(dom.byId("legendDiv"),"display");
             if(displayMode === "none"){
-              dom.byId("legTogText").innerHTML = this.config.i18n.legendToggle.up;
+              dom.byId("legTogText").innerHTML = this.config.i18n.legendToggle.label + " ▲";
               toggler.show();
             }else{
-              dom.byId("legTogText").innerHTML = this.config.i18n.legendToggle.down;
+              dom.byId("legTogText").innerHTML = this.config.i18n.legendToggle.label + " ▼";
               toggler.hide();
             }
           }));

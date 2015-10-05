@@ -21,8 +21,7 @@ define({
       generalError: "Error"
     },
     legendToggle:{
-        up: "MAP LEGEND ▲",
-        down: "MAP LEGEND ▼"
+        label: "MAP LEGEND"
     }
   }),
 "ar": 1,
