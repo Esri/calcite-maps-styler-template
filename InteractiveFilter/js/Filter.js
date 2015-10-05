@@ -1,5 +1,5 @@
-define(["dojo/_base/declare", "dojo/_base/array", "dojo/_base/lang", "dojo/_base/kernel", "dojo/number", "dojo/dom", "dojo/query", "dojo/dom-construct", "dojo/dom-style", "dojo/dom-class", "dojo/Deferred", "dojo/promise/all", "dojo/ready", "dojo/request/script", "dojo/Stateful", "dojo/Evented", "dojo/i18n!application/nls/resources", "dojo/on", "esri/request", "esri/tasks/query", "esri/tasks/QueryTask", "dojo/domReady!"], function (
-declare, array, lang, dojo, number, dom, dojoQuery, domConstruct, domStyle, domClass, Deferred, all, ready, script, Stateful, Evented, i18n, on, esriRequest, Query, QueryTask) {
+define(["dojo/_base/declare", "dojo/_base/array", "dojo/_base/lang", "dojo/_base/kernel", "dojo/number", "dojo/dom", "dojo/query", "dojo/dom-construct", "dojo/dom-style", "dojo/dom-class", "dojo/Deferred", "dojo/promise/all", "dojo/ready", "dojo/request/script", "dojo/Stateful", "dojo/string", "dojo/Evented", "dojo/i18n!application/nls/resources", "dojo/on", "esri/request", "esri/tasks/query", "esri/tasks/QueryTask", "dojo/domReady!"], function (
+declare, array, lang, dojo, number, dom, dojoQuery, domConstruct, domStyle, domClass, Deferred, all, ready, script, Stateful, string, Evented, i18n, on, esriRequest, Query, QueryTask) {
     return declare("application.Filter", [Stateful, Evented], {
         options: {
             map: null,
@@ -72,7 +72,8 @@ declare, array, lang, dojo, number, dom, dojoQuery, domConstruct, domStyle, domC
                 if (layers.length > 0) {
                     content = this._buildFilterDialog(layers);
                 } else {
-                    content = "<div style='padding:8px;'>" + i18n.viewer.filterNo + "</div>";
+                    var noFilterText = string.substitute(i18n.viewer.filterNo,{"link":"<a target='_blank' href='" + i18n.viewer.filterLink  +"'>" + i18n.viewer.filterLink + "</a>"});
+                    content = "<div style='padding:8px;'>" + noFilterText + "</div>";
                 }
                 deferred.resolve(content);
 
