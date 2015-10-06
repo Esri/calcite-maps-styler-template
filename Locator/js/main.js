@@ -38,7 +38,6 @@ define([
   "esri/IdentityManager", 
   "esri/arcgis/utils", 
   "esri/dijit/Directions", 
-  "esri/dijit/Geocoder", 
   "esri/dijit/LocateButton", 
   "esri/dijit/Popup", 
   "esri/dijit/Search", 
@@ -81,7 +80,6 @@ define([
     esriId, 
     arcgisUtils, 
     Directions, 
-    Geocoder, 
     LocateButton, 
     Popup, 
     Search, 
@@ -118,7 +116,7 @@ define([
         destLayer: null,
         origin: null,
         originObj: null,
-        geocoder: null,
+        //geocoder: null,
         search: null,
         dirWidget: null,
         selectedNum: null,
@@ -575,7 +573,7 @@ define([
             var options = {
                 map: this.map,
                 //maxStops : 2,
-                showTravelModesOption: false,
+                showTravelModesOption: true,
                 showTrafficOption: true,
                 geocoderOptions: geocoderOptions,
                 routeParams: {
@@ -620,6 +618,7 @@ define([
             //on(this.dirWidget, "directions-clear", lang.hitch(this, this._directionsCleared));
             on(this.dirWidget, "directions-finish", lang.hitch(this, this._directionsFinished));
             this.dirWidget.startup();
+            console.log("here", this.dirWidget.getSupportedTravelModeNames());
 
             // configure ui
             this._configureUI();
@@ -929,6 +928,7 @@ define([
             } else {
                 this.selectedNum = null;
             }
+            console.log("here", this.dirWidget.getSupportedTravelModeNames());
         },
 
         // Highlight Record
