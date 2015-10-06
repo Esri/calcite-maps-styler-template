@@ -52,7 +52,7 @@ hr {
 .app-loading .loading-indicator {
     /* Loading image */
     background-position: center center;
-    background-image: url(../images/ajax-loader-new.gif);
+    background-image: url(../images/ajax-loader.gif);
     background-repeat: no-repeat;
 }
 
