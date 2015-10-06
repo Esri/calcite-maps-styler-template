@@ -100,6 +100,41 @@
        "stringFieldOption":"richtext"
       } ]
     },{
+      "category":"Optional Tools",
+      "fields":[{
+        "type": "boolean",
+        "fieldName": "basemaps",
+        "tooltip": "Enable basemap gallery",
+        "label": "Basemap Gallery"
+      },{
+        "type": "boolean",
+        "fieldName": "legend",
+        "label": "Enable legend",
+        "tooltip": "Display legend"
+      },{
+       "type":"boolean",
+       "fieldName":"share",
+       "label":"Share Dialog",
+       "tooltip":"Display share dialog"
+      } ]
+    },{  
+         "category":"Search Settings",
+         "fields":[  
+            {
+               "type":"paragraph",
+               "value": "Enable search to allow users to find a location or data in the map. Configure the search settings to refine the experience in your app by setting the default search resource, placeholder text, etc."
+            },
+            {  
+               "type":"boolean",
+               "fieldName":"search",
+               "label":"Enable search tool"
+            },{
+               "type": "search",
+               "fieldName":"searchConfig",
+               "label": "Configure search tool"
+            }
+         ]
+      },{
       "category":"Theme",
       "fields":[{
         "type": "paragraph",
@@ -166,6 +201,10 @@
     "splashModal": false,
     "background": "#666",
     "color": "#fff",
+    "legend": false,
+    "basemaps": false,
+    "share": false,
+    "search": false,
     "backgroundOpacity": "0.9",
     "panelLocation": "bottom-center",
     "axisFontColor": "#fff",

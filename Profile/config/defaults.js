@@ -52,7 +52,7 @@ define({
   "color": "#fff", 
   // Enable/disable tools
   "mapZoom": true, // set to false to disable map zoom slider 
-  "search": true, // Search Tool
+  "search": false, // Search Tool
   "searchExtent": true,
   "searchLayers":[{
       "id": "",
@@ -71,9 +71,9 @@ define({
       "fields": []//Name of the string field to search 
   },
   "customUrlParam": null,//Name of url param. For example parcels
-  "basemaps": true, // Basemap Gallery 
-  "legend": true, // Legend 
-  "share": true, // Share Dialog 
+  "basemaps": false, // Basemap Gallery 
+  "legend": false, // Legend 
+  "share": false, // Share Dialog 
   //Replace these with your own bitly key
   "bitlyLogin": "arcgis",
   "bitlyKey": "R_b8a169f3a8b978b9697f64613bf1db6d",
