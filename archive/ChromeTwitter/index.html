@@ -29,10 +29,10 @@
           location:path_location + "/javascript/social"}
       ]
     };
-   var urlLocale = location.search.match(/locale=([\w\-]+)/) ? RegExp.$1 : null;
-   if(urlLocale){
-    dojoConfig.locale = urlLocale;
-   }
+   // Have to handle a locale parameter before dojo is loaded
+    if (location.search.match(/locale=([\w\-]+)/)) {
+        dojoConfig.locale = RegExp.$1;
+    }
   </script>
   <script type="text/javascript" src="//js.arcgis.com/3.14/">
   </script>
