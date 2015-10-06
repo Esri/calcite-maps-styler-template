@@ -867,7 +867,7 @@ define([
                     //if edit tool is enabled we'll have to delete/create 
                     //so info window behaves correctly. 
                     on.once(this.map.infoWindow, "hide", lang.hitch(this, function () {
-                        search.clear();
+                        //search.clear();
                         if (this.editor) {
                             this._destroyEditor();
                             this._createEditor();
@@ -938,7 +938,7 @@ define([
                     urlSearch.on("load", lang.hitch(this, function () {
                         urlSearch.search(value).then(lang.hitch(this, function () {
                             on.once(this.map.infoWindow, "hide", lang.hitch(this, function () {
-                                urlSearch.clear();
+                                //urlSearch.clear();
                                 urlSearch.destroy();
                                 if (this.editor) {
                                     this._destroyEditor();
