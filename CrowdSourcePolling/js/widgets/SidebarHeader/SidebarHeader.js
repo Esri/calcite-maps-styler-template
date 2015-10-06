@@ -24,6 +24,7 @@ define([
     "dojo/dom",
     "dojo/_base/lang",
     "dojo/_base/window",
+    "dojo/dom-attr",
     "dojo/dom-class",
     "dojo/dom-construct",
     "dojo/dom-style",
@@ -38,6 +39,7 @@ define([
     dom,
     lang,
     win,
+    domAttr,
     domClass,
     domConstruct,
     domStyle,
@@ -149,8 +151,10 @@ define([
                 topic.publish("hideOptionsMenu");
             });
 
-
+            // Title icon and text
             this.appTitle.innerHTML = this.appTitle.title = this.appConfig.title || "";
+            domAttr.set(this.bannerImg, "src", this.appConfig.titleIcon);
+            domStyle.set(this.bannerImgDiv, "display", "inline-block");
         },
 
         /**

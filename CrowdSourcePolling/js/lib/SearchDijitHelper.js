@@ -20,6 +20,7 @@ define([
     "dojo/_base/declare",
     "dojo/_base/array",
     "dojo/_base/lang",
+    "dojo/query",
     "esri/dijit/Search",
     "esri/layers/FeatureLayer",
     "esri/tasks/locator"
@@ -27,6 +28,7 @@ define([
     declare,
     array,
     lang,
+    query,
     Search,
     FeatureLayer,
     Locator
@@ -44,8 +46,10 @@ define([
          * enable the geocoder, the default geocoder is used
          * @param {object} appProperties Webmap's applicationProperties structure
          * @param {string|object} srcNode Reference or id of the HTML element where the widget should be rendered
+         * @param {boolean} searchAlwaysExpanded Whether or not search button is always expanded (always shows its
+         * type-in box; true) or is dynamically expanded (false)
          */
-        createSearchDijit: function (map, operationalLayers, geocoders, appProperties, srcNode) {
+        createSearchDijit: function (map, operationalLayers, geocoders, appProperties, srcNode, searchAlwaysExpanded) {
             var searchAppProperties, searchSources = [], addLayersFromMap = false, searchControl;
 
             // Adjust the search properties with whatever's configured in the webmap;
@@ -108,6 +112,11 @@ define([
 
                     // Launch it
                     searchControl.startup();
+
+                    // Expand the widget if it's always to be expanded
+                    if (searchAlwaysExpanded) {
+                        query(".arcgisSearch .hasButtonMode.searchCollapsed .searchExpandContainer").style("width", "268px");
+                    }
                 }
             }
         },

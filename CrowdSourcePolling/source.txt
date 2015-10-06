@@ -1,7 +1,9 @@
 From git branch 
 develop
-commit b3263db18304b6715a540c38f42541c51b68a819
+commit b7133d86a230e172b85869235e132160eb332c4f
 Author: MikeTschudi <mtschudi@esri.com>
-Date:   Tue Sep 29 11:10:34 2015 -0700
+Date:   Tue Oct 6 14:12:19 2015 -0700
 
-    Removed domReady dependency from library routines
+    Made title bar icon configurable; parameter is "titleIcon"
+    
+    #100

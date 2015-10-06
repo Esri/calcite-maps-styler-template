@@ -52,7 +52,7 @@ body {
 .app-loading .loading-indicator {
   /* Loading image */
   background-position: center center;
-  background-image: url(../images/ajax-loader.gif);
+  background-image: url(../images/LoadingIndicator_gray.gif);
   background-repeat: no-repeat;
 }
 .app-error .loading-message {
@@ -173,7 +173,7 @@ textarea {
 .busy {
   /* Loading overlay image */
   background-position: center center;
-  background-image: url(../images/ajax-loader.gif);
+  background-image: url(../images/LoadingIndicator_gray.gif);
   background-repeat: no-repeat;
   opacity: 0.5;filter:Alpha(opacity=50);
   position: absolute;
@@ -295,7 +295,7 @@ textarea {
     margin: 0;
     overflow: hidden;
     background-position: center center;
-    background-image: url(../images/ajax-loader.gif);
+    background-image: url(../images/dijit_busy.gif);
     background-repeat: no-repeat;
 }
 
@@ -398,7 +398,7 @@ textarea {
 }
 
 .bannerImgDiv {
-    display: inline-block;
+    display: none;
     float: left;
     margin: -8px 0 -8px -8px;
 }
