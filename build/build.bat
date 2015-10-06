@@ -92,6 +92,7 @@ mkdir %BUILD_OUTPUT%\SummaryViewer
 mkdir %BUILD_OUTPUT%\MapJournal
 mkdir %BUILD_OUTPUT%\MapSeries
 mkdir %BUILD_OUTPUT%\StoryMapBasic
+mkdir %BUILD_OUTPUT%\StorytellingBasic
 mkdir %BUILD_OUTPUT%\Viewer
 
 
@@ -158,7 +159,7 @@ xcopy %TEMPLATES_ROOT%\SimpleViewer                             %BUILD_OUTPUT%\S
 xcopy %TEMPLATES_ROOT%\archive\SocialMedia                      %BUILD_OUTPUT%\SocialMedia                          /E /Y
 xcopy %TEMPLATES_ROOT%\Solutions                                %BUILD_OUTPUT%\Solutions                            /E /Y
 xcopy %TEMPLATES_ROOT%\StorytellingSwipe                        %BUILD_OUTPUT%\StorytellingSwipe                    /E /Y
-xcopy %TEMPLATES_ROOT%\StorytellingBasic                        %BUILD_OUTPUT%\StoryMapBasic                    /E /Y
+xcopy %TEMPLATES_ROOT%\StorytellingBasic                        %BUILD_OUTPUT%\StoryMapBasic                        /E /Y
 xcopy %TEMPLATES_ROOT%\archive\StorytellingTextLegend           %BUILD_OUTPUT%\StorytellingTextLegend               /E /Y
 xcopy %TEMPLATES_ROOT%\archive\TwoPane                          %BUILD_OUTPUT%\TwoPane\main                         /E /Y
 xcopy %TEMPLATES_ROOT%\archive\TwoPaneChrome                    %BUILD_OUTPUT%\TwoPane\Chrome                       /E /Y
