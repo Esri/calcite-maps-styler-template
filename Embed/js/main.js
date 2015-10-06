@@ -258,6 +258,9 @@ ready, parser, domAttr, domGeometry, on, array, declare, lang, query, dom, domCl
                 //add a button below the slider to show/hide the basemaps 
                 var mainContainer = domConstruct.create("div", {
                     "class": "icon-basemap-container active-toggle",
+                    "tabindex": "0",
+                    "aria-label": this.config.i18n.tools.basemap.label,
+                    "role": "button",
                     "click": lang.hitch(this, this._displayBasemapContainer)
                 }, this.map.id + "_root");
 
@@ -276,7 +279,7 @@ ready, parser, domAttr, domGeometry, on, array, declare, lang, query, dom, domCl
 
                 domConstruct.create("div", {
                     "class": "arrow_box",
-                    innerHTML: "<div class='basemap_title'>" + this.config.i18n.tools.basemap.title + "</div><span id='embed-icon-menu-close' class='embed-icon-menu-close'></span><div id='full_gallery'></div>"
+                    innerHTML: "<div class='basemap_title'>" + this.config.i18n.tools.basemap.title + "</div><span tabindex='0' role='button' aria-label='" + this.config.i18n.tools.basemap.close + "' id='embed-icon-menu-close' class='embed-icon-menu-close'></span><div id='full_gallery'></div>"
                 }, container);
 
                 //add a class so we can move the basemap if the zoom position moved.
