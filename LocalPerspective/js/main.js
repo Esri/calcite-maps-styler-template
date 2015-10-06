@@ -172,11 +172,24 @@ define([
                 anchor: "top"
             }, dom.byId("panelPopup"));
 
+            // set extent from config/url
+            itemInfo = this._setExtent(itemInfo);
+            // Optionally define additional map config here for example you can
+            // turn the slider off, display info windows, disable wraparound 180, slider position and more.
+            var mapOptions = {};
+            // set zoom level from config/url
+            mapOptions = this._setLevel(mapOptions);
+            // set map center from config/url
+            mapOptions = this._setCenter(mapOptions);
+
+            // create webmap from item
+            mapOptions.infoWindow = popup;
+
             arcgisUtils.createMap(itemInfo, "mapDiv", {
-                mapOptions: {
-                    editable: false,
-                    infoWindow: popup
-                },
+                mapOptions: mapOptions,
+                usePopupManager: true,
+                layerMixins: this.config.layerMixins || [],
+                editable: false,
                 bingMapsKey: this.config.bingKey
             }).then(lang.hitch(this, function(response) {
 
@@ -354,6 +367,42 @@ define([
             var pt = this.map.extent.getCenter();
             this.ui.setLocation(pt);
             this.map.resize();
+        },
+
+        _setLevel: function (options) {
+            var level = this.config.level;
+            //specify center and zoom if provided as url params 
+            if (level) {
+                options.zoom = level;
+            }
+            return options;
+        },
+
+        _setCenter: function (options) {
+            var center = this.config.center;
+            if (center) {
+                var points = center.split(",");
+                if (points && points.length === 2) {
+                    options.center = [parseFloat(points[0]), parseFloat(points[1])];
+                }
+            }
+            return options;
+        },
+
+        _setExtent: function (info) {
+            var e = this.config.extent;
+            //If a custom extent is set as a url parameter handle that before creating the map
+            if (e) {
+                var extArray = e.split(",");
+                var extLength = extArray.length;
+                if (extLength === 4) {
+                    info.item.extent = [
+                        [parseFloat(extArray[0]), parseFloat(extArray[1])],
+                        [parseFloat(extArray[2]), parseFloat(extArray[3])]
+                    ];
+                }
+            }
+            return info;
         }
 
     });
