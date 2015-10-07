@@ -44,7 +44,7 @@ define({
     "nextBasemap": "hybrid",
     "defaultBasemap": "topo",
     "summaryAttributeOrder": "DESC",
-    "zoomType": "No Zoom", //Valid parameters: "No Zoom","Zoom to Extent" and "Zoom to Scale"
+    "zoomType": "Center", //Valid parameters: "None", "Center","Zoom to Extent" and "Zoom to Scale"
     "bitlyLogin": "arcgis",
     "bitlyKey": "R_b8a169f3a8b978b9697f64613bf1db6d",
     "summaryAttributes": [{

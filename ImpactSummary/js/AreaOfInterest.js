@@ -674,6 +674,9 @@ define([
                   }
                 }
                 switch (type) {
+                case "None":
+                  break;
+                case "Center":
                 case "No Zoom":
                   this.map.centerAt(center);
                   break;

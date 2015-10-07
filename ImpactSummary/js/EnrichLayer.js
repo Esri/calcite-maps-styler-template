@@ -1,4 +1,4 @@
-﻿define([
+define([
     "dojo/_base/declare",
     "dojo/_base/lang",
     "dojo/string",
@@ -55,7 +55,8 @@
             this.map = options.map;
             this.userInfo = options.userInfo;
             this.config = options.config;
-            this.analysisUrl = this.userInfo.portal.helperServices.analysis ? this.userInfo.portal.helperServices.analysis.url : null;
+            var helperServices = lang.mixin({}, this.userInfo.portal.helperServices, this.config.helperServices);
+            this.analysisUrl = helperServices.analysis ? helperServices.analysis.url : null;
             this.categoryTitles = [{
                 "title": nls.widgets.geoEnrichment.populationText,
                 "tabImage": window.location.pathname.substring(0, window.location.pathname.lastIndexOf("/")) + "/images/population.png"
