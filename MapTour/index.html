@@ -69,7 +69,7 @@
 		</script>
 
 		<script type="text/javascript">
-			var version = '2.4.0-091515';
+			var version = '2.4.0-100615';
 			var isProduction = true;
 
 			function loadJS(url, isExternal)
@@ -177,9 +177,8 @@
 				]
 			};
 			
-			var urlLocale = location.search.match(/locale=([\w\-]+)/) ? RegExp.$1 : null;
-			if( urlLocale ){
-				dojoConfig.locale = urlLocale;
+			if (location.search.match(/locale=([\w\-]+)/)) {
+				dojoConfig.locale = RegExp.$1
 			}
 		</script>
 		<!--[if IE 7]>
