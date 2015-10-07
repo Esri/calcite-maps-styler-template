@@ -85,7 +85,6 @@ mkdir %BUILD_OUTPUT%\TwoPane\main
 mkdir %BUILD_OUTPUT%\TwoPane\Chrome
 mkdir %BUILD_OUTPUT%\TwoPane\pavement
 mkdir %BUILD_OUTPUT%\TwoPane\seaside
-mkdir %BUILD_OUTPUT%\UrbanObservatory
 mkdir %BUILD_OUTPUT%\PublicInformation
 mkdir %BUILD_OUTPUT%\ImpactSummary
 mkdir %BUILD_OUTPUT%\SummaryViewer
@@ -165,7 +164,6 @@ xcopy %TEMPLATES_ROOT%\archive\TwoPane                          %BUILD_OUTPUT%\T
 xcopy %TEMPLATES_ROOT%\archive\TwoPaneChrome                    %BUILD_OUTPUT%\TwoPane\Chrome                       /E /Y
 xcopy %TEMPLATES_ROOT%\archive\TwoPanePavement                  %BUILD_OUTPUT%\TwoPane\pavement                     /E /Y
 xcopy %TEMPLATES_ROOT%\archive\TwoPaneSeaside                   %BUILD_OUTPUT%\TwoPane\seaside                      /E /Y
-xcopy %TEMPLATES_ROOT%\UrbanObservatory                         %BUILD_OUTPUT%\UrbanObservatory                     /E /Y
 xcopy %TEMPLATES_ROOT%\PublicInformation                        %BUILD_OUTPUT%\PublicInformation                    /E /Y
 xcopy %TEMPLATES_ROOT%\ImpactSummary                            %BUILD_OUTPUT%\ImpactSummary                        /E /Y
 xcopy %TEMPLATES_ROOT%\SummaryViewer                            %BUILD_OUTPUT%\SummaryViewer                        /E /Y
