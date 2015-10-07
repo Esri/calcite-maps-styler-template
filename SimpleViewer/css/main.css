@@ -259,7 +259,7 @@ html, body {
 .esriPopup.light .actionsPane .action {
   position: absolute;
   cursor: pointer;
-  background-image: url("http://js.arcgis.com/3.12/esri/css/calcite/images/popup-sprite.png");
+  background-image: url("../images/popup-sprite.png");
   width: 12px;
   height: 12px;
   text-indent: -9999px; }
