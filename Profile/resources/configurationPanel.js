@@ -47,6 +47,11 @@
         "label": "Elevation profile location",
         "tooltip": "Specify profile panel location"
       },{
+        "type": "string",
+        "fieldName": "customProfileUrl",
+        "label": "Custom profile url",
+        "tooltip": "Custom profile service url"
+      },{
         "type": "paragraph",
         "value": "Specify custom colors for the elevation profile chart. Default color scheme is blue/gray"
       },{

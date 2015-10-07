@@ -154,13 +154,6 @@ define([
         on(profileToggle, "click", lang.hitch(this, function(){
             this._togglePanel("panelContent");
         }));
-
-        /*on(dom.byId("panelContainer"), mouse.enter, function(){
-          domClass.add(document.body, "noscroll"); 
-        });
-        on(dom.byId("panelContainer"), mouse.leave, function(){
-          domClass.remove(document.body, "noscroll"); 
-        });*/
         this._setupAppTools();
         // setup elevation profile 
         this._setupProfile();
@@ -438,6 +431,11 @@ define([
         if(units === "english" || units === "metric"){
          units = (units === "english") ? Units.MILES : Units.KILOMETERS;
         }
+        var profileUrl = this.config.helperServices.elevationSync.url;
+        if(this.config.customProfileUrl){
+          //overwrite the profile url if a custom one is specified
+          profileUrl = this.config.customProfileUrl;
+        }
         var params = {
             map: this.map,
             chartParams:{
@@ -451,7 +449,7 @@ define([
               skyBottomColor: this.config.skyBottomColor,
               skyTopColor: this.config.skyTopColor     
             },
-            profileTaskUrl: this.config.helperServices.elevationSync.url,
+            profileTaskUrl: profileUrl,
             scalebarUnits: units
         };
 
