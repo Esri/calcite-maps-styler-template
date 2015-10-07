@@ -106,7 +106,7 @@ xcopy %TEMPLATES_ROOT%\CompareAnalysis                          %BUILD_OUTPUT%\C
 xcopy %TEMPLATES_ROOT%\ConstituentEngagement                    %BUILD_OUTPUT%\CrowdsourceReporter                  /E /Y
 xcopy %TEMPLATES_ROOT%\ConstituentEngagementConsole             %BUILD_OUTPUT%\CrowdsourceManager                   /E /Y
 xcopy %TEMPLATES_ROOT%\CrowdSourcePolling                       %BUILD_OUTPUT%\CrowdsourcePolling                   /E /Y
-xcopy %TEMPLATES_ROOT%\StorytellingCompare                      %BUILD_OUTPUT%\Compare\storytelling_compare         /E /Y
+xcopy %TEMPLATES_ROOT%\archive\StorytellingCompare              %BUILD_OUTPUT%\Compare\storytelling_compare         /E /Y
 xcopy %TEMPLATES_ROOT%\archive\EditorChrome                     %BUILD_OUTPUT%\Editor\Chrome                        /E /Y
 xcopy %TEMPLATES_ROOT%\archive\Edit                             %BUILD_OUTPUT%\Edit                                 /E /Y
 xcopy %TEMPLATES_ROOT%\Editor                                   %BUILD_OUTPUT%\Editor                               /E /Y
