@@ -40,8 +40,10 @@
   filter: alpha(opacity=30); }
 
 .esriRTL .hamburger-button {
-  float: right;
-  right: 250px; }
+  position: absolute;
+  top:9px;
+  right:2px;
+}
 
 .border-container-outer {
   width: 100%;

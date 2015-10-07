@@ -120,6 +120,9 @@ html,body {
     width:auto;
     padding-right:2px;
 }
+.esriRTL #search{
+  float:left;
+}
 #search .searchInput{
   width:120px;
     @include respond-to(450){

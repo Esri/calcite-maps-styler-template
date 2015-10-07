@@ -43,8 +43,9 @@
   @include opacity(0.3);
 }
 .esriRTL .hamburger-button {
-  float:right;
-  right:250px;
+  position: absolute;
+  top:9px;
+  right:2px;
 }
 .dijitContentPane{
   overflow:hidden;

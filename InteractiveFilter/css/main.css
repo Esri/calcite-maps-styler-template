@@ -212,10 +212,9 @@ input {
   filter: alpha(opacity=30); }
 
 .esriRTL .hamburger-button {
-  float: left;}
-.esriRTL .hamburger-button.nosearch{
-  float:left;
-  right:5px;
+  position: absolute;
+  top:9px;
+  right:2px;
 }
 
 .border-container-outer {
@@ -358,7 +357,11 @@ html, body {
 #search {
   float: right;
   width: auto;
-  padding-right: 2px; }
+  padding-right: 2px; 
+}
+.esriRTL #search{
+  float:left;
+}
 
 #search .searchInput {
   width: 120px; }
