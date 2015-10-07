@@ -117,7 +117,12 @@
 				// The application header title, if no title is specified, the webmap's title is used
 				title: "",
 				// The application header subtitle, if not specified the ArcGIS.com web map's summary is used
-				subtitle: ""
+				subtitle: "",
+				// Optionally to be able to use the webmap URL parameter, configure here the list of webmap authors
+				// whose webmaps are allowed to be viewed by this Shortlist deployment
+				// This is the ArcGIS Online username of the webmap owner (e.g. ["user1"], ["user1", "user2"])
+				authorizedOwners: [""]
+				//
 			};
 			// Optionally sharing and proxy URLs can be configured in app/swipe-config.js. This is only required
 			//  when the webmap is not hosted on ArcGIS Online or a Portal for ArcGIS instance and the template isn't deployed as /home/StorytellingSwipe/ or /apps/StorytellingSwipe/.
@@ -127,7 +132,7 @@
 		</script>
 
 		<script type="text/javascript">
-			var version = '1.7.0-100715';
+			var version = '1.7.0-100715-a';
 			var isProduction = true;
 
 			function loadJS(url, isExternal)
