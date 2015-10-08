@@ -19,7 +19,7 @@ define({
 				createMap: "Unable to create map",
 				invalidApp: "Fatal error: The application cannot be loaded",
 				initMobile: "Welcome to the swipe web application. The application is not configured. The interactive builder is not supported on mobile devices.",
-				initMobile2: "The Swipe builder is not supported at this screen resolution.",
+				initMobile2: "The Swipe builder is not supported at this display size.",
 				noBuilderIE8: "The Swipe interactive builder is not supported on Internet Explorer before version 9.",
 				noLayerView: "Welcome to the Swipe web application.<br />The application is not configured yet.",
 				appSave: "Error saving the web application",
