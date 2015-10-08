@@ -123,7 +123,7 @@ fieldset {
   height: 100%;
   width: 0.75em;
   padding: 0 .5em 0 0;
-  font-family: "Avenir LT W01 35 Light", Arial, Helvetica, sans-serif;
+  font-family: "Avenir LT W01 35 Light", "Lato", Arial, Helvetica, sans-serif;
   color: #a6a6a6;
   font-size: 1.25em;
   line-height: 2em;
@@ -1324,7 +1324,7 @@ img {
 }
 h1, h2, h3, h4, h5, h6 {
   margin: 0;
-  font-family: "Avenir LT W01 35 Light", Arial, Helvetica, sans-serif;
+  font-family: "Avenir LT W01 35 Light", "Lato", Arial, Helvetica, sans-serif;
   font-style: normal;
   font-weight: 500;
   letter-spacing: 0.02em;
@@ -1336,10 +1336,10 @@ h1.divider, h2.divider, h3.divider, h4.divider, h5.divider, h6.divider {
   border-bottom: 1px solid #ededed;
 }
 h1.bold, h2.bold, h3.bold, h4.bold, h5.bold, h6.bold {
-  font-family: "Avenir LT W01 85 Heavy", Arial, Helvetica, sans-serif;
+  font-family: "Avenir LT W01 85 Heavy", "Lato", Arial, Helvetica, sans-serif;
 }
 h1.medium, h2.medium, h3.medium, h4.medium, h5.medium, h6.medium {
-  font-family: "Avenir LT W01 65 Medium", Arial, Helvetica, sans-serif;
+  font-family: "Avenir LT W01 65 Medium", "Lato", Arial, Helvetica, sans-serif;
 }
 h1.gray, h2.gray, h3.gray, h4.gray, h5.gray, h6.gray {
   color: gray;
@@ -1383,7 +1383,7 @@ h4 {
   line-height: 1.33333em;
   margin-bottom: 0.33333em;
   margin-top: 0em;
-  font-family: "Avenir LT W01 65 Medium", Arial, Helvetica, sans-serif;
+  font-family: "Avenir LT W01 65 Medium", "Lato", Arial, Helvetica, sans-serif;
 }
 
 h5 {
@@ -1391,7 +1391,7 @@ h5 {
   line-height: 1.5em;
   margin-bottom: 0.375em;
   margin-top: 0em;
-  font-family: "Avenir LT W01 65 Medium", Arial, Helvetica, sans-serif;
+  font-family: "Avenir LT W01 65 Medium", "Lato", Arial, Helvetica, sans-serif;
 }
 
 h6 {
@@ -1399,7 +1399,7 @@ h6 {
   line-height: 1.71429em;
   margin-bottom: 0.42857em;
   margin-top: 0em;
-  font-family: "Avenir LT W01 65 Medium", Arial, Helvetica, sans-serif;
+  font-family: "Avenir LT W01 65 Medium", "Lato", Arial, Helvetica, sans-serif;
 }
 
 blockquote {
@@ -1428,7 +1428,7 @@ p.large {
   line-height: 1.33333em;
 }
 p.light {
-  font-family: "Avenir LT W01 35 Light", Arial, Helvetica, sans-serif;
+  font-family: "Avenir LT W01 35 Light", "Lato", Arial, Helvetica, sans-serif;
   letter-spacing: 1px;
 }
 
@@ -1530,7 +1530,7 @@ dl {
   margin-top: 0;
 }
 dl dt {
-  font-family: "Avenir LT W01 65 Medium", Arial, Helvetica, sans-serif;
+  font-family: "Avenir LT W01 65 Medium", "Lato", Arial, Helvetica, sans-serif;
   font-size: 1em;
   line-height: 1.5em;
 }
@@ -1626,15 +1626,15 @@ hr {
 }
 
 .header-light {
-  font-family: "Avenir LT W01 35 Light", Arial, Helvetica, sans-serif;
+  font-family: "Avenir LT W01 35 Light", "Lato", Arial, Helvetica, sans-serif;
 }
 
 .header-font {
-  font-family: "Avenir LT W01 65 Medium", Arial, Helvetica, sans-serif;
+  font-family: "Avenir LT W01 65 Medium", "Lato", Arial, Helvetica, sans-serif;
 }
 
 .header-bold {
-  font-family: "Avenir LT W01 85 Heavy", Arial, Helvetica, sans-serif;
+  font-family: "Avenir LT W01 85 Heavy", "Lato", Arial, Helvetica, sans-serif;
 }
 
 img::selection {
@@ -1665,15 +1665,15 @@ mark.blue {
 }
 
 .header-light {
-  font-family: "Avenir LT W01 35 Light", Arial, Helvetica, sans-serif;
+  font-family: "Avenir LT W01 35 Light", "Lato", Arial, Helvetica, sans-serif;
 }
 
 .header-font {
-  font-family: "Avenir LT W01 65 Medium", Arial, Helvetica, sans-serif;
+  font-family: "Avenir LT W01 65 Medium", "Lato", Arial, Helvetica, sans-serif;
 }
 
 .header-bold {
-  font-family: "Avenir LT W01 85 Heavy", Arial, Helvetica, sans-serif;
+  font-family: "Avenir LT W01 85 Heavy", "Lato", Arial, Helvetica, sans-serif;
 }
 
 .center-text {
@@ -1762,7 +1762,7 @@ mark.blue {
   position: relative;
   display: inline-block;
   padding: .3em 1.25em .3em;
-  font-family: "Avenir LT W01 65 Medium", Arial, Helvetica, sans-serif;
+  font-family: "Avenir LT W01 65 Medium", "Lato", Arial, Helvetica, sans-serif;
   color: white;
   text-transform: uppercase;
   text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.125);
@@ -3520,7 +3520,7 @@ table .align-top {
   }
 }
 .feature .call-to-action {
-  font-family: "Avenir LT W01 65 Medium", Arial, Helvetica, sans-serif;
+  font-family: "Avenir LT W01 65 Medium", "Lato", Arial, Helvetica, sans-serif;
   font-size: 1.25em;
   line-height: 1.2em;
 }
@@ -3579,10 +3579,10 @@ table .align-top {
   color: #003C60;
 }
 .footer h4 {
-  font-family: "Avenir LT W01 65 Medium", Arial, Helvetica, sans-serif;
+  font-family: "Avenir LT W01 65 Medium", "Lato", Arial, Helvetica, sans-serif;
 }
 .footer h4 span {
-  font-family: "Avenir LT W01 85 Heavy", Arial, Helvetica, sans-serif;
+  font-family: "Avenir LT W01 85 Heavy", "Lato", Arial, Helvetica, sans-serif;
 }
 
 .no-space-to-footer {
@@ -3668,7 +3668,7 @@ html, body {
   font-size: 0.9375em;
   line-height: 1.6em;
   letter-spacing: 1px;
-  font-family: "Avenir LT W01 65 Medium", Arial, Helvetica, sans-serif;
+  font-family: "Avenir LT W01 65 Medium", "Lato", Arial, Helvetica, sans-serif;
   color: #007AC2;
   padding-bottom: 2px;
   margin: 0 .75em;
@@ -3696,12 +3696,12 @@ html, body {
   color: #333333;
   float: none;
   margin-right: 0;
-  font-family: "Avenir LT W01 65 Medium", Arial, Helvetica, sans-serif;
+  font-family: "Avenir LT W01 65 Medium", "Lato", Arial, Helvetica, sans-serif;
   font-size: 1.2em;
   line-height: 1.25em;
 }
 .site-logo span {
-  font-family: "Avenir LT W01 85 Heavy", Arial, Helvetica, sans-serif;
+  font-family: "Avenir LT W01 85 Heavy", "Lato", Arial, Helvetica, sans-serif;
 }
 .site-logo:hover {
   color: #333333;
@@ -4437,7 +4437,7 @@ html.scroll-lock body {
   color: #4D4D4D;
   font-size: 0.9em;
   margin-bottom: 0.4em;
-  font-family: "Avenir LT W01 65 Medium", Arial, Helvetica, sans-serif;
+  font-family: "Avenir LT W01 65 Medium", "Lato", Arial, Helvetica, sans-serif;
   text-transform: none;
 }
 
@@ -4462,7 +4462,7 @@ html.scroll-lock body {
   background-image: none;
   letter-spacing: 1px;
   text-transform: uppercase;
-  font-family: "Avenir LT W01 65 Medium", Arial, Helvetica, sans-serif;
+  font-family: "Avenir LT W01 65 Medium", "Lato", Arial, Helvetica, sans-serif;
   color: #007AC2;
 }
 .site-search input[type="search"]:focus, .site-search input[type="text"]:focus {
@@ -4588,7 +4588,7 @@ html.ie .site-search.active .site-search-button {
   border-top: 1px solid #ededed;
   display: block;
   width: 100%;
-  font-family: "Avenir LT W01 65 Medium", Arial, Helvetica, sans-serif;
+  font-family: "Avenir LT W01 65 Medium", "Lato", Arial, Helvetica, sans-serif;
   -moz-transition: all 150ms linear;
   -o-transition: all 150ms linear;
   -webkit-transition: all 150ms linear;
@@ -4604,7 +4604,7 @@ html.ie .site-search.active .site-search-button {
 }
 .drawer-nav .drawer-search {
   padding: 1em 1em 1em 2.5em;
-  font-family: "Avenir LT W01 65 Medium", Arial, Helvetica, sans-serif;
+  font-family: "Avenir LT W01 65 Medium", "Lato", Arial, Helvetica, sans-serif;
   color: #595959;
   background-position: 1em center;
   border: none;

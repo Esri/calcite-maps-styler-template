@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <head>
 	<title>My Stories</title>
-	<link type="text/css" rel="stylesheet" href="http://fast.fonts.net/cssapi/3706abc4-0756-424b-b07b-1748122f85d8.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/externalFonts.css">
 	<link rel="stylesheet" type="text/css" href="assets/css/tailcoat.css">
 	<link rel="stylesheet" type="text/css" href="my-stories-utils/create-app/assets/css/create-story.css">
 	<link rel="stylesheet" type="text/css" href="my-stories-utils/sign-in/assets/css/signIn.css">
@@ -12,14 +12,12 @@
 	<script src="assets/js/tailcoat/tailcoat.js"></script>
 	<script src="my-stories-utils/sign-in/SignInManager.js"></script>
 	<script src="assets/js/libs/jqueryUI.js"></script>
-	<script src="assets/js/buildapp.js"></script>
+	<script src="my-stories-utils/create-app/assets/js/buildapp.js"></script>
 
 
 	<div id="builder-loading"></div>
 	<script>			
-		window.builderIntegration = window.location.href.indexOf('itemId') !== -1;
-		
-		//document.domain = 'www.arcgis.com';
+		window.builderIntegration = window.location.href.indexOf('itemId') !== -1;	
 
 		if(window.builderIntegration) {
 			document.body.className += ' builder';

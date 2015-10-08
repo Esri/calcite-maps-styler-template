@@ -25,9 +25,12 @@ function loadBuilder(app, layout) {
   var baseURL = document.location.protocol + "//" + "www.arcgis.com/",
     layoutOpt = layout ? "&layout=" + layout : "",
     cookie = JSON.parse(getCookie('esri_auth'));
-
+  
+  if(cookie.portalApp) {
+    baseURL = window.location.protocol + '//' + window.location.hostname + '/';
+  }
   // if it's an organization
-  if(cookie.urlKey) {
+  else if(cookie.urlKey && cookie.customBaseUrl) {
     baseURL = document.location.protocol + "//" + (cookie.urlKey + "." + cookie.customBaseUrl).toLowerCase() + "/";
   }
 
@@ -61,8 +64,11 @@ function showContinueBuildDialog(app, layout) {
       appName = '',
       url = '';      
 
+    if(cookie.portalApp) {
+      baseURL = window.location.protocol + '//' + window.location.hostname + '/';
+    }
     // if it's an organization
-    if(cookie.urlKey) {
+    else if(cookie.urlKey && cookie.customBaseUrl) {
       baseURL = document.location.protocol + '//' + (cookie.urlKey + '.' + cookie.customBaseUrl).toLowerCase() + '/';
     }
 

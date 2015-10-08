@@ -177,8 +177,11 @@ $(document).ready(function() {
 
 			cookie = getUserCookie();
 			showSignedInHeader(cookie);
-
-			if(cookie.urlKey) {
+			
+			if(cookie.portalApp) {
+				accountBaseUrl = window.location.hostname;
+			}
+			else if(cookie.urlKey) {
 				accountBaseUrl = (cookie.urlKey + '.' + cookie.customBaseUrl).toLowerCase();
 			}
 			else {
