@@ -56,11 +56,12 @@ define({
 				editTitle: "Edit map",
 				titleLbl: "Title",
 				titlePh: "Map title...",
-				folderLbl: "The new map will be saved in the same folder than the application.",
+				folderLbl: "The map will be created in the same folder as the story.",
 				creating: "Creating the map",
 				saving: "Saving the map",
-				success: "Map saved successfully",
-				successCreate: "Map created successfully"
+				success: "Map saved",
+				successCreate: "Map created",
+				cancelTitle: "Discard any changes?"
 			}
 		},
 		configure: {
