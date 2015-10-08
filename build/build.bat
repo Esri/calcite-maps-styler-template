@@ -93,6 +93,7 @@ mkdir %BUILD_OUTPUT%\MapSeries
 mkdir %BUILD_OUTPUT%\StoryMapBasic
 mkdir %BUILD_OUTPUT%\StorytellingBasic
 mkdir %BUILD_OUTPUT%\Viewer
+mkdir %BUILD_OUTPUT%\MyStories
 
 
 xcopy %TEMPLATES_ROOT%\archive\CompareConfigure                 %BUILD_OUTPUT%\Compare\Configure                    /E /Y
@@ -174,6 +175,7 @@ xcopy %TEMPLATES_ROOT%\Viewer                                   %BUILD_OUTPUT%\V
 xcopy %TEMPLATES_ROOT%\Locator                                  %BUILD_OUTPUT%\Directions                           /E /Y
 xcopy %TEMPLATES_ROOT%\Time                                     %BUILD_OUTPUT%\Time                                 /E /Y
 xcopy %TEMPLATES_ROOT%\ThumbnailGenerator                       %BUILD_OUTPUT%\ThumbnailGenerator                   /E /Y
+xcopy %TEMPLATES_ROOT%\MyStories                                %BUILD_OUTPUT%\MyStories                            /E /Y
 
 
 

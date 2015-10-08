@@ -39,3 +39,4 @@ MapSeries\resources\common\nls
 MapSeries\resources\tpl\builder\nls
 ConstituentEngagement\js\nls
 ConstituentEngagementConsole\js\nls
+MyStories\resources\nls
