@@ -51,7 +51,10 @@ define({
 				bitlyTooltip: "Get a short link",
 				templateTitle: "Set template title",
 				templateSubtitle: "Set template subtitle",
-				share: "Share"
+				share: "Share",
+				checking: "Checking your story content",
+				fix: "Fix errors in your story",
+				noerrors: "No errors detected"
 			},
 			overviewFromCommon: {
 				title: "Overview Map"

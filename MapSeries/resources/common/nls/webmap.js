@@ -2,7 +2,7 @@ define({
 	root: ({
 		commonWebmap: {
 			selector: {
-				lblWebMap: "Web map",
+				lblWebMap: "Map",
 				lblLocation: "Location",
 				lblContent: "Content",
 				lblPopup: "Popup",
@@ -17,12 +17,14 @@ define({
 				and: "and",
 				action: "Action in section",
 				actions: "Action in sections",
-				originalWebmap: "Web map used to publish the %TPL_NAME%",
-				browseMaps: "Browse for Maps",
-				current: "Current web map",
-				select: "Select a web map",
-				newMap: "Newly selected web map",
-				webmapDefault: "Web map default",
+				originalWebmap: "Map used to publish the %TPL_NAME%",
+				browseMaps: "Select a map",
+				createMap: "Create a map",
+				current: "Current map",
+				select: "Select or create a map",
+				newMap: "Newly selected map",
+				newCreatedMap: "Newly created map",
+				webmapDefault: "Map default",
 				customCfg: "Custom configuration",
 				tooltipLocation: "Define the location that this map will display.",
 				tooltipContent: "Define the visible layers.",
@@ -47,6 +49,18 @@ define({
 				popupExplain: "Click on a feature to open the popup you want to display.",
 				popupSave: "Save the popup configuration",
 				hintNavigation: "Map navigation is disabled."
+			},
+			editor: {
+				loading: "Please wait while the map editor is loading",
+				newTitle: "Create new map",
+				editTitle: "Edit map",
+				titleLbl: "Title",
+				titlePh: "Map title...",
+				folderLbl: "The new map will be saved in the same folder than the application.",
+				creating: "Creating the map",
+				saving: "Saving the map",
+				success: "Map saved successfully",
+				successCreate: "Map created successfully"
 			}
 		},
 		configure: {
@@ -57,11 +71,11 @@ define({
 					contentLabel: "My Content",
 					favoritesLabel: "My Favorites"
 				},
-				title: "Select Web Map",
+				title: "Select a map",
 				searchTitle: "Search",
 				ok: "Ok",
 				cancel: "Cancel",
-				placeholder: "Enter search term or Web Map ID..."
+				placeholder: "Enter search term or web map ID..."
 			}
 		}
 	}),

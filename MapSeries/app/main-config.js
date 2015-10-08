@@ -77,9 +77,8 @@ function defineDojoConfig()
 		]
 	};
 	
-	var urlLocale = location.search.match(/locale=([\w\-]+)/) ? RegExp.$1 : null;
-	if( urlLocale ){
-		window.dojoConfig.locale = urlLocale;
+	if (location.search.match(/locale=([\w\-]+)/)) {
+		window.dojoConfig.locale = RegExp.$1;
 	}
 }
 
