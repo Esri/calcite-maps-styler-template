@@ -6,7 +6,7 @@ define({
 				step2: "LOADING DATA",
 				step3: "INITIALIZING",
 				fail: "Sorry, Swipe loading failed",
-				loadBuilder: "SWITCHING TO BUILDER MODE",				
+				loadBuilder: "SWITCHING TO BUILDER MODE",
 				redirectSignIn: "REDIRECTING TO SIGN-IN PAGE",
 				redirectSignIn2: "(you will be redirected here after sign-in)",
 				failButton: "Retry"
@@ -19,6 +19,7 @@ define({
 				createMap: "Unable to create map",
 				invalidApp: "Fatal error: The application cannot be loaded",
 				initMobile: "Welcome to the swipe web application. The application is not configured. The interactive builder is not supported on mobile devices.",
+				initMobile2: "The Swipe builder is not supported at this screen resolution.",
 				noBuilderIE8: "The Swipe interactive builder is not supported on Internet Explorer before version 9.",
 				noLayerView: "Welcome to the Swipe web application.<br />The application is not configured yet.",
 				appSave: "Error saving the web application",
@@ -26,7 +27,9 @@ define({
 				notAuthorized: "You are not authorized to access this application",
 				conflictingProjectionsTitle: "Conflicting Projections",
 				conflictingProjections: "Swipe does not support using two web maps with different projections. Please open settings and use a web map that use the same projection than the first web map.",
-				cpButton: "Close"
+				cpButton: "Close",
+				unspecifiedConfigOwner: "Authorized owner hasn't been configured.",
+				invalidConfigOwner: "Application owner is not authorized."
 			},
 			mobileView: {
 				hideIntro: "HIDE INTRO",
@@ -174,7 +177,7 @@ define({
 				settingsLocationSearchEnable: "Enable locator search",
 				settingsGeolocatorEnable: "Enable geolocator",
 				settingsLegendHelpContent: "To refine the legend content, use ArcGIS.com web map viewer table of contents (Hide in Legend)",
-				settingsSeriesHelpContent: "Swipe series is a tabbed navigation option that will guide the viewer to a particular extent and display a title and description text in the side panel.  During initial activation, the bookmarks from the web map(s) will be imported and used to pre-populate the series bar.  Disabling the series option turns off the series bar, but the series configuration is preserved for future use.", 
+				settingsSeriesHelpContent: "Swipe series is a tabbed navigation option that will guide the viewer to a particular extent and display a title and description text in the side panel.  During initial activation, the bookmarks from the web map(s) will be imported and used to pre-populate the series bar.  Disabling the series option turns off the series bar, but the series configuration is preserved for future use.",
 				settingsSeriesHelpContent2: "Swipe series lets you create and edit a selection of locations with accompanying titles and text.  If your web map has bookmarks, they'll be displayed.  You can disable the series, but the configuration will be preserved for future use.",
 				settingsSeriesHelpLink: "See an example of an application with a swipe series here",
 				preview: "UI preview",
@@ -245,7 +248,7 @@ define({
 				shareQ2: "How do I edit the Application later?",
 				shareQ2bis: "How do I get back to the authoring interface?",
 				shareA2div1: "Save and reuse the following link %LINK1% or use <a href='%LINK2%' target='_blank'>the application item page</a>.",
-				shareA2div2: "As the owner of the application, when you are signed in on ArcGIS.com, the application includes a button to open the interactive builder:",				
+				shareA2div2: "As the owner of the application, when you are signed in on ArcGIS.com, the application includes a button to open the interactive builder:",
 				shareQ3: "Where is the data stored?",
 				shareA3: "The Application configuration is stored in this web application item</a>.",
 				shareWarning: "Sharing %WITH% has been disabled because you are not the owner of the <a href='%LINK%' target='_blank'>webmap</a>.",
@@ -305,7 +308,6 @@ define({
 	"th": 1,
 	"vi": 1,
 	"zh-cn": 1,
-	"zh-hk": 1, 
-	"zh-tw": 1 
+	"zh-hk": 1,
+	"zh-tw": 1
 });
-
