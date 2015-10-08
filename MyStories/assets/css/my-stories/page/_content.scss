@@ -1,0 +1,28 @@
+#list-container {
+	height: 284px;
+}
+
+.loader {
+	height: 90px;
+	margin: auto;
+	width: 90px;
+}
+
+.loader:after {
+	top: 15px;
+	left: 15px;
+	width: 60px;
+	height: 60px;
+}
+
+#error-container {
+	text-align: center;
+}
+
+.error-header {
+	font-weight: bold;
+}
+
+#map-container-hidden {
+	display: none;
+}

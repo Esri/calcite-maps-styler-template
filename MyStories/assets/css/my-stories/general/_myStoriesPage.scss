@@ -1,0 +1,125 @@
+
+.green {
+	background: rgb(0,255,0) !important;
+}
+
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	color: $story-dark-blue;
+	min-width: 1020px !important;
+}
+
+p {
+	font-size: 0.9rem;
+	line-height: 1.5;
+}
+
+input, select {
+	color: $story-dark-blue;
+}
+
+a:focus {	
+	outline: none;
+}
+
+
+button:focus {
+	outline: none;	
+}
+
+.no-show {
+	display: none !important;
+}
+
+.faded {
+	opacity: 0;
+}
+
+.invisible {
+	opacity: 0;
+}
+
+.no-scroll {
+	overflow: hidden;
+}
+
+.btn.error-button {
+	background: $tailcoat-icon-red-light;
+	cursor: default;
+}
+
+.btn.success-button {
+	background: $tailcoat-icon-green-light;
+	cursor: default;
+}
+
+.invisible-text {
+	color: transparent;
+}
+
+.locked > * {
+	cursor: default;
+}
+
+.inline {
+	display: inline;
+}
+
+.block-element { 
+	display: block;
+}
+
+.centered {
+	text-align: center;
+}
+
+.plumb-left {
+	padding-left: 0;
+}
+
+.plumb-right {
+	padding-right: 0;
+}
+
+.linkable-text {
+	color: $tailcoat-calcite-esri-blue;
+	cursor: pointer;
+}
+
+.linkable-text:hover {
+	color: $story-light-blue-text;
+}
+
+.linkable-text:focus {
+	color: $story-light-blue-text;
+	outline: none;
+}
+
+.underlined-link {
+	text-decoration: underline;
+}
+
+.esriSignInDialog {
+	display: none;
+}
+
+.temp-disabled {
+	cursor: default !important;
+	opacity: 0.8;
+	pointer-events: none;
+}
+
+
+.warning {
+	color: $tailcoat-icon-orange;
+}
+
+#fb-root div#fb_dialog_ipad_overlay {
+	display: none !important;
+}
+
+

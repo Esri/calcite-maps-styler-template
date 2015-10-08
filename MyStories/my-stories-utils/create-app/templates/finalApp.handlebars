@@ -1,0 +1,40 @@
+<div class="app-item final">
+  <h3 class="ask-pros-title">{{title}}</h3> 
+  <div class="version {{#if app.multiple}}multiple{{/if}}">       
+    {{#ifEquals app.value 'basic'}}
+      <div class="create-app-image-container final trailer-half">
+        <a href={{app.method}} class="image-wrapper" target="_blank">
+          <img src="{{app.thumbnail}}">
+        </a>
+      </div>
+      <a href={{app.method}} class="btn clear clear-inverse" target="_blank">{{finalApp.letsBuild}}</a>
+    {{else}}
+      <div class="create-app-image-container final trailer-half">
+        <img src="{{app.thumbnail}}" onClick="{{app.method}}">
+      </div>
+      <a class="btn clear clear-inverse" onClick="{{app.method}}">{{finalApp.letsBuild}}</a>
+    {{/ifEquals}}
+  </div>{{#if app.multiple}}<div class="version multiple">    
+    {{#ifEquals app.value 'basic'}}
+      <div class="create-app-image-container final trailer-half">
+        <a href={{app.methodTwo}} class="image-wrapper" target="_blank">
+          <img src="{{app.thumbnailTwo}}">
+        </a>
+      </div>
+      <a href={{app.methodTwo}} class="btn clear clear-inverse" target="_blank">{{finalApp.letsBuild}}</a>
+    {{else}}
+      <div class="create-app-image-container final trailer-half">
+        <img src="{{app.thumbnailTwo}}" onClick="{{app.methodTwo}}">
+      </div>
+      <a class="btn clear clear-inverse" onClick="{{app.methodTwo}}">{{finalApp.letsBuild}}</a>
+    {{/ifEquals}}
+  </div>
+  {{/if}}
+
+  <div class="app-reason">
+    <p>{{app.reason}}</p>
+  </div>
+  <div class="see-example">
+    <a href="{{app.example}}" target="_blank">{{finalApp.seeExample}}</a>
+  </div>
+</div>

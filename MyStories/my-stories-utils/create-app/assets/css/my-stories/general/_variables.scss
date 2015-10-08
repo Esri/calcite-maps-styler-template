@@ -1,0 +1,72 @@
+
+/********* PAGE COLOR PALLETE  ********/
+
+$page-background: rgb(254,254,254);
+
+$story-dark-blue: rgb(57, 110, 139);
+$story-light-blue-text: #6DB5E3;
+$story-blue-almost-white: rgb(241, 248, 253);
+$story-blue-background-lightest: rgb(239, 246, 252);
+$story-blue-background: #C5E3F7;
+$story-blue-gray-border: #C1CCD2;
+$story-blue-editable-text: rgba(109,181,227,0.6);
+$tailcoat-button-blue: #6DB5E3;
+$story-faded-gray-text: #AAA;
+$story-faded-gray: #BBB;
+$story-faded-gray-lighter: #CCC;
+$story-faded-gray-darker: #999;
+$story-faded-gray-lightest: #DDD;
+$story-light-gray-background: #F6F6F6;
+$story-dialog-light-gray-background: #F6FAFC;
+$story-box-shadow-color: #666;
+
+$story-changed-successfully-green: #CAF5D8;
+$green-ok: rgb(102, 170, 103);
+$green-ok-transparent: rgba(102, 170, 103, 0.6);
+$green-ok-darker: #609E61;
+$green-alert-background: #D9ECBA;
+$green-alert-text: #355c0b;
+$green-alert-text-lightest: #ACCC8A; 
+$red-error-text-hover: #CC1628;
+$red-error-text: #C24A56;
+$red-error-text-lighter: #DF838C;
+$red-error-text-lightest: #EDADB3;
+$red-error-transparent: rgba(194,74,86,0.6);
+
+$red-error-background: #FFDCDF;
+$red-error-background-darker: #FDCFD4;
+$input-light-background: #EBEBEB;
+$input-border-gray: #EDEDED;
+$input-border-blue: #007AC2;
+$twitter-blue: #26C4F1;
+$twitter-hover-blue: #24AFD7;
+$facebook-blue: #306199;
+$facebook-hover-blue: #244873;
+
+$border-radius: 3px;
+$button-margin-between: 10px;
+$notification-padding: 5px;
+
+$small-font-size: 0.9rem;
+$small-button-text: 0.7rem;
+
+$header-button-translucent: rgba(0,0,0,0.55);
+$header-button-hover: rgba(0,0,0,0.65);
+
+$tailcoat-icon-red: #C7552E;
+$tailcoat-icon-red-light: #C96B4B;
+$tailcoat-icon-green-light: #68AA67;
+$tailcoat-icon-orange: #E89D48;
+$tailcoat-icon-blue-light: #6DB5E3;
+
+$tailcoat-calcite-esri-blue: #0079C1;
+$tailcoat-calcite-esri-blue-light: #7FBBDF;
+$tailcoat-calcite-ui-blue-1: #E1F0FB;
+$tailcoat-calcite-ui-blue-2: #D1E9F9;
+
+$tailcoat-gray6: #CBCBCB;
+
+$tailcoat-header-font: "Avenir LT W01 65 Medium", Arial, Helvetica, sans-serif !default;
+$tailcoat-header-light: "Avenir LT W01 35 Light", Arial, Helvetica, sans-serif !default;
+$tailcoat-header-bold: "Avenir LT W01 85 Heavy", Arial, Helvetica, sans-serif !default;
+$tailcoat-body-font: "Lucida Grande", "Segoe UI", "Arial", sans-serif !default;

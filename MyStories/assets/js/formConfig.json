@@ -1,0 +1,37 @@
+{
+   "Gallery Submission":{
+      "toEmail":"storymapsgallery@esri.com",
+      "subject":"Gallery Submission",
+      "formFields":"Name:name,Email Address:userEmail,URL:appURL,App Used:appType,Suggested Collection:colType,Message:message",
+      "requiredFields":"name,userEmail,appURL",
+      "submitFieldName":"submit-submission",
+      "emailFormat":"rich"
+   },
+   "DynamicSubmission": {
+      "toEmail": "storymapsgallery@esri.com",
+      "subject": "Gallery Submission (Through MyStories)",
+      "formFields": "Name:name,Item URL:url,App Type:appType,Email Address:userEmail",
+      "requiredFields": "name,url,appType,userEmail",
+      "submitFieldName": "submit-submission",
+      "emailFormat": "rich"
+   },
+	"AutoReply": {
+      "outgoingEmail": 1,
+      "toEmail": "userEmail",
+      "fromEmail": "noreply@esri.com",
+      "subject": "Storymap Submission confirmation!",
+      "formFields": "Email:userEmail,EmailBody:emailBody",
+      "requiredFields": "userEmail",
+      "hideFields": "userEmail",
+      "submitFieldName": "submit-reply",
+      "emailFormat": "rich"
+   },
+   "Feedback":{
+      "toEmail":"CommentDist@esri.com",
+      "subject":"User Feedback",
+      "formFields":"Feedback:userFeedback,Regarding the Page:regarding,Email Address:userEmail",
+      "requiredFields":"userFeedback",
+      "submitFieldName":"submitFeedback",
+      "emailFormat":"text"
+   }
+}

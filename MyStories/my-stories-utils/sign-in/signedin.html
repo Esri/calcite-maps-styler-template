@@ -1,0 +1,236 @@
+<script>
+// can access parent window?
+	var parentWindow = {},
+		canAccessParent = true,
+
+
+	onSignedIn = function() {
+		var callback = null,
+			cookie = null,
+			arcGISUrl = '',
+			canAccessParent = true,
+			preflang = fetchCookie('preflang'),
+			locale = preflang ? preflang : 'en';
+
+
+
+		if(window.location.href.match(/redirectHttps/)) {
+			redirectToHttps();
+			return;
+		}
+
+		if( window.location.href.match(/fromSignOut/) ) {
+			arcGISUrl = 'https://www.arcgis.com';
+			window.location.href = arcGISUrl + "/sharing/oauth2/authorize?client_id=arcgisonline&display=iframe" +
+			"&redirect_uri=" + parentWindow.location.origin + "/sign-in/signedin" +
+			"&response_type=token&display=iframe" +
+			"&parent=" + parentWindow.location.href + "&locale=" + locale;
+
+			return;
+		}
+
+
+
+		cookie = getUserCookie();
+
+
+		/*
+		General logic --
+		1) see if here because of a redirect or sign-out (handled above).
+		2) if not, see if there is a cookie.
+		   if there is, see if you can access the parent window.
+		   	  if you can, then finish sign-in.
+		   	  if not, then make a request to see if the account is ssl-only or not.
+		   	      if it is, then reload the frame to http with a flag so we know to redirect everything to https.
+		   	      if it's not, then reload the frame to http.
+			if there is no cookie, then see if you can access the parent window.
+				if so, then sign out and redirect back to the frame with its matching protocol.
+				if not, then sign out and redirect back to the frame with the frame being forced on http.
+		*/
+
+
+
+		if(cookie) {
+
+			// if can access
+			try {
+				var a = parentWindow.location.href;
+
+				// Safari doesn't throw the error, just logs it, so we need to look here for a null var from the previous statement.
+				if(!a) {
+					canAccessParent = false;
+				}
+			}
+
+			catch(e) {
+				canAccessParent = false;
+			}
+
+			if(canAccessParent) {
+				callback = parentWindow.signInManager.getSignedInCallback();
+				arcGISUrl = 'https://www.arcgis.com';
+
+				segueToParent(cookie, callback, locale);
+			}
+
+			else {
+				// check if it's ssl.
+				var request = new XMLHttpRequest();
+				var requestUrl = window.location.protocol + '//www.arcgis.com/sharing/rest/accounts/self?f=json&token=' + cookie.token;
+
+				request.onreadystatechange = function() {
+					if(request.readyState === 4) {
+						// status code logic from jquery 1.11.3
+						if(request.status >= 200 && request.status < 300 || request.status === 304) {
+							var parsedResults = JSON.parse(request.responseText),
+								isSSLOnly = parsedResults.allSSL;
+
+								if(isSSLOnly) {
+									reloadFrameHttp(true);
+								}
+								else {
+									reloadFrameHttp(false);
+								}
+						}
+						else {
+							reloadFrameHttp(true);
+						}
+					}
+				};
+
+
+				request.open('GET', requestUrl);
+				request.send();
+			}
+		}
+
+		else {
+			// public sign in
+
+			try {
+				var a = parentWindow.location.href;
+			}
+
+			catch(e) {
+				canAccessParent = false;
+			}
+
+
+
+			// or sometimes, if cant accessparent, we'll want it to still go to https on signout.
+
+			// frame is on https, page is https
+			if(canAccessParent) {
+				window.location.href = 'https://www.arcgis.com/sharing/rest/oauth2/signout?redirect_uri=' + window.location.href + "&fromSignOut=true";
+			}
+			// frame is on https, page is http
+			else {
+				var windowHttp = window.location.href.replace((/(.*?):\/\//), 'http://');
+				window.location.href = 'https://www.arcgis.com/sharing/rest/oauth2/signout?redirect_uri=' + windowHttp + "&fromSignOut=true";
+			}
+		}
+	},
+
+
+	reloadFrameHttp = function(httpsFlag) {
+		var urlFlag = '';
+
+		if(httpsFlag) {
+			urlFlag = '?redirectHttps=true';
+		}
+
+		window.location.href = window.location.href.replace((/(.*?):\/\//), 'http://') + urlFlag;
+	},
+
+
+	redirectToHttps = function() {
+		var urlPrefix = '';
+
+		// see if came here with the buildApp information. If so, pass back.
+		if(window.location.href.match(/\?buildApp=true/)) {
+			urlPrefix = (/(\?buildApp=true)&app=(.*?)&layout=(.*?)(?=(#|&|$))/).exec(window.location.href)[1];
+		}
+
+		parentWindow.location.href = parentWindow.location.href.replace((/(.*?):\/\//), 'https://') + urlPrefix;
+	},
+
+
+	segueToParent = function(cookie, callback, locale) {
+		parentWindow.signInManager.renderHeader();
+		parentWindow.signInManager.hideSignInDialog(false);
+
+		if( window.location.href.match(/fromSignOut/) ) {			
+			window.location.href = "https://www.arcgis.com/sharing/oauth2/authorize?client_id=arcgisonline&display=iframe" +
+			"&redirect_uri=" + parentWindow.location.origin + "/sign-in/signedin" +
+			"&response_type=token&display=iframe" +
+			"&parent=" + parentWindow.location.href + "&locale=" + locale;
+
+			return;
+		}
+
+		if(cookie) {
+			parentWindow.signInManager.renderHeader();
+			parentWindow.signInManager.hideSignInDialog(false);
+
+			if(typeof callback === 'function') {
+				callback(cookie);
+			}
+		}
+		else {
+			window.location.href = 'https://www.arcgis.com/sharing/rest/oauth2/signout?redirect_uri=' + window.location.href + "&fromSignOut=true";
+		}
+	},
+
+
+
+	getUserCookie = function() {
+		// read the cookie, if there is one.
+		var cookie = fetchCookie('esri_auth');
+
+		if(!cookie) {
+			return null;
+		}
+
+		cookie = JSON.parse(cookie.replace('"ssl":undefined', '"ssl":""'));
+
+		return cookie || null;
+	},
+
+
+	/**
+	@summary Gets a cookie based on its name. Borrowed from buildapp.js in this project.
+	*/
+	fetchCookie = function(cookieName) {
+		var cookieValue = document.cookie,
+			cookieStart = cookieValue.indexOf(" " + cookieName + "=");
+
+		if (cookieStart == -1) {
+			cookieStart = cookieValue.indexOf(cookieName + "=");
+		}
+
+		if (cookieStart == -1) {
+			cookieValue = null;
+		}
+		else {
+			cookieStart = cookieValue.indexOf("=", cookieStart) + 1;
+			var cookieEnd = cookieValue.indexOf(";", cookieStart);
+			if (cookieEnd == -1) {
+				cookieEnd = cookieValue.length;
+			}
+			cookieValue = unescape(cookieValue.substring(cookieStart, cookieEnd));
+		}
+		return cookieValue;
+	};
+
+
+	if(window.opener && window.opener.parent) {
+		parentWindow = window.opener.parent;
+	}
+	else {
+		parentWindow = window.parent;
+	}
+
+
+	onSignedIn();
+
+</script>

@@ -1,0 +1,253 @@
+#my-stories-header {
+	background-image: url('../../images/my-stories/boardwalk.jpg');
+	background-position: top center;
+	color: white;
+	font-family: $tailcoat-header-font;
+	height: 350px;
+	padding: 0 20px;
+	position: relative;
+}
+
+#header-container {
+	height: 350px;
+	padding-bottom: 20px;
+	padding-top: 20px;
+	position: relative;
+}
+
+.header-main-column {
+	height: 100%;
+	position: relative;
+}
+
+#header-buttons {
+	text-align: center;
+}
+
+
+.header-dropdown-button.header-disabled, #search.header-disabled, #scan-all-stories.header-disabled {
+	cursor: default;
+	pointer-events: none;
+}
+
+.clear-button {
+	background-color: black; 
+	background-color: $header-button-translucent;
+}
+
+.btn.clear-button {
+	border: 1px solid rgba(255,255,255,0.4);
+}
+
+.clear-button:hover, .btn.clear-button:hover {
+	background-color: $header-button-hover;	
+}
+
+#search, .header-dropdown-button.btn {
+	border: none;
+}
+
+#search:hover, .header-dropdown-button:hover {
+	background-color: $header-button-hover;
+}
+
+
+#title {
+	display: inline-block;
+	font-size: 3.0rem;
+	font-weight: bold;
+	margin: 0 0 10px;
+}
+
+#num-stories {
+	display: none;
+}
+
+.header-stat {
+	font-family: $tailcoat-header-light;
+	font-size: 1.2rem;	
+}
+
+#num-issues {
+	display: none;
+}
+
+#quote-container {
+	text-align: center;
+}
+
+#header-quote-text, #header-quote-author {
+	font-family: $tailcoat-header-light;
+}
+
+#header-quote-text {
+	display: inline-block;
+	font-size: 1.6rem;
+	margin-bottom: 0;
+	margin-top: 58px;
+}
+
+#header-quote-author {
+	font-size: 1.0rem;
+	margin-top: 3px;
+	margin-left: 8px;
+	display: inline-block;
+	vertical-align: 3px;
+}
+
+#header-controls {
+	bottom: 13px;
+	height: 40px;
+	padding-right: 28px;
+	position: absolute;	
+	width: 100%;
+	z-index: 10;
+}
+
+#search {
+	color: white;
+	padding: 7px 15px 9px;
+}
+
+#search::-webkit-input-placeholder {
+	color: rgba(255,255,255,0.7);
+}
+
+#search::-moz-placeholder {
+	color: rgba(255,255,255,0.7);
+}
+
+#search:-ms-input-placeholder {
+	color: rgba(255,255,255,0.7);	
+}
+
+
+#search.header-disabled::-webkit-input-placeholder {
+	color: rgba(255,255,255,0.5);
+}
+
+#search.header-disabled::-moz-placeholder {
+	color: rgba(255,255,255,0.5);
+}
+
+#search.header-disabled:-ms-input-placeholder {
+	color: rgba(255,255,255,0.5);	
+}
+
+.header-dropdown-container {
+	display: inline-block;
+	vertical-align: top;
+}
+
+.header-dropdown-container .tooltip:not(.header-disabled){
+	position: static;
+}
+
+.header-dropdown-container + .header-dropdown-container {
+	margin-left: 11px;
+}
+
+
+.header-dropdown-button.btn {
+	letter-spacing: 0;
+	padding: 4px 15px 5px;
+	text-transform: none;
+}
+
+#sort-arrow {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.header-dropdown {
+	background: white;	
+	border-radius: $border-radius;
+	box-shadow: 1px 1px 10px 0px $story-box-shadow-color;
+	color: black;
+	display: none;
+	font-family: $tailcoat-header-font;
+	padding: 5px 0;
+	position: absolute;
+}
+
+
+.dropdown-subheader {	
+	font-size: 1.2rem;
+	padding: 5px 20px 5px 15px;
+}
+
+.dropdown-option {
+	cursor: pointer;
+	padding: 5px 20px 5px 15px;
+}
+
+.dropdown-option[data-criteria="all-clear"] {
+	display: none;
+}
+
+.dropdown-check {
+	color: white;
+	font-size: 0.7rem;
+	margin-right: 6px;
+}
+
+#filler {
+	cursor: initial;
+	left: 0;
+	opacity: 0;
+	position: absolute;
+	top: -50px;	
+	z-index: -100;	
+}
+
+#filter-dropdown .dropdown-check {
+	color: $story-faded-gray-lightest;
+}
+
+.selected .dropdown-check {
+	color: black !important;
+}
+
+.dropdown-option-text {
+	display: inline-block;
+	font-size: 1.0rem;
+}
+
+
+#clear {
+	opacity: 0;
+}
+
+#clear-icon {
+	font-size: 0.8rem;
+}
+
+#search-results {
+	margin-right: 10px;
+}
+
+#my-stories-header .btn, #my-stories-header input {
+	font-family: $tailcoat-body-font;
+	font-size: 1.1rem;
+}
+
+#scan-all-stories.btn, #create-story-btn.btn {
+	font-family: $tailcoat-header-font;
+	font-size: 1.0rem;
+}
+
+
+#my-stories-header .tooltip-content {
+	font-family: $tailcoat-body-font;
+}
+
+#create-story-button-container {		
+	position: absolute;
+	right: 29px;
+	top: -48px;
+}
+
+#create-story-btn {
+	padding-left: 24px;
+	padding-right: 23px;
+}

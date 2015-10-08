@@ -1,0 +1,29 @@
+.infographics-container {
+	text-align: right;
+}
+
+.infographic + .infographic {
+	margin-top: 15px;
+}
+
+.infographic-text, .infographic-image {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.infographic-image {
+	margin-left: 7px;
+}
+
+.infographic-text h5 {
+	margin-bottom: -7px;
+}
+
+.infographic-text h3 {
+	margin-bottom: 0;
+}
+
+.infographic-icon {
+	color: $tailcoat-icon-blue-light;
+	font-size: 2.0rem;
+}

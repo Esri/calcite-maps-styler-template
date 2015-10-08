@@ -1,0 +1,38 @@
+.message-container {		
+	display: none;
+	margin-bottom: 0;
+	padding: 0px 8px;	
+	text-align: center;	
+	vertical-align: middle;
+}
+
+.item-message {
+	margin-bottom: 0;
+}
+
+.message-container.delete {
+	width: 100%;
+}
+
+.message-container.tag.alert {
+	margin: 0;
+}
+
+.item-message {
+	display: inline-block;
+}
+
+.item-message.copy {
+	display: none;
+	position: absolute;	
+  	right: -72px;
+  	top: 7px;
+}
+
+.message-container.delete {
+	margin-bottom: 0;
+}
+
+.message-container.copy .item-message {
+	margin: 0;
+}

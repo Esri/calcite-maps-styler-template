@@ -1,0 +1,26 @@
+.carousel-page-status {	
+	opacity: 0;
+	line-height: initial;
+	vertical-align: top;
+	border-radius: 3px 3px 0 0;
+	background: white;
+	color: $story-dark-blue;
+	padding: 5px 10px 0;
+	font-weight: bold;
+	font-family: $tailcoat-header-font;
+	font-size: 13px;
+	margin-bottom: 0;
+	margin-top: -31px;
+}
+
+.carousel-arrow {
+	cursor: pointer;
+	display: inline-block;
+	font-size: 4.0rem;
+	vertical-align: middle;
+}
+
+.carousel-arrow.disabled {
+	color: $story-faded-gray-lighter;
+	cursor: default;
+}

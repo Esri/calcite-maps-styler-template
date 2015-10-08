@@ -1,0 +1,75 @@
+<div class="dialog-header">
+  <h3 class="dialog-title">{{strings.dialog.createNewStory}}</h3>
+</div>  
+<div class="dialog-body leader-1">
+  <div class="toggle-top">
+    <div class="button-group-toggle">
+      <div class="toggle toggle-button active" data-toggle="pick-app">{{strings.dialog.pickApp}}</div><!--
+     --><div class="toggle toggle-button" data-toggle="ask-pros">{{strings.dialog.askPros}}</div>
+    </div>
+  </div>
+  <div class="toggle-view selected" data-toggle="pick-app">
+    <ul class="create-app-list">
+      <li class="app-item">
+        <div class="create-app-image-container trailer-half" onClick="buildTour()">
+          <div class="image-hover-text">
+            <span>{{strings.shortReasons.mapTour}}</span>
+          </div>
+          <img src="my-stories-utils/create-app/assets/images/map-tour.jpg">
+        </div>          
+        <a class="btn clear clear-inverse" onClick="buildTour()">{{appTypes.mapTour}}</a>
+      </li><!--
+     --><li class="app-item">
+        <div class="create-app-image-container trailer-half" onClick="buildJournal()">
+          <div class="image-hover-text">
+            <span>{{strings.shortReasons.mapJournal}}</span>
+          </div>
+          <img src="my-stories-utils/create-app/assets/images/map-journal.jpg">
+        </div>          
+        <a class="btn clear clear-inverse" onClick="buildJournal()">{{appTypes.mapJournal}}</a></li><!--
+     --><li class="app-item">
+        <div class="create-app-image-container trailer-half" onClick="buildSeries()">
+          <div class="image-hover-text">
+            <span>{{strings.shortReasons.mapSeries}}</span>
+          </div>
+          <img src="my-stories-utils/create-app/assets/images/tabbed-viewer.jpg">
+        </div>          
+        <a class="btn clear clear-inverse" onClick="buildSeries()">{{appTypes.mapSeries}}</a>
+      </li><!--
+     --><li class="app-item">
+        <div class="create-app-image-container trailer-half" onClick="buildSwipe('swipe')">
+          <div class="image-hover-text">
+            <span>{{strings.shortReasons.swipe}}</span>
+          </div>
+          <img src="my-stories-utils/create-app/assets/images/swipe.jpg">
+        </div>          
+        <a class="btn clear clear-inverse" onClick="buildSwipe('swipe')">{{appTypes.swipe}}</a>
+      </li><!--
+     --><li class="app-item">
+        <div class="create-app-image-container trailer-half" onClick="buildSwipe('spyglass')">
+          <div class="image-hover-text">
+            <span>{{strings.shortReasons.spyglass}}</span>
+          </div>
+          <img src="my-stories-utils/create-app/assets/images/spyglass.jpg">
+        </div>          
+        <a class="btn clear clear-inverse" onClick="buildSwipe('spyglass')">{{appTypes.spyglass}}</a>
+      </li><!--
+     --><li class="app-item">
+        <a href="/en/app-list/basic/tutorial/" class="create-app-image-container trailer-half" target="_blank">
+          <div class="image-hover-text">
+            <span>{{strings.shortReasons.basic}}</span>
+          </div>
+          <img src="my-stories-utils/create-app/assets/images/basic.jpg">
+        </a>          
+        <a href="/en/app-list/basic/tutorial/" class="btn clear clear-inverse" target="_blank">{{appTypes.basic}}</a>
+      </li>
+    </ul>
+  </div>
+  <div id="ask-pros" class="toggle-view" data-toggle="ask-pros">
+    {{{questionWidget}}}
+  </div>
+</div>
+<div class="modal-footer">
+  <div id="create-story-back" class="btn transparent">{{strings.dialog.back}}</div>
+  <div id="close-create-story-btn" class="btn modal-dismiss">{{strings.dialog.close}}</div>
+</div>

@@ -1,0 +1,50 @@
+.dialog-header {
+	background: $story-dialog-light-gray-background;
+	padding: 24px 0;
+	text-align: center;
+}
+
+.modal {
+	border: none;
+	padding: 0 0 20px;
+	z-index: 200;
+}
+
+.dialog-title {
+	display: inline-block;
+	font-style: $tailcoat-header-font;
+	font-weight: bold;
+	margin-bottom: 0;
+	vertical-align: middle;
+}
+
+.dialog-header-icon {
+	font-size: 1.6rem;
+	margin-right: 7px;
+  	vertical-align: middle;
+}
+
+.dialog-body {
+	padding: 0 30px;
+	text-align: center;
+}
+
+.dialog-list {
+	list-style-type: initial;	
+}
+
+.modal .main-text {
+	font-size: 1.0rem;
+}
+
+.modal-footer {
+	bottom: 0;
+	height: 35px;
+	left: 0;
+	position: absolute;
+	right: 0;
+}
+
+.close-dialog {
+	float: right;
+}

@@ -1,0 +1,42 @@
+.btn.clear-inverse {
+	border-color: $story-dark-blue;
+	color: $story-dark-blue;	
+}
+
+
+.btn.clear-inverse:hover {
+	background: $story-dark-blue;
+	color: white;
+}
+
+.btn.clear-inverse:focus {
+	color: $story-dark-blue !important;
+}
+
+.btn.clear-inverse:focus:hover {
+	color: white !important;
+}
+
+.toggle-button {
+	background: transparent;
+	border-width: 1px; 
+	border-style: solid; 
+	border-color: $story-blue-gray-border;
+	border-radius: 0px;
+	border-left-width: 0px;
+	border-right-width: 1px;	
+	color: $story-dark-blue;
+	display: inline-block;
+	font-size: 1.3rem;
+	padding: 2px 6px 0;
+}
+
+.toggle-button.active {
+	background: $story-dark-blue;
+	color: white;
+}
+
+.copied-message {
+	color: $green-ok;
+    left: 2px;
+}

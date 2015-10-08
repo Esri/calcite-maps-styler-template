@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<head>
+	<title>My Stories</title>
+	<link type="text/css" rel="stylesheet" href="http://fast.fonts.net/cssapi/3706abc4-0756-424b-b07b-1748122f85d8.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/tailcoat.css">
+	<link rel="stylesheet" type="text/css" href="my-stories-utils/create-app/assets/css/create-story.css">
+	<link rel="stylesheet" type="text/css" href="my-stories-utils/sign-in/assets/css/signIn.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/my-stories/my-stories.css">
+</head>
+<body>
+	<script src="assets/js/libs/jquery-1.9.1.min.js"></script>
+	<script src="assets/js/tailcoat/tailcoat.js"></script>
+	<script src="my-stories-utils/sign-in/SignInManager.js"></script>
+	<script src="assets/js/libs/jqueryUI.js"></script>
+	<script src="assets/js/buildapp.js"></script>
+
+
+	<div id="builder-loading"></div>
+	<script>			
+		window.builderIntegration = window.location.href.indexOf('itemId') !== -1;
+		
+		//document.domain = 'www.arcgis.com';
+
+		if(window.builderIntegration) {
+			document.body.className += ' builder';
+
+			// load here...
+			var htmlString = '<h2 class="progress-title">Loading...</h2>' +
+			'<div class="loader">' +
+				'<span class="side side-left"><span class="fill"></span></span>' +
+				'<span class="side side-right"><span class="fill"></span></span>' +
+			'</div>';
+
+			document.getElementById('builder-loading').innerHTML = htmlString;		
+		}	
+	</script>
+	<header id="my-stories-header"></header>
+
+
+	<div id="sign-in-container" class="custom-modal-container">
+		<div id="sign-in-wrapper" class="custom-modal-wrapper phone-hide">
+			<div id="sign-in-left">
+				<div id="sign-in-title" class="trailer-1">
+					<h2>Sign in to Story Maps</h2>
+				</div>
+				<div id="my-stories-explanation" class="trailer-1">
+					<div class="trailer-half">
+						<span class="subordinate-text">Sign in with your existing ArcGIS Online account to:</span>
+					</div>			
+					<div class="explanation trailer-half">
+						<div class="explanation-icon icon-check"></div><!--
+					 --><div class="explanation-text-container">
+							<h4 class="explanation-text">Create compelling story maps to tell your stories.</h4>
+						</div>				
+					</div>
+					<div class="explanation trailer-half">
+						<div class="explanation-icon icon-check"></div><!--
+					 --><div class="explanation-text-container">
+							<h4 class="explanation-text">Use your maps and data from ArcGIS Online in your story maps.</h4>
+						</div>				
+					</div>
+					<div class="explanation">
+						<div class="explanation-icon icon-check"></div><!--
+					 --><div class="explanation-text-container">
+							<h4 class="explanation-text">Manage your story maps and check the status of their content.</h4>
+						</div>				
+					</div>
+				</div>
+				<div id="how-sign-up">
+					<div class="explanation-icon icon-check invisible"></div><!--
+				 --><div class="sign-up-text-container">
+				 		<span class="subordinate-text">Don't have an ArcGIS Online account? Sign up for a:</span>
+				 		<div>
+				 			&bull;<a href="https://www.arcgis.com/home/createaccount.html" target="_blank" class="sign-up-link">Free non-commercial public account</a>
+				 		</div>
+				 		<div>
+				 			&bull;<a href="http://links.esri.com/storymaps/agol_trial_subscription" target="_blank" class="sign-up-link">Free trial ArcGIS subscription</a>
+				 		</div>	 				 		
+					</div>
+				</div>
+			</div><!--
+		 --><div id="sign-in-right">
+				<div id="token-expired-container" class="alert info">
+					<span id="token-expired">Your sign-in expired. Sign in again to pick up where you left off.</span>
+				</div>
+				<div id="api-didnt-load-container" class="alert error">
+					<span id="api-didnt-load">Something isn't loading correctly. Try refreshing the page.</span>
+				</div>
+				<iframe id="sign-in-frame" scrolling="no" marginheight="0" marginwidth="0" frameborder="0" width="330px" height="380px"></iframe>
+			</div>	
+		</div>
+		<div class="dialog-unavailable custom-modal-wrapper phone-show">
+		  	<div class="dialog-header padding-leader-1 padding-trailer-1">
+				<h4 class="dialog-title">Sign-In Not Available</h4>
+			</div>	
+			<div class="dialog-body leader-half">
+				<p>Sorry, this is not supported in a small display. Please open in a larger display or device.</p>
+				<a id="no-sign-in-redirect" href="/" class="btn modal-dismiss">Close</a>
+				<button class="btn modal-dismiss close-dialog">Return</button>
+			</div>
+		</div> 	
+	</div>
+
+
+
+
+	<section id="list-container">	
+		<div id="scan-all-progress" class="progress-item container"></div>
+		<ul id="item-list" class="container"></ul>	
+		<div id="page-loader" class="loading-container leader-2 trailer-2">
+			<h2 class="progress-title">&nbsp;</h2>
+			<div class="loader">
+				<span class="side side-left"><span class="fill"></span></span>
+				<span class="side side-right"><span class="fill"></span></span>		
+			</div>
+		</div>	
+		<div id="error-container" class="container leader-2 trailer-2"></div>
+		<div id="find-more-container" class="container"></div>
+	</section>
+	<div id="builder-container"></div>
+			
+	<div id="modal-container-delete" class="modal-overlay"></div>
+	<div id="modal-container-share" class="modal-overlay"></div>
+	<div id="modal-container-image-picker" class="modal-overlay"></div>
+	<div id="modal-container-find-stories" class="modal-overlay"></div>
+	<div id="modal-container-create-story" class="modal-overlay">
+		<div id="create-story-modal" class="modal create-story-modal phone-hide" data-modal="create-story"></div>	
+		<div id="no-create-story-modal" class="dialog-unavailable custom-modal-wrapper phone-show"></div>
+	</div>
+	<div id="modal-container-remove-layer" class="modal-overlay"></div>
+	<div id="map-container-hidden"></div>
+
+	<script type="text/javascript">		
+		window.myStoriesLanguage = 'en-us';	
+		if(!window.myStoriesLanguage || typeof window.myStoriesLanguage !== 'string') {
+			window.myStoriesLanguage = 'en-us';	
+		}
+	</script>
+
+	<script src="app/config.js"></script>
+	<script type="text/javascript">
+		var i18n,
+			engStrings;
+
+		require(["dojo/i18n!nls/app.js?v=" + app.version, "Handlebars", "my/MyStories", "my/helpers/EngStrings", "dojo/domReady!"], function(i18nApp, Handlebars, MyStories, engStringsObj){	
+			i18n = i18nApp;		
+			window.Handlebars = Handlebars;
+			engStrings = engStringsObj;
+			MyStories.init();
+			
+			require(["create-app/templates/templates", "create-app/CreateStory"], function(){
+				var createStoryButton = $('#create-story-btn'),
+					noStoriesButton = $('#create-story-no-stories-btn');
+				if(createStoryButton.length || noStoriesButton.length) {
+					window.onCreateStoryDialogLoaded(createStoryButton, noStoriesButton);
+				}
+			});
+		});
+	</script>
+
+</body>
+</html>

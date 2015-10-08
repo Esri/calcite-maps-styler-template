@@ -1,0 +1,30 @@
+
+#layer-item p {
+	font-size: 0.9rem;
+	margin-bottom: 12px;
+    line-height: 1.3;
+	text-align: left;
+}
+
+#layer-item p + p {
+	margin-bottom: 0;
+}
+
+#layer-item .link-text-container {
+	width: 90%;
+}
+
+.standout-text {
+	background-color: #FFDCDF;
+	border-radius: 2px;    
+	margin: 0 3px;
+    padding: 0px 4px 2px;    
+}
+
+#layer-url-text {
+	width: 100%;
+}
+
+#layer-item .underlined-link {
+	font-size: 1.2rem;
+}

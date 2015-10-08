@@ -1,0 +1,18 @@
+<h3 class="ask-pros-title question">{{question.txt}}</h3>
+{{#ifEquals question.answers.length 2}}
+  <div class="leader-2">
+    {{#each question.answers}}<div class="answer toggle toggle-button two-button" {{#if question}}data-question="{{question.id}}"{{else}}data-app="{{app.value}}"{{/if}}>{{txt}}</div>{{/each}}
+  </div>
+{{else}}
+  {{#ifEquals question.answers.length 4}}
+    <div class="square">
+    {{#each question.answers}}<div class="answer square-quarter{{#ifEquals @index 0}} shaded{{else}}{{#ifEquals @index 3}} shaded{{/ifEquals}}{{/ifEquals}}" {{#if question}}data-question="{{question.id}}"{{else}}data-app="{{app.value}}"{{/if}}><span>{{txt}}<span></div>{{/each}}
+    </div>  
+  {{else}}
+  <ul class="question-list">
+    {{#each question.answers}}
+      <li class="answer" {{#if question}}data-question="{{question.id}}"{{else}}data-app="{{app.value}}"{{/if}}>{{txt}}</li>  
+    {{/each}}
+  </ul>
+  {{/ifEquals}}
+{{/ifEquals}}
