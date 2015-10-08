@@ -3,7 +3,7 @@ var app = {};
 app.cfg = {
 	version: '1.0',
 	isProduction: true,
-	jsApiUrl: '//js.arcgis.com/3.14/',
+	jsApiUrl: '//jsdev.arcgis.com/3.15/',
 	facebook: {
 		appId: '737271002977269'
 	},
