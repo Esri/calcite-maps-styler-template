@@ -52,7 +52,7 @@ body {
 .app-loading .loading-indicator {
   /* Loading image */
   background-position: center center;
-  background-image: url(../images/LoadingIndicator_gray.gif);
+  background-image: url(../images/loading-indicator.gif);
   background-repeat: no-repeat;
 }
 .app-error .loading-message {
@@ -173,7 +173,7 @@ textarea {
 .busy {
   /* Loading overlay image */
   background-position: center center;
-  background-image: url(../images/LoadingIndicator_gray.gif);
+  background-image: url(../images/loading-indicator.gif);
   background-repeat: no-repeat;
   opacity: 0.5;filter:Alpha(opacity=50);
   position: absolute;
