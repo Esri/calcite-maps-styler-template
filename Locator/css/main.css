@@ -228,8 +228,8 @@ hr {
     border: none;
     outline: none;
     /*width: 180px !important;*/
-    width: 210px !important;
-    padding: 6px 0px 6px 6px;
+    width: 200px !important;
+    padding: 6px 10px 6px 6px;
 }
 
 .arcgisSearch .searchClear {

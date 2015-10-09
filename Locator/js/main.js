@@ -40,7 +40,7 @@ define([
     "esri/dijit/LocateButton",
     "esri/dijit/Popup",
     "esri/dijit/Search",
-    "esri/geometry/mathUtils",
+    "esri/geometry/geometryEngine",
     "esri/geometry/Point",
     "esri/graphic",
     "esri/InfoTemplate",
@@ -81,7 +81,7 @@ define([
     LocateButton,
     Popup,
     Search,
-    mathUtils,
+    geometryEngine,
     Point,
     Graphic,
     InfoTemplate,
@@ -918,7 +918,7 @@ define([
 
                 // distance
                 if (this.origin && gra.attributes.DISTANCE) {
-                    info += "<br/><span class='recDist'>~ " + gra.attributes.DISTANCE + " " + this.config.distanceUnits.toUpperCase() + "</span>";
+                    info += "<br/><span class='recDist'>~ " + Math.round(gra.attributes.DISTANCE * 100) / 100 + " " + this.config.distanceUnits.toUpperCase() + "</span>";
                 }
 
                 recHeaderInfo.innerHTML = info;
@@ -1095,11 +1095,16 @@ define([
                 pt = this.origin.geometry;
             }
             var dist = 0;
-            dist = mathUtils.getLength(pt, loc) * 0.000621371;
-            if (this.config.distanceUnits === "kilometers") {
-                dist = dist * 1.60934;
+            dist = geometryEngine.distance(pt, loc, 9001);
+            switch (this.config.distanceUnits) {
+                case "miles":
+                    dist *= 0.000621371;
+                    break;
+                case "kilometers":
+                    dist *= 0.001;
+                    break;
             }
-            dist = Math.round(dist * 10) / 10;
+            //dist = Math.round(dist * 10) / 10;
             return dist;
         },
 
