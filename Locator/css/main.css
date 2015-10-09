@@ -227,7 +227,9 @@ hr {
     background-color: transparent;
     border: none;
     outline: none;
-    width: 180px !important;
+    /*width: 180px !important;*/
+    width: 210px !important;
+    padding: 6px 0px 6px 6px;
 }
 
 .arcgisSearch .searchClear {
@@ -577,6 +579,29 @@ hr {
     height: 30px;
 }
 
+#panelMode {
+    position: absolute;
+    left: 10px;
+    top: 85px;
+    width: 100px;
+    display: none;
+    height: 24px;
+    line-height: 24px;
+    /*font-size: 11px;
+    color: #6e6e6;
+    color: rgba(0,0,0,0.6);*/
+    background-image: url(../images/drive.png);
+    background-position: right center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+
+.walking {
+    background-image: url(../images/walk.png) !important;
+    background-position: right center;
+    background-repeat: no-repeat;
+}
+
 #panelDirections {
     display: none;
 }
@@ -618,22 +643,22 @@ hr {
     position: absolute;
     left: 10px;
     right: 10px;
-    top: 45px;
-    height: 60px;
+    top: 40px;
+    height: 36px;
     overflow: hidden;
     text-overflow: ellipsis;
     color: #ffffff;
     font-size: 14px;
     font-weight: 300;
     text-align: left;
-    line-height: 30px;
+    line-height: 20px;
     display: block;
 }
 
 #panelOrigin {
     position: relative;
     width: 100%;
-    height: 30px;
+    height: 18px;
     overflow: hidden;
     text-overflow: ellipsis;
 }
@@ -641,7 +666,7 @@ hr {
 #panelDestination {
     position: relative;
     width: 100%;
-    height: 30px;
+    height: 18px;
     overflow: hidden;
     text-overflow: ellipsis;
 }

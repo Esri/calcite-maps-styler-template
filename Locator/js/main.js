@@ -16,90 +16,88 @@
  | limitations under the License.
  */
 define([
-  "dojo/ready", 
-  "dojo/_base/array", 
-  "dojo/_base/Color", 
-  "dojo/_base/declare", 
-  "dojo/_base/event", 
-  "dojo/_base/fx", 
-  "dojo/_base/html", 
-  "dojo/_base/lang", 
-  "dojo/dom", 
-  "dojo/dom-attr", 
-  "dojo/dom-class", 
-  "dojo/dom-construct", 
-  "dojo/dom-style", 
-  "dojo/on", 
-  "dojo/query", 
-  "dijit/layout/ContentPane", 
-  "dijit/registry", 
-  "application/SearchSources", 
-  "application/TrackingPt", 
-  "esri/IdentityManager", 
-  "esri/arcgis/utils", 
-  "esri/dijit/Directions", 
-  "esri/dijit/LocateButton", 
-  "esri/dijit/Popup", 
-  "esri/dijit/Search", 
-  "esri/geometry/mathUtils", 
-  "esri/geometry/Point", 
-  "esri/graphic", 
-  "esri/InfoTemplate", 
-  "esri/lang", 
-  "esri/layers/GraphicsLayer", 
-  "esri/symbols/Font", 
-  "esri/symbols/CartographicLineSymbol", 
-  "esri/symbols/PictureMarkerSymbol", 
-  "esri/symbols/SimpleFillSymbol", 
-  "esri/symbols/SimpleLineSymbol", 
-  "esri/symbols/SimpleMarkerSymbol", 
-  "esri/symbols/TextSymbol", 
-  "esri/tasks/locator", 
-  "esri/tasks/query", 
-  "esri/urlUtils"
-], function (
-    ready, 
-    array, 
-    Color, 
-    declare, 
+    "dojo/ready",
+    "dojo/_base/array",
+    "dojo/_base/Color",
+    "dojo/_base/declare",
+    "dojo/_base/event",
+    "dojo/_base/fx",
+    "dojo/_base/html",
+    "dojo/_base/lang",
+    "dojo/dom",
+    "dojo/dom-class",
+    "dojo/dom-construct",
+    "dojo/dom-style",
+    "dojo/on",
+    "dojo/query",
+    "dijit/layout/ContentPane",
+    "dijit/registry",
+    "application/SearchSources",
+    "application/TrackingPt",
+    "esri/IdentityManager",
+    "esri/arcgis/utils",
+    "esri/dijit/Directions",
+    "esri/dijit/LocateButton",
+    "esri/dijit/Popup",
+    "esri/dijit/Search",
+    "esri/geometry/mathUtils",
+    "esri/geometry/Point",
+    "esri/graphic",
+    "esri/InfoTemplate",
+    "esri/lang",
+    "esri/layers/GraphicsLayer",
+    "esri/symbols/Font",
+    "esri/symbols/CartographicLineSymbol",
+    "esri/symbols/PictureMarkerSymbol",
+    "esri/symbols/SimpleFillSymbol",
+    "esri/symbols/SimpleLineSymbol",
+    "esri/symbols/SimpleMarkerSymbol",
+    "esri/symbols/TextSymbol",
+    "esri/tasks/locator",
+    "esri/tasks/query",
+    "esri/urlUtils"
+], function(
+    ready,
+    array,
+    Color,
+    declare,
     event,
-    fx, 
-    html, 
-    lang, 
-    dom, 
-    domAttr, 
-    domClass, 
-    domConstruct, 
-    domStyle, 
-    on, 
-    query, 
-    ContentPane, 
+    fx,
+    html,
+    lang,
+    dom,
+    domClass,
+    domConstruct,
+    domStyle,
+    on,
+    query,
+    ContentPane,
     registry,
-    SearchSources, 
-    TrackingPt, 
-    esriId, 
-    arcgisUtils, 
-    Directions, 
-    LocateButton, 
-    Popup, 
-    Search, 
-    mathUtils, 
-    Point, 
-    Graphic, 
-    InfoTemplate, 
-    esriLang, 
-    GraphicsLayer, 
-    Font, 
-    CartographicLineSymbol, 
-    PictureMarkerSymbol, 
-    SimpleFillSymbol, 
-    SimpleLineSymbol, 
-    SimpleMarkerSymbol, 
-    TextSymbol, 
-    Locator, 
-    Query, 
+    SearchSources,
+    TrackingPt,
+    esriId,
+    arcgisUtils,
+    Directions,
+    LocateButton,
+    Popup,
+    Search,
+    mathUtils,
+    Point,
+    Graphic,
+    InfoTemplate,
+    esriLang,
+    GraphicsLayer,
+    Font,
+    CartographicLineSymbol,
+    PictureMarkerSymbol,
+    SimpleFillSymbol,
+    SimpleLineSymbol,
+    SimpleMarkerSymbol,
+    TextSymbol,
+    Locator,
+    Query,
     urlUtils
-    ) {
+) {
     return declare(null, {
 
         config: {},
@@ -127,9 +125,11 @@ define([
         curStops: [],
         dirOK: true,
         animTimer: null,
+        travelModes: [],
+        curMode: null,
 
         // Startup
-        startup: function (config) {
+        startup: function(config) {
             // config will contain application and user defined info for the template such as i18n strings, the web map id
             // and application id
             // any url parameters and any application specific configuration information.
@@ -149,7 +149,7 @@ define([
                     });
                     if (this.config.helperServices.route && this.config.helperServices.route.url) {
                         var routeUrl = null;
-                        array.some(this.config.layerMixins, lang.hitch(this, function (layerMixin) {
+                        array.some(this.config.layerMixins, lang.hitch(this, function(layerMixin) {
                             if (layerMixin.url === this.config.helperServices.route.url) {
                                 routeUrl = layerMixin.mixin.url;
                                 return true;
@@ -168,7 +168,7 @@ define([
                     // }
                 }
                 // document ready
-                ready(lang.hitch(this, function () {
+                ready(lang.hitch(this, function() {
                     //supply either the webmap id or, if available, the item info
                     var itemInfo = this.config.itemInfo || this.config.webmap;
                     //If a custom extent is set as a url parameter handle that before creating the map
@@ -191,7 +191,7 @@ define([
         },
 
         // Report error
-        reportError: function (error) {
+        reportError: function(error) {
             // remove loading class from body
             domClass.remove(document.body, "app-loading");
             domClass.add(document.body, "app-error");
@@ -211,7 +211,7 @@ define([
         },
 
         // Set Color
-        _setColor: function () {
+        _setColor: function() {
             this.color = this.config.color;
 
             var style1 = document.createElement('style');
@@ -225,7 +225,7 @@ define([
                 style1.appendChild(t1);
             }
 
-            if (this.config.styleBasemap == 1) {
+            if (this.config.styleBasemap === 1) {
                 var style2 = document.createElement('style');
                 var str2 = '.layerTile {filter: url(css/filters.svg#grayscale); filter: gray; -webkit-filter: grayscale(1); -ms-filter: grayscale(100%); -moz-opacity: 0.7; -khtml-opacity: 0.7; opacity: 0.7;}';
                 style2.setAttribute("type", "text/css");
@@ -252,8 +252,8 @@ define([
         },
 
         // set protocol handler
-        _setProtocolHandler: function () {
-            esriId.setProtocolErrorHandler(function () {
+        _setProtocolHandler: function() {
+            esriId.setProtocolErrorHandler(function() {
                 if (window.confirm("Your browser is not CORS enabled. You need to redirect to HTTPS. Continue?")) {
                     window.location = window.location.href.replace("http:", "https:");
                 }
@@ -261,7 +261,7 @@ define([
         },
 
         // Create web map based on the input web map id
-        _createWebMap: function (itemInfo) {
+        _createWebMap: function(itemInfo) {
 
             // popup
             var popupSym = new SimpleMarkerSymbol("circle", 2, null, new Color([0, 0, 0, 0.1]));
@@ -289,11 +289,12 @@ define([
                 layerMixins: this.config.layerMixins || [],
                 editable: this.config.editable,
                 bingMapsKey: this.config.bingKey
-            }).then(lang.hitch(this, function (response) {
+            }).then(lang.hitch(this, function(response) {
 
                 var appProps = response.itemInfo.itemData.applicationProperties;
-                if (appProps && appProps.viewing && appProps.viewing.search) this.searchProps = appProps.viewing.search;
-
+                if (appProps && appProps.viewing && appProps.viewing.search) {
+                    this.searchProps = appProps.viewing.search;
+                }
                 this.config.response = response;
                 this.map = response.map;
                 this.map.setInfoWindowOnClick(true);
@@ -323,7 +324,7 @@ define([
                     // do something with the map
                     this._mapLoaded();
                 } else {
-                    on.once(this.map, "load", lang.hitch(this, function () {
+                    on.once(this.map, "load", lang.hitch(this, function() {
                         // do something with the map
                         this._mapLoaded();
                     }));
@@ -332,7 +333,7 @@ define([
         },
 
         // Calculate Offset
-        _calculateOffset: function (response) {
+        _calculateOffset: function(response) {
             try {
                 var lods = response.itemInfo.itemData.baseMap.baseMapLayers[0].layerObject.tileInfo.lods;
                 var lod = lods[this.config.defaultZoomLevel || 13];
@@ -344,7 +345,7 @@ define([
         },
 
         // Map Loaded - Map is ready
-        _mapLoaded: function () {
+        _mapLoaded: function() {
             query(".bg").style("backgroundColor", this.color.toString());
             query(".esriSimpleSlider").style("backgroundColor", this.color.toString());
             domClass.remove(document.body, "app-loading");
@@ -353,7 +354,7 @@ define([
         },
 
         // Process Destinations
-        _processDestinations: function () {
+        _processDestinations: function() {
             this.opFeatures = [];
             var pt, gra;
             if (this.config.longitude && this.config.latitude) {
@@ -374,7 +375,7 @@ define([
                     outFields: ["Loc_name"]
                 };
                 this.locator.addressToLocations(options);
-                this.locator.addressToLocations(options, lang.hitch(this, function (evt) {
+                this.locator.addressToLocations(options, lang.hitch(this, function(evt) {
                     if (evt.length > 0) {
                         var candidate = evt[0];
                         var address = candidate.address;
@@ -387,7 +388,7 @@ define([
                         this._setupTemplate();
                         this._processDestinationFeatures();
                     }
-                }), function (err) {
+                }), function(err) {
                     console.log(err.message);
                 });
             } else {
@@ -396,11 +397,11 @@ define([
         },
 
         // Process Operational Layers
-        _processOperationalLayers: function () {
+        _processOperationalLayers: function() {
             if (this.config.destLayer) {
-                array.forEach(this.opLayers, lang.hitch(this, function (layer) {
+                array.forEach(this.opLayers, lang.hitch(this, function(layer) {
                     console.log(layer, this.config.destLayer.id);
-                    if ((layer.featureCollection) && (layer.id + "_0" == this.config.destLayer.id)) {
+                    if ((layer.featureCollection) && (layer.id + "_0" === this.config.destLayer.id)) {
                         this.config.destLayer.title = layer.title;
                         this.opLayerObj = layer;
                         this.opLayer = layer.featureCollection.layers[0].layerObject;
@@ -412,7 +413,7 @@ define([
                             childLayer.setVisibility(false);
                         }
                         this.opFeatures = features;
-                    } else if (layer.layerObject && layer.layerObject.type == "Feature Layer" && layer.id == this.config.destLayer.id) {
+                    } else if (layer.layerObject && layer.layerObject.type === "Feature Layer" && layer.id === this.config.destLayer.id) {
                         this.config.destLayer.title = layer.title;
                         this.opLayerObj = layer;
                         this.opFeatureLayer = true;
@@ -432,7 +433,7 @@ define([
         },
 
         // get default operational layer
-        _getDefaultOperationalLayer: function () {
+        _getDefaultOperationalLayer: function() {
             this.opLayers.reverse();
             if (this.opLayers.length > 0) {
                 for (var i = 0; i < this.opLayers.length; i++) {
@@ -452,7 +453,7 @@ define([
                                 return layer.featureCollection.layers[j].layerObject;
                             }
                         }
-                    } else if (layer.layerObject && layer.layerObject.type == "Feature Layer") {
+                    } else if (layer.layerObject && layer.layerObject.type === "Feature Layer") {
                         this.config.destLayer = {
                             id: layer.id,
                             title: layer.title
@@ -467,12 +468,14 @@ define([
         },
 
         // setup template
-        _setupTemplate: function () {
+        _setupTemplate: function() {
             var infoTemplate;
             if (!this.opLayer) {
                 var title = this.config.destination || this.config.title;
                 var content = "<hr/>Name: ${Name}<br/><br/>Address: ${Address}<br/><br/>Latitude: ${Latitude}<br/><br/>Longitude: ${Longitude}";
-                if (this.config && this.config.i18n) content = "<hr/>" + this.config.i18n.location.name + ": ${Name}<br/><br/>" + this.config.i18n.location.address + ": ${Address}<br/><br/>" + this.config.i18n.location.latitude + ": ${Latitude}<br/><br/>" + this.config.i18n.location.longitude + ": ${Longitude}";
+                if (this.config && this.config.i18n) {
+                    content = "<hr/>" + this.config.i18n.location.name + ": ${Name}<br/><br/>" + this.config.i18n.location.address + ": ${Address}<br/><br/>" + this.config.i18n.location.latitude + ": ${Latitude}<br/><br/>" + this.config.i18n.location.longitude + ": ${Longitude}";
+                }
                 infoTemplate = new InfoTemplate(title, content);
             } else {
                 infoTemplate = this.opLayer.infoTemplate;
@@ -483,10 +486,10 @@ define([
 
         // ** UI FUNCTIONS ** //
         // Create Geocoder Options
-        _createGeocoderOptions: function () {
+        _createGeocoderOptions: function() {
             var hasEsri = false;
             var geocoders = lang.clone(this.config.helperServices.geocode);
-            array.forEach(geocoders, lang.hitch(this, function (geocoder, index) {
+            array.forEach(geocoders, lang.hitch(this, function(geocoder) {
                 if (geocoder.url.indexOf(".arcgis.com/arcgis/rest/services/World/GeocodeServer") > -1) {
                     hasEsri = true;
                     geocoder.name = "Esri World Geocoder";
@@ -496,7 +499,7 @@ define([
                 }
             }));
             //only use geocoders with a singleLineFieldName
-            geocoders = array.filter(geocoders, function (geocoder) {
+            geocoders = array.filter(geocoders, function(geocoder) {
                 return (esriLang.isDefined(geocoder.singleLineFieldName));
             });
             var esriIdx;
@@ -523,7 +526,7 @@ define([
         },
 
         // Configure Map UI
-        _configureMapUI: function () {
+        _configureMapUI: function() {
 
             // geolocate
             var geoLocate = new LocateButton({
@@ -536,23 +539,23 @@ define([
 
             // geocoder
             var geocoderOptions = this._createGeocoderOptions();
-            
+
             // search
             var searchSources = new SearchSources({
                 map: this.map,
-                useMapExtent: false,
+                useMapExtent: true,
                 geocoders: this.config.helperServices.geocode,
                 itemData: this.config.response.itemInfo.itemData
-                //configuredSearchLayers: configuredSearchLayers
+                    //configuredSearchLayers: configuredSearchLayers
             });
             var searchOptions = searchSources.createOptions();
-            array.forEach(searchOptions.sources, lang.hitch(this, function(source){
+            array.forEach(searchOptions.sources, lang.hitch(this, function(source) {
                 source.placeholder = this.config.prompt;
             }));
             searchOptions.allPlaceholder = this.config.prompt;
             this.search = new Search(searchOptions, "panelGeocoder");
 
-            this.search.on("search-results", lang.hitch(this, function (event) {
+            this.search.on("search-results", lang.hitch(this, function(event) {
                 console.log("search-results", event);
             }));
             this.search.on("select-result", lang.hitch(this, this._searchSelect));
@@ -569,7 +572,9 @@ define([
             var routeSym = new CartographicLineSymbol(CartographicLineSymbol.STYLE_SOLID, new Color([rgb[0], rgb[1], rgb[2], 0.4]), 8, CartographicLineSymbol.CAP_SQUARE, CartographicLineSymbol.JOIN_MITER, 4);
             var segmentSym = new SimpleLineSymbol(SimpleLineSymbol.STYLE_SHORTDOT, new Color([0, 0, 0, 0.4]), 8);
             var units = "esriMiles";
-            if (this.config.distanceUnits == "kilometers") units = "esriKilometers";
+            if (this.config.distanceUnits === "kilometers") {
+                units = "esriKilometers";
+            }
             var options = {
                 map: this.map,
                 //maxStops : 2,
@@ -588,14 +593,14 @@ define([
                 stopSymbol: sym,
                 routeSymbol: routeSym,
                 segmentSymbol: segmentSym,
-                doNotFetchTravelModesFromOwningSystem: true
+                doNotFetchTravelModesFromOwningSystem: false
             };
 
 
             if (this.config.helperServices.route && this.config.helperServices.route.url !== "") {
                 // do we have a proxied url? 
                 var routeUrl = null;
-                array.some(this.config.layerMixins, lang.hitch(this, function (layerMixin) {
+                array.some(this.config.layerMixins, lang.hitch(this, function(layerMixin) {
                     if (layerMixin.url === this.config.helperServices.route.url) {
                         routeUrl = layerMixin.mixin.url;
                         return true;
@@ -603,22 +608,23 @@ define([
                 }));
                 options.routeTaskUrl = routeUrl || this.config.helperServices.route.url;
             }
-            if (this.config.routeUtility !== "") options.routeTaskUrl = this.config.routeUtility;
+            if (this.config.routeUtility !== "") {
+                options.routeTaskUrl = this.config.routeUtility;
+            }
 
             // traffic is proxied
             array.some(this.config.layerMixins, lang.hitch(this, function(layerMixin) {
                 if (layerMixin.url.indexOf("traffic.arcgis.com") !== -1) {
-                  options.traffic = true;
-                  options.trafficLayer = layerMixin.mixin.url;
-                  return true;
+                    options.traffic = true;
+                    options.trafficLayer = layerMixin.mixin.url;
+                    return true;
                 }
             }));
 
             this.dirWidget = new Directions(options, "resultsDirections");
-            //on(this.dirWidget, "directions-clear", lang.hitch(this, this._directionsCleared));
+            on.once(this.dirWidget, "load", lang.hitch(this, this._setupModes));
             on(this.dirWidget, "directions-finish", lang.hitch(this, this._directionsFinished));
             this.dirWidget.startup();
-            console.log("here", this.dirWidget.getSupportedTravelModeNames());
 
             // configure ui
             this._configureUI();
@@ -628,8 +634,37 @@ define([
 
         },
 
+        // Setup Modes
+        _setupModes: function() {
+            var supModes = this.dirWidget.getSupportedTravelModeNames();
+            var modes = [];
+            array.forEach(supModes, function(mode) {
+                if (mode === "Driving Time" || mode === "Walking Time") {
+                    modes.push(mode);
+                }
+            });
+            if (modes.length === 2) {
+                domStyle.set(dom.byId("panelMode"), "display", "block");
+                this.curMode = "Driving Time";
+                this._setTravelMode();
+            }
+        },
+
+        // Toggle Mode
+        _toggleMode: function() {
+            var pMode = dom.byId("panelMode");
+            if (this.curMode === "Walking Time") {
+                this.curMode = "Driving Time";
+                domClass.remove(pMode, "walking");
+            } else {
+                this.curMode = "Walking Time";
+                domClass.add(pMode, "walking");
+            }
+            this._setTravelMode();
+        },
+
         // Configure UI
-        _configureUI: function () {
+        _configureUI: function() {
 
             // top
             if (this.config.title !== "") {
@@ -669,76 +704,83 @@ define([
             }
             on(btnReverse, "click", lang.hitch(this, this._reverseDirections));
 
+            // mode
+            var pMode = dom.byId("panelMode");
+            if (this.config && this.config.i18n) {
+                pMode.title = this.config.i18n.tooltips.mode;
+            }
+            on(pMode, "click", lang.hitch(this, this._toggleMode));
+
         },
 
         // Update Theme
-        _updateTheme: function () {
+        _updateTheme: function() {
             query(".bg").style("backgroundColor", this.color.toString());
             query(".esriPopup .titlePane").style("backgroundColor", this.color.toString());
         },
 
         // Reset App
-        _resetApp: function () {
+        _resetApp: function() {
             this._unselectRecords();
             this._updateOrigin(null, null);
             this._processDestinationFeatures();
         },
 
         // Close Directions
-        _closeDirections: function () {
+        _closeDirections: function() {
             this._unselectRecords();
             this._showPage(0);
         },
 
         // Show Page
-        _showPage: function (num) {
+        _showPage: function(num) {
             this.page = num;
             var promise;
             switch (num) {
-            case 0:
-                promise = this._clearDirections();
-                promise.then(lang.hitch(this, function () {
-                    this.dirOK = true;
-                }));
-                // dom.byId("panelTitle").innerHTML = this.config.title;
-                // domStyle.set("bodyFeatures", "display", "block");
-                // domStyle.set("bodyDirections", "display", "none");
-                // domStyle.set("btnClose", "display", "none");
-                // domStyle.set("btnReset", "display", "block");
-                // domStyle.set("panelOrigin", "display", "none");
-                // domStyle.set("panelDestination", "display", "none");
-                // domStyle.set("panelSearchBox", "display", "block");
-                domStyle.set("panelFeatures", "display", "block");
-                domStyle.set("panelDirections", "display", "none");
-                break;
-            case 1:
-                // var tip = "Directions";
-                // if (this.config && this.config.i18n) {
-                //     tip = this.config.i18n.tooltips.directions;
-                // }
-                // dom.byId("panelTitle").innerHTML = tip;
-                // domStyle.set("bodyFeatures", "display", "none");
-                // domStyle.set("bodyDirections", "display", "block");
-                // domStyle.set("btnClose", "display", "block");
-                // domStyle.set("btnReset", "display", "none");
-                // domStyle.set("panelOrigin", "display", "block");
-                // domStyle.set("panelDestination", "display", "block");
-                // domStyle.set("panelSearchBox", "display", "none");
-                domStyle.set("panelFeatures", "display", "none");
-                domStyle.set("panelDirections", "display", "block");
-                break;
+                case 0:
+                    promise = this._clearDirections();
+                    promise.then(lang.hitch(this, function() {
+                        this.dirOK = true;
+                    }));
+                    // dom.byId("panelTitle").innerHTML = this.config.title;
+                    // domStyle.set("bodyFeatures", "display", "block");
+                    // domStyle.set("bodyDirections", "display", "none");
+                    // domStyle.set("btnClose", "display", "none");
+                    // domStyle.set("btnReset", "display", "block");
+                    // domStyle.set("panelOrigin", "display", "none");
+                    // domStyle.set("panelDestination", "display", "none");
+                    // domStyle.set("panelSearchBox", "display", "block");
+                    domStyle.set("panelFeatures", "display", "block");
+                    domStyle.set("panelDirections", "display", "none");
+                    break;
+                case 1:
+                    // var tip = "Directions";
+                    // if (this.config && this.config.i18n) {
+                    //     tip = this.config.i18n.tooltips.directions;
+                    // }
+                    // dom.byId("panelTitle").innerHTML = tip;
+                    // domStyle.set("bodyFeatures", "display", "none");
+                    // domStyle.set("bodyDirections", "display", "block");
+                    // domStyle.set("btnClose", "display", "block");
+                    // domStyle.set("btnReset", "display", "none");
+                    // domStyle.set("panelOrigin", "display", "block");
+                    // domStyle.set("panelDestination", "display", "block");
+                    // domStyle.set("panelSearchBox", "display", "none");
+                    domStyle.set("panelFeatures", "display", "none");
+                    domStyle.set("panelDirections", "display", "block");
+                    break;
             }
-            this._updateRouteTools();
+            //this._updateRouteTools();
         },
 
         // ** GEO FUNCTIONS ** //
         // geoLocated
-        _geoLocated: function (evt) {
+        _geoLocated: function(evt) {
             var gra;
             var pt;
             if (evt.graphic) {
                 pt = evt.graphic.geometry;
-                this.locator.locationToAddress(pt, 500, lang.hitch(this, function (result) {
+                this.locator.locationToAddress(pt, 500, lang.hitch(this, function(result) {
                     if (result.address) {
                         var label = result.address.Address;
                         this.search.set("value", label);
@@ -748,22 +790,24 @@ define([
                         });
                         this._updateOrigin(gra, gra);
                     }
-                }), lang.hitch(this, function (err) {
+                }), lang.hitch(this, function(err) {
                     var promise = this._clearDirections();
-                    promise.then(lang.hitch(this, function () {
+                    promise.then(lang.hitch(this, function() {
                         this.dirOK = true;
                     }));
                     console.log(err.message);
                     this.search.set("value", "");
                 }));
             } else {
-                if (evt.error) console.log(evt.error.message);
+                if (evt.error) {
+                    console.log(evt.error.message);
+                }
             }
             this._updateOrigin(gra, pt);
         },
 
         // search select
-        _searchSelect: function (obj) {
+        _searchSelect: function(obj) {
             var result = obj.result;
             var pt = result.feature.geometry;
             var label = result.name;
@@ -775,7 +819,7 @@ define([
         },
 
         // search clear
-        _searchClear: function (event) {
+        _searchClear: function() {
             if (this.dirOK) {
                 this._updateOrigin(null, null);
             }
@@ -783,7 +827,7 @@ define([
 
         // ** QUERY FUNCTIONS ** //
         // Query Destinations
-        _queryDestinations: function () {
+        _queryDestinations: function() {
             var expr = "1=1";
             // if (this.opLayerObj.layerDefinition && this.opLayerObj.layerDefinition.definitionExpression) {
             // expr = this.opLayerObj.layerDefinition.definitionExpression;
@@ -798,9 +842,9 @@ define([
         },
 
         // Process Results
-        _processResults: function (results) {
+        _processResults: function(results) {
             this.opFeatures = [];
-            array.forEach(results.features, lang.hitch(this, function (gra) {
+            array.forEach(results.features, lang.hitch(this, function(gra) {
                 if (gra.geometry) {
                     this.opFeatures.push(gra);
                 }
@@ -810,16 +854,18 @@ define([
         },
 
         // Process Error
-        _processError: function (err) {
+        _processError: function(err) {
             console.log(err.message);
         },
 
         // Process Destination
-        _processDestinationFeatures: function () {
-            array.forEach(this.opFeatures, lang.hitch(this, function (gra) {
+        _processDestinationFeatures: function() {
+            array.forEach(this.opFeatures, lang.hitch(this, function(gra) {
                 var geom = gra.geometry;
                 var pt = geom;
-                if (geom.type != "point") pt = this._getPointForGeometry(geom);
+                if (geom.type !== "point") {
+                    pt = this._getPointForGeometry(geom);
+                }
                 var dist = null;
                 dist = this._getDistance(pt);
                 gra.attributes.POINT_LOCATION = pt;
@@ -831,8 +877,10 @@ define([
         },
 
         // Update Destinaions
-        _updateDestinations: function () {
-            if (registry.byId("recPane")) registry.byId("recPane").destroy();
+        _updateDestinations: function() {
+            if (registry.byId("recPane")) {
+                registry.byId("recPane").destroy();
+            }
             var results = dom.byId("resultsFeatures");
             results.innerHTML = "";
             var features = this.opFeatures;
@@ -902,37 +950,36 @@ define([
         },
 
         // Switch View
-        _switchView: function () {
+        _switchView: function() {
             setTimeout(lang.hitch(this, this._toggleScroll), 2000);
         },
 
         // Select Feature
-        _selectFeature: function (evt) {
+        _selectFeature: function(evt) {
             var gra = evt.graphic;
             var num = gra.id;
             num = num.replace("R_", "").replace("T_", "");
-            this._selectRecord(parseInt(num), false);
+            this._selectRecord(parseInt(num, 10), false);
             event.stop(evt);
             this._showPage(0);
             //this._switchView();
         },
 
         // Select Record
-        _selectRecord: function (num, zoom) {
+        _selectRecord: function(num, zoom) {
             if (typeof(zoom) === 'undefined') {
                 zoom = true;
             }
             this._unselectRecords();
-            if (num != this.selectedNum) {
+            if (num !== this.selectedNum) {
                 this._highlightRecord(num, zoom);
             } else {
                 this.selectedNum = null;
             }
-            console.log("here", this.dirWidget.getSupportedTravelModeNames());
         },
 
         // Highlight Record
-        _highlightRecord: function (num, zoom) {
+        _highlightRecord: function(num, zoom) {
             this.selectedNum = num;
             var gra = this.opFeatures[num];
             domClass.add("rec_" + num, "recOpened");
@@ -953,19 +1000,21 @@ define([
         },
 
         // Select Route
-        _selectRoute: function (num, evt) {
+        _selectRoute: function(num, evt) {
             event.stop(evt);
             var promise = this._clearDirections();
-            promise.then(lang.hitch(this, function () {
+            promise.then(lang.hitch(this, function() {
                 this.dirOK = true;
                 this._showRoute(num);
             }));
         },
 
         // Show Route
-        _showRoute: function (num) {
+        _showRoute: function(num) {
             var zoom = true;
-            if (this.origin) zoom = false;
+            if (this.origin) {
+                zoom = false;
+            }
             this._unselectRecords();
             this._highlightRecord(num, zoom);
             var gra = this.opFeatures[num];
@@ -973,7 +1022,7 @@ define([
         },
 
         // Update Position
-        _updatePosition: function () {
+        _updatePosition: function() {
             dom.byId("bodyFeatures").scrollTop = 0;
             var num = this.selectedNum;
             var pos = num * 60;
@@ -981,17 +1030,19 @@ define([
         },
 
         // Unselect Records
-        _unselectRecords: function () {
+        _unselectRecords: function() {
             this.hiLayer.clear();
-            if (registry.byId("recPane")) registry.byId("recPane").destroy();
+            if (registry.byId("recPane")) {
+                registry.byId("recPane").destroy();
+            }
             //domConstruct.destroy("recDetails");
-            query(".recOpened").forEach(function (node) {
+            query(".recOpened").forEach(function(node) {
                 domClass.remove(node, "recOpened");
             });
         },
 
         // Render Destinations
-        _renderDestinations: function () {
+        _renderDestinations: function() {
             this.destLayer.clear();
             var rgb = Color.fromString(this.color).toRgb();
             var symML = new SimpleLineSymbol(SimpleLineSymbol.STYLE_SOLID, new Color([255, 255, 255, 1]), 1);
@@ -1007,8 +1058,12 @@ define([
                 var geom = gra.geometry;
                 var attr = gra.attributes;
                 var pt = gra.attributes.POINT_LOCATION;
-                if (geom.type == "polyline") this.destLayer.add(new Graphic(geom, symL, attr));
-                if (geom.type == "polygon") this.destLayer.add(new Graphic(geom, symF, attr));
+                if (geom.type === "polyline") {
+                    this.destLayer.add(new Graphic(geom, symL, attr));
+                }
+                if (geom.type === "polygon") {
+                    this.destLayer.add(new Graphic(geom, symF, attr));
+                }
                 var symText = new TextSymbol(num, fnt, "#ffffff");
                 symText.setOffset(0, -4);
                 var graRing = new Graphic(pt, symM, attr);
@@ -1021,9 +1076,11 @@ define([
         },
 
         // Get point for geometry
-        _getPointForGeometry: function (geom) {
-            if (geom.type == "polygon") return geom.getCentroid();
-            if (geom.type == "polyline") {
+        _getPointForGeometry: function(geom) {
+            if (geom.type === "polygon") {
+                return geom.getCentroid();
+            }
+            if (geom.type === "polyline") {
                 var pathNum = Math.floor(geom.paths.length / 2);
                 var ptNum = Math.floor(geom.paths[pathNum].length / 2);
                 return geom.getPoint(pathNum, ptNum);
@@ -1032,25 +1089,33 @@ define([
         },
 
         // Get distance
-        _getDistance: function (loc) {
+        _getDistance: function(loc) {
             var pt = this.map.extent.getCenter();
-            if (this.origin) pt = this.origin.geometry;
+            if (this.origin) {
+                pt = this.origin.geometry;
+            }
             var dist = 0;
             dist = mathUtils.getLength(pt, loc) * 0.000621371;
-            if (this.config.distanceUnits == "kilometers") dist = dist * 1.60934;
+            if (this.config.distanceUnits === "kilometers") {
+                dist = dist * 1.60934;
+            }
             dist = Math.round(dist * 10) / 10;
             return dist;
         },
 
         // Compare distance
-        _compareDistance: function (a, b) {
-            if (a.attributes.DISTANCE < b.attributes.DISTANCE) return -1;
-            if (a.attributes.DISTANCE > b.attributes.DISTANCE) return 1;
+        _compareDistance: function(a, b) {
+            if (a.attributes.DISTANCE < b.attributes.DISTANCE) {
+                return -1;
+            }
+            if (a.attributes.DISTANCE > b.attributes.DISTANCE) {
+                return 1;
+            }
             return 0;
         },
 
         // Zoom to destination
-        _zoomToDestination: function (gra, zoom) {
+        _zoomToDestination: function(gra, zoom) {
             var pt = gra.attributes.POINT_LOCATION;
             if (zoom) {
                 var c = pt;
@@ -1067,21 +1132,28 @@ define([
             this.hiLayer.add(new Graphic(pt, symM, null));
         },
 
+        // Set Travel Mode
+        _setTravelMode: function() {
+            this.dirWidget.routeParams.travelMode = this.curMode;
+            var promise = this.dirWidget.setTravelMode(this.curMode);
+            return promise;
+        },
+
         // Route to destination
-        _routeToDestination: function (gra) {
+        _routeToDestination: function(gra) {
             var pt = gra.geometry;
             dom.byId("panelDestination").innerHTML = gra.getTitle();
             this._showPage(1);
             if (this.originObj) {
-                var def = this.dirWidget.addStops([this.originObj, pt]);
-                // def.then(lang.hitch(this, function() {
-                // this.dirWidget.getDirections();
-                // }));
+                var promise = this._setTravelMode();
+                promise.then(lang.hitch(this, function() {
+                    this.dirWidget.addStops([this.originObj, pt]);
+                }));
             }
         },
 
         // Reverse Directions
-        _reverseDirections: function () {
+        _reverseDirections: function() {
             var val1 = dom.byId("panelOrigin").innerHTML;
             var val2 = dom.byId("panelDestination").innerHTML;
             dom.byId("panelOrigin").innerHTML = val2;
@@ -1089,25 +1161,28 @@ define([
             var stops = this.dirWidget.stops.slice();
             stops.reverse();
             var promise = this._clearDirections();
-            promise.then(lang.hitch(this, function () {
+            promise.then(lang.hitch(this, function() {
                 this.dirOK = true;
-                var def = this.dirWidget.addStops(stops);
-                // def.then(lang.hitch(this, function() {
-                // this.dirWidget.getDirections();
-                // }));
+                var promise2 = this._setTravelMode();
+                promise2.then(lang.hitch(this, function() {
+                    this.dirWidget.addStops(stops);
+                }));
+                //this.dirWidget.addStops(stops);
             }));
         },
 
         // Clear Directions
-        _clearDirections: function () {
-            if (this.trackingPt) this.map.graphics.remove(this.trackingPt);
+        _clearDirections: function() {
+            if (this.trackingPt) {
+                this.map.graphics.remove(this.trackingPt);
+            }
             this.dirOK = false;
             var promise = this.dirWidget.reset();
             return promise;
         },
 
         // Directions Finished
-        _directionsFinished: function (event) {
+        _directionsFinished: function(event) {
             console.log("Directions Finished", event);
             if (this.animTimer) {
                 clearTimeout(this.animTimer);
@@ -1116,7 +1191,7 @@ define([
             this.animTimer = setTimeout(lang.hitch(this, this._directionsFinishedOnce), 2000);
         },
 
-        _directionsFinishedOnce: function () {
+        _directionsFinishedOnce: function() {
             console.log("Directions Finished Once");
             if (this.dirWidget.mergedRouteGraphic !== undefined) {
                 var gra = this.dirWidget.mergedRouteGraphic;
@@ -1133,17 +1208,19 @@ define([
                 var symL = new SimpleLineSymbol(SimpleLineSymbol.STYLE_NULL, new Color.fromArray(rgb), 0);
                 var sym = new SimpleMarkerSymbol(SimpleMarkerSymbol.STYLE_CIRCLE, 20, symL, Color.fromArray(rgb));
                 var pt = gra.geometry.getPoint(0, 0);
-                if (this.trackingPt) this.map.graphics.remove(this.trackingPt);
+                if (this.trackingPt) {
+                    this.map.graphics.remove(this.trackingPt);
+                }
                 this.trackingPt = new TrackingPt(pt, sym, {
                     color: this.color,
                     route: gra.geometry
                 });
                 this.map.graphics.add(this.trackingPt);
-                setTimeout(lang.hitch(this, function () {
+                setTimeout(lang.hitch(this, function() {
                     this.trackingPt.updateSymbol();
                 }), 2000);
             } else {
-                setTimeout(lang.hitch(this, function () {
+                setTimeout(lang.hitch(this, function() {
                     this.dirWidget.removeStops();
                 }), 2000);
                 console.log("Error generating route");
@@ -1151,19 +1228,23 @@ define([
         },
 
         // Update Origin
-        _updateOrigin: function (gra, obj) {
+        _updateOrigin: function(gra, obj) {
             this.map.graphics.clear();
             this.origin = gra;
             this.originObj = obj;
             var promise = this._clearDirections();
-            promise.then(lang.hitch(this, function () {
+            promise.then(lang.hitch(this, function() {
                 this.dirOK = true;
                 if (this.origin) {
                     this.map.graphics.add(gra);
-                    if (this.page === 0 && !this.selectedNum) this._processDestinationFeatures();
+                    if (this.page === 0 && !this.selectedNum) {
+                        this._processDestinationFeatures();
+                    }
                     if (this.opFeatures.length > 0) {
                         var num = 0;
-                        if (this.selectedNum) num = this.selectedNum;
+                        if (this.selectedNum) {
+                            num = this.selectedNum;
+                        }
                         this._showRoute(num);
                     }
                 }
@@ -1173,8 +1254,8 @@ define([
         },
 
         // Update Route Tools
-        _updateRouteTools: function () {
-            if (this.page == 1 && this.origin) {
+        _updateRouteTools: function() {
+            if (this.page === 1 && this.origin) {
                 domStyle.set("btnReverse", "display", "block");
             } else {
                 domStyle.set("btnReverse", "display", "none");
@@ -1182,12 +1263,12 @@ define([
         },
 
         // Toggle Scroll
-        _toggleScroll: function () {
+        _toggleScroll: function() {
             this._animateScroll();
         },
 
         // Animate Scroll
-        _animateScroll: function () {
+        _animateScroll: function() {
             var box = html.getContentBox(dom.byId("panelContent"));
             var pos = document.body.scrollTop || document.documentElement.scrollTop;
             var start = 0;
@@ -1200,7 +1281,7 @@ define([
                 duration: 300,
                 curve: [start, end]
             });
-            on(anim, "Animate", function (v) {
+            on(anim, "Animate", function(v) {
                 document.body.scrollTop = v;
                 document.documentElement.scrollTop = v;
             });
@@ -1208,8 +1289,8 @@ define([
         },
 
         // Map Click Handler
-        _mapClickHandler: function (evt) {
-            if (evt.target.id == "panelMap_gc") {
+        _mapClickHandler: function(evt) {
+            if (evt.target.id === "panelMap_gc") {
                 var pt = evt.mapPoint;
                 var content = "Use this location";
                 if (this.config && this.config.i18n) {
@@ -1230,9 +1311,9 @@ define([
         },
 
         // Use Click Location
-        _useClickLocation: function (pt) {
+        _useClickLocation: function(pt) {
             this.map.infoWindow.hide();
-            this.locator.locationToAddress(pt, 500, lang.hitch(this, function (result) {
+            this.locator.locationToAddress(pt, 500, lang.hitch(this, function(result) {
                 if (result.address) {
                     var label = result.address.Address;
                     this.search.set("value", label);
@@ -1242,9 +1323,9 @@ define([
                     });
                     this._updateOrigin(gra, gra);
                 }
-            }), lang.hitch(this, function (err) {
+            }), lang.hitch(this, function(err) {
                 var promise = this._clearDirections();
-                promise.then(lang.hitch(this, function () {
+                promise.then(lang.hitch(this, function() {
                     this.dirOK = true;
                 }));
                 console.log(err);
@@ -1257,7 +1338,8 @@ define([
                 this.map.infoWindow.show(pt);
             }));
         },
-        _setLevel: function (options) {
+
+        _setLevel: function(options) {
             var level = this.config.level;
             //specify center and zoom if provided as url params 
             if (level) {
@@ -1266,7 +1348,7 @@ define([
             return options;
         },
 
-        _setCenter: function (options) {
+        _setCenter: function(options) {
             var center = this.config.center;
             if (center) {
                 var points = center.split(",");
@@ -1277,7 +1359,7 @@ define([
             return options;
         },
 
-        _setExtent: function (info) {
+        _setExtent: function(info) {
             var e = this.config.extent;
             //If a custom extent is set as a url parameter handle that before creating the map
             if (e) {

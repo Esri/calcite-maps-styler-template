@@ -35,7 +35,8 @@ define({
          "directions": "Directions",
          "filter": "Filter",
          "close": "Close",
-         "reverse": "Reverse"
+         "reverse": "Reverse",
+         "mode": "Switch mode Drive/Walk"
       }
    }),
    "ar": 1,
