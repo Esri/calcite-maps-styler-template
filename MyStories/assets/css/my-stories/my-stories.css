@@ -2705,6 +2705,13 @@ body.builder {
 .builder .content-table thead {
   font-size: 0.9rem; }
 
+.builder .edit-error {
+  background-color: #C24A56;
+  margin-right: 5px; }
+
+.builder .edit-error:hover {
+  background-color: #C24A56; }
+
 .builder .item-text {
   margin-top: 0;
   padding-right: 0;
@@ -2742,10 +2749,10 @@ body.builder {
   display: none !important; }
 
 .builder .images-container .media-link, .videos-container .media-link {
-  max-width: 250px; }
+  max-width: 245px; }
 
 .builder .webpages-container .media-link {
-  max-width: 360px; }
+  max-width: 350px; }
 
 .builder .edit-item {
   color: white;

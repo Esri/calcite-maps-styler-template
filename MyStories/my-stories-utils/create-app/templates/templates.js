@@ -120,7 +120,15 @@ this["Handlebars"]["templates"]["finalApp"] = Handlebars.template({"1":function(
 },"useData":true});
 
 this["Handlebars"]["templates"]["noCreateStory"] = Handlebars.template({"compiler":[6,">= 2.0.0-beta.1"],"main":function(depth0,helpers,partials,data) {
-    return "<div class=\"dialog-header padding-leader-1 padding-trailer-1\">\r\n	<h4 class=\"dialog-title\">Create Story Not Available</h4>\r\n</div>	\r\n<div class=\"dialog-body leader-half\">\r\n	<p>Sorry, this is not supported in a small display. Please open in a larger display or device.</p>\r\n	<a id=\"no-sign-in-redirect\" href=\"/\" class=\"btn modal-dismiss\">Close</a>\r\n	<button class=\"btn modal-dismiss close-dialog\">Return</button>\r\n</div>";
+    var stack1, alias1=this.lambda, alias2=this.escapeExpression;
+
+  return "<div class=\"dialog-header padding-leader-1 padding-trailer-1\">\r\n	<h4 class=\"dialog-title\">"
+    + alias2(alias1(((stack1 = (depth0 != null ? depth0.labels : depth0)) != null ? stack1.title : stack1), depth0))
+    + "</h4>\r\n</div>	\r\n<div class=\"dialog-body leader-half\">\r\n	<p>"
+    + alias2(alias1(((stack1 = (depth0 != null ? depth0.labels : depth0)) != null ? stack1.subtitle : stack1), depth0))
+    + "</p>\r\n	<button class=\"btn modal-dismiss close-dialog\">"
+    + alias2(alias1(((stack1 = (depth0 != null ? depth0.labels : depth0)) != null ? stack1.close : stack1), depth0))
+    + "</button>\r\n</div>";
 },"useData":true});
 
 this["Handlebars"]["templates"]["question"] = Handlebars.template({"1":function(depth0,helpers,partials,data) {

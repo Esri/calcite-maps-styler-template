@@ -59,6 +59,10 @@ window.dojoConfig = {
 		{
 			name: 'create-app',
 			location: path + 'my-stories-utils/create-app'
+		},
+		{
+			name: 'sign-in',
+			location: path + 'my-stories-utils/sign-in'
 		}
 	],
 	aliases: [

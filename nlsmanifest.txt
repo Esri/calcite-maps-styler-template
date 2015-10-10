@@ -40,3 +40,5 @@ MapSeries\resources\tpl\builder\nls
 ConstituentEngagement\js\nls
 ConstituentEngagementConsole\js\nls
 MyStories\resources\nls
+MyStories\my-stories-utils\create-app\nls
+MyStories\my-stories-utils\sign-in\nls

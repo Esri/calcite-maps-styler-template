@@ -361,7 +361,8 @@ define(['dojo/i18n!my-stories-utils/create-app/nls/app.js', 'dojo/domReady!'], f
 			var template = Handlebars.templates['noCreateStory'];
 			
 			$('#no-create-story-modal').html(template(
-				{					
+				{
+					labels: strings.incompatibleNotice
 				}				
 			));
 		},

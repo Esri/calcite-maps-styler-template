@@ -1,0 +1,61 @@
+<div id="sign-in-wrapper" class="custom-modal-wrapper phone-hide">
+	<div id="sign-in-left">
+		<div id="sign-in-title" class="trailer-1">
+			<h2>{{dialog.title}}</h2>
+		</div>
+		<div id="my-stories-explanation" class="trailer-1">
+			<div class="trailer-half">
+				<span class="subordinate-text">{{dialog.subtitle}}</span>
+			</div>			
+			<div class="explanation trailer-half">
+				<div class="explanation-icon icon-check"></div><!--
+			 --><div class="explanation-text-container">
+					<h4 class="explanation-text">{{dialog.reasonOne}}</h4>
+				</div>				
+			</div>
+			<div class="explanation trailer-half">
+				<div class="explanation-icon icon-check"></div><!--
+			 --><div class="explanation-text-container">
+					<h4 class="explanation-text">{{dialog.reasonTwo}}</h4>
+				</div>				
+			</div>
+			<div class="explanation">
+				<div class="explanation-icon icon-check"></div><!--
+			 --><div class="explanation-text-container">
+					<h4 class="explanation-text">{{dialog.reasonThree}}</h4>
+				</div>				
+			</div>
+		</div>
+		<div id="how-sign-up">
+			<div class="explanation-icon icon-check invisible"></div><!--
+		 --><div class="sign-up-text-container">
+		 		<span class="subordinate-text">{{dialog.noAccountYet}}</span>
+		 		<div>
+		 			&bull;<a href="https://www.arcgis.com/home/createaccount.html" target="_blank" class="sign-up-link">{{dialog.publicAccount}}</a>
+		 		</div>
+		 		<div>
+		 			&bull;<a href="http://links.esri.com/storymaps/agol_trial_subscription" target="_blank" class="sign-up-link">{{dialog.subscriptionAccount}}</a>
+		 		</div>	 				 		
+			</div>
+		</div>
+	</div><!--
+ --><div id="sign-in-right">
+		<div id="token-expired-container" class="alert info">
+			<span id="token-expired">{{dialog.signInExpired}}</span>
+		</div>
+		<div id="api-didnt-load-container" class="alert error">
+			<span id="api-didnt-load">{{dialog.somethingNotLoading}}</span>
+		</div>
+		<iframe id="sign-in-frame" scrolling="no" marginheight="0" marginwidth="0" frameborder="0" width="330px" height="380px"></iframe>
+	</div>	
+</div>
+<div class="dialog-unavailable custom-modal-wrapper phone-show">
+  	<div class="dialog-header padding-leader-1 padding-trailer-1">
+		<h4 class="dialog-title">{{unavailable.title}}</h4>
+	</div>	
+	<div class="dialog-body leader-half">
+		<p>{{unavailable.explanation}}</p>
+		<a id="no-sign-in-redirect" href="/" class="btn modal-dismiss">{{unavailable.close}}</a>
+		<button class="btn modal-dismiss close-dialog">{{unavailable.returnButton}}</button>
+	</div>
+</div>
