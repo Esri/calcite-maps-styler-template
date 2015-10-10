@@ -24,7 +24,7 @@ define({
 				invalidApp: "The %TPL_NAME% does not exist or is inaccessible.",
 				appLoadingFail: "Something went wrong, the %TPL_NAME% did not load correctly.",
 				notConfiguredDesktop: "The story is not configured yet.",
-				notConfiguredMobile: "The %TPL_NAME% builder is not supported at this screen resolution.",
+				notConfiguredMobile: "The %TPL_NAME% builder is not supported at this display size.",
 				notAuthorized: "You are not authorized to access this story",
 				noBuilderIE: "The builder is not supported on Internet Explorer before version %VERSION%. %UPGRADE%",
 				noViewerIE: "This story is not supported in Internet Explorer before version %VERSION%. %UPGRADE%",
@@ -69,6 +69,9 @@ define({
 				embed: "Embed in web page",
 				embedExplain: "Use the following HTML code to embed the story in a web page.",
 				size: "Size (width/height):"
+			},
+			locatorFromCommon: {
+				error: "Location not available"
 			}
         }
     }),
