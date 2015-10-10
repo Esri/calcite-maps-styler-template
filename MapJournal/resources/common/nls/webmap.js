@@ -2,7 +2,7 @@ define({
 	root: ({
 		commonWebmap: {
 			selector: {
-				lblWebMap: "Web map",
+				lblWebMap: "Map",
 				lblLocation: "Location",
 				lblContent: "Content",
 				lblPopup: "Popup",
@@ -17,12 +17,14 @@ define({
 				and: "and",
 				action: "Action in section",
 				actions: "Action in sections",
-				originalWebmap: "Web map used to publish the %TPL_NAME%",
-				browseMaps: "Browse for Maps",
-				current: "Current web map",
-				select: "Select a web map",
-				newMap: "Newly selected web map",
-				webmapDefault: "Web map default",
+				originalWebmap: "Map used to publish the %TPL_NAME%",
+				browseMaps: "Select a map",
+				createMap: "Create a map",
+				current: "Current map",
+				select: "Select or create a map",
+				newMap: "Newly selected map",
+				newCreatedMap: "Newly created map",
+				webmapDefault: "Map default",
 				customCfg: "Custom configuration",
 				tooltipLocation: "Define the location that this map will display.",
 				tooltipContent: "Define the visible layers.",
@@ -47,6 +49,30 @@ define({
 				popupExplain: "Click on a feature to open the popup you want to display.",
 				popupSave: "Save the popup configuration",
 				hintNavigation: "Map navigation is disabled."
+			},
+			editor: {
+				loading: "Please wait while the map editor is loading",
+				newTitle: "Create new map",
+				editTitle: "Edit map",
+				titleLbl: "Title",
+				titlePh: "Map title...",
+				folderLbl: "The map will be created in the same folder as the story.",
+				creating: "Creating the map",
+				saving: "Saving the map",
+				success: "Map saved",
+				successCreate: "Map created",
+				cancelTitle: "Discard any unsaved changes?",
+				errorDuplicate: "You already have a map with that title",
+				errorCreate: "Unable to create map. Please try again.",
+				errorSave: "Unable to save map. Please try again.",
+				notavailable1: "Sorry, this feature is not fully supported on your system for the following reason:",
+				notavailable2: "the story map need to be on the same domain than the map viewer.",
+				notavailable3: "the version of Portal for ArcGIS you are using is not supported (require 10.4 or a most recent version).",
+				notavailable4: "your browser (Firefox) has a technical limitation. Other major browsers are supported.",
+				notavailable5: "You can create a new map using %MV%, once complete, select it from the previous dialog.",
+				notavailable6: "map viewer",
+				notavailable7: "You can edit the map using %MV%, once saved, %apply%.",
+				notavailable8: "reload the map"
 			}
 		},
 		configure: {
@@ -57,11 +83,11 @@ define({
 					contentLabel: "My Content",
 					favoritesLabel: "My Favorites"
 				},
-				title: "Select Web Map",
+				title: "Select a map",
 				searchTitle: "Search",
 				ok: "Ok",
 				cancel: "Cancel",
-				placeholder: "Enter search term or Web Map ID..."
+				placeholder: "Enter search term or web map ID..."
 			}
 		}
 	}),
