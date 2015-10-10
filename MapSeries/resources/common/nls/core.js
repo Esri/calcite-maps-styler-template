@@ -48,7 +48,7 @@ define({
 			},
 			saveError: {
 				title: "Error saving the story",
-				err1Div1: "The story can't be saved because you already have another item with the same name (see your <a class='linkagolroot' target='_blank'>content folder</a>).",
+				err1Div1: "The story can't be saved because you already have another item with the same name.",
 				err1Div2: "Please modify the title of your story and then save it.",
 				btnOk: "Edit the story title"
 			},
@@ -71,11 +71,14 @@ define({
 				statusNoErrPrivate: "Share your story once you are ready!",
 				mystoriesinvite: "Manage all your stories",
 				notavailable1: "Sorry, this feature is not fully supported on your system for the following reason:",
-				notavailable2: "The story map need to be on the same domain than ArcGIS Online or Portal for ArcGIS.",
-				notavailable3: "The version of Portal for ArcGIS you are using is not supported (require 10.4 or a most recent version).",
-				notavailable4: "You can use %LINK% to share your story",
-				notavailable5: "My Stories",
-				notavailable6: "the item page"
+				notavailable2: "the story map is not hosted in ArcGIS Online.",
+				notavailable3: "the story map is not hosted on the Portal for ArcGIS server.",
+				notavailable4: "the version of Portal for ArcGIS you are using is not supported (require 10.4 or a most recent version).",
+				notavailable5: "You can use %LINK% to share your story.",
+				notavailable6: "My Stories",
+				notavailable7: "the item page",
+				notavailable8: "Sorry, this feature is not fully supported in development mode. Depending on your deployment scenario, this feature may be supported when deployed.",
+				notavailable9: "Make sure that all the content of your story is also shared."
 			},
 			settings: {
 				header: "Settings",

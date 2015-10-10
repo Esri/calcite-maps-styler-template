@@ -66,12 +66,12 @@ define({
 				errorCreate: "Unable to create map. Please try again.",
 				errorSave: "Unable to save map. Please try again.",
 				notavailable1: "Sorry, this feature is not fully supported on your system for the following reason:",
-				notavailable2: "The story map need to be on the same domain than the map viewer.",
-				notavailable3: "The version of Portal for ArcGIS you are using is not supported (require 10.4 or a most recent version).",
-				notavailable4: "Your browser (Firefox) has a technical limitation. Other major browsers are supported.",
-				notavailable5: "You can create a new map using %MV%, once complete, use the select function to use it",
+				notavailable2: "the story map need to be on the same domain than the map viewer.",
+				notavailable3: "the version of Portal for ArcGIS you are using is not supported (require 10.4 or a most recent version).",
+				notavailable4: "your browser (Firefox) has a technical limitation. Other major browsers are supported.",
+				notavailable5: "You can create a new map using %MV%, once complete, select it from the previous dialog.",
 				notavailable6: "map viewer",
-				notavailable7: "You can edit the map using %MV%, once saved, %apply%",
+				notavailable7: "You can edit the map using %MV%, once saved, %apply%.",
 				notavailable8: "reload the map"
 			}
 		},
