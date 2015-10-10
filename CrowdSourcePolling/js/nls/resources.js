@@ -22,25 +22,25 @@ define({
             missingItemsFeatureLayer: "Please configure the application to use a feature layer"
         },
         sidebar_header: {  // Top panel of right-side display; contains social media sign-in, help button, title
-            menuButtonTooltip: "Open the menu",
-            signInButton: "Sign in",
-            signInButtonTooltip: "Sign in to a social medium",
-            signOutButton: "Sign out",
-            signOutButtonTooltip: "Disconnect this app from your social medium",
+            menuButtonTooltip: "Show menu",
+            signInButton: "Sign In",
+            signInButtonTooltip: "Sign in",
+            signOutButton: "Sign Out",
+            signOutButtonTooltip: "Sign out",
             helpButtonLabel: "Help",
-            helpButtonTooltip: "Find out more about this app",
-            gotoListViewLabel: "List view",
+            helpButtonTooltip: "Learn more",
+            gotoListViewLabel: "List View",
             gotoListViewTooltip: "Go to list view", // Go to List view tooltip text
-            gotoMapViewLabel: "Map view",
+            gotoMapViewLabel: "Map View",
             gotoMapViewTooltip: "Go to map view" // Tooltip for map-it icon in list header
         },
         popup_Close: {  // Close button for help and social-media-sign-in popup box
             closeButtonTooltip: "Close"
         },
         social_media: {  // Social media sign-in/out
-            signIntoFacebookTooltip: "Sign in to Facebook",
-            signIntoGooglePlusTooltip: "Sign in to Google+",
-            signIntoTwitterTooltip: "Sign in to Twitter",
+            signIntoFacebookTooltip: "Sign in with Facebook",
+            signIntoGooglePlusTooltip: "Sign in with Google+",
+            signIntoTwitterTooltip: "Sign in with Twitter",
             signOutOfFacebookTooltip: "Sign out of Facebook",
             signOutOfGooglePlusTooltip: "Sign out of Google+",
             signOutOfTwitterTooltip: "Sign out of Twitter"
@@ -54,8 +54,8 @@ define({
             submitButtonLabel: "Submit"
         },
         item_details: {  // Detailed information about an item and a list of its comments
-            likeButtonTooltip: "Vote for this",
-            commentButtonTooltip: "Add a comment about this",
+            likeButtonTooltip: "Vote for this item",
+            commentButtonTooltip: "Add a comment",
             gotoMapViewTooltip: "Go to map view",
             galleryButtonTooltip: "See attached files",
             commentsListHeading: "Comments",
@@ -63,8 +63,8 @@ define({
         },
         item_list: {  // List of feature layer items
             linkToMapViewOptionLabel: "Filter list by map",
-            linkToMapViewOptionTooltip: "Apply filter to list only features that are visible in the current map",
-            likesForThisItemTooltip: "Votes for this"
+            linkToMapViewOptionTooltip: "List features that are visible in the current map",
+            likesForThisItemTooltip: "Votes for this item"
         }
     }),
     "ar": 1,
