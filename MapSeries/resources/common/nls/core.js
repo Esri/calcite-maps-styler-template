@@ -37,8 +37,8 @@ define({
 				unSavedChangePlural: "Pending changes",
 				closeWithPendingChange: "Are you sure to want to confirm this action? Your changes will be lost.",
 				saveError: "Save failed, please try again",
-				status1: "Story is shared but it has errors",
-				status2: "Story isn't shared but it has errors",
+				status1: "Story is shared but it has issues",
+				status2: "Story isn't shared but it has issues",
 				status3: "Story is public",
 				status4: "Story is shared within your organization",
 				status5: "Story is private",
@@ -69,7 +69,13 @@ define({
 				statusPrivate: "Your story is private, only you can see it.",
 				statusError: "There are issues in your story content that will be noticeable to your readers. You can identify and fix these issues below.",
 				statusNoErrPrivate: "Share your story once you are ready!",
-				mystoriesinvite: "Manage all your stories"
+				mystoriesinvite: "Manage all your stories",
+				notavailable1: "Sorry, this feature is not fully supported on your system for the following reason:",
+				notavailable2: "The story map need to be on the same domain than ArcGIS Online or Portal for ArcGIS.",
+				notavailable3: "The version of Portal for ArcGIS you are using is not supported (require 10.4 or a most recent version).",
+				notavailable4: "You can use %LINK% to share your story",
+				notavailable5: "My Stories",
+				notavailable6: "the item page"
 			},
 			settings: {
 				header: "Settings",
