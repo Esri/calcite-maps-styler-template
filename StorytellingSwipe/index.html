@@ -37,23 +37,29 @@
 			//--------------------------------
 			configOptions = {
 				//----------------------------------
-				// Swipe Style
+				// Swipe App Id
 				//----------------------------------
-				// Select between the vertical swipe bar using "swipe" or the spy glass using "spyglass"
-				layout: "swipe",
+				// You can use a Swipe web application ID created through the interactive builder in ArcGIS.com.
+				// This allows to reuse the settings like the header configuration without having to edit any configuration here.
+				// Web map id and application id can be dynamically specified through url parameters (webmap and appid)
+				// if the authorizedOwners property is specified (see below).
+				// If an application id is specified, the webmap configuration isn't used.
+				appid: "",
 				//----------------------------------
 				// Swipe Layer
 				//----------------------------------
 				// Choose to swipe between two webmaps or between the layer of a single webmap
-				// can be overrided by using webmap= in URL
+				// can be overridden by using webmap= in URL
 				// e.g: ["WEBMAP_ID"] OR ["WEBMAP_ID_1", "WEBMAP_ID_2"]
 				webmaps: ["62702544d70648e593bc05d65180fd64"],
 				// If using one webmap, enter the layer index of the layer to be revealed.
 				// Index is defined by the web map table of contents (0 is the top layer).
 				layerIndex: 1,
-				// Alternatively you can also reuse a web application ID created through the interactive builder in ArcGIS.com
-				// This allow to reuse the settings like the header configuration without having to edit any configuration here
-				appid: "",
+				//----------------------------------
+				// Swipe Style
+				//----------------------------------
+				// Select between the vertical swipe bar using "swipe" or the spy glass using "spyglass"
+				layout: "swipe",
 				//----------------------------------
 				// Pop-up
 				//----------------------------------
@@ -132,7 +138,7 @@
 		</script>
 
 		<script type="text/javascript">
-			var version = '1.7.0-100815';
+			var version = '1.7.0-101015';
 			var isProduction = true;
 
 			function loadJS(url, isExternal)
