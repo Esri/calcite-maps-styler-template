@@ -2,7 +2,7 @@ define({
 	root: ({
 		viewer: {
 			loading: {
-				step1: "LOADING APPLICATION",
+				step1: "LOADING STORY",
 				step2: "LOADING DATA",
 				step3: "INITIALIZING THE TOUR",
 				loadBuilder: "SWITCHING TO BUILDER MODE",
@@ -18,14 +18,14 @@ define({
 				invalidConfigOwner: "Fatal error: Invalid configuration (authorized owner required)",
 				invalidConfigNoWebmap: "Fatal error: Invalid configuration (web map or application identifier not specified in index.html)",
 				createMap: "Unable to create map",
-				invalidApp: "Fatal error: The application cannot be loaded",
+				invalidApp: "Fatal error: The story cannot be loaded",
 				noLayer: "The web map does not contain a valid data layer for Map Tour.",
-				noLayerMobile: "Welcome to the Map Tour web application. The application is not configured. The Map Tour builder is not supported on mobile devices.",
-				noLayerView: "Welcome to the Map Tour web application.<br />The application is not configured yet.",
-				appSave: "Error saving the web application",
+				noLayerMobile: "The Map Tour builder is not supported at this display size.",
+				noLayerView: "Welcome to the Map Tour web application.<br />The story is not configured yet.",
+				appSave: "Error saving the story",
 				mapSave: "Error saving the web map",
 				featureServiceLoad: "Error loading feature service",
-				notAuthorized: "You are not authorized to access this application",
+				notAuthorized: "You are not authorized to access this story",
 				oldBrowserTitle: "Browser not fully supported",
 				noBuilderIE8: "The Map Tour builder is not supported on Internet Explorer before version 9.",
 				ie10Win7Explain: "The Map Tour interactive builder is not supported on Internet Explorer 10 on Windows 7 when the data source is a Feature Service with attachments. To use a Feature Service with attachments, you have to <a target='_blank' href='http://msdn.microsoft.com/en-us/library/ie/hh920756(v=vs.85).aspx'>manually force document mode to Internet Explorer 9 standards</a>, <a target='_blank' href='http://news.softpedia.com/news/How-to-Remove-IE10-and-Get-Back-to-IE9-on-Windows-7-308998.shtml'>downgrade to Internet Explorer 9</a> or upgrade to Windows 8.",
@@ -51,7 +51,7 @@ define({
 				bitlyStartIndex: "Link to current place"
 			},
 			builderHTML: {
-				panelHeader: "APPLICATION CONFIGURATION",
+				panelHeader: "STORY CONFIGURATION",
 				buttonSave: "SAVE",
 				buttonSettings: "Settings",
 				buttonShare: "Share",
@@ -62,7 +62,7 @@ define({
 				buttonAdd: "Add",
 				buttonImport: "Import",
 				buttonImportDisabled: "Import is not available when using a Feature Service with attachments",
-				dataEditionDisabled: "Data edition is disabled on CSV data source",
+				dataEditionDisabled: "Editing data is disabled on this CSV data source",
 				dataSourceWarning: "The Map Tour data layer has changed. If the features ID are not the same, you have to reset the order and hidden points through <b>Organize</b>. If the fields name differs, you have to reset the fields settings under the <b>data tab in Settings</b>.",
 				organizeWarning: "One or multiple points added outside of the interactive builder are hidden.",
 				dataPicError0a: "This tour includes <b>%NB%</b> non-compliant picture URLs.",
@@ -83,7 +83,7 @@ define({
 				organizeDelete: "Delete",
 				organizeHide: "Hide",
 				organizeReset: "Reset order and hidden points",
-				addMaxPointReached: "You have reached the maximum number of points authorized by the icons set and cannot add another tour point.<br /><br />Note that if you delete existing points, you will need to reload the application.",
+				addMaxPointReached: "You have reached the maximum number of points authorized by the icons set and cannot add another tour point.<br /><br />Note that if you delete existing points, you will need to reload the story.",
 				addMaxPointReachedMobile: "Sorry, you have reached the maximum number of authorized points and cannot add that picture.",
 				addClose: "Close",
 				addHeader: "Add a new tour point",
@@ -130,14 +130,14 @@ define({
 				addMobileName: "Enter a name",
 				addMobileNameMandatory: "Error, please enter a name.",
 				addMobileError: "Sorry, something has gone wrong",
-				settingsHeader: "Application settings",
+				settingsHeader: "Story settings",
 				settingsTabLayout: "Layout",
 				settingsTabColor: "Colors",
 				settingsTabLogo: "Header",
 				settingsTabFields: "Data",
 				settingsTabExtent: "Extent",
 				settingsTabZoom: "Zoom Level",
-				settingsLayoutExplain: "Select the application layout you want.",
+				settingsLayoutExplain: "Select the layout you want.",
 				settingsLayoutProfessional: "Three-panel Layout",
 				settingsLayoutModern: "Integrated Layout",
 				settingsLayoutSelected: "Selected layout",
@@ -225,8 +225,8 @@ define({
 				popoverSaveWhenDone: "Don't forget to save when you are done",
 				closeWithPendingChange: "Are you sure to want to confirm the action ? Your changes will be lost.",
 				gotIt: "Ok",
-				savingApplication: "Saving application",
-				saveSuccess: "Application saved successfully",
+				savingApplication: "Saving story",
+				saveSuccess: "Story saved successfully",
 				saveError: "Save failed, please try again",
 				saveError2: "Save failed due to an invalid html tag in a name or description",
 				saveError3: "The title can't be empty",
@@ -236,7 +236,7 @@ define({
 				dataWarningEdit: "Edit web map",
 				dataWarningClose: "Close",
 				signIn: "Please sign in with an account on",
-				signInTwo: "to save the application.",
+				signInTwo: "to save the story.",
 				switchBM: "Change Basemap"
 			},
 			organizePopupJS: {
@@ -412,8 +412,7 @@ define({
 				tab1: {
 					title: "Introduction",
 					div1: "The Map Tour template is designed for presenting geographic information where there is a compelling photographic or media element to the story you want to tell.",
-					div2: "The template produces an attractive, easy-to-use web application that lets you present a small set of places on a map in a numbered sequence through which users can browse. The template is designed to be used in any web browser on any device, including smartphones and tablets. <br /><br />Here's an example of the sort of application you can create:",
-					div4: "<a href='http://storymaps.esri.com/stories/maptour-palmsprings' target='_blank'>Palm Springs Map Tour</a>.",
+					div2: "The template produces an attractive, easy-to-use web application that lets you present a small set of places on a map in a numbered sequence through which users can browse. The template is designed to be used in any web browser on any device, including smartphones and tablets. <br /><br />",
 					div42: "To see examples of map tours that other users are creating, <a href='http://links.esri.com/storymaps/map_tour_gallery' target='_blank'>visit the gallery</a> on the <a href='http://storymaps.arcgis.com/' target='_blank'>Story Maps website</a>. You can also follow us on Twitter at <a href='https://twitter.com/EsriStoryMaps' target='_blank'>@EsriStoryMaps</a>.",
 					div5: "We would love to hear from you! Whether you have a question, want to request a new feature, or think you've found a bug, please visit the <a href='http://links.esri.com/storymaps/forum' target='_blank'>Story Maps User Forum</a>."
 				},
@@ -480,7 +479,6 @@ define({
 					div6: "You can add additional supporting layers to provide context to the Map Tour. These layers may contain other geographic features you want the map to show in addition to the Map Tour points, such as a study area, a walking or driving route linking your tour points, etc. The Map Tour template displays these additional supporting layers using the symbology you specify in the web map, but the popups aren't available.",
 					div7: "Keep your tour short and sweet",
 					div8: "There's a limit of 99 points per tour. Most Map Tours will of course be significantly shorter than this. Don't expect your audience to want to step through too many tour points. You might find your subject fascinating, but don't assume they will, too!",
-					div9: "To learn more, see <a href='https://github.com/Esri/map-tour-storytelling-template-js/raw/master/Readme.pdf' target='_blank'>the detailed guide</a>.",
 					div10: "Embed mode",
 					div11: "If you want to embed the template in another website through an iframe, adding the optional parameter \"&embed\" at the end of the URL will remove the header. That mode can also be set in the downloadable version through the configuration file.",
 					div12: "Avoid using a narrow iFrame width that causes the map tour to switch to its responsive small screen touch-based layout. To maximize ease of use. When you embed a map tour, we always recommend still providing a link next to the embedded tour so that users can launch the tour full-screen." 
@@ -533,6 +531,9 @@ define({
 				shareWarning: "Sharing %WITH% has been disabled because you are not the owner of the <a href='%LINK%' target='_blank'>webmap</a>.",
 				shareWarningWith1: "publicly",
 				shareWarningWith2: "publicly and with the Organization"
+			},
+			locator: {
+				error: "Location not available"
 			}
         }
     }),
