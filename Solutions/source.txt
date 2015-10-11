@@ -1,8 +1,8 @@
-Built on 09/24/2015 12:01:37.23 from
+Built on 10/11/2015 12:12:10.31 from
 repository local-government-online-apps
 branch develop
-commit ade3a39f4d5092b2fdbee2da814d587ec2d59e00
+commit f2f81e4d2ace7e522376073033f810c6f5b8109f
 Author: MikeTschudi <mtschudi@esri.com>
-Date:   Thu Sep 24 12:00:51 2015 -0700
+Date:   Sun Oct 11 12:07:09 2015 -0700
 
-    Enable editing
+    Switched to new AGOL loading icon

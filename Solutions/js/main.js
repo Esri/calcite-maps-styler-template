@@ -209,7 +209,7 @@ define([
         _loadJSONFile: function (url) {
             var done = new Deferred();
 
-            xhr(url + ".json", {
+            xhr(this._reduceToSimpleLocalPath(url) + ".json", {
                 handleAs: "json"
             }).then(
                 function (uiSpec) {
@@ -354,6 +354,16 @@ define([
          */
         _reduceToVariableName: function (aString) {
             return aString.replace(/[^\w\d\x2e\x5f]/g, "");
+        },
+
+        /**
+         * Restricts a string to alphanumerics, forward slashes, and
+         * underscores.
+         * @param {string} String to restrict
+         * @return {string} Restricted string
+         */
+        _reduceToSimpleLocalPath: function (aString) {
+            return ("./" + aString.replace(/[^\w\d\x2f\x5f]/g, "")).replace("//", "/");
         },
 
         /**
