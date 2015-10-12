@@ -446,3 +446,8 @@ define([
     //========================================================================================================================//
 
 });
+/*
+This source is part of the git commit
+83904eba447497f1 2015-10-11 18:11:21 -0700
+It is available from https://github.com/Esri/local-government-online-apps
+*/
