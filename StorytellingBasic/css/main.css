@@ -119,7 +119,7 @@ a:hover{
   position: absolute;
   width:300px !important;
   margin-left:100px;
-  border:1px solid;
+  border: none;
   z-index: 100;
 }
 #legendDiv{
