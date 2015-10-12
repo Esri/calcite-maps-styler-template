@@ -124,8 +124,8 @@ a:hover{
 }
 #legendDiv{
   background: #fff;
-  max-height: 450px;
-  overflow: auto;
+  max-height: 300px;
+  overflow: scroll;
   padding:10px;
   font-family: Arial, Helvetica, sans-serif;
 }

@@ -67,7 +67,6 @@ define([
         // Hide header if embed is specified 
         if(this.config.embed){
           domUtils.hide(dom.byId("header"));
-          domStyle.set(dom.byId("legendDiv"), "max-height", 200 );
           registry.byId("mainWindow").layout();
         }else{
           // Set header height 
