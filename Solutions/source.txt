@@ -7,3 +7,4 @@ Author: MikeTschudi <mtschudi@esri.com>
 Date:   Sun Oct 11 18:11:21 2015 -0700
 
     Merge branch 'new-search-widget' into develop
+    Added file SearchDijitHelper.js
