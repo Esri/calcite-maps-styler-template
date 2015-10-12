@@ -119,7 +119,7 @@ a:hover{
   position: absolute;
   width:300px !important;
   margin-left:100px;
-  border: none;
+  border:none;
   z-index: 100;
 }
 #legendDiv{
@@ -149,6 +149,9 @@ a:hover{
 
 .esriRTL label {
   /*Example of a rule that will be applied if the app is viewed in a browser with a RTL locale like Hebrew or Arabic.*/
+}
+.esriPopup .pointer.bottom{
+  background:#f7f7f7 !important;
 }
 .loading-indicator {
   /* Loading status */
