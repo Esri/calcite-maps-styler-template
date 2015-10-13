@@ -35,7 +35,8 @@ define(
          "directions": "คำสั่ง",
          "filter": "ตัวกรอง",
          "close": "ปิด",
-         "reverse": "กลับหลัง"
+         "reverse": "กลับหลัง",
+         "mode": "ก้_Switch mode Drive/Walk________ษฺ"
       }
    })
 );

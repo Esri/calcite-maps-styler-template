@@ -5,33 +5,33 @@
 				close: "Schließen"
 			},
 			loading: {
-				step1: "Anwendung wird geladen",
+				step1: "ä_Loading story_____Ü",
 				step2: "Daten werden geladen",
 				step3: "Wird initialisiert",
 				loadBuilder: "Es wird zum Builder gewechselt",
 				long: "Map Journal wird initialisiert",
 				long2: "Vielen Dank, dass Sie gewartet haben",
-				failButton: "Anwendung erneut laden"
+				failButton: "ä_Reload the story______Ü"
 			},
 			signin: {
 				title: "Authentifizierung ist erforderlich",
-				explainViewer: "Melden Sie sich mit einem Konto bei %PORTAL_LINK% an, um auf die Anwendung zuzugreifen.",
-				explainBuilder: "Melden Sie sich mit einem Konto bei %PORTAL_LINK% an, um die Anwendung zu konfigurieren."
+				explainViewer: "ä_Please sign in with an account on %PORTAL_LINK% to access the story_____________________Ü.",
+				explainBuilder: "ä_Please sign in with an account on %PORTAL_LINK% to configure the story______________________Ü."
 			},
 			errors: {
 				boxTitle: "Ein Fehler ist aufgetreten",
 				invalidConfig: "Ungültige Konfiguration",
 				invalidConfigNoApp: "Keine Web Mapping-Anwendungskennung in index.html angegeben.",
 				unspecifiedConfigOwner: "Autorisierter Besitzer wurde nicht konfiguriert.",
-				invalidConfigOwner: "Besitzer der Anwendung ist nicht autorisiert.",
+				invalidConfigOwner: "ä_Story owner is not authorized__________Ü.",
 				createMap: "Karte kann nicht erstellt werden",
 				invalidApp: "%TPL_NAME% ist nicht vorhanden oder es kann nicht darauf zugegriffen werden.",
 				appLoadingFail: "Ein Fehler ist aufgetreten. %TPL_NAME% wurde nicht korrekt geladen.",
-				notConfiguredDesktop: "Die Anwendung ist noch nicht konfiguriert.",
-				notConfiguredMobile: "Der %TPL_NAME% Builder wird bei dieser Bildschirmauflösung nicht unterstützt.",
-				notAuthorized: "Sie sind nicht autorisiert, auf diese Anwendung zuzugreifen",
+				notConfiguredDesktop: "ä_The story is not configured yet___________Ü.",
+				notConfiguredMobile: "ä_The %TPL_NAME% builder is not supported at this display size___________________Ü.",
+				notAuthorized: "ä_You are not authorized to access this story______________Ü",
 				noBuilderIE: "Der Builder wird von Internet Explorer vor Version %VERSION% nicht unterstützt. %UPGRADE%",
-				noViewerIE: "Diese Anwendung wird von Internet Explorer vor Version %VERSION% nicht unterstützt. %UPGRADE%",
+				noViewerIE: "ä_This story is not supported in Internet Explorer before version %VERSION%. %UPGRADE%__________________________Ü",
 				upgradeBrowser: "<a href='http://browsehappy.com/' target='_blank'>Aktualisieren Sie Ihren Browser</a>.",
 				mapLoadingFail: "Ein Fehler ist aufgetreten. Die Karte wurde nicht korrekt geladen.",
 				signOut: "Abmelden"
@@ -60,7 +60,10 @@
 				bitlyTooltip: "Kurzlink abrufen",
 				templateTitle: "Vorlagentitel festlegen",
 				templateSubtitle: "Untertitel der Vorlage festlegen",
-				share: "Freigeben"
+				share: "Freigeben",
+				checking: "ä_Checking your story content_________Ü",
+				fix: "ä_Fix issues in your story________Ü",
+				noerrors: "ä_No issues detected______Ü"
 			},
 			overviewFromCommon: {
 				title: "Übersichtskarte"

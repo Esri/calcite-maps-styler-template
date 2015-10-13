@@ -30,7 +30,8 @@ define(
       error: "Som standard brukes webkartbeskrivelsen eller snutten. Konfigurer appen slik at det legges til en egendefinert snutt om panelet."
     },
     time: {
-        enableTimeMessage: "Det angitte webkartet inneholder ikke noen tidsaktiverte lag. Vis hjelpeemnet <a target=\'_blank\' href=\'http://doc.arcgis.com/en/arcgis-online/create-maps/configure-time.htm#ESRI_SECTION1_F1D4A275B4AB4CC79198CBA9D0AD8727\'>Konfigurer tidsinnstillinger</a> hvis du vil ha flere opplysninger. Hvis du vil bruke malen uten å vise tid, bruker du konfigurasjonspanelet til å deaktivere tidsalternativet.",
+        enableTimeMessage: "å_The specified web map does not contain any time enabled layers. View the ${link} help topic for details. To use the template without displaying time use the configuration panel to disable the time option______________________________________________________________ø.",
+        enableTimeMessageLink: "å_http://doc.arcgis.com/en/arcgis-online/create-maps/configure-time.htm#ESRI_SECTION1_F1D4A275B4AB4CC79198CBA9D0AD8727____________________________________ø",
         datePattern: "MMMM d, åååå",
         hourTimePattern: "H",
         millisecondTimePattern: "H.mm.ss",

@@ -2,11 +2,11 @@
 	 ({
 		viewer: {
 			loading: {
-				step1: "טעינת אפליקציה",
+				step1: "כן_LOADING STORY_____ש",
 				step2: "טעינת מידע",
 				step3: "מתחיל",
 				fail: "סליחה, אך טעינת כלי ה- swipe נכשלה",
-				loadBuilder: "מעבר למצב בניה",				
+				loadBuilder: "מעבר למצב בניה",
 				redirectSignIn: "הפניה לדף ההתחברות",
 				redirectSignIn2: "(תופנה מחדש לאחר ההתחברות)",
 				failButton: "נסה שוב"
@@ -17,16 +17,19 @@
 				invalidConfig: "שגיאה קריטית: קביעת תצורה לא תקינה",
 				invalidConfigNoWebmap: "שגיאה קריטית: קביעת תצורה לא תקינה (לא הוגדר web map)",
 				createMap: "לא ניתן ליצור מפה",
-				invalidApp: "שגיאה קריטית: לא ניתן לטעון את האפליקציה",
+				invalidApp: "כן_Fatal error: The story cannot be loaded_____________ש",
 				initMobile: "ברוכים הבאים לאפליקצית ה- web של כלי ה- swipe. עדיין לא הוגדרה תצורה לאפליקציה. אשף הבנייה האינטראקטיבי לא נתמך במכשירים ניידים.",
+				initMobile2: "כן_The Swipe builder is not supported at this display size__________________ש.",
 				noBuilderIE8: "הבנאי האינטראקטיבי של ה- Swipe לא נתמך באינטרנט אקספלורר לפני גרסה 9.",
 				noLayerView: "ברוכים הבאים לאפליקצית ה- web של כלי ה- swipe. <br />עדיין לא הוגדרה תצורה לאפליקציה.",
-				appSave: "שגיאה בשמירת אפליקצית ה- web",
+				appSave: "כן_Error saving the web story_________ש",
 				mapSave: "שגיאה בשמירת ה- web map",
-				notAuthorized: "אינך מורשה לגשת לאפליקציה זו",
+				notAuthorized: "כן_You are not authorized to access this story______________ש",
 				conflictingProjectionsTitle: "היטלים סותרים",
 				conflictingProjections: "כלי ה- Swipe לא ישים כאשר ישנם היטלים שונים לשני webmaps. אנא פתח את ההגדרות והשתמש ב- webmap שמשתמשת באותו היטל של ה- webmap הראשון.",
-				cpButton: "סגור"
+				cpButton: "סגור",
+				unspecifiedConfigOwner: "כן_Authorized owner hasn't been configured_____________ש.",
+				invalidConfigOwner: "כן_Story owner is not authorized__________ש."
 			},
 			mobileView: {
 				hideIntro: "הסתר הקדמה",
@@ -44,7 +47,7 @@
 		},
 		builder: {
 			builder: {
-				panelHeader: "קביעת תצורת אפליקציה",
+				panelHeader: "כן_STORY CONFIGURATION_______ש",
 				buttonSave: "שמירה",
 				buttonHelp: "עזרה",
 				buttonShare: "שיתוף",
@@ -64,13 +67,13 @@
 				popoverSaveWhenDone: "אל תשכח לשמור ברגע שתסיים",
 				closeWithPendingChange: "האם הינך בטוח שברצונך לאשר פעולה זו? אתה עלול לאבד את השינויים שביצעת",
 				gotIt: "אישור",
-				savingApplication: "שמירת אפליקציה",
-				saveSuccess: "שמירת אפליקציה בוצעה בהצלחה",
+				savingApplication: "כן_Saving story_____ש",
+				saveSuccess: "כן_Story saved successfully________ש",
 				saveError: "שמירה נכשלה, יש לנסות שוב",
 				saveError2: "השמירה נכשלה בשל תג HTML לא חוקי בשם או בתיאור",
 				saveError3: "הכותרת לא יכולה להיות ריקה",
 				signIn: "אנא התחבר עם חשבון ב",
-				signInTwo: "כדי לשמור את האפליקציה."
+				signInTwo: "כן_to save the story______ש."
 			},
 			header:{
 				editMe: "ערוך אותי!",
@@ -78,7 +81,7 @@
 				templateSubtitle: "קבע כותרת משנה לתבנית"
 			},
 			settings: {
-				settingsHeader: "הגדרות אפליקציה",
+				settingsHeader: "כן_Story settings_____ש",
 				modalCancel: "ביטול",
 				modalApply: "בצע"
 			},
@@ -138,7 +141,7 @@
 				settingsLayoutSpyGlass: "Spyglass",
 				settingsLayoutSelected: "תצוגה נבחרת",
 				settingsLayoutSelect: "בחר תצוגה זו",
-				settingsSaveConfirm: "חלק מהשינויים שלך דורשים שמירה וטעינה מחדש של האפליקציה"
+				settingsSaveConfirm: "כן_Some of your changes require that you save and reload the story____________________ש"
 			},
 			settingsDataModel: {
 				settingsTabDataModel: "סוג Swipe",
@@ -166,7 +169,7 @@
 			},
 			settingsLegend: {
 				settingsTabLegend: "אפליקצית תצוגה",
-				settingsLegendExplain: "בחר את הגדרות תצוגת האפליקציה.",
+				settingsLegendExplain: "כן_Select the layout settings_________ש.",
 				settingsLegendEnable: "הדלק מקרא",
 				settingsDescriptionEnable: "הדלק תיאור",
 				settingsBookmarksEnable: "הדלק סדרת Swipe",
@@ -174,7 +177,7 @@
 				settingsLocationSearchEnable: "הפעל חיפוש עיגון כתובות",
 				settingsGeolocatorEnable: "הפעל חיפוש מרחבי",
 				settingsLegendHelpContent: "כדי לעדן את תוכן המקרא, השתמש בתוכן העניינים של צפיין ה- ArcGIS.com web map (הסתר במקרא)",
-				settingsSeriesHelpContent: "Swipe לסדרות היא אפשרות ניווט באמצעות כרטיסיות שתדריך את הצופה לתיחום מסוים ותציג כותרת וטקסט תיאור בפנל צדדי. במהלך הפעלה ראשונית, סימניות מה- web map ייובואו וישמשו לאכלוס מראש של בר הסדרה. כיבוי אפשרות הסדרה מכבה את בר הסדרה, אבל תצורת הסדרות נשמרת לשימוש עתידי.", 
+				settingsSeriesHelpContent: "Swipe לסדרות היא אפשרות ניווט באמצעות כרטיסיות שתדריך את הצופה לתיחום מסוים ותציג כותרת וטקסט תיאור בפנל צדדי. במהלך הפעלה ראשונית, סימניות מה- web map ייובואו וישמשו לאכלוס מראש של בר הסדרה. כיבוי אפשרות הסדרה מכבה את בר הסדרה, אבל תצורת הסדרות נשמרת לשימוש עתידי.",
 				settingsSeriesHelpContent2: "סדרת ה-Swipe מאפשרת לך ליצור ולערוך מבחר מיקומים מלווים בכיתוביות כותרות וטקסט. אם ל- web map יש סימניות, הן יוצגו. אתה יכול לבטל את הסדרה, אך ההגדרות תישמרנה לשימוש עתידי.",
 				settingsSeriesHelpLink: "ראה כאן דוגמא לאלפליקציה עם סדרת ה-Swipe",
 				preview: "תצוגה מקדימה של UI",
@@ -215,39 +218,39 @@
 				}
 			},
 			share: {
-				firstSaveTitle: "האפליקציה נשמרה בהצלחה",
-				firstSaveHeader: "האפליקציה נשמרה כעת ב- ArcGIS Online . אנא קרא את התשובות לשאלות השכיחות הבאות.",
+				firstSaveTitle: "כן_Story successfully saved________ש",
+				firstSaveHeader: "כן_Your story is now saved in ArcGIS Online. Please read the following answers to frequent questions______________________________ש.",
 				firstSaveA1: "אם אינך מכיר את ArcGIS Online או שאתה מעוניין בקיצור דרך לממשק העריכה, אתה יכול לשמור את הלינק הבא: %LINK1%",
-				firstSaveA1bis: "ניתן למצוא את האפליקציה גם ב- <a href='%LINK2%' target='_blank'>מחיצת התוכן של ArcGIS Online </a>.",
-				firstSaveQ2: "האם האפליקציה שלי נמצאת בשיתוף?",
-				firstSaveA2: "כעת האפליקציה שלך אינה משותפת. כדי לשתף אותה, השתמש בכפתור שתף.",
-				shareTitle: "שתף את האפליקציה שלך",
-				sharePrivateHeader: "האפליקציה שלך אינה משותפת, ​​היית רוצה לשתף אותה?",
+				firstSaveA1bis: "כן_The story can also be found in your <a href='%LINK2%' target='_blank'>ArcGIS Online content folder</a>________________________________ש.",
+				firstSaveQ2: "כן_Is my story shared_______ש?",
+				firstSaveA2: "כן_Currently your story is not shared. To share it, use the SHARE button______________________ש.",
+				shareTitle: "כן_Share your story______ש",
+				sharePrivateHeader: "כן_Your story is not shared, would you like to share it_________________ש?",
 				sharePrivateBtn1: "שתף באופן ציבורי",
 				sharePrivateBtn2: "שתף עם הארגון שלי",
 				sharePrivateProgress: "שיתוף בתהליך...",
 				sharePrivateErr: "השיתוף נכשל, נסה שנית או",
 				sharePrivateOk: "עדכון השיתוף הצליח, טוען...",
-				shareStatus1: "האפליקציה לא נשמרה",
-				shareStatus2: "האפליקציה משותפת לציבור",
-				shareStatus3: "האפליקציה משותפת לארגון",
-				shareStatus4: "האפליקציה לא משותפת",
+				shareStatus1: "כן_Story is not saved______ש",
+				shareStatus2: "כן_Story is shared publicly________ש",
+				shareStatus3: "כן_Story is shared within the organization_____________ש",
+				shareStatus4: "כן_Story is not shared_______ש",
 				sharePreviewAsUser: "תצוגה מקדימה",
-				shareHeader1: "האפליקציה שלך <strong>נגישה לציבור</strong>.",
-				shareHeader2: "האפליקציה שלך נגישה לחברי הארגון שלך (נדרש להתחבר).",
-				shareLinkHeader: "שתף את האפליקציה עם קהל המטרה שלך",
+				shareHeader1: "כן_Your story is <strong>publicly accessible</strong>________________ש.",
+				shareHeader2: "כן_Your story is accessible by your organization members (login is required)_______________________ש.",
+				shareLinkHeader: "כן_Share the story with your audience___________ש",
 				shareLinkOpen: "פתח",
 				learnMore: "מידע נוסף",
-				shareQ1Opt1: "כיצד אני יכול לשמור את האפליקציה פרטית?",
-				shareQ1Opt2: "כיצד אני יכול לשמור את האפליקציה פרטית או לשתף אותה לציבור?",
+				shareQ1Opt1: "כן_How do I keep the story private___________ש?",
+				shareQ1Opt2: "כן_How do I keep the story private or share it publicly_________________ש?",
 				shareA1: "השתמש ב- %SHAREIMG% ב- <a href='%LINK1%' target='_blank'>דף פריט האפליקציה</a>. אם אתה רוצה גם לבטל את שיתוף של ה- web map, השתמש ב- <a href='%LINK2%' target='_blank'>דף פריט web map</a>.",
 				shareA1bis: "אם אתה רוצה לבטל גם את השיתוף לשירות הישויות, השתמש <a href='%LINK1%' target='_blank'>דף פריט שירות הישויות</a>.",
-				shareQ2: "כיצד אני יכול לערוך את האפליקציה מאוחר יותר?",
+				shareQ2: "כן_How do I edit the story later__________ש?",
 				shareQ2bis: "כיצד אני יכול לחזור לממשק הפרסום?",
-				shareA2div1: "שמור והשתמש שוב בקישור הבא %LINK1% או השתמש ב- <a href='%LINK2%' target='_blank'>דף פריט האפליקציה</a>.",
-				shareA2div2: "כבעלים של האפליקציה, כאשר אתה מתחבר אל ArcGIS.com האפליקציה כוללת כפתור הפותח את אשף הבנייה האינטראקטיבי.",				
+				shareA2div1: "כן_Save and reuse the following link %LINK1% or use <a href='%LINK2%' target='_blank'>the story item page</a>_________________________________ש.",
+				shareA2div2: "כן_As the owner of the story, when you are signed in on ArcGIS.com, the story includes a button to open the interactive builder_______________________________________ש:",
 				shareQ3: "היכן מאוחסן המידע?",
-				shareA3: "תצורת האפליקציה אינה שמורה בפריט  web application</a> זה.",
+				shareA3: "כן_The story configuration is stored in this web application item</a>_____________________ש.",
 				shareWarning: "שיתוף עם %WITH% לא מתאפשר מכיוון שאינך הבעלים של <a href='%LINK%' target='_blank'>webmap</a>.",
  				shareWarningWith1: "ציבורי",
  				shareWarningWith2: "ציבורי וגם עם הארגון"
@@ -279,4 +282,3 @@
 		}
     })
 );
-

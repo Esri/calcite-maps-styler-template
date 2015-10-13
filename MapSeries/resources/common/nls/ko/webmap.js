@@ -2,7 +2,7 @@
 	 ({
 		commonWebmap: {
 			selector: {
-				lblWebMap: "웹 맵",
+				lblWebMap: "한_Map__빠",
 				lblLocation: "위치",
 				lblContent: "콘텐츠",
 				lblPopup: "팝업",
@@ -17,12 +17,14 @@
 				and: "및",
 				action: "섹션의 작업",
 				actions: "섹션의 작업",
-				originalWebmap: "%TPL_NAME%을(를) 발행하는 데 사용된 웹 맵",
-				browseMaps: "맵 찾아보기",
-				current: "현재 웹 맵",
-				select: "웹 맵 선택",
-				newMap: "새로 선택한 웹 맵",
-				webmapDefault: "웹 맵 기본값",
+				originalWebmap: "한_Map used to publish the %TPL_NAME%___________빠",
+				browseMaps: "한_Select a map_____빠",
+				createMap: "한_Create a map_____빠",
+				current: "한_Current map____빠",
+				select: "한_Select or create a map________빠",
+				newMap: "한_Newly selected map______빠",
+				newCreatedMap: "한_Newly created map______빠",
+				webmapDefault: "한_Map default____빠",
 				customCfg: "사용자 정의 구성",
 				tooltipLocation: "이 맵이 표시될 위치를 정의합니다.",
 				tooltipContent: "가시 레이어를 정의합니다.",
@@ -47,6 +49,29 @@
 				popupExplain: "표시하려는 팝업을 열려면 피처를 클릭하세요.",
 				popupSave: "팝업 구성 저장",
 				hintNavigation: "맵 탐색을 사용할 수 없습니다."
+			},
+			editor: {
+				loading: "한_Please wait while the map editor is loading______________빠",
+				newTitle: "한_Create new map_____빠",
+				editTitle: "한_Edit map___빠",
+				titleLbl: "한_Title___빠",
+				titlePh: "한_Map title_____빠...",
+				folderLbl: "한_The map will be created in the same folder as the story__________________빠.",
+				creating: "한_Creating the map______빠",
+				saving: "한_Saving the map_____빠",
+				success: "한_Map saved____빠",
+				successCreate: "한_Map created____빠",
+				cancelTitle: "한_Discard any unsaved changes_________빠?",
+				errorDuplicate: "한_You already have a map with that title____________빠",
+				errorCreate: "한_Unable to create map. Please try again_____________빠.",
+				errorSave: "한_Unable to save map. Please try again____________빠.",
+				notavailable1: "한_Sorry, creating or editing a map is not supported in Firefox due to a technical limitation. You may want to build your story using a different web browser or use the following workaround_________________________________________________________빠.",
+				notavailable2: "한_Sorry, creating or editing a map is not supported since the story map application is not hosted in %PRODUCT%. Please contact your ArcGIS administrator for more information_____________________________________________________빠.",
+				notavailable3: "한_Sorry, creating or editing a map is not supported on this version of Portal for ArcGIS (requires 10.4 or later). Please contact your ArcGIS administrator for more information______________________________________________________빠.",
+				notavailable4: "한_You can create a map using %MV%, then come back here to add it to your story________________________빠.",
+				notavailable5: "한_You can edit the map using %MV%, then come back here and %apply% to see your changes___________________________빠.",
+				notavailable6: "한_map viewer____빠",
+				notavailable7: "한_reload the map_____빠"
 			}
 		},
 		configure: {
@@ -57,11 +82,11 @@
 					contentLabel: "내 콘텐츠",
 					favoritesLabel: "내 즐겨찾기"
 				},
-				title: "웹 맵 선택",
+				title: "한_Select a map_____빠",
 				searchTitle: "검색",
 				ok: "확인",
 				cancel: "취소",
-				placeholder: "검색어 또는 웹 맵 ID 입력..."
+				placeholder: "한_Enter search term or web map ID___________빠..."
 			}
 		}
 	})

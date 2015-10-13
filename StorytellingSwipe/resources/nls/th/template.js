@@ -2,11 +2,11 @@
 	 ({
 		viewer: {
 			loading: {
-				step1: "กำลังโหลดแอพพลิเคชั่น",
+				step1: "ก้_LOADING STORY_____ษฺ",
 				step2: "กำลังโหลดข้อมูล",
 				step3: "กำลังเริ่มต้นทำงาน",
 				fail: "ขออภัย โหลด Swipe ล้มเหลว",
-				loadBuilder: "กำลังเปลี่ยนไปที่โหมดการสร้าง",				
+				loadBuilder: "กำลังเปลี่ยนไปที่โหมดการสร้าง",
 				redirectSignIn: "กลับไปยังหน้าที่ลงชื่อใช้",
 				redirectSignIn2: "(คุณจะเปลี่ยนหน้าต่างนี้หลังจากลงชื่อเข้าใช้)",
 				failButton: "ลองใหม่"
@@ -17,16 +17,19 @@
 				invalidConfig: "เกิดข้อผิดพลาด: การปรับแต่งไม่ถูกต้อง",
 				invalidConfigNoWebmap: "เกิดข้อผิดพลาด: การปรับแต่งไม่ถูกต้อง (ไม่ได้ระบุเว็บแมพ)",
 				createMap: "ไม่สามารถสร้างแผนที่ได้",
-				invalidApp: "เกิดข้อผิดพลาด: ไม่สามารถโหลด Application ได้",
+				invalidApp: "ก้_Fatal error: The story cannot be loaded_____________ษฺ",
 				initMobile: "ขอต้อนรับสู่ Swipe Web Application ยังไม่มีการปรับแต่งแอพพลิเคชันและไม่รับรองโหมดการสร้างบนอุปกรณ์เคลื่อนที่",
+				initMobile2: "ก้_The Swipe builder is not supported at this display size__________________ษฺ.",
 				noBuilderIE8: "Internet Explorer ก่อนเวอร์ชัน 9 ไม่รองรับโหมดการสร้างของ Swipe",
 				noLayerView: "ขอต้อนรับสู่ Swipe Web Application.<br />ยังไม่มีการปรับแต่งแอพพลิเคชัน",
-				appSave: "เกิดข้อผิดพลาดไม่สามารถบันทึก Web Application ได้",
+				appSave: "ก้_Error saving the web story_________ษฺ",
 				mapSave: "เกิดข้อผิดพลาดในการบันทึกเว็บแมพ",
-				notAuthorized: "คุณไม่ได้รับอนุญาตให้เข้าถึงแอพพลิเคชั่นนี้",
+				notAuthorized: "ก้_You are not authorized to access this story______________ษฺ",
 				conflictingProjectionsTitle: "การถ่ายภาพที่ไม่สัมพันธ์กัน",
 				conflictingProjections: "Swipe ไม่รองรับเว็บแมพที่มีโปรเจคชันต่างกัน กรุณาไปที่การตั้งค่าและเลือกใช้เว็บแมพที่มีโปรเจคชันเดียวกับเว็บแมพแรก",
-				cpButton: "ปิด"
+				cpButton: "ปิด",
+				unspecifiedConfigOwner: "ก้_Authorized owner hasn't been configured_____________ษฺ.",
+				invalidConfigOwner: "ก้_Story owner is not authorized__________ษฺ."
 			},
 			mobileView: {
 				hideIntro: "ซ่อนคำอธิบายการเริ่มต้นใช้งาน",
@@ -44,7 +47,7 @@
 		},
 		builder: {
 			builder: {
-				panelHeader: "การปรับแต่งแอพพลิเคชั่น",
+				panelHeader: "ก้_STORY CONFIGURATION_______ษฺ",
 				buttonSave: "บันทึก",
 				buttonHelp: "ตัวช่วย",
 				buttonShare: "แชร์",
@@ -64,13 +67,13 @@
 				popoverSaveWhenDone: "อย่าลืมบันทึกข้อมูลเมื่อคุณทำงานเสร็จ",
 				closeWithPendingChange: "คุณต้องการยืนยันการกระทำนี้? การแก้ไขเปลี่ยนแปลงใดๆจะสูญหายไป",
 				gotIt: "ตกลง",
-				savingApplication: "กำลังบันทึกแอพพลิเคชั่น",
-				saveSuccess: "บันทึกแอพพลิเคชั่นเรียบร้อยแล้ว",
+				savingApplication: "ก้_Saving story_____ษฺ",
+				saveSuccess: "ก้_Story saved successfully________ษฺ",
 				saveError: "การบันทึกไม่สำเร็จ กรุณาลองใหม่อีกครั้ง",
 				saveError2: "การบันทึกผิดพลาด เนื่องจาก html แท๊กไม่ถูกต้อง ในชื่อหรือคำอธิบาย",
 				saveError3: "หัวเรื่องไม่สามารถปล่อยว่างได้",
 				signIn: "กรุณาลงชื่อเข้าใช้",
-				signInTwo: "บันทึกแอพพลิเคชั่น"
+				signInTwo: "ก้_to save the story______ษฺ."
 			},
 			header:{
 				editMe: "แก้ไขฉัน!",
@@ -78,7 +81,7 @@
 				templateSubtitle: "ตั้งชื่อโครงร่างรอง"
 			},
 			settings: {
-				settingsHeader: "การตั้งค่าแอพพลิเคชั่น",
+				settingsHeader: "ก้_Story settings_____ษฺ",
 				modalCancel: "ยกเลิก",
 				modalApply: "ใช้งาน"
 			},
@@ -138,7 +141,7 @@
 				settingsLayoutSpyGlass: "แว่นขยาย",
 				settingsLayoutSelected: "โครงร่างที่เลือก",
 				settingsLayoutSelect: "เลือกโครงร่างนี้",
-				settingsSaveConfirm: "จากการแก้ไขข้อมูล คุณต้องบันทึกและโหลดแอพพลิเคชันใหม่อีกครั้ง"
+				settingsSaveConfirm: "ก้_Some of your changes require that you save and reload the story____________________ษฺ"
 			},
 			settingsDataModel: {
 				settingsTabDataModel: "ประเภท Swipe",
@@ -166,7 +169,7 @@
 			},
 			settingsLegend: {
 				settingsTabLegend: "โครงร่างแอพฯ",
-				settingsLegendExplain: "เลือกโครงร่างของแอพพลิเคชัน",
+				settingsLegendExplain: "ก้_Select the layout settings_________ษฺ.",
 				settingsLegendEnable: "เปิดแสดงคำอธิบายสัญลักษณ์",
 				settingsDescriptionEnable: "เปิดแสดงคำอธิบาย",
 				settingsBookmarksEnable: "เปิดใช้งาน Swipe",
@@ -174,7 +177,7 @@
 				settingsLocationSearchEnable: "เปิดใช้การค้นหาตำแหน่ง",
 				settingsGeolocatorEnable: "เปิดใช้งาน Geolocator",
 				settingsLegendHelpContent: "ในการปรับแต่งส่วนประกอบของคำอธิบายสัญลักษณ์",
-				settingsSeriesHelpContent: "ชุด Swipe เป็นตัวช่วยนำผู้ใช้ไปสู่ข้อมูลสำคัญและแสดงชื่อและคำอธิบายในแถบด้านข้าง บุ๊คมาร์คของเว็บแมพนั้นๆจะถูกนำเข้ามาใช้สร้างแถบนี้ การปิดการใช้งานตัวช่วยนี้จะผิดเพียงแถบคำสั่ง แต่ยังสามารถปรับแต่งให้นำกลับมาใช้งานได้ในอนาคต", 
+				settingsSeriesHelpContent: "ชุด Swipe เป็นตัวช่วยนำผู้ใช้ไปสู่ข้อมูลสำคัญและแสดงชื่อและคำอธิบายในแถบด้านข้าง บุ๊คมาร์คของเว็บแมพนั้นๆจะถูกนำเข้ามาใช้สร้างแถบนี้ การปิดการใช้งานตัวช่วยนี้จะผิดเพียงแถบคำสั่ง แต่ยังสามารถปรับแต่งให้นำกลับมาใช้งานได้ในอนาคต",
 				settingsSeriesHelpContent2: "ชุด Swipe ให้คุณสร้างและแก้ไขรายชื่อตำแหน่งข้อมูลพร้อมชือ หากเว็บแมพของคุณมีบุ๊คมาร์ค บุ๊คมาร์คเหล่านั้นจะถูกนำมาแสดงด้วย สามารถยกเลิกการใช้งาน Swipe นี้ได้ และสามารถแก้ไขให้นำกลับมาใช้งานได้อีกภายหลัง",
 				settingsSeriesHelpLink: "ดูตัวอย่างแอพพลิเคชันที่ใช้ Swipe ได้ที่นี่",
 				preview: "ดูตัวอย่าง UI",
@@ -215,39 +218,39 @@
 				}
 			},
 			share: {
-				firstSaveTitle: "บันทึกแอพพลิเคชั่นเรียบร้อยแล้ว",
-				firstSaveHeader: "แอพพลิเคชั่นของคุณได้รับการบันทึกลงใน ArcGIS Online เรียบร้อยแล้ว โปรดอ่านคำถามที่พบบ่อย",
+				firstSaveTitle: "ก้_Story successfully saved________ษฺ",
+				firstSaveHeader: "ก้_Your story is now saved in ArcGIS Online. Please read the following answers to frequent questions______________________________ษฺ.",
 				firstSaveA1: "ถ้าคุณไม่ใช่สมาชิกของ ArcGIS Online หรือต้องการทางลัดในการเข้าถึงหน้าการยอมรับ คุณสามารถบันทึกตามลิงก์: %LINK1%",
-				firstSaveA1bis: "สามารถค้นหาแอพพลิเคชั่นได้ใน<a href='%LINK2%' target='_blank'> โฟลเดอร์เนื้อหา ArcGIS Online ของคุณ</a>.",
-				firstSaveQ2: "แอพพลิเคชั่นของฉันถูกแชร์หรือไม่?",
-				firstSaveA2: "แอพพลิเคชั่นของคุณไม่ได้ถูกแชร์ในตอนนี้ หากต้องการจะแชร์ เลือกที่ปุ่ม แชร์",
-				shareTitle: "แชร์แอพพลิเคชั่นของคุณ",
-				sharePrivateHeader: "แอพพลิเคชั่นของคุณไม่ได้ถูกแชร์ คุณต้องการที่จะแชร์แอพฯ นี้หรือไม่?",
+				firstSaveA1bis: "ก้_The story can also be found in your <a href='%LINK2%' target='_blank'>ArcGIS Online content folder</a>________________________________ษฺ.",
+				firstSaveQ2: "ก้_Is my story shared_______ษฺ?",
+				firstSaveA2: "ก้_Currently your story is not shared. To share it, use the SHARE button______________________ษฺ.",
+				shareTitle: "ก้_Share your story______ษฺ",
+				sharePrivateHeader: "ก้_Your story is not shared, would you like to share it_________________ษฺ?",
 				sharePrivateBtn1: "แบ่งปันสู่สาธารณะ",
 				sharePrivateBtn2: "แบ่งปันด้วยองค์กรของฉัน",
 				sharePrivateProgress: "การแบ่งปันอยู่ในดำเนินการ ...",
 				sharePrivateErr: "การแบ่งปันผิดพลาด ลองอีกครั้ง หรือ",
 				sharePrivateOk: "แบ่งปันอัพเดทสำเร็จ กำลังโหลด...",
-				shareStatus1: "แอพพลิเคชั่นไม่ได้ถูกบันทึก",
-				shareStatus2: "แอพพลิเคชั่นถูกแชร์ไปสู่สาธารณะ",
-				shareStatus3: "แอพพลิเคชั่นถุกแชร์ภายในองค์กร",
-				shareStatus4: "แอพพลิเคชั่นไม่ได้ถูกแชร์",
+				shareStatus1: "ก้_Story is not saved______ษฺ",
+				shareStatus2: "ก้_Story is shared publicly________ษฺ",
+				shareStatus3: "ก้_Story is shared within the organization_____________ษฺ",
+				shareStatus4: "ก้_Story is not shared_______ษฺ",
 				sharePreviewAsUser: "ตัวอย่าง",
-				shareHeader1: "แอพพลิเคชั่นของคุณ <strong>สามารถเข้าถึงได้อย่างสาธารณะ</strong>.",
-				shareHeader2: "แอพพลิเคชั่นของคุณสามารถเข้าถึงได้โดยสมาชิกองค์กรของคุณ (ต้องทำการลงทะเบียน)",
-				shareLinkHeader: "แชร์แอพพลิเคชั่นนี้ให้กับผู้สนใจ",
+				shareHeader1: "ก้_Your story is <strong>publicly accessible</strong>________________ษฺ.",
+				shareHeader2: "ก้_Your story is accessible by your organization members (login is required)_______________________ษฺ.",
+				shareLinkHeader: "ก้_Share the story with your audience___________ษฺ",
 				shareLinkOpen: "เปิด",
 				learnMore: "เรียนรู้เพิ่ม",
-				shareQ1Opt1: "ฉันจะกำหนดความเป็นส่วนตัวในการใช้งานแอพพลิเคชั่นได้อย่างไร?",
-				shareQ1Opt2: "ฉันจะกำหนดให้แอพพลิเคชั่นนี้มีความเป็นส่วนตัวหรือจะแชร์อย่างเปิดเผยได้อย่างไร?",
+				shareQ1Opt1: "ก้_How do I keep the story private___________ษฺ?",
+				shareQ1Opt2: "ก้_How do I keep the story private or share it publicly_________________ษฺ?",
 				shareA1: "ใช้ %SHAREIMG% บน <a href='%LINK1%' target='_blank'>ในหน้าแอพพลิเคชั่น </a>.หากคุณไม่ต้องการแชร์เว็บแมพนี้ ใช้<a href='%LINK2%' target='_blank'>ในหน้าเว็บแมพ</a>.",
 				shareA1bis: "ถ้าคุณไม่ต้องการที่จะแบ่งปัน , ใช้ <a href='%LINK1%' target='_blank'>ในหน้ารายการฟีเจอร์เซอร์วิส</a>.",
-				shareQ2: "ฉันจะแก้ไขแอพพลิเคชั่นในภายหลังได้อย่างไร?",
+				shareQ2: "ก้_How do I edit the story later__________ษฺ?",
 				shareQ2bis: "ฉันจะกลับไปยังหน้าการเขียนมุมองหน้าได้อย่างไร ?",
-				shareA2div1: "บันทึกและนำกลับมาใช้ตามลิ้ง %LINK1% or use <a href='%LINK2%' target='_blank'>the application item page</a>.",
-				shareA2div2: "หากเป็นเจ้าของโปรแกรม เมื่อคุณลงชื่อเข้าใช้ใน ArcGIS.com โปรแกรมจะเปิดหน้าและปุ่มสำหรับการพัฒนาให้",				
+				shareA2div1: "ก้_Save and reuse the following link %LINK1% or use <a href='%LINK2%' target='_blank'>the story item page</a>_________________________________ษฺ.",
+				shareA2div2: "ก้_As the owner of the story, when you are signed in on ArcGIS.com, the story includes a button to open the interactive builder_______________________________________ษฺ:",
 				shareQ3: "ข้อมูลของคุณเก็บไว้ที่ใด?",
-				shareA3: "การตั้งค่าแอพพลิเคชั่นถูกจัดเก็บอยู่ในเว็บแอพพลิเคชั่นนี้</a>.",
+				shareA3: "ก้_The story configuration is stored in this web application item</a>_____________________ษฺ.",
 				shareWarning: "การแชร์ %WITH% ไม่สามารถทำได้ เพราะว่าคุณไม่ใช่เจ้าของข้อมูล <a href='%LINK%' target='_blank'>webmap</a>.",
  				shareWarningWith1: "โดยสาธารณะ",
  				shareWarningWith2: "โดยสาธารณะและสำหรับองค์กร"
@@ -279,4 +282,3 @@
 		}
     })
 );
-

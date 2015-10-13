@@ -9,7 +9,8 @@
       filterInstructions: "Filtreeri kihti, määrates väärtused.",
       filterOr: "Ükskõik milline järgmistest avaldistest peab olema tõene.",
       filterAnd: "Kõik järgmised avaldised peavad olema tõesed.",
-      filterNo:  "Web map does not contain any interactive filters. View the <a target='_blank' href='http://doc.arcgis.com/en/arcgis-online/use-maps/apply-filters.htm'>Apply Filter</a> help topic for details on how to create a filter in your web map.",
+      filterNo:  "Web map does not contain any interactive filters. View the ${link} help topic for details on how to create a filter in your web map.",
+      filterLink: "Š_http://doc.arcgis.com/en/arcgis-online/use-maps/apply-filters.htm_____________________ä",
       errors:{
         message: "Filtrite rakenduse loomisel tekkis tõrge"
       }

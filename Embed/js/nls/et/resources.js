@@ -26,7 +26,8 @@ define(
             },
             "basemap":{
                     "label": "Aluskaart",
-                    "title": "Vali aluskaart"
+                    "title": "Vali aluskaart",
+                    "close": "Š_Close___ä"
             },
             "legend":{
                 "title": "Legend"
@@ -42,6 +43,7 @@ define(
 
         },
         "map": {
+            "toggle": "Š_Toggle side panel______ä",
             "error": "Kaarti ei saa luua"
         }
     })

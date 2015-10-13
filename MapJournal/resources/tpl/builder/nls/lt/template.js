@@ -57,7 +57,7 @@
 			},
 			organizePopup: {
 				title: "Tvarkyti",
-				lblHeader: "Nuvilkite skiltis į norimas vietas ir sutvarkykite turinį.",
+				lblHeader: "Į_Drag and drop sections to organize your story_______________š.",
 				lblColTitle: "Pavadinimas",
 				lblColPubDate: "Publikavimo data",
 				lblColStatus: "Būsena",

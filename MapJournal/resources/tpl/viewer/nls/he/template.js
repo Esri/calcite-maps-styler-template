@@ -5,33 +5,33 @@
 				close: "סגור"
 			},
 			loading: {
-				step1: "טען אפליקציה",
+				step1: "כן_Loading story_____ש",
 				step2: "טעינת נתונים",
 				step3: "מאתחל",
 				loadBuilder: "עבור למצב בנייה",
 				long: "חוברת המפות שלך מבצעת אתחול",
 				long2: "תודה על ההמתנה",
-				failButton: "טען מחדש את היישום"
+				failButton: "כן_Reload the story______ש"
 			},
 			signin: {
 				title: "נדרש אימות",
-				explainViewer: "אנא התחבר עם %PORTAL_LINK% כדי לגשת לאפליקציה.",
-				explainBuilder: "אנא התחבר עם %PORTAL_LINK% כדי להגדיר את האפליקציה."
+				explainViewer: "כן_Please sign in with an account on %PORTAL_LINK% to access the story_____________________ש.",
+				explainBuilder: "כן_Please sign in with an account on %PORTAL_LINK% to configure the story______________________ש."
 			},
 			errors: {
 				boxTitle: "אירעה שגיאה",
 				invalidConfig: "תצורה לא חוקית",
 				invalidConfigNoApp: "מזהה אפליקציית המיפוי באינטרנט לא צוין ב-index.html.",
 				unspecifiedConfigOwner: "לא הוגדר בעלים מורשה.",
-				invalidConfigOwner: "הבעלים של האפליקציה אינו מורשה.",
+				invalidConfigOwner: "כן_Story owner is not authorized__________ש.",
 				createMap: "לא ניתן ליצור מפה",
 				invalidApp: "ה-%TPL_NAME% לא קיים או שאינו נגיש.",
 				appLoadingFail: "משהו השתבש, ה-%TPL_NAME% לא נטען באופן תקין.",
-				notConfiguredDesktop: "תצורת האפליקציה עדיין לא הוגדרה.",
-				notConfiguredMobile: "אשף הבנייה של ה-%TPL_NAME% אינו נתמך ברזולוציית מסך זו.",
-				notAuthorized: "אינך מורשה לגשת לאפליקציה זו",
+				notConfiguredDesktop: "כן_The story is not configured yet___________ש.",
+				notConfiguredMobile: "כן_The %TPL_NAME% builder is not supported at this display size___________________ש.",
+				notAuthorized: "כן_You are not authorized to access this story______________ש",
 				noBuilderIE: "כלי הבניה לא נתמך ב-Internet Explorer בגרסה הקודמת לגרסה %VERSION%‏. %UPGRADE%",
-				noViewerIE: "יישום זה לא נתמך ב-Internet Explorer  בגרסה הקודמת לגרסה %VERSION%‏. %UPGRADE%",
+				noViewerIE: "כן_This story is not supported in Internet Explorer before version %VERSION%. %UPGRADE%__________________________ש",
 				upgradeBrowser: "<a href='http://browsehappy.com/' target='_blank'>עדכן את הדפדפן שלך</a>.",
 				mapLoadingFail: "משהו השתבש, המפה לא נטענה באופן תקין.",
 				signOut: "התנתק"
@@ -60,7 +60,10 @@
 				bitlyTooltip: "קבל קישור קצר",
 				templateTitle: "קבע כותרת תבנית",
 				templateSubtitle: "קבע כותרת משנה לתבנית",
-				share: "שתף"
+				share: "שתף",
+				checking: "כן_Checking your story content_________ש",
+				fix: "כן_Fix issues in your story________ש",
+				noerrors: "כן_No issues detected______ש"
 			},
 			overviewFromCommon: {
 				title: "מפת התמצאות"

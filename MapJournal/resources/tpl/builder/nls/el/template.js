@@ -57,7 +57,7 @@
 			},
 			organizePopup: {
 				title: "Οργάνωση",
-				lblHeader: "Σύρετε τις ενότητες σε άλλη θέση για να οργανώσετε το περιεχόμενό σας.",
+				lblHeader: "Đ_Drag and drop sections to organize your story_______________ớ.",
 				lblColTitle: "Τίτλος",
 				lblColPubDate: "Ημερομηνία δημοσίευσης",
 				lblColStatus: "Κατάσταση",

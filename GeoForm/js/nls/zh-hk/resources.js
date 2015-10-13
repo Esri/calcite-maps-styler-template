@@ -262,7 +262,7 @@
       mapTabTooltip: "地圖",
       btnDescendingText: "降序",
       btnAscendingText: "遞增",
-      geometryUnavailableErrorMessage: "尋找圖徵幾何時出錯",
+      geometryUnavailableErrorMessage: "試_Error finding the geometry of the feature_____________驗",
       infoPopupOffErrorMessage: "沒有要顯示的任何資訊",
       btnLoadMoreText: "載入更多",
       unavailableTitleText: "無標題",

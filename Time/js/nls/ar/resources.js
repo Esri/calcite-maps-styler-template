@@ -30,7 +30,8 @@ define(
       error: "سيتم استخدام وصف أو قصاصة خريطة الويب افتراضيًا. قم بتكوين التطبيق لإضافة قصاصة مخصصة للوحة."
     },
     time: {
-        enableTimeMessage: "لا تتضمن خريطة الويب المحددة أي طبقات مُمكنة زمنيًا. راجع موضوع تعليمات <a target=\'_blank\' href=\'http://doc.arcgis.com/en/arcgis-online/create-maps/configure-time.htm#ESRI_SECTION1_F1D4A275B4AB4CC79198CBA9D0AD8727\'>تكوين الإعدادات الزمنية</a> لمزيد من التفاصيل. لاستخدام القالب بدون عرض الزمن تفضل باستخدام لوحة التكوين لتعطيل الخيار الزمني.",
+        enableTimeMessage: "بيت_The specified web map does not contain any time enabled layers. View the ${link} help topic for details. To use the template without displaying time use the configuration panel to disable the time option______________________________________________________________لاحقة.",
+        enableTimeMessageLink: "بيت_http://doc.arcgis.com/en/arcgis-online/create-maps/configure-time.htm#ESRI_SECTION1_F1D4A275B4AB4CC79198CBA9D0AD8727____________________________________لاحقة",
         datePattern: "dd MMMM, yyyy",
         hourTimePattern: "h a",
         millisecondTimePattern: "h:mm:ss a",

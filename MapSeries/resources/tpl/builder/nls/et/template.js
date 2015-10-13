@@ -70,7 +70,7 @@
 			},
 			organizePopup: {
 				title: "Paiguta",
-				lblHeader: "Seeria korraldamiseks lohistage paigutust %LBL_LAYOUT%.",
+				lblHeader: "Š_Drag and drop %LBL_LAYOUT% to organize your story________________ä.",
 				lblColTitle: "Pealkiri",
 				lblColStatus: "Staatus",
 				btnApplyWarning: "Kinnita %NB% paigutuse %LBL_LAYOUT% kustutamine",

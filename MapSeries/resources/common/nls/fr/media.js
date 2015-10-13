@@ -64,7 +64,7 @@
 				url: "URL d\'une vidéo Vimeo"
 			},
 			videoSelectorOther: {
-				explain1: "L\'application ne peut pas lire de vidéos brutes (avi, mpeg), mais elle peut lire les fichiers vidéo hébergés dans lesquels des lecteurs sont intégrés (YouTube ou Vimeo).",
+				explain1: "æ_The story cannot play raw videos (e.g., avi, mpeg) but it can play hosted video files that have built-in players (e.g., YouTube or Vimeo)__________________________________________Â.",
 				explain2: "La plupart des services d\'hébergement de vidéos en ligne offrent cette fonctionnalité. Vous devez trouver l\'option d\'incorporation de la vidéo, copier le code donné et utiliser la page %WEBPAGE%.",
 				explain3: "Si vous souhaitez héberger la vidéo même, vous pouvez également créer une page HTML qui utilise un lecteur vidéo, tel que %EXAMPLE%, héberger cette page et également utiliser la page %WEBPAGE%.",
 				webpage: "Page Web"
@@ -102,7 +102,7 @@
 				lblPosition3Explain2: "(la largeur s\'adapte toujours au volet)",
 				lblPosition4Explain: "(peut être déformée)",
 				unloadLbl: "Décharger lorsque le lecteur quitte cette section",
-				unloadHelp: "Si la page Web comporte un support audio ou vidéo, cette option doit rester activée pour empêcher la lecture du contenu lorsque le lecteur quitte cette section. Désactivez cette option pour continuer la lecture d\'une piste audio pendant que le lecteur avance dans le récit.<br />Si la page Web est une application, désactivez cette option pour que l\'application ne se recharge pas si ce lecteur revient à cette section."
+				unloadHelp: "æ_If the Web Page has audio or video media, keep this option checked to stop that content from playing when the reader navigates away. Uncheck it for example to keep a soundtrack playing as the reader advances through the story.<br />If the Web Page is an application, uncheck this option so that the story does not reload if the reader returns to it__________________________________________________________________________________________________________Â."
 			},
 			editorActionGeocode: {
 				lblTitle: "Localiser une adresse ou un lieu",

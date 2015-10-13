@@ -2,11 +2,11 @@
 	 ({
 		viewer: {
 			loading: {
-				step1: "NAHRÁVÁNÍ APLIKACE",
+				step1: "Ř_LOADING STORY_____ů",
 				step2: "NAHRÁVÁNÍ DAT",
 				step3: "INICIALIZACE",
 				fail: "Nepodařilo se načíst nástroj překrývání.",
-				loadBuilder: "PŘEPÍNÁNÍ DO REŽIMU TVORBY",				
+				loadBuilder: "PŘEPÍNÁNÍ DO REŽIMU TVORBY",
 				redirectSignIn: "PROBÍHÁ PŘESMĚROVÁNÍ NA PŘIHLAŠOVACÍ STRÁNKU",
 				redirectSignIn2: "(budete sem přesměrováni po přihlášení)",
 				failButton: "Zkusit znovu"
@@ -17,16 +17,19 @@
 				invalidConfig: "Závažná chyba: Neplatná konfigurace",
 				invalidConfigNoWebmap: "Závažná chyba: Neplatná konfigurace (není specifikována žádná webová mapa)",
 				createMap: "Nelze vytvořit mapu",
-				invalidApp: "Závažná chyba: Aplikaci nelze načíst",
+				invalidApp: "Ř_Fatal error: The story cannot be loaded_____________ů",
 				initMobile: "Vítejte ve webové aplikaci pro překrývání. Aplikace není nakonfigurována. Interaktivní nástroj pro tvorbu není podporován v mobilních zařízeních.",
+				initMobile2: "Ř_The Swipe builder is not supported at this display size__________________ů.",
 				noBuilderIE8: "Interaktivní nástroj pro tvorbu překrývání není podporován v programu Internet Explorer verze nižší než 9.",
 				noLayerView: "Vítejte ve webové aplikaci pro překrývání.<br />Aplikace zatím není nakonfigurována.",
-				appSave: "Chyba při ukládání webové aplikace",
+				appSave: "Ř_Error saving the web story_________ů",
 				mapSave: "Chyba při ukládání webové mapy",
-				notAuthorized: "Nemáte oprávnění k přístupu do této aplikace.",
+				notAuthorized: "Ř_You are not authorized to access this story______________ů",
 				conflictingProjectionsTitle: "Konfliktní projekce",
 				conflictingProjections: "Překrývání nepodporuje používání dvou webových map s různými projekcemi. Otevřete nastavení a použijte webovou mapu, která využívá stejnou projekci jako první webová mapa.",
-				cpButton: "Zavřít"
+				cpButton: "Zavřít",
+				unspecifiedConfigOwner: "Ř_Authorized owner hasn't been configured_____________ů.",
+				invalidConfigOwner: "Ř_Story owner is not authorized__________ů."
 			},
 			mobileView: {
 				hideIntro: "SKRÝT ÚVOD",
@@ -44,7 +47,7 @@
 		},
 		builder: {
 			builder: {
-				panelHeader: "KONFIGURACE APLIKACE",
+				panelHeader: "Ř_STORY CONFIGURATION_______ů",
 				buttonSave: "ULOŽIT",
 				buttonHelp: "Nápověda",
 				buttonShare: "Sdílet",
@@ -64,13 +67,13 @@
 				popoverSaveWhenDone: "Až budete hotovi, nezapomeňte provedené změny uložit.",
 				closeWithPendingChange: "Určitě chcete potvrdit tuto akci? Změny se neuloží.",
 				gotIt: "OK",
-				savingApplication: "Ukládání aplikace",
-				saveSuccess: "Aplikace byla úspěšně uložena",
+				savingApplication: "Ř_Saving story_____ů",
+				saveSuccess: "Ř_Story saved successfully________ů",
 				saveError: "Ukládání se nezdařilo, zkuste to znovu.",
 				saveError2: "Ukládání selhalo kvůli neplatnému HTML tagu v názvu nebo popisu.",
 				saveError3: "Název nesmí být prázdný",
 				signIn: "Přihlaste se pomocí účtu na",
-				signInTwo: "pro uložení aplikace."
+				signInTwo: "Ř_to save the story______ů."
 			},
 			header:{
 				editMe: "Edituj mě!",
@@ -78,7 +81,7 @@
 				templateSubtitle: "Nastavit podnadpis šablony"
 			},
 			settings: {
-				settingsHeader: "Nastavení aplikace",
+				settingsHeader: "Ř_Story settings_____ů",
 				modalCancel: "Storno",
 				modalApply: "Použít"
 			},
@@ -138,7 +141,7 @@
 				settingsLayoutSpyGlass: "Lupa",
 				settingsLayoutSelected: "Vybrané rozvržení",
 				settingsLayoutSelect: "Vybrat toto rozvržení",
-				settingsSaveConfirm: "Některé ze změn vyžadují uložení a opětovné spuštění aplikace"
+				settingsSaveConfirm: "Ř_Some of your changes require that you save and reload the story____________________ů"
 			},
 			settingsDataModel: {
 				settingsTabDataModel: "Typ překrývání",
@@ -166,7 +169,7 @@
 			},
 			settingsLegend: {
 				settingsTabLegend: "Rozvržení aplikace",
-				settingsLegendExplain: "Vyberte nastavení pro rozvržení aplikace.",
+				settingsLegendExplain: "Ř_Select the layout settings_________ů.",
 				settingsLegendEnable: "Povolit legendu",
 				settingsDescriptionEnable: "Povolit popis",
 				settingsBookmarksEnable: "Povolit série překrývání",
@@ -174,7 +177,7 @@
 				settingsLocationSearchEnable: "Povolit vyhledávání lokátoru",
 				settingsGeolocatorEnable: "Povolit geolokátor",
 				settingsLegendHelpContent: "Chcete-li doplnit obsah legendy, použijte obsah prohlížeče webových map ArcGIS.com (Skrýt v legendě)",
-				settingsSeriesHelpContent: "Série překrývání je možnost navigace s pomocí karet, která diváka vede ke konkrétnímu rozsahu a zobrazí název a textový popis v postranním panelu. Během počáteční aktivace se importují záložky z webové mapy / webových map a použijí se k prvotnímu zaplnění lišty série. Zakázáním možnosti série lištu série vypnete, ale konfigurace série zůstane uložena pro budoucí použití.", 
+				settingsSeriesHelpContent: "Série překrývání je možnost navigace s pomocí karet, která diváka vede ke konkrétnímu rozsahu a zobrazí název a textový popis v postranním panelu. Během počáteční aktivace se importují záložky z webové mapy / webových map a použijí se k prvotnímu zaplnění lišty série. Zakázáním možnosti série lištu série vypnete, ale konfigurace série zůstane uložena pro budoucí použití.",
 				settingsSeriesHelpContent2: "Série překrývání vám umožní vytvořit a editovat výběr lokalit s připojenými nadpisy a textem. Pokud má vaše webová mapa záložky, budou zobrazeny. Sérii můžete zakázat, ale konfigurace bude uložena pro budoucí použití.",
 				settingsSeriesHelpLink: "Zde se podívejte na příklad aplikace se sérií překrývání",
 				preview: "Náhled uživatelského rozhraní",
@@ -215,39 +218,39 @@
 				}
 			},
 			share: {
-				firstSaveTitle: "Aplikace úspěšně uložena",
-				firstSaveHeader: "Vaše aplikace je nyní uložena v ArcGIS Online. Přečtěte si prosím následující odpovědi na časté dotazy.",
+				firstSaveTitle: "Ř_Story successfully saved________ů",
+				firstSaveHeader: "Ř_Your story is now saved in ArcGIS Online. Please read the following answers to frequent questions______________________________ů.",
 				firstSaveA1: "Pokud nejste obeznámeni s ArcGIS Online nebo chcete zkratku pro přístup do autorského rozhraní, můžete si uložit následující odkaz: %LINK1%",
-				firstSaveA1bis: "Aplikaci naleznete i ve své <a href='%LINK2%' target='_blank'>složce obsahu ArcGIS Online</a>.",
-				firstSaveQ2: "Je má aplikace sdílená?",
-				firstSaveA2: "Vaše aplikace momentálně není sdílená. Pokud ji chcete sdílet, použijte tlačítko SDÍLET.",
-				shareTitle: "Sdílení vaší aplikace",
-				sharePrivateHeader: "Vaše aplikace není sdílená, chcete ji sdílet?",
+				firstSaveA1bis: "Ř_The story can also be found in your <a href='%LINK2%' target='_blank'>ArcGIS Online content folder</a>________________________________ů.",
+				firstSaveQ2: "Ř_Is my story shared_______ů?",
+				firstSaveA2: "Ř_Currently your story is not shared. To share it, use the SHARE button______________________ů.",
+				shareTitle: "Ř_Share your story______ů",
+				sharePrivateHeader: "Ř_Your story is not shared, would you like to share it_________________ů?",
 				sharePrivateBtn1: "Sdílet veřejně",
 				sharePrivateBtn2: "Sdílet s mou organizací",
 				sharePrivateProgress: "Probíhá sdílení…",
 				sharePrivateErr: "Sdílení selhalo, zkuste to znovu nebo",
 				sharePrivateOk: "Sdílení bylo úspěšně aktualizováno, probíhá nahrávání…",
-				shareStatus1: "Aplikace není uložena.",
-				shareStatus2: "Aplikace je sdílená veřejně.",
-				shareStatus3: "Aplikace je sdílená v rámci organizace.",
-				shareStatus4: "Aplikace není sdílená.",
+				shareStatus1: "Ř_Story is not saved______ů",
+				shareStatus2: "Ř_Story is shared publicly________ů",
+				shareStatus3: "Ř_Story is shared within the organization_____________ů",
+				shareStatus4: "Ř_Story is not shared_______ů",
 				sharePreviewAsUser: "Náhled",
-				shareHeader1: "Vaše aplikace je <strong>veřejně přístupná</strong>.",
-				shareHeader2: "Vaše aplikace je přístupná členům vaší organizace (je vyžadováno přihlášení).",
-				shareLinkHeader: "Sdílejte aplikaci se svým publikem",
+				shareHeader1: "Ř_Your story is <strong>publicly accessible</strong>________________ů.",
+				shareHeader2: "Ř_Your story is accessible by your organization members (login is required)_______________________ů.",
+				shareLinkHeader: "Ř_Share the story with your audience___________ů",
 				shareLinkOpen: "OTEVŘENO",
 				learnMore: "Více informací",
-				shareQ1Opt1: "Jak ponechám aplikaci soukromou?",
-				shareQ1Opt2: "Jak lze aplikaci ponechat jako soukromou nebo ji veřejně sdílet?",
+				shareQ1Opt1: "Ř_How do I keep the story private___________ů?",
+				shareQ1Opt2: "Ř_How do I keep the story private or share it publicly_________________ů?",
 				shareA1: "Použijte %SHAREIMG% na <a href='%LINK1%' target='_blank'>stránce položek aplikace</a>. Pokud chcete také přestat sdílet webové mapy, použijte <a href='%LINK2%' target='_blank'>stránku položek webové mapy</a>.",
 				shareA1bis: "Pokud chcete také zrušit sdílení služby Feature Service, použijte <a href='%LINK1%' target='_blank'>stránku položek služby Feature Service</a>.",
-				shareQ2: "Jak aplikaci později upravím?",
+				shareQ2: "Ř_How do I edit the story later__________ů?",
 				shareQ2bis: "Jak se vrátím do autorského rozhraní?",
-				shareA2div1: "Uložte si pro budoucí použití tento odkaz %LINK1% nebo použijte <a href='%LINK2%' target='_blank'>stránku položek aplikace</a>.",
-				shareA2div2: "Když jste přihlášeni na webu ArcGIS.com jako majitel aplikace, tak aplikace obsahuje tlačítko pro otevření interaktivního nástroje pro tvorbu:",				
+				shareA2div1: "Ř_Save and reuse the following link %LINK1% or use <a href='%LINK2%' target='_blank'>the story item page</a>_________________________________ů.",
+				shareA2div2: "Ř_As the owner of the story, when you are signed in on ArcGIS.com, the story includes a button to open the interactive builder_______________________________________ů:",
 				shareQ3: "Kde jsou uložena data?",
-				shareA3: "Konfigurace aplikace je uložena v této položce webové aplikace</a>.",
+				shareA3: "Ř_The story configuration is stored in this web application item</a>_____________________ů.",
 				shareWarning: "Sdílení %WITH% bylo zakázáno, protože nejste vlastníkem <a href='%LINK%' target='_blank'>webové mapy</a>.",
  				shareWarningWith1: "veřejně",
  				shareWarningWith2: "veřejně a s organizací"
@@ -279,4 +282,3 @@
 		}
     })
 );
-

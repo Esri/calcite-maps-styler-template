@@ -1,4 +1,4 @@
-/*global define */
+﻿/*global define */
 /*
  | Copyright 2014 Esri
  |
@@ -14,8 +14,31 @@
  | See the License for the specific language governing permissions and
  | limitations under the License.
  */
-define(({
-  map: {
-    error: "Impossible de créer la carte"
-  }
-}));
+define(
+   ({
+    map: {
+      error: "æ_Unable to create map_______Â"
+    },
+    elevation: {
+        toggle: "æ_Toggle the Elevation Profile Chart____________Â.",
+        drawTool: "æ_Draw a line on the map to generate an elevation profile__________________Â.",
+        selectMessage: "æ_Click a line feature or use the draw tool to draw a line to display the elevation profile____________________________Â"
+    },
+    splash: {
+        title: "æ_Title___Â",
+        content: "æ_Configure to create custom splash content_____________Â"
+    },
+    legend: {
+        title: "æ_Legend___Â",
+        tip: "æ_Display legend_____Â"
+    },
+    basemap: {
+        title: "æ_Basemap___Â",
+        tip: "æ_Change basemap_____Â"
+    },
+    share: {
+        title: "æ_Share___Â",
+        tip: "æ_Share map____Â"
+    }
+  })
+);

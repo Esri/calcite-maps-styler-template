@@ -9,7 +9,8 @@
       filterInstructions: "Filtraţi stratul tematic specificând valorile.",
       filterOr: "Oricare dintre expresiile următoare trebuie să fie adevărată.",
       filterAnd: "Toate expresiile următoare trebuie să fie adevărate.",
-      filterNo:  "Web map does not contain any interactive filters. View the <a target='_blank' href='http://doc.arcgis.com/en/arcgis-online/use-maps/apply-filters.htm'>Apply Filter</a> help topic for details on how to create a filter in your web map.",
+      filterNo:  "Web map does not contain any interactive filters. View the ${link} help topic for details on how to create a filter in your web map.",
+      filterLink: "Ă_http://doc.arcgis.com/en/arcgis-online/use-maps/apply-filters.htm_____________________ș",
       errors:{
         message: "Problemă la crearea aplicaţiei de filtrare"
       }

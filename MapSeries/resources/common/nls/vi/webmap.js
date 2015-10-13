@@ -2,7 +2,7 @@
 	 ({
 		commonWebmap: {
 			selector: {
-				lblWebMap: "Bản đồ web",
+				lblWebMap: "Đ_Map__ớ",
 				lblLocation: "Vị trí",
 				lblContent: "Nội dung",
 				lblPopup: "Cửa sổ pop-up",
@@ -17,12 +17,14 @@
 				and: "và",
 				action: "Hành động trong phần",
 				actions: "Hành động trong các phần",
-				originalWebmap: "Bản đồ web được dùng để xuất bản %TPL_NAME%",
-				browseMaps: "Duyệt Bản đồ",
-				current: "Bản đồ web hiện tại",
-				select: "Chọn bản đồ web",
-				newMap: "Bản đồ web mới được chọn",
-				webmapDefault: "Bản đồ web mặc định",
+				originalWebmap: "Đ_Map used to publish the %TPL_NAME%___________ớ",
+				browseMaps: "Đ_Select a map_____ớ",
+				createMap: "Đ_Create a map_____ớ",
+				current: "Đ_Current map____ớ",
+				select: "Đ_Select or create a map________ớ",
+				newMap: "Đ_Newly selected map______ớ",
+				newCreatedMap: "Đ_Newly created map______ớ",
+				webmapDefault: "Đ_Map default____ớ",
 				customCfg: "Cầu hình tùy chỉnh",
 				tooltipLocation: "Xác định vị trí bản đồ này sẽ hiển thị.",
 				tooltipContent: "Xác định các lớp nhìn thấy được.",
@@ -47,6 +49,29 @@
 				popupExplain: "Bấm vào một đối tượng để mở cửa sổ popup mà bạn muốn hiển thị.",
 				popupSave: "Lưu cấu hình cửa sổ pop-up",
 				hintNavigation: "Điều hướng bản đồ bị tắt."
+			},
+			editor: {
+				loading: "Đ_Please wait while the map editor is loading______________ớ",
+				newTitle: "Đ_Create new map_____ớ",
+				editTitle: "Đ_Edit map___ớ",
+				titleLbl: "Đ_Title___ớ",
+				titlePh: "Đ_Map title_____ớ...",
+				folderLbl: "Đ_The map will be created in the same folder as the story__________________ớ.",
+				creating: "Đ_Creating the map______ớ",
+				saving: "Đ_Saving the map_____ớ",
+				success: "Đ_Map saved____ớ",
+				successCreate: "Đ_Map created____ớ",
+				cancelTitle: "Đ_Discard any unsaved changes_________ớ?",
+				errorDuplicate: "Đ_You already have a map with that title____________ớ",
+				errorCreate: "Đ_Unable to create map. Please try again_____________ớ.",
+				errorSave: "Đ_Unable to save map. Please try again____________ớ.",
+				notavailable1: "Đ_Sorry, creating or editing a map is not supported in Firefox due to a technical limitation. You may want to build your story using a different web browser or use the following workaround_________________________________________________________ớ.",
+				notavailable2: "Đ_Sorry, creating or editing a map is not supported since the story map application is not hosted in %PRODUCT%. Please contact your ArcGIS administrator for more information_____________________________________________________ớ.",
+				notavailable3: "Đ_Sorry, creating or editing a map is not supported on this version of Portal for ArcGIS (requires 10.4 or later). Please contact your ArcGIS administrator for more information______________________________________________________ớ.",
+				notavailable4: "Đ_You can create a map using %MV%, then come back here to add it to your story________________________ớ.",
+				notavailable5: "Đ_You can edit the map using %MV%, then come back here and %apply% to see your changes___________________________ớ.",
+				notavailable6: "Đ_map viewer____ớ",
+				notavailable7: "Đ_reload the map_____ớ"
 			}
 		},
 		configure: {
@@ -57,11 +82,11 @@
 					contentLabel: "Nội dung của tôi",
 					favoritesLabel: "Yêu thích của tôi"
 				},
-				title: "Chọn Bản đồ Web",
+				title: "Đ_Select a map_____ớ",
 				searchTitle: "Tìm kiếm",
 				ok: "Ok",
 				cancel: "Hủy",
-				placeholder: "Nhập cụm từ tìm kiếm hoặc ID Bản đồ Web..."
+				placeholder: "Đ_Enter search term or web map ID___________ớ..."
 			}
 		}
 	})

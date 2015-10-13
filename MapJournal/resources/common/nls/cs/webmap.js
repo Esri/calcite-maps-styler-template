@@ -2,7 +2,7 @@
 	 ({
 		commonWebmap: {
 			selector: {
-				lblWebMap: "Webová mapa",
+				lblWebMap: "Ř_Map__ů",
 				lblLocation: "Umístění",
 				lblContent: "Obsah",
 				lblPopup: "Vyskakovací okno",
@@ -17,12 +17,14 @@
 				and: "a",
 				action: "Akce v části",
 				actions: "Akce v částech",
-				originalWebmap: "Webová mapa použitá při publikaci %TPL_NAME%",
-				browseMaps: "Procházet mapy",
-				current: "Současná webová mapa",
-				select: "Vybrat webovou mapu",
-				newMap: "Nově vybraná webová mapa",
-				webmapDefault: "Výchozí nastavení webové mapy",
+				originalWebmap: "Ř_Map used to publish the %TPL_NAME%___________ů",
+				browseMaps: "Ř_Select a map_____ů",
+				createMap: "Ř_Create a map_____ů",
+				current: "Ř_Current map____ů",
+				select: "Ř_Select or create a map________ů",
+				newMap: "Ř_Newly selected map______ů",
+				newCreatedMap: "Ř_Newly created map______ů",
+				webmapDefault: "Ř_Map default____ů",
 				customCfg: "Vlastní konfigurace",
 				tooltipLocation: "Určete oblast, kterou bude tato mapa zobrazovat.",
 				tooltipContent: "Určete viditelné vrstvy.",
@@ -47,6 +49,29 @@
 				popupExplain: "Kliknutím na prvek otevřete vyskakovací okno, s informacemi, které chcete o prvku zobrazit.",
 				popupSave: "Uložit konfiguraci vyskakovacího okna",
 				hintNavigation: "Navigace mapy je vypnuta."
+			},
+			editor: {
+				loading: "Ř_Please wait while the map editor is loading______________ů",
+				newTitle: "Ř_Create new map_____ů",
+				editTitle: "Ř_Edit map___ů",
+				titleLbl: "Ř_Title___ů",
+				titlePh: "Ř_Map title_____ů...",
+				folderLbl: "Ř_The map will be created in the same folder as the story__________________ů.",
+				creating: "Ř_Creating the map______ů",
+				saving: "Ř_Saving the map_____ů",
+				success: "Ř_Map saved____ů",
+				successCreate: "Ř_Map created____ů",
+				cancelTitle: "Ř_Discard any unsaved changes_________ů?",
+				errorDuplicate: "Ř_You already have a map with that title____________ů",
+				errorCreate: "Ř_Unable to create map. Please try again_____________ů.",
+				errorSave: "Ř_Unable to save map. Please try again____________ů.",
+				notavailable1: "Ř_Sorry, creating or editing a map is not supported in Firefox due to a technical limitation. You may want to build your story using a different web browser or use the following workaround_________________________________________________________ů.",
+				notavailable2: "Ř_Sorry, creating or editing a map is not supported since the story map application is not hosted in %PRODUCT%. Please contact your ArcGIS administrator for more information_____________________________________________________ů.",
+				notavailable3: "Ř_Sorry, creating or editing a map is not supported on this version of Portal for ArcGIS (requires 10.4 or later). Please contact your ArcGIS administrator for more information______________________________________________________ů.",
+				notavailable4: "Ř_You can create a map using %MV%, then come back here to add it to your story________________________ů.",
+				notavailable5: "Ř_You can edit the map using %MV%, then come back here and %apply% to see your changes___________________________ů.",
+				notavailable6: "Ř_map viewer____ů",
+				notavailable7: "Ř_reload the map_____ů"
 			}
 		},
 		configure: {
@@ -57,11 +82,11 @@
 					contentLabel: "Můj obsah",
 					favoritesLabel: "Moje oblíbené"
 				},
-				title: "Vybrat webovou mapu",
+				title: "Ř_Select a map_____ů",
 				searchTitle: "Hledat",
 				ok: "OK",
 				cancel: "Storno",
-				placeholder: "Zadejte vyhledávací výraz nebo identifikátor webové mapy..."
+				placeholder: "Ř_Enter search term or web map ID___________ů..."
 			}
 		}
 	})

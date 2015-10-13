@@ -35,7 +35,8 @@ define(
          "directions": "Wegbeschreibung",
          "filter": "Filter",
          "close": "Schließen",
-         "reverse": "Umkehren"
+         "reverse": "Umkehren",
+         "mode": "ä_Switch mode Drive/Walk________Ü"
       }
    })
 );

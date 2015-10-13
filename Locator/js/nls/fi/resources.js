@@ -35,7 +35,8 @@ define(
          "directions": "Suunnat",
          "filter": "Suodata",
          "close": "Sulje",
-         "reverse": "Käänteinen"
+         "reverse": "Käänteinen",
+         "mode": "Å_Switch mode Drive/Walk________ö"
       }
    })
 );

@@ -70,7 +70,7 @@
 			},
 			organizePopup: {
 				title: "تنظيم",
-				lblHeader: "اسحب وأفلت %LBL_LAYOUT% لتنظيم سلسلتك.",
+				lblHeader: "بيت_Drag and drop %LBL_LAYOUT% to organize your story________________لاحقة.",
 				lblColTitle: "العنوان",
 				lblColStatus: "الحالة",
 				btnApplyWarning: "تأكيد حذف %NB% %LBL_LAYOUT%",

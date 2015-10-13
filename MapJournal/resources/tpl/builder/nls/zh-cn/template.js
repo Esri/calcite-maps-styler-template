@@ -57,7 +57,7 @@
 			},
 			organizePopup: {
 				title: "组织",
-				lblHeader: "拖放节以对内容进行组织。",
+				lblHeader: "试_Drag and drop sections to organize your story_______________验.",
 				lblColTitle: "标题",
 				lblColPubDate: "发布日期",
 				lblColStatus: "状态",

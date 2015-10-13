@@ -35,7 +35,8 @@ define(
          "directions": "Οδηγίες",
          "filter": "Φίλτρο",
          "close": "Κλείσιμο",
-         "reverse": "Αντιστροφή"
+         "reverse": "Αντιστροφή",
+         "mode": "Đ_Switch mode Drive/Walk________ớ"
       }
    })
 );

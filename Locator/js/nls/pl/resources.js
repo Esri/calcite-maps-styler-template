@@ -35,7 +35,8 @@ define(
          "directions": "Wskazówki",
          "filter": "Filtruj",
          "close": "Zamknij",
-         "reverse": "Odwrotnie"
+         "reverse": "Odwrotnie",
+         "mode": "ł_Switch mode Drive/Walk________ą"
       }
    })
 );

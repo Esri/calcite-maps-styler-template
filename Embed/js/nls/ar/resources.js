@@ -26,7 +26,8 @@ define(
             },
             "basemap":{
                     "label": "خريطة أساس",
-                    "title": "حدد خريطة أساس"
+                    "title": "حدد خريطة أساس",
+                    "close": "بيت_Close___لاحقة"
             },
             "legend":{
                 "title": "وسيلة الإيضاح"
@@ -42,6 +43,7 @@ define(
 
         },
         "map": {
+            "toggle": "بيت_Toggle side panel______لاحقة",
             "error": "يتعذر إنشاء الخريطة"
         }
     })

@@ -70,7 +70,7 @@
 			},
 			organizePopup: {
 				title: "Düzenle",
-				lblHeader: "Serinizi düzenlemek için %LBL_LAYOUT% öğesini sürükleyerek bırakın.",
+				lblHeader: "ı_Drag and drop %LBL_LAYOUT% to organize your story________________İ.",
 				lblColTitle: "Başlık",
 				lblColStatus: "Durum",
 				btnApplyWarning: "%NB% %LBL_LAYOUT% öğesinin silinmesini onayla",

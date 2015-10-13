@@ -2,7 +2,7 @@
 	 ({
 		commonWebmap: {
 			selector: {
-				lblWebMap: "Mapa da Web",
+				lblWebMap: "ã_Map__Ç",
 				lblLocation: "Local",
 				lblContent: "Conteúdo",
 				lblPopup: "Pop-up",
@@ -17,12 +17,14 @@
 				and: "e",
 				action: "Ação na seção",
 				actions: "Ação nas seções",
-				originalWebmap: "Mapa da web utilizado para publicar o %TPL_NAME%",
-				browseMaps: "Procurar por Mapas",
-				current: "Mapa da web atual",
-				select: "Selecione um mapa da web",
-				newMap: "Mapa da web recentemente selecionado",
-				webmapDefault: "Mapa da web padrão",
+				originalWebmap: "ã_Map used to publish the %TPL_NAME%___________Ç",
+				browseMaps: "ã_Select a map_____Ç",
+				createMap: "ã_Create a map_____Ç",
+				current: "ã_Current map____Ç",
+				select: "ã_Select or create a map________Ç",
+				newMap: "ã_Newly selected map______Ç",
+				newCreatedMap: "ã_Newly created map______Ç",
+				webmapDefault: "ã_Map default____Ç",
 				customCfg: "Configuração personalizada",
 				tooltipLocation: "Define o local que este mapa aparecerá.",
 				tooltipContent: "Define a visibilidade das camadas.",
@@ -47,6 +49,29 @@
 				popupExplain: "Clique em uma feição para abrir o pop-up que deseja exibir.",
 				popupSave: "Salve a configuração do pop-up",
 				hintNavigation: "A navegação do mapa está desabilitada."
+			},
+			editor: {
+				loading: "ã_Please wait while the map editor is loading______________Ç",
+				newTitle: "ã_Create new map_____Ç",
+				editTitle: "ã_Edit map___Ç",
+				titleLbl: "ã_Title___Ç",
+				titlePh: "ã_Map title_____Ç...",
+				folderLbl: "ã_The map will be created in the same folder as the story__________________Ç.",
+				creating: "ã_Creating the map______Ç",
+				saving: "ã_Saving the map_____Ç",
+				success: "ã_Map saved____Ç",
+				successCreate: "ã_Map created____Ç",
+				cancelTitle: "ã_Discard any unsaved changes_________Ç?",
+				errorDuplicate: "ã_You already have a map with that title____________Ç",
+				errorCreate: "ã_Unable to create map. Please try again_____________Ç.",
+				errorSave: "ã_Unable to save map. Please try again____________Ç.",
+				notavailable1: "ã_Sorry, creating or editing a map is not supported in Firefox due to a technical limitation. You may want to build your story using a different web browser or use the following workaround_________________________________________________________Ç.",
+				notavailable2: "ã_Sorry, creating or editing a map is not supported since the story map application is not hosted in %PRODUCT%. Please contact your ArcGIS administrator for more information_____________________________________________________Ç.",
+				notavailable3: "ã_Sorry, creating or editing a map is not supported on this version of Portal for ArcGIS (requires 10.4 or later). Please contact your ArcGIS administrator for more information______________________________________________________Ç.",
+				notavailable4: "ã_You can create a map using %MV%, then come back here to add it to your story________________________Ç.",
+				notavailable5: "ã_You can edit the map using %MV%, then come back here and %apply% to see your changes___________________________Ç.",
+				notavailable6: "ã_map viewer____Ç",
+				notavailable7: "ã_reload the map_____Ç"
 			}
 		},
 		configure: {
@@ -57,11 +82,11 @@
 					contentLabel: "Meu Conteúdo",
 					favoritesLabel: "Meus Favoritos"
 				},
-				title: "Selecionar Mapa da Web",
+				title: "ã_Select a map_____Ç",
 				searchTitle: "Pesquisar",
 				ok: "Ok",
 				cancel: "Cancelar",
-				placeholder: "Inserir termo de pesquisa ou ID de Mapa da Web..."
+				placeholder: "ã_Enter search term or web map ID___________Ç..."
 			}
 		}
 	})

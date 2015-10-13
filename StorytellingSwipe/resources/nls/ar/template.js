@@ -2,11 +2,11 @@
 	 ({
 		viewer: {
 			loading: {
-				step1: "تحميل التطبيق",
+				step1: "بيت_LOADING STORY_____لاحقة",
 				step2: "تحميل البيانات",
 				step3: "تهيئة",
 				fail: "للأسف، فشل تحميل السحب",
-				loadBuilder: "التبديل إلى وضع المُنشيء",				
+				loadBuilder: "التبديل إلى وضع المُنشيء",
 				redirectSignIn: "إعادة التوجيه لصفحة تسجيل الدخول",
 				redirectSignIn2: "(سيتم إعادة توجيهك هنا بعد تسجيل الدخول)",
 				failButton: "إعادة المحاولة"
@@ -17,16 +17,19 @@
 				invalidConfig: "خطأ فادح: تكوين غير صحيح",
 				invalidConfigNoWebmap: "خطأ فادح: تكوين غير صحيح (لا توجد خرائط ويب محددة)",
 				createMap: "يتعذر إنشاء الخريطة",
-				invalidApp: "خطأ فادح: لا يمكن تحميل التطبيق",
+				invalidApp: "بيت_Fatal error: The story cannot be loaded_____________لاحقة",
 				initMobile: "مرحبًا بك في تطبيق خريطة السحب. تعذر تكوين التطبيق. المنشئ التفاعلي غير مدعوم على أجهزة الجوال.",
+				initMobile2: "بيت_The Swipe builder is not supported at this display size__________________لاحقة.",
 				noBuilderIE8: "منشئ السحب التفاعلي غير مدعوم على Internet Explorer فيما قبل الإصدار 9.",
 				noLayerView: "مرحبًا في تطبيق السحب على الويب. <br /> لم يتم تكوين التطبيق بعد.",
-				appSave: "خطأ اثناء حفظ تطبيق الويب",
+				appSave: "بيت_Error saving the web story_________لاحقة",
 				mapSave: "خطأ أثناء حفظ خريطة الويب",
-				notAuthorized: "لست مخولاً لتكوين التطبيق للوصول إلى هذا التطبيق",
+				notAuthorized: "بيت_You are not authorized to access this story______________لاحقة",
 				conflictingProjectionsTitle: "تعارض الإسقاطات",
 				conflictingProjections: "لا يدعم السحب استخدام اثنان من خرائط الويب ذات إسقاطات مختلفة. الرجاء فتح الإعدادات واستخدام خريطة الويب التي تستخدم نفس إسقاط خريطة الويب الأولى.",
-				cpButton: "إغلاق"
+				cpButton: "إغلاق",
+				unspecifiedConfigOwner: "بيت_Authorized owner hasn't been configured_____________لاحقة.",
+				invalidConfigOwner: "بيت_Story owner is not authorized__________لاحقة."
 			},
 			mobileView: {
 				hideIntro: "إخفاء المقدمة",
@@ -44,7 +47,7 @@
 		},
 		builder: {
 			builder: {
-				panelHeader: "تكوين التطبيق",
+				panelHeader: "بيت_STORY CONFIGURATION_______لاحقة",
 				buttonSave: "حفظ",
 				buttonHelp: "تعليمات",
 				buttonShare: "مشاركة",
@@ -64,13 +67,13 @@
 				popoverSaveWhenDone: "لا تنسى الحفظ بعد الانتهاء",
 				closeWithPendingChange: "هل تريد تأكيد الإجراء؟ سوف تخسر جميع التغييرات.",
 				gotIt: "موافق",
-				savingApplication: "حفظ التطبيق",
-				saveSuccess: "تم حفظ التطبيق بنجاح",
+				savingApplication: "بيت_Saving story_____لاحقة",
+				saveSuccess: "بيت_Story saved successfully________لاحقة",
 				saveError: "حدث فشل أثناء الحفظ، يرجى المحاولة مرة أخرى",
 				saveError2: "فشل الحفظ نظرًا لعلامة html غير الصحيحة في اسم أو وصف",
 				saveError3: "يتعذر أن يكون العنوان فارغًا",
 				signIn: "يرجى تسجيل الدخول بحساب داخل",
-				signInTwo: "لحفظ التطبيق"
+				signInTwo: "بيت_to save the story______لاحقة."
 			},
 			header:{
 				editMe: "تحرير!",
@@ -78,7 +81,7 @@
 				templateSubtitle: "تحديد العنوان الفرعي للقالب"
 			},
 			settings: {
-				settingsHeader: "إعدادات التطبيق",
+				settingsHeader: "بيت_Story settings_____لاحقة",
 				modalCancel: "إلغاء الأمر",
 				modalApply: "تطبيق"
 			},
@@ -138,7 +141,7 @@
 				settingsLayoutSpyGlass: "منظار",
 				settingsLayoutSelected: "مخطط محدد",
 				settingsLayoutSelect: "حدد هذا المخطط",
-				settingsSaveConfirm: "تتطلب بعض من التغيرات حفظ التطبيق وإعادة تحميله مرة أخرى"
+				settingsSaveConfirm: "بيت_Some of your changes require that you save and reload the story____________________لاحقة"
 			},
 			settingsDataModel: {
 				settingsTabDataModel: "نوع السحب",
@@ -166,7 +169,7 @@
 			},
 			settingsLegend: {
 				settingsTabLegend: "التخطيط الطباعي للتطبيق",
-				settingsLegendExplain: "حدد إعدادات التخطيط الطباعي للتطبيق.",
+				settingsLegendExplain: "بيت_Select the layout settings_________لاحقة.",
 				settingsLegendEnable: "تمكين وسيلة الإيضاح",
 				settingsDescriptionEnable: "تمكين الوصف",
 				settingsBookmarksEnable: "تمكين سلاسل السحب",
@@ -174,7 +177,7 @@
 				settingsLocationSearchEnable: "تمكين بحث محدد المواقع",
 				settingsGeolocatorEnable: "تمكين محدد المواقع الجغرافي",
 				settingsLegendHelpContent: "لتحسين محتوى مفتاح الخريطة، استخدم جدول محتويات عارض خريطة الويب ArcGIS.com (مخفي في وسيلة الإيضاح)",
-				settingsSeriesHelpContent: "سلاسل السحب هي خيارات التنقل التي سترشد العارض خلال النطاق المحدد وعرض العنوان ونص الوصف في اللوحة الجانبية. أثناء التفعيل الأولي، سيتم استيراد العلامات المرجعية من خرائط الويب وسيتم استخدامها لإعادة تعبئة شريط السلاسل. يقوم تعطيل خيار السلاسل بإيقاف تشغيل شريط السلاسل،لكن يتم الاحتفاظ بتكوين السلاسل للاستخدام المستقبلي.", 
+				settingsSeriesHelpContent: "سلاسل السحب هي خيارات التنقل التي سترشد العارض خلال النطاق المحدد وعرض العنوان ونص الوصف في اللوحة الجانبية. أثناء التفعيل الأولي، سيتم استيراد العلامات المرجعية من خرائط الويب وسيتم استخدامها لإعادة تعبئة شريط السلاسل. يقوم تعطيل خيار السلاسل بإيقاف تشغيل شريط السلاسل،لكن يتم الاحتفاظ بتكوين السلاسل للاستخدام المستقبلي.",
 				settingsSeriesHelpContent2: "تتيح عملية سحب السلسلة إنشاء وتحرير مجموعة مختارة من المواقع مع النص والعناوين المصاحبة. إذا كانت خريطة الويب الخاص بك لديها علامات مرجعية، فإنه سيتم عرضهم. ويمكنك تعطيل هذه السلسلة، ولكن سيتم الاحتفاظ بالتكوين للاستخدام في المستقبل.",
 				settingsSeriesHelpLink: "راجع مثال على التطبيق مع سحب السلاسل هنا",
 				preview: "معاينة واجهة المستخدم",
@@ -215,39 +218,39 @@
 				}
 			},
 			share: {
-				firstSaveTitle: "تم حفظ التطبيق بنجاح",
-				firstSaveHeader: "تم حفظ التطبيق في ArcGIS Online الآن. يرجى قراءة الإجابات التالية على الأسئلة المكررة.",
+				firstSaveTitle: "بيت_Story successfully saved________لاحقة",
+				firstSaveHeader: "بيت_Your story is now saved in ArcGIS Online. Please read the following answers to frequent questions______________________________لاحقة.",
 				firstSaveA1: "إذا لم تكن متألف مع ArcGIS Online أو ترغب في الحصول على الاختصار للوصول إلى واجهة التأليف، يمكن حفظ الرابط التالي: %LINK1%",
-				firstSaveA1bis: "يمكن العثور على التطبيق أيضًا في <a href='%LINK2%' target='_blank'>مجلد محتويات ArcGIS Online</a>.",
-				firstSaveQ2: "هل تمت مشاركة تطبيقي؟",
-				firstSaveA2: "لم تتم مشاركة التطبيق حاليًا. استخدم زر مشاركة لمشاركته.",
-				shareTitle: "مشاركة التطبيق",
-				sharePrivateHeader: "لم تتم مشاركة تطبيقك، هل تريد مشاركته؟",
+				firstSaveA1bis: "بيت_The story can also be found in your <a href='%LINK2%' target='_blank'>ArcGIS Online content folder</a>________________________________لاحقة.",
+				firstSaveQ2: "بيت_Is my story shared_______لاحقة?",
+				firstSaveA2: "بيت_Currently your story is not shared. To share it, use the SHARE button______________________لاحقة.",
+				shareTitle: "بيت_Share your story______لاحقة",
+				sharePrivateHeader: "بيت_Your story is not shared, would you like to share it_________________لاحقة?",
 				sharePrivateBtn1: "مشاركتها بشكل عام",
 				sharePrivateBtn2: "مشاركتها مع المنظمة",
 				sharePrivateProgress: "المشاركة قيد التقدم...",
 				sharePrivateErr: "فشلت المشاركة، أعد المحاولة مرة أخرى أو",
 				sharePrivateOk: "تم تحديث المشاركة بنجاح، جارِ التحميل...",
-				shareStatus1: "لم يتم حفظ التطبيق",
-				shareStatus2: "تمت مشاركة التطبيق مع الجميع",
-				shareStatus3: "تمت مشاركة التطبيق في المؤسسة",
-				shareStatus4: "لم يتم مشاركة التطبيق",
+				shareStatus1: "بيت_Story is not saved______لاحقة",
+				shareStatus2: "بيت_Story is shared publicly________لاحقة",
+				shareStatus3: "بيت_Story is shared within the organization_____________لاحقة",
+				shareStatus4: "بيت_Story is not shared_______لاحقة",
 				sharePreviewAsUser: "معاينة",
-				shareHeader1: "التطبيق <strong>يمكن لكل المستخدمين الوصول إليه</strong>.",
-				shareHeader2: "يمكن لأعضاء المؤسسة الوصول إلى التطبيق (يلزم تسجيل الدخول).",
-				shareLinkHeader: "مشاركة التطبيق مع جمهور المستخدمين",
+				shareHeader1: "بيت_Your story is <strong>publicly accessible</strong>________________لاحقة.",
+				shareHeader2: "بيت_Your story is accessible by your organization members (login is required)_______________________لاحقة.",
+				shareLinkHeader: "بيت_Share the story with your audience___________لاحقة",
 				shareLinkOpen: "فتح",
 				learnMore: "تعلم المزيد",
-				shareQ1Opt1: "هل يمكن الحفاظ على التطبيق خاصًا؟",
-				shareQ1Opt2: "كيف يمكن الحفاظ على التطبيق خاصًا أو مشاركته مع الجميع؟",
+				shareQ1Opt1: "بيت_How do I keep the story private___________لاحقة?",
+				shareQ1Opt2: "بيت_How do I keep the story private or share it publicly_________________لاحقة?",
 				shareA1: "استخدم %SHAREIMG% في <a href='%LINK1%' target='_blank'> صفحة عنصر التطبيق</a>. إذا أردت أيضًا إلغاء مشاركة طبقة الويب، استخدام <a href='%LINK2%' target='_blank'>صفحة عنصر خريطة الويب</a>.",
 				shareA1bis: "إذا كنت ترغب أيضًا في عدم مشاركة خدمة المعلم، استخدم <a href='%LINK1%' target='_blank'>صفحة عنصر خدمة المعلم</a>.",
-				shareQ2: "كيف يمكن تحرير التطبيق لاحقًا؟",
+				shareQ2: "بيت_How do I edit the story later__________لاحقة?",
 				shareQ2bis: "كيف يمكنني الحصول على العودة إلى واجهة التأليف؟",
-				shareA2div1: "احفظ الرابط التالي وقم بإعادة استخدامه %LINK1% أو استخدم <a href='%LINK2%' target='_blank'>صفحة عنصر التطبيق</a>.",
-				shareA2div2: "بصفتك مالك التطبيق، عند تسجيل الدخول على ArcGIS.com، سيتضمن التطبيق زر لفتح المنشئ التفاعلي:",				
+				shareA2div1: "بيت_Save and reuse the following link %LINK1% or use <a href='%LINK2%' target='_blank'>the story item page</a>_________________________________لاحقة.",
+				shareA2div2: "بيت_As the owner of the story, when you are signed in on ArcGIS.com, the story includes a button to open the interactive builder_______________________________________لاحقة:",
 				shareQ3: "أين يتم تخزين البيانات؟",
-				shareA3: "يتم تخزين تكوين التطبيق في عنصر تطبيق الويب</a>.",
+				shareA3: "بيت_The story configuration is stored in this web application item</a>_____________________لاحقة.",
 				shareWarning: "تم تعطيل مشاركة %WITH% وذلك لأنك ليس مالك <a href='%LINK%' target='_blank'>خريطة الويب</a>.",
  				shareWarningWith1: "علانية",
  				shareWarningWith2: "علانية ومع المنظمة"
@@ -279,4 +282,3 @@
 		}
     })
 );
-

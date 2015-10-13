@@ -5,33 +5,33 @@
 				close: "Κλείσιμο"
 			},
 			loading: {
-				step1: "Φόρτωση εφαρμογής",
+				step1: "Đ_Loading story_____ớ",
 				step2: "Φόρτωση δεδομένων",
 				step3: "Προετοιμασία",
 				loadBuilder: "Μετάβαση στο εργαλείο δημιουργίας",
 				long: "Εκτελείται προετοιμασία του Map Journal",
 				long2: "Ευχαριστούμε που περιμένατε",
-				failButton: "Επαναφόρτωση της εφαρμογής"
+				failButton: "Đ_Reload the story______ớ"
 			},
 			signin: {
 				title: "Απαιτείται έλεγχος ταυτότητας",
-				explainViewer: "Εισέλθετε με έναν λογαριασμό στο %PORTAL_LINK% για να προσπελάσετε την εφαρμογή.",
-				explainBuilder: "Εισέλθετε με έναν λογαριασμό στο %PORTAL_LINK% για να διαμορφώσετε την εφαρμογή."
+				explainViewer: "Đ_Please sign in with an account on %PORTAL_LINK% to access the story_____________________ớ.",
+				explainBuilder: "Đ_Please sign in with an account on %PORTAL_LINK% to configure the story______________________ớ."
 			},
 			errors: {
 				boxTitle: "Παρουσιάστηκε σφάλμα",
 				invalidConfig: "Μη έγκυρη διαμόρφωση",
 				invalidConfigNoApp: "Το αναγνωριστικό της εφαρμογής διαδικτυακού χαρτη δεν καθορίζεται στο index.html.",
 				unspecifiedConfigOwner: "Δεν έχει διαμορφωθεί εξουσιοδοτημένος κάτοχος.",
-				invalidConfigOwner: "Ο κάτοχος της εφαρμογής δεν είναι εξουσιοδοτημένος.",
+				invalidConfigOwner: "Đ_Story owner is not authorized__________ớ.",
 				createMap: "Δεν είναι δυνατή η δημιουργία χάρτη",
 				invalidApp: "Το %TPL_NAME% δεν υπάρχει ή δεν είναι προσβάσιμο.",
 				appLoadingFail: "Υπήρξε κάποιο πρόβλημα, το %TPL_NAME% δεν φορτώθηκε σωστά.",
-				notConfiguredDesktop: "Η εφαρμογή δεν έχει διαμορφωθεί ακόμη.",
-				notConfiguredMobile: "Το εργαλείο δημιουργίας %TPL_NAME% δεν υποστηρίζεται σε αυτή την ανάλυση οθόνης.",
-				notAuthorized: "Δεν έχετε εξουσιοδότηση για πρόσβαση σε αυτή την εφαρμογή",
+				notConfiguredDesktop: "Đ_The story is not configured yet___________ớ.",
+				notConfiguredMobile: "Đ_The %TPL_NAME% builder is not supported at this display size___________________ớ.",
+				notAuthorized: "Đ_You are not authorized to access this story______________ớ",
 				noBuilderIE: "Το εργαλείο δημιουργίας δεν υποστηρίζεται στον Internet Explorer πριν από την έκδοση %VERSION%. %UPGRADE%",
-				noViewerIE: "Αυτή η εφαρμογή δεν υποστηρίζεται στον Internet Explorer πριν από την έκδοση %VERSION%. %UPGRADE%",
+				noViewerIE: "Đ_This story is not supported in Internet Explorer before version %VERSION%. %UPGRADE%__________________________ớ",
 				upgradeBrowser: "<a href='http://browsehappy.com/' target='_blank'>Ενημερώστε το πρόγραμμα περιήγησης</a>.",
 				mapLoadingFail: "Υπήρξε κάποιο πρόβλημα, ο χάρτης δεν φορτώθηκε σωστά.",
 				signOut: "Έξοδος"
@@ -60,7 +60,10 @@
 				bitlyTooltip: "Λήψη σύντομου συνδέσμου",
 				templateTitle: "Ορισμός τίτλου προτύπου",
 				templateSubtitle: "Ορισμός υπότιτλου προτύπου",
-				share: "Κοινοποίηση"
+				share: "Κοινοποίηση",
+				checking: "Đ_Checking your story content_________ớ",
+				fix: "Đ_Fix issues in your story________ớ",
+				noerrors: "Đ_No issues detected______ớ"
 			},
 			overviewFromCommon: {
 				title: "Χάρτης αναφοράς"

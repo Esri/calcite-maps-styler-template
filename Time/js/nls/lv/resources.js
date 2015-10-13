@@ -30,7 +30,8 @@ define(
       error: "Pēc noklusējuma tiks izmantots tīmekļa kartes apraksts vai atgriezums. Konfigurējiet lietotni, lai pievienotu pielāgotu atgriezumu apkārtējam panelim."
     },
     time: {
-        enableTimeMessage: "Noteiktā tīmekļa karte nesatur slāņus, kas iespējoti visiem laikiem. Informāciju skatiet palīdzības tēmā <a target=\'_blank\' href=\'http://doc.arcgis.com/en/arcgis-online/create-maps/configure-time.htm#ESRI_SECTION1_F1D4A275B4AB4CC79198CBA9D0AD8727\'>Konfigurēt laika iestatījumus</a>. Lai izmantotu veidni, neparādot laiku, izmantojiet konfigurācijas paneli, lai atspējotu laika opciju.",
+        enableTimeMessage: "ķ_The specified web map does not contain any time enabled layers. View the ${link} help topic for details. To use the template without displaying time use the configuration panel to disable the time option______________________________________________________________ū.",
+        enableTimeMessageLink: "ķ_http://doc.arcgis.com/en/arcgis-online/create-maps/configure-time.htm#ESRI_SECTION1_F1D4A275B4AB4CC79198CBA9D0AD8727____________________________________ū",
         datePattern: "dd.MM.yyyy",
         hourTimePattern: "H a",
         millisecondTimePattern: "HH:mm:ss",

@@ -262,7 +262,7 @@
       mapTabTooltip: "خريطة",
       btnDescendingText: "تنازلي",
       btnAscendingText: "تصاعدي",
-      geometryUnavailableErrorMessage: "حدث خطأ أثناء إيجاد هندسة شكل المعالم",
+      geometryUnavailableErrorMessage: "بيت_Error finding the geometry of the feature_____________لاحقة",
       infoPopupOffErrorMessage: "لا توجد معلومات لعرضها",
       btnLoadMoreText: "تحميل المزيد",
       unavailableTitleText: "بلا عنوان",

@@ -2,11 +2,11 @@
 	 ({
 		viewer: {
 			loading: {
-				step1: "ĐANG TẢI ỨNG DỤNG",
+				step1: "Đ_LOADING STORY_____ớ",
 				step2: "ĐANG TẢI DỮ LIỆU",
 				step3: "ĐANG KHỞI TẠO",
 				fail: "Xin lỗi, tải chức năng Trượt nhanh thất bại",
-				loadBuilder: "ĐANG CHUYỂN SANG CHẾ ĐỘ THIẾT LẬP",				
+				loadBuilder: "ĐANG CHUYỂN SANG CHẾ ĐỘ THIẾT LẬP",
 				redirectSignIn: "ĐANG CHUYỂN HƯỚNG ĐẾN TRANG ĐĂNG NHẬP",
 				redirectSignIn2: "(bạn sẽ được chuyển hướng ở đây sau khi đăng nhập)",
 				failButton: "Thử lại"
@@ -17,16 +17,19 @@
 				invalidConfig: "Lỗi nghiêm trọng: Cấu hình không hợp lệ",
 				invalidConfigNoWebmap: "Lỗi nghiêm trọng: Cấu hình không hợp lệ (không xác định bản đồ web)",
 				createMap: "Không thể tạo bản đồ",
-				invalidApp: "Lỗi nghiêm trọng: Không thể tải ứng dụng",
+				invalidApp: "Đ_Fatal error: The story cannot be loaded_____________ớ",
 				initMobile: "Chào mừng bạn đến với ứng dụng web trượt nhanh. Ứng dụng này không được cấu hình. Bộ thiết lập tương tác không được hỗ trợ trên các thiết bị di động.",
+				initMobile2: "Đ_The Swipe builder is not supported at this display size__________________ớ.",
 				noBuilderIE8: "Bộ thiết lập tương tác chức năng trượt nhanh không được hỗ trợ trên trình duyệt Internet Explorer trước phiên bản 9.",
 				noLayerView: "Chào mừng bạn đến ứng dụng web Trượt nhanh.<br />Ứng dụng này vẫn chưa được cấu hình.",
-				appSave: "Lỗi khi lưu ứng dụng web",
+				appSave: "Đ_Error saving the web story_________ớ",
 				mapSave: "Lỗi khi lưu bản đồ web",
-				notAuthorized: "Bạn không được phép truy cập vào ứng dụng này",
+				notAuthorized: "Đ_You are not authorized to access this story______________ớ",
 				conflictingProjectionsTitle: "Xung đột Phép chiếu",
 				conflictingProjections: "Chức năng Trượt nhanh không hỗ trợ sử dụng hai bản đồ web với các phép chiếu khác nhau. Vui lòng vào phần thiết lập và sử dụng một bản đồ web có sử dụng cùng một phép chiếu với bản đồ web đầu tiên.",
-				cpButton: "Đóng"
+				cpButton: "Đóng",
+				unspecifiedConfigOwner: "Đ_Authorized owner hasn't been configured_____________ớ.",
+				invalidConfigOwner: "Đ_Story owner is not authorized__________ớ."
 			},
 			mobileView: {
 				hideIntro: "ẨN GIỚI THIỆU",
@@ -44,7 +47,7 @@
 		},
 		builder: {
 			builder: {
-				panelHeader: "CẤU HÌNH ỨNG DỤNG",
+				panelHeader: "Đ_STORY CONFIGURATION_______ớ",
 				buttonSave: "LƯU",
 				buttonHelp: "Trợ giúp",
 				buttonShare: "Chia sẻ",
@@ -64,13 +67,13 @@
 				popoverSaveWhenDone: "Đừng quên lưu khi bạn hoàn tất",
 				closeWithPendingChange: "Bạn có chắc chắn muốn xác nhận hành động này không? Các thay đổi của bạn sẽ bị mất.",
 				gotIt: "Ok",
-				savingApplication: "Đang lưu ứng dụng",
-				saveSuccess: "Đã lưu ứng dụng thành công",
+				savingApplication: "Đ_Saving story_____ớ",
+				saveSuccess: "Đ_Story saved successfully________ớ",
 				saveError: "Lưu thất bại, vui lòng thử lại",
 				saveError2: "Lưu thất bại do thẻ html trong tên hoặc mô tả không hợp lệ",
 				saveError3: "Không được để trống tiêu đề",
 				signIn: "Vui lòng đăng nhập bằng một tài khoản vào",
-				signInTwo: "để lưu ứng dụng."
+				signInTwo: "Đ_to save the story______ớ."
 			},
 			header:{
 				editMe: "Chỉnh sửa tôi!",
@@ -78,7 +81,7 @@
 				templateSubtitle: "Thiết lập phụ đề mẫu"
 			},
 			settings: {
-				settingsHeader: "Thiết lập ứng dụng",
+				settingsHeader: "Đ_Story settings_____ớ",
 				modalCancel: "Hủy",
 				modalApply: "Áp dụng"
 			},
@@ -138,7 +141,7 @@
 				settingsLayoutSpyGlass: "Kính thiên văn nhỏ",
 				settingsLayoutSelected: "Bố cục được chọn",
 				settingsLayoutSelect: "Chọn bố cục này",
-				settingsSaveConfirm: "Một số thay đổi của bạn yêu cầu bạn lưu và tải lại ứng dụng"
+				settingsSaveConfirm: "Đ_Some of your changes require that you save and reload the story____________________ớ"
 			},
 			settingsDataModel: {
 				settingsTabDataModel: "Loại Trượt nhanh",
@@ -166,7 +169,7 @@
 			},
 			settingsLegend: {
 				settingsTabLegend: "Bố cục Ứng dụng",
-				settingsLegendExplain: "Chọn thiết lập bố cục ứng dụng",
+				settingsLegendExplain: "Đ_Select the layout settings_________ớ.",
 				settingsLegendEnable: "Bật Chú giải",
 				settingsDescriptionEnable: "Bật Mô tả",
 				settingsBookmarksEnable: "Bật chuỗi Trượt nhanh",
@@ -174,7 +177,7 @@
 				settingsLocationSearchEnable: "Bật tìm kiếm định vị",
 				settingsGeolocatorEnable: "Bật bộ định vị địa lý",
 				settingsLegendHelpContent: "Để lọc các nội dung chú giải, sử dụng mục lục trình xem bản đồ web ArcGIS.com (Ẩn trong Chú giải)",
-				settingsSeriesHelpContent: "Chuỗi trượt nhanh là một lựa chọn điều hướng theo thẻ sẽ đưa trình xem đến một phạm vi cụ thể và hiển thị tiêu đề và văn bản mô tả trong bảng điều khiển bên. Trong thời gian kích hoạt ban đầu, các đánh dấu từ (các) bản đồ web sẽ được nhập vào và sử dụng để tự động điền trước vào thanh chuỗi. Việc vô hiệu hóa tùy chọn chuỗi sẽ làm tắt thanh chuỗi, nhưng cấu hình chuỗi được lưu trữ để sử dụng trong tương lai.", 
+				settingsSeriesHelpContent: "Chuỗi trượt nhanh là một lựa chọn điều hướng theo thẻ sẽ đưa trình xem đến một phạm vi cụ thể và hiển thị tiêu đề và văn bản mô tả trong bảng điều khiển bên. Trong thời gian kích hoạt ban đầu, các đánh dấu từ (các) bản đồ web sẽ được nhập vào và sử dụng để tự động điền trước vào thanh chuỗi. Việc vô hiệu hóa tùy chọn chuỗi sẽ làm tắt thanh chuỗi, nhưng cấu hình chuỗi được lưu trữ để sử dụng trong tương lai.",
 				settingsSeriesHelpContent2: "Chuỗi Trượt nhanh cho phép bạn tạo và sửa một loạt các địa điểm cùng với tiêu đề và văn bản. Nếu bản đồ web của bạn có đánh dấu, chúng sẽ được hiển thị. Bạn có thể tắt thanh chuỗi, nhưng cấu hình chuỗi được lưu giữ để sử dụng trong tương lai.",
 				settingsSeriesHelpLink: "Xem ví dụ về một ứng dụng có chuỗi trượt nhanh tại đây",
 				preview: "Xem trước giao diện người dùng",
@@ -215,39 +218,39 @@
 				}
 			},
 			share: {
-				firstSaveTitle: "Đã lưu ứng dụng thành công",
-				firstSaveHeader: "Ứng dụng hiện được lưu trong ArcGIS Online. Vui lòng đọc các câu trả lời cho các câu hỏi thường gặp sau.",
+				firstSaveTitle: "Đ_Story successfully saved________ớ",
+				firstSaveHeader: "Đ_Your story is now saved in ArcGIS Online. Please read the following answers to frequent questions______________________________ớ.",
 				firstSaveA1: "Nếu bạn không quen với ArcGIS Online hoặc muốn có một phím tắt để truy cập vào giao diện tác nghiệp, bạn có thể lưu liên kết sau đây:%LINK1%",
-				firstSaveA1bis: "Cũng có thể tìm thấy Ứng dụng trong <a href='%LINK2%' target='_blank'>thư mục nội dung ArcGIS Online của bạn</a>.",
-				firstSaveQ2: "Ứng dụng của tôi có được chia sẻ không?",
-				firstSaveA2: "Hiện tại Ứng dụng của bạn không được chia sẻ. Để chia sẻ nó, sử dụng nút CHIA SẺ.",
-				shareTitle: "Chia sẻ Ứng dụng của bạn",
-				sharePrivateHeader: "Ứng dụng của bạn không được chia sẻ, bạn có muốn chia sẻ nó không?",
+				firstSaveA1bis: "Đ_The story can also be found in your <a href='%LINK2%' target='_blank'>ArcGIS Online content folder</a>________________________________ớ.",
+				firstSaveQ2: "Đ_Is my story shared_______ớ?",
+				firstSaveA2: "Đ_Currently your story is not shared. To share it, use the SHARE button______________________ớ.",
+				shareTitle: "Đ_Share your story______ớ",
+				sharePrivateHeader: "Đ_Your story is not shared, would you like to share it_________________ớ?",
 				sharePrivateBtn1: "Chia sẻ công khai",
 				sharePrivateBtn2: "Chia sẻ với Tổ chức của tôi",
 				sharePrivateProgress: "Đang tiến hành chia sẻ...",
 				sharePrivateErr: "Chia sẻ thất bại, thử lại hoặc",
 				sharePrivateOk: "Chia sẽ cập nhật thành công, đang tải...",
-				shareStatus1: "Ứng dụng chưa được lưu",
-				shareStatus2: "Ứng dụng được chia sẻ công khai",
-				shareStatus3: "Ứng dụng được chia sẻ trong tổ chức",
-				shareStatus4: "Ứng dụng không được chia sẻ",
+				shareStatus1: "Đ_Story is not saved______ớ",
+				shareStatus2: "Đ_Story is shared publicly________ớ",
+				shareStatus3: "Đ_Story is shared within the organization_____________ớ",
+				shareStatus4: "Đ_Story is not shared_______ớ",
 				sharePreviewAsUser: "Xem trước",
-				shareHeader1: "Có thể truy cập <strong>Ứng dụng công khai</strong>.",
-				shareHeader2: "Các thành viên trong tổ chức của bạn có thể truy cập Ứng dụng (yêu cầu đăng nhập).",
-				shareLinkHeader: "Chia sẻ Ứng dụng với người xem",
+				shareHeader1: "Đ_Your story is <strong>publicly accessible</strong>________________ớ.",
+				shareHeader2: "Đ_Your story is accessible by your organization members (login is required)_______________________ớ.",
+				shareLinkHeader: "Đ_Share the story with your audience___________ớ",
 				shareLinkOpen: "MỞ",
 				learnMore: "Tìm hiểu thêm",
-				shareQ1Opt1: "Làm cách nào để giữ Ứng dụng riêng tư?",
-				shareQ1Opt2: "Làm cách nào để giữ Ứng dụng riêng tư hoặc chia sẻ công khai?",
+				shareQ1Opt1: "Đ_How do I keep the story private___________ớ?",
+				shareQ1Opt2: "Đ_How do I keep the story private or share it publicly_________________ớ?",
 				shareA1: "Sử dụng %SHAREIMG% trên <a href='%LINK1%' target='_blank'>trang mục ứng dụng</a>. Nếu bạn cũng muốn hủy chia sẻ bản đồ web, sử dụng <a href='%LINK2%' target='_blank'>trang mục bản đồ web</a>.",
 				shareA1bis: "Nếu bạn cũng muốn hủy chia sẻ Dịch vụ Đối tượng, sử dụng <a href='%LINK1%' target='_blank'>trang mục Dịch vụ Đối tượng</a>.",
-				shareQ2: "Làm cách nào để sửa Ứng dụng sau này?",
+				shareQ2: "Đ_How do I edit the story later__________ớ?",
 				shareQ2bis: "Làm cách nào để quay lại giao diện tác nghiệp?",
-				shareA2div1: "Lưu và sử dụng lại liên kết sau %LINK1% hoặc sử dụng <a href='%LINK2%' target='_blank'>trang mục ứng dụng</a>.",
-				shareA2div2: "Là chủ sở hữu của ứng dụng, khi bạn đăng nhập vào ArcGIS.com, ứng dụng có một nút để mở bộ thiết lập tương tác:",				
+				shareA2div1: "Đ_Save and reuse the following link %LINK1% or use <a href='%LINK2%' target='_blank'>the story item page</a>_________________________________ớ.",
+				shareA2div2: "Đ_As the owner of the story, when you are signed in on ArcGIS.com, the story includes a button to open the interactive builder_______________________________________ớ:",
 				shareQ3: "Dữ liệu được lưu trữ ở đâu?",
-				shareA3: "Cấu hình Ứng dụng được lưu trữ trong mục ứng dụng web này</a>.",
+				shareA3: "Đ_The story configuration is stored in this web application item</a>_____________________ớ.",
 				shareWarning: "Chia sẻ %WITH% đã bị vô hiệu hóa vì bạn không phải là chủ sở hữu <a href='%LINK%' target='_blank'>bản đồ web</a>.",
  				shareWarningWith1: "công khai",
  				shareWarningWith2: "công khai và với Tổ chức"
@@ -279,4 +282,3 @@
 		}
     })
 );
-

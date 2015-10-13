@@ -2,11 +2,11 @@
 	 ({
 		viewer: {
 			loading: {
-				step1: "ЗАГРУЗКА ПРИЛОЖЕНИЯ",
+				step1: "Ж_LOADING STORY_____Я",
 				step2: "ЗАГРУЗКА ДАННЫХ",
 				step3: "ИНИЦИАЛИЗАЦИЯ",
 				fail: "Загрузка инструмента Шторка (Swipe) не удалась",
-				loadBuilder: "ПЕРЕКЛЮЧИТЬСЯ В РЕЖИМ КОНСТРУКТОРА",				
+				loadBuilder: "ПЕРЕКЛЮЧИТЬСЯ В РЕЖИМ КОНСТРУКТОРА",
 				redirectSignIn: "ПЕРЕНАПРАВЛЕНИЕ НА СТРАНИЦУ ВХОДА",
 				redirectSignIn2: "(после входа вы будете перенаправлены сюда)",
 				failButton: "Повторить"
@@ -17,16 +17,19 @@
 				invalidConfig: "Критическая ошибка: недопустимая конфигурация",
 				invalidConfigNoWebmap: "Критическая ошибка: недопустимая конфигурация (веб-карта не выбрана)",
 				createMap: "Не удалось создать карту",
-				invalidApp: "Критическая ошибка: не удается загрузить приложение",
+				invalidApp: "Ж_Fatal error: The story cannot be loaded_____________Я",
 				initMobile: "Добро пожаловать в веб-приложение Шторка (Swipe). Приложение не настроено. Компоновщик не поддерживается на мобильных устройствах.",
+				initMobile2: "Ж_The Swipe builder is not supported at this display size__________________Я.",
 				noBuilderIE8: "Компоновщик Шторка (Swipe) не поддерживается в браузере Internet Explorer в версиях ранее 9.",
 				noLayerView: "Добро пожаловать в веб-приложение Штрока (Swipe).<br />Приложение еще не настроено.",
-				appSave: "Ошибка при сохранении веб-приложения",
+				appSave: "Ж_Error saving the web story_________Я",
 				mapSave: "Ошибка при сохранении веб-карты",
-				notAuthorized: "Вы не авторизованы для доступа к данному приложению",
+				notAuthorized: "Ж_You are not authorized to access this story______________Я",
 				conflictingProjectionsTitle: "Конфликтующие проекции",
 				conflictingProjections: "Шторка не поддерживает использование двух веб-карт с различными проекциями. Откройте настройки и используйте веб-карту с той же проекцией, что и первая веб-карта.",
-				cpButton: "Закрыть"
+				cpButton: "Закрыть",
+				unspecifiedConfigOwner: "Ж_Authorized owner hasn't been configured_____________Я.",
+				invalidConfigOwner: "Ж_Story owner is not authorized__________Я."
 			},
 			mobileView: {
 				hideIntro: "СКРЫТЬ ВВЕДЕНИЕ",
@@ -44,7 +47,7 @@
 		},
 		builder: {
 			builder: {
-				panelHeader: "КОНФИГУРАЦИЯ ПРИЛОЖЕНИЯ",
+				panelHeader: "Ж_STORY CONFIGURATION_______Я",
 				buttonSave: "СОХРАНИТЬ",
 				buttonHelp: "Справка",
 				buttonShare: "Доступ",
@@ -64,13 +67,13 @@
 				popoverSaveWhenDone: "Не забудьте сохранить изменения, когда закончите",
 				closeWithPendingChange: "Вы действительно хотите подтвердить это действие? Все изменения будут потеряны.",
 				gotIt: "Ok",
-				savingApplication: "Сохранение приложения",
-				saveSuccess: "Приложение успешно сохранено",
+				savingApplication: "Ж_Saving story_____Я",
+				saveSuccess: "Ж_Story saved successfully________Я",
 				saveError: "Сохранение не удалось, попробуйте еще раз",
 				saveError2: "Ошибка при сохранении из-за недопустимого html-тега в имени или описании",
 				saveError3: "Заголовок не может быть пустым",
 				signIn: "Войдите с помощью учетной записи в",
-				signInTwo: "чтобы сохранить приложение."
+				signInTwo: "Ж_to save the story______Я."
 			},
 			header:{
 				editMe: "Отредактируйте меня!",
@@ -78,7 +81,7 @@
 				templateSubtitle: "Ввести подзаголовок шаблона"
 			},
 			settings: {
-				settingsHeader: "Настройки приложения",
+				settingsHeader: "Ж_Story settings_____Я",
 				modalCancel: "Отмена",
 				modalApply: "Применить"
 			},
@@ -138,7 +141,7 @@
 				settingsLayoutSpyGlass: "Подзорная труба",
 				settingsLayoutSelected: "Выбранная компоновка",
 				settingsLayoutSelect: "Выбрать эту компоновку",
-				settingsSaveConfirm: "Некоторые внесенные изменения требуют сохранения и перезагрузки приложения"
+				settingsSaveConfirm: "Ж_Some of your changes require that you save and reload the story____________________Я"
 			},
 			settingsDataModel: {
 				settingsTabDataModel: "Тип шторки",
@@ -166,7 +169,7 @@
 			},
 			settingsLegend: {
 				settingsTabLegend: "Компоновка приложения",
-				settingsLegendExplain: "Выберите настройки компоновки приложения.",
+				settingsLegendExplain: "Ж_Select the layout settings_________Я.",
 				settingsLegendEnable: "Включить легенду",
 				settingsDescriptionEnable: "Включить описание",
 				settingsBookmarksEnable: "Включить несколько шторок",
@@ -174,7 +177,7 @@
 				settingsLocationSearchEnable: "Включить поиск локатора",
 				settingsGeolocatorEnable: "Включить геолокатор",
 				settingsLegendHelpContent: "Для настройки содержания легенды используйте таблицу содержания вьюера веб-карт ArcGIS.com (Скрыть в легенде)",
-				settingsSeriesHelpContent: "Серии шторок - это опция навигации, позволяющая пользователю переходить к определенному экстенту и отображать текст заголовка и описания на боковой панели.  При первоначальном включении закладки с веб-карт будут импортированы и использованы для создания серий.  Отключение опции работы с сериями приводит к отключению панели серий, но настройки серий остаются для использования в будущем.", 
+				settingsSeriesHelpContent: "Серии шторок - это опция навигации, позволяющая пользователю переходить к определенному экстенту и отображать текст заголовка и описания на боковой панели.  При первоначальном включении закладки с веб-карт будут импортированы и использованы для создания серий.  Отключение опции работы с сериями приводит к отключению панели серий, но настройки серий остаются для использования в будущем.",
 				settingsSeriesHelpContent2: "Серии шторок позволяют создавать и редактировать выбранные местоположения, а также их заголовки и текст. Если ваша веб-карта содержит закладки, то они будут отображаться. Вы можете отменить отображение серии шторок, но их настройки сохранятся для будущей работы.",
 				settingsSeriesHelpLink: "См. пример приложения с серией шторок здесь",
 				preview: "Просмотр UI",
@@ -215,39 +218,39 @@
 				}
 			},
 			share: {
-				firstSaveTitle: "Приложение успешно сохранено",
-				firstSaveHeader: "Ваше приложение успешно сохранено в ArcGIS Online. Прочитайте следующие ответы на часто задаваемые вопросы.",
+				firstSaveTitle: "Ж_Story successfully saved________Я",
+				firstSaveHeader: "Ж_Your story is now saved in ArcGIS Online. Please read the following answers to frequent questions______________________________Я.",
 				firstSaveA1: "Если вы не знакомы с ArcGIS Online или хотите получить ссылку на интерфейс построения, сохраните эту ссылку: %LINK1%",
-				firstSaveA1bis: "Приложение также можно найти в вашей <a href='%LINK2%' target='_blank'>директории ресурсов ArcGIS Online</a>.",
-				firstSaveQ2: "Опубликовано ли мое приложение?",
-				firstSaveA2: "В данный момент ваше приложение не опубликовано в общий доступ. Чтобы опубликовать его, используйте кнопку ОПУБЛИКОВАТЬ.",
-				shareTitle: "Публикация приложения",
-				sharePrivateHeader: "Приложение не опубликовано, хотите опубликовать его?",
+				firstSaveA1bis: "Ж_The story can also be found in your <a href='%LINK2%' target='_blank'>ArcGIS Online content folder</a>________________________________Я.",
+				firstSaveQ2: "Ж_Is my story shared_______Я?",
+				firstSaveA2: "Ж_Currently your story is not shared. To share it, use the SHARE button______________________Я.",
+				shareTitle: "Ж_Share your story______Я",
+				sharePrivateHeader: "Ж_Your story is not shared, would you like to share it_________________Я?",
 				sharePrivateBtn1: "Публикация в общий доступ",
 				sharePrivateBtn2: "Доступ только для моей организации",
 				sharePrivateProgress: "Публикация...",
 				sharePrivateErr: "Публикация не удалась, повторите попытку или",
 				sharePrivateOk: "Тип публикации успешно изменен, загрузка...",
-				shareStatus1: "Приложение не сохранено",
-				shareStatus2: "К приложению предоставлен общий доступ",
-				shareStatus3: "Приложение опубликовано в пределах организации",
-				shareStatus4: "Приложение не опубликовано",
+				shareStatus1: "Ж_Story is not saved______Я",
+				shareStatus2: "Ж_Story is shared publicly________Я",
+				shareStatus3: "Ж_Story is shared within the organization_____________Я",
+				shareStatus4: "Ж_Story is not shared_______Я",
 				sharePreviewAsUser: "Просмотр",
-				shareHeader1: "Ваше приложение имеет <strong>общий доступ</strong>.",
-				shareHeader2: "Ваше приложение доступно для сотрудников вашей организации (требуется учетная запись).",
-				shareLinkHeader: "Опубликовать приложение для вашей аудитории",
+				shareHeader1: "Ж_Your story is <strong>publicly accessible</strong>________________Я.",
+				shareHeader2: "Ж_Your story is accessible by your organization members (login is required)_______________________Я.",
+				shareLinkHeader: "Ж_Share the story with your audience___________Я",
 				shareLinkOpen: "ОТКРЫТЬ",
 				learnMore: "Подробнее",
-				shareQ1Opt1: "Как сохранить приложение частным?",
-				shareQ1Opt2: "Как я могу сохранить частный доступ к приложению или предоставить к нему общий доступ?",
+				shareQ1Opt1: "Ж_How do I keep the story private___________Я?",
+				shareQ1Opt2: "Ж_How do I keep the story private or share it publicly_________________Я?",
 				shareA1: "Используйте %SHAREIMG% на <a href='%LINK1%' target='_blank'>странице элемента приложения</a>. Если вы хотите закрыть общий доступ к веб-карте, перейдите на <a href='%LINK2%' target='_blank'>страницу элемента веб-карты</a>.",
 				shareA1bis: "Если вы желаете убрать из общего доступа сервис объектов, используйте <a href='%LINK1%' target='_blank'>страницу элемента сервиса объектов</a>.",
-				shareQ2: "Как позже отредактировать приложение?",
+				shareQ2: "Ж_How do I edit the story later__________Я?",
 				shareQ2bis: "Как мне вернуться к интерфейсу создания?",
-				shareA2div1: "Сохраните и используйте повторно следующую ссылку %LINK1% или обратитесь к<a href='%LINK2%' target='_blank'>странице элемента приложения</a>.",
-				shareA2div2: "Как владелец приложения, при входе на ArcGIS.com вы увидите в приложении кнопку для открытия интерактивного конструктора:",				
+				shareA2div1: "Ж_Save and reuse the following link %LINK1% or use <a href='%LINK2%' target='_blank'>the story item page</a>_________________________________Я.",
+				shareA2div2: "Ж_As the owner of the story, when you are signed in on ArcGIS.com, the story includes a button to open the interactive builder_______________________________________Я:",
 				shareQ3: "Где хранятся данные?",
-				shareA3: "Настройки приложения хранятся в элементе веб-приложения</a>.",
+				shareA3: "Ж_The story configuration is stored in this web application item</a>_____________________Я.",
 				shareWarning: "Доступ к %WITH%  был отключен, потому что вы не являетесь владельцем <a href='%LINK%' target='_blank'>webmap</a>.",
  				shareWarningWith1: "общий доступ",
  				shareWarningWith2: "общий и с Организацией"
@@ -279,4 +282,3 @@
 		}
     })
 );
-

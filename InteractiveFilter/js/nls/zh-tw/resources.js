@@ -9,7 +9,8 @@
       filterInstructions: "透過指定值篩選圖層。",
       filterOr: "以下任意表達式必須為 true。",
       filterAnd: "以下表達式必須全部為 true。",
-      filterNo:  "Web map does not contain any interactive filters. View the <a target='_blank' href='http://doc.arcgis.com/en/arcgis-online/use-maps/apply-filters.htm'>Apply Filter</a> help topic for details on how to create a filter in your web map.",
+      filterNo:  "Web map does not contain any interactive filters. View the ${link} help topic for details on how to create a filter in your web map.",
+      filterLink: "試_http://doc.arcgis.com/en/arcgis-online/use-maps/apply-filters.htm_____________________驗",
       errors:{
         message: "建立篩選應用程式時出現問題"
       }

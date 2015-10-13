@@ -262,7 +262,7 @@
       mapTabTooltip: "Mapa",
       btnDescendingText: "Malej",
       btnAscendingText: "Rosn",
-      geometryUnavailableErrorMessage: "Wystąpił błąd podczas wyszukiwania geometrii obiektu",
+      geometryUnavailableErrorMessage: "ł_Error finding the geometry of the feature_____________ą",
       infoPopupOffErrorMessage: "Brak informacji do wyświetlenia",
       btnLoadMoreText: "Wczytaj więcej",
       unavailableTitleText: "Bez tytułu",

@@ -35,7 +35,8 @@ define(
          "directions": "الاتجاهات",
          "filter": "مُنقي",
          "close": "إغلاق",
-         "reverse": "عكس"
+         "reverse": "عكس",
+         "mode": "بيت_Switch mode Drive/Walk________لاحقة"
       }
    })
 );

@@ -31,7 +31,8 @@ define(
 hình ứng dụng để thêm một đoạn trích tùy chọn cho bảng điều khiển."
     },
     time: {
-        enableTimeMessage: "Bản đồ web không có chứa bất kỳ lớp nào có chức năng kích hoạt thời gian. Tham khảo chủ đề hỗ trợ <a target=\'_blank\' href=\'http://doc.arcgis.com/en/arcgis-online/create-maps/configure-time.htm#ESRI_SECTION1_F1D4A275B4AB4CC79198CBA9D0AD8727\'>Cấu hình thiết lập thời gian</a> để biết thêm chi tiết. Để sử dụng mẫu mà không hiển thị thời gian, sử dụng bảng điều khiển cấu hình để tắt tùy chọn thời gian.",
+        enableTimeMessage: "Đ_The specified web map does not contain any time enabled layers. View the ${link} help topic for details. To use the template without displaying time use the configuration panel to disable the time option______________________________________________________________ớ.",
+        enableTimeMessageLink: "Đ_http://doc.arcgis.com/en/arcgis-online/create-maps/configure-time.htm#ESRI_SECTION1_F1D4A275B4AB4CC79198CBA9D0AD8727____________________________________ớ",
         datePattern: "d MMMM, yyyy",
         hourTimePattern: "h a",
         millisecondTimePattern: "h:mm:ss a",

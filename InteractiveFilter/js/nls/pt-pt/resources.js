@@ -9,7 +9,8 @@
       filterInstructions: "Filtre a camada definindo valores.",
       filterOr: "Qualquer uma das expressões seguintes tem de ser verdadeira.",
       filterAnd: "Todas as expressões seguintes têm de ser verdadeiras.",
-      filterNo:  "Web map does not contain any interactive filters. View the <a target='_blank' href='http://doc.arcgis.com/en/arcgis-online/use-maps/apply-filters.htm'>Apply Filter</a> help topic for details on how to create a filter in your web map.",
+      filterNo:  "Web map does not contain any interactive filters. View the ${link} help topic for details on how to create a filter in your web map.",
+      filterLink: "ã_http://doc.arcgis.com/en/arcgis-online/use-maps/apply-filters.htm_____________________Ç",
       errors:{
         message: "Problema ao criar a aplicação de filtros"
       }

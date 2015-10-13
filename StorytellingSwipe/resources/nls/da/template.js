@@ -2,11 +2,11 @@
 	 ({
 		viewer: {
 			loading: {
-				step1: "INDLÆSER APPLIKATION",
+				step1: "ø_LOADING STORY_____å",
 				step2: "INDLÆSER DATA",
 				step3: "STARTER",
 				fail: "Beklager, Swipe-indlæsning mislykkedes",
-				loadBuilder: "SKIFTER TIL BUILDER-TILSTAND",				
+				loadBuilder: "SKIFTER TIL BUILDER-TILSTAND",
 				redirectSignIn: "OMDIRIGERER TIL LOG IND-SIDE",
 				redirectSignIn2: "(du omdirigeres hertil efter login)",
 				failButton: "Prøv igen"
@@ -17,16 +17,19 @@
 				invalidConfig: "Uoprettelig fejl: Ugyldig konfiguration",
 				invalidConfigNoWebmap: "Uoprettelig fejl: Ugyldig konfiguration (intet webkort angivet)",
 				createMap: "Kan ikke oprette kort",
-				invalidApp: "Uoprettelig fejl: Applikationen kan ikke indlæses",
+				invalidApp: "ø_Fatal error: The story cannot be loaded_____________å",
 				initMobile: "Velkommen til swipe-webapplikationen. Applikationen er ikke konfigureret. Det interaktive builder-program understøttes ikke på mobile enheder.",
+				initMobile2: "ø_The Swipe builder is not supported at this display size__________________å.",
 				noBuilderIE8: "Swipe-builderprogrammet understøttes ikke i Internet Explorer før version 9.",
 				noLayerView: "Velkommen til Swipe-webapplikationen.<br />Applikationen er endnu ikke konfigureret.",
-				appSave: "Fejl ved lagring af webapplikationen",
+				appSave: "ø_Error saving the web story_________å",
 				mapSave: "Fejl ved lagring af webkortet",
-				notAuthorized: "Du er ikke autoriseret til at få adgang til denne applikation",
+				notAuthorized: "ø_You are not authorized to access this story______________å",
 				conflictingProjectionsTitle: "Konfliktende projektioner",
 				conflictingProjections: "Swipe understøtter ikke brug af to webkort med forskellige projektioner. Åbn indstillinger, og brug et webkort, der anvender den samme projektion som det første webkort.",
-				cpButton: "Luk"
+				cpButton: "Luk",
+				unspecifiedConfigOwner: "ø_Authorized owner hasn't been configured_____________å.",
+				invalidConfigOwner: "ø_Story owner is not authorized__________å."
 			},
 			mobileView: {
 				hideIntro: "SKJUL INTRO",
@@ -44,7 +47,7 @@
 		},
 		builder: {
 			builder: {
-				panelHeader: "APPLIKATIONSKONFIGURATION",
+				panelHeader: "ø_STORY CONFIGURATION_______å",
 				buttonSave: "GEM",
 				buttonHelp: "Hjælp",
 				buttonShare: "Del",
@@ -64,13 +67,13 @@
 				popoverSaveWhenDone: "Glem ikke at gemme, når du er færdig",
 				closeWithPendingChange: "Er du sikker på, at du vil bekræfte denne handling? Dine ændringer vil gå tabt.",
 				gotIt: "OK",
-				savingApplication: "Gemmer applikation",
-				saveSuccess: "Applikation gemt med succes",
+				savingApplication: "ø_Saving story_____å",
+				saveSuccess: "ø_Story saved successfully________å",
 				saveError: "Lagring mislykkedes, prøv igen",
 				saveError2: "Lagring mislykkedes pga. en ugyldig html-kode i et navn eller beskrivelse",
 				saveError3: "Titlen kan ikke være tom",
 				signIn: "Log ind med en konto på",
-				signInTwo: "for at gemme applikationen."
+				signInTwo: "ø_to save the story______å."
 			},
 			header:{
 				editMe: "Redigér mig!",
@@ -78,7 +81,7 @@
 				templateSubtitle: "Indstil skabelonundertitel"
 			},
 			settings: {
-				settingsHeader: "Applikationsindstillinger",
+				settingsHeader: "ø_Story settings_____å",
 				modalCancel: "Annullér",
 				modalApply: "Anvend"
 			},
@@ -138,7 +141,7 @@
 				settingsLayoutSpyGlass: "Kikkert",
 				settingsLayoutSelected: "Vælg layout",
 				settingsLayoutSelect: "Vælg dette layout",
-				settingsSaveConfirm: "Nogle af dine ændringer kræver, at du gemmer og genindlæser applikationen"
+				settingsSaveConfirm: "ø_Some of your changes require that you save and reload the story____________________å"
 			},
 			settingsDataModel: {
 				settingsTabDataModel: "Swipe-type",
@@ -166,7 +169,7 @@
 			},
 			settingsLegend: {
 				settingsTabLegend: "App-layout",
-				settingsLegendExplain: "Vælg indstillinger for applikationslayout.",
+				settingsLegendExplain: "ø_Select the layout settings_________å.",
 				settingsLegendEnable: "Aktivér signaturforklaring",
 				settingsDescriptionEnable: "Aktivér beskrivelse",
 				settingsBookmarksEnable: "Aktivér Swipe-serie",
@@ -174,7 +177,7 @@
 				settingsLocationSearchEnable: "Aktivér lokatorsøgning",
 				settingsGeolocatorEnable: "Aktivér geolokator",
 				settingsLegendHelpContent: "Hvis du vil forfine signaturforklaringens indhold, kan du bruge indholdsfortegnelsen i ArcGIS.com-webkortviseren (Skjul i signaturforklaring)",
-				settingsSeriesHelpContent: "Når du trykker på swipe-serien, vil kortviseren navigere til en bestemt udstrækning og vise en titel og en beskrivelsestekst i sidepanelet. Ved første aktivering importeres dine webkortbogmærker, og de anvendes til at udfylde serielinjen på forhånd. Hvis du deaktiverer seriefunktionen, slås seriellinjen fra, men seriekonfigurationen bevares til fremtidig brug.", 
+				settingsSeriesHelpContent: "Når du trykker på swipe-serien, vil kortviseren navigere til en bestemt udstrækning og vise en titel og en beskrivelsestekst i sidepanelet. Ved første aktivering importeres dine webkortbogmærker, og de anvendes til at udfylde serielinjen på forhånd. Hvis du deaktiverer seriefunktionen, slås seriellinjen fra, men seriekonfigurationen bevares til fremtidig brug.",
 				settingsSeriesHelpContent2: "Med swipe-serien kan du oprette og redigere et udvalg af steder med ledsagende titler og tekst. Hvis dit webkort har bogmærker, bliver disse vist. Du kan deaktivere serien, men konfigurationen vil blive bevaret til fremtidig brug.",
 				settingsSeriesHelpLink: "Se et eksempel på en applikation med swipe-serien her",
 				preview: "UI-forhåndsvisning",
@@ -215,39 +218,39 @@
 				}
 			},
 			share: {
-				firstSaveTitle: "Applikationen er gemt",
-				firstSaveHeader: "Din applikation er nu gemt i ArcGIS Online. Læs svarene på ofte stillede spørgsmål i det følgende.",
+				firstSaveTitle: "ø_Story successfully saved________å",
+				firstSaveHeader: "ø_Your story is now saved in ArcGIS Online. Please read the following answers to frequent questions______________________________å.",
 				firstSaveA1: "Hvis du ikke er fortrolig med ArcGIS Online, eller hvis du ønsker en genvej for at få adgang til forfattergrænsefladen, kan du gemme dette link: %LINK1%",
-				firstSaveA1bis: "Applikationen findes også i din mappe med indhold i <a href='%LINK2%' target='_blank'>ArcGIS Online</a>.",
-				firstSaveQ2: "Deles min applikation?",
-				firstSaveA2: "Din applikation er ikke delt i øjeblikket. Brug knappen DEL for at dele den.",
-				shareTitle: "Del din applikation",
-				sharePrivateHeader: "Din applikation er ikke delt. Skal den deles?",
+				firstSaveA1bis: "ø_The story can also be found in your <a href='%LINK2%' target='_blank'>ArcGIS Online content folder</a>________________________________å.",
+				firstSaveQ2: "ø_Is my story shared_______å?",
+				firstSaveA2: "ø_Currently your story is not shared. To share it, use the SHARE button______________________å.",
+				shareTitle: "ø_Share your story______å",
+				sharePrivateHeader: "ø_Your story is not shared, would you like to share it_________________å?",
 				sharePrivateBtn1: "Del offentligt",
 				sharePrivateBtn2: "Del med min organisation",
 				sharePrivateProgress: "Deling i gang...",
 				sharePrivateErr: "Deling mislykkedes, prøv igen eller",
 				sharePrivateOk: "Deling blev opdateret med succes, indlæser...",
-				shareStatus1: "Applikationen er ikke gemt",
-				shareStatus2: "Applikationen er delt offentligt",
-				shareStatus3: "Applikationen er delt inden for organisationen",
-				shareStatus4: "Applikationen er ikke delt",
+				shareStatus1: "ø_Story is not saved______å",
+				shareStatus2: "ø_Story is shared publicly________å",
+				shareStatus3: "ø_Story is shared within the organization_____________å",
+				shareStatus4: "ø_Story is not shared_______å",
 				sharePreviewAsUser: "Forhåndsvisning",
-				shareHeader1: "Din applikation er <strong>offentligt tilgængelig</strong>.",
-				shareHeader2: "Medlemmer af din organisation har adgang til din applikation (login er påkrævet).",
-				shareLinkHeader: "Del applikationen med dit publikum",
+				shareHeader1: "ø_Your story is <strong>publicly accessible</strong>________________å.",
+				shareHeader2: "ø_Your story is accessible by your organization members (login is required)_______________________å.",
+				shareLinkHeader: "ø_Share the story with your audience___________å",
 				shareLinkOpen: "ÅBN",
 				learnMore: "Find ud af mere",
-				shareQ1Opt1: "Hvordan bevarer jeg applikationen, så den er privat?",
-				shareQ1Opt2: "Hvordan bevarer jeg applikationen privat, så den er privat, eller deler den offentligt?",
+				shareQ1Opt1: "ø_How do I keep the story private___________å?",
+				shareQ1Opt2: "ø_How do I keep the story private or share it publicly_________________å?",
 				shareA1: "Brug %SHAREIMG% on <a href='%LINK1%' target='_blank'>siden med applikationselementet</a>. Brug <a href='%LINK2%' target='_blank'>siden med webkortelementer</a>, hvis webkortet heller ikke skal deles.",
 				shareA1bis: "Hvis du også vil ophæve deling af featuretjenesten, skal du bruge <a href='%LINK1%' target='_blank'>featuretjenestens elementoplysningsside</a>.",
-				shareQ2: "Hvordan redigerer jeg applikationen senere?",
+				shareQ2: "ø_How do I edit the story later__________å?",
 				shareQ2bis: "Hvordan kommer jeg tilbage til redigeringsgrænsefladen?",
-				shareA2div1: "Gem og genbrug følgende link %LINK1%, eller brug <a href='%LINK2%' target='_blank'>applikationens elementoplysningsside</a>.",
-				shareA2div2: "Når du som ejer af applikationen er logget ind på ArcGIS.com, indeholder applikationen en knap, der åbner det interaktive builder-program:",				
+				shareA2div1: "ø_Save and reuse the following link %LINK1% or use <a href='%LINK2%' target='_blank'>the story item page</a>_________________________________å.",
+				shareA2div2: "ø_As the owner of the story, when you are signed in on ArcGIS.com, the story includes a button to open the interactive builder_______________________________________å:",
 				shareQ3: "Hvor er dataene gemt?",
-				shareA3: "Applikationens konfiguration gemmes i dette element med webapplikationer</a>.",
+				shareA3: "ø_The story configuration is stored in this web application item</a>_____________________å.",
 				shareWarning: "Deling %WITH% er blevet deaktiveret, fordi du ikke er ejer af <a href='%LINK%' target='_blank'>webkortet</a>.",
  				shareWarningWith1: "offentligt",
  				shareWarningWith2: "offentligt og med organiaationen"
@@ -279,4 +282,3 @@
 		}
     })
 );
-

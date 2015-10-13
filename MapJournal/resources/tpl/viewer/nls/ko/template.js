@@ -5,33 +5,33 @@
 				close: "닫기"
 			},
 			loading: {
-				step1: "응용프로그램을 불러오는 중",
+				step1: "한_Loading story_____빠",
 				step2: "데이터를 불러오는 중",
 				step3: "초기화하는 중",
 				loadBuilder: "빌더로 전환하는 중",
 				long: "맵 저널을 초기화하는 중",
 				long2: "기다려 주셔서 감사합니다.",
-				failButton: "응용프로그램 다시 로드"
+				failButton: "한_Reload the story______빠"
 			},
 			signin: {
 				title: "인증 필요",
-				explainViewer: "응용프로그램에 접근하려면 %PORTAL_LINK%의 계정으로 로그인하세요.",
-				explainBuilder: "응용프로그램을 구성하려면 %PORTAL_LINK%의 계정으로 로그인하세요."
+				explainViewer: "한_Please sign in with an account on %PORTAL_LINK% to access the story_____________________빠.",
+				explainBuilder: "한_Please sign in with an account on %PORTAL_LINK% to configure the story______________________빠."
 			},
 			errors: {
 				boxTitle: "오류가 발생했습니다.",
 				invalidConfig: "잘못된 구성",
 				invalidConfigNoApp: "웹 매핑 응용프로그램 식별자가 index.html에 지정되어 있지 않습니다.",
 				unspecifiedConfigOwner: "권한 있는 소유자가 구성되지 않음",
-				invalidConfigOwner: "응용프로그램 소유자가 인증되지 않음",
+				invalidConfigOwner: "한_Story owner is not authorized__________빠.",
 				createMap: "맵을 생성할 수 없음",
 				invalidApp: "%TPL_NAME%이(가) 존재하지 않거나 여기에 액세스할 수 없습니다.",
 				appLoadingFail: "문제가 발생했습니다. %TPL_NAME%이(가) 올바르게 로드되지 않았습니다.",
-				notConfiguredDesktop: "응용프로그램이 아직 구성되지 않았습니다.",
-				notConfiguredMobile: "이 화면 해상도에서는 %TPL_NAME% 빌더가 지원되지 않습니다.",
-				notAuthorized: "이 응용프로그램에 액세스할 권한이 없습니다.",
+				notConfiguredDesktop: "한_The story is not configured yet___________빠.",
+				notConfiguredMobile: "한_The %TPL_NAME% builder is not supported at this display size___________________빠.",
+				notAuthorized: "한_You are not authorized to access this story______________빠",
 				noBuilderIE: "이 빌더는 %VERSION%. %UPGRADE% 이전 버전의 Internet Explorer에서 지원되지 않습니다.",
-				noViewerIE: "이 응용프로그램은 %VERSION%. %UPGRADE% 이전 버전의 Internet Explorer에서 지원되지 않습니다.",
+				noViewerIE: "한_This story is not supported in Internet Explorer before version %VERSION%. %UPGRADE%__________________________빠",
 				upgradeBrowser: "<a href='http://browsehappy.com/' target='_blank'>브라우저를 업데이트하세요</a>.",
 				mapLoadingFail: "문제가 발생하여 맵이 올바르게 로드되지 않았습니다.",
 				signOut: "로그아웃"
@@ -60,7 +60,10 @@
 				bitlyTooltip: "짧은 링크 가져오기",
 				templateTitle: "템플릿 제목 설정",
 				templateSubtitle: "템플릿 부제목 설정",
-				share: "공유"
+				share: "공유",
+				checking: "한_Checking your story content_________빠",
+				fix: "한_Fix issues in your story________빠",
+				noerrors: "한_No issues detected______빠"
 			},
 			overviewFromCommon: {
 				title: "개요 맵"

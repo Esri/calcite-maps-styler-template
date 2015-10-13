@@ -2,7 +2,7 @@
 	 ({
 		commonWebmap: {
 			selector: {
-				lblWebMap: "Web xάρτης",
+				lblWebMap: "Đ_Map__ớ",
 				lblLocation: "Τοποθεσία",
 				lblContent: "Περιεχόμενο",
 				lblPopup: "Αναδυόμενο παράθυρο",
@@ -17,12 +17,14 @@
 				and: "και",
 				action: "Ενέργεια στην ενότητα",
 				actions: "Ενέργεια στις ενότητες",
-				originalWebmap: "Ο web χάρτης που χρησιμοποιείται για τη δημοσίευση του %TPL_NAME%",
-				browseMaps: "Αναζήτηση χαρτών",
-				current: "Τρέχων web χάρτης",
-				select: "Επιλέξτε έναν web χάρτη",
-				newMap: "Νέα επιλογή web χάρτη",
-				webmapDefault: "Προεπιλογή web χάρτη",
+				originalWebmap: "Đ_Map used to publish the %TPL_NAME%___________ớ",
+				browseMaps: "Đ_Select a map_____ớ",
+				createMap: "Đ_Create a map_____ớ",
+				current: "Đ_Current map____ớ",
+				select: "Đ_Select or create a map________ớ",
+				newMap: "Đ_Newly selected map______ớ",
+				newCreatedMap: "Đ_Newly created map______ớ",
+				webmapDefault: "Đ_Map default____ớ",
 				customCfg: "Προσαρμοσμένη διαμόρφωση",
 				tooltipLocation: "Ορίστε την τοποθεσία που θα εμφανίζει αυτός ο χάρτης.",
 				tooltipContent: "Ορίστε τα ορατά θεματικά επίπεδα.",
@@ -47,6 +49,29 @@
 				popupExplain: "Κάντε κλικ σε ένα στοιχείο για να ανοίξετε το αναδυόμενο παράθυρο που θέλετε να εμφανίζεται.",
 				popupSave: "Αποθήκευση της διαμόρφωσης του αναδυόμενου παραθύρου",
 				hintNavigation: "Η πλοήγηση χάρτη είναι απενεργοποιημένη."
+			},
+			editor: {
+				loading: "Đ_Please wait while the map editor is loading______________ớ",
+				newTitle: "Đ_Create new map_____ớ",
+				editTitle: "Đ_Edit map___ớ",
+				titleLbl: "Đ_Title___ớ",
+				titlePh: "Đ_Map title_____ớ...",
+				folderLbl: "Đ_The map will be created in the same folder as the story__________________ớ.",
+				creating: "Đ_Creating the map______ớ",
+				saving: "Đ_Saving the map_____ớ",
+				success: "Đ_Map saved____ớ",
+				successCreate: "Đ_Map created____ớ",
+				cancelTitle: "Đ_Discard any unsaved changes_________ớ?",
+				errorDuplicate: "Đ_You already have a map with that title____________ớ",
+				errorCreate: "Đ_Unable to create map. Please try again_____________ớ.",
+				errorSave: "Đ_Unable to save map. Please try again____________ớ.",
+				notavailable1: "Đ_Sorry, creating or editing a map is not supported in Firefox due to a technical limitation. You may want to build your story using a different web browser or use the following workaround_________________________________________________________ớ.",
+				notavailable2: "Đ_Sorry, creating or editing a map is not supported since the story map application is not hosted in %PRODUCT%. Please contact your ArcGIS administrator for more information_____________________________________________________ớ.",
+				notavailable3: "Đ_Sorry, creating or editing a map is not supported on this version of Portal for ArcGIS (requires 10.4 or later). Please contact your ArcGIS administrator for more information______________________________________________________ớ.",
+				notavailable4: "Đ_You can create a map using %MV%, then come back here to add it to your story________________________ớ.",
+				notavailable5: "Đ_You can edit the map using %MV%, then come back here and %apply% to see your changes___________________________ớ.",
+				notavailable6: "Đ_map viewer____ớ",
+				notavailable7: "Đ_reload the map_____ớ"
 			}
 		},
 		configure: {
@@ -57,11 +82,11 @@
 					contentLabel: "Το Περιεχόμενό μου",
 					favoritesLabel: "Τα Αγαπημένα μου"
 				},
-				title: "Επιλογή web χάρτη",
+				title: "Đ_Select a map_____ớ",
 				searchTitle: "Αναζήτηση",
 				ok: "OK",
 				cancel: "Άκυρο",
-				placeholder: "Εισαγάγετε όρο αναζήτησης ή ID web χάρτη..."
+				placeholder: "Đ_Enter search term or web map ID___________ớ..."
 			}
 		}
 	})

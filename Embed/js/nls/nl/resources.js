@@ -26,7 +26,8 @@ define(
             },
             "basemap":{
                     "label": "Basiskaart",
-                    "title": "Een basiskaart selecteren"
+                    "title": "Een basiskaart selecteren",
+                    "close": "Ĳ_Close___ä"
             },
             "legend":{
                 "title": "Legenda"
@@ -42,6 +43,7 @@ define(
 
         },
         "map": {
+            "toggle": "Ĳ_Toggle side panel______ä",
             "error": "Kan geen kaart maken"
         }
     })

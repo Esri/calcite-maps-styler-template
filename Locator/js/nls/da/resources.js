@@ -35,7 +35,8 @@ define(
          "directions": "Vejledninger",
          "filter": "Filtrér",
          "close": "Luk",
-         "reverse": "Modsat"
+         "reverse": "Modsat",
+         "mode": "ø_Switch mode Drive/Walk________å"
       }
    })
 );

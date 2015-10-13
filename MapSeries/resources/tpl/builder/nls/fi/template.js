@@ -70,7 +70,7 @@
 			},
 			organizePopup: {
 				title: "Järjestä",
-				lblHeader: "Järjestä sarja vetämällä ja pudottamalla asetteluja %LBL_LAYOUT%.",
+				lblHeader: "Å_Drag and drop %LBL_LAYOUT% to organize your story________________ö.",
 				lblColTitle: "Otsikko",
 				lblColStatus: "Tila",
 				btnApplyWarning: "Vahvista %NB%:n asettelun %LBL_LAYOUT% poisto",

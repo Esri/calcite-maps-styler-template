@@ -2,7 +2,7 @@
 	 ({
 		commonWebmap: {
 			selector: {
-				lblWebMap: "Webkort",
+				lblWebMap: "ø_Map__å",
 				lblLocation: "Position",
 				lblContent: "Indhold",
 				lblPopup: "Pop-up",
@@ -17,12 +17,14 @@
 				and: "og",
 				action: "Handling i sektion",
 				actions: "Handling i sektioner",
-				originalWebmap: "Webkort, der blev brugt til at publicere %TPL_NAME%",
-				browseMaps: "Gennemse for at finde kort",
-				current: "Aktuelt webkort",
-				select: "Vælg et webkort",
-				newMap: "Webkort, der er valgt for nylig",
-				webmapDefault: "Standard-webkort",
+				originalWebmap: "ø_Map used to publish the %TPL_NAME%___________å",
+				browseMaps: "ø_Select a map_____å",
+				createMap: "ø_Create a map_____å",
+				current: "ø_Current map____å",
+				select: "ø_Select or create a map________å",
+				newMap: "ø_Newly selected map______å",
+				newCreatedMap: "ø_Newly created map______å",
+				webmapDefault: "ø_Map default____å",
 				customCfg: "Tilpasset konfiguration",
 				tooltipLocation: "Definér den position, som kortet skal vise.",
 				tooltipContent: "Definér synlige lag.",
@@ -47,6 +49,29 @@
 				popupExplain: "Klik på et objekt for at åbne den pop-up, du vil have vist",
 				popupSave: "Gem pop-up-konfiguration",
 				hintNavigation: "Kortnavigation er deaktiveret."
+			},
+			editor: {
+				loading: "ø_Please wait while the map editor is loading______________å",
+				newTitle: "ø_Create new map_____å",
+				editTitle: "ø_Edit map___å",
+				titleLbl: "ø_Title___å",
+				titlePh: "ø_Map title_____å...",
+				folderLbl: "ø_The map will be created in the same folder as the story__________________å.",
+				creating: "ø_Creating the map______å",
+				saving: "ø_Saving the map_____å",
+				success: "ø_Map saved____å",
+				successCreate: "ø_Map created____å",
+				cancelTitle: "ø_Discard any unsaved changes_________å?",
+				errorDuplicate: "ø_You already have a map with that title____________å",
+				errorCreate: "ø_Unable to create map. Please try again_____________å.",
+				errorSave: "ø_Unable to save map. Please try again____________å.",
+				notavailable1: "ø_Sorry, creating or editing a map is not supported in Firefox due to a technical limitation. You may want to build your story using a different web browser or use the following workaround_________________________________________________________å.",
+				notavailable2: "ø_Sorry, creating or editing a map is not supported since the story map application is not hosted in %PRODUCT%. Please contact your ArcGIS administrator for more information_____________________________________________________å.",
+				notavailable3: "ø_Sorry, creating or editing a map is not supported on this version of Portal for ArcGIS (requires 10.4 or later). Please contact your ArcGIS administrator for more information______________________________________________________å.",
+				notavailable4: "ø_You can create a map using %MV%, then come back here to add it to your story________________________å.",
+				notavailable5: "ø_You can edit the map using %MV%, then come back here and %apply% to see your changes___________________________å.",
+				notavailable6: "ø_map viewer____å",
+				notavailable7: "ø_reload the map_____å"
 			}
 		},
 		configure: {
@@ -57,11 +82,11 @@
 					contentLabel: "Mit indhold",
 					favoritesLabel: "Mine favoritter"
 				},
-				title: "Vælg webkort",
+				title: "ø_Select a map_____å",
 				searchTitle: "Søg",
 				ok: "OK",
 				cancel: "Annullér",
-				placeholder: "Indtast en søgeterm eller et webkort-ID..."
+				placeholder: "ø_Enter search term or web map ID___________å..."
 			}
 		}
 	})

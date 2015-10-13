@@ -5,33 +5,33 @@
 				close: "Užverti"
 			},
 			loading: {
-				step1: "Įkeliama aplikacija",
+				step1: "Į_Loading story_____š",
 				step2: "Įkeliami duomenys",
 				step3: "Inicijuojama",
 				loadBuilder: "Perjungiama į kūrimo priemonę",
 				long: "Žemėlapių žurnalas inicijuojamas",
 				long2: "Ačiū, kad palaukėte.",
-				failButton: "Įkelti aplikaciją iš naujo"
+				failButton: "Į_Reload the story______š"
 			},
 			signin: {
 				title: "Autentikacija būtina",
-				explainViewer: "Norėdami pasiekti aplikaciją, prisijunkite prie paskyros, esančios %PORTAL_LINK%.",
-				explainBuilder: "Norėdami konfigūruoti aplikaciją, prisijunkite prie paskyros, esančios %PORTAL_LINK%."
+				explainViewer: "Į_Please sign in with an account on %PORTAL_LINK% to access the story_____________________š.",
+				explainBuilder: "Į_Please sign in with an account on %PORTAL_LINK% to configure the story______________________š."
 			},
 			errors: {
 				boxTitle: "Įvyko klaida",
 				invalidConfig: "Neteisinga konfigūracija",
 				invalidConfigNoApp: "Interneto žemėlapių aplikacijos identifikatorius nenurodytas index.html.",
 				unspecifiedConfigOwner: "Nesukonfigūruotas teisėtas savininkas.",
-				invalidConfigOwner: "Teisėtas savininkas neautorizuotas.",
+				invalidConfigOwner: "Į_Story owner is not authorized__________š.",
 				createMap: "Žemėlapio sukurti nepavyko",
 				invalidApp: "%TPL_NAME% neegzistuoja arba yra nepasiekiamas.",
 				appLoadingFail: "Įvyko klaida ir tinkamai įkelti %TPL_NAME% nepavyko.",
-				notConfiguredDesktop: "Aplikacija dar nesukonfigūruota.",
-				notConfiguredMobile: "%TPL_NAME% kūrimo priemonė šia ekrano raiška nepalaikoma.",
-				notAuthorized: "Neturite teisių pasiekti šią aplikaciją",
+				notConfiguredDesktop: "Į_The story is not configured yet___________š.",
+				notConfiguredMobile: "Į_The %TPL_NAME% builder is not supported at this display size___________________š.",
+				notAuthorized: "Į_You are not authorized to access this story______________š",
 				noBuilderIE: "Kūrimo priemonė neveikia „Internet Explorer“ versijose ankstesnėse nei %VERSION%. %UPGRADE%",
-				noViewerIE: "Aplikacija neveikia „Internet Explorer“ versijose ankstesnėse nei %VERSION%. %UPGRADE%",
+				noViewerIE: "Į_This story is not supported in Internet Explorer before version %VERSION%. %UPGRADE%__________________________š",
 				upgradeBrowser: "<a href='http://browsehappy.com/' target='_blank'>Atnaujinkite naršyklę</a>.",
 				mapLoadingFail: "Įvyko klaida ir žemėlapio nepavyko tinkamai įkelti.",
 				signOut: "Atsijungti"
@@ -60,7 +60,10 @@
 				bitlyTooltip: "Gauti trumpą nuorodą",
 				templateTitle: "Nustatyti šablono pavadinimą",
 				templateSubtitle: "Nustatyti šablono antraštę",
-				share: "Bendrinti"
+				share: "Bendrinti",
+				checking: "Į_Checking your story content_________š",
+				fix: "Į_Fix issues in your story________š",
+				noerrors: "Į_No issues detected______š"
 			},
 			overviewFromCommon: {
 				title: "Apžvalga"

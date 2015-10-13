@@ -35,7 +35,8 @@ define(
          "directions": "Направления",
          "filter": "Фильтр",
          "close": "Закрыть",
-         "reverse": "Обратить"
+         "reverse": "Обратить",
+         "mode": "Ж_Switch mode Drive/Walk________Я"
       }
    })
 );

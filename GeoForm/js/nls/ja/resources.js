@@ -262,7 +262,7 @@
       mapTabTooltip: "マップ",
       btnDescendingText: "降順",
       btnAscendingText: "昇順",
-      geometryUnavailableErrorMessage: "フィーチャのジオメトリの検索エラー",
+      geometryUnavailableErrorMessage: "須_Error finding the geometry of the feature_____________鷗",
       infoPopupOffErrorMessage: "表示する情報がありません",
       btnLoadMoreText: "さらに読み込み",
       unavailableTitleText: "無題",

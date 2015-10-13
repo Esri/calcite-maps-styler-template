@@ -262,7 +262,7 @@
       mapTabTooltip: "Χάρτης",
       btnDescendingText: "Φθίνουσα",
       btnAscendingText: "Αύξουσα",
-      geometryUnavailableErrorMessage: "Σφάλμα κατά την εύρεση της γεωμετρίας του στοιχείου",
+      geometryUnavailableErrorMessage: "Đ_Error finding the geometry of the feature_____________ớ",
       infoPopupOffErrorMessage: "Δεν υπάρχουν πληροφορίες για εμφάνιση",
       btnLoadMoreText: "Φόρτωση περισσότερων δεδομένων",
       unavailableTitleText: "Χωρίς τίτλο",

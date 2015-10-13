@@ -1,5 +1,5 @@
 ﻿define(
-	 ({
+   ({
 		builder: {
 			layouts: {
 				tabTitle: "באמצעות לשוניות",
@@ -70,7 +70,7 @@
 			},
 			organizePopup: {
 				title: "ארגן",
-				lblHeader: "גרור ושחרר את %LBL_LAYOUT% כדי לארגן את הסדרה.",
+				lblHeader: "כן_Drag and drop %LBL_LAYOUT% to organize your story________________ש.",
 				lblColTitle: "כותרת",
 				lblColStatus: "סטטוס",
 				btnApplyWarning: "אשר מחיקת %NB%‏ %LBL_LAYOUT%",

@@ -57,7 +57,7 @@
 			},
 			organizePopup: {
 				title: "구성",
-				lblHeader: "섹션을 끌어서 놓고 콘텐츠를 구성합니다.",
+				lblHeader: "한_Drag and drop sections to organize your story_______________빠.",
 				lblColTitle: "제목",
 				lblColPubDate: "발행 날짜",
 				lblColStatus: "상태",

@@ -35,7 +35,8 @@ define(
          "directions": "Indicaţii",
          "filter": "Filtru",
          "close": "Închidere",
-         "reverse": "Inversare"
+         "reverse": "Inversare",
+         "mode": "Ă_Switch mode Drive/Walk________ș"
       }
    })
 );

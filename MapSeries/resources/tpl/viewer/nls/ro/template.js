@@ -5,29 +5,29 @@
 				close: "Închidere"
 			},
 			loading: {
-				long: "Aplicaţia se iniţializează",
+				long: "Ă_Story is initializing_______ș",
 				long2: "Vă mulţumim pentru aşteptare",
-				failButton: "Reîncărcare aplicaţie"
+				failButton: "Ă_Reload the story______ș"
 			},
 			signin: {
 				title: "Necesită autentificare",
-				explainViewer: "Pentru a accesa aplicaţia, autentificaţi-vă cu un cont în %PORTAL_LINK%.",
-				explainBuilder: "Pentru a configura aplicaţia, autentificaţi-vă cu un cont în %PORTAL_LINK%."
+				explainViewer: "Ă_Please sign in with an account on %PORTAL_LINK% to access the story_____________________ș.",
+				explainBuilder: "Ă_Please sign in with an account on %PORTAL_LINK% to configure the story______________________ș."
 			},
 			errors: {
 				boxTitle: "A apărut o eroare",
 				invalidConfig: "Configurare incorectă",
 				invalidConfigNoApp: "ID-ul aplicaţiei de cartografiere web nu este specificat în index.html.",
 				unspecifiedConfigOwner: "Proprietarul autorizat nu a fost configurat.",
-				invalidConfigOwner: "Proprietarul aplicaţiei nu este autorizat.",
+				invalidConfigOwner: "Ă_Story owner is not authorized__________ș.",
 				createMap: "Nu se poate crea harta",
 				invalidApp: "%TPL_NAME% nu există sau nu este accesibil.",
 				appLoadingFail: "Ceva nu a mers bine, %TPL_NAME% nu s-a încărcat corect.",
-				notConfiguredDesktop: "Aplicaţia nu este configurată încă.",
-				notConfiguredMobile: "Aplicaţia de creare %TPL_NAME% nu este acceptată la această rezoluţie a ecranului.",
-				notAuthorized: "Nu sunteţi autorizat pentru a accesa această aplicaţie",
+				notConfiguredDesktop: "Ă_The story is not configured yet___________ș.",
+				notConfiguredMobile: "Ă_The %TPL_NAME% builder is not supported at this display size___________________ș.",
+				notAuthorized: "Ă_You are not authorized to access this story______________ș",
 				noBuilderIE: "Instrumentul de creare nu este acceptat în versiunile Internet Explorer anterioare versiunii %VERSION%. %UPGRADE%",
-				noViewerIE: "Această aplicaţie nu este acceptată în versiunile Internet Explorer anterioare versiunii %VERSION%. %UPGRADE%",
+				noViewerIE: "Ă_This story is not supported in Internet Explorer before version %VERSION%. %UPGRADE%__________________________ș",
 				upgradeBrowser: "<a href='http://browsehappy.com/' target='_blank'>Efectuaţi un upgrade al browserului</a>.",
 				mapLoadingFail: "Ceva nu a mers bine şi harta nu a fost încărcată corect.",
 				signOut: "Ieşire"
@@ -35,8 +35,8 @@
 			mobileInfo: {
 				legend: "Legendă",
 				description: "Descriere",
-				lblLegendMobileError: "Ne pare rău, legenda nu este disponibilă. Încercaţi din nou.",
-				lblLegendMobileErrorExplain: "Legenda nu este disponibilă atunci când dispozitivul este rotit în mod portret după încărcarea aplicaţiei."
+				lblLegendMobileError: "Ă_Sorry, the legend is unavailable. Please reload the story__________________ș.",
+				lblLegendMobileErrorExplain: "Ă_The legend is not available when the device is rotated to portrait mode after the story is loaded______________________________ș."
 			},
 			mobileFooter: {
 				swipeInvite: "Glisaţi pentru a naviga printre informaţii",
@@ -51,7 +51,10 @@
 				bitlyTooltip: "Obţinere link scurt",
 				templateTitle: "Setare titlu şablon",
 				templateSubtitle: "Setare subtitlu şablon",
-				share: "Partajare"
+				share: "Partajare",
+				checking: "Ă_Checking your story content_________ș",
+				fix: "Ă_Fix issues in your story________ș",
+				noerrors: "Ă_No issues detected______ș"
 			},
 			overviewFromCommon: {
 				title: "Hartă de prezentare generală"
@@ -64,8 +67,11 @@
 				copied: "Copiat",
 				open: "Deschidere",
 				embed: "Încorporare în pagină web",
-				embedExplain: "Utilizaţi următorul cod HTML pentru a încorpora aplicaţia într-o pagină web.",
+				embedExplain: "Ă_Use the following HTML code to embed the story in a web page___________________ș.",
 				size: "Dimensiune (lăţime/înălţime):"
+			},
+			locatorFromCommon: {
+				error: "Ă_Location not available________ș"
 			}
         }
     })

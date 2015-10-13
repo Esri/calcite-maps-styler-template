@@ -35,7 +35,8 @@ define(
          "directions": "方向",
          "filter": "篩選",
          "close": "關閉",
-         "reverse": "反轉"
+         "reverse": "反轉",
+         "mode": "試_Switch mode Drive/Walk________驗"
       }
    })
 );

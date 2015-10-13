@@ -35,7 +35,8 @@ define(
          "directions": "Maršrutai",
          "filter": "Filtruoti",
          "close": "Užverti",
-         "reverse": "Apsukti"
+         "reverse": "Apsukti",
+         "mode": "Į_Switch mode Drive/Walk________š"
       }
    })
 );

@@ -35,7 +35,8 @@ define(
          "directions": "Indicazioni",
          "filter": "Filtro",
          "close": "Chiudi",
-         "reverse": "Inverti"
+         "reverse": "Inverti",
+         "mode": "é_Switch mode Drive/Walk________È"
       }
    })
 );

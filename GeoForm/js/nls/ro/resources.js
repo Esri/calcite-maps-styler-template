@@ -262,7 +262,7 @@
       mapTabTooltip: "Hartă",
       btnDescendingText: "Desc",
       btnAscendingText: "Asc",
-      geometryUnavailableErrorMessage: "Eroare la găsirea geometriei caracteristicii",
+      geometryUnavailableErrorMessage: "Ă_Error finding the geometry of the feature_____________ș",
       infoPopupOffErrorMessage: "Nu există informaţii de afişat",
       btnLoadMoreText: "Se încarcă mai multe",
       unavailableTitleText: "Fără titlu",

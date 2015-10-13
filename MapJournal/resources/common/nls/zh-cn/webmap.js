@@ -2,7 +2,7 @@
 	 ({
 		commonWebmap: {
 			selector: {
-				lblWebMap: "Web 地图",
+				lblWebMap: "试_Map__验",
 				lblLocation: "位置",
 				lblContent: "内容",
 				lblPopup: "弹出窗口",
@@ -17,12 +17,14 @@
 				and: "和",
 				action: "节中的操作",
 				actions: "节中的操作",
-				originalWebmap: "用于发布 %TPL_NAME% 的 Web 地图",
-				browseMaps: "浏览地图",
-				current: "当前 web 地图",
-				select: "选择 web 地图",
-				newMap: "新选择的 web 地图",
-				webmapDefault: "默认 Web 地图",
+				originalWebmap: "试_Map used to publish the %TPL_NAME%___________验",
+				browseMaps: "试_Select a map_____验",
+				createMap: "试_Create a map_____验",
+				current: "试_Current map____验",
+				select: "试_Select or create a map________验",
+				newMap: "试_Newly selected map______验",
+				newCreatedMap: "试_Newly created map______验",
+				webmapDefault: "试_Map default____验",
 				customCfg: "自定义配置",
 				tooltipLocation: "定义此地图将显示的位置。",
 				tooltipContent: "定义可见图层。",
@@ -47,6 +49,29 @@
 				popupExplain: "单击要素以打开您要显示的弹出窗口。",
 				popupSave: "保存弹出窗口配置",
 				hintNavigation: "地图导航已禁用。"
+			},
+			editor: {
+				loading: "试_Please wait while the map editor is loading______________验",
+				newTitle: "试_Create new map_____验",
+				editTitle: "试_Edit map___验",
+				titleLbl: "试_Title___验",
+				titlePh: "试_Map title_____验...",
+				folderLbl: "试_The map will be created in the same folder as the story__________________验.",
+				creating: "试_Creating the map______验",
+				saving: "试_Saving the map_____验",
+				success: "试_Map saved____验",
+				successCreate: "试_Map created____验",
+				cancelTitle: "试_Discard any unsaved changes_________验?",
+				errorDuplicate: "试_You already have a map with that title____________验",
+				errorCreate: "试_Unable to create map. Please try again_____________验.",
+				errorSave: "试_Unable to save map. Please try again____________验.",
+				notavailable1: "试_Sorry, creating or editing a map is not supported in Firefox due to a technical limitation. You may want to build your story using a different web browser or use the following workaround_________________________________________________________验.",
+				notavailable2: "试_Sorry, creating or editing a map is not supported since the story map application is not hosted in %PRODUCT%. Please contact your ArcGIS administrator for more information_____________________________________________________验.",
+				notavailable3: "试_Sorry, creating or editing a map is not supported on this version of Portal for ArcGIS (requires 10.4 or later). Please contact your ArcGIS administrator for more information______________________________________________________验.",
+				notavailable4: "试_You can create a map using %MV%, then come back here to add it to your story________________________验.",
+				notavailable5: "试_You can edit the map using %MV%, then come back here and %apply% to see your changes___________________________验.",
+				notavailable6: "试_map viewer____验",
+				notavailable7: "试_reload the map_____验"
 			}
 		},
 		configure: {
@@ -57,11 +82,11 @@
 					contentLabel: "我的内容",
 					favoritesLabel: "我的收藏夹"
 				},
-				title: "选择 Web 地图",
+				title: "试_Select a map_____验",
 				searchTitle: "搜索",
 				ok: "确定",
 				cancel: "取消",
-				placeholder: "输入搜索词或 Web 地图 ID..."
+				placeholder: "试_Enter search term or web map ID___________验..."
 			}
 		}
 	})

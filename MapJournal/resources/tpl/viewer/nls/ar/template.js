@@ -5,33 +5,33 @@
 				close: "إغلاق"
 			},
 			loading: {
-				step1: "تحميل التطبيق",
+				step1: "بيت_Loading story_____لاحقة",
 				step2: "تحميل البيانات",
 				step3: "التهيئة",
 				loadBuilder: "التحويل إلى المُنشئ",
 				long: "يتم الأن تهيئة دفتر يومية الخريطة",
 				long2: "شكرًا على الانتظار",
-				failButton: "إعادة تحميل التطبيق"
+				failButton: "بيت_Reload the story______لاحقة"
 			},
 			signin: {
 				title: "يلزم وجود المصادقة",
-				explainViewer: "الرجاء تسجيل الدخول باستخدام الحساب على %PORTAL_LINK% للوصول إلى التطبيق.",
-				explainBuilder: "الرجاء تسجيل الدخول باستخدام الحساب على %PORTAL_LINK% لتكوين التطبيق."
+				explainViewer: "بيت_Please sign in with an account on %PORTAL_LINK% to access the story_____________________لاحقة.",
+				explainBuilder: "بيت_Please sign in with an account on %PORTAL_LINK% to configure the story______________________لاحقة."
 			},
 			errors: {
 				boxTitle: "حدث خطأ",
 				invalidConfig: "تكوين غير صحيح",
 				invalidConfigNoApp: "معرف تطبيق رسم الخرائط على الويب غير محدد في index.html.",
 				unspecifiedConfigOwner: "لم يتم تكوين المالك المعتمد",
-				invalidConfigOwner: "لم يتم اعتماد مالك التطبيق",
+				invalidConfigOwner: "بيت_Story owner is not authorized__________لاحقة.",
 				createMap: "يتعذر إنشاء الخريطة",
 				invalidApp: "%TPL_NAME% غير موجود أو لا يمكن الوصول إليه.",
 				appLoadingFail: "وقع خطأ ما، لم يتم تحميل %TPL_NAME% بشكل صحيح.",
-				notConfiguredDesktop: "لم يتم تكوين التطبيق بعد.",
-				notConfiguredMobile: "لم يتم دعم منشئ %TPL_NAME% في دقة هذه الشاشة.",
-				notAuthorized: "لست مخولاً لتكوين التطبيق للوصول إلى هذا التطبيق",
+				notConfiguredDesktop: "بيت_The story is not configured yet___________لاحقة.",
+				notConfiguredMobile: "بيت_The %TPL_NAME% builder is not supported at this display size___________________لاحقة.",
+				notAuthorized: "بيت_You are not authorized to access this story______________لاحقة",
 				noBuilderIE: "لم يتم دعم المنشيء في Internet Explorer قبل الإصدار %VERSION%. %UPGRADE%",
-				noViewerIE: "لم يتم دعم هذا التطبيق في Internet Explorer قبل الإصدار %VERSION%. %UPGRADE%",
+				noViewerIE: "بيت_This story is not supported in Internet Explorer before version %VERSION%. %UPGRADE%__________________________لاحقة",
 				upgradeBrowser: "<a href='http://browsehappy.com/' target='_blank'>الرجاء تحديث المستعرض</a>.",
 				mapLoadingFail: "وقع خطأ ما، لم يتم تحميل الخريطة بشكل صحيح.",
 				signOut: "تسجيل الخروج"
@@ -60,7 +60,10 @@
 				bitlyTooltip: "الحصول على رابط قصير",
 				templateTitle: "تحديد عنوان القالب",
 				templateSubtitle: "تحديد العنوان الفرعي للقالب",
-				share: "مشاركة"
+				share: "مشاركة",
+				checking: "بيت_Checking your story content_________لاحقة",
+				fix: "بيت_Fix issues in your story________لاحقة",
+				noerrors: "بيت_No issues detected______لاحقة"
 			},
 			overviewFromCommon: {
 				title: "خريطة النظرة العامة"

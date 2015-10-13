@@ -262,7 +262,7 @@
       mapTabTooltip: "Karte",
       btnDescendingText: "Absteigend",
       btnAscendingText: "Aufsteigend",
-      geometryUnavailableErrorMessage: "Die Geometrie des Features konnte nicht gefunden werden",
+      geometryUnavailableErrorMessage: "ä_Error finding the geometry of the feature_____________Ü",
       infoPopupOffErrorMessage: "Keine Informationen zur Anzeige verfügbar",
       btnLoadMoreText: "Weitere laden",
       unavailableTitleText: "Unbenannt",

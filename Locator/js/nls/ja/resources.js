@@ -35,7 +35,8 @@ define(
          "directions": "方向",
          "filter": "フィルタ",
          "close": "閉じる",
-         "reverse": "反転"
+         "reverse": "反転",
+         "mode": "須_Switch mode Drive/Walk________鷗"
       }
    })
 );

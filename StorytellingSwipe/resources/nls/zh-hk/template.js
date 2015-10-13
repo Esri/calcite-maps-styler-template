@@ -2,11 +2,11 @@
 	 ({
 		viewer: {
 			loading: {
-				step1: "正在載入應用程式",
+				step1: "試_LOADING STORY_____驗",
 				step2: "正在載入資料",
 				step3: "正在初始化",
 				fail: "抱歉，Swipe 載入失敗",
-				loadBuilder: "切換到建構器模式",				
+				loadBuilder: "切換到建構器模式",
 				redirectSignIn: "重新導向到登錄頁面",
 				redirectSignIn2: "(登錄後您將重新導向到此處)",
 				failButton: "重試"
@@ -17,16 +17,19 @@
 				invalidConfig: "嚴重錯誤: 無效的設定",
 				invalidConfigNoWebmap: "嚴重錯誤: 設定無效(未指定 web 地圖)",
 				createMap: "無法建立地圖",
-				invalidApp: "嚴重錯誤: 無法載入應用程式",
+				invalidApp: "試_Fatal error: The story cannot be loaded_____________驗",
 				initMobile: "歡迎使用 Swipe web 應用程式。未設定該應用程式。行動裝置不支援互動式建構器。",
+				initMobile2: "試_The Swipe builder is not supported at this display size__________________驗.",
 				noBuilderIE8: "Internet Explorer 9 之前的版本不支援 Swipe 互動式建構器。",
 				noLayerView: "歡迎使用 Swipe web 應用程式。<br />尚未設定該應用程式。",
-				appSave: "儲存 web 應用程式時出錯",
+				appSave: "試_Error saving the web story_________驗",
 				mapSave: "儲存 web 地圖時出錯",
-				notAuthorized: "您未取得存取該應用程式的授權",
+				notAuthorized: "試_You are not authorized to access this story______________驗",
 				conflictingProjectionsTitle: "衝突的投影",
 				conflictingProjections: "Swipe 不支援兩個不同投影的 web 地圖。請開啟設定並使用與第一個 web 地圖相同投影的 web 地圖。",
-				cpButton: "關閉"
+				cpButton: "關閉",
+				unspecifiedConfigOwner: "試_Authorized owner hasn't been configured_____________驗.",
+				invalidConfigOwner: "試_Story owner is not authorized__________驗."
 			},
 			mobileView: {
 				hideIntro: "隱藏簡介",
@@ -44,7 +47,7 @@
 		},
 		builder: {
 			builder: {
-				panelHeader: "應用程式設定",
+				panelHeader: "試_STORY CONFIGURATION_______驗",
 				buttonSave: "儲存",
 				buttonHelp: "說明",
 				buttonShare: "分享",
@@ -64,13 +67,13 @@
 				popoverSaveWhenDone: "完成後請不要忘記儲存",
 				closeWithPendingChange: "確定要執行此操作嗎? 您的變更將流失。",
 				gotIt: "確定",
-				savingApplication: "儲存應用程式",
-				saveSuccess: "應用程式儲存成功",
+				savingApplication: "試_Saving story_____驗",
+				saveSuccess: "試_Story saved successfully________驗",
 				saveError: "儲存失敗，請重試",
 				saveError2: "由於名稱或描述中存在無效的 html 標記，因此儲存失敗",
 				saveError3: "標題不能為空",
 				signIn: "請使用帳戶登錄",
-				signInTwo: "儲存應用程式。"
+				signInTwo: "試_to save the story______驗."
 			},
 			header:{
 				editMe: "編輯!",
@@ -78,7 +81,7 @@
 				templateSubtitle: "設置範本子標題"
 			},
 			settings: {
-				settingsHeader: "應用程式設定",
+				settingsHeader: "試_Story settings_____驗",
 				modalCancel: "取消",
 				modalApply: "套用"
 			},
@@ -138,7 +141,7 @@
 				settingsLayoutSpyGlass: "Spyglass",
 				settingsLayoutSelected: "選取的版面設定",
 				settingsLayoutSelect: "選擇此版面設定",
-				settingsSaveConfirm: "其中一些變更需要您儲存和重新載入應用程式"
+				settingsSaveConfirm: "試_Some of your changes require that you save and reload the story____________________驗"
 			},
 			settingsDataModel: {
 				settingsTabDataModel: "Swipe 類型",
@@ -166,7 +169,7 @@
 			},
 			settingsLegend: {
 				settingsTabLegend: "應用程式版面設定",
-				settingsLegendExplain: "選擇應用程式版面設定設定。",
+				settingsLegendExplain: "試_Select the layout settings_________驗.",
 				settingsLegendEnable: "啟用圖例",
 				settingsDescriptionEnable: "啟用描述",
 				settingsBookmarksEnable: "啟用 Swipe 系列",
@@ -174,7 +177,7 @@
 				settingsLocationSearchEnable: "啟用定位器搜尋",
 				settingsGeolocatorEnable: "啟用地理定位器",
 				settingsLegendHelpContent: "要最佳化圖例內容，請使用 ArcGIS.com web 地圖檢視器目錄(隱藏在圖例中)",
-				settingsSeriesHelpContent: "Swipe 系列是一種索引標籤式的導航選項，可以檢視者至特定範圍，並在側面板中顯示標題和描述文字。在首次啟動時，將匯入 web 地圖的書簽，並用於預填充系列條形圖。停用系列選項將關閉系列條形圖，將保留但系列設定供以後使用。", 
+				settingsSeriesHelpContent: "Swipe 系列是一種索引標籤式的導航選項，可以檢視者至特定範圍，並在側面板中顯示標題和描述文字。在首次啟動時，將匯入 web 地圖的書簽，並用於預填充系列條形圖。停用系列選項將關閉系列條形圖，將保留但系列設定供以後使用。",
 				settingsSeriesHelpContent2: "透過 Swipe 系列可建立和編輯一系列隨附標題和文字的位置。如果 web 地圖有書簽，則會顯示這些書簽。您可以停用 Swipe 簾系列，但設定將保留以供之後使用。",
 				settingsSeriesHelpLink: "在此處查看具有 Swipe 系列的應用程式範例",
 				preview: "UI 預覽",
@@ -215,39 +218,39 @@
 				}
 			},
 			share: {
-				firstSaveTitle: "應用程式已成功儲存",
-				firstSaveHeader: "您的應用程式現已儲存到 ArcGIS Online 中。請閱讀下面的常見問題解答。",
+				firstSaveTitle: "試_Story successfully saved________驗",
+				firstSaveHeader: "試_Your story is now saved in ArcGIS Online. Please read the following answers to frequent questions______________________________驗.",
 				firstSaveA1: "如果您不熟悉 ArcGIS Online，或需要存取創作介面的捷徑，可以儲存以下連結: %LINK1%",
-				firstSaveA1bis: "還可以在您的 <a href='%LINK2%' target='_blank'>ArcGIS Online 內容文件夾</a>中找到此應用程式。",
-				firstSaveQ2: "我的應用程式是否已分享?",
-				firstSaveA2: "您的應用程式目前沒有分享。要分享，請使用\“分享\”按鈕。",
-				shareTitle: "分享您的應用程式",
-				sharePrivateHeader: "您的應用程式沒有共用，您是否希望分享?",
+				firstSaveA1bis: "試_The story can also be found in your <a href='%LINK2%' target='_blank'>ArcGIS Online content folder</a>________________________________驗.",
+				firstSaveQ2: "試_Is my story shared_______驗?",
+				firstSaveA2: "試_Currently your story is not shared. To share it, use the SHARE button______________________驗.",
+				shareTitle: "試_Share your story______驗",
+				sharePrivateHeader: "試_Your story is not shared, would you like to share it_________________驗?",
 				sharePrivateBtn1: "公開分享",
 				sharePrivateBtn2: "與我的組織分享",
 				sharePrivateProgress: "正在進行分享...",
 				sharePrivateErr: "分享失敗，請重試或",
 				sharePrivateOk: "分享更新成功，正在載入...",
-				shareStatus1: "應用程式未儲存",
-				shareStatus2: "應用程式已公開分享",
-				shareStatus3: "應用程式已在組織中分享",
-				shareStatus4: "應用程式未分享",
+				shareStatus1: "試_Story is not saved______驗",
+				shareStatus2: "試_Story is shared publicly________驗",
+				shareStatus3: "試_Story is shared within the organization_____________驗",
+				shareStatus4: "試_Story is not shared_______驗",
 				sharePreviewAsUser: "預覽",
-				shareHeader1: "您的應用程式可以<strong>公開存取</strong>。",
-				shareHeader2: "您的應用程式可供您的組織成員存取(需要登錄)。",
-				shareLinkHeader: "將應用程式分享給觀眾",
+				shareHeader1: "試_Your story is <strong>publicly accessible</strong>________________驗.",
+				shareHeader2: "試_Your story is accessible by your organization members (login is required)_______________________驗.",
+				shareLinkHeader: "試_Share the story with your audience___________驗",
 				shareLinkOpen: "打開",
 				learnMore: "瞭解詳細資訊",
-				shareQ1Opt1: "如何將應用程式私用?",
-				shareQ1Opt2: "如何將應用程式私用或將其公開分享?",
+				shareQ1Opt1: "試_How do I keep the story private___________驗?",
+				shareQ1Opt2: "試_How do I keep the story private or share it publicly_________________驗?",
 				shareA1: "使用<a href='%LINK1%' target='_blank'>應用程式項目頁面</a>中的 %SHAREIMG%。如果還希望取消分享 Web 地圖，請使用 <a href='%LINK2%' target='_blank'>Web 地圖項目頁面</a>。",
 				shareA1bis: "如果還想要取消分享圖徵服務，請使用<a href='%LINK1%' target='_blank'>圖徵服務項目頁面</a>。",
-				shareQ2: "如何在稍後對應用程式進行編輯?",
+				shareQ2: "試_How do I edit the story later__________驗?",
 				shareQ2bis: "如何返回製作介面？",
-				shareA2div1: "儲存並重新使用以下連結 %LINK1%，或使用<a href='%LINK2%' target='_blank'>應用程式項目頁面</a>。",
-				shareA2div2: "做為應用程式擁有者，當您登錄到 ArcGIS.com 後，可使用應用程式的按鈕打開互動式建構器:",				
+				shareA2div1: "試_Save and reuse the following link %LINK1% or use <a href='%LINK2%' target='_blank'>the story item page</a>_________________________________驗.",
+				shareA2div2: "試_As the owner of the story, when you are signed in on ArcGIS.com, the story includes a button to open the interactive builder_______________________________________驗:",
 				shareQ3: "資料儲存在哪兒?",
-				shareA3: "應用程式設定儲存在此 Web 應用程式項目中</a>。",
+				shareA3: "試_The story configuration is stored in this web application item</a>_____________________驗.",
 				shareWarning: "已禁止分享 %WITH%，因為您不是 <a href='%LINK%' target='_blank'>webmap</a> 的擁有者。",
  				shareWarningWith1: "公開",
  				shareWarningWith2: "公開並在組織內分享"
@@ -279,4 +282,3 @@
 		}
     })
 );
-

@@ -5,29 +5,29 @@
 				close: "Fechar"
 			},
 			loading: {
-				long: "O aplicativo está inicializando",
+				long: "ã_Story is initializing_______Ç",
 				long2: "Obrigado por aguardar",
-				failButton: "Recarregar o aplicativo"
+				failButton: "ã_Reload the story______Ç"
 			},
 			signin: {
 				title: "Uma autenticação é exigida",
-				explainViewer: "Entre com uma conta no %PORTAL_LINK% para acessar o aplicativo.",
-				explainBuilder: "Entre com uma conta no %PORTAL_LINK% para configurar o aplicativo."
+				explainViewer: "ã_Please sign in with an account on %PORTAL_LINK% to access the story_____________________Ç.",
+				explainBuilder: "ã_Please sign in with an account on %PORTAL_LINK% to configure the story______________________Ç."
 			},
 			errors: {
 				boxTitle: "Ocorreu um erro",
 				invalidConfig: "Configuração inválida",
 				invalidConfigNoApp: "Identificador do Aplicativo de Mapeamento da Web não especificado no index.html.",
 				unspecifiedConfigOwner: "O proprietário autorizado não foi configurado.",
-				invalidConfigOwner: "O proprietário do aplicativo não está autorizado.",
+				invalidConfigOwner: "ã_Story owner is not authorized__________Ç.",
 				createMap: "Não foi possível criar o mapa",
 				invalidApp: "O %TPL_NAME% não existe ou está inacessível.",
 				appLoadingFail: "Ocorreu algo errado, o %TPL_NAME% não carregou corretamente.",
-				notConfiguredDesktop: "O aplicativo ainda não está configurado.",
-				notConfiguredMobile: "O construtor do %TPL_NAME% não é suportado nesta resolução de tela.",
-				notAuthorized: "Você não está autorizado para acessar este aplicativo.",
+				notConfiguredDesktop: "ã_The story is not configured yet___________Ç.",
+				notConfiguredMobile: "ã_The %TPL_NAME% builder is not supported at this display size___________________Ç.",
+				notAuthorized: "ã_You are not authorized to access this story______________Ç",
 				noBuilderIE: "O construtor não é suportado no Internet Explorer antes da versão %VERSION%. %UPGRADE%",
-				noViewerIE: "Este aplicativo não é suportado no Internet Explorer antes da versão %VERSION%. %UPGRADE%",
+				noViewerIE: "ã_This story is not supported in Internet Explorer before version %VERSION%. %UPGRADE%__________________________Ç",
 				upgradeBrowser: "<a href='http://browsehappy.com/' target='_blank'>Atualize seu navegador</a>.",
 				mapLoadingFail: "Algo deu errado, o mapa não carregou corretamente.",
 				signOut: "Sair"
@@ -35,8 +35,8 @@
 			mobileInfo: {
 				legend: "Legenda",
 				description: "Descrição",
-				lblLegendMobileError: "Desculpe, a legenda está indisponível. Recarregue o aplicativo.",
-				lblLegendMobileErrorExplain: "A legenda não fica disponível quando o dispositivo é rotacionado para modo de retrato após o aplicativo ser carregado."
+				lblLegendMobileError: "ã_Sorry, the legend is unavailable. Please reload the story__________________Ç.",
+				lblLegendMobileErrorExplain: "ã_The legend is not available when the device is rotated to portrait mode after the story is loaded______________________________Ç."
 			},
 			mobileFooter: {
 				swipeInvite: "Trocar para verificar o histórico",
@@ -51,7 +51,10 @@
 				bitlyTooltip: "Obter um link curto",
 				templateTitle: "Configurar título do modelo",
 				templateSubtitle: "Configurar subtítulo do modelo",
-				share: "Compartilhar"
+				share: "Compartilhar",
+				checking: "ã_Checking your story content_________Ç",
+				fix: "ã_Fix issues in your story________Ç",
+				noerrors: "ã_No issues detected______Ç"
 			},
 			overviewFromCommon: {
 				title: "Mapa de Visão Geral"
@@ -64,8 +67,11 @@
 				copied: "Copiado",
 				open: "Abrir",
 				embed: "Anexar na página da web",
-				embedExplain: "Utilize o seguinte código HTML para embutir o aplicativo em uma página da web.",
+				embedExplain: "ã_Use the following HTML code to embed the story in a web page___________________Ç.",
 				size: "Tamanho (largura/altura):"
+			},
+			locatorFromCommon: {
+				error: "ã_Location not available________Ç"
 			}
         }
     })

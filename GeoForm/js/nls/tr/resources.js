@@ -262,7 +262,7 @@
       mapTabTooltip: "Harita",
       btnDescendingText: "Azalan",
       btnAscendingText: "Artan",
-      geometryUnavailableErrorMessage: "Detay geometrisini bulma hatası",
+      geometryUnavailableErrorMessage: "ı_Error finding the geometry of the feature_____________İ",
       infoPopupOffErrorMessage: "Görüntülenecek bilgi yok",
       btnLoadMoreText: "Daha Fazla Yükle",
       unavailableTitleText: "Başlıksız",

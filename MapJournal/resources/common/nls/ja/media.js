@@ -64,7 +64,7 @@
 				url: "Vimeo ビデオの URL"
 			},
 			videoSelectorOther: {
-				explain1: "アプリケーションは、単体のビデオファイル (avi、mpeg など) は再生できませんが、プレイヤ (YouTube または Vimeo など) が組み込まれているホストされたビデオ ファイルは再生できます。",
+				explain1: "須_The story cannot play raw videos (e.g., avi, mpeg) but it can play hosted video files that have built-in players (e.g., YouTube or Vimeo)__________________________________________鷗.",
 				explain2: "ほとんどのオンライン ビデオ ホスティング サービスは、その機能を提供しています。ビデオを埋め込み、指定のコードをコピーし、%WEBPAGE% を使用するオプションを見つける必要があります。",
 				explain3: "または、ビデオを自分でホストする場合、%EXAMPLE% のようなビデオ プレイヤを使用する HTML ページを作成して、そのページをホストしたり、%WEBPAGE% を使用したりすることもできます。",
 				webpage: "Web ページ フィーチャ"
@@ -102,7 +102,7 @@
 				lblPosition3Explain2: "(幅は常にパネルに合わせて調整されます)",
 				lblPosition4Explain: "(歪みの可能性あり)",
 				unloadLbl: "ユーザが移動したときにアンロード",
-				unloadHelp: "Web ページに音声やビデオ メディアが含まれている場合、このオプションをオンにすると、ユーザが移動したときにコンテンツの再生が停止されます。たとえば、ユーザが次のストーリーに進んでもサウンド トラックの再生を維持したいときはオフにします。<br />Web ページがアプリケーションである場合、ユーザが戻ってもアプリケーションが再読み込みされないようにするには、このオプションをオフにします。"
+				unloadHelp: "須_If the Web Page has audio or video media, keep this option checked to stop that content from playing when the reader navigates away. Uncheck it for example to keep a soundtrack playing as the reader advances through the story.<br />If the Web Page is an application, uncheck this option so that the story does not reload if the reader returns to it__________________________________________________________________________________________________________鷗."
 			},
 			editorActionGeocode: {
 				lblTitle: "住所または位置の検索",

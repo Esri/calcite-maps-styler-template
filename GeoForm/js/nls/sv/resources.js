@@ -262,7 +262,7 @@
       mapTabTooltip: "Karta",
       btnDescendingText: "Fallande",
       btnAscendingText: "Stigande",
-      geometryUnavailableErrorMessage: "Fel när geoobjektets geometri skulle hittas",
+      geometryUnavailableErrorMessage: "Å_Error finding the geometry of the feature_____________ö",
       infoPopupOffErrorMessage: "Det finns ingen information att visa",
       btnLoadMoreText: "Läs in mer",
       unavailableTitleText: "Namnlös",

@@ -5,33 +5,33 @@
 				close: "Kapat"
 			},
 			loading: {
-				step1: "Uygulama yükleniyor",
+				step1: "ı_Loading story_____İ",
 				step2: "Veriler yükleniyor",
 				step3: "Başlatılıyor",
 				loadBuilder: "Oluşturucuya geçiliyor",
 				long: "Harita Bülteni başlatılıyor",
 				long2: "Beklendiğiniz için teşekkürler",
-				failButton: "Uygulamayı yeniden yükle"
+				failButton: "ı_Reload the story______İ"
 			},
 			signin: {
 				title: "Kimlik doğrulama gerekli",
-				explainViewer: "Uygulamaya erişmek için %PORTAL_LINK% üzerindeki bir hesapla oturum açın.",
-				explainBuilder: "Uygulamayı yapılandırmak için %PORTAL_LINK% üzerindeki bir hesapla oturum açın."
+				explainViewer: "ı_Please sign in with an account on %PORTAL_LINK% to access the story_____________________İ.",
+				explainBuilder: "ı_Please sign in with an account on %PORTAL_LINK% to configure the story______________________İ."
 			},
 			errors: {
 				boxTitle: "Bir hata oluştu",
 				invalidConfig: "Geçersiz yapılandırma",
 				invalidConfigNoApp: "Web Mapping Application tanımlayıcısı index.html dosyasında tanımlı değil.",
 				unspecifiedConfigOwner: "Yetkili sahip yapılandırılmamış.",
-				invalidConfigOwner: "Uygulama sahibi yetkili değil.",
+				invalidConfigOwner: "ı_Story owner is not authorized__________İ.",
 				createMap: "Harita oluşturulamıyor",
 				invalidApp: "%TPL_NAME% mevcut değil ya da erişilemez.",
 				appLoadingFail: "Bir şeyler yanlış gitti, %TPL_NAME% doğru şekilde yüklenmedi.",
-				notConfiguredDesktop: "Uygulama henüz yapılandırılmadı.",
-				notConfiguredMobile: "%TPL_NAME% oluşturucusu bu ekran çözünürlüğünde desteklenmiyor.",
-				notAuthorized: "Bu uygulamaya erişim yetkiniz yok",
+				notConfiguredDesktop: "ı_The story is not configured yet___________İ.",
+				notConfiguredMobile: "ı_The %TPL_NAME% builder is not supported at this display size___________________İ.",
+				notAuthorized: "ı_You are not authorized to access this story______________İ",
 				noBuilderIE: "Oluşturucu %VERSION% öncesindeki Internet Explorer sürümlerinde desteklenmiyor. %UPGRADE%",
-				noViewerIE: "Bu uygulama %VERSION% öncesindeki Internet Explorer sürümlerinde desteklenmiyor. %UPGRADE%",
+				noViewerIE: "ı_This story is not supported in Internet Explorer before version %VERSION%. %UPGRADE%__________________________İ",
 				upgradeBrowser: "<a href='http://browsehappy.com/' target='_blank'>Tarayıcınızı güncelleyin</a>.",
 				mapLoadingFail: "Hata oluştu, Harita düzgün şekilde yüklenmedi.",
 				signOut: "Oturumu Kapat"
@@ -60,7 +60,10 @@
 				bitlyTooltip: "Kısa bağlantı edin",
 				templateTitle: "Şablon başlığını ayarla",
 				templateSubtitle: "Şablon altyazısını ayarla",
-				share: "Paylaş"
+				share: "Paylaş",
+				checking: "ı_Checking your story content_________İ",
+				fix: "ı_Fix issues in your story________İ",
+				noerrors: "ı_No issues detected______İ"
 			},
 			overviewFromCommon: {
 				title: "Genel Bakış Haritası"

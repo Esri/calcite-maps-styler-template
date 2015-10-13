@@ -35,7 +35,8 @@ define(
          "directions": "Doğrultular",
          "filter": "Filtre",
          "close": "Kapat",
-         "reverse": "Ters"
+         "reverse": "Ters",
+         "mode": "ı_Switch mode Drive/Walk________İ"
       }
    })
 );

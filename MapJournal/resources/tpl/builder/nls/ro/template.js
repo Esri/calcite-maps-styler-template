@@ -57,7 +57,7 @@
 			},
 			organizePopup: {
 				title: "Organizare",
-				lblHeader: "Glisaţi şi fixaţi secţiuni pentru a vă organiza conţinutul.",
+				lblHeader: "Ă_Drag and drop sections to organize your story_______________ș.",
 				lblColTitle: "Titlu",
 				lblColPubDate: "Data publicării",
 				lblColStatus: "Stare",

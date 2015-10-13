@@ -30,7 +30,8 @@ define(
       error: "Som standard anvendes webkortbeskrivelsen eller snippet. Konfigurér app\'en for at tilføje en brugertilpasset snippet til panelet Om."
     },
     time: {
-        enableTimeMessage: "Det angivne webkort indeholder ingen tidsafhængige lag. Se <a target=\'_blank\' href=\'http://doc.arcgis.com/en/arcgis-online/create-maps/configure-time.htm#ESRI_SECTION1_F1D4A275B4AB4CC79198CBA9D0AD8727\'>hjælp-emnet Konfigurér tidsindstillinger</a> for yderligere oplysninger. For at bruge skabelonen uden at vise tid skal tidsindstillingen deaktiveres i konfigurationspanelet.",
+        enableTimeMessage: "ø_The specified web map does not contain any time enabled layers. View the ${link} help topic for details. To use the template without displaying time use the configuration panel to disable the time option______________________________________________________________å.",
+        enableTimeMessageLink: "ø_http://doc.arcgis.com/en/arcgis-online/create-maps/configure-time.htm#ESRI_SECTION1_F1D4A275B4AB4CC79198CBA9D0AD8727____________________________________å",
         datePattern: "MMMM d, åååå",
         hourTimePattern: "H",
         millisecondTimePattern: "H:mm:ss",

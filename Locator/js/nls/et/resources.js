@@ -35,7 +35,8 @@ define(
          "directions": "Teejuhised",
          "filter": "Filter",
          "close": "Sulge",
-         "reverse": "Pööra ümber"
+         "reverse": "Pööra ümber",
+         "mode": "Š_Switch mode Drive/Walk________ä"
       }
    })
 );

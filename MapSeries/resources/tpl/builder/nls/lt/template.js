@@ -70,7 +70,7 @@
 			},
 			organizePopup: {
 				title: "Tvarkyti",
-				lblHeader: "Nuvilkite %LBL_LAYOUT%, galėtumėte tvarkyti serijas.",
+				lblHeader: "Į_Drag and drop %LBL_LAYOUT% to organize your story________________š.",
 				lblColTitle: "Pavadinimas",
 				lblColStatus: "Būsena",
 				btnApplyWarning: "Patvirtinkite %NB% %LBL_LAYOUT% pašalinimą",

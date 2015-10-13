@@ -35,7 +35,8 @@ define(
          "directions": "כיוונים",
          "filter": "מסנן",
          "close": "סגור",
-         "reverse": "הפוך"
+         "reverse": "הפוך",
+         "mode": "כן_Switch mode Drive/Walk________ש"
       }
    })
 );

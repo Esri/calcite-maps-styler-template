@@ -35,7 +35,8 @@ define(
          "directions": "方向",
          "filter": "过滤器",
          "close": "关闭",
-         "reverse": "反向"
+         "reverse": "反向",
+         "mode": "试_Switch mode Drive/Walk________验"
       }
    })
 );

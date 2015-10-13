@@ -262,7 +262,7 @@
       mapTabTooltip: "Kaart",
       btnDescendingText: "Aflopend",
       btnAscendingText: "Oplopend",
-      geometryUnavailableErrorMessage: "Kan de geometrie van het object niet vinden",
+      geometryUnavailableErrorMessage: "Ĳ_Error finding the geometry of the feature_____________ä",
       infoPopupOffErrorMessage: "Geen informatie om weer te geven",
       btnLoadMoreText: "Meer laden",
       unavailableTitleText: "Naamloos",

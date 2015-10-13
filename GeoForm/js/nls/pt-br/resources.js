@@ -262,7 +262,7 @@
       mapTabTooltip: "Mapa",
       btnDescendingText: "Desc",
       btnAscendingText: "Asc",
-      geometryUnavailableErrorMessage: "Erro ao localizar a geometria da feição",
+      geometryUnavailableErrorMessage: "ã_Error finding the geometry of the feature_____________Ç",
       infoPopupOffErrorMessage: "Nenhum informação para exibir",
       btnLoadMoreText: "Carregar Mais",
       unavailableTitleText: "Sem título",

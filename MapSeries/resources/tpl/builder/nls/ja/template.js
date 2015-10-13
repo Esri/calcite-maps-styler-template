@@ -70,7 +70,7 @@
 			},
 			organizePopup: {
 				title: "整理",
-				lblHeader: "%LBL_LAYOUT% をドラッグ アンド ドロップして、シリーズを整理します。",
+				lblHeader: "須_Drag and drop %LBL_LAYOUT% to organize your story________________鷗.",
 				lblColTitle: "タイトル",
 				lblColStatus: "ステータス",
 				btnApplyWarning: "%NB% %LBL_LAYOUT% の削除を確認",

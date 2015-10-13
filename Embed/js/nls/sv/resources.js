@@ -26,7 +26,8 @@ define(
             },
             "basemap":{
                     "label": "Baskarta",
-                    "title": "Välj en baskarta"
+                    "title": "Välj en baskarta",
+                    "close": "Å_Close___ö"
             },
             "legend":{
                 "title": "Teckenförklaring"
@@ -42,6 +43,7 @@ define(
 
         },
         "map": {
+            "toggle": "Å_Toggle side panel______ö",
             "error": "Det gick inte att skapa kartan"
         }
     })

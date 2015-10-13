@@ -70,7 +70,7 @@
 			},
 			organizePopup: {
 				title: "구성",
-				lblHeader: "시리즈를 구성하려면 %LBL_LAYOUT%을(를) 끌어서 놓습니다.",
+				lblHeader: "한_Drag and drop %LBL_LAYOUT% to organize your story________________빠.",
 				lblColTitle: "제목",
 				lblColStatus: "상태",
 				btnApplyWarning: "%NB% %LBL_LAYOUT% 삭제 확인",

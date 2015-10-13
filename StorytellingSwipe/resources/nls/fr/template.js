@@ -2,11 +2,11 @@
 	 ({
 		viewer: {
 			loading: {
-				step1: "CHARGEMENT DE L\’APPLICATION",
+				step1: "æ_LOADING STORY_____Â",
 				step2: "CHARGEMENT DES DONNEES",
 				step3: "INITIALISATION",
 				fail: "Echec de chargement du balayage",
-				loadBuilder: "PASSAGE EN MODE DE GENERATEUR",				
+				loadBuilder: "PASSAGE EN MODE DE GENERATEUR",
 				redirectSignIn: "REDIRECTION VERS LA PAGE DE CONNEXION",
 				redirectSignIn2: "(vous serez redirigé vers cette page une fois connecté)",
 				failButton: "Réessayez"
@@ -17,16 +17,19 @@
 				invalidConfig: "Erreur fatale : configuration non valide",
 				invalidConfigNoWebmap: "Erreur fatale : configuration non valide (aucune carte Web n\'est spécifiée)",
 				createMap: "Impossible de créer la carte",
-				invalidApp: "Erreur fatale : impossible de charger l\’application",
+				invalidApp: "æ_Fatal error: The story cannot be loaded_____________Â",
 				initMobile: "Bienvenue dans l\’application Web de balayage. L\’application n\’est pas configurée. Le générateur interactif n\’est pas pris en charge sur les appareils mobiles.",
+				initMobile2: "æ_The Swipe builder is not supported at this display size__________________Â.",
 				noBuilderIE8: "Le générateur interactif de balayage n\'est pas pris en charge avant la version 9 d\'Internet Explorer.",
 				noLayerView: "Bienvenue dans l\’application Web de balayage.<br />L\’application n\’est pas encore configurée.",
-				appSave: "Erreur d\’enregistrement de l\’application Web",
+				appSave: "æ_Error saving the web story_________Â",
 				mapSave: "Erreur d\’enregistrement de la carte Web",
-				notAuthorized: "Vous n\’êtes pas autorisé à accéder à cette application",
+				notAuthorized: "æ_You are not authorized to access this story______________Â",
 				conflictingProjectionsTitle: "Projections conflictuelles",
 				conflictingProjections: "Le balayage ne prend pas en charge l\'utilisation de deux cartes Web avec des projections différentes. Ouvrez les paramètres et utilisez une carte Web dotée de la même projection que la première carte Web.",
-				cpButton: "Fermer"
+				cpButton: "Fermer",
+				unspecifiedConfigOwner: "æ_Authorized owner hasn't been configured_____________Â.",
+				invalidConfigOwner: "æ_Story owner is not authorized__________Â."
 			},
 			mobileView: {
 				hideIntro: "MASQUER L\'INTRODUCTION",
@@ -44,7 +47,7 @@
 		},
 		builder: {
 			builder: {
-				panelHeader: "CONFIGURATION DE L\’APPLICATION",
+				panelHeader: "æ_STORY CONFIGURATION_______Â",
 				buttonSave: "ENREGISTRER",
 				buttonHelp: "Aide",
 				buttonShare: "Partager",
@@ -64,13 +67,13 @@
 				popoverSaveWhenDone: "N\’oubliez pas d\’enregistrer lorsque vous avez terminé",
 				closeWithPendingChange: "Voulez-vous vraiment confirmer l\’opération ? Vos modifications seront perdues.",
 				gotIt: "OK",
-				savingApplication: "Enregistrement de l\’application",
-				saveSuccess: "L\’application a été enregistrée",
+				savingApplication: "æ_Saving story_____Â",
+				saveSuccess: "æ_Story saved successfully________Â",
 				saveError: "L\’enregistrement a échoué, réessayez",
 				saveError2: "L\'enregistrement a échoué en raison d\'une balise HTML non valide dans un nom ou une description",
 				saveError3: "Le titre ne peut pas être vide",
 				signIn: "Connectez-vous avec un compte sur",
-				signInTwo: "pour enregistrer l\’application."
+				signInTwo: "æ_to save the story______Â."
 			},
 			header:{
 				editMe: "Modifier",
@@ -78,7 +81,7 @@
 				templateSubtitle: "Définir le sous-titre du modèle"
 			},
 			settings: {
-				settingsHeader: "Paramètres de l\’application",
+				settingsHeader: "æ_Story settings_____Â",
 				modalCancel: "Annuler",
 				modalApply: "Appliquer"
 			},
@@ -138,7 +141,7 @@
 				settingsLayoutSpyGlass: "Longue-vue",
 				settingsLayoutSelected: "Mise en page sélectionnée",
 				settingsLayoutSelect: "Sélectionner cette mise en page",
-				settingsSaveConfirm: "Certaines de vos modifications nécessitent d\'enregistrer et de recharger l\'application"
+				settingsSaveConfirm: "æ_Some of your changes require that you save and reload the story____________________Â"
 			},
 			settingsDataModel: {
 				settingsTabDataModel: "Balayer un type",
@@ -166,7 +169,7 @@
 			},
 			settingsLegend: {
 				settingsTabLegend: "Mise en page de l\'application",
-				settingsLegendExplain: "Sélectionnez les paramètres de mise en page de l\'application.",
+				settingsLegendExplain: "æ_Select the layout settings_________Â.",
 				settingsLegendEnable: "Activer la légende",
 				settingsDescriptionEnable: "Activer la description",
 				settingsBookmarksEnable: "Activer la série de balayages",
@@ -174,7 +177,7 @@
 				settingsLocationSearchEnable: "Activer la recherche de localisateur",
 				settingsGeolocatorEnable: "Activer le géolocalisateur",
 				settingsLegendHelpContent: "Pour affiner le contenu de la légende, utilisez la table des matières de la visionneuse de carte Web ArcGIS.com (Masquer dans la légende)",
-				settingsSeriesHelpContent: "La série de balayages est une option de navigation par onglets qui guide la visionneuse vers une étendue particulière et qui affiche un titre et un texte de description dans le volet latéral. Lors de la première activation, les géosignets des cartes Web sont importés et utilisés pour renseigner la barre de la série. Si vous désactivez l\'option de série, la barre de série est désactivée, mais la configuration de votre série est conservée pour une utilisation ultérieure.", 
+				settingsSeriesHelpContent: "La série de balayages est une option de navigation par onglets qui guide la visionneuse vers une étendue particulière et qui affiche un titre et un texte de description dans le volet latéral. Lors de la première activation, les géosignets des cartes Web sont importés et utilisés pour renseigner la barre de la série. Si vous désactivez l\'option de série, la barre de série est désactivée, mais la configuration de votre série est conservée pour une utilisation ultérieure.",
 				settingsSeriesHelpContent2: "La série de balayages vous permet de créer et de mettre à jour une sélection d\'emplacements accompagnés de titres et de texte. Si votre carte Web comprend des géosignets, ils s\'afficheront. Vous pouvez désactiver la série, mais la configuration sera conservée pour une utilisation future.",
 				settingsSeriesHelpLink: "Consultez un exemple d\'application avec une série de balayages ici",
 				preview: "Aperçu de l\'interface utilisateur",
@@ -215,39 +218,39 @@
 				}
 			},
 			share: {
-				firstSaveTitle: "L\'application a été enregistrée",
-				firstSaveHeader: "Votre application est maintenant enregistrée sur ArcGIS Online. Lisez les réponses suivantes aux questions fréquentes.",
+				firstSaveTitle: "æ_Story successfully saved________Â",
+				firstSaveHeader: "æ_Your story is now saved in ArcGIS Online. Please read the following answers to frequent questions______________________________Â.",
 				firstSaveA1: "Si vous n\'êtes pas familiarisé avec ArcGIS Online ou si vous voulez un raccourci pour accéder à l\'interface de création, vous pouvez enregistrer le lien suivant : %LINK1%",
-				firstSaveA1bis: "L\'application se trouve également dans votre <a href='%LINK2%' target='_blank'>dossier de contenu ArcGIS Online</a>.",
-				firstSaveQ2: "Mon application est-elle partagée ?",
-				firstSaveA2: "Votre application n\'est pour le moment pas partagée. Pour la partager, utilisez le bouton PARTAGER.",
-				shareTitle: "Partager votre application",
-				sharePrivateHeader: "Votre application n\'est pas partagée. Souhaitez-vous la partager ?",
+				firstSaveA1bis: "æ_The story can also be found in your <a href='%LINK2%' target='_blank'>ArcGIS Online content folder</a>________________________________Â.",
+				firstSaveQ2: "æ_Is my story shared_______Â?",
+				firstSaveA2: "æ_Currently your story is not shared. To share it, use the SHARE button______________________Â.",
+				shareTitle: "æ_Share your story______Â",
+				sharePrivateHeader: "æ_Your story is not shared, would you like to share it_________________Â?",
 				sharePrivateBtn1: "Partager publiquement",
 				sharePrivateBtn2: "Partager avec mon organisation",
 				sharePrivateProgress: "Partage en cours...",
 				sharePrivateErr: "Echec du partage, essayez à nouveau ou",
 				sharePrivateOk: "Partage mis à jour, en cours de chargement...",
-				shareStatus1: "L\'application n\'est pas enregistrée",
-				shareStatus2: "L\'application est partagée publiquement",
-				shareStatus3: "L\'application est partagée au sein de l\'organisation",
-				shareStatus4: "L\'application n\'est pas partagée",
+				shareStatus1: "æ_Story is not saved______Â",
+				shareStatus2: "æ_Story is shared publicly________Â",
+				shareStatus3: "æ_Story is shared within the organization_____________Â",
+				shareStatus4: "æ_Story is not shared_______Â",
 				sharePreviewAsUser: "Aperçu",
-				shareHeader1: "Votre application est <strong>accessible publiquement</strong>.",
-				shareHeader2: "Votre application est accessible par les membres de votre organisation (connexion requise).",
-				shareLinkHeader: "Partager l\'application avec votre public",
+				shareHeader1: "æ_Your story is <strong>publicly accessible</strong>________________Â.",
+				shareHeader2: "æ_Your story is accessible by your organization members (login is required)_______________________Â.",
+				shareLinkHeader: "æ_Share the story with your audience___________Â",
 				shareLinkOpen: "OUVRIR",
 				learnMore: "En savoir plus",
-				shareQ1Opt1: "Comment maintenir l\'application privée ?",
-				shareQ1Opt2: "Comment maintenir l\'application privée ou la partager publiquement ?",
+				shareQ1Opt1: "æ_How do I keep the story private___________Â?",
+				shareQ1Opt2: "æ_How do I keep the story private or share it publicly_________________Â?",
 				shareA1: "Utilisez %SHAREIMG% sur <a href='%LINK1%' target='_blank'>la page des éléments de l\'application</a>. Si vous souhaitez également annuler le partage de la carte Web, utilisez <a href='%LINK2%' target='_blank'>la page des éléments de la carte Web</a>.",
 				shareA1bis: "Si vous souhaitez également annuler le partage du service d\'entités, utilisez <a href='%LINK1%' target='_blank'>la page des éléments du service d\'entités</a>.",
-				shareQ2: "Comment modifier ultérieurement l\'application ?",
+				shareQ2: "æ_How do I edit the story later__________Â?",
 				shareQ2bis: "Comment revenir dans l\'interface de création ?",
-				shareA2div1: "Enregistrez et réutilisez le lien suivant %LINK1% ou utilisez <a href='%LINK2%' target='_blank'>la page des éléments de l\'application</a>.",
-				shareA2div2: "En tant que propriétaire de l\'application, lorsque vous êtes connecté à ArcGIS.com, l\'application affiche un bouton permettant d\'ouvrir le générateur interactif :",				
+				shareA2div1: "æ_Save and reuse the following link %LINK1% or use <a href='%LINK2%' target='_blank'>the story item page</a>_________________________________Â.",
+				shareA2div2: "æ_As the owner of the story, when you are signed in on ArcGIS.com, the story includes a button to open the interactive builder_______________________________________Â:",
 				shareQ3: "Où les données sont-elles stockées ?",
-				shareA3: "La configuration de l\'application est stockée dans cet élément de l\'application Web</a>.",
+				shareA3: "æ_The story configuration is stored in this web application item</a>_____________________Â.",
 				shareWarning: "Le partage %WITH% a été désactivé, car vous ne possédez pas la <a href='%LINK%' target='_blank'>carte Web</a>.",
  				shareWarningWith1: "publiquement",
  				shareWarningWith2: "publiquement et avec l\'organisation"
@@ -279,4 +282,3 @@
 		}
     })
 );
-

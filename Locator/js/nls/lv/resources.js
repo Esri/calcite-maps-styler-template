@@ -35,7 +35,8 @@ define(
          "directions": "Norādes",
          "filter": "Filtrs",
          "close": "Aizvērt",
-         "reverse": "Pretēji"
+         "reverse": "Pretēji",
+         "mode": "ķ_Switch mode Drive/Walk________ū"
       }
    })
 );

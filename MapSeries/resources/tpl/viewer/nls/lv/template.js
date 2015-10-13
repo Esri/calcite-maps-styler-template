@@ -5,29 +5,29 @@
 				close: "Aizvērt"
 			},
 			loading: {
-				long: "Lietotne tiek inicializēta",
+				long: "ķ_Story is initializing_______ū",
 				long2: "Paldies, ka uzgaidījāt",
-				failButton: "Pārlādēt aplikāciju"
+				failButton: "ķ_Reload the story______ū"
 			},
 			signin: {
 				title: "Nepieciešama autentifikācija",
-				explainViewer: "Lai piekļūtu aplikācijai, pierakstieties %PORTAL_LINK%, izmantojot kontu.",
-				explainBuilder: "Lai konfigurētu aplikāciju, pierakstieties %PORTAL_LINK%, izmantojot kontu."
+				explainViewer: "ķ_Please sign in with an account on %PORTAL_LINK% to access the story_____________________ū.",
+				explainBuilder: "ķ_Please sign in with an account on %PORTAL_LINK% to configure the story______________________ū."
 			},
 			errors: {
 				boxTitle: "Kļūda",
 				invalidConfig: "Nederīga konfigurācija",
 				invalidConfigNoApp: "Web kartēšanas aplikācijas identifikators nav norādīts šeit: index.html.",
 				unspecifiedConfigOwner: "Autorizētais īpašnieks nav konfigurēts.",
-				invalidConfigOwner: "Aplikācijas īpašnieks nav autorizēts.",
+				invalidConfigOwner: "ķ_Story owner is not authorized__________ū.",
 				createMap: "Nevar izveidot karti",
 				invalidApp: "%TPL_NAME% nepastāv vai tai nevar piekļūt.",
 				appLoadingFail: "Ir atgadījusies kļūme — %TPL_NAME% netika ielādēta pareizi.",
-				notConfiguredDesktop: "Aplikācija vēl nav konfigurēta.",
-				notConfiguredMobile: "%TPL_NAME% veidotājs ekrānā ar šādu izšķirtspēju netiek atbalstīts.",
-				notAuthorized: "Jūs neesat pilnvarots piekļūt šai lietotnei",
+				notConfiguredDesktop: "ķ_The story is not configured yet___________ū.",
+				notConfiguredMobile: "ķ_The %TPL_NAME% builder is not supported at this display size___________________ū.",
+				notAuthorized: "ķ_You are not authorized to access this story______________ū",
 				noBuilderIE: "Veidotājs netiek atbalstīts Internet Explorer versijās, kas ir jaunākas par %VERSION%. %UPGRADE%",
-				noViewerIE: "Šī aplikācija netiek atbalstīta Internet Explorer versijās, kas ir jaunākas par %VERSION%. %UPGRADE%",
+				noViewerIE: "ķ_This story is not supported in Internet Explorer before version %VERSION%. %UPGRADE%__________________________ū",
 				upgradeBrowser: "<a href='http://browsehappy.com/' target='_blank'>Lūdzu, atjauniniet savu pārlūku</a>.",
 				mapLoadingFail: "Ir atgadījusies kļūme — karte netika ielādēta pareizi.",
 				signOut: "Izrakstīties"
@@ -35,8 +35,8 @@
 			mobileInfo: {
 				legend: "Apzīmējumi",
 				description: "Apraksts",
-				lblLegendMobileError: "Diemžēl apzīmējumi nav pieejami. Lūdzu, pārlādējiet lietotni.",
-				lblLegendMobileErrorExplain: "Apzīmējumi nav pieejami, ja ierīce pēc lietotnes ielādēšanas tiek pagriezta portreta režīmā."
+				lblLegendMobileError: "ķ_Sorry, the legend is unavailable. Please reload the story__________________ū.",
+				lblLegendMobileErrorExplain: "ķ_The legend is not available when the device is rotated to portrait mode after the story is loaded______________________________ū."
 			},
 			mobileFooter: {
 				swipeInvite: "Pārvelciet, lai navigētu stāstā",
@@ -51,7 +51,10 @@
 				bitlyTooltip: "Iegūt īso saiti",
 				templateTitle: "Iestatīt šablona virsrakstu",
 				templateSubtitle: "Iestatīt šablona apakšvirsrakstu",
-				share: "Kopīgot"
+				share: "Kopīgot",
+				checking: "ķ_Checking your story content_________ū",
+				fix: "ķ_Fix issues in your story________ū",
+				noerrors: "ķ_No issues detected______ū"
 			},
 			overviewFromCommon: {
 				title: "Kartes pārskatīšana"
@@ -64,8 +67,11 @@
 				copied: "Kopēts",
 				open: "Atvērt",
 				embed: "Iegult web lapā",
-				embedExplain: "Izmantojiet šo HTML kodu, lai lietotni iegultu tīmekļa lapā.",
+				embedExplain: "ķ_Use the following HTML code to embed the story in a web page___________________ū.",
 				size: "Izmēri (platums/augstums):"
+			},
+			locatorFromCommon: {
+				error: "ķ_Location not available________ū"
 			}
         }
     })

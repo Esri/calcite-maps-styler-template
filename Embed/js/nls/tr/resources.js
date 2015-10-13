@@ -26,7 +26,8 @@ define(
             },
             "basemap":{
                     "label": "Altlık Haritası",
-                    "title": "Altlık Haritası Seç"
+                    "title": "Altlık Haritası Seç",
+                    "close": "ı_Close___İ"
             },
             "legend":{
                 "title": "Gösterim"
@@ -42,6 +43,7 @@ define(
 
         },
         "map": {
+            "toggle": "ı_Toggle side panel______İ",
             "error": "Harita oluşturulamıyor"
         }
     })

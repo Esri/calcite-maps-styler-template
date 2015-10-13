@@ -57,7 +57,7 @@
 			},
 			organizePopup: {
 				title: "Organiser",
-				lblHeader: "Dra og slipp seksjoner for å organisere innholdet.",
+				lblHeader: "å_Drag and drop sections to organize your story_______________ø.",
 				lblColTitle: "Tittel",
 				lblColPubDate: "Publiseringsdato",
 				lblColStatus: "Status",

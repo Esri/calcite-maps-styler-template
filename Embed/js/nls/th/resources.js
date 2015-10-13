@@ -26,7 +26,8 @@ define(
             },
             "basemap":{
                     "label": "แผนที่ฐาน",
-                    "title": "เลือกแผนที่ฐาน"
+                    "title": "เลือกแผนที่ฐาน",
+                    "close": "ก้_Close___ษฺ"
             },
             "legend":{
                 "title": "สัญลักษณ์"
@@ -42,6 +43,7 @@ define(
 
         },
         "map": {
+            "toggle": "ก้_Toggle side panel______ษฺ",
             "error": "ไม่สามารถสร้างแผนที่ได้"
         }
     })

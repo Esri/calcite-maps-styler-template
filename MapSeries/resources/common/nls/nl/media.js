@@ -64,7 +64,7 @@
 				url: "URL van een Vimeo-video"
 			},
 			videoSelectorOther: {
-				explain1: "De applicatie kan geen raw video\'s (bijv. avi, mpeg) afspelen maar het kan gehoste videobestanden afspelen die ingebouwde spelers hebben (bijv. YouTube of Vimeo).",
+				explain1: "Ĳ_The story cannot play raw videos (e.g., avi, mpeg) but it can play hosted video files that have built-in players (e.g., YouTube or Vimeo)__________________________________________ä.",
 				explain2: "De meeste online videoservices bieden deze functie. U moet de optie vinden om de video in te kunnen sluiten, de verstrekte code kopieren en de %WEBPAGE% gebruiken.",
 				explain3: "Als u de video zelf wilt hosten, kunt u een HTML-pagina maken die een videospeler gebruikt zoals %EXAMPLE%. Host die pagina en gebruik tevens de %WEBPAGE%.",
 				webpage: "Functie webpagina"
@@ -102,7 +102,7 @@
 				lblPosition3Explain2: "(breedte past altijd in het deelvenster)",
 				lblPosition4Explain: "(kan worden vervormd)",
 				unloadLbl: "Laden ongedaan maken als lezer weggaat",
-				unloadHelp: "Houd deze optie aangevinkt als de webpagina audio- of videomedia heeft om te voorkomen dat de content wordt afgespeeld als de lezer weggaat. Haal het vinkje weg om een soundtrack te laten doorspelen als de lezer verdergaat door het verhaal.<br />Als de webpagina een applicatie is, haal het vinkje dan weg zodat de applicatie het niet opnieuw laadt als de lezer terugkeert."
+				unloadHelp: "Ĳ_If the Web Page has audio or video media, keep this option checked to stop that content from playing when the reader navigates away. Uncheck it for example to keep a soundtrack playing as the reader advances through the story.<br />If the Web Page is an application, uncheck this option so that the story does not reload if the reader returns to it__________________________________________________________________________________________________________ä."
 			},
 			editorActionGeocode: {
 				lblTitle: "Een adres of plaats zoeken",

@@ -5,33 +5,33 @@
 				close: "Sluiten"
 			},
 			loading: {
-				step1: "Applicatie laden",
+				step1: "Ĳ_Loading story_____ä",
 				step2: "Gegevens laden",
 				step3: "Initialiseren",
 				loadBuilder: "Overschakelen naar builder",
 				long: "Kaartjournaal wordt geïnitialiseerd",
 				long2: "Bedankt voor uw geduld",
-				failButton: "De applicatie opnieuw laden"
+				failButton: "Ĳ_Reload the story______ä"
 			},
 			signin: {
 				title: "Verificatie is vereist",
-				explainViewer: "Meld u aan met een account op %PORTAL_LINK% om toegang te krijgen tot de applicatie.",
-				explainBuilder: "Meld u aan met een account op %PORTAL_LINK% om de applicatie te configureren."
+				explainViewer: "Ĳ_Please sign in with an account on %PORTAL_LINK% to access the story_____________________ä.",
+				explainBuilder: "Ĳ_Please sign in with an account on %PORTAL_LINK% to configure the story______________________ä."
 			},
 			errors: {
 				boxTitle: "Er is een fout opgetreden",
 				invalidConfig: "Ongeldige configuratie",
 				invalidConfigNoApp: "Webmapapplicatie-ID niet opgegeven in index.html.",
 				unspecifiedConfigOwner: "De gemachtigde eigenaar is niet geconfigureerd.",
-				invalidConfigOwner: "De eigenaar van de applicatie is niet gemachtigd.",
+				invalidConfigOwner: "Ĳ_Story owner is not authorized__________ä.",
 				createMap: "Kan kaart niet maken",
 				invalidApp: "De %TPL_NAME% bestaat niet of is niet toegankelijk.",
 				appLoadingFail: "Er is een probleem opgetreden. De %TPL_NAME% is niet correct geladen.",
-				notConfiguredDesktop: "De applicatie is nog niet geconfigureerd.",
-				notConfiguredMobile: "De %TPL_NAME%-builder wordt niet ondersteund op deze schermresolutie.",
-				notAuthorized: "U bent niet gemachtigd om deze applicatie te openen",
+				notConfiguredDesktop: "Ĳ_The story is not configured yet___________ä.",
+				notConfiguredMobile: "Ĳ_The %TPL_NAME% builder is not supported at this display size___________________ä.",
+				notAuthorized: "Ĳ_You are not authorized to access this story______________ä",
 				noBuilderIE: "De builder wordt niet ondersteund op eerdere versies van Internet Explorer dan versie %VERSION%. %UPGRADE%",
-				noViewerIE: "Deze applicatie wordt niet ondersteund op eerdere versies van Internet Explorer dan versie %VERSION%. %UPGRADE%",
+				noViewerIE: "Ĳ_This story is not supported in Internet Explorer before version %VERSION%. %UPGRADE%__________________________ä",
 				upgradeBrowser: "<a href='http://browsehappy.com/' target='_blank'>Werk uw browser bij</a>.",
 				mapLoadingFail: "Er is een probleem opgetreden. De kaart is niet correct geladen.",
 				signOut: "Afmelden"
@@ -60,7 +60,10 @@
 				bitlyTooltip: "Ontvang een korte URL",
 				templateTitle: "Titel voor template instellen",
 				templateSubtitle: "Subtitel voor template instellen",
-				share: "Delen"
+				share: "Delen",
+				checking: "Ĳ_Checking your story content_________ä",
+				fix: "Ĳ_Fix issues in your story________ä",
+				noerrors: "Ĳ_No issues detected______ä"
 			},
 			overviewFromCommon: {
 				title: "Overzichtskaart"

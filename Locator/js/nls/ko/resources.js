@@ -35,7 +35,8 @@ define(
          "directions": "길찾기",
          "filter": "필터",
          "close": "닫기",
-         "reverse": "반전"
+         "reverse": "반전",
+         "mode": "한_Switch mode Drive/Walk________빠"
       }
    })
 );

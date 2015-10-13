@@ -9,7 +9,8 @@
       filterInstructions: "Filtern Sie den Layer durch Angabe von Werten.",
       filterOr: "Einer der folgenden Ausdrücke muss \"wahr\" sein.",
       filterAnd: "Alle folgenden Ausdrücke müssen \"wahr\" sein.",
-      filterNo:  "Web map does not contain any interactive filters. View the <a target='_blank' href='http://doc.arcgis.com/en/arcgis-online/use-maps/apply-filters.htm'>Apply Filter</a> help topic for details on how to create a filter in your web map.",
+      filterNo:  "Web map does not contain any interactive filters. View the ${link} help topic for details on how to create a filter in your web map.",
+      filterLink: "ä_http://doc.arcgis.com/en/arcgis-online/use-maps/apply-filters.htm_____________________Ü",
       errors:{
         message: "Beim Erstellen der Filteranwendung ist ein Problem aufgetreten"
       }
