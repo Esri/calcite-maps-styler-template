@@ -70,15 +70,14 @@ define({
 				statusError: "There are issues in your story content that will be noticeable to your readers. You can identify and fix these issues below.",
 				statusNoErrPrivate: "Share your story once you are ready!",
 				mystoriesinvite: "Manage all your stories",
-				notavailable1: "Sorry, this feature is not fully supported on your system for the following reason:",
-				notavailable2: "the story map is not hosted in ArcGIS Online.",
-				notavailable3: "the story map is not hosted on the Portal for ArcGIS server.",
-				notavailable4: "the version of Portal for ArcGIS you are using is not supported (require 10.4 or a most recent version).",
-				notavailable5: "You can use %LINK% to share your story.",
-				notavailable6: "My Stories",
-				notavailable7: "the item page",
-				notavailable8: "Sorry, this feature is not fully supported in development mode. Depending on your deployment scenario, this feature may be supported when deployed.",
-				notavailable9: "Make sure that all the content of your story is also shared."
+				notavailable1: "Sorry, sharing your story from the Builder is not supported since this application is not hosted in %PRODUCT%.",
+				notavailable2: "Sorry, sharing your story from the Builder is not supported on this version of Portal for ArcGIS (requires 10.4 or later).",
+				notavailable3: "You can share this story from %LINK%.",
+				notavailable4: "My Stories",
+				notavailable5: "it's item page",
+				notavailable6: "Sorry, this feature is not fully supported in development mode. Depending on your deployment scenario, this feature may be supported when deployed.",
+				notavailable7: "Make sure to visit %MYCONTENT% to confirm the maps and layers used in your story are also shared.",
+				notavailable8: "My Content"
 			},
 			settings: {
 				header: "Settings",
