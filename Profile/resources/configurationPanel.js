@@ -45,7 +45,16 @@
         "type":"string",
         "fieldName": "panelLocation",
         "label": "Elevation profile location",
-        "tooltip": "Specify profile panel location"
+        "tooltip": "Specify profile panel location",
+        "options": [
+          {
+            "label": "Bottom Center",
+            "value": "bottom-center"
+          },{
+            "label": "Top Center",
+            "value": "top-center"
+          }
+        ]
       },{
         "type": "string",
         "fieldName": "customProfileUrl",
