@@ -7,8 +7,8 @@ define({
 			sort: "Sort",
 			sortColon: "Sort:",
 			numResults: "Results: {{NUM_RESULTS}}",
-			sortBy: "Sort by",			
-			dateModified: "Date modified",			
+			sortBy: "Sort by",
+			dateModified: "Date modified",
 			title: "Title",
 			type: "Type",
 			views: "Views",
@@ -28,7 +28,7 @@ define({
 			noIssues: "All good",
 			userStories: "Stories of {{USER_NAME}}",
 			headerDisabledTooltip: "Please wait while we work some magic...",
-			notOnTouch: "Not available on touch devices",			
+			notOnTouch: "Not available on touch devices",
 		},
 		deleteModal: {
 			title: "Confirm Delete",
@@ -75,8 +75,8 @@ define({
 			letsGo: "Let's go!"
 		},
 		sharingLevel: {
-			public: "Public",
-			private: "Private",
+			publicMessage: "Public",
+			privateMessage: "Private",
 			organization: "Organization",
 			changedSharing: "Changed sharing level.",
 			unableToChange: "Unable to change sharing.",
@@ -86,46 +86,46 @@ define({
 			mapOrg: "Sharing your map to your organization would break your story",
 			layerOrg: "Sharing your layer to your organization would break your story",
 			mapPrivate: "Making your map private would break your story",
-			layerPrivate: "Making your layer private would break your story"			
+			layerPrivate: "Making your layer private would break your story"
 		},
-		collectionList: [
-			"Advocacy and Outreach",
-			"Architecture and Design",
-			"Conservation and Sustainability",
-			"Culture",
-			"Destinations and Tourism",       
-			"Disasters and Recovery",           
-			"Economy and Development",
-			"Entertainment",
-			"History",
-			"Infrastructure",                  
-			"Marketing",                        
-			"Nature and Environment",
-			"News and Events",
-			"Oceans",                         
-			"Parks and Recreation",
-			"People and Society",               
-			"Planning and Analysis",
-			"Public Art",
-			"Science and Technology",
-			"Sport",                           
-			"Travelogues"
-		],
+		collectionList: {
+			advocacy: "Advocacy and Outreach",
+			architecture: "Architecture and Design",
+			conservation: "Conservation and Sustainability",
+			culture: "Culture",
+			destinations: "Destinations and Tourism",
+			disasters: "Disasters and Recovery",
+			economy: "Economy and Development",
+			entertainment: "Entertainment",
+			history: "History",
+			infrastructure: "Infrastructure",
+			marketing: "Marketing",
+			nature: "Nature and Environment",
+			news: "News and Events",
+			oceans: "Oceans",
+			parks: "Parks and Recreation",
+			people: "People and Society",
+			planning: "Planning and Analysis",
+			publicArt: "Public Art",
+			science: "Science and Technology",
+			sport: "Sport",
+			travelogues: "Travelogues"
+		},
 		types: {
 			custom: "Custom",
 			notSpecified: "Type not specified"
 		},
 		storyMap: {
-			shared: "Shared",			
+			shared: "Shared",
 			saveFailed: "Error saving",
 			numViews: "Views: {{NUM_VIEWS}}",
 			editStory: "Edit Story",
 			viewLive: "View Live",
 			preview: "Preview",
-			"delete": "Delete",
+			deleteButton: "Delete",
 			modified: "Modified {{DATE}}",
 			summary: "Summary",
-			loading: "Loading...",			
+			loading: "Loading...",
 			collapse: "collapse",
 			close: "close",
 			hide: "hide",
@@ -147,7 +147,7 @@ define({
 				emptyDimension: "Enter a dimension.",
 				seeExample: "Preview your embed",
 				removeHeader: "Hide application header"
-			},			
+			},
 			maps: {
 				unableRetrieveTitle: "Unable to retrieve maps",
 				unableRetrieveDescription: "We weren't able to retrieve maps for this story map."
@@ -187,7 +187,7 @@ define({
 			errors: {
 				cantDeleteStory: "Unable to delete story.",
 				unableToFind: "Unable to find content",
-				unableToRetrieve: "We weren't able to retrieve the content for this story map."				
+				unableToRetrieve: "We weren't able to retrieve the content for this story map."
 			},
 			socialSharing: {
 				availableWhenPublic: "This option will be available when your story is public"
@@ -216,12 +216,12 @@ define({
 				dragAndDrop: "Drag and Drop",
 				cropImage: "Crop Image",
 				saveImage: "Save Image",
-				save: "Save",				
+				save: "Save",
 				savingImage: "Saving your image...",
 				saved: "Saved!",
 				errorSaving: "Unable to save your image.",
 				skipAndCrop: "Skip and Crop for me",
-				wrongFormat: "This file type is not supported.",				
+				wrongFormat: "This file type is not supported.",
 				noCropWarning: "This image can't be cropped, but you can still save it as your story thumbnail with its original dimensions ({{WIDTH_PIXELS}} x {{HEIGHT_PIXELS}}px)."
 			}
 		},
@@ -234,29 +234,29 @@ define({
 				tags: "Tags",
 				gallery: "Gallery"
 			},
-			headers: {				
+			headers: {
 				status: "Status",
 				source: "Source",
 				name: "Name",
 				shared: "Shared"
-			},			
+			},
 			component: {
 				mapTour: "Point Number",
 				bullet: "Bullet",
 				tab: "Tab",
-				accordion: "Section",				
+				accordion: "Section",
 				mapJournal: "Section"
 			},
 			titleType: {
 				mapTour: "Caption",
 				mapJournal: "URL",
 				mapSeries: "URL"
-			},			
+			},
 			actions: {
 				viewMap: "View Map",
 				editMap: "Edit Map",
 				fix: "Fix",
-				viewLayer: "View Layer"				
+				viewLayer: "View Layer"
 			},
 			contentType: {
 				mainStage: "main stage action",
@@ -288,7 +288,7 @@ define({
 				layersPrivate: "Some layers have also been made private",
 				mapsPublic: "Some maps have also been shared publicly",
 				mapsOrg: "Some maps have also been shared with your organization",
-				mapsPrivate: "Some maps have also been made private",				
+				mapsPrivate: "Some maps have also been made private",
 				layersAndMapsPublic: "Some maps and layers have also been shared publicly",
 				layersAndMapsOrg: "Some maps and layers have also been shared with your organization",
 				layersAndMapsPrivate: "Some maps and layers have also been made private",
@@ -312,7 +312,7 @@ define({
 				searchTip: "Try and simplify it a bit.",
 				consolationNoStories: "Welcome to My Stories!",
 				noStoriesTip: "To make your first story map, check out the Apps page.",
-				letsGo: "Let's Go",				
+				letsGo: "Let's Go",
 				cantChangeSharingLevel: "Unable to change sharing level",
 				cantChangeSharingLevels: "Unable to change sharing levels",
 				errorUpdatingTitle: "Error updating title",
@@ -326,7 +326,7 @@ define({
 				mapHasBeenDeleted: "Map has been deleted",
 				layerHasBeenDeleted: "Layer has been deleted",
 				mapIsInaccessible: "Map is inaccessible",
-				layerIsInaccessible: "Layer is inaccessible",				
+				layerIsInaccessible: "Layer is inaccessible",
 				mapNotYoursNotAccessible: "Map is owned by someone else and isn't accessible",
 				layerServiceOkItemNot: "Layer was added as an item that is deleted or inaccessible",
 				layerNotYoursNotAccessible: "Layer is owned by someone else and isn't accessible",
@@ -365,7 +365,7 @@ define({
 				secureService: "Secure services",
 				inaccessibleImage: "Inaccessible images",
 				inaccessibleVideo: "Inaccessible videos",
-				inaccessibleWebpage: "Inaccessible webpages"					
+				inaccessibleWebpage: "Inaccessible webpages"
 			},
 			scanningErrorTips: {
 				deletedMapTip: "Tip: Open your web map and remove the broken content, or remove the web map from your story.",
@@ -378,12 +378,12 @@ define({
 				clickToSharePublic: "Click the button to share all this content publicly, or change each item manually by clicking its sharing buttons.",
 				shareOrg: "Share to your org",
 				sharePublicly: "Share publicly",
-				othersSharedBelowLevelTip: "Tip: Some of your story's content is owned by {{USER_NAME}}, and others who view your story may not be able to see it.",				
+				othersSharedBelowLevelTip: "Tip: Some of your story's content is owned by {{USER_NAME}}, and others who view your story may not be able to see it.",
 				secureServiceTip: "Tip: Remove the secure service from your story or follow the procedure described {{HERE}}.",
 				blogArticle: "here",
 				premiumContentTip: "Your story contains premium content that will consume {{CREDITS}} upon making it public. Make your story public and continue, or remove the layers from your story.",
 				premiumContentPublicTip: "Your story contains premium content that will consume {{CREDITS}} when publicly available. Confirm to make these layers public or remove the layers from your story.",
-				subscriptionContentTip: "Your story contains subscription content that is not publicly available by default. Confirm that you want to make these layers available (no credits will be consumed), or remove the layers from your story.",				
+				subscriptionContentTip: "Your story contains subscription content that is not publicly available by default. Confirm that you want to make these layers available (no credits will be consumed), or remove the layers from your story.",
 				agolCredits: "ArcGIS Online credits",
 				credits: "credits",
 				makePublic: "Make public",
@@ -400,13 +400,13 @@ define({
 				editMap: "Edit Your Map",
 				clickBelowWhenDone: "When you have finished editing, click the button below:",
 				rescanAndClose: "Rescan And Close"
-			},			
+			},
 			info: {
 				ownedBy: "This item is owned by {{USER_NAME}}",
 				unknownUser: "someone else",
 				untitledSection: "(Untitled section)",
 				introRecord: "Introduction"
-			},			
+			},
 			layers: {
 				layersHeader: "Layers",
 				noLayers: "(No Layers)",
@@ -420,7 +420,7 @@ define({
 			general: {
 				noTitle: "(no title)",
 				loading: "Loading..."
-			}			
+			}
 		},
 		infographics: {
 			mapJournal: {
@@ -439,7 +439,7 @@ define({
 				thirdValueLoading: "Loading...",
 				thirdValueUnknown: "unknown"
 			},
-			mapSeries: {				
+			mapSeries: {
 				firstTitleA: "bullets",
 				firstTitleB: "sections",
 				firstTitleC: "tabs",
@@ -469,7 +469,7 @@ define({
 			scanProgress: "{{NUM_SCANNED}} of {{NUM_TOTAL}}",
 			scanStopped: "Stories scanned: {{NUM_SCANNED}}, Stories with issues: {{ISSUE_STORIES}}",
 			storiesWithIssues: "Stories with issues: {{NUM_STORIES}}"
-		}		
+		}
     }),
 	"ar": 1,
 	"cs": 1,
