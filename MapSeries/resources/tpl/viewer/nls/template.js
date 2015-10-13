@@ -53,8 +53,8 @@ define({
 				templateSubtitle: "Set template subtitle",
 				share: "Share",
 				checking: "Checking your story content",
-				fix: "Fix errors in your story",
-				noerrors: "No errors detected"
+				fix: "Fix issues in your story",
+				noerrors: "No issues detected"
 			},
 			overviewFromCommon: {
 				title: "Overview Map"
