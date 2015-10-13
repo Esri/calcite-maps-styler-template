@@ -96,6 +96,10 @@ define([
 
             parser.parse();
 
+            //  Dojo Mobile's click setting of 'true' breaks feature layer click generation
+            // See https://bugs.dojotoolkit.org/ticket/15878
+            window.document.dojoClick = false;
+
             // config will contain application and user defined info for the template such as i18n strings, the web map id
             // and application id
             // any url parameters and any application specific configuration information.

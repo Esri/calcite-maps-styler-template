@@ -1,7 +1,7 @@
 From git branch 
 develop
-commit 9ed792255653dc45efcb17cf84b98c3365fcf6f8
-Author: Allison Muise <amuise@esri.com>
-Date:   Sat Oct 10 13:45:00 2015 -0700
+commit 95559c35a5f46a93c53a3b4f3e30572bda9cff99
+Author: MikeTschudi <mtschudi@esri.com>
+Date:   Tue Oct 13 14:12:50 2015 -0700
 
-    updated strings
+    Restored hiding of titlebar icon when screen is narrow
