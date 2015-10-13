@@ -165,7 +165,7 @@
         "tooltip": "Enter custom css",
         "label": "Custom css"
       }]},{
-        "cateogry": "Custom URL Parameter",
+        "category": "Custom URL Parameter",
         "fields": [
           {
              "type": "paragraph",
