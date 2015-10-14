@@ -27,7 +27,7 @@ define(
     },
     about: {
       title: "Informationen zu",
-      error: "Die Beschreibung oder der Ausschnitt der Webkarte wird standardmäßig verwendet. Konfigurieren Sie die App, um einen benutzerdefinierten Abschnitt für das Fenster \"Info\" hinzuzufügen."
+      error: "Die Beschreibung oder der Ausschnitt der Webkarte wird standardmäßig verwendet. Konfigurieren Sie die App, um einen benutzerdefinierten Abschnitt für den Bereich \"Info\" hinzuzufügen."
     },
     time: {
         enableTimeMessage: "ä_The specified web map does not contain any time enabled layers. View the ${link} help topic for details. To use the template without displaying time use the configuration panel to disable the time option______________________________________________________________Ü.",

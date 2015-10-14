@@ -10,7 +10,7 @@
 				step3: "Wird initialisiert",
 				loadBuilder: "Es wird zum Builder gewechselt",
 				long: "Map Journal wird initialisiert",
-				long2: "Vielen Dank, dass Sie gewartet haben",
+				long2: "Vielen Dank für Ihre Geduld.",
 				failButton: "ä_Reload the story______Ü"
 			},
 			signin: {

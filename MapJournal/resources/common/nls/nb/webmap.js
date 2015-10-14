@@ -3,7 +3,7 @@
 		commonWebmap: {
 			selector: {
 				lblWebMap: "å_Map__ø",
-				lblLocation: "Plassering",
+				lblLocation: "Lokasjon",
 				lblContent: "Innhold",
 				lblPopup: "Sprettoppvindu",
 				lblControls: "Tillegg",

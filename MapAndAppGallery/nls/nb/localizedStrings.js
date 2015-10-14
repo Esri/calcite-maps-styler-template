@@ -16,7 +16,7 @@
  */
 define(
      ({
-        tagHeaderText: "Merker",
+        tagHeaderText: "Knagger",
         expandGroupDescText: "Mer",
         shrinkGroupDescText: "Mindre",
         layoutText: "Utforming",
@@ -78,7 +78,7 @@ define(
             falseConfigParams: "Påkrevde nøkkelverdier for konfigurasjon er enten null eller samsvarer ikke helt med lagattributter. Det kan hende denne meldingen vises flere ganger.",
             invalidLocation: "Fant ikke gjeldende lokasjon.",
             invalidProjection: "Kan ikke projisere gjeldende lokasjon på kartet.",
-            widgetNotLoaded: "Kan ikke laste inn miniprogrammer.",
+            widgetNotLoaded: "Kan ikke laste inn widgetene",
             minfontSizeGreater: "Minimumsverdien for skriftstørrelse i konfigurasjonsinnstillingene er høyere enn minimumsverdien.",
             layerNotFound: "Kan ikke hente data fra lag.",
             unableToOpenItem: "Kan ikke åpne elementet.",

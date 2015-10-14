@@ -12,7 +12,7 @@
                 title: "Position"
             },
         	legend: "Legende",
-        	 about: "Info zu"
+        	 about: "Info"
         }
     })
 );

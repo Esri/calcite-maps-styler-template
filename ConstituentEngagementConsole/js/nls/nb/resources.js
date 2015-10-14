@@ -87,7 +87,7 @@ define(
         preview: {
             section1: "Crowdsource Manager, en tilleggsgruppemal til <a href=\'http://solutions.arcgis.com/local-government/help/crowdsource-reporter/\' target=\'_blank\'>Crowdsource Reporter</a>, er en responsiv gruppeappmal (datamaskiner og nettbrett) som gir brukerne i en organisasjon mulighet til å gå gjennom problemer og observasjoner som er sendt inn via Manager-appen.", // Appears when preview page is loaded
             section2: "Appen presenterer ett eller flere kart for brukerne der de kan gå gjennom et problem eller en observasjon. Brukerne kan se etter mønstre og klynger, gå gjennom problemdetaljer, oppdatere status og tildele ansvar.", // Appears when preview page is loaded
-            section3: "Programmets kildekode kan lastes ned og tilpasses ytterligere. Tilleggskonfigurasjonen av programmet kan brukes på et konfigurerbart webprogramelement fra ArcGIS Online eller hostes på din egen webserver.<br /> Hvis du vil ha mer informasjon om hvordan du konfigurerer denne appen, kan du se dokumentasjonen for <a href=\'http://solutions.arcgis.com/local-government/help/crowdsource-manager/\' target=\'_blank\'>Crowdsource Manager</a>." // Appears when preview page is loaded
+            section3: "Programmets kildekode kan lastes ned og tilpasses ytterligere. Tilleggskonfigurasjonen av programmet kan brukes på et konfigurerbart webprogramelement fra ArcGIS Online eller administreres på din egen webserver.<br /> Hvis du vil ha mer informasjon om hvordan du konfigurerer denne appen, kan du se dokumentasjonen for <a href=\'http://solutions.arcgis.com/local-government/help/crowdsource-manager/\' target=\'_blank\'>Crowdsource Manager</a>." // Appears when preview page is loaded
         }
     })
 );

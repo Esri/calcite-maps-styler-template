@@ -7,7 +7,7 @@
                 "url": "Kartes saite",
                 "embed": "Iedarināt karti",
                 "extent": "Koplietot pašreizējo kartes pārklājumu",
-                "size": "Izmēri (platums/augstums):",
+                "size": "Izmērs (platums/augstums):",
                 "facebookTooltip": "Facebook",
                 "twitterTooltip": "Twitter",
                 "gplusTooltip": "Google Plus",

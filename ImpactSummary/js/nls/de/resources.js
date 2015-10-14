@@ -12,7 +12,7 @@
             summarize: "Gesamtfläche",
             summarizeTitle: "Zusammenfassende Informationen für alle Bereiche anzeigen",
             share: "Freigeben",
-            about: "Info zu",
+            about: "Info",
             find: "Postleitzahl, Stadt usw.",
             noSearchResult: "Kein Ergebnis gefunden",
             impactArea: "Betroffenes Gebiet",

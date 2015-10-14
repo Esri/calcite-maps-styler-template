@@ -18,5 +18,5 @@
 			close: "Į_Close___š",
 			returnButton: "Į_Return___š" 
 		}
-	}),
+	})
 );

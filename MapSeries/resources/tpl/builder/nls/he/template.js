@@ -1,5 +1,5 @@
 ﻿define(
-   ({
+	 ({
 		builder: {
 			layouts: {
 				tabTitle: "באמצעות לשוניות",

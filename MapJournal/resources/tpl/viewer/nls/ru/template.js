@@ -39,7 +39,7 @@
 			mobileView: {
 				tapForDetails: "Коснитесь для подробной информации",
 				clickForDetails: "Подробнее",
-				swipeToExplore: "Проведите для поиска",
+				swipeToExplore: "Передвиньте для изучения",
 				tapForMap: "Коснитесь, чтобы вернуться к карте",
 				clickForMap: "НАЗАД К КАРТЕ"
 			},

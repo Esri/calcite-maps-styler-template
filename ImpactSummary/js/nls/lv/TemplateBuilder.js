@@ -52,7 +52,7 @@
                 "dataConfigurationButtonText": "Datu konfigurācija",
                 "savingChangesMessage": "Izmaiņu saglabāšana...",
                 "nextButtonText": "Tālāk",
-                "prevButtonText": "Iepriekšējs",
+                "prevButtonText": "Iepriekšējais",
                 "enterLabelText": "Ievadīt kartes aprakstu",
                 "SelectedFeatureText": "Atlasītais elements",
                 "layerHelpTextMessage": "Šai aplikācijai nepieciešams slānis ar ciparu laukiem",

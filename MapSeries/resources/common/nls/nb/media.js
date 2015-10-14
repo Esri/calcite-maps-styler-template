@@ -65,14 +65,14 @@
 			},
 			videoSelectorOther: {
 				explain1: "å_The story cannot play raw videos (e.g., avi, mpeg) but it can play hosted video files that have built-in players (e.g., YouTube or Vimeo)__________________________________________ø.",
-				explain2: "De fleste nettbaserte videovertstjenestene har denne funksjonen. Du må finne alternativet for å bygge inn videoen, kopiere den oppgitte koden og bruke %WEBPAGE%.",
-				explain3: "Du kan eventuelt være vert for videoen selv. Da må du lage en HTML-side som bruker en videospiller som %EXAMPLE%, være vert for den siden og også bruke %WEBPAGE%.",
+				explain2: "De fleste nettbaserte videotjenester har denne funksjonen. Du må finne alternativet for å bygge inn videoen, kopiere den oppgitte koden og bruke %WEBPAGE%.",
+				explain3: "Du kan eventuelt være lagre og administrere for videoen selv. Da må du lage en HTML-side som bruker en videospiller som %EXAMPLE%, være vert for den siden og også bruke %WEBPAGE%.",
 				webpage: "Nettsidefunksjon"
 			},
 			webpageSelectorHome: {
 				lblUrl: "Nettside-URL",
 				lblEmbed: "Bygg inn kode",
-				lblOR: "OR",
+				lblOR: "ELLER",
 				lblError1: "Feil, fjern ett av de to inndatafeltene.",
 				lblError2: "Innbygging av kode kan inneholde bare én %IFRAMETAG%",
 				configure: "Konfigurer"
