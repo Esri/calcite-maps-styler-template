@@ -16,7 +16,7 @@ MapTour\resources\nls
 PublicInformation\js\nls
 Profile\js\nls
 SimpleViewer\js\nls
-StorytellingBasic\nls
+StorytellingBasic\js\nls
 StorytellingCompare\nls
 StorytellingTextLegend\nls
 SummaryViewer\js\nls
