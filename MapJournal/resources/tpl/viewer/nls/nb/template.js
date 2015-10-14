@@ -50,10 +50,10 @@
 				scroll: "Rull nedover for å se mer!"
 			},
 			mainStage: {
-				back: "Bak"
+				back: "Tilbake"
 			},
 			headerFromCommon: {
-				storymapsText: "Et fortellingskart",
+				storymapsText: "En story map",
 				builderButton: "Rediger",
 				facebookTooltip: "Del på Facebook",
 				twitterTooltip: "Del på Twitter",

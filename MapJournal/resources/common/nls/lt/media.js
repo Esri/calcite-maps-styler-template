@@ -2,7 +2,7 @@
 	 ({
 		commonMedia: {
 			mediaSelector: {
-				lblSelect1: "Daugialypė informacija",
+				lblSelect1: "Medija",
 				lblSelect2: "Turinys",
 				lblMap: "Žemėlapis",
 				lblImage: "Paveikslėlis",
@@ -54,9 +54,9 @@
 				pageInputLbl: "Vartotojo vardas",
 				lookupMsgError: "Vartotojas nerastas",
 				howToFind: "Kaip rasti YouTube vartotojo vardą",
-				howToFind2: "Vartotojo vardas rodomas po video",
+				howToFind2: "Vartotojo vardas rodomas po vaizdo įrašo",
 				found: "Rasta",
-				noData: "Nerasta viešų video",
+				noData: "Nerasta viešų vaizdo įrašų",
 				videoNotChecked: "Vaizdo įrašas nebuvo patikrintas „YouTube“, bet jo adresas atrodo tinkamas.",
 				checkFailedAPI: "„YouTube“ patikra nepavyko, patikrinkite „YouTube“ API raktą."
 			},
@@ -66,7 +66,7 @@
 			videoSelectorOther: {
 				explain1: "Į_The story cannot play raw videos (e.g., avi, mpeg) but it can play hosted video files that have built-in players (e.g., YouTube or Vimeo)__________________________________________š.",
 				explain2: "Dauguma vaizdo įrašų talpinimo paslaugų siūlo tokią funkciją, tereikia rasti vaizdo įrašo integravimo parinktį, nukopijuoti pateiktą kodą ir naudoti %WEBPAGE%.",
-				explain3: "Be to, jei norite patalpinti video patys, galite sukurti HTML puslapį, kuriame būtų naudojamas vaizdo leistuvas, pvz., %EXAMPLE%, patalpinti tą puslapį ir taip pat naudoti %WEBPAGE%.",
+				explain3: "Be to, jei norite patalpinti vaizdo įrašą patys, galite sukurti HTML puslapį, kuriame būtų naudojamas vaizdo leistuvas, pvz., %EXAMPLE%, patalpinti tą puslapį ir taip pat naudoti %WEBPAGE%.",
 				webpage: "Tinklalapio elementas"
 			},
 			webpageSelectorHome: {
@@ -112,7 +112,7 @@
 				lblTitle: "Keisti pagrindinės srities turinį"
 			},
 			editorInlineMedia: {
-				lblTitle: "Įterpti paveikslėlį, video arba tinklalapį"
+				lblTitle: "Įterpti paveikslėlį, vaizdo įrašą arba tinklalapį"
 			}
 		}
 	})

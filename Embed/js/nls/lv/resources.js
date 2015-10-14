@@ -30,7 +30,7 @@ define(
                     "close": "ķ_Close___ū"
             },
             "legend":{
-                "title": "Eksplikācija"
+                "title": "Leģenda"
             },
             "details":{
                 "title": "Detaļas",

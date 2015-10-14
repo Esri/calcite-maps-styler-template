@@ -35,7 +35,7 @@ define(
          "close" : "Sulje",
          "previous" : "Edellinen",
          "next" : "Seuraava",
-         "directions" : "Suunnat"
+         "directions" : "Reitti"
       }
    })
 );

@@ -30,7 +30,7 @@
 				noBuilderIE8: "Der Map Tour-Builder wird von Internet Explorer vor Version 9 nicht unterstützt.",
 				ie10Win7Explain: "Der interaktive Map Tour-Builder wird von Internet Explorer 10 unter Windows 7 nicht unterstützt, wenn es sich bei der Datenquelle um einen Feature-Service mit Anlagen handelt. Um einen Feature-Service mit Anlagen zu verwenden, müssen Sie <a target='_blank' href='http://msdn.microsoft.com/en-us/library/ie/hh920756(v=vs.85).aspx'>den Dokumentmodus manuell auf Internet Explorer 9-Standards setzen</a>, <a target='_blank' href='http://news.softpedia.com/news/How-to-Remove-IE10-and-Get-Back-to-IE9-on-Windows-7-308998.shtml'>auf Internet Explorer 9 herunterstufen</a> oder ein Upgrade auf Windows 8 durchführen.",
 				oldBrowserExplain: "Dieser Browser unterstützt keine automatische Erstellung von Miniaturansichten der Bilder, die Sie in Ihre Karten-Tour hochladen. Sie können zwar mit diesem Browser eine Map-Tour erstellen, aber Sie müssen für jedes hochgeladene Bild eine eigene Miniaturansicht bereitstellen.",
-				oldBrowserExplain2: "Um die Performance zu verbessern, <a href='http://browsehappy.com/' target='_blank'>aktualisieren Sie Ihren Browser</a>, oder <a href='http://www.google.com/chromeframe/?redirect=true' target='_blank'>aktivieren Sie Google Chrome Frame für Internet Explorer</a>.",
+				oldBrowserExplain2: "Um die Performance zu verbessern, führen Sie ein <a href='http://browsehappy.com/' target='_blank'>Browser-Upgrade</a> durch, oder <a href='http://www.google.com/chromeframe/?redirect=true' target='_blank'>aktivieren Sie Google Chrome Frame für Internet Explorer</a>.",
 				oldBrowserExplain3: "Der Map Tour-Builder kann nicht mit Internet Explorer 10 unter Windows XP verwendet werden.",
 				oldBrowserClose: "Schließen"
 			},
@@ -138,7 +138,7 @@
 				settingsTabExtent: "Ausdehnung",
 				settingsTabZoom: "Zoomfaktor",
 				settingsLayoutExplain: "ä_Select the layout you want_________Ü.",
-				settingsLayoutProfessional: "Layout mit drei Fenstern",
+				settingsLayoutProfessional: "Layout mit drei Bereichen",
 				settingsLayoutModern: "Integriertes Layout",
 				settingsLayoutSelected: "Ausgewähltes Layout",
 				settingsLayoutSelect: "Dieses Layout auswählen",
@@ -340,7 +340,7 @@
 				resultHeaderEmpty: "Die CSV ist leer",
 				resultHeaderSuccess: "%NB_POINTS% Punkte erfolgreich geladen",
 				resultHasBeenLimited: "Es wurden nur die ersten %VAL1% Punkte von %VAL2% importiert, um den Höchstwert von %VAL3% Punkten pro Tour nicht zu überschreiten",
-				browserSupport: "Ihr Browser wird nicht unterstützt. Um eine CSV zu verwenden, müssen Sie <a href='http://browsehappy.com/' target='_blank'>Ihren Browser aktualisieren</a> oder den Webkarten-Viewer von ArcGIS.com verwenden (siehe Hilfe).",
+				browserSupport: "Ihr Browser wird nicht unterstützt. Um eine CSV zu verwenden, müssen Sie ein <a href='http://browsehappy.com/' target='_blank'>Browser-Upgrade durchführen</a> oder den Webkarten-Viewer von ArcGIS.com verwenden (siehe Hilfe).",
 				errorLatLng: "Die Längen- und Breitengradfelder wurden nicht gefunden. Mögliche Werte sind <i>%LAT%</i> für den Breitengrad und <i>%LONG%</i> für den Längengrad.",
 				errorFieldsExplain: "Der Ladevorgang ist fehlgeschlagen, da die folgenden erforderlichen Felder nicht gefunden wurden",
 				errorFieldsName: "Mögliche Werte für <b>Name</b> sind: %VAL%",
@@ -423,7 +423,7 @@
 					div2: "Mit dem interaktiven Builder stehen Ihnen zwei Optionen für die Verwendung der Bilder in der Map Tour zur Verfügung:",
 					div3: "<ul><li>Sie können <b>Fotos verwenden, die bereits online sind</b>, etwa auf einer Fotofreigabe-Website wie Flickr oder auf Ihrer eigenen Website gespeicherte Fotos. Diese Bilder werden in der Map Tour über die URLs referenziert.</li><li>Sie können auch <b>Fotos von Ihrem Computer</b> direkt in die Map Tour hochladen. Diese Upload-Funktion setzt voraus, dass Sie ein ArcGIS for Organizations-Konto haben sowie über Publisher- oder Administratorberechtigungen verfügen, da bei dieser Option automatisch ein gehosteter Feature-Service für Sie erstellt wird, in dem die Fotos als Anlagen gespeichert werden.</li></ul>",
 					div4: "Es gibt hauptsächlich folgende Anwendungsfälle:",
-					div4b: "<b>Ihre Fotos werden noch nicht gehostet</b> und Sie verfügen über ein ArcGIS for Organizations-Konto: Die beste Option in diesem Fall ist die Verwendung eines gehosteten Feature-Service. Wie bei öffentlichen Fotofreigabe-Services werden Ihre Bilder optimiert, damit sie schnell geladen werden können, und Sie haben Zugriff auf alle Administrations- und Datenmanagementfunktionen der ArcGIS-Plattform.",
+					div4b: "<b>Ihre Fotos werden noch nicht gehostet</b> und Sie verfügen über ein ArcGIS for Organizations-Konto: Die beste Option in diesem Fall ist die Verwendung eines gehosteten Feature-Service. Wie bei öffentlichen Fotofreigabe-Services werden Ihre Bilder optimiert, damit sie schnell geladen werden können, und Sie haben Zugriff auf alle Administrations- und Datenmanagementfunktionen der ArcGIS Plattform.",
 					div5: "<b>Sie sind kein Mitglied einer Organisation</b>: Sie müssen Ihre Bilder zuerst auf eine Fotofreigabe-Website oder einen eigenen Webserver hochladen. Danach unterstützt Sie der Builder bei der Verwendung der Bilder, die weiter am ursprünglichen Speicherort gehostet werden.",
 					div6: "<b>Sie möchten einen vorhandenen Feature-Service verwenden</b>, in dem Ihre Bilder als Anlagen gespeichert werden oder auf externe Bilder verwiesen wird: Lesen Sie die ausführlichen Informationen im Abschnitt unten.",
 					div7: "<b>Sie verwenden eine frühere Version</b> der Map Tour-Vorlage und verfügen bereits über eine CSV-Datei mit Verweis auf Ihre Bilder und Miniaturansichten: Sie können diese Vorlage importieren und die Daten optimieren. Der Builder unterstützt nur CSV-Dateien mit Verwendung von Längen-/Breitengradfeldern; eine adressbasierte CSV-Datei kann weiter durch Ihre Webkarte verwendet werden (siehe Abschnitt unten).",
@@ -476,7 +476,7 @@
 					div4a: "Verfassen Sie einen guten Untertitel für Ihre Tour",
 					div4b: "Nehmen Sie sich die Zeit, einen aussagekräftigen Untertitel für Ihre Tour zu verfassen. Der Untertitel ist eine gute Möglichkeit, die Aufmerksamkeit auf Ihre Tour zu lenken und die Erwartungen auf deren Inhalt zu wecken. Er eignet sich hervorragend, um Ihrer Zielgruppe mitzuteilen, in welchem Bundesstaat oder Land sich die Tour befindet. Sie können beispielsweise nicht davon ausgehen, dass andere Benutzer wissen, wo sich die Stadt Ihrer Tour befindet. Die Beschriftung kann außerdem mit HTML-Tags, wie Links, formatiert werden. Wählen Sie dennoch keine zu lange Beschriftung. Sie wird in kleineren Browser-Fenstern oder auf dem iPad möglicherweise nicht vollständig dargestellt und abgeschnitten. Wenn Ihnen kein guter Untertitel einfällt, lassen Sie ihn leer.",
 					div5: "Unterstützende Layer",
-					div6: "Sie können der Map Tour zusätzliche unterstützende Layer hinzufügen. Diese Layer können andere geographische Features enthalten, die Sie neben den Punkten der Map Tour auf der Karte anzeigen möchten, z. B. ein Untersuchungsgebiet, eine Fußgänger- oder Fahrroute zwischen den Tourpunkten usw. Die Map Tour-Vorlage zeigt diese zusätzlichen unterstützenden Layer mit der in der Webkarte angegebenen Symbologie an, allerdings ohne Pop-up-Fenster.",
+					div6: "Sie können der Map Tour zusätzliche unterstützende Layer hinzufügen. Diese Layer können andere geographische Features enthalten, die Sie neben den Punkten der Map Tour auf der Karte anzeigen möchten, z. B. ein Untersuchungsgebiet, eine Fußgänger- oder Fahrroute zwischen den Tourpunkten usw. Die Map Tour-Vorlage zeigt diese zusätzlichen unterstützenden Layer mit der in der Webkarte angegebenen Symbolisierung an, allerdings ohne Pop-ups.",
 					div7: "Halten Sie die Tour kurz und interessant",
 					div8: "Eine Tour kann höchstens 99 Punkte enthalten. Die meisten Map Tours sind natürlich weit kürzer. Erwarten Sie nicht, dass Ihre Zielgruppe sich für zu viele Tourpunkte interessiert. Dass Sie selbst Ihr Thema faszinierend finden, bedeutet nicht, dass andere dies ähnlich empfinden müssen!",
 					div10: "Einbettungsmodus",
@@ -496,7 +496,7 @@
 					div3: "Stellen Sie sicher, dass die Tour auch dann ordnungsgemäß funktioniert, wenn Sie nicht mit Ihrem ArcGIS.com-Konto angemeldet sind. Die URL, die Sie verwenden, sollte keine Umleitung zu einer Anmeldeseite oder zum Builder-Modus ausführen.",
 					div4: "Es empfiehlt sich, die Karte auf einem iPad im Querformat anzuzeigen, um sicherzustellen, das sie auf diesem gängigen Gerät gut aussieht. Dadurch können Sie leichter erkennen, ob Ihre Beschriftungen die Bilder nicht zu sehr überlagern. Sie können außerdem überprüfen, ob Ihr Untertitel die richtige Länge hat und nicht etwa abgeschnitten wird.",
 					div5a: "Empfehlungen für die Suche",
-					div5b: "Damit Ihre Map Tour leichter in ArcGIS Online gefunden werden kann, wird empfohlen, das Tag \"Story Map\" auf der Elementseite der Tour-Anwendung  (nicht auf der Elementseite der Karte) gemeinsam mit Tags, beispielsweise der Name des Bundesstaates oder des Kantons, in dem sich die Tour befindet, der Namen des Landes, falls sie sich außerhalb der USA befindet, und thematische Tags wie \"öffentliche Kunst\", \"Reiseführer\" oder \"historische Orte\" hinzuzufügen. Diese Tags erleichtern Esri die Suche nach coolen neuen Touren, um sie in eigenen Galerien darzustellen und in Social Media zu bewerben. Es wird außerdem empfohlen, eine ansprechende Miniaturansicht, wie beispielsweise einen kleinen Screenshot der Tour oder eines der Tour-Bilder, auf die Elementseite der Anwendung hochzuladen. Dieses Bild wird automatisch verwendet, wenn Ihre Map Tour einer ArcGIS Online-Galerie hinzugefügt wird."
+					div5b: "Damit Ihre Map Tour leichter in ArcGIS Online gefunden werden kann, wird empfohlen, das Tag \"Story Map\" auf der Elementseite der Tour-Anwendung  (nicht auf der Elementseite der Karte) gemeinsam mit Tags, beispielsweise der Name des Bundeslandes oder des Kantons, in dem sich die Tour befindet, der Namen des Landes und thematische Tags wie \"öffentliche Kunst\", \"Reiseführer\" oder \"historische Orte\" hinzuzufügen. Diese Tags erleichtern Esri die Suche nach coolen neuen Touren, um sie in eigenen Galerien darzustellen und in Social Media zu bewerben. Es wird außerdem empfohlen, eine ansprechende Miniaturansicht, wie beispielsweise einen kleinen Screenshot der Tour oder eines der Tour-Bilder, auf die Elementseite der Anwendung hochzuladen. Dieses Bild wird automatisch verwendet, wenn Ihre Map Tour einer ArcGIS Online-Galerie hinzugefügt wird."
 				}
 			},
 			share: {

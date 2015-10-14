@@ -6,7 +6,7 @@
 			},
 			loading: {
 				long: "ä_Story is initializing_______Ü",
-				long2: "Vielen Dank, dass Sie gewartet haben",
+				long2: "Vielen Dank für Ihre Geduld.",
 				failButton: "ä_Reload the story______Ü"
 			},
 			signin: {

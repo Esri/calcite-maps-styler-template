@@ -88,7 +88,7 @@
 			settingsColors: {
 				settingsTabColor: "Design",
 				settingsColorExplain: "App-Design auswählen oder eigene Farben definieren.",
-				settingsLabelColor: "Hintergrundfarben von Kopfzeile und seitlichem Fenster"
+				settingsLabelColor: "Hintergrundfarben von Kopfzeile und seitlichem Bereich"
 			},
 			settingsHeader: {
 				settingsTabLogo: "Kopfzeile",
@@ -126,7 +126,7 @@
 				noLegend: "Keine Legende vorhanden."
 			},
 			swipeSidePanel: {
-				editTooltip: "Beschreibung des Seitenfensters festlegen",
+				editTooltip: "Beschreibung des Seitenbereichs festlegen",
 				editMe: "Bearbeiten!",
 				legendTitle: "Legende"
 			},
@@ -177,7 +177,7 @@
 				settingsLocationSearchEnable: "Locator-Suche aktivieren",
 				settingsGeolocatorEnable: "Geolocator aktivieren",
 				settingsLegendHelpContent: "Verwenden Sie das Inhaltsverzeichnis des ArcGIS.com-Webkarten-Viewers, um den Legendeninhalt zu optimieren (In Legende ausblenden)",
-				settingsSeriesHelpContent: "\"Ausblendereihe\" ist die Navigationsoption einer Registerkarte, die den Viewer zu einer bestimmten Ausdehnung führt und einen Titel und einen Beschreibungstext im Seitenfenster anzeigt. Bei der ersten Aktivierung werden Ihre Webkarten-Lesezeichen verwendet, um die Leiste der Reihe vorab auszufüllen. Durch Deaktivieren der Reihen-Option wird die Leiste der Reihen deaktiviert, die Konfiguration der Reihe wird jedoch zur zukünftigen Verwendung beibehalten.",
+				settingsSeriesHelpContent: "\"Ausblendereihe\" ist die Navigationsoption einer Registerkarte, die den Viewer zu einer bestimmten Ausdehnung führt und einen Titel und einen Beschreibungstext im Seitenbereich anzeigt. Bei der ersten Aktivierung werden Ihre Webkarten-Lesezeichen verwendet, um die Leiste der Reihe vorab auszufüllen. Durch Deaktivieren der Reihen-Option wird die Leiste der Reihen deaktiviert, die Konfiguration der Reihe wird jedoch zur zukünftigen Verwendung beibehalten.",
 				settingsSeriesHelpContent2: "Mit Ausblendereihen können Sie eine Auswahl von Positionen mit zugehörigen Titeln und Texten erstellen und bearbeiten.  Wenn Ihre Webkarte über Lesezeichen verfügt, werden diese angezeigt.  Sie können die Reihen deaktivieren, die Konfiguration wird jedoch zur zukünftigen Verwendung beibehalten.",
 				settingsSeriesHelpLink: "Nachfolgend finden Sie ein Beispiel für eine Anwendung mit einer Ausblendereihe",
 				preview: "Benutzeroberflächen-Vorschau",

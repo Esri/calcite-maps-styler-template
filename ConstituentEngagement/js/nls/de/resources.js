@@ -79,8 +79,8 @@ define(
             selectDefaultText: "Auswählen&hellip;", // Shown in the dropdown field indicating to select an option
             invalidInputValue: "Geben Sie einen gültigen Wert ein.", // Shown when user clicks/taps the required field but does not enter the data and comes out of the required field
             noFieldsConfiguredMessage: "Layer-Felder sind nicht für die Erfassung von Daten konfiguriert", // Shown when all the fields of the selected layer are disabled
-            invalidSmallNumber: "Geben Sie einen Ganzzahlwert ein", // Shown when the entered value is beyond the specified range (valid ${openStrong}integer${closeStrong} value between -32768 and 32767.)
-            invalidNumber: "Geben Sie einen Ganzzahlwert ein", // Shown when the entered value is beyond the specified range (valid ${openStrong}integer${closeStrong} value between -2147483648 and 2147483647.)
+            invalidSmallNumber: "Geben Sie einen ganzzahligen Wert ein", // Shown when the entered value is beyond the specified range (valid ${openStrong}integer${closeStrong} value between -32768 and 32767.)
+            invalidNumber: "Geben Sie einen ganzzahligen Wert ein", // Shown when the entered value is beyond the specified range (valid ${openStrong}integer${closeStrong} value between -2147483648 and 2147483647.)
             invalidFloat: "Geben Sie eine Zahl ein", // Shown when the entered value is beyond the specified range (valid ${openStrong}floating point${closeStrong} value between -3.4E38 and 1.2E38 )
             invalidDouble: "Geben Sie eine Zahl ein", // Shown when the entered value is beyond the specified range (valid ${openStrong}double${closeStrong} value between -2.2E308 and 1.8E308)
             requiredFields: "Geben Sie Werte für alle erforderlichen Felder ein", // Shown when user submits the geoform without entering data in the mandatory field(s)
@@ -111,7 +111,7 @@ define(
         myIssues: {
             title: "Eigene Berichte", // Shown as a title in 'My issues' panel
             myIssuesTooltip: "Eigene Berichte", // Command button to access issues reported by the logged in user
-            noResultsFound: "ä_No reports found______Ü" // Shown when no issues are reported by the logged in user
+            noResultsFound: "Keine Berichte gefunden" // Shown when no issues are reported by the logged in user
         },
         itemDetails: {  // Detailed information about an item and a list of its comments
             likeButtonLabel: "Wie", // Command button for up-voting a report

@@ -88,8 +88,8 @@ define(
             numericRangeHintMessage: "${openStrong}Подсказка:${closeStrong} Минимальное значение ${minValue} и Максимальное значение ${maxValue}", // Shown as a pop over above the fields with numeric values, indicating the minimum and maximum range
             dateRangeHintMessage: "${openStrong}Hint:${closeStrong} Минимальная дата ${minValue} и Максимальная дата ${maxValue}", // Shown as a pop over above the fields with date values, indicating the minimum and maximum date range
             errorsInApplyEdits: "Ж_Report could not be submitted__________Я", // Shown when there is an error in any of the services while submitting the geoform
-            attachmentSelectedMsg: "выбранное вложение(я)", // Shown besides the select file button indicating the number of files attached
-            attachmentUploadStatus: "${failed} из ${total} вложений(я) не удалось выгрузить.", // Shown when there is error while uploading the attachment, while submitting the geoform
+            attachmentSelectedMsg: "выбранные вложения", // Shown besides the select file button indicating the number of files attached
+            attachmentUploadStatus: "${failed} из ${total} вложений не удалось выгрузить.", // Shown when there is error while uploading the attachment, while submitting the geoform
             geoLocationError: "Текущее местоположение недоступно",  // Shown when the browser returns an error instead of the current geographical position
             geoLocationOutOfExtent: "Текущее местоположение вне экстента базовой карты",  // Shown when the current geographical position is out of the basemap extent
             submitButtonTooltip: "Отчет", // Command button to open the geoform
@@ -111,7 +111,7 @@ define(
         myIssues: {
             title: "Мои отчеты", // Shown as a title in 'My issues' panel
             myIssuesTooltip: "Мои отчеты", // Command button to access issues reported by the logged in user
-            noResultsFound: "Ж_No reports found______Я" // Shown when no issues are reported by the logged in user
+            noResultsFound: "Отчеты не найдены." // Shown when no issues are reported by the logged in user
         },
         itemDetails: {  // Detailed information about an item and a list of its comments
             likeButtonLabel: "Like", // Command button for up-voting a report

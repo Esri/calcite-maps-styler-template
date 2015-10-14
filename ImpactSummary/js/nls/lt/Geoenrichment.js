@@ -14,7 +14,7 @@
                     "creatingService": "Kuriama paslauga... ",
                     "starting": "Pradedama",
                     "performingAnalysis": "Atliekama analizė...",
-                    "checkLayerName": "Tikrinamassluoksnio pavadinimas... ",
+                    "checkLayerName": "Tikrinamas sluoksnio pavadinimas... ",
                     "addingLayer": "Pridedamas sluoksnis prie internetinio žemėlapio ",
                     "layerNameExist": "Sluoksnio pavadinimas jau yra.",
                     "clickOnSave": " Spustelkite mygtuką Įrašyti, kad iš naujo įkelti aplikaciją.",

@@ -39,7 +39,7 @@
 			},
 			desktopView: {
 				storymapsText: "Et fortellingskart",
-				builderButton: "Gå over til byggermodus",
+				builderButton: "Gå over til byggemodus",
 				facebookTooltip: "Del på Facebook",
 				twitterTooltip: "Del på Twitter",
 				bitlyTooltip: "Få en kort kobling"
@@ -177,7 +177,7 @@
 				settingsLocationSearchEnable: "Aktiver posisjonsindikatorsøk",
 				settingsGeolocatorEnable: "Aktiver geoposisjonsindikatoren",
 				settingsLegendHelpContent: "Hvis du vil finjustere innholdet i tegnforklaringen, bruker du innholdsfortegnelsen for kartviseren på ArcGIS.com (skjul i tegnforklaringen)",
-				settingsSeriesHelpContent: "Sveip serier er et fanebasert navigeringsalternativ som veileder brukeren til en bestemt utstrekning, og viser en tittel og beskrivende tekst i sidepanelet.  Under den første aktiveringen, blir bokmerkene fra webkart importert og brukt for å fylle serieraden.  Hvis seriealternativet deaktiveres, slås serieraden av, men seriekonfigurasjonen spares til senere bruk.",
+				settingsSeriesHelpContent: "Sveipe-serier er et fanebasert navigeringsalternativ som veileder brukeren til en bestemt utstrekning, og viser en tittel og beskrivende tekst i sidepanelet.  Under den første aktiveringen, blir bokmerkene fra webkart importert og brukt for å fylle serieraden.  Hvis seriealternativet deaktiveres, slås serieraden av, men seriekonfigurasjonen spares til senere bruk.",
 				settingsSeriesHelpContent2: "Med sveipeserier kan du opprette og redigere et utvalg av lokasjoner med tilhørende titler og tekst. Hvis du har et webkart med bokmerker, vises de. Du kan deaktivere serien, men konfigurasjonen beholdes for fremtidig bruk.",
 				settingsSeriesHelpLink: "Se et eksempel på et program med en sveipeserie her",
 				preview: "Forhåndsvisning av brukergrensesnitt",
@@ -186,7 +186,7 @@
 				settingsAddressSearch: "Aktiver et adressesøkverktøy"
 			},
 			settingsSwipePopup: {
-				settingsSwipePopup: "Popup",
+				settingsSwipePopup: "Oppsprett",
 				settingsSwipePopupExplain: "Tilpass utseendet til overskriften i popupfeltene slik at det hjelper brukeren med å assosiere popupfelt med kartlag.",
 				settingsSwipePopupSwipe1: "Venstre kart",
 				settingsSwipePopupSwipe2: "Høyre kart",
@@ -260,8 +260,8 @@
 				mapPickHeader: "Angi en gyldig nettkart-ID for å komme i gang, eller bruk søkeknappen for å bla igjennom nettkart.",
 				launchBuilder: "Start byggeverktøyet",
 				chooseWebmapLbl: "Velg webkart...",
-				explain2: "Hvis du vil lage et fortellingskart for Sveiping eller Forstørrelsesglass, bruker du knappen nedenfor for å velge det eksisterende ArcGIS Online-kartet du vil bruke. Alternativt kan du lime inn ID-en til webkartet i feltet nedenfor.",
-				explain3: "Hvis du vil bruke to webkart i fortellingskartet ditt, blir du bedt om det andre webkartet senere, når du velger dette alternativet.",
+				explain2: "Hvis du vil lage en Story Map for Sveiping eller Forstørrelsesglass, bruker du knappen nedenfor for å velge det eksisterende ArcGIS Online-kartet du vil bruke. Alternativt kan du lime inn ID-en til webkartet i feltet nedenfor.",
+				explain3: "Hvis du vil bruke to webkart i Story Map ditt, blir du bedt om det andre webkartet senere, når du velger dette alternativet.",
 				webmapPlaceholder: "Angi en webkart-ID ..."
 			}
 		},

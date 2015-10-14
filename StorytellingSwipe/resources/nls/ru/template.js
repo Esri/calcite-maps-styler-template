@@ -5,7 +5,7 @@
 				step1: "Ж_LOADING STORY_____Я",
 				step2: "ЗАГРУЗКА ДАННЫХ",
 				step3: "ИНИЦИАЛИЗАЦИЯ",
-				fail: "Загрузка инструмента Шторка (Swipe) не удалась",
+				fail: "Загрузка Swipe не удалась",
 				loadBuilder: "ПЕРЕКЛЮЧИТЬСЯ В РЕЖИМ КОНСТРУКТОРА",
 				redirectSignIn: "ПЕРЕНАПРАВЛЕНИЕ НА СТРАНИЦУ ВХОДА",
 				redirectSignIn2: "(после входа вы будете перенаправлены сюда)",
@@ -18,15 +18,15 @@
 				invalidConfigNoWebmap: "Критическая ошибка: недопустимая конфигурация (веб-карта не выбрана)",
 				createMap: "Не удалось создать карту",
 				invalidApp: "Ж_Fatal error: The story cannot be loaded_____________Я",
-				initMobile: "Добро пожаловать в веб-приложение Шторка (Swipe). Приложение не настроено. Компоновщик не поддерживается на мобильных устройствах.",
+				initMobile: "Добро пожаловать в веб-приложение Swipe. Приложение не настроено. Интерактивный конструктор не поддерживается на мобильных устройствах.",
 				initMobile2: "Ж_The Swipe builder is not supported at this display size__________________Я.",
-				noBuilderIE8: "Компоновщик Шторка (Swipe) не поддерживается в браузере Internet Explorer в версиях ранее 9.",
-				noLayerView: "Добро пожаловать в веб-приложение Штрока (Swipe).<br />Приложение еще не настроено.",
+				noBuilderIE8: "Интерактивный конструктор Swipe не поддерживается в браузере Internet Explorer в версиях ранее 9.",
+				noLayerView: "Добро пожаловать в веб-приложение Swipe.<br />Приложение еще не настроено.",
 				appSave: "Ж_Error saving the web story_________Я",
 				mapSave: "Ошибка при сохранении веб-карты",
 				notAuthorized: "Ж_You are not authorized to access this story______________Я",
 				conflictingProjectionsTitle: "Конфликтующие проекции",
-				conflictingProjections: "Шторка не поддерживает использование двух веб-карт с различными проекциями. Откройте настройки и используйте веб-карту с той же проекцией, что и первая веб-карта.",
+				conflictingProjections: "Swipe не поддерживает использование двух веб-карт с различными проекциями. Откройте настройки и используйте веб-карту с той же проекцией, что и первая веб-карта.",
 				cpButton: "Закрыть",
 				unspecifiedConfigOwner: "Ж_Authorized owner hasn't been configured_____________Я.",
 				invalidConfigOwner: "Ж_Story owner is not authorized__________Я."
@@ -39,7 +39,7 @@
 			},
 			desktopView: {
 				storymapsText: "Карта истории",
-				builderButton: "Переключиться в режим компоновки",
+				builderButton: "Переключиться в режим конструктора",
 				facebookTooltip: "Разместить в Facebook",
 				twitterTooltip: "Разместить в Twitter",
 				bitlyTooltip: "Получить краткую ссылку"
@@ -101,12 +101,12 @@
 				settingsLogoSocialExplain: "Настроить верхнюю правую ссылку заголовка.",
 				settingsLogoSocialText: "Текст",
 				settingsLogoSocialLink: "Ссылка",
-				settingsLogoSocialDisabled: "Объект был отключен администратором"
+				settingsLogoSocialDisabled: "Функция была отключена администратором"
 			},
 			settingsExtent: {
 				settingsTabExtent: "Экстент",
 				settingsExtentExplain: "Выберите начальный экстент через интерактивную карту, показанную ниже.",
-				settingsExtentExplainBottom: "Указанный вами экстент обновит исходный экстент веб-карты. Если вы создаете серию карт со шторками, этот экстент использоваться не будет.",
+				settingsExtentExplainBottom: "Указанный вами экстент обновит исходный экстент веб-карты. Если вы создаете серию шторок, этот экстент использоваться не будет.",
 				settingsExtentDateLineError: "Экстент не может продолжаться за меридиан 180ï¿½",
 				settingsExtentDateLineError2: "Ошибка вычисления экстента",
 				settingsExtentDrawBtn: "Нарисовать новый экстент",
@@ -136,9 +136,9 @@
 			},
 			settingsLayout: {
 				settingsTabLayout: "Стиль шторки",
-				settingsLayoutExplain: "Выберите стиль для инструмента Шторка (Swipe).",
+				settingsLayoutExplain: "Выберите стиль для инструмента Шторка.",
 				settingsLayoutSwipe: "Вертикальная черта",
-				settingsLayoutSpyGlass: "Подзорная труба",
+				settingsLayoutSpyGlass: "Spyglass",
 				settingsLayoutSelected: "Выбранная компоновка",
 				settingsLayoutSelect: "Выбрать эту компоновку",
 				settingsSaveConfirm: "Ж_Some of your changes require that you save and reload the story____________________Я"
@@ -172,7 +172,7 @@
 				settingsLegendExplain: "Ж_Select the layout settings_________Я.",
 				settingsLegendEnable: "Включить легенду",
 				settingsDescriptionEnable: "Включить описание",
-				settingsBookmarksEnable: "Включить несколько шторок",
+				settingsBookmarksEnable: "Включить серии шторок",
 				settingsPopupDisable: "Включить всплывающее окно",
 				settingsLocationSearchEnable: "Включить поиск локатора",
 				settingsGeolocatorEnable: "Включить геолокатор",
@@ -196,7 +196,7 @@
 				settingsSwipePopupColor: "Цвет заголовка"
 			},
 			initPopup: {
-				initHeader: "Добро пожаловать в конструктор шаблона Шторка/Подзорная труба",
+				initHeader: "Добро пожаловать в конструктор Swipe/Spyglass",
 				modalNext: "Далее",
 				modalPrev: "Предыдущий",
 				modalApply: "Открыть приложение"
@@ -212,8 +212,8 @@
 				title: "Справка",
 				close: "Закрыть",
 				tab1: {
-					div1: "Шаблон Шторка/Подзорная труба предназначен для сравнения двух отдельных веб-карт или двух слоев одной веб-карты в удобном и простом в использовании приложении, которое может применяться в любом браузере на любом устройстве, включая смартфоны и планшеты.",
-					div2: "Для получения дополнительной информации по шаблону Шторка/Подзорная труба, включая примеры, созданные пользователями, <a href='http://storymaps.arcgis.com/en/app-list/swipe/' target='_blank'> посетите веб-сайт Story Maps</a>. Вы также можете следовать за нами в Twitter на <a href='https://twitter.com/EsriStoryMaps' target='_blank'>@EsriStoryMaps</a>.",
+					div1: "Шаблон Swipe/Spyglass предназначен для сравнения двух отдельных веб-карт или двух слоев одной веб-карты в удобном и простом в использовании приложении, которое может применяться в любом браузере на любом устройстве, включая смартфоны и планшеты.",
+					div2: "Для получения дополнительной информации по шаблону Swipe/Spyglass, включая примеры, созданные пользователями, <a href='http://storymaps.arcgis.com/en/app-list/swipe/' target='_blank'> посетите веб-сайт Story Maps</a>. Вы также можете следовать за нами в Twitter на <a href='https://twitter.com/EsriStoryMaps' target='_blank'>@EsriStoryMaps</a>.",
 					div3: "Мы будем рады вам! Если у вас есть вопросы, вы желаете предложить новую функцию, или вы нашли ошибку, пожалуйста, посетите <a href='http://links.esri.com/storymaps/forum' target='_blank'>Форум пользователей Story Maps</a>."
 				}
 			},
@@ -256,11 +256,11 @@
  				shareWarningWith2: "общий и с Организацией"
 			},
 			directCreation: {
-				header: "Добро пожаловать в  конструктор шаблона Шторка/Подзорная труба",
+				header: "Добро пожаловать в  конструктор Swipe/Spyglass",
 				mapPickHeader: "Сначала введите id веб-карты или выберите ее с помощью обзора веб-карт.",
 				launchBuilder: "Запустить конструктор",
 				chooseWebmapLbl: "Выберите веб-карту...",
-				explain2: "Чтобы создать карту-историю Шторка или Подзорная труба, используйте кнопку ниже, чтобы выбрать существующую веб-карту ArcGIS Online, которую вы хотите использовать. Кроме того, вы можете вставить идентификатор ID веб-карты в поле ниже.",
+				explain2: "Чтобы создать карту-историю Swipe/Spyglass, используйте кнопку ниже, чтобы выбрать существующую веб-карту ArcGIS Online, которую вы хотите использовать. Кроме того, вы можете вставить идентификатор ID веб-карты в поле ниже.",
 				explain3: "Если вы хотите использовать две веб-карты в вашей карте-истории, то вы будете запрошены о второй веб-карте позже, когда выберете эту опцию.",
 				webmapPlaceholder: "Введите id веб-карты..."
 			}

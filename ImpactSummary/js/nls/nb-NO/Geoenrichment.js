@@ -55,7 +55,7 @@
                 "drivingTime": "Kjøretid",
                 "enrichButtonText": "Suppleringsdata",
                 "selectDataText": "2. Velg data",
-                "showCreditsText": "Vis krediteringer",
+                "showCreditsText": "Vis credits",
                 "variableCount": "Totalt antall variabler ",
                 "totalRecords": "Totalt antall oppføringer:",
                 "cost": "Kostnad:",

@@ -47,7 +47,7 @@
 				scroll: "גלול"
 			},
 			sideLayout: {
-				scroll: "גלול למטה כדי לצפות בעוד!"
+				scroll: "גלול למטה כדי לצפות בעוד!‏"
 			},
 			mainStage: {
 				back: "חזור"

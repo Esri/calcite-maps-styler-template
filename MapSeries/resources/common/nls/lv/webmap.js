@@ -8,7 +8,7 @@
 				lblPopup: "Uznirstošais logs",
 				lblControls: "Papildu",
 				lblOverview: "Pārskata karte",
-				lblLegend: "Eksplikācija",
+				lblLegend: "Apzīmējumi",
 				loadingTitle: "Virsraksta ielāde",
 				entry: "Ieraksts",
 				entries: "Ieraksti",

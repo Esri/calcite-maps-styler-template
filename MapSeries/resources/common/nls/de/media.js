@@ -99,7 +99,7 @@
 				tooltipDimension2: "Der Wert muss in \"Px\" angegeben werden",
 				lblPosition2Explain: "(Zuschneiden möglich)",
 				lblPosition3Explain: "(Zuschneiden nicht möglich)",
-				lblPosition3Explain2: "(Breite wird immer an das Fenster angepasst)",
+				lblPosition3Explain2: "(Breite wird immer an den Bereich angepasst)",
 				lblPosition4Explain: "(Verzerren möglich)",
 				unloadLbl: "Unload when reader navigates away",
 				unloadHelp: "ä_If the Web Page has audio or video media, keep this option checked to stop that content from playing when the reader navigates away. Uncheck it for example to keep a soundtrack playing as the reader advances through the story.<br />If the Web Page is an application, uncheck this option so that the story does not reload if the reader returns to it__________________________________________________________________________________________________________Ü."

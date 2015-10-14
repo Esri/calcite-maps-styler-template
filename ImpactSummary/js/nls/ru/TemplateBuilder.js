@@ -2,10 +2,10 @@
      ({
         "widgets": {
             "TemplateBuilder": {
-                "enterBuilderButtonText": "Войти в Builder",
-                "exitBuilderButtonText": "Выйти из Builder",
-                "enterBuilderModeHelpText": "Войти в Builder Mode для настройки приложения",
-                "builderModeHelpText": "Шаблон Builder Mode",
+                "enterBuilderButtonText": "Войти в Конструктор",
+                "exitBuilderButtonText": "Выйти из Конструктора",
+                "enterBuilderModeHelpText": "Войти в Режим конструктора для настройки приложения",
+                "builderModeHelpText": "Режим шаблона конструктора",
                 "webmapCaption": "Карта",
                 "selectMapMessage": "Сейчас ${displaying} <b>${webmapTitle}</b><br/>Щелкните Выбрать карту, чтобы выбрать другую веб-карту",
                 "loadMapMessage": "Выбрано <b>${webmapTitle}</b><br/>Щелкните Сохранить, чтобы использовать эту веб-карту",

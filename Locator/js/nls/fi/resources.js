@@ -32,7 +32,7 @@ define(
          "toggle": "Näytä/piilota",
          "reset": "Palauta",
          "locate": "Etsi sijaintini",
-         "directions": "Suunnat",
+         "directions": "Reitti",
          "filter": "Suodata",
          "close": "Sulje",
          "reverse": "Käänteinen",

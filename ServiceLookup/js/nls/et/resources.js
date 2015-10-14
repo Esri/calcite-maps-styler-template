@@ -1,5 +1,5 @@
 ﻿define(
-    ({
+     ({
         map: {
             error: "Kaardi loomine ebaõnnestus",
             mouseToolTip: "Kliki kaardil teenuse kontrollimiseks"
