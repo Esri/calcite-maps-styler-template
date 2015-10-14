@@ -21,6 +21,7 @@ define([
     "dojo/_base/array",
     "dojo/_base/lang",
     "dojo/query",
+    "dojox/html/styles",
     "esri/dijit/Search",
     "esri/layers/FeatureLayer",
     "esri/tasks/locator"
@@ -29,6 +30,7 @@ define([
     array,
     lang,
     query,
+    styles,
     Search,
     FeatureLayer,
     Locator
@@ -50,7 +52,8 @@ define([
          * type-in box; true) or is dynamically expanded (false)
          */
         createSearchDijit: function (map, operationalLayers, geocoders, appProperties, srcNode, searchAlwaysExpanded) {
-            var searchAppProperties, searchSources = [], addLayersFromMap = false, searchControl;
+            var searchAppProperties, searchSources = [], addLayersFromMap = false, searchControl, numSources = 0,
+                activeSource = "all";
 
             // Adjust the search properties with whatever's configured in the webmap;
             // these properties are in the webmap's application properties if they exist
@@ -84,38 +87,43 @@ define([
                 // If address searching is enabled, prepare the geocoders from their URLs
                 if (!searchAppProperties.disablePlaceFinder) {
                     searchSources = searchSources.concat(this.createGeocoderSources(geocoders, map.extent));
+                    numSources = searchSources.length;
                 }
 
                 // If the app properties have null for the layers, then the properties aren't set up for
                 // searching for this webmap and we'll add all layers
                 if (!searchAppProperties.layers) {
                     addLayersFromMap = true;
+                    numSources += 1;
 
                 // Otherwise, just use the layers configured in the webmap--which may be an empty list
                 } else if (searchAppProperties.layers.length > 0) {
                     searchSources = searchSources.concat(
                         this.createWebMapItemSources(map, operationalLayers, searchAppProperties.layers, searchAppProperties.hintText)
                     );
+                    numSources = searchSources.length;
                 }
 
                 // Create the dijit
-                if (searchSources.length > 0) {
+                if (numSources > 0) {
+                    if (numSources === 1) {
+                        activeSource = 0;
+                    }
                     searchControl = new Search({
+                        activeSourceIndex: activeSource,
                         addLayersFromMap: addLayersFromMap,
                         enableButtonMode: true,
                         enableInfoWindow: false,
-                        map: map
+                        map: map,
+                        sources: searchSources,
+                        useMapExtent: map.extent
                     }, srcNode);
-
-                    // Set its search sources
-                    searchControl.set("sources", searchSources);
-
-                    // Launch it
                     searchControl.startup();
 
                     // Expand the widget if it's always to be expanded
                     if (searchAlwaysExpanded) {
-                        query(".arcgisSearch .hasButtonMode.searchCollapsed .searchExpandContainer").style("width", "268px");
+                        styles.insertCssRule(".arcgisSearch .hasButtonMode.searchCollapsed .searchExpandContainer", "width:237px;");
+                        styles.insertCssRule(".arcgisSearch .hasButtonMode.searchCollapsed.hasMultipleSources .searchExpandContainer", "width:268px;");
                     }
                 }
             }

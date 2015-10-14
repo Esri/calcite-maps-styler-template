@@ -1,7 +1,7 @@
 From git branch 
 develop
-commit 95559c35a5f46a93c53a3b4f3e30572bda9cff99
+commit a64d7cd48e1c47d93ab1c6765fc793c3d8bacd46
 Author: MikeTschudi <mtschudi@esri.com>
-Date:   Tue Oct 13 14:12:50 2015 -0700
+Date:   Wed Oct 14 11:53:35 2015 -0700
 
-    Restored hiding of titlebar icon when screen is narrow
+    Fixed Search dijit display for single-source searching

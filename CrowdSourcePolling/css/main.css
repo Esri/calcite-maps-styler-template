@@ -218,8 +218,19 @@ textarea {
     height: 32px;
 }
 
-.arcgisSearch .hasButtonMode.searchExpanded .searchExpandContainer, .arcgisSearch .hasButtonMode.searchExpanded.hasMultipleSources .searchExpandContainer, .arcgisSearch .hasButtonMode.hasMultipleSources .searchAnimate {
-    width: 268px;
+.arcgisSearch .hasButtonMode.searchCollapsed .searchExpandContainer,
+.arcgisSearch .hasButtonMode.searchCollapsed.hasMultipleSources .searchExpandContainer {
+  width: 0px;
+}
+
+.arcgisSearch .hasButtonMode.searchExpanded .searchExpandContainer,
+.arcgisSearch .hasButtonMode .searchAnimate {
+  width: 237px;
+}
+
+.arcgisSearch .hasButtonMode.searchExpanded.hasMultipleSources .searchExpandContainer,
+.arcgisSearch .hasButtonMode.hasMultipleSources .searchAnimate {
+  width: 268px;
 }
 
 .arcgisSearch .searchClear {
