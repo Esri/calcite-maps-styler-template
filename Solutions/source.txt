@@ -1,10 +1,8 @@
-Built on 10/12/2015 11:32:40.37 from
+Built on 10/14/2015 12:21:15.88 from
 repository local-government-online-apps
-branch develop
-commit 83904eba447497f10910073d7ffbf215520a5ab6
-Merge: f2f81e4 2432671
+branch new-search-widget
+commit a5c809f774e80d9a86c1fc7874ae99dc8d7397ed
 Author: MikeTschudi <mtschudi@esri.com>
-Date:   Sun Oct 11 18:11:21 2015 -0700
+Date:   Wed Oct 14 12:19:52 2015 -0700
 
-    Merge branch 'new-search-widget' into develop
-    Added file SearchDijitHelper.js
+    Fixed Search dijit display for single-source searching

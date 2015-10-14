@@ -22,6 +22,7 @@ define([
     "dojo/_base/lang",
     "dojo/json",
     "dojo/query",
+    "dojox/html/styles",
     "esri/dijit/Search",
     "esri/lang",
     "esri/layers/FeatureLayer",
@@ -32,6 +33,7 @@ define([
     lang,
     JSON,
     query,
+    styles,
     Search,
     esriLang,
     FeatureLayer,
@@ -61,8 +63,8 @@ define([
             //      and displayFields app attributes.
             // If none is specified, use default geocoder and search display field of each feature layer.
             //
-            var done = false, layersDone = false, searchSources = [], addLayersFromMap = false, searchControl,
-                map = searchItem.mapObj.appConfig.map, activeSource = "all", dijitWidth;
+            var done = false, layersDone = false, searchSources = [], addLayersFromMap = false, searchControl, numSources = 0,
+                map = searchItem.mapObj.appConfig.map, activeSource = "all";
 
             // 1. Using the "search" configuration widget linked to the searchLayers app attribute.
             layersDone = done = this.checkForSearchWidgetSources(searchItem, searchSources);
@@ -91,8 +93,12 @@ define([
             }
 
             // Create the dijit
-            if (searchSources.length > 0) {
-                if (searchSources.length === 1) {
+            numSources = searchSources.length + addLayersFromMap
+                ? 1
+                : 0;
+
+            if (numSources > 0) {
+                if (numSources === 1) {
                     activeSource = 0;
                 }
                 searchControl = new Search({
@@ -110,10 +116,8 @@ define([
 
                 // Expand the widget if it's always to be expanded
                 if (searchAlwaysExpanded) {
-                    dijitWidth = searchSources.length > 1
-                        ? "268px"
-                        : "237px";
-                    query(".arcgisSearch .hasButtonMode.searchCollapsed .searchExpandContainer").style("width", dijitWidth);
+                    styles.insertCssRule(".arcgisSearch .hasButtonMode.searchCollapsed .searchExpandContainer", "width:237px;");
+                    styles.insertCssRule(".arcgisSearch .hasButtonMode.searchCollapsed.hasMultipleSources .searchExpandContainer", "width:268px;");
                 }
             }
         },
@@ -446,8 +450,8 @@ define([
     //========================================================================================================================//
 
 });
-/*
-This source is part of the git commit
-83904eba447497f1 2015-10-11 18:11:21 -0700
-It is available from https://github.com/Esri/local-government-online-apps
-*/
+/* 
+This source is part of the git commit 
+a5c809f774e80d9a 2015-10-14 12:19:52 -0700
+It is available from https://github.com/Esri/local-government-online-apps 
+*/ 
