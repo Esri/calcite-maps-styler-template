@@ -83,6 +83,19 @@
                             "value": "kilometers"
                         }
                     ]
+                },
+                {
+                    "type": "boolean",
+                    "fieldName": "useClosestFacility",
+                    "label": "Use Closest Facility to improve accuracy of distances",
+                    "tooltip": "Use Closest Facility to improve accuracy of distances"
+                },
+                {
+                    "type": "string",
+                    "fieldName": "closestFacilityURL",
+                    "label": "URL for Closest Facility task (defaults to route.arcgis.com if left blank)",
+                    "tooltip": "URL for Closest Facility task",
+                    "placeHolder": ""
                 }
             ]
         },

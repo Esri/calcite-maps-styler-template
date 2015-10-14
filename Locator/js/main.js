@@ -53,6 +53,9 @@ define([
     "esri/symbols/SimpleLineSymbol",
     "esri/symbols/SimpleMarkerSymbol",
     "esri/symbols/TextSymbol",
+    "esri/tasks/ClosestFacilityTask",
+    "esri/tasks/ClosestFacilityParameters",
+    "esri/tasks/FeatureSet",
     "esri/tasks/locator",
     "esri/tasks/query",
     "esri/urlUtils"
@@ -94,6 +97,9 @@ define([
     SimpleLineSymbol,
     SimpleMarkerSymbol,
     TextSymbol,
+    ClosestFacilityTask,
+    ClosestFacilityParameters,
+    FeatureSet,
     Locator,
     Query,
     urlUtils
@@ -127,6 +133,8 @@ define([
         animTimer: null,
         travelModes: [],
         curMode: null,
+        closestFacilityTask: null,
+        closestFacilityWalkMode: null,
 
         // Startup
         startup: function(config) {
@@ -592,8 +600,8 @@ define([
                 toSymbol: sym,
                 stopSymbol: sym,
                 routeSymbol: routeSym,
-                segmentSymbol: segmentSym,
-                doNotFetchTravelModesFromOwningSystem: false
+                segmentSymbol: segmentSym
+                    //doNotFetchTravelModesFromOwningSystem: false
             };
 
 
@@ -648,6 +656,7 @@ define([
                 this.curMode = "Driving Time";
                 this._setTravelMode();
             }
+            this._setupClosestFacility();
         },
 
         // Toggle Mode
@@ -661,6 +670,34 @@ define([
                 domClass.add(pMode, "walking");
             }
             this._setTravelMode();
+        },
+
+        // Setup Closest Facility
+        _setupClosestFacility: function() {
+            //this.config.useClosestFacility = true;
+            if (this.config.useClosestFacility) {
+                var url = this.config.closestFacilityURL;
+                if (!url) {
+                    url = "http://route.arcgis.com/arcgis/rest/services/World/ClosestFacility/NAServer/ClosestFacility_World";
+                }
+                this.closestFacilityTask = new ClosestFacilityTask(url);
+                var def = this.closestFacilityTask.getServiceDescription();
+                def.then(lang.hitch(this, function(desc) {
+                    var mode;
+                    if (desc && desc.layerType === "esriNAServerClosestFacilityLayer") {
+                        array.forEach(desc.supportedTravelModes, function(m) {
+                            if (m.name === "Walking Time") {
+                                mode = m;
+                            }
+                        });
+                        if (mode) {
+                            this.closestFacilityWalkMode = mode;
+                        }
+                    } else {
+                        this.closestFacilityTask = null;
+                    }
+                }));
+            }
         },
 
         // Configure UI
@@ -873,7 +910,71 @@ define([
                 gra.setInfoTemplate(this.infoTemplate);
             }));
             this.opFeatures.sort(this._compareDistance);
-            this._updateDestinations();
+            // check to see if origin is selected and use closest facility is enabled
+            if (this.origin && this.closestFacilityTask) {
+                this._processClosestFeatures();
+            } else {
+                this._updateDestinations();
+            }
+        },
+
+        // Process Closest Features
+        _processClosestFeatures: function() {
+
+            console.log("Using Closest Facility Task");
+
+            var incidents = new FeatureSet();
+            var gra = new Graphic(this.origin.geometry);
+            incidents.features.push(gra);
+
+            var top5 = this.opFeatures.slice(0, 5);
+            var facilities = new FeatureSet();
+            var rank = 0;
+            array.forEach(top5, function(g) {
+                var g2 = new Graphic(g.geometry);
+                g2.attributes = {
+                    Name: rank
+                };
+                facilities.features.push(g2);
+                rank += 1;
+            });
+
+            var params = new ClosestFacilityParameters();
+            params.impedenceAttribute = "Miles";
+            params.defaultCutoff = 100.0;
+            params.defaultTargetFacilityCount = 5;
+            params.returnFacilities = true;
+            params.returnIncidents = false;
+            params.returnRoutes = false;
+            params.returnDirections = false;
+            params.incidents = incidents;
+            params.facilities = facilities;
+            if (this.curMode === "Walking Time" && this.closestFacilityWalkMode) {
+                params.travelMode = this.closestFacilityWalkMode;
+            }
+
+            this.closestFacilityTask.solve(params, lang.hitch(this, function(solveResult) {
+                if (solveResult.messages.length > 0) {
+                    console.Log("Closest Facility Message", solveResult.messages[0]);
+                    this._updateDestinations();
+                } else {
+                    var newFacilities = solveResult.facilities;
+                    if (newFacilities.length > 0) {
+                        var rank = parseInt(newFacilities[0].attributes.Name, 10);
+                        if (rank > 0) {
+                            console.log("Switching to closest facility", rank);
+                            var ele = this.opFeatures[rank];
+                            this.opFeatures.splice(rank, 1);
+                            this.opFeatures.splice(0, 0, ele);
+                        }
+                    }
+                    this._updateDestinations();
+                }
+            }), lang.hitch(this, function(error) {
+                console.log("Closest Facility Error", error);
+                this._updateDestinations();
+            }));
+
         },
 
         // Update Destinaions
@@ -1088,7 +1189,7 @@ define([
             return geom.getExtent().getCenter();
         },
 
-        // Get distance
+        // get distance
         _getDistance: function(loc) {
             var pt = this.map.extent.getCenter();
             if (this.origin) {
