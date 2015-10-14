@@ -28,7 +28,7 @@
 
 .esriRTL .top-bar-title {
   float: right;
-  padding-right: 10px; }
+  padding-right: 30px; }
 
 .hamburger-button {
   position: absolute;
@@ -41,8 +41,10 @@
   filter: alpha(opacity=30); }
 
 .esriRTL .hamburger-button {
-  float: right;
-  right: 5px; }
+  position: absolute;
+  top:9px;
+  right:2px;  
+}
 
 .border-container-outer {
   width: 100%;
@@ -139,8 +141,8 @@ html, body {
   zoom: 1; }
 
 .esriRTL .ac-container label {
-  float: right; }
-
+  text-align:left;
+}
 .ac-container.no-label input:checked + label:after {
   content: ""; }
 
@@ -235,6 +237,10 @@ html, body {
   padding: 2px 4px;
   right: 8px; }
 
+.esriRTL #search{
+  left:8px;
+  right:auto;
+}
 .open-drawer {
   /*Hide geocoder for small screen sizes when drawer is open*/
   display: none; }
