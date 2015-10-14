@@ -138,10 +138,6 @@ ready, declare, lang, array, Color, arcgisUtils, urlUtils, on, has, sniff, regis
                             on.once(this.map.infoWindow, "hide", lang.hitch(this, function () {
                                 urlSearch.clear();
                                 urlSearch.destroy();
-                                if(this.editor){
-                                    this._destroyEditor();
-                                    this._createEditor();
-                                }
                             }));
                         }));
                     }));
