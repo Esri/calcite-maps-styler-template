@@ -218,6 +218,9 @@ define([
                 }));
 
                 topic.subscribe("detailsCancel", lang.hitch(this, function () {
+                    if (this._currentlyCommenting) {
+                        topic.publish("cancelForm");
+                    }
                     topic.publish("showPanel", "itemsList");
                 }));
 

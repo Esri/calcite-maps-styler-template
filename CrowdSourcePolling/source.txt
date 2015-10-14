@@ -1,7 +1,7 @@
 From git branch 
 develop
-commit a64d7cd48e1c47d93ab1c6765fc793c3d8bacd46
+commit 7c3889fdf88ab3075e4497de3cbe17ff981fd481
 Author: MikeTschudi <mtschudi@esri.com>
-Date:   Wed Oct 14 11:53:35 2015 -0700
+Date:   Wed Oct 14 13:09:11 2015 -0700
 
-    Fixed Search dijit display for single-source searching
+    Cancel open form if exiting details view
