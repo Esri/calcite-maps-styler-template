@@ -549,13 +549,14 @@ ready, parser, domAttr, domGeometry, on, array, declare, lang, query, dom, domCl
                         symbolInfo = decodeURIComponent(this.config.marker).split(",");
                     }
 
-                    if (symbolInfo && symbolInfo.length && symbolInfo.length >= 6) {
+                    //if (symbolInfo && symbolInfo.length && symbolInfo.length >= 6) {
+                     if(symbolInfo && symbolInfo.length && symbolInfo.length >=2){
                         var x = symbolInfo[0],
                             y = symbolInfo[1],
-                            wkid = symbolInfo[2],
-                            description = symbolInfo[3],
-                            icon_url = symbolInfo[4],
-                            label = symbolInfo[5];
+                            wkid = symbolInfo[2] || null,
+                            description = symbolInfo[3] || null,
+                            icon_url = symbolInfo[4] || null,
+                            label = symbolInfo[5] || null;
 
                         var markerSymbol = new PictureMarkerSymbol(icon_url || this.config.marker_symbol, 26, 26);
                         var point = new Point({
