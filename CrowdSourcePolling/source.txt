@@ -1,7 +1,7 @@
 From git branch 
 develop
-commit 7c3889fdf88ab3075e4497de3cbe17ff981fd481
+commit 033db2fc011ec06266e4b45809c2b0c6f49147e9
 Author: MikeTschudi <mtschudi@esri.com>
-Date:   Wed Oct 14 13:09:11 2015 -0700
+Date:   Thu Oct 15 09:09:00 2015 -0700
 
-    Cancel open form if exiting details view
+    Added configuration app parameters for app logo
