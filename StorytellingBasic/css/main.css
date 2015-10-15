@@ -4,29 +4,81 @@ body {
   margin: 0;
   height: 100%;
   width: 100%;
-  font-family: Arial, Helvetica, sans-serif;
 }
 body{
   font-size: 14px;
   overflow: hidden;
-  font-family: Georgia, "Times New Roman", Times, serif;
 }
-a{
-  color: #555;
-  font-weight: bold;
-  text-decoration: none;
+/*Header Fonts*/
+@font-face {
+  font-family: 'open_sanssemibold';
+  src: url('../font/OpenSans-Semibold-webfont.eot');
+  src: url('../font/OpenSans-Semibold-webfont.eot?#iefix') format('embedded-opentype'),
+    url('../font/OpenSans-Semibold-webfont.woff') format('woff'),
+    url('../font/OpenSans-Semibold-webfont.ttf') format('truetype'),
+    url('../font/OpenSans-Semibold-webfont.svg#open_sanssemibold') format('svg');
+  font-weight: normal;
+  font-style: normal;
 }
-a:hover{
-  text-decoration: underline;
+@font-face {
+  font-family: 'open_sansregular';
+  src: url('../font/OpenSans-Regular-webfont.eot');
+  src: url('../font/OpenSans-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+    url('../font/OpenSans-Regular-webfont.woff') format('woff'),
+    url('../font/OpenSans-Regular-webfont.ttf') format('truetype'),
+    url('../font/OpenSans-Regular-webfont.svg#open_sansregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+/*Icon Fonts*/
+@font-face {
+  font-family: 'social';
+  src:url('../font/social.eot?c2piu0');
+  src:url('../font/social.eot?c2piu0#iefix') format('embedded-opentype'),
+    url('../font/social.ttf?c2piu0') format('truetype'),
+    url('../font/social.woff?c2piu0') format('woff'),
+    url('../font/social.svg?c2piu0#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
 }
 
+[class^="icon-"], [class*=" icon-"] {
+  font-family: 'social';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-twitter:before {
+  content: "\e802";
+}
+.icon-facebook:before {
+  content: "\e803";
+}
+.icon-link:before {
+  content: "\e806";
+}
+.icon-down:before {
+  content: "\e681";
+}
+.icon-up:before {
+  content: "\e682";
+}
+
+/*Esri widget style updates*/
 #search{
   position: absolute;
   top:120px;
   left:20px;
   z-index: 40;
 }
-/*Esri widget style updates*/
 .HomeButton {
   border-bottom: 1px solid #57585a;
   width: 30px;
@@ -59,8 +111,9 @@ a:hover{
   margin:0;
 }
 #headerText{
-  padding-top:20px;
-  padding-left:25px;
+  font-family: "open_sanssemibold", sans-serif;
+  padding-top:10px;
+  padding-left:16px;
   width:70%;
   float:left;
 }
@@ -69,9 +122,11 @@ a:hover{
   padding-right:25px;
 }
 #title{
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 20px;
-  font-weight: bold;
+  height:45px;
+  padding-left:4px;
+  padding-top:3px;
+  font-size: 24px;
+  font-weight: 400;
   text-align: left;
   white-space: nowrap;
   overflow: hidden;
@@ -81,30 +136,121 @@ a:hover{
 .esriRTL #title{
   text-align: right;
 }
+html, body, h1, h2, h3, h4, h5, h6, p, ul, form {
+    margin: 0;
+}
 #subtitle{
+  padding-left:4px;
+  line-height: 18px;
+  word-wrap:break-word;
+  height:54px;
   font-size: 13px;
-  margin-top:10px;
+  font-weight: 400;
   overflow: hidden;
 }
-#logoArea{
-  float:right;
-  padding-top:25px;
-  padding-right:25px;
+@media (max-width: 600px){
+  .socialArea{
+    visibility: hidden;
+  }
+}
+.esriRTL .socialArea{
+  right:auto;
+  left:0;
+  text-align: left;
+  padding-right: 0;
+  padding-left:20px;
+}
+.socialArea{
+  position: absolute;
+  right:0;
+  top:0;
+  padding-top:22px;
+  padding-right:20px;
   text-align: right;
 }
-.esriRTL #logoArea{
-  float:left;
-  padding-left:25px;
+.linkContainer{
+  font-family: "open_sansregular",sans-serif;
+  font-size: 14px;
+  height:21px;
+  line-height: 21px;
+  text-align: right;
 }
-#logoArea img{
-  border:none;
+.linkContainer a{
+  margin-right:8px;
+  color: inherit !important;
+  font-weight: 400;
+}
+.esriRTL .logoContainer{
+  float:left;
+}
+.logoContainer{
+  height:60px;
+  float:right;
+  margin-top:5px;
+}
+.logoWrapper{
+  height:50px;
+  vertical-align: middle;
+}
+.logoLink{
   outline:none;
 }
-#logoArea img{
+a {
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+}
+a:hover{
+  text-decoration: underline;
+}
+.logoImg{
+  max-width: 250px;
+  max-height: 50px;
+}
+img{
   border:none;
-  outline: none;
+  vertical-align: middle;
+}
+.shareIcon {
+  display: none;
+  cursor: pointer;
+  margin-left: 0;
+  color: #CECECE;
+  vertical-align: 0px;
 }
 
+.shareIcon.active {
+  display: inline-block;
+}
+
+.shareBtns > .shareIcon ~ .shareIcon {
+  margin-left: 4px;
+}
+
+.shareIcon:hover {
+  color: #ACACAC;
+}
+
+.share_bitly {
+  vertical-align: 1px;
+  margin-left: 2px;
+}
+.shareIcon[class^="icon-"]:before, .shareIcon[class*=" icon-"]:before {
+  font-size: 120%;
+  margin: 0 !important;
+}
+
+.social .popover-title {
+  display: none;
+}
+
+#bitlyInput {
+  font-family: sans-serif !important;
+}
+
+#bitlyInput::-ms-clear {
+  display: none;
+}
 #mapDiv {
   padding: 0;
   margin: 0;
@@ -112,9 +258,6 @@ a:hover{
   height: 100%;
 }
 
-.map .bingLogo-lg{
-  left:18px !important;
-}
 #legendCon{
   position: absolute;
   width:300px !important;
@@ -138,10 +281,18 @@ a:hover{
   z-index: 100;
   font-family: Arial, Helvetica, sans-serif;
 }
+.toggle-icon{
+  font-family: "social";
+  font-size: 20px;
+  font-weight: 900;
+  position: absolute;
+  top:2px;
+  left:5px;
+}
 #legTogText{
   position: relative;
   margin:auto;
-  margin-left:2px;
+  margin-left:30px;
   margin-top:0px;
   padding:5px;
   font-family: Arial, Helvetica, sans-serif;

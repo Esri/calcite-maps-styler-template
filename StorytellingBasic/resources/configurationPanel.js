@@ -32,6 +32,22 @@
                "tooltip":"Defaults to map summary"
             },
             {  
+               "type":"string",
+               "fieldName":"headerHeight",
+               "placeHolder":"115",
+               "label":"Header height",
+               "tooltip":"Defaults to 115 pixels - resize to fit your content."
+            }
+         ]
+      },{
+         "category": "Header Logo and links",
+         "fields": [
+            {
+               "type": "boolean", 
+               "fieldName": "showLogo",
+               "label": "Show logo"
+            },
+            {  
                "label":"Custom logo:",
                "fieldName":"logo",
                "type":"string",
@@ -42,14 +58,25 @@
                "fieldName":"logoLink",
                "type":"string",
                "tooltip":"Url to navigate to when logo is clicked"
-            },
-            {  
-               "type":"string",
-               "fieldName":"headerHeight",
-               "placeHolder":"115",
-               "label":"Header height",
-               "tooltip":"Defaults to 115 pixels - resize to fit your content."
-            }
+            },{
+               "type": "boolean",
+               "fieldName": "showSocialIcons",
+               "label": "Show Sharing Icons"
+            },{
+               "type": "boolean",
+               "fieldName": "showSocialText",
+               "label": "Show header link"
+            },{
+               "type": "string",
+               "fieldName": "socialText",
+               "label": "Header text",
+               "placeHolder": "A story map"
+            },{
+               "type": "string",
+               "fieldName": "socialLink",
+               "label": "Header link",
+               "tooltip": "Url to navigate to when text is clicked"
+            }          
          ]
       },
       {  
@@ -68,14 +95,19 @@
             {  
                "type":"color",
                "fieldName":"color",
-               "tooltip":"Choose a text color",
-               "label":"Header text color"
+               "tooltip":"Title text color",
+               "label":"Title text color"
+            },{
+               "type": "color",
+               "fieldName": "subtitleColor",
+               "tooltip": "Summary text color",
+               "label": "Summary text color"
             },
             {  
                "type":"color",
                "fieldName":"legendTitleBackground",
                "label":"Legend header color",
-               "tooltip":"Choose a color for the clickable legend header"
+               "tooltip":"Choose a background color for the clickable legend header"
             }
          ]
       },
@@ -115,8 +147,12 @@
       "background": "#444",
       "color": "#fff",
       "legendTitleBackground": "#848484",
+      "showSocialIcons": true,
+      "showLogo": true,
       "showTitle": true,
       "showSubTitle": true,
+      "showSocialText": true,
+      "subtitleColor": "#CECECE",
       "legend": true,
       "scalebar": true,
       "search": false

@@ -46,8 +46,8 @@ define([
   Toggler, coreFx,
   dom, domClass, domConstruct, domStyle,
   registry,
-  arcgisUtils,
-  domUtils,
+  arcgisUtils, 
+  domUtils, 
   HomeButton
 ) {
   return declare(null, {
@@ -60,7 +60,7 @@ define([
       if (config) {
         this.config = config;
         // Hide legend container if not enabled
-        dom.byId("legTogText").innerHTML = this.config.i18n.legendToggle.label + " ▼";
+        dom.byId("legTogText").innerHTML = this.config.i18n.legendToggle.label;
         if(!this.config.legend){
           domUtils.hide(dom.byId("legendCon"));
         }
@@ -132,24 +132,48 @@ define([
         this._updateTheme();
 
         // Set default title and sub title 
-        var title = this.config.title || response.itemInfo.item.title || "";
-        var subtitle = this.config.subtitle || response.itemInfo.item.snippet || "";
-        document.title = title;
+        this.config.title = this.config.title || response.itemInfo.item.title || "";
+        this.config.subtitle = this.config.subtitle || response.itemInfo.item.snippet || "";
+
+        document.title = this.config.title;
         if(this.config.showTitle){
-         dom.byId("title").innerHTML = title;
+         dom.byId("title").innerHTML = this.config.title;
         }
         if(this.config.showSubTitle){
-          dom.byId("subtitle").innerHTML = subtitle;
+          dom.byId("subtitle").innerHTML = this.config.subtitle;
         }
         // Add the logo 
-        if(this.config.logo ){
-          domConstruct.create("a",{
-            href: this.config.logoLink || "#",
-            target : "_blank",
-            innerHTML: "<img src='" + this.config.logo + "'></a>"
-          },"logoArea");
-
+        if(this.config.showLogo && this.config.logo ){
+          if(this.config.logoLink){
+            dom.byId("logoLink").href = this.config.logoLink;
+          }
+          dom.byId("logoImg").src = this.config.logo;
         }
+        // Add the social media text to the header
+        if(this.config.showSocialText && this.config.socialText){
+          domConstruct.create("a",{
+            href: this.config.socialLink || "#",
+            target : "_blank",
+            innerHTML: this.config.socialText
+          },"linkContainer", "first");       
+        }
+        // Show social icons
+        if(this.config.showSocialIcons){
+          query(".shareIcon").style("display", "inline-block");
+          // Setup click events for sharing nodes
+          require(["application/Share"],lang.hitch(this, function(Share){
+            var share = new Share({
+              config: this.config,
+              map: this.map,
+              title: this.config.title,
+              summary: this.config.subtitle
+            });
+            query(".shareIcon").on("click", lang.hitch(this, function(node){
+              share.shareLink(node);
+            }));
+          }));
+        }
+
         // Add scalebar 
         if(this.config.scalebar){
           require(["esri/dijit/Scalebar"], lang.hitch(this, function(Scalebar){
@@ -190,10 +214,12 @@ define([
           on(dom.byId("legendToggle"), "click", lang.hitch(this, function(){
             var displayMode = domStyle.get(dom.byId("legendDiv"),"display");
             if(displayMode === "none"){
-              dom.byId("legTogText").innerHTML = this.config.i18n.legendToggle.label + " ▲";
+              domClass.remove("legToggleIcon","icon-down");
+              domClass.add("legToggleIcon", "icon-up");
               toggler.show();
             }else{
-              dom.byId("legTogText").innerHTML = this.config.i18n.legendToggle.label + " ▼";
+              domClass.add("legToggleIcon","icon-down");
+              domClass.remove("legToggleIcon", "icon-up");
               toggler.hide();
             }
           }));
@@ -241,6 +267,8 @@ define([
     _updateTheme: function(){
       // update app theme 
       query(".fg").style("color", this.config.color.toString());
+      // Alt color (subtitle, social logo)
+      query(".ac").style("color", this.config.subtitleColor.toString());
       query(".bg").style("backgroundColor", this.config.background.toString());
       query(".esriPopup .pointer").style("backgroundColor", this.config.background.toString());
       query(".esriPopup .titlePane").style({
@@ -284,6 +312,5 @@ define([
       }
       return info;
     }
-
   });
 });

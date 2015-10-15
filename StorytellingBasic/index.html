@@ -38,17 +38,38 @@
   </div>
   <div id="mainWindow" dojotype="dijit/layout/BorderContainer" data-dojo-props="design:'headline',gutters:false" style="height:width:100%;height:100%;">
     <!-- Header Section-->
-    <div id="header" class="bg fg" dojotype="dijit/layout/ContentPane" data-dojo-props="region:'top'">
+    <div id="header" class="bg fg" aria-hidden="true" dojotype="dijit/layout/ContentPane" data-dojo-props="region:'top'">
       <div id="headerText">
-        <div id="title"></div>
-        <div id="subtitle"></div>
+        <h1 id="title"></h1>
+        <h2 id="subtitle" class="ac"></h2>
       </div>
-      <div id="logoArea"></div>
+      <div class="socialArea">
+        <div class="linkSocialContainer">
+          <span id="linkContainer" class="ac linkContainer"</span>
+          <span class="shareBtns">
+            <i id="facebook" class="ac shareIcon blackHover share_facebook icon-facebook" title="Share on Facebook" tabindex="-1"></i>
+            <i id="twitter" class="ac shareIcon blackHover share_twitter icon-twitter" title="Share on Twitter" tabindex="-1"></i>
+            <i id="link" class="ac shareIcon blackHover share_bitly icon-link" title="Share link" tabindex="-1"></i>
+          </span>
+        </div>     
+        <table class="logoContainer">
+          <tr>
+            <td class="logoWrapper">
+              <a id="logoLink" class="logoLink" target="_blank" tabindex="-1">
+                <img id="logoImg" class="logoImg"/>
+              </a>
+            </td>
+          </tr>
+        </table>
+      </div>
     </div>
     <!-- Map Section -->
     <div id="mapDiv" dojotype="dijit/layout/ContentPane" data-dojo-props="region:'center'" dir="ltr">
       <div id="legendCon"  dir="ltr">
-        <div id="legendToggle" class="lbg"><p class="fg" id="legTogText"></p></div>
+        <div id="legendToggle" class="lbg">
+          <div class="fg" id="legTogText"></div>
+          <div id="legToggleIcon" class="fg icon-down toggle-icon"></div>
+        </div>
         <div id="legendDiv"></div>
       </div>
       <div id="search"></div>

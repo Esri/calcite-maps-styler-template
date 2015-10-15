@@ -29,12 +29,18 @@ define({
   "background":"#444",
   "color": "#fff",
   "legendTitleBackground": "#848484",
+  "subtitleColor": "#CECECE",
   "showTitle": true,
   "showSubTitle": true,
   "title": null,
   "subtitle": null,
-  "logoLink": null,//"http://www.esri.com",
-  "logo": null, // http://www.arcgis.com/apps/MapTour/resources/icons/esri-logo.png
+  "showLogo": true,
+  "logoLink": "http://www.esri.com",
+  "logo": "http://www.arcgis.com/apps/MapTour/resources/icons/esri-logo.png",
+  "showSocialIcons": true,
+  "showSocialText": true,
+  "socialLink": "http://storymaps.arcgis.com/en/",
+  "socialText": "A story map",
   "headerHeight": "115",
   // Removes header for embedding in an existing site
   "embed": false,
@@ -50,6 +56,9 @@ define({
       "id": "",
       "fields": []
   }], 
+  //Replace these with your own bitly key
+  "bitlyLogin": "arcgis",
+  "bitlyKey": "R_b8a169f3a8b978b9697f64613bf1db6d",
   "bingKey": "", //Enter the url to your organizations bing maps key if you want to use bing basemaps
   //Defaults to arcgis.com. Set this value to your portal or organization host name.
   "sharinghost": location.protocol + "//" + "www.arcgis.com",
