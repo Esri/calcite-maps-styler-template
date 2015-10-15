@@ -15,21 +15,21 @@
                "label":"Display Map Title"
             },
             {  
-               "placeHolder":"Defaults to web map title",
+               "placeHolder":"Defaults to map title",
                "label":"Title:",
                "fieldName":"title",
                "type":"string",
-               "tooltip":"Defaults to web map title"
+               "tooltip":"Defaults to map title"
             },{  
                "type":"boolean",
                "fieldName":"showSubTitle",
                "label":"Display subtitle"
             },{  
-               "placeHolder":"Defaults to web map snippet",
+               "placeHolder":"Defaults to map summary",
                "label":"Subtitle:",
                "fieldName":"subtitle",
                "type":"string",
-               "tooltip":"Defaults to web map snippet"
+               "tooltip":"Defaults to map summary"
             },
             {  
                "label":"Custom logo:",

@@ -34,7 +34,7 @@ define({
   "title": null,
   "subtitle": null,
   "logoLink": null,//"http://www.esri.com",
-  "logo": null,//"http://edemo2.esri.nl/storymaps/verdwenen_dorpen/images/EsriNL_Logo.png",
+  "logo": null, // http://www.arcgis.com/apps/MapTour/resources/icons/esri-logo.png
   "headerHeight": "115",
   // Removes header for embedding in an existing site
   "embed": false,

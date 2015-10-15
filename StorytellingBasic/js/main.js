@@ -142,9 +142,9 @@ define([
           dom.byId("subtitle").innerHTML = subtitle;
         }
         // Add the logo 
-        if(this.config.logo && this.config.logoLink){
+        if(this.config.logo ){
           domConstruct.create("a",{
-            href: this.config.logoLink,
+            href: this.config.logoLink || "#",
             target : "_blank",
             innerHTML: "<img src='" + this.config.logo + "'></a>"
           },"logoArea");
