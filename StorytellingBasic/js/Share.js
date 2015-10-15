@@ -25,11 +25,12 @@ define([
         title: window.document.title,
         summary: "",
         hashtags: "",
+        image: "",
         map: null,
         url: window.location.href,
         bitlyAPI: location.protocol === "https:" ? "https://api-ssl.bitly.com/v3/shorten" : "http://api.bit.ly/v3/shorten",
-        facebookURL: "https://www.facebook.com/sharer/sharer.php?u=${url}",
-        twitterURL: "https://twitter.com/intent/tweet?url=${url}&text=${title}&hashtags=${hashtags}",
+        facebookURL: "https://www.facebook.com/sharer/sharer.php?s=100&p[url]={url}&p[images][0]={image}&p[title]={title}&p[summary]={summary}",
+        twitterURL: "https://twitter.com/intent/tweet?url={url}&text={title}&hashtags={hashtags}",
       };
 
       lang.mixin(this, defaults, parameters);
@@ -54,6 +55,7 @@ define([
           var shareObj = {
             url: encodeURIComponent(response),
             title: encodeURIComponent(this.title),
+            image: encodeURIComponent(this.image),
             summary: encodeURIComponent(this.summary),
             hashtags: encodeURIComponent(this.hashtags)
           };

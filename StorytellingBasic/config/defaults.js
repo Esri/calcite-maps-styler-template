@@ -36,7 +36,7 @@ define({
   "subtitle": null,
   "showLogo": true,
   "logoLink": "http://www.esri.com",
-  "logo": "http://www.arcgis.com/apps/MapTour/resources/icons/esri-logo.png",
+  "logo": "./images/esri-logo.png",
   "showSocialIcons": true,
   "showSocialText": true,
   "socialLink": "http://storymaps.arcgis.com/en/",
