@@ -236,10 +236,10 @@ ready, parser, domAttr, domGeometry, on, array, declare, lang, query, dom, domCl
         
                 search.startup();
                 //use search if its available.
-                if(this.config.find){
+                /*if(this.config.find){
                     search.set("value", this.config.find);
                     search.search(this.config.find);
-                }
+                }*/
 
             }));
 
