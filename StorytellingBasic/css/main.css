@@ -33,11 +33,11 @@ body{
 /*Icon Fonts*/
 @font-face {
   font-family: 'social';
-  src:url('../font/social.eot?c2piu0');
-  src:url('../font/social.eot?c2piu0#iefix') format('embedded-opentype'),
-    url('../font/social.ttf?c2piu0') format('truetype'),
-    url('../font/social.woff?c2piu0') format('woff'),
-    url('../font/social.svg?c2piu0#icomoon') format('svg');
+  src:url('../font/social.eot?89188943');
+  src:url('../font/social.eot?89188943#iefix') format('embedded-opentype'),
+    url('../font/social.ttf?89188943') format('truetype'),
+    url('../font/social.woff?89188943') format('woff'),
+    url('../font/social.svg?89188943#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -57,19 +57,19 @@ body{
 }
 
 .icon-twitter:before {
-  content: "\e802";
+  content: "\e801";
 }
 .icon-facebook:before {
-  content: "\e803";
+  content: "\e800";
 }
 .icon-link:before {
-  content: "\e806";
+  content: "\e802";
 }
 .icon-down:before {
-  content: "\e681";
+  content: "\e804";
 }
 .icon-up:before {
-  content: "\e682";
+  content: "\e803";
 }
 
 /*Esri widget style updates*/
@@ -266,11 +266,11 @@ img{
   z-index: 100;
 }
 #legendDiv{
+  font-family: "open_sansregular", sans-serif;
   background: #fff;
   max-height: 300px;
   overflow: auto;
   padding:10px;
-  font-family: Arial, Helvetica, sans-serif;
 }
 #legendToggle{
   position: relative;
@@ -279,23 +279,25 @@ img{
   height:28px;
   cursor:pointer;
   z-index: 100;
-  font-family: Arial, Helvetica, sans-serif;
 }
 .toggle-icon{
   font-family: "social";
-  font-size: 20px;
   font-weight: 900;
   position: absolute;
+  font-size: 16px;
+  line-height: 20px;
   top:2px;
   left:5px;
 }
 #legTogText{
+  font-size: 14px;
+  line-height: 18px;
+  font-family: "open_sansregular", sans-serif;
   position: relative;
   margin:auto;
   margin-left:30px;
   margin-top:0px;
   padding:5px;
-  font-family: Arial, Helvetica, sans-serif;
 }
 
 .esriRTL label {
