@@ -110,12 +110,30 @@ define([
                     document.head.appendChild(style);    
                 }
 
+         
                 // document ready
                 ready(lang.hitch(this, function () {
                     //supply either the webmap id or, if available, the item info
                     var itemInfo = this.config.itemInfo || this.config.webmap;
 
-                    this._createWebMap(itemInfo);
+                    // Setup the modal overlay if enabled
+                    if(this.config.splashModal){
+                      domClass.remove("modal", "hide-modal");
+                      var title = this.config.splashTitle || "";
+                      var content = this.config.splashContent || "";
+                      dom.byId("modalTitle").innerHTML = title;
+                      dom.byId("modalContent").innerHTML = content;
+                      // Close button handler for the overlay  
+                      on(dom.byId("closeOverlay"), "click", lang.hitch(this, function(){
+                        this._createWebMap(itemInfo);
+                        domClass.add("modal", "hide-modal");
+                      }));
+                    }else{
+                        this._createWebMap(itemInfo);
+                    }
+
+
+
                 }));
             } else {
                 var error = new Error("Main:: Config is not defined");
@@ -153,7 +171,6 @@ define([
             }
 
         },
-
         // Create UI
         _createUI: function () {
             domStyle.set("panelPages", "visibility", "hidden");
@@ -1066,7 +1083,7 @@ define([
                 }
 
                 this.config.title = title;
-                document.title = title;
+                document.title = esriLang.stripTags(title);
                 dom.byId("title").innerHTML = title;
 
                 //Set subtitle if provided 

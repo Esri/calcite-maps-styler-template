@@ -29,10 +29,11 @@ define({
     "bingKey": "", //Enter the url to your organizations bing maps key if you want to use bing basemaps
     //Defaults to arcgis.com. Set this value to your portal or organization host name.
     "sharinghost": location.protocol + "//" + "www.arcgis.com",
-    //If you need localization set the localize value to true to get the localized strings
-    //from the javascript/nls/resource files.
-    //Note that we've included a placeholder nls folder and a resource file with one error string
-    //to show how to setup the strings file.
+    // Set splashModal to display a splash screen when the app loads
+    // Define the splash content using splashTitle and splashContent. 
+    "splashModal": false,
+    "splashTitle": null,
+    "splashContent": null,
     "find": null,
     "localize": true,
     "units": null,

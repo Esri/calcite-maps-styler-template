@@ -78,7 +78,26 @@
                "label": "Display popup content in floating panel"
             }
          ]
-      },
+         },{
+         "category":"Splash Screen",
+         "fields":[{
+           "type": "boolean",
+           "fieldName": "splashModal",
+           "tooltip": "Enable Splash Screen",
+           "label": "Splash Screen"
+         },{
+           "type": "string",
+           "fieldName": "splashTitle",
+           "label": "Splash screen title",
+           "tooltip": "Define splash screen title"
+         },{
+          "type":"string",
+          "fieldName":"splashContent",
+          "label":"Splash screen content text",
+          "tooltip":"Define splash screen content",
+          "stringFieldOption":"richtext"
+         } ]
+       },
       {  
          "category":"Tools",
          "fields":[  
@@ -316,6 +335,7 @@
       "theme":"80ab00",
       "activeTool":"legend",
       "scalebar":false,
+      "splashModal": false,
       "tool_print":true,
       "tool_print_layouts":false,
       "tool_print_legend":false,

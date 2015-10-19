@@ -1382,3 +1382,71 @@ input[type=checkbox]{
 .icon-close:before {
   content: "\e600";
 }
+/*Styles for the modal dialog (splash screen)*/
+
+#modal {
+  z-index:1000;
+  position: absolute;
+  top: 50%; 
+  left: 50%;
+  margin: -100px 0 0 -20%;
+  opacity: 1;
+  visibility: visible;
+  width: 40%;
+  box-shadow: 0 3px 7px rgba(0,0,0,.25);
+  box-sizing: border-box;
+  transition: all .4s ease-in-out;
+  -moz-transition: all .4s ease-in-out;
+  -webkit-transition: all .4s ease-in-out;
+  overflow:visible;
+}
+#modal.hide-modal{
+  top: -50%;
+  visibility: hidden;
+  opacity: 0;
+}
+#modal .modal-header{
+  border-bottom: 1px solid #ccc;
+  border-radius: 5px 5px 0 0
+}
+#modal h2 {
+  margin: 0;
+}
+#modal .copy{
+  color: #333;
+  background-color:#fff;
+}
+#modal .copy, #modal .modal-header {
+  padding: 10px;
+}
+.modal-content {
+  position: relative;
+  z-index: 20;
+}
+#modal .overlay {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 10
+}
+
+#closeOverlay{
+  display: inline-block;
+  position: absolute;
+  right:2px;
+  top:2px;
+  height:36px;
+  width:36px;
+  font-size:24px;
+  line-height: 24px;
+}
+.tool-btn{
+  text-align: center;
+  margin:0;
+  background: transparent;
+  border: none !important;
+  cursor:pointer;
+  border-radius:4px;
+}
