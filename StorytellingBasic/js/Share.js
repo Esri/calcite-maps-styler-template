@@ -19,7 +19,6 @@ define([
   return declare(null, {
 
     constructor: function (parameters) {
-
       var defaults = {
         config: {},
         title: window.document.title,
@@ -36,7 +35,8 @@ define([
       lang.mixin(this, defaults, parameters);
       
       this.tooltipDialog = new TooltipDialog({
-        id: "tooltip"
+        id: "tooltip",
+        tabIndex:0
       });
       this.tooltipDialog.startup();
 
@@ -68,12 +68,15 @@ define([
             window.open(fullLink, "share", true);
           }else{
             fullLink = response;
-            this.tooltipDialog.setContent(fullLink);
+            this.tooltipDialog.setContent("<input class='tip' type='text' value='" + fullLink + "' readonly/>");
             popup.open({
               popup: this.tooltipDialog,
               x:clickNode.pageX,
               y:clickNode.pageY 
             });
+            query(".tip").forEach(lang.hitch(this, function(node){
+              node.select();
+            }));
             on.once(this.map, "click", lang.hitch(this, function(){
               popup.close(this.tooltipDialog);
             }));

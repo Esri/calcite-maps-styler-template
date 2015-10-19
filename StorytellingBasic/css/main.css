@@ -251,6 +251,10 @@ img{
 #bitlyInput::-ms-clear {
   display: none;
 }
+
+.dijitTooltipContainer{
+  font-family: Arial, sans-serif;
+}
 #mapDiv {
   padding: 0;
   margin: 0;

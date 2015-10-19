@@ -12,7 +12,7 @@
             {  
                "type":"boolean",
                "fieldName":"showTitle",
-               "label":"Display Map Title"
+               "label":"Display map title"
             },
             {  
                "placeHolder":"Defaults to map title",
@@ -50,18 +50,20 @@
             {  
                "label":"Custom logo:",
                "fieldName":"logo",
+               "placeHolder":"URL to image",
                "type":"string",
                "tooltip":"Optional logo to display"
             },
             {  
                "label":"Logo link",
                "fieldName":"logoLink",
+               "placeHolder": "http://www.esri.com",
                "type":"string",
                "tooltip":"Url to navigate to when logo is clicked"
             },{
                "type": "boolean",
                "fieldName": "showSocialIcons",
-               "label": "Show Sharing Icons"
+               "label": "Show sharing icons"
             },{
                "type": "boolean",
                "fieldName": "showSocialText",
@@ -75,6 +77,7 @@
                "type": "string",
                "fieldName": "socialLink",
                "label": "Header link",
+               "placeHolder": "http://storymaps.arcgis.com",
                "tooltip": "Url to navigate to when text is clicked"
             }          
          ]
@@ -100,8 +103,8 @@
             },{
                "type": "color",
                "fieldName": "subtitleColor",
-               "tooltip": "Summary text color",
-               "label": "Summary text color"
+               "tooltip": "Subtitle text color",
+               "label": "Subtitle text color"
             },
             {  
                "type":"color",
