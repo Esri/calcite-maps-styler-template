@@ -109,6 +109,7 @@ body{
 /*Header styles (title, logo, subtitle, social links)*/
 #header{
   margin:0;
+  overflow: hidden;
 }
 #headerText{
   font-family: "open_sanssemibold", sans-serif;
@@ -146,7 +147,8 @@ html, body, h1, h2, h3, h4, h5, h6, p, ul, form {
   height:54px;
   font-size: 13px;
   font-weight: 400;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto !important;
 }
 @media (max-width: 600px){
   .socialArea{

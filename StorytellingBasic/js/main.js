@@ -65,7 +65,7 @@ define([
           domUtils.hide(dom.byId("legendCon"));
         }
         // Hide header if embed is specified 
-        if(this.config.embed){
+        if(this.config.embed || this.config.headerHeight == "0"){
           domUtils.hide(dom.byId("header"));
           registry.byId("mainWindow").layout();
         }else{
