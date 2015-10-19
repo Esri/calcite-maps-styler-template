@@ -178,8 +178,8 @@ ready, parser, domAttr, domGeometry, on, array, declare, lang, query, dom, domCl
                                     exactMatch: true,
                                     outFields: ["*"],
                                     featureLayer: searchLayer,
-                                    displayField: attribute,//searchLayer.objectIdField,
-                                    searchFields: [attribute] //[searchLayer.objectIdField]
+                                    displayField: attribute,
+                                    searchFields: [attribute] 
                                 };
                                 value = featureId;
                              }
@@ -206,8 +206,6 @@ ready, parser, domAttr, domGeometry, on, array, declare, lang, query, dom, domCl
                             urlSearch.destroy();
                         }));
                     }));
-
-
                 }));
 
 
@@ -236,10 +234,15 @@ ready, parser, domAttr, domGeometry, on, array, declare, lang, query, dom, domCl
         
                 search.startup();
                 //use search if its available.
-                /*if(this.config.find){
+                if(this.config.find){
                     search.set("value", this.config.find);
-                    search.search(this.config.find);
-                }*/
+                    var activeIndex = search.activeSourceIndex;
+                    console.log(activeIndex);
+                    search.set("activeSourceIndex","all");
+                    search.search(this.config.find).then(function(){
+                        search.set("activeSourceIndex",activeIndex);
+                    });
+                }
 
             }));
 
