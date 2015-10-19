@@ -148,7 +148,7 @@ define([
                 obj.showTime = true;
                 return obj;
             case "shortDateLEShortTime24":
-                obj.dateFormat = "MM/DD/YYYY HH:mm";
+                obj.dateFormat = "DD/MM/YYYY HH:mm";
                 obj.showTime = true;
                 return obj;
             case "longMonthYear":

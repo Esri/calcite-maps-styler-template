@@ -1,0 +1,12 @@
+From git repository 
+origin	git@github.com:Esri/crowdsource-manager.git (fetch)
+origin	git@github.com:Esri/crowdsource-manager.git (push)
+. 
+branch 
+develop
+. 
+commit b39636945ec328e75b1a078b5ace104f883b3730
+Author: MikeTschudi <mtschudi@esri.com>
+Date:   Mon Oct 19 14:08:19 2015 -0700
+
+    Fixed shortDateLEShortTime24 format
