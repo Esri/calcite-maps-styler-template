@@ -203,7 +203,6 @@ define([
           }));
  
         }
-
         query(".closeBtn").on("click", lang.hitch(this, function(){
           array.forEach(this.containers, lang.hitch(this, function(container){
              domClass.remove(container.btn,"activeTool");
@@ -234,17 +233,33 @@ define([
         }
         // setup the legend tool 
         if(this.config.legend){
-          require(["esri/dijit/Legend"], lang.hitch(this, function(Legend){
+          require(["esri/dijit/LayerList"], lang.hitch(this, function(LayerList){
             var legendButton = dom.byId("legendBtn");
             domStyle.set(legendButton, "display", "inline-block");
             legendButton.title = this.config.i18n.legend.tip;
             this.containers.push({btn:"legendBtn", container:"legendContainer"});
-            var legend = new Legend({
-              map: this.map,
-              layerInfos:(arcgisUtils.getLegendLayers(this.config.response))
-            },"legendDiv");
-            legend.startup();
+
+            var layerList = null;
             on(legendButton, "click", lang.hitch(this, function(){
+              if(!layerList){
+              layerList = new LayerList({
+              map: this.map,
+              showSubLayers: true,
+              subLayers: true,
+              showLegend: true,
+              showOpacitySlider: true,
+              layers:(arcgisUtils.getLayerList(this.config.response))
+            },"legendDiv");
+   
+            layerList.startup();
+
+            query(".esriLayerList").style({
+              "background-color": this.config.background,
+              "color": this.config.color
+            });
+          }
+
+
               this._toggleButtonContainer(legendButton, "legendContainer");
             }));
           }));
@@ -466,7 +481,6 @@ define([
         }));
     },
     _updateTheme: function(){
-      //var bgColor = new Color.fromHex(this.config.background);
       var bgColor =this.config.background;
       var bgOpacity = Number(this.config.backgroundOpacity);
       var textColor = this.config.color;
@@ -507,6 +521,7 @@ define([
         "border-color": bgColor,
         "opacity": bgOpacity
       });
+
     },
 
     _togglePanel: function(chartNode){

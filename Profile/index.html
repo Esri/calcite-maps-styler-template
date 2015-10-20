@@ -30,7 +30,7 @@
     <div class="dialog-header">
       <div class="icon-close closeBtn" tabindex="0"></div>
     </div>
-    <div id="legendDiv" class="arrow_content"></div>
+    <div id="legendDiv" class="bg fg arrow_content"></div>
   </div>
   <div id="shareContainer" class="bg fg arrow_box">
     <div class="dialog-header">
@@ -76,6 +76,7 @@
     var package_path = window.location.pathname.substring(0, window.location.pathname.lastIndexOf('/'));
     var dojoConfig = {
       async: true,
+      parseOnLoad: true,
       packages: [{
         name: "application",
         location: package_path + '/js'
