@@ -54,7 +54,7 @@ define({
     "tools": [
         {"name": "legend", "enabled": true},
         {"name": "bookmarks", "enabled": true},
-        {"name": "layers", "enabled": true},
+        {"name": "layers", "enabled": true, "sublayers": true, "legend": true, "opacityslider": true},
         {"name": "basemap", "enabled": true},
         {"name": "overview", "enabled": true},
         {"name": "measure", "enabled": true},

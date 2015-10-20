@@ -81,6 +81,9 @@ html, body {
 .esriLayerList .esriList ul{
   background-color: #fff;
 }
+.esriLayerList .esriTitleContainer{
+ border-color:#eee;
+}
 .esriLayerList .esriList{
     border-top:none;
 }

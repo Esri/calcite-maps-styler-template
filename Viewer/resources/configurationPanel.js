@@ -190,6 +190,14 @@
                "type":"boolean",
                "fieldName": "tool_sublayers",
                "label": "Include sublayers in Layer List"
+            },{
+               "type": "boolean",
+               "fieldName": "tool_layerlegend",
+               "label": "Include legend in Layer List"
+            },{
+               "type": "boolean",
+               "fieldName": "tool_opacity",
+               "label": "Include opacity slider in Layer List"
             },
             {  
                "type":"boolean",
@@ -346,6 +354,8 @@
       "tool_legend":true,
       "tool_layers":true,
       "tool_sublayers": true,
+      "tool_opacity": true,
+      "tool_layerlegend": true,
       "tool_home":true,
       "tool_locate":true,
       "locate_track": false,

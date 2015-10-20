@@ -471,13 +471,12 @@ define([
                     }
                     var layersDiv = toolbar.createTool(tool, panelClass);
 
-                    var sublayers = true;
-                    if(this.config.hasOwnProperty("tool_sublayers")){
-                     sublayers = this.config.tool_sublayers;
-                    }
                     var toc = new LayerList({
                         map: this.map,
-                        subLayers: sublayers,
+                        showSubLayers: has("layers-sublayers"),
+                        subLayers: has("layers-sublayers"),
+                        showLegend: has("layers-legend"),
+                        showOpacitySlider: has("layers-opacity"),
                         layers: arcgisUtils.getLayerList(this.config.response)
                     }, domConstruct.create("div", {}, layersDiv));
                     toc.startup();

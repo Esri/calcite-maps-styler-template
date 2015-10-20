@@ -677,9 +677,15 @@ input[type=checkbox]:checked.share-dialog-checkbox + .share-dialog-checkbox:befo
 .esriLayer {
   background-color: #fff;
 }
+.esriLayerList{
+  background-color:#fff;
+}
 .esriLayerList .esriTitle {
   background-color: #fff;
   border-bottom: none;
+}
+.esriLayerList .esriTitleContainer{
+ border-color:#eee;
 }
 .esriLayerList .esriList{
     border-top:none;

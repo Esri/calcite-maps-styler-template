@@ -128,15 +128,6 @@
             },
             {  
                "type":"boolean",
-               "fieldName":"layerlist",
-               "label":"Layer List"
-            },{
-               "type":"boolean",
-               "fieldName": "includesublayers",
-               "label":"Include sub layers in Layer List"
-            },
-            {  
-               "type":"boolean",
                "fieldName":"legend",
                "label":"Legend"
             },{
@@ -158,6 +149,31 @@
                "type":"boolean",
                "fieldName":"zoom",
                "label":"Zoom Slider"
+            }
+         ]
+      },{
+         "category": "Layer List",
+         "fields": [
+            {
+               "type": "paragraph",
+               "value": "The Layer List displays a list of layers and allows you to toggle the layers on and off. Optionally you can choose to disable the display of sub layers, the layer list legend and opacity slider. "
+            },
+            {  
+               "type":"boolean",
+               "fieldName":"layerlist",
+               "label":"Layer List"
+            },{
+               "type":"boolean",
+               "fieldName": "includesublayers",
+               "label":"Include sub layers in Layer List"
+            },{
+               "type": "boolean",
+               "fieldName": "includelayerlegend",
+               "label": "Inlucde legend in Layer List"
+            },{
+               "type": "boolean",
+               "fieldName": "includelayeropacity",
+               "label": "Include opacity slider in layer list"
             }
          ]
       },
@@ -306,6 +322,8 @@
       "table":true,
       "layerlist":true,
       "includesublayers":true,
+      "includelayerlegend": true,
+      "includelayeropacity": true,
       "bookmarks":false,
       "zoom":true,
       "home":true,

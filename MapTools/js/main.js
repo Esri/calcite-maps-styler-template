@@ -695,7 +695,10 @@ declare, win, array, Color, all, Deferred, lang, domUtils, esriRequest, esriLang
                 var toc = new LayerList({
                     map: this.map,
                     layers: layers,
-                    subLayers: this.config.includesublayers
+                    showSubLayers: this.config.includesublayers,
+                    //subLayers: this.config.includesublayers,
+                    showLegend: this.config.includelayerlegend,
+                    showOpacitySlider: this.config.includelayeropacity
                 }, domConstruct.create("div", {}, "layerDiv"));
                 toc.startup();
                 layerDef.resolve(btn);
