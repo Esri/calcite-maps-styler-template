@@ -79,6 +79,22 @@ body{
   left:20px;
   z-index: 40;
 }
+.arcgisSearch .searchGroup .searchInput {
+  width: 200px;
+  padding: 6px 17px 6px 18px;
+  zoom: 1;
+ }
+
+ .arcgisSearch .searchCollapsed .searchSubmit{
+
+  border-radius: 0;
+ }
+ .arcgisSearch .searchBtn{
+  padding:6px 5px;
+ }
+.arcgisSearch .searchExpandContainer .searchBtn{
+  padding:6px 12px;
+}
 .HomeButton {
   border-bottom: 1px solid #57585a;
   width: 30px;
