@@ -42,7 +42,6 @@ define({
   "socialLink": "http://storymaps.arcgis.com/en/",
   "socialText": "A story map",
   "headerHeight": "115",
-  // Removes header for embedding in an existing site
   "embed": false,
   "legend": true,
   "scalebar": true,

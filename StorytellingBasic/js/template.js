@@ -78,6 +78,7 @@ define([
       this.config = defaults;
       // Gets parameters from the URL, convert them to an object and remove HTML tags.
       this.urlObject = this._createUrlParamsObject();
+      console.log(this.urlObject)
     },
     startup: function () {
       var promise = this._init();
@@ -194,10 +195,14 @@ define([
       // retrieves only the items specified from the URL object.
       var urlObject = this.urlObject;
       var obj = {};
+
       if (urlObject && urlObject.query && items && items.length) {
         for (var i = 0; i < items.length; i++) {
           var item = urlObject.query[items[i]];
-          if (item) {
+          if(item === ""){ //embed
+            obj[items[i]] = true;
+          }
+          if (item) { 
             if (typeof item === "string") {
               switch (item.toLowerCase()) {
               case "true":
