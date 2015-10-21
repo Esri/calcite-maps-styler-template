@@ -2706,11 +2706,11 @@ body.builder {
   font-size: 0.9rem; }
 
 .builder .edit-error {
-  background-color: #C24A56;
+  background-color: #66aa67;
   margin-right: 5px; }
 
 .builder .edit-error:hover {
-  background-color: #C24A56; }
+  background-color: #66aa67; }
 
 .builder .item-text {
   margin-top: 0;
@@ -2756,6 +2756,7 @@ body.builder {
 
 .builder .edit-item {
   color: white;
+  font-size: 0.775rem;
   padding: 2px 6px; }
 
 .builder .edit-item:focus {
@@ -2782,6 +2783,53 @@ body.builder {
 .builder .sections .section:hover {
   background-color: #7FBBDF;
   color: #183E52; }
+
+/*********************************  STATUS PANE/NOTIFICATION PANE OVERRIDES  **************************************/
+.builder .success-notification {
+  display: none !important; }
+
+.builder .notification-container {
+  height: auto;
+  min-height: 43px;
+  margin-bottom: 5px; }
+
+.builder .refresh-tooltip-container {
+  display: none !important; }
+
+.builder .notification-pane .item-subtitle {
+  width: 100%; }
+
+/***********************************  DIALOG OVERRIDES  ***************************************/
+.builder #remove-layer-modal {
+  max-height: 90%;
+  padding-bottom: 0;
+  width: 750px;
+  margin-left: -375px; }
+
+.builder #layer-item-container {
+  height: auto;
+  max-height: 325px; }
+
+.builder .dialog-header {
+  padding: 5px 0; }
+
+.builder .carousel-arrow {
+  vertical-align: top; }
+
+.builder #remove-layer-modal .modal-footer {
+  position: static;
+  margin-top: 10px;
+  height: 40px; }
+
+.builder #remove-layer-modal .edit-map-link {
+  cursor: pointer;
+  display: inline-block; }
+
+.builder #remove-layer-modal .text-wrapper {
+  display: none !important; }
+
+.builder #remove-layer-modal .modal-footer {
+  display: none !important; }
 
 @media (min-width: 1350px) {
   .item {

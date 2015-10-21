@@ -3,7 +3,7 @@ var app = {};
 app.cfg = {
 	version: '1.0',
 	isProduction: true,
-	jsApiUrl: '//jsdev.arcgis.com/3.15/',
+	jsApiUrl: '//jsdev.arcgis.com/3.15/init.js',
 	facebook: {
 		appId: '737271002977269'
 	},
@@ -17,18 +17,19 @@ app.cfg = {
 	proxyNetworkManager: null,
 	CONCURRENT_SCAN_REQUESTS: 8,
 	CONCURRENT_PROXY_REQUESTS: 1,
-	cacheManager: null	
+	cacheManager: null,
+	DEFAULT_SHARING_URL: 'www.arcgis.com'
 };
 
 var path = location.pathname.replace(/\/[^/]+$/, '/');
 var loadJS = function(url, isExternal) {
 	if(isExternal) {
 		url = document.location.protocol == 'file:' ? 'http:' + url : url;
-	}		
+	}
 	else {
 		url += '?v=' + app.version + (!app.isProduction ? '&_=' + new Date().getTime() : '');
 	}
-	
+
 	/* jshint -W060 */
 	document.write("<script language='javascript' type='text/javascript' src='" + url + "'><\/script>");
 };
@@ -57,19 +58,23 @@ window.dojoConfig = {
 			location: path + 'lib-build'
 		},
 		{
+			name: 'assets',
+			location: path + 'assets'
+		},
+		{
 			name: 'create-app',
-			location: path + 'my-stories-utils/create-app'
+			location: path + 'arcgis-storymaps-my-stories-utils/create-app'
 		},
 		{
 			name: 'sign-in',
-			location: path + 'my-stories-utils/sign-in'
+			location: path + 'arcgis-storymaps-my-stories-utils/sign-in'
 		}
 	],
 	aliases: [
 		['text', 'lib-build/text']
 	],
 	// TODO
-	// read the cookie -- which locale it is (common across arcgis.com domain)	
+	// read the cookie -- which locale it is (common across arcgis.com domain)
 	locale: window.myStoriesLanguage
 };
 
@@ -86,7 +91,7 @@ else {
 
 
 
-loadJS(app.cfg.jsApiUrl + 'init.js', true);
+loadJS(app.cfg.jsApiUrl, true);
 
 if(app.cfg.isProduction) {
 	loadJS(path + 'app/my-stories-min.js');
