@@ -73,7 +73,10 @@ define({
   },
   "customUrlParam": null,//Name of url param. For example parcels
   "basemaps": false, // Basemap Gallery 
-  "legend": false, // Legend 
+  "legend": false, // Legend  and Layer List 
+  "includesublayers":true,// Include ability to toggle sub layers
+  "includelayerlegend": true, // Show Legend 
+  "includelayeropacity": false, // Show opacity slider in legend
   "share": false, // Share Dialog 
   //Replace these with your own bitly key
   "bitlyLogin": "arcgis",

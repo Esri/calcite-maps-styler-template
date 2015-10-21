@@ -693,6 +693,11 @@ input[type=checkbox]:checked.share-dialog-checkbox + .share-dialog-checkbox:befo
 .esriLayerList .esriList ul {
   background-color: #fff;
 }
+.esriLayerList .esriContainer{
+  background-color: #fff;
+  border-top:none;
+  border-bottom:none;
+}
 .esriLayerList {
   position: relative;
   width: 280px;

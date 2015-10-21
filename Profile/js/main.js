@@ -242,25 +242,25 @@ define([
             var layerList = null;
             on(legendButton, "click", lang.hitch(this, function(){
               if(!layerList){
-              layerList = new LayerList({
-              map: this.map,
-              showSubLayers: true,
-              subLayers: true,
-              showLegend: true,
-              showOpacitySlider: true,
-              layers:(arcgisUtils.getLayerList(this.config.response))
-            },"legendDiv");
-   
-            layerList.startup();
-
-            query(".esriLayerList").style({
-              "background-color": this.config.background,
-              "color": this.config.color
-            });
-          }
+                layerList = new LayerList({
+                  map: this.map,
+                  showSubLayers: this.config.includesublayers,
+                  showLegend: this.config.includelayerlegend,
+                  showOpacitySlider: this.config.includelayeropacity,
+                  layers:(arcgisUtils.getLayerList(this.config.response))
+                },"legendDiv");
+     
+                layerList.startup();
+       
+                query(".esriLayerList").style({
+                  "background-color": this.config.background,
+                  "color": this.config.color
+                });
+              }
 
 
               this._toggleButtonContainer(legendButton, "legendContainer");
+              layerList.refresh();
             }));
           }));
         }

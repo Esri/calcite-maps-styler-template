@@ -86,6 +86,7 @@ html, body {
 }
 .esriLayerList .esriList{
     border-top:none;
+    background-color:#fff;
 }
 
 #pageBody_layers{

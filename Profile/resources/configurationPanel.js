@@ -126,6 +126,10 @@
         "label": "Enable legend",
         "tooltip": "Display legend"
       },{
+        "type": "boolean",
+        "fieldName": "includelayeropacity",
+        "label": "Enable opacity slider in legend"
+      },{
        "type":"boolean",
        "fieldName":"share",
        "label":"Share Dialog",
@@ -216,6 +220,7 @@
     "background": "#666",
     "color": "#fff",
     "legend": false,
+    "includelayeropacity": false,
     "basemaps": false,
     "share": false,
     "search": false,

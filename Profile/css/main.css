@@ -385,6 +385,16 @@ that appear below the zoom slider */
 .esriLayerList .esriTabMenu .esriTabMenuSelected{
   color:#666;
 }
+.esriLayerList .esriTitleContainer{
+  border-top:none;
+}
+.esriLayerList .esriContainer{
+  background-color: inherit !important;
+  color: inherit !important;
+  border-top:none;
+  border-bottom:none;
+
+}
 .noscroll{
   overflow: hidden;
 }
