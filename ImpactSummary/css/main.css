@@ -312,7 +312,7 @@ display:none;
 /* Drawer Menu */
 
 .drawer-menu-container {
-    width: 280px;
+    width: 100%;
 }
 .drawer-menu-panels .panel {
     display: none;
