@@ -162,6 +162,7 @@ a {
 .esriRTL #toggle_button {
   right: 0;
 }
+
 #toggle_button {
   position: absolute;
   z-index: 36;
@@ -624,9 +625,7 @@ a {
   height: 100%;
   width: 100%;
 }
-:focus {
-  outline: none;
-}
+
 .dijitHidden {
   display: none !important;
 }
