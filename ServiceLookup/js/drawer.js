@@ -282,6 +282,8 @@ function (
       //}
       // remove forced open
       this._checkDrawerStatus();
+      
+
     },
     _checkDrawerStatus: function () {
       // border container layout

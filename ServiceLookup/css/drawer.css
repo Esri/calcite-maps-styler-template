@@ -9,7 +9,6 @@
     border-top: none !important;
     border-left: none !important;
     border-right: none !important;
-
 }
 
 .content-pane-inner-center {
@@ -45,6 +44,7 @@
     line-height: 64px;
     margin-right: 10px;
     margin-left: 10px;
+    overflow: hidden;
 }
 
 .page-icon {
@@ -53,9 +53,16 @@
     width: 64px;
     margin-right: 10px;
     margin-left: 10px;
-    
     overflow: hidden;
 }
+
+@media screen and (max-width: 500px ) {
+
+    .page-icon {
+        display: none;
+    }
+}
+
 .page-icon-image {
     height: 100%;
     width: 100%;
@@ -63,6 +70,7 @@
     background-repeat: no-repeat;
     background-size: contain;
 }
+
 .esriRTL .page-icon {
     float: right;
 }
@@ -189,9 +197,8 @@
 
 @media screen and (max-width: 350px ) {
     .drawer-open .content-pane-left {
-    width: 100%;
-    overflow: auto;
-    overflow-x: hidden;
-}
-
+        width: 100%;
+        overflow: auto;
+        overflow-x: hidden;
+    }
 }

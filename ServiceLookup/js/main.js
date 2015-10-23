@@ -358,9 +358,10 @@ function (
           //query(".esriPopup .titleButton").style("color", this.config.color.toString());
         }
 
-        //this._drawer.toggle(false);
-        //this._drawer.resize();
-        //this.map.resize(true);
+        this._drawer.toggle(false);
+        this._drawer.resize();
+        
+        this.map.resize(true);
 
       }
       catch (e) {
