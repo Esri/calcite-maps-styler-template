@@ -250,7 +250,6 @@ function (
     _initDrawer: function () {
       if (this.config.showUI !== undefined && this.config.showUI === false) {
         this._drawer.hideBar();
-        this._drawer.hideSide();
         return;
       }
    
@@ -269,6 +268,7 @@ function (
           });
       }
       if (this.config.showUI && this.config.showUI === true) {
+        
         if (this.config.popupSide !== undefined && this.config.popupSide === false) {
 
           this._drawer.hideSide();

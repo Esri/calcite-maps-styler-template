@@ -307,13 +307,13 @@ function (
     },
     hideBar: function () {
       //domClass.add(document.body, "hideBar");
-      var myNode = query("#content_pane_inner_top")[0];
+      var myNode = query("#cp_top")[0];
 
       domStyle.set(myNode,
         {
-          "visibility": "hidden",
           "display": "none"
         });
+      this._borderContainer.layout();
     },
     hideSide: function () {
       var myNode = query("#cp_left")[0];

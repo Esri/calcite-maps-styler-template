@@ -9,6 +9,7 @@
     border-top: none !important;
     border-left: none !important;
     border-right: none !important;
+
 }
 
 .content-pane-inner-center {
@@ -68,21 +69,6 @@
 
 .esriViewPopup .hzLine {
     border-top: 1px solid #333333;
-}
-
-.hideBar .content-pane-inner-top {
-    visibility: hidden;
-    display: none;
-}
-
-.hideSide .content-pane-left {
-    visibility: hidden;
-    display: none;
-}
-
-.hideSide .hamburger-button {
-    visibility: hidden;
-    display: none;
 }
 
 
