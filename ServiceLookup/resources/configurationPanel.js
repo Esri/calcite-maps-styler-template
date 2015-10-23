@@ -418,6 +418,8 @@
     "backcolor": "#000000",
     "hypercolor": "#0000EE",
     "uidirection": "left",
+    "splashHeight": 350,
+    "splashWidth": 290,
     "showUI": false,
     "popupSide": false,
     "popPostMessage": "",

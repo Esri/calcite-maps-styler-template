@@ -17,7 +17,7 @@ define([], function () {
 
     "bingKey": "", //Enter the url to your organizations bing maps key if you want to use bing basemaps
     //Defaults to arcgis.com. Set this value to your portal or organization host name.
-    "sharinghost": location.protocol + "//" + "www.arcgis.com/",
+    "sharinghost": location.protocol + "//" + "www.arcgis.com",
 
     "helperServices": {
       "geometry": {
@@ -55,7 +55,7 @@ define([], function () {
     "serviceRequestLayerAvailibiltyFieldValueAvail": "Intersected",
     "serviceRequestLayerAvailibiltyFieldValueNotAvail": "Not Intersected",
     "serviceRequestLayerAvailibiltyFieldValueNoSearch": "No Search Feature",
-    "showSplash": false,
+    "showSplash": true,
     "splashText": "<center>Information Lookup is a configurable web application template that can be used to provide the general public, internal staff and other interested parties the with information about a location. If no features are found at that location, a general message is displayed. Optionally, the location entered can be stored in a point layer. The template can be configured using the ArcGIS Online Configuration dialog.</center>",
     "splashHeight": 350,
     "splashWidth": 290,
@@ -63,8 +63,8 @@ define([], function () {
     "backcolor": null,
     "hypercolor": "#0000EE",
     "uidirection": "left",
-    "showUI": false,
-    "popupSide": false,
+    "showUI": true,
+    "popupSide": true,
     "title": "Information Lookup",
     "popPreMessage": null,
     "popPostMessage": null,

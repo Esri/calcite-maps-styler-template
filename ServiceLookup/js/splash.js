@@ -4,7 +4,8 @@
   "dojo/_base/declare",
   "dojo/_base/lang",
   "dojo/dom-construct",
-  "dojo/dom-style"
+  "dojo/dom-style",
+   "dojo/window"
 ],
 function (
    Evented,
@@ -12,7 +13,8 @@ function (
     declare,
     lang,
     domConstruct,
-    domStyle
+    domStyle,
+    win
 ) {
   return declare([Evented], {
     options : {
@@ -47,7 +49,7 @@ function (
       var deviceClass = "splashTextContainerWeb";
       var textClass = "splashTextContentWeb";
       if (this.deviceInfo.isMobileDevice) {
-        deviceClass = "splashTextContainerMobile";
+        //deviceClass = "splashTextContainerMobile";
         textClass = "splashTextContentMobile"
       }
       var splashTextContainer = domConstruct.create("div", {
@@ -61,27 +63,67 @@ function (
 
       contSize = {};
       textContSize = {};
-      if (!this.deviceInfo.isMobileDevice) {
-        if (this.options.config.splashWidth !== null && this.options.config.splashWidth !== undefined) {
-          textContSize['width'] = (parseInt(this.options.config.splashWidth) - 20) + "px";
-          contSize['width'] = this.options.config.splashWidth + "px";
 
-        } else { 
-          textContSize['width'] = "330px";
-          contSize['width'] = "350px";
-        }
-        if (this.options.config.splashHeight !== null && this.options.config.splashHeight !== undefined)
-        {
-          textContSize['height'] = (parseInt(this.options.config.splashHeight) - 10) + "px";
-          contSize['height'] = this.options.config.splashHeight + "px";
-          
-        } else {
-          textContSize['height'] = "280px";
-          contSize['height'] = "290px";
-        }
-        domStyle.set(splashTextContainer, contSize);
-        domStyle.set(splashTextContent, textContSize);
+      if (this.options.config.splashWidth !== null && this.options.config.splashWidth !== undefined) {
+        textContSize['width'] = (parseInt(this.options.config.splashWidth) - 20);
+        contSize['width'] = this.options.config.splashWidth;
       }
+      else{
+        textContSize['width'] = 330;
+        contSize['width'] = 350;
+      
+      }
+      if (this.options.config.splashHeight !== null && this.options.config.splashHeight !== undefined)
+      {
+        textContSize['height'] = (parseInt(this.options.config.splashHeight) - 10);
+        contSize['height'] = this.options.config.splashHeight;
+          
+      } else {
+        textContSize['height'] = 280;
+        contSize['height'] = 290;
+      }
+
+
+      var vs = win.getBox();
+      if (vs.w < parseInt(contSize['width'])) {
+        textContSize['width'] = (parseInt(vs.w) - 40) + "px";
+        contSize['width'] = (parseInt(vs.w) - 20) + "px";
+      }
+      else {
+        textContSize['width'] = textContSize['width'] + "px";
+        contSize['width'] = contSize['width'] + "px";
+      }
+      if (vs.h < parseInt(contSize['height'])) {
+        textContSize['height'] = (parseInt(vs.h) - 30) + "px";
+        contSize['height'] = (parseInt(vs.h) - 20) + "px";
+      } else {
+        textContSize['height'] = textContSize['height'] + "px";
+        contSize['height'] = contSize['height'] + "px";
+      
+      }
+      domStyle.set(splashTextContainer, contSize);
+      domStyle.set(splashTextContent, textContSize);
+      //if (!this.deviceInfo.isMobileDevice) {
+      //  if (this.options.config.splashWidth !== null && this.options.config.splashWidth !== undefined) {
+      //    textContSize['width'] = (parseInt(this.options.config.splashWidth) - 20) + "px";
+      //    contSize['width'] = this.options.config.splashWidth + "px";
+
+      //  } else { 
+      //    textContSize['width'] = "330px";
+      //    contSize['width'] = "350px";
+      //  }
+      //  if (this.options.config.splashHeight !== null && this.options.config.splashHeight !== undefined)
+      //  {
+      //    textContSize['height'] = (parseInt(this.options.config.splashHeight) - 10) + "px";
+      //    contSize['height'] = this.options.config.splashHeight + "px";
+          
+      //  } else {
+      //    textContSize['height'] = "280px";
+      //    contSize['height'] = "290px";
+      //  }
+      //  domStyle.set(splashTextContainer, contSize);
+      //  domStyle.set(splashTextContent, textContSize);
+      //}
       dojo.connect(this.splashContainer, "onclick", lang.hitch(this, this._closeSplash));
 
       splashTextContent.innerHTML = this.options.config.splashText;

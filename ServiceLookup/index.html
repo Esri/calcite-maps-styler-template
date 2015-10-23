@@ -39,14 +39,24 @@
         <div class="loading-message" id="loading_message"></div>
     </div>
     <div id="border_container" class="border-container-outer">
+        <div id="cp_top" class="content-pane-inner-top theme">
+            <div id="top_bar" class="top-bar theme">
+                <div id="toggle_button" class="icon-menu hamburger-button"></div>
+                <div id="icontextblock" class="app-title">
+                    <div id="page_icon" class="page-icon"><div id="page_icon_image" class="page-icon-image"></div></div>
+                    <div id="title_text" class="title-text"></div>
 
+                </div>
+            </div>
+
+        </div>
         <div id="cp_left" class="content-pane-left">
-            <div data-dojo-type="dijit.layout.BorderContainer" data-dojo-props="gutters:false" id="border_container_left">
-                <div id="leftPane" class="content-pane-display theme" data-dojo-type="dijit.layout.ContentPane"
+            <div data-dojo-type="dijit/layout/BorderContainer" data-dojo-props="gutters:false" id="border_container_left">
+                <div id="leftPane" class="content-pane-display theme" data-dojo-type="dijit/layout/ContentPane"
                      data-dojo-props="region:'center'">
 
                 </div>
-                <div id="bottomPane" class="content-pane-btn theme" data-dojo-type="dijit.layout.ContentPane"
+                <div id="bottomPane" class="content-pane-btn theme" data-dojo-type="dijit/layout/ContentPane"
                      data-dojo-props="region:'bottom'">
                     <div id="sidebar_button_pane" class="sidebar-button-pane theme">
                         <div id='linkImage' class='icon-link side-bar-icon'></div>
@@ -57,29 +67,12 @@
         </div>
         <div id="cp_center" class="content-pane-center">
 
-            <div data-dojo-type="dijit.layout.BorderContainer" class="border-container-inner" data-dojo-props="gutters:false" id="border_container_inner">
-                <div data-dojo-type="dijit.layout.ContentPane" class="content-pane-inner-top theme" data-dojo-props="region:'top', splitter:false" id="content_pane_inner_top">
+            <div id="mapDiv" dir="ltr">
 
-                    <div id="top_bar" class="top-bar theme">
-                        <div id="toggle_button" class="icon-menu hamburger-button"></div>
-                        <div id="icontextblock" class="app-title">
-                            <div id="page_icon" class="page-icon"><div id="page_icon_image" class="page-icon-image"></div></div>
-                            <div id="title_text" class="title-text"></div>
-
-                        </div>
-                    </div>
-                </div>
-                <div data-dojo-type="dijit.layout.ContentPane" class="content-pane-inner-center" data-dojo-props="region:'center', splitter:false" id=" content_pane_inner_center">
-                    <div id="mapDiv" dir="ltr">
-
-                        <div id="searchDiv"></div>
-                        <div id="mapButtons" class="map-buttons"></div>
-                        <div id="basemapDiv"></div>
-                    </div>
-                </div>
-
+                <div id="searchDiv"></div>
+                <div id="mapButtons" class="map-buttons"></div>
+                <div id="basemapDiv"></div>
             </div>
-
 
         </div>
     </div>
@@ -102,8 +95,8 @@
             }]
         };
         var urlLocale = location.search.match(/locale=([\w\-]+)/) ? RegExp.$1 : null;
-        if(urlLocale){
-          dojoConfig.locale = urlLocale;
+        if (urlLocale) {
+            dojoConfig.locale = urlLocale;
         }
     </script>
     <script type="text/javascript" src="//jsdev.arcgis.com/3.15/"></script>

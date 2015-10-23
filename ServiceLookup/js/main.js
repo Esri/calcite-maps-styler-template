@@ -76,6 +76,7 @@ function (
           showDrawerSize: 850, // Pixel size when the drawer is automatically opened
           borderContainer: "border_container", // border container node id
           contentPaneCenter: "cp_center", // center content pane node id
+          contentPaneTop: "cp_top", // top content pane node id
           contentPaneSide: "cp_left", // side content pane id
           toggleButton: "toggle_button", // button node to toggle drawer id
           topBar: "top_bar",// top bar id
@@ -273,6 +274,7 @@ function (
           this._drawer.hideSide();
           return;
         }
+       
       }
 
 
@@ -340,8 +342,7 @@ function (
         this._toggleIndicator(false);
 
         topic.publish("app.mapLoaded", this.map);
-        this._drawer.toggle();
-        //domClass.add(document.body, this.config.theme);
+         //domClass.add(document.body, this.config.theme);
         var themeElements = query(".theme");
         if (this.config.backcolor) {
           themeElements.style("backgroundColor", this.config.backcolor.toString());
@@ -356,6 +357,11 @@ function (
           //query(".esriPopup .titleButton").style("color", this.config.color.toString());
           //query(".esriPopup .titleButton").style("color", this.config.color.toString());
         }
+
+        //this._drawer.toggle(false);
+        //this._drawer.resize();
+        //this.map.resize(true);
+
       }
       catch (e) {
         this.reportError(e);

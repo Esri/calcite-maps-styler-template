@@ -23,7 +23,8 @@ function (
   _WidgetBase,
   on,
   dom, domClass,
-  BorderContainer, ContentPane,
+  BorderContainer,
+  ContentPane,
   Deferred,
   win,
   topic,
@@ -54,6 +55,7 @@ function (
       this.set("borderContainer", defaults.borderContainer);
       this.set("contentPaneCenter", defaults.contentPaneCenter);
       this.set("contentPaneSide", defaults.contentPaneSide);
+      this.set("contentPaneTop", defaults.contentPaneTop);
       this.set("toggleButton", defaults.toggleButton);
       this.set("pageIconDiv", defaults.pageIconDiv);
       this.set("direction", defaults.direction);
@@ -165,6 +167,9 @@ function (
       if (this._contentPaneCenter) {
         this._contentPaneCenter.destroy();
       }
+      if (this._contentPaneTop) {
+        this._contentPaneTop.destroy();
+      }
       if (this._contentPaneSide) {
         this._contentPaneSide.destroy();
       }
@@ -180,6 +185,7 @@ function (
       dom.byId("title_text").innerHTML = this.get("title");
       this._borderContainerNode = dom.byId(this.get("borderContainer"));
       this._contentPaneCenterNode = dom.byId(this.get("contentPaneCenter"));
+      this._contentPaneTopNode = dom.byId(this.get("contentPaneTop"));
       this._contentPaneSideNode = dom.byId(this.get("contentPaneSide"));
       this._toggleNode = dom.byId(this.get("toggleButton"));
       this._topbar = dojo.byId(this.get("topBar"));
@@ -194,6 +200,14 @@ function (
         this._borderContainer = new BorderContainer({
           gutters: false
         }, this._borderContainerNode);
+        // top panel
+        this._contentPaneTop = new ContentPane({
+          region: "top",
+          style: {
+            padding: 0
+          }
+        }, this._contentPaneTopNode);
+
         // center panel
         this._contentPaneCenter = new ContentPane({
           region: "center",
@@ -257,15 +271,15 @@ function (
     },
     _windowResized: function () {
       // view screen
-      var vs = win.getBox();
-      // if window width is less than specified size
-      if (vs.w < this.get("showDrawerSize")) {
-        // hide drawer
-        this.toggle(false);
-      } else {
-        // show drawer
-        this.toggle(true);
-      }
+      //var vs = win.getBox();
+      //// if window width is less than specified size
+      //if (vs.w < this.get("showDrawerSize")) {
+      //  // hide drawer
+      //  this.toggle(false);
+      //} else {
+      //  // show drawer
+      //  this.toggle(true);
+      //}
       // remove forced open
       this._checkDrawerStatus();
     },
