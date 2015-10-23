@@ -18,7 +18,8 @@ app.cfg = {
 	CONCURRENT_SCAN_REQUESTS: 8,
 	CONCURRENT_PROXY_REQUESTS: 1,
 	cacheManager: null,
-	DEFAULT_SHARING_URL: 'www.arcgis.com'
+	DEFAULT_SHARING_URL: 'www.arcgis.com',
+	defaultBasicTemplateURL: '//storymaps.arcgis.com/en/app-list/basic/tutorial/'
 };
 
 var path = location.pathname.replace(/\/[^/]+$/, '/');

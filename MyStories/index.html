@@ -1,11 +1,7 @@
 <!DOCTYPE html>
 <head>
 	<title>My Stories</title>
-	<link rel="stylesheet" type="text/css" href="assets/css/externalFonts.css">
-	<link rel="stylesheet" type="text/css" href="assets/css/tailcoat.css">
-	<link rel="stylesheet" type="text/css" href="arcgis-storymaps-my-stories-utils/assets/css/my-stories-utils.css">
-	<link rel="stylesheet" type="text/css" href="arcgis-storymaps-my-stories-utils/create-app/assets/css/create-story.css">
-	<link rel="stylesheet" type="text/css" href="arcgis-storymaps-my-stories-utils/sign-in/assets/css/signIn.css">
+	<link rel="stylesheet" href="assets/css/site.css">
 	<link rel="stylesheet" type="text/css" href="assets/css/my-stories/my-stories.css">
 </head>
 <body>
@@ -48,10 +44,10 @@
 		window.builderIntegration = window.location.href.indexOf('itemId') !== -1;
 
 		if(window.builderIntegration) {
-			document.body.className += ' builder';
+			document.getElementsByTagName('html')[0].className += ' builder';
 
 			// load here...
-			var htmlString = '<h2 class="progress-title">Loading...</h2>' +
+			var htmlString = '<h2 class="progress-title">&nbsp;</h2>' +
 			'<div class="loader">' +
 				'<span class="side side-left"><span class="fill"></span></span>' +
 				'<span class="side side-right"><span class="fill"></span></span>' +
@@ -73,7 +69,7 @@
 		var i18n,
 			engStrings;
 
-		require(["dojo/i18n!nls/app.js?v=" + app.version, "Handlebars", "my/MyStories", "my/helpers/EngStrings", "assets/js/tailcoat/tailcoat", "create-app/assets/js/buildapp", "dojo/domReady!"], function(i18nApp, Handlebars, MyStories, engStringsObj){
+		require(["dojo/i18n!nls/app.js?v=" + app.version, "Handlebars", "my/MyStories", "my/helpers/EngStrings", "dojo/domReady!"], function(i18nApp, Handlebars, MyStories, engStringsObj){
 			i18n = i18nApp;
 			window.Handlebars = Handlebars;
 			engStrings = engStringsObj;
