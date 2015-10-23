@@ -27,7 +27,7 @@ define(
             "basemap":{
                     "label": "Podkladová mapa",
                     "title": "Výběr podkladové mapy",
-                    "close": "Ř_Close___ů"
+                    "close": "Zavřít"
             },
             "legend":{
                 "title": "Legenda"
@@ -43,7 +43,7 @@ define(
 
         },
         "map": {
-            "toggle": "Ř_Toggle side panel______ů",
+            "toggle": "Přepnout postranní panel",
             "error": "Nelze vytvořit mapu"
         }
     })

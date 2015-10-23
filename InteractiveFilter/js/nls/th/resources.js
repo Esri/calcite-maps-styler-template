@@ -10,7 +10,7 @@
       filterOr: "เงื่อนไขอย่างใดอย่างหนึ่งต้องเป็นจริง",
       filterAnd: "เงื่อนไขทั้งหมดต้องเป็นจริง",
       filterNo:  "Web map does not contain any interactive filters. View the ${link} help topic for details on how to create a filter in your web map.",
-      filterLink: "ก้_http://doc.arcgis.com/en/arcgis-online/use-maps/apply-filters.htm_____________________ษฺ",
+      filterLink: "http://doc.arcgis.com/en/arcgis-online/use-maps/apply-filters.htm",
       errors:{
         message: "เกิดปัญหาระหว่างการสร้างแอพพลิเคชันตัวคัดกรอง"
       }

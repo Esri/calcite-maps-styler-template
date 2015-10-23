@@ -64,7 +64,7 @@
 				url: "Vimeo vaizdo įrašo URL"
 			},
 			videoSelectorOther: {
-				explain1: "Į_The story cannot play raw videos (e.g., avi, mpeg) but it can play hosted video files that have built-in players (e.g., YouTube or Vimeo)__________________________________________š.",
+				explain1: "Pasakojimas negali paleisti neapdorotų vaizdo įrašų (pvz., avi, mpeg), bet jis gali leisti patalpintus vaizdo failus, kuriuose yra integruoti leistuvai (pvz., YouTube ar Vimeo).",
 				explain2: "Dauguma vaizdo įrašų talpinimo paslaugų siūlo tokią funkciją, tereikia rasti vaizdo įrašo integravimo parinktį, nukopijuoti pateiktą kodą ir naudoti %WEBPAGE%.",
 				explain3: "Be to, jei norite patalpinti vaizdo įrašą patys, galite sukurti HTML puslapį, kuriame būtų naudojamas vaizdo leistuvas, pvz., %EXAMPLE%, patalpinti tą puslapį ir taip pat naudoti %WEBPAGE%.",
 				webpage: "Tinklalapio elementas"
@@ -102,7 +102,7 @@
 				lblPosition3Explain2: "(plotis visada atitiks skydą)",
 				lblPosition4Explain: "(gali būti iškraipoma)",
 				unloadLbl: "Iškelti, kai skaitytojas palieka šią dalį",
-				unloadHelp: "Į_If the Web Page has audio or video media, keep this option checked to stop that content from playing when the reader navigates away. Uncheck it for example to keep a soundtrack playing as the reader advances through the story.<br />If the Web Page is an application, uncheck this option so that the story does not reload if the reader returns to it__________________________________________________________________________________________________________š."
+				unloadHelp: "Jeigu tinklalapis turi garsinės arba vaizdinės medijos, palikite šią parinktį pažymėtą, kad turinys nebūtų leidžiamas, kai skaitytojas nutolsta. Parinktį pažymėkite, jeigu, pvz., norite leisti garso takelį skaitytojui keliaujant per pasakojimą.<br />Jeigu tinklalapis yra aplikacija, pašalinkite žymę, kad skaitytojui sugrįžus pasakojimas nebūtų įkeltas iš naujo."
 			},
 			editorActionGeocode: {
 				lblTitle: "Raskite adresą arba vietą",

@@ -2,7 +2,7 @@
 	 ({
 		commonWebmap: {
 			selector: {
-				lblWebMap: "한_Map__빠",
+				lblWebMap: "맵",
 				lblLocation: "위치",
 				lblContent: "콘텐츠",
 				lblPopup: "팝업",
@@ -17,14 +17,14 @@
 				and: "및",
 				action: "섹션의 작업",
 				actions: "섹션의 작업",
-				originalWebmap: "한_Map used to publish the %TPL_NAME%___________빠",
-				browseMaps: "한_Select a map_____빠",
-				createMap: "한_Create a map_____빠",
-				current: "한_Current map____빠",
-				select: "한_Select or create a map________빠",
-				newMap: "한_Newly selected map______빠",
-				newCreatedMap: "한_Newly created map______빠",
-				webmapDefault: "한_Map default____빠",
+				originalWebmap: "%TPL_NAME%을(를) 발행하는 데 사용된 맵",
+				browseMaps: "맵 선택",
+				createMap: "맵 생성",
+				current: "현재 맵",
+				select: "맵 선택 또는 생성",
+				newMap: "새로 선택한 맵",
+				newCreatedMap: "새로 생성한 맵",
+				webmapDefault: "맵 기본값",
 				customCfg: "사용자 정의 구성",
 				tooltipLocation: "이 맵이 표시될 위치를 정의합니다.",
 				tooltipContent: "가시 레이어를 정의합니다.",
@@ -51,27 +51,27 @@
 				hintNavigation: "맵 탐색을 사용할 수 없습니다."
 			},
 			editor: {
-				loading: "한_Please wait while the map editor is loading______________빠",
-				newTitle: "한_Create new map_____빠",
-				editTitle: "한_Edit map___빠",
-				titleLbl: "한_Title___빠",
-				titlePh: "한_Map title_____빠...",
-				folderLbl: "한_The map will be created in the same folder as the story__________________빠.",
-				creating: "한_Creating the map______빠",
-				saving: "한_Saving the map_____빠",
-				success: "한_Map saved____빠",
-				successCreate: "한_Map created____빠",
-				cancelTitle: "한_Discard any unsaved changes_________빠?",
-				errorDuplicate: "한_You already have a map with that title____________빠",
-				errorCreate: "한_Unable to create map. Please try again_____________빠.",
-				errorSave: "한_Unable to save map. Please try again____________빠.",
-				notavailable1: "한_Sorry, creating or editing a map is not supported in Firefox due to a technical limitation. You may want to build your story using a different web browser or use the following workaround_________________________________________________________빠.",
-				notavailable2: "한_Sorry, creating or editing a map is not supported since the story map application is not hosted in %PRODUCT%. Please contact your ArcGIS administrator for more information_____________________________________________________빠.",
-				notavailable3: "한_Sorry, creating or editing a map is not supported on this version of Portal for ArcGIS (requires 10.4 or later). Please contact your ArcGIS administrator for more information______________________________________________________빠.",
-				notavailable4: "한_You can create a map using %MV%, then come back here to add it to your story________________________빠.",
-				notavailable5: "한_You can edit the map using %MV%, then come back here and %apply% to see your changes___________________________빠.",
-				notavailable6: "한_map viewer____빠",
-				notavailable7: "한_reload the map_____빠"
+				loading: "맵 편집자를 불러오는 동안 잠시 기다려 주세요.",
+				newTitle: "새 맵 생성",
+				editTitle: "맵 편집",
+				titleLbl: "제목",
+				titlePh: "맵 제목...",
+				folderLbl: "맵은 스토리와 같은 폴더에 생성됩니다.",
+				creating: "맵을 생성하는 중",
+				saving: "맵을 저장하는 중",
+				success: "맵 저장됨",
+				successCreate: "맵 생성됨",
+				cancelTitle: "저장하지 않은 변경사항을 취소하시겠습니까?",
+				errorDuplicate: "해당 제목의 맵이 이미 있습니다.",
+				errorCreate: "맵을 생성할 수 없습니다. 다시 시도하세요.",
+				errorSave: "맵을 저장할 수 없습니다. 다시 시도하세요.",
+				notavailable1: "죄송합니다. 기술적 제한으로 인해 Firefox에서는 맵을 생성하거나 편집할 수 없습니다. 다른 웹 브라우저를 사용하여 스토리를 만들거나 다음 해결 방법을 사용할 수 있습니다.",
+				notavailable2: "죄송합니다. 스토리 맵 응용프로그램이 %PRODUCT%에서 호스팅되지 않으므로 맵을 생성하거나 편집할 수 없습니다. 자세한 내용은 ArcGIS 관리자에게 문의하세요.",
+				notavailable3: "죄송합니다. 이 Portal for ArcGIS 버전에서는 맵을 생성하거나 편집할 수 없습니다(10.4 이상 필요). 자세한 내용은 ArcGIS 관리자에게 문의하세요.",
+				notavailable4: "%MV%을(를) 사용하여 맵을 생성한 다음 여기로 돌아와서 스토리에 맵을 추가할 수 있습니다.",
+				notavailable5: "%MV%을(를) 사용하여 맵을 생성한 다음 여기로 돌아와서 %apply%하면 변경사항을 확인할 수 있습니다.",
+				notavailable6: "맵 뷰어",
+				notavailable7: "맵 다시 불러오기"
 			}
 		},
 		configure: {
@@ -82,11 +82,11 @@
 					contentLabel: "내 콘텐츠",
 					favoritesLabel: "내 즐겨찾기"
 				},
-				title: "한_Select a map_____빠",
+				title: "맵 선택",
 				searchTitle: "검색",
 				ok: "확인",
 				cancel: "취소",
-				placeholder: "한_Enter search term or web map ID___________빠..."
+				placeholder: "검색어 또는 웹 맵 ID 입력..."
 			}
 		}
 	})

@@ -2,7 +2,7 @@
 	 ({
 		commonWebmap: {
 			selector: {
-				lblWebMap: "Ĳ_Map__ä",
+				lblWebMap: "Kaart",
 				lblLocation: "Locatie",
 				lblContent: "Content",
 				lblPopup: "Pop-up",
@@ -17,14 +17,14 @@
 				and: "en",
 				action: "Actie in sectie",
 				actions: "Actie in secties",
-				originalWebmap: "Ĳ_Map used to publish the %TPL_NAME%___________ä",
-				browseMaps: "Ĳ_Select a map_____ä",
-				createMap: "Ĳ_Create a map_____ä",
-				current: "Ĳ_Current map____ä",
-				select: "Ĳ_Select or create a map________ä",
-				newMap: "Ĳ_Newly selected map______ä",
-				newCreatedMap: "Ĳ_Newly created map______ä",
-				webmapDefault: "Ĳ_Map default____ä",
+				originalWebmap: "Kaart die wordt gebruikt om de %TPL_NAME% te publiceren",
+				browseMaps: "Een kaart selecteren",
+				createMap: "Een kaart maken",
+				current: "Huidige kaart",
+				select: "Selecteer of maak een kaart",
+				newMap: "Nieuw geselecteerde kaart",
+				newCreatedMap: "Nieuw gemaakte kaart",
+				webmapDefault: "Kaartstandaard",
 				customCfg: "Aangepaste configuratie",
 				tooltipLocation: "Bepaal de locatie die deze kaart moet weergeven.",
 				tooltipContent: "Definieer de zichtbare kaartlagen.",
@@ -51,27 +51,27 @@
 				hintNavigation: "Kaartnavigatie is uitgeschakeld."
 			},
 			editor: {
-				loading: "Ĳ_Please wait while the map editor is loading______________ä",
-				newTitle: "Ĳ_Create new map_____ä",
-				editTitle: "Ĳ_Edit map___ä",
-				titleLbl: "Ĳ_Title___ä",
-				titlePh: "Ĳ_Map title_____ä...",
-				folderLbl: "Ĳ_The map will be created in the same folder as the story__________________ä.",
-				creating: "Ĳ_Creating the map______ä",
-				saving: "Ĳ_Saving the map_____ä",
-				success: "Ĳ_Map saved____ä",
-				successCreate: "Ĳ_Map created____ä",
-				cancelTitle: "Ĳ_Discard any unsaved changes_________ä?",
-				errorDuplicate: "Ĳ_You already have a map with that title____________ä",
-				errorCreate: "Ĳ_Unable to create map. Please try again_____________ä.",
-				errorSave: "Ĳ_Unable to save map. Please try again____________ä.",
-				notavailable1: "Ĳ_Sorry, creating or editing a map is not supported in Firefox due to a technical limitation. You may want to build your story using a different web browser or use the following workaround_________________________________________________________ä.",
-				notavailable2: "Ĳ_Sorry, creating or editing a map is not supported since the story map application is not hosted in %PRODUCT%. Please contact your ArcGIS administrator for more information_____________________________________________________ä.",
-				notavailable3: "Ĳ_Sorry, creating or editing a map is not supported on this version of Portal for ArcGIS (requires 10.4 or later). Please contact your ArcGIS administrator for more information______________________________________________________ä.",
-				notavailable4: "Ĳ_You can create a map using %MV%, then come back here to add it to your story________________________ä.",
-				notavailable5: "Ĳ_You can edit the map using %MV%, then come back here and %apply% to see your changes___________________________ä.",
-				notavailable6: "Ĳ_map viewer____ä",
-				notavailable7: "Ĳ_reload the map_____ä"
+				loading: "Even geduld terwijl we de kaarteditor laden",
+				newTitle: "Nieuwe kaart maken",
+				editTitle: "Kaart bewerken",
+				titleLbl: "Titel",
+				titlePh: "Kaarttitel...",
+				folderLbl: "De kaart zal aangemaakt worden in dezelfde map als het verhaal.",
+				creating: "De kaart aanmaken",
+				saving: "De kaart opslaan",
+				success: "Kaart opgeslagen",
+				successCreate: "Kaart aangemaakt",
+				cancelTitle: "Niet-bewaarde wijzigingen verwijderen?",
+				errorDuplicate: "U heeft al een kaart met die titel",
+				errorCreate: "Kan de kaart niet maken. Probeer het opnieuw.",
+				errorSave: "Kan de kaart niet opslaan. Probeer het opnieuw.",
+				notavailable1: "Het spijt ons; het aanmaken of bewerken van een kaart wordt niet ondersteund in Firefox omwille van een technische beperking. Creëer uw verhaal d.m.v. een andere webbrowser of gebruik de volgende oplossing.",
+				notavailable2: "Het spijt ons; het aanmaken of bewerken van een kaart wordt niet ondersteund omdat de story map applicatie niet gehost wordt in %PRODUCT%. Neem contact op met uw ArcGIS beheerder voor meer informatie.",
+				notavailable3: "Het spijt ons; het aanmaken of bewerken van een kaart wordt niet ondersteund in deze versie van Portal for ArcGIS (versie 10.4 of hoger vereist). Neem contact op met uw ArcGIS beheerder voor meer informatie.",
+				notavailable4: "U kunt een kaart aanmaken d.m.v. %MV%, en dan hier terugkeren om ze aan uw verhaal toe te voegen.",
+				notavailable5: "U kunt een kaart bewerken d.m.v. %MV%, en dan hier terugkeren om ze aan uw verhaal toe te voegen.",
+				notavailable6: "map viewer",
+				notavailable7: "de kaart opnieuw laden"
 			}
 		},
 		configure: {
@@ -82,11 +82,11 @@
 					contentLabel: "Mijn Content",
 					favoritesLabel: "Mijn Favorieten"
 				},
-				title: "Ĳ_Select a map_____ä",
+				title: "Een kaart selecteren",
 				searchTitle: "Zoeken",
 				ok: "OK",
 				cancel: "Annuleren",
-				placeholder: "Ĳ_Enter search term or web map ID___________ä..."
+				placeholder: "Voer zoekterm of webmap-ID in..."
 			}
 		}
 	})

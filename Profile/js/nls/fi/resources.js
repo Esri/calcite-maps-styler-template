@@ -17,28 +17,28 @@
 define(
    ({
     map: {
-      error: "Å_Unable to create map_______ö"
+      error: "Karttaa ei voi luoda"
     },
     elevation: {
-        toggle: "Å_Toggle the Elevation Profile Chart____________ö.",
-        drawTool: "Å_Draw a line on the map to generate an elevation profile__________________ö.",
-        selectMessage: "Å_Click a line feature or use the draw tool to draw a line to display the elevation profile____________________________ö"
+        toggle: "Vaihda Korkeusprofiili-karttaa.",
+        drawTool: "Luo korkeusprofiili piirtämällä viiva kartalle.",
+        selectMessage: "Tuo korkeusprofiili näkyviin napsauttamalla viivakohdetta tai piirtämällä viiva piirtotyökalun avulla"
     },
     splash: {
-        title: "Å_Title___ö",
-        content: "Å_Configure to create custom splash content_____________ö"
+        title: "Otsikko",
+        content: "Luo mukautettua aloitusnäytön sisältöä määrittämällä"
     },
     legend: {
-        title: "Å_Legend___ö",
-        tip: "Å_Display legend_____ö"
+        title: "Selite",
+        tip: "Näytä selite"
     },
     basemap: {
-        title: "Å_Basemap___ö",
-        tip: "Å_Change basemap_____ö"
+        title: "Taustakartat",
+        tip: "Muuta taustakarttaa"
     },
     share: {
-        title: "Å_Share___ö",
-        tip: "Å_Share map____ö"
+        title: "Jaa",
+        tip: "Jaa kartta"
     }
   })
 );

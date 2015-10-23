@@ -57,7 +57,7 @@
 			},
 			organizePopup: {
 				title: "ארגן",
-				lblHeader: "כן_Drag and drop sections to organize your story_______________ש.",
+				lblHeader: "גרור ושחרר קטעים כדי לארגן את הסיפור שלך.",
 				lblColTitle: "כותרת",
 				lblColPubDate: "תאריך הפצה",
 				lblColStatus: "סטטוס",

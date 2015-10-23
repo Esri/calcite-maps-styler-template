@@ -17,28 +17,28 @@
 define(
    ({
     map: {
-      error: "ก้_Unable to create map_______ษฺ"
+      error: "ไม่สามารถสร้างแผนที่ได้"
     },
     elevation: {
-        toggle: "ก้_Toggle the Elevation Profile Chart____________ษฺ.",
-        drawTool: "ก้_Draw a line on the map to generate an elevation profile__________________ษฺ.",
-        selectMessage: "ก้_Click a line feature or use the draw tool to draw a line to display the elevation profile____________________________ษฺ"
+        toggle: "แผนภูมิข้อมูลความสูง",
+        drawTool: "วาดเส้นบนแผนที่ เพื่อแสดงข้อมูลรายละเอียดความสูง",
+        selectMessage: "คลิกข้อมูลเส้น หรือใช้เครื่องมือวาดเพื่อวาดเส้นในการแสดงข้อมูลความสูง"
     },
     splash: {
-        title: "ก้_Title___ษฺ",
-        content: "ก้_Configure to create custom splash content_____________ษฺ"
+        title: "ชื่อ",
+        content: "ตั้งค่าเพื่อสร้างเนื้อหาของตัวเอง"
     },
     legend: {
-        title: "ก้_Legend___ษฺ",
-        tip: "ก้_Display legend_____ษฺ"
+        title: "คำอธิบายสัญลักษณ์",
+        tip: "แสดงคำอธิบาย"
     },
     basemap: {
-        title: "ก้_Basemap___ษฺ",
-        tip: "ก้_Change basemap_____ษฺ"
+        title: "แผนที่ฐาน",
+        tip: "เปลี่ยนแผนที่ฐาน"
     },
     share: {
-        title: "ก้_Share___ษฺ",
-        tip: "ก้_Share map____ษฺ"
+        title: "แบ่งปัน",
+        tip: "แชร์แผนที่"
     }
   })
 );

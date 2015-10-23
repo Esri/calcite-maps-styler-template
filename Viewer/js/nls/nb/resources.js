@@ -20,9 +20,9 @@ define(
             "error": "Kan ikke opprette kart"
         },
         "nav":{
-            "next": "å_Next__ø",
-            "previous": "å_Previous___ø",
-            "close": "å_Close___ø"
+            "next": "Neste",
+            "previous": "Forrige",
+            "close": "Lukk"
         },
         "tools":{
             "search":{

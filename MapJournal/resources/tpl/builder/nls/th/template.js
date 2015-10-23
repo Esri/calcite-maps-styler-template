@@ -57,7 +57,7 @@
 			},
 			organizePopup: {
 				title: "องค์กร",
-				lblHeader: "ก้_Drag and drop sections to organize your story_______________ษฺ.",
+				lblHeader: "ลากและวางเซ็กชันเพื่อจัดระเบียบเรื่องราวของคุณ",
 				lblColTitle: "หัวเรื่อง",
 				lblColPubDate: "วันที่แชร์ข้อมูล",
 				lblColStatus: "สถานะ",

@@ -36,7 +36,7 @@ define(
          "filter": "Suodata",
          "close": "Sulje",
          "reverse": "Käänteinen",
-         "mode": "Å_Switch mode Drive/Walk________ö"
+         "mode": "Vaihda tilaksi aja/kävele"
       }
    })
 );

@@ -20,9 +20,9 @@ define(
             "error": "No se puede crear el mapa"
         },
         "nav":{
-            "next": "á_Next__Ó",
-            "previous": "á_Previous___Ó",
-            "close": "á_Close___Ó"
+            "next": "Siguiente",
+            "previous": "Anterior",
+            "close": "Cerrar"
         },
         "tools":{
             "search":{

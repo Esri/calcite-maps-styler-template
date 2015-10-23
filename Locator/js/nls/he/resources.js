@@ -36,7 +36,7 @@ define(
          "filter": "מסנן",
          "close": "סגור",
          "reverse": "הפוך",
-         "mode": "כן_Switch mode Drive/Walk________ש"
+         "mode": "החלף בין מצב נהיגה/הליכה"
       }
    })
 );

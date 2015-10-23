@@ -2,16 +2,16 @@
      ({
         widgets: {
             ShareDialog: {
-                title: "כן_Share___ש",
-                heading: "כן_Share this map_____ש",
-                url: "כן_Map Link___ש",
-                embed: "כן_Embed Map____ש",
-                extent: "כן_Share current map extent________ש",
-                size: "כן_Size (width/height)_______ש:",
-                facebookTooltip: "כן_Facebook___ש",
-                twitterTooltip: "כן_Twitter___ש",
-                gplusTooltip: "כן_Google Plus____ש",
-                emailTooltip: "כן_Email___ש"
+                title: "שתף",
+                heading: "שתף מפה זו",
+                url: "קישור למפה",
+                embed: "הטמע את המפה",
+                extent: "שתף את תיחום המפה הנוכחי",
+                size: "גודל (רוחב/גובה):",
+                facebookTooltip: "פייסבוק",
+                twitterTooltip: "טוויטר",
+                gplusTooltip: "Google Plus",
+                emailTooltip: "דוא\"ל"
             }
         }
     })

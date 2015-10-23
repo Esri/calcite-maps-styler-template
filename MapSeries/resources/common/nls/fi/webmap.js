@@ -2,7 +2,7 @@
 	 ({
 		commonWebmap: {
 			selector: {
-				lblWebMap: "Å_Map__ö",
+				lblWebMap: "Kartta",
 				lblLocation: "Sijainti",
 				lblContent: "Sisältö",
 				lblPopup: "Popup",
@@ -17,14 +17,14 @@
 				and: "ja",
 				action: "Osan toiminto",
 				actions: "Osien toiminto",
-				originalWebmap: "Å_Map used to publish the %TPL_NAME%___________ö",
-				browseMaps: "Å_Select a map_____ö",
-				createMap: "Å_Create a map_____ö",
-				current: "Å_Current map____ö",
-				select: "Å_Select or create a map________ö",
-				newMap: "Å_Newly selected map______ö",
-				newCreatedMap: "Å_Newly created map______ö",
-				webmapDefault: "Å_Map default____ö",
+				originalWebmap: "Kartta, jota käytetään tarinan %TPL_NAME% julkaisuun",
+				browseMaps: "Valitse kartta",
+				createMap: "Luo kartta",
+				current: "Nykyinen kartta",
+				select: "Valitse tai luo kartta",
+				newMap: "Äskettäin valittu kartta",
+				newCreatedMap: "Äskettäin luotu kartta",
+				webmapDefault: "Kartan oletusarvo",
 				customCfg: "Mukautettu konfiguraatio",
 				tooltipLocation: "Määritä sijainti, joka näkyy tässä kartassa.",
 				tooltipContent: "Määritä näkyvät karttatasot.",
@@ -51,27 +51,27 @@
 				hintNavigation: "Karttanavigointi on poistettu käytöstä."
 			},
 			editor: {
-				loading: "Å_Please wait while the map editor is loading______________ö",
-				newTitle: "Å_Create new map_____ö",
-				editTitle: "Å_Edit map___ö",
-				titleLbl: "Å_Title___ö",
-				titlePh: "Å_Map title_____ö...",
-				folderLbl: "Å_The map will be created in the same folder as the story__________________ö.",
-				creating: "Å_Creating the map______ö",
-				saving: "Å_Saving the map_____ö",
-				success: "Å_Map saved____ö",
-				successCreate: "Å_Map created____ö",
-				cancelTitle: "Å_Discard any unsaved changes_________ö?",
-				errorDuplicate: "Å_You already have a map with that title____________ö",
-				errorCreate: "Å_Unable to create map. Please try again_____________ö.",
-				errorSave: "Å_Unable to save map. Please try again____________ö.",
-				notavailable1: "Å_Sorry, creating or editing a map is not supported in Firefox due to a technical limitation. You may want to build your story using a different web browser or use the following workaround_________________________________________________________ö.",
-				notavailable2: "Å_Sorry, creating or editing a map is not supported since the story map application is not hosted in %PRODUCT%. Please contact your ArcGIS administrator for more information_____________________________________________________ö.",
-				notavailable3: "Å_Sorry, creating or editing a map is not supported on this version of Portal for ArcGIS (requires 10.4 or later). Please contact your ArcGIS administrator for more information______________________________________________________ö.",
-				notavailable4: "Å_You can create a map using %MV%, then come back here to add it to your story________________________ö.",
-				notavailable5: "Å_You can edit the map using %MV%, then come back here and %apply% to see your changes___________________________ö.",
-				notavailable6: "Å_map viewer____ö",
-				notavailable7: "Å_reload the map_____ö"
+				loading: "Odota, kunnes kartan muokkausohjelma on latautunut",
+				newTitle: "Luo uusi kartta",
+				editTitle: "Muokkaa karttaa",
+				titleLbl: "Otsikko",
+				titlePh: "Kartan otsikko...",
+				folderLbl: "Kartta luodaan samaan kansioon kuin tarina.",
+				creating: "Luodaan karttaa",
+				saving: "Tallennetaan karttaa",
+				success: "Kartta on tallennettu",
+				successCreate: "Kartta on luotu",
+				cancelTitle: "Hylätäänkö kaikki tallentamattomat muutokset?",
+				errorDuplicate: "Käytössäsi on jo kartta, jolla on kyseinen otsikko",
+				errorCreate: "Karttaa ei voi luoda. Yritä uudelleen.",
+				errorSave: "Karttaa ei voi tallentaa. Yritä uudelleen.",
+				notavailable1: "Kartan luontia tai muokkausta Firefoxissa ei tueta teknisen rajoituksen takia. Voit muodostaa tarinasi toisella Web-selaimella tai käyttää seuraavaa ratkaisua.",
+				notavailable2: "Kartan luontia tai muokkausta ei valitettavasti tueta, koska tarinakarttasovellusta ei isännöidä tuotteessa %PRODUCT%. Saat lisätietoja ArcGIS-pääkäyttäjältä.",
+				notavailable3: "Kartan luontia tai muokkausta ei valitettavasti tueta Portal for ArcGISin tässä versiossa (edellyttää versiota 10.4 tai sitä uudempaa versiota). Saat lisätietoja ArcGIS-pääkäyttäjältä.",
+				notavailable4: "Voit luoda kartan käyttämällä sovellusta %MV%. Palaa sen jälkeen tähän sovellukseen lisätäksesi kartan tarinaan.",
+				notavailable5: "Voit muokata karttaa käyttämällä sovellusta %MV%. Palaa sen jälkeen tähän sovellukseen, jolloin näet tekemäsi muutokset valitsemalla %apply%.",
+				notavailable6: "kartankatseluohjelma",
+				notavailable7: "lataa kartta uudelleen"
 			}
 		},
 		configure: {
@@ -82,11 +82,11 @@
 					contentLabel: "Oma sisältö",
 					favoritesLabel: "Omat suosikit"
 				},
-				title: "Å_Select a map_____ö",
+				title: "Valitse kartta",
 				searchTitle: "Etsi",
 				ok: "OK",
 				cancel: "Peruuta",
-				placeholder: "Å_Enter search term or web map ID___________ö..."
+				placeholder: "Kirjoita hakuehto tai Web-kartan tunnus..."
 			}
 		}
 	})

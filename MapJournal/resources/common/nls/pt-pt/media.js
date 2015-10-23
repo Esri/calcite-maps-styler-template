@@ -64,7 +64,7 @@
 				url: "URL de um vídeo do Vimeo"
 			},
 			videoSelectorOther: {
-				explain1: "ã_The story cannot play raw videos (e.g., avi, mpeg) but it can play hosted video files that have built-in players (e.g., YouTube or Vimeo)__________________________________________Ç.",
+				explain1: "A história não pode reproduzir vídeos em formato raw (ex: avi, mpeg), mas pode reproduzir ficheiro de vídeo alojados que tenham leitores incorporados (ex: YouTube ou Vimeo).",
 				explain2: "A maior parte dos serviços online de alojamento de video oferecem essa possibilidade, tem de encontrar a opção para incorporar vídeo, copiar o código e utilizar %WEBPAGE%.",
 				explain3: "Em alternativa, se pretender alojar o vídeo, pode criar uma página HTML que utilize um leitor de vídeo como %EXAMPLE%, alojar essa página e também utilizar o %WEBPAGE%.",
 				webpage: "Elemento de página web"
@@ -102,7 +102,7 @@
 				lblPosition3Explain2: "(a largura será sempre ajustada ao painel)",
 				lblPosition4Explain: "(pode distorcer)",
 				unloadLbl: "Descarregue quando o leitor navegar para uma secção diferente",
-				unloadHelp: "ã_If the Web Page has audio or video media, keep this option checked to stop that content from playing when the reader navigates away. Uncheck it for example to keep a soundtrack playing as the reader advances through the story.<br />If the Web Page is an application, uncheck this option so that the story does not reload if the reader returns to it__________________________________________________________________________________________________________Ç."
+				unloadHelp: "Se a Página Web tiver media em áudio ou em vídeo, mantenha esta opção selecionada para que esse conteúdo pare de ser reproduzido quando navegar para fora do leitor. Desselecione-a, por exemplo, para manter uma banda sonora a tocar enquanto o leitor avança pela história.<br />Caso a página web seja uma aplicação, desselecione esta opção para que a história não seja recarregada se o leitor regressar."
 			},
 			editorActionGeocode: {
 				lblTitle: "Localizar um endereço ou lugar",

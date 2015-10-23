@@ -5,33 +5,33 @@
 				close: "Đóng"
 			},
 			loading: {
-				step1: "Đ_Loading story_____ớ",
+				step1: "Đang tải câu chuyện",
 				step2: "Đang tải dữ liệu",
 				step3: "Đang khởi tạo",
 				loadBuilder: "Chuyển sang chế độ bộ thiết lập",
 				long: "Map Journal đang khởi tạo",
 				long2: "Cảm ơn bạn đã đợi",
-				failButton: "Đ_Reload the story______ớ"
+				failButton: "Tải lại câu chuyện"
 			},
 			signin: {
 				title: "Yêu cầu xác thực",
-				explainViewer: "Đ_Please sign in with an account on %PORTAL_LINK% to access the story_____________________ớ.",
-				explainBuilder: "Đ_Please sign in with an account on %PORTAL_LINK% to configure the story______________________ớ."
+				explainViewer: "Vui lòng đăng nhập bằng một tài khoản trên %PORTAL_LINK% để truy cập câu chuyện.",
+				explainBuilder: "Vui lòng đăng nhập bằng một tài khoản trên %PORTAL_LINK% để cấu hình câu chuyện."
 			},
 			errors: {
 				boxTitle: "Đã xảy ra lỗi",
 				invalidConfig: "Cấu hình không hợp lệ",
 				invalidConfigNoApp: "Định danh Ứng dụng Lập bản đồ Web không được chỉ định trong index.html.",
 				unspecifiedConfigOwner: "Chủ sở hữu được ủy quyền chưa được cấu hình.",
-				invalidConfigOwner: "Đ_Story owner is not authorized__________ớ.",
+				invalidConfigOwner: "Chủ sở hữu câu chuyện chưa được ủy quyền.",
 				createMap: "Không thể tạo bản đồ",
 				invalidApp: "%TPL_NAME% không tồn tại hoặc không thể truy cập được.",
 				appLoadingFail: "Đã xảy ra sự cố, %TPL_NAME% không tải đúng.",
-				notConfiguredDesktop: "Đ_The story is not configured yet___________ớ.",
-				notConfiguredMobile: "Đ_The %TPL_NAME% builder is not supported at this display size___________________ớ.",
-				notAuthorized: "Đ_You are not authorized to access this story______________ớ",
+				notConfiguredDesktop: "Câu chuyện chưa được cấu hình.",
+				notConfiguredMobile: "Bộ thiết lập %TPL_NAME% không được hỗ trợ theo kích cỡ hiển thị này.",
+				notAuthorized: "Bạn không được phép truy cập vào câu chuyện này",
 				noBuilderIE: "Bộ thiết lập không được hỗ trợ trên Internet Explorer trước phiên bản %VERSION%. %UPGRADE%",
-				noViewerIE: "Đ_This story is not supported in Internet Explorer before version %VERSION%. %UPGRADE%__________________________ớ",
+				noViewerIE: "Câu chuyện này không được hỗ trợ trong Internet Explorer trước phiên bản %VERSION%. %UPGRADE%",
 				upgradeBrowser: "<a href='http://browsehappy.com/' target='_blank'>Vui lòng cập nhật trình duyệt của bạn</a>.",
 				mapLoadingFail: "Đã xảy ra lỗi, Bản đồ không tải đúng.",
 				signOut: "Đăng xuất"
@@ -61,9 +61,9 @@
 				templateTitle: "Thiết lập tiêu đề mẫu",
 				templateSubtitle: "Thiết lập phụ đề mẫu",
 				share: "Chia sẻ",
-				checking: "Đ_Checking your story content_________ớ",
-				fix: "Đ_Fix issues in your story________ớ",
-				noerrors: "Đ_No issues detected______ớ"
+				checking: "Kiểm tra nội dung câu chuyện của bạn",
+				fix: "Khắc phục sự cố trong câu chuyện của bạn",
+				noerrors: "Không phát hiện sự cố"
 			},
 			overviewFromCommon: {
 				title: "Bản đồ Toàn cảnh"

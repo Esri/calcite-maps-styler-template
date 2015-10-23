@@ -64,7 +64,7 @@
 				url: "Vimeo video URL"
 			},
 			videoSelectorOther: {
-				explain1: "Š_The story cannot play raw videos (e.g., avi, mpeg) but it can play hosted video files that have built-in players (e.g., YouTube or Vimeo)__________________________________________ä.",
+				explain1: "See lugu ei saa esitada töötlemata videoid (nt AVI-, MPEG-vormingus), kuid saab esitada majutatud videofaile sisseehitatud pleierites (nt YouTube või Vimeo).",
 				explain2: "Enamik veebis olevaid videomajutusteenuseid pakub seda funktsiooni. Peate leidma video lisamise võimaluse, kopeerima antud koodi ja kasutama veebilehte %WEBPAGE%.",
 				explain3: "Kui soovite aga videot ise majutada, saate luua HTML-lehe, mis kasutab näiteks videopleierit %EXAMPLE%, selle lehe majutada ning kasutada ka veebilehte %WEBPAGE%.",
 				webpage: "Veebilehe funktsioon"
@@ -102,7 +102,7 @@
 				lblPosition3Explain2: "(laius on alati paneelile vastav)",
 				lblPosition4Explain: "(võib moonutada)",
 				unloadLbl: "Laadi maha, kui lugeja liigub mujale",
-				unloadHelp: "Š_If the Web Page has audio or video media, keep this option checked to stop that content from playing when the reader navigates away. Uncheck it for example to keep a soundtrack playing as the reader advances through the story.<br />If the Web Page is an application, uncheck this option so that the story does not reload if the reader returns to it__________________________________________________________________________________________________________ä."
+				unloadHelp: "Kui veebileht sisaldab audio- või videosisu, jätke see valik märgituks, et lõpetada selle sisu esitamine, kui lugeja liigub mujale. Tühjendage see valik näiteks siis, kui soovite, et heliriba esitataks samal ajal, kui lugeja läbi loo liigub.<br />Kui veebileht on rakendus, tühjendage see valik, et kasutaja naasmisel ei laaditaks lugu uuesti."
 			},
 			editorActionGeocode: {
 				lblTitle: "Märgi aadress või asukoht",

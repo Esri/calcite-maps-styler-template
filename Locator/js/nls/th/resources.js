@@ -36,7 +36,7 @@ define(
          "filter": "ตัวกรอง",
          "close": "ปิด",
          "reverse": "กลับหลัง",
-         "mode": "ก้_Switch mode Drive/Walk________ษฺ"
+         "mode": "สลับโหมดการขับขี่ / เดิน"
       }
    })
 );

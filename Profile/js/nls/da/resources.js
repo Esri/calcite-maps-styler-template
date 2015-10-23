@@ -17,28 +17,28 @@
 define(
    ({
     map: {
-      error: "ø_Unable to create map_______å"
+      error: "Kan ikke oprette kort"
     },
     elevation: {
-        toggle: "ø_Toggle the Elevation Profile Chart____________å.",
-        drawTool: "ø_Draw a line on the map to generate an elevation profile__________________å.",
-        selectMessage: "ø_Click a line feature or use the draw tool to draw a line to display the elevation profile____________________________å"
+        toggle: "Skift højdeprofildiagram.",
+        drawTool: "Tegn en linje på kortet for at generere en højdeprofil.",
+        selectMessage: "Klik på et linjeobjekt, eller brug tegneværktøjet til at tegne en linje for at vise højdeprofilen"
     },
     splash: {
-        title: "ø_Title___å",
-        content: "ø_Configure to create custom splash content_____________å"
+        title: "Titel",
+        content: "Konfigurér for at oprette brugerdefineret indhold til velkomstskærmen"
     },
     legend: {
-        title: "ø_Legend___å",
-        tip: "ø_Display legend_____å"
+        title: "Signaturforklaring",
+        tip: "Vis signaturforklaring"
     },
     basemap: {
-        title: "ø_Basemap___å",
-        tip: "ø_Change basemap_____å"
+        title: "Baggrundskort",
+        tip: "Skift baggrundskort"
     },
     share: {
-        title: "ø_Share___å",
-        tip: "ø_Share map____å"
+        title: "Del",
+        tip: "Del kort"
     }
   })
 );

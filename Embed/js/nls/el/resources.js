@@ -27,7 +27,7 @@ define(
             "basemap":{
                     "label": "Υπόβαθρο",
                     "title": "Επιλέξτε υπόβαθρο",
-                    "close": "Đ_Close___ớ"
+                    "close": "Κλείσιμο"
             },
             "legend":{
                 "title": "Υπόμνημα"
@@ -43,7 +43,7 @@ define(
 
         },
         "map": {
-            "toggle": "Đ_Toggle side panel______ớ",
+            "toggle": "Εναλλαγή πλαϊνού πλαισίου",
             "error": "Δεν είναι δυνατή η δημιουργία χάρτη"
         }
     })

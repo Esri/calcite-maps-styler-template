@@ -20,9 +20,9 @@ define(
             "error": "Δεν είναι δυνατή η δημιουργία χάρτη"
         },
         "nav":{
-            "next": "Đ_Next__ớ",
-            "previous": "Đ_Previous___ớ",
-            "close": "Đ_Close___ớ"
+            "next": "Επόμενο",
+            "previous": "Προηγούμενο",
+            "close": "Κλείσιμο"
         },
         "tools":{
             "search":{

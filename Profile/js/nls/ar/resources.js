@@ -17,28 +17,28 @@
 define(
    ({
     map: {
-      error: "بيت_Unable to create map_______لاحقة"
+      error: "يتعذر إنشاء الخريطة"
     },
     elevation: {
-        toggle: "بيت_Toggle the Elevation Profile Chart____________لاحقة.",
-        drawTool: "بيت_Draw a line on the map to generate an elevation profile__________________لاحقة.",
-        selectMessage: "بيت_Click a line feature or use the draw tool to draw a line to display the elevation profile____________________________لاحقة"
+        toggle: "تبديل مخطط الملف التعريفي للمسقط الرأسي.",
+        drawTool: "ارسم خطًا على الخريطة لإنشاء الملف التعريفي للمسقط الرأسي.",
+        selectMessage: "انقر على معلم خِطّي أو استخدام أداة الرسم لرسم خط لعرض الملف التعريفي للمسقط الرأسي"
     },
     splash: {
-        title: "بيت_Title___لاحقة",
-        content: "بيت_Configure to create custom splash content_____________لاحقة"
+        title: "العنوان",
+        content: "تكوين لإنشاء محتوى بداية مُخصص"
     },
     legend: {
-        title: "بيت_Legend___لاحقة",
-        tip: "بيت_Display legend_____لاحقة"
+        title: "مفتاح الخريطة",
+        tip: "عرض وسيلة الإيضاح"
     },
     basemap: {
-        title: "بيت_Basemap___لاحقة",
-        tip: "بيت_Change basemap_____لاحقة"
+        title: "خريطة قاعدة",
+        tip: "تغيير خريطة الأساس"
     },
     share: {
-        title: "بيت_Share___لاحقة",
-        tip: "بيت_Share map____لاحقة"
+        title: "مشاركة",
+        tip: "مشاركة الخريطة"
     }
   })
 );

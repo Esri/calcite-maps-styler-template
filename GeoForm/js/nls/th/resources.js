@@ -262,7 +262,7 @@
       mapTabTooltip: "แผนที่",
       btnDescendingText: "เรียงจากมากไปน้อย",
       btnAscendingText: "เรียงจากน้อยไปมาก",
-      geometryUnavailableErrorMessage: "ก้_Error finding the geometry of the feature_____________ษฺ",
+      geometryUnavailableErrorMessage: "พบความผิดพลาดของข้อมูลภูมิศาสตร์",
       infoPopupOffErrorMessage: "ไม่มีข้อมูลเพื่อใช้แสดง",
       btnLoadMoreText: "โหลดเพิ่ม",
       unavailableTitleText: "ไม่มีชื่อ",

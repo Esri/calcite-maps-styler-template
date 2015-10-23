@@ -20,9 +20,9 @@ define(
             "error": "맵을 생성할 수 없음"
         },
         "nav":{
-            "next": "한_Next__빠",
-            "previous": "한_Previous___빠",
-            "close": "한_Close___빠"
+            "next": "다음",
+            "previous": "이전",
+            "close": "닫기"
         },
         "tools":{
             "search":{

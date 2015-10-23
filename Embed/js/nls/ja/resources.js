@@ -27,7 +27,7 @@ define(
             "basemap":{
                     "label": "ベースマップ",
                     "title": "ベースマップの選択",
-                    "close": "須_Close___鷗"
+                    "close": "閉じる"
             },
             "legend":{
                 "title": "凡例"
@@ -43,7 +43,7 @@ define(
 
         },
         "map": {
-            "toggle": "須_Toggle side panel______鷗",
+            "toggle": "サイド パネルの切り替え",
             "error": "マップを作成できません"
         }
     })

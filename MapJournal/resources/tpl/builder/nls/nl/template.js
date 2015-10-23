@@ -57,7 +57,7 @@
 			},
 			organizePopup: {
 				title: "Rangschikken",
-				lblHeader: "Ĳ_Drag and drop sections to organize your story_______________ä.",
+				lblHeader: "Sleep en plaats onderdelen om uw verhaal te ordenen.",
 				lblColTitle: "Titel",
 				lblColPubDate: "Publicatiedatum",
 				lblColStatus: "Status",

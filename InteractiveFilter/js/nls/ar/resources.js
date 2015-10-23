@@ -10,7 +10,7 @@
       filterOr: "يجب أن يكون أحد التعبيرات التالية صحيحًا.",
       filterAnd: "يجب أن تكون جميع التعبيرات التالية صحيحة.",
       filterNo:  "Web map does not contain any interactive filters. View the ${link} help topic for details on how to create a filter in your web map.",
-      filterLink: "بيت_http://doc.arcgis.com/en/arcgis-online/use-maps/apply-filters.htm_____________________لاحقة",
+      filterLink: "http://doc.arcgis.com/en/arcgis-online/use-maps/apply-filters.htm",
       errors:{
         message: "حدثت مشكلة أثناء إنشاء تطبيقات المُنقيات"
       }

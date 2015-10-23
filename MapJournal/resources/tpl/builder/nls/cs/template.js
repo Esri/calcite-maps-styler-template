@@ -57,7 +57,7 @@
 			},
 			organizePopup: {
 				title: "Organizovat",
-				lblHeader: "Ř_Drag and drop sections to organize your story_______________ů.",
+				lblHeader: "Zorganizujte svůj příběh kliknutím a přetažením jeho částí.",
 				lblColTitle: "Nadpis",
 				lblColPubDate: "Datum zveřejnění",
 				lblColStatus: "Stav",

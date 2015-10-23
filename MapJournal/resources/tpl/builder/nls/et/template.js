@@ -57,7 +57,7 @@
 			},
 			organizePopup: {
 				title: "Paiguta",
-				lblHeader: "Š_Drag and drop sections to organize your story_______________ä.",
+				lblHeader: "Loo korraldamiseks lohistage loo jaotised soovitud kohta.",
 				lblColTitle: "Pealkiri",
 				lblColPubDate: "Avaldamise kuupäev",
 				lblColStatus: "Staatus",

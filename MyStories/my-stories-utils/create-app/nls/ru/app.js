@@ -1,51 +1,51 @@
 ﻿define(
 	 ({
 		dialog: {
-			back: "Ж_Back__Я",
-			close: "Ж_Close___Я",
-			createNewStory: "Ж_Create a New Story______Я",
-			pickApp: "Ж_Pick an App____Я",
-			askPros: "Ж_Ask the Pros_____Я"
+			back: "Назад",
+			close: "Закрыть",
+			createNewStory: "Создать новую историю",
+			pickApp: "Отбор приложения",
+			askPros: "Запрос преимуществ"
 		},
 		incompatibleNotice: {
-			title: "Ж_Create Story Not Available_________Я",
-			subtitle: "Ж_Sorry, this is not supported in a small display. Please open in a larger display or device____________________________Я.",
-			close: "Ж_Close___Я"
+			title: "Создание истории недоступно",
+			subtitle: "Извините, это не поддерживается на маленьком экране. Откройте на большем экране или устройстве.",
+			close: "Закрыть"
 		},		
 		answerText: {
-			seriesOfPlaces: "Ж_A set of places______Я",
-			mapsNarrative: "Ж_A narrative with maps_______Я",
-			compareDatasets: "Ж_An interactive comparison of two datasets_____________Я",
-			other: "Ж_A single map_____Я",
-			yes: "Ж_Yes__Я",
-			no: "Ж_No__Я",
-			click: "Ж_Click___Я",
-			scroll: "Ж_Scroll___Я"
+			seriesOfPlaces: "Набор местоположений",
+			mapsNarrative: "Повествование с помощью карт",
+			compareDatasets: "Интерактивное сравнение двух наборов данных",
+			other: "Одна карта",
+			yes: "Да",
+			no: "Нет",
+			click: "Щелкните",
+			scroll: "Прокрутите"
 		},
 		questionText: {
-			bestDescribesStory: "Ж_What best describes your story__________Я?",
-			showPhotos: "Ж_Do you want to show photos for each location_______________Я?",
-			clickOrScroll: "Ж_Do you want your audience to click through tabs or scroll__________________Я?"
+			bestDescribesStory: "Какое описание лучше подходит для вашей истории?",
+			showPhotos: "Хотите ли вы показать фотографии для каждого местоположения?",
+			clickOrScroll: "Пользователи должны щелкать по вкладкам или прокручивать?"
 		},
 		finalApp: {
-			weRecommend: "Ж_We Recommend: {{STORY_TYPE}}_________Я",
-			letsBuild: "Ж_Let's build_____Я!",
-			seeExample: "Ж_See example____Я"
+			weRecommend: "Мы рекомендуем: {{STORY_TYPE}}",
+			letsBuild: "Давайте начнем!",
+			seeExample: "См. пример"
 		},
 		reasons: {
-			mapTour: "Ж_This app presents a sequential, place-based narrative in the form of a series of geotagged photos and captions linked to an interactive map. Itâ€™s ideal for walking tours or for a series of locations youâ€™d like users to follow in sequence__________________________________________________________________________Я.",
-			mapJournal: "Ж_This app lets you create a compelling map-based narrative presented as a set of journal entries. It's ideal for creating multimedia stories that combine text, maps, images, and video, especially when you have lots of text or a rich array of content____________________________________________________________________________Я.",
-			mapSeries: "Ж_This app lets you present a series of maps via tabs, numbered bullets, or our expandable 'side accordion' control. You can also include images, video and web content in your series to tell your story_____________________________________________________________Я.",
-			swipeSpyglass: "Ж_This app enables users to compare two maps or two layers in the same map. It is particularly effective for showing before-and-after imagery or other changes over time___________________________________________________Я.",
-			basic: "Ж_This app lets you present a map via a very simple minimalist user interface. Apart from the title bar and an optional legend, the map fills the screen. Use this app to let your map speak for itself____________________________________________________________Я."
+			mapTour: "Это приложение представляет собой последовательный рассказ в виде серии фотографий с геометками и заголовков, привязанных к интерактивной карте. Оно идеально подходит для описаний прогулок или мест, которые вы хотели бы показать своим пользователям в определенной последовательности.",
+			mapJournal: "Это приложение позволяет создать увлекательный рассказ, как бы состоящий из нескольких страниц журнала. Оно идеально подходит для создания мультимедийных историй, сочетающих в себе текст, карты, графику и видео, особенно если у вас много текста и подробностей, которые вы хотите передать.",
+			mapSeries: "Это приложение позволяет представить серию карт в виде пронумерованных маркеров или раздвижных вкладок-\"гармошек\". Туда также можно добавить графику, видео, веб-ресурсы, чтобы история получилась более полной.",
+			swipeSpyglass: "Это приложение позволяет сравнивать две карты или два слоя на одной карте. Оно хорошо подходит для рассказа историй \"до-после\" или других изменений.",
+			basic: "Это приложение позволяет представить карту в очень простом минимальном интерфейсе. Помимо заголовка и, если необходимо, легенды, все остальное место занимает карта. Это приложение как нельзя лучше подходит, если вы хотите, чтобы карта говорила сама за себя."
 		},
 		shortReasons: {
-			mapTour: "Ж_Guide people through a sequence of places_____________Я",
-			mapJournal: "Ж_Perfect for an in-depth narrative___________Я",
-			mapSeries: "Ж_Present a series of related maps___________Я",
-			swipe: "Ж_Compare two maps or map layers with a slider______________Я",
-			spyglass: "Ж_Compare two maps or map layers with a spyglass_______________Я",
-			basic: "Ж_Think minimalistic, great for one map____________Я"
+			mapTour: "Последовательный просмотр серии местоположений",
+			mapJournal: "Идеально подходит для подробного повествования",
+			mapSeries: "Представление серии карт, связанных между собой",
+			swipe: "Сравнение двух карт или двух слоев карты с помощью бегунка.",
+			spyglass: "Сравнение двух карт или двух слоев карты с помощью лупы.",
+			basic: "Минимальные усилия, идеально для одной карты"
 		},
 	})
 );

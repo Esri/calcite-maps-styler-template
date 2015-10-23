@@ -5,29 +5,29 @@
 				close: "ปิด"
 			},
 			loading: {
-				long: "ก้_Story is initializing_______ษฺ",
+				long: "เริ่มต้นดำเนินเรื่องราว",
 				long2: "ขอบคุณที่รอ",
-				failButton: "ก้_Reload the story______ษฺ"
+				failButton: "โหลดเรื่องราวอีกครั้ง"
 			},
 			signin: {
 				title: "ต้องการยอมรับ",
-				explainViewer: "ก้_Please sign in with an account on %PORTAL_LINK% to access the story_____________________ษฺ.",
-				explainBuilder: "ก้_Please sign in with an account on %PORTAL_LINK% to configure the story______________________ษฺ."
+				explainViewer: "กรุณาเข้าระบบด้วยบัญชีบน %PORTAL_LINK% เพื่อเข้าใช้งานเรื่องราว",
+				explainBuilder: "กรุณาลงชื่อด้วยบัญชีบน  %PORTAL_LINK% เพื่อปรับแต่งเรื่องราว"
 			},
 			errors: {
 				boxTitle: "เกิดข้อผิดพลาด",
 				invalidConfig: "การกำหนดค่าไม่ถูกต้อง",
 				invalidConfigNoApp: "ข้อผิดพลาดร้ายแรง: เว็บแผนที่ระบุการใช้งานไม่ได้ระบุใน index.html",
 				unspecifiedConfigOwner: "ไม่มีการกำหนดอำนาจในการปรับแต่ง",
-				invalidConfigOwner: "ก้_Story owner is not authorized__________ษฺ.",
+				invalidConfigOwner: "เจ้าของเรื่องราวไม่ได้รับอนุญาต",
 				createMap: "ไม่สามารถสร้างแผนที่ได้",
 				invalidApp: "ข้อผิดพลาดร้ายแรง: โปรแกรมไม่สามารถโหลด",
 				appLoadingFail: "มีางอย่างผิดปกติ, %TPL_NAME% โหลดไม่สมบูรณ์",
-				notConfiguredDesktop: "ก้_The story is not configured yet___________ษฺ.",
-				notConfiguredMobile: "ก้_The %TPL_NAME% builder is not supported at this display size___________________ษฺ.",
-				notAuthorized: "ก้_You are not authorized to access this story______________ษฺ",
+				notConfiguredDesktop: "เรื่องราวนี้ยังไม่ได้รับการปรับแต่ง",
+				notConfiguredMobile: "บิวเดอร์นี้ %TPL_NAME% ไม่ได้รับการสนัสนุนในขนาดการแสดงผลนี้",
+				notAuthorized: "คุณไม่ได้รับสิทธิ์ในการใช้งานเรื่องราว",
 				noBuilderIE: "ตัวสร้างที่ไม่ได้รับการสนับสนุนบน Internet Explorer ก่อนรุ่น %VERSION%  %UPGRADE%",
-				noViewerIE: "ก้_This story is not supported in Internet Explorer before version %VERSION%. %UPGRADE%__________________________ษฺ",
+				noViewerIE: "เรื่องนี้ไม่ได้รับการสนับสนุนใน Internet Explorer รุ่นก่อน %VERSION%. %UPGRADE%",
 				upgradeBrowser: "<a href='http://browsehappy.com/' target='_blank'>กรุณาอัพเดทเบราว์เซอร์ของคุณ</a>.",
 				mapLoadingFail: "เกิดข้อผิดพลาดบางอย่างขึ้น ทำให้แผนที่ไม่สามารถเปิดขึ้นได้ถูกต้อง",
 				signOut: "ลงชื่อออก"
@@ -35,8 +35,8 @@
 			mobileInfo: {
 				legend: "คำอธิบาย",
 				description: "คำบรรยาย",
-				lblLegendMobileError: "ก้_Sorry, the legend is unavailable. Please reload the story__________________ษฺ.",
-				lblLegendMobileErrorExplain: "ก้_The legend is not available when the device is rotated to portrait mode after the story is loaded______________________________ษฺ."
+				lblLegendMobileError: "ขอโทษ ไม่มีสัญลักษณ์ปรากฏอยู่ กรุณาโหลดเรื่องราวอีกครั้ง",
+				lblLegendMobileErrorExplain: "สัญลักษณ์ไม่สามารถใช้ได้เมื่ออุปกรณ์ถูกนำไปโหมดแนวตั้งหลังจากที่เรื่องราวถูกโหลด"
 			},
 			mobileFooter: {
 				swipeInvite: "เลื่อนเพื่อเริ่มเรื่อง",
@@ -52,9 +52,9 @@
 				templateTitle: "ตั้งค่าหัวเรื่องเทมเพลต",
 				templateSubtitle: "ตั้งค่าชื่อรองของเทมเพลต",
 				share: "แชร์",
-				checking: "ก้_Checking your story content_________ษฺ",
-				fix: "ก้_Fix issues in your story________ษฺ",
-				noerrors: "ก้_No issues detected______ษฺ"
+				checking: "กำหลังตรวจสอบสาระในเรื่องราวของคุณ",
+				fix: "ปรับปรุงประเด็นในเรื่องราวของคุณ",
+				noerrors: "ไม่มีประเด็นที่ตรวจพบ"
 			},
 			overviewFromCommon: {
 				title: "ภาพรวมของแผนที่"
@@ -67,11 +67,11 @@
 				copied: "คัดลอก",
 				open: "เปิด",
 				embed: "ฝังลงในเว็บไซต์",
-				embedExplain: "ก้_Use the following HTML code to embed the story in a web page___________________ษฺ.",
+				embedExplain: "ใช้ HTML โค้ดตามด้านล่างนี้เพื่อฝังเรื่องราวในหน้าเว็บ",
 				size: "ขนาด (กว้าง/สูง):"
 			},
 			locatorFromCommon: {
-				error: "ก้_Location not available________ษฺ"
+				error: "ที่ตั้งไม่สามารถใช้งานได้"
 			}
         }
     })

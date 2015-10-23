@@ -262,7 +262,7 @@
       mapTabTooltip: "Kartta",
       btnDescendingText: "Laskeva",
       btnAscendingText: "Nouseva",
-      geometryUnavailableErrorMessage: "Å_Error finding the geometry of the feature_____________ö",
+      geometryUnavailableErrorMessage: "Kohteen geometrian etsinnässä on tapahtunut virhe",
       infoPopupOffErrorMessage: "Näytettäviä tietoja ei ole",
       btnLoadMoreText: "Lataa lisää",
       unavailableTitleText: "Nimetön",

@@ -1,22 +1,22 @@
 ﻿define(
 	 ({
 		signInDialog: {
-			title: "須_Sign in to Story Maps_______鷗",
-			subtitle: "須_Sign in with your existing ArcGIS Online account to_________________鷗:",
-			reasonOne: "須_Create compelling story maps to tell your stories________________鷗.",
-			reasonTwo: "須_Use your maps and data from ArcGIS Online in your story maps___________________鷗.",
-			reasonThree: "須_Manage your story maps and check the status of their content___________________鷗.",
-			noAccountYet: "須_Don't have an ArcGIS Online account? Sign up for a________________鷗:",
-			publicAccount: "須_Free non-commercial public account___________鷗",
-			subscriptionAccount: "須_Free trial ArcGIS subscription__________鷗",
-			signInExpired: "須_Your sign-in expired. Sign in again to pick up where you left off_____________________鷗.",
-			somethingNotLoading: "須_Something isn't loading correctly. Try refreshing the page___________________鷗."
+			title: "ストーリー マップにサイン インする",
+			subtitle: "既存の ArcGIS Online アカウントを使用してサイン インする対象:",
+			reasonOne: "ストーリーを伝える説得力のあるストーリー マップを作成する場合。",
+			reasonTwo: "ストーリー マップで ArcGIS Online のマップとデータを使用する場合。",
+			reasonThree: "ストーリー マップを管理し、それらのコンテンツの状態を確認する場合。",
+			noAccountYet: "ArcGIS Online アカウントをお持ちでない場合はサイン アップしてください:",
+			publicAccount: "非営利の無料個人アカウント",
+			subscriptionAccount: "無料の ArcGIS トライアル サブスクリプション",
+			signInExpired: "サイン インの期限が切れました。もう一度サイン インして、中断した場所を選択してください。",
+			somethingNotLoading: "正しく読み込まれていないものがあります。ページを更新してみてください。"
 		},
 		unavailableDialog: {
-			title: "須_Sign-In Not Available_______鷗",
-			explanation: "須_Sorry, this is not supported in a small display. Please open in a larger display or device____________________________鷗.",
-			close: "須_Close___鷗",
-			returnButton: "須_Return___鷗" 
+			title: "サイン インは利用できません",
+			explanation: "これは小さいディスプレイではサポートされていません。大きいディスプレイまたはデバイスで開いてください。",
+			close: "閉じる",
+			returnButton: "戻る" 
 		}
 	})
 );

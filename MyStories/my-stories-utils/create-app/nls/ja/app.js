@@ -1,51 +1,51 @@
 ﻿define(
 	 ({
 		dialog: {
-			back: "須_Back__鷗",
-			close: "須_Close___鷗",
-			createNewStory: "須_Create a New Story______鷗",
-			pickApp: "須_Pick an App____鷗",
-			askPros: "須_Ask the Pros_____鷗"
+			back: "戻る",
+			close: "閉じる",
+			createNewStory: "新しいストーリーの作成",
+			pickApp: "アプリの選択",
+			askPros: "専門家に尋ねる"
 		},
 		incompatibleNotice: {
-			title: "須_Create Story Not Available_________鷗",
-			subtitle: "須_Sorry, this is not supported in a small display. Please open in a larger display or device____________________________鷗.",
-			close: "須_Close___鷗"
+			title: "ストーリーの作成は利用できません",
+			subtitle: "これは小さいディスプレイではサポートされていません。大きいディスプレイまたはデバイスで開いてください。",
+			close: "閉じる"
 		},		
 		answerText: {
-			seriesOfPlaces: "須_A set of places______鷗",
-			mapsNarrative: "須_A narrative with maps_______鷗",
-			compareDatasets: "須_An interactive comparison of two datasets_____________鷗",
-			other: "須_A single map_____鷗",
-			yes: "須_Yes__鷗",
-			no: "須_No__鷗",
-			click: "須_Click___鷗",
-			scroll: "須_Scroll___鷗"
+			seriesOfPlaces: "一連の場所",
+			mapsNarrative: "マップによる注釈",
+			compareDatasets: "2 つのデータセットの対話的な比較",
+			other: "1 つのマップ",
+			yes: "はい",
+			no: "いいえ",
+			click: "クリック",
+			scroll: "スクロール"
 		},
 		questionText: {
-			bestDescribesStory: "須_What best describes your story__________鷗?",
-			showPhotos: "須_Do you want to show photos for each location_______________鷗?",
-			clickOrScroll: "須_Do you want your audience to click through tabs or scroll__________________鷗?"
+			bestDescribesStory: "お客様のストーリーを選択してください (最も近いもの)。",
+			showPhotos: "場所ごとに写真を表示しますか？",
+			clickOrScroll: "ユーザーにタブをクリックさせますか？それともスクロールさせますか？"
 		},
 		finalApp: {
-			weRecommend: "須_We Recommend: {{STORY_TYPE}}_________鷗",
-			letsBuild: "須_Let's build_____鷗!",
-			seeExample: "須_See example____鷗"
+			weRecommend: "次を推奨します: {{STORY_TYPE}}",
+			letsBuild: "構築しよう！",
+			seeExample: "サンプルを見る"
 		},
 		reasons: {
-			mapTour: "須_This app presents a sequential, place-based narrative in the form of a series of geotagged photos and captions linked to an interactive map. Itâ€™s ideal for walking tours or for a series of locations youâ€™d like users to follow in sequence__________________________________________________________________________鷗.",
-			mapJournal: "須_This app lets you create a compelling map-based narrative presented as a set of journal entries. It's ideal for creating multimedia stories that combine text, maps, images, and video, especially when you have lots of text or a rich array of content____________________________________________________________________________鷗.",
-			mapSeries: "須_This app lets you present a series of maps via tabs, numbered bullets, or our expandable 'side accordion' control. You can also include images, video and web content in your series to tell your story_____________________________________________________________鷗.",
-			swipeSpyglass: "須_This app enables users to compare two maps or two layers in the same map. It is particularly effective for showing before-and-after imagery or other changes over time___________________________________________________鷗.",
-			basic: "須_This app lets you present a map via a very simple minimalist user interface. Apart from the title bar and an optional legend, the map fills the screen. Use this app to let your map speak for itself____________________________________________________________鷗."
+			mapTour: "このアプリは、対話的なマップにリンクされ、ジオタグが付いた一連の写真とキャプションの形式で、連続的な場所ベースの注釈を表示します。徒歩旅行またはユーザーに順番に辿らせたい一連の場所に最適です。",
+			mapJournal: "このアプリを使用して、一連のジャーナル エントリとして表示される説得力のあるマップベースの注釈を作成できます。特に大量のテキストや豊富な多数のコンテンツがある場合に、テキスト、マップ、画像、およびビデオを組み合わせたマルチメディア ストーリーの作成に最適です。",
+			mapSeries: "このアプリを使用して、タブ、番号付きの箇条書き、または展開できる「サイド アコーディオン」コントロールを通じて一連のマップを提供できます。ストーリーを伝えるために、画像、ビデオ、および Web コンテンツをシリーズに含めることもできます。",
+			swipeSpyglass: "このアプリは、ユーザーが 2 つのマップまたは同じマップ内の 2 つのレイヤーを比較できるようにします。変更前と変更後の画像や、時間の経過に伴うその他の変化を表示する場合に特に効果的です。",
+			basic: "このアプリを使用して、極めてシンプルな必要最低限のユーザー インターフェイスを通じてマップを提供できます。タイトル バーとオプションの凡例を除いて、画面全体にマップが広がります。このアプリを使用して、マップを閲覧するだけで情報が伝わるようにすることができます。"
 		},
 		shortReasons: {
-			mapTour: "須_Guide people through a sequence of places_____________鷗",
-			mapJournal: "須_Perfect for an in-depth narrative___________鷗",
-			mapSeries: "須_Present a series of related maps___________鷗",
-			swipe: "須_Compare two maps or map layers with a slider______________鷗",
-			spyglass: "須_Compare two maps or map layers with a spyglass_______________鷗",
-			basic: "須_Think minimalistic, great for one map____________鷗"
+			mapTour: "ユーザーを一連の場所に導く",
+			mapJournal: "詳細な注釈に最適",
+			mapSeries: "関連する一連のマップを提示",
+			swipe: "スライダーを使用して 2 つのマップまたはマップ レイヤーを比較",
+			spyglass: "スパイグラスを使用して 2 つのマップまたはマップレイヤーを比較",
+			basic: "必要な機能だけを 1 つのマップで最適に"
 		},
 	})
 );

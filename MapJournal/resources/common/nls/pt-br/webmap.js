@@ -2,7 +2,7 @@
 	 ({
 		commonWebmap: {
 			selector: {
-				lblWebMap: "ã_Map__Ç",
+				lblWebMap: "Mapa",
 				lblLocation: "Local",
 				lblContent: "Conteúdo",
 				lblPopup: "Pop-up",
@@ -17,14 +17,14 @@
 				and: "e",
 				action: "Ação na seção",
 				actions: "Ação nas seções",
-				originalWebmap: "ã_Map used to publish the %TPL_NAME%___________Ç",
-				browseMaps: "ã_Select a map_____Ç",
-				createMap: "ã_Create a map_____Ç",
-				current: "ã_Current map____Ç",
-				select: "ã_Select or create a map________Ç",
-				newMap: "ã_Newly selected map______Ç",
-				newCreatedMap: "ã_Newly created map______Ç",
-				webmapDefault: "ã_Map default____Ç",
+				originalWebmap: "Mapa utilizado para publicar o %TPL_NAME%",
+				browseMaps: "Selecionar um mapa",
+				createMap: "Criar um mapa",
+				current: "Mapa atual",
+				select: "Selecione ou crie um mapa",
+				newMap: "Mapa recentemente selecionado",
+				newCreatedMap: "Mapa criado recentemente",
+				webmapDefault: "Mapa padrão",
 				customCfg: "Configuração personalizada",
 				tooltipLocation: "Define o local que este mapa aparecerá.",
 				tooltipContent: "Define a visibilidade das camadas.",
@@ -51,27 +51,27 @@
 				hintNavigation: "A navegação do mapa está desabilitada."
 			},
 			editor: {
-				loading: "ã_Please wait while the map editor is loading______________Ç",
-				newTitle: "ã_Create new map_____Ç",
-				editTitle: "ã_Edit map___Ç",
-				titleLbl: "ã_Title___Ç",
-				titlePh: "ã_Map title_____Ç...",
-				folderLbl: "ã_The map will be created in the same folder as the story__________________Ç.",
-				creating: "ã_Creating the map______Ç",
-				saving: "ã_Saving the map_____Ç",
-				success: "ã_Map saved____Ç",
-				successCreate: "ã_Map created____Ç",
-				cancelTitle: "ã_Discard any unsaved changes_________Ç?",
-				errorDuplicate: "ã_You already have a map with that title____________Ç",
-				errorCreate: "ã_Unable to create map. Please try again_____________Ç.",
-				errorSave: "ã_Unable to save map. Please try again____________Ç.",
-				notavailable1: "ã_Sorry, creating or editing a map is not supported in Firefox due to a technical limitation. You may want to build your story using a different web browser or use the following workaround_________________________________________________________Ç.",
-				notavailable2: "ã_Sorry, creating or editing a map is not supported since the story map application is not hosted in %PRODUCT%. Please contact your ArcGIS administrator for more information_____________________________________________________Ç.",
-				notavailable3: "ã_Sorry, creating or editing a map is not supported on this version of Portal for ArcGIS (requires 10.4 or later). Please contact your ArcGIS administrator for more information______________________________________________________Ç.",
-				notavailable4: "ã_You can create a map using %MV%, then come back here to add it to your story________________________Ç.",
-				notavailable5: "ã_You can edit the map using %MV%, then come back here and %apply% to see your changes___________________________Ç.",
-				notavailable6: "ã_map viewer____Ç",
-				notavailable7: "ã_reload the map_____Ç"
+				loading: "Aguarde enquanto o editor de mapa estiver carregando",
+				newTitle: "Criar novo mapa",
+				editTitle: "Editar mapa",
+				titleLbl: "Título",
+				titlePh: "Título do mapa...",
+				folderLbl: "O mapa será criado na mesma pasta que a história.",
+				creating: "Criando o mapa",
+				saving: "Salvando o mapa",
+				success: "Mapa salvo",
+				successCreate: "Mapa criado",
+				cancelTitle: "Descartar quaisquer alterações não salvas?",
+				errorDuplicate: "Você já tem um mapa com este título",
+				errorCreate: "Não foi possível criar o mapa. Tente novamente.",
+				errorSave: "Não foi possível salvar o mapa. Tente novamente.",
+				notavailable1: "Desculpe, a criação ou edição de um mapa não é suportada no Firefox devido a uma limitação técnica. Você pode desejar construir sua história utilizando um navegador da web diferente ou utilizar a seguinte solução provisória.",
+				notavailable2: "Desculpe, a criação ou edição de um mapa não é suportada já que o aplicativo de mapa da história não está hospedado no %PRODUCT%. Entre em contato com seu administrador do ArcGIS para mais informações.",
+				notavailable3: "Desculpe, a criação ou edição de um mapa não é suportada nesta versão do Portal for ArcGIS (exige 10.4 ou posterior). Entre em contato com seu administrador do ArcGIS para mais informações.",
+				notavailable4: "Você pode criar um mapa utilizando %MV%, então voltar aqui para adicioná-lo na sua história.",
+				notavailable5: "Você pode editar o mapa utilizando %MV%, então voltar aqui e %apply% para visualizar suas alterações.",
+				notavailable6: "visualizador de mapa",
+				notavailable7: "recarregar o mapa"
 			}
 		},
 		configure: {
@@ -82,11 +82,11 @@
 					contentLabel: "Meu Conteúdo",
 					favoritesLabel: "Meus Favoritos"
 				},
-				title: "ã_Select a map_____Ç",
+				title: "Selecionar um mapa",
 				searchTitle: "Pesquisar",
 				ok: "Ok",
 				cancel: "Cancelar",
-				placeholder: "ã_Enter search term or web map ID___________Ç..."
+				placeholder: "Insira o termo de pesquisa ou ID do mapa da web..."
 			}
 		}
 	})

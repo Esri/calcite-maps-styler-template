@@ -5,29 +5,29 @@
 				close: "關閉"
 			},
 			loading: {
-				long: "試_Story is initializing_______驗",
+				long: "故事正在初始化",
 				long2: "謝謝等候",
-				failButton: "試_Reload the story______驗"
+				failButton: "重新載入故事"
 			},
 			signin: {
 				title: "需要進行身份驗證",
-				explainViewer: "試_Please sign in with an account on %PORTAL_LINK% to access the story_____________________驗.",
-				explainBuilder: "試_Please sign in with an account on %PORTAL_LINK% to configure the story______________________驗."
+				explainViewer: "請使用帳戶登入 %PORTAL_LINK% 以存取故事。",
+				explainBuilder: "請使用帳戶登入 %PORTAL_LINK% 以設定故事。"
 			},
 			errors: {
 				boxTitle: "發生錯誤",
 				invalidConfig: "設定無效",
 				invalidConfigNoApp: "未在 index.html 中指定 Web 製圖應用程式識別碼。",
 				unspecifiedConfigOwner: "尚未設定授權的擁有者。",
-				invalidConfigOwner: "試_Story owner is not authorized__________驗.",
+				invalidConfigOwner: "未授權故事擁有者。",
 				createMap: "無法建立地圖",
 				invalidApp: "%TPL_NAME% 不存在或不可存取。",
 				appLoadingFail: "發生了一些錯誤， %TPL_NAME% 未正確載入。",
-				notConfiguredDesktop: "試_The story is not configured yet___________驗.",
-				notConfiguredMobile: "試_The %TPL_NAME% builder is not supported at this display size___________________驗.",
-				notAuthorized: "試_You are not authorized to access this story______________驗",
+				notConfiguredDesktop: "故事尚未設定。",
+				notConfiguredMobile: "%TPL_NAME% 建構器不支援此顯示大小。",
+				notAuthorized: "您未取得存取該故事的授權",
 				noBuilderIE: "低於版本 %VERSION% 的 Internet Explorer 不支援建構器。%UPGRADE%",
-				noViewerIE: "試_This story is not supported in Internet Explorer before version %VERSION%. %UPGRADE%__________________________驗",
+				noViewerIE: "低於版本 %VERSION% 的 Internet Explorer 不支援該故事。%UPGRADE%",
 				upgradeBrowser: "<a href='http://browsehappy.com/' target='_blank'>請更新您的瀏覽器</a>。",
 				mapLoadingFail: "發生了一些錯誤，地圖未正確載入。",
 				signOut: "登出"
@@ -35,8 +35,8 @@
 			mobileInfo: {
 				legend: "圖例",
 				description: "描述",
-				lblLegendMobileError: "試_Sorry, the legend is unavailable. Please reload the story__________________驗.",
-				lblLegendMobileErrorExplain: "試_The legend is not available when the device is rotated to portrait mode after the story is loaded______________________________驗."
+				lblLegendMobileError: "抱歉，圖例不可用。請重新載入故事。",
+				lblLegendMobileErrorExplain: "如果設備在載入故事後旋轉到縱向模式，則圖例無法使用。"
 			},
 			mobileFooter: {
 				swipeInvite: "滑動瀏覽故事",
@@ -52,9 +52,9 @@
 				templateTitle: "設置範本標題",
 				templateSubtitle: "設置範本子標題",
 				share: "分享",
-				checking: "試_Checking your story content_________驗",
-				fix: "試_Fix issues in your story________驗",
-				noerrors: "試_No issues detected______驗"
+				checking: "正在檢查您的故事內容",
+				fix: "修復您故事中的問題",
+				noerrors: "偵測不到問題"
 			},
 			overviewFromCommon: {
 				title: "總覽圖"
@@ -67,11 +67,11 @@
 				copied: "已複製",
 				open: "打開",
 				embed: "嵌入到網頁",
-				embedExplain: "試_Use the following HTML code to embed the story in a web page___________________驗.",
+				embedExplain: "使用以下 HTML 代碼將故事嵌入到網頁。",
 				size: "大小(寬度/高度):"
 			},
 			locatorFromCommon: {
-				error: "試_Location not available________驗"
+				error: "位置無法使用"
 			}
         }
     })

@@ -262,7 +262,7 @@
       mapTabTooltip: "Mappa",
       btnDescendingText: "Decrescente",
       btnAscendingText: "Crescente",
-      geometryUnavailableErrorMessage: "é_Error finding the geometry of the feature_____________È",
+      geometryUnavailableErrorMessage: "Errore nella ricerca della geometria della feature",
       infoPopupOffErrorMessage: "Nessuna informazione da visualizzare",
       btnLoadMoreText: "Carica altro",
       unavailableTitleText: "Senza titolo",

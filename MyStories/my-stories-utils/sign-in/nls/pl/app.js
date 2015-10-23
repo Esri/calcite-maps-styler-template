@@ -1,22 +1,22 @@
 ﻿define(
 	 ({
 		signInDialog: {
-			title: "ł_Sign in to Story Maps_______ą",
-			subtitle: "ł_Sign in with your existing ArcGIS Online account to_________________ą:",
-			reasonOne: "ł_Create compelling story maps to tell your stories________________ą.",
-			reasonTwo: "ł_Use your maps and data from ArcGIS Online in your story maps___________________ą.",
-			reasonThree: "ł_Manage your story maps and check the status of their content___________________ą.",
-			noAccountYet: "ł_Don't have an ArcGIS Online account? Sign up for a________________ą:",
-			publicAccount: "ł_Free non-commercial public account___________ą",
-			subscriptionAccount: "ł_Free trial ArcGIS subscription__________ą",
-			signInExpired: "ł_Your sign-in expired. Sign in again to pick up where you left off_____________________ą.",
-			somethingNotLoading: "ł_Something isn't loading correctly. Try refreshing the page___________________ą."
+			title: "Zaloguj się do Story Maps",
+			subtitle: "Zaloguj się za pomocą konta usługi ArcGIS Online aby:",
+			reasonOne: "tworzyć interesujące mapy narracyjne i opowiadać swoje narracje;",
+			reasonTwo: "korzystać z map i danych zgromadzonych w usłudze ArcGIS Online podczas tworzenia swoich map narracyjnych;",
+			reasonThree: "zarządzać mapami narracyjnymi i sprawdzać status ich zawartości.",
+			noAccountYet: "Nie masz jeszcze konta w usłudze ArcGIS Online? Zarejestruj się:",
+			publicAccount: "Bezpłatne konto publiczne do użytku niekomercyjnego",
+			subscriptionAccount: "Bezpłatna wersja próbna subskrypcji ArcGIS",
+			signInExpired: "Sesja wygasła. Zaloguj się ponownie, aby kontynuować.",
+			somethingNotLoading: "Wystąpił problem z wczytaniem zawartości. Spróbuj odświeżyć stronę."
 		},
 		unavailableDialog: {
-			title: "ł_Sign-In Not Available_______ą",
-			explanation: "ł_Sorry, this is not supported in a small display. Please open in a larger display or device____________________________ą.",
-			close: "ł_Close___ą",
-			returnButton: "ł_Return___ą" 
+			title: "Nie można się zalogować",
+			explanation: "Przykro nam, ale ta funkcja nie jest obsługiwana na małym ekranie. Spróbuj na większym ekranie lub urządzeniu.",
+			close: "Zamknij",
+			returnButton: "Wróć" 
 		}
 	})
 );

@@ -57,7 +57,7 @@
 			},
 			organizePopup: {
 				title: "Organisieren",
-				lblHeader: "ä_Drag and drop sections to organize your story_______________Ü.",
+				lblHeader: "Story durch Ziehen und Ablegen von Abschnitten organisieren.",
 				lblColTitle: "Titel",
 				lblColPubDate: "Veröffentlichungsdatum",
 				lblColStatus: "Status",

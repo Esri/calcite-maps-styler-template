@@ -262,7 +262,7 @@
       mapTabTooltip: "Bản đồ",
       btnDescendingText: "Desc",
       btnAscendingText: "Asc",
-      geometryUnavailableErrorMessage: "Đ_Error finding the geometry of the feature_____________ớ",
+      geometryUnavailableErrorMessage: "Lỗi khi tìm hình dạng của đối tượng",
       infoPopupOffErrorMessage: "Không có thông tin để hiển thị",
       btnLoadMoreText: "Tải Thêm",
       unavailableTitleText: "Chưa có tiêu đề",

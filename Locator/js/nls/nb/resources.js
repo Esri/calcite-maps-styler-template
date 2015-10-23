@@ -36,7 +36,7 @@ define(
          "filter": "Filter",
          "close": "Lukk",
          "reverse": "Motsatt retning",
-         "mode": "å_Switch mode Drive/Walk________ø"
+         "mode": "Veksle mellom kjøre- og gåmodus"
       }
    })
 );

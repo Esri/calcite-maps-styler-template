@@ -2,7 +2,7 @@
 	 ({
 		viewer: {
 			loading: {
-				step1: "ķ_LOADING STORY_____ū",
+				step1: "IELĀDĒ STĀSTU",
 				step2: "IELĀDĒ DATUS",
 				step3: "INICIALIZĒŠANA",
 				fail: "Diemžēl neizdevās pārvilkt ielādēšanu",
@@ -17,19 +17,19 @@
 				invalidConfig: "Fatāla kļūda: konfigurācijas neveiksme",
 				invalidConfigNoWebmap: "Fatāla kļūda: nederīga konfigurācija (nav norādīta web karte)",
 				createMap: "Nevar izveidot karti",
-				invalidApp: "ķ_Fatal error: The story cannot be loaded_____________ū",
+				invalidApp: "Fatāla kļūda: stāstu nevar ielādēt",
 				initMobile: "Laipni lūdzam pārvilkšanas web aplikācijā. Aplikācija nav konfigurēta. Interaktīvais būvētājs netiek atbalstīts mobilajās ierīcēs.",
-				initMobile2: "ķ_The Swipe builder is not supported at this display size__________________ū.",
+				initMobile2: "Pārvilkšanas veidotājs netiek atbalstīts displejā ar šādiem izmēriem.",
 				noBuilderIE8: "Pārvilkšanas interaktīvais veidotājs netiek atbalstīts pārlūkprogrammas Internet Explorer versijās, kas jaunākas par 9. versiju.",
 				noLayerView: "Laipni lūdzam Pārvilkt web aplikācijā.<br />Aplikācija vēl nav konfigurēta.",
-				appSave: "ķ_Error saving the web story_________ū",
+				appSave: "Saglabājot tīmekļa stāstu, radās kļūda",
 				mapSave: "Kļūda, saglabājot web karti",
-				notAuthorized: "ķ_You are not authorized to access this story______________ū",
+				notAuthorized: "Jūs neesat pilnvarots piekļūt šim stāstam",
 				conflictingProjectionsTitle: "Konfliktējošas projekcijas",
 				conflictingProjections: "Vilkšana neatbalsta divu tīmekļa karšu izmantošanu ar dažādām projekcijām. Lūdzu, atveriet iestatījumus un izmantojiet tīmekļa karti, kurā izmantota tā pati projekcija, kas pirmajā tīmekļa kartē.",
 				cpButton: "Aizvērt",
-				unspecifiedConfigOwner: "ķ_Authorized owner hasn't been configured_____________ū.",
-				invalidConfigOwner: "ķ_Story owner is not authorized__________ū."
+				unspecifiedConfigOwner: "Autorizētais īpašnieks nav konfigurēts.",
+				invalidConfigOwner: "Stāsta īpašnieks nav autorizēts."
 			},
 			mobileView: {
 				hideIntro: "PASLĒPT IEVADU",
@@ -47,7 +47,7 @@
 		},
 		builder: {
 			builder: {
-				panelHeader: "ķ_STORY CONFIGURATION_______ū",
+				panelHeader: "STĀSTA KONFIGURĀCIJA",
 				buttonSave: "SAGLABĀT",
 				buttonHelp: "Palīdzība",
 				buttonShare: "Koplietot",
@@ -67,13 +67,13 @@
 				popoverSaveWhenDone: "Neaizmirstiet saglabāt, kad jūs pabeidzat",
 				closeWithPendingChange: "Vai esat pārliecināts, ka vēlaties apstiprināt darbību? Jūsu izmaiņas tiks zaudētas.",
 				gotIt: "Labi",
-				savingApplication: "ķ_Saving story_____ū",
-				saveSuccess: "ķ_Story saved successfully________ū",
+				savingApplication: "Saglabā stāstu",
+				saveSuccess: "Stāsts sekmīgi saglabāts",
 				saveError: "Saglabāt neizdevās, lūdzu, mēģiniet vēlreiz",
 				saveError2: "Saglabāšana neizdevās, jo nosaukumā vai aprakstā bija nederīgs HTML tags",
 				saveError3: "Virsraksts nevar būt tukšs",
 				signIn: "Lūdzu, pierakstieties kontā uz",
-				signInTwo: "ķ_to save the story______ū."
+				signInTwo: "lai saglabātu stāstu."
 			},
 			header:{
 				editMe: "Rediģē mani !",
@@ -81,7 +81,7 @@
 				templateSubtitle: "Iestatīt šablona apakšvirsrakstu"
 			},
 			settings: {
-				settingsHeader: "ķ_Story settings_____ū",
+				settingsHeader: "Stāsta iestatījumi",
 				modalCancel: "Atcelt",
 				modalApply: "Lietot"
 			},
@@ -141,7 +141,7 @@
 				settingsLayoutSpyGlass: "Tālskatis",
 				settingsLayoutSelected: "Izvēlētais izkārtojums",
 				settingsLayoutSelect: "Izvēlieties šo izkārtojumu",
-				settingsSaveConfirm: "ķ_Some of your changes require that you save and reload the story____________________ū"
+				settingsSaveConfirm: "Lai dažas no jūsu veiktajām izmaiņām stātos spēkā, ir nepieciešama stāsta saglabāšana un atkārtota ielādēšana"
 			},
 			settingsDataModel: {
 				settingsTabDataModel: "Pārvilkšanas tips",
@@ -169,7 +169,7 @@
 			},
 			settingsLegend: {
 				settingsTabLegend: "Lietotnes izkārtojums",
-				settingsLegendExplain: "ķ_Select the layout settings_________ū.",
+				settingsLegendExplain: "Izvēlieties izkārtojuma iestatījumus.",
 				settingsLegendEnable: "Iespējot leģendu",
 				settingsDescriptionEnable: "Iespējot aprakstu",
 				settingsBookmarksEnable: "Iespējot sēriju Pārvilkt",
@@ -218,39 +218,39 @@
 				}
 			},
 			share: {
-				firstSaveTitle: "ķ_Story successfully saved________ū",
-				firstSaveHeader: "ķ_Your story is now saved in ArcGIS Online. Please read the following answers to frequent questions______________________________ū.",
+				firstSaveTitle: "Stāsts sekmīgi saglabāts",
+				firstSaveHeader: "Jūsu stāsts ir saglabāts ArcGIS Online. Lūdzu, izlasiet tālāk redzamās atbildes uz bieži uzdotiem jautājumiem.",
 				firstSaveA1: "Ja vēl neesat izmantojis ArcGIS Online vai vēlaties iegūt īsinājumikonu, lai piekļūtu autorēšanas interfeisam, jūs varat saglabāt šādu saiti: %LINK1%",
-				firstSaveA1bis: "ķ_The story can also be found in your <a href='%LINK2%' target='_blank'>ArcGIS Online content folder</a>________________________________ū.",
-				firstSaveQ2: "ķ_Is my story shared_______ū?",
-				firstSaveA2: "ķ_Currently your story is not shared. To share it, use the SHARE button______________________ū.",
-				shareTitle: "ķ_Share your story______ū",
-				sharePrivateHeader: "ķ_Your story is not shared, would you like to share it_________________ū?",
+				firstSaveA1bis: "Stāstu var atrast arī jūsu <a href=\'%LINK2%\' target=\'_blank\'>ArcGIS Online satura mapē</a>.",
+				firstSaveQ2: "Vai mans stāsts ir koplietots?",
+				firstSaveA2: "Šobrīd jūsu stāsts nav koplietots. Lai to koplietotu, izmantojiet pogu KOPLIETOT.",
+				shareTitle: "Koplietojiet stāstu",
+				sharePrivateHeader: "Jūsu stāsts nav koplietots; vai vēlaties to koplietot?",
 				sharePrivateBtn1: "Koplietot publiski",
 				sharePrivateBtn2: "Koplietot organizācijā",
 				sharePrivateProgress: "Koplietošana...",
 				sharePrivateErr: "Neizdevās koplietot; mēģiniet vēlreiz vai",
 				sharePrivateOk: "Koplietošana veiksmīgi atjaunināta; ielādē...",
-				shareStatus1: "ķ_Story is not saved______ū",
-				shareStatus2: "ķ_Story is shared publicly________ū",
-				shareStatus3: "ķ_Story is shared within the organization_____________ū",
-				shareStatus4: "ķ_Story is not shared_______ū",
+				shareStatus1: "Stāsts nav saglabāts",
+				shareStatus2: "Stāsts tiek publiski koplietots",
+				shareStatus3: "Stāsts tiek koplietots ar organizāciju",
+				shareStatus4: "Stāsts netiek koplietots",
 				sharePreviewAsUser: "Priekšskatījums",
-				shareHeader1: "ķ_Your story is <strong>publicly accessible</strong>________________ū.",
-				shareHeader2: "ķ_Your story is accessible by your organization members (login is required)_______________________ū.",
-				shareLinkHeader: "ķ_Share the story with your audience___________ū",
+				shareHeader1: "Jūsu stāsts ir <strong>publiski pieejams</strong>.",
+				shareHeader2: "Jūsu stāstam var piekļūt jūsu organizācijas dalībnieki (nepieciešama pieteikšanās).",
+				shareLinkHeader: "Koplietojiet stāstu ar savu mērķauditoriju",
 				shareLinkOpen: "ATVĒRTS",
 				learnMore: "Uzziniet vairāk",
-				shareQ1Opt1: "ķ_How do I keep the story private___________ū?",
-				shareQ1Opt2: "ķ_How do I keep the story private or share it publicly_________________ū?",
+				shareQ1Opt1: "Kā saglabāt stāstu privātu?",
+				shareQ1Opt2: "Kā es varu saglabāt stāstu privātu vai to publiski koplietot?",
 				shareA1: "Izmantojiet %SHAREIMG% on <a href='%LINK1%' target='_blank'>lietotnes vienības lapu</a>. Ja vēlaties atcelt web kartes koplietošanu, izmantojiet<a href='%LINK2%' target='_blank'>web kartes vienības lapu</a>.",
 				shareA1bis: "Ja vēlaties pārtraukt koplietot elementu pakalpojumu, izmantojiet <a href='%LINK1%' target='_blank'>elementu pakalpojuma vienības lapu</a>.",
-				shareQ2: "ķ_How do I edit the story later__________ū?",
+				shareQ2: "Kā es varu vēlāk rediģēt stāstu?",
 				shareQ2bis: "Kā es varu nokļūt atpakaļ pie autorēšanas interfeisa?",
-				shareA2div1: "ķ_Save and reuse the following link %LINK1% or use <a href='%LINK2%' target='_blank'>the story item page</a>_________________________________ū.",
-				shareA2div2: "ķ_As the owner of the story, when you are signed in on ArcGIS.com, the story includes a button to open the interactive builder_______________________________________ū:",
+				shareA2div1: "Saglabājiet un atkārtoti izmantojiet saiti %LINK1% vai izmantojiet <a href=\'%LINK2%\' target=\'_blank\'>stāsta vienības lapu</a>.",
+				shareA2div2: "Jūs esat stāsta īpašnieks. Kad būsiet pierakstījies ArcGIS.com, stāstā būs pieejama poga, lai atvērtu interaktīvo veidotāju:",
 				shareQ3: "Kur tiek glabāti dati?",
-				shareA3: "ķ_The story configuration is stored in this web application item</a>_____________________ū.",
+				shareA3: "Stāsta konfigurācija tiek glabāta šajā tīmekļa lietotnes vienībā</a>.",
 				shareWarning: "%WITH% koplietošana ir atspējota, jo jūs neesat <a href='%LINK%' target='_blank'>web kartes</a> īpašnieks.",
  				shareWarningWith1: "publiski",
  				shareWarningWith2: "publiski un organizācijā"

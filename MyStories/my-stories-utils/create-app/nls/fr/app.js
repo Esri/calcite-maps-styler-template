@@ -1,51 +1,51 @@
 ﻿define(
 	 ({
 		dialog: {
-			back: "æ_Back__Â",
-			close: "æ_Close___Â",
-			createNewStory: "æ_Create a New Story______Â",
-			pickApp: "æ_Pick an App____Â",
-			askPros: "æ_Ask the Pros_____Â"
+			back: "Retour",
+			close: "Fermer",
+			createNewStory: "Créer un récit",
+			pickApp: "Choisir une application",
+			askPros: "Demander aux professionnels"
 		},
 		incompatibleNotice: {
-			title: "æ_Create Story Not Available_________Â",
-			subtitle: "æ_Sorry, this is not supported in a small display. Please open in a larger display or device____________________________Â.",
-			close: "æ_Close___Â"
+			title: "La fonctionnalité Créer un récit n\'est pas disponible",
+			subtitle: "Cette fonctionnalité n\'est pas prise en charge à une petite échelle d\'affichage. Utilisez une échelle d\'affichage supérieure ou un périphérique de plus grande taille.",
+			close: "Fermer"
 		},		
 		answerText: {
-			seriesOfPlaces: "æ_A set of places______Â",
-			mapsNarrative: "æ_A narrative with maps_______Â",
-			compareDatasets: "æ_An interactive comparison of two datasets_____________Â",
-			other: "æ_A single map_____Â",
-			yes: "æ_Yes__Â",
-			no: "æ_No__Â",
-			click: "æ_Click___Â",
-			scroll: "æ_Scroll___Â"
+			seriesOfPlaces: "Un ensemble de sites",
+			mapsNarrative: "Une narration avec des cartes",
+			compareDatasets: "Une comparaison interactive de deux jeux de données",
+			other: "Une carte unique",
+			yes: "Oui",
+			no: "Non",
+			click: "Cliquez sur",
+			scroll: "Défilement"
 		},
 		questionText: {
-			bestDescribesStory: "æ_What best describes your story__________Â?",
-			showPhotos: "æ_Do you want to show photos for each location_______________Â?",
-			clickOrScroll: "æ_Do you want your audience to click through tabs or scroll__________________Â?"
+			bestDescribesStory: "Qu\'est-ce qui décrit le mieux votre récit ?",
+			showPhotos: "Voulez-vous afficher des photos de chaque emplacement ?",
+			clickOrScroll: "Voulez-vous que votre public utilise les onglets ou le défilement ?"
 		},
 		finalApp: {
-			weRecommend: "æ_We Recommend: {{STORY_TYPE}}_________Â",
-			letsBuild: "æ_Let's build_____Â!",
-			seeExample: "æ_See example____Â"
+			weRecommend: "Nous recommandons : {{STORY_TYPE}}",
+			letsBuild: "Passons à la conception !",
+			seeExample: "Voir un exemple"
 		},
 		reasons: {
-			mapTour: "æ_This app presents a sequential, place-based narrative in the form of a series of geotagged photos and captions linked to an interactive map. Itâ€™s ideal for walking tours or for a series of locations youâ€™d like users to follow in sequence__________________________________________________________________________Â.",
-			mapJournal: "æ_This app lets you create a compelling map-based narrative presented as a set of journal entries. It's ideal for creating multimedia stories that combine text, maps, images, and video, especially when you have lots of text or a rich array of content____________________________________________________________________________Â.",
-			mapSeries: "æ_This app lets you present a series of maps via tabs, numbered bullets, or our expandable 'side accordion' control. You can also include images, video and web content in your series to tell your story_____________________________________________________________Â.",
-			swipeSpyglass: "æ_This app enables users to compare two maps or two layers in the same map. It is particularly effective for showing before-and-after imagery or other changes over time___________________________________________________Â.",
-			basic: "æ_This app lets you present a map via a very simple minimalist user interface. Apart from the title bar and an optional legend, the map fills the screen. Use this app to let your map speak for itself____________________________________________________________Â."
+			mapTour: "Cette application présente une narration séquentielle sous la forme d\'une série de photos contenant des balises géographiques et des légendes associées à une carte interactive. Elle est idéale pour les visites guidées ou pour proposer une série d\'emplacements géographiques que les utilisateurs doivent visiter dans l\'ordre.",
+			mapJournal: "Cette application permet de créer une narration cartographique captivante présentée sous la forme d\'un ensemble d\'entrées de journal. Elle est idéale pour créer des récits multimédias surprenants qui intègrent du texte, des cartes, des images et des vidéos, tout particulièrement lorsque vous avez beaucoup de texte ou un contenu détaillé.",
+			mapSeries: "Cette application permet de présenter une série de cartes via des onglets, des puces numérotées ou notre contrôle en forme accordéon latéral développable. Vous pouvez également intégrer des images, des vidéos et du contenu Web à votre série pour élaborer votre récit.",
+			swipeSpyglass: "Cette application permet aux utilisateurs de comparer deux cartes ou deux couches sur la même carte. Elle est particulièrement efficace pour illustrer des images avant et après ou d\'autres évolutions dans le temps.",
+			basic: "Cette application vous permet de présenter une carte via une interface utilisateur minimaliste très simple. A l\'exception de la barre de titre et d\'une légende facultative, la carte remplit l\'écran. Utilisez cette application pour que votre carte s\'exprime par elle-même."
 		},
 		shortReasons: {
-			mapTour: "æ_Guide people through a sequence of places_____________Â",
-			mapJournal: "æ_Perfect for an in-depth narrative___________Â",
-			mapSeries: "æ_Present a series of related maps___________Â",
-			swipe: "æ_Compare two maps or map layers with a slider______________Â",
-			spyglass: "æ_Compare two maps or map layers with a spyglass_______________Â",
-			basic: "æ_Think minimalistic, great for one map____________Â"
+			mapTour: "Guider les gens à travers une séquence de sites",
+			mapJournal: "Idéal pour une narration détaillée",
+			mapSeries: "Présenter une série de cartes associées",
+			swipe: "Comparer deux cartes ou couches avec un curseur",
+			spyglass: "Comparer deux cartes ou couches avec une longue-vue",
+			basic: "Optimisez vos cartes en restant minimaliste"
 		},
 	})
 );

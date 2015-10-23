@@ -57,7 +57,7 @@
 			},
 			organizePopup: {
 				title: "Organizē",
-				lblHeader: "ķ_Drag and drop sections to organize your story_______________ū.",
+				lblHeader: "Velciet un nometiet sadaļas, lai sakārtotu savu stāstu.",
 				lblColTitle: "Virsraksts",
 				lblColPubDate: "Publicēšanas datums",
 				lblColStatus: "Statuss",

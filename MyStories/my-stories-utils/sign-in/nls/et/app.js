@@ -1,22 +1,22 @@
 ﻿define(
 	 ({
 		signInDialog: {
-			title: "Š_Sign in to Story Maps_______ä",
-			subtitle: "Š_Sign in with your existing ArcGIS Online account to_________________ä:",
-			reasonOne: "Š_Create compelling story maps to tell your stories________________ä.",
-			reasonTwo: "Š_Use your maps and data from ArcGIS Online in your story maps___________________ä.",
-			reasonThree: "Š_Manage your story maps and check the status of their content___________________ä.",
-			noAccountYet: "Š_Don't have an ArcGIS Online account? Sign up for a________________ä:",
-			publicAccount: "Š_Free non-commercial public account___________ä",
-			subscriptionAccount: "Š_Free trial ArcGIS subscription__________ä",
-			signInExpired: "Š_Your sign-in expired. Sign in again to pick up where you left off_____________________ä.",
-			somethingNotLoading: "Š_Something isn't loading correctly. Try refreshing the page___________________ä."
+			title: "Logige sisse portaali Story Maps",
+			subtitle: "Logige sisse oma olemasoleva ArcGIS Online kontoga.",
+			reasonOne: "Saate luua oma lugude rääkimiseks haaravaid kaardilugusid.",
+			reasonTwo: "Saate kasutada oma kaardilugudes enda kaarte ja ArcGIS Online andmeid.",
+			reasonThree: "Saate hallata oma kaardilugusid ja vaadata nende sisu olekut.",
+			noAccountYet: "Kas Teil pole veel ArcGIS Online kontot? Registreeruge kohe.",
+			publicAccount: "Tasuta mitteärilistel eesmärkidel põhinev avalik konto",
+			subscriptionAccount: "ArcGIS-i tellimuse tasuta prooviversioon",
+			signInExpired: "Teie sisselogimisseanss aegus. Logige uuesti sisse, et jätkata poolelijäänud kohast.",
+			somethingNotLoading: "Millegi laadimine ebaõnnestus. Proovige lehte värskendada."
 		},
 		unavailableDialog: {
-			title: "Š_Sign-In Not Available_______ä",
-			explanation: "Š_Sorry, this is not supported in a small display. Please open in a larger display or device____________________________ä.",
-			close: "Š_Close___ä",
-			returnButton: "Š_Return___ä" 
+			title: "Sisselogimine pole saadaval",
+			explanation: "Kahjuks ei toetata seda väikesel ekraanil. Palun avage suuremal ekraanil või suuremas seadmes.",
+			close: "Sulge",
+			returnButton: "Tagasi" 
 		}
 	})
 );

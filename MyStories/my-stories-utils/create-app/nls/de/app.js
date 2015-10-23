@@ -1,51 +1,51 @@
 ﻿define(
 	 ({
 		dialog: {
-			back: "ä_Back__Ü",
-			close: "ä_Close___Ü",
-			createNewStory: "ä_Create a New Story______Ü",
-			pickApp: "ä_Pick an App____Ü",
-			askPros: "ä_Ask the Pros_____Ü"
+			back: "Zurück",
+			close: "Schließen",
+			createNewStory: "Neue Story erstellen",
+			pickApp: "Wählen Sie eine App",
+			askPros: "Fragen Sie einen Experten"
 		},
 		incompatibleNotice: {
-			title: "ä_Create Story Not Available_________Ü",
-			subtitle: "ä_Sorry, this is not supported in a small display. Please open in a larger display or device____________________________Ü.",
-			close: "ä_Close___Ü"
+			title: "Story-Erstellung nicht möglich",
+			subtitle: "Leider wird dies auf kleinen Bildschirmen nicht unterstützt. Bitte öffnen Sie die Anwendung mit einem größeren Gerät oder Display.",
+			close: "Schließen"
 		},		
 		answerText: {
-			seriesOfPlaces: "ä_A set of places______Ü",
-			mapsNarrative: "ä_A narrative with maps_______Ü",
-			compareDatasets: "ä_An interactive comparison of two datasets_____________Ü",
-			other: "ä_A single map_____Ü",
-			yes: "ä_Yes__Ü",
-			no: "ä_No__Ü",
-			click: "ä_Click___Ü",
-			scroll: "ä_Scroll___Ü"
+			seriesOfPlaces: "Verschiedene Orte",
+			mapsNarrative: "Eine Zusammenfassung mit Karten",
+			compareDatasets: "Ein interaktiver Vergleich zweier Datasets",
+			other: "Eine einzelne Karte",
+			yes: "Ja",
+			no: "Nein",
+			click: "Klicken Sie auf",
+			scroll: "Bildlauf durchführen"
 		},
 		questionText: {
-			bestDescribesStory: "ä_What best describes your story__________Ü?",
-			showPhotos: "ä_Do you want to show photos for each location_______________Ü?",
-			clickOrScroll: "ä_Do you want your audience to click through tabs or scroll__________________Ü?"
+			bestDescribesStory: "Wie lässt sich Ihre Story am besten beschreiben?",
+			showPhotos: "Möchten Sie Fotos für jeden Ort anzeigen?",
+			clickOrScroll: "Soll Ihre Zielgruppe durch Registerkarten klicken oder scrollen?"
 		},
 		finalApp: {
-			weRecommend: "ä_We Recommend: {{STORY_TYPE}}_________Ü",
-			letsBuild: "ä_Let's build_____Ü!",
-			seeExample: "ä_See example____Ü"
+			weRecommend: "Unsere Empfehlung: {{STORY_TYPE}}",
+			letsBuild: "Legen Sie los!",
+			seeExample: "Siehe Beispiel"
 		},
 		reasons: {
-			mapTour: "ä_This app presents a sequential, place-based narrative in the form of a series of geotagged photos and captions linked to an interactive map. Itâ€™s ideal for walking tours or for a series of locations youâ€™d like users to follow in sequence__________________________________________________________________________Ü.",
-			mapJournal: "ä_This app lets you create a compelling map-based narrative presented as a set of journal entries. It's ideal for creating multimedia stories that combine text, maps, images, and video, especially when you have lots of text or a rich array of content____________________________________________________________________________Ü.",
-			mapSeries: "ä_This app lets you present a series of maps via tabs, numbered bullets, or our expandable 'side accordion' control. You can also include images, video and web content in your series to tell your story_____________________________________________________________Ü.",
-			swipeSpyglass: "ä_This app enables users to compare two maps or two layers in the same map. It is particularly effective for showing before-and-after imagery or other changes over time___________________________________________________Ü.",
-			basic: "ä_This app lets you present a map via a very simple minimalist user interface. Apart from the title bar and an optional legend, the map fills the screen. Use this app to let your map speak for itself____________________________________________________________Ü."
+			mapTour: "Diese App bietet eine sequenzielle, standortbasierte Zusammenfassung als eine Reihe von Fotos mit Geo-Tags und Überschriften, die mit einer interaktiven Karte verknüpft sind. Sie eignet sich ideal für die Darstellung von Touren oder einer Reihe von Standorten, die Benutzern nacheinander präsentiert werden sollen.",
+			mapJournal: "Mit dieser App können Sie eine aussagekräftige kartenbasierte Zusammenfassung erstellen, die als eine Reihe von Journal-Einträgen dargestellt wird. Sie eignet sich ideal zur Erstellung von Multimedia-Informationen, in denen Texte, Karten, Bilder und Videos miteinander kombiniert werden, und bietet sich insbesondere dann an, wenn umfangreiche Texte und eine Fülle von Inhalten vermittelt werden sollen.",
+			mapSeries: "Mit dieser App können Sie eine Kartenserie über Registerkarten, Aufzählungszeichen oder unser erweiterbares Side Accordion-Steuerelement darstellen. Sie können auch Bilder, Video- oder Webinhalte in die Serie einfügen, um Ihre Informationen zu veranschaulichen.",
+			swipeSpyglass: "Mit dieser App können Benutzer zwei Karten oder zwei Layer in derselben Karte vergleichen. Dies ist besonders effektiv für die Anzeige von Vorher-Nachher-Bilddaten oder anderen Änderungen im Zeitverlauf.",
+			basic: "Mit dieser App können Sie eine Karte mithilfe einer ganz einfachen, abgespeckten Benutzeroberfläche darstellen. Abgesehen von der Titelleiste und einer optionalen Legende wird der Bildschirm von der Karte ausgefüllt. Mit dieser App können Sie Ihre Karte für sich sprechen lassen."
 		},
 		shortReasons: {
-			mapTour: "ä_Guide people through a sequence of places_____________Ü",
-			mapJournal: "ä_Perfect for an in-depth narrative___________Ü",
-			mapSeries: "ä_Present a series of related maps___________Ü",
-			swipe: "ä_Compare two maps or map layers with a slider______________Ü",
-			spyglass: "ä_Compare two maps or map layers with a spyglass_______________Ü",
-			basic: "ä_Think minimalistic, great for one map____________Ü"
+			mapTour: "Zeigen Sie Benutzern eine Reihe von Orten",
+			mapJournal: "Perfekt für eine aussagekräftige Zusammenfassung geeignet",
+			mapSeries: "Präsentieren Sie eine Reihe von zugehörigen Karten",
+			swipe: "Vergleichen Sie zwei Karten oder Karten-Layer mit einem Schieberegler",
+			spyglass: "Vergleichen Sie zwei Karten oder Karten-Layer mit einem Fernglas",
+			basic: "Denken Sie minimalistisch – dies ist optimal für eine Karte"
 		},
 	})
 );

@@ -57,7 +57,7 @@
 			},
 			organizePopup: {
 				title: "整理",
-				lblHeader: "須_Drag and drop sections to organize your story_______________鷗.",
+				lblHeader: "セクションをドラッグ アンド ドロップして、ストーリーを整理します。",
 				lblColTitle: "タイトル",
 				lblColPubDate: "公開日",
 				lblColStatus: "ステータス",

@@ -57,7 +57,7 @@
 			},
 			organizePopup: {
 				title: "Организовать",
-				lblHeader: "Ж_Drag and drop sections to organize your story_______________Я.",
+				lblHeader: "Для организации секций в истории вы можете просто перетаскивать разделы.",
 				lblColTitle: "Название",
 				lblColPubDate: "Дата публикации",
 				lblColStatus: "Статус",

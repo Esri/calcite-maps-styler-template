@@ -36,7 +36,7 @@ define(
          "filter": "フィルタ",
          "close": "閉じる",
          "reverse": "反転",
-         "mode": "須_Switch mode Drive/Walk________鷗"
+         "mode": "運転/徒歩モードの切り替え"
       }
    })
 );

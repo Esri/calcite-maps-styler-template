@@ -20,9 +20,9 @@ define(
             "error": "Не удалось создать карту"
         },
         "nav":{
-            "next": "Ж_Next__Я",
-            "previous": "Ж_Previous___Я",
-            "close": "Ж_Close___Я"
+            "next": "Следующий",
+            "previous": "Предыдущий",
+            "close": "Закрыть"
         },
         "tools":{
             "search":{

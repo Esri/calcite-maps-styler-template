@@ -64,7 +64,7 @@
 				url: "URL ของวิดีโอจาก Vimeo"
 			},
 			videoSelectorOther: {
-				explain1: "ก้_The story cannot play raw videos (e.g., avi, mpeg) but it can play hosted video files that have built-in players (e.g., YouTube or Vimeo)__________________________________________ษฺ.",
+				explain1: "เรื่องราวไม่สามารถเล่นวิดีโอต้นฉบับ (เช่น ไฟล์ avi , mpeg) แต่สามารถเล่นไฟล์วิดีโอที่มีตัวเครื่องเล่น (ยูทูป หรือ Vimeo )",
 				explain2: "วิดีโอออนไลน์บริการโฮสติ้งส่วนมากมีคุณสมบัติที่คุณจะต้องไปหาตัวเลือกที่จะฝังวิดีโอคัดลอกโค้ดที่กำหนดและใช้ %WEBPAGE%",
 				explain3: "หรือถ้าคุณต้องการโฮสต์วิดีโอตัวคุณเองคุณสามารถสร้างเพจ HTML ที่ใช้เครื่องเล่นวิดีโอ เช่น %EXAMPLE% เจ้าของหน้านั้นและยังใช้%WEBPAGE%",
 				webpage: "ฟีเจอร์ของหน้าเว็บ"
@@ -102,7 +102,7 @@
 				lblPosition3Explain2: "(ความกว้างจะต้องพอดีกับแผงข้อมูล)",
 				lblPosition4Explain: "(อาจจะเบี้ยว)",
 				unloadLbl: "ยกเลิกการโหลดเมื่อผู้อ่านเลือกไปส่วนที่แตกต่าง",
-				unloadHelp: "ก้_If the Web Page has audio or video media, keep this option checked to stop that content from playing when the reader navigates away. Uncheck it for example to keep a soundtrack playing as the reader advances through the story.<br />If the Web Page is an application, uncheck this option so that the story does not reload if the reader returns to it__________________________________________________________________________________________________________ษฺ."
+				unloadHelp: "หากหน้าเวปมีเสียง หรือวิดีโอ ให้เก็บตัวเลือกนี้ไว้ เลือกเพื่อที่จะหยุดเนื้อหาจากการเล่น เมื่อผู้ใช้งานไม่ได้เคลื่อนไหวยกเลิกการเลือกตัวอย่างเช่น ต้องการที่จะเก็บซาวแทร๊กของการเล่นผ่านเรื่องราว<br />ถ้าเวปเพจมีแอพลิเคชัน ยกเลิกการเลือกนี้ ดังนั้น เรื่องราวจะไม่ถูกเรียกซ้ำ"
 			},
 			editorActionGeocode: {
 				lblTitle: "ตำแหน่งของที่อยู่หรือสถานที่",

@@ -5,33 +5,33 @@
 				close: "关闭"
 			},
 			loading: {
-				step1: "试_Loading story_____验",
+				step1: "正在加载故事",
 				step2: "加载数据",
 				step3: "正在初始化",
 				loadBuilder: "切换到构建器",
 				long: "Map Journal 正在初始化",
 				long2: "谢谢等候",
-				failButton: "试_Reload the story______验"
+				failButton: "重新加载故事"
 			},
 			signin: {
 				title: "需要进行身份验证",
-				explainViewer: "试_Please sign in with an account on %PORTAL_LINK% to access the story_____________________验.",
-				explainBuilder: "试_Please sign in with an account on %PORTAL_LINK% to configure the story______________________验."
+				explainViewer: "请登录在 %PORTAL_LINK% 上的账户，以便访问此故事。",
+				explainBuilder: "请登录在 %PORTAL_LINK% 上的账户，以便配置此故事。"
 			},
 			errors: {
 				boxTitle: "发生错误",
 				invalidConfig: "配置无效",
 				invalidConfigNoApp: "未在 index.html 中指定 Web 制图应用程序标识符。",
 				unspecifiedConfigOwner: "尚未配置授权的所有者。",
-				invalidConfigOwner: "试_Story owner is not authorized__________验.",
+				invalidConfigOwner: "未授权故事所有者。",
 				createMap: "无法创建地图",
 				invalidApp: "%TPL_NAME% 不存在或不可访问。",
 				appLoadingFail: "发生了一些错误， %TPL_NAME% 未正确加载。",
-				notConfiguredDesktop: "试_The story is not configured yet___________验.",
-				notConfiguredMobile: "试_The %TPL_NAME% builder is not supported at this display size___________________验.",
-				notAuthorized: "试_You are not authorized to access this story______________验",
+				notConfiguredDesktop: "尚未配置此故事。",
+				notConfiguredMobile: "此显示器大小不支持 %TPL_NAME% 构建器。",
+				notAuthorized: "您无权访问此故事",
 				noBuilderIE: "低于版本 %VERSION% 的 Internet Explorer 不支持构建器。%UPGRADE%",
-				noViewerIE: "试_This story is not supported in Internet Explorer before version %VERSION%. %UPGRADE%__________________________验",
+				noViewerIE: "低于版本 %VERSION%. %UPGRADE% 的 Internet Explorer 不支持此故事。",
 				upgradeBrowser: "<a href='http://browsehappy.com/' target='_blank'>请更新您的浏览器</a>。",
 				mapLoadingFail: "发生了一些错误，地图未正确加载。",
 				signOut: "登出"
@@ -61,9 +61,9 @@
 				templateTitle: "设置模板标题",
 				templateSubtitle: "设置模板子标题",
 				share: "共享",
-				checking: "试_Checking your story content_________验",
-				fix: "试_Fix issues in your story________验",
-				noerrors: "试_No issues detected______验"
+				checking: "正在检查您的故事内容",
+				fix: "修复在您故事中的问题",
+				noerrors: "未检测到问题"
 			},
 			overviewFromCommon: {
 				title: "总览图"

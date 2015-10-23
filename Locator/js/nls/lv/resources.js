@@ -36,7 +36,7 @@ define(
          "filter": "Filtrs",
          "close": "Aizvērt",
          "reverse": "Pretēji",
-         "mode": "ķ_Switch mode Drive/Walk________ū"
+         "mode": "Pārslēgt braukšanas/iešanas režīmu"
       }
    })
 );

@@ -2,7 +2,7 @@
 	 ({
 		viewer: {
 			loading: {
-				step1: "Å_LOADING STORY_____ö",
+				step1: "LÄSER IN BERÄTTELSE",
 				step2: "LÄSER IN DATA",
 				step3: "INITIERAR",
 				fail: "Det gick inte att hämta svep",
@@ -17,19 +17,19 @@
 				invalidConfig: "Allvarligt fel: ogiltig konfiguration",
 				invalidConfigNoWebmap: "Allvarligt fel: ogiltig konfiguration (ingen webbkarta angiven)",
 				createMap: "Det gick inte att skapa kartan",
-				invalidApp: "Å_Fatal error: The story cannot be loaded_____________ö",
+				invalidApp: "Allvarligt fel: berättelsen kunde inte läsas in",
 				initMobile: "Välkommen till Svep-webbapplikationen. Applikationen är inte konfigurerad. Det interaktiva byggverktyget fungerar inte på mobila enheter.",
-				initMobile2: "Å_The Swipe builder is not supported at this display size__________________ö.",
+				initMobile2: "Svepbyggverktyget går inte att använda med den här skärmstorleken.",
 				noBuilderIE8: "Det interaktiva Svep-byggverktyget fungerar inte med tidigare versioner av Internet Explorer än version 9.",
 				noLayerView: "Välkommen till Svep-webbapplikationen.<br />Applikationen är ännu inte konfigurerad.",
-				appSave: "Å_Error saving the web story_________ö",
+				appSave: "Det uppstod ett fel när webberättelsen skulle sparas",
 				mapSave: "Det uppstod ett fel när webbkartan skulle sparas",
-				notAuthorized: "Å_You are not authorized to access this story______________ö",
+				notAuthorized: "Du är inte behörig att öppna den här berättelsen",
 				conflictingProjectionsTitle: "Projektionerna är i konflikt",
 				conflictingProjections: "Svep går inte att använda med två webbkartor som har olika projektioner. Öppna inställningarna och använd en webbkarta med samma projektion som den första webbkartan.",
 				cpButton: "Stäng",
-				unspecifiedConfigOwner: "Å_Authorized owner hasn't been configured_____________ö.",
-				invalidConfigOwner: "Å_Story owner is not authorized__________ö."
+				unspecifiedConfigOwner: "Ingen auktoriserad ägare har konfigurerats.",
+				invalidConfigOwner: "Berättelsens ägare är inte auktoriserad."
 			},
 			mobileView: {
 				hideIntro: "DÖLJ INTRODUKTION",
@@ -47,7 +47,7 @@
 		},
 		builder: {
 			builder: {
-				panelHeader: "Å_STORY CONFIGURATION_______ö",
+				panelHeader: "BERÄTTELSEKONFIGURATION",
 				buttonSave: "SPARA",
 				buttonHelp: "Hjälp",
 				buttonShare: "Dela",
@@ -67,13 +67,13 @@
 				popoverSaveWhenDone: "Glöm inte att spara när du är klar",
 				closeWithPendingChange: "Vill du bekräfta åtgärden? Du kommer att förlora dina ändringar.",
 				gotIt: "OK",
-				savingApplication: "Å_Saving story_____ö",
-				saveSuccess: "Å_Story saved successfully________ö",
+				savingApplication: "Sparar berättelsen",
+				saveSuccess: "Berättelsen har sparats",
 				saveError: "Det gick inte att spara, försök igen",
 				saveError2: "Det gick inte att spara på grund av en ogiltig html-tagg i ett namn eller en beskrivning",
 				saveError3: "Titeln får inte vara tom",
 				signIn: "Logga in med ett konto på",
-				signInTwo: "Å_to save the story______ö."
+				signInTwo: "och spara berättelsen."
 			},
 			header:{
 				editMe: "Redigera mig!",
@@ -81,7 +81,7 @@
 				templateSubtitle: "Ange underrubrik för mallen"
 			},
 			settings: {
-				settingsHeader: "Å_Story settings_____ö",
+				settingsHeader: "Inställningar för berättelsen",
 				modalCancel: "Avbryt",
 				modalApply: "Använd"
 			},
@@ -141,7 +141,7 @@
 				settingsLayoutSpyGlass: "Kikare",
 				settingsLayoutSelected: "Markerad layout",
 				settingsLayoutSelect: "Markera denna layout",
-				settingsSaveConfirm: "Å_Some of your changes require that you save and reload the story____________________ö"
+				settingsSaveConfirm: "En del av ändringarna kräver att du sparar och läser in berättelsen igen"
 			},
 			settingsDataModel: {
 				settingsTabDataModel: "Sveptyp",
@@ -169,7 +169,7 @@
 			},
 			settingsLegend: {
 				settingsTabLegend: "Applikationslayout",
-				settingsLegendExplain: "Å_Select the layout settings_________ö.",
+				settingsLegendExplain: "Välj layoutinställningarna.",
 				settingsLegendEnable: "Aktivera teckenförklaring",
 				settingsDescriptionEnable: "Aktivera beskrivning",
 				settingsBookmarksEnable: "Aktivera svepserie",
@@ -218,39 +218,39 @@
 				}
 			},
 			share: {
-				firstSaveTitle: "Å_Story successfully saved________ö",
-				firstSaveHeader: "Å_Your story is now saved in ArcGIS Online. Please read the following answers to frequent questions______________________________ö.",
+				firstSaveTitle: "Berättelsen har sparats",
+				firstSaveHeader: "Din berättelse har sparats i ArcGIS Online. Läs följande svar på vanliga frågor.",
 				firstSaveA1: "Om du inte är bekant med ArcGIS Online eller vill ha en genväg till skapargränssnittet kan du spara följande länk: %LINK1%",
-				firstSaveA1bis: "Å_The story can also be found in your <a href='%LINK2%' target='_blank'>ArcGIS Online content folder</a>________________________________ö.",
-				firstSaveQ2: "Å_Is my story shared_______ö?",
-				firstSaveA2: "Å_Currently your story is not shared. To share it, use the SHARE button______________________ö.",
-				shareTitle: "Å_Share your story______ö",
-				sharePrivateHeader: "Å_Your story is not shared, would you like to share it_________________ö?",
+				firstSaveA1bis: "Berättelsen finns också i din <a href=\'%LINK2%\' target=\'_blank\'>innehållsmapp i ArcGIS Online</a>.",
+				firstSaveQ2: "Delas min berättelse?",
+				firstSaveA2: "För tillfället delas inte din berättelse. Du kan dela den med knappen DELA.",
+				shareTitle: "Dela din berättelse",
+				sharePrivateHeader: "Din berättelse delas inte. Vill du dela den?",
 				sharePrivateBtn1: "Dela offentligt",
 				sharePrivateBtn2: "Dela med min organisation",
 				sharePrivateProgress: "Delning pågår ...",
 				sharePrivateErr: "Det gick inte att dela. Försök igen eller",
 				sharePrivateOk: "Delningen har uppdaterats, laddar ...",
-				shareStatus1: "Å_Story is not saved______ö",
-				shareStatus2: "Å_Story is shared publicly________ö",
-				shareStatus3: "Å_Story is shared within the organization_____________ö",
-				shareStatus4: "Å_Story is not shared_______ö",
+				shareStatus1: "Berättelsen har inte sparats",
+				shareStatus2: "Berättelsen delas offentligt",
+				shareStatus3: "Berättelsen delas inom organisationen",
+				shareStatus4: "Berättelsen delas inte",
 				sharePreviewAsUser: "Förhandsgranska",
-				shareHeader1: "Å_Your story is <strong>publicly accessible</strong>________________ö.",
-				shareHeader2: "Å_Your story is accessible by your organization members (login is required)_______________________ö.",
-				shareLinkHeader: "Å_Share the story with your audience___________ö",
+				shareHeader1: "Din berättelse är <strong>offentligt tillgänglig</strong>.",
+				shareHeader2: "Berättelsen är tillgänglig för organisationens medlemmar (inloggning krävs).",
+				shareLinkHeader: "Dela berättelsen med din publik",
 				shareLinkOpen: "ÖPPNA",
 				learnMore: "Läs mer",
-				shareQ1Opt1: "Å_How do I keep the story private___________ö?",
-				shareQ1Opt2: "Å_How do I keep the story private or share it publicly_________________ö?",
+				shareQ1Opt1: "Hur kan berättelsen förbli privat?",
+				shareQ1Opt2: "Hur kan berättelsen förbli privat och hur delar jag den offentligt?",
 				shareA1: "Använd %SHAREIMG% på <a href='%LINK1%' target='_blank'>applikationens objektsida</a>. Om du även vill sluta dela webbkartan använder du <a href='%LINK2%' target='_blank'>webbkartans objektsida</a>.",
 				shareA1bis: "Du kan också inaktivera delning av geoobjekttjänsten på <a href='%LINK1%' target='_blank'>geoobjekttjänstens objektsida</a>.",
-				shareQ2: "Å_How do I edit the story later__________ö?",
+				shareQ2: "Hur redigerar jag berättelsen senare?",
 				shareQ2bis: "Hur kommer jag tillbaka till redigeringsgränssnittet?",
-				shareA2div1: "Å_Save and reuse the following link %LINK1% or use <a href='%LINK2%' target='_blank'>the story item page</a>_________________________________ö.",
-				shareA2div2: "Å_As the owner of the story, when you are signed in on ArcGIS.com, the story includes a button to open the interactive builder_______________________________________ö:",
+				shareA2div1: "Spara länken %LINK1% och återanvänd den, eller använd <a href=\'%LINK2%\' target=\'_blank\'>berättelsens objektsida</a>.",
+				shareA2div2: "Som ägare till berättelsen kan du se en knapp i berättelsen som öppnar det interaktiva byggverktyget när du är inloggad på ArcGIS.com:",
 				shareQ3: "Var lagras data?",
-				shareA3: "Å_The story configuration is stored in this web application item</a>_____________________ö.",
+				shareA3: "Berättelsens konfiguration sparas i det här webbapplikationsobjektet</a>.",
 				shareWarning: "Delning %WITH% har inaktiverats efter som du inte är ägare till <a href='%LINK%' target='_blank'>webbkartan</a>.",
  				shareWarningWith1: "offentligt",
  				shareWarningWith2: "offentligt och med organisationen"

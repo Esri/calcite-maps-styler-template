@@ -36,7 +36,7 @@ define(
          "filter": "Filter",
          "close": "Sluiten",
          "reverse": "Omkeren",
-         "mode": "Ĳ_Switch mode Drive/Walk________ä"
+         "mode": "Stand rijden/wandelen wijzigen"
       }
    })
 );

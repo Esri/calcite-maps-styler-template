@@ -20,9 +20,9 @@ define(
             "error": "マップを作成できません"
         },
         "nav":{
-            "next": "須_Next__鷗",
-            "previous": "須_Previous___鷗",
-            "close": "須_Close___鷗"
+            "next": "次へ",
+            "previous": "前へ",
+            "close": "閉じる"
         },
         "tools":{
             "search":{

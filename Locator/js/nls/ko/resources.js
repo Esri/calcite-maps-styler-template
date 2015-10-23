@@ -36,7 +36,7 @@ define(
          "filter": "필터",
          "close": "닫기",
          "reverse": "반전",
-         "mode": "한_Switch mode Drive/Walk________빠"
+         "mode": "운전/도보 모드 전환"
       }
    })
 );

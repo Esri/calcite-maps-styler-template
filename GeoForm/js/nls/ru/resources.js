@@ -262,7 +262,7 @@
       mapTabTooltip: "Карта",
       btnDescendingText: "Desc",
       btnAscendingText: "Asc",
-      geometryUnavailableErrorMessage: "Ж_Error finding the geometry of the feature_____________Я",
+      geometryUnavailableErrorMessage: "Ошибка поиска геометрии объекта",
       infoPopupOffErrorMessage: "Нет информации для отображения.",
       btnLoadMoreText: "Загрузить больше",
       unavailableTitleText: "Без заголовка",

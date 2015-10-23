@@ -27,7 +27,7 @@ define(
             "basemap":{
                     "label": "Mapa Base",
                     "title": "Selecionar um Mapa Base",
-                    "close": "ã_Close___Ç"
+                    "close": "Fechar"
             },
             "legend":{
                 "title": "Legenda"
@@ -43,7 +43,7 @@ define(
 
         },
         "map": {
-            "toggle": "ã_Toggle side panel______Ç",
+            "toggle": "Alternar painel lateral",
             "error": "Não foi possível criar o mapa"
         }
     })

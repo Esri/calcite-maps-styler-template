@@ -1,22 +1,22 @@
 ﻿define(
 	 ({
 		signInDialog: {
-			title: "ã_Sign in to Story Maps_______Ç",
-			subtitle: "ã_Sign in with your existing ArcGIS Online account to_________________Ç:",
-			reasonOne: "ã_Create compelling story maps to tell your stories________________Ç.",
-			reasonTwo: "ã_Use your maps and data from ArcGIS Online in your story maps___________________Ç.",
-			reasonThree: "ã_Manage your story maps and check the status of their content___________________Ç.",
-			noAccountYet: "ã_Don't have an ArcGIS Online account? Sign up for a________________Ç:",
-			publicAccount: "ã_Free non-commercial public account___________Ç",
-			subscriptionAccount: "ã_Free trial ArcGIS subscription__________Ç",
-			signInExpired: "ã_Your sign-in expired. Sign in again to pick up where you left off_____________________Ç.",
-			somethingNotLoading: "ã_Something isn't loading correctly. Try refreshing the page___________________Ç."
+			title: "Iniciar Sessão no Story Maps",
+			subtitle: "Iniciar sessão com a sua conta ArcGIS Online em:",
+			reasonOne: "Crie story maps envolventes para contar as suas histórias.",
+			reasonTwo: "Utilize os seus mapas e dados do ArcGIS Online nos seus story maps.",
+			reasonThree: "Efetue a gestão dos seus story maps e verifique o estado do respetivo conteúdo.",
+			noAccountYet: "Não possui uma conta do ArcGIS Online? Registe-se para uma:",
+			publicAccount: "Conta pública gratuita, não-comercial",
+			subscriptionAccount: "Subscrição de conta teste ArcGIS",
+			signInExpired: "O seu início de sessão expirou. Volte a iniciar sessão para retomar.",
+			somethingNotLoading: "Algo não está a ser carregado corretamente. Tente atualizar a página."
 		},
 		unavailableDialog: {
-			title: "ã_Sign-In Not Available_______Ç",
-			explanation: "ã_Sorry, this is not supported in a small display. Please open in a larger display or device____________________________Ç.",
-			close: "ã_Close___Ç",
-			returnButton: "ã_Return___Ç" 
+			title: "Início de Sessão Indisponível",
+			explanation: "Lamentamos, não é suportado em ecrã pequeno. Por favor abra num ecrã ou dispositivo maior.",
+			close: "Fechar",
+			returnButton: "Regressar" 
 		}
 	})
 );

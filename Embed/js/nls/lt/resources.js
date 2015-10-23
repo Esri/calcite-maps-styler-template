@@ -27,7 +27,7 @@ define(
             "basemap":{
                     "label": "Pagrindo žemėlapis",
                     "title": "Pasirinkite pagrindo žemėlapį",
-                    "close": "Į_Close___š"
+                    "close": "Užverti"
             },
             "legend":{
                 "title": "Legenda"
@@ -43,7 +43,7 @@ define(
 
         },
         "map": {
-            "toggle": "Į_Toggle side panel______š",
+            "toggle": "Perjungti šoninį skydelį",
             "error": "Žemėlapio sukurti nepavyko"
         }
     })

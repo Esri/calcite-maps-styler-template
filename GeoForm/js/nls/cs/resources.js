@@ -262,7 +262,7 @@
       mapTabTooltip: "Mapa",
       btnDescendingText: "Sestupně",
       btnAscendingText: "Vzestupně",
-      geometryUnavailableErrorMessage: "Ř_Error finding the geometry of the feature_____________ů",
+      geometryUnavailableErrorMessage: "Došlo k chybě při hledání geometrie prvku",
       infoPopupOffErrorMessage: "Žádné informace k zobrazení.",
       btnLoadMoreText: "Načíst další",
       unavailableTitleText: "Bez názvu",

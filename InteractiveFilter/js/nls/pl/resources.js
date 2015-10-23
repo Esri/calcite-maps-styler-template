@@ -10,7 +10,7 @@
       filterOr: "Którekolwiek z podanych wyrażeń musi być prawdziwe.",
       filterAnd: "Wszystkie podane wyrażenia muszą być prawdziwe.",
       filterNo:  "Web map does not contain any interactive filters. View the ${link} help topic for details on how to create a filter in your web map.",
-      filterLink: "ł_http://doc.arcgis.com/en/arcgis-online/use-maps/apply-filters.htm_____________________ą",
+      filterLink: "http://doc.arcgis.com/en/arcgis-online/use-maps/apply-filters.htm",
       errors:{
         message: "Wystąpił problem podczas filtrowania aplikacji"
       }

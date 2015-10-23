@@ -27,7 +27,7 @@ define(
             "basemap":{
                     "label": "Базовая карта",
                     "title": "Выберите базовую карту",
-                    "close": "Ж_Close___Я"
+                    "close": "Закрыть"
             },
             "legend":{
                 "title": "Легенда"
@@ -43,7 +43,7 @@ define(
 
         },
         "map": {
-            "toggle": "Ж_Toggle side panel______Я",
+            "toggle": "Переключить боковую панель",
             "error": "Не удалось создать карту"
         }
     })

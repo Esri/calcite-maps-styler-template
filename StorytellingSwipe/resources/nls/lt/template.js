@@ -2,7 +2,7 @@
 	 ({
 		viewer: {
 			loading: {
-				step1: "Į_LOADING STORY_____š",
+				step1: "ĮKELIAMAS PASAKOJIMAS",
 				step2: "ĮKELIAMI DUOMENYS",
 				step3: "PRADEDAMA",
 				fail: "Atsiprašome keitiklio krovimas nepavyko",
@@ -17,19 +17,19 @@
 				invalidConfig: "Kritinė klaida: Neteisinga konfigūracija",
 				invalidConfigNoWebmap: "Kritinė klaida: Neteisinga konfigūracija (nenurodytas internetinis žemėlapis)",
 				createMap: "Žemėlapio sukurti nepavyko",
-				invalidApp: "Į_Fatal error: The story cannot be loaded_____________š",
+				invalidApp: "Lemtinga klaida: Pasakojimo negalima įkelti",
 				initMobile: "Sveiki atvykę į keitiklio internetinę aplikaciją. Aplikacija nesukonfigūruota. Interaktyvus kūrėjas mobiliuosiuose įrenginiuose nepalaikomas.",
-				initMobile2: "Į_The Swipe builder is not supported at this display size__________________š.",
+				initMobile2: "Keitiklio kūrimo priemonė nepalaiko šio ekrano dydžio.",
 				noBuilderIE8: "Keitiklio interaktyvus kūrėjas nepalaikomas žemesnės nei 9 versijos Internet Explorer.",
 				noLayerView: "Sveiki atvykę į keitiklio internetinę aplikaciją.<br />Aplikacija dar nesukonfigūruota.",
-				appSave: "Į_Error saving the web story_________š",
+				appSave: "Klaida įrašant žiniatinklio pasakojimą",
 				mapSave: "Klaida įrašant internetinį žemėlapį",
-				notAuthorized: "Į_You are not authorized to access this story______________š",
+				notAuthorized: "Neturite teisių pasiekti šį pasakojimą",
 				conflictingProjectionsTitle: "Nesuderinamos projekcijos",
 				conflictingProjections: "Keitiklis nepalaiko dviejų interneto žemėlapių su skirtingomis projekcijomis. Atidarykite nustatymus ir naudokite interneto žemėlapį, naudojantį tą pačią projekciją kaip ir pirmasis interneto žemėlapis.",
 				cpButton: "Užverti",
-				unspecifiedConfigOwner: "Į_Authorized owner hasn't been configured_____________š.",
-				invalidConfigOwner: "Į_Story owner is not authorized__________š."
+				unspecifiedConfigOwner: "Nesukonfigūruotas teisėtas savininkas.",
+				invalidConfigOwner: "Pasakojimo savininkas neautorizuotas."
 			},
 			mobileView: {
 				hideIntro: "SLĖPTI ĮŽANGĄ",
@@ -47,7 +47,7 @@
 		},
 		builder: {
 			builder: {
-				panelHeader: "Į_STORY CONFIGURATION_______š",
+				panelHeader: "PASAKOJIMO KONFIGŪRACIJA",
 				buttonSave: "ĮRAŠYTI",
 				buttonHelp: "Pagalba",
 				buttonShare: "Bendrinti",
@@ -67,13 +67,13 @@
 				popoverSaveWhenDone: "Užbaigus nepamirškite įrašyti",
 				closeWithPendingChange: "Ar tikrai patvirtinate šį veiksmą ? Atlikti pakeitimai bus prarasti.",
 				gotIt: "Gerai",
-				savingApplication: "Į_Saving story_____š",
-				saveSuccess: "Į_Story saved successfully________š",
+				savingApplication: "Įrašoma istorija",
+				saveSuccess: "Pasakojimas įrašytas sėkmingai",
 				saveError: "Įrašyti nepavyko, pabandykite iš naujo",
 				saveError2: "Išsaugoti nepavyko dėl negalimo html tego pavadinime ar apraše",
 				saveError3: "Pavadinimas negali būti tuščias",
 				signIn: "Prisijunkite su paskyra prie",
-				signInTwo: "Į_to save the story______š."
+				signInTwo: "pasakojimui įrašyti."
 			},
 			header:{
 				editMe: "Redaguok !",
@@ -81,7 +81,7 @@
 				templateSubtitle: "Nustatyti šablono paantraštę"
 			},
 			settings: {
-				settingsHeader: "Į_Story settings_____š",
+				settingsHeader: "Pasakojimo parametrai",
 				modalCancel: "Atšaukti",
 				modalApply: "Taikyti"
 			},
@@ -141,7 +141,7 @@
 				settingsLayoutSpyGlass: "Didinamasis stiklas",
 				settingsLayoutSelected: "Pažymėtas maketas",
 				settingsLayoutSelect: "Pažymėkite šį maketą",
-				settingsSaveConfirm: "Į_Some of your changes require that you save and reload the story____________________š"
+				settingsSaveConfirm: "Kai kurie jūsų pakeitimai reikalauja išsaugoti ir perkrauti pasakojimą"
 			},
 			settingsDataModel: {
 				settingsTabDataModel: "Keitiklio tipas",
@@ -169,7 +169,7 @@
 			},
 			settingsLegend: {
 				settingsTabLegend: "Aplikacijos išdėstymas",
-				settingsLegendExplain: "Į_Select the layout settings_________š.",
+				settingsLegendExplain: "Pasirinkite išdėstymo parametrus.",
 				settingsLegendEnable: "Įjungti legendą",
 				settingsDescriptionEnable: "Įjungti aprašą",
 				settingsBookmarksEnable: "Įjungti keitiklių serijas",
@@ -218,39 +218,39 @@
 				}
 			},
 			share: {
-				firstSaveTitle: "Į_Story successfully saved________š",
-				firstSaveHeader: "Į_Your story is now saved in ArcGIS Online. Please read the following answers to frequent questions______________________________š.",
+				firstSaveTitle: "Pasakojimas sėkmingai įrašytas",
+				firstSaveHeader: "Jūsų pasakojimas buvo įrašytas į ArcGIS Online. Perskaitykite toliau pateikiamus atsakymus į dažniausiai užduodamus klausimus.",
 				firstSaveA1: "Jei nesate pažįstamas su ArcGIS Online arba norite greitai patekti į autoriaus vartotojo sąsają, galite išsaugoti šią nuorodą: %LINK1%",
-				firstSaveA1bis: "Į_The story can also be found in your <a href='%LINK2%' target='_blank'>ArcGIS Online content folder</a>________________________________š.",
-				firstSaveQ2: "Į_Is my story shared_______š?",
-				firstSaveA2: "Į_Currently your story is not shared. To share it, use the SHARE button______________________š.",
-				shareTitle: "Į_Share your story______š",
-				sharePrivateHeader: "Į_Your story is not shared, would you like to share it_________________š?",
+				firstSaveA1bis: "Pasakojimas taip pat gali būti pasiekiamas <a href=\'%LINK2%\' target=\'_blank\'>ArcGIS Online turinio aplanke</a>.",
+				firstSaveQ2: "Ar mano pasakojimas bendrinamas?",
+				firstSaveA2: "Šiuo metu jūsų pasakojimas nebendrinamas. Norėdami jį bendrinti, naudokite mygtuką BENDRINTI.",
+				shareTitle: "Bendrinti pasakojimą",
+				sharePrivateHeader: "Pasakojimas nėra bendrinamas, ar norite jį bendrinti?",
 				sharePrivateBtn1: "Bendrinti viešai",
 				sharePrivateBtn2: "Bendrinti su viena organizacija",
 				sharePrivateProgress: "Vyksta bendrinimas...",
 				sharePrivateErr: "Bendrinimas nepavyko, bandykite dar kartą arba",
 				sharePrivateOk: "Bendrinimas sėkmingai atnaujintas, kraunama...",
-				shareStatus1: "Į_Story is not saved______š",
-				shareStatus2: "Į_Story is shared publicly________š",
-				shareStatus3: "Į_Story is shared within the organization_____________š",
-				shareStatus4: "Į_Story is not shared_______š",
+				shareStatus1: "Pasakojimas neįrašytas",
+				shareStatus2: "Pasakojimas bendrinamas viešai",
+				shareStatus3: "Pasakojimas bendrinamas organizacijos viduje",
+				shareStatus4: "Pasakojimas nebendrinamas",
 				sharePreviewAsUser: "Peržiūra",
-				shareHeader1: "Į_Your story is <strong>publicly accessible</strong>________________š.",
-				shareHeader2: "Į_Your story is accessible by your organization members (login is required)_______________________š.",
-				shareLinkHeader: "Į_Share the story with your audience___________š",
+				shareHeader1: "Pasakojimas <strong>prieinamas viešai</strong>.",
+				shareHeader2: "Pasakojimas pasiekiamas organizacijos nariams (prisijungus).",
+				shareLinkHeader: "Bendrinkite pasakojimą su savo auditorija",
 				shareLinkOpen: "ATIDARYTI",
 				learnMore: "Sužinokite daugiau",
-				shareQ1Opt1: "Į_How do I keep the story private___________š?",
-				shareQ1Opt2: "Į_How do I keep the story private or share it publicly_________________š?",
+				shareQ1Opt1: "Kaip pasakojimą išlaikyti asmeniniu?",
+				shareQ1Opt2: "Kaip pasakojimą išlaikyti asmeniniu ar bendrinti?",
 				shareA1: "Naudokite %SHAREIMG% <a href='%LINK1%' target='_blank'>aplikacijos elemento lange</a>. Jei norite išjungti bendrinimą, naudokite <a href='%LINK2%' target='_blank'>internetinio žemėlapio elemento lange</a>.",
 				shareA1bis: "Jei taip pat norite nubendrinti elementų paslaugą, naudokite <a href='%LINK1%' target='_blank'>elementų paslaugos elemento puslapį</a>.",
-				shareQ2: "Į_How do I edit the story later__________š?",
+				shareQ2: "Kaip redaguoti pasakojimą vėliau?",
 				shareQ2bis: "Kaip grįžti į kūrimo sąsają?",
-				shareA2div1: "Į_Save and reuse the following link %LINK1% or use <a href='%LINK2%' target='_blank'>the story item page</a>_________________________________š.",
-				shareA2div2: "Į_As the owner of the story, when you are signed in on ArcGIS.com, the story includes a button to open the interactive builder_______________________________________š:",
+				shareA2div1: "Išsaugokite ir pernaudokite šią nuorodą %LINK1% arba naudokite <a href=\'%LINK2%\' target=\'_blank\'>pasakojimo elemento puslapį</a>.",
+				shareA2div2: "Kai prisijungiate prie ArcGIS.com kaip pasakojimo savininkas, pasakojimas turės interaktyvaus kūrėjo atvėrimo mygtuką:",
 				shareQ3: "Kur laikomi duomenys?",
-				shareA3: "Į_The story configuration is stored in this web application item</a>_____________________š.",
+				shareA3: "Pasakojimo konfigūracija įrašoma šiame žiniatinklio aplikacijos elemente</a>.",
 				shareWarning: "Bendrinimas %WITH% buvo išjungtas, nes jūs nesate <a href='%LINK%' target='_blank'>internetinio žemėlapio</a> savininkas.",
  				shareWarningWith1: "viešai",
  				shareWarningWith2: "viešai ir su organizacija"

@@ -20,9 +20,9 @@ define(
             "error": "Nelze vytvořit mapu"
         },
         "nav":{
-            "next": "Ř_Next__ů",
-            "previous": "Ř_Previous___ů",
-            "close": "Ř_Close___ů"
+            "next": "Další",
+            "previous": "Předchozí",
+            "close": "Zavřít"
         },
         "tools":{
             "search":{

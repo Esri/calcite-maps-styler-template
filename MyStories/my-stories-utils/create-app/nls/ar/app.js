@@ -1,51 +1,51 @@
 ﻿define(
 	 ({
 		dialog: {
-			back: "بيت_Back__لاحقة",
-			close: "بيت_Close___لاحقة",
-			createNewStory: "بيت_Create a New Story______لاحقة",
-			pickApp: "بيت_Pick an App____لاحقة",
-			askPros: "بيت_Ask the Pros_____لاحقة"
+			back: "الخلف",
+			close: "إغلاق",
+			createNewStory: "إنشاء قصة جديدة",
+			pickApp: "انتقاء تطبيق",
+			askPros: "اسأل عن الإيجابيات"
 		},
 		incompatibleNotice: {
-			title: "بيت_Create Story Not Available_________لاحقة",
-			subtitle: "بيت_Sorry, this is not supported in a small display. Please open in a larger display or device____________________________لاحقة.",
-			close: "بيت_Close___لاحقة"
+			title: "إنشاء القصة غير متاح",
+			subtitle: "عذرًا، هذا غير مدعوم في العرض الصغير. يرجى الفتح في عرض أكبر أو جهاز أكبر.",
+			close: "إغلاق"
 		},		
 		answerText: {
-			seriesOfPlaces: "بيت_A set of places______لاحقة",
-			mapsNarrative: "بيت_A narrative with maps_______لاحقة",
-			compareDatasets: "بيت_An interactive comparison of two datasets_____________لاحقة",
-			other: "بيت_A single map_____لاحقة",
-			yes: "بيت_Yes__لاحقة",
-			no: "بيت_No__لاحقة",
-			click: "بيت_Click___لاحقة",
-			scroll: "بيت_Scroll___لاحقة"
+			seriesOfPlaces: "مجموعة من الأماكن",
+			mapsNarrative: "سرد مرفق بخرائط",
+			compareDatasets: "مقارنة تفاعلية من مجموعتي بيانات",
+			other: "خريطة فردية",
+			yes: "نعم",
+			no: "لا",
+			click: "انقر فوق",
+			scroll: "التمرير"
 		},
 		questionText: {
-			bestDescribesStory: "بيت_What best describes your story__________لاحقة?",
-			showPhotos: "بيت_Do you want to show photos for each location_______________لاحقة?",
-			clickOrScroll: "بيت_Do you want your audience to click through tabs or scroll__________________لاحقة?"
+			bestDescribesStory: "ما هو أفضل وصف للقصة؟",
+			showPhotos: "هل تريد عرض الصور لكل موقع؟",
+			clickOrScroll: "هل تريد من جمهور المستخدمين النقر على علامات التبويب أم التمرير؟"
 		},
 		finalApp: {
-			weRecommend: "بيت_We Recommend: {{STORY_TYPE}}_________لاحقة",
-			letsBuild: "بيت_Let's build_____لاحقة!",
-			seeExample: "بيت_See example____لاحقة"
+			weRecommend: "نحن نوصي: {{STORY_TYPE}}",
+			letsBuild: "فلنبدأ البناء!",
+			seeExample: "راجع المثال"
 		},
 		reasons: {
-			mapTour: "بيت_This app presents a sequential, place-based narrative in the form of a series of geotagged photos and captions linked to an interactive map. Itâ€™s ideal for walking tours or for a series of locations youâ€™d like users to follow in sequence__________________________________________________________________________لاحقة.",
-			mapJournal: "بيت_This app lets you create a compelling map-based narrative presented as a set of journal entries. It's ideal for creating multimedia stories that combine text, maps, images, and video, especially when you have lots of text or a rich array of content____________________________________________________________________________لاحقة.",
-			mapSeries: "بيت_This app lets you present a series of maps via tabs, numbered bullets, or our expandable 'side accordion' control. You can also include images, video and web content in your series to tell your story_____________________________________________________________لاحقة.",
-			swipeSpyglass: "بيت_This app enables users to compare two maps or two layers in the same map. It is particularly effective for showing before-and-after imagery or other changes over time___________________________________________________لاحقة.",
-			basic: "بيت_This app lets you present a map via a very simple minimalist user interface. Apart from the title bar and an optional legend, the map fills the screen. Use this app to let your map speak for itself____________________________________________________________لاحقة."
+			mapTour: "يُمثل هذا التطبيق سردًا تسلسليًا قائم على المكان في شكل سلسلة من الصور والتسميات التوضيحية ذات العلامات الجغرافية المرتبطة بخريطة تفاعلية، وهوâ€™ مثالي لرحلات المشي أو سلسلة من المواقع التي تريدâ€™ للمستخدمين اتباعها بشكل تسلسلي.",
+			mapJournal: "يتيح لك هذا التطبيق إنشاء سرد مُقنع قائم على الخريطة مُمثلاً كمجموعة من المدخلات الصحفية، وهو مثالي لإنشاء القصص متعددة الوسائط التي تجمع بين النصوص والخرائط والصور ومقاطع الفيديو، خاصةً عند وجود الكثير من النصوص أو عرض محتوى غني.",
+			mapSeries: "يتيح لك هذا التطبيق عرض سلسلة من الخرائط عبر علامات التبويب أو التعداد النقطي المُرقم أو عناصر التحكم الجانبية القابلة للتوسيع، ويمكنك أيضًا تضمين الصور ومقاطع الفيديو ومحتوى الويب في السلسلة لسرد القصة.",
+			swipeSpyglass: "يعمل هذا التطبيق على تمكين المستخدمين من المقارنة بين خريطتين أو طبقتين في نفس الطبقة، وهو ما يعد فعالاً على وجه الخصوص لعرض الصور \"وقبل وبعد\" أو تغييرات أخرى عبر الوقت.",
+			basic: "يتيح هذا التطبيق تمثيل الخريطة عبر واجهة مستخدم بسيطة للغاية. وبعيدًا عن شريط العنوان ووسيلة إيضاح اختيارية، فإن الخريطة تملأ الشاشة. استخدم هذا التطبيق لجعل خريطتك تُعبّر عن محتواها بنفسها."
 		},
 		shortReasons: {
-			mapTour: "بيت_Guide people through a sequence of places_____________لاحقة",
-			mapJournal: "بيت_Perfect for an in-depth narrative___________لاحقة",
-			mapSeries: "بيت_Present a series of related maps___________لاحقة",
-			swipe: "بيت_Compare two maps or map layers with a slider______________لاحقة",
-			spyglass: "بيت_Compare two maps or map layers with a spyglass_______________لاحقة",
-			basic: "بيت_Think minimalistic, great for one map____________لاحقة"
+			mapTour: "إرشاد المستخدمين خلال تسلسل الأماكن",
+			mapJournal: "مثالي للسرد المُفصّل",
+			mapSeries: "يُمثل سلسلة من الخرائط ذات الصلة",
+			swipe: "المقارنة بين خريطتين أو طبقتي خرائط ذات شريط تمرير",
+			spyglass: "المقارنة بين خريطتين أو طبقتي خرائط ذات منظار",
+			basic: "اجعل الخريطة بسيطة ورائعة"
 		},
 	})
 );

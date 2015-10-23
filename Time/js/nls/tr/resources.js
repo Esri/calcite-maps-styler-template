@@ -30,8 +30,8 @@ define(
       error: "Varsayılan olarak web haritası açıklaması veya kod parçacığı kullanılacak. Uygulamayı hakkında panosuna özel bir kod parçacığı ekleyecek biçimde yapılandırın."
     },
     time: {
-        enableTimeMessage: "ı_The specified web map does not contain any time enabled layers. View the ${link} help topic for details. To use the template without displaying time use the configuration panel to disable the time option______________________________________________________________İ.",
-        enableTimeMessageLink: "ı_http://doc.arcgis.com/en/arcgis-online/create-maps/configure-time.htm#ESRI_SECTION1_F1D4A275B4AB4CC79198CBA9D0AD8727____________________________________İ",
+        enableTimeMessage: "Belirtilen web haritası zaman etkin katman bulundurmuyor. Ayrıntılar için ${link} yardım başlığını görüntüleyin. Şablonu zamanı görüntülemeden kullanmak için yapılandırma panelini kullanarak zaman seçeneğini devre dışı bırakın.",
+        enableTimeMessageLink: "http://doc.arcgis.com/en/arcgis-online/create-maps/configure-time.htm#ESRI_SECTION1_F1D4A275B4AB4CC79198CBA9D0AD8727",
         datePattern: "d MMMM yyyy",
         hourTimePattern: "h a",
         millisecondTimePattern: "h:mm:ss a",

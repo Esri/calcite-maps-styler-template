@@ -262,7 +262,7 @@
       mapTabTooltip: "מפה",
       btnDescendingText: "יורד",
       btnAscendingText: "עולה",
-      geometryUnavailableErrorMessage: "כן_Error finding the geometry of the feature_____________ש",
+      geometryUnavailableErrorMessage: "אירעה שגיאה בעת ניסיון למצוא את הגיאומטריה של הישות",
       infoPopupOffErrorMessage: "אין מידע להצגה",
       btnLoadMoreText: "טען עוד",
       unavailableTitleText: "ללא שם",

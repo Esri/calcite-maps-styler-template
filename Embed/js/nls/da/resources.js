@@ -27,7 +27,7 @@ define(
             "basemap":{
                     "label": "Baggrundskort",
                     "title": "Vælg et baggrundskort",
-                    "close": "ø_Close___å"
+                    "close": "Luk"
             },
             "legend":{
                 "title": "Signaturforklaring"
@@ -43,7 +43,7 @@ define(
 
         },
         "map": {
-            "toggle": "ø_Toggle side panel______å",
+            "toggle": "Skift sidepanel",
             "error": "Kan ikke oprette kort"
         }
     })

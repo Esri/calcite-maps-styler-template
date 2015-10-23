@@ -36,7 +36,7 @@ define(
          "filter": "Filtr",
          "close": "Zavřít",
          "reverse": "Obrátit",
-         "mode": "Ř_Switch mode Drive/Walk________ů"
+         "mode": "Přepnout režim Jízda/Chůze"
       }
    })
 );

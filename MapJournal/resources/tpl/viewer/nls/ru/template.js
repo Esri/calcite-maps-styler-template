@@ -5,33 +5,33 @@
 				close: "Закрыть"
 			},
 			loading: {
-				step1: "Ж_Loading story_____Я",
+				step1: "Загрузка истории",
 				step2: "Загрузка данных",
 				step3: "Инициализация",
 				loadBuilder: "Открытие конструктора",
 				long: "Журнал карт активирован",
 				long2: "Спасибо за ожидание",
-				failButton: "Ж_Reload the story______Я"
+				failButton: "Перезагрузить историю"
 			},
 			signin: {
 				title: "Требуется аутентификация",
-				explainViewer: "Ж_Please sign in with an account on %PORTAL_LINK% to access the story_____________________Я.",
-				explainBuilder: "Ж_Please sign in with an account on %PORTAL_LINK% to configure the story______________________Я."
+				explainViewer: "Выполните вход под учетной записью на %PORTAL_LINK%, чтобы получить доступ к истории.",
+				explainBuilder: "Выполните вход под учетной записью на %PORTAL_LINK%, чтобы настроить историю."
 			},
 			errors: {
 				boxTitle: "Произошла ошибка",
 				invalidConfig: "Некорректная конфигурация",
 				invalidConfigNoApp: "В index.html не указан идентификатор Картографического веб-приложения",
 				unspecifiedConfigOwner: "Невозможно настроить авторизованного владельца.",
-				invalidConfigOwner: "Ж_Story owner is not authorized__________Я.",
+				invalidConfigOwner: "Владелец истории не авторизован.",
 				createMap: "Не удалось создать карту",
 				invalidApp: "%TPL_NAME% не существует или не доступен.",
 				appLoadingFail: "Что-то пошло не так, % TPLNAME % не был загружен правильно.",
-				notConfiguredDesktop: "Ж_The story is not configured yet___________Я.",
-				notConfiguredMobile: "Ж_The %TPL_NAME% builder is not supported at this display size___________________Я.",
-				notAuthorized: "Ж_You are not authorized to access this story______________Я",
+				notConfiguredDesktop: "История пока не настроена.",
+				notConfiguredMobile: "Конструктор %TPL_NAME% не поддерживается при таком размере экрана.",
+				notAuthorized: "Вы не авторизованы для доступа к истории.",
 				noBuilderIE: "Конструктор не поддерживается в браузере Internet Explorer версий %VERSION%. %UPGRADE%",
-				noViewerIE: "Ж_This story is not supported in Internet Explorer before version %VERSION%. %UPGRADE%__________________________Я",
+				noViewerIE: "Эта история не поддерживается в Internet Explorer версии до %VERSION%. %UPGRADE%",
 				upgradeBrowser: "<a href='http://browsehappy.com/' target='_blank'>Обновите ваш браузер</a>.",
 				mapLoadingFail: "Что-то пошло не так, карта не может быть загружена корректно.",
 				signOut: "Выйти"
@@ -61,9 +61,9 @@
 				templateTitle: "Ввести заголовок шаблона",
 				templateSubtitle: "Ввести подзаголовок шаблона",
 				share: "Общий доступ",
-				checking: "Ж_Checking your story content_________Я",
-				fix: "Ж_Fix issues in your story________Я",
-				noerrors: "Ж_No issues detected______Я"
+				checking: "Проверка ресурсов истории на наличие ошибок",
+				fix: "Исправить ошибки в истории",
+				noerrors: "Ошибок не обнаружено"
 			},
 			overviewFromCommon: {
 				title: "Обзорная карта"

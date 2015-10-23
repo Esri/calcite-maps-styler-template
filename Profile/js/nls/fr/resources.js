@@ -17,28 +17,28 @@
 define(
    ({
     map: {
-      error: "æ_Unable to create map_______Â"
+      error: "Impossible de créer la carte"
     },
     elevation: {
-        toggle: "æ_Toggle the Elevation Profile Chart____________Â.",
-        drawTool: "æ_Draw a line on the map to generate an elevation profile__________________Â.",
-        selectMessage: "æ_Click a line feature or use the draw tool to draw a line to display the elevation profile____________________________Â"
+        toggle: "Activez/Désactivez le diagramme du profil d\'altitude.",
+        drawTool: "Tracez une ligne sur la carte pour générer un profil d\'altitude.",
+        selectMessage: "Cliquez sur une entité linéaire ou utilisez l\'outil de dessin pour tracer une ligne et afficher le profil d\'altitude."
     },
     splash: {
-        title: "æ_Title___Â",
-        content: "æ_Configure to create custom splash content_____________Â"
+        title: "Titre",
+        content: "Configurer pour créer le contenu de présentation personnalisé"
     },
     legend: {
-        title: "æ_Legend___Â",
-        tip: "æ_Display legend_____Â"
+        title: "Légende",
+        tip: "Afficher la légende"
     },
     basemap: {
-        title: "æ_Basemap___Â",
-        tip: "æ_Change basemap_____Â"
+        title: "Fond de carte",
+        tip: "Modifier le fond de carte"
     },
     share: {
-        title: "æ_Share___Â",
-        tip: "æ_Share map____Â"
+        title: "Partager",
+        tip: "Partager la carte"
     }
   })
 );

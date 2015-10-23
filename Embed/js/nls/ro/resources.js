@@ -27,7 +27,7 @@ define(
             "basemap":{
                     "label": "Hartă fundal",
                     "title": "Selectare hartă fundal",
-                    "close": "Ă_Close___ș"
+                    "close": "Închidere"
             },
             "legend":{
                 "title": "Legendă"
@@ -43,7 +43,7 @@ define(
 
         },
         "map": {
-            "toggle": "Ă_Toggle side panel______ș",
+            "toggle": "Comutare panou lateral",
             "error": "Nu se poate crea harta"
         }
     })

@@ -2,7 +2,7 @@
 	 ({
 		commonWebmap: {
 			selector: {
-				lblWebMap: "ł_Map__ą",
+				lblWebMap: "Mapa",
 				lblLocation: "Lokalizacja",
 				lblContent: "Zawartość",
 				lblPopup: "Okno podręczne",
@@ -17,14 +17,14 @@
 				and: "i",
 				action: "Operacja w sekcji",
 				actions: "Operacja w sekcjach",
-				originalWebmap: "ł_Map used to publish the %TPL_NAME%___________ą",
-				browseMaps: "ł_Select a map_____ą",
-				createMap: "ł_Create a map_____ą",
-				current: "ł_Current map____ą",
-				select: "ł_Select or create a map________ą",
-				newMap: "ł_Newly selected map______ą",
-				newCreatedMap: "ł_Newly created map______ą",
-				webmapDefault: "ł_Map default____ą",
+				originalWebmap: "Mapa użyta do publikacji aplikacji %TPL_NAME%",
+				browseMaps: "Wybierz mapę",
+				createMap: "Tworzenie mapy",
+				current: "Bieżąca mapa",
+				select: "Wybierz lub utwórz mapę",
+				newMap: "Nowo wybrana mapa",
+				newCreatedMap: "Nowo utworzona mapa",
+				webmapDefault: "Mapa domyślna",
 				customCfg: "Konfiguracja niestandardowa",
 				tooltipLocation: "Definiuj lokalizację do wyświetlania przez tę mapę.",
 				tooltipContent: "Definiuj widoczne warstwy.",
@@ -51,27 +51,27 @@
 				hintNavigation: "Nawigacja mapy jest wyłączona."
 			},
 			editor: {
-				loading: "ł_Please wait while the map editor is loading______________ą",
-				newTitle: "ł_Create new map_____ą",
-				editTitle: "ł_Edit map___ą",
-				titleLbl: "ł_Title___ą",
-				titlePh: "ł_Map title_____ą...",
-				folderLbl: "ł_The map will be created in the same folder as the story__________________ą.",
-				creating: "ł_Creating the map______ą",
-				saving: "ł_Saving the map_____ą",
-				success: "ł_Map saved____ą",
-				successCreate: "ł_Map created____ą",
-				cancelTitle: "ł_Discard any unsaved changes_________ą?",
-				errorDuplicate: "ł_You already have a map with that title____________ą",
-				errorCreate: "ł_Unable to create map. Please try again_____________ą.",
-				errorSave: "ł_Unable to save map. Please try again____________ą.",
-				notavailable1: "ł_Sorry, creating or editing a map is not supported in Firefox due to a technical limitation. You may want to build your story using a different web browser or use the following workaround_________________________________________________________ą.",
-				notavailable2: "ł_Sorry, creating or editing a map is not supported since the story map application is not hosted in %PRODUCT%. Please contact your ArcGIS administrator for more information_____________________________________________________ą.",
-				notavailable3: "ł_Sorry, creating or editing a map is not supported on this version of Portal for ArcGIS (requires 10.4 or later). Please contact your ArcGIS administrator for more information______________________________________________________ą.",
-				notavailable4: "ł_You can create a map using %MV%, then come back here to add it to your story________________________ą.",
-				notavailable5: "ł_You can edit the map using %MV%, then come back here and %apply% to see your changes___________________________ą.",
-				notavailable6: "ł_map viewer____ą",
-				notavailable7: "ł_reload the map_____ą"
+				loading: "Trwa wczytywanie edytora map. Czekaj.",
+				newTitle: "Utwórz nową mapę",
+				editTitle: "Edytuj mapę",
+				titleLbl: "Tytuł",
+				titlePh: "Tytuł mapy...",
+				folderLbl: "Mapa zostanie utworzona w tym samym folderze, w którym znajduje się narracja.",
+				creating: "Trwa tworzenie mapy",
+				saving: "Trwa zapisywanie mapy",
+				success: "Mapa została zapisana",
+				successCreate: "Mapa została utworzona",
+				cancelTitle: "Odrzucić wszystkie niezapisane zmiany?",
+				errorDuplicate: "Mapa o takim tytule już istnieje",
+				errorCreate: "Nie można utworzyć mapy. Spróbuj ponownie.",
+				errorSave: "Nie można zapisać mapy. Spróbuj ponownie.",
+				notavailable1: "Przykro nam, ale funkcja tworzenia lub edytowania mapy nie jest obsługiwana przez przeglądarkę Firefox z powodu ograniczeń technicznych. Użyj innej przeglądarki w celu zbudowania narracji lub z skorzystaj z poniższego rozwiązania zastępczego.",
+				notavailable2: "Przykro nam, ale funkcja tworzenia lub edytowania mapy nie jest obsługiwana, ponieważ aplikacja mapy narracyjnej nie jest hostowana przez produkt %PRODUCT%. Aby uzyskać więcej informacji, skontaktuj się z administratorem oprogramowania ArcGIS.",
+				notavailable3: "Przykro nam, ale funkcja tworzenia lub edytowania mapy nie jest obsługiwana w tej wersji witryny Portal for ArcGIS (konieczna jest wersja 10.4 lub nowsza). Aby uzyskać więcej informacji, skontaktuj się z administratorem oprogramowania ArcGIS.",
+				notavailable4: "Można utworzyć mapę za pomocą produktu %MV%, następnie wrócić tutaj i dodać ją do narracji.",
+				notavailable5: "Można edytować mapę za pomocą produktu %MV%, następnie wrócić tutaj i kliknąć przycisk %apply%, aby zobaczyć zmiany.",
+				notavailable6: "przeglądarka map",
+				notavailable7: "wczytaj ponownie mapę"
 			}
 		},
 		configure: {
@@ -82,11 +82,11 @@
 					contentLabel: "Moje zasoby",
 					favoritesLabel: "Moje ulubione"
 				},
-				title: "ł_Select a map_____ą",
+				title: "Wybierz mapę",
 				searchTitle: "Wyszukaj",
 				ok: "OK",
 				cancel: "Anuluj",
-				placeholder: "ł_Enter search term or web map ID___________ą..."
+				placeholder: "Wpisz termin wyszukiwania lub identyfikator mapy internetowej..."
 			}
 		}
 	})

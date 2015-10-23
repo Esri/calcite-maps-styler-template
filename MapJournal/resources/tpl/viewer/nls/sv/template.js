@@ -5,33 +5,33 @@
 				close: "Stäng"
 			},
 			loading: {
-				step1: "Å_Loading story_____ö",
+				step1: "Läser in berättelsen",
 				step2: "Läser in data",
 				step3: "Initierar",
 				loadBuilder: "Växlar till byggverktyget",
 				long: "Kartjournalen initieras",
 				long2: "Tack för att du väntar",
-				failButton: "Å_Reload the story______ö"
+				failButton: "Läs in berättelsen igen"
 			},
 			signin: {
 				title: "Autentisering krävs",
-				explainViewer: "Å_Please sign in with an account on %PORTAL_LINK% to access the story_____________________ö.",
-				explainBuilder: "Å_Please sign in with an account on %PORTAL_LINK% to configure the story______________________ö."
+				explainViewer: "Logga in med ett konto på %PORTAL_LINK% om du vill få åtkomst till berättelsen.",
+				explainBuilder: "Logga in med ett konto på %PORTAL_LINK% om du vill konfigurera berättelsen."
 			},
 			errors: {
 				boxTitle: "Ett fel har inträffat",
 				invalidConfig: "Ogiltig konfiguration",
 				invalidConfigNoApp: "Webbkartapplikationens identifierare anges inte i index.html.",
 				unspecifiedConfigOwner: "Ingen auktoriserad ägare har konfigurerats.",
-				invalidConfigOwner: "Å_Story owner is not authorized__________ö.",
+				invalidConfigOwner: "Berättelsens ägare är inte auktoriserad.",
 				createMap: "Det gick inte att skapa kartan",
 				invalidApp: "%TPL_NAME% finns inte eller går inte att komma åt.",
 				appLoadingFail: "Något gick fel, %TPL_NAME% lästes inte in korrekt.",
-				notConfiguredDesktop: "Å_The story is not configured yet___________ö.",
-				notConfiguredMobile: "Å_The %TPL_NAME% builder is not supported at this display size___________________ö.",
-				notAuthorized: "Å_You are not authorized to access this story______________ö",
+				notConfiguredDesktop: "Berättelsen har inte konfigurerats ännu.",
+				notConfiguredMobile: "%TPL_NAME%-byggaren stöds inte för den här skärmstorleken.",
+				notAuthorized: "Du är inte behörig att få åtkomst till den här berättelsen",
 				noBuilderIE: "Byggverktyget kan inte användas med Internet Explorer tidigare än version %VERSION%. %UPGRADE%",
-				noViewerIE: "Å_This story is not supported in Internet Explorer before version %VERSION%. %UPGRADE%__________________________ö",
+				noViewerIE: "Den här berättelsen kan inte användas med Internet Explorer tidigare än version %VERSION%. %UPGRADE%",
 				upgradeBrowser: "<a href='http://browsehappy.com/' target='_blank'>Uppdatera din webbläsare</a>.",
 				mapLoadingFail: "Något gick fel, kartan lästes inte in på rätt sätt.",
 				signOut: "Logga ut"
@@ -61,9 +61,9 @@
 				templateTitle: "Ange malltitel",
 				templateSubtitle: "Ange underrubrik för mallen",
 				share: "Dela",
-				checking: "Å_Checking your story content_________ö",
-				fix: "Å_Fix issues in your story________ö",
-				noerrors: "Å_No issues detected______ö"
+				checking: "Kontrollerar berättelsens innehåll",
+				fix: "Lös problem i berättelsen",
+				noerrors: "Inga problem upptäcktes"
 			},
 			overviewFromCommon: {
 				title: "Översiktskarta"

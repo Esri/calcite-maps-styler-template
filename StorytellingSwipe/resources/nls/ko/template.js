@@ -2,7 +2,7 @@
 	 ({
 		viewer: {
 			loading: {
-				step1: "한_LOADING STORY_____빠",
+				step1: "스토리 불러오는 중",
 				step2: "데이터를 불러오는 중",
 				step3: "초기화하는 중",
 				fail: "죄송합니다. 스와이프를 로드하지 못했습니다.",
@@ -17,19 +17,19 @@
 				invalidConfig: "오류: 잘못된 구성",
 				invalidConfigNoWebmap: "오류: 잘못된 구성(웹 맵을 지정하지 않음)",
 				createMap: "맵을 생성할 수 없음",
-				invalidApp: "한_Fatal error: The story cannot be loaded_____________빠",
+				invalidApp: "오류: 스토리를 불러올 수 없습니다.",
 				initMobile: "스와이프 웹 응용프로그램을 시작합니다. 응용프로그램이 구성되지 않았습니다. 대화형 빌더는 모바일 장치에서 지원되지 않습니다.",
-				initMobile2: "한_The Swipe builder is not supported at this display size__________________빠.",
+				initMobile2: "이 디스플레이 크기에서는 스와이프 빌더가 지원되지 않습니다.",
 				noBuilderIE8: "Internet Explorer 9 이전 버전에서는 스와이프 대화형 빌더가 지원되지 않습니다.",
 				noLayerView: "스와이프 웹 응용프로그램을 시작합니다.<br />응용프로그램이 아직 구성되지 않았습니다.",
-				appSave: "한_Error saving the web story_________빠",
+				appSave: "웹 스토리를 저장하는 중 오류 발생",
 				mapSave: "웹 맵을 저장하는 동안 오류가 발생했습니다.",
-				notAuthorized: "한_You are not authorized to access this story______________빠",
+				notAuthorized: "이 스토리에 접근할 권한 없음",
 				conflictingProjectionsTitle: "투영 충돌",
 				conflictingProjections: "사용 중인 두 웹 맵의 투영이 서로 다른 경우에는 스와이프가 지원되지 않습니다. 설정을 열어 첫 번째 웹 맵과 같은 투영을 사용하는 웹 맵을 사용하세요.",
 				cpButton: "닫기",
-				unspecifiedConfigOwner: "한_Authorized owner hasn't been configured_____________빠.",
-				invalidConfigOwner: "한_Story owner is not authorized__________빠."
+				unspecifiedConfigOwner: "권한이 있는 소유자가 구성되지 않았습니다.",
+				invalidConfigOwner: "스토리 소유자가 인증되지 않았습니다."
 			},
 			mobileView: {
 				hideIntro: "소개 메시지 숨기기",
@@ -47,7 +47,7 @@
 		},
 		builder: {
 			builder: {
-				panelHeader: "한_STORY CONFIGURATION_______빠",
+				panelHeader: "스토리 구성",
 				buttonSave: "저장",
 				buttonHelp: "도움말",
 				buttonShare: "공유",
@@ -67,13 +67,13 @@
 				popoverSaveWhenDone: "작업을 마치면 저장하세요.",
 				closeWithPendingChange: "작업을 확인하시겠습니까? 변경 사항이 손실됩니다.",
 				gotIt: "확인",
-				savingApplication: "한_Saving story_____빠",
-				saveSuccess: "한_Story saved successfully________빠",
+				savingApplication: "스토리 저장 중",
+				saveSuccess: "스토리 저장 완료",
 				saveError: "저장하지 못했습니다. 다시 시도하세요.",
 				saveError2: "이름 또는 설명의 잘못된 html 태그로 인해 저장하지 못했습니다.",
 				saveError3: "제목은 비워 둘 수 없습니다.",
 				signIn: "응용프로그램을 저장하려면",
-				signInTwo: "한_to save the story______빠."
+				signInTwo: "스토리를 저장합니다."
 			},
 			header:{
 				editMe: "편집!",
@@ -81,7 +81,7 @@
 				templateSubtitle: "템플릿 부제목 설정"
 			},
 			settings: {
-				settingsHeader: "한_Story settings_____빠",
+				settingsHeader: "스토리 설정",
 				modalCancel: "취소",
 				modalApply: "적용"
 			},
@@ -141,7 +141,7 @@
 				settingsLayoutSpyGlass: "망원경",
 				settingsLayoutSelected: "선택한 레이아웃",
 				settingsLayoutSelect: "이 레이아웃 선택",
-				settingsSaveConfirm: "한_Some of your changes require that you save and reload the story____________________빠"
+				settingsSaveConfirm: "일부 변경사항을 적용하려면 스토리를 저장하고 다시 불러와야 합니다."
 			},
 			settingsDataModel: {
 				settingsTabDataModel: "스와이프 유형",
@@ -169,7 +169,7 @@
 			},
 			settingsLegend: {
 				settingsTabLegend: "앱 레이아웃",
-				settingsLegendExplain: "한_Select the layout settings_________빠.",
+				settingsLegendExplain: "레이아웃 설정을 선택합니다.",
 				settingsLegendEnable: "범례 사용",
 				settingsDescriptionEnable: "설명 사용",
 				settingsBookmarksEnable: "스와이프 계열 사용",
@@ -218,39 +218,39 @@
 				}
 			},
 			share: {
-				firstSaveTitle: "한_Story successfully saved________빠",
-				firstSaveHeader: "한_Your story is now saved in ArcGIS Online. Please read the following answers to frequent questions______________________________빠.",
+				firstSaveTitle: "스토리가 저장됨",
+				firstSaveHeader: "이제 스토리가 ArcGIS Online에 저장되었습니다. 다음 FAQ에 대한 대답을 확인하세요.",
 				firstSaveA1: "ArcGIS Online에 익숙하지 않거나 바로가기를 사용하여 작성 인터페이스에 액세스하려는 경우 다음 링크를 저장하면 됩니다. %LINK1%",
-				firstSaveA1bis: "한_The story can also be found in your <a href='%LINK2%' target='_blank'>ArcGIS Online content folder</a>________________________________빠.",
-				firstSaveQ2: "한_Is my story shared_______빠?",
-				firstSaveA2: "한_Currently your story is not shared. To share it, use the SHARE button______________________빠.",
-				shareTitle: "한_Share your story______빠",
-				sharePrivateHeader: "한_Your story is not shared, would you like to share it_________________빠?",
+				firstSaveA1bis: "<a href=\'%LINK2%\' target=\'_blank\'>ArcGIS Online 콘텐츠 폴더</a>에서도 스토리를 찾을 수 있습니다.",
+				firstSaveQ2: "스토리가 공유됩니까?",
+				firstSaveA2: "현재는 스토리가 공유되지 않습니다. 스토리를 공유하려면 공유 버튼을 사용하세요.",
+				shareTitle: "스토리 공유",
+				sharePrivateHeader: "스토리가 공유되고 있지 않습니다. 공유하시겠습니까?",
 				sharePrivateBtn1: "공개적으로 공유",
 				sharePrivateBtn2: "내 기관과 공유",
 				sharePrivateProgress: "공유 처리 중...",
 				sharePrivateErr: "공유에 실패했습니다. 다시 시도하거나",
 				sharePrivateOk: "공유가 업데이트되었습니다. 불러오는 중...",
-				shareStatus1: "한_Story is not saved______빠",
-				shareStatus2: "한_Story is shared publicly________빠",
-				shareStatus3: "한_Story is shared within the organization_____________빠",
-				shareStatus4: "한_Story is not shared_______빠",
+				shareStatus1: "스토리가 저장되지 않음",
+				shareStatus2: "스토리가 공개적으로 공유됨",
+				shareStatus3: "스토리가 기관 내에서 공유됨",
+				shareStatus4: "스토리가 공유되지 않음",
 				sharePreviewAsUser: "미리보기",
-				shareHeader1: "한_Your story is <strong>publicly accessible</strong>________________빠.",
-				shareHeader2: "한_Your story is accessible by your organization members (login is required)_______________________빠.",
-				shareLinkHeader: "한_Share the story with your audience___________빠",
+				shareHeader1: "스토리가 <strong>공개적으로 접근 가능합니다</strong>.",
+				shareHeader2: "내 기관의 구성원이 스토리에 접근할 수 있습니다(로그인 필요).",
+				shareLinkHeader: "대상 그룹과 스토리 공유",
 				shareLinkOpen: "열기",
 				learnMore: "자세한 정보",
-				shareQ1Opt1: "한_How do I keep the story private___________빠?",
-				shareQ1Opt2: "한_How do I keep the story private or share it publicly_________________빠?",
+				shareQ1Opt1: "스토리를 비공개 상태로 유지하려면 어떻게 해야 합니까?",
+				shareQ1Opt2: "스토리를 비공개 상태로 유지하거나 공개적으로 공유하려면 어떻게 해야 합니까?",
 				shareA1: "<a href='%LINK1%' target='_blank'>응용프로그램 항목 페이지</a>의 %SHAREIMG%을 사용합니다. 웹 맵도 공유 해제하려면 <a href='%LINK2%' target='_blank'>웹 맵 항목 페이지</a>를 사용합니다.",
 				shareA1bis: "피처 서비스의 공유도 해제하려면 <a href='%LINK1%' target='_blank'>피처 서비스 항목 페이지</a>를 사용하세요.",
-				shareQ2: "한_How do I edit the story later__________빠?",
+				shareQ2: "나중에 스토리를 편집하려면 어떻게 해야 합니까?",
 				shareQ2bis: "작성 인터페이스로 돌아가는 방법",
-				shareA2div1: "한_Save and reuse the following link %LINK1% or use <a href='%LINK2%' target='_blank'>the story item page</a>_________________________________빠.",
-				shareA2div2: "한_As the owner of the story, when you are signed in on ArcGIS.com, the story includes a button to open the interactive builder_______________________________________빠:",
+				shareA2div1: "%LINK1% 링크를 저장하여 다시 사용하거나 <a href=\'%LINK2%\' target=\'_blank\'>스토리 항목 페이지</a>를 사용하세요.",
+				shareA2div2: "스토리의 소유자인 경우 ArcGIS.com에 로그인하면 대화형 빌더를 열 수 있는 버튼이 스토리에 포함되어 있습니다.",
 				shareQ3: "데이터는 어디에 저장되나요?",
-				shareA3: "한_The story configuration is stored in this web application item</a>_____________________빠.",
+				shareA3: "스토리 구성은 이 웹 응용프로그램 항목에 저장됩니다</a>.",
 				shareWarning: "<a href='%LINK%' target='_blank'>웹 맵</a>의 소유자가 아니므로 %WITH% 공유를 사용할 수 없습니다.",
  				shareWarningWith1: "공개",
  				shareWarningWith2: "기관에 공개"

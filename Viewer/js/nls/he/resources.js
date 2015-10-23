@@ -20,9 +20,9 @@ define(
             "error": "לא ניתן ליצור מפה"
         },
         "nav":{
-            "next": "כן_Next__ש",
-            "previous": "כן_Previous___ש",
-            "close": "כן_Close___ש"
+            "next": "הבא",
+            "previous": "הקודם",
+            "close": "סגור"
         },
         "tools":{
             "search":{

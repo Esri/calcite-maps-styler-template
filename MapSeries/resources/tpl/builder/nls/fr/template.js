@@ -70,7 +70,7 @@
 			},
 			organizePopup: {
 				title: "Organiser",
-				lblHeader: "æ_Drag and drop %LBL_LAYOUT% to organize your story________________Â.",
+				lblHeader: "Faites glisser et déposez %LBL_LAYOUT% pour organiser votre récit.",
 				lblColTitle: "Titre",
 				lblColStatus: "Statut",
 				btnApplyWarning: "Confirmez la suppression de %NB% %LBL_LAYOUT%",

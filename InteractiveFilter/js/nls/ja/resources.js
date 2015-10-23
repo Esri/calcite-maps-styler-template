@@ -10,7 +10,7 @@
       filterOr: "次のいずれかの条件式が正しい必要があります。",
       filterAnd: "次の条件式のすべてが正しい必要があります。",
       filterNo:  "Web map does not contain any interactive filters. View the ${link} help topic for details on how to create a filter in your web map.",
-      filterLink: "須_http://doc.arcgis.com/en/arcgis-online/use-maps/apply-filters.htm_____________________鷗",
+      filterLink: "http://doc.arcgis.com/en/arcgis-online/use-maps/apply-filters.htm",
       errors:{
         message: "フィルタ アプリケーションの作成中に問題が発生しました"
       }

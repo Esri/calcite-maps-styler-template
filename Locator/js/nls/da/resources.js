@@ -36,7 +36,7 @@ define(
          "filter": "Filtrér",
          "close": "Luk",
          "reverse": "Modsat",
-         "mode": "ø_Switch mode Drive/Walk________å"
+         "mode": "Skift tilstand Kør/Gå"
       }
    })
 );

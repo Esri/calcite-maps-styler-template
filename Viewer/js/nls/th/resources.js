@@ -20,9 +20,9 @@ define(
             "error": "ไม่สามารถสร้างแผนที่ได้"
         },
         "nav":{
-            "next": "ก้_Next__ษฺ",
-            "previous": "ก้_Previous___ษฺ",
-            "close": "ก้_Close___ษฺ"
+            "next": "ถัดไป",
+            "previous": "ก่อนหน้า",
+            "close": "ปิด"
         },
         "tools":{
             "search":{

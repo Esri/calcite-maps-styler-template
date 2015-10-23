@@ -36,7 +36,7 @@ define(
          "filter": "Filtru",
          "close": "Închidere",
          "reverse": "Inversare",
-         "mode": "Ă_Switch mode Drive/Walk________ș"
+         "mode": "Comutare la modul condus/mers pe jos"
       }
    })
 );

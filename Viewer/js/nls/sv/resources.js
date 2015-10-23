@@ -20,9 +20,9 @@ define(
             "error": "Det gick inte att skapa kartan"
         },
         "nav":{
-            "next": "Å_Next__ö",
-            "previous": "Å_Previous___ö",
-            "close": "Å_Close___ö"
+            "next": "Nästa",
+            "previous": "Föregående",
+            "close": "Stäng"
         },
         "tools":{
             "search":{

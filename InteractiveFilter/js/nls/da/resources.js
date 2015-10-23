@@ -10,7 +10,7 @@
       filterOr: "Ethvert af følgende udtryk skal være sande.",
       filterAnd: "Alle de følgende udtryk skal være sande.",
       filterNo:  "Web map does not contain any interactive filters. View the ${link} help topic for details on how to create a filter in your web map.",
-      filterLink: "ø_http://doc.arcgis.com/en/arcgis-online/use-maps/apply-filters.htm_____________________å",
+      filterLink: "http://doc.arcgis.com/en/arcgis-online/use-maps/apply-filters.htm",
       errors:{
         message: "Problem med at oprette filterapplikationen"
       }

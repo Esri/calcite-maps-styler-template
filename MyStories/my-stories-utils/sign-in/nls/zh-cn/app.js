@@ -1,22 +1,22 @@
 ﻿define(
 	 ({
 		signInDialog: {
-			title: "试_Sign in to Story Maps_______验",
-			subtitle: "试_Sign in with your existing ArcGIS Online account to_________________验:",
-			reasonOne: "试_Create compelling story maps to tell your stories________________验.",
-			reasonTwo: "试_Use your maps and data from ArcGIS Online in your story maps___________________验.",
-			reasonThree: "试_Manage your story maps and check the status of their content___________________验.",
-			noAccountYet: "试_Don't have an ArcGIS Online account? Sign up for a________________验:",
-			publicAccount: "试_Free non-commercial public account___________验",
-			subscriptionAccount: "试_Free trial ArcGIS subscription__________验",
-			signInExpired: "试_Your sign-in expired. Sign in again to pick up where you left off_____________________验.",
-			somethingNotLoading: "试_Something isn't loading correctly. Try refreshing the page___________________验."
+			title: "登录到 Story Maps",
+			subtitle: "使用您现有的 ArcGIS Online 帐户登录执行以下操作:",
+			reasonOne: "创建引人注目的故事地图，讲述您自己的故事。",
+			reasonTwo: "将 ArcGIS Online 中的地图和数据用于您的故事地图。",
+			reasonThree: "管理您的故事地图，并检查其内容的状态。",
+			noAccountYet: "没有 ArcGIS Online 账户? 注册获取:",
+			publicAccount: "免费的非商业公共帐户",
+			subscriptionAccount: "免费试用 ArcGIS 订阅",
+			signInExpired: "您的登录已过期。请再次登录以返回您之前的操作。",
+			somethingNotLoading: "发生加载错误。请尝试刷新页面。"
 		},
 		unavailableDialog: {
-			title: "试_Sign-In Not Available_______验",
-			explanation: "试_Sorry, this is not supported in a small display. Please open in a larger display or device____________________________验.",
-			close: "试_Close___验",
-			returnButton: "试_Return___验" 
+			title: "登录不可用",
+			explanation: "抱歉，不支持小显示器。请在更大的显示器或设备中打开。",
+			close: "关闭",
+			returnButton: "回波" 
 		}
 	})
 );

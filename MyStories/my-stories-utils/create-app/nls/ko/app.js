@@ -1,51 +1,51 @@
 ﻿define(
 	 ({
 		dialog: {
-			back: "한_Back__빠",
-			close: "한_Close___빠",
-			createNewStory: "한_Create a New Story______빠",
-			pickApp: "한_Pick an App____빠",
-			askPros: "한_Ask the Pros_____빠"
+			back: "뒤로",
+			close: "닫기",
+			createNewStory: "새 스토리 생성",
+			pickApp: "앱 선택",
+			askPros: "전문가에게 질문하기"
 		},
 		incompatibleNotice: {
-			title: "한_Create Story Not Available_________빠",
-			subtitle: "한_Sorry, this is not supported in a small display. Please open in a larger display or device____________________________빠.",
-			close: "한_Close___빠"
+			title: "스토리 생성을 사용할 수 없음",
+			subtitle: "죄송합니다. 소형 디스플레이에서는 지원되지 않습니다. 대형 디스플레이 또는 기기에서 여세요.",
+			close: "닫기"
 		},		
 		answerText: {
-			seriesOfPlaces: "한_A set of places______빠",
-			mapsNarrative: "한_A narrative with maps_______빠",
-			compareDatasets: "한_An interactive comparison of two datasets_____________빠",
-			other: "한_A single map_____빠",
-			yes: "한_Yes__빠",
-			no: "한_No__빠",
-			click: "한_Click___빠",
-			scroll: "한_Scroll___빠"
+			seriesOfPlaces: "위치 집합",
+			mapsNarrative: "이야기가 포함된 맵",
+			compareDatasets: "두 데이터셋의 대화형 비교",
+			other: "단일 맵",
+			yes: "예",
+			no: "아니요",
+			click: "클릭",
+			scroll: "스크롤"
 		},
 		questionText: {
-			bestDescribesStory: "한_What best describes your story__________빠?",
-			showPhotos: "한_Do you want to show photos for each location_______________빠?",
-			clickOrScroll: "한_Do you want your audience to click through tabs or scroll__________________빠?"
+			bestDescribesStory: "스토리를 가장 잘 기술하는 항목은 무엇입니까?",
+			showPhotos: "각 위치에 대해 사진을 보여 주시겠습니까?",
+			clickOrScroll: "대상 그룹이 여러 탭을 클릭하여 이동하거나 스크롤할 수 있도록 하시겠습니까?"
 		},
 		finalApp: {
-			weRecommend: "한_We Recommend: {{STORY_TYPE}}_________빠",
-			letsBuild: "한_Let's build_____빠!",
-			seeExample: "한_See example____빠"
+			weRecommend: "권장 스토리: {{STORY_TYPE}}",
+			letsBuild: "스토리를 만들어 보세요.",
+			seeExample: "예시 보기"
 		},
 		reasons: {
-			mapTour: "한_This app presents a sequential, place-based narrative in the form of a series of geotagged photos and captions linked to an interactive map. Itâ€™s ideal for walking tours or for a series of locations youâ€™d like users to follow in sequence__________________________________________________________________________빠.",
-			mapJournal: "한_This app lets you create a compelling map-based narrative presented as a set of journal entries. It's ideal for creating multimedia stories that combine text, maps, images, and video, especially when you have lots of text or a rich array of content____________________________________________________________________________빠.",
-			mapSeries: "한_This app lets you present a series of maps via tabs, numbered bullets, or our expandable 'side accordion' control. You can also include images, video and web content in your series to tell your story_____________________________________________________________빠.",
-			swipeSpyglass: "한_This app enables users to compare two maps or two layers in the same map. It is particularly effective for showing before-and-after imagery or other changes over time___________________________________________________빠.",
-			basic: "한_This app lets you present a map via a very simple minimalist user interface. Apart from the title bar and an optional legend, the map fills the screen. Use this app to let your map speak for itself____________________________________________________________빠."
+			mapTour: "이 앱은 대화형 맵에 연결된 일련의 지오태그된 사진과 캡션 형식으로 순차적 위치 기반 이야기를 보여 줍니다. 사용자에게 차례대로 보여주고자 하는 일련의 위치나 도보 여행 등에 적합합니다.",
+			mapJournal: "이 앱에서는 저널 항목 세트로 나타나는 호소력 있는 맵 기반 이야기를 생성할 수 있습니다. 텍스트, 맵, 이미지, 비디오가 결합된 멀티미디어 스토리를 생성하는 데 적합하며, 특히 텍스트가 많거나 다양한 콘텐츠를 포함하려는 경우 효율적입니다.",
+			mapSeries: "이 앱에서는 탭, 번호가 매겨진 글머리 기호 또는 확장 가능한 \'측면 아코디언\' 메뉴 제어를 통해 일련의 맵을 나타낼 수 있습니다. 또한 이미지, 비디오, 웹 콘텐츠를 시리즈에 포함하여 스토리를 표현할 수도 있습니다.",
+			swipeSpyglass: "이 앱에서는 사용자가 동일한 맵의 두 맵이나 두 레이어를 비교할 수 있습니다. 전후 이미지 또는 시간의 경과에 따른 기타 변경사항을 보여 주려는 경우 이 앱이 특히 효율적입니다.",
+			basic: "이 앱에서는 매우 단순한 최소 사용자 인터페이스를 통해 맵을 나타낼 수 있습니다. 제목 표시줄과 선택형 범례를 제외하면 맵 자체가 화면을 채웁니다. 이 앱을 사용하여 맵 자체가 부각되도록 할 수 있습니다."
 		},
 		shortReasons: {
-			mapTour: "한_Guide people through a sequence of places_____________빠",
-			mapJournal: "한_Perfect for an in-depth narrative___________빠",
-			mapSeries: "한_Present a series of related maps___________빠",
-			swipe: "한_Compare two maps or map layers with a slider______________빠",
-			spyglass: "한_Compare two maps or map layers with a spyglass_______________빠",
-			basic: "한_Think minimalistic, great for one map____________빠"
+			mapTour: "위치를 순서대로 나타내 사용자 안내",
+			mapJournal: "자세한 이야기를 표현하는 데 최적",
+			mapSeries: "일련의 관련 맵 나타내기",
+			swipe: "슬라이더를 사용하여 두 맵이나 맵 레이어 비교",
+			spyglass: "투과 렌즈를 사용하여 두 맵이나 맵 레이어 비교",
+			basic: "최소 인터페이스 사용(단일 맵에 적합)"
 		},
 	})
 );

@@ -5,29 +5,29 @@
 				close: "Fechar"
 			},
 			loading: {
-				long: "ã_Story is initializing_______Ç",
+				long: "A história está inicializando",
 				long2: "Obrigado por aguardar",
-				failButton: "ã_Reload the story______Ç"
+				failButton: "Recarregar a história"
 			},
 			signin: {
 				title: "Uma autenticação é exigida",
-				explainViewer: "ã_Please sign in with an account on %PORTAL_LINK% to access the story_____________________Ç.",
-				explainBuilder: "ã_Please sign in with an account on %PORTAL_LINK% to configure the story______________________Ç."
+				explainViewer: "Entre com uma conta no %PORTAL_LINK% para acessar a história.",
+				explainBuilder: "Entre com uma conta no %PORTAL_LINK% para configurar a história."
 			},
 			errors: {
 				boxTitle: "Ocorreu um erro",
 				invalidConfig: "Configuração inválida",
 				invalidConfigNoApp: "Identificador do Aplicativo de Mapeamento da Web não especificado no index.html.",
 				unspecifiedConfigOwner: "O proprietário autorizado não foi configurado.",
-				invalidConfigOwner: "ã_Story owner is not authorized__________Ç.",
+				invalidConfigOwner: "O proprietário da história não está autorizado.",
 				createMap: "Não foi possível criar o mapa",
 				invalidApp: "O %TPL_NAME% não existe ou está inacessível.",
 				appLoadingFail: "Ocorreu algo errado, o %TPL_NAME% não carregou corretamente.",
-				notConfiguredDesktop: "ã_The story is not configured yet___________Ç.",
-				notConfiguredMobile: "ã_The %TPL_NAME% builder is not supported at this display size___________________Ç.",
-				notAuthorized: "ã_You are not authorized to access this story______________Ç",
+				notConfiguredDesktop: "A história ainda não está configurada.",
+				notConfiguredMobile: "O construtor %TPL_NAME% não é suportado neste tamanho de visualização.",
+				notAuthorized: "Você não tem autorização para acessar esta história",
 				noBuilderIE: "O construtor não é suportado no Internet Explorer antes da versão %VERSION%. %UPGRADE%",
-				noViewerIE: "ã_This story is not supported in Internet Explorer before version %VERSION%. %UPGRADE%__________________________Ç",
+				noViewerIE: "Esta história não é suportada no Internet Explorer antes da versão %VERSION%. %UPGRADE%",
 				upgradeBrowser: "<a href='http://browsehappy.com/' target='_blank'>Atualize seu navegador</a>.",
 				mapLoadingFail: "Algo deu errado, o mapa não carregou corretamente.",
 				signOut: "Sair"
@@ -35,8 +35,8 @@
 			mobileInfo: {
 				legend: "Legenda",
 				description: "Descrição",
-				lblLegendMobileError: "ã_Sorry, the legend is unavailable. Please reload the story__________________Ç.",
-				lblLegendMobileErrorExplain: "ã_The legend is not available when the device is rotated to portrait mode after the story is loaded______________________________Ç."
+				lblLegendMobileError: "Desculpe, a legenda está indisponível. Recarregue a história.",
+				lblLegendMobileErrorExplain: "A legenda não está disponível quando o dispositivo é rotacionado em modo vertical após a história ser carregada."
 			},
 			mobileFooter: {
 				swipeInvite: "Trocar para verificar o histórico",
@@ -52,9 +52,9 @@
 				templateTitle: "Configurar título do modelo",
 				templateSubtitle: "Configurar subtítulo do modelo",
 				share: "Compartilhar",
-				checking: "ã_Checking your story content_________Ç",
-				fix: "ã_Fix issues in your story________Ç",
-				noerrors: "ã_No issues detected______Ç"
+				checking: "Verificando conteúdo da sua história",
+				fix: "Corrigir problemas em sua história",
+				noerrors: "Nenhum problema detectado"
 			},
 			overviewFromCommon: {
 				title: "Mapa de Visão Geral"
@@ -67,11 +67,11 @@
 				copied: "Copiado",
 				open: "Abrir",
 				embed: "Anexar na página da web",
-				embedExplain: "ã_Use the following HTML code to embed the story in a web page___________________Ç.",
+				embedExplain: "Utilize o código de HTML seguinte para embutir a história em uma página da web.",
 				size: "Tamanho (largura/altura):"
 			},
 			locatorFromCommon: {
-				error: "ã_Location not available________Ç"
+				error: "Local não disponível"
 			}
         }
     })

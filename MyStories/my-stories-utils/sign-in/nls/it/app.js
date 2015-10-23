@@ -1,22 +1,22 @@
 ﻿define(
 	 ({
 		signInDialog: {
-			title: "é_Sign in to Story Maps_______È",
-			subtitle: "é_Sign in with your existing ArcGIS Online account to_________________È:",
-			reasonOne: "é_Create compelling story maps to tell your stories________________È.",
-			reasonTwo: "é_Use your maps and data from ArcGIS Online in your story maps___________________È.",
-			reasonThree: "é_Manage your story maps and check the status of their content___________________È.",
-			noAccountYet: "é_Don't have an ArcGIS Online account? Sign up for a________________È:",
-			publicAccount: "é_Free non-commercial public account___________È",
-			subscriptionAccount: "é_Free trial ArcGIS subscription__________È",
-			signInExpired: "é_Your sign-in expired. Sign in again to pick up where you left off_____________________È.",
-			somethingNotLoading: "é_Something isn't loading correctly. Try refreshing the page___________________È."
+			title: "Accedi alle Story Map",
+			subtitle: "Accedi con l\'account dell\'abbonamento ad ArcGIS Online per:",
+			reasonOne: "Creare Story Map accattivanti per raccontare storie.",
+			reasonTwo: "Utilizzare mappe e dati di ArcGIS Online nelle Story Map.",
+			reasonThree: "Gestire le Story Map e verificare lo stato del relativo contenuto.",
+			noAccountYet: "Non si dispone di un account dell\'abbonamento ad ArcGIS Online? Richiedere un:",
+			publicAccount: "Account pubblico per uso non commerciale gratuito",
+			subscriptionAccount: "Abbonamento di prova gratuito ad ArcGIS",
+			signInExpired: "La registrazione è scaduta. Effettuare nuovamente la registrazione per riprendere da dove si era rimasti.",
+			somethingNotLoading: "Alcuni elementi non vengono caricati correttamente. Provare ad aggiornare la pagina."
 		},
 		unavailableDialog: {
-			title: "é_Sign-In Not Available_______È",
-			explanation: "é_Sorry, this is not supported in a small display. Please open in a larger display or device____________________________È.",
-			close: "é_Close___È",
-			returnButton: "é_Return___È" 
+			title: "Registrazione non disponibile",
+			explanation: "Spiacenti ma non è supportato in uno schermo di piccole dimensioni. Aprire in uno schermo o dispositivo più grande.",
+			close: "Chiudi",
+			returnButton: "Restituisci" 
 		}
 	})
 );

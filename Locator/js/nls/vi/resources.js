@@ -36,7 +36,7 @@ define(
          "filter": "Bộ lọc",
          "close": "Đóng",
          "reverse": "Đảo ngược",
-         "mode": "Đ_Switch mode Drive/Walk________ớ"
+         "mode": "Chuyển đổi chế độ Lái xe/Đi bộ"
       }
    })
 );

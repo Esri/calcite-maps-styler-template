@@ -70,7 +70,7 @@
 			},
 			organizePopup: {
 				title: "องค์กร",
-				lblHeader: "ก้_Drag and drop %LBL_LAYOUT% to organize your story________________ษฺ.",
+				lblHeader: "ลากและวาง  %LBL_LAYOUT% เพื่อจัดระเบียบเรื่องราว",
 				lblColTitle: "ชื่อ",
 				lblColStatus: "สถานะ",
 				btnApplyWarning: "ยืนยันการลบของ %NB% %LBL_LAYOUT%",

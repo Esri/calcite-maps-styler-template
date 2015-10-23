@@ -1,22 +1,22 @@
 ﻿define(
 	 ({
 		signInDialog: {
-			title: "æ_Sign in to Story Maps_______Â",
-			subtitle: "æ_Sign in with your existing ArcGIS Online account to_________________Â:",
-			reasonOne: "æ_Create compelling story maps to tell your stories________________Â.",
-			reasonTwo: "æ_Use your maps and data from ArcGIS Online in your story maps___________________Â.",
-			reasonThree: "æ_Manage your story maps and check the status of their content___________________Â.",
-			noAccountYet: "æ_Don't have an ArcGIS Online account? Sign up for a________________Â:",
-			publicAccount: "æ_Free non-commercial public account___________Â",
-			subscriptionAccount: "æ_Free trial ArcGIS subscription__________Â",
-			signInExpired: "æ_Your sign-in expired. Sign in again to pick up where you left off_____________________Â.",
-			somethingNotLoading: "æ_Something isn't loading correctly. Try refreshing the page___________________Â."
+			title: "Se connecter à Story Maps",
+			subtitle: "Connectez-vous via votre compte ArcGIS Online pour :",
+			reasonOne: "Créez des Story Maps captivantes pour partager vos récits cartographiques.",
+			reasonTwo: "Utilisez vos cartes et les données d\'ArcGIS Online dans vos Story Maps.",
+			reasonThree: "Gérez vos Story Maps et vérifiez le statut de leur contenu.",
+			noAccountYet: "Vous ne possédez pas de compte ArcGIS Online ? Créez un :",
+			publicAccount: "compte public gratuit à usage non commercial",
+			subscriptionAccount: "Abonnement à une version d’évaluation gratuite d’ArcGIS",
+			signInExpired: "Votre connexion a expiré. Reconnectez-vous pour reprendre là où vous vous êtes arrêté.",
+			somethingNotLoading: "Impossible de charger certains éléments. Essayez d\'actualiser la page."
 		},
 		unavailableDialog: {
-			title: "æ_Sign-In Not Available_______Â",
-			explanation: "æ_Sorry, this is not supported in a small display. Please open in a larger display or device____________________________Â.",
-			close: "æ_Close___Â",
-			returnButton: "æ_Return___Â" 
+			title: "Connexion non disponible",
+			explanation: "Cette fonctionnalité n\'est pas prise en charge à une petite échelle d\'affichage. Utilisez une échelle d\'affichage supérieure ou un périphérique de plus grande taille.",
+			close: "Fermer",
+			returnButton: "Retour" 
 		}
 	})
 );

@@ -2,16 +2,16 @@
      ({
         widgets: {
             ShareDialog: {
-                title: "ł_Share___ą",
-                heading: "ł_Share this map_____ą",
-                url: "ł_Map Link___ą",
-                embed: "ł_Embed Map____ą",
-                extent: "ł_Share current map extent________ą",
-                size: "ł_Size (width/height)_______ą:",
-                facebookTooltip: "ł_Facebook___ą",
-                twitterTooltip: "ł_Twitter___ą",
-                gplusTooltip: "ł_Google Plus____ą",
-                emailTooltip: "ł_Email___ą"
+                title: "Udostępnij",
+                heading: "Udostępnij tę mapę",
+                url: "Łącze do mapy",
+                embed: "Osadź mapę",
+                extent: "Udostępnij bieżący zasięg mapy",
+                size: "Rozmiar (szerokość/wysokość):",
+                facebookTooltip: "Facebook",
+                twitterTooltip: "Twitter",
+                gplusTooltip: "Google Plus",
+                emailTooltip: "Adres e-mail"
             }
         }
     })

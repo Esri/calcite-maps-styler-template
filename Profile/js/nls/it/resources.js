@@ -17,28 +17,28 @@
 define(
    ({
     map: {
-      error: "é_Unable to create map_______È"
+      error: "Impossibile creare la mappa"
     },
     elevation: {
-        toggle: "é_Toggle the Elevation Profile Chart____________È.",
-        drawTool: "é_Draw a line on the map to generate an elevation profile__________________È.",
-        selectMessage: "é_Click a line feature or use the draw tool to draw a line to display the elevation profile____________________________È"
+        toggle: "Attivare/disattivare il grafico Profilo di elevazione.",
+        drawTool: "Tracciare una linea sulla mappa per generare un profilo di elevazione.",
+        selectMessage: "Fare clic su una feature linea o utilizzare lo strumento di disegno per disegnare una linea e visualizzare il profilo di elevazione."
     },
     splash: {
-        title: "é_Title___È",
-        content: "é_Configure to create custom splash content_____________È"
+        title: "Titolo",
+        content: "Configurare per creare contenuto di avvio personalizzato"
     },
     legend: {
-        title: "é_Legend___È",
-        tip: "é_Display legend_____È"
+        title: "Legenda",
+        tip: "Visualizza legenda"
     },
     basemap: {
-        title: "é_Basemap___È",
-        tip: "é_Change basemap_____È"
+        title: "Mappa di base",
+        tip: "Cambia mappa di base"
     },
     share: {
-        title: "é_Share___È",
-        tip: "é_Share map____È"
+        title: "Condividi",
+        tip: "Condividi mappa"
     }
   })
 );

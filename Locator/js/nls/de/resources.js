@@ -36,7 +36,7 @@ define(
          "filter": "Filter",
          "close": "Schließen",
          "reverse": "Umkehren",
-         "mode": "ä_Switch mode Drive/Walk________Ü"
+         "mode": "Zwischen Fahren/Gehen-Modus wechseln"
       }
    })
 );

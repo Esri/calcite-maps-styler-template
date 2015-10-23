@@ -27,7 +27,7 @@ define(
             "basemap":{
                     "label": "Fond de carte",
                     "title": "Sélectionner un fond de carte",
-                    "close": "æ_Close___Â"
+                    "close": "Fermer"
             },
             "legend":{
                 "title": "Légende"
@@ -43,7 +43,7 @@ define(
 
         },
         "map": {
-            "toggle": "æ_Toggle side panel______Â",
+            "toggle": "Activer/Désactiver le volet latéral",
             "error": "Impossible de créer la carte"
         }
     })

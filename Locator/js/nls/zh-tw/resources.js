@@ -36,7 +36,7 @@ define(
          "filter": "篩選",
          "close": "關閉",
          "reverse": "反轉",
-         "mode": "試_Switch mode Drive/Walk________驗"
+         "mode": "切換行駛/行走模式"
       }
    })
 );

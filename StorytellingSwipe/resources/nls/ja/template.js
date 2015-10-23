@@ -2,7 +2,7 @@
 	 ({
 		viewer: {
 			loading: {
-				step1: "須_LOADING STORY_____鷗",
+				step1: "ストーリーの読み込み",
 				step2: "データを読み込んでいます",
 				step3: "初期化",
 				fail: "スワイプの読み込みに失敗しました",
@@ -17,19 +17,19 @@
 				invalidConfig: "致命的なエラー: 無効な構成",
 				invalidConfigNoWebmap: "致命的なエラー: 無効な構成 (Web マップが指定されていません)",
 				createMap: "マップを作成できません",
-				invalidApp: "須_Fatal error: The story cannot be loaded_____________鷗",
+				invalidApp: "致命的なエラー: ストーリーを読み込めません",
 				initMobile: "スワイプ Web アプリケーションへようこそ。アプリケーションは構成されていません。 モバイル デバイスでは、対話型ビルダはサポートされていません。",
-				initMobile2: "須_The Swipe builder is not supported at this display size__________________鷗.",
+				initMobile2: "スワイプ ビルダーは、このディスプレイ サイズではサポートされていません。",
 				noBuilderIE8: "バージョン 9 よりも前の Internet Explorer では、スワイプ対話型ビルダはサポートされていません。",
 				noLayerView: "スワイプ Web アプリケーションへようこそ。<br />アプリケーションは、まだ構成されていません。",
-				appSave: "須_Error saving the web story_________鷗",
+				appSave: "Web ストーリーの保存中にエラーが発生しました",
 				mapSave: "Web マップの保存中にエラーが発生しました",
-				notAuthorized: "須_You are not authorized to access this story______________鷗",
+				notAuthorized: "このストーリーにアクセスする権限が与えられていません。",
 				conflictingProjectionsTitle: "投影法の競合",
 				conflictingProjections: "スワイプでは、投影法の異なる 2 つの Web マップを使用できません。設定を開き、最初の Web マップと投影法が同じである Web マップを使用してください。",
 				cpButton: "閉じる",
-				unspecifiedConfigOwner: "須_Authorized owner hasn't been configured_____________鷗.",
-				invalidConfigOwner: "須_Story owner is not authorized__________鷗."
+				unspecifiedConfigOwner: "権限のある所有者が構成されていません。",
+				invalidConfigOwner: "ストーリーの所有者に権限がありません。"
 			},
 			mobileView: {
 				hideIntro: "概要を非表示",
@@ -47,7 +47,7 @@
 		},
 		builder: {
 			builder: {
-				panelHeader: "須_STORY CONFIGURATION_______鷗",
+				panelHeader: "ストーリーの構成",
 				buttonSave: "保存",
 				buttonHelp: "ヘルプ",
 				buttonShare: "共有",
@@ -67,13 +67,13 @@
 				popoverSaveWhenDone: "完了したら必ず保存してください",
 				closeWithPendingChange: "アクションを確認しますか？変更内容は失われます。",
 				gotIt: "OK",
-				savingApplication: "須_Saving story_____鷗",
-				saveSuccess: "須_Story saved successfully________鷗",
+				savingApplication: "ストーリーを保存しています",
+				saveSuccess: "ストーリーが正常に保存されました",
 				saveError: "保存に失敗しました。もう一度やり直してください。",
 				saveError2: "名前または説明に無効な html タグがあるため保存に失敗しました",
 				saveError3: "タイトルは必ず入力してください",
 				signIn: "アカウントでサイン インして",
-				signInTwo: "須_to save the story______鷗."
+				signInTwo: "ストーリーを保存してください。"
 			},
 			header:{
 				editMe: "編集",
@@ -81,7 +81,7 @@
 				templateSubtitle: "テンプレートのサブタイトルの設定"
 			},
 			settings: {
-				settingsHeader: "須_Story settings_____鷗",
+				settingsHeader: "ストーリーの設定",
 				modalCancel: "キャンセル",
 				modalApply: "適用"
 			},
@@ -141,7 +141,7 @@
 				settingsLayoutSpyGlass: "スパイグラス (のぞき窓)",
 				settingsLayoutSelected: "選択したレイアウト",
 				settingsLayoutSelect: "このレイアウトを選択",
-				settingsSaveConfirm: "須_Some of your changes require that you save and reload the story____________________鷗"
+				settingsSaveConfirm: "一部の変更は、保存してストーリーを再読み込みする必要があります"
 			},
 			settingsDataModel: {
 				settingsTabDataModel: "スワイプのタイプ",
@@ -169,7 +169,7 @@
 			},
 			settingsLegend: {
 				settingsTabLegend: "アプリケーションのレイアウト",
-				settingsLegendExplain: "須_Select the layout settings_________鷗.",
+				settingsLegendExplain: "レイアウト設定を選択します。",
 				settingsLegendEnable: "凡例を有効化",
 				settingsDescriptionEnable: "説明を有効化",
 				settingsBookmarksEnable: "一連のスワイプを有効化",
@@ -218,39 +218,39 @@
 				}
 			},
 			share: {
-				firstSaveTitle: "須_Story successfully saved________鷗",
-				firstSaveHeader: "須_Your story is now saved in ArcGIS Online. Please read the following answers to frequent questions______________________________鷗.",
+				firstSaveTitle: "ストーリーが保存されました",
+				firstSaveHeader: "ストーリーが ArcGIS Online に保存されました。以下のよくある質問の答えをお読みください。",
 				firstSaveA1: "ArcGIS Online の操作に慣れていない、または作成インタフェースに簡単にアクセスしたい場合は、次のリンクを保存できます: %LINK1%",
-				firstSaveA1bis: "須_The story can also be found in your <a href='%LINK2%' target='_blank'>ArcGIS Online content folder</a>________________________________鷗.",
-				firstSaveQ2: "須_Is my story shared_______鷗?",
-				firstSaveA2: "須_Currently your story is not shared. To share it, use the SHARE button______________________鷗.",
-				shareTitle: "須_Share your story______鷗",
-				sharePrivateHeader: "須_Your story is not shared, would you like to share it_________________鷗?",
+				firstSaveA1bis: "ストーリーは、<a href=\'%LINK2%\' target=\'_blank\'>ArcGIS Online コンテンツ フォルダー</a>でも見つけることができます。",
+				firstSaveQ2: "ストーリーは共有されていますか？",
+				firstSaveA2: "現在、ストーリーは共有されていません。共有するには、[共有] ボタンを使用します。",
+				shareTitle: "ストーリーの共有",
+				sharePrivateHeader: "ストーリーが共有されていません。共有しますか？",
 				sharePrivateBtn1: "パブリックに共有",
 				sharePrivateBtn2: "組織内で共有",
 				sharePrivateProgress: "共有の実行中...",
 				sharePrivateErr: "共有に失敗しました。もう一度行ってください。",
 				sharePrivateOk: "共有の更新に成功しました。読み込んでいます...",
-				shareStatus1: "須_Story is not saved______鷗",
-				shareStatus2: "須_Story is shared publicly________鷗",
-				shareStatus3: "須_Story is shared within the organization_____________鷗",
-				shareStatus4: "須_Story is not shared_______鷗",
+				shareStatus1: "ストーリーが保存されていません",
+				shareStatus2: "ストーリーがパブリックに共有されています",
+				shareStatus3: "ストーリーが組織サイト内で共有されています",
+				shareStatus4: "ストーリーが共有されていません",
 				sharePreviewAsUser: "プレビュー",
-				shareHeader1: "須_Your story is <strong>publicly accessible</strong>________________鷗.",
-				shareHeader2: "須_Your story is accessible by your organization members (login is required)_______________________鷗.",
-				shareLinkHeader: "須_Share the story with your audience___________鷗",
+				shareHeader1: "ストーリーは<strong>パブリックにアクセスできます</strong>。",
+				shareHeader2: "ストーリーには組織のメンバーがアクセスできます (ログインが必要)。",
+				shareLinkHeader: "ストーリーをユーザーと共有",
 				shareLinkOpen: "オープン",
 				learnMore: "詳細",
-				shareQ1Opt1: "須_How do I keep the story private___________鷗?",
-				shareQ1Opt2: "須_How do I keep the story private or share it publicly_________________鷗?",
+				shareQ1Opt1: "ストーリーをプライベートにする方法",
+				shareQ1Opt2: "ストーリーのプライベート使用とパブリック使用を切り替える方法",
 				shareA1: "<a href='%LINK1%' target='_blank'>アプリケーション アイテム ページ</a>で %SHAREIMG% を使用します。Web マップの共有も解除する場合は、<a href='%LINK2%' target='_blank'>Web マップ アイテム ページ</a>を使用します。",
 				shareA1bis: "フィーチャ サービスの共有も解除する場合は、<a href='%LINK1%' target='_blank'>フィーチャ サービス アイテム ページ</a>を使用します。",
-				shareQ2: "須_How do I edit the story later__________鷗?",
+				shareQ2: "ストーリーを後で編集する方法",
 				shareQ2bis: "作成インタフェースに戻る方法",
-				shareA2div1: "須_Save and reuse the following link %LINK1% or use <a href='%LINK2%' target='_blank'>the story item page</a>_________________________________鷗.",
-				shareA2div2: "須_As the owner of the story, when you are signed in on ArcGIS.com, the story includes a button to open the interactive builder_______________________________________鷗:",
+				shareA2div1: "リンク %LINK1% を保存して再利用するか、<a href=\'%LINK2%\' target=\'_blank\'>ストーリー アイテム ページ</a>を使用します。",
+				shareA2div2: "ストーリーの所有者として ArcGIS.com にサイン インした場合、ストーリーに対話型ビルダーを開くボタンが含まれます。",
 				shareQ3: "データの保存場所は？",
-				shareA3: "須_The story configuration is stored in this web application item</a>_____________________鷗.",
+				shareA3: "ストーリー構成は、この Web アプリケーション アイテムに保存されます</a>。",
 				shareWarning: "<a href='%LINK%' target='_blank'>Web マップ</a>の所有者でないため、%WITH% の共有は無効化されています。",
  				shareWarningWith1: "パブリック",
  				shareWarningWith2: "パブリックおよび組織"

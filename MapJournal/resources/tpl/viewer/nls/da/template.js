@@ -5,33 +5,33 @@
 				close: "Luk"
 			},
 			loading: {
-				step1: "ø_Loading story_____å",
+				step1: "Indlæser historie",
 				step2: "Indlæser data",
 				step3: "Initialiserer",
 				loadBuilder: "Skifter til builder-programmet",
 				long: "Kortjournal starter",
 				long2: "Tak, fordi du venter",
-				failButton: "ø_Reload the story______å"
+				failButton: "Genindlæs historie"
 			},
 			signin: {
 				title: "Godkendelse kræves",
-				explainViewer: "ø_Please sign in with an account on %PORTAL_LINK% to access the story_____________________å.",
-				explainBuilder: "ø_Please sign in with an account on %PORTAL_LINK% to configure the story______________________å."
+				explainViewer: "Log ind med en konto på %PORTAL_LINK% for at få adgang til historien.",
+				explainBuilder: "Log ind med en konto på %PORTAL_LINK% for at konfigurere historien."
 			},
 			errors: {
 				boxTitle: "Der opstod en fejl",
 				invalidConfig: "Ugyldig konfiguration",
 				invalidConfigNoApp: "Webkortapplikation-identifikatoren er ikke angivet i index.html.",
 				unspecifiedConfigOwner: "Der er ikke konfigureret en uautoriseret ejer.",
-				invalidConfigOwner: "ø_Story owner is not authorized__________å.",
+				invalidConfigOwner: "Historieejeren er ikke autoriseret.",
 				createMap: "Kan ikke oprette kort",
 				invalidApp: "%TPL_NAME% findes ikke, eller der er ikke adgang.",
 				appLoadingFail: "Der er noget galt, for %TPL_NAME% blev ikke indlæst korrekt.",
-				notConfiguredDesktop: "ø_The story is not configured yet___________å.",
-				notConfiguredMobile: "ø_The %TPL_NAME% builder is not supported at this display size___________________å.",
-				notAuthorized: "ø_You are not authorized to access this story______________å",
+				notConfiguredDesktop: "Historien er endnu ikke blevet konfigureret.",
+				notConfiguredMobile: "%TPL_NAME%-builder-programmet understøttes ikke ved denne skærmstørrelse.",
+				notAuthorized: "Du er ikke autoriseret til at få adgang til denne historie",
 				noBuilderIE: "Builder-programmet understøttes ikke i Internet Explorer før version %VERSION%. %UPGRADE%",
-				noViewerIE: "ø_This story is not supported in Internet Explorer before version %VERSION%. %UPGRADE%__________________________å",
+				noViewerIE: "Denne historie understøttes ikke i Internet Explorer før version %VERSION%. %UPGRADE%",
 				upgradeBrowser: "<a href='http://browsehappy.com/' target='_blank'>Opdatér din browser</a>.",
 				mapLoadingFail: "Noget gik galt, kortet blev ikke indlæst korrekt.",
 				signOut: "Log ud"
@@ -61,9 +61,9 @@
 				templateTitle: "Indstil skabelontitel",
 				templateSubtitle: "Indstil skabelonundertitel",
 				share: "Del",
-				checking: "ø_Checking your story content_________å",
-				fix: "ø_Fix issues in your story________å",
-				noerrors: "ø_No issues detected______å"
+				checking: "Kontrollerer dit historieindhold",
+				fix: "Ret fejl i din historie",
+				noerrors: "Ingen problemer registreret"
 			},
 			overviewFromCommon: {
 				title: "Oversigtskort"

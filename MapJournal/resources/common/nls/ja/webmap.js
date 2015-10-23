@@ -2,7 +2,7 @@
 	 ({
 		commonWebmap: {
 			selector: {
-				lblWebMap: "須_Map__鷗",
+				lblWebMap: "マップ",
 				lblLocation: "位置",
 				lblContent: "コンテンツ",
 				lblPopup: "ポップアップ",
@@ -17,14 +17,14 @@
 				and: "および",
 				action: "セクション内のアクション",
 				actions: "セクション内のアクション",
-				originalWebmap: "須_Map used to publish the %TPL_NAME%___________鷗",
-				browseMaps: "須_Select a map_____鷗",
-				createMap: "須_Create a map_____鷗",
-				current: "須_Current map____鷗",
-				select: "須_Select or create a map________鷗",
-				newMap: "須_Newly selected map______鷗",
-				newCreatedMap: "須_Newly created map______鷗",
-				webmapDefault: "須_Map default____鷗",
+				originalWebmap: "%TPL_NAME% の公開に使用されるマップ",
+				browseMaps: "マップの選択",
+				createMap: "マップの作成",
+				current: "現在のマップ",
+				select: "マップの選択または作成",
+				newMap: "新しく選択したマップ",
+				newCreatedMap: "新しく作成したマップ",
+				webmapDefault: "マップのデフォルト",
 				customCfg: "カスタム構成",
 				tooltipLocation: "このマップが表示される場所を定義します。",
 				tooltipContent: "表示レイヤを定義します。",
@@ -51,27 +51,27 @@
 				hintNavigation: "マップ ナビゲーションは無効化されています。"
 			},
 			editor: {
-				loading: "須_Please wait while the map editor is loading______________鷗",
-				newTitle: "須_Create new map_____鷗",
-				editTitle: "須_Edit map___鷗",
-				titleLbl: "須_Title___鷗",
-				titlePh: "須_Map title_____鷗...",
-				folderLbl: "須_The map will be created in the same folder as the story__________________鷗.",
-				creating: "須_Creating the map______鷗",
-				saving: "須_Saving the map_____鷗",
-				success: "須_Map saved____鷗",
-				successCreate: "須_Map created____鷗",
-				cancelTitle: "須_Discard any unsaved changes_________鷗?",
-				errorDuplicate: "須_You already have a map with that title____________鷗",
-				errorCreate: "須_Unable to create map. Please try again_____________鷗.",
-				errorSave: "須_Unable to save map. Please try again____________鷗.",
-				notavailable1: "須_Sorry, creating or editing a map is not supported in Firefox due to a technical limitation. You may want to build your story using a different web browser or use the following workaround_________________________________________________________鷗.",
-				notavailable2: "須_Sorry, creating or editing a map is not supported since the story map application is not hosted in %PRODUCT%. Please contact your ArcGIS administrator for more information_____________________________________________________鷗.",
-				notavailable3: "須_Sorry, creating or editing a map is not supported on this version of Portal for ArcGIS (requires 10.4 or later). Please contact your ArcGIS administrator for more information______________________________________________________鷗.",
-				notavailable4: "須_You can create a map using %MV%, then come back here to add it to your story________________________鷗.",
-				notavailable5: "須_You can edit the map using %MV%, then come back here and %apply% to see your changes___________________________鷗.",
-				notavailable6: "須_map viewer____鷗",
-				notavailable7: "須_reload the map_____鷗"
+				loading: "マップ エディターを読み込んでいます。しばらくお待ちください",
+				newTitle: "マップの新規作成",
+				editTitle: "マップの編集",
+				titleLbl: "タイトル",
+				titlePh: "マップ タイトル...",
+				folderLbl: "マップは、ストーリーと同じフォルダーに作成されます。",
+				creating: "マップを作成しています",
+				saving: "マップを保存しています",
+				success: "マップが保存されました",
+				successCreate: "マップが作成されました",
+				cancelTitle: "保存されていない変更内容をすべて破棄しますか？",
+				errorDuplicate: "そのタイトルのマップはすでに存在しています。",
+				errorCreate: "マップを作成できません。もう一度やり直してください。",
+				errorSave: "マップを保存できません。もう一度やり直してください。",
+				notavailable1: "技術的な制限のため、マップの作成または編集は Firefox ではサポートされていません。別の Web ブラウザーを使用してストーリーを作成するか、次の回避策を適用してください。",
+				notavailable2: "ストーリー マップ アプリケーションが %PRODUCT% でホストされていないため、マップの作成または編集がサポートされていません。詳細については、ArcGIS 管理者に問い合わせてください。",
+				notavailable3: "このバージョンの Portal for ArcGIS では、マップの作成または編集はサポートされていません (10.4 以降が必要です)。詳細については、ArcGIS 管理者に問い合わせてください。",
+				notavailable4: "%MV% を使用してマップを作成し、その後、ここに戻ってそのマップをストーリーに追加できます。",
+				notavailable5: "%MV% を使用してマップを編集し、その後、ここに戻って%apply%し、変更内容を表示できます。",
+				notavailable6: "マップ ビューアー",
+				notavailable7: "マップの再読み込み"
 			}
 		},
 		configure: {
@@ -82,11 +82,11 @@
 					contentLabel: "マイ コンテンツ",
 					favoritesLabel: "お気に入り"
 				},
-				title: "須_Select a map_____鷗",
+				title: "マップの選択",
 				searchTitle: "検索",
 				ok: "OK",
 				cancel: "キャンセル",
-				placeholder: "須_Enter search term or web map ID___________鷗..."
+				placeholder: "検索語句または Web マップ ID を入力..."
 			}
 		}
 	})

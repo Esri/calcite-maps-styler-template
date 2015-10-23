@@ -57,7 +57,7 @@
 			},
 			organizePopup: {
 				title: "Tổ chức",
-				lblHeader: "Đ_Drag and drop sections to organize your story_______________ớ.",
+				lblHeader: "Kéo và thả các phần để sắp xếp câu chuyện của bạn.",
 				lblColTitle: "Tiêu đề",
 				lblColPubDate: "Ngày xuất bản",
 				lblColStatus: "Trạng thái",

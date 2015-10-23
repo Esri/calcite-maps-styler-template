@@ -2,7 +2,7 @@
 	 ({
 		commonWebmap: {
 			selector: {
-				lblWebMap: "Đ_Map__ớ",
+				lblWebMap: "Bản đồ",
 				lblLocation: "Vị trí",
 				lblContent: "Nội dung",
 				lblPopup: "Cửa sổ pop-up",
@@ -17,14 +17,14 @@
 				and: "và",
 				action: "Hành động trong phần",
 				actions: "Hành động trong các phần",
-				originalWebmap: "Đ_Map used to publish the %TPL_NAME%___________ớ",
-				browseMaps: "Đ_Select a map_____ớ",
-				createMap: "Đ_Create a map_____ớ",
-				current: "Đ_Current map____ớ",
-				select: "Đ_Select or create a map________ớ",
-				newMap: "Đ_Newly selected map______ớ",
-				newCreatedMap: "Đ_Newly created map______ớ",
-				webmapDefault: "Đ_Map default____ớ",
+				originalWebmap: "Bản đồ được dùng để xuất bản %TPL_NAME%",
+				browseMaps: "Chọn bản đồ",
+				createMap: "Tạo bản đồ",
+				current: "Bản đồ hiện tại",
+				select: "Chọn hoặc tạo bản đồ",
+				newMap: "Bản đồ mới được chọn",
+				newCreatedMap: "Bản đồ mới được tạo",
+				webmapDefault: "Mặc định bản đồ",
 				customCfg: "Cầu hình tùy chỉnh",
 				tooltipLocation: "Xác định vị trí bản đồ này sẽ hiển thị.",
 				tooltipContent: "Xác định các lớp nhìn thấy được.",
@@ -51,27 +51,27 @@
 				hintNavigation: "Điều hướng bản đồ bị tắt."
 			},
 			editor: {
-				loading: "Đ_Please wait while the map editor is loading______________ớ",
-				newTitle: "Đ_Create new map_____ớ",
-				editTitle: "Đ_Edit map___ớ",
-				titleLbl: "Đ_Title___ớ",
-				titlePh: "Đ_Map title_____ớ...",
-				folderLbl: "Đ_The map will be created in the same folder as the story__________________ớ.",
-				creating: "Đ_Creating the map______ớ",
-				saving: "Đ_Saving the map_____ớ",
-				success: "Đ_Map saved____ớ",
-				successCreate: "Đ_Map created____ớ",
-				cancelTitle: "Đ_Discard any unsaved changes_________ớ?",
-				errorDuplicate: "Đ_You already have a map with that title____________ớ",
-				errorCreate: "Đ_Unable to create map. Please try again_____________ớ.",
-				errorSave: "Đ_Unable to save map. Please try again____________ớ.",
-				notavailable1: "Đ_Sorry, creating or editing a map is not supported in Firefox due to a technical limitation. You may want to build your story using a different web browser or use the following workaround_________________________________________________________ớ.",
-				notavailable2: "Đ_Sorry, creating or editing a map is not supported since the story map application is not hosted in %PRODUCT%. Please contact your ArcGIS administrator for more information_____________________________________________________ớ.",
-				notavailable3: "Đ_Sorry, creating or editing a map is not supported on this version of Portal for ArcGIS (requires 10.4 or later). Please contact your ArcGIS administrator for more information______________________________________________________ớ.",
-				notavailable4: "Đ_You can create a map using %MV%, then come back here to add it to your story________________________ớ.",
-				notavailable5: "Đ_You can edit the map using %MV%, then come back here and %apply% to see your changes___________________________ớ.",
-				notavailable6: "Đ_map viewer____ớ",
-				notavailable7: "Đ_reload the map_____ớ"
+				loading: "Vui long chờ trong khi trình biên tập bản đồ đang được tải",
+				newTitle: "Tạo bản đồ mới",
+				editTitle: "Chỉnh sửa bản đồ",
+				titleLbl: "Tiêu đề",
+				titlePh: "Tiêu đề bản đồ...",
+				folderLbl: "Bản đồ sẽ được tạo trong cùng thư mục với câu chuyện.",
+				creating: "Đang tạo bản đồ",
+				saving: "Đang lưu bản đồ",
+				success: "Bản đồ đã được lưu",
+				successCreate: "Bản đồ đã được tạo",
+				cancelTitle: "Bạn có muốn hủy mọi thay đổi chưa được lưu không?",
+				errorDuplicate: "Bạn đã có bản đồ với tiêu đề đó",
+				errorCreate: "Không thể tạo bản đồ. Vui lòng thử lại.",
+				errorSave: "Không thể lưu bản đồ. Vui lòng thử lại.",
+				notavailable1: "Xin lỗi, tạo hoặc chỉnh sửa bản đồ không được hỗ trợ trong Firefox do hạn chế kỹ thuật. Có thể bạn sẽ muốn xây dựng câu chuyện của mình bằng cách sử dụng trình duyệt web khác hoặc sử dụng cách khắc phục sau.",
+				notavailable2: "Xin lỗi, tạo hoặc chỉnh sửa bản đồ không được hỗ trợ do ứng dụng story map không được lưu trữ trong %PRODUCT%. Vui lòng liên hệ người quản trị ArcGIS của bạn để biết thêm thông tin.",
+				notavailable3: "Xin lỗi, tạo hoặc chỉnh sửa bản đồ không được hỗ trợ trong phiên bản Portal for ArcGIS này (yêu cầu phiên bản 10.4 trở lên). Vui lòng liên hệ người quản trị ArcGIS của bạn để biết thêm thông tin.",
+				notavailable4: "Bạn có thể tạo bản đồ bằng cách sử dụng %MV%, rồi quay lại đây để thêm vào câu chuyện của bạn.",
+				notavailable5: "Bạn có thể chỉnh sửa bản đồ bằng cách sử dụng %MV%, rồi quay lại đây và %áp dụng% các thay đổi của bạn.",
+				notavailable6: "trình xem bản đồ",
+				notavailable7: "tải lại bản đồ"
 			}
 		},
 		configure: {
@@ -82,11 +82,11 @@
 					contentLabel: "Nội dung của tôi",
 					favoritesLabel: "Yêu thích của tôi"
 				},
-				title: "Đ_Select a map_____ớ",
+				title: "Chọn bản đồ",
 				searchTitle: "Tìm kiếm",
 				ok: "Ok",
 				cancel: "Hủy",
-				placeholder: "Đ_Enter search term or web map ID___________ớ..."
+				placeholder: "Nhập cụm từ tìm kiếm hoặc ID bản đồ web..."
 			}
 		}
 	})

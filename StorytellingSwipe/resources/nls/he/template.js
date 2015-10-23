@@ -2,7 +2,7 @@
 	 ({
 		viewer: {
 			loading: {
-				step1: "כן_LOADING STORY_____ש",
+				step1: "טוען סיפור",
 				step2: "טעינת מידע",
 				step3: "מתחיל",
 				fail: "סליחה, אך טעינת כלי ה- swipe נכשלה",
@@ -17,19 +17,19 @@
 				invalidConfig: "שגיאה קריטית: קביעת תצורה לא תקינה",
 				invalidConfigNoWebmap: "שגיאה קריטית: קביעת תצורה לא תקינה (לא הוגדר web map)",
 				createMap: "לא ניתן ליצור מפה",
-				invalidApp: "כן_Fatal error: The story cannot be loaded_____________ש",
+				invalidApp: "שגיאה קריטית: לא ניתן לטעון את הסיפור",
 				initMobile: "ברוכים הבאים לאפליקצית ה- web של כלי ה- swipe. עדיין לא הוגדרה תצורה לאפליקציה. אשף הבנייה האינטראקטיבי לא נתמך במכשירים ניידים.",
-				initMobile2: "כן_The Swipe builder is not supported at this display size__________________ש.",
+				initMobile2: "אשף הבנייה של ההחלפה אינו נתמך בגודל תצוגה זה.",
 				noBuilderIE8: "הבנאי האינטראקטיבי של ה- Swipe לא נתמך באינטרנט אקספלורר לפני גרסה 9.",
 				noLayerView: "ברוכים הבאים לאפליקצית ה- web של כלי ה- swipe. <br />עדיין לא הוגדרה תצורה לאפליקציה.",
-				appSave: "כן_Error saving the web story_________ש",
+				appSave: "שגיאה בשמירת סיפור האינטרנט",
 				mapSave: "שגיאה בשמירת ה- web map",
-				notAuthorized: "כן_You are not authorized to access this story______________ש",
+				notAuthorized: "אין לך הרשאה לגשת לסיפור זה",
 				conflictingProjectionsTitle: "היטלים סותרים",
 				conflictingProjections: "כלי ה- Swipe לא ישים כאשר ישנם היטלים שונים לשני webmaps. אנא פתח את ההגדרות והשתמש ב- webmap שמשתמשת באותו היטל של ה- webmap הראשון.",
 				cpButton: "סגור",
-				unspecifiedConfigOwner: "כן_Authorized owner hasn't been configured_____________ש.",
-				invalidConfigOwner: "כן_Story owner is not authorized__________ש."
+				unspecifiedConfigOwner: "לא הוגדר בעלים מורשה.",
+				invalidConfigOwner: "הבעלים של הסיפור אינו מורשה."
 			},
 			mobileView: {
 				hideIntro: "הסתר הקדמה",
@@ -47,7 +47,7 @@
 		},
 		builder: {
 			builder: {
-				panelHeader: "כן_STORY CONFIGURATION_______ש",
+				panelHeader: "תצורת סיפור",
 				buttonSave: "שמירה",
 				buttonHelp: "עזרה",
 				buttonShare: "שיתוף",
@@ -67,13 +67,13 @@
 				popoverSaveWhenDone: "אל תשכח לשמור ברגע שתסיים",
 				closeWithPendingChange: "האם הינך בטוח שברצונך לאשר פעולה זו? אתה עלול לאבד את השינויים שביצעת",
 				gotIt: "אישור",
-				savingApplication: "כן_Saving story_____ש",
-				saveSuccess: "כן_Story saved successfully________ש",
+				savingApplication: "שומר סיפור",
+				saveSuccess: "הסיפור נשמר בהצלחה",
 				saveError: "שמירה נכשלה, יש לנסות שוב",
 				saveError2: "השמירה נכשלה בשל תג HTML לא חוקי בשם או בתיאור",
 				saveError3: "הכותרת לא יכולה להיות ריקה",
 				signIn: "אנא התחבר עם חשבון ב",
-				signInTwo: "כן_to save the story______ש."
+				signInTwo: "כדי לשמור את הסיפור."
 			},
 			header:{
 				editMe: "ערוך אותי!",
@@ -81,7 +81,7 @@
 				templateSubtitle: "קבע כותרת משנה לתבנית"
 			},
 			settings: {
-				settingsHeader: "כן_Story settings_____ש",
+				settingsHeader: "הגדרות סיפור",
 				modalCancel: "ביטול",
 				modalApply: "בצע"
 			},
@@ -141,7 +141,7 @@
 				settingsLayoutSpyGlass: "Spyglass",
 				settingsLayoutSelected: "תצוגה נבחרת",
 				settingsLayoutSelect: "בחר תצוגה זו",
-				settingsSaveConfirm: "כן_Some of your changes require that you save and reload the story____________________ש"
+				settingsSaveConfirm: "חלק מהשינויים שלך דורשים שמירה וטעינה מחדש של הסיפור"
 			},
 			settingsDataModel: {
 				settingsTabDataModel: "סוג Swipe",
@@ -169,7 +169,7 @@
 			},
 			settingsLegend: {
 				settingsTabLegend: "אפליקצית תצוגה",
-				settingsLegendExplain: "כן_Select the layout settings_________ש.",
+				settingsLegendExplain: "בחר את הגדרות המפה.",
 				settingsLegendEnable: "הדלק מקרא",
 				settingsDescriptionEnable: "הדלק תיאור",
 				settingsBookmarksEnable: "הדלק סדרת Swipe",
@@ -218,39 +218,39 @@
 				}
 			},
 			share: {
-				firstSaveTitle: "כן_Story successfully saved________ש",
-				firstSaveHeader: "כן_Your story is now saved in ArcGIS Online. Please read the following answers to frequent questions______________________________ש.",
+				firstSaveTitle: "הסיפור נשמר בהצלחה",
+				firstSaveHeader: "הסיפור נשמר כעת ב- ArcGIS Online . אנא קרא את התשובות לשאלות השכיחות הבאות.",
 				firstSaveA1: "אם אינך מכיר את ArcGIS Online או שאתה מעוניין בקיצור דרך לממשק העריכה, אתה יכול לשמור את הלינק הבא: %LINK1%",
-				firstSaveA1bis: "כן_The story can also be found in your <a href='%LINK2%' target='_blank'>ArcGIS Online content folder</a>________________________________ש.",
-				firstSaveQ2: "כן_Is my story shared_______ש?",
-				firstSaveA2: "כן_Currently your story is not shared. To share it, use the SHARE button______________________ש.",
-				shareTitle: "כן_Share your story______ש",
-				sharePrivateHeader: "כן_Your story is not shared, would you like to share it_________________ש?",
+				firstSaveA1bis: "ניתן למצוא את הסיפור גם ב- <a href='%LINK2%' target='_blank'>תיקיית התוכן של ArcGIS Online</a>.",
+				firstSaveQ2: "האם הסיפור שלי משותף?",
+				firstSaveA2: "כעת הסיפור שלך אינו משותף. כדי לשתף אותו, השתמש בלחצן 'שתף'.",
+				shareTitle: "שתף את הסיפור שלך",
+				sharePrivateHeader: "הסיפור שלך אינו משותף, ​​היית רוצה לשתף אותו?",
 				sharePrivateBtn1: "שתף באופן ציבורי",
 				sharePrivateBtn2: "שתף עם הארגון שלי",
 				sharePrivateProgress: "שיתוף בתהליך...",
 				sharePrivateErr: "השיתוף נכשל, נסה שנית או",
 				sharePrivateOk: "עדכון השיתוף הצליח, טוען...",
-				shareStatus1: "כן_Story is not saved______ש",
-				shareStatus2: "כן_Story is shared publicly________ש",
-				shareStatus3: "כן_Story is shared within the organization_____________ש",
-				shareStatus4: "כן_Story is not shared_______ש",
+				shareStatus1: "הסיפור לא נשמר",
+				shareStatus2: "הסיפור משותף לציבור",
+				shareStatus3: "הסיפור משותף לארגון",
+				shareStatus4: "הסיפור לא משותף",
 				sharePreviewAsUser: "תצוגה מקדימה",
-				shareHeader1: "כן_Your story is <strong>publicly accessible</strong>________________ש.",
-				shareHeader2: "כן_Your story is accessible by your organization members (login is required)_______________________ש.",
-				shareLinkHeader: "כן_Share the story with your audience___________ש",
+				shareHeader1: "הסיפור שלך <strong>נגיש לציבור</strong>.",
+				shareHeader2: "הסיפור שלך נגיש לחברי הארגון שלך (נדרש להתחבר).",
+				shareLinkHeader: "שתף את הסיפור עם הקהל",
 				shareLinkOpen: "פתח",
 				learnMore: "מידע נוסף",
-				shareQ1Opt1: "כן_How do I keep the story private___________ש?",
-				shareQ1Opt2: "כן_How do I keep the story private or share it publicly_________________ש?",
+				shareQ1Opt1: "כיצד לשמור על הסיפור פרטי?",
+				shareQ1Opt2: "כיצד אני יכול לשמור את הסיפור כפרטי או לשתף אותו לציבור?",
 				shareA1: "השתמש ב- %SHAREIMG% ב- <a href='%LINK1%' target='_blank'>דף פריט האפליקציה</a>. אם אתה רוצה גם לבטל את שיתוף של ה- web map, השתמש ב- <a href='%LINK2%' target='_blank'>דף פריט web map</a>.",
 				shareA1bis: "אם אתה רוצה לבטל גם את השיתוף לשירות הישויות, השתמש <a href='%LINK1%' target='_blank'>דף פריט שירות הישויות</a>.",
-				shareQ2: "כן_How do I edit the story later__________ש?",
+				shareQ2: "כיצד ניתן לערוך את הסיפור במועד מאוחר יותר?",
 				shareQ2bis: "כיצד אני יכול לחזור לממשק הפרסום?",
-				shareA2div1: "כן_Save and reuse the following link %LINK1% or use <a href='%LINK2%' target='_blank'>the story item page</a>_________________________________ש.",
-				shareA2div2: "כן_As the owner of the story, when you are signed in on ArcGIS.com, the story includes a button to open the interactive builder_______________________________________ש:",
+				shareA2div1: "שמור והשתמש בו בקישור הבא ‎%LINK1% או השתמש ב- <a href='%LINK2%' target='_blank'>דף פריט הסיפור</a>.",
+				shareA2div2: "כבעלים של הסיפור, כאשר אתה מתחבר אל ArcGIS.com הסיפור כולל לחצן הפותח את אשף הבנייה האינטראקטיבי:",
 				shareQ3: "היכן מאוחסן המידע?",
-				shareA3: "כן_The story configuration is stored in this web application item</a>_____________________ש.",
+				shareA3: "תצורת הסיפור מאוחסנת בפריט אפליקציית אינטרנט זה</a>.",
 				shareWarning: "שיתוף עם %WITH% לא מתאפשר מכיוון שאינך הבעלים של <a href='%LINK%' target='_blank'>webmap</a>.",
  				shareWarningWith1: "ציבורי",
  				shareWarningWith2: "ציבורי וגם עם הארגון"
