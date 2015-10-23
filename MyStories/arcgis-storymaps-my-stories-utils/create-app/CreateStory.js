@@ -9,6 +9,7 @@ define(['dojo/i18n!./nls/app.js?v=' + '0', 'lib-build/hbars!./templates/createSt
 	// init createStory hbs from js?
 	var count = 0,
 		strings = createStoryi18n,
+		basicUrl = window.customBasicTemplateURL || app.cfg.defaultBasicTemplateURL,
 
 	appTypes = {
 		mapTour: 'Map Tour',
@@ -63,7 +64,7 @@ define(['dojo/i18n!./nls/app.js?v=' + '0', 'lib-build/hbars!./templates/createSt
 			title: appTypes.basic,
 			multiple: false,
 			value: 'basic',
-			method: '//storymaps.arcgis.com/en/app-list/basic/tutorial/',
+			method: basicUrl,
 			thumbnail: 'arcgis-storymaps-my-stories-utils/create-app/assets/images/basic.jpg',
 			reason: strings.reasons.basic,
 			example: 'http://links.esri.com/storymaps/basic_example'
@@ -348,7 +349,8 @@ define(['dojo/i18n!./nls/app.js?v=' + '0', 'lib-build/hbars!./templates/createSt
 				{
 					strings: strings,
 					appTypes: appTypes,
-					questionWidget: templatizeQuestion()
+					questionWidget: templatizeQuestion(),
+					basicUrl: basicUrl
 				}
 			));
 		},

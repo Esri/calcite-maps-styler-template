@@ -225,7 +225,7 @@ Evented, declare, lang, _WidgetBase, on, dom, domStyle, domClass, domConstruct, 
                     tabs.startup();
 
                     domConstruct.create("div", {
-                        innerHTML: "<div class='vertical-line'><div role='button' id='toggle_button' tabindex='0' class='menu-button' title='" + this.config.i18n.map.toggle + "' aria-label='" + this.config.i18n.map.toggle +"'></div></div>"
+                        innerHTML: "<div tabindex='0' class='vertical-line'><button  id='toggle_button' tabindex='0' class='menu-button' title='" + this.config.i18n.map.toggle + "' aria-label='" + this.config.i18n.map.toggle +"'></button></div>"
                     }, this._contentPaneCenterNode);
                     this._toggleNode = dom.byId("toggle_button");
 

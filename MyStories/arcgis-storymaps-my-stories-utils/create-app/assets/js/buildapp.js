@@ -21,28 +21,55 @@ function getCookie(c_name)
   return c_value;
 }
 
-function loadBuilder(app, layout) {
-  var portalURL = window.customPortalURL ? window.customPortalURL : 'www.arcgis.com',
-    baseURL = window.location.protocol + '//' + portalURL + '/',
+function loadBuilder(appType, layout) {
+  var hasProtocol = false,
+    baseURL = '',
     layoutOpt = layout ? '&layout=' + layout : '',
     cookie = JSON.parse(getCookie('esri_auth'));
 
-  if(cookie) {
-    if(cookie.portalApp) {
-      baseURL = window.location.protocol + '//' + window.location.hostname + '/';
+  if(window.customPortalURL) {
+    // if the customPortalURL has a protocol, respect that.
+    baseURL = window.customPortalURL;
+    hasProtocol = checkIfProtocol(baseURL);
+
+    if(!hasProtocol) {
+      // remove leading slashes, if any.
+      baseURL = baseURL.replace(/^\/\//, '');
+      baseURL = window.location.protocol + '//' + baseURL;
     }
-    // if it's an organization
-    else if(cookie.customBaseUrl) {
-      if(cookie.urlKey) {
-        baseURL = window.location.protocol + '//' + (cookie.urlKey + '.' + cookie.customBaseUrl).toLowerCase() + '/';
-      }
-      else {
-        baseURL = window.location.protocol + '//' + cookie.customBaseUrl.toLowerCase() + '/';
-      }
-    }
+    baseURL = baseURL.replace(/\/$/, '');
   }
 
-  window.open(baseURL + 'apps/' + app + '/?fromScratch' + layoutOpt, '_blank');
+  else {
+    if(cookie) {
+      if(cookie.portalApp) {
+        baseURL = window.location.hostname;
+      }
+      // if it's an organization
+      else if(cookie.customBaseUrl) {
+        if(cookie.urlKey) {
+          baseURL = (cookie.urlKey + '.' + cookie.customBaseUrl).toLowerCase();
+        }
+        else {
+          baseURL = cookie.customBaseUrl.toLowerCase();
+        }
+      }
+    }
+    else {
+      baseURL = app.cfg.DEFAULT_SHARING_URL;
+    }
+
+    baseURL = window.location.protocol + '//' + baseURL;
+  }
+
+
+  window.open(baseURL + '/apps/' + appType + '/?fromScratch' + layoutOpt, '_blank');
+}
+
+
+function checkIfProtocol(url) {
+  var hasProtocol = (/^.+:\/\//).test(url);
+  return hasProtocol;
 }
 
 function buildApp(app, layout)

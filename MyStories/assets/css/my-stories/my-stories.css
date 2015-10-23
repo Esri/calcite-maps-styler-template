@@ -2629,10 +2629,11 @@ tr + .media-row {
   padding: 5px 10px;
   text-align: left; }
 
-html {
-  overflow: auto; }
+html.builder {
+  overflow-y: auto;
+  overflow-x: hidden; }
 
-body.builder {
+.builder body {
   font-size: 14px;
   min-width: 800px !important; }
 
@@ -2644,7 +2645,7 @@ body.builder {
   right: 0;
   top: 0;
   bottom: 0;
-  margin-top: 180px;
+  margin-top: 70px;
   position: absolute;
   text-align: center;
   z-index: 1; }
