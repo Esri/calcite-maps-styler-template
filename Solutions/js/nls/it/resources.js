@@ -65,4 +65,4 @@ define(
             unableToLaunchApp: "Impossibile avviare l\'applicazione"  // Appears for any failure to build the user interface
         }
     })
-  );
+);
