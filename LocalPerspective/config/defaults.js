@@ -64,7 +64,7 @@ define({
     "lifestyleURL": location.protocol + "//services.arcgisonline.com/arcgis/rest/services/Demographics/USA_Tapestry/MapServer/1",
     "showWeather": true,
     "weatherLabel": "Weather",
-    "weatherURL": location.protocol + "//coolmaps.esri.com/Weather/info.php?v=1",
+    "weatherURL": "http://coolmaps.esri.com/Weather/info.php?v=1",
     "weatherLayerURL_Tiled" : "https://gisserver.accuweather.com/ESRITileServices2/tileRequest/AccuTileServices/LatestUSHiResRadar/N1dvRW9KUjNNK2tYWFp4Y1h6M2lCa2ZTRW5wMWJzeXdaamxIY3ZkRmcxVCs1YXdPaE1MckpBPT0=/MapServer/tile/{level}/{row}/{col}",
     "weatherLayerURL_WMS" : location.protocol + "//mesonet.agron.iastate.edu/cgi-bin/wms/nexrad/n0r.cgi?SERVICE=WMS", // URL for WMS weather layer.
     "weatherUnits": "F", // options: F or C
