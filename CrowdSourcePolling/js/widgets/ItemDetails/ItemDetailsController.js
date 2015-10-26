@@ -27,7 +27,6 @@ define([
     'dojo/query',
     "dojo/sniff",
     "dojo/topic",
-    "dojox/fx/scroll",
     'dojo/on',
     'dojo/NodeList-dom',
 
@@ -44,7 +43,7 @@ define([
     "application/widgets/PopupWindow/PopupWindow",
 
     'dojo/text!./ItemDetailsView.html'
-], function (declare, lang, array, dom, domConstruct, domStyle, domClass, domAttr, query, has, topic, scroller, on, nld,
+], function (declare, lang, array, dom, domConstruct, domStyle, domClass, domAttr, query, has, topic, on, nld,
     SvgHelper,
     ContentPane,
     _WidgetBase, _TemplatedMixin,
@@ -112,6 +111,9 @@ define([
                 domStyle.set(this.commentsList, 'display', 'none');
             }
             domStyle.set(this.domNode, 'display', '');
+
+            // Scroll to the top of the details; needed for Firefox
+            this.scrollIntoView(this.descriptionDiv);
         },
 
         /**
@@ -419,7 +421,7 @@ define([
                 this.invertButton("comment", true, this.commentButton, this.commentIcon);
 
                 // Scroll the comment form into view if needed
-                this.scrollIntoView(this.domNode.parentNode, this.itemAddComment.domNode);
+                this.scrollIntoView(this.itemAddComment.domNode);
             }
         },
 
@@ -433,30 +435,24 @@ define([
                 this.invertButton("comment", false, this.commentButton, this.commentIcon);
 
                 // Scroll to the top of the details to restore context
-                this.scrollIntoView(this.domNode.parentNode, this.itemSummary);
+                this.scrollIntoView(this.descriptionDiv);
             }
         },
 
         /**
          * Scrolls a container node to make a specified node visible.
-         * @param {object} nodeToScroll Container node that's to be scrolled
          * @param {object} nodeToMakeVisible Node that's to be brought into view
          */
-        scrollIntoView: function (nodeToScroll, nodeToMakeVisible) {
+        scrollIntoView: function (nodeToMakeVisible) {
+            // Firefox defaults to former scroll position if we're returning to a previously-scrolled node (which could
+            // be a different item's details--they go into the same scrollable div). The scrollIntoView can't change this
+            // unless it occurs a little later than the default behavior, hence the setTimeout.
             if (!has("ff")) {
-                // Dojo dojox/fx/scroll scroller doesn't appear to work in Firefox--often scrolls to end
-                // of node to make visible
-                scroller({
-                    win: nodeToScroll,
-                    node: nodeToMakeVisible
-                }).play();
+                nodeToMakeVisible.scrollIntoView();
             } else {
-                // Fortunately, there's a fallback: scrollIntoView with options, which is only
-                // supported in Firefox >= 36
-                nodeToMakeVisible.scrollIntoView({
-                    behavior: "smooth",
-                    block: "start"
-                });
+                setTimeout(function (){
+                    nodeToMakeVisible.scrollIntoView();
+                }, 500);
             }
         },
 
