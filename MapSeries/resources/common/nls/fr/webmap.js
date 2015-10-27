@@ -2,7 +2,7 @@
 	 ({
 		commonWebmap: {
 			selector: {
-				lblWebMap: "æ_Map__Â",
+				lblWebMap: "Carte",
 				lblLocation: "Emplacement",
 				lblContent: "Contenu",
 				lblPopup: "Fenêtre contextuelle",
@@ -17,14 +17,14 @@
 				and: "et",
 				action: "Action dans la section",
 				actions: "Action dans les sections",
-				originalWebmap: "æ_Map used to publish the %TPL_NAME%___________Â",
-				browseMaps: "æ_Select a map_____Â",
-				createMap: "æ_Create a map_____Â",
-				current: "æ_Current map____Â",
-				select: "æ_Select or create a map________Â",
-				newMap: "æ_Newly selected map______Â",
-				newCreatedMap: "æ_Newly created map______Â",
-				webmapDefault: "æ_Map default____Â",
+				originalWebmap: "Carte utilisée pour publier %TPL_NAME%",
+				browseMaps: "Sélectionner une carte",
+				createMap: "Créer une carte",
+				current: "Carte actuelle",
+				select: "Sélectionner ou créer une carte",
+				newMap: "Nouvelle carte sélectionnée",
+				newCreatedMap: "Nouvelle carte créée",
+				webmapDefault: "Carte par défaut",
 				customCfg: "Configuration personnalisée",
 				tooltipLocation: "Définissez l\'emplacement que cette carte affichera.",
 				tooltipContent: "Définissez les couches visibles.",
@@ -51,27 +51,27 @@
 				hintNavigation: "La navigation cartographique est désactivée."
 			},
 			editor: {
-				loading: "æ_Please wait while the map editor is loading______________Â",
-				newTitle: "æ_Create new map_____Â",
-				editTitle: "æ_Edit map___Â",
-				titleLbl: "æ_Title___Â",
-				titlePh: "æ_Map title_____Â...",
-				folderLbl: "æ_The map will be created in the same folder as the story__________________Â.",
-				creating: "æ_Creating the map______Â",
-				saving: "æ_Saving the map_____Â",
-				success: "æ_Map saved____Â",
-				successCreate: "æ_Map created____Â",
-				cancelTitle: "æ_Discard any unsaved changes_________Â?",
-				errorDuplicate: "æ_You already have a map with that title____________Â",
-				errorCreate: "æ_Unable to create map. Please try again_____________Â.",
-				errorSave: "æ_Unable to save map. Please try again____________Â.",
-				notavailable1: "æ_Sorry, creating or editing a map is not supported in Firefox due to a technical limitation. You may want to build your story using a different web browser or use the following workaround_________________________________________________________Â.",
-				notavailable2: "æ_Sorry, creating or editing a map is not supported since the story map application is not hosted in %PRODUCT%. Please contact your ArcGIS administrator for more information_____________________________________________________Â.",
-				notavailable3: "æ_Sorry, creating or editing a map is not supported on this version of Portal for ArcGIS (requires 10.4 or later). Please contact your ArcGIS administrator for more information______________________________________________________Â.",
-				notavailable4: "æ_You can create a map using %MV%, then come back here to add it to your story________________________Â.",
-				notavailable5: "æ_You can edit the map using %MV%, then come back here and %apply% to see your changes___________________________Â.",
-				notavailable6: "æ_map viewer____Â",
-				notavailable7: "æ_reload the map_____Â"
+				loading: "Patientez pendant le chargement de l\'éditeur de carte",
+				newTitle: "Créer une carte",
+				editTitle: "Modifier la carte",
+				titleLbl: "Titre",
+				titlePh: "Titre de la carte...",
+				folderLbl: "La carte va être créée dans le même dossier que le récit.",
+				creating: "Création de la carte",
+				saving: "Enregistrement de la carte",
+				success: "Carte enregistrée",
+				successCreate: "Carte créée",
+				cancelTitle: "Ignorer les modifications non enregistrées ?",
+				errorDuplicate: "Une carte portant ce titre existe déjà",
+				errorCreate: "Impossible de créer la carte. Réessayez.",
+				errorSave: "Impossible d\'enregistrer la carte. Réessayez.",
+				notavailable1: "La création ou la mise à jour d\'une carte n\'est pas prise en charge dans Firefox en raison d\'une limitation technique. Vous pouvez concevoir votre récit à l\'aide d\'un navigateur Web différent ou recourir à la solution suivante.",
+				notavailable2: "La création ou la mise à jour d\'une carte n\'est pas prise en charge, car l\'application Story Map n\'est pas hébergée dans %PRODUCT%. Contactez votre administrateur ArcGIS pour plus d\'informations.",
+				notavailable3: "La création ou la mise à jour d\'une carte n\'est pas prise en charge dans cette version de Portal for ArcGIS (requiert la version 10.4 ou ultérieure). Contactez votre administrateur ArcGIS pour plus d\'informations.",
+				notavailable4: "Vous pouvez créer une carte avec %MV%, puis revenir ici pour l\'ajouter à votre récit.",
+				notavailable5: "Vous pouvez mettre à jour la carte avec %MV%, puis revenir ici et %apply% pour visualiser vos modifications.",
+				notavailable6: "visionneuse de carte",
+				notavailable7: "recharger la carte"
 			}
 		},
 		configure: {
@@ -82,11 +82,11 @@
 					contentLabel: "Mon contenu",
 					favoritesLabel: "Mes favoris"
 				},
-				title: "æ_Select a map_____Â",
+				title: "Sélectionner une carte",
 				searchTitle: "Rechercher",
 				ok: "OK",
 				cancel: "Annuler",
-				placeholder: "æ_Enter search term or web map ID___________Â..."
+				placeholder: "Entrer un terme de recherche ou l\'identifiant d\'une carte Web..."
 			}
 		}
 	})

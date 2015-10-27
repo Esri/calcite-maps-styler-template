@@ -1,51 +1,51 @@
 ﻿define(
 	 ({
 		dialog: {
-			back: "é_Back__È",
-			close: "é_Close___È",
-			createNewStory: "é_Create a New Story______È",
-			pickApp: "é_Pick an App____È",
-			askPros: "é_Ask the Pros_____È"
+			back: "Indietro",
+			close: "Chiudi",
+			createNewStory: "Crea una nuova storia",
+			pickApp: "Scegli un\'app",
+			askPros: "Chiedi agli esperti"
 		},
 		incompatibleNotice: {
-			title: "é_Create Story Not Available_________È",
-			subtitle: "é_Sorry, this is not supported in a small display. Please open in a larger display or device____________________________È.",
-			close: "é_Close___È"
+			title: "Crea storia non disponibile",
+			subtitle: "Spiacenti, questa operazione non è supportata in uno schermo di piccole dimensioni. Aprire in uno schermo o dispositivo più grande.",
+			close: "Chiudi"
 		},		
 		answerText: {
-			seriesOfPlaces: "é_A set of places______È",
-			mapsNarrative: "é_A narrative with maps_______È",
-			compareDatasets: "é_An interactive comparison of two datasets_____________È",
-			other: "é_A single map_____È",
-			yes: "é_Yes__È",
-			no: "é_No__È",
-			click: "é_Click___È",
-			scroll: "é_Scroll___È"
+			seriesOfPlaces: "Insieme di luoghi",
+			mapsNarrative: "Racconto con mappe",
+			compareDatasets: "Confronto interattivo di due dataset",
+			other: "Mappa singola",
+			yes: "Sì",
+			no: "No",
+			click: "Fare clic su",
+			scroll: "Scorrimento"
 		},
 		questionText: {
-			bestDescribesStory: "é_What best describes your story__________È?",
-			showPhotos: "é_Do you want to show photos for each location_______________È?",
-			clickOrScroll: "é_Do you want your audience to click through tabs or scroll__________________È?"
+			bestDescribesStory: "Che cosa descrive meglio la storia?",
+			showPhotos: "Mostrare foto per ogni posizione?",
+			clickOrScroll: "Si desidera che il pubblico faccia clic su ogni scheda o che scorra tra di esse?"
 		},
 		finalApp: {
-			weRecommend: "é_We Recommend: {{STORY_TYPE}}_________È",
-			letsBuild: "é_Let's build_____È!",
-			seeExample: "é_See example____È"
+			weRecommend: "Si consiglia: {{STORY_TYPE}}",
+			letsBuild: "Creiamola!",
+			seeExample: "Vedi esempio"
 		},
 		reasons: {
-			mapTour: "é_This app presents a sequential, place-based narrative in the form of a series of geotagged photos and captions linked to an interactive map. Itâ€™s ideal for walking tours or for a series of locations youâ€™d like users to follow in sequence__________________________________________________________________________È.",
-			mapJournal: "é_This app lets you create a compelling map-based narrative presented as a set of journal entries. It's ideal for creating multimedia stories that combine text, maps, images, and video, especially when you have lots of text or a rich array of content____________________________________________________________________________È.",
-			mapSeries: "é_This app lets you present a series of maps via tabs, numbered bullets, or our expandable 'side accordion' control. You can also include images, video and web content in your series to tell your story_____________________________________________________________È.",
-			swipeSpyglass: "é_This app enables users to compare two maps or two layers in the same map. It is particularly effective for showing before-and-after imagery or other changes over time___________________________________________________È.",
-			basic: "é_This app lets you present a map via a very simple minimalist user interface. Apart from the title bar and an optional legend, the map fills the screen. Use this app to let your map speak for itself____________________________________________________________È."
+			mapTour: "Questa app presenta un racconto sequenziale basato sulle località sotto forma di una serie di foto e didascalie con geotagging collegate a una mappa interattiva. È la soluzione ideale per escursioni a piedi o per una serie di luoghi che si desidera che gli utenti seguano in sequenza.",
+			mapJournal: "Questa app consente di creare un racconto interessante basato su mappe e presentato come un insieme di voci di diario. È la soluzione ideale per la creazione di storie multimediali che combinano testo, mappe, immagini e video, in particolare in presenza di molto testo o una vasta gamma di contenuti.",
+			mapSeries: "Questa app consente di presentare una serie di mappe tramite schede, elenchi numerati o con controllo ‘a soffietto\'. Nelle serie è anche possibile includere immagini, video e contenuto Web per raccontare la storia.",
+			swipeSpyglass: "Questa app consente agli utenti di confrontare due mappe o due layer nella stessa mappa. È particolarmente efficace per visualizzare immagini prima e dopo un riferimento temporale specifico o altre modifiche nel tempo.",
+			basic: "Questa app consente di presentare una mappa tramite un\'interfaccia utente molto semplice. Oltre alla barra del titolo e a una legenda facoltativa, la mappa occupa l\'intero schermo. Utilizzare questa app per dare il massimo risalto alla mappa."
 		},
 		shortReasons: {
-			mapTour: "é_Guide people through a sequence of places_____________È",
-			mapJournal: "é_Perfect for an in-depth narrative___________È",
-			mapSeries: "é_Present a series of related maps___________È",
-			swipe: "é_Compare two maps or map layers with a slider______________È",
-			spyglass: "é_Compare two maps or map layers with a spyglass_______________È",
-			basic: "é_Think minimalistic, great for one map____________È"
+			mapTour: "Condurre le persone attraverso una serie di luoghi",
+			mapJournal: "Perfetta per un racconto dettagliato",
+			mapSeries: "Presenta una serie di mappe correlate",
+			swipe: "Confronta due mappe o layer tramite un cursore",
+			spyglass: "Confronta due mappe o layer tramite un cannocchiale",
+			basic: "Approccio minimalista, eccezionale per una sola mappa"
 		},
 	})
 );

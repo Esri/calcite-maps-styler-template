@@ -27,7 +27,7 @@ define(
             "basemap":{
                     "label": "Taustakartta",
                     "title": "Valitse taustakartta",
-                    "close": "Å_Close___ö"
+                    "close": "Tallennettu"
             },
             "legend":{
                 "title": "Selite"
@@ -43,7 +43,7 @@ define(
 
         },
         "map": {
-            "toggle": "Å_Toggle side panel______ö",
+            "toggle": "Näytä tai piilota sivupaneeli",
             "error": "Karttaa ei voi luoda"
         }
     })

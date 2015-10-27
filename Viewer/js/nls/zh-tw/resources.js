@@ -20,9 +20,9 @@ define(
             "error": "無法建立地圖"
         },
         "nav":{
-            "next": "試_Next__驗",
-            "previous": "試_Previous___驗",
-            "close": "試_Close___驗"
+            "next": "下一頁",
+            "previous": "上一頁",
+            "close": "關閉"
         },
         "tools":{
             "search":{

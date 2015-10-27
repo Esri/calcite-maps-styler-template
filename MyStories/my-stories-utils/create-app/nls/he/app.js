@@ -1,51 +1,51 @@
 ﻿define(
 	 ({
 		dialog: {
-			back: "כן_Back__ש",
-			close: "כן_Close___ש",
-			createNewStory: "כן_Create a New Story______ש",
-			pickApp: "כן_Pick an App____ש",
-			askPros: "כן_Ask the Pros_____ש"
+			back: "אחורה",
+			close: "סגור",
+			createNewStory: "צור סיפור חדש",
+			pickApp: "בחר אפליקציה",
+			askPros: "שאל את המומחים"
 		},
 		incompatibleNotice: {
-			title: "כן_Create Story Not Available_________ש",
-			subtitle: "כן_Sorry, this is not supported in a small display. Please open in a larger display or device____________________________ש.",
-			close: "כן_Close___ש"
+			title: "יצירת סיפור לא זמינה",
+			subtitle: "מצטערים, אפשרות זו לא נתמכת בתצוגה קטנה. פתח בתצוגה או במכשיר גדולים יותר.",
+			close: "סגור"
 		},		
 		answerText: {
-			seriesOfPlaces: "כן_A set of places______ש",
-			mapsNarrative: "כן_A narrative with maps_______ש",
-			compareDatasets: "כן_An interactive comparison of two datasets_____________ש",
-			other: "כן_A single map_____ש",
-			yes: "כן_Yes__ש",
-			no: "כן_No__ש",
-			click: "כן_Click___ש",
-			scroll: "כן_Scroll___ש"
+			seriesOfPlaces: "ערכת מקומות",
+			mapsNarrative: "תסריט עם מפות",
+			compareDatasets: "השוואה אינטראקטיבית של שתי ערכות נתונים",
+			other: "מפה יחידה",
+			yes: "כן",
+			no: "לא",
+			click: "לחץ",
+			scroll: "גלול"
 		},
 		questionText: {
-			bestDescribesStory: "כן_What best describes your story__________ש?",
-			showPhotos: "כן_Do you want to show photos for each location_______________ש?",
-			clickOrScroll: "כן_Do you want your audience to click through tabs or scroll__________________ש?"
+			bestDescribesStory: "מה מתאר בצורה הטובה ביותר את הסיפור שלך?",
+			showPhotos: "האם ברצונך להציג תמונות עבור כל מיקום?",
+			clickOrScroll: "האם ברצונך שהקהל שלך ילחץ דרך כרטיסיות או יגלול?"
 		},
 		finalApp: {
-			weRecommend: "כן_We Recommend: {{STORY_TYPE}}_________ש",
-			letsBuild: "כן_Let's build_____ש!",
-			seeExample: "כן_See example____ש"
+			weRecommend: "אנו ממליצים על: {{STORY_TYPE}}",
+			letsBuild: "בוא נבנה!",
+			seeExample: "ראה דוגמה"
 		},
 		reasons: {
-			mapTour: "כן_This app presents a sequential, place-based narrative in the form of a series of geotagged photos and captions linked to an interactive map. Itâ€™s ideal for walking tours or for a series of locations youâ€™d like users to follow in sequence__________________________________________________________________________ש.",
-			mapJournal: "כן_This app lets you create a compelling map-based narrative presented as a set of journal entries. It's ideal for creating multimedia stories that combine text, maps, images, and video, especially when you have lots of text or a rich array of content____________________________________________________________________________ש.",
-			mapSeries: "כן_This app lets you present a series of maps via tabs, numbered bullets, or our expandable 'side accordion' control. You can also include images, video and web content in your series to tell your story_____________________________________________________________ש.",
-			swipeSpyglass: "כן_This app enables users to compare two maps or two layers in the same map. It is particularly effective for showing before-and-after imagery or other changes over time___________________________________________________ש.",
-			basic: "כן_This app lets you present a map via a very simple minimalist user interface. Apart from the title bar and an optional legend, the map fills the screen. Use this app to let your map speak for itself____________________________________________________________ש."
+			mapTour: "אפליקציה זו מציגה תסריט מבוסס-מקום רציף בצורת סדרה של תמונות וכיתובים מתויגים גיאוגרפית המקושרים למפה אינטראקטיבית.‬ היא אידיאלית עבור סיורי הליכה או עבור סדרת מיקומים שברצונך שמשתמשים יעקבו אחריהם ברצף.",
+			mapJournal: "אפליקציה זו מאפשרת לך ליצור תסריט מבוסס-מפה מרתק המוצג כסדרת ערכי יומן. היא אידיאלית ליצירת סיפורי מולטימדיה שמשלבים טקסט, מפות, תמונות ווידאו, בפרט כאשר יש לך כמויות גדולות של טקסט או מערך תוכן עשיר.",
+			mapSeries: "אפליקציה זו מאפשרת לך להציג סדרת מפות דרך כרטיסיות, תבליטים ממוספרים או פקד האקורדיון הצדדי הניתן להרחבה שלנו. באפשרותך גם לכלול תמונות, וידאו ותוכן אינטרנט בסדרה שלך כדי לספר את הסיפור.",
+			swipeSpyglass: "אפליקציה זו מאפשרת למשתמשים להשוות בין שתי מפות או שתי שכבות באותה מפה. היא יעילה במיוחד להצגת תמונות לפני ואחרי או שינויים אחרים במהלך הזמן.",
+			basic: "אפליקציה זו מאפשרת לך להציג מפה באמצעות ממשק משתמש מינימליסטי ופשוט מאוד. מלבד שורת הכותרת ומקרא אופציונלי, המפה ממלאת את המסך. השתמש באפליקציה זו כדי לאפשר למפה שלך לספר סיפור."
 		},
 		shortReasons: {
-			mapTour: "כן_Guide people through a sequence of places_____________ש",
-			mapJournal: "כן_Perfect for an in-depth narrative___________ש",
-			mapSeries: "כן_Present a series of related maps___________ש",
-			swipe: "כן_Compare two maps or map layers with a slider______________ש",
-			spyglass: "כן_Compare two maps or map layers with a spyglass_______________ש",
-			basic: "כן_Think minimalistic, great for one map____________ש"
+			mapTour: "הדרך אנשים באמצעות רצף מקומות",
+			mapJournal: "מושלמת עבור תסריט מעמיק",
+			mapSeries: "הצג סדרת מפות קשורות",
+			swipe: "השוואה בין שתי מפות או שכבות מפה עם מחוון",
+			spyglass: "השוואה בין שתי מפות או שכבות מפה עם זכוכית מגדלת",
+			basic: "תחשוב בצורה מינימליסטית, מצוין עבור מפה אחת"
 		},
 	})
 );

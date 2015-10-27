@@ -262,7 +262,7 @@
       mapTabTooltip: "Kart",
       btnDescendingText: "Synkende",
       btnAscendingText: "Stigende",
-      geometryUnavailableErrorMessage: "å_Error finding the geometry of the feature_____________ø",
+      geometryUnavailableErrorMessage: "Feil under henting av geometrien for geoobjektet",
       infoPopupOffErrorMessage: "Ingen informasjon som kan vises",
       btnLoadMoreText: "Last inn mer",
       unavailableTitleText: "Uten navn",

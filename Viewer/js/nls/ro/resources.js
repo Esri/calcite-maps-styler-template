@@ -20,9 +20,9 @@ define(
             "error": "Nu se poate crea harta"
         },
         "nav":{
-            "next": "Ă_Next__ș",
-            "previous": "Ă_Previous___ș",
-            "close": "Ă_Close___ș"
+            "next": "Următorul",
+            "previous": "Anterior",
+            "close": "Închidere"
         },
         "tools":{
             "search":{

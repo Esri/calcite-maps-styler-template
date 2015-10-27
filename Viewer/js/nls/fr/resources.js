@@ -20,9 +20,9 @@ define(
             "error": "Impossible de créer la carte"
         },
         "nav":{
-            "next": "æ_Next__Â",
-            "previous": "æ_Previous___Â",
-            "close": "æ_Close___Â"
+            "next": "Suivant",
+            "previous": "Précédent",
+            "close": "Fermer"
         },
         "tools":{
             "search":{

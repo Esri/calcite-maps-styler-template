@@ -20,9 +20,9 @@ define(
             "error": "无法创建地图"
         },
         "nav":{
-            "next": "试_Next__验",
-            "previous": "试_Previous___验",
-            "close": "试_Close___验"
+            "next": "下一页",
+            "previous": "上一页",
+            "close": "关闭"
         },
         "tools":{
             "search":{

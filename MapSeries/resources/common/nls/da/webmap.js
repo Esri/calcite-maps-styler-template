@@ -2,7 +2,7 @@
 	 ({
 		commonWebmap: {
 			selector: {
-				lblWebMap: "ø_Map__å",
+				lblWebMap: "Kort",
 				lblLocation: "Placering",
 				lblContent: "Indhold",
 				lblPopup: "Pop-up",
@@ -17,14 +17,14 @@
 				and: "og",
 				action: "Handling i sektion",
 				actions: "Handling i sektioner",
-				originalWebmap: "ø_Map used to publish the %TPL_NAME%___________å",
-				browseMaps: "ø_Select a map_____å",
-				createMap: "ø_Create a map_____å",
-				current: "ø_Current map____å",
-				select: "ø_Select or create a map________å",
-				newMap: "ø_Newly selected map______å",
-				newCreatedMap: "ø_Newly created map______å",
-				webmapDefault: "ø_Map default____å",
+				originalWebmap: "Kort, der bruges til at publicere %TPL_NAME%",
+				browseMaps: "Vælg et kort",
+				createMap: "Opret et kort",
+				current: "Aktuelt kort",
+				select: "Vælg eller opret et kort",
+				newMap: "Kort, der er valgt for nylig",
+				newCreatedMap: "Kort, der er oprettet for nylig",
+				webmapDefault: "Kortstandard",
 				customCfg: "Tilpasset konfiguration",
 				tooltipLocation: "Definér den position, som kortet skal vise.",
 				tooltipContent: "Definér synlige lag.",
@@ -51,27 +51,27 @@
 				hintNavigation: "Kortnavigation er deaktiveret."
 			},
 			editor: {
-				loading: "ø_Please wait while the map editor is loading______________å",
-				newTitle: "ø_Create new map_____å",
-				editTitle: "ø_Edit map___å",
-				titleLbl: "ø_Title___å",
-				titlePh: "ø_Map title_____å...",
-				folderLbl: "ø_The map will be created in the same folder as the story__________________å.",
-				creating: "ø_Creating the map______å",
-				saving: "ø_Saving the map_____å",
-				success: "ø_Map saved____å",
-				successCreate: "ø_Map created____å",
-				cancelTitle: "ø_Discard any unsaved changes_________å?",
-				errorDuplicate: "ø_You already have a map with that title____________å",
-				errorCreate: "ø_Unable to create map. Please try again_____________å.",
-				errorSave: "ø_Unable to save map. Please try again____________å.",
-				notavailable1: "ø_Sorry, creating or editing a map is not supported in Firefox due to a technical limitation. You may want to build your story using a different web browser or use the following workaround_________________________________________________________å.",
-				notavailable2: "ø_Sorry, creating or editing a map is not supported since the story map application is not hosted in %PRODUCT%. Please contact your ArcGIS administrator for more information_____________________________________________________å.",
-				notavailable3: "ø_Sorry, creating or editing a map is not supported on this version of Portal for ArcGIS (requires 10.4 or later). Please contact your ArcGIS administrator for more information______________________________________________________å.",
-				notavailable4: "ø_You can create a map using %MV%, then come back here to add it to your story________________________å.",
-				notavailable5: "ø_You can edit the map using %MV%, then come back here and %apply% to see your changes___________________________å.",
-				notavailable6: "ø_map viewer____å",
-				notavailable7: "ø_reload the map_____å"
+				loading: "Vent, mens korteditoren indlæses",
+				newTitle: "Opret nyt kort",
+				editTitle: "Redigér kort",
+				titleLbl: "Titel",
+				titlePh: "Korttitel...",
+				folderLbl: "Kortet oprettes i den samme mappe som historien.",
+				creating: "Opretter kortet",
+				saving: "Gemmer kortet",
+				success: "Kort gemt",
+				successCreate: "Kort oprettet",
+				cancelTitle: "Slet eventuelle ikke-gemte ændringer?",
+				errorDuplicate: "Du har allerede det kort med denne titel",
+				errorCreate: "Kan ikke oprette kort. Prøv igen.",
+				errorSave: "Kan ikke gemme kort. Prøv igen.",
+				notavailable1: "Beklager, men oprettelse eller redigering af et kort understøttes ikke i Firefox på grund af en teknisk begrænsning. Du kan eventuelt oprette din historie med en anden webbrowser eller bruge følgende løsning.",
+				notavailable2: "Beklager, men oprettelse eller redigering af et kort understøttes ikke, fordi story map-applikationen ikke er \"hosted\" i %PRODUCT%. Kontakt din ArcGIS-administrator for at få yderligere oplysninger.",
+				notavailable3: "Beklager, men oprettelse eller redigering af et kort understøttes ikke i denne version af Portal for ArcGIS (kræver version 10.4 eller nyere). Kontakt din ArcGIS-administrator for at få yderligere oplysninger.",
+				notavailable4: "Du kan oprette et kort med %MV% og derefter vende tilbage for at føje det til din historie.",
+				notavailable5: "Du kan redigere et kort med %MV% og derefter vende tilbage og %apply% for at se dine ændringer.",
+				notavailable6: "kortviser",
+				notavailable7: "genindlæs kortet"
 			}
 		},
 		configure: {
@@ -82,11 +82,11 @@
 					contentLabel: "Mit indhold",
 					favoritesLabel: "Mine favoritter"
 				},
-				title: "ø_Select a map_____å",
+				title: "Vælg et kort",
 				searchTitle: "Søg",
 				ok: "OK",
 				cancel: "Annullér",
-				placeholder: "ø_Enter search term or web map ID___________å..."
+				placeholder: "Indtast søgeterm eller webkort-ID..."
 			}
 		}
 	})

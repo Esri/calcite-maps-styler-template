@@ -167,9 +167,12 @@ define([
          for (var i=0; i<weather.length; i++) {
             var cur = weather[i];
             var day = this._getDay(cur.date);
-            var tempMax = cur["tempMax"+this.config.weatherUnits];
-            var tempMin = cur["tempMin"+this.config.weatherUnits];
-            var code = cur.weatherCode;
+            // var tempMax = cur["tempMax"+this.config.weatherUnits];
+            // var tempMin = cur["tempMin"+this.config.weatherUnits];
+            // var code = cur.weatherCode;
+            var tempMax = cur["tempMax"+this.config.weatherUnits] || cur["maxtemp"+this.config.weatherUnits];
+            var tempMin = cur["tempMin"+this.config.weatherUnits] || cur["mintemp"+this.config.weatherUnits];
+            var code = cur.weatherCode || cur.hourly[0].weatherCode;
             var w = this.weatherData[parseInt(code)];
             var rec = domConstruct.create("div", {
                //class: "recWeather"

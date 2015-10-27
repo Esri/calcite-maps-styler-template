@@ -36,7 +36,7 @@ define(
          "filter": "مُنقي",
          "close": "إغلاق",
          "reverse": "عكس",
-         "mode": "بيت_Switch mode Drive/Walk________لاحقة"
+         "mode": "تبديل وضع القيادة/السير"
       }
    })
 );

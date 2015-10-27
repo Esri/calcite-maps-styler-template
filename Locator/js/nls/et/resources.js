@@ -36,7 +36,7 @@ define(
          "filter": "Filter",
          "close": "Sulge",
          "reverse": "Pööra ümber",
-         "mode": "Š_Switch mode Drive/Walk________ä"
+         "mode": "Vaheta režiimi Sõit/kõnd"
       }
    })
 );

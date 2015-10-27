@@ -2,7 +2,7 @@
 	 ({
 		viewer: {
 			loading: {
-				step1: "ł_LOADING STORY_____ą",
+				step1: "TRWA WCZYTYWANIE NARRACJI",
 				step2: "WCZYTYWANIE DANYCH",
 				step3: "INICJOWANIE",
 				fail: "Przepraszamy, wczytywanie narzędzia zwijania nie powiodło się",
@@ -17,19 +17,19 @@
 				invalidConfig: "Błąd krytyczny: Nieprawidłowa konfiguracja",
 				invalidConfigNoWebmap: "Błąd krytyczny: Nieprawidłowa konfiguracja (brak zdefiniowanej mapy internetowej)",
 				createMap: "Nie można utworzyć mapy",
-				invalidApp: "ł_Fatal error: The story cannot be loaded_____________ą",
+				invalidApp: "Błąd krytyczny: nie można wczytać narracji",
 				initMobile: "Witamy w internetowej aplikacji swipe (z funkcją zwijania). Aplikacja nie została skonfigurowana. Interaktywny kreator nie jest obsługiwany na urządzeniach przenośnych.",
-				initMobile2: "ł_The Swipe builder is not supported at this display size__________________ą.",
+				initMobile2: "Kreator aplikacji odsłaniania nie jest obsługiwany przy tej wielkości ekranu.",
 				noBuilderIE8: "Interaktywny kreator narzędzia zwijania nie jest obsługiwany przez przeglądarkę Internet Explorer w wersji starszej niż 9.",
 				noLayerView: "Witamy w internetowej aplikacji swipe (z funkcją zwijania).<br />Aplikacja nie została jeszcze skonfigurowana.",
-				appSave: "ł_Error saving the web story_________ą",
+				appSave: "Błąd zapisywania narracji internetowej",
 				mapSave: "Błąd podczas zapisywania mapy internetowej",
-				notAuthorized: "ł_You are not authorized to access this story______________ą",
+				notAuthorized: "Nie masz uprawnień dostępu do tej narracji",
 				conflictingProjectionsTitle: "Konflikt odwzorowań",
 				conflictingProjections: "Narzędzie zwijania nie obsługuje dwóch map internetowych o różnych odwzorowaniach. Przejdź do ustawień i wybierz mapę internetową o tym samym odwzorowaniu, co pierwsza użyta mapa.",
 				cpButton: "Zamknij",
-				unspecifiedConfigOwner: "ł_Authorized owner hasn't been configured_____________ą.",
-				invalidConfigOwner: "ł_Story owner is not authorized__________ą."
+				unspecifiedConfigOwner: "Nie skonfigurowano autoryzowanego właściciela.",
+				invalidConfigOwner: "Właściciel narracji nie jest autoryzowany."
 			},
 			mobileView: {
 				hideIntro: "UKRYJ WPROWADZENIE",
@@ -47,7 +47,7 @@
 		},
 		builder: {
 			builder: {
-				panelHeader: "ł_STORY CONFIGURATION_______ą",
+				panelHeader: "KONFIGURACJA NARRACJI",
 				buttonSave: "ZAPISZ",
 				buttonHelp: "Pomoc",
 				buttonShare: "Udostępnij",
@@ -67,13 +67,13 @@
 				popoverSaveWhenDone: "Nie zapomnij zapisać po zakończeniu pracy",
 				closeWithPendingChange: "Na pewno chcesz zatwierdzić operację? Twoje zmiany zostaną utracone.",
 				gotIt: "OK",
-				savingApplication: "ł_Saving story_____ą",
-				saveSuccess: "ł_Story saved successfully________ą",
+				savingApplication: "Trwa zapisywanie narracji",
+				saveSuccess: "Narracja została pomyślnie zapisana",
 				saveError: "Zapisywanie nie powiodło się, spróbuj ponownie",
 				saveError2: "Próba zapisania nie powiodła się - błędny znacznik HTML w nazwie lub opisie",
 				saveError3: "Tytuł nie może być pusty",
 				signIn: "Zaloguj się na konto,",
-				signInTwo: "ł_to save the story______ą."
+				signInTwo: "aby zapisać narrację."
 			},
 			header:{
 				editMe: "Edytuj!",
@@ -81,7 +81,7 @@
 				templateSubtitle: "Skonfiguruj podtytuł szablonu"
 			},
 			settings: {
-				settingsHeader: "ł_Story settings_____ą",
+				settingsHeader: "Ustawienia narracji",
 				modalCancel: "Anuluj",
 				modalApply: "Zastosuj"
 			},
@@ -141,7 +141,7 @@
 				settingsLayoutSpyGlass: "Lunetka",
 				settingsLayoutSelected: "Wybrany układ",
 				settingsLayoutSelect: "Wybierz ten układ",
-				settingsSaveConfirm: "ł_Some of your changes require that you save and reload the story____________________ą"
+				settingsSaveConfirm: "Niektóre z wprowadzonych zmian wymagają zapisania i ponownego wczytania narracji"
 			},
 			settingsDataModel: {
 				settingsTabDataModel: "Typ zwijania",
@@ -169,7 +169,7 @@
 			},
 			settingsLegend: {
 				settingsTabLegend: "Układ aplikacji",
-				settingsLegendExplain: "ł_Select the layout settings_________ą.",
+				settingsLegendExplain: "Wybierz ustawienia kompozycji.",
 				settingsLegendEnable: "Włącz legendę",
 				settingsDescriptionEnable: "Włącz opis",
 				settingsBookmarksEnable: "Włącz serię zwijania",
@@ -218,39 +218,39 @@
 				}
 			},
 			share: {
-				firstSaveTitle: "ł_Story successfully saved________ą",
-				firstSaveHeader: "ł_Your story is now saved in ArcGIS Online. Please read the following answers to frequent questions______________________________ą.",
+				firstSaveTitle: "Narracja została pomyślnie zapisana",
+				firstSaveHeader: "Narracja została zapisana w usłudze ArcGIS Online. Zapoznaj się z poniższymi odpowiedziami na często zadawane pytania.",
 				firstSaveA1: "Jeżeli nie znasz jeszcze usługi ArcGIS Online lub chcesz korzystać ze skrótu do interfejsu dla autorów, możesz zapisać następujące łącze: %LINK1%",
-				firstSaveA1bis: "ł_The story can also be found in your <a href='%LINK2%' target='_blank'>ArcGIS Online content folder</a>________________________________ą.",
-				firstSaveQ2: "ł_Is my story shared_______ą?",
-				firstSaveA2: "ł_Currently your story is not shared. To share it, use the SHARE button______________________ą.",
-				shareTitle: "ł_Share your story______ą",
-				sharePrivateHeader: "ł_Your story is not shared, would you like to share it_________________ą?",
+				firstSaveA1bis: "Swoją narrację można również znaleźć w <a href=\'%LINK2%\' target=\'_blank\'>folderze zawartości usługi ArcGIS Online</a>.",
+				firstSaveQ2: "Czy moja narracja została udostępniona?",
+				firstSaveA2: "Obecnie Twoja narracja nie jest udostępniona. Aby ją udostępnić, użyj przycisku UDOSTĘPNIJ.",
+				shareTitle: "Udostępnij narrację",
+				sharePrivateHeader: "Narracja nie jest udostępniona. Czy chcesz ją udostępnić?",
 				sharePrivateBtn1: "Udostępnij publicznie",
 				sharePrivateBtn2: "Udostępnij mojej instytucji",
 				sharePrivateProgress: "Trwa udostępnianie...",
 				sharePrivateErr: "Udostępnianie nie powiodło się. Spróbuj ponownie lub",
 				sharePrivateOk: "Aktualizacja udostępniania powiodła się. Trwa wczytywanie...",
-				shareStatus1: "ł_Story is not saved______ą",
-				shareStatus2: "ł_Story is shared publicly________ą",
-				shareStatus3: "ł_Story is shared within the organization_____________ą",
-				shareStatus4: "ł_Story is not shared_______ą",
+				shareStatus1: "Narracja nie została zapisana",
+				shareStatus2: "Narracja jest udostępniania publicznie",
+				shareStatus3: "Narracja została udostępniana w obrębie instytucji",
+				shareStatus4: "Narracja nie została udostępniona",
 				sharePreviewAsUser: "Zobacz podgląd",
-				shareHeader1: "ł_Your story is <strong>publicly accessible</strong>________________ą.",
-				shareHeader2: "ł_Your story is accessible by your organization members (login is required)_______________________ą.",
-				shareLinkHeader: "ł_Share the story with your audience___________ą",
+				shareHeader1: "Twoja narracja jest <strong>publicznie dostępna</strong>.",
+				shareHeader2: "Narracja jest dostępna dla członków Twojej instytucji (wymagane logowanie).",
+				shareLinkHeader: "Udostępnij narrację odbiorcom",
 				shareLinkOpen: "OTWÓRZ",
 				learnMore: "Dowiedz się więcej",
-				shareQ1Opt1: "ł_How do I keep the story private___________ą?",
-				shareQ1Opt2: "ł_How do I keep the story private or share it publicly_________________ą?",
+				shareQ1Opt1: "Jak mogę zachować prywatny status narracji?",
+				shareQ1Opt2: "Jak mogę zachować prywatny status narracji lub udostępnić ją publicznie?",
 				shareA1: "Odwiedź %SHAREIMG% <a href='%LINK1%' target='_blank'>stronę elementu aplikacji</a>. Jeżeli nie chcesz dłużej udostępniać mapy internetowej, odwiedź <a href='%LINK2%' target='_blank'>stronę elementu mapy internetowej</a>.",
 				shareA1bis: "Jeśli chcesz przestać udostępniać Usługę obiektową, użyj <a href='%LINK1%' target='_blank'>strony elementu Usługi obiektowej</a>.",
-				shareQ2: "ł_How do I edit the story later__________ą?",
+				shareQ2: "Jak mogę edytować narrację w przyszłości?",
 				shareQ2bis: "W jaki sposób mogę wrócić do interfejsu tworzenia?",
-				shareA2div1: "ł_Save and reuse the following link %LINK1% or use <a href='%LINK2%' target='_blank'>the story item page</a>_________________________________ą.",
-				shareA2div2: "ł_As the owner of the story, when you are signed in on ArcGIS.com, the story includes a button to open the interactive builder_______________________________________ą:",
+				shareA2div1: "Zapisz i ponownie wykorzystaj łącze %LINK1% lub użyj <a href=\'%LINK2%\' target=\'_blank\'>strony z elementami narracji</a>.",
+				shareA2div2: "Gdy właściciel narracji zaloguje się w serwisie ArcGIS.com, narracja będzie zawierać przycisk do otwierania interaktywnego kreatora:",
 				shareQ3: "Gdzie są przechowywane dane?",
-				shareA3: "ł_The story configuration is stored in this web application item</a>_____________________ą.",
+				shareA3: "Konfiguracja narracji jest zapisana w tym elemencie aplikacji internetowej</a>.",
 				shareWarning: "Udostępnianie %WITH% zostało wyłączone, ponieważ nie jesteś właścicielem <a href='%LINK%' target='_blank'>mapy internetowej</a>.",
  				shareWarningWith1: "publicznie",
  				shareWarningWith2: "publicznie i instytucji"

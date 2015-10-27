@@ -2,7 +2,7 @@
 	 ({
 		viewer: {
 			loading: {
-				step1: "Å_LOADING STORY_____ö",
+				step1: "LADATAAN TARINAA",
 				step2: "LADATAAN AINEISTOA",
 				step3: "KÄYNNISTETÄÄN",
 				fail: "Pyyhkäisyn lataus epäonnistui",
@@ -17,19 +17,19 @@
 				invalidConfig: "Vakava virhe: virheellinen kokoonpano",
 				invalidConfigNoWebmap: "Vakava virhe: Virheellinen konfiguraatio (web-karttaa ei ole määritetty)",
 				createMap: "Karttaa ei voi luoda",
-				invalidApp: "Å_Fatal error: The story cannot be loaded_____________ö",
+				invalidApp: "Vakava virhe: tarinaa ei voi ladata",
 				initMobile: "Tervetuloa käyttämään web-pyyhkäisysovellusta. Sovellusta ei ole määritetty. Vuorovaikutteinen luontitoiminto ei ole käytettävissä mobiililaitteissa.",
-				initMobile2: "Å_The Swipe builder is not supported at this display size__________________ö.",
+				initMobile2: "Nykyinen näyttökoko ei tue pyyhkäisyn luontitoimintoa.",
 				noBuilderIE8: "Interaktiivinen pyyhkäisyn luontitoiminto ei tue Internet Explorer 9:ää vanhempia versioita.",
 				noLayerView: "Tervetuloa käyttämään web-pyyhkäisysovellusta.<br />Sovellusta ei ole vielä määritetty.",
-				appSave: "Å_Error saving the web story_________ö",
+				appSave: "Virhe tallennettaessa Web-tarinaa",
 				mapSave: "Virhe tallennettaessa Web-karttaa",
-				notAuthorized: "Å_You are not authorized to access this story______________ö",
+				notAuthorized: "Sinulla ei ole tämän tarinan käyttöoikeuksia",
 				conflictingProjectionsTitle: "Ristiriitaa aiheuttavat projektiot",
 				conflictingProjections: "Pyyhkäisysovellus ei tue projektioiltaan eroavien web-karttojen käyttämistä. Avaa asetukset ja ota käyttöön sellainen web-kartta, joka käyttää samaa projektiota kuin ensimmäinen web-kartta.",
 				cpButton: "Sulje",
-				unspecifiedConfigOwner: "Å_Authorized owner hasn't been configured_____________ö.",
-				invalidConfigOwner: "Å_Story owner is not authorized__________ö."
+				unspecifiedConfigOwner: "Valtuutettua omistajaa ei ole määritetty.",
+				invalidConfigOwner: "Tarinan omistajalla ei ole valtuuksia."
 			},
 			mobileView: {
 				hideIntro: "PIILOTA ESITTELY",
@@ -47,7 +47,7 @@
 		},
 		builder: {
 			builder: {
-				panelHeader: "Å_STORY CONFIGURATION_______ö",
+				panelHeader: "TARINAN MÄÄRITYS",
 				buttonSave: "TALLENNA",
 				buttonHelp: "Ohje",
 				buttonShare: "Jaa",
@@ -67,13 +67,13 @@
 				popoverSaveWhenDone: "Älä unohda tallentaa, kun olet valmis",
 				closeWithPendingChange: "Haluatko varmasti vahvistaa toiminnon? Muutoksesi häviävät.",
 				gotIt: "OK",
-				savingApplication: "Å_Saving story_____ö",
-				saveSuccess: "Å_Story saved successfully________ö",
+				savingApplication: "Tallennetaan tarinaa",
+				saveSuccess: "Tarina on tallennettu",
 				saveError: "Tallennus epäonnistui, yritä uudelleen",
 				saveError2: "Tallennus epäonnistui nimen tai kuvauksen virheellisen HTML-tunnisteen takia",
 				saveError3: "Otsikko ei voi olla tyhjä",
 				signIn: "Kirjaudu sisään tilillä palvelussa",
-				signInTwo: "Å_to save the story______ö."
+				signInTwo: "tarinan tallentamiseksi."
 			},
 			header:{
 				editMe: "Muokkaa minua!",
@@ -81,7 +81,7 @@
 				templateSubtitle: "Määritä mallin alaotsikko"
 			},
 			settings: {
-				settingsHeader: "Å_Story settings_____ö",
+				settingsHeader: "Tarinan asetukset",
 				modalCancel: "Peruuta",
 				modalApply: "Käytä"
 			},
@@ -141,7 +141,7 @@
 				settingsLayoutSpyGlass: "Kiikari",
 				settingsLayoutSelected: "Valittu asettelu",
 				settingsLayoutSelect: "Valitse tämä asettelu",
-				settingsSaveConfirm: "Å_Some of your changes require that you save and reload the story____________________ö"
+				settingsSaveConfirm: "Jotkin muutokset edellyttävät tarinan tallennusta ja uudelleenkäynnistystä"
 			},
 			settingsDataModel: {
 				settingsTabDataModel: "Pyyhkäisytyyppi",
@@ -169,7 +169,7 @@
 			},
 			settingsLegend: {
 				settingsTabLegend: "Sovelluksen asettelu",
-				settingsLegendExplain: "Å_Select the layout settings_________ö.",
+				settingsLegendExplain: "Valitse asetteluasetukset.",
 				settingsLegendEnable: "Ota selite käyttöön",
 				settingsDescriptionEnable: "Ota kuvaus käyttöön",
 				settingsBookmarksEnable: "Ota sarjapyyhkäisy käyttöön",
@@ -218,39 +218,39 @@
 				}
 			},
 			share: {
-				firstSaveTitle: "Å_Story successfully saved________ö",
-				firstSaveHeader: "Å_Your story is now saved in ArcGIS Online. Please read the following answers to frequent questions______________________________ö.",
+				firstSaveTitle: "Tarina on tallennettu",
+				firstSaveHeader: "Tarina on nyt tallennettu ArcGIS Onlineen. Lue seuraavat usein esitettyjen kysymysten vastaukset.",
 				firstSaveA1: "Jos et tunne ArcGIS Onlinea tai haluat pikavalinnan, jonka kautta pääsee sisällönluonnin käyttöliittymään, voit tallentaa seuraavan linkin: %LINK1%",
-				firstSaveA1bis: "Å_The story can also be found in your <a href='%LINK2%' target='_blank'>ArcGIS Online content folder</a>________________________________ö.",
-				firstSaveQ2: "Å_Is my story shared_______ö?",
-				firstSaveA2: "Å_Currently your story is not shared. To share it, use the SHARE button______________________ö.",
-				shareTitle: "Å_Share your story______ö",
-				sharePrivateHeader: "Å_Your story is not shared, would you like to share it_________________ö?",
+				firstSaveA1bis: "Tarina sijaitsee myös <a href=\'%LINK2%\' target=\'_blank\'>ArcGIS Online -sisältökansiossasi</a>.",
+				firstSaveQ2: "Onko tarinani jaettu?",
+				firstSaveA2: "Tarinaa ei ole jaettu tällä hetkellä. Voit jakaa sen käyttämällä JAA-painiketta.",
+				shareTitle: "Jaa tarinasi",
+				sharePrivateHeader: "Tarinaasi ei ole jaettu. Haluatko jakaa sen?",
 				sharePrivateBtn1: "Jaa julkisesti",
 				sharePrivateBtn2: "Jaa oman organisaation kanssa",
 				sharePrivateProgress: "Jakaminen käynnissä...",
 				sharePrivateErr: "Jakaminen epäonnistui. Yritä uudelleen tai",
 				sharePrivateOk: "Jakamisen päivitys onnistui, ladataan...",
-				shareStatus1: "Å_Story is not saved______ö",
-				shareStatus2: "Å_Story is shared publicly________ö",
-				shareStatus3: "Å_Story is shared within the organization_____________ö",
-				shareStatus4: "Å_Story is not shared_______ö",
+				shareStatus1: "Tarinaa ei ole tallennettu",
+				shareStatus2: "Tarina on jaettu julkisesti",
+				shareStatus3: "Tarina on jaettu organisaatiossa",
+				shareStatus4: "Tarinaa ei ole jaettu",
 				sharePreviewAsUser: "Esikatselu",
-				shareHeader1: "Å_Your story is <strong>publicly accessible</strong>________________ö.",
-				shareHeader2: "Å_Your story is accessible by your organization members (login is required)_______________________ö.",
-				shareLinkHeader: "Å_Share the story with your audience___________ö",
+				shareHeader1: "Tarinasi <strong>julkisesti käytettävissä</strong>.",
+				shareHeader2: "Organisaatiosi jäsenet voivat käyttää tarinaasi (sisäänkirjauduttuaan).",
+				shareLinkHeader: "Jaa tarina yleisösi kanssa",
 				shareLinkOpen: "AVAA",
 				learnMore: "Lisätietoja",
-				shareQ1Opt1: "Å_How do I keep the story private___________ö?",
-				shareQ1Opt2: "Å_How do I keep the story private or share it publicly_________________ö?",
+				shareQ1Opt1: "Miten voin pitää tarinan yksityisenä?",
+				shareQ1Opt2: "Miten säilytän tarinan yksityisenä tai jaan sen julkisesti?",
 				shareA1: "Käytä kohdetta %SHAREIMG% <a href='%LINK1%' target='_blank'>sovelluskohteen sivulla</a>. Jos haluat myös lopettaa web-kartan jaon, käytä <a href='%LINK2%' target='_blank'>web-kartan kohdesivua</a>.",
 				shareA1bis: "Jos haluat lopettaa myös kohdepalvelun jaon, käytä <a href='%LINK1%' target='_blank'>kohdepalvelun kohdesivua</a>.",
-				shareQ2: "Å_How do I edit the story later__________ö?",
+				shareQ2: "Miten muokkaan tarinaa myöhemmin?",
 				shareQ2bis: "Miten palaan sisällönluonnin käyttöliittymään?",
-				shareA2div1: "Å_Save and reuse the following link %LINK1% or use <a href='%LINK2%' target='_blank'>the story item page</a>_________________________________ö.",
-				shareA2div2: "Å_As the owner of the story, when you are signed in on ArcGIS.com, the story includes a button to open the interactive builder_______________________________________ö:",
+				shareA2div1: "Tallenna ja käytä uudelleen seuraavaa linkkiä %LINK1% tai käytä <a href=\'%LINK2%\' target=\'_blank\'>tarinan kohdesivua</a>.",
+				shareA2div2: "Koska olet tarinan omistaja, kun olet kirjautunut ArcGIS.com-sivustoon, tarinassa näkyy painike, jolla voita avata vuorovaikutteisen muodostusohjelman:",
 				shareQ3: "Minne aineistot on tallennettu?",
-				shareA3: "Å_The story configuration is stored in this web application item</a>_____________________ö.",
+				shareA3: "Tarinan määritys tallennetaan tähän Web-sovelluskohteeseen</a>.",
 				shareWarning: "Jakaminen kohteen %WITH% kanssa on poistettu käytöstä, koska et ole <a href='%LINK%' target='_blank'>Web-kartan</a> omistaja.",
  				shareWarningWith1: "julkisesti",
  				shareWarningWith2: "julkisesti ja organisaation kanssa"

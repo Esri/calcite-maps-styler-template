@@ -262,7 +262,7 @@
       mapTabTooltip: "Žemėlapis",
       btnDescendingText: "Mažėj",
       btnAscendingText: "Didėj",
-      geometryUnavailableErrorMessage: "Į_Error finding the geometry of the feature_____________š",
+      geometryUnavailableErrorMessage: "Klaida ieškant elemento geometrijos",
       infoPopupOffErrorMessage: "Nėra informacijos atvaizdavimui",
       btnLoadMoreText: "Įkelti daugiau",
       unavailableTitleText: "Bevardis",

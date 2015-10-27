@@ -36,7 +36,7 @@ define(
          "filter": "Filtre",
          "close": "Kapat",
          "reverse": "Ters",
-         "mode": "ı_Switch mode Drive/Walk________İ"
+         "mode": "Sürüş/Yürüme moduna geç"
       }
    })
 );

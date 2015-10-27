@@ -36,7 +36,7 @@ define(
          "filter": "Filtruj",
          "close": "Zamknij",
          "reverse": "Odwrotnie",
-         "mode": "ł_Switch mode Drive/Walk________ą"
+         "mode": "Przełącz tryb Jazda samochodem/Spacer"
       }
    })
 );

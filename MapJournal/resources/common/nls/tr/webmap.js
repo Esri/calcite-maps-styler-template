@@ -2,7 +2,7 @@
 	 ({
 		commonWebmap: {
 			selector: {
-				lblWebMap: "ı_Map__İ",
+				lblWebMap: "Harita",
 				lblLocation: "Konum",
 				lblContent: "İçerik",
 				lblPopup: "Açılır Menü",
@@ -17,14 +17,14 @@
 				and: "ve",
 				action: "Bölümdeki eylem",
 				actions: "Bölümlerdeki eylem",
-				originalWebmap: "ı_Map used to publish the %TPL_NAME%___________İ",
-				browseMaps: "ı_Select a map_____İ",
-				createMap: "ı_Create a map_____İ",
-				current: "ı_Current map____İ",
-				select: "ı_Select or create a map________İ",
-				newMap: "ı_Newly selected map______İ",
-				newCreatedMap: "ı_Newly created map______İ",
-				webmapDefault: "ı_Map default____İ",
+				originalWebmap: "%TPL_NAME% yayınlamak için kullanılan harita",
+				browseMaps: "Harita seç",
+				createMap: "Harita oluştur",
+				current: "Geçerli harita",
+				select: "Harita seçin veya oluşturun",
+				newMap: "Yeni seçilen harita",
+				newCreatedMap: "Yeni oluşturulan harita",
+				webmapDefault: "Harita varsayılanı",
 				customCfg: "Özel yapılandırma",
 				tooltipLocation: "Bu haritanın görüntüleyeceği konumu tanımlayın.",
 				tooltipContent: "Görünür katmanları tanımlayın.",
@@ -51,27 +51,27 @@
 				hintNavigation: "Harita navigasyonu devre dışı bırakıldı."
 			},
 			editor: {
-				loading: "ı_Please wait while the map editor is loading______________İ",
-				newTitle: "ı_Create new map_____İ",
-				editTitle: "ı_Edit map___İ",
-				titleLbl: "ı_Title___İ",
-				titlePh: "ı_Map title_____İ...",
-				folderLbl: "ı_The map will be created in the same folder as the story__________________İ.",
-				creating: "ı_Creating the map______İ",
-				saving: "ı_Saving the map_____İ",
-				success: "ı_Map saved____İ",
-				successCreate: "ı_Map created____İ",
-				cancelTitle: "ı_Discard any unsaved changes_________İ?",
-				errorDuplicate: "ı_You already have a map with that title____________İ",
-				errorCreate: "ı_Unable to create map. Please try again_____________İ.",
-				errorSave: "ı_Unable to save map. Please try again____________İ.",
-				notavailable1: "ı_Sorry, creating or editing a map is not supported in Firefox due to a technical limitation. You may want to build your story using a different web browser or use the following workaround_________________________________________________________İ.",
-				notavailable2: "ı_Sorry, creating or editing a map is not supported since the story map application is not hosted in %PRODUCT%. Please contact your ArcGIS administrator for more information_____________________________________________________İ.",
-				notavailable3: "ı_Sorry, creating or editing a map is not supported on this version of Portal for ArcGIS (requires 10.4 or later). Please contact your ArcGIS administrator for more information______________________________________________________İ.",
-				notavailable4: "ı_You can create a map using %MV%, then come back here to add it to your story________________________İ.",
-				notavailable5: "ı_You can edit the map using %MV%, then come back here and %apply% to see your changes___________________________İ.",
-				notavailable6: "ı_map viewer____İ",
-				notavailable7: "ı_reload the map_____İ"
+				loading: "Harita düzenleyici yüklenirken bekleyin",
+				newTitle: "Yeni harita oluştur",
+				editTitle: "Harita düzenle",
+				titleLbl: "Başlık",
+				titlePh: "Harita başlığı...",
+				folderLbl: "Harita, hikaye ile aynı klasörde oluşturulacak.",
+				creating: "Harita oluşturuluyor",
+				saving: "Harita kaydediliyor",
+				success: "Harita kaydedildi",
+				successCreate: "Harita oluşturuldu",
+				cancelTitle: "Kaydedilmemiş değişiklikler atılsın mı?",
+				errorDuplicate: "Bu başlığa sahip bir haritanız zaten var",
+				errorCreate: "Harita oluşturulamıyor. Yeniden deneyin.",
+				errorSave: "Harita kaydedilemiyor. Yeniden deneyin.",
+				notavailable1: "Üzgünüz, teknik bir sınırlama nedeniyle Firefox\'ta harita oluşturma veya düzenleme desteklenmez. Hikayenizi farklı bir web tarayıcısı kullanarak oluşturmak isteyebilirsiniz veya aşağıdaki çözümü kullanabilirsiniz.",
+				notavailable2: "Üzgünüz, story map uygulaması %PRODUCT% içinde barındırılmadığından harita oluşturma veya düzenleme desteklemez. Daha fazla bilgi için ArcGIS yöneticinize başvurun.",
+				notavailable3: "Üzgünüz, harita oluşturma veya düzenleme Portal for ArcGIS (10.4 veya üstü gerekir) uygulamasının bu sürümünde desteklenmez. Daha fazla bilgi için ArcGIS yöneticinize başvurun.",
+				notavailable4: "%MV% kullanarak bir harita oluşturabilir, daha sonra buraya gelerek bunu hikayenize ekleyebilirsiniz.",
+				notavailable5: "%MV% kullanarak haritayı düzenleyebilir, daha sonra buraya gelerek %apply% işlemi ile değişikliklerinizi görebilirsiniz.",
+				notavailable6: "harita görüntüleyici",
+				notavailable7: "haritayı yeniden yükle"
 			}
 		},
 		configure: {
@@ -82,11 +82,11 @@
 					contentLabel: "İçeriğim",
 					favoritesLabel: "Favorilerim"
 				},
-				title: "ı_Select a map_____İ",
+				title: "Harita seç",
 				searchTitle: "Ara",
 				ok: "Tamam",
 				cancel: "İptal",
-				placeholder: "ı_Enter search term or web map ID___________İ..."
+				placeholder: "Arama terimini veya web haritası kimliğini girin..."
 			}
 		}
 	})

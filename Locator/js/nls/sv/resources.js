@@ -36,7 +36,7 @@ define(
          "filter": "Filter",
          "close": "Stäng",
          "reverse": "Gör omvänd",
-         "mode": "Å_Switch mode Drive/Walk________ö"
+         "mode": "Växla läge Köra/gå"
       }
    })
 );

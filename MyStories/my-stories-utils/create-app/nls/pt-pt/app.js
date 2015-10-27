@@ -1,51 +1,51 @@
 ﻿define(
 	 ({
 		dialog: {
-			back: "ã_Back__Ç",
-			close: "ã_Close___Ç",
-			createNewStory: "ã_Create a New Story______Ç",
-			pickApp: "ã_Pick an App____Ç",
-			askPros: "ã_Ask the Pros_____Ç"
+			back: "Retroceder",
+			close: "Fechar",
+			createNewStory: "Crie uma Nova História",
+			pickApp: "Escolha uma Aplicação",
+			askPros: "Pergunte aos Profissionais"
 		},
 		incompatibleNotice: {
-			title: "ã_Create Story Not Available_________Ç",
-			subtitle: "ã_Sorry, this is not supported in a small display. Please open in a larger display or device____________________________Ç.",
-			close: "ã_Close___Ç"
+			title: "Criar História Não Disponível",
+			subtitle: "Lamentamos, não é suportado em ecrã pequeno. Por favor abra num ecrã ou dispositivo maior.",
+			close: "Fechar"
 		},		
 		answerText: {
-			seriesOfPlaces: "ã_A set of places______Ç",
-			mapsNarrative: "ã_A narrative with maps_______Ç",
-			compareDatasets: "ã_An interactive comparison of two datasets_____________Ç",
-			other: "ã_A single map_____Ç",
-			yes: "ã_Yes__Ç",
-			no: "ã_No__Ç",
-			click: "ã_Click___Ç",
-			scroll: "ã_Scroll___Ç"
+			seriesOfPlaces: "Um conjunto de locais",
+			mapsNarrative: "Uma narrativa com mapas",
+			compareDatasets: "Uma comparação interativa de dois conjuntos de dados",
+			other: "Um único mapa",
+			yes: "Sim",
+			no: "Não",
+			click: "Clique",
+			scroll: "Scroll"
 		},
 		questionText: {
-			bestDescribesStory: "ã_What best describes your story__________Ç?",
-			showPhotos: "ã_Do you want to show photos for each location_______________Ç?",
-			clickOrScroll: "ã_Do you want your audience to click through tabs or scroll__________________Ç?"
+			bestDescribesStory: "O que melhor descreve a sua história?",
+			showPhotos: "Pretende exibir fotografias de cada local?",
+			clickOrScroll: "Pretende que o seu público clique em separadores ou faça scroll?"
 		},
 		finalApp: {
-			weRecommend: "ã_We Recommend: {{STORY_TYPE}}_________Ç",
-			letsBuild: "ã_Let's build_____Ç!",
-			seeExample: "ã_See example____Ç"
+			weRecommend: "Recomendamos: {{STORY_TYPE}}",
+			letsBuild: "Vamos construir!",
+			seeExample: "Ver exemplo"
 		},
 		reasons: {
-			mapTour: "ã_This app presents a sequential, place-based narrative in the form of a series of geotagged photos and captions linked to an interactive map. Itâ€™s ideal for walking tours or for a series of locations youâ€™d like users to follow in sequence__________________________________________________________________________Ç.",
-			mapJournal: "ã_This app lets you create a compelling map-based narrative presented as a set of journal entries. It's ideal for creating multimedia stories that combine text, maps, images, and video, especially when you have lots of text or a rich array of content____________________________________________________________________________Ç.",
-			mapSeries: "ã_This app lets you present a series of maps via tabs, numbered bullets, or our expandable 'side accordion' control. You can also include images, video and web content in your series to tell your story_____________________________________________________________Ç.",
-			swipeSpyglass: "ã_This app enables users to compare two maps or two layers in the same map. It is particularly effective for showing before-and-after imagery or other changes over time___________________________________________________Ç.",
-			basic: "ã_This app lets you present a map via a very simple minimalist user interface. Apart from the title bar and an optional legend, the map fills the screen. Use this app to let your map speak for itself____________________________________________________________Ç."
+			mapTour: "Esta aplicação apresenta uma narrativa sequencial, baseada em locais, na forma de uma série de fotografias e legendas georeferenciadas ligadas a um mapa interativo. É ideal para visitas guiadas ou para uma série de locais que pretende que os utilizadores visualizem de forma sequencial.",
+			mapJournal: "Esta aplicação permite-lhe criar uma narrativa estimulante, baseada em mapas, apresentada como uma série de entradas de jornal. É ideal para criar histórias multimédia que combinam textos, mapas, imagens e vídeo, especialmente quando tem uma grande quantidade de texto ou uma grande variedade de conteúdo.",
+			mapSeries: "Esta aplicação permite-lhe apresentar uma série de mapas através de separadores, tópicos numerados, ou do nosso \'acordeão lateral\' expansível. Também pode incluir imagens, vídeo e conteúdo da web na sua série para contar a sua história.",
+			swipeSpyglass: "Esta aplicação permite aos utilizadores comparar dois mapas ou duas camadas no mesmo mapa. É particularmente eficiente para exibir imagens antes-e-depois ou outras mudanças ao longo do tempo.",
+			basic: "Esta aplicação permite-lhe apresentar um mapa através de um interface de utilizador minimalista muito simples. Para além da barra de título e de uma legenda opcional, o mapa preenche o ecrã. Utilize esta aplicação para que o seu mapa fale por si próprio."
 		},
 		shortReasons: {
-			mapTour: "ã_Guide people through a sequence of places_____________Ç",
-			mapJournal: "ã_Perfect for an in-depth narrative___________Ç",
-			mapSeries: "ã_Present a series of related maps___________Ç",
-			swipe: "ã_Compare two maps or map layers with a slider______________Ç",
-			spyglass: "ã_Compare two maps or map layers with a spyglass_______________Ç",
-			basic: "ã_Think minimalistic, great for one map____________Ç"
+			mapTour: "Guie as pessoas por uma sequência de locais.",
+			mapJournal: "Perfeito para uma narrativa aprofundada",
+			mapSeries: "Apresente uma série de mapas relacionados",
+			swipe: "Compare dois mapas ou camadas de mapas com um controlo deslizante",
+			spyglass: "Compare dois mapas ou camadas de mapas com uma lupa",
+			basic: "Pensamento minimalista, ótimo para um mapa"
 		},
 	})
 );

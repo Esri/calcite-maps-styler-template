@@ -20,9 +20,9 @@ define(
             "error": "Không thể tạo bản đồ"
         },
         "nav":{
-            "next": "Đ_Next__ớ",
-            "previous": "Đ_Previous___ớ",
-            "close": "Đ_Close___ớ"
+            "next": "Tiếp theo",
+            "previous": "Trước",
+            "close": "Đóng"
         },
         "tools":{
             "search":{

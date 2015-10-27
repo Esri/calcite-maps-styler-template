@@ -17,28 +17,28 @@
 define(
    ({
     map: {
-      error: "Ĳ_Unable to create map_______ä"
+      error: "Kaart kan niet gemaakt worden"
     },
     elevation: {
-        toggle: "Ĳ_Toggle the Elevation Profile Chart____________ä.",
-        drawTool: "Ĳ_Draw a line on the map to generate an elevation profile__________________ä.",
-        selectMessage: "Ĳ_Click a line feature or use the draw tool to draw a line to display the elevation profile____________________________ä"
+        toggle: "De hoogteprofielgrafiek wisselen.",
+        drawTool: "Teken een lijn op de kaart om een hoogteprofiel te genereren.",
+        selectMessage: "Klik op een lijnobject of gebruik het tekeninstrument om een lijn te tekenen om het hoogteprofiel weer te geven"
     },
     splash: {
-        title: "Ĳ_Title___ä",
-        content: "Ĳ_Configure to create custom splash content_____________ä"
+        title: "Titel",
+        content: "Configureren om aangepaste splash content te creëren"
     },
     legend: {
-        title: "Ĳ_Legend___ä",
-        tip: "Ĳ_Display legend_____ä"
+        title: "Legenda",
+        tip: "Legenda weergeven"
     },
     basemap: {
-        title: "Ĳ_Basemap___ä",
-        tip: "Ĳ_Change basemap_____ä"
+        title: "Basiskaart",
+        tip: "Wijzig basiskaart"
     },
     share: {
-        title: "Ĳ_Share___ä",
-        tip: "Ĳ_Share map____ä"
+        title: "Delen",
+        tip: "Kaart delen"
     }
   })
 );

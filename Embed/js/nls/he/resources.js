@@ -27,7 +27,7 @@ define(
             "basemap":{
                     "label": "מפת בסיס",
                     "title": "בחר מפת בסיס",
-                    "close": "כן_Close___ש"
+                    "close": "סגור"
             },
             "legend":{
                 "title": "מקרא"
@@ -43,7 +43,7 @@ define(
 
         },
         "map": {
-            "toggle": "כן_Toggle side panel______ש",
+            "toggle": "שנה מצב של חלונית צדדית",
             "error": "לא ניתן ליצור מפה"
         }
     })

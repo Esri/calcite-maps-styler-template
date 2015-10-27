@@ -5,29 +5,29 @@
 				close: "إغلاق"
 			},
 			loading: {
-				long: "بيت_Story is initializing_______لاحقة",
+				long: "يتم تهيئة القصة",
 				long2: "شكرًا للانتظار",
-				failButton: "بيت_Reload the story______لاحقة"
+				failButton: "إعادة تحميل القصة"
 			},
 			signin: {
 				title: "مطلوب المصادقة",
-				explainViewer: "بيت_Please sign in with an account on %PORTAL_LINK% to access the story_____________________لاحقة.",
-				explainBuilder: "بيت_Please sign in with an account on %PORTAL_LINK% to configure the story______________________لاحقة."
+				explainViewer: "يرجى تسجيل الدخول بحساب في %PORTAL_LINK% للوصول إلى القصة.",
+				explainBuilder: "يرجى تسجيل الدخول بحساب في %PORTAL_LINK% لتكوين القصة."
 			},
 			errors: {
 				boxTitle: "حدث خطأ",
 				invalidConfig: "تكوين غير صحيح",
 				invalidConfigNoApp: "مُعرّف تطبيق تخطيط الويب غير محدد في index.html.",
 				unspecifiedConfigOwner: "لم يتم تكوين المالك المعتمد.",
-				invalidConfigOwner: "بيت_Story owner is not authorized__________لاحقة.",
+				invalidConfigOwner: "مالك القصة غير مُعتمد.",
 				createMap: "يتعذر إنشاء الخريطة",
 				invalidApp: "%TPL_NAME% غير موجود أو لا يمكن الوصول إليه.",
 				appLoadingFail: "‏‏حدث خطأ ما، لم يتم تحميل %TPL_NAME% بشكل صحيح.",
-				notConfiguredDesktop: "بيت_The story is not configured yet___________لاحقة.",
-				notConfiguredMobile: "بيت_The %TPL_NAME% builder is not supported at this display size___________________لاحقة.",
-				notAuthorized: "بيت_You are not authorized to access this story______________لاحقة",
+				notConfiguredDesktop: "لم يتم تكوين القصة بعد.",
+				notConfiguredMobile: "مُنشئ %TPL_NAME% غير مدعوم في هذا الحجم من العرض.",
+				notAuthorized: "يجب أن تكون مُعتمدًا للوصول إلى هذه القصة",
 				noBuilderIE: "المُنشئ غير مدعوم في Internet Explorer قبل الإصدار %VERSION%. %UPGRADE%",
-				noViewerIE: "بيت_This story is not supported in Internet Explorer before version %VERSION%. %UPGRADE%__________________________لاحقة",
+				noViewerIE: "هذه القصة غير مدعومة في Internet Explorer قبل الإصدار %VERSION%. %UPGRADE%",
 				upgradeBrowser: "<a href='http://browsehappy.com/' target='_blank'>يرجى تحديث المستعرض</a>.",
 				mapLoadingFail: "‏‏حدث خطأ ما، لم يتم تحميل الخريطة بشكل صحيح.",
 				signOut: "تسجيل المغادرة"
@@ -35,8 +35,8 @@
 			mobileInfo: {
 				legend: "وسيلة إيضاح",
 				description: "الوصف",
-				lblLegendMobileError: "بيت_Sorry, the legend is unavailable. Please reload the story__________________لاحقة.",
-				lblLegendMobileErrorExplain: "بيت_The legend is not available when the device is rotated to portrait mode after the story is loaded______________________________لاحقة."
+				lblLegendMobileError: "عذرًا، وسيلة الإيضاح غير متاحة. يرجى إعادة تحميل القصة.",
+				lblLegendMobileErrorExplain: "وسيلة الإيضاح غير متاحة عند استدارة الجهاز في الوضع العمودي بعد تحميل القصة."
 			},
 			mobileFooter: {
 				swipeInvite: "سحب انتقال القصة",
@@ -52,9 +52,9 @@
 				templateTitle: "تعيين عنوان للقالب",
 				templateSubtitle: "تعيين عنوان فرعي للقالب",
 				share: "مشاركة",
-				checking: "بيت_Checking your story content_________لاحقة",
-				fix: "بيت_Fix issues in your story________لاحقة",
-				noerrors: "بيت_No issues detected______لاحقة"
+				checking: "فحص محتوى القصة",
+				fix: "إصلاح المشكلات في القصة",
+				noerrors: "لم يتم الكشف عن المشكلات"
 			},
 			overviewFromCommon: {
 				title: "خريطة النظرة العامة"
@@ -67,11 +67,11 @@
 				copied: "تم النسخ",
 				open: "فتح",
 				embed: "تضمين في صفحة الويب",
-				embedExplain: "بيت_Use the following HTML code to embed the story in a web page___________________لاحقة.",
+				embedExplain: "استخدم كود HTML التالي لتضمين القصة في صفحة الويب.",
 				size: "الحجم (العرض/الارتفاع)"
 			},
 			locatorFromCommon: {
-				error: "بيت_Location not available________لاحقة"
+				error: "الموقع غير متاح"
 			}
         }
     })

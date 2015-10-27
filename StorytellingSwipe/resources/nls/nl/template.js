@@ -2,7 +2,7 @@
 	 ({
 		viewer: {
 			loading: {
-				step1: "Ĳ_LOADING STORY_____ä",
+				step1: "VERHAAL WORDT GELADEN",
 				step2: "GEGEVENS LADEN",
 				step3: "INITIALISEREN",
 				fail: "Laden Swipe mislukt",
@@ -17,19 +17,19 @@
 				invalidConfig: "Onherstelbare fout: ongeldige configuratie",
 				invalidConfigNoWebmap: "Onherstelbare fout: ongeldige configuratie (geen webmap opgegeven)",
 				createMap: "Kan kaart niet maken",
-				invalidApp: "Ĳ_Fatal error: The story cannot be loaded_____________ä",
+				invalidApp: "Onherstelbare fout: het verhaal kan niet worden geladen",
 				initMobile: "Welkom bij de swipe webapplicatie. De applicatie is niet geconfigureerd. De interactieve builder wordt niet ondersteund op mobiele apparaten.",
-				initMobile2: "Ĳ_The Swipe builder is not supported at this display size__________________ä.",
+				initMobile2: "De Swipe-builder wordt niet ondersteund op deze schermresolutie.",
 				noBuilderIE8: "De Swipe interactieve builder wordt niet ondersteund in Internet Explorer vóór versie 9.",
 				noLayerView: "Welkom bij de Swipe webapplicatie.<br />De applicatie is nog niet ingesteld.",
-				appSave: "Ĳ_Error saving the web story_________ä",
+				appSave: "Fout bij het opslaan van het webverhaal",
 				mapSave: "Fout bij het opslaan van de webmap",
-				notAuthorized: "Ĳ_You are not authorized to access this story______________ä",
+				notAuthorized: "U bent niet gemachtigd om dit verhaal te openen",
 				conflictingProjectionsTitle: "Conflicterende projecties",
 				conflictingProjections: "Swipe biedt geen ondersteuning voor het gebruik van twee webmaps met verschillende projecties. Ga naar de instellingen en gebruik een webmap met dezelfde projectie als de eerste webmap.",
 				cpButton: "Sluiten",
-				unspecifiedConfigOwner: "Ĳ_Authorized owner hasn't been configured_____________ä.",
-				invalidConfigOwner: "Ĳ_Story owner is not authorized__________ä."
+				unspecifiedConfigOwner: "De gemachtigde eigenaar is niet geconfigureerd.",
+				invalidConfigOwner: "De eigenaar van het verhaal is niet gemachtigd."
 			},
 			mobileView: {
 				hideIntro: "INLEIDING VERBERGEN",
@@ -47,7 +47,7 @@
 		},
 		builder: {
 			builder: {
-				panelHeader: "Ĳ_STORY CONFIGURATION_______ä",
+				panelHeader: "VERHAALCONFIGURATIE",
 				buttonSave: "OPSLAAN",
 				buttonHelp: "Help",
 				buttonShare: "Delen",
@@ -67,13 +67,13 @@
 				popoverSaveWhenDone: "Vergeet uw werk niet op te slaan wanneer u klaar bent",
 				closeWithPendingChange: "Weet u zeker dat u de actie wilt bevestigen? Uw wijzigingen gaan verloren.",
 				gotIt: "OK",
-				savingApplication: "Ĳ_Saving story_____ä",
-				saveSuccess: "Ĳ_Story saved successfully________ä",
+				savingApplication: "Verhaal wordt opgeslagen",
+				saveSuccess: "Verhaal is succesvol opgeslagen",
 				saveError: "Opslaan mislukt, probeer het opnieuw",
 				saveError2: "Opslaan is mislukt vanwege een ongeldige HTML-tag in een naam of beschrijving",
 				saveError3: "De titel mag niet leeg zijn",
 				signIn: "Meld u aan met een account op",
-				signInTwo: "Ĳ_to save the story______ä."
+				signInTwo: "om het verhaal op te slaan."
 			},
 			header:{
 				editMe: "Bewerk me!",
@@ -81,7 +81,7 @@
 				templateSubtitle: "Subtitel voor template instellen"
 			},
 			settings: {
-				settingsHeader: "Ĳ_Story settings_____ä",
+				settingsHeader: "Verhaalinstellingen",
 				modalCancel: "Annuleren",
 				modalApply: "Toepassen"
 			},
@@ -141,7 +141,7 @@
 				settingsLayoutSpyGlass: "Verrekijker",
 				settingsLayoutSelected: "Geselecteerde lay-out",
 				settingsLayoutSelect: "Selecteer deze lay-out",
-				settingsSaveConfirm: "Ĳ_Some of your changes require that you save and reload the story____________________ä"
+				settingsSaveConfirm: "Voor een aantal wijzigingen moet u het verhaal opslaan en opnieuw laden"
 			},
 			settingsDataModel: {
 				settingsTabDataModel: "Swipe-type",
@@ -169,7 +169,7 @@
 			},
 			settingsLegend: {
 				settingsTabLegend: "Indeling app",
-				settingsLegendExplain: "Ĳ_Select the layout settings_________ä.",
+				settingsLegendExplain: "Selecteer de instellingen voor de indeling.",
 				settingsLegendEnable: "Legenda inschakelen",
 				settingsDescriptionEnable: "Omschrijving inschakelen",
 				settingsBookmarksEnable: "Swipe-reeks inschakelen",
@@ -218,39 +218,39 @@
 				}
 			},
 			share: {
-				firstSaveTitle: "Ĳ_Story successfully saved________ä",
-				firstSaveHeader: "Ĳ_Your story is now saved in ArcGIS Online. Please read the following answers to frequent questions______________________________ä.",
+				firstSaveTitle: "Verhaal succesvol opgeslagen",
+				firstSaveHeader: "Uw verhaal is nu opgeslagen in ArcGIS Online. Lees de volgende antwoorden op veelgestelde vragen.",
 				firstSaveA1: "Als u niet vertrouwd bent met ArcGIS Online of u zoekt een snelle manier om toegang te krijgen tot de ontwerpinterface, kunt u de volgende koppeling opslaan: %LINK1%",
-				firstSaveA1bis: "Ĳ_The story can also be found in your <a href='%LINK2%' target='_blank'>ArcGIS Online content folder</a>________________________________ä.",
-				firstSaveQ2: "Ĳ_Is my story shared_______ä?",
-				firstSaveA2: "Ĳ_Currently your story is not shared. To share it, use the SHARE button______________________ä.",
-				shareTitle: "Ĳ_Share your story______ä",
-				sharePrivateHeader: "Ĳ_Your story is not shared, would you like to share it_________________ä?",
+				firstSaveA1bis: "Het verhaal kan ook gevonden worden in uw <a href=\'%LINK2%\' target=\'_blank\'>ArcGIS Online contentmap</a>.",
+				firstSaveQ2: "Werd mijn verhaal gedeeld?",
+				firstSaveA2: "Momenteel wordt uw verhaal niet gedeeld. Als u deze wilt delen, gebruikt u de knop DELEN.",
+				shareTitle: "Uw verhaal opslaan",
+				sharePrivateHeader: "Uw verhaal wordt niet gedeeld. Wilt u het delen?",
 				sharePrivateBtn1: "Openbaar delen",
 				sharePrivateBtn2: "Delen met Mijn Organisatie",
 				sharePrivateProgress: "Delen wordt uitgevoerd...",
 				sharePrivateErr: "Delen is mislukt. Probeer het opnieuw of",
 				sharePrivateOk: "Delen is bijgewerkt. Bezig met laden...",
-				shareStatus1: "Ĳ_Story is not saved______ä",
-				shareStatus2: "Ĳ_Story is shared publicly________ä",
-				shareStatus3: "Ĳ_Story is shared within the organization_____________ä",
-				shareStatus4: "Ĳ_Story is not shared_______ä",
+				shareStatus1: "Verhaal is niet opgeslagen",
+				shareStatus2: "Verhaal is openbaar gedeeld",
+				shareStatus3: "Verhaal is gedeeld binnen de organisatie",
+				shareStatus4: "Verhaal is niet gedeeld",
 				sharePreviewAsUser: "Voorbeeld",
-				shareHeader1: "Ĳ_Your story is <strong>publicly accessible</strong>________________ä.",
-				shareHeader2: "Ĳ_Your story is accessible by your organization members (login is required)_______________________ä.",
-				shareLinkHeader: "Ĳ_Share the story with your audience___________ä",
+				shareHeader1: "Uw verhaal is nu <strong>openbaar toegankelijk</strong>.",
+				shareHeader2: "Uw verhaal is toegankelijk voor leden van uw organisatie (aanmelden is vereist).",
+				shareLinkHeader: "Het verhaal delen met uw publiek",
 				shareLinkOpen: "OPENEN",
 				learnMore: "Meer weten",
-				shareQ1Opt1: "Ĳ_How do I keep the story private___________ä?",
-				shareQ1Opt2: "Ĳ_How do I keep the story private or share it publicly_________________ä?",
+				shareQ1Opt1: "Hoe kan ik het verhaal privé houden?",
+				shareQ1Opt2: "Hoe kan ik het verhaal privé houden of openbaar delen?",
 				shareA1: "Gebruik %SHAREIMG% op <a href='%LINK1%' target='_blank'>de applicatie-itempagina</a>. Als u de webmap ook ongedeeld wilt maken, gebruikt u <a href='%LINK2%' target='_blank'>de webmap-itempagina</a>.",
 				shareA1bis: "Als u het delen van de featureservice ongedaan wilt maken, gebruikt u <a href='%LINK1%' target='_blank'>de Featureservice-itempage</a>.",
-				shareQ2: "Ĳ_How do I edit the story later__________ä?",
+				shareQ2: "Hoe kan ik het verhaal later bewerken?",
 				shareQ2bis: "Hoe keer ik terug naar de ontwerpinterface?",
-				shareA2div1: "Ĳ_Save and reuse the following link %LINK1% or use <a href='%LINK2%' target='_blank'>the story item page</a>_________________________________ä.",
-				shareA2div2: "Ĳ_As the owner of the story, when you are signed in on ArcGIS.com, the story includes a button to open the interactive builder_______________________________________ä:",
+				shareA2div1: "Bewaar en gebruik de volgende link %LINK1% of gebruik <a href=\'%LINK2%\' target=\'_blank\'>de verhaalitempagina</a>.",
+				shareA2div2: "Als u bent aangemeld bij ArcGIS.com als de eigenaar van het verhaal, bevat het verhaal een knop om de interactieve builder te openen:",
 				shareQ3: "Waar zijn de gegevens opgeslagen?",
-				shareA3: "Ĳ_The story configuration is stored in this web application item</a>_____________________ä.",
+				shareA3: "De verhaalconfiguratie wordt opgeslagen in dit webapplicatie-item</a>.",
 				shareWarning: "%WITH% delen is uitgeschakeld omdat u niet de eigenaar bent van de <a href='%LINK%' target='_blank'>webmap</a>.",
  				shareWarningWith1: "Openbaar",
  				shareWarningWith2: "Openbaar en met de organisatie"

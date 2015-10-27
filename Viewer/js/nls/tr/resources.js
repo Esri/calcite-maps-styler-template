@@ -20,9 +20,9 @@ define(
             "error": "Harita oluşturulamıyor"
         },
         "nav":{
-            "next": "ı_Next__İ",
-            "previous": "ı_Previous___İ",
-            "close": "ı_Close___İ"
+            "next": "Sonraki",
+            "previous": "Önceki",
+            "close": "Kapat"
         },
         "tools":{
             "search":{

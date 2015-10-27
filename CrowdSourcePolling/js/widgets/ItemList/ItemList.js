@@ -25,6 +25,7 @@ define([
     "dojo/dom-geometry",
     'dojo/on',
     'dojo/query',
+    'dojo/sniff',
     'dojo/topic',
     'dojo/NodeList-dom',
     'dojox/mobile/Switch',  // pre-loaded as required by Dojo
@@ -36,7 +37,7 @@ define([
     'dijit/_WidgetsInTemplateMixin',
 
     'dojo/text!./ItemListView.html'
-], function (declare, lang, array, domConstruct, domStyle, domClass, domGeom, on, query, topic, nld, Switch,
+], function (declare, lang, array, domConstruct, domStyle, domClass, domGeom, on, query, has, topic, nld, Switch,
     SvgHelper,
     _WidgetBase, _TemplatedMixin, _WidgetsInTemplateMixin,
     template) {
@@ -135,6 +136,11 @@ define([
         show: function () {
             domStyle.set(this.domNode, 'display', 'block');
             this.fitFilterLabelToContainer();
+
+            if (has("ff")) {
+                // Scroll to the top of the list; needed for Firefox
+                this.scrollIntoView(this.list);
+            }
         },
 
         /**
@@ -236,6 +242,19 @@ define([
             if (this.selectedItemOID === item.attributes[item._layer.objectIdField]) {
                 domClass.add(itemSummaryDiv, "appTheme appThemeHover");
             }
+        },
+
+        /**
+         * Scrolls a container node to make a specified node visible.
+         * @param {object} nodeToMakeVisible Node that's to be brought into view
+         */
+        scrollIntoView: function (nodeToMakeVisible) {
+            // Firefox defaults to former scroll position if we're returning to a previously-scrolled node (which could
+            // be a different item's details--they go into the same scrollable div). The scrollIntoView can't change this
+            // unless it occurs a little later than the default behavior, hence the setTimeout.
+            setTimeout(function (){
+                nodeToMakeVisible.scrollIntoView();
+            }, 500);
         },
 
         /**

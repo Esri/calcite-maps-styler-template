@@ -27,7 +27,7 @@ define(
             "basemap":{
                     "label": "Pamatkarte",
                     "title": "Atlasīt pamatkarti",
-                    "close": "ķ_Close___ū"
+                    "close": "Aizvērt"
             },
             "legend":{
                 "title": "Leģenda"
@@ -43,7 +43,7 @@ define(
 
         },
         "map": {
-            "toggle": "ķ_Toggle side panel______ū",
+            "toggle": "Pārslēgt sānu paneli",
             "error": "Nevar izveidot karti"
         }
     })

@@ -64,7 +64,7 @@
 				url: "URL của một video trên Vimeo"
 			},
 			videoSelectorOther: {
-				explain1: "Đ_The story cannot play raw videos (e.g., avi, mpeg) but it can play hosted video files that have built-in players (e.g., YouTube or Vimeo)__________________________________________ớ.",
+				explain1: "Câu chuyện không thể phát các video thô (ví dụ: avi, mpeg) nhưng nó có thể phát các tệp video được lưu trữ có trình phát tích hợp (ví dụ: YouTube hoặc Vimeo).",
 				explain2: "Hầu hết dịch vụ lưu trữ video trực tuyến đều cung cấp tính năng này, bạn cần phải tìm tùy chọn để nhúng video, sao chép mã đã cung cấp và sử dụng %WEBPAGE%.",
 				explain3: "Ngoài ra, nếu bạn muốn tự lưu trữ video, bạn có thể tạo một trang HTML sử dụng một trình phát video như %EXAMPLE%, lưu trữ trang đó và cũng sử dụng %WEBPAGE%.",
 				webpage: "Tính năng của trang web"
@@ -102,7 +102,7 @@
 				lblPosition3Explain2: "(chiều rộng sẽ luôn luôn vừa với bảng điều khiển)",
 				lblPosition4Explain: "(có thể bóp méo)",
 				unloadLbl: "Không tải khi người đọc điều hướng ra ngoài",
-				unloadHelp: "Đ_If the Web Page has audio or video media, keep this option checked to stop that content from playing when the reader navigates away. Uncheck it for example to keep a soundtrack playing as the reader advances through the story.<br />If the Web Page is an application, uncheck this option so that the story does not reload if the reader returns to it__________________________________________________________________________________________________________ớ."
+				unloadHelp: "Nếu Trang Web có phương tiện âm thanh hoặc video, tiếp tục chọn tùy chọn này để dừng phát nội dung đó khi người đọc điều hướng ra ngoài. Ví dụ: bỏ chọn để tiếp tục phát rãnh âm thanh khi trình đọc chuyển qua câu chuyện.<br />Nếu Trang Web là một ứng dụng, bỏ chọn tùy chọn này để câu chuyện không tải lại nếu người đọc quay lại."
 			},
 			editorActionGeocode: {
 				lblTitle: "Định vị một địa chỉ hoặc địa điểm",

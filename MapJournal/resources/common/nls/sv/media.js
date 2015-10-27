@@ -64,7 +64,7 @@
 				url: "URL till en Vimeo-video"
 			},
 			videoSelectorOther: {
-				explain1: "Å_The story cannot play raw videos (e.g., avi, mpeg) but it can play hosted video files that have built-in players (e.g., YouTube or Vimeo)__________________________________________ö.",
+				explain1: "Berättelsen kan inte spela upp obearbetade videoklipp (till exempel avi och mpeg), men kan spela driftade videofiler som har inbyggda spelare (till exempel YouTube eller Vimeo).",
 				explain2: "De flesta tjänster som driftar videoklipp online erbjuder den här funktionen. Du måste hitta alternativet för att bädda in videon, kopiera den angivna koden och använda %WEBPAGE%.",
 				explain3: "Om du själv vill drifta videon kan du skapa en HTML-sida som använder en videospelare som %EXAMPLE%, drifta sidan och använda %WEBPAGE%.",
 				webpage: "Webbsidefunktion"
@@ -102,7 +102,7 @@
 				lblPosition3Explain2: "(bredden kommer alltid att fylla rutan)",
 				lblPosition4Explain: "(kan förvrängas)",
 				unloadLbl: "Ta bort när användaren navigerar vidare",
-				unloadHelp: "Å_If the Web Page has audio or video media, keep this option checked to stop that content from playing when the reader navigates away. Uncheck it for example to keep a soundtrack playing as the reader advances through the story.<br />If the Web Page is an application, uncheck this option so that the story does not reload if the reader returns to it__________________________________________________________________________________________________________ö."
+				unloadHelp: "Om webbsidan innehåller ljud- eller videomedia behåller du det här alternativet markerat så att innehållet inte spelas när användaren navigerar vidare. Avmarkera det till exempel om du vill att ett ljudspår ska spelas när användaren bläddrar vidare genom berättelsen.<br />Om webbplatsen är en applikation avmarkerar du alternativet så att berättelsen inte läses in på nytt om användaren återvänder till den."
 			},
 			editorActionGeocode: {
 				lblTitle: "Hitta en adress eller plats",

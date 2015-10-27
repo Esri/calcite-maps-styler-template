@@ -2,7 +2,7 @@
 	 ({
 		viewer: {
 			loading: {
-				step1: "é_LOADING STORY_____È",
+				step1: "CARICAMENTO STORIA",
 				step2: "CARICAMENTO DATI",
 				step3: "INIZIALIZZAZIONE IN CORSO",
 				fail: "Caricamento scorrimento con dito non riuscito",
@@ -17,19 +17,19 @@
 				invalidConfig: "Errore irreversibile: configurazione non valida",
 				invalidConfigNoWebmap: "Errore irreversibile: configurazione non valida (nessuna mappa Web specificata)",
 				createMap: "Impossibile creare la mappa",
-				invalidApp: "é_Fatal error: The story cannot be loaded_____________È",
+				invalidApp: "Errore irreversibile: impossibile caricare la storia",
 				initMobile: "Benvenuto nell\'applicazione Web per scorrimento con dito. L\'applicazione non è configurata. Il generatore interattivo non è supportato sui dispositivi mobili.",
-				initMobile2: "é_The Swipe builder is not supported at this display size__________________È.",
+				initMobile2: "Il generatore per scorrimento con dito non è supportato per queste dimensioni schermo.",
 				noBuilderIE8: "Il generatore interattivo per scorrimento con dito non è supportato dalle versioni di Internet Explorer precedenti alla versione 9.",
 				noLayerView: "Benvenuto nell\'applicazione Web per scorrimento con dito.<br />L\'applicazione non è ancora configurata.",
-				appSave: "é_Error saving the web story_________È",
+				appSave: "Errore durante il salvataggio della storia",
 				mapSave: "Errore durante il salvataggio della mappa Web",
-				notAuthorized: "é_You are not authorized to access this story______________È",
+				notAuthorized: "Non si è autorizzati ad accedere alla storia.",
 				conflictingProjectionsTitle: "Proiezioni in conflitto",
 				conflictingProjections: "Scorrimento non supportato in caso di utilizzo di due mappe Web con proiezioni differenti. Aprire la pagina delle impostazioni e utilizzare una mappa Web con proiezione uguale alla prima mappa Web.",
 				cpButton: "Chiudi",
-				unspecifiedConfigOwner: "é_Authorized owner hasn't been configured_____________È.",
-				invalidConfigOwner: "é_Story owner is not authorized__________È."
+				unspecifiedConfigOwner: "L\'utente autorizzato non è stato configurato.",
+				invalidConfigOwner: "Il proprietario della storia non è autorizzato."
 			},
 			mobileView: {
 				hideIntro: "NASCONDI INTRODUZIONE",
@@ -47,7 +47,7 @@
 		},
 		builder: {
 			builder: {
-				panelHeader: "é_STORY CONFIGURATION_______È",
+				panelHeader: "CONFIGURAZIONE STORIA",
 				buttonSave: "SALVA",
 				buttonHelp: "Guida",
 				buttonShare: "Condividi",
@@ -67,13 +67,13 @@
 				popoverSaveWhenDone: "Al termine, non dimenticare di salvare",
 				closeWithPendingChange: "Confermare l\'azione? Le modifiche apportate andranno perse.",
 				gotIt: "OK",
-				savingApplication: "é_Saving story_____È",
-				saveSuccess: "é_Story saved successfully________È",
+				savingApplication: "Salvataggio storia",
+				saveSuccess: "Storia salvata",
 				saveError: "Salvataggio non riuscito. Riprovare",
 				saveError2: "Salvataggio non riuscito a causa di un tag HTML non valido in un nome o in una descrizione",
 				saveError3: "Specificare il titolo",
 				signIn: "Effettuare l\'accesso con un account su",
-				signInTwo: "é_to save the story______È."
+				signInTwo: "per salvare la storia."
 			},
 			header:{
 				editMe: "Modifica utente",
@@ -81,7 +81,7 @@
 				templateSubtitle: "Imposta sottotitolo modello"
 			},
 			settings: {
-				settingsHeader: "é_Story settings_____È",
+				settingsHeader: "Impostazioni storia",
 				modalCancel: "Annulla",
 				modalApply: "Applica"
 			},
@@ -141,7 +141,7 @@
 				settingsLayoutSpyGlass: "Cannocchiale",
 				settingsLayoutSelected: "Layout selezionato",
 				settingsLayoutSelect: "Seleziona il layout",
-				settingsSaveConfirm: "é_Some of your changes require that you save and reload the story____________________È"
+				settingsSaveConfirm: "Per alcune modifiche è necessario salvare e ricaricare la storia"
 			},
 			settingsDataModel: {
 				settingsTabDataModel: "Tipo di scorrimento con il dito",
@@ -169,7 +169,7 @@
 			},
 			settingsLegend: {
 				settingsTabLegend: "Layout app",
-				settingsLegendExplain: "é_Select the layout settings_________È.",
+				settingsLegendExplain: "Selezionare le impostazioni di layout.",
 				settingsLegendEnable: "Abilita legenda",
 				settingsDescriptionEnable: "Abilita descrizione",
 				settingsBookmarksEnable: "Abilita serie di scorrimenti con dito",
@@ -218,39 +218,39 @@
 				}
 			},
 			share: {
-				firstSaveTitle: "é_Story successfully saved________È",
-				firstSaveHeader: "é_Your story is now saved in ArcGIS Online. Please read the following answers to frequent questions______________________________È.",
+				firstSaveTitle: "Storia salvata",
+				firstSaveHeader: "La storia è stata salvata in ArcGIS Online. Leggere le seguenti risposte alle domande frequenti.",
 				firstSaveA1: "Se non si è esperti di ArcGIS Online o si desidera impostare una scelta rapida per accedere all\'interfaccia di modifica, salvare il collegamento seguente: %LINK1%",
-				firstSaveA1bis: "é_The story can also be found in your <a href='%LINK2%' target='_blank'>ArcGIS Online content folder</a>________________________________È.",
-				firstSaveQ2: "é_Is my story shared_______È?",
-				firstSaveA2: "é_Currently your story is not shared. To share it, use the SHARE button______________________È.",
-				shareTitle: "é_Share your story______È",
-				sharePrivateHeader: "é_Your story is not shared, would you like to share it_________________È?",
+				firstSaveA1bis: "La storia è disponibile anche nella <a href=\'%LINK2%\' target=\'_blank\'>cartella contenuto ArcGIS Online</a>.",
+				firstSaveQ2: "La storia è condivisa?",
+				firstSaveA2: "La storia non è attualmente condivisa. Per condividerla, utilizzare il pulsante CONDIVIDI.",
+				shareTitle: "Condividi la storia",
+				sharePrivateHeader: "La storia non è condivisa. Condividerla?",
 				sharePrivateBtn1: "Condividi pubblicamente",
 				sharePrivateBtn2: "Condividi con l\'organizzazione",
 				sharePrivateProgress: "Condivisione in corso...",
 				sharePrivateErr: "Condivisione non riuscita. Riprovare o",
 				sharePrivateOk: "Condivisione aggiornata. Caricamento in corso...",
-				shareStatus1: "é_Story is not saved______È",
-				shareStatus2: "é_Story is shared publicly________È",
-				shareStatus3: "é_Story is shared within the organization_____________È",
-				shareStatus4: "é_Story is not shared_______È",
+				shareStatus1: "Storia non salvata",
+				shareStatus2: "Storia condivisa pubblicamente",
+				shareStatus3: "Storia condivisa nell\'ambito dell\'organizzazione",
+				shareStatus4: "Storia non condivisa",
 				sharePreviewAsUser: "Anteprima",
-				shareHeader1: "é_Your story is <strong>publicly accessible</strong>________________È.",
-				shareHeader2: "é_Your story is accessible by your organization members (login is required)_______________________È.",
-				shareLinkHeader: "é_Share the story with your audience___________È",
+				shareHeader1: "La storia è <strong>accessibile pubblicamente</strong>.",
+				shareHeader2: "La storia è accessibile ai membri dell\'organizzazione (accesso obbligatorio).",
+				shareLinkHeader: "Condividi la storia con il pubblico",
 				shareLinkOpen: "APRI",
 				learnMore: "Ulteriori informazioni",
-				shareQ1Opt1: "é_How do I keep the story private___________È?",
-				shareQ1Opt2: "é_How do I keep the story private or share it publicly_________________È?",
+				shareQ1Opt1: "Come si mantiene privata la storia?",
+				shareQ1Opt2: "Come si mantiene privata o si condivide pubblicamente la storia?",
 				shareA1: "Utilizzare %SHAREIMG% nella <a href='%LINK1%' target='_blank'>pagina degli elementi dell\'applicazione</a>. Se si desidera anche annullare la condivisione della mappa Web, utilizzare la <a href='%LINK2%' target='_blank'>pagina degli elementi della mappa Web</a>.",
 				shareA1bis: "Se si desidera anche annullare la condivisione del feature service, utilizzare la <a href='%LINK1%' target='_blank'>pagina degli elementi del feature service</a>.",
-				shareQ2: "é_How do I edit the story later__________È?",
+				shareQ2: "Come si modifica la storia in un secondo momento?",
 				shareQ2bis: "Come si torna all\'interfaccia di creazione?",
-				shareA2div1: "é_Save and reuse the following link %LINK1% or use <a href='%LINK2%' target='_blank'>the story item page</a>_________________________________È.",
-				shareA2div2: "é_As the owner of the story, when you are signed in on ArcGIS.com, the story includes a button to open the interactive builder_______________________________________È:",
+				shareA2div1: "Salvare e riutilizzare il seguente collegamento %LINK1% oppure utilizzare la <a href=\'%LINK2%\' target=\'_blank\'>pagina degli elementi della storia</a>.",
+				shareA2div2: "In quanto proprietari della storia, quando si esegue l\'accesso ad ArcGIS.com, la storia includerà un pulsante per aprire il generatore interattivo:",
 				shareQ3: "Dove vengono memorizzati i dati?",
-				shareA3: "é_The story configuration is stored in this web application item</a>_____________________È.",
+				shareA3: "La configurazione della storia è memorizzata in questo elemento dell\'applicazione Web</a>.",
 				shareWarning: "La condivisione %WITH% è stata disabilitata perché non si è proprietari della <a href='%LINK%' target='_blank'>mappa Web</a>.",
  				shareWarningWith1: "con il pubblico",
  				shareWarningWith2: "con il pubblico e con l\'organizzazione"

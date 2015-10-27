@@ -1,22 +1,22 @@
 ﻿define(
 	 ({
 		signInDialog: {
-			title: "ก้_Sign in to Story Maps_______ษฺ",
-			subtitle: "ก้_Sign in with your existing ArcGIS Online account to_________________ษฺ:",
-			reasonOne: "ก้_Create compelling story maps to tell your stories________________ษฺ.",
-			reasonTwo: "ก้_Use your maps and data from ArcGIS Online in your story maps___________________ษฺ.",
-			reasonThree: "ก้_Manage your story maps and check the status of their content___________________ษฺ.",
-			noAccountYet: "ก้_Don't have an ArcGIS Online account? Sign up for a________________ษฺ:",
-			publicAccount: "ก้_Free non-commercial public account___________ษฺ",
-			subscriptionAccount: "ก้_Free trial ArcGIS subscription__________ษฺ",
-			signInExpired: "ก้_Your sign-in expired. Sign in again to pick up where you left off_____________________ษฺ.",
-			somethingNotLoading: "ก้_Something isn't loading correctly. Try refreshing the page___________________ษฺ."
+			title: "เข้าสู่ระบบแผนที่เรื่องราว",
+			subtitle: "ลงทะเบียนเข้าใช้ด้วยบัญชี ArcGIS Online ที่มีอยู่แล้วของคุณ:",
+			reasonOne: "สร้างแผนที่เรื่องราวที่น่าสนใจเพื่อบอกเล่าเรื่องราวของคุณ",
+			reasonTwo: "ใช้แผนที่ของคุณและข้อมูลจาก ArcGIS Online ในแผนที่เรื่องราว",
+			reasonThree: "จัดการแผนที่เรื่องราวและตรวจสอบสถานะของเนื้อหา",
+			noAccountYet: "ยังไม่มีบัญชีผู้ใช้ ArcGIS Online? ลงทะเบียนที่นี่",
+			publicAccount: "บัญชีผู้ใช้งานทั่วไป ฟรี",
+			subscriptionAccount: "ทดลองใช้ฟรี ArcGIS subscription",
+			signInExpired: "การลงชื่อเข้าใช้งานของคุณหมดอายุ เข้าสู่ระบบอีกครั้งเพื่อเข้าใช้งาน",
+			somethingNotLoading: "บางสิ่งไม่ได้ถูกโหลดอย่างสมบูรณ์ กรุณารีเฟรชหน้าจออีกครั้ง"
 		},
 		unavailableDialog: {
-			title: "ก้_Sign-In Not Available_______ษฺ",
-			explanation: "ก้_Sorry, this is not supported in a small display. Please open in a larger display or device____________________________ษฺ.",
-			close: "ก้_Close___ษฺ",
-			returnButton: "ก้_Return___ษฺ" 
+			title: "เข้าสู่ระบบไม่สามารถใช้งานได้",
+			explanation: "ขออภัย ไม่สนับสนุนการแสดงผลขนาดเล็ก กรุณาเปิดการแสดงผลขนาดใหญ่ หรืออุปกรณ์อื่น",
+			close: "ปิด",
+			returnButton: "กลับคืน" 
 		}
 	})
 );

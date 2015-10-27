@@ -17,28 +17,28 @@
 define(
    ({
     map: {
-      error: "כן_Unable to create map_______ש"
+      error: "לא ניתן ליצור מפה"
     },
     elevation: {
-        toggle: "כן_Toggle the Elevation Profile Chart____________ש.",
-        drawTool: "כן_Draw a line on the map to generate an elevation profile__________________ש.",
-        selectMessage: "כן_Click a line feature or use the draw tool to draw a line to display the elevation profile____________________________ש"
+        toggle: "שנה את התרשים של פרופיל גבהים.",
+        drawTool: "שרטט קו על המפה כדי ליצור פרופיל גבהים.",
+        selectMessage: "לחץ על ישות קווית או השתמש בכלי השרטוט כדי לשרטט קו להצגת פרופיל הגבהים"
     },
     splash: {
-        title: "כן_Title___ש",
-        content: "כן_Configure to create custom splash content_____________ש"
+        title: "כותרת",
+        content: "הגדר כדי ליצור תוכן פתיחה מותאם"
     },
     legend: {
-        title: "כן_Legend___ש",
-        tip: "כן_Display legend_____ש"
+        title: "מקרא",
+        tip: "הצג מקרא"
     },
     basemap: {
-        title: "כן_Basemap___ש",
-        tip: "כן_Change basemap_____ש"
+        title: "מפת בסיס",
+        tip: "שנה מפת בסיס"
     },
     share: {
-        title: "כן_Share___ש",
-        tip: "כן_Share map____ש"
+        title: "שתף",
+        tip: "שתף מפה"
     }
   })
 );

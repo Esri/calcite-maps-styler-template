@@ -1,22 +1,22 @@
 ﻿define(
 	 ({
 		signInDialog: {
-			title: "Ĳ_Sign in to Story Maps_______ä",
-			subtitle: "Ĳ_Sign in with your existing ArcGIS Online account to_________________ä:",
-			reasonOne: "Ĳ_Create compelling story maps to tell your stories________________ä.",
-			reasonTwo: "Ĳ_Use your maps and data from ArcGIS Online in your story maps___________________ä.",
-			reasonThree: "Ĳ_Manage your story maps and check the status of their content___________________ä.",
-			noAccountYet: "Ĳ_Don't have an ArcGIS Online account? Sign up for a________________ä:",
-			publicAccount: "Ĳ_Free non-commercial public account___________ä",
-			subscriptionAccount: "Ĳ_Free trial ArcGIS subscription__________ä",
-			signInExpired: "Ĳ_Your sign-in expired. Sign in again to pick up where you left off_____________________ä.",
-			somethingNotLoading: "Ĳ_Something isn't loading correctly. Try refreshing the page___________________ä."
+			title: "Meld u aan bij Story Maps",
+			subtitle: "Inschrijven met u bestaande ArcGIS Online-account op:",
+			reasonOne: "Maak meeslepende storymaps om uw verhalen te vertellen.",
+			reasonTwo: "Gebruik uw kaarten en gegevens van ArcGIS Online in uw storymaps.",
+			reasonThree: "Beheer uw storymaps en controleer de status van hun content.",
+			noAccountYet: "Hebt u geen ArcGIS Online account? Meld u dan aan voor een:",
+			publicAccount: "Gratis niet-commercieel openbaar account",
+			subscriptionAccount: "Gratis proefabonnement ArcGIS",
+			signInExpired: "Uw sessie is verlopen. Meld u opnieuw aan om uw werk voort te zetten.",
+			somethingNotLoading: "Er laadt iets niet juist. Probeer de pagina te hernieuwen."
 		},
 		unavailableDialog: {
-			title: "Ĳ_Sign-In Not Available_______ä",
-			explanation: "Ĳ_Sorry, this is not supported in a small display. Please open in a larger display or device____________________________ä.",
-			close: "Ĳ_Close___ä",
-			returnButton: "Ĳ_Return___ä" 
+			title: "Aanmelden niet beschikbaar",
+			explanation: "Sorry, dit wordt niet ondersteund op een klein display. Open dit op een groter display of op een groter apparaat.",
+			close: "Sluiten",
+			returnButton: "Terugkeren" 
 		}
 	})
 );

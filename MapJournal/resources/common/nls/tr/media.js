@@ -64,7 +64,7 @@
 				url: "Bir Vimeo videosu URL\'si"
 			},
 			videoSelectorOther: {
-				explain1: "ı_The story cannot play raw videos (e.g., avi, mpeg) but it can play hosted video files that have built-in players (e.g., YouTube or Vimeo)__________________________________________İ.",
+				explain1: "Hikaye işlenmemiş videoları (avi, mpeg gibi) oynatamaz, ancak dahili oynatıcıları olan (YouTube ya da Vimeo gibi) barındırılan video dosyalarını oynatabilir.",
 				explain2: "Çoğu çevrimiçi video barındırma hizmeti bu özelliği sunar, videoyu gömmek için geçerli seçeneği bulmalı, verilen kodu kopyalamalı ve %WEBPAGE% kullanmalısınız.",
 				explain3: "Alternatif olarak videoyu kendiniz barındırmak istiyorsanız, %EXAMPLE% gibi bir video oynatıcı kullanan bir HTML sayfası oluşturabilir, sayfayı barındırabilir ve ayrıca %WEBPAGE% kullanabilirsiniz.",
 				webpage: "Web sayfası özelliği"
@@ -102,7 +102,7 @@
 				lblPosition3Explain2: "(genişlik her zaman panele sığacaktır)",
 				lblPosition4Explain: "(şekil değiştirebilir)",
 				unloadLbl: "Okuyucu başka yere gittiğinde yüklemeyi kaldır",
-				unloadHelp: "ı_If the Web Page has audio or video media, keep this option checked to stop that content from playing when the reader navigates away. Uncheck it for example to keep a soundtrack playing as the reader advances through the story.<br />If the Web Page is an application, uncheck this option so that the story does not reload if the reader returns to it__________________________________________________________________________________________________________İ."
+				unloadHelp: "Web Sayfasında ses ya da video ortamı varsa, okuyucu başka bir yere gittiğinde içeriğin oynatımını durdurmak için bu seçeneği işaretli bırakın. Okuyucu metin boyunca ilerlerken örneğin bir arka plan müziğini oynatmaya devam etmek için işareti kaldırın.<br />Web Sayfası bir uygulamaysa, bu seçeneğin işaretini kaldırarak, okuyucu geri döndüğünde hikayenin yeniden yüklenmesini önleyebilirsiniz."
 			},
 			editorActionGeocode: {
 				lblTitle: "Adres veya yer bul",

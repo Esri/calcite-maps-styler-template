@@ -27,7 +27,7 @@ define(
             "basemap":{
                     "label": "Grundkarte",
                     "title": "Grundkarte auswählen",
-                    "close": "ä_Close___Ü"
+                    "close": "Schließen"
             },
             "legend":{
                 "title": "Legende"
@@ -43,7 +43,7 @@ define(
 
         },
         "map": {
-            "toggle": "ä_Toggle side panel______Ü",
+            "toggle": "Seitenfenster umschalten",
             "error": "Karte kann nicht erstellt werden"
         }
     })

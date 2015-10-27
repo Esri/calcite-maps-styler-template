@@ -20,9 +20,9 @@ define(
             "error": "Kaardi loomine ebaõnnestus"
         },
         "nav":{
-            "next": "Š_Next__ä",
-            "previous": "Š_Previous___ä",
-            "close": "Š_Close___ä"
+            "next": "Järgmine",
+            "previous": "Eelmine",
+            "close": "Sulge"
         },
         "tools":{
             "search":{

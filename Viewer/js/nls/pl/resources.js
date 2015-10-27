@@ -20,9 +20,9 @@ define(
             "error": "Nie można utworzyć mapy"
         },
         "nav":{
-            "next": "ł_Next__ą",
-            "previous": "ł_Previous___ą",
-            "close": "ł_Close___ą"
+            "next": "Dalej",
+            "previous": "Powrót",
+            "close": "Zamknij"
         },
         "tools":{
             "search":{

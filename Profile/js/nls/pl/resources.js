@@ -17,28 +17,28 @@
 define(
    ({
     map: {
-      error: "ł_Unable to create map_______ą"
+      error: "Nie można utworzyć mapy"
     },
     elevation: {
-        toggle: "ł_Toggle the Elevation Profile Chart____________ą.",
-        drawTool: "ł_Draw a line on the map to generate an elevation profile__________________ą.",
-        selectMessage: "ł_Click a line feature or use the draw tool to draw a line to display the elevation profile____________________________ą"
+        toggle: "Przełącz wykres profilu wysokościowego.",
+        drawTool: "Narysuj linię na mapie, aby wygenerować profil wysokościowy.",
+        selectMessage: "Kliknij funkcję linii lub użyj narzędzia do rysowania, aby narysować linię i wyświetlić profil wysokościowy"
     },
     splash: {
-        title: "ł_Title___ą",
-        content: "ł_Configure to create custom splash content_____________ą"
+        title: "Tytuł",
+        content: "Skonfiguruj, aby utworzyć niestandardową zawartość ekranu powitalnego"
     },
     legend: {
-        title: "ł_Legend___ą",
-        tip: "ł_Display legend_____ą"
+        title: "Legenda",
+        tip: "Wyświetl legendę"
     },
     basemap: {
-        title: "ł_Basemap___ą",
-        tip: "ł_Change basemap_____ą"
+        title: "Mapa bazowa",
+        tip: "Zmień mapę bazową"
     },
     share: {
-        title: "ł_Share___ą",
-        tip: "ł_Share map____ą"
+        title: "Udostępnij",
+        tip: "Udostępnij mapę"
     }
   })
 );

@@ -10,7 +10,7 @@
       filterOr: "以下任意表達式必須為 true。",
       filterAnd: "以下表達式必須全部為 true。",
       filterNo:  "Web map does not contain any interactive filters. View the ${link} help topic for details on how to create a filter in your web map.",
-      filterLink: "試_http://doc.arcgis.com/en/arcgis-online/use-maps/apply-filters.htm_____________________驗",
+      filterLink: "http://doc.arcgis.com/en/arcgis-online/use-maps/apply-filters.htm",
       errors:{
         message: "建立篩選應用程式時出現問題"
       }

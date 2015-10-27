@@ -64,7 +64,7 @@
 				url: "Vimeo-videon URL-osoite"
 			},
 			videoSelectorOther: {
-				explain1: "Å_The story cannot play raw videos (e.g., avi, mpeg) but it can play hosted video files that have built-in players (e.g., YouTube or Vimeo)__________________________________________ö.",
+				explain1: "Tarina ei voi toistaa raakavideoita (esim. avi- ja mpeg-muotoisia), mutta sillä voi toistaa isännöityjä videotiedostoja, joissa on sisäänrakennettuja soittimia (esim. YouTube tai Vimeo).",
 				explain2: "Useimmissa online-videoisännöintipalveluissa voi käyttää kyseistä ominaisuutta, ja sinun on etsittävä videon upotusvalinta, kopioitava annettu koodi ja käytettävä sivustoa %WEBPAGE%.",
 				explain3: "Jos taas haluat isännöidä itse videota, voit luoda HTML-sivun, joka käyttää videosoitinta (esim. %EXAMPLE%), isännöidä tätä sivua ja käyttää myös sivustoa %WEBPAGE%.",
 				webpage: "Web-sivukohde"
@@ -102,7 +102,7 @@
 				lblPosition3Explain2: "(leveys sopii aina paneeliin)",
 				lblPosition4Explain: "(voi vääristyä)",
 				unloadLbl: "Poista lataus, kun lukija siirtyy",
-				unloadHelp: "Å_If the Web Page has audio or video media, keep this option checked to stop that content from playing when the reader navigates away. Uncheck it for example to keep a soundtrack playing as the reader advances through the story.<br />If the Web Page is an application, uncheck this option so that the story does not reload if the reader returns to it__________________________________________________________________________________________________________ö."
+				unloadHelp: "Jos Web-sivulla on ääni- tai videomediaa, pidä tämä asetus valittuna, jotta sisällön toisto pysähtyy, kun lukija siirtyy pois. Poista valinta, jos haluat toistaa ääniraitaa lukijan edetessä tarinassa.<br />Jos Web-sivu on sovellus, poista valinta, jotta tarina ei lataudu uudelleen, kun lukija palaa tarinaan."
 			},
 			editorActionGeocode: {
 				lblTitle: "Paikanna osoite tai paikka",

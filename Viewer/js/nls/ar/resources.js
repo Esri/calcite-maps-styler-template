@@ -20,9 +20,9 @@ define(
             "error": "يتعذر إنشاء الخريطة"
         },
         "nav":{
-            "next": "بيت_Next__لاحقة",
-            "previous": "بيت_Previous___لاحقة",
-            "close": "بيت_Close___لاحقة"
+            "next": "التالي",
+            "previous": "السابق",
+            "close": "إغلاق"
         },
         "tools":{
             "search":{

@@ -64,7 +64,7 @@
 				url: "Vimeo video URL"
 			},
 			videoSelectorOther: {
-				explain1: "ķ_The story cannot play raw videos (e.g., avi, mpeg) but it can play hosted video files that have built-in players (e.g., YouTube or Vimeo)__________________________________________ū.",
+				explain1: "Stāstos nevar tikt atskaņoti neapstrādāti video (piem., .avi un .mpeg), bet var tikt atskaņoti viesoti video faili ar iebūvētiem atskaņotājiem (piem., YouTube vai Vimeo).",
 				explain2: "Lielākā daļa video mitināšanas pakalpojumu piedāvā šo funkciju, jums ir jāatrod iespēja iedarināt video, nokopēt saņemto kodu un izmantot %WEBPAGE%.",
 				explain3: "Ja video vēlaties mitināt pats, varat arī izveidot HTML lapu, kurā tiek izmantots video atskaņotājs (piemēram, %EXAMPLE%), mitināt šo lapu un arī izmantot %WEBPAGE%.",
 				webpage: "Web lapas funkcija"
@@ -102,7 +102,7 @@
 				lblPosition3Explain2: "(platums vienmēr atbildīs panelim)",
 				lblPosition4Explain: "(var tikt izkropļots)",
 				unloadLbl: "Izlādēt, ja lasītājs pārvietojas uz citurieni",
-				unloadHelp: "ķ_If the Web Page has audio or video media, keep this option checked to stop that content from playing when the reader navigates away. Uncheck it for example to keep a soundtrack playing as the reader advances through the story.<br />If the Web Page is an application, uncheck this option so that the story does not reload if the reader returns to it__________________________________________________________________________________________________________ū."
+				unloadHelp: "Ja tīmekļa lapā ir audio vai video multivide, atzīmējiet šo iespēju, lai šis saturs netiktu atskaņots brīdī, kad lasītājs naviģē tālāk. Noņemiet atzīmi, ja vēlaties, lai, piemēram, tiktu turpināta skaņu celiņa atskaņošana, kamēr lasītājs virzās uz priekšu stāstā.<br />Ja tīmekļa lapa ir lietotne, noņemiet atzīmi pie šīs iespējas, lai stāsts netiktu ielādēts atkārtoti, lasītājam atgriežoties šajā sadaļā."
 			},
 			editorActionGeocode: {
 				lblTitle: "Adreses vai vietas noteikšana",

@@ -5,33 +5,33 @@
 				close: "Fechar"
 			},
 			loading: {
-				step1: "ã_Loading story_____Ç",
+				step1: "Carregando história",
 				step2: "Carregando dados",
 				step3: "Inicializando",
 				loadBuilder: "Trocando para construtor",
 				long: "O diário do mapa está inicializando",
 				long2: "Obrigado por aguardar",
-				failButton: "ã_Reload the story______Ç"
+				failButton: "Recarregar a história"
 			},
 			signin: {
 				title: "uma autenticação é exigida",
-				explainViewer: "ã_Please sign in with an account on %PORTAL_LINK% to access the story_____________________Ç.",
-				explainBuilder: "ã_Please sign in with an account on %PORTAL_LINK% to configure the story______________________Ç."
+				explainViewer: "Entre com uma conta no %PORTAL_LINK% para acessar a história.",
+				explainBuilder: "Entre com uma conta no %PORTAL_LINK% para configurar a história."
 			},
 			errors: {
 				boxTitle: "Ocorreu um erro",
 				invalidConfig: "Configuração inválida",
 				invalidConfigNoApp: "Identificador do Aplicativo de Mapeamento da Web não especificado no index.html.",
 				unspecifiedConfigOwner: "O proprietário autorizado não foi configurado.",
-				invalidConfigOwner: "ã_Story owner is not authorized__________Ç.",
+				invalidConfigOwner: "O proprietário da história não está autorizado.",
 				createMap: "Não foi possível criar o mapa",
 				invalidApp: "O %TPL_NAME% não existe ou está inacessível.",
 				appLoadingFail: "Ocorreu algo errado, o %TPL_NAME% não carregou corretamente.",
-				notConfiguredDesktop: "ã_The story is not configured yet___________Ç.",
-				notConfiguredMobile: "ã_The %TPL_NAME% builder is not supported at this display size___________________Ç.",
-				notAuthorized: "ã_You are not authorized to access this story______________Ç",
+				notConfiguredDesktop: "A história ainda não está configurada.",
+				notConfiguredMobile: "O construtor %TPL_NAME% não é suportado neste tamanho de visualização.",
+				notAuthorized: "Você não tem autorização para acessar esta história",
 				noBuilderIE: "O construtor não é suportado no Internet Explorer antes da versão %VERSION%. %UPGRADE%",
-				noViewerIE: "ã_This story is not supported in Internet Explorer before version %VERSION%. %UPGRADE%__________________________Ç",
+				noViewerIE: "Esta história não é suportada no Internet Explorer antes da versão %VERSION%. %UPGRADE%",
 				upgradeBrowser: "<a href='http://browsehappy.com/' target='_blank'>Atualize seu navegador</a>.",
 				mapLoadingFail: "Ocorreu algo errado, o Mapa não carregou corretamente.",
 				signOut: "Sair"
@@ -61,9 +61,9 @@
 				templateTitle: "Configurar título do modelo",
 				templateSubtitle: "Configurar subtítulo do modelo",
 				share: "Compartilhar",
-				checking: "ã_Checking your story content_________Ç",
-				fix: "ã_Fix issues in your story________Ç",
-				noerrors: "ã_No issues detected______Ç"
+				checking: "Verificando conteúdo da sua história",
+				fix: "Corrigir problemas em sua história",
+				noerrors: "Nenhum problema detectado"
 			},
 			overviewFromCommon: {
 				title: "Mapa de Visão Geral"

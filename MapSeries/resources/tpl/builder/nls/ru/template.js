@@ -70,7 +70,7 @@
 			},
 			organizePopup: {
 				title: "Организовать",
-				lblHeader: "Ж_Drag and drop %LBL_LAYOUT% to organize your story________________Я.",
+				lblHeader: "Нажмите и перетащите %LBL_LAYOUT%, чтобы организовать историю.",
 				lblColTitle: "Заголовок",
 				lblColStatus: "Статус",
 				btnApplyWarning: "Подтвердить удаление %NB% %LBL_LAYOUT%",

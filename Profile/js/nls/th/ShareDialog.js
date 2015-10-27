@@ -2,16 +2,16 @@
      ({
         widgets: {
             ShareDialog: {
-                title: "ก้_Share___ษฺ",
-                heading: "ก้_Share this map_____ษฺ",
-                url: "ก้_Map Link___ษฺ",
-                embed: "ก้_Embed Map____ษฺ",
-                extent: "ก้_Share current map extent________ษฺ",
-                size: "ก้_Size (width/height)_______ษฺ:",
-                facebookTooltip: "ก้_Facebook___ษฺ",
-                twitterTooltip: "ก้_Twitter___ษฺ",
-                gplusTooltip: "ก้_Google Plus____ษฺ",
-                emailTooltip: "ก้_Email___ษฺ"
+                title: "แบ่งปัน",
+                heading: "แชร์แผนที่นี้",
+                url: "เชื่อมโยงแผนที่",
+                embed: "ผูกติดกับแผนที่",
+                extent: "แชร์ขอบเขตแผนที่ปัจจุบัน",
+                size: "ขนาด (กว้าง/สูง):",
+                facebookTooltip: "Facebook",
+                twitterTooltip: "Twitter",
+                gplusTooltip: "กูเกิ้ลพลัส",
+                emailTooltip: "อีเมล์"
             }
         }
     })

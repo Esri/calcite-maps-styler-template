@@ -5,29 +5,29 @@
 				close: "Schließen"
 			},
 			loading: {
-				long: "ä_Story is initializing_______Ü",
+				long: "Story wird initialisiert",
 				long2: "Vielen Dank für Ihre Geduld.",
-				failButton: "ä_Reload the story______Ü"
+				failButton: "Story erneut laden"
 			},
 			signin: {
 				title: "Authentifizierung ist erforderlich",
-				explainViewer: "ä_Please sign in with an account on %PORTAL_LINK% to access the story_____________________Ü.",
-				explainBuilder: "ä_Please sign in with an account on %PORTAL_LINK% to configure the story______________________Ü."
+				explainViewer: "Melden Sie sich mit einem Konto bei %PORTAL_LINK% an, um auf die Story zuzugreifen.",
+				explainBuilder: "Melden Sie sich mit einem Konto bei %PORTAL_LINK% an, um die Story zu konfigurieren."
 			},
 			errors: {
 				boxTitle: "Ein Fehler ist aufgetreten",
 				invalidConfig: "Ungültige Konfiguration",
 				invalidConfigNoApp: "Keine Web Mapping-Anwendungskennung in index.html angegeben.",
 				unspecifiedConfigOwner: "Autorisierter Besitzer wurde nicht konfiguriert.",
-				invalidConfigOwner: "ä_Story owner is not authorized__________Ü.",
+				invalidConfigOwner: "Besitzer der Story ist nicht autorisiert.",
 				createMap: "Karte kann nicht erstellt werden",
 				invalidApp: "%TPL_NAME% ist nicht vorhanden oder es kann nicht darauf zugegriffen werden.",
 				appLoadingFail: "Ein Fehler ist aufgetreten. %TPL_NAME% wurde nicht korrekt geladen.",
-				notConfiguredDesktop: "ä_The story is not configured yet___________Ü.",
-				notConfiguredMobile: "ä_The %TPL_NAME% builder is not supported at this display size___________________Ü.",
-				notAuthorized: "ä_You are not authorized to access this story______________Ü",
+				notConfiguredDesktop: "Die Story ist noch nicht konfiguriert.",
+				notConfiguredMobile: "Der %TPL_NAME% Builder wird bei dieser Anzeigegröße nicht unterstützt.",
+				notAuthorized: "Sie sind nicht autorisiert, auf diese Story zuzugreifen.",
 				noBuilderIE: "Der Builder wird von Internet Explorer vor Version %VERSION% nicht unterstützt. %UPGRADE%",
-				noViewerIE: "ä_This story is not supported in Internet Explorer before version %VERSION%. %UPGRADE%__________________________Ü",
+				noViewerIE: "Diese Story wird von Internet Explorer vor Version %VERSION% nicht unterstützt. %UPGRADE%",
 				upgradeBrowser: "<a href='http://browsehappy.com/' target='_blank'>Aktualisieren Sie Ihren Browser</a>.",
 				mapLoadingFail: "Ein Fehler ist aufgetreten. Die Karte wurde nicht korrekt geladen.",
 				signOut: "Abmelden"
@@ -35,8 +35,8 @@
 			mobileInfo: {
 				legend: "Legende",
 				description: "Beschreibung",
-				lblLegendMobileError: "ä_Sorry, the legend is unavailable. Please reload the story__________________Ü.",
-				lblLegendMobileErrorExplain: "ä_The legend is not available when the device is rotated to portrait mode after the story is loaded______________________________Ü."
+				lblLegendMobileError: "Die Legende ist nicht verfügbar. Laden Sie die Story erneut.",
+				lblLegendMobileErrorExplain: "Die Legende ist nicht verfügbar, wenn das Gerät nach dem Laden der Story ins Querformat gedreht wird."
 			},
 			mobileFooter: {
 				swipeInvite: "Zum Navigieren in der Story streichen",
@@ -52,9 +52,9 @@
 				templateTitle: "Vorlagentitel festlegen",
 				templateSubtitle: "Untertitel der Vorlage festlegen",
 				share: "Freigeben",
-				checking: "ä_Checking your story content_________Ü",
-				fix: "ä_Fix issues in your story________Ü",
-				noerrors: "ä_No issues detected______Ü"
+				checking: "Der Inhalt Ihrer Story wird überprüft",
+				fix: "Probleme in der Story beheben",
+				noerrors: "Keine Probleme erkannt"
 			},
 			overviewFromCommon: {
 				title: "Übersichtskarte"
@@ -67,11 +67,11 @@
 				copied: "Kopiert",
 				open: "Öffnen",
 				embed: "In Webseite einbetten",
-				embedExplain: "ä_Use the following HTML code to embed the story in a web page___________________Ü.",
+				embedExplain: "Verwenden Sie den folgenden HTML-Code, um die Story in eine Webseite einzubetten.",
 				size: "Größe (Breite/Höhe):"
 			},
 			locatorFromCommon: {
-				error: "ä_Location not available________Ü"
+				error: "Position ist nicht verfügbar"
 			}
         }
     })

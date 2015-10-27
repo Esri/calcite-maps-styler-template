@@ -36,7 +36,7 @@ define(
          "filter": "Filtruoti",
          "close": "Užverti",
          "reverse": "Apsukti",
-         "mode": "Į_Switch mode Drive/Walk________š"
+         "mode": "Perjungti vairavimo / ėjimo režimą"
       }
    })
 );

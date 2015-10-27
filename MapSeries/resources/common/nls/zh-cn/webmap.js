@@ -2,7 +2,7 @@
 	 ({
 		commonWebmap: {
 			selector: {
-				lblWebMap: "试_Map__验",
+				lblWebMap: "地图",
 				lblLocation: "位置",
 				lblContent: "内容",
 				lblPopup: "弹出窗口",
@@ -17,14 +17,14 @@
 				and: "和",
 				action: "节中的操作",
 				actions: "节中的操作",
-				originalWebmap: "试_Map used to publish the %TPL_NAME%___________验",
-				browseMaps: "试_Select a map_____验",
-				createMap: "试_Create a map_____验",
-				current: "试_Current map____验",
-				select: "试_Select or create a map________验",
-				newMap: "试_Newly selected map______验",
-				newCreatedMap: "试_Newly created map______验",
-				webmapDefault: "试_Map default____验",
+				originalWebmap: "用于发布 %TPL_NAME% 的地图",
+				browseMaps: "选择地图",
+				createMap: "创建地图",
+				current: "当前地图",
+				select: "选择或创建地图",
+				newMap: "新选择的地图",
+				newCreatedMap: "新创建的地图",
+				webmapDefault: "默认地图",
 				customCfg: "自定义配置",
 				tooltipLocation: "定义此地图将显示的位置。",
 				tooltipContent: "定义可见图层。",
@@ -51,27 +51,27 @@
 				hintNavigation: "地图导航已禁用。"
 			},
 			editor: {
-				loading: "试_Please wait while the map editor is loading______________验",
-				newTitle: "试_Create new map_____验",
-				editTitle: "试_Edit map___验",
-				titleLbl: "试_Title___验",
-				titlePh: "试_Map title_____验...",
-				folderLbl: "试_The map will be created in the same folder as the story__________________验.",
-				creating: "试_Creating the map______验",
-				saving: "试_Saving the map_____验",
-				success: "试_Map saved____验",
-				successCreate: "试_Map created____验",
-				cancelTitle: "试_Discard any unsaved changes_________验?",
-				errorDuplicate: "试_You already have a map with that title____________验",
-				errorCreate: "试_Unable to create map. Please try again_____________验.",
-				errorSave: "试_Unable to save map. Please try again____________验.",
-				notavailable1: "试_Sorry, creating or editing a map is not supported in Firefox due to a technical limitation. You may want to build your story using a different web browser or use the following workaround_________________________________________________________验.",
-				notavailable2: "试_Sorry, creating or editing a map is not supported since the story map application is not hosted in %PRODUCT%. Please contact your ArcGIS administrator for more information_____________________________________________________验.",
-				notavailable3: "试_Sorry, creating or editing a map is not supported on this version of Portal for ArcGIS (requires 10.4 or later). Please contact your ArcGIS administrator for more information______________________________________________________验.",
-				notavailable4: "试_You can create a map using %MV%, then come back here to add it to your story________________________验.",
-				notavailable5: "试_You can edit the map using %MV%, then come back here and %apply% to see your changes___________________________验.",
-				notavailable6: "试_map viewer____验",
-				notavailable7: "试_reload the map_____验"
+				loading: "正在加载地图编辑器，请稍候",
+				newTitle: "创建新地图",
+				editTitle: "编辑地图",
+				titleLbl: "标题",
+				titlePh: "地图标题...",
+				folderLbl: "将在故事所在的文件夹内创建地图。",
+				creating: "正在创建地图",
+				saving: "正在保存地图",
+				success: "已保存地图",
+				successCreate: "已创建地图",
+				cancelTitle: "是否放弃所有未保存更改?",
+				errorDuplicate: "已经存在具有相同标题的地图",
+				errorCreate: "无法创建地图。请重试。",
+				errorSave: "无法保存地图。请重试。",
+				notavailable1: "抱歉，因为技术限制，无法在 Firefox 中创建或编辑地图。您可使用其他不同的 Web 浏览器或使用以下的解决方案来构建您的故事。",
+				notavailable2: "抱歉，因为故事地图应用程序未托管在 %PRODUCT% 中，所以不支持创建或编辑地图。有关详细信息，请联系您的 ArcGIS 管理员。",
+				notavailable3: "抱歉，此版本的 Portal for ArcGIS 不支持创建或编辑地图(需要 10.4 或更高版本)。有关详细信息，请联系您的 ArcGIS 管理员。",
+				notavailable4: "您可使用 %MV% 创建地图，然后返回此处将其添加到您的故事中。",
+				notavailable5: "您可使用 %MV% 编辑地图，然后返回此处并 %apply% 以查看您的更改。",
+				notavailable6: "地图查看器",
+				notavailable7: "重新加载地图"
 			}
 		},
 		configure: {
@@ -82,11 +82,11 @@
 					contentLabel: "我的内容",
 					favoritesLabel: "我的收藏夹"
 				},
-				title: "试_Select a map_____验",
+				title: "选择地图",
 				searchTitle: "搜索",
 				ok: "确定",
 				cancel: "取消",
-				placeholder: "试_Enter search term or web map ID___________验..."
+				placeholder: "输入搜索词或 Web 地图 ID..."
 			}
 		}
 	})

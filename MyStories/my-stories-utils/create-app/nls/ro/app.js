@@ -1,51 +1,51 @@
 ﻿define(
 	 ({
 		dialog: {
-			back: "Ă_Back__ș",
-			close: "Ă_Close___ș",
-			createNewStory: "Ă_Create a New Story______ș",
-			pickApp: "Ă_Pick an App____ș",
-			askPros: "Ă_Ask the Pros_____ș"
+			back: "Înapoi",
+			close: "Închidere",
+			createNewStory: "Creaţi o poveste nouă",
+			pickApp: "Alegeţi o aplicaţie",
+			askPros: "Întrebaţi profesioniştii"
 		},
 		incompatibleNotice: {
-			title: "Ă_Create Story Not Available_________ș",
-			subtitle: "Ă_Sorry, this is not supported in a small display. Please open in a larger display or device____________________________ș.",
-			close: "Ă_Close___ș"
+			title: "Creare poveste nu este disponibilă",
+			subtitle: "Ne pare rău, această opţiune nu este acceptată pe un afişaj de dimensiuni mici. Deschideţi pe un afişaj sau dispozitiv mai mare.",
+			close: "Închidere"
 		},		
 		answerText: {
-			seriesOfPlaces: "Ă_A set of places______ș",
-			mapsNarrative: "Ă_A narrative with maps_______ș",
-			compareDatasets: "Ă_An interactive comparison of two datasets_____________ș",
-			other: "Ă_A single map_____ș",
-			yes: "Ă_Yes__ș",
-			no: "Ă_No__ș",
-			click: "Ă_Click___ș",
-			scroll: "Ă_Scroll___ș"
+			seriesOfPlaces: "Un set de locuri",
+			mapsNarrative: "O naraţiune cu hărţi",
+			compareDatasets: "O comparaţie interactivă între două seturi de date",
+			other: "O singură hartă",
+			yes: "Da",
+			no: "Nu",
+			click: "Faceţi clic pe",
+			scroll: "Derulare"
 		},
 		questionText: {
-			bestDescribesStory: "Ă_What best describes your story__________ș?",
-			showPhotos: "Ă_Do you want to show photos for each location_______________ș?",
-			clickOrScroll: "Ă_Do you want your audience to click through tabs or scroll__________________ș?"
+			bestDescribesStory: "Ce descrie cel mai bine poveste dumneavoastră?",
+			showPhotos: "Doriţi să afişaţi fotografii pentru fiecare locaţie?",
+			clickOrScroll: "Doriţi ca publicul să facă clic pe file sau doriţi să deruleze?"
 		},
 		finalApp: {
-			weRecommend: "Ă_We Recommend: {{STORY_TYPE}}_________ș",
-			letsBuild: "Ă_Let's build_____ș!",
-			seeExample: "Ă_See example____ș"
+			weRecommend: "Vă recomandăm: {{STORY_TYPE}}",
+			letsBuild: "Să creăm!",
+			seeExample: "Consultaţi exemplul"
 		},
 		reasons: {
-			mapTour: "Ă_This app presents a sequential, place-based narrative in the form of a series of geotagged photos and captions linked to an interactive map. Itâ€™s ideal for walking tours or for a series of locations youâ€™d like users to follow in sequence__________________________________________________________________________ș.",
-			mapJournal: "Ă_This app lets you create a compelling map-based narrative presented as a set of journal entries. It's ideal for creating multimedia stories that combine text, maps, images, and video, especially when you have lots of text or a rich array of content____________________________________________________________________________ș.",
-			mapSeries: "Ă_This app lets you present a series of maps via tabs, numbered bullets, or our expandable 'side accordion' control. You can also include images, video and web content in your series to tell your story_____________________________________________________________ș.",
-			swipeSpyglass: "Ă_This app enables users to compare two maps or two layers in the same map. It is particularly effective for showing before-and-after imagery or other changes over time___________________________________________________ș.",
-			basic: "Ă_This app lets you present a map via a very simple minimalist user interface. Apart from the title bar and an optional legend, the map fills the screen. Use this app to let your map speak for itself____________________________________________________________ș."
+			mapTour: "Această aplicaţie prezintă o naraţiune în etape, bazată pe locuri sub forma unei serii de fotografii şi subtitluri geoetichetate conectate la o hartă interactivă. Este ideală pentru plimbări pe jos sau pentru o serie de locaţii prin care aţi dori ca utilizatorii să treacă în ordine.",
+			mapJournal: "Această aplicaţie vă permite să creaţi o naraţiune completă bazată pe hartă sub formă de înregistrări în jurnal. Este ideală pentru crearea de relatări multimedia, care combină text, hărţi, imagini şi video, în special în cazul în care aveţi mult text sau o gamă largă de conţinut.",
+			mapSeries: "Această aplicaţie vă permite să prezentaţi o serie de hărţi prin intermediul unor file, puncte numerotate sau prin controlul extensibil lateral de tip acordeon. Puteţi, de asemenea, să includeţi imagini, materiale video şi conţinut web în seria dvs. pentru a relata povestea.",
+			swipeSpyglass: "Această aplicaţie permite utilizatorilor să compare două hărţi sau două straturi tematice de pe aceeaşi hartă. Este eficientă în special pentru prezentarea de imagini „înainte” şi „după” sau alte schimbări în timp.",
+			basic: "Această aplicaţie vă permite să prezentaţi o hartă prin intermediul unei interfeţe minimaliste foarte simple. Pe lângă bara de titlu şi legenda opţională, harta umple ecranul. Utilizaţi această hartă pentru ca aceasta să furnizeze toate explicaţiile."
 		},
 		shortReasons: {
-			mapTour: "Ă_Guide people through a sequence of places_____________ș",
-			mapJournal: "Ă_Perfect for an in-depth narrative___________ș",
-			mapSeries: "Ă_Present a series of related maps___________ș",
-			swipe: "Ă_Compare two maps or map layers with a slider______________ș",
-			spyglass: "Ă_Compare two maps or map layers with a spyglass_______________ș",
-			basic: "Ă_Think minimalistic, great for one map____________ș"
+			mapTour: "Ghidaţi persoanele printr-o succesiune de locuri",
+			mapJournal: "Perfectă pentru o relatare detaliată",
+			mapSeries: "Prezentaţi o serie de hărţi asociate",
+			swipe: "Comparaţi două hărţi sau straturi tematice de hartă cu un glisor",
+			spyglass: "Comparaţi două hărţi sau straturi tematice de hartă cu o lupă",
+			basic: "Gândiţi minimalist, excelent pentru o singură hartă"
 		},
 	})
 );

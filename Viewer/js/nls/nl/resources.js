@@ -20,9 +20,9 @@ define(
             "error": "Kan kaart niet maken"
         },
         "nav":{
-            "next": "Ĳ_Next__ä",
-            "previous": "Ĳ_Previous___ä",
-            "close": "Ĳ_Close___ä"
+            "next": "Volgende",
+            "previous": "Vorige",
+            "close": "Sluiten"
         },
         "tools":{
             "search":{

@@ -262,7 +262,7 @@
       mapTabTooltip: "Carte",
       btnDescendingText: "Décroissant",
       btnAscendingText: "Croissant",
-      geometryUnavailableErrorMessage: "æ_Error finding the geometry of the feature_____________Â",
+      geometryUnavailableErrorMessage: "Erreur lors de la recherche de la géométrie de l\'entité",
       infoPopupOffErrorMessage: "Aucune information à afficher",
       btnLoadMoreText: "Charger plus",
       unavailableTitleText: "Sans titre",

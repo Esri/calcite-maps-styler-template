@@ -27,7 +27,7 @@ define(
             "basemap":{
                     "label": "底圖",
                     "title": "選擇底圖",
-                    "close": "試_Close___驗"
+                    "close": "關閉"
             },
             "legend":{
                 "title": "圖例"
@@ -43,7 +43,7 @@ define(
 
         },
         "map": {
-            "toggle": "試_Toggle side panel______驗",
+            "toggle": "切換側面板",
             "error": "無法建立地圖"
         }
     })

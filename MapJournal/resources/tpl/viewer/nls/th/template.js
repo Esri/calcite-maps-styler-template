@@ -5,33 +5,33 @@
 				close: "ปิด"
 			},
 			loading: {
-				step1: "ก้_Loading story_____ษฺ",
+				step1: "กำลังโหลดเรื่องราว",
 				step2: "กำลังโหลดข้อมูล",
 				step3: "กำลังดำเนินการ",
 				loadBuilder: "ปรับเปลี่ยนการสร้าง",
 				long: "แมพเจอร์นัลกำลังเริ่ม",
 				long2: "ขอบคุณที่รอ",
-				failButton: "ก้_Reload the story______ษฺ"
+				failButton: "โหลดเรื่องราวอีกครั้ง"
 			},
 			signin: {
 				title: "ต้องการยอมรับ",
-				explainViewer: "ก้_Please sign in with an account on %PORTAL_LINK% to access the story_____________________ษฺ.",
-				explainBuilder: "ก้_Please sign in with an account on %PORTAL_LINK% to configure the story______________________ษฺ."
+				explainViewer: "กรุณาเข้าระบบด้วยบัญชีบน %PORTAL_LINK% เพื่อเข้าใช้งานเรื่องราว",
+				explainBuilder: "กรุณาลงชื่อด้วยบัญชีบน  %PORTAL_LINK% เพื่อปรับแต่งเรื่องราว"
 			},
 			errors: {
 				boxTitle: "เกิดข้อผิดพลาด",
 				invalidConfig: "ข้อผิดพลาดร้ายแรง: การตั้งค่าที่ไม่ถูกต้อง",
 				invalidConfigNoApp: "ข้อผิดพลาดร้ายแรง: เว็บแผนที่ระบุการใช้งานไม่ได้ระบุใน index.html",
 				unspecifiedConfigOwner: "ไม่มีการกำหนดอำนาจในการปรับแต่ง",
-				invalidConfigOwner: "ก้_Story owner is not authorized__________ษฺ.",
+				invalidConfigOwner: "เจ้าของเรื่องราวไม่ได้รับอนุญาต",
 				createMap: "ไม่สามารถสร้างแผนที่",
 				invalidApp: "ข้อผิดพลาดร้ายแรง: โปรแกรมไม่สามารถโหลด",
 				appLoadingFail: "มีบางอย่างผิดพลาด   %TPL_NAME% ไม่ถูกโหลดอย่างถูกต้อง",
-				notConfiguredDesktop: "ก้_The story is not configured yet___________ษฺ.",
-				notConfiguredMobile: "ก้_The %TPL_NAME% builder is not supported at this display size___________________ษฺ.",
-				notAuthorized: "ก้_You are not authorized to access this story______________ษฺ",
+				notConfiguredDesktop: "เรื่องราวนี้ยังไม่ได้รับการปรับแต่ง",
+				notConfiguredMobile: "บิวเดอร์นี้ %TPL_NAME% ไม่ได้รับการสนัสนุนในขนาดการแสดงผลนี้",
+				notAuthorized: "คุณไม่ได้รับสิทธิ์ในการใช้งานเรื่องราว",
 				noBuilderIE: "ตัวสร้างที่ไม่ได้รับการสนับสนุนบน Internet Explorer ก่อนรุ่น %VERSION%  %UPGRADE%",
-				noViewerIE: "ก้_This story is not supported in Internet Explorer before version %VERSION%. %UPGRADE%__________________________ษฺ",
+				noViewerIE: "เรื่องนี้ไม่ได้รับการสนับสนุนใน Internet Explorer รุ่นก่อน %VERSION%. %UPGRADE%",
 				upgradeBrowser: "<a href='http://browsehappy.com/' target='_blank'>กรุณาอัพเดทเบราว์เซอร์ของคุณ</a>.",
 				mapLoadingFail: "มีข้อผิดพลาดบางประการ ไม่สามารถโหลดแผนที่ได้",
 				signOut: "ลงชื่อออก"
@@ -61,9 +61,9 @@
 				templateTitle: "ตั้งค่าหัวเรื่องเทมเพลต",
 				templateSubtitle: "ตั้งค่าชื่อรองของเทมเพลต",
 				share: "แบ่งปัน",
-				checking: "ก้_Checking your story content_________ษฺ",
-				fix: "ก้_Fix issues in your story________ษฺ",
-				noerrors: "ก้_No issues detected______ษฺ"
+				checking: "กำหลังตรวจสอบสาระในเรื่องราวของคุณ",
+				fix: "ปรับปรุงประเด็นในเรื่องราวของคุณ",
+				noerrors: "ไม่มีประเด็นที่ตรวจพบ"
 			},
 			overviewFromCommon: {
 				title: "ภาพรวมของแผนที่"

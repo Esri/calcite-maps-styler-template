@@ -2,7 +2,7 @@
 	 ({
 		viewer: {
 			loading: {
-				step1: "ä_LOADING STORY_____Ü",
+				step1: "STORY WIRD GELADEN",
 				step2: "DATEN WERDEN GELADEN",
 				step3: "WIRD INITIALISIERT",
 				fail: "\"Ausblenden\" konnte leider nicht geladen werden",
@@ -17,19 +17,19 @@
 				invalidConfig: "Schwerwiegender Fehler: Ungültige Konfiguration",
 				invalidConfigNoWebmap: "Schwerwiegender Fehler: Ungültige Konfiguration (keine Webkarte angegeben)",
 				createMap: "Karte konnte nicht erstellt werden",
-				invalidApp: "ä_Fatal error: The story cannot be loaded_____________Ü",
+				invalidApp: "Schwerwiegender Fahler: Die Story kann nicht geladen werden",
 				initMobile: "Willkommen bei der Webanwendung \"Ausblenden\". Die Anwendung ist nicht konfiguriert. Der interaktive Generator wird auf mobilen Geräten nicht unterstützt.",
-				initMobile2: "ä_The Swipe builder is not supported at this display size__________________Ü.",
+				initMobile2: "Der Builder für \"Ausblenden\" wird bei dieser Anzeigegröße nicht unterstützt.",
 				noBuilderIE8: "Der interaktive Generator \"Ausblenden\" wird in Internet Explorer vor Version 9 nicht unterstützt.",
 				noLayerView: "Willkommen bei der Webanwendung \"Ausblenden\".<br />Die Anwendung ist noch nicht konfiguriert.",
-				appSave: "ä_Error saving the web story_________Ü",
+				appSave: "Fehler beim Speichern der Webstory",
 				mapSave: "Fehler beim Speichern der Webkarte",
-				notAuthorized: "ä_You are not authorized to access this story______________Ü",
+				notAuthorized: "Sie sind nicht autorisiert, auf diese Story zuzugreifen.",
 				conflictingProjectionsTitle: "In Konflikt stehende Projektionen",
 				conflictingProjections: "Für zwei Webkarten mit unterschiedlichen Projektionen kann \"Ausblenden\ nicht verwendet werden. Bitte gehen Sie zu den Einstellungen und wählen Sie eine Webkarte, die die gleiche Projektion wie die erste Webkarte aufweist.",
 				cpButton: "Schließen",
-				unspecifiedConfigOwner: "ä_Authorized owner hasn't been configured_____________Ü.",
-				invalidConfigOwner: "ä_Story owner is not authorized__________Ü."
+				unspecifiedConfigOwner: "Autorisierter Besitzer wurde nicht konfiguriert.",
+				invalidConfigOwner: "Besitzer der Story ist nicht autorisiert."
 			},
 			mobileView: {
 				hideIntro: "INTRO AUSBLENDEN",
@@ -47,7 +47,7 @@
 		},
 		builder: {
 			builder: {
-				panelHeader: "ä_STORY CONFIGURATION_______Ü",
+				panelHeader: "STORY-KONFIGURATION",
 				buttonSave: "SPEICHERN",
 				buttonHelp: "Hilfe",
 				buttonShare: "Freigeben",
@@ -67,13 +67,13 @@
 				popoverSaveWhenDone: "Vergessen Sie nicht zu speichern, wenn Sie fertig sind",
 				closeWithPendingChange: "Möchten Sie die Aktion wirklich bestätigen? Ihre Änderungen gehen dabei verloren.",
 				gotIt: "OK",
-				savingApplication: "ä_Saving story_____Ü",
-				saveSuccess: "ä_Story saved successfully________Ü",
+				savingApplication: "Story wird gespeichert",
+				saveSuccess: "Story wurde erfolgreich gespeichert",
 				saveError: "Speichern fehlgeschlagen, versuchen Sie es erneut",
 				saveError2: "Fehler beim Speichern aufgrund eines ungültigen HTML-Tags in einem Namen oder einer Beschreibung",
 				saveError3: "Der Titel darf nicht leer sein",
 				signIn: "Melden Sie sich mit einem Konto an,",
-				signInTwo: "ä_to save the story______Ü."
+				signInTwo: ", um die Story zu speichern."
 			},
 			header:{
 				editMe: "Bearbeiten!",
@@ -81,7 +81,7 @@
 				templateSubtitle: "Untertitel der Vorlage festlegen"
 			},
 			settings: {
-				settingsHeader: "ä_Story settings_____Ü",
+				settingsHeader: "Story-Einstellungen",
 				modalCancel: "Abbrechen",
 				modalApply: "Übernehmen"
 			},
@@ -141,7 +141,7 @@
 				settingsLayoutSpyGlass: "Fernglas",
 				settingsLayoutSelected: "Ausgewähltes Layout",
 				settingsLayoutSelect: "Dieses Layout auswählen",
-				settingsSaveConfirm: "ä_Some of your changes require that you save and reload the story____________________Ü"
+				settingsSaveConfirm: "Für einige Änderungen muss die Story gespeichert und neu geladen werden"
 			},
 			settingsDataModel: {
 				settingsTabDataModel: "Ausblendungstyp",
@@ -169,7 +169,7 @@
 			},
 			settingsLegend: {
 				settingsTabLegend: "App-Layout",
-				settingsLegendExplain: "ä_Select the layout settings_________Ü.",
+				settingsLegendExplain: "Wählen Sie die Layouteinstellungen aus.",
 				settingsLegendEnable: "Legende aktivieren",
 				settingsDescriptionEnable: "Beschreibung aktivieren",
 				settingsBookmarksEnable: "Ausblendereihe aktivieren",
@@ -218,39 +218,39 @@
 				}
 			},
 			share: {
-				firstSaveTitle: "ä_Story successfully saved________Ü",
-				firstSaveHeader: "ä_Your story is now saved in ArcGIS Online. Please read the following answers to frequent questions______________________________Ü.",
+				firstSaveTitle: "Story wurde erfolgreich gespeichert",
+				firstSaveHeader: "Ihre Story ist jetzt in ArcGIS Online gespeichert. Lesen Sie die folgenden Antworten auf häufig gestellte Fragen.",
 				firstSaveA1: "Wenn Sie nicht mit ArcGIS Online vertraut sind oder eine Verknüpfung für den Zugriff auf die Autoren-Oberfläche wünschen, können Sie den folgenden Link speichern: %LINK1%",
-				firstSaveA1bis: "ä_The story can also be found in your <a href='%LINK2%' target='_blank'>ArcGIS Online content folder</a>________________________________Ü.",
-				firstSaveQ2: "ä_Is my story shared_______Ü?",
-				firstSaveA2: "ä_Currently your story is not shared. To share it, use the SHARE button______________________Ü.",
-				shareTitle: "ä_Share your story______Ü",
-				sharePrivateHeader: "ä_Your story is not shared, would you like to share it_________________Ü?",
+				firstSaveA1bis: "Die Story befindet sich außerdem in Ihrem <a href=\'%LINK2%\' target=\'_blank\'>ArcGIS Online Inhaltsordner</a>.",
+				firstSaveQ2: "Ist meine Story freigegeben?",
+				firstSaveA2: "Ihre Story ist zurzeit nicht freigegeben. Verwenden Sie die Schaltfläche FREIGEBEN, um sie freizugeben.",
+				shareTitle: "Story freigeben",
+				sharePrivateHeader: "Ihre Story ist nicht freigegeben. Möchten Sie sie freigeben?",
 				sharePrivateBtn1: "Öffentlich freigeben",
 				sharePrivateBtn2: "Für meine Organisation freigeben",
 				sharePrivateProgress: "Freigabe wird ausgeführt...",
 				sharePrivateErr: "Fehler bei der Freigabe. Versuchen Sie es erneut, oder",
 				sharePrivateOk: "Freigabe wurde erfolgreich aktualisiert. Wird geladen...",
-				shareStatus1: "ä_Story is not saved______Ü",
-				shareStatus2: "ä_Story is shared publicly________Ü",
-				shareStatus3: "ä_Story is shared within the organization_____________Ü",
-				shareStatus4: "ä_Story is not shared_______Ü",
+				shareStatus1: "Story wurde nicht gespeichert",
+				shareStatus2: "Story wurde öffentlich freigegeben",
+				shareStatus3: "Die Story wurde in der Organisation freigegeben",
+				shareStatus4: "Story wurde nicht freigegeben",
 				sharePreviewAsUser: "Vorschau",
-				shareHeader1: "ä_Your story is <strong>publicly accessible</strong>________________Ü.",
-				shareHeader2: "ä_Your story is accessible by your organization members (login is required)_______________________Ü.",
-				shareLinkHeader: "ä_Share the story with your audience___________Ü",
+				shareHeader1: "Ihre Story ist <strong>öffentlich zugänglich</strong>.",
+				shareHeader2: "Ihre Story ist für die Mitglieder Ihrer Organisation zugänglich (Anmeldung ist erforderlich).",
+				shareLinkHeader: "Story für Ihre Zielgruppe freigeben",
 				shareLinkOpen: "ÖFFNEN",
 				learnMore: "Weitere Informationen",
-				shareQ1Opt1: "ä_How do I keep the story private___________Ü?",
-				shareQ1Opt2: "ä_How do I keep the story private or share it publicly_________________Ü?",
+				shareQ1Opt1: "Wie bleibt die Story privat?",
+				shareQ1Opt2: "Wie bleibt die Story privat oder wie wird sie veröffentlicht?",
 				shareA1: "Verwenden Sie %SHAREIMG% auf <a href='%LINK1%' target='_blank'>der Elementseite der Anwendung</a>. Wenn Sie die Freigabe der Webkarte ebenfalls aufheben möchten, verwenden Sie <a href='%LINK2%' target='_blank'>die Elementseite der Webkarte</a>.",
 				shareA1bis: "Wenn Sie die Freigabe des Feature-Service ebenfalls aufheben möchten, verwenden Sie <a href='%LINK1%' target='_blank'>die Elementseite des Feature-Service</a>.",
-				shareQ2: "ä_How do I edit the story later__________Ü?",
+				shareQ2: "Wie kann ich die Story später bearbeiten?",
 				shareQ2bis: "Wie kehre ich zur Autoren-Oberfläche zurück?",
-				shareA2div1: "ä_Save and reuse the following link %LINK1% or use <a href='%LINK2%' target='_blank'>the story item page</a>_________________________________Ü.",
-				shareA2div2: "ä_As the owner of the story, when you are signed in on ArcGIS.com, the story includes a button to open the interactive builder_______________________________________Ü:",
+				shareA2div1: "Speichern Sie den Link %LINK1%, und verwenden Sie ihn erneut, oder verwenden Sie <a href=\'%LINK2%\' target=\'_blank\'>die Elementseite der Story</a>.",
+				shareA2div2: "Wenn Sie bei ArcGIS.com als Besitzer der Story angemeldet sind, enthält die Story eine Schaltfläche zum Öffnen des interaktiven Builders:",
 				shareQ3: "Wo werden die Daten gespeichert?",
-				shareA3: "ä_The story configuration is stored in this web application item</a>_____________________Ü.",
+				shareA3: "Die Story-Konfiguration wird in diesem Webanwendungselement gespeichert</a>.",
 				shareWarning: "Die Freigabe von %WITH% wurde deaktiviert, da Sie nicht der Besitzer der <a href='%LINK%' target='_blank'>Webkarte</a> sind.",
  				shareWarningWith1: "öffentlich",
  				shareWarningWith2: "öffentlich und für die Organisation"

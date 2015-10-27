@@ -5,29 +5,29 @@
 				close: "Zavřít"
 			},
 			loading: {
-				long: "Ř_Story is initializing_______ů",
+				long: "Příběh se inicializuje",
 				long2: "Děkujeme za strpení",
-				failButton: "Ř_Reload the story______ů"
+				failButton: "Znovu načíst příběh"
 			},
 			signin: {
 				title: "Je vyžadováno ověření",
-				explainViewer: "Ř_Please sign in with an account on %PORTAL_LINK% to access the story_____________________ů.",
-				explainBuilder: "Ř_Please sign in with an account on %PORTAL_LINK% to configure the story______________________ů."
+				explainViewer: "Pro přístup k příběhu se přihlaste pomocí účtu na %PORTAL_LINK%.",
+				explainBuilder: "Chcete-li příběh nakonfigurovat, přihlaste se pomocí účtu na %PORTAL_LINK%."
 			},
 			errors: {
 				boxTitle: "Došlo k chybě",
 				invalidConfig: "Neplatná konfigurace",
 				invalidConfigNoApp: "V souboru index.html není zadán identifikátor aplikace pro webové mapování.",
 				unspecifiedConfigOwner: "Nebyl nakonfigurován autorizovaný vlastník.",
-				invalidConfigOwner: "Ř_Story owner is not authorized__________ů.",
+				invalidConfigOwner: "Vlastník příběhu není autorizován.",
 				createMap: "Nelze vytvořit mapu",
 				invalidApp: "%TPL_NAME% neexistuje nebo není dostupný.",
 				appLoadingFail: "Něco se pokazilo, %TPL_NAME% se nenahrál správně.",
-				notConfiguredDesktop: "Ř_The story is not configured yet___________ů.",
-				notConfiguredMobile: "Ř_The %TPL_NAME% builder is not supported at this display size___________________ů.",
-				notAuthorized: "Ř_You are not authorized to access this story______________ů",
+				notConfiguredDesktop: "Příběh zatím není nakonfigurován.",
+				notConfiguredMobile: "Nástroj pro tvorbu %TPL_NAME% není v této velikosti zobrazení podporován.",
+				notAuthorized: "Nejste oprávněni přistupovat k tomuto příběhu",
 				noBuilderIE: "Nástroj pro tvorbu není podporován v aplikaci Internet Explorer ve verzi nižší než %VERSION%. %UPGRADE%",
-				noViewerIE: "Ř_This story is not supported in Internet Explorer before version %VERSION%. %UPGRADE%__________________________ů",
+				noViewerIE: "Tento příběh není podporován v prohlížeči Internet Explorer ve verzi nižší než %VERSION%. %UPGRADE%",
 				upgradeBrowser: "<a href='http://browsehappy.com/' target='_blank'>Aktualizujte prohlížeč</a>.",
 				mapLoadingFail: "Něco se pokazilo, mapa se nenahrála správně.",
 				signOut: "Odhlásit"
@@ -35,8 +35,8 @@
 			mobileInfo: {
 				legend: "Legenda",
 				description: "Popis",
-				lblLegendMobileError: "Ř_Sorry, the legend is unavailable. Please reload the story__________________ů.",
-				lblLegendMobileErrorExplain: "Ř_The legend is not available when the device is rotated to portrait mode after the story is loaded______________________________ů."
+				lblLegendMobileError: "Legenda bohužel není k dispozici. Načtěte příběh znovu.",
+				lblLegendMobileErrorExplain: "Legenda nebude k dispozici v případě, že je po načtení příběhu zařízení v režimu na výšku."
 			},
 			mobileFooter: {
 				swipeInvite: "Procházejte příběhem potáhnutím prstem",
@@ -52,9 +52,9 @@
 				templateTitle: "Zadejte název šablony",
 				templateSubtitle: "Zadejte podnadpis šablony",
 				share: "Sdílení",
-				checking: "Ř_Checking your story content_________ů",
-				fix: "Ř_Fix issues in your story________ů",
-				noerrors: "Ř_No issues detected______ů"
+				checking: "Probíhá kontrola obsahu vašeho příběhu",
+				fix: "Opravte problémy ve svém příběhu",
+				noerrors: "Nebyly nalezeny žádné problémy"
 			},
 			overviewFromCommon: {
 				title: "Mapa přehledu"
@@ -67,11 +67,11 @@
 				copied: "Zkopírováno",
 				open: "Otevřít",
 				embed: "Vložit do webové stránky",
-				embedExplain: "Ř_Use the following HTML code to embed the story in a web page___________________ů.",
+				embedExplain: "Chcete-li příběh vložit do webové stránky, použijte následující kód HTML.",
 				size: "Velikost (šířka/výška):"
 			},
 			locatorFromCommon: {
-				error: "Ř_Location not available________ů"
+				error: "Umístění není k dispozici"
 			}
         }
     })

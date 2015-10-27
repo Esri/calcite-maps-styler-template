@@ -5,29 +5,29 @@
 				close: "Sulje"
 			},
 			loading: {
-				long: "Å_Story is initializing_______ö",
+				long: "Tarinaa alustetaan",
 				long2: "Odota hetki",
-				failButton: "Å_Reload the story______ö"
+				failButton: "Lataa tarina uudelleen"
 			},
 			signin: {
 				title: "Todennus on pakollinen",
-				explainViewer: "Å_Please sign in with an account on %PORTAL_LINK% to access the story_____________________ö.",
-				explainBuilder: "Å_Please sign in with an account on %PORTAL_LINK% to configure the story______________________ö."
+				explainViewer: "Kirjaudu sisään %PORTAL_LINK%-sivuston tilillä käyttääksesi tarinaa.",
+				explainBuilder: "Kirjaudu sisään %PORTAL_LINK%-sivuston tilillä määrittääksesi tarinan."
 			},
 			errors: {
 				boxTitle: "Tapahtui virhe",
 				invalidConfig: "Virheellinen määritys",
 				invalidConfigNoApp: "Web-karttasovelluksen tunnusta ei ole määritetty index.html-tiedostossa.",
 				unspecifiedConfigOwner: "Valtuutettua omistajaa ei ole määritetty.",
-				invalidConfigOwner: "Å_Story owner is not authorized__________ö.",
+				invalidConfigOwner: "Tarinan omistajalla ei ole valtuuksia.",
 				createMap: "Karttaa ei voi luoda",
 				invalidApp: "Kohdetta %TPL_NAME% ei ole, tai se ei ole käytettävissä.",
 				appLoadingFail: "Tapahtui virhe, eikä %TPL_NAME% latautunut oikein.",
-				notConfiguredDesktop: "Å_The story is not configured yet___________ö.",
-				notConfiguredMobile: "Å_The %TPL_NAME% builder is not supported at this display size___________________ö.",
-				notAuthorized: "Å_You are not authorized to access this story______________ö",
+				notConfiguredDesktop: "Tarinaa ei ole vielä määritetty.",
+				notConfiguredMobile: "Nykyinen näyttökoko ei tue kohteen %TPL_NAME% luontitoimintoa.",
+				notAuthorized: "Sinulla ei ole tämän tarinan käyttöoikeuksia",
 				noBuilderIE: "Luontitoimintoa ei tueta Internet Explorerin versiota %VERSION% edeltävissä versioissa. %UPGRADE%",
-				noViewerIE: "Å_This story is not supported in Internet Explorer before version %VERSION%. %UPGRADE%__________________________ö",
+				noViewerIE: "Tarinaa ei tueta Internet Explorerin versiota %VERSION% edeltävissä versioissa. %UPGRADE%",
 				upgradeBrowser: "<a href='http://browsehappy.com/' target='_blank'>Päivitä selain</a>.",
 				mapLoadingFail: "Tapahtui virhe, eikä kartta latautunut oikein.",
 				signOut: "Kirjaudu ulos"
@@ -35,8 +35,8 @@
 			mobileInfo: {
 				legend: "Selite",
 				description: "Kuvaus",
-				lblLegendMobileError: "Å_Sorry, the legend is unavailable. Please reload the story__________________ö.",
-				lblLegendMobileErrorExplain: "Å_The legend is not available when the device is rotated to portrait mode after the story is loaded______________________________ö."
+				lblLegendMobileError: "Selite ei ole käytettävissä. Lataa tarina uudelleen.",
+				lblLegendMobileErrorExplain: "Selite ei ole käytettävissä, kun laitetta kierretään pystysuuntaan tarinan latauksen jälkeen."
 			},
 			mobileFooter: {
 				swipeInvite: "Siirry tarinassa pyyhkäisemällä",
@@ -52,9 +52,9 @@
 				templateTitle: "Määritä mallin nimi",
 				templateSubtitle: "Määritä mallin alaotsikko",
 				share: "Jaa",
-				checking: "Å_Checking your story content_________ö",
-				fix: "Å_Fix issues in your story________ö",
-				noerrors: "Å_No issues detected______ö"
+				checking: "Tarkistetaan tarinan sisältöä",
+				fix: "Korjaa tarinan ongelmat",
+				noerrors: "Yhtään ongelmaa ei havaittu"
 			},
 			overviewFromCommon: {
 				title: "Yleiskatsauskartta"
@@ -67,11 +67,11 @@
 				copied: "Kopioitu",
 				open: "Avaa",
 				embed: "Upota Web-sivulle",
-				embedExplain: "Å_Use the following HTML code to embed the story in a web page___________________ö.",
+				embedExplain: "Käytä seuraavaa HTML-koodia tarinan upottamiseen Web-sivulle.",
 				size: "Koko (leveys/korkeus):"
 			},
 			locatorFromCommon: {
-				error: "Å_Location not available________ö"
+				error: "Sijainti ei ole käytettävissä"
 			}
         }
     })

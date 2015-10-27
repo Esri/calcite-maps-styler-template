@@ -2,7 +2,7 @@
 	 ({
 		commonWebmap: {
 			selector: {
-				lblWebMap: "ก้_Map__ษฺ",
+				lblWebMap: "แผนที่",
 				lblLocation: "ตำแหน่ง",
 				lblContent: "เนื้อหา",
 				lblPopup: "ป๊อปอัพ",
@@ -17,14 +17,14 @@
 				and: "และ",
 				action: "ดำเนินการในส่วน",
 				actions: "ดำเนินการในส่วน",
-				originalWebmap: "ก้_Map used to publish the %TPL_NAME%___________ษฺ",
-				browseMaps: "ก้_Select a map_____ษฺ",
-				createMap: "ก้_Create a map_____ษฺ",
-				current: "ก้_Current map____ษฺ",
-				select: "ก้_Select or create a map________ษฺ",
-				newMap: "ก้_Newly selected map______ษฺ",
-				newCreatedMap: "ก้_Newly created map______ษฺ",
-				webmapDefault: "ก้_Map default____ษฺ",
+				originalWebmap: "แผนที่ใช้ในการเผยแพร่",
+				browseMaps: "เลือกแผนที่",
+				createMap: "สร้างแผนที่",
+				current: "แผนที่ปัจจุบัน",
+				select: "เลือกหรือสร้างแผนที่",
+				newMap: "แผนที่ที่เลือกใหม่",
+				newCreatedMap: "แผนที่ที่สร้างใหม่",
+				webmapDefault: "แผนที่เริ่มต้น",
 				customCfg: "ปรับการตั้งค่า",
 				tooltipLocation: "กำหนดตำแหน่งที่แสดงบนแผนที่",
 				tooltipContent: "กำหนดระยะการมองเห็นชั้นข้อมูล",
@@ -51,27 +51,27 @@
 				hintNavigation: "แผนที่นำทางถูกปิดใช้งาน"
 			},
 			editor: {
-				loading: "ก้_Please wait while the map editor is loading______________ษฺ",
-				newTitle: "ก้_Create new map_____ษฺ",
-				editTitle: "ก้_Edit map___ษฺ",
-				titleLbl: "ก้_Title___ษฺ",
-				titlePh: "ก้_Map title_____ษฺ...",
-				folderLbl: "ก้_The map will be created in the same folder as the story__________________ษฺ.",
-				creating: "ก้_Creating the map______ษฺ",
-				saving: "ก้_Saving the map_____ษฺ",
-				success: "ก้_Map saved____ษฺ",
-				successCreate: "ก้_Map created____ษฺ",
-				cancelTitle: "ก้_Discard any unsaved changes_________ษฺ?",
-				errorDuplicate: "ก้_You already have a map with that title____________ษฺ",
-				errorCreate: "ก้_Unable to create map. Please try again_____________ษฺ.",
-				errorSave: "ก้_Unable to save map. Please try again____________ษฺ.",
-				notavailable1: "ก้_Sorry, creating or editing a map is not supported in Firefox due to a technical limitation. You may want to build your story using a different web browser or use the following workaround_________________________________________________________ษฺ.",
-				notavailable2: "ก้_Sorry, creating or editing a map is not supported since the story map application is not hosted in %PRODUCT%. Please contact your ArcGIS administrator for more information_____________________________________________________ษฺ.",
-				notavailable3: "ก้_Sorry, creating or editing a map is not supported on this version of Portal for ArcGIS (requires 10.4 or later). Please contact your ArcGIS administrator for more information______________________________________________________ษฺ.",
-				notavailable4: "ก้_You can create a map using %MV%, then come back here to add it to your story________________________ษฺ.",
-				notavailable5: "ก้_You can edit the map using %MV%, then come back here and %apply% to see your changes___________________________ษฺ.",
-				notavailable6: "ก้_map viewer____ษฺ",
-				notavailable7: "ก้_reload the map_____ษฺ"
+				loading: "กรุณารอสักครู่ในขณะที่ตัวแก้ไขแผนที่กำลังโหลด",
+				newTitle: "สร้างแผนที่ใหม่",
+				editTitle: "แก้ไขแผนที่",
+				titleLbl: "ชื่อ",
+				titlePh: "ชื่อแผนที่…",
+				folderLbl: "แผนที่จะถูกสร้างในโฟลเดอร์เดียวกันเป็นเรื่องราว",
+				creating: "กำลังสร้างแผนที่",
+				saving: "กำลังบันทึกแผนที่",
+				success: "บันทึกแผนที่",
+				successCreate: "สร้างแผนที่",
+				cancelTitle: "ยกเลิกการเปลี่ยนแปลงใด ๆ ที่ไม่ได้บันทึก",
+				errorDuplicate: "คุณมีแผนที่ที่มีชื่อเรื่องว่า",
+				errorCreate: "ไม่สามารถสร้างแผนที่ กรุณาลองอีกครั้ง",
+				errorSave: "ไม่สามารถบันทึกแผนที่ กรุณาลองอีกครั้ง",
+				notavailable1: "ขออภัยการสร้างหรือแก้ไขแผนที่ไม่ได้รับการสนับสนุนใน Firefox เนื่องจากมีข้อจำกัดทางเทคนิค คุณอาจต้องการที่จะสร้างเรื่องราวของคุณโดยใช้เว็บเบราเซอร์ที่แตกต่างกันหรือใช้วิธีแก้ปัญหาต่อไป",
+				notavailable2: "ขออภัยการสร้างหรือแก้ไขแผนที่ไม่สนับสนุนตั้งแต่โปรแกรมแผนที่เรื่องที่ไม่ได้เป็นเจ้าภาพใน %PRODUCT% กรุณาติดต่อผู้ดูแล ArcGIS ของคุณสำหรับข้อมูลเพิ่มเติม",
+				notavailable3: "ขออภัยการสร้างหรือแก้ไขแผนที่ไม่สนับสนุนกับรุ่นของPortal for ArcGIS นี้ (ต้อง 10.4 หรือสูงกว่า) กรุณาติดต่อผู้ดูแล ArcGIS ของคุณสำหรับข้อมูลเพิ่มเติม",
+				notavailable4: "คุณสามารถสร้างแผนที่โดยใช้ %MV%  แล้วกลับมาที่นี่เพื่อเพิ่มลงในเรื่องราวของคุณ",
+				notavailable5: "คุณสามารถแก้ไขแผนที่โดยใช้ %MV% แล้วกลับมาที่นี่และ %apply% เพื่อดความเปลี่ยนแปลง",
+				notavailable6: "แมพวิวเวอร์",
+				notavailable7: "โหลดแผนที่อีกครั้ง"
 			}
 		},
 		configure: {
@@ -82,11 +82,11 @@
 					contentLabel: "เนื้อหาของฉัน",
 					favoritesLabel: "รายการโปรด"
 				},
-				title: "ก้_Select a map_____ษฺ",
+				title: "เลือกแผนที่",
 				searchTitle: "ค้นหา",
 				ok: "ตกลง",
 				cancel: "ยกเลิก",
-				placeholder: "ก้_Enter search term or web map ID___________ษฺ..."
+				placeholder: "ใส่คำที่ใช้ค้นหาหรือ ID ของเว็บแมพ"
 			}
 		}
 	})

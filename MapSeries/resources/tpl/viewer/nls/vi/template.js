@@ -5,29 +5,29 @@
 				close: "Đóng"
 			},
 			loading: {
-				long: "Đ_Story is initializing_______ớ",
+				long: "Câu chuyện đang khởi chạy",
 				long2: "Cảm ơn bạn đã đợi",
-				failButton: "Đ_Reload the story______ớ"
+				failButton: "Tải lại câu chuyện"
 			},
 			signin: {
 				title: "Yêu cầu xác thực",
-				explainViewer: "Đ_Please sign in with an account on %PORTAL_LINK% to access the story_____________________ớ.",
-				explainBuilder: "Đ_Please sign in with an account on %PORTAL_LINK% to configure the story______________________ớ."
+				explainViewer: "Vui lòng đăng nhập bằng một tài khoản trên %PORTAL_LINK% để truy cập câu chuyện.",
+				explainBuilder: "Vui lòng đăng nhập bằng một tài khoản trên %PORTAL_LINK% để cấu hình câu chuyện."
 			},
 			errors: {
 				boxTitle: "Đã xảy ra lỗi",
 				invalidConfig: "Cấu hình không hợp lệ",
 				invalidConfigNoApp: "Định danh Ứng dụng Lập bản đồ Web không được chỉ định trong index.html.",
 				unspecifiedConfigOwner: "Chủ sở hữu được ủy quyền chưa được cấu hình.",
-				invalidConfigOwner: "Đ_Story owner is not authorized__________ớ.",
+				invalidConfigOwner: "Chủ sở hữu câu chuyện chưa được ủy quyền.",
 				createMap: "Không thể tạo bản đồ",
 				invalidApp: "%TPL_NAME% không tồn tại hoặc không thể truy cập được.",
 				appLoadingFail: "Đã xảy ra sự cố, %TPL_NAME% không tải đúng.",
-				notConfiguredDesktop: "Đ_The story is not configured yet___________ớ.",
-				notConfiguredMobile: "Đ_The %TPL_NAME% builder is not supported at this display size___________________ớ.",
-				notAuthorized: "Đ_You are not authorized to access this story______________ớ",
+				notConfiguredDesktop: "Câu chuyện chưa được cấu hình.",
+				notConfiguredMobile: "Bộ thiết lập %TPL_NAME% không được hỗ trợ theo kích cỡ hiển thị này.",
+				notAuthorized: "Bạn không được phép truy cập vào câu chuyện này",
 				noBuilderIE: "Bộ thiết lập không được hỗ trợ trên Internet Explorer trước phiên bản %VERSION%. %UPGRADE%",
-				noViewerIE: "Đ_This story is not supported in Internet Explorer before version %VERSION%. %UPGRADE%__________________________ớ",
+				noViewerIE: "Câu chuyện này không được hỗ trợ trong Internet Explorer trước phiên bản %VERSION%. %UPGRADE%",
 				upgradeBrowser: "<a href='http://browsehappy.com/' target='_blank'>Vui lòng cập nhật trình duyệt của bạn</a>.",
 				mapLoadingFail: "Đã xảy ra lỗi, bản đồ không tải đúng.",
 				signOut: "Đăng xuất"
@@ -35,8 +35,8 @@
 			mobileInfo: {
 				legend: "Chú giải",
 				description: "Mô tả",
-				lblLegendMobileError: "Đ_Sorry, the legend is unavailable. Please reload the story__________________ớ.",
-				lblLegendMobileErrorExplain: "Đ_The legend is not available when the device is rotated to portrait mode after the story is loaded______________________________ớ."
+				lblLegendMobileError: "Rất tiếc, không có chú giải. Vui lòng tải lại câu chuyện.",
+				lblLegendMobileErrorExplain: "Không có chú giải khi thiết bị xoay sang chế độ dọc sau khi câu chuyện được tải."
 			},
 			mobileFooter: {
 				swipeInvite: "Trượt nhanh để điều hướng câu chuyện",
@@ -52,9 +52,9 @@
 				templateTitle: "Thiết lập tiêu đề mẫu",
 				templateSubtitle: "Thiết lập phụ đề mẫu",
 				share: "Chia sẻ",
-				checking: "Đ_Checking your story content_________ớ",
-				fix: "Đ_Fix issues in your story________ớ",
-				noerrors: "Đ_No issues detected______ớ"
+				checking: "Kiểm tra nội dung câu chuyện của bạn",
+				fix: "Khắc phục sự cố trong câu chuyện của bạn",
+				noerrors: "Không phát hiện sự cố"
 			},
 			overviewFromCommon: {
 				title: "Bản đồ Toàn cảnh"
@@ -67,11 +67,11 @@
 				copied: "Đã sao chép",
 				open: "Mở",
 				embed: "Nhúng vào trang web",
-				embedExplain: "Đ_Use the following HTML code to embed the story in a web page___________________ớ.",
+				embedExplain: "Sử dụng mã HTML sau để nhúng câu chuyện vào trang web.",
 				size: "Kích thước (chiều rộng/chiều cao):"
 			},
 			locatorFromCommon: {
-				error: "Đ_Location not available________ớ"
+				error: "Vị trí không khả dụng"
 			}
         }
     })

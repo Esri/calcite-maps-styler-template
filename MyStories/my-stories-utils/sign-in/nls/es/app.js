@@ -1,22 +1,22 @@
 ﻿define(
 	 ({
 		signInDialog: {
-			title: "á_Sign in to Story Maps_______Ó",
-			subtitle: "á_Sign in with your existing ArcGIS Online account to_________________Ó:",
-			reasonOne: "á_Create compelling story maps to tell your stories________________Ó.",
-			reasonTwo: "á_Use your maps and data from ArcGIS Online in your story maps___________________Ó.",
-			reasonThree: "á_Manage your story maps and check the status of their content___________________Ó.",
-			noAccountYet: "á_Don't have an ArcGIS Online account? Sign up for a________________Ó:",
-			publicAccount: "á_Free non-commercial public account___________Ó",
-			subscriptionAccount: "á_Free trial ArcGIS subscription__________Ó",
-			signInExpired: "á_Your sign-in expired. Sign in again to pick up where you left off_____________________Ó.",
-			somethingNotLoading: "á_Something isn't loading correctly. Try refreshing the page___________________Ó."
+			title: "Iniciar sesión en Story Maps",
+			subtitle: "Inicia sesión con tu cuenta de ArcGIS Online para:",
+			reasonOne: "Crear mapas impactantes que narren tus historias.",
+			reasonTwo: "Usar mapas y datos de ArcGIS Online en tus story maps.",
+			reasonThree: "Administrar los story maps y comprobar el estado de su contenido.",
+			noAccountYet: "¿No tienes una cuenta de ArcGIS Online? Regístrate para obtener una:",
+			publicAccount: "Cuenta pública gratuita no comercial",
+			subscriptionAccount: "Suscripción de prueba gratuita a ArcGIS",
+			signInExpired: "Tu sesión ha caducado. Inicia sesión de nuevo para continuar donde lo dejaste.",
+			somethingNotLoading: "Algún elemento no se está cargando correctamente. Prueba a actualizar la página."
 		},
 		unavailableDialog: {
-			title: "á_Sign-In Not Available_______Ó",
-			explanation: "á_Sorry, this is not supported in a small display. Please open in a larger display or device____________________________Ó.",
-			close: "á_Close___Ó",
-			returnButton: "á_Return___Ó" 
+			title: "Inicio de sesión no disponible",
+			explanation: "Lo sentimos, este elemento no se admite en pantalla pequeña. Ábrelo en una pantalla o dispositivo más grande.",
+			close: "Cerrar",
+			returnButton: "Volver" 
 		}
 	})
 );

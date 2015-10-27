@@ -20,9 +20,9 @@ define(
             "error": "Karte kann nicht erstellt werden"
         },
         "nav":{
-            "next": "ä_Next__Ü",
-            "previous": "ä_Previous___Ü",
-            "close": "ä_Close___Ü"
+            "next": "Nächste(r)",
+            "previous": "Vorherige(r)",
+            "close": "Schließen"
         },
         "tools":{
             "search":{

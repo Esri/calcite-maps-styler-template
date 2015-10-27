@@ -1,51 +1,51 @@
 ﻿define(
 	 ({
 		dialog: {
-			back: "ı_Back__İ",
-			close: "ı_Close___İ",
-			createNewStory: "ı_Create a New Story______İ",
-			pickApp: "ı_Pick an App____İ",
-			askPros: "ı_Ask the Pros_____İ"
+			back: "Geri",
+			close: "Kapat",
+			createNewStory: "Yeni Hikaye Oluştur",
+			pickApp: "Uygulama Seç",
+			askPros: "Uzmana Danış"
 		},
 		incompatibleNotice: {
-			title: "ı_Create Story Not Available_________İ",
-			subtitle: "ı_Sorry, this is not supported in a small display. Please open in a larger display or device____________________________İ.",
-			close: "ı_Close___İ"
+			title: "Hikaye Oluşturma Kullanılamıyor",
+			subtitle: "Üzgünüz, bu işlem küçük ekranda desteklenmiyor. Daha büyük bir ekranda veya cihazda açın.",
+			close: "Kapat"
 		},		
 		answerText: {
-			seriesOfPlaces: "ı_A set of places______İ",
-			mapsNarrative: "ı_A narrative with maps_______İ",
-			compareDatasets: "ı_An interactive comparison of two datasets_____________İ",
-			other: "ı_A single map_____İ",
-			yes: "ı_Yes__İ",
-			no: "ı_No__İ",
-			click: "ı_Click___İ",
-			scroll: "ı_Scroll___İ"
+			seriesOfPlaces: "Yer grubu",
+			mapsNarrative: "Haritalı özet",
+			compareDatasets: "İki veri kümesinin etkileşimli karşılaştırması.",
+			other: "Tek harita",
+			yes: "Evet",
+			no: "Hayır",
+			click: "Tıkla",
+			scroll: "Kaydır"
 		},
 		questionText: {
-			bestDescribesStory: "ı_What best describes your story__________İ?",
-			showPhotos: "ı_Do you want to show photos for each location_______________İ?",
-			clickOrScroll: "ı_Do you want your audience to click through tabs or scroll__________________İ?"
+			bestDescribesStory: "Hikayenizi en iyi anlatan hangisidir?",
+			showPhotos: "Her konum için fotoğraf göstermek ister misiniz?",
+			clickOrScroll: "İzleyici kitlenizin sekme tıklamasını mı yoksa kaydırma yapmasını mı istersiniz?"
 		},
 		finalApp: {
-			weRecommend: "ı_We Recommend: {{STORY_TYPE}}_________İ",
-			letsBuild: "ı_Let's build_____İ!",
-			seeExample: "ı_See example____İ"
+			weRecommend: "Şunu Öneririz: {{STORY_TYPE}}",
+			letsBuild: "Haydi oluşturalım!",
+			seeExample: "Örneği incele"
 		},
 		reasons: {
-			mapTour: "ı_This app presents a sequential, place-based narrative in the form of a series of geotagged photos and captions linked to an interactive map. Itâ€™s ideal for walking tours or for a series of locations youâ€™d like users to follow in sequence__________________________________________________________________________İ.",
-			mapJournal: "ı_This app lets you create a compelling map-based narrative presented as a set of journal entries. It's ideal for creating multimedia stories that combine text, maps, images, and video, especially when you have lots of text or a rich array of content____________________________________________________________________________İ.",
-			mapSeries: "ı_This app lets you present a series of maps via tabs, numbered bullets, or our expandable 'side accordion' control. You can also include images, video and web content in your series to tell your story_____________________________________________________________İ.",
-			swipeSpyglass: "ı_This app enables users to compare two maps or two layers in the same map. It is particularly effective for showing before-and-after imagery or other changes over time___________________________________________________İ.",
-			basic: "ı_This app lets you present a map via a very simple minimalist user interface. Apart from the title bar and an optional legend, the map fills the screen. Use this app to let your map speak for itself____________________________________________________________İ."
+			mapTour: "Bu uygulama, coğrafi etiketli fotoğraflar dizisi ve resim yazıları şeklinde olan ve etkileşimli bir haritayla bağlantılı sıralı ve yer tabanlı bir özet sağlar. Yürüme turları veya kullanıcıların sıralı olarak takip etmesi istenen bir dizi konum için idealdir.",
+			mapJournal: "Bu uygulama, bir dizi günlük girişiyle sunulan harita tabanlı bir özet oluşturmanıza olanak tanır. Metin, harita, görüntü ve video birleşiminden oluşan çoklu ortam hikayeleri oluşturmak, özellikle de yoğun metin veya zengin bir yelpazesi olması durumunda idealdir.",
+			mapSeries: "Bu uygulama; bir dizi sekme, numaralı madde işareti veya genişleyebilen \'yan genişleme\' denetimi sunmanıza olanak tanır. Hikayenizi anlatırken serinize ayrıca görüntü, video ve web içeriği ekleyebilirsiniz.",
+			swipeSpyglass: "Bu uygulama, kullanıcıların aynı harita içinde iki haritayı veya iki kamanı karşılaştırabilmelerini sağlar. Özellikle öncesi ve sonrası görüntülerin veya zaman içindeki diğer değişikliklerin gösterilmesinde etkilidir.",
+			basic: "Bu uygulama, çok basit minimalist bir kullanıcı arayüzüyle bir harita sunmanıza olanak tanır. Başlık çubuğu ve isteğe bağlı açıklama dışında, harita ekranı doldurur. Haritanızın kendi kendini ifade etmesi için bu uygulamayı kullanın."
 		},
 		shortReasons: {
-			mapTour: "ı_Guide people through a sequence of places_____________İ",
-			mapJournal: "ı_Perfect for an in-depth narrative___________İ",
-			mapSeries: "ı_Present a series of related maps___________İ",
-			swipe: "ı_Compare two maps or map layers with a slider______________İ",
-			spyglass: "ı_Compare two maps or map layers with a spyglass_______________İ",
-			basic: "ı_Think minimalistic, great for one map____________İ"
+			mapTour: "İnsanlara bir dizi sıralı yer boyunca kılavuzluk edin",
+			mapJournal: "Ayrıntılı bir özet için mükemmeldir",
+			mapSeries: "İlgili haritalar grubu sunun",
+			swipe: "İki haritayı veya harita katmanını bir kaydırıcıyla karşılaştırın",
+			spyglass: "İki haritayı veya harita katmanını bir dürbünle karşılaştırın",
+			basic: "Minimalistik düşünün, tek harita için idealdir"
 		},
 	})
 );

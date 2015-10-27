@@ -1,51 +1,51 @@
 ﻿define(
 	 ({
 		dialog: {
-			back: "ø_Back__å",
-			close: "ø_Close___å",
-			createNewStory: "ø_Create a New Story______å",
-			pickApp: "ø_Pick an App____å",
-			askPros: "ø_Ask the Pros_____å"
+			back: "Tilbage",
+			close: "Luk",
+			createNewStory: "Opret en ny historie",
+			pickApp: "Vælg en app",
+			askPros: "Spørg de professionelle"
 		},
 		incompatibleNotice: {
-			title: "ø_Create Story Not Available_________å",
-			subtitle: "ø_Sorry, this is not supported in a small display. Please open in a larger display or device____________________________å.",
-			close: "ø_Close___å"
+			title: "Opret en historie er ikke tilgængelig",
+			subtitle: "Beklager, dette understøttes ikke på et lille display. Åbn på et større display eller en større enhed.",
+			close: "Luk"
 		},		
 		answerText: {
-			seriesOfPlaces: "ø_A set of places______å",
-			mapsNarrative: "ø_A narrative with maps_______å",
-			compareDatasets: "ø_An interactive comparison of two datasets_____________å",
-			other: "ø_A single map_____å",
-			yes: "ø_Yes__å",
-			no: "ø_No__å",
-			click: "ø_Click___å",
-			scroll: "ø_Scroll___å"
+			seriesOfPlaces: "Et sæt steder",
+			mapsNarrative: "En fortælling med kort",
+			compareDatasets: "En interaktiv sammenligning af to datasæt",
+			other: "Et enkelt kort",
+			yes: "Ja",
+			no: "Nej",
+			click: "Klik på",
+			scroll: "Rul"
 		},
 		questionText: {
-			bestDescribesStory: "ø_What best describes your story__________å?",
-			showPhotos: "ø_Do you want to show photos for each location_______________å?",
-			clickOrScroll: "ø_Do you want your audience to click through tabs or scroll__________________å?"
+			bestDescribesStory: "Hvad beskriver bedst din historie?",
+			showPhotos: "Ønsker du at vise fotos af hvert sted?",
+			clickOrScroll: "Ønsker du, at dit publikum skal klikke sig gennem fanerne, eller skal de bladre?"
 		},
 		finalApp: {
-			weRecommend: "ø_We Recommend: {{STORY_TYPE}}_________å",
-			letsBuild: "ø_Let's build_____å!",
-			seeExample: "ø_See example____å"
+			weRecommend: "Vi anbefaler: {{STORY_TYPE}}",
+			letsBuild: "Lad os gå i gang!",
+			seeExample: "Se eksempel"
 		},
 		reasons: {
-			mapTour: "ø_This app presents a sequential, place-based narrative in the form of a series of geotagged photos and captions linked to an interactive map. Itâ€™s ideal for walking tours or for a series of locations youâ€™d like users to follow in sequence__________________________________________________________________________å.",
-			mapJournal: "ø_This app lets you create a compelling map-based narrative presented as a set of journal entries. It's ideal for creating multimedia stories that combine text, maps, images, and video, especially when you have lots of text or a rich array of content____________________________________________________________________________å.",
-			mapSeries: "ø_This app lets you present a series of maps via tabs, numbered bullets, or our expandable 'side accordion' control. You can also include images, video and web content in your series to tell your story_____________________________________________________________å.",
-			swipeSpyglass: "ø_This app enables users to compare two maps or two layers in the same map. It is particularly effective for showing before-and-after imagery or other changes over time___________________________________________________å.",
-			basic: "ø_This app lets you present a map via a very simple minimalist user interface. Apart from the title bar and an optional legend, the map fills the screen. Use this app to let your map speak for itself____________________________________________________________å."
+			mapTour: "Denne app præsenterer en sekvensopbygget, stedbaseret fortælling i form af en serie geo-taggede fotos og billedtekster, der er linket til et interaktivt kort. Dette er ideelt til gåture eller til en serie steder, som du gerne vil have brugerne til at besøge i rækkefølge.",
+			mapJournal: "Med denne app kan du oprette en overbevisende, kortbaseret fortælling, der præsenteres som et sæt journalposter. Dette er ideelt til oprettelse af multimediehistorier, der kombinerer tekst, kort, billeder og video, især når du har masser af tekst eller et righoldigt materiale.",
+			mapSeries: "Med denne app kan du præsentere en serie kort via faner, nummererede punktopstillinger eller vores \'side-akkordion\'-funktion, der kan udvides. Du kan også medtage billeder, video og webindhold i serien for at fortælle din historie.",
+			swipeSpyglass: "Med denne app kan brugerne sammenligne to kort eller to lag i det samme kort. Det er især effektivt, hvis du vil vise før-og-efter billeder eller andre ændringer over tid.",
+			basic: "Med denne app kan du præsentere et kort via en meget enkel, minimalistisk brugergrænseflade. Kortet udfylder hele skærmen, bortset fra titellinjen og en valgfri signaturforklaring. Brug denne app til at få kortet til at \"tale for sig selv\"."
 		},
 		shortReasons: {
-			mapTour: "ø_Guide people through a sequence of places_____________å",
-			mapJournal: "ø_Perfect for an in-depth narrative___________å",
-			mapSeries: "ø_Present a series of related maps___________å",
-			swipe: "ø_Compare two maps or map layers with a slider______________å",
-			spyglass: "ø_Compare two maps or map layers with a spyglass_______________å",
-			basic: "ø_Think minimalistic, great for one map____________å"
+			mapTour: "Vejled brugerne gennem en sekvens af steder",
+			mapJournal: "Perfekt til en dybtgående fortælling",
+			mapSeries: "Præsentér en serie indbyrdes relaterede kort",
+			swipe: "Sammenlign to kort eller to kortlag med en skyder",
+			spyglass: "Sammenlign to kort eller to kortlag med en kikkert",
+			basic: "Tænk minimalistisk, glimrende til et enkelt kort"
 		},
 	})
 );

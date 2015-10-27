@@ -1,51 +1,51 @@
 ﻿define(
 	 ({
 		dialog: {
-			back: "Å_Back__ö",
-			close: "Å_Close___ö",
-			createNewStory: "Å_Create a New Story______ö",
-			pickApp: "Å_Pick an App____ö",
-			askPros: "Å_Ask the Pros_____ö"
+			back: "Takaisin",
+			close: "Sulje",
+			createNewStory: "Luo uusi tarina",
+			pickApp: "Valitse sovellus",
+			askPros: "Kysy ammattilaisilta"
 		},
 		incompatibleNotice: {
-			title: "Å_Create Story Not Available_________ö",
-			subtitle: "Å_Sorry, this is not supported in a small display. Please open in a larger display or device____________________________ö.",
-			close: "Å_Close___ö"
+			title: "Tarinan luonti ei ole käytettävissä",
+			subtitle: "Valitettavasti tätä ei tueta pienessä näytössä. Avaa suuremmassa näytössä tai laitteessa.",
+			close: "Tallennettu"
 		},		
 		answerText: {
-			seriesOfPlaces: "Å_A set of places______ö",
-			mapsNarrative: "Å_A narrative with maps_______ö",
-			compareDatasets: "Å_An interactive comparison of two datasets_____________ö",
-			other: "Å_A single map_____ö",
-			yes: "Å_Yes__ö",
-			no: "Å_No__ö",
-			click: "Å_Click___ö",
-			scroll: "Å_Scroll___ö"
+			seriesOfPlaces: "Paikkajoukko",
+			mapsNarrative: "Kertomus, jossa on karttoja",
+			compareDatasets: "Kahden aineistoryhmän vuorovaikutteinen vertailu",
+			other: "Yksittäinen kartta",
+			yes: "Kyllä",
+			no: "Ei",
+			click: "Napsauta",
+			scroll: "Vieritä"
 		},
 		questionText: {
-			bestDescribesStory: "Å_What best describes your story__________ö?",
-			showPhotos: "Å_Do you want to show photos for each location_______________ö?",
-			clickOrScroll: "Å_Do you want your audience to click through tabs or scroll__________________ö?"
+			bestDescribesStory: "Mikä kuvaa tarinaasi parhaiten?",
+			showPhotos: "Haluatko näyttää kunkin sijainnin valokuvat?",
+			clickOrScroll: "Haluatko, että kohderyhmäsi napsauttaa välilehtiä vai selaa niitä vierittämällä?"
 		},
 		finalApp: {
-			weRecommend: "Å_We Recommend: {{STORY_TYPE}}_________ö",
-			letsBuild: "Å_Let's build_____ö!",
-			seeExample: "Å_See example____ö"
+			weRecommend: "Suosittelemme: {{STORY_TYPE}}",
+			letsBuild: "Muodostetaan!",
+			seeExample: "Tutustu esimerkkiin"
 		},
 		reasons: {
-			mapTour: "Å_This app presents a sequential, place-based narrative in the form of a series of geotagged photos and captions linked to an interactive map. Itâ€™s ideal for walking tours or for a series of locations youâ€™d like users to follow in sequence__________________________________________________________________________ö.",
-			mapJournal: "Å_This app lets you create a compelling map-based narrative presented as a set of journal entries. It's ideal for creating multimedia stories that combine text, maps, images, and video, especially when you have lots of text or a rich array of content____________________________________________________________________________ö.",
-			mapSeries: "Å_This app lets you present a series of maps via tabs, numbered bullets, or our expandable 'side accordion' control. You can also include images, video and web content in your series to tell your story_____________________________________________________________ö.",
-			swipeSpyglass: "Å_This app enables users to compare two maps or two layers in the same map. It is particularly effective for showing before-and-after imagery or other changes over time___________________________________________________ö.",
-			basic: "Å_This app lets you present a map via a very simple minimalist user interface. Apart from the title bar and an optional legend, the map fills the screen. Use this app to let your map speak for itself____________________________________________________________ö."
+			mapTour: "Tämä sovellus esittää peräkkäisiin paikkoihin tai järjestyksessä seurattaviin sijainteihin perustuvan tarinan sellaisten paikkamerkittyjen valokuvien ja kuvatekstien sarjana, jotka on linkitetty vuorovaikutteiseen karttaan. Se soveltuu hyvin kävelyreittien tai sellaisten sijaintien esittämiseen, joita haluat käyttäjien seuraavaan järjestyksessä.",
+			mapJournal: "Tämän sovelluksen avulla voit luoda karttapohjaisen kertomuksen, joka on esitetty päiväkirjamerkintöinä. Se soveltuu hyvin sellaisten multimediatarinoiden luontiin, joissa on yhdistetty tekstiä, karttoja, kuvia ja videokuvaa. Sovelluksesta on hyötyä erityisesti silloin, kun tekstiä on paljon, tai siihen liittyy kuvia ja videoita.",
+			mapSeries: "Tämän sovelluksen avulla voit esittää karttasarjan välilehtien, numeroitujen luettelomerkkien tai laajennettavan \"sivuhaitarin\" avulla. Voit myös sisällyttää kuvia, videokuvaa ja verkkosisältöä sarjaasi tarinan kerrontaa varten.",
+			swipeSpyglass: "Tämän sovelluksen avulla käyttäjät voivat verrata kahta karttaa tai saman kartan kahta karttatasoa. Se on erityisen tehokas ennen ja jälkeen -kuvien tai muiden ajan mittaan tapahtuneiden muutosten esittämiseen.",
+			basic: "Tämän sovelluksen avulla voit esittää kartan hyvin yksinkertaisen minimalistisen käyttöliittymän kautta. Otsikkoriviä ja valinnaista selitettä lukuun ottamatta kartta täyttää näytön. Tämän sovelluksen avulla kartta puhuu puolestaan."
 		},
 		shortReasons: {
-			mapTour: "Å_Guide people through a sequence of places_____________ö",
-			mapJournal: "Å_Perfect for an in-depth narrative___________ö",
-			mapSeries: "Å_Present a series of related maps___________ö",
-			swipe: "Å_Compare two maps or map layers with a slider______________ö",
-			spyglass: "Å_Compare two maps or map layers with a spyglass_______________ö",
-			basic: "Å_Think minimalistic, great for one map____________ö"
+			mapTour: "Opasta ihmisiä seuraaviin paikkoihin",
+			mapJournal: "Sopii erinomaisesti perusteelliseen kertomukseen",
+			mapSeries: "Esitä toisiinsa liittyvien karttojen sarja",
+			swipe: "Vertaa kahta karttaa tai karttatasoa liukusäätimen avulla",
+			spyglass: "Vertaa kahta karttaa tai karttatasoa kiikarin avulla",
+			basic: "Ajattele minimalistisesti, sopii yhdelle kartalle"
 		},
 	})
 );

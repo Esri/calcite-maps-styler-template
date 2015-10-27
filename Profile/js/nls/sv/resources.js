@@ -17,28 +17,28 @@
 define(
    ({
     map: {
-      error: "Å_Unable to create map_______ö"
+      error: "Det går inte att skapa kartan"
     },
     elevation: {
-        toggle: "Å_Toggle the Elevation Profile Chart____________ö.",
-        drawTool: "Å_Draw a line on the map to generate an elevation profile__________________ö.",
-        selectMessage: "Å_Click a line feature or use the draw tool to draw a line to display the elevation profile____________________________ö"
+        toggle: "Slå på/av diagrammet Profil för höjdkurva.",
+        drawTool: "Rita en linje på kartan för att generera en profil för höjdkurva.",
+        selectMessage: "Klicka på ett linjegeoobjekt eller använd ritverktyget för att rita en linje som visar höjdprofilen"
     },
     splash: {
-        title: "Å_Title___ö",
-        content: "Å_Configure to create custom splash content_____________ö"
+        title: "Titel",
+        content: "Konfigurera för att skapa anpassat innehåll på välkomstskärmen"
     },
     legend: {
-        title: "Å_Legend___ö",
-        tip: "Å_Display legend_____ö"
+        title: "Teckenförklaring",
+        tip: "Visa teckenförklaring"
     },
     basemap: {
-        title: "Å_Basemap___ö",
-        tip: "Å_Change basemap_____ö"
+        title: "Baskarta",
+        tip: "Ändra baskarta"
     },
     share: {
-        title: "Å_Share___ö",
-        tip: "Å_Share map____ö"
+        title: "Dela",
+        tip: "Dela karta"
     }
   })
 );

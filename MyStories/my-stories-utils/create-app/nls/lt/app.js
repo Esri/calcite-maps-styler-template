@@ -1,51 +1,51 @@
 ﻿define(
 	 ({
 		dialog: {
-			back: "Į_Back__š",
-			close: "Į_Close___š",
-			createNewStory: "Į_Create a New Story______š",
-			pickApp: "Į_Pick an App____š",
-			askPros: "Į_Ask the Pros_____š"
+			back: "Atgal",
+			close: "Užverti",
+			createNewStory: "Kurti naują pasakojimą",
+			pickApp: "Išsirinkti aplikaciją",
+			askPros: "Klausti profesionalų"
 		},
 		incompatibleNotice: {
-			title: "Į_Create Story Not Available_________š",
-			subtitle: "Į_Sorry, this is not supported in a small display. Please open in a larger display or device____________________________š.",
-			close: "Į_Close___š"
+			title: "Kurti pasakojimo negalima",
+			subtitle: "Deja, ši funkcija nepalaikoma mažuose ekranuose. Atidarykite didesnį ekraną arba įrenginį.",
+			close: "Užverti"
 		},		
 		answerText: {
-			seriesOfPlaces: "Į_A set of places______š",
-			mapsNarrative: "Į_A narrative with maps_______š",
-			compareDatasets: "Į_An interactive comparison of two datasets_____________š",
-			other: "Į_A single map_____š",
-			yes: "Į_Yes__š",
-			no: "Į_No__š",
-			click: "Į_Click___š",
-			scroll: "Į_Scroll___š"
+			seriesOfPlaces: "Vietų rinkinys",
+			mapsNarrative: "Pasakojimas su žemėlapiais",
+			compareDatasets: "Interaktyvus dviejų duomenų rinkinių palyginimas",
+			other: "Vienas žemėlapis",
+			yes: "Taip",
+			no: "Ne",
+			click: "Spustelėkite",
+			scroll: "Slinkti"
 		},
 		questionText: {
-			bestDescribesStory: "Į_What best describes your story__________š?",
-			showPhotos: "Į_Do you want to show photos for each location_______________š?",
-			clickOrScroll: "Į_Do you want your audience to click through tabs or scroll__________________š?"
+			bestDescribesStory: "Kaip geriausiai apibūdintumėte savo pasakojimą?",
+			showPhotos: "Ar norite pateikti kiekvienos vietos nuotrauką?",
+			clickOrScroll: "Ar norite, kad jūsų skaitytojai spaudinėtų skirtukus, ar slinktų ekraną?"
 		},
 		finalApp: {
-			weRecommend: "Į_We Recommend: {{STORY_TYPE}}_________š",
-			letsBuild: "Į_Let's build_____š!",
-			seeExample: "Į_See example____š"
+			weRecommend: "Rekomenduojame: {{STORY_TYPE}}",
+			letsBuild: "Kurkime!",
+			seeExample: "Žr. pavyzdį"
 		},
 		reasons: {
-			mapTour: "Į_This app presents a sequential, place-based narrative in the form of a series of geotagged photos and captions linked to an interactive map. Itâ€™s ideal for walking tours or for a series of locations youâ€™d like users to follow in sequence__________________________________________________________________________š.",
-			mapJournal: "Į_This app lets you create a compelling map-based narrative presented as a set of journal entries. It's ideal for creating multimedia stories that combine text, maps, images, and video, especially when you have lots of text or a rich array of content____________________________________________________________________________š.",
-			mapSeries: "Į_This app lets you present a series of maps via tabs, numbered bullets, or our expandable 'side accordion' control. You can also include images, video and web content in your series to tell your story_____________________________________________________________š.",
-			swipeSpyglass: "Į_This app enables users to compare two maps or two layers in the same map. It is particularly effective for showing before-and-after imagery or other changes over time___________________________________________________š.",
-			basic: "Į_This app lets you present a map via a very simple minimalist user interface. Apart from the title bar and an optional legend, the map fills the screen. Use this app to let your map speak for itself____________________________________________________________š."
+			mapTour: "Pateikia nuoseklų, pagal vietovę sudarytą pasakojimą, pasitelkiant vaizdų su geografinėmis nuorodomis seką ir su interaktyviu žemėlapiu susietus titrus. Puikiai tinka pasivaikščiojimų maršrutams arba vietovių sekai, kurias vartotojai turėtų aplankyti iš eilės.",
+			mapJournal: "Ši aplikacija suteikia galimybę kurti įtikinamus pasakojimus su žemėlapiais, pateikiamus kaip žurnalo įrašus. Ji puikiai tinka daugialypės terpės pasakojimams kurti, kai sujungiami tekstai, vaizdai, vaizdo įrašai, o ypač kai turite daugybę teksto arba gausaus turinio.",
+			mapSeries: "Ši aplikacija suteikia galimybę pateikti žemėlapių seką naudojant skirtukus, sunumeruotus ženklelius arba išplečiamą „šoninės armonikėlės“ valdiklį. Taip pat norėdami papasakoti savo istoriją, į seką galite įtraukti atvaizdų, vaizdo įrašų ir žiniatinklio turinio.",
+			swipeSpyglass: "Ši aplikacija leidžia vartotojams palyginti du žemėlapius arba du to paties žemėlapio sluoksnius. Ja itin paranku demonstruoti vaizdus prieš ir po arba kitus pokyčius, susiklosčiusius bėgant laikui.",
+			basic: "Ši aplikacija suteikia galimybę pateikti žemėlapį naudojant labai paprastą minimalistinę vartotojo sąsają. Visą ekraną, neskaitant antraštės pavadinimo ir pasirinktinės legendos, užpildo žemėlapis. Naudokite šią programėlę, kad jūsų žemėlapis kalbėtų pats už save."
 		},
 		shortReasons: {
-			mapTour: "Į_Guide people through a sequence of places_____________š",
-			mapJournal: "Į_Perfect for an in-depth narrative___________š",
-			mapSeries: "Į_Present a series of related maps___________š",
-			swipe: "Į_Compare two maps or map layers with a slider______________š",
-			spyglass: "Į_Compare two maps or map layers with a spyglass_______________š",
-			basic: "Į_Think minimalistic, great for one map____________š"
+			mapTour: "Supažindinkite žmones su skirtingų vietų seka",
+			mapJournal: "Puikiai tinka išsamiam pasakojimui",
+			mapSeries: "Pateikia susijusių žemėlapių seką",
+			swipe: "Lygina du žemėlapius arba žemėlapių sluoksnius su slankikliu",
+			spyglass: "Lygina du žemėlapius arba žemėlapių sluoksnius su žiūronu",
+			basic: "Visiškas minimalizmas – puikiai tinka vienam žemėlapiui"
 		},
 	})
 );

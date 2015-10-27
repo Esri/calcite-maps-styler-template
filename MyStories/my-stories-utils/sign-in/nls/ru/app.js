@@ -1,22 +1,22 @@
-﻿define(
+﻿define({
 	 ({
 		signInDialog: {
-			title: "Ж_Sign in to Story Maps_______Я",
-			subtitle: "Ж_Sign in with your existing ArcGIS Online account to_________________Я:",
-			reasonOne: "Ж_Create compelling story maps to tell your stories________________Я.",
-			reasonTwo: "Ж_Use your maps and data from ArcGIS Online in your story maps___________________Я.",
-			reasonThree: "Ж_Manage your story maps and check the status of their content___________________Я.",
-			noAccountYet: "Ж_Don't have an ArcGIS Online account? Sign up for a________________Я:",
-			publicAccount: "Ж_Free non-commercial public account___________Я",
-			subscriptionAccount: "Ж_Free trial ArcGIS subscription__________Я",
-			signInExpired: "Ж_Your sign-in expired. Sign in again to pick up where you left off_____________________Я.",
-			somethingNotLoading: "Ж_Something isn't loading correctly. Try refreshing the page___________________Я."
+			title: "Войти в Story Maps",
+			subtitle: "Войти с помощью своей учетной записи ArcGIS Online, чтобы:",
+			reasonOne: "Создавать захватывающие карты-истории, чтобы рассказать о своих проектах.",
+			reasonTwo: "Использовать собственные карты и данные из ArcGIS Online, чтобы рассказывать свои истории.",
+			reasonThree: "Управлять своими картами-историями и проверять статус их содержимого.",
+			noAccountYet: "Нет учетной записи ArcGIS Online? Зарегистрируйтесь, чтобы получить:",
+			publicAccount: "Бесплатная некоммерческая общедоступная учетная запись",
+			subscriptionAccount: "Бесплатная демонстрационная подписка ArcGIS",
+			signInExpired: "Срок действия сеанса истек. Войдите снова и продолжите с того места, где остановились.",
+			somethingNotLoading: "Загрузка произошла некорректно. Попробуйте обновить страницу."
 		},
 		unavailableDialog: {
-			title: "Ж_Sign-In Not Available_______Я",
-			explanation: "Ж_Sorry, this is not supported in a small display. Please open in a larger display or device____________________________Я.",
-			close: "Ж_Close___Я",
-			returnButton: "Ж_Return___Я" 
+			title: "Вход недоступен",
+			explanation: "Извините, это не поддерживается на маленьком экране. Откройте на большем экране или устройстве.",
+			close: "Закрыть",
+			returnButton: "Вернуться" 
 		}
 	})
 );

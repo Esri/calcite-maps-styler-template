@@ -1,51 +1,51 @@
 ﻿define(
 	 ({
 		dialog: {
-			back: "Ĳ_Back__ä",
-			close: "Ĳ_Close___ä",
-			createNewStory: "Ĳ_Create a New Story______ä",
-			pickApp: "Ĳ_Pick an App____ä",
-			askPros: "Ĳ_Ask the Pros_____ä"
+			back: "Vorige",
+			close: "Sluiten",
+			createNewStory: "Een nieuw verhaal maken",
+			pickApp: "Een app kiezen",
+			askPros: "Vraag het de professionals"
 		},
 		incompatibleNotice: {
-			title: "Ĳ_Create Story Not Available_________ä",
-			subtitle: "Ĳ_Sorry, this is not supported in a small display. Please open in a larger display or device____________________________ä.",
-			close: "Ĳ_Close___ä"
+			title: "Verhaal maken niet beschikbaar",
+			subtitle: "Sorry, dit wordt niet ondersteund op een klein display. Open dit op een groter display of op een groter apparaat.",
+			close: "Sluiten"
 		},		
 		answerText: {
-			seriesOfPlaces: "Ĳ_A set of places______ä",
-			mapsNarrative: "Ĳ_A narrative with maps_______ä",
-			compareDatasets: "Ĳ_An interactive comparison of two datasets_____________ä",
-			other: "Ĳ_A single map_____ä",
-			yes: "Ĳ_Yes__ä",
-			no: "Ĳ_No__ä",
-			click: "Ĳ_Click___ä",
-			scroll: "Ĳ_Scroll___ä"
+			seriesOfPlaces: "Een reeks plaatsen",
+			mapsNarrative: "Een verhaal met kaarten",
+			compareDatasets: "Een interactieve vergelijking van twee gegevensreeksen",
+			other: "Een enkele kaart",
+			yes: "Ja",
+			no: "Nee",
+			click: "Klik op",
+			scroll: "Scrollen"
 		},
 		questionText: {
-			bestDescribesStory: "Ĳ_What best describes your story__________ä?",
-			showPhotos: "Ĳ_Do you want to show photos for each location_______________ä?",
-			clickOrScroll: "Ĳ_Do you want your audience to click through tabs or scroll__________________ä?"
+			bestDescribesStory: "Wat omschrijft uw verhaal het beste?",
+			showPhotos: "Wilt u voor elke locatie foto\'s tonen?",
+			clickOrScroll: "Wilt u uw publiek door tabbladen laten klikken of laten bladeren?"
 		},
 		finalApp: {
-			weRecommend: "Ĳ_We Recommend: {{STORY_TYPE}}_________ä",
-			letsBuild: "Ĳ_Let's build_____ä!",
-			seeExample: "Ĳ_See example____ä"
+			weRecommend: "Onze aanbeveling: {{STORY_TYPE}}",
+			letsBuild: "Aan de slag!",
+			seeExample: "Zie voorbeeld"
 		},
 		reasons: {
-			mapTour: "Ĳ_This app presents a sequential, place-based narrative in the form of a series of geotagged photos and captions linked to an interactive map. Itâ€™s ideal for walking tours or for a series of locations youâ€™d like users to follow in sequence__________________________________________________________________________ä.",
-			mapJournal: "Ĳ_This app lets you create a compelling map-based narrative presented as a set of journal entries. It's ideal for creating multimedia stories that combine text, maps, images, and video, especially when you have lots of text or a rich array of content____________________________________________________________________________ä.",
-			mapSeries: "Ĳ_This app lets you present a series of maps via tabs, numbered bullets, or our expandable 'side accordion' control. You can also include images, video and web content in your series to tell your story_____________________________________________________________ä.",
-			swipeSpyglass: "Ĳ_This app enables users to compare two maps or two layers in the same map. It is particularly effective for showing before-and-after imagery or other changes over time___________________________________________________ä.",
-			basic: "Ĳ_This app lets you present a map via a very simple minimalist user interface. Apart from the title bar and an optional legend, the map fills the screen. Use this app to let your map speak for itself____________________________________________________________ä."
+			mapTour: "Deze app presenteert een sequentieel, op plaatsen gebaseerd verhaal in de vorm van een reeks foto\'s en teksten met geotags, gekoppeld aan een interactieve kaart. Dit is ideaal voor wandeltochten of voor een reeks locaties die u gebruikers in de juiste volgorde wenst te laten volgen.",
+			mapJournal: "Met deze app maakt u een meeslepend op kaarten gebaseerd verhaal als een reeks dagboekitems. Dit is ideaal voor het maken van multimediaverhalen die tekst, kaarten, beelden en video combineren, met name als u veel tekst of een rijke verzameling content heeft.",
+			mapSeries: "Met deze app presenteert u een reeks kaarten via tabbladen, genummerde opsommingstekens of onze uitbreidbare \'zijaccordeon\'-bediening. U kunt ook beelden, video en webcontent embedden om uw verhaal te vertellen.",
+			swipeSpyglass: "Deze app stelt gebruikers in staat om twee kaarten of twee lagen in dezelfde kaart te vergelijken. Dit is bijzonder doeltreffend voor het tonen van voor-en-na beelden of andere tijdsgebonden wijzigingen.",
+			basic: "Met deze app presenteert u een kaart d.m.v. een zeer eenvoudige minimalistische gebruikersinterface. Naast de titelbalk en een optionele legende vult de kaart het gehele scherm. Gebruik deze app om uw kaart het verhaal te laten doen."
 		},
 		shortReasons: {
-			mapTour: "Ĳ_Guide people through a sequence of places_____________ä",
-			mapJournal: "Ĳ_Perfect for an in-depth narrative___________ä",
-			mapSeries: "Ĳ_Present a series of related maps___________ä",
-			swipe: "Ĳ_Compare two maps or map layers with a slider______________ä",
-			spyglass: "Ĳ_Compare two maps or map layers with a spyglass_______________ä",
-			basic: "Ĳ_Think minimalistic, great for one map____________ä"
+			mapTour: "Begeleid mensen doorheen een reeks locaties",
+			mapJournal: "Perfect voor een gedetailleerd verhaal",
+			mapSeries: "Presenteer een reeks verwante kaarten",
+			swipe: "Vergelijk twee kaarten of kaartlagen d.m.v. een schuifbalk",
+			spyglass: "Vergelijk twee kaarten of kaartlagen d.m.v. een verrekijker",
+			basic: "Denk minimalistisch, perfect voor één kaart"
 		},
 	})
 );

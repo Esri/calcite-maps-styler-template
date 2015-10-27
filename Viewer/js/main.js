@@ -703,7 +703,7 @@ define([
                         printOptions.templates = templates;
                     }
                     // Add a loading indicator to the Printing label
-                    esriBundle.widgets.print.NLS_printing = "<img class='loadPrint' src='./images/loading-small.png'/> " + esriBundle.widgets.print.NLS_printing;
+                    esriBundle.widgets.print.NLS_printing =  esriBundle.widgets.print.NLS_printing + "<img class='loadPrint' src='./images/loading-small.png'/> ";
                     this.print = new Print(printOptions, domConstruct.create("div"));
 
                     domConstruct.place(this.print.printDomNode, printDiv, "first");

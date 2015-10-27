@@ -70,7 +70,7 @@
 			},
 			organizePopup: {
 				title: "Tổ chức",
-				lblHeader: "Đ_Drag and drop %LBL_LAYOUT% to organize your story________________ớ.",
+				lblHeader: "Kéo và thả %LBL_LAYOUT% để sắp xếp câu chuyện của bạn.",
 				lblColTitle: "Tiêu đề",
 				lblColStatus: "Trạng thái",
 				btnApplyWarning: "Xác nhận xóa %NB% %LBL_LAYOUT%",

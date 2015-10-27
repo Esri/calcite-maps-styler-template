@@ -70,7 +70,7 @@
 			},
 			organizePopup: {
 				title: "Organisera",
-				lblHeader: "Å_Drag and drop %LBL_LAYOUT% to organize your story________________ö.",
+				lblHeader: "Organisera berättelsen genom att dra och släppa %LBL_LAYOUT%.",
 				lblColTitle: "Titel",
 				lblColStatus: "Status",
 				btnApplyWarning: "Bekräfta borttagning av %NB% %LBL_LAYOUT%",

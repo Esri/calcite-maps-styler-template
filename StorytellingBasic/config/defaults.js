@@ -39,7 +39,7 @@ define({
   "logo": "./images/esri-logo.png",
   "showSocialIcons": true,
   "showSocialText": true,
-  "socialLink": "http://storymaps.arcgis.com/en/",
+  "socialLink": "http://storymaps.arcgis.com",
   "socialText": "A story map",
   "headerHeight": "115",
   "embed": false,

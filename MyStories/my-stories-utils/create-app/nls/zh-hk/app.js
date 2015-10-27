@@ -1,51 +1,51 @@
 ﻿define(
 	 ({
 		dialog: {
-			back: "試_Back__驗",
-			close: "試_Close___驗",
-			createNewStory: "試_Create a New Story______驗",
-			pickApp: "試_Pick an App____驗",
-			askPros: "試_Ask the Pros_____驗"
+			back: "返回",
+			close: "關閉",
+			createNewStory: "建立新故事",
+			pickApp: "選擇應用程式",
+			askPros: "詢問專家"
 		},
 		incompatibleNotice: {
-			title: "試_Create Story Not Available_________驗",
-			subtitle: "試_Sorry, this is not supported in a small display. Please open in a larger display or device____________________________驗.",
-			close: "試_Close___驗"
+			title: "建立故事不可用",
+			subtitle: "很抱歉，小顯示器不支援此動作。請在較大的顯示器或裝置中開啟它。",
+			close: "關閉"
 		},		
 		answerText: {
-			seriesOfPlaces: "試_A set of places______驗",
-			mapsNarrative: "試_A narrative with maps_______驗",
-			compareDatasets: "試_An interactive comparison of two datasets_____________驗",
-			other: "試_A single map_____驗",
-			yes: "試_Yes__驗",
-			no: "試_No__驗",
-			click: "試_Click___驗",
-			scroll: "試_Scroll___驗"
+			seriesOfPlaces: "位置集",
+			mapsNarrative: "包含地圖的敘事",
+			compareDatasets: "一個包含兩個資料集的互動比較",
+			other: "單一地圖",
+			yes: "是",
+			no: "否",
+			click: "按一下",
+			scroll: "捲動"
 		},
 		questionText: {
-			bestDescribesStory: "試_What best describes your story__________驗?",
-			showPhotos: "試_Do you want to show photos for each location_______________驗?",
-			clickOrScroll: "試_Do you want your audience to click through tabs or scroll__________________驗?"
+			bestDescribesStory: "如何最好說明您的故事?",
+			showPhotos: "您是否要顯示每個位置的地圖?",
+			clickOrScroll: "您是否要使用者按一下索引標籤或捲動?"
 		},
 		finalApp: {
-			weRecommend: "試_We Recommend: {{STORY_TYPE}}_________驗",
-			letsBuild: "試_Let's build_____驗!",
-			seeExample: "試_See example____驗"
+			weRecommend: "我們建議您: {{STORY_TYPE}}",
+			letsBuild: "讓我們開始建立!",
+			seeExample: "請參閱範例"
 		},
 		reasons: {
-			mapTour: "試_This app presents a sequential, place-based narrative in the form of a series of geotagged photos and captions linked to an interactive map. Itâ€™s ideal for walking tours or for a series of locations youâ€™d like users to follow in sequence__________________________________________________________________________驗.",
-			mapJournal: "試_This app lets you create a compelling map-based narrative presented as a set of journal entries. It's ideal for creating multimedia stories that combine text, maps, images, and video, especially when you have lots of text or a rich array of content____________________________________________________________________________驗.",
-			mapSeries: "試_This app lets you present a series of maps via tabs, numbered bullets, or our expandable 'side accordion' control. You can also include images, video and web content in your series to tell your story_____________________________________________________________驗.",
-			swipeSpyglass: "試_This app enables users to compare two maps or two layers in the same map. It is particularly effective for showing before-and-after imagery or other changes over time___________________________________________________驗.",
-			basic: "試_This app lets you present a map via a very simple minimalist user interface. Apart from the title bar and an optional legend, the map fills the screen. Use this app to let your map speak for itself____________________________________________________________驗."
+			mapTour: "此應用程式以一系列加入地理標記的相片和標題 (連結至互動地圖) 的形式，呈現連續、基於位置的敘事。它很適用於徒步遊覽，或您要使用者連續遵循的位置系列。",
+			mapJournal: "此應用程式可讓您建立吸引人之基於地圖的敘事，並以一組日誌項目呈現。它很適合建立包含文字、地圖、圖像和影片的多媒體故事，特別是當您有許多文字或豐富的內容陣列時。",
+			mapSeries: "此應用程式可讓您透過索引標籤、編號符號，或我們可展開的「側折疊」控制項來呈現一系列地圖。您也可以在系列中包含圖像、影片和 Web 內容來敘說您的故事。",
+			swipeSpyglass: "此應用程式可讓使用者比較兩張地圖，或相同地圖中的兩個圖層。它對顯示一段時間前後的影像或其他變化特別更有用。",
+			basic: "此應用程式可讓您透過極簡使用者介面來呈現地圖。除了標題列和選用圖例外，地圖會填滿螢幕。使用此應用程式讓地圖自我表達。"
 		},
 		shortReasons: {
-			mapTour: "試_Guide people through a sequence of places_____________驗",
-			mapJournal: "試_Perfect for an in-depth narrative___________驗",
-			mapSeries: "試_Present a series of related maps___________驗",
-			swipe: "試_Compare two maps or map layers with a slider______________驗",
-			spyglass: "試_Compare two maps or map layers with a spyglass_______________驗",
-			basic: "試_Think minimalistic, great for one map____________驗"
+			mapTour: "引導人們經過一連串位置",
+			mapJournal: "極適用於深入敘事",
+			mapSeries: "呈現一系列相關地圖",
+			swipe: "使用滑桿比較兩張地圖或地圖圖層",
+			spyglass: "使用望遠鏡比較兩張地圖或地圖圖層",
+			basic: "製作一張極簡、優質的地圖"
 		},
 	})
 );

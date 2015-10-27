@@ -36,7 +36,7 @@ define(
          "filter": "Filtrar",
          "close": "Fechar",
          "reverse": "Inverter",
-         "mode": "ã_Switch mode Drive/Walk________Ç"
+         "mode": "Trocar modo Dirigir/Caminhar"
       }
    })
 );

@@ -36,7 +36,7 @@ define(
          "filter": "过滤器",
          "close": "关闭",
          "reverse": "反向",
-         "mode": "试_Switch mode Drive/Walk________验"
+         "mode": "切换模式“驾驶/步行”"
       }
    })
 );

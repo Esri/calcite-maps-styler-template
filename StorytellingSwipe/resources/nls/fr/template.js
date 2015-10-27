@@ -2,7 +2,7 @@
 	 ({
 		viewer: {
 			loading: {
-				step1: "æ_LOADING STORY_____Â",
+				step1: "CHARGEMENT DU RECIT",
 				step2: "CHARGEMENT DES DONNEES",
 				step3: "INITIALISATION",
 				fail: "Echec de chargement du balayage",
@@ -17,19 +17,19 @@
 				invalidConfig: "Erreur fatale : configuration non valide",
 				invalidConfigNoWebmap: "Erreur fatale : configuration non valide (aucune carte Web n\'est spécifiée)",
 				createMap: "Impossible de créer la carte",
-				invalidApp: "æ_Fatal error: The story cannot be loaded_____________Â",
+				invalidApp: "Erreur fatale : impossible de charger le récit",
 				initMobile: "Bienvenue dans l\’application Web de balayage. L\’application n\’est pas configurée. Le générateur interactif n\’est pas pris en charge sur les appareils mobiles.",
-				initMobile2: "æ_The Swipe builder is not supported at this display size__________________Â.",
+				initMobile2: "Le générateur Swipe n\'est pas pris en charge avec cette taille d\'affichage.",
 				noBuilderIE8: "Le générateur interactif de balayage n\'est pas pris en charge avant la version 9 d\'Internet Explorer.",
 				noLayerView: "Bienvenue dans l\’application Web de balayage.<br />L\’application n\’est pas encore configurée.",
-				appSave: "æ_Error saving the web story_________Â",
+				appSave: "Erreur d\'enregistrement du récit Web",
 				mapSave: "Erreur d\’enregistrement de la carte Web",
-				notAuthorized: "æ_You are not authorized to access this story______________Â",
+				notAuthorized: "Vous n\'êtes pas autorisé à accéder à ce récit.",
 				conflictingProjectionsTitle: "Projections conflictuelles",
 				conflictingProjections: "Le balayage ne prend pas en charge l\'utilisation de deux cartes Web avec des projections différentes. Ouvrez les paramètres et utilisez une carte Web dotée de la même projection que la première carte Web.",
 				cpButton: "Fermer",
-				unspecifiedConfigOwner: "æ_Authorized owner hasn't been configured_____________Â.",
-				invalidConfigOwner: "æ_Story owner is not authorized__________Â."
+				unspecifiedConfigOwner: "Le propriétaire autorisé n\'est pas configuré.",
+				invalidConfigOwner: "Le propriétaire du récit n\'est pas autorisé."
 			},
 			mobileView: {
 				hideIntro: "MASQUER L\'INTRODUCTION",
@@ -47,7 +47,7 @@
 		},
 		builder: {
 			builder: {
-				panelHeader: "æ_STORY CONFIGURATION_______Â",
+				panelHeader: "CONFIGURATION DU RECIT",
 				buttonSave: "ENREGISTRER",
 				buttonHelp: "Aide",
 				buttonShare: "Partager",
@@ -67,13 +67,13 @@
 				popoverSaveWhenDone: "N\’oubliez pas d\’enregistrer lorsque vous avez terminé",
 				closeWithPendingChange: "Voulez-vous vraiment confirmer l\’opération ? Vos modifications seront perdues.",
 				gotIt: "OK",
-				savingApplication: "æ_Saving story_____Â",
-				saveSuccess: "æ_Story saved successfully________Â",
+				savingApplication: "Enregistrement du récit",
+				saveSuccess: "Récit enregistré",
 				saveError: "L\’enregistrement a échoué, réessayez",
 				saveError2: "L\'enregistrement a échoué en raison d\'une balise HTML non valide dans un nom ou une description",
 				saveError3: "Le titre ne peut pas être vide",
 				signIn: "Connectez-vous avec un compte sur",
-				signInTwo: "æ_to save the story______Â."
+				signInTwo: "pour enregistrer le récit."
 			},
 			header:{
 				editMe: "Modifier",
@@ -81,7 +81,7 @@
 				templateSubtitle: "Définir le sous-titre du modèle"
 			},
 			settings: {
-				settingsHeader: "æ_Story settings_____Â",
+				settingsHeader: "Paramètres du récit",
 				modalCancel: "Annuler",
 				modalApply: "Appliquer"
 			},
@@ -141,7 +141,7 @@
 				settingsLayoutSpyGlass: "Longue-vue",
 				settingsLayoutSelected: "Mise en page sélectionnée",
 				settingsLayoutSelect: "Sélectionner cette mise en page",
-				settingsSaveConfirm: "æ_Some of your changes require that you save and reload the story____________________Â"
+				settingsSaveConfirm: "Certaines de vos modifications nécessitent l\'enregistrement et le rechargement du récit"
 			},
 			settingsDataModel: {
 				settingsTabDataModel: "Balayer un type",
@@ -169,7 +169,7 @@
 			},
 			settingsLegend: {
 				settingsTabLegend: "Mise en page de l\'application",
-				settingsLegendExplain: "æ_Select the layout settings_________Â.",
+				settingsLegendExplain: "Sélectionnez les paramètres de mise en page.",
 				settingsLegendEnable: "Activer la légende",
 				settingsDescriptionEnable: "Activer la description",
 				settingsBookmarksEnable: "Activer la série de balayages",
@@ -218,39 +218,39 @@
 				}
 			},
 			share: {
-				firstSaveTitle: "æ_Story successfully saved________Â",
-				firstSaveHeader: "æ_Your story is now saved in ArcGIS Online. Please read the following answers to frequent questions______________________________Â.",
+				firstSaveTitle: "Récit enregistré",
+				firstSaveHeader: "Votre récit est enregistré dans ArcGIS Online. Lisez les réponses suivantes aux questions les plus fréquentes.",
 				firstSaveA1: "Si vous n\'êtes pas familiarisé avec ArcGIS Online ou si vous voulez un raccourci pour accéder à l\'interface de création, vous pouvez enregistrer le lien suivant : %LINK1%",
-				firstSaveA1bis: "æ_The story can also be found in your <a href='%LINK2%' target='_blank'>ArcGIS Online content folder</a>________________________________Â.",
-				firstSaveQ2: "æ_Is my story shared_______Â?",
-				firstSaveA2: "æ_Currently your story is not shared. To share it, use the SHARE button______________________Â.",
-				shareTitle: "æ_Share your story______Â",
-				sharePrivateHeader: "æ_Your story is not shared, would you like to share it_________________Â?",
+				firstSaveA1bis: "Le récit est également accessible dans votre <a href=\'%LINK2%\' target=\'_blank\'>dossier de contenu ArcGIS Online</a>.",
+				firstSaveQ2: "Mon récit est-il partagé ?",
+				firstSaveA2: "Votre récit n\'est actuellement pas partagé. Pour le partager, utilisez le bouton PARTAGER.",
+				shareTitle: "Partager votre récit",
+				sharePrivateHeader: "Votre récit n\'est pas partagé, souhaitez-vous le partager ?",
 				sharePrivateBtn1: "Partager publiquement",
 				sharePrivateBtn2: "Partager avec mon organisation",
 				sharePrivateProgress: "Partage en cours...",
 				sharePrivateErr: "Echec du partage, essayez à nouveau ou",
 				sharePrivateOk: "Partage mis à jour, en cours de chargement...",
-				shareStatus1: "æ_Story is not saved______Â",
-				shareStatus2: "æ_Story is shared publicly________Â",
-				shareStatus3: "æ_Story is shared within the organization_____________Â",
-				shareStatus4: "æ_Story is not shared_______Â",
+				shareStatus1: "Le récit n\'est pas enregistré",
+				shareStatus2: "Le récit est partagé publiquement",
+				shareStatus3: "Le récit est partagé au sein de l\'organisation",
+				shareStatus4: "Le récit n\'est pas partagé",
 				sharePreviewAsUser: "Aperçu",
-				shareHeader1: "æ_Your story is <strong>publicly accessible</strong>________________Â.",
-				shareHeader2: "æ_Your story is accessible by your organization members (login is required)_______________________Â.",
-				shareLinkHeader: "æ_Share the story with your audience___________Â",
+				shareHeader1: "Votre récit est <strong>accessible publiquement</strong>.",
+				shareHeader2: "Votre récit est accessible par les membres de votre organisation (une ouverture de session est requise).",
+				shareLinkHeader: "Partager le récit avec votre public",
 				shareLinkOpen: "OUVRIR",
 				learnMore: "En savoir plus",
-				shareQ1Opt1: "æ_How do I keep the story private___________Â?",
-				shareQ1Opt2: "æ_How do I keep the story private or share it publicly_________________Â?",
+				shareQ1Opt1: "Comment maintenir le récit privé ?",
+				shareQ1Opt2: "Comment maintenir le récit privé ou le partager publiquement ?",
 				shareA1: "Utilisez %SHAREIMG% sur <a href='%LINK1%' target='_blank'>la page des éléments de l\'application</a>. Si vous souhaitez également annuler le partage de la carte Web, utilisez <a href='%LINK2%' target='_blank'>la page des éléments de la carte Web</a>.",
 				shareA1bis: "Si vous souhaitez également annuler le partage du service d\'entités, utilisez <a href='%LINK1%' target='_blank'>la page des éléments du service d\'entités</a>.",
-				shareQ2: "æ_How do I edit the story later__________Â?",
+				shareQ2: "Comment modifier le récit ultérieurement ?",
 				shareQ2bis: "Comment revenir dans l\'interface de création ?",
-				shareA2div1: "æ_Save and reuse the following link %LINK1% or use <a href='%LINK2%' target='_blank'>the story item page</a>_________________________________Â.",
-				shareA2div2: "æ_As the owner of the story, when you are signed in on ArcGIS.com, the story includes a button to open the interactive builder_______________________________________Â:",
+				shareA2div1: "Enregistrez et réutilisez le lien suivant %LINK1% ou utilisez <a href=\'%LINK2%\' target=\'_blank\'>la page des éléments du récit</a>.",
+				shareA2div2: "En tant que propriétaire du récit, lorsque vous êtes connecté à ArcGIS.com, le récit affiche un bouton permettant d\'ouvrir le générateur interactif :",
 				shareQ3: "Où les données sont-elles stockées ?",
-				shareA3: "æ_The story configuration is stored in this web application item</a>_____________________Â.",
+				shareA3: "La configuration du récit est stockée dans cet élément de l\'application Web</a>.",
 				shareWarning: "Le partage %WITH% a été désactivé, car vous ne possédez pas la <a href='%LINK%' target='_blank'>carte Web</a>.",
  				shareWarningWith1: "publiquement",
  				shareWarningWith2: "publiquement et avec l\'organisation"

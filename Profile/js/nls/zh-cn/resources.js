@@ -17,28 +17,28 @@
 define(
    ({
     map: {
-      error: "试_Unable to create map_______验"
+      error: "无法创建地图"
     },
     elevation: {
-        toggle: "试_Toggle the Elevation Profile Chart____________验.",
-        drawTool: "试_Draw a line on the map to generate an elevation profile__________________验.",
-        selectMessage: "试_Click a line feature or use the draw tool to draw a line to display the elevation profile____________________________验"
+        toggle: "切换 Elevation Profile Chart。",
+        drawTool: "在地图上绘制一条线，以生成高程剖面。",
+        selectMessage: "单击线要素或使用绘制工具绘制一条线，以显示高程剖面。"
     },
     splash: {
-        title: "试_Title___验",
-        content: "试_Configure to create custom splash content_____________验"
+        title: "标题",
+        content: "配置为创建自定义启动画面内容"
     },
     legend: {
-        title: "试_Legend___验",
-        tip: "试_Display legend_____验"
+        title: "图例",
+        tip: "显示图例"
     },
     basemap: {
-        title: "试_Basemap___验",
-        tip: "试_Change basemap_____验"
+        title: "底图",
+        tip: "更改底图"
     },
     share: {
-        title: "试_Share___验",
-        tip: "试_Share map____验"
+        title: "共享",
+        tip: "共享地图"
     }
   })
 );

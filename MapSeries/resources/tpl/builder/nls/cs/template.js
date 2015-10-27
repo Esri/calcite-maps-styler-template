@@ -70,7 +70,7 @@
 			},
 			organizePopup: {
 				title: "Organizovat",
-				lblHeader: "Ř_Drag and drop %LBL_LAYOUT% to organize your story________________ů.",
+				lblHeader: "Zorganizujte svůj příběh kliknutím a přetažením %LBL_LAYOUT%.",
 				lblColTitle: "Název",
 				lblColStatus: "Stav",
 				btnApplyWarning: "Potvrďte odstranění %NB% %LBL_LAYOUT%",

@@ -356,7 +356,7 @@ declare, win, array, Color, all, Deferred, lang, domUtils, esriRequest, esriLang
                 var btn = this._createToolbarButton("print_toggle", "icon-printer", this.config.i18n.tools.printTool);
 
                 // Add a loading indicator to the Printing label
-                esriBundle.widgets.print.NLS_printing = "<img class='loadPrint' src='./images/loading-small.png'/>" + esriBundle.widgets.print.NLS_printing;
+                esriBundle.widgets.print.NLS_printing = esriBundle.widgets.print.NLS_printing + "<img class='loadPrint' src='./images/loading-small.png'/>";
 
                 on(btn, "click", lang.hitch(this, function () {
                     this._displayContainer("print_container", "print_toggle");

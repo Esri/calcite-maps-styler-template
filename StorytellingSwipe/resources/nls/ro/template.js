@@ -2,7 +2,7 @@
 	 ({
 		viewer: {
 			loading: {
-				step1: "Ă_LOADING STORY_____ș",
+				step1: "SE ÎNCARCĂ POVESTEA",
 				step2: "SE ÎNCARCĂ DATELE",
 				step3: "INIŢIALIZARE",
 				fail: "Ne pare rău, încărcarea Swipe a eşuat",
@@ -17,19 +17,19 @@
 				invalidConfig: "Eroare gravă: Configurare incorectă",
 				invalidConfigNoWebmap: "Eroare gravă: Configurare incorectă (nu a fost specificată nicio hartă web)",
 				createMap: "Nu se poate crea harta",
-				invalidApp: "Ă_Fatal error: The story cannot be loaded_____________ș",
+				invalidApp: "Eroare gravă: Imposibil de încărcat povestea",
 				initMobile: "Bine aţi venit la aplicaţia web Swipe. Aplicaţia nu este configurată. Instrumentul de creare interactiv nu este suportat pe dispozitive mobile.",
-				initMobile2: "Ă_The Swipe builder is not supported at this display size__________________ș.",
+				initMobile2: "Aplicaţia de creare Swipe nu este suportată la această dimensiune a ecranului.",
 				noBuilderIE8: "Instrumentul interactiv de creare a Swipe nu este suportat în versiunile Internet Explorer mai vechi decât 9.",
 				noLayerView: "Bine aţi venit la aplicaţia web Swipe.<br />Aplicaţia nu este configurată încă.",
-				appSave: "Ă_Error saving the web story_________ș",
+				appSave: "Eroare la salvarea poveştii web",
 				mapSave: "Eroare la salvarea hărţii web",
-				notAuthorized: "Ă_You are not authorized to access this story______________ș",
+				notAuthorized: "Nu sunteţi autorizat să accesaţi această poveste",
 				conflictingProjectionsTitle: "Proiecţii în conflict",
 				conflictingProjections: "Instrumentul de preluare nu suportă utilizarea a două hărţi cu proiecţii diferite. Deschideţi setările şi utilizaţi o hartă web care foloseşte aceeaşi proiecţie ca şi prima hartă web.",
 				cpButton: "Închidere",
-				unspecifiedConfigOwner: "Ă_Authorized owner hasn't been configured_____________ș.",
-				invalidConfigOwner: "Ă_Story owner is not authorized__________ș."
+				unspecifiedConfigOwner: "Proprietarul autorizat nu a fost configurat.",
+				invalidConfigOwner: "Proprietarul poveştii nu este autorizat."
 			},
 			mobileView: {
 				hideIntro: "ASCUNDERE PREZENTARE",
@@ -47,7 +47,7 @@
 		},
 		builder: {
 			builder: {
-				panelHeader: "Ă_STORY CONFIGURATION_______ș",
+				panelHeader: "CONFIGURARE POVESTE",
 				buttonSave: "SALVARE",
 				buttonHelp: "Ajutor",
 				buttonShare: "Partajare",
@@ -67,13 +67,13 @@
 				popoverSaveWhenDone: "Nu uitaţi să salvaţi când aţi terminat",
 				closeWithPendingChange: "Sigur confirmaţi acţiunea? Se vor pierde modificările.",
 				gotIt: "OK",
-				savingApplication: "Ă_Saving story_____ș",
-				saveSuccess: "Ă_Story saved successfully________ș",
+				savingApplication: "Se salvează povestea",
+				saveSuccess: "Poveste salvată cu succes",
 				saveError: "Salvare nereuşită, încercaţi din nou",
 				saveError2: "Salvare eşuată din cauza unei etichete html nevalide într-un nume sau o descriere",
 				saveError3: "Titlul nu poate fi necompletat",
 				signIn: "Conectaţi-vă la un cont în",
-				signInTwo: "Ă_to save the story______ș."
+				signInTwo: "pentru a salva povestea."
 			},
 			header:{
 				editMe: "Editează-mă!",
@@ -81,7 +81,7 @@
 				templateSubtitle: "Setare subtitlu şablon"
 			},
 			settings: {
-				settingsHeader: "Ă_Story settings_____ș",
+				settingsHeader: "Setări poveste",
 				modalCancel: "Anulare",
 				modalApply: "Aplicare"
 			},
@@ -141,7 +141,7 @@
 				settingsLayoutSpyGlass: "Ochean",
 				settingsLayoutSelected: "Configuraţie selectată",
 				settingsLayoutSelect: "Selectaţi această configuraţie",
-				settingsSaveConfirm: "Ă_Some of your changes require that you save and reload the story____________________ș"
+				settingsSaveConfirm: "Unele modificări necesită salvarea şi reîncărcarea poveştii"
 			},
 			settingsDataModel: {
 				settingsTabDataModel: "Tip preluare",
@@ -169,7 +169,7 @@
 			},
 			settingsLegend: {
 				settingsTabLegend: "Configuraţie aplicaţie",
-				settingsLegendExplain: "Ă_Select the layout settings_________ș.",
+				settingsLegendExplain: "Selectaţi setările pentru configuraţie.",
 				settingsLegendEnable: "Activare legendă",
 				settingsDescriptionEnable: "Activare descriere",
 				settingsBookmarksEnable: "Activare serii Swipe",
@@ -218,39 +218,39 @@
 				}
 			},
 			share: {
-				firstSaveTitle: "Ă_Story successfully saved________ș",
-				firstSaveHeader: "Ă_Your story is now saved in ArcGIS Online. Please read the following answers to frequent questions______________________________ș.",
+				firstSaveTitle: "Poveste salvată cu succes",
+				firstSaveHeader: "Povestea dvs. este acum salvată în ArcGIS Online. Citiţi următoarele răspunsuri la întrebări frecvente.",
 				firstSaveA1: "Dacă nu sunteţi familiarizat cu ArcGIS Online sau doriţi o comandă rapidă pentru a accesa interfaţa de creare, puteţi salva următorul link: %LINK1%",
-				firstSaveA1bis: "Ă_The story can also be found in your <a href='%LINK2%' target='_blank'>ArcGIS Online content folder</a>________________________________ș.",
-				firstSaveQ2: "Ă_Is my story shared_______ș?",
-				firstSaveA2: "Ă_Currently your story is not shared. To share it, use the SHARE button______________________ș.",
-				shareTitle: "Ă_Share your story______ș",
-				sharePrivateHeader: "Ă_Your story is not shared, would you like to share it_________________ș?",
+				firstSaveA1bis: "Povestea poate fi găsită şi în <a href=\'%LINK2%\' target=\'_blank\'>folderul de conţinut ArcGIS Online</a>.",
+				firstSaveQ2: "Este partajată povestea mea?",
+				firstSaveA2: "În prezent, povestea dvs. nu este partajată. Pentru a o partaja, utilizaţi butonul Partajare.",
+				shareTitle: "Partajaţi povestea",
+				sharePrivateHeader: "Povestea dvs. nu este partajată, doriţi să o partajaţi?",
 				sharePrivateBtn1: "Partajare în mod public",
 				sharePrivateBtn2: "Partajare cu organizaţia mea",
 				sharePrivateProgress: "Partajare în curs...",
 				sharePrivateErr: "Partajare nereuşită, încercaţi din nou sau",
 				sharePrivateOk: "Partajare actualizată cu succes, se încarcă...",
-				shareStatus1: "Ă_Story is not saved______ș",
-				shareStatus2: "Ă_Story is shared publicly________ș",
-				shareStatus3: "Ă_Story is shared within the organization_____________ș",
-				shareStatus4: "Ă_Story is not shared_______ș",
+				shareStatus1: "Povestea nu este salvată",
+				shareStatus2: "Povestea este partajată public",
+				shareStatus3: "Povestea este partajată în cadrul organizaţiei",
+				shareStatus4: "Povestea nu este partajată",
 				sharePreviewAsUser: "Previzualizare",
-				shareHeader1: "Ă_Your story is <strong>publicly accessible</strong>________________ș.",
-				shareHeader2: "Ă_Your story is accessible by your organization members (login is required)_______________________ș.",
-				shareLinkHeader: "Ă_Share the story with your audience___________ș",
+				shareHeader1: "Povestea dvs. este <strong>accesibilă pentru public</strong>.",
+				shareHeader2: "Povestea dvs. este accesibilă membrilor organizaţiei (este necesară conectarea).",
+				shareLinkHeader: "Partajare poveste cu publicul",
 				shareLinkOpen: "DESCHIDERE",
 				learnMore: "Învăţaţi mai mult",
-				shareQ1Opt1: "Ă_How do I keep the story private___________ș?",
-				shareQ1Opt2: "Ă_How do I keep the story private or share it publicly_________________ș?",
+				shareQ1Opt1: "Cum păstrez povestea privată?",
+				shareQ1Opt2: "Cum păstrez povestea privată şi cum o partajez public?",
 				shareA1: "Utilizaţi %SHAREIMG% în <a href='%LINK1%' target='_blank'>pagina de element corespunzătoare aplicaţiei</a>. Dacă doriţi şi să anulaţi partajarea hărţii web, utilizaţi <a href='%LINK2%' target='_blank'>pagina de element corespunzătoare hărţii web</a>.",
 				shareA1bis: "De asemenea, dacă doriţi să anulaţi partajarea serviciului de obiecte spaţiale, utilizaţi <a href='%LINK1%' target='_blank'>pagina de element corespunzătoare serviciului de obiecte spaţiale</a>.",
-				shareQ2: "Ă_How do I edit the story later__________ș?",
+				shareQ2: "Cum editez povestea mai târziu?",
 				shareQ2bis: "Cum revin la interfaţa de creare?",
-				shareA2div1: "Ă_Save and reuse the following link %LINK1% or use <a href='%LINK2%' target='_blank'>the story item page</a>_________________________________ș.",
-				shareA2div2: "Ă_As the owner of the story, when you are signed in on ArcGIS.com, the story includes a button to open the interactive builder_______________________________________ș:",
+				shareA2div1: "Salvaţi şi utilizaţi din nou următorul link, %LINK1%, sau utilizaţi <a href=\'%LINK2%\' target=\'_blank\'>pagina de element corespunzătoare poveştii</a>.",
+				shareA2div2: "În calitate de proprietar al poveştii, când sunteţi autentificat pe ArcGIS.com, povestea include un buton pentru a deschide instrumentul de creare interactiv:",
 				shareQ3: "Unde sunt stocate datele?",
-				shareA3: "Ă_The story configuration is stored in this web application item</a>_____________________ș.",
+				shareA3: "Configuraţia poveştii este stocată în acest element al aplicaţiei web</a>.",
 				shareWarning: "Partajarea %WITH% a fost dezactivată, deoarece nu mai sunteţi proprietarul <a href='%LINK%' target='_blank'>hărţii web</a>.",
  				shareWarningWith1: "public",
  				shareWarningWith2: "public şi cu Organizaţia"

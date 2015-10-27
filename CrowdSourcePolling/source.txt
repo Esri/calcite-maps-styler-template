@@ -1,9 +1,9 @@
 From git branch 
 release
-commit b84b97f8277d643b5648ff34e8a292dfa26554b1
+commit a5a0ca0b2fc06acd3652b46fba6832af37adb8ef
 Author: MikeTschudi <mtschudi@esri.com>
-Date:   Mon Oct 19 11:02:28 2015 -0700
+Date:   Mon Oct 26 09:12:18 2015 -0700
 
-    Reverting commit 3c61cdeaad63779ca8f5c17fe69d58c3c8aa65a2
+    Added workaround for Firefox' scrollIntoView weakness
     
-    ignoring configuration app error; doesn't seem to be significant
+    #112
