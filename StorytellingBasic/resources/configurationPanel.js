@@ -35,7 +35,7 @@
                "type":"string",
                "fieldName":"headerHeight",
                "placeHolder":"115",
-               "label":"Header height",
+               "label":"Header height:",
                "tooltip":"Defaults to 115 pixels - resize to fit your content."
             }
          ]
@@ -45,7 +45,7 @@
             {
                "type": "boolean", 
                "fieldName": "showLogo",
-               "label": "Show logo"
+               "label": "Show logo:"
             },
             {  
                "label":"Custom logo:",
@@ -55,7 +55,7 @@
                "tooltip":"Optional logo to display"
             },
             {  
-               "label":"Logo link",
+               "label":"Logo link:",
                "fieldName":"logoLink",
                "placeHolder": "http://www.esri.com",
                "type":"string",
@@ -71,12 +71,12 @@
             },{
                "type": "string",
                "fieldName": "socialText",
-               "label": "Header text",
+               "label": "Header text:",
                "placeHolder": "A story map"
             },{
                "type": "string",
                "fieldName": "socialLink",
-               "label": "Header link",
+               "label": "Header link:",
                "placeHolder": "http://storymaps.arcgis.com",
                "tooltip": "Url to navigate to when text is clicked"
             }          
