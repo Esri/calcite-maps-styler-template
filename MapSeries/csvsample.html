@@ -74,7 +74,9 @@ p {
 	<script>
 		require(['esri/config', 'esri/layers/CSVLayer', 'dojo/domReady!'], function(EsriConfig, CSVLayer) {
 			var buttons = $('.trial button');
-			EsriConfig.defaults.io.proxyUrl = '//www.arcgis.com/sharing/proxy';
+			
+			var baseUrl = window.location.href.slice(0, window.location.href.indexOf(/apps/));
+			EsriConfig.defaults.io.proxyUrl = baseUrl + '/sharing/proxy';
 
 
 			buttons.on('click', function() {
