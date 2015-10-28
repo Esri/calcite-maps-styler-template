@@ -46,6 +46,7 @@
 				appid: "",
 				// Optional list of authorized application or web map owners
 				// Has to be specified when using appid or webmap url parameters (e.g. ["user1"], ["user1", "user2"])
+				// To authorize all users you can use ["*"]
 				authorizedOwners: [""],
 				// Select the application layout between "three-panel" and "integrated"
 				layout: "three-panel",
@@ -69,7 +70,7 @@
 		</script>
 
 		<script type="text/javascript">
-			var version = '2.4.0-102215';
+			var version = '2.4.0-102715';
 			var isProduction = true;
 
 			function loadJS(url, isExternal)
