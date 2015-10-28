@@ -41,7 +41,7 @@
 
 
 	<script>
-		window.builderIntegration = window.location.href.indexOf('itemId') !== -1;
+		window.builderIntegration = window.location.href.indexOf('fromBuilder') !== -1;
 
 		if(window.builderIntegration) {
 			document.getElementsByTagName('html')[0].className += ' builder';

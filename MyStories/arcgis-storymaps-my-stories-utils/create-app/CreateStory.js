@@ -1,6 +1,6 @@
 define(['dojo/i18n!./nls/app.js?v=' + '0', 'lib-build/hbars!./templates/createStory', 'lib-build/hbars!./templates/finalApp',
-	'lib-build/hbars!./templates/noCreateStory', 'lib-build/hbars!./templates/question'],
-	function(createStoryi18n, createStoryTemplate, finalAppTemplate, noCreateStoryTemplate, questionTemplate) {
+	'lib-build/hbars!./templates/noCreateStory', 'lib-build/hbars!./templates/question', 'create-app/assets/js/buildapp'],
+	function(createStoryi18n, createStoryTemplate, finalAppTemplate, noCreateStoryTemplate, questionTemplate, buildApp) {
 	'use strict';
 	// click on large pictures takes to builder
 
@@ -27,7 +27,7 @@ define(['dojo/i18n!./nls/app.js?v=' + '0', 'lib-build/hbars!./templates/createSt
 			multiple: false,
 			value: 'mapTour',
 			method: 'buildTour()',
-			thumbnail: './arcgis-storymaps-my-stories-utils/create-app/assets/images/map-tour.jpg',
+			thumbnail: '/arcgis-storymaps-my-stories-utils/create-app/assets/images/map-tour.jpg',
 			reason: strings.reasons.mapTour,
 			example: 'http://links.esri.com/storymaps/map_tour_example_3panel'
 		},
@@ -36,7 +36,7 @@ define(['dojo/i18n!./nls/app.js?v=' + '0', 'lib-build/hbars!./templates/createSt
 			multiple: false,
 			value: 'mapJournal',
 			method: 'buildJournal()',
-			thumbnail: 'arcgis-storymaps-my-stories-utils/create-app/assets/images/map-journal.jpg',
+			thumbnail: '/arcgis-storymaps-my-stories-utils/create-app/assets/images/map-journal.jpg',
 			reason: strings.reasons.mapJournal,
 			example: 'http://links.esri.com/storymaps/map_journal_example_side_panel'
 		},
@@ -45,7 +45,7 @@ define(['dojo/i18n!./nls/app.js?v=' + '0', 'lib-build/hbars!./templates/createSt
 			multiple: false,
 			value: 'mapSeries',
 			method: 'buildSeries()',
-			thumbnail: 'arcgis-storymaps-my-stories-utils/create-app/assets/images/tabbed-viewer.jpg',
+			thumbnail: '/arcgis-storymaps-my-stories-utils/create-app/assets/images/tabbed-viewer.jpg',
 			reason: strings.reasons.mapSeries,
 			example: 'http://links.esri.com/storymaps/map_series_example_tabbed'
 		},
@@ -55,8 +55,8 @@ define(['dojo/i18n!./nls/app.js?v=' + '0', 'lib-build/hbars!./templates/createSt
 			value: 'swipeSpyglass',
 			method: 'buildSwipe("swipe")',
 			methodTwo: 'buildSwipe("spyglass")',
-			thumbnail: 'arcgis-storymaps-my-stories-utils/create-app/assets/images/swipe.jpg',
-			thumbnailTwo: 'arcgis-storymaps-my-stories-utils/create-app/assets/images/spyglass.jpg',
+			thumbnail: '/arcgis-storymaps-my-stories-utils/create-app/assets/images/swipe.jpg',
+			thumbnailTwo: '/arcgis-storymaps-my-stories-utils/create-app/assets/images/spyglass.jpg',
 			reason: strings.reasons.swipeSpyglass,
 			example: 'http://links.esri.com/storymaps/swipe_example'
 		},
@@ -65,7 +65,7 @@ define(['dojo/i18n!./nls/app.js?v=' + '0', 'lib-build/hbars!./templates/createSt
 			multiple: false,
 			value: 'basic',
 			method: basicUrl,
-			thumbnail: 'arcgis-storymaps-my-stories-utils/create-app/assets/images/basic.jpg',
+			thumbnail: '/arcgis-storymaps-my-stories-utils/create-app/assets/images/basic.jpg',
 			reason: strings.reasons.basic,
 			example: 'http://links.esri.com/storymaps/basic_example'
 		}

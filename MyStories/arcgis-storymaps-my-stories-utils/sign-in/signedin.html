@@ -22,7 +22,7 @@
 		if( window.location.href.match(/fromSignOut/) ) {
 			arcGISUrl = 'https://www.arcgis.com';
 			window.location.href = arcGISUrl + "/sharing/oauth2/authorize?client_id=arcgisonline&display=iframe" +
-			"&redirect_uri=" + parentWindow.location.origin + "/sign-in/signedin" +
+			"&redirect_uri=" + parentWindow.location.origin + "/arcgis-storymaps-my-stories-utils/sign-in/signedin" +
 			"&response_type=token&display=iframe" +
 			"&parent=" + parentWindow.location.href + "&locale=" + locale;
 
@@ -160,7 +160,7 @@
 
 		if( window.location.href.match(/fromSignOut/) ) {
 			window.location.href = "https://www.arcgis.com/sharing/oauth2/authorize?client_id=arcgisonline&display=iframe" +
-			"&redirect_uri=" + parentWindow.location.origin + "/sign-in/signedin" +
+			"&redirect_uri=" + parentWindow.location.origin + "/arcgis-storymaps-my-stories-utils/sign-in/signedin" +
 			"&response_type=token&display=iframe" +
 			"&parent=" + parentWindow.location.href + "&locale=" + locale;
 

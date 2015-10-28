@@ -1,4 +1,4 @@
-(function() {
+define(['sign-in/SignInDialog'], function(SignInDialog) {
 	'use strict';
 
 	var userInfo = null,
@@ -10,6 +10,14 @@
 		app = '',
 		layout = '',
 		fromBuildApp = false,
+
+
+	init = function() {
+		new SignInDialog();
+		renderHeader();
+		window.signInManager = signInManager;
+	},
+
 
 	/**
 	@summary Retrieves the cookie of a user if exists, otherwise returns null. If the cookie is there, signifies that the user is signed in to AGOL.
@@ -263,7 +271,7 @@
 		$("#sign-in-frame").attr(
 			"src",
 			arcGISUrl + "/sharing/oauth2/authorize?client_id=arcgisonline&display=iframe" +
-			"&redirect_uri=" + originUrl + "/sign-in/signedin" + encodeURIComponent(urlSuffix) +
+			"&redirect_uri=" + originUrl + "/arcgis-storymaps-my-stories-utils/sign-in/signedin" + encodeURIComponent(urlSuffix) +
 			"&response_type=token&display=iframe" +
 			"&parent=" + window.location.href + "&locale=" + locale
 		);
@@ -362,7 +370,5 @@
 	};
 
 
-
-	renderHeader();
-	window.signInManager = signInManager;
-})();
+	init();
+});
