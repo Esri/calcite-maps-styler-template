@@ -127,6 +127,7 @@
 				// Optionally to be able to use the webmap URL parameter, configure here the list of webmap authors
 				// whose webmaps are allowed to be viewed by this Shortlist deployment
 				// This is the ArcGIS Online username of the webmap owner (e.g. ["user1"], ["user1", "user2"])
+				// To authorize all users you can use ["*"]
 				authorizedOwners: [""]
 				//
 			};
@@ -138,7 +139,7 @@
 		</script>
 
 		<script type="text/javascript">
-			var version = '1.7.0-102115';
+			var version = '1.7.0-102715';
 			var isProduction = true;
 
 			function loadJS(url, isExternal)
@@ -241,7 +242,6 @@
 					['text', 'lib-build/text']
 				]
 			};
-			
 			var urlLocale = location.search.match(/locale=([\w\-]+)/) ? RegExp.$1 : null;
 			if( urlLocale ){
 				dojoConfig.locale = urlLocale;
