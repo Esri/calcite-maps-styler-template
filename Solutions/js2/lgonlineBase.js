@@ -222,6 +222,10 @@ define([
                     if (this.appConfig.i18n) {
                         resolvedString = this.followAttributePath(this.appConfig.i18n, aString.substring(1));
                     }
+                } else if ("!" === leadChar) {
+                    if (window.jsapi_i18n) {
+                        resolvedString = this.followAttributePath(window.jsapi_i18n, aString.substring(1));
+                    }
                 } else if ("." === leadChar) {
                     resolvedString = this.followAttributePath(null, aString.substring(1));
                 }
@@ -786,8 +790,8 @@ define([
     //========================================================================================================================//
 
 });
-/* 
-This source is part of the git commit 
-a5c809f774e80d9a 2015-10-14 12:19:52 -0700
-It is available from https://github.com/Esri/local-government-online-apps 
-*/ 
+/*
+This source is part of the git commit
+3c10fb2e4532cc0f 2015-10-28 19:11:14 -0700
+It is available from https://github.com/Esri/local-government-online-apps
+*/
