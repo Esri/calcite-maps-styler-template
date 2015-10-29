@@ -42,3 +42,4 @@ ConstituentEngagementConsole\js\nls
 MyStories\resources\nls
 MyStories\my-stories-utils\create-app\nls
 MyStories\my-stories-utils\sign-in\nls
+CrowdSourcePolling\js\nls
