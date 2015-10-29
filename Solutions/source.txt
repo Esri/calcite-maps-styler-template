@@ -1,10 +1,8 @@
-Built on 10/28/2015 19:39:38.48 from
+Built on 10/29/2015 15:33:31.12 from
 repository local-government-online-apps
 branch release
-commit 7a5eb6fb8d3efca1899becfefea331b0e13e5fbb
+commit 7eb842916c84c4b9bc487c78d64be4e510ee98b8
 Author: MikeTschudi <mtschudi@esri.com>
-Date:   Wed Oct 28 19:24:03 2015 -0700
+Date:   Thu Oct 29 15:32:46 2015 -0700
 
-    Merge part of reversion of commit c7fae6df73faa7dffcef06f83fdd26af76e3c262
-    
-    (cherry picked from commit 14ce0b81aa7a8eb9ee48aa3c39cd8bd8c724fb1a)
+    Don't display map's info window when editing

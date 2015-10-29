@@ -568,10 +568,11 @@ define([
         /**
          * Disables popups.
          * @memberOf js.LGMap#
-         * @see From ArcGIS Online's Basic Viewer
-         * (http://arcgis4localgov2.maps.arcgis.com/home/item.html?id=f232cac140a8495f9990cc9d2bb66dd9)
          */
         disablePopups: function () {
+            // We don't want to see the map's info window
+            // https://developers.arcgis.com/javascript/jsapi/map-amd.html#setinfowindowonclick
+            this.appConfig.map.setInfoWindowOnClick(false);
             // Not usable until we've created the map
             if (this.appConfig.mapInfo.clickEventHandle) {
                 this.appConfig.mapInfo.clickEventHandle.remove();
@@ -584,6 +585,6 @@ define([
 });
 /* 
 This source is part of the git commit 
-7a5eb6fb8d3efca1 2015-10-28 19:38:41 -0700
+7eb842916c84c4b9 2015-10-29 15:32:46 -0700
 It is available from https://github.com/Esri/local-government-online-apps 
 */ 

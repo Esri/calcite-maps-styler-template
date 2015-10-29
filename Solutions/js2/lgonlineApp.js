@@ -21,6 +21,6 @@ define(["js/lgonlineBase", "js/lgonlineCommand", "js/lgonlineDijit", "js/lgonlin
 });
 /* 
 This source is part of the git commit 
-7a5eb6fb8d3efca1 2015-10-28 19:38:41 -0700
+7eb842916c84c4b9 2015-10-29 15:32:46 -0700
 It is available from https://github.com/Esri/local-government-online-apps 
 */ 
