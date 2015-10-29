@@ -20,13 +20,11 @@ define([
     "dojo/_base/declare",
     "dojo/Deferred",
     "dojo/dom-construct",
-    "js/SearchDijitHelper",
     "js/lgonlineMap"
 ], function (
     declare,
     Deferred,
-    domConstruct,
-    SearchDijitHelper
+    domConstruct
 ) {
 
     //========================================================================================================================//
@@ -41,6 +39,7 @@ define([
          * @name js.LGMapDijitContainer
          * @extends js.LGGraphic, js.LGMapDependency
          * @classdesc
+         * Manages the app's highlighter.
          */
         constructor: function () {
             this.ready = new Deferred();
@@ -63,16 +62,13 @@ define([
          * @memberOf js.LGMapDijitContainer#
          */
         createDijit: function () {
-            var pThis = this, options;
-
-            // Create the options structure
-            options = this.options || {};
-            options.map = this.appConfig.map;
+            var pThis = this;
 
             // Bring in the dijit's AMD, and then construct the dijit
             require([this.dijitAmd], function (DijitConstructor) {
-                pThis.dijit = new DijitConstructor(options, domConstruct.create("div", null, pThis.rootDiv));
-                pThis.dijit.startup();
+                pThis.dijit = new DijitConstructor({
+                    map: pThis.appConfig.map
+                }, domConstruct.create("div", null, pThis.rootDiv)).startup();
 
                 pThis.ready.resolve(pThis);
             });
@@ -81,47 +77,9 @@ define([
 
     //========================================================================================================================//
 
-    declare("js.LGMapSearchDijitContainer", js.LGMapDijitContainer, {
-        /**
-         * Constructs an LGMapSearchDijitContainer.
-         * <br>Creates a map-dependent Search dijit.
-         *
-         * @constructor
-         * @class
-         * @name js.LGMapSearchDijitContainer
-         * @extends js.LGMapDijitContainer
-         * @classdesc
-         */
-        constructor: function () {
-            this.ready = new Deferred();
-
-            this.setUpWaitForDependency("js.LGMapSearchDijitContainer");
-        },
-
-        /**
-         * Creates the dijit.
-         * @memberOf js.LGMapSearchDijitContainer#
-         * @override
-         */
-        createDijit: function () {
-            // Add search control
-            SearchDijitHelper.createSearchDijit(
-                this,
-                this.appConfig.itemInfo.itemData.operationalLayers,
-                this.appConfig.helperServices.geocode,
-                domConstruct.create("div", null, this.rootDiv),
-                true
-            );
-            this.ready.resolve(this);
-        }
-
-    });
-
-    //========================================================================================================================//
-
 });
 /* 
 This source is part of the git commit 
-a5c809f774e80d9a 2015-10-14 12:19:52 -0700
+7a5eb6fb8d3efca1 2015-10-28 19:38:41 -0700
 It is available from https://github.com/Esri/local-government-online-apps 
 */ 

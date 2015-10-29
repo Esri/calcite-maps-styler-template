@@ -790,8 +790,8 @@ define([
     //========================================================================================================================//
 
 });
-/*
-This source is part of the git commit
-3c10fb2e4532cc0f 2015-10-28 19:11:14 -0700
-It is available from https://github.com/Esri/local-government-online-apps
-*/
+/* 
+This source is part of the git commit 
+7a5eb6fb8d3efca1 2015-10-28 19:38:41 -0700
+It is available from https://github.com/Esri/local-government-online-apps 
+*/ 

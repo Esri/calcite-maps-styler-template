@@ -1,4 +1,4 @@
-﻿/*global define,dojo,esri,js,unescape,console,require */
+﻿/*global define,dojo,esri,js,unescape,console,require,jsapi_i18n:true */
 /*jslint browser:true,sloppy:true,nomen:true,unparam:true,plusplus:true,evil:true,regexp:true */
 /*
  | Copyright 2014 Esri
@@ -58,6 +58,7 @@ define([
             // any url parameters and any application specific configuration information.
             if (config) {
                 this.config = config;
+                jsapi_i18n = jsapiBundle;
 
                 // Get the UI elements code
                 this.uiElementsReady = this._getUIElements();

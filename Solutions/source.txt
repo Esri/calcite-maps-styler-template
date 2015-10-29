@@ -1,8 +1,10 @@
-Built on 10/14/2015 12:21:15.88 from
+Built on 10/28/2015 19:39:38.48 from
 repository local-government-online-apps
-branch new-search-widget
-commit a5c809f774e80d9a86c1fc7874ae99dc8d7397ed
+branch release
+commit 7a5eb6fb8d3efca1899becfefea331b0e13e5fbb
 Author: MikeTschudi <mtschudi@esri.com>
-Date:   Wed Oct 14 12:19:52 2015 -0700
+Date:   Wed Oct 28 19:24:03 2015 -0700
 
-    Fixed Search dijit display for single-source searching
+    Merge part of reversion of commit c7fae6df73faa7dffcef06f83fdd26af76e3c262
+    
+    (cherry picked from commit 14ce0b81aa7a8eb9ee48aa3c39cd8bd8c724fb1a)
