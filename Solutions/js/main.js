@@ -432,7 +432,6 @@ define([
 
                     // Add in some useful content from creating the map
                     this.config.map = this.map;
-                    this.config.mapInfo = this.mapInfo;
 
                     // Define the String.trim() method if missing (<= IE 8)
                     // By Pradeep Kumar Mishra
@@ -508,10 +507,6 @@ define([
                 // Here' we'll use it to update the application to match the specified color theme.
                 // console.log(this.config);
                 this.map = response.map;
-                this.mapInfo = {
-                    clickEventHandle: response.clickEventHandle,
-                    clickEventListener: response.clickEventListener
-                };
                 // make sure map is loaded
                 if (this.map.loaded) {
                     // do something with the map

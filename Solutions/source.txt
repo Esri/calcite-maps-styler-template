@@ -1,8 +1,8 @@
-Built on 10/29/2015 15:33:31.12 from
+Built on 10/30/2015  5:39:19.61 from
 repository local-government-online-apps
 branch release
-commit 7eb842916c84c4b9bc487c78d64be4e510ee98b8
+commit 8d0c83eaa2fe8cf8b7a2c261245b1d413ad165c4
 Author: MikeTschudi <mtschudi@esri.com>
-Date:   Thu Oct 29 15:32:46 2015 -0700
+Date:   Fri Oct 30 05:38:22 2015 -0700
 
-    Don't display map's info window when editing
+    Removed obsolete click event handling

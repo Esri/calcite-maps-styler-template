@@ -559,10 +559,9 @@ define([
          * (http://arcgis4localgov2.maps.arcgis.com/home/item.html?id=f232cac140a8495f9990cc9d2bb66dd9)
          */
         enablePopups: function () {
-            // Not usable until we've created the map
-            if (this.appConfig.mapInfo.clickEventListener) {
-                this.appConfig.mapInfo.clickEventHandle = on(this.appConfig.map, "click", this.appConfig.mapInfo.clickEventListener);
-            }
+            // OK to see the map's info window
+            // https://developers.arcgis.com/javascript/jsapi/map-amd.html#setinfowindowonclick
+            this.appConfig.map.setInfoWindowOnClick(true);
         },
 
         /**
@@ -573,10 +572,6 @@ define([
             // We don't want to see the map's info window
             // https://developers.arcgis.com/javascript/jsapi/map-amd.html#setinfowindowonclick
             this.appConfig.map.setInfoWindowOnClick(false);
-            // Not usable until we've created the map
-            if (this.appConfig.mapInfo.clickEventHandle) {
-                this.appConfig.mapInfo.clickEventHandle.remove();
-            }
         }
     });
 
@@ -585,6 +580,6 @@ define([
 });
 /* 
 This source is part of the git commit 
-7eb842916c84c4b9 2015-10-29 15:32:46 -0700
+8d0c83eaa2fe8cf8 2015-10-30 05:38:22 -0700
 It is available from https://github.com/Esri/local-government-online-apps 
 */ 
