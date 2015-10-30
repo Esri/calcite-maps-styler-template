@@ -2427,10 +2427,10 @@ tr + .media-row {
   vertical-align: middle; }
 
 .item-deleted {
-  margin-left: 48px; }
+  margin-left: 46px; }
 
 .item-inaccessible {
-  margin-left: 40px; }
+  margin-left: 29px; }
 
 .item-not-public {
   margin-left: 8px; }

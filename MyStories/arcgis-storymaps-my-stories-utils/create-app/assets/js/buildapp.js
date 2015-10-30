@@ -56,7 +56,7 @@ function loadBuilder(appType, layout) {
       }
     }
     else {
-      baseURL = app.cfg.DEFAULT_SHARING_URL;
+      baseURL = app.cfg.DEFAULT_PORTAL_URL;
     }
 
     baseURL = window.location.protocol + '//' + baseURL;
@@ -101,7 +101,7 @@ function buildApp(app, layout)
         By clicking "continue to (appname) builder" in this dialog, they can continue through.
 */
 function showContinueBuildDialog(app, layout) {
-   var baseURL = document.location.protocol + '//' + 'www.arcgis.com/',
+   var baseURL = '',
       layoutOpt = layout ? '&layout=' + layout : '',
       cookie = JSON.parse(getCookie('esri_auth')),
       appName = '',
@@ -109,15 +109,45 @@ function showContinueBuildDialog(app, layout) {
       continueString = 'Continue to builder',
       welcomeString = 'Welcome!';
 
-    if(cookie.portalApp) {
-      baseURL = window.location.protocol + '//' + window.location.hostname + '/';
-    }
-    // if it's an organization
-    else if(cookie.urlKey && cookie.customBaseUrl) {
-      baseURL = document.location.protocol + '//' + (cookie.urlKey + '.' + cookie.customBaseUrl).toLowerCase() + '/';
+
+    var hasProtocol = false;
+    if(window.customPortalURL) {
+      // if the customPortalURL has a protocol, respect that.
+      baseURL = window.customPortalURL;
+      hasProtocol = checkIfProtocol(baseURL);
+
+      if(!hasProtocol) {
+        // remove leading slashes, if any.
+        baseURL = baseURL.replace(/^\/\//, '');
+        baseURL = window.location.protocol + '//' + baseURL;
+      }
+      baseURL = baseURL.replace(/\/$/, '');
     }
 
-  url = baseURL + 'apps/' + app + '/?fromScratch' + layoutOpt;
+    else {
+      if(cookie) {
+        if(cookie.portalApp) {
+          baseURL = window.location.hostname;
+        }
+        // if it's an organization
+        else if(cookie.customBaseUrl) {
+          if(cookie.urlKey) {
+            baseURL = (cookie.urlKey + '.' + cookie.customBaseUrl).toLowerCase();
+          }
+          else {
+            baseURL = cookie.customBaseUrl.toLowerCase();
+          }
+        }
+      }
+      else {
+        baseURL = app.cfg.DEFAULT_PORTAL_URL;
+      }
+
+      baseURL = window.location.protocol + '//' + baseURL;
+    }
+
+
+  url = baseURL + '/apps/' + app + '/?fromScratch' + layoutOpt;
 
 
   if(app) {

@@ -2,12 +2,16 @@
 // can access parent window?
 	var parentWindow = {},
 		canAccessParent = true,
+		DEFAULT_PORTAL_URL = (/\?defaultPortalURL=(.*?)(?=(#|&|$))/i).exec(window.location.href)[1],
+		baseUrl = 'https://' + DEFAULT_PORTAL_URL,
+		DEFAULT_CLIENT_ID = (/\&defaultClientId=(.*?)(?=(#|&|$))/i).exec(window.location.href)[1],
 
 
 	onSignedIn = function() {
+		debugger
+
 		var callback = null,
 			cookie = null,
-			arcGISUrl = '',
 			canAccessParent = true,
 			preflang = fetchCookie('preflang'),
 			locale = preflang ? preflang : 'en';
@@ -20,9 +24,8 @@
 		}
 
 		if( window.location.href.match(/fromSignOut/) ) {
-			arcGISUrl = 'https://www.arcgis.com';
-			window.location.href = arcGISUrl + "/sharing/oauth2/authorize?client_id=arcgisonline&display=iframe" +
-			"&redirect_uri=" + parentWindow.location.origin + "/arcgis-storymaps-my-stories-utils/sign-in/signedin" +
+			window.location.href = baseUrl + "/sharing/oauth2/authorize?client_id=" + DEFAULT_CLIENT_ID + "&display=iframe" +
+			"&redirect_uri=" + parentWindow.location.origin + "/arcgis-storymaps-my-stories-utils/sign-in/signedin.html" + encodeURIComponent("?defaultPortalURL=" + DEFAULT_PORTAL_URL) +
 			"&response_type=token&display=iframe" +
 			"&parent=" + parentWindow.location.href + "&locale=" + locale;
 
@@ -68,7 +71,6 @@
 
 			if(canAccessParent) {
 				callback = parentWindow.signInManager.getSignedInCallback();
-				arcGISUrl = 'https://www.arcgis.com';
 
 				segueToParent(cookie, callback, locale);
 			}
@@ -76,7 +78,7 @@
 			else {
 				// check if it's ssl.
 				var request = new XMLHttpRequest();
-				var requestUrl = window.location.protocol + '//www.arcgis.com/sharing/rest/accounts/self?f=json&token=' + cookie.token;
+				var requestUrl = baseUrl + '/sharing/rest/accounts/self?f=json&token=' + cookie.token;
 
 				request.onreadystatechange = function() {
 					if(request.readyState === 4) {
@@ -105,7 +107,6 @@
 
 		else {
 			// public sign in
-
 			try {
 				var a = parentWindow.location.href;
 			}
@@ -120,12 +121,12 @@
 
 			// frame is on https, page is https
 			if(canAccessParent) {
-				window.location.href = 'https://www.arcgis.com/sharing/rest/oauth2/signout?redirect_uri=' + window.location.href + "&fromSignOut=true";
+				window.location.href = baseUrl + '/sharing/rest/oauth2/signout?redirect_uri=' + window.location.href + "&fromSignOut=true";
 			}
 			// frame is on https, page is http
 			else {
 				var windowHttp = window.location.href.replace((/(.*?):\/\//), 'http://');
-				window.location.href = 'https://www.arcgis.com/sharing/rest/oauth2/signout?redirect_uri=' + windowHttp + "&fromSignOut=true";
+				window.location.href = baseUrl + '/sharing/rest/oauth2/signout?redirect_uri=' + windowHttp + "&fromSignOut=true";
 			}
 		}
 	},
@@ -159,8 +160,8 @@
 		parentWindow.signInManager.hideSignInDialog(false);
 
 		if( window.location.href.match(/fromSignOut/) ) {
-			window.location.href = "https://www.arcgis.com/sharing/oauth2/authorize?client_id=arcgisonline&display=iframe" +
-			"&redirect_uri=" + parentWindow.location.origin + "/arcgis-storymaps-my-stories-utils/sign-in/signedin" +
+			window.location.href = baseUrl + "/sharing/oauth2/authorize?client_id=" + DEFAULT_CLIENT_ID + "&display=iframe" +
+			"&redirect_uri=" + parentWindow.location.origin + "/arcgis-storymaps-my-stories-utils/sign-in/signedin.html" + encodeURIComponent("?defaultPortalURL=" + DEFAULT_PORTAL_URL) +
 			"&response_type=token&display=iframe" +
 			"&parent=" + parentWindow.location.href + "&locale=" + locale;
 
@@ -176,7 +177,7 @@
 			}
 		}
 		else {
-			window.location.href = 'https://www.arcgis.com/sharing/rest/oauth2/signout?redirect_uri=' + window.location.href + "&fromSignOut=true";
+			window.location.href = baseUrl + '/sharing/rest/oauth2/signout?redirect_uri=' + window.location.href + "&fromSignOut=true";
 		}
 	},
 

@@ -15,8 +15,11 @@ define(['dojo/i18n!sign-in/nls/app.js?v=' + '0', 'lib-build/hbars!./templates/si
 
 
 		templatizeSignInDialog = function() {
+			var publicLink = 'https://' + app.cfg.DEFAULT_PORTAL_URL + '/home/createaccount.html';
+
 			$('#sign-in-wrapper').html(signInDialogTemplate({
-				labels: strings.signInDialog
+				labels: strings.signInDialog,
+				publicLink: publicLink
 			}));
 		},
 

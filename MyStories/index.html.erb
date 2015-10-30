@@ -1,0 +1,83 @@
+---
+title: My Stories
+css:
+ - assets/css/externalFonts.css
+ - assets/css/tailcoat.css
+ - arcgis-storymaps-my-stories-utils/create-app/assets/css/create-story.css
+ - arcgis-storymaps-my-stories-utils/assets/css/my-stories-utils.css
+ - arcgis-storymaps-my-stories-utils/sign-in/assets/css/signIn.css
+ - assets/css/my-stories/my-stories.css
+---
+
+
+<div id="builder-loading"></div>
+	<header id="my-stories-header"></header>
+
+	<div id="sign-in-container" class="custom-modal-container">
+		<div id="sign-in-wrapper" class="custom-modal-wrapper phone-hide"></div>
+		<div id="sign-in-unavailable-wrapper" class="dialog-unavailable custom-modal-wrapper phone-show"></div>
+	</div>
+
+	<section id="list-container">
+		<div id="scan-all-progress" class="progress-item container"></div>
+		<ul id="item-list" class="container"></ul>
+		<div id="page-loader" class="loading-container leader-2 trailer-2">
+			<h2 class="progress-title">&nbsp;</h2>
+			<div class="loader">
+				<span class="side side-left"><span class="fill"></span></span>
+				<span class="side side-right"><span class="fill"></span></span>
+			</div>
+		</div>
+		<div id="error-container" class="container leader-2 trailer-2"></div>
+		<div id="find-more-container" class="container"></div>
+	</section>
+	<div id="builder-container"></div>
+
+	<div id="modal-container-delete" class="modal-overlay"></div>
+	<div id="modal-container-share" class="modal-overlay"></div>
+	<div id="modal-container-image-picker" class="modal-overlay"></div>
+	<div id="modal-container-find-stories" class="modal-overlay"></div>
+	<div id="modal-container-create-story" class="modal-overlay">
+		<div id="create-story-modal" class="modal create-story-modal phone-hide" data-modal="create-story"></div>
+		<div id="no-create-story-modal" class="dialog-unavailable custom-modal-wrapper phone-show"></div>
+	</div>
+	<div id="modal-container-remove-layer" class="modal-overlay"></div>
+	<div id="map-container-hidden"></div>
+
+
+	<script>
+		window.builderIntegration = window.location.href.indexOf('itemId') !== -1;
+
+		if(window.builderIntegration) {
+			document.getElementsByTagName('html')[0].className += ' builder';
+
+			// load here...
+			var htmlString = '<h2 class="progress-title">&nbsp;</h2>' +
+			'<div class="loader">' +
+				'<span class="side side-left"><span class="fill"></span></span>' +
+				'<span class="side side-right"><span class="fill"></span></span>' +
+			'</div>';
+
+			document.getElementById('builder-loading').innerHTML = htmlString;
+		}
+	</script>
+
+	<script type="text/javascript">
+		window.myStoriesLanguage = 'en-us';
+		if(!window.myStoriesLanguage || typeof window.myStoriesLanguage !== 'string') {
+			window.myStoriesLanguage = 'en-us';
+		}
+	</script>
+
+	<script src="app/config.js"></script>
+	<script type="text/javascript">
+		var i18n,
+			engStrings;
+
+		require(["dojo/i18n!nls/app.js?v=" + app.version, "Handlebars", "my/MyStories", "my/helpers/EngStrings", "dojo/domReady!"], function(i18nApp, Handlebars, MyStories, engStringsObj){
+			i18n = i18nApp;
+			window.Handlebars = Handlebars;
+			engStrings = engStringsObj;
+			MyStories.init();
+		});
+	</script>

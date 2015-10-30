@@ -5,9 +5,8 @@ define(['sign-in/SignInDialog'], function(SignInDialog) {
 		signedInCallback = null,
 		cookie = null,
 		accountBaseUrl = null,
-		arcGISUrl = 'https://www.arcgis.com',
 		jquery = $,
-		app = '',
+		appObj = '',
 		layout = '',
 		fromBuildApp = false,
 
@@ -103,7 +102,7 @@ define(['sign-in/SignInDialog'], function(SignInDialog) {
 		}
 		else {
 			// make a call to get the information we need -- the user's first name
-			url = arcGISUrl + '/sharing/rest/portals/self';
+			url = 'https://' + app.cfg.DEFAULT_PORTAL_URL + '/sharing/rest/portals/self';
 			$.ajax(url, {
 				success: function(data, status, xhr) {
 					// if it wasn't actually a success
@@ -208,11 +207,11 @@ define(['sign-in/SignInDialog'], function(SignInDialog) {
 
 	showBuildSignInDialog = function(callback, inApp, inLayout) {
 		fromBuildApp = true;
-		app = inApp;
+		appObj = inApp;
 		layout = inLayout;
 
 		var cookieObj = {
-			app: app,
+			app: appObj,
 			layout: layout
 		};
 
@@ -245,8 +244,9 @@ define(['sign-in/SignInDialog'], function(SignInDialog) {
 
 		var originUrl = '',
 			layoutStr = layout ? layout : 'default',
-			urlSuffix = fromBuildApp ? '?buildApp=true&app=' + app + '&layout=' + layoutStr : '',
-			myStoriesPage = window.location.href.indexOf('/my-stories') === -1 ? false : true;
+			urlSuffix = fromBuildApp ? '&buildApp=true&app=' + appObj + '&layout=' + layoutStr : '',
+			myStoriesPage = window.location.href.indexOf('/my-stories') === -1 ? false : true,
+			portalDefaultStr = "?defaultPortalURL=" + app.cfg.DEFAULT_PORTAL_URL + "&defaultClientId=" + app.cfg.DEFAULT_CLIENT_ID;
 
 		// in IE10, window.location.origin doesn't exist. We'll account for that.
 		// props to tosbourne: http://tosbourn.com/a-fix-for-window-location-origin-in-internet-explorer/
@@ -270,8 +270,8 @@ define(['sign-in/SignInDialog'], function(SignInDialog) {
 		// the signedIn should be https if it gets here.
 		$("#sign-in-frame").attr(
 			"src",
-			arcGISUrl + "/sharing/oauth2/authorize?client_id=arcgisonline&display=iframe" +
-			"&redirect_uri=" + originUrl + "/arcgis-storymaps-my-stories-utils/sign-in/signedin" + encodeURIComponent(urlSuffix) +
+			"https://" + app.cfg.DEFAULT_PORTAL_URL + "/sharing/oauth2/authorize?client_id=" + app.cfg.DEFAULT_CLIENT_ID + "&display=iframe" +
+			"&redirect_uri=" + originUrl + "/arcgis-storymaps-my-stories-utils/sign-in/signedin.html" + encodeURIComponent(portalDefaultStr) + encodeURIComponent(urlSuffix) +
 			"&response_type=token&display=iframe" +
 			"&parent=" + window.location.href + "&locale=" + locale
 		);
