@@ -1,4 +1,4 @@
-define(['sign-in/SignInDialog'], function(SignInDialog) {
+define(['sign-in/SignInDialog', 'sign-in/PortalHelper'], function(SignInDialog, PortalHelper) {
 	'use strict';
 
 	var userInfo = null,
@@ -242,11 +242,13 @@ define(['sign-in/SignInDialog'], function(SignInDialog) {
 	*/
 	showSignInDialog = function(callback, expired) {
 
-		var originUrl = '',
+		// we should be doing the same check here as we are elsewhere -- first checking the URL and then using default if not on it...
+		var baseUrl = PortalHelper.getBaseUrl(null),
+			originUrl = '',
 			layoutStr = layout ? layout : 'default',
 			urlSuffix = fromBuildApp ? '&buildApp=true&app=' + appObj + '&layout=' + layoutStr : '',
 			myStoriesPage = window.location.href.indexOf('/my-stories') === -1 ? false : true,
-			portalDefaultStr = "?defaultPortalURL=" + app.cfg.DEFAULT_PORTAL_URL + "&defaultClientId=" + app.cfg.DEFAULT_CLIENT_ID;
+			portalDefaultStr = "?defaultPortalURL=" + baseUrl + "&defaultClientId=" + app.cfg.DEFAULT_CLIENT_ID;
 
 		// in IE10, window.location.origin doesn't exist. We'll account for that.
 		// props to tosbourne: http://tosbourn.com/a-fix-for-window-location-origin-in-internet-explorer/
@@ -270,7 +272,7 @@ define(['sign-in/SignInDialog'], function(SignInDialog) {
 		// the signedIn should be https if it gets here.
 		$("#sign-in-frame").attr(
 			"src",
-			"https://" + app.cfg.DEFAULT_PORTAL_URL + "/sharing/oauth2/authorize?client_id=" + app.cfg.DEFAULT_CLIENT_ID + "&display=iframe" +
+			"https://" + baseUrl + "/sharing/oauth2/authorize?client_id=" + app.cfg.DEFAULT_CLIENT_ID + "&display=iframe" +
 			"&redirect_uri=" + originUrl + "/arcgis-storymaps-my-stories-utils/sign-in/signedin.html" + encodeURIComponent(portalDefaultStr) + encodeURIComponent(urlSuffix) +
 			"&response_type=token&display=iframe" +
 			"&parent=" + window.location.href + "&locale=" + locale
