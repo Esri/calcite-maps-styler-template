@@ -114,7 +114,11 @@ html, body {
   line-height: 18px;
   height: 18px;
 }
-
+/*Editor*/
+.calcite .dijitTextBoxDisabled , .esriAttributeInspector .dijitTextBoxDisabled input{
+  background-color: #d3d3d3;
+  padding:0 !important;
+}
 /*Layer list dialog*/
 .layer-menu {
   width: 100%; }
