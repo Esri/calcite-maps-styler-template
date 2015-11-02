@@ -87,8 +87,8 @@
                 {
                     "type": "boolean",
                     "fieldName": "useClosestFacility",
-                    "label": "Use Closest Facility to improve accuracy of distances",
-                    "tooltip": "Use Closest Facility to improve accuracy of distances"
+                    "label": "Use Closest Facility to improve accuracy of distance calculation if several features are close together.",
+                    "tooltip": "Use Closest Facility to improve accuracy of distance calculation if several features are close together."
                 },
                 {
                     "type": "string",
