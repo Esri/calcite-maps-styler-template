@@ -1,9 +1,7 @@
 From git branch 
 release
-commit a5a0ca0b2fc06acd3652b46fba6832af37adb8ef
+commit 86f51a31831961cb04d8c41057e07430215f95e9
 Author: MikeTschudi <mtschudi@esri.com>
-Date:   Mon Oct 26 09:12:18 2015 -0700
+Date:   Mon Nov 2 10:12:45 2015 -0800
 
-    Added workaround for Firefox' scrollIntoView weakness
-    
-    #112
+    Updated to production JSAPI 3.15

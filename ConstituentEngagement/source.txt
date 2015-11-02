@@ -1,0 +1,12 @@
+From git repository 
+origin	git@github.com:Esri/crowdsource-reporter.git (fetch)
+origin	git@github.com:Esri/crowdsource-reporter.git (push)
+. 
+branch 
+develop
+. 
+commit 323ad80154f8754c91a5320e075e8800f1044ee4
+Author: MikeTschudi <mtschudi@esri.com>
+Date:   Mon Nov 2 10:19:56 2015 -0800
+
+    Updated to production JSAPI 3.15
