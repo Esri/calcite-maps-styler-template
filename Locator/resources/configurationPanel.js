@@ -137,6 +137,7 @@
         "title": "",
         "prompt": "Enter address",
         "color": "#80ab00",
-        "styleBasemap": true
+        "styleBasemap": true,
+        "useClosestFacility": false
     }
 }
