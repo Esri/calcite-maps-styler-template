@@ -600,8 +600,8 @@ define([
                 toSymbol: sym,
                 stopSymbol: sym,
                 routeSymbol: routeSym,
-                segmentSymbol: segmentSym
-                    //doNotFetchTravelModesFromOwningSystem: false
+                segmentSymbol: segmentSym,
+                doNotFetchTravelModesFromOwningSystem: true
             };
 
 
