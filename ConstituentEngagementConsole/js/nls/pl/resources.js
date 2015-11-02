@@ -27,10 +27,10 @@ define(
             created: "Data utworzenia", // Appears in web-map list description panel when it is set to true
             modified: "Ostatnia modyfikacja", // Appears in web-map list description panel when it is set to true
             description: "Opis", // Appears in web-map list description panel when it is set to true
-            snippet: "Summary", // Appears in web-map list description panel when it is set to true
+            snippet: "Podsumowanie", // Appears in web-map list description panel when it is set to true
             licenseInfo: "Ograniczenia dostępu i użytkowania", // Appears in web-map list description panel when it is set to true
             accessInformation: "Udostępniający zasoby", // Appears in web-map list description panel when it is set to true
-            tags: "Tags", // Appears in web-map list description panel when it is set to true
+            tags: "Znaczniki", // Appears in web-map list description panel when it is set to true
             numViews: "Liczba wyświetleń", // Appears in web-map list description panel when it is set to true
             avgRating: "Ocena", // Appears in web-map list description panel when it is set to true
             noWebMapInGroup: "Skonfigurowana grupa jest nieprawidłowa lub tej grupie nie udostępniono jeszcze żadnych elementów", // Appears when invalid group in configured or no web-map is available in that group

@@ -56,8 +56,8 @@ define(
         dataviewer: {
             noIssuesReported: "Keine Berichte verfügbar", // Appears when no issues are available in current extent
             photoAttachmentHeader: "Anlagen", // Appears when attachments are available for display in details tab
-            invalidSmallNumber: "Geben Sie einen ganzzahligen Wert ein ", // Shown when invalid integer value is entered while editing in data-viewer (valid integer value between -32768 and 32767)
-            invalidNumber: "Geben Sie einen ganzzahligen Wert ein", // Shown when invalid integer value is entered while editing in data-viewer (valid integer value between -2147483648 and 2147483647)
+            invalidSmallNumber: "Geben Sie einen Ganzzahlwert ein ", // Shown when invalid integer value is entered while editing in data-viewer (valid integer value between -32768 and 32767)
+            invalidNumber: "Geben Sie einen Ganzzahlwert ein", // Shown when invalid integer value is entered while editing in data-viewer (valid integer value between -2147483648 and 2147483647)
             invalidFloat: "Geben Sie eine Zahl ein", // Shown when invalid floating value is entered while editing in data-viewer (floating point value between -3.4E38 and 1.2E38)
             invalidDouble: "Geben Sie eine Zahl ein", // Shown when invalid double value is entered while editing in data-viewer (double value between -2.2E308 and 1.8E308)
             invalidString: "Geben Sie einen Wert ein", // Shown when user enters invalid string value
