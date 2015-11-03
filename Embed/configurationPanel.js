@@ -13,7 +13,7 @@
                "label":"Map Logo URL",
                "fieldName":"logoimage",
                "type":"string",
-               "tooltip":"Provide a url to your logo image. Defaults to Esri logo."
+               "tooltip":"Provide a url to your logo. Defaults to Esri logo."
             },
              {  
                "label":"Map Logo Link",
