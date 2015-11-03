@@ -10,10 +10,10 @@
                "type":"webmap"
             },
             {  
-               "label":"Map Logo:",
+               "label":"Map Logo URL",
                "fieldName":"logoimage",
                "type":"string",
-               "tooltip":"Defaults to Esri logo"
+               "tooltip":"Provide a url to your logo image. Defaults to Esri logo."
             },
              {  
                "label":"Map Logo Link",
