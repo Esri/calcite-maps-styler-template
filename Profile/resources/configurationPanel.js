@@ -27,94 +27,6 @@
             ]
         },
         {
-            "category": "Elevation Profile",
-            "fields": [
-                {
-                    "type": "string",
-                    "fieldName": "units",
-                    "tooltip": "Select elevation profile units",
-                    "label": "Elevation profile units",
-                    "options": [
-                        {
-                            "label": "Kilometers",
-                            "value": "metric"
-                        },
-                        {
-                            "label": "Miles",
-                            "value": "english"
-                        }
-                    ]
-                },
-                {
-                    "type": "string",
-                    "fieldName": "panelLocation",
-                    "label": "Elevation profile location",
-                    "tooltip": "Specify profile panel location",
-                    "options": [
-                        {
-                            "label": "Bottom Center",
-                            "value": "bottom-center"
-                        },
-                        {
-                            "label": "Top Center",
-                            "value": "top-center"
-                        }
-                    ]
-                },
-                {
-                    "type": "paragraph",
-                    "value": "This application uses the Elevation Analysis<a  target=\"_blank\" href=\"https://developers.arcgis.com/rest/elevation/api-reference/profilesync.htm\"> Profile Task</a> to generate the elevation values along the profile.  It can be configured to consume a custom profile task. Learn more about <a target=\"_blank\" href=\"http://blogs.esri.com/esri/arcgis/2014/08/26/setting-up-your-own-profile-service \">setting up your own Profile Service.</a> "
-                },
-                {
-                    "type": "string",
-                    "fieldName": "customProfileUrl",
-                    "label": "Custom profile url",
-                    "tooltip": "Custom profile service url",
-                    "placeHolder": "http://elevation.arcgis.com/arcgis/rest/services/Tools/ElevationSync/GPServer"
-                },
-                {
-                    "type": "paragraph",
-                    "value": "Specify custom colors for the elevation profile chart. Default color scheme is blue/gray"
-                },
-                {
-                    "type": "color",
-                    "fieldName": "axisFontColor",
-                    "tooltip": "Choose text color for the axis",
-                    "label": "Axis font color"
-                },
-                {
-                    "type": "color",
-                    "fieldName": "axisMajorTickColor",
-                    "tooltip": "Choose tick color",
-                    "label": "Axis major tick color"
-                },
-                {
-                    "type": "color",
-                    "fieldName": "elevationBottomColor",
-                    "tooltip": "Specify bottom elevation color",
-                    "label": "Elevation bottom color"
-                },
-                {
-                    "type": "color",
-                    "fieldName": "elevationTopColor",
-                    "tooltip": "Specify top elevation color",
-                    "label": "Elevation top color"
-                },
-                {
-                    "type": "color",
-                    "fieldName": "skyBottomColor",
-                    "tooltip": "Specify sky bottom color",
-                    "label": "Sky bottom color"
-                },
-                {
-                    "type": "color",
-                    "fieldName": "skyTopColor",
-                    "tooltip": "Specify sky top color",
-                    "label": "Sky top color"
-                }
-            ]
-        },
-        {
             "category": "Splash Screen",
             "fields": [
                 {
@@ -255,6 +167,94 @@
                             "esriGeometryPolygon"
                         ]
                     }
+                }
+            ]
+        },
+        {
+            "category": "Elevation Profile",
+            "fields": [
+                {
+                    "type": "string",
+                    "fieldName": "units",
+                    "tooltip": "Select elevation profile units",
+                    "label": "Elevation profile units",
+                    "options": [
+                        {
+                            "label": "Kilometers",
+                            "value": "metric"
+                        },
+                        {
+                            "label": "Miles",
+                            "value": "english"
+                        }
+                    ]
+                },
+                {
+                    "type": "string",
+                    "fieldName": "panelLocation",
+                    "label": "Elevation profile location",
+                    "tooltip": "Specify profile panel location",
+                    "options": [
+                        {
+                            "label": "Bottom Center",
+                            "value": "bottom-center"
+                        },
+                        {
+                            "label": "Top Center",
+                            "value": "top-center"
+                        }
+                    ]
+                },
+                {
+                    "type": "paragraph",
+                    "value": "This application uses the Elevation Analysis<a  target=\"_blank\" href=\"https://developers.arcgis.com/rest/elevation/api-reference/profilesync.htm\"> Profile Task</a> to generate the elevation values along the profile.  It can be configured to consume a custom profile task. Learn more about <a target=\"_blank\" href=\"http://blogs.esri.com/esri/arcgis/2014/08/26/setting-up-your-own-profile-service \">setting up your own Profile Service.</a> "
+                },
+                {
+                    "type": "string",
+                    "fieldName": "customProfileUrl",
+                    "label": "Custom profile url",
+                    "tooltip": "Custom profile service url",
+                    "placeHolder": "http://elevation.arcgis.com/arcgis/rest/services/Tools/ElevationSync/GPServer"
+                },
+                {
+                    "type": "paragraph",
+                    "value": "Specify custom colors for the elevation profile chart. Default color scheme is blue/gray"
+                },
+                {
+                    "type": "color",
+                    "fieldName": "axisFontColor",
+                    "tooltip": "Choose text color for the axis",
+                    "label": "Axis font color"
+                },
+                {
+                    "type": "color",
+                    "fieldName": "axisMajorTickColor",
+                    "tooltip": "Choose tick color",
+                    "label": "Axis major tick color"
+                },
+                {
+                    "type": "color",
+                    "fieldName": "elevationBottomColor",
+                    "tooltip": "Specify bottom elevation color",
+                    "label": "Elevation bottom color"
+                },
+                {
+                    "type": "color",
+                    "fieldName": "elevationTopColor",
+                    "tooltip": "Specify top elevation color",
+                    "label": "Elevation top color"
+                },
+                {
+                    "type": "color",
+                    "fieldName": "skyBottomColor",
+                    "tooltip": "Specify sky bottom color",
+                    "label": "Sky bottom color"
+                },
+                {
+                    "type": "color",
+                    "fieldName": "skyTopColor",
+                    "tooltip": "Specify sky top color",
+                    "label": "Sky top color"
                 }
             ]
         }
