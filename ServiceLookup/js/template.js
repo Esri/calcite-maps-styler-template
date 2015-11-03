@@ -517,15 +517,18 @@ define([
         }).then(lang.hitch(this, function (response) {
           // Iterate over the list of authorizedCrossOriginDomains
           // and add each as a javascript obj to the corsEnabledServers
+          var trustedHost;
           if(response.authorizedCrossOriginDomains && response.authorizedCrossOriginDomains.length){
             for(var i=0; i < response.authorizedCrossOriginDomains.length; i++){
-              esriConfig.defaults.io.corsEnabledServers.push({
+              trustedHost = response.authorizedCrossOriginDomains[i];
+                if(esriLang.isDefined(trustedHost)&& trustedHost.length > 0){
+                  esriConfig.defaults.io.corsEnabledServers.push({
                     host: response.authorizedCrossOriginDomains[i],
                     withCredentials: true
-                });
-            } 
+                  });
+                }
+             } 
           }
-
           var cfg = {};
           // save organization information
           cfg.orgInfo = response;
