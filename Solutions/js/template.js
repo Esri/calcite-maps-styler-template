@@ -511,17 +511,20 @@ define([
                     },
                     callbackParamName: "callback"
                 }).then(lang.hitch(this, function (response) {
-                    var i, cfg = {};
+                    var i, cfg = {}, trustedHost;
 
                     if (this.templateConfig.webTierSecurity) {
                         // Iterate over the list of authorizedCrossOriginDomains
                         // and add each as a javascript obj to the corsEnabledServers
                         if (response.authorizedCrossOriginDomains && response.authorizedCrossOriginDomains.length) {
                             for (i = 0; i < response.authorizedCrossOriginDomains.length; i++) {
-                                esriConfig.defaults.io.corsEnabledServers.push({
-                                    host: response.authorizedCrossOriginDomains[i],
-                                    withCredentials: true
-                                });
+                                trustedHost = response.authorizedCrossOriginDomains[i];
+                                if(esriLang.isDefined(trustedHost)&& trustedHost.length > 0){
+                                    esriConfig.defaults.io.corsEnabledServers.push({
+                                        host: response.authorizedCrossOriginDomains[i],
+                                        withCredentials: true
+                                    });
+                                }
                             }
                         }
                     }

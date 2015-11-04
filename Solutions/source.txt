@@ -1,8 +1,8 @@
-Built on 11/02/2015 10:27:10.71 from
+Built on 11/03/2015 16:52:44.23 from
 repository local-government-online-apps
 branch release
-commit d7191cf9b2c0f2660999adde86a3edd157810e87
+commit 2003bc71b781113c6e3b54f2e7c0df77a02453c4
 Author: MikeTschudi <mtschudi@esri.com>
-Date:   Mon Nov 2 10:26:17 2015 -0800
+Date:   Tue Nov 3 16:52:26 2015 -0800
 
-    Updated to production JSAPI 3.15
+    Shield corsEnabledServers from invalid values
