@@ -339,6 +339,9 @@ We nix out the before (left) pseudo element and instead add the stylings to the 
 .alert {
   font-size: 0.9rem; }
 
+.tooltip:hover .tooltip-content, .tooltip.show-tooltip .tooltip-content {
+  display: none; }
+
 .custom-scrollbar {
   scrollbar-shadow-color: #D1E9F9;
   scrollbar-face-color: #D1E9F9;
@@ -2628,6 +2631,41 @@ tr + .media-row {
   line-height: 1.5;
   padding: 5px 10px;
   text-align: left; }
+
+.ui-tooltip {
+  background: #222;
+  border-radius: 4px;
+  border: none;
+  box-shadow: none;
+  color: white;
+  position: relative;
+  display: inline-block;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  padding: 3px 10px 5px;
+  text-align: left; }
+
+.ui-helper-hidden-accessible {
+  display: none; }
+
+.tooltip-arrow {
+  position: absolute;
+  left: 50%;
+  width: 40px;
+  margin-left: -20px;
+  bottom: -15px;
+  height: 15px; }
+
+.tooltip-arrow:after {
+  content: '';
+  position: absolute;
+  height: 0;
+  width: 0;
+  left: 50%;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 5px solid #222;
+  margin-left: -2px; }
 
 html.builder {
   overflow-y: auto;

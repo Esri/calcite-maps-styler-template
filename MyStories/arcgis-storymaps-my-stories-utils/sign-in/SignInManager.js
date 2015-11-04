@@ -102,7 +102,7 @@ define(['sign-in/SignInDialog', 'sign-in/PortalHelper'], function(SignInDialog, 
 		}
 		else {
 			// make a call to get the information we need -- the user's first name
-			url = 'https://' + app.cfg.DEFAULT_PORTAL_URL + '/sharing/rest/portals/self';
+			url = accountBaseUrl + '/sharing/rest/portals/self';
 			$.ajax(url, {
 				success: function(data, status, xhr) {
 					// if it wasn't actually a success
@@ -170,7 +170,8 @@ define(['sign-in/SignInDialog', 'sign-in/PortalHelper'], function(SignInDialog, 
 	renderHeader = function() {
 		var cookie = null,
 			isSignedIn = checkIfSignedIn(),
-			buildCookie = fetchCookie('buildApp');
+			buildCookie = fetchCookie('buildApp'),
+			portalHttps = '';
 		// what you really want is the cookie. IF there, you want it so you ahve the user name. If not there, won't matter.
 		if(isSignedIn) {
 			if(buildCookie) {
@@ -183,21 +184,14 @@ define(['sign-in/SignInDialog', 'sign-in/PortalHelper'], function(SignInDialog, 
 			}
 
 			cookie = getUserCookie();
+			accountBaseUrl = PortalHelper.getBaseUrl(cookie);
 			showSignedInHeader(cookie);
-
-			if(cookie.portalApp) {
-				accountBaseUrl = window.location.hostname;
-			}
-			else if(cookie.urlKey) {
-				accountBaseUrl = (cookie.urlKey + '.' + cookie.customBaseUrl).toLowerCase();
-			}
-			else {
-				accountBaseUrl = cookie.customBaseUrl.toLowerCase();
-			}
 
 			updateAgolLinkOnClick(accountBaseUrl);
 
-			$('#sign-out-link').attr('href', 'https://' + accountBaseUrl + '/sharing/rest/oauth2/signout?redirect_uri=' + window.location.href);
+			portalHttps = PortalHelper.forceHttpsPortalUrl(accountBaseUrl);
+
+			$('#sign-out-link').attr('href', portalHttps + '/sharing/rest/oauth2/signout?redirect_uri=' + window.location.href);
 		}
 		else {
 			showSignInButton();
@@ -244,11 +238,12 @@ define(['sign-in/SignInDialog', 'sign-in/PortalHelper'], function(SignInDialog, 
 
 		// we should be doing the same check here as we are elsewhere -- first checking the URL and then using default if not on it...
 		var baseUrl = PortalHelper.getBaseUrl(null),
+			baseUrlHttps = PortalHelper.forceHttpsPortalUrl(baseUrl),
 			originUrl = '',
 			layoutStr = layout ? layout : 'default',
 			urlSuffix = fromBuildApp ? '&buildApp=true&app=' + appObj + '&layout=' + layoutStr : '',
 			myStoriesPage = window.location.href.indexOf('/my-stories') === -1 ? false : true,
-			portalDefaultStr = "?defaultPortalURL=" + baseUrl + "&defaultClientId=" + app.cfg.DEFAULT_CLIENT_ID;
+			portalDefaultStr = "?defaultPortalURL=" + unProtocolUrl(baseUrl) + "&defaultClientId=" + app.cfg.DEFAULT_CLIENT_ID;
 
 		// in IE10, window.location.origin doesn't exist. We'll account for that.
 		// props to tosbourne: http://tosbourn.com/a-fix-for-window-location-origin-in-internet-explorer/
@@ -272,7 +267,7 @@ define(['sign-in/SignInDialog', 'sign-in/PortalHelper'], function(SignInDialog, 
 		// the signedIn should be https if it gets here.
 		$("#sign-in-frame").attr(
 			"src",
-			"https://" + baseUrl + "/sharing/oauth2/authorize?client_id=" + app.cfg.DEFAULT_CLIENT_ID + "&display=iframe" +
+			baseUrlHttps + "/sharing/oauth2/authorize?client_id=" + app.cfg.DEFAULT_CLIENT_ID + "&display=iframe" +
 			"&redirect_uri=" + originUrl + "/arcgis-storymaps-my-stories-utils/sign-in/signedin.html" + encodeURIComponent(portalDefaultStr) + encodeURIComponent(urlSuffix) +
 			"&response_type=token&display=iframe" +
 			"&parent=" + window.location.href + "&locale=" + locale

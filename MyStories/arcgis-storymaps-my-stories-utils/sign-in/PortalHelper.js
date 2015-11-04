@@ -98,11 +98,34 @@ define([], function() {
 		}
 
 		return isStoryMapsDomain;
+	},
+
+
+	/**
+	@summary Takes a protocoled
+	*/
+	forceHttpsPortalUrl = function(portalUrl) {
+		var portalHttps = '';
+
+		if(portalUrl.match(/^.+:\/\//)) {
+			portalHttps = portalUrl.replace(/^.+:\/\//, 'https://');
+		}
+
+		else if(portalUrl.match(/^\/\//)) {
+			portalHttps = portalUrl.replace(/^\/\//, 'https://');
+		}
+
+		else {
+			portalHttps = 'https://' + portalUrl;
+		}
+
+		return portalHttps;
 	};
 
 
 
 	return {
-		getBaseUrl: getBaseUrl
+		getBaseUrl: getBaseUrl,
+		forceHttpsPortalUrl: forceHttpsPortalUrl
 	};
 });
