@@ -1412,8 +1412,8 @@ define([
                 this.map.infoWindow.setContent(div);
                 this.map.infoWindow.show(pt);
             }
-            var newEvt = lang.mixin({}, evt);
-            newEvt.stopPropagation();
+            // var newEvt = lang.mixin({}, evt);
+            // newEvt.stopPropagation();
         },
 
         // Use Click Location
