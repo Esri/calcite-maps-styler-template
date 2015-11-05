@@ -1,4 +1,4 @@
-define(['sign-in/PortalHelper'], function(PortalHelper) {
+define(['dojo/i18n!./nls/app.js?v=' + app.cfg.version, 'sign-in/PortalHelper'], function(createStoryi18n, PortalHelper) {
   'use strict';
 
   function getCookie(c_name)
@@ -75,8 +75,8 @@ define(['sign-in/PortalHelper'], function(PortalHelper) {
         baseUrl = PortalHelper.getBaseUrl(cookie),
         appName = '',
         url = '',
-        continueString = 'Continue to builder',
-        welcomeString = 'Welcome!';
+        continueString = createStoryi18n.continueBuildDialog.continueToBuilder,
+        welcomeString = createStoryi18n.continueBuildDialog.welcome;
 
     url = baseUrl + '/apps/' + app + '/?fromScratch' + layoutOpt;
 
@@ -100,6 +100,8 @@ define(['sign-in/PortalHelper'], function(PortalHelper) {
           break;
       }
     }
+
+    continueString = continueString.replace(/{{APP_NAME}}/, appName);
 
 
     var modalString = '<div id="continue-build-container" class="custom-modal-container">' +

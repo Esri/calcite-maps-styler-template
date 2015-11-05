@@ -95,14 +95,15 @@ define(['sign-in/SignInDialog', 'sign-in/PortalHelper'], function(SignInDialog, 
 	@summary Shows the logged-in dropdown (shows the username on the nav bar), and hides the "sign in" button.
 	*/
 	showSignedInHeader = function(cookie) {
-		var url = '';
+		var url = '',
+			httpsPortalUrl = PortalHelper.forceHttpsPortalUrl(accountBaseUrl);
 		// check if the user information is already there, or if we need to make a call to get it.
 		if(userInfo) {
 			showLoggedInDropdown(userInfo.firstName || userInfo.username);
 		}
 		else {
 			// make a call to get the information we need -- the user's first name
-			url = accountBaseUrl + '/sharing/rest/portals/self';
+			url = httpsPortalUrl + '/sharing/rest/portals/self';
 			$.ajax(url, {
 				success: function(data, status, xhr) {
 					// if it wasn't actually a success

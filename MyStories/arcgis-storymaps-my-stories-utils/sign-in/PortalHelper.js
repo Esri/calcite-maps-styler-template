@@ -21,7 +21,7 @@ define([], function() {
 		if(!app.cfg.customPortalUrl) {
 			if(cookie) {
 				if(cookie.portalApp) {
-					baseUrl = window.location.hostname;
+					baseUrl = getBaseUrlFromUrl();
 				}
 				else if(cookie.urlKey && cookie.customBaseUrl) {
 					baseUrl = (cookie.urlKey + '.' + cookie.customBaseUrl).toLowerCase();
@@ -49,27 +49,12 @@ define([], function() {
 	@summary Gets the base URL when a user is signed out. Currently, nothing is done differently if the user is on the storymaps.arcgis.com domain.
 	*/
 	getSignedOutBaseUrl = function() {
-		var baseUrl = '',
-			appIndex = 0,
-			homeIndex = 0;
+		var baseUrl = '';
 
 		// if there is no custom portal URL set, check the URL to see if there is an org name.
 		if(!app.cfg.customPortalUrl) {
-			appIndex = window.location.href.indexOf('/apps/');
-			homeIndex = window.location.href.indexOf('/home/');
-
-			// check for AGOL
-			if(appIndex !== -1) {
-				baseUrl = window.location.href.slice(0, appIndex);
-			}
-			// check for portal
-			else if (homeIndex !== -1) {
-				baseUrl = window.location.href.slice(0, homeIndex);
-			}
-			// if there is neither, resort to the default URL.
-			else {
-				baseUrl = '//' + app.cfg.DEFAULT_PORTAL_URL;
-			}
+			baseUrl = getBaseUrlFromUrl();
+			baseUrl = '//' + baseUrl;
 		}
 		else {
 			baseUrl = app.cfg.customPortalUrl;
@@ -77,6 +62,28 @@ define([], function() {
 
 		if(!baseUrl.match(/^http/)) {
 			baseUrl = window.location.protocol + baseUrl;
+		}
+
+		return baseUrl;
+	},
+
+
+	getBaseUrlFromUrl = function() {
+		var appIndex = window.location.href.indexOf('/apps/'),
+			homeIndex = window.location.href.indexOf('/home/'),
+			baseUrl = '';
+
+		// check for AGOL
+		if(appIndex !== -1) {
+			baseUrl = window.location.href.slice(0, appIndex);
+		}
+		// check for portal
+		else if (homeIndex !== -1) {
+			baseUrl = window.location.href.slice(0, homeIndex);
+		}
+		// if there is neither, resort to the default URL.
+		else {
+			baseUrl = app.cfg.DEFAULT_PORTAL_URL;
 		}
 
 		return baseUrl;

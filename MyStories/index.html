@@ -60,13 +60,13 @@
 
 			document.getElementById('builder-loading').innerHTML = htmlString;
 		}
-	</script>
 
-	<script type="text/javascript">
-		window.myStoriesLanguage = 'en-us';
-		if(!window.myStoriesLanguage || typeof window.myStoriesLanguage !== 'string') {
-			window.myStoriesLanguage = 'en-us';
-		}
+
+		// the rest of app.cfg is added to in app/config.js
+		var app = {
+			version: '1.4.0-110415'
+		};
+
 	</script>
 
 	<script src="app/config.js"></script>
@@ -74,7 +74,7 @@
 		var i18n,
 			engStrings;
 
-		require(["dojo/i18n!nls/app.js?v=" + app.version, "Handlebars", "my/MyStories", "my/helpers/EngStrings", "dojo/domReady!"], function(i18nApp, Handlebars, MyStories, engStringsObj){
+		require(["dojo/i18n!nls/app.js?v=" + app.cfg.version, "Handlebars", "my/MyStories", "my/helpers/EngStrings", "dojo/domReady!"], function(i18nApp, Handlebars, MyStories, engStringsObj){
 			i18n = i18nApp;
 			window.Handlebars = Handlebars;
 			engStrings = engStringsObj;

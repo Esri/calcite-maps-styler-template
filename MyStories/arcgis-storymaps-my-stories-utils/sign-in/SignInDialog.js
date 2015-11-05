@@ -1,5 +1,5 @@
 
-define(['dojo/i18n!sign-in/nls/app.js?v=' + '0', 'lib-build/hbars!./templates/signInDialog', 'lib-build/hbars!./templates/signInUnavailable'],
+define(['dojo/i18n!sign-in/nls/app.js?v=' + app.cfg.version, 'lib-build/hbars!./templates/signInDialog', 'lib-build/hbars!./templates/signInUnavailable'],
 	function(signIni18n, signInDialogTemplate, signInUnavailableTemplate) {
 	'use strict';
 

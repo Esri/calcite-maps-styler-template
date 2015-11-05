@@ -1,5 +1,5 @@
-define(['dojo/i18n!./nls/app.js?v=' + '0', 'lib-build/hbars!./templates/createStory', 'lib-build/hbars!./templates/finalApp',
-	'lib-build/hbars!./templates/noCreateStory', 'lib-build/hbars!./templates/question', 'create-app/assets/js/buildapp'],
+define(['dojo/i18n!./nls/app.js?v=' + app.cfg.version, 'lib-build/hbars!./templates/createStory', 'lib-build/hbars!./templates/finalApp',
+	'lib-build/hbars!./templates/noCreateStory', 'lib-build/hbars!./templates/question', 'create-app/buildApp'],
 	function(createStoryi18n, createStoryTemplate, finalAppTemplate, noCreateStoryTemplate, questionTemplate, buildApp) {
 	'use strict';
 	// click on large pictures takes to builder

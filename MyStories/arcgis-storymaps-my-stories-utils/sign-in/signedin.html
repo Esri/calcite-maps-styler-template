@@ -10,6 +10,7 @@
 	onSignedIn = function() {
 		console.log('portal url: ' + DEFAULT_PORTAL_URL);
 		console.log('clientId: ' + DEFAULT_CLIENT_ID);
+
 		var callback = null,
 			cookie = null,
 			canAccessParent = true,
@@ -25,7 +26,8 @@
 
 		if( window.location.href.match(/fromSignOut/) ) {
 			window.location.href = baseUrl + "/sharing/oauth2/authorize?client_id=" + DEFAULT_CLIENT_ID + "&display=iframe" +
-			"&redirect_uri=" + parentWindow.location.origin + "/arcgis-storymaps-my-stories-utils/sign-in/signedin.html" + encodeURIComponent("?defaultPortalURL=" + DEFAULT_PORTAL_URL) +
+			"&redirect_uri=" + parentWindow.location.origin + "/arcgis-storymaps-my-stories-utils/sign-in/signedin.html" + encodeURIComponent("?defaultPortalURL=" + DEFAULT_PORTAL_URL +
+			"&defaultClientId=" + DEFAULT_CLIENT_ID) +
 			"&response_type=token&display=iframe" +
 			"&parent=" + parentWindow.location.href + "&locale=" + locale;
 
@@ -121,12 +123,13 @@
 
 			// frame is on https, page is https
 			if(canAccessParent) {
-				window.location.href = baseUrl + '/sharing/rest/oauth2/signout?redirect_uri=' + window.location.href + "&fromSignOut=true";
+				window.location.href = baseUrl + '/sharing/rest/oauth2/signout?redirect_uri=' + encodeURIComponent(window.location.href + "&fromSignOut=true");
 			}
 			// frame is on https, page is http
 			else {
 				var windowHttp = window.location.href.replace((/(.*?):\/\//), 'http://');
-				window.location.href = baseUrl + '/sharing/rest/oauth2/signout?redirect_uri=' + windowHttp + "&fromSignOut=true";
+
+				window.location.href = baseUrl + '/sharing/rest/oauth2/signout?redirect_uri=' + encodeURIComponent(windowHttp + "&fromSignOut=true");
 			}
 		}
 	},
@@ -138,7 +141,6 @@
 		if(httpsFlag) {
 			urlFlag = '?redirectHttps=true';
 		}
-
 		window.location.href = window.location.href.replace((/(.*?):\/\//), 'http://') + urlFlag;
 	},
 
@@ -159,15 +161,6 @@
 		parentWindow.signInManager.renderHeader();
 		parentWindow.signInManager.hideSignInDialog(false);
 
-		if( window.location.href.match(/fromSignOut/) ) {
-			window.location.href = baseUrl + "/sharing/oauth2/authorize?client_id=" + DEFAULT_CLIENT_ID + "&display=iframe" +
-			"&redirect_uri=" + parentWindow.location.origin + "/arcgis-storymaps-my-stories-utils/sign-in/signedin.html" + encodeURIComponent("?defaultPortalURL=" + DEFAULT_PORTAL_URL) +
-			"&response_type=token&display=iframe" +
-			"&parent=" + parentWindow.location.href + "&locale=" + locale;
-
-			return;
-		}
-
 		if(cookie) {
 			parentWindow.signInManager.renderHeader();
 			parentWindow.signInManager.hideSignInDialog(false);
@@ -177,7 +170,7 @@
 			}
 		}
 		else {
-			window.location.href = baseUrl + '/sharing/rest/oauth2/signout?redirect_uri=' + window.location.href + "&fromSignOut=true";
+			window.location.href = baseUrl + '/sharing/rest/oauth2/signout?redirect_uri=' + encodeURIComponent(window.location.href + "&fromSignOut=true");
 		}
 	},
 

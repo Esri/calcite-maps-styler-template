@@ -1,7 +1,6 @@
-var app = {};
 
 app.cfg = {
-	version: '1.0',
+	version: app.version,
 	isProduction: true,
 	jsApiUrl: '//js.arcgis.com/3.15/init.js',
 	facebook: {
@@ -29,11 +28,29 @@ var loadJS = function(url, isExternal) {
 		url = document.location.protocol == 'file:' ? 'http:' + url : url;
 	}
 	else {
-		url += '?v=' + app.version + (!app.isProduction ? '&_=' + new Date().getTime() : '');
+		url += '?v=' + app.cfg.version + (!app.cfg.isProduction ? '&_=' + new Date().getTime() : '');
 	}
 
 	/* jshint -W060 */
 	document.write("<script language='javascript' type='text/javascript' src='" + url + "'><\/script>");
+};
+
+
+var getLanguage = function() {
+	var language = '';
+	// should take the URL language.
+
+	if(window.builderIntegration) {
+		if (window.location.search.match(/locale=([\w\-]+)/)) {
+			language = RegExp.$1;
+		}
+	}
+
+	if(!language) {
+		language = 'en';
+	}
+
+	return language;
 };
 
 
@@ -75,9 +92,8 @@ window.dojoConfig = {
 	aliases: [
 		['text', 'lib-build/text']
 	],
-	// TODO
-	// read the cookie -- which locale it is (common across arcgis.com domain)
-	locale: window.myStoriesLanguage
+
+	locale: getLanguage()
 };
 
 if(window.dojoConfig.locale === 'en') {
