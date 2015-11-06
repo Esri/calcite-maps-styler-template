@@ -1,4 +1,4 @@
-﻿define({
+﻿define(
 	 ({
 		signInDialog: {
 			title: "Войти в Story Maps",

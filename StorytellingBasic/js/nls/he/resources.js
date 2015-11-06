@@ -17,11 +17,11 @@
 define(
    ({
     map: {
-      error: "כן_Unable to create map_______ש",
-      generalError: "כן_Error___ש"
+      error: "לא ניתן ליצור מפה",
+      generalError: "שגיאה"
     },
     legendToggle:{
-        label: "כן_MAP LEGEND____ש"
+        label: "מקרא מפה"
     }
   })
 );

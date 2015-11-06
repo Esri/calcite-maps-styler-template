@@ -17,11 +17,11 @@
 define(
    ({
     map: {
-      error: "å_Unable to create map_______ø",
-      generalError: "å_Error___ø"
+      error: "Kan ikke opprette kart",
+      generalError: "Feil"
     },
     legendToggle:{
-        label: "å_MAP LEGEND____ø"
+        label: "TEGNFORKLARING PÅ KART"
     }
   })
 );

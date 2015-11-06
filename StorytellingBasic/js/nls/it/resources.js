@@ -17,11 +17,11 @@
 define(
    ({
     map: {
-      error: "é_Unable to create map_______È",
-      generalError: "é_Error___È"
+      error: "Impossibile creare la mappa",
+      generalError: "Errore"
     },
     legendToggle:{
-        label: "é_MAP LEGEND____È"
+        label: "LEGENDA MAPPA"
     }
   })
 );

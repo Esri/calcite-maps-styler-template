@@ -17,11 +17,11 @@
 define(
    ({
     map: {
-      error: "Ĳ_Unable to create map_______ä",
-      generalError: "Ĳ_Error___ä"
+      error: "Kaart kan niet gemaakt worden",
+      generalError: "Fout"
     },
     legendToggle:{
-        label: "Ĳ_MAP LEGEND____ä"
+        label: "KAARTLEGENDA"
     }
   })
 );

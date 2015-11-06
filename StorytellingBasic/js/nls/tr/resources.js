@@ -17,11 +17,11 @@
 define(
    ({
     map: {
-      error: "ı_Unable to create map_______İ",
-      generalError: "ı_Error___İ"
+      error: "Harita oluşturulamıyor",
+      generalError: "Hata"
     },
     legendToggle:{
-        label: "ı_MAP LEGEND____İ"
+        label: "HARİTA GÖSTERİMİ"
     }
   })
 );

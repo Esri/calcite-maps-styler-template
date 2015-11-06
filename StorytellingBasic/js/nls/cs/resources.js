@@ -17,11 +17,11 @@
 define(
    ({
     map: {
-      error: "Ř_Unable to create map_______ů",
-      generalError: "Ř_Error___ů"
+      error: "Nelze vytvořit mapu",
+      generalError: "Chyba"
     },
     legendToggle:{
-        label: "Ř_MAP LEGEND____ů"
+        label: "LEGENDA MAPY"
     }
   })
 );

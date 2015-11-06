@@ -17,11 +17,11 @@
 define(
    ({
     map: {
-      error: "Ж_Unable to create map_______Я",
-      generalError: "Ж_Error___Я"
+      error: "Не удалось создать карту",
+      generalError: "Ошибка"
     },
     legendToggle:{
-        label: "Ж_MAP LEGEND____Я"
+        label: "ЛЕГЕНДА КАРТЫ"
     }
   })
 );

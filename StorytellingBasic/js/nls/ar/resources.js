@@ -17,11 +17,11 @@
 define(
    ({
     map: {
-      error: "بيت_Unable to create map_______لاحقة",
-      generalError: "بيت_Error___لاحقة"
+      error: "يتعذر إنشاء الخريطة",
+      generalError: "خطأ"
     },
     legendToggle:{
-        label: "بيت_MAP LEGEND____لاحقة"
+        label: "وسيلة إيضاح الخريطة"
     }
   })
 );

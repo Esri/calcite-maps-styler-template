@@ -17,11 +17,11 @@
 define(
    ({
     map: {
-      error: "Į_Unable to create map_______š",
-      generalError: "Į_Error___š"
+      error: "Žemėlapio sukurti nepavyko",
+      generalError: "Klaida"
     },
     legendToggle:{
-        label: "Į_MAP LEGEND____š"
+        label: "ŽEMĖLAPIO LEGENDA"
     }
   })
 );

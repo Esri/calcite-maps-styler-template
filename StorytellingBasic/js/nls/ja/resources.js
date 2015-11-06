@@ -17,11 +17,11 @@
 define(
    ({
     map: {
-      error: "須_Unable to create map_______鷗",
-      generalError: "須_Error___鷗"
+      error: "マップを作成できません",
+      generalError: "エラー"
     },
     legendToggle:{
-        label: "須_MAP LEGEND____鷗"
+        label: "マップの凡例"
     }
   })
 );

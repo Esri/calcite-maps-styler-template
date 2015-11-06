@@ -17,11 +17,11 @@
 define(
    ({
     map: {
-      error: "Đ_Unable to create map_______ớ",
-      generalError: "Đ_Error___ớ"
+      error: "Δεν είναι δυνατή η δημιουργία χάρτη",
+      generalError: "Σφάλμα"
     },
     legendToggle:{
-        label: "Đ_MAP LEGEND____ớ"
+        label: "ΥΠΟΜΝΗΜΑ ΧΑΡΤΗ"
     }
   })
 );

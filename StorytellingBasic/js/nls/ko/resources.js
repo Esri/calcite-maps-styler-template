@@ -17,11 +17,11 @@
 define(
    ({
     map: {
-      error: "한_Unable to create map_______빠",
-      generalError: "한_Error___빠"
+      error: "맵을 생성할 수 없음",
+      generalError: "오류"
     },
     legendToggle:{
-        label: "한_MAP LEGEND____빠"
+        label: "맵 범례"
     }
   })
 );

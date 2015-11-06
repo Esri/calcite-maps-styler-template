@@ -17,11 +17,11 @@
 define(
    ({
     map: {
-      error: "ķ_Unable to create map_______ū",
-      generalError: "ķ_Error___ū"
+      error: "Nevar izveidot karti",
+      generalError: "Kļūda"
     },
     legendToggle:{
-        label: "ķ_MAP LEGEND____ū"
+        label: "KARTES LEĢENDA"
     }
   })
 );

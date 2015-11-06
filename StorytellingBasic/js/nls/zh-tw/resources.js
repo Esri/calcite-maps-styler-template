@@ -17,11 +17,11 @@
 define(
    ({
     map: {
-      error: "試_Unable to create map_______驗",
-      generalError: "試_Error___驗"
+      error: "無法建立地圖",
+      generalError: "錯誤"
     },
     legendToggle:{
-        label: "試_MAP LEGEND____驗"
+        label: "地圖圖例"
     }
   })
 );

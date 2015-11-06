@@ -20,7 +20,7 @@
 			clearAll: "Tümünü sil",
 			clearSearch: "Aramayı temizler",
 			logOut: "Oturumu Kapat",
-			mainQuote: "Hikaye anlatımı günümüzde fikirleri dünyaya sunmanın en güçlü yoludur.",
+			mainQuote: "Hikaye anlatımı, günümüzde fikirleri dünyaya sunmanın en güçlü yoludur.",
 			quoteSource: "Robert McKee",
 			checkYourStories: "Hikayeleri İşaretle",
 			createStory: "Hikaye Oluştur",
@@ -32,7 +32,7 @@
 		},
 		deleteModal: {
 			title: "Silmeyi Onayla",
-			warningText: "Bu Â hikayesini silmek istediğinizden emin misiniz? İşlemi geri alamazsınız.",
+			warningText: "Bu Â hikayesini silmek istediğinizden emin misiniz? İşlemi geri alamazsınız.",
 			deleteText: "Sil",
 			cancel: "İptal"
 		},
@@ -40,7 +40,7 @@
 			loadingText: "Hikayeleriniz yükleniyor..."
 		},
 		cantFindStories: {
-			whereAreStories: "Hikayenizi görmüyor musunuz?",
+			whereAreStories: "Hikayenizi göremiyor musunuz?",
 			notSeeExplanation: "Hikayelerim yalnızca {{STORY_MAP_TOUR}}, {{JOURNAL}}, {{MAP_SERIES}} ve {{SWIPE_SPYGLASS}} uygulamaları kullanılarak oluşturulan ve ArcGIS Online\'da barındırılan hikaye haritalarını listeler. Daha fazla bilgi için {{FAQ}} bölümümüzü inceleyin.",
 			faq: "SSS",
 			followingStoriesToUpdate: "Uygulamalarımızın önceki sürümleri ile oluşturulan aşağıdaki hikayelerin, Hikayelerim içinde listelenebilmesi için güncelleştirilmesi gerekir:",
@@ -97,7 +97,7 @@
 			disasters: "Felaket ve Kurtarma",
 			economy: "Ekonomi ve Kalkınma",
 			entertainment: "Eğlence",
-			history: "Geçmiş",
+			history: "Tarih",
 			infrastructure: "Altyapı",
 			marketing: "Pazarlama",
 			nature: "Doğa ve Çevre",
@@ -379,7 +379,7 @@
 				shareOrg: "Kuruluşunuzla paylaşın",
 				sharePublicly: "Herkesle paylaş",
 				othersSharedBelowLevelTip: "İpucu: Hikayenizdeki bazı içeriklerin sahibi {{USER_NAME}}; hikayenizi görüntüleyen başkaları bunu göremeyebilir.",
-				secureServiceTip: "İpucu: Hikayenizden güvenli hizmeti kaldırın veya {{HERE}} açıklanan işlemi uygulayın.",
+				secureServiceTip: "İpucu: Hikayenizden güvenli hizmeti kaldırın veya {{HERE}} açıklanan işlemi uygulayın.",
 				blogArticle: "buraya",
 				premiumContentTip: "Genel yaptıktan sonra hikayenizde {{CREDITS}} kullanılmasını gerektiren ayrıcalıklı içerik var. Hikayenizi genel yapın ve devam edin ya da hikayenizden katmanları kaldırın.",
 				premiumContentPublicTip: "Genel olarak erişilebilir olduğunda hikayenizde {{CREDITS}} kullanılmasını gerektiren ayrıcalıklı içerik var. Bu katmanların genel yapılmasını onaylayın veya hikayenizden katmanları kaldırın.",
@@ -464,7 +464,7 @@
 			dismiss: "Vazgeç",
 			done: "Tamamlandı.",
 			noStoriesWithIssuesLower: "Sorun bulunmadı!",
-			storiesErrorFree: "Hikayelerinizde hata yok gibi",
+			storiesErrorFree: "Hikayelerinizde hata yok gibi görünüyor",
 			scanAllError: "Taranamıyor -- bir ya da birkaç hikayeniz alınamadı",
 			scanProgress: "{{NUM_SCANNED}} / {{NUM_TOTAL}}",
 			scanStopped: "Taranan hikaye sayısı: {{NUM_SCANNED}}, Sorun olan hikaye sayısı: {{ISSUE_STORIES}}",

@@ -17,11 +17,11 @@
 define(
    ({
     map: {
-      error: "ก้_Unable to create map_______ษฺ",
-      generalError: "ก้_Error___ษฺ"
+      error: "ไม่สามารถสร้างแผนที่ได้",
+      generalError: "ข้อผิดพลาด"
     },
     legendToggle:{
-        label: "ก้_MAP LEGEND____ษฺ"
+        label: "คำอธิบายแผนที่"
     }
   })
 );

@@ -17,11 +17,11 @@
 define(
    ({
     map: {
-      error: "Š_Unable to create map_______ä",
-      generalError: "Š_Error___ä"
+      error: "Võimetu koostama kaarti",
+      generalError: "Viga"
     },
     legendToggle:{
-        label: "Š_MAP LEGEND____ä"
+        label: "KAARDILEGEND"
     }
   })
 );
