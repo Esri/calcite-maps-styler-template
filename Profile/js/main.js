@@ -451,6 +451,7 @@ define([
           //overwrite the profile url if a custom one is specified
           profileUrl = this.config.customProfileUrl;
         }
+
         var params = {
             map: this.map,
             chartParams:{
@@ -462,7 +463,23 @@ define([
               elevationBottomColor: this.config.elevationBottomColor, 
               elevationTopColor: this.config.elevationTopColor,  
               skyBottomColor: this.config.skyBottomColor,
-              skyTopColor: this.config.skyTopColor     
+              skyTopColor: this.config.skyTopColor,
+              elevationMarkerStrokeColor: "#00FFFF",
+              indicatorFontColor: "#fff",
+              indicatorFillColor: "#666",
+              mapIndicatorSymbol: {
+                type: "esriSMS",
+                style: "esriSMSX",
+                color:[0,255,255],
+                size:14,
+                angle:90,
+                outline:{
+                  type: "esriSLS",
+                  style: "esriSLSolid",
+                  color:[0,255,255],
+                  width:3
+                }
+              }
             },
             profileTaskUrl: profileUrl,
             scalebarUnits: units
