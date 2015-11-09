@@ -334,7 +334,7 @@ declare, has, lang, Color, array, on, registry, arcgisUtils, esriLang, dom, domA
                     var fields = hintLayer.featureLayer.infoTemplate.info.fieldInfos;
 
                     var fieldInfos = [];
-                    array.forEach(fields, function (field) {
+                    array.forEach(fields, lang.hitch(this, function (field) {
 
                         //add date support
                         if (field.format && field.format.dateFormat && array.indexOf(this.timeFormats, field.format.dateFormat) > -1) {
@@ -345,7 +345,7 @@ declare, has, lang, Color, array, on, registry, arcgisUtils, esriLang, dom, domA
                         if (field.visible) {
                             fieldInfos.push(field);
                         }
-                    });
+                    }));
                     hintLayer.fieldInfos = fieldInfos;
                 }
             }));
