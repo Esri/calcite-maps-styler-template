@@ -469,15 +469,14 @@ define([
               indicatorFillColor: "#666",
               mapIndicatorSymbol: {
                 type: "esriSMS",
-                style: "esriSMSX",
-                color:[0,255,255],
-                size:14,
-                angle:90,
+                style: "esriSMSCircle",
+                color:[0,183,235],
+                size:12,
                 outline:{
                   type: "esriSLS",
                   style: "esriSLSolid",
-                  color:[102,0,0],
-                  width:3
+                  color:[255,255,255],
+                  width:1
                 }
               }
             },
