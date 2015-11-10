@@ -26,7 +26,7 @@ define(
             signInButton: "Logg på",
             signInButtonTooltip: "Logg på",
             signOutButton: "Logg ut",
-            signOutButtonTooltip: "Logg av",
+            signOutButtonTooltip: "Logg ut",
             helpButtonLabel: "Hjelp",
             helpButtonTooltip: "Lær mer",
             gotoListViewLabel: "Listevisning",

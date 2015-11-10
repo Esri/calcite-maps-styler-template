@@ -48,7 +48,7 @@ define(
         dynamic_form: {  // General-purpose form; used to receive comment entry
             optionalFormItemFlag: " (προαιρετικά)",
             requiredFormItemFlag: " (απαιτούμενο)",
-            unsettableRequiredField: "Ένα απαιτούμενο πεδίο ούτε έχει αρχικοποιηθεί ούτε βρίσκεται στη φόρμα",
+            unsettableRequiredField: "Κάποιο απαιτούμενο πεδίο είτε δεν έχει αρχικοποιηθεί είτε δε βρίσκεται στη φόρμα",
             countOfRemainingCharactersTooltip: "Χαρακτήρες που απομένουν",
             cancelButtonLabel: "Ακύρωση",
             submitButtonLabel: "Υποβολή"
