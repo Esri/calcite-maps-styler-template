@@ -476,7 +476,7 @@ define([
                 outline:{
                   type: "esriSLS",
                   style: "esriSLSolid",
-                  color:[0,255,255],
+                  color:[102,0,0],
                   width:3
                 }
               }
