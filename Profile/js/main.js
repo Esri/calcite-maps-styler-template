@@ -145,7 +145,6 @@ define([
         // remove loading class from body
         domClass.remove(document.body, "app-loading");
         on(window, "resize", function(){
-            //todo perhaps add a delay 
             registry.byId("elevProfileChart").resize();
         });
       // Hide or show profile when button is clicked. 
@@ -241,13 +240,15 @@ define([
 
             var layerList = null;
             on(legendButton, "click", lang.hitch(this, function(){
+              this._toggleButtonContainer(legendButton, "legendContainer");
+
               if(!layerList){
                 layerList = new LayerList({
                   map: this.map,
                   showSubLayers: this.config.includesublayers,
                   showLegend: this.config.includelayerlegend,
                   showOpacitySlider: this.config.includelayeropacity,
-                  layers:(arcgisUtils.getLayerList(this.config.response))
+                  layers: arcgisUtils.getLayerList(this.config.response)
                 },"legendDiv");
      
                 layerList.startup();
@@ -257,10 +258,6 @@ define([
                   "color": this.config.color
                 });
               }
-
-
-              this._toggleButtonContainer(legendButton, "legendContainer");
-              layerList.refresh();
             }));
           }));
         }
