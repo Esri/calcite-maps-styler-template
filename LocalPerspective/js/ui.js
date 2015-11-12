@@ -544,8 +544,20 @@ define([
                 alphabet: false,
                 canModifyStops: false
             };
-            if (this.config.helperServices.routeTask)
-                options.routeTaskURL = this.config.helperServices.routeTask.url;
+            // TO DO: check proxy url
+            if (this.config.helperServices.route && this.config.helperServices.route.url !== "") {
+                // do we have a proxied url? 
+                // TO DO: check proxy url
+                var routeUrl = null;
+                array.some(this.config.layerMixins, lang.hitch(this, function(layerMixin) {
+                    if (layerMixin.url === this.config.helperServices.route.url) {
+                        //routeUrl = layerMixin.mixin.url;
+                        routeUrl = this._fixProxyUrl(layerMixin);
+                        return true;
+                    }
+                }));
+                options.routeTaskUrl = routeUrl || this.config.helperServices.route.url;
+            }
             if (this.config.routeUtility)
                 options.routeTaskUrl = this.config.routeUtility;
             this.dirWidget = new Directions(options, "pageDir");
@@ -1000,8 +1012,27 @@ define([
             }
             this.dirMode = !this.dirMode;
             this.map.reposition();
-        }
+        },
 
+        // Fix Proxy Url: Added to check if url and proxy url match
+        _fixProxyUrl: function(layerMixin) {
+            // Test Strings
+            // var url = "http://route.arcgis.com/arcgis/rest/services/World/Route/NAServer/Route_World";
+            // var proxyUrl = "http://utility.arcgis.com/usrsvcs/appservices/m3J483eWLHr9Sn9i/rest/services/World/Route/NAServer";
+            var url = layerMixin.url;
+            var proxyUrl = layerMixin.proxy.url;
+            var url2 = url.toLowerCase();
+            var proxyUrl2 = proxyUrl.toLowerCase();
+            var uIndex = url2.indexOf("/rest/services");
+            var pIndex = proxyUrl2.indexOf("/rest/services");
+            if (uIndex > -1 && pIndex > -1) {
+                var fixUrl = proxyUrl.substring(0, pIndex) + url.substring(uIndex);
+                console.log("Fixed URL", fixUrl);
+                return fixUrl;
+            } else {
+                return url;
+            }
+        }
 
 
     });
