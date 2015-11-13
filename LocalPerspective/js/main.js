@@ -412,7 +412,7 @@ define([
             // var url = "http://route.arcgis.com/arcgis/rest/services/World/Route/NAServer/Route_World";
             // var proxyUrl = "http://utility.arcgis.com/usrsvcs/appservices/m3J483eWLHr9Sn9i/rest/services/World/Route/NAServer";
             var url = layerMixin.url;
-            var proxyUrl = layerMixin.proxy.url;
+            var proxyUrl = layerMixin.mixin.url;
             var url2 = url.toLowerCase();
             var proxyUrl2 = proxyUrl.toLowerCase();
             var uIndex = url2.indexOf("/rest/services");
