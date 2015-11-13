@@ -20,7 +20,7 @@
 			clearAll: "すべて消去",
 			clearSearch: "検索の消去",
 			logOut: "ログ アウト",
-			mainQuote: "ストーリーテリングは、現在アイデアを世界に公開する最も強力な方法です。",
+			mainQuote: "ストーリーテリングは、アイデアを世界に公開する、現在最も強力な方法です。",
 			quoteSource: "Robert McKee",
 			checkYourStories: "ストーリーのチェック",
 			createStory: "ストーリーの作成",
@@ -48,7 +48,7 @@
 			title: "タイトル",
 			typeOfStoryMap: "タイプ",
 			lastModified: "最終更新日",
-			allUpToDate: "旧バージョンのアプリケーションで作成された、更新する必要のあるストーリーはありませんでした。",
+			allUpToDate: "旧バージョンのアプリケーションで作成された、更新が必要なストーリーはありませんでした。",
 			updateAll: "すべて更新",
 			errorScanningForStories: "ストーリーの検索中にエラーが発生しました。",
 			close: "閉じる",
@@ -63,7 +63,7 @@
 		signIn: {
 			signInTitle: "ストーリー マップにサイン インする",
 			signInTo: "既存の ArcGIS Online アカウントを使用してサイン インする対象:",
-			explanationOne: "ストーリーを伝える説得力のあるストーリー マップを作成する場合。",
+			explanationOne: "ストーリーを伝えるための、説得力のあるストーリー マップを作成する場合。",
 			explanationTwo: "ストーリー マップで ArcGIS Online のマップとデータを使用する場合。",
 			explanationThree: "ストーリー マップを管理し、それらのコンテンツの状態を確認する場合。",
 			dontHaveAccount: "ArcGIS Online アカウントをお持ちでない場合はサイン アップしてください:",
@@ -179,7 +179,7 @@
 				submitted: "送信済み",
 				errorSubmitting: "送信中にエラーが発生しました",
 				ourGallery: "ストーリー マップ ギャラリー",
-				galleryTip: "{{THE_GALLERY}} は、最も良い例の一部を紹介する、管理された一連のストーリー マップです。あなたのストーリーは、選定された場合、送信後 10 日以内にギャラリーに追加されます。多数の推薦があるため、あなたのストーリーが追加されることは約束できません。"
+				galleryTip: "{{THE_GALLERY}} は、優れた事例として紹介される、管理された一連のストーリー マップです。あなたのストーリーは、選定された場合、送信後 10 日以内にギャラリーに追加されます。多数の推薦があるため、あなたのストーリーが追加されることは約束できません。"
 			},
 			placeholders: {
 				noSummary: "サマリーがありません。クリックして追加してください。"

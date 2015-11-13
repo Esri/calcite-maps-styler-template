@@ -397,7 +397,7 @@
 				title2: "Man nepieciešams augšupielādēt attēlus",
 				hostedFSTooltip: "Augšupielādējiet attēlus un saglabājiet tos Map Tour slānī (netiek atbalstīts video).",
 				hostedFsNA: "Jums jābūt publicētājam vai jādarbojas citā lomā, kam ir tiesības publicēt viesotus elementu slāņus. Sazinieties ar ArcGIS administratoru.",
-				hostedFsNA2: "Pieejams tikai ArcGIS Online for Organizations dalībniekam. <a href=\'%LINK%\'>Reģistrējieties bezmaksas izmēģinājumversijai</a>",
+				hostedFsNA2: "Pieejams tikai ArcGIS Online for Organizations dalībniekam. <a href=\'%LINK%\'>Reģistrējieties bezmaksas izmēģinājuma versijai</a>",
 				footer1: "Kad tas ir izdarīts, neaizmirstiet dalīties ar jūsu Map Tour ar jūsu auditoriju, izmantojot aplikācijas vienības lapu.",
 				footer3: "Lejupielādēt CSV šablonu",
 				footer4: "\"Saglabājiet kā\" ja tas nelejupielādējas",

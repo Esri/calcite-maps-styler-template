@@ -3,7 +3,7 @@
 		signInDialog: {
 			title: "ストーリー マップにサイン インする",
 			subtitle: "既存の ArcGIS Online アカウントを使用してサイン インする対象:",
-			reasonOne: "ストーリーを伝える説得力のあるストーリー マップを作成する場合。",
+			reasonOne: "ストーリーを伝えるための、説得力のあるストーリー マップを作成する場合。",
 			reasonTwo: "ストーリー マップで ArcGIS Online のマップとデータを使用する場合。",
 			reasonThree: "ストーリー マップを管理し、それらのコンテンツの状態を確認する場合。",
 			noAccountYet: "ArcGIS Online アカウントをお持ちでない場合はサイン アップしてください:",

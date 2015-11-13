@@ -17,7 +17,7 @@
             basemapButton: "Fond de carte"
         },
         popup: {
-          urlMoreInfo: "Plus d\\'informations",
+          urlMoreInfo: "Plus d\'informations",
           attachments: "Pièces jointes"
         }
 

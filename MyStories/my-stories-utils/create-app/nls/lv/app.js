@@ -13,14 +13,14 @@
 			close: "Aizvērt"
 		},		
 		answerText: {
-			seriesOfPlaces: "Vietu komplekts",
+			seriesOfPlaces: "Vietu kopums",
 			mapsNarrative: "Stāstījums ar kartēm",
 			compareDatasets: "Interaktīvs divu datu kopu salīdzinājums",
 			other: "Viena  karte",
 			yes: "Jā",
 			no: "Nē",
 			click: "Noklikšķiniet",
-			scroll: "Ritiniett"
+			scroll: "Ritiniet"
 		},
 		questionText: {
 			bestDescribesStory: "Kas visprecīzāk apraksta jūsu stāstu?",

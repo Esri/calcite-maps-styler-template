@@ -221,7 +221,7 @@
 				saved: "Enregistrement terminé !",
 				errorSaving: "Impossible d’enregistrer votre image.",
 				skipAndCrop: "Sauter l\'étape et rogner l\'image pour moi",
-				wrongFormat: "Ce type de fichier n\\'est pas pris en charge.",
+				wrongFormat: "Ce type de fichier n\'est pas pris en charge.",
 				noCropWarning: "Cette image ne peut pas être rognée, mais vous pouvez toujours l\'enregistrer en tant que miniature de votre récit avec ses dimensions d\'origine ({{WIDTH_PIXELS}} x {{HEIGHT_PIXELS}} px)."
 			}
 		},
