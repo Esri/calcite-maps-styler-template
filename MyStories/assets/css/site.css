@@ -5834,6 +5834,11 @@ html.ie9 .drawer.active-right .drawer-right {
 	width: 920px;
 }
 
+#sign-in-wrapper.portal {
+	height: 467px;
+	width: 430px;
+}
+
 
 #sign-in-left, #sign-in-right {
 	display: inline-block;
@@ -5894,9 +5899,7 @@ html.ie9 .drawer.active-right .drawer-right {
 	margin-left: 5px;
 }
 
-//-- Height Overrides for L10N --//
-.de, .es, .fr, .ja, .ru {
-  #sign-in-wrapper {
-    height:550px;
-  }
+/*-- Height Overrides for L10N --*/
+.de #sign-in-wrapper, .es #sign-in-wrapper, .fr #sign-in-wrapper, .ja #sign-in-wrapper, .ru #sign-in-wrapper {
+  height:550px;
 }

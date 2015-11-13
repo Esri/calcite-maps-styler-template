@@ -26,7 +26,7 @@ define(['dojo/i18n!./nls/app.js?v=' + app.cfg.version, 'lib-build/hbars!./templa
 			title: appTypes.mapTour,
 			multiple: false,
 			value: 'mapTour',
-			method: 'buildTour()',
+			template: 'tour',
 			thumbnail: '/arcgis-storymaps-my-stories-utils/create-app/assets/images/map-tour.jpg',
 			reason: strings.reasons.mapTour,
 			example: 'http://links.esri.com/storymaps/map_tour_example_3panel'
@@ -35,7 +35,7 @@ define(['dojo/i18n!./nls/app.js?v=' + app.cfg.version, 'lib-build/hbars!./templa
 			title: appTypes.mapJournal,
 			multiple: false,
 			value: 'mapJournal',
-			method: 'buildJournal()',
+			template: 'journal',
 			thumbnail: '/arcgis-storymaps-my-stories-utils/create-app/assets/images/map-journal.jpg',
 			reason: strings.reasons.mapJournal,
 			example: 'http://links.esri.com/storymaps/map_journal_example_side_panel'
@@ -44,7 +44,7 @@ define(['dojo/i18n!./nls/app.js?v=' + app.cfg.version, 'lib-build/hbars!./templa
 			title: appTypes.mapSeries,
 			multiple: false,
 			value: 'mapSeries',
-			method: 'buildSeries()',
+			template: 'series',
 			thumbnail: '/arcgis-storymaps-my-stories-utils/create-app/assets/images/tabbed-viewer.jpg',
 			reason: strings.reasons.mapSeries,
 			example: 'http://links.esri.com/storymaps/map_series_example_tabbed'
@@ -53,8 +53,10 @@ define(['dojo/i18n!./nls/app.js?v=' + app.cfg.version, 'lib-build/hbars!./templa
 			title: appTypes.swipeSpyglass,
 			multiple: true,
 			value: 'swipeSpyglass',
-			method: 'buildSwipe("swipe")',
-			methodTwo: 'buildSwipe("spyglass")',
+			template: 'swipeSpyglass',
+			layout: 'swipe',
+			templateTwo: 'swipeSpyglass',
+			layoutTwo: 'spyglass',
 			thumbnail: '/arcgis-storymaps-my-stories-utils/create-app/assets/images/swipe.jpg',
 			thumbnailTwo: '/arcgis-storymaps-my-stories-utils/create-app/assets/images/spyglass.jpg',
 			reason: strings.reasons.swipeSpyglass,
@@ -64,7 +66,7 @@ define(['dojo/i18n!./nls/app.js?v=' + app.cfg.version, 'lib-build/hbars!./templa
 			title: appTypes.basic,
 			multiple: false,
 			value: 'basic',
-			method: basicUrl,
+			url: basicUrl,
 			thumbnail: '/arcgis-storymaps-my-stories-utils/create-app/assets/images/basic.jpg',
 			reason: strings.reasons.basic,
 			example: 'http://links.esri.com/storymaps/basic_example'
@@ -173,6 +175,7 @@ define(['dojo/i18n!./nls/app.js?v=' + app.cfg.version, 'lib-build/hbars!./templa
 			answerQuestion(questionStructure.id, false, true);
 
 			attachEvents();
+			buildApp.init($('#create-story-modal'));
 		},
 
 
@@ -276,6 +279,7 @@ define(['dojo/i18n!./nls/app.js?v=' + app.cfg.version, 'lib-build/hbars!./templa
 
 			animateSegue(askProsView, function() {
 				askProsView.html(finalAppWidget);
+				buildApp.init($('.app-item.final'));
 			});
 		},
 

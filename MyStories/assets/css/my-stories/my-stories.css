@@ -2316,6 +2316,26 @@ tr + .media-row {
 .media-item-status.issue {
   color: #C24A56; }
 
+.lock-icon {
+  display: inline-block;
+  font-size: 1.5rem;
+  text-align: center;
+  vertical-align: middle;
+  visibility: hidden;
+  width: 24px; }
+
+.lock-icon.smaller-map {
+  font-size: 1.1rem; }
+
+.layer-row .lock-icon {
+  font-size: 1.2rem;
+  margin-right: 4px; }
+
+.lock-icon.locked {
+  color: #396e8b;
+  cursor: pointer;
+  visibility: visible; }
+
 .media-title {
   cursor: pointer;
   overflow: hidden;
@@ -2349,7 +2369,7 @@ tr + .media-row {
   z-index: 1;
   margin-left: 7px; }
 
-.premium-info-icon {
+.premium-info-icon, .layer-row .premium-info-icon {
   display: inline-block;
   font-size: 1.0rem;
   vertical-align: middle; }
@@ -2423,7 +2443,8 @@ tr + .media-row {
   font-size: 1.3rem; }
 
 .sharing-icons {
-  display: inline-block; }
+  display: inline-block;
+  vertical-align: middle; }
 
 .item-deleted, .item-inaccessible, .item-not-public {
   display: inline;
@@ -2508,20 +2529,6 @@ tr + .media-row {
 .sharing-alert-text {
   display: inline;
   margin-left: 10px; }
-
-.lock-icon {
-  display: inline-block;
-  font-size: 1.5rem;
-  visibility: hidden; }
-
-.layer-row .lock-icon {
-  font-size: 1.2rem;
-  margin-right: 4px; }
-
-.lock-icon.locked {
-  color: #396e8b;
-  cursor: pointer;
-  visibility: visible; }
 
 .scrollable-table thead {
   display: table;

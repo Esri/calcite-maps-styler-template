@@ -26,7 +26,7 @@
 
 		if( window.location.href.match(/fromSignOut/) ) {
 			window.location.href = baseUrl + "/sharing/oauth2/authorize?client_id=" + DEFAULT_CLIENT_ID + "&display=iframe" +
-			"&redirect_uri=" + parentWindow.location.origin + "/arcgis-storymaps-my-stories-utils/sign-in/signedin.html" + encodeURIComponent("?defaultPortalURL=" + DEFAULT_PORTAL_URL +
+			"&redirect_uri=" + parentWindow.redirectBase + "arcgis-storymaps-my-stories-utils/sign-in/signedin.html" + encodeURIComponent("?defaultPortalURL=" + DEFAULT_PORTAL_URL +
 			"&defaultClientId=" + DEFAULT_CLIENT_ID) +
 			"&response_type=token&display=iframe" +
 			"&parent=" + parentWindow.location.href + "&locale=" + locale;

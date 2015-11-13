@@ -57,7 +57,7 @@ define(['dojo/i18n!./nls/app.js?v=' + app.cfg.version, 'sign-in/PortalHelper'], 
       }
       else {
         window.signInManager.showBuildSignInDialog(function() {
-         showContinueBuildDialog(app, layout);
+          showContinueBuildDialog(app, layout);
         }, app, layout);
       }
     }
@@ -182,9 +182,53 @@ define(['dojo/i18n!./nls/app.js?v=' + app.cfg.version, 'sign-in/PortalHelper'], 
   }
 
 
-  window.buildSwipe = buildSwipe;
-  window.buildTour = buildTour;
-  window.buildJournal = buildJournal;
-  window.buildSeries = buildSeries;
+  var init = function(selector) {
+    initUI(selector);
+    addEvents(selector);
+  },
 
+
+  initUI = function(selector) {
+    selector.find('[data-template!=""][data-template]').addClass('build-enabled');
+  },
+
+
+  addEvents = function(selector) {
+
+    selector.find('[data-template="tour"]').off('click').on('click', function() {
+      buildTour();
+    });
+
+    selector.find('[data-template="journal"]').off('click').on('click', function() {
+      buildJournal();
+    });
+
+    selector.find('[data-template="series"]').off('click').on('click', function() {
+      var layout = $(this).data('layout');
+      if(layout) {
+        buildSeries(layout);
+      }
+      else {
+        buildSeries();
+      }
+    });
+
+    selector.find('[data-template="swipeSpyglass"]').off('click').on('click', function() {
+      var layout = $(this).data('layout');
+      if(layout) {
+        buildSwipe(layout);
+      }
+      else {
+        buildSwipe();
+      }
+    });
+  };
+
+
+  init($(document));
+
+
+  return {
+    init: init
+  }
 });

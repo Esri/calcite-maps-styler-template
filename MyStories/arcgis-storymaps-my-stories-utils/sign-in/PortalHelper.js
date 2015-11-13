@@ -20,18 +20,19 @@ define([], function() {
 
 		if(!app.cfg.customPortalUrl) {
 			if(cookie) {
-				if(cookie.portalApp) {
+				if(cookie.portalApp || cookie.customBaseUrl === 'portal') {
 					baseUrl = getBaseUrlFromUrl();
 				}
 				else if(cookie.urlKey && cookie.customBaseUrl) {
-					baseUrl = (cookie.urlKey + '.' + cookie.customBaseUrl).toLowerCase();
+					baseUrl = '//' + (cookie.urlKey + '.' + cookie.customBaseUrl).toLowerCase();
 				}
 				else if(cookie.customBaseUrl) {
-					baseUrl = cookie.customBaseUrl.toLowerCase();
+					baseUrl = '//' + cookie.customBaseUrl.toLowerCase();
 				}
 			}
-
-			baseUrl = '//' + baseUrl;
+			else {
+				baseUrl = '//' + baseUrl;
+			}
 		}
 		else {
 			baseUrl = app.cfg.customPortalUrl;
@@ -54,7 +55,6 @@ define([], function() {
 		// if there is no custom portal URL set, check the URL to see if there is an org name.
 		if(!app.cfg.customPortalUrl) {
 			baseUrl = getBaseUrlFromUrl();
-			baseUrl = '//' + baseUrl;
 		}
 		else {
 			baseUrl = app.cfg.customPortalUrl;
@@ -83,7 +83,7 @@ define([], function() {
 		}
 		// if there is neither, resort to the default URL.
 		else {
-			baseUrl = app.cfg.DEFAULT_PORTAL_URL;
+			baseUrl = '//' + app.cfg.DEFAULT_PORTAL_URL;
 		}
 
 		return baseUrl;

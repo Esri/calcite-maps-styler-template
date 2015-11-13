@@ -5,8 +5,9 @@ define(['dojo/i18n!sign-in/nls/app.js?v=' + app.cfg.version, 'lib-build/hbars!./
 
 
 	// all you really need this for is to templatize the two screens. That's it.
-	var SignInDialog = function() {
+	var SignInDialog = function(inIsPortal) {
 		var strings = signIni18n,
+			isPortal = inIsPortal,
 
 		init = function() {
 			templatizeSignInDialog();
@@ -17,9 +18,15 @@ define(['dojo/i18n!sign-in/nls/app.js?v=' + app.cfg.version, 'lib-build/hbars!./
 		templatizeSignInDialog = function() {
 			var publicLink = 'https://' + app.cfg.DEFAULT_PORTAL_URL + '/home/createaccount.html';
 
+			if(isPortal) {
+				$('#sign-in-wrapper').addClass('portal');
+			}
+
+
 			$('#sign-in-wrapper').html(signInDialogTemplate({
 				labels: strings.signInDialog,
-				publicLink: publicLink
+				publicLink: publicLink,
+				isPortal: isPortal
 			}));
 		},
 
