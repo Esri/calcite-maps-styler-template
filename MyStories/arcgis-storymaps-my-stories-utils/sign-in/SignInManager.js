@@ -311,6 +311,15 @@ define(['dojo/Deferred', 'sign-in/SignInDialog', 'sign-in/PortalHelper'], functi
 			}
 
 			if(isPortal) {
+				// smarter check for the slash or html at the end:
+				// doc create elem "a"
+
+				// a href is window.location.href
+
+				// read the a href pathname -- it won't have query
+
+
+
 				window.redirectBase = 'https://' + unProtocolUrl(window.location.href);
 			}
 			else {

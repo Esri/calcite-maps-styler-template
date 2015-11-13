@@ -75,8 +75,8 @@ define(['dojo/i18n!./nls/app.js?v=' + app.cfg.version, 'sign-in/PortalHelper'], 
         baseUrl = PortalHelper.getBaseUrl(cookie),
         appName = '',
         url = '',
-        continueString = createStoryi18n.continueBuildDialog.continueToBuilder,
-        welcomeString = createStoryi18n.continueBuildDialog.welcome;
+        continueString = 'Continue to {{APP_NAME}} builder',
+        welcomeString = 'Welcome!';
 
     url = baseUrl + '/apps/' + app + '/?fromScratch' + layoutOpt;
 

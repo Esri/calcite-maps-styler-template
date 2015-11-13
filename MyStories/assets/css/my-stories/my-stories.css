@@ -2329,7 +2329,8 @@ tr + .media-row {
 
 .layer-row .lock-icon {
   font-size: 1.2rem;
-  margin-right: 4px; }
+  margin-right: 4px;
+  width: 19px; }
 
 .lock-icon.locked {
   color: #396e8b;
