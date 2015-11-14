@@ -7,9 +7,30 @@ define(['dojo/i18n!./nls/app.js?v=' + app.cfg.version, 'lib-build/hbars!./templa
 	// show reasons on final screen
 	// when init twice, messes up
 	// init createStory hbs from js?
-	var count = 0,
+	var checkIfStoryMapsSite = function() {
+		var isStoryMapsDomain = false,
+			storyMapsDomains = [
+				'storymaps.arcgis.com',
+				'storymapsdev.arcgis.com',
+				'storymapsstg.arcgis.com'
+			];
+
+		for(var i = 0; i < storyMapsDomains.length; i++) {
+			if(window.location.hostname === storyMapsDomains[i]) {
+				isStoryMapsDomain = true;
+			}
+		}
+
+		return isStoryMapsDomain;
+	},
+
+		count = 0,
 		strings = createStoryi18n,
 		basicUrl = window.customBasicTemplateURL || app.cfg.defaultBasicTemplateURL,
+		isStoryMapsSite = checkIfStoryMapsSite(),
+		imagePathRelative = 'arcgis-storymaps-my-stories-utils/create-app/assets/images/',
+		imagePathAbsolute = '/' + imagePathRelative,
+		imageBase = isStoryMapsSite ? imagePathAbsolute : imagePathRelative,
 
 	appTypes = {
 		mapTour: 'Map Tour',
@@ -27,7 +48,7 @@ define(['dojo/i18n!./nls/app.js?v=' + app.cfg.version, 'lib-build/hbars!./templa
 			multiple: false,
 			value: 'mapTour',
 			template: 'tour',
-			thumbnail: '/arcgis-storymaps-my-stories-utils/create-app/assets/images/map-tour.jpg',
+			thumbnail: imageBase + 'map-tour.jpg',
 			reason: strings.reasons.mapTour,
 			example: 'http://links.esri.com/storymaps/map_tour_example_3panel'
 		},
@@ -36,7 +57,7 @@ define(['dojo/i18n!./nls/app.js?v=' + app.cfg.version, 'lib-build/hbars!./templa
 			multiple: false,
 			value: 'mapJournal',
 			template: 'journal',
-			thumbnail: '/arcgis-storymaps-my-stories-utils/create-app/assets/images/map-journal.jpg',
+			thumbnail: imageBase + 'map-journal.jpg',
 			reason: strings.reasons.mapJournal,
 			example: 'http://links.esri.com/storymaps/map_journal_example_side_panel'
 		},
@@ -45,7 +66,7 @@ define(['dojo/i18n!./nls/app.js?v=' + app.cfg.version, 'lib-build/hbars!./templa
 			multiple: false,
 			value: 'mapSeries',
 			template: 'series',
-			thumbnail: '/arcgis-storymaps-my-stories-utils/create-app/assets/images/tabbed-viewer.jpg',
+			thumbnail: imageBase + 'tabbed-viewer.jpg',
 			reason: strings.reasons.mapSeries,
 			example: 'http://links.esri.com/storymaps/map_series_example_tabbed'
 		},
@@ -57,8 +78,8 @@ define(['dojo/i18n!./nls/app.js?v=' + app.cfg.version, 'lib-build/hbars!./templa
 			layout: 'swipe',
 			templateTwo: 'swipeSpyglass',
 			layoutTwo: 'spyglass',
-			thumbnail: '/arcgis-storymaps-my-stories-utils/create-app/assets/images/swipe.jpg',
-			thumbnailTwo: '/arcgis-storymaps-my-stories-utils/create-app/assets/images/spyglass.jpg',
+			thumbnail: imageBase + 'swipe.jpg',
+			thumbnailTwo: imageBase + 'spyglass.jpg',
 			reason: strings.reasons.swipeSpyglass,
 			example: 'http://links.esri.com/storymaps/swipe_example'
 		},
@@ -67,11 +88,12 @@ define(['dojo/i18n!./nls/app.js?v=' + app.cfg.version, 'lib-build/hbars!./templa
 			multiple: false,
 			value: 'basic',
 			url: basicUrl,
-			thumbnail: '/arcgis-storymaps-my-stories-utils/create-app/assets/images/basic.jpg',
+			thumbnail: imageBase + 'basic.jpg',
 			reason: strings.reasons.basic,
 			example: 'http://links.esri.com/storymaps/basic_example'
 		}
 	},
+
 
 	generateId = function() {
 		return count++;
@@ -354,7 +376,8 @@ define(['dojo/i18n!./nls/app.js?v=' + app.cfg.version, 'lib-build/hbars!./templa
 					strings: strings,
 					appTypes: appTypes,
 					questionWidget: templatizeQuestion(),
-					basicUrl: basicUrl
+					basicUrl: basicUrl,
+					imageBase: imageBase
 				}
 			));
 		},

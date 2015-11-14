@@ -2,7 +2,7 @@
 app.cfg = {
 	version: app.version,
 	isProduction: true,
-	jsApiUrl: '//jsdev.arcgis.com/3.15/init.js',
+	jsApiUrl: '//js.arcgis.com/3.15/init.js',
 	facebook: {
 		appId: '737271002977269'
 	},
@@ -19,7 +19,8 @@ app.cfg = {
 	cacheManager: null,
 	DEFAULT_PORTAL_URL: 'www.arcgis.com',
 	DEFAULT_CLIENT_ID: 'arcgisonline',
-	defaultBasicTemplateURL: '//storymaps.arcgis.com/en/app-list/basic/tutorial/'
+	defaultBasicTemplateURL: '//storymaps.arcgis.com/en/app-list/basic/tutorial/',
+	isSignedInPortal: false
 };
 
 var path = location.pathname.replace(/\/[^/]+$/, '/');
@@ -36,13 +37,46 @@ var loadJS = function(url, isExternal) {
 };
 
 
+var fetchCookie = function(cookieName) {
+	var cookieValue = document.cookie,
+		cookieStart = cookieValue.indexOf(" " + cookieName + "=");
+
+	if (cookieStart == -1) {
+		cookieStart = cookieValue.indexOf(cookieName + "=");
+	}
+
+	if (cookieStart == -1) {
+		cookieValue = null;
+	}
+	else {
+		cookieStart = cookieValue.indexOf("=", cookieStart) + 1;
+		var cookieEnd = cookieValue.indexOf(";", cookieStart);
+		if (cookieEnd == -1) {
+			cookieEnd = cookieValue.length;
+		}
+		cookieValue = decodeURIComponent(cookieValue.substring(cookieStart, cookieEnd));
+	}
+	return cookieValue;
+};
+
+
 var getLanguage = function() {
-	var language = '';
+	var language = '',
+		preflang = '';
 	// should take the URL language.
 
 	if(window.builderIntegration) {
 		if (window.location.search.match(/locale=([\w\-]+)/)) {
 			language = RegExp.$1;
+		}
+	}
+
+	// otherwise see if there is a preflang cookie set (for the site)
+	else {
+		preflang = fetchCookie('preflang');
+
+		if(preflang) {
+			language = preflang;
 		}
 	}
 

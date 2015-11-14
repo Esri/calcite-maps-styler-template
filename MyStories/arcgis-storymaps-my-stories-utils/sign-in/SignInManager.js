@@ -112,6 +112,7 @@ define(['dojo/Deferred', 'sign-in/SignInDialog', 'sign-in/PortalHelper'], functi
 					else {
 						userInfo = data.user;
 						showLoggedInDropdown(userInfo.firstName || userInfo.username);
+						app.cfg.isSignedInPortal = data.isPortal;
 					}
 				},
 				error: function() {
@@ -291,7 +292,8 @@ define(['dojo/Deferred', 'sign-in/SignInDialog', 'sign-in/PortalHelper'], functi
 	*/
 	showSignInDialog = function(callback, expired) {
 		var portalPromise = determineIfPortal(),
-			deferred = new Deferred();
+			deferred = new Deferred(),
+			canGoBack = null;
 
 		portalPromise.then(function(isPortal) {
 			new SignInDialog(isPortal);
@@ -304,25 +306,18 @@ define(['dojo/Deferred', 'sign-in/SignInDialog', 'sign-in/PortalHelper'], functi
 				myStoriesPage = window.location.href.indexOf('/my-stories') === -1 ? false : true,
 				portalDefaultStr = "?defaultPortalURL=" + unProtocolUrl(baseUrl) + "&defaultClientId=" + app.cfg.DEFAULT_CLIENT_ID;
 
-			// in IE10, window.location.origin doesn't exist. We'll account for that.
-			// props to tosbourne: http://tosbourn.com/a-fix-for-window-location-origin-in-internet-explorer/
-			if(!window.location.origin) {
-				window.location.origin = 'https://' + window.location.hostname + (window.location.port ? ':' + window.location.port : '');
-			}
-
 			if(isPortal) {
-				// smarter check for the slash or html at the end:
-				// doc create elem "a"
-
-				// a href is window.location.href
-
-				// read the a href pathname -- it won't have query
-
-
-
-				window.redirectBase = 'https://' + unProtocolUrl(window.location.href);
+				// the others are forcing https, but portal may not be enabled for https for certain orgs, so it will go on the protocol it is over.
+				window.redirectBase = getPortalPath();
 			}
 			else {
+
+				// in IE10, window.location.origin doesn't exist. We'll account for that.
+				// props to tosbourne: http://tosbourn.com/a-fix-for-window-location-origin-in-internet-explorer/
+				if(!window.location.origin) {
+					window.location.origin = 'https://' + window.location.hostname + (window.location.port ? ':' + window.location.port : '');
+				}
+
 				window.redirectBase = 'https://' + unProtocolUrl(window.location.origin) + '/';
 			}
 
@@ -403,6 +398,35 @@ define(['dojo/Deferred', 'sign-in/SignInDialog', 'sign-in/PortalHelper'], functi
 
 
 		return deferred;
+	},
+
+
+	getPortalPath = function() {
+		var urlFinal = '',
+			urlRough = '',
+			lastIsSlash = false,
+			slashIndex = 0;
+
+		if(!window.location.origin) {
+			window.location.origin =  window.location.protocol + '//' + window.location.hostname + (window.location.port ? ':' + window.location.port : '');
+		}
+
+		urlRough = window.location.origin + window.location.pathname;
+
+		// test if the last part is a slash
+		lastIsSlash = urlRough.charAt(urlRough.length -1) === '/';
+
+		if(!lastIsSlash) {
+			// if not, remove everything after the last slash
+			slashIndex = urlRough.lastIndexOf('/');
+			urlFinal = urlRough.substring(0, slashIndex + 1);
+
+		}
+		else {
+			urlFinal = urlRough;
+		}
+
+		return urlFinal;
 	},
 
 
