@@ -112,7 +112,6 @@ define(['dojo/Deferred', 'sign-in/SignInDialog', 'sign-in/PortalHelper'], functi
 					else {
 						userInfo = data.user;
 						showLoggedInDropdown(userInfo.firstName || userInfo.username);
-						app.cfg.isSignedInPortal = data.isPortal;
 					}
 				},
 				error: function() {
@@ -303,12 +302,12 @@ define(['dojo/Deferred', 'sign-in/SignInDialog', 'sign-in/PortalHelper'], functi
 				baseUrlHttps = PortalHelper.forceHttpsPortalUrl(baseUrl),
 				layoutStr = layout ? layout : 'default',
 				urlSuffix = fromBuildApp ? '&buildApp=true&app=' + appObj + '&layout=' + layoutStr : '',
-				myStoriesPage = window.location.href.indexOf('/my-stories') === -1 ? false : true,
+				myStoriesPage = (window.location.href.indexOf('/my-stories') !== -1 || window.location.href.indexOf('/MyStories/') !== -1) ? true : false,
 				portalDefaultStr = "?defaultPortalURL=" + unProtocolUrl(baseUrl) + "&defaultClientId=" + app.cfg.DEFAULT_CLIENT_ID;
 
 			if(isPortal) {
 				// the others are forcing https, but portal may not be enabled for https for certain orgs, so it will go on the protocol it is over.
-				window.redirectBase = getPortalPath();
+				window.redirectBase = 'https://' + unProtocolUrl(getPortalPath());
 			}
 			else {
 
