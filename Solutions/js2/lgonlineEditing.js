@@ -489,6 +489,6 @@ define([
 });
 /* 
 This source is part of the git commit 
-2003bc71b781113c 2015-11-03 16:52:26 -0800
+003b4194ab621f15 2015-11-18 09:02:28 -0800
 It is available from https://github.com/Esri/local-government-online-apps 
 */ 

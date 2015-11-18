@@ -1,8 +1,8 @@
-Built on 11/03/2015 16:52:44.23 from
+Built on 11/18/2015  9:02:46.42 from
 repository local-government-online-apps
-branch release
-commit 2003bc71b781113c6e3b54f2e7c0df77a02453c4
+branch master
+commit 003b4194ab621f15583ab52e73811807fb0dc270
 Author: MikeTschudi <mtschudi@esri.com>
-Date:   Tue Nov 3 16:52:26 2015 -0800
+Date:   Wed Nov 18 09:02:28 2015 -0800
 
-    Shield corsEnabledServers from invalid values
+    Corrected variable used for checking AGOL environment
