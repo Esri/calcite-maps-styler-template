@@ -299,7 +299,7 @@
       "legend": true,
       "legendposition": "top-right",
       "search": true,
-      "scale":false,
+      "scale":true,
       "timeposition": "bottom-center",
       "endtimenewline": false
    }
