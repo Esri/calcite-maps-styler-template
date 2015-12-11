@@ -471,7 +471,7 @@ define([
       // editable layer
       if (this._formLayer) {
         // if indexedDB is supported
-        if (window.indexedDB) {
+        if (window.indexedDB && this.config.enableOfflineSupport) {
           // get offline support
           require(["application/OfflineSupport"], lang.hitch(this, function (OfflineSupport) {
             // support basic offline editing
@@ -2188,9 +2188,11 @@ define([
       });
       // each radio button
       array.forEach(query(".geoFormQuestionare .radioContainer"), function (currentField) {
-        key = query(".radioInput:checked", currentField)[0].name;
-        if (query(".radioInput:checked", currentField).length !== 0) {
-          value = lang.trim(query(".radioInput:checked", currentField)[0].value);
+        var radioFields = query(".radioInput:checked", currentField);
+        if (radioFields.length) {
+          var selectedField = radioFields[0];
+          key = selectedField.name;
+          value = lang.trim(selectedField.value);
           featureData.attributes[key] = value;
         }
       });
