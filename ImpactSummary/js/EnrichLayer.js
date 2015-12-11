@@ -43,14 +43,14 @@ define([
         executionDialog: null,
         progressString: null,
         createServiceURL: "${portalUrl}content/users/${username}/createService",
-        checkLayerNameURL: "${userInfoPortalUrl}/sharing/portals/${userInfoPortalId}/isServiceNameAvailable",
+        checkLayerNameURL: "${userInfoPortalUrl}/sharing/rest/portals/${userInfoPortalId}/isServiceNameAvailable",
         showCreditsURL: "${gpServiceUrl}/exts/Estimate/EnrichLayer",
         addLayerURL: "${portalUrl}content/users/${username}/items/${webMapInfoItemId}/update",
-        refreshURL: "${userInfoPortalUrl}/sharing/content/users/${userInfoUsername}/items/${enrichitemId}/refresh",
+        refreshURL: "${userInfoPortalUrl}/sharing/rest/content/users/${userInfoUsername}/items/${enrichitemId}/refresh",
         geoEnrichURL: "${analysisUrl}/EnrichLayer/jobs/${enrichJobId}/results/enrichedLayer?f=json&returnType=data&token=${userInfoToken}",
-        updateServiceURL: "${userInfoPortalUrl}/sharing/content/users/${username}/items/${enrichitemId}/update",
+        updateServiceURL: "${userInfoPortalUrl}/sharing/rest/content/users/${username}/items/${enrichitemId}/update",
         deleteURL: "${portalUrl}/sharing/rest/content/users/${username}/items/${enrichitemId}/delete",
-        shareURL: "${userInfoPortalUrl}/sharing/content/users/${username}/items/${enrichUrlItemId}/share",
+        shareURL: "${userInfoPortalUrl}/sharing/rest/content/users/${username}/items/${enrichUrlItemId}/share",
         constructor: function (options) {
             this.map = options.map;
             this.userInfo = options.userInfo;
