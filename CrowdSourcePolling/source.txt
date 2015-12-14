@@ -1,8 +1,7 @@
 From git branch 
 develop
-commit fbef101aa98fa08395f426bd5e01e4bc8e7959a6
-Merge: 9f166df d21a006
+commit 2810ed66f900a2d1d37e5b5e60348ad00859c61d
 Author: MikeTschudi <mtschudi@esri.com>
-Date:   Mon Nov 16 12:19:49 2015 -0800
+Date:   Mon Dec 14 14:48:20 2015 -0800
 
-    Merge branch 'master' into develop
+    Changed layer and field selector to new format

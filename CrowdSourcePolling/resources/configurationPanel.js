@@ -51,7 +51,7 @@
         }, {
             "label": "Layer",
             "fieldName": "featureLayer",
-            "type": "layerandfieldselector",
+            "type": "layerAndFieldSelector",
             "tooltip": "Point, line, or polygon layer containing the features to present in the application.",
             "layerOptions": {
                 "supportedTypes": ["FeatureLayer"],
