@@ -7,13 +7,14 @@ define([
   "dojo/dom",
   "esri/request",
   "esri/urlUtils",
+  "dijit/focus",
   "dijit/TooltipDialog",
   "dijit/popup",
   ], function (
   declare, lang,
   Deferred, query, on,
-  dom,
-  esriRequest, urlUtils,
+  dom, 
+  esriRequest, urlUtils, focusUtil,
   TooltipDialog, popup
   ) {
   return declare(null, {
@@ -49,7 +50,6 @@ define([
 
 
       this._getUrl().then(lang.hitch(this, function(response){
-
         if(response){
           var fullLink;
           var shareObj = {
@@ -76,13 +76,13 @@ define([
             });
             query(".tip").forEach(lang.hitch(this, function(node){
               node.select();
+              focusUtil.focus(node);
             }));
-            on.once(this.map, "click", lang.hitch(this, function(){
+            on.once(this.tooltipDialog, "blur", lang.hitch(this, function(){
               popup.close(this.tooltipDialog);
             }));
-            on.once(dom.byId("header"), "click", lang.hitch(this, function(){
-              popup.close(this.tooltipDialog);
-            }));
+
+
           }
         }
       }));
