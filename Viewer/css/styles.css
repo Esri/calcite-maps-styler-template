@@ -1402,9 +1402,8 @@ input[type=checkbox]{
 #modal {
   z-index:1000;
   position: absolute;
-  top: 50%; 
   left: 50%;
-  margin: -100px 0 0 -20%;
+  margin: 10% 0 0 -20%;
   opacity: 1;
   visibility: visible;
   width: 40%;
@@ -1426,6 +1425,9 @@ input[type=checkbox]{
 }
 #modal h2 {
   margin: 0;
+  padding-right:8px;
+  padding-bottom:5px;
+  margin-right:5px;
 }
 #modal .copy{
   color: #333;
