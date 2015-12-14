@@ -1,0 +1,14 @@
+From git branch
+HEAD
+commit e8704106cbf1f9334006c125137323330b76f553
+Merge: 763fbb5 51e89e8
+Author: john gravois <jgravois@esri.com>
+Date:   Thu Nov 5 20:34:33 2015 -0800
+
+    Merge pull request #314 from Esri/1.1.0-release
+
+    1.1.0 release
+
+with modifications on lines
+* 20 to import System.Text for the StringBuilder class
+* 221-233 to correct malformed URIs

@@ -237,7 +237,7 @@ define([
         * @memberOf widgets/gallery/gallery
         */
         _createThumbnails: function (itemResult, divPodParent) {
-            var divThumbnail, divThumbnailImage, divTagContainer, divTagContent, dataType;
+            var divThumbnail, divThumbnailImage, divTagContainer, divTagContent, dataType, thumbnailUrl;
 
             if (!dojo.gridView) {
                 divThumbnail = domConstruct.create('div', { "class": "esriCTImageContainerList" }, divPodParent);
@@ -247,7 +247,12 @@ define([
 
             divThumbnailImage = domConstruct.create('div', { "class": "esriCTAppImage" }, divThumbnail);
             if (itemResult.thumbnailUrl) {
-                domStyle.set(divThumbnailImage, "background", 'url(' + itemResult.thumbnailUrl + ') no-repeat center center');
+                if (dojo.configData.values.proxyUrl) {
+                    thumbnailUrl = dojo.configData.values.proxyUrl + "?" + itemResult.thumbnailUrl;
+                } else {
+                    thumbnailUrl = itemResult.thumbnailUrl;
+                }
+                domStyle.set(divThumbnailImage, "background", 'url(' + thumbnailUrl + ') no-repeat center center');
             } else {
                 domClass.add(divThumbnailImage, "esriCTNoThumbnailImage");
             }
