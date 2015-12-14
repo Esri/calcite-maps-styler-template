@@ -269,11 +269,14 @@ define([
         /**
          * Removes HTML tags from a string
          * @param {string} str String possibly containing HTML tags
-         * @return {string} Cleaned string
+         * @return {string} Cleaned string; if str is undefined or null, an empty string is returned
          * @see http://dojo-toolkit.33424.n3.nabble.com/Stripping-HTML-tags-from-a-string-tp3999505p3999576.html
          */
         stripTags: function (str) {
-            return domConstruct.create("div", { innerHTML: str }).textContent;
+            if (str) {
+                return domConstruct.create("div", { innerHTML: str }).textContent;
+            }
+            return "";
         },
 
         /**

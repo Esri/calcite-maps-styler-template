@@ -240,6 +240,7 @@ define([
                 }));
 
                 topic.subscribe("helpSelected", lang.hitch(this, function () {
+                    this._helpDialogContainer.set("displayTitle", "");
                     this._helpDialogContainer.set("displayText", this.config.displayText);
                     this._helpDialogContainer.show();
                 }));
@@ -296,6 +297,7 @@ define([
                  * @param {string} err Error message to display
                  */
                 topic.subscribe("showError", lang.hitch(this, function (err) {
+                    this._helpDialogContainer.set("displayTitle", "");
                     this._helpDialogContainer.set("displayText", err);
                     this._helpDialogContainer.show();
                 }));
