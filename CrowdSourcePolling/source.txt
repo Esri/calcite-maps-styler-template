@@ -1,7 +1,9 @@
 From git branch 
 develop
-commit 2810ed66f900a2d1d37e5b5e60348ad00859c61d
+commit 2ccf2679df061ac5573ec296f947a590fd03ce8c
 Author: MikeTschudi <mtschudi@esri.com>
-Date:   Mon Dec 14 14:48:20 2015 -0800
+Date:   Tue Dec 15 09:25:27 2015 -0800
 
-    Changed layer and field selector to new format
+    Turned off Search dijit selection highlighting and connected selection to details display
+    
+    #115

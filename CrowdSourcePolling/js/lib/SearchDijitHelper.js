@@ -50,9 +50,10 @@ define([
          * @param {string|object} srcNode Reference or id of the HTML element where the widget should be rendered
          * @param {boolean} searchAlwaysExpanded Whether or not search button is always expanded (always shows its
          * type-in box; true) or is dynamically expanded (false)
+         * @return {object} The created dijit or null if it there were no search sources or none were enabled
          */
         createSearchDijit: function (map, operationalLayers, geocoders, appProperties, srcNode, searchAlwaysExpanded) {
-            var searchAppProperties, searchSources = [], addLayersFromMap = false, searchControl, numSources = 0,
+            var searchAppProperties, searchSources = [], addLayersFromMap = false, searchControl = null, numSources = 0,
                 activeSource = "all";
 
             // Adjust the search properties with whatever's configured in the webmap;
@@ -116,7 +117,8 @@ define([
                         enableInfoWindow: false,
                         map: map,
                         sources: searchSources,
-                        useMapExtent: map.extent
+                        useMapExtent: map.extent,
+                        enableHighlight: false
                     }, srcNode);
                     searchControl.startup();
 
@@ -127,6 +129,8 @@ define([
                     }
                 }
             }
+
+            return searchControl;
         },
 
         /**
