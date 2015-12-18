@@ -31,7 +31,7 @@ define([
     "dojo/topic",
     "esri/lang",
     "dojo/i18n!esri/nls/jsapi",
-    "dojo/domReady!"
+    "dojo/domReady"
 ], function (
     declare,
     lang,

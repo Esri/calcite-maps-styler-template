@@ -1,8 +1,8 @@
-Built on 11/18/2015  9:02:46.42 from
+Built on 12/18/2015 12:28:04.12 from
 repository local-government-online-apps
-branch master
-commit 003b4194ab621f15583ab52e73811807fb0dc270
+branch new-search-widget
+commit 8790b8a28510268be70bc50cdeff4a1ca8120a19
 Author: MikeTschudi <mtschudi@esri.com>
-Date:   Wed Nov 18 09:02:28 2015 -0800
+Date:   Fri Dec 18 12:24:13 2015 -0800
 
-    Corrected variable used for checking AGOL environment
+    Switched to Viewer's Search dijit preparation
