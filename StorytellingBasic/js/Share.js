@@ -102,7 +102,9 @@ define([
       // Add current extent to url 
       var gExtent, url, useSeparator;
       gExtent = this.map.geographicExtent;
-      urlObject.query.extent = gExtent.xmin.toFixed(4) + ',' + gExtent.ymin.toFixed(4) + ',' + gExtent.xmax.toFixed(4) + ',' + gExtent.ymax.toFixed(4);
+      if(gExtent){
+        urlObject.query.extent = gExtent.xmin.toFixed(4) + ',' + gExtent.ymin.toFixed(4) + ',' + gExtent.xmax.toFixed(4) + ',' + gExtent.ymax.toFixed(4);
+      }
       url = window.location.protocol + "//" + window.location.host + window.location.pathname;
       // append params
       for (var i in urlObject.query) {
