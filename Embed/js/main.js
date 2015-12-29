@@ -216,13 +216,20 @@ ready, parser, domAttr, domGeometry, on, array, declare, lang, query, dom, domCl
                 if (!Search && !Locator && !SearchSources) {
                     return;
                 }
-
-                var searchSources = new SearchSources({
+                var searchOptions = {
                     map: this.map,
                     useMapExtent: this.config.searchextent,
-                    geocoders: this.config.helperServices.geocode || [],
                     itemData: this.config.response.itemInfo.itemData
-                });
+                };
+              
+           
+                if(this.config.searchOptions && this.config.searchOptions.sources){
+                    searchOptions.applicationConfiguredSources = this.config.searchOptions.sources;
+                }else{
+                    searchOptions.geocoders = this.config.helperServices.geocode || [];
+                }
+                var searchSources = new SearchSources(searchOptions);
+
                 var createdOptions = searchSources.createOptions();
                 createdOptions.enableButtonMode = true;
                 createdOptions.expanded = true;
@@ -237,7 +244,7 @@ ready, parser, domAttr, domGeometry, on, array, declare, lang, query, dom, domCl
                 if(this.config.find){
                     search.set("value", this.config.find);
                     var activeIndex = search.activeSourceIndex;
-                    console.log(activeIndex);
+       
                     search.set("activeSourceIndex","all");
                     search.search(this.config.find).then(function(){
                         search.set("activeSourceIndex",activeIndex);
