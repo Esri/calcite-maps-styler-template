@@ -216,6 +216,6 @@
       "legend":false,
       "popup_sidepanel":false,
       "basemap_gallery":false,
-      "disable_scroll":true
+      "disable_scroll":false
       }
 }
