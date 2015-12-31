@@ -542,7 +542,8 @@ define([
                     directionsLengthUnits: units
                 },
                 alphabet: false,
-                canModifyStops: false
+                canModifyStops: false,
+                doNotFetchTravelModesFromOwningSystem: true
             };
             // TO DO: check proxy url
             if (this.config.helperServices.route && this.config.helperServices.route.url !== "") {
