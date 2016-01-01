@@ -20,8 +20,13 @@ define(
       error: "Nie można utworzyć mapy",
       generalError: "Błąd"
     },
+    social:{
+        facebook: "ł_Share on Facebook______ą",
+        twitter: "ł_Share on Twitter______ą",
+        link: "ł_Share link____ą"
+    },
     legendToggle:{
-        label: "LEGENDA MAPY"
+        label: "ł_LEGEND___ą"
     }
   })
 );

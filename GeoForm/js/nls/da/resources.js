@@ -236,6 +236,8 @@
       dragTooltipText: "Træk feltet derhen, hvor du vil have det vist",
       showHideLayerText: "Vis lag",
       showHideLayerHelpText: "Du kan konfigurere GeoForm til at Vise/Skjule lag. Denne indstilling gælder kun for en enkelt lagopsætning.",
+      enableOfflineSupport: "ø_Enable offline support________å",
+      enableOfflineSupportHelpText: "ø_Store submissions when there is no network connection and submit them when a connection is restored_______________________________å.",
       labelHelpMessage: "Mærke",
       placeHolderHintMessage: "Tiptekst",
       placeHolderHelpMessage: "Hjælpetekst",

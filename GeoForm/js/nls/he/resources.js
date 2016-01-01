@@ -236,6 +236,8 @@
       dragTooltipText: "גרור את השדה למקום שבו אתה רוצה שהוא יופיע",
       showHideLayerText: "הצג שכבה",
       showHideLayerHelpText: "תוכל להגדיר את ה-GeoForm כך שיציג/יסתיר שכבה. אפשרות זו חלה אך ורק על הגדרה של שכבה יחידה.",
+      enableOfflineSupport: "כן_Enable offline support________ש",
+      enableOfflineSupportHelpText: "כן_Store submissions when there is no network connection and submit them when a connection is restored_______________________________ש.",
       labelHelpMessage: "תווית",
       placeHolderHintMessage: "טקסט רמז",
       placeHolderHelpMessage: "טקסט עזרה",

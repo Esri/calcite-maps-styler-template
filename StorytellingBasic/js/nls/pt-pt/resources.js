@@ -20,8 +20,13 @@ define(
       error: "Não foi possível criar mapa",
       generalError: "Erro"
     },
+    social:{
+        facebook: "ã_Share on Facebook______Ç",
+        twitter: "ã_Share on Twitter______Ç",
+        link: "ã_Share link____Ç"
+    },
     legendToggle:{
-        label: "LEGENDA DE MAPA"
+        label: "ã_LEGEND___Ç"
     }
   })
 );

@@ -20,8 +20,13 @@ define(
       error: "Impossibile creare la mappa",
       generalError: "Errore"
     },
+    social:{
+        facebook: "é_Share on Facebook______È",
+        twitter: "é_Share on Twitter______È",
+        link: "é_Share link____È"
+    },
     legendToggle:{
-        label: "LEGENDA MAPPA"
+        label: "é_LEGEND___È"
     }
   })
 );

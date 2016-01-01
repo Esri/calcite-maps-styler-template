@@ -20,8 +20,13 @@ define(
       error: "يتعذر إنشاء الخريطة",
       generalError: "خطأ"
     },
+    social:{
+        facebook: "بيت_Share on Facebook______لاحقة",
+        twitter: "بيت_Share on Twitter______لاحقة",
+        link: "بيت_Share link____لاحقة"
+    },
     legendToggle:{
-        label: "وسيلة إيضاح الخريطة"
+        label: "بيت_LEGEND___لاحقة"
     }
   })
 );

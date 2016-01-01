@@ -236,6 +236,8 @@
       dragTooltipText: "나타내려는 곳으로 필드 드래그",
       showHideLayerText: "레이어 보기",
       showHideLayerHelpText: "GeoForm을 레이어 보기/숨기기로 구성할 수 있습니다. 이 옵션은 단일 레이어 설정에만 적용됩니다.",
+      enableOfflineSupport: "한_Enable offline support________빠",
+      enableOfflineSupportHelpText: "한_Store submissions when there is no network connection and submit them when a connection is restored_______________________________빠.",
       labelHelpMessage: "레이블",
       placeHolderHintMessage: "힌트 텍스트",
       placeHolderHelpMessage: "도움말 텍스트",

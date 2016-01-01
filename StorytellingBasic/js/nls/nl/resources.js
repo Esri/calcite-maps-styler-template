@@ -20,8 +20,13 @@ define(
       error: "Kaart kan niet gemaakt worden",
       generalError: "Fout"
     },
+    social:{
+        facebook: "Ĳ_Share on Facebook______ä",
+        twitter: "Ĳ_Share on Twitter______ä",
+        link: "Ĳ_Share link____ä"
+    },
     legendToggle:{
-        label: "KAARTLEGENDA"
+        label: "Ĳ_LEGEND___ä"
     }
   })
 );

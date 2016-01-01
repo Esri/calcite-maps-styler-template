@@ -20,8 +20,13 @@ define(
       error: "Det går inte att skapa kartan",
       generalError: "Fel"
     },
+    social:{
+        facebook: "Å_Share on Facebook______ö",
+        twitter: "Å_Share on Twitter______ö",
+        link: "Å_Share link____ö"
+    },
     legendToggle:{
-        label: "KARTTECKENFÖRKLARING"
+        label: "Å_LEGEND___ö"
     }
   })
 );

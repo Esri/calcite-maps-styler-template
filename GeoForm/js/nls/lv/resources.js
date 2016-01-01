@@ -236,6 +236,8 @@
       dragTooltipText: "Velciet lauku uz vietu, kur vēlaties to parādīt",
       showHideLayerText: "Rādīt slāni",
       showHideLayerHelpText: "Varat konfigurēt GeoForm, lai rādītu/paslēptu slāni. Šī opcija attiecas tikai uz viena slāņa iestatījumu.",
+      enableOfflineSupport: "ķ_Enable offline support________ū",
+      enableOfflineSupportHelpText: "ķ_Store submissions when there is no network connection and submit them when a connection is restored_______________________________ū.",
       labelHelpMessage: "Kartes teksts",
       placeHolderHintMessage: "Norādes teksts",
       placeHolderHelpMessage: "Palīdzības teksts",

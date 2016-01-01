@@ -20,8 +20,13 @@ define(
       error: "Nelze vytvořit mapu",
       generalError: "Chyba"
     },
+    social:{
+        facebook: "Ř_Share on Facebook______ů",
+        twitter: "Ř_Share on Twitter______ů",
+        link: "Ř_Share link____ů"
+    },
     legendToggle:{
-        label: "LEGENDA MAPY"
+        label: "Ř_LEGEND___ů"
     }
   })
 );

@@ -20,8 +20,13 @@ define(
       error: "Imposibil de creat harta",
       generalError: "Eroare"
     },
+    social:{
+        facebook: "Ă_Share on Facebook______ș",
+        twitter: "Ă_Share on Twitter______ș",
+        link: "Ă_Share link____ș"
+    },
     legendToggle:{
-        label: "LEGENDĂ HARTĂ"
+        label: "Ă_LEGEND___ș"
     }
   })
 );

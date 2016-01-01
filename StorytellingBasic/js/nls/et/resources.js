@@ -20,8 +20,13 @@ define(
       error: "Võimetu koostama kaarti",
       generalError: "Viga"
     },
+    social:{
+        facebook: "Š_Share on Facebook______ä",
+        twitter: "Š_Share on Twitter______ä",
+        link: "Š_Share link____ä"
+    },
     legendToggle:{
-        label: "KAARDILEGEND"
+        label: "Š_LEGEND___ä"
     }
   })
 );

@@ -20,8 +20,13 @@ define(
       error: "ไม่สามารถสร้างแผนที่ได้",
       generalError: "ข้อผิดพลาด"
     },
+    social:{
+        facebook: "ก้_Share on Facebook______ษฺ",
+        twitter: "ก้_Share on Twitter______ษฺ",
+        link: "ก้_Share link____ษฺ"
+    },
     legendToggle:{
-        label: "คำอธิบายแผนที่"
+        label: "ก้_LEGEND___ษฺ"
     }
   })
 );

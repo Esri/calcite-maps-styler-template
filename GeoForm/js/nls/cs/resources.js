@@ -236,6 +236,8 @@
       dragTooltipText: "Přetáhněte pole na požadované místo",
       showHideLayerText: "Zobrazit vrstvu",
       showHideLayerHelpText: "Umožňuje nastavit skrytí nebo zobrazení vrstvy formuláře GeoForm. Tato možnost se týká pouze nastavení jedné vrstvy.",
+      enableOfflineSupport: "Ř_Enable offline support________ů",
+      enableOfflineSupportHelpText: "Ř_Store submissions when there is no network connection and submit them when a connection is restored_______________________________ů.",
       labelHelpMessage: "Popisek",
       placeHolderHintMessage: "Text nápovědy",
       placeHolderHelpMessage: "Text nápovědy",

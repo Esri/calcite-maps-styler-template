@@ -236,6 +236,8 @@
       dragTooltipText: "Dra fältet dit du vill ha det",
       showHideLayerText: "Visa lager",
       showHideLayerHelpText: "Du kan konfigurera din GeoForm med Visa/Dölj lager. Det här alternativet fungerar bara på en konfiguration med ett ensamt lager.",
+      enableOfflineSupport: "Å_Enable offline support________ö",
+      enableOfflineSupportHelpText: "Å_Store submissions when there is no network connection and submit them when a connection is restored_______________________________ö.",
       labelHelpMessage: "Etikett",
       placeHolderHintMessage: "Tipstext",
       placeHolderHelpMessage: "Hjälptext",

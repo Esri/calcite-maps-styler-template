@@ -236,6 +236,8 @@
       dragTooltipText: "Kéo trường tới nơi mà bạn muốn nó xuất hiện",
       showHideLayerText: "Hiện Lớp",
       showHideLayerHelpText: "Bạn có thể cấu hình GeoForm để Hiện/Ẩn Lớp. Tùy chọn này chỉ áp dụng đối với thiết lập một lớp.",
+      enableOfflineSupport: "Đ_Enable offline support________ớ",
+      enableOfflineSupportHelpText: "Đ_Store submissions when there is no network connection and submit them when a connection is restored_______________________________ớ.",
       labelHelpMessage: "Nhãn",
       placeHolderHintMessage: "Văn bản Gợi ý",
       placeHolderHelpMessage: "Văn bản Trợ giúp",

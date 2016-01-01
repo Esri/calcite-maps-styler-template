@@ -236,6 +236,8 @@
       dragTooltipText: "Przeciągnij pole do miejsca, w którym ma być wyświetlane",
       showHideLayerText: "Pokaż warstwę",
       showHideLayerHelpText: "Można skonfigurować formularz geograficzny, żeby pokazywał/ukrywał warstwę. Ta opcja dotyczy wyłącznie konfiguracji warstw pojedynczych.",
+      enableOfflineSupport: "ł_Enable offline support________ą",
+      enableOfflineSupportHelpText: "ł_Store submissions when there is no network connection and submit them when a connection is restored_______________________________ą.",
       labelHelpMessage: "Etykieta",
       placeHolderHintMessage: "Tekst wskazówki",
       placeHolderHelpMessage: "Tekst pomocy",

@@ -236,6 +236,8 @@
       dragTooltipText: "Nuvilkite lauką ten, kur jis turėtų būti",
       showHideLayerText: "Rodyti sluoksnį",
       showHideLayerHelpText: "Konfigūruokite GeoForm rodyti / slėpti sluoksnį. Ši parinktis taikoma tik vieno sluoksnio sąrankai.",
+      enableOfflineSupport: "Į_Enable offline support________š",
+      enableOfflineSupportHelpText: "Į_Store submissions when there is no network connection and submit them when a connection is restored_______________________________š.",
       labelHelpMessage: "Žymė",
       placeHolderHintMessage: "Patarimo tekstas",
       placeHolderHelpMessage: "Pagalbos tekstas",

@@ -236,6 +236,8 @@
       dragTooltipText: "Arraste o campo onde você deseja que ele apareça",
       showHideLayerText: "Mostrar Camada",
       showHideLayerHelpText: "Você pode configurar o GeoForm para Mostrar/Ocultar Camada. Esta opção se aplica somente a uma única configuração de camada.",
+      enableOfflineSupport: "ã_Enable offline support________Ç",
+      enableOfflineSupportHelpText: "ã_Store submissions when there is no network connection and submit them when a connection is restored_______________________________Ç.",
       labelHelpMessage: "Rótulo",
       placeHolderHintMessage: "Texto de Dica",
       placeHolderHelpMessage: "Texto de Ajuda",

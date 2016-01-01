@@ -236,6 +236,8 @@
       dragTooltipText: "Sleep de velden naar de gewenste plek",
       showHideLayerText: "Laag weergeven",
       showHideLayerHelpText: "U kunt het Geo-formulier configureren om de laag te tonen/verbergen.Deze optie geldt alleen voor een enkele laag.",
+      enableOfflineSupport: "Ĳ_Enable offline support________ä",
+      enableOfflineSupportHelpText: "Ĳ_Store submissions when there is no network connection and submit them when a connection is restored_______________________________ä.",
       labelHelpMessage: "Label",
       placeHolderHintMessage: "Tekst met tips",
       placeHolderHelpMessage: "Help-tekst",

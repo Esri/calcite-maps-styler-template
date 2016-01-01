@@ -236,6 +236,8 @@
       dragTooltipText: "Перетащите поле в подходящее место",
       showHideLayerText: "Показать слой",
       showHideLayerHelpText: "Вы можете настроить GeoForm на отображение/скрытие слоя. Эта опция применима только к настройке одного слоя.",
+      enableOfflineSupport: "Ж_Enable offline support________Я",
+      enableOfflineSupportHelpText: "Ж_Store submissions when there is no network connection and submit them when a connection is restored_______________________________Я.",
       labelHelpMessage: "Подпись",
       placeHolderHintMessage: "Текст подсказки",
       placeHolderHelpMessage: "Текст справки",

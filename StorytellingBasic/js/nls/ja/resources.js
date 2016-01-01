@@ -20,8 +20,13 @@ define(
       error: "マップを作成できません",
       generalError: "エラー"
     },
+    social:{
+        facebook: "須_Share on Facebook______鷗",
+        twitter: "須_Share on Twitter______鷗",
+        link: "須_Share link____鷗"
+    },
     legendToggle:{
-        label: "マップの凡例"
+        label: "須_LEGEND___鷗"
     }
   })
 );

@@ -236,6 +236,8 @@
       dragTooltipText: "Faites glisser le champ à l\'endroit où il doit apparaître",
       showHideLayerText: "Afficher la couche",
       showHideLayerHelpText: "Vous pouvez configurer le formulaire géographique de façon à afficher/masquer la couche. Cette option s\'applique uniquement à une configuration à une seule couche.",
+      enableOfflineSupport: "æ_Enable offline support________Â",
+      enableOfflineSupportHelpText: "æ_Store submissions when there is no network connection and submit them when a connection is restored_______________________________Â.",
       labelHelpMessage: "Etiquette",
       placeHolderHintMessage: "Astuce textuelle",
       placeHolderHelpMessage: "Texte d\'aide",

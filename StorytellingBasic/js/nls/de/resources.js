@@ -20,8 +20,13 @@ define(
       error: "Karte kann nicht erstellt werden",
       generalError: "Fehler"
     },
+    social:{
+        facebook: "ä_Share on Facebook______Ü",
+        twitter: "ä_Share on Twitter______Ü",
+        link: "ä_Share link____Ü"
+    },
     legendToggle:{
-        label: "KARTENLEGENDE"
+        label: "ä_LEGEND___Ü"
     }
   })
 );
