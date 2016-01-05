@@ -421,6 +421,11 @@ function bindModalShow (button) {
         document.body.style.height = '100%';
         document.body.style.overflow = 'hidden';
         html.style.height = '100%';
+
+        // sniff for IE, even IE 11 (not edge)
+        if((/(.*?Edge\/\d+)|(.*?Trident.*?)|(.*?MSIE.*?)/gi).test(window.navigator.userAgent)) {
+          html.style.overflow = 'hidden';
+        }
       }
 
       overlay.style.overflow = 'hidden';
@@ -528,6 +533,11 @@ function closeModal (overlay, modal, e) {
     document.body.style.height = '';
     document.body.style.overflow = '';
     html.style.height = '';
+
+    // sniff for IE, even IE 11 (not edge)
+    if((/(.*?Edge\/\d+)|(.*?Trident.*?)|(.*?MSIE.*?)/gi).test(window.navigator.userAgent)) {
+      html.style.overflow = '';
+    }
   }
 
   dom.removeClass(modal, 'visible');

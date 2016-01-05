@@ -1,4 +1,4 @@
-define(['dojo/Deferred', 'sign-in/SignInDialog', 'sign-in/PortalHelper'], function(Deferred, SignInDialog, PortalHelper) {
+define(['dojo/Deferred', 'sign-in/SignInDialog', 'sign-in/PortalHelper', 'create-app/buildApp', 'create-app/UserAgentHelper'], function(Deferred, SignInDialog, PortalHelper, buildApp, UserAgentHelper) {
 	'use strict';
 
 	var userInfo = null,
@@ -80,7 +80,7 @@ define(['dojo/Deferred', 'sign-in/SignInDialog', 'sign-in/PortalHelper'], functi
             var $ele = $(this);
             if ($ele[0].hostname in agolSites){
 
-                if ($ele.attr('linkType') && $ele.attr('linkType') == "fix"){
+                if ($ele.attr('linkType') && $ele.attr('linkType') == "fix") {
                     return false;
                 } else{
                     $ele[0].hostname = baseUrl;
@@ -112,7 +112,6 @@ define(['dojo/Deferred', 'sign-in/SignInDialog', 'sign-in/PortalHelper'], functi
 					else {
 						userInfo = data.user;
 						showLoggedInDropdown(userInfo.firstName || userInfo.username);
-						app.cfg.isSignedInPortal = data.isPortal;
 					}
 				},
 				error: function() {
@@ -188,7 +187,7 @@ define(['dojo/Deferred', 'sign-in/SignInDialog', 'sign-in/PortalHelper'], functi
 			accountBaseUrl = PortalHelper.getBaseUrl(cookie);
 			showSignedInHeader(cookie);
 
-			updateAgolLinkOnClick(accountBaseUrl);
+			updateAgolLinkOnClick(accountBaseUrl.replace(/.*?\/\//, ''));
 
 			portalHttps = PortalHelper.forceHttpsPortalUrl(accountBaseUrl);
 
@@ -221,7 +220,7 @@ define(['dojo/Deferred', 'sign-in/SignInDialog', 'sign-in/PortalHelper'], functi
 			myApp = cookieObj.app,
 			myLayout = cookieObj.layout;
 
-		showContinueBuildDialog(myApp, myLayout);
+		buildApp.showContinueBuildDialog(myApp, myLayout);
 
 		destroyCookie();
     },
@@ -303,12 +302,12 @@ define(['dojo/Deferred', 'sign-in/SignInDialog', 'sign-in/PortalHelper'], functi
 				baseUrlHttps = PortalHelper.forceHttpsPortalUrl(baseUrl),
 				layoutStr = layout ? layout : 'default',
 				urlSuffix = fromBuildApp ? '&buildApp=true&app=' + appObj + '&layout=' + layoutStr : '',
-				myStoriesPage = window.location.href.indexOf('/my-stories') === -1 ? false : true,
+				myStoriesPage = (window.location.href.indexOf('/my-stories') !== -1 || window.location.href.indexOf('/MyStories/') !== -1) ? true : false,
 				portalDefaultStr = "?defaultPortalURL=" + unProtocolUrl(baseUrl) + "&defaultClientId=" + app.cfg.DEFAULT_CLIENT_ID;
 
 			if(isPortal) {
 				// the others are forcing https, but portal may not be enabled for https for certain orgs, so it will go on the protocol it is over.
-				window.redirectBase = getPortalPath();
+				window.redirectBase = 'https://' + unProtocolUrl(getPortalPath());
 			}
 			else {
 
@@ -323,6 +322,11 @@ define(['dojo/Deferred', 'sign-in/SignInDialog', 'sign-in/PortalHelper'], functi
 
 			$('body').addClass('no-scroll');
 
+			// sniff for IE, even IE 11 (not edge)
+			if(UserAgentHelper.isInternetExplorerOrEdge()) {
+				$('html').addClass('no-scroll');
+			}
+
 
 			var locale = 'en',
 				preflang = fetchCookie('preflang');
@@ -335,7 +339,7 @@ define(['dojo/Deferred', 'sign-in/SignInDialog', 'sign-in/PortalHelper'], functi
 			// the signedIn should be https if it gets here.
 			$("#sign-in-frame").attr(
 				"src",
-				baseUrlHttps + "/sharing/oauth2/authorize?client_id=" + app.cfg.DEFAULT_CLIENT_ID + "&display=iframe" +
+				baseUrlHttps + "/sharing/rest/oauth2/authorize?client_id=" + app.cfg.DEFAULT_CLIENT_ID + "&display=iframe" +
 				"&redirect_uri=" + window.redirectBase + "arcgis-storymaps-my-stories-utils/sign-in/signedin.html" + encodeURIComponent(portalDefaultStr) + encodeURIComponent(urlSuffix) +
 				"&response_type=token&display=iframe" +
 				"&parent=" + window.location.href + "&locale=" + locale
@@ -440,9 +444,19 @@ define(['dojo/Deferred', 'sign-in/SignInDialog', 'sign-in/PortalHelper'], functi
 			containerFade = fadeFast ? 500 : 1000;
 
 		frame.fadeOut(frameFade);
-		container.fadeOut(containerFade, function() {
+
+		// to avoid the fading and then a random page shift, we'll shift the page right when they click to dismiss (in IE).
+		if(UserAgentHelper.isInternetExplorerOrEdge()) {
+			$('html').removeClass('no-scroll');
 			$('body').removeClass('no-scroll');
-		});
+			container.fadeOut(containerFade);
+		}
+		else {
+			container.fadeOut(containerFade, function() {
+				$('body').removeClass('no-scroll');
+			});
+		}
+
 
 		addSignInButtonEvent();
 	},

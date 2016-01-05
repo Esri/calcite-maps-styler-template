@@ -354,7 +354,6 @@ define(['dojo/i18n!./nls/app.js?v=' + app.cfg.version, 'lib-build/hbars!./templa
 			addHandlebarsHelpers();
 			templatizeCreateStory();
 			templatizeNoCreateStory();
-			T.modal();
 
 			toggleButton = $('.toggle');
 			askProsView = $('#ask-pros');

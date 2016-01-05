@@ -143,6 +143,7 @@ else {
 
 
 
+
 loadJS(app.cfg.jsApiUrl, true);
 
 if(app.cfg.isProduction) {

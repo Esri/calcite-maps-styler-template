@@ -8,8 +8,6 @@
 
 
 	onSignedIn = function() {
-		console.log('portal url: ' + DEFAULT_PORTAL_URL);
-		console.log('clientId: ' + DEFAULT_CLIENT_ID);
 
 		var callback = null,
 			cookie = null,
@@ -25,7 +23,7 @@
 		}
 
 		if( window.location.href.match(/fromSignOut/) ) {
-			window.location.href = baseUrl + "/sharing/oauth2/authorize?client_id=" + DEFAULT_CLIENT_ID + "&display=iframe" +
+			window.location.href = baseUrl + "/sharing/rest/oauth2/authorize?client_id=" + DEFAULT_CLIENT_ID + "&display=iframe" +
 			"&redirect_uri=" + parentWindow.redirectBase + "arcgis-storymaps-my-stories-utils/sign-in/signedin.html" + encodeURIComponent("?defaultPortalURL=" + DEFAULT_PORTAL_URL +
 			"&defaultClientId=" + DEFAULT_CLIENT_ID) +
 			"&response_type=token&display=iframe" +
@@ -146,11 +144,13 @@
 
 
 	redirectToHttps = function() {
-		var urlPrefix = '';
+		var urlPrefix = '',
+			match = '';
 
 		// see if came here with the buildApp information. If so, pass back.
-		if(window.location.href.match(/\?buildApp=true/)) {
-			urlPrefix = (/(\?buildApp=true)&app=(.*?)&layout=(.*?)(?=(#|&|$))/).exec(window.location.href)[1];
+		if(window.location.href.match(/&buildApp=true/)) {
+			match = (/(&buildApp=true)&app=(.*?)&layout=(.*?)(?=(#|&|$))/).exec(window.location.href)[1];
+			urlPrefix = match.replace(/^&/, '?');
 		}
 
 		parentWindow.location.href = parentWindow.location.href.replace((/(.*?):\/\//), 'https://') + urlPrefix;

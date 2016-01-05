@@ -1,4 +1,4 @@
-define(['dojo/i18n!./nls/app.js?v=' + app.cfg.version, 'sign-in/PortalHelper'], function(createStoryi18n, PortalHelper) {
+define(['dojo/i18n!./nls/app.js?v=' + app.cfg.version, 'sign-in/PortalHelper', 'create-app/UserAgentHelper'], function(createStoryi18n, PortalHelper, UserAgentHelper) {
   'use strict';
 
   function getCookie(c_name)
@@ -123,6 +123,11 @@ define(['dojo/i18n!./nls/app.js?v=' + app.cfg.version, 'sign-in/PortalHelper'], 
 
     $('body').addClass('no-scroll');
 
+    // sniff for IE, even IE 11 (not edge)
+    if(UserAgentHelper.isInternetExplorerOrEdge()) {
+      $('html').addClass('no-scroll');
+    }
+
     addContinueBuildEvents(url);
   }
 
@@ -156,9 +161,17 @@ define(['dojo/i18n!./nls/app.js?v=' + app.cfg.version, 'sign-in/PortalHelper'], 
       containerFade = 500;
 
     frame.fadeOut(frameFade);
-    container.fadeOut(containerFade, function() {
+
+    if(UserAgentHelper.isInternetExplorerOrEdge()) {
+      $('html').removeClass('no-scroll');
       $('body').removeClass('no-scroll');
-    });
+      container.fadeOut(containerFade);
+    }
+    else {
+      container.fadeOut(containerFade, function() {
+        $('body').removeClass('no-scroll');
+      });
+    }
   }
 
   function buildSwipe(layout)
@@ -229,6 +242,7 @@ define(['dojo/i18n!./nls/app.js?v=' + app.cfg.version, 'sign-in/PortalHelper'], 
 
 
   return {
-    init: init
+    init: init,
+    showContinueBuildDialog: showContinueBuildDialog
   }
 });
