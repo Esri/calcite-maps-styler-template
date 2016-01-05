@@ -7,7 +7,7 @@ declare, lang, array, dojoJson, domConstruct, esriLang, Locator, FeatureLayer, S
             var defaults = {
                 sources: [],
                 map: null,
-                //the map 
+                //the map
                 useMapExtent: false,
                 //When true we restrict world locator to the map extent
                 geocoders: [],
@@ -38,9 +38,9 @@ declare, lang, array, dojoJson, domConstruct, esriLang, Locator, FeatureLayer, S
             if (this.applicationConfiguredSources) {
                 this._createAppConfigSources();
             } else {
-                //Create services from org helper services 
+                //Create services from org helper services
                 //Create locators defined in web map item
-                //Create configured services. 
+                //Create configured services.
                 this._createHelperServiceSources();
                 if (this.itemData) {
                     this._createWebMapItemSources();
@@ -73,8 +73,8 @@ declare, lang, array, dojoJson, domConstruct, esriLang, Locator, FeatureLayer, S
                     var s = new Search();
                     var esriSource = s.defaultSource;
                     esriSource.hasEsri = true;
-                    //Some orgs have the Esri world locator added with 
-                    //a custom name defined. Use that name. 
+                    //Some orgs have the Esri world locator added with
+                    //a custom name defined. Use that name.
                     if (geocoder.name) {
                         esriSource.name = geocoder.name;
                     }
@@ -93,7 +93,7 @@ declare, lang, array, dojoJson, domConstruct, esriLang, Locator, FeatureLayer, S
 
         _createWebMapItemSources: function () {
             if (this.itemData && this.itemData.applicationProperties && this.itemData.applicationProperties.viewing && this.itemData.applicationProperties.viewing.search) {
-                //search is configured on the web map item 
+                //search is configured on the web map item
                 var searchOptions = this.itemData.applicationProperties.viewing.search;
                 array.forEach(searchOptions.layers, lang.hitch(this, function (searchLayer) {
                     //get the title specified in the item
@@ -164,7 +164,7 @@ declare, lang, array, dojoJson, domConstruct, esriLang, Locator, FeatureLayer, S
 
         },
         _createConfiguredSources: function () {
-            // Old configuration using layer/field picker 
+            // Old configuration using layer/field picker
             array.forEach(this.configuredSearchLayers, lang.hitch(this, function (layer) {
                 var mapLayer = this.map.getLayer(layer.id);
                 if (mapLayer) {
@@ -182,3 +182,8 @@ declare, lang, array, dojoJson, domConstruct, esriLang, Locator, FeatureLayer, S
 
     });
 });
+/*
+This source is part of the git commit
+8790b8a28510268b 2015-12-18 12:24:13 -0800
+It is available from https://github.com/Esri/local-government-online-apps
+*/

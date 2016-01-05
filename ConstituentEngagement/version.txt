@@ -1,2 +1,8 @@
-v 2.6
-10/16/2015
+git repository crowdsource-reporter, branch
+develop
+commit e065b573d68e0c9901097d09463955ac394aaf3f
+Merge: d4b68ff 78ce911
+Author: MikeTschudi <mtschudi@esri.com>
+Date:   Mon Nov 16 12:19:29 2015 -0800
+
+    Merge branch 'master' into develop

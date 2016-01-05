@@ -236,6 +236,8 @@
       dragTooltipText: "将字段拖放到预期的显示位置",
       showHideLayerText: "显示图层",
       showHideLayerHelpText: "可将 GeoForm 配置为显示/隐藏图层。此选项仅应用于单一图层设置。",
+      enableOfflineSupport: "试_Enable offline support________验",
+      enableOfflineSupportHelpText: "试_Store submissions when there is no network connection and submit them when a connection is restored_______________________________验.",
       labelHelpMessage: "标注",
       placeHolderHintMessage: "提示文本",
       placeHolderHelpMessage: "帮助文本",

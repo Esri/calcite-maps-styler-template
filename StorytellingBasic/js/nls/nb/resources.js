@@ -20,8 +20,13 @@ define(
       error: "Kan ikke opprette kart",
       generalError: "Feil"
     },
+    social:{
+        facebook: "å_Share on Facebook______ø",
+        twitter: "å_Share on Twitter______ø",
+        link: "å_Share link____ø"
+    },
     legendToggle:{
-        label: "TEGNFORKLARING PÅ KART"
+        label: "å_LEGEND___ø"
     }
   })
 );

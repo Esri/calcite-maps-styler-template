@@ -31,7 +31,7 @@ define([
     "dojo/topic",
     "esri/lang",
     "dojo/i18n!esri/nls/jsapi",
-    "dojo/domReady!"
+    "dojo/domReady"
 ], function (
     declare,
     lang,
@@ -119,7 +119,7 @@ define([
                         filename = this.config.app;
 
                         // If we're running in the hosted environment without an appid, the file-based UIs are for previewing
-                        if (templateConfig.queryForCommonConfig && !this.config.orgInfo.isPortal) {
+                        if (templateConfig.esriEnvironment && !this.config.orgInfo.isPortal) {
                             filename += "_try_it";
                         }
 

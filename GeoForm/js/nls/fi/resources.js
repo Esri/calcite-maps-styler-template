@@ -236,6 +236,8 @@
       dragTooltipText: "Vedä kenttä kohtaan, jossa haluat sen näkyvän",
       showHideLayerText: "Näytä karttataso",
       showHideLayerHelpText: "Voit näyttää tai piilottaa karttatason määrittämällä GeoForm-lomakkeen. Tämä asetus koskee vain yhden karttatason asennusta.",
+      enableOfflineSupport: "Å_Enable offline support________ö",
+      enableOfflineSupportHelpText: "Å_Store submissions when there is no network connection and submit them when a connection is restored_______________________________ö.",
       labelHelpMessage: "Tunnusteksti",
       placeHolderHintMessage: "Vihjeteksti",
       placeHolderHelpMessage: "Ohjeteksti",

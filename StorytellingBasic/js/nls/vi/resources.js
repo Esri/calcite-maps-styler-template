@@ -20,8 +20,13 @@ define(
       error: "Không thể tạo bản đồ",
       generalError: "Lỗi"
     },
+    social:{
+        facebook: "Đ_Share on Facebook______ớ",
+        twitter: "Đ_Share on Twitter______ớ",
+        link: "Đ_Share link____ớ"
+    },
     legendToggle:{
-        label: "CHÚ GIẢI BẢN ĐỒ"
+        label: "Đ_LEGEND___ớ"
     }
   })
 );

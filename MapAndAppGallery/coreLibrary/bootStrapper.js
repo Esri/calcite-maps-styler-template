@@ -21,8 +21,9 @@ require([
     "application/appIncludes",
     "esri/config",
     "esri/request",
+    "esri/urlUtils",
     "dojo/domReady!"
-], function (WidgetLoader, appIncludesConfig, esriConfig, esriRequest) {
+], function (WidgetLoader, appIncludesConfig, esriConfig, esriRequest, urlUtils) {
 
     try {
 
@@ -41,9 +42,13 @@ require([
                 var applicationWidgetLoader = new WidgetLoader();
                 applicationWidgetLoader.startup();
 
-                esriConfig.defaults.io.proxyUrl = dojoConfig.baseURL + dojo.configData.values.proxyUrl;
-                esriConfig.defaults.io.alwaysUseProxy = false;
-                esriConfig.defaults.io.timeout = 180000;
+                // Use the proxy for the portal if the proxy URL is provided
+                if (dojo.configData.values.proxyUrl) {
+                    urlUtils.addProxyRule({
+                        urlPrefix: dojo.configData.values.portalURL,
+                        proxyUrl: dojo.configData.values.proxyUrl
+                    });
+                }
             },
             error: function (err) {
                 alert(err.message);

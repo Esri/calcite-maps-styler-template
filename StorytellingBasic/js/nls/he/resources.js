@@ -20,8 +20,13 @@ define(
       error: "לא ניתן ליצור מפה",
       generalError: "שגיאה"
     },
+    social:{
+        facebook: "כן_Share on Facebook______ש",
+        twitter: "כן_Share on Twitter______ש",
+        link: "כן_Share link____ש"
+    },
     legendToggle:{
-        label: "מקרא מפה"
+        label: "כן_LEGEND___ש"
     }
   })
 );

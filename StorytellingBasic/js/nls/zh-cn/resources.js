@@ -20,8 +20,13 @@ define(
       error: "无法创建地图",
       generalError: "错误"
     },
+    social:{
+        facebook: "试_Share on Facebook______验",
+        twitter: "试_Share on Twitter______验",
+        link: "试_Share link____验"
+    },
     legendToggle:{
-        label: "地图图例"
+        label: "试_LEGEND___验"
     }
   })
 );

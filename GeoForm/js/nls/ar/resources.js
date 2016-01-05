@@ -236,6 +236,8 @@
       dragTooltipText: "اسحب الحقل حيث تريد ظهوره",
       showHideLayerText: "عرض الطبقة",
       showHideLayerHelpText: "يُمكنك تكوين GeoForm لإظهار/إخفاء الطبقة. يتم تطبيق هذا الخيار فقط على إعداد الطبقة المفردة.",
+      enableOfflineSupport: "بيت_Enable offline support________لاحقة",
+      enableOfflineSupportHelpText: "بيت_Store submissions when there is no network connection and submit them when a connection is restored_______________________________لاحقة.",
       labelHelpMessage: "تسمية",
       placeHolderHintMessage: "نص التلميح",
       placeHolderHelpMessage: "نص التعليمات",

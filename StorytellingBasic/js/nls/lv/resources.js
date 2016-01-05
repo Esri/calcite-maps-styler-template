@@ -20,8 +20,13 @@ define(
       error: "Nevar izveidot karti",
       generalError: "Kļūda"
     },
+    social:{
+        facebook: "ķ_Share on Facebook______ū",
+        twitter: "ķ_Share on Twitter______ū",
+        link: "ķ_Share link____ū"
+    },
     legendToggle:{
-        label: "KARTES LEĢENDA"
+        label: "ķ_LEGEND___ū"
     }
   })
 );

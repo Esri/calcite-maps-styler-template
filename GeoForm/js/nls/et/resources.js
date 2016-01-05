@@ -236,6 +236,8 @@
       dragTooltipText: "Lohistage väli kohta, kus soovite selle kuvada",
       showHideLayerText: "Kuva kiht",
       showHideLayerHelpText: "GeoFormis saate konfigureerida kihtide kuvamise/peitmise. See valik rakendub ainult üksiku kihi seadetele.",
+      enableOfflineSupport: "Š_Enable offline support________ä",
+      enableOfflineSupportHelpText: "Š_Store submissions when there is no network connection and submit them when a connection is restored_______________________________ä.",
       labelHelpMessage: "Silt",
       placeHolderHintMessage: "Vihje tekst",
       placeHolderHelpMessage: "Abitekst",

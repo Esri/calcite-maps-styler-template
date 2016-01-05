@@ -20,8 +20,13 @@ define(
       error: "Kan ikke oprette kort",
       generalError: "Fejl"
     },
+    social:{
+        facebook: "ø_Share on Facebook______å",
+        twitter: "ø_Share on Twitter______å",
+        link: "ø_Share link____å"
+    },
     legendToggle:{
-        label: "SIGNATURFORKLARING TIL KORT"
+        label: "ø_LEGEND___å"
     }
   })
 );

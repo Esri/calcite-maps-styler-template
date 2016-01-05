@@ -51,6 +51,7 @@ mkdir %BUILD_OUTPUT%\MapCarousel
 mkdir %BUILD_OUTPUT%\MapTour
 mkdir %BUILD_OUTPUT%\MapTools
 mkdir %BUILD_OUTPUT%\MapAndAppGallery
+mkdir %BUILD_OUTPUT%\Minimalist
 mkdir %BUILD_OUTPUT%\OnePane
 mkdir %BUILD_OUTPUT%\OnePane\azuretime
 mkdir %BUILD_OUTPUT%\OnePane\azuretwitter
@@ -114,6 +115,8 @@ xcopy %TEMPLATES_ROOT%\Editor                                   %BUILD_OUTPUT%\E
 xcopy %TEMPLATES_ROOT%\archive\ElevationsProfile                %BUILD_OUTPUT%\ElevationsProfile                    /E /Y
 xcopy %TEMPLATES_ROOT%\archive\Elevations                       %BUILD_OUTPUT%\Elevations                           /E /Y
 xcopy %TEMPLATES_ROOT%\Embed                                    %BUILD_OUTPUT%\Embed                                /E /Y
+xcopy %TEMPLATES_ROOT%\Embed                                    %BUILD_OUTPUT%\Minimalist                           /E /Y
+xcopy %TEMPLATES_ROOT%\Embed\config\minimalDefault.js           %BUILD_OUTPUT%\Minimalist\config\defaults.js        /E /Y
 xcopy %TEMPLATES_ROOT%\archive\Filter                           %BUILD_OUTPUT%\Filter                               /E /Y
 xcopy %TEMPLATES_ROOT%\GeoForm                                  %BUILD_OUTPUT%\GeoForm                              /E /Y
 xcopy %TEMPLATES_ROOT%\archive\HeaderFooterChrome               %BUILD_OUTPUT%\HeaderFooter\Chrome                  /E /Y

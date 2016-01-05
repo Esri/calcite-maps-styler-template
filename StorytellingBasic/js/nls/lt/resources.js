@@ -20,8 +20,13 @@ define(
       error: "Žemėlapio sukurti nepavyko",
       generalError: "Klaida"
     },
+    social:{
+        facebook: "Į_Share on Facebook______š",
+        twitter: "Į_Share on Twitter______š",
+        link: "Į_Share link____š"
+    },
     legendToggle:{
-        label: "ŽEMĖLAPIO LEGENDA"
+        label: "Į_LEGEND___š"
     }
   })
 );

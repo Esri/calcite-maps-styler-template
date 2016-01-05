@@ -236,6 +236,8 @@
       dragTooltipText: "フィールドを表示したい場所にドラッグ",
       showHideLayerText: "レイヤの表示",
       showHideLayerHelpText: "レイヤーの表示/非表示を操作することができます。このオプションは、単一のレイヤーを設定した場合のみに適用されます。",
+      enableOfflineSupport: "須_Enable offline support________鷗",
+      enableOfflineSupportHelpText: "須_Store submissions when there is no network connection and submit them when a connection is restored_______________________________鷗.",
       labelHelpMessage: "ラベル",
       placeHolderHintMessage: "ヒント",
       placeHolderHelpMessage: "ヘルプ テキスト",

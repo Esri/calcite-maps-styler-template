@@ -236,6 +236,8 @@
       dragTooltipText: "Das Feld an die Position ziehen, an der es angezeigt werden soll",
       showHideLayerText: "Layer anzeigen",
       showHideLayerHelpText: "Sie können das GeoForm konfigurieren, um den Layer ein-/auszublenden. Diese Option gilt nur für eine einzelne Layer-Einrichtung.",
+      enableOfflineSupport: "ä_Enable offline support________Ü",
+      enableOfflineSupportHelpText: "ä_Store submissions when there is no network connection and submit them when a connection is restored_______________________________Ü.",
       labelHelpMessage: "Beschriftung",
       placeHolderHintMessage: "Hinweistext",
       placeHolderHelpMessage: "Hilfetext",

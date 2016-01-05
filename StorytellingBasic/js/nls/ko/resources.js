@@ -20,8 +20,13 @@ define(
       error: "맵을 생성할 수 없음",
       generalError: "오류"
     },
+    social:{
+        facebook: "한_Share on Facebook______빠",
+        twitter: "한_Share on Twitter______빠",
+        link: "한_Share link____빠"
+    },
     legendToggle:{
-        label: "맵 범례"
+        label: "한_LEGEND___빠"
     }
   })
 );

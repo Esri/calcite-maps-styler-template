@@ -20,8 +20,13 @@ define(
       error: "Karttaa ei voi luoda",
       generalError: "Virhe"
     },
+    social:{
+        facebook: "Å_Share on Facebook______ö",
+        twitter: "Å_Share on Twitter______ö",
+        link: "Å_Share link____ö"
+    },
     legendToggle:{
-        label: "KARTAN SELITE"
+        label: "Å_LEGEND___ö"
     }
   })
 );

@@ -20,8 +20,13 @@ define(
       error: "Не удалось создать карту",
       generalError: "Ошибка"
     },
+    social:{
+        facebook: "Ж_Share on Facebook______Я",
+        twitter: "Ж_Share on Twitter______Я",
+        link: "Ж_Share link____Я"
+    },
     legendToggle:{
-        label: "ЛЕГЕНДА КАРТЫ"
+        label: "Ж_LEGEND___Я"
     }
   })
 );

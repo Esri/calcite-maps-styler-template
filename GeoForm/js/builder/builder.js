@@ -1374,7 +1374,7 @@ define([
       this._addProgressBar();
       $("#myModal").modal('show');
       arcgisUtils.getItem(this.currentConfig.appid).then(lang.hitch(this, function (response) {
-        var updateURL = this.userInfo.portal.url + "/sharing/content/users/" + this.userInfo.username + (response.item.ownerFolder ? ("/" + response.item.ownerFolder) : "") + "/items/" + this.currentConfig.appid + "/update";
+        var updateURL = this.userInfo.portal.url + "/sharing/rest/content/users/" + this.userInfo.username + (response.item.ownerFolder ? ("/" + response.item.ownerFolder) : "") + "/items/" + this.currentConfig.appid + "/update";
         esriRequest({
           url: updateURL,
           content: rqData,

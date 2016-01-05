@@ -1,7 +1,0 @@
-From git branch 
-develop
-commit 27f176f56210d5a222ae0ce68aa826f41caf0cd5
-Author: MikeTschudi <mtschudi@esri.com>
-Date:   Wed Nov 11 13:19:50 2015 -0800
-
-    Updated to production JSAPI 3.15

@@ -20,8 +20,13 @@ define(
       error: "Harita oluşturulamıyor",
       generalError: "Hata"
     },
+    social:{
+        facebook: "ı_Share on Facebook______İ",
+        twitter: "ı_Share on Twitter______İ",
+        link: "ı_Share link____İ"
+    },
     legendToggle:{
-        label: "HARİTA GÖSTERİMİ"
+        label: "ı_LEGEND___İ"
     }
   })
 );

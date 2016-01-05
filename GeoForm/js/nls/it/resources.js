@@ -236,6 +236,8 @@
       dragTooltipText: "Trascinare il campo nella posizione in cui si desidera visualizzarlo.",
       showHideLayerText: "Mostra layer",
       showHideLayerHelpText: "È possibile configurare il modulo GeoForm in modo da visualizzare/nascondere il layer. Questa opzione si applica solo a una singola configurazione di layer.",
+      enableOfflineSupport: "é_Enable offline support________È",
+      enableOfflineSupportHelpText: "é_Store submissions when there is no network connection and submit them when a connection is restored_______________________________È.",
       labelHelpMessage: "Etichetta",
       placeHolderHintMessage: "Testo suggerimento",
       placeHolderHelpMessage: "Testo guida",

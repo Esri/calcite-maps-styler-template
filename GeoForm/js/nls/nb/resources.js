@@ -236,6 +236,8 @@
       dragTooltipText: "Dra feltet dit du vil at det skal vises",
       showHideLayerText: "Vis lag",
       showHideLayerHelpText: "Du kan konfigurere Vis/skjul lag for GeoForm. Dette alternativet gjelder bare for oppsett med ett lag.",
+      enableOfflineSupport: "å_Enable offline support________ø",
+      enableOfflineSupportHelpText: "å_Store submissions when there is no network connection and submit them when a connection is restored_______________________________ø.",
       labelHelpMessage: "Etikett",
       placeHolderHintMessage: "Hinttekst",
       placeHolderHelpMessage: "Hjelpetekst",

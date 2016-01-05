@@ -27,6 +27,7 @@ define([
   "dojo/fx",
 
   "dojo/dom",
+  "dojo/dom-attr",
   "dojo/dom-class",
   "dojo/dom-construct",
   "dojo/dom-style",
@@ -44,7 +45,7 @@ define([
   Deferred,
   query, on,
   Toggler, coreFx,
-  dom, domClass, domConstruct, domStyle,
+  dom, domAttr, domClass, domConstruct, domStyle,
   registry,
   arcgisUtils, 
   domUtils, 
@@ -159,6 +160,10 @@ define([
         }
         // Show social icons
         if(this.config.showSocialIcons){
+          domAttr.set("facebook","title", this.config.i18n.social.facebook);
+          domAttr.set("twitter","title", this.config.i18n.social.twitter);
+          domAttr.set("link","title", this.config.i18n.social.link);
+
           query(".shareIcon").style("display", "inline-block");
           // Setup click events for sharing nodes
           require(["application/Share"],lang.hitch(this, function(Share){
@@ -191,12 +196,34 @@ define([
 
         // Add legend 
         if(this.config.legend){
+          domUtils.hide(dom.byId("legendDiv"));
           require(["esri/dijit/Legend"], lang.hitch(this, function(Legend){
             var layerInfo = arcgisUtils.getLegendLayers(response);
             if(layerInfo.length === 0){
               // hide the legend
               domUtils.hide(dom.byId("legendCon"));
             }else{
+     
+              // Toggle legend display 
+              var toggler = new Toggler({
+                node:"legendDiv",
+                showFunc: coreFx.wipeIn,
+                hideFunc: coreFx.wipeOut
+              });
+
+              on(dom.byId("legendToggle"), "click", lang.hitch(this, function(){
+                var displayMode = domStyle.get(dom.byId("legendDiv"),"display");
+                if(displayMode === "none"){
+                  domClass.remove("legToggleIcon","icon-down");
+                  domClass.add("legToggleIcon", "icon-up");
+                  toggler.show();
+                }else{
+                  domClass.add("legToggleIcon","icon-down");
+                  domClass.remove("legToggleIcon", "icon-up");
+                  toggler.hide();
+                }
+              }));
+
               var legend = new Legend({
                 map: this.map,
                 layerInfos: layerInfo
@@ -204,25 +231,7 @@ define([
               legend.startup();
             }
           }));
-          // Toggle legend display 
-          var toggler = new Toggler({
-            node:"legendDiv",
-            showFunc: coreFx.wipeIn,
-            hideFunc: coreFx.wipeOut
-          });
-          toggler.hide();
-          on(dom.byId("legendToggle"), "click", lang.hitch(this, function(){
-            var displayMode = domStyle.get(dom.byId("legendDiv"),"display");
-            if(displayMode === "none"){
-              domClass.remove("legToggleIcon","icon-down");
-              domClass.add("legToggleIcon", "icon-up");
-              toggler.show();
-            }else{
-              domClass.add("legToggleIcon","icon-down");
-              domClass.remove("legToggleIcon", "icon-up");
-              toggler.hide();
-            }
-          }));
+
         }
 
         // Add search 

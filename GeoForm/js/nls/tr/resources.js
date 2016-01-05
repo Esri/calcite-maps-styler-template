@@ -236,6 +236,8 @@
       dragTooltipText: "Alanı, görünmesini istediğiniz yere sürükleyin",
       showHideLayerText: "Katmanı Göster",
       showHideLayerHelpText: "GeoForm\'u Katmanı Gösterecek/Gizleyecek biçimde yapılandırabilirsiniz. Bu seçenek yalnızca tek katmanlı kurulumlar için geçerlidir.",
+      enableOfflineSupport: "ı_Enable offline support________İ",
+      enableOfflineSupportHelpText: "ı_Store submissions when there is no network connection and submit them when a connection is restored_______________________________İ.",
       labelHelpMessage: "Etiket",
       placeHolderHintMessage: "İpucu Metni",
       placeHolderHelpMessage: "Yardım Metni",

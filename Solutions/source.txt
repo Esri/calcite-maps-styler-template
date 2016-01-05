@@ -1,8 +1,8 @@
-Built on 11/03/2015 16:52:44.23 from
+Built on 12/18/2015 12:28:04.12 from
 repository local-government-online-apps
-branch release
-commit 2003bc71b781113c6e3b54f2e7c0df77a02453c4
+branch new-search-widget
+commit 8790b8a28510268be70bc50cdeff4a1ca8120a19
 Author: MikeTschudi <mtschudi@esri.com>
-Date:   Tue Nov 3 16:52:26 2015 -0800
+Date:   Fri Dec 18 12:24:13 2015 -0800
 
-    Shield corsEnabledServers from invalid values
+    Switched to Viewer's Search dijit preparation

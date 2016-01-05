@@ -236,6 +236,8 @@
       dragTooltipText: "ลากฟิลด์ที่คุณต้องการให้แสดง",
       showHideLayerText: "แสดงชั้นข้อมูล",
       showHideLayerHelpText: "คุณสามารถกำหนดให้ GeoForm แสดง/ซ่อน ชั้นข้อมูล โดยตัวเลือกนี้จะกำหนดได้ในแต่ละชั้นข้อมูล",
+      enableOfflineSupport: "ก้_Enable offline support________ษฺ",
+      enableOfflineSupportHelpText: "ก้_Store submissions when there is no network connection and submit them when a connection is restored_______________________________ษฺ.",
       labelHelpMessage: "ตัวอักษร",
       placeHolderHintMessage: "ตัวอักษรใบ้",
       placeHolderHelpMessage: "ตัวอักษรช่วยเหลือ",

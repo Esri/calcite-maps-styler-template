@@ -100,7 +100,10 @@
        },
       {  
          "category":"Tools",
-         "fields":[  
+         "fields":[  {
+               "type": "paragraph",
+               "value": "Enable tools for the app toolbar. Note that if the web map doesn't support the enabled capability the tool will not appear. For example if the map doesn't have bookmarks then the bookmark tool won't appear on the toolbar even if it is checked."
+            },
             {  
                "type":"string",
                "fieldName":"activeTool",

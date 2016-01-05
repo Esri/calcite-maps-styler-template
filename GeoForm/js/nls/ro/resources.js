@@ -236,6 +236,8 @@
       dragTooltipText: "Glisaţi câmpul acolo unde doriţi să apară",
       showHideLayerText: "Afişare strat tematic",
       showHideLayerHelpText: "Puteţi configura GeoForm pentru a afişa/ascunde stratul tematic. Această opţiune se aplică numai configuraţiei cu un singur strat tematic.",
+      enableOfflineSupport: "Ă_Enable offline support________ș",
+      enableOfflineSupportHelpText: "Ă_Store submissions when there is no network connection and submit them when a connection is restored_______________________________ș.",
       labelHelpMessage: "Etichetă",
       placeHolderHintMessage: "Text de sugestie",
       placeHolderHelpMessage: "Text de ajutor",

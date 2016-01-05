@@ -236,6 +236,8 @@
       dragTooltipText: "Σύρετε το πεδίο εκεί που θέλετε να εμφανίζεται",
       showHideLayerText: "Εμφάνιση θεματικού επιπέδου",
       showHideLayerHelpText: "Μπορείτε να παραμετροποιήσετε το GeoForm για εμφάνιση/απόκρυψη του θεματικού επιπέδου. Αυτή η επιλογή ισχύει μόνο για παραμετροποίηση ενός θεματικού επιπέδου.",
+      enableOfflineSupport: "Đ_Enable offline support________ớ",
+      enableOfflineSupportHelpText: "Đ_Store submissions when there is no network connection and submit them when a connection is restored_______________________________ớ.",
       labelHelpMessage: "Ετικέτα",
       placeHolderHintMessage: "Κείμενο υπόδειξης",
       placeHolderHelpMessage: "Κείμενο βοήθειας",
