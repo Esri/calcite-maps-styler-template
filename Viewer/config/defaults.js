@@ -34,6 +34,7 @@ define({
     "splashModal": false,
     "splashTitle": null,
     "splashContent": null,
+    "splashButtonText":null,
     "find": null,
     "localize": true,
     "units": null,

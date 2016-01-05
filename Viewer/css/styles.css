@@ -1401,18 +1401,17 @@ input[type=checkbox]{
 /*Styles for the modal dialog (splash screen)*/
 
 #modal {
-  z-index:1000;
-  position: absolute;
+  z-index:2000;
+  position: fixed;
   left: 50%;
-  margin: 10% 0 0 -20%;
+  width:50%;
+  max-width: 630px;
+  min-width: 320px;
+  height:auto;
+  margin: 15% 0 0 -30%;
   opacity: 1;
   visibility: visible;
-  width: 40%;
   box-shadow: 0 3px 7px rgba(0,0,0,.25);
-  box-sizing: border-box;
-  transition: all .4s ease-in-out;
-  -moz-transition: all .4s ease-in-out;
-  -webkit-transition: all .4s ease-in-out;
   overflow:visible;
 }
 #modal.hide-modal{
@@ -1451,14 +1450,17 @@ input[type=checkbox]{
 }
 
 #closeOverlay{
-  display: inline-block;
-  position: absolute;
-  right:2px;
-  top:2px;
-  height:36px;
-  width:36px;
-  font-size:24px;
-  line-height: 24px;
+  line-height: normal;
+  padding: .5em 1em;
+  outline: none;
+  font-size: 1em;
+  font-weight: 600;
+  border:none;
+  cursor:pointer;
+  height:auto;
+  width: auto;
+  position: relative;
+  margin:0 auto;
 }
 .tool-btn{
   text-align: center;
