@@ -90,6 +90,9 @@ define([
                     urlPrefix: "traffic.arcgis.com",
                     proxyUrl: this.config.proxyurl
                 });
+                // TO DO: check proxy url
+                console.log("HELPER SERVICES", this.config.helperServices);
+                console.log("LAYER MIXINS", this.config.layerMixins);
                 if (this.config.helperServices.route && this.config.helperServices.route.url) {
                     var routeUrl = null;
                     array.some(this.config.layerMixins, lang.hitch(this, function(layerMixin) {
