@@ -1421,7 +1421,7 @@ input[type=checkbox]{
 }
 #modal .modal-header{
   border-bottom: 1px solid #ccc;
-  border-radius: 5px 5px 0 0
+  border-radius: 0;
 }
 #modal h2 {
   margin: 0;
