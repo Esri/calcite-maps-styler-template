@@ -59,7 +59,9 @@ define([
             summary: encodeURIComponent(this.summary),
             hashtags: encodeURIComponent(this.hashtags)
           };
-          var type = clickNode.target.id;
+
+          var node = clickNode.target || clickNode.srcElement;
+          var type = node.id;
           if(type === "facebook"){
             fullLink = lang.replace(this.facebookURL, shareObj);
             window.open(fullLink, "share", true);
