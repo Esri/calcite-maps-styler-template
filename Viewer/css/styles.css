@@ -1414,7 +1414,7 @@ input[type=checkbox]{
   box-shadow: 0 3px 7px rgba(0,0,0,.25);
   overflow:visible;
 }
-#modal.hide-modal{
+#modal.hide{
   top: -50%;
   visibility: hidden;
   opacity: 0;
