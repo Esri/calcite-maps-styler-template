@@ -47,6 +47,11 @@
                     "label": "Splash screen content text",
                     "tooltip": "Define splash screen content",
                     "stringFieldOption": "richtext"
+                },{
+                    "type":"string",
+                    "fieldName": "splashButtonText",
+                    "label": "Splash screen button text",
+                    "tooltip": "Define button text"
                 }
             ]
         },

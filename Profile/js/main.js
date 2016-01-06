@@ -604,10 +604,12 @@ define([
           var content = this.config.splashContent || this.config.i18n.splash.content;
           dom.byId("modalTitle").innerHTML = title;
           dom.byId("modalContent").innerHTML = content;
+          dom.byId("closeOverlay").value = this.config.spashButtonText || this.config.i18n.nav.close;
+
           // Close button handler for the overlay  
-          on(dom.byId("closeOverlay"), "click", function(){
-            domClass.add("modal", "hide");
-          });
+          on(dom.byId("closeOverlay"), "click", lang.hitch(this, function(){
+                domClass.add("modal", "hide");
+          }));
         }
     }
 

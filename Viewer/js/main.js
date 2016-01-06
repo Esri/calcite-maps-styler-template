@@ -118,7 +118,7 @@ define([
                     this._createWebMap(itemInfo);
                     // Setup the modal overlay if enabled
                     if(this.config.splashModal){
-                      domClass.remove("modal", "hide-modal");
+                      domClass.remove("modal", "hide");
                       var title = this.config.splashTitle || "";
                       var content = this.config.splashContent || "";
                       dom.byId("modalTitle").innerHTML = title;
@@ -127,7 +127,7 @@ define([
 
                       // Close button handler for the overlay  
                       on(dom.byId("closeOverlay"), "click", lang.hitch(this, function(){
-                        domClass.add("modal", "hide-modal");
+                        domClass.add("modal", "hide");
                       }));
                     }
                 }));
