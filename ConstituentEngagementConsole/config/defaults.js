@@ -32,10 +32,23 @@ define({
     "bingKey": "", //Enter the url to your organizations bing maps key if you want to use bing basemaps
     //Defaults to arcgis.com. Set this value to your portal or organization host name.
     "sharinghost": location.protocol + "//" + "arcgis.com",
+    "units": null,
+    //If your applcation needs to edit feature layer fields set this value to true. When false the map will
+    //be dreated with layers that are not set to editable which allows the FeatureLayer to load features optimally.
+    "editable": false,
     "helperServices": {
         "geometry": {
             "url": "http://tasks.arcgisonline.com/ArcGIS/rest/services/Geometry/GeometryServer"
-        }
+        },
+        "printTask": {
+            "url": null
+        },
+        "elevationSync": {
+            "url": null
+        },
+        "geocode": [{
+            "url": null
+        }]
     },
     // name of the application
     "applicationName": "",
@@ -73,6 +86,8 @@ define({
     "webMapInfoAvgRating": false,
     // to set field of comment to fetch data from it
     "commentField": "COMMENTS",
+    // to display comment table popup info
+    "usePopupConfigurationForComment": false,
     // to set the color of feature that is activated by selecting particular row
     "activeRow": "#C8C8C8"
 });

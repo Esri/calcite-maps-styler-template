@@ -10,7 +10,7 @@
 
 .esriCTBorder, .esriCTBorderLeft, .esriCTBorderTop, .esriCTBorderRight, .esriCTBorderBottom
 {
-    border-color: ${SelectedThemeColor};
+    border-color: ${SelectedThemeColor} !important;
 }
 
 .esriCTheaderRight
@@ -18,20 +18,20 @@
     background-color: ${SelectedThemeColor} !important;
 }
 
-/* esri API Overriden Styles */
+/* ESRI API Overridden Styles */
 
 .esriSimpleSliderDecrementButton, .esriSimpleSliderIncrementButton
 {
-    background-color:${SelectedThemeColor}  !important;
+    background-color: ${SelectedThemeColor} !important;
 }
 
-/* esri API End of Overriden Styles */
+/* End of ESRI API Overridden Styles */
 
 /* Data viewer */
 
 .esriCTRowActivated
 {
-    background-color:${ActivatedRowColor}  !important;
+    background-color: ${ActivatedRowColor} !important;
 }
 
-/* End of data viewer */
+/* End of Data viewer */

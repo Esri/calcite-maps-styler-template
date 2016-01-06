@@ -1,4 +1,4 @@
-﻿/*global define,document,dojo,window,alert,setTimeout,$ */
+﻿/*global define,document,$ */
 /*jslint browser:true,sloppy:true,nomen:true,unparam:true,plusplus:true,indent:4 */
 /*
  | Copyright 2014 Esri
@@ -20,7 +20,6 @@ define([
     "config/template-config",
     "application/template",
     "application/main",
-    "config/defaults",
     "dojo/_base/lang",
     "dojo/on",
     "esri/arcgis/Portal",
@@ -36,7 +35,6 @@ define([
     templateConfig,
     Template,
     Main,
-    Defaults,
     lang,
     on,
     esriPortal,
@@ -63,34 +61,37 @@ define([
             this._boilerPlateTemplateObject = new Template(templateConfig);
 
             // start template
-            this._boilerPlateTemplateObject.startup().then(lang.hitch(this, function (config) {
-                //create the portal instance and initiate the identity manager
-                this.portal = new esriPortal.Portal(config.sharinghost);
-                this.portal.on("load", lang.hitch(this, function (evt) {
-                    var signedIn;
-                    if ((this.portal.isPortal) && (!this._checkIfAppIDExist()) && (!this._checkIfGroupExist()) && (this._boilerPlateTemplateObject.templateConfig.esriEnvironment)) {
-                        window.location.assign("resources/preview/preview.html");
-                    } else {
-                        signedIn = IdentityManager.checkSignInStatus(config.sharinghost + "/sharing");
-                        signedIn.then(lang.hitch(this, function (response) {
-                            this.portal.signIn().then(lang.hitch(this, function (loggedInUser) {
-                                this._queryGroupInfo(loggedInUser, config);
-                            }));
-                        }), lang.hitch(this, function (error) {
+            this._boilerPlateTemplateObject.startup().then(lang.hitch(this,
+                function (config) {
+                    //create the portal instance and initiate the identity manager
+                    this.portal = new esriPortal.Portal(config.sharinghost);
+                    this.portal.on("load", lang.hitch(this, function () {
+                        var signedIn;
+                        signedIn = IdentityManager.checkSignInStatus(
+                            config.sharinghost + "/sharing");
+                        signedIn.then(lang.hitch(this, function () {
+                            this.portal.signIn().then(lang.hitch(
+                                this,
+                                function (loggedInUser) {
+                                    this._queryGroupInfo(
+                                        loggedInUser, config);
+                                }));
+                        }), lang.hitch(this, function () {
                             this._queryGroupInfo(null, config);
                         }));
-
-                    }
+                    }));
+                }), lang.hitch(this, function (error) {
+                    $(dom.byId("loadingIndicator")).addClass(
+                    'esriCTHideLoadingIndicatorImage');
+                    $(dom.byId("esriCTMainContainer")).addClass(
+                    'esriCTHidden');
+                    this.showMessageScreen(error);
                 }));
-            }), lang.hitch(this, function (error) {
-                $(dom.byId("loadingIndicator")).addClass('esriCTHideLoadingIndicatorImage');
-                $(dom.byId("esriCTMainContainer")).addClass('esriCTHidden');
-                this.showMessageScreen(error);
-            }));
             // display's message screen on click of cancel button of identity manager
-            this._identityManagerCancelHandler = on(IdentityManager, "dialog-cancel", lang.hitch(this, function () {
-                this.showMessageScreen(null);
-            }));
+            this._identityManagerCancelHandler = on(IdentityManager,
+                "dialog-cancel", lang.hitch(this, function () {
+                    this.showMessageScreen(null);
+                }));
         },
 
         /**
@@ -127,16 +128,19 @@ define([
         * @param{object} configuration details
         * @memberOf js/bootstrapper
         */
-        _queryGroupInfo: function (loggedInUser, config) {
+        _queryGroupInfo: function (loggedInUser) {
             if (this._identityManagerCancelHandler) {
                 this._identityManagerCancelHandler.remove();
             }
             //As current version of boilerplate not handling the private Groups
             //once user is logged in query for the group info.
-            this._boilerPlateTemplateObject.queryGroupInfo().then(lang.hitch(this, function (response) {
-                this._boilerPlateTemplateObject.config.groupInfo = response.groupInfo;
-                this.initApplication(loggedInUser);
-            }));
+            this._boilerPlateTemplateObject.queryGroupInfo().then(lang.hitch(
+                this,
+                function (response) {
+                    this._boilerPlateTemplateObject.config.groupInfo =
+                        response.groupInfo;
+                    this.initApplication(loggedInUser);
+                }));
         },
 
         /**
@@ -145,15 +149,24 @@ define([
         * @memberOf js/bootstrapper
         */
         initApplication: function (loggedInUser) {
-            $(dom.byId("loadingIndicator")).removeClass("esriCTHideLoadingIndicatorImage");
+            $(dom.byId("loadingIndicator")).removeClass(
+                "esriCTHideLoadingIndicatorImage");
             $(dom.byId("esriCTMainContainer")).removeClass("esriCTHidden");
             // create my main application. Start placing your logic in the main.js file.
             this._consoleApp = new Main();
-            this._consoleApp.reload = lang.hitch(this, function (logInDetails) {
-                loggedInUser = { "fullName": logInDetails.fullName, "credential": { "token": logInDetails.credential.token} };
-                this._queryGroupInfo(loggedInUser, this._boilerPlateTemplateObject.config);
+            this._consoleApp.reload = lang.hitch(this, function (
+                logInDetails) {
+                loggedInUser = {
+                    "fullName": logInDetails.fullName,
+                    "credential": {
+                        "token": logInDetails.credential.token
+                    }
+                };
+                this._queryGroupInfo(loggedInUser, this._boilerPlateTemplateObject
+                    .config);
             });
-            this._consoleApp.startup(this._boilerPlateTemplateObject, loggedInUser);
+            this._consoleApp.startup(this._boilerPlateTemplateObject,
+                loggedInUser);
         },
 
         /**
@@ -171,7 +184,8 @@ define([
             if (error) {
                 $(dom.byId("headerContainer")).addClass('esriCTHidden');
                 $(dom.byId("esriCTMainContainer")).addClass('esriCTHidden');
-                $(dom.byId("esriCTNoWebMapParentDiv")).removeClass("esriCTHidden");
+                $(dom.byId("esriCTNoWebMapParentDiv")).removeClass(
+                    "esriCTHidden");
                 message = error.message;
                 // show error message when group is undefined
                 if (message.toLowerCase() === "group undefined.") {
@@ -181,18 +195,31 @@ define([
             } else {
                 // display please sign-in page
                 $(dom.byId("headerContainer")).removeClass('esriCTHidden');
-                appHeaderParameter = { "appConfig": this._boilerPlateTemplateObject.config, "appUtils": ApplicationUtils, "loggedInUser": null };
+                appHeaderParameter = {
+                    "appConfig": this._boilerPlateTemplateObject.config,
+                    "appUtils": ApplicationUtils,
+                    "loggedInUser": null
+                };
                 // instantiate application header widget
-                this._appHeader = new ApplicationHeader(appHeaderParameter, domConstruct.create("div", {}, dom.byId('headerContainer')));
+                this._appHeader = new ApplicationHeader(appHeaderParameter,
+                    domConstruct.create("div", {}, dom.byId('headerContainer'))
+                );
                 // sign in user on click of sign-in option
                 this._appHeader.signInUser = lang.hitch(this, function () {
-                    this._boilerPlateTemplateObject.portal.signIn().then(lang.hitch(this, function (logInDetails) {
-                        $(dom.byId("esriCTNoWebMapParentDiv")).addClass("esriCTHidden");
-                        var loggedInUser;
-                        this._appHeader.destroy();
-                        loggedInUser = { "fullName": logInDetails.fullName, "credential": { "token": logInDetails.credential.token} };
-                        this.initApplication(loggedInUser);
-                    }));
+                    this._boilerPlateTemplateObject.portal.signIn().then(
+                        lang.hitch(this, function (logInDetails) {
+                            $(dom.byId("esriCTNoWebMapParentDiv")).addClass(
+                                "esriCTHidden");
+                            var loggedInUser;
+                            this._appHeader.destroy();
+                            loggedInUser = {
+                                "fullName": logInDetails.fullName,
+                                "credential": {
+                                    "token": logInDetails.credential.token
+                                }
+                            };
+                            this.initApplication(loggedInUser);
+                        }));
                 });
             }
         }

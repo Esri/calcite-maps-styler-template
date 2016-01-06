@@ -181,7 +181,8 @@ define([
                 // To disable settings icon
                 this._changeSelectionOptionMode(false);
                 // If a new operational layer is selected hide show selected option
-                if (!domClass.contains(query(".esriCTShowSelected")[0], "esriCTVisible")) {
+                if (!domClass.contains(query(".esriCTShowSelected")[0],
+                        "esriCTVisible")) {
                     this.isShowSelectedClicked = false;
                     this.toggleSelectionViewOption();
                 }
@@ -196,7 +197,8 @@ define([
                     // Determines whether the newly selected operational layer is a point layer or other geometry layer like polygon/polyline etc...
                     if (this._selectedOperationalLayer.graphics.length > 0) {
                         // If the layer has a point geometry.
-                        if (this._selectedOperationalLayer.geometryType === "esriGeometryPoint") {
+                        if (this._selectedOperationalLayer.geometryType ===
+                            "esriGeometryPoint") {
                             this._isPointLayer = true;
                         } else {
                             this._isPointLayer = false;
@@ -228,7 +230,8 @@ define([
                         $(".esriCTSearchBox")[0].value = "";
                         this.displayPlaceHolderText();
                         domClass.add(this.dataViewerParentDiv, "esriCTHidden");
-                        this.noFeatureDiv.innerHTML = this.appConfig.i18n.dataviewer.noIssuesReported;
+                        this.noFeatureDiv.innerHTML = this.appConfig.i18n.dataviewer
+                            .noIssuesReported;
                         if (this._isManualRefreshClicked) {
                             this._isManualRefreshClicked = false;
                             this.resizeMap();
@@ -279,7 +282,10 @@ define([
             var tableHeader, table, thead, tr, i;
             domConstruct.empty(this.dataViewerParentDiv);
             // Initially creating HTML table of data-viewer
-            table = domConstruct.create("table", { "class": "display esriCTDataViewer", "id": "dataViewerTable" });
+            table = domConstruct.create("table", {
+                "class": "display esriCTDataViewer",
+                "id": "dataViewerTable"
+            });
             thead = domConstruct.create("thead", {}, table);
             tr = domConstruct.create("tr", {}, thead);
             // To create table headers
@@ -289,15 +295,20 @@ define([
                 for (i = 0; i < this._displayColumn.length; i++) {
                     if (this._displayColumn[i].type === "checkbox") {
                         // To add check box header column
-                        tableHeader = domConstruct.create("th", { "class": "esriCTDataViewerTableHeaderCheckbox" });
+                        tableHeader = domConstruct.create("th", {
+                            "class": "esriCTDataViewerTableHeaderCheckbox"
+                        });
                         tableHeader.innerHTML = "";
                         domAttr.set(tableHeader, "fieldName", "checkbox");
                         this._onTableHeaderClick(tableHeader);
                         tr.appendChild(tableHeader);
                     } else {
-                        tableHeader = domConstruct.create("th", { "class": "esriCTDataViewerTableHeaderContent" });
+                        tableHeader = domConstruct.create("th", {
+                            "class": "esriCTDataViewerTableHeaderContent"
+                        });
                         tableHeader.innerHTML = this._displayColumn[i].label;
-                        domAttr.set(tableHeader, "fieldName", this._displayColumn[i].fieldName);
+                        domAttr.set(tableHeader, "fieldName", this._displayColumn[
+                            i].fieldName);
                         // Draw data-viewer table for sorting data properly
                         this._onTableHeaderClick(tableHeader);
                         tr.appendChild(tableHeader);
@@ -319,7 +330,8 @@ define([
                     this._sortedField = evt.currentTarget.innerHTML;
                     if (domClass.contains(evt.currentTarget, "sorting")) {
                         this._sortedFieldOrder = "asc";
-                    } else if (domClass.contains(evt.currentTarget, "sorting_asc")) {
+                    } else if (domClass.contains(evt.currentTarget,
+                            "sorting_asc")) {
                         this._sortedFieldOrder = "desc";
                     } else {
                         this._sortedFieldOrder = "asc";
@@ -337,20 +349,28 @@ define([
         _getFieldProperties: function () {
             var i, j, obj;
             this._displayColumn = [];
-            this._displayColumn.push({ "displayField": false, "type": "checkbox" });
+            this._displayColumn.push({
+                "displayField": false,
+                "type": "checkbox"
+            });
             // to fetch type from layer
             // to fetch label from popup info
             // to fetch editable status from popup info
             // to fetch date format from popup info
             for (i = 0; i < this.popupInfo.fieldInfos.length; i++) {
                 for (j = 0; j < this._selectedOperationalLayer.fields.length; j++) {
-                    if (this._selectedOperationalLayer.fields[j].name === this.popupInfo.fieldInfos[i].fieldName) {
+                    if (this._selectedOperationalLayer.fields[j].name === this.popupInfo
+                        .fieldInfos[i].fieldName) {
                         // If fields are editable or visible than only display it.
-                        if ((this.popupInfo.fieldInfos[i].visible) || (this.popupInfo.fieldInfos[i].fieldName.toLowerCase() === this._selectedOperationalLayer.objectIdField.toLowerCase()) || (this.popupInfo.fieldInfos[i].isEditable)) {
+                        if ((this.popupInfo.fieldInfos[i].visible) || (this.popupInfo
+                                .fieldInfos[i].fieldName.toLowerCase() === this._selectedOperationalLayer
+                                .objectIdField.toLowerCase()) || (this.popupInfo.fieldInfos[
+                                i].isEditable)) {
                             obj = {};
                             obj.type = this._selectedOperationalLayer.fields[j].type;
                             obj.displayField = true;
-                            obj.label = this.popupInfo.fieldInfos[i].label || this.popupInfo.fieldInfos[i].fieldName;
+                            obj.label = this.popupInfo.fieldInfos[i].label || this.popupInfo
+                                .fieldInfos[i].fieldName;
                             // Tracks whether a field is editable or not
                             if (this.popupInfo.fieldInfos[i].isEditable) {
                                 obj.isFieldEditable = true;
@@ -358,19 +378,24 @@ define([
                                 obj.isFieldEditable = false;
                             }
                             // Tracks whether a date format is applied or not
-                            if ((this.popupInfo.fieldInfos[i].format) && (this.popupInfo.fieldInfos[i].format.dateFormat)) {
+                            if ((this.popupInfo.fieldInfos[i].format) && (this.popupInfo
+                                    .fieldInfos[i].format.dateFormat)) {
                                 obj.format = this.popupInfo.fieldInfos[i].format.dateFormat;
                             }
                             // Tracks whether a coded domain value is applied or not
                             if (this._selectedOperationalLayer.fields[j].domain) {
                                 if (this._selectedOperationalLayer.fields[j].domain.codedValues) {
-                                    obj.codedValues = this._selectedOperationalLayer.fields[j].domain.codedValues;
+                                    obj.codedValues = this._selectedOperationalLayer.fields[
+                                        j].domain.codedValues;
                                 } else {
-                                    obj.domain = this._selectedOperationalLayer.fields[j].domain;
+                                    obj.domain = this._selectedOperationalLayer.fields[
+                                        j].domain;
                                 }
                             }
                             // Tracks whether a number formatter is applied or not
-                            if ((this.popupInfo.fieldInfos[i].format) && (this.popupInfo.fieldInfos[i].format.digitSeparator) && (this.popupInfo.fieldInfos[i].format.places)) {
+                            if ((this.popupInfo.fieldInfos[i].format) && (this.popupInfo
+                                    .fieldInfos[i].format.digitSeparator) && (this.popupInfo
+                                    .fieldInfos[i].format.places)) {
                                 // If places is applied to number formatter.
                                 if (this.popupInfo.fieldInfos[i].format.places > 0) {
                                     obj.numberFormat = this.popupInfo.fieldInfos[i].format;
@@ -378,15 +403,20 @@ define([
                             }
                             obj.length = this._selectedOperationalLayer.fields[j].length;
                             obj.fieldName = this.popupInfo.fieldInfos[i].fieldName;
-                            obj.nullable = this._selectedOperationalLayer.fields[j].nullable;
+                            obj.nullable = this._selectedOperationalLayer.fields[j]
+                                .nullable;
                             // Tracks whether a type is applied or not
-                            if (this._selectedOperationalLayer.typeIdField === this.popupInfo.fieldInfos[i].fieldName) {
+                            if (this._selectedOperationalLayer.typeIdField === this
+                                .popupInfo.fieldInfos[i].fieldName) {
                                 obj.types = this._selectedOperationalLayer.types;
                             }
-                            if (this.popupInfo.fieldInfos[i].visible || this.popupInfo.fieldInfos[i].isEditable) {
+                            if (this.popupInfo.fieldInfos[i].visible || this.popupInfo
+                                .fieldInfos[i].isEditable) {
                                 obj.showInDetailsTab = true;
                             }
-                            if ((this.popupInfo.fieldInfos[i].visible) && (this.popupInfo.fieldInfos[i].fieldName.toLowerCase() === this._selectedOperationalLayer.objectIdField.toLowerCase())) {
+                            if ((this.popupInfo.fieldInfos[i].visible) && (this.popupInfo
+                                    .fieldInfos[i].fieldName.toLowerCase() === this._selectedOperationalLayer
+                                    .objectIdField.toLowerCase())) {
                                 obj.showObjectIdField = true;
                             }
                             this._displayColumn.push(obj);
@@ -401,7 +431,8 @@ define([
         * @memberOf widgets/data-viewer/data-viewer
         */
         _createDataViewerDataPanel: function () {
-            var i, j, number, fieldName, format, type, value, dateFormat, k, n, id, m, isCodeMatched, entireFeatureDataArr, dataSet;
+            var i, j, number, fieldName, format, type, value, dateFormat, k,
+                n, id, m, isCodeMatched, entireFeatureDataArr, dataSet;
             // Stores all rows
             entireFeatureDataArr = [];
             for (i = 0; i < this._features.length; i++) {
@@ -416,100 +447,119 @@ define([
                         value = this._features[i].attributes[fieldName];
                         dateFormat = this.appUtils.getDateFormat(format).dateFormat;
                         switch (type) {
-                        case "esriFieldTypeOID":
-                            dataSet.push(value);
-                            break;
-                        case "esriFieldTypeDate":
-                            // If the field contains date value
-                            if (value && value !== 0) {
-                                dataSet.push((moment(value)).format(dateFormat));
-                            } else {
-                                if (value === 0) {
-                                    dataSet.push("");
+                            case "esriFieldTypeOID":
+                                dataSet.push(value);
+                                break;
+                            case "esriFieldTypeDate":
+                                // If the field contains date value
+                                if (value && value !== 0) {
+                                    dataSet.push((moment(value)).format(dateFormat));
                                 } else {
-                                    dataSet.push(value);
-                                }
-                            }
-                            break;
-                        default:
-                            // If the field contains coded domain values
-                            if (this._displayColumn[j].codedValues) {
-                                // Tracks whether data is entered in the dataset or not.
-                                // Whether value is matched or not it has to be entered in the dataset.
-                                isCodeMatched = false;
-                                if (value || value === 0) {
-                                    for (k = 0; k < this._displayColumn[j].codedValues.length; k++) {
-                                        if (this._displayColumn[j].codedValues[k].code === value) {
-                                            isCodeMatched = true;
-                                            dataSet.push(this._displayColumn[j].codedValues[k].name);
-                                        }
+                                    if (value === 0) {
+                                        dataSet.push("");
+                                    } else {
+                                        dataSet.push(value);
                                     }
-                                } else {
-                                    isCodeMatched = true;
-                                    dataSet.push(value);
                                 }
-                                if (!isCodeMatched) {
-                                    dataSet.push(value);
-                                }
-                            } else if (this._displayColumn[j].types) {
-                                // Tracks whether data is entered in the dataset or not.
-                                // Whether value is matched or not it has to be entered in the dataset.
-                                isCodeMatched = false;
-                                // If the field contains types
-                                if (value || value === 0) {
-                                    for (n = 0; n < this._displayColumn[j].types.length; n++) {
-                                        if (this._displayColumn[j].types[n].id.toString() === value.toString()) {
-                                            isCodeMatched = true;
-                                            dataSet.push(this._displayColumn[j].types[n].name);
-                                        }
-                                    }
-                                } else {
-                                    isCodeMatched = true;
-                                    dataSet.push(value);
-                                }
-                                if (!isCodeMatched) {
-                                    dataSet.push(value);
-                                }
-                            } else if (this._selectedOperationalLayer.types && this._selectedOperationalLayer.types.length > 0 && this._selectedOperationalLayer.types[0].domains && this._selectedOperationalLayer.types[0].domains[fieldName] && this._selectedOperationalLayer.types[0].domains[fieldName].codedValues) {
-                                // If the fields contain subtypes
-                                isCodeMatched = false;
-                                id = this._features[i].attributes[this._selectedOperationalLayer.typeIdField];
-                                for (m = 0; m < this._selectedOperationalLayer.types.length; m++) {
-                                    if (this._selectedOperationalLayer.types[m].id === id) {
-                                        for (n = 0; n < this._selectedOperationalLayer.types[m].domains[fieldName].codedValues.length; n++) {
-                                            if (value === this._selectedOperationalLayer.types[m].domains[fieldName].codedValues[n].code) {
+                                break;
+                            default:
+                                // If the field contains coded domain values
+                                if (this._displayColumn[j].codedValues) {
+                                    // Tracks whether data is entered in the dataset or not.
+                                    // Whether value is matched or not it has to be entered in the dataset.
+                                    isCodeMatched = false;
+                                    if (value || value === 0) {
+                                        for (k = 0; k < this._displayColumn[j].codedValues
+                                            .length; k++) {
+                                            if (this._displayColumn[j].codedValues[k].code ===
+                                                value) {
                                                 isCodeMatched = true;
-                                                if (value || value === 0) {
-                                                    dataSet.push(this._selectedOperationalLayer.types[m].domains[fieldName].codedValues[n].name);
-                                                } else {
-                                                    dataSet.push(value);
+                                                dataSet.push(this._displayColumn[j].codedValues[
+                                                    k].name);
+                                            }
+                                        }
+                                    } else {
+                                        isCodeMatched = true;
+                                        dataSet.push(value);
+                                    }
+                                    if (!isCodeMatched) {
+                                        dataSet.push(value);
+                                    }
+                                } else if (this._displayColumn[j].types) {
+                                    // Tracks whether data is entered in the dataset or not.
+                                    // Whether value is matched or not it has to be entered in the dataset.
+                                    isCodeMatched = false;
+                                    // If the field contains types
+                                    if (value || value === 0) {
+                                        for (n = 0; n < this._displayColumn[j].types.length; n++) {
+                                            if (this._displayColumn[j].types[n].id.toString() ===
+                                                value.toString()) {
+                                                isCodeMatched = true;
+                                                dataSet.push(this._displayColumn[j].types[n].name);
+                                            }
+                                        }
+                                    } else {
+                                        isCodeMatched = true;
+                                        dataSet.push(value);
+                                    }
+                                    if (!isCodeMatched) {
+                                        dataSet.push(value);
+                                    }
+                                } else if (this._selectedOperationalLayer.types &&
+                                    this._selectedOperationalLayer.types.length > 0 &&
+                                    this._selectedOperationalLayer.types[0].domains &&
+                                    this._selectedOperationalLayer.types[0].domains[
+                                        fieldName] && this._selectedOperationalLayer.types[
+                                        0].domains[fieldName].codedValues) {
+                                    // If the fields contain subtypes
+                                    isCodeMatched = false;
+                                    id = this._features[i].attributes[this._selectedOperationalLayer
+                                        .typeIdField];
+                                    for (m = 0; m < this._selectedOperationalLayer.types
+                                        .length; m++) {
+                                        if (this._selectedOperationalLayer.types[m].id ===
+                                            id) {
+                                            for (n = 0; n < this._selectedOperationalLayer.types[
+                                                    m].domains[fieldName].codedValues.length; n++) {
+                                                if (value === this._selectedOperationalLayer.types[
+                                                        m].domains[fieldName].codedValues[n].code) {
+                                                    isCodeMatched = true;
+                                                    if (value || value === 0) {
+                                                        dataSet.push(this._selectedOperationalLayer
+                                                            .types[m].domains[fieldName].codedValues[
+                                                                n].name);
+                                                    } else {
+                                                        dataSet.push(value);
+                                                    }
                                                 }
                                             }
                                         }
                                     }
-                                }
-                                if (!isCodeMatched) {
-                                    dataSet.push(value);
-                                }
-                            } else {
-                                // If the fields contain number format
-                                if (this._displayColumn[j].numberFormat) {
-                                    if (value || value === 0) {
-                                        if (this._displayColumn[j].numberFormat.digitSeparator) {
-                                            number = value.toFixed(this._displayColumn[j].numberFormat.places);
-                                            number = this.appUtils.convertNumberToThousandSeperator(number);
-                                            dataSet.push(number);
-                                        } else {
-                                            dataSet.push(value.toFixed(this._displayColumn[j].numberFormat.places));
-                                        }
-                                    } else {
+                                    if (!isCodeMatched) {
                                         dataSet.push(value);
                                     }
                                 } else {
-                                    // If none of the above conditions are satisfied
-                                    dataSet.push(value);
+                                    // If the fields contain number format
+                                    if (this._displayColumn[j].numberFormat) {
+                                        if (value || value === 0) {
+                                            if (this._displayColumn[j].numberFormat.digitSeparator) {
+                                                number = value.toFixed(this._displayColumn[j]
+                                                    .numberFormat.places);
+                                                number = this.appUtils.convertNumberToThousandSeperator(
+                                                    number);
+                                                dataSet.push(number);
+                                            } else {
+                                                dataSet.push(value.toFixed(this._displayColumn[
+                                                    j].numberFormat.places));
+                                            }
+                                        } else {
+                                            dataSet.push(value);
+                                        }
+                                    } else {
+                                        // If none of the above conditions are satisfied
+                                        dataSet.push(value);
+                                    }
                                 }
-                            }
                         }
                     }
                 }
@@ -533,14 +583,29 @@ define([
             if (index || index === 0) {
                 checkBoxId = "checkBox" + index;
                 if (this.isShowSelectedClicked) {
-                    checkboxString = '<p class="esriCTCheckBoxParentContainer"><input type="checkbox" class="esriCTCheckBox" id="' + checkBoxId + '" checked="checked"/><label for="' + checkBoxId + '"></label></p>';
+                    checkboxString =
+                        '<p class="esriCTCheckBoxParentContainer"><input type="checkbox"' +
+                        'class="esriCTCheckBox" id="' +
+                        checkBoxId + '" checked="checked"/><label for="' +
+                        checkBoxId + '"></label></p>';
                 } else {
-                    checkboxString = '<p class="esriCTCheckBoxParentContainer"><input type="checkbox" class="esriCTCheckBox" id="' + checkBoxId + '"/><label for="' + checkBoxId + '"></label></p>';
+                    checkboxString =
+                        '<p class="esriCTCheckBoxParentContainer"><input type="checkbox"' +
+                        'class="esriCTCheckBox" id="' +
+                        checkBoxId + '"/><label for="' + checkBoxId +
+                        '"></label></p>';
                 }
             } else if (id && checked) {
-                checkboxString = '<p class="esriCTCheckBoxParentContainer"><input type="checkbox" class="esriCTCheckBox" id="' + id + '" checked="checked"/><label for="' + id + '"></label></p>';
+                checkboxString =
+                    '<p class="esriCTCheckBoxParentContainer"><input type="checkbox"' +
+                    'class="esriCTCheckBox" id="' +
+                    id + '" checked="checked"/><label for="' + id +
+                    '"></label></p>';
             } else {
-                checkboxString = '<p class="esriCTCheckBoxParentContainer"><input type="checkbox" class="esriCTCheckBox" id="' + id + '"/><label for="' + id + '"></label></p>';
+                checkboxString =
+                    '<p class="esriCTCheckBoxParentContainer"><input type="checkbox"' +
+                    'class="esriCTCheckBox" id="' +
+                    id + '"/><label for="' + id + '"></label></p>';
             }
             return checkboxString;
         },
@@ -551,13 +616,16 @@ define([
         * @memberOf widgets/data-viewer/data-viewer
         */
         _convertHtmlTableToDataTable: function (entireFeatureDataArr) {
-            var domNodeWidth, columnWidth, displayColumnCount, objectIdFieldClass, i, sortedField, sortedFieldIndex;
-            domNodeWidth = domGeometry.getMarginBox(this.dataViewerParentDiv).w;
+            var domNodeWidth, columnWidth, displayColumnCount,
+                objectIdFieldClass, i, sortedField, sortedFieldIndex;
+            domNodeWidth = domGeometry.getMarginBox(this.dataViewerParentDiv)
+                .w;
             columnWidth = "250px";
             if (this._displayColumn.length > 0) {
                 // If the objectID field is visible than display it else hides it
                 for (i = 0; i < this._displayColumn.length; i++) {
-                    if (this._displayColumn[i].fieldName === this._selectedOperationalLayer.objectIdField) {
+                    if (this._displayColumn[i].fieldName === this._selectedOperationalLayer
+                        .objectIdField) {
                         if (this._displayColumn[i].showObjectIdField) {
                             objectIdFieldClass = null;
                             displayColumnCount = this._displayColumn.length;
@@ -568,7 +636,10 @@ define([
                             this.objectIdColumnNumber = i;
                         }
                     }
-                    if ((this._isManualRefreshClicked) && (this._lastStateDetailsObj) && (this._lastStateDetailsObj.hasOwnProperty("sortedField")) && ((this._lastStateDetailsObj.sortedField === this._displayColumn[i].label))) {
+                    if ((this._isManualRefreshClicked) && (this._lastStateDetailsObj) &&
+                        (this._lastStateDetailsObj.hasOwnProperty("sortedField")) &&
+                        ((this._lastStateDetailsObj.sortedField === this._displayColumn[
+                            i].label))) {
                         sortedFieldIndex = i;
                     }
                 }
@@ -581,17 +652,20 @@ define([
                 columnWidth += "px";
             }
             if ((this._isManualRefreshClicked) && sortedFieldIndex) {
-                sortedField = [[sortedFieldIndex, this._lastStateDetailsObj.sortedFieldOrder]];
+                sortedField = [
+                    [sortedFieldIndex, this._lastStateDetailsObj.sortedFieldOrder]
+                ];
             } else {
                 sortedField = [];
             }
             this._dataViewerTable = $('#dataViewerTable').DataTable({
                 "destroy": true,
-                "aaData": entireFeatureDataArr.sort(lang.hitch(this, function (a, b) {
-                    a = a[this.objectIdColumnNumber];
-                    b = b[this.objectIdColumnNumber];
-                    return a === b ? 0 : (a < b ? 1 : -1);
-                })), // data that needs to be displayed
+                "aaData": entireFeatureDataArr.sort(lang.hitch(this,
+                    function (a, b) {
+                        a = a[this.objectIdColumnNumber];
+                        b = b[this.objectIdColumnNumber];
+                        return a === b ? 0 : (a < b ? 1 : -1);
+                    })), // data that needs to be displayed
                 "dom": 'rt', // to show only record panel
                 "scrollY": "150px", // to display vertical scroll bar
                 "scrollX": true, // to display horizontal scroll bar
@@ -632,7 +706,9 @@ define([
         _regainLastState: function () {
             // Regain vertical scroll position
             if (this._lastStateDetailsObj.isShowAllClicked) {
-                $('.dataTables_scrollBody').animate({ scrollTop: this._lastStateDetailsObj.verticalScrollPosition });
+                $('.dataTables_scrollBody').animate({
+                    scrollTop: this._lastStateDetailsObj.verticalScrollPosition
+                });
             }
             // Set search text if filtered is applied & data is returned
             if (this._lastStateDetailsObj.isSearchFilteredApplied) {
@@ -649,9 +725,13 @@ define([
             var tableBodyNodes = query(".dataTables_scrollBody");
             if (tableBodyNodes.length > 0) {
                 if (this.isGridViewClicked) {
-                    domClass.replace(tableBodyNodes[0], "dataTables_listViewHeight", "dataTables_splitViewHeight");
+                    domClass.replace(tableBodyNodes[0],
+                        "dataTables_listViewHeight",
+                        "dataTables_splitViewHeight");
                 } else {
-                    domClass.replace(tableBodyNodes[0], "dataTables_splitViewHeight", "dataTables_listViewHeight");
+                    domClass.replace(tableBodyNodes[0],
+                        "dataTables_splitViewHeight",
+                        "dataTables_listViewHeight");
                 }
             }
         },
@@ -671,12 +751,15 @@ define([
         _restrictSizeOfTableCellContent: function () {
             $('#dataViewerTable tr').each(function () {
                 $(this).children('td').filter(function () {
-                    if ((this.childNodes[0]) && (this.childNodes[0].childNodes[0]) && (domClass.contains(this.childNodes[0].childNodes[0], "esriCTCheckBox"))) {
+                    if ((this.childNodes[0]) && (this.childNodes[0].childNodes[
+                            0]) && (domClass.contains(this.childNodes[0].childNodes[
+                            0], "esriCTCheckBox"))) {
                         // Set width of each table cell so that its content displays properly
                         $(this).addClass('esriCTCheckBoxColumn');
                     } else {
                         // Set width of each table cell so that its content displays properly
-                        $(this).addClass('esriCTDataViewerTableCellContent');
+                        $(this).addClass(
+                            'esriCTDataViewerTableCellContent');
                     }
                 });
             });
@@ -703,7 +786,8 @@ define([
             objectIDFieldName = this._selectedOperationalLayer.objectIdField;
             // The object ID column number is traced and its value if fetched after that
             $('#dataViewerTable th').each(function () {
-                if ($(this)[0].attributes.fieldName.value === objectIDFieldName) {
+                if ($(this)[0].attributes.fieldName.value ===
+                    objectIDFieldName) {
                     objectIdColumnNumber = count;
                 }
                 count++;
@@ -794,7 +878,8 @@ define([
             var checkBoxArr, i;
             checkBoxArr = $(".esriCTCheckBox");
             for (i = 0; i < checkBoxArr.length; i++) {
-                this._toggleCheckBox(false, checkBoxArr[i].parentElement.parentElement.parentElement);
+                this._toggleCheckBox(false, checkBoxArr[i].parentElement.parentElement
+                    .parentElement);
             }
         },
 
@@ -807,7 +892,8 @@ define([
             // If zoom to option is clicked, and if details tab is visible, then switched it to map panel
             if (this.isDetailsTabClicked) {
                 var selectedFeaturesLength;
-                selectedFeaturesLength = this._selectRowGraphicsLayer.graphics.length;
+                selectedFeaturesLength = this._selectRowGraphicsLayer.graphics
+                    .length;
                 if (selectedFeaturesLength > 0) {
                     this.showLocationTab();
                     this.isDetailsTabClicked = false;
@@ -838,7 +924,8 @@ define([
         */
         retainShowSelectedModeAfterResize: function () {
             // For Android and IOS devices do not re-create data-viewer in show selected mode on window resize
-            if (((this.appUtils.isAndroid()) && (this.isGridViewClicked)) || ((this.appUtils.isIos()) && (this.isGridViewClicked))) {
+            if (((this.appUtils.isAndroid()) && (this.isGridViewClicked)) ||
+                ((this.appUtils.isIos()) && (this.isGridViewClicked))) {
                 this.isOrientationChangedInListView = false;
             } else {
                 this.createDataViewerUI(false);
@@ -876,13 +963,15 @@ define([
             activatedFeatureArr = this._activeRowGraphicsLayer.graphics;
             if (selectedFeatureArr) {
                 for (i = 0; i < selectedFeatureArr.length; i++) {
-                    objectID = selectedFeatureArr[i].attributes[this._selectedOperationalLayer.objectIdField];
+                    objectID = selectedFeatureArr[i].attributes[this._selectedOperationalLayer
+                        .objectIdField];
                     this.highlightRowOnFeatureClick(objectID, true);
                 }
             }
             if (activatedFeatureArr) {
                 for (i = 0; i < activatedFeatureArr.length; i++) {
-                    objectID = activatedFeatureArr[i].attributes[this._selectedOperationalLayer.objectIdField];
+                    objectID = activatedFeatureArr[i].attributes[this._selectedOperationalLayer
+                        .objectIdField];
                     this.highlightRowOnFeatureClick(objectID, false);
                 }
             }
@@ -893,9 +982,11 @@ define([
         * @memberOf widgets/data-viewer/data-viewer
         */
         _zoomMapExtentToSelectedFeature: function () {
-            var selectedFeatureArr, geometryService, selectedFeaturesGeometryArr, i;
+            var selectedFeatureArr, geometryService,
+                selectedFeaturesGeometryArr, i;
             selectedFeaturesGeometryArr = [];
-            geometryService = new GeometryService(this.appConfig.helperServices.geometry.url);
+            geometryService = new GeometryService(this.appConfig.helperServices
+                .geometry.url);
             selectedFeatureArr = this._selectRowGraphicsLayer.graphics;
             for (i = 0; i < selectedFeatureArr.length; i++) {
                 if (selectedFeatureArr[i].geometry) {
@@ -909,12 +1000,14 @@ define([
                 this.appUtils.hideLoadingIndicator();
             } else if (selectedFeaturesGeometryArr.length > 0) {
                 // If multiple features are selected, then do union of selected feature's geometry and set map extent of it
-                geometryService.union(selectedFeaturesGeometryArr).then(lang.hitch(this, function (response) {
-                    this.map.setExtent(response.getExtent(), true);
-                    this.appUtils.hideLoadingIndicator();
-                }), lang.hitch(this, function (err) {
-                    this.appUtils.hideLoadingIndicator();
-                }));
+                geometryService.union(selectedFeaturesGeometryArr).then(lang.hitch(
+                    this,
+                    function (response) {
+                        this.map.setExtent(response.getExtent(), true);
+                        this.appUtils.hideLoadingIndicator();
+                    }), lang.hitch(this, function (err) {
+                        this.appUtils.hideLoadingIndicator();
+                    }));
             } else {
                 this.appUtils.hideLoadingIndicator();
             }
@@ -973,8 +1066,11 @@ define([
         searchDataInDataViewer: function () {
             $(".esriCTNoResults").addClass("esriCTHidden");
             // If the value/search string exists than search it
-            if (!this.isShowSelectedClicked && lang.trim($(".esriCTSearchBox")[0].value) !== "" && (!domClass.contains($(".esriCTSearchBox")[0], "esriCTPlaceholder"))) {
-                $(".esriCTSearchBox")[0].value = lang.trim($(".esriCTSearchBox")[0].value);
+            if (!this.isShowSelectedClicked && lang.trim($(
+                    ".esriCTSearchBox")[0].value) !== "" && (!domClass.contains(
+                    $(".esriCTSearchBox")[0], "esriCTPlaceholder"))) {
+                $(".esriCTSearchBox")[0].value = lang.trim($(
+                    ".esriCTSearchBox")[0].value);
                 this.clearSelection();
                 // Before searching clear edit mode
                 this.removeControlsFromPreviousRow();
@@ -1002,7 +1098,8 @@ define([
             var searchValue = lang.trim($(".esriCTSearchBox")[0].value);
             // If the search string exists.
             if (searchValue) {
-                this._newDefinitionExpression = this._getDefinitionExpression(searchValue);
+                this._newDefinitionExpression = this._getDefinitionExpression(
+                    searchValue);
                 this._searchFilteredValue = searchValue;
             } else {
                 $(".esriCTNoResults").addClass("esriCTHidden");
@@ -1035,14 +1132,16 @@ define([
                     this._addRegularSearchIcon();
                 }
                 this.appUtils.hideLoadingIndicator();
-            } else if ((this._selectedOperationalLayer.graphics.length === 0) && (this._lastStateDetailsObj.isSearchFilteredApplied)) {
+            } else if ((this._selectedOperationalLayer.graphics.length ===
+                    0) && (this._lastStateDetailsObj.isSearchFilteredApplied)) {
                 this._isManualRefreshClicked = false;
                 this._lastStateDetailsObj.isSearchFilteredApplied = false;
                 this._lastStateDetailsObj.searchFilterValue = null;
                 this._resetSearchPanel();
                 this._newDefinitionExpression = this._existingDefinitionExpression;
                 this._resetDefinitionExpression();
-            } else if ((this._selectedOperationalLayer.graphics.length > 0) && (this._lastStateDetailsObj.isSearchFilteredApplied)) {
+            } else if ((this._selectedOperationalLayer.graphics.length > 0) &&
+                (this._lastStateDetailsObj.isSearchFilteredApplied)) {
                 this._isManualRefreshClicked = false;
                 this._lastStateDetailsObj = {};
                 this._enableSearchIcon();
@@ -1064,7 +1163,8 @@ define([
         */
         _setMapExtentToDefaultExtent: function () {
             var extentDeferred = new Deferred();
-            extentDeferred = this.map.setExtent(this.lastSelectedWebMapExtent, true);
+            extentDeferred = this.map.setExtent(this.lastSelectedWebMapExtent,
+                true);
             extentDeferred.then(lang.hitch(this, function () {
                 var zoomLevelDeferred = new Deferred();
                 zoomLevelDeferred = this.map.setZoom(this.lastMapZoomLevel);
@@ -1081,7 +1181,8 @@ define([
         clearSearchText: function () {
             var filteredIconNode;
             $(".esriCTNoResults").addClass("esriCTHidden");
-            $(".esriCTSearchBox")[0].value = lang.trim($(".esriCTSearchBox")[0].value);
+            $(".esriCTSearchBox")[0].value = lang.trim($(".esriCTSearchBox")[
+                0].value);
             if (lang.trim($(".esriCTSearchBox")[0].value)) {
                 $(".esriCTSearchBox")[0].value = "";
             }
@@ -1108,16 +1209,23 @@ define([
             $(".esriCTOptionsSearchMode").addClass("esriCTHidden");
             this._addDisabledSearchIcon();
             // Enable/disable search functionality depending on layer search capabilities
-            if (this.itemInfo.itemData.applicationProperties.viewing.search && this.itemInfo.itemData.applicationProperties.viewing.search.enabled) {
-                for (i = 0; i < this.itemInfo.itemData.applicationProperties.viewing.search.layers.length; i++) {
-                    if (this.selectedOperationalLayerID === this.itemInfo.itemData.applicationProperties.viewing.search.layers[i].id) {
+            if (this.itemInfo.itemData.applicationProperties.viewing.search &&
+                this.itemInfo.itemData.applicationProperties.viewing.search.enabled
+            ) {
+                for (i = 0; i < this.itemInfo.itemData.applicationProperties.viewing
+                    .search.layers.length; i++) {
+                    if (this.selectedOperationalLayerID === this.itemInfo.itemData
+                        .applicationProperties.viewing.search.layers[i].id) {
                         // Enable search functionality
                         this._addRegularSearchIcon();
-                        if ($(".esriCTSearchBox").length > 0 && this.itemInfo.itemData.applicationProperties.viewing.search.hintText) {
+                        if ($(".esriCTSearchBox").length > 0 && this.itemInfo.itemData
+                            .applicationProperties.viewing.search.hintText) {
                             searchBox = $(".esriCTSearchBox")[0];
-                            searchBox.placeholder = this.itemInfo.itemData.applicationProperties.viewing.search.hintText;
+                            searchBox.placeholder = this.itemInfo.itemData.applicationProperties
+                                .viewing.search.hintText;
                             if (has("ie") === 9) {
-                                searchBox.value = this.itemInfo.itemData.applicationProperties.viewing.search.hintText;
+                                searchBox.value = this.itemInfo.itemData.applicationProperties
+                                    .viewing.search.hintText;
                                 domClass.add(searchBox, "esriCTPlaceholder");
                             }
                         }
@@ -1139,7 +1247,8 @@ define([
                 var searchBox;
                 searchBox = $(".esriCTSearchBox")[0];
                 if (lang.trim(searchBox.value) === "") {
-                    searchBox.value = this.itemInfo.itemData.applicationProperties.viewing.search.hintText;
+                    searchBox.value = this.itemInfo.itemData.applicationProperties
+                        .viewing.search.hintText;
                     domClass.add(searchBox, "esriCTPlaceholder");
                 }
             }
@@ -1164,9 +1273,11 @@ define([
         */
         _createNewDataSet: function () {
             this.clearSelection();
-            var selectedFeatureArr, geometryService, selectedFeaturesGeometryArr = [],
+            var selectedFeatureArr, geometryService,
+                selectedFeaturesGeometryArr = [],
                 i;
-            geometryService = new GeometryService(this.appConfig.helperServices.geometry.url);
+            geometryService = new GeometryService(this.appConfig.helperServices
+                .geometry.url);
             // if it is point feature than get selected feature from graphics layer
             // if it is other than point feature get selected feature from feature layer
             selectedFeatureArr = this._selectedOperationalLayer.graphics;
@@ -1174,11 +1285,13 @@ define([
                 selectedFeaturesGeometryArr.push(selectedFeatureArr[i].geometry);
             }
             // do union of selected feature's geometry and set map extent to it
-            geometryService.union(selectedFeaturesGeometryArr).then(lang.hitch(this, function (response) {
-                this.map.setExtent(response.getExtent(), true);
-            }), lang.hitch(this, function (err) {
-                this.appUtils.hideLoadingIndicator();
-            }));
+            geometryService.union(selectedFeaturesGeometryArr).then(lang.hitch(
+                this,
+                function (response) {
+                    this.map.setExtent(response.getExtent(), true);
+                }), lang.hitch(this, function (err) {
+                    this.appUtils.hideLoadingIndicator();
+                }));
         },
 
         /**
@@ -1210,12 +1323,15 @@ define([
             searchIconNode = query(".esriCTSearch");
             filteredIconNode = query(".esriCTSearchFiltered");
             if (searchIconNode.length > 0) {
-                domClass.replace(searchIconNode[0], "esriCTSearchDisable", "esriCTSearch");
+                domClass.replace(searchIconNode[0], "esriCTSearchDisable",
+                    "esriCTSearch");
             } else if (filteredIconNode.length > 0) {
-                domClass.replace(filteredIconNode[0], "esriCTSearchDisable", "esriCTSearchFiltered");
+                domClass.replace(filteredIconNode[0], "esriCTSearchDisable",
+                    "esriCTSearchFiltered");
             }
             if (searchIconNode.length > 0) {
-                domClass.replace(searchIconNode[0], "esriCTSearchDisable", "esriCTSearch");
+                domClass.replace(searchIconNode[0], "esriCTSearchDisable",
+                    "esriCTSearch");
             }
         },
 
@@ -1228,7 +1344,8 @@ define([
             disableIconNode = query(".esriCTSearchDisable");
             filteredIconNode = query(".esriCTSearchFiltered");
             if (disableIconNode.length > 0) {
-                domClass.replace(disableIconNode[0], "esriCTSearch", "esriCTSearchDisable");
+                domClass.replace(disableIconNode[0], "esriCTSearch",
+                    "esriCTSearchDisable");
             } else if (filteredIconNode.length > 0) {
                 domClass.remove(filteredIconNode[0], "esriCTSearchFiltered");
             }
@@ -1242,10 +1359,15 @@ define([
             var j;
             // Initially, if a layer has some definition expression than store it
             for (j = 0; j < this.itemInfo.itemData.operationalLayers.length; j++) {
-                if (this.selectedOperationalLayerID === this.itemInfo.itemData.operationalLayers[j].id) {
-                    if (this.itemInfo.itemData.operationalLayers[j].layerDefinition && this.itemInfo.itemData.operationalLayers[j].layerDefinition.definitionExpression) {
-                        this._existingDefinitionExpression = this.itemInfo.itemData.operationalLayers[j].layerDefinition.definitionExpression;
-                        this._newDefinitionExpression = this.itemInfo.itemData.operationalLayers[j].layerDefinition.definitionExpression;
+                if (this.selectedOperationalLayerID === this.itemInfo.itemData
+                    .operationalLayers[j].id) {
+                    if (this.itemInfo.itemData.operationalLayers[j].layerDefinition &&
+                        this.itemInfo.itemData.operationalLayers[j].layerDefinition
+                        .definitionExpression) {
+                        this._existingDefinitionExpression = this.itemInfo.itemData
+                            .operationalLayers[j].layerDefinition.definitionExpression;
+                        this._newDefinitionExpression = this.itemInfo.itemData.operationalLayers[
+                            j].layerDefinition.definitionExpression;
                     } else {
                         this._existingDefinitionExpression = null;
                         this._newDefinitionExpression = null;
@@ -1262,26 +1384,37 @@ define([
         _getDefinitionExpression: function (searchValue) {
             var layerObject, i, definitionExpression = null;
             // After user search for a particular value that definition expression, including the default one if merged together and returned
-            if (this.itemInfo.itemData.applicationProperties.viewing.search && this.itemInfo.itemData.applicationProperties.viewing.search.enabled) {
-                for (i = 0; i < this.itemInfo.itemData.applicationProperties.viewing.search.layers.length; i++) {
-                    if (this.selectedOperationalLayerID === this.itemInfo.itemData.applicationProperties.viewing.search.layers[i].id) {
-                        layerObject = this.itemInfo.itemData.applicationProperties.viewing.search.layers[i];
+            if (this.itemInfo.itemData.applicationProperties.viewing.search &&
+                this.itemInfo.itemData.applicationProperties.viewing.search.enabled
+            ) {
+                for (i = 0; i < this.itemInfo.itemData.applicationProperties.viewing
+                    .search.layers.length; i++) {
+                    if (this.selectedOperationalLayerID === this.itemInfo.itemData
+                        .applicationProperties.viewing.search.layers[i].id) {
+                        layerObject = this.itemInfo.itemData.applicationProperties
+                            .viewing.search.layers[i];
                         if (this._existingDefinitionExpression) {
                             definitionExpression = this._existingDefinitionExpression;
                             if (layerObject.field.exactMatch) {
                                 // For exact match case
-                                definitionExpression += " AND " + layerObject.field.name.toUpperCase() + " = '" + lang.trim(searchValue) + "'";
+                                definitionExpression += " AND " + layerObject.field.name
+                                    .toUpperCase() + " = '" + lang.trim(searchValue) +
+                                    "'";
                             } else {
                                 // For contains case
-                                definitionExpression += " AND " + layerObject.field.name.toUpperCase() + " LIKE '%" + lang.trim(searchValue) + "%'";
+                                definitionExpression += " AND " + layerObject.field.name
+                                    .toUpperCase() + " LIKE '%" + lang.trim(searchValue) +
+                                    "%'";
                             }
                         } else {
                             if (layerObject.field.exactMatch) {
                                 // For exact match case
-                                definitionExpression = layerObject.field.name.toUpperCase() + " = '" + lang.trim(searchValue) + "'";
+                                definitionExpression = layerObject.field.name.toUpperCase() +
+                                    " = '" + lang.trim(searchValue) + "'";
                             } else {
                                 // For contains case
-                                definitionExpression = layerObject.field.name.toUpperCase() + " LIKE '%" + lang.trim(searchValue) + "%'";
+                                definitionExpression = layerObject.field.name.toUpperCase() +
+                                    " LIKE '%" + lang.trim(searchValue) + "%'";
                             }
                         }
                         return definitionExpression;
@@ -1314,13 +1447,26 @@ define([
         showDetails: function () {
             if (domClass.contains("detailsBtnDiv", "esriCTBGColor")) {
                 var detailsHelperParameters;
-                detailsHelperParameters = { "activeRowGraphicsLayer": this._activeRowGraphicsLayer, "selectedOperationalLayer": this._selectedOperationalLayer, "isPointLayer": this._isPointLayer, "displayColumn": this._displayColumn, "popupInfo": this.popupInfo, "map": this.map, "appConfig": this.appConfig, "appUtils": this.appUtils };
+                detailsHelperParameters = {
+                    "activeRowGraphicsLayer": this._activeRowGraphicsLayer,
+                    "selectedOperationalLayer": this._selectedOperationalLayer,
+                    "isPointLayer": this._isPointLayer,
+                    "displayColumn": this._displayColumn,
+                    "popupInfo": this.popupInfo,
+                    "map": this.map,
+                    "appConfig": this.appConfig,
+                    "appUtils": this.appUtils,
+                    "itemInfo": this.itemInfo
+                };
                 // Create details helper to display fields
-                this._detailsHelper = new DetailsHelper(detailsHelperParameters);
+                this._detailsHelper = new DetailsHelper(
+                    detailsHelperParameters);
                 // To show display tab
-                this._detailsHelper.displayDetailsTab = lang.hitch(this, this.setAndDisplayDetailsTab);
+                this._detailsHelper.displayDetailsTab = lang.hitch(this, this
+                    .setAndDisplayDetailsTab);
                 // If user is in edit mode than clear it first and switch it to details mode
-                this._detailsHelper.removeControlsFromPreviousRow = lang.hitch(this, this.removeControlsFromPreviousRow);
+                this._detailsHelper.removeControlsFromPreviousRow = lang.hitch(
+                    this, this.removeControlsFromPreviousRow);
                 // Check if numbers of records are selected properly to switch to details tab
                 this._detailsHelper.validateDetailsData();
             }
@@ -1353,7 +1499,8 @@ define([
         */
         _addDataViewerGraphicsLayer: function () {
             try {
-                this._selectRowGraphicsLayer = this.map.getLayer("selectedRowGraphicsLayer");
+                this._selectRowGraphicsLayer = this.map.getLayer(
+                    "selectedRowGraphicsLayer");
                 // if graphic layer is available than clear it else create it and add on map
                 if (this._selectRowGraphicsLayer) {
                     this._selectRowGraphicsLayer.clear();
@@ -1375,8 +1522,10 @@ define([
         _addActiveRowGraphicLayer: function () {
             try {
                 var cloneInfoTemplate;
-                this._activeRowGraphicsLayer = this.map.getLayer("activeRowGraphicsLayer");
-                cloneInfoTemplate = lang.clone(this._selectedOperationalLayer.infoTemplate);
+                this._activeRowGraphicsLayer = this.map.getLayer(
+                    "activeRowGraphicsLayer");
+                cloneInfoTemplate = lang.clone(this._selectedOperationalLayer
+                    .infoTemplate);
                 // if graphic layer is available than clear it else create it and add on map
                 if (this._activeRowGraphicsLayer) {
                     this._activeRowGraphicsLayer.clear();
@@ -1384,7 +1533,8 @@ define([
                     this._activeRowGraphicsLayer = new GraphicsLayer({
                         "id": "activeRowGraphicsLayer"
                     });
-                    this._activeRowGraphicsLayer.setInfoTemplate(cloneInfoTemplate);
+                    this._activeRowGraphicsLayer.setInfoTemplate(
+                        cloneInfoTemplate);
                     this.attachEventToActiveRowLayer(this._activeRowGraphicsLayer);
                     // Create and add a graphic layer on the map
                     this.map.addLayer(this._activeRowGraphicsLayer);
@@ -1415,14 +1565,18 @@ define([
         * @memberOf widgets/data-viewer/data-viewer
         */
         changeDetailsButtonMode: function () {
-            if (this._activeRowGraphicsLayer && this._activeRowGraphicsLayer.graphics && this._activeRowGraphicsLayer.graphics.length === 1) {
+            if (this._activeRowGraphicsLayer && this._activeRowGraphicsLayer
+                .graphics && this._activeRowGraphicsLayer.graphics.length ===
+                1) {
                 domClass.remove("detailsBtnDiv", "esriCTDetailsBtnDisabled");
                 domClass.add("detailsBtnDiv", "esriCTDetailsButton");
             } else {
                 domClass.remove("detailsBtnDiv", "esriCTDetailsButton");
                 domClass.add("detailsBtnDiv", "esriCTDetailsBtnDisabled");
             }
-            if (this._selectRowGraphicsLayer && this._selectRowGraphicsLayer.graphics && this._selectRowGraphicsLayer.graphics.length > 0) {
+            if (this._selectRowGraphicsLayer && this._selectRowGraphicsLayer
+                .graphics && this._selectRowGraphicsLayer.graphics.length > 0
+            ) {
                 this._changeSelectionOptionMode(true);
             } else {
                 this._changeSelectionOptionMode(false);
@@ -1434,10 +1588,12 @@ define([
         * @memberOf widgets/data-viewer/data-viewer
         */
         _changeSelectionOptionMode: function (toggle) {
-            var settingsButton, settingsOption, showAllOption, showSelectedOption, settingsButtonCaretIcon;
+            var settingsButton, settingsOption, showAllOption,
+                showSelectedOption, settingsButtonCaretIcon;
 
             settingsButton = query(".esriCTSettingsButton")[0];
-            settingsButtonCaretIcon = query(".esriCTSettingsButtonCaretIcon")[0];
+            settingsButtonCaretIcon = query(
+                ".esriCTSettingsButtonCaretIcon")[0];
 
             showAllOption = query(".esriCTShowAll")[0];
             showSelectedOption = query(".esriCTShowSelected")[0];
@@ -1447,19 +1603,27 @@ define([
             }
 
             if (!settingsButtonCaretIcon) {
-                settingsButtonCaretIcon = query(".esriCTSettingsButtonCaretIconDisabled")[0];
+                settingsButtonCaretIcon = query(
+                    ".esriCTSettingsButtonCaretIconDisabled")[0];
             }
 
             settingsOption = query(".esriCTSettingsOptions")[0];
             if (toggle) { // To enable selection options
-                if ((this._selectRowGraphicsLayer && this._selectRowGraphicsLayer.graphics && this._selectRowGraphicsLayer.graphics.length > 0)) {
-                    if (domClass.contains(settingsButton, "esriCTSettingsButtonDisabled")) {
-                        domClass.remove(settingsButton, "esriCTSettingsButtonDisabled");
+                if ((this._selectRowGraphicsLayer && this._selectRowGraphicsLayer
+                        .graphics && this._selectRowGraphicsLayer.graphics.length >
+                        0)) {
+                    if (domClass.contains(settingsButton,
+                            "esriCTSettingsButtonDisabled")) {
+                        domClass.remove(settingsButton,
+                            "esriCTSettingsButtonDisabled");
                         domClass.add(settingsButton, "esriCTSettingsButton");
                     }
-                    if (domClass.contains(settingsButtonCaretIcon, "esriCTSettingsButtonCaretIconDisabled")) {
-                        domClass.remove(settingsButtonCaretIcon, "esriCTSettingsButtonCaretIconDisabled");
-                        domClass.add(settingsButtonCaretIcon, "esriCTSettingsButtonCaretIcon");
+                    if (domClass.contains(settingsButtonCaretIcon,
+                            "esriCTSettingsButtonCaretIconDisabled")) {
+                        domClass.remove(settingsButtonCaretIcon,
+                            "esriCTSettingsButtonCaretIconDisabled");
+                        domClass.add(settingsButtonCaretIcon,
+                            "esriCTSettingsButtonCaretIcon");
                     }
                 }
             } else { // To disable selection options
@@ -1469,11 +1633,15 @@ define([
                 domClass.remove(settingsButton, "esriCTSettingsButton");
                 domClass.add(settingsButton, "esriCTSettingsButtonDisabled");
 
-                domClass.remove(settingsButtonCaretIcon, "esriCTSettingsButtonCaretIcon");
-                domClass.add(settingsButtonCaretIcon, "esriCTSettingsButtonCaretIconDisabled");
+                domClass.remove(settingsButtonCaretIcon,
+                    "esriCTSettingsButtonCaretIcon");
+                domClass.add(settingsButtonCaretIcon,
+                    "esriCTSettingsButtonCaretIconDisabled");
 
-                domClass.replace(showAllOption, "esriCTHidden", "esriCTVisible");
-                domClass.replace(showSelectedOption, "esriCTVisible", "esriCTHidden");
+                domClass.replace(showAllOption, "esriCTHidden",
+                    "esriCTVisible");
+                domClass.replace(showSelectedOption, "esriCTVisible",
+                    "esriCTHidden");
             }
         },
 
@@ -1521,17 +1689,24 @@ define([
                 j,
                 value;
             if (code === "" || code === null) {
-                codedValueOptions = '<select class="esriCTCodedDomain" name="">displayValue';
-                codedValueOptions = codedValueOptions.replace("displayValue", '<option value=""></option>');
+                codedValueOptions =
+                    '<select class="esriCTCodedDomain" name="">displayValue';
+                codedValueOptions = codedValueOptions.replace("displayValue",
+                    '<option value=""></option>');
             } else {
-                codedValueOptions = '<select class="esriCTCodedDomain" name="' + obj.codedValues[0].code + '">displayValue';
+                codedValueOptions =
+                    '<select class="esriCTCodedDomain" name="' + obj.codedValues[
+                        0].code + '">displayValue';
             }
             for (j = 0; j < obj.codedValues.length; j++) {
                 value = obj.codedValues[j].code + "|" + key;
                 if (obj.codedValues[j].code === code) {
-                    codedValueOptions = codedValueOptions.replace("displayValue", '<option value="' + value + '">' + obj.codedValues[j].name + '</option>');
+                    codedValueOptions = codedValueOptions.replace(
+                        "displayValue", '<option value="' + value + '">' + obj.codedValues[
+                            j].name + '</option>');
                 } else {
-                    codedValueOptions += '<option value="' + value + '">' + obj.codedValues[j].name + '</option>';
+                    codedValueOptions += '<option value="' + value + '">' + obj
+                        .codedValues[j].name + '</option>';
                 }
             }
             codedValueOptions += '</select>';
@@ -1550,23 +1725,35 @@ define([
                 j,
                 value;
             if (code === "" || code === null) {
-                dependentValueOptions = '<select class="esriCTCodedDomain" name="">displayValue';
-                dependentValueOptions = dependentValueOptions.replace("displayValue", '<option value=""></option>');
+                dependentValueOptions =
+                    '<select class="esriCTCodedDomain" name="">displayValue';
+                dependentValueOptions = dependentValueOptions.replace(
+                    "displayValue", '<option value=""></option>');
             } else {
-                dependentValueOptions = '<select class="esriCTCodedDomain" name="' + obj.types[0].id + '">displayValue';
+                dependentValueOptions =
+                    '<select class="esriCTCodedDomain" name="' + obj.types[0].id +
+                    '">displayValue';
             }
             for (j = 0; j < obj.types.length; j++) {
                 value = obj.types[j].id + "|" + key;
-                if ((obj.types[j].id !== null) && (obj.types[j].id !== "") && (code !== null) && (code !== "")) {
+                if ((obj.types[j].id !== null) && (obj.types[j].id !== "") &&
+                    (code !== null) && (code !== "")) {
                     if (obj.types[j].id.toString() === code.toString()) {
-                        dependentValueOptions = dependentValueOptions.replace("displayValue", '<option value="' + value + '">' + obj.types[j].name + '</option>');
+                        dependentValueOptions = dependentValueOptions.replace(
+                            "displayValue", '<option value="' + value + '">' +
+                            obj.types[j].name + '</option>');
                     } else {
-                        dependentValueOptions += '<option value="' + value + '">' + obj.types[j].name + '</option>';
+                        dependentValueOptions += '<option value="' + value + '">' +
+                            obj.types[j].name + '</option>';
                     }
-                } else if ((obj.types[j].id === null || obj.types[j].id === "") && (code === null || code === "")) {
-                    dependentValueOptions = dependentValueOptions.replace("displayValue", '<option value="' + value + '">' + obj.types[j].name + '</option>');
+                } else if ((obj.types[j].id === null || obj.types[j].id ===
+                        "") && (code === null || code === "")) {
+                    dependentValueOptions = dependentValueOptions.replace(
+                        "displayValue", '<option value="' + value + '">' + obj.types[
+                            j].name + '</option>');
                 } else {
-                    dependentValueOptions += '<option value="' + value + '">' + obj.types[j].name + '</option>';
+                    dependentValueOptions += '<option value="' + value + '">' +
+                        obj.types[j].name + '</option>';
                 }
             }
             dependentValueOptions += '</select>';
@@ -1594,7 +1781,9 @@ define([
                 maxLengthValue = length;
             }
             textInputClass = "esriCTTextInput";
-            textInput = '<input type="text" class="' + textInputClass + '" value="' + value + '" name="' + key + '" maxlength="' + maxLengthValue + '"></input>';
+            textInput = '<input type="text" class="' + textInputClass +
+                '" value="' + value + '" name="' + key + '" maxlength="' +
+                maxLengthValue + '"></input>';
             return textInput;
         },
 
@@ -1608,9 +1797,14 @@ define([
         * @memberOf widgets/data-viewer/data-viewer
         */
         _createDatePicker: function (date, format, key, minValue, maxValue) {
-            var datePickerString = '<div class="input-group date esriCTDateTimePicker">';
-            datePickerString += '<input type="text" class="form-control esriCTDateInputField" name="' + key + "|" + date + "|" + format.dateFormat + "|" + minValue + "|" + maxValue + "|" + format.showTime + '"></input>';
-            datePickerString += '<span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>';
+            var datePickerString =
+                '<div class="input-group date esriCTDateTimePicker">';
+            datePickerString +=
+                '<input type="text" class="form-control esriCTDateInputField" name="' +
+                key + "|" + date + "|" + format.dateFormat + "|" + minValue +
+                "|" + maxValue + "|" + format.showTime + '"></input>';
+            datePickerString +=
+                '<span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>';
             datePickerString += '</div>';
             return datePickerString;
         },
@@ -1657,16 +1851,19 @@ define([
                 blur: lang.hitch(this, function (evt) {
                     this._emptyDependentControls();
                     this._isTextInputInFocus = false;
-                    if (evt.currentTarget.defaultValue !== evt.currentTarget.value) {
+                    if (evt.currentTarget.defaultValue !== evt.currentTarget
+                        .value) {
                         this.appUtils.showLoadingIndicator();
                         this._lastEditedControl = evt;
-                        this._updateFeature(evt.currentTarget.value, evt.currentTarget.name);
+                        this._updateFeature(evt.currentTarget.value, evt.currentTarget
+                            .name);
                     }
                     this.OnEditingComplete();
                 }),
                 focus: lang.hitch(this, function (evt) {
                     this._emptyDependentControls();
-                    this._featureObjectID = this._fetchObjectID(evt.currentTarget.parentElement.parentElement);
+                    this._featureObjectID = this._fetchObjectID(evt.currentTarget
+                        .parentElement.parentElement);
                     this._isTextInputInFocus = true;
                     this.OnEditingStart();
                 })
@@ -1683,7 +1880,8 @@ define([
                     value = evt.currentTarget.value.split("|")[0];
                     if (field === this._selectedOperationalLayer.typeIdField) {
                         this._detachEvents();
-                        this._changeValueOfDependentField(parseInt(value, 10));
+                        this._changeValueOfDependentField(parseInt(value,
+                            10));
                         this._attachEventToControls();
                     }
                     this._updateFeature(value, field);
@@ -1691,7 +1889,8 @@ define([
                 click: lang.hitch(this, function (evt) {
                     this._emptyDependentControls();
                     this._isDropDownClicked = true;
-                    this._featureObjectID = this._fetchObjectID(evt.currentTarget.parentElement.parentElement);
+                    this._featureObjectID = this._fetchObjectID(evt.currentTarget
+                        .parentElement.parentElement);
                 }),
                 blur: lang.hitch(this, function (evt) {
                     this._isDropDownClicked = false;
@@ -1742,10 +1941,13 @@ define([
                 if (min === "null" && max === "null") {
                     datePicker.data("DateTimePicker").setDate(parseInt(date, 10));
                 } else {
-                    datePicker.data("DateTimePicker").setMaxDate(parseInt(max, 10));
-                    datePicker.data("DateTimePicker").setMinDate(parseInt(min, 10));
+                    datePicker.data("DateTimePicker").setMaxDate(parseInt(max,
+                        10));
+                    datePicker.data("DateTimePicker").setMinDate(parseInt(min,
+                        10));
                     if (date !== "null") {
-                        datePicker.data("DateTimePicker").setDate(parseInt(date, 10));
+                        datePicker.data("DateTimePicker").setDate(parseInt(date,
+                            10));
                     }
                 }
                 this._attachDatePickerEvent(datePicker);
@@ -1765,9 +1967,12 @@ define([
                 } else {
                     var value, field;
                     this._lastEditedControl = evt;
-                    this._featureObjectID = this._fetchObjectID(evt.currentTarget.parentElement.parentElement);
-                    value = $(evt.currentTarget).data('DateTimePicker').getDate().valueOf();
-                    field = evt.currentTarget.childNodes[0].name.split('|')[0];
+                    this._featureObjectID = this._fetchObjectID(evt.currentTarget
+                        .parentElement.parentElement);
+                    value = $(evt.currentTarget).data('DateTimePicker').getDate()
+                        .valueOf();
+                    field = evt.currentTarget.childNodes[0].name.split(
+                        '|')[0];
                     this._updateFeature(value, field);
                 }
             }));
@@ -1777,8 +1982,10 @@ define([
             // show error when invalid date is entered
             datePicker.on('dp.error', lang.hitch(this, function (evt) {
                 var field;
-                field = evt.currentTarget.childNodes[0].name.split('|')[0];
-                if (evt.date._i === "" && this._isNullableValueAllowed(field)) {
+                field = evt.currentTarget.childNodes[0].name.split('|')[
+                    0];
+                if (evt.date._i === "" && this._isNullableValueAllowed(
+                        field)) {
                     this._lastEditedControl = evt;
                     this._updateFeature(null, field);
                 } else {
@@ -1793,7 +2000,8 @@ define([
                     }
                     if (this._showDatePickerErrorMessage) {
                         this._showDatePickerErrorMessage = false;
-                        this.appUtils.showMessage(this.appConfig.i18n.dataviewer.invalidDate);
+                        this.appUtils.showMessage(this.appConfig.i18n.dataviewer
+                            .invalidDate);
                     }
                 }
             }));
@@ -1807,38 +2015,55 @@ define([
             var i, className, selectedIndex, value, date, dateFormat;
             this._existingRowData = null;
             if (this._lastSelectedRow) {
-                this._existingRowData = this._dataViewerTable.row(this._lastSelectedRow.currentTarget).data();
-                for (i = 1; i < this._lastSelectedRow.currentTarget.childNodes.length; i++) {
-                    if (this._lastSelectedRow.currentTarget.childNodes[i].childNodes.length > 0) {
-                        if (this._lastSelectedRow.currentTarget.childNodes[i].childNodes[0].className) {
-                            className = this._lastSelectedRow.currentTarget.childNodes[i].childNodes[0].className;
+                this._existingRowData = this._dataViewerTable.row(this._lastSelectedRow
+                    .currentTarget).data();
+                for (i = 1; i < this._lastSelectedRow.currentTarget.childNodes
+                    .length; i++) {
+                    if (this._lastSelectedRow.currentTarget.childNodes[i].childNodes
+                        .length > 0) {
+                        if (this._lastSelectedRow.currentTarget.childNodes[i].childNodes[
+                                0].className) {
+                            className = this._lastSelectedRow.currentTarget.childNodes[
+                                i].childNodes[0].className;
                             // Remove text-input control
                             if (className.indexOf("esriCTTextInput") > -1) {
-                                value = this._lastSelectedRow.currentTarget.childNodes[i].childNodes[0].value;
-                                this._lastSelectedRow.currentTarget.childNodes[i].innerHTML = value;
+                                value = this._lastSelectedRow.currentTarget.childNodes[
+                                    i].childNodes[0].value;
+                                this._lastSelectedRow.currentTarget.childNodes[i].innerHTML =
+                                    value;
                                 this._updateInternalData(i, value);
                             } else if (className.indexOf("esriCTCodedDomain") > -1) {
                                 // Remove drop-down control
-                                selectedIndex = this._lastSelectedRow.currentTarget.childNodes[i].childNodes[0].selectedIndex;
-                                value = this._lastSelectedRow.currentTarget.childNodes[i].childNodes[0][selectedIndex];
+                                selectedIndex = this._lastSelectedRow.currentTarget.childNodes[
+                                    i].childNodes[0].selectedIndex;
+                                value = this._lastSelectedRow.currentTarget.childNodes[
+                                    i].childNodes[0][selectedIndex];
                                 if (value) {
-                                    this._lastSelectedRow.currentTarget.childNodes[i].innerHTML = value.text;
+                                    this._lastSelectedRow.currentTarget.childNodes[i].innerHTML =
+                                        value.text;
                                     this._updateInternalData(i, value.text);
                                 } else {
-                                    this._lastSelectedRow.currentTarget.childNodes[i].innerHTML = "";
+                                    this._lastSelectedRow.currentTarget.childNodes[i].innerHTML =
+                                        "";
                                     this._updateInternalData(i, "");
                                 }
-                            } else if (className.indexOf("esriCTDateTimePicker") > -1) {
+                            } else if (className.indexOf("esriCTDateTimePicker") >
+                                -1) {
                                 // Remove date picker control
-                                date = this._lastSelectedRow.currentTarget.childNodes[i].childNodes[0].childNodes[0].name.split('|')[1];
-                                dateFormat = this._lastSelectedRow.currentTarget.childNodes[i].childNodes[0].childNodes[0].name.split('|')[2];
+                                date = this._lastSelectedRow.currentTarget.childNodes[
+                                    i].childNodes[0].childNodes[0].name.split('|')[1];
+                                dateFormat = this._lastSelectedRow.currentTarget.childNodes[
+                                    i].childNodes[0].childNodes[0].name.split('|')[2];
                                 if (date === "null" || date === "") {
-                                    this._lastSelectedRow.currentTarget.childNodes[i].innerHTML = "";
+                                    this._lastSelectedRow.currentTarget.childNodes[i].innerHTML =
+                                        "";
                                     this._updateInternalData(i, "");
                                 } else {
                                     date = parseInt(date, 10);
-                                    this._lastSelectedRow.currentTarget.childNodes[i].innerHTML = (moment(date)).format(dateFormat);
-                                    this._updateInternalData(i, (moment(date)).format(dateFormat));
+                                    this._lastSelectedRow.currentTarget.childNodes[i].innerHTML =
+                                        (moment(date)).format(dateFormat);
+                                    this._updateInternalData(i, (moment(date)).format(
+                                        dateFormat));
                                 }
                             }
                         }
@@ -1846,7 +2071,8 @@ define([
                 }
                 if (this._dataViewerTable) {
                     if (this._existingRowData) {
-                        this._dataViewerTable.row(this._lastSelectedRow.currentTarget).data(this._existingRowData);
+                        this._dataViewerTable.row(this._lastSelectedRow.currentTarget)
+                            .data(this._existingRowData);
                     }
                 }
             }
@@ -1859,7 +2085,8 @@ define([
         * @memberOf widgets/data-viewer/data-viewer
         */
         _addControlsToRow: function (featureSet) {
-            var i, j, fieldName, format, type, length, value, dateFormat, isFieldEditable, number, k, id, m, n;
+            var i, j, fieldName, format, type, length, value, dateFormat,
+                isFieldEditable, number, k, id, m, n;
             if (this._lastSelectedRow) {
                 for (i = 0; i < featureSet.features.length; i++) {
                     for (j = 0; j < this._displayColumn.length; j++) {
@@ -1868,7 +2095,8 @@ define([
                             format = this._displayColumn[j].format;
                             type = this._displayColumn[j].type;
                             length = this._displayColumn[j].length;
-                            if (typeof (featureSet.features[i].attributes[fieldName]) === "string") {
+                            if (typeof (featureSet.features[i].attributes[fieldName]) ===
+                                "string") {
                                 value = featureSet.features[i].attributes[fieldName];
                                 value = value.replace(/(\r\n|\n|\r)/gm, " ");
                             } else {
@@ -1877,107 +2105,167 @@ define([
                             dateFormat = this.appUtils.getDateFormat(format);
                             isFieldEditable = this._displayColumn[j].isFieldEditable;
                             switch (type) {
-                            case "esriFieldTypeOID":
-                                break;
-                            case "esriFieldTypeDate":
-                                // dislay date-picker if field has date value
-                                if (this._displayColumn[j].domain && isFieldEditable) {
-                                    if (value) {
-                                        this._lastSelectedRow.currentTarget.childNodes[j].innerHTML = this._createDatePicker(value, dateFormat, fieldName, this._displayColumn[j].domain.minValue, this._displayColumn[j].domain.maxValue);
-                                    } else {
-                                        this._lastSelectedRow.currentTarget.childNodes[j].innerHTML = this._createDatePicker(null, dateFormat, fieldName, this._displayColumn[j].domain.minValue, this._displayColumn[j].domain.maxValue);
-                                    }
-                                } else {
-                                    // if fields are editable than only add controls
-                                    if (isFieldEditable) {
+                                case "esriFieldTypeOID":
+                                    break;
+                                case "esriFieldTypeDate":
+                                    // dislay date-picker if field has date value
+                                    if (this._displayColumn[j].domain &&
+                                        isFieldEditable) {
                                         if (value) {
-                                            this._lastSelectedRow.currentTarget.childNodes[j].innerHTML = this._createDatePicker(value, dateFormat, fieldName, null, null);
+                                            this._lastSelectedRow.currentTarget.childNodes[
+                                                j].innerHTML = this._createDatePicker(value,
+                                                dateFormat, fieldName, this._displayColumn[
+                                                    j].domain.minValue, this._displayColumn[j]
+                                                .domain.maxValue);
                                         } else {
-                                            this._lastSelectedRow.currentTarget.childNodes[j].innerHTML = this._createDatePicker(null, dateFormat, fieldName, null, null);
+                                            this._lastSelectedRow.currentTarget.childNodes[
+                                                j].innerHTML = this._createDatePicker(null,
+                                                dateFormat, fieldName, this._displayColumn[
+                                                    j].domain.minValue, this._displayColumn[j]
+                                                .domain.maxValue);
                                         }
                                     } else {
-                                        if (value) {
-                                            this._lastSelectedRow.currentTarget.childNodes[j].innerHTML = (moment(value)).format(dateFormat.dateFormat);
+                                        // if fields are editable than only add controls
+                                        if (isFieldEditable) {
+                                            if (value) {
+                                                this._lastSelectedRow.currentTarget.childNodes[
+                                                    j].innerHTML = this._createDatePicker(
+                                                    value, dateFormat, fieldName, null, null);
+                                            } else {
+                                                this._lastSelectedRow.currentTarget.childNodes[
+                                                    j].innerHTML = this._createDatePicker(
+                                                    null, dateFormat, fieldName, null, null);
+                                            }
                                         } else {
-                                            this._lastSelectedRow.currentTarget.childNodes[j].innerHTML = "";
-                                        }
-                                    }
-                                }
-                                break;
-                            default:
-                                // display drop-down if field has coded value
-                                if (this._displayColumn[j].codedValues) {
-                                    if (isFieldEditable) {
-                                        this._lastSelectedRow.currentTarget.childNodes[j].innerHTML = this._createDropDown(this._displayColumn[j], value, fieldName);
-                                    } else {
-                                        for (k = 0; k < this._displayColumn[j].codedValues.length; k++) {
-                                            if (this._displayColumn[j].codedValues[k].code === value) {
-                                                this._lastSelectedRow.currentTarget.childNodes[j].innerHTML = this._displayColumn[j].codedValues[k].name;
+                                            if (value) {
+                                                this._lastSelectedRow.currentTarget.childNodes[
+                                                    j].innerHTML = (moment(value)).format(
+                                                    dateFormat.dateFormat);
+                                            } else {
+                                                this._lastSelectedRow.currentTarget.childNodes[
+                                                    j].innerHTML = "";
                                             }
                                         }
                                     }
-                                } else if (this._displayColumn[j].types) {
-                                    // add drop-down for dependent drop-down value
-                                    if (isFieldEditable) {
-                                        this._lastSelectedRow.currentTarget.childNodes[j].innerHTML = this._createDependentDropDown(this._displayColumn[j], value, fieldName);
-                                    } else {
-                                        this._lastSelectedRow.currentTarget.childNodes[j].innerHTML = value;
-                                    }
-                                } else if (this._selectedOperationalLayer.types && this._selectedOperationalLayer.types.length > 0 && this._selectedOperationalLayer.types[0].domains && this._selectedOperationalLayer.types[0].domains[fieldName] && this._selectedOperationalLayer.types[0].domains[fieldName].codedValues) {
-                                    id = featureSet.features[i].attributes[this._selectedOperationalLayer.typeIdField];
-                                    for (m = 0; m < this._selectedOperationalLayer.types.length; m++) {
-                                        if (this._selectedOperationalLayer.types[m].id === id) {
-                                            if (isFieldEditable) {
-                                                this._lastSelectedRow.currentTarget.childNodes[j].innerHTML = this._createDropDown(this._selectedOperationalLayer.types[m].domains[fieldName], value, fieldName);
-                                            } else {
-                                                for (n = 0; n < this._selectedOperationalLayer.types[m].domains[fieldName].codedValues.length; n++) {
-                                                    if (value === this._selectedOperationalLayer.types[m].domains[fieldName].codedValues[n].code) {
-                                                        this._lastSelectedRow.currentTarget.childNodes[j].innerHTML = this._selectedOperationalLayer.types[m].domains[fieldName].codedValues[n].name;
+                                    break;
+                                default:
+                                    // display drop-down if field has coded value
+                                    if (this._displayColumn[j].codedValues) {
+                                        if (isFieldEditable) {
+                                            this._lastSelectedRow.currentTarget.childNodes[
+                                                j].innerHTML = this._createDropDown(this._displayColumn[
+                                                j], value, fieldName);
+                                        } else {
+                                            for (k = 0; k < this._displayColumn[j].codedValues
+                                                .length; k++) {
+                                                if (this._displayColumn[j].codedValues[k].code ===
+                                                    value) {
+                                                    this._lastSelectedRow.currentTarget.childNodes[
+                                                        j].innerHTML = this._displayColumn[j].codedValues[
+                                                        k].name;
+                                                }
+                                            }
+                                        }
+                                    } else if (this._displayColumn[j].types) {
+                                        // add drop-down for dependent drop-down value
+                                        if (isFieldEditable) {
+                                            this._lastSelectedRow.currentTarget.childNodes[
+                                                j].innerHTML = this._createDependentDropDown(
+                                                this._displayColumn[j], value, fieldName);
+                                        } else {
+                                            this._lastSelectedRow.currentTarget.childNodes[
+                                                j].innerHTML = value;
+                                        }
+                                    } else if (this._selectedOperationalLayer.types &&
+                                        this._selectedOperationalLayer.types.length > 0 &&
+                                        this._selectedOperationalLayer.types[0].domains &&
+                                        this._selectedOperationalLayer.types[0].domains[
+                                            fieldName] && this._selectedOperationalLayer.types[
+                                            0].domains[fieldName].codedValues) {
+                                        id = featureSet.features[i].attributes[this._selectedOperationalLayer
+                                            .typeIdField];
+                                        for (m = 0; m < this._selectedOperationalLayer.types
+                                            .length; m++) {
+                                            if (this._selectedOperationalLayer.types[m].id ===
+                                                id) {
+                                                if (isFieldEditable) {
+                                                    this._lastSelectedRow.currentTarget.childNodes[
+                                                        j].innerHTML = this._createDropDown(
+                                                        this._selectedOperationalLayer.types[m]
+                                                        .domains[fieldName], value, fieldName);
+                                                } else {
+                                                    for (n = 0; n < this._selectedOperationalLayer
+                                                        .types[m].domains[fieldName].codedValues.length; n++
+                                                    ) {
+                                                        if (value === this._selectedOperationalLayer
+                                                            .types[m].domains[fieldName].codedValues[
+                                                                n].code) {
+                                                            this._lastSelectedRow.currentTarget.childNodes[
+                                                                    j].innerHTML = this._selectedOperationalLayer
+                                                                .types[m].domains[fieldName].codedValues[
+                                                                    n].name;
+                                                        }
                                                     }
                                                 }
                                             }
                                         }
-                                    }
-                                } else {
-                                    // add text input control
-                                    if (this._displayColumn[j].numberFormat) {
-                                        if (value || value === 0) {
-                                            // if number has digit seperator
-                                            if (this._displayColumn[j].numberFormat.digitSeparator) {
-                                                number = value.toFixed(this._displayColumn[j].numberFormat.places);
-                                                number = this.appUtils.convertNumberToThousandSeperator(number);
-                                                if (isFieldEditable) {
-                                                    this._lastSelectedRow.currentTarget.childNodes[j].innerHTML = this._createTextInput(number, fieldName, type, length);
-                                                } else {
-                                                    this._lastSelectedRow.currentTarget.childNodes[j].innerHTML = number;
-                                                }
-                                            } else {
-                                                if (isFieldEditable) {
-                                                    this._lastSelectedRow.currentTarget.childNodes[j].innerHTML = this._createTextInput(value.toFixed(this._displayColumn[j].numberFormat.places), fieldName, type, length);
-                                                } else {
-                                                    this._lastSelectedRow.currentTarget.childNodes[j].innerHTML = value.toFixed(this._displayColumn[j].numberFormat.places);
-                                                }
-                                            }
-                                        } else {
-                                            if (isFieldEditable) {
-                                                this._lastSelectedRow.currentTarget.childNodes[j].innerHTML = this._createTextInput(value, fieldName, type, length);
-                                            } else {
-                                                this._lastSelectedRow.currentTarget.childNodes[j].innerHTML = value;
-                                            }
-                                        }
                                     } else {
-                                        // display text box for rest of fields
-                                        if (isFieldEditable) {
-                                            this._lastSelectedRow.currentTarget.childNodes[j].innerHTML = this._createTextInput(value, fieldName, type, length);
-                                        } else {
-                                            if (value !== null && value !== "") {
-                                                this._lastSelectedRow.currentTarget.childNodes[j].innerHTML = value;
+                                        // add text input control
+                                        if (this._displayColumn[j].numberFormat) {
+                                            if (value || value === 0) {
+                                                // if number has digit seperator
+                                                if (this._displayColumn[j].numberFormat.digitSeparator) {
+                                                    number = value.toFixed(this._displayColumn[
+                                                        j].numberFormat.places);
+                                                    number = this.appUtils.convertNumberToThousandSeperator(
+                                                        number);
+                                                    if (isFieldEditable) {
+                                                        this._lastSelectedRow.currentTarget.childNodes[
+                                                            j].innerHTML = this._createTextInput(
+                                                            number, fieldName, type, length);
+                                                    } else {
+                                                        this._lastSelectedRow.currentTarget.childNodes[
+                                                            j].innerHTML = number;
+                                                    }
+                                                } else {
+                                                    if (isFieldEditable) {
+                                                        this._lastSelectedRow.currentTarget.childNodes[
+                                                            j].innerHTML = this._createTextInput(
+                                                            value.toFixed(this._displayColumn[j].numberFormat
+                                                                .places), fieldName, type, length);
+                                                    } else {
+                                                        this._lastSelectedRow.currentTarget.childNodes[
+                                                            j].innerHTML = value.toFixed(this._displayColumn[
+                                                            j].numberFormat.places);
+                                                    }
+                                                }
                                             } else {
-                                                this._lastSelectedRow.currentTarget.childNodes[j].innerHTML = "";
+                                                if (isFieldEditable) {
+                                                    this._lastSelectedRow.currentTarget.childNodes[
+                                                        j].innerHTML = this._createTextInput(
+                                                        value, fieldName, type, length);
+                                                } else {
+                                                    this._lastSelectedRow.currentTarget.childNodes[
+                                                        j].innerHTML = value;
+                                                }
+                                            }
+                                        } else {
+                                            // display text box for rest of fields
+                                            if (isFieldEditable) {
+                                                this._lastSelectedRow.currentTarget.childNodes[
+                                                    j].innerHTML = this._createTextInput(
+                                                    value, fieldName, type, length);
+                                            } else {
+                                                if (value !== null && value !== "") {
+                                                    this._lastSelectedRow.currentTarget.childNodes[
+                                                        j].innerHTML = value;
+                                                } else {
+                                                    this._lastSelectedRow.currentTarget.childNodes[
+                                                        j].innerHTML = "";
+                                                }
                                             }
                                         }
                                     }
-                                }
                             }
                         }
                     }
@@ -1999,20 +2287,23 @@ define([
         * @memberOf widgets/data-viewer/data-viewer
         */
         highlightRowOnFeatureClick: function (objectId, selectRow) {
-            var objectIDFieldName, count, objectIdColumnNumber, rows, i, rowNumber;
+            var objectIDFieldName, count, objectIdColumnNumber, rows, i,
+                rowNumber;
             this._isRowFound = false;
             count = 0;
             objectIDFieldName = this._selectedOperationalLayer.objectIdField;
             // Track the object ID column number and fetched value from it
             $('#dataViewerTable th').each(function () {
-                if ($(this)[0].attributes.fieldName.value === objectIDFieldName) {
+                if ($(this)[0].attributes.fieldName.value ===
+                    objectIDFieldName) {
                     objectIdColumnNumber = count;
                 }
                 count++;
             });
             rows = $('#dataViewerTable tr');
             for (i = 0; i < rows.length; i++) {
-                if (parseInt($(rows[i]).find('td').eq(objectIdColumnNumber).text(), 10) === objectId) {
+                if (parseInt($(rows[i]).find('td').eq(objectIdColumnNumber).text(),
+                        10) === objectId) {
                     this._isRowFound = true;
                     rowNumber = i;
                     if (selectRow) {
@@ -2041,12 +2332,17 @@ define([
                 scrollTop: 0
             }, 0);
             setTimeout(lang.hitch(this, function () {
-                if ((($('#dataViewerTable tbody tr').eq(rowNumber).offset()) && ($('#dataViewerTable tbody tr').eq(rowNumber).offset().top)) || (this._selectedOperationalLayer.graphics.length === rowNumber)) {
+                if ((($('#dataViewerTable tbody tr').eq(rowNumber).offset()) &&
+                        ($('#dataViewerTable tbody tr').eq(rowNumber).offset()
+                            .top)) || (this._selectedOperationalLayer.graphics
+                        .length === rowNumber)) {
                     var scrollTopValue;
-                    if (this._selectedOperationalLayer.graphics.length === rowNumber) {
+                    if (this._selectedOperationalLayer.graphics.length ===
+                        rowNumber) {
                         scrollTopValue = 100000;
                     } else {
-                        scrollTopValue = $('#dataViewerTable tbody tr').eq(rowNumber).offset().top - 140;
+                        scrollTopValue = $('#dataViewerTable tbody tr').eq(
+                            rowNumber).offset().top - 140;
                     }
                     $('.dataTables_scrollBody').animate({
                         scrollTop: scrollTopValue
@@ -2067,14 +2363,16 @@ define([
             objectIDFieldName = this._selectedOperationalLayer.objectIdField;
             // Track the object ID column number and fetched value from it
             $('#dataViewerTable th').each(function () {
-                if ($(this)[0].attributes.fieldName.value === objectIDFieldName) {
+                if ($(this)[0].attributes.fieldName.value ===
+                    objectIDFieldName) {
                     objectIdColumnNumber = count;
                 }
                 count++;
             });
             rows = $('#dataViewerTable tr');
             for (i = 0; i < rows.length; i++) {
-                if (parseInt($(rows[i]).find('td').eq(objectIdColumnNumber).text(), 10) === objectId) {
+                if (parseInt($(rows[i]).find('td').eq(objectIdColumnNumber).text(),
+                        10) === objectId) {
                     this._toggleCheckBox(false, rows[i]);
                     $(rows[i]).removeClass("esriCTRowActivated");
                     if (this.isShowSelectedClicked) {
@@ -2083,7 +2381,8 @@ define([
                     break;
                 }
             }
-            if ((this._selectRowGraphicsLayer.graphics.length === 0) && (this.isShowSelectedClicked)) {
+            if ((this._selectRowGraphicsLayer.graphics.length === 0) && (
+                    this.isShowSelectedClicked)) {
                 this.isShowSelectedClicked = false;
                 this.isDetailsTabClicked = false;
                 this._activeRowGraphicsLayer.clear();
@@ -2117,13 +2416,15 @@ define([
             // So to maintain updated value of the selected feature, a new object of the feature layer is required.
             // If a new object is not created than the previous value of feature appears and not the updated one.
             featureLayer = new FeatureLayer(this._selectedOperationalLayer.url);
-            featureLayer.queryFeatures(featureQuery, lang.hitch(this, function (featureSet) {
-                this._getActivatedLayerOnTop();
-                this._activeRowGraphicsLayer.add(this._getHighLightSymbol(featureSet.features[0], true));
-                this.highlightRowOnFeatureClick(objectId);
-            }), lang.hitch(this, function (err) {
-                this.appUtils.hideLoadingIndicator();
-            }));
+            featureLayer.queryFeatures(featureQuery, lang.hitch(this,
+                function (featureSet) {
+                    this._getActivatedLayerOnTop();
+                    this._activeRowGraphicsLayer.add(this._getHighLightSymbol(
+                        featureSet.features[0], true));
+                    this.highlightRowOnFeatureClick(objectId);
+                }), lang.hitch(this, function (err) {
+                    this.appUtils.hideLoadingIndicator();
+                }));
         },
 
         /**
@@ -2144,16 +2445,18 @@ define([
             // So to maintain updated value of the selected feature, a new object of the feature layer is required.
             // If a new object is not created than the previous value of feature appears and not the updated one.
             featureLayer = new FeatureLayer(this._selectedOperationalLayer.url);
-            featureLayer.queryFeatures(featureQuery, lang.hitch(this, function (featureSet) {
-                this._getSelectedLayerOnTop();
-                this._selectRowGraphicsLayer.add(this._getHighLightSymbol(featureSet.features[0], false));
-                this.highlightRowOnFeatureClick(objectId, true);
-                if (!this._isRowFound) {
-                    this.createDataViewerUI(false);
-                }
-            }), lang.hitch(this, function (err) {
-                this.appUtils.hideLoadingIndicator();
-            }));
+            featureLayer.queryFeatures(featureQuery, lang.hitch(this,
+                function (featureSet) {
+                    this._getSelectedLayerOnTop();
+                    this._selectRowGraphicsLayer.add(this._getHighLightSymbol(
+                        featureSet.features[0], false));
+                    this.highlightRowOnFeatureClick(objectId, true);
+                    if (!this._isRowFound) {
+                        this.createDataViewerUI(false);
+                    }
+                }), lang.hitch(this, function (err) {
+                    this.appUtils.hideLoadingIndicator();
+                }));
         },
 
         /**
@@ -2165,7 +2468,8 @@ define([
             var objectId, i, objectID;
             objectId = feature.attributes[this._selectedOperationalLayer.objectIdField];
             for (i = 0; i < this._activeRowGraphicsLayer.graphics.length; i++) {
-                objectID = this._activeRowGraphicsLayer.graphics[i].attributes[this._selectedOperationalLayer.objectIdField];
+                objectID = this._activeRowGraphicsLayer.graphics[i].attributes[
+                    this._selectedOperationalLayer.objectIdField];
                 if (parseInt(objectID, 10) === parseInt(objectId, 10)) {
                     return true;
                 }
@@ -2182,7 +2486,8 @@ define([
             var objectId, i, objectID;
             objectId = feature.attributes[this._selectedOperationalLayer.objectIdField];
             for (i = 0; i < this._selectRowGraphicsLayer.graphics.length; i++) {
-                objectID = this._selectRowGraphicsLayer.graphics[i].attributes[this._selectedOperationalLayer.objectIdField];
+                objectID = this._selectRowGraphicsLayer.graphics[i].attributes[
+                    this._selectedOperationalLayer.objectIdField];
                 if (parseInt(objectID, 10) === parseInt(objectId, 10)) {
                     return true;
                 }
@@ -2198,7 +2503,8 @@ define([
             this.appUtils.showLoadingIndicator();
             this.removeControlsFromPreviousRow();
             if (this._isCurrentFeatureSelected(evt.graphic)) {
-                this._clearSelectedFeaturesOfMap(evt.graphic.attributes[this._selectedOperationalLayer.objectIdField]);
+                this._clearSelectedFeaturesOfMap(evt.graphic.attributes[this._selectedOperationalLayer
+                    .objectIdField]);
             } else {
                 if (this._isCurrentFeatureActivated(evt.graphic)) {
                     this._selectFeatureOnMapClick(evt.graphic);
@@ -2219,16 +2525,20 @@ define([
             // if it is point feature than remove selected feature from graphics layer
             // if it is other than point feature than remove selected feature using selectFeatures method & FeatureLayer.SELECTION_SUBTRACT option
             for (i = 0; i < this._selectRowGraphicsLayer.graphics.length; i++) {
-                objectID = this._selectRowGraphicsLayer.graphics[i].attributes[this._selectedOperationalLayer.objectIdField];
+                objectID = this._selectRowGraphicsLayer.graphics[i].attributes[
+                    this._selectedOperationalLayer.objectIdField];
                 if (parseInt(objectID, 10) === parseInt(objectId, 10)) {
-                    this._selectRowGraphicsLayer.remove(this._selectRowGraphicsLayer.graphics[i]);
+                    this._selectRowGraphicsLayer.remove(this._selectRowGraphicsLayer
+                        .graphics[i]);
                     break;
                 }
             }
             for (i = 0; i < this._activeRowGraphicsLayer.graphics.length; i++) {
-                objectID = this._activeRowGraphicsLayer.graphics[i].attributes[this._selectedOperationalLayer.objectIdField];
+                objectID = this._activeRowGraphicsLayer.graphics[i].attributes[
+                    this._selectedOperationalLayer.objectIdField];
                 if (parseInt(objectID, 10) === parseInt(objectId, 10)) {
-                    this._activeRowGraphicsLayer.remove(this._activeRowGraphicsLayer.graphics[i]);
+                    this._activeRowGraphicsLayer.remove(this._activeRowGraphicsLayer
+                        .graphics[i]);
                     break;
                 }
             }
@@ -2244,14 +2554,17 @@ define([
             var i, objectID, activatedRowArr;
             if (this._isCheckBoxClicked) {
                 for (i = 0; i < this._selectRowGraphicsLayer.graphics.length; i++) {
-                    objectID = this._selectRowGraphicsLayer.graphics[i].attributes[this._selectedOperationalLayer.objectIdField];
+                    objectID = this._selectRowGraphicsLayer.graphics[i].attributes[
+                        this._selectedOperationalLayer.objectIdField];
                     if (parseInt(objectID, 10) === parseInt(objectId, 10)) {
-                        this._selectRowGraphicsLayer.remove(this._selectRowGraphicsLayer.graphics[i]);
+                        this._selectRowGraphicsLayer.remove(this._selectRowGraphicsLayer
+                            .graphics[i]);
                         break;
                     }
                 }
                 if (this.isShowSelectedClicked) {
-                    if (domClass.contains(this._lastSelectedRow.currentTarget, "esriCTRowActivated")) {
+                    if (domClass.contains(this._lastSelectedRow.currentTarget,
+                            "esriCTRowActivated")) {
                         this._activeRowGraphicsLayer.clear();
                     }
                     this._isCheckBoxClicked = false;
@@ -2259,23 +2572,27 @@ define([
                 }
             } else {
                 for (i = 0; i < this._activeRowGraphicsLayer.graphics.length; i++) {
-                    objectID = this._activeRowGraphicsLayer.graphics[i].attributes[this._selectedOperationalLayer.objectIdField];
+                    objectID = this._activeRowGraphicsLayer.graphics[i].attributes[
+                        this._selectedOperationalLayer.objectIdField];
                     if (parseInt(objectID, 10) === parseInt(objectId, 10)) {
-                        this._activeRowGraphicsLayer.remove(this._activeRowGraphicsLayer.graphics[i]);
+                        this._activeRowGraphicsLayer.remove(this._activeRowGraphicsLayer
+                            .graphics[i]);
                         break;
                     }
                 }
             }
             activatedRowArr = [];
             activatedRowArr = $(".esriCTRowActivated");
-            if ((this._selectRowGraphicsLayer.graphics.length === 0) && (this.isShowSelectedClicked)) {
+            if ((this._selectRowGraphicsLayer.graphics.length === 0) && (
+                    this.isShowSelectedClicked)) {
                 this.isShowSelectedClicked = false;
                 this.isDetailsTabClicked = false;
                 this._activeRowGraphicsLayer.clear();
                 this.showLocationTab();
                 this._enableSearchIcon();
                 this.createDataViewerUI(false);
-            } else if ((activatedRowArr.length === 0) && (this.isDetailsTabClicked) && (this.isShowSelectedClicked)) {
+            } else if ((activatedRowArr.length === 0) && (this.isDetailsTabClicked) &&
+                (this.isShowSelectedClicked)) {
                 this.isDetailsTabClicked = false;
                 this._activeRowGraphicsLayer.clear();
                 this.showLocationTab();
@@ -2292,9 +2609,13 @@ define([
         _enableSearchIcon: function () {
             var i;
             // After showing all the records in data-viewer, enabled/disable search functionality depending on layer search capability
-            if (this.itemInfo.itemData.applicationProperties.viewing.search && this.itemInfo.itemData.applicationProperties.viewing.search.enabled) {
-                for (i = 0; i < this.itemInfo.itemData.applicationProperties.viewing.search.layers.length; i++) {
-                    if (this.selectedOperationalLayerID === this.itemInfo.itemData.applicationProperties.viewing.search.layers[i].id) {
+            if (this.itemInfo.itemData.applicationProperties.viewing.search &&
+                this.itemInfo.itemData.applicationProperties.viewing.search.enabled
+            ) {
+                for (i = 0; i < this.itemInfo.itemData.applicationProperties.viewing
+                    .search.layers.length; i++) {
+                    if (this.selectedOperationalLayerID === this.itemInfo.itemData
+                        .applicationProperties.viewing.search.layers[i].id) {
                         this._addRegularSearchIcon();
                         break;
                     }
@@ -2327,53 +2648,61 @@ define([
             // So to maintain updated value of the selected feature, a new object of the feature layer is required.
             // If a new object is not created than the previous value of feature appears and not the updated one.
             featureLayer = new FeatureLayer(this._selectedOperationalLayer.url);
-            featureLayer.queryFeatures(featureQuery, lang.hitch(this, function (featureSet) {
-                if (this._isCheckBoxClicked) {
-                    this._getSelectedLayerOnTop();
-                    if (featureSet.features[0].geometry) {
-                        this._selectRowGraphicsLayer.add(this._getHighLightSymbol(featureSet.features[0], false));
-                    } else {
-                        this._selectRowGraphicsLayer.add(featureSet.features[0]);
-                        this.appUtils.showMessage(this.appConfig.i18n.dataviewer.noFeatureGeometry);
-                    }
-                } else {
-                    if (this._activeRowGraphicsLayer) {
-                        this._activeRowGraphicsLayer.clear();
-                    }
-                    this._getActivatedLayerOnTop();
-                    if (featureSet.features[0].geometry) {
-                        this._activeRowGraphicsLayer.add(this._getHighLightSymbol(featureSet.features[0], true));
-                        if (this._isPointLayer) {
-                            this.map.setLevel(this.appConfig.zoomLevel);
-                            this.map.centerAt(featureSet.features[0].geometry);
+            featureLayer.queryFeatures(featureQuery, lang.hitch(this,
+                function (featureSet) {
+                    if (this._isCheckBoxClicked) {
+                        this._getSelectedLayerOnTop();
+                        if (featureSet.features[0].geometry) {
+                            this._selectRowGraphicsLayer.add(this._getHighLightSymbol(
+                                featureSet.features[0], false));
                         } else {
-                            this.map.setExtent(featureSet.features[0].geometry.getExtent(), true);
+                            this._selectRowGraphicsLayer.add(featureSet.features[
+                                0]);
+                            this.appUtils.showMessage(this.appConfig.i18n.dataviewer
+                                .noFeatureGeometry);
                         }
                     } else {
-                        this._activeRowGraphicsLayer.add(featureSet.features[0]);
-                        this.appUtils.showMessage(this.appConfig.i18n.dataviewer.noFeatureGeometry);
+                        if (this._activeRowGraphicsLayer) {
+                            this._activeRowGraphicsLayer.clear();
+                        }
+                        this._getActivatedLayerOnTop();
+                        if (featureSet.features[0].geometry) {
+                            this._activeRowGraphicsLayer.add(this._getHighLightSymbol(
+                                featureSet.features[0], true));
+                            if (this._isPointLayer) {
+                                this.map.setLevel(this.appConfig.zoomLevel);
+                                this.map.centerAt(featureSet.features[0].geometry);
+                            } else {
+                                this.map.setExtent(featureSet.features[0].geometry
+                                    .getExtent(), true);
+                            }
+                        } else {
+                            this._activeRowGraphicsLayer.add(featureSet.features[
+                                0]);
+                            this.appUtils.showMessage(this.appConfig.i18n.dataviewer
+                                .noFeatureGeometry);
+                        }
                     }
-                }
-                // if details tab is displayed than display fields of feature in it
-                if ((this.isDetailsTabClicked) && (!this._isCheckBoxClicked)) {
-                    if (this._detailsHelper) {
-                        this._detailsHelper.validateDetailsData();
+                    // if details tab is displayed than display fields of feature in it
+                    if ((this.isDetailsTabClicked) && (!this._isCheckBoxClicked)) {
+                        if (this._detailsHelper) {
+                            this._detailsHelper.validateDetailsData();
+                        }
+                    } else {
+                        if (this._isCheckBoxClicked) {
+                            this._isCheckBoxClicked = false;
+                        } else {
+                            // used to add controls in row so that user can edit it
+                            this._addControlsToRow(featureSet);
+                        }
                     }
-                } else {
+                    this.appUtils.hideLoadingIndicator();
+                }), lang.hitch(this, function (err) {
                     if (this._isCheckBoxClicked) {
                         this._isCheckBoxClicked = false;
-                    } else {
-                        // used to add controls in row so that user can edit it
-                        this._addControlsToRow(featureSet);
                     }
-                }
-                this.appUtils.hideLoadingIndicator();
-            }), lang.hitch(this, function (err) {
-                if (this._isCheckBoxClicked) {
-                    this._isCheckBoxClicked = false;
-                }
-                this.appUtils.showLoadingIndicator();
-            }));
+                    this.appUtils.showLoadingIndicator();
+                }));
         },
 
         /**
@@ -2381,8 +2710,10 @@ define([
         * @memberOf widgets/data-viewer/data-viewer
         */
         _getActivatedLayerOnTop: function () {
-            this.map.reorderLayer(this.map.getLayer("selectedRowGraphicsLayer"), 999);
-            this.map.reorderLayer(this.map.getLayer("activeRowGraphicsLayer"), 1000);
+            this.map.reorderLayer(this.map.getLayer(
+                "selectedRowGraphicsLayer"), 999);
+            this.map.reorderLayer(this.map.getLayer(
+                "activeRowGraphicsLayer"), 1000);
         },
 
         /**
@@ -2390,8 +2721,10 @@ define([
         * @memberOf widgets/data-viewer/data-viewer
         */
         _getSelectedLayerOnTop: function () {
-            this.map.reorderLayer(this.map.getLayer("activeRowGraphicsLayer"), 999);
-            this.map.reorderLayer(this.map.getLayer("selectedRowGraphicsLayer"), 1000);
+            this.map.reorderLayer(this.map.getLayer(
+                "activeRowGraphicsLayer"), 999);
+            this.map.reorderLayer(this.map.getLayer(
+                "selectedRowGraphicsLayer"), 1000);
         },
 
         /**
@@ -2399,7 +2732,8 @@ define([
         * @memberOf widgets/data-viewer/data-viewer
         */
         _setActivatedLayerAtBottom: function () {
-            this.map.reorderLayer(this.map.getLayer("activeRowGraphicsLayer"), 0);
+            this.map.reorderLayer(this.map.getLayer(
+                "activeRowGraphicsLayer"), 0);
         },
 
         /**
@@ -2407,56 +2741,63 @@ define([
         * @memberOf widgets/data-viewer/data-viewer
         */
         _onRowClick: function () {
-            $('#dataViewerTable tbody').on('click', 'tr', lang.hitch(this, function (evt) {
-                event.stop(evt);
-                this.appUtils.showLoadingIndicator();
-                // Do not perform any operation if it is in show selected mode
-                if ((!this._isTextInputInFocus) && (!this._isDropDownClicked) && (!this._isDateTextInputInFocus)) {
+            $('#dataViewerTable tbody').on('click', 'tr', lang.hitch(this,
+                function (evt) {
+                    event.stop(evt);
                     this.appUtils.showLoadingIndicator();
-                    this._featureObjectID = this._fetchObjectID(evt.currentTarget);
-                    this._isCheckBoxClicked = false;
-                    if (evt.target.tagName === "LABEL") {
-                        this._isCheckBoxClicked = true;
-                        this._isCheckBoxChecked = false;
-                        if (evt.currentTarget.childNodes[0].innerHTML.indexOf("checked") > -1) {
-                            this._isCheckBoxChecked = true;
-                        }
-                        if ((this._isCheckBoxClicked) && (!this._isCheckBoxChecked)) {
-                            this.removeControlsFromPreviousRow();
-                            this._lastSelectedRow = evt;
-                            this._toggleCheckBox(true, this._lastSelectedRow.currentTarget);
-                            this._highLightFeatureOnRowClick(this._featureObjectID);
+                    // Do not perform any operation if it is in show selected mode
+                    if ((!this._isTextInputInFocus) && (!this._isDropDownClicked) &&
+                        (!this._isDateTextInputInFocus)) {
+                        this.appUtils.showLoadingIndicator();
+                        this._featureObjectID = this._fetchObjectID(evt.currentTarget);
+                        this._isCheckBoxClicked = false;
+                        if (evt.target.tagName === "LABEL") {
+                            this._isCheckBoxClicked = true;
+                            this._isCheckBoxChecked = false;
+                            if (evt.currentTarget.childNodes[0].innerHTML.indexOf(
+                                    "checked") > -1) {
+                                this._isCheckBoxChecked = true;
+                            }
+                            if ((this._isCheckBoxClicked) && (!this._isCheckBoxChecked)) {
+                                this.removeControlsFromPreviousRow();
+                                this._lastSelectedRow = evt;
+                                this._toggleCheckBox(true, this._lastSelectedRow.currentTarget);
+                                this._highLightFeatureOnRowClick(this._featureObjectID);
+                            } else {
+                                this.removeControlsFromPreviousRow();
+                                this._lastSelectedRow = evt;
+                                this._toggleCheckBox(false, this._lastSelectedRow
+                                    .currentTarget);
+                                this._removeHighLightedFeatureOnRowClick(this._featureObjectID);
+                            }
                         } else {
-                            this.removeControlsFromPreviousRow();
-                            this._lastSelectedRow = evt;
-                            this._toggleCheckBox(false, this._lastSelectedRow.currentTarget);
-                            this._removeHighLightedFeatureOnRowClick(this._featureObjectID);
-                        }
-                    } else {
-                        if (domClass.contains(evt.currentTarget, "esriCTRowActivated")) {
-                            if (!this.isDetailsTabClicked) {
-                                domClass.remove(evt.currentTarget, "esriCTRowActivated");
+                            if (domClass.contains(evt.currentTarget,
+                                    "esriCTRowActivated")) {
+                                if (!this.isDetailsTabClicked) {
+                                    domClass.remove(evt.currentTarget,
+                                        "esriCTRowActivated");
+                                    this._clearActiveRowData();
+                                    this._resetDetailsTab();
+                                    this.removeControlsFromPreviousRow();
+                                    this._lastSelectedRow = evt;
+                                    this._removeHighLightedFeatureOnRowClick(this._featureObjectID);
+                                } else {
+                                    this.appUtils.hideLoadingIndicator();
+                                }
+                            } else {
                                 this._clearActiveRowData();
                                 this._resetDetailsTab();
                                 this.removeControlsFromPreviousRow();
                                 this._lastSelectedRow = evt;
-                                this._removeHighLightedFeatureOnRowClick(this._featureObjectID);
-                            } else {
-                                this.appUtils.hideLoadingIndicator();
+                                domClass.add(evt.currentTarget,
+                                    "esriCTRowActivated");
+                                this._highLightFeatureOnRowClick(this._featureObjectID);
                             }
-                        } else {
-                            this._clearActiveRowData();
-                            this._resetDetailsTab();
-                            this.removeControlsFromPreviousRow();
-                            this._lastSelectedRow = evt;
-                            domClass.add(evt.currentTarget, "esriCTRowActivated");
-                            this._highLightFeatureOnRowClick(this._featureObjectID);
                         }
+                    } else {
+                        this.appUtils.hideLoadingIndicator();
                     }
-                } else {
-                    this.appUtils.hideLoadingIndicator();
-                }
-            }));
+                }));
         },
 
         /**
@@ -2468,9 +2809,11 @@ define([
         _toggleCheckBox: function (checked, rowObject) {
             this._existingRowData = this._dataViewerTable.row(rowObject).data();
             if (checked) {
-                this._existingRowData[0] = this._addCheckBox(null, rowObject.childNodes[0].childNodes[0].childNodes[0].id, true);
+                this._existingRowData[0] = this._addCheckBox(null, rowObject.childNodes[
+                    0].childNodes[0].childNodes[0].id, true);
             } else {
-                this._existingRowData[0] = this._addCheckBox(null, rowObject.childNodes[0].childNodes[0].childNodes[0].id, false);
+                this._existingRowData[0] = this._addCheckBox(null, rowObject.childNodes[
+                    0].childNodes[0].childNodes[0].id, false);
             }
             if (this._dataViewerTable) {
                 if (this._existingRowData) {
@@ -2502,52 +2845,80 @@ define([
             var j, i, className, updateField, defaultValue, k;
             for (j = 0; j < this._selectedOperationalLayer.types.length; j++) {
                 if (id === this._selectedOperationalLayer.types[j].id) {
-                    for (i = 1; i < this._lastSelectedRow.currentTarget.childNodes.length; i++) {
-                        if (this._lastSelectedRow.currentTarget.childNodes[i].childNodes.length > 0) {
-                            if (this._lastSelectedRow.currentTarget.childNodes[i].childNodes[0].className) {
-                                className = this._lastSelectedRow.currentTarget.childNodes[i].childNodes[0].className;
+                    for (i = 1; i < this._lastSelectedRow.currentTarget.childNodes
+                        .length; i++) {
+                        if (this._lastSelectedRow.currentTarget.childNodes[i].childNodes
+                            .length > 0) {
+                            if (this._lastSelectedRow.currentTarget.childNodes[i].childNodes[
+                                    0].className) {
+                                className = this._lastSelectedRow.currentTarget.childNodes[
+                                    i].childNodes[0].className;
                                 updateField = this._extractField(className, i);
                                 defaultValue = null;
-                                if (this._selectedOperationalLayer.types[j].domains[updateField] && this._selectedOperationalLayer.typeIdField !== updateField) {
-                                    defaultValue = this._selectedOperationalLayer.types[j].templates[0].prototype.attributes[updateField];
-                                    this._updatedFieldAttribute[updateField] = defaultValue;
+                                if (this._selectedOperationalLayer.types[j].domains[
+                                        updateField] && this._selectedOperationalLayer.typeIdField !==
+                                    updateField) {
+                                    defaultValue = this._selectedOperationalLayer.types[
+                                        j].templates[0].prototype.attributes[
+                                        updateField];
+                                    this._updatedFieldAttribute[updateField] =
+                                        defaultValue;
                                     // change value if dependent field contains text input control
                                     if (className.indexOf("esriCTTextInput") > -1) {
                                         this._updatedTextInputControl.push({
-                                            "control": this._lastSelectedRow.currentTarget.childNodes[i].childNodes[0],
+                                            "control": this._lastSelectedRow.currentTarget
+                                                .childNodes[i].childNodes[0],
                                             "newValue": defaultValue,
-                                            "oldValue": this._lastSelectedRow.currentTarget.childNodes[i].childNodes[0].value
+                                            "oldValue": this._lastSelectedRow.currentTarget
+                                                .childNodes[i].childNodes[0].value
                                         });
-                                        this._lastSelectedRow.currentTarget.childNodes[i].childNodes[0].value = defaultValue;
-                                    } else if (className.indexOf("esriCTCodedDomain") > -1) {
+                                        this._lastSelectedRow.currentTarget.childNodes[i]
+                                            .childNodes[0].value = defaultValue;
+                                    } else if (className.indexOf("esriCTCodedDomain") >
+                                        -1) {
                                         // change value if dependent field contains drop down control
                                         this._updatedDropDownControl.push({
-                                            "control": this._lastSelectedRow.currentTarget.childNodes[i].childNodes[0],
+                                            "control": this._lastSelectedRow.currentTarget
+                                                .childNodes[i].childNodes[0],
                                             "newValue": defaultValue,
-                                            "oldValue": this._lastSelectedRow.currentTarget.childNodes[i].childNodes[0].selectedIndex
+                                            "oldValue": this._lastSelectedRow.currentTarget
+                                                .childNodes[i].childNodes[0].selectedIndex
                                         });
                                         if (defaultValue || defaultValue === 0) {
-                                            for (k = 0; k < this._lastSelectedRow.currentTarget.childNodes[i].childNodes[0].length; k++) {
-                                                if (this._lastSelectedRow.currentTarget.childNodes[i].childNodes[0][k].value.split("|")[0].toString() === defaultValue.toString()) {
-                                                    this._lastSelectedRow.currentTarget.childNodes[i].childNodes[0].selectedIndex = k;
+                                            for (k = 0; k < this._lastSelectedRow.currentTarget
+                                                .childNodes[i].childNodes[0].length; k++) {
+                                                if (this._lastSelectedRow.currentTarget.childNodes[
+                                                        i].childNodes[0][k].value.split("|")[0].toString() ===
+                                                    defaultValue.toString()) {
+                                                    this._lastSelectedRow.currentTarget.childNodes[
+                                                        i].childNodes[0].selectedIndex = k;
                                                     break;
                                                 }
                                             }
                                         } else {
-                                            this._lastSelectedRow.currentTarget.childNodes[i].childNodes[0].selectedIndex = -1;
+                                            this._lastSelectedRow.currentTarget.childNodes[
+                                                i].childNodes[0].selectedIndex = -1;
                                         }
-                                    } else if (className.indexOf("esriCTDateTimePicker") > -1) {
+                                    } else if (className.indexOf("esriCTDateTimePicker") >
+                                        -1) {
                                         // change value if dependent field contains date picker control
                                         this._updateDatePickerControl.push({
-                                            "control": this._lastSelectedRow.currentTarget.childNodes[i].childNodes[0].childNodes[0],
+                                            "control": this._lastSelectedRow.currentTarget
+                                                .childNodes[i].childNodes[0].childNodes[0],
                                             "newValue": defaultValue,
-                                            "oldValue": this._lastSelectedRow.currentTarget.childNodes[i].childNodes[0].childNodes[0].name,
+                                            "oldValue": this._lastSelectedRow.currentTarget
+                                                .childNodes[i].childNodes[0].childNodes[0]
+                                                .name,
                                             "dateControl": this._lastSelectedRow.currentTarget
                                         });
                                         if (!defaultValue) {
-                                            $(this._lastSelectedRow.currentTarget.childNodes[i]).data("DateTimePicker").setDate(defaultValue);
+                                            $(this._lastSelectedRow.currentTarget.childNodes[
+                                                i]).data("DateTimePicker").setDate(
+                                                defaultValue);
                                         } else {
-                                            $(this._lastSelectedRow.currentTarget.childNodes[i]).data("DateTimePicker").setDate(parseInt(defaultValue, 10));
+                                            $(this._lastSelectedRow.currentTarget.childNodes[
+                                                i]).data("DateTimePicker").setDate(parseInt(
+                                                defaultValue, 10));
                                         }
                                     }
                                 }
@@ -2575,142 +2946,202 @@ define([
                 this._rowInstance = this._lastSelectedRow;
                 featureLayerQuery = new Query();
                 featureLayerQuery.outSpatialReference = this.map.spatialReference;
-                featureLayerQuery.objectIds = [parseInt(this._featureObjectID, 10)];
+                featureLayerQuery.objectIds = [parseInt(this._featureObjectID,
+                    10)];
                 featureLayerQuery.returnGeometry = true;
                 featureLayerQuery.outFields = ["*"];
-                this._selectedOperationalLayer.queryFeatures(featureLayerQuery, lang.hitch(this, function (featureSet) {
-                    if (featureSet.features.length > 0) {
-                        var i, type, obj, attrname, attr;
-                        attr = {};
-                        attr[this._selectedOperationalLayer.objectIdField] = parseInt(this._featureObjectID, 10);
-                        for (i = 0; i < featureSet.features[0]._layer.fields.length; i++) {
-                            if (featureSet.features[0]._layer.fields[i].name === field) {
-                                type = featureSet.features[0]._layer.fields[i].type;
-                                switch (type) {
-                                case "esriFieldTypeString":
-                                    attr[field] = newValue;
-                                    break;
-                                case "esriFieldTypeDouble":
-                                    attr[field] = parseFloat(newValue);
-                                    break;
-                                case "esriFieldTypeDate":
-                                    attr[field] = parseInt(newValue, 10);
-                                    break;
-                                case "esriFieldTypeSmallInteger":
-                                case "esriFieldTypeInteger":
-                                case "esriFieldTypeSingle":
-                                    attr[field] = parseInt(newValue, 10);
-                                    break;
-                                default:
-                                    attr[field] = newValue;
+                this._selectedOperationalLayer.queryFeatures(
+                    featureLayerQuery, lang.hitch(this, function (featureSet) {
+                        if (featureSet.features.length > 0) {
+                            var i, type, obj, attrname, attr;
+                            attr = {};
+                            attr[this._selectedOperationalLayer.objectIdField] =
+                                parseInt(this._featureObjectID, 10);
+                            for (i = 0; i < featureSet.features[0]._layer.fields
+                                .length; i++) {
+                                if (featureSet.features[0]._layer.fields[i].name ===
+                                    field) {
+                                    type = featureSet.features[0]._layer.fields[i].type;
+                                    switch (type) {
+                                        case "esriFieldTypeString":
+                                            attr[field] = newValue;
+                                            break;
+                                        case "esriFieldTypeDouble":
+                                            attr[field] = parseFloat(newValue);
+                                            break;
+                                        case "esriFieldTypeDate":
+                                            attr[field] = parseInt(newValue, 10);
+                                            break;
+                                        case "esriFieldTypeSmallInteger":
+                                        case "esriFieldTypeInteger":
+                                        case "esriFieldTypeSingle":
+                                            attr[field] = parseInt(newValue, 10);
+                                            break;
+                                        default:
+                                            attr[field] = newValue;
+                                    }
                                 }
                             }
-                        }
-                        // If a user has changed dependent drop down than update different attributes of graphics
-                        if (!$.isEmptyObject(this._updatedFieldAttribute)) {
-                            for (attrname in attr) {
-                                if (attr.hasOwnProperty(attrname)) {
-                                    this._updatedFieldAttribute[attrname] = attr[attrname];
+                            // If a user has changed dependent drop down than update different attributes of graphics
+                            if (!$.isEmptyObject(this._updatedFieldAttribute)) {
+                                for (attrname in attr) {
+                                    if (attr.hasOwnProperty(attrname)) {
+                                        this._updatedFieldAttribute[attrname] = attr[
+                                            attrname];
+                                    }
                                 }
+                                this._updatedGraphic = new Graphic(featureSet.features[
+                                        0].geometry, null, this._updatedFieldAttribute,
+                                    null);
+                            } else {
+                                this._updatedGraphic = new Graphic(featureSet.features[
+                                    0].geometry, null, attr, null);
                             }
-                            this._updatedGraphic = new Graphic(featureSet.features[0].geometry, null, this._updatedFieldAttribute, null);
-                        } else {
-                            this._updatedGraphic = new Graphic(featureSet.features[0].geometry, null, attr, null);
-                        }
-                        this._updatedField = field;
-                        obj = this._validateControl(type, field);
-                        if (obj.isValueValid) {
-                            // Once a feature is created with its updated value do apply edits
-                            this._selectedOperationalLayer.applyEdits(null, [this._updatedGraphic], null, lang.hitch(this, function (adds, updates, deletes) {
-                                if (updates[0].success) {
-                                    // query to check whether updated record falls under definition expression that is applied to the layer.
-                                    // If not, than remove that row from data-viewer table
-                                    featureLayerQuery = new Query();
-                                    featureLayerQuery.outSpatialReference = this.map.spatialReference;
-                                    featureLayerQuery.objectIds = [parseInt(this._featureObjectID, 10)];
-                                    featureLayerQuery.returnGeometry = false;
-                                    featureLayerQuery.where = this._selectedOperationalLayer._defnExpr;
-                                    this._selectedOperationalLayer.queryFeatures(featureLayerQuery, lang.hitch(this, function (featureSet) {
-                                        // if record falls under definition expression that is applied to the layer.
-                                        if (featureSet.features.length > 0) {
-                                            // Update value that is stored inside date picker control
-                                            var className, newValueArr, newValueStr;
-                                            className = this._lastEditedControl.currentTarget.className;
-                                            if (className.indexOf("esriCTDateTimePicker") > -1) {
-                                                if (this._lastEditedControl.currentTarget.parentElement && this._lastEditedControl.currentTarget.parentElement.childNodes && this._lastEditedControl.currentTarget.parentElement.childNodes[0] && this._lastEditedControl.currentTarget.parentElement.childNodes[0].childNodes && this._lastEditedControl.currentTarget.parentElement.childNodes[0].childNodes[0]) {
-                                                    newValueArr = this._lastEditedControl.currentTarget.parentElement.childNodes[0].childNodes[0].name.split('|');
-                                                    if (newValue) {
-                                                        newValueStr = newValueArr[0] + "|" + parseInt(newValue, 10) + "|" + newValueArr[2];
-                                                    } else {
-                                                        newValueStr = newValueArr[0] + "||" + newValueArr[2];
+                            this._updatedField = field;
+                            obj = this._validateControl(type, field);
+                            if (obj.isValueValid) {
+                                // Once a feature is created with its updated value do apply edits
+                                this._selectedOperationalLayer.applyEdits(null, [
+                                    this._updatedGraphic
+                                ], null, lang.hitch(this, function (adds,
+                                    updates, deletes) {
+                                    if (updates[0].success) {
+                                        // query to check whether updated record falls under definition expression that is applied to the layer.
+                                        // If not, than remove that row from data-viewer table
+                                        featureLayerQuery = new Query();
+                                        featureLayerQuery.outSpatialReference =
+                                            this.map.spatialReference;
+                                        featureLayerQuery.objectIds = [parseInt(
+                                            this._featureObjectID, 10)];
+                                        featureLayerQuery.returnGeometry =
+                                            false;
+                                        featureLayerQuery.where = this._selectedOperationalLayer
+                                            ._defnExpr;
+                                        this._selectedOperationalLayer.queryFeatures(
+                                            featureLayerQuery, lang.hitch(this,
+                                                function (featureSet) {
+                                                    // if record falls under definition expression that is applied to the layer.
+                                                    if (featureSet.features.length >
+                                                        0) {
+                                                        // Update value that is stored inside date picker control
+                                                        var className, newValueArr,
+                                                            newValueStr;
+                                                        className = this._lastEditedControl
+                                                            .currentTarget.className;
+                                                        if (className.indexOf(
+                                                                "esriCTDateTimePicker") >
+                                                            -1) {
+                                                            if (this._lastEditedControl
+                                                                .currentTarget.parentElement &&
+                                                                this._lastEditedControl.currentTarget
+                                                                .parentElement.childNodes &&
+                                                                this._lastEditedControl.currentTarget
+                                                                .parentElement.childNodes[
+                                                                    0] && this._lastEditedControl
+                                                                .currentTarget.parentElement
+                                                                .childNodes[0].childNodes &&
+                                                                this._lastEditedControl.currentTarget
+                                                                .parentElement.childNodes[
+                                                                    0].childNodes[0]) {
+                                                                newValueArr = this._lastEditedControl
+                                                                    .currentTarget.parentElement
+                                                                    .childNodes[0].childNodes[
+                                                                        0].name.split('|');
+                                                                if (newValue) {
+                                                                    newValueStr =
+                                                                        newValueArr[0] + "|" +
+                                                                        parseInt(newValue, 10) +
+                                                                        "|" + newValueArr[2];
+                                                                } else {
+                                                                    newValueStr =
+                                                                        newValueArr[0] + "||" +
+                                                                        newValueArr[2];
+                                                                }
+                                                                this._lastEditedControl.currentTarget
+                                                                    .parentElement.childNodes[
+                                                                        0].childNodes[0].name =
+                                                                    newValueStr;
+                                                            }
+                                                        }
+                                                        // Update value that is stored inside text input control
+                                                        if (className.indexOf(
+                                                                "esriCTTextInput") > -1) {
+                                                            this._lastEditedControl.currentTarget
+                                                                .defaultValue = this._lastEditedControl
+                                                                .currentTarget.value;
+                                                        }
+                                                        // Update value that is stored inside drop down control
+                                                        if (className.indexOf(
+                                                                "esriCTCodedDomain") > -1) {
+                                                            this._lastEditedControl.currentTarget
+                                                                .name = newValue;
+                                                        }
+                                                        if (this._isDropDownClicked) {
+                                                            this._isDropDownClicked =
+                                                                false;
+                                                        }
+                                                        // Update value that is stored inside dependent controls
+                                                        if (!$.isEmptyObject(this._updatedFieldAttribute)) {
+                                                            this._updateDependentFieldControls();
+                                                        }
+                                                        // Refresh layer once its value gets updated
+                                                        this.isLayerRefreshed = true;
+                                                        this.map.getLayer(this.selectedOperationalLayerID)
+                                                            .refresh();
+                                                        this._updateFieldInActivatedFeaturesList(
+                                                            field);
+                                                        this._updateFieldInSelectedFeaturesList(
+                                                            field);
+                                                        this.appUtils.hideLoadingIndicator();
+                                                    } else { // remove record from data-viewer table
+                                                        if (this._isDropDownClicked) {
+                                                            this._isDropDownClicked =
+                                                                false;
+                                                        }
+                                                        this.isLayerRefreshed = true;
+                                                        if (this._lastSelectedRow) {
+                                                            this._removeRowFromDataViewer(
+                                                                this._lastSelectedRow.currentTarget
+                                                            );
+                                                        } else {
+                                                            this._removeRowFromDataViewer(
+                                                                this._rowInstance.currentTarget
+                                                            );
+                                                        }
+                                                        this.isRowRemoved = true;
+                                                        this.map.getLayer(this.selectedOperationalLayerID)
+                                                            .refresh();
+                                                        this._removeFeatureFromActivatedFeaturesList();
+                                                        this._removeFeatureFromSelectedFeaturesList();
                                                     }
-                                                    this._lastEditedControl.currentTarget.parentElement.childNodes[0].childNodes[0].name = newValueStr;
-                                                }
-                                            }
-                                            // Update value that is stored inside text input control
-                                            if (className.indexOf("esriCTTextInput") > -1) {
-                                                this._lastEditedControl.currentTarget.defaultValue = this._lastEditedControl.currentTarget.value;
-                                            }
-                                            // Update value that is stored inside drop down control
-                                            if (className.indexOf("esriCTCodedDomain") > -1) {
-                                                this._lastEditedControl.currentTarget.name = newValue;
-                                            }
-                                            if (this._isDropDownClicked) {
-                                                this._isDropDownClicked = false;
-                                            }
-                                            // Update value that is stored inside dependent controls
-                                            if (!$.isEmptyObject(this._updatedFieldAttribute)) {
-                                                this._updateDependentFieldControls();
-                                            }
-                                            // Refresh layer once its value gets updated
-                                            this.isLayerRefreshed = true;
-                                            this.map.getLayer(this.selectedOperationalLayerID).refresh();
-                                            this._updateFieldInActivatedFeaturesList(field);
-                                            this._updateFieldInSelectedFeaturesList(field);
-                                            this.appUtils.hideLoadingIndicator();
-                                        } else { // remove record from data-viewer table
-                                            if (this._isDropDownClicked) {
-                                                this._isDropDownClicked = false;
-                                            }
-                                            this.isLayerRefreshed = true;
-                                            if (this._lastSelectedRow) {
-                                                this._removeRowFromDataViewer(this._lastSelectedRow.currentTarget);
-                                            } else {
-                                                this._removeRowFromDataViewer(this._rowInstance.currentTarget);
-                                            }
-                                            this.isRowRemoved = true;
-                                            this.map.getLayer(this.selectedOperationalLayerID).refresh();
-                                            this._removeFeatureFromActivatedFeaturesList();
-                                            this._removeFeatureFromSelectedFeaturesList();
-                                        }
-                                    }), lang.hitch(this, function (err) {
+                                                }), lang.hitch(this, function (err) {
+                                                    this.appUtils.hideLoadingIndicator();
+                                                }));
+                                    } else {
+                                        // If update fails then retain its old value
+                                        this._retainOldValue();
                                         this.appUtils.hideLoadingIndicator();
-                                    }));
-                                } else {
+                                    }
+                                }), lang.hitch(this, function (err) {
                                     // If update fails then retain its old value
                                     this._retainOldValue();
                                     this.appUtils.hideLoadingIndicator();
-                                }
-                            }), lang.hitch(this, function (err) {
+                                }));
+                            } else {
                                 // If update fails then retain its old value
                                 this._retainOldValue();
                                 this.appUtils.hideLoadingIndicator();
-                            }));
+                                this.appUtils.showError(obj.errorMessage);
+                            }
                         } else {
                             // If update fails then retain its old value
                             this._retainOldValue();
-                            this.appUtils.hideLoadingIndicator();
-                            this.appUtils.showError(obj.errorMessage);
                         }
-                    } else {
+                    }), lang.hitch(this, function (err) {
                         // If update fails then retain its old value
                         this._retainOldValue();
-                    }
-                }), lang.hitch(this, function (err) {
-                    // If update fails then retain its old value
-                    this._retainOldValue();
-                    this.appUtils.hideLoadingIndicator();
-                }));
+                        this.appUtils.hideLoadingIndicator();
+                    }));
             } catch (err) {
                 // If update fails then retain its old value
                 this._retainOldValue();
@@ -2724,11 +3155,14 @@ define([
         _updateFieldInActivatedFeaturesList: function (field) {
             var i, objectID, updatedObjectID;
             // If some features are selected and updated after that, so it also needs to be updated in the activated feature record list
-            updatedObjectID = this._updatedGraphic.attributes[this._selectedOperationalLayer.objectIdField];
+            updatedObjectID = this._updatedGraphic.attributes[this._selectedOperationalLayer
+                .objectIdField];
             for (i = 0; i < this._activeRowGraphicsLayer.graphics.length; i++) {
-                objectID = this._activeRowGraphicsLayer.graphics[i].attributes[this._selectedOperationalLayer.objectIdField];
+                objectID = this._activeRowGraphicsLayer.graphics[i].attributes[
+                    this._selectedOperationalLayer.objectIdField];
                 if (objectID === updatedObjectID) {
-                    this._activeRowGraphicsLayer.graphics[i].attributes[field] = this._updatedGraphic.attributes[field];
+                    this._activeRowGraphicsLayer.graphics[i].attributes[field] =
+                        this._updatedGraphic.attributes[field];
                     break;
                 }
             }
@@ -2741,11 +3175,14 @@ define([
         _updateFieldInSelectedFeaturesList: function (field) {
             var i, objectID, updatedObjectID;
             // If some features are selected and updated after that, so it also needs to be updated in the selected feature record list
-            updatedObjectID = this._updatedGraphic.attributes[this._selectedOperationalLayer.objectIdField];
+            updatedObjectID = this._updatedGraphic.attributes[this._selectedOperationalLayer
+                .objectIdField];
             for (i = 0; i < this._selectRowGraphicsLayer.graphics.length; i++) {
-                objectID = this._selectRowGraphicsLayer.graphics[i].attributes[this._selectedOperationalLayer.objectIdField];
+                objectID = this._selectRowGraphicsLayer.graphics[i].attributes[
+                    this._selectedOperationalLayer.objectIdField];
                 if (objectID === updatedObjectID) {
-                    this._selectRowGraphicsLayer.graphics[i].attributes[field] = this._updatedGraphic.attributes[field];
+                    this._selectRowGraphicsLayer.graphics[i].attributes[field] =
+                        this._updatedGraphic.attributes[field];
                     break;
                 }
             }
@@ -2760,11 +3197,14 @@ define([
         _removeFeatureFromActivatedFeaturesList: function () {
             var i, objectID, updatedObjectID;
             // If some features are selected and updated after that, so it also needs to be updated in the activated feature record list
-            updatedObjectID = this._updatedGraphic.attributes[this._selectedOperationalLayer.objectIdField];
+            updatedObjectID = this._updatedGraphic.attributes[this._selectedOperationalLayer
+                .objectIdField];
             for (i = 0; i < this._activeRowGraphicsLayer.graphics.length; i++) {
-                objectID = this._activeRowGraphicsLayer.graphics[i].attributes[this._selectedOperationalLayer.objectIdField];
+                objectID = this._activeRowGraphicsLayer.graphics[i].attributes[
+                    this._selectedOperationalLayer.objectIdField];
                 if (objectID === updatedObjectID) {
-                    this._activeRowGraphicsLayer.remove(this._activeRowGraphicsLayer.graphics[i]);
+                    this._activeRowGraphicsLayer.remove(this._activeRowGraphicsLayer
+                        .graphics[i]);
                     break;
                 }
             }
@@ -2779,11 +3219,14 @@ define([
         _removeFeatureFromSelectedFeaturesList: function (field) {
             var i, objectID, updatedObjectID;
             // If some features are selected and updated after that, so it also needs to be updated in the selected feature record list
-            updatedObjectID = this._updatedGraphic.attributes[this._selectedOperationalLayer.objectIdField];
+            updatedObjectID = this._updatedGraphic.attributes[this._selectedOperationalLayer
+                .objectIdField];
             for (i = 0; i < this._selectRowGraphicsLayer.graphics.length; i++) {
-                objectID = this._selectRowGraphicsLayer.graphics[i].attributes[this._selectedOperationalLayer.objectIdField];
+                objectID = this._selectRowGraphicsLayer.graphics[i].attributes[
+                    this._selectedOperationalLayer.objectIdField];
                 if (objectID === updatedObjectID) {
-                    this._selectRowGraphicsLayer.remove(this._selectRowGraphicsLayer.graphics[i]);
+                    this._selectRowGraphicsLayer.remove(this._selectRowGraphicsLayer
+                        .graphics[i]);
                     break;
                 }
             }
@@ -2803,7 +3246,8 @@ define([
                 domClass.add(this.dataViewerParentDiv, "esriCTHidden");
                 this.noFeatureDiv.innerHTML = this.appConfig.i18n.dataviewer.noIssuesReported;
                 this.appUtils.hideLoadingIndicator();
-            } else if (this.isShowSelectedClicked && (this._selectRowGraphicsLayer.graphics.length === 0)) {
+            } else if (this.isShowSelectedClicked && (this._selectRowGraphicsLayer
+                    .graphics.length === 0)) {
                 this.isShowSelectedClicked = false;
                 this.isDetailsTabClicked = false;
                 this._enableSearchIcon();
@@ -2822,17 +3266,21 @@ define([
             this._detachEvents();
             // Update dependent text input control
             for (i = 0; i < this._updatedTextInputControl.length; i++) {
-                this._updatedTextInputControl[i].control.defaultValue = this._updatedTextInputControl[i].newValue;
+                this._updatedTextInputControl[i].control.defaultValue = this._updatedTextInputControl[
+                    i].newValue;
             }
             // Update dependent drop down control
             for (i = 0; i < this._updatedDropDownControl.length; i++) {
-                this._updatedDropDownControl[i].control.name = this._updatedDropDownControl[i].newValue;
+                this._updatedDropDownControl[i].control.name = this._updatedDropDownControl[
+                    i].newValue;
             }
             // Update dependent date picker control
             for (i = 0; i < this._updateDatePickerControl.length; i++) {
-                newValueArr = this._updateDatePickerControl[i].control.name.split('|');
+                newValueArr = this._updateDatePickerControl[i].control.name.split(
+                    '|');
                 if (this._updateDatePickerControl[i].control.newValue) {
-                    newValueStr = newValueArr[0] + "|" + parseInt(this._updateDatePickerControl[i].newValue, 10) + "|" + newValueArr[2];
+                    newValueStr = newValueArr[0] + "|" + parseInt(this._updateDatePickerControl[
+                        i].newValue, 10) + "|" + newValueArr[2];
                 } else {
                     newValueStr = newValueArr[0] + "||" + newValueArr[2];
                 }
@@ -2857,29 +3305,36 @@ define([
                 code;
             this._detachEvents();
             for (i = 0; i < this._updatedTextInputControl.length; i++) {
-                this._updatedTextInputControl[i].control.value = this._updatedTextInputControl[i].oldValue;
+                this._updatedTextInputControl[i].control.value = this._updatedTextInputControl[
+                    i].oldValue;
             }
             for (i = 0; i < this._updatedDropDownControl.length; i++) {
-                this._updatedDropDownControl[i].control.selectedIndex = this._updatedDropDownControl[i].oldValue;
+                this._updatedDropDownControl[i].control.selectedIndex = this._updatedDropDownControl[
+                    i].oldValue;
             }
             for (i = 0; i < this._updateDatePickerControl.length; i++) {
                 date = this._updateDatePickerControl[i].oldValue.split('|')[1];
                 if (date === "null") {
-                    $(this._updateDatePickerControl[i].dateControl).data("DateTimePicker").setDate(null);
+                    $(this._updateDatePickerControl[i].dateControl).data(
+                        "DateTimePicker").setDate(null);
                 } else {
-                    $(this._updateDatePickerControl[i].dateControl).data("DateTimePicker").setDate(parseInt(date, 10));
+                    $(this._updateDatePickerControl[i].dateControl).data(
+                        "DateTimePicker").setDate(parseInt(date, 10));
                 }
             }
             this._attachEventToControls();
             this._emptyDependentControls();
             // retain value in text box
             if (className.indexOf("esriCTTextInput") > -1) {
-                this._lastEditedControl.currentTarget.value = this._lastEditedControl.currentTarget.defaultValue;
+                this._lastEditedControl.currentTarget.value = this._lastEditedControl
+                    .currentTarget.defaultValue;
                 // retain value in drop-down
             } else if (className.indexOf("esriCTCodedDomain") > -1) {
                 existingCode = this._lastEditedControl.currentTarget.name;
-                for (i = 0; i < this._lastEditedControl.currentTarget.childNodes.length; i++) {
-                    code = this._lastEditedControl.currentTarget.childNodes[i].value.split("|")[0];
+                for (i = 0; i < this._lastEditedControl.currentTarget.childNodes
+                    .length; i++) {
+                    code = this._lastEditedControl.currentTarget.childNodes[i].value
+                        .split("|")[0];
                     if (code === existingCode) {
                         this._lastEditedControl.currentTarget.selectedIndex = i;
                         break;
@@ -2887,14 +3342,22 @@ define([
                 }
                 // retain value in date picker
             } else if (className.indexOf("esriCTDateTimePicker") > -1) {
-                if (this._lastEditedControl.currentTarget.parentElement && this._lastEditedControl.currentTarget.parentElement.childNodes && this._lastEditedControl.currentTarget.parentElement.childNodes[0] && this._lastEditedControl.currentTarget.parentElement.childNodes[0].childNodes && this._lastEditedControl.currentTarget.parentElement.childNodes[0].childNodes[0]) {
-                    date = this._lastEditedControl.currentTarget.parentElement.childNodes[0].childNodes[0].name.split('|')[1];
+                if (this._lastEditedControl.currentTarget.parentElement &&
+                    this._lastEditedControl.currentTarget.parentElement.childNodes &&
+                    this._lastEditedControl.currentTarget.parentElement.childNodes[
+                        0] && this._lastEditedControl.currentTarget.parentElement
+                    .childNodes[0].childNodes && this._lastEditedControl.currentTarget
+                    .parentElement.childNodes[0].childNodes[0]) {
+                    date = this._lastEditedControl.currentTarget.parentElement.childNodes[
+                        0].childNodes[0].name.split('|')[1];
                     if (date === "null") {
                         this._isDatePickerValueRetained = true;
-                        $(this._lastEditedControl.currentTarget).data("DateTimePicker").setDate(null);
+                        $(this._lastEditedControl.currentTarget).data(
+                            "DateTimePicker").setDate(null);
                     } else {
                         this._isDatePickerValueRetained = true;
-                        $(this._lastEditedControl.currentTarget).data("DateTimePicker").setDate(parseInt(date, 10));
+                        $(this._lastEditedControl.currentTarget).data(
+                            "DateTimePicker").setDate(parseInt(date, 10));
                     }
                 }
             }
@@ -2906,7 +3369,8 @@ define([
         * @memberOf widgets/data-viewer/data-viewer
         */
         _updateInternalData: function (index, value) {
-            if ((this._existingRowData) && (index <= (this._existingRowData.length - 1))) {
+            if ((this._existingRowData) && (index <= (this._existingRowData
+                    .length - 1))) {
                 this._existingRowData[index] = value;
             }
         },
@@ -2920,15 +3384,20 @@ define([
         _extractField: function (className, index) {
             var updateField = null;
             if (className.indexOf("esriCTTextInput") > -1) {
-                updateField = this._lastSelectedRow.currentTarget.childNodes[index].childNodes[0].name;
+                updateField = this._lastSelectedRow.currentTarget.childNodes[
+                    index].childNodes[0].name;
             } else if (className.indexOf("esriCTCodedDomain") > -1) {
-                if (this._lastSelectedRow.currentTarget.childNodes[index].childNodes[0].value.split("|")[1]) {
-                    updateField = this._lastSelectedRow.currentTarget.childNodes[index].childNodes[0].value.split("|")[1];
+                if (this._lastSelectedRow.currentTarget.childNodes[index].childNodes[
+                        0].value.split("|")[1]) {
+                    updateField = this._lastSelectedRow.currentTarget.childNodes[
+                        index].childNodes[0].value.split("|")[1];
                 } else {
-                    updateField = this._lastSelectedRow.currentTarget.childNodes[index].childNodes[0][1].value.split("|")[1];
+                    updateField = this._lastSelectedRow.currentTarget.childNodes[
+                        index].childNodes[0][1].value.split("|")[1];
                 }
             } else if (className.indexOf("esriCTDateTimePicker") > -1) {
-                updateField = this._lastSelectedRow.currentTarget.childNodes[index].childNodes[0].childNodes[0].name.split("|")[1];
+                updateField = this._lastSelectedRow.currentTarget.childNodes[
+                    index].childNodes[0].childNodes[0].name.split("|")[1];
             }
             return updateField;
         },
@@ -2960,18 +3429,23 @@ define([
         */
         _isValueInRange: function (field, value) {
             var rangeObj, i, error;
-            rangeObj = { "valueInRange": true, "errorMessage": null };
+            rangeObj = {
+                "valueInRange": true,
+                "errorMessage": null
+            };
             for (i = 0; i < this._displayColumn.length; i++) {
                 if (this._displayColumn[i].fieldName === field) {
                     if (this._displayColumn[i].domain) {
                         // Check if value entered by user is within valid range
-                        if ((value >= this._displayColumn[i].domain.minValue) && (value <= this._displayColumn[i].domain.maxValue)) {
+                        if ((value >= this._displayColumn[i].domain.minValue) &&
+                            (value <= this._displayColumn[i].domain.maxValue)) {
                             rangeObj.valueInRange = true;
                         } else {
-                            error = string.substitute(this.appConfig.i18n.dataviewer.invalidNumericRange, {
-                                minValue: this._displayColumn[i].domain.minValue,
-                                maxValue: this._displayColumn[i].domain.maxValue
-                            });
+                            error = string.substitute(this.appConfig.i18n.dataviewer
+                                .invalidNumericRange, {
+                                    minValue: this._displayColumn[i].domain.minValue,
+                                    maxValue: this._displayColumn[i].domain.maxValue
+                                });
                             rangeObj.valueInRange = false;
                             rangeObj.errorMessage = error;
                         }
@@ -2989,7 +3463,8 @@ define([
         * @memberOf widgets/data-viewer/data-viewer
         */
         _validateControl: function (inputType, field) {
-            var inputValue, className, typeCastedInputValue, decimal, float, rangeObj, obj;
+            var inputValue, className, typeCastedInputValue, decimal, float,
+                rangeObj, obj;
             obj = {
                 "isValueValid": true,
                 "errorMessage": null
@@ -2999,85 +3474,103 @@ define([
             if (this._lastEditedControl.currentTarget.className) {
                 className = this._lastEditedControl.currentTarget.className;
                 if (className.indexOf("esriCTTextInput") > -1) {
-                    inputValue = lang.trim(this._lastEditedControl.currentTarget.value);
+                    inputValue = lang.trim(this._lastEditedControl.currentTarget
+                        .value);
                     // if nullable value is allowed in field than return true
-                    if ((this._isNullableValueAllowed(field)) && (inputValue.length === 0)) {
+                    if ((this._isNullableValueAllowed(field)) && (inputValue.length ===
+                            0)) {
                         obj.isValueValid = true;
                         return obj;
                     }
                     switch (inputType) {
-                    case "esriFieldTypeString":
-                        if (inputValue.length !== 0) {
-                            obj.isValueValid = true;
-                        } else {
-                            obj.isValueValid = false;
-                            obj.errorMessage = this.appConfig.i18n.dataviewer.invalidString;
-                        }
-                        break;
-                    case "esriFieldTypeSmallInteger":
-                        typeCastedInputValue = parseFloat(inputValue);
-                        rangeObj = this._isValueInRange(field, typeCastedInputValue);
-                        if (rangeObj.valueInRange) {
-                            if ((inputValue.match(decimal) && typeCastedInputValue >= -32768 && typeCastedInputValue <= 32767) && inputValue.length !== 0) {
+                        case "esriFieldTypeString":
+                            if (inputValue.length !== 0) {
                                 obj.isValueValid = true;
                             } else {
                                 obj.isValueValid = false;
-                                obj.errorMessage = this.appConfig.i18n.dataviewer.invalidSmallNumber;
+                                obj.errorMessage = this.appConfig.i18n.dataviewer.invalidString;
                             }
-                        } else {
-                            obj.isValueValid = false;
-                            obj.errorMessage = rangeObj.errorMessage;
-                        }
-                        break;
-                    case "esriFieldTypeInteger":
-                        typeCastedInputValue = parseFloat(inputValue);
-                        rangeObj = this._isValueInRange(field, typeCastedInputValue);
-                        if (rangeObj.valueInRange) {
-                            if ((inputValue.match(decimal) && typeCastedInputValue >= -2147483648 && typeCastedInputValue <= 2147483647) && inputValue.length !== 0) {
-                                obj.isValueValid = true;
+                            break;
+                        case "esriFieldTypeSmallInteger":
+                            typeCastedInputValue = parseFloat(inputValue);
+                            rangeObj = this._isValueInRange(field,
+                                typeCastedInputValue);
+                            if (rangeObj.valueInRange) {
+                                if ((inputValue.match(decimal) &&
+                                        typeCastedInputValue >= -32768 &&
+                                        typeCastedInputValue <= 32767) && inputValue.length !==
+                                    0) {
+                                    obj.isValueValid = true;
+                                } else {
+                                    obj.isValueValid = false;
+                                    obj.errorMessage = this.appConfig.i18n.dataviewer.invalidSmallNumber;
+                                }
                             } else {
                                 obj.isValueValid = false;
-                                obj.errorMessage = this.appConfig.i18n.dataviewer.invalidNumber;
+                                obj.errorMessage = rangeObj.errorMessage;
                             }
-                        } else {
-                            obj.isValueValid = false;
-                            obj.errorMessage = rangeObj.errorMessage;
-                        }
-                        break;
-                    case "esriFieldTypeSingle":
-                        // zero or more occurrence of (+-) at the start of expression
-                        // at least one occurrence of digits between o-9
-                        // occurrence of .
-                        // at least one occurrence of digits between o-9 in the end
-                        typeCastedInputValue = parseFloat(inputValue);
-                        rangeObj = this._isValueInRange(field, typeCastedInputValue);
-                        if (rangeObj.valueInRange) {
-                            if (((inputValue.match(decimal) || inputValue.match(float)) && typeCastedInputValue >= -3.4 * Math.pow(10, 38) && typeCastedInputValue <= 1.2 * Math.pow(10, 38)) && inputValue.length !== 0) {
-                                obj.isValueValid = true;
+                            break;
+                        case "esriFieldTypeInteger":
+                            typeCastedInputValue = parseFloat(inputValue);
+                            rangeObj = this._isValueInRange(field,
+                                typeCastedInputValue);
+                            if (rangeObj.valueInRange) {
+                                if ((inputValue.match(decimal) &&
+                                        typeCastedInputValue >= -2147483648 &&
+                                        typeCastedInputValue <= 2147483647) && inputValue
+                                    .length !== 0) {
+                                    obj.isValueValid = true;
+                                } else {
+                                    obj.isValueValid = false;
+                                    obj.errorMessage = this.appConfig.i18n.dataviewer.invalidNumber;
+                                }
                             } else {
                                 obj.isValueValid = false;
-                                obj.errorMessage = this.appConfig.i18n.dataviewer.invalidFloat;
+                                obj.errorMessage = rangeObj.errorMessage;
                             }
-                        } else {
-                            obj.isValueValid = false;
-                            obj.errorMessage = rangeObj.errorMessage;
-                        }
-                        break;
-                    case "esriFieldTypeDouble":
-                        typeCastedInputValue = parseFloat(inputValue);
-                        rangeObj = this._isValueInRange(field, typeCastedInputValue);
-                        if (rangeObj.valueInRange) {
-                            if (((inputValue.match(decimal) || inputValue.match(float)) && typeCastedInputValue >= -2.2 * Math.pow(10, 308) && typeCastedInputValue <= 1.8 * Math.pow(10, 38)) && inputValue.length !== 0) {
-                                obj.isValueValid = true;
+                            break;
+                        case "esriFieldTypeSingle":
+                            // zero or more occurrence of (+-) at the start of expression
+                            // at least one occurrence of digits between o-9
+                            // occurrence of .
+                            // at least one occurrence of digits between o-9 in the end
+                            typeCastedInputValue = parseFloat(inputValue);
+                            rangeObj = this._isValueInRange(field,
+                                typeCastedInputValue);
+                            if (rangeObj.valueInRange) {
+                                if (((inputValue.match(decimal) || inputValue.match(
+                                        float)) && typeCastedInputValue >= -3.4 * Math.pow(
+                                        10, 38) && typeCastedInputValue <= 1.2 * Math.pow(
+                                        10, 38)) && inputValue.length !== 0) {
+                                    obj.isValueValid = true;
+                                } else {
+                                    obj.isValueValid = false;
+                                    obj.errorMessage = this.appConfig.i18n.dataviewer.invalidFloat;
+                                }
                             } else {
                                 obj.isValueValid = false;
-                                obj.errorMessage = this.appConfig.i18n.dataviewer.invalidDouble;
+                                obj.errorMessage = rangeObj.errorMessage;
                             }
-                        } else {
-                            obj.isValueValid = false;
-                            obj.errorMessage = rangeObj.errorMessage;
-                        }
-                        break;
+                            break;
+                        case "esriFieldTypeDouble":
+                            typeCastedInputValue = parseFloat(inputValue);
+                            rangeObj = this._isValueInRange(field,
+                                typeCastedInputValue);
+                            if (rangeObj.valueInRange) {
+                                if (((inputValue.match(decimal) || inputValue.match(
+                                        float)) && typeCastedInputValue >= -2.2 * Math.pow(
+                                        10, 308) && typeCastedInputValue <= 1.8 * Math.pow(
+                                        10, 38)) && inputValue.length !== 0) {
+                                    obj.isValueValid = true;
+                                } else {
+                                    obj.isValueValid = false;
+                                    obj.errorMessage = this.appConfig.i18n.dataviewer.invalidDouble;
+                                }
+                            } else {
+                                obj.isValueValid = false;
+                                obj.errorMessage = rangeObj.errorMessage;
+                            }
+                            break;
                     }
                 }
             }
@@ -3143,7 +3636,8 @@ define([
             this._lastStateDetailsObj = {};
             // Get vertical scrollbar position
             if ($('.dataTables_scrollBody').length > 0) {
-                this._lastStateDetailsObj.verticalScrollPosition = $('.dataTables_scrollBody')[0].scrollTop;
+                this._lastStateDetailsObj.verticalScrollPosition = $(
+                    '.dataTables_scrollBody')[0].scrollTop;
             } else {
                 this._lastStateDetailsObj.verticalScrollPosition = 0;
             }
@@ -3182,12 +3676,12 @@ define([
             // If feature geometry is of type polyline, highlight the line
             // If feature geometry is of type polygon, highlight the boundary of the polygon
             switch (graphic.geometry.type) {
-            case "point":
-                return this._getPointSymbol(graphic, activeRow);
-            case "polyline":
-                return this._getPolyLineSymbol(graphic, activeRow);
-            case "polygon":
-                return this._getPolygonSymbol(graphic, activeRow);
+                case "point":
+                    return this._getPointSymbol(graphic, activeRow);
+                case "polyline":
+                    return this._getPolyLineSymbol(graphic, activeRow);
+                case "polygon":
+                    return this._getPolygonSymbol(graphic, activeRow);
             }
         },
 
@@ -3198,40 +3692,58 @@ define([
         * @memberOf widgets/data-viewer/data-viewer
         */
         _getPointSymbol: function (graphic, activeRow) {
-            var symbol, isSymbolFound, graphics, point, graphicInfoValue, layerInfoValue, i;
+            var symbol, isSymbolFound, graphics, point, graphicInfoValue,
+                layerInfoValue, i;
             isSymbolFound = false;
             if (activeRow) {
-                symbol = new SimpleMarkerSymbol(SimpleMarkerSymbol.STYLE_SQUARE, null, new SimpleLineSymbol(SimpleLineSymbol.STYLE_SOLID, new Color(this.appConfig.activeRow), 3));
+                symbol = new SimpleMarkerSymbol(SimpleMarkerSymbol.STYLE_SQUARE,
+                    null, new SimpleLineSymbol(SimpleLineSymbol.STYLE_SOLID,
+                        new Color(this.appConfig.activeRow), 3));
             } else {
-                symbol = new SimpleMarkerSymbol(SimpleMarkerSymbol.STYLE_SQUARE, null, new SimpleLineSymbol(SimpleLineSymbol.STYLE_SOLID, new Color([0, 255, 255, 1]), 3));
+                symbol = new SimpleMarkerSymbol(SimpleMarkerSymbol.STYLE_SQUARE,
+                    null, new SimpleLineSymbol(SimpleLineSymbol.STYLE_SOLID,
+                        new Color([0, 255, 255, 1]), 3));
             }
             symbol.setColor(null);
             symbol.size = 30; //set default Symbol size which will be used in case symbol not found.
             //check if layer is valid and have valid renderer object then only check for other symbol properties
-            if (this._selectedOperationalLayer && this._selectedOperationalLayer.renderer) {
+            if (this._selectedOperationalLayer && this._selectedOperationalLayer
+                .renderer) {
                 if (this._selectedOperationalLayer.renderer.symbol) {
                     isSymbolFound = true;
-                    symbol = this._updatePointSymbolProperties(symbol, this._selectedOperationalLayer.renderer.symbol);
-                } else if (this._selectedOperationalLayer.renderer.infos && (this._selectedOperationalLayer.renderer.infos.length > 0)) {
-                    for (i = 0; i < this._selectedOperationalLayer.renderer.infos.length; i++) {
+                    symbol = this._updatePointSymbolProperties(symbol, this._selectedOperationalLayer
+                        .renderer.symbol);
+                } else if (this._selectedOperationalLayer.renderer.infos && (
+                        this._selectedOperationalLayer.renderer.infos.length > 0)) {
+                    for (i = 0; i < this._selectedOperationalLayer.renderer.infos
+                        .length; i++) {
                         if (this._selectedOperationalLayer.typeIdField) {
-                            graphicInfoValue = graphic.attributes[this._selectedOperationalLayer.typeIdField];
+                            graphicInfoValue = graphic.attributes[this._selectedOperationalLayer
+                                .typeIdField];
                         } else if (this._selectedOperationalLayer.renderer.attributeField) {
-                            graphicInfoValue = graphic.attributes[this._selectedOperationalLayer.renderer.attributeField];
+                            graphicInfoValue = graphic.attributes[this._selectedOperationalLayer
+                                .renderer.attributeField];
                         }
-                        layerInfoValue = this._selectedOperationalLayer.renderer.infos[i].value;
+                        layerInfoValue = this._selectedOperationalLayer.renderer.infos[
+                            i].value;
                         // To get properties of symbol when infos contains other than class break renderer.
-                        if (graphicInfoValue !== undefined && graphicInfoValue !== null && graphicInfoValue !== "" && layerInfoValue !== undefined && layerInfoValue !== null && layerInfoValue !== "") {
+                        if (graphicInfoValue !== undefined && graphicInfoValue !==
+                            null && graphicInfoValue !== "" && layerInfoValue !==
+                            undefined && layerInfoValue !== null && layerInfoValue !==
+                            "") {
                             if (graphicInfoValue.toString() === layerInfoValue.toString()) {
                                 isSymbolFound = true;
-                                symbol = this._updatePointSymbolProperties(symbol, this._selectedOperationalLayer.renderer.infos[i].symbol);
+                                symbol = this._updatePointSymbolProperties(symbol,
+                                    this._selectedOperationalLayer.renderer.infos[i].symbol
+                                );
                             }
                         }
                     }
                     if (!isSymbolFound) {
                         if (this._selectedOperationalLayer.renderer.defaultSymbol) {
                             isSymbolFound = true;
-                            symbol = this._updatePointSymbolProperties(symbol, this._selectedOperationalLayer.renderer.defaultSymbol);
+                            symbol = this._updatePointSymbolProperties(symbol, this
+                                ._selectedOperationalLayer.renderer.defaultSymbol);
                         }
                     }
                 }
@@ -3250,35 +3762,55 @@ define([
         * @memberOf widgets/data-viewer/data-viewer
         */
         _getPolyLineSymbol: function (graphic, activeRow) {
-            var symbol, graphics, polyline, symbolWidth, graphicInfoValue, layerInfoValue, i;
+            var symbol, graphics, polyline, symbolWidth, graphicInfoValue,
+                layerInfoValue, i;
             symbolWidth = 5; // default line width
             //check if layer is valid and have valid renderer object then only check for other  symbol properties
-            if (this._selectedOperationalLayer && this._selectedOperationalLayer.renderer) {
-                if (this._selectedOperationalLayer.renderer.symbol && this._selectedOperationalLayer.renderer.symbol.hasOwnProperty("width")) {
-                    symbolWidth = this._selectedOperationalLayer.renderer.symbol.width;
-                } else if ((this._selectedOperationalLayer.renderer.infos) && (this._selectedOperationalLayer.renderer.infos.length > 0)) {
-                    for (i = 0; i < this._selectedOperationalLayer.renderer.infos.length; i++) {
+            if (this._selectedOperationalLayer && this._selectedOperationalLayer
+                .renderer) {
+                if (this._selectedOperationalLayer.renderer.symbol && this._selectedOperationalLayer
+                    .renderer.symbol.hasOwnProperty("width")) {
+                    symbolWidth = this._selectedOperationalLayer.renderer.symbol
+                        .width;
+                } else if ((this._selectedOperationalLayer.renderer.infos) &&
+                    (this._selectedOperationalLayer.renderer.infos.length > 0)) {
+                    for (i = 0; i < this._selectedOperationalLayer.renderer.infos
+                        .length; i++) {
                         if (this._selectedOperationalLayer.typeIdField) {
-                            graphicInfoValue = graphic.attributes[this._selectedOperationalLayer.typeIdField];
+                            graphicInfoValue = graphic.attributes[this._selectedOperationalLayer
+                                .typeIdField];
                         } else if (this._selectedOperationalLayer.renderer.attributeField) {
-                            graphicInfoValue = graphic.attributes[this._selectedOperationalLayer.renderer.attributeField];
+                            graphicInfoValue = graphic.attributes[this._selectedOperationalLayer
+                                .renderer.attributeField];
                         }
-                        layerInfoValue = this._selectedOperationalLayer.renderer.infos[i].value;
+                        layerInfoValue = this._selectedOperationalLayer.renderer.infos[
+                            i].value;
                         // To get properties of symbol when infos contains other than class break renderer.
-                        if (graphicInfoValue !== undefined && graphicInfoValue !== null && graphicInfoValue !== "" && layerInfoValue !== undefined && layerInfoValue !== null && layerInfoValue !== "") {
-                            if (graphicInfoValue.toString() === layerInfoValue.toString() && this._selectedOperationalLayer.renderer.infos[i].symbol.hasOwnProperty("width")) {
-                                symbolWidth = this._selectedOperationalLayer.renderer.infos[i].symbol.width;
+                        if (graphicInfoValue !== undefined && graphicInfoValue !==
+                            null && graphicInfoValue !== "" && layerInfoValue !==
+                            undefined && layerInfoValue !== null && layerInfoValue !==
+                            "") {
+                            if (graphicInfoValue.toString() === layerInfoValue.toString() &&
+                                this._selectedOperationalLayer.renderer.infos[i].symbol
+                                .hasOwnProperty("width")) {
+                                symbolWidth = this._selectedOperationalLayer.renderer
+                                    .infos[i].symbol.width;
                             }
                         }
                     }
-                } else if (this._selectedOperationalLayer.renderer.defaultSymbol && this._selectedOperationalLayer.renderer.defaultSymbol.hasOwnProperty("width")) {
-                    symbolWidth = this._selectedOperationalLayer.renderer.defaultSymbol.width;
+                } else if (this._selectedOperationalLayer.renderer.defaultSymbol &&
+                    this._selectedOperationalLayer.renderer.defaultSymbol.hasOwnProperty(
+                        "width")) {
+                    symbolWidth = this._selectedOperationalLayer.renderer.defaultSymbol
+                        .width;
                 }
             }
             if (activeRow) {
-                symbol = new SimpleLineSymbol(SimpleLineSymbol.STYLE_SOLID, new Color(this.appConfig.activeRow), symbolWidth);
+                symbol = new SimpleLineSymbol(SimpleLineSymbol.STYLE_SOLID,
+                    new Color(this.appConfig.activeRow), symbolWidth);
             } else {
-                symbol = new SimpleLineSymbol(SimpleLineSymbol.STYLE_SOLID, new Color([0, 255, 255, 1]), symbolWidth);
+                symbol = new SimpleLineSymbol(SimpleLineSymbol.STYLE_SOLID,
+                    new Color([0, 255, 255, 1]), symbolWidth);
             }
             polyline = new Polyline(new SpatialReference({
                 wkid: graphic.geometry.spatialReference.wkid
@@ -3299,9 +3831,13 @@ define([
         _getPolygonSymbol: function (graphic, activeRow) {
             var symbol, graphics, polygon;
             if (activeRow) {
-                symbol = new SimpleFillSymbol(SimpleFillSymbol.STYLE_SOLID, new SimpleLineSymbol(SimpleLineSymbol.STYLE_SOLID, new Color(this.appConfig.activeRow), 4), new Color([0, 0, 0, 0]));
+                symbol = new SimpleFillSymbol(SimpleFillSymbol.STYLE_SOLID,
+                    new SimpleLineSymbol(SimpleLineSymbol.STYLE_SOLID, new Color(
+                        this.appConfig.activeRow), 4), new Color([0, 0, 0, 0]));
             } else {
-                symbol = new SimpleFillSymbol(SimpleFillSymbol.STYLE_SOLID, new SimpleLineSymbol(SimpleLineSymbol.STYLE_SOLID, new Color([0, 255, 255, 1]), 4), new Color([0, 0, 0, 0]));
+                symbol = new SimpleFillSymbol(SimpleFillSymbol.STYLE_SOLID,
+                    new SimpleLineSymbol(SimpleLineSymbol.STYLE_SOLID, new Color(
+                        [0, 255, 255, 1]), 4), new Color([0, 0, 0, 0]));
             }
             polygon = new Polygon(new SpatialReference({
                 wkid: graphic.geometry.spatialReference.wkid
@@ -3321,7 +3857,8 @@ define([
         */
         _updatePointSymbolProperties: function (symbol, layerSymbol) {
             var height, width, size;
-            if (layerSymbol.hasOwnProperty("height") && layerSymbol.hasOwnProperty("width")) {
+            if (layerSymbol.hasOwnProperty("height") && layerSymbol.hasOwnProperty(
+                    "width")) {
                 height = layerSymbol.height;
                 width = layerSymbol.width;
                 // To display cross hair properly around feature its size needs to be calculated

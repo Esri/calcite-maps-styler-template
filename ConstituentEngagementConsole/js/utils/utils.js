@@ -16,16 +16,12 @@
  | limitations under the License.
  */
 define([
-    "dojo/dom",
-    "dojo/_base/fx",
     "dojo/dom-class",
     "dojo/text!css/theme-template.css",
     "dojo/string",
     "dojo/dom-construct",
     "dojo/query"
 ], function (
-    dom,
-    coreFx,
     domClass,
     ThemeCss,
     string,
@@ -74,7 +70,7 @@ define([
         * @memberOf utils/utils
         */
         loadApplicationTheme: function (appConfig) {
-            var cssString, head, style;
+            var cssString, head, style, link;
             //if theme is configured
             if (appConfig.theme) {
                 //substitute theme color values in theme template
@@ -96,6 +92,14 @@ define([
                         "innerHTML": cssString
                     }, query("head")[0]);
                 }
+                // If application is loaded in RTL mode, change styles of required nodes
+                if (appConfig.i18n.direction === "rtl") {
+                    link = document.createElement('link');
+                    link.rel = 'stylesheet';
+                    link.type = 'text/css';
+                    link.href = "./css/rtl.css";
+                    document.getElementsByTagName('head')[0].appendChild(link);
+                }
             }
         },
 
@@ -107,66 +111,66 @@ define([
         getDateFormat: function (type) {
             var obj = {};
             switch (type) {
-            case "shortDate":
-                obj.dateFormat = "MM/DD/YYYY";
-                obj.showTime = false;
-                return obj;
-            case "shortDateLE":
-                obj.dateFormat = "DD/MM/YYYY";
-                obj.showTime = false;
-                return obj;
-            case "longMonthDayYear":
-                obj.dateFormat = "MMMM DD, YYYY";
-                obj.showTime = false;
-                return obj;
-            case "dayShortMonthYear":
-                obj.dateFormat = "DD MMM YYYY";
-                obj.showTime = false;
-                return obj;
-            case "longDate":
-                obj.dateFormat = "dddd, MMMM DD, YYYY";
-                obj.showTime = false;
-                return obj;
-            case "shortDateLongTime":
-                obj.dateFormat = "MM/DD/YYYY h:mm:ss a";
-                obj.showTime = true;
-                return obj;
-            case "shortDateLELongTime":
-                obj.dateFormat = "DD/MM/YYYY h:mm:ss a";
-                obj.showTime = true;
-                return obj;
-            case "shortDateShortTime":
-                obj.dateFormat = "DD/MM/YYYY h:mm a";
-                obj.showTime = true;
-                return obj;
-            case "shortDateLEShortTime":
-                obj.dateFormat = "MM/DD/YYYY h:mm a";
-                obj.showTime = true;
-                return obj;
-            case "shortDateShortTime24":
-                obj.dateFormat = "MM/DD/YYYY HH:mm";
-                obj.showTime = true;
-                return obj;
-            case "shortDateLEShortTime24":
-                obj.dateFormat = "DD/MM/YYYY HH:mm";
-                obj.showTime = true;
-                return obj;
-            case "longMonthYear":
-                obj.dateFormat = "MMMM YYYY";
-                obj.showTime = false;
-                return obj;
-            case "shortMonthYear":
-                obj.dateFormat = "MMM YYYY";
-                obj.showTime = false;
-                return obj;
-            case "year":
-                obj.dateFormat = "YYYY";
-                obj.showTime = false;
-                return obj;
-            default:
-                obj.dateFormat = "MMMM DD, YYYY";
-                obj.showTime = false;
-                return obj;
+                case "shortDate":
+                    obj.dateFormat = "MM/DD/YYYY";
+                    obj.showTime = false;
+                    return obj;
+                case "shortDateLE":
+                    obj.dateFormat = "DD/MM/YYYY";
+                    obj.showTime = false;
+                    return obj;
+                case "longMonthDayYear":
+                    obj.dateFormat = "MMMM DD, YYYY";
+                    obj.showTime = false;
+                    return obj;
+                case "dayShortMonthYear":
+                    obj.dateFormat = "DD MMM YYYY";
+                    obj.showTime = false;
+                    return obj;
+                case "longDate":
+                    obj.dateFormat = "dddd, MMMM DD, YYYY";
+                    obj.showTime = false;
+                    return obj;
+                case "shortDateLongTime":
+                    obj.dateFormat = "MM/DD/YYYY h:mm:ss a";
+                    obj.showTime = true;
+                    return obj;
+                case "shortDateLELongTime":
+                    obj.dateFormat = "DD/MM/YYYY h:mm:ss a";
+                    obj.showTime = true;
+                    return obj;
+                case "shortDateShortTime":
+                    obj.dateFormat = "DD/MM/YYYY h:mm a";
+                    obj.showTime = true;
+                    return obj;
+                case "shortDateLEShortTime":
+                    obj.dateFormat = "MM/DD/YYYY h:mm a";
+                    obj.showTime = true;
+                    return obj;
+                case "shortDateShortTime24":
+                    obj.dateFormat = "MM/DD/YYYY HH:mm";
+                    obj.showTime = true;
+                    return obj;
+                case "shortDateLEShortTime24":
+                    obj.dateFormat = "DD/MM/YYYY HH:mm";
+                    obj.showTime = true;
+                    return obj;
+                case "longMonthYear":
+                    obj.dateFormat = "MMMM YYYY";
+                    obj.showTime = false;
+                    return obj;
+                case "shortMonthYear":
+                    obj.dateFormat = "MMM YYYY";
+                    obj.showTime = false;
+                    return obj;
+                case "year":
+                    obj.dateFormat = "YYYY";
+                    obj.showTime = false;
+                    return obj;
+                default:
+                    obj.dateFormat = "MMMM DD, YYYY";
+                    obj.showTime = false;
+                    return obj;
             }
         },
 

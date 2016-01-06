@@ -1,4 +1,4 @@
-﻿/*global define,dojo,dojoConfig,alert,$,confirm */
+﻿/*global define,dojoConfig,$,confirm */
 /*jslint browser:true,sloppy:true,nomen:true,unparam:true,plusplus:true,indent:4 */
 /*
  | Copyright 2014 Esri
@@ -29,8 +29,6 @@ define([
     "dijit/_WidgetBase",
     "dijit/_TemplatedMixin",
     "dijit/_WidgetsInTemplateMixin",
-    "dojo/text!css/theme-template.css",
-    "dojo/string",
     "dojo/query",
     "dojo/has"
 ], function (
@@ -46,8 +44,6 @@ define([
     _WidgetBase,
     _TemplatedMixin,
     _WidgetsInTemplateMixin,
-    ThemeCss,
-    string,
     query,
     has
 ) {
@@ -61,7 +57,7 @@ define([
         * @param{object} parent node of widget
         * @memberOf widgets/app-header/app-header
         */
-        constructor: function (options, srcRefNode) {
+        constructor: function (options) {
             lang.mixin(this, options);
         },
 
@@ -74,9 +70,11 @@ define([
             // first check if application name is configured than display that
             // second check if group title is available display that
             // if user clicks cancel button than display sign-in text
-            if (this.appConfig.applicationName && lang.trim(this.appConfig.applicationName).length !== 0) {
+            if (this.appConfig.applicationName && lang.trim(this.appConfig.applicationName)
+                .length !== 0) {
                 applicationName = this.appConfig.applicationName;
-            } else if (this.appConfig.groupInfo.results.length > 0 && this.appConfig.groupInfo.results[0].title) {
+            } else if (this.appConfig.groupInfo.results.length > 0 && this.appConfig
+                .groupInfo.results[0].title) {
                 applicationName = this.appConfig.groupInfo.results[0].title;
             } else {
                 applicationName = this.appConfig.i18n.applicationHeader.pleaseSignInText;
@@ -87,31 +85,41 @@ define([
             // to set title of document
             document.title = applicationName;
             // to set application name
-            domAttr.set(this.applicationHeaderName, "innerHTML", applicationName);
+            domAttr.set(this.applicationHeaderName, "innerHTML",
+                applicationName);
             // first check if application icon is configured than display that
             // second check if group icon is available than display that
             // third default fallback icon will be displayed if above both scenario are not available
-            if (this.appConfig.applicationIcon && lang.trim(this.appConfig.applicationIcon).length !== 0) {
+            if (this.appConfig.applicationIcon && lang.trim(this.appConfig.applicationIcon)
+                .length !== 0) {
                 if (this.appConfig.applicationIcon.indexOf("http") === 0) {
-                    domAttr.set(this.applicationHeaderIcon, "src", this.appConfig.applicationIcon);
+                    domAttr.set(this.applicationHeaderIcon, "src", this.appConfig
+                        .applicationIcon);
                 } else {
                     if (this.appConfig.applicationIcon.indexOf("/") === 0) {
-                        domAttr.set(this.applicationHeaderIcon, "src", dojoConfig.baseURL + this.appConfig.applicationIcon);
+                        domAttr.set(this.applicationHeaderIcon, "src", dojoConfig
+                            .baseURL + this.appConfig.applicationIcon);
                     } else {
-                        domAttr.set(this.applicationHeaderIcon, "src", dojoConfig.baseURL + "/" + this.appConfig.applicationIcon);
+                        domAttr.set(this.applicationHeaderIcon, "src", dojoConfig
+                            .baseURL + "/" + this.appConfig.applicationIcon);
                     }
                 }
             } else if (this.appConfig.groupInfo) {
-                if (this.appConfig.groupInfo.results.length > 0 && this.appConfig.groupInfo.results[0].thumbnailUrl) {
-                    domAttr.set(this.applicationHeaderIcon, "src", this.appConfig.groupInfo.results[0].thumbnailUrl);
+                if (this.appConfig.groupInfo.results.length > 0 && this.appConfig
+                    .groupInfo.results[0].thumbnailUrl) {
+                    domAttr.set(this.applicationHeaderIcon, "src", this.appConfig
+                        .groupInfo.results[0].thumbnailUrl);
                 } else {
-                    domAttr.set(this.applicationHeaderIcon, "src", dojoConfig.baseURL + "/images/app-icon.png");
+                    domAttr.set(this.applicationHeaderIcon, "src", dojoConfig.baseURL +
+                        "/images/app-icon.png");
                 }
             } else {
-                domAttr.set(this.applicationHeaderIcon, "src", dojoConfig.baseURL + "/images/app-icon.png");
+                domAttr.set(this.applicationHeaderIcon, "src", dojoConfig.baseURL +
+                    "/images/app-icon.png");
             }
             if (!this.appConfig.logInDetails) {
-                domAttr.set(this.applicationHeaderIcon, "src", dojoConfig.baseURL + "/images/app-icon.png");
+                domAttr.set(this.applicationHeaderIcon, "src", dojoConfig.baseURL +
+                    "/images/app-icon.png");
             }
             applicationIcon = domAttr.get(this.applicationHeaderIcon, "src");
             // load application shortcut icons
@@ -122,8 +130,10 @@ define([
             // Due to high resolution of iPad long username was not getting displayed properly.
             // So it detects orientation in iPad and long username gets displayed properly in landscape & potrait mode.
             // This is done by changing the width of username dynamically.
-            if (this.appUtils.isIos() && (window.orientation === 0 || window.orientation === 180)) {
-                domClass.add(query(".esriCTLoginUserNameDiv")[0], "esriCTLoginUserNamePotraitMode");
+            if (this.appUtils.isIos() && (window.orientation === 0 ||
+                    window.orientation === 180)) {
+                domClass.add(query(".esriCTLoginUserNameDiv")[0],
+                    "esriCTLoginUserNamePotraitMode");
             }
 
             // if user logs in than display application header with different controls like setting, view, etc...
@@ -136,21 +146,29 @@ define([
             } else {
                 this.appUtils.loadApplicationTheme(this.appConfig);
                 domClass.add(dom.byId("esriCTMainContainer"), "esriCTHidden");
-                domClass.add(query(".esriCTSettingsButton")[0], "esriCTHidden");
+                domClass.add(query(".esriCTSettingsButton")[0],
+                    "esriCTHidden");
                 domClass.add(query(".esriCTViewMode")[0], "esriCTHidden");
                 domClass.add(query(".esriCTSearchDisable")[0], "esriCTHidden");
-                domClass.add(query(".esriCTManualRefreshButton")[0], "esriCTHidden");
-                domClass.remove(dom.byId("esriCTNoWebMapParentDiv"), "esriCTHidden");
-                this.esriCTLoginUserNameDiv.innerHTML = this.appConfig.i18n.applicationHeader.signInOption;
+                domClass.add(query(".esriCTManualRefreshButton")[0],
+                    "esriCTHidden");
+                domClass.remove(dom.byId("esriCTNoWebMapParentDiv"),
+                    "esriCTHidden");
+                this.esriCTLoginUserNameDiv.innerHTML = this.appConfig.i18n.applicationHeader
+                    .signInOption;
                 domClass.add(this.esriCTCaretIcon, "esriCTVisibilityHidden");
                 this._handleLoginArrowClick();
                 this.appUtils.hideLoadingIndicator();
             }
             //tooltip is coming from nls
-            domAttr.set(this.settingsDataViewerBtn, "title", this.appConfig.i18n.applicationHeader.settingsBtnToolTip);
-            domAttr.set(this.viewModeBtn, "title", this.appConfig.i18n.applicationHeader.viewModeBtnToolTip);
-            domAttr.set(this.searchModeBtn, "title", this.appConfig.i18n.applicationHeader.searchModeBtnToolTip);
-            domAttr.set(this.manualRefreshBtn, "title", this.appConfig.i18n.applicationHeader.manualRefreshBtnToolTip);
+            domAttr.set(this.settingsDataViewerBtn, "title", this.appConfig
+                .i18n.applicationHeader.settingsBtnToolTip);
+            domAttr.set(this.viewModeBtn, "title", this.appConfig.i18n.applicationHeader
+                .viewModeBtnToolTip);
+            domAttr.set(this.searchModeBtn, "title", this.appConfig.i18n.applicationHeader
+                .searchModeBtnToolTip);
+            domAttr.set(this.manualRefreshBtn, "title", this.appConfig.i18n
+                .applicationHeader.manualRefreshBtnToolTip);
             this._onSettingsIconClick();
             this._setSettingsOptionText();
             this._setSearchPanelText();
@@ -158,10 +176,12 @@ define([
             this._onViewModeClick();
             this._setViewModeOptionText();
             this._onSearchIconClick();
-            this.resetOperationalLayerNameWidth();
-            this.resetViewModeOptionsPosition();
-            this.resetSettingsOptionsPosition();
-            this.resetDataSearchPosition();
+            setTimeout(lang.hitch(this, function () {
+                this.resetOperationalLayerNameWidth();
+                this.resetViewModeOptionsPosition();
+                this.resetSettingsOptionsPosition();
+                this.resetDataSearchPosition();
+            }), 100);
         },
 
         /**
@@ -170,9 +190,12 @@ define([
         */
         resetOperationalLayerNameWidth: function () {
             var headerWidth, menuTabWidth;
-            headerWidth = parseFloat(domStyle.get(this.esriCTheaderRight, "width"));
-            menuTabWidth = parseFloat(domStyle.get(this.esriCTMenuTabRight, "width"));
-            domStyle.set(this.operationalLayerTitle, "width", ((headerWidth - menuTabWidth) - 15) + "px");
+            headerWidth = parseFloat(domStyle.get(this.esriCTheaderRight,
+                "width"));
+            menuTabWidth = parseFloat(domStyle.get(this.esriCTMenuTabRight,
+                "width"));
+            domStyle.set(this.operationalLayerTitle, "width", ((headerWidth -
+                menuTabWidth) - 15) + "px");
         },
 
         /**
@@ -181,9 +204,17 @@ define([
         */
         resetSettingsOptionsPosition: function () {
             var userNameWidth, userNameCaretIconWidth;
-            userNameWidth = parseFloat(domStyle.get(this.esriCTLoginUserNameDiv, "width"));
-            userNameCaretIconWidth = parseFloat(domStyle.get(this.esriCTCaretIcon, "width"));
-            domStyle.set(this.esriCTSettingsOptionsItemDiv, "right", (userNameWidth + userNameCaretIconWidth) + "px");
+            userNameWidth = parseFloat(domStyle.get(this.esriCTLoginUserNameDiv,
+                "width"));
+            userNameCaretIconWidth = parseFloat(domStyle.get(this.esriCTCaretIcon,
+                "width"));
+            if (this.appConfig.i18n.direction === "rtl") {
+                domStyle.set(this.esriCTSettingsOptionsItemDiv, "left", (
+                    userNameWidth + userNameCaretIconWidth) + "px");
+            } else {
+                domStyle.set(this.esriCTSettingsOptionsItemDiv, "right", (
+                    userNameWidth + userNameCaretIconWidth) + "px");
+            }
         },
 
         /**
@@ -191,11 +222,23 @@ define([
         * @memberOf widgets/app-header/app-header
         */
         resetViewModeOptionsPosition: function () {
-            var userNameWidth, userNameCaretIconWidth, settingsButtonContainerWidth;
-            userNameWidth = parseFloat(domStyle.get(this.esriCTLoginUserNameDiv, "width"));
-            userNameCaretIconWidth = parseFloat(domStyle.get(this.esriCTCaretIcon, "width"));
-            settingsButtonContainerWidth = parseFloat(domStyle.get(this.settingsButtonParentContainer, "width"));
-            domStyle.set(this.optionsViewMode, "right", (userNameWidth + userNameCaretIconWidth + settingsButtonContainerWidth) + "px");
+            var userNameWidth, userNameCaretIconWidth,
+                settingsButtonContainerWidth;
+            userNameWidth = parseFloat(domStyle.get(this.esriCTLoginUserNameDiv,
+                "width"));
+            userNameCaretIconWidth = parseFloat(domStyle.get(this.esriCTCaretIcon,
+                "width"));
+            settingsButtonContainerWidth = parseFloat(domStyle.get(this.settingsButtonParentContainer,
+                "width"));
+            if (this.appConfig.i18n.direction === "rtl") {
+                domStyle.set(this.optionsViewMode, "left", (userNameWidth +
+                        userNameCaretIconWidth + settingsButtonContainerWidth) +
+                    "px");
+            } else {
+                domStyle.set(this.optionsViewMode, "right", (userNameWidth +
+                        userNameCaretIconWidth + settingsButtonContainerWidth) +
+                    "px");
+            }
         },
 
         /**
@@ -204,9 +247,17 @@ define([
         */
         resetDataSearchPosition: function () {
             var userNameWidth, userNameCaretIconWidth;
-            userNameWidth = parseFloat(domStyle.get(this.esriCTLoginUserNameDiv, "width"));
-            userNameCaretIconWidth = parseFloat(domStyle.get(this.esriCTCaretIcon, "width"));
-            domStyle.set(this.searchOptions, "right", (userNameWidth + userNameCaretIconWidth) + "px");
+            userNameWidth = parseFloat(domStyle.get(this.esriCTLoginUserNameDiv,
+                "width"));
+            userNameCaretIconWidth = parseFloat(domStyle.get(this.esriCTCaretIcon,
+                "width"));
+            if (this.appConfig.i18n.direction === "rtl") {
+                domStyle.set(this.searchOptions, "left", (userNameWidth +
+                    userNameCaretIconWidth) + "px");
+            } else {
+                domStyle.set(this.searchOptions, "right", (userNameWidth +
+                    userNameCaretIconWidth) + "px");
+            }
         },
 
         /**
@@ -214,47 +265,50 @@ define([
         * @memberOf widgets/app-header/app-header
         */
         _attachEventHandlers: function () {
-            on(this.esriCTShowSelected, "click", lang.hitch(this, function (event) {
+            on(this.esriCTShowSelected, "click", lang.hitch(this, function () {
                 this._toggleOptionsVisibility();
                 this.onShowSelectedRecordsClick();
             }));
-            on(this.esriCTShowAll, "click", lang.hitch(this, function (event) {
+            on(this.esriCTShowAll, "click", lang.hitch(this, function () {
                 this._toggleOptionsVisibility();
                 this.onShowAllRecordsClick();
             }));
-            on(this.esriCTClearSelection, "click", lang.hitch(this, function (event) {
-                this._toggleOptionsVisibility();
-                this.onClearSelectionClick();
-            }));
-            on(this.esriCTZoomToSelected, "click", lang.hitch(this, function (event) {
-                this._toggleOptionsVisibility();
-                this.onZoomToSelectedClick();
-            }));
-            on(this.listView, "click", lang.hitch(this, function (event) {
+            on(this.esriCTClearSelection, "click", lang.hitch(this,
+                function () {
+                    this._toggleOptionsVisibility();
+                    this.onClearSelectionClick();
+                }));
+            on(this.esriCTZoomToSelected, "click", lang.hitch(this,
+                function () {
+                    this._toggleOptionsVisibility();
+                    this.onZoomToSelectedClick();
+                }));
+            on(this.listView, "click", lang.hitch(this, function () {
                 this._toggleViewModeOptionsVisibility();
                 this.onGridViewClick();
             }));
-            on(this.mapView, "click", lang.hitch(this, function (event) {
+            on(this.mapView, "click", lang.hitch(this, function () {
                 this._toggleViewModeOptionsVisibility();
                 this.onMapViewClick();
             }));
-            on(this.splitView, "click", lang.hitch(this, function (event) {
+            on(this.splitView, "click", lang.hitch(this, function () {
                 this._toggleViewModeOptionsVisibility();
                 this.onGridMapViewClick();
             }));
-            on(this.searchRecords, "click", lang.hitch(this, function (event) {
+            on(this.searchRecords, "click", lang.hitch(this, function () {
                 this.onSearchRecordsClick();
             }));
-            on(this.clearTextContent, "click", lang.hitch(this, function (event) {
+            on(this.clearTextContent, "click", lang.hitch(this, function () {
                 this.onClearContentClick();
             }));
-            on(this.manualRefreshBtn, "click", lang.hitch(this, function (event) {
-                var confirmValue = confirm(this.appConfig.i18n.applicationHeader.confirmManualRefeshText);
+            on(this.manualRefreshBtn, "click", lang.hitch(this, function () {
+                var confirmValue = confirm(this.appConfig.i18n.applicationHeader
+                    .confirmManualRefeshText);
                 if (confirmValue) {
                     this.onManualRefreshClick();
                 }
             }));
-            $(".esriCTSearchBox").keyup(lang.hitch(this, function (event) {
+            $(".esriCTSearchBox").keyup(lang.hitch(this, function () {
                 if (event.keyCode === 13) {
                     this.onSearchRecordsClick();
                 }
@@ -293,11 +347,15 @@ define([
         */
         toggleSelectionViewOption: function () {
             if (domClass.contains(this.esriCTShowAll, "esriCTVisible")) {
-                domClass.replace(this.esriCTShowAll, "esriCTHidden", "esriCTVisible");
-                domClass.replace(this.esriCTShowSelected, "esriCTVisible", "esriCTHidden");
+                domClass.replace(this.esriCTShowAll, "esriCTHidden",
+                    "esriCTVisible");
+                domClass.replace(this.esriCTShowSelected, "esriCTVisible",
+                    "esriCTHidden");
             } else {
-                domClass.replace(this.esriCTShowAll, "esriCTVisible", "esriCTHidden");
-                domClass.replace(this.esriCTShowSelected, "esriCTHidden", "esriCTVisible");
+                domClass.replace(this.esriCTShowAll, "esriCTVisible",
+                    "esriCTHidden");
+                domClass.replace(this.esriCTShowSelected, "esriCTHidden",
+                    "esriCTVisible");
             }
         },
 
@@ -333,11 +391,13 @@ define([
         * @memberOf widgets/app-header/app-header
         */
         _displayLoginDetails: function () {
-            this.esriCTLoginUserNameDiv.innerHTML = this.appConfig.logInDetails.userName;
+            this.esriCTLoginUserNameDiv.innerHTML = this.appConfig.logInDetails
+                .userName;
             if (!this.loggedInUser) {
                 domClass.add(this.esriCTCaretIcon, "esriCTVisibilityHidden");
             }
-            this.esriCTLogoutOption.innerHTML = this.appConfig.i18n.applicationHeader.signOutOption;
+            this.esriCTLogoutOption.innerHTML = this.appConfig.i18n.applicationHeader
+                .signOutOption;
         },
 
         /**
@@ -345,7 +405,8 @@ define([
         * @memberOf widgets/app-header/app-header
         */
         _handleLoginArrowClick: function () {
-            on(this.esriCTLoginCredentialsDiv, "click", lang.hitch(this, this._toggleLoginOptionsVisibility));
+            on(this.esriCTLoginCredentialsDiv, "click", lang.hitch(this,
+                this._toggleLoginOptionsVisibility));
         },
 
         /**
@@ -353,7 +414,7 @@ define([
         * @memberOf widgets/app-header/app-header
         */
         _handleLogoutClick: function () {
-            on(this.esriCTLogoutOption, "click", lang.hitch(this, function (evt) {
+            on(this.esriCTLogoutOption, "click", lang.hitch(this, function () {
                 var signOutParentDiv, signOutMessageDiv;
                 signOutParentDiv = domConstruct.create("div", {
                     "class": "esriCTSignOutParentDiv"
@@ -377,10 +438,14 @@ define([
         * @memberOf widgets/app-header/app-header
         */
         _setSettingsOptionText: function () {
-            this.esriCTShowSelected.innerHTML = this.appConfig.i18n.applicationHeader.showSelectedOption;
-            this.esriCTShowAll.innerHTML = this.appConfig.i18n.applicationHeader.showAllOption;
-            this.esriCTClearSelection.innerHTML = this.appConfig.i18n.applicationHeader.clearSelectionOption;
-            this.esriCTZoomToSelected.innerHTML = this.appConfig.i18n.applicationHeader.zoomToSelectedOption;
+            this.esriCTShowSelected.innerHTML = this.appConfig.i18n.applicationHeader
+                .showSelectedOption;
+            this.esriCTShowAll.innerHTML = this.appConfig.i18n.applicationHeader
+                .showAllOption;
+            this.esriCTClearSelection.innerHTML = this.appConfig.i18n.applicationHeader
+                .clearSelectionOption;
+            this.esriCTZoomToSelected.innerHTML = this.appConfig.i18n.applicationHeader
+                .zoomToSelectedOption;
         },
 
         /**
@@ -388,9 +453,11 @@ define([
         * @memberOf widgets/app-header/app-header
         */
         _setViewModeOptionText: function () {
-            this.listView.innerHTML = this.appConfig.i18n.applicationHeader.gridViewOption;
+            this.listView.innerHTML = this.appConfig.i18n.applicationHeader
+                .gridViewOption;
             this.mapView.innerHTML = this.appConfig.i18n.applicationHeader.mapViewOption;
-            this.splitView.innerHTML = this.appConfig.i18n.applicationHeader.gridMapViewOption;
+            this.splitView.innerHTML = this.appConfig.i18n.applicationHeader
+                .gridMapViewOption;
         },
 
         /**
@@ -398,7 +465,8 @@ define([
         * @memberOf widgets/app-header/app-header
         */
         _setSearchPanelText: function () {
-            this.noResultsFound.innerHTML = this.appConfig.i18n.searchPanel.noResultsFound;
+            this.noResultsFound.innerHTML = this.appConfig.i18n.searchPanel
+                .noResultsFound;
         },
 
         /**
@@ -406,16 +474,20 @@ define([
         * @memberOf widgets/app-header/app-header
         */
         _onSettingsIconClick: function () {
-            on(this.settingsDataViewerBtn, "click", lang.hitch(this, function (event) {
-                if (!domClass.contains(this.settingsDataViewerBtn, "esriCTSettingsButtonDisabled")) {
-                    this._toggleSettingsBtnIcon();
-                }
-            }));
-            on(this.settingsDataViewerCaretIcon, "click", lang.hitch(this, function (event) {
-                if (!domClass.contains(this.settingsDataViewerBtn, "esriCTSettingsButtonDisabled")) {
-                    this._toggleSettingsBtnIcon();
-                }
-            }));
+            on(this.settingsDataViewerBtn, "click", lang.hitch(this,
+                function () {
+                    if (!domClass.contains(this.settingsDataViewerBtn,
+                            "esriCTSettingsButtonDisabled")) {
+                        this._toggleSettingsBtnIcon();
+                    }
+                }));
+            on(this.settingsDataViewerCaretIcon, "click", lang.hitch(this,
+                function () {
+                    if (!domClass.contains(this.settingsDataViewerBtn,
+                            "esriCTSettingsButtonDisabled")) {
+                        this._toggleSettingsBtnIcon();
+                    }
+                }));
         },
 
         /**
@@ -424,8 +496,10 @@ define([
         */
         _toggleSettingsBtnIcon: function () {
             this._toggleOptionsVisibility();
-            domClass.replace(this.searchOptions, "esriCTHidden", "esriCTVisible");
-            domClass.replace(this.optionsViewMode, "esriCTHidden", "esriCTVisible");
+            domClass.replace(this.searchOptions, "esriCTHidden",
+                "esriCTVisible");
+            domClass.replace(this.optionsViewMode, "esriCTHidden",
+                "esriCTVisible");
             domClass.remove(this.esriCTLoginOptionsDiv, "esriCTVisible");
             domClass.add(this.esriCTLoginOptionsDiv, "esriCTHidden");
         },
@@ -435,14 +509,19 @@ define([
         * @memberOf widgets/app-header/app-header
         */
         _onSearchIconClick: function () {
-            on(this.searchModeBtn, "click", lang.hitch(this, function (event) {
+            on(this.searchModeBtn, "click", lang.hitch(this, function () {
                 if (query(".esriCTSearch").length > 0) {
                     this._toggleSearchModeVisibility();
-                    domClass.replace(this.esriCTSettingsOptionsItemDiv, "esriCTHidden", "esriCTVisible");
-                    domClass.replace(this.optionsViewMode, "esriCTHidden", "esriCTVisible");
-                    domClass.remove(this.esriCTLoginOptionsDiv, "esriCTVisible");
-                    domClass.add(this.esriCTLoginOptionsDiv, "esriCTHidden");
-                    if (typeof $(".esriCTSearchBox, textarea").placeholder === 'function') {
+                    domClass.replace(this.esriCTSettingsOptionsItemDiv,
+                        "esriCTHidden", "esriCTVisible");
+                    domClass.replace(this.optionsViewMode, "esriCTHidden",
+                        "esriCTVisible");
+                    domClass.remove(this.esriCTLoginOptionsDiv,
+                        "esriCTVisible");
+                    domClass.add(this.esriCTLoginOptionsDiv,
+                        "esriCTHidden");
+                    if (typeof $(".esriCTSearchBox, textarea").placeholder ===
+                        'function') {
                         $(".esriCTSearchBox, textarea").placeholder();
                     }
                 }
@@ -462,10 +541,10 @@ define([
         * @memberOf widgets/app-header/app-header
         */
         _onViewModeClick: function () {
-            on(this.viewModeBtn, "click", lang.hitch(this, function (event) {
+            on(this.viewModeBtn, "click", lang.hitch(this, function () {
                 this._toggleViewModeIcon();
             }));
-            on(this.viewModeCaretIcon, "click", lang.hitch(this, function (event) {
+            on(this.viewModeCaretIcon, "click", lang.hitch(this, function () {
                 this._toggleViewModeIcon();
             }));
         },
@@ -476,8 +555,10 @@ define([
         */
         _toggleViewModeIcon: function () {
             this._toggleViewModeOptionsVisibility();
-            domClass.replace(this.esriCTSettingsOptionsItemDiv, "esriCTHidden", "esriCTVisible");
-            domClass.replace(this.searchOptions, "esriCTHidden", "esriCTVisible");
+            domClass.replace(this.esriCTSettingsOptionsItemDiv,
+                "esriCTHidden", "esriCTVisible");
+            domClass.replace(this.searchOptions, "esriCTHidden",
+                "esriCTVisible");
             domClass.remove(this.esriCTLoginOptionsDiv, "esriCTVisible");
             domClass.add(this.esriCTLoginOptionsDiv, "esriCTHidden");
         },
@@ -488,12 +569,16 @@ define([
         */
         _toggleLoginOptionsVisibility: function () {
             if (this.loggedInUser) {
-                if (domClass.contains(this.esriCTLoginOptionsDiv, "esriCTHidden")) {
+                if (domClass.contains(this.esriCTLoginOptionsDiv,
+                        "esriCTHidden")) {
                     domClass.remove(this.esriCTLoginOptionsDiv, "esriCTHidden");
                     domClass.add(this.esriCTLoginOptionsDiv, "esriCTVisible");
-                    domClass.replace(this.esriCTSettingsOptionsItemDiv, "esriCTHidden", "esriCTVisible");
-                    domClass.replace(this.optionsViewMode, "esriCTHidden", "esriCTVisible");
-                    domClass.replace(this.searchOptions, "esriCTHidden", "esriCTVisible");
+                    domClass.replace(this.esriCTSettingsOptionsItemDiv,
+                        "esriCTHidden", "esriCTVisible");
+                    domClass.replace(this.optionsViewMode, "esriCTHidden",
+                        "esriCTVisible");
+                    domClass.replace(this.searchOptions, "esriCTHidden",
+                        "esriCTVisible");
                 } else {
                     domClass.remove(this.esriCTLoginOptionsDiv, "esriCTVisible");
                     domClass.add(this.esriCTLoginOptionsDiv, "esriCTHidden");
@@ -516,10 +601,13 @@ define([
         * @memberOf widgets/app-header/app-header
         */
         _toggleOptionsVisibility: function () {
-            if (domClass.contains(this.esriCTSettingsOptionsItemDiv, "esriCTHidden")) {
-                domClass.replace(this.esriCTSettingsOptionsItemDiv, "esriCTVisible", "esriCTHidden");
+            if (domClass.contains(this.esriCTSettingsOptionsItemDiv,
+                    "esriCTHidden")) {
+                domClass.replace(this.esriCTSettingsOptionsItemDiv,
+                    "esriCTVisible", "esriCTHidden");
             } else {
-                domClass.replace(this.esriCTSettingsOptionsItemDiv, "esriCTHidden", "esriCTVisible");
+                domClass.replace(this.esriCTSettingsOptionsItemDiv,
+                    "esriCTHidden", "esriCTVisible");
             }
         },
 
@@ -529,9 +617,11 @@ define([
         */
         _toggleSearchModeVisibility: function () {
             if (domClass.contains(this.searchOptions, "esriCTHidden")) {
-                domClass.replace(this.searchOptions, "esriCTVisible", "esriCTHidden");
+                domClass.replace(this.searchOptions, "esriCTVisible",
+                    "esriCTHidden");
             } else {
-                domClass.replace(this.searchOptions, "esriCTHidden", "esriCTVisible");
+                domClass.replace(this.searchOptions, "esriCTHidden",
+                    "esriCTVisible");
             }
         },
 
@@ -541,9 +631,11 @@ define([
         */
         _toggleViewModeOptionsVisibility: function () {
             if (domClass.contains(this.optionsViewMode, "esriCTHidden")) {
-                domClass.replace(this.optionsViewMode, "esriCTVisible", "esriCTHidden");
+                domClass.replace(this.optionsViewMode, "esriCTVisible",
+                    "esriCTHidden");
             } else {
-                domClass.replace(this.optionsViewMode, "esriCTHidden", "esriCTVisible");
+                domClass.replace(this.optionsViewMode, "esriCTHidden",
+                    "esriCTVisible");
             }
         },
 

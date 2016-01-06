@@ -106,21 +106,6 @@
         max-width: 90px !important;
     }
 
-    .esriCTSettingsOptions
-    {
-        right: 50px;
-    }
-
-    .esriCTOptionsViewMode
-    {
-        right: 190px;
-    }
-
-    .esriCTOptionsSearchMode
-    {
-        right: 110px;
-    }
-
     .esriCTHomeIcon
     {
         max-width: 100%;
@@ -150,7 +135,7 @@
         padding: 15px 0px 5px 10px;
     }
 
-    /* End of application header styles */
+    /* End of Application Header Styles */
 
     /* Data viewer */
 
@@ -159,10 +144,10 @@
         height: 99%;
     }
 
-    /* End of data viewer */
+    /* End of Data viewer */
 }
 
-/*  Retina images */
+/* Retina images */
 
 @media only screen and (min-device-width : 319px) and (max-device-width : 1024px) and (-webkit-min-device-pixel-ratio: 2)
 {
@@ -213,4 +198,4 @@
     }
 }
 
-/*  End of retina images */
+/*  End of Retina images */

@@ -1,0 +1,169 @@
+﻿/* Main Layout */
+
+.dj_rtl .esriCTLeftContainer
+{
+    float: right;
+}
+
+.dj_rtl .esriCTRightContainer
+{
+    float: right;
+}
+
+/* End of Main Layout*/
+
+/* Application Header Styles */
+
+.dj_rtl .esriCTheaderLeft
+{
+    float: right;
+}
+
+.dj_rtl .esriCTheaderRight
+{
+    float: right;
+}
+
+.dj_rtl .esriCTMenuTabRight
+{
+    float: left;
+}
+
+.dj_rtl .esriCTHomeIcon
+{
+    float: right;
+}
+
+.dj_rtl .esriCTUserControlContainer
+{
+    float: left;
+}
+
+.dj_rtl .esriCTSettingIconContainer
+{
+    float: left;
+}
+
+.dj_rtl .esriCTSettingsButtonParentContainer
+{
+    float: left;
+}
+
+.dj_rtl .esriCTViewModeParentContainer
+{
+    float: left;
+}
+
+.dj_rtl .esriCTHeaderIcons
+{
+    float: left;
+}
+
+.dj_rtl .esriCTLoginOptionsDiv
+{
+    right: auto;
+    left: 0px;
+}
+
+.dj_rtl .esriCTMenuTabLeft
+{
+    padding: 9px 10px 5px 0px;
+}
+
+.dj_rtl .esriCTheaderLeft
+{
+    border-left: 1px solid #fff;
+    border-right: none;
+}
+
+.dj_rtl .esriCTViewModeCaretIcon
+{
+    padding-right: 9px;
+}
+
+.dj_rtl .esriCTSettingsButtonCaretIconDisabled
+{
+    padding-right: 9px;
+}
+
+.dj_rtl .esriCTSettingsButtonCaretIcon
+{
+    padding-right: 9px;
+}
+
+/* End of Application Header Styles */
+
+/* Common style */
+
+.dj_rtl .esriCTBorderRight
+{
+    border-left: 1px solid #fff;
+    border-right: none;
+}
+
+/* End of Common style */
+
+/* MapViewer */
+
+.dj_rtl .esriCTLocationButton
+{
+    left: 20px;
+    right: auto;
+}
+
+/* End of MapViewer */
+
+/* Web Map List */
+
+.dj_rtl .esriCTInfoImgRight
+{
+    float: left;
+}
+
+.dj_rtl .esriCTMultiLineEllipsisdiv
+{
+    margin-left: auto;
+    margin-right: 10px;
+}
+
+/* End of Web Map List */
+
+/* ESRI API Overridden Styles */
+
+.dj_rtl .esriSimpleSliderTL
+{
+    top: 10px;
+    right: auto !important;
+    left: 20px !important;
+}
+
+.dj_rtl .claro .dijitContentPane
+{
+    padding: 8px 8px 0px 0px;
+}
+
+/* End of ESRI API Overridden Styles */
+
+/* Checkbox styling */
+
+.dj_rtl .esriCTCheckBoxParentContainer
+{
+    margin: 0px -5px 18px !important;
+}
+
+/* End of Checkbox styling */
+
+/* Data viewer */
+
+.dj_rtl .esriCTNoFeature
+{
+    padding-left: 0px;
+    padding-right: 35px;
+}
+
+.dj_rtl .esriCTDataViewerBody table.dataTable
+{
+    margin: 0px;
+}
+
+/* End of Data viewer */

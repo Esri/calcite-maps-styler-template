@@ -29,7 +29,7 @@
     height: 93% !important;
 }
 
-/* End of data viewer */
+/* End of Data viewer */
 
 /* Header Icons */
 
@@ -63,9 +63,9 @@
     background-image: url('../images/settings-disable-24.png') !important;
 }
 
-/* Header Icons */
+/* End of Header Icons */
 
-/* WebmapList */
+/* Webmap List */
 
 .esriCTRightArrow
 {
@@ -77,7 +77,7 @@
     background-image: url('../images/info-24.png');
 }
 
-/* WebmapList*/
+/* End of Webmap List */
 
 /* Application Header Styles */
 
@@ -86,4 +86,4 @@
     max-width: 330px;
 }
 
-/* End of application header styles */
+/* End of Application Header Styles */

@@ -1,5 +1,5 @@
 /*global define */
-/*jslint sloppy:true */
+/*jslint browser:true,sloppy:true,nomen:true,unparam:true,plusplus:true,indent:4 */
 /*
  | Copyright 2014 Esri
  |
@@ -22,6 +22,12 @@ define({
     "queryForGroupInfo": true,
     // When true, the template will query arcgis.com for the items contained within the group
     "queryForGroupItems": false,
+    // Use a local hosted webmap instead of a webmap on ArcGIS or portal.
+    "useLocalWebmap": false,
+    // support sending credentials with AJAX requests to specific domains. This will allow editing of feature services secured with web-tier authentication
+    "webTierSecurity": true,
+    // Webmap file to use for the local webmap
+    "localWebmapFile": "config/demo-map",
     //When true the template will query arcgis.com for default settings for helper services, units etc. If you
     //want to use custom settings for units or any of the helper services set queryForOrg to false then enter
     //default values for any items you need using the helper services and units properties.
@@ -33,7 +39,8 @@ define({
     "queryForLocale": true,
     // These are the options specified for querying items within the group. Modify these to get more items. You can also call the public template.queryGroupItems() method with these options as a parameter.
     "groupParams": {
-        "q": "group:\"${groupid}\" AND type:\"Web Map\" AND -type:\"Web Mapping Application\" AND -type:\"Code Attachment\"",
+        "q": "group:\"${groupid}\" AND type:\"Web Map\" AND " +
+            "-type:\"Web Mapping Application\" AND -type:\"Code Attachment\"",
         "sortField": "modified",
         "sortOrder": "desc",
         "num": 9,
@@ -43,8 +50,12 @@ define({
     //if you want users to be able to specify lat/lon coordinates that define the map's center or
     //specify an alternate basemap via a url parameter.
     "urlItems": [
+        "embed",
+        "center",
+        "extent",
+        "level",
         "theme" // example param. ?theme=<my theme>
     ],
-    // For esri hosted envoronments only. Will automatically create a sharingurl and proxyurl for the application.
-    esriEnvironment: true
+    // Most users will not need to modify this value. For esri hosting environments only. Will automatically create a "sharinghost" and "proxyurl" for the application. Only set this is to true if the app is going to be stored on Esri's hosting servers. If you are using your own custom hosted portal, set the "sharinghost" in defaults.js instead of setting this to true.
+    esriEnvironment: false
 });

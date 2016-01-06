@@ -64,12 +64,14 @@ define([
         */
         postCreate: function () {
             this.inherited(arguments);
-            domAttr.set(this.locationButton, "title", this.appConfig.i18n.mapViewer.locationBtnToolTip);
+            domAttr.set(this.locationButton, "title", this.appConfig.i18n.mapViewer
+                .locationBtnToolTip);
             // to show map panel & resize map
             on(this.locationButton, "click", lang.hitch(this, function () {
                 this.appUtils.showLoadingIndicator();
                 this.switchViewer("location");
                 this.resizeMap();
+                this.appUtils.hideLoadingIndicator();
             }));
         },
 
@@ -95,9 +97,12 @@ define([
         * @name widgets/mapviewer/mapviewer
         */
         switchViewer: function (view) {
-            if (domStyle.get(view === "location" ? this.mapDiv : this.detailsDiv, "display") === "none") {
-                domStyle.set(view === "location" ? this.detailsDiv : this.mapDiv, "display", "none");
-                domStyle.set(view === "location" ? this.mapDiv : this.detailsDiv, "display", "block");
+            if (domStyle.get(view === "location" ? this.mapDiv : this.detailsDiv,
+                    "display") === "none") {
+                domStyle.set(view === "location" ? this.detailsDiv : this.mapDiv,
+                    "display", "none");
+                domStyle.set(view === "location" ? this.mapDiv : this.detailsDiv,
+                    "display", "block");
             }
         },
 
@@ -109,18 +114,28 @@ define([
             var incrementButton, detailsDiv, decrementButton;
             domConstruct.destroy("detailsBtnDiv");
             // details tab button that needs to be added
-            detailsDiv = domConstruct.create("div", { "class": "esriCTBGColor esriCTDetailsBtnDisabled", "id": "detailsBtnDiv", "title": this.appConfig.i18n.mapViewer.detailsBtnToolTip });
-            incrementButton = query(".esriSimpleSliderIncrementButton", dom.byId("mapDiv"));
+            detailsDiv = domConstruct.create("div", {
+                "class": "esriCTBGColor esriCTDetailsBtnDisabled",
+                "id": "detailsBtnDiv",
+                "title": this.appConfig.i18n.mapViewer.detailsBtnToolTip
+            });
+            incrementButton = query(".esriSimpleSliderIncrementButton", dom
+                .byId("mapDiv"));
             domConstruct.empty(incrementButton[0]);
-            domClass.add(incrementButton[0], "esriCTIncrementButton esriCTPointerCursor");
-            decrementButton = query(".esriSimpleSliderDecrementButton", dom.byId("mapDiv"));
+            domClass.add(incrementButton[0],
+                "esriCTIncrementButton esriCTPointerCursor");
+            decrementButton = query(".esriSimpleSliderDecrementButton", dom
+                .byId("mapDiv"));
             domConstruct.empty(decrementButton[0]);
-            domClass.add(decrementButton[0], "esriCTDecrementButton esriCTPointerCursor");
+            domClass.add(decrementButton[0],
+                "esriCTDecrementButton esriCTPointerCursor");
             if (incrementButton.length > 0) {
-                domAttr.set(incrementButton[0], "title", this.appConfig.i18n.mapViewer.zoomInToolTip);
+                domAttr.set(incrementButton[0], "title", this.appConfig.i18n.mapViewer
+                    .zoomInToolTip);
             }
             if (decrementButton.length > 0) {
-                domAttr.set(decrementButton[0], "title", this.appConfig.i18n.mapViewer.zoomOutToolTip);
+                domAttr.set(decrementButton[0], "title", this.appConfig.i18n.mapViewer
+                    .zoomOutToolTip);
             }
             // to place details button on top of zoom in button of map
             if (dom.byId("mapDiv")) {

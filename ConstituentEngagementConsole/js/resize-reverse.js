@@ -33,7 +33,8 @@ $(window).load(function () {
                     });
                 };
 
-            if (typeof (o.alsoResizeReverse) === "object" && !o.alsoResizeReverse.parentNode) {
+            if (typeof (o.alsoResizeReverse) === "object" && !o.alsoResizeReverse
+                .parentNode) {
                 if (o.alsoResizeReverse.length) {
                     o.alsoResizeReverse = o.alsoResizeReverse[0];
                     _store(o.alsoResizeReverse);
@@ -62,12 +63,17 @@ $(window).load(function () {
                 _alsoResizeReverse = function (exp, c) {
                     $(exp).each(function () {
                         var el = $(this),
-                            start = $(this).data("ui-resizable-alsoresize-reverse"),
+                            start = $(this).data(
+                                "ui-resizable-alsoresize-reverse"),
                             style = {},
-                            css = c && c.length ? c : el.parents(ui.originalElement[0]).length ? ["width", "height", "top", "left"] : ["width", "height", "top", "left"];
+                            css = c && c.length ? c : el.parents(ui.originalElement[
+                                0]).length ? ["width", "height", "top", "left"] : [
+                                "width", "height", "top", "left"
+                            ];
 
                         $.each(css, function (i, prop) {
-                            var sum = (start[prop] || 0) - (delta[prop] || 0);
+                            var sum = (start[prop] || 0) - (delta[prop] ||
+                                0);
                             if (sum && sum >= 0) {
                                 style[prop] = sum || null;
                             }
@@ -77,7 +83,8 @@ $(window).load(function () {
                     });
                 };
 
-            if (typeof (o.alsoResizeReverse) === "object" && !o.alsoResizeReverse.nodeType) {
+            if (typeof (o.alsoResizeReverse) === "object" && !o.alsoResizeReverse
+                .nodeType) {
                 $.each(o.alsoResizeReverse, function (exp, c) {
                     _alsoResizeReverse(exp, c);
                 });

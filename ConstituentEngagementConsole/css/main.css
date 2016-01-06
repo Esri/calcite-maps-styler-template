@@ -29,7 +29,7 @@
     /*Example of a rule that will be applied if the app is viewed in a browser with a RTL locale like Hebrew or Arabic.*/
 }
 
-/* esri API Overridden Styles */
+/* ESRI API Overridden Styles */
 
 .claro .dijitContentPane
 {
@@ -89,9 +89,9 @@ th
     padding-bottom: 10px;
 }
 
-/* esri API End of Overridden Styles */
+/* End of ESRI API Overridden Styles */
 
-/* Main Layout*/
+/* Main Layout */
 
 .esriCTNoWebMapParentDiv
 {
@@ -132,6 +132,11 @@ th
     overflow: hidden;
 }
 
+.esriCTRightContainerFullWidth
+{
+    width: 100% !important;
+}
+
 .esriCTUpperContainer
 {
     width: 100%;
@@ -148,7 +153,6 @@ th
 {
     width: 100%;
     height: 60%;
-    overflow: auto;
 }
 
 .esriCTHeaderContainer
@@ -161,7 +165,7 @@ th
     display: none !important;
 }
 
-/* End of Main Layout*/
+/* End of Main Layout */
 
 /* Loading Indicator */
 
@@ -267,7 +271,7 @@ th
     background-size: 32px 31px;
 }
 
-/* End of MapViewer*/
+/* End of MapViewer */
 
 /* Web Map List */
 
@@ -511,7 +515,7 @@ th
 
 .esriCTNoFeature
 {
-    padding-left: 5px;
+    padding-left: 35px;
     padding-top: 10px;
     cursor: default;
 }
@@ -678,6 +682,9 @@ table.dataTable tbody td
 {
     padding-top: 15px;
     background: #fff;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    height: 100%;
 }
 
 .esriCTAttachmentsContainer
@@ -696,6 +703,13 @@ table.dataTable tbody td
     padding: 5px 0 10px 0;
     margin: 0 10px;
     border-bottom: 1px solid #ccc;
+}
+
+.esriCTCommentsPopup
+{
+    padding: 5px 0 10px 0;
+    margin: 0 10px;
+    border-bottom: none;
 }
 
 .ui-resizable-s
@@ -752,7 +766,7 @@ table.dataTable thead .esriCTDataViewerTableHeaderCheckbox
     display: none;
 }
 
-/* End of data viewer */
+/* End of Data viewer */
 
 /* Application Header Styles */
 
@@ -825,21 +839,19 @@ table.dataTable thead .esriCTDataViewerTableHeaderCheckbox
 .esriCTOptionsSearchMode
 {
     padding: 9px 5px 5px 6px;
-    right: 25px;
     cursor: default;
 }
 
 .esriCTOptionsViewMode
 {
-    right: 126px;
     min-width: 100px;
 }
 
 .esriCTSettingsOptions
 {
     display: none;
-    right: 38px;
 }
+
 .esriCTApplicationHeader
 {
     width: 100%;
@@ -1068,7 +1080,7 @@ table.dataTable thead .esriCTDataViewerTableHeaderCheckbox
     float: right;
 }
 
-/* End of application header styles */
+/* End of Application Header Styles */
 
 /* Sign out */
 
@@ -1086,7 +1098,7 @@ table.dataTable thead .esriCTDataViewerTableHeaderCheckbox
     width: 100%;
 }
 
-/* Sign out */
+/* End of Sign out */
 
 /* Checkbox styling */
 
@@ -1132,6 +1144,7 @@ table.dataTable thead .esriCTDataViewerTableHeaderCheckbox
     font-size: 14px;
     color: #09ad7e;
     transition: all .2s;
+    direction: ltr;
 }
 
 /* checked mark aspect changes */
@@ -1153,4 +1166,4 @@ label:hover:before
     border: 1px solid #4778d9 !important;
 }
 
-/* Checkbox styling */
+/* End of Checkbox styling */

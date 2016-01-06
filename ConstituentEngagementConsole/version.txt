@@ -1,7 +1,0 @@
-git repository crowdsource-manager, branch
-develop
-commit 5ebbd5e06400ff22069d3d6a3aeded7448fa9f5d
-Author: MikeTschudi <mtschudi@esri.com>
-Date:   Mon Dec 14 10:38:19 2015 -0800
-
-    Updated language

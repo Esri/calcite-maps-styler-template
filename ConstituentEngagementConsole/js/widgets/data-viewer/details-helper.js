@@ -28,7 +28,9 @@ define([
     "dojo/dom-attr",
     "dojo/dom-style",
     "esri/tasks/RelationshipQuery",
-    "dijit/layout/ContentPane"
+    "dijit/layout/ContentPane",
+    "dojo/_base/array",
+    "esri/dijit/PopupTemplate"
 ], function (
     declare,
     dom,
@@ -42,11 +44,14 @@ define([
     domAttr,
     domStyle,
     RelationshipQuery,
-    ContentPane
+    ContentPane,
+    array,
+    PopupTemplate
 ) {
     return declare(null, {
         _contentPane: null, // stores object of content pane
         _commentsTable: null, // stores object of comments table
+        _commentPopupTable: null, // stores object of comments popup table
 
         /**
         * This function is called when widget is constructed
@@ -69,7 +74,8 @@ define([
                 this.removeControlsFromPreviousRow();
                 this.displayDetailsTab();
                 this._createContentPane();
-                this._showFeatureDetails(this.activeRowGraphicsLayer.graphics[0]);
+                this._showFeatureDetails(this.activeRowGraphicsLayer.graphics[
+                    0]);
             }
         },
 
@@ -85,7 +91,9 @@ define([
             this._contentPane = null;
             parentDiv = dom.byId("detailsContentDiv");
             parentDiv.innerHTML = "";
-            contentPaneDiv = domConstruct.create("div", { "class": "esriCTPopupContent" }, parentDiv);
+            contentPaneDiv = domConstruct.create("div", {
+                "class": "esriCTPopupContent"
+            }, parentDiv);
             this._contentPane = new ContentPane({}, contentPaneDiv);
             this._contentPane.startup();
         },
@@ -98,13 +106,18 @@ define([
             var parentDiv, i;
             parentDiv = dom.byId("detailsContentDiv");
             for (i = 0; i < this.selectedOperationalLayer.graphics.length; i++) {
-                if (this.selectedOperationalLayer.graphics[i].attributes[this.selectedOperationalLayer.objectIdField] === this.activeRowGraphicsLayer.graphics[0].attributes[this.selectedOperationalLayer.objectIdField]) {
-                    this._contentPane.set("content", this.selectedOperationalLayer.graphics[i].getContent());
+                if (this.selectedOperationalLayer.graphics[i].attributes[this
+                        .selectedOperationalLayer.objectIdField] === this.activeRowGraphicsLayer
+                    .graphics[0].attributes[this.selectedOperationalLayer.objectIdField]
+                ) {
+                    this._contentPane.set("content", this.selectedOperationalLayer
+                        .graphics[i].getContent());
                     break;
                 }
             }
             // if layer has attachments & also pop-up has info has attachment property as true
-            if ((this.selectedOperationalLayer.hasAttachments) && (this.popupInfo.showAttachments)) {
+            if ((this.selectedOperationalLayer.hasAttachments) && (this.popupInfo
+                    .showAttachments)) {
                 this._showAttachments(graphic, parentDiv);
             } else {
                 this._showComments(graphic, parentDiv);
@@ -117,33 +130,48 @@ define([
         * @memberOf widgets/data-viewer/details-helper
         */
         _showAttachments: function (graphic, parentDiv) {
-            var objectID, fieldContent, imageDiv, imageContent, imagePath, i, attachmentContainer;
+            var objectID, fieldContent, imageDiv, imageContent, imagePath,
+                i, attachmentContainer;
             objectID = graphic.attributes[this.selectedOperationalLayer.objectIdField];
-            this.selectedOperationalLayer.queryAttachmentInfos(objectID, lang.hitch(this, function (infos) {
-                // if attachments found
-                if (infos && infos.length > 0) {
-                    attachmentContainer = domConstruct.create("div", { "class": "esriCTAttachmentsContainer" }, parentDiv);
-                    domConstruct.create("div", { "innerHTML": this.appConfig.i18n.dataviewer.photoAttachmentHeader, "class": "esriCTDetailsFieldHeader" }, attachmentContainer);
-                    fieldContent = domConstruct.create("div", { "class": "esriCTDetailsFieldValue row" }, attachmentContainer);
-                    // display all attached images in thumbnails
-                    for (i = 0; i < infos.length; i++) {
-                        imagePath = dojoConfig.baseURL + this.appConfig.noAttachmentIcon;
-                        if (infos[i].contentType.indexOf("image") > -1) {
-                            imagePath = infos[i].url;
+            this.selectedOperationalLayer.queryAttachmentInfos(objectID,
+                lang.hitch(this, function (infos) {
+                    // if attachments found
+                    if (infos && infos.length > 0) {
+                        attachmentContainer = domConstruct.create("div", {
+                            "class": "esriCTAttachmentsContainer"
+                        }, parentDiv);
+                        domConstruct.create("div", {
+                            "innerHTML": this.appConfig.i18n.dataviewer.photoAttachmentHeader,
+                            "class": "esriCTDetailsFieldHeader"
+                        }, attachmentContainer);
+                        fieldContent = domConstruct.create("div", {
+                            "class": "esriCTDetailsFieldValue row"
+                        }, attachmentContainer);
+                        // display all attached images in thumbnails
+                        for (i = 0; i < infos.length; i++) {
+                            imagePath = dojoConfig.baseURL + this.appConfig.noAttachmentIcon;
+                            if (infos[i].contentType.indexOf("image") > -1) {
+                                imagePath = infos[i].url;
+                            }
+                            imageContent = domConstruct.create("span", {
+                                "class": "esriCTDetailsTabImgSpan col"
+                            }, fieldContent);
+                            domClass.add(imageContent, "esriCTImageLoader");
+                            imageDiv = domConstruct.create("img", {
+                                "alt": infos[i].url,
+                                "class": "esriCTDetailsTabImg esriCTPointerCursor",
+                                "src": imagePath
+                            }, imageContent);
+                            // Hide loader Image after image loaded
+                            on(imageDiv, "load", lang.hitch(this, this._onImageLoad));
+                            // Show image in new tab on click of the image thumbnail
+                            on(imageDiv, "click", lang.hitch(this, this._displayImageAttachments));
                         }
-                        imageContent = domConstruct.create("span", { "class": "esriCTDetailsTabImgSpan col" }, fieldContent);
-                        domClass.add(imageContent, "esriCTImageLoader");
-                        imageDiv = domConstruct.create("img", { "alt": infos[i].url, "class": "esriCTDetailsTabImg esriCTPointerCursor", "src": imagePath }, imageContent);
-                        // Hide loader Image after image loaded
-                        on(imageDiv, "load", lang.hitch(this, this._onImageLoad));
-                        // Show image in new tab on click of the image thumbnail
-                        on(imageDiv, "click", lang.hitch(this, this._displayImageAttachments));
                     }
-                }
-                this._showComments(graphic, parentDiv);
-            }), lang.hitch(this, function (err) {
-                this.appUtils.hideLoadingIndicator();
-            }));
+                    this._showComments(graphic, parentDiv);
+                }), lang.hitch(this, function (err) {
+                    this.appUtils.hideLoadingIndicator();
+                }));
         },
 
         /**
@@ -155,18 +183,33 @@ define([
         _showComments: function (graphic, parentDiv) {
             var relatedTableURL;
             // if comment field is present in config file and the layer contains related table, fetch the first related table URL
-            if (this.appConfig.commentField && this.selectedOperationalLayer.relationships.length > 0) {
+            if (this.selectedOperationalLayer.relationships.length > 0) {
                 // Construct the related table URL form operational layer URL and the related table id
                 // We are considering only first related table although the layer has many related table.
                 // Hence, we are fetching relatedTableId from relationships[0] ie:"operationalLayer.relationships[0].relatedTableId"
 
                 // Create Comments table if not exist from the first related table of the layer
                 if (!this._commentsTable) {
-                    relatedTableURL = this.selectedOperationalLayer.url.substr(0, this.selectedOperationalLayer.url.lastIndexOf('/') + 1) + this.selectedOperationalLayer.relationships[0].relatedTableId;
+                    relatedTableURL = this.selectedOperationalLayer.url.substr(
+                        0, this.selectedOperationalLayer.url.lastIndexOf('/') +
+                        1) + this.selectedOperationalLayer.relationships[0].relatedTableId;
                     this._commentsTable = new FeatureLayer(relatedTableURL);
+                    if (this.itemInfo && this.itemInfo.itemData && this.itemInfo
+                        .itemData.tables) {
+                        array.some(this.itemInfo.itemData.tables, lang.hitch(this,
+                            function (currentTable) {
+                                if (this._commentsTable && this._commentsTable.url) {
+                                    if (currentTable.url === this._commentsTable.url &&
+                                        currentTable.popupInfo) {
+                                        this._commentPopupTable = currentTable;
+                                    }
+                                }
+                            }));
+                    }
                 }
                 if (!this._commentsTable.loaded) {
-                    on(this._commentsTable, "load", lang.hitch(this, function (evt) {
+                    on(this._commentsTable, "load", lang.hitch(this, function (
+                        evt) {
                         this._loadCommentsIfExist(graphic, parentDiv);
                     }));
                 } else {
@@ -182,7 +225,10 @@ define([
         * @memberOf widgets/data-viewer/details-helper
         */
         _loadCommentsIfExist: function (graphic, parentDiv) {
-            if (this._hasCommentsField()) {
+            if ((this.appConfig.usePopupConfigurationForComment) && (this._commentPopupTable)) {
+                this._fetchComments(graphic, parentDiv);
+            }
+            if ((!this.appConfig.usePopupConfigurationForComment) && (this._hasCommentsField())) {
                 this._fetchComments(graphic, parentDiv);
             } else {
                 this.appUtils.hideLoadingIndicator();
@@ -196,11 +242,13 @@ define([
         _hasCommentsField: function () {
             var k, hasCommentField;
             hasCommentField = false;
-            // if the related table contains comment field set commentIconFlag to true
-            for (k = 0; k < this._commentsTable.fields.length; k++) {
-                if (this._commentsTable.fields[k].name === this.appConfig.commentField) {
-                    hasCommentField = true;
-                    break;
+            if (this.appConfig.commentField) {
+                // if the related table contains comment field set commentIconFlag to true
+                for (k = 0; k < this._commentsTable.fields.length; k++) {
+                    if (this._commentsTable.fields[k].name === this.appConfig.commentField) {
+                        hasCommentField = true;
+                        break;
+                    }
                 }
             }
             return hasCommentField;
@@ -215,36 +263,72 @@ define([
             currentID = graphic.attributes[this.selectedOperationalLayer.objectIdField];
             relatedQuery = new RelationshipQuery();
             relatedQuery.outFields = ["*"];
-            relatedQuery.relationshipId = this.selectedOperationalLayer.relationships[0].id;
+            relatedQuery.relationshipId = this.selectedOperationalLayer.relationships[
+                0].id;
             relatedQuery.objectIds = [currentID];
             // Query for related features and showing comments
-            this.selectedOperationalLayer.queryRelatedFeatures(relatedQuery, lang.hitch(this, function (relatedRecords) {
-                var commentsParentDiv, pThis, commentsContainerDiv;
-                pThis = this;
-                commentsContainerDiv = domConstruct.create("div", { "class": "esriCTcommentsContainerDiv" }, parentDiv);
-                commentsParentDiv = domConstruct.create("div", { "class": "esriCTcommentsParentDiv" }, commentsContainerDiv);
-                domConstruct.create("div", { "innerHTML": this.appConfig.i18n.dataviewer.commentsText, "class": "esriCTDetailsFieldHeader" }, commentsParentDiv);
-                function sortComments(a, b) {
-                    if (a.attributes[pThis._commentsTable.objectIdField] > b.attributes[pThis._commentsTable.objectIdField]) {
-                        return -1;  // order a before b
+            this.selectedOperationalLayer.queryRelatedFeatures(relatedQuery,
+                lang.hitch(this, function (relatedRecords) {
+                    var commentsParentDiv, pThis, commentsContainerDiv, commentContentPaneContainer, commentContentPane;
+                    pThis = this;
+                    commentsContainerDiv = domConstruct.create("div", {
+                        "class": "esriCTcommentsContainerDiv"
+                    }, parentDiv);
+                    commentsParentDiv = domConstruct.create("div", {
+                        "class": "esriCTcommentsParentDiv"
+                    }, commentsContainerDiv);
+                    domConstruct.create("div", {
+                        "innerHTML": this.appConfig.i18n.dataviewer.commentsText,
+                        "class": "esriCTDetailsFieldHeader"
+                    }, commentsParentDiv);
+
+                    function sortComments(a, b) {
+                        if (a.attributes[pThis._commentsTable.objectIdField] >
+                            b.attributes[pThis._commentsTable.objectIdField]) {
+                            return -1; // order a before b
+                        }
+                        if (a.attributes[pThis._commentsTable.objectIdField] <
+                            b.attributes[pThis._commentsTable.objectIdField]) {
+                            return 1; // order b before a
+                        }
+                        return 0; // a & b have same date, so relative order doesn't matter
                     }
-                    if (a.attributes[pThis._commentsTable.objectIdField] < b.attributes[pThis._commentsTable.objectIdField]) {
-                        return 1;  // order b before a
+                    if (relatedRecords[currentID] && relatedRecords[
+                            currentID].features && relatedRecords[currentID].features
+                        .length > 0) {
+                        relatedRecords[currentID].features.sort(sortComments);
+                        for (i = 0; i < relatedRecords[currentID].features.length; i++) {
+                            if (this.appConfig.usePopupConfigurationForComment) {
+                                relatedRecords[currentID].features[i].setInfoTemplate(
+                                    new PopupTemplate(this._commentPopupTable.popupInfo)
+                                );
+                                commentContentPaneContainer = domConstruct.create(
+                                    "div", {
+                                        "class": "esriCTCommentsPopup"
+                                    }, commentsParentDiv);
+                                commentContentPane = new ContentPane({},
+                                    commentContentPaneContainer);
+                                commentContentPane.startup();
+                                commentContentPane.set('content', relatedRecords[
+                                    currentID].features[i].getContent());
+                            } else {
+                                domConstruct.create("div", {
+                                    "class": "esriCTDetailsFieldValue",
+                                    "innerHTML": relatedRecords[currentID].features[
+                                        i].attributes[this.appConfig.commentField]
+                                }, commentsParentDiv);
+                            }
+                        }
+                    } else {
+                        domConstruct.create("div", {
+                            "class": "esriCTDetailsFieldValue esriCTNoCommentsAvailable",
+                            "innerHTML": this.appConfig.i18n.dataviewer.noCommentsAvailable
+                        }, commentsParentDiv);
                     }
-                    return 0;  // a & b have same date, so relative order doesn't matter
-                }
-                if (relatedRecords[currentID] && relatedRecords[currentID].features && relatedRecords[currentID].features.length > 0) {
-                    relatedRecords[currentID].features.sort(sortComments);
-                    for (i = 0; i < relatedRecords[currentID].features.length; i++) {
-                        domConstruct.create("div", { "class": "esriCTDetailsFieldValue", "innerHTML": relatedRecords[currentID].features[i].attributes[this.appConfig.commentField] }, commentsParentDiv);
-                    }
-                } else {
-                    domConstruct.create("div", { "class": "esriCTDetailsFieldValue esriCTNoCommentsAvailable", "innerHTML": this.appConfig.i18n.dataviewer.noCommentsAvailable }, commentsParentDiv);
-                }
-                this.appUtils.hideLoadingIndicator();
-            }), lang.hitch(this, function (err) {
-                this.appUtils.hideLoadingIndicator();
-            }));
+                    this.appUtils.hideLoadingIndicator();
+                }), lang.hitch(this, function (err) {
+                    this.appUtils.hideLoadingIndicator();
+                }));
         },
 
         /**
@@ -274,15 +358,20 @@ define([
         * @memberOf widgets/data-viewer/details-helper
         */
         _setImageDimensions: function (imgModule, isOnLoad) {
-            var aspectRatio, newWidth, newHeight, imgWidth, imgContainer = imgModule.parentElement;
+            var aspectRatio, newWidth, newHeight, imgWidth, imgContainer =
+                imgModule.parentElement;
             if (isOnLoad && imgModule && imgModule.offsetHeight > 0) {
                 //set original dimensions of image as it max dimensions.
                 domAttr.set(imgModule, "originalWidth", imgModule.offsetWidth);
-                domStyle.set(imgModule, "maxHeight", imgModule.offsetHeight + 'px');
-                domStyle.set(imgModule, "maxWidth", imgModule.offsetWidth + 'px');
+                domStyle.set(imgModule, "maxHeight", imgModule.offsetHeight +
+                    'px');
+                domStyle.set(imgModule, "maxWidth", imgModule.offsetWidth +
+                    'px');
             }
             imgWidth = parseFloat(domAttr.get(imgModule, "originalWidth"));
-            if ((imgContainer.offsetWidth > 0) && (imgContainer.offsetWidth < imgModule.offsetWidth || imgWidth > imgContainer.offsetWidth)) {
+            if ((imgContainer.offsetWidth > 0) && (imgContainer.offsetWidth <
+                    imgModule.offsetWidth || imgWidth > imgContainer.offsetWidth
+                )) {
                 //change dimensions of image if it is larger/smaller than its parent container.
                 //calculate aspect ratio of image.
                 aspectRatio = imgModule.offsetWidth / imgModule.offsetHeight;
