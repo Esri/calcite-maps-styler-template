@@ -442,7 +442,7 @@ a {
 .no-title #gallery_container {
   top: 65px;
 }
-.no-title.no-zoom #gallery_container {
+.no-title.no-zoom #gallery_container, .no-title.no-home.no-zoom #gallery_container {
   top: 10px;
 }
 .no-title.no-home #gallery_container {
