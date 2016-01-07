@@ -319,10 +319,11 @@ declare, lang, query, registry, on, string, locale, domConstruct, domStyle, arra
             //Add the time slider the map is time aware or there are time aware layers
             var timeProperties = null,
                 timeExtent = null;
-
             if (this.config.response.itemInfo.itemData.widgets && this.config.response.itemInfo.itemData.widgets.timeSlider) {
                 timeProperties = this.config.response.itemInfo.itemData.widgets.timeSlider.properties;
-                timeExtent = new TimeExtent(new Date(timeProperties.startTime), new Date(timeProperties.endTime));
+                if(timeProperties.endTime > timeProperties.startTime){
+                    timeExtent = new TimeExtent(new Date(timeProperties.startTime), new Date(timeProperties.endTime));
+                }
             }
             if (timeProperties && timeExtent) {
 
@@ -492,11 +493,12 @@ declare, lang, query, registry, on, string, locale, domConstruct, domStyle, arra
             var endDatePattern = null;
             var startTimePattern = null;
             var endTimePattern = null;
+            var start = null , end = null;
 
-
-            var start = timeExtent.startTime,
-                end = timeExtent.endTime;
-
+            if(timeExtent){
+                start = timeExtent.startTime || null;
+                end = timeExtent.endTime || null;
+            }
             if (this.config.datetimeformat) {
                 startDatePattern = this.config.datetimeformat;
                 endDatePattern = this.config.datetimeformat;
