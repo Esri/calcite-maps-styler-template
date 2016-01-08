@@ -1,4 +1,5 @@
-define(['dojo/i18n!./nls/app.js?v=' + app.cfg.version, 'sign-in/PortalHelper', 'create-app/UserAgentHelper'], function(createStoryi18n, PortalHelper, UserAgentHelper) {
+define(['dojo/i18n!./nls/app.js?v=' + app.cfg.version, 'sign-in/PortalHelper', 'create-app/UserAgentHelper', 'lib-build/hbars!./templates/signInCreateDialog'],
+function(createStoryi18n, PortalHelper, UserAgentHelper, signInCreateDialog) {
   'use strict';
 
   function getCookie(c_name)
@@ -75,8 +76,7 @@ define(['dojo/i18n!./nls/app.js?v=' + app.cfg.version, 'sign-in/PortalHelper', '
         baseUrl = PortalHelper.getBaseUrl(cookie),
         appName = '',
         url = '',
-        continueString = 'Continue to {{APP_NAME}} builder',
-        welcomeString = 'Welcome!';
+        continueString = '';
 
     url = baseUrl + '/apps/' + app + '/?fromScratch' + layoutOpt;
 
@@ -101,22 +101,14 @@ define(['dojo/i18n!./nls/app.js?v=' + app.cfg.version, 'sign-in/PortalHelper', '
       }
     }
 
-    continueString = continueString.replace(/{{APP_NAME}}/, appName);
+    continueString = createStoryi18n.signInBuildDialog.continue.replace(/{{APP_NAME}}/, appName);
 
-
-    var modalString = '<div id="continue-build-container" class="custom-modal-container">' +
-          '<div id="continue-build-wrapper" class="custom-modal-wrapper">' +
-            '<div class="dialog-header">' +
-              '<a id="continue-build-close" class="icon-close cancel-button" href="#"></a>' +
-            '</div>' +
-            '<div class="dialog-body">' +
-              '<h4 id="build-app-confirm-name">' + welcomeString + '</h4>' +
-              '<button id="build-app-confirmation" class="btn modal-dismiss">' + continueString + '</button>' +
-            '</div>' +
-          '</div>' +
-        '</div>';
-
-    $('body').append(modalString);
+    $('body').append(signInCreateDialog(
+      {
+          welcome: createStoryi18n.signInBuildDialog.welcome,
+          continue: continueString
+      }
+    ));
 
     $('#continue-build-container').css('display', 'block');
     $('#continue-build-wrapper').css('display', 'block');

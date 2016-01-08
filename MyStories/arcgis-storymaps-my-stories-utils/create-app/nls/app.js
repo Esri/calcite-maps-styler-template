@@ -11,7 +11,7 @@ define({
 			title: "Create Story Not Available",
 			subtitle: "Sorry, this is not supported in a small display. Please open in a larger display or device.",
 			close: "Close"
-		},		
+		},
 		answerText: {
 			seriesOfPlaces: "A set of places",
 			mapsNarrative: "A narrative with maps",
@@ -46,6 +46,10 @@ define({
 			swipe: "Compare two maps or map layers with a slider",
 			spyglass: "Compare two maps or map layers with a spyglass",
 			basic: "Think minimalistic, great for one map"
+		},
+		signInBuildDialog: {
+			welcome: "Welcome!",
+			continue: "Continue to {{APP_NAME}} builder"
 		}
 	}),
 	"ar": 1,
@@ -75,6 +79,6 @@ define({
 	"tr": 1,
 	"vi": 1,
 	"zh-cn": 1,
-	"zh-hk": 1, 
-	"zh-tw": 1 	
+	"zh-hk": 1,
+	"zh-tw": 1
 });

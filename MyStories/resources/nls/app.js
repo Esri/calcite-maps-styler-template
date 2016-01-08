@@ -173,7 +173,7 @@ define({
 				chosenSubjectAlt: "A {{SUBJECT}} and some tags",
 				storyMapTopicSubject: "subject",
 				sharedPublicly: "Shared publicly",
-				noBrokenContent: "No broken content",
+				noBrokenContent: "No issues",
 				nominateToGallery: "Nominate to Gallery",
 				comingSoon: "Coming soon!",
 				submitted: "Submitted",
@@ -498,6 +498,6 @@ define({
 	"tr": 1,
 	"vi": 1,
 	"zh-cn": 1,
-	"zh-hk": 1, 
-	"zh-tw": 1 
+	"zh-hk": 1,
+	"zh-tw": 1
 });
