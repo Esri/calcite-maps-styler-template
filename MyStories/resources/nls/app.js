@@ -368,9 +368,9 @@ define({
 				inaccessibleWebpage: "Inaccessible webpages"
 			},
 			scanningErrorTips: {
-				deletedMapTip: "Tip: Open your web map and remove the broken content, or remove the web map from your story.",
-				inaccessibleMapTip: "Tip: Open your web map and remove the broken content, or remove the web map from your story.",
-				notYoursNotAccessibleTip: "Tip: Open the web map and remove the layer or map from the story.",
+				deletedMapTip: "Tip: Edit your web map and remove the broken content, or remove the web map from your story.",
+				inaccessibleMapTip: "Tip: Edit your web map and remove the broken content, or remove the web map from your story.",
+				notYoursNotAccessibleTip: "Tip: Edit your web map and remove the layer, or remove the web map from your story.",
 				serviceOkItemNotTip: "Layers were added as items that are inaccessible or deleted. The layers are working, but this may affect your map (popups, symbology).",
 				ignore: "Ignore",
 				fix: "Fix",

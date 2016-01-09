@@ -61,6 +61,44 @@ define(['dojo/Deferred', 'sign-in/SignInDialog', 'sign-in/PortalHelper', 'create
 
 
 	/**
+	@summary Reads the expiration date of the cookie.
+		If its expiration date is greater than the max allowable length of time for a credential to be valid,
+		set it to that max allowable length of time. If there's no cookie or expiration on it, set it to this max allowable length of time as well.
+	*/
+	getExpiryDate = function() {
+		var cookie = JSON.parse(fetchCookie('esri_auth')),
+			// read the expiry date
+			expiry = null,
+			// if validity not too great,
+			// too great if over 60 * 24 * 24 hours past right now
+			maxTimeExtra = 60 * 24 * 24 * 60 * 1000,
+			maxExpireDate = Date.now() + maxTimeExtra,
+			expires = 0;
+
+		// if there is a cookie, test with its expiry date. If there is no cookie, set the date to the max expire date.
+		if(cookie && cookie.expires) {
+			expiry = cookie.expires;
+
+			if(expiry > maxExpireDate) {
+				expires = maxExpireDate;
+			}
+			else if(expiry <= Date.now()) {
+				expires = maxExpireDate;
+			}
+			else {
+				// set validity, expires to this value
+				expires = expiry;
+			}
+		}
+		else {
+			expires = maxExpireDate;
+		}
+
+		return expires;
+	},
+
+
+	/**
 	@summary Checks if the user is signed in.
 	*/
 	checkIfSignedIn = function() {
@@ -481,7 +519,8 @@ define(['dojo/Deferred', 'sign-in/SignInDialog', 'sign-in/PortalHelper', 'create
 		getSignedInCallback: getSignedInCallback,
 		fetchCookie: fetchCookie,
 		jquery: jquery,
-		showBuildSignInDialog: showBuildSignInDialog
+		showBuildSignInDialog: showBuildSignInDialog,
+		getExpiryDate: getExpiryDate
 	};
 
 
