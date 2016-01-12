@@ -9,6 +9,8 @@ rmdir /S /Q %BUILD_OUTPUT%
 mkdir %BUILD_OUTPUT%
 
 REM xcopy apparently cannot create directories automatically
+mkdir %BUILD_OUTPUT%\3DScene
+mkdir %BUILD_OUTPUT%\3DViz
 mkdir %BUILD_OUTPUT%\Compare
 mkdir %BUILD_OUTPUT%\CompareAnalysis
 mkdir %BUILD_OUTPUT%\Compare\Configure
@@ -104,6 +106,8 @@ xcopy %TEMPLATES_ROOT%\archive\CompareSideBySideViewer          %BUILD_OUTPUT%\C
 xcopy %TEMPLATES_ROOT%\archive\CompareStorytellingSidepanel     %BUILD_OUTPUT%\Compare\storytelling_sidepanel       /E /Y
 xcopy %TEMPLATES_ROOT%\archive\CompareStorytellingTabbed        %BUILD_OUTPUT%\Compare\storytelling_tabbed          /E /Y
 xcopy %TEMPLATES_ROOT%\archive\Compare                          %BUILD_OUTPUT%\CompareMaps                          /E /Y
+xcopy %TEMPLATES_ROOT%\3DScene                                  %BUILD_OUTPUT%\3DScene                              /E /Y
+xcopy %TEMPLATES_ROOT%\3DViz                                    %BUILD_OUTPUT%\3DViz                                /E /Y
 xcopy %TEMPLATES_ROOT%\CompareAnalysis                          %BUILD_OUTPUT%\CompareAnalysis                      /E /Y
 xcopy %TEMPLATES_ROOT%\ConstituentEngagement                    %BUILD_OUTPUT%\CrowdsourceReporter                  /E /Y
 xcopy %TEMPLATES_ROOT%\ConstituentEngagementConsole             %BUILD_OUTPUT%\CrowdsourceManager                   /E /Y
