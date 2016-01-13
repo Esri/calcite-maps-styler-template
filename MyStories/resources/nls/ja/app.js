@@ -173,7 +173,7 @@
 				chosenSubjectAlt: "{{SUBJECT}}といくつかのタグ",
 				storyMapTopicSubject: "主題",
 				sharedPublicly: "パブリックに共有されている",
-				noBrokenContent: "壊れているコンテンツがない",
+				noBrokenContent: "須_No issues____鷗",
 				nominateToGallery: "ギャラリーに推薦",
 				comingSoon: "近日公開",
 				submitted: "送信済み",
@@ -368,9 +368,9 @@
 				inaccessibleWebpage: "アクセスできない Web ページ"
 			},
 			scanningErrorTips: {
-				deletedMapTip: "ヒント: Web マップを開き、壊れているコンテンツを削除するか、Web マップをストーリーから削除します。",
-				inaccessibleMapTip: "ヒント: Web マップを開き、壊れているコンテンツを削除するか、Web マップをストーリーから削除します。",
-				notYoursNotAccessibleTip: "ヒント: Web マップを開き、レイヤーまたはマップをストーリーから削除します。",
+				deletedMapTip: "須_Tip: Edit your web map and remove the broken content, or remove the web map from your story_____________________________鷗.",
+				inaccessibleMapTip: "須_Tip: Edit your web map and remove the broken content, or remove the web map from your story_____________________________鷗.",
+				notYoursNotAccessibleTip: "須_Tip: Edit your web map and remove the layer, or remove the web map from your story__________________________鷗.",
 				serviceOkItemNotTip: "レイヤーは、アクセスできないか削除されたアイテムとして追加されました。レイヤーは動作していますが、マップ (ポップアップ、シンボル) に影響を与える可能性があります。",
 				ignore: "無視",
 				fix: "修正",

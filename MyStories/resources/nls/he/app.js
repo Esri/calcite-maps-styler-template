@@ -173,7 +173,7 @@
 				chosenSubjectAlt: "{{SUBJECT}} ומספר תגיות",
 				storyMapTopicSubject: "נושא",
 				sharedPublicly: "שותף לציבור",
-				noBrokenContent: "לא קיים תוכן שבור",
+				noBrokenContent: "כן_No issues____ש",
 				nominateToGallery: "הוסף לגלריה",
 				comingSoon: "מגיע בקרוב!",
 				submitted: "הוגש",
@@ -368,9 +368,9 @@
 				inaccessibleWebpage: "דפי אינטרנט לא נגישים"
 			},
 			scanningErrorTips: {
-				deletedMapTip: "טיפ: פתח את Web Map שלך והסר את התוכן השבור, או הסר את Web Map מהסיפור שלך.",
-				inaccessibleMapTip: "טיפ: פתח את Web Map  שלך והסר את התוכן השבור, או הסר את Web Map מהסיפור שלך.",
-				notYoursNotAccessibleTip: "טיפ: פתח את Web Map והסר את השכבה או המפה מהסיפור.",
+				deletedMapTip: "כן_Tip: Edit your web map and remove the broken content, or remove the web map from your story_____________________________ש.",
+				inaccessibleMapTip: "כן_Tip: Edit your web map and remove the broken content, or remove the web map from your story_____________________________ש.",
+				notYoursNotAccessibleTip: "כן_Tip: Edit your web map and remove the layer, or remove the web map from your story__________________________ש.",
 				serviceOkItemNotTip: "שכבות התווספו כפריטים שאינם נגישים או נמחקו. השכבות פועלות, אבל זה עשוי להשפיע על המפה שלך (חלונות קופצים, סימבולוגיה).",
 				ignore: "התעלם",
 				fix: "תקן",

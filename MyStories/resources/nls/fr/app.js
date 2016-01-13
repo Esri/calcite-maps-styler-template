@@ -173,7 +173,7 @@
 				chosenSubjectAlt: "Un {{SUBJECT}} et quelques balises",
 				storyMapTopicSubject: "objet",
 				sharedPublicly: "Partagé publiquement",
-				noBrokenContent: "Aucun contenu corrompu",
+				noBrokenContent: "æ_No issues____Â",
 				nominateToGallery: "Placer dans la bibliothèque",
 				comingSoon: "Disponible prochainement !",
 				submitted: "Envoyé",
@@ -368,9 +368,9 @@
 				inaccessibleWebpage: "Pages Web inaccessibles"
 			},
 			scanningErrorTips: {
-				deletedMapTip: "Astuce : ouvrez votre carte Web et supprimez le contenu endommagé ou supprimez la carte Web de votre récit.",
-				inaccessibleMapTip: "Astuce : ouvrez votre carte Web et supprimez le contenu endommagé ou supprimez la carte Web de votre récit.",
-				notYoursNotAccessibleTip: "Astuce : ouvrez la carte Web et supprimez la couche ou la carte du récit.",
+				deletedMapTip: "æ_Tip: Edit your web map and remove the broken content, or remove the web map from your story_____________________________Â.",
+				inaccessibleMapTip: "æ_Tip: Edit your web map and remove the broken content, or remove the web map from your story_____________________________Â.",
+				notYoursNotAccessibleTip: "æ_Tip: Edit your web map and remove the layer, or remove the web map from your story__________________________Â.",
 				serviceOkItemNotTip: "Les couches ont été ajoutées en tant qu\'éléments inaccessibles ou supprimés. Les couches sont opérationnelles, mais cela peut affecter votre carte (fenêtres contextuelles, symbologie).",
 				ignore: "Ignorer",
 				fix: "Localisation",

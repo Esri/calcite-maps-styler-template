@@ -83,11 +83,6 @@ define(
         signOutPage: {
             signOutMessage: "คุณได้ลงชื่อออกเรียบร้อยแล้ว", // Appears when user is successfully signed-out from application
             reSignInMessage: "กดที่นี่ เพื่อลงชื่อเข้าใช้" // Appears when user is signed-out from application and wants to sign-in again
-        },
-        preview: {
-            section1: "Crowdsource Manager กลุ่มเทมเพลตที่เกี่ยวข้องกับ<a href=\'http://solutions.arcgis.com/local-government/help/crowdsource-reporter/\' target=\'_blank\'>Crowdsource Reporter</a>เป็นกลุ่มแอพพลิเคชั่นเทมเพลตที่แสดงผลได้หลายขนาดแบบเรสปอนซีฟ (เดสท็อป และอุปกรณ์แท็บเล็ต) ที่ช่วยให้ผู้ใช้ภายในองค์กรสามารถตรวจสอบปัญหา / ส่งข้อสังเกตผ่านตัวจัดการแอพนี้ได้", // Appears when preview page is loaded
-            section2: "แอพแสดงแผนที่ใดแผนที่หนึ่ง หรือหลายแผนที่ สำหรับผู้ใช้ เพื่อตรวจดูรายงานปัญหา หรือข้อสังเกต ผู้ใช้สามารถมองหารูปแบบและกลุ่มรายละเอียดของปัญหา เพื่อใช้ในการตรวจสอบสถานะ การปรับปรุง และกำหนดความรับผิดชอบ", // Appears when preview page is loaded
-            section3: "ซอร์โค้ตของแอพพลิเคชั่น สามารถดาวน์โหลด เพื่อกำหนดค่าเพิ่มเติมได้ โดยการกำหนดค่าเพิ่มเติมนี้โปรแกรมสามารถนำกลับมาใช้ ในรายการโปรแกรมประยุกต์บนเว็บ ArcGIS ออนไลน์ หรืวางไว้บนเวปเซิร์ฟเวอร์ของคุณเองได้<br /> สำหรับข้อมูลเพิ่มเติมเกี่ยวกับการกำหนดค่าแอพนี้ โปรดดูที่เอกสาร <a href=\'http://solutions.arcgis.com/local-government/help/crowdsource-manager/\' target=\'_blank\'>Crowdsource Manager</a>" // Appears when preview page is loaded
         }
     })
 );

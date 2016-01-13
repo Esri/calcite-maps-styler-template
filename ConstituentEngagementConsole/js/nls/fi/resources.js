@@ -83,11 +83,6 @@ define(
         signOutPage: {
             signOutMessage: "Uloskirjautuminen onnistui", // Appears when user is successfully signed-out from application
             reSignInMessage: "Kirjaudu sisään napsauttamalla tätä" // Appears when user is signed-out from application and wants to sign-in again
-        },
-        preview: {
-            section1: "<a href=\'http://solutions.arcgis.com/local-government/help/crowdsource-reporter/\' target=\'_blank\'>Crowdsource Reporter</a> -ohjelman kumppanuusryhmämallipohja Crowdsource Manager on responsiivinen ryhmäsovellusmallipohja (työpöytä- ja tablettilaitteille), jonka avulla organisaation käyttäjät voivat tarkastaa Manager-sovelluksen kautta lähetettyjä ongelmia tai havaintoja.", // Appears when preview page is loaded
-            section2: "Sovellus tuo näkyviin vähintään yhden kartan ongelman tai havainnon tarkastusta varten. Käyttäjät voivat etsiä malleja ja klustereita, tarkastaa ongelmien tiedot, päivittää tilan ja osoittaa vastuualueita.", // Appears when preview page is loaded
-            section3: "Sovelluksen lähdekoodin voi ladata mukautusta varten. Tämän sovelluksen lisämäärityksen avulla voit ylläpitää muunneltavissa olevaa Web-sovellusta joko ArcGIS Onlinessa tai omalla Web-palvelimellasi. <br />Lisätietoja tämän sovelluksen määrityksestä on <a href=\'http://solutions.arcgis.com/local-government/help/crowdsource-manager/\' target=\'_blank\'>Crowdsource Manager</a> -ohjelman dokumentaatiossa." // Appears when preview page is loaded
         }
     })
 );

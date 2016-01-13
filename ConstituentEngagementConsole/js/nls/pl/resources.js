@@ -83,11 +83,6 @@ define(
         signOutPage: {
             signOutMessage: "Wylogowanie pomyślne", // Appears when user is successfully signed-out from application
             reSignInMessage: "Kliknij tutaj, aby się zalogować" // Appears when user is signed-out from application and wants to sign-in again
-        },
-        preview: {
-            section1: "Menedżer zgłoszeń użytkowników jest — podobnie jak <a href=\'http://solutions.arcgis.com/local-government/help/crowdsource-reporter/\' target=\'_blank\'>Raportowanie zgłoszeń użytkowników</a> — interaktywnym grupowym szablonem aplikacji na komputery stacjonarne i tablety, który umożliwia użytkownikom instytucji weryfikację problemów i spostrzeżeń przesłanych poprzez aplikację Menedżera.", // Appears when preview page is loaded
-            section2: "Aplikacja wyświetla mapę (lub kilka map), na której (których) użytkownik może analizować problem lub spostrzeżenie. Można szukać schematów i klastrów, analizować szczegóły problemu, aktualizować status i przydzielać zakresy odpowiedzialności.", // Appears when preview page is loaded
-            section3: "Kod źródłowy aplikacji można pobrać do dalszej konfiguracji. Dodatkową konfigurację aplikacji można zastosować w konfigurowalnej aplikacji internetowej ArcGIS Online lub hostować na własnym serwerze.<br /> Więcej informacji o konfigurowaniu tej aplikacji można znaleźć w dokumentacji szablonu <a href=\'http://solutions.arcgis.com/local-government/help/crowdsource-manager/\' target=\'_blank\'>Menedżer zgłoszeń użytkowników</a>." // Appears when preview page is loaded
         }
     })
 );

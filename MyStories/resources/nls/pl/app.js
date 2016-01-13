@@ -173,7 +173,7 @@
 				chosenSubjectAlt: "{{SUBJECT}} i niektóre znaczniki",
 				storyMapTopicSubject: "temat",
 				sharedPublicly: "Udostępniony publicznie",
-				noBrokenContent: "Bez uszkodzonej zawartości",
+				noBrokenContent: "ł_No issues____ą",
 				nominateToGallery: "Nominuj do Galerii",
 				comingSoon: "Już wkrótce!",
 				submitted: "Przesłane",
@@ -368,9 +368,9 @@
 				inaccessibleWebpage: "Strony internetowe niedostępne"
 			},
 			scanningErrorTips: {
-				deletedMapTip: "Wskazówka: otwórz mapę internetową i usuń uszkodzoną zawartość lub usuń mapę internetową z narracji.",
-				inaccessibleMapTip: "Wskazówka: otwórz mapę internetową i usuń uszkodzoną zawartość lub usuń mapę internetową z narracji.",
-				notYoursNotAccessibleTip: "Wskazówka: otwórz mapę internetową i usuń warstwę lub usuń mapę z narracji.",
+				deletedMapTip: "ł_Tip: Edit your web map and remove the broken content, or remove the web map from your story_____________________________ą.",
+				inaccessibleMapTip: "ł_Tip: Edit your web map and remove the broken content, or remove the web map from your story_____________________________ą.",
+				notYoursNotAccessibleTip: "ł_Tip: Edit your web map and remove the layer, or remove the web map from your story__________________________ą.",
 				serviceOkItemNotTip: "Warstwy zostały dodane jako elementy, które są niedostępne lub zostały usunięte. Warstwy działają prawidłowo, ale może mieć to wpływ na mapy (okna podręczne, symbole)",
 				ignore: "Ignore",
 				fix: "Napraw",

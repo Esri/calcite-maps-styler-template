@@ -173,7 +173,7 @@
 				chosenSubjectAlt: "{{SUBJECT}} 以及部分标签",
 				storyMapTopicSubject: "主题",
 				sharedPublicly: "公开共享",
-				noBrokenContent: "无损坏内容",
+				noBrokenContent: "试_No issues____验",
 				nominateToGallery: "推荐至库",
 				comingSoon: "即将推出!",
 				submitted: "已提交",
@@ -368,9 +368,9 @@
 				inaccessibleWebpage: "无法访问的网页"
 			},
 			scanningErrorTips: {
-				deletedMapTip: "提示：打开 web 地图并移除损坏内容，或者从故事中移除 web 地图。",
-				inaccessibleMapTip: "提示：打开 web 地图并移除损坏内容，或者从故事中移除 web 地图。",
-				notYoursNotAccessibleTip: "提示：打开 web 地图并从故事中移除图层或地图。",
+				deletedMapTip: "试_Tip: Edit your web map and remove the broken content, or remove the web map from your story_____________________________验.",
+				inaccessibleMapTip: "试_Tip: Edit your web map and remove the broken content, or remove the web map from your story_____________________________验.",
+				notYoursNotAccessibleTip: "试_Tip: Edit your web map and remove the layer, or remove the web map from your story__________________________验.",
 				serviceOkItemNotTip: "图层被添加为无法访问或已删除的项。图层可以使用，但可能会影响您的地图(弹出窗口、符号)。",
 				ignore: "忽略",
 				fix: "定位",

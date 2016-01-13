@@ -173,7 +173,7 @@
 				chosenSubjectAlt: "{{SUBJECT}} ir keletas raktažodžių",
 				storyMapTopicSubject: "tema",
 				sharedPublicly: "Bendrinamas viešai",
-				noBrokenContent: "Nėra suskaidyto turinio",
+				noBrokenContent: "Į_No issues____š",
 				nominateToGallery: "Skelbti galerijoje",
 				comingSoon: "Jau netrukus!",
 				submitted: "Pateikta",
@@ -368,9 +368,9 @@
 				inaccessibleWebpage: "Nepasiekiami tinklalapiai"
 			},
 			scanningErrorTips: {
-				deletedMapTip: "Patarimas: Atidarykite žiniatinklio žemėlapį ir pašalinkite pažeistą turinį arba pašalinkite žiniatinklio žemėlapį iš pasakojimo.",
-				inaccessibleMapTip: "Patarimas: Atidarykite žiniatinklio žemėlapį ir pašalinkite pažeistą turinį arba pašalinkite žiniatinklio žemėlapį iš pasakojimo.",
-				notYoursNotAccessibleTip: "Patarimas: Atidarykite žiniatinklio žemėlapį ir pašalinkite sluoksnį arba žemėlapį iš pasakojimo.",
+				deletedMapTip: "Į_Tip: Edit your web map and remove the broken content, or remove the web map from your story_____________________________š.",
+				inaccessibleMapTip: "Į_Tip: Edit your web map and remove the broken content, or remove the web map from your story_____________________________š.",
+				notYoursNotAccessibleTip: "Į_Tip: Edit your web map and remove the layer, or remove the web map from your story__________________________š.",
 				serviceOkItemNotTip: "Sluoksniai įtraukti kaip nepasiekiami arba panaikinti elementai. Sluoksniai veikia, bet jie gali pakeisti jūsų žemėlapį (kontekstinius langus, sutartinius ženklus)",
 				ignore: "Ignoruoti",
 				fix: "Pataisyti",

@@ -173,7 +173,7 @@
 				chosenSubjectAlt: "{{SUBJECT}} وبعض علامات التبويب",
 				storyMapTopicSubject: "موضوع",
 				sharedPublicly: "تمت المشاركة مع العامة",
-				noBrokenContent: "لا يوجد محتوى مكسور",
+				noBrokenContent: "بيت_No issues____لاحقة",
 				nominateToGallery: "تعيين المعرض",
 				comingSoon: "قريبًا!",
 				submitted: "تم الإرسال",
@@ -368,9 +368,9 @@
 				inaccessibleWebpage: "صفحات ويب غير قابلة للوصول"
 			},
 			scanningErrorTips: {
-				deletedMapTip: "ملاحظة: افتح خريطة الويب واحذف المحتوى المكسور أو احذف خريطة الويب من الحكاية.",
-				inaccessibleMapTip: "ملاحظة: افتح خريطة الويب واحذف المحتوى المكسور أو احذف خريطة الويب من الحكاية.",
-				notYoursNotAccessibleTip: "ملاحظة: افتح خريطة الويب واحذف الطبقة أو الخريطة من الحكاية.",
+				deletedMapTip: "بيت_Tip: Edit your web map and remove the broken content, or remove the web map from your story_____________________________لاحقة.",
+				inaccessibleMapTip: "بيت_Tip: Edit your web map and remove the broken content, or remove the web map from your story_____________________________لاحقة.",
+				notYoursNotAccessibleTip: "بيت_Tip: Edit your web map and remove the layer, or remove the web map from your story__________________________لاحقة.",
 				serviceOkItemNotTip: "تم إضافة الطبقات باعتبارها عناصر قابلة للوصول أو تم حذفها. الطبقات تعمل، ولكنها قد تؤثر على الخريطة (النوافذ المنبثقة، الرمزية).",
 				ignore: "تجاهل",
 				fix: "تصحيح",

@@ -173,7 +173,7 @@
 				chosenSubjectAlt: "Et {{SUBJECT}} og nogle nøgleord",
 				storyMapTopicSubject: "emne",
 				sharedPublicly: "Deles offentligt",
-				noBrokenContent: "Ikke indeholder ødelagt indhold",
+				noBrokenContent: "ø_No issues____å",
 				nominateToGallery: "Nominér til galleri",
 				comingSoon: "Kommer snart!",
 				submitted: "Sendt",
@@ -368,9 +368,9 @@
 				inaccessibleWebpage: "Utilgængelige websider"
 			},
 			scanningErrorTips: {
-				deletedMapTip: "Tip: Åbn dit webkort, og fjern det ødelagte indhold, eller fjern webkortet fra din historie.",
-				inaccessibleMapTip: "Tip: Åbn dit webkort, og fjern det ødelagte indhold, eller fjern webkortet fra din historie.",
-				notYoursNotAccessibleTip: "Tip: Åbn webkortet, og fjern laget eller kortet historien.",
+				deletedMapTip: "ø_Tip: Edit your web map and remove the broken content, or remove the web map from your story_____________________________å.",
+				inaccessibleMapTip: "ø_Tip: Edit your web map and remove the broken content, or remove the web map from your story_____________________________å.",
+				notYoursNotAccessibleTip: "ø_Tip: Edit your web map and remove the layer, or remove the web map from your story__________________________å.",
 				serviceOkItemNotTip: "Lagene blev tilføjet som elementer, der er utilgængelige eller slettede. Lagene fungerer, men dette kan påvirke dit kort (pop-ups, symboler).",
 				ignore: "Ignore",
 				fix: "Ret",

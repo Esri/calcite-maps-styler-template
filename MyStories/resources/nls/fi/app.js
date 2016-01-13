@@ -173,7 +173,7 @@
 				chosenSubjectAlt: "aiheen {{SUBJECT}} ja joitakin tunnisteita",
 				storyMapTopicSubject: "aihe",
 				sharedPublicly: "jaettu julkisesti",
-				noBrokenContent: "ei viallista sisältöä",
+				noBrokenContent: "Å_No issues____ö",
 				nominateToGallery: "Ehdota galleriaan",
 				comingSoon: "Tulossa pian!",
 				submitted: "Lähetetty",
@@ -368,9 +368,9 @@
 				inaccessibleWebpage: "Web-sivuja ei voi käyttää"
 			},
 			scanningErrorTips: {
-				deletedMapTip: "Vihje: avaa Web-karttasi ja poista viallinen sisältö tai poista Web-kartta tarinastasi.",
-				inaccessibleMapTip: "Vihje: avaa Web-karttasi ja poista viallinen sisältö tai poista Web-kartta tarinastasi.",
-				notYoursNotAccessibleTip: "Vihje: avaa Web-kartta ja poista karttataso tai kartta tarinastasi.",
+				deletedMapTip: "Å_Tip: Edit your web map and remove the broken content, or remove the web map from your story_____________________________ö.",
+				inaccessibleMapTip: "Å_Tip: Edit your web map and remove the broken content, or remove the web map from your story_____________________________ö.",
+				notYoursNotAccessibleTip: "Å_Tip: Edit your web map and remove the layer, or remove the web map from your story__________________________ö.",
 				serviceOkItemNotTip: "Karttatasot on lisätty kohteina, joita ei voi käyttää tai jotka on poistettu. Karttatasot toimivat, mutta tämä voi vaikuttaa karttasi toimintaan (ponnahdusikkunoihin ja symboleihin).",
 				ignore: "Ohita",
 				fix: "Korjaa",

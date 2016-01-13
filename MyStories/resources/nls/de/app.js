@@ -173,7 +173,7 @@
 				chosenSubjectAlt: "ein {{SUBJECT}} und mind. 1 Tag",
 				storyMapTopicSubject: "Thema",
 				sharedPublicly: "öffentlich freigegeben",
-				noBrokenContent: "keine fehlerhaften Inhalte",
+				noBrokenContent: "ä_No issues____Ü",
 				nominateToGallery: "Für die Galerie nominieren",
 				comingSoon: "In Kürze verfügbar!",
 				submitted: "Übergeben",
@@ -368,9 +368,9 @@
 				inaccessibleWebpage: "Nicht zugängliche Webseiten"
 			},
 			scanningErrorTips: {
-				deletedMapTip: "Tipp: Öffnen Sie Ihre Webkarte und entfernen Sie den fehlerhaften Inhalt, oder entfernen Sie die Webkarte aus Ihrer Story.",
-				inaccessibleMapTip: "Tipp: Öffnen Sie Ihre Webkarte und entfernen Sie den fehlerhaften Inhalt, oder entfernen Sie die Webkarte aus Ihrer Story.",
-				notYoursNotAccessibleTip: "Tipp: Öffnen Sie die Webkarte und entfernen Sie den Layer oder die Karte aus Ihrer Story.",
+				deletedMapTip: "ä_Tip: Edit your web map and remove the broken content, or remove the web map from your story_____________________________Ü.",
+				inaccessibleMapTip: "ä_Tip: Edit your web map and remove the broken content, or remove the web map from your story_____________________________Ü.",
+				notYoursNotAccessibleTip: "ä_Tip: Edit your web map and remove the layer, or remove the web map from your story__________________________Ü.",
 				serviceOkItemNotTip: "Es wurden Layer als Elemente hinzugefügt, die entweder gelöscht wurden oder auf die nicht zugegriffen werden kann. Zwar funktionieren die Layer, doch kann sich dies auf Ihre Karte auswirken (Pop-ups, Symbolisierung).",
 				ignore: "Ignorieren",
 				fix: "Fix",

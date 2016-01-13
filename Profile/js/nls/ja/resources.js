@@ -19,6 +19,9 @@ define(
     map: {
       error: "マップを作成できません"
     },
+    nav: {
+        "close": "須_Close___鷗"
+    },
     elevation: {
         toggle: "標高グラフを切り替えます。",
         drawTool: "マップ上にラインを描画して、標高グラフを生成します。",

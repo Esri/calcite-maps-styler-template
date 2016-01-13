@@ -173,7 +173,7 @@
 				chosenSubjectAlt: "Ett {{SUBJECT}} och några taggar",
 				storyMapTopicSubject: "ämne",
 				sharedPublicly: "Delas offentligt",
-				noBrokenContent: "Inget skadat innehåll",
+				noBrokenContent: "Å_No issues____ö",
 				nominateToGallery: "Nominera till galleriet",
 				comingSoon: "Kommer snart!",
 				submitted: "Skickade",
@@ -368,9 +368,9 @@
 				inaccessibleWebpage: "Otillgängliga webbsidor"
 			},
 			scanningErrorTips: {
-				deletedMapTip: "Tips! Öppna webbkartan och ta bort det skadade innehållet, eller ta bort webbkartan helt och hållet från berättelsen.",
-				inaccessibleMapTip: "Tips: Öppna webbkartan och ta bort det skadade innehållet eller ta bort webbkartan från din berättelse.",
-				notYoursNotAccessibleTip: "Tips: Öppna webbkartan och ta bort lagret eller kartan från berättelsen.",
+				deletedMapTip: "Å_Tip: Edit your web map and remove the broken content, or remove the web map from your story_____________________________ö.",
+				inaccessibleMapTip: "Å_Tip: Edit your web map and remove the broken content, or remove the web map from your story_____________________________ö.",
+				notYoursNotAccessibleTip: "Å_Tip: Edit your web map and remove the layer, or remove the web map from your story__________________________ö.",
 				serviceOkItemNotTip: "Lager lades till som objekt som är borttagna eller otillgängliga. Lagren fungerar, men detta kan påverka din karta (popup-fönster, symbologi).",
 				ignore: "{Tahoma8}Ignorera",
 				fix: "Fixa",

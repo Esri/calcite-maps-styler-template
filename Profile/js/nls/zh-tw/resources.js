@@ -19,6 +19,9 @@ define(
     map: {
       error: "無法建立地圖"
     },
+    nav: {
+        "close": "試_Close___驗"
+    },
     elevation: {
         toggle: "切換高程剖面圖圖表。",
         drawTool: "在地圖上畫一條線來產生一個高程剖面。",

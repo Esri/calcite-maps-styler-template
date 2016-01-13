@@ -173,7 +173,7 @@
 				chosenSubjectAlt: "Um {{SUBJECT}} e algumas palavras-chave",
 				storyMapTopicSubject: "assunto",
 				sharedPublicly: "Partilhada publicamente",
-				noBrokenContent: "Sem conteúdo inválido",
+				noBrokenContent: "ã_No issues____Ç",
 				nominateToGallery: "Nomear para a Galeria",
 				comingSoon: "Brevemente!",
 				submitted: "Submetido",
@@ -368,9 +368,9 @@
 				inaccessibleWebpage: "Páginas web inacessíveis"
 			},
 			scanningErrorTips: {
-				deletedMapTip: "Dica: Abra o seu mapa web e remova o conteúdo danificado, ou remova o mapa web da sua história.",
-				inaccessibleMapTip: "Dica: Abra o seu mapa web e remova o conteúdo danificado, ou remova o mapa web da sua história.",
-				notYoursNotAccessibleTip: "Dica: Abra o mapa web e remova a camada ou mapa da história.",
+				deletedMapTip: "ã_Tip: Edit your web map and remove the broken content, or remove the web map from your story_____________________________Ç.",
+				inaccessibleMapTip: "ã_Tip: Edit your web map and remove the broken content, or remove the web map from your story_____________________________Ç.",
+				notYoursNotAccessibleTip: "ã_Tip: Edit your web map and remove the layer, or remove the web map from your story__________________________Ç.",
 				serviceOkItemNotTip: "Foram adicionadas camadas como itens que se encontram inacessíveis ou que foram eliminados. As camadas funcionam, mas isto pode afetar o seu mapa (janelas pop-up, simbologia).",
 				ignore: "Ignorar",
 				fix: "Corrigir",

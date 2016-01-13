@@ -173,7 +173,7 @@
 				chosenSubjectAlt: "{{SUBJECT}} và một số từ khóa",
 				storyMapTopicSubject: "chủ đề",
 				sharedPublicly: "Được chia sẻ công khai",
-				noBrokenContent: "Không có nội dung bị hư",
+				noBrokenContent: "Đ_No issues____ớ",
 				nominateToGallery: "Đề cử vào Thư viện",
 				comingSoon: "Sắp ra mắt!",
 				submitted: "Đã gửi",
@@ -368,9 +368,9 @@
 				inaccessibleWebpage: "Trang web không thể truy cập"
 			},
 			scanningErrorTips: {
-				deletedMapTip: "Mẹo: Hãy mở bản đồ web của bạn và gỡ bỏ nội dung bị hư, hoặc gỡ bỏ bản đồ web khỏi câu chuyện của bạn.",
-				inaccessibleMapTip: "Mẹo: Hãy mở bản đồ web của bạn và gỡ bỏ nội dung bị hư, hoặc gỡ bỏ bản đồ web khỏi câu chuyện của bạn.",
-				notYoursNotAccessibleTip: "Mẹo: Hãy mở bản đồ web của bạn và gỡ bỏ lớp hoặc bản đồ khỏi câu chuyện.",
+				deletedMapTip: "Đ_Tip: Edit your web map and remove the broken content, or remove the web map from your story_____________________________ớ.",
+				inaccessibleMapTip: "Đ_Tip: Edit your web map and remove the broken content, or remove the web map from your story_____________________________ớ.",
+				notYoursNotAccessibleTip: "Đ_Tip: Edit your web map and remove the layer, or remove the web map from your story__________________________ớ.",
 				serviceOkItemNotTip: "Lớp được thêm làm mục không thể truy cập hoặc bị xóa. Các lớp vẫn hoạt động nhưng điều này có thể ảnh hưởng bản đồ của bạn (popup, ký hiệu hóa).",
 				ignore: "Bỏ qua",
 				fix: "Sửa",

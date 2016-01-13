@@ -173,7 +173,7 @@
 				chosenSubjectAlt: "A {{หัวข้อ}} และแท็กบางส่วน",
 				storyMapTopicSubject: "หัวข้อ",
 				sharedPublicly: "แบ่งปันสาธารณะ",
-				noBrokenContent: "ไม่มีเนื้อหาที่เสียหาย",
+				noBrokenContent: "ก้_No issues____ษฺ",
 				nominateToGallery: "เสนอชื่อในแกลอรี่",
 				comingSoon: "เร็วๆ นี้!",
 				submitted: "ส่งแล้ว",
@@ -368,9 +368,9 @@
 				inaccessibleWebpage: "ไม่สามารถเข้าถึงเวปเพจ"
 			},
 			scanningErrorTips: {
-				deletedMapTip: "เคล็ดลับ : เปิดเวปแผนที่ของคุณและลบเนื้อหาที่เสีย หรือลบเวปแผนที่จากเรื่องราว",
-				inaccessibleMapTip: "เคล็ดลับ : เปิดเวปแผนที่ของคุณและลบเนื้อหาที่เสีย หรือลบเวปแผนที่จากเรื่องราว",
-				notYoursNotAccessibleTip: "เคล็ดลับ : เปิดเวปแผนที่และลบชั้นข้อมูลหรือแผนที่จากเรื่องราว",
+				deletedMapTip: "ก้_Tip: Edit your web map and remove the broken content, or remove the web map from your story_____________________________ษฺ.",
+				inaccessibleMapTip: "ก้_Tip: Edit your web map and remove the broken content, or remove the web map from your story_____________________________ษฺ.",
+				notYoursNotAccessibleTip: "ก้_Tip: Edit your web map and remove the layer, or remove the web map from your story__________________________ษฺ.",
 				serviceOkItemNotTip: "ชั้นข้อมูลถูกเพิ่ม แต่รายการไม่สามารถเข้าถึงได้หรือถูกลบไป ชั้นข้อมูลยังคงทำงานได้อยู่ แต่อาจจะส่งผลต่อแผนที่ของคุณ (ปอปอัพ , สัญลักษณ์)",
 				ignore: "เพิกเฉย",
 				fix: "แก้ไข",

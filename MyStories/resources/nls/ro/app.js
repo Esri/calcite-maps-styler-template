@@ -173,7 +173,7 @@
 				chosenSubjectAlt: "Un {{SUBJECT}} şi câteva etichete",
 				storyMapTopicSubject: "subiect",
 				sharedPublicly: "Partajat public",
-				noBrokenContent: "Fără conţinut cu erori",
+				noBrokenContent: "Ă_No issues____ș",
 				nominateToGallery: "Nominalizaţi în galerie",
 				comingSoon: "În curând!",
 				submitted: "Trimis",
@@ -368,9 +368,9 @@
 				inaccessibleWebpage: "Pagini web inaccesibile"
 			},
 			scanningErrorTips: {
-				deletedMapTip: "Sfat: Deschideţi harta web şi eliminaţi conţinutul cu erori sau eliminaţi harta web din poveste.",
-				inaccessibleMapTip: "Sfat: Deschideţi harta web şi eliminaţi conţinutul cu erori sau eliminaţi harta web din poveste.",
-				notYoursNotAccessibleTip: "Sfat: Deschideţi harta web şi eliminaţi stratul tematic sau harta din poveste.",
+				deletedMapTip: "Ă_Tip: Edit your web map and remove the broken content, or remove the web map from your story_____________________________ș.",
+				inaccessibleMapTip: "Ă_Tip: Edit your web map and remove the broken content, or remove the web map from your story_____________________________ș.",
+				notYoursNotAccessibleTip: "Ă_Tip: Edit your web map and remove the layer, or remove the web map from your story__________________________ș.",
 				serviceOkItemNotTip: "Straturile tematice au fost adăugate ca elemente care sunt inaccesibile sau au fost şterse. Straturile tematice funcţionează, dar acest lucru poate afecta harta dvs. (ferestre pop-up, simbolistică).",
 				ignore: "Ignorare",
 				fix: "Fixare",

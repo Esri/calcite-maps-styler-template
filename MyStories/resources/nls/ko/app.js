@@ -173,7 +173,7 @@
 				chosenSubjectAlt: "{{SUBJECT}} 및 태그 몇 개",
 				storyMapTopicSubject: "제목",
 				sharedPublicly: "공개적으로 공유됨",
-				noBrokenContent: "구분된 콘텐츠 없음",
+				noBrokenContent: "한_No issues____빠",
 				nominateToGallery: "갤러리 포함 후보로 지정",
 				comingSoon: "제공 예정!",
 				submitted: "제출됨",
@@ -368,9 +368,9 @@
 				inaccessibleWebpage: "접근할 수 없는 웹 페이지"
 			},
 			scanningErrorTips: {
-				deletedMapTip: "팁: 웹 맵을 열고 구분된 콘텐츠를 제거하거나 스토리에서 웹 맵을 제거하세요.",
-				inaccessibleMapTip: "팁: 웹 맵을 열고 구분된 콘텐츠를 제거하거나 스토리에서 웹 맵을 제거하세요.",
-				notYoursNotAccessibleTip: "팁: 웹 맵을 열고 스토리에서 레이어 또는 맵을 제거하세요.",
+				deletedMapTip: "한_Tip: Edit your web map and remove the broken content, or remove the web map from your story_____________________________빠.",
+				inaccessibleMapTip: "한_Tip: Edit your web map and remove the broken content, or remove the web map from your story_____________________________빠.",
+				notYoursNotAccessibleTip: "한_Tip: Edit your web map and remove the layer, or remove the web map from your story__________________________빠.",
 				serviceOkItemNotTip: "레이어가 접근할 수 없거나 삭제된 항목으로 추가되었습니다. 레이어가 작동하기는 하지만 이 레이어로 인해 맵(팝업, 심볼)이 영향을 받을 수 있습니다.",
 				ignore: "무시",
 				fix: "수정",

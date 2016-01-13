@@ -83,11 +83,6 @@ define(
         signOutPage: {
             signOutMessage: "U bent afgemeld.", // Appears when user is successfully signed-out from application
             reSignInMessage: "Klik hier om u aan te melden." // Appears when user is signed-out from application and wants to sign-in again
-        },
-        preview: {
-            section1: "Crowdsource Manager, een companion group template voor <a href=\'http://solutions.arcgis.com/local-government/help/crowdsource-reporter/\' target=\'_blank\'>Crowdsource Reporter</a>, is een responsive group applicatie template voor desktop en tablets, dat gebruikers binnen een organisatie in staat stelt om problemen en observaties die via de Manager-app ingediend zijn te bekijken..", // Appears when preview page is loaded
-            section2: "De app presenteert ene of meerdere kaarten waarmee gebruikers een probleem of observatie kunnen rapporteren. Gebruikers kunnen patronen en clusters zoeken, probleemgegevens bekijken, status bijwerken en verantwoordelijkheden toewijzen.", // Appears when preview page is loaded
-            section3: "De broncode van de applicatie kan worden gedownload voor verdere configuratie. Deze aanvullende configuratie van de applicatie kan opnieuw worden toegepast op een configureerbaar ArcGIS Online-webapplicatie-item of op uw eigen webserver worden gehost.<br /> Voor meer informatie over het configureren van deze app, raadpleegt u de documentatie <a href=\'http://solutions.arcgis.com/local-government/help/crowdsource-manager/\' target=\'_blank\'>Crowdsource Manager</a>." // Appears when preview page is loaded
         }
     })
 );

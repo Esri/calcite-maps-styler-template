@@ -173,7 +173,7 @@
 				chosenSubjectAlt: "{{SUBJECT}} a klíčová slova",
 				storyMapTopicSubject: "předmět",
 				sharedPublicly: "Sdílen veřejně",
-				noBrokenContent: "Žádný rozbitý obsah",
+				noBrokenContent: "Ř_No issues____ů",
 				nominateToGallery: "Nominovat do galerie",
 				comingSoon: "Již brzy!",
 				submitted: "Odesláno",
@@ -368,9 +368,9 @@
 				inaccessibleWebpage: "Nepřístupné webové stránky"
 			},
 			scanningErrorTips: {
-				deletedMapTip: "Tip: Otevřete svou webovou mapu a odstraňte rozbitý obsah nebo webovou mapu odstraňte ze svého příběhu.",
-				inaccessibleMapTip: "Tip: Otevřete svou webovou mapu a odstraňte rozbitý obsah nebo webovou mapu odstraňte ze svého příběhu.",
-				notYoursNotAccessibleTip: "Tip: Otevřete webovou mapu a odstraňte vrstvu nebo mapu z příběhu.",
+				deletedMapTip: "Ř_Tip: Edit your web map and remove the broken content, or remove the web map from your story_____________________________ů.",
+				inaccessibleMapTip: "Ř_Tip: Edit your web map and remove the broken content, or remove the web map from your story_____________________________ů.",
+				notYoursNotAccessibleTip: "Ř_Tip: Edit your web map and remove the layer, or remove the web map from your story__________________________ů.",
 				serviceOkItemNotTip: "Vrstvy byly přidány jako položky, které jsou nepřístupné nebo odstraněné. Vrstvy fungují, ale vaše mapa může být ovlivněna (vyskakovací okna, symboly).",
 				ignore: "Ignorovat",
 				fix: "Opravit",

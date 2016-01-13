@@ -19,6 +19,9 @@ define(
     map: {
       error: "Không thể tạo bản đồ"
     },
+    nav: {
+        "close": "Đ_Close___ớ"
+    },
     elevation: {
         toggle: "Chuyển đổi Biểu đồ Thông tin Độ cao.",
         drawTool: "Vẽ một đường trên bản đồ để tạo thông tin độ cao.",

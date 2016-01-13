@@ -173,7 +173,7 @@
 				chosenSubjectAlt: "{{SUBJECT}} ja mõned märksõnad",
 				storyMapTopicSubject: "Teema",
 				sharedPublicly: "Avalikult jagatud",
-				noBrokenContent: "Pole vigast sisu",
+				noBrokenContent: "Š_No issues____ä",
 				nominateToGallery: "Määratud galeriisse",
 				comingSoon: "Tulekul!",
 				submitted: "Esitatud",
@@ -368,9 +368,9 @@
 				inaccessibleWebpage: "Ligipääsmatud veebilehed"
 			},
 			scanningErrorTips: {
-				deletedMapTip: "Nõuanne: avage oma veebikaart ja eemaldage vigane sisu või eemaldage veebikaart oma loost.",
-				inaccessibleMapTip: "Nõuanne: avage oma veebikaart ja eemaldage vigane sisu või eemaldage veebikaart oma loost.",
-				notYoursNotAccessibleTip: "Nõuanne: avage veebikaart ja eemaldage kiht või kaart oma loost.",
+				deletedMapTip: "Š_Tip: Edit your web map and remove the broken content, or remove the web map from your story_____________________________ä.",
+				inaccessibleMapTip: "Š_Tip: Edit your web map and remove the broken content, or remove the web map from your story_____________________________ä.",
+				notYoursNotAccessibleTip: "Š_Tip: Edit your web map and remove the layer, or remove the web map from your story__________________________ä.",
 				serviceOkItemNotTip: "Kihid lisati üksustena, mis on kustutatud või ligipääsmatud. Kihid töötavad aga võivad mõjutada Teie kaarti (hüpikaknad, sümboloogia).",
 				ignore: "Eira",
 				fix: "Parenda",

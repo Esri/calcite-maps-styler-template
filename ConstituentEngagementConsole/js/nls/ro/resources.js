@@ -83,11 +83,6 @@ define(
         signOutPage: {
             signOutMessage: "V-aţi deconectat cu succes", // Appears when user is successfully signed-out from application
             reSignInMessage: "Faceţi clic aici pentru a vă autentifica" // Appears when user is signed-out from application and wants to sign-in again
-        },
-        preview: {
-            section1: "Crowdsource Manager, un şablon de grupuri care însoţeşte <a href=\'http://solutions.arcgis.com/local-government/help/crowdsource-reporter/\' target=\'_blank\'>Crowdsource Reporter</a> , este un şablon rapid de aplicaţii de grup (pentru desktop şi tablete), care permite utilizatorilor dintr-o organizaţie să revizuiască problemele/observaţiile transmise prin intermediul aplicaţiei Manager.", // Appears when preview page is loaded
-            section2: "Aplicaţia prezintă una sau mai multe hărţi pentru ca utilizatorii să revizuiască o problemă sau o observaţie. Utilizatorii pot căuta modele şi fascicule, pot revizui detaliile problemelor, pot actualiza starea şi pot atribui responsabilităţi.", // Appears when preview page is loaded
-            section3: "Pentru configurări suplimentare, puteţi descărca codul sursă al aplicaţiei. Această configurare suplimentară a aplicaţiei poate fi aplicată înapoi unui element configurabil de aplicaţie web ArcGIS Online sau poate fi găzduit pe propriul server web.<br /> Pentru informaţii suplimentare despre configurarea acestei aplicaţii, consultaţi documentaţia pentru <a href=\'http://solutions.arcgis.com/local-government/help/crowdsource-manager/\' target=\'_blank\'>Crowdsource Manager</a>." // Appears when preview page is loaded
         }
     })
 );

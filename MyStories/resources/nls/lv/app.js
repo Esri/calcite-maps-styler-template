@@ -173,7 +173,7 @@
 				chosenSubjectAlt: "{{SUBJECT}} un vairākas birkas",
 				storyMapTopicSubject: "tēma",
 				sharedPublicly: "Koplietots publiski",
-				noBrokenContent: "Nav bojāta satura",
+				noBrokenContent: "ķ_No issues____ū",
 				nominateToGallery: "Izvirzīt ievietošanai galerijā",
 				comingSoon: "Drīzumā!",
 				submitted: "Iesniegts",
@@ -368,9 +368,9 @@
 				inaccessibleWebpage: "Nepieejamas tīmekļa lapas"
 			},
 			scanningErrorTips: {
-				deletedMapTip: "Padoms. Atveriet savu tīmekļa karti un noņemiet bojāto saturu vai noņemiet tīmekļa karti no sava stāsta.",
-				inaccessibleMapTip: "Padoms: atveriet savu tīmekļa karti un noņemiet bojāto saturu vai noņemiet tīmekļa karti no sava stāsta.",
-				notYoursNotAccessibleTip: "Padoms. Atveriet tīmekļa karti un noņemiet slāni vai noņemiet karti no stāsta.",
+				deletedMapTip: "ķ_Tip: Edit your web map and remove the broken content, or remove the web map from your story_____________________________ū.",
+				inaccessibleMapTip: "ķ_Tip: Edit your web map and remove the broken content, or remove the web map from your story_____________________________ū.",
+				notYoursNotAccessibleTip: "ķ_Tip: Edit your web map and remove the layer, or remove the web map from your story__________________________ū.",
 				serviceOkItemNotTip: "Slāņi tika pievienoti kā nepieejamas vai izdzēstas vienības. Slāņi darbojas, bet tas var ietekmēt jūsu karti (uznirstošos logus un simboliku).",
 				ignore: "Ignorēt",
 				fix: "Labot",

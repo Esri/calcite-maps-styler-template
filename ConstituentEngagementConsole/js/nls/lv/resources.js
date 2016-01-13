@@ -83,11 +83,6 @@ define(
         signOutPage: {
             signOutMessage: "Jūs esat veiksmīgi izrakstījies", // Appears when user is successfully signed-out from application
             reSignInMessage: "Noklikšķiniet šeit, lai pierakstītos" // Appears when user is signed-out from application and wants to sign-in again
-        },
-        preview: {
-            section1: "<a href=\'http://solutions.arcgis.com/local-government/help/crowdsource-reporter/\' target=\'_blank\'>Crowdsource Reporter</a> uzņēmuma grupas veidne Crowdsource Manager ir reaģējoša grupas lietojumprogrammas veidne (darbvirsmas un planšetes ierīcēm), kas organizācijas iekšējiem lietotājiem ļauj pārskatīt problēmas/novērojumus, kas iesniegti, izmantojot lietotni Manager.", // Appears when preview page is loaded
-            section2: "Lietotne parāda lietotājiem vienu vai vairākas kartes, lai pārskatītu problēmu vai novērojumu. Lietotāji var meklēt sistēmas un kopas, pārskatīt problēmas informāciju, atjaunināt statusu un piešķirt pienākumus.", // Appears when preview page is loaded
-            section3: "Lietojumprogrammas avota kodu var lejupielādēt papildu konfigurācijai. Šo lietojumprogrammas papildu konfigurāciju var izmantot ArcGIS Online konfigurējamam tīmekļa lietojumprogrammas vienumam vai viesot savā tīmekļa serverī.<br /> Papildinformāciju par šīs lietotnes konfigurēšanu skatiet <a href=\'http://solutions.arcgis.com/local-government/help/crowdsource-manager/\' target=\'_blank\'>Crowdsource Manager</a> dokumentācijā." // Appears when preview page is loaded
         }
     })
 );

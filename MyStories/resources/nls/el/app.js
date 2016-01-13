@@ -173,7 +173,7 @@
 				chosenSubjectAlt: "Ένα {{SUBJECT}} και μερικές ετικέτες",
 				storyMapTopicSubject: "θέμα",
 				sharedPublicly: "Κοινοποιείται δημοσίως",
-				noBrokenContent: "Δεν υπάρχει κατεστραμμένο περιεχόμενο",
+				noBrokenContent: "Đ_No issues____ớ",
 				nominateToGallery: "Προτείνετε στη Συλλογή",
 				comingSoon: "Σύντομα διαθέσιμο!",
 				submitted: "Υποβλήθηκε",
@@ -368,9 +368,9 @@
 				inaccessibleWebpage: "Ιστοσελίδες χωρίς δυνατότητα πρόσβασης"
 			},
 			scanningErrorTips: {
-				deletedMapTip: "Συμβουλή: Ανοίξτε το web χάρτη σας και αφαιρέστε το καταστραμμένο περιεχόμενο ή αφαιρέστε το web χάρτη από την αφήγησή σας.",
-				inaccessibleMapTip: "Συμβουλή: Ανοίξτε το web χάρτη σας και αφαιρέστε το καταστραμμένο περιεχόμενο ή αφαιρέστε το web χάρτη από την αφήγησή σας.",
-				notYoursNotAccessibleTip: "Συμβουλή: Ανοίξτε το web χάρτη και αφαιρέστε το θεματικό επίπεδο ή το χάρτη από την αφήγηση.",
+				deletedMapTip: "Đ_Tip: Edit your web map and remove the broken content, or remove the web map from your story_____________________________ớ.",
+				inaccessibleMapTip: "Đ_Tip: Edit your web map and remove the broken content, or remove the web map from your story_____________________________ớ.",
+				notYoursNotAccessibleTip: "Đ_Tip: Edit your web map and remove the layer, or remove the web map from your story__________________________ớ.",
 				serviceOkItemNotTip: "Τα θεματικά επίπεδα προστέθηκαν ως αντικείμενα που δεν είναι προσβάσιμα ή έχουν διαγραφεί. Τα θεματικά επίπεδα λειτουργούν, αλλά αυτό μπορεί να επηρεάσει το χάρτη σας (αναδυόμενα στοιχεία, συμβολισμός).",
 				ignore: "Αγνόηση",
 				fix: "Διόρθωση",

@@ -83,11 +83,6 @@ define(
         signOutPage: {
             signOutMessage: "Sėkmingai atsijungėte", // Appears when user is successfully signed-out from application
             reSignInMessage: "Paspauskite prisijungti" // Appears when user is signed-out from application and wants to sign-in again
-        },
-        preview: {
-            section1: "Crowdsource Manager, pagalbinis grupės šablonas, skirtas <a href=\'http://solutions.arcgis.com/local-government/help/crowdsource-reporter/\' target=\'_blank\'>Crowdsource Reporter</a>, yra interaktyvus grupės aplikacijos šablonas (asmeniniams arba planšetiniams kompiuteriams), leidžiantis organizacijos vartotojams peržiūrėti per Vadovo aplikaciją pateiktas problemas / pastebėjimus.", // Appears when preview page is loaded
-            section2: "Aplikacija vartotojams pateikia vieną arba daugiau žemėlapių, kad galėtų peržiūrėti problemą arba pastebėjimą. Vartotojai gali ieškoti struktūrų ir sankaupų, peržiūrėti informaciją apie problemą, atnaujinti būseną ir priskirti atsakomybę.", // Appears when preview page is loaded
-            section3: "Galima atsisiųsti aplikacijos programos kodą ir jį toliau konfigūruoti. Papildomai sukonfigūruotą aplikaciją vėl galima pritaikyti ArcGIS Online konfigūruojamam interneto aplikacijos elementui arba talpinti savo interneto serveryje.<br /> Daugiau informacijos apie šios aplikacijos konfigūravimą rasite <a href=\'http://solutions.arcgis.com/local-government/help/crowdsource-manager/\' target=\'_blank\'>Crowdsource Manager</a> dokumentacijoje." // Appears when preview page is loaded
         }
     })
 );

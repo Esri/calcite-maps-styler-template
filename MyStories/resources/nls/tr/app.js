@@ -173,7 +173,7 @@
 				chosenSubjectAlt: "{{SUBJECT}} ve bazı etiketler",
 				storyMapTopicSubject: "konu",
 				sharedPublicly: "Genel olarak paylaşıldı",
-				noBrokenContent: "Kesilmiş içerik yok",
+				noBrokenContent: "ı_No issues____İ",
 				nominateToGallery: "Galeriye Aday Göster",
 				comingSoon: "Yakında karşınızda!",
 				submitted: "Gönderildi",
@@ -368,9 +368,9 @@
 				inaccessibleWebpage: "Erişilemeyen web sayfaları"
 			},
 			scanningErrorTips: {
-				deletedMapTip: "İpucu: Web haritasını açın ve bozuk içeriği kaldırın veya web haritasını hikayenizden kaldırın.",
-				inaccessibleMapTip: "İpucu: Web haritasını açın ve bozuk içeriği kaldırın veya web haritasını hikayenizden kaldırın.",
-				notYoursNotAccessibleTip: "İpucu: Web haritasını açın ve katmanı veya haritayı hikayeden kaldırın.",
+				deletedMapTip: "ı_Tip: Edit your web map and remove the broken content, or remove the web map from your story_____________________________İ.",
+				inaccessibleMapTip: "ı_Tip: Edit your web map and remove the broken content, or remove the web map from your story_____________________________İ.",
+				notYoursNotAccessibleTip: "ı_Tip: Edit your web map and remove the layer, or remove the web map from your story__________________________İ.",
 				serviceOkItemNotTip: "Katmanlar erişilemeyen veya silinmiş öğeler olarak eklendi. Katmanlar çalışıyor, ancak bu haritanızı (açılan pencereler, semboller) etkileyebilir.",
 				ignore: "Yoksay",
 				fix: "Düzelt",

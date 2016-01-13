@@ -173,7 +173,7 @@
 				chosenSubjectAlt: "{{SUBJECT}} и несколько тегов",
 				storyMapTopicSubject: "subject",
 				sharedPublicly: "Она опубликована для всех",
-				noBrokenContent: "Нет испорченных ресурсов",
+				noBrokenContent: "Ж_No issues____Я",
 				nominateToGallery: "Отправить в Галерею",
 				comingSoon: "Скоро!",
 				submitted: "Отправлено",
@@ -368,9 +368,9 @@
 				inaccessibleWebpage: "Недоступные веб-страницы"
 			},
 			scanningErrorTips: {
-				deletedMapTip: "Подсказка: откройте веб-карту и удалите неисправные ресурсы, либо удалите веб-карту из истории.",
-				inaccessibleMapTip: "Подсказка: откройте веб-карту и удалите неисправные ресурсы, либо удалите веб-карту из истории.",
-				notYoursNotAccessibleTip: "Подсказка: откройте веб-карту и удалите слой или карту из истории",
+				deletedMapTip: "Ж_Tip: Edit your web map and remove the broken content, or remove the web map from your story_____________________________Я.",
+				inaccessibleMapTip: "Ж_Tip: Edit your web map and remove the broken content, or remove the web map from your story_____________________________Я.",
+				notYoursNotAccessibleTip: "Ж_Tip: Edit your web map and remove the layer, or remove the web map from your story__________________________Я.",
 				serviceOkItemNotTip: "Слои были добавлены как элементы, которые недоступны или удалены. Слои будут работать, но это может повлиять на внешний вид карты (всплывающие окна, символы).",
 				ignore: "Игнорировать",
 				fix: "Исправить",

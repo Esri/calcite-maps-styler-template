@@ -173,7 +173,7 @@
 				chosenSubjectAlt: "Een {{SUBJECT}} en enkele tags",
 				storyMapTopicSubject: "onderwerp",
 				sharedPublicly: "Openbaar gedeeld",
-				noBrokenContent: "Geen defecte content",
+				noBrokenContent: "Ĳ_No issues____ä",
 				nominateToGallery: "Toevoegen aan Galerij",
 				comingSoon: "Binnenkort beschikbaar!",
 				submitted: "Verzonden",
@@ -368,9 +368,9 @@
 				inaccessibleWebpage: "Niet-toegankelijke webpagina\'s"
 			},
 			scanningErrorTips: {
-				deletedMapTip: "Tip: Open uw webmap en verwijder de defecte content, of verwijder uw webmap uit uw verhaal.",
-				inaccessibleMapTip: "Tip: Open uw webmap en verwijder de defecte content, of verwijder uw webmap uit uw verhaal.",
-				notYoursNotAccessibleTip: "Tip: Open uw webmap en verwijder de laag of kaart uit uw verhaal.",
+				deletedMapTip: "Ĳ_Tip: Edit your web map and remove the broken content, or remove the web map from your story_____________________________ä.",
+				inaccessibleMapTip: "Ĳ_Tip: Edit your web map and remove the broken content, or remove the web map from your story_____________________________ä.",
+				notYoursNotAccessibleTip: "Ĳ_Tip: Edit your web map and remove the layer, or remove the web map from your story__________________________ä.",
 				serviceOkItemNotTip: "Kaartlagen werden toegevoegd als items die niet-toegankelijk of verwijderd zijn. De kaartlagen functioneren niet, maar dit kan uw kaart aantasten (pop-ups, symbolen).",
 				ignore: "Ignore",
 				fix: "Herstel",

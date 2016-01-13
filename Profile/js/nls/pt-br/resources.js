@@ -19,6 +19,9 @@ define(
     map: {
       error: "Não foi possível criar o mapa"
     },
+    nav: {
+        "close": "ã_Close___Ç"
+    },
     elevation: {
         toggle: "Alternar o Gráfico do Perfil de Elevação.",
         drawTool: "Desenha uma linha no mapa para gerar um perfil de elevação.",

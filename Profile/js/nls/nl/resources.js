@@ -19,6 +19,9 @@ define(
     map: {
       error: "Kaart kan niet gemaakt worden"
     },
+    nav: {
+        "close": "Ĳ_Close___ä"
+    },
     elevation: {
         toggle: "De hoogteprofielgrafiek wisselen.",
         drawTool: "Teken een lijn op de kaart om een hoogteprofiel te genereren.",

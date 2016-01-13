@@ -173,7 +173,7 @@
 				chosenSubjectAlt: "{{SUBJECT}} 和部分標記",
 				storyMapTopicSubject: "主旨",
 				sharedPublicly: "分享給大眾",
-				noBrokenContent: "無殘缺內容",
+				noBrokenContent: "試_No issues____驗",
 				nominateToGallery: "指定給圖庫",
 				comingSoon: "即將推出！",
 				submitted: "已提交",
@@ -368,9 +368,9 @@
 				inaccessibleWebpage: "無法存取的網頁"
 			},
 			scanningErrorTips: {
-				deletedMapTip: "提示: 開啟您的網上地圖並移除殘缺的內容，或移除您故事中的網上地圖。",
-				inaccessibleMapTip: "提示: 開啟您的網上地圖並移除殘缺的內容，或移除您故事中的網上地圖。",
-				notYoursNotAccessibleTip: "提示: 開啟網上地圖，及移除故事中的圖層或地圖。",
+				deletedMapTip: "試_Tip: Edit your web map and remove the broken content, or remove the web map from your story_____________________________驗.",
+				inaccessibleMapTip: "試_Tip: Edit your web map and remove the broken content, or remove the web map from your story_____________________________驗.",
+				notYoursNotAccessibleTip: "試_Tip: Edit your web map and remove the layer, or remove the web map from your story__________________________驗.",
 				serviceOkItemNotTip: "已將圖層新增為無法存取或已刪除的項目。圖層正在運作，但這可能會影響您的地圖 (快顯視窗、符號)。",
 				ignore: "忽略",
 				fix: "修復",
