@@ -1,12 +1,14 @@
-define(["dojo/ready", "dojo/parser", "dojo/dom-attr", "dojo/dom-geometry", "dojo/on", "dojo/_base/array", "dojo/_base/declare", "dojo/_base/lang", "dojo/query", "dojo/dom", "dojo/dom-class", "dojo/dom-construct", "dijit/registry", "esri/domUtils", "esri/lang", "esri/arcgis/utils", "esri/dijit/Popup", "esri/layers/FeatureLayer", "esri/geometry/Point", "dojo/domReady!"], function (
-ready, parser, domAttr, domGeometry, on, array, declare, lang, query, dom, domClass, domConstruct, registry, domUtils, esriLang, arcgisUtils, Popup, FeatureLayer, Point) {
+define(["dojo/ready", "dojo/parser", "dojo/dom-attr", "dojo/dom-geometry", "dojo/on", "dojo/_base/array", "dojo/_base/declare", "dojo/_base/lang", "dojo/query", "dojo/dom", "dojo/dom-class", "dojo/dom-construct", "dijit/registry", "esri/domUtils", "esri/lang", "esri/arcgis/utils", "esri/dijit/Popup", "esri/layers/FeatureLayer", "esri/geometry/Point",  "application/MapUrlParams", "dojo/domReady!"], function (
+ready, parser, domAttr, domGeometry, on, array, declare, lang, query, dom, domClass, domConstruct, registry, domUtils, esriLang, arcgisUtils, Popup, FeatureLayer, Point, MapUrlParams) {
     return declare(null, {
         config: {},
         startup: function (config) {
+            var promise;
             parser.parse();
             // config will contain application and user defined info for the template such as i18n strings, the web map id
             // and application id
             // any url parameters and any application specific configuration information. 
+            if(config){
             this.config = config;
             window.config = config;
 
@@ -33,29 +35,41 @@ ready, parser, domAttr, domGeometry, on, array, declare, lang, query, dom, domCl
 
             }));
 
+        var itemInfo = this.config.itemInfo || this.config.webmap;
+
+
+        // Check for center, extent, level and marker url parameters.
+        var mapParams = new MapUrlParams({
+          center: this.config.center || null,
+          extent: this.config.extent || null,
+          level: this.config.level || null,
+          marker: this.config.marker || null,
+          mapSpatialReference: itemInfo.itemData.spatialReference,
+          defaultMarkerSymbol: this.config.markerSymbol,
+          defaultMarkerSymbolWidth: this.config.markerSymbolWidth,
+          defaultMarkerSymbolHeight: this.config.markerSymbolHeight,
+          geometryService: this.config.helperServices.geometry.url
+        });
+
+        mapParams.processUrlParams().then(lang.hitch(this, function(urlParams){
+          promise = this._createWebMap(itemInfo, urlParams);
+        }), lang.hitch(this, function(error){
+          this.reportError(error);
+        }));
+
+      } else {
+        var error = new Error("Main:: Config is not defined");
+        this.reportError(error);
+        var def = new Deferred();
+        def.reject(error);
+        promise = def.promise;
+      }
+      return promise;
 
 
 
-
-            // document ready
-            ready(lang.hitch(this, function () {
-
-                // config will contain application and user defined info for the template such as i18n strings, the web map id
-                // and application id
-                // any url parameters and any application specific configuration information.
-                if (config) {
-                    this.config = config;
-                    //supply either the webmap id or, if available, the item info
-                    var itemInfo = this.config.itemInfo || this.config.webmap;
-                    this._createWebMap(itemInfo);
-                } else {
-                    var error = new Error("Main:: Config is not defined");
-                    this.reportError(error);
-                }
-            }));
-
-        },
-        reportError: function (error) {
+    },
+    reportError: function (error) {
             // remove loading class from body
             domClass.remove(document.body, "app-loading");
             domClass.add(document.body, "app-error");
@@ -471,138 +485,86 @@ ready, parser, domAttr, domGeometry, on, array, declare, lang, query, dom, domCl
         },
 
         // create a map based on the input web map id
-        _createWebMap: function (itemInfo) {
+        _createWebMap: function (itemInfo, params) {
+      // Optionally define additional map config here for example you can
+      // turn the slider off, display info windows, disable wraparound 180,
+      // slider position and more.
 
-            //modify the extent if provided via url params
-            if (this.config.extent) {
-                var extent = decodeURIComponent(this.config.extent).split(",");
-                if (extent && extent.length && extent.length === 4) {
-                    itemInfo.item.extent = [
-                        [parseFloat(extent[0]), parseFloat(extent[1])],
-                        [parseFloat(extent[2]), parseFloat(extent[3])]
-                    ];
-                }
-            }
+        var customPopup = new Popup({
+            titleInBody: true
+        }, domConstruct.create("div"));
 
+        domClass.add(document.body, this.config.theme);
+        domClass.add(customPopup.domNode, this.config.theme);
+        params = params || {};
+        params.mapOptions.slider = this.config.zoom;
+        params.mapOptions.sliderPosition = this.config.zoom_position;
+        params.mapOptions.infoWindow = customPopup;
+        params.mapOptions.logo = (this.config.logoimage === null) ? true : false;
+       
 
-
-            var customPopup = new Popup({
-                titleInBody: true
-            }, domConstruct.create("div"));
-            domClass.add(document.body, this.config.theme);
-            domClass.add(customPopup.domNode, this.config.theme);
-
-            var options = {
-                slider: this.config.zoom,
-                sliderPosition: this.config.zoom_position,
-                infoWindow: customPopup,
-                logo: (this.config.logoimage === null) ? true : false
-            };
-            //specify center and zoom if provided as url params 
-            if (this.config.level) {
-                options.zoom = this.config.level;
-            }
-            if (this.config.center) {
-                var points = this.config.center.split(",");
-                if (points && points.length === 2) {
-                    options.center = [parseFloat(points[0]), parseFloat(points[1])];
-                }
-            }
-            arcgisUtils.createMap(itemInfo, "mapDiv", {
-                mapOptions: options,
-                usePopupManager: true,
-                editable: false,
-                layerMixins: this.config.layerMixins || [],
-                bingMapsKey: this.config.bingKey
-            }).then(lang.hitch(this, function (response) {
-                this.map = response.map;
-                this.config.response = response;
-                this._adjustPopupSize();
-                if (this.config.logoimage) {
-                    query(".esriControlsBR").forEach(lang.hitch(this, function (node) {
-                        var link = null;
-                        if (this.config.logolink) {
-                            link = domConstruct.create("a", {
-                                href: this.config.logolink,
-                                target: "_blank"
-                            }, node);
-                        }
-
-                        //create a logo image
-                        domConstruct.create("img", {
-                            src: this.config.logoimage,
-                            "class": "logo"
-                        }, link || node);
-
-                    }));
+      return arcgisUtils.createMap(itemInfo, "mapDiv", {
+        mapOptions: params.mapOptions || {},
+        usePopupManager: true,
+        layerMixins: this.config.layerMixins || [],
+        editable: this.config.editable,
+        bingMapsKey: this.config.bingKey
+      }).then(lang.hitch(this, function (response) {
+        this.map = response.map;
+        this.config.response = response;
+        this._adjustPopupSize(); 
+        if (this.config.logoimage) {
+            query(".esriControlsBR").forEach(lang.hitch(this, function (node) {
+                var link = null;
+                if (this.config.logolink) {
+                    link = domConstruct.create("a", {
+                        href: this.config.logolink,
+                        target: "_blank"
+                    }, node);
                 }
 
-                //disable mouse zoom
-                if (this.config.disable_scroll) {
-                    this.map.disableScrollWheelZoom();
-                }
+                //create a logo image
+                domConstruct.create("img", {
+                    src: this.config.logoimage,
+                    "class": "logo"
+                }, link || node);
 
-                // remove loading class from body
+            }));
+        }             
+          if(params.markerGraphic){
+            // Add a marker graphic with an optional info window if
+            // one was specified via the marker url parameter
+            require(["esri/layers/GraphicsLayer"], lang.hitch(this, function(GraphicsLayer){
+              var markerLayer = new GraphicsLayer();
+
+              this.map.addLayer(markerLayer);
+              markerLayer.add(params.markerGraphic);
+
+              if(params.markerGraphic.infoTemplate){
+                this.map.infoWindow.setFeatures([params.markerGraphic]);
+                this.map.infoWindow.show(params.markerGraphic.geometry);
+              }
+
+              this.map.centerAt(params.markerGraphic.geometry);
+            }));
+
+          }
+           // remove loading class from body
                 domClass.remove(document.body, "app-loading");
 
                 if (this.config.popup_sidepanel) { //display popup content in the side panel
                     this.map.infoWindow.set("popupWindow", false);
                     this._initializeSidepanel();
                 }
-
-                require(["application/sniff!marker?esri/symbols/PictureMarkerSymbol", "application/sniff!marker?esri/graphic", "application/sniff!marker?esri/dijit/PopupTemplate"], lang.hitch(this, function (PictureMarkerSymbol, Graphic, PopupTemplate) {
-                    if (!PictureMarkerSymbol && !Graphic && !PopupTemplate) {
-                        return;
-                    }
-                    var symbolInfo = decodeURIComponent(this.config.marker).split(";");
-                    if (symbolInfo.length === 1) {
-                        symbolInfo = decodeURIComponent(this.config.marker).split(",");
-                    }
-
-                    //if (symbolInfo && symbolInfo.length && symbolInfo.length >= 6) {
-                     if(symbolInfo && symbolInfo.length && symbolInfo.length >=2){
-                        var x = symbolInfo[0],
-                            y = symbolInfo[1],
-                            wkid = symbolInfo[2] || null,
-                            description = symbolInfo[3] || null,
-                            icon_url = symbolInfo[4] || null,
-                            label = symbolInfo[5] || null;
-
-                        var markerSymbol = new PictureMarkerSymbol(icon_url || this.config.marker_symbol, 26, 26);
-                        var point = new Point({
-                            "x": x,
-                            "y": y,
-                            "spatialReference": {
-                                "wkid": wkid || 4326
-                            }
-                        });
-
-                        var infoTemplate = null;
-                        if (description || label) {
-                            infoTemplate = new PopupTemplate({
-                                "title": label || null,
-                                "description": description || null
-                            });
-                        }
-                        var graphic = new Graphic(point, markerSymbol, null, infoTemplate);
-
-                        this.map.graphics.add(graphic);
-                        if (description || label) {
-                            this.map.infoWindow.setFeatures([graphic]);
-                            this.map.infoWindow.show(point);
-                        }
-
-                        //set the marker location to the map center 
-                        this.map.centerAt(point);
-                    }
-
-                }));
-
-                this.loadMapWidgets();
-
-                // map has been created. You can start using it.
-                // If you need map to be loaded, listen for it's load event.
-            }), this.reportError);
+           this.loadMapWidgets();
+        /* ---------------------------------------- */
+        /*                                          */
+        /* ---------------------------------------- */
+        // return for promise
+        return response;
+        // map has been created. You can start using it.
+        // If you need map to be loaded, listen for it's load event.
+      }), this.reportError);
         },
         _displayPopupContent: function (feature, selectedIdx, count) {
             if (feature) {
