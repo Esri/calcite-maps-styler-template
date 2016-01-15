@@ -22,7 +22,9 @@ define([
     "dijit/TooltipDialog",
     "dijit/popup",
     "dojo/aspect",
+    "dijit/_editor/plugins/FullScreen",
     "dijit/_editor/plugins/LinkDialog",
+    "dijit/_editor/plugins/ViewSource",
     "application/BrowseIdDlg",
     "application/EnrichLayer",
     "esri/basemaps",
@@ -33,7 +35,7 @@ function (
     lang,
     _WidgetBase,
     ContentPane,
-    dom, on, number, string, query, array, domConstruct, domClass, Dialog, esriRequest, domAttr, domStyle, nls, topic, keys, Editor, TooltipDialog, popup, aspect, LinkDialog, BrowseIdDlg, EnrichLayer, esriBasemaps, arcgisUtils) {
+    dom, on, number, string, query, array, domConstruct, domClass, Dialog, esriRequest, domAttr, domStyle, nls, topic, keys, Editor, TooltipDialog, popup, aspect, FullScreen, LinkDialog, ViewSource, BrowseIdDlg, EnrichLayer, esriBasemaps, arcgisUtils) {
     var Widget = declare([_WidgetBase], {
         declaredClass: "application.TemplateBuilder",
         //URL for updating Item
@@ -62,7 +64,7 @@ function (
         },
         // start widget. called by user
         startup: function () {
-            console.log('edit mode');
+            //console.log('edit mode');
             // builder mode class to body
             domClass.add(document.body, this.css.builderMode);
             // builder node
@@ -701,7 +703,8 @@ function (
             dijitInputContainer = new Editor({
                 height: '250px',
                 required: true,
-                plugins: ['bold', 'italic', 'underline', 'createLink', 'removeFormat'],
+                plugins: ['bold', 'italic', 'underline', 'createLink', 'insertImage', 'removeFormat'],
+                extraPlugins:[{name: "viewsource"},{name: 'fullscreen', zIndex: 999}],
                 value: dijitValue
             }, appDescriptionInputContainer);
             dijitInputContainer.startup();
