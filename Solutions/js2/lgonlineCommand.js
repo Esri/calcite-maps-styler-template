@@ -37,6 +37,7 @@ define([
     "esri/dijit/Legend",
     "esri/dijit/BasemapGallery",
     "esri/dijit/Basemap",
+    "esri/lang",
     "esri/tasks/locator",
     "esri/tasks/PrintTask",
     "esri/tasks/PrintParameters",
@@ -68,6 +69,7 @@ define([
     Legend,
     BasemapGallery,
     Basemap,
+    esriLang,
     Locator,
     PrintTask,
     PrintParameters,
@@ -1576,7 +1578,13 @@ define([
             }
 
             // ASCII SQL search if ""; for Unicode SQL, use "U&" for PostgreSQL and "N" for everything else
-            this.unicodeIdentifier = this.unicodeIdentifier || this.appConfig.defaultUnicodeIdentifier || "";
+            if (!esriLang.isDefined(this.unicodeIdentifier)) {  // from the UI configuration
+                if (esriLang.isDefined(this.appConfig.defaultUnicodeIdentifier)) {  // from the defaults.js file
+                    this.unicodeIdentifier = this.appConfig.defaultUnicodeIdentifier;
+                } else {
+                    this.unicodeIdentifier = "";  // fallback
+                }
+            }
 
             this.setUpWaitForDependency("js.LGSearchFeatureLayer");
         },
@@ -3245,6 +3253,6 @@ define([
 });
 /* 
 This source is part of the git commit 
-8790b8a28510268b 2015-12-18 12:24:13 -0800
+517359e21478e0ce 2016-01-15 14:51:40 -0800
 It is available from https://github.com/Esri/local-government-online-apps 
 */ 

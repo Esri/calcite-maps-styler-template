@@ -118,21 +118,24 @@ define([
             searchOptions = {
                 map: this.appConfig.map,
                 useMapExtent: true,
-                itemData: this.appConfig.itemInfo.itemData
+                itemData: this.appConfig.itemInfo.itemData,
+                defined: false
             };
 
-            // Check for search configuration via "search" type written into searchLayers object
-            if (this.searchLayers) {
-                searchOptions.applicationConfiguredSources = this.searchLayers.sources || [];
+            // v.3: Check for search configuration via "search" type written into searchLayers object
+            if (this.searchLayers && this.searchLayers.sources && this.searchLayers.sources.length > 0) {
+                searchOptions.applicationConfiguredSources = this.searchLayers.sources;
+                searchOptions.defined = true;
 
-            // Check for search configuration via "multilayerandfieldselector" type written into searchLayersString string
-            } else if (this.searchLayersString) {
+            // v.2: Check for search configuration via "multilayerandfieldselector" type written into searchLayersString string
+            } else if (this.searchLayersString && this.searchLayersString.length > 0) {
                 configuredSearchLayers = (this.searchLayersString instanceof Array) ?
                     this.searchLayersString : JSON.parse(this.searchLayersString);
                 searchOptions.configuredSearchLayers = configuredSearchLayers;
                 searchOptions.geocoders = this.appConfig.helperServices.geocode;
+                searchOptions.defined = true;
 
-            // Check for search configuration via a pair of "string" types written into searchLayerName and searchFields
+            // v.1: Check for search configuration via a pair of "string" types written into searchLayerName and searchFields
             } else if (typeof this.searchLayerName === "string" && typeof this.searchFields === "string") {
                 this.searchLayerName = this.searchLayerName.trim();
                 this.searchFields = this.searchFields.trim();
@@ -181,6 +184,7 @@ define([
                                         "fields": usableSearchFields,
                                         "type": "FeatureLayer"
                                     });
+                                    searchOptions.defined = true;
                                 }
                             }
                         }
@@ -188,10 +192,12 @@ define([
 
                     searchOptions.geocoders = this.appConfig.helperServices.geocode;
                 }
+            }
 
             // Searching is not configured
-            } else {
+            if (!searchOptions.defined) {
                 this.ready.reject();
+                return;
             }
 
             // Format the configuration for the Search dijit
@@ -220,6 +226,6 @@ define([
 });
 /* 
 This source is part of the git commit 
-8790b8a28510268b 2015-12-18 12:24:13 -0800
+517359e21478e0ce 2016-01-15 14:51:40 -0800
 It is available from https://github.com/Esri/local-government-online-apps 
 */ 

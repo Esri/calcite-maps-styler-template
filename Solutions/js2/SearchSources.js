@@ -181,9 +181,8 @@ declare, lang, array, dojoJson, domConstruct, esriLang, Locator, FeatureLayer, S
         }
 
     });
-});
-/*
-This source is part of the git commit
-8790b8a28510268b 2015-12-18 12:24:13 -0800
-It is available from https://github.com/Esri/local-government-online-apps
-*/
+});/* 
+This source is part of the git commit 
+517359e21478e0ce 2016-01-15 14:51:40 -0800
+It is available from https://github.com/Esri/local-government-online-apps 
+*/ 
