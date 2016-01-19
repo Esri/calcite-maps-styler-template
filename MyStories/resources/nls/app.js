@@ -41,7 +41,7 @@ define({
 		},
 		cantFindStories: {
 			whereAreStories: "Not seeing your story?",
-			notSeeExplanation: "My Stories will only list story maps hosted in ArcGIS Online created with the {{STORY_MAP_TOUR}}, {{JOURNAL}}, {{MAP_SERIES}} and {{SWIPE_SPYGLASS}} applications. See our {{FAQ}} for more information.",
+			notSeeExplanation: "My Stories will only list story maps hosted in ArcGIS and created with the {{STORY_MAP_TOUR}}, {{JOURNAL}}, {{MAP_SERIES}} or {{SWIPE_SPYGLASS}} applications. See our {{FAQ}} for more information.",
 			faq: "FAQ",
 			followingStoriesToUpdate: "The following stories created with early versions of our applications need to be updated for them to be listed in My Stories:",
 			gettingStories: "Searching for stories created with early versions of our applications that need to be updated...",
@@ -130,7 +130,7 @@ define({
 			close: "close",
 			hide: "hide",
 			notAvailableWhenBroken: "Your story has issues below",
-			cantBeDeleted: "This story has delete protection enabled, see its item page on ArcGIS Online to disable",
+			cantBeDeleted: "This story has delete protection enabled, see its item page to disable",
 			shareDialog: {
 				title: "Share your story with the world!",
 				notPublicWarning: "Your story is shared with your organization. Only members of your organization will be able to view it.",
@@ -163,7 +163,7 @@ define({
 				save: "Save",
 				saved: "Saved",
 				errorSaving: "Error saving",
-				tagTip: "Tip: Tags help people find your story on ArcGIS Online. The more relevant the tags are, the higher the visibility your work will receive."
+				tagTip: "Tip: Tags help people find your story. The more relevant the tags are, the higher the visibility your work will receive."
 			},
 			submitToGallery: {
 				gallerySubmission: "Story Maps Gallery",
@@ -384,7 +384,6 @@ define({
 				premiumContentTip: "Your story contains premium content that will consume {{CREDITS}} upon making it public. Make your story public and continue, or remove the layers from your story.",
 				premiumContentPublicTip: "Your story contains premium content that will consume {{CREDITS}} when publicly available. Confirm to make these layers public or remove the layers from your story.",
 				subscriptionContentTip: "Your story contains subscription content that is not publicly available by default. Confirm that you want to make these layers available (no credits will be consumed), or remove the layers from your story.",
-				agolCredits: "ArcGIS Online credits",
 				credits: "credits",
 				makePublic: "Make public",
 				confirm: "Confirm",
@@ -455,6 +454,15 @@ define({
 				secondValueA: "swipe",
 				secondValueB: "spyglass",
 				thirdTitle: "maps"
+			},
+			crowdsource: {
+				firstTitle: "contributions",
+				secondTitle: "style",
+				secondValueA: "side panel",
+				secondValueB: "stacked",
+				thirdTitle: "basemap",
+				thirdValueLoading: "Loading...",
+				thirdValueUnknown: "unknown"
 			}
 		},
 		progress: {
@@ -469,6 +477,10 @@ define({
 			scanProgress: "{{NUM_SCANNED}} of {{NUM_TOTAL}}",
 			scanStopped: "Stories scanned: {{NUM_SCANNED}}, Stories with issues: {{ISSUE_STORIES}}",
 			storiesWithIssues: "Stories with issues: {{NUM_STORIES}}"
+		},
+		newStories: {
+			newStoriesFound: "Looks like you have created a new story.",
+			includeStories: "Refresh Stories"
 		}
     }),
 	"ar": 1,

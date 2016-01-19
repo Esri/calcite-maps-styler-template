@@ -1038,6 +1038,33 @@ We nix out the before (left) pseudo element and instead add the stylings to the 
 
   .create-story-modal .dialog-body {
     max-height: 56%; } }
+#new-stories-notification {
+  height: 180px;
+  text-align: center; }
+
+#new-stories-notification.row-shrunk {
+  height: 0;
+  padding: 0;
+  margin: 0;
+  border: none; }
+
+#new-stories-notification.row-faded {
+  opacity: 0; }
+
+#new-stories-wrapper {
+  border-bottom: 1px solid #396e8b;
+  height: 100%; }
+
+#new-stories-wrapper:before {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle; }
+
+#new-stories-inner {
+  display: inline-block;
+  vertical-align: middle; }
+
 .modal.share-modal {
   margin-left: -275px;
   width: 550px; }
@@ -2045,6 +2072,13 @@ This rule exists ONLY so that when the item-title is empty, it doesn't collapse 
   padding: 0;
   text-transform: lowercase; }
 
+.notification-pane.checking {
+  background: #DDD;
+  color: #666; }
+
+.notification-pane.checking .refresh {
+  color: #666; }
+
 .notification-pane.success .refresh {
   color: #355c0b; }
 
@@ -2223,6 +2257,19 @@ This rule exists ONLY so that when the item-title is empty, it doesn't collapse 
 
 .content-tabs.sharing .content-tab {
   float: none; }
+
+.content-tab .loader {
+  height: 14px;
+  width: 14px;
+  position: absolute;
+  top: -1px;
+  right: 0; }
+
+.content-tab .loader:after {
+  top: 3px;
+  left: 3px;
+  width: 8px;
+  height: 8px; }
 
 .content-tab:before {
   font-size: 0.9rem;
