@@ -518,16 +518,17 @@ define([
           // Iterate over the list of authorizedCrossOriginDomains
           // and add each as a javascript obj to the corsEnabledServers
           var trustedHost;
-          if(response.authorizedCrossOriginDomains && response.authorizedCrossOriginDomains.length){
-            for(var i=0; i < response.authorizedCrossOriginDomains.length; i++){
+          if (response.authorizedCrossOriginDomains && response.authorizedCrossOriginDomains.length > 0) {
+            for (var i = 0; i < response.authorizedCrossOriginDomains.length; i++) {
               trustedHost = response.authorizedCrossOriginDomains[i];
-                if(esriLang.isDefined(trustedHost)&& trustedHost.length > 0){
-                  esriConfig.defaults.io.corsEnabledServers.push({
-                    host: response.authorizedCrossOriginDomains[i],
-                    withCredentials: true
-                  });
-                }
-             } 
+              // add if trusted host is not null, undefined, or empty string
+              if (esriLang.isDefined(trustedHost) && trustedHost.length > 0) {
+                esriConfig.defaults.io.corsEnabledServers.push({
+                  host: trustedHost,
+                  withCredentials: true
+                });
+              }
+            }
           }
           var cfg = {};
           // save organization information

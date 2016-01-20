@@ -84,8 +84,10 @@ function (
         var searchSources = new SearchSources(searchOptions);
         var createdOptions = searchSources.createOptions();
 
-        if (this.config.searchConfig && this.config.searchConfig.activeSourceIndex) {
-          createdOptions.activeSourceIndex = this.config.searchConfig.activeSourceIndex;
+        if (this.config.searchConfig != null && this.config.searchConfig != undefined){
+          if (this.config.searchConfig.activeSourceIndex != null && this.config.searchConfig.activeSourceIndex != undefined) {
+            createdOptions.activeSourceIndex = this.config.searchConfig.activeSourceIndex;
+          }
         }
 
 
