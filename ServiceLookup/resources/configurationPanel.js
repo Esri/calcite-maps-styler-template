@@ -162,7 +162,7 @@
           },
           "fieldName": "serviceRequestLayerName",
           "label": "Storage Layer Name (Editable Feature Layer Only)",
-          "tooltip": "Point layer used for to store request locations"
+          "tooltip": "Point layer used to store lookup the lookup locations"
         },
         {
           "type": "string",
