@@ -267,7 +267,7 @@ define([
             // Handle thumbnail image click
             this.own(on(divThumbnailImage, "click", lang.hitch(this, function () {
                 dataType = itemResult.type.toLowerCase();
-                if (((dataType !== "map service") && (dataType !== "web map") && (dataType !== "feature service") && (dataType !== "image service") && (dataType !== "kml") && (dataType !== "wms")) || (dataType === "operation view")) {
+                if (((dataType !== "map service") && (dataType !== "web map") && (dataType !== "feature service") && (dataType !== "image service") && (dataType !== "kml") && (dataType !== "wms") && (dataType !== "vector tile service")) || (dataType === "operation view")) {
                     dojo.downloadWindow = window.open('', "_blank");
                 }
                 this.showInfoPage(itemResult, false);
@@ -284,7 +284,7 @@ define([
             if (data) {
                 data.thumbnailUrl = thumbnailUrl;
                 dataType = data.type.toLowerCase();
-                if ((dataType === "map service") || (dataType === "web map") || (dataType === "feature service") || (dataType === "image service") || (dataType === "kml") || (dataType === "wms")) {
+                if ((dataType === "map service") || (dataType === "web map") || (dataType === "feature service") || (dataType === "image service") || (dataType === "kml") || (dataType === "wms") || (dataType === "vector tile service")) {
                     if ((dataType === "web map") && dojo.configData.values.mapViewer.toLowerCase() === "arcgis") {
                         topic.publish("hideProgressIndicator");
                         window.open(dojo.configData.values.portalURL + '/home/webmap/viewer.html?webmap=' + itemId, "_self");
@@ -482,6 +482,10 @@ define([
                         title: data.title,
                         description: data.description
                     };
+                    //generate style URL for vector tile service
+                    if (data.type && data.type.toLowerCase() === "vector tile service") {
+                        dataArray.url = dojo.configData.values.portalURL + "/sharing/content/items/" + data.id + "/resources/styles/root.json";
+                    }
                     // itemFlag indicates if item details page should be displayed or the item should be opened up
                     if (itemFlag) {
                         this._createPropertiesContent(data, this.detailsContent);
@@ -567,7 +571,7 @@ define([
                 }
                 dataType = itemResult.type.toLowerCase();
                 this._btnTryItNowHandle = on(this.btnTryItNow, "click", lang.hitch(this, function () {
-                    if ((domAttr.get(this.btnTryItNow, "innerHTML") === nls.downloadButtonText) || ((dataType !== "map service") && (dataType !== "web map") && (dataType !== "feature service") && (dataType !== "image service") && (dataType !== "kml") && (dataType !== "wms"))) {
+                    if ((domAttr.get(this.btnTryItNow, "innerHTML") === nls.downloadButtonText) || ((dataType !== "map service") && (dataType !== "web map") && (dataType !== "feature service") && (dataType !== "image service") && (dataType !== "kml") && (dataType !== "wms") && (dataType !== "vector tile service"))) {
                         dojo.downloadWindow = window.open('', "_blank");
                     }
                     this._showTryItNowView(this.btnTryItNow, itemResult, dataArray);
@@ -580,7 +584,7 @@ define([
                     this._appThumbnailClickHandle.remove();
                 }
                 this._appThumbnailClickHandle = on(this.appThumbnail, "click", lang.hitch(this, function () {
-                    if ((dataType !== "map service") && (dataType !== "web map") && (dataType !== "feature service") && (dataType !== "image service") && (dataType !== "kml") && (dataType !== "wms")) {
+                    if ((dataType !== "map service") && (dataType !== "web map") && (dataType !== "feature service") && (dataType !== "image service") && (dataType !== "kml") && (dataType !== "wms") && (dataType !== "vector tile service")) {
                         dojo.downloadWindow = window.open('', "_blank");
                     }
                     this._showTryItNowView(this.appThumbnail, itemResult, dataArray);

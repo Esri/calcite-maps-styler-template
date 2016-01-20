@@ -1,8 +1,2 @@
-git repository map-and-app-gallery-template, branch
-develop
-commit 1168552846af7e4b21460448b2a25e0adf2829de
-Merge: cd3854a cd892ed
-Author: MikeTschudi <mtschudi@esri.com>
-Date:   Mon Dec 14 09:41:58 2015 -0800
-
-    Merge branch 'proxy-update' into develop
+v 2.2
+1/20/2016

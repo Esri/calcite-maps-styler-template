@@ -489,6 +489,11 @@ font
     position: relative;
 }
 
+.esriCTInnerRightPanelDetails .esriCTInnerRightPaneldiv
+{
+    margin-left: 5%;
+}
+
 .esriCTApplicationListBox, .esriCTNoResults
 {
     clear: both;
@@ -981,7 +986,7 @@ font
 
 .esriCTReviewContainer
 {
-    padding: 0 0 15px 0px;
+    padding: 0 10px 15px 0px;
 }
 
 .esriCTReviewHeader

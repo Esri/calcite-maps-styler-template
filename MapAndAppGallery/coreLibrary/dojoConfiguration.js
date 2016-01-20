@@ -38,3 +38,8 @@ dojoConfig = {
         location: root + '/nls'
     }]
 };
+//check URL params to detect language
+if (location.search.match(/locale=([\w\-]+)/)) {
+    dojoConfig.locale = RegExp.$1;
+}
+

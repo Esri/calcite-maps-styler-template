@@ -21,10 +21,6 @@
         font-size: 14px !important;
     }
 
-    .esriCTInnerRightPanelDetails
-    {
-        margin-left: 5%;
-    }
 }
 
 @media only screen and (min-device-width : 641px)
@@ -105,10 +101,6 @@
         position: fixed !important;
     }
 
-    .esriCTInnerRightPanelDetails
-    {
-        margin-left: 5%;
-    }
 }
 
 /* media query to handle map gallery header text in iPad devices */
@@ -183,10 +175,6 @@
         white-space: nowrap;
     }
 
-    .esriCTInnerRightPanelDetails
-    {
-        margin-left: 5%;
-    }
 }
 
 @media screen and (min-device-width: 1281px)
@@ -212,10 +200,6 @@
         font-size: 12px !important;
     }
 
-    .esriCTInnerRightPanelDetails
-    {
-        margin-left: 5%;
-    }
 }
 
 @media screen and (min-width: 641px) and (max-width:767px)
@@ -286,10 +270,6 @@
         position: fixed !important;
     }
 
-    .esriCTInnerRightPanelDetails
-    {
-        margin-left: 5%;
-    }
 }
 
 @media screen and (min-width: 321px) and (max-width: 640px)
@@ -362,6 +342,11 @@
     .esriCTInnerRightPanelDetails
     {
         margin-top: 49px;
+        margin-left: 0px;
+    }
+
+    .esriCTInnerRightPanelDetails .esriCTInnerRightPaneldiv
+    {
         margin-left: 0px;
     }
 
@@ -1214,6 +1199,11 @@
     .esriCTInnerRightPanelDetails
     {
         margin-top: 49px;
+        margin-left: 0px;
+    }
+
+    .esriCTInnerRightPanelDetails .esriCTInnerRightPaneldiv
+    {
         margin-left: 0px;
     }
 

@@ -33,8 +33,9 @@ define([
     "esri/layers/ArcGISDynamicMapServiceLayer",
     "esri/layers/ArcGISImageServiceLayer",
     "esri/layers/ImageParameters",
-    "esri/layers/ImageServiceParameters"
-], function (declare, domConstruct, array, lang, on, dom, query, template, _WidgetBase, _TemplatedMixin, _WidgetsInTemplateMixin, ArcGISTiledMapServiceLayer, OpenStreetMapLayer, ArcGISDynamicMapServiceLayer, ArcGISImageServiceLayer, ImageParameters, ImageServiceParameters) {
+    "esri/layers/ImageServiceParameters",
+    "esri/layers/VectorTileLayer"
+], function (declare, domConstruct, array, lang, on, dom, query, template, _WidgetBase, _TemplatedMixin, _WidgetsInTemplateMixin, ArcGISTiledMapServiceLayer, OpenStreetMapLayer, ArcGISDynamicMapServiceLayer, ArcGISImageServiceLayer, ImageParameters, ImageServiceParameters, VectorTileLayer) {
 
     //========================================================================================================================//
 
@@ -137,7 +138,7 @@ define([
         * get shared basemap
         * @memberOf widgets/baseMapGallery/baseMapGallery
         */
-        _addBasemapLayerOnMap: function (basemapLayerId) {
+        _addBasemapLayerOnMap: function () {
             var layer, params, imageParameters, basemapLayers = dojo.configData.values.baseMapLayers[dojo.selectedBasemapIndex];
 
             //check if basemap has multilayer
@@ -167,6 +168,9 @@ define([
                         id: basemapLayers.BasemapId,
                         opacity: 0.75
                     });
+                } else if (basemapLayers.layerType === "VectorTileLayer") {
+                    //add basemap as vector tile layer
+                    layer = new VectorTileLayer(basemapLayers.MapURL, { id: basemapLayers.BasemapId });
                 } else {
                     //add basemap as tiled service layer
                     layer = new ArcGISTiledMapServiceLayer(basemapLayers.MapURL, { id: basemapLayers.BasemapId, visible: true });

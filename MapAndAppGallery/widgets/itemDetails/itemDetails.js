@@ -45,6 +45,7 @@ define([
     "esri/layers/WMSLayer",
     "esri/layers/OpenStreetMapLayer",
     "esri/layers/ImageServiceParameters",
+    "esri/layers/VectorTileLayer",
     "esri/tasks/GeometryService",
     "esri/geometry/Extent",
     "esri/layers/GraphicsLayer",
@@ -56,7 +57,7 @@ define([
     "esri/dijit/OverviewMap",
     "esri/dijit/BasemapGallery",
     "./itemDetailsHelper"
-], function (declare, domConstruct, lang, array, domAttr, dom, template, nls, query, domClass, on, Deferred, all, topic, utils, Legend, Map, GeoLocation, BasemapGallery, ArcGISImageServiceLayer, ArcGISTiledMapServiceLayer, ArcGISDynamicMapServiceLayer, ImageParameters, FeatureLayer, KMLLayer, WMSLayer, OpenStreetMapLayer, ImageServiceParameters, GeometryService, Extent, GraphicsLayer, HomeButton, domStyle, domGeom, esriRequest, arcgisUtils, OverviewMap, ArcGISBasemapGallery, itemDetailsHelper) {
+], function (declare, domConstruct, lang, array, domAttr, dom, template, nls, query, domClass, on, Deferred, all, topic, utils, Legend, Map, GeoLocation, BasemapGallery, ArcGISImageServiceLayer, ArcGISTiledMapServiceLayer, ArcGISDynamicMapServiceLayer, ImageParameters, FeatureLayer, KMLLayer, WMSLayer, OpenStreetMapLayer, ImageServiceParameters, VectorTileLayer, GeometryService, Extent, GraphicsLayer, HomeButton, domStyle, domGeom, esriRequest, arcgisUtils, OverviewMap, ArcGISBasemapGallery, itemDetailsHelper) {
 
     return declare([itemDetailsHelper], {
         templateString: template,
@@ -292,6 +293,21 @@ define([
                             deferred.resolve();
                         }));
                         deferredArray.push(mapDeferred);
+                    } if (info.type === "Vector Tile Service") {
+                    //if item is vector tile layer
+                        thumbnailSrc = (groupInfo.results[index].thumbnail === null) ? dojo.configData.values.noThumbnail : dojo.configData.values.portalURL + "/sharing/rest/content/items/" + info.id + "/info/" + info.thumbnail;
+                        basemapId = groupInfo.results[index].name || groupInfo.results[index].id;
+                        info.layerUrl = dojo.configData.values.portalURL + "/sharing/content/items/" + info.id + "/resources/styles/root.json";
+                        baseMapArray.push({
+                            BasemapId: basemapId,
+                            ThumbnailSource: thumbnailSrc,
+                            Name: info.title,
+                            MapURL: info.layerUrl,
+                            layerType: "VectorTileLayer"
+                        });
+                        /**
+                        * If type is "Web Map", create requests to fetch all the items of the webmap (asynchronous request)
+                        */
                     }
                 }));
                 if (deferredArray.length > 0) {
@@ -359,6 +375,8 @@ define([
                         bmLayerData[0].id = "defaultBasemapId";
                     }
                     bmLayerData[0].url = bmLayerData[0].id;
+                } else if ((bmLayerData[0].type === "VectorTileLayer") || (bmLayerData[0].layerType === "VectorTileLayer")) {
+                    bmLayerData[0].url = bmLayerData[0].styleUrl;
                 }
                 if (this._isUniqueBasemap(baseMapArray, bmLayerData)) {
                     if (bmLayerData[0].visibility || isItemBasemap) {
@@ -662,6 +680,8 @@ define([
                         this.addLayerToMap(mapId, data.url, data.title, dataType);
                     } else if (dataType === "wms") {
                         this.addLayerToMap(mapId, data.url, data.title, dataType);
+                    } else if (dataType === "vector tile service") {
+                        this.addLayerToMap(mapId, data.url, data.title, dataType);
                     }
                     this._createItemDescriptionContent(data);
                 }
@@ -817,6 +837,8 @@ define([
                     this._addImageService(this.map, mapId, url, title);
                 } else if (type === "wms") {
                     this._addWMSLayer(this.map, url);
+                } else if (type === "vector tile service") {
+                    this._addVectorTilesLayer(this.map, url);
                 }
             }));
 
@@ -889,6 +911,17 @@ define([
                 alert(err.error);
             }));
             domAttr.set(this.legendDiv, "innerHTML", nls.noLegendText);
+            topic.publish("hideProgressIndicator");
+        },
+
+        /**
+        * add vector layer on map
+        * @memberOf widgets/itemDetails/itemDetails
+        */
+        _addVectorTilesLayer: function (map, url) {
+            //The URL referenced in the constructor may point to a style url JSON
+            var vectorLayer = new VectorTileLayer(url);
+            map.addLayer(vectorLayer);
             topic.publish("hideProgressIndicator");
         },
 
