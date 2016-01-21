@@ -272,7 +272,7 @@ declare, array, lang, dojo, number, dom, dojoQuery, domConstruct, domStyle, domC
                     var options = select.options;
                     options.length = 0;
                     array.forEach(layers, function (val, index) {
-                        options[index] = new Option(val.title, index);
+                        options[index] = new Option(val.name || val.title, index);
                     });
                     on(select, "change", function () {
                         var value = select.value;
