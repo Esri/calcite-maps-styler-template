@@ -21,6 +21,14 @@ define({
     },
     panel: {
       noslides: "No slides in web scene"
+    },
+    tooltips: {
+      layers: "Layers",
+      basemaps: "Base maps",
+      slides: "Slides",
+      close: "Close",
+      zoom: "Zoom",
+      onoff: "On-Off"
     }
   }),
   "fr": 1

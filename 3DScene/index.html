@@ -17,6 +17,8 @@
   <link rel="stylesheet" href="assets/css/calcite-web.css">
   <!-- Load any application specific styles -->
   <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="js/LayerList/css/LayerList.css">
+  <link rel="stylesheet" href="js/SlideList/css/SlideList.css">
 </head>
 
 <body class="app-loading">
@@ -28,21 +30,25 @@
   <!-- PANEL BOTTOM -->
   <div id="panelBottom" class="closed">
     <div id="panelInner">
-      <div id="panelContent">
-      </div>
+      <div id="panelLayers" class="panelContent"></div>
+      <div id="panelBasemaps" class="panelContent"></div>
+      <div id="panelSlides" class="panelContent"></div>
     </div>
   </div>
   <!-- PANEL TOP -->
   <div id="panelTop" class="shadow">
-    <div id="panelText">
-      <div id="panelTitle">WEB SCENE TEMPLATE</div>
-      <div id="panelSubtitle">SAMPLE TEMPLATE TO SHOW 3D WEB SCENES</div>
+    <div id="panelTopContent">
+      <div id="panelTitle"></div>
+      <div id="panelSubtitle"></div>
+      <div id="panelButtons">
+        <div id="btnLayers" class="panelBtn"></div>
+        <div id="btnBasemaps" class="panelBtn"></div>
+        <div id="btnSlides" class="panelBtn"></div>
+      </div>
     </div>
     <div id="panelBar">
       <div id="panelSearch"></div>
-      <div id="panelButtons">
-        <div id="btnToggle" class="panelBtn"></div>
-      </div>
+      <div id="btnToggle"></div>
     </div>
   </div>
   <script type="text/javascript">

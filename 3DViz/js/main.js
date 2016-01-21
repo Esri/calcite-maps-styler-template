@@ -567,7 +567,7 @@ define([
         features: filteredFeatures,
         vizField: vizFld,
         displayField: displayFld,
-        color: this.config.colors[this.vizLayer.page]
+        color: this.config.color
       };
       this._processFeatures(options);
       this.vizCards.update(options);

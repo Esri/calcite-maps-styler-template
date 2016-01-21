@@ -54,7 +54,7 @@ define([
       query(".esri-search .esri-container").style("backgroundColor", bg3);
       query(".esri-search .esri-container").style("color", color);
       if(colorText === "#000000") {
-        domClass.add("btnToggle", "black");
+        domClass.add("panelTop", "black");
       }
       if(this.config.reverse) {
         query(".esri-ui").forEach(function(node){
@@ -76,7 +76,6 @@ define([
       var yiq = ((rgb[0] * 299) + (rgb[1] * 587) + (rgb[2] * 114)) / 1000;
       //return (yiq >= 128) ? "#000000" : "#ffffff";
       // adjust YIQ for higher value at 65% or 166 because white looks better
-      console.log(yiq);
       return (yiq >= 100) ? "#000000" : "#ffffff";
     }
 

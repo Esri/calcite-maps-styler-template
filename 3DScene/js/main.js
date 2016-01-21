@@ -22,6 +22,7 @@ define([
   "dojo/Deferred",
 
   "dojo/dom",
+  "dojo/dom-attr",
   "dojo/dom-class",
   "dojo/dom-construct",
   "dojo/dom-style",
@@ -40,18 +41,20 @@ define([
   "esri/widgets/Search",
 
   "application/uiUtils",
+  "application/LayerList/LayerList",
+  "application/SlideList/SlideList",
 
   "dojo/domReady!"
 ], function(
   declare, lang,
   Deferred,
-  dom, domClass, domConstruct, domStyle, on,
+  dom, domAttr, domClass, domConstruct, domStyle, on,
   Camera,
   Point, SpatialReference,
   PortalItem,
   SceneView, WebScene,
   Search,
-  uiUtils
+  uiUtils, LayerList, SlideList
 ) {
   return declare(null, {
 
@@ -209,9 +212,7 @@ define([
       //this._setEnvironment();
       this._setTitles();
       this._initUI();
-      this._initSearch();
       this.uiUtils.setColor();
-      this._initSlides();
     },
 
     // set environment
@@ -231,63 +232,81 @@ define([
 
     // init ui
     _initUI: function() {
+      this._initLayers();
+      this._initBasemaps();
+      this._initSlides();
+      this._initSearch();
+      // tooltips
+      if (this.config && this.config.i18n) {
+        var tipLayers = this.config.i18n.tooltips.layers || "Layers";
+        domAttr.set("btnLayers", "title", tipLayers);
+        var tipBasemaps = this.config.i18n.tooltips.basemaps || "Basemaps";
+        domAttr.set("btnBasemaps", "title", tipBasemaps);
+        var tipSlides = this.config.i18n.tooltips.slides || "Slides";
+        domAttr.set("btnSlides", "title", tipSlides);
+        var tipToggle = this.config.i18n.tooltips.close || "Close";
+        domAttr.set("btnToggle", "title", tipToggle);
+      }
       on(dom.byId("btnToggle"), "click", lang.hitch(this, this._toggleBottom));
     },
 
+    //toggle panel
+    _togglePanel: function(value) {
+      domStyle.set("panelLayers", "display", "none");
+      domStyle.set("panelBasemaps", "display", "none");
+      domStyle.set("panelSlides", "display", "none");
+      domStyle.set(value, "display", "block");
+      this._toggleBottom();
+    },
+
+    // toggle bottom
     _toggleBottom: function() {
       domClass.toggle("panelBottom", "opened");
       domClass.toggle("panelTop", "closed");
     },
 
-    // init slides
-    _initSlides: function() {
-      var slides = this.scene.presentation.slides;
-      var node = dom.byId("panelContent");
-      if (slides.length === 0) {
-        var msg = "<span class='panelMsg'>";
-        msg += (this.config && this.config.i18n) ? this.config.i18n.panel.noslides : "No slides";
-        msg += "</span>";
-        node.innerHTML = msg;
-        return;
-      }
-      domStyle.set("panelContent", "width", slides.length * 130 + "px");
-      slides.forEach(lang.hitch(this, function(slide, index) {
-        var slideDiv = domConstruct.create("div", {
-          id: slide.id
-        }, node);
-        domClass.add(slideDiv, "slideDiv");
-        domClass.add(slideDiv, "shadow");
-        var slideCnt = domConstruct.create("div", {}, slideDiv);
-        domClass.add(slideCnt, "slideContent");
-        var slideImg = domConstruct.create("img", {
-          src: slide.thumbnail.url,
-          title: slide.title.text
-        }, slideCnt);
-        domClass.add(slideImg, "slideImg");
-        domClass.add(slideImg, "grayscale");
-        var slideLabel = domConstruct.create("div", {
-          innerHTML: slide.title.text
-        }, slideCnt);
-        domClass.add(slideLabel, "slideLabel");
-        domStyle.set(slideLabel, "backgroundColor", this.config.color);
-        domStyle.set(slideLabel, "color", this.config.colorText);
-        //domStyle.set(slideLabel, "borderTop", "1px solid " + this.config.color);
-        var slideNum = domConstruct.create("div", {
-          innerHTML: index + 1
-        }, slideCnt);
-        domClass.add(slideNum, "slideNum");
-        domClass.add(slideNum, "shadow");
-        domStyle.set(slideNum, "backgroundColor", this.config.color);
-        domStyle.set(slideNum, "color", this.config.colorText);
-        on(slideDiv, "click", lang.hitch(this, function() {
-          this._applySlide(slide);
-        }));
-      }));
+    // init layers
+    _initLayers: function() {
+      var options = {
+        view: this.view,
+        color: this.config.color
+      };
+      var layerList = new LayerList(options, "panelLayers");
+      layerList.startup();
+      on(dom.byId("btnLayers"), "click", lang.hitch(this, this._togglePanel, "panelLayers"));
     },
 
-    // apply slide
-    _applySlide: function(slide) {
-      slide.applyTo(this.view);
+    // init basemaps
+    _initBasemaps: function() {
+      on(dom.byId("btnBasemaps"), "click", lang.hitch(this, this._togglePanel, "panelBasemaps"));
+    },
+
+    // get basemap group
+    _getBasemapGroup: function() {
+      var basemapGroup = null;
+      if (this.config.basemapgroup && this.config.basemapgroup.title && this.config.basemapgroup.owner) {
+        basemapGroup = {
+          "owner": this.config.basemapgroup.owner,
+          "title": this.config.basemapgroup.title
+        };
+      } else if (this.config.basemapgroup && this.config.basemapgroup.id) {
+        basemapGroup = {
+          "id": this.config.basemapgroup.id
+        };
+      }
+      return basemapGroup;
+    },
+
+    // initSlides
+    _initSlides: function() {
+      var options = {
+        scene: this.scene,
+        view: this.view,
+        color: this.config.color
+      };
+      var slideList = new SlideList(options, "panelSlides");
+      slideList.startup();
+      on(dom.byId("btnSlides"), "click", lang.hitch(this, this._togglePanel, "panelSlides"));
     },
 
     // init search

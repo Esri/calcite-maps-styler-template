@@ -1,0 +1,115 @@
+.esri-slide-list {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.esri-slide-list .content {
+  margin: 0;
+  padding: 0;
+  width: auto;
+  height: 100px;
+  white-space: nowrap;
+  overflow: visible;
+}
+
+.esri-slide-list .shadow {
+  -webkit-box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
+  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
+}
+
+.esri-slide-list .item {
+  float: left;
+  width: 120px;
+  height: 100px;
+  margin-right: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.dj_rtl .esri-slide-list .item {
+  float: right;
+  margin-left: 10px;
+}
+
+.esri-slide-list .slide {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.esri-slide-list .thumb {
+  position: absolute;
+  top: 14px;
+  width: 120px;
+  height: 60px;
+}
+
+.esri-slide-list img {
+  -webkit-filter: grayscale(100%);
+  filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' ><filter id='gray'><feColorMatrix in='SourceGraphic' type='saturate' values='0' /></filter></svg>#gray");
+  filter: grayscale(100%);
+}
+
+.esri-slide-list img:hover {
+  -webkit-filter: grayscale(0%);
+  !important;
+  filter: none !important;
+}
+
+.esri-slide-list .title {
+  position: absolute;
+  top: 74px;
+  width: 100%;
+  height: 26px;
+  line-height: 26px;
+  font-size: 12px;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.esri-slide-list .num {
+  position: absolute;
+  left: 5px;
+  width: 28px;
+  height: 28px;
+  line-height: 28px;
+  font-size: 12px;
+  text-align: center;
+  overflow: hidden;
+  display: block;
+  border-radius: 14px;
+  -webkit-border-radius: 14px;
+  -moz-border-radius: 14px;
+  -o-border-radius: 14px;
+}
+
+.dj_rtl .esri-slide-list .num {
+  right: 5px;
+}
+
+.esri-slide-list::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+  background-color: rgba(255, 255, 255, 0.25);
+}
+
+.esri-slide-list::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.esri-slide-list {
+  scrollbar-base-color: #000000;
+  scrollbar-3dlight-color: #000000;
+  scrollbar-highlight-color: #000000;
+  scrollbar-track-color: #707070;
+  scrollbar-arrow-color: #606060;
+  scrollbar-shadow-color: #000000;
+  scrollbar-dark-shadow-color: #000000;
+  scrollbar-face-color: #606060;
+}

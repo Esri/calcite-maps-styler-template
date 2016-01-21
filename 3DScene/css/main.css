@@ -265,10 +265,11 @@ body {
   bottom: 128px !important;
 }
 
-#panelText {
+#panelTopContent {
   display: block;
   width: 300px;
-  height: 92px;
+  min-height:80px;
+  height: auto;
   padding: 5px;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -278,19 +279,21 @@ body {
   transition: all 0.5s;
 }
 
+.closed #panelTopContent {
+  height: 0px;
+  min-height: 0px;
+  padding: 0;
+}
+
 #panelTitle {
   line-height: 25px;
-  font-size: 24px;
+  font-size: 22px;
   font-weight: 400;
   display: block;
   overflow: hidden;
   height: auto;
   max-height: 75px;
   text-overflow: ellipsis;
-  -webkit-transition: all 0.5s;
-  -moz-transition: all 0.5s;
-  -o-transition: all 0.5s;
-  transition: all 0.5s;
 }
 
 #panelSubtitle {
@@ -304,9 +307,51 @@ body {
   text-overflow: ellipsis;
 }
 
-.closed #panelText {
-  height: 0;
-  padding: 0;
+#panelButtons {
+  height: 34px;
+  padding: 5px 0 5px 0;
+  display: block;
+  overflow: hidden;
+}
+
+.panelBtn {
+  float: left;
+  width: 34px;
+  height: 34px;
+  margin-right: 10px;
+  cursor: pointer;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 24px;
+}
+
+.dj_rtl .panelBtn {
+  float: right;
+  margin-left: 10px;
+}
+
+#btnLayers {
+  background-image: url(../images/layers.png);
+}
+
+.black #btnLayers {
+  background-image: url(../images/layers_b.png);
+}
+
+#btnBasemaps {
+  background-image: url(../images/basemaps.png);
+}
+
+.black #btnBasemaps {
+  background-image: url(../images/basemaps_b.png);
+}
+
+#btnSlides {
+  background-image: url(../images/slides.png);
+}
+
+.black #btnSlides {
+  background-image: url(../images/slides_b.png);
 }
 
 #panelBar {}
@@ -321,38 +366,28 @@ body {
   float: right;
 }
 
-#panelButtons {
-  float: right;
-  height: 24px;
-  display: block;
-  overflow: hidden;
-  padding: 5px 0 5px 0;
-}
-
-.dj_rtl #panelButtons {
-  float: left;
-}
-
-.panelBtn {
+#btnToggle {
   float: right;
   width: 24px;
-  height: 24px;
+  height: 34px;
   cursor: pointer;
   background-repeat: no-repeat;
   background-position: center center;
   background-size: 24px;
+  background-image: url(../images/toggle.png);
+  display: none;
 }
 
-.dj_rtl .panelBtn {
+.closed #btnToggle{
+  display: block;
+}
+
+.dj_rtl #btnToggle {
   float: left;
 }
 
-#btnToggle {
-  background-image: url(../images/grid.png);
-}
-
-.black {
-  background-image: url(../images/grid_b.png) !important;
+.black #btnToggle {
+  background-image: url(../images/toggle_b.png) !important;
 }
 
 #panelBottom {
@@ -375,9 +410,13 @@ body {
 
 #panelInner {
   position: absolute;
-  width: 100%;
+  /*width: 100%;
   height: 100%;
-  padding: 30px 10px 10px 10px;
+  padding: 30px 10px 10px 10px;*/
+  left: 10px;
+  right: 10px;
+  top: 30px;
+  bottom: 0;
   overflow-x: auto;
   overflow-y: hidden;
   -webkit-box-sizing: border-box;
@@ -385,10 +424,12 @@ body {
   box-sizing: border-box;
 }
 
-#panelContent {
+.panelContent {
+  position: absolute;
+  width: 100%;
   height: 100%;
-  white-space: nowrap;
-  overflow: visible;
+  overflow: hidden;
+  display: block;
 }
 
 .panelMsg {

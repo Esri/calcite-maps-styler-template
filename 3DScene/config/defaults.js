@@ -45,7 +45,7 @@ define({
   },
   // Template configuration settings
   // Template UI settings
-  "title": "WEB SCENE",
+  "title": "WEB SCENE TEMPLATE",
   "subtitle": "Sample ArcGIS Online Web Scene Template",
   "color": "#80ab00",
   "colorText": "",
