@@ -21,6 +21,10 @@ define({
     },
     panel: {
       noslides: "No slides in web scene"
+    },
+    tooltips: {
+      play: "Play-Pause",
+      toggle: "Toggle"
     }
   }),
   "fr": 1

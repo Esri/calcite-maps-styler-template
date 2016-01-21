@@ -23,6 +23,7 @@ define([
   "dojo/Deferred",
 
   "dojo/dom",
+  "dojo/dom-attr",
   "dojo/dom-class",
   "dojo/dom-construct",
 
@@ -58,7 +59,7 @@ define([
 ], function(
   declare, array, lang,
   Deferred,
-  dom, domClass, domConstruct,
+  dom, domAttr, domClass, domConstruct,
   on, all,
   Camera, Color,
   Point, SpatialReference, webMercatorUtils,
@@ -254,7 +255,10 @@ define([
       this.vizCards = new VizCards(options, dom.byId("panelContent"));
       this.vizCards.on('selection', lang.hitch(this, this._featureSelection));
       this.vizCards.startup();
-
+      if (this.config && this.config.i18n) {
+        domAttr.set("btnToggle", "title", this.config.i18n.tooltips.toggle || "Toggle");
+        domAttr.set("btnPlay", "title", this.config.i18n.tooltips.play || "Play-Pause");
+      }
       on(dom.byId("btnToggle"), "click", lang.hitch(this, this._toggleBottom));
       on(dom.byId("btnPlay"), "click", lang.hitch(this, this._toggleVizTimer));
     },
