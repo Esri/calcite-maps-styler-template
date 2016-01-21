@@ -19,17 +19,18 @@
   <div class="loading-indicator">
     <div class="loading-message" id="loading_message"></div>
   </div>
-   <!--The ArcGIS API for JavaScript provides bidirectional support.  When viewing the application in an right to left (rtl) language like Hebrew and Arabic the map needs to remain in left-to-right (ltr) mode. Specify this by setting the dir attribute on the div to ltr. --> 
+   <!--The ArcGIS API for JavaScript provides bidirectional support.  When viewing the application in an right to left (rtl) language like Hebrew and Arabic the map needs to remain in left-to-right (ltr) mode. Specify this by setting the dir attribute on the div to ltr. -->
        <div id="border_container" class="border-container-outer">
         <div id="cp_left" class="content-pane-left">
         </div>
         <div id="cp_center" class="content-pane-center">
             <div class="top-bar bg">
-                <i id="toggle_button" class="hamburger-button icon-menu fc"></i> 
+                <i id="toggle_button" class="hamburger-button icon-menu fc"></i>
                 <div id="search" class="geocoder"></div>
                 <div id="title" class="top-bar-title"></div>
             </div>
          <div id="mapDiv" dir="ltr">
+             <img id="filterLoad" class="map-loader-img" src="images/ajax-loader.gif"/>
              <div id="legendContainer" class="legend hide">
                 <div id="submenu" title="Show Legend" class="icon-LayerList mini-submenu hide">
                 </div>
@@ -39,15 +40,15 @@
                 </div>
                 <div id="legend" class="legend legend-content hide">
                   <div id="legendDiv"  class="legend-item"></div>
-                </div>        
-            </div>         
+                </div>
+            </div>
          </div>
         </div>
     </div>
     <script type="text/javascript">
         var package_path = window.location.pathname.substring(0, window.location.pathname.lastIndexOf('/'));
         var dojoConfig = {
-            // The locationPath logic below may look confusing but all its doing is 
+            // The locationPath logic below may look confusing but all its doing is
             // enabling us to load the api from a CDN and load local modules from the correct location.
             packages: [{
                 name: "application",
@@ -88,6 +89,6 @@
             myApp.reportError(error);
           });
         });
-    </script>   
+    </script>
 </body>
 </html>

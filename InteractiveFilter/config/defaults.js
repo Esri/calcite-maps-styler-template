@@ -28,7 +28,7 @@ define([], function() {
         "home": true,
         //Add the geocoder search box to the title area .
         "search": true,
-        // Add a legend to the upper right corner of the map 
+        // Add a legend to the upper right corner of the map
         "legend": false,
         // When legendOpen is true the legend displays toggled open at startup
         "legendOpen": false,
@@ -42,6 +42,9 @@ define([], function() {
         //If the web map has multiple filters they will be displayed in a dropdown when
         //this value is true.
         "filterDropdown": false,
+        // When true only the filters associated with the selected layer are displayed. All other filtered layers
+        // have visibility turned off.
+        "toggleFilterVisibility": true,
         //When true the filters in the web map are applied when the app loads. When false
         //the filter are cleared and all features are displayed.
         "filterOnLoad": true,

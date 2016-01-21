@@ -44,18 +44,37 @@ ready, declare, dom, Color, query, lang, array, domConstruct, registry, has, sni
             }
 
         },
+        reportError: function(error){
+          // remove loading class from body
+          domClass.remove(document.body, "app-loading");
+          domClass.add(document.body, "app-error");
+          // an error occurred - notify the user. In this example we pull the string from the
+          // resource.js file located in the nls folder because we've set the application up
+          // for localization. If you don't need to support multiple languages you can hardcode the
+          // strings here and comment out the call in index.html to get the localization strings.
+          // set message
+          var node = dom.byId("loading_message");
+          if (node) {
+            if (this.config && this.config.i18n) {
+              node.innerHTML = this.config.i18n.map.error + ": " + error.message;
+            } else {
+              node.innerHTML = "Unable to create map: " + error.message;
+            }
+          }
+          return error;
+        },
         _mapLoaded: function () {
-
             //add the loading icon
-            domConstruct.create("img", {
+            /*domConstruct.create("img", {
                 id: "loader",
                 src: "images/loading.gif",
                 className: "loader"
-            }, "mapDiv");
+            }, "mapDiv");*/
             var filter = new Filter({
                 map: this.map,
                 layers: this.config.response.itemInfo.itemData.operationalLayers,
                 filterDropdown: this.config.filterDropdown,
+                toggleFilterVisibility: this.config.toggleFilterVisibility,
                 button_text: this.config.button_text,
                 webmap: this.config.response,
                 displayClear: this.config.displayClear || false,
@@ -133,7 +152,7 @@ ready, declare, dom, Color, query, lang, array, domConstruct, registry, has, sni
 
             // Add legend if enabled
             if (this.config.legend) {
-                // Do we have layers to display in the legend? 
+                // Do we have layers to display in the legend?
                 var legendLayers = arcgisUtils.getLegendLayers(this.config.response);
                 if (legendLayers && legendLayers.length && legendLayers.length > 0) {
                     require(["esri/dijit/Legend", "dojo/mouse", "dojo/fx", "dojo/_base/fx"], lang.hitch(this, function (Legend, mouse, coreFx, baseFx) {
@@ -142,13 +161,13 @@ ready, declare, dom, Color, query, lang, array, domConstruct, registry, has, sni
                             layerInfos: legendLayers
                         }, "legendDiv");
                         legend.startup();
-                        // Show the legend open or closed 
-                        // depending on config options. 
+                        // Show the legend open or closed
+                        // depending on config options.
                         if (this.config.legendOpen) {
                             query(".legend").removeClass("hide");
                             domClass.add(dom.byId("cp_center"), "noscroll");
                         } else {
-                            //closed when loading 
+                            //closed when loading
                             domClass.remove(dom.byId("submenu"), "hide");
                         }
 
@@ -184,7 +203,7 @@ ready, declare, dom, Color, query, lang, array, domConstruct, registry, has, sni
                 }
             }
 
-            domClass.remove(dom.byId("loader"), "startLoader");
+            //domClass.remove(dom.byId("loader"), "startLoader");
             this._updateTheme();
         },
 
@@ -203,6 +222,8 @@ ready, declare, dom, Color, query, lang, array, domConstruct, registry, has, sni
             }).then(lang.hitch(this, function (response) {
 
                 this.map = response.map;
+                // remove loading class from body
+                domClass.remove(document.body, "app-loading");
                 this.config.response = response;
                 domClass.add(this.map.infoWindow.domNode, "light");
                 //define the application title
@@ -262,7 +283,7 @@ ready, declare, dom, Color, query, lang, array, domConstruct, registry, has, sni
         },
         _setLevel: function (options) {
             var level = this.config.level;
-            //specify center and zoom if provided as url params 
+            //specify center and zoom if provided as url params
             if (level) {
                 options.zoom = level;
             }

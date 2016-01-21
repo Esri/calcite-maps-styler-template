@@ -193,7 +193,7 @@ input {
 
 @media only screen and (min-width: 760px) {
   .top-bar-title {
-    display: block; } 
+    display: block; }
 
   }
 
@@ -224,7 +224,53 @@ input {
   margin: 0;
   border: 0;
   overflow: hidden; }
+.loading-indicator {
+  /* Loading status */
+  display: none;
+  height: 100%;
+  width: 100%;
+  z-index: 1000;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  background: #fff;
+}
 
+.map-loader-img{
+  display:none;
+  position: absolute;
+  z-index: 1000;
+  top:50%;
+  right:50%;
+}
+.filter-loading{
+  display: block;
+}
+.app-loading .loading-indicator,
+.app-error .loading-indicator{
+  /* Show this class when loading or error */
+  display: block;
+}
+.app-loading .loading-indicator {
+  /* Loading image */
+  background-position: center center;
+  background-image: url(../images/ajax-loader.gif);
+  background-repeat: no-repeat;
+}
+.app-error .loading-message {
+  /* Error status */
+  background-position: top center;
+  background-image: url(../images/error.png);
+  background-repeat: no-repeat;
+  padding-top: 60px;
+  width: 100%;
+  position: absolute;
+  z-index: 2;
+  top: 40%;
+  left: 0;
+  text-align: center;
+}
 .app-loading .content-pane-left {
   width: 0; }
 
@@ -357,7 +403,7 @@ html, body {
 #search {
   float: right;
   width: auto;
-  padding-right: 2px; 
+  padding-right: 2px;
 }
 .esriRTL #search{
   float:left;

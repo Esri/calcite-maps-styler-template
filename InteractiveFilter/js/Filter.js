@@ -68,6 +68,7 @@ declare, array, lang, dojo, number, dom, dojoQuery, domConstruct, domStyle, domC
                 array.forEach(response, lang.hitch(this, function (r, index) {
                     layers.push(r);
                 }));
+                this.layers = layers;
                 var content;
                 if (layers.length > 0) {
                     content = this._buildFilterDialog(layers);
@@ -111,10 +112,10 @@ declare, array, lang, dojo, number, dom, dojoQuery, domConstruct, domStyle, domC
             return filterLayers;
         },
         _stopIndicator: function (layer) {
-            domClass.remove(dom.byId("loader"), "startLoader");
+            domClass.remove("filterLoad", "filter-loading");
         },
         _startIndicator: function () {
-            domClass.add(dom.byId("loader"), "startLoader");
+            domClass.add("filterLoad", "filter-loading");
         },
         _createDefinitionExpression: function (layer) {
             this._startIndicator();
@@ -133,7 +134,6 @@ declare, array, lang, dojo, number, dom, dojoQuery, domConstruct, domStyle, domC
                     if (isNaN(value)) {
                         values.push((value === "") ? defaultValue : value);
                     } else {
-                        //for some reason "" returns false for is  nan
                         if (value === "") {
                             values.push((value === "") ? defaultValue : value);
                         } else {
@@ -143,21 +143,22 @@ declare, array, lang, dojo, number, dom, dojoQuery, domConstruct, domStyle, domC
                 }));
             }));
             var defExp = lang.replace(layer.definitionEditor.parameterizedExpression, values);
-
-
             this._applyDefinitionExpression(layer, defExp);
         },
         _applyDefinitionExpression: function (layer, defExp) {
+            // if toggleFilterVisibility is true then hide all layers except currently visible layer.
+            if(this.toggleFilterVisibility){
+              this._setFilterVisibility(layer);
+            }
             //Apply the filter
             if (layer.layerType && layer.layerType === "ArcGISStreamLayer") {
                 layer.layerObject.setDefinitionExpression(defExp);
-                this._stopIndicator();
             } else if (layer.layerObject) { //Image Service, Stream layer or Feature Layer
                 if (layer.definitionEditor || (layer.layerObject.type && layer.layerObject.type === "Feature Layer")) {
-                    var l = layer.layerObject.setDefinitionExpression(defExp);
-                    on.once(l, "update-end", lang.hitch(this, function () {
-                        this._stopIndicator();
-                    }));
+                     on.once(layer.layerObject, "update-end", lang.hitch(this, function(){
+                       this._stopIndicator();
+                     }));
+                     layer.layerObject.setDefinitionExpression(defExp);
                 }
             } else if (layer.layerId) { //dynamic layer
                 var layerDef = [];
@@ -166,12 +167,35 @@ declare, array, lang, dojo, number, dom, dojoQuery, domConstruct, domStyle, domC
                 mapLayer.setLayerDefinitions(layerDef);
                 this._stopIndicator();
             }
+        },
+        _setFilterVisibility: function(visLayer){
+          if(this.layers){
+            array.forEach(this.layers, lang.hitch(this, function(layer){
+                if(visLayer.id === layer.id){
+                  this._setLayerVisibility(layer, true);
+                }else{
+                  this._setLayerVisibility(layer, false);
+                }
+            }));
+          }
+        },
+        _setLayerVisibility: function(layer, vis){
+          if(layer && layer.layerType){
+            if(layer.layerType === "ArcGISFeatureLayer" && layer.layerObject){
+              layer.layerObject.setVisibility(vis);
+            }else if(layer.layerType == "ArcGISFeatureLayer" && layer.hasOwnProperty("setVisibility")){
+              layer.setVisibility(vis);
+            }
+          }else{
+            if(vis){
+              var dynLayer = this.map.getLayer(layer.layerId);
+              dynLayer.setVisibleLayers([layer.id]);
+            }
+          }
 
         },
         _addFilter: function (layer) {
             var content = domConstruct.create("div");
-
-
             array.forEach(layer.definitionEditor.inputs, lang.hitch(this, function (input) {
                 domConstruct.create("label", {
                     innerHTML: input.prompt
