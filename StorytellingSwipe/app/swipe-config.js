@@ -51,11 +51,33 @@ APPCFG = {
 	// Optional array of server that will leverage CORS (for developement or specific cross domain deployment)
 	CORS_SERVER: [],
 
+	// Optional array of proxy rules
+	PROXY_RULES: [
+		/*{
+			urlPrefix: "http://services.arcgis.com/",
+			proxyUrl: "http://myserver.domain.com/DotNet/proxy.ash"
+		}*/
+	],
+
 	// Edit those to set a custom sharing or proxy URL
 	// You have to edit those only if your webmap is deployed on Portal for ArcGIS instance and if you are not deploying the template on the Portal webserver
 	// If you are using ArcGIS Online or deploying the template on a Portal instance, you don't have to edit those URL
 	DEFAULT_SHARING_URL: "//www.arcgis.com/sharing/content/items",
 	//DEFAULT_SHARING_URL: "//portal.internal.com/arcgis/sharing/content/items",
-	DEFAULT_PROXY_URL: "//www.arcgis.com/sharing/proxy"
+	DEFAULT_PROXY_URL: "//www.arcgis.com/sharing/proxy",
 	//DEFAULT_PROXY_URL: "//portal.internal.com/arcgis/sharing/proxy"
+	bingMapsKey:"",
+	helperServices: {
+		geometry:{
+			url: location.protocol + "//utility.arcgisonline.com/ArcGIS/rest/services/Geometry/GeometryServer"
+		},
+		geocode: [{
+			url: location.protocol + "//utility.arcgis.com/usrsvcs/servers/844a8d33ee974cffa96a0b433ee8a2f2/rest/services/World/GeocodeServer",
+			name: "one"
+		},{
+			url: location.protocol + "//utilitydevext.arcgis.com/sharing/servers/15dcd2f4f2564d0984d0ca58af265f3f/rest/services/what3words_EN_English/GeocodeServer",
+			name: "3words"
+		}
+	]
+	}
 };
