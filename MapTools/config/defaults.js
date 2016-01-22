@@ -31,9 +31,9 @@ define({
     "sharinghost": location.protocol + "//" + "www.arcgis.com",
     "units": null,
     //Custom Basic Viewer properties
-    "title": null, //enter a title if no title is specified web map title is used. 
+    "title": null, //enter a title if no title is specified web map title is used.
     "showtitle": true,
-    "description": null, //Description if not entered web map desc is used. 
+    "description": null, //Description if not entered web map desc is used.
     "theme": "#545454",
     "titlecolor": "#333",
     "titlefontsize":null,
@@ -45,10 +45,10 @@ define({
     "legend": true,
     "activepanel": "legend",
     //If your applcation needs to edit feature layer fields set this value to true. When false the map will
-    //be dreated with layers that are not set to editable which allows the FeatureLayer to load features optimally. 
+    //be dreated with layers that are not set to editable which allows the FeatureLayer to load features optimally.
     "editor": false,
     "editable": false,
-    "editortoolbar": false,    
+    "editortoolbar": false,
     "search": true,
     "bookmarks": false,
     "measure": false,
@@ -65,6 +65,9 @@ define({
             //{"id":"hiddenFields","fields":["SEGKEY","COMPKEY"]}
         ]
     },
+    "markerSymbol": "./images/EsriBluePinCircle26.png",
+    "markerSymbolWidth": 26,
+    "markerSymbolHeight": 26,
     "layerlist": true,
     "includesublayers":true,
     "includelayerlegend": true,
@@ -85,11 +88,11 @@ define({
     //Setup the app to support a custom url parameter. Use this if you want users
     //to be able to search for a string field in a layer. For example if the web map
     //has parcel data and you'd like to be able to zoom to a feature using its parcel id
-    //you could add a custom url param named parcel then users could enter 
+    //you could add a custom url param named parcel then users could enter
     //a value for that param in the url. index.html?parcel=3203
     "customUrlLayer":{
         "id": null,//id of the search layer as defined in the web map
-        "fields": []//Name of the string field to search 
+        "fields": []//Name of the string field to search
     },
     "customUrlParam": null,//Name of url param. For example parcels
     "basemapgroup": {

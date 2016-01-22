@@ -15,8 +15,53 @@
  | See the License for the specific language governing permissions and
  | limitations under the License.
  */
-define(["dojo/_base/declare", "dojo/window", "dojo/_base/array", "dojo/_base/Color", "dojo/promise/all", "dojo/Deferred", "dojo/_base/lang", "esri/domUtils", "esri/request", "esri/lang", "esri/arcgis/utils", "dojo/query", "dojo/dom", "dijit/registry", "dojo/dom-class", "dojo/dom-style", "dojo/dom-geometry", "dojo/dom-construct", "dojo/on", "esri/layers/FeatureLayer", "esri/graphic", "dojo/domReady!"], function (
-declare, win, array, Color, all, Deferred, lang, domUtils, esriRequest, esriLang, arcgisUtils, query, dom, registry, domClass, domStyle, domGeometry, domConstruct, on, FeatureLayer, Graphic) {
+define([
+  "dojo/_base/declare",
+  "dojo/window",
+  "dojo/_base/array",
+  "dojo/_base/Color",
+  "dojo/promise/all",
+  "dojo/Deferred",
+  "dojo/_base/lang",
+  "esri/domUtils",
+  "esri/request",
+  "esri/lang",
+  "esri/arcgis/utils",
+  "dojo/query",
+  "dojo/dom",
+  "dijit/registry",
+  "dojo/dom-class",
+  "dojo/dom-style",
+  "dojo/dom-geometry",
+  "dojo/dom-construct",
+  "dojo/on",
+  "esri/layers/FeatureLayer",
+  "esri/graphic",
+  "application/MapUrlParams",
+  "dojo/domReady!"], function (
+    declare,
+    win,
+    array,
+    Color,
+    all,
+    Deferred,
+    lang,
+    domUtils,
+    esriRequest,
+    esriLang,
+    arcgisUtils,
+    query,
+    dom,
+    registry,
+    domClass,
+    domStyle,
+    domGeometry,
+    domConstruct,
+    on,
+    FeatureLayer,
+    Graphic,
+    MapUrlParams
+  ) {
     return declare(null, {
         config: {},
         ovmap: null,
@@ -35,12 +80,27 @@ declare, win, array, Color, all, Deferred, lang, domUtils, esriRequest, esriLang
 
                 //supply either the webmap id or, if available, the item info
                 var itemInfo = this.config.itemInfo || this.config.webmap;
-                this._createWebMap(itemInfo);
 
-                //update app theme            
-                query(".bg").style("backgroundColor", this.config.theme.toString());
-                query("#titleDiv").style("color", this.config.titlecolor.toString());
+                var mapParams = new MapUrlParams({
+                       center: this.config.center || null,
+                       extent: this.config.extent || null,
+                       level: this.config.level || null,
+                       marker: this.config.marker || null,
+                       mapSpatialReference: itemInfo.itemData.spatialReference,
+                       defaultMarkerSymbol: this.config.markerSymbol,
+                       defaultMarkerSymbolWidth: this.config.markerSymbolWidth,
+                       defaultMarkerSymbolHeight: this.config.markerSymbolHeight,
+                       geometryService: this.config.helperServices.geometry.url
+                });
 
+                mapParams.processUrlParams().then(lang.hitch(this, function(urlParams){
+                  promise = this._createWebMap(itemInfo, urlParams);
+                  //update app theme
+                  query(".bg").style("backgroundColor", this.config.theme.toString());
+                  query("#titleDiv").style("color", this.config.titlecolor.toString());
+                }), lang.hitch(this, function(error){
+                  this.reportError(error);
+                }));
             } else {
                 var error = new Error("Main:: Config is not defined");
                 this.reportError(error);
@@ -58,7 +118,7 @@ declare, win, array, Color, all, Deferred, lang, domUtils, esriRequest, esriLang
             }));
 
             if (this.config.zoom) {
-                //setup icon fonts 
+                //setup icon fonts
                 query(".esriSimpleSliderIncrementButton").forEach(function (node) {
                     domClass.add(node, "icon-zoomin");
                 });
@@ -89,7 +149,7 @@ declare, win, array, Color, all, Deferred, lang, domUtils, esriRequest, esriLang
                     var home = new HomeButton({
                         map: this.map
                     }, domConstruct.create("div", {}, query(".esriSimpleSliderIncrementButton")[0], "after"));
-                    //Use the home icon from the esri Fonts 
+                    //Use the home icon from the esri Fonts
                     query(".HomeButton .home").forEach(function (node) {
                         domClass.add(node, "icon-home");
                         domClass.add(node, "icon-color");
@@ -158,11 +218,11 @@ declare, win, array, Color, all, Deferred, lang, domUtils, esriRequest, esriLang
                         }
                     }
 
-                    //Support find or custom url param 
+                    //Support find or custom url param
                     if (this.config.find) {
                         value = decodeURIComponent(this.config.find);
                     } else if (customUrl){
-                 
+
                         value = urlObject.query[customUrl];
 
                         searchLayer = this.map.getLayer(this.config.customUrlLayer.id);
@@ -231,7 +291,7 @@ declare, win, array, Color, all, Deferred, lang, domUtils, esriRequest, esriLang
                     return;
                 }
                 this.tableHandler = null;
-                // Create the table if a layer and field have been 
+                // Create the table if a layer and field have been
                 // defined or if there's a feature layer in the map
                 var layer = null;
 
@@ -261,7 +321,7 @@ declare, win, array, Color, all, Deferred, lang, domUtils, esriRequest, esriLang
                         }
                     }));
                 }
-                //if no layer don't create table 
+                //if no layer don't create table
                 if (layer === null) {
                     console.log("Configure the app to select a layer that supports Advanced Queries for the Table");
                     tableDef.resolve(null);
@@ -273,13 +333,13 @@ declare, win, array, Color, all, Deferred, lang, domUtils, esriRequest, esriLang
                 on(btn, "click", lang.hitch(this, function () {
                     this._closeContainers("tableDiv");
 
-                    //Toggle table display 
+                    //Toggle table display
                     var table = dom.byId("tableDiv");
                     var height = domStyle.get(table, "height");
-                    if (height === 0) { //show table 
+                    if (height === 0) { //show table
                         domClass.add(btn, "tool-selected");
                         this._openTable(table);
-                    } else { //hide table 
+                    } else { //hide table
                         domClass.remove(btn, "tool-selected");
                         this._closeTable(table, layer);
                     }
@@ -431,7 +491,7 @@ declare, win, array, Color, all, Deferred, lang, domUtils, esriRequest, esriLang
                 } else {
                     domStyle.set("printDiv", "height", "80px");
                 }
-                // if org has print templates defined use those. 
+                // if org has print templates defined use those.
                 if(this.config.helperServices.printTask && this.config.helperServices.printTask.templates && this.config.helperServices.printTask.templates.length && this.config.helperServices.printTask.templates.length > 0){
                     this.config.printlayouts = false;
                 }
@@ -468,7 +528,7 @@ declare, win, array, Color, all, Deferred, lang, domUtils, esriRequest, esriLang
                             var plate = new PrintTemplate();
                             plate.layout = plate.label = name;
                             plate.format = this.config.printformat;
-    
+
                             plate.layoutOptions = layoutOptions;
                             return plate;
                         }));
@@ -497,7 +557,7 @@ declare, win, array, Color, all, Deferred, lang, domUtils, esriRequest, esriLang
 
                     }));
                 } else { //use the default layouts  or org layouts
-      
+
                     var templates = null;
                     if(this.config.helperServices.printTask && this.config.helperServices.printTask.templates){
                         templates = this.config.helperServices.printTask.templates;
@@ -526,7 +586,7 @@ declare, win, array, Color, all, Deferred, lang, domUtils, esriRequest, esriLang
                             label: this.config.i18n.tools.printLayouts.label4 + " ( image )",
                             format: "PNG32"
                         }];
-                    }                 
+                    }
                     array.forEach(templates, lang.hitch(this, function(template){
                         if(template.layout === "MAP_ONLY"){
                             template.exportOptions = {
@@ -578,7 +638,7 @@ declare, win, array, Color, all, Deferred, lang, domUtils, esriRequest, esriLang
                                 measureWidget.setTool(tool.toolName, false);
                                 measureWidget.clearResult();
                                 //reactivate map click
-                                this.map.setInfoWindowOnClick(true); 
+                                this.map.setInfoWindowOnClick(true);
                             }
                     }
                 }));
@@ -736,7 +796,7 @@ declare, win, array, Color, all, Deferred, lang, domUtils, esriRequest, esriLang
 
 
             //Wait until all the tools have been created then position on the toolbar
-            //otherwise we'd get the tools placed in a random order 
+            //otherwise we'd get the tools placed in a random order
             all(toolDeferreds).then(lang.hitch(this, function (results) {
                 array.forEach(results, lang.hitch(this, function (node) {
                     if (node) {
@@ -803,18 +863,13 @@ declare, win, array, Color, all, Deferred, lang, domUtils, esriRequest, esriLang
             }
         },
         // create a map based on the input web map id
-        _createWebMap: function (itemInfo) {
-            itemInfo = this._setExtent(itemInfo);
-            var mapOptions = {
-                slider: this.config.zoom,
-                sliderPosition: this.config.zoom_position,
-                logo: (this.config.logoimage === null || this.config.logointitle === true) ? true : false
-            };
-            mapOptions = this._setLevel(mapOptions);
-            mapOptions = this._setCenter(mapOptions);
+        _createWebMap: function (itemInfo, params) {
+            params.mapOptions.slider = this.config.zoom;
+            params.mapOptions.sliderPosition = this.config.zoom_position;
+            params.mapOptions.logo = (this.config.logoimage === null || this.config.logointitle === true) ? true : false;
 
             arcgisUtils.createMap(itemInfo, "mapDiv", {
-                mapOptions: mapOptions,
+                mapOptions: params.mapOptions,
                 usePopupManager: true,
                 layerMixins: this.config.layerMixins || [],
                 editable: this.config.editable,
@@ -822,17 +877,34 @@ declare, win, array, Color, all, Deferred, lang, domUtils, esriRequest, esriLang
             }).then(lang.hitch(this, function (response) {
                 this.map = response.map;
                 this.config.response = response;
+                if(params.markerGraphic){
+                    // Add a marker graphic with an optional info window if
+                    // one was specified via the marker url parameter
+                    require(["esri/layers/GraphicsLayer"], lang.hitch(this, function(GraphicsLayer){
+                      var markerLayer = new GraphicsLayer();
 
+                      this.map.addLayer(markerLayer);
+                      markerLayer.add(params.markerGraphic);
+
+                      if(params.markerGraphic.infoTemplate){
+                        this.map.infoWindow.setFeatures([params.markerGraphic]);
+                        this.map.infoWindow.show(params.markerGraphic.geometry);
+                      }
+
+                      this.map.centerAt(params.markerGraphic.geometry);
+                    }));
+
+                }
                 if (this.config.logoimage) {
                     var logoNode = null;
 
                     if (this.config.logointitle === true && this.config.showtitle) {
-                        //add logo to title 
+                        //add logo to title
                         logoNode = domConstruct.create("div", {
                             id: "title-logo"
                         });
                         domConstruct.place(logoNode, dom.byId("header"), "first");
-                        //resize logo if font-size is resized. 
+                        //resize logo if font-size is resized.
                         if (this.config.titlefontsize) {
                             domStyle.set(logoNode, "width", this.config.titlefontsize);
                             domStyle.set(logoNode, "height", this.config.titlefontsize);
@@ -841,7 +913,7 @@ declare, win, array, Color, all, Deferred, lang, domUtils, esriRequest, esriLang
 
 
                     } else {
-                        //add logo to map 
+                        //add logo to map
                         query(".esriControlsBR").forEach(lang.hitch(this, function (node) {
                             logoNode = node;
                         }));
@@ -882,11 +954,11 @@ declare, win, array, Color, all, Deferred, lang, domUtils, esriRequest, esriLang
                 query(".esriPopup .titleButton").style("color", this.config.color.toString());
 
 
-                //Add a title 
+                //Add a title
                 this.config.title = this.config.title || response.itemInfo.item.title;
-                //set browser tab title 
+                //set browser tab title
                 document.title = this.config.title;
-                //add application title 
+                //add application title
                 if (this.config.showtitle) {
                     var title_node = dom.byId("titleDiv");
                     title_node.innerHTML = this.config.title;
@@ -915,9 +987,9 @@ declare, win, array, Color, all, Deferred, lang, domUtils, esriRequest, esriLang
         },
         _createSidePanelContent: function (itemInfo) {
 
-            //legend, details, editor 
+            //legend, details, editor
             domClass.add(this.map.container, "has-sidepanel");
-            //add the legend 
+            //add the legend
             require(["application/sniff!legend?esri/dijit/Legend"], lang.hitch(this, function (Legend) {
                 if (!Legend) {
                     return;
@@ -956,7 +1028,7 @@ declare, win, array, Color, all, Deferred, lang, domUtils, esriRequest, esriLang
                     this._navigateStack("detailsPanel", "details_toggle");
                 }
             }
-            //add the editor 
+            //add the editor
             require(["application/sniff!editor?esri/dijit/editing/Editor"], lang.hitch(this, function (Editor) {
                 if (!Editor) {
                     return;
@@ -1012,7 +1084,7 @@ declare, win, array, Color, all, Deferred, lang, domUtils, esriRequest, esriLang
                 }
             }));
 
-            //remove any selected styles 
+            //remove any selected styles
             query("#toolbar-trailing .tool-selected").forEach(function (node) {
                 if (node && node.id !== "table_toggle") {
                     domClass.remove(node, "tool-selected");
@@ -1044,7 +1116,7 @@ declare, win, array, Color, all, Deferred, lang, domUtils, esriRequest, esriLang
         },
         _navigateStack: function (panelLabel, buttonLabel) {
             var stackContainer = registry.byId("stackContainer");
-            //remove the selected class from all nodes 
+            //remove the selected class from all nodes
             query("#toolbar-leading .tool-selected").forEach(function (node) {
                 domClass.remove(node, "tool-selected");
             });
@@ -1055,7 +1127,7 @@ declare, win, array, Color, all, Deferred, lang, domUtils, esriRequest, esriLang
             if (panel_width > 0 && stackContainer.selectedChildWidget.id === panelLabel) {
                 this._destroyEditor();
                 domStyle.set(dom.byId("sideDiv"), "width", 0);
-            } else { //toggle between the panels 
+            } else { //toggle between the panels
                 //add selected style to current node
                 domClass.add(dom.byId(buttonLabel), "tool-selected");
                 domStyle.set(dom.byId("sideDiv"), "width", this.config.panelwidth + "px");
@@ -1103,21 +1175,21 @@ declare, win, array, Color, all, Deferred, lang, domUtils, esriRequest, esriLang
             domStyle.set(table, "height", 0);
         },
         _createEditor: function () {
-            //add the editor 
+            //add the editor
             require(["application/sniff!editor?esri/dijit/editing/Editor"], lang.hitch(this, function (Editor) {
                 if (!Editor) {
                     return;
                 }
                 this._destroyEditor();
-                //close any containers 
+                //close any containers
                 this._closeContainers("");
                 this._closeTable(dom.byId("tableDiv"));
-                //disable the table button 
+                //disable the table button
                 var tableButton = dom.byId("table_toggle");
                 if (tableButton) {
                     tableButton.disabled = true;
                 }
-                //disable map info window 
+                //disable map info window
                 this.map.setInfoWindowOnClick(false);
                 var editableLayers = this._getEditableLayers(this.config.response.itemInfo.itemData.operationalLayers);
 
@@ -1167,7 +1239,7 @@ declare, win, array, Color, all, Deferred, lang, domUtils, esriRequest, esriLang
                 this.editor = null;
                 this.map.setInfoWindowOnClick(true);
 
-                //re-activate the table button 
+                //re-activate the table button
                 var tableButton = dom.byId("table_toggle");
                 if (tableButton) {
                     tableButton.disabled = false;
@@ -1178,8 +1250,8 @@ declare, win, array, Color, all, Deferred, lang, domUtils, esriRequest, esriLang
 
         _updateTheme: function () {
 
-            //Set the Slider +/- color to match the icon style. 
-            //Also update the menu icon to match the tool color. 
+            //Set the Slider +/- color to match the icon style.
+            //Also update the menu icon to match the tool color.
             query(".tool-label").style("color", this.config.color.toString());
             query("[class^='icon-'], [class*=' icon-']").style("color", this.config.iconcolortheme.toString());
 
@@ -1191,41 +1263,6 @@ declare, win, array, Color, all, Deferred, lang, domUtils, esriRequest, esriLang
             }
 
 
-        },
-        _setLevel: function (options) {
-            var level = this.config.level;
-            //specify center and zoom if provided as url params 
-            if (level) {
-                options.zoom = level;
-            }
-            return options;
-        },
-
-        _setCenter: function (options) {
-            var center = this.config.center;
-            if (center) {
-                var points = center.split(",");
-                if (points && points.length === 2) {
-                    options.center = [parseFloat(points[0]), parseFloat(points[1])];
-                }
-            }
-            return options;
-        },
-
-        _setExtent: function (info) {
-            var e = this.config.extent;
-            //If a custom extent is set as a url parameter handle that before creating the map
-            if (e) {
-                var extArray = e.split(",");
-                var extLength = extArray.length;
-                if (extLength === 4) {
-                    info.item.extent = [
-                        [parseFloat(extArray[0]), parseFloat(extArray[1])],
-                        [parseFloat(extArray[2]), parseFloat(extArray[3])]
-                    ];
-                }
-            }
-            return info;
         }
     });
 });

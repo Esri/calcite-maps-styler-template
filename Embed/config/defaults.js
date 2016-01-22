@@ -43,7 +43,9 @@ define({
     "show_panel": false,
     "theme": "light",
     //"popuptheme": "light", //light or dark
-    "marker_symbol": "images/EsriBluePinCircle26.png",
+    "markerSymbol": "./images/EsriBluePinCircle26.png",
+    "markerSymbolWidth": 26,
+    "markerSymbolHeight": 26,
     "level": null,
     "center": null,
     "disable_scroll":true,
