@@ -40,6 +40,7 @@ define([
   "esri/domUtils",
   "esri/arcgis/utils",
 
+  "application/MapUrlParams",
   "application/ElevationProfileSetup",
 
   "dojo/domReady!"
@@ -53,6 +54,7 @@ define([
   Units,
   domUtils,
   arcgisUtils,
+  MapUrlParams,
   ElevationProfileSetup
 ) {
   return declare(null, {
@@ -66,18 +68,37 @@ define([
       if (config) {
         this.config = config;
 
-      // Create and add custom style sheet
-      if(this.config.customstyle){
-          var style = document.createElement("style");
-          style.appendChild(document.createTextNode(this.config.customstyle));
-          document.head.appendChild(style);    
-      }
-
+        // Create and add custom style sheet
+        if(this.config.customstyle){
+            var style = document.createElement("style");
+            style.appendChild(document.createTextNode(this.config.customstyle));
+            document.head.appendChild(style);    
+        }
         this._setupSplashModal();
 
         //supply either the webmap id or, if available, the item info
         var itemInfo = this.config.itemInfo || this.config.webmap;
-        promise = this._createWebMap(itemInfo);
+       // Check for center, extent, level and marker url parameters.
+        var mapParams = new MapUrlParams({
+          center: this.config.center || null,
+          extent: this.config.extent || null,
+          level: this.config.level || null,
+          marker: this.config.marker || null,
+          mapSpatialReference: itemInfo.itemData.spatialReference,
+          defaultMarkerSymbol: this.config.markerSymbol,
+          defaultMarkerSymbolWidth: this.config.markerSymbolWidth,
+          defaultMarkerSymbolHeight: this.config.markerSymbolHeight,
+          geometryService: this.config.helperServices.geometry.url
+        });
+
+        mapParams.processUrlParams().then(lang.hitch(this, function(urlParams){
+          promise = this._createWebMap(itemInfo, urlParams);
+        }), lang.hitch(this, function(error){
+          this.reportError(error);
+        }));
+
+
+
       } else {
         var error = new Error("Main:: Config is not defined");
         this.reportError(error);
@@ -108,23 +129,16 @@ define([
     },
 
     // create a map based on the input web map id
-    _createWebMap: function (itemInfo) {
+    _createWebMap: function (itemInfo, params) {
       // set extent from config/url
-      itemInfo = this._setExtent(itemInfo);
-      // Optionally define additional map config here for example you can
-      // turn the slider off, display info windows, disable wraparound 180, slider position and more.
-      var mapOptions = {};
-      // set zoom level from config/url
-      mapOptions = this._setLevel(mapOptions);
-      // set map center from config/url
-      mapOptions = this._setCenter(mapOptions);
+
       //enable/disable the slider 
-      mapOptions.slider = this.config.mapZoom;
+      params.mapOptions.slider = this.config.mapZoom;
       domClass.add(document.body, "slider-" + this.config.mapZoom);
 
       // create webmap from item
       return arcgisUtils.createMap(itemInfo, "mapDiv", {
-        mapOptions: mapOptions,
+        mapOptions: params.mapOptions,
         usePopupManager: true,
         layerMixins: this.config.layerMixins || [],
         editable: this.config.editable,
@@ -147,6 +161,26 @@ define([
         on(window, "resize", function(){
             registry.byId("elevProfileChart").resize();
         });
+
+        if(params.markerGraphic){
+            // Add a marker graphic with an optional info window if
+            // one was specified via the marker url parameter
+            require(["esri/layers/GraphicsLayer"], lang.hitch(this, function(GraphicsLayer){
+              var markerLayer = new GraphicsLayer();
+
+              this.map.addLayer(markerLayer);
+              markerLayer.add(params.markerGraphic);
+
+              if(params.markerGraphic.infoTemplate){
+                this.map.infoWindow.setFeatures([params.markerGraphic]);
+                this.map.infoWindow.show(params.markerGraphic.geometry);
+              }
+
+              this.map.centerAt(params.markerGraphic.geometry);
+            }));
+
+          }
+
       // Hide or show profile when button is clicked. 
         var profileToggle = dom.byId("toggleProfile");
         profileToggle.title = this.config.i18n.elevation.toggle;
@@ -565,41 +599,10 @@ define([
             }
           }).play();
     },
-    _setLevel: function (options) {
-      var level = this.config.level;
-      //specify center and zoom if provided as url params 
-      if (level) {
-        options.zoom = level;
-      }
-      return options;
-    },
-    _setCenter: function (options) {
-      var center = this.config.center;
-      if (center) {
-        var points = center.split(",");
-        if (points && points.length === 2) {
-          options.center = [parseFloat(points[0]), parseFloat(points[1])];
-        }
-      }
-      return options;
-    },
-
-    _setExtent: function (info) {
-      var e = this.config.extent;
-      //If a custom extent is set as a url parameter handle that before creating the map
-      if (e) {
-        var extArray = e.split(",");
-        var extLength = extArray.length;
-        if (extLength === 4) {
-          info.item.extent = [[parseFloat(extArray[0]), parseFloat(extArray[1])], [parseFloat(extArray[2]), parseFloat(extArray[3])]];
-        }
-      }
-      return info;
-    },
     _setupSplashModal: function(){
         // Setup the modal overlay if enabled
         if(this.config.splashModal){
-          domClass.remove("modal", "hide");
+          domClass.remove,("modal", "hide");
           var title = this.config.splashTitle || this.config.i18n.splash.title;
           var content = this.config.splashContent || this.config.i18n.splash.content;
           dom.byId("modalTitle").innerHTML = title;
