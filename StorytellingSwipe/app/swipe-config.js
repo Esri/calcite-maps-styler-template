@@ -69,15 +69,15 @@ APPCFG = {
 	bingMapsKey:"",
 	helperServices: {
 		geometry:{
-			url: location.protocol + "//utility.arcgisonline.com/ArcGIS/rest/services/Geometry/GeometryServer"
+			//url: location.protocol + ""
 		},
-		geocode: [{
-			url: location.protocol + "//utility.arcgis.com/usrsvcs/servers/844a8d33ee974cffa96a0b433ee8a2f2/rest/services/World/GeocodeServer",
+		geocode: [/*{
+			url: location.protocol + "",
 			name: "one"
 		},{
-			url: location.protocol + "//utilitydevext.arcgis.com/sharing/servers/15dcd2f4f2564d0984d0ca58af265f3f/rest/services/what3words_EN_English/GeocodeServer",
-			name: "3words"
-		}
+			url: location.protocol + "",
+			name: ""
+		}*/
 	]
 	}
 };
