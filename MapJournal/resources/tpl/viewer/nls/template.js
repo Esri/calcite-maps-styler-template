@@ -30,6 +30,7 @@ define({
 				appLoadingFail: "Something went wrong, the %TPL_NAME% did not load correctly.",
 				notConfiguredDesktop: "The story is not configured yet.",
 				notConfiguredMobile: "The %TPL_NAME% builder is not supported at this display size.",
+				notConfiguredMobile2: "Please rotate your device to landscape orientation to use the %TPL_NAME% builder.",
 				notAuthorized: "You are not authorized to access this story",
 				notAuthorizedBuilder: "You are not authorized to use %TPL_NAME% builder.",
 				noBuilderIE: "The builder is not supported on Internet Explorer before version %VERSION%. %UPGRADE%",
@@ -65,7 +66,8 @@ define({
 				share: "Share",
 				checking: "Checking your story content",
 				fix: "Fix issues in your story",
-				noerrors: "No issues detected"
+				noerrors: "No issues detected",
+				tooltipAutoplayDisabled: "This isn't available in autoplay mode"
 			},
 			overviewFromCommon: {
 				title: "Overview Map"
@@ -79,7 +81,9 @@ define({
 				open: "Open",
 				embed: "Embed in web page",
 				embedExplain: "Use the following HTML code to embed the journal in a web page.",
-				size: "Size (width/height):"
+				size: "Size (width/height):",
+				autoplayLabel: "Autoplay mode",
+				autoplayExplain: "Autoplay ... TODO"
 			}
         }
     }),

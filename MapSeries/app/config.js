@@ -457,6 +457,14 @@ app.cfg = {
 	// Optional array of server that will leverage CORS (for developement or specific cross domain deployment)
 	CORS_SERVER: [],
 	
+	// Optional array of proxy rules
+	PROXY_RULES: [
+		/*{  
+			urlPrefix: "http://services.arcgis.com/",
+			proxyUrl: "http://myserver.domain.com/DotNet/proxy.ash"  
+		}*/
+	],
+	
 	// Edit those to set a custom sharing or proxy URL
 	// You have to edit those only if your webmap is deployed on Portal for ArcGIS instance and if you are not deploying the template on the Portal webserver
 	// If you are using ArcGIS Online or deploying the template on a Portal instance, you don't have to edit those URL
