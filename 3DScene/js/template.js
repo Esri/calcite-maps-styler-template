@@ -368,7 +368,7 @@ define([
         }).load();
         sceneItem.then(lang.hitch(this, function (itemData) {
           var cfg = {};
-          if (ritemData && itemData.values) {
+          if (itemData && itemData.values) {
             // get app config values - we'll merge them with config later.
             cfg = itemData.values;
             // save response
