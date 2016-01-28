@@ -59,39 +59,38 @@
         "noThumbnail": "themes/images/thumbnailNotAvailable.png",
         "portalURL": "http://www.arcgis.com",
         "geometryService": "",
-        "proxyUrl": "", // path to proxy program, e.g., "proxy/proxy.ashx"
+        "proxyUrl": ""
     },
 
     "configurationSettings": [
         {
-            "category": "<b>Header</b>",
-            "fields": [
-                {
-                    "label": "Title",
+            "category": "<b>App Settings</b>",
+            "fields": [{
+                "type": "group",
+                "label": "SELECT GROUP",
+                "tooltip": "Group displayed in the application"
+            }, {
+                    "label": "Application title",
                     "fieldName": "applicationName",
                     "type": "string",
                     "tooltip": "Application title displayed in header"
-                },
-                {
-                    "label": "Icon URL",
+                }, {
+                    "label": "URL of application logo",
                     "fieldName": "applicationIcon",
                     "type": "string",
                     "tooltip": "Icon in top left corner of application. Icon should be 48px high."
-                },
-                {
-                    "label": "Color Scheme",
+                }, {
+                    "label": "Color scheme",
                     "fieldName": "theme",
                     "type": "string",
                     "options": [
                         {
                             "label": "Blue",
                             "value": "blueTheme"
-                        },
-                        {
+                        }, {
                             "label": "Red",
                             "value": "redTheme"
-                        },
-                        {
+                        }, {
                             "label": "Green",
                             "value": "greenTheme"
                         }
@@ -99,117 +98,101 @@
                     "tooltip": "Color of header bar and widget windows"
                 }
             ]
-        },
-        {
+        }, {
             "category": "<b>Gallery Settings</b>",
             "fields": [
+                
                 {
-                    "type": "group",
-                    "label": "SELECT GROUP",
-                    "tooltip": "Group displayed in the application"
-                },
-                {
-                    "label": "Default Layout",
+                    "label": "Default gallery layout",
                     "fieldName": "defaultLayout",
                     "type": "string",
                     "options": [
                         {
                             "label": "Grid",
                             "value": "grid"
-                        },
-                        {
+                        }, {
                             "label": "List",
                             "value": "list"
                         }
                     ],
                     "tooltip": "Default layout of gallery contents"
-                },
-                {
-                    "label": "Sort By",
+                }, {
+                    "label": "Sort gallery items by",
                     "fieldName": "sortField",
                     "type": "string",
                     "options": [
                         {
                             "label": "Modified Date",
                             "value": "modified"
-                        },
-                        {
+                        }, {
                             "label": "Number of Views",
                             "value": "numViews"
-                        },
-                        {
+                        }, {
                             "label": "Name",
                             "value": "title"
                         }
                     ],
                     "tooltip": "Default sort method for gallery contents"
-                },
-                {
-                    "label": "Sort Order",
+                }, {
+                    "label": "Gallery items order",
                     "fieldName": "sortOrder",
                     "type": "string",
                     "options": [
                         {
                             "label": "Descending",
                             "value": "desc"
-                        },
-                        {
+                        }, {
                             "label": "Ascending",
                             "value": "asc"
                         }
                     ],
                     "tooltip": "Sorting order of gallery contents"
-                },
-                {
-                    "label": "Show Tag Cloud",
+                }, {
+                    "label": "Show tag cloud for filtering gallery items",
                     "fieldName": "showTagCloud",
                     "type": "boolean",
                     "tooltip": "Enable to show a tag cloud for filtering gallery content"
                 }
             ]
-        },
-        {
-            "category": "<b>Map Settings</b>",
+        }, {
+            "category": "<b>Map Viewer Settings</b>",
             "fields": [
                 {
-                    "label": "Map Viewer",
+                    "label": "Map viewer",
                     "fieldName": "mapViewer",
                     "type": "string",
                     "options": [
                         {
                             "label": "Simple Viewer",
                             "value": "simple"
-                        },
-                        {
+                        }, {
                             "label": "Map Viewer",
                             "value": "arcgis"
                         }
                     ],
                     "tooltip": "Choose a viewer for opening maps"
-                },
-                {
-                    "label": "Zoom Level",
-                    "fieldName": "zoomLevel",
-                    "type": "number",
-                    "tooltip": "Map zoom level for viewing selected features"
-                },
-                {
-                    "label": "Default Address",
+                }, {
+                    "label": "Default search address",
                     "fieldName": "locatorDefaultAddress",
                     "type": "string",
                     "tooltip": "Default address for the map search in the Simple Viewer"
-                },
-                {
-                    "label": "Alternate Basemap Group",
+                },{
+                    "label": "Zoom level for selected search results",
+                    "fieldName": "zoomLevel",
+                    "type": "number",
+                    "tooltip": "Map zoom level for viewing selected features"
+                },  {
+                    "label": "Basemap group",
                     "fieldName": "basemapGroupTitle",
                     "type": "string",
-                    "tooltip": "Name of basemap group, or leave blank to use default organization basemap group"
-                },
-                {
-                    "label": "Basemap Group Owner",
+                    "tooltip": "Name of a public group containing basemaps, or leave blank to use the organization's basemap group",
+                    "placeholder": "Default organization basemaps"
+                }, {
+                    "label": "Basemap group owner",
                     "fieldName": "basemapGroupOwner",
                     "type": "string",
-                    "tooltip": "Username of basemap group owner"
+                    "tooltip": "Username of basemap group owner",
+                    "placeholder":  "Default organization basemaps"
                 }
             ]
         }
