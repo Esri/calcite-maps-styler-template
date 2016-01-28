@@ -34,19 +34,24 @@
     },
 
     "configurationSettings": [{
-        "category": "<b>Header</b>",
+        "category": "<b>App Settings</b>",
         "fields": [{
-            "label": "Title",
+            "label": "Select a map",
+            "fieldName": "webmap",
+            "type": "webmap",
+            "tooltip": "Web map displayed in the application"
+        },{
+            "label": "Application title",
             "fieldName": "titleBar.title",
             "type": "string",
             "tooltip": "Application title displayed in header"
         }, {
-            "label": "Icon URL",
+            "label": "URL of application logo",
             "fieldName": "titleBar.iconUrl",
             "type": "string",
             "tooltip": "Icon in top left corner of application. Icon should be 48px high."
         }, {
-            "label": "Color Scheme:",
+            "label": "Color scheme:",
             "fieldName": "colorizer.theme",
             "type": "string",
             "options": [{
@@ -69,35 +74,34 @@
                 "value": "ScenicPurples"
             }],
             "tooltip": "Color of header bar and widget windows"
-        }]
-    }, {
-        "category": "<b>Map Settings</b>",
-        "fields": [{
-            "label": "Select a map",
-            "fieldName": "webmap",
-            "type": "webmap",
-            "tooltip": "Web map displayed in the application"
-        }, {
-            "label": "Alternate Basemap Group",
+        },{
+            "label": "Basemap group",
             "fieldName": "basemapBox.basemapgroupTitle",
             "type": "string",
-            "tooltip": "Name of basemap group, or leave blank to use default organization basemap group",
-            "placeholder": "Organization basemaps"
+            "tooltip": "Name of a public group containing basemaps, or leave blank to use the organization's basemap group",
+            "placeholder": "Default organization basemaps"
         }, {
-            "label": "Basemap Group Owner",
+            "label": "Basemap group owner",
             "fieldName": "basemapBox.basemapgroupOwner",
             "type": "string",
-            "tooltip": "Username of basemap group owner"
+            "tooltip": "Username of basemap group owner",
+            "placeholder":  "Default organization basemaps"
+        }, {
+            "label": "Help widget text",
+            "fieldName": "helpMessageBox.content",
+            "type": "string",
+            "stringFieldOption": "textarea",
+            "tooltip": "Help text displayed to the end users of this application"
         }]
     }, {
-        "category": "<b>Find Settings</b>",
+        "category": "<b>Search Settings</b>",
         "fields": [{
-            "label": "Find Layers and Fields",
+            "label": "Choose the layers and fields to search",
             "fieldName": "featureSearcher.searchLayers",
             "type": "search",
             "tooltip": "Choose the layers - and the fields in those layers - to search"
         }, {
-            "label": "Zoom Level",
+            "label": "Zoom level for selected search results",
             "fieldName": "highlighter.highlightZoomLevel",
             "type": "number",
             "constraints": {
@@ -109,31 +113,20 @@
     }, {
         "category": "<b>Filter & Edit Settings</b>",
         "fields": [{
-            "label": "Hint",
+            "label": "Filter hint",
             "fieldName": "filter.hint1",
             "type": "string",
             "tooltip": "Filter hint ( e.g., Floor Number, Plan ID)"
         }, {
-            "label": "Filter Field",
+            "label": "Filter field",
             "fieldName": "filter.fieldname1",
             "type": "string",
-            "tooltip": "Field used to filter the features displayed in the map",
-            "placeholder": "Name of filtering field"
+            "tooltip": "Field used to filter the features displayed in the map"
         }, {
-            "label": "Default Value",
+            "label": "Default filter value",
             "fieldName": "filter.value1",
             "type": "string",
-            "tooltip": "Initial filter value. If the map contains editable layers, this is also the initial default value for new features.",
-            "placeholder": "Initial filter value"
-        }]
-    }, {
-        "category": "<b>Application Help</b>",
-        "fields": [{
-            "label": "Help Text",
-            "fieldName": "helpMessageBox.content",
-            "type": "string",
-            "stringFieldOption": "textarea",
-            "tooltip": "Help text displayed to the end users of this application"
+            "tooltip": "Initial filter value. If the map contains editable layers, this is also the initial default value for new features."
         }]
     }],
 
@@ -141,7 +134,7 @@
         "classname": "js.LGNotes",
         "config": {
             "notes": [
-                "517359e21478e0ce 2016-01-15 14:51:40 -0800"
+                "@@@commit@@@"
             ]
         }
     }, {
@@ -483,4 +476,3 @@
         }
     }]
 }
-
