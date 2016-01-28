@@ -25,7 +25,7 @@ define({
 				invalidApp: "The %TPL_NAME% does not exist or is inaccessible.",
 				appLoadingFail: "Something went wrong, the %TPL_NAME% did not load correctly.",
 				notConfiguredDesktop: "The story is not configured yet.",
-				notConfiguredMobile: "The %TPL_NAME% builder is not supported at this display size.",
+				notConfiguredMobile: "The %TPL_NAME% builder is not supported at this display size. If possible, resize your browser to access the builder or please build your story on a device with a larger screen.",
 				notConfiguredMobile2: "Please rotate your device to landscape orientation to use the %TPL_NAME% builder.",
 				notAuthorized: "You are not authorized to access this story",
 				notAuthorizedBuilder: "You are not authorized to use %TPL_NAME% builder.",
@@ -57,7 +57,8 @@ define({
 				share: "Share",
 				checking: "Checking your story content",
 				fix: "Fix issues in your story",
-				noerrors: "No issues detected"
+				noerrors: "No issues detected",
+				notshared: "Story not shared"
 			},
 			overviewFromCommon: {
 				title: "Overview Map"

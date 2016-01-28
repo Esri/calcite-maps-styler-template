@@ -48,7 +48,7 @@ APPCFG = {
 	WEBAPP_KEYWORD_GENERIC: ["JavaScript", "Map", "Mapping Site", "Online Map", "Ready To Use", "selfConfigured", "Web Map"],
 	WEBAPP_KEYWORD_APP: ["Story Map", "Story Maps", "SwipeSpyglass"],
 
-	// Optional array of server that will leverage CORS (for developement or specific cross domain deployment)
+	// Optional array of servers that will leverage CORS (for development or specific cross domain deployment)
 	CORS_SERVER: [],
 
 	// Optional array of proxy rules

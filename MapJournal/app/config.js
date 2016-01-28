@@ -127,7 +127,7 @@ app.cfg = {
 	// Portal configuration
 	//
 	
-	// Optional array of server that will leverage CORS (for developement or specific cross domain deployment)
+	// Optional array of servers that will leverage CORS (for development or specific cross domain deployment)
 	CORS_SERVER: [],
 	
 	// Optional array of proxy rules

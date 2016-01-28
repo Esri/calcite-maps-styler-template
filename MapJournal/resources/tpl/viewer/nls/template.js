@@ -29,7 +29,7 @@ define({
 				invalidApp: "The %TPL_NAME% does not exist or is inaccessible.",
 				appLoadingFail: "Something went wrong, the %TPL_NAME% did not load correctly.",
 				notConfiguredDesktop: "The story is not configured yet.",
-				notConfiguredMobile: "The %TPL_NAME% builder is not supported at this display size.",
+				notConfiguredMobile: "The %TPL_NAME% builder is not supported at this display size. If possible, resize your browser to access the builder or please build your story on a device with a larger screen.",
 				notConfiguredMobile2: "Please rotate your device to landscape orientation to use the %TPL_NAME% builder.",
 				notAuthorized: "You are not authorized to access this story",
 				notAuthorizedBuilder: "You are not authorized to use %TPL_NAME% builder.",
@@ -67,7 +67,8 @@ define({
 				checking: "Checking your story content",
 				fix: "Fix issues in your story",
 				noerrors: "No issues detected",
-				tooltipAutoplayDisabled: "This isn't available in autoplay mode"
+				tooltipAutoplayDisabled: "This isn't available in autoplay mode",
+				notshared: "Story not shared"
 			},
 			overviewFromCommon: {
 				title: "Overview Map"
@@ -83,7 +84,9 @@ define({
 				embedExplain: "Use the following HTML code to embed the journal in a web page.",
 				size: "Size (width/height):",
 				autoplayLabel: "Autoplay mode",
-				autoplayExplain: "Autoplay ... TODO"
+				autoplayExplain1: "Autoplay mode will advance through your story at a regular interval. This is ideal on a kiosk or public display monitor, but be aware that in other situations it may make the story harder to read. This feature isn't supported on small displays.",
+				autoplayExplain2: "When this mode is active there are controls to play/pause the story and adjust the navigation speed.",
+				linksupdated: "Links updated!"
 			}
         }
     }),
