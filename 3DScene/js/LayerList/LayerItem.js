@@ -50,7 +50,7 @@ define([
       if (this.group) {
         domStyle.set(this.groupNode, "display", "block");
         if (this.group === "opened") {
-          domClass.add(this.groupNode, "opened");
+          domClass.add(this.itemNode, "opened");
         }
       }
       this.titleNode.innerHTML = this.layer.title || this.layer.name;

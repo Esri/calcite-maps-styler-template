@@ -81,9 +81,18 @@ define([
       all(promises).then(lang.hitch(this, function(results) {
         for (i = 0; i < results.length; i++) {
           var lyr = results[i];
-          var group = (lyr.declaredClass === "esri.layers.GroupLayer") ? "closed" : null;
+          //var group = (lyr.declaredClass === "esri.layers.GroupLayer") ? "closed" : null;
           if (lyr.declaredClass !== "esri.layers.GraphicsLayer") {
-            this._addLayerItem(lyr, group, false);
+            if(lyr.declaredClass === "esri.layers.GroupLayer") {
+              if (lyr.listMode === "show") {
+                this._addLayerItem(lyr, "closed", false);
+              }
+              if (lyr.listMode === "hide-children") {
+                this._addLayerItem(lyr, null, false);
+              }
+            } else {
+              this._addLayerItem(lyr, null, false);
+            }
           }
         }
       }));

@@ -51,7 +51,7 @@
   cursor: pointer;
 }
 
-.esri-layer-list .group.opened{
+.esri-layer-list .opened .group {
   background-image: url(../images/minus.png) !important;
 }
 
@@ -106,6 +106,10 @@
   -o-border-radius: 10px;
   -ms-border-radius: 10px;
   border-radius: 10px;
+}
+
+.esri-layer-list .opened .switch {
+  display: none;
 }
 
 .dj_rtl .esri-layer-list .switch {
