@@ -137,6 +137,10 @@ body {
   color: #969696;
 }
 
+.reverse .esri-attribution-powered-by a {
+  color: #969696;
+}
+
 /* PANELS */
 
 .shadow {
