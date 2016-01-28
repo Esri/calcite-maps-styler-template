@@ -50,6 +50,9 @@ define({
   "color": "#80ab00",
   "colorText": "",
   "reverse": 1,
+  // Template tool settings
+  "showLayers": true,
+  "showBasemaps": false,
   // Template scene settings
   "directShadows": true,
   "atmosphere": "default",

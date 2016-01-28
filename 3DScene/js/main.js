@@ -1,5 +1,6 @@
 /*global define,document */
 /*jslint sloppy:true,nomen:true */
+/*jshint unused:true */
 /*
  | Copyright 2014 Esri
  |
@@ -24,7 +25,6 @@ define([
   "dojo/dom",
   "dojo/dom-attr",
   "dojo/dom-class",
-  "dojo/dom-construct",
   "dojo/dom-style",
   "dojo/on",
 
@@ -48,7 +48,7 @@ define([
 ], function(
   declare, lang,
   Deferred,
-  dom, domAttr, domClass, domConstruct, domStyle, on,
+  dom, domAttr, domClass, domStyle, on,
   Camera,
   Point, SpatialReference,
   PortalItem,
@@ -267,46 +267,40 @@ define([
 
     // init layers
     _initLayers: function() {
-      var options = {
-        view: this.view,
-        color: this.config.color
-      };
-      var layerList = new LayerList(options, "panelLayers");
-      layerList.startup();
-      on(dom.byId("btnLayers"), "click", lang.hitch(this, this._togglePanel, "panelLayers"));
+      if (this.config.showLayers) {
+        var options = {
+          view: this.view,
+          color: this.config.color
+        };
+        var layerList = new LayerList(options, "panelLayers");
+        layerList.startup();
+        on(dom.byId("btnLayers"), "click", lang.hitch(this, this._togglePanel, "panelLayers"));
+        domStyle.set("btnLayers", "display", "block");
+      }
     },
 
+    // TO DO: Add basemaps gallery when the core widget is available
     // init basemaps
     _initBasemaps: function() {
-      on(dom.byId("btnBasemaps"), "click", lang.hitch(this, this._togglePanel, "panelBasemaps"));
-    },
-
-    // get basemap group
-    _getBasemapGroup: function() {
-      var basemapGroup = null;
-      if (this.config.basemapgroup && this.config.basemapgroup.title && this.config.basemapgroup.owner) {
-        basemapGroup = {
-          "owner": this.config.basemapgroup.owner,
-          "title": this.config.basemapgroup.title
-        };
-      } else if (this.config.basemapgroup && this.config.basemapgroup.id) {
-        basemapGroup = {
-          "id": this.config.basemapgroup.id
-        };
+      if (this.config.showBasemaps) {
+        on(dom.byId("btnBasemaps"), "click", lang.hitch(this, this._togglePanel, "panelBasemaps"));
+        domStyle.set("btnBasemaps", "display", "block");
       }
-      return basemapGroup;
     },
 
     // initSlides
     _initSlides: function() {
-      var options = {
-        scene: this.scene,
-        view: this.view,
-        color: this.config.color
-      };
-      var slideList = new SlideList(options, "panelSlides");
-      slideList.startup();
-      on(dom.byId("btnSlides"), "click", lang.hitch(this, this._togglePanel, "panelSlides"));
+      if (this.scene.presentation.slides.length > 0) {
+        var options = {
+          scene: this.scene,
+          view: this.view,
+          color: this.config.color
+        };
+        var slideList = new SlideList(options, "panelSlides");
+        slideList.startup();
+        on(dom.byId("btnSlides"), "click", lang.hitch(this, this._togglePanel, "panelSlides"));
+        domStyle.set("btnSlides", "display", "block");
+      }
     },
 
     // init search

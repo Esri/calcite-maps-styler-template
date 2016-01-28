@@ -54,22 +54,6 @@ body {
 
 /* ESRI UI COMPONENTS */
 
-.esri-ui-corner {
-  position: absolute;
-  margin: 10px;
-}
-
-.esri-ui-bottom-left {
-  bottom: 0;
-  right: 0 !important;
-}
-
-.esri-logo {
-  margin: 0;
-  content: "";
-  background: none !important;
-}
-
 .esri-zoom .esri-button {
   width: 26px;
   height: 26px;
@@ -141,17 +125,17 @@ body {
   background-color: transparent;
 }
 
-.esri-attribution {
-  font-size: 10px;
-  color: #fff;
-  text-shadow: -1px -1px 0 #555, 1px -1px 0 #555, -1px 1px 0 #555, 1px 1px 0 #555;
-  background: none;
-  max-width: 320px !important;
-  float: right;
-  text-align: right;
-  margin-right: 60px !important;
+/*.reverse .esri-attribution {
+  background-color: rgba(0,0,0,0.2);
 }
 
+.reverse .esri-attribution-sources {
+  color: #ffffff;
+}
+
+.reverse .esri-attribution-powered-by {
+  color: #ffffff;
+}*/
 
 /* Search */
 
@@ -242,7 +226,7 @@ body {
 #panelTop {
   position: absolute;
   left: 15px;
-  bottom: 15px;
+  bottom: 20px;
   width: 320px;
   height: auto;
   display: inline-block;
@@ -323,6 +307,7 @@ body {
   background-repeat: no-repeat;
   background-position: center center;
   background-size: 24px;
+  display: none;
 }
 
 .dj_rtl .panelBtn {
