@@ -33,24 +33,19 @@
     },
 
     "configurationSettings": [{
-        "category": "<b>App Settings</b>",
+        "category": "<b>Header</b>",
         "fields": [{
-            "label": "Select a map",
-            "fieldName": "webmap",
-            "type": "webmap",
-            "tooltip": "Web map displayed in the application"
-        },{
-            "label": "Application title",
+            "label": "Title",
             "fieldName": "titleBar.title",
             "type": "string",
             "tooltip": "Application title displayed in header"
         }, {
-            "label": "URL of application logo",
+            "label": "Icon URL",
             "fieldName": "titleBar.iconUrl",
             "type": "string",
-            "tooltip": "Icon displayed in top left corner of application. Icon should be 48px high."
+            "tooltip": "Icon in top left corner of application. Icon should be 48px high."
         }, {
-            "label": "Color scheme:",
+            "label": "Color Scheme:",
             "fieldName": "colorizer.theme",
             "type": "string",
             "options": [{
@@ -73,34 +68,35 @@
                 "value": "ScenicPurples"
             }],
             "tooltip": "Color of header bar and widget windows"
-        }, {
-            "label": "Basemap group",
-            "fieldName": "basemapBox.basemapgroupTitle",
-            "type": "string",
-            "tooltip": "Name of a public group containing basemaps, or leave blank to use the organization's basemap group",
-            "placeholder": "Default organization basemaps"
-        }, {
-            "label": "Basemap group owner",
-            "fieldName": "basemapBox.basemapgroupOwner",
-            "type": "string",
-            "tooltip": "Username of basemap group owner",
-            "placeholder":  "Default organization basemaps"
-        }, {
-            "label": "Help widget text",
-            "fieldName": "helpMessageBox.content",
-            "type": "string",
-            "stringFieldOption": "textarea",
-            "tooltip": "Help text displayed to the end users of this application"
         }]
     }, {
-        "category": "<b>Search Settings</b>",
+        "category": "<b>Map Settings</b>",
         "fields": [{
-            "label": "Choose the layers and fields to search",
+            "label": "Select a map",
+            "fieldName": "webmap",
+            "type": "webmap",
+            "tooltip": "Web map displayed in the application"
+        }, {
+            "label": "Alternate Basemap Group",
+            "fieldName": "basemapBox.basemapgroupTitle",
+            "type": "string",
+            "tooltip": "Name of basemap group, or leave blank to use default organization basemap group",
+            "placeholder": "Organization basemaps"
+        }, {
+            "label": "Basemap Group Owner",
+            "fieldName": "basemapBox.basemapgroupOwner",
+            "type": "string",
+            "tooltip": "Username of basemap group owner"
+        }]
+    }, {
+        "category": "<b>Find Settings</b>",
+        "fields": [{
+            "label": "Find Layers and Fields",
             "fieldName": "featureSearcher.searchLayers",
             "type": "search",
             "tooltip": "Choose the layers - and the fields in those layers - to search"
         }, {
-            "label": "Zoom level for selected search results",
+            "label": "Zoom Level",
             "fieldName": "highlighter.highlightZoomLevel",
             "type": "number",
             "constraints": {
@@ -109,10 +105,19 @@
             },
             "tooltip": "Map zoom level for viewing selected features"
         }, {
-            "label": "Show popup for selected search result",
+            "label": "Show Popup for Selected Feature",
             "fieldName": "highlighter.showFeaturePopup",
             "type": "boolean",
             "tooltip": "Enable to automatically open the popup for selected search result features."
+        }]
+    }, {
+        "category": "<b>Application Help</b>",
+        "fields": [{
+            "label": "Help Text",
+            "fieldName": "helpMessageBox.content",
+            "type": "string",
+            "stringFieldOption": "textarea",
+            "tooltip": "Help text displayed to the end users of this application"
         }]
     }],
 
@@ -120,7 +125,7 @@
         "classname": "js.LGNotes",
         "config": {
             "notes": [
-                "@@@commit@@@"
+                "bae7663eb55c6ce4 2016-01-28 13:47:51 -0800"
             ]
         }
     }, {
@@ -498,3 +503,4 @@
         }
     }]
 }
+

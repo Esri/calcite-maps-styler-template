@@ -1,9 +1,10 @@
-Built on 01/15/2016 14:51:56.68 from
+Built on 01/28/2016 13:49:09.14 from
 repository local-government-online-apps
 branch develop
-commit 517359e21478e0cea803ad1c7fe024414a871b8a
-Merge: 7ac274a b16a1d2
+commit bae7663eb55c6ce405bf82c0a60b63c67b98376f
 Author: MikeTschudi <mtschudi@esri.com>
-Date:   Fri Jan 15 14:51:40 2016 -0800
+Date:   Thu Jan 28 13:47:51 2016 -0800
 
-    Merge branch 'new-search-widget' into develop
+    Cleaned up and linted
+    
+    #39
