@@ -20,14 +20,18 @@
         "webMapInfoAvgRating": false
     },
     "configurationSettings": [{
-        "category": "<b>Header Settings</b>",
+        "category": "<b>App Settings</b>",
         "fields": [{
+            "type": "group",
+            "label": "Select group",
+            "tooltip": "Group displayed in the application"
+        }, {
             "type": "string",
             "fieldName": "applicationName",
-            "label": "Title",
+            "label": "Application title",
             "tooltip": "Application title (max 27 chars)"
         }, {
-            "label": "Icon URL",
+            "label": "URL of application logo",
             "fieldName": "applicationIcon",
             "type": "string",
             "tooltip": "Icon in top left corner of application. Icon should be 48px high."
@@ -35,37 +39,36 @@
             "type": "color",
             "fieldName": "theme",
             "tooltip": "Application color theme",
-            "label": "Color Scheme"
+            "label": "Color scheme"
         }]
     }, {
-        "category": "<b>Group and Map Settings</b>",
+        "category": "<b>Content Settings</b>",
         "fields": [{
-            "type": "group",
-            "label": "Select group",
-            "tooltip": "Group displayed in the application"
-        }, {
-            "type": "string",
-            "fieldName": "zoomLevel",
-            "label": "Zoom Level",
-            "tooltip": "Configure zoom level"
-        }, {
-            "type": "string",
-            "fieldName": "commentField",
-            "label": "Comment Field (optional)",
-            "tooltip": "Text field in the comments tables that stores feedback. Field name must be the same across all layers and maps."
+            "type": "paragraph",
+            "value": "Configure how the application will interact with your maps and layers."
         }, {
             "type": "boolean",
             "fieldName": "usePopupConfigurationForComment",
-            "label": "Use comment table popup configuration",
-            "tooltip": "Enable to display a comment submission form based on the popup configuration for the comments layer instead of a single field for comment entry"
+            "label": "Build comment form from comment table popup",
+            "tooltip": "Enable to display a comment submission form based on the popup configuration for the comments layer instead of a single field for comment entry."
+        }, {
+            "type": "string",
+            "fieldName": "commentField",
+            "label": "Choose a field to display a single field comment entry form (optional)",
+            "tooltip": "Text field in the comments tables that stores feedback. Field name must be the same across all layers and maps. This can be overwritten by choosing to build the form from the comment table popup."
+        }, {
+            "type": "string",
+            "fieldName": "zoomLevel",
+            "label": "Zoom level for selected reports",
+            "tooltip": "Configure zoom level"
         }, {
             "type": "color",
             "fieldName": "activeRow",
             "tooltip": "Active row and feature",
-            "label": "Active row and feature"
+            "label": "Choose a highlight color for the active row in the table and corresponding feature in the map"
         }, {
             "type": "paragraph",
-            "value": "Choose the map information to display:"
+            "value": "Choose the item information to display in the map information panel:"
         }, {
             "type": "boolean",
             "fieldName": "webMapInfoDescription",
