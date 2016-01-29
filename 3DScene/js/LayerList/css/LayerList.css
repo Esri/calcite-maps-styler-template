@@ -8,6 +8,8 @@
 }
 
 .esri-layer-list .content {
+  position: absolute;
+  top: 0px;
   margin: 0;
   padding: 0;
   width: auto;
@@ -20,10 +22,14 @@
   -webkit-column-gap: 10px;
   -moz-column-gap: 10px;
   column-gap: 10px;
+  -webkit-transition: all 1s;
+  -moz-transition: all 1s;
+  -o-transition: all 1s;
+  transition: all 1s;
 }
 
-.esri-layer-list .subcontent {
-  display: none;
+.esri-layer-list .content.hidden {
+  top: 400px;
 }
 
 .esri-layer-list .item {

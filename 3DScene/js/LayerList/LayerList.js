@@ -2,7 +2,7 @@ define([
   'dojo/_base/declare',
   'dojo/_base/lang',
 
-  'dojo/dom-style',
+  'dojo/dom-class',
 
   'dojo/promise/all',
 
@@ -15,7 +15,7 @@ define([
 
 ], function(
   declare, lang,
-  domStyle,
+  domClass,
   all,
   _WidgetBase, _TemplatedMixin,
   template,
@@ -122,13 +122,9 @@ define([
       var layer = data.layer;
       if (group === "closed") {
         this._updateSubLayers(layer);
-        domStyle.set(this.contentNode, "display", "none");
-        domStyle.set(this.subcontentNode, "display", "block");
-      } else {
-        this.subcontentNode.innerHTML = "";
-        domStyle.set(this.contentNode, "display", "block");
-        domStyle.set(this.subcontentNode, "display", "none");
       }
+      domClass.toggle(this.contentNode, "hidden");
+      domClass.toggle(this.subcontentNode, "hidden");
     },
 
     _zoomLayer: function(data) {
