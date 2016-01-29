@@ -346,7 +346,7 @@ define([
                         options = {
                             required: !field.nullable,
                             maxlength: field.length,
-                            pattern: "\\S([\\S\\s]*\\S)?"
+                            pattern: "\\S([\\S\\s]*)?"
                         };
                         if (field.dtDefault) {
                             options.value = field.dtDefault;

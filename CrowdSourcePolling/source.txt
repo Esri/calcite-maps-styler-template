@@ -1,9 +1,9 @@
 From git branch 
 develop
-commit 2ccf2679df061ac5573ec296f947a590fd03ce8c
+commit c7f165e2eeb385080cd97615c9fdd18d3a7cbe95
 Author: MikeTschudi <mtschudi@esri.com>
-Date:   Tue Dec 15 09:25:27 2015 -0800
+Date:   Thu Jan 28 14:37:03 2016 -0800
 
-    Turned off Search dijit selection highlighting and connected selection to details display
+    Remove trailing-non-whitespace requirement from field regexp
     
-    #115
+    #124
