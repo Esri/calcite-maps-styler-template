@@ -41,34 +41,6 @@
         "value": "Point Extrusion"
       }]
     }, {
-      "type": "layerAndFieldSelector",
-      "layerOptions": {
-        "supportedTypes": [
-          "FeatureLayer"
-        ],
-        "geometryTypes": [
-          "esriGeometryPoint",
-          "esriGeometryLine",
-          "esriGeometryPolygon"
-        ]
-      },
-      "fields": [{
-        "multipleSelection": false,
-        "fieldName": "vizFields",
-        "label": "Visualization fields",
-        "tooltip": "Fields to use for visualization",
-        "supportedTypes": [
-          "esriFieldTypeSmallInteger",
-          "esriFieldTypeInteger",
-          "esriFieldTypeSingle",
-          "esriFieldTypeDouble",
-          "esriFieldTypeString"
-        ]
-      }],
-      "fieldName": "vizLayer",
-      "label": "Visualization layer",
-      "tooltip": "Layer that will be used for visualization"
-    }, {
       "type": "number",
       "fieldName": "maxZ",
       "label": "Maximum Z extrusion (meters)",
@@ -91,8 +63,8 @@
     }, {
       "type": "boolean",
       "fieldName": "showPercent",
-      "label": "Display results as percentages of total",
-      "tooltip": "Display results as percentages of total"
+      "label": "Show values as percentage of total",
+      "tooltip": "Show values as percentage of total"
     }]
   }],
   "values": {
@@ -104,6 +76,6 @@
     "maxZ": 2000000,
     "maxW": 10000,
     "interval": 20000,
-    "showPercent": true
+    "showPercent": false
   }
 }

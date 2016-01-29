@@ -63,5 +63,5 @@ define({
   "maxZ": 2000000,
   "maxW": 100000,
   "interval": 20000,
-  "showPercent": true
+  "showPercent": false
 });
