@@ -1065,6 +1065,9 @@ We nix out the before (left) pseudo element and instead add the stylings to the 
   display: inline-block;
   vertical-align: middle; }
 
+#show-new-stories.disabled {
+  pointer-events: none; }
+
 .modal.share-modal {
   margin-left: -275px;
   width: 550px; }
@@ -1751,6 +1754,9 @@ a.modal-dismiss {
 #list-container {
   height: 284px; }
 
+#item-list {
+  margin-bottom: 0; }
+
 .loader {
   height: 90px;
   margin: auto;
@@ -2156,7 +2162,7 @@ This rule exists ONLY so that when the item-title is empty, it doesn't collapse 
   color: #355c0b; }
 
 .notification-issue {
-  border-left: 3px solid #DF838C;
+  border-left: 3px solid transparent;
   border-top: 2px solid #FDCFD4;
   cursor: pointer;
   padding: 10px; }
@@ -2178,7 +2184,27 @@ This rule exists ONLY so that when the item-title is empty, it doesn't collapse 
 
 .notification-text {
   display: inline-block;
-  margin: 0; }
+  margin: 0;
+  vertical-align: middle;
+  width: 83%; }
+
+.notification-arrow {
+  color: #C24A56;
+  display: inline-block;
+  font-size: 1.0rem;
+  padding-top: 4px;
+  text-align: right;
+  vertical-align: middle;
+  width: 17%; }
+
+.notification-subtext {
+  padding-left: 10px; }
+
+.notification-expanded .notification-arrow {
+  padding-top: 0;
+  padding-right: 4px;
+  -webkit-transform: rotate(90deg);
+  transform: rotate(90deg); }
 
 .notification-subtext, .issue-actions {
   display: none; }
@@ -2966,7 +2992,13 @@ html.builder {
     min-height: 176px; }
 
   .infographic-value {
-    font-size: 1.05rem; } }
+    font-size: 1.05rem; }
+
+  .notification-text {
+    width: 81%; }
+
+  .notification-arrow {
+    width: 19%; } }
 @media (max-width: 1140px) {
   .item {
     min-height: 169px; }
@@ -2983,6 +3015,9 @@ html.builder {
 
   .view-item {
     padding-left: 0;
-    padding-right: 0; } }
+    padding-right: 0; }
+
+  .notification-expanded .notification-arrow {
+    padding-right: 2px; } }
 
 /*# sourceMappingURL=my-stories.css.map */

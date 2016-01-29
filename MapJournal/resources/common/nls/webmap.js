@@ -9,6 +9,8 @@ define({
 				lblControls: "Extras",
 				lblOverview: "Overview Map",
 				lblLegend: "Legend",
+				lblGeocoder: "Address or Place Finder",
+				tooltipGeocoder: "Allow your users to find addresses and places on your maps.",
 				loadingTitle: "Loading title",
 				entry: "Entry",
 				entries: "Entries",

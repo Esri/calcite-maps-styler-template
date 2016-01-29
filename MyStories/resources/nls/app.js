@@ -120,7 +120,7 @@ define({
 			saveFailed: "Error saving",
 			numViews: "Views: {{NUM_VIEWS}}",
 			editStory: "Edit Story",
-			viewLive: "View Live",
+			viewLive: "View Story",
 			preview: "Preview",
 			deleteButton: "Delete",
 			modified: "Modified {{DATE}}",
@@ -130,7 +130,7 @@ define({
 			close: "close",
 			hide: "hide",
 			notAvailableWhenBroken: "Your story has issues below",
-			cantBeDeleted: "This story has delete protection enabled, see its item page to disable",
+			cantBeDeleted: "This story has delete protection enabled. See its item page on ArcGIS to disable.",
 			shareDialog: {
 				title: "Share your story with the world!",
 				notPublicWarning: "Your story is shared with your organization. Only members of your organization will be able to view it.",
@@ -350,7 +350,8 @@ define({
 			tooltipWarnings: {
 				cantScanThisTypeAlt: "We're not able to check this type of layer",
 				cantScanThisType: "Layer is not a type of layer we can check",
-				webpageNotScanned: "Webpages are not checked for issues"
+				webpageNotScanned: "Webpages are not checked for issues",
+				ignoredIssue: "You have ignored an error on this layer. Reload the page and check this story again to review the error"
 			},
 			scanningErrors: {
 				deletedMap: "Deleted content",
@@ -480,7 +481,8 @@ define({
 		},
 		newStories: {
 			newStoriesFound: "Looks like you have created a new story.",
-			includeStories: "Refresh Stories"
+			includeStories: "Refresh Stories",
+			notWhileScanning: "This will be available when the check is complete"
 		}
     }),
 	"ar": 1,

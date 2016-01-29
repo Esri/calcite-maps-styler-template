@@ -505,7 +505,7 @@ define({
 			share: {
 				firstSaveTitle: "Tour saved",
 				manageStory: "Manage your story",
-				manageStoryA1: "Tip: You can use %LINK1% to check your story for errors and change how its components are shared. My Stories also helps you make your story look good when it is shared on social media sites. You can learn about other useful features of My Stories in these %LINK2%.",
+				manageStoryA1: "Tip: You can use %LINK1% to check your story for errors and change how its components are shared. My Stories also helps you make your story look good when it is shared on social networks. You can learn about other useful features of My Stories in these %LINK2%.",
 				manageStoryA1V1: "My Stories",
 				manageStoryA1V2: "blog posts",
 				shareTitle: "Share your Tour",

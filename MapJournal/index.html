@@ -41,10 +41,13 @@
 				// Optionally to secure Journal's access, use an OAuth application ID (example: 6gyOg377fLUhUk6f)
 				// User will need to sign-in to access the viewer even if your application is public
 				oAuthAppId: "",
-				// Optionally to be able to use the appid URL parameter, configure here the list of application author 
-				//  whose application are allowed to be viewed by this Map Journal deployment
-				// This is the Portal username of the Journal owner (e.g. ["user1"], ["user1", "user2"])
-				// To authorize all users you can use ["*"]
+				// Optionally, to use the appid URL parameter, configure authorizedOwners to reference  members whose stories can be viewed
+				// To authorize specific members, use the member name(s) of the story owner(s) (e.g. ["member"] or ["member1", "member2"])
+				// To authorize all users, use ["*"]
+				// To authorize all members of one or more organizations, use ["[orgID]"] or ["[orgID1]", "[orgID2]"]
+				//  Note the usage of brackets, e.g., ["[nzS0F0zdNLvs7nc8]"]
+				//  You can get your orgID by going to My Organization and clicking Find... The most viewed items in the organization.
+				//  Your orgID will be shown in the search box.
 				authorizedOwners: [""]
 			};
 			// Optionally sharing and proxy URLs can be configured in app/config.js. This is only required  
@@ -62,7 +65,7 @@
 		
 		<script type="text/javascript">
 			var app = {
-				version: '1.7.0-012716',
+				version: '1.7.0-012816',
 				pathJSAPI: '//jsdev.arcgis.com/3.16/'
 			};
 		</script>

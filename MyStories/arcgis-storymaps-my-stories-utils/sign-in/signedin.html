@@ -5,17 +5,15 @@
 		DEFAULT_PORTAL_URL = (/\?defaultPortalURL=(.*?)(?=(#|&|$))/i).exec(window.location.href)[1],
 		baseUrl = 'https://' + DEFAULT_PORTAL_URL,
 		DEFAULT_CLIENT_ID = (/\&defaultClientId=(.*?)(?=(#|&|$))/i).exec(window.location.href)[1],
+		smallUrl = window.location.href.replace(/#(.*?)$/, ''),
 
 
 	onSignedIn = function() {
-
 		var callback = null,
 			cookie = null,
 			canAccessParent = true,
 			preflang = fetchCookie('preflang'),
 			locale = preflang ? preflang : 'en';
-
-
 
 		if(window.location.href.match(/redirectHttps/)) {
 			redirectToHttps();
@@ -32,10 +30,7 @@
 			return;
 		}
 
-
-
 		cookie = getUserCookie();
-
 
 		/*
 		General logic --
@@ -50,7 +45,6 @@
 				if so, then sign out and redirect back to the frame with its matching protocol.
 				if not, then sign out and redirect back to the frame with the frame being forced on http.
 		*/
-
 
 
 		if(cookie) {
@@ -115,17 +109,14 @@
 				canAccessParent = false;
 			}
 
-
-
 			// or sometimes, if cant accessparent, we'll want it to still go to https on signout.
-
 			// frame is on https, page is https
 			if(canAccessParent) {
-				window.location.href = baseUrl + '/sharing/rest/oauth2/signout?redirect_uri=' + encodeURIComponent(window.location.href + "&fromSignOut=true");
+				window.location.href = baseUrl + '/sharing/rest/oauth2/signout?redirect_uri=' + encodeURIComponent(smallUrl + "&fromSignOut=true");
 			}
 			// frame is on https, page is http
 			else {
-				var windowHttp = window.location.href.replace((/(.*?):\/\//), 'http://');
+				var windowHttp = smallUrl.replace((/(.*?):\/\//), 'http://');
 
 				window.location.href = baseUrl + '/sharing/rest/oauth2/signout?redirect_uri=' + encodeURIComponent(windowHttp + "&fromSignOut=true");
 			}
@@ -137,9 +128,10 @@
 		var urlFlag = '';
 
 		if(httpsFlag) {
-			urlFlag = '?redirectHttps=true';
+			urlFlag = '&redirectHttps=true';
 		}
-		window.location.href = window.location.href.replace((/(.*?):\/\//), 'http://') + urlFlag;
+
+		window.location.href = smallUrl.replace((/(.*?):\/\//), 'http://') + urlFlag;
 	},
 
 
@@ -170,7 +162,7 @@
 			}
 		}
 		else {
-			window.location.href = baseUrl + '/sharing/rest/oauth2/signout?redirect_uri=' + encodeURIComponent(window.location.href + "&fromSignOut=true");
+			window.location.href = baseUrl + '/sharing/rest/oauth2/signout?redirect_uri=' + encodeURIComponent(smallUrl + "&fromSignOut=true");
 		}
 	},
 
