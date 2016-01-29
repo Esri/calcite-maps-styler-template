@@ -55,14 +55,14 @@ define({
 				btnOk: "Edit the story title"
 			},
 			saveErrorSocial: {
-				title: "Social Network sharing update",
-				panel1: "Your story’s appearance on social networks has been improved, but your ArcGIS web application item is not the same as your story's title.",
+				title: "Social media sharing update",
+				panel1: "Your story’s appearance on social media has been improved, but your ArcGIS web application item title is not the same as your story title.",
 				panel1tooltip: "By defining a title, summary and thumbnail image, your story will look like this:",
-				panel2:	"Which title would you like to use:",
-				panel2q1: "The story title",
-				panel2q1tooltip: "By choosing this option, your item title will be modified to match your story title and further changes will be synchronized.",
-				panel2q2: "The item title",
-				panel3: "To further improve how your story looks on social networks use ${MYSTORIES} to add a summary and a thumbnail image.",
+				panel2:	"Which title would you like to use on social media:",
+				panel2q1: "Story title (recommended)",
+				panel2q1tooltip: "By choosing this option, your item title will be modified to match your story title and further changes in the builder will be synchronized.",
+				panel2q2: "Item title",
+				panel3: "To further improve how your story looks on social media use ${MYSTORIES} to add a summary and a thumbnail image.",
 				panel4: "Do not warn me again for this story"
 			},
 			share: {
