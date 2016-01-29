@@ -509,7 +509,9 @@ define([
     _startVizTimer: function() {
       this._stopVizTimer();
       this.vizTimer = setInterval(lang.hitch(this, this._doViz), this.config.interval);
-      this._startSpin();
+      if (this.view.viewingMode === "global") {
+        this._startSpin();
+      }
       this.playing = true;
       domClass.add("btnPlay", "playing");
     },
