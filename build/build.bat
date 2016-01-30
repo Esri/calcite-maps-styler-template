@@ -13,6 +13,7 @@ mkdir %BUILD_OUTPUT%\3DScene
 mkdir %BUILD_OUTPUT%\3DViz
 mkdir %BUILD_OUTPUT%\Compare
 mkdir %BUILD_OUTPUT%\CompareAnalysis
+mkdir %BUILD_OUTPUT%\Compare3d
 mkdir %BUILD_OUTPUT%\Compare\Configure
 mkdir %BUILD_OUTPUT%\Compare\Multiviewer
 mkdir %BUILD_OUTPUT%\Compare\Search
@@ -109,6 +110,7 @@ xcopy %TEMPLATES_ROOT%\archive\Compare                          %BUILD_OUTPUT%\C
 xcopy %TEMPLATES_ROOT%\3DScene                                  %BUILD_OUTPUT%\3DScene                              /E /Y
 xcopy %TEMPLATES_ROOT%\3DViz                                    %BUILD_OUTPUT%\3DViz                                /E /Y
 xcopy %TEMPLATES_ROOT%\CompareAnalysis                          %BUILD_OUTPUT%\CompareAnalysis                      /E /Y
+xcopy %TEMPLATES_ROOT%\Compare3d                                %BUILD_OUTPUT%\Compare3d                            /E /Y
 xcopy %TEMPLATES_ROOT%\ConstituentEngagement                    %BUILD_OUTPUT%\CrowdsourceReporter                  /E /Y
 xcopy %TEMPLATES_ROOT%\ConstituentEngagementConsole             %BUILD_OUTPUT%\CrowdsourceManager                   /E /Y
 xcopy %TEMPLATES_ROOT%\CrowdSourcePolling                       %BUILD_OUTPUT%\CrowdsourcePolling                   /E /Y

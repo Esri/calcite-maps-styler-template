@@ -1,0 +1,194 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+  overflow:hidden;
+}
+#container{
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+/*.theme{
+  background-color: #333;
+  color:rgb(255,255,255);
+}*/
+
+.map-container{
+  width:50%;
+}
+
+.toggle-btn{
+  width:36px;
+  height:36px;
+  font-size:16px;
+  text-align:center;
+  border:none;
+  cursor:pointer;
+  border-top-right-radius: 4px;
+  float:left;
+  position: absolute;
+  bottom:16px;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+}
+.toggle-btn.theme{
+  opacity:0.9;
+}
+.toggle-btn.opened{
+  bottom:200px;
+}
+.map-grid, .map-details{
+  border:none;
+}
+
+.map-grid{
+  height:100%;
+  width:100%;
+}
+
+.map-details{
+  position: absolute;
+  bottom: -200px;
+  width: 100%;
+  height: 200px;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+  display: block;
+  clear: both;
+}
+.map-details.theme{
+  opacity: 0.9;
+}
+.map-details-text{
+  max-height:60px;
+  margin-bottom: 10px;
+}
+.map-details.opened{
+  bottom: 0px !important;
+}
+.map-details .esri-slide-list{
+  bottom:0;
+  height:130px;
+  margin-left:.25em;
+  margin-right:.25em;
+  overflow-y:auto;
+}
+
+.map-details-title{
+  padding: .25em .4em 0 .4em;
+  font-weight: bold;
+  font-size: 1em;
+}
+.map-details-desc{
+  display:block;
+  padding: 0 .4em;
+  font-size: .8em;
+}
+.loading-indicator {
+  /* Loading status */
+  display: none;
+  height: 100%;
+  width: 100%;
+  z-index: 500;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  background: #fff;
+}
+.app-loading .loading-indicator,
+.app-error .loading-indicator {
+  /* Show this class when loading or error */
+  display: block;
+}
+.app-loading .loading-indicator {
+  /* Loading image */
+  background-position: center center;
+  background-image: url(../images/loading.gif);
+  background-repeat: no-repeat;
+}
+.app-error .loading-message {
+  /* Error status */
+  background-position: top center;
+  background-image: url(../images/error.png);
+  background-repeat: no-repeat;
+  padding-top: 60px;
+  width: 100%;
+  position: absolute;
+  z-index: 2;
+  top: 40%;
+  left: 0;
+  text-align: center;
+}
+/*Icon Fonts*/
+@font-face {
+    font-family: 'esri-compare-3d';
+    src:    url('../fonts/icomoon.eot?qs2f8j');
+    src:    url('../fonts/icomoon.eot?qs2f8j#iefix') format('embedded-opentype'),
+        url('../fonts/icomoon.ttf?qs2f8j') format('truetype'),
+        url('../fonts/icomoon.woff?qs2f8j') format('woff'),
+        url('../fonts/icomoon.svg?qs2f8j#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'esri-compare-3d' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-link-locked:before {
+    content: "\e900";
+}
+.icon-link-unlocked:before {
+    content: "\e902";
+}
+.icon-close-circled:before {
+    content: "\f114";
+}
+.icon-description:before {
+    content: "\f11e";
+}
+.icon-down:before {
+    content: "\f127";
+}
+.icon-up:before {
+    content: "\f182";
+}
+.compare-map-btn:hover, .compare-map-btn:active{
+  opacity: 0.6;
+}
+.compare-map-btn{
+  width: 26px;
+  height: 26px;
+  text-align: center;
+  font-size: 14px;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+
+/*Media specific iphone*/
+@media only screen and (max-width: 480px) {
+  .map-details-desc{
+    display:none;
+  }
+}
