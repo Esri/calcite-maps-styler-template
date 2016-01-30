@@ -298,7 +298,8 @@ define({
 				subscriptionPublicSuccess: "Your subscription content is now publicly accessible"
 			},
 			errors: {
-				publicDisabled: "Sharing publicly has been disabled by the Administrator",
+				publicDisabled: "Sharing publicly has been disabled by an Administrator",
+				orgDisabled: "Sharing to your organization has been disabled by an Administrator",
 				noMapName: "Could Not Retrieve Map Name",
 				notPublic: "NOT PUBLIC",
 				inaccessible: "INACCESSIBLE",
@@ -351,7 +352,8 @@ define({
 				cantScanThisTypeAlt: "We're not able to check this type of layer",
 				cantScanThisType: "Layer is not a type of layer we can check",
 				webpageNotScanned: "Webpages are not checked for issues",
-				ignoredIssue: "You have ignored an error on this layer. Reload the page and check this story again to review the error"
+				ignoredIssue: "You have ignored an error on this layer. Reload the page and check this story again to review the error",
+				ignoredIssueBuilder: "You have ignored an error on this layer. Reload the builder to check this error again"
 			},
 			scanningErrors: {
 				deletedMap: "Deleted content",

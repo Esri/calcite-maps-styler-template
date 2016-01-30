@@ -51,7 +51,11 @@ define({
 				facebookTooltip: "Share on Facebook",
 				twitterTooltip: "Share on Twitter",
 				bitlyTooltip: "Get a short link",
-				bitlyStartIndex: "Link to current place"
+				bitlyStartIndex: "Link to current place",
+				tooltipAutoplayDisabled: "This isn't available in autoplay mode",
+				autoplayLabel: "Autoplay mode",
+				autoplayExplain1: "Autoplay mode will advance through your story at a regular interval. This is ideal on a kiosk or public display monitor, but be aware that in other situations it may make the story harder to read. This feature isn't supported on small displays.",
+				autoplayExplain2: "When this mode is active there are controls to play/pause the story and adjust the navigation speed."
 			},
 			builderHTML: {
 				panelHeader: "STORY CONFIGURATION",
@@ -527,6 +531,19 @@ define({
 			},
 			locator: {
 				error: "Location not available"
+			},
+			saveErrorSocial: {
+				title: "Social media sharing update",
+				panel1: "Your story’s appearance on social media has been improved, but your ArcGIS web application item title is not the same as your story title.",
+				panel1tooltip: "By defining a title, summary and thumbnail image, your story will look like this:",
+				panel2:	"Which title would you like to use on social media:",
+				panel2q1: "Story title (recommended)",
+				panel2q1tooltip: "By choosing this option, your item title will be modified to match your story title and further changes in the builder will be synchronized.",
+				panel2q2: "Item title",
+				panel3: "To further improve how your story looks on social media use ${MYSTORIES} to add a summary and a thumbnail image.",
+				panel4: "Do not warn me again for this story",
+				mystories: "My Stories",
+				btnSave: "Save"
 			}
         }
     }),

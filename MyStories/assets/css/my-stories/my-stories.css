@@ -2919,6 +2919,16 @@ html.builder {
 .builder .notification-pane .item-subtitle {
   width: 100%; }
 
+.builder .notification-text {
+  width: 83%; }
+
+.builder .notification-arrow {
+  width: 17%; }
+
+.builder .notification-expanded .notification-arrow {
+  padding-top: 0;
+  padding-right: 6px; }
+
 /***********************************  DIALOG OVERRIDES  ***************************************/
 .builder #remove-layer-modal {
   max-height: 90%;

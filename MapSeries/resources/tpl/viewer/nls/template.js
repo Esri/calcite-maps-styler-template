@@ -58,6 +58,7 @@ define({
 				checking: "Checking your story content",
 				fix: "Fix issues in your story",
 				noerrors: "No issues detected",
+				tooltipAutoplayDisabled: "This isn't available in autoplay mode",
 				notshared: "Story not shared"
 			},
 			overviewFromCommon: {
@@ -72,7 +73,11 @@ define({
 				open: "Open",
 				embed: "Embed in web page",
 				embedExplain: "Use the following HTML code to embed the story in a web page.",
-				size: "Size (width/height):"
+				size: "Size (width/height):",
+				autoplayLabel: "Autoplay mode",
+				autoplayExplain1: "Autoplay mode will advance through your story at a regular interval. This is ideal on a kiosk or public display monitor, but be aware that in other situations it may make the story harder to read. This feature isn't supported on small displays.",
+				autoplayExplain2: "When this mode is active there are controls to play/pause the story and adjust the navigation speed.",
+				linksupdated: "Links updated!"
 			},
 			locatorFromCommon: {
 				error: "Location not available"
