@@ -155,7 +155,6 @@ ContentPane) {
             if(this.config.link){
               this._linkViews();
             }
-
           }));
 
         },
@@ -186,7 +185,13 @@ ContentPane) {
         _updateViewComponents: function(update){
           if(this.views && this.views.length && this.views.length === 2){
             var view = this.views[1];
-            var components = view.ui.components;
+            // Make sure the color theme is applied to both views. Once we've applied destroy the handler
+            var updateHandle = view.watch("ui.components", lang.hitch(this, function(newValue, oldValue, property, object){
+              if(newValue && newValue.length && newValue.length > 1){
+                this._updateTheme();
+                updateHandle.remove();
+              }
+            }));
             if(update){
               view.ui.components = this.config.components;
             }else{
@@ -204,10 +209,7 @@ ContentPane) {
             // Create views but only add zoom and compass to first view.
             var view = new SceneView({
                 map: scene,
-                container: "map_" + index,
-                ui:{
-                  components: index === 0 ? this.config.components : ["attribution"]
-                }
+                container: "map_" + index
             });
             scene.then(lang.hitch(this, function(result){
               // Add content to the info panel (slides, title, desc)
@@ -223,7 +225,6 @@ ContentPane) {
                 };
                 var slideList = new SlideList(options, "carousel_"+ index);
                 slideList.startup();
-
               }
 
               def.resolve(view);
