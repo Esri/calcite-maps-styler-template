@@ -81,10 +81,10 @@ ContentPane) {
                 this.config = config;
               //  var scenes = this.config.webscenes || [this.config.webscene] || [], sceneLength = scenes.length || 0, sceneIds;
                 var scenes = [], sceneLength = 0, sceneIds;
-                if(this.config.webscenes && this.config.webscenes.length && this.config.webscenes.length > 0){
-                  scenes = this.config.webscenes;
-                }else if(this.config.webscene){
+                if(this.config.webscene){
                   scenes = [this.config.webscene];
+                }else if(this.config.webscenes && this.config.webscenes.length && this.config.webscenes.length > 0){
+                  scenes = this.config.webscenes;
                 }
                 sceneLength = scenes.length;
                 if(sceneLength >= 2){
