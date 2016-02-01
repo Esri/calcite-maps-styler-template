@@ -26,6 +26,7 @@ define([
   "dojo/dom-attr",
   "dojo/dom-class",
   "dojo/dom-construct",
+  "dojo/dom-style",
 
   "dojo/on",
   "dojo/promise/all",
@@ -59,7 +60,7 @@ define([
 ], function(
   declare, array, lang,
   Deferred,
-  dom, domAttr, domClass, domConstruct,
+  dom, domAttr, domClass, domConstruct, domStyle,
   on, all,
   Camera, Color,
   Point, SpatialReference, webMercatorUtils,
@@ -276,8 +277,12 @@ define([
     // init viz
     _initViz: function() {
       var def = this._processLayers();
-      def.then(lang.hitch(this, function(lyr){
-        this._initVizLayer(lyr);
+      def.then(lang.hitch(this, function(lyr) {
+        if (lyr) {
+          this._initVizLayer(lyr);
+        } else {
+          console.log("No feature layer in web scene.");
+        }
       }));
     },
 
@@ -287,41 +292,47 @@ define([
       var layers = map.layers;
       var i;
       var j;
-      if (layers.length > 0) {
-        // TO DO: Check how layer in config is being passed
-        if (this.config.vizLayer) {
-          var lyr = map.getLayer(this.config.vizLayer.id);
-          lyr.then(function(vizLyr){
-            def.resolve(vizLyr);
-            return;
-          });
-        } else {
-          var promises = [];
-          for (i = layers.length - 1; i >= 0; i--) {
-            var id = layers.getItemAt(i).id;
-            promises.push(map.getLayer(id));
-          }
-          all(promises).then(function(results) {
-            for (i = 0; i < results.length; i++) {
-              var lyr = results[i];
-              // Feature Layer
-              if (lyr.type && lyr.type === "Feature Layer") {
-                def.resolve(lyr);
-                break;
-              }
-              // Group Layer
-              if (lyr.layers && lyr.layers.length > 0) {
-                for (j = 0; j < lyr.layers.length; j++) {
-                  var lyr2 = lyr.layers.getItemAt(j);
-                  if (lyr2.type && lyr2.type === "Feature Layer") {
-                    def.resolve(lyr2);
-                    break;
-                  }
+      if (layers.length === 0) {
+        def.resolve(null);
+        return def.promise;
+      }
+      // TO DO: Check how layer in config is being passed
+      if (this.config.vizLayer) {
+        var lyr = map.getLayer(this.config.vizLayer.id);
+        lyr.then(function(vizLyr) {
+          def.resolve(vizLyr);
+          return;
+        });
+      } else {
+        var promises = [];
+        for (i = layers.length - 1; i >= 0; i--) {
+          var id = layers.getItemAt(i).id;
+          promises.push(map.getLayer(id));
+        }
+        all(promises).then(function(results) {
+          var vizLyr;
+          for (i = 0; i < results.length; i++) {
+            var lyr = results[i];
+            // Feature Layer
+            if (lyr.declaredClass === "esri.layers.FeatureLayer") {
+              vizLyr = lyr;
+              def.resolve(lyr);
+              break;
+            }
+            // Group Layer
+            if (lyr.declaredClass === "esri.layers.GroupLayer") {
+              for (j = 0; j < lyr.layers.length; j++) {
+                var lyr2 = lyr.layers.getItemAt(j);
+                if (lyr2.declaredClass === "esri.layers.FeatureLayer") {
+                  vizLyr = lyr2;
+                  def.resolve(lyr2);
+                  break;
                 }
               }
             }
-          });
-        }
+          }
+          def.resolve(vizLyr);
+        });
       }
       return def.promise;
     },
@@ -386,9 +397,16 @@ define([
         }
       }
 
-      this.vizLayer.displayField = displayFld;
-      this.vizLayer.fields = flds;
-      this._queryVizData();
+      if (flds.length > 0) {
+        this.vizLayer.displayField = displayFld;
+        this.vizLayer.fields = flds;
+        this._queryVizData();
+        if(flds.length === 1 && this.view.viewingMode !== "global") {
+          domStyle.set("btnPlay", "display", "none");
+        }
+      } else {
+        console.log("No valid fields.");
+      }
     },
 
     // query viz data
@@ -409,7 +427,7 @@ define([
 
     // process feature geometries
     _processFeatureGeometries: function(features) {
-      array.forEach(features, function(feature){
+      array.forEach(features, function(feature) {
         var geom = feature.geometry;
         switch (geom.type) {
           case "point":
