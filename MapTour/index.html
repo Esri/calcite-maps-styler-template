@@ -70,7 +70,7 @@
 		</script>
 
 		<script type="text/javascript">
-			var version = '2.5.0-012916';
+			var version = '2.5.0-020116';
 			var isProduction = true;
 
 			function loadJS(url, isExternal)
@@ -107,6 +107,7 @@
 				loadCSS("lib/bootstrap/css/bootstrap.min.css");
 				loadCSS("lib/spectrum/spectrum.css");
 				loadCSS("lib/colorbox/colorbox.css");
+				loadCSS("lib/bootstrap-slider/css/slider.css");
 
 				loadCSS("app/storymaps/ui/crossfader/CrossFader.css");
 				loadCSS("app/storymaps/ui/multiTips/MultiTips.css");
@@ -119,6 +120,7 @@
 				loadCSS("app/storymaps/ui/mapCommand/MapCommand.css");
 				loadCSS("app/storymaps/maptour/ui/desktop/Carousel.css");
 				loadCSS("app/storymaps/maptour/ui/desktop/PicturePanel.css");
+				loadCSS("app/storymaps/ui/autoplay/Autoplay.css");
 				
 				loadCSS("app/storymaps/builder/Builder.css");
 				loadCSS("app/storymaps/builder/BuilderPanel.css");
@@ -183,7 +185,7 @@
 			}
 		</script>
 		<!--[if IE 7]>
-			<link rel="stylesheet" href="resources/font/storymaps-icons-ie7.css">
+			<link rel="stylesheet" href="resources/font/sharing/storymaps-icons-ie7.css">
 		<![endif]-->
 	</head>
 	<body class="claro">
@@ -212,8 +214,8 @@
 						<span class="msLink">
 							<a href="http://storymaps.arcgis.com" target="_blank" tabindex="-1"></a>
 						</span>
-						<i class="shareIcon share_facebook icon-facebook-squared-1"></i>
-						<i class="icon-twitter-1 shareIcon share_twitter"></i>
+						<i class="shareIcon share_facebook icon-facebook-squared"></i>
+						<i class="icon-twitter shareIcon share_twitter"></i>
 						<i class="icon-link shareIcon share_bitly"></i>
 					</div>
 					<div class="logo">
@@ -259,6 +261,17 @@
 				</div>
 				<div class="mapLocationError">
 					<div class="mapLocationMsg"></div>
+				</div>
+				<div id="autoplay" class="autoplay">
+					<div class="autoplay-container">
+						<div class="backdrop"></div>
+						<div class="btn-play-container status-pause">
+							<span class="btn-play autoplay-icon-play"></span>
+						</div>
+						<div class="slider-container ">
+							<input type="text" class="span2" value="" />
+						</div>
+					</div>
 				</div>
 			</div>
 			<!-- Picture panel -->
@@ -1168,6 +1181,7 @@
 				loadJS('lib/spectrum/spectrum.js');
 				loadJS('lib/bootstrap.file-input.js');
 				loadJS('lib/colorbox/jquery.colorbox-min.js');
+				loadJS('lib/bootstrap-slider/js/bootstrap-slider.js');
 			}
 		</script>
 		

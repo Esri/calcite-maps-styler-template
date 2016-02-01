@@ -139,7 +139,7 @@
 		</script>
 
 		<script type="text/javascript">
-			var version = '1.8.0-013116';
+			var version = '1.8.0-020116';
 			var isProduction = true;
 
 			function loadJS(url, isExternal)
@@ -176,7 +176,7 @@
 				loadCSS("lib/fuelux/wizard.css");
 				loadCSS("lib/bootstrap/css/bootstrap.min.css");
 				loadCSS("lib/spectrum/spectrum.css");
-
+				loadCSS("lib/bootstrap-slider/css/slider.css");
 
 				loadCSS("app/storymaps/ui/inlineFieldEdit/InlineFieldEdit.css");
 				loadCSS("app/storymaps/ui/loadingIndicator/LoadingIndicator.css");
@@ -185,6 +185,7 @@
 				loadCSS("app/storymaps/ui/header/Header.css");
 				loadCSS("app/storymaps/ui/mapCommand/MapCommand.css");
 				loadCSS("app/storymaps/swipe/ui/desktop/SeriesPanel.css");
+				loadCSS("app/storymaps/ui/autoplay/Autoplay.css");
 
 				loadCSS("app/storymaps/swipe/core/MainView.css");
 				loadCSS("app/storymaps/swipe/ui/desktop/SidePanel.css");
@@ -248,7 +249,7 @@
 			}
 		</script>
 		<!--[if IE 7]>
-			<link rel="stylesheet" href="resources/font/storymaps-icons-ie7.css">
+			<link rel="stylesheet" href="resources/font/sharing/storymaps-icons-ie7.css">
 		<![endif]-->
 	</head>
 	<body class="claro">
@@ -278,8 +279,8 @@
 						<span class="msLink">
 							<a href="http://storymaps.arcgis.com/" target="_blank"></a>
 						</span>
-						<i class="shareIcon share_facebook icon-facebook-squared-1"></i>
-						<i class="icon-twitter-1 shareIcon share_twitter"></i>
+						<i class="shareIcon share_facebook icon-facebook-squared"></i>
+						<i class="icon-twitter shareIcon share_twitter"></i>
 						<i class="icon-link shareIcon share_bitly"></i>
 					</div>
 					<div class="logo">
@@ -338,6 +339,18 @@
 					<div id="infoWindowTabImg"></div>
 				</div>
 				<div id="locationSearch"></div>
+				
+				<div id="autoplay" class="autoplay">
+					<div class="autoplay-container">
+						<div class="backdrop"></div>
+						<div class="btn-play-container status-pause">
+							<span class="btn-play autoplay-icon-play"></span>
+						</div>
+						<div class="slider-container ">
+							<input type="text" class="span2" value="" />
+						</div>
+					</div>
+				</div>
             </div>
 			<!-- In order for the animate clip method to work on the side panel, a clip property must be already set -->
 			<div id="sidePanel" style="clip: rect(0px 10000px 10000px 0px);">
@@ -874,6 +887,7 @@
 				loadJS('lib/jquery.ui.touch-punch.min.js');
 				loadJS('lib/nicEdit.js');
 				loadJS('lib/fuelux/wizard.js');
+				loadJS('lib/bootstrap-slider/js/bootstrap-slider.js');
 			}
 		</script>
 
@@ -908,7 +922,7 @@
 					require(["dojo/i18n!./resources/nls/template.js?v=" + version,
 							"storymaps/ui/loadingIndicator/LoadingIndicator",
 							"esri/urlUtils",
-							//"templateConfig/commonConfig.js?v=" + version,
+							"templateConfig/commonConfig.js?v=" + version,
 							"dojo/domReady!",
 							"dojo/ready"
 						], function(
