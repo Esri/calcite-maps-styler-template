@@ -160,8 +160,7 @@ define(["dojo/_base/array", "dojo/_base/declare", "dojo/_base/kernel", "dojo/_ba
                     parseFloat(this.config.application_extent[1][0]), parseFloat(this.config.application_extent[1][1])]
                 ];
             }
-            // TODO do we need geometry service for scene?
-            // if so do we have config option to set geom service at 4?
+            // TODO Add Geometry Service support
         },
         _createPortal: function(){
           var deferred = new Deferred();
@@ -434,16 +433,15 @@ define(["dojo/_base/array", "dojo/_base/declare", "dojo/_base/kernel", "dojo/_ba
                 }).load();
                 sceneItem.then(lang.hitch(this, function (itemData) {
                     var cfg = {};
-                    if (itemData && itemData.values) {
-                        // get app config values - we'll merge them with config later.
-                        cfg = itemData.values;
-                        // save response
-                        cfg.appResponse = response;
-                    }
-
-                    // TODO (No support yet for app proxies in the scene)
-                    this.appConfig = cfg;
-                    deferred.resolve(cfg);
+                    itemData.fetchData().then(lang.hitch(this, function(data){
+                      var cfg = {};
+                      if(data && data.values){
+                        cfg = data.values;
+                        // TODO (No support yet for app proxies in the scene)
+                        this.appConfig = cfg;
+                      }
+                      deferred.resolve(cfg);
+                    }));
                 }), function (error) {
                     if (!error) {
                         error = new Error("Error retrieving application configuration.");
