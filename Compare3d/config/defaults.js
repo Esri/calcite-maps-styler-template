@@ -31,7 +31,7 @@ define({
   "slideColorTheme": "#05668D",
   // When true view extent will be linked so if you zoom, pan on one the behavior will be the same on the other
   "link": true,
-  "panelsOpen": false,
+  "panelsOpen": true,
   "proxyurl": "",
   "sharinghost": location.protocol + "//" + "www.arcgis.com",
   "units": null,
