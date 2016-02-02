@@ -41,7 +41,7 @@
 		},
 		cantFindStories: {
 			whereAreStories: "스토리가 보이지 않나요?",
-			notSeeExplanation: "내 스토리에는 {{STORY_MAP_TOUR}}, {{JOURNAL}}, {{MAP_SERIES}}, {{SWIPE_SPYGLASS}} 응용프로그램을 사용하여 생성했으며 ArcGIS Online에서 호스팅되는 스토리 맵만 나열됩니다. 자세한 내용은 {{FAQ}}를 참고하세요.",
+			notSeeExplanation: "한_My Stories will only list story maps hosted in ArcGIS and created with the {{STORY_MAP_TOUR}}, {{JOURNAL}}, {{MAP_SERIES}} or {{SWIPE_SPYGLASS}} applications. See our {{FAQ}} for more information____________________________________________________________빠.",
 			faq: "FAQ",
 			followingStoriesToUpdate: "이전 버전의 응용프로그램을 사용하여 생성한 다음 스토리는 업데이트해야 내 스토리에 나열됩니다.",
 			gettingStories: "이전 버전의 응용프로그램을 사용하여 생성했으며 업데이트해야 하는 스토리 검색 중...",
@@ -120,7 +120,7 @@
 			saveFailed: "저장 오류",
 			numViews: "조회수: {{NUM_VIEWS}}",
 			editStory: "스토리 편집",
-			viewLive: "실시간 보기",
+			viewLive: "한_View Story____빠",
 			preview: "미리 보기",
 			deleteButton: "삭제",
 			modified: "{{DATE}}에 수정함",
@@ -130,7 +130,7 @@
 			close: "닫기",
 			hide: "숨기기",
 			notAvailableWhenBroken: "스토리에 아래와 같은 문제가 있습니다.",
-			cantBeDeleted: "이 스토리에는 삭제 금지가 설정되어 있습니다. 삭제 금지를 사용하지 않으려면 ArcGIS Online에서 해당 항목 페이지를 참고하세요.",
+			cantBeDeleted: "한_This story has delete protection enabled. See its item page on ArcGIS to disable_________________________빠.",
 			shareDialog: {
 				title: "스토리를 공유해 보세요!",
 				notPublicWarning: "스토리가 내 기관과 공유됩니다. 내 기관의 구성원만 스토리를 볼 수 있습니다.",
@@ -163,7 +163,7 @@
 				save: "저장",
 				saved: "저장됨",
 				errorSaving: "저장 오류",
-				tagTip: "팁: 태그를 통해 ArcGIS Online에서 스토리를 쉽게 찾을 수 있습니다. 태그의 관련성이 높을수록 작업 내용이 더 많이 보여집니다."
+				tagTip: "한_Tip: Tags help people find your story. The more relevant the tags are, the higher the visibility your work will receive_____________________________________빠."
 			},
 			submitToGallery: {
 				gallerySubmission: "스토리 맵 갤러리",
@@ -298,7 +298,8 @@
 				subscriptionPublicSuccess: "이제 구독 콘텐츠에 공개적으로 접근할 수 있습니다."
 			},
 			errors: {
-				publicDisabled: "관리자가 공개적 공유를 사용하지 않도록 설정했습니다.",
+				publicDisabled: "한_Sharing publicly has been disabled by an Administrator_________________빠",
+				orgDisabled: "한_Sharing to your organization has been disabled by an Administrator_____________________빠",
 				noMapName: "맵 이름을 검색할 수 없음",
 				notPublic: "공개 아님",
 				inaccessible: "접근 불가",
@@ -350,7 +351,9 @@
 			tooltipWarnings: {
 				cantScanThisTypeAlt: "이 레이어 유형을 확인할 수 없습니다.",
 				cantScanThisType: "레이어가 확인 가능한 레이어 유형이 아닙니다.",
-				webpageNotScanned: "웹 페이지에서 문제를 확인하지 않았습니다."
+				webpageNotScanned: "웹 페이지에서 문제를 확인하지 않았습니다.",
+				ignoredIssue: "한_You have ignored an error on this layer. Reload the page and check this story again to review the error________________________________빠",
+				ignoredIssueBuilder: "한_You have ignored an error on this layer. Reload the builder to check this error again___________________________빠"
 			},
 			scanningErrors: {
 				deletedMap: "삭제된 콘텐츠",
@@ -384,7 +387,6 @@
 				premiumContentTip: "스토리에 공개 시 {{CREDITS}}의 크레딧을 사용하는 프리미엄 콘텐츠가 포함되어 있습니다. 스토리를 공개하고 계속하거나 스토리에서 레이어를 제거하세요.",
 				premiumContentPublicTip: "스토리에 공개 제공 시 {{CREDITS}}의 크레딧을 사용하는 프리미엄 콘텐츠가 포함되어 있습니다. 이러한 레이어를 공개할 것임을 확인하거나 스토리에서 레이어를 제거하세요.",
 				subscriptionContentTip: "기본 설정에 따라 스토리에 공개로 제공할 수 없는 구독 콘텐츠가 포함되어 있습니다. 이러한 레이어를 제공할 것임을 확인하거나(크레딧은 사용되지 않음) 스토리에서 레이어를 제거하세요.",
-				agolCredits: "ArcGIS Online 크레딧",
 				credits: "크레딧",
 				makePublic: "공개로 설정",
 				confirm: "확인",
@@ -455,6 +457,15 @@
 				secondValueA: "스와이프",
 				secondValueB: "투과 렌즈",
 				thirdTitle: "맵"
+			},
+			crowdsource: {
+				firstTitle: "한_contributions_____빠",
+				secondTitle: "한_style___빠",
+				secondValueA: "한_side panel____빠",
+				secondValueB: "한_stacked___빠",
+				thirdTitle: "한_basemap___빠",
+				thirdValueLoading: "한_Loading____빠...",
+				thirdValueUnknown: "한_unknown___빠"
 			}
 		},
 		progress: {
@@ -469,6 +480,11 @@
 			scanProgress: "{{NUM_SCANNED}}/{{NUM_TOTAL}}",
 			scanStopped: "스캔한 스토리: {{NUM_SCANNED}}, 문제가 있는 스토리: {{ISSUE_STORIES}}",
 			storiesWithIssues: "문제가 있는 스토리: {{NUM_STORIES}}"
+		},
+		newStories: {
+			newStoriesFound: "한_Looks like you have created a new story_____________빠.",
+			includeStories: "한_Refresh Stories______빠",
+			notWhileScanning: "한_This will be available when the check is complete________________빠"
 		}
     })
 );

@@ -41,7 +41,7 @@
 		},
 		cantFindStories: {
 			whereAreStories: "Etkö näe tarinaasi?",
-			notSeeExplanation: "Omat tarinat -luettelossa näkyvät vain kartat, joita isännöidään ArcGIS Onlinessa ja jotka on luotu sovelluksella {{STORY_MAP_TOUR}}, {{JOURNAL}}, {{MAP_SERIES}} tai {{SWIPE_SPYGLASS}}. Lisätietoja on kohdassa {{FAQ}}.",
+			notSeeExplanation: "Å_My Stories will only list story maps hosted in ArcGIS and created with the {{STORY_MAP_TOUR}}, {{JOURNAL}}, {{MAP_SERIES}} or {{SWIPE_SPYGLASS}} applications. See our {{FAQ}} for more information____________________________________________________________ö.",
 			faq: "Usein kysytyt kysymykset",
 			followingStoriesToUpdate: "Seuraavat tarinat, jotka on luotu sovellusten aiemmilla versioilla, on päivitettävä, jotta ne näkyvät Omat tarinat -luettelossa:",
 			gettingStories: "Etsitään tarinoita, jotka on luotu sovellusten aiemmilla versioilla ja jotka on päivitettävä...",
@@ -120,7 +120,7 @@
 			saveFailed: "Virhe tallennettaessa",
 			numViews: "Näkymät: {{NUM_VIEWS}}",
 			editStory: "Muokkaa tarinaa",
-			viewLive: "Näytä reaaliaikaisesti",
+			viewLive: "Å_View Story____ö",
 			preview: "Esikatselu",
 			deleteButton: "Poista",
 			modified: "Muokattu: {{DATE}}",
@@ -130,7 +130,7 @@
 			close: "sulje",
 			hide: "piilota",
 			notAvailableWhenBroken: "Tarinassasi on alla luetellut ongelmat",
-			cantBeDeleted: "Poistosuojaus on käytössä tässä tarinassa. Jos haluat poistaa suojauksen käytöstä, siirry tarinan kohdesivulle ArcGIS Onlinessa",
+			cantBeDeleted: "Å_This story has delete protection enabled. See its item page on ArcGIS to disable_________________________ö.",
 			shareDialog: {
 				title: "Jaa tarinasi kaikkien kanssa.",
 				notPublicWarning: "Tarinasi on jaettu organisaation kanssa. Vain organisaation jäsenet voivat katsella sitä.",
@@ -163,7 +163,7 @@
 				save: "Tallenna",
 				saved: "Tallennettu",
 				errorSaving: "Virhe tallennettaessa",
-				tagTip: "Vihje: Tunnisteiden avulla ihmiset löytävät tarinasi ArcGIS Onlinesta. Mitä enemmän asiaankuuluvia tunnisteita on, sitä enemmän näkyvyyttä työsi saa."
+				tagTip: "Å_Tip: Tags help people find your story. The more relevant the tags are, the higher the visibility your work will receive_____________________________________ö."
 			},
 			submitToGallery: {
 				gallerySubmission: "Tarinakarttagalleria",
@@ -298,7 +298,8 @@
 				subscriptionPublicSuccess: "Tilauksen sisältö on nyt julkisesti saatavilla"
 			},
 			errors: {
-				publicDisabled: "Pääkäyttäjä on poistanut julkisen jakamisen käytöstä",
+				publicDisabled: "Å_Sharing publicly has been disabled by an Administrator_________________ö",
+				orgDisabled: "Å_Sharing to your organization has been disabled by an Administrator_____________________ö",
 				noMapName: "Kartan nimen nouto ei onnistunut",
 				notPublic: "EI JULKINEN",
 				inaccessible: "EI KÄYTETTÄVISSÄ",
@@ -350,7 +351,9 @@
 			tooltipWarnings: {
 				cantScanThisTypeAlt: "Tämäntyyppistä karttatasoa ei voi tarkistaa",
 				cantScanThisType: "Karttatason tyyppi ei ole sellainen, jonka voi tarkistaa",
-				webpageNotScanned: "Web-sivujen ongelmia ei tarkisteta"
+				webpageNotScanned: "Web-sivujen ongelmia ei tarkisteta",
+				ignoredIssue: "Å_You have ignored an error on this layer. Reload the page and check this story again to review the error________________________________ö",
+				ignoredIssueBuilder: "Å_You have ignored an error on this layer. Reload the builder to check this error again___________________________ö"
 			},
 			scanningErrors: {
 				deletedMap: "Poistettu sisältö",
@@ -384,7 +387,6 @@
 				premiumContentTip: "Tarinasi sisältää Premium-sisältöä, joka kuluttaa {{CREDITS}} krediittiä, kun se määritetään julkiseksi. Tee tarinastasi julkinen ja jatka tai poista karttatasot tarinastasi.",
 				premiumContentPublicTip: "Tarinasi sisältää Premium-sisältöä, joka kuluttaa {{CREDITS}} krediittiä, kun se on julkisesti saatavilla. Tee näistä karttatasoista julkisia vahvistamalla tai poista karttatasot tarinastasi.",
 				subscriptionContentTip: "Tarinasi sisältää tilauksen sisältöä, joka ei ole julkisesti saatavilla oletusarvoisesti. Vahvista, että haluat näiden karttatasojen olevan julkisesti saatavilla (yhtään krediittiä ei kulu), tai poista karttatasot tarinastasi.",
-				agolCredits: "ArcGIS Online -krediitit",
 				credits: "krediitit",
 				makePublic: "Määritä julkiseksi",
 				confirm: "Vahvista",
@@ -455,6 +457,15 @@
 				secondValueA: "pyyhkäise",
 				secondValueB: "kiikari",
 				thirdTitle: "kartat"
+			},
+			crowdsource: {
+				firstTitle: "Å_contributions_____ö",
+				secondTitle: "Å_style___ö",
+				secondValueA: "Å_side panel____ö",
+				secondValueB: "Å_stacked___ö",
+				thirdTitle: "Å_basemap___ö",
+				thirdValueLoading: "Å_Loading____ö...",
+				thirdValueUnknown: "Å_unknown___ö"
 			}
 		},
 		progress: {
@@ -469,6 +480,11 @@
 			scanProgress: "{{NUM_SCANNED}}/{{NUM_TOTAL}}",
 			scanStopped: "Skannatut tarinat: {{NUM_SCANNED}}, tarinat, joissa on ongelmia: {{ISSUE_STORIES}}",
 			storiesWithIssues: "Tarinat, joissa on ongelmia: {{NUM_STORIES}}"
+		},
+		newStories: {
+			newStoriesFound: "Å_Looks like you have created a new story_____________ö.",
+			includeStories: "Å_Refresh Stories______ö",
+			notWhileScanning: "Å_This will be available when the check is complete________________ö"
 		}
     })
 );

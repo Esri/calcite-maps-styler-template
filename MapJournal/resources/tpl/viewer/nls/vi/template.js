@@ -22,18 +22,21 @@
 				boxTitle: "Đã xảy ra lỗi",
 				invalidConfig: "Cấu hình không hợp lệ",
 				invalidConfigNoApp: "Định danh Ứng dụng Lập bản đồ Web không được chỉ định trong index.html.",
+				invalidConfigNoAppDev: "Đ_No Web Mapping Application identifier is specified in URL parameters (?appid=). In development mode, the appid configuration in index.html is ignored______________________________________________ớ.",
 				unspecifiedConfigOwner: "Chủ sở hữu được ủy quyền chưa được cấu hình.",
 				invalidConfigOwner: "Chủ sở hữu câu chuyện chưa được ủy quyền.",
 				createMap: "Không thể tạo bản đồ",
 				invalidApp: "%TPL_NAME% không tồn tại hoặc không thể truy cập được.",
 				appLoadingFail: "Đã xảy ra sự cố, %TPL_NAME% không tải đúng.",
 				notConfiguredDesktop: "Câu chuyện chưa được cấu hình.",
-				notConfiguredMobile: "Bộ thiết lập %TPL_NAME% không được hỗ trợ theo kích cỡ hiển thị này.",
+				notConfiguredMobile: "Đ_The %TPL_NAME% builder is not supported at this display size. If possible, resize your browser to access the builder or please build your story on a device with a larger screen______________________________________________________ớ.",
+				notConfiguredMobile2: "Đ_Please rotate your device to landscape orientation to use the %TPL_NAME% builder_________________________ớ.",
 				notAuthorized: "Bạn không được phép truy cập vào câu chuyện này",
+				notAuthorizedBuilder: "Đ_You are not authorized to use %TPL_NAME% builder________________ớ.",
 				noBuilderIE: "Bộ thiết lập không được hỗ trợ trên Internet Explorer trước phiên bản %VERSION%. %UPGRADE%",
 				noViewerIE: "Câu chuyện này không được hỗ trợ trong Internet Explorer trước phiên bản %VERSION%. %UPGRADE%",
 				upgradeBrowser: "<a href='http://browsehappy.com/' target='_blank'>Vui lòng cập nhật trình duyệt của bạn</a>.",
-				mapLoadingFail: "Đã xảy ra lỗi, Bản đồ không tải đúng.",
+				mapLoadingFail: "Đ_Something went wrong, the map did not load correctly_________________ớ.",
 				signOut: "Đăng xuất"
 			},
 			mobileView: {
@@ -63,7 +66,9 @@
 				share: "Chia sẻ",
 				checking: "Kiểm tra nội dung câu chuyện của bạn",
 				fix: "Khắc phục sự cố trong câu chuyện của bạn",
-				noerrors: "Không phát hiện sự cố"
+				noerrors: "Không phát hiện sự cố",
+				tooltipAutoplayDisabled: "Đ_This isn't available in autoplay mode____________ớ",
+				notshared: "Đ_Story not shared______ớ"
 			},
 			overviewFromCommon: {
 				title: "Bản đồ Toàn cảnh"
@@ -77,7 +82,11 @@
 				open: "Mở",
 				embed: "Nhúng vào trang web",
 				embedExplain: "Sử dụng mã HTML sau để nhúng bài viết vào một trang web.",
-				size: "Kích thước (chiều rộng/chiều cao):"
+				size: "Kích thước (chiều rộng/chiều cao):",
+				autoplayLabel: "Đ_Autoplay mode_____ớ",
+				autoplayExplain1: "Đ_Autoplay mode will advance through your story at a regular interval. This is ideal on a kiosk or public display monitor, but be aware that in other situations it may make the story harder to read. This feature isn't supported on small displays__________________________________________________________________________ớ.",
+				autoplayExplain2: "Đ_When this mode is active there are controls to play/pause the story and adjust the navigation speed_______________________________ớ.",
+				linksupdated: "Đ_Links updated_____ớ!"
 			}
         }
     })

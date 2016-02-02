@@ -41,7 +41,7 @@
 		},
 		cantFindStories: {
 			whereAreStories: "Hikayenizi göremiyor musunuz?",
-			notSeeExplanation: "Hikayelerim yalnızca {{STORY_MAP_TOUR}}, {{JOURNAL}}, {{MAP_SERIES}} ve {{SWIPE_SPYGLASS}} uygulamaları kullanılarak oluşturulan ve ArcGIS Online\'da barındırılan hikaye haritalarını listeler. Daha fazla bilgi için {{FAQ}} bölümümüzü inceleyin.",
+			notSeeExplanation: "ı_My Stories will only list story maps hosted in ArcGIS and created with the {{STORY_MAP_TOUR}}, {{JOURNAL}}, {{MAP_SERIES}} or {{SWIPE_SPYGLASS}} applications. See our {{FAQ}} for more information____________________________________________________________İ.",
 			faq: "SSS",
 			followingStoriesToUpdate: "Uygulamalarımızın önceki sürümleri ile oluşturulan aşağıdaki hikayelerin, Hikayelerim içinde listelenebilmesi için güncelleştirilmesi gerekir:",
 			gettingStories: "Uygulamalarımızın önceki sürümleri ile oluşturulan ve güncellenmesi gereken hikayeler aranıyor...",
@@ -120,7 +120,7 @@
 			saveFailed: "Kaydetme hatası",
 			numViews: "Görüntüleme sayısı: {{NUM_VIEWS}}",
 			editStory: "Hikayeyi Düzenle",
-			viewLive: "Canlı Görünüm",
+			viewLive: "ı_View Story____İ",
 			preview: "Önizleme",
 			deleteButton: "Sil",
 			modified: "Değiştirilme tarihi: {{DATE}}",
@@ -130,7 +130,7 @@
 			close: "kapat",
 			hide: "gizle",
 			notAvailableWhenBroken: "Hikayenizde aşağıdaki sorunlar belirlendi:",
-			cantBeDeleted: "Bu hikayede silme koruması etkinleştirilmiş, devre dışı bırakmak için ArcGIS Online\'daki ilgili öğe sayfasını inceleyin",
+			cantBeDeleted: "ı_This story has delete protection enabled. See its item page on ArcGIS to disable_________________________İ.",
 			shareDialog: {
 				title: "Hikayenizi dünyayla paylaşın!",
 				notPublicWarning: "Hikayeniz kuruluşunuzla paylaşılmıştır. Yalnızca kuruluşunuzun üyeleri bunu görüntüleyebilir.",
@@ -163,7 +163,7 @@
 				save: "Kaydet",
 				saved: "Kaydedildi",
 				errorSaving: "Kaydetme hatası",
-				tagTip: "İpucu: Etiketler, başkalarının ArcGIS Online\'da hikayenizi bulmasına yardım eder. Etiketler ne kadar ilgili olursa, çalışmanız o kadar fazla görüntülenir."
+				tagTip: "ı_Tip: Tags help people find your story. The more relevant the tags are, the higher the visibility your work will receive_____________________________________İ."
 			},
 			submitToGallery: {
 				gallerySubmission: "Story Maps Galerisi",
@@ -298,7 +298,8 @@
 				subscriptionPublicSuccess: "Abonelik içeriğiniz artık genel olarak erişilebilir"
 			},
 			errors: {
-				publicDisabled: "Genel paylaşım Yönetici tarafından devre dışı bırakıldı",
+				publicDisabled: "ı_Sharing publicly has been disabled by an Administrator_________________İ",
+				orgDisabled: "ı_Sharing to your organization has been disabled by an Administrator_____________________İ",
 				noMapName: "Harita Adı Alınamadı",
 				notPublic: "GENEL DEĞİL",
 				inaccessible: "ERİŞİLEMEZ",
@@ -350,7 +351,9 @@
 			tooltipWarnings: {
 				cantScanThisTypeAlt: "Bu katman türü denetlenemiyor",
 				cantScanThisType: "Katman denetleyebildiğimiz bir katman türü değil",
-				webpageNotScanned: "Web sayfaları sorunlar açısından denetlenmez"
+				webpageNotScanned: "Web sayfaları sorunlar açısından denetlenmez",
+				ignoredIssue: "ı_You have ignored an error on this layer. Reload the page and check this story again to review the error________________________________İ",
+				ignoredIssueBuilder: "ı_You have ignored an error on this layer. Reload the builder to check this error again___________________________İ"
 			},
 			scanningErrors: {
 				deletedMap: "Silinmiş içerik",
@@ -384,7 +387,6 @@
 				premiumContentTip: "Genel yaptıktan sonra hikayenizde {{CREDITS}} kullanılmasını gerektiren ayrıcalıklı içerik var. Hikayenizi genel yapın ve devam edin ya da hikayenizden katmanları kaldırın.",
 				premiumContentPublicTip: "Genel olarak erişilebilir olduğunda hikayenizde {{CREDITS}} kullanılmasını gerektiren ayrıcalıklı içerik var. Bu katmanların genel yapılmasını onaylayın veya hikayenizden katmanları kaldırın.",
 				subscriptionContentTip: "Hikayenizde varsayılan olarak genel olmayan abonelik içeriği var. Bu katmanları kullanılabilir yapmak istediğinizi onaylayın (kredi kullanılmaz) veya hikayenizden katmanları kaldırın.",
-				agolCredits: "ArcGIS Online kredileri",
 				credits: "krediler",
 				makePublic: "Genel yap",
 				confirm: "Onayla",
@@ -455,6 +457,15 @@
 				secondValueA: "kaydır",
 				secondValueB: "dürbün",
 				thirdTitle: "haritalar"
+			},
+			crowdsource: {
+				firstTitle: "ı_contributions_____İ",
+				secondTitle: "ı_style___İ",
+				secondValueA: "ı_side panel____İ",
+				secondValueB: "ı_stacked___İ",
+				thirdTitle: "ı_basemap___İ",
+				thirdValueLoading: "ı_Loading____İ...",
+				thirdValueUnknown: "ı_unknown___İ"
 			}
 		},
 		progress: {
@@ -469,6 +480,11 @@
 			scanProgress: "{{NUM_SCANNED}} / {{NUM_TOTAL}}",
 			scanStopped: "Taranan hikaye sayısı: {{NUM_SCANNED}}, Sorun olan hikaye sayısı: {{ISSUE_STORIES}}",
 			storiesWithIssues: "Sorun olan hikaye sayısı: {{NUM_STORIES}}"
+		},
+		newStories: {
+			newStoriesFound: "ı_Looks like you have created a new story_____________İ.",
+			includeStories: "ı_Refresh Stories______İ",
+			notWhileScanning: "ı_This will be available when the check is complete________________İ"
 		}
     })
 );

@@ -41,7 +41,7 @@
 		},
 		cantFindStories: {
 			whereAreStories: "Não visualiza sua história?",
-			notSeeExplanation: "Minhas Histórias listará somente mapas históricos hospedados no ArcGIS Online criados com os aplicativos {{STORY_MAP_TOUR}}, {{JOURNAL}}, {{MAP_SERIES}} e {{SWIPE_SPYGLASS}}. Consulte nosso {{FAQ}} para mais informações.",
+			notSeeExplanation: "ã_My Stories will only list story maps hosted in ArcGIS and created with the {{STORY_MAP_TOUR}}, {{JOURNAL}}, {{MAP_SERIES}} or {{SWIPE_SPYGLASS}} applications. See our {{FAQ}} for more information____________________________________________________________Ç.",
 			faq: "FAQ",
 			followingStoriesToUpdate: "As seguintes histórias criadas com as primeiras versões de nossos aplicativos precisam ser atualizadas para serem listadas em Minhas Histórias:",
 			gettingStories: "Procurando por histórias criadas com as primeiras versões de nossos aplicativos que precisam ser atualizadas...",
@@ -120,7 +120,7 @@
 			saveFailed: "Erro ao salvar",
 			numViews: "Visualizações: {{NUM_VIEWS}}",
 			editStory: "Editar História",
-			viewLive: "Visualizar em Tempo Real",
+			viewLive: "ã_View Story____Ç",
 			preview: "Visualizar",
 			deleteButton: "Excluir",
 			modified: "Modificado {{DATE}}",
@@ -130,7 +130,7 @@
 			close: "fechar",
 			hide: "ocultar",
 			notAvailableWhenBroken: "Sua história tem o problema abaixo",
-			cantBeDeleted: "Esta história tem proteção de exclusão habilitada, consulte sua página do item no ArcGIS Online para desabilitar",
+			cantBeDeleted: "ã_This story has delete protection enabled. See its item page on ArcGIS to disable_________________________Ç.",
 			shareDialog: {
 				title: "Compartilhe sua história com o mundo!",
 				notPublicWarning: "Sua história está compartilhada com sua organização. Somente membros da sua organização poderão visualizá-la.",
@@ -163,7 +163,7 @@
 				save: "Salvar",
 				saved: "Salvo",
 				errorSaving: "Erro ao salvar",
-				tagTip: "Dica: As tags ajudam as pessoas a localizarem sua história no ArcGIS Online. Quanto mais relevantes forem as etiquetas, maior visibilidade receberá seu trabalho."
+				tagTip: "ã_Tip: Tags help people find your story. The more relevant the tags are, the higher the visibility your work will receive_____________________________________Ç."
 			},
 			submitToGallery: {
 				gallerySubmission: "Galeria de Mapas Históricos",
@@ -298,7 +298,8 @@
 				subscriptionPublicSuccess: "Seu conteúdo da assinatura é agora acessível publicamente"
 			},
 			errors: {
-				publicDisabled: "O compartilhamento público foi desativado pelo Administrador",
+				publicDisabled: "ã_Sharing publicly has been disabled by an Administrator_________________Ç",
+				orgDisabled: "ã_Sharing to your organization has been disabled by an Administrator_____________________Ç",
 				noMapName: "Não Foi Possível Recuperar o Nome do Mapa",
 				notPublic: "NÃO PÚBLICO",
 				inaccessible: "INACESSÍVEL",
@@ -350,7 +351,9 @@
 			tooltipWarnings: {
 				cantScanThisTypeAlt: "Não conseguimos verificar este tipo de camada",
 				cantScanThisType: "A camada não é um tipo de camada que podemos verificar",
-				webpageNotScanned: "As páginas da web não são verificadas para erros"
+				webpageNotScanned: "As páginas da web não são verificadas para erros",
+				ignoredIssue: "ã_You have ignored an error on this layer. Reload the page and check this story again to review the error________________________________Ç",
+				ignoredIssueBuilder: "ã_You have ignored an error on this layer. Reload the builder to check this error again___________________________Ç"
 			},
 			scanningErrors: {
 				deletedMap: "Excluir conteúdo",
@@ -384,7 +387,6 @@
 				premiumContentTip: "Sua história tem conteúdo premium que consumirá {{CREDITS}} ao torná-lo pública. Torne sua história pública e continue ou remova as camadas da sua história.",
 				premiumContentPublicTip: "Sua história tem conteúdo premium que consumirá {{CREDITS}} quando disponível publicamente. Confirme para tornar estas camadas públicas ou remova as camadas da sua história.",
 				subscriptionContentTip: "Sua história tem conteúdo da assinatura que não está publicamente disponível por padrão. Confirme que você deseja tornar estas camadas disponíveis (nenhum crédito será consumido) ou remova as camadas da sua história.",
-				agolCredits: "Créditos do ArcGIS Online",
 				credits: "créditos",
 				makePublic: "Tornar público",
 				confirm: "Confirmar",
@@ -455,6 +457,15 @@
 				secondValueA: "oscilar",
 				secondValueB: "lente de aumento",
 				thirdTitle: "mapas"
+			},
+			crowdsource: {
+				firstTitle: "ã_contributions_____Ç",
+				secondTitle: "ã_style___Ç",
+				secondValueA: "ã_side panel____Ç",
+				secondValueB: "ã_stacked___Ç",
+				thirdTitle: "ã_basemap___Ç",
+				thirdValueLoading: "ã_Loading____Ç...",
+				thirdValueUnknown: "ã_unknown___Ç"
 			}
 		},
 		progress: {
@@ -469,6 +480,11 @@
 			scanProgress: "{{NUM_SCANNED}} de {{NUM_TOTAL}}",
 			scanStopped: "Histórias escaneadas: {{NUM_SCANNED}}, Histórias com erros: {{ISSUE_STORIES}}",
 			storiesWithIssues: "Histórias com erros: {{NUM_STORIES}}"
+		},
+		newStories: {
+			newStoriesFound: "ã_Looks like you have created a new story_____________Ç.",
+			includeStories: "ã_Refresh Stories______Ç",
+			notWhileScanning: "ã_This will be available when the check is complete________________Ç"
 		}
     })
 );

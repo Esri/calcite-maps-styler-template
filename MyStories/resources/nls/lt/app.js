@@ -41,7 +41,7 @@
 		},
 		cantFindStories: {
 			whereAreStories: "Nematote savo pasakojimo?",
-			notSeeExplanation: "Puslapyje Mano pasakojimai bus pateikiami tik ArcGIS pasakojimų žemėlapiai, sukurti naudojant {{STORY_MAP_TOUR}}, {{JOURNAL}}, {{MAP_SERIES}} ir {{SWIPE_SPYGLASS}} aplikacijas. Jeigu reikia daugiau informacijos, žr. mūsų {{FAQ}}.",
+			notSeeExplanation: "Į_My Stories will only list story maps hosted in ArcGIS and created with the {{STORY_MAP_TOUR}}, {{JOURNAL}}, {{MAP_SERIES}} or {{SWIPE_SPYGLASS}} applications. See our {{FAQ}} for more information____________________________________________________________š.",
 			faq: "DUK",
 			followingStoriesToUpdate: "Šiuos pasakojimus, sukurtus ankstesne mūsų programos versija, reikia atnaujinti, kad juos būtų galima pateikti puslapyje Mano pasakojimai:",
 			gettingStories: "Ieškoma ankstesnėmis mūsų aplikacijų versijomis sukurtų pasakojimų, kuriuos reikia atnaujinti...",
@@ -120,7 +120,7 @@
 			saveFailed: "Įrašant įvyko klaida",
 			numViews: "Peržiūros: {{NUM_VIEWS}}",
 			editStory: "Redaguoti istoriją",
-			viewLive: "Peržiūrėti veikiančią",
+			viewLive: "Į_View Story____š",
 			preview: "Peržiūra",
 			deleteButton: "Pašalinti",
 			modified: "Keitimo data {{DATA}}",
@@ -130,7 +130,7 @@
 			close: "užverti",
 			hide: "slėpti",
 			notAvailableWhenBroken: "Jūsų pasakojimas turi toliau pateikiamų nesklandumų",
-			cantBeDeleted: "Ši istorija saugoma nuo panaikinimo, norėdami ją išjungti, žr. elemento puslapį ArcGIS Online",
+			cantBeDeleted: "Į_This story has delete protection enabled. See its item page on ArcGIS to disable_________________________š.",
 			shareDialog: {
 				title: "Bendrinkite pasakojimą su pasauliu!",
 				notPublicWarning: "Jūsų pasakojimas bendrinamas su organizacija. Ją galės matyti tik jūsų organizacijos nariai.",
@@ -163,7 +163,7 @@
 				save: "Įrašyti",
 				saved: "Išsaugota",
 				errorSaving: "Įrašant įvyko klaida",
-				tagTip: "Patarimas: Raktažodžiai padeda žmonėms rasti jūsų pasakojimą ArcGIS Online. Kuo aktualesni raktažodžiai, tuo matomesnis jūsų darbas."
+				tagTip: "Į_Tip: Tags help people find your story. The more relevant the tags are, the higher the visibility your work will receive_____________________________________š."
 			},
 			submitToGallery: {
 				gallerySubmission: "Žemėlapio pasakojimų galerija",
@@ -298,7 +298,8 @@
 				subscriptionPublicSuccess: "Jūsų prenumeruojamas turinys jau prieinamas viešai"
 			},
 			errors: {
-				publicDisabled: "Viešojo bendrinimo funkciją išjungė Administratorius",
+				publicDisabled: "Į_Sharing publicly has been disabled by an Administrator_________________š",
+				orgDisabled: "Į_Sharing to your organization has been disabled by an Administrator_____________________š",
 				noMapName: "Nepavyko gauti žemėlapio pavadinimo",
 				notPublic: "NEVIEŠA",
 				inaccessible: "NEPRIEINAMA",
@@ -350,7 +351,9 @@
 			tooltipWarnings: {
 				cantScanThisTypeAlt: "Negalime tikrinti šio tipo sluoksnio",
 				cantScanThisType: "Sluoksnis priklauso tipui, kurio mes negalime tikrinti",
-				webpageNotScanned: "Tinklalapiai netikrinami, ar juose yra nesklandumų"
+				webpageNotScanned: "Tinklalapiai netikrinami, ar juose yra nesklandumų",
+				ignoredIssue: "Į_You have ignored an error on this layer. Reload the page and check this story again to review the error________________________________š",
+				ignoredIssueBuilder: "Į_You have ignored an error on this layer. Reload the builder to check this error again___________________________š"
 			},
 			scanningErrors: {
 				deletedMap: "Panaikintas turinys",
@@ -384,7 +387,6 @@
 				premiumContentTip: "Jūsų pasakojime yra premium turinio, kuris jį paviešinus nuskaitys {{CREDITS}}. Paviešinkite savo pasakojimą ir tęskite arba pašalinkite iš pasakojimo sluoksnius.",
 				premiumContentPublicTip: "Jūsų pasakojime yra premium turinio, kuris jį viešinant nuskaitys {{CREDITS}}. Patvirtinkite, kad sluoksniai būtų paviešinti arba pašalinkite sluoksnius iš pasakojimo.",
 				subscriptionContentTip: "Jūsų pasakojime yra prenumeruojamo turinio, kuris pagal numatytuosius nustatymus nėra prieinamas viešai. Patvirtinkite, kad norite suteikti prieigą prieš šių sluoksnių (kreditai nuskaityti nebus) arba pašalinkite sluoksnius iš savo istorijos.",
-				agolCredits: "ArcGIS Online kreditai",
 				credits: "kreditai",
 				makePublic: "Viešinti",
 				confirm: "Patvirtinti",
@@ -455,6 +457,15 @@
 				secondValueA: "keitiklis",
 				secondValueB: "žiūronas",
 				thirdTitle: "žemėlapiai"
+			},
+			crowdsource: {
+				firstTitle: "Į_contributions_____š",
+				secondTitle: "Į_style___š",
+				secondValueA: "Į_side panel____š",
+				secondValueB: "Į_stacked___š",
+				thirdTitle: "Į_basemap___š",
+				thirdValueLoading: "Į_Loading____š...",
+				thirdValueUnknown: "Į_unknown___š"
 			}
 		},
 		progress: {
@@ -469,6 +480,11 @@
 			scanProgress: "{{NUM_SCANNED}} iš {{NUM_TOTAL}}",
 			scanStopped: "Nuskaityti pasakojimai: {{NUM_SCANNED}}, pasakojimų su nesklandumais: {{ISSUE_STORIES}}",
 			storiesWithIssues: "Pasakojimų su nesklandumais: {{NUM_STORIES}}"
+		},
+		newStories: {
+			newStoriesFound: "Į_Looks like you have created a new story_____________š.",
+			includeStories: "Į_Refresh Stories______š",
+			notWhileScanning: "Į_This will be available when the check is complete________________š"
 		}
     })
 );

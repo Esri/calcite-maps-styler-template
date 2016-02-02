@@ -110,7 +110,7 @@
       mapFullScreen: "Plein écran",
       mapRestore: "Restaurer",
       filterSelectEmptyText: "Sélectionner",
-      invalidLayerMessage: "La couche de formulaire n\'existe pas. Configurez l\'application et définissez la couche.",
+      invalidLayerMessage: "æ_A valid layer to create the GeoForm was not found. If the GeoForm has been configured with a layer, the layer may no longer be available, or authorization failed__________________________________________________Â.",
       selectedLayerText: "Tout",
       fileUploadStatus: "Statut de chargement du fichier",
       uploadingBadge: "&nbsp;Chargement&hellip;",
@@ -149,6 +149,10 @@
       previewText: "Aperçu",
       publishText: "Publier",
       optionsApplicationText: "Options",
+      submitButtonText: "æ_Submit Button Text (Optional)__________Â",
+      submitButtonDesc: "æ_Optionally label the button to submit a new entry. This text will not be translated__________________________Â.",
+      viewSubmissionsText: "æ_View Submissions Text (Optional)___________Â",
+      viewSubmissionsDesc: "æ_Optionally label the button to view existing entries. This text will not be translated___________________________Â.",
       titleText: "Générateur",
       descriptionText: "Le formulaire géographique est un modèle configurable permettant la mise à jour des données d\'un ${link1}service d\'entités${closeLink}. Cette application permet aux utilisateurs de saisir des données dans un formulaire plutôt que dans la fenêtre contextuelle d\'une carte, tout en exploitant la puissance de la ${link2}carte Web${closeLink} et des services d\'entités modifiables. Procédez comme suit pour personnaliser et déployer votre formulaire géographique.",
       btnPreviousText: "Précédent",
@@ -258,7 +262,6 @@
       sortHeaderText: "Trier par :",
       geocoderPlaceholderText: "Code postal, ville, etc.",
       noSearchResult: "Aucun résultat trouvé",
-      recordsTabTooltip: "Consulter les envois",
       legendTabTooltip: "Légende",
       aboutUsTabTooltip: "A propos de la société",
       mapTabTooltip: "Carte",
@@ -273,7 +276,6 @@
       viewReportsTabText: "Rapports",
       viewLegendTabText: "Légende",
       viewAboutusTabText: "A propos",
-      btnSubmitReportText: "Envoyer un rapport",
       appLoadingFailedMessage: "Une erreur s’est produite lors du chargement de la visionneuse"
     }
   })

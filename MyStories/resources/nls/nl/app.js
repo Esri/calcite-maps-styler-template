@@ -41,7 +41,7 @@
 		},
 		cantFindStories: {
 			whereAreStories: "Ziet u uw verhaal niet?",
-			notSeeExplanation: "My Stories geeft alleen een lijst met storymaps die in ArcGIS Online gehost zijn en gemaakt zijn met de applicaties {{STORY_MAP_TOUR}}, {{JOURNAL}}, {{MAP_SERIES}} and {{SWIPE_SPYGLASS}}. Bekijk onze {{FAQ}} voor meer informatie.",
+			notSeeExplanation: "Ĳ_My Stories will only list story maps hosted in ArcGIS and created with the {{STORY_MAP_TOUR}}, {{JOURNAL}}, {{MAP_SERIES}} or {{SWIPE_SPYGLASS}} applications. See our {{FAQ}} for more information____________________________________________________________ä.",
 			faq: "Veelgestelde vragen",
 			followingStoriesToUpdate: "De volgende verhalen, gemaakt met eerdere versies van onze applicaties, moeten geactualiseerd worden zodat ze in My Stories opgelijst worden:",
 			gettingStories: "Verhalen zoeken die met eerdere versies van onze applicaties gemaakt zijn en geactualiseerd moeten worden...",
@@ -120,7 +120,7 @@
 			saveFailed: "Fout bij opslaan",
 			numViews: "Aantal weergaven: {{NUM_VIEWS}}",
 			editStory: "Verhaal bewerken",
-			viewLive: "Live weergeven",
+			viewLive: "Ĳ_View Story____ä",
 			preview: "Voorbeeld",
 			deleteButton: "Verwijderen",
 			modified: "Aangepast {{DATE}}",
@@ -130,7 +130,7 @@
 			close: "sluiten",
 			hide: "verbergen",
 			notAvailableWhenBroken: "Uw verhaal heeft onderstaande problemen",
-			cantBeDeleted: "Bij dit verhaal is de verwijderbeveiliging geactiveerd; zie de itempagina op ArcGIS Online om te deactiveren",
+			cantBeDeleted: "Ĳ_This story has delete protection enabled. See its item page on ArcGIS to disable_________________________ä.",
 			shareDialog: {
 				title: "Deel uw verhaal met de wereld!",
 				notPublicWarning: "Uw verhaal is gedeeld met uw organisatie. Alleen leden van uw organisatie kunnen het bekijken.",
@@ -163,7 +163,7 @@
 				save: "Opslaan",
 				saved: "Opgeslagen",
 				errorSaving: "Fout bij opslaan",
-				tagTip: "Tip: Tags helpen mensen uw verhaal te vinden op ArcGIS Online. Hoe relevanter de tags zijn, des te hoger de zichtbaarheid van uw werk."
+				tagTip: "Ĳ_Tip: Tags help people find your story. The more relevant the tags are, the higher the visibility your work will receive_____________________________________ä."
 			},
 			submitToGallery: {
 				gallerySubmission: "Story Maps-galerij",
@@ -298,7 +298,8 @@
 				subscriptionPublicSuccess: "Uw abonnementcontent is nu openbaar toegankelijk"
 			},
 			errors: {
-				publicDisabled: "Openbaar delen is uitgeschakeld door de beheerder",
+				publicDisabled: "Ĳ_Sharing publicly has been disabled by an Administrator_________________ä",
+				orgDisabled: "Ĳ_Sharing to your organization has been disabled by an Administrator_____________________ä",
 				noMapName: "Kon de kaartnaam niet laden",
 				notPublic: "NIET OPENBAAR",
 				inaccessible: "NIET TOEGANKELIJK",
@@ -350,7 +351,9 @@
 			tooltipWarnings: {
 				cantScanThisTypeAlt: "We kunnen dit type kaartlaag niet controleren",
 				cantScanThisType: "Kaartlaag is geen kaartlaagtype dat we kunnen controleren",
-				webpageNotScanned: "Webpagina\'s worden niet gecontroleerd op problemen"
+				webpageNotScanned: "Webpagina\'s worden niet gecontroleerd op problemen",
+				ignoredIssue: "Ĳ_You have ignored an error on this layer. Reload the page and check this story again to review the error________________________________ä",
+				ignoredIssueBuilder: "Ĳ_You have ignored an error on this layer. Reload the builder to check this error again___________________________ä"
 			},
 			scanningErrors: {
 				deletedMap: "Verwijderde content",
@@ -384,7 +387,6 @@
 				premiumContentTip: "Uw verhaal bevat premium content die {{CREDITS}} zal verbruiken als deze openbaar gemaakt wordt. Maak uw verhaal openbaar en ga verder of verwijder de kaartlagen uit uw verhaal.",
 				premiumContentPublicTip: "Uw verhaal bevat premium content die {{CREDITS}} zal verbruiken als deze openbaar beschikbaar is. Bevestig om deze kaartlagen openbaar te maken of verwijder de kaartlagen uit uw verhaal.",
 				subscriptionContentTip: "Uw verhaal bevat abonnementcontent die niet standaard openbaar beschikbaar is. Bevestig dat u deze kaartlagen beschikbaar wenst te majen (er worden geen credits verbruikt), of verwijder de kaartlagen uit uw verhaal.",
-				agolCredits: "ArcGIS Online credits",
 				credits: "credits",
 				makePublic: "Openbaar maken",
 				confirm: "Bevestigen",
@@ -455,6 +457,15 @@
 				secondValueA: "swipe",
 				secondValueB: "verrekijker",
 				thirdTitle: "kaarten"
+			},
+			crowdsource: {
+				firstTitle: "Ĳ_contributions_____ä",
+				secondTitle: "Ĳ_style___ä",
+				secondValueA: "Ĳ_side panel____ä",
+				secondValueB: "Ĳ_stacked___ä",
+				thirdTitle: "Ĳ_basemap___ä",
+				thirdValueLoading: "Ĳ_Loading____ä...",
+				thirdValueUnknown: "Ĳ_unknown___ä"
 			}
 		},
 		progress: {
@@ -469,6 +480,11 @@
 			scanProgress: "{{NUM_SCANNED}} van {{NUM_TOTAL}}",
 			scanStopped: "Verhalen gescand: {{NUM_SCANNED}}, Verhalen met problemen: {{ISSUE_STORIES}}",
 			storiesWithIssues: "Verhalen met problemen: {{NUM_STORIES}}"
+		},
+		newStories: {
+			newStoriesFound: "Ĳ_Looks like you have created a new story_____________ä.",
+			includeStories: "Ĳ_Refresh Stories______ä",
+			notWhileScanning: "Ĳ_This will be available when the check is complete________________ä"
 		}
     })
 );

@@ -41,7 +41,7 @@
 		},
 		cantFindStories: {
 			whereAreStories: "Ser du ikke historien din?",
-			notSeeExplanation: "I My Stories finner du bare en liste over fortellende kart som er hostet på ArcGIS Online og opprettet med programmene {{STORY_MAP_TOUR}}, {{JOURNAL}}, {{MAP_SERIES}} eller {{SWIPE_SPYGLASS}}. Se {{FAQ}} hvis du vil ha mer informasjon.",
+			notSeeExplanation: "å_My Stories will only list story maps hosted in ArcGIS and created with the {{STORY_MAP_TOUR}}, {{JOURNAL}}, {{MAP_SERIES}} or {{SWIPE_SPYGLASS}} applications. See our {{FAQ}} for more information____________________________________________________________ø.",
 			faq: "Vanlige spørsmål",
 			followingStoriesToUpdate: "De følgende historiene, opprettet med tidlige versjoner av programmene våre, må oppdateres for at de skal bli oppført i My Stories:",
 			gettingStories: "Søker etter historier opprettet med tidlige versjoner av programmene våre som trenger å oppdateres...",
@@ -120,7 +120,7 @@
 			saveFailed: "Feil ved lagring",
 			numViews: "Visninger: {{NUM_VIEWS}}",
 			editStory: "Rediger historie",
-			viewLive: "Vis i sanntid",
+			viewLive: "å_View Story____ø",
 			preview: "Forhåndsvisning",
 			deleteButton: "Slett",
 			modified: "Endret {{DATE}}",
@@ -130,7 +130,7 @@
 			close: "lukk",
 			hide: "skjule",
 			notAvailableWhenBroken: "Historien din har problemer nedenfor",
-			cantBeDeleted: "Denne historien har slettebeskyttelse aktivert, se elementsiden på ArcGIS Online for å deaktivere det",
+			cantBeDeleted: "å_This story has delete protection enabled. See its item page on ArcGIS to disable_________________________ø.",
 			shareDialog: {
 				title: "Del historien din med verden!",
 				notPublicWarning: "Historien er delt med organisasjonen din. Bare medlemmer av organisasjonen vil kunne vise den.",
@@ -163,7 +163,7 @@
 				save: "Lagre",
 				saved: "Lagret",
 				errorSaving: "Feil ved lagring",
-				tagTip: "Tips: Med merker blir det enklere for folk å finne historien din på ArcGIS Online. Jo mer relevante merkene er, jo større synlighet får arbeidet ditt."
+				tagTip: "å_Tip: Tags help people find your story. The more relevant the tags are, the higher the visibility your work will receive_____________________________________ø."
 			},
 			submitToGallery: {
 				gallerySubmission: "Galleri med fortellende kart",
@@ -298,7 +298,8 @@
 				subscriptionPublicSuccess: "Abonnementsinnholdet ditt er nå offentlig tilgjengelig"
 			},
 			errors: {
-				publicDisabled: "Offentlig deling er deaktivert av administratoren",
+				publicDisabled: "å_Sharing publicly has been disabled by an Administrator_________________ø",
+				orgDisabled: "å_Sharing to your organization has been disabled by an Administrator_____________________ø",
 				noMapName: "Kan ikke hente kartnavn",
 				notPublic: "IKKE OFFENTLIG",
 				inaccessible: "IKKE TILGJENGELIG",
@@ -350,7 +351,9 @@
 			tooltipWarnings: {
 				cantScanThisTypeAlt: "Vi kan ikke kontrollere denne typen lag",
 				cantScanThisType: "Laget er ikke av en type vi kan kontrollere",
-				webpageNotScanned: "Websider kontrolleres ikke for problemer"
+				webpageNotScanned: "Websider kontrolleres ikke for problemer",
+				ignoredIssue: "å_You have ignored an error on this layer. Reload the page and check this story again to review the error________________________________ø",
+				ignoredIssueBuilder: "å_You have ignored an error on this layer. Reload the builder to check this error again___________________________ø"
 			},
 			scanningErrors: {
 				deletedMap: "Slettet innhold",
@@ -384,7 +387,6 @@
 				premiumContentTip: "Historien din inneholder Premium-innhold som kommer til å forbruke {{CREDITS}} når du gjør den offentlig. Gjør historien offentlig og fortsett, eller fjern lagene fra historien.",
 				premiumContentPublicTip: "Historien din inneholder Premium-innhold som kommer til å forbruke {{CREDITS}} når den blir offentlig tilgjengelig. Bekreft at du vil gjøre disse lagene offentlige, eller fjern lagene fra historien.",
 				subscriptionContentTip: "Historien din inneholder abonnementsinnhold som i utgangspunktet ikke er offentlig tilgjengelig. Bekreft at du vil gjøre disse lagene tilgjengelige (ingen credits blir forbrukt), eller fjern disse lagene fra historien.",
-				agolCredits: "ArcGIS Online-credits",
 				credits: "credits",
 				makePublic: "Gjør offentlig",
 				confirm: "Bekreft",
@@ -455,6 +457,15 @@
 				secondValueA: "sveiping",
 				secondValueB: "forstørrelsesglass",
 				thirdTitle: "kart"
+			},
+			crowdsource: {
+				firstTitle: "å_contributions_____ø",
+				secondTitle: "å_style___ø",
+				secondValueA: "å_side panel____ø",
+				secondValueB: "å_stacked___ø",
+				thirdTitle: "å_basemap___ø",
+				thirdValueLoading: "å_Loading____ø...",
+				thirdValueUnknown: "å_unknown___ø"
 			}
 		},
 		progress: {
@@ -469,6 +480,11 @@
 			scanProgress: "{{NUM_SCANNED}} av {{NUM_TOTAL}}",
 			scanStopped: "Historier gjennomsøkt: {{NUM_SCANNED}}, historier med problemer: {{ISSUE_STORIES}}",
 			storiesWithIssues: "Historier med problemer: {{NUM_STORIES}}"
+		},
+		newStories: {
+			newStoriesFound: "å_Looks like you have created a new story_____________ø.",
+			includeStories: "å_Refresh Stories______ø",
+			notWhileScanning: "å_This will be available when the check is complete________________ø"
 		}
     })
 );

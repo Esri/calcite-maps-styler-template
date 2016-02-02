@@ -41,7 +41,7 @@
 		},
 		cantFindStories: {
 			whereAreStories: "Δεν βλέπετε την αφήγησή σας;",
-			notSeeExplanation: "Η ενότητα \"Οι αφηγήσεις μου\" παραθέτει μόνο τους αφηγηματικούς χάρτες που φιλοξενούνται στο ArcGIS Online και δημιουργήθηκαν με τις εφαρμογές {{STORY_MAP_TOUR}}, {{JOURNAL}}, {{MAP_SERIES}} και {{SWIPE_SPYGLASS}}. Για περισσότερες πληροφορίες, ανατρέξτε στις {{FAQ}} μας.",
+			notSeeExplanation: "Đ_My Stories will only list story maps hosted in ArcGIS and created with the {{STORY_MAP_TOUR}}, {{JOURNAL}}, {{MAP_SERIES}} or {{SWIPE_SPYGLASS}} applications. See our {{FAQ}} for more information____________________________________________________________ớ.",
 			faq: "Συνήθεις ερωτήσεις",
 			followingStoriesToUpdate: "Οι παρακάτω αφηγήσεις δημιουργήθηκαν με πρώιμες εκδόσεις των εφαρμογών μας και πρέπει να ενημερωθούν για να εμφανιστούν στην ενότητα \"Οι αφηγήσεις μου\":",
 			gettingStories: "Αναζήτηση για αφηγήσεις που δημιουργήθηκαν με πρώιμες εκδόσεις των εφαρμογών μας και πρέπει να ενημερωθούν...",
@@ -120,7 +120,7 @@
 			saveFailed: "Σφάλμα στην αποθήκευση",
 			numViews: "Προβολές: {{NUM_VIEWS}}",
 			editStory: "Επεξεργασία αφήγησης",
-			viewLive: "Προβολή σε πραγματικό χρόνο",
+			viewLive: "Đ_View Story____ớ",
 			preview: "Προεπισκόπηση",
 			deleteButton: "Διαγραφή",
 			modified: "Τροποποιήθηκε στις {{DATE}}",
@@ -130,7 +130,7 @@
 			close: "κλείσιμο",
 			hide: "απόκρυψη",
 			notAvailableWhenBroken: "Η αφήγησή σας έχει τα παρακάτω προβλήματα",
-			cantBeDeleted: "Αυτή η αφήγηση έχει ενεργοποιημένη την προστασία από διαγραφή, ανατρέξτε στη σελίδα του αντικειμένου στο ArcGIS Online για να την απενεργοποιήσετε",
+			cantBeDeleted: "Đ_This story has delete protection enabled. See its item page on ArcGIS to disable_________________________ớ.",
 			shareDialog: {
 				title: "Κοινοποιήστε την αφήγησή σας σε όλον τον κόσμο!",
 				notPublicWarning: "Η αφήγησή σας έχει κοινοποιηθεί στον οργανισμό σας. Μόνο τα μέλη του οργανισμού σας θα μπορούν να τη δουν.",
@@ -163,7 +163,7 @@
 				save: "Αποθήκευση",
 				saved: "Αποθηκεύτηκε",
 				errorSaving: "Σφάλμα στην αποθήκευση",
-				tagTip: "Συμβουλή: Οι ετικέτες βοηθούν τα άτομα στην εύρεση της αφήγησής σας στο ArcGIS Online. Όσο πιο σχετικές είναι οι ετικέτες, τόσο μεγαλύτερη θα είναι η ορατότητα που θα λαμβάνει η εργασία σας."
+				tagTip: "Đ_Tip: Tags help people find your story. The more relevant the tags are, the higher the visibility your work will receive_____________________________________ớ."
 			},
 			submitToGallery: {
 				gallerySubmission: "Συλλογή αφηγηματικών χαρτών",
@@ -298,7 +298,8 @@
 				subscriptionPublicSuccess: "Το περιεχόμενό της συνδρομής σας είναι πλέον προσβάσιμο δημοσίως"
 			},
 			errors: {
-				publicDisabled: "Η δημόσια κοινοποίηση έχει απενεργοποιηθεί από το Διαχειριστή",
+				publicDisabled: "Đ_Sharing publicly has been disabled by an Administrator_________________ớ",
+				orgDisabled: "Đ_Sharing to your organization has been disabled by an Administrator_____________________ớ",
 				noMapName: "Δεν ήταν δυνατή η ανάκτηση του ονόματος του χάρτη",
 				notPublic: "ΜΗ ΔΗΜΟΣΙΟ",
 				inaccessible: "ΧΩΡΙΣ ΔΥΝΑΤΟΤΗΤΑ ΠΡΟΣΒΑΣΗΣ",
@@ -350,7 +351,9 @@
 			tooltipWarnings: {
 				cantScanThisTypeAlt: "Δεν μπορούμε να ελέγξουμε αυτόν τον τύπο θεματικού επιπέδου",
 				cantScanThisType: "Το θεματικό επίπεδο δεν είναι τύπου που μπορούμε να ελέγξουμε",
-				webpageNotScanned: "Οι ιστοσελίδες δεν ελέγχονται για προβλήματα"
+				webpageNotScanned: "Οι ιστοσελίδες δεν ελέγχονται για προβλήματα",
+				ignoredIssue: "Đ_You have ignored an error on this layer. Reload the page and check this story again to review the error________________________________ớ",
+				ignoredIssueBuilder: "Đ_You have ignored an error on this layer. Reload the builder to check this error again___________________________ớ"
 			},
 			scanningErrors: {
 				deletedMap: "Διαγραμμένο περιεχόμενο",
@@ -384,7 +387,6 @@
 				premiumContentTip: "Η αφήγησή σας περιέχει Premium περιεχόμενο που θα καταναλώσει {{CREDITS}} όταν την κάνετε δημόσια. Κάντε την αφήγησή σας δημόσια και συνεχίστε ή αφαιρέστε τα θεματικά επίπεδα από την αφήγησή σας.",
 				premiumContentPublicTip: "Η αφήγησή σας περιέχει Premium περιεχόμενο που θα καταναλώσει {{CREDITS}} όταν γίνει δημόσια. Επιβεβαιώστε ότι θέλετε να κάνετε αυτά τα επίπεδα δημόσια ή αφαιρέστε τα θεματικά επίπεδα από την αφήγησή σας.",
 				subscriptionContentTip: "Η αφήγησή σας περιέχει συνδρομητικό περιεχόμενο που δεν είναι δημοσίως διαθέσιμο από προεπιλογή. Επιβεβαιώστε ότι θέλετε να κάνετε αυτά τα θεματικά επίπεδα διαθέσιμα (δεν θα καταναλωθούν μονάδες) ή αφαιρέστε τα θεματικά επίπεδα από την αφήγησή σας.",
-				agolCredits: "Μονάδες κατανάλωσης του ArcGIS Online",
 				credits: "μονάδες κατανάλωσης",
 				makePublic: "Ορισμός ως δημόσιου",
 				confirm: "Επιβεβαίωση",
@@ -455,6 +457,15 @@
 				secondValueA: "swipe",
 				secondValueB: "spyglass",
 				thirdTitle: "χάρτες"
+			},
+			crowdsource: {
+				firstTitle: "Đ_contributions_____ớ",
+				secondTitle: "Đ_style___ớ",
+				secondValueA: "Đ_side panel____ớ",
+				secondValueB: "Đ_stacked___ớ",
+				thirdTitle: "Đ_basemap___ớ",
+				thirdValueLoading: "Đ_Loading____ớ...",
+				thirdValueUnknown: "Đ_unknown___ớ"
 			}
 		},
 		progress: {
@@ -469,6 +480,11 @@
 			scanProgress: "{{NUM_SCANNED}} από {{NUM_TOTAL}}",
 			scanStopped: "Αφηγήσεις που σαρώθηκαν: {{NUM_SCANNED}}, Αφηγήσεις με προβλήματα: {{ISSUE_STORIES}}",
 			storiesWithIssues: "Αφηγήσεις με προβλήματα: {{NUM_STORIES}}"
+		},
+		newStories: {
+			newStoriesFound: "Đ_Looks like you have created a new story_____________ớ.",
+			includeStories: "Đ_Refresh Stories______ớ",
+			notWhileScanning: "Đ_This will be available when the check is complete________________ớ"
 		}
     })
 );

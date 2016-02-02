@@ -41,7 +41,7 @@
 		},
 		cantFindStories: {
 			whereAreStories: "Ihre Story wird nicht angezeigt?",
-			notSeeExplanation: "Unter \"My Stories\" werden nur in ArcGIS Online gehostete Story Maps aufgeführt, die mit den Anwendungen {{STORY_MAP_TOUR}}, {{JOURNAL}}, {{MAP_SERIES}} und {{SWIPE_SPYGLASS}} erstellt wurden. Weitere Informationen finden Sie in unseren {{FAQ}}.",
+			notSeeExplanation: "ä_My Stories will only list story maps hosted in ArcGIS and created with the {{STORY_MAP_TOUR}}, {{JOURNAL}}, {{MAP_SERIES}} or {{SWIPE_SPYGLASS}} applications. See our {{FAQ}} for more information____________________________________________________________Ü.",
 			faq: "FAQ",
 			followingStoriesToUpdate: "Die folgenden Storys, die mit früheren Versionen unserer Anwendungen erstellt wurden, müssen aktualisiert werden, damit sie in \"My Stories\" aufgeführt werden:",
 			gettingStories: "Es wird nach Storys gesucht, die mit früheren Versionen unserer Anwendungen erstellt wurden und aktualisiert werden müssen...",
@@ -120,7 +120,7 @@
 			saveFailed: "Fehler beim Speichern",
 			numViews: "Aufrufe: {{NUM_VIEWS}}",
 			editStory: "Story bearbeiten",
-			viewLive: "Live anzeigen",
+			viewLive: "ä_View Story____Ü",
 			preview: "Vorschau",
 			deleteButton: "Löschen",
 			modified: "Geändert am {{DATE}}",
@@ -130,7 +130,7 @@
 			close: "Schließen",
 			hide: "Ausblenden",
 			notAvailableWhenBroken: "Ihre Story weist folgende Probleme auf",
-			cantBeDeleted: "Für diese Story ist der Löschschutz aktiviert; rufen Sie die zugehörige Elementseite in ArcGIS Online auf, um ihn zu deaktivieren",
+			cantBeDeleted: "ä_This story has delete protection enabled. See its item page on ArcGIS to disable_________________________Ü.",
 			shareDialog: {
 				title: "Geben Sie Ihre Story für ein weltweites Publikum frei!",
 				notPublicWarning: "Sie haben Ihre Story für Ihre Organisation freigegeben. Nur Mitglieder Ihrer Organisation können sie anzeigen.",
@@ -163,7 +163,7 @@
 				save: "Speichern",
 				saved: "Gespeichert",
 				errorSaving: "Fehler beim Speichern",
-				tagTip: "Tipp: Tags ermöglichen die Suche nach Ihrer Story auf ArcGIS Online. Je aussagekräftiger die Tags sind, desto mehr Aufmerksamkeit ist Ihrer Arbeit gewiss."
+				tagTip: "ä_Tip: Tags help people find your story. The more relevant the tags are, the higher the visibility your work will receive_____________________________________Ü."
 			},
 			submitToGallery: {
 				gallerySubmission: "Story Maps-Galerie",
@@ -298,7 +298,8 @@
 				subscriptionPublicSuccess: "Ihr Subskriptionsinhalt ist nun öffentlich zugänglich"
 			},
 			errors: {
-				publicDisabled: "Die öffentliche Freigabe wurde vom Administrator deaktiviert",
+				publicDisabled: "ä_Sharing publicly has been disabled by an Administrator_________________Ü",
+				orgDisabled: "ä_Sharing to your organization has been disabled by an Administrator_____________________Ü",
 				noMapName: "Kartenname konnte nicht abgerufen werden",
 				notPublic: "NICHT ÖFFENTLICH",
 				inaccessible: "ZUGRIFF NICHT MÖGLICH",
@@ -350,7 +351,9 @@
 			tooltipWarnings: {
 				cantScanThisTypeAlt: "Dieser Layer-Typ kann nicht überprüft werden.",
 				cantScanThisType: "Der Layer ist ein Layer-Typ, der nicht überprüft werden kann.",
-				webpageNotScanned: "Webseiten werden nicht auf Probleme überprüft."
+				webpageNotScanned: "Webseiten werden nicht auf Probleme überprüft.",
+				ignoredIssue: "ä_You have ignored an error on this layer. Reload the page and check this story again to review the error________________________________Ü",
+				ignoredIssueBuilder: "ä_You have ignored an error on this layer. Reload the builder to check this error again___________________________Ü"
 			},
 			scanningErrors: {
 				deletedMap: "Gelöschter Inhalt",
@@ -384,7 +387,6 @@
 				premiumContentTip: "Ihre Story enthält Premium-Inhalte, die nach der Veröffentlichung {{CREDITS}} verbrauchen. Veröffentlichen Sie Ihre Story, und setzen Sie den Vorgang fort, oder entfernen Sie die Layer aus Ihrer Story.",
 				premiumContentPublicTip: "Ihre Story enthält Premium-Inhalte, die {{CREDITS}} verbrauchen, wenn sie öffentlich verfügbar sind. Bestätigen Sie, dass diese Layer veröffentlicht werden sollen, oder entfernen Sie die Layer aus Ihrer Story.",
 				subscriptionContentTip: "Ihre Story enthält Subskriptionsinhalt, der standardmäßig nicht öffentlich verfügbar ist. Bestätigen Sie, dass Sie diese Layer zur Verfügung stellen möchten (es werden keine Credits verbraucht), oder entfernen Sie die Layer aus Ihrer Story.",
-				agolCredits: "ArcGIS Online-Credits",
 				credits: "Credits",
 				makePublic: "Veröffentlichen",
 				confirm: "Bestätigen",
@@ -455,6 +457,15 @@
 				secondValueA: "vergleichen",
 				secondValueB: "Fernglas",
 				thirdTitle: "Karten"
+			},
+			crowdsource: {
+				firstTitle: "ä_contributions_____Ü",
+				secondTitle: "ä_style___Ü",
+				secondValueA: "ä_side panel____Ü",
+				secondValueB: "ä_stacked___Ü",
+				thirdTitle: "ä_basemap___Ü",
+				thirdValueLoading: "ä_Loading____Ü...",
+				thirdValueUnknown: "ä_unknown___Ü"
 			}
 		},
 		progress: {
@@ -469,6 +480,11 @@
 			scanProgress: "{{NUM_SCANNED}} von {{NUM_TOTAL}}",
 			scanStopped: "Durchsuchte Storys: {{NUM_SCANNED}}, Storys mit Problemen: {{ISSUE_STORIES}}",
 			storiesWithIssues: "Storys mit Problemen: {{NUM_STORIES}}"
+		},
+		newStories: {
+			newStoriesFound: "ä_Looks like you have created a new story_____________Ü.",
+			includeStories: "ä_Refresh Stories______Ü",
+			notWhileScanning: "ä_This will be available when the check is complete________________Ü"
 		}
     })
 );

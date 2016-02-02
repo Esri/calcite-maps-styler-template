@@ -18,7 +18,8 @@
 				height: "الارتفاع",
 				create: "إنشاء",
 				yes: "نعم",
-				no: "لا"
+				no: "لا",
+				mystories: "بيت_My Stories____لاحقة"
 			},
 			inlineFieldEdit: {
 				editMe: "تحرير!"
@@ -30,9 +31,10 @@
 				buttonShare: "مشاركة",
 				buttonSettings: "الإعدادات",
 				buttonHelp: "تعليمات",
-				buttonPreview: "عرض مباشر",
+				buttonPreview: "بيت_View story____لاحقة",
 				tooltipFirstSave: "غير متاح حتى يتم حفظ التطبيق.",
 				tooltipNotShared: "غير متاح حتى يتم حفظ التطبيق.",
+				tooltipNotShared2: "بيت_Your story isn't shared, only you can access it_______________لاحقة.",
 				noPendingChange: "لا يوجد تغيير معلق",
 				unSavedChangePlural: "تغييرات معلقة",
 				closeWithPendingChange: "هل أنت متأكد من تأكيد هذا الإجراء؟ سيتم فقدان التغييرات.",
@@ -52,10 +54,21 @@
 				err1Div2: "يرجى تعديل عنوان القصة ثم حفظه.",
 				btnOk: "تحرير عنوان القصة"
 			},
+			saveErrorSocial: {
+				title: "بيت_Social media sharing update_________لاحقة",
+				panel1: "بيت_Your storyâ€™s appearance on social media has been improved, but your ArcGIS web application item title is not the same as your story title___________________________________________لاحقة.",
+				panel1tooltip: "بيت_By defining a title, summary and thumbnail image, your story will look like this_________________________لاحقة:",
+				panel2:	"بيت_Which title would you like to use on social media________________لاحقة:",
+				panel2q1: "بيت_Story title (recommended)_________لاحقة",
+				panel2q1tooltip: "بيت_By choosing this option, your item title will be modified to match your story title and further changes in the builder will be synchronized___________________________________________لاحقة.",
+				panel2q2: "بيت_Item title____لاحقة",
+				panel3: "بيت_To further improve how your story looks on social media use ${MYSTORIES} to add a summary and a thumbnail image___________________________________لاحقة.",
+				panel4: "بيت_Do not warn me again for this story____________لاحقة"
+			},
 			share: {
 				shareTitle: "مشاركة القصة",
 				preview: "معاينة",
-				viewlive: "عرض مباشر",
+				viewlive: "بيت_View story____لاحقة",
 				btnPrivate: "خاص",
 				btnPrivateTooltip: "يمكنك رؤية القصة فقط",
 				btnOrg: "مؤسسة",
@@ -74,26 +87,27 @@
 				notavailable2: "عذرًا، مشاركة القصة من \"المنشئ\" غير مدعومة في هذا الإصدار من Portal for ArcGIS (يتطلب الإصدار 10.4 أو أحدث).",
 				notavailable3: "يمكنك مشاركة هذه القصة من %LINK%.",
 				notavailable4: "قصتي",
-				notavailable5: "عنصر صفحة",
+				notavailable5: "بيت_its item page_____لاحقة",
 				notavailable6: "عذرًا، هذه الميزة غير مدعومة بالكامل في وضع التطوير. واستنادًا إلى سيناريو النشر، قد يتم دعم هذه الميزة عند النشر.",
 				notavailable7: "تأكد من زيارة %MYCONTENT% للتأكيد على مشاركة الخرائط والطبقات المستخدمة في القصة.",
-				notavailable8: "الخاص"
+				notavailable8: "الخاص",
+				mystoriesinvite2: "بيت_To improve how your story looks on social networks use ${MYSTORIES} to add a summary and a thumbnail image_________________________________لاحقة."
 			},
 			settings: {
 				header: "الإعدادات",
 				tabError: "الرجاء التحقق من جميع علامات التبويب لاكتشاف الأخطاء"
 			},
 			settingsLayout: {
-				title: "المخطط",
+				title: "بيت_Layout___لاحقة",
 				explain: "أي التخطيطات الطباعية تريد استخدامها؟",
 				explainInit: "يمكن تغيير التخطيط الطباعي في أي وقت من مربع حوار الإعدادات.",
 				viewExample: "عرض مثال حي"
 			},
 			settingsTheme: {
-				title: "سمة"
+				title: "بيت_Theme___لاحقة"
 			},
 			settingsHeader: {
-				title: "رأس الصفحة",
+				title: "بيت_Header___لاحقة",
 				logoEsri: "شعار Esri",
 				logoNone: "لا يوجد شعار",
 				logoCustom: "تخصيص الشعار",
@@ -105,7 +119,7 @@
 				lblSmallHeader: "استخدم عنوان صغير (لا تستخدم عنوان فرعي)"
 			},
 			header: {
-				title: "تحرير عنوان %TPL_NAME%",
+				title: "بيت_Edit the title of your %TPL_NAME%___________لاحقة",
 				subtitle: "تحرير العنوان الفرعي لـ %TPL_NAME%"
 			}
 		}

@@ -41,7 +41,7 @@
 		},
 		cantFindStories: {
 			whereAreStories: "Nevidíte svůj příběh?",
-			notSeeExplanation: "Sekce Moje příběhy zobrazuje pouze mapy s příběhem hostované v ArcGIS Online vytvořené pomocí aplikací {{STORY_MAP_TOUR}}, {{JOURNAL}}, {{MAP_SERIES}} a {{SWIPE_SPYGLASS}}. Pro další informace viz {{FAQ}}.",
+			notSeeExplanation: "Ř_My Stories will only list story maps hosted in ArcGIS and created with the {{STORY_MAP_TOUR}}, {{JOURNAL}}, {{MAP_SERIES}} or {{SWIPE_SPYGLASS}} applications. See our {{FAQ}} for more information____________________________________________________________ů.",
 			faq: "Často kladené dotazy",
 			followingStoriesToUpdate: "Následující příběhy vytvořené dřívějšími verzemi našich aplikací je třeba aktualizovat, aby byly uvedeny v sekci Moje příběhy:",
 			gettingStories: "Probíhá vyhledávání příběhů vytvořených dřívějšími verzemi našich aplikací, které je třeba aktualizovat...",
@@ -120,7 +120,7 @@
 			saveFailed: "Chyba při ukládání",
 			numViews: "Zobrazení: {{NUM_VIEWS}}",
 			editStory: "Upravit příběh",
-			viewLive: "Živý náhled",
+			viewLive: "Ř_View Story____ů",
 			preview: "Náhled",
 			deleteButton: "Smazat",
 			modified: "Změněno dne {{DATE}}",
@@ -130,7 +130,7 @@
 			close: "zavřít",
 			hide: "skrýt",
 			notAvailableWhenBroken: "Váš příběh má níže uvedené problémy",
-			cantBeDeleted: "Tento příběh je chráněn proti smazání, pro deaktivaci jděte na jeho stránku položky v ArcGIS Online",
+			cantBeDeleted: "Ř_This story has delete protection enabled. See its item page on ArcGIS to disable_________________________ů.",
 			shareDialog: {
 				title: "Sdílejte svůj příběh se světem!",
 				notPublicWarning: "Váš příběh je sdílen s vaší organizací. Mohou ho zobrazit pouze členové vaší organizace.",
@@ -163,7 +163,7 @@
 				save: "Uložit",
 				saved: "Uloženo",
 				errorSaving: "Chyba při ukládání",
-				tagTip: "Tip: Klíčová slova pomáhají lidem najít váš příběh v ArcGIS Online. Čím jsou klíčová slova relevantnější, tím bude mít váš výtvor vyšší viditelnost."
+				tagTip: "Ř_Tip: Tags help people find your story. The more relevant the tags are, the higher the visibility your work will receive_____________________________________ů."
 			},
 			submitToGallery: {
 				gallerySubmission: "Galerie map s příběhem",
@@ -298,7 +298,8 @@
 				subscriptionPublicSuccess: "Váš předplacený obsah je nyní veřejně přístupný"
 			},
 			errors: {
-				publicDisabled: "Veřejné sdílení bylo zakázáno administrátorem",
+				publicDisabled: "Ř_Sharing publicly has been disabled by an Administrator_________________ů",
+				orgDisabled: "Ř_Sharing to your organization has been disabled by an Administrator_____________________ů",
 				noMapName: "Nepodařilo se získat název mapy",
 				notPublic: "NEVEŘEJNÉ",
 				inaccessible: "NEPŘÍSTUPNÉ",
@@ -350,7 +351,9 @@
 			tooltipWarnings: {
 				cantScanThisTypeAlt: "Nejsme schopni zkontrolovat tento typ vrstvy",
 				cantScanThisType: "Vrstva není typ, který dokážeme zkontrolovat",
-				webpageNotScanned: "Webové stránky nejsou zkontrolovány"
+				webpageNotScanned: "Webové stránky nejsou zkontrolovány",
+				ignoredIssue: "Ř_You have ignored an error on this layer. Reload the page and check this story again to review the error________________________________ů",
+				ignoredIssueBuilder: "Ř_You have ignored an error on this layer. Reload the builder to check this error again___________________________ů"
 			},
 			scanningErrors: {
 				deletedMap: "Smazaný obsah",
@@ -384,7 +387,6 @@
 				premiumContentTip: "Váš příběh obsahuje prémiový obsah, který po zveřejnění spotřebovává {{CREDITS}}. Zveřejněte svůj příběh a pokračujte, nebo odstraňte příslušné vrstvy z vašeho příběhu.",
 				premiumContentPublicTip: "Váš příběh obsahuje prémiový obsah, který po zveřejnění spotřebovává {{CREDITS}}. Potvrzením tyto vrstvy zveřejněte nebo je odstraňte z vašeho příběhu.",
 				subscriptionContentTip: "Váš příběh obsahuje předplacený obsah, který není veřejně přístupný. Potvrďte, že chcete tyto vrstvy zpřístupnit (nebudou spotřebovány žádné kredity) nebo vrstvy odstraňte z vašeho příběhu.",
-				agolCredits: "Kredity ArcGIS Online",
 				credits: "kredity",
 				makePublic: "Zveřejnit",
 				confirm: "Potvrdit",
@@ -455,6 +457,15 @@
 				secondValueA: "překrývání",
 				secondValueB: "lupa",
 				thirdTitle: "mapy"
+			},
+			crowdsource: {
+				firstTitle: "Ř_contributions_____ů",
+				secondTitle: "Ř_style___ů",
+				secondValueA: "Ř_side panel____ů",
+				secondValueB: "Ř_stacked___ů",
+				thirdTitle: "Ř_basemap___ů",
+				thirdValueLoading: "Ř_Loading____ů...",
+				thirdValueUnknown: "Ř_unknown___ů"
 			}
 		},
 		progress: {
@@ -469,6 +480,11 @@
 			scanProgress: "{{NUM_SCANNED}} z {{NUM_TOTAL}}",
 			scanStopped: "Zkontrolovaných příběhů: {{NUM_SCANNED}}, příběhů s problémy: {{ISSUE_STORIES}}",
 			storiesWithIssues: "Příběhů s problémy: {{NUM_STORIES}}"
+		},
+		newStories: {
+			newStoriesFound: "Ř_Looks like you have created a new story_____________ů.",
+			includeStories: "Ř_Refresh Stories______ů",
+			notWhileScanning: "Ř_This will be available when the check is complete________________ů"
 		}
     })
 );

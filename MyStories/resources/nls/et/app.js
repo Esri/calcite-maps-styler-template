@@ -41,7 +41,7 @@
 		},
 		cantFindStories: {
 			whereAreStories: "Kas Te ei näe oma lugu?",
-			notSeeExplanation: "My Stories portaal loetleb ainult ArcGIS Online keskkonnas majutatud kaardilood, mis on koostatud rakendustega {{STORY_MAP_TOUR}}, {{JOURNAL}}, {{MAP_SERIES}} ja {{SWIPE_SPYGLASS}}. Täpsemat teavet lugege meie {{FAQ}} rubriigist.",
+			notSeeExplanation: "Š_My Stories will only list story maps hosted in ArcGIS and created with the {{STORY_MAP_TOUR}}, {{JOURNAL}}, {{MAP_SERIES}} or {{SWIPE_SPYGLASS}} applications. See our {{FAQ}} for more information____________________________________________________________ä.",
 			faq: "KKK",
 			followingStoriesToUpdate: "Järgmised meie rakenduste varasemate versioonidega loodud lood vajavad uuendamist, et neid saaks My Stories portaalis loetleda.",
 			gettingStories: "Meie rakenduste varasemate versioonidega loodud ja uuendamist vajavate lugude otsimine...",
@@ -120,7 +120,7 @@
 			saveFailed: "Viga salvestamisel",
 			numViews: "Vaated: {{NUM_VIEWS}}",
 			editStory: "Redigeeri lugu",
-			viewLive: "Kuva reaalajas",
+			viewLive: "Š_View Story____ä",
 			preview: "Eelvaade",
 			deleteButton: "Kustuta",
 			modified: "Muudetud {{DATE}}",
@@ -130,7 +130,7 @@
 			close: "sule",
 			hide: "peida",
 			notAvailableWhenBroken: "Teie looga on järgmised probleemid",
-			cantBeDeleted: "Selle loo kustutuskaitse on sisse lülitatud, vaadake ArcGIS Online keskkonnast sisuüksuste lehelt, kuidas see välja lülitada",
+			cantBeDeleted: "Š_This story has delete protection enabled. See its item page on ArcGIS to disable_________________________ä.",
 			shareDialog: {
 				title: "Jagage lugu muu maailma kasutajatega!",
 				notPublicWarning: "Teie lugu on jagatud Teie organisatsiooniga. Seda saavad vaadata ainult Teie organisatsiooni liikmed.",
@@ -163,7 +163,7 @@
 				save: "Salvesta",
 				saved: "Salvestatud",
 				errorSaving: "Viga salvestamisel",
-				tagTip: "Nõuanne. Märksõnad aitavad inimestel leida Teie loo ArcGIS Online keskkonnast. Mida asjakohasemad on märksõnad, seda nähtavam on Teie töö."
+				tagTip: "Š_Tip: Tags help people find your story. The more relevant the tags are, the higher the visibility your work will receive_____________________________________ä."
 			},
 			submitToGallery: {
 				gallerySubmission: "Kaardilugude galerii",
@@ -298,7 +298,8 @@
 				subscriptionPublicSuccess: "Teie tellimuse sisu on nüüd avalikult kättesaadav"
 			},
 			errors: {
-				publicDisabled: "Avalikult jagamine on administraatori poolt välja lülitatud",
+				publicDisabled: "Š_Sharing publicly has been disabled by an Administrator_________________ä",
+				orgDisabled: "Š_Sharing to your organization has been disabled by an Administrator_____________________ä",
 				noMapName: "Ei saanud hankida kaardi nime",
 				notPublic: "POLE AVALIK",
 				inaccessible: "LIGIPÄÄSMATU",
@@ -350,7 +351,9 @@
 			tooltipWarnings: {
 				cantScanThisTypeAlt: "Seda tüüpi kihti ei saa kontrollida",
 				cantScanThisType: "Seda tüüpi kihti ei saa kontrollida",
-				webpageNotScanned: "Veebilehti ei kontrollita probleemide suhtes"
+				webpageNotScanned: "Veebilehti ei kontrollita probleemide suhtes",
+				ignoredIssue: "Š_You have ignored an error on this layer. Reload the page and check this story again to review the error________________________________ä",
+				ignoredIssueBuilder: "Š_You have ignored an error on this layer. Reload the builder to check this error again___________________________ä"
 			},
 			scanningErrors: {
 				deletedMap: "Kustutatud sisu",
@@ -384,7 +387,6 @@
 				premiumContentTip: "Teie lugu sisaldab kvaliteetsisu, mis kasutab loo avalikuks tegemise korral {{CREDITS}}. Kas soovite teha loo avalikuks ja jätkata või eemaldada need kihid oma loost.",
 				premiumContentPublicTip: "Teie lugu sisaldab kvaliteetsisu, mis kasutab loo avalikult saadavaks tegemise korral {{CREDITS}}. Kinnitage, et teha need kihid avalikuks või eemaldage need kihid oma loost.",
 				subscriptionContentTip: "Teie lugu sisaldab tellimuse sisu, mis pole vaikimisi avalikult saadaval. Kinnitage, et soovite teha need kihid saadavaks (see ei kasuta krediite) või eemaldage need kihid oma loost.",
-				agolCredits: "ArcGIS Online krediidid",
 				credits: "krediiti",
 				makePublic: "Tee avalikuks",
 				confirm: "Kinnita",
@@ -455,6 +457,15 @@
 				secondValueA: "rullimine",
 				secondValueB: "pikksilm",
 				thirdTitle: "kaardid"
+			},
+			crowdsource: {
+				firstTitle: "Š_contributions_____ä",
+				secondTitle: "Š_style___ä",
+				secondValueA: "Š_side panel____ä",
+				secondValueB: "Š_stacked___ä",
+				thirdTitle: "Š_basemap___ä",
+				thirdValueLoading: "Š_Loading____ä...",
+				thirdValueUnknown: "Š_unknown___ä"
 			}
 		},
 		progress: {
@@ -469,6 +480,11 @@
 			scanProgress: "{{NUM_SCANNED}} / {{NUM_TOTAL}}",
 			scanStopped: "Skaneeritud lood: {{NUM_SCANNED}}, Probleemsed lood: {{ISSUE_STORIES}}",
 			storiesWithIssues: "Probleemsed lood: {{NUM_STORIES}}"
+		},
+		newStories: {
+			newStoriesFound: "Š_Looks like you have created a new story_____________ä.",
+			includeStories: "Š_Refresh Stories______ä",
+			notWhileScanning: "Š_This will be available when the check is complete________________ä"
 		}
     })
 );

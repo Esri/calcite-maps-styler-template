@@ -44,4 +44,4 @@ define(
       error: "Ingen tidsaktiverte geoobjektlag i øyeblikksbildemodus er tilgjengelige i webkartet. Konfigurer appen slik at den bruker et annet webkart, eller deaktiver histogramalternativet."
     }
   })
-);
+});

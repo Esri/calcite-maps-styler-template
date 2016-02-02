@@ -110,7 +110,7 @@
       mapFullScreen: "Pantalla completa",
       mapRestore: "Restaurar",
       filterSelectEmptyText: "Seleccionar",
-      invalidLayerMessage: "La capa del formulario no existe. Configura la aplicación y establece la capa.",
+      invalidLayerMessage: "á_A valid layer to create the GeoForm was not found. If the GeoForm has been configured with a layer, the layer may no longer be available, or authorization failed__________________________________________________Ó.",
       selectedLayerText: "Todo",
       fileUploadStatus: "Estado de carga de archivos",
       uploadingBadge: "&nbsp;Cargando&hellip;",
@@ -149,6 +149,10 @@
       previewText: "Vista previa",
       publishText: "Publicar",
       optionsApplicationText: "Opciones",
+      submitButtonText: "á_Submit Button Text (Optional)__________Ó",
+      submitButtonDesc: "á_Optionally label the button to submit a new entry. This text will not be translated__________________________Ó.",
+      viewSubmissionsText: "á_View Submissions Text (Optional)___________Ó",
+      viewSubmissionsDesc: "á_Optionally label the button to view existing entries. This text will not be translated___________________________Ó.",
       titleText: "Builder",
       descriptionText: "GeoForm es una plantilla configurable para la edición de datos basados en formularios de un ${link1}servicio de entidades${closeLink}. Esta aplicación permite a los usuarios introducir datos por medio de un formulario en lugar de hacerlo con una ventana emergente del mapa, aprovechando así la eficacia del ${link2}mapa web${closeLink} y los servicios de entidades editables. Sigue estos pasos para personalizar e implementar tu GeoForm.",
       btnPreviousText: "Anterior",
@@ -258,7 +262,6 @@
       sortHeaderText: "Ordenar por:",
       geocoderPlaceholderText: "Código postal, ciudad, etc.",
       noSearchResult: "No se ha encontrado ningún resultado",
-      recordsTabTooltip: "Ver envíos",
       legendTabTooltip: "Leyenda",
       aboutUsTabTooltip: "Acerca de nosotros",
       mapTabTooltip: "Mapa",
@@ -273,7 +276,6 @@
       viewReportsTabText: "Informes",
       viewLegendTabText: "Leyenda",
       viewAboutusTabText: "Acerca de",
-      btnSubmitReportText: "Enviar un informe",
       appLoadingFailedMessage: "Se produjo un error al cargar el visor"
     }
   })

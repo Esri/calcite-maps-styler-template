@@ -41,7 +41,7 @@
 		},
 		cantFindStories: {
 			whereAreStories: "Får du ikke vist din historie?",
-			notSeeExplanation: "Mine historier vil kun vise historiekort, der er \"hosted\" i ArcGIS Online og oprettet med {{STORY_MAP_TOUR}}-, {{JOURNAL}}-, {{MAP_SERIES}}- og {{SWIPE_SPYGLASS}}-applikationerne. Se vores {{FAQ}} for at få yderligere oplysninger.",
+			notSeeExplanation: "ø_My Stories will only list story maps hosted in ArcGIS and created with the {{STORY_MAP_TOUR}}, {{JOURNAL}}, {{MAP_SERIES}} or {{SWIPE_SPYGLASS}} applications. See our {{FAQ}} for more information____________________________________________________________å.",
 			faq: "FAQ",
 			followingStoriesToUpdate: "Følgende historier, der er oprettet med tidligere versioner af vores applikationer, skal opdateres, så de kan vises i Mine historier:",
 			gettingStories: "Søger efter historier, der er oprettet med tidligere versioner af vores applikationer, og som bør opdateres...",
@@ -120,7 +120,7 @@
 			saveFailed: "Fejl ved lagring",
 			numViews: "Visninger: {{NUM_VIEWS}}",
 			editStory: "Redigér historie",
-			viewLive: "Vis Live",
+			viewLive: "ø_View Story____å",
 			preview: "Eksempel",
 			deleteButton: "Slet",
 			modified: "Ændret {{DATE}}",
@@ -130,7 +130,7 @@
 			close: "luk",
 			hide: "skjul",
 			notAvailableWhenBroken: "Din historie indeholder problemer som vist nedenfor",
-			cantBeDeleted: "Din historie har skrivebeskyttelse aktiveret, se elementoplysningssiden på ArcGIS Online for at deaktivere",
+			cantBeDeleted: "ø_This story has delete protection enabled. See its item page on ArcGIS to disable_________________________å.",
 			shareDialog: {
 				title: "Del din historie med verden!",
 				notPublicWarning: "Din historie deles med din organisation. Kun medlemmer af din organisation kan se den.",
@@ -163,7 +163,7 @@
 				save: "Gem",
 				saved: "Gemt",
 				errorSaving: "Fejl ved lagring",
-				tagTip: "Tip: Nøgleord hjælper folk med at finde din historie på ArcGIS Online. Jo mere relevante nøgleordene er, jo højere vil synligheden være for dit arbejde."
+				tagTip: "ø_Tip: Tags help people find your story. The more relevant the tags are, the higher the visibility your work will receive_____________________________________å."
 			},
 			submitToGallery: {
 				gallerySubmission: "Story Maps-galleri",
@@ -298,7 +298,8 @@
 				subscriptionPublicSuccess: "Dit abonnementindhold er nu offentligt tilgængeligt"
 			},
 			errors: {
-				publicDisabled: "Offentlig deling er blevet deaktiveret af administratoren",
+				publicDisabled: "ø_Sharing publicly has been disabled by an Administrator_________________å",
+				orgDisabled: "ø_Sharing to your organization has been disabled by an Administrator_____________________å",
 				noMapName: "Kunne ikke hente kortnavn",
 				notPublic: "IKKE OFFENTLIGT",
 				inaccessible: "UTILGÆNGELIGT",
@@ -350,7 +351,9 @@
 			tooltipWarnings: {
 				cantScanThisTypeAlt: "Vi kan ikke kontrollere denne type lag",
 				cantScanThisType: "Laget er ikke en type lag, som vi kan kontrollere",
-				webpageNotScanned: "Websider kontrolleres ikke for problemer"
+				webpageNotScanned: "Websider kontrolleres ikke for problemer",
+				ignoredIssue: "ø_You have ignored an error on this layer. Reload the page and check this story again to review the error________________________________å",
+				ignoredIssueBuilder: "ø_You have ignored an error on this layer. Reload the builder to check this error again___________________________å"
 			},
 			scanningErrors: {
 				deletedMap: "Slettet indhold",
@@ -384,7 +387,6 @@
 				premiumContentTip: "Din historie indeholder premium-indhold, der vil forbruge {{CREDITS}}, når det bliver gjort offentligt tilgængeligt. Gør din historie offentligt tilgængelig, og fortsæt, eller fjern lagene fra din historie.",
 				premiumContentPublicTip: "Din historie indeholder premium-indhold, der vil forbruge {{CREDITS}}, når det er offentligt tilgængeligt. Bekræft, at disse lag skal være offentligt tilgængelige, eller fjern lagene fra din historie.",
 				subscriptionContentTip: "Din historie indeholder abonnementindhold, der som standard ikke er offentligt tilgængeligt. Bekræft, at du vil gøre i disse lag offentligt tilgængelige (det vil ikke forbruge nogen credits), eller fjern lagene fra din historie.",
-				agolCredits: "ArcGIS Online-credits",
 				credits: "credits",
 				makePublic: "Gør offentligt tilgængeligt",
 				confirm: "Bekræft",
@@ -455,6 +457,15 @@
 				secondValueA: "swipe",
 				secondValueB: "kikkert",
 				thirdTitle: "kort"
+			},
+			crowdsource: {
+				firstTitle: "ø_contributions_____å",
+				secondTitle: "ø_style___å",
+				secondValueA: "ø_side panel____å",
+				secondValueB: "ø_stacked___å",
+				thirdTitle: "ø_basemap___å",
+				thirdValueLoading: "ø_Loading____å...",
+				thirdValueUnknown: "ø_unknown___å"
 			}
 		},
 		progress: {
@@ -469,6 +480,11 @@
 			scanProgress: "{{NUM_SCANNED}} af {{NUM_TOTAL}}",
 			scanStopped: "Historier scannet: {{NUM_SCANNED}}, Historier med problemer: {{ISSUE_STORIES}}",
 			storiesWithIssues: "Historier med problemer: {{NUM_STORIES}}"
+		},
+		newStories: {
+			newStoriesFound: "ø_Looks like you have created a new story_____________å.",
+			includeStories: "ø_Refresh Stories______å",
+			notWhileScanning: "ø_This will be available when the check is complete________________å"
 		}
     })
 );

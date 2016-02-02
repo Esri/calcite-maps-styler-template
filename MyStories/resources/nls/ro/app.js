@@ -41,7 +41,7 @@
 		},
 		cantFindStories: {
 			whereAreStories: "Nu vedeţi povestea dvs.?",
-			notSeeExplanation: "Relatările mele va enumera doar hărţile informative găzduite în ArcGIS Online create cu aplicaţiile {{STORY_MAP_TOUR}}, {{JOURNAL}}, {{MAP_SERIES}} şi {{SWIPE_SPYGLASS}}. Consultaţi {{FAQ}} pentru informaţii suplimentare.",
+			notSeeExplanation: "Ă_My Stories will only list story maps hosted in ArcGIS and created with the {{STORY_MAP_TOUR}}, {{JOURNAL}}, {{MAP_SERIES}} or {{SWIPE_SPYGLASS}} applications. See our {{FAQ}} for more information____________________________________________________________ș.",
 			faq: "Întrebări frecvente",
 			followingStoriesToUpdate: "Următoarele poveşti create cu versiuni mai vechi ale aplicaţiilor noastre trebuie actualizate pentru a fi enumerate în Relatările mele:",
 			gettingStories: "Se caută poveşti create cu versiuni mai vechi ale aplicaţiilor noastre, care trebuie actualizate...",
@@ -120,7 +120,7 @@
 			saveFailed: "Eroare la salvare",
 			numViews: "Vizualizări: {{NUM_VIEWS}}",
 			editStory: "Editare poveste",
-			viewLive: "Vizualizare live",
+			viewLive: "Ă_View Story____ș",
 			preview: "Previzualizare",
 			deleteButton: "Ştergere",
 			modified: "Modificat la {{DATE}}",
@@ -130,7 +130,7 @@
 			close: "închidere",
 			hide: "ascundere",
 			notAvailableWhenBroken: "Povestea dvs. are problemele de mai jos",
-			cantBeDeleted: "Această poveste are activată protecţia la ştergere, accesaţi pagina elementului său din ArcGIS Online pentru dezactivare",
+			cantBeDeleted: "Ă_This story has delete protection enabled. See its item page on ArcGIS to disable_________________________ș.",
 			shareDialog: {
 				title: "Partajaţi povestea cu lumea!",
 				notPublicWarning: "Povestea este partajată cu organizaţia dvs. Doar membrii organizaţiei dvs. vor putea să o vizualizeze.",
@@ -163,7 +163,7 @@
 				save: "Salvare",
 				saved: "Salvat",
 				errorSaving: "Eroare la salvare",
-				tagTip: "Sfat: Etichetele ajută oamenii să găsească povestea dvs. în ArcGIS Online. Cu cât sunt mai relevante, cu atât lucrările dvs. vor fi mai vizibile."
+				tagTip: "Ă_Tip: Tags help people find your story. The more relevant the tags are, the higher the visibility your work will receive_____________________________________ș."
 			},
 			submitToGallery: {
 				gallerySubmission: "Galerie de hărţi informative",
@@ -298,7 +298,8 @@
 				subscriptionPublicSuccess: "Conţinutul abonamentului dvs. este acum accesibil publicului"
 			},
 			errors: {
-				publicDisabled: "Partajarea cu publicul a fost dezactivată de administrator",
+				publicDisabled: "Ă_Sharing publicly has been disabled by an Administrator_________________ș",
+				orgDisabled: "Ă_Sharing to your organization has been disabled by an Administrator_____________________ș",
 				noMapName: "Nu a putut fi preluat numele hărţii",
 				notPublic: "NU ESTE PUBLIC",
 				inaccessible: "INACCESIBIL",
@@ -350,7 +351,9 @@
 			tooltipWarnings: {
 				cantScanThisTypeAlt: "Nu putem să verificăm acest tip de strat tematic",
 				cantScanThisType: "Stratul tematic nu este de un tip pe care putem să îl verificăm",
-				webpageNotScanned: "Paginile web nu sunt verificate pentru a se descoperi problemele"
+				webpageNotScanned: "Paginile web nu sunt verificate pentru a se descoperi problemele",
+				ignoredIssue: "Ă_You have ignored an error on this layer. Reload the page and check this story again to review the error________________________________ș",
+				ignoredIssueBuilder: "Ă_You have ignored an error on this layer. Reload the builder to check this error again___________________________ș"
 			},
 			scanningErrors: {
 				deletedMap: "Conţinut şters",
@@ -384,7 +387,6 @@
 				premiumContentTip: "Povestea dvs. are conţinut premium care va consuma {{CREDITS}} atunci când este făcută publică. Faceţi povestea publică şi continuaţi sau eliminaţi straturile tematice din povestea dvs.",
 				premiumContentPublicTip: "Povestea dvs. are conţinut premium care va consuma {{CREDITS}} atunci când este disponibilă public. Asiguraţi-vă că faceţi aceste straturi tematice publice şi continuaţi sau eliminaţi straturile tematice din povestea dvs.",
 				subscriptionContentTip: "Povestea dvs. are conţinut de abonament care nu este disponibil public în mod implicit. Asiguraţi-vă că doriţi să faceţi aceste straturi tematice disponibile (nu vor fi consumate credite) sau eliminaţi straturile tematice din povestea dvs.",
-				agolCredits: "Credite ArcGIS Online",
 				credits: "credite",
 				makePublic: "Faceţi public",
 				confirm: "Confirmare",
@@ -455,6 +457,15 @@
 				secondValueA: "preluare",
 				secondValueB: "ochean",
 				thirdTitle: "hărţi"
+			},
+			crowdsource: {
+				firstTitle: "Ă_contributions_____ș",
+				secondTitle: "Ă_style___ș",
+				secondValueA: "Ă_side panel____ș",
+				secondValueB: "Ă_stacked___ș",
+				thirdTitle: "Ă_basemap___ș",
+				thirdValueLoading: "Ă_Loading____ș...",
+				thirdValueUnknown: "Ă_unknown___ș"
 			}
 		},
 		progress: {
@@ -469,6 +480,11 @@
 			scanProgress: "{{NUM_SCANNED}} din {{NUM_TOTAL}}",
 			scanStopped: "Poveşti scanate: {{NUM_SCANNED}}, Poveşti cu probleme: {{ISSUE_STORIES}}",
 			storiesWithIssues: "Poveşti cu probleme: {{NUM_STORIES}}"
+		},
+		newStories: {
+			newStoriesFound: "Ă_Looks like you have created a new story_____________ș.",
+			includeStories: "Ă_Refresh Stories______ș",
+			notWhileScanning: "Ă_This will be available when the check is complete________________ș"
 		}
     })
 );

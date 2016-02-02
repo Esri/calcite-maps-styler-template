@@ -41,7 +41,7 @@
 		},
 		cantFindStories: {
 			whereAreStories: "Nie widzisz narracji?",
-			notSeeExplanation: "Karta Moje narracje będzie zawierać tylko mapy narracyjne umieszczone w usłudze ArcGIS Online, utworzone za pomocą aplikacji {{STORY_MAP_TOUR}}, {{JOURNAL}}, {{MAP_SERIES}} i {{SWIPE_SPYGLASS}}. Więcej informacji — {{FAQ}}.",
+			notSeeExplanation: "ł_My Stories will only list story maps hosted in ArcGIS and created with the {{STORY_MAP_TOUR}}, {{JOURNAL}}, {{MAP_SERIES}} or {{SWIPE_SPYGLASS}} applications. See our {{FAQ}} for more information____________________________________________________________ą.",
 			faq: "FAQ",
 			followingStoriesToUpdate: "Następujące narracje utworzone przy użyciu wcześniejszych wersji naszych aplikacji należy zaktualizować, aby wyświetlać je na karcie Moje narracje:",
 			gettingStories: "Wyszukiwanie narracji utworzonych przy użyciu wcześniejszych wersji naszych aplikacji, które należy zaktualizować...",
@@ -120,7 +120,7 @@
 			saveFailed: "Błąd zapisywania",
 			numViews: "Liczba wyświetleń: {{NUM_VIEWS}}",
 			editStory: "Edytuj narrację",
-			viewLive: "Wyświetl dane dynamiczne",
+			viewLive: "ł_View Story____ą",
 			preview: "Zobacz podgląd",
 			deleteButton: "Usuń",
 			modified: "Zmodyfikowano {{DATE}}",
@@ -130,7 +130,7 @@
 			close: "zamknij",
 			hide: "ukryj",
 			notAvailableWhenBroken: "Wystąpiły problemy z tą narracją",
-			cantBeDeleted: "Ta narracja jest chroniona przed usunięciem. Aby wyłączyć tę opcję, przejdź do strony tego elementu w usłudze ArcGIS Online.",
+			cantBeDeleted: "ł_This story has delete protection enabled. See its item page on ArcGIS to disable_________________________ą.",
 			shareDialog: {
 				title: "Udostępnij swoją narrację całemu światu!",
 				notPublicWarning: "Twoja narracja została udostępniona w ramach Twojej instytucji. Tylko członkowie Twojej instytucji będą mogli ją wyświetlać.",
@@ -163,7 +163,7 @@
 				save: "Zapisz",
 				saved: "Zapisano",
 				errorSaving: "Błąd zapisywania",
-				tagTip: "Wskazówka: znaczniki pomagają użytkownikom znaleźć Twoją narrację w usłudze ArcGIS Online. Im lepiej dobrane znaczniki, tym lepsza widoczność Twojej pracy."
+				tagTip: "ł_Tip: Tags help people find your story. The more relevant the tags are, the higher the visibility your work will receive_____________________________________ą."
 			},
 			submitToGallery: {
 				gallerySubmission: "Story Maps — Galeria",
@@ -298,7 +298,8 @@
 				subscriptionPublicSuccess: "Twoja subskrybowana zawartość jest teraz publicznie dostępna"
 			},
 			errors: {
-				publicDisabled: "Opcja publicznego udostępniania została wyłączona przez Administratora",
+				publicDisabled: "ł_Sharing publicly has been disabled by an Administrator_________________ą",
+				orgDisabled: "ł_Sharing to your organization has been disabled by an Administrator_____________________ą",
 				noMapName: "Nie można pobrać nazwy mapy",
 				notPublic: "NIEPUBLICZNE",
 				inaccessible: "NIEDOSTĘPNE",
@@ -350,7 +351,9 @@
 			tooltipWarnings: {
 				cantScanThisTypeAlt: "Nie można sprawdzić warstwy tego typu",
 				cantScanThisType: "Warstwy tego typu nie można sprawdzić",
-				webpageNotScanned: "Strony internetowe nie zostały sprawdzone pod kątem problemów"
+				webpageNotScanned: "Strony internetowe nie zostały sprawdzone pod kątem problemów",
+				ignoredIssue: "ł_You have ignored an error on this layer. Reload the page and check this story again to review the error________________________________ą",
+				ignoredIssueBuilder: "ł_You have ignored an error on this layer. Reload the builder to check this error again___________________________ą"
 			},
 			scanningErrors: {
 				deletedMap: "Zawartość usunięta",
@@ -384,7 +387,6 @@
 				premiumContentTip: "Twoja narracja zawiera zasoby premium, które po publicznym udostępnieniu zużyją {{CREDITS}} kredyty(-ów). Udostępnij narrację publicznie i kontynuuj lub usuń warstwy z narracji.",
 				premiumContentPublicTip: "Twoja narracja zawiera zasoby premium, które zużyją {{CREDITS}} kredyty(-ów), gdy będzie ona publicznie dostępna. Potwierdź, aby udostępnić te warstwy publicznie lub usuń warstwy z narracji.",
 				subscriptionContentTip: "Twoja narracja zawiera zawartość subskrybowaną, która domyślnie nie jest publicznie dostępna. Potwierdź, aby udostępnić te warstwy (nie zostaną zużyte żadne kredyty), lub usuń warstwy z narracji.",
-				agolCredits: "Kredyty w usłudze ArcGIS Online",
 				credits: "kredyty",
 				makePublic: "Udostępnij publicznie",
 				confirm: "Potwierdź",
@@ -455,6 +457,15 @@
 				secondValueA: "zwijaj",
 				secondValueB: "lupa",
 				thirdTitle: "mapy"
+			},
+			crowdsource: {
+				firstTitle: "ł_contributions_____ą",
+				secondTitle: "ł_style___ą",
+				secondValueA: "ł_side panel____ą",
+				secondValueB: "ł_stacked___ą",
+				thirdTitle: "ł_basemap___ą",
+				thirdValueLoading: "ł_Loading____ą...",
+				thirdValueUnknown: "ł_unknown___ą"
 			}
 		},
 		progress: {
@@ -469,6 +480,11 @@
 			scanProgress: "{{NUM_SCANNED}} z {{NUM_TOTAL}}",
 			scanStopped: "Liczba przeskanowanych narracji: {{NUM_SCANNED}}; liczba narracji z problemami: {{ISSUE_STORIES}}",
 			storiesWithIssues: "Liczba narracji z problemami: {{NUM_STORIES}}"
+		},
+		newStories: {
+			newStoriesFound: "ł_Looks like you have created a new story_____________ą.",
+			includeStories: "ł_Refresh Stories______ą",
+			notWhileScanning: "ł_This will be available when the check is complete________________ą"
 		}
     })
 );

@@ -41,7 +41,7 @@
 		},
 		cantFindStories: {
 			whereAreStories: "Không thấy câu chuyện của bạn?",
-			notSeeExplanation: "Câu chuyện Của tôi sẽ chỉ liệt kê các story map được lưu trữ trong ArcGIS Online được tạo bằng ứng dụng {{STORY_MAP_TOUR}}, {{JOURNAL}}, {{MAP_SERIES}} và {{SWIPE_SPYGLASS}}. Hãy xem {{FAQ}} của chúng tôi để biết thêm thông tin.",
+			notSeeExplanation: "Đ_My Stories will only list story maps hosted in ArcGIS and created with the {{STORY_MAP_TOUR}}, {{JOURNAL}}, {{MAP_SERIES}} or {{SWIPE_SPYGLASS}} applications. See our {{FAQ}} for more information____________________________________________________________ớ.",
 			faq: "Câu hỏi thường gặp",
 			followingStoriesToUpdate: "Các câu chuyện sau được tạo bằng các ứng dung phiên bản cũ của chúng tôi, vì vậy cần được cập nhật để các câu chuyện được liệt kê trong Câu chuyện Của tôi:",
 			gettingStories: "Tìm kiếm câu chuyện được tạo bằng phiên bản cũ hơn của các ứng dụng của chúng tôi cần được cập nhật...",
@@ -120,7 +120,7 @@
 			saveFailed: "Lỗi trong khi lưu",
 			numViews: "Xem: {{NUM_VIEWS}}",
 			editStory: "Sửa Câu chuyện",
-			viewLive: "Xem Trực tiếp",
+			viewLive: "Đ_View Story____ớ",
 			preview: "Xem trước",
 			deleteButton: "Xóa",
 			modified: "Sửa đổi {{DATE}}",
@@ -130,7 +130,7 @@
 			close: "đóng",
 			hide: "ẩn",
 			notAvailableWhenBroken: "Câu chuyện của bạn có các sự cố bên dưới",
-			cantBeDeleted: "Câu chuyện này đã được kích hoạt bảo vệ chống xóa, hãy xem trang mục của câu chuyện trên ArcGIS Online để tắt",
+			cantBeDeleted: "Đ_This story has delete protection enabled. See its item page on ArcGIS to disable_________________________ớ.",
 			shareDialog: {
 				title: "Chia sẻ câu chuyện của bạn với thế giới!",
 				notPublicWarning: "Câu chuyện của bạn được chia sẻ với tổ chức của bạn. Chỉ các thành viên tổ chức của bạn mới có thể xem.",
@@ -163,7 +163,7 @@
 				save: "Lưu",
 				saved: "Đã lưu",
 				errorSaving: "Lỗi trong khi lưu",
-				tagTip: "Mẹo: Từ khóa giúp mọi người tìm câu chuyện của bạn trên ArcGIS Online. Các từ khóa càng liên quan thì tác phẩm của bạn càng dễ dàng được tìm kiếm."
+				tagTip: "Đ_Tip: Tags help people find your story. The more relevant the tags are, the higher the visibility your work will receive_____________________________________ớ."
 			},
 			submitToGallery: {
 				gallerySubmission: "Story Maps Gallery",
@@ -298,7 +298,8 @@
 				subscriptionPublicSuccess: "Nội dung gói đăng ký của bạn hiện đã có thể truy cập công khai"
 			},
 			errors: {
-				publicDisabled: "Người quản trị đã vô hiệu hóa chia sẻ công khai",
+				publicDisabled: "Đ_Sharing publicly has been disabled by an Administrator_________________ớ",
+				orgDisabled: "Đ_Sharing to your organization has been disabled by an Administrator_____________________ớ",
 				noMapName: "Không thể Truy xuất Tên Bản đồ",
 				notPublic: "KHÔNG CÔNG KHAI",
 				inaccessible: "KHÔNG THỂ TRUY CẬP ĐƯỢC",
@@ -350,7 +351,9 @@
 			tooltipWarnings: {
 				cantScanThisTypeAlt: "Chúng tôi không thể kiểm tra loại lớp này",
 				cantScanThisType: "Lớp không thuộc loại lớp mà chúng tôi có thể kiểm tra",
-				webpageNotScanned: "Trang web không được kiểm tra để phát hiện sự cố"
+				webpageNotScanned: "Trang web không được kiểm tra để phát hiện sự cố",
+				ignoredIssue: "Đ_You have ignored an error on this layer. Reload the page and check this story again to review the error________________________________ớ",
+				ignoredIssueBuilder: "Đ_You have ignored an error on this layer. Reload the builder to check this error again___________________________ớ"
 			},
 			scanningErrors: {
 				deletedMap: "Nội dung đã bị xóa",
@@ -384,7 +387,6 @@
 				premiumContentTip: "Câu chuyện của bạn có chứa nội dung cao cấp và sẽ tốn {{CREDITS}} khi ở chế độ công khai. Hãy để câu chuyện của bạn ở chế độ công khai và tiếp tục, hoặc gỡ bỏ lớp khỏi câu chuyện của bạn.",
 				premiumContentPublicTip: "Câu chuyện của bạn có chứa nội dung cao cấp và sẽ tốn {{CREDITS}} khi cung cấp ở chế độ công khai. Hãy xác nhận để đặt lớp ở chế độ công khai hoặc gỡ bỏ lớp khỏi câu chuyện của bạn.",
 				subscriptionContentTip: "Câu chuyện của bạn có chứa nội dung gói đăng ký không khả dụng công khai theo mặc định. Hãy xác nhận rằng bạn muốn đặt các lớp này khả dụng (không tốn credit), hoặc gỡ bỏ lớp khỏi câu chuyện của bạn.",
-				agolCredits: "Credit ArcGIS Online",
 				credits: "service credit",
 				makePublic: "Công khai",
 				confirm: "Xác nhận",
@@ -455,6 +457,15 @@
 				secondValueA: "trượt nhanh",
 				secondValueB: "kính phóng đại",
 				thirdTitle: "bản đồ"
+			},
+			crowdsource: {
+				firstTitle: "Đ_contributions_____ớ",
+				secondTitle: "Đ_style___ớ",
+				secondValueA: "Đ_side panel____ớ",
+				secondValueB: "Đ_stacked___ớ",
+				thirdTitle: "Đ_basemap___ớ",
+				thirdValueLoading: "Đ_Loading____ớ...",
+				thirdValueUnknown: "Đ_unknown___ớ"
 			}
 		},
 		progress: {
@@ -469,6 +480,11 @@
 			scanProgress: "{{NUM_SCANNED}} trên {{NUM_TOTAL}}",
 			scanStopped: "Câu chuyện đã được quét: {{NUM_SCANNED}}, Câu chuyện có sự cố: {{ISSUE_STORIES}}",
 			storiesWithIssues: "Câu chuyện có sự cố: {{NUM_STORIES}}"
+		},
+		newStories: {
+			newStoriesFound: "Đ_Looks like you have created a new story_____________ớ.",
+			includeStories: "Đ_Refresh Stories______ớ",
+			notWhileScanning: "Đ_This will be available when the check is complete________________ớ"
 		}
     })
 );

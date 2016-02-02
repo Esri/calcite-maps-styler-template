@@ -18,7 +18,8 @@
 				height: "高度",
 				create: "建立(C)",
 				yes: "是",
-				no: "否"
+				no: "否",
+				mystories: "試_My Stories____驗"
 			},
 			inlineFieldEdit: {
 				editMe: "編輯!"
@@ -30,9 +31,10 @@
 				buttonShare: "分享",
 				buttonSettings: "設定",
 				buttonHelp: "說明",
-				buttonPreview: "即時檢視",
+				buttonPreview: "試_View story____驗",
 				tooltipFirstSave: "儲存後，此功能才可用。",
 				tooltipNotShared: "分享後，此功能才可用。",
+				tooltipNotShared2: "試_Your story isn't shared, only you can access it_______________驗.",
 				noPendingChange: "無待決的變更",
 				unSavedChangePlural: "待決變更",
 				closeWithPendingChange: "是否確定要確認此操作？您的變更將遺失。",
@@ -52,10 +54,21 @@
 				err1Div2: "請修改故事的標題，然後將其儲存。",
 				btnOk: "編輯故事標題"
 			},
+			saveErrorSocial: {
+				title: "試_Social media sharing update_________驗",
+				panel1: "試_Your storyâ€™s appearance on social media has been improved, but your ArcGIS web application item title is not the same as your story title___________________________________________驗.",
+				panel1tooltip: "試_By defining a title, summary and thumbnail image, your story will look like this_________________________驗:",
+				panel2:	"試_Which title would you like to use on social media________________驗:",
+				panel2q1: "試_Story title (recommended)_________驗",
+				panel2q1tooltip: "試_By choosing this option, your item title will be modified to match your story title and further changes in the builder will be synchronized___________________________________________驗.",
+				panel2q2: "試_Item title____驗",
+				panel3: "試_To further improve how your story looks on social media use ${MYSTORIES} to add a summary and a thumbnail image___________________________________驗.",
+				panel4: "試_Do not warn me again for this story____________驗"
+			},
 			share: {
 				shareTitle: "分享您的故事",
 				preview: "預覽",
-				viewlive: "即時檢視",
+				viewlive: "試_View story____驗",
 				btnPrivate: "私有",
 				btnPrivateTooltip: "只有您能看到故事",
 				btnOrg: "組織",
@@ -74,26 +87,27 @@
 				notavailable2: "很抱歉，此版本的 Portal for ArcGIS (需要 10.4 或更新版本) 不支援從構建器分享您的故事。",
 				notavailable3: "您可以從 %LINK% 分享此故事。",
 				notavailable4: "我的經驗",
-				notavailable5: "其項目頁面",
+				notavailable5: "試_its item page_____驗",
 				notavailable6: "很抱歉，開發模式不完全支援此圖徵。依據您的部署情況，可能在部署時支援此圖徵。",
 				notavailable7: "請務必造訪 %MYCONTENT%，確認另外分享您故事中使用的地圖和圖層。",
-				notavailable8: "我的內容"
+				notavailable8: "我的內容",
+				mystoriesinvite2: "試_To improve how your story looks on social networks use ${MYSTORIES} to add a summary and a thumbnail image_________________________________驗."
 			},
 			settings: {
 				header: "設定",
 				tabError: "請檢查所有索引標籤中的錯誤"
 			},
 			settingsLayout: {
-				title: "版面設定",
+				title: "試_Layout___驗",
 				explain: "想要使用哪種版面設定？",
 				explainInit: "可隨時在設定對話方塊中變更版面設定。",
 				viewExample: "查看即時範例"
 			},
 			settingsTheme: {
-				title: "主題"
+				title: "試_Theme___驗"
 			},
 			settingsHeader: {
-				title: "頁眉",
+				title: "試_Header___驗",
 				logoEsri: "Esri 標誌",
 				logoNone: "無標誌",
 				logoCustom: "自訂標誌",
@@ -105,7 +119,7 @@
 				lblSmallHeader: "使用壓縮標題(無副標題)"
 			},
 			header: {
-				title: "編輯 %TPL_NAME% 的標題",
+				title: "試_Edit the title of your %TPL_NAME%___________驗",
 				subtitle: "編輯 %TPL_NAME% 的副標題"
 			}
 		}

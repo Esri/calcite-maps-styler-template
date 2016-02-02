@@ -41,7 +41,7 @@
 		},
 		cantFindStories: {
 			whereAreStories: "¿No ves tu historia?",
-			notSeeExplanation: "Mis historias solo mostrará los story maps alojados en ArcGIS Online y creados con las aplicaciones {{STORY_MAP_TOUR}}, {{JOURNAL}}, {{MAP_SERIES}} y {{SWIPE_SPYGLASS}}. Consulta nuestra sección {{FAQ}} para obtener más información.",
+			notSeeExplanation: "á_My Stories will only list story maps hosted in ArcGIS and created with the {{STORY_MAP_TOUR}}, {{JOURNAL}}, {{MAP_SERIES}} or {{SWIPE_SPYGLASS}} applications. See our {{FAQ}} for more information____________________________________________________________Ó.",
 			faq: "Preguntas frecuentes",
 			followingStoriesToUpdate: "Las siguientes historias creadas con versiones antiguas de nuestras aplicaciones se deben actualizar para que aparezcan en Mis historias:",
 			gettingStories: "Buscando historias creadas con versiones anteriores de nuestras aplicaciones que es necesario actualizar...",
@@ -120,7 +120,7 @@
 			saveFailed: "Error al guardar",
 			numViews: "Vistas: {{NUM_VIEWS}}",
 			editStory: "Editar historia",
-			viewLive: "Ver en directo",
+			viewLive: "á_View Story____Ó",
 			preview: "Vista previa",
 			deleteButton: "Eliminar",
 			modified: "Modificado: {{DATE}}",
@@ -130,7 +130,7 @@
 			close: "cerrar",
 			hide: "ocultar",
 			notAvailableWhenBroken: "La historia tiene los siguientes problemas",
-			cantBeDeleted: "Esta historia tiene habilitada la protección contra eliminación. Visita su página en ArcGIS Online para deshabilitarla.",
+			cantBeDeleted: "á_This story has delete protection enabled. See its item page on ArcGIS to disable_________________________Ó.",
 			shareDialog: {
 				title: "Comparte tu historia con el mundo.",
 				notPublicWarning: "Tu historia está compartida con tu organización. Solo miembros de tu organización podrán verla.",
@@ -163,7 +163,7 @@
 				save: "Guardar",
 				saved: "Guardado",
 				errorSaving: "Error al guardar",
-				tagTip: "Sugerencia: las etiquetas ayudan a la gente a encontrar tu historia en ArcGIS Online. Cuanto más relevantes sean las etiquetas, mayor será la visibilidad del trabajo."
+				tagTip: "á_Tip: Tags help people find your story. The more relevant the tags are, the higher the visibility your work will receive_____________________________________Ó."
 			},
 			submitToGallery: {
 				gallerySubmission: "Galería de Story Maps",
@@ -298,7 +298,8 @@
 				subscriptionPublicSuccess: "Tu contenido de suscripción está disponible públicamente"
 			},
 			errors: {
-				publicDisabled: "El administrador ha deshabilitado la opción para compartir públicamente.",
+				publicDisabled: "á_Sharing publicly has been disabled by an Administrator_________________Ó",
+				orgDisabled: "á_Sharing to your organization has been disabled by an Administrator_____________________Ó",
 				noMapName: "No se pudo recuperar el nombre del mapa.",
 				notPublic: "NO PÚBLICO",
 				inaccessible: "INACCESIBLE",
@@ -350,7 +351,9 @@
 			tooltipWarnings: {
 				cantScanThisTypeAlt: "No podemos comprobar este tipo de capa",
 				cantScanThisType: "La capa no es un tipo de capa que podamos comprobar",
-				webpageNotScanned: "Las páginas web no se comprueban para ver si contienen problemas."
+				webpageNotScanned: "Las páginas web no se comprueban para ver si contienen problemas.",
+				ignoredIssue: "á_You have ignored an error on this layer. Reload the page and check this story again to review the error________________________________Ó",
+				ignoredIssueBuilder: "á_You have ignored an error on this layer. Reload the builder to check this error again___________________________Ó"
 			},
 			scanningErrors: {
 				deletedMap: "Contenido eliminado",
@@ -384,7 +387,6 @@
 				premiumContentTip: "Tu historia contiene contenido premium que consumirá {{CREDITS}} al hacerla pública. Haz tu historia pública y continúa, o elimina las capas de la historia.",
 				premiumContentPublicTip: "Tu historia contiene contenido premium que consumirá {{CREDITS}} al hacerla pública. Confirma para hacer públicas estas capas o elimina las capas de la historia.",
 				subscriptionContentTip: "Tu historia contiene contenido de suscripción que no está a disposición pública de forma predeterminada. Confirma que quieres poner a disposición pública estas capas (no se consumirá ningún crédito), o elimina las capas de tu historia.",
-				agolCredits: "Créditos de ArcGIS Online",
 				credits: "créditos",
 				makePublic: "Hacer público",
 				confirm: "Confirmar",
@@ -455,6 +457,15 @@
 				secondValueA: "swipe",
 				secondValueB: "spyglass",
 				thirdTitle: "mapas"
+			},
+			crowdsource: {
+				firstTitle: "á_contributions_____Ó",
+				secondTitle: "á_style___Ó",
+				secondValueA: "á_side panel____Ó",
+				secondValueB: "á_stacked___Ó",
+				thirdTitle: "á_basemap___Ó",
+				thirdValueLoading: "á_Loading____Ó...",
+				thirdValueUnknown: "á_unknown___Ó"
 			}
 		},
 		progress: {
@@ -469,6 +480,11 @@
 			scanProgress: "{{NUM_SCANNED}} de {{NUM_TOTAL}}",
 			scanStopped: "Historias analizadas: {{NUM_SCANNED}}, historias con problemas: {{ISSUE_STORIES}}",
 			storiesWithIssues: "Historias con problemas: {{NUM_STORIES}}"
+		},
+		newStories: {
+			newStoriesFound: "á_Looks like you have created a new story_____________Ó.",
+			includeStories: "á_Refresh Stories______Ó",
+			notWhileScanning: "á_This will be available when the check is complete________________Ó"
 		}
     })
 );

@@ -41,7 +41,7 @@
 		},
 		cantFindStories: {
 			whereAreStories: "Non vedi la tua storia?",
-			notSeeExplanation: "My Stories elenca solo Story Map ospitate in ArcGIS Online create con le applicazioni {{STORY_MAP_TOUR}}, {{JOURNAL}}, {{MAP_SERIES}} e {{SWIPE_SPYGLASS}}. Per ulteriori informazioni, vedere {{FAQ}}.",
+			notSeeExplanation: "é_My Stories will only list story maps hosted in ArcGIS and created with the {{STORY_MAP_TOUR}}, {{JOURNAL}}, {{MAP_SERIES}} or {{SWIPE_SPYGLASS}} applications. See our {{FAQ}} for more information____________________________________________________________È.",
 			faq: "DOMANDE FREQUENTI",
 			followingStoriesToUpdate: "Le seguenti storie create con versioni precedenti delle applicazioni devono essere aggiornate per essere elencate in My Stories:",
 			gettingStories: "Ricerca di storie create con versioni precedenti delle applicazioni che devono essere aggiornate...",
@@ -120,7 +120,7 @@
 			saveFailed: "Errore durante il salvataggio",
 			numViews: "Visualizzazioni: {{NUM_VIEWS}}",
 			editStory: "Modifica storia",
-			viewLive: "Visualizza in tempo reale",
+			viewLive: "é_View Story____È",
 			preview: "Anteprima",
 			deleteButton: "Elimina",
 			modified: "Modificato il {{DATE}}",
@@ -130,7 +130,7 @@
 			close: "chiudi",
 			hide: "nascondi",
 			notAvailableWhenBroken: "La storia presenta i seguenti problemi",
-			cantBeDeleted: "In questa storia è abilitata la protezione da eliminazione; per disabilitarla, vedere la pagina degli elementi su ArcGIS Online",
+			cantBeDeleted: "é_This story has delete protection enabled. See its item page on ArcGIS to disable_________________________È.",
 			shareDialog: {
 				title: "Condividi la storia con tutti",
 				notPublicWarning: "La storia è condivisa con l\'organizzazione è sarà visibile solo ai membri dell\'organizzazione.",
@@ -163,7 +163,7 @@
 				save: "Salva",
 				saved: "Salvato",
 				errorSaving: "Errore durante il salvataggio",
-				tagTip: "Suggerimento: i tag consentono di trovare la storia su ArcGIS Online. Più i tag sono rilevanti, maggiore sarà la visibilità del lavoro."
+				tagTip: "é_Tip: Tags help people find your story. The more relevant the tags are, the higher the visibility your work will receive_____________________________________È."
 			},
 			submitToGallery: {
 				gallerySubmission: "Galleria di Story Map",
@@ -298,7 +298,8 @@
 				subscriptionPublicSuccess: "Il contenuto dell\'abbonamento è ora accessibile pubblicamente"
 			},
 			errors: {
-				publicDisabled: "La condivisione pubblica è stata disabilitata dall\'amministratore",
+				publicDisabled: "é_Sharing publicly has been disabled by an Administrator_________________È",
+				orgDisabled: "é_Sharing to your organization has been disabled by an Administrator_____________________È",
 				noMapName: "Impossibile recuperare il nome della mappa",
 				notPublic: "NON PUBBLICO",
 				inaccessible: "INACCESSIBILE",
@@ -350,7 +351,9 @@
 			tooltipWarnings: {
 				cantScanThisTypeAlt: "Impossibile verificare questo tipo di layer",
 				cantScanThisType: "Il layer non è di un tipo che è possibile verificare",
-				webpageNotScanned: "Le pagine Web non sono sottoposte a controlli"
+				webpageNotScanned: "Le pagine Web non sono sottoposte a controlli",
+				ignoredIssue: "é_You have ignored an error on this layer. Reload the page and check this story again to review the error________________________________È",
+				ignoredIssueBuilder: "é_You have ignored an error on this layer. Reload the builder to check this error again___________________________È"
 			},
 			scanningErrors: {
 				deletedMap: "Contenuto eliminato",
@@ -384,7 +387,6 @@
 				premiumContentTip: "La storia contiene contenuto premium che consuma {{CREDITS}} quando viene resa pubblica. Rendere la storia pubblica e continuare o rimuovere i layer dalla storia.",
 				premiumContentPublicTip: "La storia contiene contenuto premium che consuma {{CREDITS}} quando è disponibile pubblicamente. Confermare per rendere i layer pubblici o rimuovere i layer dalla storia.",
 				subscriptionContentTip: "La storia contiene contenuto dell\'abbonamento che non è disponibile pubblicamente per impostazione predefinita. Confermare che si desidera rendere disponibili questi layer (non verranno consumati crediti) o rimuovere i layer dalla storia.",
-				agolCredits: "Crediti ArcGIS Online",
 				credits: "crediti",
 				makePublic: "Rendi pubblica",
 				confirm: "Conferma",
@@ -455,6 +457,15 @@
 				secondValueA: "scorrimento con dito",
 				secondValueB: "cannocchiale",
 				thirdTitle: "mappe"
+			},
+			crowdsource: {
+				firstTitle: "é_contributions_____È",
+				secondTitle: "é_style___È",
+				secondValueA: "é_side panel____È",
+				secondValueB: "é_stacked___È",
+				thirdTitle: "é_basemap___È",
+				thirdValueLoading: "é_Loading____È...",
+				thirdValueUnknown: "é_unknown___È"
 			}
 		},
 		progress: {
@@ -469,6 +480,11 @@
 			scanProgress: "{{NUM_SCANNED}} di {{NUM_TOTAL}}",
 			scanStopped: "Storie scansite: {{NUM_SCANNED}}, storie con problemi: {{ISSUE_STORIES}}",
 			storiesWithIssues: "Storie con problemi: {{NUM_STORIES}}"
+		},
+		newStories: {
+			newStoriesFound: "é_Looks like you have created a new story_____________È.",
+			includeStories: "é_Refresh Stories______È",
+			notWhileScanning: "é_This will be available when the check is complete________________È"
 		}
     })
 );

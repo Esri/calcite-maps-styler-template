@@ -110,7 +110,7 @@
       mapFullScreen: "Pełny ekran",
       mapRestore: "Restore",
       filterSelectEmptyText: "Wybierz",
-      invalidLayerMessage: "Warstwa formularza nie istnieje. Skonfiguruj aplikację i ustaw warstwę.",
+      invalidLayerMessage: "ł_A valid layer to create the GeoForm was not found. If the GeoForm has been configured with a layer, the layer may no longer be available, or authorization failed__________________________________________________ą.",
       selectedLayerText: "WSZYSTKIE",
       fileUploadStatus: "Status przesyłania pliku",
       uploadingBadge: "&nbsp;Przesyłanie&hellip;",
@@ -149,6 +149,10 @@
       previewText: "Zobacz podgląd",
       publishText: "Publikuj",
       optionsApplicationText: "Opcje",
+      submitButtonText: "ł_Submit Button Text (Optional)__________ą",
+      submitButtonDesc: "ł_Optionally label the button to submit a new entry. This text will not be translated__________________________ą.",
+      viewSubmissionsText: "ł_View Submissions Text (Optional)___________ą",
+      viewSubmissionsDesc: "ł_Optionally label the button to view existing entries. This text will not be translated___________________________ą.",
       titleText: "Kreator",
       descriptionText: "Formularz geograficzny (GeoForm) to konfigurowalny szablon umożliwiający edytowanie danych ${link1}usługi obiektowej${closeLink} w formularzu. Aplikacja ta umożliwia użytkownikom wprowadzanie danych za pośrednictwem formularza bez konieczności korzystania z okna podręcznego mapy, z jednoczesnym wykorzystaniem potencjału ${link2}mapy internetowej${closeLink} i edytowalnych usług obiektowych. W celu spersonalizowania i utworzenia formularza GeoForm należy wykonać czynności przedstawione w poniższych etapach.",
       btnPreviousText: "Powrót",
@@ -258,7 +262,6 @@
       sortHeaderText: "Sortuj według:",
       geocoderPlaceholderText: "Kod pocztowy, miasto itd.",
       noSearchResult: "Nie znaleziono wyników",
-      recordsTabTooltip: "Wyświetl zgłoszenia",
       legendTabTooltip: "Legenda",
       aboutUsTabTooltip: "O firmie",
       mapTabTooltip: "Mapa",
@@ -273,7 +276,6 @@
       viewReportsTabText: "Raporty",
       viewLegendTabText: "Legenda",
       viewAboutusTabText: "Informacje o",
-      btnSubmitReportText: "Prześlij raport",
       appLoadingFailedMessage: "Podczas wczytywania przeglądarki wystąpił błąd"
     }
   })

@@ -110,7 +110,7 @@
       mapFullScreen: "แสดงผลเต็มหน้าจอ",
       mapRestore: "เรียกเก็บที่เดิม",
       filterSelectEmptyText: "เลือก",
-      invalidLayerMessage: "ไม่มีชั้นข้อมูลแบบฟอร์มนี้อยู่ กรุณาตั้งค่าแอพพลิเคชั่นและเลือกชั้นข้อมูล",
+      invalidLayerMessage: "ก้_A valid layer to create the GeoForm was not found. If the GeoForm has been configured with a layer, the layer may no longer be available, or authorization failed__________________________________________________ษฺ.",
       selectedLayerText: "ทั้งหมด",
       fileUploadStatus: "สถานะการอัพโหลดไฟล์",
       uploadingBadge: "&nbsp;Uploading&hellip;",
@@ -149,6 +149,10 @@
       previewText: "พรีวิว",
       publishText: "เผยแพร่",
       optionsApplicationText: "ตัวเลือก",
+      submitButtonText: "ก้_Submit Button Text (Optional)__________ษฺ",
+      submitButtonDesc: "ก้_Optionally label the button to submit a new entry. This text will not be translated__________________________ษฺ.",
+      viewSubmissionsText: "ก้_View Submissions Text (Optional)___________ษฺ",
+      viewSubmissionsDesc: "ก้_Optionally label the button to view existing entries. This text will not be translated___________________________ษฺ.",
       titleText: "Builder",
       descriptionText: "GeoForm is a configurable template for form-based data editing of a ${link1}Feature Service${closeLink}. โปรแกรมนี้ช่วยให้ผู้ใช้สามารถป้อนข้อมูลผ่านทางแบบฟอร์มแทนแผนที่ของป๊อปอัพในขณะที่ใช้ประโยชน์จากพลังของ ${link2} เว็บแผนที่${closeLink} และบริการคุณสมบัติที่สามารถแก้ไขได้ ใช้ขั้นตอนต่อไปนี้เพื่อปรับแต่งและปรับใช้ GeoForm ของคุณ",
       btnPreviousText: "ก่อนหน้า",
@@ -258,7 +262,6 @@
       sortHeaderText: "จัดเรียงตาม:",
       geocoderPlaceholderText: "รหัสไปรษณีย์ ชื่อเมือง เป็นต้น",
       noSearchResult: "ไม่พบผลลัพธ์",
-      recordsTabTooltip: "ดูการส่ง",
       legendTabTooltip: "คำอธิบาย",
       aboutUsTabTooltip: "เกี่ยวกับเรา",
       mapTabTooltip: "แผนที่",
@@ -273,7 +276,6 @@
       viewReportsTabText: "รายงาน",
       viewLegendTabText: "คำอธิบาย",
       viewAboutusTabText: "เกี่ยวกับ",
-      btnSubmitReportText: "ส่งรายงาน",
       appLoadingFailedMessage: "พบข้อผิดพลาดระหว่างการโหลดวิวมุมมอง"
     }
   })

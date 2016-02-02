@@ -41,7 +41,7 @@
 		},
 		cantFindStories: {
 			whereAreStories: "Ser du inte din berättelse?",
-			notSeeExplanation: "Mina berättelser visar bara berättelsekartor i ArcGIS Online som skapats med applikationerna {{STORY_MAP_TOUR}}, {{JOURNAL}}, {{MAP_SERIES}} och {{SWIPE_SPYGLASS}}. Se {{FAQ}} för mer information.",
+			notSeeExplanation: "Å_My Stories will only list story maps hosted in ArcGIS and created with the {{STORY_MAP_TOUR}}, {{JOURNAL}}, {{MAP_SERIES}} or {{SWIPE_SPYGLASS}} applications. See our {{FAQ}} for more information____________________________________________________________ö.",
 			faq: "Vanliga frågor och svar",
 			followingStoriesToUpdate: "Följande berättelser som skapats med tidigare versioner av våra applikationer behöver uppdateras för att de ska visas i Mina berättelser:",
 			gettingStories: "Söker efter berättelser som skapats med tidigare versioner av våra applikationer som behöver uppdateras ...",
@@ -120,7 +120,7 @@
 			saveFailed: "Det gick inte att spara",
 			numViews: "Visningar: {{NUM_VIEWS}}",
 			editStory: "Redigera berättelse",
-			viewLive: "Visa live",
+			viewLive: "Å_View Story____ö",
 			preview: "Förhandsgranska",
 			deleteButton: "Ta bort",
 			modified: "Ändrad {{DATE}}",
@@ -130,7 +130,7 @@
 			close: "stäng",
 			hide: "dölja",
 			notAvailableWhenBroken: "Berättelsen har fel, se nedan",
-			cantBeDeleted: "Denna berättelse har skydd mot borttagning aktiverat, se objektsidan på ArcGIS Online för att inaktivera det",
+			cantBeDeleted: "Å_This story has delete protection enabled. See its item page on ArcGIS to disable_________________________ö.",
 			shareDialog: {
 				title: "Dela berättelsen med världen!",
 				notPublicWarning: "Du delar din berättelse med din organisation. Enbart medlemmar i din organisation kan visa den.",
@@ -163,7 +163,7 @@
 				save: "Spara",
 				saved: "Sparad",
 				errorSaving: "Det gick inte att spara",
-				tagTip: "Tips: Taggar gör att människor hittar din berättelse på ArcGIS Online. Ju mer relevanta taggarna är, desto högre synlighet får ditt verk."
+				tagTip: "Å_Tip: Tags help people find your story. The more relevant the tags are, the higher the visibility your work will receive_____________________________________ö."
 			},
 			submitToGallery: {
 				gallerySubmission: "Galleri med berättelsekartor",
@@ -298,7 +298,8 @@
 				subscriptionPublicSuccess: "Ditt abonnemangsinnehåll är nu publikt tillgängligt"
 			},
 			errors: {
-				publicDisabled: "Publik delning har inaktiverats av administratören",
+				publicDisabled: "Å_Sharing publicly has been disabled by an Administrator_________________ö",
+				orgDisabled: "Å_Sharing to your organization has been disabled by an Administrator_____________________ö",
 				noMapName: "Det gick inte att hämta kartans namn",
 				notPublic: "INTE PUBLIK",
 				inaccessible: "EJ TILLGÄNGLIG",
@@ -350,7 +351,9 @@
 			tooltipWarnings: {
 				cantScanThisTypeAlt: "Vi kan inte kontrollera denna typ av lager",
 				cantScanThisType: "Lagret är inte en typ av lager som vi kan kontrollera",
-				webpageNotScanned: "Webbsidor kontrolleras inte med avseende på problem"
+				webpageNotScanned: "Webbsidor kontrolleras inte med avseende på problem",
+				ignoredIssue: "Å_You have ignored an error on this layer. Reload the page and check this story again to review the error________________________________ö",
+				ignoredIssueBuilder: "Å_You have ignored an error on this layer. Reload the builder to check this error again___________________________ö"
 			},
 			scanningErrors: {
 				deletedMap: "Borttaget innehåll",
@@ -384,7 +387,6 @@
 				premiumContentTip: "Din berättelse innehåller premiuminnehåll som förbrukar {{CREDITS}} när det görs publikt. Gör din berättelse publik och fortsätt, eller ta bort lagren från berättelsen.",
 				premiumContentPublicTip: "Din berättelse innehåller premiuminnehåll som förbrukar {{CREDITS}} när det görs tillgängligt publikt. Bekräfta för att göra dessa lager publika, eller ta bort lagren från berättelsen.",
 				subscriptionContentTip: "Din berättelse innehåller abonnemangsinnehåll som inte är publikt tillgängligt som standard. Bekräfta för att göra dessa lager tillgängliga (inga krediter förbrukas), eller ta bort lagren från berättelsen.",
-				agolCredits: "ArcGIS Online-krediter",
 				credits: "krediter",
 				makePublic: "Gör publikt",
 				confirm: "Bekräfta",
@@ -455,6 +457,15 @@
 				secondValueA: "svep",
 				secondValueB: "kikare",
 				thirdTitle: "kartor"
+			},
+			crowdsource: {
+				firstTitle: "Å_contributions_____ö",
+				secondTitle: "Å_style___ö",
+				secondValueA: "Å_side panel____ö",
+				secondValueB: "Å_stacked___ö",
+				thirdTitle: "Å_basemap___ö",
+				thirdValueLoading: "Å_Loading____ö...",
+				thirdValueUnknown: "Å_unknown___ö"
 			}
 		},
 		progress: {
@@ -469,6 +480,11 @@
 			scanProgress: "{{NUM_SCANNED}} av {{NUM_TOTAL}}",
 			scanStopped: "Berättelser som lästs in: {{NUM_SCANNED}}, Berättelser med fel: {{ISSUE_STORIES}}",
 			storiesWithIssues: "Berättelser med fel: {{NUM_STORIES}}"
+		},
+		newStories: {
+			newStoriesFound: "Å_Looks like you have created a new story_____________ö.",
+			includeStories: "Å_Refresh Stories______ö",
+			notWhileScanning: "Å_This will be available when the check is complete________________ö"
 		}
     })
 );

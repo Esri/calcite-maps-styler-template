@@ -18,7 +18,8 @@
 				height: "Kõrgus",
 				create: "Loo",
 				yes: "Jah",
-				no: "Ei"
+				no: "Ei",
+				mystories: "Š_My Stories____ä"
 			},
 			inlineFieldEdit: {
 				editMe: "Muuda mind!"
@@ -30,9 +31,10 @@
 				buttonShare: "Jaga",
 				buttonSettings: "Seaded",
 				buttonHelp: "Abi",
-				buttonPreview: "Kuva reaalajas",
+				buttonPreview: "Š_View story____ä",
 				tooltipFirstSave: "See on saadaval alles pärast salvestamist.",
 				tooltipNotShared: "See on saadaval alles pärast jagamist.",
+				tooltipNotShared2: "Š_Your story isn't shared, only you can access it_______________ä.",
 				noPendingChange: "Ühtegi muudatust ei ole ootel",
 				unSavedChangePlural: "Ootel muudatused",
 				closeWithPendingChange: "Kas olete kindel, et soovite tegevuse kinnitada? Teie tehtud muudatused lähevad kaotsi.",
@@ -52,10 +54,21 @@
 				err1Div2: "Muutke loo pealkirja ja seejärel salvestage see.",
 				btnOk: "Redigeerige loo pealkirja"
 			},
+			saveErrorSocial: {
+				title: "Š_Social media sharing update_________ä",
+				panel1: "Š_Your storyâ€™s appearance on social media has been improved, but your ArcGIS web application item title is not the same as your story title___________________________________________ä.",
+				panel1tooltip: "Š_By defining a title, summary and thumbnail image, your story will look like this_________________________ä:",
+				panel2:	"Š_Which title would you like to use on social media________________ä:",
+				panel2q1: "Š_Story title (recommended)_________ä",
+				panel2q1tooltip: "Š_By choosing this option, your item title will be modified to match your story title and further changes in the builder will be synchronized___________________________________________ä.",
+				panel2q2: "Š_Item title____ä",
+				panel3: "Š_To further improve how your story looks on social media use ${MYSTORIES} to add a summary and a thumbnail image___________________________________ä.",
+				panel4: "Š_Do not warn me again for this story____________ä"
+			},
 			share: {
 				shareTitle: "Jagage oma lugu",
 				preview: "Eelvaade",
-				viewlive: "Kuva reaalajas",
+				viewlive: "Š_View story____ä",
 				btnPrivate: "Privaatne",
 				btnPrivateTooltip: "Lugu on nähtav ainult teile",
 				btnOrg: "Ettevõte",
@@ -74,26 +87,27 @@
 				notavailable2: "Kahjuks ei toeta see Portal for ArcGIS versioon loo jagamist koostaja kaudu (nõutav on versioon 10.4 või uuem).",
 				notavailable3: "Saate seda lugu jagada %LINK% kaudu.",
 				notavailable4: "Minu lood",
-				notavailable5: "selle sisuüksuse leht",
+				notavailable5: "Š_its item page_____ä",
 				notavailable6: "Kahjuks pole antud funktsioon arendusrežiimis täielikult toetatud. Sõltuvalt teie juurutamise stsenaariumist võib see funktsioon pärast juurutamist olla toetatud.",
 				notavailable7: "Külastage kindlasti %MYCONTENT% teie loos olevate kaartide ja kihtide jagamise kinnitamiseks.",
-				notavailable8: "Minu sisu"
+				notavailable8: "Minu sisu",
+				mystoriesinvite2: "Š_To improve how your story looks on social networks use ${MYSTORIES} to add a summary and a thumbnail image_________________________________ä."
 			},
 			settings: {
 				header: "Seaded",
 				tabError: "Palun kontrollige vigu kõigil vahekaartidel"
 			},
 			settingsLayout: {
-				title: "Kujundus",
+				title: "Š_Layout___ä",
 				explain: "Millist paigutust soovite kasutada?",
 				explainInit: "Saate paigutust igal ajal seadete dialoogiakna kaudu muuta.",
 				viewExample: "Kuva reaalajas näide"
 			},
 			settingsTheme: {
-				title: "Teema"
+				title: "Š_Theme___ä"
 			},
 			settingsHeader: {
-				title: "Päis",
+				title: "Š_Header___ä",
 				logoEsri: "Esri logo",
 				logoNone: "Logo puudub",
 				logoCustom: "Valikuline logo",
@@ -105,7 +119,7 @@
 				lblSmallHeader: "Kasuta kompaktset päist (subtiitrita)"
 			},
 			header: {
-				title: "Muuda malli %TPL_NAME% nime",
+				title: "Š_Edit the title of your %TPL_NAME%___________ä",
 				subtitle: "Muuda malli %TPL_NAME% subtiitrit"
 			}
 		}

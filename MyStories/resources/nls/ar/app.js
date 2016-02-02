@@ -41,7 +41,7 @@
 		},
 		cantFindStories: {
 			whereAreStories: "هل ترى الحكاية؟",
-			notSeeExplanation: "تًدرج الحكايات الخرائط المستضافة في ArcGIS Online فقط التي تم إنشائها مع تطبيقات {{STORY_MAP_TOUR}} و {{JOURNAL}} و {{MAP_SERIES}} و {{SWIPE_SPYGLASS}}. راجع الأسئلة المتداولة لمزيد من المعلومات.",
+			notSeeExplanation: "بيت_My Stories will only list story maps hosted in ArcGIS and created with the {{STORY_MAP_TOUR}}, {{JOURNAL}}, {{MAP_SERIES}} or {{SWIPE_SPYGLASS}} applications. See our {{FAQ}} for more information____________________________________________________________لاحقة.",
 			faq: "الأسئلة المتداولة",
 			followingStoriesToUpdate: "تم إنشاء الحكايات التالية مع الإصدارات السابقة للتطبيقات التي تحتاج تحديث ليتم إدراجها في الحكايات:",
 			gettingStories: "البحث عن الحكايات التالية مع الإصدارات السابقة للتطبيقات التي تحتاج التحديث...",
@@ -120,7 +120,7 @@
 			saveFailed: "حدث خطأ في الحفظ",
 			numViews: "عروض: {{NUM_VIEWS}}",
 			editStory: "تحرير الحكاية",
-			viewLive: "عرض مباشر",
+			viewLive: "بيت_View Story____لاحقة",
 			preview: "معاينة",
 			deleteButton: "حذف",
 			modified: "تم تعديل {{DATE}}",
@@ -130,7 +130,7 @@
 			close: "إغلاق",
 			hide: "إخفاء",
 			notAvailableWhenBroken: "تحتوي القصة على المشكلات التالية",
-			cantBeDeleted: "قامت الحكاية الحالية بحذف تمكين الحماية، اعرض صفحة العنصر في ArcGIS Online للتعطيل",
+			cantBeDeleted: "بيت_This story has delete protection enabled. See its item page on ArcGIS to disable_________________________لاحقة.",
 			shareDialog: {
 				title: "مشاركة الحكاية في العالم!",
 				notPublicWarning: "تم مشاركة الحكاية مع المؤسسة. سيكون أعضاء المؤسسة فقط قادرين على عرضه.",
@@ -163,7 +163,7 @@
 				save: "حفظ",
 				saved: "تم الحفظ",
 				errorSaving: "حدث خطأ في الحفظ",
-				tagTip: "ملاحظة: تساعد علامات تبويب الأشخاص للبحث عن حكاية في ArcGIS Online. تعتبر علامات التبويب الأكثر صلة أعلى رؤية سيستلمها العمل."
+				tagTip: "بيت_Tip: Tags help people find your story. The more relevant the tags are, the higher the visibility your work will receive_____________________________________لاحقة."
 			},
 			submitToGallery: {
 				gallerySubmission: "معرض خرائط الحكاية",
@@ -298,7 +298,8 @@
 				subscriptionPublicSuccess: "أصبح الاشتراك المتميز قابل للوصول من الجميع"
 			},
 			errors: {
-				publicDisabled: "قام المسئول بتعطيل المشاركة العامة",
+				publicDisabled: "بيت_Sharing publicly has been disabled by an Administrator_________________لاحقة",
+				orgDisabled: "بيت_Sharing to your organization has been disabled by an Administrator_____________________لاحقة",
 				noMapName: "لا يمكن استعادة اسم الخريطة",
 				notPublic: "خاص",
 				inaccessible: "غير قابل للوصول",
@@ -350,7 +351,9 @@
 			tooltipWarnings: {
 				cantScanThisTypeAlt: "لا يمكننا التحقق من نوع الطبقة الحالي",
 				cantScanThisType: "الطبقة ليست نوع طبقة يمكن التحقق منه",
-				webpageNotScanned: "لم يتم التحقق من صفحات الويب للموضوعات"
+				webpageNotScanned: "لم يتم التحقق من صفحات الويب للموضوعات",
+				ignoredIssue: "بيت_You have ignored an error on this layer. Reload the page and check this story again to review the error________________________________لاحقة",
+				ignoredIssueBuilder: "بيت_You have ignored an error on this layer. Reload the builder to check this error again___________________________لاحقة"
 			},
 			scanningErrors: {
 				deletedMap: "تم حذف المحتوى",
@@ -384,7 +387,6 @@
 				premiumContentTip: "تحتوي الحكاية على محتوى متميز يستهلك {{CREDITS}} لعمله عام. تأكد من ان الحكاية عامة واتابع أو احذف الطبقات من الحكاية.",
 				premiumContentPublicTip: "تحتوي الحكاية على محتوى متميز يستهلك {{CREDITS}} لجعل العام متوفر. تأكد من ان الطبقات عامة واتابع أو احذف الطبقات من الحكاية.",
 				subscriptionContentTip: "تعتبر حكاية محتوى الاشتراك متوفرة تلقائيًا. تأكد من عمل الطبقات عامة (لن يستهلك أية أرصدة)، أو احذف الطبقات من الحكاية.",
-				agolCredits: "أرصدة ArcGIS Online.",
 				credits: "اعتمادات",
 				makePublic: "يصبح عام",
 				confirm: "تأكيد",
@@ -455,6 +457,15 @@
 				secondValueA: "سحب",
 				secondValueB: "العسة المُكبرة",
 				thirdTitle: "خرائط"
+			},
+			crowdsource: {
+				firstTitle: "بيت_contributions_____لاحقة",
+				secondTitle: "بيت_style___لاحقة",
+				secondValueA: "بيت_side panel____لاحقة",
+				secondValueB: "بيت_stacked___لاحقة",
+				thirdTitle: "بيت_basemap___لاحقة",
+				thirdValueLoading: "بيت_Loading____لاحقة...",
+				thirdValueUnknown: "بيت_unknown___لاحقة"
 			}
 		},
 		progress: {
@@ -469,6 +480,11 @@
 			scanProgress: "{{NUM_SCANNED}} من {{NUM_TOTAL}}",
 			scanStopped: "تم مسح الحكايات: {{NUM_SCANNED}}، حكايات ذات مشكلات: {{ISSUE_STORIES}}",
 			storiesWithIssues: "حكايات ذات مشكلات: {{NUM_STORIES}}"
+		},
+		newStories: {
+			newStoriesFound: "بيت_Looks like you have created a new story_____________لاحقة.",
+			includeStories: "بيت_Refresh Stories______لاحقة",
+			notWhileScanning: "بيت_This will be available when the check is complete________________لاحقة"
 		}
     })
 );

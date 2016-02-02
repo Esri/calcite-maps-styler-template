@@ -18,14 +18,17 @@
 				boxTitle: "Se ha producido un error",
 				invalidConfig: "Configuración no válida",
 				invalidConfigNoApp: "No se ha especificado el identificador de la aplicación de representación cartográfica en la red en index.html.",
+				invalidConfigNoAppDev: "á_No Web Mapping Application identifier is specified in URL parameters (?appid=). In development mode, the appid configuration in index.html is ignored______________________________________________Ó.",
 				unspecifiedConfigOwner: "El propietario autorizado no se ha configurado.",
 				invalidConfigOwner: "El propietario de la historia no está autorizado.",
 				createMap: "No se puede crear el mapa",
 				invalidApp: "No se puede acceder a %TPL_NAME% o no existe.",
 				appLoadingFail: "Se ha producido un error, %TPL_NAME% no se cargó correctamente.",
 				notConfiguredDesktop: "La historia no se ha configurado todavía.",
-				notConfiguredMobile: "El builder de %TPL_NAME% no es compatible con este tamaño de pantalla.",
+				notConfiguredMobile: "á_The %TPL_NAME% builder is not supported at this display size. If possible, resize your browser to access the builder or please build your story on a device with a larger screen______________________________________________________Ó.",
+				notConfiguredMobile2: "á_Please rotate your device to landscape orientation to use the %TPL_NAME% builder_________________________Ó.",
 				notAuthorized: "No tienes autorización para acceder a esta historia",
+				notAuthorizedBuilder: "á_You are not authorized to use %TPL_NAME% builder________________Ó.",
 				noBuilderIE: "El builder no es compatible con versiones de Internet Explorer anteriores a la %VERSION%. %UPGRADE%",
 				noViewerIE: "Esta historia no es compatible con versiones de Internet Explorer anteriores a la %VERSION%. %UPGRADE%",
 				upgradeBrowser: "<a href='http://browsehappy.com/' target='_blank'>Actualiza tu navegador</a>.",
@@ -54,7 +57,9 @@
 				share: "Compartir",
 				checking: "Comprobando el contenido de tu historia",
 				fix: "Soluciona los problemas de tu historia",
-				noerrors: "No se ha detectado ningún problema"
+				noerrors: "No se ha detectado ningún problema",
+				tooltipAutoplayDisabled: "á_This isn't available in autoplay mode____________Ó",
+				notshared: "á_Story not shared______Ó"
 			},
 			overviewFromCommon: {
 				title: "Mapa de vista general"
@@ -68,7 +73,11 @@
 				open: "Abrir",
 				embed: "Integrar en página web",
 				embedExplain: "Usa el siguiente código HTML para integrar la historia en una página web.",
-				size: "Tamaño (ancho/alto):"
+				size: "Tamaño (ancho/alto):",
+				autoplayLabel: "á_Autoplay mode_____Ó",
+				autoplayExplain1: "á_Autoplay mode will advance through your story at a regular interval. This is ideal on a kiosk or public display monitor, but be aware that in other situations it may make the story harder to read. This feature isn't supported on small displays__________________________________________________________________________Ó.",
+				autoplayExplain2: "á_When this mode is active there are controls to play/pause the story and adjust the navigation speed_______________________________Ó.",
+				linksupdated: "á_Links updated_____Ó!"
 			},
 			locatorFromCommon: {
 				error: "Ubicación no disponible"

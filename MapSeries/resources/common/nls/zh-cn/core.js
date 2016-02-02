@@ -18,7 +18,8 @@
 				height: "高度",
 				create: "创建",
 				yes: "是",
-				no: "否"
+				no: "否",
+				mystories: "试_My Stories____验"
 			},
 			inlineFieldEdit: {
 				editMe: "编辑!"
@@ -30,9 +31,10 @@
 				buttonShare: "共享",
 				buttonSettings: "设置",
 				buttonHelp: "帮助",
-				buttonPreview: "实时查看",
+				buttonPreview: "试_View story____验",
 				tooltipFirstSave: "保存后，此功能才可用。",
 				tooltipNotShared: "共享后，此功能才可用。",
+				tooltipNotShared2: "试_Your story isn't shared, only you can access it_______________验.",
 				noPendingChange: "无待决的更改",
 				unSavedChangePlural: "待决更改",
 				closeWithPendingChange: "是否确定要确认此操作？您的更改将丢失。",
@@ -52,10 +54,21 @@
 				err1Div2: "请修改故事的标题，然后将其保存。",
 				btnOk: "编辑故事标题"
 			},
+			saveErrorSocial: {
+				title: "试_Social media sharing update_________验",
+				panel1: "试_Your storyâ€™s appearance on social media has been improved, but your ArcGIS web application item title is not the same as your story title___________________________________________验.",
+				panel1tooltip: "试_By defining a title, summary and thumbnail image, your story will look like this_________________________验:",
+				panel2:	"试_Which title would you like to use on social media________________验:",
+				panel2q1: "试_Story title (recommended)_________验",
+				panel2q1tooltip: "试_By choosing this option, your item title will be modified to match your story title and further changes in the builder will be synchronized___________________________________________验.",
+				panel2q2: "试_Item title____验",
+				panel3: "试_To further improve how your story looks on social media use ${MYSTORIES} to add a summary and a thumbnail image___________________________________验.",
+				panel4: "试_Do not warn me again for this story____________验"
+			},
 			share: {
 				shareTitle: "共享您的故事",
 				preview: "预览",
-				viewlive: "实时查看",
+				viewlive: "试_View story____验",
 				btnPrivate: "私有",
 				btnPrivateTooltip: "仅限您个人可查看故事",
 				btnOrg: "组织",
@@ -74,26 +87,27 @@
 				notavailable2: "抱歉，此版本的 Portal for ArcGIS 不支持从“构建器”共享您的故事(需要 10.4 或更高版本)。",
 				notavailable3: "您可从 %LINK% 共享此故事。",
 				notavailable4: "我的故事",
-				notavailable5: "此为项页面",
+				notavailable5: "试_its item page_____验",
 				notavailable6: "抱歉，在开发模式下无法完全支持此要素。根据您的部署方案，此要素在部署后可能被支持。",
 				notavailable7: "请务必访问 %MYCONTENT%，以确认在您的故事中使用的地图和图层同样被共享。",
-				notavailable8: "我的内容"
+				notavailable8: "我的内容",
+				mystoriesinvite2: "试_To improve how your story looks on social networks use ${MYSTORIES} to add a summary and a thumbnail image_________________________________验."
 			},
 			settings: {
 				header: "设置",
 				tabError: "请检查所有选项卡中的错误"
 			},
 			settingsLayout: {
-				title: "布局",
+				title: "试_Layout___验",
 				explain: "想要使用哪种布局？",
 				explainInit: "可随时在设置对话框中更改布局。",
 				viewExample: "查看实时示例"
 			},
 			settingsTheme: {
-				title: "专题"
+				title: "试_Theme___验"
 			},
 			settingsHeader: {
-				title: "标题",
+				title: "试_Header___验",
 				logoEsri: "Esri 徽标",
 				logoNone: "无徽标",
 				logoCustom: "自定义徽标",
@@ -105,7 +119,7 @@
 				lblSmallHeader: "使用紧凑型标题(无副标题)"
 			},
 			header: {
-				title: "编辑 %TPL_NAME% 的标题",
+				title: "试_Edit the title of your %TPL_NAME%___________验",
 				subtitle: "编辑 %TPL_NAME% 的副标题"
 			}
 		}

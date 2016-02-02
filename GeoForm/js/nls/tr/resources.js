@@ -110,7 +110,7 @@
       mapFullScreen: "Tam Ekran",
       mapRestore: "Geri Yükle",
       filterSelectEmptyText: "Seç",
-      invalidLayerMessage: "Form katmanı mevcut değil. Uygulamayı yapılandırın ve katmanı ayarlayın.",
+      invalidLayerMessage: "ı_A valid layer to create the GeoForm was not found. If the GeoForm has been configured with a layer, the layer may no longer be available, or authorization failed__________________________________________________İ.",
       selectedLayerText: "Tümü",
       fileUploadStatus: "Dosya Yükleme Durumu",
       uploadingBadge: "&nbsp;Yükleniyor&hellip;",
@@ -149,6 +149,10 @@
       previewText: "Önizleme",
       publishText: "Yayınla",
       optionsApplicationText: "Seçenekler",
+      submitButtonText: "ı_Submit Button Text (Optional)__________İ",
+      submitButtonDesc: "ı_Optionally label the button to submit a new entry. This text will not be translated__________________________İ.",
+      viewSubmissionsText: "ı_View Submissions Text (Optional)___________İ",
+      viewSubmissionsDesc: "ı_Optionally label the button to view existing entries. This text will not be translated___________________________İ.",
       titleText: "Oluşturucu",
       descriptionText: "GeoForm, ${link1}Detay Hizmeti${closeLink} içindeki form tabanlı verilerin düzenlenmesi için kullanılan yapılandırılabilir bir şablondur. Bu uygulama kullanıcıların ${link2}Web Haritası${closeLink} ve düzenlenebilir Detay Servislerini kullanırken veri girişini haritanın açılır penceresi yerine bir form üzerinden yapmasına olanak tanır. GeoForm öğenizi özelleştirmek ve dağıtmak için aşağıdaki adımları uygulayın.",
       btnPreviousText: "Önceki",
@@ -258,7 +262,6 @@
       sortHeaderText: "Sıralama Ölçütü:",
       geocoderPlaceholderText: "Posta Kodu, şehir vb.",
       noSearchResult: "Hiçbir sonuç bulunamadı",
-      recordsTabTooltip: "Gönderimleri Görüntüle",
       legendTabTooltip: "Gösterim",
       aboutUsTabTooltip: "Hakkımızda",
       mapTabTooltip: "Harita",
@@ -273,7 +276,6 @@
       viewReportsTabText: "Raporlar",
       viewLegendTabText: "Gösterim",
       viewAboutusTabText: "Hakkında",
-      btnSubmitReportText: "Rapor Gönder",
       appLoadingFailedMessage: "Görüntüleyici yükleme hatası oluştu"
     }
   })

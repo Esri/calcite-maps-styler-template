@@ -41,7 +41,7 @@
 		},
 		cantFindStories: {
 			whereAreStories: "Vai neredzat savu stāstu?",
-			notSeeExplanation: "Sadaļā Mani stāsti tiks parādīti tikai tie karšu stāsti, kas ir izvietoti ArcGIS Online un izveidoti lietotnē {{STORY_MAP_TOUR}}, {{JOURNAL}}, {{MAP_SERIES}} un {{SWIPE_SPYGLASS}}. Detalizētu informāciju skatiet sadaļā {{FAQ}}.",
+			notSeeExplanation: "ķ_My Stories will only list story maps hosted in ArcGIS and created with the {{STORY_MAP_TOUR}}, {{JOURNAL}}, {{MAP_SERIES}} or {{SWIPE_SPYGLASS}} applications. See our {{FAQ}} for more information____________________________________________________________ū.",
 			faq: "Biežāk uzdotie jautājumi",
 			followingStoriesToUpdate: "Lai tālāk minētos stāstus, kas izveidoti mūsu lietotņu iepriekšējās versijās, varētu parādīt sadaļā Mani stāsti, tie ir jāatjaunina:",
 			gettingStories: "Meklē stāstus, kas izveidoti mūsu lietotņu iepriekšējās versijās un ir jāatjaunina...",
@@ -120,7 +120,7 @@
 			saveFailed: "Saglabāšanas kļūda",
 			numViews: "Skati: {{NUM_VIEWS}}",
 			editStory: "Rediģēt stāstu",
-			viewLive: "Skatīt tiešraidē",
+			viewLive: "ķ_View Story____ū",
 			preview: "Priekšskatījums",
 			deleteButton: "Dzēst",
 			modified: "Mainīts {{DATE}}",
@@ -130,7 +130,7 @@
 			close: "aizvērt",
 			hide: "paslēpt",
 			notAvailableWhenBroken: "Jūsu stāstā ir tālāk minētās problēmas",
-			cantBeDeleted: "Šajā stāstā ir iespējota aizsardzība pret dzēšanu; kā to atspējot, skatiet ArcGIS Online vienības lapā",
+			cantBeDeleted: "ķ_This story has delete protection enabled. See its item page on ArcGIS to disable_________________________ū.",
 			shareDialog: {
 				title: "Koplietojiet savu stāstu ar citiem!",
 				notPublicWarning: "Stāsts ir koplietots ar jūsu organizāciju. To varēs skatīt tikai jūsu organizācijas dalībnieki.",
@@ -163,7 +163,7 @@
 				save: "Saglabāt",
 				saved: "Saglabāts",
 				errorSaving: "Kļūda saglabājot",
-				tagTip: "Padoms. Birkas tiek izmantotas, lai varētu atrast jūsu stāstu ArcGIS Online. Jo precīzākas birkas izmantojat, jo pamanāmāks ir jūsu darbs."
+				tagTip: "ķ_Tip: Tags help people find your story. The more relevant the tags are, the higher the visibility your work will receive_____________________________________ū."
 			},
 			submitToGallery: {
 				gallerySubmission: "Karšu stāstu galerija",
@@ -298,7 +298,8 @@
 				subscriptionPublicSuccess: "Jūsu abonementa saturs tagad ir pieejams publiski"
 			},
 			errors: {
-				publicDisabled: "Administrators ir atspējojis publisku koplietošanu",
+				publicDisabled: "ķ_Sharing publicly has been disabled by an Administrator_________________ū",
+				orgDisabled: "ķ_Sharing to your organization has been disabled by an Administrator_____________________ū",
 				noMapName: "Neizdevās atgūt kartes nosaukumu",
 				notPublic: "NAV PUBLISKS",
 				inaccessible: "NEPIEEJAMS",
@@ -350,7 +351,9 @@
 			tooltipWarnings: {
 				cantScanThisTypeAlt: "Nevar pārbaudīt šāda tipa slāni",
 				cantScanThisType: "Šis nav tāda tipa slānis, ko varētu pārbaudīt",
-				webpageNotScanned: "Tīmekļa lapas netiek pārbaudītas, meklējot problēmas"
+				webpageNotScanned: "Tīmekļa lapas netiek pārbaudītas, meklējot problēmas",
+				ignoredIssue: "ķ_You have ignored an error on this layer. Reload the page and check this story again to review the error________________________________ū",
+				ignoredIssueBuilder: "ķ_You have ignored an error on this layer. Reload the builder to check this error again___________________________ū"
 			},
 			scanningErrors: {
 				deletedMap: "Izdzēsts saturs",
@@ -384,7 +387,6 @@
 				premiumContentTip: "Jūsu stāstā ir augstākā līmeņa saturs, un pēc tā publiskošanas tiks patērēti {{CREDITS}}. Padariet savu stāstu publisku un turpiniet vai noņemiet no sava stāsta slāņus.",
 				premiumContentPublicTip: "Jūsu stāstā ir augstākā līmeņa saturs, un pēc tā publiskošanas tiks patērēti {{CREDITS}}. Apstipriniet, ka piekrītat padarīt šos slāņus publiskus, vai noņemiet slāņus no sava stāsta.",
 				subscriptionContentTip: "Jūsu stāstā ir abonementa saturs, kas pēc noklusējuma nav publiski pieejams. Apstipriniet, ka piekrītat padarīt šos slāņus pieejamus (kredītpunkti netiks patērēti), vai noņemiet slāņus no sava stāsta.",
-				agolCredits: "ArcGIS Online kredītpunkti",
 				credits: "kredītpunkti",
 				makePublic: "Padarīt publisku",
 				confirm: "Apstiprināt",
@@ -455,6 +457,15 @@
 				secondValueA: "pārvilkt",
 				secondValueB: "tālskatis",
 				thirdTitle: "kartes"
+			},
+			crowdsource: {
+				firstTitle: "ķ_contributions_____ū",
+				secondTitle: "ķ_style___ū",
+				secondValueA: "ķ_side panel____ū",
+				secondValueB: "ķ_stacked___ū",
+				thirdTitle: "ķ_basemap___ū",
+				thirdValueLoading: "ķ_Loading____ū...",
+				thirdValueUnknown: "ķ_unknown___ū"
 			}
 		},
 		progress: {
@@ -469,6 +480,11 @@
 			scanProgress: "{{NUM_SCANNED}} no {{NUM_TOTAL}}",
 			scanStopped: "Pārbaudītie stāsti: {{NUM_SCANNED}}; stāsti ar problēmām: {{ISSUE_STORIES}}",
 			storiesWithIssues: "Stāsti ar problēmām: {{NUM_STORIES}}"
+		},
+		newStories: {
+			newStoriesFound: "ķ_Looks like you have created a new story_____________ū.",
+			includeStories: "ķ_Refresh Stories______ū",
+			notWhileScanning: "ķ_This will be available when the check is complete________________ū"
 		}
     })
 );

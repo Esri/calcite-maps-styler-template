@@ -41,7 +41,7 @@
 		},
 		cantFindStories: {
 			whereAreStories: "Votre récit n\'apparaît pas ?",
-			notSeeExplanation: "Mes récits répertorie uniquement les Story Maps hébergées dans ArcGIS Online et créées avec les applications {{STORY_MAP_TOUR}}, {{JOURNAL}}, {{MAP_SERIES}} et {{SWIPE_SPYGLASS}}. Consultez notre {{FAQ}} pour plus d\'informations.",
+			notSeeExplanation: "æ_My Stories will only list story maps hosted in ArcGIS and created with the {{STORY_MAP_TOUR}}, {{JOURNAL}}, {{MAP_SERIES}} or {{SWIPE_SPYGLASS}} applications. See our {{FAQ}} for more information____________________________________________________________Â.",
 			faq: "FAQ",
 			followingStoriesToUpdate: "Les récits suivants, créés avec des versions antérieures de nos applications, doivent être mis à jour pour être répertoriés dans Mes récits cartographiques :",
 			gettingStories: "Recherche de récits créés avec des versions antérieures de nos applications qui doivent être mis à jour...",
@@ -120,7 +120,7 @@
 			saveFailed: "Erreur lors de l’enregistrement",
 			numViews: "Vues : {{NUM_VIEWS}}",
 			editStory: "Mettre à jour le récit",
-			viewLive: "Voir en direct",
+			viewLive: "æ_View Story____Â",
 			preview: "Aperçu",
 			deleteButton: "Supprimer",
 			modified: "Modifié {{DATE}}",
@@ -130,7 +130,7 @@
 			close: "fermer",
 			hide: "masquer",
 			notAvailableWhenBroken: "Votre récit présente les erreurs suivantes",
-			cantBeDeleted: "Ce récit est protégé contre les suppressions. Consultez sa page des éléments sur ArcGIS Online pour désactiver cette protection",
+			cantBeDeleted: "æ_This story has delete protection enabled. See its item page on ArcGIS to disable_________________________Â.",
 			shareDialog: {
 				title: "Partagez votre récit avec le monde entier !",
 				notPublicWarning: "Votre récit est partagé avec votre organisation. Seuls les membres de votre organisation pourront le consulter.",
@@ -163,7 +163,7 @@
 				save: "Enregistrer",
 				saved: "Enregistré",
 				errorSaving: "Erreur lors de l’enregistrement",
-				tagTip: "Astuce : les balises permettent de retrouver votre récit sur ArcGIS Online. Plus les balises sont pertinentes, plus votre travail sera susceptible d\'être consulté."
+				tagTip: "æ_Tip: Tags help people find your story. The more relevant the tags are, the higher the visibility your work will receive_____________________________________Â."
 			},
 			submitToGallery: {
 				gallerySubmission: "Bibliothèque de Story Maps",
@@ -298,7 +298,8 @@
 				subscriptionPublicSuccess: "Les contenus liés à votre abonnement sont maintenant accessibles au public."
 			},
 			errors: {
-				publicDisabled: "Le partage public a été désactivé par l\'administrateur",
+				publicDisabled: "æ_Sharing publicly has been disabled by an Administrator_________________Â",
+				orgDisabled: "æ_Sharing to your organization has been disabled by an Administrator_____________________Â",
 				noMapName: "Impossible de récupérer le nom de la carte",
 				notPublic: "NON PUBLIC",
 				inaccessible: "INACCESSIBLE",
@@ -350,7 +351,9 @@
 			tooltipWarnings: {
 				cantScanThisTypeAlt: "Nous ne sommes pas en mesure de vérifier ce type de couche",
 				cantScanThisType: "Nous ne pouvons pas vérifier le type de la couche",
-				webpageNotScanned: "La recherche d\'erreurs n\'a pas lieu sur les pages Web"
+				webpageNotScanned: "La recherche d\'erreurs n\'a pas lieu sur les pages Web",
+				ignoredIssue: "æ_You have ignored an error on this layer. Reload the page and check this story again to review the error________________________________Â",
+				ignoredIssueBuilder: "æ_You have ignored an error on this layer. Reload the builder to check this error again___________________________Â"
 			},
 			scanningErrors: {
 				deletedMap: "Contenu supprimé",
@@ -384,7 +387,6 @@
 				premiumContentTip: "Votre récit contient des contenus premium qui utiliseront des {{CREDITS}} lorsqu\'il sera mis à la disposition du public. Mettez votre récit à la disposition du public et continuez, ou supprimez les couches de votre récit.",
 				premiumContentPublicTip: "Votre récit contient des contenus premium qui utiliseront des {{CREDITS}} lorsqu\'il sera accessible publiquement. Confirmez votre souhait de rendre ces couches publiques ou supprimez-les de votre récit.",
 				subscriptionContentTip: "Votre récit contient des contenus liés à l\'abonnement qui ne sont pas accessibles au public par défaut. Confirmez que vous souhaitez rendre ces couches disponibles (aucun crédit ne sera utilisé) ou supprimez-les de votre récit.",
-				agolCredits: "Crédits ArcGIS Online",
 				credits: "crédits",
 				makePublic: "Rendre public",
 				confirm: "Confirmer",
@@ -455,6 +457,15 @@
 				secondValueA: "balayage",
 				secondValueB: "longue-vue",
 				thirdTitle: "cartes"
+			},
+			crowdsource: {
+				firstTitle: "æ_contributions_____Â",
+				secondTitle: "æ_style___Â",
+				secondValueA: "æ_side panel____Â",
+				secondValueB: "æ_stacked___Â",
+				thirdTitle: "æ_basemap___Â",
+				thirdValueLoading: "æ_Loading____Â...",
+				thirdValueUnknown: "æ_unknown___Â"
 			}
 		},
 		progress: {
@@ -469,6 +480,11 @@
 			scanProgress: "{{NUM_SCANNED}} sur {{NUM_TOTAL}}",
 			scanStopped: "Récits cartographiques analysés : {{NUM_SCANNED}}, Récits cartographiques présentant des erreurs : {{ISSUE_STORIES}}",
 			storiesWithIssues: "Récits cartographiques présentant des erreurs : {{NUM_STORIES}}"
+		},
+		newStories: {
+			newStoriesFound: "æ_Looks like you have created a new story_____________Â.",
+			includeStories: "æ_Refresh Stories______Â",
+			notWhileScanning: "æ_This will be available when the check is complete________________Â"
 		}
     })
 );

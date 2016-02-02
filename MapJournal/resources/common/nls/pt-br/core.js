@@ -18,7 +18,8 @@
 				height: "Altura",
 				create: "Criar",
 				yes: "Sim",
-				no: "Não"
+				no: "Não",
+				mystories: "ã_My Stories____Ç"
 			},
 			inlineFieldEdit: {
 				editMe: "Editar-me!"
@@ -30,9 +31,10 @@
 				buttonShare: "Compartilhar",
 				buttonSettings: "Configurações",
 				buttonHelp: "Ajuda",
-				buttonPreview: "Visualizar em Tempo Real",
+				buttonPreview: "ã_View story____Ç",
 				tooltipFirstSave: "Isto não está disponível até que seja salvo.",
 				tooltipNotShared: "Isto não está disponível até que seja compartilhado",
+				tooltipNotShared2: "ã_Your story isn't shared, only you can access it_______________Ç.",
 				noPendingChange: "Nenhuma alteração pendente",
 				unSavedChangePlural: "Alterações pendentes",
 				closeWithPendingChange: "Você tem certeza que deseja confirmar esta ação? Suas alterações serão perdidas.",
@@ -52,10 +54,21 @@
 				err1Div2: "Modifique o título da sua história e então salve-a.",
 				btnOk: "Edite o título da história"
 			},
+			saveErrorSocial: {
+				title: "ã_Social media sharing update_________Ç",
+				panel1: "ã_Your storyâ€™s appearance on social media has been improved, but your ArcGIS web application item title is not the same as your story title___________________________________________Ç.",
+				panel1tooltip: "ã_By defining a title, summary and thumbnail image, your story will look like this_________________________Ç:",
+				panel2:	"ã_Which title would you like to use on social media________________Ç:",
+				panel2q1: "ã_Story title (recommended)_________Ç",
+				panel2q1tooltip: "ã_By choosing this option, your item title will be modified to match your story title and further changes in the builder will be synchronized___________________________________________Ç.",
+				panel2q2: "ã_Item title____Ç",
+				panel3: "ã_To further improve how your story looks on social media use ${MYSTORIES} to add a summary and a thumbnail image___________________________________Ç.",
+				panel4: "ã_Do not warn me again for this story____________Ç"
+			},
 			share: {
 				shareTitle: "Compartilhe sua história",
 				preview: "Visualizar",
-				viewlive: "Visualizar em Tempo Real",
+				viewlive: "ã_View story____Ç",
 				btnPrivate: "Privado",
 				btnPrivateTooltip: "Somente você pode visualizar a história",
 				btnOrg: "Organização",
@@ -74,26 +87,27 @@
 				notavailable2: "Desculpe, o compartilhamento da sua história a partir do Construtor não é suportado nesta versão do Portal for ArcGIS (exige 10.4 ou superior).",
 				notavailable3: "Você pode compartilhar esta história do %LINK%.",
 				notavailable4: "Minhas Histórias",
-				notavailable5: "é a página do item",
+				notavailable5: "ã_its item page_____Ç",
 				notavailable6: "Desculpe, este recurso não é completamente suportado em modo de desenvolvimento. Dependendo do seu cenário de implantação, este recurso pode ser suportado quando implantado.",
 				notavailable7: "Tenha certeza de visitar o %MYCONTENT% para confirmar que os mapas e camadas utilizadas na sua história também estão compartilhadas.",
-				notavailable8: "Meu Conteúdo"
+				notavailable8: "Meu Conteúdo",
+				mystoriesinvite2: "ã_To improve how your story looks on social networks use ${MYSTORIES} to add a summary and a thumbnail image_________________________________Ç."
 			},
 			settings: {
 				header: "Configurações",
 				tabError: "Verifique todas as guias por erros"
 			},
 			settingsLayout: {
-				title: "Layout",
+				title: "ã_Layout___Ç",
 				explain: "Qual layout você deseja utilizar?",
 				explainInit: "Você pode alterar o layout a qualquer momento no diálogo de configurações.",
 				viewExample: "Visualizar um exemplo ao vivo"
 			},
 			settingsTheme: {
-				title: "Tema"
+				title: "ã_Theme___Ç"
 			},
 			settingsHeader: {
-				title: "Cabeçalho",
+				title: "ã_Header___Ç",
 				logoEsri: "Logo da Esri",
 				logoNone: "Nenhum logo",
 				logoCustom: "Logo personalizado",
@@ -105,7 +119,7 @@
 				lblSmallHeader: "Utilizar cabeçalho compacto (sem subtítulo)"
 			},
 			header: {
-				title: "Edite o título do seu %TPL_NAME%",
+				title: "ã_Edit the title of your %TPL_NAME%___________Ç",
 				subtitle: "Edite o subtítulo do seu %TPL_NAME%"
 			}
 		}

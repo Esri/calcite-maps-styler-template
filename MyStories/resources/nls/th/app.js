@@ -41,7 +41,7 @@
 		},
 		cantFindStories: {
 			whereAreStories: "ไม่สามารถแสดงผลเรื่องราวของคุณ?",
-			notSeeExplanation: "เรื่องราวของฉัน จะแสดงในรายการแผนที่เรื่องราวใน ArcGIS Online สร้างด้วย {{แผนที่เรื่องราว }} , {{วารสาร}} , {{แผนที่เรื่องราว}} , และ {{SWIPE_SPYGLASS}} ดูใน {{คำถามที่พบบ่อย }} สำหรับรายละเอียดเพิ่มเติม",
+			notSeeExplanation: "ก้_My Stories will only list story maps hosted in ArcGIS and created with the {{STORY_MAP_TOUR}}, {{JOURNAL}}, {{MAP_SERIES}} or {{SWIPE_SPYGLASS}} applications. See our {{FAQ}} for more information____________________________________________________________ษฺ.",
 			faq: "คำถามที่พบบ่อย",
 			followingStoriesToUpdate: "เรื่องราวด้านล่างนี้ ถูกสร้างขึ้นด้วยเวอชั่นก่อนหน้าของโปรแกรม ซึ่งต้องอัพเดทก่อนที่แสดงรายการในเรื่องราวของฉัน",
 			gettingStories: "กำลังค้นหาเรื่องราวที่ถูกสร้างขึ้นด้วยเวอร์ชั่นก่อนหน้าของโปรแกรม ซึ่งต้องการการอัพเดท",
@@ -120,7 +120,7 @@
 			saveFailed: "ป้องกันการผิดพลาด",
 			numViews: "การเข้าชม {{จำนวนการเข้าชม }}",
 			editStory: "แก้ไขเรื่อง",
-			viewLive: "ดูถ่ายทอดสด",
+			viewLive: "ก้_View Story____ษฺ",
 			preview: "แสดงตัวอย่าง",
 			deleteButton: "ลบ",
 			modified: "ดัดแปลง",
@@ -130,7 +130,7 @@
 			close: "ปิด",
 			hide: "ซ่อน",
 			notAvailableWhenBroken: "เรื่องของคุณพบปัญหาดังนี้",
-			cantBeDeleted: "เรื่องนี้ได้มีการเปิดใช้งานการลบการป้องกัน ดูได้จากหน้าต่าง Item บน ArcGIS Online เพื่อปิดการใช้งาน",
+			cantBeDeleted: "ก้_This story has delete protection enabled. See its item page on ArcGIS to disable_________________________ษฺ.",
 			shareDialog: {
 				title: "แบ่งปันเรื่องราวของคุณกับโลก",
 				notPublicWarning: "เรื่องราวของคุณถูกแบ่งปันภายในองค์กร เฉพาะสมาชิกเท่านั้นที่สามารถเรียกดูได้",
@@ -163,7 +163,7 @@
 				save: "บันทึก",
 				saved: "บันทึก",
 				errorSaving: "ป้องกันการผิดพลาด",
-				tagTip: "เคล็ดลับ : แท็ก ช่วยคุณค้นหาเรื่องราวบน ArcGIS Online tags ที่เกี่ยวข้อง จะทำให้คุณได้รับค่าที่ใกล้เคียงมากขึ้น"
+				tagTip: "ก้_Tip: Tags help people find your story. The more relevant the tags are, the higher the visibility your work will receive_____________________________________ษฺ."
 			},
 			submitToGallery: {
 				gallerySubmission: "แกลอรี่แผนที่เรื่องราว",
@@ -298,7 +298,8 @@
 				subscriptionPublicSuccess: "เนื้อหาการสมัครของคุณคือขณะนี้ที่สาธารณชนสามารถเข้าถึง"
 			},
 			errors: {
-				publicDisabled: "การแบ่งปันสู่สาธารณะได้ถูกปิดโดยผู้ดูแลระบบ",
+				publicDisabled: "ก้_Sharing publicly has been disabled by an Administrator_________________ษฺ",
+				orgDisabled: "ก้_Sharing to your organization has been disabled by an Administrator_____________________ษฺ",
 				noMapName: "ไม่สามารถเรียกชื่อแผนที่",
 				notPublic: "ไม่แบ่งปันสู่สาธารณะ",
 				inaccessible: "ไม่สามารถเข้าถึง",
@@ -350,7 +351,9 @@
 			tooltipWarnings: {
 				cantScanThisTypeAlt: "เราไม่สามารถตรวจสอบประเภทของชั้นข้อมูล",
 				cantScanThisType: "ชั้นข้อมูลไม่ใช่ประเภทที่เราสามารถตรวจสอบได้",
-				webpageNotScanned: "เวปเพจไม่สามารถตรวจสอบปัญหาได้"
+				webpageNotScanned: "เวปเพจไม่สามารถตรวจสอบปัญหาได้",
+				ignoredIssue: "ก้_You have ignored an error on this layer. Reload the page and check this story again to review the error________________________________ษฺ",
+				ignoredIssueBuilder: "ก้_You have ignored an error on this layer. Reload the builder to check this error again___________________________ษฺ"
 			},
 			scanningErrors: {
 				deletedMap: "ลบเนื้อหา",
@@ -384,7 +387,6 @@
 				premiumContentTip: "เรื่องราวของคุณมีเนื้อหาพรีเมียมที่ทำให้สิ้นเปลือง {{เครดิต}} เมื่อทำให้เป็นสาธารณะ ทำเรื่องราวให้เป็นสาธารณะและดำเนินการต่อ หรือลบชั้นข้อมูลจากเรื่องราวของคุณ",
 				premiumContentPublicTip: "เรื่องราวของคุณมีเนื้อหาพรีเมียมที่ทำให้สิ้นเปลือง {{เครดิต}} เมื่อเปิดเผยต่อสาธารณะ ยืนยันที่จะตั้งค่าชั้นข้อมูลสู่สาธารณะ หรือลบชั้นข้อมูลออกจากเรื่องราว",
 				subscriptionContentTip: "เรื่องราวของคุณมีเนื้อหาสมัครมาชิก ที่ไม่สามารถเปิดเผยต่อสาธารณะด้วยค่าเริ่มต้น ยืนยันว่าคุณต้องการให้ชั้นข้อมูลถูกเปิดเผยได้ (เครดิตจะไม่ถูกตัดออกไป) หรือลบชั้นข้อมูลออกจากเรื่องราว",
-				agolCredits: "เครดิต ArcGIS Online",
 				credits: "เครดิต",
 				makePublic: "ทำให้เป็นสาธารณะ",
 				confirm: "ยืนยัน",
@@ -455,6 +457,15 @@
 				secondValueA: "เลื่อน",
 				secondValueB: "กล้องส่องทางไกล",
 				thirdTitle: "maps"
+			},
+			crowdsource: {
+				firstTitle: "ก้_contributions_____ษฺ",
+				secondTitle: "ก้_style___ษฺ",
+				secondValueA: "ก้_side panel____ษฺ",
+				secondValueB: "ก้_stacked___ษฺ",
+				thirdTitle: "ก้_basemap___ษฺ",
+				thirdValueLoading: "ก้_Loading____ษฺ...",
+				thirdValueUnknown: "ก้_unknown___ษฺ"
 			}
 		},
 		progress: {
@@ -469,6 +480,11 @@
 			scanProgress: "{{ตัวเลขสแกน}} ของ {{ตัวเลขทั้งหมด}}",
 			scanStopped: "เหตุการณ์ที่สแกน {{ตัวเลขสแกน}} เหตุการณ์ที่พบปัญหา {{ปัญหาของเหตุการณ์}}",
 			storiesWithIssues: "เหตุการณ์ที่พบปัญหา {{ตัวเลขของเหตุการณ์}}"
+		},
+		newStories: {
+			newStoriesFound: "ก้_Looks like you have created a new story_____________ษฺ.",
+			includeStories: "ก้_Refresh Stories______ษฺ",
+			notWhileScanning: "ก้_This will be available when the check is complete________________ษฺ"
 		}
     })
 );

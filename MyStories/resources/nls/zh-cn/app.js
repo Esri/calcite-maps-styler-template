@@ -41,7 +41,7 @@
 		},
 		cantFindStories: {
 			whereAreStories: "无法查看您的故事？",
-			notSeeExplanation: "“我的故事”将仅会列出托管在 ArcGIS Online 主机上，并由 {{STORY_MAP_TOUR}}、{{JOURNAL}}、{{MAP_SERIES}} 以及 {{SWIPE_SPYGLASS}} 应用程序创建的故事地图。有关详细信息，请参阅我们的 {{FAQ}}。",
+			notSeeExplanation: "试_My Stories will only list story maps hosted in ArcGIS and created with the {{STORY_MAP_TOUR}}, {{JOURNAL}}, {{MAP_SERIES}} or {{SWIPE_SPYGLASS}} applications. See our {{FAQ}} for more information____________________________________________________________验.",
 			faq: "FAQ",
 			followingStoriesToUpdate: "以下使用早期版本应用程序创建的故事需要在更新后才能在“我的故事”中列出:",
 			gettingStories: "搜索使用需要进行更新的早期版本应用程序创建的故事...",
@@ -120,7 +120,7 @@
 			saveFailed: "保存时出错",
 			numViews: "查看: {{NUM_VIEWS}}",
 			editStory: "编辑故事",
-			viewLive: "实时查看",
+			viewLive: "试_View Story____验",
 			preview: "预览",
 			deleteButton: "删除",
 			modified: "修改 {{DATE}}",
@@ -130,7 +130,7 @@
 			close: "关闭",
 			hide: "隐藏",
 			notAvailableWhenBroken: "您的故事存在下列问题",
-			cantBeDeleted: "此故事已启用删除保护，请在 ArcGIS Online 中查看其项目页面以禁用保护",
+			cantBeDeleted: "试_This story has delete protection enabled. See its item page on ArcGIS to disable_________________________验.",
 			shareDialog: {
 				title: "与世界共享故事！",
 				notPublicWarning: "您的故事会在您的组织内共享。只有您的组织成员能够查看您的故事。",
@@ -163,7 +163,7 @@
 				save: "保存",
 				saved: "已保存",
 				errorSaving: "保存时出错",
-				tagTip: "提示: 标签可帮助人们在 ArcGIS Online 上找到您的故事。标签的相关性越强，您的工作得到的可见度越高。"
+				tagTip: "试_Tip: Tags help people find your story. The more relevant the tags are, the higher the visibility your work will receive_____________________________________验."
 			},
 			submitToGallery: {
 				gallerySubmission: "Story Maps 图库",
@@ -298,7 +298,8 @@
 				subscriptionPublicSuccess: "您的订阅内容现在可公开访问"
 			},
 			errors: {
-				publicDisabled: "管理员已禁用公开共享",
+				publicDisabled: "试_Sharing publicly has been disabled by an Administrator_________________验",
+				orgDisabled: "试_Sharing to your organization has been disabled by an Administrator_____________________验",
 				noMapName: "无法检索地图名称",
 				notPublic: "未公开",
 				inaccessible: "无法访问",
@@ -350,7 +351,9 @@
 			tooltipWarnings: {
 				cantScanThisTypeAlt: "无法检查此类图层",
 				cantScanThisType: "图层是我们无法查看的图层类型",
-				webpageNotScanned: "未检查网页是否存在问题"
+				webpageNotScanned: "未检查网页是否存在问题",
+				ignoredIssue: "试_You have ignored an error on this layer. Reload the page and check this story again to review the error________________________________验",
+				ignoredIssueBuilder: "试_You have ignored an error on this layer. Reload the builder to check this error again___________________________验"
 			},
 			scanningErrors: {
 				deletedMap: "已删除的内容",
@@ -384,7 +387,6 @@
 				premiumContentTip: "您的故事包含高级内容，将其公开时将消耗 {{CREDITS}}。将您的故事公开并继续，或从您的故事中移除图层。",
 				premiumContentPublicTip: "您的故事包含高级内容，将其公开时将消耗 {{CREDITS}}。确认将这些图层公开，或从您的故事中移除图层。",
 				subscriptionContentTip: "您的故事包含默认情况下不可公开的订阅内容。确认您希望公开这些图层(不会消耗配额)，或从您的故事中移除图层。",
-				agolCredits: "ArcGIS Online 配额",
 				credits: "配额",
 				makePublic: "公开",
 				confirm: "确认",
@@ -455,6 +457,15 @@
 				secondValueA: "卷帘",
 				secondValueB: "望远镜",
 				thirdTitle: "地图"
+			},
+			crowdsource: {
+				firstTitle: "试_contributions_____验",
+				secondTitle: "试_style___验",
+				secondValueA: "试_side panel____验",
+				secondValueB: "试_stacked___验",
+				thirdTitle: "试_basemap___验",
+				thirdValueLoading: "试_Loading____验...",
+				thirdValueUnknown: "试_unknown___验"
 			}
 		},
 		progress: {
@@ -469,6 +480,11 @@
 			scanProgress: "{{NUM_SCANNED}} 已完成，共 {{NUM_TOTAL}}",
 			scanStopped: "已扫描故事: {{NUM_SCANNED}}，有问题的故事: {{ISSUE_STORIES}}",
 			storiesWithIssues: "有问题的故事: {{NUM_STORIES}}"
+		},
+		newStories: {
+			newStoriesFound: "试_Looks like you have created a new story_____________验.",
+			includeStories: "试_Refresh Stories______验",
+			notWhileScanning: "试_This will be available when the check is complete________________验"
 		}
     })
 );

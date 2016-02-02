@@ -110,7 +110,7 @@
       mapFullScreen: "Täisekraan",
       mapRestore: "Taasta",
       filterSelectEmptyText: "Vali",
-      invalidLayerMessage: "Vormikihti ei eksisteeri. Konfigureerige rakendus ja määrake kiht.",
+      invalidLayerMessage: "Š_A valid layer to create the GeoForm was not found. If the GeoForm has been configured with a layer, the layer may no longer be available, or authorization failed__________________________________________________ä.",
       selectedLayerText: "Kõik",
       fileUploadStatus: "Faili üleslaadimise olek",
       uploadingBadge: "&nbsp;Üleslaadimine&hellip;",
@@ -149,6 +149,10 @@
       previewText: "Eelvaade",
       publishText: "Publitseeri",
       optionsApplicationText: "Valikud",
+      submitButtonText: "Š_Submit Button Text (Optional)__________ä",
+      submitButtonDesc: "Š_Optionally label the button to submit a new entry. This text will not be translated__________________________ä.",
+      viewSubmissionsText: "Š_View Submissions Text (Optional)___________ä",
+      viewSubmissionsDesc: "Š_Optionally label the button to view existing entries. This text will not be translated___________________________ä.",
       titleText: "Koostur",
       descriptionText: "GeoForm on konfigureeritav mall, mille abil saab vormipõhiselt muuta ${link1}objektiteenuse${closeLink} andmeid. Selle rakenduse abil saab andmeid sisestada mitte kaardi hüpikakna, vaid vormi kaudu ning kasutada ${link2}veebikaardi${closeLink} ja muudetavate objektiteenuste võimalusi. Kasutage oma GeoFormi kohandamiseks ja rakendamiseks järgmisi juhiseid.",
       btnPreviousText: "Eelmine",
@@ -258,7 +262,6 @@
       sortHeaderText: "Sordi:",
       geocoderPlaceholderText: "Postikood, linn jne.",
       noSearchResult: "Tulemust ei leitud",
-      recordsTabTooltip: "Kuva edastused",
       legendTabTooltip: "Legend",
       aboutUsTabTooltip: "Firmast",
       mapTabTooltip: "Kaart",
@@ -273,7 +276,6 @@
       viewReportsTabText: "Raportid",
       viewLegendTabText: "Legend",
       viewAboutusTabText: "Info",
-      btnSubmitReportText: "Edasta aruanne",
       appLoadingFailedMessage: "Vaaturi laadimisel tekkis viga."
     }
   })

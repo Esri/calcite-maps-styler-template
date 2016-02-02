@@ -41,7 +41,7 @@
 		},
 		cantFindStories: {
 			whereAreStories: "לא רואה את הסיפור שלך?",
-			notSeeExplanation: "\'הסיפורים שלי\' מפרט רק מפות סיפור שמתארחות ב- ArcGIS Online שנוצר עם האפליקציות {{STORY_MAP_TOUR}}‏, {{JOURNAL}}‏, {{MAP_SERIES}} ו- {{SWIPE_SPYGLASS}}. עיין ב{{שאלות נפוצות}} לקבלת מידע נוסף.",
+			notSeeExplanation: "כן_My Stories will only list story maps hosted in ArcGIS and created with the {{STORY_MAP_TOUR}}, {{JOURNAL}}, {{MAP_SERIES}} or {{SWIPE_SPYGLASS}} applications. See our {{FAQ}} for more information____________________________________________________________ש.",
 			faq: "שאלות ותשובות",
 			followingStoriesToUpdate: "סיפורים שנוצרו בגירסאות קודמות של האפליקציות שלנו וצריכים להתעדכן בכדי שיופיעו ב\'הסיפורים שלי\':",
 			gettingStories: "מחפש סיפורים שנוצרו בגירסאות קודמות של האפליקציות שלנו ושיש צורך לעדכן אותם...",
@@ -120,7 +120,7 @@
 			saveFailed: "שגיאה בשמירה",
 			numViews: "מבטים: {{NUM_VIEWS}}",
 			editStory: "ערוך סיפור",
-			viewLive: "תצוגה דינמית",
+			viewLive: "כן_View Story____ש",
 			preview: "תצוגה מקדימה",
 			deleteButton: "מחק",
 			modified: "השתנה ב- {{DATE}}",
@@ -130,7 +130,7 @@
 			close: "סגור",
 			hide: "הסתר",
 			notAvailableWhenBroken: "הסיפור שלך כולל את הבעיות שלהלן",
-			cantBeDeleted: "בסיפור זה פעילה הגנה מפני מחיקה, עיין בדף הפריט שלו ב- ArcGIS Online כדי להפוך ללא פעילה",
+			cantBeDeleted: "כן_This story has delete protection enabled. See its item page on ArcGIS to disable_________________________ש.",
 			shareDialog: {
 				title: "שתף את הסיפור שלך עם העולם!",
 				notPublicWarning: "הסיפור שלך שותף רק עם הארגון שלך. רק חברים בארגון שלך יוכלו להציג אותו.",
@@ -163,7 +163,7 @@
 				save: "שמור",
 				saved: "נשמר",
 				errorSaving: "שגיאה בשמירה",
-				tagTip: "טיפ: תגיות מסייעות למציאת הסיפור שלך ב- ArcGIS Online. ככל שהתגיות מדויקות ורלוונטיות, כך החשיפת העבודה תהיה טובה יותר."
+				tagTip: "כן_Tip: Tags help people find your story. The more relevant the tags are, the higher the visibility your work will receive_____________________________________ש."
 			},
 			submitToGallery: {
 				gallerySubmission: "גלריית מפות סיפור",
@@ -298,7 +298,8 @@
 				subscriptionPublicSuccess: "תוכן המנוי שלך נגיש כעת לציבור"
 			},
 			errors: {
-				publicDisabled: "שיתוף עם הציבור הוגדר כלא זמין על ידי המנהל",
+				publicDisabled: "כן_Sharing publicly has been disabled by an Administrator_________________ש",
+				orgDisabled: "כן_Sharing to your organization has been disabled by an Administrator_____________________ש",
 				noMapName: "לא ניתן לאחזר שם מפה",
 				notPublic: "לא ציבורי",
 				inaccessible: "לא נגיש",
@@ -350,7 +351,9 @@
 			tooltipWarnings: {
 				cantScanThisTypeAlt: "לא ניתן לבדוק סוג שכבה זה",
 				cantScanThisType: "השכבה אינה סוג שכבה שניתן לבדוק",
-				webpageNotScanned: "בעיות בדפי אינטרנט לא נבדקות"
+				webpageNotScanned: "בעיות בדפי אינטרנט לא נבדקות",
+				ignoredIssue: "כן_You have ignored an error on this layer. Reload the page and check this story again to review the error________________________________ש",
+				ignoredIssueBuilder: "כן_You have ignored an error on this layer. Reload the builder to check this error again___________________________ש"
 			},
 			scanningErrors: {
 				deletedMap: "התוכן נמחק",
@@ -384,7 +387,6 @@
 				premiumContentTip: "הסיפור שלך מכיל תוכן פרימיום שיצרוך {{קרדיטים}} לאחר הפיכתו לציבורי. הפוך את הסיפור שלך לציבורי והמשך, או הסר את השכבות מהסיפור שלך.",
 				premiumContentPublicTip: "הסיפור שלך מכיל תוכן פרימיום שיצרוך {{קרדיטים}} לאחר שיהיה זמין לציבור. אשר את הפיכת השכבות לציבוריות, או הסר את השכבות מהסיפור שלך.",
 				subscriptionContentTip: "הסיפור שלך מכיל תוכן למנויים שאינו זמין לציבור כברירת מחדל. אשר שברצונך להפוך שכבות אלה לזמינות (לא ייצרכו קרדיטים), או הסר את השכבות מהסיפור שלך.",
-				agolCredits: "קרדיטים של ArcGIS Online",
 				credits: "קרדיטים‎",
 				makePublic: "הפוך לציבורי",
 				confirm: "אשר",
@@ -455,6 +457,15 @@
 				secondValueA: "החלף",
 				secondValueB: "זכוכית מגדלת",
 				thirdTitle: "מפות"
+			},
+			crowdsource: {
+				firstTitle: "כן_contributions_____ש",
+				secondTitle: "כן_style___ש",
+				secondValueA: "כן_side panel____ש",
+				secondValueB: "כן_stacked___ש",
+				thirdTitle: "כן_basemap___ש",
+				thirdValueLoading: "כן_Loading____ש...",
+				thirdValueUnknown: "כן_unknown___ש"
 			}
 		},
 		progress: {
@@ -469,6 +480,11 @@
 			scanProgress: "{{NUM_SCANNED}} של {{NUM_TOTAL}}",
 			scanStopped: "סיפורים שנסרקו: {{NUM_SCANNED}}, סיפורים עם בעיות: {{ISSUE_STORIES}}",
 			storiesWithIssues: "סיפורים עם בעיות: {{NUM_STORIES}}"
+		},
+		newStories: {
+			newStoriesFound: "כן_Looks like you have created a new story_____________ש.",
+			includeStories: "כן_Refresh Stories______ש",
+			notWhileScanning: "כן_This will be available when the check is complete________________ש"
 		}
     })
 );
