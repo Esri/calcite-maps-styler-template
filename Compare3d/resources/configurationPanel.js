@@ -52,7 +52,7 @@
     ],
     "values": {
         "link": true,
-        "panelsOpen": false,
+        "panelsOpen": true,
         "color": "#fff",
         "backgroundColor": "#333",
         "slideColorTheme": "#05668D"
