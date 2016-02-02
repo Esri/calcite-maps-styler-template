@@ -44,6 +44,6 @@ MyStories\arcgis-storymaps-my-stories-utils\create-app\nls
 MyStories\arcgis-storymaps-my-stories-utils\sign-in\nls
 CrowdSourcePolling\js\nls
 3DViz\js\nls
-3DVScene\js\nls
+3DScene\js\nls
 Compare3d\js\nls
 
