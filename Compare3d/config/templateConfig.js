@@ -35,6 +35,9 @@ define({
   //Note that we've included a placeholder nls folder and a resource file with one error string
   //to show how to setup the strings file.
   "queryForLocale": true,
+  //When true checks to see if the browser supports WebGL. This is needed for templates that use
+  //the 3d capabilities in version 4.x of the ArcGIS API for Javascript.
+  "supports3d": true,
   //This option demonstrates how to handle additional custom url parameters. For example
   //if you want users to be able to specify lat/lon coordinates that define the scene's center or
   //specify an alternate basemap via a url parameter.
