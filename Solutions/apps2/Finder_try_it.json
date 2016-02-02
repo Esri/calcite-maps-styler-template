@@ -20,7 +20,7 @@
         "http://solutions.arcgis.com/state-government/help/finder/"
      ],
     "values": {
-        "webmap": "3c33240fbacd42339547a06a966dcbf7",
+        "webmap": "c17974fbebac4ecd9d877ee072ca9a28",
         "titleBar.title": "Finder Try-It",
         "titleBar.iconUrl": "images/onlineapp.png",
         "colorizer.theme": "SeaBlues",
@@ -40,7 +40,7 @@
                 "enable": true,
                 "searchWithinMap": true
             }, {
-                "flayerId": "TaxParcelTIL_9803",
+                "flayerId": "TaxParcelTIL_7849",
                 "url": null,
                 "name": "Tax Parcels",
                 "id": "dojoUnique10",
@@ -49,7 +49,7 @@
                 "searchWithinMap": true,
                 "placeholder": "Parcel ID",
                 "searchFields": ["PARCELID"],
-                "suggestionTemplate": "${SITEADDRESS}"
+                "suggestionTemplate": "${OWNERNME1} ${SITEADDRESS}"
             }],
             "activeSourceIndex": "all"
         },
@@ -153,7 +153,7 @@
         "classname": "js.LGNotes",
         "config": {
             "notes": [
-                "bae7663eb55c6ce4 2016-01-28 13:47:51 -0800"
+                "@@@commit@@@"
             ]
         }
     }, {
@@ -531,4 +531,3 @@
         }
     }]
 }
-
