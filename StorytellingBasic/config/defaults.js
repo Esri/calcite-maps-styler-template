@@ -45,6 +45,9 @@ define({
   "embed": false,
   "legend": true,
   "scalebar": true,
+  "markerSymbol": "./images/EsriBluePinCircle26.png",
+  "markerSymbolWidth": 26,
+  "markerSymbolHeight": 26,
   //When true the geocoder search box is displayed in the title area
   //When searchextent is true the geocoder will prioritize results within
   //the current map extent
