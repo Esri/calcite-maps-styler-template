@@ -66,6 +66,9 @@ define({
   //add the search tool 
   "search": true,
   "scale": true, //display a scale bar on the map 
+  "markerSymbol": "./images/EsriBluePinCircle26.png",
+  "markerSymbolWidth": 26,
+  "markerSymbolHeight": 26,
   "helperServices": {
     "geometry": {
       "url": null
