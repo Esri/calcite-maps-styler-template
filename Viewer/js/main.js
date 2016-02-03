@@ -44,6 +44,7 @@ define([
     "application/has-config",
     "application/ShareDialog",
     "application/SearchSources",
+    "application/MapUrlParams",
 
     "esri/arcgis/utils",
     "esri/lang",
@@ -75,6 +76,7 @@ define([
 
         Toolbar, has,
         ShareDialog, SearchSources,
+        MapUrlParams,
 
         arcgisUtils, esriLang, urlUtils,
 
@@ -115,7 +117,19 @@ define([
                 ready(lang.hitch(this, function () {
                     //supply either the webmap id or, if available, the item info
                     var itemInfo = this.config.itemInfo || this.config.webmap;
-                    this._createWebMap(itemInfo);
+
+                    var mapParams = new MapUrlParams({
+                           center: this.config.center || null,
+                           extent: this.config.extent || null,
+                           level: this.config.level || null,
+                           marker: this.config.marker || null,
+                           mapSpatialReference: itemInfo.itemData.spatialReference,
+                           defaultMarkerSymbol: this.config.markerSymbol,
+                           defaultMarkerSymbolWidth: this.config.markerSymbolWidth,
+                           defaultMarkerSymbolHeight: this.config.markerSymbolHeight,
+                           geometryService: this.config.helperServices.geometry.url
+                    });
+
                     // Setup the modal overlay if enabled
                     if(this.config.splashModal){
                       domClass.remove("modal", "hide");
@@ -130,6 +144,14 @@ define([
                         domClass.add("modal", "hide");
                       }));
                     }
+                    mapParams.processUrlParams().then(lang.hitch(this, function(urlParams){
+                      promise = this._createWebMap(itemInfo, urlParams);
+
+                    }), lang.hitch(this, function(error){
+                      this.reportError(error);
+                    }));
+                    //this._createWebMap(itemInfo);
+
                 }));
             } else {
                 var error = new Error("Main:: Config is not defined");
@@ -1028,18 +1050,18 @@ define([
             }));
 
         },
-        _createWebMap: function (itemInfo) {
+        _createWebMap: function (itemInfo, params) {
 
             window.config = this.config;
-            itemInfo = this._setExtent(itemInfo);
+            //itemInfo = this._setExtent(itemInfo);
 
-            var mapOptions = {};
-            mapOptions = this._setLevel(mapOptions);
-            mapOptions = this._setCenter(mapOptions);
+           // var mapOptions = {};
+            //mapOptions = this._setLevel(mapOptions);
+            //mapOptions = this._setCenter(mapOptions);
 
             // create a map based on the input web map id
             arcgisUtils.createMap(itemInfo, "mapDiv", {
-                mapOptions: mapOptions,
+                mapOptions: params.mapOptions,
                 editable: has("edit"),
                 //is the app editable
                 usePopupManager: true,
@@ -1050,6 +1072,25 @@ define([
                 this.map = response.map;
 
                 domClass.add(this.map.infoWindow.domNode, "light");
+
+             if(params.markerGraphic){
+                    // Add a marker graphic with an optional info window if
+                    // one was specified via the marker url parameter
+                    require(["esri/layers/GraphicsLayer"], lang.hitch(this, function(GraphicsLayer){
+                      var markerLayer = new GraphicsLayer();
+
+                      this.map.addLayer(markerLayer);
+                      markerLayer.add(params.markerGraphic);
+
+                      if(params.markerGraphic.infoTemplate){
+                        this.map.infoWindow.setFeatures([params.markerGraphic]);
+                        this.map.infoWindow.show(params.markerGraphic.geometry);
+                      }
+
+                      this.map.centerAt(params.markerGraphic.geometry);
+                    }));
+
+                }
 
                 this._updateTheme();
 

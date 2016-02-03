@@ -100,6 +100,9 @@ define({
     "subtitle":null,
     "level": null,
     "center": null,
+    "markerSymbol": "./images/EsriBluePinCircle26.png",
+    "markerSymbolWidth": 26,
+    "markerSymbolHeight": 26,
     //Replace these with your own bitly key
     "bitlyLogin": "arcgis",
     "bitlyKey": "R_b8a169f3a8b978b9697f64613bf1db6d"
