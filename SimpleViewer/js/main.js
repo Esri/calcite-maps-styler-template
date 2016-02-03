@@ -1,5 +1,51 @@
-define(["dojo/ready", "dojo/_base/declare", "dojo/_base/lang", "dojo/_base/array", "dojo/_base/Color", "esri/arcgis/utils", "esri/urlUtils", "dojo/on", "dojo/has", "dojo/sniff", "dijit/registry", "application/Drawer", "esri/dijit/Search", "application/SearchSources", "esri/tasks/locator", "esri/lang", "esri/dijit/Legend", "dojo/dom-class", "dojo/dom-style", "dojo/dom", "dojo/query", "dojo/dom-construct", "esri/dijit/LocateButton", "esri/dijit/HomeButton", "esri/layers/FeatureLayer"], function (
-ready, declare, lang, array, Color, arcgisUtils, urlUtils, on, has, sniff, registry, Drawer, Search, SearchSources, Locator, esriLang, Legend, domClass, domStyle, dom, query, domConstruct, LocateButton, HomeButton,FeatureLayer) {
+define([
+    "dojo/ready", 
+    "dojo/_base/declare", 
+    "dojo/_base/lang", 
+    "dojo/_base/array", 
+    "dojo/_base/Color", 
+    "esri/arcgis/utils", 
+    "esri/urlUtils", 
+    "dojo/on", 
+    "dojo/has", 
+    "dojo/sniff", 
+    "dijit/registry", 
+    "application/Drawer", 
+    "application/MapUrlParams",
+    "esri/dijit/Search", 
+    "application/SearchSources", 
+    "esri/tasks/locator", 
+    "esri/lang", 
+    "esri/dijit/Legend", 
+    "dojo/dom-class", 
+    "dojo/dom-style", 
+    "dojo/dom", 
+    "dojo/query", 
+    "dojo/dom-construct", 
+    "esri/dijit/LocateButton", 
+    "esri/dijit/HomeButton", 
+    "esri/layers/FeatureLayer"
+    ], function (
+    ready,
+    declare, lang,
+    array, Color, 
+    arcgisUtils, urlUtils, 
+    on, 
+    has, sniff, 
+    registry, 
+    Drawer, 
+    MapUrlParams,
+    Search, SearchSources, 
+    Locator, 
+    esriLang, 
+    Legend, 
+    domClass, domStyle, 
+    dom, 
+    query, 
+    domConstruct, 
+    LocateButton, HomeButton,
+    FeatureLayer
+    ) {
     return declare("", null, {
         config: {},
         theme: null,
@@ -31,23 +77,23 @@ ready, declare, lang, array, Color, arcgisUtils, urlUtils, on, has, sniff, regis
                 this.paneltheme = this.setColor(this.config.paneltheme);
                 //supply either the webmap id or, if available, the item info
                 var itemInfo = this.config.itemInfo || this.config.webmap;
-
-                //If a custom extent is set as a url parameter handle that before creating the map
-                if (this.config.extent) {
-                    var extArray = decodeURIComponent(this.config.extent).split(",");
-
-                    if (extArray.length === 4) {
-                        itemInfo.item.extent = [
-                            [parseFloat(extArray[0]), parseFloat(extArray[1])],
-                            [parseFloat(extArray[2]), parseFloat(extArray[3])]
-                        ];
-                    } else if (extArray.length === 5) {
-                        this.initExt = new Extent(JSON.parse(this.config.extent));
-
-                    }
-                }
-                this._createWebMap(itemInfo);
-
+        
+                var mapParams = new MapUrlParams({
+                       center: this.config.center || null,
+                       extent: this.config.extent || null,
+                       level: this.config.level || null,
+                       marker: this.config.marker || null,
+                       mapSpatialReference: itemInfo.itemData.spatialReference,
+                       defaultMarkerSymbol: this.config.markerSymbol,
+                       defaultMarkerSymbolWidth: this.config.markerSymbolWidth,
+                       defaultMarkerSymbolHeight: this.config.markerSymbolHeight,
+                       geometryService: this.config.helperServices.geometry.url
+                });
+                mapParams.processUrlParams().then(lang.hitch(this, function(urlParams){
+                  promise = this._createWebMap(itemInfo, urlParams);
+                }), lang.hitch(this, function(error){
+                  console.log(error);
+                }));
 
             }));
         },
@@ -218,13 +264,10 @@ ready, declare, lang, array, Color, arcgisUtils, urlUtils, on, has, sniff, regis
 
         },
         //create a map based on the input web map id
-        _createWebMap: function (itemInfo) {
-            itemInfo = this._setExtent(itemInfo);
-            var mapOptions = {};
-            mapOptions = this._setLevel(mapOptions);
-            mapOptions = this._setCenter(mapOptions);
+        _createWebMap: function (itemInfo, params) {
+  
             arcgisUtils.createMap(itemInfo, "mapDiv", {
-                mapOptions: mapOptions,
+                mapOptions: params.mapOptions,
                 editable:false,
                 usePopupManager: true,
                 layerMixins: this.config.layerMixins || [],
@@ -239,7 +282,24 @@ ready, declare, lang, array, Color, arcgisUtils, urlUtils, on, has, sniff, regis
 
                 this.map = response.map;
                 domClass.add(this.map.infoWindow.domNode, "light");
+                if(params.markerGraphic){
+                    // Add a marker graphic with an optional info window if
+                    // one was specified via the marker url parameter
+                    require(["esri/layers/GraphicsLayer"], lang.hitch(this, function(GraphicsLayer){
+                      var markerLayer = new GraphicsLayer();
 
+                      this.map.addLayer(markerLayer);
+                      markerLayer.add(params.markerGraphic);
+
+                      if(params.markerGraphic.infoTemplate){
+                        this.map.infoWindow.setFeatures([params.markerGraphic]);
+                        this.map.infoWindow.show(params.markerGraphic.geometry);
+                      }
+
+                      this.map.centerAt(params.markerGraphic.geometry);
+                    }));
+
+                }
                 this.config.response = response;
 
                 // make sure map is loaded

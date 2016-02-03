@@ -64,6 +64,8 @@ function(
       }
       if(this.mapSpatialReference){
         this.mapSpatialReference = new SpatialReference(this.mapSpatialReference);
+      }else{
+        this.mapSpatialReference = new SpatialReference({wkid:102100});
       }
     },
     center: null,
@@ -128,6 +130,7 @@ function(
          if(extentArray.length === 5 && !isNaN(extentArray[4])){
           wkid = parseInt(extentArray[4],10);
          }
+
          var ext = new Extent(minx, miny, maxx, maxy, new SpatialReference({"wkid": wkid}));
 
         this._project(ext).then(lang.hitch(this, function(pExt){

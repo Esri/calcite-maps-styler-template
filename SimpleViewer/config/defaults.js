@@ -36,6 +36,9 @@ define([], function() {
         //want to use custom settings for units or any of the helper services set queryForOrg to false then enter
         //default values for any items you need using the helper services and units properties. 
         "queryForOrg": true, 
+        "markerSymbol": "./images/EsriBluePinCircle26.png",
+        "markerSymbolWidth": 26,
+        "markerSymbolHeight": 26,
         "units": null, 
         //Enter text here that will display in the title section. 
         //If not specified the web map title is used. 
