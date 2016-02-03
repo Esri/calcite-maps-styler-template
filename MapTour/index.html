@@ -70,7 +70,7 @@
 		</script>
 
 		<script type="text/javascript">
-			var version = '2.5.0-020116';
+			var version = '2.5.0-020216';
 			var isProduction = true;
 
 			function loadJS(url, isExternal)
@@ -124,6 +124,7 @@
 				
 				loadCSS("app/storymaps/builder/Builder.css");
 				loadCSS("app/storymaps/builder/BuilderPanel.css");
+				loadCSS("app/storymaps/builder/SaveErrorPopupSocial.css");
 				
 				loadCSS("app/storymaps/builder/SettingsPopup.css");
 				loadCSS("app/storymaps/maptour/builder/SettingsPopupTabLayout.css");
@@ -1108,6 +1109,56 @@
 			</div>
 			<div class="modal-footer">
 				<button class="btnClose btn" data-dismiss="modal" aria-hidden="true"></button>
+			</div>
+		</div>
+		
+		<div class="modal hide saveErrorPopupSocial" id="saveErrorPopupSocial" data-backdrop="static" tabindex="-1">
+			<div class="modal-header">
+				<h3 class="modal-title"></h3>
+			</div>
+	
+			<div class="modal-body">
+				<div class="panel1">
+					<span class="panel1lbl"></span>
+					<a href="#" class="help" data-toggle="tooltip">
+						<img style="vertical-align: -5px;"/>
+					</a>
+				</div>
+				<div class="panel2">
+					<div class="panel2lbl"></div>
+					<div class="form-group">
+						<div class="radio">
+							<label>
+								<input type="radio" name="optErrorSocial" value="story" checked>
+								<span>
+									<span class="panel2q1lbl"></span>
+									<a href="#" class="help" data-toggle="tooltip">
+										<img style="vertical-align: -5px;"/>
+									</a>
+								</span>
+							</label>
+						</div>
+						<div class="radio">
+							<label>
+								<input type="radio" name="optErrorSocial" value="item">
+								<span class="panel2q2lbl"></span>
+							</label>
+						</div>
+					</div>
+				</div>
+				<div class="panel3"></div>
+			</div>
+	
+			<div class="modal-footer">
+				<div class="stop-asking">
+					<div class="checkbox">
+						<label class="disabled">
+							<input type="checkbox" value="" disabled>
+							<span class="panel4lbl"></span>
+						</label>
+					</div>
+				</div>
+				<button type="button" class="btn btn-primary"></button>
 			</div>
 		</div>
 		

@@ -139,7 +139,7 @@
 		</script>
 
 		<script type="text/javascript">
-			var version = '1.8.0-020216';
+			var version = '1.8.0-020216-2';
 			var isProduction = true;
 
 			function loadJS(url, isExternal)
@@ -340,7 +340,7 @@
 					<div id="infoWindowTabImg"></div>
 				</div>
 				<div id="locationSearch"></div>
-				
+
 				<div id="autoplay" class="autoplay">
 					<div class="autoplay-container">
 						<div class="backdrop"></div>
@@ -837,7 +837,7 @@
 				<button class="btnClose btn btn-success" data-dismiss="modal" aria-hidden="true"></button>
 			</div>
 		</div>
-
+		
 		<div class="modal hide saveErrorPopupSocial" id="saveErrorPopupSocial" data-backdrop="static" tabindex="-1">
 			<div class="modal-header">
 				<h3 class="modal-title"></h3>
@@ -973,7 +973,7 @@
 					require(["dojo/i18n!./resources/nls/template.js?v=" + version,
 							"storymaps/ui/loadingIndicator/LoadingIndicator",
 							"esri/urlUtils",
-							"templateConfig/commonConfig.js?v=" + version,
+							//"templateConfig/commonConfig.js?v=" + version,
 							"dojo/domReady!",
 							"dojo/ready"
 						], function(
