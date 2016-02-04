@@ -516,19 +516,15 @@ define([
             //Add the legend tool to the toolbar. Only activated if the web map has operational layers.
             var deferred = new Deferred();
             var layers = arcgisUtils.getLegendLayers(this.config.response);
-
-
             if (layers.length === 0) {
                 deferred.resolve(false);
             } else {
                 if (has("legend")) {
-
-
                     var legendDiv = toolbar.createTool(tool, panelClass);
                     var legend = new Legend({
                         map: this.map,
                         id: "mapLegend",
-                        layerInfos: arcgisUtils.getLayerList(this.config.response)
+                        layerInfos: layers
                     }, domConstruct.create("div", {}, legendDiv));
                     domClass.add(legend.domNode, "legend");
                     legend.startup();
