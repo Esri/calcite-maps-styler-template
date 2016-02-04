@@ -83,7 +83,9 @@ body {
   margin-right:.25em;
   overflow-y:auto;
 }
-
+.esri-attribution-open{
+  z-index:1;
+}
 .map-details-title{
   padding: .25em .4em 0 .4em;
   font-weight: bold;

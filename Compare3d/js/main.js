@@ -78,6 +78,11 @@ ContentPane) {
             // and application id
             // any url parameters and any application specific configuration information.
             if (config) {
+                if(config.webGLSupport && config.webGLSupport.canSupport === false){
+                  var error = new Error("Browser not supported <br>" + config.webGLSupport.helpMessage);
+                  this.reportError(error);
+                  return;
+                }
                 this.config = config;
                 var scenes = [], sceneLength = 0, sceneIds;
                 var isArray = lang.isArray(this.config.webscene);
