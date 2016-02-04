@@ -34,7 +34,7 @@ The GeoForm template can be accessed via the ArcGIS template gallery or item det
 3. Change the sharing host, found in defaults.js inside the config folder for the application, to the sharing URL for ArcGIS Online or Portal. For ArcGIS Online users, keep the default value of www.arcgis.com or specify the name of your organization.
   - ArcGIS Online Example:  `"sharinghost": location.protocol + "//" + “<your organization name>.maps.arcgis.com`
   - Portal Example where `arcgis` is the name of the Web Adaptor: `"sharinghost": location.protocol + "//" + "webadaptor.domain.com/arcgis"`
-4. If you are using Portal or a local install of the ArcGIS API for JavaScript, change all references to the ArcGIS API for JavaScript in index.html to refer to your local copy of the API. Search for the references containing `"//js.arcgis.com/3.15"` and replace this portion of the reference with the url to your local install.
+4. If you are using Portal or a local install of the ArcGIS API for JavaScript, change all references to the ArcGIS API for JavaScript in index.html to refer to your local copy of the API. Search for the references containing `"//js.arcgis.com/3.16"` and replace this portion of the reference with the url to your local install.
   - For example: `"//webadaptor.domain.com/arcgis/jsapi/jsapi"` where `arcgis` is the name of your Web Adaptor.
 5. Copy a map or group ID from Portal/ArcGIS Online and replace the default web map ID in the application’s defaults.js file. You can now run the application on your web server or customize the application further.
 
@@ -51,11 +51,13 @@ See the [ArcGIS Blog post](http://blogs.esri.com/esri/arcgis/2014/07/08/editing-
 ## Offline Editing
 This template supports editing offline using the Esri [Offline Editor JS](https://github.com/Esri/offline-editor-js). For more information on web offline editing see the github project linked above.
 
-This template supports basic offline editing by saving the edits locally until a connection can be reestablished. As long as the browser window remains open or is reopened then the edits will get synched once an internet connection is restored.
+This template supports basic offline editing by saving the edits locally (including attachments) until a connection can be reestablished. As long as the browser window remains open or is reopened then the edits will get synched once an internet connection is restored.  Support for offline with the Offline Editor JS is sufficient to handle workflows where connectivity is spotty. For a **full picture on offline capabilities in ArcGIS** we recommend you also research the following:
 
-Attachments are stored locally as well.
-
-***IMPORTANT: If you want a full, robust offline solution then you should be using our ArcGIS Runtime SDKs for .NET, WPF, Java, iOS, Android and Qt.***
+- Build cross-platform custom offline mapping native apps for your Desktop or Mobile device using AppStudio for ArcGIS
+- Build custom offline mapping native apps with our ArcGIS Runtime SDKs (.Net, WPF, Java, iOS, Android, Qt/QML)
+- Use out of the box mobile apps for data capture:
+  - [Survey123](http://survey123.esri.com/) for ArcGIS for form-centric workflows
+  - [Collector for ArcGIS](http://appstudio.arcgis.com/) for map-centric workflows
 
 ## Limitations
 
