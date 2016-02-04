@@ -149,7 +149,12 @@ define(['dojo/Deferred', 'sign-in/SignInDialog', 'sign-in/PortalHelper', 'create
 					}
 					else {
 						userInfo = data.user;
-						showLoggedInDropdown(userInfo.firstName || userInfo.username);
+						if(userInfo.provider === 'enterprise' || userInfo.provider === 'facebook') {
+							showLoggedInDropdown(userInfo.fullName);
+						}
+						else {
+							showLoggedInDropdown(userInfo.firstName || userInfo.username);
+						}
 					}
 				},
 				error: function() {
@@ -341,11 +346,14 @@ define(['dojo/Deferred', 'sign-in/SignInDialog', 'sign-in/PortalHelper', 'create
 				layoutStr = layout ? layout : 'default',
 				urlSuffix = fromBuildApp ? '&buildApp=true&app=' + appObj + '&layout=' + layoutStr : '',
 				myStoriesPage = (window.location.href.indexOf('/my-stories') !== -1 || window.location.href.indexOf('/MyStories/') !== -1) ? true : false,
-				portalDefaultStr = "?defaultPortalURL=" + unProtocolUrl(baseUrl) + "&defaultClientId=" + app.cfg.DEFAULT_CLIENT_ID;
+				portalDefaultStr = "?defaultPortalURL=" + unProtocolUrl(baseUrl) + "&defaultClientId=" + app.cfg.DEFAULT_CLIENT_ID,
+				socialShareParam = '&showSocialLogins=true';
 
 			if(isPortal) {
 				// the others are forcing https, but portal may not be enabled for https for certain orgs, so it will go on the protocol it is over.
 				window.redirectBase = 'https://' + unProtocolUrl(getPortalPath());
+				// portal doesn't support social sign-in
+				socialShareParam = '';
 			}
 			else {
 
@@ -371,7 +379,7 @@ define(['dojo/Deferred', 'sign-in/SignInDialog', 'sign-in/PortalHelper', 'create
 
 			if(preflang) {
 				locale = preflang;
-			}
+			}			
 
 
 			// the signedIn should be https if it gets here.
@@ -379,8 +387,7 @@ define(['dojo/Deferred', 'sign-in/SignInDialog', 'sign-in/PortalHelper', 'create
 				"src",
 				baseUrlHttps + "/sharing/rest/oauth2/authorize?client_id=" + app.cfg.DEFAULT_CLIENT_ID + "&display=iframe" +
 				"&redirect_uri=" + window.redirectBase + "arcgis-storymaps-my-stories-utils/sign-in/signedin.html" + encodeURIComponent(portalDefaultStr) + encodeURIComponent(urlSuffix) +
-				"&response_type=token&display=iframe" +
-				"&parent=" + window.location.href + "&locale=" + locale
+				"&response_type=token" + socialShareParam + "&parent=" + window.location.href + "&locale=" + locale
 			);
 
 			// show the dialog
@@ -510,6 +517,21 @@ define(['dojo/Deferred', 'sign-in/SignInDialog', 'sign-in/PortalHelper', 'create
 	},
 
 
+	signOutUser = function() {
+		var cookie = null,
+			portalHttps = '';
+
+		if(!accountBaseUrl) {
+			cookie = getUserCookie();
+			accountBaseUrl = PortalHelper.getBaseUrl(cookie);
+		}
+
+		portalHttps = PortalHelper.forceHttpsPortalUrl(accountBaseUrl);
+
+		window.location.href = portalHttps + '/sharing/rest/oauth2/signout?redirect_uri=' + window.location.href;
+	},
+
+
 	signInManager = {
 		checkIfSignedIn: checkIfSignedIn,
 		renderHeader: renderHeader,
@@ -520,7 +542,8 @@ define(['dojo/Deferred', 'sign-in/SignInDialog', 'sign-in/PortalHelper', 'create
 		fetchCookie: fetchCookie,
 		jquery: jquery,
 		showBuildSignInDialog: showBuildSignInDialog,
-		getExpiryDate: getExpiryDate
+		getExpiryDate: getExpiryDate,
+		signOutUser: signOutUser
 	};
 
 
