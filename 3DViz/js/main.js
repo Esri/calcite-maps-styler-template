@@ -82,16 +82,22 @@ define([
 
     startup: function(config) {
       var promise;
+      var error;
       // config will contain application and user defined info for the template such as i18n strings, the web map id
       // and application id
       // any url parameters and any application specific configuration information.
       if (config) {
+        if (config.webGLSupport && config.webGLSupport.canSupport === false) {
+          error = new Error("Browser not supported <br>" + config.webGLSupport.helpMessage);
+          this.reportError(error);
+          return;
+        }
         this.config = config;
         this.uiUtils = new uiUtils();
         this.uiUtils.init(config);
         promise = this._createWebScene();
       } else {
-        var error = new Error("Main:: Config is not defined");
+        error = new Error("Main:: Config is not defined");
         this.reportError(error);
         var def = new Deferred();
         def.reject(error);
@@ -154,7 +160,8 @@ define([
 
       this.view.then(lang.hitch(this, function(response) {
         this.view.on("click", lang.hitch(this, this._viewClicked));
-        this._initApp();
+        //this._initApp();
+        setTimeout(lang.hitch(this, this._initApp), 3000);
         return response;
       }), this.reportError);
 
@@ -401,7 +408,7 @@ define([
         this.vizLayer.displayField = displayFld;
         this.vizLayer.fields = flds;
         this._queryVizData();
-        if(flds.length === 1 && this.view.viewingMode !== "global") {
+        if (flds.length === 1 && this.view.viewingMode !== "global") {
           domStyle.set("btnPlay", "display", "none");
         }
       } else {

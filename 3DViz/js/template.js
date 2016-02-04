@@ -29,6 +29,8 @@ define(["dojo/_base/array", "dojo/_base/declare", "dojo/_base/kernel", "dojo/_ba
 
 "dojo/promise/all",
 
+"esri/core/sniff",
+
 "esri/config", "esri/identity/IdentityManager", "esri/identity/OAuthInfo",
 
 "esri/portal/Portal", "esri/portal/PortalItem", "esri/portal/PortalQueryParams",
@@ -45,6 +47,7 @@ define(["dojo/_base/array", "dojo/_base/declare", "dojo/_base/kernel", "dojo/_ba
   string,
   domClass,
   all,
+  esriSniff,
   esriConfig,
   esriId,
   oAuthInfo,
@@ -74,6 +77,8 @@ define(["dojo/_base/array", "dojo/_base/declare", "dojo/_base/kernel", "dojo/_ba
             this.config = defaults;
             // Gets parameters from the URL, convert them to an object and remove HTML tags.
             this.urlObject = this._createUrlParamsObject();
+            // Check for WebGL support 
+            this.config.webGLSupport = this._webGLCheck();
         },
         startup: function () {
             var promise = this._init();
@@ -565,6 +570,17 @@ define(["dojo/_base/array", "dojo/_base/declare", "dojo/_base/kernel", "dojo/_ba
             }
 
             return r;
+        },
+        _webGLCheck: function(){
+            var helpUrl = "http://doc.arcgis.com/en/arcgis-online/reference/scene-viewer-requirements.htm";
+            if(this.portal && this.portal.helpBase){
+                helpUrl = this.portal.helpBase + this.portal.helpMap.m["120000966"] || helpUrl;
+            }
+            // 4.2 TODO - localize this
+            return {
+                canSupport: esriSniff("esri-webgl"),
+                helpMessage:  "<a target='_blank' href='" + helpUrl + "'>Learn More</a>"
+            }
         }
     });
 });
