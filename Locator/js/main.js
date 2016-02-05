@@ -167,10 +167,11 @@ define([
                                 return true;
                             }
                         }));
-                        urlUtils.addProxyRule({
-                            urlPrefix: routeUrl || this.config.helperServices.route.url,
-                            proxyUrl: this.config.proxyurl
-                        });
+                        // DO NOT USE PROXY FOR PROXIED SERVICE
+                        // urlUtils.addProxyRule({
+                        //     urlPrefix: routeUrl || this.config.helperServices.route.url,
+                        //     proxyUrl: this.config.proxyurl
+                        // });
                     }
                     // if (this.config.routeUtility) {
                     // urlUtils.addProxyRule({
