@@ -33,7 +33,7 @@ function(createStoryi18n, PortalHelper, UserAgentHelper, signInCreateDialog) {
 
     baseUrl = PortalHelper.getBaseUrl(cookie);
 
-    window.open(baseUrl + '/apps/' + appType + '/?fromScratch' + layoutOpt, '_blank');
+    window.open(baseUrl + '/apps/' + appType + '/index.html?fromScratch' + layoutOpt, '_blank');
   }
 
 
@@ -78,7 +78,7 @@ function(createStoryi18n, PortalHelper, UserAgentHelper, signInCreateDialog) {
         url = '',
         continueString = '';
 
-    url = baseUrl + '/apps/' + app + '/?fromScratch' + layoutOpt;
+    url = baseUrl + '/apps/' + app + '/index.html?fromScratch' + layoutOpt;
 
 
     if(app) {
