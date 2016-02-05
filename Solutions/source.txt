@@ -1,10 +1,8 @@
-Built on 01/28/2016 13:49:09.14 from
+Built on 02/05/2016 11:04:11.04 from
 repository local-government-online-apps
 branch develop
-commit bae7663eb55c6ce405bf82c0a60b63c67b98376f
+commit f5faf8b2a4937d42b734e2a7b7016c150899a692
 Author: MikeTschudi <mtschudi@esri.com>
-Date:   Thu Jan 28 13:47:51 2016 -0800
+Date:   Fri Feb 5 10:54:38 2016 -0800
 
-    Cleaned up and linted
-    
-    #39
+    Updated to JSAPI 3.16 dev
