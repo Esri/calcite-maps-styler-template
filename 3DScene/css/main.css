@@ -125,6 +125,7 @@ body {
   background-color: transparent;
 }
 
+
 /*.reverse .esri-attribution {
   background-color: rgba(0,0,0,0.2);
 }
@@ -137,25 +138,63 @@ body {
   color: #ffffff;
 }*/
 
+
 /* Search */
 
-.esri-search .esri-container .esri-input {
-  width: 184px;
-  padding: 6px 22px 6px 6px;
+.esri-search,
+input {
+  -webkit-box-shadow: none !important;
+  -moz-box-shadow: none !important;
+  box-shadow: none !important;
 }
 
-.esri-search .esri-container {
-  /*background-color: rgba(0, 0, 0, 0.2);*/
-}
-
-.esri-search .esri-search-button {
-  padding: 6px;
+.esri-search .esri-search-button,
+.esri-search .esri-search-button.esri-search-sources-toggle,
+.esri-search .esri-search-button.esri-submit {
   border: none;
   outline: none;
   background-color: transparent;
 }
 
 .esri-search .esri-search-button:hover,
+.esri-search .esri-search-button:focus,
+.esri-search .esri-search-button:active {
+  background-color: rgba(0, 0, 0, 0.25);
+  outline: none;
+}
+
+.esri-widget-button {
+  color: #ffffff;
+  background-color: transparent;
+}
+
+.esri-search .esri-clear-search:hover {
+    background-color: transparent;
+    color: #ffffff;
+}
+
+.esri-search .esri-container .esri-input {
+  color: #ffffff;
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+
+.esri-search .esri-menu {
+  position: absolute;
+  top: 0;
+  transform: translateY(-100%);
+  background-color: #fff;
+  color: #2c2c2c;
+  border: none;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.4);
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.4);
+}
+
+/*.esri-search .esri-search-button:hover,
 .esri-search .esri-search-button:focus,
 .esri-search .esri-search-button:active {
   background-color: rgba(0, 0, 0, 0.25);
@@ -205,7 +244,7 @@ body {
   -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.4);
   -moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.4);
   box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.4);
-}
+}*/
 
 
 /* PANELS */
@@ -252,7 +291,7 @@ body {
 #panelTopContent {
   display: block;
   width: 300px;
-  min-height:80px;
+  min-height: 80px;
   height: auto;
   padding: 5px;
   overflow: hidden;
@@ -343,8 +382,8 @@ body {
 
 #panelSearch {
   float: left;
-  min-width: 238px;
-  height: 34px;
+  /*min-width: 238px;
+  height: 34px;*/
 }
 
 .dj_rtl #panelSearch {
@@ -363,7 +402,7 @@ body {
   display: none;
 }
 
-.closed #btnToggle{
+.closed #btnToggle {
   display: block;
 }
 
