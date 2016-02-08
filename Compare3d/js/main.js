@@ -165,14 +165,12 @@ ContentPane) {
           all(defs).then(lang.hitch(this, function(results){
             this._updateTheme();
             domClass.remove(document.body, "app-loading");
-            array.forEach(results, lang.hitch(this, function(result){
-              if(result.hasOwnProperty("viewingMode")){
-                this.views.push(result);
+            if(results && results.length && results.length > 0){
+              this.views = results;
+              if(this.config.link){
+                this._linkViews();
               }
-            }));
-            if(this.config.link){
-              this._linkViews();
-            }
+            } 
           }));
 
         },
