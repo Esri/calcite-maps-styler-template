@@ -1,9 +1,7 @@
 From git branch 
 develop
-commit c7f165e2eeb385080cd97615c9fdd18d3a7cbe95
+commit c3c8b13ed3df058f002320b9ac2509de2ac420e5
 Author: MikeTschudi <mtschudi@esri.com>
-Date:   Thu Jan 28 14:37:03 2016 -0800
+Date:   Mon Feb 8 10:40:44 2016 -0800
 
-    Remove trailing-non-whitespace requirement from field regexp
-    
-    #124
+    Trim default values coming from Server, which is returning single blank for non-nullable string fields
