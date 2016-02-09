@@ -85,7 +85,7 @@
             {
                "type": "appproxies",
                "serviceProxies": [{
-                  "url": "http://route.arcgis.com/arcgis/rest/services/World/Route/NAServer/Route_World",
+                  "name": "route",
                   "title": "Route"
                }]
             },
