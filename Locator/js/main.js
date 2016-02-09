@@ -141,45 +141,49 @@ define([
             // config will contain application and user defined info for the template such as i18n strings, the web map id
             // and application id
             // any url parameters and any application specific configuration information.
+
             if (config) {
                 this.config = config;
+                console.log("CONFIG", this.config);
+                console.log("HELPER SERVICES", this.config.helperServices);
+                console.log("LAYER MIXINS", this.config.layerMixins);
                 this._setColor();
                 this._setProtocolHandler();
                 // proxy rules
-                if (this.config.proxyurl !== "") {
-                    urlUtils.addProxyRule({
-                        urlPrefix: "route.arcgis.com",
-                        proxyUrl: this.config.proxyurl
-                    });
-                    urlUtils.addProxyRule({
-                        urlPrefix: "traffic.arcgis.com",
-                        proxyUrl: this.config.proxyurl
-                    });
+                //if (this.config.proxyurl !== "") {
+                    // urlUtils.addProxyRule({
+                    //     urlPrefix: "route.arcgis.com",
+                    //     proxyUrl: this.config.proxyurl
+                    // });
+                    // urlUtils.addProxyRule({
+                    //     urlPrefix: "traffic.arcgis.com",
+                    //     proxyUrl: this.config.proxyurl
+                    // });
                     // TO DO: check proxy url
-                    console.log("HELPER SERVICES", this.config.helperServices);
-                    console.log("LAYER MIXINS", this.config.layerMixins);
-                    if (this.config.helperServices.route && this.config.helperServices.route.url) {
-                        var routeUrl = null;
-                        array.some(this.config.layerMixins, lang.hitch(this, function(layerMixin) {
-                            if (layerMixin.url === this.config.helperServices.route.url) {
-                                //routeUrl = layerMixin.mixin.url;
-                                routeUrl = this._fixProxyUrl(layerMixin);
-                                return true;
-                            }
-                        }));
-                        // DO NOT USE PROXY FOR PROXIED SERVICE
-                        // urlUtils.addProxyRule({
-                        //     urlPrefix: routeUrl || this.config.helperServices.route.url,
-                        //     proxyUrl: this.config.proxyurl
-                        // });
-                    }
+                    // console.log("HELPER SERVICES", this.config.helperServices);
+                    // console.log("LAYER MIXINS", this.config.layerMixins);
+                    // if (this.config.helperServices.route && this.config.helperServices.route.url) {
+                    //     var routeUrl = null;
+                    //     array.some(this.config.layerMixins, lang.hitch(this, function(layerMixin) {
+                    //         if (layerMixin.url === this.config.helperServices.route.url) {
+                    //             //routeUrl = layerMixin.mixin.url;
+                    //             routeUrl = this._fixProxyUrl(layerMixin);
+                    //             return true;
+                    //         }
+                    //     }));
+                    //     // DO NOT USE PROXY FOR PROXIED SERVICE
+                    //     // urlUtils.addProxyRule({
+                    //     //     urlPrefix: routeUrl || this.config.helperServices.route.url,
+                    //     //     proxyUrl: this.config.proxyurl
+                    //     // });
+                    // }
                     // if (this.config.routeUtility) {
                     // urlUtils.addProxyRule({
                     // urlPrefix : this.config.routeUtility,
                     // proxyUrl : this.config.proxyurl
                     // });
                     // }
-                }
+                //}
                 // document ready
                 ready(lang.hitch(this, function() {
                     //supply either the webmap id or, if available, the item info
@@ -592,7 +596,7 @@ define([
                 map: this.map,
                 //maxStops : 2,
                 showTravelModesOption: true,
-                showTrafficOption: true,
+                showTrafficOption: false,
                 geocoderOptions: geocoderOptions,
                 routeParams: {
                     //directionsLanguage : userLang,
@@ -609,32 +613,13 @@ define([
                 doNotFetchTravelModesFromOwningSystem: true
             };
 
-            // TO DO: check proxy url
-            if (this.config.helperServices.route && this.config.helperServices.route.url !== "") {
-                // do we have a proxied url? 
-                // TO DO: check proxy url
-                var routeUrl = null;
-                array.some(this.config.layerMixins, lang.hitch(this, function(layerMixin) {
-                    if (layerMixin.url === this.config.helperServices.route.url) {
-                        //routeUrl = layerMixin.mixin.url;
-                        routeUrl = this._fixProxyUrl(layerMixin);
-                        return true;
-                    }
-                }));
-                options.routeTaskUrl = routeUrl || this.config.helperServices.route.url;
-            }
+            // GET PROXIED ROUTE URL
+            var routeUrl = this._getProxiedRouteUrl();
+            options.routeTaskUrl = routeUrl;
+            
             if (this.config.routeUtility !== "") {
                 options.routeTaskUrl = this.config.routeUtility;
             }
-
-            // traffic is proxied
-            array.some(this.config.layerMixins, lang.hitch(this, function(layerMixin) {
-                if (layerMixin.url.indexOf("traffic.arcgis.com") !== -1) {
-                    options.traffic = true;
-                    options.trafficLayer = layerMixin.mixin.url;
-                    return true;
-                }
-            }));
 
             this.dirWidget = new Directions(options, "resultsDirections");
             on.once(this.dirWidget, "load", lang.hitch(this, this._setupModes));
@@ -651,6 +636,7 @@ define([
 
         // Setup Modes
         _setupModes: function() {
+            console.log("GET TRAVEL MODES");
             var supModes = this.dirWidget.getSupportedTravelModeNames();
             var modes = [];
             array.forEach(supModes, function(mode) {
@@ -683,27 +669,29 @@ define([
         _setupClosestFacility: function() {
             //this.config.useClosestFacility = true;
             if (this.config.useClosestFacility) {
-                var url = this.config.closestFacilityURL;
+                //var url = "http://route.arcgis.com/arcgis/rest/services/World/ClosestFacility/NAServer/ClosestFacility_World";
+                var url = this._getProxiedClosestFacilityUrl();
                 if (!url) {
-                    url = "http://route.arcgis.com/arcgis/rest/services/World/ClosestFacility/NAServer/ClosestFacility_World";
+                    this.config.useClosestFacility = false;
+                    return;
                 }
                 this.closestFacilityTask = new ClosestFacilityTask(url);
-                var def = this.closestFacilityTask.getServiceDescription();
-                def.then(lang.hitch(this, function(desc) {
-                    var mode;
-                    if (desc && desc.layerType === "esriNAServerClosestFacilityLayer") {
-                        array.forEach(desc.supportedTravelModes, function(m) {
-                            if (m.name === "Walking Time") {
-                                mode = m;
-                            }
-                        });
-                        if (mode) {
-                            this.closestFacilityWalkMode = mode;
-                        }
-                    } else {
-                        this.closestFacilityTask = null;
-                    }
-                }));
+                //var def = this.closestFacilityTask.getServiceDescription();
+                // def.then(lang.hitch(this, function(desc) {
+                //     var mode;
+                //     if (desc && desc.layerType === "esriNAServerClosestFacilityLayer") {
+                //         array.forEach(desc.supportedTravelModes, function(m) {
+                //             if (m.name === "Walking Time") {
+                //                 mode = m;
+                //             }
+                //         });
+                //         if (mode) {
+                //             this.closestFacilityWalkMode = mode;
+                //         }
+                //     } else {
+                //         this.closestFacilityTask = null;
+                //     }
+                // }));
             }
         },
 
@@ -962,7 +950,7 @@ define([
 
             this.closestFacilityTask.solve(params, lang.hitch(this, function(solveResult) {
                 if (solveResult.messages.length > 0) {
-                    console.Log("Closest Facility Message", solveResult.messages[0]);
+                    console.log("Closest Facility Message", solveResult.messages[0]);
                     this._updateDestinations();
                 } else {
                     var newFacilities = solveResult.facilities;
@@ -1488,24 +1476,68 @@ define([
             return info;
         },
 
-        // Fix Proxy Url: Added to check if url and proxy url match
-        _fixProxyUrl: function(layerMixin) {
-            // Test Strings
-            // var url = "http://route.arcgis.com/arcgis/rest/services/World/Route/NAServer/Route_World";
-            // var proxyUrl = "http://utility.arcgis.com/usrsvcs/appservices/m3J483eWLHr9Sn9i/rest/services/World/Route/NAServer";
-            var url = layerMixin.url;
-            var proxyUrl = layerMixin.mixin.url;
-            var url2 = url.toLowerCase();
-            var proxyUrl2 = proxyUrl.toLowerCase();
-            var uIndex = url2.indexOf("/rest/services");
-            var pIndex = proxyUrl2.indexOf("/rest/services");
-            if (uIndex > -1 && pIndex > -1) {
-                var fixUrl = proxyUrl.substring(0, pIndex) + url.substring(uIndex);
-                console.log("Fixed URL", fixUrl);
-                return fixUrl;
-            } else {
-                return url;
+        // Get Proxied Route Url
+        _getProxiedRouteUrl: function() {
+            var routeUrl;
+            if (this.config.helperServices.route && this.config.helperServices.route.url !== "") {
+                array.some(this.config.layerMixins, lang.hitch(this, function(layerMixin) {
+                    console.log("COMPARE", layerMixin.url, this.config.helperServices.route.url);
+                    if (layerMixin.url === this.config.helperServices.route.url) {
+                        var url = layerMixin.url;
+                        var proxyUrl = layerMixin.mixin.url;
+                        var url2 = url.toLowerCase();
+                        var proxyUrl2 = proxyUrl.toLowerCase();
+                        var uIndex = url2.indexOf("/rest/services");
+                        var pIndex = proxyUrl2.indexOf("/rest/services");
+                        if (uIndex > -1 && pIndex > -1) {
+                            routeUrl = proxyUrl.substring(0, pIndex) + url.substring(uIndex);
+                        }
+                        return true;
+                    }
+                }));
+                if (!routeUrl) {
+                    routeUrl = this.config.helperServices.route.url;
+                    if (this.config.proxyurl !== "") {
+                        urlUtils.addProxyRule({
+                            urlPrefix: routeUrl,
+                            proxyUrl: this.config.proxyurl
+                        });
+                    }
+                }
             }
+            console.log("Fixed Route URL", routeUrl);
+            return routeUrl;
+        },
+
+        // Get Proxied Closest Facility Url
+        _getProxiedClosestFacilityUrl: function() {
+            var cfUrl;
+            if(!this.config.closestFacilityURL) {
+                array.some(this.config.layerMixins, lang.hitch(this, function(layerMixin) {
+                    if (layerMixin.url === "http://route.arcgis.com/arcgis/rest/services/World/ClosestFacility/NAServer/ClosestFacility_World") {
+                        var url = layerMixin.url;
+                        var proxyUrl = layerMixin.mixin.url;
+                        var url2 = url.toLowerCase();
+                        var proxyUrl2 = proxyUrl.toLowerCase();
+                        var uIndex = url2.indexOf("/rest/services");
+                        var pIndex = proxyUrl2.indexOf("/rest/services");
+                        if (uIndex > -1 && pIndex > -1) {
+                            cfUrl = proxyUrl.substring(0, pIndex) + url.substring(uIndex);
+                        }
+                        return true;
+                    }
+                }));
+            } else {
+                cfUrl = this.config.closestFacilityURL;
+                if (this.config.proxyurl !== "") {
+                    urlUtils.addProxyRule({
+                        urlPrefix: cfUrl,
+                        proxyUrl: this.config.proxyurl
+                    });
+                }
+            }
+            console.log("Fixed Closest Facility URL", cfUrl);
+            return cfUrl;
         }
 
     });
