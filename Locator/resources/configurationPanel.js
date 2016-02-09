@@ -7,11 +7,11 @@
                     "type": "appproxies",
                     "serviceProxies": [
                         {
-                            "url": "http://route.arcgis.com/arcgis/rest/services/World/Route/NAServer/Route_World",
+                            "name": "route",
                             "title": "Route"
                         },
                         {
-                            "url": "http://route.arcgis.com/arcgis/rest/services/World/ClosestFacility/NAServer/ClosestFacility_World",
+                            "name": "closestFacility",
                             "title": "Closest Facility"
                         }
                     ]
