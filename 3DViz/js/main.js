@@ -160,8 +160,8 @@ define([
 
       this.view.then(lang.hitch(this, function(response) {
         this.view.on("click", lang.hitch(this, this._viewClicked));
-        //this._initApp();
-        setTimeout(lang.hitch(this, this._initApp), 3000);
+        this._initApp();
+        //setTimeout(lang.hitch(this, this._initApp), 3000);
         return response;
       }), this.reportError);
 
@@ -250,8 +250,8 @@ define([
 
     // set titles
     _setTitles: function() {
-      document.title = this.config.title; //this.scene.portalItem.title;
-      dom.byId("panelTitle").innerHTML = this.config.title;
+      document.title = this.config.title || this.scene.portalItem.title;
+      dom.byId("panelTitle").innerHTML = this.config.title || this.scene.portalItem.title;
     },
 
     // init ui

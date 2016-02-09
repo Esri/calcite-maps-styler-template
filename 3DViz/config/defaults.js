@@ -45,7 +45,7 @@ define({
   },
   // Template configuration settings
   // Template UI settings
-  "title": "WORLD BANK INDICATORS",
+  "title": "",
   "cycleColors": true,
   "colors": ['#2cbade', '#5da022', '#a1bd20', '#b8d824', '#eebd15', '#f59704', '#f56b0f', '#d12929', '#e02d7f', '#b17ec4', '#48aaf6'],
   "color": "#2cbade",
