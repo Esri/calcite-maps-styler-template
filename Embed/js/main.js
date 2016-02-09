@@ -1,5 +1,50 @@
-define(["dojo/ready", "dojo/parser", "dojo/dom-attr", "dojo/dom-geometry", "dojo/on", "dojo/_base/array", "dojo/_base/declare", "dojo/_base/lang", "dojo/query", "dojo/dom", "dojo/dom-class", "dojo/dom-construct", "dijit/registry", "esri/domUtils", "esri/lang", "esri/arcgis/utils", "esri/dijit/Popup", "esri/layers/FeatureLayer", "esri/geometry/Point",  "application/MapUrlParams", "dojo/domReady!"], function (
-ready, parser, domAttr, domGeometry, on, array, declare, lang, query, dom, domClass, domConstruct, registry, domUtils, esriLang, arcgisUtils, Popup, FeatureLayer, Point, MapUrlParams) {
+define([
+    "dojo/ready", 
+    "dojo/parser", 
+    "dojo/dom-attr", 
+    "dojo/dom-geometry", 
+    "dojo/on", 
+    "dojo/_base/array", 
+    "dojo/_base/declare", 
+    "dojo/_base/lang", 
+    "dojo/query", 
+    "dojo/dom", 
+    "dojo/dom-class", 
+    "dojo/dom-construct", 
+    "dijit/registry", 
+    "esri/domUtils", 
+    "esri/lang", 
+    "esri/arcgis/utils", 
+    "esri/dijit/Popup", 
+    "esri/layers/FeatureLayer", 
+    "esri/geometry/Point",  
+    "application/MapUrlParams", 
+    "application/sniff",
+    "application/Drawer",
+    "dojo/domReady!"], function (
+        ready, 
+        parser, 
+        domAttr, 
+        domGeometry, 
+        on, 
+        array, 
+        declare, 
+        lang, 
+        query, 
+        dom, 
+        domClass, 
+        domConstruct, 
+        registry, 
+        domUtils, 
+        esriLang, 
+        arcgisUtils, 
+        Popup, 
+        FeatureLayer, 
+        Point, 
+        MapUrlParams,
+        has,
+        Drawer
+        ) {
     return declare(null, {
         config: {},
         startup: function (config) {
@@ -13,12 +58,11 @@ ready, parser, domAttr, domGeometry, on, array, declare, lang, query, dom, domCl
             window.config = config;
 
             // responsive drawer
-            require(["application/sniff!drawer?application/Drawer"], lang.hitch(this, function (Drawer) {
-                if (!Drawer) {
-                    domClass.add(document.body, "no-title");
-                    return;
-                }
-
+            /*if (!Drawer) {
+                domClass.add(document.body, "no-title");
+                return;
+            }*/
+            if(has("drawer")){
                 this._drawer = new Drawer({
                     borderContainer: "border_container",
                     // border container node id
@@ -33,41 +77,39 @@ ready, parser, domAttr, domGeometry, on, array, declare, lang, query, dom, domCl
                 // startup drawer
                 this._drawer.startup();
 
+            }else{
+                domClass.add(document.body, "no-title");
+            }
+
+            var itemInfo = this.config.itemInfo || this.config.webmap;
+
+
+            // Check for center, extent, level and marker url parameters.
+            var mapParams = new MapUrlParams({
+              center: this.config.center || null,
+              extent: this.config.extent || null,
+              level: this.config.level || null,
+              marker: this.config.marker || null,
+              mapSpatialReference: itemInfo.itemData.spatialReference,
+              defaultMarkerSymbol: this.config.markerSymbol,
+              defaultMarkerSymbolWidth: this.config.markerSymbolWidth,
+              defaultMarkerSymbolHeight: this.config.markerSymbolHeight,
+              geometryService: this.config.helperServices.geometry.url
+            });
+
+            mapParams.processUrlParams().then(lang.hitch(this, function(urlParams){
+              promise = this._createWebMap(itemInfo, urlParams);
+            }), lang.hitch(this, function(error){
+              this.reportError(error);
             }));
-
-        var itemInfo = this.config.itemInfo || this.config.webmap;
-
-
-        // Check for center, extent, level and marker url parameters.
-        var mapParams = new MapUrlParams({
-          center: this.config.center || null,
-          extent: this.config.extent || null,
-          level: this.config.level || null,
-          marker: this.config.marker || null,
-          mapSpatialReference: itemInfo.itemData.spatialReference,
-          defaultMarkerSymbol: this.config.markerSymbol,
-          defaultMarkerSymbolWidth: this.config.markerSymbolWidth,
-          defaultMarkerSymbolHeight: this.config.markerSymbolHeight,
-          geometryService: this.config.helperServices.geometry.url
-        });
-
-        mapParams.processUrlParams().then(lang.hitch(this, function(urlParams){
-          promise = this._createWebMap(itemInfo, urlParams);
-        }), lang.hitch(this, function(error){
-          this.reportError(error);
-        }));
-
-      } else {
-        var error = new Error("Main:: Config is not defined");
-        this.reportError(error);
-        var def = new Deferred();
-        def.reject(error);
-        promise = def.promise;
-      }
-      return promise;
-
-
-
+          } else {
+            var error = new Error("Main:: Config is not defined");
+            this.reportError(error);
+            var def = new Deferred();
+            def.reject(error);
+            promise = def.promise;
+          }
+          return promise;
     },
     reportError: function (error) {
             // remove loading class from body
