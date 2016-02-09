@@ -93,13 +93,6 @@
                     "fieldName": "useClosestFacility",
                     "label": "Use Closest Facility to improve accuracy of distance calculation if several features are close together.",
                     "tooltip": "Use Closest Facility to improve accuracy of distance calculation if several features are close together."
-                },
-                {
-                    "type": "string",
-                    "fieldName": "closestFacilityURL",
-                    "label": "URL for Closest Facility task (defaults to route.arcgis.com if left blank)",
-                    "tooltip": "URL for Closest Facility task",
-                    "placeHolder": ""
                 }
             ]
         },

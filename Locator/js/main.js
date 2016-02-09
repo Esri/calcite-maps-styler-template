@@ -1481,7 +1481,6 @@ define([
             var routeUrl;
             if (this.config.helperServices.route && this.config.helperServices.route.url !== "") {
                 array.some(this.config.layerMixins, lang.hitch(this, function(layerMixin) {
-                    console.log("COMPARE", layerMixin.url, this.config.helperServices.route.url);
                     if (layerMixin.url === this.config.helperServices.route.url) {
                         var url = layerMixin.url;
                         var proxyUrl = layerMixin.mixin.url;
@@ -1512,9 +1511,9 @@ define([
         // Get Proxied Closest Facility Url
         _getProxiedClosestFacilityUrl: function() {
             var cfUrl;
-            if(!this.config.closestFacilityURL) {
+            if (this.config.helperServices.closestFacility && this.config.helperServices.closestFacility.url !== "") {
                 array.some(this.config.layerMixins, lang.hitch(this, function(layerMixin) {
-                    if (layerMixin.url === "http://route.arcgis.com/arcgis/rest/services/World/ClosestFacility/NAServer/ClosestFacility_World") {
+                    if (layerMixin.url === this.config.helperServices.closestFacility.url) {
                         var url = layerMixin.url;
                         var proxyUrl = layerMixin.mixin.url;
                         var url2 = url.toLowerCase();
@@ -1528,7 +1527,7 @@ define([
                     }
                 }));
             } else {
-                cfUrl = this.config.closestFacilityURL;
+                cfUrl = this.config.helperServices.closestFacility.url;
                 if (this.config.proxyurl !== "") {
                     urlUtils.addProxyRule({
                         urlPrefix: cfUrl,
