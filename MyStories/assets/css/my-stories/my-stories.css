@@ -225,7 +225,10 @@ button:focus {
   text-decoration: underline; }
 
 .esriSignInDialog {
-  display: none; }
+  display: none !important; }
+
+.esriSignInDialog_underlay {
+  display: none !important; }
 
 .temp-disabled {
   cursor: default !important;

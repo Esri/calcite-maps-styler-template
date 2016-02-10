@@ -43,9 +43,14 @@
     font-weight: 400;
 	}
 
+	#instructions {
+		display: none;
+	}
+
 	#inner-message .button:hover {
 		background: rgb(69, 124, 193);
 	}
+
 
 	</style>
 </head>
@@ -54,6 +59,10 @@
 	<div id="inner-message">
 		<h1 class="title">You are now signed in.</h1>
 		<div id="close-window" class="button">Back to Story Maps</div>
+		<div id="instructions">
+			<h3 id="instructions-message">Close this tab and refresh the website.</h3>
+			<div id="close-window-instructions" class="button">Close</div>
+		</div>
 	</div>
 </div>
 <script>
@@ -120,13 +129,21 @@
 			}
 
 			if(canAccessParent) {
-				callback = parentWindow.signInManager.getSignedInCallback();
+				if(parentWindow.signInManager) {
+					callback = parentWindow.signInManager.getSignedInCallback();
 
-				segueToParent(cookie, callback, locale);
+					segueToParent(cookie, callback, locale);
 
-				// if this isn't a frame (but is a full page)
-				if(!window.frameElement) {
-					onTabPageShown();
+					// if this isn't a frame (but is a full page)
+					if(!window.frameElement) {
+						onTabPageShown();
+					}
+				}
+				else {
+					// if this isn't a frame (but is a full page)
+					if(!window.frameElement) {
+						onTabPageShownOrphan();
+					}
 				}
 			}
 
@@ -279,17 +296,34 @@
 
 	onTabPageShown = function(url) {
 		window.close();
-		showPage(url);
+		showPage(url, true);
 	},
 
 
-	showPage = function(url) {
+	onTabPageShownOrphan = function() {
+		showPage(null, false);
+	},
+
+
+	showPage = function(url, canCallback) {
+		var closeWindowButton = document.getElementById('close-window');
+
+		if(canCallback) {
+			closeWindowButton.addEventListener('click', function() {
+				// redirect user to the page they logged in from.
+				// If they are redirected to https (but this frame is http), we provide the URL parameter becuause they won't have access to parentWindow.
+				window.location.href = url ? url : parentWindow.location.href;
+			});
+		}
+		else {
+			// we aren't able to get the user back, but we can at least give them some directions...
+			closeWindowButton.style.display = 'none';
+			document.getElementById('instructions').style.display = 'block';
+			document.getElementById('close-window-instructions').addEventListener('click', function() {
+				window.close();
+			});
+		}
 		document.getElementById('message').style.display = 'block';
-		document.getElementById('close-window').addEventListener('click', function() {
-			// redirect user to the page they logged in from.
-			// If they are redirected to https (but this frame is http), we provide the URL parameter becuause they won't have access to parentWindow.
-			window.location.href = url ? url : parentWindow.location.href;
-		});
 	};
 
 
