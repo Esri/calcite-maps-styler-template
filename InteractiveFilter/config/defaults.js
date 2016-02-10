@@ -44,7 +44,7 @@ define([], function() {
         "filterDropdown": false,
         // When true only the filters associated with the selected layer are displayed. All other filtered layers
         // have visibility turned off.
-        "toggleFilterVisibility": true,
+        "toggleFilterVisibility": false,
         //When true the filters in the web map are applied when the app loads. When false
         //the filter are cleared and all features are displayed.
         "filterOnLoad": true,
