@@ -79,8 +79,7 @@
 		var callback = null,
 			cookie = null,
 			canAccessParent = true,
-			preflang = fetchCookie('preflang'),
-			locale = preflang ? preflang : 'en';
+			locale = '';
 
 		if(window.location.href.match(/redirectHttps/)) {
 			redirectToHttps();
@@ -88,9 +87,12 @@
 		}
 
 		if( window.location.href.match(/fromSignOut/) ) {
+			// see if we can access the parent's locale
+			locale = getLocale();
+
 			window.location.href = baseUrl + "/sharing/rest/oauth2/authorize?client_id=" + DEFAULT_CLIENT_ID + "&display=iframe" +
 			"&redirect_uri=" + parentWindow.redirectBase + "arcgis-storymaps-my-stories-utils/sign-in/signedin.html" + encodeURIComponent("?defaultPortalURL=" + DEFAULT_PORTAL_URL +
-			"&defaultClientId=" + DEFAULT_CLIENT_ID) + "&response_type=token" + "&showSocialLogins=true" + "&parent=" + parentWindow.location.href + "&locale=" + locale;
+			"&defaultClientId=" + DEFAULT_CLIENT_ID) + "&response_type=token" + "&showSocialLogins=true" + "&locale=" + locale + "&parent=" + parentWindow.location.href;
 
 			return;
 		}
@@ -130,19 +132,35 @@
 
 			if(canAccessParent) {
 				if(parentWindow.signInManager) {
-					callback = parentWindow.signInManager.getSignedInCallback();
-
-					segueToParent(cookie, callback, locale);
-
 					// if this isn't a frame (but is a full page)
 					if(!window.frameElement) {
-						onTabPageShown();
+						// if not already same as smallUrl, refresh page as smallUrl
+						if(window.location.href !== smallUrl) {
+							window.location.href = smallUrl;
+						}
+						else {
+							// otherwise do your thing
+							callback = parentWindow.signInManager.getSignedInCallback();
+							segueToParent(cookie, callback);
+							onTabPageShown();
+						}
+					}
+					// if it is a frame it should do its thing
+					else {
+						callback = parentWindow.signInManager.getSignedInCallback();
+						segueToParent(cookie, callback);
 					}
 				}
 				else {
 					// if this isn't a frame (but is a full page)
 					if(!window.frameElement) {
-						onTabPageShownOrphan();
+						// if not already same as smallUrl, refresh page as smallUrl
+						if(window.location.href !== smallUrl) {
+							window.location.href = smallUrl;
+						}
+						else {
+							onTabPageShownOrphan();
+						}
 					}
 				}
 			}
@@ -235,7 +253,7 @@
 	},
 
 
-	segueToParent = function(cookie, callback, locale) {
+	segueToParent = function(cookie, callback) {
 		parentWindow.signInManager.renderHeader();
 		parentWindow.signInManager.hideSignInDialog(false);
 
@@ -250,6 +268,31 @@
 		else {
 			window.location.href = baseUrl + '/sharing/rest/oauth2/signout?redirect_uri=' + encodeURIComponent(smallUrl + "&fromSignOut=true");
 		}
+	},
+
+
+	getLocale = function() {
+		var preflang = fetchCookie('preflang'),
+			locale = '';
+
+		try {
+			locale = parentWindow.dojoConfig.locale;
+
+			// Safari doesn't throw the error, just logs it, so we need to look here for a null var from the previous statement.
+			if(!locale) {
+				locale = preflang;
+			}
+		}
+
+		catch(e) {
+			locale = preflang;
+		}
+
+		if(!locale) {
+			locale = 'en';
+		}
+
+		return locale;
 	},
 
 

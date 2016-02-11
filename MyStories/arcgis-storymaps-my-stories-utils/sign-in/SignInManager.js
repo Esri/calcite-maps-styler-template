@@ -374,12 +374,11 @@ define(['dojo/Deferred', 'sign-in/SignInDialog', 'sign-in/PortalHelper', 'create
 			}
 
 
-			var locale = 'en',
-				preflang = fetchCookie('preflang');
+			var locale = window.dojoConfig.locale;
 
-			if(preflang) {
-				locale = preflang;
-			}			
+			if(!locale) {
+				locale = 'en';
+			}
 
 
 			// the signedIn should be https if it gets here.
@@ -387,7 +386,7 @@ define(['dojo/Deferred', 'sign-in/SignInDialog', 'sign-in/PortalHelper', 'create
 				"src",
 				baseUrlHttps + "/sharing/rest/oauth2/authorize?client_id=" + app.cfg.DEFAULT_CLIENT_ID + "&display=iframe" +
 				"&redirect_uri=" + window.redirectBase + "arcgis-storymaps-my-stories-utils/sign-in/signedin.html" + encodeURIComponent(portalDefaultStr) + encodeURIComponent(urlSuffix) +
-				"&response_type=token" + socialShareParam + "&parent=" + window.location.href + "&locale=" + locale
+				"&response_type=token" + socialShareParam + "&locale=" + locale + "&parent=" + window.location.href
 			);
 
 			// show the dialog

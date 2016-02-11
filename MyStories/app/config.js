@@ -4,7 +4,7 @@ app.cfg = {
 	isProduction: true,
 	jsApiUrl: '//jsdev.arcgis.com/3.16/init.js',
 	facebook: {
-		appId: '737271002977269'
+		appId: '276669785846752'
 	},
 	bitly: {
 		login: 'esristorymaps',
@@ -38,32 +38,8 @@ var loadJS = function(url, isExternal) {
 };
 
 
-var fetchCookie = function(cookieName) {
-	var cookieValue = document.cookie,
-		cookieStart = cookieValue.indexOf(" " + cookieName + "=");
-
-	if (cookieStart == -1) {
-		cookieStart = cookieValue.indexOf(cookieName + "=");
-	}
-
-	if (cookieStart == -1) {
-		cookieValue = null;
-	}
-	else {
-		cookieStart = cookieValue.indexOf("=", cookieStart) + 1;
-		var cookieEnd = cookieValue.indexOf(";", cookieStart);
-		if (cookieEnd == -1) {
-			cookieEnd = cookieValue.length;
-		}
-		cookieValue = decodeURIComponent(cookieValue.substring(cookieStart, cookieEnd));
-	}
-	return cookieValue;
-};
-
-
 var getLanguage = function() {
-	var language = '',
-		preflang = '';
+	var language = '';
 	// should take the URL language.
 
 	if(window.builderIntegration) {
@@ -74,11 +50,7 @@ var getLanguage = function() {
 
 	// otherwise see if there is a preflang cookie set (for the site)
 	else {
-		preflang = fetchCookie('preflang');
-
-		if(preflang) {
-			language = preflang;
-		}
+		language = document.documentElement.getAttribute('lang');
 	}
 
 	if(!language) {
