@@ -93,20 +93,20 @@ define([
                 // TO DO: check proxy url
                 console.log("HELPER SERVICES", this.config.helperServices);
                 console.log("LAYER MIXINS", this.config.layerMixins);
-                if (this.config.helperServices.route && this.config.helperServices.route.url) {
-                    var routeUrl = null;
-                    array.some(this.config.layerMixins, lang.hitch(this, function(layerMixin) {
-                        if (layerMixin.url === this.config.helperServices.route.url) {
-                            //routeUrl = layerMixin.mixin.url;
-                            routeUrl = this._fixProxyUrl(layerMixin);
-                            return true;
-                        }
-                    }));
-                    urlUtils.addProxyRule({
-                        urlPrefix: routeUrl || this.config.helperServices.route.url,
-                        proxyUrl: this.config.proxyurl
-                    });
-                }
+                // if (this.config.helperServices.route && this.config.helperServices.route.url) {
+                //     var routeUrl = null;
+                //     array.some(this.config.layerMixins, lang.hitch(this, function(layerMixin) {
+                //         if (layerMixin.url === this.config.helperServices.route.url) {
+                //             //routeUrl = layerMixin.mixin.url;
+                //             routeUrl = this._fixProxyUrl(layerMixin);
+                //             return true;
+                //         }
+                //     }));
+                //     urlUtils.addProxyRule({
+                //         urlPrefix: routeUrl || this.config.helperServices.route.url,
+                //         proxyUrl: this.config.proxyurl
+                //     });
+                // }
                 // document ready
                 ready(lang.hitch(this, function() {
                     //supply either the webmap id or, if available, the item info
