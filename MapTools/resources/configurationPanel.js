@@ -216,6 +216,7 @@
                   "geometryTypes":[  
                      "esriGeometryPoint",
                      "esriGeometryLine",
+                     "esriGeometryPolyline",
                      "esriGeometryPolygon"
                   ]
                }
