@@ -17,7 +17,7 @@ app.cfg = {
 	CONCURRENT_SCAN_REQUESTS: 8,
 	CONCURRENT_PROXY_REQUESTS: 1,
 	cacheManager: null,
-	DEFAULT_PORTAL_URL: window.location.href.indexOf('socialSignIn') !== -1 ? 'devext.arcgis.com' : 'www.arcgis.com',
+	DEFAULT_PORTAL_URL: window.location.href.indexOf('env=devQA') !== -1 ? 'devext.arcgis.com' : 'www.arcgis.com',
 	DEFAULT_CLIENT_ID: 'arcgisonline',
 	defaultBasicTemplateURL: '//storymaps.arcgis.com/en/app-list/basic/tutorial/',
 	isSignedInPortal: false,

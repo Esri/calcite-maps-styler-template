@@ -66,6 +66,9 @@
 	</div>
 </div>
 <script>
+	if(window.location.hash) {
+		window.location.hash = '';
+	}
 // can access parent window?
 	var parentWindow = {},
 		canAccessParent = true,
@@ -134,16 +137,10 @@
 				if(parentWindow.signInManager) {
 					// if this isn't a frame (but is a full page)
 					if(!window.frameElement) {
-						// if not already same as smallUrl, refresh page as smallUrl
-						if(window.location.href !== smallUrl) {
-							window.location.href = smallUrl;
-						}
-						else {
-							// otherwise do your thing
-							callback = parentWindow.signInManager.getSignedInCallback();
-							segueToParent(cookie, callback);
-							onTabPageShown();
-						}
+						// do your thing
+						callback = parentWindow.signInManager.getSignedInCallback();
+						segueToParent(cookie, callback);
+						onTabPageShown();
 					}
 					// if it is a frame it should do its thing
 					else {
@@ -154,13 +151,7 @@
 				else {
 					// if this isn't a frame (but is a full page)
 					if(!window.frameElement) {
-						// if not already same as smallUrl, refresh page as smallUrl
-						if(window.location.href !== smallUrl) {
-							window.location.href = smallUrl;
-						}
-						else {
-							onTabPageShownOrphan();
-						}
+						onTabPageShownOrphan();
 					}
 				}
 			}
