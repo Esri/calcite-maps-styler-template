@@ -143,14 +143,14 @@ define([
                       on(dom.byId("closeOverlay"), "click", lang.hitch(this, function(){
                         domClass.add("modal", "hide");
                       }));
+                      this._updateTheme(); 
                     }
                     mapParams.processUrlParams().then(lang.hitch(this, function(urlParams){
                       promise = this._createWebMap(itemInfo, urlParams);
-
                     }), lang.hitch(this, function(error){
                       this.reportError(error);
                     }));
-                    //this._createWebMap(itemInfo);
+                    
 
                 }));
             } else {
