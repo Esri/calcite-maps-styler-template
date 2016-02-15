@@ -1,0 +1,34 @@
+﻿/*global define */
+/*
+ | Copyright 2014 Esri
+ |
+ | Licensed under the Apache License, Version 2.0 (the "License");
+ | you may not use this file except in compliance with the License.
+ | You may obtain a copy of the License at
+ |
+ |    http://www.apache.org/licenses/LICENSE-2.0
+ |
+ | Unless required by applicable law or agreed to in writing, software
+ | distributed under the License is distributed on an "AS IS" BASIS,
+ | WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ | See the License for the specific language governing permissions and
+ | limitations under the License.
+ */
+define(
+   ({
+    scene: {
+      error: "כן_Unable to create scene________ש"
+    },
+    panel: {
+      noslides: "כן_No slides in web scene________ש"
+    },
+    tooltips: {
+      layers: "כן_Layers___ש",
+      basemaps: "כן_Base maps____ש",
+      slides: "כן_Slides___ש",
+      close: "כן_Close___ש",
+      zoom: "כן_Zoom__ש",
+      onoff: "כן_On-Off___ש"
+    }
+  })
+);
