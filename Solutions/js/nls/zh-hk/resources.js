@@ -15,7 +15,7 @@
  | limitations under the License.
  */
 define(
-    ({
+     ({
         map: {
             error: "無法建立地圖"
         },
@@ -56,7 +56,7 @@ define(
             geolocationTimeout: "瀏覽器無法及時取得目前位置",  // Shown when the browser does not return within a configured time limit when asked for the current geographical position
             noSearchLayerConfigured: "尚未設定任何查詢圖層",  // Appears before a list of map layers; shown when the app is not configured with any layers to use for the find command; works with the mapLayers prompt
             searchLayerMissing: "在地圖中未找到此查詢圖層",  // Appears before a list of map layers; shown when the app is not configured with the layer to use for the find command; works with the mapLayers prompt
-            searchLayerNotSearchable: "無法找到地圖圖層的欄位。<br><br>請確認此圖層存在於地圖內容的根目錄。巢狀服務(例如 ArcGIS for Server 動態地圖服務)必須新增到地圖(一次新增到一個圖層)(包括圖層索引編號)，以做為“查詢圖層”。並排服務不能用作“查詢圖層”。",
+            searchLayerNotSearchable: "無法找到地圖圖層的欄位。<br><br>請確認此圖層存在於地圖內容的根目錄。巢狀服務(例如 ArcGIS for Server 動態地圖服務)必須新增到地圖(一次新增到一個圖層)(包括圖層索引編號)，以做為\“查詢圖層\”。並排服務不能用作\“查詢圖層\”。",
             searchFieldMissing: "在地圖查詢圖層中未找到此欄位",  // Appears before a list of fields in the configured map find layer; shown when the app cannot find one or more of the fields that were configured for the find command; works with the layerFields prompt
             allSearchFieldsMissing: "在地圖查詢圖層中未找到這些欄位",  // Appears before a list of fields in the configured map find layer; shown when the app cannot find any of the fields that were configured for the find command; works with the layerFields prompt
             fieldNotFound: "此欄位不存在於任何地圖圖層中",  // Appears when a field used in the configuration was not found in any map layer

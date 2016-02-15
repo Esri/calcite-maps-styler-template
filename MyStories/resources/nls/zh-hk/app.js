@@ -41,7 +41,7 @@
 		},
 		cantFindStories: {
 			whereAreStories: "看不到您的故事?",
-			notSeeExplanation: "我的故事只會列出以 {{STORY_MAP_TOUR}}、{{JOURNAL}}、{{MAP_SERIES}} 和 {{SWIPE_SPYGLASS}} 應用程式建立的 ArcGIS Online 中所託管的故事地圖。如需詳細資訊，請參閱我們的 {{FAQ}}。",
+			notSeeExplanation: "試_My Stories will only list story maps hosted in ArcGIS and created with the {{STORY_MAP_TOUR}}, {{JOURNAL}}, {{MAP_SERIES}} or {{SWIPE_SPYGLASS}} applications. See our {{FAQ}} for more information____________________________________________________________驗.",
 			faq: "常見問題集",
 			followingStoriesToUpdate: "下列故事是使用我們早期的應用程式版本建立，需要為它們進行「我的故事」所列出的更新:",
 			gettingStories: "正在搜尋使用我們的早期應用程式版本建立且需要更新的故事...",
@@ -120,7 +120,7 @@
 			saveFailed: "儲存時出錯",
 			numViews: "視圖: {{NUM_VIEWS}}",
 			editStory: "編輯故事",
-			viewLive: "即時檢視",
+			viewLive: "試_View Story____驗",
 			preview: "預覽",
 			deleteButton: "刪除",
 			modified: "修改的 {{DATE}}",
@@ -130,7 +130,7 @@
 			close: "關閉",
 			hide: "隱藏",
 			notAvailableWhenBroken: "您的故事發生下列問題",
-			cantBeDeleted: "這篇故事已啟用刪除防護，請在 ArcGIS Online 上查看其項目頁面以停用",
+			cantBeDeleted: "試_This story has delete protection enabled. See its item page on ArcGIS to disable_________________________驗.",
 			shareDialog: {
 				title: "與世界分享您的故事!",
 				notPublicWarning: "您的故事已與您的組織分享。只有您的組織成員能檢視它。",
@@ -163,7 +163,7 @@
 				save: "儲存",
 				saved: "已儲存",
 				errorSaving: "儲存錯誤",
-				tagTip: "提示: 標記可協助人們在 ArcGIS Online 上找到您的故事。標記愈相關，您工作獲得的可見度就越高。"
+				tagTip: "試_Tip: Tags help people find your story. The more relevant the tags are, the higher the visibility your work will receive_____________________________________驗."
 			},
 			submitToGallery: {
 				gallerySubmission: "Story Maps 圖庫",
@@ -173,7 +173,7 @@
 				chosenSubjectAlt: "{{SUBJECT}} 和部分標記",
 				storyMapTopicSubject: "主旨",
 				sharedPublicly: "分享給大眾",
-				noBrokenContent: "無殘缺內容",
+				noBrokenContent: "試_No issues____驗",
 				nominateToGallery: "指定給圖庫",
 				comingSoon: "即將推出！",
 				submitted: "已提交",
@@ -298,7 +298,8 @@
 				subscriptionPublicSuccess: "您的訂閱內容現在可公開存取"
 			},
 			errors: {
-				publicDisabled: "管理員已停用公開分享",
+				publicDisabled: "試_Sharing publicly has been disabled by an Administrator_________________驗",
+				orgDisabled: "試_Sharing to your organization has been disabled by an Administrator_____________________驗",
 				noMapName: "無法擷取地圖名稱",
 				notPublic: "未公開",
 				inaccessible: "無法存取",
@@ -350,7 +351,9 @@
 			tooltipWarnings: {
 				cantScanThisTypeAlt: "我們無法檢查此類型的圖層",
 				cantScanThisType: "圖層不屬於我們可檢查的圖層類型",
-				webpageNotScanned: "未檢查網頁的問題"
+				webpageNotScanned: "未檢查網頁的問題",
+				ignoredIssue: "試_You have ignored an error on this layer. Reload the page and check this story again to review the error________________________________驗",
+				ignoredIssueBuilder: "試_You have ignored an error on this layer. Reload the builder to check this error again___________________________驗"
 			},
 			scanningErrors: {
 				deletedMap: "已刪除內容",
@@ -368,9 +371,9 @@
 				inaccessibleWebpage: "無法存取的網頁"
 			},
 			scanningErrorTips: {
-				deletedMapTip: "提示: 開啟您的網上地圖並移除殘缺的內容，或移除您故事中的網上地圖。",
-				inaccessibleMapTip: "提示: 開啟您的網上地圖並移除殘缺的內容，或移除您故事中的網上地圖。",
-				notYoursNotAccessibleTip: "提示: 開啟網上地圖，及移除故事中的圖層或地圖。",
+				deletedMapTip: "試_Tip: Edit your web map and remove the broken content, or remove the web map from your story_____________________________驗.",
+				inaccessibleMapTip: "試_Tip: Edit your web map and remove the broken content, or remove the web map from your story_____________________________驗.",
+				notYoursNotAccessibleTip: "試_Tip: Edit your web map and remove the layer, or remove the web map from your story__________________________驗.",
 				serviceOkItemNotTip: "已將圖層新增為無法存取或已刪除的項目。圖層正在運作，但這可能會影響您的地圖 (快顯視窗、符號)。",
 				ignore: "忽略",
 				fix: "修復",
@@ -384,7 +387,6 @@
 				premiumContentTip: "您的故事包含在設為公開時將使用 {{CREDITS}} 的高級內容。請將您的故事設為公開並繼續，或從您的故事移除圖層。",
 				premiumContentPublicTip: "您的故事包含開放大眾使用時將使用 {{CREDITS}} 的高級內容。請確認將這些圖層設為公開，或從您的故事移除圖層。",
 				subscriptionContentTip: "您的故事包含預設未公開使用的訂閱內容。請確認要開放使用這些圖層 (不會使用點數)，或從您的故事移除圖層。",
-				agolCredits: "ArcGIS Online 點數",
 				credits: "點數",
 				makePublic: "設為公開",
 				confirm: "確認",
@@ -455,6 +457,15 @@
 				secondValueA: "刷屏",
 				secondValueB: "望遠鏡",
 				thirdTitle: "地圖"
+			},
+			crowdsource: {
+				firstTitle: "試_contributions_____驗",
+				secondTitle: "試_style___驗",
+				secondValueA: "試_side panel____驗",
+				secondValueB: "試_stacked___驗",
+				thirdTitle: "試_basemap___驗",
+				thirdValueLoading: "試_Loading____驗...",
+				thirdValueUnknown: "試_unknown___驗"
 			}
 		},
 		progress: {
@@ -469,6 +480,11 @@
 			scanProgress: "{{NUM_SCANNED}}，總計 {{NUM_TOTAL}}",
 			scanStopped: "掃描的故事數: {{NUM_SCANNED}}，發生問題的故事數: {{ISSUE_STORIES}}",
 			storiesWithIssues: "發生問題的故事數: {{NUM_STORIES}}"
+		},
+		newStories: {
+			newStoriesFound: "試_Looks like you have created a new story_____________驗.",
+			includeStories: "試_Refresh Stories______驗",
+			notWhileScanning: "試_This will be available when the check is complete________________驗"
 		}
     })
 );
