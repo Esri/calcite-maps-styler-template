@@ -602,7 +602,7 @@ define([
     _setupSplashModal: function(){
         // Setup the modal overlay if enabled
         if(this.config.splashModal){
-          domClass.remove,("modal", "hide");
+          domClass.remove("modal", "hide");
           var title = this.config.splashTitle || this.config.i18n.splash.title;
           var content = this.config.splashContent || this.config.i18n.splash.content;
           dom.byId("modalTitle").innerHTML = title;
