@@ -234,7 +234,8 @@ define([
       // zoom to location
       _zoomToLocation : function(gra) {
          var loc = gra.attributes.POINT_LOCATION;
-         this.map.centerAndZoom(loc, this.config.defaultZoomLevel || 14);
+         //this.map.centerAndZoom(loc, this.config.defaultZoomLevel || 14);
+         this.map.centerAt(loc);
       },
 
       // route to location
