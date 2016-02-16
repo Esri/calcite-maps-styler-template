@@ -68,7 +68,7 @@
                 "multipleSelection": false,
                 "fieldName": "itemVotesField",
                 "label": "Field to store the vote tally for each report (optional)",
-                "tooltip": "Numeric field in the selected layer for tracking the votes received for each feature."
+                "tooltip": "Numeric field in the selected layer for tracking the votes received for each feature. Field name is case-sensitive."
             }]
         }]
     }, {
@@ -83,7 +83,7 @@
             "label": "Field to store the name of authenticated commenters.",
             "fieldName": "commentNameField",
             "type": "string",
-            "tooltip": "Field in a table with a geodatabase relationship to the selected feature layer for storing the name of authenticated commenters. Table must exist in map."
+            "tooltip": "Field in a table with a geodatabase relationship to the selected feature layer for storing the name of authenticated commenters. Table must exist in map. Field name is case-sensitive."
         }, {
             "label": "Allow users to sign in using Twitter",
             "fieldName": "allowTwitter",
