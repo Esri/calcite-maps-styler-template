@@ -60,6 +60,14 @@ define([
       domStyle.set(this.switchNode, "backgroundColor", this.color);
       domAttr.set(this.actionNode, "title", i18n.tooltips.zoom || "Zoom");
       domAttr.set(this.switchNode, "title", i18n.tooltips.onoff || "On-Off");
+      this.layer.watch('visible', lang.hitch(this, function(newValue, oldValue, property, object) {
+        console.log(newValue, oldValue, property, object);
+        if (newValue === true) {
+          domClass.remove(this.itemNode, "off");
+        } else {
+          domClass.add(this.itemNode, "off");
+        }
+      }));
     },
 
     destroy: function() {
@@ -84,13 +92,14 @@ define([
     },
 
     _toggleLayer: function() {
-      if (domClass.contains(this.itemNode, "off")) {
-        this.layer.visible = true;
-        domClass.remove(this.itemNode, "off");
-      } else {
-        this.layer.visible = false;
-        domClass.add(this.itemNode, "off");
-      }
+      // if (domClass.contains(this.itemNode, "off")) {
+      //   this.layer.visible = true;
+      //   domClass.remove(this.itemNode, "off");
+      // } else {
+      //   this.layer.visible = false;
+      //   domClass.add(this.itemNode, "off");
+      // }
+      this.layer.visible = !this.layer.visible;
     }
 
 
