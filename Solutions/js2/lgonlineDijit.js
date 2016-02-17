@@ -119,11 +119,14 @@ define([
             // Add search control
 
             var searchOptions, dijitSources = [], featureSearchLayers, featureDisplayLayers,
-                featureLayerNames, featureSearchFields, featureDisplayFields;
+                featureLayerNames, featureSearchFields, featureDisplayFields, searchDijit;
 
             searchOptions = {
                 map: this.appConfig.map,
             };
+            if (this.appConfig.find) {
+                searchOptions.value = decodeURIComponent(this.appConfig.find);
+            }
 
             // v.3: Check for search configuration via "search" type written into searchLayers object
             if (this.searchLayers && this.searchLayers.sources && this.searchLayers.sources.length > 0) {
@@ -263,9 +266,15 @@ define([
             }
 
             // Create the Search dijit
-            new Search(searchOptions, domConstruct.create("div", {
+            searchDijit = new Search(searchOptions, domConstruct.create("div", {
                 id: "search"
-            }, domConstruct.create("div", null, this.rootDiv))).startup();
+            }, domConstruct.create("div", null, this.rootDiv)));
+            searchDijit.startup();
+
+            // If we have a search term in the URL, launch a search for it
+            if (searchOptions.value) {
+                searchDijit.search(searchOptions.value);
+            }
 
             this.ready.resolve(this);
         },
@@ -330,6 +339,6 @@ define([
 });
 /* 
 This source is part of the git commit 
-f5faf8b2a4937d42 2016-02-05 10:54:38 -0800
+5fb3d9e6f553e006 2016-02-17 15:51:22 -0800
 It is available from https://github.com/Esri/local-government-online-apps 
 */ 

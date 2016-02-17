@@ -1,8 +1,8 @@
-Built on 02/05/2016 11:04:11.04 from
+Built on 02/17/2016 15:51:57.78 from
 repository local-government-online-apps
 branch develop
-commit f5faf8b2a4937d42b734e2a7b7016c150899a692
+commit 5fb3d9e6f553e0066b4f1b6f3a0d443a94bfd9ae
 Author: MikeTschudi <mtschudi@esri.com>
-Date:   Fri Feb 5 10:54:38 2016 -0800
+Date:   Wed Feb 17 15:51:22 2016 -0800
 
-    Updated to JSAPI 3.16 dev
+    Enabled URL search term for new search dijit
