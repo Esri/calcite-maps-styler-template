@@ -141,11 +141,19 @@ body {
 
 /* Search */
 
-.esri-search,
-input {
+.esri-search {
   -webkit-box-shadow: none !important;
   -moz-box-shadow: none !important;
   box-shadow: none !important;
+  width: 232px;
+  height: 32px;
+}
+
+.esri-search .esri-container .esri-input {
+  -webkit-box-shadow: none !important;
+  -moz-box-shadow: none !important;
+  box-shadow: none !important;
+  width: 200px;
 }
 
 .esri-search .esri-search-button,
