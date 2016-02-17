@@ -34,7 +34,7 @@ Distance Units: Choose this distance units (miles, kilometers or meters).
 
 Maximum Distance: Specify a maximum search distance. 
 
-Defaukt Distance: Specify a default search distance. 
+Default Distance: Specify a default search distance. 
 
 
 #Instructions
