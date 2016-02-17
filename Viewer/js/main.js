@@ -137,7 +137,7 @@ define([
                       var content = this.config.splashContent || "";
                       dom.byId("modalTitle").innerHTML = title;
                       dom.byId("modalContent").innerHTML = content;
-                      dom.byId("closeOverlay").value = this.config.spashButtonText || this.config.i18n.nav.close;
+                      dom.byId("closeOverlay").value = this.config.splashButtonText || this.config.i18n.nav.close;
 
                       // Close button handler for the overlay
                       on(dom.byId("closeOverlay"), "click", lang.hitch(this, function(){
