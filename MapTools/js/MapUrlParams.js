@@ -235,7 +235,8 @@ function(
               }
               this._project(point).then(lang.hitch(this, function(pPoint){
                 var projectedGraphic = new Graphic(pPoint, markerSymbol, null, infoTemplate);
-                var projectedResult = (pPoint) ? {"markerGraphic": projectedGraphic} : null;
+
+                var projectedResult = (pPoint) ? {"markerGraphic": projectedGraphic, "center": pPoint} : null;
                 deferred.resolve(projectedResult);
               }),deferred.reject);
          }else{
@@ -269,9 +270,14 @@ function(
       return deferred.promise;
     },
     _sameSpatialReference: function(sp1, sp2) {
+
       var same = false;
       var mercator = [102113, 102100, 3857];
-      if (sp1 && sp2 && sp1.wkt == sp2.wkt && (sp1.wkid == sp2.wkid || (esriLang.isDefined(sp1.latestWkid) && sp1.latestWkid == sp2.wkid) || (esriLang.isDefined(sp2.latestWkid) && sp1.wkid == sp2.latestWkid) || (esriLang.isDefined(sp1.latestWkid) && sp1.latestWkid == sp2.latestWkid))) {
+      if (sp1 && sp2 && sp1.wkt === sp2.wkt &&
+        (sp1.wkid === sp2.wkid ||
+          (esriLang.isDefined(sp1.latestWkid) && sp1.latestWkid === sp2.wkid) ||
+          (esriLang.isDefined(sp2.latestWkid) && sp1.wkid === sp2.latestWkid) ||
+          (esriLang.isDefined(sp1.latestWkid) && sp1.latestWkid === sp2.latestWkid))) {
         same = true;
       } else if (sp1 && sp2 && sp1.wkid && sp2.wkid && (array.indexOf(mercator, sp1.wkid) != -1) && (array.indexOf(mercator, sp2.wkid)!= -1)) {
         same = true;

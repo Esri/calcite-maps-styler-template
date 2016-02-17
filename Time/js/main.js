@@ -685,8 +685,6 @@ define([
                         this.map.infoWindow.setFeatures([params.markerGraphic]);
                         this.map.infoWindow.show(params.markerGraphic.geometry);
                       }
-
-                      this.map.centerAt(params.markerGraphic.geometry);
                     }));
 
                 } 

@@ -1,46 +1,46 @@
 define([
-    "dojo/ready", 
-    "dojo/parser", 
-    "dojo/dom-attr", 
-    "dojo/dom-geometry", 
-    "dojo/on", 
-    "dojo/_base/array", 
-    "dojo/_base/declare", 
-    "dojo/_base/lang", 
-    "dojo/query", 
-    "dojo/dom", 
-    "dojo/dom-class", 
-    "dojo/dom-construct", 
-    "dijit/registry", 
-    "esri/domUtils", 
-    "esri/lang", 
-    "esri/arcgis/utils", 
-    "esri/dijit/Popup", 
-    "esri/layers/FeatureLayer", 
-    "esri/geometry/Point",  
-    "application/MapUrlParams", 
+    "dojo/ready",
+    "dojo/parser",
+    "dojo/dom-attr",
+    "dojo/dom-geometry",
+    "dojo/on",
+    "dojo/_base/array",
+    "dojo/_base/declare",
+    "dojo/_base/lang",
+    "dojo/query",
+    "dojo/dom",
+    "dojo/dom-class",
+    "dojo/dom-construct",
+    "dijit/registry",
+    "esri/domUtils",
+    "esri/lang",
+    "esri/arcgis/utils",
+    "esri/dijit/Popup",
+    "esri/layers/FeatureLayer",
+    "esri/geometry/Point",
+    "application/MapUrlParams",
     "application/sniff",
     "application/Drawer",
     "dojo/domReady!"], function (
-        ready, 
-        parser, 
-        domAttr, 
-        domGeometry, 
-        on, 
-        array, 
-        declare, 
-        lang, 
-        query, 
-        dom, 
-        domClass, 
-        domConstruct, 
-        registry, 
-        domUtils, 
-        esriLang, 
-        arcgisUtils, 
-        Popup, 
-        FeatureLayer, 
-        Point, 
+        ready,
+        parser,
+        domAttr,
+        domGeometry,
+        on,
+        array,
+        declare,
+        lang,
+        query,
+        dom,
+        domClass,
+        domConstruct,
+        registry,
+        domUtils,
+        esriLang,
+        arcgisUtils,
+        Popup,
+        FeatureLayer,
+        Point,
         MapUrlParams,
         has,
         Drawer
@@ -52,7 +52,7 @@ define([
             parser.parse();
             // config will contain application and user defined info for the template such as i18n strings, the web map id
             // and application id
-            // any url parameters and any application specific configuration information. 
+            // any url parameters and any application specific configuration information.
             if(config){
             this.config = config;
             window.config = config;
@@ -154,12 +154,12 @@ define([
                 }));
 
             } else {
-                //add class so we can move basemap gallery button 
+                //add class so we can move basemap gallery button
                 domClass.add(document.body, "no-home");
             }
             //Position basemap gallery higher if zoom isn't taking up space
             if (this.config.zoom === false) {
-                //add class so we can move basemap gallery button 
+                //add class so we can move basemap gallery button
                 domClass.add(document.body, "no-zoom");
             }
             if (this.config.zoom && this.config.zoom_position && this.config.zoom_position !== "top-left") {
@@ -192,7 +192,7 @@ define([
 
                     //get the search value
                     var feature = null, find = null, source = null, value = null;
-  
+
                     if((this.config.customUrlLayer.id !== null && this.config.customUrlLayer.fields.length > 0 && this.config.customUrlParam !== null)){
                         var urlObject = urlUtils.urlToObject(document.location.href);
                         urlObject.query = urlObject.query || {};
@@ -235,13 +235,13 @@ define([
                                     outFields: ["*"],
                                     featureLayer: searchLayer,
                                     displayField: attribute,
-                                    searchFields: [attribute] 
+                                    searchFields: [attribute]
                                 };
                                 value = featureId;
                              }
-    
+
                           }
-                        }         
+                        }
                     }
                     if(this.config.find){
                         find = decodeURIComponent(this.config.find);
@@ -277,8 +277,8 @@ define([
                     useMapExtent: this.config.searchextent,
                     itemData: this.config.response.itemInfo.itemData
                 };
-              
-           
+
+
                 if(this.config.searchOptions && this.config.searchOptions.sources){
                     searchOptions.applicationConfiguredSources = this.config.searchOptions.sources;
                 }else{
@@ -294,13 +294,13 @@ define([
                 }, "mapDiv"));
 
                 domClass.add(dom.byId("search"), "simpleGeocoder");
-        
+
                 search.startup();
                 //use search if its available.
                 if(this.config.find){
                     search.set("value", this.config.find);
                     var activeIndex = search.activeSourceIndex;
-       
+
                     search.set("activeSourceIndex","all");
                     search.search(this.config.find).then(function(){
                         search.set("activeSourceIndex",activeIndex);
@@ -321,7 +321,7 @@ define([
                     map: this.map
                 };
                 var gallery = null;
-                //add a button below the slider to show/hide the basemaps 
+                //add a button below the slider to show/hide the basemaps
                 var mainContainer = domConstruct.create("div", {
                     "class": "icon-basemap-container active-toggle",
                     "tabindex": "0",
@@ -338,7 +338,7 @@ define([
 
 
                 //Create a container to hold the basemap gallery title, gallery and also draw
-                //the callout arrow 
+                //the callout arrow
                 var container = domConstruct.create("div", {
                     id: "gallery_container"
                 }, dom.byId("mapDiv"));
@@ -543,7 +543,7 @@ define([
         params.mapOptions.sliderPosition = this.config.zoom_position;
         params.mapOptions.infoWindow = customPopup;
         params.mapOptions.logo = (this.config.logoimage === null) ? true : false;
-       
+
 
       return arcgisUtils.createMap(itemInfo, "mapDiv", {
         mapOptions: params.mapOptions || {},
@@ -554,7 +554,7 @@ define([
       }).then(lang.hitch(this, function (response) {
         this.map = response.map;
         this.config.response = response;
-        this._adjustPopupSize(); 
+        this._adjustPopupSize();
         if (this.config.logoimage) {
             query(".esriControlsBR").forEach(lang.hitch(this, function (node) {
                 var link = null;
@@ -572,7 +572,7 @@ define([
                 }, link || node);
 
             }));
-        }             
+        }
           if(params.markerGraphic){
             // Add a marker graphic with an optional info window if
             // one was specified via the marker url parameter
@@ -587,7 +587,6 @@ define([
                 this.map.infoWindow.show(params.markerGraphic.geometry);
               }
 
-              this.map.centerAt(params.markerGraphic.geometry);
             }));
 
           }
@@ -647,7 +646,7 @@ define([
                 registry.byId("tabContainer").selectChild("popup");
                 var drawer = query(".drawer-open");
                 if (drawer && drawer.length === 0) {
-                    //drawer is not open so open it  
+                    //drawer is not open so open it
                     dom.byId("toggle_button").click();
                     //this._drawer.toggle();
                 }

@@ -277,7 +277,7 @@ define([
       if(this.urlObject && this.urlObject.query && this.urlObject.query.preventId){
         IdentityManager.useSignInPage = false;
       }
-      console.log(IdentityManager.useSignInPage);
+
       signedIn = IdentityManager.checkSignInStatus(this.config.sharinghost + "/sharing");
       // resolve regardless of signed in or not.
       signedIn.promise.always(function () {
