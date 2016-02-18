@@ -1,11 +1,8 @@
 {
    "configurationSettings":[
       {
-         "category":"App Settings",
+         "category":"Map",
          "fields":[
-            {
-               "type": "appproxies"
-            },
             {
                "type":"webmap",
                "label":"Select a map"
@@ -16,10 +13,14 @@
                "fieldName":"title",
                "type":"string",
                "tooltip":"Defaults to map title"
+            },
+            {
+               "type":"appproxies"
             }
          ]
-      },{
-         "category": "Theme",
+      },
+      {
+         "category":"Theme",
          "fields":[
             {
                "type":"color",
@@ -36,7 +37,7 @@
          ]
       },
       {
-         "category":"Filter Options",
+         "category":"Filter",
          "fields":[
             {
                "placeHolder":"Defaults to Apply",
@@ -69,17 +70,19 @@
                "type":"boolean",
                "fieldName":"filterOnLoad",
                "label":"Apply filters when app loads."
-            },{
-              "type": "paragraph",
-              "value": "Set Filter by layer to true to apply only the filters associated with that layer. When false filters associated with all layers will be applied."
-            },{
-              "type": "boolean",
-              "fieldName": "toggleFilterVisibility",
-              "label": "Filter by layer"  
             },
             {
-              "type": "paragraph",
-              "value": "Display a zoom button that allows application users to zoom to the filtered results. Only applicable for hosted feature services"
+               "type":"paragraph",
+               "value":"Set Filter by layer to true to apply only the filters associated with that layer. When false filters associated with all layers will be applied."
+            },
+            {
+               "type":"boolean",
+               "fieldName":"toggleFilterVisibility",
+               "label":"Filter by layer"
+            },
+            {
+               "type":"paragraph",
+               "value":"Display a zoom button that allows application users to zoom to the filtered results. Only applicable for hosted feature services"
             },
             {
                "type":"boolean",
@@ -87,18 +90,18 @@
                "label":"Display zoom button"
             },
             {
-              "type": "paragraph",
-              "value": "Display a clear button that allows application users to remove the applied filter."
+               "type":"paragraph",
+               "value":"Display a clear button that allows application users to remove the applied filter."
             },
-              {
-              "type": "boolean",
-              "fieldName": "displayClear",
-              "label": "Display clear button"
+            {
+               "type":"boolean",
+               "fieldName":"displayClear",
+               "label":"Display clear button"
             }
          ]
       },
       {
-         "category":"<b>Optional Widgets</b>",
+         "category":"<b>Options</b>",
          "fields":[
             {
                "type":"paragraph",
@@ -113,31 +116,35 @@
                "type":"boolean",
                "fieldName":"locate",
                "label":"Location button"
-            },{
+            },
+            {
                "type":"boolean",
-               "fieldName": "legend",
-               "label": "Legend"
-            },{
-               "type": "boolean",
-               "fieldName": "legendOpen",
+               "fieldName":"legend",
+               "label":"Legend"
+            },
+            {
+               "type":"boolean",
+               "fieldName":"legendOpen",
                "label":"Open legend on load"
             }
          ]
-      },{
-         "category": "Search Settings",
-         "fields": [
+      },
+      {
+         "category":"Search",
+         "fields":[
             {
                "type":"paragraph",
-               "value": "Enable search to allow users to find a location or data in the map. Configure the search settings to refine the experience in your app by setting the default search resource, placeholder text, etc."
+               "value":"Enable search to allow users to find a location or data in the map. Configure the search settings to refine the experience in your app by setting the default search resource, placeholder text, etc."
             },
             {
                "type":"boolean",
                "fieldName":"search",
                "label":"Enable search tool"
-            },{
-               "type": "search",
-               "fieldName": "searchConfig",
-               "label": "Configure search tool"
+            },
+            {
+               "type":"search",
+               "fieldName":"searchConfig",
+               "label":"Configure search tool"
             }
          ]
       }
@@ -149,12 +156,11 @@
       "color":"#fff",
       "theme":"#666",
       "filterDropdown":false,
-      "filterOnLoad": true,
-      "displayZoom": false,
-      "displayClear": false,
-      "toggleFilterVisibility": false,
-      "legend": false,
-      "legendOpen": false
-
+      "filterOnLoad":true,
+      "displayZoom":false,
+      "displayClear":false,
+      "toggleFilterVisibility":false,
+      "legend":false,
+      "legendOpen":false
    }
 }

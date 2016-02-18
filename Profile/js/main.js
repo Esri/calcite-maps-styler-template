@@ -35,7 +35,7 @@ define([
   "dojo/dom-geometry",
 
   "dijit/registry",
-  
+
   "esri/units",
   "esri/domUtils",
   "esri/arcgis/utils",
@@ -48,7 +48,7 @@ define([
   declare, array, lang, Color,
   on,mouse, query,
   Deferred,
-  baseFx, 
+  baseFx,
   dom, domConstruct, domStyle, domClass, domGeometry,
   registry,
   Units,
@@ -72,7 +72,7 @@ define([
         if(this.config.customstyle){
             var style = document.createElement("style");
             style.appendChild(document.createTextNode(this.config.customstyle));
-            document.head.appendChild(style);    
+            document.head.appendChild(style);
         }
         this._setupSplashModal();
 
@@ -132,7 +132,7 @@ define([
     _createWebMap: function (itemInfo, params) {
       // set extent from config/url
 
-      //enable/disable the slider 
+      //enable/disable the slider
       params.mapOptions.slider = this.config.mapZoom;
       domClass.add(document.body, "slider-" + this.config.mapZoom);
 
@@ -180,16 +180,16 @@ define([
 
           }
 
-      // Hide or show profile when button is clicked. 
+      // Hide or show profile when button is clicked.
         var profileToggle = dom.byId("toggleProfile");
         profileToggle.title = this.config.i18n.elevation.toggle;
         on(profileToggle, "click", lang.hitch(this, function(){
             this._togglePanel("panelContent");
         }));
         this._setupAppTools();
-        // setup elevation profile 
+        // setup elevation profile
         this._setupProfile();
-        // update app theme 
+        // update app theme
         this._updateTheme();
         // return for promise
         return response;
@@ -215,10 +215,10 @@ define([
       }));
     },
     _setupAppTools: function(){
-        // setup the draw tool 
+        // setup the draw tool
         if(this.config.elevationDraw){
           require(["esri/toolbars/draw"], lang.hitch(this, function(Draw){
-  
+
             var drawToolButton = dom.byId("drawTool");
 
             domClass.remove(drawToolButton, "hide");
@@ -233,7 +233,7 @@ define([
             }));
 
           }));
- 
+
         }
         query(".closeBtn").on("click", lang.hitch(this, function(){
           array.forEach(this.containers, lang.hitch(this, function(container){
@@ -241,7 +241,7 @@ define([
              domStyle.set(container.container,{
               visibility: "hidden"
              });
-             domClass.add(document.body, "noscroll");  
+             domClass.add(document.body, "noscroll");
           }));
         }));
         // setup the basemap tool
@@ -259,11 +259,11 @@ define([
             basemapButton.title = this.config.i18n.basemap.tip;
             this.containers.push({btn:"basemapBtn", container:"basemapContainer"});
             on(basemapButton, "click", lang.hitch(this, function(){
-              this._toggleButtonContainer(basemapButton, "basemapContainer");      
+              this._toggleButtonContainer(basemapButton, "basemapContainer");
             }));
           }));
         }
-        // setup the legend tool 
+        // setup the legend tool
         if(this.config.legend){
           require(["esri/dijit/LayerList"], lang.hitch(this, function(LayerList){
             var legendButton = dom.byId("legendBtn");
@@ -283,9 +283,9 @@ define([
                   showOpacitySlider: this.config.includelayeropacity,
                   layers: arcgisUtils.getLayerList(this.config.response)
                 },"legendDiv");
-     
+
                 layerList.startup();
-       
+
                 query(".esriLayerList").style({
                   "background-color": this.config.background,
                   "color": this.config.color
@@ -320,8 +320,8 @@ define([
         //Feature Search or find (if no search widget)
         if ((this.config.find || (this.config.customUrlLayer.id !== null && this.config.customUrlLayer.fields.length > 0 && this.config.customUrlParam !== null))) {
             require(["esri/dijit/Search", "esri/urlUtils", "esri/lang"], lang.hitch(this, function (Search, urlUtils, esriLang) {
-    
-                //Support find or custom url param 
+
+                //Support find or custom url param
                 if (this.config.find) {
                     value = decodeURIComponent(this.config.find);
                 } else if (customUrl){
@@ -340,7 +340,7 @@ define([
                               }
                           }
                       }
-                  
+
                     value = urlObject.query[customUrl];
                     searchLayer = this.map.getLayer(this.config.customUrlLayer.id);
                     if (searchLayer) {
@@ -397,7 +397,7 @@ define([
             }else{
               var configuredSearchLayers = (this.config.searchLayers instanceof Array) ? this.config.searchLayers : JSON.parse(this.config.searchLayers);
               searchOptions.configuredSearchLayers = configuredSearchLayers;
-              searchOptions.geocoders = this.config.locationSearch ? this.config.helperServices.geocode : [];              
+              searchOptions.geocoders = this.config.locationSearch ? this.config.helperServices.geocode : [];
             }
             var searchSources = new SearchSources(searchOptions);
             var createdOptions = searchSources.createOptions();
@@ -411,7 +411,7 @@ define([
             var search = new Search(createdOptions, domConstruct.create("div", {
                 id: "search"
             }, "mapDiv"));
-   
+
             this._updateTheme();
 
             search.startup();
@@ -456,20 +456,20 @@ define([
             });
           }
 
-          // close any other open tool containers 
+          // close any other open tool containers
           array.forEach(this.containers, lang.hitch(this, function(container){
             if(container.btn !== button.id && domClass.contains(dom.byId(container.btn),"activeTool")){
              domClass.toggle(container.btn,"activeTool");
              domStyle.set(container.container,{
               visibility: "hidden"
              });
-             domClass.add(document.body, "noscroll");  
+             domClass.add(document.body, "noscroll");
             }
           }));
     },
 
     _setupProfile: function(){
-        // Set the panel location 
+        // Set the panel location
         domClass.add(dom.byId("panelContainer"), this.config.panelLocation);
 
         var units = this.config.units;
@@ -486,12 +486,12 @@ define([
             map: this.map,
             chartParams:{
               title: " ",
-              axisFontColor: this.config.axisFontColor, 
-              titleFontColor: this.config.titleFontColor, 
+              axisFontColor: this.config.axisFontColor,
+              titleFontColor: this.config.titleFontColor,
               axisMajorTickColor: this.config.axisMajorTickColor,
               elevationLineColor: this.config.elevationLineColor,
-              elevationBottomColor: this.config.elevationBottomColor, 
-              elevationTopColor: this.config.elevationTopColor,  
+              elevationBottomColor: this.config.elevationBottomColor,
+              elevationTopColor: this.config.elevationTopColor,
               skyBottomColor: this.config.skyBottomColor,
               skyTopColor: this.config.skyTopColor,
               elevationMarkerStrokeColor: "#00FFFF",
@@ -530,7 +530,7 @@ define([
       var bgColor =this.config.background;
       var bgOpacity = Number(this.config.backgroundOpacity);
       var textColor = this.config.color;
-     
+
 
       // Set the background color using the configured background color
       // and opacity
@@ -576,7 +576,7 @@ define([
            opacity = parseInt(domStyle.get(element, "opacity")),
            visibility = domStyle.get(element, "visibility");
            var btn = dom.byId("toggleProfile");
-           // Toggle Active 
+           // Toggle Active
            domClass.toggle("toggleProfile","active");
 
           baseFx.animateProperty({
@@ -606,9 +606,9 @@ define([
           var content = this.config.splashContent || this.config.i18n.splash.content;
           dom.byId("modalTitle").innerHTML = title;
           dom.byId("modalContent").innerHTML = content;
-          dom.byId("closeOverlay").value = this.config.spashButtonText || this.config.i18n.nav.close;
+          dom.byId("closeOverlay").value = this.config.splashButtonText || this.config.i18n.nav.close;
 
-          // Close button handler for the overlay  
+          // Close button handler for the overlay
           on(dom.byId("closeOverlay"), "click", lang.hitch(this, function(){
                 domClass.add("modal", "hide");
           }));
