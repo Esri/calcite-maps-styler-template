@@ -83,6 +83,11 @@ define(
         signOutPage: {
             signOutMessage: "您已成功登出", // Appears when user is successfully signed-out from application
             reSignInMessage: "按一下此處以登入" // Appears when user is signed-out from application and wants to sign-in again
+        },
+        preview: {
+            section1: "群眾外包管理程式作為<a href=\'http://solutions.arcgis.com/local-government/help/crowdsource-reporter/\' target=\'_blank\'>群眾外包報告程式</a>的配套群組範本，是一款面向桌面設備和平板設備的回應型群組應用程式範本，組織內使用者可利用該範本檢視透過管理器應用程式提交的問題和觀測結果。", // Appears when preview page is loaded
+            section2: "此應用程式可為使用者顯示一張或多張地圖以檢視問題或觀測結果。使用者可尋找模式和叢集、檢視問題詳細資訊、更新狀態和分配職責。", // Appears when preview page is loaded
+            section3: "可下載應用程式原始程式碼以進行進一步配置。應用程式的此附加配置可重新套用至 ArcGIS Online 的可配置 web 應用程式項目，也可在您自己的 web 伺服器上進行託管。<br />有關配置此應用程式的詳細資訊，請參閱<a href=\'http://solutions.arcgis.com/local-government/help/crowdsource-manager/\' target=\'_blank\'>群眾外包管理程式</a>說明文件。" // Appears when preview page is loaded
         }
     })
 );

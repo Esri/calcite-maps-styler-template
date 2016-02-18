@@ -27,7 +27,7 @@ define(
             created: "Luontipäivämäärä", // Appears in web-map list description panel when it is set to true
             modified: "Muokkauspäivämäärä", // Appears in web-map list description panel when it is set to true
             description: "Kuvaus", // Appears in web-map list description panel when it is set to true
-            snippet: "Summary", // Appears in web-map list description panel when it is set to true
+            snippet: "Yhteenveto", // Appears in web-map list description panel when it is set to true
             licenseInfo: "Käyttörajoitukset", // Appears in web-map list description panel when it is set to true
             accessInformation: "Krediitit", // Appears in web-map list description panel when it is set to true
             tags: "Tunnisteet", // Appears in web-map list description panel when it is set to true
@@ -64,7 +64,7 @@ define(
             invalidDate: "Kirjoita kelvollinen päivämäärä", // Shown when user enters invalid date value
             invalidNumericRange: "Kirjoita arvo väliltä ${minValue}–${maxValue}", // Shown when user enters value which is out of range
             moreInfolink: "Linkki", // Shown when value in field contains only URL.
-            commentsText: "Comments", // Appears when comments are available for display in details tab
+            commentsText: "Kommentit", // Appears when comments are available for display in details tab
             noCommentsAvailable: "Yhtään kommenttia ei ole saatavilla", // Appears when no comments are available
             noFeatureGeometry: "Kohdetta ei voi näyttää" // Appears when user selects/activates a feature and geometry is available for that
         },
@@ -83,6 +83,11 @@ define(
         signOutPage: {
             signOutMessage: "Uloskirjautuminen onnistui", // Appears when user is successfully signed-out from application
             reSignInMessage: "Kirjaudu sisään napsauttamalla tätä" // Appears when user is signed-out from application and wants to sign-in again
+        },
+        preview: {
+            section1: "<a href=\'http://solutions.arcgis.com/local-government/help/crowdsource-reporter/\' target=\'_blank\'>Crowdsource Reporter</a> -ohjelman kumppanuusryhmämallipohja Crowdsource Manager on responsiivinen ryhmäsovellusmallipohja (työpöytä- ja tablettilaitteille), jonka avulla organisaation käyttäjät voivat tarkastaa Manager-sovelluksen kautta lähetettyjä ongelmia tai havaintoja.", // Appears when preview page is loaded
+            section2: "Sovellus tuo näkyviin vähintään yhden kartan ongelman tai havainnon tarkastusta varten. Käyttäjät voivat etsiä malleja ja klustereita, tarkastaa ongelmien tiedot, päivittää tilan ja osoittaa vastuualueita.", // Appears when preview page is loaded
+            section3: "Sovelluksen lähdekoodin voi ladata mukautusta varten. Tämän sovelluksen lisämäärityksen avulla voit ylläpitää muunneltavissa olevaa Web-sovellusta joko ArcGIS Onlinessa tai omalla Web-palvelimellasi. <br />Lisätietoja tämän sovelluksen määrityksestä on <a href=\'http://solutions.arcgis.com/local-government/help/crowdsource-manager/\' target=\'_blank\'>Crowdsource Manager</a> -ohjelman dokumentaatiossa." // Appears when preview page is loaded
         }
     })
 );

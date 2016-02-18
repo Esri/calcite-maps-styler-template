@@ -27,10 +27,10 @@ define(
             created: "Oprettelsesdato", // Appears in web-map list description panel when it is set to true
             modified: "Dato for ændring", // Appears in web-map list description panel when it is set to true
             description: "Beskrivelse", // Appears in web-map list description panel when it is set to true
-            snippet: "Summary", // Appears in web-map list description panel when it is set to true
+            snippet: "Oversigt", // Appears in web-map list description panel when it is set to true
             licenseInfo: "Få adgang til og brug begrænsninger", // Appears in web-map list description panel when it is set to true
             accessInformation: "Credits", // Appears in web-map list description panel when it is set to true
-            tags: "Tags", // Appears in web-map list description panel when it is set to true
+            tags: "Nøgleord", // Appears in web-map list description panel when it is set to true
             numViews: "Antal visninger", // Appears in web-map list description panel when it is set to true
             avgRating: "Vurdering", // Appears in web-map list description panel when it is set to true
             noWebMapInGroup: "Konfigureret gruppe er ugyldig, eller ingen elementer er endnu blevet delt med denne gruppe", // Appears when invalid group in configured or no web-map is available in that group
@@ -64,7 +64,7 @@ define(
             invalidDate: "Indtast en gyldig dato", // Shown when user enters invalid date value
             invalidNumericRange: "Indtast en værdi mellem ${minVærdi} og ${maksVærdi}", // Shown when user enters value which is out of range
             moreInfolink: "Link", // Shown when value in field contains only URL.
-            commentsText: "Comments", // Appears when comments are available for display in details tab
+            commentsText: "Kommentarer", // Appears when comments are available for display in details tab
             noCommentsAvailable: "ingen kommentarer tilgængelige", // Appears when no comments are available
             noFeatureGeometry: "Objekt kan ikke vises" // Appears when user selects/activates a feature and geometry is available for that
         },
@@ -83,6 +83,11 @@ define(
         signOutPage: {
             signOutMessage: "Du er blevet logget ud", // Appears when user is successfully signed-out from application
             reSignInMessage: "Klik her for at logge ind" // Appears when user is signed-out from application and wants to sign-in again
+        },
+        preview: {
+            section1: "Crowdsource Manager – en gruppeskabelon, der følger med <a href=\'http://solutions.arcgis.com/local-government/help/crowdsource-reporter/\' target=\'_blank\'>Crowdsource Reporter</a> – er en responsiv gruppe-app-skabelon (til desktop- og tablet-enheder), der gør det muligt for brugerne i en organisation at gennemse problemer/observationer, der er sendt via Manager-app\'en.", // Appears when preview page is loaded
+            section2: "App\'en indeholder et eller flere kort, som brugerne kan anvende til gennemse et problem eller en observation. Brugerne kan se efter mønstre og klynger, gennemse problemoplysninger, opdatere status og tildele ansvar.", // Appears when preview page is loaded
+            section3: "Applikationens kildekode kan hentes for yderligere konfiguration. Yderligere konfiguration af applikationen kan anvendes på et ArcGIS Online-konfigurerbart webapplikationselement eller \"hostes\" på din egen webserver.<br /> Yderligere oplysninger om konfiguration af denne app findes i dokumentationen til <a href=\'http://solutions.arcgis.com/local-government/help/crowdsource-manager/\' target=\'_blank\'>Crowdsource Manager</a>." // Appears when preview page is loaded
         }
     })
 );

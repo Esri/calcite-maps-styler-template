@@ -83,6 +83,11 @@ define(
         signOutPage: {
             signOutMessage: "Você saiu com sucesso", // Appears when user is successfully signed-out from application
             reSignInMessage: "Clique aqui para entrar" // Appears when user is signed-out from application and wants to sign-in again
+        },
+        preview: {
+            section1: "Gerenciador de Informações Coletivas, um modelo de grupo associado ao <a href=\'http://solutions.arcgis.com/local-government/help/crowdsource-reporter/\' target=\'_blank\'>Transmissor de Informações Coletivas</a>, é um modelo de aplicativo de grupo responsivo (dispositivos desktop e tablet) que permite aos usuários dentro de uma organização revisar problemas/observações enviadas pelo aplicativo Gerenciador.", // Appears when preview page is loaded
+            section2: "O aplicativo apresenta um ou mais mapas para os usuários revisarem um problema ou observação. Os usuários podem procurar por padrões e agrupamentos, revisar detalhes de problemas, atualizar status e atribuir responsabilidades.", // Appears when preview page is loaded
+            section3: "O código-fonte do aplicativo pode ser baixado para configuração adicional. Esta configuração adicional do aplicativo pode ser aplicada de volta para um item de aplicativo da web configurável do ArcGIS Online ou hospedado no seu próprio servidor da web.<br /> Para mais informações sobre configurar este aplicativo, consulte a documentação do <a href=\'http://solutions.arcgis.com/local-government/help/crowdsource-manager/\' target=\'_blank\'>Gerenciador de Informações Coletivas</a>." // Appears when preview page is loaded
         }
     })
 );

@@ -83,6 +83,11 @@ define(
         signOutPage: {
             signOutMessage: "Oturumunuz başarıyla kapatıldı", // Appears when user is successfully signed-out from application
             reSignInMessage: "Oturum açmak için buraya tıklayın" // Appears when user is signed-out from application and wants to sign-in again
+        },
+        preview: {
+            section1: "<a href=\'http://solutions.arcgis.com/local-government/help/crowdsource-reporter/\' target=\'_blank\'>Crowdsource Reporter</a> ile birlikte kullanılan grup şablonu olan Crowdsource Manager, kuruluş içindeki kullanıcıların manager uygulaması ile gönderilen sorunları/gözlemleri incelemesine olanak tanıyan (masaüstü ve tablet cihazlar için) etkileşimli grup uygulama şablonudur.", // Appears when preview page is loaded
+            section2: "Uygulama, sorunu veya gözlemi inceleyebilmesi için kullanıcılara bir veya birkaç harita sunar. Kullanıcılar desen ve kümeleri arayabilir, sorun ayrıntılarını inceleyebilir, durumu güncelleyebilir ve sorumluluk atayabilirler.", // Appears when preview page is loaded
+            section3: "Uygulama kaynak kodu daha ayrıntılı yapılandırma için indirilebilir. Uygulamanın bu ek yapılandırması, yeniden bir ArcGIS Online yapılandırılabilir web uygulama öğesine uygulanabilir veya kendi web sunucunuzda barındırılabilir.<br /> Bu uygulamanın yapılandırılmasıyla ilgili daha fazla bilgi edinmek için şu belgeyi inceleyin: <a href=\'http://solutions.arcgis.com/local-government/help/crowdsource-manager/\' target=\'_blank\'>Crowdsource Manager</a>." // Appears when preview page is loaded
         }
     })
 );

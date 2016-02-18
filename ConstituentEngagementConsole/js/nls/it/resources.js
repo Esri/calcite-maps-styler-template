@@ -83,6 +83,11 @@ define(
         signOutPage: {
             signOutMessage: "Disconnessione riuscita", // Appears when user is successfully signed-out from application
             reSignInMessage: "Fare clic qui per effettuare l\'accesso" // Appears when user is signed-out from application and wants to sign-in again
+        },
+        preview: {
+            section1: "Crowdsource Manager, legato a <a href=\'http://solutions.arcgis.com/local-government/help/crowdsource-reporter/\' target=\'_blank\'>Crowdsource Reporter</a>, è un modello di app di gruppo di tipo responsive (per desktop e tablet) che consente agli utenti all\'interno di un\'organizzazione di analizzare i problemi e le osservazioni inviate tramite l\'app Manager.", // Appears when preview page is loaded
+            section2: "L\'app fornisce agli utenti una o più mappe per analizzare un problema o un\'osservazione. Gli utenti possono osservare i motivi e i cluster, analizzare i dettagli del problema, aggiornare lo stato ed assegnare le responsabilità.", // Appears when preview page is loaded
+            section3: "Il codice sorgente dell\'applicazione può essere scaricato per un\'ulteriore configurazione che può essere riapplicata a un elemento dell\'applicazione Web configurabile ArcGIS Online oppure ospitata nel proprio server Web.<br /> Per informazioni sulla configurazione di questa app, consultare la documentazione di <a href=\'http://solutions.arcgis.com/local-government/help/crowdsource-manager/\' target=\'_blank\'>Crowdsource Manager</a>." // Appears when preview page is loaded
         }
     })
 );

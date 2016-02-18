@@ -83,6 +83,11 @@ define(
         signOutPage: {
             signOutMessage: "تم تسجيل الخروج بنجاح", // Appears when user is successfully signed-out from application
             reSignInMessage: "انقر هنا لتسجيل الدخول" // Appears when user is signed-out from application and wants to sign-in again
+        },
+        preview: {
+            section1: "مدير التعهيد الجماعي، هو قالب جماعي مُرفق لـ <a href=\'http://solutions.arcgis.com/local-government/help/crowdsource-reporter/\' target=\'_blank\'>مراسل التعهيد الجماعي</a>، هو قالب تطبيق مجموعة (أجهزة سطح المكتب والأجهزة اللوحية) يسمح للمستخدمين داخل المؤسسة مراجعة المشكلات والملاحظات التي يتم إرسالها عبر تطبيق المدير.", // Appears when preview page is loaded
+            section2: "يعرض التطبيق خريطة واحدة أو أكثر لمراجعة المشكلات أو الملاحظات. يمكن للمستخدمين رؤية الأنماط والتجمّعات ومراجعة تفاصيل المشكلات وتحديث الحالة وتعيين المسئولية.", // Appears when preview page is loaded
+            section3: "يُمكن تنزيل كود مصدر التطبيق لمزيد من التكوين. يُمكن تطبيق هذا التكوين الإضافي من التطبيق على عنصر تطبيق ArcGIS Online على الويب الذي يُمكن تكوينه أو المستضاف على خادم الويب.<br /> لمزيد من المعلومات المتعلقة بتكوين هذا التطبيق، راجع وثائق <a href=\'http://solutions.arcgis.com/local-government/help/crowdsource-manager/\' target=\'_blank\'>مدير التعهيد الجماعي</a>." // Appears when preview page is loaded
         }
     })
 );

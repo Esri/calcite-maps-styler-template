@@ -1,7 +1,7 @@
 From git branch 
 develop
-commit c3c8b13ed3df058f002320b9ac2509de2ac420e5
+commit 0a93d63b182aaaa09c1c86fe6f95e73c7b1d7a17
 Author: MikeTschudi <mtschudi@esri.com>
-Date:   Mon Feb 8 10:40:44 2016 -0800
+Date:   Thu Feb 18 12:00:06 2016 -0800
 
-    Trim default values coming from Server, which is returning single blank for non-nullable string fields
+    Updated to JSAPI 3.16

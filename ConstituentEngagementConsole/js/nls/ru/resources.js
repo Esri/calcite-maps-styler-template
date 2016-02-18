@@ -83,6 +83,11 @@ define(
         signOutPage: {
             signOutMessage: "Выход успешно выполнен", // Appears when user is successfully signed-out from application
             reSignInMessage: "Щелкните здесь, чтобы выполнить вход" // Appears when user is signed-out from application and wants to sign-in again
+        },
+        preview: {
+            section1: "Crowdsource Manager в дополнение к <a href=\'http://solutions.arcgis.com/local-government/help/crowdsource-reporter/\' target=\'_blank\'>Crowdsource Reporter</a> является шаблоном группового приложения (для настольных компьютеров и планшетов), позволяющий пользователям организации просматривать проблемы/замечания, представленные в приложении Manager.", // Appears when preview page is loaded
+            section2: "Это приложение представлено одной или несколькими картами для просмотра пользователями запроса по поводу проблемы или замечания. Пользователи могут искать шаблоны и кластеры, просматривать детали проблем, обновлять статус и возлагать ответственность.", // Appears when preview page is loaded
+            section3: "Исходный код приложения можно загрузить для дальнейшего конфигурирования. Эта дополнительная конфигурация приложения может применяться к настраиваемому веб-приложению ArcGIS Online или размещаться на вашем собственном веб-сервере.<br /> Более подробно о настройке этого приложения см. руководство по <a href=\'http://solutions.arcgis.com/local-government/help/crowdsource-manager/\' target=\'_blank\'>Crowdsource Manager</a>." // Appears when preview page is loaded
         }
     })
 );

@@ -83,6 +83,11 @@ define(
         signOutPage: {
             signOutMessage: "Bạn đã đăng xuất thành công", // Appears when user is successfully signed-out from application
             reSignInMessage: "Bấm vào đây để đăng nhập" // Appears when user is signed-out from application and wants to sign-in again
+        },
+        preview: {
+            section1: "Trình quản lý Crowdsource, một nhóm mẫu đi kèm với <a href=\'http://solutions.arcgis.com/local-government/help/crowdsource-reporter/\' target=\'_blank\'>Trình báo cáo Crowdsource</a>, là một mẫu ứng dụng nhóm có phản hồi (desktop và máy tính bảng) cho phép người dùng trong một tổ chức xem lại các vấn đề/quan sát được gửi qua ứng dụng Trình quản lý.", // Appears when preview page is loaded
+            section2: "Ứng dụng trình bày một hoặc nhiều bản đồ cho người dùng xem lại một vấn đề hoặc quan sát. Người dùng có thể tìm kiếm mô hình và cụm, xem lại chi tiết vấn đề, cập nhật trạng thái, và gán trách nhiệm.", // Appears when preview page is loaded
+            section3: "Có thể tải về mã nguồn ứng dụng để cấu hình thêm. Cấu hình thêm này của ứng dụng có thể áp dụng trở lại đối với mục ứng dụng web có thể cấu hình ArcGIS Online hoặc được lưu trữ trên máy chủ web của riêng bạn.<br /> Để biết thêm thông tin về việc cấu hình ứng dụng này, tham khảo tài liệu về <a href=\'http://solutions.arcgis.com/local-government/help/crowdsource-manager/\' target=\'_blank\'>Trình quản lý Crowdsource</a>." // Appears when preview page is loaded
         }
     })
 );

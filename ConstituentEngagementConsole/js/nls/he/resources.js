@@ -83,6 +83,11 @@ define(
         signOutPage: {
             signOutMessage: "התנתקת בהצלחה", // Appears when user is successfully signed-out from application
             reSignInMessage: "לחץ כאן כדי להתחבר" // Appears when user is signed-out from application and wants to sign-in again
+        },
+        preview: {
+            section1: "Crowdsource Manager, תבנית קבוצתית הנלווית ל-<a href=\'http://solutions.arcgis.com/local-government/help/crowdsource-reporter/\' target=\'_blank\'>Crowdsource Reporter</a>‏, היא תבנית אפליקציה קבוצתית בעלת כושר תגובה (להתקנים שולחניים ולמחשבי לוח) המאפשרת למשתמשים בתוך הארגון לבחון בעיות/הערות אשר הוזנו דרך אפליקציית Manager.", // Appears when preview page is loaded
+            section2: "האפליקציה מציגה למשתמשים מפה אחת או יותר כדי לבחון בעיה או הערה. משתמשים יכולים לחפש דפוסים ואשכולות, לבחון את פרטי הבעיה, לעדכן סטטוס ולהקצות תחומי אחריות.", // Appears when preview page is loaded
+            section3: "ניתן להוריד את קוד המקור של האפליקציה לביצוע הגדרות קונפיגורציה נוספות. את הגדרות הקונפיגורציה הנוספות הללו ניתן ליישם בחזרה על פריט אפליקציית אינטרנט ניתן להגדרה של ArcGIS Online או לארח בשרת האינטרנט שלך.<br /> למידע נוסף על הגדרת האפליקציה, עיין במסמכי <a href=\'http://solutions.arcgis.com/local-government/help/crowdsource-manager/\' target=\'_blank\'>Crowdsource Manager</a>‏." // Appears when preview page is loaded
         }
     })
 );

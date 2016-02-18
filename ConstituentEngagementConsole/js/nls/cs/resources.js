@@ -83,6 +83,11 @@ define(
         signOutPage: {
             signOutMessage: "Byli jste úspěšně odhlášeni.", // Appears when user is successfully signed-out from application
             reSignInMessage: "Klikněte sem pro přihlášení." // Appears when user is signed-out from application and wants to sign-in again
+        },
+        preview: {
+            section1: "Externí správa je šablona skupiny doprovázející aplikaci <a href=\'http://solutions.arcgis.com/local-government/help/crowdsource-reporter/\' target=\'_blank\'>Externí hlášení</a>. Jde o responzivní šablonu pro skupinu aplikací (pro stolní počítače a tablety), která umožňuje uživatelům v organizaci prohlížet problémy a postřehy odeslané prostřednictvím aplikace Správa.", // Appears when preview page is loaded
+            section2: "Tato aplikace prezentuje jednu nebo více map, které mohou uživatelé používat k prohlížení problémů a postřehů. Uživatelé vyhledávat vzory a shluky, prohlížet podrobnosti problémů, aktualizovat stav a přiřazovat odpovědnosti.", // Appears when preview page is loaded
+            section3: "Zdrojový kód aplikace lze stáhnout za účelem pokročilé konfigurace. Pokročilou konfiguraci aplikace lze poté zpětně použít na konfigurovatelnou položku webové aplikace ArcGIS Online nebo ji hostovat na vlastním webovém serveru.<br /> Další informace o konfiguraci této aplikace naleznete v dokumentaci aplikace <a href=\'http://solutions.arcgis.com/local-government/help/crowdsource-manager/\' target=\'_blank\'>Externí správa</a>." // Appears when preview page is loaded
         }
     })
 );
