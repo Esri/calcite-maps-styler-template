@@ -64,13 +64,12 @@
 			};
 			// Optionally sharing and proxy URLs can be configured in app/maptour-config.js. This is only required  
 			//  when the webmap is not hosted on ArcGIS Online or a Portal for ArcGIS instance and the template isn't deployed as /home/MapTour/ or /apps/MapTour/. 
-			// Optionally Bing Maps key, Geometry and Geocode service's URLs can be configured in app/commonConfig.js. This is only required 
-			//  if the Organization or Portal for ArcGIS instance default configuration has to be overwritten. If the application is deployed 
-			//  on Portal for ArcGIS as /home/MapTour/ or /apps/MapTour/, that configuration is available in ../commonConfig.js
+			// Optionally Bing Maps key, Geometry and Geocode service's URLs can be configured in app/maptour-config.js. This is only required
+			//  if the Organization or Portal for ArcGIS instance default configuration has to be overwritten.
 		</script>
 
 		<script type="text/javascript">
-			var version = '2.5.0-021616';
+			var version = '2.5.0-021716';
 			var isProduction = true;
 
 			function loadJS(url, isExternal)
@@ -161,7 +160,6 @@
 				loadCSS("app/storymaps/maptour/ui/Responsive.css");
 			}
 
-			var path_location = location.pathname.replace(/\/[^/]+$/, '');
 			var dojoConfig = {
 				parseOnLoad: true,
 				isDebug: false,
@@ -171,12 +169,6 @@
 					{
 						name: 'storymaps',
 						location: location.pathname.replace(/\/[^/]+$/, '/') + 'app/storymaps'
-					},
-					{
-						name: "templateConfig",
-						// If the template is deployed on a Portal (apps path contains /apps/MapTour/ or /home/MapTour/)
-						// commonConfig.js is loaded from the parent folder, otherwise it's loaded from the app folder
-						location: /(\/apps\/|\/home\/)(MapTour\/)/.test(document.location.pathname) ? path_location.substr(0,path_location.lastIndexOf('/MapTour')) : path_location.replace(/\/+$/, '') + '/app'
 					}
 				]
 			};
@@ -1268,7 +1260,6 @@
 							"dojo/i18n!./resources/nls/template.js?v=" + version, 
 							"storymaps/ui/loadingIndicator/LoadingIndicator", 
 							"esri/urlUtils", 
-							"templateConfig/commonConfig.js?v=" + version,
 							"dojo/domReady!", 
 							"dojo/ready"
 						], function(

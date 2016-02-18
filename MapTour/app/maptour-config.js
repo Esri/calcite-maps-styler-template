@@ -162,6 +162,10 @@ APPCFG = {
 	WEBAPP_KEYWORD_GENERIC: ["JavaScript", "Map", "Mapping Site", "Online Map", "Ready To Use", "selfConfigured", "Web Map"],
 	WEBAPP_KEYWORD_APP: ["Story Map", "Story Maps", "Map Tour", "MapTour"],
 	
+	//
+	// Portal configuration
+	//
+	
 	// Optional array of servers that will leverage CORS (for development or specific cross domain deployment)
 	CORS_SERVER: [],
 	
@@ -172,6 +176,21 @@ APPCFG = {
 			proxyUrl: "http://myserver.domain.com/DotNet/proxy.ash"  
 		}*/
 	],
+	
+	BING_MAPS_KEY: "",
+	HELPER_SERVICES: {
+		geometry: {
+			//url: location.protocol + "//utility.arcgisonline.com/ArcGIS/rest/services/Geometry/GeometryServer"
+		},
+		geocode: [
+			/*
+			{
+				url: location.protocol + "//geocode.arcgis.com/arcgis/rest/services/World/GeocodeServer",
+				name: "My Geocoder"
+			}
+			*/
+		]
+	},
 	
 	// Edit those to set a custom sharing or proxy URL
 	// You have to edit those only if your webmap is deployed on Portal for ArcGIS instance and if you are not deploying the template on the Portal webserver

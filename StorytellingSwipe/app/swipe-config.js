@@ -30,7 +30,7 @@ APPCFG = {
 	TIMEOUT_VIEWER_LOAD: 64000,
 	TIMEOUT_VIEWER_REQUEST: 60000,
 	TIMEOUT_BUILDER_REQUEST: 60000,
-
+	
 	//
 	// Builder
 	//
@@ -47,6 +47,10 @@ APPCFG = {
 
 	WEBAPP_KEYWORD_GENERIC: ["JavaScript", "Map", "Mapping Site", "Online Map", "Ready To Use", "selfConfigured", "Web Map"],
 	WEBAPP_KEYWORD_APP: ["Story Map", "Story Maps", "SwipeSpyglass"],
+	
+	//
+	// Portal configuration
+	//
 
 	// Optional array of servers that will leverage CORS (for development or specific cross domain deployment)
 	CORS_SERVER: [],
@@ -58,26 +62,27 @@ APPCFG = {
 			proxyUrl: "http://myserver.domain.com/DotNet/proxy.ash"
 		}*/
 	],
+	
+	BING_MAPS_KEY: "",
+	HELPER_SERVICES: {
+		geometry: {
+			//url: location.protocol + "//utility.arcgisonline.com/ArcGIS/rest/services/Geometry/GeometryServer"
+		},
+		geocode: [
+			/*
+			{
+				url: location.protocol + "//geocode.arcgis.com/arcgis/rest/services/World/GeocodeServer",
+				name: "My Geocoder"
+			}
+			*/
+		]
+	},
 
 	// Edit those to set a custom sharing or proxy URL
 	// You have to edit those only if your webmap is deployed on Portal for ArcGIS instance and if you are not deploying the template on the Portal webserver
 	// If you are using ArcGIS Online or deploying the template on a Portal instance, you don't have to edit those URL
 	DEFAULT_SHARING_URL: "//www.arcgis.com/sharing/content/items",
 	//DEFAULT_SHARING_URL: "//portal.internal.com/arcgis/sharing/content/items",
-	DEFAULT_PROXY_URL: "//www.arcgis.com/sharing/proxy",
+	DEFAULT_PROXY_URL: "//www.arcgis.com/sharing/proxy"
 	//DEFAULT_PROXY_URL: "//portal.internal.com/arcgis/sharing/proxy"
-	bingMapsKey:"",
-	helperServices: {
-		geometry:{
-			//url: location.protocol + ""
-		},
-		geocode: [/*{
-			url: location.protocol + "",
-			name: "one"
-		},{
-			url: location.protocol + "",
-			name: ""
-		}*/
-	]
-	}
 };
