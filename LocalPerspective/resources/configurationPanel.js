@@ -1,11 +1,16 @@
 {
    "configurationSettings": [
-      {
-         "category" : "<b>Configure Template</b>",
+    {
+         "category" : "<b>Map</b>",
          "fields" : [
             {
                "type" : "webmap"
-            },
+            }
+      ]
+   },
+   {
+         "category" : "<b>General</b>",
+         "fields" : [
             {
                "type" : "string",
                "fieldName" : "title",
@@ -35,7 +40,12 @@
                "fieldName" : "cycleColors",
                "label" : "Cycle colors for layers",
                "tooltip" : "Cycle colors for layers"
-            },
+            }
+      ]
+   },
+   {
+      "category" : "<b>Options</b>",
+      "fields" : [
             {
                "type" : "boolean",
                "fieldName" : "defaultToCenter",
@@ -85,7 +95,7 @@
             {
                "type": "appproxies",
                "serviceProxies": [{
-                  "name": "route",
+                  "url": "http://route.arcgis.com/arcgis/rest/services/World/Route/NAServer/Route_World",
                   "title": "Route"
                }]
             },

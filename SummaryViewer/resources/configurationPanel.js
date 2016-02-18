@@ -1,13 +1,17 @@
-
 {
    "configurationSettings":[
       {
-         "category":"<b>General Settings</b>",
+         "category":"<b>Map</b>",
          "fields":[
             {
                 "type":"webmap",
                 "label":"Select a map"
-            },
+            }
+         ]
+      },
+    {
+         "category":"<b>General</b>",
+         "fields":[
             {
                "type":"string",
                "fieldName":"title",
@@ -27,8 +31,14 @@
                "fieldName":"color",
                "label":"Color",
                "tooltip":"Color"
-            },
-            {
+            }
+            
+         ]
+      },
+    {
+         "category":"<b>Summary Layer</b>",
+         "fields":[
+      {
                "type":"layerAndFieldSelector",
                "fields":[ 
                     {
@@ -103,9 +113,9 @@
                "label":"Hide type of summary",
                "tooltip":"Hide type of summary for each field"
             }
-         ]
-      }
-   ],
+    ]
+  }
+  ],
    "values":{
       "title":"",
       "logo":"images/logo.png",

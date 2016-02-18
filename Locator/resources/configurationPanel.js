@@ -1,7 +1,7 @@
 {
     "configurationSettings": [
         {
-            "category": "<b>App Settings</b>",
+            "category": "<b>Map</b>",
             "fields": [
                 {
                     "type": "appproxies",
@@ -19,7 +19,12 @@
                 {
                     "type": "webmap",
                     "label": "Select a map"
-                },
+                }    
+            ]
+        },
+        {
+            "category": "<b>General</b>",
+            "fields": [
                 {
                     "type": "string",
                     "fieldName": "title",
@@ -49,7 +54,7 @@
             ]
         },
         {
-            "category": "<b>Destination Settings</b>",
+            "category": "<b>Destination Layer</b>",
             "fields": [
                 {
                     "type": "paragraph",
@@ -97,7 +102,7 @@
             ]
         },
         {
-            "category": "<b>Alternate Destination Settings</b> (use if no destination layer is specified)",
+            "category": "<b>Alternate Destination</b>",
             "fields": [
                 {
                     "type": "string",
