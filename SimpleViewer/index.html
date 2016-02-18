@@ -8,8 +8,8 @@
     <meta charset="utf-8">
     <meta name="fragment" content="!">
     <!--Use protocol relative urls that way if the browser is viewing the page via HTTPS the js/css file will be requested using the HTTPS protocol-->
-    <link rel="stylesheet" href="//jsdev.arcgis.com/3.16/esri/css/calcite/calcite.css">
-    <link rel="stylesheet"  href="//jsdev.arcgis.com/3.16/esri/css/esri.css">
+    <link rel="stylesheet" href="//js.arcgis.com/3.16/esri/css/calcite/calcite.css">
+    <link rel="stylesheet"  href="//js.arcgis.com/3.16/esri/css/esri.css">
     <!--Load any application specific styles-->
     <link rel="stylesheet" href="css/main.css">
     <!--[if (lt IE 9)]>
@@ -21,7 +21,7 @@
   <div class="loading-indicator">
     <div class="loading-message" id="loading_message"></div>
   </div>
-   <!--The ArcGIS API for JavaScript provides bidirectional support.  When viewing the application in an right to left (rtl) language like Hebrew and Arabic the map needs to remain in left-to-right (ltr) mode. Specify this by setting the dir attribute on the div to ltr. --> 
+   <!--The ArcGIS API for JavaScript provides bidirectional support.  When viewing the application in an right to left (rtl) language like Hebrew and Arabic the map needs to remain in left-to-right (ltr) mode. Specify this by setting the dir attribute on the div to ltr. -->
        <div id="border_container" class="border-container-outer">
         <div id="cp_left" class="content-pane-left">
           <div id="ac-container" class="ac-container node-hidden">
@@ -39,7 +39,7 @@
         </div>
         <div id="cp_center" class="content-pane-center">
             <div class="top-bar bg">
-                <i id="toggle_button" class="hamburger-button icon-menu fc"></i> 
+                <i id="toggle_button" class="hamburger-button icon-menu fc"></i>
                 <div id="title" class="top-bar-title"></div>
                 <div id="search" class="geocoder"></div>
             </div>
@@ -68,7 +68,7 @@
             dojoConfig.locale = RegExp.$1;
         }
       </script>
-    <script type="text/javascript" src="//jsdev.arcgis.com/3.16/"></script>
+    <script type="text/javascript" src="//js.arcgis.com/3.16/"></script>
     <script type="text/javascript">
         require([
                 "config/templateConfig",
@@ -94,6 +94,6 @@
             myApp.reportError(error);
           });
         });
-    </script>   
+    </script>
 </body>
 </html>
