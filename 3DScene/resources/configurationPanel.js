@@ -1,10 +1,13 @@
 {
   "configurationSettings": [{
-    "category": "<b>App Settings</b>",
+    "category": "<b>Scene</b>",
     "fields": [{
       "type": "webscene",
       "label": "Select a scene"
-    }, {
+    }]
+  },{
+    "category": "<b>Options</b>",
+    "fields": [{
       "type": "string",
       "fieldName": "title",
       "label": "Title",
@@ -31,11 +34,6 @@
       "fieldName": "showLayers",
       "label": "Enable a Layer List",
       "tooltip": "Enable a Layer List"
-    }, {
-      "type": "boolean",
-      "fieldName": "showBasemaps",
-      "label": "Enable Basemap Selector",
-      "tooltip": "Enable Basemap Selector"
     }]
   }],
   "values": {

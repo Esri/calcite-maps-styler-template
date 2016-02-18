@@ -1,10 +1,13 @@
 {
   "configurationSettings": [{
-    "category": "<b>App Settings</b>",
+    "category": "<b>Scene</b>",
     "fields": [{
       "type": "webscene",
       "label": "Select a scene"
-    }, {
+    }]
+  }, {
+    "category": "<b>General</b>",
+    "fields": [{
       "type": "string",
       "fieldName": "title",
       "label": "Title",
@@ -27,7 +30,7 @@
       "tooltip": "Dark theme for map"
     }]
   }, {
-    "category": "<b>Visualization Settings</b>",
+    "category": "<b>Visualization</b>",
     "fields": [{
       "type": "paragraph",
       "value": "By default, the first feature layer in the scene will be used for visualization. You can configure the popup for the layer in the 2D map viewer. Visible numeric fields and aliases will be used for visualization. The first visible string field will be used for labels by default."
