@@ -83,11 +83,6 @@ define(
         signOutPage: {
             signOutMessage: "Du har loggat ut", // Appears when user is successfully signed-out from application
             reSignInMessage: "Klicka här för att logga in" // Appears when user is signed-out from application and wants to sign-in again
-        },
-        preview: {
-            section1: "Crowdsourcehanteraren, en gruppmall som följer med <a href=\'http://solutions.arcgis.com/local-government/help/crowdsource-reporter/\' target=\'_blank\'>Crowdsourcerapporteraren</a>, är en responsiv gruppapplikationsmall (för datorer och surfplattor) som gör att användare inom en organisation kan granska problem/observationer som skickas via hanterarappen.", // Appears when preview page is loaded
-            section2: "Appen visar en eller flera kartor för användaren för att granska ett problem eller en observation. Användarna kan söka efter mönster och kluster, granska problemdetaljer, uppdatera status och tilldela ansvar.", // Appears when preview page is loaded
-            section3: "Det går att hämta applikationens källkod för vidare konfiguration. Den extra konfigurationen av applikationen kan tillämpas tillbaka på ett konfigurerbart ArcGIS Online-webbapplikationsobjekt eller driftas på din egen webbserver.<br /> Mer information om att konfigurera appen finns i dokumentationen till <a href=\'http://solutions.arcgis.com/local-government/help/crowdsource-manager/\' target=\'_blank\'>Crowdsourcehanteraren</a>." // Appears when preview page is loaded
         }
     })
 );

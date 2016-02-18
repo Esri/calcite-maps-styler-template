@@ -83,11 +83,6 @@ define(
         signOutPage: {
             signOutMessage: "로그아웃되었습니다.", // Appears when user is successfully signed-out from application
             reSignInMessage: "로그인하려면 여기를 클릭" // Appears when user is signed-out from application and wants to sign-in again
-        },
-        preview: {
-            section1: "크라우드 소스 관리자(Crowdsource Manager)는 <a href=\'http://solutions.arcgis.com/local-government/help/crowdsource-reporter/\' target=\'_blank\'>크라우드 소스 리포터(Crowdsource Reporter)</a>에 수반되는 그룹 템플릿으로, 기관 내 사용자가 관리자 앱을 통해 제출된 문제점이나 관찰 사항을 검토할 수 있는 데스크톱/태블릿 기기용 반응형 그룹 응용프로그램 템플릿입니다.", // Appears when preview page is loaded
-            section2: "사용자는 이 응용프로그램에서 제공하는 하나 이상의 맵을 사용해 문제점이나 관찰 사항을 검토할 수 있습니다. 사용자는 패턴과 군집을 찾아보고, 문제 세부정보를 검토하고, 상태를 업데이트하고, 책임을 할당할 수 있습니다.", // Appears when preview page is loaded
-            section3: "추가 구성을 위해 응용프로그램 소스 코드를 다운로드할 수 있습니다. 응용프로그램의 추가 구성은 사용자 자신의 웹 서버에서 호스팅하거나 ArcGIS Online 구성 설정 웹 응용프로그램 항목에 다시 적용할 수 있습니다.<br /> 이 앱 구성에 대한 자세한 내용은 <a href=\'http://solutions.arcgis.com/local-government/help/crowdsource-manager/\' target=\'_blank\'>크라우드 소스 관리자(Crowdsource Manager)</a> 설명서를 참고하세요." // Appears when preview page is loaded
         }
     })
 );

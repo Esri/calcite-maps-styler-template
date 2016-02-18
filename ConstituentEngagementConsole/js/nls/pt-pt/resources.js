@@ -83,11 +83,6 @@ define(
         signOutPage: {
             signOutMessage: "Terminou sessão com sucesso", // Appears when user is successfully signed-out from application
             reSignInMessage: "Clique aqui para iniciar sessão" // Appears when user is signed-out from application and wants to sign-in again
-        },
-        preview: {
-            section1: "Gestir Crowdsource, um modelo de grupo de companhia para <a href=\'http://solutions.arcgis.com/local-government/help/crowdsource-reporter/\' target=\'_blank\'>Relatório Crowdsource</a>, é um modelo de aplicação de grupo de resposta (desktop e serviços de tablet) que permite utilizadores dentro de uma organização reverem problemas/observações submetidas através da aplicação de Gestão.", // Appears when preview page is loaded
-            section2: "A aplicação apresenta um ou mais mapas para os utilizadores avaliarem um problema ou observação. Os utilizadores podem procurar por padrões e clusters, rever detalhes de problemas, status de actualização, e atribuir responsabilidades.", // Appears when preview page is loaded
-            section3: "O código fonte da aplicação pode ser descarregado para mais configurações. Esta configuração adicional da aplicação pode ser aplicada de volta a um item de aplicação web configurável ArcGIS Online ou alojada no seu próprio servidor web.<br /> Para mais informação sobre como configurar esta aplicação, consulte a documentação <a href=\'http://solutions.arcgis.com/local-government/help/crowdsource-manager/\' target=\'_blank\'>Gestor Crowdsource</a> ." // Appears when preview page is loaded
         }
     })
 );

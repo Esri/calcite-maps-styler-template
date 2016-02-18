@@ -83,11 +83,6 @@ define(
         signOutPage: {
             signOutMessage: "您已成功登出", // Appears when user is successfully signed-out from application
             reSignInMessage: "单击此处以登录" // Appears when user is signed-out from application and wants to sign-in again
-        },
-        preview: {
-            section1: "Crowdsource Manager 作为 <a href=\'http://solutions.arcgis.com/local-government/help/crowdsource-reporter/\' target=\'_blank\'>Crowdsource Reporter</a> 应用程序的配套组模板，是一款面向桌面设备和平板设备的响应型组应用程序模板，组织内用户可利用该模板查看通过 Manager 应用程序提交的问题和观测结果。", // Appears when preview page is loaded
-            section2: "此应用程序可显示一张或多张地图以便用户查看问题或观测结果。用户可查找模式和聚类、查看问题详细信息、更新状态和分配职责。", // Appears when preview page is loaded
-            section3: "可下载应用程序源代码以进行进一步配置。应用程序的这一附加配置可重新应用至 ArcGIS Online 可配置 web 应用程序项目或在您自己的 web 服务器上进行托管。<br />有关配置此应用程序的详细信息，请参阅 <a href=\'http://solutions.arcgis.com/local-government/help/crowdsource-manager/\' target=\'_blank\'>Crowdsource Manager</a> 文档。" // Appears when preview page is loaded
         }
     })
 );

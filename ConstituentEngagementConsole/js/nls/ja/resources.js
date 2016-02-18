@@ -83,11 +83,6 @@ define(
         signOutPage: {
             signOutMessage: "正常にサイン アウトしました", // Appears when user is successfully signed-out from application
             reSignInMessage: "ここをクリックしてサイン インします" // Appears when user is signed-out from application and wants to sign-in again
-        },
-        preview: {
-            section1: "Crowdsource Manager は、<a href=\'http://solutions.arcgis.com/local-government/help/crowdsource-reporter/\' target=\'_blank\'>Crowdsource Reporter</a> のコンパニオン グループ テンプレートであり、レスポンシブ グループ アプリケーション テンプレート (デスクトップおよびタブレット デバイス向け) です。組織内のユーザーは Manager アプリを使って送信された問題や観測を確認できます。", // Appears when preview page is loaded
-            section2: "アプリでは、ユーザーが問題や観測データを確認するためのマップが 1 つ以上表示されます。ユーザーは、パターンとクラスターの検索、問題詳細の確認、ステータスの更新、役割の割り当てを行うことができます。", // Appears when preview page is loaded
-            section3: "アプリケーションのソース コードをダウンロードして詳細に構成できます。アプリケーションのこの追加構成は、ArcGIS Online の構成可能な Web アプリケーション アイテムに適用し直したり、独自の Web サーバー上でホストしたりすることができます。<br />このアプリの構成の詳細については、<a href=\'http://solutions.arcgis.com/local-government/help/crowdsource-manager/\' target=\'_blank\'>Crowdsource Manager</a> のドキュメントをご参照ください。" // Appears when preview page is loaded
         }
     })
 );

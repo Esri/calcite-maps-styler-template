@@ -83,11 +83,6 @@ define(
         signOutPage: {
             signOutMessage: "Olete edukalt välja logitud.", // Appears when user is successfully signed-out from application
             reSignInMessage: "Sisse logimiseks klikkige siia." // Appears when user is signed-out from application and wants to sign-in again
-        },
-        preview: {
-            section1: "Crowdsource Manager, mis on sarnane rühmamalliga <a href=\'http://solutions.arcgis.com/local-government/help/crowdsource-reporter/\' target=\'_blank\'>Crowdsource Reporter</a>, võimaldab ettevõtte kasutajatel jälgida rakendusmalle (töölaua ja tahvelarvuti seadmed) kaudu sisestatud probleeme/vaatlusandmeid.", // Appears when preview page is loaded
-            section2: "Rakendus kuvab ühte või mitut kaarti, millest kasutajad saavad näha probleeme või vaatlusandmeid. Kasutajad saavad näha mustreid ja klastreid, vaadata üle probleemide üksikasjad, värskendada olekut ja määrata vastutusalad.", // Appears when preview page is loaded
-            section3: "Rakenduse lähtekoodi saab täpsemaks konfigureerimiseks alla laadida. Rakenduse täpsemat konfiguratsiooni saate rakendada uuesti ArcGIS Online\'i konfigureeritavale veebirakenduse üksusele või majutada oma veebiserveris.<br /> Lisateabe saamiseks selle rakenduse konfigureerimise kohta vt <a href=\'http://solutions.arcgis.com/local-government/help/crowdsource-manager/\' target=\'_blank\'>Crowdsource Manager</a> dokumentidest." // Appears when preview page is loaded
         }
     })
 );

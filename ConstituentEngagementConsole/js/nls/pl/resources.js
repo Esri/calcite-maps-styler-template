@@ -27,10 +27,10 @@ define(
             created: "Data utworzenia", // Appears in web-map list description panel when it is set to true
             modified: "Ostatnia modyfikacja", // Appears in web-map list description panel when it is set to true
             description: "Opis", // Appears in web-map list description panel when it is set to true
-            snippet: "Podsumowanie", // Appears in web-map list description panel when it is set to true
+            snippet: "Summary", // Appears in web-map list description panel when it is set to true
             licenseInfo: "Ograniczenia dostępu i użytkowania", // Appears in web-map list description panel when it is set to true
             accessInformation: "Udostępniający zasoby", // Appears in web-map list description panel when it is set to true
-            tags: "Znaczniki", // Appears in web-map list description panel when it is set to true
+            tags: "Tags", // Appears in web-map list description panel when it is set to true
             numViews: "Liczba wyświetleń", // Appears in web-map list description panel when it is set to true
             avgRating: "Ocena", // Appears in web-map list description panel when it is set to true
             noWebMapInGroup: "Skonfigurowana grupa jest nieprawidłowa lub tej grupie nie udostępniono jeszcze żadnych elementów", // Appears when invalid group in configured or no web-map is available in that group
@@ -83,11 +83,6 @@ define(
         signOutPage: {
             signOutMessage: "Wylogowanie pomyślne", // Appears when user is successfully signed-out from application
             reSignInMessage: "Kliknij tutaj, aby się zalogować" // Appears when user is signed-out from application and wants to sign-in again
-        },
-        preview: {
-            section1: "Menedżer zgłoszeń użytkowników jest — podobnie jak <a href=\'http://solutions.arcgis.com/local-government/help/crowdsource-reporter/\' target=\'_blank\'>Raportowanie zgłoszeń użytkowników</a> — interaktywnym grupowym szablonem aplikacji na komputery stacjonarne i tablety, który umożliwia użytkownikom instytucji weryfikację problemów i spostrzeżeń przesłanych poprzez aplikację Menedżera.", // Appears when preview page is loaded
-            section2: "Aplikacja wyświetla mapę (lub kilka map), na której (których) użytkownik może analizować problem lub spostrzeżenie. Można szukać schematów i klastrów, analizować szczegóły problemu, aktualizować status i przydzielać zakresy odpowiedzialności.", // Appears when preview page is loaded
-            section3: "Kod źródłowy aplikacji można pobrać do dalszej konfiguracji. Dodatkową konfigurację aplikacji można zastosować w konfigurowalnej aplikacji internetowej ArcGIS Online lub hostować na własnym serwerze.<br /> Więcej informacji o konfigurowaniu tej aplikacji można znaleźć w dokumentacji szablonu <a href=\'http://solutions.arcgis.com/local-government/help/crowdsource-manager/\' target=\'_blank\'>Menedżer zgłoszeń użytkowników</a>." // Appears when preview page is loaded
         }
     })
 );

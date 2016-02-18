@@ -83,11 +83,6 @@ define(
         signOutPage: {
             signOutMessage: "Αποσυνδεθήκατε με επιτυχία", // Appears when user is successfully signed-out from application
             reSignInMessage: "Κάντε κλικ εδώ για να συνδεθείτε" // Appears when user is signed-out from application and wants to sign-in again
-        },
-        preview: {
-            section1: "Το Crowdsource Manager, ένα συνοδευτικό πρότυπο ομάδας του <a href=\'http://solutions.arcgis.com/local-government/help/crowdsource-reporter/\' target=\'_blank\'>Crowdsource Manager</a>, είναι ένα πρότυπο ομαδικής εφαρμογής (για επιτραπέζιους υπολογιστές και tablet) που έχει σχεδιαστεί ώστε να επιτρέπει στους χρήστες εντός ενός οργανισμού να εξετάζουν προβλήματα/παρατηρήσεις που υποβλήθηκαν μέσω της εφαρμογής Manager.", // Appears when preview page is loaded
-            section2: "Η εφαρμογή παρουσιάζει έναν ή περισσότερους χάρτες με τους οποίους οι χρήστες μπορούν να εξετάσουν ένα πρόβλημα ή μια παρατήρηση. Οι χρήστες μπορούν να αναζητήσουν μοτίβα και συστάδες στοιχείων, να εξετάσουν λεπτομέρειες προβλημάτων, να ενημερώσουν την κατάσταση και να αναθέσουν αρμοδιότητες.", // Appears when preview page is loaded
-            section3: "Μπορείτε να κατεβάσετε τον πηγαίο κώδικα της εφαρμογής για περαιτέρω παραμετροποίηση. Αυτή η πρόσθετη διαμόρφωση παραμετροποίηση της εφαρμογής μπορεί να εφαρμοστεί ξανά σε ένα παραμετροποιήσιμο αντικείμενο web εφαρμογής στοιχείο παραμετροποιήσιμης εφαρμογής Web του ArcGIS Online ή να φιλοξενηθεί στο δικό σας web διακομιστή Web.<br /> Για περισσότερες πληροφορίες σχετικά με την παραμετροποίηση αυτής της εφαρμογής, ανατρέξτε στην τεκμηρίωση του <a href=\'http://solutions.arcgis.com/local-government/help/crowdsource-manager/\' target=\'_blank\'>Crowdsource Manager</a>." // Appears when preview page is loaded
         }
     })
 );
