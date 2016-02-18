@@ -48,6 +48,7 @@ define([
     "esri/symbols/TextSymbol",
     "esri/tasks/BufferParameters",
     "esri/tasks/GeometryService",
+    "esri/urlUtils",
     "application/DemographicsInfo",
     "application/LifestyleInfo",
     "application/WeatherInfo",
@@ -85,6 +86,7 @@ define([
     TextSymbol,
     BufferParameters,
     GeometryService,
+    urlUtils,
     DemographicsInfo,
     LifestyleInfo,
     WeatherInfo,
@@ -545,22 +547,14 @@ define([
                 canModifyStops: false,
                 doNotFetchTravelModesFromOwningSystem: true
             };
-            // TO DO: check proxy url
-            if (this.config.helperServices.route && this.config.helperServices.route.url !== "") {
-                // do we have a proxied url? 
-                // TO DO: check proxy url
-                var routeUrl = null;
-                array.some(this.config.layerMixins, lang.hitch(this, function(layerMixin) {
-                    if (layerMixin.url === this.config.helperServices.route.url) {
-                        //routeUrl = layerMixin.mixin.url;
-                        routeUrl = this._fixProxyUrl(layerMixin);
-                        return true;
-                    }
-                }));
-                options.routeTaskUrl = routeUrl || this.config.helperServices.route.url;
-            }
+
+            // GET PROXIED ROUTE URL
+            var routeUrl = this._getProxiedRouteUrl();
+            options.routeTaskUrl = routeUrl;
+
             if (this.config.routeUtility)
                 options.routeTaskUrl = this.config.routeUtility;
+
             this.dirWidget = new Directions(options, "pageDir");
             this.dirWidget.startup();
 
@@ -1002,6 +996,7 @@ define([
         _toggleDirections: function() {
             if (this.dirMode) {
                 this.snap = true;
+                this.dirWidget.reset();
                 domStyle.set("panelDirections", "display", "none");
                 domStyle.set("panelContent", "display", "block");
                 this._showPage(this.curPage);
@@ -1015,24 +1010,36 @@ define([
             this.map.reposition();
         },
 
-        // Fix Proxy Url: Added to check if url and proxy url match
-        _fixProxyUrl: function(layerMixin) {
-            // Test Strings
-            // var url = "http://route.arcgis.com/arcgis/rest/services/World/Route/NAServer/Route_World";
-            // var proxyUrl = "http://utility.arcgis.com/usrsvcs/appservices/m3J483eWLHr9Sn9i/rest/services/World/Route/NAServer";
-            var url = layerMixin.url;
-            var proxyUrl = layerMixin.mixin.url;
-            var url2 = url.toLowerCase();
-            var proxyUrl2 = proxyUrl.toLowerCase();
-            var uIndex = url2.indexOf("/rest/services");
-            var pIndex = proxyUrl2.indexOf("/rest/services");
-            if (uIndex > -1 && pIndex > -1) {
-                var fixUrl = proxyUrl.substring(0, pIndex) + url.substring(uIndex);
-                console.log("Fixed URL", fixUrl);
-                return fixUrl;
-            } else {
-                return url;
+        // Get Proxied Route Url
+        _getProxiedRouteUrl: function() {
+            var routeUrl;
+            if (this.config.helperServices.route && this.config.helperServices.route.url !== "") {
+                array.some(this.config.layerMixins, lang.hitch(this, function(layerMixin) {
+                    if (layerMixin.url === this.config.helperServices.route.url) {
+                        var url = layerMixin.url;
+                        var proxyUrl = layerMixin.mixin.url;
+                        var url2 = url.toLowerCase();
+                        var proxyUrl2 = proxyUrl.toLowerCase();
+                        var uIndex = url2.indexOf("/rest/services");
+                        var pIndex = proxyUrl2.indexOf("/rest/services");
+                        if (uIndex > -1 && pIndex > -1) {
+                            routeUrl = proxyUrl.substring(0, pIndex) + url.substring(uIndex);
+                        }
+                        return true;
+                    }
+                }));
+                if (!routeUrl) {
+                    routeUrl = this.config.helperServices.route.url;
+                    if (this.config.proxyurl !== "") {
+                        urlUtils.addProxyRule({
+                            urlPrefix: routeUrl,
+                            proxyUrl: this.config.proxyurl
+                        });
+                    }
+                }
             }
+            console.log("Fixed Route URL", routeUrl);
+            return routeUrl;
         }
 
 
