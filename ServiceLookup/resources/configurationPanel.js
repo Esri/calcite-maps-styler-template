@@ -1,7 +1,7 @@
 {
   "configurationSettings": [
     {
-      "category": "General Settings",
+      "category": "Map",
       "fields": [
         {
           "type": "paragraph",
@@ -13,30 +13,124 @@
         }
       ]
     },
-    {
-      "category": "Lookup Layers Settings",
+	{
+      "category": "General",
       "fields": [
         {
-          "label": "Lookup Layers",
-          "fieldName": "serviceAreaLayerNamesSelector",
-          "type": "multilayerandfieldselector",
-          "tooltip": "Polygon Layers used for combined popup",
-          "layerOptions": {
-            "supportedTypes": [
-              "FeatureLayer",
-              "FeatureCollection",
-              "MapServiceLayer"
-            ],
-            "geometryTypes": [
-              "esriGeometryPolygon",
-              "esriGeometryPolyline",
-              "esriGeometryPoint"
-            ]
+          "type": "string",
+          "fieldName": "title",
+          "label": "Title:",
+          "tooltip": "Title to show in the UI"
+        },
+        {
+          "type": "boolean",
+          "fieldName": "showUI",
+          "label": "Show a title bar",
+          "tooltip": "Check on if you want to display the header bar"
+        },
+        {
+          "type": "string",
+          "fieldName": "pageIcon",
+          "label": "Title Bar Icon:",
+          "tooltip": "Url to image to be used in title bar, max size 64x64"
+        },
+        {
+          "type": "boolean",
+          "fieldName": "popupSide",
+          "label": "Show the pop up on the side panel",
+          "tooltip": "Check on if you want to display the pop up details in a side panel"
+        },
+        {
+          "type": "string",
+          "fieldName": "uidirection",
+          "tooltip": "Side to show the side pop up",
+          "label": "Pop up side:",
+          "options": [
+            {
+              "label": "Left",
+              "value": "left"
+            },
+            {
+              "label": "Right",
+              "value": "right"
+            }
+          ]
+        },
+		{
+          "type": "boolean",
+          "fieldName": "basemapWidgetVisible",
+          "label": "Show the basemap selector",
+          "tooltip": "Check this option if you would like to show the basemap selector"
+        }
+      ]
+    },
+	{
+      "category": "Theme",
+      "fields": [
+        {
+          "type": "color",
+          "fieldName": "color",
+          "tooltip": "Font color",
+          "label": "Font color:"
+        },
+        {
+          "type": "color",
+          "fieldName": "backcolor",
+          "tooltip": "UI color",
+          "label": "Theme Color:"
+        },
+        {
+          "type": "color",
+          "fieldName": "hypercolor",
+          "tooltip": "Hyperlink color",
+          "label": "Hyperlink Color:"
+        }
+      ]
+    },
+	{
+      "category": "Splash Screen",
+      "fields": [
+        {
+          "type": "boolean",
+          "fieldName": "showSplash",
+          "label": "Display Splash Screen on Startup",
+          "tooltip": "Check on if you want to display a splash screen at startup"
+        },
+        {
+          "type": "string",
+          "fieldName": "splashText",
+          "label": "Splash Screen message",
+          "tooltip": "Message to display when application is loaded",
+          "stringFieldOption": "richtext"
+        },
+        {
+          "type": "number",
+          "fieldName": "splashWidth",
+          "label": "Splash Screen Width",
+          "tooltip": "Splash Screen width",
+          "constraints": {
+            "min": 0,
+            "places": 0
           }
         },
         {
+          "type": "number",
+          "fieldName": "splashHeight",
+          "label": "Splash Screen Height",
+          "tooltip": "Splash Screen height",
+          "constraints": {
+            "min": 0,
+            "places": 0
+          }
+        }
+      ]
+    },
+    {
+      "category": "Lookup Layer",
+      "fields": [
+        {
           "type": "paragraph",
-          "value": "The following two option allow you to add text to the beginning and end of the pop up when results are found.  The following parameters are supported:<br />&nbsp; - {IL_SEARCHBY} pop up from the search by layer.<br />&nbsp; - {&lt;FieldName&gt;} for a field from the search by layer<br />&nbsp; - {&lt;LayerName&gt;} for a count of the features from each look up layer.<br />&nbsp; - {IL_LAT}, {IL_LONG}, {IL_XCOORD}, {IL_YCOORD} for coordinates from the lookup location, the centroid is used a line or polygon"
+          "value": "The following options allow you to add text to the beginning and end of the pop up when results are found.  These parameters are supported:<br />&nbsp; - {IL_SEARCHBY} pop up from the search by layer.<br />&nbsp; - {&lt;FieldName&gt;} for a field from the search by layer<br />&nbsp; - {&lt;LayerName&gt;} for a count of the features from each look up layer.<br />&nbsp; - {IL_LAT}, {IL_LONG}, {IL_XCOORD}, {IL_YCOORD} for coordinates from the lookup location, the centroid is used a line or polygon"
         },
         {
           "type": "string",
@@ -61,15 +155,33 @@
             "places": 0
           },
           "tooltip": "Sets the max auto zoom level for the map after a lookup"
+        },
+		{
+          "label": "Lookup Layers",
+          "fieldName": "serviceAreaLayerNamesSelector",
+          "type": "multilayerandfieldselector",
+          "tooltip": "Polygon Layers used for combined popup",
+          "layerOptions": {
+            "supportedTypes": [
+              "FeatureLayer",
+              "FeatureCollection",
+              "MapServiceLayer"
+            ],
+            "geometryTypes": [
+              "esriGeometryPolygon",
+              "esriGeometryPolyline",
+              "esriGeometryPoint"
+            ]
+          }
         }
       ]
     },
     {
-      "category": "Search By Layer Settings",
+      "category": "Search By Layer",
       "fields": [
         {
           "type": "paragraph",
-          "value": "By Default, when the mouse click or search location is used to lookup information at that location.  If you would like to use a feature from a layer to look up features, fill out the following parameters.  You can also specify a url parameter to provide a url to a specific feature, note: this only supports feature layers.  If you would like to search for a feature using the search dialog, configure it in the search settings at the bottom."
+          "value": "By default, a mouse click or location found from the search box is used to lookup information in the lookup layer.  If you would like to search for a feature using the search box, configure it in the Search Settings tab.  If you would like to use a feature from another layer to look up information in the lookup layer, fill out the following parameters to declare a search layer.  Optionally, specify a url parameter that can be used to find a feature from the search layer when the app loads.  Note: this only supports feature layers."
         },
         {
           "placeHolder": "i.e. parcels",
@@ -118,20 +230,20 @@
         {
           "type": "string",
           "fieldName": "noSearchFeatureTitle",
-          "label": "No Search Feature Popup Title:",
+          "label": "No Search Feature Found Popup Title:",
           "tooltip": "Popup title when a feature in the search layer is not found"
         },
         {
           "type": "string",
           "fieldName": "noSearchFeatureMessage",
-          "label": "No Search Feature Popup Message:",
+          "label": "No Search Feature Found Popup Message:",
           "tooltip": "Popup message when a feature in the search layer is not found",
           "stringFieldOption": "richtext"
         }
       ]
     },
     {
-      "category": "Save Settings",
+      "category": "Store Location",
       "fields": [
         {
           "type": "boolean",
@@ -162,7 +274,7 @@
           },
           "fieldName": "serviceRequestLayerName",
           "label": "Storage Layer Name (Editable Feature Layer Only)",
-          "tooltip": "Point layer used to store lookup the lookup locations"
+          "tooltip": "Point layer used to store lookup locations"
         },
         {
           "type": "string",
@@ -188,7 +300,7 @@
       ]
     },
     {
-      "category": "Popup Settings",
+      "category": "Popup",
       "fields": [
         {
           "type": "string",
@@ -225,122 +337,20 @@
         {
           "type": "string",
           "fieldName": "serviceUnavailableTitle",
-          "label": "Unavailable Popup Title:",
-          "tooltip": "Popup title when outside an area"
+          "label": "Outside Lookup Layer Popup Title:",
+          "tooltip": "Popup title when a found search location does not fall within a lookup layer area"
         },
         {
           "type": "string",
           "fieldName": "serviceUnavailableMessage",
-          "label": "Unavailable Popup Message:",
-          "tooltip": "Popup message when outside an area",
+          "label": "Outside Lookup Layer Popup Message:",
+          "tooltip": "Popup message when a found search location does not fall within a lookup layer area",
           "stringFieldOption": "richtext"
         }
       ]
     },
-    {
-      "category": "App Settings",
-      "fields": [
-        {
-          "type": "string",
-          "fieldName": "title",
-          "label": "Title:",
-          "tooltip": "Title to show in the UI"
-        },
-         {
-           "type": "boolean",
-           "fieldName": "basemapWidgetVisible",
-           "label": "Show the basemap selector",
-           "tooltip": "Check this option if you would like to show the basemap selector"
-         },
-        {
-          "type": "boolean",
-          "fieldName": "showUI",
-          "label": "Show a title bar",
-          "tooltip": "Check on if you want to display the header bar"
-        },
-        {
-          "type": "string",
-          "fieldName": "pageIcon",
-          "label": "Title Bar Icon:",
-          "tooltip": "Url to image to be used in title bar, max size 64x64"
-        },
-        {
-          "type": "boolean",
-          "fieldName": "popupSide",
-          "label": "Show the pop up on the side panel",
-          "tooltip": "Check on if you want to display the pop up details in a side panel"
-        },
-        {
-          "type": "string",
-          "fieldName": "uidirection",
-          "tooltip": "Side to show the side pop up",
-          "label": "Pop up side:",
-          "options": [
-            {
-              "label": "Left",
-              "value": "left"
-            },
-            {
-              "label": "Right",
-              "value": "right"
-            }
-          ]
-        },
-        {
-          "type": "color",
-          "fieldName": "color",
-          "tooltip": "Font color",
-          "label": "Font color:"
-        },
-        {
-          "type": "color",
-          "fieldName": "backcolor",
-          "tooltip": "UI color",
-          "label": "Theme Color:"
-        },
-        {
-          "type": "color",
-          "fieldName": "hypercolor",
-          "tooltip": "Hyperlink color",
-          "label": "Hyperlink Color:"
-        },
-        {
-          "type": "boolean",
-          "fieldName": "showSplash",
-          "label": "Display Splash Screen on Startup",
-          "tooltip": "Check on if you want to display a splash screen at startup"
-        },
-        {
-          "type": "string",
-          "fieldName": "splashText",
-          "label": "Splash Screen message",
-          "tooltip": "Message to display when application is loaded",
-          "stringFieldOption": "richtext"
-        },
-        {
-          "type": "number",
-          "fieldName": "splashWidth",
-          "label": "Splash Screen Width",
-          "tooltip": "Splash Screen width",
-          "constraints": {
-            "min": 0,
-            "places": 0
-          }
-        },
-        {
-          "type": "number",
-          "fieldName": "splashHeight",
-          "label": "Splash Screen Height",
-          "tooltip": "Splash Screen height",
-          "constraints": {
-            "min": 0,
-            "places": 0
-          }
-        }
-      ]
-    },
-    {
-      "category": "Search Settings",
+	{
+      "category": "Search",
       "fields": [
         {
           "type": "paragraph",
@@ -401,9 +411,9 @@
     "popupWidth": null,
     "popupHeight": null,
     "serviceUnavailableTitle": "Outside Service Area",
-    "serviceUnavailableMessage": "No information available at the selected location",
-    "noSearchFeatureTitle":"No Search Feature",
-    "noSearchFeatureMessage":"A search feature uses to lookup information was not found, please select a new location.",
+    "serviceUnavailableMessage": "No information is available at the selected location.",
+    "noSearchFeatureTitle":"No Search Feature Found",
+    "noSearchFeatureMessage":"A search feature used to lookup information was not found.  Please select a new location.",
     "zoomLevel": 18,
     "storeLocation": false,
     "serviceRequestLayerAvailibiltyFieldValueAvail": "Intersected",
