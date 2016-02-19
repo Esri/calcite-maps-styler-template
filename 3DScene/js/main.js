@@ -39,6 +39,7 @@ define([
   "esri/WebScene",
 
   "esri/widgets/Search",
+  "esri/widgets/Search/SearchViewModel",
 
   "application/uiUtils",
   "application/LayerList/LayerList",
@@ -53,7 +54,7 @@ define([
   Point, SpatialReference,
   PortalItem,
   SceneView, WebScene,
-  Search,
+  Search, SearchVM,
   uiUtils, LayerList, SlideList
 ) {
   return declare(null, {
@@ -313,17 +314,20 @@ define([
     // init search
     _initSearch: function() {
       var search = new Search({
-        view: this.view,
+        //view: this.view,
         //showPopupOnSelect: false,
+        viewModel: new SearchVM({
+          view: this.view
+        }),
         enableHighlight: false
       }, "panelSearch");
       search.startup();
       // Set active view
-      search.watch(function(property, oldValue, newValue) {
-        if (property === "searchResults") {
-          search.view = this.view;
-        }
-      });
+      // search.watch(function(property, oldValue, newValue) {
+      //   if (property === "searchResults") {
+      //     search.view = this.view;
+      //   }
+      // });
       return search;
     }
 
