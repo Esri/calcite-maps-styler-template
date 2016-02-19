@@ -66,9 +66,24 @@
 	</div>
 </div>
 <script>
-	if(window.location.hash) {
-		window.location.hash = '';
-	}
+	var getPageFrom = function() {
+		// get the URL we want to go back to from the state URL property on the hash.
+		var pageFrom = '',
+			matches = (/&state=(.*?)(?=(#|&|$))/i).exec(window.location.hash),
+			redirectParams = null,
+			paramObj = null;
+
+		if(matches && matches.length) {
+			redirectParams = matches[1];
+			paramObj = JSON.parse(decodeURIComponent(redirectParams));
+			pageFrom = paramObj.fromUrl;
+		}
+
+		return pageFrom;
+	};
+
+	var PAGE_FROM = getPageFrom();
+
 // can access parent window?
 	var parentWindow = {},
 		canAccessParent = true,
@@ -95,7 +110,7 @@
 
 			window.location.href = baseUrl + "/sharing/rest/oauth2/authorize?client_id=" + DEFAULT_CLIENT_ID + "&display=iframe" +
 			"&redirect_uri=" + parentWindow.redirectBase + "arcgis-storymaps-my-stories-utils/sign-in/signedin.html" + encodeURIComponent("?defaultPortalURL=" + DEFAULT_PORTAL_URL +
-			"&defaultClientId=" + DEFAULT_CLIENT_ID) + "&response_type=token" + "&showSocialLogins=true" + "&locale=" + locale + "&parent=" + parentWindow.location.href;
+			"&defaultClientId=" + DEFAULT_CLIENT_ID) + "&response_type=token" + "&showSocialLogins=true" + "&locale=" + locale + "&parent=" + parentWindow.location.origin;
 
 			return;
 		}
@@ -138,6 +153,9 @@
 					// if this isn't a frame (but is a full page)
 					if(!window.frameElement) {
 						// do your thing
+						if(window.location.hash) {
+							window.location.hash = '';
+						}
 						callback = parentWindow.signInManager.getSignedInCallback();
 						segueToParent(cookie, callback);
 						onTabPageShown();
@@ -151,6 +169,9 @@
 				else {
 					// if this isn't a frame (but is a full page)
 					if(!window.frameElement) {
+						if(window.location.hash) {
+							window.location.hash = '';
+						}
 						onTabPageShownOrphan();
 					}
 				}
@@ -237,6 +258,9 @@
 
 		// if this isn't a frame (but is a full page)
 		if(!window.frameElement) {
+			if(window.location.hash) {
+				window.location.hash = '';
+			}
 			onTabPageShown(httpsUrl);
 		}
 
@@ -340,23 +364,29 @@
 
 
 	showPage = function(url, canCallback) {
-		var closeWindowButton = document.getElementById('close-window');
+		var closeWindowButton = document.getElementById('close-window'),
+			inputUrl = '';
 
 		if(canCallback) {
-			closeWindowButton.addEventListener('click', function() {
-				// redirect user to the page they logged in from.
-				// If they are redirected to https (but this frame is http), we provide the URL parameter becuause they won't have access to parentWindow.
-				window.location.href = url ? url : parentWindow.location.href;
-			});
+			// If they are redirected to https (but this frame is http), we provide the URL because they won't have access to parentWindow.
+			inputUrl = url ? url : parentWindow.location.href;
+		}
+		else if(PAGE_FROM) {
+			inputUrl = PAGE_FROM;
 		}
 		else {
-			// we aren't able to get the user back, but we can at least give them some directions...
 			closeWindowButton.style.display = 'none';
 			document.getElementById('instructions').style.display = 'block';
 			document.getElementById('close-window-instructions').addEventListener('click', function() {
 				window.close();
 			});
 		}
+
+		closeWindowButton.addEventListener('click', function() {
+			// redirect user to the page they logged in from.
+			window.location.href = inputUrl;
+		});
+
 		document.getElementById('message').style.display = 'block';
 	};
 
@@ -367,6 +397,7 @@
 	else {
 		parentWindow = window.parent;
 	}
+
 
 
 	onSignedIn();

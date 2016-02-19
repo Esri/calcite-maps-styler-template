@@ -347,6 +347,10 @@ define(['dojo/Deferred', 'sign-in/SignInDialog', 'sign-in/PortalHelper', 'create
 				urlSuffix = fromBuildApp ? '&buildApp=true&app=' + appObj + '&layout=' + layoutStr : '',
 				myStoriesPage = (window.location.href.indexOf('/my-stories') !== -1 || window.location.href.indexOf('/MyStories/') !== -1) ? true : false,
 				portalDefaultStr = "?defaultPortalURL=" + unProtocolUrl(baseUrl) + "&defaultClientId=" + app.cfg.DEFAULT_CLIENT_ID,
+				stateObj = {
+					fromUrl: window.location.href
+				},
+				stateObjEncodedStringified = encodeURIComponent(JSON.stringify(stateObj)),
 				socialShareParam = '&showSocialLogins=true';
 
 			if(isPortal) {
@@ -360,7 +364,7 @@ define(['dojo/Deferred', 'sign-in/SignInDialog', 'sign-in/PortalHelper', 'create
 				// in IE10, window.location.origin doesn't exist. We'll account for that.
 				// props to tosbourne: http://tosbourn.com/a-fix-for-window-location-origin-in-internet-explorer/
 				if(!window.location.origin) {
-					window.location.origin = 'https://' + window.location.hostname + (window.location.port ? ':' + window.location.port : '');
+					window.location.origin = window.location.protocol + '//' + window.location.hostname + (window.location.port ? ':' + window.location.port : '');
 				}
 
 				window.redirectBase = 'https://' + unProtocolUrl(window.location.origin) + '/';
@@ -386,7 +390,7 @@ define(['dojo/Deferred', 'sign-in/SignInDialog', 'sign-in/PortalHelper', 'create
 				"src",
 				baseUrlHttps + "/sharing/rest/oauth2/authorize?client_id=" + app.cfg.DEFAULT_CLIENT_ID + "&display=iframe" +
 				"&redirect_uri=" + window.redirectBase + "arcgis-storymaps-my-stories-utils/sign-in/signedin.html" + encodeURIComponent(portalDefaultStr) + encodeURIComponent(urlSuffix) +
-				"&response_type=token" + socialShareParam + "&locale=" + locale + "&parent=" + window.location.href
+				"&response_type=token" + "&state=" + stateObjEncodedStringified + socialShareParam + "&locale=" + locale + "&parent=" + window.location.origin
 			);
 
 			// show the dialog
