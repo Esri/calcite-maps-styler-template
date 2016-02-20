@@ -172,7 +172,12 @@
               "value":"greenTheme"
             }
           ]
-        },
+        }
+      ]
+    },
+    {  
+      "category":"<b>Gallery Options</b>",
+      "fields":[  
         {  
           "type":"paragraph",
           "value":"Whether to use grid view or list view as the default layout."
@@ -324,12 +329,7 @@
               "value":"15"
             }
           ]
-        }
-      ]
-    },
-    {  
-      "category":"<b>Configuration</b>",
-      "fields":[  
+        },
         {  
           "type":"paragraph",
           "value":"Open maps with this viewer."
@@ -364,7 +364,12 @@
           "tooltip":"Default search string for group query.",
           "placeHolder":"",
           "label":"Search string:"
-        },
+        }
+      ]
+    },
+    {  
+      "category":"<b>Other Configuration</b>",
+      "fields":[  
         {  
           "type":"paragraph",
           "value":"Register an <a target=\"_blank\" href=\"https:\/\/www.addthis.com\/register\">AddThis.com<\/a> account for social media button analytics."
@@ -390,7 +395,7 @@
       ]
     },
     {  
-      "category":"<b>Features</b>",
+      "category":"<b>Enable Features</b>",
       "fields":[  
         {  
           "type":"boolean",
@@ -471,13 +476,9 @@
           "tooltip":"Shows ratings for items and allows items to be rated"
         },
         {  
-          "type":"paragraph",
-          "value":"Shows a list allowing users to filter items by type, if 'Only display items of this type' does not equal 'All' it will control the default item type selected in the filter."
-        },
-        {  
           "type":"boolean",
           "fieldName":"showFilterType",
-          "label":"Show Filter By Type",
+          "label":"Show a list allowing users to filter items by type.",
           "tooltip":"Shows a list allowing users to filter items by type."
         },
         {  
