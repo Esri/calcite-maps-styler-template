@@ -122,7 +122,6 @@ xcopy %TEMPLATES_ROOT%\archive\ElevationsProfile                %BUILD_OUTPUT%\E
 xcopy %TEMPLATES_ROOT%\archive\Elevations                       %BUILD_OUTPUT%\Elevations                           /E /Y
 xcopy %TEMPLATES_ROOT%\Embed                                    %BUILD_OUTPUT%\Embed                                /E /Y
 xcopy %TEMPLATES_ROOT%\Embed                                    %BUILD_OUTPUT%\Minimalist                           /E /Y
-xcopy %TEMPLATES_ROOT%\Embed\config\minimalDefault.js           %BUILD_OUTPUT%\Minimalist\config\defaults.js        /E /Y
 xcopy %TEMPLATES_ROOT%\archive\Filter                           %BUILD_OUTPUT%\Filter                               /E /Y
 xcopy %TEMPLATES_ROOT%\GeoForm                                  %BUILD_OUTPUT%\GeoForm                              /E /Y
 xcopy %TEMPLATES_ROOT%\archive\HeaderFooterChrome               %BUILD_OUTPUT%\HeaderFooter\Chrome                  /E /Y
@@ -193,6 +192,8 @@ copy /Y %TEMPLATES_ROOT%\*.*  %BUILD_OUTPUT%
 
 REM Copy the common config to the template config directory
 copy /Y %TEMPLATES_ROOT%\commonConfig.js                          %BUILD_OUTPUT%\LocalPerspective\config\commonConfig.js
+copy /Y %TEMPLATES_ROOT%\Embed\config\minimalDefault.js           %BUILD_OUTPUT%\Minimalist\config\defaults.js    
+
 echo ########## BUILD END TIME: %date% - %time% ##########
 
 :END
