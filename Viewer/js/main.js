@@ -143,14 +143,14 @@ define([
                       on(dom.byId("closeOverlay"), "click", lang.hitch(this, function(){
                         domClass.add("modal", "hide");
                       }));
-                      this._updateTheme(); 
+                      this._updateTheme();
                     }
                     mapParams.processUrlParams().then(lang.hitch(this, function(urlParams){
                       promise = this._createWebMap(itemInfo, urlParams);
                     }), lang.hitch(this, function(error){
                       this.reportError(error);
                     }));
-                    
+
 
                 }));
             } else {
@@ -664,6 +664,7 @@ define([
                         id: "print_title",
                         className: "printTitle",
                         tabindex: "0",
+                        "aria-label": this.config.i18n.tools.print.titlePrompt,
                         placeholder: this.config.i18n.tools.print.titlePrompt
                     }, domConstruct.create("div"));
 
