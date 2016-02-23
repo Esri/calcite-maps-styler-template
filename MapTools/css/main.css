@@ -247,6 +247,9 @@ body {
   -webkit-border-radius: 0 0 4px 4px;
   border-radius: 0 0 4px 4px;
 }
+#featureTable_menuNode_label{
+  color:#333;
+}
 .esriFeatureTable .esriFeatureTable_menu {
   display: none;
 }

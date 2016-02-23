@@ -353,9 +353,11 @@ define([
 
                 var table = new FeatureTable({
                     id: "featureTable",
-                    "featureLayer": layer,
-                    "hiddenFields": hiddenFields,
-                    "map": this.map
+                    featureLayer: layer,
+                    showDataTypes: false,
+                    readOnly: true,
+                    hiddenFields: hiddenFields,
+                    map: this.map
                 }, "featureTable");
 
 
@@ -381,7 +383,7 @@ define([
 
                 table.startup();
                 //sync feature selection and table selection
-                on(table, "dgrid-select", lang.hitch(this, function (evt) {
+                on(table, "row-select", lang.hitch(this, function (evt) {
                     if (evt && evt.length > 0) {
                         var id = evt[0].data[layer.objectIdField];
                         var q = new esriQuery();
@@ -1160,7 +1162,7 @@ define([
             if (this.tableHandler) {
                 this.tableHandler.resume();
             }
-            this.map.setInfoWindowOnClick(false);
+            //this.map.setInfoWindowOnClick(false);
             domStyle.set(table, "height", "30%");
 
         },
@@ -1169,7 +1171,7 @@ define([
             if (this.tableHandler) {
                 this.tableHandler.pause();
             }
-            this.map.setInfoWindowOnClick(true);
+            //this.map.setInfoWindowOnClick(true);
             domStyle.set(table, "height", 0);
         },
         _createEditor: function () {
