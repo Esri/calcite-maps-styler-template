@@ -192,7 +192,7 @@ copy /Y %TEMPLATES_ROOT%\*.*  %BUILD_OUTPUT%
 
 REM Copy the common config to the template config directory
 copy /Y %TEMPLATES_ROOT%\commonConfig.js                          %BUILD_OUTPUT%\LocalPerspective\config\commonConfig.js
-copy /Y %TEMPLATES_ROOT%\Embed\config\minimalDefault.js           %BUILD_OUTPUT%\Minimalist\config\defaults.js    
+copy /Y %TEMPLATES_ROOT%\Embed\config\minimalDefaults.js           %BUILD_OUTPUT%\Minimalist\config\defaults.js    
 
 echo ########## BUILD END TIME: %date% - %time% ##########
 
