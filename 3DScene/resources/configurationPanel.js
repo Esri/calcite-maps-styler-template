@@ -39,7 +39,7 @@
   "values": {
     "title": "",
     "subtitle": "",
-    "color": "#2cbade",
+    "color": "#80ab00",
     "reverse": true,
     "showLayers": true,
     "showBasemaps": false
