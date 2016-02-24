@@ -140,7 +140,7 @@
       "title" : "Local Perspective",
       "logo" : "images/logo.png",
       "color" : "#80ab00",
-      "cycleColors" : false,
+      "cycleColors" : true,
       "defaultToCenter" : true,
       "showDemograpics" : true,
       "showLifestyle" : true,
