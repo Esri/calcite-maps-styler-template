@@ -5,6 +5,13 @@
          "fields" : [
             {
                "type" : "webmap"
+            },
+            {
+               "type": "appproxies",
+               "serviceProxies": [{
+                  "title": "Route",
+                  "name": "route"
+               }]
             }
       ]
    },
@@ -91,13 +98,6 @@
                "fieldName" : "showDirections",
                "label" : "Enable routing directions",
                "tooltip" : "Enable routing directions"
-            },
-            {
-               "type": "appproxies",
-               "serviceProxies": [{
-                  "title": "Route",
-                  "name": "route"
-               }]
             },
             {
                "type" : "string",
