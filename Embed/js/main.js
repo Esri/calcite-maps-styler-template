@@ -573,6 +573,10 @@ define([
 
             }));
         }
+-         //disable mouse zoom
+-         if (this.config.disable_scroll) {
+-            this.map.disableScrollWheelZoom();
+-         }
           if(params.markerGraphic){
             // Add a marker graphic with an optional info window if
             // one was specified via the marker url parameter
