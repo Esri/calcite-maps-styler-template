@@ -132,6 +132,7 @@ define([
 
                     // Setup the modal overlay if enabled
                     if(this.config.splashModal){
+                      domClass.add(document.body, "noscroll");
                       domClass.remove("modal", "hide");
                       var title = this.config.splashTitle || "";
                       var content = this.config.splashContent || "";
@@ -141,6 +142,7 @@ define([
 
                       // Close button handler for the overlay
                       on(dom.byId("closeOverlay"), "click", lang.hitch(this, function(){
+                        domClass.remove(document.body, "noscroll");
                         domClass.add("modal", "hide");
                       }));
                       this._updateTheme();

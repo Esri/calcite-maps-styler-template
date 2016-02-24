@@ -60,8 +60,6 @@ Evented, declare, win, fx, html, lang, has, dom, domClass, domStyle, domAttr, do
                     }
                     domStyle.set(win.body(), "overflow-y", "auto");
                 }
-
-
             }));
             domConstruct.empty(this.pPages);
             // add blank page

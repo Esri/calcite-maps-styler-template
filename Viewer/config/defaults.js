@@ -30,7 +30,7 @@ define({
     //Defaults to arcgis.com. Set this value to your portal or organization host name.
     "sharinghost": location.protocol + "//" + "www.arcgis.com",
     // Set splashModal to display a splash screen when the app loads
-    // Define the splash content using splashTitle and splashContent. 
+    // Define the splash content using splashTitle and splashContent.
     "splashModal": false,
     "splashTitle": null,
     "splashContent": null,
@@ -38,9 +38,9 @@ define({
     "find": null,
     "localize": true,
     "units": null,
-    // This is an option added so that developers working with the 
+    // This is an option added so that developers working with the
     // hosted version of the application can apply custom styles
-    // not used in the download version. 
+    // not used in the download version.
     "customstyle": null,//'#mapDiv { background-color: #cfdfec; } .arcgisSearch .searchGroup .searchInput { border: 0px solid #BDBDBD; background-color: #fff!important; height: 27px; font-size: 16px; color: #333; } .esriIconZoom:before { color: white; } .arcgisSearch .searchBtn { border: 0px solid #57585A; rgba(0, 0, 0, 0.41); } #mapDiv_graphics_layer path { stroke: rgba(221, 0, 32, 1); stroke-width: 4px; opacity: 0.01; } .icon-menu:before { opacity: 0.01; } input#search_input:focus { outline: none; } .arcgisSearch .searchMenu { border: 0px solid #57585A; } .esriIconClose:before { color: white; } #panelLogo img { max-width: 80px; max-height: 68px; } #panelLogo { width: 81px; padding-top: 3px; } .titleButton.maximize:before { visibility: hidden!important; } .pageHeaderImg { display: none; } .pageTitle { display: none; } .arcgisSearch .hasMultipleSources .searchToggle { display: none!important; } #search_input::-webkit-input-placeholder { color: #3B3C3D; } #search_input::-moz-placeholder { color: #3B3C3D; } #search_input:-ms-input-placeholder { color: #3B3C3D; } #panelTop { height: 79px!important; } #search > div > div.searchBtn.searchSubmit { height: 27px; } .arcgisSearch .searchIcon { line-height: 29px; } #panelSearch { margin: 10px 10px 10px 20px!important; } .esriIconClose:before { color: rgb(134, 134, 134); padding-right: 7px; } #panelTitle { border-bottom: none; } .no-search #panelLogo { width: 87px; padding-right: 19px; } .no-search #panelLogo img { max-width: 86px !important; } #panelText { max-width: 500px; }',
     //Theme defines the background color of the title area and tool dialog
     //Color defines the text color for the title and details. Note that
@@ -59,7 +59,7 @@ define({
         {"name": "basemap", "enabled": true},
         {"name": "overview", "enabled": true},
         {"name": "measure", "enabled": true},
-        {"name": "edit", "enabled": true, "toolbar": false}, 
+        {"name": "edit", "enabled": true, "toolbar": false},
         {"name": "print", "enabled": true, "legend": false, "layouts":false, "format":"pdf"},
         {"name": "details", "enabled": true},
         {"name": "share", "enabled": true}
@@ -80,11 +80,11 @@ define({
     //Setup the app to support a custom url parameter. Use this if you want users
     //to be able to search for a string field in a layer. For example if the web map
     //has parcel data and you'd like to be able to zoom to a feature using its parcel id
-    //you could add a custom url param named parcel then users could enter 
+    //you could add a custom url param named parcel then users could enter
     //a value for that param in the url. index.html?parcel=3203
     "customUrlLayer":{
         "id": null,//id of the search layer as defined in the web map
-        "fields": []//Name of the string field to search 
+        "fields": []//Name of the string field to search
     },
     "customUrlParam": null,//Name of url param. For example parcels
     //Add the home extent button to the toolbar
@@ -96,7 +96,7 @@ define({
     "scalebar": false,
     //Specify a title for the application. If not provided the web map title is used.
     "title": "",
-    //Optionally specify some sub title text. 
+    //Optionally specify some sub title text.
     "subtitle":null,
     "level": null,
     "center": null,
