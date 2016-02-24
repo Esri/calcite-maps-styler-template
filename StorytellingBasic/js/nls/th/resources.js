@@ -21,12 +21,12 @@ define(
       generalError: "ข้อผิดพลาด"
     },
     social:{
-        facebook: "ก้_Share on Facebook______ษฺ",
-        twitter: "ก้_Share on Twitter______ษฺ",
-        link: "ก้_Share link____ษฺ"
+        facebook: "แชร์ผ่าน Facebook",
+        twitter: "แชร์ผ่าน Twitter",
+        link: "แชร์ลิงค์"
     },
     legendToggle:{
-        label: "ก้_LEGEND___ษฺ"
+        label: "คำอธิบายสัญลักษณ์ในแผนที่"
     }
   })
 );

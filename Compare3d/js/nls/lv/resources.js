@@ -17,11 +17,11 @@
 define(
    ({
     scene: {
-      error: "ķ_Unable to create scene________ū"
+      error: "Nevarēja izveidot scēnu"
     },
     tools: {
-      linkLabel: "ķ_Link Views____ū",
-      unlinkLabel: "ķ_Unlink Views_____ū"
+      linkLabel: "Saistīt skatus",
+      unlinkLabel: "Atsaistīt skatus"
     }
   })
 );

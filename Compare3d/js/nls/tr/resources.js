@@ -17,11 +17,11 @@
 define(
    ({
     scene: {
-      error: "ı_Unable to create scene________İ"
+      error: "Görünüm oluşturulamıyor"
     },
     tools: {
-      linkLabel: "ı_Link Views____İ",
-      unlinkLabel: "ı_Unlink Views_____İ"
+      linkLabel: "Bağlama Görünümleri",
+      unlinkLabel: "Görünüm Bağlantılarını Kaldır"
     }
   })
 );

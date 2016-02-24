@@ -17,14 +17,14 @@
 define(
    ({
     scene: {
-      error: "Å_Unable to create scene________ö"
+      error: "Maisemaa ei voi luoda"
     },
     panel: {
-      noslides: "Å_No slides in web scene________ö"
+      noslides: "Web-maisemassa ei ole dioja"
     },
     tooltips: {
-      play: "Å_Play-Pause____ö",
-      toggle: "Å_Toggle___ö"
+      play: "Toista/tauko",
+      toggle: "Vaihda"
     }
   })
 );

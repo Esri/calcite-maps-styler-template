@@ -17,11 +17,11 @@
 define(
    ({
     scene: {
-      error: "כן_Unable to create scene________ש"
+      error: "לא ניתן ליצור סצינה"
     },
     tools: {
-      linkLabel: "כן_Link Views____ש",
-      unlinkLabel: "כן_Unlink Views_____ש"
+      linkLabel: "תצוגות מקושרות",
+      unlinkLabel: "תצוגות לא מקושרות"
     }
   })
 );

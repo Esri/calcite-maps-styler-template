@@ -22,21 +22,21 @@
 				boxTitle: "Произошла ошибка",
 				invalidConfig: "Некорректная конфигурация",
 				invalidConfigNoApp: "В index.html не указан идентификатор Картографического веб-приложения",
-				invalidConfigNoAppDev: "Ж_No Web Mapping Application identifier is specified in URL parameters (?appid=). In development mode, the appid configuration in index.html is ignored______________________________________________Я.",
+				invalidConfigNoAppDev: "Нет идентификатора Web Mapping Application, указанного в параметрах URL (?appid= или ?webmap=). В режиме разработки конфигурация appid в index.html игнорируются.",
 				unspecifiedConfigOwner: "Невозможно настроить авторизованного владельца.",
 				invalidConfigOwner: "Владелец истории не авторизован.",
 				createMap: "Не удалось создать карту",
 				invalidApp: "%TPL_NAME% не существует или не доступен.",
 				appLoadingFail: "Что-то пошло не так, % TPLNAME % не был загружен правильно.",
 				notConfiguredDesktop: "История пока не настроена.",
-				notConfiguredMobile: "Ж_The %TPL_NAME% builder is not supported at this display size. If possible, resize your browser to access the builder or please build your story on a device with a larger screen______________________________________________________Я.",
-				notConfiguredMobile2: "Ж_Please rotate your device to landscape orientation to use the %TPL_NAME% builder_________________________Я.",
+				notConfiguredMobile: "Конструктор %TPL_NAME% не поддерживается на экранах такого размера. Если можете, измените размер браузера, чтобы получить доступ к конструктору, либо создайте свою историю на другом устройстве с большим монитором.",
+				notConfiguredMobile2: "Чтобы использовать конструктор %TPL_NAME%, поверните своё устройство в альбомную ориентацию.",
 				notAuthorized: "Вы не авторизованы для доступа к истории.",
-				notAuthorizedBuilder: "Ж_You are not authorized to use %TPL_NAME% builder________________Я.",
+				notAuthorizedBuilder: "Вы не авторизованы для использования конструктора %TPL_NAME%.",
 				noBuilderIE: "Конструктор не поддерживается в браузере Internet Explorer версий %VERSION%. %UPGRADE%",
 				noViewerIE: "Эта история не поддерживается в Internet Explorer версии до %VERSION%. %UPGRADE%",
 				upgradeBrowser: "<a href='http://browsehappy.com/' target='_blank'>Обновите ваш браузер</a>.",
-				mapLoadingFail: "Ж_Something went wrong, the map did not load correctly_________________Я.",
+				mapLoadingFail: "Произошла ошибка, карта загрузилась некорректно.",
 				signOut: "Выйти"
 			},
 			mobileView: {
@@ -67,8 +67,8 @@
 				checking: "Проверка ресурсов истории на наличие ошибок",
 				fix: "Исправить ошибки в истории",
 				noerrors: "Ошибок не обнаружено",
-				tooltipAutoplayDisabled: "Ж_This isn't available in autoplay mode____________Я",
-				notshared: "Ж_Story not shared______Я"
+				tooltipAutoplayDisabled: "Недоступно в режиме автовоспроизведения",
+				notshared: "История не в общем доступе"
 			},
 			overviewFromCommon: {
 				title: "Обзорная карта"
@@ -83,10 +83,10 @@
 				embed: "Встроить на веб-страницу",
 				embedExplain: "Используйте следующий HTML-код для встраивания журнала на веб-страницу.",
 				size: "Размер (ширина/высота):",
-				autoplayLabel: "Ж_Autoplay mode_____Я",
-				autoplayExplain1: "Ж_Autoplay mode will advance through your story at a regular interval. This is ideal on a kiosk or public display monitor, but be aware that in other situations it may make the story harder to read. This feature isn't supported on small displays__________________________________________________________________________Я.",
-				autoplayExplain2: "Ж_When this mode is active there are controls to play/pause the story and adjust the navigation speed_______________________________Я.",
-				linksupdated: "Ж_Links updated_____Я!"
+				autoplayLabel: "Режим автовоспроизведения",
+				autoplayExplain1: "Режим автовоспроизведения будет проходить в вашей истории на указанном интервале. Это идеально подходит для информационных киосков или мониторов для публичного обозрения, но имейте в виду, что в некоторых случаях вашу историю будет тяжело читать. Эта возможность не поддерживается на маленьких мониторах.",
+				autoplayExplain2: "Когда активен данный режим, там есть элементы управления для включения/остановки воспроизведения истории и установки скорости перемещения.",
+				linksupdated: "Ссылки обновлены!"
 			}
         }
     })

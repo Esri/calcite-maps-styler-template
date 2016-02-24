@@ -19,7 +19,7 @@
 				create: "Создать",
 				yes: "Да",
 				no: "Нет",
-				mystories: "Ж_My Stories____Я"
+				mystories: "Мои истории"
 			},
 			inlineFieldEdit: {
 				editMe: "Отредактируйте меня!"
@@ -31,10 +31,10 @@
 				buttonShare: "Общий доступ",
 				buttonSettings: "Настройки",
 				buttonHelp: "Справка",
-				buttonPreview: "Ж_View story____Я",
+				buttonPreview: "Просмотр истории",
 				tooltipFirstSave: "Недоступно, пока приложение не будет сохранено.",
 				tooltipNotShared: "Недоступно, пока приложение не будет опубликовано.",
-				tooltipNotShared2: "Ж_Your story isn't shared, only you can access it_______________Я.",
+				tooltipNotShared2: "История не опубликована в общий доступ и доступна только для вас.",
 				noPendingChange: "Нет предполагаемых изменений",
 				unSavedChangePlural: "Ожидание изменений",
 				closeWithPendingChange: "Вы действительно хотите подтвердить это действие? Все изменения будут потеряны.",
@@ -55,20 +55,20 @@
 				btnOk: "Изменить заголовок истории"
 			},
 			saveErrorSocial: {
-				title: "Ж_Social media sharing update_________Я",
-				panel1: "Ж_Your storyâ€™s appearance on social media has been improved, but your ArcGIS web application item title is not the same as your story title___________________________________________Я.",
-				panel1tooltip: "Ж_By defining a title, summary and thumbnail image, your story will look like this_________________________Я:",
-				panel2:	"Ж_Which title would you like to use on social media________________Я:",
-				panel2q1: "Ж_Story title (recommended)_________Я",
-				panel2q1tooltip: "Ж_By choosing this option, your item title will be modified to match your story title and further changes in the builder will be synchronized___________________________________________Я.",
-				panel2q2: "Ж_Item title____Я",
-				panel3: "Ж_To further improve how your story looks on social media use ${MYSTORIES} to add a summary and a thumbnail image___________________________________Я.",
-				panel4: "Ж_Do not warn me again for this story____________Я"
+				title: "Обновление общего доступа через социальные сети",
+				panel1: "Отображение вашей истории в социальных сетях улучшилось, но название элемента вашего веб-приложения ArcGIS не совпадает с заголовком истории.",
+				panel1tooltip: "Если указать название, краткую информацию и образец изображения, ваша история будет выглядеть приблизительно так:",
+				panel2:	"Какое название вы хотите использовать в социальных сетях:",
+				panel2q1: "Заголовок истории (рекомендуется)",
+				panel2q1tooltip: "Если выбрать эту опцию, заголовок элемента будет изменён соответственно заголовку истории, а дельнейшие изменения в конструкторе будут синхронизированы.",
+				panel2q2: "Название элемента",
+				panel3: "Для дальнейшего улучшения отображения своей истории в социальных сетях используйте ${MYSTORIES}, чтобы добавить краткую информацию и изображение образца.",
+				panel4: "Больше не уведомлять меня об этой истории"
 			},
 			share: {
 				shareTitle: "Откройте доступ к истории",
 				preview: "Предварительный просмотр",
-				viewlive: "Ж_View story____Я",
+				viewlive: "Просмотр истории",
 				btnPrivate: "Частный",
 				btnPrivateTooltip: "Только вы видите историю.",
 				btnOrg: "Организация",
@@ -87,27 +87,27 @@
 				notavailable2: "Извините, публикация истории из Конструктора не поддерживается в данной версии Portal for ArcGIS (необходима версия 10.4 и выше).",
 				notavailable3: "Вы можете опубликовать эту историю из %LINK%.",
 				notavailable4: "Мои истории",
-				notavailable5: "Ж_its item page_____Я",
+				notavailable5: "страница элемента",
 				notavailable6: "Извините, этот объект не поддерживается в режиме разработки полностью. Он может поддерживаться в зависимости от выбранного варианта разворачивания.",
 				notavailable7: "Посмотрите в %MYCONTENT%, что карты и слои, которые используются в истории, также доступны.",
 				notavailable8: "Мои ресурсы",
-				mystoriesinvite2: "Ж_To improve how your story looks on social networks use ${MYSTORIES} to add a summary and a thumbnail image_________________________________Я."
+				mystoriesinvite2: "Для дальнейшего улучшения отображения своей истории в социальных сетях используйте ${MYSTORIES}, чтобы добавить краткую информацию и изображение образца."
 			},
 			settings: {
 				header: "Настройки",
 				tabError: "Проверьте все закладки на наличие ошибок"
 			},
 			settingsLayout: {
-				title: "Ж_Layout___Я",
+				title: "Компоновка",
 				explain: "Какой формат вы хотите использовать?",
 				explainInit: "Вы можете изменить формат в любое время в диалоговом окне настроек.",
 				viewExample: "Посмотреть пример из жизни"
 			},
 			settingsTheme: {
-				title: "Ж_Theme___Я"
+				title: "Тема"
 			},
 			settingsHeader: {
-				title: "Ж_Header___Я",
+				title: "Заголовок",
 				logoEsri: "Логотип Esri",
 				logoNone: "Без логотипа",
 				logoCustom: "Собственный логотип",
@@ -119,7 +119,7 @@
 				lblSmallHeader: "Использовать компактный заголовок (без подзаголовка)"
 			},
 			header: {
-				title: "Ж_Edit the title of your %TPL_NAME%___________Я",
+				title: "Отредактируйте заголовок вашего %TPL_NAME%",
 				subtitle: "Отредактируйте подзаголовок вашего %TPL_NAME%"
 			}
 		}

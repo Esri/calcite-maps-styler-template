@@ -19,7 +19,7 @@
 				create: "Tạo",
 				yes: "Có",
 				no: "Không",
-				mystories: "Đ_My Stories____ớ"
+				mystories: "Câu chuyện của Tôi"
 			},
 			inlineFieldEdit: {
 				editMe: "Chỉnh sửa tôi!"
@@ -31,10 +31,10 @@
 				buttonShare: "Chia sẻ",
 				buttonSettings: "Thiết lập",
 				buttonHelp: "Trợ giúp",
-				buttonPreview: "Đ_View story____ớ",
+				buttonPreview: "Xem câu chuyện",
 				tooltipFirstSave: "Ứng dụng này không khả dụng cho đến khi bạn lưu.",
 				tooltipNotShared: "Ứng dụng này không khả dụng cho đến khi bạn chia sẻ.",
-				tooltipNotShared2: "Đ_Your story isn't shared, only you can access it_______________ớ.",
+				tooltipNotShared2: "Câu chuyện của bạn không được chia sẻ, chỉ có bạn mới được truy cập câu chuyện này.",
 				noPendingChange: "Không có thay đổi chờ xử lý",
 				unSavedChangePlural: "Thay đổi chờ xử lý",
 				closeWithPendingChange: "Bạn có chắc chắn muốn xác nhận hành động này không? Các thay đổi của bạn sẽ bị mất.",
@@ -55,20 +55,20 @@
 				btnOk: "Chỉnh sửa tiêu đề câu chuyện"
 			},
 			saveErrorSocial: {
-				title: "Đ_Social media sharing update_________ớ",
-				panel1: "Đ_Your storyâ€™s appearance on social media has been improved, but your ArcGIS web application item title is not the same as your story title___________________________________________ớ.",
-				panel1tooltip: "Đ_By defining a title, summary and thumbnail image, your story will look like this_________________________ớ:",
-				panel2:	"Đ_Which title would you like to use on social media________________ớ:",
-				panel2q1: "Đ_Story title (recommended)_________ớ",
-				panel2q1tooltip: "Đ_By choosing this option, your item title will be modified to match your story title and further changes in the builder will be synchronized___________________________________________ớ.",
-				panel2q2: "Đ_Item title____ớ",
-				panel3: "Đ_To further improve how your story looks on social media use ${MYSTORIES} to add a summary and a thumbnail image___________________________________ớ.",
-				panel4: "Đ_Do not warn me again for this story____________ớ"
+				title: "Cập nhật chia sẻ trên mạng xã hội",
+				panel1: "Hình dạng câu chuyện của bạn trên mạng xã hội đã được cải thiện, tuy nhiên, tiêu đề mục ứng dụng web ArcGIS của bạn không giống với tiêu đề câu chuyện của bạn.",
+				panel1tooltip: "Bằng cách xác định tiêu đề, phần tổng kết và hình thu nhỏ, câu chuyện của bạn sẽ trông như thế này:",
+				panel2:	"Bạn muốn sử dụng tiêu đề nào trên mạng xã hội:",
+				panel2q1: "Tiêu đề câu chuyện (khuyến nghị)",
+				panel2q1tooltip: "Bằng cách chọn tùy chọn này, tiêu đề mục của bạn sẽ được điều chỉnh cho khớp với tiêu đề câu chuyện của bạn và các thay đổi tiếp theo trong bộ thiết lập sẽ được đồng bộ hóa.",
+				panel2q2: "Tiêu đề mục",
+				panel3: "Để cải thiện hơn nữa hình dạng của câu chuyện của bạn trên mạng xã hội, hãy sử dụng ${MYSTORIES} để thêm phần tổng kết và hình thu nhỏ.",
+				panel4: "Đừng cảnh báo lại đối với câu chuyện này"
 			},
 			share: {
 				shareTitle: "Chia sẻ câu chuyện của bạn",
 				preview: "Xem trước",
-				viewlive: "Đ_View story____ớ",
+				viewlive: "Xem câu chuyện",
 				btnPrivate: "Riêng tư",
 				btnPrivateTooltip: "Chỉ có bạn được quyền xem câu chuyện",
 				btnOrg: "Tổ chức",
@@ -87,27 +87,27 @@
 				notavailable2: "Xin lỗi, chia sẻ câu chuyện của bạn từ Bộ thiết lập không được hỗ trợ trên phiên bản Portal for ArcGIS này (yêu cầu phiên bản 10.4 trở lên).",
 				notavailable3: "Bạn có thể chia sẻ câu chuyện từ %LINK%.",
 				notavailable4: "Câu chuyện của Tôi",
-				notavailable5: "Đ_its item page_____ớ",
+				notavailable5: "trang mục của câu chuyện",
 				notavailable6: "Xin lỗi, tính năng này không được hỗ trợ đầy đủ trong chế độ phát triển. Tùy theo kịch bản triển khai của bạn, tính năng này có thể được hỗ trợ khi được triển khai.",
 				notavailable7: "Hãy bảo đảm truy cập %MYCONTENT% để xác nhận bản đồ và lớp được sử dụng trong câu chuyện của bạn cũng được chia sẻ.",
 				notavailable8: "Nội dung của tôi",
-				mystoriesinvite2: "Đ_To improve how your story looks on social networks use ${MYSTORIES} to add a summary and a thumbnail image_________________________________ớ."
+				mystoriesinvite2: "Để cải thiện hình dạng của câu chuyện của bạn trên mạng xã hội, hãy sử dụng ${MYSTORIES} để thêm phần tổng kết và hình thu nhỏ."
 			},
 			settings: {
 				header: "Thiết lập",
 				tabError: "Vui lòng kiểm tra lỗi trong tất cả các tab"
 			},
 			settingsLayout: {
-				title: "Đ_Layout___ớ",
+				title: "Bố cục",
 				explain: "Bạn muốn sử dụng bố cục nào?",
 				explainInit: "Bạn có thể thay đổi bố cục bất kỳ lúc nào từ hộp thoại thiết lập.",
 				viewExample: "Xem ví dụ trực tiếp"
 			},
 			settingsTheme: {
-				title: "Đ_Theme___ớ"
+				title: "Chủ đề"
 			},
 			settingsHeader: {
-				title: "Đ_Header___ớ",
+				title: "Đầu trang",
 				logoEsri: "Logo Esri",
 				logoNone: "Không có logo",
 				logoCustom: "Logo tùy chỉnh",
@@ -119,7 +119,7 @@
 				lblSmallHeader: "Sử dụng đầu trang ngắn gọn (không có phụ đề)"
 			},
 			header: {
-				title: "Đ_Edit the title of your %TPL_NAME%___________ớ",
+				title: "Chỉnh sửa tiêu đề %TPL_NAME% của bạn",
 				subtitle: "Chỉnh sửa phụ đề %TPL_NAME% của bạn"
 			}
 		}

@@ -20,7 +20,7 @@ define(
       error: "Kaart kan niet gemaakt worden"
     },
     nav: {
-        "close": "Ĳ_Close___ä"
+        "close": "Sluiten"
     },
     elevation: {
         toggle: "De hoogteprofielgrafiek wisselen.",

@@ -17,14 +17,14 @@
 define(
    ({
     scene: {
-      error: "ı_Unable to create scene________İ"
+      error: "Görünüm oluşturulamıyor"
     },
     panel: {
-      noslides: "ı_No slides in web scene________İ"
+      noslides: "Web görünümünde slayt yok"
     },
     tooltips: {
-      play: "ı_Play-Pause____İ",
-      toggle: "ı_Toggle___İ"
+      play: "Oynat-Duraklat",
+      toggle: "Değiştir"
     }
   })
 );

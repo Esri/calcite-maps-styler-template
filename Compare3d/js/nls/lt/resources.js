@@ -17,11 +17,11 @@
 define(
    ({
     scene: {
-      error: "Į_Unable to create scene________š"
+      error: "Neįmanoma sukurti scenos"
     },
     tools: {
-      linkLabel: "Į_Link Views____š",
-      unlinkLabel: "Į_Unlink Views_____š"
+      linkLabel: "Susieti peržiūras",
+      unlinkLabel: "Atsieti peržiūras"
     }
   })
 );

@@ -20,7 +20,7 @@ define(
       error: "Nevar izveidot karti"
     },
     nav: {
-        "close": "ķ_Close___ū"
+        "close": "Aizvērt"
     },
     elevation: {
         toggle: "Pārslēdziet pacēluma profila diagrammu.",

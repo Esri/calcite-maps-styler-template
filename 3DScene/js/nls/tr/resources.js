@@ -17,18 +17,18 @@
 define(
    ({
     scene: {
-      error: "ı_Unable to create scene________İ"
+      error: "Görünüm oluşturulamıyor"
     },
     panel: {
-      noslides: "ı_No slides in web scene________İ"
+      noslides: "Web görünümünde slayt yok"
     },
     tooltips: {
-      layers: "ı_Layers___İ",
-      basemaps: "ı_Base maps____İ",
-      slides: "ı_Slides___İ",
-      close: "ı_Close___İ",
-      zoom: "ı_Zoom__İ",
-      onoff: "ı_On-Off___İ"
+      layers: "Katmanlar",
+      basemaps: "Altlık haritalar",
+      slides: "Slaytlar",
+      close: "Kapat",
+      zoom: "Yakınlaştır",
+      onoff: "Açık-Kapalı"
     }
   })
 );

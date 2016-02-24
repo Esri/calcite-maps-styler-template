@@ -20,7 +20,7 @@ define(
       error: "Imposibil de creat harta"
     },
     nav: {
-        "close": "Ă_Close___ș"
+        "close": "Închidere"
     },
     elevation: {
         toggle: "Comutaţi Diagramă profil de elevaţie.",

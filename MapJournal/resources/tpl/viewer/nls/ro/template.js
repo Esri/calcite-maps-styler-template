@@ -22,21 +22,21 @@
 				boxTitle: "A apărut o eroare",
 				invalidConfig: "Configurare incorectă",
 				invalidConfigNoApp: "ID-ul aplicaţiei de cartografiere web nu este specificat în index.html.",
-				invalidConfigNoAppDev: "Ă_No Web Mapping Application identifier is specified in URL parameters (?appid=). In development mode, the appid configuration in index.html is ignored______________________________________________ș.",
+				invalidConfigNoAppDev: "Nu a fost specificat niciun identificator de aplicaţie web de cartografiere sau o hartă web în parametrii adresei URL (?appid=). În mod dezvoltare, configuraţia appid din index.html este ignorată.",
 				unspecifiedConfigOwner: "Proprietarul autorizat nu a fost configurat.",
 				invalidConfigOwner: "Proprietarul poveştii nu este autorizat.",
 				createMap: "Nu se poate crea harta",
 				invalidApp: "%TPL_NAME% nu există sau nu este accesibil.",
 				appLoadingFail: "Ceva nu a mers bine, %TPL_NAME% nu s-a încărcat corect.",
 				notConfiguredDesktop: "Povestea nu este configurată încă.",
-				notConfiguredMobile: "Ă_The %TPL_NAME% builder is not supported at this display size. If possible, resize your browser to access the builder or please build your story on a device with a larger screen______________________________________________________ș.",
-				notConfiguredMobile2: "Ă_Please rotate your device to landscape orientation to use the %TPL_NAME% builder_________________________ș.",
+				notConfiguredMobile: "Aplicația %TPL_NAME% nu este suportată la această dimensiune a ecranului. Dacă este posibil, redimensionaţi browserul dvs. pentru accesarea aplicației sau vă rugăm să creați scenariul dvs. pe un dispozitiv cu un ecran mai mare.",
+				notConfiguredMobile2: "Vă rugăm să rotiţi dispozitivul pe orientarea peisaj pentru a utiliza aplicația de creare pentru %TPL_NAME%.",
 				notAuthorized: "Nu sunteţi autorizat să accesaţi această poveste",
-				notAuthorizedBuilder: "Ă_You are not authorized to use %TPL_NAME% builder________________ș.",
+				notAuthorizedBuilder: "Nu sunteţi autorizat să utilizaţi aplicație de creare pentru %TPL_NAME%.",
 				noBuilderIE: "Instrumentul de creare nu este acceptat în versiunile Internet Explorer anterioare versiunii %VERSION%. %UPGRADE%",
 				noViewerIE: "Această poveste nu este suportată în versiunile Internet Explorer anterioare versiunii %VERSION%. %UPGRADE%",
 				upgradeBrowser: "<a href='http://browsehappy.com/' target='_blank'>Efectuaţi un upgrade al browserului</a>.",
-				mapLoadingFail: "Ă_Something went wrong, the map did not load correctly_________________ș.",
+				mapLoadingFail: "Ceva nu a mers bine şi harta nu a fost încărcată corect.",
 				signOut: "Ieşire"
 			},
 			mobileView: {
@@ -67,8 +67,8 @@
 				checking: "Se verifică conţinutul poveştii dvs.",
 				fix: "Remediaţi problemele din povestea dvs.",
 				noerrors: "Nu s-a găsit nicio problemă",
-				tooltipAutoplayDisabled: "Ă_This isn't available in autoplay mode____________ș",
-				notshared: "Ă_Story not shared______ș"
+				tooltipAutoplayDisabled: "Aceasta nu este disponibilă în modul de redare automată",
+				notshared: "Scenariul nu este partajat"
 			},
 			overviewFromCommon: {
 				title: "Hartă de prezentare generală"
@@ -83,10 +83,10 @@
 				embed: "Încorporare în pagină web",
 				embedExplain: "Utilizaţi următorul cod HTML pentru a încorpora jurnalul într-o pagină web.",
 				size: "Dimensiune (lăţime/înălţime):",
-				autoplayLabel: "Ă_Autoplay mode_____ș",
-				autoplayExplain1: "Ă_Autoplay mode will advance through your story at a regular interval. This is ideal on a kiosk or public display monitor, but be aware that in other situations it may make the story harder to read. This feature isn't supported on small displays__________________________________________________________________________ș.",
-				autoplayExplain2: "Ă_When this mode is active there are controls to play/pause the story and adjust the navigation speed_______________________________ș.",
-				linksupdated: "Ă_Links updated_____ș!"
+				autoplayLabel: "Mod redare automată",
+				autoplayExplain1: "Modul de redare automată va avansa prin scenariul dvs. la un interval regulat. Această opţiune este ideală pentru un chioşc sau un monitor pentru afişare publică, dar, reţineţi, că în alte situaţii poate face ca scenariul să fie dificil de urmărit. Această caracteristică nu este acceptată pe ecranele de dimensiuni mici.",
+				autoplayExplain2: "Când acest mod este activ, sunt afişate butoane pentru a reda/întrerupe scenariul şi pentru a regla viteza de navigare.",
+				linksupdated: "Legătură actualizată!"
 			}
         }
     })

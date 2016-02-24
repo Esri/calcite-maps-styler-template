@@ -19,7 +19,7 @@
 				create: "Sukurti",
 				yes: "Taip",
 				no: "Ne",
-				mystories: "Į_My Stories____š"
+				mystories: "Mano pasakojimai"
 			},
 			inlineFieldEdit: {
 				editMe: "Redaguok!"
@@ -31,10 +31,10 @@
 				buttonShare: "Bendrinti",
 				buttonSettings: "Nuostatos",
 				buttonHelp: "Pagalba",
-				buttonPreview: "Į_View story____š",
+				buttonPreview: "Žiūrėti pasakojimą",
 				tooltipFirstSave: "Kol neišsaugosite, tai nepasiekiama.",
 				tooltipNotShared: "Kol nebendrinsite, tai nepasiekiama.",
-				tooltipNotShared2: "Į_Your story isn't shared, only you can access it_______________š.",
+				tooltipNotShared2: "Jūsų pasakojimas nebendrinamas, jį galite pasiekti tik jūs.",
 				noPendingChange: "Laukiančių pakeitimų nėra",
 				unSavedChangePlural: "Nepatvirtinti pakeitimai",
 				closeWithPendingChange: "Ar tikrai norite patvirtinti šį veiksmą? Pakeitimai bus prarasti.",
@@ -55,20 +55,20 @@
 				btnOk: "Redaguoti pasakojimo pavadinimą"
 			},
 			saveErrorSocial: {
-				title: "Į_Social media sharing update_________š",
-				panel1: "Į_Your storyâ€™s appearance on social media has been improved, but your ArcGIS web application item title is not the same as your story title___________________________________________š.",
-				panel1tooltip: "Į_By defining a title, summary and thumbnail image, your story will look like this_________________________š:",
-				panel2:	"Į_Which title would you like to use on social media________________š:",
-				panel2q1: "Į_Story title (recommended)_________š",
-				panel2q1tooltip: "Į_By choosing this option, your item title will be modified to match your story title and further changes in the builder will be synchronized___________________________________________š.",
-				panel2q2: "Į_Item title____š",
-				panel3: "Į_To further improve how your story looks on social media use ${MYSTORIES} to add a summary and a thumbnail image___________________________________š.",
-				panel4: "Į_Do not warn me again for this story____________š"
+				title: "Bendrinimo socialinėje žiniasklaidoje naujinimas",
+				panel1: "Jūsų pasakojimo išvaizda buvo patobulinta socialiniame tinkle, tačiau ArcGIS internetinės aplikacijos elemento antraštė nesutampa su jūsų pasakojimo pavadinimu.",
+				panel1tooltip: "Pateikus pavadinimą, santrauką ir miniatiūros vaizdą, jūsų pasakojimas atrodys taip:",
+				panel2:	"Kokį pavadinimą norite naudoti socialiniame tinkle:",
+				panel2q1: "Pasakojimo pavadinimas (rekomenduojama)",
+				panel2q1tooltip: "Pasirinkus šią parinktį, jūsų elemento antraštė bus modifikuota, kad sutaptų su jūsų pasakojimo pavadinimu, o kiti kūrimo priemonėje atlikti keitimai bus sinchronizuojami.",
+				panel2q2: "Elemento antraštė",
+				panel3: "Jei norite toliau tobulinti pasakojimo išvaizdą socialiniame tinkle, naudokite ${MYSTORIES}, kad pridėtumėte santrauką ir miniatiūros vaizdą.",
+				panel4: "Nebeįspėti manęs apie šį pasakojimą"
 			},
 			share: {
 				shareTitle: "Bendrinti pasakojimą",
 				preview: "Peržiūra",
-				viewlive: "Į_View story____š",
+				viewlive: "Žiūrėti pasakojimą",
 				btnPrivate: "Asmeninis",
 				btnPrivateTooltip: "Pasakojimą galite matyti tik jūs",
 				btnOrg: "Organizacija",
@@ -87,27 +87,27 @@
 				notavailable2: "Deja, pasakojimo bendrinimas aplikacijų kūrimo priemone nepalaikomas šioje Portal for ArcGIS versijoje (reikalinga 10.4 arba naujesnė versija).",
 				notavailable3: "Šiuo pasakojimu galite dalintis naudodami %LINK%.",
 				notavailable4: "Mano pasakojimai",
-				notavailable5: "Į_its item page_____š",
+				notavailable5: "tai elemento puslapis",
 				notavailable6: "Deja, ši funkcija nėra visiškai palaikoma programavimo režime. Atsižvelgiant į jūsų talpinimo scenarijų, ši funkcija gali būti palaikoma patalpinus.",
 				notavailable7: "Būtinai apsilankykite %MYCONTENT%, kad patvirtintumėte, jog jūsų pasakojime naudojami žemėlapiai ir sluoksniai yra taip pat bendrinami.",
 				notavailable8: "Turinys",
-				mystoriesinvite2: "Į_To improve how your story looks on social networks use ${MYSTORIES} to add a summary and a thumbnail image_________________________________š."
+				mystoriesinvite2: "Jei norite tobulinti pasakojimo išvaizdą socialiniuose tinkluose, naudokite ${MYSTORIES}, kad pridėtumėte santrauką ir miniatiūros vaizdą."
 			},
 			settings: {
 				header: "Nuostatos",
 				tabError: "Patikrinkite ar skirtukuose nėra klaidų"
 			},
 			settingsLayout: {
-				title: "Į_Layout___š",
+				title: "Maketas",
 				explain: "Kurį maketą norite naudoti?",
 				explainInit: "Nustatymų dialogo lange maketą galite pakeisti bet kuriuo metu.",
 				viewExample: "Peržiūrėti veikiantį pavyzdį"
 			},
 			settingsTheme: {
-				title: "Į_Theme___š"
+				title: "Apipavidalinimas"
 			},
 			settingsHeader: {
-				title: "Į_Header___š",
+				title: "Antraštė",
 				logoEsri: "Esri logotipas",
 				logoNone: "Logotipo nėra",
 				logoCustom: "Savas logotipas",
@@ -119,7 +119,7 @@
 				lblSmallHeader: "Naudoti kompaktišką antraštę (be paantraštės)"
 			},
 			header: {
-				title: "Į_Edit the title of your %TPL_NAME%___________š",
+				title: "Redaguokite %TPL_NAME% pavadinimą",
 				subtitle: "Redaguokite %TPL_NAME% paantraštę"
 			}
 		}

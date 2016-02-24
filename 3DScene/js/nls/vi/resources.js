@@ -17,18 +17,18 @@
 define(
    ({
     scene: {
-      error: "Đ_Unable to create scene________ớ"
+      error: "Không thể tạo scene"
     },
     panel: {
-      noslides: "Đ_No slides in web scene________ớ"
+      noslides: "Không có trang chiếu trong scene web"
     },
     tooltips: {
-      layers: "Đ_Layers___ớ",
-      basemaps: "Đ_Base maps____ớ",
-      slides: "Đ_Slides___ớ",
-      close: "Đ_Close___ớ",
-      zoom: "Đ_Zoom__ớ",
-      onoff: "Đ_On-Off___ớ"
+      layers: "Lớp",
+      basemaps: "Bản đồ nền",
+      slides: "Trang trình chiếu",
+      close: "Đóng",
+      zoom: "Thu phóng",
+      onoff: "Bật-Tắt"
     }
   })
 );

@@ -20,7 +20,7 @@ define(
       error: "לא ניתן ליצור מפה"
     },
     nav: {
-        "close": "כן_Close___ש"
+        "close": "סגור"
     },
     elevation: {
         toggle: "שנה את התרשים של פרופיל הגבהים.",

@@ -20,7 +20,7 @@ define(
       error: "無法建立地圖"
     },
     nav: {
-        "close": "試_Close___驗"
+        "close": "關閉"
     },
     elevation: {
         toggle: "切換高程剖面圖圖表。",

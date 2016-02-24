@@ -41,7 +41,7 @@
 		},
 		cantFindStories: {
 			whereAreStories: "Ziet u uw verhaal niet?",
-			notSeeExplanation: "Ĳ_My Stories will only list story maps hosted in ArcGIS and created with the {{STORY_MAP_TOUR}}, {{JOURNAL}}, {{MAP_SERIES}} or {{SWIPE_SPYGLASS}} applications. See our {{FAQ}} for more information____________________________________________________________ä.",
+			notSeeExplanation: "My Stories geeft alleen een lijst met storymaps die in ArcGIS gehost zijn en gemaakt zijn met de applicaties {{STORY_MAP_TOUR}}, {{JOURNAL}}, {{MAP_SERIES}} of {{SWIPE_SPYGLASS}}. Bekijk onze {{FAQ}} voor meer informatie.",
 			faq: "Veelgestelde vragen",
 			followingStoriesToUpdate: "De volgende verhalen, gemaakt met eerdere versies van onze applicaties, moeten geactualiseerd worden zodat ze in My Stories opgelijst worden:",
 			gettingStories: "Verhalen zoeken die met eerdere versies van onze applicaties gemaakt zijn en geactualiseerd moeten worden...",
@@ -120,7 +120,7 @@
 			saveFailed: "Fout bij opslaan",
 			numViews: "Aantal weergaven: {{NUM_VIEWS}}",
 			editStory: "Verhaal bewerken",
-			viewLive: "Ĳ_View Story____ä",
+			viewLive: "Verhaal bekijken",
 			preview: "Voorbeeld",
 			deleteButton: "Verwijderen",
 			modified: "Aangepast {{DATE}}",
@@ -130,7 +130,7 @@
 			close: "sluiten",
 			hide: "verbergen",
 			notAvailableWhenBroken: "Uw verhaal heeft onderstaande problemen",
-			cantBeDeleted: "Ĳ_This story has delete protection enabled. See its item page on ArcGIS to disable_________________________ä.",
+			cantBeDeleted: "Bij dit verhaal is de verwijderbeveiliging geactiveerd. Zie de itempagina op ArcGIS om te deactiveren",
 			shareDialog: {
 				title: "Deel uw verhaal met de wereld!",
 				notPublicWarning: "Uw verhaal is gedeeld met uw organisatie. Alleen leden van uw organisatie kunnen het bekijken.",
@@ -163,7 +163,7 @@
 				save: "Opslaan",
 				saved: "Opgeslagen",
 				errorSaving: "Fout bij opslaan",
-				tagTip: "Ĳ_Tip: Tags help people find your story. The more relevant the tags are, the higher the visibility your work will receive_____________________________________ä."
+				tagTip: "Tip: Tags helpen mensen uw verhaal te vinden. Hoe relevanter de tags zijn, des te hoger de zichtbaarheid van uw werk."
 			},
 			submitToGallery: {
 				gallerySubmission: "Story Maps-galerij",
@@ -173,7 +173,7 @@
 				chosenSubjectAlt: "Een {{SUBJECT}} en enkele tags",
 				storyMapTopicSubject: "onderwerp",
 				sharedPublicly: "Openbaar gedeeld",
-				noBrokenContent: "Ĳ_No issues____ä",
+				noBrokenContent: "Geen problemen",
 				nominateToGallery: "Toevoegen aan Galerij",
 				comingSoon: "Binnenkort beschikbaar!",
 				submitted: "Verzonden",
@@ -298,8 +298,8 @@
 				subscriptionPublicSuccess: "Uw abonnementcontent is nu openbaar toegankelijk"
 			},
 			errors: {
-				publicDisabled: "Ĳ_Sharing publicly has been disabled by an Administrator_________________ä",
-				orgDisabled: "Ĳ_Sharing to your organization has been disabled by an Administrator_____________________ä",
+				publicDisabled: "Openbaar delen is uitgeschakeld door een beheerder",
+				orgDisabled: "Delen met uw organisatie is uitgeschakeld door een beheerder",
 				noMapName: "Kon de kaartnaam niet laden",
 				notPublic: "NIET OPENBAAR",
 				inaccessible: "NIET TOEGANKELIJK",
@@ -352,8 +352,8 @@
 				cantScanThisTypeAlt: "We kunnen dit type kaartlaag niet controleren",
 				cantScanThisType: "Kaartlaag is geen kaartlaagtype dat we kunnen controleren",
 				webpageNotScanned: "Webpagina\'s worden niet gecontroleerd op problemen",
-				ignoredIssue: "Ĳ_You have ignored an error on this layer. Reload the page and check this story again to review the error________________________________ä",
-				ignoredIssueBuilder: "Ĳ_You have ignored an error on this layer. Reload the builder to check this error again___________________________ä"
+				ignoredIssue: "U negeert een fout op deze laag. Laad de pagina opnieuw en controleer dit verhaal nogmaals om de fout te beoordelen",
+				ignoredIssueBuilder: "U negeert een fout op deze laag. Laad de builder opnieuw om deze fout weer te controleren"
 			},
 			scanningErrors: {
 				deletedMap: "Verwijderde content",
@@ -371,9 +371,9 @@
 				inaccessibleWebpage: "Niet-toegankelijke webpagina\'s"
 			},
 			scanningErrorTips: {
-				deletedMapTip: "Ĳ_Tip: Edit your web map and remove the broken content, or remove the web map from your story_____________________________ä.",
-				inaccessibleMapTip: "Ĳ_Tip: Edit your web map and remove the broken content, or remove the web map from your story_____________________________ä.",
-				notYoursNotAccessibleTip: "Ĳ_Tip: Edit your web map and remove the layer, or remove the web map from your story__________________________ä.",
+				deletedMapTip: "Tip: Bewerk uw webmap en verwijder de defecte content, of verwijder uw webmap uit uw verhaal.",
+				inaccessibleMapTip: "Tip: Bewerk uw webmap en verwijder de defecte content, of verwijder uw webmap uit uw verhaal.",
+				notYoursNotAccessibleTip: "Tip: Bewerk uw webmap en verwijder de laag, of verwijder uw webmap uit uw verhaal.",
 				serviceOkItemNotTip: "Kaartlagen werden toegevoegd als items die niet-toegankelijk of verwijderd zijn. De kaartlagen functioneren niet, maar dit kan uw kaart aantasten (pop-ups, symbolen).",
 				ignore: "Ignore",
 				fix: "Herstel",
@@ -459,13 +459,13 @@
 				thirdTitle: "kaarten"
 			},
 			crowdsource: {
-				firstTitle: "Ĳ_contributions_____ä",
-				secondTitle: "Ĳ_style___ä",
-				secondValueA: "Ĳ_side panel____ä",
-				secondValueB: "Ĳ_stacked___ä",
-				thirdTitle: "Ĳ_basemap___ä",
-				thirdValueLoading: "Ĳ_Loading____ä...",
-				thirdValueUnknown: "Ĳ_unknown___ä"
+				firstTitle: "bijdragen",
+				secondTitle: "style",
+				secondValueA: "zijvenster",
+				secondValueB: "gestapeld",
+				thirdTitle: "basiskaart",
+				thirdValueLoading: "Bezig met laden...",
+				thirdValueUnknown: "onbekend"
 			}
 		},
 		progress: {
@@ -482,9 +482,9 @@
 			storiesWithIssues: "Verhalen met problemen: {{NUM_STORIES}}"
 		},
 		newStories: {
-			newStoriesFound: "Ĳ_Looks like you have created a new story_____________ä.",
-			includeStories: "Ĳ_Refresh Stories______ä",
-			notWhileScanning: "Ĳ_This will be available when the check is complete________________ä"
+			newStoriesFound: "Het lijkt erop dat u een nieuw verhaal hebt gemaakt.",
+			includeStories: "Verhalen vernieuwen",
+			notWhileScanning: "Dit is beschikbaar als de controle is voltooid"
 		}
     })
 );

@@ -41,7 +41,7 @@
 		},
 		cantFindStories: {
 			whereAreStories: "לא רואה את הסיפור שלך?",
-			notSeeExplanation: "כן_My Stories will only list story maps hosted in ArcGIS and created with the {{STORY_MAP_TOUR}}, {{JOURNAL}}, {{MAP_SERIES}} or {{SWIPE_SPYGLASS}} applications. See our {{FAQ}} for more information____________________________________________________________ש.",
+			notSeeExplanation: "\'הסיפורים שלי\' יציג רק מפות סיפור שמתארחות ב-ArcGIS שנוצרו עם האפליקציות {{STORY_MAP_TOUR}}‏, {{JOURNAL}}‏, {{MAP_SERIES}} או {{SWIPE_SPYGLASS}}. עיין ב{{שאלות נפוצות}} לקבלת מידע נוסף.",
 			faq: "שאלות ותשובות",
 			followingStoriesToUpdate: "סיפורים שנוצרו בגירסאות קודמות של האפליקציות שלנו וצריכים להתעדכן בכדי שיופיעו ב\'הסיפורים שלי\':",
 			gettingStories: "מחפש סיפורים שנוצרו בגירסאות קודמות של האפליקציות שלנו ושיש צורך לעדכן אותם...",
@@ -120,7 +120,7 @@
 			saveFailed: "שגיאה בשמירה",
 			numViews: "מבטים: {{NUM_VIEWS}}",
 			editStory: "ערוך סיפור",
-			viewLive: "כן_View Story____ש",
+			viewLive: "הצג סיפור",
 			preview: "תצוגה מקדימה",
 			deleteButton: "מחק",
 			modified: "השתנה ב- {{DATE}}",
@@ -130,7 +130,7 @@
 			close: "סגור",
 			hide: "הסתר",
 			notAvailableWhenBroken: "הסיפור שלך כולל את הבעיות שלהלן",
-			cantBeDeleted: "כן_This story has delete protection enabled. See its item page on ArcGIS to disable_________________________ש.",
+			cantBeDeleted: "בסיפור זה פעילה הגנה מפני מחיקה. עיין בדף הפריט שלו ב-ArcGIS כדי להפוך ללא פעילה.",
 			shareDialog: {
 				title: "שתף את הסיפור שלך עם העולם!",
 				notPublicWarning: "הסיפור שלך שותף רק עם הארגון שלך. רק חברים בארגון שלך יוכלו להציג אותו.",
@@ -163,7 +163,7 @@
 				save: "שמור",
 				saved: "נשמר",
 				errorSaving: "שגיאה בשמירה",
-				tagTip: "כן_Tip: Tags help people find your story. The more relevant the tags are, the higher the visibility your work will receive_____________________________________ש."
+				tagTip: "טיפ: תגיות מסייעות לאנשים למצוא את הסיפור שלך. ככל שהתגיות מדויקות ורלוונטיות, כך ניראות העבודה תהיה טובה יותר."
 			},
 			submitToGallery: {
 				gallerySubmission: "גלריית מפות סיפור",
@@ -173,7 +173,7 @@
 				chosenSubjectAlt: "{{SUBJECT}} ומספר תגיות",
 				storyMapTopicSubject: "נושא",
 				sharedPublicly: "שותף לציבור",
-				noBrokenContent: "כן_No issues____ש",
+				noBrokenContent: "אין בעיות",
 				nominateToGallery: "הוסף לגלריה",
 				comingSoon: "מגיע בקרוב!",
 				submitted: "הוגש",
@@ -298,8 +298,8 @@
 				subscriptionPublicSuccess: "תוכן המנוי שלך נגיש כעת לציבור"
 			},
 			errors: {
-				publicDisabled: "כן_Sharing publicly has been disabled by an Administrator_________________ש",
-				orgDisabled: "כן_Sharing to your organization has been disabled by an Administrator_____________________ש",
+				publicDisabled: "שיתוף עם הציבור הוגדר כלא פעיל על-ידי מנהל",
+				orgDisabled: "שיתוף עם הארגון שלך הוגדר כלא פעיל על-ידי מנהל",
 				noMapName: "לא ניתן לאחזר שם מפה",
 				notPublic: "לא ציבורי",
 				inaccessible: "לא נגיש",
@@ -352,8 +352,8 @@
 				cantScanThisTypeAlt: "לא ניתן לבדוק סוג שכבה זה",
 				cantScanThisType: "השכבה אינה סוג שכבה שניתן לבדוק",
 				webpageNotScanned: "בעיות בדפי אינטרנט לא נבדקות",
-				ignoredIssue: "כן_You have ignored an error on this layer. Reload the page and check this story again to review the error________________________________ש",
-				ignoredIssueBuilder: "כן_You have ignored an error on this layer. Reload the builder to check this error again___________________________ש"
+				ignoredIssue: "התעלמת משגיאה בשכבה זו. טען מחדש את הדף ובדוק שוב את הסיפור כדי לסקור את השגיאה",
+				ignoredIssueBuilder: "התעלמת משגיאה בשכבה זו. טען מחדש את הבונה כדי לבדוק שוב שגיאה זו"
 			},
 			scanningErrors: {
 				deletedMap: "התוכן נמחק",
@@ -371,9 +371,9 @@
 				inaccessibleWebpage: "דפי אינטרנט לא נגישים"
 			},
 			scanningErrorTips: {
-				deletedMapTip: "כן_Tip: Edit your web map and remove the broken content, or remove the web map from your story_____________________________ש.",
-				inaccessibleMapTip: "כן_Tip: Edit your web map and remove the broken content, or remove the web map from your story_____________________________ש.",
-				notYoursNotAccessibleTip: "כן_Tip: Edit your web map and remove the layer, or remove the web map from your story__________________________ש.",
+				deletedMapTip: "טיפ: ערוך את Web Map שלך והסר את התוכן השבור, או הסר את Web Map מהסיפור שלך.",
+				inaccessibleMapTip: "טיפ: ערוך את Web Map שלך והסר את התוכן השבור, או הסר את Web Map מהסיפור שלך.",
+				notYoursNotAccessibleTip: "טיפ: ערוך את Web Map שלך והסר את השכבה, או הסר את Web Map מהסיפור שלך.",
 				serviceOkItemNotTip: "שכבות התווספו כפריטים שאינם נגישים או נמחקו. השכבות פועלות, אבל זה עשוי להשפיע על המפה שלך (חלונות קופצים, סימבולוגיה).",
 				ignore: "התעלם",
 				fix: "תקן",
@@ -459,13 +459,13 @@
 				thirdTitle: "מפות"
 			},
 			crowdsource: {
-				firstTitle: "כן_contributions_____ש",
-				secondTitle: "כן_style___ש",
-				secondValueA: "כן_side panel____ש",
-				secondValueB: "כן_stacked___ש",
-				thirdTitle: "כן_basemap___ש",
-				thirdValueLoading: "כן_Loading____ש...",
-				thirdValueUnknown: "כן_unknown___ש"
+				firstTitle: "תרומות",
+				secondTitle: "style",
+				secondValueA: "חלונית צדדית",
+				secondValueB: "מוערם",
+				thirdTitle: "מפת רקע",
+				thirdValueLoading: "טוען...",
+				thirdValueUnknown: "לא ידוע"
 			}
 		},
 		progress: {
@@ -482,9 +482,9 @@
 			storiesWithIssues: "סיפורים עם בעיות: {{NUM_STORIES}}"
 		},
 		newStories: {
-			newStoriesFound: "כן_Looks like you have created a new story_____________ש.",
-			includeStories: "כן_Refresh Stories______ש",
-			notWhileScanning: "כן_This will be available when the check is complete________________ש"
+			newStoriesFound: "נראה שיצרת סיפור חדש.",
+			includeStories: "רענן סיפורים",
+			notWhileScanning: "אפשרות זו תהיה זמינה כאשר הבדיקה תושלם"
 		}
     })
 );

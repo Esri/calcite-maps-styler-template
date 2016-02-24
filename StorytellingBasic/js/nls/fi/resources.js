@@ -21,12 +21,12 @@ define(
       generalError: "Virhe"
     },
     social:{
-        facebook: "Å_Share on Facebook______ö",
-        twitter: "Å_Share on Twitter______ö",
-        link: "Å_Share link____ö"
+        facebook: "Jaa Facebookissa",
+        twitter: "Jaa Twitterissä",
+        link: "Jaa linkki"
     },
     legendToggle:{
-        label: "Å_LEGEND___ö"
+        label: "SELITE"
     }
   })
 );

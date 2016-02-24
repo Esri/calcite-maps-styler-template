@@ -20,7 +20,7 @@ define(
       error: "Não foi possível criar mapa"
     },
     nav: {
-        "close": "ã_Close___Ç"
+        "close": "Fechar"
     },
     elevation: {
         toggle: "Alterne o Gráfico de Perfil de Elevação.",

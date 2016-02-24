@@ -19,7 +19,7 @@
 				create: "Vytvořit",
 				yes: "Ano",
 				no: "Ne",
-				mystories: "Ř_My Stories____ů"
+				mystories: "Moje příběhy"
 			},
 			inlineFieldEdit: {
 				editMe: "Edituj mě!"
@@ -31,10 +31,10 @@
 				buttonShare: "Sdílet",
 				buttonSettings: "Nastavení",
 				buttonHelp: "Nápověda",
-				buttonPreview: "Ř_View story____ů",
+				buttonPreview: "Zobrazit příběh",
 				tooltipFirstSave: "Tato funkce není k dispozici, dokud aplikaci neuložíte.",
 				tooltipNotShared: "Tato funkce není k dispozici, dokud aplikaci nenasdílíte.",
-				tooltipNotShared2: "Ř_Your story isn't shared, only you can access it_______________ů.",
+				tooltipNotShared2: "Váš příběh není sdílen, máte k němu přístup jenom vy.",
 				noPendingChange: "Žádná neuložená změna",
 				unSavedChangePlural: "Neuložené změny",
 				closeWithPendingChange: "Opravdu chcete potvrdit tuto akci? Vaše změny budou ztraceny.",
@@ -55,20 +55,20 @@
 				btnOk: "Změňte název příběhu"
 			},
 			saveErrorSocial: {
-				title: "Ř_Social media sharing update_________ů",
-				panel1: "Ř_Your storyâ€™s appearance on social media has been improved, but your ArcGIS web application item title is not the same as your story title___________________________________________ů.",
-				panel1tooltip: "Ř_By defining a title, summary and thumbnail image, your story will look like this_________________________ů:",
-				panel2:	"Ř_Which title would you like to use on social media________________ů:",
-				panel2q1: "Ř_Story title (recommended)_________ů",
-				panel2q1tooltip: "Ř_By choosing this option, your item title will be modified to match your story title and further changes in the builder will be synchronized___________________________________________ů.",
-				panel2q2: "Ř_Item title____ů",
-				panel3: "Ř_To further improve how your story looks on social media use ${MYSTORIES} to add a summary and a thumbnail image___________________________________ů.",
-				panel4: "Ř_Do not warn me again for this story____________ů"
+				title: "Aktualizace sdílení na sociálních sítích",
+				panel1: "Vzhled vašeho příběhu na sociálních médiích byl aktualizován, název vaší položky webové aplikace ArcGIS se však neshoduje s názvem vašeho příběhu.",
+				panel1tooltip: "Pokud definujete název, shrnutí a náhledový obrázek, váš příběh bude vypadat následovně:",
+				panel2:	"Název, který chcete použít na sociálních sítích:",
+				panel2q1: "Název příběhu (doporučeno)",
+				panel2q1tooltip: "Pokud zvolíte tuto možnost, název položky se změní tak, aby se shodoval s názvem příběhu, a následující změny provedené v nástroji pro tvorbu se synchronizují.",
+				panel2q2: "Název položky",
+				panel3: "Chcete-li dále vylepšit vzhled příběhu na sociálních sítích, přejděte na ${MYSTORIES} a přidejte shrnutí a náhledový obrázek.",
+				panel4: "Příště již neupozorňovat u tohoto příběhu"
 			},
 			share: {
 				shareTitle: "Sdílejte svůj příběh",
 				preview: "Náhled",
-				viewlive: "Ř_View story____ů",
+				viewlive: "Zobrazit příběh",
 				btnPrivate: "Soukromý",
 				btnPrivateTooltip: "Příběh můžete vidět pouze vy",
 				btnOrg: "Organizace",
@@ -87,27 +87,27 @@
 				notavailable2: "Je nám líto, sdílení vašeho příběhu z nástroje pro tvorbu není podporováno v této verzi Portal for ArcGIS (vyžaduje 10.4 nebo novější).",
 				notavailable3: "Tento příběh můžete sdílet z %LINK%.",
 				notavailable4: "Moje příběhy",
-				notavailable5: "Ř_its item page_____ů",
+				notavailable5: "stránku položky",
 				notavailable6: "Je nám líto, tato funkce není v režimu vývoje plně podporována. V závislosti na vašem scénáři nasazení může být tato funkce podporována při nasazení.",
 				notavailable7: "Nezapomeňte v %MYCONTENT% ověřit, že mapy a vrstvy použité ve vašem příběhu jsou také sdílené.",
 				notavailable8: "Můj obsah",
-				mystoriesinvite2: "Ř_To improve how your story looks on social networks use ${MYSTORIES} to add a summary and a thumbnail image_________________________________ů."
+				mystoriesinvite2: "Chcete-li vylepšit vzhled příběhu na sociálních sítích, přejděte na ${MYSTORIES} a přidejte shrnutí a náhledový obrázek."
 			},
 			settings: {
 				header: "Nastavení",
 				tabError: "Zkontrolujte prosím, nejsou-li v záložkách chyby."
 			},
 			settingsLayout: {
-				title: "Ř_Layout___ů",
+				title: "Rozvržení",
 				explain: "Jaké rozvržení chcete použít?",
 				explainInit: "Rozvržení můžete kdykoli změnit v dialogu nastavení.",
 				viewExample: "Zobrazit živý příklad"
 			},
 			settingsTheme: {
-				title: "Ř_Theme___ů"
+				title: "Téma"
 			},
 			settingsHeader: {
-				title: "Ř_Header___ů",
+				title: "Záhlaví",
 				logoEsri: "Logo Esri",
 				logoNone: "Bez loga",
 				logoCustom: "Vlastní logo",
@@ -119,7 +119,7 @@
 				lblSmallHeader: "Použít kompaktní záhlaví (bez podnázvu)"
 			},
 			header: {
-				title: "Ř_Edit the title of your %TPL_NAME%___________ů",
+				title: "Změňte název šablony %TPL_NAME%.",
 				subtitle: "Změňte podnázev šablony %TPL_NAME%."
 			}
 		}

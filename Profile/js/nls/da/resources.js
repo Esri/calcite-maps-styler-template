@@ -20,7 +20,7 @@ define(
       error: "Kan ikke oprette kort"
     },
     nav: {
-        "close": "ø_Close___å"
+        "close": "Luk"
     },
     elevation: {
         toggle: "Skift højdeprofildiagram.",

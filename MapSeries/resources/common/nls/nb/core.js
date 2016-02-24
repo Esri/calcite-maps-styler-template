@@ -19,7 +19,7 @@
 				create: "Opprette",
 				yes: "Ja",
 				no: "Nei",
-				mystories: "å_My Stories____ø"
+				mystories: "Mine historier"
 			},
 			inlineFieldEdit: {
 				editMe: "Rediger meg!"
@@ -31,10 +31,10 @@
 				buttonShare: "Del",
 				buttonSettings: "Innstillinger",
 				buttonHelp: "Hjelp",
-				buttonPreview: "å_View story____ø",
+				buttonPreview: "Vis historie",
 				tooltipFirstSave: "Dette er ikke tilgjengelig før du har lagret.",
 				tooltipNotShared: "Dette er ikke tilgjengelig før du har delt.",
-				tooltipNotShared2: "å_Your story isn't shared, only you can access it_______________ø.",
+				tooltipNotShared2: "Historien er ikke delt. Det er bare du som har tilgang til den.",
 				noPendingChange: "Ingen ventende endring",
 				unSavedChangePlural: "Ventende endringer",
 				closeWithPendingChange: "Er du sikker på at du vil bekrefte denne handlingen? Du mister endringene du har gjort.",
@@ -55,20 +55,20 @@
 				btnOk: "Rediger historietittelen"
 			},
 			saveErrorSocial: {
-				title: "å_Social media sharing update_________ø",
-				panel1: "å_Your storyâ€™s appearance on social media has been improved, but your ArcGIS web application item title is not the same as your story title___________________________________________ø.",
-				panel1tooltip: "å_By defining a title, summary and thumbnail image, your story will look like this_________________________ø:",
-				panel2:	"å_Which title would you like to use on social media________________ø:",
-				panel2q1: "å_Story title (recommended)_________ø",
-				panel2q1tooltip: "å_By choosing this option, your item title will be modified to match your story title and further changes in the builder will be synchronized___________________________________________ø.",
-				panel2q2: "å_Item title____ø",
-				panel3: "å_To further improve how your story looks on social media use ${MYSTORIES} to add a summary and a thumbnail image___________________________________ø.",
-				panel4: "å_Do not warn me again for this story____________ø"
+				title: "Oppdater deling på sosiale medier",
+				panel1: "Historien vises på en bedre måte på sosiale medier, men tittelen på ArcGIS-webapplikasjonselementet er ikke den samme som historietittelen.",
+				panel1tooltip: "Når du angir en tittel, et sammendrag og et miniatyrbilde, vil historien se slik ut:",
+				panel2:	"Hvilken tittel vil du bruke på sosiale medier:",
+				panel2q1: "Historietittel (anbefales)",
+				panel2q1tooltip: "Når du velger dette alternativet, endres elementtittelen slik at den er identisk med historietittelen og andre endringer i byggeverktøyet synkroniseres.",
+				panel2q2: "Elementtittel",
+				panel3: "Hvis du vil forbedre hvordan historien vises på sosiale medier, bruker du ${MYSTORIES} til å legge til et sammendrag og et miniatyrbilde.",
+				panel4: "Ikke vis denne advarselen igjen for denne historien"
 			},
 			share: {
 				shareTitle: "Del historien",
 				preview: "Forhåndsvisning",
-				viewlive: "å_View story____ø",
+				viewlive: "Vis historie",
 				btnPrivate: "Privat",
 				btnPrivateTooltip: "Bare du kan se historien",
 				btnOrg: "Organisasjon",
@@ -87,27 +87,27 @@
 				notavailable2: "Beklager, deling av historien din fra byggeverktøyet er ikke støttet i denne versjonen av Portal for ArcGIS (krever versjon 10.4 eller nyere).",
 				notavailable3: "Du kan dele denne historien fra %LINK%.",
 				notavailable4: "Mine historier",
-				notavailable5: "å_its item page_____ø",
+				notavailable5: "elementsiden",
 				notavailable6: "Beklager, denne funksjonen er ikke støttet fullt ut i utviklermodus. Avhengig av scenarioet ditt, kan det hende denne funksjonen støttes når den distribueres.",
 				notavailable7: "Sørg for å gå til %MYCONTENT% for å bekrefte at kartene og lagene som er brukt i historien din, også er delt.",
 				notavailable8: "Mitt innhold",
-				mystoriesinvite2: "å_To improve how your story looks on social networks use ${MYSTORIES} to add a summary and a thumbnail image_________________________________ø."
+				mystoriesinvite2: "Hvis du vil forbedre hvordan historien vises på sosiale nettverk, bruker du ${MYSTORIES} til å legge til et sammendrag og et miniatyrbilde."
 			},
 			settings: {
 				header: "Innstillinger",
 				tabError: "Se etter feil i alle faner"
 			},
 			settingsLayout: {
-				title: "å_Layout___ø",
+				title: "Oppsett",
 				explain: "Hva slags oppsett vil du bruke?",
 				explainInit: "Du kan når som helst endre oppsettet fra innstillingdialogen.",
 				viewExample: "Vis et eksempel i sanntid"
 			},
 			settingsTheme: {
-				title: "å_Theme___ø"
+				title: "Tema"
 			},
 			settingsHeader: {
-				title: "å_Header___ø",
+				title: "Overskrift",
 				logoEsri: "Esri-logo",
 				logoNone: "Ingen logo",
 				logoCustom: "Tilpasset logo",
@@ -119,7 +119,7 @@
 				lblSmallHeader: "Bruk kompakt overskrift (ingen undertittel)"
 			},
 			header: {
-				title: "å_Edit the title of your %TPL_NAME%___________ø",
+				title: "Rediger tittelen på %TPL_NAME%",
 				subtitle: "Rediger undertittelen på %TPL_NAME%"
 			}
 		}

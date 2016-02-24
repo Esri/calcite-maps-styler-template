@@ -19,7 +19,7 @@
 				create: "צור",
 				yes: "כן",
 				no: "לא",
-				mystories: "כן_My Stories____ש"
+				mystories: "הסיפורים שלי"
 			},
 			inlineFieldEdit: {
 				editMe: "ערוך אותי!"
@@ -31,10 +31,10 @@
 				buttonShare: "שתף",
 				buttonSettings: "הגדרות",
 				buttonHelp: "עזרה",
-				buttonPreview: "כן_View story____ש",
+				buttonPreview: "הצג סיפור",
 				tooltipFirstSave: "אפשרות זו אינה זמינה עד לשמירה.",
 				tooltipNotShared: "אפשרות זו אינה זמינה עד לשיתוף.",
-				tooltipNotShared2: "כן_Your story isn't shared, only you can access it_______________ש.",
+				tooltipNotShared2: "הסיפור שלך לא משותף, רק אתה יכול לגשת אליו.",
 				noPendingChange: "אין שינוי לביצוע",
 				unSavedChangePlural: "השינויים בהמתנה",
 				closeWithPendingChange: "האם הינך בטוח שברצונך לאשר פעולה זו? אתה עלול לאבד את השינויים שביצעת.",
@@ -55,20 +55,20 @@
 				btnOk: "ערוך את כותרת הסיפור"
 			},
 			saveErrorSocial: {
-				title: "כן_Social media sharing update_________ש",
-				panel1: "כן_Your storyâ€™s appearance on social media has been improved, but your ArcGIS web application item title is not the same as your story title___________________________________________ש.",
-				panel1tooltip: "כן_By defining a title, summary and thumbnail image, your story will look like this_________________________ש:",
-				panel2:	"כן_Which title would you like to use on social media________________ש:",
-				panel2q1: "כן_Story title (recommended)_________ש",
-				panel2q1tooltip: "כן_By choosing this option, your item title will be modified to match your story title and further changes in the builder will be synchronized___________________________________________ש.",
-				panel2q2: "כן_Item title____ש",
-				panel3: "כן_To further improve how your story looks on social media use ${MYSTORIES} to add a summary and a thumbnail image___________________________________ש.",
-				panel4: "כן_Do not warn me again for this story____________ש"
+				title: "עדכון של שיתוף במדיה חברתית",
+				panel1: "הופעת הסיפור שלך במדיה החברתית שופרה, אבל כותרת הפריט של אפליקציית האינטרנט ArcGIS אינה זהה לכותרת הסיפור שלך.",
+				panel1tooltip: "על-ידי הגדרת כותרת, סיכום ותמונה ממוזערת, הסיפור שלך ייראה כך:",
+				panel2:	"באיזו כותרת ברצונך להשתמש במדיה החברתית:",
+				panel2q1: "כותרת סיפור (מומלץ)",
+				panel2q1tooltip: "על-ידי בחירת אפשרות זו, כותרת הפריט שלך תשתנה כדי להתאים לכותרת הסיפור שלך, ושינויים נוספים בבונה יסונכרנו.",
+				panel2q2: "כותרת פריט",
+				panel3: "כדי לשפר עוד יותר את הופעת הסיפור שלך במדיה החברתית, השתמש ב-${MYSTORIES} כדי להוסיף סיכום ותמונה ממוזערת.",
+				panel4: "אל תזהיר אותי שוב לגבי סיפור זה"
 			},
 			share: {
 				shareTitle: "שתף את הסיפור שלך",
 				preview: "תצוגה מקדימה",
-				viewlive: "כן_View story____ש",
+				viewlive: "הצג סיפור",
 				btnPrivate: "פרטי",
 				btnPrivateTooltip: "רק אתה יכול לראות את הסיפור",
 				btnOrg: "ארגון",
@@ -87,27 +87,27 @@
 				notavailable2: "מצטערים, שיתוף הסיפור שלך דרך אשף הבנייה לא נתמך בגירסה זו של פורטל עבור ArcGIS (דורש גירסה 10.4 ואילך).",
 				notavailable3: "באפשרותך לשתף סיפור זה דרך %LINK%.",
 				notavailable4: "הסיפורים שלי",
-				notavailable5: "כן_its item page_____ש",
+				notavailable5: "זה דף פריט",
 				notavailable6: "מצטערים, ישות זו לא נתמכת במלואה במצב פיתוח. בהתאם לתרחיש הפיתוח שלך, ייתכן שיישות זו תיתמך כאשר תיפרס.",
 				notavailable7: "הקפד לבקר את %MYCONTENT% כדי לוודא שהמפות והשכבות שבסיפור שלך משותפות.",
 				notavailable8: "התכולה שלי",
-				mystoriesinvite2: "כן_To improve how your story looks on social networks use ${MYSTORIES} to add a summary and a thumbnail image_________________________________ש."
+				mystoriesinvite2: "כדי לשפר את הופעת הסיפור שלך ברשתות החברתיות, השתמש ב-${MYSTORIES} כדי להוסיף סיכום ותמונה ממוזערת."
 			},
 			settings: {
 				header: "הגדרות",
 				tabError: "אנא בדוק שגיאות בכל הלשוניות"
 			},
 			settingsLayout: {
-				title: "כן_Layout___ש",
+				title: "תצוגה",
 				explain: "באיזו תצוגה תרצה להשתמש?",
 				explainInit: "אתה יכול לשנות את כל עת את סידור המפה מתוך דיאלוג ההגדרות.",
 				viewExample: "הצג דוגמה חיה"
 			},
 			settingsTheme: {
-				title: "כן_Theme___ש"
+				title: "נושא"
 			},
 			settingsHeader: {
-				title: "כן_Header___ש",
+				title: "כותרת עליונה",
 				logoEsri: "לוגו של Esri",
 				logoNone: "אין לוגו",
 				logoCustom: "לוגו מותאם",
@@ -119,7 +119,7 @@
 				lblSmallHeader: "השתמש בכותרת מצומצמת (ללא כותרת משנה)"
 			},
 			header: {
-				title: "כן_Edit the title of your %TPL_NAME%___________ש",
+				title: "ערוך את הכותרת של %TPL_NAME%",
 				subtitle: "ערוך את כותרת המשנה של %TPL_NAME%"
 			}
 		}

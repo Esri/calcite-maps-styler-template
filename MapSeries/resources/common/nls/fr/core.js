@@ -19,7 +19,7 @@
 				create: "Créer",
 				yes: "Oui",
 				no: "Non",
-				mystories: "æ_My Stories____Â"
+				mystories: "Mes récits"
 			},
 			inlineFieldEdit: {
 				editMe: "Modifier"
@@ -31,10 +31,10 @@
 				buttonShare: "Partager",
 				buttonSettings: "Paramètres",
 				buttonHelp: "Aide",
-				buttonPreview: "æ_View story____Â",
+				buttonPreview: "Afficher le récit",
 				tooltipFirstSave: "Cette fonction n\'est pas disponible tant qu\'un enregistrement n\'est pas effectué.",
 				tooltipNotShared: "Cette fonction n\'est pas disponible tant qu\'un partage n\'est pas effectué.",
-				tooltipNotShared2: "æ_Your story isn't shared, only you can access it_______________Â.",
+				tooltipNotShared2: "Votre récit n\'est pas partagé, vous seul pouvez y accéder.",
 				noPendingChange: "Aucune modification en attente",
 				unSavedChangePlural: "Modifications en attente",
 				closeWithPendingChange: "Vouez-vous vraiment confirmer cette opération ? Vos modifications seront perdues.",
@@ -55,20 +55,20 @@
 				btnOk: "Modifier le titre du récit"
 			},
 			saveErrorSocial: {
-				title: "æ_Social media sharing update_________Â",
-				panel1: "æ_Your storyâ€™s appearance on social media has been improved, but your ArcGIS web application item title is not the same as your story title___________________________________________Â.",
-				panel1tooltip: "æ_By defining a title, summary and thumbnail image, your story will look like this_________________________Â:",
-				panel2:	"æ_Which title would you like to use on social media________________Â:",
-				panel2q1: "æ_Story title (recommended)_________Â",
-				panel2q1tooltip: "æ_By choosing this option, your item title will be modified to match your story title and further changes in the builder will be synchronized___________________________________________Â.",
-				panel2q2: "æ_Item title____Â",
-				panel3: "æ_To further improve how your story looks on social media use ${MYSTORIES} to add a summary and a thumbnail image___________________________________Â.",
-				panel4: "æ_Do not warn me again for this story____________Â"
+				title: "Mise à jour du partage sur les réseaux sociaux",
+				panel1: "L\'apparence de votre récit sur les réseaux sociaux a été améliorée, mais le titre de votre élément d\'application Web ArcGIS n\'est pas le même que le titre de votre récit.",
+				panel1tooltip: "Si vous définissez un titre, un résumé et une image miniature, votre récit ressemblera à ceci :",
+				panel2:	"Quel titre voulez-vous utiliser sur les réseaux sociaux :",
+				panel2q1: "Titre du récit (recommandé)",
+				panel2q1tooltip: "Si vous choisissez cette option, le titre de votre élément sera modifié afin de correspondre au titre de votre récit et les autres modifications apportées dans le générateur seront synchronisées.",
+				panel2q2: "Titre de l\'élément",
+				panel3: "Pour encore améliorer l\'apparence de votre récit sur les réseaux sociaux, utilisez ${MYSTORIES} pour ajouter un résumé et une image miniature.",
+				panel4: "Ne plus m\'avertir pour ce récit"
 			},
 			share: {
 				shareTitle: "Partager votre récit",
 				preview: "Aperçu",
-				viewlive: "æ_View story____Â",
+				viewlive: "Afficher le récit",
 				btnPrivate: "Privé",
 				btnPrivateTooltip: "Vous seul pouvez voir le récit",
 				btnOrg: "Organisation",
@@ -87,27 +87,27 @@
 				notavailable2: "Le partage de votre récit depuis le générateur n\'est pas pris en charge dans cette version de Portal for ArcGIS (requiert la version 10.4 ou ultérieure).",
 				notavailable3: "Vous pouvez partager ce récit depuis %LINK%.",
 				notavailable4: "Mes récits",
-				notavailable5: "æ_its item page_____Â",
+				notavailable5: "sa page d\'élément",
 				notavailable6: "Cette fonctionnalité n\'est pas entièrement prise en charge en mode de développement. Selon votre type de déploiement, elle peut être prise en charge une fois déployée.",
 				notavailable7: "Consultez %MYCONTENT% pour vérifier que les cartes et couches utilisées dans votre récit sont également partagées.",
 				notavailable8: "Mon contenu",
-				mystoriesinvite2: "æ_To improve how your story looks on social networks use ${MYSTORIES} to add a summary and a thumbnail image_________________________________Â."
+				mystoriesinvite2: "Pour améliorer l\'apparence de votre récit sur les réseaux sociaux, utilisez ${MYSTORIES} pour ajouter un résumé et une image miniature."
 			},
 			settings: {
 				header: "Paramètres",
 				tabError: "Recherchez des erreurs dans tous les onglets"
 			},
 			settingsLayout: {
-				title: "æ_Layout___Â",
+				title: "Mise en page",
 				explain: "Quelle mise en page voulez-vous utiliser ?",
 				explainInit: "Vous pouvez modifier la mise en page à tout moment dans la boîte de dialogue des paramètres.",
 				viewExample: "Voir un exemple en direct"
 			},
 			settingsTheme: {
-				title: "æ_Theme___Â"
+				title: "Thème"
 			},
 			settingsHeader: {
-				title: "æ_Header___Â",
+				title: "En-tête",
 				logoEsri: "Logo Esri",
 				logoNone: "Aucun logo",
 				logoCustom: "Logo personnalisé",
@@ -119,7 +119,7 @@
 				lblSmallHeader: "Utiliser un en-tête compact (pas de sous-titre)"
 			},
 			header: {
-				title: "æ_Edit the title of your %TPL_NAME%___________Â",
+				title: "Modifiez le titre de votre %TPL_NAME%",
 				subtitle: "Modifiez le sous-titre de votre %TPL_NAME%"
 			}
 		}

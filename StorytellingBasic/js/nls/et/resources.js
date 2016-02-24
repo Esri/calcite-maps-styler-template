@@ -21,12 +21,12 @@ define(
       generalError: "Viga"
     },
     social:{
-        facebook: "Š_Share on Facebook______ä",
-        twitter: "Š_Share on Twitter______ä",
-        link: "Š_Share link____ä"
+        facebook: "Jaga Facebookis",
+        twitter: "Jaga Twitteris",
+        link: "Jaga linki"
     },
     legendToggle:{
-        label: "Š_LEGEND___ä"
+        label: "LEGEND"
     }
   })
 );

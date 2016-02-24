@@ -17,18 +17,18 @@
 define(
    ({
     scene: {
-      error: "Ř_Unable to create scene________ů"
+      error: "Nelze vytvořit scénu"
     },
     panel: {
-      noslides: "Ř_No slides in web scene________ů"
+      noslides: "Žádné snímky ve webové scéně"
     },
     tooltips: {
-      layers: "Ř_Layers___ů",
-      basemaps: "Ř_Base maps____ů",
-      slides: "Ř_Slides___ů",
-      close: "Ř_Close___ů",
-      zoom: "Ř_Zoom__ů",
-      onoff: "Ř_On-Off___ů"
+      layers: "Vrstvy",
+      basemaps: "Podkladové mapy",
+      slides: "Snímky",
+      close: "Zavřít",
+      zoom: "Zvětšení",
+      onoff: "Zap.-Vyp."
     }
   })
 );

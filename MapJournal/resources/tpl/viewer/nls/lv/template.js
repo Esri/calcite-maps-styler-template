@@ -22,21 +22,21 @@
 				boxTitle: "Kļūda",
 				invalidConfig: "Nederīga konfigurācija",
 				invalidConfigNoApp: "Web kartēšanas aplikācijas identifikators nav norādīts šeit: index.html.",
-				invalidConfigNoAppDev: "ķ_No Web Mapping Application identifier is specified in URL parameters (?appid=). In development mode, the appid configuration in index.html is ignored______________________________________________ū.",
+				invalidConfigNoAppDev: "URL parametros nav norādīts web kartēšanas aplikācijas identifikators (?appid=). Izstrādes režīmā lapā index.html ir ignorēta appid konfigurācija.",
 				unspecifiedConfigOwner: "Autorizētais īpašnieks nav konfigurēts.",
 				invalidConfigOwner: "Stāsta īpašnieks nav autorizēts.",
 				createMap: "Nevar izveidot karti",
 				invalidApp: "%TPL_NAME% nepastāv vai tai nevar piekļūt.",
 				appLoadingFail: "Radās kļūda, %TPL_NAME% netika ielādēta pareizi.",
 				notConfiguredDesktop: "Stāsts vēl nav konfigurēts.",
-				notConfiguredMobile: "ķ_The %TPL_NAME% builder is not supported at this display size. If possible, resize your browser to access the builder or please build your story on a device with a larger screen______________________________________________________ū.",
-				notConfiguredMobile2: "ķ_Please rotate your device to landscape orientation to use the %TPL_NAME% builder_________________________ū.",
+				notConfiguredMobile: "%TPL_NAME% veidotājs nav atbalstīts šim displeja izmēram. Ja iespējams, mainiet pārlūkprogrammas izmēru tā, lai piekļūtu veidotājam, vai veidojiet savu stāstu ierīcē ar lielāku ekrānu.",
+				notConfiguredMobile2: "Lai izmantotu %TPL_NAME% veidotāju, pagrieziet ierīcē ainavas orientāciju.",
 				notAuthorized: "Jūs neesat pilnvarots piekļūt šim stāstam",
-				notAuthorizedBuilder: "ķ_You are not authorized to use %TPL_NAME% builder________________ū.",
+				notAuthorizedBuilder: "Jums nav autorizācijas izmantot %TPL_NAME% veidotāju.",
 				noBuilderIE: "Veidotājs netiek atbalstīts Internet Explorer versijās, kas ir jaunākas par %VERSION%. %UPGRADE%",
 				noViewerIE: "Šis stāsts netiek atbalstīts Internet Explorer versijās, kas ir vecākas par %VERSION%. %UPGRADE%",
 				upgradeBrowser: "<a href='http://browsehappy.com/' target='_blank'>Lūdzu, atjauniniet savu pārlūku</a>.",
-				mapLoadingFail: "ķ_Something went wrong, the map did not load correctly_________________ū.",
+				mapLoadingFail: "Ir atgadījusies kļūme — karte netika ielādēta pareizi.",
 				signOut: "Izrakstīties"
 			},
 			mobileView: {
@@ -67,8 +67,8 @@
 				checking: "Pārbauda jūsu stāsta saturu",
 				fix: "Problēmu labošana jūsu stāstā",
 				noerrors: "Nav konstatētas problēmas",
-				tooltipAutoplayDisabled: "ķ_This isn't available in autoplay mode____________ū",
-				notshared: "ķ_Story not shared______ū"
+				tooltipAutoplayDisabled: "Tas nav pieejams automātiskās demonstrēšanas režīmā",
+				notshared: "Stāsts nav koplietots"
 			},
 			overviewFromCommon: {
 				title: "Pārskata karte"
@@ -83,10 +83,10 @@
 				embed: "Iegult web lapā",
 				embedExplain: "Izmantojiet šo HTML kodu, lai iegultu žurnālu web lapā.",
 				size: "Izmēri (platums/augstums):",
-				autoplayLabel: "ķ_Autoplay mode_____ū",
-				autoplayExplain1: "ķ_Autoplay mode will advance through your story at a regular interval. This is ideal on a kiosk or public display monitor, but be aware that in other situations it may make the story harder to read. This feature isn't supported on small displays__________________________________________________________________________ū.",
-				autoplayExplain2: "ķ_When this mode is active there are controls to play/pause the story and adjust the navigation speed_______________________________ū.",
-				linksupdated: "ķ_Links updated_____ū!"
+				autoplayLabel: "Automātiskās demonstrēšanas režīms",
+				autoplayExplain1: "Automātiskās demonstrēšanas režīms darbosies jūsu stāstā ar regulāriem intervāliem. Tas ir izcili piemērots rādīšanai stendos vai publiskās demonstrēšanas monitorā, bet ņemiet vērā, ka citās situācijās šis režīms var padarīt stāstu grūtāk izlasāmu. Šī funkcija netiek atbalstīta maza izmēra displejos.",
+				autoplayExplain2: "Pēc šī režīma aktivizēšanas ir pieejamas vadīklas stāsta demonstrēšanai/apturēšanai un navigācijas ātruma regulēšanai.",
+				linksupdated: "Saites ir atjauninātas."
 			}
         }
     })

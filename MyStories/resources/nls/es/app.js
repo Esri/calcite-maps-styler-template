@@ -41,7 +41,7 @@
 		},
 		cantFindStories: {
 			whereAreStories: "¿No ves tu historia?",
-			notSeeExplanation: "á_My Stories will only list story maps hosted in ArcGIS and created with the {{STORY_MAP_TOUR}}, {{JOURNAL}}, {{MAP_SERIES}} or {{SWIPE_SPYGLASS}} applications. See our {{FAQ}} for more information____________________________________________________________Ó.",
+			notSeeExplanation: "Mis historias solo mostrará los story maps alojados en ArcGIS y creados con las aplicaciones {{STORY_MAP_TOUR}}, {{JOURNAL}}, {{MAP_SERIES}} o {{SWIPE_SPYGLASS}}. Consulta nuestra sección {{FAQ}} para obtener más información.",
 			faq: "Preguntas frecuentes",
 			followingStoriesToUpdate: "Las siguientes historias creadas con versiones antiguas de nuestras aplicaciones se deben actualizar para que aparezcan en Mis historias:",
 			gettingStories: "Buscando historias creadas con versiones anteriores de nuestras aplicaciones que es necesario actualizar...",
@@ -120,7 +120,7 @@
 			saveFailed: "Error al guardar",
 			numViews: "Vistas: {{NUM_VIEWS}}",
 			editStory: "Editar historia",
-			viewLive: "á_View Story____Ó",
+			viewLive: "Ver historia",
 			preview: "Vista previa",
 			deleteButton: "Eliminar",
 			modified: "Modificado: {{DATE}}",
@@ -130,7 +130,7 @@
 			close: "cerrar",
 			hide: "ocultar",
 			notAvailableWhenBroken: "La historia tiene los siguientes problemas",
-			cantBeDeleted: "á_This story has delete protection enabled. See its item page on ArcGIS to disable_________________________Ó.",
+			cantBeDeleted: "Esta historia tiene habilitada la protección contra eliminación. Visita su página en ArcGIS para deshabilitarla.",
 			shareDialog: {
 				title: "Comparte tu historia con el mundo.",
 				notPublicWarning: "Tu historia está compartida con tu organización. Solo miembros de tu organización podrán verla.",
@@ -163,7 +163,7 @@
 				save: "Guardar",
 				saved: "Guardado",
 				errorSaving: "Error al guardar",
-				tagTip: "á_Tip: Tags help people find your story. The more relevant the tags are, the higher the visibility your work will receive_____________________________________Ó."
+				tagTip: "Sugerencia: las etiquetas ayudan a la gente a encontrar tu historia. Cuanto más relevantes sean las etiquetas, mayor será la visibilidad del trabajo."
 			},
 			submitToGallery: {
 				gallerySubmission: "Galería de Story Maps",
@@ -173,7 +173,7 @@
 				chosenSubjectAlt: "Un {{SUBJECT}} y algunas etiquetas",
 				storyMapTopicSubject: "tema",
 				sharedPublicly: "Está compartida públicamente",
-				noBrokenContent: "á_No issues____Ó",
+				noBrokenContent: "Sin problemas",
 				nominateToGallery: "Proponer para la Galería",
 				comingSoon: "Próximamente.",
 				submitted: "Enviado",
@@ -298,8 +298,8 @@
 				subscriptionPublicSuccess: "Tu contenido de suscripción está disponible públicamente"
 			},
 			errors: {
-				publicDisabled: "á_Sharing publicly has been disabled by an Administrator_________________Ó",
-				orgDisabled: "á_Sharing to your organization has been disabled by an Administrator_____________________Ó",
+				publicDisabled: "El administrador ha deshabilitado la opción para compartir públicamente",
+				orgDisabled: "El administrador ha deshabilitado la opción para compartir con la organización",
 				noMapName: "No se pudo recuperar el nombre del mapa.",
 				notPublic: "NO PÚBLICO",
 				inaccessible: "INACCESIBLE",
@@ -352,8 +352,8 @@
 				cantScanThisTypeAlt: "No podemos comprobar este tipo de capa",
 				cantScanThisType: "La capa no es un tipo de capa que podamos comprobar",
 				webpageNotScanned: "Las páginas web no se comprueban para ver si contienen problemas.",
-				ignoredIssue: "á_You have ignored an error on this layer. Reload the page and check this story again to review the error________________________________Ó",
-				ignoredIssueBuilder: "á_You have ignored an error on this layer. Reload the builder to check this error again___________________________Ó"
+				ignoredIssue: "Has ignorado un error en esta capa. Vuelve a cargar la página y comprueba de nuevo la historia para revisar el error",
+				ignoredIssueBuilder: "Has ignorado un error en esta capa. Vuelve a cargar el builder y comprueba de nuevo este error"
 			},
 			scanningErrors: {
 				deletedMap: "Contenido eliminado",
@@ -371,9 +371,9 @@
 				inaccessibleWebpage: "Páginas Web inaccesibles"
 			},
 			scanningErrorTips: {
-				deletedMapTip: "á_Tip: Edit your web map and remove the broken content, or remove the web map from your story_____________________________Ó.",
-				inaccessibleMapTip: "á_Tip: Edit your web map and remove the broken content, or remove the web map from your story_____________________________Ó.",
-				notYoursNotAccessibleTip: "á_Tip: Edit your web map and remove the layer, or remove the web map from your story__________________________Ó.",
+				deletedMapTip: "Sugerencia: edita el mapa web y quita el contenido dañado o bien elimina dicho mapa de la historia.",
+				inaccessibleMapTip: "Sugerencia: edita el mapa web y quita el contenido dañado o bien elimina dicho mapa de la historia.",
+				notYoursNotAccessibleTip: "Sugerencia: edita el mapa web y quita la capa o bien elimina dicho mapa de la historia.",
 				serviceOkItemNotTip: "Las capas se han añadido como elementos que son inaccesibles o que se han eliminado. Las capas están funcionando, pero esto puede afectar a tu mapa (elementos emergentes, simbología).",
 				ignore: "Ignorar",
 				fix: "Solucionar",
@@ -459,13 +459,13 @@
 				thirdTitle: "mapas"
 			},
 			crowdsource: {
-				firstTitle: "á_contributions_____Ó",
-				secondTitle: "á_style___Ó",
-				secondValueA: "á_side panel____Ó",
-				secondValueB: "á_stacked___Ó",
-				thirdTitle: "á_basemap___Ó",
-				thirdValueLoading: "á_Loading____Ó...",
-				thirdValueUnknown: "á_unknown___Ó"
+				firstTitle: "contribuciones",
+				secondTitle: "estilo",
+				secondValueA: "panel lateral",
+				secondValueB: "apiladas",
+				thirdTitle: "mapa base",
+				thirdValueLoading: "Cargando...",
+				thirdValueUnknown: "desconocidos"
 			}
 		},
 		progress: {
@@ -482,9 +482,9 @@
 			storiesWithIssues: "Historias con problemas: {{NUM_STORIES}}"
 		},
 		newStories: {
-			newStoriesFound: "á_Looks like you have created a new story_____________Ó.",
-			includeStories: "á_Refresh Stories______Ó",
-			notWhileScanning: "á_This will be available when the check is complete________________Ó"
+			newStoriesFound: "Parece que has creado una historia nueva.",
+			includeStories: "Actualizar historias",
+			notWhileScanning: "Estará disponible cuando finalice la comprobación"
 		}
     })
 );

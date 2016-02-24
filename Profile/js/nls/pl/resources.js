@@ -20,7 +20,7 @@ define(
       error: "Nie można utworzyć mapy"
     },
     nav: {
-        "close": "ł_Close___ą"
+        "close": "Zamknij"
     },
     elevation: {
         toggle: "Przełącz wykres profilu wysokościowego.",

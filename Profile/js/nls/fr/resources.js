@@ -20,7 +20,7 @@ define(
       error: "Impossible de créer la carte"
     },
     nav: {
-        "close": "æ_Close___Â"
+        "close": "Fermer"
     },
     elevation: {
         toggle: "Activez/Désactivez le diagramme du profil d\'altitude.",

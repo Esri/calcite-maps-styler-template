@@ -18,17 +18,17 @@
 				boxTitle: "אירעה שגיאה",
 				invalidConfig: "תצורה לא חוקית",
 				invalidConfigNoApp: "מזהה אפליקציית המיפוי באינטרנט לא צוין ב-index.html.",
-				invalidConfigNoAppDev: "כן_No Web Mapping Application identifier is specified in URL parameters (?appid=). In development mode, the appid configuration in index.html is ignored______________________________________________ש.",
+				invalidConfigNoAppDev: "לא צוין בפרמטרי ה-URL מזהה של אפליקציית מיפוי אינטרנט‏ (‎?appid‎‎=‎). במצב פיתוח, המערכת מתעלמת מתצורת ה-appid ב-index.html.",
 				unspecifiedConfigOwner: "לא הוגדר בעלים מורשה.",
 				invalidConfigOwner: "הבעלים של הסיפור אינו מורשה.",
 				createMap: "לא ניתן ליצור מפה",
 				invalidApp: "%TPL_NAME% אינו קיים או אינו נגיש.",
 				appLoadingFail: "משהו השתבש, %TPL_NAME% לא נטען באופן תקין.",
 				notConfiguredDesktop: "הסיפור עדיין אינו מוגדר.",
-				notConfiguredMobile: "כן_The %TPL_NAME% builder is not supported at this display size. If possible, resize your browser to access the builder or please build your story on a device with a larger screen______________________________________________________ש.",
-				notConfiguredMobile2: "כן_Please rotate your device to landscape orientation to use the %TPL_NAME% builder_________________________ש.",
+				notConfiguredMobile: "אשף הבנייה של %TPL_NAME% אינו נתמך בגודל תצוגה זה. אם ניתן, שנה את גודל הדפדפן שלך כדי לגשת לאשף הבנייה או בנה את הסיפור שלך בהתקן עם מסך גדול יותר.",
+				notConfiguredMobile2: "סובב את המכשיר שלך לכיוון לרוחב כדי להשתמש באשף הבנייה של %TPL_NAME%.",
 				notAuthorized: "אין לך הרשאה לגשת לסיפור זה",
-				notAuthorizedBuilder: "כן_You are not authorized to use %TPL_NAME% builder________________ש.",
+				notAuthorizedBuilder: "אינך מורשה להשתמש באשף הבנייה של %TPL_NAME%.",
 				noBuilderIE: "אשף הבנייה אינו נתמך ב-Internet Explorer לפני גרסה %VERSION%‏. %UPGRADE%",
 				noViewerIE: "סיפור זה אינו נתמך ב- Internet Explorer לפני גירסה %VERSION%‏.‏ %UPGRADE%",
 				upgradeBrowser: "<a href='http://browsehappy.com/' target='_blank'>עדכן את הדפדפן שלך</a>.",
@@ -58,8 +58,8 @@
 				checking: "בודק את תוכן הסיפור שלך",
 				fix: "תקן בעיות בסיפור שלך",
 				noerrors: "לא זוהו בעיות",
-				tooltipAutoplayDisabled: "כן_This isn't available in autoplay mode____________ש",
-				notshared: "כן_Story not shared______ש"
+				tooltipAutoplayDisabled: "זה לא זמין במצב ניגון אוטומטי",
+				notshared: "הסיפור לא משותף"
 			},
 			overviewFromCommon: {
 				title: "מפת התמצאות"
@@ -74,10 +74,10 @@
 				embed: "הטמע בדף אינטרנט",
 				embedExplain: "השתמש בקוד ה- HTML הבא כדי להטמיע את הסיפור בדף אינטרנט.",
 				size: "גודל (רוחב/גובה):",
-				autoplayLabel: "כן_Autoplay mode_____ש",
-				autoplayExplain1: "כן_Autoplay mode will advance through your story at a regular interval. This is ideal on a kiosk or public display monitor, but be aware that in other situations it may make the story harder to read. This feature isn't supported on small displays__________________________________________________________________________ש.",
-				autoplayExplain2: "כן_When this mode is active there are controls to play/pause the story and adjust the navigation speed_______________________________ש.",
-				linksupdated: "כן_Links updated_____ש!"
+				autoplayLabel: "מצב ניגון אוטומטי",
+				autoplayExplain1: "מצב ניגון אוטומטי יתקדם בסיפור שלך במרווחים קבועים. מצב זה אידיאלי עבור צג תצוגה בקיוסק או צג ציבורי, אבל שים לב שבמצבים אחרים, הוא עשוי להפוך את הסיפור לקשה יותר לקריאה. ישות זו אינה נתמכת בתצוגות קטנות.",
+				autoplayExplain2: "כאשר מצב זה פעיל, קיימים פקדים להפעלה/הפסקה של הסיפור ולהתאמת מהירות הניווט.",
+				linksupdated: "הקישורים התעדכנו!"
 			},
 			locatorFromCommon: {
 				error: "מיקום לא זמין"

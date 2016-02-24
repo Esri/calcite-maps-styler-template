@@ -41,7 +41,7 @@
 		},
 		cantFindStories: {
 			whereAreStories: "Ser du inte din berättelse?",
-			notSeeExplanation: "Å_My Stories will only list story maps hosted in ArcGIS and created with the {{STORY_MAP_TOUR}}, {{JOURNAL}}, {{MAP_SERIES}} or {{SWIPE_SPYGLASS}} applications. See our {{FAQ}} for more information____________________________________________________________ö.",
+			notSeeExplanation: "Mina berättelser visar bara berättelsekartor i ArcGIS som skapats med applikationerna {{STORY_MAP_TOUR}}, {{JOURNAL}}, {{MAP_SERIES}} och {{SWIPE_SPYGLASS}}. Se {{FAQ}} för mer information.",
 			faq: "Vanliga frågor och svar",
 			followingStoriesToUpdate: "Följande berättelser som skapats med tidigare versioner av våra applikationer behöver uppdateras för att de ska visas i Mina berättelser:",
 			gettingStories: "Söker efter berättelser som skapats med tidigare versioner av våra applikationer som behöver uppdateras ...",
@@ -120,7 +120,7 @@
 			saveFailed: "Det gick inte att spara",
 			numViews: "Visningar: {{NUM_VIEWS}}",
 			editStory: "Redigera berättelse",
-			viewLive: "Å_View Story____ö",
+			viewLive: "Visa berättelse",
 			preview: "Förhandsgranska",
 			deleteButton: "Ta bort",
 			modified: "Ändrad {{DATE}}",
@@ -130,7 +130,7 @@
 			close: "stäng",
 			hide: "dölja",
 			notAvailableWhenBroken: "Berättelsen har fel, se nedan",
-			cantBeDeleted: "Å_This story has delete protection enabled. See its item page on ArcGIS to disable_________________________ö.",
+			cantBeDeleted: "Denna berättelse har skydd mot borttagning aktiverat. Se objektsidan på ArcGIS för att inaktivera det.",
 			shareDialog: {
 				title: "Dela berättelsen med världen!",
 				notPublicWarning: "Du delar din berättelse med din organisation. Enbart medlemmar i din organisation kan visa den.",
@@ -163,7 +163,7 @@
 				save: "Spara",
 				saved: "Sparad",
 				errorSaving: "Det gick inte att spara",
-				tagTip: "Å_Tip: Tags help people find your story. The more relevant the tags are, the higher the visibility your work will receive_____________________________________ö."
+				tagTip: "Tips: Taggar hjälper människor att hitta din berättelse. Ju mer relevanta taggarna är, desto högre synlighet får ditt verk."
 			},
 			submitToGallery: {
 				gallerySubmission: "Galleri med berättelsekartor",
@@ -173,7 +173,7 @@
 				chosenSubjectAlt: "Ett {{SUBJECT}} och några taggar",
 				storyMapTopicSubject: "ämne",
 				sharedPublicly: "Delas offentligt",
-				noBrokenContent: "Å_No issues____ö",
+				noBrokenContent: "Inga problem",
 				nominateToGallery: "Nominera till galleriet",
 				comingSoon: "Kommer snart!",
 				submitted: "Skickade",
@@ -298,8 +298,8 @@
 				subscriptionPublicSuccess: "Ditt abonnemangsinnehåll är nu publikt tillgängligt"
 			},
 			errors: {
-				publicDisabled: "Å_Sharing publicly has been disabled by an Administrator_________________ö",
-				orgDisabled: "Å_Sharing to your organization has been disabled by an Administrator_____________________ö",
+				publicDisabled: "Publik delning har inaktiverats av en administratör",
+				orgDisabled: "Delning till din organisation har inaktiverats av en administratör",
 				noMapName: "Det gick inte att hämta kartans namn",
 				notPublic: "INTE PUBLIK",
 				inaccessible: "EJ TILLGÄNGLIG",
@@ -352,8 +352,8 @@
 				cantScanThisTypeAlt: "Vi kan inte kontrollera denna typ av lager",
 				cantScanThisType: "Lagret är inte en typ av lager som vi kan kontrollera",
 				webpageNotScanned: "Webbsidor kontrolleras inte med avseende på problem",
-				ignoredIssue: "Å_You have ignored an error on this layer. Reload the page and check this story again to review the error________________________________ö",
-				ignoredIssueBuilder: "Å_You have ignored an error on this layer. Reload the builder to check this error again___________________________ö"
+				ignoredIssue: "Du har ignorerat ett fel i det här lagret. Läs in sidan igen och kontrollera berättelsen för att granska felet",
+				ignoredIssueBuilder: "Du har ignorerat ett fel i det här lagret. Läs in byggverktyget för att kontrollera felet igen"
 			},
 			scanningErrors: {
 				deletedMap: "Borttaget innehåll",
@@ -371,9 +371,9 @@
 				inaccessibleWebpage: "Otillgängliga webbsidor"
 			},
 			scanningErrorTips: {
-				deletedMapTip: "Å_Tip: Edit your web map and remove the broken content, or remove the web map from your story_____________________________ö.",
-				inaccessibleMapTip: "Å_Tip: Edit your web map and remove the broken content, or remove the web map from your story_____________________________ö.",
-				notYoursNotAccessibleTip: "Å_Tip: Edit your web map and remove the layer, or remove the web map from your story__________________________ö.",
+				deletedMapTip: "Tips! Redigera webbkartan och ta bort det skadade innehållet, eller ta bort webbkartan helt och hållet från berättelsen.",
+				inaccessibleMapTip: "Tips! Redigera webbkartan och ta bort det skadade innehållet, eller ta bort webbkartan helt och hållet från berättelsen.",
+				notYoursNotAccessibleTip: "Tips! Redigera webbkartan och ta bort lagret, eller ta bort webbkartan helt och hållet från berättelsen.",
 				serviceOkItemNotTip: "Lager lades till som objekt som är borttagna eller otillgängliga. Lagren fungerar, men detta kan påverka din karta (popup-fönster, symbologi).",
 				ignore: "{Tahoma8}Ignorera",
 				fix: "Fixa",
@@ -459,13 +459,13 @@
 				thirdTitle: "kartor"
 			},
 			crowdsource: {
-				firstTitle: "Å_contributions_____ö",
-				secondTitle: "Å_style___ö",
-				secondValueA: "Å_side panel____ö",
-				secondValueB: "Å_stacked___ö",
-				thirdTitle: "Å_basemap___ö",
-				thirdValueLoading: "Å_Loading____ö...",
-				thirdValueUnknown: "Å_unknown___ö"
+				firstTitle: "bidrag",
+				secondTitle: "stil",
+				secondValueA: "sidopanel",
+				secondValueB: "staplad",
+				thirdTitle: "baskarta",
+				thirdValueLoading: "Läser in...",
+				thirdValueUnknown: "okänt"
 			}
 		},
 		progress: {
@@ -482,9 +482,9 @@
 			storiesWithIssues: "Berättelser med fel: {{NUM_STORIES}}"
 		},
 		newStories: {
-			newStoriesFound: "Å_Looks like you have created a new story_____________ö.",
-			includeStories: "Å_Refresh Stories______ö",
-			notWhileScanning: "Å_This will be available when the check is complete________________ö"
+			newStoriesFound: "Det ser ut som om du har skapat en ny berättelse.",
+			includeStories: "Uppdatera berättelser",
+			notWhileScanning: "Detta kommer att vara tillgängligt när kontrollen är slutförd"
 		}
     })
 );

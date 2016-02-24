@@ -41,7 +41,7 @@
 		},
 		cantFindStories: {
 			whereAreStories: "Nu vedeţi povestea dvs.?",
-			notSeeExplanation: "Ă_My Stories will only list story maps hosted in ArcGIS and created with the {{STORY_MAP_TOUR}}, {{JOURNAL}}, {{MAP_SERIES}} or {{SWIPE_SPYGLASS}} applications. See our {{FAQ}} for more information____________________________________________________________ș.",
+			notSeeExplanation: "Scenariile mele va enumera doar hărţile de scenarii găzduite în ArcGIS şi create cu aplicaţiile {{STORY_MAP_TOUR}}, {{JOURNAL}}, {{MAP_SERIES}} sau {{SWIPE_SPYGLASS}}. Pentru mai multe informaţii consultaţi {{FAQ}}.",
 			faq: "Întrebări frecvente",
 			followingStoriesToUpdate: "Următoarele poveşti create cu versiuni mai vechi ale aplicaţiilor noastre trebuie actualizate pentru a fi enumerate în Relatările mele:",
 			gettingStories: "Se caută poveşti create cu versiuni mai vechi ale aplicaţiilor noastre, care trebuie actualizate...",
@@ -120,7 +120,7 @@
 			saveFailed: "Eroare la salvare",
 			numViews: "Vizualizări: {{NUM_VIEWS}}",
 			editStory: "Editare poveste",
-			viewLive: "Ă_View Story____ș",
+			viewLive: "Vizualizare scenariu",
 			preview: "Previzualizare",
 			deleteButton: "Ştergere",
 			modified: "Modificat la {{DATE}}",
@@ -130,7 +130,7 @@
 			close: "închidere",
 			hide: "ascundere",
 			notAvailableWhenBroken: "Povestea dvs. are problemele de mai jos",
-			cantBeDeleted: "Ă_This story has delete protection enabled. See its item page on ArcGIS to disable_________________________ș.",
+			cantBeDeleted: "Acest scenariu are activată protecţia la ştergere. Consultaţi pagina elementului pe ArcGIS pentru dezactivare.",
 			shareDialog: {
 				title: "Partajaţi povestea cu lumea!",
 				notPublicWarning: "Povestea este partajată cu organizaţia dvs. Doar membrii organizaţiei dvs. vor putea să o vizualizeze.",
@@ -163,7 +163,7 @@
 				save: "Salvare",
 				saved: "Salvat",
 				errorSaving: "Eroare la salvare",
-				tagTip: "Ă_Tip: Tags help people find your story. The more relevant the tags are, the higher the visibility your work will receive_____________________________________ș."
+				tagTip: "Sfat: Etichetele ajută oamenii să găsească scenariul dvs. Cu cât acestea sunt mai relevante, cu atât lucrările dvs. vor fi mai vizibile."
 			},
 			submitToGallery: {
 				gallerySubmission: "Galerie de hărţi informative",
@@ -173,7 +173,7 @@
 				chosenSubjectAlt: "Un {{SUBJECT}} şi câteva etichete",
 				storyMapTopicSubject: "subiect",
 				sharedPublicly: "Partajat public",
-				noBrokenContent: "Ă_No issues____ș",
+				noBrokenContent: "Nicio problemă",
 				nominateToGallery: "Nominalizaţi în galerie",
 				comingSoon: "În curând!",
 				submitted: "Trimis",
@@ -298,8 +298,8 @@
 				subscriptionPublicSuccess: "Conţinutul abonamentului dvs. este acum accesibil publicului"
 			},
 			errors: {
-				publicDisabled: "Ă_Sharing publicly has been disabled by an Administrator_________________ș",
-				orgDisabled: "Ă_Sharing to your organization has been disabled by an Administrator_____________________ș",
+				publicDisabled: "Partajarea cu publicul a fost dezactivată de un Administrator",
+				orgDisabled: "Partajarea cu organizaţia dvs. a fost dezactivată de un Administrator",
 				noMapName: "Nu a putut fi preluat numele hărţii",
 				notPublic: "NU ESTE PUBLIC",
 				inaccessible: "INACCESIBIL",
@@ -352,8 +352,8 @@
 				cantScanThisTypeAlt: "Nu putem să verificăm acest tip de strat tematic",
 				cantScanThisType: "Stratul tematic nu este de un tip pe care putem să îl verificăm",
 				webpageNotScanned: "Paginile web nu sunt verificate pentru a se descoperi problemele",
-				ignoredIssue: "Ă_You have ignored an error on this layer. Reload the page and check this story again to review the error________________________________ș",
-				ignoredIssueBuilder: "Ă_You have ignored an error on this layer. Reload the builder to check this error again___________________________ș"
+				ignoredIssue: "Aţi ignorat o eroare din cadrul acestui strat tematic. Reîncărcaţi pagina şi verificaţi, din nou, acest scenariu pentru a revizui eroarea",
+				ignoredIssueBuilder: "Aţi ignorat o eroare din cadrul acestui strat tematic. Reîncărcaţi aplicația pentru a verifica această eroare, din nou"
 			},
 			scanningErrors: {
 				deletedMap: "Conţinut şters",
@@ -371,9 +371,9 @@
 				inaccessibleWebpage: "Pagini web inaccesibile"
 			},
 			scanningErrorTips: {
-				deletedMapTip: "Ă_Tip: Edit your web map and remove the broken content, or remove the web map from your story_____________________________ș.",
-				inaccessibleMapTip: "Ă_Tip: Edit your web map and remove the broken content, or remove the web map from your story_____________________________ș.",
-				notYoursNotAccessibleTip: "Ă_Tip: Edit your web map and remove the layer, or remove the web map from your story__________________________ș.",
+				deletedMapTip: "Sfat: Editaţi harta web şi eliminaţi conţinutul cu erori sau eliminaţi harta web din scenariul dvs.",
+				inaccessibleMapTip: "Sfat: Editaţi harta web şi eliminaţi conţinutul cu erori sau eliminaţi harta web din scenariul dvs.",
+				notYoursNotAccessibleTip: "Sfat: Editaţi harta web şi eliminaţi stratul tematic sau eliminaţi harta web din scenariul dvs.",
 				serviceOkItemNotTip: "Straturile tematice au fost adăugate ca elemente care sunt inaccesibile sau au fost şterse. Straturile tematice funcţionează, dar acest lucru poate afecta harta dvs. (ferestre pop-up, simbolistică).",
 				ignore: "Ignorare",
 				fix: "Fixare",
@@ -459,13 +459,13 @@
 				thirdTitle: "hărţi"
 			},
 			crowdsource: {
-				firstTitle: "Ă_contributions_____ș",
-				secondTitle: "Ă_style___ș",
-				secondValueA: "Ă_side panel____ș",
-				secondValueB: "Ă_stacked___ș",
-				thirdTitle: "Ă_basemap___ș",
-				thirdValueLoading: "Ă_Loading____ș...",
-				thirdValueUnknown: "Ă_unknown___ș"
+				firstTitle: "contribuţii",
+				secondTitle: "stil",
+				secondValueA: "panou lateral",
+				secondValueB: "suprapuse",
+				thirdTitle: "hartă fundal",
+				thirdValueLoading: "Se încarcă...",
+				thirdValueUnknown: "necunoscută"
 			}
 		},
 		progress: {
@@ -482,9 +482,9 @@
 			storiesWithIssues: "Poveşti cu probleme: {{NUM_STORIES}}"
 		},
 		newStories: {
-			newStoriesFound: "Ă_Looks like you have created a new story_____________ș.",
-			includeStories: "Ă_Refresh Stories______ș",
-			notWhileScanning: "Ă_This will be available when the check is complete________________ș"
+			newStoriesFound: "Aţi creat un scenariu nou.",
+			includeStories: "Reîmprospătare scenarii",
+			notWhileScanning: "Acesta va fi disponibil când verificarea este finalizată"
 		}
     })
 );

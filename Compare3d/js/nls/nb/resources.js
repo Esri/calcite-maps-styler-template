@@ -17,11 +17,11 @@
 define(
    ({
     scene: {
-      error: "å_Unable to create scene________ø"
+      error: "Kan ikke opprette scenen"
     },
     tools: {
-      linkLabel: "å_Link Views____ø",
-      unlinkLabel: "å_Unlink Views_____ø"
+      linkLabel: "Koble sammen visninger",
+      unlinkLabel: "Opphev kobling for visninger"
     }
   })
 );

@@ -17,14 +17,14 @@
 define(
    ({
     scene: {
-      error: "بيت_Unable to create scene________لاحقة"
+      error: "يتعذر إنشاء المشهد"
     },
     panel: {
-      noslides: "بيت_No slides in web scene________لاحقة"
+      noslides: "لا توجد شرائح في مشهد الويب"
     },
     tooltips: {
-      play: "بيت_Play-Pause____لاحقة",
-      toggle: "بيت_Toggle___لاحقة"
+      play: "تشغيل - إيقاف مؤقت",
+      toggle: "تبديل"
     }
   })
 );

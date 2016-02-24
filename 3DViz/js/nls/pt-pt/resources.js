@@ -17,14 +17,14 @@
 define(
    ({
     scene: {
-      error: "ã_Unable to create scene________Ç"
+      error: "Incapaz de criar cena"
     },
     panel: {
-      noslides: "ã_No slides in web scene________Ç"
+      noslides: "Sem slides na cena web"
     },
     tooltips: {
-      play: "ã_Play-Pause____Ç",
-      toggle: "ã_Toggle___Ç"
+      play: "Play-Pausa",
+      toggle: "Toggle"
     }
   })
 );

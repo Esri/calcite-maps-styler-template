@@ -41,7 +41,7 @@
 		},
 		cantFindStories: {
 			whereAreStories: "Không thấy câu chuyện của bạn?",
-			notSeeExplanation: "Đ_My Stories will only list story maps hosted in ArcGIS and created with the {{STORY_MAP_TOUR}}, {{JOURNAL}}, {{MAP_SERIES}} or {{SWIPE_SPYGLASS}} applications. See our {{FAQ}} for more information____________________________________________________________ớ.",
+			notSeeExplanation: "Câu chuyện Của tôi sẽ chỉ liệt kê các story map được lưu trữ trong ArcGIS và được tạo bằng ứng dụng {{STORY_MAP_TOUR}}, {{JOURNAL}}, {{MAP_SERIES}} hoặc {{SWIPE_SPYGLASS}}. Hãy xem {{FAQ}} của chúng tôi để biết thêm thông tin.",
 			faq: "Câu hỏi thường gặp",
 			followingStoriesToUpdate: "Các câu chuyện sau được tạo bằng các ứng dung phiên bản cũ của chúng tôi, vì vậy cần được cập nhật để các câu chuyện được liệt kê trong Câu chuyện Của tôi:",
 			gettingStories: "Tìm kiếm câu chuyện được tạo bằng phiên bản cũ hơn của các ứng dụng của chúng tôi cần được cập nhật...",
@@ -120,7 +120,7 @@
 			saveFailed: "Lỗi trong khi lưu",
 			numViews: "Xem: {{NUM_VIEWS}}",
 			editStory: "Sửa Câu chuyện",
-			viewLive: "Đ_View Story____ớ",
+			viewLive: "Xem Câu chuyện",
 			preview: "Xem trước",
 			deleteButton: "Xóa",
 			modified: "Sửa đổi {{DATE}}",
@@ -130,7 +130,7 @@
 			close: "đóng",
 			hide: "ẩn",
 			notAvailableWhenBroken: "Câu chuyện của bạn có các sự cố bên dưới",
-			cantBeDeleted: "Đ_This story has delete protection enabled. See its item page on ArcGIS to disable_________________________ớ.",
+			cantBeDeleted: "Câu chuyện này đã được kích hoạt bảo vệ chống xóa. Hãy xem trang mục của câu chuyện trên ArcGIS Online để tắt.",
 			shareDialog: {
 				title: "Chia sẻ câu chuyện của bạn với thế giới!",
 				notPublicWarning: "Câu chuyện của bạn được chia sẻ với tổ chức của bạn. Chỉ các thành viên tổ chức của bạn mới có thể xem.",
@@ -163,7 +163,7 @@
 				save: "Lưu",
 				saved: "Đã lưu",
 				errorSaving: "Lỗi trong khi lưu",
-				tagTip: "Đ_Tip: Tags help people find your story. The more relevant the tags are, the higher the visibility your work will receive_____________________________________ớ."
+				tagTip: "Mẹo: Từ khóa giúp mọi người tìm câu chuyện của bạn. Các từ khóa càng liên quan thì tác phẩm của bạn càng được biết đến."
 			},
 			submitToGallery: {
 				gallerySubmission: "Story Maps Gallery",
@@ -173,7 +173,7 @@
 				chosenSubjectAlt: "{{SUBJECT}} và một số từ khóa",
 				storyMapTopicSubject: "chủ đề",
 				sharedPublicly: "Được chia sẻ công khai",
-				noBrokenContent: "Đ_No issues____ớ",
+				noBrokenContent: "Không có sự cố",
 				nominateToGallery: "Đề cử vào Thư viện",
 				comingSoon: "Sắp ra mắt!",
 				submitted: "Đã gửi",
@@ -298,8 +298,8 @@
 				subscriptionPublicSuccess: "Nội dung gói đăng ký của bạn hiện đã có thể truy cập công khai"
 			},
 			errors: {
-				publicDisabled: "Đ_Sharing publicly has been disabled by an Administrator_________________ớ",
-				orgDisabled: "Đ_Sharing to your organization has been disabled by an Administrator_____________________ớ",
+				publicDisabled: "Người quản trị đã vô hiệu hóa tính năng chia sẻ công khai",
+				orgDisabled: "Người quản trị đã vô hiệu hóa tính năng chia sẻ đến tổ chức của bạn",
 				noMapName: "Không thể Truy xuất Tên Bản đồ",
 				notPublic: "KHÔNG CÔNG KHAI",
 				inaccessible: "KHÔNG THỂ TRUY CẬP ĐƯỢC",
@@ -352,8 +352,8 @@
 				cantScanThisTypeAlt: "Chúng tôi không thể kiểm tra loại lớp này",
 				cantScanThisType: "Lớp không thuộc loại lớp mà chúng tôi có thể kiểm tra",
 				webpageNotScanned: "Trang web không được kiểm tra để phát hiện sự cố",
-				ignoredIssue: "Đ_You have ignored an error on this layer. Reload the page and check this story again to review the error________________________________ớ",
-				ignoredIssueBuilder: "Đ_You have ignored an error on this layer. Reload the builder to check this error again___________________________ớ"
+				ignoredIssue: "Bạn đã bỏ qua một lỗi trong lớp này. Hãy tải lại trang và kiểm tra lại câu chuyện này để xem xét lỗi đó",
+				ignoredIssueBuilder: "Bạn đã bỏ qua một lỗi trong lớp này. Hãy tải lại bộ thiết lập để kiểm tra lại lỗi đó"
 			},
 			scanningErrors: {
 				deletedMap: "Nội dung đã bị xóa",
@@ -371,9 +371,9 @@
 				inaccessibleWebpage: "Trang web không thể truy cập"
 			},
 			scanningErrorTips: {
-				deletedMapTip: "Đ_Tip: Edit your web map and remove the broken content, or remove the web map from your story_____________________________ớ.",
-				inaccessibleMapTip: "Đ_Tip: Edit your web map and remove the broken content, or remove the web map from your story_____________________________ớ.",
-				notYoursNotAccessibleTip: "Đ_Tip: Edit your web map and remove the layer, or remove the web map from your story__________________________ớ.",
+				deletedMapTip: "Mẹo: Hãy chỉnh sửa bản đồ web của bạn và gỡ bỏ nội dung bị hư, hoặc gỡ bỏ bản đồ web khỏi câu chuyện của bạn.",
+				inaccessibleMapTip: "Mẹo: Hãy chỉnh sửa bản đồ web của bạn và gỡ bỏ nội dung bị hư, hoặc gỡ bỏ bản đồ web khỏi câu chuyện của bạn.",
+				notYoursNotAccessibleTip: "Mẹo: Hãy chỉnh sửa bản đồ web của bạn và gỡ bỏ lớp, hoặc gỡ bỏ bản đồ web khỏi câu chuyện của bạn.",
 				serviceOkItemNotTip: "Lớp được thêm làm mục không thể truy cập hoặc bị xóa. Các lớp vẫn hoạt động nhưng điều này có thể ảnh hưởng bản đồ của bạn (popup, ký hiệu hóa).",
 				ignore: "Bỏ qua",
 				fix: "Sửa",
@@ -459,13 +459,13 @@
 				thirdTitle: "bản đồ"
 			},
 			crowdsource: {
-				firstTitle: "Đ_contributions_____ớ",
-				secondTitle: "Đ_style___ớ",
-				secondValueA: "Đ_side panel____ớ",
-				secondValueB: "Đ_stacked___ớ",
-				thirdTitle: "Đ_basemap___ớ",
-				thirdValueLoading: "Đ_Loading____ớ...",
-				thirdValueUnknown: "Đ_unknown___ớ"
+				firstTitle: "đóng góp",
+				secondTitle: "kiểu",
+				secondValueA: "bảng điều khiển bên",
+				secondValueB: "đã xếp chồng",
+				thirdTitle: "bản đồ nền",
+				thirdValueLoading: "Đang tải...",
+				thirdValueUnknown: "không xác định"
 			}
 		},
 		progress: {
@@ -482,9 +482,9 @@
 			storiesWithIssues: "Câu chuyện có sự cố: {{NUM_STORIES}}"
 		},
 		newStories: {
-			newStoriesFound: "Đ_Looks like you have created a new story_____________ớ.",
-			includeStories: "Đ_Refresh Stories______ớ",
-			notWhileScanning: "Đ_This will be available when the check is complete________________ớ"
+			newStoriesFound: "Có vẻ như bạn đã tạo một câu chuyện mới.",
+			includeStories: "Làm mới Câu chuyện",
+			notWhileScanning: "Tính năng này sẽ khả dụng khi kiểm tra hoàn thành"
 		}
     })
 );

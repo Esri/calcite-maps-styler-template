@@ -41,7 +41,7 @@
 		},
 		cantFindStories: {
 			whereAreStories: "Ihre Story wird nicht angezeigt?",
-			notSeeExplanation: "ä_My Stories will only list story maps hosted in ArcGIS and created with the {{STORY_MAP_TOUR}}, {{JOURNAL}}, {{MAP_SERIES}} or {{SWIPE_SPYGLASS}} applications. See our {{FAQ}} for more information____________________________________________________________Ü.",
+			notSeeExplanation: "Unter \"My Stories\" werden nur in ArcGIS gehostete Story Maps aufgeführt, die mit den Anwendungen {{STORY_MAP_TOUR}}, {{JOURNAL}}, {{MAP_SERIES}} oder {{SWIPE_SPYGLASS}} erstellt wurden. Weitere Informationen finden Sie in unseren {{FAQ}}.",
 			faq: "FAQ",
 			followingStoriesToUpdate: "Die folgenden Storys, die mit früheren Versionen unserer Anwendungen erstellt wurden, müssen aktualisiert werden, damit sie in \"My Stories\" aufgeführt werden:",
 			gettingStories: "Es wird nach Storys gesucht, die mit früheren Versionen unserer Anwendungen erstellt wurden und aktualisiert werden müssen...",
@@ -120,7 +120,7 @@
 			saveFailed: "Fehler beim Speichern",
 			numViews: "Aufrufe: {{NUM_VIEWS}}",
 			editStory: "Story bearbeiten",
-			viewLive: "ä_View Story____Ü",
+			viewLive: "Story anzeigen",
 			preview: "Vorschau",
 			deleteButton: "Löschen",
 			modified: "Geändert am {{DATE}}",
@@ -130,7 +130,7 @@
 			close: "Schließen",
 			hide: "Ausblenden",
 			notAvailableWhenBroken: "Ihre Story weist folgende Probleme auf",
-			cantBeDeleted: "ä_This story has delete protection enabled. See its item page on ArcGIS to disable_________________________Ü.",
+			cantBeDeleted: "Für diese Story ist der Löschschutz aktiviert. Rufen Sie die zugehörige Elementseite in ArcGIS auf, um ihn zu deaktivieren.",
 			shareDialog: {
 				title: "Geben Sie Ihre Story für ein weltweites Publikum frei!",
 				notPublicWarning: "Sie haben Ihre Story für Ihre Organisation freigegeben. Nur Mitglieder Ihrer Organisation können sie anzeigen.",
@@ -163,7 +163,7 @@
 				save: "Speichern",
 				saved: "Gespeichert",
 				errorSaving: "Fehler beim Speichern",
-				tagTip: "ä_Tip: Tags help people find your story. The more relevant the tags are, the higher the visibility your work will receive_____________________________________Ü."
+				tagTip: "Tipp: Tags ermöglichen die Suche nach Ihrer Story. Je aussagekräftiger die Tags sind, desto mehr Aufmerksamkeit ist Ihrer Arbeit gewiss."
 			},
 			submitToGallery: {
 				gallerySubmission: "Story Maps-Galerie",
@@ -173,7 +173,7 @@
 				chosenSubjectAlt: "ein {{SUBJECT}} und mind. 1 Tag",
 				storyMapTopicSubject: "Thema",
 				sharedPublicly: "öffentlich freigegeben",
-				noBrokenContent: "ä_No issues____Ü",
+				noBrokenContent: "Keine Probleme",
 				nominateToGallery: "Für die Galerie nominieren",
 				comingSoon: "In Kürze verfügbar!",
 				submitted: "Übergeben",
@@ -298,8 +298,8 @@
 				subscriptionPublicSuccess: "Ihr Subskriptionsinhalt ist nun öffentlich zugänglich"
 			},
 			errors: {
-				publicDisabled: "ä_Sharing publicly has been disabled by an Administrator_________________Ü",
-				orgDisabled: "ä_Sharing to your organization has been disabled by an Administrator_____________________Ü",
+				publicDisabled: "Die öffentliche Freigabe wurde von einem Administrator deaktiviert",
+				orgDisabled: "Die Freigabe für Ihre Organisation wurde von einem Administrator deaktiviert",
 				noMapName: "Kartenname konnte nicht abgerufen werden",
 				notPublic: "NICHT ÖFFENTLICH",
 				inaccessible: "ZUGRIFF NICHT MÖGLICH",
@@ -352,8 +352,8 @@
 				cantScanThisTypeAlt: "Dieser Layer-Typ kann nicht überprüft werden.",
 				cantScanThisType: "Der Layer ist ein Layer-Typ, der nicht überprüft werden kann.",
 				webpageNotScanned: "Webseiten werden nicht auf Probleme überprüft.",
-				ignoredIssue: "ä_You have ignored an error on this layer. Reload the page and check this story again to review the error________________________________Ü",
-				ignoredIssueBuilder: "ä_You have ignored an error on this layer. Reload the builder to check this error again___________________________Ü"
+				ignoredIssue: "Sie haben einen Fehler in diesem Layer ignoriert. Laden Sie die Seite erneut, und überprüfen Sie diese Story noch einmal, um den Fehler wieder anzuzeigen.",
+				ignoredIssueBuilder: "Sie haben einen Fehler in diesem Layer ignoriert. Laden Sie den Builder erneut, um den Fehler erneut zu überprüfen."
 			},
 			scanningErrors: {
 				deletedMap: "Gelöschter Inhalt",
@@ -371,9 +371,9 @@
 				inaccessibleWebpage: "Nicht zugängliche Webseiten"
 			},
 			scanningErrorTips: {
-				deletedMapTip: "ä_Tip: Edit your web map and remove the broken content, or remove the web map from your story_____________________________Ü.",
-				inaccessibleMapTip: "ä_Tip: Edit your web map and remove the broken content, or remove the web map from your story_____________________________Ü.",
-				notYoursNotAccessibleTip: "ä_Tip: Edit your web map and remove the layer, or remove the web map from your story__________________________Ü.",
+				deletedMapTip: "Tipp: Bearbeiten Sie Ihre Webkarte und entfernen Sie den fehlerhaften Inhalt, oder entfernen Sie die Webkarte aus Ihrer Story.",
+				inaccessibleMapTip: "Tipp: Bearbeiten Sie Ihre Webkarte und entfernen Sie den fehlerhaften Inhalt, oder entfernen Sie die Webkarte aus Ihrer Story.",
+				notYoursNotAccessibleTip: "Tipp: Bearbeiten Sie Ihre Webkarte und entfernen Sie den Layer, oder entfernen Sie die Webkarte aus Ihrer Story.",
 				serviceOkItemNotTip: "Es wurden Layer als Elemente hinzugefügt, die entweder gelöscht wurden oder auf die nicht zugegriffen werden kann. Zwar funktionieren die Layer, doch kann sich dies auf Ihre Karte auswirken (Pop-ups, Symbolisierung).",
 				ignore: "Ignorieren",
 				fix: "Fix",
@@ -459,13 +459,13 @@
 				thirdTitle: "Karten"
 			},
 			crowdsource: {
-				firstTitle: "ä_contributions_____Ü",
-				secondTitle: "ä_style___Ü",
-				secondValueA: "ä_side panel____Ü",
-				secondValueB: "ä_stacked___Ü",
-				thirdTitle: "ä_basemap___Ü",
-				thirdValueLoading: "ä_Loading____Ü...",
-				thirdValueUnknown: "ä_unknown___Ü"
+				firstTitle: "Beiträge",
+				secondTitle: "Style",
+				secondValueA: "Seitenfenster",
+				secondValueB: "Gestapelt",
+				thirdTitle: "Grundkarte",
+				thirdValueLoading: "Wird geladen...",
+				thirdValueUnknown: "Unbekannt"
 			}
 		},
 		progress: {
@@ -482,9 +482,9 @@
 			storiesWithIssues: "Storys mit Problemen: {{NUM_STORIES}}"
 		},
 		newStories: {
-			newStoriesFound: "ä_Looks like you have created a new story_____________Ü.",
-			includeStories: "ä_Refresh Stories______Ü",
-			notWhileScanning: "ä_This will be available when the check is complete________________Ü"
+			newStoriesFound: "Sie haben offenbar eine neue Story erstellt.",
+			includeStories: "Storys aktualisieren",
+			notWhileScanning: "Dies ist nach Abschluss der Überprüfung verfügbar"
 		}
     })
 );

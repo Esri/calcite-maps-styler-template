@@ -19,7 +19,7 @@
 				create: "Utwórz",
 				yes: "Tak",
 				no: "Nie",
-				mystories: "ł_My Stories____ą"
+				mystories: "Moje narracje"
 			},
 			inlineFieldEdit: {
 				editMe: "Edytuj!"
@@ -31,10 +31,10 @@
 				buttonShare: "Udostępnij",
 				buttonSettings: "Ustawienia",
 				buttonHelp: "Pomoc",
-				buttonPreview: "ł_View story____ą",
+				buttonPreview: "Wyświetl narrację",
 				tooltipFirstSave: "Z tego elementu można skorzystać dopiero po zapisaniu.",
 				tooltipNotShared: "Z tego elementu można skorzystać dopiero po udostępnieniu.",
-				tooltipNotShared2: "ł_Your story isn't shared, only you can access it_______________ą.",
+				tooltipNotShared2: "Twoja narracja nie jest udostępniana, tylko Ty masz do niej dostęp.",
 				noPendingChange: "Brak oczekujących zmian",
 				unSavedChangePlural: "Oczekujące zmiany",
 				closeWithPendingChange: "Czy na pewno chcesz potwierdzić tę operację? Zmiany zostaną utracone.",
@@ -55,20 +55,20 @@
 				btnOk: "Edytuj tytuł narracji"
 			},
 			saveErrorSocial: {
-				title: "ł_Social media sharing update_________ą",
-				panel1: "ł_Your storyâ€™s appearance on social media has been improved, but your ArcGIS web application item title is not the same as your story title___________________________________________ą.",
-				panel1tooltip: "ł_By defining a title, summary and thumbnail image, your story will look like this_________________________ą:",
-				panel2:	"ł_Which title would you like to use on social media________________ą:",
-				panel2q1: "ł_Story title (recommended)_________ą",
-				panel2q1tooltip: "ł_By choosing this option, your item title will be modified to match your story title and further changes in the builder will be synchronized___________________________________________ą.",
-				panel2q2: "ł_Item title____ą",
-				panel3: "ł_To further improve how your story looks on social media use ${MYSTORIES} to add a summary and a thumbnail image___________________________________ą.",
-				panel4: "ł_Do not warn me again for this story____________ą"
+				title: "Udostępnianie aktualizacji w serwisach społecznościowych",
+				panel1: "Wygląd narracji w serwisach społecznościowych został poprawiony, ale tytuł elementu aplikacji internetowej ArcGIS jest inny niż tytuł narracji.",
+				panel1tooltip: "Po zdefiniowaniu tytułu, podsumowania i obrazu miniatury, narracja będzie wyglądała następująco:",
+				panel2:	"Którego tytułu chcesz używać w serwisach społecznościowych:",
+				panel2q1: "Tytuł narracji (zalecane)",
+				panel2q1tooltip: "Po wybraniu tej opcji tytuł elementu zostanie zmodyfikowany zgodnie z tytułem narracji, a dodatkowe zmiany w kreatorze zostaną zsynchronizowane.",
+				panel2q2: "Tytuł elementu",
+				panel3: "Aby dodatkowo poprawić wygląd narracji w serwisach społecznościowych, użyj karty ${MYSTORIES} w celu dodania podsumowania i obrazu miniatury.",
+				panel4: "Nie ostrzegaj ponownie dla tej narracji"
 			},
 			share: {
 				shareTitle: "Udostępnij narrację",
 				preview: "Zobacz podgląd",
-				viewlive: "ł_View story____ą",
+				viewlive: "Wyświetl narrację",
 				btnPrivate: "Prywatny",
 				btnPrivateTooltip: "Tylko Ty widzisz narrację",
 				btnOrg: "Instytucja",
@@ -87,27 +87,27 @@
 				notavailable2: "Przykro nam, ale z poziomu Kreatora nie można udostępnić narracji w tej wersji witryny Portal for ArcGIS (wymagana jest wersja 10.4 lub nowsza).",
 				notavailable3: "Można udostępnić narrację tutaj: %LINK%.",
 				notavailable4: "Moje narracje",
-				notavailable5: "ł_its item page_____ą",
+				notavailable5: "to jest strona elementu",
 				notavailable6: "Przykro nam, ale ta funkcja nie jest obsługiwana w trybie deweloperskim. W zależności od planu wdrożenia ta funkcja może być obsługiwana po jej wdrożeniu.",
 				notavailable7: "Sprawdź na karcie %MYCONTENT%, czy mapy i warstwy wykorzystane w narracji zostały również udostępnione.",
 				notavailable8: "Moje zasoby",
-				mystoriesinvite2: "ł_To improve how your story looks on social networks use ${MYSTORIES} to add a summary and a thumbnail image_________________________________ą."
+				mystoriesinvite2: "Aby poprawić wygląd narracji w sieciach społecznościowych, użyj karty ${MYSTORIES} w celu dodania podsumowania i obrazu miniatury."
 			},
 			settings: {
 				header: "Ustawienia",
 				tabError: "Sprawdź, czy poszczególne karty nie zawierają błędnych danych"
 			},
 			settingsLayout: {
-				title: "ł_Layout___ą",
+				title: "Kompozycja",
 				explain: "Jakiego układu chcesz użyć?",
 				explainInit: "W oknie dialogowym ustawień możesz zmienić układ w dowolnej chwili.",
 				viewExample: "Wyświetl przykład online"
 			},
 			settingsTheme: {
-				title: "ł_Theme___ą"
+				title: "Motyw"
 			},
 			settingsHeader: {
-				title: "ł_Header___ą",
+				title: "Nagłówek",
 				logoEsri: "Logo firmy Esri",
 				logoNone: "Brak logo",
 				logoCustom: "Logo niestandardowe",
@@ -119,7 +119,7 @@
 				lblSmallHeader: "Użyj nagłówka kompaktowego (bez podtytułu)"
 			},
 			header: {
-				title: "ł_Edit the title of your %TPL_NAME%___________ą",
+				title: "Zmień tytuł swojej aplikacji %TPL_NAME%",
 				subtitle: "Zmień podtytuł swojej aplikacji %TPL_NAME%"
 			}
 		}

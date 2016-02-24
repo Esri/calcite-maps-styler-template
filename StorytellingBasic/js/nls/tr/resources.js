@@ -21,12 +21,12 @@ define(
       generalError: "Hata"
     },
     social:{
-        facebook: "ı_Share on Facebook______İ",
-        twitter: "ı_Share on Twitter______İ",
-        link: "ı_Share link____İ"
+        facebook: "Facebook\'ta Paylaş",
+        twitter: "Twitter\'da Paylaş",
+        link: "Bağlantıyı paylaş"
     },
     legendToggle:{
-        label: "ı_LEGEND___İ"
+        label: "GÖSTERİM"
     }
   })
 );

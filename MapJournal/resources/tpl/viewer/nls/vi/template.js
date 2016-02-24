@@ -22,21 +22,21 @@
 				boxTitle: "Đã xảy ra lỗi",
 				invalidConfig: "Cấu hình không hợp lệ",
 				invalidConfigNoApp: "Định danh Ứng dụng Lập bản đồ Web không được chỉ định trong index.html.",
-				invalidConfigNoAppDev: "Đ_No Web Mapping Application identifier is specified in URL parameters (?appid=). In development mode, the appid configuration in index.html is ignored______________________________________________ớ.",
+				invalidConfigNoAppDev: "Không có mã định danh Ứng dụng Thành lập bản đồ Web được xác định trong thông số URL (?appid=). Trong chế độ phát triển, cấu hình id ứng dụng trong index.html bị bỏ qua.",
 				unspecifiedConfigOwner: "Chủ sở hữu được ủy quyền chưa được cấu hình.",
 				invalidConfigOwner: "Chủ sở hữu câu chuyện chưa được ủy quyền.",
 				createMap: "Không thể tạo bản đồ",
 				invalidApp: "%TPL_NAME% không tồn tại hoặc không thể truy cập được.",
 				appLoadingFail: "Đã xảy ra sự cố, %TPL_NAME% không tải đúng.",
 				notConfiguredDesktop: "Câu chuyện chưa được cấu hình.",
-				notConfiguredMobile: "Đ_The %TPL_NAME% builder is not supported at this display size. If possible, resize your browser to access the builder or please build your story on a device with a larger screen______________________________________________________ớ.",
-				notConfiguredMobile2: "Đ_Please rotate your device to landscape orientation to use the %TPL_NAME% builder_________________________ớ.",
+				notConfiguredMobile: "Bộ thiết lập %TPL_NAME% không được hỗ trợ với kích cỡ hiển thị này. Nếu có thể, hãy thay đổi kích cỡ trình duyệt của bạn để truy cập bộ thiết lập hoặc vui lòng thiết lập câu chuyện của bạn trên thiết bị có màn hình lớn hơn.",
+				notConfiguredMobile2: "Vui lòng xoay thiết bị của bạn theo hướng ngang để sử dụng bộ thiết lập %TPL_NAME%.",
 				notAuthorized: "Bạn không được phép truy cập vào câu chuyện này",
-				notAuthorizedBuilder: "Đ_You are not authorized to use %TPL_NAME% builder________________ớ.",
+				notAuthorizedBuilder: "Bạn không có quyền sử dụng bộ thiết lập %TPL_NAME%.",
 				noBuilderIE: "Bộ thiết lập không được hỗ trợ trên Internet Explorer trước phiên bản %VERSION%. %UPGRADE%",
 				noViewerIE: "Câu chuyện này không được hỗ trợ trong Internet Explorer trước phiên bản %VERSION%. %UPGRADE%",
 				upgradeBrowser: "<a href='http://browsehappy.com/' target='_blank'>Vui lòng cập nhật trình duyệt của bạn</a>.",
-				mapLoadingFail: "Đ_Something went wrong, the map did not load correctly_________________ớ.",
+				mapLoadingFail: "Đã xảy ra lỗi, bản đồ không tải đúng.",
 				signOut: "Đăng xuất"
 			},
 			mobileView: {
@@ -67,8 +67,8 @@
 				checking: "Kiểm tra nội dung câu chuyện của bạn",
 				fix: "Khắc phục sự cố trong câu chuyện của bạn",
 				noerrors: "Không phát hiện sự cố",
-				tooltipAutoplayDisabled: "Đ_This isn't available in autoplay mode____________ớ",
-				notshared: "Đ_Story not shared______ớ"
+				tooltipAutoplayDisabled: "Tính năng này không khả dụng trong chế độ phát tự động",
+				notshared: "Câu chuyện không được chia sẻ"
 			},
 			overviewFromCommon: {
 				title: "Bản đồ Toàn cảnh"
@@ -83,10 +83,10 @@
 				embed: "Nhúng vào trang web",
 				embedExplain: "Sử dụng mã HTML sau để nhúng bài viết vào một trang web.",
 				size: "Kích thước (chiều rộng/chiều cao):",
-				autoplayLabel: "Đ_Autoplay mode_____ớ",
-				autoplayExplain1: "Đ_Autoplay mode will advance through your story at a regular interval. This is ideal on a kiosk or public display monitor, but be aware that in other situations it may make the story harder to read. This feature isn't supported on small displays__________________________________________________________________________ớ.",
-				autoplayExplain2: "Đ_When this mode is active there are controls to play/pause the story and adjust the navigation speed_______________________________ớ.",
-				linksupdated: "Đ_Links updated_____ớ!"
+				autoplayLabel: "Chế độ phát tự động",
+				autoplayExplain1: "Chế độ phát tự động sẽ chuyển qua câu chuyện của bạn theo khoảng thời gian định kỳ. Đây là tính năng lý tưởng đối với màn hình hiển thị nơi công cộng hoặc của ki-ốt, tuy nhiên, hãy lưu ý rằng trong các trường hợp khác, câu chuyện có thể trở nên khó đọc hơn. Tính năng này không được hỗ trợ trên các màn hình hiển thị nhỏ.",
+				autoplayExplain2: "Khi chế độ này được kích hoạt, có các nút điều khiển để phát/tạm dừng câu chuyện và điều chỉnh tốc độ điều hướng.",
+				linksupdated: "Liên kết đã được cập nhật!"
 			}
         }
     })

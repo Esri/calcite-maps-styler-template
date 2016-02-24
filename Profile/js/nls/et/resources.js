@@ -20,7 +20,7 @@ define(
       error: "Kaarti ei saa luua"
     },
     nav: {
-        "close": "Š_Close___ä"
+        "close": "Sule"
     },
     elevation: {
         toggle: "Lülita kõrgusprofiili graafik sisse/välja.",

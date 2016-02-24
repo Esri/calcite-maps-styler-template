@@ -17,14 +17,14 @@
 define(
    ({
     scene: {
-      error: "试_Unable to create scene________验"
+      error: "无法创建场景"
     },
     panel: {
-      noslides: "试_No slides in web scene________验"
+      noslides: "web 场景中无幻灯片"
     },
     tooltips: {
-      play: "试_Play-Pause____验",
-      toggle: "试_Toggle___验"
+      play: "播放 - 暂停",
+      toggle: "切换"
     }
   })
 );

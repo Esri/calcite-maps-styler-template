@@ -20,7 +20,7 @@ define(
       error: "Žemėlapio sukurti nepavyko"
     },
     nav: {
-        "close": "Į_Close___š"
+        "close": "Uždaryti"
     },
     elevation: {
         toggle: "Perjungti aukščio profilio diagramą.",

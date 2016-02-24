@@ -41,7 +41,7 @@
 		},
 		cantFindStories: {
 			whereAreStories: "Nevidíte svůj příběh?",
-			notSeeExplanation: "Ř_My Stories will only list story maps hosted in ArcGIS and created with the {{STORY_MAP_TOUR}}, {{JOURNAL}}, {{MAP_SERIES}} or {{SWIPE_SPYGLASS}} applications. See our {{FAQ}} for more information____________________________________________________________ů.",
+			notSeeExplanation: "Sekce Moje příběhy zobrazuje pouze mapy s příběhem hostované v systému ArcGIS a vytvořené pomocí aplikací {{STORY_MAP_TOUR}}, {{JOURNAL}}, {{MAP_SERIES}} nebo {{SWIPE_SPYGLASS}}. Pro další informace viz {{FAQ}}.",
 			faq: "Často kladené dotazy",
 			followingStoriesToUpdate: "Následující příběhy vytvořené dřívějšími verzemi našich aplikací je třeba aktualizovat, aby byly uvedeny v sekci Moje příběhy:",
 			gettingStories: "Probíhá vyhledávání příběhů vytvořených dřívějšími verzemi našich aplikací, které je třeba aktualizovat...",
@@ -120,7 +120,7 @@
 			saveFailed: "Chyba při ukládání",
 			numViews: "Zobrazení: {{NUM_VIEWS}}",
 			editStory: "Upravit příběh",
-			viewLive: "Ř_View Story____ů",
+			viewLive: "Zobrazit příběh",
 			preview: "Náhled",
 			deleteButton: "Smazat",
 			modified: "Změněno dne {{DATE}}",
@@ -130,7 +130,7 @@
 			close: "zavřít",
 			hide: "skrýt",
 			notAvailableWhenBroken: "Váš příběh má níže uvedené problémy",
-			cantBeDeleted: "Ř_This story has delete protection enabled. See its item page on ArcGIS to disable_________________________ů.",
+			cantBeDeleted: "Tento příběh je chráněn proti smazání, pro deaktivaci zámku jděte na stránku položky v systému ArcGIS.",
 			shareDialog: {
 				title: "Sdílejte svůj příběh se světem!",
 				notPublicWarning: "Váš příběh je sdílen s vaší organizací. Mohou ho zobrazit pouze členové vaší organizace.",
@@ -163,7 +163,7 @@
 				save: "Uložit",
 				saved: "Uloženo",
 				errorSaving: "Chyba při ukládání",
-				tagTip: "Ř_Tip: Tags help people find your story. The more relevant the tags are, the higher the visibility your work will receive_____________________________________ů."
+				tagTip: "Tip: Klíčová slova pomáhají lidem najít váš příběh v ArcGIS Online. Čím jsou klíčová slova relevantnější, tím bude mít váš výtvor vyšší viditelnost."
 			},
 			submitToGallery: {
 				gallerySubmission: "Galerie map s příběhem",
@@ -173,7 +173,7 @@
 				chosenSubjectAlt: "{{SUBJECT}} a klíčová slova",
 				storyMapTopicSubject: "předmět",
 				sharedPublicly: "Sdílen veřejně",
-				noBrokenContent: "Ř_No issues____ů",
+				noBrokenContent: "Žádné problémy",
 				nominateToGallery: "Nominovat do galerie",
 				comingSoon: "Již brzy!",
 				submitted: "Odesláno",
@@ -298,8 +298,8 @@
 				subscriptionPublicSuccess: "Váš předplacený obsah je nyní veřejně přístupný"
 			},
 			errors: {
-				publicDisabled: "Ř_Sharing publicly has been disabled by an Administrator_________________ů",
-				orgDisabled: "Ř_Sharing to your organization has been disabled by an Administrator_____________________ů",
+				publicDisabled: "Veřejné sdílení bylo zakázáno administrátorem",
+				orgDisabled: "Sdílení s vaší organizací bylo zakázáno administrátorem",
 				noMapName: "Nepodařilo se získat název mapy",
 				notPublic: "NEVEŘEJNÉ",
 				inaccessible: "NEPŘÍSTUPNÉ",
@@ -352,8 +352,8 @@
 				cantScanThisTypeAlt: "Nejsme schopni zkontrolovat tento typ vrstvy",
 				cantScanThisType: "Vrstva není typ, který dokážeme zkontrolovat",
 				webpageNotScanned: "Webové stránky nejsou zkontrolovány",
-				ignoredIssue: "Ř_You have ignored an error on this layer. Reload the page and check this story again to review the error________________________________ů",
-				ignoredIssueBuilder: "Ř_You have ignored an error on this layer. Reload the builder to check this error again___________________________ů"
+				ignoredIssue: "Ignorovali jste chybu na této vrstvě. Obnovte stránku, zkontrolujte příběh znovu a přezkoumejte tuto chybu.",
+				ignoredIssueBuilder: "Ignorovali jste chybu na této vrstvě. Obnovte nástroj pro tvorbu a přezkoumejte tuto chybu."
 			},
 			scanningErrors: {
 				deletedMap: "Smazaný obsah",
@@ -371,9 +371,9 @@
 				inaccessibleWebpage: "Nepřístupné webové stránky"
 			},
 			scanningErrorTips: {
-				deletedMapTip: "Ř_Tip: Edit your web map and remove the broken content, or remove the web map from your story_____________________________ů.",
-				inaccessibleMapTip: "Ř_Tip: Edit your web map and remove the broken content, or remove the web map from your story_____________________________ů.",
-				notYoursNotAccessibleTip: "Ř_Tip: Edit your web map and remove the layer, or remove the web map from your story__________________________ů.",
+				deletedMapTip: "Tip: Upravte svou webovou mapu a odstraňte rozbitý obsah nebo webovou mapu odstraňte ze svého příběhu.",
+				inaccessibleMapTip: "Tip: Upravte svou webovou mapu a odstraňte rozbitý obsah nebo webovou mapu odstraňte ze svého příběhu.",
+				notYoursNotAccessibleTip: "Tip: Upravte svou webovou mapu a odstraňte vrstvu nebo webovou mapu odstraňte ze svého příběhu.",
 				serviceOkItemNotTip: "Vrstvy byly přidány jako položky, které jsou nepřístupné nebo odstraněné. Vrstvy fungují, ale vaše mapa může být ovlivněna (vyskakovací okna, symboly).",
 				ignore: "Ignorovat",
 				fix: "Opravit",
@@ -459,13 +459,13 @@
 				thirdTitle: "mapy"
 			},
 			crowdsource: {
-				firstTitle: "Ř_contributions_____ů",
-				secondTitle: "Ř_style___ů",
-				secondValueA: "Ř_side panel____ů",
-				secondValueB: "Ř_stacked___ů",
-				thirdTitle: "Ř_basemap___ů",
-				thirdValueLoading: "Ř_Loading____ů...",
-				thirdValueUnknown: "Ř_unknown___ů"
+				firstTitle: "příspěvky",
+				secondTitle: "style",
+				secondValueA: "postranní panel",
+				secondValueB: "skládané",
+				thirdTitle: "podkladová mapa",
+				thirdValueLoading: "Načítání…...",
+				thirdValueUnknown: "neznámý"
 			}
 		},
 		progress: {
@@ -482,9 +482,9 @@
 			storiesWithIssues: "Příběhů s problémy: {{NUM_STORIES}}"
 		},
 		newStories: {
-			newStoriesFound: "Ř_Looks like you have created a new story_____________ů.",
-			includeStories: "Ř_Refresh Stories______ů",
-			notWhileScanning: "Ř_This will be available when the check is complete________________ů"
+			newStoriesFound: "Zdá se, že jste vytvořili nový příběh.",
+			includeStories: "Obnovit příběhy",
+			notWhileScanning: "Bude k dispozici po dokončení kontroly."
 		}
     })
 );

@@ -21,12 +21,12 @@ define(
       generalError: "오류"
     },
     social:{
-        facebook: "한_Share on Facebook______빠",
-        twitter: "한_Share on Twitter______빠",
-        link: "한_Share link____빠"
+        facebook: "Facebook에  공유",
+        twitter: "Twitter에 공유",
+        link: "링크 공유"
     },
     legendToggle:{
-        label: "한_LEGEND___빠"
+        label: "범례"
     }
   })
 );

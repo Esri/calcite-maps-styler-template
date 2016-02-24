@@ -22,21 +22,21 @@
 				boxTitle: "Ein Fehler ist aufgetreten",
 				invalidConfig: "Ungültige Konfiguration",
 				invalidConfigNoApp: "Keine Web Mapping-Anwendungskennung in index.html angegeben.",
-				invalidConfigNoAppDev: "ä_No Web Mapping Application identifier is specified in URL parameters (?appid=). In development mode, the appid configuration in index.html is ignored______________________________________________Ü.",
+				invalidConfigNoAppDev: "In den URL-Parametern (?appid=) ist keine Kennung einer Web Mapping-Anwendung angegeben. Im Entwicklungsmodus wird die appid-Konfiguration in der Datei index.html ignoriert.",
 				unspecifiedConfigOwner: "Autorisierter Besitzer wurde nicht konfiguriert.",
 				invalidConfigOwner: "Besitzer der Story ist nicht autorisiert.",
 				createMap: "Karte kann nicht erstellt werden",
 				invalidApp: "%TPL_NAME% ist nicht vorhanden oder es kann nicht darauf zugegriffen werden.",
 				appLoadingFail: "Ein Fehler ist aufgetreten. %TPL_NAME% wurde nicht korrekt geladen.",
 				notConfiguredDesktop: "Die Story ist noch nicht konfiguriert.",
-				notConfiguredMobile: "ä_The %TPL_NAME% builder is not supported at this display size. If possible, resize your browser to access the builder or please build your story on a device with a larger screen______________________________________________________Ü.",
-				notConfiguredMobile2: "ä_Please rotate your device to landscape orientation to use the %TPL_NAME% builder_________________________Ü.",
+				notConfiguredMobile: "Der %TPL_NAME% Builder wird bei dieser Anzeigegröße nicht unterstützt. Ändern Sie nach Möglichkeit die Browser-Größe, um auf den Builder zuzugreifen, oder erstellen Sie Ihre Story auf einem Gerät mit größerem Bildschirm.",
+				notConfiguredMobile2: "Halten Sie das Gerät im Querformat, wenn Sie den %TPL_NAME% Builder verwenden.",
 				notAuthorized: "Sie sind nicht autorisiert, auf diese Story zuzugreifen.",
-				notAuthorizedBuilder: "ä_You are not authorized to use %TPL_NAME% builder________________Ü.",
+				notAuthorizedBuilder: "Sie sind nicht autorisiert, den %TPL_NAME% Builder zu verwenden.",
 				noBuilderIE: "Der Builder wird von Internet Explorer vor Version %VERSION% nicht unterstützt. %UPGRADE%",
 				noViewerIE: "Diese Story wird von Internet Explorer vor Version %VERSION% nicht unterstützt. %UPGRADE%",
 				upgradeBrowser: "<a href='http://browsehappy.com/' target='_blank'>Aktualisieren Sie Ihren Browser</a>.",
-				mapLoadingFail: "ä_Something went wrong, the map did not load correctly_________________Ü.",
+				mapLoadingFail: "Ein Fehler ist aufgetreten. Die Karte wurde nicht korrekt geladen.",
 				signOut: "Abmelden"
 			},
 			mobileView: {
@@ -67,8 +67,8 @@
 				checking: "Der Inhalt Ihrer Story wird überprüft",
 				fix: "Probleme in der Story beheben",
 				noerrors: "Keine Probleme erkannt",
-				tooltipAutoplayDisabled: "ä_This isn't available in autoplay mode____________Ü",
-				notshared: "ä_Story not shared______Ü"
+				tooltipAutoplayDisabled: "Dies ist im Modus für automatische Wiedergabe nicht verfügbar",
+				notshared: "Story wurde nicht freigegeben"
 			},
 			overviewFromCommon: {
 				title: "Übersichtskarte"
@@ -83,10 +83,10 @@
 				embed: "In Webseite einbetten",
 				embedExplain: "Verwenden Sie den folgenden HTML-Code, um das Journal in eine Webseite einzubetten.",
 				size: "Größe (Breite/Höhe):",
-				autoplayLabel: "ä_Autoplay mode_____Ü",
-				autoplayExplain1: "ä_Autoplay mode will advance through your story at a regular interval. This is ideal on a kiosk or public display monitor, but be aware that in other situations it may make the story harder to read. This feature isn't supported on small displays__________________________________________________________________________Ü.",
-				autoplayExplain2: "ä_When this mode is active there are controls to play/pause the story and adjust the navigation speed_______________________________Ü.",
-				linksupdated: "ä_Links updated_____Ü!"
+				autoplayLabel: "Modus für automatische Wiedergabe",
+				autoplayExplain1: "Im Modus für automatische Wiedergabe wird die Story regelmäßig fortgesetzt. Er ist ideal für Kiosks oder öffentliche Monitore. In anderen Situationen wird dadurch allerdings die Lesbarkeit der Story beeinträchtigt. Dieses Feature wird für kleine Anzeigegrößen nicht unterstützt.",
+				autoplayExplain2: "Ist dieser Modus aktiviert, stehen Steuerelemente für Wiedergabe/Pause der Story und zum Einstellen der Navigationsgeschwindigkeit zur Verfügung.",
+				linksupdated: "Links aktualisiert!"
 			}
         }
     })

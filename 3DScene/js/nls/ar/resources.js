@@ -17,18 +17,18 @@
 define(
    ({
     scene: {
-      error: "بيت_Unable to create scene________لاحقة"
+      error: "يتعذر إنشاء المشهد"
     },
     panel: {
-      noslides: "بيت_No slides in web scene________لاحقة"
+      noslides: "لا توجد شرائح في مشهد الويب"
     },
     tooltips: {
-      layers: "بيت_Layers___لاحقة",
-      basemaps: "بيت_Base maps____لاحقة",
-      slides: "بيت_Slides___لاحقة",
-      close: "بيت_Close___لاحقة",
-      zoom: "بيت_Zoom__لاحقة",
-      onoff: "بيت_On-Off___لاحقة"
+      layers: "طبقات",
+      basemaps: "خرائط أساس",
+      slides: "الشرائح",
+      close: "إغلاق",
+      zoom: "تغيير مقياس الرسم",
+      onoff: "تشغيل - إيقاف"
     }
   })
 );

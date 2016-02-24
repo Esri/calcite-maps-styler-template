@@ -20,7 +20,7 @@ define(
       error: "マップを作成できません"
     },
     nav: {
-        "close": "須_Close___鷗"
+        "close": "閉じる"
     },
     elevation: {
         toggle: "標高グラフを切り替えます。",

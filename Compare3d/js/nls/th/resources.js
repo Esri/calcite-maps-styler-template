@@ -17,11 +17,11 @@
 define(
    ({
     scene: {
-      error: "ก้_Unable to create scene________ษฺ"
+      error: "ไม่สามารถสร้างเว็บซีน"
     },
     tools: {
-      linkLabel: "ก้_Link Views____ษฺ",
-      unlinkLabel: "ก้_Unlink Views_____ษฺ"
+      linkLabel: "วิวเชื่อมกัน",
+      unlinkLabel: "วิวไม่เชื่อมกัน"
     }
   })
 );

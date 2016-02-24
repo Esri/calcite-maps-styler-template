@@ -41,7 +41,7 @@
 		},
 		cantFindStories: {
 			whereAreStories: "Votre récit n\'apparaît pas ?",
-			notSeeExplanation: "æ_My Stories will only list story maps hosted in ArcGIS and created with the {{STORY_MAP_TOUR}}, {{JOURNAL}}, {{MAP_SERIES}} or {{SWIPE_SPYGLASS}} applications. See our {{FAQ}} for more information____________________________________________________________Â.",
+			notSeeExplanation: "Mes récits répertorie uniquement les cartes de narration hébergées dans ArcGIS et créées avec les applications {{STORY_MAP_TOUR}}, {{JOURNAL}}, {{MAP_SERIES}} et {{SWIPE_SPYGLASS}}. Consultez notre {{FAQ}} pour plus d\'informations.",
 			faq: "FAQ",
 			followingStoriesToUpdate: "Les récits suivants, créés avec des versions antérieures de nos applications, doivent être mis à jour pour être répertoriés dans Mes récits cartographiques :",
 			gettingStories: "Recherche de récits créés avec des versions antérieures de nos applications qui doivent être mis à jour...",
@@ -120,7 +120,7 @@
 			saveFailed: "Erreur lors de l’enregistrement",
 			numViews: "Vues : {{NUM_VIEWS}}",
 			editStory: "Mettre à jour le récit",
-			viewLive: "æ_View Story____Â",
+			viewLive: "Afficher le récit",
 			preview: "Aperçu",
 			deleteButton: "Supprimer",
 			modified: "Modifié {{DATE}}",
@@ -130,7 +130,7 @@
 			close: "fermer",
 			hide: "masquer",
 			notAvailableWhenBroken: "Votre récit présente les erreurs suivantes",
-			cantBeDeleted: "æ_This story has delete protection enabled. See its item page on ArcGIS to disable_________________________Â.",
+			cantBeDeleted: "Ce récit est protégé contre les suppressions. Consultez sa page d\'élément dans ArcGIS pour désactiver cette protection.",
 			shareDialog: {
 				title: "Partagez votre récit avec le monde entier !",
 				notPublicWarning: "Votre récit est partagé avec votre organisation. Seuls les membres de votre organisation pourront le consulter.",
@@ -163,7 +163,7 @@
 				save: "Enregistrer",
 				saved: "Enregistré",
 				errorSaving: "Erreur lors de l’enregistrement",
-				tagTip: "æ_Tip: Tags help people find your story. The more relevant the tags are, the higher the visibility your work will receive_____________________________________Â."
+				tagTip: "Astuce : les balises permettent aux autres de retrouver votre récit. Plus les balises sont pertinentes, plus votre travail sera visible."
 			},
 			submitToGallery: {
 				gallerySubmission: "Bibliothèque de Story Maps",
@@ -173,7 +173,7 @@
 				chosenSubjectAlt: "Un {{SUBJECT}} et quelques balises",
 				storyMapTopicSubject: "objet",
 				sharedPublicly: "Partagé publiquement",
-				noBrokenContent: "æ_No issues____Â",
+				noBrokenContent: "Aucune erreur",
 				nominateToGallery: "Placer dans la bibliothèque",
 				comingSoon: "Disponible prochainement !",
 				submitted: "Envoyé",
@@ -298,8 +298,8 @@
 				subscriptionPublicSuccess: "Les contenus liés à votre abonnement sont maintenant accessibles au public."
 			},
 			errors: {
-				publicDisabled: "æ_Sharing publicly has been disabled by an Administrator_________________Â",
-				orgDisabled: "æ_Sharing to your organization has been disabled by an Administrator_____________________Â",
+				publicDisabled: "Le partage public a été désactivé par un administrateur",
+				orgDisabled: "Le partage avec votre organisation a été désactivé par un administrateur",
 				noMapName: "Impossible de récupérer le nom de la carte",
 				notPublic: "NON PUBLIC",
 				inaccessible: "INACCESSIBLE",
@@ -352,8 +352,8 @@
 				cantScanThisTypeAlt: "Nous ne sommes pas en mesure de vérifier ce type de couche",
 				cantScanThisType: "Nous ne pouvons pas vérifier le type de la couche",
 				webpageNotScanned: "La recherche d\'erreurs n\'a pas lieu sur les pages Web",
-				ignoredIssue: "æ_You have ignored an error on this layer. Reload the page and check this story again to review the error________________________________Â",
-				ignoredIssueBuilder: "æ_You have ignored an error on this layer. Reload the builder to check this error again___________________________Â"
+				ignoredIssue: "Vous avez ignoré une erreur sur cette couche. Rechargez la page et consultez à nouveau ce récit pour visualiser l\'erreur",
+				ignoredIssueBuilder: "Vous avez ignoré une erreur sur cette couche. Rechargez le générateur pour consulter à nouveau cette erreur"
 			},
 			scanningErrors: {
 				deletedMap: "Contenu supprimé",
@@ -371,9 +371,9 @@
 				inaccessibleWebpage: "Pages Web inaccessibles"
 			},
 			scanningErrorTips: {
-				deletedMapTip: "æ_Tip: Edit your web map and remove the broken content, or remove the web map from your story_____________________________Â.",
-				inaccessibleMapTip: "æ_Tip: Edit your web map and remove the broken content, or remove the web map from your story_____________________________Â.",
-				notYoursNotAccessibleTip: "æ_Tip: Edit your web map and remove the layer, or remove the web map from your story__________________________Â.",
+				deletedMapTip: "Astuce : modifiez votre carte Web et supprimez le contenu endommagé, ou supprimez la carte Web de votre récit.",
+				inaccessibleMapTip: "Astuce : modifiez votre carte Web et supprimez le contenu endommagé, ou supprimez la carte Web de votre récit.",
+				notYoursNotAccessibleTip: "Astuce : modifiez votre carte Web et supprimez la couche, ou supprimez la carte Web de votre récit.",
 				serviceOkItemNotTip: "Les couches ont été ajoutées en tant qu\'éléments inaccessibles ou supprimés. Les couches sont opérationnelles, mais cela peut affecter votre carte (fenêtres contextuelles, symbologie).",
 				ignore: "Ignorer",
 				fix: "Localisation",
@@ -459,13 +459,13 @@
 				thirdTitle: "cartes"
 			},
 			crowdsource: {
-				firstTitle: "æ_contributions_____Â",
-				secondTitle: "æ_style___Â",
-				secondValueA: "æ_side panel____Â",
-				secondValueB: "æ_stacked___Â",
-				thirdTitle: "æ_basemap___Â",
-				thirdValueLoading: "æ_Loading____Â...",
-				thirdValueUnknown: "æ_unknown___Â"
+				firstTitle: "contributions",
+				secondTitle: "style",
+				secondValueA: "volet latéral",
+				secondValueB: "empilé",
+				thirdTitle: "fond de carte",
+				thirdValueLoading: "Chargement en cours...",
+				thirdValueUnknown: "Inconnu"
 			}
 		},
 		progress: {
@@ -482,9 +482,9 @@
 			storiesWithIssues: "Récits cartographiques présentant des erreurs : {{NUM_STORIES}}"
 		},
 		newStories: {
-			newStoriesFound: "æ_Looks like you have created a new story_____________Â.",
-			includeStories: "æ_Refresh Stories______Â",
-			notWhileScanning: "æ_This will be available when the check is complete________________Â"
+			newStoriesFound: "Il semblerait que vous ayez créé un nouveau récit.",
+			includeStories: "Actualiser les récits",
+			notWhileScanning: "Cette fonctionnalité sera disponible une fois la vérification terminée"
 		}
     })
 );

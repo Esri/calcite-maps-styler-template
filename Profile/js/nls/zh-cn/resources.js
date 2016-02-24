@@ -20,7 +20,7 @@ define(
       error: "无法创建地图"
     },
     nav: {
-        "close": "试_Close___验"
+        "close": "关闭"
     },
     elevation: {
         toggle: "切换 Elevation Profile Chart。",

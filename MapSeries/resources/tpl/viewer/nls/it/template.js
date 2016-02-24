@@ -18,17 +18,17 @@
 				boxTitle: "Si è verificato un errore",
 				invalidConfig: "Configurazione non valida",
 				invalidConfigNoApp: "Identificatore dell\'applicazione di mappatura Web non specificato in index.html.",
-				invalidConfigNoAppDev: "é_No Web Mapping Application identifier is specified in URL parameters (?appid=). In development mode, the appid configuration in index.html is ignored______________________________________________È.",
+				invalidConfigNoAppDev: "Nessun identificatore applicazione mappatura Web specificato nei parametri URL (?appid=). Nella modalità di sviluppo, la configurazione dell\'ID dell\'app in index.html viene ignorata.",
 				unspecifiedConfigOwner: "L\'utente autorizzato non è stato configurato.",
 				invalidConfigOwner: "Il proprietario della storia non è autorizzato.",
 				createMap: "Impossibile creare la mappa",
 				invalidApp: "%TPL_NAME% non esiste o è inaccessibile.",
 				appLoadingFail: "Si è verificato un errore. %TPL_NAME% non è stato caricato correttamente.",
 				notConfiguredDesktop: "La storia non è ancora configurata.",
-				notConfiguredMobile: "é_The %TPL_NAME% builder is not supported at this display size. If possible, resize your browser to access the builder or please build your story on a device with a larger screen______________________________________________________È.",
-				notConfiguredMobile2: "é_Please rotate your device to landscape orientation to use the %TPL_NAME% builder_________________________È.",
+				notConfiguredMobile: "Il generatore %TPL_NAME% non è supportato per queste dimensioni schermo. Se possibile, ridimensionare il browser per accedere al generatore o creare la storia su un dispositivo con uno schermo più grande.",
+				notConfiguredMobile2: "Ruotare il dispositivo nell\'orientamento orizzontale per utilizzare il generatore %TPL_NAME%.",
 				notAuthorized: "Non si è autorizzati ad accedere alla storia.",
-				notAuthorizedBuilder: "é_You are not authorized to use %TPL_NAME% builder________________È.",
+				notAuthorizedBuilder: "L\'utente non è autorizzato ad utilizzare il generatore %TPL_NAME%.",
 				noBuilderIE: "Il generatore non è supportato nelle versioni di Internet Explorer precedenti alla versione %VERSION%. %UPGRADE%.",
 				noViewerIE: "Questa storia non è supportata nelle versioni di Internet Explorer precedenti a %VERSION%. %UPGRADE%.",
 				upgradeBrowser: "<a href='http://browsehappy.com/' target='_blank'>Aggiornare il browser</a>.",
@@ -58,8 +58,8 @@
 				checking: "Verifica del contenuto della storia",
 				fix: "Risolvi problemi nella storia",
 				noerrors: "Nessun problema rilevato",
-				tooltipAutoplayDisabled: "é_This isn't available in autoplay mode____________È",
-				notshared: "é_Story not shared______È"
+				tooltipAutoplayDisabled: "Questo non è disponibile nella modalità di riproduzione automatica",
+				notshared: "Storia non condivisa"
 			},
 			overviewFromCommon: {
 				title: "Mappa d\'insieme"
@@ -74,10 +74,10 @@
 				embed: "Incorpora nella pagina Web",
 				embedExplain: "Utilizzare il codice HTML seguente per incorporare la storia in una pagina Web.",
 				size: "Dimensioni (larghezza/altezza):",
-				autoplayLabel: "é_Autoplay mode_____È",
-				autoplayExplain1: "é_Autoplay mode will advance through your story at a regular interval. This is ideal on a kiosk or public display monitor, but be aware that in other situations it may make the story harder to read. This feature isn't supported on small displays__________________________________________________________________________È.",
-				autoplayExplain2: "é_When this mode is active there are controls to play/pause the story and adjust the navigation speed_______________________________È.",
-				linksupdated: "é_Links updated_____È!"
+				autoplayLabel: "Modalità di riproduzione automatica",
+				autoplayExplain1: "La modalità di riproduzione automatica consente di avanzare nella storia a intervalli regolari. Questa soluzione è ideale in un chiosco o monitor pubblico, ma occorre tenere presente che in altre situazioni potrebbe creare problemi di lettura della storia. Questa funzione non è supportata su display di piccole dimensioni.",
+				autoplayExplain2: "Quando questa modalità è attiva, sono disponibili controlli per riprodurre/sospendere la storia e regolare la velocità di navigazione.",
+				linksupdated: "Collegamenti aggiornati"
 			},
 			locatorFromCommon: {
 				error: "Posizione non disponibile"

@@ -17,11 +17,11 @@
 define(
    ({
     scene: {
-      error: "Ĳ_Unable to create scene________ä"
+      error: "Scene kan niet gemaakt worden"
     },
     tools: {
-      linkLabel: "Ĳ_Link Views____ä",
-      unlinkLabel: "Ĳ_Unlink Views_____ä"
+      linkLabel: "Weergave koppelen",
+      unlinkLabel: "Weergave ontkoppelen"
     }
   })
 );

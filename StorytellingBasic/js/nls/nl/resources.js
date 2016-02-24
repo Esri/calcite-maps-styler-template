@@ -21,12 +21,12 @@ define(
       generalError: "Fout"
     },
     social:{
-        facebook: "Ĳ_Share on Facebook______ä",
-        twitter: "Ĳ_Share on Twitter______ä",
-        link: "Ĳ_Share link____ä"
+        facebook: "Delen op Facebook",
+        twitter: "Delen op Twitter",
+        link: "Link delen"
     },
     legendToggle:{
-        label: "Ĳ_LEGEND___ä"
+        label: "LEGENDA"
     }
   })
 );

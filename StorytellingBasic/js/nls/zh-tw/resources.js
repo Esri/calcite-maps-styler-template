@@ -21,12 +21,12 @@ define(
       generalError: "錯誤"
     },
     social:{
-        facebook: "試_Share on Facebook______驗",
-        twitter: "試_Share on Twitter______驗",
-        link: "試_Share link____驗"
+        facebook: "在 Facebook 上分享",
+        twitter: "在 Twitter 上分享",
+        link: "分享連結"
     },
     legendToggle:{
-        label: "試_LEGEND___驗"
+        label: "圖例"
     }
   })
 );

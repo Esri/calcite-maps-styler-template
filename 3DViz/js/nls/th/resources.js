@@ -17,14 +17,14 @@
 define(
    ({
     scene: {
-      error: "ก้_Unable to create scene________ษฺ"
+      error: "ไม่สามารถสร้างซีน"
     },
     panel: {
-      noslides: "ก้_No slides in web scene________ษฺ"
+      noslides: "ไม่มีสไสด์ในเว็บซีน"
     },
     tooltips: {
-      play: "ก้_Play-Pause____ษฺ",
-      toggle: "ก้_Toggle___ษฺ"
+      play: "เล่น-หยุด",
+      toggle: "สลับ"
     }
   })
 );

@@ -19,7 +19,7 @@
 				create: "Oluştur",
 				yes: "Evet",
 				no: "Hayır",
-				mystories: "ı_My Stories____İ"
+				mystories: "Hikayelerim"
 			},
 			inlineFieldEdit: {
 				editMe: "Beni düzenle!"
@@ -31,10 +31,10 @@
 				buttonShare: "Paylaş",
 				buttonSettings: "Ayarlar",
 				buttonHelp: "Yardım",
-				buttonPreview: "ı_View story____İ",
+				buttonPreview: "Hikayeyi görüntüle",
 				tooltipFirstSave: "Bu, kaydedene kadar kullanılamaz.",
 				tooltipNotShared: "Bu, paylaşana kadar kullanılamaz.",
-				tooltipNotShared2: "ı_Your story isn't shared, only you can access it_______________İ.",
+				tooltipNotShared2: "Hikayeniz paylaşılmamış, ona yalnızca siz erişebilirsiniz.",
 				noPendingChange: "Bekleyen değişiklik yok",
 				unSavedChangePlural: "Bekleyen değişiklikler",
 				closeWithPendingChange: "Bu eylemi onaylamak istediğinizden emin misiniz? Değişiklikleriniz silinecek.",
@@ -55,20 +55,20 @@
 				btnOk: "Hikaye başlığını düzenle"
 			},
 			saveErrorSocial: {
-				title: "ı_Social media sharing update_________İ",
-				panel1: "ı_Your storyâ€™s appearance on social media has been improved, but your ArcGIS web application item title is not the same as your story title___________________________________________İ.",
-				panel1tooltip: "ı_By defining a title, summary and thumbnail image, your story will look like this_________________________İ:",
-				panel2:	"ı_Which title would you like to use on social media________________İ:",
-				panel2q1: "ı_Story title (recommended)_________İ",
-				panel2q1tooltip: "ı_By choosing this option, your item title will be modified to match your story title and further changes in the builder will be synchronized___________________________________________İ.",
-				panel2q2: "ı_Item title____İ",
-				panel3: "ı_To further improve how your story looks on social media use ${MYSTORIES} to add a summary and a thumbnail image___________________________________İ.",
-				panel4: "ı_Do not warn me again for this story____________İ"
+				title: "Sosyal medya paylaşma güncellemesi",
+				panel1: "Hikayenizin sosyal medyadaki görünümü iyileştirildi, ancak ArcGIS web uygulaması öğenizin başlığı hikaye başlığınızla aynı değil.",
+				panel1tooltip: "Bir başlık, özet ve küçük resim tanımlandıktan sonra hikayeniz şöyle görüntülenir:",
+				panel2:	"Sosyal medyada hangi başlığı kullanmak istersiniz?",
+				panel2q1: "Hikaye başlığı (önerilen)",
+				panel2q1tooltip: "Bu seçeneği tercih ettiğinizde, öğenizin başlığı hikaye başlığınızla eşleşecek biçimde değiştirilir ve oluşturucudaki ilave değişiklikler senkronize edilir.",
+				panel2q2: "Öğe başlığı",
+				panel3: "Hikayenizin sosyal medyada görüntülenme biçimini daha da iyileştirmek için ${MYSTORIES} kullanarak bir özet ve küçük resim ekleyin.",
+				panel4: "Bu hikaye için beni bir daha uyarma"
 			},
 			share: {
 				shareTitle: "Hikayenizi paylaşın",
 				preview: "Önizleme",
-				viewlive: "ı_View story____İ",
+				viewlive: "Hikayeyi görüntüle",
 				btnPrivate: "Gizli",
 				btnPrivateTooltip: "Hikayeyi yalnızca siz görebilirsiniz",
 				btnOrg: "Kuruluş",
@@ -87,27 +87,27 @@
 				notavailable2: "Üzgünüz, hikayenizin Oluşturucu\'dan paylaşılması bu Portal for ArcGIS (10.4 veya üstü gerekir) sürümünde desteklenmiyor.",
 				notavailable3: "Bu hikayeyi %LINK% bağlantısından paylaşabilirsiniz.",
 				notavailable4: "Hikayelerim",
-				notavailable5: "ı_its item page_____İ",
+				notavailable5: "ilgili öğe sayfası",
 				notavailable6: "Üzgünüz, bu detay geliştirme modunda tam olarak desteklenmez. Dağıtım senaryonuza bağlı olarak bu detay dağıtıldığında desteklenebilir.",
 				notavailable7: "Hikayenizde kullanılan haritaların ve katmanların da paylaşıldığını onaylamak için %MYCONTENT% bağlantısını ziyaret edin.",
 				notavailable8: "İçeriklerim",
-				mystoriesinvite2: "ı_To improve how your story looks on social networks use ${MYSTORIES} to add a summary and a thumbnail image_________________________________İ."
+				mystoriesinvite2: "Hikayenizin sosyal ağlarda görüntülenme biçimini daha da iyileştirmek için ${MYSTORIES} kullanarak bir özet ve küçük resim ekleyin."
 			},
 			settings: {
 				header: "Ayarlar",
 				tabError: "Tüm sekmelerdeki hataları kontrol edin"
 			},
 			settingsLayout: {
-				title: "ı_Layout___İ",
+				title: "Düzen",
 				explain: "Hangi düzeni kullanmak istiyorsunuz?",
 				explainInit: "Ayarlar iletişim kutusunda düzeni istediğiniz zaman değiştirebilirsiniz.",
 				viewExample: "Canlı örnek görüntüle"
 			},
 			settingsTheme: {
-				title: "ı_Theme___İ"
+				title: "Konu"
 			},
 			settingsHeader: {
-				title: "ı_Header___İ",
+				title: "Başlık",
 				logoEsri: "Esri logosu",
 				logoNone: "Logo yok",
 				logoCustom: "Özel logo",
@@ -119,7 +119,7 @@
 				lblSmallHeader: "Kompakt başlık kullanın (alt başlıksız)"
 			},
 			header: {
-				title: "ı_Edit the title of your %TPL_NAME%___________İ",
+				title: "%TPL_NAME% adınızın başlığını düzenleyin",
 				subtitle: "%TPL_NAME% adınızın alt başlığını düzenleyin"
 			}
 		}

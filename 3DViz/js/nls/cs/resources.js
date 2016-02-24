@@ -17,14 +17,14 @@
 define(
    ({
     scene: {
-      error: "Ř_Unable to create scene________ů"
+      error: "Nelze vytvořit scénu"
     },
     panel: {
-      noslides: "Ř_No slides in web scene________ů"
+      noslides: "Žádné snímky ve webové scéně"
     },
     tooltips: {
-      play: "Ř_Play-Pause____ů",
-      toggle: "Ř_Toggle___ů"
+      play: "Přehrát-Pozastavit",
+      toggle: "Přepnout"
     }
   })
 );

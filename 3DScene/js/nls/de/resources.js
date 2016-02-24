@@ -17,18 +17,18 @@
 define(
    ({
     scene: {
-      error: "ä_Unable to create scene________Ü"
+      error: "Szene kann nicht erstellt werden"
     },
     panel: {
-      noslides: "ä_No slides in web scene________Ü"
+      noslides: "Keine Folien in Webszene"
     },
     tooltips: {
-      layers: "ä_Layers___Ü",
-      basemaps: "ä_Base maps____Ü",
-      slides: "ä_Slides___Ü",
-      close: "ä_Close___Ü",
-      zoom: "ä_Zoom__Ü",
-      onoff: "ä_On-Off___Ü"
+      layers: "Layer",
+      basemaps: "Grundkarten",
+      slides: "Folien",
+      close: "Schließen",
+      zoom: "Zoom",
+      onoff: "Ein-Aus"
     }
   })
 );

@@ -21,12 +21,12 @@ define(
       generalError: "Kļūda"
     },
     social:{
-        facebook: "ķ_Share on Facebook______ū",
-        twitter: "ķ_Share on Twitter______ū",
-        link: "ķ_Share link____ū"
+        facebook: "Koplietot Facebook",
+        twitter: "Koplietot Twitter",
+        link: "Koplietot saiti"
     },
     legendToggle:{
-        label: "ķ_LEGEND___ū"
+        label: "LEĢENDA"
     }
   })
 );

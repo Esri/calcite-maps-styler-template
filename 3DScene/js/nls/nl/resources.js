@@ -17,18 +17,18 @@
 define(
    ({
     scene: {
-      error: "Ĳ_Unable to create scene________ä"
+      error: "Scene kan niet gemaakt worden"
     },
     panel: {
-      noslides: "Ĳ_No slides in web scene________ä"
+      noslides: "Geen dia\'s in web scene"
     },
     tooltips: {
-      layers: "Ĳ_Layers___ä",
-      basemaps: "Ĳ_Base maps____ä",
-      slides: "Ĳ_Slides___ä",
-      close: "Ĳ_Close___ä",
-      zoom: "Ĳ_Zoom__ä",
-      onoff: "Ĳ_On-Off___ä"
+      layers: "Kaartlagen",
+      basemaps: "Basiskaarten",
+      slides: "Dia\'s",
+      close: "Sluiten",
+      zoom: "Zoom",
+      onoff: "Aan-Uit"
     }
   })
 );

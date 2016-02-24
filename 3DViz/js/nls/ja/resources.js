@@ -17,14 +17,14 @@
 define(
    ({
     scene: {
-      error: "須_Unable to create scene________鷗"
+      error: "シーンを作成できません"
     },
     panel: {
-      noslides: "須_No slides in web scene________鷗"
+      noslides: "Web シーンにスライドがありません"
     },
     tooltips: {
-      play: "須_Play-Pause____鷗",
-      toggle: "須_Toggle___鷗"
+      play: "再生-一時停止",
+      toggle: "切り替え"
     }
   })
 );

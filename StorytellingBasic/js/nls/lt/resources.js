@@ -21,12 +21,12 @@ define(
       generalError: "Klaida"
     },
     social:{
-        facebook: "Į_Share on Facebook______š",
-        twitter: "Į_Share on Twitter______š",
-        link: "Į_Share link____š"
+        facebook: "Dalintis Facebook",
+        twitter: "Dalintis Twitter",
+        link: "Bendrinti nuorodą"
     },
     legendToggle:{
-        label: "Į_LEGEND___š"
+        label: "LEGENDA"
     }
   })
 );

@@ -17,18 +17,18 @@
 define(
    ({
     scene: {
-      error: "須_Unable to create scene________鷗"
+      error: "シーンを作成できません"
     },
     panel: {
-      noslides: "須_No slides in web scene________鷗"
+      noslides: "Web シーンにスライドがありません"
     },
     tooltips: {
-      layers: "須_Layers___鷗",
-      basemaps: "須_Base maps____鷗",
-      slides: "須_Slides___鷗",
-      close: "須_Close___鷗",
-      zoom: "須_Zoom__鷗",
-      onoff: "須_On-Off___鷗"
+      layers: "レイヤー",
+      basemaps: "ベースマップ",
+      slides: "スライド",
+      close: "閉じる",
+      zoom: "ズーム",
+      onoff: "オン-オフ"
     }
   })
 );

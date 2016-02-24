@@ -17,18 +17,18 @@
 define(
    ({
     scene: {
-      error: "ķ_Unable to create scene________ū"
+      error: "Nevarēja izveidot scēnu"
     },
     panel: {
-      noslides: "ķ_No slides in web scene________ū"
+      noslides: "Web scēnā nav slaidi"
     },
     tooltips: {
-      layers: "ķ_Layers___ū",
-      basemaps: "ķ_Base maps____ū",
-      slides: "ķ_Slides___ū",
-      close: "ķ_Close___ū",
-      zoom: "ķ_Zoom__ū",
-      onoff: "ķ_On-Off___ū"
+      layers: "Slāņi",
+      basemaps: "Pamatkartes",
+      slides: "Slaidi",
+      close: "Aizvērt",
+      zoom: "Mērogmaiņa",
+      onoff: "Ieslēgt-izslēgt"
     }
   })
 );

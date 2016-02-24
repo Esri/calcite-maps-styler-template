@@ -17,14 +17,14 @@
 define(
    ({
     scene: {
-      error: "한_Unable to create scene________빠"
+      error: "씬을 생성할 수 없음"
     },
     panel: {
-      noslides: "한_No slides in web scene________빠"
+      noslides: "웹 씬에 슬라이드가 없음"
     },
     tooltips: {
-      play: "한_Play-Pause____빠",
-      toggle: "한_Toggle___빠"
+      play: "재생/일시정지",
+      toggle: "전환"
     }
   })
 );

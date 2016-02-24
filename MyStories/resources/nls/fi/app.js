@@ -41,7 +41,7 @@
 		},
 		cantFindStories: {
 			whereAreStories: "Etkö näe tarinaasi?",
-			notSeeExplanation: "Å_My Stories will only list story maps hosted in ArcGIS and created with the {{STORY_MAP_TOUR}}, {{JOURNAL}}, {{MAP_SERIES}} or {{SWIPE_SPYGLASS}} applications. See our {{FAQ}} for more information____________________________________________________________ö.",
+			notSeeExplanation: "Omat tarinat -luettelossa näkyvät vain kartat, joita isännöidään ArcGISissa ja jotka on luotu sovelluksella {{STORY_MAP_TOUR}}, {{JOURNAL}}, {{MAP_SERIES}} tai {{SWIPE_SPYGLASS}}. Lisätietoja on kohdassa {{FAQ}}.",
 			faq: "Usein kysytyt kysymykset",
 			followingStoriesToUpdate: "Seuraavat tarinat, jotka on luotu sovellusten aiemmilla versioilla, on päivitettävä, jotta ne näkyvät Omat tarinat -luettelossa:",
 			gettingStories: "Etsitään tarinoita, jotka on luotu sovellusten aiemmilla versioilla ja jotka on päivitettävä...",
@@ -120,7 +120,7 @@
 			saveFailed: "Virhe tallennettaessa",
 			numViews: "Näkymät: {{NUM_VIEWS}}",
 			editStory: "Muokkaa tarinaa",
-			viewLive: "Å_View Story____ö",
+			viewLive: "Näytä tarina",
 			preview: "Esikatselu",
 			deleteButton: "Poista",
 			modified: "Muokattu: {{DATE}}",
@@ -130,7 +130,7 @@
 			close: "sulje",
 			hide: "piilota",
 			notAvailableWhenBroken: "Tarinassasi on alla luetellut ongelmat",
-			cantBeDeleted: "Å_This story has delete protection enabled. See its item page on ArcGIS to disable_________________________ö.",
+			cantBeDeleted: "Poistosuojaus on käytössä tässä tarinassa. Jos haluat poistaa suojauksen käytöstä, siirry tarinan kohdesivulle ArcGISissa.",
 			shareDialog: {
 				title: "Jaa tarinasi kaikkien kanssa.",
 				notPublicWarning: "Tarinasi on jaettu organisaation kanssa. Vain organisaation jäsenet voivat katsella sitä.",
@@ -163,7 +163,7 @@
 				save: "Tallenna",
 				saved: "Tallennettu",
 				errorSaving: "Virhe tallennettaessa",
-				tagTip: "Å_Tip: Tags help people find your story. The more relevant the tags are, the higher the visibility your work will receive_____________________________________ö."
+				tagTip: "Vihje: Tunnisteiden avulla ihmiset löytävät tarinasi. Mitä enemmän asiaankuuluvia tunnisteita on, sitä enemmän näkyvyyttä työsi saa."
 			},
 			submitToGallery: {
 				gallerySubmission: "Tarinakarttagalleria",
@@ -173,7 +173,7 @@
 				chosenSubjectAlt: "aiheen {{SUBJECT}} ja joitakin tunnisteita",
 				storyMapTopicSubject: "aihe",
 				sharedPublicly: "jaettu julkisesti",
-				noBrokenContent: "Å_No issues____ö",
+				noBrokenContent: "Ei ongelmia",
 				nominateToGallery: "Ehdota galleriaan",
 				comingSoon: "Tulossa pian!",
 				submitted: "Lähetetty",
@@ -298,8 +298,8 @@
 				subscriptionPublicSuccess: "Tilauksen sisältö on nyt julkisesti saatavilla"
 			},
 			errors: {
-				publicDisabled: "Å_Sharing publicly has been disabled by an Administrator_________________ö",
-				orgDisabled: "Å_Sharing to your organization has been disabled by an Administrator_____________________ö",
+				publicDisabled: "Pääkäyttäjä on poistanut julkisen jakamisen käytöstä",
+				orgDisabled: "Pääkäyttäjä on poistanut käytöstä jakamisen organisaation kanssa",
 				noMapName: "Kartan nimen nouto ei onnistunut",
 				notPublic: "EI JULKINEN",
 				inaccessible: "EI KÄYTETTÄVISSÄ",
@@ -352,8 +352,8 @@
 				cantScanThisTypeAlt: "Tämäntyyppistä karttatasoa ei voi tarkistaa",
 				cantScanThisType: "Karttatason tyyppi ei ole sellainen, jonka voi tarkistaa",
 				webpageNotScanned: "Web-sivujen ongelmia ei tarkisteta",
-				ignoredIssue: "Å_You have ignored an error on this layer. Reload the page and check this story again to review the error________________________________ö",
-				ignoredIssueBuilder: "Å_You have ignored an error on this layer. Reload the builder to check this error again___________________________ö"
+				ignoredIssue: "Olet ohittanut tämän karttatason virheen. Tarkista virhe lataamalla sivu uudelleen ja valitsemalla tämä tarina uudelleen",
+				ignoredIssueBuilder: "Olet ohittanut tämän karttatason virheen. Tarkista tämä virhe uudelleen lataamalla luontitoiminto uudelleen"
 			},
 			scanningErrors: {
 				deletedMap: "Poistettu sisältö",
@@ -371,9 +371,9 @@
 				inaccessibleWebpage: "Web-sivuja ei voi käyttää"
 			},
 			scanningErrorTips: {
-				deletedMapTip: "Å_Tip: Edit your web map and remove the broken content, or remove the web map from your story_____________________________ö.",
-				inaccessibleMapTip: "Å_Tip: Edit your web map and remove the broken content, or remove the web map from your story_____________________________ö.",
-				notYoursNotAccessibleTip: "Å_Tip: Edit your web map and remove the layer, or remove the web map from your story__________________________ö.",
+				deletedMapTip: "Vihje: muokkaa Web-karttaasi ja poista viallinen sisältö tai poista Web-kartta tarinastasi.",
+				inaccessibleMapTip: "Vihje: muokkaa Web-karttaasi ja poista viallinen sisältö tai poista Web-kartta tarinastasi.",
+				notYoursNotAccessibleTip: "Vihje: muokkaa Web-karttaasi ja poista karttataso tai poista Web-kartta tarinastasi.",
 				serviceOkItemNotTip: "Karttatasot on lisätty kohteina, joita ei voi käyttää tai jotka on poistettu. Karttatasot toimivat, mutta tämä voi vaikuttaa karttasi toimintaan (ponnahdusikkunoihin ja symboleihin).",
 				ignore: "Ohita",
 				fix: "Korjaa",
@@ -459,13 +459,13 @@
 				thirdTitle: "kartat"
 			},
 			crowdsource: {
-				firstTitle: "Å_contributions_____ö",
-				secondTitle: "Å_style___ö",
-				secondValueA: "Å_side panel____ö",
-				secondValueB: "Å_stacked___ö",
-				thirdTitle: "Å_basemap___ö",
-				thirdValueLoading: "Å_Loading____ö...",
-				thirdValueUnknown: "Å_unknown___ö"
+				firstTitle: "lisäykset",
+				secondTitle: "tyyli",
+				secondValueA: "sivupaneeli",
+				secondValueB: "pinottu",
+				thirdTitle: "peruskartta",
+				thirdValueLoading: "Ladataan...",
+				thirdValueUnknown: "tuntematon"
 			}
 		},
 		progress: {
@@ -482,9 +482,9 @@
 			storiesWithIssues: "Tarinat, joissa on ongelmia: {{NUM_STORIES}}"
 		},
 		newStories: {
-			newStoriesFound: "Å_Looks like you have created a new story_____________ö.",
-			includeStories: "Å_Refresh Stories______ö",
-			notWhileScanning: "Å_This will be available when the check is complete________________ö"
+			newStoriesFound: "Näyttää siltä, että olet luonut uuden tarinan.",
+			includeStories: "Päivitä tarinat",
+			notWhileScanning: "Tämä toiminto on käytettävissä, kun tarkistus on tehty"
 		}
     })
 );

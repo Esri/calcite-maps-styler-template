@@ -17,11 +17,11 @@
 define(
    ({
     scene: {
-      error: "한_Unable to create scene________빠"
+      error: "씬을 생성할 수 없음"
     },
     tools: {
-      linkLabel: "한_Link Views____빠",
-      unlinkLabel: "한_Unlink Views_____빠"
+      linkLabel: "뷰 링크",
+      unlinkLabel: "뷰 링크 해제"
     }
   })
 );

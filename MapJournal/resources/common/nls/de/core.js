@@ -19,7 +19,7 @@
 				create: "Erstellen",
 				yes: "Ja",
 				no: "Nein",
-				mystories: "ä_My Stories____Ü"
+				mystories: "My Stories"
 			},
 			inlineFieldEdit: {
 				editMe: "Bearbeiten!"
@@ -31,10 +31,10 @@
 				buttonShare: "Freigeben",
 				buttonSettings: "Einstellungen",
 				buttonHelp: "Hilfe",
-				buttonPreview: "ä_View story____Ü",
+				buttonPreview: "Story anzeigen",
 				tooltipFirstSave: "Dies ist erst nach dem Speichern verfügbar.",
 				tooltipNotShared: "Dies ist erst nach dem Freigeben verfügbar.",
-				tooltipNotShared2: "ä_Your story isn't shared, only you can access it_______________Ü.",
+				tooltipNotShared2: "Ihre Story ist nicht freigegeben, nur Sie können auf sie zugreifen.",
 				noPendingChange: "Keine ausstehende Änderung",
 				unSavedChangePlural: "Ausstehende Änderungen",
 				closeWithPendingChange: "Möchten Sie die Aktion wirklich bestätigen? Ihre Änderungen gehen dabei verloren.",
@@ -55,20 +55,20 @@
 				btnOk: "Den Titel der Story bearbeiten"
 			},
 			saveErrorSocial: {
-				title: "ä_Social media sharing update_________Ü",
-				panel1: "ä_Your storyâ€™s appearance on social media has been improved, but your ArcGIS web application item title is not the same as your story title___________________________________________Ü.",
-				panel1tooltip: "ä_By defining a title, summary and thumbnail image, your story will look like this_________________________Ü:",
-				panel2:	"ä_Which title would you like to use on social media________________Ü:",
-				panel2q1: "ä_Story title (recommended)_________Ü",
-				panel2q1tooltip: "ä_By choosing this option, your item title will be modified to match your story title and further changes in the builder will be synchronized___________________________________________Ü.",
-				panel2q2: "ä_Item title____Ü",
-				panel3: "ä_To further improve how your story looks on social media use ${MYSTORIES} to add a summary and a thumbnail image___________________________________Ü.",
-				panel4: "ä_Do not warn me again for this story____________Ü"
+				title: "Freigabeaktualisierung für Social Media",
+				panel1: "Das Aussehen Ihrer Story in den Social Media wurde verbessert, der Titel Ihres ArcGIS-Webanwendungselements stimmt aber nicht mit dem Titel der Story überein.",
+				panel1tooltip: "Wenn Sie einen Titel, eine Zusammenfassung und eine Miniaturansicht definieren, sieht Ihre Story wie folgt aus:",
+				panel2:	"Welchen Titel möchten Sie in den Social Media verwenden?",
+				panel2q1: "Titel der Story (empfohlen)",
+				panel2q1tooltip: "Wenn Sie diese Option wählen, wird der Elementtitel in den Titel Ihrer Story geändert und alle weitere Änderungen im Builder werden synchronisiert.",
+				panel2q2: "Elementtitel",
+				panel3: "Wenn Sie das Aussehen Ihrer Story in den Social Media zusätzlich verbessern möchten, fügen Sie mithilfe von ${MYSTORIES} eine Zusammenfassung und eine Miniaturansicht hinzu.",
+				panel4: "Für diese Story keine Warnmeldung mehr anzeigen"
 			},
 			share: {
 				shareTitle: "Story freigeben",
 				preview: "Vorschau",
-				viewlive: "ä_View story____Ü",
+				viewlive: "Story anzeigen",
 				btnPrivate: "Privat",
 				btnPrivateTooltip: "Nur Sie können die Story sehen",
 				btnOrg: "Organisation",
@@ -87,27 +87,27 @@
 				notavailable2: "Das Freigeben Ihrer Story im Manager wird in dieser Version von Portal for ArcGIS nicht unterstützt (Version 10.4 oder höher erforderlich).",
 				notavailable3: "Sie können diese Story über %LINK% freigeben.",
 				notavailable4: "My Stories",
-				notavailable5: "ä_its item page_____Ü",
+				notavailable5: "die Elementseite",
 				notavailable6: "Dieses Feature wird im Entwicklungsmodus leider nicht vollständig unterstützt. Je nach Entwicklungsszenario wird es möglicherweise nach der Bereitstellung unterstützt.",
 				notavailable7: "Besuchen Sie %MYCONTENT%, um sicherzustellen, dass die Karten und Layer, die Sie in Ihrer Story verwenden, ebenfalls freigegeben sind.",
 				notavailable8: "Eigene Inhalte",
-				mystoriesinvite2: "ä_To improve how your story looks on social networks use ${MYSTORIES} to add a summary and a thumbnail image_________________________________Ü."
+				mystoriesinvite2: "Wenn Sie das Aussehen Ihrer Story in den sozialen Netzwerken verbessern möchten, fügen Sie mithilfe von ${MYSTORIES} eine Zusammenfassung und eine Miniaturansicht hinzu."
 			},
 			settings: {
 				header: "Einstellungen",
 				tabError: "Überprüfen Sie alle Registerkarten auf Fehler"
 			},
 			settingsLayout: {
-				title: "ä_Layout___Ü",
+				title: "Layout",
 				explain: "Welches Layout möchten Sie verwenden?",
 				explainInit: "Das Layout kann jederzeit im Dialogfeld \"Einstellungen\" geändert werden.",
 				viewExample: "Live-Beispiel anzeigen"
 			},
 			settingsTheme: {
-				title: "ä_Theme___Ü"
+				title: "Thema"
 			},
 			settingsHeader: {
-				title: "ä_Header___Ü",
+				title: "Kopfzeile",
 				logoEsri: "Esri Logo",
 				logoNone: "Kein Logo",
 				logoCustom: "Benutzerdefiniertes Logo",
@@ -119,7 +119,7 @@
 				lblSmallHeader: "Kompakte Überschrift verwenden (keinen Untertitel)"
 			},
 			header: {
-				title: "ä_Edit the title of your %TPL_NAME%___________Ü",
+				title: "Bearbeiten Sie den Titel von %TPL_NAME%",
 				subtitle: "Den Untertitel für %TPL_NAME% bearbeiten"
 			}
 		}

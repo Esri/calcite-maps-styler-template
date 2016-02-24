@@ -21,12 +21,12 @@ define(
       generalError: "Chyba"
     },
     social:{
-        facebook: "Ř_Share on Facebook______ů",
-        twitter: "Ř_Share on Twitter______ů",
-        link: "Ř_Share link____ů"
+        facebook: "Sdílet na Facebooku",
+        twitter: "Sdílet na Twitteru",
+        link: "Sdílet odkaz"
     },
     legendToggle:{
-        label: "Ř_LEGEND___ů"
+        label: "LEGENDA"
     }
   })
 );

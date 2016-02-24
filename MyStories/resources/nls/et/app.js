@@ -41,7 +41,7 @@
 		},
 		cantFindStories: {
 			whereAreStories: "Kas Te ei näe oma lugu?",
-			notSeeExplanation: "Š_My Stories will only list story maps hosted in ArcGIS and created with the {{STORY_MAP_TOUR}}, {{JOURNAL}}, {{MAP_SERIES}} or {{SWIPE_SPYGLASS}} applications. See our {{FAQ}} for more information____________________________________________________________ä.",
+			notSeeExplanation: "Portaalis Minu lood on loetletud ainult ArcGISi keskkonnas majutatud kaardilood, mis on koostatud rakendustega {{STORY_MAP_TOUR}}, {{JOURNAL}}, {{MAP_SERIES}} ja {{SWIPE_SPYGLASS}}. Täpsemat teavet lugege meie {{FAQ}} rubriigist.",
 			faq: "KKK",
 			followingStoriesToUpdate: "Järgmised meie rakenduste varasemate versioonidega loodud lood vajavad uuendamist, et neid saaks My Stories portaalis loetleda.",
 			gettingStories: "Meie rakenduste varasemate versioonidega loodud ja uuendamist vajavate lugude otsimine...",
@@ -120,7 +120,7 @@
 			saveFailed: "Viga salvestamisel",
 			numViews: "Vaated: {{NUM_VIEWS}}",
 			editStory: "Redigeeri lugu",
-			viewLive: "Š_View Story____ä",
+			viewLive: "Kuva lugu",
 			preview: "Eelvaade",
 			deleteButton: "Kustuta",
 			modified: "Muudetud {{DATE}}",
@@ -130,7 +130,7 @@
 			close: "sule",
 			hide: "peida",
 			notAvailableWhenBroken: "Teie looga on järgmised probleemid",
-			cantBeDeleted: "Š_This story has delete protection enabled. See its item page on ArcGIS to disable_________________________ä.",
+			cantBeDeleted: "Selle loo kustutuskaitse on sisse lülitatud. Vaadake ArcGISi keskkonnast sisuüksuste lehelt, kuidas see välja lülitada.",
 			shareDialog: {
 				title: "Jagage lugu muu maailma kasutajatega!",
 				notPublicWarning: "Teie lugu on jagatud Teie organisatsiooniga. Seda saavad vaadata ainult Teie organisatsiooni liikmed.",
@@ -163,7 +163,7 @@
 				save: "Salvesta",
 				saved: "Salvestatud",
 				errorSaving: "Viga salvestamisel",
-				tagTip: "Š_Tip: Tags help people find your story. The more relevant the tags are, the higher the visibility your work will receive_____________________________________ä."
+				tagTip: "Nõuanne. Märksõnad aitavad inimestel teie lugu leida. Mida asjakohasemad on märksõnad, seda nähtavam on teie töö."
 			},
 			submitToGallery: {
 				gallerySubmission: "Kaardilugude galerii",
@@ -173,7 +173,7 @@
 				chosenSubjectAlt: "{{SUBJECT}} ja mõned märksõnad",
 				storyMapTopicSubject: "Teema",
 				sharedPublicly: "Avalikult jagatud",
-				noBrokenContent: "Š_No issues____ä",
+				noBrokenContent: "Probleeme pole",
 				nominateToGallery: "Määratud galeriisse",
 				comingSoon: "Tulekul!",
 				submitted: "Esitatud",
@@ -298,8 +298,8 @@
 				subscriptionPublicSuccess: "Teie tellimuse sisu on nüüd avalikult kättesaadav"
 			},
 			errors: {
-				publicDisabled: "Š_Sharing publicly has been disabled by an Administrator_________________ä",
-				orgDisabled: "Š_Sharing to your organization has been disabled by an Administrator_____________________ä",
+				publicDisabled: "Avalikult jagamine on administraatori poolt välja lülitatud",
+				orgDisabled: "Teie organisatsiooniga jagamine on administraatori poolt välja lülitatud",
 				noMapName: "Ei saanud hankida kaardi nime",
 				notPublic: "POLE AVALIK",
 				inaccessible: "LIGIPÄÄSMATU",
@@ -352,8 +352,8 @@
 				cantScanThisTypeAlt: "Seda tüüpi kihti ei saa kontrollida",
 				cantScanThisType: "Seda tüüpi kihti ei saa kontrollida",
 				webpageNotScanned: "Veebilehti ei kontrollita probleemide suhtes",
-				ignoredIssue: "Š_You have ignored an error on this layer. Reload the page and check this story again to review the error________________________________ä",
-				ignoredIssueBuilder: "Š_You have ignored an error on this layer. Reload the builder to check this error again___________________________ä"
+				ignoredIssue: "Olete eiranud selles kihis tõrget. Laadige leht uuesti ja kontrollige tõrke ülevaatamiseks seda lugu",
+				ignoredIssueBuilder: "Olete eiranud selles kihis tõrget. Laadige tõrke ülevaatamiseks koostur uuesti"
 			},
 			scanningErrors: {
 				deletedMap: "Kustutatud sisu",
@@ -371,9 +371,9 @@
 				inaccessibleWebpage: "Ligipääsmatud veebilehed"
 			},
 			scanningErrorTips: {
-				deletedMapTip: "Š_Tip: Edit your web map and remove the broken content, or remove the web map from your story_____________________________ä.",
-				inaccessibleMapTip: "Š_Tip: Edit your web map and remove the broken content, or remove the web map from your story_____________________________ä.",
-				notYoursNotAccessibleTip: "Š_Tip: Edit your web map and remove the layer, or remove the web map from your story__________________________ä.",
+				deletedMapTip: "Nõuanne. Muutke oma veebikaarti ja eemaldage vigane sisu või eemaldage veebikaart oma loost.",
+				inaccessibleMapTip: "Nõuanne. Muutke oma veebikaarti ja eemaldage vigane sisu või eemaldage veebikaart oma loost.",
+				notYoursNotAccessibleTip: "Nõuanne. Muutke oma veebikaarti ja eemaldage kiht või eemaldage veebikaart oma loost.",
 				serviceOkItemNotTip: "Kihid lisati üksustena, mis on kustutatud või ligipääsmatud. Kihid töötavad aga võivad mõjutada Teie kaarti (hüpikaknad, sümboloogia).",
 				ignore: "Eira",
 				fix: "Parenda",
@@ -459,13 +459,13 @@
 				thirdTitle: "kaardid"
 			},
 			crowdsource: {
-				firstTitle: "Š_contributions_____ä",
-				secondTitle: "Š_style___ä",
-				secondValueA: "Š_side panel____ä",
-				secondValueB: "Š_stacked___ä",
-				thirdTitle: "Š_basemap___ä",
-				thirdValueLoading: "Š_Loading____ä...",
-				thirdValueUnknown: "Š_unknown___ä"
+				firstTitle: "toetused",
+				secondTitle: "stiil",
+				secondValueA: "külgpaneel",
+				secondValueB: "virnastatud",
+				thirdTitle: "aluskaart",
+				thirdValueLoading: "Laadimine...",
+				thirdValueUnknown: "tundmatu"
 			}
 		},
 		progress: {
@@ -482,9 +482,9 @@
 			storiesWithIssues: "Probleemsed lood: {{NUM_STORIES}}"
 		},
 		newStories: {
-			newStoriesFound: "Š_Looks like you have created a new story_____________ä.",
-			includeStories: "Š_Refresh Stories______ä",
-			notWhileScanning: "Š_This will be available when the check is complete________________ä"
+			newStoriesFound: "Näib, et olete koostanud uue loo.",
+			includeStories: "Lugude värskendamine",
+			notWhileScanning: "See on saadaval kontrolli teostamise järel"
 		}
     })
 );

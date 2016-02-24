@@ -17,14 +17,14 @@
 define(
    ({
     scene: {
-      error: "Ĳ_Unable to create scene________ä"
+      error: "Scene kan niet gemaakt worden"
     },
     panel: {
-      noslides: "Ĳ_No slides in web scene________ä"
+      noslides: "Geen dia\'s in web scene"
     },
     tooltips: {
-      play: "Ĳ_Play-Pause____ä",
-      toggle: "Ĳ_Toggle___ä"
+      play: "Afspelen-Pauzeren",
+      toggle: "Wisselen"
     }
   })
 );

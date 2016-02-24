@@ -41,7 +41,7 @@
 		},
 		cantFindStories: {
 			whereAreStories: "Nematote savo pasakojimo?",
-			notSeeExplanation: "Į_My Stories will only list story maps hosted in ArcGIS and created with the {{STORY_MAP_TOUR}}, {{JOURNAL}}, {{MAP_SERIES}} or {{SWIPE_SPYGLASS}} applications. See our {{FAQ}} for more information____________________________________________________________š.",
+			notSeeExplanation: "Puslapyje Mano pasakojimai bus pateikiami tik ArcGIS pasakojimų žemėlapiai, sukurti naudojant {{STORY_MAP_TOUR}}, {{JOURNAL}}, {{MAP_SERIES}} arba {{SWIPE_SPYGLASS}} aplikacijas. Jeigu reikia daugiau informacijos, žr. mūsų {{FAQ}}.",
 			faq: "DUK",
 			followingStoriesToUpdate: "Šiuos pasakojimus, sukurtus ankstesne mūsų programos versija, reikia atnaujinti, kad juos būtų galima pateikti puslapyje Mano pasakojimai:",
 			gettingStories: "Ieškoma ankstesnėmis mūsų aplikacijų versijomis sukurtų pasakojimų, kuriuos reikia atnaujinti...",
@@ -120,7 +120,7 @@
 			saveFailed: "Įrašant įvyko klaida",
 			numViews: "Peržiūros: {{NUM_VIEWS}}",
 			editStory: "Redaguoti istoriją",
-			viewLive: "Į_View Story____š",
+			viewLive: "Žiūrėti pasakojimą",
 			preview: "Peržiūra",
 			deleteButton: "Pašalinti",
 			modified: "Keitimo data {{DATA}}",
@@ -130,7 +130,7 @@
 			close: "užverti",
 			hide: "slėpti",
 			notAvailableWhenBroken: "Jūsų pasakojimas turi toliau pateikiamų nesklandumų",
-			cantBeDeleted: "Į_This story has delete protection enabled. See its item page on ArcGIS to disable_________________________š.",
+			cantBeDeleted: "Ši istorija saugoma nuo panaikinimo. Norėdami išjungti, žiūrėkite jos elemento puslapį ArcGIS.",
 			shareDialog: {
 				title: "Bendrinkite pasakojimą su pasauliu!",
 				notPublicWarning: "Jūsų pasakojimas bendrinamas su organizacija. Ją galės matyti tik jūsų organizacijos nariai.",
@@ -163,7 +163,7 @@
 				save: "Įrašyti",
 				saved: "Išsaugota",
 				errorSaving: "Įrašant įvyko klaida",
-				tagTip: "Į_Tip: Tags help people find your story. The more relevant the tags are, the higher the visibility your work will receive_____________________________________š."
+				tagTip: "Patarimas: raktažodžiai padeda žmonėms rasti jūsų pasakojimą. Kuo aktualesni raktažodžiai, tuo matomesnis jūsų darbas."
 			},
 			submitToGallery: {
 				gallerySubmission: "Žemėlapio pasakojimų galerija",
@@ -173,7 +173,7 @@
 				chosenSubjectAlt: "{{SUBJECT}} ir keletas raktažodžių",
 				storyMapTopicSubject: "tema",
 				sharedPublicly: "Bendrinamas viešai",
-				noBrokenContent: "Į_No issues____š",
+				noBrokenContent: "Neišduota",
 				nominateToGallery: "Skelbti galerijoje",
 				comingSoon: "Jau netrukus!",
 				submitted: "Pateikta",
@@ -298,8 +298,8 @@
 				subscriptionPublicSuccess: "Jūsų prenumeruojamas turinys jau prieinamas viešai"
 			},
 			errors: {
-				publicDisabled: "Į_Sharing publicly has been disabled by an Administrator_________________š",
-				orgDisabled: "Į_Sharing to your organization has been disabled by an Administrator_____________________š",
+				publicDisabled: "Viešojo bendrinimo funkciją išjungė administratorius",
+				orgDisabled: "Bendrinimo organizacijoje funkciją išjungė administratorius",
 				noMapName: "Nepavyko gauti žemėlapio pavadinimo",
 				notPublic: "NEVIEŠA",
 				inaccessible: "NEPRIEINAMA",
@@ -352,8 +352,8 @@
 				cantScanThisTypeAlt: "Negalime tikrinti šio tipo sluoksnio",
 				cantScanThisType: "Sluoksnis priklauso tipui, kurio mes negalime tikrinti",
 				webpageNotScanned: "Tinklalapiai netikrinami, ar juose yra nesklandumų",
-				ignoredIssue: "Į_You have ignored an error on this layer. Reload the page and check this story again to review the error________________________________š",
-				ignoredIssueBuilder: "Į_You have ignored an error on this layer. Reload the builder to check this error again___________________________š"
+				ignoredIssue: "Ignoravote klaidą šiame sluoksnyje. Įkelkite puslapį iš naujo ir dar kartą peržiūrėkite pasakojimą ir klaidą",
+				ignoredIssueBuilder: "Ignoravote klaidą šiame sluoksnyje. Įkelkite kūrimo priemonę iš naujo ir dar kartą peržiūrėkite šią klaidą"
 			},
 			scanningErrors: {
 				deletedMap: "Panaikintas turinys",
@@ -371,9 +371,9 @@
 				inaccessibleWebpage: "Nepasiekiami tinklalapiai"
 			},
 			scanningErrorTips: {
-				deletedMapTip: "Į_Tip: Edit your web map and remove the broken content, or remove the web map from your story_____________________________š.",
-				inaccessibleMapTip: "Į_Tip: Edit your web map and remove the broken content, or remove the web map from your story_____________________________š.",
-				notYoursNotAccessibleTip: "Į_Tip: Edit your web map and remove the layer, or remove the web map from your story__________________________š.",
+				deletedMapTip: "Patarimas: redaguokite žiniatinklio žemėlapį ir pašalinkite pažeistą turinį arba pašalinkite žiniatinklio žemėlapį iš pasakojimo.",
+				inaccessibleMapTip: "Patarimas: redaguokite žiniatinklio žemėlapį ir pašalinkite pažeistą turinį arba pašalinkite žiniatinklio žemėlapį iš pasakojimo.",
+				notYoursNotAccessibleTip: "Patarimas: redaguokite žiniatinklio žemėlapį ir pašalinkite sluoksnį arba pašalinkite žiniatinklio žemėlapį iš pasakojimo.",
 				serviceOkItemNotTip: "Sluoksniai įtraukti kaip nepasiekiami arba panaikinti elementai. Sluoksniai veikia, bet jie gali pakeisti jūsų žemėlapį (kontekstinius langus, sutartinius ženklus)",
 				ignore: "Ignoruoti",
 				fix: "Pataisyti",
@@ -459,13 +459,13 @@
 				thirdTitle: "žemėlapiai"
 			},
 			crowdsource: {
-				firstTitle: "Į_contributions_____š",
-				secondTitle: "Į_style___š",
-				secondValueA: "Į_side panel____š",
-				secondValueB: "Į_stacked___š",
-				thirdTitle: "Į_basemap___š",
-				thirdValueLoading: "Į_Loading____š...",
-				thirdValueUnknown: "Į_unknown___š"
+				firstTitle: "prisidėjimai",
+				secondTitle: "stilius",
+				secondValueA: "šoninis skydelis",
+				secondValueB: "vienas ant kito",
+				thirdTitle: "pagrindo žemėlapis",
+				thirdValueLoading: "Įkeliama...",
+				thirdValueUnknown: "nežinoma"
 			}
 		},
 		progress: {
@@ -482,9 +482,9 @@
 			storiesWithIssues: "Pasakojimų su nesklandumais: {{NUM_STORIES}}"
 		},
 		newStories: {
-			newStoriesFound: "Į_Looks like you have created a new story_____________š.",
-			includeStories: "Į_Refresh Stories______š",
-			notWhileScanning: "Į_This will be available when the check is complete________________š"
+			newStoriesFound: "Atrodo, kad sukūrėte naują pasakojimą.",
+			includeStories: "Atnaujinti pasakojimus",
+			notWhileScanning: "Bus pasiekiamas baigus patikrinimą"
 		}
     })
 );

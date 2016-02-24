@@ -17,11 +17,11 @@
 define(
    ({
     scene: {
-      error: "Ж_Unable to create scene________Я"
+      error: "Невозможно создать сцену"
     },
     tools: {
-      linkLabel: "Ж_Link Views____Я",
-      unlinkLabel: "Ж_Unlink Views_____Я"
+      linkLabel: "Связать виды",
+      unlinkLabel: "Отменить связь видов"
     }
   })
 );

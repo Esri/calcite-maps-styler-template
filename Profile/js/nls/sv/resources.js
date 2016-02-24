@@ -20,7 +20,7 @@ define(
       error: "Det går inte att skapa kartan"
     },
     nav: {
-        "close": "Å_Close___ö"
+        "close": "Stäng"
     },
     elevation: {
         toggle: "Slå på/av diagrammet Profil för höjdkurva.",

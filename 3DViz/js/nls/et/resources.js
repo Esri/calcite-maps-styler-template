@@ -17,14 +17,14 @@
 define(
    ({
     scene: {
-      error: "Š_Unable to create scene________ä"
+      error: "Vaadet ei saanud luua"
     },
     panel: {
-      noslides: "Š_No slides in web scene________ä"
+      noslides: "Veebivaates pole slaide"
     },
     tooltips: {
-      play: "Š_Play-Pause____ä",
-      toggle: "Š_Toggle___ä"
+      play: "Esita/peata",
+      toggle: "Lüliti"
     }
   })
 );

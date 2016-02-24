@@ -41,7 +41,7 @@
 		},
 		cantFindStories: {
 			whereAreStories: "هل ترى الحكاية؟",
-			notSeeExplanation: "بيت_My Stories will only list story maps hosted in ArcGIS and created with the {{STORY_MAP_TOUR}}, {{JOURNAL}}, {{MAP_SERIES}} or {{SWIPE_SPYGLASS}} applications. See our {{FAQ}} for more information____________________________________________________________لاحقة.",
+			notSeeExplanation: "ستُدرج القصص خرائط القصص المستضافة فقط في ArcGIS، والتي تم إنشائها بتطبيقات {{STORY_MAP_TOUR}} أو {{JOURNAL}} أو {{MAP_SERIES}} أو {{SWIPE_SPYGLASS}}. راجع الأسئلة المتداولة لمزيد من المعلومات.",
 			faq: "الأسئلة المتداولة",
 			followingStoriesToUpdate: "تم إنشاء الحكايات التالية مع الإصدارات السابقة للتطبيقات التي تحتاج تحديث ليتم إدراجها في الحكايات:",
 			gettingStories: "البحث عن الحكايات التالية مع الإصدارات السابقة للتطبيقات التي تحتاج التحديث...",
@@ -120,7 +120,7 @@
 			saveFailed: "حدث خطأ في الحفظ",
 			numViews: "عروض: {{NUM_VIEWS}}",
 			editStory: "تحرير الحكاية",
-			viewLive: "بيت_View Story____لاحقة",
+			viewLive: "عرض القصة",
 			preview: "معاينة",
 			deleteButton: "حذف",
 			modified: "تم تعديل {{DATE}}",
@@ -130,7 +130,7 @@
 			close: "إغلاق",
 			hide: "إخفاء",
 			notAvailableWhenBroken: "تحتوي القصة على المشكلات التالية",
-			cantBeDeleted: "بيت_This story has delete protection enabled. See its item page on ArcGIS to disable_________________________لاحقة.",
+			cantBeDeleted: "حذفت هذه القصة الحماية المُمكنة. راجع صفحة العناصر في ArcGIS للتعطيل.",
 			shareDialog: {
 				title: "مشاركة الحكاية في العالم!",
 				notPublicWarning: "تم مشاركة الحكاية مع المؤسسة. سيكون أعضاء المؤسسة فقط قادرين على عرضه.",
@@ -163,7 +163,7 @@
 				save: "حفظ",
 				saved: "تم الحفظ",
 				errorSaving: "حدث خطأ في الحفظ",
-				tagTip: "بيت_Tip: Tags help people find your story. The more relevant the tags are, the higher the visibility your work will receive_____________________________________لاحقة."
+				tagTip: "تلميح: تساعد علامات تبويب الأشخاص للبحث في القصة. تُعد علامات التبويب الأكثر صلة هي أعلى رؤية سيلقاها العمل."
 			},
 			submitToGallery: {
 				gallerySubmission: "معرض خرائط الحكاية",
@@ -173,7 +173,7 @@
 				chosenSubjectAlt: "{{SUBJECT}} وبعض علامات التبويب",
 				storyMapTopicSubject: "موضوع",
 				sharedPublicly: "تمت المشاركة مع العامة",
-				noBrokenContent: "بيت_No issues____لاحقة",
+				noBrokenContent: "لم توجد موضوعات",
 				nominateToGallery: "تعيين المعرض",
 				comingSoon: "قريبًا!",
 				submitted: "تم الإرسال",
@@ -298,8 +298,8 @@
 				subscriptionPublicSuccess: "أصبح الاشتراك المتميز قابل للوصول من الجميع"
 			},
 			errors: {
-				publicDisabled: "بيت_Sharing publicly has been disabled by an Administrator_________________لاحقة",
-				orgDisabled: "بيت_Sharing to your organization has been disabled by an Administrator_____________________لاحقة",
+				publicDisabled: "قام المسئول بتعطيل المشاركة العامة",
+				orgDisabled: "قام المسئول بتعطيل المشاركة في المؤسسة",
 				noMapName: "لا يمكن استعادة اسم الخريطة",
 				notPublic: "خاص",
 				inaccessible: "غير قابل للوصول",
@@ -352,8 +352,8 @@
 				cantScanThisTypeAlt: "لا يمكننا التحقق من نوع الطبقة الحالي",
 				cantScanThisType: "الطبقة ليست نوع طبقة يمكن التحقق منه",
 				webpageNotScanned: "لم يتم التحقق من صفحات الويب للموضوعات",
-				ignoredIssue: "بيت_You have ignored an error on this layer. Reload the page and check this story again to review the error________________________________لاحقة",
-				ignoredIssueBuilder: "بيت_You have ignored an error on this layer. Reload the builder to check this error again___________________________لاحقة"
+				ignoredIssue: "لقد تجاهلت خطأً في هذه الطبقة. أعند تحميل الصفحة وقم بالتأشير على هذه القصة مجددًا لمراجعة الخطأ.",
+				ignoredIssueBuilder: "لقد تجاهلت خطأً في هذه الطبقة. أعند تحميل المنشئ وقم بالتأشير على هذا الخطأ مجددًا"
 			},
 			scanningErrors: {
 				deletedMap: "تم حذف المحتوى",
@@ -371,9 +371,9 @@
 				inaccessibleWebpage: "صفحات ويب غير قابلة للوصول"
 			},
 			scanningErrorTips: {
-				deletedMapTip: "بيت_Tip: Edit your web map and remove the broken content, or remove the web map from your story_____________________________لاحقة.",
-				inaccessibleMapTip: "بيت_Tip: Edit your web map and remove the broken content, or remove the web map from your story_____________________________لاحقة.",
-				notYoursNotAccessibleTip: "بيت_Tip: Edit your web map and remove the layer, or remove the web map from your story__________________________لاحقة.",
+				deletedMapTip: "تلميح: حرّر خريطة الويب، وقم بإزالة المحتوى التالف أو قم بإزالة خريطة الويب من القصة.",
+				inaccessibleMapTip: "تلميح: حرّر خريطة الويب وقم بإزالة المحتوى التالف أو قم بإزالة خريطة الويب من القصة.",
+				notYoursNotAccessibleTip: "تلميح: حرّر خريطة الويب وقم بإزالة الطبقة أو قم بإزالة خريطة الويب من القصة.",
 				serviceOkItemNotTip: "تم إضافة الطبقات باعتبارها عناصر قابلة للوصول أو تم حذفها. الطبقات تعمل، ولكنها قد تؤثر على الخريطة (النوافذ المنبثقة، الرمزية).",
 				ignore: "تجاهل",
 				fix: "تصحيح",
@@ -459,13 +459,13 @@
 				thirdTitle: "خرائط"
 			},
 			crowdsource: {
-				firstTitle: "بيت_contributions_____لاحقة",
-				secondTitle: "بيت_style___لاحقة",
-				secondValueA: "بيت_side panel____لاحقة",
-				secondValueB: "بيت_stacked___لاحقة",
-				thirdTitle: "بيت_basemap___لاحقة",
-				thirdValueLoading: "بيت_Loading____لاحقة...",
-				thirdValueUnknown: "بيت_unknown___لاحقة"
+				firstTitle: "المساهمات",
+				secondTitle: "النمط",
+				secondValueA: "لوحة جانبية",
+				secondValueB: "مُكدّس",
+				thirdTitle: "خريطة الأساس",
+				thirdValueLoading: "جارِ التحميل...",
+				thirdValueUnknown: "غير معروف"
 			}
 		},
 		progress: {
@@ -482,9 +482,9 @@
 			storiesWithIssues: "حكايات ذات مشكلات: {{NUM_STORIES}}"
 		},
 		newStories: {
-			newStoriesFound: "بيت_Looks like you have created a new story_____________لاحقة.",
-			includeStories: "بيت_Refresh Stories______لاحقة",
-			notWhileScanning: "بيت_This will be available when the check is complete________________لاحقة"
+			newStoriesFound: "يبدو أنك أنشأت قصة جديدة.",
+			includeStories: "تحديث القصص",
+			notWhileScanning: "ستتوفر عند اكتمال الفحص"
 		}
     })
 );

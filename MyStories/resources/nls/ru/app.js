@@ -41,7 +41,7 @@
 		},
 		cantFindStories: {
 			whereAreStories: "Ваша история не видна?",
-			notSeeExplanation: "Ж_My Stories will only list story maps hosted in ArcGIS and created with the {{STORY_MAP_TOUR}}, {{JOURNAL}}, {{MAP_SERIES}} or {{SWIPE_SPYGLASS}} applications. See our {{FAQ}} for more information____________________________________________________________Я.",
+			notSeeExplanation: "В разделе Мои истории отображаются только карты-истории, созданные на ArcGIS с помощью приложений {{STORY_MAP_TOUR}}, {{JOURNAL}}, {{MAP_SERIES}} или {{SWIPE_SPYGLASS}}. Для получения более подробной информации смотри {{FAQ}}.",
 			faq: "Часто задаваемые вопросы",
 			followingStoriesToUpdate: "Следующие истории, созданные в более ранних версиях наших приложений, следует обновить, чтобы они появились в Моих историях:",
 			gettingStories: "Поиск историй, созданных в старых версиях приложений, которые следует обновить...",
@@ -120,7 +120,7 @@
 			saveFailed: "Ошибка сохранения",
 			numViews: "Просмотров: {{NUM_VIEWS}}",
 			editStory: "Редактировать историю",
-			viewLive: "Ж_View Story____Я",
+			viewLive: "Просмотр истории",
 			preview: "Предварительный просмотр",
 			deleteButton: "Удалить",
 			modified: "Изменено {{DATE}}",
@@ -130,7 +130,7 @@
 			close: "закрыть",
 			hide: "скрыть",
 			notAvailableWhenBroken: "В истории обнаружены следующие проблемы",
-			cantBeDeleted: "Ж_This story has delete protection enabled. See its item page on ArcGIS to disable_________________________Я.",
+			cantBeDeleted: "У истории включена защита от удаления. Чтобы её отключить, зайдите на страницу описания элемента в ArcGIS.",
 			shareDialog: {
 				title: "Представьте свою историю всему миру!",
 				notPublicWarning: "Эта история доступна для организации. Только ее участники смогут ее просмотреть.",
@@ -163,7 +163,7 @@
 				save: "Сохранить",
 				saved: "Сохранено",
 				errorSaving: "Ошибка сохранения",
-				tagTip: "Ж_Tip: Tags help people find your story. The more relevant the tags are, the higher the visibility your work will receive_____________________________________Я."
+				tagTip: "Подсказка: теги нужны для того, чтобы можно было найти вашу историю. Чем более релевантные теги, тем больше людей увидят вашу работу."
 			},
 			submitToGallery: {
 				gallerySubmission: "Галерея карт-историй",
@@ -173,7 +173,7 @@
 				chosenSubjectAlt: "{{SUBJECT}} и несколько тегов",
 				storyMapTopicSubject: "subject",
 				sharedPublicly: "Она опубликована для всех",
-				noBrokenContent: "Ж_No issues____Я",
+				noBrokenContent: "Ошибок нет",
 				nominateToGallery: "Отправить в Галерею",
 				comingSoon: "Скоро!",
 				submitted: "Отправлено",
@@ -298,8 +298,8 @@
 				subscriptionPublicSuccess: "Ресурсы вашей подписки теперь общедоступны"
 			},
 			errors: {
-				publicDisabled: "Ж_Sharing publicly has been disabled by an Administrator_________________Я",
-				orgDisabled: "Ж_Sharing to your organization has been disabled by an Administrator_____________________Я",
+				publicDisabled: "Общий доступ был отключен Администратором",
+				orgDisabled: "Общий доступ в пределах организации был отключен Администратором",
 				noMapName: "Не удалось получить имя карты",
 				notPublic: "НЕ ОБЩЕДОСТУПНО",
 				inaccessible: "НЕДОСТУПНО",
@@ -352,8 +352,8 @@
 				cantScanThisTypeAlt: "У вас нет возможности выбрать этот тип слоя.",
 				cantScanThisType: "Слой не соответствует типу, который вы можете выбрать",
 				webpageNotScanned: "Веб-страницы не проверены на проблемы",
-				ignoredIssue: "Ж_You have ignored an error on this layer. Reload the page and check this story again to review the error________________________________Я",
-				ignoredIssueBuilder: "Ж_You have ignored an error on this layer. Reload the builder to check this error again___________________________Я"
+				ignoredIssue: "Вы проигнорировали ошибку данного слоя. Обновите страницу и ещё раз проверьте эту историю на наличие ошибки",
+				ignoredIssueBuilder: "Вы проигнорировали ошибку данного слоя. Обновите конструктор и ещё раз проверьте на наличие ошибки"
 			},
 			scanningErrors: {
 				deletedMap: "Ресурс удален",
@@ -371,9 +371,9 @@
 				inaccessibleWebpage: "Недоступные веб-страницы"
 			},
 			scanningErrorTips: {
-				deletedMapTip: "Ж_Tip: Edit your web map and remove the broken content, or remove the web map from your story_____________________________Я.",
-				inaccessibleMapTip: "Ж_Tip: Edit your web map and remove the broken content, or remove the web map from your story_____________________________Я.",
-				notYoursNotAccessibleTip: "Ж_Tip: Edit your web map and remove the layer, or remove the web map from your story__________________________Я.",
+				deletedMapTip: "Подсказка: отредактируйте веб-карту и удалите неисправные ресурсы, либо удалите веб-карту из истории.",
+				inaccessibleMapTip: "Подсказка: отредактируйте веб-карту и удалите неисправные ресурсы, либо удалите веб-карту из истории.",
+				notYoursNotAccessibleTip: "Подсказка: отредактируйте веб-карту и удалите слой, либо удалите веб-карту из истории.",
 				serviceOkItemNotTip: "Слои были добавлены как элементы, которые недоступны или удалены. Слои будут работать, но это может повлиять на внешний вид карты (всплывающие окна, символы).",
 				ignore: "Игнорировать",
 				fix: "Исправить",
@@ -459,13 +459,13 @@
 				thirdTitle: "карты"
 			},
 			crowdsource: {
-				firstTitle: "Ж_contributions_____Я",
-				secondTitle: "Ж_style___Я",
-				secondValueA: "Ж_side panel____Я",
-				secondValueB: "Ж_stacked___Я",
-				thirdTitle: "Ж_basemap___Я",
-				thirdValueLoading: "Ж_Loading____Я...",
-				thirdValueUnknown: "Ж_unknown___Я"
+				firstTitle: "вклад",
+				secondTitle: "стиль",
+				secondValueA: "боковая панель",
+				secondValueB: "перенос",
+				thirdTitle: "базовая карта",
+				thirdValueLoading: "Загрузка...",
+				thirdValueUnknown: "неизвестный"
 			}
 		},
 		progress: {
@@ -482,9 +482,9 @@
 			storiesWithIssues: "Историй с ошибками: {{NUM_STORIES}}"
 		},
 		newStories: {
-			newStoriesFound: "Ж_Looks like you have created a new story_____________Я.",
-			includeStories: "Ж_Refresh Stories______Я",
-			notWhileScanning: "Ж_This will be available when the check is complete________________Я"
+			newStoriesFound: "Похоже, вы только что создали новую историю.",
+			includeStories: "Обновить истории",
+			notWhileScanning: "Эта опция станет доступной после завершения проверки"
 		}
     })
 );

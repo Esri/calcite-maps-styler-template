@@ -17,18 +17,18 @@
 define(
    ({
     scene: {
-      error: "ก้_Unable to create scene________ษฺ"
+      error: "ไม่สามารถสร้างซีน"
     },
     panel: {
-      noslides: "ก้_No slides in web scene________ษฺ"
+      noslides: "ไม่มีสไลด์ในเว็บซีน"
     },
     tooltips: {
-      layers: "ก้_Layers___ษฺ",
-      basemaps: "ก้_Base maps____ษฺ",
-      slides: "ก้_Slides___ษฺ",
-      close: "ก้_Close___ษฺ",
-      zoom: "ก้_Zoom__ษฺ",
-      onoff: "ก้_On-Off___ษฺ"
+      layers: "ชั้นข้อมูล",
+      basemaps: "แผนที่ฐาน",
+      slides: "สไลด์",
+      close: "ปิด",
+      zoom: "ขยาย",
+      onoff: "เปิด-ปิด"
     }
   })
 );

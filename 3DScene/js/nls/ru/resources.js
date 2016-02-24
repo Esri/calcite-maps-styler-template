@@ -17,18 +17,18 @@
 define(
    ({
     scene: {
-      error: "Ж_Unable to create scene________Я"
+      error: "Невозможно создать сцену"
     },
     panel: {
-      noslides: "Ж_No slides in web scene________Я"
+      noslides: "В веб-сцене нет слайдов"
     },
     tooltips: {
-      layers: "Ж_Layers___Я",
-      basemaps: "Ж_Base maps____Я",
-      slides: "Ж_Slides___Я",
-      close: "Ж_Close___Я",
-      zoom: "Ж_Zoom__Я",
-      onoff: "Ж_On-Off___Я"
+      layers: "Слои",
+      basemaps: "Базовые карты",
+      slides: "Cлайды",
+      close: "Закрыть",
+      zoom: "Масштабировать",
+      onoff: "Вкл-Выкл"
     }
   })
 );

@@ -17,18 +17,18 @@
 define(
    ({
     scene: {
-      error: "Š_Unable to create scene________ä"
+      error: "Vaadet ei saanud luua"
     },
     panel: {
-      noslides: "Š_No slides in web scene________ä"
+      noslides: "Veebivaates pole slaide"
     },
     tooltips: {
-      layers: "Š_Layers___ä",
-      basemaps: "Š_Base maps____ä",
-      slides: "Š_Slides___ä",
-      close: "Š_Close___ä",
-      zoom: "Š_Zoom__ä",
-      onoff: "Š_On-Off___ä"
+      layers: "Kihid",
+      basemaps: "Aluskaardid",
+      slides: "Slaidid",
+      close: "Sule",
+      zoom: "Suumi",
+      onoff: "Sees/väljas"
     }
   })
 );

@@ -21,12 +21,12 @@ define(
       generalError: "Fel"
     },
     social:{
-        facebook: "Å_Share on Facebook______ö",
-        twitter: "Å_Share on Twitter______ö",
-        link: "Å_Share link____ö"
+        facebook: "Dela på Facebook",
+        twitter: "Dela på Twitter",
+        link: "Dela länk"
     },
     legendToggle:{
-        label: "Å_LEGEND___ö"
+        label: "TECKENFÖRKLARING"
     }
   })
 );

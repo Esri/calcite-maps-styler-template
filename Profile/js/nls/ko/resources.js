@@ -20,7 +20,7 @@ define(
       error: "맵을 생성할 수 없음"
     },
     nav: {
-        "close": "한_Close___빠"
+        "close": "닫기"
     },
     elevation: {
         toggle: "고도 프로파일 차트를 전환합니다.",

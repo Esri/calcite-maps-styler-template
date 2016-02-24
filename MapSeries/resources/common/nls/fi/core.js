@@ -19,7 +19,7 @@
 				create: "Luo",
 				yes: "Kyllä",
 				no: "Ei",
-				mystories: "Å_My Stories____ö"
+				mystories: "Omat tarinat"
 			},
 			inlineFieldEdit: {
 				editMe: "Muokkaa minua!"
@@ -31,10 +31,10 @@
 				buttonShare: "Jaa",
 				buttonSettings: "Asetukset",
 				buttonHelp: "Ohje",
-				buttonPreview: "Å_View story____ö",
+				buttonPreview: "Näytä tarina",
 				tooltipFirstSave: "Tämä toiminto ei ole käytettävissä ennen tallennusta.",
 				tooltipNotShared: "Tämä toiminto ei ole käytettävissä ennen jakamista.",
-				tooltipNotShared2: "Å_Your story isn't shared, only you can access it_______________ö.",
+				tooltipNotShared2: "Tainaasi ei ole jaettu. Vain sinä voit lukea sen.",
 				noPendingChange: "Ei odottavaa muutosta",
 				unSavedChangePlural: "Odottavat muutokset",
 				closeWithPendingChange: "Haluatko varmasti vahvistaa tämän toiminnon? Menetät tekemäsi muutokset.",
@@ -55,20 +55,20 @@
 				btnOk: "Muokkaa tarinan otsikkoa"
 			},
 			saveErrorSocial: {
-				title: "Å_Social media sharing update_________ö",
-				panel1: "Å_Your storyâ€™s appearance on social media has been improved, but your ArcGIS web application item title is not the same as your story title___________________________________________ö.",
-				panel1tooltip: "Å_By defining a title, summary and thumbnail image, your story will look like this_________________________ö:",
-				panel2:	"Å_Which title would you like to use on social media________________ö:",
-				panel2q1: "Å_Story title (recommended)_________ö",
-				panel2q1tooltip: "Å_By choosing this option, your item title will be modified to match your story title and further changes in the builder will be synchronized___________________________________________ö.",
-				panel2q2: "Å_Item title____ö",
-				panel3: "Å_To further improve how your story looks on social media use ${MYSTORIES} to add a summary and a thumbnail image___________________________________ö.",
-				panel4: "Å_Do not warn me again for this story____________ö"
+				title: "Sosiaalisen median jakamispäivitys",
+				panel1: "Tarinasi ulkoasua sosiaalisessa mediassa on parannettu, mutta ArcGIS-Web-sovelluskohteen otsikko ei ole sama kuin tarinan otsikko.",
+				panel1tooltip: "Jos määrität otsikon, yhteenvedon ja pikkukuvan, tarinasi näyttää tältä:",
+				panel2:	"Mitä otsikkoa haluat käyttää sosiaalisessa mediassa:",
+				panel2q1: "Tarinan otsikko (suositus)",
+				panel2q1tooltip: "Valitsemalla tämän vaihtoehdon kohteen otsikkoa muutetaan siten, että se vastaa tarinan otsikkoa ja luontitoiminnon uudet muutokset synkronoidaan.",
+				panel2q2: "Kohteen otsikko",
+				panel3: "Jos haluat edelleen parantaa tarinan ulkoasua sosiaalisessa mediassa, lisää yhteenveto ja pikkukuva käyttämällä toimintoa ${MYSTORIES}.",
+				panel4: "Älä varoita minua enää uudelleen tästä tarinasta"
 			},
 			share: {
 				shareTitle: "Jaa tarinasi",
 				preview: "Esikatselu",
-				viewlive: "Å_View story____ö",
+				viewlive: "Näytä tarina",
 				btnPrivate: "Yksityinen",
 				btnPrivateTooltip: "Vain sinä näet tarinan",
 				btnOrg: "Organisaatio",
@@ -87,27 +87,27 @@
 				notavailable2: "Tarinan jakamista muodostustoiminnosta ei valitettavasti tueta Portal for ArcGISin tässä versiossa (edellyttää versiota 10.4 tai sitä uudempaa versiota).",
 				notavailable3: "Voit jakaa tämän tarinan kohteesta %LINK%.",
 				notavailable4: "Omat tarinat",
-				notavailable5: "Å_its item page_____ö",
+				notavailable5: "sen kohdesivu",
 				notavailable6: "Tätä ominaisuutta ei tueta täysin kehittäjätilassa. Käyttöönottoskenaariosi mukaan tämä ominaisuus on ehkä tuettu käyttöönotettaessa.",
 				notavailable7: "Varmista vierailemalla kohteessa %MYCONTENT%, että tarinassasi käytetyt kartat ja karttatasot jaetaan myös.",
 				notavailable8: "Oma sisältö",
-				mystoriesinvite2: "Å_To improve how your story looks on social networks use ${MYSTORIES} to add a summary and a thumbnail image_________________________________ö."
+				mystoriesinvite2: "Jos haluat parantaa tarinan ulkoasua sosiaalisessa verkostossa, lisää yhteenveto ja pikkukuva käyttämällä toimintoa ${MYSTORIES}."
 			},
 			settings: {
 				header: "Asetukset",
 				tabError: "Tarkista virheet kaikista välilehdistä"
 			},
 			settingsLayout: {
-				title: "Å_Layout___ö",
+				title: "Asettelu",
 				explain: "Mitä asettelua haluat käyttää?",
 				explainInit: "Voit muuttaa asettelua asetusvalintaikkunan kautta milloin tahansa.",
 				viewExample: "Katsele reaaliaikaista esimerkkiä"
 			},
 			settingsTheme: {
-				title: "Å_Theme___ö"
+				title: "Teema"
 			},
 			settingsHeader: {
-				title: "Å_Header___ö",
+				title: "Ylätunniste",
 				logoEsri: "Esri-logo",
 				logoNone: "Ei logoa",
 				logoCustom: "Mukautettu logo",
@@ -119,7 +119,7 @@
 				lblSmallHeader: "Käytä tiivistä otsikko (ei alaotsikkoa)"
 			},
 			header: {
-				title: "Å_Edit the title of your %TPL_NAME%___________ö",
+				title: "Muokkaa tarinan %TPL_NAME% otsikkoa",
 				subtitle: "Muokkaa tarinan %TPL_NAME% alaotsikkoa"
 			}
 		}

@@ -17,11 +17,11 @@
 define(
    ({
     scene: {
-      error: "須_Unable to create scene________鷗"
+      error: "シーンを作成できません"
     },
     tools: {
-      linkLabel: "須_Link Views____鷗",
-      unlinkLabel: "須_Unlink Views_____鷗"
+      linkLabel: "ビューのリンク",
+      unlinkLabel: "ビューのリンクを解除"
     }
   })
 );

@@ -19,7 +19,7 @@
 				create: "Creare",
 				yes: "Da",
 				no: "Nu",
-				mystories: "Ă_My Stories____ș"
+				mystories: "Relatările mele"
 			},
 			inlineFieldEdit: {
 				editMe: "Editează-mă!"
@@ -31,10 +31,10 @@
 				buttonShare: "Partajare",
 				buttonSettings: "Setări",
 				buttonHelp: "Ajutor",
-				buttonPreview: "Ă_View story____ș",
+				buttonPreview: "Vizualizare scenariu",
 				tooltipFirstSave: "Această funcţie nu este disponibilă decât după ce salvaţi.",
 				tooltipNotShared: "Această funcţie nu este disponibilă decât după ce partajaţi.",
-				tooltipNotShared2: "Ă_Your story isn't shared, only you can access it_______________ș.",
+				tooltipNotShared2: "Scenariul dvs. nu este partajat, numai dvs. îl puteţi accesa.",
 				noPendingChange: "Nicio modificare în aşteptare",
 				unSavedChangePlural: "Modificări în aşteptare",
 				closeWithPendingChange: "Sigur doriţi să confirmaţi această acţiune? Modificările dvs. se vor pierde.",
@@ -55,20 +55,20 @@
 				btnOk: "Editaţi titlul poveştii"
 			},
 			saveErrorSocial: {
-				title: "Ă_Social media sharing update_________ș",
-				panel1: "Ă_Your storyâ€™s appearance on social media has been improved, but your ArcGIS web application item title is not the same as your story title___________________________________________ș.",
-				panel1tooltip: "Ă_By defining a title, summary and thumbnail image, your story will look like this_________________________ș:",
-				panel2:	"Ă_Which title would you like to use on social media________________ș:",
-				panel2q1: "Ă_Story title (recommended)_________ș",
-				panel2q1tooltip: "Ă_By choosing this option, your item title will be modified to match your story title and further changes in the builder will be synchronized___________________________________________ș.",
-				panel2q2: "Ă_Item title____ș",
-				panel3: "Ă_To further improve how your story looks on social media use ${MYSTORIES} to add a summary and a thumbnail image___________________________________ș.",
-				panel4: "Ă_Do not warn me again for this story____________ș"
+				title: "Actualizare partajare pe reţele de socializare",
+				panel1: "Prezentarea scenariului dvs.â€™ pe reţelele de socializare, a fost îmbunătăţită, dar titlul elementului aplicaţiei dvs. web ArcGIS nu este acelaşi cu titlul scenariului dvs.",
+				panel1tooltip: "Prin definirea unui titlu, unui rezumat şi unei imagini în miniatură, scenariul dvs. va arăta astfel:",
+				panel2:	"Ce titlu doriţi să utilizaţi pe reţelele de socializare:",
+				panel2q1: "Titlul scenariului (recomandat)",
+				panel2q1tooltip: "Prin selectarea acestei opţiuni, titlul elementului dvs. va fi modificat pentru a corespunde titlului scenariului şi modificările ulterioare din aplicația de creare a scenariilor vor fi sincronizate.",
+				panel2q2: "Titlu element",
+				panel3: "Pentru a îmbunătăţi în continuare modul în care scenariul dvs. este prezentat pe reţelele de socializare, utilizaţi ${MYSTORIES} pentru a adăuga un rezumat şi o imagine în miniatură.",
+				panel4: "Opriţi avertizarea pentru acest scenariu"
 			},
 			share: {
 				shareTitle: "Partajaţi povestea",
 				preview: "Previzualizare",
-				viewlive: "Ă_View story____ș",
+				viewlive: "Vizualizare scenariu",
 				btnPrivate: "Privat",
 				btnPrivateTooltip: "Numai dvs. puteţi vedea povestea",
 				btnOrg: "Organizaţie",
@@ -87,27 +87,27 @@
 				notavailable2: "Ne pare rău, partajarea poveştii din Creator nu este acceptată în această versiune de Portal for ArcGIS (necesită 10.4 sau o versiune ulterioară).",
 				notavailable3: "Puteţi partaja această poveste din %LINK%.",
 				notavailable4: "Relatările mele",
-				notavailable5: "Ă_its item page_____ș",
+				notavailable5: "pagina elementului său",
 				notavailable6: "Ne pare rău, această caracteristică nu este complet acceptată în modul de dezvoltare. În funcţie de scenariul de dezvoltare, această caracteristică poate fi acceptată la implementare.",
 				notavailable7: "Asiguraţi-vă că vizitaţi %MYCONTENT% pentru a confirma că hărţile şi straturile tematice utilizate în poveste sunt şi ele partajate.",
 				notavailable8: "Resursele mele",
-				mystoriesinvite2: "Ă_To improve how your story looks on social networks use ${MYSTORIES} to add a summary and a thumbnail image_________________________________ș."
+				mystoriesinvite2: "Pentru a îmbunătăţi modul în care scenariul dvs. este prezentat pe reţelele de socializare, utilizaţi ${MYSTORIES} pentru a adăuga un rezumat şi o imagine în miniatură."
 			},
 			settings: {
 				header: "Setări",
 				tabError: "Verificaţi erorile în toate filele"
 			},
 			settingsLayout: {
-				title: "Ă_Layout___ș",
+				title: "Configuraţie",
 				explain: "Ce strat tematic doriţi să utilizaţi?",
 				explainInit: "Puteţi modifica aspectul în orice moment, din dialogul pentru setări.",
 				viewExample: "Vizualizaţi un exemplu live"
 			},
 			settingsTheme: {
-				title: "Ă_Theme___ș"
+				title: "Temă"
 			},
 			settingsHeader: {
-				title: "Ă_Header___ș",
+				title: "Antet",
 				logoEsri: "Sigla Esri",
 				logoNone: "Fără siglă",
 				logoCustom: "Siglă particularizată",
@@ -119,7 +119,7 @@
 				lblSmallHeader: "Utilizare antet compact (fără subtitlu)"
 			},
 			header: {
-				title: "Ă_Edit the title of your %TPL_NAME%___________ș",
+				title: "Editaţi titlul %TPL_NAME%",
 				subtitle: "Editaţi subtitlul %TPL_NAME%"
 			}
 		}

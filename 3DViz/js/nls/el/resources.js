@@ -17,14 +17,14 @@
 define(
    ({
     scene: {
-      error: "Đ_Unable to create scene________ớ"
+      error: "Δεν είναι δυνατή η δημιουργία 3D προβολής"
     },
     panel: {
-      noslides: "Đ_No slides in web scene________ớ"
+      noslides: "Δεν υπάρχουν διαφάνειες στην Web 3D Προβολή"
     },
     tooltips: {
-      play: "Đ_Play-Pause____ớ",
-      toggle: "Đ_Toggle___ớ"
+      play: "Αναπαραγωγή-Παύση",
+      toggle: "Εναλλαγή"
     }
   })
 );

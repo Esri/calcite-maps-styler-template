@@ -21,12 +21,12 @@ define(
       generalError: "エラー"
     },
     social:{
-        facebook: "須_Share on Facebook______鷗",
-        twitter: "須_Share on Twitter______鷗",
-        link: "須_Share link____鷗"
+        facebook: "Facebook で共有",
+        twitter: "Twitter で共有",
+        link: "リンクの共有"
     },
     legendToggle:{
-        label: "須_LEGEND___鷗"
+        label: "凡例"
     }
   })
 );

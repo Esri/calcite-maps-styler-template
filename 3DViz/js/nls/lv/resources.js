@@ -17,14 +17,14 @@
 define(
    ({
     scene: {
-      error: "ķ_Unable to create scene________ū"
+      error: "Nevarēja izveidot scēnu"
     },
     panel: {
-      noslides: "ķ_No slides in web scene________ū"
+      noslides: "Web scēnā nav slaidi"
     },
     tooltips: {
-      play: "ķ_Play-Pause____ū",
-      toggle: "ķ_Toggle___ū"
+      play: "Demonstrēt-apturēt",
+      toggle: "Pārslēgt"
     }
   })
 );

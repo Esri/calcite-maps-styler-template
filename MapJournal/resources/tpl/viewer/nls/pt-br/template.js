@@ -22,21 +22,21 @@
 				boxTitle: "Ocorreu um erro",
 				invalidConfig: "Configuração inválida",
 				invalidConfigNoApp: "Identificador do Aplicativo de Mapeamento da Web não especificado no index.html.",
-				invalidConfigNoAppDev: "ã_No Web Mapping Application identifier is specified in URL parameters (?appid=). In development mode, the appid configuration in index.html is ignored______________________________________________Ç.",
+				invalidConfigNoAppDev: "Nenhum identificador do Aplicativo de Mapeamento da Web está especificado em parâmetros da URL (?appid=). Em modo de desenvolvimento, a configuração de appid em index.html é ignorada.",
 				unspecifiedConfigOwner: "O proprietário autorizado não foi configurado.",
 				invalidConfigOwner: "O proprietário da história não está autorizado.",
 				createMap: "Não foi possível criar o mapa",
 				invalidApp: "O %TPL_NAME% não existe ou está inacessível.",
 				appLoadingFail: "Ocorreu algo errado, o %TPL_NAME% não carregou corretamente.",
 				notConfiguredDesktop: "A história ainda não está configurada.",
-				notConfiguredMobile: "ã_The %TPL_NAME% builder is not supported at this display size. If possible, resize your browser to access the builder or please build your story on a device with a larger screen______________________________________________________Ç.",
-				notConfiguredMobile2: "ã_Please rotate your device to landscape orientation to use the %TPL_NAME% builder_________________________Ç.",
+				notConfiguredMobile: "O construtor %TPL_NAME% não é suportado neste tamanho de visualização. Se possível, redimensione seu navegador para acessar o construtor ou construa sua história em um dispositivo com uma tela maior.",
+				notConfiguredMobile2: "Gire seu dispositivo para orientação de paisagem para utilizar o construtor %TPL_NAME%.",
 				notAuthorized: "Você não tem autorização para acessar esta história",
-				notAuthorizedBuilder: "ã_You are not authorized to use %TPL_NAME% builder________________Ç.",
+				notAuthorizedBuilder: "Você não está autorizado para utilizar o construtor %TPL_NAME%.",
 				noBuilderIE: "O construtor não é suportado no Internet Explorer antes da versão %VERSION%. %UPGRADE%",
 				noViewerIE: "Esta história não é suportada no Internet Explorer antes da versão %VERSION%. %UPGRADE%",
 				upgradeBrowser: "<a href='http://browsehappy.com/' target='_blank'>Atualize seu navegador</a>.",
-				mapLoadingFail: "ã_Something went wrong, the map did not load correctly_________________Ç.",
+				mapLoadingFail: "Algo deu errado, o mapa não carregou corretamente.",
 				signOut: "Sair"
 			},
 			mobileView: {
@@ -67,8 +67,8 @@
 				checking: "Verificando conteúdo da sua história",
 				fix: "Corrigir problemas em sua história",
 				noerrors: "Nenhum problema detectado",
-				tooltipAutoplayDisabled: "ã_This isn't available in autoplay mode____________Ç",
-				notshared: "ã_Story not shared______Ç"
+				tooltipAutoplayDisabled: "Isto não está disponível no modo de reprodução automática",
+				notshared: "História não compartilhada"
 			},
 			overviewFromCommon: {
 				title: "Mapa de Visão Geral"
@@ -83,10 +83,10 @@
 				embed: "Anexar na página da web",
 				embedExplain: "Utilize o seguinte código HTML para anexar o diário em uma página da web.",
 				size: "Tamanho (largura/altura):",
-				autoplayLabel: "ã_Autoplay mode_____Ç",
-				autoplayExplain1: "ã_Autoplay mode will advance through your story at a regular interval. This is ideal on a kiosk or public display monitor, but be aware that in other situations it may make the story harder to read. This feature isn't supported on small displays__________________________________________________________________________Ç.",
-				autoplayExplain2: "ã_When this mode is active there are controls to play/pause the story and adjust the navigation speed_______________________________Ç.",
-				linksupdated: "ã_Links updated_____Ç!"
+				autoplayLabel: "Modo de reprodução automática",
+				autoplayExplain1: "O modo de reprodução automática avançará por sua história em um intervalo regular. Isto é ideal em um monitor de visualização pública ou de quiosque, mas esteja ciente que em outras situações ele pode tornar a história mais difícil de ler. Este recurso não é suportado em visualizações pequenas.",
+				autoplayExplain2: "Quando este modo está ativo há controles para reproduzir/pausar a história e ajustar a velocidade de navegação.",
+				linksupdated: "Links atualizados!"
 			}
         }
     })

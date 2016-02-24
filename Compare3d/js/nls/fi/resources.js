@@ -17,11 +17,11 @@
 define(
    ({
     scene: {
-      error: "Å_Unable to create scene________ö"
+      error: "Maisemaa ei voi luoda"
     },
     tools: {
-      linkLabel: "Å_Link Views____ö",
-      unlinkLabel: "Å_Unlink Views_____ö"
+      linkLabel: "Linkitä näkymät",
+      unlinkLabel: "Poista näkymien linkitys"
     }
   })
 );

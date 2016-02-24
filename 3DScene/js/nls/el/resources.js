@@ -17,18 +17,18 @@
 define(
    ({
     scene: {
-      error: "Đ_Unable to create scene________ớ"
+      error: "Δεν είναι δυνατή η δημιουργία 3D προβολής"
     },
     panel: {
-      noslides: "Đ_No slides in web scene________ớ"
+      noslides: "Δεν υπάρχουν διαφάνειες στην Web 3D Προβολή"
     },
     tooltips: {
-      layers: "Đ_Layers___ớ",
-      basemaps: "Đ_Base maps____ớ",
-      slides: "Đ_Slides___ớ",
-      close: "Đ_Close___ớ",
-      zoom: "Đ_Zoom__ớ",
-      onoff: "Đ_On-Off___ớ"
+      layers: "Θεματικά επίπεδα",
+      basemaps: "Υπόβαθρα",
+      slides: "Διαφάνειες",
+      close: "Κλείσιμο",
+      zoom: "Εστίαση",
+      onoff: "Ενεργοποίηση-Απενεργοποίηση"
     }
   })
 );

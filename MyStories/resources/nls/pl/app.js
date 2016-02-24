@@ -41,7 +41,7 @@
 		},
 		cantFindStories: {
 			whereAreStories: "Nie widzisz narracji?",
-			notSeeExplanation: "ł_My Stories will only list story maps hosted in ArcGIS and created with the {{STORY_MAP_TOUR}}, {{JOURNAL}}, {{MAP_SERIES}} or {{SWIPE_SPYGLASS}} applications. See our {{FAQ}} for more information____________________________________________________________ą.",
+			notSeeExplanation: "Karta Moje narracje będzie zawierać tylko mapy narracyjne hostowane na platformie ArcGIS, utworzone za pomocą aplikacji {{STORY_MAP_TOUR}}, {{JOURNAL}}, {{MAP_SERIES}} i {{SWIPE_SPYGLASS}}. Więcej informacji — {{FAQ}}.",
 			faq: "FAQ",
 			followingStoriesToUpdate: "Następujące narracje utworzone przy użyciu wcześniejszych wersji naszych aplikacji należy zaktualizować, aby wyświetlać je na karcie Moje narracje:",
 			gettingStories: "Wyszukiwanie narracji utworzonych przy użyciu wcześniejszych wersji naszych aplikacji, które należy zaktualizować...",
@@ -120,7 +120,7 @@
 			saveFailed: "Błąd zapisywania",
 			numViews: "Liczba wyświetleń: {{NUM_VIEWS}}",
 			editStory: "Edytuj narrację",
-			viewLive: "ł_View Story____ą",
+			viewLive: "Wyświetl narrację",
 			preview: "Zobacz podgląd",
 			deleteButton: "Usuń",
 			modified: "Zmodyfikowano {{DATE}}",
@@ -130,7 +130,7 @@
 			close: "zamknij",
 			hide: "ukryj",
 			notAvailableWhenBroken: "Wystąpiły problemy z tą narracją",
-			cantBeDeleted: "ł_This story has delete protection enabled. See its item page on ArcGIS to disable_________________________ą.",
+			cantBeDeleted: "Ta narracja jest chroniona przed usunięciem. Aby wyłączyć tę opcję, przejdź do strony tego elementu na platformie ArcGIS.",
 			shareDialog: {
 				title: "Udostępnij swoją narrację całemu światu!",
 				notPublicWarning: "Twoja narracja została udostępniona w ramach Twojej instytucji. Tylko członkowie Twojej instytucji będą mogli ją wyświetlać.",
@@ -163,7 +163,7 @@
 				save: "Zapisz",
 				saved: "Zapisano",
 				errorSaving: "Błąd zapisywania",
-				tagTip: "ł_Tip: Tags help people find your story. The more relevant the tags are, the higher the visibility your work will receive_____________________________________ą."
+				tagTip: "Wskazówka: znaczniki pomagają użytkownikom znaleźć Twoją narrację. Im lepiej dobrane znaczniki, tym lepsza widoczność Twojej pracy."
 			},
 			submitToGallery: {
 				gallerySubmission: "Story Maps — Galeria",
@@ -173,7 +173,7 @@
 				chosenSubjectAlt: "{{SUBJECT}} i niektóre znaczniki",
 				storyMapTopicSubject: "temat",
 				sharedPublicly: "Udostępniony publicznie",
-				noBrokenContent: "ł_No issues____ą",
+				noBrokenContent: "Brak problemów",
 				nominateToGallery: "Nominuj do Galerii",
 				comingSoon: "Już wkrótce!",
 				submitted: "Przesłane",
@@ -298,8 +298,8 @@
 				subscriptionPublicSuccess: "Twoja subskrybowana zawartość jest teraz publicznie dostępna"
 			},
 			errors: {
-				publicDisabled: "ł_Sharing publicly has been disabled by an Administrator_________________ą",
-				orgDisabled: "ł_Sharing to your organization has been disabled by an Administrator_____________________ą",
+				publicDisabled: "Opcja publicznego udostępniania została wyłączona przez Administratora",
+				orgDisabled: "Opcja udostępniania w instytucji została wyłączona przez Administratora",
 				noMapName: "Nie można pobrać nazwy mapy",
 				notPublic: "NIEPUBLICZNE",
 				inaccessible: "NIEDOSTĘPNE",
@@ -352,8 +352,8 @@
 				cantScanThisTypeAlt: "Nie można sprawdzić warstwy tego typu",
 				cantScanThisType: "Warstwy tego typu nie można sprawdzić",
 				webpageNotScanned: "Strony internetowe nie zostały sprawdzone pod kątem problemów",
-				ignoredIssue: "ł_You have ignored an error on this layer. Reload the page and check this story again to review the error________________________________ą",
-				ignoredIssueBuilder: "ł_You have ignored an error on this layer. Reload the builder to check this error again___________________________ą"
+				ignoredIssue: "Zignorowano błąd na tej warstwie. Odśwież stronę i ponownie sprawdź tę narrację, aby poprawić błąd",
+				ignoredIssueBuilder: "Zignorowano błąd na tej warstwie. Ponownie uruchom kreator, aby ponownie sprawdzić ten błąd"
 			},
 			scanningErrors: {
 				deletedMap: "Zawartość usunięta",
@@ -371,9 +371,9 @@
 				inaccessibleWebpage: "Strony internetowe niedostępne"
 			},
 			scanningErrorTips: {
-				deletedMapTip: "ł_Tip: Edit your web map and remove the broken content, or remove the web map from your story_____________________________ą.",
-				inaccessibleMapTip: "ł_Tip: Edit your web map and remove the broken content, or remove the web map from your story_____________________________ą.",
-				notYoursNotAccessibleTip: "ł_Tip: Edit your web map and remove the layer, or remove the web map from your story__________________________ą.",
+				deletedMapTip: "Wskazówka: otwórz mapę internetową do edycji i usuń uszkodzoną zawartość lub usuń mapę internetową z narracji.",
+				inaccessibleMapTip: "Wskazówka: otwórz mapę internetową do edycji i usuń uszkodzoną zawartość lub usuń mapę internetową z narracji.",
+				notYoursNotAccessibleTip: "Wskazówka: otwórz mapę internetową do edycji i usuń warstwę lub usuń mapę internetową z narracji.",
 				serviceOkItemNotTip: "Warstwy zostały dodane jako elementy, które są niedostępne lub zostały usunięte. Warstwy działają prawidłowo, ale może mieć to wpływ na mapy (okna podręczne, symbole)",
 				ignore: "Ignore",
 				fix: "Napraw",
@@ -459,13 +459,13 @@
 				thirdTitle: "mapy"
 			},
 			crowdsource: {
-				firstTitle: "ł_contributions_____ą",
-				secondTitle: "ł_style___ą",
-				secondValueA: "ł_side panel____ą",
-				secondValueB: "ł_stacked___ą",
-				thirdTitle: "ł_basemap___ą",
-				thirdValueLoading: "ł_Loading____ą...",
-				thirdValueUnknown: "ł_unknown___ą"
+				firstTitle: "udostępnianie zasobów",
+				secondTitle: "styl",
+				secondValueA: "panel boczny",
+				secondValueB: "piętrowo",
+				thirdTitle: "mapa bazowa",
+				thirdValueLoading: "Wczytywanie...",
+				thirdValueUnknown: "nieznany"
 			}
 		},
 		progress: {
@@ -482,9 +482,9 @@
 			storiesWithIssues: "Liczba narracji z problemami: {{NUM_STORIES}}"
 		},
 		newStories: {
-			newStoriesFound: "ł_Looks like you have created a new story_____________ą.",
-			includeStories: "ł_Refresh Stories______ą",
-			notWhileScanning: "ł_This will be available when the check is complete________________ą"
+			newStoriesFound: "Wygląda na to, że utworzono nową narrację.",
+			includeStories: "Odśwież narracje",
+			notWhileScanning: "Ta będzie dostępna po ukończeniu sprawdzania"
 		}
     })
 );

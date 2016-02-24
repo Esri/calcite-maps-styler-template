@@ -20,7 +20,7 @@ define(
       error: "Karte kann nicht erstellt werden"
     },
     nav: {
-        "close": "ä_Close___Ü"
+        "close": "Schließen"
     },
     elevation: {
         toggle: "Höhenprofildiagramm umschalten",

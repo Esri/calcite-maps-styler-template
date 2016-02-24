@@ -17,18 +17,18 @@
 define(
    ({
     scene: {
-      error: "כן_Unable to create scene________ש"
+      error: "לא ניתן ליצור סצינה"
     },
     panel: {
-      noslides: "כן_No slides in web scene________ש"
+      noslides: "אין שקפים בסצינת אינטרנט"
     },
     tooltips: {
-      layers: "כן_Layers___ש",
-      basemaps: "כן_Base maps____ש",
-      slides: "כן_Slides___ש",
-      close: "כן_Close___ש",
-      zoom: "כן_Zoom__ש",
-      onoff: "כן_On-Off___ש"
+      layers: "שכבות",
+      basemaps: "מפות בסיס",
+      slides: "שקופיות",
+      close: "סגור",
+      zoom: "התמקדות",
+      onoff: "פועל-כבוי"
     }
   })
 );

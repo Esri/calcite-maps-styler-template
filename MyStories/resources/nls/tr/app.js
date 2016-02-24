@@ -41,7 +41,7 @@
 		},
 		cantFindStories: {
 			whereAreStories: "Hikayenizi göremiyor musunuz?",
-			notSeeExplanation: "ı_My Stories will only list story maps hosted in ArcGIS and created with the {{STORY_MAP_TOUR}}, {{JOURNAL}}, {{MAP_SERIES}} or {{SWIPE_SPYGLASS}} applications. See our {{FAQ}} for more information____________________________________________________________İ.",
+			notSeeExplanation: "Hikayelerim yalnızca {{STORY_MAP_TOUR}}, {{JOURNAL}}, {{MAP_SERIES}} veya {{SWIPE_SPYGLASS}} uygulamaları kullanılarak oluşturulan ve ArcGIS\'de barındırılan hikaye haritalarını listeler. Daha fazla bilgi için {{FAQ}} bölümümüzü inceleyin.",
 			faq: "SSS",
 			followingStoriesToUpdate: "Uygulamalarımızın önceki sürümleri ile oluşturulan aşağıdaki hikayelerin, Hikayelerim içinde listelenebilmesi için güncelleştirilmesi gerekir:",
 			gettingStories: "Uygulamalarımızın önceki sürümleri ile oluşturulan ve güncellenmesi gereken hikayeler aranıyor...",
@@ -120,7 +120,7 @@
 			saveFailed: "Kaydetme hatası",
 			numViews: "Görüntüleme sayısı: {{NUM_VIEWS}}",
 			editStory: "Hikayeyi Düzenle",
-			viewLive: "ı_View Story____İ",
+			viewLive: "Hikayeyi Görüntüle",
 			preview: "Önizleme",
 			deleteButton: "Sil",
 			modified: "Değiştirilme tarihi: {{DATE}}",
@@ -130,7 +130,7 @@
 			close: "kapat",
 			hide: "gizle",
 			notAvailableWhenBroken: "Hikayenizde aşağıdaki sorunlar belirlendi:",
-			cantBeDeleted: "ı_This story has delete protection enabled. See its item page on ArcGIS to disable_________________________İ.",
+			cantBeDeleted: "Bu hikayede silme koruması etkinleştirilmiş. Devre dışı bırakmak için ArcGIS Online\'daki ilgili öğe sayfasını inceleyin.",
 			shareDialog: {
 				title: "Hikayenizi dünyayla paylaşın!",
 				notPublicWarning: "Hikayeniz kuruluşunuzla paylaşılmıştır. Yalnızca kuruluşunuzun üyeleri bunu görüntüleyebilir.",
@@ -163,7 +163,7 @@
 				save: "Kaydet",
 				saved: "Kaydedildi",
 				errorSaving: "Kaydetme hatası",
-				tagTip: "ı_Tip: Tags help people find your story. The more relevant the tags are, the higher the visibility your work will receive_____________________________________İ."
+				tagTip: "İpucu: Etiketler, başkalarının hikayenizi bulmasına yardım eder. Etiketler ne kadar ilgili olursa, çalışmanız o kadar fazla görüntülenir."
 			},
 			submitToGallery: {
 				gallerySubmission: "Story Maps Galerisi",
@@ -173,7 +173,7 @@
 				chosenSubjectAlt: "{{SUBJECT}} ve bazı etiketler",
 				storyMapTopicSubject: "konu",
 				sharedPublicly: "Genel olarak paylaşıldı",
-				noBrokenContent: "ı_No issues____İ",
+				noBrokenContent: "Sorun bulunmadı",
 				nominateToGallery: "Galeriye Aday Göster",
 				comingSoon: "Yakında karşınızda!",
 				submitted: "Gönderildi",
@@ -298,8 +298,8 @@
 				subscriptionPublicSuccess: "Abonelik içeriğiniz artık genel olarak erişilebilir"
 			},
 			errors: {
-				publicDisabled: "ı_Sharing publicly has been disabled by an Administrator_________________İ",
-				orgDisabled: "ı_Sharing to your organization has been disabled by an Administrator_____________________İ",
+				publicDisabled: "Genel paylaşım bir Yönetici tarafından devre dışı bırakıldı",
+				orgDisabled: "Kuruluşunuzla paylaşma bir Yönetici tarafından devre dışı bırakıldı",
 				noMapName: "Harita Adı Alınamadı",
 				notPublic: "GENEL DEĞİL",
 				inaccessible: "ERİŞİLEMEZ",
@@ -352,8 +352,8 @@
 				cantScanThisTypeAlt: "Bu katman türü denetlenemiyor",
 				cantScanThisType: "Katman denetleyebildiğimiz bir katman türü değil",
 				webpageNotScanned: "Web sayfaları sorunlar açısından denetlenmez",
-				ignoredIssue: "ı_You have ignored an error on this layer. Reload the page and check this story again to review the error________________________________İ",
-				ignoredIssueBuilder: "ı_You have ignored an error on this layer. Reload the builder to check this error again___________________________İ"
+				ignoredIssue: "Bu katmandaki bir hatayı yok saydınız. Sayfayı yeniden yükleyin ve hatayı incelemek için bu hikayeyi yeniden denetleyin",
+				ignoredIssueBuilder: "Bu katmandaki bir hatayı yok saydınız. Oluşturucuyu yeniden yükleyin ve bu hatayı yeniden inceleyin"
 			},
 			scanningErrors: {
 				deletedMap: "Silinmiş içerik",
@@ -371,9 +371,9 @@
 				inaccessibleWebpage: "Erişilemeyen web sayfaları"
 			},
 			scanningErrorTips: {
-				deletedMapTip: "ı_Tip: Edit your web map and remove the broken content, or remove the web map from your story_____________________________İ.",
-				inaccessibleMapTip: "ı_Tip: Edit your web map and remove the broken content, or remove the web map from your story_____________________________İ.",
-				notYoursNotAccessibleTip: "ı_Tip: Edit your web map and remove the layer, or remove the web map from your story__________________________İ.",
+				deletedMapTip: "İpucu: Web haritanızı düzenleyin ve bozuk içeriği kaldırın veya web haritasını hikayenizden kaldırın.",
+				inaccessibleMapTip: "İpucu: Web haritanızı düzenleyin ve bozuk içeriği kaldırın veya web haritasını hikayenizden kaldırın.",
+				notYoursNotAccessibleTip: "İpucu: Web haritanızı düzenleyin ve katmanı çıkarın veya web haritasını hikayenizden kaldırın.",
 				serviceOkItemNotTip: "Katmanlar erişilemeyen veya silinmiş öğeler olarak eklendi. Katmanlar çalışıyor, ancak bu haritanızı (açılan pencereler, semboller) etkileyebilir.",
 				ignore: "Yoksay",
 				fix: "Düzelt",
@@ -459,13 +459,13 @@
 				thirdTitle: "haritalar"
 			},
 			crowdsource: {
-				firstTitle: "ı_contributions_____İ",
-				secondTitle: "ı_style___İ",
-				secondValueA: "ı_side panel____İ",
-				secondValueB: "ı_stacked___İ",
-				thirdTitle: "ı_basemap___İ",
-				thirdValueLoading: "ı_Loading____İ...",
-				thirdValueUnknown: "ı_unknown___İ"
+				firstTitle: "katkıda bulunanlar",
+				secondTitle: "stil",
+				secondValueA: "yan pano",
+				secondValueB: "yığın",
+				thirdTitle: "altlık harita",
+				thirdValueLoading: "Yükleniyor...",
+				thirdValueUnknown: "bilinmeyen"
 			}
 		},
 		progress: {
@@ -482,9 +482,9 @@
 			storiesWithIssues: "Sorun olan hikaye sayısı: {{NUM_STORIES}}"
 		},
 		newStories: {
-			newStoriesFound: "ı_Looks like you have created a new story_____________İ.",
-			includeStories: "ı_Refresh Stories______İ",
-			notWhileScanning: "ı_This will be available when the check is complete________________İ"
+			newStoriesFound: "Yeni bir hikaye oluşturduğunuz görülüyor.",
+			includeStories: "Hikayeleri Yenile",
+			notWhileScanning: "Kontrol tamamlandıktan sonra bu özellik kullanılabilecek."
 		}
     })
 );

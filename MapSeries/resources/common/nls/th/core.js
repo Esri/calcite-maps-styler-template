@@ -19,7 +19,7 @@
 				create: "สร้าง",
 				yes: "ใช่",
 				no: "ไม่",
-				mystories: "ก้_My Stories____ษฺ"
+				mystories: "เรื่องราวของฉัน"
 			},
 			inlineFieldEdit: {
 				editMe: "แก้ไขฉัน!"
@@ -31,10 +31,10 @@
 				buttonShare: "แบ่งปัน",
 				buttonSettings: "การตั้งค่า",
 				buttonHelp: "ช่วยเหลือ",
-				buttonPreview: "ก้_View story____ษฺ",
+				buttonPreview: "แสดงสตอรี่",
 				tooltipFirstSave: "ไม่สามารถใช้ได้จนกว่าคุณจะบันทึก",
 				tooltipNotShared: "ไม่สามารถใช้ได้จนกว่าคุณจะแชร์",
-				tooltipNotShared2: "ก้_Your story isn't shared, only you can access it_______________ษฺ.",
+				tooltipNotShared2: "สตอรี่ของคุณยังไม่ได้ถูกแชร์ ดังนั้นคุณคนเดียวที่สามารถใช้งานได้",
 				noPendingChange: "ไม่มีการเปลี่ยนแปลง",
 				unSavedChangePlural: "อยู่ระหว่างการเปลี่ยนแปลง",
 				closeWithPendingChange: "คุณแน่ใจว่าจะต้องการที่จะยืนยันการดำเนินการนี้ การเปลี่ยนแปลงของคุณจะหายไป",
@@ -55,20 +55,20 @@
 				btnOk: "แก้ไขชื่อของเรื่องราว"
 			},
 			saveErrorSocial: {
-				title: "ก้_Social media sharing update_________ษฺ",
-				panel1: "ก้_Your storyâ€™s appearance on social media has been improved, but your ArcGIS web application item title is not the same as your story title___________________________________________ษฺ.",
-				panel1tooltip: "ก้_By defining a title, summary and thumbnail image, your story will look like this_________________________ษฺ:",
-				panel2:	"ก้_Which title would you like to use on social media________________ษฺ:",
-				panel2q1: "ก้_Story title (recommended)_________ษฺ",
-				panel2q1tooltip: "ก้_By choosing this option, your item title will be modified to match your story title and further changes in the builder will be synchronized___________________________________________ษฺ.",
-				panel2q2: "ก้_Item title____ษฺ",
-				panel3: "ก้_To further improve how your story looks on social media use ${MYSTORIES} to add a summary and a thumbnail image___________________________________ษฺ.",
-				panel4: "ก้_Do not warn me again for this story____________ษฺ"
+				title: "ปรับปรุงสังคมออนไลน์ร่วมกัน",
+				panel1: "สตอรี่ของคุณที่ปรากฎในสังคมออนไลน์ได้รับทางพัฒนา แต่ชื่อ ArcGIS เว็บแอพลิเคชันของคุณไม่เหมือนกับชื่อสตอรี่",
+				panel1tooltip: "โดยการกำหนดชื่อ สรุปและภาพเรื่องราวของคุณจะมีลักษณะเช่นนี้:",
+				panel2:	"ชื่อเรื่องไหนที่คุณต้องการใช้บนสังคมออนไลน์",
+				panel2q1: "ชื่อสตอรี่ (แนะนำ)",
+				panel2q1tooltip: "โดยเลือกตัวเลือกนี้ชื่อรายการของคุณจะถูกปรับเปลี่ยนให้ตรงกับชื่อเรื่องของคุณและการเปลี่ยนแปลงต่อไปในบิวเดอร์จะทำข้อมูลให้ตรงกัน",
+				panel2q2: "ชื่อรายการ",
+				panel3: "ในการทำให้สตอรี่ของคุณมีพัฒนาเพิ่มเติมบนสังคมออนไลน์ ${MYSTORIES} เพื่อเพิ่มสรุปและรูปภาพ",
+				panel4: "กรุณอย่าเตือนฉันที่เกี่ยวกับสตอรี่นี้อีก"
 			},
 			share: {
 				shareTitle: "แบ่งปันเรื่องราว",
 				preview: "แสดงตัวอย่าง",
-				viewlive: "ก้_View story____ษฺ",
+				viewlive: "แสดงสตอรี่",
 				btnPrivate: "ส่วนตัว",
 				btnPrivateTooltip: "เฉพาะคุณสามารถมองเห็นเรื่องราวได้",
 				btnOrg: "องค์กร",
@@ -87,27 +87,27 @@
 				notavailable2: "ขออภัย การแบ่งปันเรื่องราวของคุณจาก Builder ไม่สนับสนุนบนเวอร์ชั่นนี้ของ Portal for ArcGIS (จำเป็นต้องใช้ 10.4 หรือหลังจากนั้น)",
 				notavailable3: "คุณสามารถแบ่งปันเรื่องราวจาก %ลิงค์%",
 				notavailable4: "เรื่องราวของฉัน",
-				notavailable5: "ก้_its item page_____ษฺ",
+				notavailable5: "หน้ารายการ",
 				notavailable6: "ขออภัย ฟีเจอร์นี้ไม่สนับสนุนอย่างสมบูรณ์ในโหมดของการพัฒนา ขึ้นอยู่กับเหตุการณ์ของคุณ ฟีเจอร์อาจจะถูกสนับสนุนเมื่อสร้าง",
 				notavailable7: "ให้แน่ใจว่า ตรวจสอบที่ %เนื้อหาของฉัน% เพื่อยืนยันว่าแผนที่และชั้นข้อมูลที่ใช้ในเรื่องราวของคุณถูกแบ่งปันแล้ว",
 				notavailable8: "เนื้อหาของฉัน",
-				mystoriesinvite2: "ก้_To improve how your story looks on social networks use ${MYSTORIES} to add a summary and a thumbnail image_________________________________ษฺ."
+				mystoriesinvite2: "ในการทำให้สตอรี่ของคุณมีพัฒนาเพิ่มเติมบนสังคมออนไลน์ใช้ ${MYSTORIES} เพื่อเพิ่มสรุปและรูปภาพ"
 			},
 			settings: {
 				header: "การตั้งค่า",
 				tabError: "กรุณาตรวจสอบความผิดพลาดในทุกๆ แถบ"
 			},
 			settingsLayout: {
-				title: "ก้_Layout___ษฺ",
+				title: "หน้ากระดาษ",
 				explain: "คุณต้องการใช้รูปแบบโครงสร้างแบบใด?",
 				explainInit: "คุณสามารถแก้ไขโครงร่างได้ตลอดเวลาจากการตั้งค่าที่กล่องโต้ตอบ",
 				viewExample: "ดูเป็นตัวอย่างจริง"
 			},
 			settingsTheme: {
-				title: "ก้_Theme___ษฺ"
+				title: "หัวข้อ"
 			},
 			settingsHeader: {
-				title: "ก้_Header___ษฺ",
+				title: "ส่วนหัว",
 				logoEsri: "โลโก้อีเอสอาร์ไอ",
 				logoNone: "ไม่มีโลโก้",
 				logoCustom: "เปลี่ยนโลโก้",
@@ -119,7 +119,7 @@
 				lblSmallHeader: "ใช้ส่วนบนที่มีขนาดกระทัดรัด (ไม่มีชื่อเรื่อง)"
 			},
 			header: {
-				title: "ก้_Edit the title of your %TPL_NAME%___________ษฺ",
+				title: "แก้ไขชื่อเรื่องของคุณ %TPL_NAME%",
 				subtitle: "แก้ไขเนื้อหาด้านล่างของคุณ %TPL_NAME%"
 			}
 		}

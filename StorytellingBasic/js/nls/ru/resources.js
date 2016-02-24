@@ -21,12 +21,12 @@ define(
       generalError: "Ошибка"
     },
     social:{
-        facebook: "Ж_Share on Facebook______Я",
-        twitter: "Ж_Share on Twitter______Я",
-        link: "Ж_Share link____Я"
+        facebook: "Разместить в Facebook",
+        twitter: "Разместить в Twitter",
+        link: "Поделиться ссылкой"
     },
     legendToggle:{
-        label: "Ж_LEGEND___Я"
+        label: "ЛЕГЕНДА"
     }
   })
 );

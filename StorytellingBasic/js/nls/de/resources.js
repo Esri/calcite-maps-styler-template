@@ -21,12 +21,12 @@ define(
       generalError: "Fehler"
     },
     social:{
-        facebook: "ä_Share on Facebook______Ü",
-        twitter: "ä_Share on Twitter______Ü",
-        link: "ä_Share link____Ü"
+        facebook: "Auf Facebook freigeben",
+        twitter: "Auf Twitter freigeben",
+        link: "Link freigeben"
     },
     legendToggle:{
-        label: "ä_LEGEND___Ü"
+        label: "LEGENDE"
     }
   })
 );

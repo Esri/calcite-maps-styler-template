@@ -41,7 +41,7 @@
 		},
 		cantFindStories: {
 			whereAreStories: "Får du ikke vist din historie?",
-			notSeeExplanation: "ø_My Stories will only list story maps hosted in ArcGIS and created with the {{STORY_MAP_TOUR}}, {{JOURNAL}}, {{MAP_SERIES}} or {{SWIPE_SPYGLASS}} applications. See our {{FAQ}} for more information____________________________________________________________å.",
+			notSeeExplanation: "Mine historier vil kun vise historiekort, der er \"hosted\" i ArcGIS og oprettet med {{STORY_MAP_TOUR}}-, {{JOURNAL}}-, {{MAP_SERIES}}- og {{SWIPE_SPYGLASS}}-applikationerne. Se vores {{FAQ}} for at få yderligere oplysninger.",
 			faq: "FAQ",
 			followingStoriesToUpdate: "Følgende historier, der er oprettet med tidligere versioner af vores applikationer, skal opdateres, så de kan vises i Mine historier:",
 			gettingStories: "Søger efter historier, der er oprettet med tidligere versioner af vores applikationer, og som bør opdateres...",
@@ -120,7 +120,7 @@
 			saveFailed: "Fejl ved lagring",
 			numViews: "Visninger: {{NUM_VIEWS}}",
 			editStory: "Redigér historie",
-			viewLive: "ø_View Story____å",
+			viewLive: "Vis historie",
 			preview: "Eksempel",
 			deleteButton: "Slet",
 			modified: "Ændret {{DATE}}",
@@ -130,7 +130,7 @@
 			close: "luk",
 			hide: "skjul",
 			notAvailableWhenBroken: "Din historie indeholder problemer som vist nedenfor",
-			cantBeDeleted: "ø_This story has delete protection enabled. See its item page on ArcGIS to disable_________________________å.",
+			cantBeDeleted: "Din historie har skrivebeskyttelse aktiveret. Se elementoplysningssiden på ArcGIS for at deaktivere",
 			shareDialog: {
 				title: "Del din historie med verden!",
 				notPublicWarning: "Din historie deles med din organisation. Kun medlemmer af din organisation kan se den.",
@@ -163,7 +163,7 @@
 				save: "Gem",
 				saved: "Gemt",
 				errorSaving: "Fejl ved lagring",
-				tagTip: "ø_Tip: Tags help people find your story. The more relevant the tags are, the higher the visibility your work will receive_____________________________________å."
+				tagTip: "Tip: Nøgleord hjælper folk med at finde din historie. Jo mere relevante nøgleordene er, jo højere vil synligheden være for dit arbejde."
 			},
 			submitToGallery: {
 				gallerySubmission: "Story Maps-galleri",
@@ -173,7 +173,7 @@
 				chosenSubjectAlt: "Et {{SUBJECT}} og nogle nøgleord",
 				storyMapTopicSubject: "emne",
 				sharedPublicly: "Deles offentligt",
-				noBrokenContent: "ø_No issues____å",
+				noBrokenContent: "Ingen problemer",
 				nominateToGallery: "Nominér til galleri",
 				comingSoon: "Kommer snart!",
 				submitted: "Sendt",
@@ -298,8 +298,8 @@
 				subscriptionPublicSuccess: "Dit abonnementindhold er nu offentligt tilgængeligt"
 			},
 			errors: {
-				publicDisabled: "ø_Sharing publicly has been disabled by an Administrator_________________å",
-				orgDisabled: "ø_Sharing to your organization has been disabled by an Administrator_____________________å",
+				publicDisabled: "Offentlig deling er blevet deaktiveret af en administrator",
+				orgDisabled: "Deling af din organisation er blevet deaktiveret af en administrator",
 				noMapName: "Kunne ikke hente kortnavn",
 				notPublic: "IKKE OFFENTLIGT",
 				inaccessible: "UTILGÆNGELIGT",
@@ -352,8 +352,8 @@
 				cantScanThisTypeAlt: "Vi kan ikke kontrollere denne type lag",
 				cantScanThisType: "Laget er ikke en type lag, som vi kan kontrollere",
 				webpageNotScanned: "Websider kontrolleres ikke for problemer",
-				ignoredIssue: "ø_You have ignored an error on this layer. Reload the page and check this story again to review the error________________________________å",
-				ignoredIssueBuilder: "ø_You have ignored an error on this layer. Reload the builder to check this error again___________________________å"
+				ignoredIssue: "Du har ignoreret en fejl i dette lag. Genindlæs siden, og tjek din historie igen, og kontrollér, at fejlen er blevet afhjulpet",
+				ignoredIssueBuilder: "Du har ignoreret en fejl i dette lag. Genindlæs builder-programmet, og tjek denne fejl igen"
 			},
 			scanningErrors: {
 				deletedMap: "Slettet indhold",
@@ -371,9 +371,9 @@
 				inaccessibleWebpage: "Utilgængelige websider"
 			},
 			scanningErrorTips: {
-				deletedMapTip: "ø_Tip: Edit your web map and remove the broken content, or remove the web map from your story_____________________________å.",
-				inaccessibleMapTip: "ø_Tip: Edit your web map and remove the broken content, or remove the web map from your story_____________________________å.",
-				notYoursNotAccessibleTip: "ø_Tip: Edit your web map and remove the layer, or remove the web map from your story__________________________å.",
+				deletedMapTip: "Tip: Redigér dit webkort, og fjern det ødelagte indhold, eller fjern webkortet fra din historie.",
+				inaccessibleMapTip: "Tip: Redigér dit webkort, og fjern det ødelagte indhold, eller fjern webkortet fra din historie.",
+				notYoursNotAccessibleTip: "Tip: Redigér dit webkort, og fjern laget, eller fjern webkortet fra din historie.",
 				serviceOkItemNotTip: "Lagene blev tilføjet som elementer, der er utilgængelige eller slettede. Lagene fungerer, men dette kan påvirke dit kort (pop-ups, symboler).",
 				ignore: "Ignore",
 				fix: "Ret",
@@ -459,13 +459,13 @@
 				thirdTitle: "kort"
 			},
 			crowdsource: {
-				firstTitle: "ø_contributions_____å",
-				secondTitle: "ø_style___å",
-				secondValueA: "ø_side panel____å",
-				secondValueB: "ø_stacked___å",
-				thirdTitle: "ø_basemap___å",
-				thirdValueLoading: "ø_Loading____å...",
-				thirdValueUnknown: "ø_unknown___å"
+				firstTitle: "bidrag",
+				secondTitle: "typografi",
+				secondValueA: "sidepanel",
+				secondValueB: "stakket",
+				thirdTitle: "baggrundskort",
+				thirdValueLoading: "Indlæser...",
+				thirdValueUnknown: "ukendt"
 			}
 		},
 		progress: {
@@ -482,9 +482,9 @@
 			storiesWithIssues: "Historier med problemer: {{NUM_STORIES}}"
 		},
 		newStories: {
-			newStoriesFound: "ø_Looks like you have created a new story_____________å.",
-			includeStories: "ø_Refresh Stories______å",
-			notWhileScanning: "ø_This will be available when the check is complete________________å"
+			newStoriesFound: "Ser ud til, at du har udviklet en ny historie.",
+			includeStories: "Opdatér historier",
+			notWhileScanning: "Vil være tilgængelig, når kontrollen er gennemført"
 		}
     })
 );

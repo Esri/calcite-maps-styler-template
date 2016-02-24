@@ -17,11 +17,11 @@
 define(
    ({
     scene: {
-      error: "Đ_Unable to create scene________ớ"
+      error: "Δεν είναι δυνατή η δημιουργία 3D προβολής"
     },
     tools: {
-      linkLabel: "Đ_Link Views____ớ",
-      unlinkLabel: "Đ_Unlink Views_____ớ"
+      linkLabel: "Σύνδεση προβολών",
+      unlinkLabel: "Αποσύνδεση προβολών"
     }
   })
 );

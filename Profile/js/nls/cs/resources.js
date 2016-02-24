@@ -20,7 +20,7 @@ define(
       error: "Nelze vytvořit mapu"
     },
     nav: {
-        "close": "Ř_Close___ů"
+        "close": "Zavřít"
     },
     elevation: {
         toggle: "Přepnout graf výškového profilu.",

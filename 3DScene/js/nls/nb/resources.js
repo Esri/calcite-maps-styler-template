@@ -17,18 +17,18 @@
 define(
    ({
     scene: {
-      error: "å_Unable to create scene________ø"
+      error: "Kan ikke opprette scenen"
     },
     panel: {
-      noslides: "å_No slides in web scene________ø"
+      noslides: "Webscenen inneholder ingen lysbilder"
     },
     tooltips: {
-      layers: "å_Layers___ø",
-      basemaps: "å_Base maps____ø",
-      slides: "å_Slides___ø",
-      close: "å_Close___ø",
-      zoom: "å_Zoom__ø",
-      onoff: "å_On-Off___ø"
+      layers: "Lag",
+      basemaps: "Bakgrunnskart",
+      slides: "Lysbilder",
+      close: "Ja",
+      zoom: "Zoom",
+      onoff: "På-av"
     }
   })
 );

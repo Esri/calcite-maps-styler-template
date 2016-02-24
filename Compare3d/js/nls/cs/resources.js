@@ -17,11 +17,11 @@
 define(
    ({
     scene: {
-      error: "Ř_Unable to create scene________ů"
+      error: "Nelze vytvořit scénu"
     },
     tools: {
-      linkLabel: "Ř_Link Views____ů",
-      unlinkLabel: "Ř_Unlink Views_____ů"
+      linkLabel: "Propojit zobrazení",
+      unlinkLabel: "Odpojit zobrazení"
     }
   })
 );

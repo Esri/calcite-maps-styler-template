@@ -20,7 +20,7 @@ define(
       error: "Impossibile creare la mappa"
     },
     nav: {
-        "close": "é_Close___È"
+        "close": "Chiudi"
     },
     elevation: {
         toggle: "Attivare/disattivare il grafico Profilo di elevazione.",

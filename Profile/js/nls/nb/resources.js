@@ -20,7 +20,7 @@ define(
       error: "Kan ikke opprette kart"
     },
     nav: {
-        "close": "å_Close___ø"
+        "close": "Ja"
     },
     elevation: {
         toggle: "Aktiver/deaktiver høydeprofildiagrammet.",

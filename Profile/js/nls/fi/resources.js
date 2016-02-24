@@ -20,7 +20,7 @@ define(
       error: "Karttaa ei voi luoda"
     },
     nav: {
-        "close": "Å_Close___ö"
+        "close": "Sulje"
     },
     elevation: {
         toggle: "Vaihda Korkeusprofiili-karttaa.",

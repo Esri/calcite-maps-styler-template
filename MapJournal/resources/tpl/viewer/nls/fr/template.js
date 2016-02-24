@@ -22,21 +22,21 @@
 				boxTitle: "Une erreur s\’est produite",
 				invalidConfig: "Configuration non valide",
 				invalidConfigNoApp: "Identifiant de l\'application de cartographie Web non spécifié dans index.html.",
-				invalidConfigNoAppDev: "æ_No Web Mapping Application identifier is specified in URL parameters (?appid=). In development mode, the appid configuration in index.html is ignored______________________________________________Â.",
+				invalidConfigNoAppDev: "Aucun identifiant d\'application cartographique Web n\'est spécifié dans les paramètres de l\'URL (?appid=). En mode de développement, la configuration d\'appid dans index.html est ignorée.",
 				unspecifiedConfigOwner: "Le propriétaire autorisé n\'est pas configuré.",
 				invalidConfigOwner: "Le propriétaire du récit n\'est pas autorisé.",
 				createMap: "Impossible de créer la carte",
 				invalidApp: "Le %TPL_NAME% n\'existe pas ou n\'est pas accessible.",
 				appLoadingFail: "Une erreur s\'est produite et le chargement de %TPL_NAME% ne s\'est pas correctement déroulé.",
 				notConfiguredDesktop: "Le récit n\'est pas encore configuré.",
-				notConfiguredMobile: "æ_The %TPL_NAME% builder is not supported at this display size. If possible, resize your browser to access the builder or please build your story on a device with a larger screen______________________________________________________Â.",
-				notConfiguredMobile2: "æ_Please rotate your device to landscape orientation to use the %TPL_NAME% builder_________________________Â.",
+				notConfiguredMobile: "Le générateur %TPL_NAME% n\'est pas pris en charge avec cette taille d\'affichage. Si possible, redimensionnez votre navigateur pour pouvoir accéder au générateur ou élaborez votre récit sur un appareil doté d\'un écran plus grand.",
+				notConfiguredMobile2: "Veuillez tourner votre appareil en orientation paysage pour utiliser le générateur %TPL_NAME%.",
 				notAuthorized: "Vous n\'êtes pas autorisé à accéder à ce récit.",
-				notAuthorizedBuilder: "æ_You are not authorized to use %TPL_NAME% builder________________Â.",
+				notAuthorizedBuilder: "Vous n\'êtes pas autorisé à utiliser le générateur %TPL_NAME%.",
 				noBuilderIE: "Le générateur n\'est pas pris en charge dans Internet Explorer avant la version %VERSION%. %UPGRADE%",
 				noViewerIE: "Ce récit n\'est pas pris en charge dans Internet Explorer avant la version %VERSION%. %UPGRADE%",
 				upgradeBrowser: "<a href='http://browsehappy.com/' target='_blank'>Mettez votre navigateur à jour</a>.",
-				mapLoadingFail: "æ_Something went wrong, the map did not load correctly_________________Â.",
+				mapLoadingFail: "Une erreur s\'est produite et la carte n\'a pas été correctement chargée.",
 				signOut: "Se déconnecter"
 			},
 			mobileView: {
@@ -67,8 +67,8 @@
 				checking: "Vérification du contenu de votre récit",
 				fix: "Résoudre les problèmes du récit",
 				noerrors: "Aucun problème détecté",
-				tooltipAutoplayDisabled: "æ_This isn't available in autoplay mode____________Â",
-				notshared: "æ_Story not shared______Â"
+				tooltipAutoplayDisabled: "Ceci n\'est pas disponible en mode de lecture automatique",
+				notshared: "Récit non partagé"
 			},
 			overviewFromCommon: {
 				title: "Vue générale"
@@ -83,10 +83,10 @@
 				embed: "Incorporer dans une page Web",
 				embedExplain: "Utilisez le code HTML suivant pour incorporer le journal dans une page Web.",
 				size: "Taille (largeur/hauteur) :",
-				autoplayLabel: "æ_Autoplay mode_____Â",
-				autoplayExplain1: "æ_Autoplay mode will advance through your story at a regular interval. This is ideal on a kiosk or public display monitor, but be aware that in other situations it may make the story harder to read. This feature isn't supported on small displays__________________________________________________________________________Â.",
-				autoplayExplain2: "æ_When this mode is active there are controls to play/pause the story and adjust the navigation speed_______________________________Â.",
-				linksupdated: "æ_Links updated_____Â!"
+				autoplayLabel: "Mode de lecture automatique",
+				autoplayExplain1: "Le mode de lecture automatique fait avancer votre récit à intervalle régulier. Il est idéal pour les écrans publics, mais, dans d\'autres cas, il peut compliquer la lecture du récit. Cette fonctionnalité n\'est pas prise en charge sur les petits écrans.",
+				autoplayExplain2: "Lorsque ce mode est actif, vous disposez de contrôles pour lire le récit ou le mettre en pause, ainsi que régler la vitesse de navigation.",
+				linksupdated: "Liens mis à jour"
 			}
         }
     })

@@ -19,7 +19,7 @@
 				create: "作成",
 				yes: "はい",
 				no: "いいえ",
-				mystories: "須_My Stories____鷗"
+				mystories: "マイ ストーリー"
 			},
 			inlineFieldEdit: {
 				editMe: "編集"
@@ -31,10 +31,10 @@
 				buttonShare: "共有",
 				buttonSettings: "設定",
 				buttonHelp: "ヘルプ",
-				buttonPreview: "須_View story____鷗",
+				buttonPreview: "ストーリーの表示",
 				tooltipFirstSave: "これは保存するまで利用できません。",
 				tooltipNotShared: "これは共有するまで利用できません。",
-				tooltipNotShared2: "須_Your story isn't shared, only you can access it_______________鷗.",
+				tooltipNotShared2: "ストーリーは共有されていません。このストーリーにアクセスできるのはあなただけです。",
 				noPendingChange: "保留中の変更はありません",
 				unSavedChangePlural: "保留中の変更",
 				closeWithPendingChange: "このアクションを確認しますか？変更内容は失われます。",
@@ -55,20 +55,20 @@
 				btnOk: "ストーリー タイトルの編集"
 			},
 			saveErrorSocial: {
-				title: "須_Social media sharing update_________鷗",
-				panel1: "須_Your storyâ€™s appearance on social media has been improved, but your ArcGIS web application item title is not the same as your story title___________________________________________鷗.",
-				panel1tooltip: "須_By defining a title, summary and thumbnail image, your story will look like this_________________________鷗:",
-				panel2:	"須_Which title would you like to use on social media________________鷗:",
-				panel2q1: "須_Story title (recommended)_________鷗",
-				panel2q1tooltip: "須_By choosing this option, your item title will be modified to match your story title and further changes in the builder will be synchronized___________________________________________鷗.",
-				panel2q2: "須_Item title____鷗",
-				panel3: "須_To further improve how your story looks on social media use ${MYSTORIES} to add a summary and a thumbnail image___________________________________鷗.",
-				panel4: "須_Do not warn me again for this story____________鷗"
+				title: "ソーシャル メディアでの共有の更新",
+				panel1: "ソーシャル メディアでのストーリーの外観が改善されていますが、ArcGIS Web アプリケーション アイテムのタイトルがストーリーのタイトルと同じではありません。",
+				panel1tooltip: "タイトル、サマリー、およびサムネイル画像を定義すると、ストーリーは次のように表示されます。",
+				panel2:	"ソーシャル メディアで使用するタイトル:",
+				panel2q1: "ストーリーのタイトル (推奨)",
+				panel2q1tooltip: "このオプションを選択すると、アイテムのタイトルは、ストーリーのタイトルと一致するように変更され、ビルダーでの追加の変更が同期するようになります。",
+				panel2q2: "アイテムのタイトル",
+				panel3: "ソーシャル メディアでのストーリーの外観をさらに改善するには、${MYSTORIES} を使用してサマリーとサムネイル画像を追加します。",
+				panel4: "今後、ストーリーについて警告しない"
 			},
 			share: {
 				shareTitle: "ストーリーの共有",
 				preview: "プレビュー",
-				viewlive: "須_View story____鷗",
+				viewlive: "ストーリーの表示",
 				btnPrivate: "プライベート",
 				btnPrivateTooltip: "このストーリーを表示できるのはあなただけです",
 				btnOrg: "組織",
@@ -87,27 +87,27 @@
 				notavailable2: "Portal for ArcGIS のこのバージョンでは、ビルダーからのストーリーの共有はサポートされていません (10.4以降が必要です)。",
 				notavailable3: "このストーリーを %LINK% から共有できます。",
 				notavailable4: "マイ ストーリー",
-				notavailable5: "須_its item page_____鷗",
+				notavailable5: "これはアイテム ページです",
 				notavailable6: "開発モードでは、この機能は一部サポートされません。配置シナリオによっては、配置時にこの機能がサポートされる場合があります。",
 				notavailable7: "必ず %MYCONTENT% を参照し、ストーリーで使用されているマップとレイヤーも共有されていることを確認してください。",
 				notavailable8: "マイ コンテンツ",
-				mystoriesinvite2: "須_To improve how your story looks on social networks use ${MYSTORIES} to add a summary and a thumbnail image_________________________________鷗."
+				mystoriesinvite2: "ソーシャル ネットワークでのストーリーの外観を改善するには、${MYSTORIES} を使用してサマリーとサムネイル画像を追加します。"
 			},
 			settings: {
 				header: "設定",
 				tabError: "すべてのタブでエラーを確認してください"
 			},
 			settingsLayout: {
-				title: "須_Layout___鷗",
+				title: "レイアウト",
 				explain: "使用するレイアウト",
 				explainInit: "レイアウトは、設定ダイアログからいつでも変更できます。",
 				viewExample: "最新例を表示"
 			},
 			settingsTheme: {
-				title: "須_Theme___鷗"
+				title: "テーマ"
 			},
 			settingsHeader: {
-				title: "須_Header___鷗",
+				title: "ヘッダー",
 				logoEsri: "Esri ロゴ",
 				logoNone: "ロゴなし",
 				logoCustom: "カスタム ロゴ",
@@ -119,7 +119,7 @@
 				lblSmallHeader: "コンパクトなヘッダーを使用 (サブタイプなし)"
 			},
 			header: {
-				title: "須_Edit the title of your %TPL_NAME%___________鷗",
+				title: "%TPL_NAME% のタイトルの編集",
 				subtitle: "%TPL_NAME% のサブタイトルの編集"
 			}
 		}

@@ -17,18 +17,18 @@
 define(
    ({
     scene: {
-      error: "한_Unable to create scene________빠"
+      error: "씬을 생성할 수 없음"
     },
     panel: {
-      noslides: "한_No slides in web scene________빠"
+      noslides: "웹 씬에 슬라이드가 없음"
     },
     tooltips: {
-      layers: "한_Layers___빠",
-      basemaps: "한_Base maps____빠",
-      slides: "한_Slides___빠",
-      close: "한_Close___빠",
-      zoom: "한_Zoom__빠",
-      onoff: "한_On-Off___빠"
+      layers: "레이어",
+      basemaps: "베이스맵",
+      slides: "슬라이드",
+      close: "닫기",
+      zoom: "확대/축소",
+      onoff: "켜기/끄기"
     }
   })
 );

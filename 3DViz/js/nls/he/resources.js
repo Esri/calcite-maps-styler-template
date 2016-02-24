@@ -17,14 +17,14 @@
 define(
    ({
     scene: {
-      error: "כן_Unable to create scene________ש"
+      error: "לא ניתן ליצור סצינה"
     },
     panel: {
-      noslides: "כן_No slides in web scene________ש"
+      noslides: "אין שקפים בסצינת אינטרנט"
     },
     tooltips: {
-      play: "כן_Play-Pause____ש",
-      toggle: "כן_Toggle___ש"
+      play: "נגן-הפסק",
+      toggle: "החלף"
     }
   })
 );

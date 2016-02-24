@@ -41,7 +41,7 @@
 		},
 		cantFindStories: {
 			whereAreStories: "스토리가 보이지 않나요?",
-			notSeeExplanation: "한_My Stories will only list story maps hosted in ArcGIS and created with the {{STORY_MAP_TOUR}}, {{JOURNAL}}, {{MAP_SERIES}} or {{SWIPE_SPYGLASS}} applications. See our {{FAQ}} for more information____________________________________________________________빠.",
+			notSeeExplanation: "내 스토리에는 {{STORY_MAP_TOUR}}, {{JOURNAL}}, {{MAP_SERIES}} 또는 {{SWIPE_SPYGLASS}} 응용프로그램을 사용하여 생성했으며 ArcGIS에서 호스팅되는 스토리 맵만 나열됩니다. 자세한 내용은 {{FAQ}}를 참고하세요.",
 			faq: "FAQ",
 			followingStoriesToUpdate: "이전 버전의 응용프로그램을 사용하여 생성한 다음 스토리는 업데이트해야 내 스토리에 나열됩니다.",
 			gettingStories: "이전 버전의 응용프로그램을 사용하여 생성했으며 업데이트해야 하는 스토리 검색 중...",
@@ -120,7 +120,7 @@
 			saveFailed: "저장 오류",
 			numViews: "조회수: {{NUM_VIEWS}}",
 			editStory: "스토리 편집",
-			viewLive: "한_View Story____빠",
+			viewLive: "스토리 보기",
 			preview: "미리 보기",
 			deleteButton: "삭제",
 			modified: "{{DATE}}에 수정함",
@@ -130,7 +130,7 @@
 			close: "닫기",
 			hide: "숨기기",
 			notAvailableWhenBroken: "스토리에 아래와 같은 문제가 있습니다.",
-			cantBeDeleted: "한_This story has delete protection enabled. See its item page on ArcGIS to disable_________________________빠.",
+			cantBeDeleted: "이 스토리에는 삭제 금지가 설정되어 있습니다. 삭제 금지를 사용하지 않으려면 ArcGIS에서 해당 항목 페이지를 참고하세요.",
 			shareDialog: {
 				title: "스토리를 공유해 보세요!",
 				notPublicWarning: "스토리가 내 기관과 공유됩니다. 내 기관의 구성원만 스토리를 볼 수 있습니다.",
@@ -163,7 +163,7 @@
 				save: "저장",
 				saved: "저장됨",
 				errorSaving: "저장 오류",
-				tagTip: "한_Tip: Tags help people find your story. The more relevant the tags are, the higher the visibility your work will receive_____________________________________빠."
+				tagTip: "팁: 태그를 통해 스토리를 쉽게 찾을 수 있습니다. 태그의 관련성이 높을수록 작업 결과가 더 많이 노출됩니다."
 			},
 			submitToGallery: {
 				gallerySubmission: "스토리 맵 갤러리",
@@ -173,7 +173,7 @@
 				chosenSubjectAlt: "{{SUBJECT}} 및 태그 몇 개",
 				storyMapTopicSubject: "제목",
 				sharedPublicly: "공개적으로 공유됨",
-				noBrokenContent: "한_No issues____빠",
+				noBrokenContent: "문제가 없음",
 				nominateToGallery: "갤러리 포함 후보로 지정",
 				comingSoon: "제공 예정!",
 				submitted: "제출됨",
@@ -298,8 +298,8 @@
 				subscriptionPublicSuccess: "이제 구독 콘텐츠에 공개적으로 접근할 수 있습니다."
 			},
 			errors: {
-				publicDisabled: "한_Sharing publicly has been disabled by an Administrator_________________빠",
-				orgDisabled: "한_Sharing to your organization has been disabled by an Administrator_____________________빠",
+				publicDisabled: "관리자가 공개적으로 공유하지 못하도록 설정했음",
+				orgDisabled: "관리자가 기관과 공유하지 못하도록 설정했음",
 				noMapName: "맵 이름을 검색할 수 없음",
 				notPublic: "공개 아님",
 				inaccessible: "접근 불가",
@@ -352,8 +352,8 @@
 				cantScanThisTypeAlt: "이 레이어 유형을 확인할 수 없습니다.",
 				cantScanThisType: "레이어가 확인 가능한 레이어 유형이 아닙니다.",
 				webpageNotScanned: "웹 페이지에서 문제를 확인하지 않았습니다.",
-				ignoredIssue: "한_You have ignored an error on this layer. Reload the page and check this story again to review the error________________________________빠",
-				ignoredIssueBuilder: "한_You have ignored an error on this layer. Reload the builder to check this error again___________________________빠"
+				ignoredIssue: "이 레이어의 오류를 무시했습니다. 페이지를 다시 불러와 이 스토리를 다시 확인하여 오류를 검토하세요.",
+				ignoredIssueBuilder: "이 레이어의 오류를 무시했습니다. 빌더를 다시 불러와 이 오류를 다시 검토하세요."
 			},
 			scanningErrors: {
 				deletedMap: "삭제된 콘텐츠",
@@ -371,9 +371,9 @@
 				inaccessibleWebpage: "접근할 수 없는 웹 페이지"
 			},
 			scanningErrorTips: {
-				deletedMapTip: "한_Tip: Edit your web map and remove the broken content, or remove the web map from your story_____________________________빠.",
-				inaccessibleMapTip: "한_Tip: Edit your web map and remove the broken content, or remove the web map from your story_____________________________빠.",
-				notYoursNotAccessibleTip: "한_Tip: Edit your web map and remove the layer, or remove the web map from your story__________________________빠.",
+				deletedMapTip: "팁: 웹 맵을 편집하고 손상된 콘텐츠를 제거하거나 스토리에서 웹 맵을 제거하세요.",
+				inaccessibleMapTip: "팁: 웹 맵을 편집하고 손상된 콘텐츠를 제거하거나 스토리에서 웹 맵을 제거하세요.",
+				notYoursNotAccessibleTip: "팁: 웹 맵을 편집하고 레이어를 제거하거나 스토리에서 웹 맵을 제거하세요.",
 				serviceOkItemNotTip: "레이어가 접근할 수 없거나 삭제된 항목으로 추가되었습니다. 레이어가 작동하기는 하지만 이 레이어로 인해 맵(팝업, 심볼)이 영향을 받을 수 있습니다.",
 				ignore: "무시",
 				fix: "수정",
@@ -459,13 +459,13 @@
 				thirdTitle: "맵"
 			},
 			crowdsource: {
-				firstTitle: "한_contributions_____빠",
-				secondTitle: "한_style___빠",
-				secondValueA: "한_side panel____빠",
-				secondValueB: "한_stacked___빠",
-				thirdTitle: "한_basemap___빠",
-				thirdValueLoading: "한_Loading____빠...",
-				thirdValueUnknown: "한_unknown___빠"
+				firstTitle: "기여도",
+				secondTitle: "스타일",
+				secondValueA: "사이드 패널",
+				secondValueB: "누적",
+				thirdTitle: "베이스맵",
+				thirdValueLoading: "불러오는 중...",
+				thirdValueUnknown: "알 수 없음"
 			}
 		},
 		progress: {
@@ -482,9 +482,9 @@
 			storiesWithIssues: "문제가 있는 스토리: {{NUM_STORIES}}"
 		},
 		newStories: {
-			newStoriesFound: "한_Looks like you have created a new story_____________빠.",
-			includeStories: "한_Refresh Stories______빠",
-			notWhileScanning: "한_This will be available when the check is complete________________빠"
+			newStoriesFound: "새 스토리가 생성된 것 같습니다.",
+			includeStories: "스토리 새로 고침",
+			notWhileScanning: "확인이 완료되면 이 옵션을 사용할 수 있습니다."
 		}
     })
 );

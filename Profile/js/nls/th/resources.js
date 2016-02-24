@@ -20,7 +20,7 @@ define(
       error: "ไม่สามารถสร้างแผนที่ได้"
     },
     nav: {
-        "close": "ก้_Close___ษฺ"
+        "close": "ปิด"
     },
     elevation: {
         toggle: "แผนภูมิข้อมูลความสูง",

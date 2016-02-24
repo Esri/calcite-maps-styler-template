@@ -17,14 +17,14 @@
 define(
    ({
     scene: {
-      error: "Į_Unable to create scene________š"
+      error: "Neįmanoma sukurti scenos"
     },
     panel: {
-      noslides: "Į_No slides in web scene________š"
+      noslides: "Nėra internetinės scenos"
     },
     tooltips: {
-      play: "Į_Play-Pause____š",
-      toggle: "Į_Toggle___š"
+      play: "Leisti / pristabdyti",
+      toggle: "Perjungti"
     }
   })
 );

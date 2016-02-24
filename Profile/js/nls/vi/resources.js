@@ -20,7 +20,7 @@ define(
       error: "Không thể tạo bản đồ"
     },
     nav: {
-        "close": "Đ_Close___ớ"
+        "close": "Đóng"
     },
     elevation: {
         toggle: "Chuyển đổi Biểu đồ Thông tin Độ cao.",

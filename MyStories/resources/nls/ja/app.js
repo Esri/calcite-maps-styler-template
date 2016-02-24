@@ -41,7 +41,7 @@
 		},
 		cantFindStories: {
 			whereAreStories: "ストーリーが表示されませんか？",
-			notSeeExplanation: "須_My Stories will only list story maps hosted in ArcGIS and created with the {{STORY_MAP_TOUR}}, {{JOURNAL}}, {{MAP_SERIES}} or {{SWIPE_SPYGLASS}} applications. See our {{FAQ}} for more information____________________________________________________________鷗.",
+			notSeeExplanation: "マイ ストーリーは、{{STORY_MAP_TOUR}}、{{JOURNAL}}、{{MAP_SERIES}}、または {{SWIPE_SPYGLASS}} アプリケーションで作成され、ArcGIS でホストされたストーリー マップのみをリスト表示します。詳細については、{{FAQ}} をご参照ください。",
 			faq: "FAQ",
 			followingStoriesToUpdate: "旧バージョンのアプリケーションで作成された以下のストーリーは、マイ ストーリーにリスト表示するために更新する必要があります。",
 			gettingStories: "旧バージョンのアプリケーションで作成された、更新する必要のあるストーリーを検索しています...",
@@ -120,7 +120,7 @@
 			saveFailed: "保存中にエラーが発生しました",
 			numViews: "ビュー数: {{NUM_VIEWS}}",
 			editStory: "ストーリーの編集",
-			viewLive: "須_View Story____鷗",
+			viewLive: "ストーリーの表示",
 			preview: "プレビュー",
 			deleteButton: "削除",
 			modified: "更新日 {{DATE}}",
@@ -130,7 +130,7 @@
 			close: "閉じる",
 			hide: "非表示",
 			notAvailableWhenBroken: "ストーリーに以下の問題があります",
-			cantBeDeleted: "須_This story has delete protection enabled. See its item page on ArcGIS to disable_________________________鷗.",
+			cantBeDeleted: "このストーリーは、削除の防止が有効化されています。無効にするには、ArcGIS で、そのストーリーのアイテム ページをご参照ください。",
 			shareDialog: {
 				title: "ストーリーを世界のユーザーと共有してみましょう",
 				notPublicWarning: "ストーリーは組織で共有されています。このストーリーを表示できるのは組織のメンバーだけです。",
@@ -163,7 +163,7 @@
 				save: "保存",
 				saved: "保存完了",
 				errorSaving: "保存中にエラーが発生しました",
-				tagTip: "須_Tip: Tags help people find your story. The more relevant the tags are, the higher the visibility your work will receive_____________________________________鷗."
+				tagTip: "ヒント: タグは、ユーザーがストーリーを見つけるのに役立ちます。タグの関連性が増すほど、ストーリーが表示される可能性が高くなります。"
 			},
 			submitToGallery: {
 				gallerySubmission: "ストーリー マップ ギャラリー",
@@ -173,7 +173,7 @@
 				chosenSubjectAlt: "{{SUBJECT}}といくつかのタグ",
 				storyMapTopicSubject: "主題",
 				sharedPublicly: "パブリックに共有されている",
-				noBrokenContent: "須_No issues____鷗",
+				noBrokenContent: "問題はありません",
 				nominateToGallery: "ギャラリーに推薦",
 				comingSoon: "近日公開",
 				submitted: "送信済み",
@@ -298,8 +298,8 @@
 				subscriptionPublicSuccess: "サブスクリプション コンテンツは現在パブリックにアクセス可能です"
 			},
 			errors: {
-				publicDisabled: "須_Sharing publicly has been disabled by an Administrator_________________鷗",
-				orgDisabled: "須_Sharing to your organization has been disabled by an Administrator_____________________鷗",
+				publicDisabled: "パブリックな共有は、管理者によって無効化されています",
+				orgDisabled: "組織での共有は、管理者によって無効化されています",
 				noMapName: "マップ名を取得できませんでした",
 				notPublic: "パブリックではありません",
 				inaccessible: "アクセス不可",
@@ -352,8 +352,8 @@
 				cantScanThisTypeAlt: "このタイプのレイヤーをチェックすることはできません",
 				cantScanThisType: "レイヤーは、チェックできるタイプのレイヤーではありません",
 				webpageNotScanned: "Web ページの問題がチェックされていません",
-				ignoredIssue: "須_You have ignored an error on this layer. Reload the page and check this story again to review the error________________________________鷗",
-				ignoredIssueBuilder: "須_You have ignored an error on this layer. Reload the builder to check this error again___________________________鷗"
+				ignoredIssue: "このレイヤーのエラーを無視しています。ページを再読み込みし、このストーリーをもう一度チェックしてエラーを確認してください。",
+				ignoredIssueBuilder: "このレイヤーのエラーを無視しています。ビルダーを再読み込みし、このエラーをもう一度確認してください。"
 			},
 			scanningErrors: {
 				deletedMap: "削除されたコンテンツ",
@@ -371,9 +371,9 @@
 				inaccessibleWebpage: "アクセスできない Web ページ"
 			},
 			scanningErrorTips: {
-				deletedMapTip: "須_Tip: Edit your web map and remove the broken content, or remove the web map from your story_____________________________鷗.",
-				inaccessibleMapTip: "須_Tip: Edit your web map and remove the broken content, or remove the web map from your story_____________________________鷗.",
-				notYoursNotAccessibleTip: "須_Tip: Edit your web map and remove the layer, or remove the web map from your story__________________________鷗.",
+				deletedMapTip: "ヒント: Web マップを編集し、壊れているコンテンツを削除するか、Web マップをストーリーから削除します。",
+				inaccessibleMapTip: "ヒント: Web マップを編集し、壊れているコンテンツを削除するか、Web マップをストーリーから削除します。",
+				notYoursNotAccessibleTip: "ヒント: Web マップを編集し、レイヤーを削除するか、Web マップをストーリーから削除します。",
 				serviceOkItemNotTip: "レイヤーは、アクセスできないか削除されたアイテムとして追加されました。レイヤーは動作していますが、マップ (ポップアップ、シンボル) に影響を与える可能性があります。",
 				ignore: "無視",
 				fix: "修正",
@@ -459,13 +459,13 @@
 				thirdTitle: "マップ"
 			},
 			crowdsource: {
-				firstTitle: "須_contributions_____鷗",
-				secondTitle: "須_style___鷗",
-				secondValueA: "須_side panel____鷗",
-				secondValueB: "須_stacked___鷗",
-				thirdTitle: "須_basemap___鷗",
-				thirdValueLoading: "須_Loading____鷗...",
-				thirdValueUnknown: "須_unknown___鷗"
+				firstTitle: "提供者",
+				secondTitle: "スタイル",
+				secondValueA: "サイド パネル",
+				secondValueB: "改行",
+				thirdTitle: "ベースマップ",
+				thirdValueLoading: "読み込んでいます...",
+				thirdValueUnknown: "不明"
 			}
 		},
 		progress: {
@@ -482,9 +482,9 @@
 			storiesWithIssues: "問題を含むストーリー数: {{NUM_STORIES}}"
 		},
 		newStories: {
-			newStoriesFound: "須_Looks like you have created a new story_____________鷗.",
-			includeStories: "須_Refresh Stories______鷗",
-			notWhileScanning: "須_This will be available when the check is complete________________鷗"
+			newStoriesFound: "新しいストーリーが作成されたようです。",
+			includeStories: "ストーリーの更新",
+			notWhileScanning: "これは、チェックが完了すると使用可能になります。"
 		}
     })
 );

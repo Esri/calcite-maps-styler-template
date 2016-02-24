@@ -18,17 +18,17 @@
 				boxTitle: "Er is een fout opgetreden",
 				invalidConfig: "Ongeldige configuratie",
 				invalidConfigNoApp: "Webmapapplicatie-ID niet opgegeven in index.html.",
-				invalidConfigNoAppDev: "Ĳ_No Web Mapping Application identifier is specified in URL parameters (?appid=). In development mode, the appid configuration in index.html is ignored______________________________________________ä.",
+				invalidConfigNoAppDev: "Er is geen Web Mapping Application identifier opgegeven in URL parameters (?appid=). In ontwikkelingsmodus wordt de appid-configuratie in index.html genegeerd.",
 				unspecifiedConfigOwner: "De gemachtigde eigenaar is niet geconfigureerd.",
 				invalidConfigOwner: "De eigenaar van het verhaal is niet gemachtigd.",
 				createMap: "Kan geen kaart creëren",
 				invalidApp: "De %TPL_NAME% bestaat niet of is niet toegankelijk.",
 				appLoadingFail: "Er is een probleem opgetreden. De %TPL_NAME% is niet correct geladen.",
 				notConfiguredDesktop: "Het verhaal is nog niet geconfigureerd.",
-				notConfiguredMobile: "Ĳ_The %TPL_NAME% builder is not supported at this display size. If possible, resize your browser to access the builder or please build your story on a device with a larger screen______________________________________________________ä.",
-				notConfiguredMobile2: "Ĳ_Please rotate your device to landscape orientation to use the %TPL_NAME% builder_________________________ä.",
+				notConfiguredMobile: "De %TPL_NAME% builder wordt niet ondersteund op dit schermformaat. Pas indien mogelijk de grootte van uw browser aan voor toegang tot de builder of bouw uw verhaal op een apparaat met een groter scherm.",
+				notConfiguredMobile2: "Draai uw apparaat een kwartslag om de %TPL_NAME% builder te gebruiken.",
 				notAuthorized: "U bent niet gemachtigd om dit verhaal te openen",
-				notAuthorizedBuilder: "Ĳ_You are not authorized to use %TPL_NAME% builder________________ä.",
+				notAuthorizedBuilder: "U bent niet gemachtigd om %TPL_NAME% builder te gebruiken.",
 				noBuilderIE: "De builder wordt niet ondersteund op eerdere versies van Internet Explorer dan versie %VERSION%. %UPGRADE%",
 				noViewerIE: "Dit verhaal wordt niet ondersteund op eerdere versies van Internet Explorer dan versie %VERSION%. %UPGRADE%",
 				upgradeBrowser: "<a href='http://browsehappy.com/' target='_blank'>Werk uw browser bij</a>.",
@@ -58,8 +58,8 @@
 				checking: "Controleren van uw verhaalcontent",
 				fix: "Fouten in uw verhaal corrigeren",
 				noerrors: "Geen problemen gedetecteerd",
-				tooltipAutoplayDisabled: "Ĳ_This isn't available in autoplay mode____________ä",
-				notshared: "Ĳ_Story not shared______ä"
+				tooltipAutoplayDisabled: "Dit is niet beschikbaar in autoplaymodus.",
+				notshared: "Verhaal niet gedeeld"
 			},
 			overviewFromCommon: {
 				title: "Overzichtskaart"
@@ -74,10 +74,10 @@
 				embed: "Inbedden in webpagina",
 				embedExplain: "Gebruik de volgende HTML-code om het verhaal in een webpagina in te sluiten.",
 				size: "Grootte (breedte/hoogte):",
-				autoplayLabel: "Ĳ_Autoplay mode_____ä",
-				autoplayExplain1: "Ĳ_Autoplay mode will advance through your story at a regular interval. This is ideal on a kiosk or public display monitor, but be aware that in other situations it may make the story harder to read. This feature isn't supported on small displays__________________________________________________________________________ä.",
-				autoplayExplain2: "Ĳ_When this mode is active there are controls to play/pause the story and adjust the navigation speed_______________________________ä.",
-				linksupdated: "Ĳ_Links updated_____ä!"
+				autoplayLabel: "Autoplaymodus",
+				autoplayExplain1: "Autoplaymodus speelt uw verhaal regelmatig af. Dit is ideaal voor een kiosk of monitor in een openbare ruimte, maar houd er rekening mee dat het verhaal in andere situaties moeilijker te lezen is. Deze functie wordt niet ondersteund op kleine schermen.",
+				autoplayExplain2: "Wanneer deze modus actief is, kan het verhaal worden afgespeeld en gepauzeerd en kan de navigatiesnelheid worden aangepast.",
+				linksupdated: "Links bijgewerkt!"
 			},
 			locatorFromCommon: {
 				error: "Locatie niet beschikbaar"

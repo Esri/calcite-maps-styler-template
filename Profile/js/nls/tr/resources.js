@@ -20,7 +20,7 @@ define(
       error: "Harita oluşturulamıyor"
     },
     nav: {
-        "close": "ı_Close___İ"
+        "close": "Kapat"
     },
     elevation: {
         toggle: "Yükselti Profili Grafiğini Açın/Kapatın.",

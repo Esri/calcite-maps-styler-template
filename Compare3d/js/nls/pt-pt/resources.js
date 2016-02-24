@@ -17,11 +17,11 @@
 define(
    ({
     scene: {
-      error: "ã_Unable to create scene________Ç"
+      error: "Incapaz de criar cena"
     },
     tools: {
-      linkLabel: "ã_Link Views____Ç",
-      unlinkLabel: "ã_Unlink Views_____Ç"
+      linkLabel: "Visualizador de Link",
+      unlinkLabel: "Visualizador Unlink"
     }
   })
 );

@@ -17,11 +17,11 @@
 define(
    ({
     scene: {
-      error: "Š_Unable to create scene________ä"
+      error: "Vaadet ei saanud luua"
     },
     tools: {
-      linkLabel: "Š_Link Views____ä",
-      unlinkLabel: "Š_Unlink Views_____ä"
+      linkLabel: "Lingi vaated",
+      unlinkLabel: "Tühista vaadete linkimine"
     }
   })
 );

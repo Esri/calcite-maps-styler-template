@@ -19,7 +19,7 @@
 				create: "Izveidot",
 				yes: "Jā",
 				no: "Nē",
-				mystories: "ķ_My Stories____ū"
+				mystories: "Mani stāsti"
 			},
 			inlineFieldEdit: {
 				editMe: "Rediģē mani!"
@@ -31,10 +31,10 @@
 				buttonShare: "Kopīgot",
 				buttonSettings: "Iestatījumi",
 				buttonHelp: "Palīdzība",
-				buttonPreview: "ķ_View story____ū",
+				buttonPreview: "Skatīt stāstu",
 				tooltipFirstSave: "Tas nav pieejams pirms saglabāšanas.",
 				tooltipNotShared: "Tas nav pieejams pirms kopīgošanas.",
-				tooltipNotShared2: "ķ_Your story isn't shared, only you can access it_______________ū.",
+				tooltipNotShared2: "Jūsu stāsts nav kopīgots; tam varat piekļūt tikai jūs pats.",
 				noPendingChange: "Nav neizpildītu izmaiņu",
 				unSavedChangePlural: "Gaida izmaiņas",
 				closeWithPendingChange: "Vai tiešām vēlaties apstiprināt šo darbību? Jūsu veiktās izmaiņas tiks zaudētas.",
@@ -55,20 +55,20 @@
 				btnOk: "Rediģējiet stāsta nosaukumu"
 			},
 			saveErrorSocial: {
-				title: "ķ_Social media sharing update_________ū",
-				panel1: "ķ_Your storyâ€™s appearance on social media has been improved, but your ArcGIS web application item title is not the same as your story title___________________________________________ū.",
-				panel1tooltip: "ķ_By defining a title, summary and thumbnail image, your story will look like this_________________________ū:",
-				panel2:	"ķ_Which title would you like to use on social media________________ū:",
-				panel2q1: "ķ_Story title (recommended)_________ū",
-				panel2q1tooltip: "ķ_By choosing this option, your item title will be modified to match your story title and further changes in the builder will be synchronized___________________________________________ū.",
-				panel2q2: "ķ_Item title____ū",
-				panel3: "ķ_To further improve how your story looks on social media use ${MYSTORIES} to add a summary and a thumbnail image___________________________________ū.",
-				panel4: "ķ_Do not warn me again for this story____________ū"
+				title: "Sociālās multivides kopīgošanas atjaunināšana",
+				panel1: "Ir uzlabots jūsu stāsta izskats sociālajā multividē, bet jūsu ArcGIS Web lietotnes vienības virsraksts atšķiras no stāsta virsraksta.",
+				panel1tooltip: "Kad būsiet definējis virsrakstu, kopsavilkumu un sīktēla attēlu, jūsu stāsts izskatīsies šādi:",
+				panel2:	"Kādu virsrakstu vēlaties izmantot sociālajā multividē:",
+				panel2q1: "Stāsta virsraksts (ieteicams)",
+				panel2q1tooltip: "Ja izvēlēsieties šo opciju, vienības virsraksts tiks modificēts tā, lai atbilstu stāsta virsrakstam, un veidotājā tiks sinhronizētas tālākās izmaiņas.",
+				panel2q2: "Vienības virsraksts",
+				panel3: "Ja sociālajā multividē vēlaties vēl vairāk uzlabot stāsta izskatu, izmantojiet ${MYSTORIES}, lai pievienotu kopsavilkumu un sīktēla attēlu.",
+				panel4: "Vairāk nerādīt brīdinājumus par šo stāstu"
 			},
 			share: {
 				shareTitle: "Koplietojiet stāstu",
 				preview: "Priekšskatījums",
-				viewlive: "ķ_View story____ū",
+				viewlive: "Skatīt stāstu",
 				btnPrivate: "Privāts",
 				btnPrivateTooltip: "Stāstu varat skatīt tikai jūs",
 				btnOrg: "Organizācija",
@@ -87,27 +87,27 @@
 				notavailable2: "Atvainojiet! Stāsta koplietošana, izmantojot Builder, šajā Portal for ArcGIS versijā netiek atbalstīta (nepieciešama 10.4 vai jaunāka versija).",
 				notavailable3: "Varat koplietot šo stāstu no %LINK%.",
 				notavailable4: "Mani stāsti",
-				notavailable5: "ķ_its item page_____ū",
+				notavailable5: "tā vienības lapa",
 				notavailable6: "Atvainojiet! Šis elements izstrādes režīmā netiek pilnībā atbalstīts. Iespējams, ka šis elements pēc ieviešanas tiks atbalstīts (atkarībā no jūsu ieviešanas scenārija).",
 				notavailable7: "Apmeklējiet sadaļu %MYCONTENT%, lai pārliecinātos, vai jūsu stāstā izmantotās kartes un slāņi arī tiek koplietoti.",
 				notavailable8: "Mans saturs",
-				mystoriesinvite2: "ķ_To improve how your story looks on social networks use ${MYSTORIES} to add a summary and a thumbnail image_________________________________ū."
+				mystoriesinvite2: "Ja sociālajos tīklos vēlaties uzlabot stāsta izskatu, izmantojiet ${MYSTORIES}, lai pievienotu kopsavilkumu un sīktēla attēlu."
 			},
 			settings: {
 				header: "Iestatījumi",
 				tabError: "Lūdzu, pārbaudiet visas cilnes, vai nav kļūdu"
 			},
 			settingsLayout: {
-				title: "ķ_Layout___ū",
+				title: "Izkārtojums",
 				explain: "Kādu izkārtojumu vēlaties izmantot?",
 				explainInit: "Varat mainīt izkārtojumu jebkurā laikā iestatījumu dialoglodziņā.",
 				viewExample: "Skatiet piemēru tiešraidē"
 			},
 			settingsTheme: {
-				title: "ķ_Theme___ū"
+				title: "Tēma"
 			},
 			settingsHeader: {
-				title: "ķ_Header___ū",
+				title: "Galvene",
 				logoEsri: "Esri logotips",
 				logoNone: "Nav logotipa",
 				logoCustom: "Pielāgots logotips",
@@ -119,7 +119,7 @@
 				lblSmallHeader: "Lietot kompaktu galveni (bez apakšvirsraksta)"
 			},
 			header: {
-				title: "ķ_Edit the title of your %TPL_NAME%___________ū",
+				title: "Rediģējiet sava %TPL_NAME% nosaukumu",
 				subtitle: "Rediģējiet sava %TPL_NAME% apakšnosaukumu"
 			}
 		}

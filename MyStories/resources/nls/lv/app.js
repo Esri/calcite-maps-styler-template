@@ -41,7 +41,7 @@
 		},
 		cantFindStories: {
 			whereAreStories: "Vai neredzat savu stāstu?",
-			notSeeExplanation: "ķ_My Stories will only list story maps hosted in ArcGIS and created with the {{STORY_MAP_TOUR}}, {{JOURNAL}}, {{MAP_SERIES}} or {{SWIPE_SPYGLASS}} applications. See our {{FAQ}} for more information____________________________________________________________ū.",
+			notSeeExplanation: "Sadaļā Mani stāsti tiks parādīti tikai tie karšu stāsti, kas ir viesoti ArcGIS un izveidoti aplikācijā {{STORY_MAP_TOUR}}, {{JOURNAL}}, {{MAP_SERIES}} un {{SWIPE_SPYGLASS}}. Detalizētu informāciju skatiet sadaļā {{FAQ}}.",
 			faq: "Biežāk uzdotie jautājumi",
 			followingStoriesToUpdate: "Lai tālāk minētos stāstus, kas izveidoti mūsu lietotņu iepriekšējās versijās, varētu parādīt sadaļā Mani stāsti, tie ir jāatjaunina:",
 			gettingStories: "Meklē stāstus, kas izveidoti mūsu lietotņu iepriekšējās versijās un ir jāatjaunina...",
@@ -120,7 +120,7 @@
 			saveFailed: "Saglabāšanas kļūda",
 			numViews: "Skati: {{NUM_VIEWS}}",
 			editStory: "Rediģēt stāstu",
-			viewLive: "ķ_View Story____ū",
+			viewLive: "Skatīt stāstu",
 			preview: "Priekšskatījums",
 			deleteButton: "Dzēst",
 			modified: "Mainīts {{DATE}}",
@@ -130,7 +130,7 @@
 			close: "aizvērt",
 			hide: "paslēpt",
 			notAvailableWhenBroken: "Jūsu stāstā ir tālāk minētās problēmas",
-			cantBeDeleted: "ķ_This story has delete protection enabled. See its item page on ArcGIS to disable_________________________ū.",
+			cantBeDeleted: "Šajā stāstā ir iespējota aizsardzība pret dzēšanu. Informāciju par atspējošanu skatiet ArcGIS vienības lapā.",
 			shareDialog: {
 				title: "Koplietojiet savu stāstu ar citiem!",
 				notPublicWarning: "Stāsts ir koplietots ar jūsu organizāciju. To varēs skatīt tikai jūsu organizācijas dalībnieki.",
@@ -163,7 +163,7 @@
 				save: "Saglabāt",
 				saved: "Saglabāts",
 				errorSaving: "Kļūda saglabājot",
-				tagTip: "ķ_Tip: Tags help people find your story. The more relevant the tags are, the higher the visibility your work will receive_____________________________________ū."
+				tagTip: "Padoms. Atslēgas vārdi tiek izmantoti, lai lietotāji varētu atrast jūsu stāstu. Jo precīzākus atlsēgas vārdus izmantojat, jo pamanāmāks ir jūsu darbs."
 			},
 			submitToGallery: {
 				gallerySubmission: "Karšu stāstu galerija",
@@ -173,7 +173,7 @@
 				chosenSubjectAlt: "{{SUBJECT}} un vairākas birkas",
 				storyMapTopicSubject: "tēma",
 				sharedPublicly: "Koplietots publiski",
-				noBrokenContent: "ķ_No issues____ū",
+				noBrokenContent: "Nav problēmas",
 				nominateToGallery: "Izvirzīt ievietošanai galerijā",
 				comingSoon: "Drīzumā!",
 				submitted: "Iesniegts",
@@ -298,8 +298,8 @@
 				subscriptionPublicSuccess: "Jūsu abonementa saturs tagad ir pieejams publiski"
 			},
 			errors: {
-				publicDisabled: "ķ_Sharing publicly has been disabled by an Administrator_________________ū",
-				orgDisabled: "ķ_Sharing to your organization has been disabled by an Administrator_____________________ū",
+				publicDisabled: "Administrators ir atspējojis publisku koplietošanu",
+				orgDisabled: "Administrators ir atspējojis koplietošanu jūsu organizācijā",
 				noMapName: "Neizdevās atgūt kartes nosaukumu",
 				notPublic: "NAV PUBLISKS",
 				inaccessible: "NEPIEEJAMS",
@@ -352,8 +352,8 @@
 				cantScanThisTypeAlt: "Nevar pārbaudīt šāda tipa slāni",
 				cantScanThisType: "Šis nav tāda tipa slānis, ko varētu pārbaudīt",
 				webpageNotScanned: "Tīmekļa lapas netiek pārbaudītas, meklējot problēmas",
-				ignoredIssue: "ķ_You have ignored an error on this layer. Reload the page and check this story again to review the error________________________________ū",
-				ignoredIssueBuilder: "ķ_You have ignored an error on this layer. Reload the builder to check this error again___________________________ū"
+				ignoredIssue: "Jūs ignorējāt šajā slānī esošu kļūdu. Atkārtoti ielādējiet lapu un vēlreiz pārbaudiet stāstu, lai pārskatītu kļūdu",
+				ignoredIssueBuilder: "Jūs ignorējāt šajā slānī esošu kļūdu. Atkārtoti ielādējiet veidotāju, lai vēlreiz pārbaudītu kļūdu"
 			},
 			scanningErrors: {
 				deletedMap: "Izdzēsts saturs",
@@ -371,9 +371,9 @@
 				inaccessibleWebpage: "Nepieejamas tīmekļa lapas"
 			},
 			scanningErrorTips: {
-				deletedMapTip: "ķ_Tip: Edit your web map and remove the broken content, or remove the web map from your story_____________________________ū.",
-				inaccessibleMapTip: "ķ_Tip: Edit your web map and remove the broken content, or remove the web map from your story_____________________________ū.",
-				notYoursNotAccessibleTip: "ķ_Tip: Edit your web map and remove the layer, or remove the web map from your story__________________________ū.",
+				deletedMapTip: "Padoms. Rediģējiet savu Web karti un noņemiet bojāto saturu vai noņemiet Web karti no sava stāsta.",
+				inaccessibleMapTip: "Padoms. Rediģējiet savu Web karti un noņemiet bojāto saturu vai noņemiet Web karti no sava stāsta.",
+				notYoursNotAccessibleTip: "Padoms. Rediģējiet savu Web karti un noņemiet slāni vai noņemiet Web karti no sava stāsta.",
 				serviceOkItemNotTip: "Slāņi tika pievienoti kā nepieejamas vai izdzēstas vienības. Slāņi darbojas, bet tas var ietekmēt jūsu karti (uznirstošos logus un simboliku).",
 				ignore: "Ignorēt",
 				fix: "Labot",
@@ -459,13 +459,13 @@
 				thirdTitle: "kartes"
 			},
 			crowdsource: {
-				firstTitle: "ķ_contributions_____ū",
-				secondTitle: "ķ_style___ū",
-				secondValueA: "ķ_side panel____ū",
-				secondValueB: "ķ_stacked___ū",
-				thirdTitle: "ķ_basemap___ū",
-				thirdValueLoading: "ķ_Loading____ū...",
-				thirdValueUnknown: "ķ_unknown___ū"
+				firstTitle: "līdzdalība",
+				secondTitle: "stils",
+				secondValueA: "sānu panelis",
+				secondValueB: "grēdots",
+				thirdTitle: "pamatkarte",
+				thirdValueLoading: "Ielādē...",
+				thirdValueUnknown: "nezināms"
 			}
 		},
 		progress: {
@@ -482,9 +482,9 @@
 			storiesWithIssues: "Stāsti ar problēmām: {{NUM_STORIES}}"
 		},
 		newStories: {
-			newStoriesFound: "ķ_Looks like you have created a new story_____________ū.",
-			includeStories: "ķ_Refresh Stories______ū",
-			notWhileScanning: "ķ_This will be available when the check is complete________________ū"
+			newStoriesFound: "Šķiet, ka esat izveidojis jaunu stāstu.",
+			includeStories: "Atsvaidzināt stāstus",
+			notWhileScanning: "Tas būs pieejams pēc pārbaudes pabeigšanas"
 		}
     })
 );

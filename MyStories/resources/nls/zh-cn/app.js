@@ -41,7 +41,7 @@
 		},
 		cantFindStories: {
 			whereAreStories: "无法查看您的故事？",
-			notSeeExplanation: "试_My Stories will only list story maps hosted in ArcGIS and created with the {{STORY_MAP_TOUR}}, {{JOURNAL}}, {{MAP_SERIES}} or {{SWIPE_SPYGLASS}} applications. See our {{FAQ}} for more information____________________________________________________________验.",
+			notSeeExplanation: "“我的故事”将仅会列出托管在 ArcGIS 主机上，并由 {{STORY_MAP_TOUR}}、{{JOURNAL}}、{{MAP_SERIES}} 或 {{SWIPE_SPYGLASS}} 应用程序创建的故事地图。有关详细信息，请参阅我们的 {{FAQ}}。",
 			faq: "FAQ",
 			followingStoriesToUpdate: "以下使用早期版本应用程序创建的故事需要在更新后才能在“我的故事”中列出:",
 			gettingStories: "搜索使用需要进行更新的早期版本应用程序创建的故事...",
@@ -120,7 +120,7 @@
 			saveFailed: "保存时出错",
 			numViews: "查看: {{NUM_VIEWS}}",
 			editStory: "编辑故事",
-			viewLive: "试_View Story____验",
+			viewLive: "查看故事",
 			preview: "预览",
 			deleteButton: "删除",
 			modified: "修改 {{DATE}}",
@@ -130,7 +130,7 @@
 			close: "关闭",
 			hide: "隐藏",
 			notAvailableWhenBroken: "您的故事存在下列问题",
-			cantBeDeleted: "试_This story has delete protection enabled. See its item page on ArcGIS to disable_________________________验.",
+			cantBeDeleted: "此故事已启用删除保护。请在 ArcGIS 中查看其项目页面以禁用保护。",
 			shareDialog: {
 				title: "与世界共享故事！",
 				notPublicWarning: "您的故事会在您的组织内共享。只有您的组织成员能够查看您的故事。",
@@ -163,7 +163,7 @@
 				save: "保存",
 				saved: "已保存",
 				errorSaving: "保存时出错",
-				tagTip: "试_Tip: Tags help people find your story. The more relevant the tags are, the higher the visibility your work will receive_____________________________________验."
+				tagTip: "提示: 标签可帮助人们找到您的故事。标签的相关性越强，您的工作得到的可见度越高。"
 			},
 			submitToGallery: {
 				gallerySubmission: "Story Maps 图库",
@@ -173,7 +173,7 @@
 				chosenSubjectAlt: "{{SUBJECT}} 以及部分标签",
 				storyMapTopicSubject: "主题",
 				sharedPublicly: "公开共享",
-				noBrokenContent: "试_No issues____验",
+				noBrokenContent: "没有问题",
 				nominateToGallery: "推荐至库",
 				comingSoon: "即将推出!",
 				submitted: "已提交",
@@ -298,8 +298,8 @@
 				subscriptionPublicSuccess: "您的订阅内容现在可公开访问"
 			},
 			errors: {
-				publicDisabled: "试_Sharing publicly has been disabled by an Administrator_________________验",
-				orgDisabled: "试_Sharing to your organization has been disabled by an Administrator_____________________验",
+				publicDisabled: "管理员已禁用公开共享",
+				orgDisabled: "管理员已禁用共享到您的组织",
 				noMapName: "无法检索地图名称",
 				notPublic: "未公开",
 				inaccessible: "无法访问",
@@ -352,8 +352,8 @@
 				cantScanThisTypeAlt: "无法检查此类图层",
 				cantScanThisType: "图层是我们无法查看的图层类型",
 				webpageNotScanned: "未检查网页是否存在问题",
-				ignoredIssue: "试_You have ignored an error on this layer. Reload the page and check this story again to review the error________________________________验",
-				ignoredIssueBuilder: "试_You have ignored an error on this layer. Reload the builder to check this error again___________________________验"
+				ignoredIssue: "您忽略了此图层上的一个错误。请重新加载此页面并重新检查此故事以检查错误",
+				ignoredIssueBuilder: "您忽略了此图层上的一个错误。请重新加载构建器以再次检查此错误"
 			},
 			scanningErrors: {
 				deletedMap: "已删除的内容",
@@ -371,9 +371,9 @@
 				inaccessibleWebpage: "无法访问的网页"
 			},
 			scanningErrorTips: {
-				deletedMapTip: "试_Tip: Edit your web map and remove the broken content, or remove the web map from your story_____________________________验.",
-				inaccessibleMapTip: "试_Tip: Edit your web map and remove the broken content, or remove the web map from your story_____________________________验.",
-				notYoursNotAccessibleTip: "试_Tip: Edit your web map and remove the layer, or remove the web map from your story__________________________验.",
+				deletedMapTip: "提示: 编辑 web 地图并移除损坏内容，或者从故事中移除 web 地图。",
+				inaccessibleMapTip: "提示: 编辑 web 地图并移除损坏内容，或者从故事中移除 web 地图。",
+				notYoursNotAccessibleTip: "提示: 编辑 web 地图并移除图层，或者从故事中移除 web 地图。",
 				serviceOkItemNotTip: "图层被添加为无法访问或已删除的项。图层可以使用，但可能会影响您的地图(弹出窗口、符号)。",
 				ignore: "忽略",
 				fix: "定位",
@@ -459,13 +459,13 @@
 				thirdTitle: "地图"
 			},
 			crowdsource: {
-				firstTitle: "试_contributions_____验",
-				secondTitle: "试_style___验",
-				secondValueA: "试_side panel____验",
-				secondValueB: "试_stacked___验",
-				thirdTitle: "试_basemap___验",
-				thirdValueLoading: "试_Loading____验...",
-				thirdValueUnknown: "试_unknown___验"
+				firstTitle: "贡献",
+				secondTitle: "样式",
+				secondValueA: "侧面板",
+				secondValueB: "堆叠",
+				thirdTitle: "底图",
+				thirdValueLoading: "正在加载...",
+				thirdValueUnknown: "未知"
 			}
 		},
 		progress: {
@@ -482,9 +482,9 @@
 			storiesWithIssues: "有问题的故事: {{NUM_STORIES}}"
 		},
 		newStories: {
-			newStoriesFound: "试_Looks like you have created a new story_____________验.",
-			includeStories: "试_Refresh Stories______验",
-			notWhileScanning: "试_This will be available when the check is complete________________验"
+			newStoriesFound: "您似乎已创建新故事。",
+			includeStories: "刷新故事",
+			notWhileScanning: "此功能将在检查完成后可用"
 		}
     })
 );

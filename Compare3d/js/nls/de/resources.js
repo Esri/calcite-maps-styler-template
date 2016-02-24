@@ -17,11 +17,11 @@
 define(
    ({
     scene: {
-      error: "ä_Unable to create scene________Ü"
+      error: "Szene kann nicht erstellt werden"
     },
     tools: {
-      linkLabel: "ä_Link Views____Ü",
-      unlinkLabel: "ä_Unlink Views_____Ü"
+      linkLabel: "Ansichten verknüpfen",
+      unlinkLabel: "Verknüpfung von Ansichten aufheben"
     }
   })
 );

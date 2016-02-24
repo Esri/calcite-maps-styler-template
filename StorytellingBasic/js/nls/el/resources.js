@@ -21,12 +21,12 @@ define(
       generalError: "Σφάλμα"
     },
     social:{
-        facebook: "Đ_Share on Facebook______ớ",
-        twitter: "Đ_Share on Twitter______ớ",
-        link: "Đ_Share link____ớ"
+        facebook: "Κοινοποίηση στο Facebook",
+        twitter: "Κοινοποίηση στο Twitter",
+        link: "Κοινοποίηση συνδέσμου"
     },
     legendToggle:{
-        label: "Đ_LEGEND___ớ"
+        label: "ΥΠΟΜΝΗΜΑ"
     }
   })
 );

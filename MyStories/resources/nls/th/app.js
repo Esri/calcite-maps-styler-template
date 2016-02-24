@@ -41,7 +41,7 @@
 		},
 		cantFindStories: {
 			whereAreStories: "ไม่สามารถแสดงผลเรื่องราวของคุณ?",
-			notSeeExplanation: "ก้_My Stories will only list story maps hosted in ArcGIS and created with the {{STORY_MAP_TOUR}}, {{JOURNAL}}, {{MAP_SERIES}} or {{SWIPE_SPYGLASS}} applications. See our {{FAQ}} for more information____________________________________________________________ษฺ.",
+			notSeeExplanation: "สตอรี่ของฉันจะมีเพียงรายการแผนที่ที่เก็บอยู่ใน ArcGIS และสร้างด้วย{{STORY_MAP_TOUR}}, {{JOURNAL}}, {{MAP_SERIES}} หรือ {{SWIPE_SPYGLASS}} แอพลิเคชัน  ดูใน {{FAQ}} สำหรับข้อมูลเพิ่มเติม",
 			faq: "คำถามที่พบบ่อย",
 			followingStoriesToUpdate: "เรื่องราวด้านล่างนี้ ถูกสร้างขึ้นด้วยเวอชั่นก่อนหน้าของโปรแกรม ซึ่งต้องอัพเดทก่อนที่แสดงรายการในเรื่องราวของฉัน",
 			gettingStories: "กำลังค้นหาเรื่องราวที่ถูกสร้างขึ้นด้วยเวอร์ชั่นก่อนหน้าของโปรแกรม ซึ่งต้องการการอัพเดท",
@@ -120,7 +120,7 @@
 			saveFailed: "ป้องกันการผิดพลาด",
 			numViews: "การเข้าชม {{จำนวนการเข้าชม }}",
 			editStory: "แก้ไขเรื่อง",
-			viewLive: "ก้_View Story____ษฺ",
+			viewLive: "แสดงสตอรี่",
 			preview: "แสดงตัวอย่าง",
 			deleteButton: "ลบ",
 			modified: "ดัดแปลง",
@@ -130,7 +130,7 @@
 			close: "ปิด",
 			hide: "ซ่อน",
 			notAvailableWhenBroken: "เรื่องของคุณพบปัญหาดังนี้",
-			cantBeDeleted: "ก้_This story has delete protection enabled. See its item page on ArcGIS to disable_________________________ษฺ.",
+			cantBeDeleted: "สตอรี่นี้เปิดการใช้งานระบบเส้นโครงแผนที่ ดูที่หน้ารายการบน ArcGIS เพื่อปิดการใช้งาน",
 			shareDialog: {
 				title: "แบ่งปันเรื่องราวของคุณกับโลก",
 				notPublicWarning: "เรื่องราวของคุณถูกแบ่งปันภายในองค์กร เฉพาะสมาชิกเท่านั้นที่สามารถเรียกดูได้",
@@ -163,7 +163,7 @@
 				save: "บันทึก",
 				saved: "บันทึก",
 				errorSaving: "ป้องกันการผิดพลาด",
-				tagTip: "ก้_Tip: Tags help people find your story. The more relevant the tags are, the higher the visibility your work will receive_____________________________________ษฺ."
+				tagTip: "เกร็ดความรู้: แท็กช่วยให้คนพบสตอรี่ของคุณ แท็กที่เกี่ยวข้องอื่น ๆ มีการแสดงผลที่สูงกว่าการทำงานที่คุณจะได้รับ"
 			},
 			submitToGallery: {
 				gallerySubmission: "แกลอรี่แผนที่เรื่องราว",
@@ -173,7 +173,7 @@
 				chosenSubjectAlt: "A {{หัวข้อ}} และแท็กบางส่วน",
 				storyMapTopicSubject: "หัวข้อ",
 				sharedPublicly: "แบ่งปันสาธารณะ",
-				noBrokenContent: "ก้_No issues____ษฺ",
+				noBrokenContent: "ไม่พบประเด็น",
 				nominateToGallery: "เสนอชื่อในแกลอรี่",
 				comingSoon: "เร็วๆ นี้!",
 				submitted: "ส่งแล้ว",
@@ -298,8 +298,8 @@
 				subscriptionPublicSuccess: "เนื้อหาการสมัครของคุณคือขณะนี้ที่สาธารณชนสามารถเข้าถึง"
 			},
 			errors: {
-				publicDisabled: "ก้_Sharing publicly has been disabled by an Administrator_________________ษฺ",
-				orgDisabled: "ก้_Sharing to your organization has been disabled by an Administrator_____________________ษฺ",
+				publicDisabled: "เปิดการใช้งานการแชร์ข้อมูลต่อสาธารณะโดยผู้ดูแลระบบ",
+				orgDisabled: "เปิดการใช้งานการแชร์ข้อมูลในองค์กรโดยผู้ดูแลระบบ",
 				noMapName: "ไม่สามารถเรียกชื่อแผนที่",
 				notPublic: "ไม่แบ่งปันสู่สาธารณะ",
 				inaccessible: "ไม่สามารถเข้าถึง",
@@ -352,8 +352,8 @@
 				cantScanThisTypeAlt: "เราไม่สามารถตรวจสอบประเภทของชั้นข้อมูล",
 				cantScanThisType: "ชั้นข้อมูลไม่ใช่ประเภทที่เราสามารถตรวจสอบได้",
 				webpageNotScanned: "เวปเพจไม่สามารถตรวจสอบปัญหาได้",
-				ignoredIssue: "ก้_You have ignored an error on this layer. Reload the page and check this story again to review the error________________________________ษฺ",
-				ignoredIssueBuilder: "ก้_You have ignored an error on this layer. Reload the builder to check this error again___________________________ษฺ"
+				ignoredIssue: "คุณได้ละเลยข้อผิดพลาดในชั้นข้อมูลนี้ โหลดสตอรี่นี้อีกครั้งเพื่อตรวจสอบข้อผิดพลาด",
+				ignoredIssueBuilder: "คุณได้ละเลยข้อผิดพลาดในชั้นข้อมูลนี้ โหลดบิวเดอร์นี้อีกครั้งเพื่อตรวจสอบข้อผิดพลาด"
 			},
 			scanningErrors: {
 				deletedMap: "ลบเนื้อหา",
@@ -371,9 +371,9 @@
 				inaccessibleWebpage: "ไม่สามารถเข้าถึงเวปเพจ"
 			},
 			scanningErrorTips: {
-				deletedMapTip: "ก้_Tip: Edit your web map and remove the broken content, or remove the web map from your story_____________________________ษฺ.",
-				inaccessibleMapTip: "ก้_Tip: Edit your web map and remove the broken content, or remove the web map from your story_____________________________ษฺ.",
-				notYoursNotAccessibleTip: "ก้_Tip: Edit your web map and remove the layer, or remove the web map from your story__________________________ษฺ.",
+				deletedMapTip: "เกร็ดความรู้: แก้ไขเว็บแผนที่ของคุณและนำเนื้อหาที่คลาดเคลื่อน หรือลบเว็บแผนที่จากสตอรี่ของคุณ.",
+				inaccessibleMapTip: "เกร็ดความรู้: แก้ไขเว็บแผนที่ของคุณและนำเนื้อหาที่คลาดเคลื่อน หรือลบเว็บแผนที่จากสตอรี่ของคุณ.",
+				notYoursNotAccessibleTip: "เกร็ดความรู้: แก้ไขเว็บแผนที่ของคุณและลบชั้นข้อมูล หรือลบเว็บแผนที่จากสตอรี่ของคุณ.",
 				serviceOkItemNotTip: "ชั้นข้อมูลถูกเพิ่ม แต่รายการไม่สามารถเข้าถึงได้หรือถูกลบไป ชั้นข้อมูลยังคงทำงานได้อยู่ แต่อาจจะส่งผลต่อแผนที่ของคุณ (ปอปอัพ , สัญลักษณ์)",
 				ignore: "เพิกเฉย",
 				fix: "แก้ไข",
@@ -459,13 +459,13 @@
 				thirdTitle: "maps"
 			},
 			crowdsource: {
-				firstTitle: "ก้_contributions_____ษฺ",
-				secondTitle: "ก้_style___ษฺ",
-				secondValueA: "ก้_side panel____ษฺ",
-				secondValueB: "ก้_stacked___ษฺ",
-				thirdTitle: "ก้_basemap___ษฺ",
-				thirdValueLoading: "ก้_Loading____ษฺ...",
-				thirdValueUnknown: "ก้_unknown___ษฺ"
+				firstTitle: "การมีส่วนร่วม",
+				secondTitle: "รูปแบบ",
+				secondValueA: "แผนด้านข้าง",
+				secondValueB: "ซ้อนกัน",
+				thirdTitle: "แผนที่ฐาน",
+				thirdValueLoading: "กำลังโหลด...",
+				thirdValueUnknown: "ไม่ทราบ"
 			}
 		},
 		progress: {
@@ -482,9 +482,9 @@
 			storiesWithIssues: "เหตุการณ์ที่พบปัญหา {{ตัวเลขของเหตุการณ์}}"
 		},
 		newStories: {
-			newStoriesFound: "ก้_Looks like you have created a new story_____________ษฺ.",
-			includeStories: "ก้_Refresh Stories______ษฺ",
-			notWhileScanning: "ก้_This will be available when the check is complete________________ษฺ"
+			newStoriesFound: "ดูเหมือนว่าคุณต้องการสร้างสตอรี่ใหม่",
+			includeStories: "รีเฟรชสตอรี่",
+			notWhileScanning: "เรื่องนี้จะสามารถใช้ได้เมื่อตรวจสอบเสร็จสมบูรณ์"
 		}
     })
 );

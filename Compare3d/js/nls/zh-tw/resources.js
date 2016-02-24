@@ -17,11 +17,11 @@
 define(
    ({
     scene: {
-      error: "試_Unable to create scene________驗"
+      error: "無法建立場景"
     },
     tools: {
-      linkLabel: "試_Link Views____驗",
-      unlinkLabel: "試_Unlink Views_____驗"
+      linkLabel: "連結視圖",
+      unlinkLabel: "取消連結視圖"
     }
   })
 );

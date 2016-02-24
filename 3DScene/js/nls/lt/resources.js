@@ -17,18 +17,18 @@
 define(
    ({
     scene: {
-      error: "Į_Unable to create scene________š"
+      error: "Neįmanoma sukurti scenos"
     },
     panel: {
-      noslides: "Į_No slides in web scene________š"
+      noslides: "Nėra internetinės scenos"
     },
     tooltips: {
-      layers: "Į_Layers___š",
-      basemaps: "Į_Base maps____š",
-      slides: "Į_Slides___š",
-      close: "Į_Close___š",
-      zoom: "Į_Zoom__š",
-      onoff: "Į_On-Off___š"
+      layers: "Sluoksniai",
+      basemaps: "Pagrindo žemėlapiai",
+      slides: "Skaidrės",
+      close: "Uždaryti",
+      zoom: "Didinti",
+      onoff: "Įjungti / išjungti"
     }
   })
 );

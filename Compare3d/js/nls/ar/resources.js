@@ -17,11 +17,11 @@
 define(
    ({
     scene: {
-      error: "بيت_Unable to create scene________لاحقة"
+      error: "يتعذر إنشاء المشهد"
     },
     tools: {
-      linkLabel: "بيت_Link Views____لاحقة",
-      unlinkLabel: "بيت_Unlink Views_____لاحقة"
+      linkLabel: "ربط العروض",
+      unlinkLabel: "إلغاء ربط العروض"
     }
   })
 );

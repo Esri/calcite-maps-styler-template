@@ -17,18 +17,18 @@
 define(
    ({
     scene: {
-      error: "Ă_Unable to create scene________ș"
+      error: "Nu a putut fi creată scena"
     },
     panel: {
-      noslides: "Ă_No slides in web scene________ș"
+      noslides: "Nu există niciun diapozitiv în scena web"
     },
     tooltips: {
-      layers: "Ă_Layers___ș",
-      basemaps: "Ă_Base maps____ș",
-      slides: "Ă_Slides___ș",
-      close: "Ă_Close___ș",
-      zoom: "Ă_Zoom__ș",
-      onoff: "Ă_On-Off___ș"
+      layers: "Straturi tematice",
+      basemaps: "Hărţi fundal",
+      slides: "Diapozitive",
+      close: "Închidere",
+      zoom: "Zoom",
+      onoff: "Pornire-Oprire"
     }
   })
 );

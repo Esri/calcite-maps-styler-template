@@ -17,18 +17,18 @@
 define(
    ({
     scene: {
-      error: "Å_Unable to create scene________ö"
+      error: "Maisemaa ei voi luoda"
     },
     panel: {
-      noslides: "Å_No slides in web scene________ö"
+      noslides: "Web-maisemassa ei ole dioja"
     },
     tooltips: {
-      layers: "Å_Layers___ö",
-      basemaps: "Å_Base maps____ö",
-      slides: "Å_Slides___ö",
-      close: "Å_Close___ö",
-      zoom: "Å_Zoom__ö",
-      onoff: "Å_On-Off___ö"
+      layers: "Karttatasot",
+      basemaps: "Taustakartat",
+      slides: "Diat",
+      close: "Sulje",
+      zoom: "Tarkennus",
+      onoff: "Käytössä / Poissa käytöstä"
     }
   })
 );

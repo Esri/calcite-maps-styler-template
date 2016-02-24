@@ -17,18 +17,18 @@
 define(
    ({
     scene: {
-      error: "试_Unable to create scene________验"
+      error: "无法创建场景"
     },
     panel: {
-      noslides: "试_No slides in web scene________验"
+      noslides: "web 场景中无幻灯片"
     },
     tooltips: {
-      layers: "试_Layers___验",
-      basemaps: "试_Base maps____验",
-      slides: "试_Slides___验",
-      close: "试_Close___验",
-      zoom: "试_Zoom__验",
-      onoff: "试_On-Off___验"
+      layers: "图层",
+      basemaps: "底图",
+      slides: "幻灯片",
+      close: "关闭",
+      zoom: "缩放",
+      onoff: "开 - 关"
     }
   })
 );
