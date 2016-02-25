@@ -436,17 +436,19 @@ define([
     _processFeatureGeometries: function(features) {
       array.forEach(features, function(feature) {
         var geom = feature.geometry;
-        switch (geom.type) {
-          case "point":
-            //feature.vizGeometry = geom;
-            break;
-          case "polygon":
-          case "circle":
-            feature.geometry = geom.centroid;
-            break;
-          default:
-            feature.geometry = geom.extent.center;
-            break;
+        if (geom) {
+          switch (geom.type) {
+            case "point":
+              //feature.vizGeometry = geom;
+              break;
+            case "polygon":
+            case "circle":
+              feature.geometry = geom.centroid;
+              break;
+            default:
+              feature.geometry = geom.extent.center;
+              break;
+          }
         }
       });
     },
