@@ -145,20 +145,26 @@ body {
   -webkit-box-shadow: none !important;
   -moz-box-shadow: none !important;
   box-shadow: none !important;
-  width: 232px;
-  height: 32px;
+}
+
+.esri-search .esri-container .esri-input-container {
+  background-color: transparent;
 }
 
 .esri-search .esri-container .esri-input {
+  height: 32px;
+  background-color: transparent;
+  border: none;
+  outline: none;
   -webkit-box-shadow: none !important;
   -moz-box-shadow: none !important;
   box-shadow: none !important;
-  width: 200px;
 }
 
 .esri-search .esri-search-button,
-.esri-search .esri-search-button.esri-search-sources-toggle,
-.esri-search .esri-search-button.esri-submit {
+.esri-search .esri-clear-search,
+.esri-search .esri-search-button.esri-submit,
+.esri-search .esri-search-button.esri-search-sources-toggle {
   border: none;
   outline: none;
   background-color: transparent;
@@ -171,22 +177,16 @@ body {
   outline: none;
 }
 
-.esri-widget-button {
-  color: #ffffff;
-  background-color: transparent;
-}
-
 .esri-search .esri-clear-search:hover {
     background-color: transparent;
     color: #ffffff;
 }
 
-.esri-search .esri-container .esri-input {
+/*.esri-widget-button {
   color: #ffffff;
   background-color: transparent;
-  border: none;
-  outline: none;
 }
+*/
 
 .esri-search .esri-menu {
   position: absolute;
@@ -202,57 +202,15 @@ body {
   box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.4);
 }
 
-/*.esri-search .esri-search-button:hover,
-.esri-search .esri-search-button:focus,
-.esri-search .esri-search-button:active {
-  background-color: rgba(0, 0, 0, 0.25);
-  outline: none;
+ul li {
+  list-style-type: none;
 }
 
-.esri-search .esri-container .esri-input {
-  color: #ffffff;
-  background-color: transparent;
-  border: none;
-  outline: none;
+li {
+  list-style-position: outside;
+  margin: 0;
+  /*margin: 0.3875rem 0 0.3875rem 1.5rem;*/
 }
-
-.dj_rtl .esri-search .esri-container .esri-input {
-  border: none;
-}
-
-.esri-search .esri-container .esri-input::-webkit-input-placeholder {
-  color: #e6e6e6;
-}
-
-.esri-search .esri-container .esri-input:-moz-placeholder {
-  color: #e6e6e6;
-}
-
-.esri-search .esri-container .esri-input::-moz-placeholder {
-  color: #e6e6e6;
-}
-
-.esri-search .esri-container .esri-input:-ms-input-placeholder {
-  color: #e6e6e6;
-}
-
-.esri-search .esri-clear {
-  background-color: transparent;
-}
-
-.esri-search .esri-menu {
-  position: absolute;
-  top: 0;
-  transform: translateY(-100%);
-  background-color: #fff;
-  color: #2c2c2c;
-  border: none;
-  -webkit-border-radius: 0;
-  border-radius: 0;
-  -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.4);
-  -moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.4);
-  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.4);
-}*/
 
 
 /* PANELS */
