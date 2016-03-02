@@ -142,37 +142,43 @@ define([
           id: this.config.webscene
         })
       });
-      var viewProperties = {
-        map: this.scene,
-        container: "panelView",
-        // Allows for navigating the camera below the surface
-        constraints: {
-          collision: {
-            enabled: false
-          },
-          tilt: {
-            max: 179.99
-          }
-        }
-      };
-      if (this.config.components) {
-        viewProperties.ui = {
-          components: this.config.components.split(",")
+
+      this.scene.load().then(lang.hitch(this, function(){
+
+        var viewProperties = {
+          map: this.scene,
+          container: "panelView"
         };
-      }
-      var camera = this._setCameraViewpoint();
-      if (camera) {
-        viewProperties.camera = camera;
-      }
+        if (this.scene.initialViewProperties.viewingMode === "local") {
+          viewProperties.constraints = {
+            collision: {
+              enabled: false
+            },
+            tilt: {
+              max: 179.99
+            }
+          };
+        }
+        if (this.config.components) {
+          viewProperties.ui = {
+            components: this.config.components.split(",")
+          };
+        }
+        var camera = this._setCameraViewpoint();
+        if (camera) {
+          viewProperties.camera = camera;
+        }
 
-      this.view = new SceneView(viewProperties);
+        this.view = new SceneView(viewProperties);
 
-      this.view.then(lang.hitch(this, function(response) {
-        this.view.on("click", lang.hitch(this, this._viewClicked));
-        this._initApp();
-        //setTimeout(lang.hitch(this, this._initApp), 3000);
-        return response;
-      }), this.reportError);
+        this.view.then(lang.hitch(this, function(response) {
+          this.view.on("click", lang.hitch(this, this._viewClicked));
+          this._initApp();
+          //setTimeout(lang.hitch(this, this._initApp), 3000);
+          return response;
+        }), this.reportError);
+
+      }));
 
     },
 
