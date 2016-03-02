@@ -170,7 +170,7 @@ ContentPane) {
               if(this.config.link){
                 this._linkViews();
               }
-            } 
+            }
           }));
 
         },
@@ -222,12 +222,22 @@ ContentPane) {
                     id: id
                 }
             });
-            // Create views but only add zoom and compass to first view.
-            var view = new SceneView({
+            scene.load().then(lang.hitch(this, function(result){
+              var params = {
                 map: scene,
                 container: "map_" + index
-            });
-            scene.then(lang.hitch(this, function(result){
+              };
+              if(scene.initialViewProperties.viewingMode === "local"){
+                params.constraints ={
+                    collision: {
+                      enabled: false
+                    },
+                    tilt:{
+                      max: 179.99
+                    }
+                };
+              }
+              var view = new SceneView(params);
               // Add content to the info panel (slides, title, desc)
               dom.byId("title_" + index).innerHTML = result.portalItem.title;
               dom.byId("desc_" + index).innerHTML = result.portalItem.snippet;
@@ -244,9 +254,12 @@ ContentPane) {
               }
 
               def.resolve(view);
+
             }), lang.hitch(this, function(error){
-                def.resolve(error);
+              def.resolve(error);
             }));
+
+    
 
             if(index === 0){
               // add extent link option to the first map
