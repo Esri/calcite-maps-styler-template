@@ -144,7 +144,16 @@ define([
       });
       var viewProperties = {
         map: this.scene,
-        container: "panelView"
+        container: "panelView",
+        // Allows for navigating the camera below the surface
+        constraints: {
+          collision: {
+            enabled: false
+          },
+          tilt: {
+            max: 179.99
+          }
+        }
       };
       if (this.config.components) {
         viewProperties.ui = {
@@ -680,6 +689,7 @@ define([
 
     // view clicked
     _viewClicked: function(evt) {
+      console.log(evt);
       if (evt.graphic && evt.graphic.attributes.index) {
         var index = evt.graphic.attributes.index;
         this._selectGraphic(index);
