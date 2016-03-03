@@ -33,6 +33,8 @@ define(["dojo/_base/array", "dojo/_base/declare", "dojo/_base/kernel", "dojo/_ba
 
 "esri/config", "esri/identity/IdentityManager", "esri/identity/OAuthInfo",
 
+"esri/tasks/GeometryService",
+
 "esri/portal/Portal", "esri/portal/PortalItem", "esri/portal/PortalQueryParams",
 
 "config/defaults"], function (
@@ -51,6 +53,7 @@ define(["dojo/_base/array", "dojo/_base/declare", "dojo/_base/kernel", "dojo/_ba
   esriConfig,
   esriId,
   oAuthInfo,
+  GeometryService,
   Portal,
   PortalItem,
   PortalQueryParams,
@@ -77,7 +80,7 @@ define(["dojo/_base/array", "dojo/_base/declare", "dojo/_base/kernel", "dojo/_ba
             this.config = defaults;
             // Gets parameters from the URL, convert them to an object and remove HTML tags.
             this.urlObject = this._createUrlParamsObject();
-            // Check for WebGL support 
+            // Check for WebGL support
             this.config.webGLSupport = this._webGLCheck();
         },
         startup: function () {
@@ -498,6 +501,12 @@ define(["dojo/_base/array", "dojo/_base/declare", "dojo/_base/kernel", "dojo/_ba
                     }
                     // Get the helper services (routing, print, locator etc)
                     cfg.helperServices = response.helperServices;
+
+                    // Set the geometry service
+                    if(response.helperServices.geometry && response.helperServices.geometry.url){
+                      esriConfig.geometryService = new GeometryService(response.helperServices.geometry.url);
+                    }
+
                     // are any custom roles defined in the organization?
                     if (response.user && this._isDefined(response.user.roleId)) {
                         if (response.user.privileges) {
