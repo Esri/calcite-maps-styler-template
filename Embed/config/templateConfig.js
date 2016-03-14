@@ -51,6 +51,7 @@ define({
   "urlItems": [
     "extent",
     "zoom",
+    "home",
     "scale",
     "search",
     "basemap_toggle",
