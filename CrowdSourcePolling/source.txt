@@ -1,7 +1,9 @@
 From git branch 
 develop
-commit 0a93d63b182aaaa09c1c86fe6f95e73c7b1d7a17
+commit d2026647d859d9e879fe1a89be6c9c6403381585
 Author: MikeTschudi <mtschudi@esri.com>
-Date:   Thu Feb 18 12:00:06 2016 -0800
+Date:   Tue Mar 15 11:10:57 2016 -0700
 
-    Updated to JSAPI 3.16
+    Fixed filter slider switch for RTL
+    
+    #125

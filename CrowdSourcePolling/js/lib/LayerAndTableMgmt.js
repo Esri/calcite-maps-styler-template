@@ -178,7 +178,7 @@ define([
                                 if (relate.relatedTableId === commentTable.layerId) {
                                     var tableKeyField = "";
                                     array.some(commentTable.relationships, lang.hitch(this, function (tablerelate, i) {
-                                        if (tablerelate.id === this._itemLayer.layerId) {
+                                        if (tablerelate.relatedTableId === this._itemLayer.layerId) {
                                             tableKeyField = tablerelate.keyField;
                                             return true;
                                         }
