@@ -80,6 +80,7 @@ define([
             this._entryForm = [];
             this._presets = {};
             this._requiredFieldsStatus = 0;
+            dijit.Tooltip.defaultPosition = ["above-centered"];
         },
 
         /**

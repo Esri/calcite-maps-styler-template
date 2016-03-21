@@ -1,9 +1,9 @@
 From git branch 
 develop
-commit d2026647d859d9e879fe1a89be6c9c6403381585
+commit 691677351362f6dd4ffe5ab17c9200d129299440
 Author: MikeTschudi <mtschudi@esri.com>
-Date:   Tue Mar 15 11:10:57 2016 -0700
+Date:   Mon Mar 21 08:42:19 2016 -0700
 
-    Fixed filter slider switch for RTL
+    Changed default position for Dojo dijit tooltips
     
-    #125
+    #104
