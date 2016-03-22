@@ -1,4 +1,4 @@
-﻿/*global define */
+﻿/*global define,location */
 /*jslint browser:true,sloppy:true,nomen:true,unparam:true,plusplus:true */
 /*
  | Copyright 2014 Esri

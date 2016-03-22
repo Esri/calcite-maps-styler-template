@@ -1,9 +1,9 @@
 From git branch 
 develop
-commit 691677351362f6dd4ffe5ab17c9200d129299440
+commit 8cb833fe4d3cccf418a4cede9fa35590d1b4c952
 Author: MikeTschudi <mtschudi@esri.com>
-Date:   Mon Mar 21 08:42:19 2016 -0700
+Date:   Tue Mar 22 06:20:01 2016 -0700
 
-    Changed default position for Dojo dijit tooltips
+    Updated application-boilerplate
     
-    #104
+    #97, #119
