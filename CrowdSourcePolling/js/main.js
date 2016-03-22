@@ -447,6 +447,11 @@ define([
                 topic.publish("showPanel", "itemsList");
                 topic.publish("signinUpdate");
 
+                // Show help as a splash screen if desired
+                if (this.config.showDisplayTextAsSplashScreen) {
+                    topic.publish("helpSelected");
+                }
+
                 // Handle the switch between list and map views for narrow screens
                 contentContainer = registry.byId("contentDiv");
                 needToggleCleanup = true;
@@ -662,6 +667,11 @@ define([
                         if (searchControl.loaded) {
                             searchControl.emit("load");
                         }
+
+                    // Otherwise, shift zoom, home, and locate buttons up to fill the gap where the search would've been
+                    } else {
+                        domStyle.set("mapDiv_zoom_slider", "top", "16px");
+                        domStyle.set("LocateButton", "top", "131px");
                     }
 
                 }), lang.hitch(this, function (err) {

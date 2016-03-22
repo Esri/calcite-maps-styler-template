@@ -1,9 +1,9 @@
 From git branch 
 develop
-commit 8cb833fe4d3cccf418a4cede9fa35590d1b4c952
+commit 7c16f8b61c250913e24e0ad8c5796e1a2e9e464e
 Author: MikeTschudi <mtschudi@esri.com>
-Date:   Tue Mar 22 06:20:01 2016 -0700
+Date:   Tue Mar 22 08:28:08 2016 -0700
 
-    Updated application-boilerplate
+    Shifted nav buttons if no search configured or search setup fails
     
-    #97, #119
+    #105
