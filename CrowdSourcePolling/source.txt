@@ -1,9 +1,9 @@
 From git branch 
 develop
-commit 7c16f8b61c250913e24e0ad8c5796e1a2e9e464e
+commit 105ef8fe6c42753c236de1eb1de37919c1aacceb
 Author: MikeTschudi <mtschudi@esri.com>
-Date:   Tue Mar 22 08:28:08 2016 -0700
+Date:   Tue Mar 22 09:49:44 2016 -0700
 
-    Shifted nav buttons if no search configured or search setup fails
+    Added option in hosted configuration for splash screen
     
-    #105
+    #120

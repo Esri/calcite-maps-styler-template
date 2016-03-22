@@ -18,7 +18,8 @@
         "allowGoogle": false,
         "googleplusClientId": "",
         "allowTwitter": true,
-        "socialMediaDisclaimer": "Choose how you would like to sign in to this application. The name associated with your social media account will be added to any comments you post."
+        "socialMediaDisclaimer": "Choose how you would like to sign in to this application. The name associated with your social media account will be added to any comments you post.",
+        "showDisplayTextAsSplashScreen": false
     },
     "configurationSettings": [{
         "category": "<b>App Settings</b>",
@@ -48,6 +49,10 @@
             "type": "string",
             "tooltip": "Text displayed in the help window. HTML tags can be used for formatting.",
             "stringFieldOption": "richtext"
+        }, {
+            "label": "Show help widget text as splash screen",
+            "fieldName": "showDisplayTextAsSplashScreen",
+            "type": "boolean"
         }]
     }, {
         "category": "<b>Content Settings</b>",

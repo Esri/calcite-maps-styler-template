@@ -896,6 +896,7 @@ img {
 
 .dynamicFormCharactersRemaining {
     float: right;
+    padding-left: 4px;
     padding-right: 1px;
     font-size: 12px;
 }
