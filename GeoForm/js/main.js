@@ -123,7 +123,7 @@ define([
     _loadCSS: function () {
       var cssStyle;
       cssStyle = dom.byId("rtlCSS");
-      cssStyle.href = "js/vendor/bootstrap/css/bootstrap.rtl.css";
+      cssStyle.href = "js/vendor/bootstrap-rtl.min.css";
     },
 
     _init: function () {
