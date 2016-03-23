@@ -85,10 +85,8 @@ define([
     currentLocation: null,
     dateFormat: "LLL",
 
-    startup: function () {
-      var config = arguments[0];
-      var isPreview = arguments[2];
-      var node = arguments[3];
+    startup: function (config, appResponse, isPreview, node) {
+      this._appResponse = appResponse;
       var localStorageSupport = new localStorageHelper();
       if (localStorageSupport.supportsStorage() && localStorage.getItem("geoform_config")) {
         config = JSON.parse(localStorage.getItem("geoform_config"));
@@ -2681,6 +2679,10 @@ define([
       }
       // if no app title
       if (!this.config.details.Title) {
+        if (this._appResponse && this._appResponse.item) {
+          // use app title
+          this.config.details.Title = this._appResponse.item.title;
+        }
         // if item
         if (this.config.itemInfo && this.config.itemInfo.item) {
           // use webmap title
