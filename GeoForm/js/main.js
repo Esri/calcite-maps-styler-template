@@ -1790,7 +1790,7 @@ define([
       def = new Deferred();
       layer = this.map.getLayer(key);
       //this block will be called if the layer is already loaded
-      if (layer.url) {
+      if (layer && layer.url) {
         if (layer.loaded) {
           if (layer.isEditable() && layer.geometryType === 'esriGeometryPoint') {
             this._pushToLayerDrpDwn(webmapLayers, key, layer);
@@ -2146,6 +2146,10 @@ define([
       //To populate data for apply edits
       featureData = new Graphic();
       featureData.attributes = {};
+      // start with layer defaults
+      if (this._formLayer.templates[0] && this._formLayer.templates[0].prototype.attributes) {
+        featureData.attributes = this._formLayer.templates[0].prototype.attributes;
+      }
       //condition to filter out radio inputs
       array.forEach(query(".geoFormQuestionare .form-control"), function (currentField) {
         key = domAttr.get(currentField, "id");
