@@ -1,9 +1,7 @@
 From git branch 
 develop
-commit 105ef8fe6c42753c236de1eb1de37919c1aacceb
+commit 236eb14e1a9c393c918ebf7880fac3f8a7bea69d
 Author: MikeTschudi <mtschudi@esri.com>
-Date:   Tue Mar 22 09:49:44 2016 -0700
+Date:   Thu Mar 24 10:10:47 2016 -0700
 
-    Added option in hosted configuration for splash screen
-    
-    #120
+    Modified parameter for build script automation
