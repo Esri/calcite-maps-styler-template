@@ -98,7 +98,7 @@ define({
   //Add the geocoding tool next to the title bar.
   "search": true,
   "locationSearch": true,
-  "popupPanel": true,
+  "popupPanel": false,
   //When searchExtent is true the locator will prioritize results within the current map extent.
   "searchExtent": false,
   "searchLayers": [{
