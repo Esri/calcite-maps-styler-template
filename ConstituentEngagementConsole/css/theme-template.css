@@ -1,37 +1,82 @@
-﻿.esriCTApplicationColor, .esriCTApplicationHeader
+﻿/* Theme style CSS starts */
+
+/** Application color starts **/
+
+.esriCTApplicationColor
 {
     color: ${SelectedThemeColor} !important;
 }
 
-.esriCTBGColor, .esriCTCustomButtonInner
+/** Application color ends **/
+
+/** Application header starts **/
+
+.esriCTApplicationHeaderContainer
 {
     background-color: ${SelectedThemeColor} !important;
 }
+
+/** Application header ends **/
+
+/** Background starts **/
+
+.esriCTBGColor
+{
+    background-color: ${SelectedThemeColor} !important;
+}
+
+.esriCTBGLightColor
+{
+    background-color : ${LighterShadeThemeColor} !important;
+}
+
+/** Background ends **/
+
+/** Border starts **/
 
 .esriCTBorder, .esriCTBorderLeft, .esriCTBorderTop, .esriCTBorderRight, .esriCTBorderBottom
 {
     border-color: ${SelectedThemeColor} !important;
 }
 
-.esriCTheaderRight
+/** Border ends **/
+
+/** Time Slider start **/
+
+.claro .dijitSlider .dijitSliderProgressBarH
 {
     background-color: ${SelectedThemeColor} !important;
 }
 
-/* ESRI API Overridden Styles */
-
-.esriSimpleSliderDecrementButton, .esriSimpleSliderIncrementButton
-{
-    background-color: ${SelectedThemeColor} !important;
-}
-
-/* End of ESRI API Overridden Styles */
+/** Time Slider Ends **/
 
 /* Data viewer */
 
-.esriCTRowActivated
+.esriCTRowHighlighted
 {
-    background-color: ${ActivatedRowColor} !important;
+    background-color: ${HighlightedRowColor} !important;
 }
 
-/* End of Data viewer */
+/* Data viewer ends */
+
+/* Details panel starts */
+
+.esriCTDetailsPanelWrapperContainer .nav-tabs>li>a:hover
+{
+    border-top-color: ${SelectedThemeColor};
+    background-color: ${LighterShadeThemeColor};
+}
+
+.esriCTPostPopupButton:hover, .esriCTPostPopupButton, .esriCTPostCommentButton, .esriCTPostCommentButton:hover
+{
+      background-color: ${SelectedThemeColor} !important;
+}
+
+.esriCTCancelPopupButton:hover,.esriCTCancelCommentButton:hover
+{
+    color: ${SelectedThemeColor} !important;
+}
+
+/* Details panel ends */
+
+/* Theme style CSS ends */

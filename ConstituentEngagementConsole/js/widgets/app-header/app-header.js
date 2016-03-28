@@ -1,60 +1,66 @@
-﻿/*global define,dojoConfig,$,confirm */
-/*jslint browser:true,sloppy:true,nomen:true,unparam:true,plusplus:true,indent:4 */
+﻿/*global define,dojoConfig,$,confirm,document */
+/*jslint sloppy:true */
 /*
- | Copyright 2014 Esri
- |
- | Licensed under the Apache License, Version 2.0 (the "License");
- | you may not use this file except in compliance with the License.
- | You may obtain a copy of the License at
- |
- |    http://www.apache.org/licenses/LICENSE-2.0
- |
- | Unless required by applicable law or agreed to in writing, software
- | distributed under the License is distributed on an "AS IS" BASIS,
- | WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- | See the License for the specific language governing permissions and
- | limitations under the License.
- */
+| Copyright 2014 Esri
+|
+| Licensed under the Apache License, Version 2.0 (the "License");
+| you may not use this file except in compliance with the License.
+| You may obtain a copy of the License at
+|
+|    http://www.apache.org/licenses/LICENSE-2.0
+|
+| Unless required by applicable law or agreed to in writing, software
+| distributed under the License is distributed on an "AS IS" BASIS,
+| WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+| See the License for the specific language governing permissions and
+| limitations under the License.
+*/
 //============================================================================================================================//
 define([
     "dojo/_base/declare",
     "dojo/dom-construct",
     "dojo/_base/lang",
-    "dojo/dom",
     "dojo/dom-attr",
-    "dojo/dom-class",
     "dojo/dom-style",
     "dojo/on",
     "dojo/text!./templates/app-header.html",
     "dijit/_WidgetBase",
     "dijit/_TemplatedMixin",
     "dijit/_WidgetsInTemplateMixin",
-    "dojo/query",
-    "dojo/has"
+    "widgets/search/search",
+    "widgets/manual-refresh/manual-refresh",
+    "widgets/sign-in/sign-in",
+    "widgets/help/help",
+    "dojo/dom-class"
 ], function (
     declare,
     domConstruct,
     lang,
-    dom,
     domAttr,
-    domClass,
     domStyle,
     on,
     template,
     _WidgetBase,
     _TemplatedMixin,
     _WidgetsInTemplateMixin,
-    query,
-    has
+    Search,
+    ManualRefresh,
+    SignIn,
+    Help,
+    domClass
 ) {
     return declare([_WidgetBase, _TemplatedMixin, _WidgetsInTemplateMixin], {
-        templateString: template,
-        splashScreenScrollbar: null,
+        templateString: template, //  a string representing the HTML of the template
+        _helpWidgetObj: null, // to store object of help widget
+        _searchWidgetObj: null, // to store object of search widget
+        _manualRefreshWidgetObj: null, // to store object of manual refresh widget
+        _isMultipleRecordsSelected: false, // to check how many records are selected in data viewer/ map panel
+        _signInWidgetObj: null, // to store object of sign in widget
+        isSearchActive: false,
 
         /**
         * This function is called when widget is constructed
-        * @param{object} parameters of widget
-        * @param{object} parent node of widget
+        * @param{object} parameters of the widget
         * @memberOf widgets/app-header/app-header
         */
         constructor: function (options) {
@@ -62,301 +68,54 @@ define([
         },
 
         /**
-        * This function is called when widget is constructed.
+        * This function is designed to handle processing after any DOM fragments have been actually added to the document.
         * @memberOf widgets/app-header/app-header
         */
-        postCreate: function () {
-            var applicationName, applicationIcon;
-            // first check if application name is configured than display that
-            // second check if group title is available display that
-            // if user clicks cancel button than display sign-in text
-            if (this.appConfig.applicationName && lang.trim(this.appConfig.applicationName)
-                .length !== 0) {
-                applicationName = this.appConfig.applicationName;
-            } else if (this.appConfig.groupInfo.results.length > 0 && this.appConfig
-                .groupInfo.results[0].title) {
-                applicationName = this.appConfig.groupInfo.results[0].title;
-            } else {
-                applicationName = this.appConfig.i18n.applicationHeader.pleaseSignInText;
-            }
-            if (!this.appConfig.logInDetails) {
-                applicationName = this.appConfig.i18n.applicationHeader.pleaseSignInText;
-            }
-            // to set title of document
-            document.title = applicationName;
-            // to set application name
-            domAttr.set(this.applicationHeaderName, "innerHTML",
-                applicationName);
-            // first check if application icon is configured than display that
-            // second check if group icon is available than display that
-            // third default fallback icon will be displayed if above both scenario are not available
-            if (this.appConfig.applicationIcon && lang.trim(this.appConfig.applicationIcon)
-                .length !== 0) {
-                if (this.appConfig.applicationIcon.indexOf("http") === 0) {
-                    domAttr.set(this.applicationHeaderIcon, "src", this.appConfig
-                        .applicationIcon);
-                } else {
-                    if (this.appConfig.applicationIcon.indexOf("/") === 0) {
-                        domAttr.set(this.applicationHeaderIcon, "src", dojoConfig
-                            .baseURL + this.appConfig.applicationIcon);
-                    } else {
-                        domAttr.set(this.applicationHeaderIcon, "src", dojoConfig
-                            .baseURL + "/" + this.appConfig.applicationIcon);
-                    }
+        startup: function () {
+            this._onApplicationIconLoad();
+            this._setMaxWidthOfApplicationIcon();
+            this._setApplicationIcon();
+        },
+
+        /**
+        * This function is executed when application icon is loaded inside its container
+        * @memberOf widgets/app-header/app-header
+        */
+        _onApplicationIconLoad: function () {
+            on(this.applicationHeaderIcon, "load, error", lang.hitch(this, function () {
+                this._displaySignedInUserDetails();
+                this._setSignOutOptionText();
+                this._setWidthOfApplicationNameContainer();
+                if (this.displaySignInText) {
+                    this._displaySignInText();
                 }
-            } else if (this.appConfig.groupInfo) {
-                if (this.appConfig.groupInfo.results.length > 0 && this.appConfig
-                    .groupInfo.results[0].thumbnailUrl) {
-                    domAttr.set(this.applicationHeaderIcon, "src", this.appConfig
-                        .groupInfo.results[0].thumbnailUrl);
-                } else {
-                    domAttr.set(this.applicationHeaderIcon, "src", dojoConfig.baseURL +
-                        "/images/app-icon.png");
-                }
-            } else {
-                domAttr.set(this.applicationHeaderIcon, "src", dojoConfig.baseURL +
-                    "/images/app-icon.png");
-            }
-            if (!this.appConfig.logInDetails) {
-                domAttr.set(this.applicationHeaderIcon, "src", dojoConfig.baseURL +
-                    "/images/app-icon.png");
-            }
-            applicationIcon = domAttr.get(this.applicationHeaderIcon, "src");
-            // load application shortcut icons
-
-            this._setApplicationShortcutIcon();
-            this._loadIcons("apple-touch-icon-precomposed", applicationIcon);
-
-            // Due to high resolution of iPad long username was not getting displayed properly.
-            // So it detects orientation in iPad and long username gets displayed properly in landscape & potrait mode.
-            // This is done by changing the width of username dynamically.
-            if (this.appUtils.isIos() && (window.orientation === 0 ||
-                    window.orientation === 180)) {
-                domClass.add(query(".esriCTLoginUserNameDiv")[0],
-                    "esriCTLoginUserNamePotraitMode");
-            }
-
-            // if user logs in than display application header with different controls like setting, view, etc...
-            // if user clicks cancel button than hide different and display sign-in button
-            if (this.appConfig.logInDetails) {
-                domClass.remove(this.esriCTLoginDetailsDiv, "esriCTHidden");
-                this._displayLoginDetails();
-                this._handleLoginArrowClick();
-                this._handleLogoutClick();
-            } else {
-                this.appUtils.loadApplicationTheme(this.appConfig);
-                domClass.add(dom.byId("esriCTMainContainer"), "esriCTHidden");
-                domClass.add(query(".esriCTSettingsButton")[0],
-                    "esriCTHidden");
-                domClass.add(query(".esriCTViewMode")[0], "esriCTHidden");
-                domClass.add(query(".esriCTSearchDisable")[0], "esriCTHidden");
-                domClass.add(query(".esriCTManualRefreshButton")[0],
-                    "esriCTHidden");
-                domClass.remove(dom.byId("esriCTNoWebMapParentDiv"),
-                    "esriCTHidden");
-                this.esriCTLoginUserNameDiv.innerHTML = this.appConfig.i18n.applicationHeader
-                    .signInOption;
-                domClass.add(this.esriCTCaretIcon, "esriCTVisibilityHidden");
-                this._handleLoginArrowClick();
-                this.appUtils.hideLoadingIndicator();
-            }
-            //tooltip is coming from nls
-            domAttr.set(this.settingsDataViewerBtn, "title", this.appConfig
-                .i18n.applicationHeader.settingsBtnToolTip);
-            domAttr.set(this.viewModeBtn, "title", this.appConfig.i18n.applicationHeader
-                .viewModeBtnToolTip);
-            domAttr.set(this.searchModeBtn, "title", this.appConfig.i18n.applicationHeader
-                .searchModeBtnToolTip);
-            domAttr.set(this.manualRefreshBtn, "title", this.appConfig.i18n
-                .applicationHeader.manualRefreshBtnToolTip);
-            this._onSettingsIconClick();
-            this._setSettingsOptionText();
-            this._setSearchPanelText();
-            this._attachEventHandlers();
-            this._onViewModeClick();
-            this._setViewModeOptionText();
-            this._onSearchIconClick();
-            setTimeout(lang.hitch(this, function () {
-                this.resetOperationalLayerNameWidth();
-                this.resetViewModeOptionsPosition();
-                this.resetSettingsOptionsPosition();
-                this.resetDataSearchPosition();
-            }), 100);
-        },
-
-        /**
-        * This function is used to reset the width of operational layer name dynamically.
-        * @memberOf widgets/app-header/app-header
-        */
-        resetOperationalLayerNameWidth: function () {
-            var headerWidth, menuTabWidth;
-            headerWidth = parseFloat(domStyle.get(this.esriCTheaderRight,
-                "width"));
-            menuTabWidth = parseFloat(domStyle.get(this.esriCTMenuTabRight,
-                "width"));
-            domStyle.set(this.operationalLayerTitle, "width", ((headerWidth -
-                menuTabWidth) - 15) + "px");
-        },
-
-        /**
-        * This function is used to reset the position of settings options list.
-        * @memberOf widgets/app-header/app-header
-        */
-        resetSettingsOptionsPosition: function () {
-            var userNameWidth, userNameCaretIconWidth;
-            userNameWidth = parseFloat(domStyle.get(this.esriCTLoginUserNameDiv,
-                "width"));
-            userNameCaretIconWidth = parseFloat(domStyle.get(this.esriCTCaretIcon,
-                "width"));
-            if (this.appConfig.i18n.direction === "rtl") {
-                domStyle.set(this.esriCTSettingsOptionsItemDiv, "left", (
-                    userNameWidth + userNameCaretIconWidth) + "px");
-            } else {
-                domStyle.set(this.esriCTSettingsOptionsItemDiv, "right", (
-                    userNameWidth + userNameCaretIconWidth) + "px");
-            }
-        },
-
-        /**
-        * This function is used to reset the position of view mode options list.
-        * @memberOf widgets/app-header/app-header
-        */
-        resetViewModeOptionsPosition: function () {
-            var userNameWidth, userNameCaretIconWidth,
-                settingsButtonContainerWidth;
-            userNameWidth = parseFloat(domStyle.get(this.esriCTLoginUserNameDiv,
-                "width"));
-            userNameCaretIconWidth = parseFloat(domStyle.get(this.esriCTCaretIcon,
-                "width"));
-            settingsButtonContainerWidth = parseFloat(domStyle.get(this.settingsButtonParentContainer,
-                "width"));
-            if (this.appConfig.i18n.direction === "rtl") {
-                domStyle.set(this.optionsViewMode, "left", (userNameWidth +
-                        userNameCaretIconWidth + settingsButtonContainerWidth) +
-                    "px");
-            } else {
-                domStyle.set(this.optionsViewMode, "right", (userNameWidth +
-                        userNameCaretIconWidth + settingsButtonContainerWidth) +
-                    "px");
-            }
-        },
-
-        /**
-        * This function is used to reset the position of data search.
-        * @memberOf widgets/app-header/app-header
-        */
-        resetDataSearchPosition: function () {
-            var userNameWidth, userNameCaretIconWidth;
-            userNameWidth = parseFloat(domStyle.get(this.esriCTLoginUserNameDiv,
-                "width"));
-            userNameCaretIconWidth = parseFloat(domStyle.get(this.esriCTCaretIcon,
-                "width"));
-            if (this.appConfig.i18n.direction === "rtl") {
-                domStyle.set(this.searchOptions, "left", (userNameWidth +
-                    userNameCaretIconWidth) + "px");
-            } else {
-                domStyle.set(this.searchOptions, "right", (userNameWidth +
-                    userNameCaretIconWidth) + "px");
-            }
-        },
-
-        /**
-        * This function is used to attach events
-        * @memberOf widgets/app-header/app-header
-        */
-        _attachEventHandlers: function () {
-            on(this.esriCTShowSelected, "click", lang.hitch(this, function () {
-                this._toggleOptionsVisibility();
-                this.onShowSelectedRecordsClick();
-            }));
-            on(this.esriCTShowAll, "click", lang.hitch(this, function () {
-                this._toggleOptionsVisibility();
-                this.onShowAllRecordsClick();
-            }));
-            on(this.esriCTClearSelection, "click", lang.hitch(this,
-                function () {
-                    this._toggleOptionsVisibility();
-                    this.onClearSelectionClick();
-                }));
-            on(this.esriCTZoomToSelected, "click", lang.hitch(this,
-                function () {
-                    this._toggleOptionsVisibility();
-                    this.onZoomToSelectedClick();
-                }));
-            on(this.listView, "click", lang.hitch(this, function () {
-                this._toggleViewModeOptionsVisibility();
-                this.onGridViewClick();
-            }));
-            on(this.mapView, "click", lang.hitch(this, function () {
-                this._toggleViewModeOptionsVisibility();
-                this.onMapViewClick();
-            }));
-            on(this.splitView, "click", lang.hitch(this, function () {
-                this._toggleViewModeOptionsVisibility();
-                this.onGridMapViewClick();
-            }));
-            on(this.searchRecords, "click", lang.hitch(this, function () {
-                this.onSearchRecordsClick();
-            }));
-            on(this.clearTextContent, "click", lang.hitch(this, function () {
-                this.onClearContentClick();
-            }));
-            on(this.manualRefreshBtn, "click", lang.hitch(this, function () {
-                var confirmValue = confirm(this.appConfig.i18n.applicationHeader
-                    .confirmManualRefeshText);
-                if (confirmValue) {
-                    this.onManualRefreshClick();
-                }
-            }));
-            $(".esriCTSearchBox").keyup(lang.hitch(this, function () {
-                if (event.keyCode === 13) {
-                    this.onSearchRecordsClick();
-                }
-            }));
-            on(this.searchBox, "blur", lang.hitch(this, function () {
-                if (has("ie") === 9) {
-                    this.displayPlaceHolderText();
-                }
-            }));
-            on(this.searchBox, "focus", lang.hitch(this, function () {
-                if (has("ie") === 9) {
-                    this.removePlaceHolderText();
-                }
+                this._setApplicationName();
+                this._setApplicationShortcutIcon();
+                this._initializeSearchWidget();
+                this._initializeManualRefreshWidget();
+                this._initializeSignInWidget();
+                this._initializeHelpWidget();
+                this._setToolTip();
             }));
         },
 
         /**
-        * This function is used to display placeholder text in search bar
+        * This function is used to display sign in text
         * @memberOf widgets/app-header/app-header
         */
-        displayPlaceHolderText: function () {
-            return;
+        _displaySignInText: function () {
+            domClass.add(this.refreshButton, "esriCTHidden");
+            domClass.add(this.searchButton, "esriCTHidden");
+            this.applicationHeaderName.innerHTML = this.appConfig.i18n.applicationHeader.pleaseSignInText;
+            document.title = this.appConfig.i18n.applicationHeader.pleaseSignInText;
         },
 
         /**
-        * This function is used to remove placeholder text in search bar
+        * This function is used to set text of sign-out option
         * @memberOf widgets/app-header/app-header
         */
-        removePlaceHolderText: function () {
-            return;
-        },
-
-        /**
-        * This function is used to show/hide setting options
-        * @memberOf widgets/app-header/app-header
-        */
-        toggleSelectionViewOption: function () {
-            if (domClass.contains(this.esriCTShowAll, "esriCTVisible")) {
-                domClass.replace(this.esriCTShowAll, "esriCTHidden",
-                    "esriCTVisible");
-                domClass.replace(this.esriCTShowSelected, "esriCTVisible",
-                    "esriCTHidden");
-            } else {
-                domClass.replace(this.esriCTShowAll, "esriCTVisible",
-                    "esriCTHidden");
-                domClass.replace(this.esriCTShowSelected, "esriCTHidden",
-                    "esriCTVisible");
-            }
+        _setSignOutOptionText: function () {
+            this.signOutOption.innerHTML = this.appConfig.i18n.applicationHeader.signOutOption;
         },
 
         /**
@@ -387,337 +146,336 @@ define([
         },
 
         /**
-        * This function is used to display login details.
+        * This function is used to set tooltip for application header icon
         * @memberOf widgets/app-header/app-header
         */
-        _displayLoginDetails: function () {
-            this.esriCTLoginUserNameDiv.innerHTML = this.appConfig.logInDetails
-                .userName;
-            if (!this.loggedInUser) {
-                domClass.add(this.esriCTCaretIcon, "esriCTVisibilityHidden");
+        _setToolTip: function () {
+            domAttr.set(this.searchButton, "title", this.appConfig.i18n.search.searchIconTooltip);
+            domAttr.set(this.refreshButton, "title", this.appConfig.i18n.manualRefresh.manualRefreshIconTooltip);
+            domAttr.set(this.helpButton, "title", this.appConfig.i18n.help.helpIconTooltip);
+        },
+
+        /**
+        * This function is used to display details of signed in user
+        * @memberOf widgets/app-header/app-header
+        */
+        _displaySignedInUserDetails: function () {
+            this.signedInUserDetails.innerHTML = this.appConfig.logInDetails.userName;
+            if (this.appConfig.logInDetails.userName !== this.appConfig.i18n.applicationHeader.signInOption) {
+                domClass.remove(this.signedInUserDetailsCaretIcon, "esriCTHidden");
             }
-            this.esriCTLogoutOption.innerHTML = this.appConfig.i18n.applicationHeader
-                .signOutOption;
         },
 
         /**
-        * This function is used to display option available on click of login options arrow.
+        * This function is used to set max width of the application icon container
         * @memberOf widgets/app-header/app-header
         */
-        _handleLoginArrowClick: function () {
-            on(this.esriCTLoginCredentialsDiv, "click", lang.hitch(this,
-                this._toggleLoginOptionsVisibility));
+        _setMaxWidthOfApplicationIcon: function () {
+            var searchIconWidth, manualRefreshIconWidth, helpIconWidth, applicationHeaderContainerWidth, headerIconsWidth, signInSeperatorWidth, signedInUserDetailsContainerWidth;
+            applicationHeaderContainerWidth = $(this.applicationHeaderContainer).outerWidth(true);
+            applicationHeaderContainerWidth = parseFloat(applicationHeaderContainerWidth);
+            searchIconWidth = $(this.searchButton).outerWidth(true);
+            searchIconWidth = parseFloat(searchIconWidth);
+            manualRefreshIconWidth = $(this.refreshButton).outerWidth(true);
+            manualRefreshIconWidth = parseFloat(manualRefreshIconWidth);
+            signedInUserDetailsContainerWidth = $(this.signedInUserDetailsContainer).outerWidth(true);
+            signedInUserDetailsContainerWidth = parseFloat(signedInUserDetailsContainerWidth);
+            helpIconWidth = $(this.helpButton).outerWidth(true);
+            helpIconWidth = parseFloat(helpIconWidth);
+            signInSeperatorWidth = $(this.signInSeperator).outerWidth(true);
+            signInSeperatorWidth = parseFloat(signInSeperatorWidth);
+            headerIconsWidth = searchIconWidth + manualRefreshIconWidth + helpIconWidth + signInSeperatorWidth;
+            domStyle.set(this.applicationHeaderIconContainer, "max-width", (applicationHeaderContainerWidth - headerIconsWidth) + "px");
         },
 
         /**
-        * This function is used to logout from application
+        * This function is used to set application icon
         * @memberOf widgets/app-header/app-header
         */
-        _handleLogoutClick: function () {
-            on(this.esriCTLogoutOption, "click", lang.hitch(this, function () {
+        _setApplicationIcon: function () {
+            var applicationIcon;
+            // first check if application icon is configured than display that
+            // second check if group icon is available than display that
+            // third default fallback icon will be displayed if above both scenario are not available
+            if (this.appConfig.applicationIcon && lang.trim(this.appConfig.applicationIcon).length !== 0) {
+                if (this.appConfig.applicationIcon.indexOf("http") === 0) {
+                    domAttr.set(this.applicationHeaderIcon, "src", this.appConfig.applicationIcon);
+                } else {
+                    if (this.appConfig.applicationIcon.indexOf("/") === 0) {
+                        domAttr.set(this.applicationHeaderIcon, "src", dojoConfig.baseURL + this.appConfig.applicationIcon);
+                    } else {
+                        domAttr.set(this.applicationHeaderIcon, "src", dojoConfig.baseURL + "/" + this.appConfig.applicationIcon);
+                    }
+                }
+            } else if (this.appConfig.groupInfo) {
+                if (this.appConfig.groupInfo.results.length > 0 && this.appConfig.groupInfo.results[0].thumbnailUrl) {
+                    domAttr.set(this.applicationHeaderIcon, "src", this.appConfig.groupInfo.results[0].thumbnailUrl);
+                } else {
+                    domAttr.set(this.applicationHeaderIcon, "src", dojoConfig.baseURL + "/images/app-icon.png");
+                }
+            } else {
+                domAttr.set(this.applicationHeaderIcon, "src", dojoConfig.baseURL + "/images/app-icon.png");
+            }
+            applicationIcon = domAttr.get(this.applicationHeaderIcon, "src");
+            this._loadIcons("apple-touch-icon-precomposed", applicationIcon);
+        },
+
+        /**
+        * This function is used to set width of application name container
+        * @memberOf widgets/app-header/app-header
+        */
+        _setWidthOfApplicationNameContainer: function () {
+            var applicationIconWidth, searchIconWidth, manualRefreshIconWidth, helpIconWidth, applicationHeaderContainerWidth, headerIconsWidth, applicationNameContainerWidth, signInSeperatorWidth, signedInUserDetailsContainerWidth;
+            applicationHeaderContainerWidth = $(this.applicationHeaderContainer).outerWidth(true);
+            applicationHeaderContainerWidth = parseFloat(applicationHeaderContainerWidth);
+            applicationIconWidth = $(this.applicationHeaderIconContainer).outerWidth(true);
+            applicationIconWidth = parseFloat(applicationIconWidth);
+            searchIconWidth = $(this.searchButton).outerWidth(true);
+            searchIconWidth = parseFloat(searchIconWidth);
+            manualRefreshIconWidth = $(this.refreshButton).outerWidth(true);
+            manualRefreshIconWidth = parseFloat(manualRefreshIconWidth);
+            helpIconWidth = $(this.helpButton).outerWidth(true);
+            helpIconWidth = parseFloat(helpIconWidth);
+            signedInUserDetailsContainerWidth = $(this.signedInUserDetailsContainer).outerWidth(true);
+            signedInUserDetailsContainerWidth = parseFloat(signedInUserDetailsContainerWidth);
+            signInSeperatorWidth = $(this.signInSeperator).outerWidth(true);
+            signInSeperatorWidth = parseFloat(signInSeperatorWidth);
+            headerIconsWidth = applicationIconWidth + searchIconWidth + manualRefreshIconWidth + helpIconWidth + signedInUserDetailsContainerWidth + signInSeperatorWidth;
+            applicationNameContainerWidth = applicationHeaderContainerWidth - headerIconsWidth;
+            applicationNameContainerWidth = applicationNameContainerWidth - 30;
+            domStyle.set(this.applicationNameContainer, "width", applicationNameContainerWidth + "px");
+        },
+
+        /**
+        * This function is used to set name of application
+        * @memberOf widgets/app-header/app-header
+        */
+        _setApplicationName: function () {
+            var applicationName;
+            // first check if application name is configured than display that
+            // second check if group title is available display that
+            // if user clicks cancel button than display sign-in text
+            if (this.appConfig.applicationName && lang.trim(this.appConfig.applicationName).length !== 0) {
+                applicationName = this.appConfig.applicationName;
+            } else if (this.appConfig.groupInfo.results.length > 0 && this.appConfig.groupInfo.results[0].title) {
+                applicationName = this.appConfig.groupInfo.results[0].title;
+            } else {
+                applicationName = this.appConfig.i18n.applicationHeader.pleaseSignInText;
+            }
+            if (!this.appConfig.logInDetails) {
+                applicationName = this.appConfig.i18n.applicationHeader.pleaseSignInText;
+            }
+            // to set title of document
+            document.title = applicationName;
+            // to set application name
+            domAttr.set(this.applicationHeaderName, "innerHTML", applicationName);
+        },
+
+        /**
+        * This function is used to create help widget
+        * @memberOf widgets/app-header/app-header
+        */
+        _initializeHelpWidget: function () {
+            var helpParameters;
+            this._destroyHelpWidget();
+            helpParameters = {
+                "appConfig": this.appConfig
+            };
+            // Initialize help widget
+            this._helpWidgetObj = new Help(helpParameters);
+            // On click of help icon, open help modal
+            on(this.helpButton, "click", lang.hitch(this, function () {
+                this.hideWebMapList();
+                this._helpWidgetObj.startup();
+            }));
+        },
+
+        /**
+        * This function is used to destroy help widget
+        * @memberOf widgets/app-header/app-header
+        */
+        _destroyHelpWidget: function () {
+            if (this._helpWidgetObj) {
+                this._helpWidgetObj.destroy();
+            }
+        },
+
+        /**
+        * This method is used to create search widget.
+        * @memberOf widgets/app-header/app-header
+        */
+        _initializeSearchWidget: function () {
+            var searchParameters;
+            searchParameters = {
+                "appConfig": this.appConfig,
+                "appUtils": this.appUtils
+            };
+            // Initialize search widget
+            this._searchWidgetObj = new Search(searchParameters, domConstruct.create("div", {}, this.searchContainer));
+            // On click of search icon, open search panel
+            on(this.searchButton, "click", lang.hitch(this, function () {
+                if (domClass.contains(this.searchButton, "esriCTSearchIconContainer")) {
+                    this.hideWebMapList();
+                    if (this._searchWidgetObj) {
+                        this._searchWidgetObj.startup();
+                    }
+                } else {
+                    if (this._isMultipleRecordsSelected) {
+                        this.appUtils.showMessage(this.appConfig.i18n.search.searchInEditModeAlert);
+                    }
+                }
+            }));
+
+            this._searchWidgetObj.onSearchApplied = lang.hitch(this, function (lastSearchedString) {
+                this.onSearchApplied(lastSearchedString);
+            });
+        },
+
+        /**
+        * This method is used to create manual refresh widget
+        * @memberOf widgets/app-header/app-header
+        */
+        _initializeManualRefreshWidget: function () {
+            var refreshParameters;
+            refreshParameters = {
+                "appConfig": this.appConfig,
+                "appUtils": this.appUtils
+            };
+            // Initialize manual refresh widget
+            this._manualRefreshWidgetObj = new ManualRefresh(refreshParameters);
+            // On click of manual refresh icon, proceed with manual refresh functionality
+            on(this.refreshButton, "click", lang.hitch(this, function () {
+                if (domClass.contains(this.refreshButton, "esriCTManualRefreshIconContainer")) {
+                    this.hideWebMapList();
+                    this._manualRefreshWidgetObj.startup();
+                }
+            }));
+            this._manualRefreshWidgetObj.confirmedManualRefresh = lang.hitch(this, function () {
+                this.confirmedManualRefresh();
+            });
+
+            this._manualRefreshWidgetObj.refreshLayerWithSearchDefExpression = lang.hitch(this, function () {
+                this._searchWidgetObj.searchFeatureRecords();
+            });
+        },
+
+        /**
+        * This method is used to toggle manual refresh icon
+        * @memberOf widgets/app-header/app-header
+        */
+        toggleManualRefreshIcon: function (manualRefreshParameter) {
+            manualRefreshParameter.refreshButton = this.refreshButton;
+            this._manualRefreshWidgetObj.enableManualRefreshIcon(manualRefreshParameter);
+        },
+
+        /**
+        * This method is used to enable/disable search icon based on it configuration
+        * @memberOf widgets/app-header/app-header
+        */
+        toggleSearchIcon: function (searchParameter) {
+            searchParameter.searchButton = this.searchButton;
+            this.isSearchActive = this._searchWidgetObj.resetSearchPanel(searchParameter);
+        },
+
+        /**
+        * This function is used to hide webmap list
+        * @memberOf widgets/app-header/app-header
+        */
+        hideWebMapList: function () {
+            return;
+        },
+
+        /**
+        * This function is used to publish confirmation of manual refresh to other widget
+        * @memberOf widgets/app-header/app-header
+        */
+        confirmedManualRefresh: function () {
+            return;
+        },
+
+        /**
+        * This function is used enable/disable search icon
+        * @memberOf widgets/app-header/app-header
+        */
+        _handleSearchIconVisibility: function (featureLength) {
+            if (this.isSearchActive) {
+                if (featureLength > 1) {
+                    domClass.add(this.searchButton, "esriCTSearchIconContainerDisabled");
+                    domClass.remove(this.searchButton, "esriCTSearchIconContainer");
+                    this._isMultipleRecordsSelected = true;
+                    if (!domClass.contains(this._searchWidgetObj.searchOptions, "esriCTHidden")) {
+                        domClass.add(this._searchWidgetObj.searchOptions, "esriCTHidden");
+                    }
+                } else {
+                    domClass.remove(this.searchButton, "esriCTSearchIconContainerDisabled");
+                    domClass.add(this.searchButton, "esriCTSearchIconContainer");
+                    this._isMultipleRecordsSelected = false;
+                }
+            }
+        },
+
+        /**
+        * This method is used to create sign in widget
+        * @memberOf widgets/app-header/app-header
+        */
+        _initializeSignInWidget: function () {
+            var signInParameters;
+            signInParameters = {
+                "appConfig": this.appConfig,
+                "appUtils": this.appUtils
+            };
+            // Initialize sign in widget
+            this._signInWidgetObj = new SignIn(signInParameters);
+            this._signInWidgetObj.destroyWidgets = lang.hitch(this, function () {
+                this.destroyWidgets();
+            });
+            this._signInWidgetObj.reload = lang.hitch(this, function (logInDetails) {
+                this.reload(logInDetails);
+            });
+            // On click of sign in text, open identity manager
+            on(this.signedInUserDetails, "click", lang.hitch(this, function () {
+                if ((domStyle.get(this.signedInUserDetailsCaretIcon, "display") === "none")) {
+                    this._signInWidgetObj.startup();
+                }
+            }));
+            on(this.signedInUserDetailsCaretIcon, "click", lang.hitch(this, function () {
+                if ((domStyle.get(this.helpButton, "display") === "none") && (domStyle.get(this.refreshButton, "display") === "none") && (domStyle.get(this.searchButton, "display") === "none")) {
+                    domClass.add(this.signOutOptionParentContainer, "esriCTSignOutOptionErrorMode");
+                }
+                domClass.toggle(this.signOutOptionParentContainer, "esriCTHidden");
+            }));
+            on(this.signOutOptionParentContainer, "click", lang.hitch(this, function () {
                 var signOutParentDiv, signOutMessageDiv;
-                signOutParentDiv = domConstruct.create("div", {
-                    "class": "esriCTSignOutParentDiv"
-                });
-                signOutMessageDiv = domConstruct.create("div", {
-                    "class": "esriCTSignOut"
-                }, signOutParentDiv);
-                domConstruct.create("div", {
-                    "innerHTML": this.appConfig.i18n.signOutPage.signOutMessage
-                }, signOutMessageDiv);
-                domConstruct.create("a", {
-                    "href": "",
-                    "innerHTML": this.appConfig.i18n.signOutPage.reSignInMessage
-                }, signOutMessageDiv);
+                signOutParentDiv = domConstruct.create("div", { "class": "esriCTSignOutParentDiv" });
+                signOutMessageDiv = domConstruct.create("div", { "class": "esriCTSignOut" }, signOutParentDiv);
+                domConstruct.create("div", { "innerHTML": this.appConfig.i18n.signOutPage.signOutMessage }, signOutMessageDiv);
+                domConstruct.create("a", { "href": "", "innerHTML": this.appConfig.i18n.signOutPage.reSignInMessage }, signOutMessageDiv);
                 document.body.innerHTML = signOutParentDiv.outerHTML;
             }));
         },
 
         /**
-        * This function is used to set text of settings options
+        * This method is used to reload the app
         * @memberOf widgets/app-header/app-header
         */
-        _setSettingsOptionText: function () {
-            this.esriCTShowSelected.innerHTML = this.appConfig.i18n.applicationHeader
-                .showSelectedOption;
-            this.esriCTShowAll.innerHTML = this.appConfig.i18n.applicationHeader
-                .showAllOption;
-            this.esriCTClearSelection.innerHTML = this.appConfig.i18n.applicationHeader
-                .clearSelectionOption;
-            this.esriCTZoomToSelected.innerHTML = this.appConfig.i18n.applicationHeader
-                .zoomToSelectedOption;
+        reload: function (logInDetails) {
+            return logInDetails;
         },
 
         /**
-        * This function is used to set text of view options
+        * This method is used to destroy widgets
         * @memberOf widgets/app-header/app-header
         */
-        _setViewModeOptionText: function () {
-            this.listView.innerHTML = this.appConfig.i18n.applicationHeader
-                .gridViewOption;
-            this.mapView.innerHTML = this.appConfig.i18n.applicationHeader.mapViewOption;
-            this.splitView.innerHTML = this.appConfig.i18n.applicationHeader
-                .gridMapViewOption;
-        },
-
-        /**
-        * This function is used to set text of search panel which shows no results found
-        * @memberOf widgets/app-header/app-header
-        */
-        _setSearchPanelText: function () {
-            this.noResultsFound.innerHTML = this.appConfig.i18n.searchPanel
-                .noResultsFound;
-        },
-
-        /**
-        * This function is used to display setting option's list
-        * @memberOf widgets/app-header/app-header
-        */
-        _onSettingsIconClick: function () {
-            on(this.settingsDataViewerBtn, "click", lang.hitch(this,
-                function () {
-                    if (!domClass.contains(this.settingsDataViewerBtn,
-                            "esriCTSettingsButtonDisabled")) {
-                        this._toggleSettingsBtnIcon();
-                    }
-                }));
-            on(this.settingsDataViewerCaretIcon, "click", lang.hitch(this,
-                function () {
-                    if (!domClass.contains(this.settingsDataViewerBtn,
-                            "esriCTSettingsButtonDisabled")) {
-                        this._toggleSettingsBtnIcon();
-                    }
-                }));
-        },
-
-        /**
-        * This function is used to enable/disable settings icon
-        * @memberOf widgets/app-header/app-header
-        */
-        _toggleSettingsBtnIcon: function () {
-            this._toggleOptionsVisibility();
-            domClass.replace(this.searchOptions, "esriCTHidden",
-                "esriCTVisible");
-            domClass.replace(this.optionsViewMode, "esriCTHidden",
-                "esriCTVisible");
-            domClass.remove(this.esriCTLoginOptionsDiv, "esriCTVisible");
-            domClass.add(this.esriCTLoginOptionsDiv, "esriCTHidden");
-        },
-
-        /**
-        * This function is used to display search option
-        * @memberOf widgets/app-header/app-header
-        */
-        _onSearchIconClick: function () {
-            on(this.searchModeBtn, "click", lang.hitch(this, function () {
-                if (query(".esriCTSearch").length > 0) {
-                    this._toggleSearchModeVisibility();
-                    domClass.replace(this.esriCTSettingsOptionsItemDiv,
-                        "esriCTHidden", "esriCTVisible");
-                    domClass.replace(this.optionsViewMode, "esriCTHidden",
-                        "esriCTVisible");
-                    domClass.remove(this.esriCTLoginOptionsDiv,
-                        "esriCTVisible");
-                    domClass.add(this.esriCTLoginOptionsDiv,
-                        "esriCTHidden");
-                    if (typeof $(".esriCTSearchBox, textarea").placeholder ===
-                        'function') {
-                        $(".esriCTSearchBox, textarea").placeholder();
-                    }
-                }
-            }));
-        },
-
-        /**
-        * This function is used to do manual refresh of currently selected layer
-        * @memberOf widgets/app-header/app-header
-        */
-        onManualRefreshClick: function () {
+        destroyWidgets: function () {
             return;
         },
 
         /**
-        * This function is used to display view option's list
+        * This method is return last searched string from search
         * @memberOf widgets/app-header/app-header
         */
-        _onViewModeClick: function () {
-            on(this.viewModeBtn, "click", lang.hitch(this, function () {
-                this._toggleViewModeIcon();
-            }));
-            on(this.viewModeCaretIcon, "click", lang.hitch(this, function () {
-                this._toggleViewModeIcon();
-            }));
-        },
-
-        /**
-        * This function is used to enable/disable view mode
-        * @memberOf widgets/app-header/app-header
-        */
-        _toggleViewModeIcon: function () {
-            this._toggleViewModeOptionsVisibility();
-            domClass.replace(this.esriCTSettingsOptionsItemDiv,
-                "esriCTHidden", "esriCTVisible");
-            domClass.replace(this.searchOptions, "esriCTHidden",
-                "esriCTVisible");
-            domClass.remove(this.esriCTLoginOptionsDiv, "esriCTVisible");
-            domClass.add(this.esriCTLoginOptionsDiv, "esriCTHidden");
-        },
-
-        /**
-        * This function is used to show/hide login option's list
-        * @memberOf widgets/app-header/app-header
-        */
-        _toggleLoginOptionsVisibility: function () {
-            if (this.loggedInUser) {
-                if (domClass.contains(this.esriCTLoginOptionsDiv,
-                        "esriCTHidden")) {
-                    domClass.remove(this.esriCTLoginOptionsDiv, "esriCTHidden");
-                    domClass.add(this.esriCTLoginOptionsDiv, "esriCTVisible");
-                    domClass.replace(this.esriCTSettingsOptionsItemDiv,
-                        "esriCTHidden", "esriCTVisible");
-                    domClass.replace(this.optionsViewMode, "esriCTHidden",
-                        "esriCTVisible");
-                    domClass.replace(this.searchOptions, "esriCTHidden",
-                        "esriCTVisible");
-                } else {
-                    domClass.remove(this.esriCTLoginOptionsDiv, "esriCTVisible");
-                    domClass.add(this.esriCTLoginOptionsDiv, "esriCTHidden");
-                }
-            } else {
-                this.signInUser();
-            }
-        },
-
-        /**
-        * This function is used to display identity manager
-        * @memberOf widgets/app-header/app-header
-        */
-        signInUser: function () {
-            return;
-        },
-
-        /**
-        * This function is used to show/hide setting option's list
-        * @memberOf widgets/app-header/app-header
-        */
-        _toggleOptionsVisibility: function () {
-            if (domClass.contains(this.esriCTSettingsOptionsItemDiv,
-                    "esriCTHidden")) {
-                domClass.replace(this.esriCTSettingsOptionsItemDiv,
-                    "esriCTVisible", "esriCTHidden");
-            } else {
-                domClass.replace(this.esriCTSettingsOptionsItemDiv,
-                    "esriCTHidden", "esriCTVisible");
-            }
-        },
-
-        /**
-        * This function is used to show/hide search block
-        * @memberOf widgets/app-header/app-header
-        */
-        _toggleSearchModeVisibility: function () {
-            if (domClass.contains(this.searchOptions, "esriCTHidden")) {
-                domClass.replace(this.searchOptions, "esriCTVisible",
-                    "esriCTHidden");
-            } else {
-                domClass.replace(this.searchOptions, "esriCTHidden",
-                    "esriCTVisible");
-            }
-        },
-
-        /**
-        * This function is used to show/hide view option's list
-        * @memberOf widgets/app-header/app-header
-        */
-        _toggleViewModeOptionsVisibility: function () {
-            if (domClass.contains(this.optionsViewMode, "esriCTHidden")) {
-                domClass.replace(this.optionsViewMode, "esriCTVisible",
-                    "esriCTHidden");
-            } else {
-                domClass.replace(this.optionsViewMode, "esriCTHidden",
-                    "esriCTVisible");
-            }
-        },
-
-        /**
-        * This function is used to set operational name as layer title
-        * @param{string} layer title
-        * @memberOf widgets/app-header/app-header
-        */
-        setLayerTitle: function (layerTitle) {
-            domAttr.set(this.operationalLayerTitle, "innerHTML", layerTitle);
-        },
-
-        /**
-        * This function is used to generate event on click of show selected option
-        * @memberOf widgets/app-header/app-header
-        */
-        onShowSelectedRecordsClick: function () {
-            return;
-        },
-
-        /**
-        * This function is used to generate event on click of show all option
-        * @memberOf widgets/app-header/app-header
-        */
-        onShowAllRecordsClick: function () {
-            return;
-        },
-
-        /**
-        * This function is used to generate event on click of clear selection option
-        * @memberOf widgets/app-header/app-header
-        */
-        onClearSelectionClick: function () {
-            return;
-        },
-
-        /**
-        * This function is used to generate event on click of zoom to selected option
-        * @memberOf widgets/app-header/app-header
-        */
-        onZoomToSelectedClick: function () {
-            return;
-        },
-
-        /**
-        * This function is used to generate event on click of grid view option
-        * @memberOf widgets/app-header/app-header
-        */
-        onGridViewClick: function () {
-            return;
-        },
-
-        /**
-        * This function is used to generate event on click of map view option
-        * @memberOf widgets/app-header/app-header
-        */
-        onMapViewClick: function () {
-            return;
-        },
-
-        /**
-        * This function is used to generate event on click of split view option
-        * @memberOf widgets/app-header/app-header
-        */
-        onGridMapViewClick: function () {
-            return;
-        },
-
-        /**
-        * This function is used to generate event on click of search button
-        * @memberOf widgets/app-header/app-header
-        */
-        onSearchRecordsClick: function () {
-            return;
-        },
-
-        /**
-        * This function is used to generate event on click of clear button
-        * @memberOf widgets/app-header/app-header
-        */
-        onClearContentClick: function () {
-            return;
+        onSearchApplied: function (lastSearchedString) {
+            return lastSearchedString;
         }
     });
 });

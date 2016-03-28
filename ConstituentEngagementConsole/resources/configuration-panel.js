@@ -1,7 +1,7 @@
 {
     "values": {
         "group": "4c4ea6122c1a4313bab674bc4d9cf83b",
-        "theme": "#d15706",
+        "theme": "#f26e1f",
         "applicationName": "",
         "applicationIcon": "",
         "applicationFavicon": "",
@@ -17,7 +17,15 @@
         "webMapInfoAccessInformation": false,
         "webMapInfoTags": false,
         "webMapInfoNumViews": false,
-        "webMapInfoAvgRating": false
+        "webMapInfoAvgRating": false,
+        "showNonEditableLayers": false,
+        "selectFeatureMessage": "Select a feature to get started",
+        "enableFilter": true,
+        "helpDialogTitle": "Help Page",
+        "helpDialogContent": "<p>Crowdsource Manager, a companion group template to Crowdsource Reporter, allows users within an organization to review problems or observations submitted through the Reporter application.</p>",
+        "popupTabText": "Popup",
+        "mediaTabText": "Media",
+        "commentsTabText": "Comments"
     },
     "configurationSettings": [{
         "category": "<b>App Settings</b>",
@@ -63,9 +71,9 @@
             "tooltip": "Configure zoom level"
         }, {
             "type": "color",
-            "fieldName": "activeRow",
-            "tooltip": "Active row and feature",
-            "label": "Choose a highlight color for the active row in the table and corresponding feature in the map"
+            "fieldName": "highlightRow",
+            "tooltip": "Highlight color of a row",
+            "label": "Choose a color for highlighting a row in the table"
         }, {
             "type": "paragraph",
             "value": "Choose the item information to display in the map information panel:"
@@ -119,6 +127,47 @@
             "fieldName": "webMapInfoAvgRating",
             "label": "Average Rating",
             "tooltip": "Enable to show webmap average rating"
+        }, {
+            "type": "boolean",
+            "fieldName": "showNonEditableLayers",
+            "label": "Show Non Editable Layers",
+            "tooltip": "Enable to show non editable layers on map"
+        }, {
+            "type": "string",
+            "fieldName": "selectFeatureMessage",
+            "label": "Details panel message",
+            "tooltip": "This message is displayed in details panel when no feature is selected in data viewer"
+        }, {
+            "type": "boolean",
+            "fieldName": "enableFilter",
+            "label": "Show filters with default value",
+            "tooltip": "If this field is true default value of filters will be displayed else empty values will be displayed"
+        }, {
+            "type": "string",
+            "fieldName": "helpDialogTitle",
+            "label": "Help window title",
+            "tooltip": "Text displayed at the top of the help window"
+        }, {
+            "type": "string",
+            "fieldName": "helpDialogContent",
+            "label": "Dialog content",
+            "stringFieldOption": "richtext",
+            "tooltip": "Text and graphics that will display in the help window."
+        }, {
+            "type": "string",
+            "fieldName": "popupTabText",
+            "label": "Text to be displayed on popup tab",
+            "tooltip": "Text to be displayed on popup tab in details panel"
+        }, {
+            "type": "string",
+            "fieldName": "mediaTabText",
+            "label": "Text to be displayed on media tab",
+            "tooltip": "Text to be displayed on media tab in details panel"
+        }, {
+            "type": "string",
+            "fieldName": "commentsTabText",
+            "label": "Text to be displayed on comments tab",
+            "tooltip": "Text to be displayed on comments tab in details panel"
         }]
     }]
 }

@@ -1,0 +1,22 @@
+﻿<div class="esriCTPopupForm" data-dojo-attach-point="popupFormDiv">
+    <div data-dojo-attach-point="enterPopupContainer" class="esriCTEnterPopup">
+        <div data-dojo-attach-point="headerMessageDiv" class="esriCTHidden">
+            <div data-dojo-attach-point="headerMessageType" class="alert alert-danger">
+                <span class="close" data-dojo-attach-point="headerMessageButton">&times;</span>
+                <span data-dojo-attach-point="headerMessageContent">${i18n.geoform.errorsInApplyEdits}</span>
+            </div>
+        </div>
+        <form role="form" data-dojo-attach-point="popupForm">
+        </form>
+    </div>
+    <div data-dojo-attach-point="countLabel" class="esriCTCountLabel">
+    </div>
+    <div class="esriCTFullWidth esriCTPopupButtons">
+        <div data-dojo-attach-point="postPopupButton" class="btn btn-default esriCTEllipsis esriCTPostPopupButton">
+            ${i18n.geoform.submitButtonTooltip}
+        </div>
+        <div data-dojo-attach-point="cancelPopupButton" class="btn btn-default esriCTEllipsis esriCTCancelPopupButton esriCTApplicationColor">
+            ${i18n.geoform.cancelButtonTooltip}
+        </div>
+    </div>
+</div>

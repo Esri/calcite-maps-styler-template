@@ -1,5 +1,5 @@
-/*global define,document,alert,dojo */
-/*jslint browser:true,sloppy:true,nomen:true,unparam:true,plusplus:true,indent:4 */
+/*global define,document,alert,dojo,navigator */
+/*jslint sloppy:true */
 /*
  | Copyright 2014 Esri
  |
@@ -20,16 +20,21 @@ define([
     "dojo/text!css/theme-template.css",
     "dojo/string",
     "dojo/dom-construct",
-    "dojo/query"
+    "dojo/query",
+    "dojo/number",
+    "dojo/dom",
+    "dojo/_base/Color"
 ], function (
     domClass,
     ThemeCss,
     string,
     domConstruct,
-    query
+    query,
+    numberformatter,
+    dom,
+    Color
 ) {
     return {
-
         /**
         * This function is used to show loading indicator.
         * @memberOf utils/utils
@@ -44,6 +49,26 @@ define([
         */
         hideLoadingIndicator: function () {
             domClass.remove(document.body, "app-loading");
+        },
+
+        /**
+        * This function is used to hide overlay container.
+        * @memberOf utils/utils
+        */
+        hideOverlayContainer: function () {
+            var overlayContainer = dom.byId("overlayContainer");
+            domClass.add(overlayContainer, "esriCTHidden");
+        },
+
+        /**
+        * This function is used to show overlay container.
+        * @memberOf utils/utils
+        */
+        showOverlayContainer: function () {
+            var overlayContainer = dom.byId("overlayContainer");
+            if (overlayContainer) {
+                domClass.remove(overlayContainer, "esriCTHidden");
+            }
         },
 
         /**
@@ -70,13 +95,17 @@ define([
         * @memberOf utils/utils
         */
         loadApplicationTheme: function (appConfig) {
-            var cssString, head, style, link;
+            var cssString, head, style, link, rgbColor;
             //if theme is configured
             if (appConfig.theme) {
+                //Convert hex color to rgb and add opacity to get ligher shade of configured color
+                rgbColor = new Color(appConfig.theme);
+                rgbColor.a = 0.6;
                 //substitute theme color values in theme template
                 cssString = string.substitute(ThemeCss, {
                     SelectedThemeColor: appConfig.theme,
-                    ActivatedRowColor: appConfig.activeRow
+                    LighterShadeThemeColor: rgbColor,
+                    HighlightedRowColor: appConfig.highlightRow
                 });
                 //Create Style using theme template and append it to head
                 //On Lower versions of IE10 Style tag is read only so create theme using styleSheet.cssText
@@ -87,10 +116,7 @@ define([
                     style.styleSheet.cssText = cssString;
                     head.appendChild(style);
                 } else {
-                    domConstruct.create("style", {
-                        "type": "text/css",
-                        "innerHTML": cssString
-                    }, query("head")[0]);
+                    domConstruct.create("style", { "type": "text/css", "innerHTML": cssString }, query("head")[0]);
                 }
                 // If application is loaded in RTL mode, change styles of required nodes
                 if (appConfig.i18n.direction === "rtl") {
@@ -111,66 +137,74 @@ define([
         getDateFormat: function (type) {
             var obj = {};
             switch (type) {
-                case "shortDate":
-                    obj.dateFormat = "MM/DD/YYYY";
-                    obj.showTime = false;
-                    return obj;
-                case "shortDateLE":
-                    obj.dateFormat = "DD/MM/YYYY";
-                    obj.showTime = false;
-                    return obj;
-                case "longMonthDayYear":
-                    obj.dateFormat = "MMMM DD, YYYY";
-                    obj.showTime = false;
-                    return obj;
-                case "dayShortMonthYear":
-                    obj.dateFormat = "DD MMM YYYY";
-                    obj.showTime = false;
-                    return obj;
-                case "longDate":
-                    obj.dateFormat = "dddd, MMMM DD, YYYY";
-                    obj.showTime = false;
-                    return obj;
-                case "shortDateLongTime":
-                    obj.dateFormat = "MM/DD/YYYY h:mm:ss a";
-                    obj.showTime = true;
-                    return obj;
-                case "shortDateLELongTime":
-                    obj.dateFormat = "DD/MM/YYYY h:mm:ss a";
-                    obj.showTime = true;
-                    return obj;
-                case "shortDateShortTime":
-                    obj.dateFormat = "DD/MM/YYYY h:mm a";
-                    obj.showTime = true;
-                    return obj;
-                case "shortDateLEShortTime":
-                    obj.dateFormat = "MM/DD/YYYY h:mm a";
-                    obj.showTime = true;
-                    return obj;
-                case "shortDateShortTime24":
-                    obj.dateFormat = "MM/DD/YYYY HH:mm";
-                    obj.showTime = true;
-                    return obj;
-                case "shortDateLEShortTime24":
-                    obj.dateFormat = "DD/MM/YYYY HH:mm";
-                    obj.showTime = true;
-                    return obj;
-                case "longMonthYear":
-                    obj.dateFormat = "MMMM YYYY";
-                    obj.showTime = false;
-                    return obj;
-                case "shortMonthYear":
-                    obj.dateFormat = "MMM YYYY";
-                    obj.showTime = false;
-                    return obj;
-                case "year":
-                    obj.dateFormat = "YYYY";
-                    obj.showTime = false;
-                    return obj;
-                default:
-                    obj.dateFormat = "MMMM DD, YYYY";
-                    obj.showTime = false;
-                    return obj;
+            case "shortDate":
+                obj.dateFormat = "MM/DD/YYYY";
+                obj.showTime = false;
+                return obj;
+            case "shortDateLE":
+                obj.dateFormat = "DD/MM/YYYY";
+                obj.showTime = false;
+                return obj;
+            case "longMonthDayYear":
+                obj.dateFormat = "MMMM DD, YYYY";
+                obj.showTime = false;
+                return obj;
+            case "dayShortMonthYear":
+                obj.dateFormat = "DD MMM YYYY";
+                obj.showTime = false;
+                return obj;
+            case "longDate":
+                obj.dateFormat = "dddd, MMMM DD, YYYY";
+                obj.showTime = false;
+                return obj;
+            case "shortDateLongTime":
+                obj.dateFormat = "MM/DD/YYYY h:mm:ss a";
+                obj.showTime = true;
+                return obj;
+            case "shortDateLongTime24":
+                obj.dateFormat = "M/DD/YYYY HH:mm:ss";
+                obj.showTime = true;
+                return obj;
+            case "shortDateLELongTime24":
+                obj.dateFormat = "D/M/YYYY HH:mm:ss";
+                obj.showTime = true;
+                return obj;
+            case "shortDateLELongTime":
+                obj.dateFormat = "DD/MM/YYYY h:mm:ss a";
+                obj.showTime = true;
+                return obj;
+            case "shortDateShortTime":
+                obj.dateFormat = "MM/DD/YYYY h:mm a";
+                obj.showTime = true;
+                return obj;
+            case "shortDateLEShortTime":
+                obj.dateFormat = "DD/MM/YYYY h:mm a";
+                obj.showTime = true;
+                return obj;
+            case "shortDateShortTime24":
+                obj.dateFormat = "MM/DD/YYYY HH:mm";
+                obj.showTime = true;
+                return obj;
+            case "shortDateLEShortTime24":
+                obj.dateFormat = "DD/MM/YYYY HH:mm";
+                obj.showTime = true;
+                return obj;
+            case "longMonthYear":
+                obj.dateFormat = "MMMM YYYY";
+                obj.showTime = false;
+                return obj;
+            case "shortMonthYear":
+                obj.dateFormat = "MMM YYYY";
+                obj.showTime = false;
+                return obj;
+            case "year":
+                obj.dateFormat = "YYYY";
+                obj.showTime = false;
+                return obj;
+            default:
+                obj.dateFormat = "MMMM DD, YYYY";
+                obj.showTime = false;
+                return obj;
             }
         },
 
@@ -179,8 +213,8 @@ define([
         * @param{integer} number that needs to be converted into thousand seperator
         * @memberOf utils/utils
         */
-        convertNumberToThousandSeperator: function (number) {
-            return number.replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,");
+        convertNumberToThousandSeperator: function (number, decimalPlace) {
+            return numberformatter.format(number, { places: decimalPlace });
         },
 
         /**

@@ -1,96 +1,33 @@
-﻿<div data-dojo-attach-point="applicationHeaderParentContainer">
-    <div class="esriCTApplicationHeader esriCTBorderBottom esriCTBGColor">
-        <div class="esriCTheaderLeft">
-            <div class="esriCTHomeIcon">
-                <img data-dojo-attach-point="applicationHeaderIcon" class="esriCTApplicationIcon" />
-            </div>
-            <div data-dojo-attach-point="applicationHeaderName" class="esriCTMenuTabLeft">
-            </div>
+﻿<div class="esriCTApplicationHeaderContainer" data-dojo-attach-point="applicationHeaderContainer">
+    <div class="esriCTApplicationHeaderIconContainer" data-dojo-attach-point="applicationHeaderIconContainer">
+        <img class="esriCTApplicationHeaderIcon" data-dojo-attach-point="applicationHeaderIcon" />
+    </div>
+    <div class="esriCTApplicationNameContainer" data-dojo-attach-point="applicationNameContainer">
+        <div class="esriCTApplicationName" data-dojo-attach-point="applicationHeaderName">
         </div>
-        <div class="esriCTheaderRight" data-dojo-attach-point="esriCTheaderRight">
-            <div class="esriCTMenuTabRight" data-dojo-attach-point="esriCTMenuTabRight">
-                <div class="esriCTUserControlContainer" data-dojo-attach-point="userControlContainer">
-                    <div data-dojo-attach-point="esriCTLoginDetailsDiv">
-                        <div class="esriCTLoginCredentialsDiv" data-dojo-attach-point="esriCTLoginCredentialsDiv">
-                            <div>
-                                <div class="esriCTLoginUserNameDiv" data-dojo-attach-point="esriCTLoginUserNameDiv">
-                                </div>
-                                <div class="esriCTCaretIcon  esriCTPointerCursor" data-dojo-attach-point="esriCTCaretIcon">
-                                    &#9660;
-                                </div>
-                            </div>
-                        </div>
-                        <div class="esriCTOptions esriCTLoginOptionsDiv esriCTHidden" data-dojo-attach-point="esriCTLoginOptionsDiv">
-                            <div class="esriCTLogoutOption esriCTBorder">
-                                <div class="esriCTItems" data-dojo-attach-point="esriCTLogoutOption">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="esriCTSettingIconContainer">
-                    <div data-dojo-attach-point="applicationHeaderWidgetsContainer">
-                        <div class="esriCTSettingsButtonParentContainer" data-dojo-attach-point="settingsButtonParentContainer">
-                            <div class="esriCTHeaderIcons esriCTSettingsButtonDisabled esriCTBGColor esriCTPointerCursor"
-                                data-dojo-attach-point="settingsDataViewerBtn">
-                            </div>
-                            <div class="esriCTSettingsButtonCaretIconDisabled  esriCTPointerCursor" data-dojo-attach-point="settingsDataViewerCaretIcon">
-                                &#9660;
-                            </div>
-                        </div>
-                        <div class="esriCTOptions esriCTSettingsOptions esriCTBorder esriCTPointerCursor esriCTApplicationColor esriCTHidden"
-                            data-dojo-attach-point="esriCTSettingsOptionsItemDiv">
-                            <div class="esriCTItems esriCTHidden esriCTShowAll" data-dojo-attach-point="esriCTShowAll">
-                            </div>
-                            <div class="esriCTItems esriCTVisible esriCTShowSelected" data-dojo-attach-point="esriCTShowSelected">
-                            </div>
-                            <div class="esriCTItems esriCTVisible esriCTClearSelection" data-dojo-attach-point="esriCTClearSelection">
-                            </div>
-                            <div class="esriCTItems esriCTZoomToSelected" data-dojo-attach-point="esriCTZoomToSelected">
-                            </div>
-                        </div>
-                        <div class="esriCTViewModeParentContainer" data-dojo-attach-point="viewModeParentContainer">
-                            <div class="esriCTHeaderIcons esriCTViewMode esriCTBGColor esriCTPointerCursor" data-dojo-attach-point="viewModeBtn">
-                            </div>
-                            <div class="esriCTViewModeCaretIcon  esriCTPointerCursor" data-dojo-attach-point="viewModeCaretIcon">
-                                &#9660;
-                            </div>
-                        </div>
-                        <div class="esriCTOptions esriCTOptionsViewMode esriCTBorder esriCTPointerCursor esriCTApplicationColor  esriCTHidden"
-                            data-dojo-attach-point="optionsViewMode">
-                            <div class="esriCTViews esriCTItems" data-dojo-attach-point="mapView">
-                            </div>
-                            <div class="esriCTViews esriCTItems" data-dojo-attach-point="listView">
-                            </div>
-                            <div class="esriCTViews esriCTItems" data-dojo-attach-point="splitView">
-                            </div>
-                        </div>
-                        <div class="esriCTHeaderIcons esriCTSearchDisable esriCTBGColor esriCTPointerCursor"
-                            data-dojo-attach-point="searchModeBtn">
-                        </div>
-                        <div class="esriCTHeaderIcons esriCTManualRefreshButton esriCTBGColor esriCTPointerCursor"
-                            data-dojo-attach-point="manualRefreshBtn">
-                        </div>
-                        <div class="esriCTOptions esriCTOptionsSearchMode esriCTBorder esriCTApplicationColor esriCTHidden"
-                            data-dojo-attach-point="searchOptions">
-                            <div data-dojo-attach-point="search">
-                                <input type="text" class="esriCTSearchBox" placeholder="" data-dojo-attach-point="searchBox" />
-                                <!--Clear button-->
-                                <div class="esriCTClearDiv esriCTClearBtn esriCTVisible" data-dojo-attach-point="clearTextContent">
-                                </div>
-                                <div class="esriCTSearchButton esriCTBGColor esriCTPointerCursor" data-dojo-attach-point="searchRecords">
-                                </div>
-                            </div>
-                            <span class="esriCTHidden esriCTNoResults" data-dojo-attach-point="noResultsFound">
-                            </span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="esriCTMiddle" data-dojo-attach-point="esriCTMiddle">
-                <div class="esriCTOperationalLayerName esriCTHeaderFont" data-dojo-attach-point="operationalLayerTitle">
-                </div>
-            </div>
+    </div>
+    <div class="esriCTSignInDetailContainer" data-dojo-attach-point="signedInUserDetailsContainer">
+        <div class="esriCTSignInUserNameDetails esriCTPointerCursor" data-dojo-attach-point="signedInUserDetails">
+        </div>
+        <div class="esriSignedInUserDetailsCaretIcon esriCTPointerCursor esriCTHidden" data-dojo-attach-point="signedInUserDetailsCaretIcon">
+            &#9660;
+        </div>
+    </div>
+    <div class="esriCTSeperator" data-dojo-attach-point="signInSeperator">
+    </div>
+    <div class="esriCTHelpIconContainer esriCTHeaderIcons esriCTPointerCursor" data-dojo-attach-point="helpButton">
+    </div>
+    <div class="esriCTManualRefreshIconContainerDisable esriCTHeaderIcons esriCTDefaultCursor"
+        data-dojo-attach-point="refreshButton">
+    </div>
+    <div class="esriCTSearchIconContainerDisabled esriCTHeaderIcons esriCTDefaultCursor"
+        data-dojo-attach-point="searchButton">
+    </div>
+    <div data-dojo-attach-point="searchContainer" class="esriCTSearchContainer">
+    </div>
+    <div class="esriCTSignOutOption esriCTBorder esriCTHidden esriCTApplicationColor"
+        data-dojo-attach-point="signOutOptionParentContainer">
+        <div data-dojo-attach-point="signOutOption">
         </div>
     </div>
 </div>

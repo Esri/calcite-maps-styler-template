@@ -1,7 +1,10 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
+    <title></title>
     <meta charset="utf-8">
+    <meta name="fragment" content="!">
+    <!-- Define the versions of IE that will be used to render the page. See Microsoft documentation for details. Optional. -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!-- Responsive -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -9,72 +12,108 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
     <!-- End Responsive -->
-    <meta name="fragment" content="!">
-    <!-- Latest compiled and minified CSS -->
-    <!-- jquery-ui CSS -->
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.1/themes/smoothness/jquery-ui.css">
+    <!-- resize container -->
+    <link href="js/vendor/jquery/jquery-ui.css" rel="stylesheet" type="text/css" />
     <!-- Bootstrap core CSS -->
-    <link href="js/vendor/bootstrap-3.3.0-dist/css/bootstrap.min.css" rel="stylesheet"
+    <link href="js/vendor/bootstrap-3.3.6-dist/css/bootstrap.min.css" rel="stylesheet"
         type="text/css" />
-    <link rel="stylesheet" type="text/css" href="js/vendor/bootstrap-datetimepicker/bootstrap-datetimepicker.min.css">
-    <link href="js/vendor/bootstrap-datatable/datatables.bootstrap.css" rel="stylesheet"
+    <link href="js/vendor/bootstrap-datetimepicker/bootstrap-datetimepicker.min.css"
+        rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="js/vendor/touch-spinner/jquery.bootstrap-touchspin.min.css" />
+    <!-- Use protocol relative urls that way if the browser is viewing the page via HTTPS the js/css file will be requested using the HTTPS protocol -->
+    <link rel="stylesheet" href="//jsdev.arcgis.com/3.16//dijit/themes/claro/claro.css">
+    <link rel="stylesheet" href="//jsdev.arcgis.com/3.16/esri/css/esri.css">
+    <!-- Calcite Bootstrap CSS -->
+    <link href="js/vendor/calcite-bootstrap/calcite-bootstrap.min.css" rel="stylesheet"
         type="text/css" />
-    <link href="js/vendor/bootstrap-datatable/jquery.datatables.css" rel="stylesheet"
-        type="text/css" />
-    <!--Dojo and Esri CSS-->
-    <link rel="stylesheet" href="//js.arcgis.com/3.16/dijit/themes/claro/claro.css" />
-    <link rel="stylesheet" href="//js.arcgis.com/3.16/esri/css/esri.css" />
     <!-- Load any application specific styles -->
-    <link rel="stylesheet" href="css/main.css" type="text/css" />
-    <link rel="stylesheet" href="css/common.css" type="text/css" />
-    <link rel="stylesheet" href="css/media-queries.css" type="text/css" />
-    <!-- Add Legacy browsers css -->
-    <!--[if lt IE 9]>
-    <link rel="stylesheet"  type="text/css" href="css/legacy-browsers.css" />
-  <![endif]-->
+    <link rel="stylesheet" href="css/main.css">
+    <link href="css/common.css" rel="stylesheet" type="text/css" />
+    <link href="css/media-queries.css" rel="stylesheet" type="text/css" />
 </head>
 <body class="claro app-loading">
-    <div class="loading-indicator" id="loadingIndicator">
-    </div>
-    <div id="headerContainer" class="esriCTHeaderContainer">
-    </div>
-    <div id="esriCTNoWebMapParentDiv" class="esriCTNoWebMapParentDiv esriCTHidden">
-        <div class="esriCTNoWebMapChildDiv" id="esriCTNoWebMapChildDiv">
+    <!-- Loading indicator -->
+    <div class="loading-indicator">
+        <div class="loading-message" id="loading_message">
         </div>
     </div>
-    <div class="esriCTMainContainer esriCTHidden" id="esriCTMainContainer">
-        <div class="esriCTLeftContainer esriCTBorderRight" id="LeftContainer">
+    <div class="esriCTNoWebMapParentContainer" id="noWebMapParentContainer">
+        <div class="esriCTNoWebMapChildContainer" id="noWebMapChildContainer">
         </div>
-        <div class="esriCTRightContainer">
-            <div class="esriCTFullHeightWidth" id="rightParentContainer">
-                <div id="UpperContainer" class="esriCTUpperContainer esriCTBorderBottom">
+    </div>
+    <!-- Main container -->
+    <div class="esriCTMainContainer esriCTHidden" id="mainWrapperContainer">
+        <!-- Application header container -->
+        <div class="esriCTApplicationHeaderWrapperContainer" id="applicationHeaderWrapperContainer">
+        </div>
+        <!-- Upper & Lower wrapper container -->
+        <div class="esriCTUpperAndLowerWrapperContainer" id="UpperAndLowerWrapperContainer">
+            <div class="esriCTWebMapListWrapperContainer esriCTWebMapListOpen" id="webMapListWrapperContainer">
+                <!-- Webmap list banner container -->
+                <div class="esriCTWebMapListBannerContainer" id="webMapListBannerContainer">
+                    <div class="esriCTWebMapPanelToggleBtnPosition" id="webMapPanelToggleBtnPosition">
+                        <div class="esriCTBGLightColor esriCTWebMapPanelToggleButtonStyle" id="webmapListToggleButton">
+                        </div>
+                    </div>
                 </div>
-                <div id="LowerContainer" class="esriCTLowerContainer esriCTBorderBottom">
+                <!-- Webmap list container -->
+                <div class="esriCTWebMapListContainer" id="webMapListContainer">
                 </div>
             </div>
+            <!-- Overlay container on initial load -->
+            <div class="esriCTOverlayContainer" id="overlayContainer">
+            </div>
+            <div class="esriCTUpperContainerEmptySlider" id="upperContainer">
+                <!-- Operational layer name container -->
+                <div class="esriCTOperationalLayerNameContainer" id="operationalLayerNameContainer">
+                    <div class="esriCTOperationalLayerName" id="operationalLayerName">
+                    </div>
+                </div>
+                <!-- Data viewer container -->
+                <div class="esriCTDataViewerWrapperContainerEmptySlider" id="dataViewerWrapperContainer">
+                </div>
+                <!-- Time slider container -->
+                <div class="esriCTTimeSliderParentContainer esriCTHidden" id="timeSliderWrapperContainer">
+                    <div id="disableTimeSliderWrapperContainer" class="esriCTTimeSliderDisableContainer esriCTHidden">
+                    </div>
+                </div>
+            </div>
+            <div class="esriCTLowerContainerEmptySlider" id="lowerContainer">
+                <!-- Details panel container -->
+                <div class="esriCTDetailsPanelWrapperContainer" id="detailsPanelWrapperContainer">
+                </div>
+                <!-- Map panel container -->
+                <div class="esriCTMapPanelWrapperContainer" id="mapPanelWrapperContainer">
+                </div>
+            </div>
+            <div id="filterContainerWrapper">
+            </div>
+        </div>
+        <div class="esriCTSignInErrorMessageContainer esriCTHidden" id="signInErrorMessageContainer">
         </div>
     </div>
     <!-- Load dojo configuration -->
     <script src="js/dojo-configuration.js" type="text/javascript"></script>
     <!-- Load Different API's(Vendor)-->
-    <script type="text/javascript" src="js/vendor/jquery.min.js"></script>
-    <script type="text/javascript" src="js/vendor/jquery-ui.js"></script>
-    <script type="text/javascript" src="js/vendor/moment-with-langs.min.js"></script>
-    <script src="js/vendor/bootstrap-3.3.0-dist/js/bootstrap.min.js" type="text/javascript"></script>
-    <script type="text/javascript" src="js/vendor/bootstrap-datetimepicker/bootstrap-datetimepicker.min.js"></script>
-    <script src="js/vendor/bootstrap-datatable/jquery.datatables.min.js" type="text/javascript"></script>
-    <script src="js/vendor/bootstrap-datatable/datatables.bootstrap.js" type="text/javascript"></script>
-    <script type="text/javascript" src="//js.arcgis.com/3.16/"></script>
-    <!--[if lt IE 9]>
-    <script type="text/javascript" src="js/vendor/jquery.placeholder.js"></script>
-  <![endif]-->
+    <script src="js/vendor/jquery/jquery-1.12.0.min.js" type="text/javascript"></script>
+    <script type="text/javascript" src="js/vendor/jquery/jquery-ui.js"></script>
     <script type="text/javascript" src="js/resize-reverse.js"></script>
+    <script src="js/vendor/moment/moment-with-locales.js" type="text/javascript"></script>
+    <script src="js/vendor/bootstrap-datetimepicker/bootstrap-datetimepicker.min.js"
+        type="text/javascript"></script>
+    <script src="js/vendor/bootstrap-3.3.6-dist/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="js/vendor/table-sorter-2.25.3/jquery.tablesorter.js" type="text/javascript"></script>
+    <script src="js/vendor/table-sorter-2.25.3/table-fixed-header.js" type="text/javascript"></script>
+    <script type="text/javascript" src="js/vendor/touch-spinner/jquery.bootstrap-touchspin.min.js"></script>
+    <!-- Load any application specific styles -->
+    <script type="text/javascript" src="//jsdev.arcgis.com/3.16/"></script>
     <script type="text/javascript">
         require([
             "application/bootstrapper"
         ], function (
             BootStrapper
         ) {
+            // Bootstrapping application
             var bootStrapperObj = new BootStrapper();
             bootStrapperObj.startup();
         });
