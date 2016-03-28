@@ -270,6 +270,11 @@
         position: fixed !important;
     }
 
+    .esriCTGridTitleContent
+    {
+        max-height: 33px;
+    }
+
 }
 
 @media screen and (min-width: 321px) and (max-width: 640px)
@@ -337,6 +342,13 @@
     {
         width: 100%;
         height: 48px;
+        display: block;
+    }
+
+    .esriCTMenuTabLeft
+    {
+        background-color: #fff;
+        padding-right: 65px;
     }
 
     .esriCTInnerRightPanelDetails
@@ -365,7 +377,7 @@
         float: right;
         cursor: pointer;
         margin: 5px 0px 0 0;
-        font-size: 28px;
+        font-size: 27px;
         color: white;
     }
 
@@ -376,27 +388,18 @@
         position: fixed;
     }
 
-    .esriCTMapInput
-    {
-        float: left;
-    }
-
     .esriCTPadding
     {
         padding: 15px;
         clear: both;
     }
 
-    .esriCTInnerLeftPanelBottom
-    {
-        float: left;
-        padding: 0;
-    }
-
     .esriCTInnerLeftPanelTop
     {
         float: right;
         padding: 0;
+        position: absolute;
+        left: -1px;
     }
 
     .esriCTListView
@@ -406,7 +409,9 @@
 
     .esriCTGridView
     {
-        display: none;
+        display: block;
+        margin: 0px auto;
+        width: 460px;
     }
 
     .esriCTGalleryNameCategories, .esriCTGalleryNameSample
@@ -417,15 +422,10 @@
         background: #fff;
     }
 
-    .esriCTImageTopPanel
-    {
-        background: none;
-        border: none;
-        width: 100%;
-    }
-
     .esriCTRightPanel
     {
+        position: absolute;
+        height: 100%;
         width: 100%;
         margin-left: 0px;
     }
@@ -435,6 +435,16 @@
         padding-left: 10px !important;
         margin-bottom: 10px;
         margin-left: 0px;
+    }
+
+    .esriCTApplicationBox
+    {
+        margin: 0px 0px 0px 20px;
+    }
+
+    .esriCTApplicationListBox
+    {
+        border-bottom: 1px solid #ededed;
     }
 
     .esriCTImageContainerList
@@ -458,6 +468,7 @@
     {
         border: none;
         line-height: 16px;
+        margin-bottom: 5px;
     }
 
     .esriCTEyeNumViews span.esriCTEyeIcon
@@ -520,12 +531,7 @@
     {
         float: left;
         width: 60%;
-    }
-
-    .esriCTDetailsRightPanel
-    {
-        float: left;
-        width: 100%;
+        margin-top: 44px;
     }
 
     .esriCTDetailLeftInfo
@@ -536,16 +542,6 @@
     .esriCTInnerLeftPanelTopMap
     {
         display: none;
-    }
-
-    .esriCTRightPanelMap
-    {
-        display: block;
-        margin-left: 0;
-        margin-top: 48px;
-        width: 100%;
-        position: absolute;
-        left: 0px;
     }
 
     .esriSimpleSlider
@@ -573,6 +569,7 @@
     {
         font-size: 14px;
         padding: 10px 0px;
+        color: #333;
     }
 
     .esriCTSortByTitle
@@ -586,6 +583,12 @@
     .esriCTSortHeader
     {
         padding: 0 0px 15px 15px;
+        color: #6e6e6e;
+    }
+
+    .esriCTSortMenu
+    {
+        color: #6e6e6e;
     }
 
     .esriCTSortMenu ul
@@ -595,10 +598,19 @@
         padding: 0;
     }
 
-    .esriCTSortMenu ul li
+    .esriCTRightPanelMap
     {
-        padding: 5px 15px;
-        cursor: pointer;
+        display: block;
+        margin-left: 0;
+        margin-top: 48px;
+        width: 100%;
+        position: absolute;
+        left: 0px;
+        -webkit-transition: 0.3s ease-in-out;
+        -moz-transition: 0.3s ease-in-out;
+        -o-transition: 0.3s ease-in-out;
+        -ms-transition: 0.3s ease-in-out;
+        transition: 0.3s ease-in-out;
     }
 
     .esriCTShiftRight
@@ -611,7 +623,6 @@
         -o-transition: 0.3s ease-in-out;
         -ms-transition: 0.3s ease-in-out;
         transition: 0.3s ease-in-out;
-        border-left: 1px solid #7453a4;
     }
 
     .esriCTShiftLeft
@@ -624,7 +635,6 @@
         -o-transition: 0.3s ease-in-out;
         -ms-transition: 0.3s ease-in-out;
         transition: 0.3s ease-in-out;
-        border-left: 1px solid #7453a4;
     }
 
     .esriCTInnerLeftPanelBottomShift
@@ -656,16 +666,6 @@
         -o-transition: 0.3s ease-in-out;
         -ms-transition: 0.3s ease-in-out;
         transition: 0.3s ease-in-out;
-        border-right: 1px solid #7453a4;
-    }
-
-    .esriCTRightPanelMap
-    {
-        -webkit-transition: 0.3s ease-in-out;
-        -moz-transition: 0.3s ease-in-out;
-        -o-transition: 0.3s ease-in-out;
-        -ms-transition: 0.3s ease-in-out;
-        transition: 0.3s ease-in-out;
     }
 
     .esriCTShiftLeftPanel
@@ -691,18 +691,13 @@
         padding-left: 15px;
     }
 
-    /* Left panel styles*/
-
-    .esriCTRightPanel
-    {
-        position: absolute;
-        height: 100%;
-    }
-
     .esriCTInnerLeftPanelBottom
     {
+        float: left;
+        padding: 0;
         position: absolute;
         overflow: auto;
+        background: #fff;
         -webkit-transition: 0.3s ease-in-out;
         -moz-transition: 0.3s ease-in-out;
         -o-transition: 0.3s ease-in-out;
@@ -724,27 +719,10 @@
         white-space: nowrap;
     }
 
-    .esriCTInnerLeftPanelTop
-    {
-        position: absolute;
-        left: -1px;
-    }
-
     .esriCTLeftPanelHeader, .esriCTLeftPanelHeaderMap
     {
         padding: 15px 20px;
         margin-bottom: 10px;
-    }
-
-    .esriCTImageTopPanel
-    {
-        background: none !important;
-        border: none !important;
-    }
-
-    .esriCTListAppContent
-    {
-        margin-bottom: 5px;
     }
 
     .esriCTAutoSuggest
@@ -754,6 +732,8 @@
 
     .esriCTDetailsRightPanel
     {
+        float: left;
+        width: 100%;
         margin-left: 0px;
         background: #fff;
     }
@@ -806,11 +786,6 @@
         position: fixed;
     }
 
-    .esriCTMenuTabRightMap
-    {
-        display: block;
-    }
-
     .esriCTRightControlPanel
     {
         right: 0;
@@ -833,7 +808,7 @@
         display: block;
     }
 
-    .esriCTBackToMapBtn, .esriCTBackToMapBtnLegend
+    .esriCTBackToMapBtn, .esriCTItemTitle
     {
         display: block;
     }
@@ -842,11 +817,7 @@
     {
         width: 78% !important;
         margin: 0px;
-    }
-
-    .esriCTSearch
-    {
-        width: 100% !important;
+        float: left;
     }
 
     .esriCTMapInput div.esriCTSearch
@@ -881,269 +852,15 @@
         background-size: 100%;
     }
 
-    /* Blue theme styles */
-
-    .blueTheme .esriCTMenuTabRight div span.esriCTMenulbl
+    .esriCTBackToGalleryBtn
     {
-        color: #007ac2;
+        position: absolute;
+        top: 0px;
     }
 
-    .blueTheme .esriCTMenuTabRightMap
+    .esriCTGridTitleContent
     {
-        color: #007ac2;
-    }
-
-    .blueTheme .esriCTMenuTabLeft
-    {
-        background: #fff;
-        color: #007AC2;
-        padding-right: 65px;
-    }
-
-    .blueTheme .esriCTGalleryName
-    {
-        color: #007AC2;
-    }
-
-    .blueTheme .esriCTListAppContent
-    {
-        border: none;
-    }
-
-    .blueTheme .esriCTMenulbl
-    {
-        color: #007AC2;
-    }
-
-    .blueTheme .esriCTGalleryNameCategories, .blueTheme .esriCTGalleryNameSample
-    {
-        color: #007AC2;
-    }
-
-    .blueTheme .esriCTApplicationListBox
-    {
-        border-bottom: 1px solid #ededed;
-    }
-
-    .blueTheme .esriCTCategoriesHeader
-    {
-        color: #333;
-    }
-
-    .blueTheme .esriCTTopPanel
-    {
-        background: #efefef;
-    }
-
-    .blueTheme .esriCTSortHeader
-    {
-        color: #6e6e6e;
-    }
-
-    .blueTheme .esriCTSortMenu
-    {
-        color: #6e6e6e;
-    }
-
-    .blueTheme .esriCTSortMenu ul li
-    {
-        background-color: #fff;
-        border-bottom: 1px solid #efefef;
-    }
-
-    .blueTheme .esriCTListSelected
-    {
-        border: 2px solid #007ac2;
-    }
-
-    .blueTheme .esriCTInnerLeftPanelBottom
-    {
-        background: #fff;
-        border-right: 1px solid #7453a4;
-    }
-
-    .blueTheme .esriCTRightControlPanel
-    {
-        background: none repeat scroll 0 0 #007AC2;
-        border-bottom: 1px solid #007AC2;
-    }
-
-    .blueTheme .esriCTSortAscImgMbl, .blueTheme .esriCTSortDescImgMbl
-    {
-        background-color: #007ac2;
-    }
-
-    /* End of blue theme styles */
-
-    /* Green theme styles */
-
-    .greenTheme .esriCTMenuTabRight div span.esriCTMenulbl
-    {
-        color: #028d6a;
-    }
-
-    .greenTheme .esriCTMenuTabLeft
-    {
-        background: #fff;
-        color: #028d6a;
-        padding-right: 65px;
-    }
-
-    .greenTheme .esriCTGalleryName
-    {
-        color: #028d6a;
-    }
-
-    .greenTheme .esriCTMenulbl
-    {
-        color: #007ac2;
-    }
-
-    .greenTheme .esriCTGalleryNameCategories, .greenTheme .esriCTGalleryNameSample
-    {
-        color: #028d6a;
-    }
-
-    .greenTheme .esriCTApplicationListBox
-    {
-        border-bottom: 1px solid #ededed;
-    }
-
-    .greenTheme .esriCTCategoriesHeader
-    {
-        color: #333;
-    }
-
-    .greenTheme .esriCTTopPanel
-    {
-        background: #efefef;
-    }
-
-    .greenTheme .esriCTSortHeader
-    {
-        color: #6e6e6e;
-    }
-
-    .greenTheme .esriCTListSelected
-    {
-        border: 2px solid #028d6a;
-    }
-
-    .greenTheme .esriCTSortMenu
-    {
-        color: #6e6e6e;
-    }
-
-    .greenTheme .esriCTSortMenu ul li
-    {
-        background-color: #fff;
-        border-bottom: 1px solid #efefef;
-    }
-
-    .greenTheme .esriCTInnerLeftPanelBottom
-    {
-        background: #fff;
-        border-right: 1px solid #7453a4;
-    }
-
-    .greenTheme .esriCTRightControlPanel
-    {
-        background: none repeat scroll 0 0 #028d6a;
-        border-bottom: 1px solid #028d6a;
-    }
-
-    .greenTheme .esriCTSortAscImgMbl, .greenTheme .esriCTSortDescImgMbl
-    {
-        background-color: #028d6a;
-    }
-
-    /* End of green theme styles */
-
-    /* Red theme styles */
-
-    .redTheme .esriCTMenuTabRight div span.esriCTMenulbl
-    {
-        color: #800000;
-    }
-
-    .redTheme .esriCTMenuTabLeft
-    {
-        background: #fff;
-        color: #800000;
-        padding-right: 65px;
-    }
-
-    .redTheme .esriCTGalleryName
-    {
-        color: #800000;
-    }
-
-    .redTheme .esriCTMenulbl
-    {
-        color: #007ac2;
-    }
-
-    .redTheme .esriCTGalleryNameCategories, .redTheme .esriCTGalleryNameSample
-    {
-        color: #800000;
-    }
-
-    .redTheme .esriCTApplicationListBox
-    {
-        border-bottom: 1px solid #ededed;
-    }
-
-    .redTheme .esriCTCategoriesHeader
-    {
-        color: #333;
-    }
-
-    .redTheme .esriCTTopPanel
-    {
-        background: #efefef;
-    }
-
-    .redTheme .esriCTSortHeader
-    {
-        color: #6e6e6e;
-    }
-
-    .redTheme .esriCTSortMenu
-    {
-        color: #6e6e6e;
-    }
-
-    .redTheme .esriCTListSelected
-    {
-        border: 2px solid #800000;
-    }
-
-    .redTheme .esriCTSortMenu ul li
-    {
-        background-color: #fff;
-        border-bottom: 1px solid #efefef;
-    }
-
-    .redTheme .esriCTInnerLeftPanelBottom
-    {
-        background: #fff;
-        border-right: 1px solid #7453a4;
-    }
-
-    .redTheme .esriCTListAppContent
-    {
-        border: none;
-    }
-
-    .redTheme .esriCTRightControlPanel
-    {
-        background: none repeat scroll 0 0 #800000;
-        border-bottom: 1px solid #800000;
-    }
-
-    .redTheme .esriCTSortAscImgMbl, .redTheme .esriCTSortDescImgMbl
-    {
-        background-color: #800000;
+        max-height: 33px;
     }
 }
 
@@ -1213,6 +930,12 @@
         width: 100%;
     }
 
+    .esriCTMenuTabLeft
+    {
+        background-color: #fff;
+        padding-right: 65px;
+    }
+
     .esriCTMenuTabRight
     {
         width: 100%;
@@ -1248,6 +971,8 @@
     .esriCTMapInput
     {
         float: left;
+        width: 78% !important;
+        margin: 0px;
     }
 
     .esriCTPadding
@@ -1266,6 +991,9 @@
         -o-transition: 0.3s ease-in-out;
         -ms-transition: 0.3s ease-in-out;
         transition: 0.3s ease-in-out;
+        position: absolute;
+        z-index: 9;
+        background: #fff;
     }
 
     .esriCTInnerLeftPanelTop
@@ -1273,16 +1001,13 @@
         float: right;
         padding: 0;
         width: 280px;
+        position: absolute;
+        left: -1px;
     }
 
-    .esriCTListView
+    .esriCTListView, .esriCTGridView
     {
         display: block;
-    }
-
-    .esriCTGridView
-    {
-        display: none;
     }
 
     .esriCTGalleryNameCategories, .esriCTGalleryNameSample
@@ -1293,15 +1018,10 @@
         background: #fff;
     }
 
-    .esriCTImageTopPanel
-    {
-        background: none;
-        border: none !important;
-        width: 100%;
-    }
-
     .esriCTRightPanel
     {
+        position: absolute;
+        height: 100%;
         width: 100%;
         margin-left: 0px;
     }
@@ -1311,6 +1031,7 @@
         padding-left: 10px !important;
         margin-bottom: 10px;
         margin-left: 0px;
+        border-bottom: 1px solid #ededed;
     }
 
     .esriCTListContent
@@ -1329,6 +1050,8 @@
     {
         border: none;
         line-height: 16px;
+        margin-bottom: 5px;
+        border: none;
     }
 
     .esriCTEyeNumViews span.esriCTEyeIcon
@@ -1386,6 +1109,7 @@
     {
         float: left;
         width: 100%;
+        margin-top: 44px;
     }
 
     .esriCTDetailsRightPanel
@@ -1393,6 +1117,7 @@
         float: left;
         width: 100%;
         background: #fff;
+        margin-left: 0px;
     }
 
     .esriCTDetailLeftInfo
@@ -1403,14 +1128,6 @@
     .esriCTInnerLeftPanelTopMap
     {
         display: none;
-    }
-
-    .esriCTRightPanelMap
-    {
-        display: block;
-        margin-left: 0;
-        width: 100%;
-        margin-top: 48px;
     }
 
     .esriSimpleSlider
@@ -1439,12 +1156,6 @@
         margin-top: 98px;
     }
 
-    .blueTheme .esriCTCategoriesHeader
-    {
-        font-size: 14px;
-        padding: 10px 0px;
-    }
-
     .esriCTSortByTitle
     {
         display: block;
@@ -1455,6 +1166,7 @@
     .esriCTSortHeader
     {
         padding: 0 0px 15px 15px;
+        color: #6e6e6e;
     }
 
     .esriCTSortMenu ul
@@ -1462,11 +1174,6 @@
         list-style: none;
         margin: 0;
         padding: 0;
-    }
-
-    .esriCTSortMenu ul li
-    {
-        padding: 5px 15px;
     }
 
     .esriCTSortAscImgMbl
@@ -1502,7 +1209,6 @@
         -o-transition: 0.3s ease-in-out;
         -ms-transition: 0.3s ease-in-out;
         transition: 0.3s ease-in-out;
-        border-left: 1px solid #7453a4;
     }
 
     .esriCTShiftLeft
@@ -1560,11 +1266,14 @@
         -o-transition: 0.3s ease-in-out;
         -ms-transition: 0.3s ease-in-out;
         transition: 0.3s ease-in-out;
-        border-right: 1px solid #7453a4;
     }
 
     .esriCTRightPanelMap
     {
+        display: block;
+        margin-left: 0;
+        width: 100%;
+        margin-top: 48px;
         -webkit-transition: 0.3s ease-in-out;
         -moz-transition: 0.3s ease-in-out;
         -o-transition: 0.3s ease-in-out;
@@ -1597,34 +1306,10 @@
 
     /* Left panel styles */
 
-    .esriCTRightPanel
-    {
-        position: absolute;
-        height: 100%;
-    }
-
-    .esriCTInnerLeftPanelBottom
-    {
-        position: absolute;
-        z-index: 9;
-    }
-
-    .esriCTInnerLeftPanelTop
-    {
-        position: absolute;
-        left: -1px;
-    }
-
     .esriCTLeftPanelHeader, .esriCTLeftPanelHeaderMap
     {
         padding: 15px 20px;
         margin-bottom: 10px;
-    }
-
-    .esriCTImageTopPanel
-    {
-        background: none !important;
-        border: none !important;
     }
 
     .esriCTAppListTitle
@@ -1640,11 +1325,6 @@
     .esriCTAutoSuggest
     {
         width: 100% !important;
-    }
-
-    .esriCTListAppContent
-    {
-        margin-bottom: 5px;
     }
 
     .esriCTApplicationType
@@ -1667,12 +1347,6 @@
     .esriCTReviewContainer
     {
         padding: 15px 0px;
-    }
-
-    .esriCTDetailsRightPanel
-    {
-        margin-left: 0px;
-        background: #fff;
     }
 
     .esriCTDetailsMap
@@ -1740,15 +1414,9 @@
         display: block;
     }
 
-    .esriCTBackToMapBtn, .esriCTBackToMapBtnLegend
+    .esriCTBackToMapBtn, .esriCTItemTitle
     {
         display: block;
-    }
-
-    .esriCTMapInput
-    {
-        width: 78% !important;
-        margin: 0px;
     }
 
     .esriCTSearch
@@ -1761,269 +1429,38 @@
         width: 100% !important;
     }
 
-    /* Blue theme styles */
-
-    .blueTheme .esriCTMenuTabRight div span.esriCTMenulbl
-    {
-        color: #007ac2;
-    }
-
-    .blueTheme .esriCTMenuTabLeft
-    {
-        background: #fff;
-        color: #007AC2;
-        padding-right: 65px;
-    }
-
-    .blueTheme .esriCTGalleryName
-    {
-        color: #007AC2;
-    }
-
-    .blueTheme .esriCTMenulbl
-    {
-        color: #007AC2;
-    }
-
-    .blueTheme .esriCTListAppContent
-    {
-        border: none;
-        padding: 0px;
-    }
-
-    .blueTheme .esriCTGalleryNameCategories, .blueTheme .esriCTGalleryNameSample
-    {
-        color: #007AC2;
-    }
-
-    .blueTheme .esriCTApplicationListBox
-    {
-        border-bottom: 1px solid #ededed;
-    }
-
-    .blueTheme .esriCTCategoriesHeader
+    .esriCTCategoriesHeader
     {
         color: #333;
+        font-size: 14px;
+        padding: 10px 0px;
     }
 
-    .blueTheme .esriCTTopPanel
+    .esriCTTopPanel
     {
         background: #efefef;
     }
 
-    .blueTheme .esriCTSortHeader
+    .esriCTSortMenu
     {
         color: #6e6e6e;
     }
 
-    .blueTheme .esriCTSortMenu
+    .esriCTBackToGalleryBtn
     {
-        color: #6e6e6e;
+        position: absolute;
+        top: 0px;
     }
 
-    .blueTheme .esriCTSortMenu ul li
+    .esriCTGridTitleContent
     {
-        background-color: #fff;
-        border-bottom: 1px solid #efefef;
+        max-height: 33px;
     }
 
-    .blueTheme .esriCTInnerLeftPanelBottom
+    .esriCTGridView
     {
-        background: #fff;
-        border-right: 1px solid #7453a4;
-    }
-
-    .blueTheme .esriCTApplicationListBox
-    {
-        border-bottom: 1px solid #ededed;
-    }
-
-    .blueTheme .esriCTRightControlPanel
-    {
-        background: none repeat scroll 0 0 #007AC2;
-        border-bottom: 1px solid #007AC2;
-    }
-
-    .blueTheme .esriCTSortAscImgMbl, .blueTheme .esriCTSortDescImgMbl
-    {
-        background-color: #007AC2;
-    }
-
-    .blueTheme .esriCTListSelected
-    {
-        border: 2px solid #007ac2;
-    }
-    /* End of blue theme styles */
-
-    /* Green theme styles */
-
-    .greenTheme .esriCTMenuTabRight div span.esriCTMenulbl
-    {
-        color: #028d6a;
-    }
-
-    .greenTheme .esriCTMenuTabLeft
-    {
-        background: #fff;
-        color: #028d6a;
-        padding-right: 65px;
-    }
-
-    .greenTheme .esriCTGalleryName
-    {
-        color: #028d6a;
-    }
-
-    .greenTheme .esriCTMenulbl
-    {
-        color: #007ac2;
-    }
-
-    .greenTheme .esriCTGalleryNameCategories, .greenTheme .esriCTGalleryNameSample
-    {
-        color: #028d6a;
-    }
-
-    .greenTheme .esriCTApplicationListBox
-    {
-        border-bottom: 1px solid #ededed;
-    }
-
-    .greenTheme .esriCTCategoriesHeader
-    {
-        color: #333;
-    }
-
-    .greenTheme .esriCTTopPanel
-    {
-        background: #efefef;
-    }
-
-    .greenTheme .esriCTSortHeader
-    {
-        color: #6e6e6e;
-    }
-
-    .greenTheme .esriCTSortMenu
-    {
-        color: #6e6e6e;
-    }
-
-    .greenTheme .esriCTSortMenu ul li
-    {
-        background-color: #fff;
-        border-bottom: 1px solid #efefef;
-    }
-
-    .greenTheme .esriCTSortAscImgMbl, .greenTheme .esriCTSortDescImgMbl
-    {
-        background-color: #028d6a;
-    }
-
-    .greenTheme .esriCTListSelected
-    {
-        border: 2px solid #028d6a;
-    }
-
-    .greenTheme .esriCTInnerLeftPanelBottom
-    {
-        background: #fff;
-        border-right: 1px solid #7453a4;
-    }
-
-    .greenTheme .esriCTRightControlPanel
-    {
-        background: none repeat scroll 0 0 #028d6a;
-        border-bottom: 1px solid #028d6a;
-    }
-
-    /* End of green theme styles */
-
-    /* Red theme styles */
-
-    .redTheme .esriCTMenuTabRight div span.esriCTMenulbl
-    {
-        color: #800000;
-    }
-
-    .redTheme .esriCTMenuTabLeft
-    {
-        background: #fff;
-        color: #800000;
-        padding-right: 65px;
-    }
-
-    .redTheme .esriCTGalleryName
-    {
-        color: #800000;
-    }
-
-    .redTheme .esriCTMenulbl
-    {
-        color: #007ac2;
-    }
-
-    .redTheme .esriCTGalleryNameCategories, .redTheme .esriCTGalleryNameSample
-    {
-        color: #800000;
-    }
-
-    .redTheme .esriCTApplicationListBox
-    {
-        border-bottom: 1px solid #ededed;
-    }
-
-    .redTheme .esriCTCategoriesHeader
-    {
-        color: #333;
-    }
-
-    .redTheme .esriCTTopPanel
-    {
-        background: #efefef;
-    }
-
-    .redTheme .esriCTSortHeader
-    {
-        color: #6e6e6e;
-    }
-
-    .redTheme .esriCTSortMenu
-    {
-        color: #6e6e6e;
-    }
-
-    .redTheme .esriCTSortMenu ul li
-    {
-        background-color: #fff;
-        border-bottom: 1px solid #efefef;
-    }
-
-    .redTheme .esriCTInnerLeftPanelBottom
-    {
-        background: #fff;
-        border-right: 1px solid #7453a4;
-    }
-
-    .redTheme .esriCTApplicationListBox
-    {
-        border-bottom: 1px solid #ededed;
-    }
-
-    .redTheme .esriCTRightControlPanel
-    {
-        background: none repeat scroll 0 0 #800000;
-        border-bottom: 1px solid #800000;
-    }
-
-    .redTheme .esriCTSortAscImgMbl, .redTheme .esriCTSortDescImgMbl
-    {
-        background-color: #800000;
-    }
-
-    .redTheme .esriCTListSelected
-    {
-        border: 2px solid #800000;
+        width: 220px !important;
+        margin: 0px auto;
     }
 }
 
@@ -2086,9 +1523,6 @@
         background: #fff;
         height: 100px;
         overflow: auto;
-        border-left: 1px solid #007ac2;
-        border-right: 1px solid #007ac2;
-        border-bottom: 1px solid #007ac2;
         z-index: 100;
         float: left;
     }
@@ -2177,27 +1611,9 @@
         display: block;
     }
 
-    .esriCTBackToMapBtn, .esriCTBackToMapBtnLegend
+    .esriCTBackToMapBtn, .esriCTItemTitle
     {
         display: block;
-    }
-
-    .blueTheme .esriCTRightControlPanel
-    {
-        background: none repeat scroll 0 0 #007AC2;
-        border-bottom: 1px solid #007AC2;
-    }
-
-    .greenTheme .esriCTRightControlPanel
-    {
-        background: none repeat scroll 0 0 #028d6a;
-        border-bottom: 1px solid #028d6a;
-    }
-
-    .redTheme .esriCTRightControlPanel
-    {
-        background: none repeat scroll 0 0 #800000;
-        border-bottom: 1px solid #800000;
     }
 }
 
@@ -2228,7 +1644,7 @@
         display: block;
     }
 
-    .esriCTBackToMapBtn, .esriCTBackToMapBtnLegend
+    .esriCTBackToMapBtn, .esriCTItemTitle
     {
         display: block;
     }
@@ -2250,5 +1666,11 @@
         overflow: hidden;
         display: inline-block;
         white-space: nowrap;
+    }
+
+    .esriCTGridView
+    {
+        width: 239px;
+        margin: 0px auto;
     }
 }

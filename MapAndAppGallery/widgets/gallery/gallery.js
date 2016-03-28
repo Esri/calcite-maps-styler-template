@@ -34,8 +34,10 @@ define([
     "dojo/number",
     "dojo/topic",
     "dojo/dom-style",
-    "dojo/dom-geometry"
-], function (declare, domConstruct, lang, domAttr, template, _WidgetBase, _TemplatedMixin, _WidgetsInTemplateMixin, nls, ItemDetails, query, domClass, on, Deferred, number, topic, domStyle, domGeom) {
+    "dojo/dom-geometry",
+    "dojo/touch",
+    "dojox/gesture/tap"
+], function (declare, domConstruct, lang, domAttr, template, _WidgetBase, _TemplatedMixin, _WidgetsInTemplateMixin, nls, ItemDetails, query, domClass, on, Deferred, number, topic, domStyle, domGeom, touch, tap) {
 
     declare("ItemGallery", [_WidgetBase, _TemplatedMixin, _WidgetsInTemplateMixin], {
         templateString: template,
@@ -55,11 +57,6 @@ define([
             } else {
                 dojo.gridView = true;
                 domClass.replace(query(".icon-header")[0], "icon-list", "icon-grid");
-            }
-            if (query(".esriCTSignInIcon")[0]) {
-                if (domStyle.get(query(".esriCTSignInIcon")[0], "display") === "none") {
-                    dojo.gridView = false;
-                }
             }
             // Show more items from the group on click of 'Show more' button
             this.own(on(this.galleryNext, "click", lang.hitch(this, function () {
@@ -163,10 +160,35 @@ define([
                     }), 100);
                 }
             }));
+
+            //attach 'click' event on 'back' button to show gallery view
+            this.own(on(this.backToGalleryBtn, "click", lang.hitch(this, this._backToGalleryView)));
+            //handler to display gallery view
+            topic.subscribe("backToGalleryView", lang.hitch(this, this._backToGalleryView));
             var panelHeight = (window.innerHeight - domGeom.position(query(".esriCTMenuTab")[0]).h - 20) + "px";
             domStyle.set(query(".esriCTInnerRightPanel")[0], "height", panelHeight);
         },
 
+        /**
+        * Display gallery view on clicking of back button
+        * @memberOf widgets/gallery/gallery
+        */
+        _backToGalleryView: function () {
+            //hide item details view and display gallery page
+            if (query(".esriCTitemDetails")[0]) {
+                dojo.destroy(query(".esriCTitemDetails")[0]);
+                domClass.remove(query(".esriCTGalleryContent")[0], "displayNoneAll");
+                domClass.remove(query(".esriCTApplicationIcon")[0], "esriCTCursorPointer");
+            }
+            if (query(".esriCTInnerRightPanelDetails")[0] && (!query(".esriCTNoResults")[0])) {
+                domClass.replace(query(".esriCTMenuTabRight")[0], "displayBlockAll", "displayNoneAll");
+                domClass.add(query(".esriCTInnerRightPanelDetails")[0], "displayNoneAll");
+                domClass.remove(query(".esriCTGalleryContent")[0], "displayNoneAll");
+                domClass.remove(query(".esriCTInnerRightPanel")[0], "displayNoneAll");
+                domClass.remove(query(".esriCTApplicationIcon")[0], "esriCTCursorPointer");
+            }
+            topic.publish("hideProgressIndicator");
+        },
         /**
         * Creates the gallery item pods
         * @memberOf widgets/gallery/gallery
@@ -188,10 +210,14 @@ define([
             // Display gallery in list view or grid view
             for (i = 0; i < itemResults.length; i++) {
                 if (!dojo.gridView) {
+                    //add class to identify selected view mode
+                    domClass.replace(this.itemPodsList, "esriCTListView", "esriCTGridView");
                     divPodParentList = domConstruct.create('div', { "class": "esriCTApplicationListBox" }, this.itemPodsList);
                     this._createThumbnails(itemResults[i], divPodParentList);
                     this._createItemOverviewPanel(itemResults[i], divPodParentList);
                 } else {
+                    //add class to identify selected view mode
+                    domClass.replace(this.itemPodsList, "esriCTGridView", "esriCTListView");
                     divPodParent = domConstruct.create('div', { "class": "esriCTApplicationBox" }, this.itemPodsList);
                     this._createThumbnails(itemResults[i], divPodParent);
                     this._createGridItemOverview(itemResults[i], divPodParent);
@@ -205,10 +231,11 @@ define([
         * @memberOf widgets/gallery/gallery
         */
         _createGridItemOverview: function (itemResult, divPodParent) {
-            var divItemTitleRight, divItemTitleText, divItemType, spanItemType, divItemWatchEye, spanItemWatchEyeText;
+            var divItemTitleRight, divItemTitleText, divItemType, spanItemType, divItemWatchEye, spanItemWatchEyeText, divItemDetailsIcon, dataType;
 
             divItemTitleRight = domConstruct.create('div', { "class": "esriCTDivClear" }, divPodParent);
             divItemTitleText = domConstruct.create('div', { "class": "esriCTListAppTitle esriCTGridTitleContent esriCTCursorPointer" }, divItemTitleRight);
+            divItemDetailsIcon = domConstruct.create('div', { "class": "icon-info-circled-alt esriCTItemInfoIcon" }, divItemTitleRight);
             domAttr.set(divItemTitleText, "innerHTML", (itemResult.title) || (nls.showNullValue));
             domAttr.set(divItemTitleText, "title", (itemResult.title) || (nls.showNullValue));
             divItemType = domConstruct.create('div', { "class": "esriCTGridItemType" }, divItemTitleRight);
@@ -227,6 +254,15 @@ define([
             }
             // Handle item title click in grid layout
             this.own(on(divItemTitleText, "click", lang.hitch(this, function () {
+                dataType = itemResult.type.toLowerCase();
+                if (((dataType !== "map service") && (dataType !== "web map") && (dataType !== "feature service") && (dataType !== "image service") && (dataType !== "kml") && (dataType !== "wms") && (dataType !== "vector tile service")) || (dataType === "operation view")) {
+                    dojo.downloadWindow = window.open('', "_blank");
+                }
+                this.showInfoPage(itemResult, false);
+            })));
+
+            // Handle item title click in grid layout
+            this.own(on(divItemDetailsIcon, "click", lang.hitch(this, function () {
                 topic.publish("showProgressIndicator");
                 this.showInfoPage(itemResult, true);
             })));
@@ -237,12 +273,18 @@ define([
         * @memberOf widgets/gallery/gallery
         */
         _createThumbnails: function (itemResult, divPodParent) {
-            var divThumbnail, divThumbnailImage, divTagContainer, divTagContent, dataType, thumbnailUrl;
+            var divThumbnail, divThumbnailImage, divTagContainer, divTagContent, dataType, thumbnailUrl, divItemSnippet, spanItemReadMore;
 
             if (!dojo.gridView) {
                 divThumbnail = domConstruct.create('div', { "class": "esriCTImageContainerList" }, divPodParent);
             } else {
                 divThumbnail = domConstruct.create('div', { "class": "esriCTImageContainer" }, divPodParent);
+                divItemSnippet = domConstruct.create('div', { "class": "esriCTItemSnippet" }, divThumbnail);
+                //create container to display snippet text of item on hovering of it
+                if (itemResult.snippet) {
+                    spanItemReadMore = domConstruct.create("div", { "class": "esriCTItemSnippetText" }, divItemSnippet);
+                    domAttr.set(spanItemReadMore, "innerHTML", itemResult.snippet);
+                }
             }
 
             divThumbnailImage = domConstruct.create('div', { "class": "esriCTAppImage" }, divThumbnail);
@@ -263,15 +305,46 @@ define([
             if (dojo.configData.values.displaySharingAttribute) {
                 this._accessLogoType(itemResult, divTagContent);
             }
-
-            // Handle thumbnail image click
-            this.own(on(divThumbnailImage, "click", lang.hitch(this, function () {
-                dataType = itemResult.type.toLowerCase();
-                if (((dataType !== "map service") && (dataType !== "web map") && (dataType !== "feature service") && (dataType !== "image service") && (dataType !== "kml") && (dataType !== "wms") && (dataType !== "vector tile service")) || (dataType === "operation view")) {
-                    dojo.downloadWindow = window.open('', "_blank");
+            if (dojo.gridView && window.hasOwnProperty && window.hasOwnProperty('orientation')) {
+                if (divItemSnippet) {
+                    on(divThumbnail, tap.hold, lang.hitch(this, function (e) {
+                        domClass.add(divItemSnippet, "esriCTItemSnippetHover");
+                    }));
+                    on(divThumbnail, touch.release, lang.hitch(this, function (e) {
+                        domClass.remove(divItemSnippet, "esriCTItemSnippetHover");
+                    }));
+                    on(divThumbnail, touch.out, lang.hitch(this, function (e) {
+                        domClass.remove(divItemSnippet, "esriCTItemSnippetHover");
+                    }));
                 }
-                this.showInfoPage(itemResult, false);
-            })));
+                // Handle thumbnail image click
+                on(divThumbnail, tap, lang.hitch(this, function (e) {
+                    topic.publish("showProgressIndicator");
+                    dataType = itemResult.type.toLowerCase();
+                    if (((dataType !== "map service") && (dataType !== "web map") && (dataType !== "feature service") && (dataType !== "image service") && (dataType !== "kml") && (dataType !== "wms") && (dataType !== "vector tile service")) || (dataType === "operation view")) {
+                        dojo.downloadWindow = window.open('', "_blank");
+                    }
+                    this.showInfoPage(itemResult, false);
+                }));
+            } else {
+                if (divItemSnippet) {
+                    on(divThumbnail, "mouseover", lang.hitch(this, function (e) {
+                        domClass.add(divItemSnippet, "esriCTItemSnippetHover");
+                    }));
+                    on(divThumbnail, "mouseout", lang.hitch(this, function (e) {
+                        domClass.remove(divItemSnippet, "esriCTItemSnippetHover");
+                    }));
+                }
+                // Handle thumbnail image click
+                on(divThumbnail, "click", lang.hitch(this, function (e) {
+                    topic.publish("showProgressIndicator");
+                    dataType = itemResult.type.toLowerCase();
+                    if (((dataType !== "map service") && (dataType !== "web map") && (dataType !== "feature service") && (dataType !== "image service") && (dataType !== "kml") && (dataType !== "wms") && (dataType !== "vector tile service")) || (dataType === "operation view")) {
+                        dojo.downloadWindow = window.open('', "_blank");
+                    }
+                    this.showInfoPage(itemResult, false);
+                }));
+            }
         },
 
         /**
@@ -291,9 +364,6 @@ define([
                     } else {
                         itemDetails = new ItemDetails({ data: data });
                         itemDetails.startup();
-                    }
-                    if (dojo.downloadWindow) {
-                        dojo.downloadWindow.close();
                     }
                 } else {
                     topic.publish("hideProgressIndicator");
@@ -370,7 +440,7 @@ define([
         _createItemOverviewPanel: function (itemResult, divPodParent) {
             var divContent, divTitle, divItemTitle, divItemTitleRight, divItemTitleText, divItemInfo, divItemType,
                 divRatings, numberStars, i, imgRating, divItemWatchEye, spanItemWatchEyeText, divItemContent,
-                divItemSnippet, spanItemReadMore, divEyeIcon;
+                divItemSnippet, spanItemReadMore, divEyeIcon, divItemViewIcon, divItemDetailsIcon, divItemBtnContainer, dataType;
 
             divContent = domConstruct.create('div', { "class": "esriCTListContent" }, divPodParent);
             divTitle = domConstruct.create('div', { "class": "esriCTAppListTitle" }, divContent);
@@ -415,8 +485,37 @@ define([
                 spanItemReadMore = domConstruct.create('span', {}, divItemSnippet);
                 domAttr.set(spanItemReadMore, "innerHTML", itemResult.snippet);
             }
+
             // Handle item title click in list layout
             this.own(on(divItemTitleText, "click", lang.hitch(this, function () {
+                dataType = itemResult.type.toLowerCase();
+                if (((dataType !== "map service") && (dataType !== "web map") && (dataType !== "feature service") && (dataType !== "image service") && (dataType !== "kml") && (dataType !== "wms") && (dataType !== "vector tile service")) || (dataType === "operation view")) {
+                    dojo.downloadWindow = window.open('', "_blank");
+                }
+                this.showInfoPage(itemResult, false);
+            })));
+
+            //create container for open/view and info buttons
+            divItemBtnContainer = domConstruct.create('div', { "class": "esriCTItemBtnContainer" }, divItemContent);
+
+            //create open/view button
+            divItemViewIcon = domConstruct.create('div', { "class": "icon-item-open esriCTItemViewIcon", "title": nls.title.viewBtnTitle }, divItemBtnContainer);
+
+            // Handle item title click in list layout
+            this.own(on(divItemViewIcon, "click", lang.hitch(this, function () {
+                topic.publish("showProgressIndicator");
+                dataType = itemResult.type.toLowerCase();
+                if (((dataType !== "map service") && (dataType !== "web map") && (dataType !== "feature service") && (dataType !== "image service") && (dataType !== "kml") && (dataType !== "wms") && (dataType !== "vector tile service")) || (dataType === "operation view")) {
+                    dojo.downloadWindow = window.open('', "_blank");
+                }
+                this.showInfoPage(itemResult, false);
+            })));
+
+            //create info button
+            divItemDetailsIcon = domConstruct.create('div', { "class": "icon-info-circled-alt esriCTItemDetailsIcon", "title": nls.title.infoBtnTitle }, divItemBtnContainer);
+
+            // Handle item title click in list layout
+            this.own(on(divItemDetailsIcon, "click", lang.hitch(this, function () {
                 topic.publish("showProgressIndicator");
                 this.showInfoPage(itemResult, true);
             })));
@@ -451,8 +550,8 @@ define([
                     // Try it button would be displayed for rest of the items
                     dataArray = {};
                     if (data.itemType === "file" && data.type.toLowerCase() !== "kml" && data.type.toLowerCase() !== "cityengine web scene") {
-                        domAttr.set(this.btnTryItNow, "innerHTML", nls.downloadButtonText);
-                        domClass.add(this.btnTryItNow, "esriCTDownloadButton");
+                        domAttr.set(this.btnTryItNow, "title", nls.downloadButtonText);
+                        domClass.replace(this.btnTryItNow, "icon-download", "icon-item-open");
                     } else if (data.type.toLowerCase() === "operation view") {
                         if (dojo.configData.values.token) {
                             tokenString = "&token=" + dojo.configData.values.token;
@@ -464,14 +563,15 @@ define([
                         topic.publish("queryItemInfo", itemUrl, defObject);
                         defObject.then(lang.hitch(this, function (result) {
                             if (result.desktopLayout) {
-                                domAttr.set(this.btnTryItNow, "innerHTML", nls.downloadButtonText);
+                                domAttr.set(this.btnTryItNow, "title", nls.downloadButtonText);
                             } else if (result.tabletLayout) {
-                                domAttr.set(this.btnTryItNow, "innerHTML", nls.tryItButtonText);
+                                domAttr.set(this.btnTryItNow, "title", nls.tryItButtonText);
                             }
                         }));
                     } else {
-                        domAttr.set(this.btnTryItNow, "innerHTML", nls.tryItButtonText);
-                        domClass.remove(this.btnTryItNow, "esriCTDownloadButton");
+                        domAttr.set(this.btnTryItNow, "title", nls.tryItButtonText);
+                        domClass.replace(this.btnTryItNow, "icon-item-open", "icon-download");
+
                     }
 
                     dataArray = {
@@ -500,7 +600,6 @@ define([
                         this._createCommentsContainer(itemResult, this.detailsContent);
                     }
                 }
-                topic.publish("hideProgressIndicator");
             }), function (err) {
                 alert(err.message);
                 topic.publish("hideProgressIndicator");
@@ -561,7 +660,7 @@ define([
                     accessInfo = domConstruct.create('div', { "class": "esriCTText" }, accessContainer);
                     domAttr.set(accessInfo, "innerHTML", itemResult.licenseInfo || "");
                 }
-                domAttr.set(this.btnTryItNow, "innerHTML", "");
+                domAttr.set(this.btnTryItNow, "title", "");
                 this._createItemDescription(itemResult, itemDescription);
                 if (this._btnTryItNowHandle) {
                     /**
@@ -571,7 +670,7 @@ define([
                 }
                 dataType = itemResult.type.toLowerCase();
                 this._btnTryItNowHandle = on(this.btnTryItNow, "click", lang.hitch(this, function () {
-                    if ((domAttr.get(this.btnTryItNow, "innerHTML") === nls.downloadButtonText) || ((dataType !== "map service") && (dataType !== "web map") && (dataType !== "feature service") && (dataType !== "image service") && (dataType !== "kml") && (dataType !== "wms") && (dataType !== "vector tile service"))) {
+                    if ((domAttr.get(this.btnTryItNow, "title") === nls.downloadButtonText) || ((dataType !== "map service") && (dataType !== "web map") && (dataType !== "feature service") && (dataType !== "image service") && (dataType !== "kml") && (dataType !== "wms") && (dataType !== "vector tile service"))) {
                         dojo.downloadWindow = window.open('', "_blank");
                     }
                     this._showTryItNowView(this.btnTryItNow, itemResult, dataArray);
@@ -629,6 +728,7 @@ define([
                 itemSize = Math.round(itemSizeValue) + " " + nls.sizeUnitKB;
             }
             domConstruct.create('div', { "class": "esriCTText", "innerHTML": itemSize }, sizeContent);
+            topic.publish("hideProgressIndicator");
         },
 
         /**

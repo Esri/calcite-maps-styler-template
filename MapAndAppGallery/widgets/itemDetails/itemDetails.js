@@ -125,6 +125,16 @@ define([
                 this._switchTabs(this.infoTab, this.legendTab, this.layerDescription, this.legendDetails);
             })));
 
+            //display gallery view on clicking of back button
+            this.own(on(this.backToGalleryBtn, "click", lang.hitch(this, function () {
+                topic.publish("backToGalleryView");
+            })));
+
+            //display gallery view on clicking of back button
+            this.own(on(this.backToGallery, "click", lang.hitch(this, function () {
+                topic.publish("backToGalleryView");
+            })));
+
             // Handle window resize
             on(window, "resize", lang.hitch(this, function () {
                 if (query(".esriRightControlPanelLegend")[0]) {
@@ -294,7 +304,7 @@ define([
                         }));
                         deferredArray.push(mapDeferred);
                     } if (info.type === "Vector Tile Service") {
-                    //if item is vector tile layer
+                        //if item is vector tile layer
                         thumbnailSrc = (groupInfo.results[index].thumbnail === null) ? dojo.configData.values.noThumbnail : dojo.configData.values.portalURL + "/sharing/rest/content/items/" + info.id + "/info/" + info.thumbnail;
                         basemapId = groupInfo.results[index].name || groupInfo.results[index].id;
                         info.layerUrl = dojo.configData.values.portalURL + "/sharing/content/items/" + info.id + "/resources/styles/root.json";
@@ -556,7 +566,6 @@ define([
             }
             if (domClass.contains(query(".esriCTRightControlPanel")[0], "esriRightControlPanelMap")) {
                 domClass.replace(query(".esriCTRightControlPanel")[0], "esriRightControlPanelLegend", "esriRightControlPanelMap");
-                domClass.replace(this.divBackToMapContainer, "esriCTBackToMapBtn", "esriCTBackToMapBtnLegend");
                 domClass.replace(query(".esriCTHomeIcon")[0], "displayNone", "displayBlock");
                 domClass.replace(query(".esriCTMapInput")[0], "displayNone", "displayBlock");
                 domClass.replace(this.divItemTitle, "displayBlockAll", "displayNoneAll");
@@ -564,7 +573,6 @@ define([
                 domStyle.set(this.spanItemTitleText, "width", titleWidth);
             } else {
                 domClass.replace(query(".esriCTRightControlPanel")[0], "esriRightControlPanelMap", "esriRightControlPanelLegend");
-                domClass.replace(this.divBackToMapContainer, "esriCTBackToMapBtnLegend", "esriCTBackToMapBtn");
                 domClass.replace(query(".esriCTHomeIcon")[0], "displayBlock", "displayNone");
                 domClass.replace(query(".esriCTMapInput")[0], "displayBlock", "displayNone");
                 domClass.replace(this.divItemTitle, "displayNoneAll", "displayBlockAll");

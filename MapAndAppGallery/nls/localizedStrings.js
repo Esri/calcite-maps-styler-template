@@ -69,7 +69,9 @@ define({
             signOutBtnTitle: "Sign Out",
             geolocationBtnTitle: "Geolocation",
             ascendingSort: "Ascending",
-            descendingSort: "Descending"
+            descendingSort: "Descending",
+            viewBtnTitle: "View",
+            backButtonTitle: "Back"
         },
         errorMessages: {
             emptyGroup: "The configured group is not having any data to perform query.",

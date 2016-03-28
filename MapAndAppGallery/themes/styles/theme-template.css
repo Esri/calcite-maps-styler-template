@@ -1,0 +1,180 @@
+﻿.esriCTRatingStarIconColor
+{
+    color:${SelectedThemeColor} !important;
+}
+
+input
+{
+    border: 1px solid ${SelectedThemeColor} !important;
+}
+
+.esriCTMapIcons, .esriCTGeolocationIcon
+{
+    background-color:${SelectedThemeColor} !important;
+}
+
+.esriCTAutoSuggest
+{
+    border-left: 1px solid ${SelectedThemeColor} !important;
+    border-right: 1px solid ${SelectedThemeColor} !important;
+    border-bottom: 1px solid ${SelectedThemeColor} !important;
+}
+
+/* Left panel */
+
+.esriCTLeftPanelHeader, .esriCTLeftPanelHeaderMap
+{
+    color: ${SelectedThemeColor} !important;
+}
+
+.esriCTReviewHeader
+{
+    color: ${SelectedThemeColor} !important;
+}
+
+.esriCTListAppTitle
+{
+    color: ${SelectedThemeColor} !important;
+}
+
+.esriCTCategoriesHeader
+{
+    color: ${SelectedThemeColor} !important !important;
+}
+
+.esriCTAppImage
+{
+    border: 1px solid ${SelectedThemeColor} !important;
+}
+
+.esriCTMenuTab
+{
+    background: none repeat scroll 0 0 ${SelectedThemeColor} !important;
+    border-bottom: 1px solid ${SelectedThemeColor} !important;
+}
+
+.esriCTMenuTabRightMap
+{
+    background: none repeat scroll 0 0 ${SelectedThemeColor} !important;
+    border-bottom: 1px solid ${SelectedThemeColor} !important;
+}
+
+.esriCTTagCloudHighlight
+{
+    background: ${SelectedThemeColor} !important;
+}
+
+.esriCTSharingTag
+{
+    background: ${SelectedThemeColor} !important;
+    color: #fff;
+}
+
+.esriCTComments, .esriCTComments
+{
+    color: #ccc;
+}
+
+/* Item details page styles */
+
+.esriCTDetailsMap img
+{
+    border: 1px solid ${SelectedThemeColor} !important;
+}
+
+.esriCTEyeNumViews span.view
+{
+    color: #b6b6b6;
+}
+
+.dijitDialogTitleBar
+{
+    background-color: ${SelectedThemeColor} !important;
+}
+
+.esriCTExpand, .esriCTMoreInfo
+{
+    color: ${SelectedThemeColor} !important;
+}
+
+.esriCTMoreResultsButton
+{
+    background: ${SelectedThemeColor} !important;
+    color: white;
+}
+
+.esriCTEyeIcon
+{
+    color: ${SelectedThemeColor} !important;
+}
+
+.esriCTLeftText div span a
+{
+    color: ${SelectedThemeColor} !important;
+}
+
+.dijitButton
+{
+    border: 1px solid ${SelectedThemeColor} !important;
+    color: #fff;
+    background-color: ${SelectedThemeColor} !important;
+}
+
+.esriCTTabList li a.select
+{
+    background: ${SelectedThemeColor} !important;
+    color: #fff;
+    cursor: default !important;
+}
+
+.HomeButton .home, .HomeButton .home:hover
+{
+    background-color: ${SelectedThemeColor} !important;
+}
+
+.esriSimpleSliderDecrementButton, .esriSimpleSliderIncrementButton
+{
+    background-color: ${SelectedThemeColor} !important;
+}
+
+.dijitDialogUnderlay
+{
+    background: ${SelectedThemeColor} !important;
+    opacity: 0.55;
+}
+
+.esriCTSearchBtnMap
+{
+    border: 1px solid ${SelectedThemeColor};
+    border-left: none;
+}
+
+.esriCTLayerInfo
+{
+    color: ${SelectedThemeColor} !important;
+}
+
+.esriCTSortViews ul
+{
+    background: ${SelectedThemeColor} !important;
+}
+
+.esriCTItemSnippet
+{
+   border: 1px solid ${SelectedThemeColor} !important;
+}
+
+.esriCTItemInfoIcon, .esriCTItemViewIcon, .esriCTItemDetailsIcon, .esriCTTryItNowBtn, .esriCTBackToGalleryBtn
+{
+    color: ${SelectedThemeColor} !important;
+}
+
+.esriCTShiftRightPanel
+{
+        border-right: 1px solid ${SelectedThemeColor} !important;
+}
+
+.esriCTShiftRight
+{
+        border-left: 1px solid ${SelectedThemeColor} !important;
+}

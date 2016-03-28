@@ -27,7 +27,7 @@
         "applicationName": "Gallery",
         "applicationIcon": "",
         "applicationFavicon": "/themes/images/favicon.ico",
-        "theme": "blueTheme",
+        "theme": "#007ac2",
         "defaultLayout": "list",
         "sortField": "numViews",
         "sortOrder": "desc",
@@ -82,26 +82,14 @@
                 }, {
                     "label": "Color scheme",
                     "fieldName": "theme",
-                    "type": "string",
-                    "options": [
-                        {
-                            "label": "Blue",
-                            "value": "blueTheme"
-                        }, {
-                            "label": "Red",
-                            "value": "redTheme"
-                        }, {
-                            "label": "Green",
-                            "value": "greenTheme"
-                        }
-                    ],
+                    "type": "color",
                     "tooltip": "Color of header bar and widget windows"
                 }
             ]
         }, {
             "category": "<b>Gallery Settings</b>",
             "fields": [
-                
+
                 {
                     "label": "Default gallery layout",
                     "fieldName": "defaultLayout",

@@ -28,10 +28,14 @@ define([
     "dojo/i18n!nls/localizedStrings",
     "dojo/query",
     "dojo/dom-class",
+    "dojo/dom-construct",
+    "dojo/string",
+    "dojo/text!themes/theme-template.css",
+    "dojo/text!themes/mediaQueries-template.css",
     "esri/urlUtils",
     "esri/arcgis/utils",
     "widgets/searchAGOLGroupItems/searchAGOLGroupItems"
-], function (declare, _WidgetBase, AppHeader, array, lang, Deferred, all, topic, nls, query, domClass, urlUtils, arcgisUtils, PortalSignin) {
+], function (declare, _WidgetBase, AppHeader, array, lang, Deferred, all, topic, nls, query, domClass, domConstruct, string, ThemeCss, MediaThemeCss, urlUtils, arcgisUtils, PortalSignin) {
 
     return declare([_WidgetBase], {
         nls: nls,
@@ -117,11 +121,53 @@ define([
         },
 
         _applicationThemeLoader: function () {
-            var rootNode = query("html")[0];
-            if (!dojo.configData.values.theme) {
-                dojo.configData.values.theme = "blueTheme";
+            var cssString, mediaCssString, headNode, styleNode, mediaStyleNode;
+            //if theme is configured
+            if (dojo.configData.values.theme) {
+                //substitute theme color values in theme template
+                cssString = string.substitute(ThemeCss, {
+                    SelectedThemeColor: dojo.configData.values.theme
+                });
+                mediaCssString = string.substitute(MediaThemeCss, {
+                    SelectedThemeColor: dojo.configData.values.theme
+                });
+                //Create Style using theme template and append it to head
+                headNode = document.getElementsByTagName('head')[0];
+                styleNode = document.getElementById("styleNode");
+                mediaStyleNode = document.getElementById("mediaStyleNode");
+                if (styleNode) {
+                    headNode.removeChild(styleNode);
+                    styleNode = null;
+
+                }
+                if (mediaStyleNode) {
+                    headNode.removeChild(mediaStyleNode);
+                    mediaStyleNode = null;
+                }
+                if (dojo.isIE < 10) {
+                    styleNode = document.createElement('style');
+                    styleNode.id = "styleNode";
+                    styleNode.type = 'text/css';
+                    styleNode.styleSheet.cssText = cssString;
+                    headNode.appendChild(styleNode);
+                    mediaStyleNode = document.createElement('style');
+                    mediaStyleNode.id = "mediaStyleNode";
+                    mediaStyleNode.type = 'text/css';
+                    mediaStyleNode.styleSheet.cssText = mediaCssString;
+                    headNode.appendChild(mediaStyleNode);
+                } else {
+                    domConstruct.create("style", {
+                        "type": "text/css",
+                        "innerHTML": cssString,
+                        "id": "styleNode"
+                    }, headNode);
+                    domConstruct.create("style", {
+                        "type": "text/css",
+                        "innerHTML": mediaCssString,
+                        "id": "mediaStyleNode"
+                    }, headNode);
+                }
             }
-            domClass.add(rootNode, dojo.configData.values.theme);
         }
 
     });

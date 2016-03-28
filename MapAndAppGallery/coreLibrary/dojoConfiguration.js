@@ -36,6 +36,9 @@ dojoConfig = {
     }, {
         name: "nls",
         location: root + '/nls'
+    }, {
+        name: "themes",
+        location: root + '/themes/styles'
     }]
 };
 //check URL params to detect language
