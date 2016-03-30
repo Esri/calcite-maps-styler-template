@@ -33,15 +33,15 @@ define({
             avgRating: "Rating", // Appears in web-map list description panel when it is set to true
             noWebMapInGroup: "Configured group is invalid or no items have been shared with this group yet", // Appears when invalid group in configured or no web-map is available in that group
             infoBtnToolTip: "Map information", // Display tool-tip on command button to display description of web-map
-            openWebmapList: "Open Map/Layer selection panel", //tooltip for toggle button
-            closeWebmapList: "Close Map/Layer selection panel" //tooltip for toggle button
+            openWebmapList: "Open panel", //tooltip for toggle button
+            closeWebmapList: "Close panel" //tooltip for toggle button
         },
         geoform: {
             enterInformation: "Details", // Shown as the first section of the geoform, where the user can enter details of the issue
             selectAttachments: "Attachments", // Appears above 'Select file' button indicating option to attach files
             selectFileText: "Browse", // Command button to open a dialog box to select file(s) to be attached
             enterLocation: "Location", // Shown as the second section of the geoform, where the user can select a location on the map
-            reportItButton: "Report It", // Command button to submit the geoform to report an issue
+            reportItButton: "Submit", // Command button to submit the geoform to report an issue
             cancelButton: "Cancel", //Command button to close the geoform
             requiredField: "(required)", // Shown next to the field in which the data is mandatory
             selectDefaultText: "Select&hellip;", // Shown in the dropdown field indicating to select an option
@@ -53,8 +53,8 @@ define({
             invalidDouble: "Please enter a number", // Shown when the entered value is beyond the specified range (valid ${openStrong}double${closeStrong} value between -2.2E308 and 1.8E308)
             requiredFields: "Please provide values for all required fields", // Shown when user submits the geoform without entering data in the mandatory field(s)
             selectLocation: "Please select the location for your report", // Shown when user submits the geoform without selecting location on the map
-            numericRangeHintMessage: "${openStrong}Hint:${closeStrong} Minimum value ${minValue} and Maximum value ${maxValue}", // Shown as a pop over above the fields with numeric values, indicating the minimum and maximum range
-            dateRangeHintMessage: "${openStrong}Hint:${closeStrong} Minimum Date ${minValue} and Maximum Date ${maxValue}", // Shown as a pop over above the fields with date values, indicating the minimum and maximum date range
+            numericRangeHintMessage: "${openStrong}Hint:${closeStrong} Minimum value ${minValue} and maximum value ${maxValue}", // Shown as a pop over above the fields with numeric values, indicating the minimum and maximum range
+            dateRangeHintMessage: "${openStrong}Hint:${closeStrong} Minimum date ${minValue} and Maximum date ${maxValue}", // Shown as a pop over above the fields with date values, indicating the minimum and maximum date range
             errorsInApplyEdits: "Report could not be submitted", // Shown when there is an error in any of the services while submitting the geoform
             attachmentSelectedMsg: "attachment(s) selected", // Shown besides the select file button indicating the number of files attached
             attachmentUploadStatus: "${failed} of ${total} attachment(s) failed to upload", // Shown when there is error while uploading the attachment, while submitting the geoform
@@ -62,7 +62,7 @@ define({
             geoLocationOutOfExtent: "Current location is out of basemap extent", // Shown when the current geographical position is out of the basemap extent
             submitButtonTooltip: "Save", // Command button to open the geoform
             cancelButtonTooltip: "Cancel", //tooltip for cancel button
-            geoformBackButtonTooltip: "Go to the report list", //tooltip for Geoform back button
+            geoformBackButtonTooltip: "Return to the report list", //tooltip for Geoform back button
             updateFeaturesConfirmationMsg: "${count} features will be updated", //confirmation essage to be displayed before updating the features
             attachmentHeaderText: "Attachments"//attachment header Text
         },
@@ -83,19 +83,19 @@ define({
             filterLabel: "Filter", // Appears as a label for Filter container
             valueRadioButtonLabel: "Value", // Appears as a label for 'Value' radio button in filter container
             uniqueRadioButtonLabel: "Unique", // Appears as a label for 'Unique' radio button in filter container
-            selectLayerToBegin: "Please select a map." // for showing default message on application load
+            selectLayerToBegin: "Select a category to get started" // for showing default message on application load
         },
         timeSlider: {
             timeSliderLabel: "Time range", // Appears beside time slider widget
-            timeSliderInEditModeAlert: "Cannot change time slider in edit mode" // Displayed when user tries to change time-slider in edit mode
+            timeSliderInEditModeAlert: "Time slider unavailable while editing" // Displayed when user tries to change time-slider in edit mode
         },
         comment: {
             commentsFormSubmitButton: "Save", // Displayed on submit button to display comments
             commentsFormCancelButton: "Cancel", // Displayed on cancel button to cancel comments
-            errorInSubmittingComment: "Comment could not be submitted.", // Shown when user is unable to add comments
-            emptyCommentMessage: "Please enter a comment.", // Shown when user submits a comment without any text/character
-            placeHolderText: "Type a comment", // Shown as a placeholder in comments textbox
-            noCommentsAvailableText: "No comments available", // Shown when no comments are available for the selected issue
+            errorInSubmittingComment: "Edits could not be saved.", // Shown when user is unable to add comments
+            emptyCommentMessage: "Value required", // Shown when user submits a comment without any text/character
+            placeHolderText: "", // Shown as a placeholder in comments textbox
+            noCommentsAvailableText: "No records available", // Shown when no comments are available for the selected issue
             remainingTextCount: "${0} character(s) remain", // Shown below the comments textbox indicating the number of characters that can be added
             showNoText: "No" // Shown when comments character limit is exceeded
         },
@@ -105,7 +105,7 @@ define({
         search: {
             searchIconTooltip: "Search this layer", // Displayed on hover of search icon
             noResultFoundText: "No results found", // Displayed when no results are found after search
-            searchInEditModeAlert: "Cannot perform search operation in edit mode" // Displayed when no results are found after search
+            searchInEditModeAlert: "Search unavailable while editing" // Displayed when no results are found after search
         },
         manualRefresh: {
             manualRefreshIconTooltip: "Refresh", // Displayed on hover of manual refresh icon
@@ -118,10 +118,10 @@ define({
             noFeatureFoundText: "No feature found for this value.", // Displayed when no feature is found after applying filter
             distinctQueryFalied: "No distinct values found for the field.", // Displayed when query fails while fetching distinct values in filter unique value section
             andText: "and", // Displayed in filter UI when "is between" case is applied to its field
-            filterInEditModeAlert: "Cannot apply filter in edit mode." // Displayed when user tries to applies filter in edit mode
+            filterInEditModeAlert: "Filters unavailable while editing" // Displayed when user tries to applies filter in edit mode
         },
         detailsPanel: {
-            editContentText: "Edit Content" // Displayed on hover of edit toggle button
+            editContentText: "Edit record" // Displayed on hover of edit toggle button
         },
         signOutPage: {
             signOutMessage: "You've been successfully signed out", // Appears when user is successfully signed-out from application
@@ -129,6 +129,7 @@ define({
         }
     }),
     "ar": 1,
+    "cr": 1,
     "cs": 1,
     "da": 1,
     "de": 1,
@@ -150,6 +151,7 @@ define({
     "pt-pt": 1,
     "ro": 1,
     "ru": 1,
+    "sr": 1,
     "sv": 1,
     "th": 1,
     "tr": 1,
