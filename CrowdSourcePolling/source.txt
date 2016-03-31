@@ -1,7 +1,7 @@
 From git branch 
 develop
-commit 236eb14e1a9c393c918ebf7880fac3f8a7bea69d
+commit 7c5c2ed0241ad2f8df9668ab004d2062458c3417
 Author: MikeTschudi <mtschudi@esri.com>
-Date:   Thu Mar 24 10:10:47 2016 -0700
+Date:   Thu Mar 31 09:52:45 2016 -0700
 
-    Modified parameter for build script automation
+    Updated app icon
