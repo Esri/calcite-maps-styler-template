@@ -82,11 +82,6 @@ input
     border: 1px solid ${SelectedThemeColor} !important;
 }
 
-.esriCTEyeNumViews span.view
-{
-    color: #b6b6b6;
-}
-
 .dijitDialogTitleBar
 {
     background-color: ${SelectedThemeColor} !important;
@@ -164,9 +159,9 @@ input
    border: 1px solid ${SelectedThemeColor} !important;
 }
 
-.esriCTItemInfoIcon, .esriCTItemViewIcon, .esriCTItemDetailsIcon, .esriCTTryItNowBtn, .esriCTBackToGalleryBtn
+.esriCTItemInfoIcon, .esriCTItemViewIcon, .esriCTItemDetailsIcon, .esriCTBackToGalleryBtn, .esriCTItemDownloadIcon
 {
-    color: ${SelectedThemeColor} !important;
+    background-color: ${SelectedThemeColor} !important;
 }
 
 .esriCTShiftRightPanel

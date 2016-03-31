@@ -235,7 +235,7 @@ define([
 
             divItemTitleRight = domConstruct.create('div', { "class": "esriCTDivClear" }, divPodParent);
             divItemTitleText = domConstruct.create('div', { "class": "esriCTListAppTitle esriCTGridTitleContent esriCTCursorPointer" }, divItemTitleRight);
-            divItemDetailsIcon = domConstruct.create('div', { "class": "icon-info-circled-alt esriCTItemInfoIcon" }, divItemTitleRight);
+            divItemDetailsIcon = domConstruct.create('div', { "class": "esriCTItemInfoIcon" }, divItemTitleRight);
             domAttr.set(divItemTitleText, "innerHTML", (itemResult.title) || (nls.showNullValue));
             domAttr.set(divItemTitleText, "title", (itemResult.title) || (nls.showNullValue));
             divItemType = domConstruct.create('div', { "class": "esriCTGridItemType" }, divItemTitleRight);
@@ -283,7 +283,7 @@ define([
                 //create container to display snippet text of item on hovering of it
                 if (itemResult.snippet) {
                     spanItemReadMore = domConstruct.create("div", { "class": "esriCTItemSnippetText" }, divItemSnippet);
-                    domAttr.set(spanItemReadMore, "innerHTML", itemResult.snippet);
+                    domAttr.set(spanItemReadMore, "innerHTML", this._truncate(itemResult.snippet, 194));
                 }
             }
 
@@ -345,6 +345,17 @@ define([
                     this.showInfoPage(itemResult, false);
                 }));
             }
+        },
+
+        /**
+        * Show summary text with ellipsis if it doest not fit into the container
+        * @memberOf widgets/gallery/gallery
+        */
+        _truncate: function (text, length) {
+            if (text.length > length) {
+                text = text.substr(0, length) + "&hellip;";
+            }
+            return text;
         },
 
         /**
@@ -499,7 +510,7 @@ define([
             divItemBtnContainer = domConstruct.create('div', { "class": "esriCTItemBtnContainer" }, divItemContent);
 
             //create open/view button
-            divItemViewIcon = domConstruct.create('div', { "class": "icon-item-open esriCTItemViewIcon", "title": nls.title.viewBtnTitle }, divItemBtnContainer);
+            divItemViewIcon = domConstruct.create('div', { "class": "esriCTItemViewIcon", "title": nls.title.viewBtnTitle }, divItemBtnContainer);
 
             // Handle item title click in list layout
             this.own(on(divItemViewIcon, "click", lang.hitch(this, function () {
@@ -512,7 +523,7 @@ define([
             })));
 
             //create info button
-            divItemDetailsIcon = domConstruct.create('div', { "class": "icon-info-circled-alt esriCTItemDetailsIcon", "title": nls.title.infoBtnTitle }, divItemBtnContainer);
+            divItemDetailsIcon = domConstruct.create('div', { "class": "esriCTItemDetailsIcon", "title": nls.title.infoBtnTitle }, divItemBtnContainer);
 
             // Handle item title click in list layout
             this.own(on(divItemDetailsIcon, "click", lang.hitch(this, function () {
@@ -551,7 +562,7 @@ define([
                     dataArray = {};
                     if (data.itemType === "file" && data.type.toLowerCase() !== "kml" && data.type.toLowerCase() !== "cityengine web scene") {
                         domAttr.set(this.btnTryItNow, "title", nls.downloadButtonText);
-                        domClass.replace(this.btnTryItNow, "icon-download", "icon-item-open");
+                        domClass.replace(this.btnTryItNow, "esriCTItemDownloadIcon", "esriCTItemViewIcon");
                     } else if (data.type.toLowerCase() === "operation view") {
                         if (dojo.configData.values.token) {
                             tokenString = "&token=" + dojo.configData.values.token;
@@ -570,8 +581,7 @@ define([
                         }));
                     } else {
                         domAttr.set(this.btnTryItNow, "title", nls.tryItButtonText);
-                        domClass.replace(this.btnTryItNow, "icon-item-open", "icon-download");
-
+                        domClass.replace(this.btnTryItNow, "esriCTItemViewIcon", "esriCTItemDownloadIcon");
                     }
 
                     dataArray = {

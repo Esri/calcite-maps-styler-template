@@ -520,7 +520,7 @@ font
     float: left;
     margin: 0 0 0 2.5%;
     width: 200px;
-    height: 205px;
+    height: 215px;
     position: relative;
 }
 
@@ -564,7 +564,7 @@ font
 
 .esriCTEyeNumViewsGrid
 {
-    float: right !important;
+    float: left;
 }
 
 .esriCTEyeNumViewsList
@@ -581,6 +581,8 @@ font
 .esriCTEyeNumViews span.view
 {
     float: left;
+    color: #b6b6b6;
+    font-size: 12px;
 }
 
 .esriCTAppContent
@@ -650,6 +652,7 @@ font
     padding-top: 5px;
     padding-bottom: 5px;
     color: #b6b6b6;
+    font-size: 12px;
 }
 
 .esriCTGridItemType
@@ -665,16 +668,14 @@ font
     overflow: hidden;
     display: inline-block;
     white-space: nowrap;
+    font-size: 12px;
+    width: 100%;
+    float: left;
 }
 
 .esriCTGridItemTypeNoViews
 {
     width: 100%;
-}
-
-.esriCTGridItemTypeViews
-{
-    width: 50%;
 }
 
 .esriCTNoResults
@@ -689,6 +690,7 @@ font
     float: left;
     font-weight: bold;
     margin-right: 5px;
+    font-size: 14px;
 }
 
 .esriCTGridTitleContent
@@ -696,7 +698,7 @@ font
     width: 160px;
     overflow: hidden;
     float: left;
-    max-height: 30px;
+    max-height: 35px;
 }
 
 .esriCTApplicationType
@@ -959,7 +961,6 @@ font
 .esriCTTryItNowBtn
 {
     margin: 5px 0;
-    font-size: 24px;
 }
 
 .esriCTButton
@@ -1104,8 +1105,8 @@ font
 .esriCTBackToGalleryBtn
 {
     margin-bottom: 20px;
-    font-size: 28px;
     cursor: pointer;
+    background-image: url('../images/back-to-gallery.png');
 }
 
 .esriCTBackToGalleryIcon
@@ -1749,37 +1750,39 @@ input[type="button"], input[type="submit"], input[type="reset"], input[type="fil
 {
     position: absolute;
     right: 0px;
-    font-size: 27px;
-    line-height: 27px;
     cursor: pointer;
+    background-image: url('../images/item-details.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 22px;
+    height: 22px;
 }
 
-.esriCTItemViewIcon:before, .esriCTBackToGalleryBtn:before, .esriCTOpenItemBtn:before
-{
-    margin: 0px !important;
-}
 
-.esriCTItemInfoIcon:before
+.esriCTItemViewIcon, .esriCTItemDetailsIcon, .esriCTBackToGalleryBtn, .esriCTItemDownloadIcon
 {
-    margin-right: 0px !important;
-}
-
-.esriCTItemViewIcon, .esriCTItemDetailsIcon
-{
-    line-height: 28px;
     cursor: pointer;
     float: left;
+    background-position: center center;
+    background-repeat: no-repeat;
+    width: 22px;
+    height: 22px;
 }
 
 .esriCTItemDetailsIcon
 {
     margin-left: 10px;
-    font-size: 27px;
+    background-image: url('../images/item-details.png');
 }
 
 .esriCTItemViewIcon
 {
-    font-size: 24px;
+    background-image: url('../images/item-view.png');
+}
+
+.esriCTItemDownloadIcon
+{
+    background-image: url('../images/item-download.png');
 }
 
 .esriCTItemBtnContainer
@@ -1791,6 +1794,7 @@ input[type="button"], input[type="submit"], input[type="reset"], input[type="fil
 .esriCTOpenItemBtn
 {
     cursor: pointer;
+    float: none;
 }
 
 .esriCTSortMenu ul li
