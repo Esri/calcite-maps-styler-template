@@ -161,6 +161,11 @@ define([
             layers: tocLayers
           }, tocNode);
           toc.startup();
+          if(this._mapLegend) {
+            on(toc, "toggle", lang.hitch(this, function () {
+              this._mapLegend.refresh();
+            }));
+          }
         }
         // if we have social layers
         if (this.socialLayers && this.socialLayers.length) {
@@ -186,6 +191,11 @@ define([
               layers: socialTocLayers
             }, socialTocNode);
             socialToc.startup();
+            if(this._mapLegend) {
+              on(socialToc, "toggle", lang.hitch(this, function () {
+                this._mapLegend.refresh();
+              }));
+            }
             this._socialToc = socialToc;
           }
         }
