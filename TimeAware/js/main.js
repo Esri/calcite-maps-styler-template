@@ -374,8 +374,12 @@ define([
       // Overwrite time extent with custom time if specified
       this.config.humanize = false;
       if (this.config.durationTime && this.config.durationPeriod && this.config.tickTime && this.config.tickPeriod) {
-        var customEnd = moment().format("YYYY-MM-DD[T]HH:mm");
-        var customStart = moment().subtract(this.config.durationTime, this.config.durationPeriod).format("YYYY-MM-DD[T]HH:mm");
+        //var customEnd = moment().format("YYYY-MM-DD[T]HH:mm");
+        var customEnd = moment(); //.format("MMMM Do YYYY , h:mm:ss a");
+
+        console.log(customEnd, " should be now");
+        var customStart = moment().subtract(this.config.durationTime, this.config.durationPeriod); //.format("MMMM Do YYYY , h:mm:ss a");
+        console.log(customStart, " start");
         timeExtent = new TimeExtent(new Date(customStart), new Date(customEnd));
         timeProperties.startTime = customStart;
         timeProperties.endTime = customEnd;
@@ -552,7 +556,7 @@ define([
       if (this.config.customFormatOption || this.config.preDefinedFormatOption) {
         range = moment(start).twix(end).simpleFormat(this.config.customFormatOption || this.config.preDefinedFormatOption);
       } else if (this.config.humanize) {
-        // this is only valid if a custom duration is specified. 
+        // this is only valid if a custom duration is specified.
         range = moment(end).fromNow();
       } else {
         range = moment(start).twix(end, {
