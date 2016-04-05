@@ -69,7 +69,9 @@ define(
             signOutBtnTitle: "로그아웃",
             geolocationBtnTitle: "지오로케이션",
             ascendingSort: "오름차순",
-            descendingSort: "내림차순"
+            descendingSort: "내림차순",
+            viewBtnTitle: "한_View__빠",
+            backButtonTitle: "한_Back__빠"
         },
         errorMessages: {
             emptyGroup: "구성된 그룹에 쿼리를 수행할 데이터가 없습니다.",

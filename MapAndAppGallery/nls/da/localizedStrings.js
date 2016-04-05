@@ -69,7 +69,9 @@ define(
             signOutBtnTitle: "Log ud",
             geolocationBtnTitle: "Geoplacering",
             ascendingSort: "Stigende",
-            descendingSort: "Faldende"
+            descendingSort: "Faldende",
+            viewBtnTitle: "ø_View__å",
+            backButtonTitle: "ø_Back__å"
         },
         errorMessages: {
             emptyGroup: "Den konfigurerede gruppe har ikke nogen data til kørsel af en forespørgsel.",

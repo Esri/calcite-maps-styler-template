@@ -69,7 +69,9 @@ define(
             signOutBtnTitle: "サイン アウト",
             geolocationBtnTitle: "ジオロケーション",
             ascendingSort: "昇順",
-            descendingSort: "降順"
+            descendingSort: "降順",
+            viewBtnTitle: "須_View__鷗",
+            backButtonTitle: "須_Back__鷗"
         },
         errorMessages: {
             emptyGroup: "構成済みのグループにクエリを実行するためのデータがありません。",

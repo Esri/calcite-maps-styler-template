@@ -1,10 +1,10 @@
 ﻿define(
      ({
         "StatsBlock": {
-            "close": "إغلاق",
-            "next": "التالي",
-            "previous": "السابق",
-            "source":"مصدر البيانات"
+            "close": "Č_close___ž",
+            "next": "Č_Next__ž",
+            "previous": "Č_Previous___ž",
+            "source":"Č_Data source____ž"
         }
     })
 );

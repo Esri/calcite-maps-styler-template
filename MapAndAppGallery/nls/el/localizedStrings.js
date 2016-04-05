@@ -69,7 +69,9 @@ define(
             signOutBtnTitle: "Έξοδος",
             geolocationBtnTitle: "Γεωγραφική τοποθεσία",
             ascendingSort: "Αύξουσα",
-            descendingSort: "Φθίνουσα"
+            descendingSort: "Φθίνουσα",
+            viewBtnTitle: "Đ_View__ớ",
+            backButtonTitle: "Đ_Back__ớ"
         },
         errorMessages: {
             emptyGroup: "Η διαμορφωμένη ομάδα δεν διαθέτει δεδομένα για να εκτελεστεί ερώτημα.",

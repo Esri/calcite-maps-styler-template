@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<checkstyle version="4.3">
+	<file name="C:\i18n-projects\i18n-auto-templates\MapJournal\resources\common\nls\it\core.js">
+		<error line="2" column="6" severity="error" message="Expected &apos;}&apos; to match &apos;{&apos; from line 1 and instead saw &apos;(&apos;." source="jshint.E020" />
+		<error line="2" column="7" severity="error" message="Expected &apos;)&apos; and instead saw &apos;{&apos;." source="jshint.W116" />
+		<error line="2" column="8" severity="error" message="Missing semicolon." source="jshint.W033" />
+		<error line="5" column="22" severity="error" message="Label &apos;add&apos; on Aggiungi statement." source="jshint.W028" />
+		<error line="6" column="17" severity="error" message="Expected an assignment or function call and instead saw an expression." source="jshint.W030" />
+		<error line="6" column="21" severity="error" message="Missing semicolon." source="jshint.W033" />
+		<error line="6" column="21" severity="error" message="Expected &apos;}&apos; to match &apos;{&apos; from line 4 and instead saw &apos;:&apos;." source="jshint.E020" />
+		<error line="7" column="17" severity="error" message="Expected an assignment or function call and instead saw an expression." source="jshint.W030" />
+		<error line="7" column="21" severity="error" message="Missing semicolon." source="jshint.W033" />
+		<error line="7" column="21" severity="error" message="Expected &apos;}&apos; to match &apos;{&apos; from line 3 and instead saw &apos;:&apos;." source="jshint.E020" />
+		<error line="8" column="17" severity="error" message="Expected an assignment or function call and instead saw an expression." source="jshint.W030" />
+		<error line="8" column="21" severity="error" message="Missing semicolon." source="jshint.W033" />
+		<error line="8" column="21" severity="error" message="Expected &apos;(end)&apos; and instead saw &apos;:&apos;." source="jshint.W116" />
+		<error line="6" column="17" severity="error" message="&apos;edit&apos; is not defined." source="jshint.W117" />
+		<error line="7" column="17" severity="error" message="&apos;save&apos; is not defined." source="jshint.W117" />
+		<error line="8" column="17" severity="error" message="&apos;next&apos; is not defined." source="jshint.W117" />
+	</file>
+	<file name="C:\i18n-projects\i18n-auto-templates\MapJournal\resources\common\nls\it\mapcontrols.js">
+		<error line="2" column="6" severity="error" message="Expected &apos;}&apos; to match &apos;{&apos; from line 1 and instead saw &apos;(&apos;." source="jshint.E020" />
+		<error line="2" column="7" severity="error" message="Expected &apos;)&apos; and instead saw &apos;{&apos;." source="jshint.W116" />
+		<error line="2" column="8" severity="error" message="Missing semicolon." source="jshint.W033" />
+		<error line="5" column="27" severity="error" message="Label &apos;settings&apos; on Impostazioni statement." source="jshint.W028" />
+		<error line="6" column="17" severity="error" message="Expected an assignment or function call and instead saw an expression." source="jshint.W030" />
+		<error line="6" column="28" severity="error" message="Missing semicolon." source="jshint.W033" />
+		<error line="6" column="28" severity="error" message="Expected &apos;}&apos; to match &apos;{&apos; from line 4 and instead saw &apos;:&apos;." source="jshint.E020" />
+		<error line="6" column="30" severity="error" message="Expected an assignment or function call and instead saw an expression." source="jshint.W030" />
+		<error line="6" column="65" severity="error" message="Missing semicolon." source="jshint.W033" />
+		<error line="7" column="14" severity="error" message="Expected an identifier and instead saw &apos;,&apos;." source="jshint.E030" />
+		<error line="7" column="14" severity="error" message="Expected an assignment or function call and instead saw an expression." source="jshint.W030" />
+		<error line="7" column="15" severity="error" message="Missing semicolon." source="jshint.W033" />
+		<error line="9" column="41" severity="error" message="Label &apos;basemapGalleryBtnLabel&apos; on Mappa di base statement." source="jshint.W028" />
+		<error line="10" column="17" severity="error" message="Expected an assignment or function call and instead saw an expression." source="jshint.W030" />
+		<error line="10" column="34" severity="error" message="Missing semicolon." source="jshint.W033" />
+		<error line="10" column="34" severity="error" message="Expected &apos;}&apos; to match &apos;{&apos; from line 8 and instead saw &apos;:&apos;." source="jshint.E020" />
+		<error line="11" column="17" severity="error" message="Expected an assignment or function call and instead saw an expression." source="jshint.W030" />
+		<error line="11" column="36" severity="error" message="Missing semicolon." source="jshint.W033" />
+		<error line="11" column="36" severity="error" message="Expected &apos;(end)&apos; and instead saw &apos;:&apos;." source="jshint.W116" />
+		<error line="6" column="17" severity="error" message="&apos;openDefault&apos; is not defined." source="jshint.W117" />
+		<error line="10" column="17" severity="error" message="&apos;expandFactorLabel&apos; is not defined." source="jshint.W117" />
+		<error line="11" column="17" severity="error" message="&apos;expandFactorPopover&apos; is not defined." source="jshint.W117" />
+	</file>
+	<file name="C:\i18n-projects\i18n-auto-templates\MapJournal\resources\common\nls\it\media.js">
+		<error line="2" column="6" severity="error" message="Expected &apos;}&apos; to match &apos;{&apos; from line 1 and instead saw &apos;(&apos;." source="jshint.E020" />
+		<error line="2" column="7" severity="error" message="Expected &apos;)&apos; and instead saw &apos;{&apos;." source="jshint.W116" />
+		<error line="2" column="8" severity="error" message="Missing semicolon." source="jshint.W033" />
+		<error line="5" column="29" severity="error" message="Label &apos;lblSelect1&apos; on Supporto statement." source="jshint.W028" />
+		<error line="6" column="17" severity="error" message="Expected an assignment or function call and instead saw an expression." source="jshint.W030" />
+		<error line="6" column="27" severity="error" message="Missing semicolon." source="jshint.W033" />
+		<error line="6" column="27" severity="error" message="Expected &apos;}&apos; to match &apos;{&apos; from line 4 and instead saw &apos;:&apos;." source="jshint.E020" />
+		<error line="7" column="17" severity="error" message="Expected an assignment or function call and instead saw an expression." source="jshint.W030" />
+		<error line="7" column="23" severity="error" message="Missing semicolon." source="jshint.W033" />
+		<error line="7" column="23" severity="error" message="Expected &apos;}&apos; to match &apos;{&apos; from line 3 and instead saw &apos;:&apos;." source="jshint.E020" />
+		<error line="8" column="17" severity="error" message="Expected an assignment or function call and instead saw an expression." source="jshint.W030" />
+		<error line="8" column="25" severity="error" message="Missing semicolon." source="jshint.W033" />
+		<error line="8" column="25" severity="error" message="Expected &apos;(end)&apos; and instead saw &apos;:&apos;." source="jshint.W116" />
+		<error line="6" column="17" severity="error" message="&apos;lblSelect2&apos; is not defined." source="jshint.W117" />
+		<error line="7" column="17" severity="error" message="&apos;lblMap&apos; is not defined." source="jshint.W117" />
+		<error line="8" column="17" severity="error" message="&apos;lblImage&apos; is not defined." source="jshint.W117" />
+	</file>
+	<file name="C:\i18n-projects\i18n-auto-templates\MapJournal\resources\common\nls\it\webmap.js">
+		<error line="2" column="6" severity="error" message="Expected &apos;}&apos; to match &apos;{&apos; from line 1 and instead saw &apos;(&apos;." source="jshint.E020" />
+		<error line="2" column="7" severity="error" message="Expected &apos;)&apos; and instead saw &apos;{&apos;." source="jshint.W116" />
+		<error line="2" column="8" severity="error" message="Missing semicolon." source="jshint.W033" />
+		<error line="5" column="28" severity="error" message="Label &apos;lblWebMap&apos; on Mappa statement." source="jshint.W028" />
+		<error line="6" column="17" severity="error" message="Expected an assignment or function call and instead saw an expression." source="jshint.W030" />
+		<error line="6" column="28" severity="error" message="Missing semicolon." source="jshint.W033" />
+		<error line="6" column="28" severity="error" message="Expected &apos;}&apos; to match &apos;{&apos; from line 4 and instead saw &apos;:&apos;." source="jshint.E020" />
+		<error line="7" column="17" severity="error" message="Expected an assignment or function call and instead saw an expression." source="jshint.W030" />
+		<error line="7" column="27" severity="error" message="Missing semicolon." source="jshint.W033" />
+		<error line="7" column="27" severity="error" message="Expected &apos;}&apos; to match &apos;{&apos; from line 3 and instead saw &apos;:&apos;." source="jshint.E020" />
+		<error line="8" column="17" severity="error" message="Expected an assignment or function call and instead saw an expression." source="jshint.W030" />
+		<error line="8" column="25" severity="error" message="Missing semicolon." source="jshint.W033" />
+		<error line="8" column="25" severity="error" message="Expected &apos;(end)&apos; and instead saw &apos;:&apos;." source="jshint.W116" />
+		<error line="6" column="17" severity="error" message="&apos;lblLocation&apos; is not defined." source="jshint.W117" />
+		<error line="7" column="17" severity="error" message="&apos;lblContent&apos; is not defined." source="jshint.W117" />
+		<error line="8" column="17" severity="error" message="&apos;lblPopup&apos; is not defined." source="jshint.W117" />
+	</file>
+	<file name="C:\i18n-projects\i18n-auto-templates\PublicInformation\js\nls\nb\resources.js">
+		<error line="69" column="1" severity="error" message="Expected &apos;)&apos; and instead saw &apos;}&apos;." source="jshint.W116" />
+		<error line="69" column="2" severity="error" message="Missing semicolon." source="jshint.W033" />
+		<error line="69" column="2" severity="error" message="Expected an identifier and instead saw &apos;)&apos;." source="jshint.E030" />
+		<error line="69" column="2" severity="error" message="Expected an assignment or function call and instead saw an expression." source="jshint.W030" />
+	</file>
+	<file name="C:\i18n-projects\i18n-auto-templates\PublicInformation\js\nls\nb\ShareDialog.js">
+		<error line="18" column="1" severity="error" message="Expected &apos;)&apos; and instead saw &apos;}&apos;." source="jshint.W116" />
+		<error line="18" column="2" severity="error" message="Missing semicolon." source="jshint.W033" />
+		<error line="18" column="2" severity="error" message="Expected an identifier and instead saw &apos;)&apos;." source="jshint.E030" />
+		<error line="18" column="2" severity="error" message="Expected an assignment or function call and instead saw an expression." source="jshint.W030" />
+	</file>
+</checkstyle>

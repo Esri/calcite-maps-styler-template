@@ -1,50 +1,50 @@
 ﻿define(
      ({
         map: {
-            error: "يتعذر إنشاء الخريطة"
+            error: "Č_Unable to create map_______ž"
         },
         general: {
-            map: "خريطة",
-            mapInfo: "معلومات الخريطة",
-            legend: "مفتاح الخريطة",
-            layers: "طبقات",
-            rendererTitle: "عرض معلومات هذه المنطقة",
-            summarize: "المنطقة الكلية",
-            summarizeTitle: "عرض المعلومات المُلخصة لجميع المناطق",
-            share: "مشاركة",
-            about: "نبذة عن",
-            find: "كود Zip والمدينة، وغير ذلك.",
-            noSearchResult: "يتعذر إيجاد النتائج",
-            impactArea: "منطقة التأثير",
-            dateModified: "تم التعديل",
-            moreInfo: "إيجاد المزيد",
+            map: "Č_Map__ž",
+            mapInfo: "Č_Map Information______ž",
+            legend: "Č_Legend___ž",
+            layers: "Č_Layers___ž",
+            rendererTitle: "Č_Display information for this area___________ž",
+            summarize: "Č_Entire Area____ž",
+            summarizeTitle: "Č_Display summarized information for all areas______________ž",
+            share: "Č_Share___ž",
+            about: "Č_About___ž",
+            find: "Č_Zip Code, city, etc_______ž.",
+            noSearchResult: "Č_No result found______ž",
+            impactArea: "Č_Impact Area____ž",
+            dateModified: "Č_Modified___ž",
+            moreInfo: "Č_Find out more_____ž",
         },
         configure: {
             mapdlg: {
                 items: {
-                    organizationLabel: "المؤسسة",
-                    onlineLabel: "ArcGIS Online",
-                    contentLabel: "المحتوى",
-                    favoritesLabel: "المُفضلة"
+                    organizationLabel: "Č_My Organization______ž",
+                    onlineLabel: "Č_ArcGIS Online_____ž",
+                    contentLabel: "Č_My Content____ž",
+                    favoritesLabel: "Č_My Favorites_____ž"
                 },
-                title: "تحديد خريطة الويب",
-                searchTitle: "بحث",
-                ok: "موافق",
-                cancel: "إلغاء الأمر",
-                placeholder: "أدخل مصطلح البحث"
+                title: "Č_Select Web Map_____ž",
+                searchTitle: "Č_Search___ž",
+                ok: "Č_Ok__ž",
+                cancel: "Č_Cancel___ž",
+                placeholder: "Č_Enter search term______ž"
             },
             groupdlg: {
                 items: {
-                    organizationLabel: "المؤسسة",
-                    onlineLabel: "ArcGIS Online",
-                    contentLabel: "المحتوى",
-                    favoritesLabel: "المُفضلة"
+                    organizationLabel: "Č_My Organization______ž",
+                    onlineLabel: "Č_ArcGIS Online_____ž",
+                    contentLabel: "Č_My Content____ž",
+                    favoritesLabel: "Č_My Favorites_____ž"
                 },
-                title: "تحديد مجموعة",
-                searchTitle: "بحث",
-                ok: "موافق",
-                cancel: "إلغاء الأمر",
-                placeholder: "أدخل مصطلح البحث"
+                title: "Č_Select Group_____ž",
+                searchTitle: "Č_Search___ž",
+                ok: "Č_Ok__ž",
+                cancel: "Č_Cancel___ž",
+                placeholder: "Č_Enter search term______ž"
             }
         }
     })

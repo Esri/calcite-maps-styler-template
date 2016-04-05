@@ -69,7 +69,9 @@ define(
             signOutBtnTitle: "התנתק",
             geolocationBtnTitle: "מיקום מרחבי",
             ascendingSort: "עולה",
-            descendingSort: "יורד"
+            descendingSort: "יורד",
+            viewBtnTitle: "כן_View__ש",
+            backButtonTitle: "כן_Back__ש"
         },
         errorMessages: {
             emptyGroup: "אין לקבוצה שהוגדרה נתונים בכדי לבצע את השאילתא.",

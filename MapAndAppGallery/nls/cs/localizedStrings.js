@@ -69,7 +69,9 @@ define(
             signOutBtnTitle: "Odhlásit",
             geolocationBtnTitle: "Geolokace",
             ascendingSort: "Vzestupně",
-            descendingSort: "Sestupně"
+            descendingSort: "Sestupně",
+            viewBtnTitle: "Ř_View__ů",
+            backButtonTitle: "Ř_Back__ů"
         },
         errorMessages: {
             emptyGroup: "Konfigurovaná skupina nemá k dispozici žádná data umožňující provedení dotazu.",

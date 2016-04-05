@@ -69,7 +69,9 @@ define(
             signOutBtnTitle: "Atsijungti",
             geolocationBtnTitle: "Geolokacija",
             ascendingSort: "didėjančia tvarka",
-            descendingSort: "Mažėjimo tvarka"
+            descendingSort: "Mažėjimo tvarka",
+            viewBtnTitle: "Į_View__š",
+            backButtonTitle: "Į_Back__š"
         },
         errorMessages: {
             emptyGroup: "Sukonfigūruotoje grupėje nėra duomenų užklausai įvykdyti.",

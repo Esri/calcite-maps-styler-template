@@ -69,7 +69,9 @@ define(
             signOutBtnTitle: "Izrakstīties",
             geolocationBtnTitle: "Ģeoizvietojums",
             ascendingSort: "Pieaugoši",
-            descendingSort: "Dilstošā secībā"
+            descendingSort: "Dilstošā secībā",
+            viewBtnTitle: "ķ_View__ū",
+            backButtonTitle: "ķ_Back__ū"
         },
         errorMessages: {
             emptyGroup: "Konfigurētajā grupā nav nekādu datu, lai veiktu vaicājumu.",
