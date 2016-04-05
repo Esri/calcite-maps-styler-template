@@ -149,6 +149,11 @@ function (
                     layers: tocLayers
                 }, tocNode);
                 toc.startup();
+                if(this._mapLegend) {
+                  on(toc, "toggle", lang.hitch(this, function () {
+                    this._mapLegend.refresh();
+                  }));
+                }
             }
         },
         _init: function () {
