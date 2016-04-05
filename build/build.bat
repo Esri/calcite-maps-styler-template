@@ -97,7 +97,6 @@ mkdir %BUILD_OUTPUT%\MapSeries
 mkdir %BUILD_OUTPUT%\StoryMapBasic
 mkdir %BUILD_OUTPUT%\StorytellingBasic
 mkdir %BUILD_OUTPUT%\Viewer
-mkdir %BUILD_OUTPUT%\ViewerWcag
 mkdir %BUILD_OUTPUT%\MyStories
 
 
@@ -181,7 +180,6 @@ xcopy %TEMPLATES_ROOT%\MapTools                                 %BUILD_OUTPUT%\M
 xcopy %TEMPLATES_ROOT%\MapJournal                               %BUILD_OUTPUT%\MapJournal                           /E /Y
 xcopy %TEMPLATES_ROOT%\MapSeries                                %BUILD_OUTPUT%\MapSeries                            /E /Y
 xcopy %TEMPLATES_ROOT%\Viewer                                   %BUILD_OUTPUT%\Viewer                               /E /Y
-xcopy %TEMPLATES_ROOT%\ViewerWcag                               %BUILD_OUTPUT%\ViewerWcag                              /E /Y
 xcopy %TEMPLATES_ROOT%\Locator                                  %BUILD_OUTPUT%\Directions                           /E /Y
 xcopy %TEMPLATES_ROOT%\Time                                     %BUILD_OUTPUT%\Time                                 /E /Y
 xcopy %TEMPLATES_ROOT%\ThumbnailGenerator                       %BUILD_OUTPUT%\ThumbnailGenerator                   /E /Y
