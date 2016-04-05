@@ -83,6 +83,7 @@ mkdir %BUILD_OUTPUT%\Solutions
 mkdir %BUILD_OUTPUT%\StorytellingSwipe
 mkdir %BUILD_OUTPUT%\StorytellingTextLegend
 mkdir %BUILD_OUTPUT%\Time
+mkdir %BUILD_OUTPUT%\TimeAware
 mkdir %BUILD_OUTPUT%\ThumbnailGenerator
 mkdir %BUILD_OUTPUT%\TwoPane
 mkdir %BUILD_OUTPUT%\TwoPane\main
@@ -97,6 +98,7 @@ mkdir %BUILD_OUTPUT%\MapSeries
 mkdir %BUILD_OUTPUT%\StoryMapBasic
 mkdir %BUILD_OUTPUT%\StorytellingBasic
 mkdir %BUILD_OUTPUT%\Viewer
+mkdir %BUILD_OUTPUT%\View
 mkdir %BUILD_OUTPUT%\MyStories
 
 
@@ -179,9 +181,11 @@ xcopy %TEMPLATES_ROOT%\SummaryViewer                            %BUILD_OUTPUT%\S
 xcopy %TEMPLATES_ROOT%\MapTools                                 %BUILD_OUTPUT%\MapTools                             /E /Y
 xcopy %TEMPLATES_ROOT%\MapJournal                               %BUILD_OUTPUT%\MapJournal                           /E /Y
 xcopy %TEMPLATES_ROOT%\MapSeries                                %BUILD_OUTPUT%\MapSeries                            /E /Y
-xcopy %TEMPLATES_ROOT%\Viewer                                   %BUILD_OUTPUT%\Viewer                               /E /Y
+xcopy %TEMPLATES_ROOT%\archive\Viewer                           %BUILD_OUTPUT%\Viewer                               /E /Y
+xcopy %TEMPLATES_ROOT%\Viewer_New                               %BUILD_OUTPUT%\View                                 /E /Y
 xcopy %TEMPLATES_ROOT%\Locator                                  %BUILD_OUTPUT%\Directions                           /E /Y
-xcopy %TEMPLATES_ROOT%\Time                                     %BUILD_OUTPUT%\Time                                 /E /Y
+xcopy %TEMPLATES_ROOT%\archive\Time                             %BUILD_OUTPUT%\Time                                 /E /Y
+xcopy %TEMPLATES_ROOT%\TimeAware                                %BUILD_OUTPUT%\TimeAware                                 /E /Y
 xcopy %TEMPLATES_ROOT%\ThumbnailGenerator                       %BUILD_OUTPUT%\ThumbnailGenerator                   /E /Y
 xcopy %TEMPLATES_ROOT%\MyStories                                %BUILD_OUTPUT%\MyStories                            /E /Y
 

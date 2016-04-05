@@ -1,0 +1,689 @@
+body,html {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    font-family: 'Helvetica Neue',Helvetica,sans-serif;
+}
+
+#mapDiv {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+}
+#playControls.hide{
+    display:none;
+}
+.hide {
+    display: none;
+}
+
+.show {
+    display: block;
+}
+
+@-webkit-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+@-moz-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+@keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+#mapDiv_gc circle, #mapDiv_gc path, #mapDiv_gc image, #mapDiv_gc g{
+    animation-duration:1s;
+    animation-name: fadeIn;
+    animation-timing-function:linear;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-name: fadeIn;
+    -webkit-animation-timing-function: linear;
+}
+
+/*Map Navigation Widgets (zoom slider, search, home)*/
+#logo {
+    float: left;
+    width: 44px;
+    height: 44px;
+}
+
+#logo img {
+    vertical-align: middle;
+    line-height: 44px;
+    width: 44px;
+    height: 44px;
+}
+
+#logo a {
+    cursor: pointer;
+}
+
+.showtitle .esriSimpleSlider {
+    top: 50px;
+}
+
+#search {
+    position: absolute;
+    display: block;
+    z-index: 40;
+}
+#search.window-top-right{
+    top: 95px;
+    left:20px;
+}
+#search.window-top-left{
+    top:95px;
+    right:20px;
+}
+.arcgisSearch .searchCollapsed .searchSubmit{
+    border-radius: 1px;
+}
+.arcgisSearch .searchBtn{
+    padding: 6px 5px;
+}
+.esriSimpleSlider div{
+    font-size: 22px;
+    font-family: 'lato', sans-serif;
+    line-height: 22px;
+}
+.esriSimpleSliderVertical .esriSimpleSliderIncrementButton {
+    border-bottom: 1px solid #999;
+}
+.esriSimpleSliderVertical .esriSimpleSliderDecrementButton, .esriSimpleSliderVertical .esriSimpleSliderIncrementButton{
+    border-radius: 0;
+}
+.esriSimpleSlider, .arcgisSearch .searchBtn{
+    font-size: 22px;
+    font-family: 'lato', sans-serif;
+    line-height: 22px;
+    border: 1px solid #999;
+    color:#999;
+    border-radius: 0;
+}
+.showtitle #search.window-top-left, .showtitle #search.window-top-right{
+    top: 115px;
+}
+
+.showtitle.nozoom #search {
+    top: 50px;
+}
+
+.nozoom #search {
+    top: 20px;
+}
+
+/*App color themes*/
+.bg {
+    background-color: #fff;
+    background-color: rgb(255,255,255);
+}
+
+.fg {
+    color: #333;
+}
+
+/*Top Bar (title, share, about)*/
+.top-bar {
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 44px;
+    z-index: 40;
+}
+
+.app-title {
+    font-size: 1.5em;
+    line-height: 44px;
+    white-space: nowrap;
+    max-width: 60%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    float: left;
+    padding-left: .5em;
+}
+/*Styles for the right menu container that holds share and about*/
+.top-menu-right {
+    margin-right: 5px;
+}
+.button-container {
+    text-align: center;
+    height:30px;
+    line-height: 30px;
+}
+.menuDiv {
+    cursor: pointer;
+    float: right;
+    margin: 0px 10px 0 20px;
+}
+.icon-right {
+    float: right;
+    cursor: pointer;
+}
+.menuIcon {
+    display: inline-block;
+    cursor: pointer;
+    font-size: 1.2em !important;
+    line-height: 44px !important;
+    vertical-align: middle;
+}
+.iconLabel {
+    display: inline-block;
+    line-height: 44px;
+    font-size: 1.2em;
+    vertical-align: middle;
+}
+.aboutLabel {
+    margin-left: 8px;
+}
+.toggle-grey {
+    color: #ccc;
+}
+@media only screen and (max-width:500px) {
+    .iconLabel {
+        display: none;
+    }
+}
+/*Window Positioning (top, left, bottom, right,center)*/
+.showtitle .window-top-left,.showtitle .window-top-right, .showtitle .window-top-center {
+    top: 50px;
+}
+.window-top-left, .window-top-right {
+    top: 20px;
+}
+.nozoom .window-top-left {
+    left: 20px !important;
+}
+.noscale .window-bottom-left {
+    bottom: 35px;
+}
+.noscale .window-bottom-right {
+    bottom: 35px;
+}
+.noscale .window-bottom-center {
+    bottom: 35px;
+}
+.window-bottom-right {
+    bottom: 50px;
+    right: 20px;
+}
+.window-bottom-left {
+    bottom: 50px;
+    left: 20px;
+}
+.window-top-center {
+    position: absolute;
+    left: 50%;
+    top: 20px;
+    -moz-transform: translateX(-50%) translateY(0%);
+    -webkit-transform: translateX(-50%) translateY(0%);
+    -o-transform: translateX(-50%) translateY(0%);
+    -ms-transform: translateX(-50%) translateY(0%);
+    transform: translateX(-50%) translateY(0%);
+    transform: translate(-50%, 0%);
+    text-align: center;
+}
+.window-bottom-center {
+    position: absolute;
+    left: 50%;
+    bottom: 50px;
+    -moz-transform: translateX(-50%) translateY(0%);
+    -webkit-transform: translateX(-50%) translateY(0%);
+    -o-transform: translateX(-50%) translateY(0%);
+    -ms-transform: translateX(-50%) translateY(0%);
+    transform: translateX(-50%) translateY(0%);
+    transform: translate(-50%, 0%);
+    text-align: center;
+}
+/*Time Slider Container*/
+#timeContainer{
+  width: 400px;
+}
+/*Hide the time slider prev/next buttons*/
+#timeSliderDiv > table > tbody > tr > td[align="left"], th {
+    display: none;
+}
+#timeSlider > table > tbody > tr > td:nth-child(1){
+  display:none;
+}
+#timeSlider > table > tbody > tr > td:nth-child(3){
+  display: none;
+}
+#timeSlider > table > tbody > tr > td:nth-child(4){
+  display:none;
+}
+#sliderContainer {
+  padding: .5em .5em 1em .5em;
+}
+/*Hide the time slider ticks if configured to do so*/
+.esriTimeSlider.noTicks .tsTicks {
+    display: none;
+}
+.esriTimeSlider .tsTicks{
+  height:5px;
+}
+.calcite .dijitSliderImageHandle:after{
+  border-top-color: inherit !important;
+}
+.timeInfo {
+    position: absolute;
+    z-index: 40;
+    height: auto;
+    border-color: #ccc;
+    border-color: rgba(128,128,128,.2);
+    border-radius: 0;
+}
+.error-text {
+    padding: 4px;
+    line-height: normal;
+}
+/*Date-Time label*/
+#timeControls {
+  display:table;
+  width: 100%;
+  overflow: hidden;
+  border-bottom: solid 1px;
+  border-color: inherit;
+}
+#timeLabel {
+  text-align: center;
+  display:table;
+  white-space: normal;
+  max-height:40px;
+  line-height: normal;
+  margin: .5em auto;
+}
+#timeLabel.error {
+    text-align: left;
+}
+#timeLabel.error a {
+    color: #007AC2;
+    text-decoration: none;
+}
+
+/*Time Slider Controls*/
+.controlCont {
+    display: table-cell;
+    width: 100%;
+    overflow: hidden;
+    max-height:40px;
+    padding: .5em;
+    line-height: normal;
+    border-color: #ccc;
+    border-color: rgba(128,128,128,.2);
+}
+.noslider #sliderContainer {
+    display: none;
+}
+.noslider #timeControls {
+    border-bottom: none;
+}
+/*Play/Pause Button*/
+#playControls {
+    display: table-cell;
+    width: 40px;
+    vertical-align: middle;
+    border-right: solid 1px;
+    border-color: inherit;
+    text-shadow: 0px 1px 2px rgba(128,128,128,.5);
+}
+#playControls.nonav{
+  width:20px;
+}
+#playSlider {
+    width: auto;
+    font-size: 18px;
+}
+#prevSlider, #nextSlider {
+    font-size: 16px;
+}
+#sliderDisabled {
+    color: #dddddd;
+}
+#prevSlider.hide, #nextSlider.hide {
+    display: none;
+}
+#playSlider, #prevSlider, #nextSlider {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+}
+/*Legend Customizations*/
+#legendContainer {
+    position: absolute;
+    z-index: 40;
+    height: auto;
+    max-height: 60%;
+    overflow-y: auto;
+    width: 240px;
+    display: block;
+    margin: auto;
+    padding:10px;
+}
+#legendContainer.window-top-right{
+    right:20px;
+}
+#legendContainer.window-top-left{
+    left:20px;
+}
+#legendHeader {
+    font-size: 1em;
+    height: auto;
+    padding: 1em;
+    cursor: pointer;
+}
+.esriLegendService {
+    padding-top: 4px;
+    padding-bottom: 16px;
+}
+.esriLegendServiceLabel {
+    display: block;
+    font-weight: bold;
+    position: relative;
+    width: 100%;
+}
+.esriLegendLayerLabel {
+    color: #8d94a1;
+    padding-left: 8px;
+}
+.esriLegendLayer {
+    padding-left: 8px;
+}
+.esriLegendGroupLayer {
+    padding-top: 8px;
+}
+.esriLegendLeft {
+    padding-left: 12px;
+}
+.esriLegendRight {
+    padding-right: 12px;
+}
+/*Hide-Show legend*/
+.legendButtonDiv {
+    display: none;
+    cursor: pointer;
+    padding: 4px;
+    z-index: 31;
+}
+/*Icon Font Styles (Play/Pause/Open/Close)*/
+@font-face {
+    font-family:timeicons;src:url(../fonts/icomoon.eot?-qh6f3r);src:url(../fonts/icomoon.eot?#iefix-qh6f3r) format('embedded-opentype'),url(../fonts/icomoon.woff?-qh6f3r) format('woff'),url(../fonts/icomoon.ttf?-qh6f3r) format('truetype'),url(../fonts/icomoon.svg?-qh6f3r#icomoon) format('svg');font-weight:400;font-style:normal;
+}
+[class*=" icon-"],[class^=icon-] {
+    cursor: pointer;
+    font-family: timeicons;
+    speak: none;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 400;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.icon-share:before {
+    content: "\e604";
+}
+.dijitDialogCloseIcon:before {
+    content: "\e600";
+    font-family: "timeicons";
+}
+.esriRTL .icon-close:before,.esriRTL .icon-open:before {
+    float: left;
+}
+.icon-LeftArrow:before {
+    content: "\e607";
+}
+.icon-RightArrow:before {
+    content: "\e608";
+}
+.icon-CircledLeftArrow:before {
+    content: "\e616";
+}
+.icon-CircledRightArrow:before {
+    content: "\e617";
+}
+.icon-pause:before {
+    content: "\e625";
+}
+.icon-play:before {
+    content: "\e626";
+}
+.icon-previous:before {
+    content: "\e62b";
+    font-weight: bold;
+}
+.icon-next:before {
+    content: "\e62c";
+    font-weight: bold;
+}
+.icon-menu-open:before {
+    content: "\e631";
+}
+.icon-menu-close:before {
+    content: "\e632";
+}
+.icon-info:before {
+    content: "\e63e";
+}
+.icon-link:before {
+    content: "\e605";
+}
+.icon-twitter:before {
+    content: "\e606";
+}
+.icon-facebook-squared:before {
+    content: "\e609";
+}
+.icon-gplus:before {
+    content: "\e60a";
+}
+.icon-mail-alt:before {
+    content: "\e60b";
+}
+/*Small screen modifications*/
+@media only screen and (max-width:600px) {
+    .timeInfo {
+        width: 100%;
+        bottom:40px;
+        border-radius: 0;
+        right: 0;
+        left: 0;
+        -moz-transform: translateX(-0%) translateY(0%);
+        -webkit-transform: translateX(-0%) translateY(0%);
+        -o-transform: translateX(-0%) translateY(0%);
+        -ms-transform: translateX(-0%) translateY(0%);
+        transform: translateX(-0%) translateY(0%);
+        transform: translate(0%, 0%);
+    }
+    .esriControlsBR{
+      /*bottom:70px*/
+    }
+    .scalebar_bottom-left{
+      bottom: 15px;
+    }
+    #timeContainer{
+      display: block;
+      width:100%;
+    }
+    #timeContainer.hide{
+      display:none;
+    }
+    #timeControls.hide{
+      display: none;
+    }
+    .app-title {
+        max-width: 50%;
+    }
+    #legendContainer.legend-hide {
+        display: none !important;
+    }
+    #legendContainer.legend-show {
+        display: block !important;
+    }
+    #legendContainer {
+        display: none;
+    }
+    #legendContainer {
+        overflow-y: auto;
+        border-top-left-radius: 0;
+        border-top-right-radius:0;
+        border-bottom-right-radius:0;
+    }
+    .showtitle .legendButtonDiv{
+        top:50px;
+    }
+    .legendButtonDiv {
+        display: inline-block;
+        position: absolute;
+        top: 20px;
+    }
+    .legendButtonDiv.window-top-right{
+        right:0;
+    }
+    .legendButtonDiv.window-top-left{
+        left:0;
+    }
+    /*Position the legend open/close button depending on legend window location */
+    .legendButtonDiv.move.window-top-right {
+        right: 240px;
+    }
+    .legendButtonDiv.move.window-top-left{
+        left:240px;
+    }
+    #legendContainer.window-top-right {
+        right: 0;
+    }
+    #legendContainer.window-top-right > .legendButtonDiv {
+        right: 0;
+    }
+    #legendContainer.window-top-right > .legendButtonDiv {
+        left: 0;
+    }
+    #legendContainer.window-top-left{
+        left:0;
+    }
+}
+/*Loading Indicator Customizations*/
+.loading-indicator {
+    display: none;
+    height: 100%;
+    width: 100%;
+    z-index: 500;
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    background: #fff;
+}
+.app-error .loading-indicator,.app-loading .loading-indicator {
+    display: block;
+}
+.app-loading .loading-indicator {
+    background-position: center center;
+    background-image: url(../images/ajax-loader.gif);
+    background-repeat: no-repeat;
+}
+.app-error .loading-message {
+    background-position: top center;
+    background-image: url(../images/error.png);
+    background-repeat: no-repeat;
+    padding-top: 60px;
+    width: 100%;
+    position: absolute;
+    z-index: 2;
+    top: 40%;
+    left: 0;
+    text-align: center;
+}
+/*Share Dialog Styles*/
+.ShareDialog{
+    width:420px;
+}
+@media screen and (max-width: 450px) {
+    .ShareDialog{
+        width:300px;
+    }
+}
+.calcite .share-dialog-icon {
+    font-size: 30px;
+    line-height: 30px;
+    float: left;
+    color: rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    margin: 0 10px 0 0;
+    text-decoration: none;
+    display: block;
+}
+.calcite .share-dialog-icon:visited {
+    color: rgba(0, 0, 0, 0.5);
+}
+.esriRTL .calcite .share-dialog-icon {
+    float: right;
+    margin: 0 0 0 10px;
+}
+.calcite .share-dialog-icon:hover {
+    color: rgba(0, 0, 0, 0.8);
+}
+.calcite .share-map-url {
+    width: 50%;
+    min-width: 80%;
+    max-width: 90%;
+    height: 25px;
+    font-size: 14px;
+    color: #777;
+    border: 1px solid #dcdcdc;
+    margin: 0 0 10px;
+}
+.calcite .map-size-container {
+    margin: 0;
+    padding: 0 0 20px;
+}
+.calcite .embed-map-size-clear, .calcite .icon-clear {
+    clear: both;
+}
+.calcite .embed-map-size-dropdown {
+    float: left;
+}
+.esriRTL .calcite .embed-map-size-dropdown {
+    float: right;
+}
+.calcite .share-dialog-subheader {
+    font-size: 17px;
+    display: none;
+}
+@media only screen and (min-width: 720px) {
+    .calcite .share-dialog-subheader {
+        display: block;
+    }
+}
+.calcite .share-dialog-textarea {
+    width: auto;
+    max-width: 90%;
+    width: 80%;
+    height: 50px;
+    font-size: 14px;
+    color: #777;
+    border: 1px solid #dcdcdc;
+    margin: 0 0 10px;
+}
+.share-dialog-checkbox {
+    display: inline-block;
+    cursor: pointer;
+    padding: 8px;
+}
+input[type=checkbox].share-dialog-checkbox {
+    display: none;
+}
+.share-dialog-checkbox:before {
+    content: "";
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    vertical-align: middle;
+    background-color: #FDFDFD;
+    color: #f3f3f3;
+    text-align: center;
+}
+input[type=checkbox]:checked.share-dialog-checkbox + .share-dialog-checkbox:before {
+    content: "\2713";
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+    font-size: 15px;
+}
