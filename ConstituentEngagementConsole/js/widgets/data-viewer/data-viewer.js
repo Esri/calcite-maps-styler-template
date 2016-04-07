@@ -563,7 +563,7 @@ define([
         * @memberOf widgets/data-viewer/data-viewer
         */
         _attachHeaderClickEvent: function (header, headerTitle) {
-            var currentChildNode;
+            var currentChildNode, filterContainer, overlayContainer;
             // binding click event for filter container on table header
             this.own(on(header, "click", lang.hitch(this, function (event) {
                 this.hideWebMapList();
@@ -606,6 +606,11 @@ define([
                             }
                             domStyle.set(currentChildNode, "left", parseInt(xCoordinate, 10) + "px");
                             domStyle.set(currentChildNode, "display", "block");
+                            filterContainer = query(".esriCTFilterContainer", currentChildNode)[0];
+                            overlayContainer = query(".esriCTDisableFilterContainer", currentChildNode)[0];
+                            if (filterContainer && filterContainer.clientHeight && overlayContainer) {
+                                domStyle.set(overlayContainer, "height", filterContainer.clientHeight + "px");
+                            }
                         }), 50);
                     }
                     this._filterWidgetObj._handleFilterComponentVisibilty(currentChildNode, this._selectRowGraphicsLayer.graphics.length, this.isEditMode);
@@ -1384,6 +1389,7 @@ define([
         */
         _hideFilterContainer: function () {
             $(".esriCTFilterParentContainer").css("display", "none");
+            $(".bootstrap-datetimepicker-widget.dropdown-menu").remove();
         }
     });
 });

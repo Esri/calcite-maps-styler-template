@@ -30,8 +30,8 @@ define([
     "dojo/on",
     'dojo/dom-attr',
     "esri/graphic",
-    "dojo/dom-geometry",
     "dojo/dom-style",
+    "dojo/dom-geometry",
     "dojo/text!./templates/comment-form.html"
 ], function (
     declare,
@@ -48,8 +48,8 @@ define([
     on,
     domAttr,
     Graphic,
-    domGeom,
     domStyle,
+    domGeom,
     commentForm
 ) {
     return declare([_WidgetBase, _TemplatedMixin], {
@@ -1107,10 +1107,20 @@ define([
             });
             // Attach datetime picker to the container
             $(parentNode).datetimepicker({ locale: kernel.locale }).on('dp.show', function (evt) {
-                var datePickerDialogBox, datePickerPosition;
-                datePickerPosition = domGeom.position(evt.currentTarget, true);
+                var timePickerDialogBox, datePickerDialogBox, datePickerDialogBoxPosition;
+                timePickerDialogBox = query(".picker-switch.accordion-toggle", evt.currentTarget)[0];
+                if (timePickerDialogBox) {
+                    domStyle.set(timePickerDialogBox, "display", "none");
+                }
                 datePickerDialogBox = query(".bootstrap-datetimepicker-widget.dropdown-menu")[0];
-                domStyle.set(datePickerDialogBox, "position", "fixed");
+                if (datePickerDialogBox) {
+                    datePickerDialogBoxPosition = domGeom.position(datePickerDialogBox, true);
+                    domConstruct.place(datePickerDialogBox, dojo.body(), "first");
+                    domStyle.set(datePickerDialogBox, "position", "absolute");
+                    domStyle.set(datePickerDialogBox, "top", (datePickerDialogBoxPosition.y + "px"));
+                    domStyle.set(datePickerDialogBox, "left", (datePickerDialogBoxPosition.x + "px"));
+                    domStyle.set(datePickerDialogBox, "height", (datePickerDialogBoxPosition.h + "px"));
+                }
                 if (isRangeField) {
                     value = new Date(query("input", this)[0].value);
                     minVlaue = new Date(currentField.domain.minValue);

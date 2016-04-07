@@ -1,4 +1,4 @@
-﻿/*global define,dojo,alert,moment,$,screen */
+﻿/*global define,dojo,alert,moment,$,screen,setTimeout */
 /*jslint sloppy:true */
 /*
 | Copyright 2014 Esri
@@ -345,17 +345,22 @@ define([
                     }
                 }
             })).on('dp.show', lang.hitch(this, function (evt) {
-                var datePickerDialogBox, datePickerPosition, timePickerDialogBox;
-                datePickerPosition = domGeom.position(evt.currentTarget, true);
-                datePickerDialogBox = query(".bootstrap-datetimepicker-widget.dropdown-menu")[0];
-                timePickerDialogBox = query(".picker-switch.accordion-toggle", evt.currentTarget)[0];
-                if (timePickerDialogBox) {
-                    domStyle.set(timePickerDialogBox, "display", "none");
-                }
-                if (datePickerDialogBox) {
-                    domStyle.set(datePickerDialogBox, "position", "fixed");
-                    domStyle.set(datePickerDialogBox, "left", ((datePickerPosition.x - 20) + "px"));
-                }
+                setTimeout(lang.hitch(this, function () {
+                    var timePickerDialogBox, datePickerDialogBox, datePickerDialogBoxPosition;
+                    timePickerDialogBox = query(".picker-switch.accordion-toggle", evt.currentTarget)[0];
+                    if (timePickerDialogBox) {
+                        domStyle.set(timePickerDialogBox, "display", "none");
+                    }
+                    datePickerDialogBox = query(".bootstrap-datetimepicker-widget.dropdown-menu")[0];
+                    if (datePickerDialogBox) {
+                        datePickerDialogBoxPosition = domGeom.position(datePickerDialogBox, true);
+                        domConstruct.place(datePickerDialogBox, dojo.body(), "first");
+                        domStyle.set(datePickerDialogBox, "position", "absolute");
+                        domStyle.set(datePickerDialogBox, "top", (datePickerDialogBoxPosition.y + "px"));
+                        domStyle.set(datePickerDialogBox, "left", (datePickerDialogBoxPosition.x + "px"));
+                        domStyle.set(datePickerDialogBox, "height", (datePickerDialogBoxPosition.h + "px"));
+                    }
+                }), 200);
             }));
             // if filter is not enabled then reset date picker
             if (!this.appConfig.enableFilter && !this.appConfig._filterObject.inputs[obj.index].parameters[0].enableFilter) {
@@ -575,7 +580,7 @@ define([
                 prevValue = this.appConfig._filterObject.inputs[obj.index].parameters[0].prevValue;
             }
             // start pushing option to dropdown
-            firstOption = domConstruct.create("option", { "innerHTML": "Select", "value": "" }, obj.node);
+            firstOption = domConstruct.create("option", { "innerHTML": this.appConfig.i18n.filter.dropdownSelectOption, "value": "" }, obj.node);
             array.forEach(obj.features, lang.hitch(this, function (feature, i) {
                 if (feature.attributes[obj.displayColumn] === 0 || (feature.attributes[obj.displayColumn] && (feature.attributes[obj.displayColumn] !== "" || feature.attributes[obj.displayColumn] !== null))) {
                     if (this._isCodedValueColumn) {
@@ -603,13 +608,11 @@ define([
                     } else if (this.appConfig._filterObject.inputs[obj.index].parameters[0].textBoxValue && this.appConfig._filterObject.inputs[obj.index].parameters[0].textBoxValue.toString() === feature.attributes[obj.displayColumn].toString() && !selectedOption) {
                         this.appConfig._filterObject.inputs[obj.index].parameters[0].dropDownValue = feature.attributes[obj.displayColumn];
                         this.appConfig._filterObject.inputs[obj.index].parameters[0].currentValue = feature.attributes[obj.displayColumn];
-                        this.appConfig._filterObject.inputs[obj.index].parameters[0].prevValue = feature.attributes[obj.displayColumn];
                         domAttr.set(option[i], "selected", true);
                         selectedOption = true;
                     } else if (this.appConfig._filterObject.inputs[obj.index].parameters[0].defaultValue && this.appConfig._filterObject.inputs[obj.index].parameters[0].defaultValue.toString() === feature.attributes[obj.displayColumn].toString() && !selectedOption) {
                         this.appConfig._filterObject.inputs[obj.index].parameters[0].dropDownValue = feature.attributes[obj.displayColumn];
                         this.appConfig._filterObject.inputs[obj.index].parameters[0].currentValue = feature.attributes[obj.displayColumn];
-                        this.appConfig._filterObject.inputs[obj.index].parameters[0].prevValue = feature.attributes[obj.displayColumn];
                         domAttr.set(option[i], "selected", true);
                         selectedOption = true;
                     }
@@ -885,18 +888,6 @@ define([
         },
 
         /**
-        * This function will create new parameterized expression string
-        * either on default application load,
-        * or on any change in values
-        * @memberOf widgets/filter/filter
-        */
-        _setParameterizedExpression: function () {
-            this._currentExpression = "";
-            this._setCurrentExpression();
-            this._applyParameterizedExpression();
-        },
-
-        /**
         * Function to reset filter object when a different layer is selected from a same webmap
         * @memberOf widgets/filter/filter
         */
@@ -918,10 +909,6 @@ define([
 
                 if (input.parameters[0].currentValue !== undefined) {
                     delete input.parameters[0].currentValue;
-                }
-
-                if (input.parameters[0].prevValue !== undefined) {
-                    delete input.parameters[0].prevValue;
                 }
 
                 if (input.parameters[1] && input.parameters[1].currentValue && input.parameters[1].currentValue !== undefined) {
@@ -1363,7 +1350,6 @@ define([
                         queryDateObject.node.datetimepicker().data("DateTimePicker").date(new Date(queryDateObject.node.data().date));
                     } else {
                         this.appConfig._filterObject.inputs[queryDateObject.index].parameters[0].prevValue = this.appConfig._filterObject.inputs[queryDateObject.index].parameters[0].currentValue;
-                        //this._resetDatePicker(queryDateObject.closeDatePickerSpan, queryDateObject.index, queryDateObject.displayColumn);
                     }
                     this._applyParameterizedExpression();
                 } else {

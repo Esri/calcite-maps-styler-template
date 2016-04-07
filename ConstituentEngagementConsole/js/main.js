@@ -23,6 +23,7 @@ define([
     "dojo/dom-style",
     "dojo/dom-construct",
     "dojo/on",
+    "dojo/string",
     "application/utils/utils",
     "widgets/app-header/app-header",
     "widgets/map-viewer/map-viewer",
@@ -37,6 +38,7 @@ define([
     "dojo/query",
     "esri/dijit/PopupTemplate",
     "dojo/dom-attr",
+    "dojo/dom-geometry",
     "dojo/domReady!"
 ], function (
     declare,
@@ -46,6 +48,7 @@ define([
     domStyle,
     domConstruct,
     on,
+    string,
     ApplicationUtils,
     ApplicationHeader,
     MapViewer,
@@ -59,7 +62,8 @@ define([
     EsriQuery,
     query,
     PopupTemplate,
-    domAttr
+    domAttr,
+    domGeom
 ) {
     return declare(null, {
         _boilerPlateTemplate: null, // to store object of boilerplate
@@ -176,6 +180,12 @@ define([
                 domClass.add("signInErrorMessageContainer", "esriCTHidden");
                 // executes when window is resized
                 on(window, "resize", lang.hitch(this, this._onWindowResize));
+                // executes when window is resized
+                on(window, "orientationchange", lang.hitch(this, function () {
+                    if (ApplicationUtils.isAndroid()) {
+                        $(".esriCTFilterParentContainer").css("display", "none");
+                    }
+                }));
                 // set Application Theme
                 ApplicationUtils.loadApplicationTheme(this.appConfig);
                 // create Application header
@@ -252,7 +262,21 @@ define([
                 this._applicationHeader._setWidthOfApplicationNameContainer();
             }
             this._setNoDataDataViewerMessagePosition();
-            $(".esriCTFilterParentContainer").css("display", "none");
+            if (!ApplicationUtils.isAndroid()) {
+                $(".esriCTFilterParentContainer").css("display", "none");
+            }
+            setTimeout(lang.hitch(this, function () {
+                var datePickerDialogBox, datePickerDialogBoxPosition;
+                datePickerDialogBox = query(".bootstrap-datetimepicker-widget.dropdown-menu")[0];
+                if (datePickerDialogBox) {
+                    datePickerDialogBoxPosition = domGeom.position(datePickerDialogBox, true);
+                    domConstruct.place(datePickerDialogBox, dojo.body(), "first");
+                    domStyle.set(datePickerDialogBox, "position", "absolute");
+                    domStyle.set(datePickerDialogBox, "top", (datePickerDialogBoxPosition.y + "px"));
+                    domStyle.set(datePickerDialogBox, "left", (datePickerDialogBoxPosition.x + "px"));
+                    domStyle.set(datePickerDialogBox, "height", (datePickerDialogBoxPosition.h + "px"));
+                }
+            }), 200);
             this._resizeMap();
         },
 
@@ -281,7 +305,6 @@ define([
         * @memberOf widgets/main/main
         */
         _attachApplicationHeaderEventListener: function () {
-
             this._applicationHeader.hideWebMapList = lang.hitch(this, function () {
                 if ((!domClass.contains("webmapListToggleButton", "esriCTWebMapPanelToggleButtonOpenDisabled")) && (!domClass.contains("webmapListToggleButton", "esriCTWebMapPanelToggleButtonCloseDisabled"))) {
                     if (this._webMapListWidget) {
@@ -289,23 +312,19 @@ define([
                     }
                 }
             });
-
             this._applicationHeader.confirmedManualRefresh = lang.hitch(this, function () {
                 this._isManualRefreshedClicked = true;
                 this._dataViewerWidget.storeDataForManualRefresh();
             });
-
             this._applicationHeader.reload = lang.hitch(this, function (logInDetails) {
                 this._reloadSignedInUserDetails = logInDetails;
             });
-
             this._applicationHeader.destroyWidgets = lang.hitch(this, function () {
                 ApplicationUtils.showLoadingIndicator();
                 ApplicationUtils.showOverlayContainer();
                 this._destroyWidgets();
                 this.reload(this._reloadSignedInUserDetails);
             });
-
             this._applicationHeader.onSearchApplied = lang.hitch(this, function (lastSearchedString) {
                 this.appConfig._filterObject.lastSearchedString = lastSearchedString;
             });
@@ -423,6 +442,7 @@ define([
                 setTimeout(lang.hitch(this, function () {
                     ApplicationUtils.showLoadingIndicator();
                     ApplicationUtils.hideOverlayContainer();
+                    $(".esriCTSignOutOption").addClass("esriCTHidden");
                     this._resetUpperAndLowerContainer();
                     // Reset last updated feature array
                     this.updatedFeature = null;
@@ -485,8 +505,10 @@ define([
         * @memberOf widgets/main/main
         */
         _resetUpperAndLowerContainer: function () {
-            $("#upperContainer").height('55%');
+            $("#upperContainer").height('54%');
             $("#lowerContainer").height('45%');
+            //Resize the map after setting default height to lower and upper container
+            this._resizeMap();
         },
 
         /**
@@ -692,7 +714,22 @@ define([
         * @memberOf widgets/main/main
         */
         _setApplicationHeaderTitle: function () {
-            dojo.byId("operationalLayerName").innerHTML = this._layerSelectionDetails.operationalLayerDetails.title;
+            dom.byId("operationalLayerName").innerHTML = this._layerSelectionDetails.operationalLayerDetails.title;
+        },
+
+        /**
+        * This function is used to set count of total number features present in layer
+        * @memberOf widgets/main/main
+        */
+        _setFeatureLayerCountLabel: function (graphics) {
+            var count, countLabelString;
+            if (graphics && graphics.length) {
+                count = graphics.length;
+            } else {
+                count = 0;
+            }
+            countLabelString = string.substitute(this.appConfig.i18n.dataviewer.layerFeatureCount, { featureCount: count });
+            dom.byId("layerFeatureCountContainer").innerHTML = countLabelString;
         },
 
         /**
@@ -831,9 +868,11 @@ define([
                         this._refinedOperationalLayer.queryFeatures(timeQuery, lang.hitch(this, function (featureSet) {
                             //Change graphics of layer with latest fetched features
                             this._refinedOperationalLayer.graphics = featureSet.features || [];
+                            this._setFeatureLayerCountLabel(this._refinedOperationalLayer.graphics);
                             this._createDataViewer();
                         }));
                     } else {
+                        this._setFeatureLayerCountLabel(this._refinedOperationalLayer.graphics);
                         this._createDataViewer();
                     }
                 }));

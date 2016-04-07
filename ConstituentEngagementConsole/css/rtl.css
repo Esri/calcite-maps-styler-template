@@ -332,3 +332,15 @@
 }
 
 /* Sign-in container ends */
+
+/* Layer Title Container Starts */
+
+.dj_rtl .esriCTFeatureCount
+{
+    padding-left: 15px;
+    float: left;
+    padding-right: 0px;
+    text-align: left;
+}
+
+/* Layer Title Container Ends */

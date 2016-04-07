@@ -64,7 +64,7 @@ define({
             cancelButtonTooltip: "Cancel", //tooltip for cancel button
             geoformBackButtonTooltip: "Return to the report list", //tooltip for Geoform back button
             updateFeaturesConfirmationMsg: "${count} features will be updated", //confirmation essage to be displayed before updating the features
-            attachmentHeaderText: "Attachments" //attachment header Text
+            attachmentHeaderText: "Attachments"//attachment header Text
         },
         mapViewer: {
             zoomInToolTip: "Zoom in", // Display tool-tip on command button to zoom in map
@@ -83,7 +83,8 @@ define({
             filterLabel: "Filter", // Appears as a label for Filter container
             valueRadioButtonLabel: "Value", // Appears as a label for 'Value' radio button in filter container
             uniqueRadioButtonLabel: "Unique", // Appears as a label for 'Unique' radio button in filter container
-            selectLayerToBegin: "Select a category to get started" // for showing default message on application load
+            selectLayerToBegin: "Select a category to get started", // for showing default message on application load
+            layerFeatureCount: "No of records: ${featureCount}" // Appears beside operational layer name to display count of feature
         },
         timeSlider: {
             timeSliderLabel: "Time range", // Appears beside time slider widget
@@ -118,7 +119,8 @@ define({
             noFeatureFoundText: "No feature found for this value.", // Displayed when no feature is found after applying filter
             distinctQueryFalied: "No distinct values found for the field.", // Displayed when query fails while fetching distinct values in filter unique value section
             andText: "and", // Displayed in filter UI when "is between" case is applied to its field
-            filterInEditModeAlert: "Filters unavailable while editing" // Displayed when user tries to applies filter in edit mode
+            filterInEditModeAlert: "Filters unavailable while editing", // Displayed when user tries to applies filter in edit mode
+            dropdownSelectOption: "Select" // Displayed as a first option in a filter dropdown
         },
         detailsPanel: {
             editContentText: "Edit record" // Displayed on hover of edit toggle button

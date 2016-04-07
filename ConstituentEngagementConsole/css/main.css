@@ -316,40 +316,40 @@ table
 .esriCTSearchIconContainer
 {
     float: right;
-    background-image: url('../images/search-24.png');
+    background-image: url('../images/search-16.png');
 }
 
 .esriCTSearchIconContainerDisabled
 {
     float: right;
-    background-image: url('../images/search-disable-24.png');
+    background-image: url('../images/search-disable-16.png');
 }
 
 .esriCTManualRefreshIconContainer
 {
     float: right;
-    background-image: url('../images/manual-refresh-24.png');
+    background-image: url('../images/manual-refresh-16.png');
 }
 
 .esriCTManualRefreshIconContainerDisable
 {
     float: right;
-    background-image: url('../images/manual-refresh-disable-24.png');
+    background-image: url('../images/manual-refresh-disable-16.png');
 }
 
 .esriCTHelpIconContainer
 {
     float: right;
-    background-image: url('../images/help-24.png');
+    background-image: url('../images/help-16.png');
 }
 
 .esriCTHeaderIcons
 {
     background-repeat: no-repeat;
-    height: 24px;
-    width: 24px;
+    height: 16px;
+    width: 16px;
     background-size: cover;
-    margin: 12px 24px;
+    margin: 17px 24px;
     display: inline-block;
 }
 
@@ -375,7 +375,7 @@ table
     text-align: right;
     color: #fff;
     max-width: 135px;
-    line-height: 49px;
+    line-height: 50px;
     float: left;
 }
 
@@ -425,6 +425,7 @@ table
     width: 100%;
     height: 35px;
     float: left;
+    text-align: center;
 }
 
 .esriCTOperationalLayerName
@@ -437,6 +438,20 @@ table
     text-indent: 45px;
     font-size: 15px;
     font-weight: bold;
+    width: calc(100% - 250px);
+    display: inline-block;
+}
+
+.esriCTFeatureCount
+{
+    line-height: 35px;
+    padding-right: 15px;
+    float: right;
+    width: 250px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: right;
 }
 
 /** Operational layer name container ends **/
@@ -890,12 +905,14 @@ table
     left: 40px;
     position: relative;
     float: right;
+    background: #fff;
 }
 .esriCTWebMapPanelToggleBtnPositionClose
 {
     left: 40px;
     position: relative;
     float: right;
+    background: #fff;
 }
 .esriCTWebMapPanelToggleButtonStyle
 {

@@ -176,6 +176,8 @@ define([
 
                 } else {
                     this.searchBox.value = "";
+                    this._getExistingDefinitionExpression();
+                    this.appConfig._filterObject.lastSearchedString = "";
                     this.selectedOperationalLayer.setDefinitionExpression(this._existingDefinitionExpression);
                     if (this._searchedFromSearchWidget) {
                         this._displayNoResultFoundMessage();
@@ -288,8 +290,9 @@ define([
         * @memberOf widgets/search/search
         */
         resetSearchPanel: function (searchParameter) {
-            domClass.add(this.searchOptions, "esriCTHidden");
             var i, enableSearch = false;
+            domClass.add(this.searchOptions, "esriCTHidden");
+            this.searchBox.value = "";
             this._mixinSearchParameter(searchParameter);
             if (this.itemInfo && this.itemInfo.itemData.applicationProperties && this.itemInfo.itemData.applicationProperties.viewing && this.itemInfo.itemData.applicationProperties.viewing.search && this.itemInfo.itemData.applicationProperties.viewing.search.enabled) {
                 for (i = 0; i < this.itemInfo.itemData.applicationProperties.viewing.search.layers.length; i++) {
