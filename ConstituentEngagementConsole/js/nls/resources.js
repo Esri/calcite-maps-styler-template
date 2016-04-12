@@ -64,7 +64,7 @@ define({
             cancelButtonTooltip: "Cancel", //tooltip for cancel button
             geoformBackButtonTooltip: "Return to the report list", //tooltip for Geoform back button
             updateFeaturesConfirmationMsg: "${count} features will be updated", //confirmation essage to be displayed before updating the features
-            attachmentHeaderText: "Attachments"//attachment header Text
+            attachmentHeaderText: "Attachments" //attachment header Text
         },
         mapViewer: {
             zoomInToolTip: "Zoom in", // Display tool-tip on command button to zoom in map
