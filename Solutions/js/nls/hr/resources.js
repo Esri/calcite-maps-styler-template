@@ -14,8 +14,8 @@
  | See the License for the specific language governing permissions and
  | limitations under the License.
  */
-define({
-    root: ({
+define(
+     ({
         map: {
             error: "Č_Unable to create map_______ž"
         },
@@ -65,4 +65,4 @@ define({
             unableToLaunchApp: "Č_Unable to launch application_________ž"  // Appears for any failure to build the user interface
         }
     })
-});
+);

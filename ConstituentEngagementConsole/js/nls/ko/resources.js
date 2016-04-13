@@ -83,7 +83,8 @@ define(
             filterLabel: "한_Filter___빠", // Appears as a label for Filter container
             valueRadioButtonLabel: "한_Value___빠", // Appears as a label for 'Value' radio button in filter container
             uniqueRadioButtonLabel: "한_Unique___빠", // Appears as a label for 'Unique' radio button in filter container
-            selectLayerToBegin: "한_Select a category to get started___________빠" // for showing default message on application load
+            selectLayerToBegin: "한_Select a category to get started___________빠", // for showing default message on application load
+            layerFeatureCount: "한_No of records: ${featureCount}__________빠" // Appears beside operational layer name to display count of feature
         },
         timeSlider: {
             timeSliderLabel: "한_Time range____빠", // Appears beside time slider widget
@@ -118,7 +119,8 @@ define(
             noFeatureFoundText: "한_No feature found for this value___________빠.", // Displayed when no feature is found after applying filter
             distinctQueryFalied: "한_No distinct values found for the field_____________빠.", // Displayed when query fails while fetching distinct values in filter unique value section
             andText: "한_and__빠", // Displayed in filter UI when "is between" case is applied to its field
-            filterInEditModeAlert: "한_Filters unavailable while editing___________빠" // Displayed when user tries to applies filter in edit mode
+            filterInEditModeAlert: "한_Filters unavailable while editing___________빠", // Displayed when user tries to applies filter in edit mode
+            dropdownSelectOption: "한_Select___빠" // Displayed as a first option in a filter dropdown
         },
         detailsPanel: {
             editContentText: "한_Edit record____빠" // Displayed on hover of edit toggle button

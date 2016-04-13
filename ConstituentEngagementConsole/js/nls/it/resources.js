@@ -83,7 +83,8 @@ define(
             filterLabel: "é_Filter___È", // Appears as a label for Filter container
             valueRadioButtonLabel: "é_Value___È", // Appears as a label for 'Value' radio button in filter container
             uniqueRadioButtonLabel: "é_Unique___È", // Appears as a label for 'Unique' radio button in filter container
-            selectLayerToBegin: "é_Select a category to get started___________È" // for showing default message on application load
+            selectLayerToBegin: "é_Select a category to get started___________È", // for showing default message on application load
+            layerFeatureCount: "é_No of records: ${featureCount}__________È" // Appears beside operational layer name to display count of feature
         },
         timeSlider: {
             timeSliderLabel: "é_Time range____È", // Appears beside time slider widget
@@ -118,7 +119,8 @@ define(
             noFeatureFoundText: "é_No feature found for this value___________È.", // Displayed when no feature is found after applying filter
             distinctQueryFalied: "é_No distinct values found for the field_____________È.", // Displayed when query fails while fetching distinct values in filter unique value section
             andText: "é_and__È", // Displayed in filter UI when "is between" case is applied to its field
-            filterInEditModeAlert: "é_Filters unavailable while editing___________È" // Displayed when user tries to applies filter in edit mode
+            filterInEditModeAlert: "é_Filters unavailable while editing___________È", // Displayed when user tries to applies filter in edit mode
+            dropdownSelectOption: "é_Select___È" // Displayed as a first option in a filter dropdown
         },
         detailsPanel: {
             editContentText: "é_Edit record____È" // Displayed on hover of edit toggle button

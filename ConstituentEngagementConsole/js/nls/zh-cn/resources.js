@@ -83,7 +83,8 @@ define(
             filterLabel: "试_Filter___验", // Appears as a label for Filter container
             valueRadioButtonLabel: "试_Value___验", // Appears as a label for 'Value' radio button in filter container
             uniqueRadioButtonLabel: "试_Unique___验", // Appears as a label for 'Unique' radio button in filter container
-            selectLayerToBegin: "试_Select a category to get started___________验" // for showing default message on application load
+            selectLayerToBegin: "试_Select a category to get started___________验", // for showing default message on application load
+            layerFeatureCount: "试_No of records: ${featureCount}__________验" // Appears beside operational layer name to display count of feature
         },
         timeSlider: {
             timeSliderLabel: "试_Time range____验", // Appears beside time slider widget
@@ -118,7 +119,8 @@ define(
             noFeatureFoundText: "试_No feature found for this value___________验.", // Displayed when no feature is found after applying filter
             distinctQueryFalied: "试_No distinct values found for the field_____________验.", // Displayed when query fails while fetching distinct values in filter unique value section
             andText: "试_and__验", // Displayed in filter UI when "is between" case is applied to its field
-            filterInEditModeAlert: "试_Filters unavailable while editing___________验" // Displayed when user tries to applies filter in edit mode
+            filterInEditModeAlert: "试_Filters unavailable while editing___________验", // Displayed when user tries to applies filter in edit mode
+            dropdownSelectOption: "试_Select___验" // Displayed as a first option in a filter dropdown
         },
         detailsPanel: {
             editContentText: "试_Edit record____验" // Displayed on hover of edit toggle button

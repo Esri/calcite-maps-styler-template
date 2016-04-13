@@ -83,7 +83,8 @@ define(
             filterLabel: "بيت_Filter___لاحقة", // Appears as a label for Filter container
             valueRadioButtonLabel: "بيت_Value___لاحقة", // Appears as a label for 'Value' radio button in filter container
             uniqueRadioButtonLabel: "بيت_Unique___لاحقة", // Appears as a label for 'Unique' radio button in filter container
-            selectLayerToBegin: "بيت_Select a category to get started___________لاحقة" // for showing default message on application load
+            selectLayerToBegin: "بيت_Select a category to get started___________لاحقة", // for showing default message on application load
+            layerFeatureCount: "بيت_No of records: ${featureCount}__________لاحقة" // Appears beside operational layer name to display count of feature
         },
         timeSlider: {
             timeSliderLabel: "بيت_Time range____لاحقة", // Appears beside time slider widget
@@ -118,7 +119,8 @@ define(
             noFeatureFoundText: "بيت_No feature found for this value___________لاحقة.", // Displayed when no feature is found after applying filter
             distinctQueryFalied: "بيت_No distinct values found for the field_____________لاحقة.", // Displayed when query fails while fetching distinct values in filter unique value section
             andText: "بيت_and__لاحقة", // Displayed in filter UI when "is between" case is applied to its field
-            filterInEditModeAlert: "بيت_Filters unavailable while editing___________لاحقة" // Displayed when user tries to applies filter in edit mode
+            filterInEditModeAlert: "بيت_Filters unavailable while editing___________لاحقة", // Displayed when user tries to applies filter in edit mode
+            dropdownSelectOption: "بيت_Select___لاحقة" // Displayed as a first option in a filter dropdown
         },
         detailsPanel: {
             editContentText: "بيت_Edit record____لاحقة" // Displayed on hover of edit toggle button

@@ -83,7 +83,8 @@ define(
             filterLabel: "Ж_Filter___Я", // Appears as a label for Filter container
             valueRadioButtonLabel: "Ж_Value___Я", // Appears as a label for 'Value' radio button in filter container
             uniqueRadioButtonLabel: "Ж_Unique___Я", // Appears as a label for 'Unique' radio button in filter container
-            selectLayerToBegin: "Ж_Select a category to get started___________Я" // for showing default message on application load
+            selectLayerToBegin: "Ж_Select a category to get started___________Я", // for showing default message on application load
+            layerFeatureCount: "Ж_No of records: ${featureCount}__________Я" // Appears beside operational layer name to display count of feature
         },
         timeSlider: {
             timeSliderLabel: "Ж_Time range____Я", // Appears beside time slider widget
@@ -118,7 +119,8 @@ define(
             noFeatureFoundText: "Ж_No feature found for this value___________Я.", // Displayed when no feature is found after applying filter
             distinctQueryFalied: "Ж_No distinct values found for the field_____________Я.", // Displayed when query fails while fetching distinct values in filter unique value section
             andText: "Ж_and__Я", // Displayed in filter UI when "is between" case is applied to its field
-            filterInEditModeAlert: "Ж_Filters unavailable while editing___________Я" // Displayed when user tries to applies filter in edit mode
+            filterInEditModeAlert: "Ж_Filters unavailable while editing___________Я", // Displayed when user tries to applies filter in edit mode
+            dropdownSelectOption: "Ж_Select___Я" // Displayed as a first option in a filter dropdown
         },
         detailsPanel: {
             editContentText: "Ж_Edit record____Я" // Displayed on hover of edit toggle button

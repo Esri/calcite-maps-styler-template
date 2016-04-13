@@ -3,8 +3,7 @@
 SETLOCAL
 
 ECHO --- Update pseudo---
-
-git commit -a -m "Updated Pseudo i18n - @jona7150"
+echo `git add -A && git commit -a -m "Updated Pseudo i18n - @jona7150"`
 
 
 ENDLOCAL

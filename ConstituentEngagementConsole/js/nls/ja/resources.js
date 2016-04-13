@@ -83,7 +83,8 @@ define(
             filterLabel: "須_Filter___鷗", // Appears as a label for Filter container
             valueRadioButtonLabel: "須_Value___鷗", // Appears as a label for 'Value' radio button in filter container
             uniqueRadioButtonLabel: "須_Unique___鷗", // Appears as a label for 'Unique' radio button in filter container
-            selectLayerToBegin: "須_Select a category to get started___________鷗" // for showing default message on application load
+            selectLayerToBegin: "須_Select a category to get started___________鷗", // for showing default message on application load
+            layerFeatureCount: "須_No of records: ${featureCount}__________鷗" // Appears beside operational layer name to display count of feature
         },
         timeSlider: {
             timeSliderLabel: "須_Time range____鷗", // Appears beside time slider widget
@@ -118,7 +119,8 @@ define(
             noFeatureFoundText: "須_No feature found for this value___________鷗.", // Displayed when no feature is found after applying filter
             distinctQueryFalied: "須_No distinct values found for the field_____________鷗.", // Displayed when query fails while fetching distinct values in filter unique value section
             andText: "須_and__鷗", // Displayed in filter UI when "is between" case is applied to its field
-            filterInEditModeAlert: "須_Filters unavailable while editing___________鷗" // Displayed when user tries to applies filter in edit mode
+            filterInEditModeAlert: "須_Filters unavailable while editing___________鷗", // Displayed when user tries to applies filter in edit mode
+            dropdownSelectOption: "須_Select___鷗" // Displayed as a first option in a filter dropdown
         },
         detailsPanel: {
             editContentText: "須_Edit record____鷗" // Displayed on hover of edit toggle button

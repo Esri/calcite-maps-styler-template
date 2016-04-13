@@ -83,7 +83,8 @@ define(
             filterLabel: "ก้_Filter___ษฺ", // Appears as a label for Filter container
             valueRadioButtonLabel: "ก้_Value___ษฺ", // Appears as a label for 'Value' radio button in filter container
             uniqueRadioButtonLabel: "ก้_Unique___ษฺ", // Appears as a label for 'Unique' radio button in filter container
-            selectLayerToBegin: "ก้_Select a category to get started___________ษฺ" // for showing default message on application load
+            selectLayerToBegin: "ก้_Select a category to get started___________ษฺ", // for showing default message on application load
+            layerFeatureCount: "ก้_No of records: ${featureCount}__________ษฺ" // Appears beside operational layer name to display count of feature
         },
         timeSlider: {
             timeSliderLabel: "ก้_Time range____ษฺ", // Appears beside time slider widget
@@ -118,7 +119,8 @@ define(
             noFeatureFoundText: "ก้_No feature found for this value___________ษฺ.", // Displayed when no feature is found after applying filter
             distinctQueryFalied: "ก้_No distinct values found for the field_____________ษฺ.", // Displayed when query fails while fetching distinct values in filter unique value section
             andText: "ก้_and__ษฺ", // Displayed in filter UI when "is between" case is applied to its field
-            filterInEditModeAlert: "ก้_Filters unavailable while editing___________ษฺ" // Displayed when user tries to applies filter in edit mode
+            filterInEditModeAlert: "ก้_Filters unavailable while editing___________ษฺ", // Displayed when user tries to applies filter in edit mode
+            dropdownSelectOption: "ก้_Select___ษฺ" // Displayed as a first option in a filter dropdown
         },
         detailsPanel: {
             editContentText: "ก้_Edit record____ษฺ" // Displayed on hover of edit toggle button

@@ -2,119 +2,119 @@
      ({
         "viewer": {
             "main": {
-                "scaleBarUnits": "metric",
-                "clearSearch": "مسح",
-                "datePattern": "MMM d, yyyy" // added 2.5.2013
+                "scaleBarUnits": "Č_english___ž",
+                "clearSearch": "Č_Clear___ž",
+                "datePattern": "Č_MMM d, yyyy____ž" // added 2.5.2013
             },
             "errors": {
-                "createMap": "يتعذر إنشاء الخريطة",
-                "general": "خطأ",
-                "bingError": "يتطلب نشر هذا التطبيق مفتاح خرائط Bing.",
-                "noLayers": "لا توجد طبقات تشغيلية",
-                "noSearchResults": "عفوًا، لم يتم العثور على أي نتائج.",
-                "noGroupResults": "يتعذر العثور على هذه المجموعة.",
-                "noMatches": "لم يتم العثور على تطابقات.",
-                "noMapsFound": "لم يتم العثور على أي خرائط."
+                "createMap": "Č_Unable to create map_______ž",
+                "general": "Č_Error___ž",
+                "bingError": "Č_Deploying this application requires your own Bing Maps key___________________ž.",
+                "noLayers": "Č_No operational layers_______ž",
+                "noSearchResults": "Č_Sorry, no results were found__________ž.",
+                "noGroupResults": "Č_The group could not be found__________ž.",
+                "noMatches": "Č_No matches found______ž.",
+                "noMapsFound": "Č_No maps were found_______ž."
             },
             "sidePanel": {
-                "title": "مفتاح الخريطة",
-                "legendButton": "مفتاح الخريطة",
-                "layersButton": "طبقات", // new
-                "legendButtonTitle": "وسيلة إيضاح الخريطة",
-                "aboutButton": "نبذة عن",
-                "aboutButtonTitle": "نبذة عن الخريطة",
-                "message": "لا توجد طبقات تشغيلية"
+                "title": "Č_Legend___ž",
+                "legendButton": "Č_Legend___ž",
+                "layersButton": "Č_Layers___ž", // new
+                "legendButtonTitle": "Č_Map Legend____ž",
+                "aboutButton": "Č_About___ž",
+                "aboutButtonTitle": "Č_About Map____ž",
+                "message": "Č_No operational layers_______ž"
             },
             "groupPage": {
-                "showAllMaps": "إظهار جميع الخرائط",
-                "searchTitle": "البحث في هذه المجموعة",
-                "searchTitleShort": "بحث",
-                "searchPlaceholder": "البحث في الخرائط",
-                "itemTitle": "عرض الخريطة",
-                "gridSwitch": "تحويل إلى عرض الشبكة",
-                "listSwitch": "تحويل إلى عرض القائمة",
-                "loadingText": "تحميل Maps&hellip;"
+                "showAllMaps": "Č_Show all maps_____ž",
+                "searchTitle": "Č_Search this group______ž",
+                "searchTitleShort": "Č_Search___ž",
+                "searchPlaceholder": "Č_Search maps____ž",
+                "itemTitle": "Č_View map___ž",
+                "gridSwitch": "Č_Switch to Grid View_______ž",
+                "listSwitch": "Č_Switch to List View_______ž",
+                "loadingText": "Č_Loading Maps&hellip;_______ž"
             },
             "sortFields": {
-                "sortBy": "الفرز حسب",
-                "modified": "التاريخ",
-                "title": "العنوان",
-                "type": "نوع",
-                "numRatings": "تصنيفات",
-                "avgRating": "التصنيف المتوسط",
-                "numComments": "تعليقات",
-                "numViews": "المشاهدات"
+                "sortBy": "Č_Sort by___ž",
+                "modified": "Č_Date__ž",
+                "title": "Č_Title___ž",
+                "type": "Č_Type__ž",
+                "numRatings": "Č_Ratings___ž",
+                "avgRating": "Č_Avg. Rating____ž",
+                "numComments": "Č_Comments___ž",
+                "numViews": "Č_Views___ž"
             },
             "comments": {
-                "commentsHeader": "تعليقات",
-                "posted": "تم النشر",
-                "by": "حسب",
-                "deleteComment": "حذف",
-                "editComment": "تحرير",
-                "noComments": "لا توجد تعليقات",
-                "addCommentButton": "إضافة تعليق",
-                "signIn": "تسجيل الدخول",
-                "register": "تسجيل",
-                "or": "أو",
-                "toPost": "لنشر تعليق."
+                "commentsHeader": "Č_Comments___ž",
+                "posted": "Č_Posted___ž",
+                "by": "Č_by__ž",
+                "deleteComment": "Č_delete___ž",
+                "editComment": "Č_edit__ž",
+                "noComments": "Č_No comments____ž",
+                "addCommentButton": "Č_Add Comment____ž",
+                "signIn": "Č_Sign In___ž",
+                "register": "Č_Register___ž",
+                "or": "Č_or__ž",
+                "toPost": "Č_to post a comment______ž."
             },
             "buttons": {
-                "cancel": "إلغاء الأمر",
-                "submit": "إرسال"
+                "cancel": "Č_Cancel___ž",
+                "submit": "Č_Submit___ž"
             },
             "rating": {
-                "signIn": "تسجيل الدخول",
-                "toRate": "للتصنيف"
+                "signIn": "Č_Sign In___ž",
+                "toRate": "Č_to rate___ž."
             },
             "itemInfo": {
-                "createdLabel": "تم إنشاء",
-                "ratingsLabel": "تصنيف",
-                "ratingsLabelPlural": "تصنيفات",
-                "viewsLabel": "عرض",
-                "viewsLabelPlural": "المشاهدات",
-                "commentsLabel": "تعليق",
-                "commentsLabelPlural": "تعليقات",
-                "modifiedLabel": "آخر تعديل",
-                "by": "حسب",
-                "separator": ","
+                "createdLabel": "Č_created___ž",
+                "ratingsLabel": "Č_rating___ž",
+                "ratingsLabelPlural": "Č_ratings___ž",
+                "viewsLabel": "Č_view__ž",
+                "viewsLabelPlural": "Č_views___ž",
+                "commentsLabel": "Č_comment___ž",
+                "commentsLabelPlural": "Č_comments___ž",
+                "modifiedLabel": "Č_Last Modified_____ž",
+                "by": "Č_by__ž",
+                "separator": "Č__ž,"
             },
             "mapPage": {
-                "findLocation": "العثور على موقع",
-                "findPlaceholder": "تحديد عنوان",
-                "aboutHeader": "نبذة عن هذه الخريطة",
-                "layersHeader": "طبقات",
-                "enterFullscreen": "وضع ملء الشاشة",
-                "exitFullscreen": "خروج من وضع ملء الشاشة",
-                "arcgisLink": "تفاصيل العنصر",
-                "moreInformation": "مزيد من المعلومات",
-                "geoLocateTitle": "استخدام الموقع الحالي",
-                "openInMobile": "فتح في Mobile App",
+                "findLocation": "Č_Find a location______ž",
+                "findPlaceholder": "Č_Locate an address______ž",
+                "aboutHeader": "Č_About this map_____ž",
+                "layersHeader": "Č_Layers___ž",
+                "enterFullscreen": "Č_Fullscreen View______ž",
+                "exitFullscreen": "Č_Exit Fullscreen______ž",
+                "arcgisLink": "Č_Item Details_____ž",
+                "moreInformation": "Č_More Information______ž",
+                "geoLocateTitle": "Č_Use Current Location_______ž",
+                "openInMobile": "Č_Open in Mobile App______ž",
                 "openInArcGIS": "Map Viewer",
                 "openInExplorer": "Explorer Online",
-                "ownerHeader": "المالك:",
-                "switchBasemap": "تبديل خريطة الأساس",
-                "getMobileApp": "الحصول على تطبيق",
-                "constraintsHeading": "استخدام القيود",
-                "createdLabel": "تم الإنشاء",
-                "noDescription": "لا يوجد وصف",
-                "detailsLabel": "التفاصيل"
+                "ownerHeader": "Č_Owner___ž:",
+                "switchBasemap": "Č_Switch Basemap_____ž",
+                "getMobileApp": "Č_Get App___ž",
+                "constraintsHeading": "Č_Use Constraints______ž",
+                "createdLabel": "Č_Created___ž",
+                "noDescription": "Č_No description______ž.",
+                "detailsLabel": "Č_Details___ž"
             },
             "filterItems": {
-                "show": "إظهار",
-                "all": "جميع النتائج",
-                "maps": "خرائط",
-                "layers": "طبقات",
-                "applications": "التطبيقات",
-                "tools": "أدوات",
-                "files": "ملفات"
+                "show": "Č_Show__ž",
+                "all": "Č_All Results____ž",
+                "maps": "Č_Maps__ž",
+                "layers": "Č_Layers___ž",
+                "applications": "Č_Applications_____ž",
+                "tools": "Č_Tools___ž",
+                "files": "Č_Files___ž"
             },
             "pagination": {
-                "previous": "السابق",
-                "next": "التالي",
-                "first": "الصفحة الأولى",
-                "last": "الصفحة الأخيرة",
+                "previous": "Č_Previous___ž",
+                "next": "Č_Next__ž",
+                "first": "Č_First Page____ž",
+                "last": "Č_Last Page____ž",
                 "helip": "&hellip;",
-                "page": "صفحة"
+                "page": "Č_Page__ž"
             }
         }
     })

@@ -83,7 +83,8 @@ define(
             filterLabel: "Į_Filter___š", // Appears as a label for Filter container
             valueRadioButtonLabel: "Į_Value___š", // Appears as a label for 'Value' radio button in filter container
             uniqueRadioButtonLabel: "Į_Unique___š", // Appears as a label for 'Unique' radio button in filter container
-            selectLayerToBegin: "Į_Select a category to get started___________š" // for showing default message on application load
+            selectLayerToBegin: "Į_Select a category to get started___________š", // for showing default message on application load
+            layerFeatureCount: "Į_No of records: ${featureCount}__________š" // Appears beside operational layer name to display count of feature
         },
         timeSlider: {
             timeSliderLabel: "Į_Time range____š", // Appears beside time slider widget
@@ -118,7 +119,8 @@ define(
             noFeatureFoundText: "Į_No feature found for this value___________š.", // Displayed when no feature is found after applying filter
             distinctQueryFalied: "Į_No distinct values found for the field_____________š.", // Displayed when query fails while fetching distinct values in filter unique value section
             andText: "Į_and__š", // Displayed in filter UI when "is between" case is applied to its field
-            filterInEditModeAlert: "Į_Filters unavailable while editing___________š" // Displayed when user tries to applies filter in edit mode
+            filterInEditModeAlert: "Į_Filters unavailable while editing___________š", // Displayed when user tries to applies filter in edit mode
+            dropdownSelectOption: "Į_Select___š" // Displayed as a first option in a filter dropdown
         },
         detailsPanel: {
             editContentText: "Į_Edit record____š" // Displayed on hover of edit toggle button
