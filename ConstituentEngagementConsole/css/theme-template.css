@@ -77,6 +77,11 @@
     color: ${SelectedThemeColor} !important;
 }
 
+#commentsTotalCount.badge
+{
+    background-color: ${SelectedThemeColor} !important;
+}
+
 /* Details panel ends */
 
 /* Theme style CSS ends */
