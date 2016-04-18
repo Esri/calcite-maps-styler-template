@@ -257,9 +257,17 @@ define([
 
     // set environment
     _setEnvironment: function() {
+      var aEnabled = false;
+      var sEnabled = false;
+      if (this.config.atmosphere === true) {
+        aEnabled = true;
+      }
+      if (this.config.stars === true) {
+        sEnabled = true;
+      }
       this.view.environment = {
-        atmosphere: this.config.atmosphere,
-        stars: this.config.stars
+        atmosphereEnabled: aEnabled,
+        starsEnabled: sEnabled
       };
     },
 
@@ -320,7 +328,7 @@ define([
       }
       // TO DO: Check how layer in config is being passed
       if (this.config.vizLayer) {
-        var lyr = map.getLayer(this.config.vizLayer.id);
+        var lyr = map.findLayerById(this.config.vizLayer.id);
         lyr.then(function(vizLyr) {
           def.resolve(vizLyr);
           return;
@@ -329,7 +337,7 @@ define([
         var promises = [];
         for (i = layers.length - 1; i >= 0; i--) {
           var id = layers.getItemAt(i).id;
-          promises.push(map.getLayer(id));
+          promises.push(map.findLayerById(id));
         }
         all(promises).then(function(results) {
           var vizLyr;
@@ -372,7 +380,7 @@ define([
       map.add(this.labelsLayer);
 
       this.vizLayer = {
-        url: lyr.url,
+        url: lyr.source.queryTask.url,
         popupTemplate: lyr.popupTemplate,
         page: 0,
         max: 0
@@ -381,7 +389,8 @@ define([
       var flds = [];
       var firstFld = null;
       var displayFld = null;
-      var validTypes = "esriFieldTypeSmallInteger,esriFieldTypeInteger,esriFieldTypeSingle,esriFieldTypeDouble";
+      //var validTypes = "esriFieldTypeSmallInteger,esriFieldTypeInteger,esriFieldTypeSingle,esriFieldTypeDouble";
+      var validTypes = "small-integer,integer,single,double";
       var invalidNames = "fid,objectid,x,y,latitude,longitude";
       array.forEach(lyr.fields, lang.hitch(this, function(f) {
         var fldInfo = this._getFieldInfo(f.name);
@@ -400,7 +409,7 @@ define([
               flds.push(f);
             }
           }
-          if (!firstFld && f.type === "esriFieldTypeString") {
+          if (!firstFld && f.type === "string") {
             firstFld = f.name;
           }
         }
@@ -624,8 +633,8 @@ define([
 
     // process features
     _processFeatures: function(options) {
-      this.graphicsLayer.clear();
-      this.labelsLayer.clear();
+      this.graphicsLayer.removeAll();
+      this.labelsLayer.removeAll();
       var color = this._getColor();
       var features = options.features;
       if (features.length <= 0) {
@@ -689,13 +698,12 @@ define([
           heading: 0
         });
       } else {
-        this.labelsLayer.clear();
+        this.labelsLayer.removeAll();
       }
     },
 
     // view clicked
     _viewClicked: function(evt) {
-      console.log(evt);
       if (evt.graphic && evt.graphic.attributes.index) {
         var index = evt.graphic.attributes.index;
         this._selectGraphic(index);
@@ -705,7 +713,7 @@ define([
 
     // select graphic
     _selectGraphic: function(index) {
-      this.labelsLayer.clear();
+      this.labelsLayer.removeAll();
       var gra = this.graphicsLayer.graphics.getItemAt(index);
       var geom = gra.geometry;
       var vizFld = this.vizLayer.fields[this.vizLayer.page].name;
