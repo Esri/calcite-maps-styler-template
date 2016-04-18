@@ -240,9 +240,17 @@ define([
 
     // set environment
     _setEnvironment: function() {
+      var aEnabled = false;
+      var sEnabled = false;
+      if (this.config.atmosphere === true) {
+        aEnabled = true;
+      }
+      if (this.config.stars === true) {
+        sEnabled = true;
+      }
       this.view.environment = {
-        atmosphere: this.config.atmosphere,
-        stars: this.config.stars
+        atmosphereEnabled: aEnabled,
+        starsEnabled: sEnabled
       };
     },
 

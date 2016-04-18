@@ -27,6 +27,7 @@ define([
     templateString: template,
 
     options: {
+      view: null,
       layer: null,
       group: null,
       color: '#ff0000'
@@ -40,6 +41,7 @@ define([
 
     constructor: function(options) {
       lang.mixin(this.options, options);
+      this.view = this.options.view;
       this.layer = this.options.layer;
       this.group = this.options.group;
       this.color = this.options.color;
@@ -60,14 +62,24 @@ define([
       domStyle.set(this.switchNode, "backgroundColor", this.color);
       domAttr.set(this.actionNode, "title", i18n.tooltips.zoom || "Zoom");
       domAttr.set(this.switchNode, "title", i18n.tooltips.onoff || "On-Off");
-      this.layer.watch('visible', lang.hitch(this, function(newValue, oldValue, property, object) {
-        console.log(newValue, oldValue, property, object);
-        if (newValue === true) {
-          domClass.remove(this.itemNode, "off");
-        } else {
-          domClass.add(this.itemNode, "off");
-        }
+      this.view.whenLayerView(this.layer).then(lang.hitch(this, function(layerView){
+        layerView.watch('visible', lang.hitch(this, function(newValue, oldValue, property, object) {
+          console.log(newValue, oldValue, property, object);
+          if (newValue === true) {
+            domClass.remove(this.itemNode, "off");
+          } else {
+            domClass.add(this.itemNode, "off");
+          }
+        }));
       }));
+      // this.layer.watch('visible', lang.hitch(this, function(newValue, oldValue, property, object) {
+      //   console.log(newValue, oldValue, property, object);
+      //   if (newValue === true) {
+      //     domClass.remove(this.itemNode, "off");
+      //   } else {
+      //     domClass.add(this.itemNode, "off");
+      //   }
+      // }));
     },
 
     destroy: function() {

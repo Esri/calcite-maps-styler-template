@@ -86,8 +86,7 @@ body {
   padding-right: 0;
 }
 
-.esri-compass,
-.esri-compass-container {
+.esri-compass {
   width: 26px;
   height: 26px;
   border: none;
@@ -97,34 +96,15 @@ body {
   -moz-border-radius: 13px !important;
   -o-border-radius: 13px !important;
   margin: 0px !important;
-  -webkit-box-shadow: none;
-  -moz-box-shadow: none;
-  box-shadow: none;
-}
-
-.esri-compass {
   -webkit-box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.4);
   -moz-box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.4);
   box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.4);
 }
 
-.reverse .esri-compass,
-.reverse .esri-compass-container {
+.reverse .esri-compass {
   background-color: #333333;
+  color: #fff;
 }
-
-.reverse .esri-compass-icon {
-  /*margin: 15%;
-  height: 70%;
-  width: 70%;*/
-  fill: #fff;
-  stroke: #fff;
-}
-
-.esri-compass-container:hover {
-  background-color: transparent;
-}
-
 
 /*.reverse .esri-attribution {
   background-color: rgba(0,0,0,0.2);
@@ -141,56 +121,25 @@ body {
 
 /* Search */
 
-.esri-search {
-  -webkit-box-shadow: none !important;
-  -moz-box-shadow: none !important;
-  box-shadow: none !important;
-}
-
-.esri-search .esri-container .esri-input-container {
-  background-color: transparent;
-}
-
-.esri-search .esri-container .esri-input {
-  height: 32px;
-  background-color: transparent;
+.esri-search .esri-search__input {
   border: none;
   outline: none;
-  -webkit-box-shadow: none !important;
-  -moz-box-shadow: none !important;
-  box-shadow: none !important;
 }
 
-.esri-search .esri-search-button,
-.esri-search .esri-clear-search,
-.esri-search .esri-search-button.esri-submit,
-.esri-search .esri-search-button.esri-search-sources-toggle {
-  border: none;
-  outline: none;
-  background-color: transparent;
-}
-
-.esri-search .esri-search-button:hover,
-.esri-search .esri-search-button:focus,
-.esri-search .esri-search-button:active {
-  background-color: rgba(0, 0, 0, 0.25);
-  outline: none;
-}
-
-.esri-search .esri-clear-search:hover {
-    background-color: transparent;
-    color: #ffffff;
-}
-
-/*.esri-widget-button {
+.esri-search .esri-widget-button {
   color: #ffffff;
   background-color: transparent;
 }
-*/
+
+.esri-search .esri-widget-button:hover,
+.esri-search .esri-widget-button:active {
+  color: #ffffff;
+  background-color: rgba(0, 0, 0, 0.3);
+}
 
 .esri-search .esri-menu {
   position: absolute;
-  top: 0;
+  top: -6px;
   transform: translateY(-100%);
   background-color: #fff;
   color: #2c2c2c;

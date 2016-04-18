@@ -76,7 +76,7 @@ define([
       var promises = [];
       for (var i = map.layers.length - 1; i >= 0; i--) {
         var id = map.layers.getItemAt(i).id;
-        promises.push(map.getLayer(id));
+        promises.push(map.findLayerById(id));
       }
       all(promises).then(lang.hitch(this, function(results) {
         for (i = 0; i < results.length; i++) {
@@ -103,6 +103,7 @@ define([
 
     _addLayerItem: function(layer, group, sub) {
       var options = {
+        view: this.view,
         layer: layer,
         group: group,
         color: this.color
