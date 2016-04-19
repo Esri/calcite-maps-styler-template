@@ -643,8 +643,12 @@ define([
                expr = null;
             
             // Original Expr
-            if (expr && this.defExpr) {
-              expr += " AND " + this.defExpr;
+            if (this.defExpr) {
+              if (expr) {
+                expr += " AND " + this.defExpr;
+              } else {
+                expr = this.defExpr;
+              }
             }
 
             this.opLayer.setDefinitionExpression(expr);
