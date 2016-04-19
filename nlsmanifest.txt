@@ -1,6 +1,6 @@
 Viewer_New\js\nls
 MapTools\js\nls
-TimeAware\js\\nls
+TimeAware\js\nls
 Editor\js\nls
 InteractiveFilter\js\nls
 ImpactSummary\js\nls
