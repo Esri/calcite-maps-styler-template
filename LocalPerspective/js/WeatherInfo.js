@@ -1,19 +1,27 @@
 define([
         'dojo/_base/declare',
         'dojo/_base/lang',
+        'dojo/Deferred',
         'dojo/dom-class',
         'dojo/dom-construct',
         'esri/geometry/webMercatorUtils',
-        'esri/request'
+        'esri/request',
+        'esri/SpatialReference',
+        'esri/tasks/GeometryService',
+        'esri/tasks/ProjectParameters'
 	],function(
         declare, 
         lang,
+        Deferred,
         domClass, 
         domConstruct, 
         webMercatorUtils,
-        esriRequest
+        esriRequest,
+        SpatialReference,
+        GeometryService,
+        ProjectParameters
 ){
-		
+
    var weatherInfo = declare('WeatherInfo', null, {
        
       config : null,
@@ -86,25 +94,55 @@ define([
          this.container = container;
          this.container.innerHTML = "<br/><br/><img src='images/ajax-loader.gif'/>";
          
-         var pt = webMercatorUtils.webMercatorToGeographic(location);
-         var coords = pt.y + "," + pt.x;
-         var requestURL = this.config.weatherURL + "&q=" + coords;
-         
-         var weatherDeferred = esriRequest({
-             url: requestURL,
-             callbackParamName: "callback"
-         }, {
-             useProxy: false
-         });
-         weatherDeferred.then(
-             lang.hitch(this, function(response){
-                 this._resultsHandler(response);
-             }), 
-             lang.hitch(this, function(error){
-                 this._errorHandler(error);
-             }));
+         //var pt = webMercatorUtils.webMercatorToGeographic(location);
+         //var coords = pt.y + "," + pt.x;
+         var def = this._getLatLong(location); 
+         def.then(lang.hitch(this, function(coords) {
+           var requestURL = this.config.weatherURL + "&q=" + coords;
+           
+           var weatherDeferred = esriRequest({
+               url: requestURL,
+               callbackParamName: "callback"
+           }, {
+               useProxy: false
+           });
+           weatherDeferred.then(
+               lang.hitch(this, function(response){
+                   this._resultsHandler(response);
+               }), 
+               lang.hitch(this, function(error){
+                   this._errorHandler(error);
+               }));
+         }));
        },
-        	
+
+       // get lat long
+       _getLatLong: function(location) {
+        var def = new Deferred();
+        var pt;
+        var sr = location.spatialReference;
+        if (sr.isWebMercator()) {
+            pt = webMercatorUtils.webMercatorToGeographic(location);
+            def.resolve(pt.y + "," + pt.x);
+        } else if (sr.wkid === 4326) {
+            pt = location;
+            def.resolve(pt.y + "," + pt.x);
+        } else {
+            var params = new ProjectParameters();
+            params.geometries = [location];
+            params.outSR = new SpatialReference(4326);
+            //console.log(this.config.helperServices.geometry);
+            var gsvc = new GeometryService(this.config.helperServices.geometry);
+            gsvc.project(params, function(results){
+              console.log(results);
+              var pt = results[0];
+              def.resolve(pt.y + "," + pt.x);
+            }, function(error) {
+              console.log(error);
+            });
+        }
+        return def;
+       },
     		    
       // results handler
       _resultsHandler: function(results) {
