@@ -68,6 +68,7 @@ define([
       fieldTypes : "esriFieldTypeSmallInteger,esriFieldTypeInteger,esriFieldTypeSingle,esriFieldTypeDouble",
       filterString : false,
       timer : null,
+      defExpr: null,
 
       // constructor
       constructor : function(config) {
@@ -244,6 +245,9 @@ define([
                      }
                   }
                } else if (layer.layerObject && layer.layerObject.type == "Feature Layer" && layer.id == opLayerName) {
+                  if(layer.layerDefinition && layer.layerDefinition.definitionExpression && layer.layerDefinition.definitionExpression != "") {
+                    me.defExpr = layer.layerDefinition.definitionExpression;
+                  }
                   me.opLayer = layer.layerObject;
                }
             });
@@ -272,6 +276,9 @@ define([
                   }
                }
             } else if (layer.layerObject && layer.layerObject.type == "Feature Layer") {
+               if(layer.layerDefinition && layer.layerDefinition.definitionExpression && layer.layerDefinition.definitionExpression) {
+                  this.defExpr = layer.layerDefinition.definitionExpression;
+               }
                var flds = this.getSummaryFields(layer.layerObject);
                if (flds.length > 0)
                   return layer.layerObject;
@@ -634,6 +641,12 @@ define([
                expr = this.config.filterField + " = '" + value + "'";
             if (value === "")
                expr = null;
+            
+            // Original Expr
+            if (expr && this.defExpr) {
+              expr += " AND " + this.defExpr;
+            }
+
             this.opLayer.setDefinitionExpression(expr);
             if (expr) {
                var query = new Query();
