@@ -17,18 +17,18 @@
 define(
    ({
     scene: {
-      error: "Č_Unable to create scene________ž"
+      error: "Nije moguće stvoriti scenu"
     },
     panel: {
-      noslides: "Č_No slides in web scene________ž"
+      noslides: "Nema slajdova na web-sceni"
     },
     tooltips: {
-      layers: "Č_Layers___ž",
-      basemaps: "Č_Base maps____ž",
-      slides: "Č_Slides___ž",
-      close: "Č_Close___ž",
-      zoom: "Č_Zoom__ž",
-      onoff: "Č_On-Off___ž"
+      layers: "Slojevi",
+      basemaps: "Kartografske podloge",
+      slides: "Slajdovi",
+      close: "Zatvori",
+      zoom: "Povećaj",
+      onoff: "Uključi - isključi"
     }
   })
 );

@@ -18,21 +18,21 @@
 define(
      ({
         map: {
-            error: "Č_Unable to create map_______ž"
+            error: "Nije moguće stvoriti kartu"
         },
         webMapList: {
-            owner: "Č_Owner___ž", // Appears in web-map list description panel when it is set to true
-            created: "Č_Date created_____ž", // Appears in web-map list description panel when it is set to true
-            modified: "Č_Date modified_____ž", // Appears in web-map list description panel when it is set to true
-            description: "Č_Description____ž", // Appears in web-map list description panel when it is set to true
-            snippet: "Č_Summary___ž", // Appears in web-map list description panel when it is set to true
-            licenseInfo: "Č_Access and use constraints_________ž", // Appears in web-map list description panel when it is set to true
-            accessInformation: "Č_Credits___ž", // Appears in web-map list description panel when it is set to true
-            tags: "Č_Tags__ž", // Appears in web-map list description panel when it is set to true
-            numViews: "Č_Number of views______ž", // Appears in web-map list description panel when it is set to true
-            avgRating: "Č_Rating___ž", // Appears in web-map list description panel when it is set to true
-            noWebMapInGroup: "Č_Configured group is invalid or no items have been shared with this group yet________________________ž", // Appears when invalid group in configured or no web-map is available in that group
-            infoBtnToolTip: "Č_Map information______ž", // Display tool-tip on command button to display description of web-map
+            owner: "Vlasnik", // Appears in web-map list description panel when it is set to true
+            created: "Datum izrade", // Appears in web-map list description panel when it is set to true
+            modified: "Datum izmjene", // Appears in web-map list description panel when it is set to true
+            description: "Opis", // Appears in web-map list description panel when it is set to true
+            snippet: "Sažetak", // Appears in web-map list description panel when it is set to true
+            licenseInfo: "Ograničenja pristupa i upotrebe", // Appears in web-map list description panel when it is set to true
+            accessInformation: "Krediti", // Appears in web-map list description panel when it is set to true
+            tags: "Oznake", // Appears in web-map list description panel when it is set to true
+            numViews: "Broj prikaza", // Appears in web-map list description panel when it is set to true
+            avgRating: "Ocjena", // Appears in web-map list description panel when it is set to true
+            noWebMapInGroup: "Konfigurirana grupa nije valjana ili s grupom još nisu podijeljene stavke", // Appears when invalid group in configured or no web-map is available in that group
+            infoBtnToolTip: "Informacije o karti", // Display tool-tip on command button to display description of web-map
             openWebmapList: "Č_Open panel____ž", //tooltip for toggle button
             closeWebmapList: "Č_Close panel____ž" //tooltip for toggle button
         },
@@ -48,9 +48,9 @@ define(
             invalidInputValue: "Č_Please enter valid value_________ž.", // Shown when user clicks/taps the required field but does not enter the data and comes out of the required field
             noFieldsConfiguredMessage: "Č_Layer fields are not configured to capture data_______________ž", // Shown when all the fields of the selected layer are disabled
             invalidSmallNumber: "Č_Please enter an integer________ž", // Shown when the entered value is beyond the specified range (valid ${openStrong}integer${closeStrong} value between -32768 and 32767.)
-            invalidNumber: "Č_Please enter an integer________ž", // Shown when the entered value is beyond the specified range (valid ${openStrong}integer${closeStrong} value between -2147483648 and 2147483647.)
-            invalidFloat: "Č_Please enter a number_______ž", // Shown when the entered value is beyond the specified range (valid ${openStrong}floating point${closeStrong} value between -3.4E38 and 1.2E38 )
-            invalidDouble: "Č_Please enter a number_______ž", // Shown when the entered value is beyond the specified range (valid ${openStrong}double${closeStrong} value between -2.2E308 and 1.8E308)
+            invalidNumber: "Unesite cijeli broj", // Shown when the entered value is beyond the specified range (valid ${openStrong}integer${closeStrong} value between -2147483648 and 2147483647.)
+            invalidFloat: "Unesite broj", // Shown when the entered value is beyond the specified range (valid ${openStrong}floating point${closeStrong} value between -3.4E38 and 1.2E38 )
+            invalidDouble: "Unesite broj", // Shown when the entered value is beyond the specified range (valid ${openStrong}double${closeStrong} value between -2.2E308 and 1.8E308)
             requiredFields: "Č_Please provide values for all required fields_______________ž", // Shown when user submits the geoform without entering data in the mandatory field(s)
             selectLocation: "Č_Please select the location for your report______________ž", // Shown when user submits the geoform without selecting location on the map
             numericRangeHintMessage: "Č_${openStrong}Hint:${closeStrong} Minimum value ${minValue} and maximum value ${maxValue}___________________________ž", // Shown as a pop over above the fields with numeric values, indicating the minimum and maximum range
@@ -67,17 +67,17 @@ define(
             attachmentHeaderText: "Č_Attachments____ž" //attachment header Text
         },
         mapViewer: {
-            zoomInToolTip: "Č_Zoom in___ž", // Display tool-tip on command button to zoom in map
-            zoomOutToolTip: "Č_Zoom out___ž" // Display tool-tip on command button to zoom out map
+            zoomInToolTip: "Povećaj", // Display tool-tip on command button to zoom in map
+            zoomOutToolTip: "Smanji" // Display tool-tip on command button to zoom out map
         },
         applicationHeader: {
-            signInOption: "Č_Sign In___ž", // Appears when user has not signed in
-            signOutOption: "Č_Sign Out___ž", // Appears when user has not signed in
-            pleaseSignInText: "Č_Please sign in_____ž" // Appears when user needs to sign-in into the application
+            signInOption: "Prijava", // Appears when user has not signed in
+            signOutOption: "Odjava", // Appears when user has not signed in
+            pleaseSignInText: "Prijavite se" // Appears when user needs to sign-in into the application
         },
         dataviewer: {
-            noIssuesReported: "Č_No reports available_______ž", // Appears when no issues are available in current extent
-            noFeatureGeometry: "Č_Feature cannot be displayed_________ž", // Appears when user selects/activates a feature and geometry is available for that
+            noIssuesReported: "Nema dostupnih izvješća", // Appears when no issues are available in current extent
+            noFeatureGeometry: "Geoobjekt se ne može prikazati", // Appears when user selects/activates a feature and geometry is available for that
             ascendingFlagTitle: "Č_Sort in ascending order________ž", // Appears as a label for Ascending flag as a sorting option
             descendingFlagTitle: "Č_Sort in descending order________ž", // Appears as a label for Descending flag as a sorting option
             filterLabel: "Č_Filter___ž", // Appears as a label for Filter container
@@ -101,7 +101,7 @@ define(
             showNoText: "Č_No__ž" // Shown when comments character limit is exceeded
         },
         main: {
-            noGroup: "Č_No group configured_______ž" // Appears when no group is configured
+            noGroup: "Nema konfiguriranih grupa" // Appears when no group is configured
         },
         search: {
             searchIconTooltip: "Č_Search this layer______ž", // Displayed on hover of search icon
@@ -110,7 +110,7 @@ define(
         },
         manualRefresh: {
             manualRefreshIconTooltip: "Č_Refresh___ž", // Displayed on hover of manual refresh icon
-            confirmManualRefeshText: "Č_All selections and unsaved changes will be discarded_________________ž" // Appears when user wants to do manual refresh
+            confirmManualRefeshText: "Odbacit će se svi odabiri i nespremljene promjene" // Appears when user wants to do manual refresh
         },
         help: {
             helpIconTooltip: "Č_Help__ž" // Displayed on hover of manual refresh icon
@@ -126,8 +126,8 @@ define(
             editContentText: "Č_Edit record____ž" // Displayed on hover of edit toggle button
         },
         signOutPage: {
-            signOutMessage: "Č_You've been successfully signed out____________ž", // Appears when user is successfully signed-out from application
-            reSignInMessage: "Č_Click here to sign in_______ž" // Appears when user is signed-out from application and wants to sign-in again
+            signOutMessage: "Uspješno ste se odjavili", // Appears when user is successfully signed-out from application
+            reSignInMessage: "Kliknite ovdje za prijavu" // Appears when user is signed-out from application and wants to sign-in again
         }
     })
 );

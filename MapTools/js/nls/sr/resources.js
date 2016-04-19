@@ -17,28 +17,28 @@
 define(
      ({
         map: {
-            error: "Č_Unable to create map_______ž"
+            error: "Kreiranje mape nije moguće"
         },
         tools:{
-            bookmarkTool: "Č_Bookmarks____ž",
-            basemapTool: "Č_Basemaps___ž",
-            legendTool: "Č_Legend___ž",
-            detailsTool: "Č_Details___ž",
-            measureTool: "Č_Measure___ž",
-            shareTool: "Č_Share___ž",
-            layerTool: "Č_Layers___ž",
-            tableTool: "Č_Table___ž",
-            editTool: "Č_Edit__ž",
-            printTool: "Č_Print___ž",
-            printLegend: "Č_Add legend to output_______ž",
+            bookmarkTool: "Obeleživači",
+            basemapTool: "Pozadinske mape",
+            legendTool: "Legenda",
+            detailsTool: "Detalji",
+            measureTool: "Merenje",
+            shareTool: "Podeli",
+            layerTool: "Slojevi",
+            tableTool: "Tabela",
+            editTool: "Izmeni",
+            printTool: "Štampaj",
+            printLegend: "Dodaj legendu u rezultate",
             printLayouts: {
-                  "label1": 'Č_Landscape____ž',
-                  "label2": 'Č_Portrait___ž',
-                  "label3": 'Č_Landscape____ž',
-                  "label4": 'Č_Portrait___ž'
+                  "label1": 'Položeno',
+                  "label2": 'Uspravno',
+                  "label3": 'Položeno',
+                  "label4": 'Uspravno'
             },
-            printTitle: "Č_Title___ž",
-            printTitlePrompt: "Č_Add custom title______ž"
+            printTitle: "Naslov",
+            printTitlePrompt: "Dodaj prilagođeni naslov"
         }
     })
 );

@@ -17,13 +17,13 @@
 define(
    ({
     map: {
-      noEditLayers: "Č_This web map does not contain any editable layers________________ž.",
-      error: "Č_Unable to create map_______ž"
+      noEditLayers: "Ova veb mapa ne sadrži slojeve koji mogu da se uređuju.",
+      error: "Kreiranje mape nije moguće"
     },
     tools: {
     "popup": {
-            "title": "Č_Info__ž",
-            "instructions": "Č_Select a feature on the map to view details______________ž."
+            "title": "Informacije",
+            "instructions": "Izaberite geoobjekat na mapi da vidite detalje."
         } 
     }
   })

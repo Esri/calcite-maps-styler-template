@@ -2,13 +2,13 @@
 	 ({
 		commonMapControls: {
 			common: {
-				settings: "Č_Settings___ž",
-				openDefault: "Č_Open by default______ž"
+				settings: "Postavke",
+				openDefault: "Otvori kao podrazumevano"
 			},
 			overview: {
-				basemapGalleryBtnLabel: "Č_Basemap___ž",
-				expandFactorLabel: "Č_Expand Factor_____ž",
-				expandFactorPopover: "Č_The ratio between the size of the overview map and the extent rectangle displayed on the overview map. The default value is 2, meaning the overview map will be at least twice the size of the extent rectangle_______________________________________________________________ž."
+				basemapGalleryBtnLabel: "Pozadinska mapa",
+				expandFactorLabel: "Faktor proširivanja",
+				expandFactorPopover: "Odnos između veličine pregledne mape i obuhvata prikazanog pravougaonika na preglednoj mapi. Podrazumevana vrednost je 2, što znači da će pregledna mapa da bude bar dva puta veća od opsega pravougaonika."
 			}
 		}
 	})

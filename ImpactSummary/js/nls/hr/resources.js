@@ -1,50 +1,50 @@
 ﻿define(
      ({
         map: {
-            error: "Č_Unable to create map_______ž"
+            error: "Nije moguće stvoriti kartu"
         },
         general: {
-            map: "Č_Map__ž",
-            mapInfo: "Č_Map Information______ž",
-            legend: "Č_Legend___ž",
-            layers: "Č_Layers___ž",
-            rendererTitle: "Č_Display information for this area___________ž",
-            summarize: "Č_Entire Area____ž",
-            summarizeTitle: "Č_Display summarized information for all areas______________ž",
-            share: "Č_Share___ž",
-            about: "Č_About___ž",
-            find: "Č_Zip Code, city, etc_______ž.",
-            noSearchResult: "Č_No result found______ž",
-            impactArea: "Č_Impact Area____ž",
-            dateModified: "Č_Modified___ž",
-            moreInfo: "Č_Find out more_____ž",
+            map: "Karta",
+            mapInfo: "Informacije o karti",
+            legend: "Legenda",
+            layers: "Slojevi",
+            rendererTitle: "Prikaz informacija za ovo područje",
+            summarize: "Čitavo područje",
+            summarizeTitle: "Prikaz sažetaka informacija za sva područja",
+            share: "Podijeli",
+            about: "Informacije",
+            find: "Poštanski broj, grad itd.",
+            noSearchResult: "Nema rezultata",
+            impactArea: "Područje utjecaja",
+            dateModified: "Izmijenjeno",
+            moreInfo: "Saznajte više",
         },
         configure: {
             mapdlg: {
                 items: {
-                    organizationLabel: "Č_My Organization______ž",
-                    onlineLabel: "Č_ArcGIS Online_____ž",
-                    contentLabel: "Č_My Content____ž",
-                    favoritesLabel: "Č_My Favorites_____ž"
+                    organizationLabel: "Moja organizacija",
+                    onlineLabel: "ArcGIS Online",
+                    contentLabel: "Moj sadržaj",
+                    favoritesLabel: "Moji favoriti"
                 },
-                title: "Č_Select Web Map_____ž",
-                searchTitle: "Č_Search___ž",
-                ok: "Č_Ok__ž",
-                cancel: "Č_Cancel___ž",
-                placeholder: "Č_Enter search term______ž"
+                title: "Odaberite web-kartu",
+                searchTitle: "Pretraži",
+                ok: "U redu",
+                cancel: "Odustani",
+                placeholder: "Unesite termin za pretraživanje"
             },
             groupdlg: {
                 items: {
-                    organizationLabel: "Č_My Organization______ž",
-                    onlineLabel: "Č_ArcGIS Online_____ž",
-                    contentLabel: "Č_My Content____ž",
-                    favoritesLabel: "Č_My Favorites_____ž"
+                    organizationLabel: "Moja organizacija",
+                    onlineLabel: "ArcGIS Online",
+                    contentLabel: "Moj sadržaj",
+                    favoritesLabel: "Moji favoriti"
                 },
-                title: "Č_Select Group_____ž",
-                searchTitle: "Č_Search___ž",
-                ok: "Č_Ok__ž",
-                cancel: "Č_Cancel___ž",
-                placeholder: "Č_Enter search term______ž"
+                title: "Odaberite grupu",
+                searchTitle: "Pretraži",
+                ok: "U redu",
+                cancel: "Odustani",
+                placeholder: "Unesite termin za pretraživanje"
             }
         }
     })

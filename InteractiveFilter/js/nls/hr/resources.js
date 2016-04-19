@@ -1,22 +1,22 @@
 ﻿define(
    ({
   	map: {
-  		error: "Č_Unable to create map_______ž"
+  		error: "Nije moguće stvoriti kartu"
   	},
     viewer: {
-      content_title: "Č_Filter___ž",
-      button_text: "Č_Apply___ž",
-      filterInstructions: "Č_Filter the layer by specifying values____________ž.",
-      filterOr: "Č_Any of the following expressions must be true_______________ž.",
-      filterAnd: "Č_All of the following expressions must be true_______________ž.",
+      content_title: "Filtar",
+      button_text: "Primijeni",
+      filterInstructions: "Filtrirajte sloj određivanjem vrijednosti.",
+      filterOr: "Bilo koji od sljedećih izraza mora biti istinit.",
+      filterAnd: "Svi sljedeći izrazi moraju biti istiniti.",
       filterNo:  "Web map does not contain any interactive filters. View the ${link} help topic for details on how to create a filter in your web map.",
-      filterLink: "Č_http://doc.arcgis.com/en/arcgis-online/use-maps/apply-filters.htm_____________________ž",
+      filterLink: "http://doc.arcgis.com/en/arcgis-online/use-maps/apply-filters.htm",
       errors:{
-        message: "Č_Problem creating the filters application_____________ž"
+        message: "Problem pri stvaranju aplikacije filtra"
       }
     },
     legend:{
-      title: "Č_Legend___ž"
+      title: "Legenda"
     }
   })
 );

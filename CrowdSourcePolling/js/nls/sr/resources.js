@@ -17,54 +17,54 @@
 define(
      ({
         map: {  // Map, feature layer, and comments table loading and checking
-            error: "Č_Unable to create map_______ž",
-            layerLoad: "Č_Unable to fully load map________ž",
-            missingItemsFeatureLayer: "Č_Please configure the application to use a feature layer__________________ž"
+            error: "Kreiranje mape nije moguće",
+            layerLoad: "Potpuno učitavanje mape nije moguće",
+            missingItemsFeatureLayer: "Konfigurišite aplikaciju da koristite sloj geoobjekta"
         },
         sidebar_header: {  // Top panel of right-side display; contains social media sign-in, help button, title
-            menuButtonTooltip: "Č_Show menu____ž",
-            signInButton: "Č_Sign In___ž",
-            signInButtonTooltip: "Č_Sign in___ž",
-            signOutButton: "Č_Sign Out___ž",
-            signOutButtonTooltip: "Č_Sign out___ž",
-            helpButtonLabel: "Č_Help__ž",
-            helpButtonTooltip: "Č_Learn more____ž",
-            gotoListViewLabel: "Č_List View____ž",
-            gotoListViewTooltip: "Č_Go to list view______ž", // Go to List view tooltip text
-            gotoMapViewLabel: "Č_Map View___ž",
-            gotoMapViewTooltip: "Č_Go to map view_____ž" // Tooltip for map-it icon in list header
+            menuButtonTooltip: "Pokaži meni",
+            signInButton: "Prijavite se",
+            signInButtonTooltip: "Prijavite se",
+            signOutButton: "Odjavite se",
+            signOutButtonTooltip: "Odjavite se",
+            helpButtonLabel: "Pomoć",
+            helpButtonTooltip: "Saznaj više",
+            gotoListViewLabel: "Prikaz liste",
+            gotoListViewTooltip: "Idi na prikaz liste", // Go to List view tooltip text
+            gotoMapViewLabel: "Prikaz mape",
+            gotoMapViewTooltip: "Idi na prikaz mape" // Tooltip for map-it icon in list header
         },
         popup_Close: {  // Close button for help and social-media-sign-in popup box
-            closeButtonTooltip: "Č_Close___ž"
+            closeButtonTooltip: "Zatvori"
         },
         social_media: {  // Social media sign-in/out
-            signIntoFacebookTooltip: "Č_Sign in with Facebook_______ž",
-            signIntoGooglePlusTooltip: "Č_Sign in with Google+_______ž",
-            signIntoTwitterTooltip: "Č_Sign in with Twitter_______ž",
-            signOutOfFacebookTooltip: "Č_Sign out of Facebook_______ž",
-            signOutOfGooglePlusTooltip: "Č_Sign out of Google+_______ž",
-            signOutOfTwitterTooltip: "Č_Sign out of Twitter_______ž"
+            signIntoFacebookTooltip: "Prijavite se putem Facebook naloga",
+            signIntoGooglePlusTooltip: "Prijavite se putem Google+ naloga",
+            signIntoTwitterTooltip: "Prijavite se putem Twitter naloga",
+            signOutOfFacebookTooltip: "Odjavite se sa Facebook naloga",
+            signOutOfGooglePlusTooltip: "Odjavite se sa Google+ naloga",
+            signOutOfTwitterTooltip: "Odjavite se sa Twitter naloga"
         },
         dynamic_form: {  // General-purpose form; used to receive comment entry
-            optionalFormItemFlag: " Č_(optional)____ž",
-            requiredFormItemFlag: " Č_(required)____ž",
-            unsettableRequiredField: "Č_A required field is neither initialized nor in the form__________________ž",
-            countOfRemainingCharactersTooltip: "Č_Characters remaining_______ž",
-            cancelButtonLabel: "Č_Cancel___ž",
-            submitButtonLabel: "Č_Submit___ž"
+            optionalFormItemFlag: " (opciono)",
+            requiredFormItemFlag: " (obavezno)",
+            unsettableRequiredField: "Obavezno polje nije ni pokrenuto niti u obrascu",
+            countOfRemainingCharactersTooltip: "Preostalo karaktera",
+            cancelButtonLabel: "Otkaži",
+            submitButtonLabel: "Prosledi"
         },
         item_details: {  // Detailed information about an item and a list of its comments
-            likeButtonTooltip: "Č_Vote for this item______ž",
-            commentButtonTooltip: "Č_Add a comment_____ž",
-            gotoMapViewTooltip: "Č_Go to map view_____ž",
-            galleryButtonTooltip: "Č_See attached files______ž",
-            commentsListHeading: "Č_Comments___ž",
-            noCommentsPlaceholder: "Č_No comments____ž"
+            likeButtonTooltip: "Glasaj za ovu stavku",
+            commentButtonTooltip: "Dodaj komentar",
+            gotoMapViewTooltip: "Idi na prikaz mape",
+            galleryButtonTooltip: "Pogledaj priložene datoteke",
+            commentsListHeading: "Komentari",
+            noCommentsPlaceholder: "Nema komentara"
         },
         item_list: {  // List of feature layer items
-            linkToMapViewOptionLabel: "Č_Filter list by map______ž",
-            linkToMapViewOptionTooltip: "Č_List features that are visible in the current map________________ž",
-            likesForThisItemTooltip: "Č_Votes for this item_______ž"
+            linkToMapViewOptionLabel: "Filtriraj listu po mapi",
+            linkToMapViewOptionTooltip: "Navedi geoobjekte koji su vidljivi na trenutnoj mapi",
+            likesForThisItemTooltip: "Glasovi za ovu stavku"
         }
     })
 );

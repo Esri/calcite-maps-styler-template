@@ -17,14 +17,14 @@
 define(
    ({
     scene: {
-      error: "Č_Unable to create scene________ž"
+      error: "Nije moguće stvoriti scenu"
     },
     panel: {
-      noslides: "Č_No slides in web scene________ž"
+      noslides: "Nema slajdova na web-sceni"
     },
     tooltips: {
-      play: "Č_Play-Pause____ž",
-      toggle: "Č_Toggle___ž"
+      play: "Reprodukcija - pauza",
+      toggle: "Preklopi"
     }
   })
 );

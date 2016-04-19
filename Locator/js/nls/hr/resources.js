@@ -17,26 +17,26 @@
 define(
     ({
       "map": {
-         "error": "Č_Unable to create map_______ž"
+         "error": "Nije moguće stvoriti kartu"
       },
       "location": {
-         "name": "Č_Name__ž",
-         "current": "Č_Current Location______ž",
-         "address": "Č_Address___ž",
-         "latitude": "Č_Latitude___ž",
-         "longitude": "Č_Longitude____ž",
-         "use": "Č_Use this location______ž",
-         "error": "Č_Unable to use this location_________ž"
+         "name": "Naziv",
+         "current": "Trenutačna lokacija",
+         "address": "Adresa",
+         "latitude": "Geografska širina",
+         "longitude": "Geografska dužina",
+         "use": "Upotrijebi ovu loakciju",
+         "error": "Nije moguće upotrijebiti ovu lokaciju"
       },
       "tooltips": {
-         "toggle": "Č_Show/Hide____ž",
-         "reset": "Č_Reset___ž",
-         "locate": "Č_Find my location______ž",
-         "directions": "Č_Directions____ž",
-         "filter": "Č_Filter___ž",
-         "close": "Č_Close___ž",
-         "reverse": "Č_Reverse___ž",
-         "mode": "Č_Switch mode Drive/Walk________ž"
+         "toggle": "Prikaži/skrij",
+         "reset": "Vrati izvorno",
+         "locate": "Pronađi lokaciju",
+         "directions": "Upute",
+         "filter": "Filtar",
+         "close": "Zatvori",
+         "reverse": "Obratno",
+         "mode": "Prebacivanje načina vožnja/hodanje"
       }
    })
 );

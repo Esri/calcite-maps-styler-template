@@ -17,16 +17,16 @@
 define(
    ({
     map: {
-      error: "Č_Unable to create map_______ž",
-      generalError: "Č_Error___ž"
+      error: "Kreiranje mape nije moguće",
+      generalError: "Greška"
     },
     social:{
-        facebook: "Č_Share on Facebook______ž",
-        twitter: "Č_Share on Twitter______ž",
-        link: "Č_Share link____ž"
+        facebook: "Podelite na mreži Facebook",
+        twitter: "Podelite na mreži Twitter",
+        link: "Podelite vezu"
     },
     legendToggle:{
-        label: "Č_LEGEND___ž"
+        label: "LEGENDA"
     }
   })
 );

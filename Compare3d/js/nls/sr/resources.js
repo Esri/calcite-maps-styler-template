@@ -17,11 +17,11 @@
 define(
    ({
     scene: {
-      error: "Č_Unable to create scene________ž"
+      error: "Kreiranje scene nije moguće"
     },
     tools: {
-      linkLabel: "Č_Link Views____ž",
-      unlinkLabel: "Č_Unlink Views_____ž"
+      linkLabel: "Poveži prikaze",
+      unlinkLabel: "Prekini link sa prikazima"
     }
   })
 );

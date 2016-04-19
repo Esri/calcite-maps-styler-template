@@ -2,16 +2,16 @@
      ({
         "widgets": {
             "ShareDialog": {
-                "title": "Č_Share___ž",
-                "heading": "Č_Share this map_____ž",
-                "url": "Č_Map Link___ž",
-                "embed": "Č_Embed Map____ž",
-                "extent": "Č_Share current map extent________ž",
-                "size": "Č_Size (width/height)_______ž:",
-                "facebookTooltip": "Č_Facebook___ž",
-                "twitterTooltip": "Č_Twitter___ž",
-                "gplusTooltip": "Č_Google Plus____ž",
-                "emailTooltip": "Č_Email___ž"
+                "title": "Podeli",
+                "heading": "Podeli ovu mapu",
+                "url": "Link ka mapi",
+                "embed": "Ugradi mapu",
+                "extent": "Podeli trenutni obuhvat mape",
+                "size": "Veličina (širina/visina):",
+                "facebookTooltip": "Facebook",
+                "twitterTooltip": "Twitter",
+                "gplusTooltip": "Google Plus",
+                "emailTooltip": "E-pošta"
             }
         }
     })

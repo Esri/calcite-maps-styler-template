@@ -2,91 +2,91 @@
 	 ({
 		viewer: {
 			common: {
-				close: "Č_Close___ž"
+				close: "Zatvori"
 			},
 			loading: {
-				step1: "Č_Loading story_____ž",
-				step2: "Č_Loading data_____ž",
-				step3: "Č_Initializing_____ž",
-				loadBuilder: "Č_Switching to builder_______ž",
-				long: "Č_Map Journal is initializing_________ž",
-				long2: "Č_Thanks for waiting______ž",
-				failButton: "Č_Reload the story______ž"
+				step1: "Učitavanje priče",
+				step2: "Učitavanje podataka",
+				step3: "Pokretanje",
+				loadBuilder: "Prebacivanje na sastavljač",
+				long: "Pokreće se Map Journal",
+				long2: "Hvala vam na čekanju",
+				failButton: "Ponovno učitaj ovu priču"
 			},
 			signin: {
-				title: "Č_Authentication is required_________ž",
-				explainViewer: "Č_Please sign in with an account on %PORTAL_LINK% to access the story_____________________ž.",
-				explainBuilder: "Č_Please sign in with an account on %PORTAL_LINK% to configure the story______________________ž."
+				title: "Potrebna je provjera autentičnosti",
+				explainViewer: "Prijavite se računom za %PORTAL_LINK% da biste pristupili priči.",
+				explainBuilder: "Prijavite se računom za %PORTAL_LINK% da biste konfigurirali priču."
 			},
 			errors: {
-				boxTitle: "Č_An error has occurred_______ž",
-				invalidConfig: "Č_Invalid configuration_______ž",
-				invalidConfigNoApp: "Č_Web Mapping Application identifier not specified in index.html____________________ž.",
-				invalidConfigNoAppDev: "Č_No Web Mapping Application identifier is specified in URL parameters (?appid=). In development mode, the appid configuration in index.html is ignored______________________________________________ž.",
-				unspecifiedConfigOwner: "Č_Authorized owner hasn't been configured_____________ž.",
-				invalidConfigOwner: "Č_Story owner is not authorized__________ž.",
-				createMap: "Č_Unable to create map_______ž",
-				invalidApp: "Č_The %TPL_NAME% does not exist or is inaccessible________________ž.",
-				appLoadingFail: "Č_Something went wrong, the %TPL_NAME% did not load correctly___________________ž.",
-				notConfiguredDesktop: "Č_The story is not configured yet___________ž.",
-				notConfiguredMobile: "Č_The %TPL_NAME% builder is not supported at this display size. If possible, resize your browser to access the builder or please build your story on a device with a larger screen______________________________________________________ž.",
-				notConfiguredMobile2: "Č_Please rotate your device to landscape orientation to use the %TPL_NAME% builder_________________________ž.",
-				notAuthorized: "Č_You are not authorized to access this story______________ž",
-				notAuthorizedBuilder: "Č_You are not authorized to use %TPL_NAME% builder________________ž.",
-				noBuilderIE: "Č_The builder is not supported on Internet Explorer before version %VERSION%. %UPGRADE%___________________________ž",
-				noViewerIE: "Č_This story is not supported in Internet Explorer before version %VERSION%. %UPGRADE%__________________________ž",
-				upgradeBrowser: "Č_<a href='http://browsehappy.com/' target='_blank'>Please update your browser</a>_________________________ž.",
-				mapLoadingFail: "Č_Something went wrong, the map did not load correctly_________________ž.",
-				signOut: "Č_Sign Out___ž"
+				boxTitle: "Došlo je do pogreške",
+				invalidConfig: "Nevaljana konfiguracija",
+				invalidConfigNoApp: "Identifikator aplikacije za web-kartiranje nije određen u index.html.",
+				invalidConfigNoAppDev: "Identifikator aplikacije za web-kartiranje nije određen u parametrima URL-a (?appid= ili ?webmap=). U razvojnom načinu ignorira se konfiguracija za appid u index.html.",
+				unspecifiedConfigOwner: "Ovlašteni vlasnik nije konfiguriran.",
+				invalidConfigOwner: "Vlasnik priče nema ovlasti.",
+				createMap: "Nije moguće stvoriti kartu",
+				invalidApp: "Predložak %TPL_NAME% ne postoji ili nije dostupan.",
+				appLoadingFail: "Nešto nije u redu, predložak %TPL_NAME% nije se točno učitao.",
+				notConfiguredDesktop: "Priča još nije konfigurirana.",
+				notConfiguredMobile: "Sastavljač predloška %TPL_NAME% nije podržan u ovoj veličini prikaza. Ako je moguće, promijenite veličinu preglednika da biste pristupili sastavljaču ili izradite priču na uređaju s većim zaslonom.",
+				notConfiguredMobile2: "Zakrenite uređaj u vodoravno usmjerenje kako biste upotrijebili sastavljač %TPL_NAME%.",
+				notAuthorized: "Niste ovlašteni za pristup ovoj priči",
+				notAuthorizedBuilder: "Niste ovlašteni za upotrebu sastavljača %TPL_NAME%.",
+				noBuilderIE: "Sastavljač nije podržan u ranijim verzijama preglednika Internet Explorer prije verzije %VERSION%. %UPGRADE%",
+				noViewerIE: "Priča nije podržana u ranijim verzijama preglednika Internet Explorer prije verzije %VERSION%. %UPGRADE%",
+				upgradeBrowser: "<a href=\'http://browsehappy.com/\' target=\'_blank\'>Ažurirajte svoj preglednik</a>.",
+				mapLoadingFail: "Nešto nije u redu, karta se nije točno učitala.",
+				signOut: "Odjava"
 			},
 			mobileView: {
-				tapForDetails: "Č_Tap for details______ž",
-				clickForDetails: "Č_Learn more____ž",
-				swipeToExplore: "Č_Swipe to explore______ž",
-				tapForMap: "Č_Tap to get back to the Map_________ž",
-				clickForMap: "Č_BACK TO MAP____ž"
+				tapForDetails: "Dodirni za pojedinosti",
+				clickForDetails: "Saznaj više",
+				swipeToExplore: "Upotrijebite klizač da biste istražili",
+				tapForMap: "Dodirni za povratak na kartu",
+				clickForMap: "NATRAG NA KARTU"
 			},
 			floatLayout: {
-				scroll: "Č_Scroll___ž"
+				scroll: "Pomakni se"
 			},
 			sideLayout: {
-				scroll: "Č_Scroll down for more_______ž!"
+				scroll: "Pomakni se prema dolje za više!"
 			},
 			mainStage: {
-				back: "Č_Back__ž"
+				back: "Natrag"
 			},
 			headerFromCommon: {
-				storymapsText: "Č_A story map____ž",
-				builderButton: "Č_Edit__ž",
-				facebookTooltip: "Č_Share on Facebook______ž",
-				twitterTooltip: "Č_Share on Twitter______ž",
-				bitlyTooltip: "Č_Get a short link______ž",
-				templateTitle: "Č_Set template title______ž",
-				templateSubtitle: "Č_Set template subtitle_______ž",
-				share: "Č_Share___ž",
-				checking: "Č_Checking your story content_________ž",
-				fix: "Č_Fix issues in your story________ž",
-				noerrors: "Č_No issues detected______ž",
-				tooltipAutoplayDisabled: "Č_This isn't available in autoplay mode____________ž",
-				notshared: "Č_Story not shared______ž"
+				storymapsText: "Karta s pričom",
+				builderButton: "Uredi",
+				facebookTooltip: "Podijeli na Facebooku",
+				twitterTooltip: "Podijeli na Twitteru",
+				bitlyTooltip: "Preuzmite kratku poveznicu",
+				templateTitle: "Postavi naslov predloška",
+				templateSubtitle: "Postavi podnaslov predloška",
+				share: "Podijeli",
+				checking: "Provjeravanje sadržaja priče",
+				fix: "Popravi probleme u priči",
+				noerrors: "Nema otkrivenih problema",
+				tooltipAutoplayDisabled: "Ovo nije dostupno u načinu automatske reprodukcije",
+				notshared: "Priča nije podijeljena"
 			},
 			overviewFromCommon: {
-				title: "Č_Overview Map_____ž"
+				title: "Pregledna karta"
 			},
 			legendFromCommon: {
-				title: "Č_Legend___ž"
+				title: "Legenda"
 			},
 			shareFromCommon: {
-				copy: "Č_Copy__ž",
-				copied: "Č_Copied___ž",
-				open: "Č_Open__ž",
-				embed: "Č_Embed in web page______ž",
-				embedExplain: "Č_Use the following HTML code to embed the journal in a web page____________________ž.",
-				size: "Č_Size (width/height)_______ž:",
-				autoplayLabel: "Č_Autoplay mode_____ž",
-				autoplayExplain1: "Č_Autoplay mode will advance through your story at a regular interval. This is ideal on a kiosk or public display monitor, but be aware that in other situations it may make the story harder to read. This feature isn't supported on small displays__________________________________________________________________________ž.",
-				autoplayExplain2: "Č_When this mode is active there are controls to play/pause the story and adjust the navigation speed_______________________________ž.",
-				linksupdated: "Č_Links updated_____ž!"
+				copy: "Kopiraj",
+				copied: "Kopirano",
+				open: "Otvori",
+				embed: "Ugradi u web-stranicu",
+				embedExplain: "Upotrijebite sljedeći HTML kod da biste ugradili dnevnik u web-stranicu.",
+				size: "Veličina (širina/visina):",
+				autoplayLabel: "Način automatske reprodukcije",
+				autoplayExplain1: "Način automatske reprodukcije napredovat će kroz vašu priču u redovitim intervalima. To je idealno za kiosk ili javno prikazani zaslon, no budite svjesni da će se u drugim situacijama priča možda teže čitati. Ova značajka nije podržana na malim zaslonima.",
+				autoplayExplain2: "Kada je ovaj način rada aktivan, postoje kontrole za reprodukciju/pauziranje priče i podešavanje brzine navigacije.",
+				linksupdated: "Poveznice ažurirane!"
 			}
         }
     })

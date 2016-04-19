@@ -17,16 +17,16 @@
 define(
      ({
         map: {
-            error: "Č_Unable to create map_______ž"
+            error: "Kreiranje mape nije moguće"
         },
         tools: {
             info: {
-                label: "Č_Info__ž",
-                tooltip: "Č_Toggle map info______ž"
+                label: "Informacije",
+                tooltip: "Uključite/isključite informacije o mapi"
             },
             sync: {
-                label: "Č_Sync Map Extent______ž",
-                tooltip: "Č_Sync to extent of this map_________ž"
+                label: "Sinhronizujte obuhvat mape",
+                tooltip: "Sinhronizujte na obuhvat ove mape"
             }
         }
     })

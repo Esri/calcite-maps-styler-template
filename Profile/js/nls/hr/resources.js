@@ -17,31 +17,31 @@
 define(
    ({
     map: {
-      error: "Č_Unable to create map_______ž"
+      error: "Nije moguće stvoriti kartu"
     },
     nav: {
-        "close": "Č_Close___ž"
+        "close": "Zatvori"
     },
     elevation: {
-        toggle: "Č_Toggle the Elevation Profile Chart____________ž.",
-        drawTool: "Č_Draw a line on the map to generate an elevation profile__________________ž.",
-        selectMessage: "Č_Click a line feature or use the draw tool to draw a line to display the elevation profile____________________________ž"
+        toggle: "Preklopi profil terena.",
+        drawTool: "Povucite liniju na karti za izradu profila terena.",
+        selectMessage: "Kliknite na liniju geoobjekta ili upotrijebite alat za crtanje i nacrtajte liniju za prikaz profila terena"
     },
     splash: {
-        title: "Č_Title___ž",
-        content: "Č_Configure to create custom splash content_____________ž"
+        title: "Naziv",
+        content: "Konfigurirajte za izradu prilagođenog pozdravnog sadržaja"
     },
     legend: {
-        title: "Č_Legend___ž",
-        tip: "Č_Display legend_____ž"
+        title: "Legenda",
+        tip: "Prikaz legende"
     },
     basemap: {
-        title: "Č_Basemap___ž",
-        tip: "Č_Change basemap_____ž"
+        title: "Kartografska podloga",
+        tip: "Promijeni kartografsku podlogu"
     },
     share: {
-        title: "Č_Share___ž",
-        tip: "Č_Share map____ž"
+        title: "Podijeli",
+        tip: "Podijeli kartu"
     }
   })
 );

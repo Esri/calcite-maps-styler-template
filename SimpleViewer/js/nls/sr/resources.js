@@ -1,18 +1,18 @@
 ﻿define(
      ({
         map: {
-            error: "Č_Unable to create map_______ž"
+            error: "Kreiranje mape nije moguće"
         }, 
         tools: {         
             search: {
-                error: "Č_Location could not be found_________ž",
-                notWhatYouWanted: "Č_Not what you wanted_______ž?",
-                selectAnother: "Č_Select another location________ž",
-                currentLocation: "Č_Current Location______ž",
-                title: "Č_Location___ž"
+                error: "Pronalaženje lokacije nije moguće",
+                notWhatYouWanted: "Niste pronašli ono što ste tražili?",
+                selectAnother: "Izaberite drugu lokaciju",
+                currentLocation: "Trenutna lokacija",
+                title: "Lokacija"
             },
-        	legend: "Č_Legend___ž",
-        	 about: "Č_About___ž"
+        	legend: "Legenda",
+        	 about: "Više informacija"
         }
     })
 );

@@ -1,24 +1,24 @@
 ﻿define(
      ({
         map: {
-            error: "Č_Unable to create map_______ž",
-            mouseToolTip: "Č_Click on the map to check for service____________ž"
+            error: "Kreiranje mape nije moguće",
+            mouseToolTip: "Kliknite na mapu da potražite servis"
         },
         error: {
-            layerNotFound: "Č_Layer is not in the webmap_________ž",
-            fieldNotFound: "Č_Field not found______ž",
-            popupNotSet: "Č_Popup not enabled for this layer___________ž",
-            noLayersSet: "Č_No layers defined in the config, the search box will not work___________________ž"
+            layerNotFound: "Sloj nije na veb mapi",
+            fieldNotFound: "Polje nije pronađeno",
+            popupNotSet: "Iskačući prozor nije omogućen za ovaj sloj",
+            noLayersSet: "Nema definisanih slojeva u konfiguraciji, polje za pretragu neće raditi"
         },
         page: {
-            title: "Č_Information Lookup______ž",
+            title: "Pretraga informacija",
         },
         ui:{
-            basemapButton: "Č_Basemap___ž"
+            basemapButton: "Pozadinska mapa"
         },
         popup: {
-          urlMoreInfo: "Č_More Info____ž",
-          attachments: "Č_Attachments____ž"
+          urlMoreInfo: "Više informacija",
+          attachments: "Prilozi"
         }
 
 

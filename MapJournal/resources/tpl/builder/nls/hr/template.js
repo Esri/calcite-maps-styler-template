@@ -2,107 +2,107 @@
 	 ({
 		builder: {
 			layouts: {
-				mainStage: "Č_Main Stage____ž",
-				sideTitle: "Č_Side Panel____ž",
-				sideDescr: "Č_A layout for a text intensive story that excels at combining your photos, videos, and maps in a clear focused message____________________________________ž.",
-				floatTitle: "Č_Floating Panel_____ž",
-				floatDescr: "Č_A layout that puts your cartography in focus while allowing a transparent short form text panel to help tell the story_____________________________________ž."
+				mainStage: "Glavni prozor",
+				sideTitle: "Bočna ploča",
+				sideDescr: "Izgled priče s većom količinom teksta koji je odličan za kombiniranje fotografija, videozapisa i karata u jasno izrečenu poruku.",
+				floatTitle: "Plutajuća ploča",
+				floatDescr: "Izgled koji stavlja naglasak na vašu kartografiju dok istovremeno omogućuje prozirnu ploču s kratkim tekstom koja pomaže ispričati priču."
 			},
 			common: {
-				lblStatus1: "Č_Published____ž",
-				lblStatus2: "Č_Draft___ž",
-				lblStatus3: "Č_Hidden___ž"
+				lblStatus1: "Objavljeno",
+				lblStatus2: "Skica",
+				lblStatus3: "Skriveno"
 			},
 			settingsLayoutOptions: {
-				title: "Č_Layout options_____ž",
-				cfgLeft: "Č_Left__ž",
-				cfgRight: "Č_Right___ž",
-				cfgSmall: "Č_Small___ž",
-				cfgMedium: "Č_Medium___ž",
-				cfgLarge: "Č_Large___ž",
-				socialLinksLabel: "Č_Display sharing links at the bottom of each section________________ž",
-				socialLinksDescr: "Č_This enables readers to reference and promote specific sections of your %TPL_NAME%. For instance, if you use a sections share icon, readers will land at that specific %TPL_NAME% section rather than the beginning of your story. Your readers can use the social media link in the title section to promote your entire %TPL_NAME% (header tab) and have them land at the start of the %TPL_NAME%_____________________________________________________________________________________________________________________ž."
+				title: "Opcije izgleda",
+				cfgLeft: "Lijevo",
+				cfgRight: "Desno",
+				cfgSmall: "Malo",
+				cfgMedium: "Srednje",
+				cfgLarge: "Veliko",
+				socialLinksLabel: "Prikaži poveznice za dijeljenje na dnu svakog odjeljka",
+				socialLinksDescr: "To omogućuje čitateljima da referenciraju i promoviraju određene odjeljke predloška %TPL_NAME%. Primjerice, ako upotrijebite ikonu za dijeljenje u odjeljku, čitatelji će biti prebačeni na taj određeni odjeljak predloška %TPL_NAME%, a ne na početak vaše priče. Vaši čitatelji mogu upotrijebiti poveznicu društvenih medija u naslovu kako bi promovirali vaš cijeli predložak %TPL_NAME% (kartica zaglavlja) i kako bi se prebacili na početak predloška %TPL_NAME%."
 			},
 			settingsLayoutFonts: {
-				title: "Č_Fonts___ž",
-				defaultLbl: "Č_Default___ž",
-				sectionTitleLbl: "Č_Section title_____ž",
-				sectionContentLbl: "Č_Section content______ž"
+				title: "Fontovi",
+				defaultLbl: "Prilagođeno",
+				sectionTitleLbl: "Naslov odjeljka",
+				sectionContentLbl: "Sadržaj odjeljka"
 			},
 			initPopup: {
-				title: "Č_Welcome to____ž"
+				title: "Dobro došli u"
 			},
 			addEditPopup: {
-				disabled: "Č_Add Section is disabled because the maximum number of allowed sections has been reached___________________________ž.",
-				titleAdd: "Č_Add Section____ž",
-				titleAddHome: "Č_Add Home Section______ž",
-				titleEdit: "Č_Edit Section_____ž",
-				step: "Č_Step__ž",
-				stepMainStageExplain: "Č_Main Stage Content______ž",
-				stepPanelExplain: "Č_Content___ž",
-				stepMainStageNextTooltip: "Č_Enter the section title and select the Main Stage content__________________ž",
-				stepMainStageNextTooltip2: "Č_Select the Main Stage content__________ž",
-				step2NextTooltip: "Č_Enter the section title and %LAYOUT-TYPE% content________________ž",
-				stepNextTooltipNext: "Č_to go to the next step________ž",
-				stepNextTooltipAdd: "Č_to add the section______ž",
-				firstAddExplain: "Č_This first section is your Home Section, think of it as the 'cover page' to your story. The title you just defined will be displayed with large fonts______________________________________________ž.",
-				firstAddLeanMore: "Č_Learn More____ž",
-				titlePlaceholder: "Č_Section title______ž..."
+				disabled: "Onemogućeno je dodavanje odjeljka jer je dosegnut broj dopuštenih odjeljaka.",
+				titleAdd: "Dodaj odjeljak",
+				titleAddHome: "Dodaj početni odjeljak",
+				titleEdit: "Uredi odjeljka",
+				step: "Korak",
+				stepMainStageExplain: "Sadržaj glavnog prozora",
+				stepPanelExplain: "Sadržaj",
+				stepMainStageNextTooltip: "Unesi naslov odjeljka i odaberi sadržaj glavnog prozora",
+				stepMainStageNextTooltip2: "Odaberi sadržaj glavnog prozora",
+				step2NextTooltip: "Unesite naslov odjeljka i sadržaj predloška %LAYOUT-TYPE%",
+				stepNextTooltipNext: "da biste nastavili sa sljedećim korakom",
+				stepNextTooltipAdd: "da biste dodali odjeljak",
+				firstAddExplain: "Prvi odjeljak jest početni odjeljak, razmišljajte o njemu kao o „naslovnici” svoje priče. Naslov koji ste upravo utvrdili prikazat će se velikim fontom.",
+				firstAddLeanMore: "Saznaj više",
+				titlePlaceholder: "Naslov odjeljka..."
 			},
 			addEditViewText: {
-				editorPlaceholder: "Č_Add text, links, and small graphics here_____________ž.",
-				editorActionsTitle: "Č_Main Stage Actions______ž",
-				editorActionsHelpDescr: "Č_Use these controls to create links that will change the main stage. For example, when the reader clicks a link, you may want to zoom the map to a specific location, display another web map or display an image________________________________________________________________ž.",
-				mainStageDisabled: "Č_Main Stage Actions are disabled when the editor is maximized___________________ž"
+				editorPlaceholder: "Ovdje dodajte tekst, poveznice i male grafičke elemente.",
+				editorActionsTitle: "Radnje u glavnom prozoru",
+				editorActionsHelpDescr: "Upotrijebite ove kontrole kako biste stvorili poveznice koje će promijeniti glavni prozor. Primjerice, kada čitatelj klikne na poveznicu, možda ćete htjeti povećati kartu na određenu lokaciju, prikazati drugu web-kartu ili prikazati sliku.",
+				mainStageDisabled: "Kad je uređivač povećan onemogućene su radnje u glavnom prozoru"
 			},
 			organizePopup: {
-				title: "Č_Organize___ž",
-				lblHeader: "Č_Drag and drop sections to organize your story_______________ž.",
-				lblColTitle: "Č_Title___ž",
-				lblColPubDate: "Č_Publication date______ž",
-				lblColStatus: "Č_Status___ž",
-				checkDisplayReverse: "Č_Display sections in reverse order___________ž",
-				btnApplyWarning: "Č_Confirm deletion of %NB% section(s)____________ž",
-				deleteTooltip: "Č_Delete___ž",
-				firstSectionExplain: "Č_(The home section cannot be moved)___________ž",
-				exportMainStage: "Č_Main Stage content______ž",
-				exportPanel: "Č_Panel content_____ž",
-				exportActions: "Č_Main Stage actions______ž"
+				title: "Organiziraj",
+				lblHeader: "Povuci i ispusti odjeljke kako biste organizirali svoju priču.",
+				lblColTitle: "Naziv",
+				lblColPubDate: "Datum objave",
+				lblColStatus: "Status",
+				checkDisplayReverse: "Prikaži odjeljke u obrnutom redoslijedu",
+				btnApplyWarning: "Potvrdite brisanje %NB% odjelj(a)ka",
+				deleteTooltip: "Izbriši",
+				firstSectionExplain: "(Početni odjeljak ne može se premjestiti)",
+				exportMainStage: "Sadržaj glavnog prozora",
+				exportPanel: "Sadržaj ploče",
+				exportActions: "Radnje u glavnom prozoru"
 			},
 			exportData: {
-				btn: "Č_Export content_____ž",
-				tooltip: "Č_Exporting your content allows you to view and create a back-up of your content should you accidentally delete it. Simply copy and paste the content from the page into any word processor_________________________________________________________ž."
+				btn: "Izvoz sadržaja",
+				tooltip: "Izvoz sadržaja omogućuje vam prikaz i stvaranje sigurnosne kopije sadržaja za slučaj da ga slučajno izbrišete. Jednostavno kopirajte i zalijepite sadržaj sa stranice u bilo koji program za obradu teksta."
 			},
 			help: {
-				lblHelp: "Č_Help__ž",
-				lblAdd: "Č_Add Section____ž",
-				lblSettings: "Č_Settings___ž",
-				lblOrga: "Č_Organize content______ž",
-				lblEdit: "Č_Edits___ž",
-				lblPublish: "Č_Share___ž",
-				lblTips: "Č_Tips__ž",
-				lblMore: "Č_Want more____ž?",
-				lblLink: "Č_Visit the Esri Story Maps website___________ž.",
-				content1Div1: "Č_You can integrate a variety of styles when building your story. The <strong>%LAYOUT_TITLE%</strong> typically holds your text, images, and video while your maps tend go on the <strong>Main Stage</strong>. However, the %TPL_NAME% allows you to feature images, charts, and video within the main stage as well_____________________________________________________________________________________________ž.",
-				content1Div2: "Č_Adding sections allows you to truly customize your storytelling experience. As readers scroll through your %LAYOUT_TITLE% text, a map on the Main Stage can pan or zoom to key points, or new maps and images can automatically toggle to support your message______________________________________________________________________________ž.",
-				content2Div1: "Č_The Settings dialog is where you can change the appearance of your %TPL_NAME%. You change the layout, choose a different color scheme, change the text font, etc_________________________________________________ž.",
-				content2Div2: "Č_You can also replace the Esri logo with your own logo to reflect your brand. You can also specify the website that will be launched if readers click your logo, so they can get more information___________________________________________________________ž.",
-				content3Div1: "Č_Your content is organized into sections. You can have as many sections as you like (think of them like mini chapters). The flow of those chapters is important; within Organize you can reorder or delete sections as you wish____________________________________________________________________ž.",
-				content4Div1: "Č_Found a mistake or want to change your material? No worries. Look for the edit icon throughout the app to make changes to your content. Youâ€™ll use the edit functions many times as you develop your %TPL_NAME%________________________________________________________________ž!",
-				content5Div1: "Č_When you save your %TPL_NAME% it is private initially. Use the Share button to share it with others. You can share your %TPL_NAME% publicly so anyone can access it__________________________________________________ž.",
-				content5Div2: "Č_Depending on your account, you may also have the option to share your %TPL_NAME% just to people within your organization, so others can't access it_____________________________________________ž.",
-				content6Div1: "Č_The title of your Home section is also the title of your journal; think of your the Home section as  the 'cover page' to your story. The Home Section title will remain visible when your readers will navigate the Journal___________________________________________________________________ž.",
-				content6Div2: "Č_Your %LAYOUT_TITLE% doesn't have to be just text, consider including photos and videos to help bring the story alive, and to break-up long sections of text________________________________________________ž!"
+				lblHelp: "Pomoć",
+				lblAdd: "Dodaj odjeljak",
+				lblSettings: "Postavke",
+				lblOrga: "Organiziraj sadržaj",
+				lblEdit: "Uređivanja",
+				lblPublish: "Podijeli",
+				lblTips: "Savjeti",
+				lblMore: "Želite više?",
+				lblLink: "Posjetite web-mjesto Esri Story Maps.",
+				content1Div1: "Možete integrirati razne stilove prilikom izrade svoje priče. <strong>%LAYOUT_TITLE%</strong> obično sadrži tekst, slike i videozapise dok su karte na <strong>glavnom prozoru</strong>. Međutim, predložak %TPL_NAME% omogućuje vam da imate i slike, grafikone i videozapise na glavnom prozoru.",
+				content1Div2: "Dodavanje odjeljaka omogućuje vam da uistinu prilagodite svoje iskustvo pričanja priče. Kako se čitatelji pomiču kroz vaš tekst %LAYOUT_TITLE%, karta na glavnom prozoru može se kretati i uvećavati na ključne točke te se automatski prebacivati između novih karata i slika kako bi se dala podrška vašoj poruci.",
+				content2Div1: "U postavkama možete promijeniti izgled predloška %TPL_NAME%. Promijenite izgled, izaberite drugačiju paletu boja, promijenite font teksta itd.",
+				content2Div2: "Možete i zamijeniti logotip Esri s vlastitim logotipom za svoj brend. Možete i odrediti web-mjesto koje će se pokrenuti ako čitatelji kliknu na vaš logotip kako bi mogli dobiti više informacija.",
+				content3Div1: "Vaš je sadržaj organiziran u odjeljke. Možete imati koliko god želite odjeljaka (razmišljajte o njima kao o malim poglavljima). Tijek je tih poglavlja važan, u značajci Organiziraj možete promijeniti redoslijed ili izbrisati odjeljke kako želite.",
+				content4Div1: "Pronašli ste pogrešku ili želite promijeniti materijal? Bez brige. Potražite ikonu za uređivanje u appu kako biste promijenili sadržaj. Upotrijebit ćete funkcije uređivanja puno puta kako razvijate svoj predložak %TPL_NAME%!",
+				content5Div1: "Kada spremite svoj predložak %TPL_NAME%, isprva je privatan. Upotrijebite gumb Podijeli da biste ga podijelili s drugima. Možete javno podijeliti predložak %TPL_NAME% kako bi mu bilo tko mogao pristupiti.",
+				content5Div2: "Ovisno o vašem računu, možete imati i opciju da dijelite predložak %TPL_NAME% samo s ljudima iz vaše organizacije pa mu drugi ne mogu pristupiti.",
+				content6Div1: "Naslov početnog odjeljka također je naslov vašeg dnevnika. Razmišljajte o početnom odjeljku kao o „naslovnici” svoje priče. Naslov početnog odjeljka ostat će vidljiv kada čitatelji navigiraju kroz Journal.",
+				content6Div2: "Vaš naslov %LAYOUT_TITLE% ne mora biti samo tekst. Razmislite o tome da uključite fotografije i videozapise kako biste dali priči život i kako biste razlomili dugačke dijelove teksta!"
 			},
 			landing: {
-				lblAdd: "Č_What do you want to call your Map Journal______________ž?",
-				phAdd: "Č_Enter your title_______ž...",
-				lblOR: "Č_Or__ž",
-				lblHelp: "Č_Take a Tour____ž"
+				lblAdd: "Kako želite nazvati svoj Map Journal?",
+				phAdd: "Unesite naslov...",
+				lblOR: "ili",
+				lblHelp: "Krenite na obilazak"
 			},
 			firstAddSplash: {
-				thisis: "Č_This is the____ž",
-				lblMain: "Č_This is the %BR% Main Stage_________ž"
+				thisis: "Ovo je",
+				lblMain: "Ovo je %BR% glavni prozor"
 			}
         }
     })
