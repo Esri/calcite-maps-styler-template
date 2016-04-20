@@ -44,7 +44,11 @@ define([
             * Modernizr.geolocation checks for support for geolocation on client browser
             * if browser is not supported, geolocation widget is not created
             */
-            if (Modernizr.geolocation) {
+            if (!Modernizr.geolocation) {
+                console.log('navigator.geolocation unsupported.');
+            } else if (window.hasOwnProperty("isSecureContext") && !window.isSecureContext) {
+                console.log('navigator.geolocation requires a secure origin.');
+            } else {
                 this.domNode = domConstruct.create("div", { "class": "esriCTMapGeoLocation", "title": nls.title.geolocationBtnTitle });
                 domConstruct.create("span", { "class": "icon-gps esriCTGeolocationIcon" }, this.domNode);
                 this.own(on(this.domNode, "click", lang.hitch(this, function () {

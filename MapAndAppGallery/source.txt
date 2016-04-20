@@ -1,0 +1,10 @@
+git repository map-and-app-gallery-template, branch 
+develop
+commit 6239d3874f9e47c7cdf338a8c6fce30047375428
+Merge: df68c7b 949da8d
+Author: MikeTschudi <mtschudi@esri.com>
+Date:   Wed Apr 20 08:07:32 2016 -0700
+
+    Merge branch 'geolocation-secure-origin' into develop
+    
+    #187
