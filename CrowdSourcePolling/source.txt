@@ -1,7 +1,9 @@
-From git branch 
+git repository crowdsource-polling, branch 
 develop
-commit 7c5c2ed0241ad2f8df9668ab004d2062458c3417
+commit dc1ec27825720d436d3991eea6085eddc865778c
 Author: MikeTschudi <mtschudi@esri.com>
-Date:   Thu Mar 31 09:52:45 2016 -0700
+Date:   Wed Apr 20 09:38:54 2016 -0700
 
-    Updated app icon
+    Convert Date objects into milliseconds as required by the feature service REST endpoint
+    
+    #131

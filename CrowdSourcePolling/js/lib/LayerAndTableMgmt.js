@@ -319,6 +319,7 @@ define([
                             field.dtIsVisible = fieldInfo.visible;
                             field.dtStringFieldOption = fieldInfo.stringFieldOption;
                             field.dtTooltip = fieldInfo.tooltip;
+                            field.dtFormat = fieldInfo.format;
                             return true;
                         }
                         return false;

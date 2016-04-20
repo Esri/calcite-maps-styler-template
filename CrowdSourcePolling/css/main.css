@@ -937,3 +937,8 @@ img {
 .dynamicFormActionRight {
     float: right;
 }
+
+.dynamicFormSideBySide {
+    width: 49%;
+    display: inline-block
+}

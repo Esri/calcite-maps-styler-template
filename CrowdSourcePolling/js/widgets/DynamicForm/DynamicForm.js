@@ -40,6 +40,7 @@ define([
     "dojo/topic",
     "dojox/fx/scroll",
     "dijit/form/DateTextBox",
+    "dijit/form/TimeTextBox",
     "esri/lang"
 ], function (
     declare,
@@ -61,6 +62,7 @@ define([
     topic,
     scroller,
     DateTextBox,
+    TimeTextBox,
     esriLang
 ) {
     return declare([_WidgetBase, _TemplatedMixin], {
@@ -223,7 +225,7 @@ define([
             // Find the editable attributes and create a form from them
             form = [];
             array.forEach(fields, lang.hitch(this, function (field) {
-                var row, inputItem, count, useTextArea, options, choices, pattern;
+                var row, inputItem, inputItemTimeSupplement, count, useTextArea, options, choices, pattern;
 
                 /**
                  * Creates a div to hold a visual row.
@@ -418,6 +420,22 @@ define([
                             inputItem = new DateTextBox(options, domConstruct.create("div", {}, row));
                             inputItem.startup();
                             inputItem.dtManualValidationFlag = true;
+
+                            // If the date field is formatted in the popup to display time, add a time dijit to
+                            // make it possible to enter the time value
+                            if (field.dtFormat && field.dtFormat.dateFormat && field.dtFormat.dateFormat.length > 0) {
+                                if (field.dtFormat.dateFormat.indexOf("Time") > 0) {
+                                    if (field.dtFormat.dateFormat.indexOf("Time24") > 0) {
+                                        options.constraints = {timePattern: 'HH:mm:ss'};
+                                    };
+                                    var inputItemTimeSupplement = new TimeTextBox(options, domConstruct.create("div", {}, row));
+                                    inputItemTimeSupplement.startup();
+
+                                    // Arrange the date and time dijits side by side
+                                    domClass.add(inputItem.domNode, "dynamicFormSideBySide");
+                                    domClass.add(inputItemTimeSupplement.domNode, "dynamicFormSideBySide");
+                                }
+                            }
                         }
                     }
 
@@ -429,6 +447,7 @@ define([
                             } else {              // HTML item
                                 inputItem.value = this._presets[field.name];
                             }
+
                             on.emit(inputItem, "change", {
                                 "bubbles": true,
                                 "cancelable": false
@@ -439,7 +458,7 @@ define([
                         if (!field.nullable) {
                             row.requiredFieldFlag = nextReqFldStatusFlag;
 
-                            // Set up handlers to keep flag up-to-date
+                            // Set up handlers to keep flag up-to-date; note that we're not tracking the supplement
                             this.setInputWatchers(inputItem, updateRequiredFieldStatus);
 
                             // Set up next flag
@@ -450,7 +469,8 @@ define([
                         // Save to the form definition
                         form.push({
                             "field": field,
-                            "input": inputItem
+                            "input": inputItem,
+                            "inputTimeSupplement": inputItemTimeSupplement
                         });
                     }
 
@@ -491,11 +511,24 @@ define([
             if (form.length > 0) {
                 // Assemble the attributes for the submission from the form
                 array.forEach(form, lang.hitch(this, function (entry) {
-                    var value = entry.input.get("value");
+                    var value, valueTimeSupplement;
+
+                    value = entry.input.get("value");
+
+                    if (entry.inputTimeSupplement) {
+                        valueTimeSupplement = entry.inputTimeSupplement.get("value");
+                        value.setHours(valueTimeSupplement.getHours());
+                        value.setMinutes(valueTimeSupplement.getMinutes());
+                        value.setSeconds(valueTimeSupplement.getSeconds());
+                        value.setMilliseconds(valueTimeSupplement.getMilliseconds());
+                    }
 
                     if (entry.field.domain && entry.field.domain.type === "codedValue") {
                         // Convert list selection into the coded value
                         attr[entry.field.name] = entry.field.domain.codedValues[parseInt(value, 10)].code;
+                    } else if (value.getTime) {
+                        // Convert Date objects into milliseconds as required by the feature service REST endpoint
+                        attr[entry.field.name] = value.getTime();
                     } else {
                         // Get the value
                         attr[entry.field.name] = value;
