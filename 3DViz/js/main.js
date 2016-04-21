@@ -370,17 +370,36 @@ define([
     // init viz layer
     _initVizLayer: function(lyr) {
       var map = this.view.map;
+      var offset = 30;
+      if (this.scene.initialViewProperties.viewingMode === "local") {
+        offset = 1;
+      }
 
       lyr.visible = false;
 
-      this.graphicsLayer = new GraphicsLayer();
+      this.graphicsLayer = new GraphicsLayer({
+        elevationInfo: {
+          mode: "relative-to-ground",
+          offset: offset
+        }
+      });
       map.add(this.graphicsLayer);
 
-      this.labelsLayer = new GraphicsLayer();
+      this.labelsLayer = new GraphicsLayer({
+        elevationInfo: {
+          mode: "relative-to-ground",
+          offset: offset
+        }
+      });
       map.add(this.labelsLayer);
 
+      var url = lyr.url;
+      if (typeof lyr.layerId === 'number') {
+        url += "/" + lyr.layerId;
+      }
+
       this.vizLayer = {
-        url: lyr.source.queryTask.url,
+        url: url,
         popupTemplate: lyr.popupTemplate,
         page: 0,
         max: 0
@@ -641,13 +660,14 @@ define([
         return;
       }
       var max = this.vizLayer.max;
+      var min = Math.floor(this.config.maxZ * 0.005);
       array.forEach(options.features, lang.hitch(this, function(feature) {
         var geom = feature.geometry;
         var attr = feature.attributes;
         var value = attr[options.vizField];
         var ht = value / max * this.config.maxZ;
-        if (ht <= 0) {
-          ht = 0;
+        if (ht <= min) {
+          ht = min;
         }
         var sym = this._getSymbol(ht, color);
         var gra = new Graphic(geom, sym, attr);
@@ -692,7 +712,7 @@ define([
         if (this.playing) {
           this._stopVizTimer();
         }
-        this.view.animateTo({
+        this.view.goTo({
           position: [geom.longitude, geom.latitude, pos.z],
           tilt: 0,
           heading: 0
@@ -780,7 +800,7 @@ define([
       if (posZ < 8000000) {
         posZ = 8000000;
       }
-      this.view.animateTo({
+      this.view.goTo({
         position: [posX, 0, posZ],
         tilt: 0,
         heading: 0
