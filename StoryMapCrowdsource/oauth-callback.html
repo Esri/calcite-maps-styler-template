@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script>
+    function loadHandler() {
+      if (opener) {
+        if (location.hash) {
+          opener.require("esri/IdentityManager").setOAuthResponseHash(location.hash);
+
+          var match = (window.location.hash) ? window.location.hash.match(/access_token=([^&]+)/) : false;
+          if (opener.signInAfterOauth && match) {
+            var credential = {
+              expires: window.location.hash.match(/expires_in=([^&]+)/)[1],
+              token: window.location.hash.match(/access_token=([^&]+)/)[1],
+              userId: window.location.hash.match(/username=([^&]+)/)[1]
+            };
+            opener.signInAfterOauth(credential);
+          } else {
+            opener.signInAfterOauth();
+          }
+          close();
+        }
+      }
+      else {
+        close();
+      }
+    }
+  </script>
+</head>
+<body onload="loadHandler();">
+</body>
+</html>
