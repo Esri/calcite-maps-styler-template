@@ -100,6 +100,7 @@ mkdir %BUILD_OUTPUT%\StorytellingBasic
 mkdir %BUILD_OUTPUT%\Viewer
 mkdir %BUILD_OUTPUT%\View
 mkdir %BUILD_OUTPUT%\MyStories
+mkdir %BUILD_OUTPUT%\StoryMapCrowdsource
 
 
 xcopy %TEMPLATES_ROOT%\archive\CompareConfigure                 %BUILD_OUTPUT%\Compare\Configure                    /E /Y
@@ -185,9 +186,10 @@ xcopy %TEMPLATES_ROOT%\archive\Viewer                           %BUILD_OUTPUT%\V
 xcopy %TEMPLATES_ROOT%\Viewer_New                               %BUILD_OUTPUT%\View                                 /E /Y
 xcopy %TEMPLATES_ROOT%\Locator                                  %BUILD_OUTPUT%\Directions                           /E /Y
 xcopy %TEMPLATES_ROOT%\archive\Time                             %BUILD_OUTPUT%\Time                                 /E /Y
-xcopy %TEMPLATES_ROOT%\TimeAware                                %BUILD_OUTPUT%\TimeAware                                 /E /Y
+xcopy %TEMPLATES_ROOT%\TimeAware                                %BUILD_OUTPUT%\TimeAware                            /E /Y
 xcopy %TEMPLATES_ROOT%\ThumbnailGenerator                       %BUILD_OUTPUT%\ThumbnailGenerator                   /E /Y
 xcopy %TEMPLATES_ROOT%\MyStories                                %BUILD_OUTPUT%\MyStories                            /E /Y
+xcopy %TEMPLATES_ROOT%\StoryMapCrowdsource                      %BUILD_OUTPUT%\StoryMapCrowdsource                  /E /Y
 
 
 
@@ -196,7 +198,7 @@ copy /Y %TEMPLATES_ROOT%\*.*  %BUILD_OUTPUT%
 
 REM Copy the common config to the template config directory
 copy /Y %TEMPLATES_ROOT%\commonConfig.js                          %BUILD_OUTPUT%\LocalPerspective\config\commonConfig.js
-copy /Y %TEMPLATES_ROOT%\Embed\config\minimalDefaults.js           %BUILD_OUTPUT%\Minimalist\config\defaults.js    
+copy /Y %TEMPLATES_ROOT%\Embed\config\minimalDefaults.js           %BUILD_OUTPUT%\Minimalist\config\defaults.js
 
 echo ########## BUILD END TIME: %date% - %time% ##########
 
