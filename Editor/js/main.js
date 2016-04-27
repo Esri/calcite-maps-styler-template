@@ -15,8 +15,8 @@
  | See the License for the specific language governing permissions and
  | limitations under the License.
  */
-define(["dojo/_base/declare", "dojo/has", "dojo/_base/lang", "dojo/_base/Color", "dojo/_base/array", "dojo/on", "dijit/registry", "esri/arcgis/utils", "esri/lang", "dojo/dom", "dojo/dom-attr", "dojo/dom-style", "dojo/query", "dojo/dom-construct", "dojo/dom-class", "application/Drawer", "esri/layers/FeatureLayer", "esri/dijit/editing/Editor", "esri/dijit/AttributeInspector", "esri/dijit/editing/TemplatePicker", "esri/tasks/query", "esri/domUtils", "application/SearchSources", "dojo/domReady!"], function (
-declare, has, lang, Color, array, on, registry, arcgisUtils, esriLang, dom, domAttr, domStyle, query, domConstruct, domClass, Drawer, FeatureLayer, Editor, AttributeInspector, TemplatePicker, esriQuery, domUtils, SearchSources) {
+define(["dojo/_base/declare", "dojo/has", "dojo/_base/lang", "dojo/_base/Color", "dojo/_base/array", "dojo/on", "dijit/registry", "esri/arcgis/utils", "esri/lang", "dojo/dom", "dojo/dom-geometry", "dojo/dom-attr", "dojo/dom-style", "dojo/query", "dojo/dom-construct", "dojo/dom-class", "application/Drawer", "esri/layers/FeatureLayer", "esri/dijit/editing/Editor", "esri/dijit/AttributeInspector", "esri/dijit/editing/TemplatePicker", "esri/tasks/query", "esri/domUtils", "application/SearchSources", "dojo/domReady!"], function (
+declare, has, lang, Color, array, on, registry, arcgisUtils, esriLang, dom, domGeometry, domAttr, domStyle, query, domConstruct, domClass, Drawer, FeatureLayer, Editor, AttributeInspector, TemplatePicker, esriQuery, domUtils, SearchSources) {
     return declare(null, {
         config: {},
         editor: null,
@@ -108,7 +108,7 @@ declare, has, lang, Color, array, on, registry, arcgisUtils, esriLang, dom, domA
                     if (!LocateButton) {
                         return;
                     }
-                    //add the location button as a child of the map div. 
+                    //add the location button as a child of the map div.
                     var locateDiv = domConstruct.create("div", {
                         id: "locateDiv"
                     }, "mapDiv");
@@ -120,7 +120,7 @@ declare, has, lang, Color, array, on, registry, arcgisUtils, esriLang, dom, domA
                 }));
             }
 
-            //add the basemap toggle if enabled. 
+            //add the basemap toggle if enabled.
             if (this.config.basemap) {
                 require(["esri/dijit/BasemapToggle", "esri/basemaps"], lang.hitch(this, function (BasemapToggle, basemaps) {
                     if (!BasemapToggle && basemaps) {
@@ -158,10 +158,10 @@ declare, has, lang, Color, array, on, registry, arcgisUtils, esriLang, dom, domA
                             b.title = "Dark Gray Canvas";
                         }
                         if (b.title) {
-                            for (var i in basemaps) {
+                            for (var j in basemaps) {
                                 //use this to handle translated titles
-                                if (b.title === this._getBasemapName(i)) {
-                                    toggle.defaultBasemap = i;
+                                if (b.title === this._getBasemapName(j)) {
+                                    toggle.defaultBasemap = j;
                                     //remove at 4.0
                                     if (i === "dark-gray") {
                                         if (this.map.layerIds && this.map.layerIds.length > 0) {
@@ -170,7 +170,7 @@ declare, has, lang, Color, array, on, registry, arcgisUtils, esriLang, dom, domA
                                         }
                                     }
                                     //end remove at 4.0
-                                    this.map.setBasemap(i);
+                                    this.map.setBasemap(j);
                                 }
                             }
                         }
@@ -215,8 +215,8 @@ declare, has, lang, Color, array, on, registry, arcgisUtils, esriLang, dom, domA
 
 
                     search.on("select-result", lang.hitch(this, function () {
-                        //if edit tool is enabled we'll have to delete/create 
-                        //so info window behaves correctly. 
+                        //if edit tool is enabled we'll have to delete/create
+                        //so info window behaves correctly.
                         on.once(this.map.infoWindow, "hide", lang.hitch(this, function () {
                             search.clearGraphics();
                             if (this.editor) {
@@ -255,13 +255,14 @@ declare, has, lang, Color, array, on, registry, arcgisUtils, esriLang, dom, domA
                 this.config.response = response;
                 domClass.add(this.map.infoWindow.domNode, "light");
                 this.map.setInfoWindowOnClick(false);
-                //set the title 
+
+                on(this.map.infoWindow, "show", this._updatePopup);
+                on(this.map.infoWindow, "restore", this._updatePopup);
                 var title = this.config.title || this.config.response.itemInfo.item.title;
                 document.title = title;
                 dom.byId("title").innerHTML = title;
 
-
-                //do we have any editable layers? 
+                //do we have any editable layers?
                 this.editableLayers = this._getEditableLayers(response.itemInfo.itemData.operationalLayers);
                 if (this.editableLayers.length > 0) {
                     this.editable = true;
@@ -270,14 +271,12 @@ declare, has, lang, Color, array, on, registry, arcgisUtils, esriLang, dom, domA
                             this.editable = false;
                         }
                     }
-
                     this._createEditor();
                 } else {
-                    //add note that map doesn't contain editable layers 
+                    //add note that map doesn't contain editable layers
                     registry.byId("cp_left").set("content", "<div style='padding:5px;'>" + this.config.i18n.map.noEditLayers + "</div>");
+                    this.map.setInfoWindowOnClick(true);
                 }
-
-
                 // remove loading class from body
                 domClass.remove(document.body, "app-loading");
                 this._addMapWidgets();
@@ -285,14 +284,18 @@ declare, has, lang, Color, array, on, registry, arcgisUtils, esriLang, dom, domA
                 // If you need map to be loaded, listen for it's load event.
             }), this.reportError);
         },
+        _updatePopup: function(e){
+          var box = domGeometry.getContentBox(this.map.container);
+          if(box && box.w && box.w < 600){
+              this.map.infoWindow.maximize();
+          }
+        },
         _createEditor: function () {
             if (this.editable) {
-                //add class we have a toolbar 
+                //add class we have a toolbar
                 if (this.config.edittoolbar) {
                     domClass.add(document.body, "edit-toolbar");
                 }
-
-
                 var settings = {
                     map: this.map,
                     layerInfos: this.editableLayers,
@@ -319,10 +322,12 @@ declare, has, lang, Color, array, on, registry, arcgisUtils, esriLang, dom, domA
             array.forEach(layers, lang.hitch(this, function (layer) {
                 if (layer && layer.layerObject) {
                     var eLayer = layer.layerObject;
-                    if (eLayer instanceof FeatureLayer && eLayer.isEditable()) {
+                    if (eLayer instanceof FeatureLayer) {
+                      if(eLayer.isEditable()){
                         editableLayers.push({
                             "featureLayer": eLayer
                         });
+                      }
                     }
                 }
             }));
@@ -330,7 +335,7 @@ declare, has, lang, Color, array, on, registry, arcgisUtils, esriLang, dom, domA
             array.forEach(editableLayers, lang.hitch(this, function (hintLayer) {
 
                 if (hintLayer.featureLayer && hintLayer.featureLayer.infoTemplate && hintLayer.featureLayer.infoTemplate.info && hintLayer.featureLayer.infoTemplate.info.fieldInfos) {
-                    //only display visible fields 
+                    //only display visible fields
                     var fields = hintLayer.featureLayer.infoTemplate.info.fieldInfos;
 
                     var fieldInfos = [];
@@ -426,7 +431,7 @@ declare, has, lang, Color, array, on, registry, arcgisUtils, esriLang, dom, domA
 
         _setLevel: function (options) {
             var level = this.config.level;
-            //specify center and zoom if provided as url params 
+            //specify center and zoom if provided as url params
             if (level) {
                 options.zoom = level;
             }

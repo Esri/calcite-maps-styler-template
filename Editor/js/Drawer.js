@@ -169,7 +169,6 @@ Evented, declare, lang, _WidgetBase, on, dom, domClass, domConstruct, BorderCont
 
                 var editor = new ContentPane({
                     id: "editorStack",
-                   // className: "fc",
                     title: "Editor",
                     content: "<div id='editorDiv'></div>"
                 });

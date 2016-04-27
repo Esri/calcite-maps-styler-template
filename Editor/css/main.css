@@ -122,11 +122,34 @@
 }
 .esriSimpleSlider {
   top: 55px;
+  border-radius: 0;
+  border: thin solid #ccc;
 }
-@media screen and (max-width: 850px) {
+.arcgisSearch .searchCollapsed .searchSubmit{
+  border-radius: 0;
+  border: thin solid #ccc;
+}
+@media screen and (max-width: 600px) {
   .app-loading .content-pane-left {
     width: 0px;
   }
+  .drawer-open #title{
+    display:none;
+  }
+  .esriPopup.light.esriPopupVisible.esriPopupMaximized{
+    top:60px !important;
+    margin-bottom:55px;
+  }
+  .esriPopup.light.esriPopupVisible.esriPopupMaximized > div.esriPopupWrapper > div.sizer.content > div{
+    max-height: initial !important;
+    height: auto !important;
+  }
+  .arcgisSearch .hasButtonMode.searchExpanded .searchExpandContainer, .arcgisSearch .hasButtonMode .searchAnimate{
+    width:190px;
+  }
+}
+.hide{
+  display: none;
 }
 @font-face {
   font-family: 'editor_fonts';
@@ -180,6 +203,7 @@ body {
   height: 100%;
 }
 #title {
+  display:block;
   width: 80%;
   text-align: center;
   vertical-align: middle;
@@ -189,8 +213,14 @@ body {
   -o-text-overflow: ellipsis;
   text-overflow: ellipsis;
 }
+.esriSimpleSliderVertical .esriSimpleSliderIncrementButton{
+  border-bottom: thin solid #ccc;
+}
+.esriSimpleSliderVertical .esriSimpleSliderDecrementButton, .esriSimpleSliderVertical .esriSimpleSliderIncrementButton{
+  border-radius: 0;
+}
 .esriSimpleSliderDecrementButton:hover {
-  border-top: 1px solid #666;
+  border-top: thin solid #ccc;
 }
 .BasemapToggle {
   position: absolute;
@@ -198,12 +228,63 @@ body {
   left: 25px;
   z-index: 35;
 }
+.BasemapToggle .toggleButton{
+  background: rgba(255, 255, 255, 0.7);
+  -moz-user-select: -moz-none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+  -moz-box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  border-radius:0;
+  border: 0;;
+  padding:0;
+}
+.BasemapToggle .basemapImageContainer{
+  position: relative;
+}
+.BasemapToggle .basemapImage{
+  width:65px;
+  height:65px;
+  overflow:hidden;
+  border-radius: 0;
+}
+.BasemapToggle .basemapImage .basemapBG{
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-repeat: no-repeat;
+  background-position: center center;
+  border-radius:0;
+}
+.BasemapToggle .basemapTitle{
+  display: block;
+  width: 100%;
+  color: #4c4c4c;
+  margin: 0;
+  font-size: 10px;
+  line-height: 1.2;
+  padding: 4px;
+  background: #FFF;
+  background: rgba(255, 255, 255, 0.7);
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  z-index: 2;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  border-radius: 0;
+}
 .HomeButton .home {
   background-image: url("../images/home.png");
   padding: 0;
   -webkit-border-radius: 0;
   border-radius: 0;
-  border-bottom: 1px solid #666;
+  border-bottom: thin solid #ccc;
   background-color: #fff;
 }
 .HomeButton .home:hover {
@@ -217,17 +298,27 @@ body {
   position: absolute;
   top: 155px;
   left: 20px;
-  z-index: 50;
+  z-index: 30;
 }
 .LocateButton .zoomLocateButton {
   background-color: #989898;
+  border-radius:0;
+  padding:0;
+  border:none;
 }
 #search {
   position: absolute;
   display: block;
-  z-index: 50;
+  z-index: 30;
   top: 55px;
-  left: 74px;
+  left: 60px;
+}
+ .claro .dijitButton .dijitButtonNode, .claro .dijitDropDownButton .dijitButtonNode, .claro .dijitComboButton .dijitButtonNode, .claro .dijitToggleButton .dijitButtonNode{
+  background-image:none;
+  border:0;
+  border-radius: 0;
+  background-color:#efefef;
+  color:#6d6e71;
 }
 .edit-toolbar .templatePicker {
   padding-top: 40px;
@@ -236,7 +327,7 @@ body {
   display: none;
 }
 .templatePicker {
-  padding: 10px 20px 0 0;
+  padding: 10px 10px 0 10px;
   width: 100%;
   height: auto;
   border: none;
@@ -251,6 +342,7 @@ body {
   width: 100%;
   height: 100%;
 }
+
 .esriPopup.light .pointer,
 .esriPopup.light .outerPointer {
   background: #fff !important;
