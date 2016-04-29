@@ -84,7 +84,7 @@ define(
             valueRadioButtonLabel: "한_Value___빠", // Appears as a label for 'Value' radio button in filter container
             uniqueRadioButtonLabel: "한_Unique___빠", // Appears as a label for 'Unique' radio button in filter container
             selectLayerToBegin: "한_Select a category to get started___________빠", // for showing default message on application load
-            layerFeatureCount: "한_No of records: ${featureCount}__________빠" // Appears beside operational layer name to display count of feature
+            layerFeatureCount: "한_${featureCount} records________빠" // Appears beside operational layer name to display count of feature
         },
         timeSlider: {
             timeSliderLabel: "한_Time range____빠", // Appears beside time slider widget

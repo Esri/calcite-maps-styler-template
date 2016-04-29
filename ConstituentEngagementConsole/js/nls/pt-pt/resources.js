@@ -84,7 +84,7 @@ define(
             valueRadioButtonLabel: "ã_Value___Ç", // Appears as a label for 'Value' radio button in filter container
             uniqueRadioButtonLabel: "ã_Unique___Ç", // Appears as a label for 'Unique' radio button in filter container
             selectLayerToBegin: "ã_Select a category to get started___________Ç", // for showing default message on application load
-            layerFeatureCount: "ã_No of records: ${featureCount}__________Ç" // Appears beside operational layer name to display count of feature
+            layerFeatureCount: "ã_${featureCount} records________Ç" // Appears beside operational layer name to display count of feature
         },
         timeSlider: {
             timeSliderLabel: "ã_Time range____Ç", // Appears beside time slider widget

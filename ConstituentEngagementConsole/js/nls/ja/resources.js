@@ -84,7 +84,7 @@ define(
             valueRadioButtonLabel: "須_Value___鷗", // Appears as a label for 'Value' radio button in filter container
             uniqueRadioButtonLabel: "須_Unique___鷗", // Appears as a label for 'Unique' radio button in filter container
             selectLayerToBegin: "須_Select a category to get started___________鷗", // for showing default message on application load
-            layerFeatureCount: "須_No of records: ${featureCount}__________鷗" // Appears beside operational layer name to display count of feature
+            layerFeatureCount: "須_${featureCount} records________鷗" // Appears beside operational layer name to display count of feature
         },
         timeSlider: {
             timeSliderLabel: "須_Time range____鷗", // Appears beside time slider widget
