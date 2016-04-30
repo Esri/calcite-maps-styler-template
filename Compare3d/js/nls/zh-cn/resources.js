@@ -24,4 +24,4 @@ define(
       unlinkLabel: "取消链接视图"
     }
   })
-);
+});
