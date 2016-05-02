@@ -252,6 +252,13 @@ function (
         },
 
         _createAppSettingsLeftPanel: function (settingsContainer) {
+            // use app title if current title is not set
+            if (!this.config.title) {
+              if (this.response && this.response.item) {
+                // use app title
+                this.config.title = this.response.item.title;
+              }
+            }
             var leftSettingsContent, appTitleLabelContainer, appTitleLabel, appTitleInputContainer, appTitleInput,
             appDescriptionLabelContainer, appDescriptionLabel, appDescriptionInputContainer, appDijitInputContainer, dijitValue;
 

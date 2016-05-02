@@ -355,6 +355,7 @@ define([
                     id: "featureTable",
                     featureLayer: layer,
                     showDataTypes: false,
+                    syncSelection:false,
                     readOnly: true,
                     hiddenFields: hiddenFields,
                     map: this.map

@@ -553,7 +553,11 @@ function (
                 this.map.webmapTitle = response.itemInfo.item.title;
                 // if title is enabled
                 if (this.config.enableTitle) {
-                    this._setTitle(this.config.title || response.itemInfo.item.title);
+                  if (!this.config.title && this.data && this.data.item) {
+                    // use app title
+                    this.config.title = this.data.item.title;
+                  }
+                  this._setTitle(this.config.title || response.itemInfo.item.title);
                 }
                 if (this.map.loaded) {
                     this._init();

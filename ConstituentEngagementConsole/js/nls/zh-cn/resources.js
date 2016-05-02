@@ -84,7 +84,7 @@ define(
             valueRadioButtonLabel: "试_Value___验", // Appears as a label for 'Value' radio button in filter container
             uniqueRadioButtonLabel: "试_Unique___验", // Appears as a label for 'Unique' radio button in filter container
             selectLayerToBegin: "试_Select a category to get started___________验", // for showing default message on application load
-            layerFeatureCount: "试_No of records: ${featureCount}__________验" // Appears beside operational layer name to display count of feature
+            layerFeatureCount: "试_${featureCount} records________验" // Appears beside operational layer name to display count of feature
         },
         timeSlider: {
             timeSliderLabel: "试_Time range____验", // Appears beside time slider widget
