@@ -20,7 +20,7 @@
 		"webMapInfoAvgRating": false,
 		"showNonEditableLayers": false,
 		"selectFeatureMessage": "Choose a report to get started",
-		"enableFilter": false,
+		"enableFilter": true,
 		"helpDialogTitle": "Help",
 		"helpDialogContent": "<p>Crowdsource Manager, a companion application to Crowdsource Reporter, allows users within an organization to review and update problems or observations .</p>",
 		"popupTabText": "Details",
