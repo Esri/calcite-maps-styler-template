@@ -36,3 +36,4 @@ CrowdSourcePolling\js\nls
 3DViz\js\nls
 3DScene\js\nls
 Compare3d\js\nls
+StorytellingBasic\js\nls
