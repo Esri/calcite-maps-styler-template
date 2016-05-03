@@ -145,4 +145,4 @@ define(
             noAttachmentsAvailableText: "Nie znaleziono załączników" // Shown when no comments are available for the selected issue
         }
     })
-);
+});
