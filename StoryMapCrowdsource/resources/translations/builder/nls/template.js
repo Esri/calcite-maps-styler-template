@@ -147,6 +147,17 @@ define({
         }
       }
     },
+    shareApp: {
+      title: 'Share your story',
+      sharePermissions: {
+        'private': 'Private',
+        'organization': 'Organization',
+        'public': 'Everyone'
+      },
+      socialize: {
+        header: 'Socialize'
+      }
+    },
     settingsModals: {
       common: {
         advancedOptions: 'Advanced Options',
@@ -221,6 +232,9 @@ define({
         notAuthorizedEdit: 'You are not authorized to edit this story. If you are not the owner, make sure you have been <a href="http://blogs.esri.com/esri/arcgis/2015/07/14/enable-colleagues-to-update-your-maps-and-apps/" target="-blank">given edit permissions</a> by the owner. You must also have access to edit items and publish new hosted feature services in your organization. Contact your ArcGIS Online organization administrator for more privileges.',
         crowdsourceLayerNotFound: 'Something went wrong, the app could not find or load the crowdsource map layer correctly. Make sure you have permission to view the feature service.',
         builderNotSSL: 'This Crowdsource story map requires the use of an https connection to make sure your audience can securely login and share their entry. Make sure your server supports an https connection at this same url. Viewers coming to your map will automatically be redirected to the secure version of the app.'
+      },
+      shareItems: {
+        notShared: 'The following item(s) could not be shared'
       }
     },
     validations: {
