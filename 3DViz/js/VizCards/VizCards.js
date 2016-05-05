@@ -113,6 +113,26 @@ define([
       this.containerNode.scrollLeft = pos;
     },
 
+    // get feature
+    getFeature: function(index) {
+      //console.log(index, this.options.features[index]);
+      if (this.options.features.length > index) {
+        return this.options.features[index];
+      }
+      return null;
+    },
+
+    //find feature
+    findFeature: function(fld, value) {
+      var f = null;
+      array.some(this.options.features, function(feature){
+        if (feature.attributes[fld] === value) {
+          f = feature;
+        }
+      });
+      return f;
+    },
+
     // get total
     _getTotal: function() {
       var fld = this.options.vizField;

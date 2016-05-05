@@ -42,17 +42,23 @@
       "options": [{
         "label": "Point Extrusion",
         "value": "Point Extrusion"
+      }, {
+        "label": "Polygon Extrusion",
+        "value": "Polygon Extrusion"
+      }, {
+        "label": "Pulse",
+        "value": "Pulse"
       }]
     }, {
       "type": "number",
       "fieldName": "maxZ",
-      "label": "Maximum Z extrusion (meters)",
-      "tooltip": "Maximum Z extrusion (meters)"
+      "label": "Maximum symbol height (meters)",
+      "tooltip": "Maximum symbol height (meters)"
     }, {
       "type": "number",
       "fieldName": "maxW",
-      "label": "3D Point width (meters)",
-      "tooltip": "3D Point width (meters)"
+      "label": "Maximum symbol width (meters)",
+      "tooltip": "Maximum symbol width (meters)"
     }, {
       "type": "number",
       "fieldName": "interval",

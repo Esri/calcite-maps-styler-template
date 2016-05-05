@@ -39,22 +39,30 @@ define([
   "esri/geometry/support/webMercatorUtils",
 
   "esri/Graphic",
+  "esri/layers/FeatureLayer",
   "esri/layers/GraphicsLayer",
 
   "esri/portal/PortalItem",
 
+  "esri/renderers/SimpleRenderer",
+
+  "esri/symbols/ExtrudeSymbol3DLayer",
   "esri/symbols/PictureMarkerSymbol",
   "esri/symbols/PointSymbol3D",
+  "esri/symbols/PolygonSymbol3D",
   "esri/symbols/ObjectSymbol3DLayer",
 
   "esri/tasks/QueryTask",
   "esri/tasks/support/Query",
 
   "esri/views/SceneView",
+  "esri/views/3d/externalRenderers",
   "esri/WebScene",
 
   "application/uiUtils",
   "application/VizCards/VizCards",
+  "lib/PointExtrusion.min",
+  "lib/Pulse.min",
 
   "dojo/domReady!"
 ], function(
@@ -64,12 +72,14 @@ define([
   on, all,
   Camera, Color,
   Point, SpatialReference, webMercatorUtils,
-  Graphic, GraphicsLayer,
+  Graphic, FeatureLayer, GraphicsLayer,
   PortalItem,
-  PictureMarkerSymbol, PointSymbol3D, ObjectSymbol3DLayer,
+  SimpleRenderer,
+  ExtrudeSymbol3DLayer, PictureMarkerSymbol, PointSymbol3D, PolygonSymbol3D, ObjectSymbol3DLayer,
   QueryTask, Query,
-  SceneView, WebScene,
-  uiUtils, VizCards
+  SceneView, externalRenderers, WebScene,
+  uiUtils, VizCards,
+  PointExtrusion, Pulse
 ) {
   return declare(null, {
 
@@ -79,6 +89,7 @@ define([
     uiUtils: null,
     vizLayer: null,
     vizCards: null,
+    renObjects: [],
 
     startup: function(config) {
       var promise;
@@ -284,7 +295,7 @@ define([
         showPercent: this.config.showPercent
       };
       this.vizCards = new VizCards(options, dom.byId("panelContent"));
-      this.vizCards.on('selection', lang.hitch(this, this._featureSelection));
+      this.vizCards.on('selection', lang.hitch(this, this._cardClicked));
       this.vizCards.startup();
       if (this.config && this.config.i18n) {
         domAttr.set("btnToggle", "title", this.config.i18n.tooltips.toggle || "Toggle");
@@ -377,14 +388,6 @@ define([
 
       lyr.visible = false;
 
-      this.graphicsLayer = new GraphicsLayer({
-        elevationInfo: {
-          mode: "relative-to-ground",
-          offset: offset
-        }
-      });
-      map.add(this.graphicsLayer);
-
       this.labelsLayer = new GraphicsLayer({
         elevationInfo: {
           mode: "relative-to-ground",
@@ -469,31 +472,44 @@ define([
       query.outFields = ["*"];
       query.where = "1=1";
       queryTask.execute(query).then(lang.hitch(this, function(results) {
+        console.log(results);
+        if (this.config.vizType === "Polygon Extrusion" && results.geometryType !== "polygon") {
+          console.log("Polygon Extrusion is only supported with polygon geometries");
+          this.config.vizType = "Point Extrusion";
+        }
+        this.vizLayer.featureSet = results;
         this._processFeatureGeometries(results.features);
-        this.vizLayer.features = results.features;
+        this.vizLayer.features = this._processFeatureGeometries(results.features);
         this._initVizPages();
       }));
     },
 
     // process feature geometries
     _processFeatureGeometries: function(features) {
+      var ptFeatures = [];
       array.forEach(features, function(feature) {
         var geom = feature.geometry;
         if (geom) {
+          var pt = geom;
           switch (geom.type) {
             case "point":
-              //feature.vizGeometry = geom;
               break;
             case "polygon":
             case "circle":
-              feature.geometry = geom.centroid;
+              pt = geom.centroid;
               break;
             default:
-              feature.geometry = geom.extent.center;
+              pt = geom.extent.center;
               break;
           }
+          var gra = new Graphic({
+            geometry: pt,
+            attributes: feature.attributes
+          });
+          ptFeatures.push(gra);
         }
       });
+      return ptFeatures;
     },
 
     // init viz pages
@@ -645,34 +661,132 @@ define([
         displayField: displayFld,
         color: this.config.color
       };
-      this._processFeatures(options);
+
       this.vizCards.update(options);
+
+      if (this.config.vizType === "Polygon Extrusion") {
+        this._processFeatureLayer(options);
+      } else {
+        this._processFeatures(options);
+      }
 
     },
 
+    // process feature layer
+    _processFeatureLayer: function(options) {
+      var map = this.view.map;
+      if (this.featureLayer) {
+        map.remove(this.featureLayer);
+      }
+
+      var renderer = this._getRenderer(options);
+      var fs = this.vizLayer.featureSet;
+
+      this.featureLayer = new FeatureLayer({
+        // create an instance of esri/layers/support/Field for each field object
+        fields: fs.fields,
+        objectIdField: fs.objectIdField,
+        geometryType: fs.geometryType,
+        spatialReference: fs.spatialReference,
+        source: fs.features,
+        renderer: renderer
+      });
+      map.add(this.featureLayer);
+    },
+
+    // get renderer
+    _getRenderer: function(options) {
+      var maxSize = this.config.maxZ;
+      var max = this.vizLayer.max;
+      //var min = Math.floor(maxSize * 0.005);
+
+      var stopsSize = [];
+      var stopsColor = [];
+      for (var i = 1; i < 6; i++) {
+        var pct = i / 5;
+        var blend = (1 - pct) * 0.8;
+
+        var color = Color.fromString(options.color);
+        var white = Color.fromString("#ffffff");
+        var symColor = Color.blendColors(color, white, blend);
+        stopsSize.push({
+          value: Math.floor(max * pct),
+          size: Math.floor(maxSize * pct),
+          label: i
+        });
+        stopsColor.push({
+          value: Math.floor(max * pct),
+          color: symColor,
+          label: i
+        });
+      }
+
+      var renderer = new SimpleRenderer({
+        symbol: new PolygonSymbol3D({
+          symbolLayers: [new ExtrudeSymbol3DLayer({
+            material: {
+              color: options.color
+            }
+          })]
+        }),
+        label: "",
+        visualVariables: [{
+          type: "size",
+          field: options.vizField,
+          stops: stopsSize
+        }, {
+          type: "color",
+          field: options.vizField,
+          stops: stopsColor
+        }]
+      });
+
+      return renderer;
+    },
+
+
     // process features
     _processFeatures: function(options) {
-      this.graphicsLayer.removeAll();
       this.labelsLayer.removeAll();
-      var color = this._getColor();
+      this._clearRenderers();
       var features = options.features;
       if (features.length <= 0) {
         return;
       }
+      var maxW = this.config.maxW;
+      var maxH = this.config.maxZ;
+      var maxSize = maxH;
+      if (this.config.vizType === "Pulse") {
+        maxSize = maxW;
+      }
       var max = this.vizLayer.max;
-      var min = Math.floor(this.config.maxZ * 0.005);
+      var min = Math.floor(maxSize * 0.005);
+      var locations = [];
       array.forEach(options.features, lang.hitch(this, function(feature) {
         var geom = feature.geometry;
         var attr = feature.attributes;
         var value = attr[options.vizField];
-        var ht = value / max * this.config.maxZ;
-        if (ht <= min) {
-          ht = min;
+        var valueSize = value / max * maxSize;
+        if (valueSize <= min) {
+          valueSize = min;
         }
-        var sym = this._getSymbol(ht, color);
-        var gra = new Graphic(geom, sym, attr);
-        this.graphicsLayer.add(gra);
+        var h = valueSize;
+        var w = maxW;
+        if (this.config.vizType === "Pulse") {
+          w = valueSize;
+          h = maxH;
+        }
+        var loc = {
+          x: geom.x,
+          y: geom.y,
+          z: geom.z,
+          width: w,
+          height: h,
+          attributes: attr
+        };
+        locations.push(loc);
       }));
+      this._addRenderer(locations);
     },
 
     // get color
@@ -701,12 +815,12 @@ define([
       return sym;
     },
 
-    // feature selection
-    _featureSelection: function(obj) {
+    // card clicked
+    _cardClicked: function(obj) {
       if (obj.data) {
         var index = obj.data.attributes.index;
         this._selectGraphic(index);
-        var gra = this.graphicsLayer.graphics.getItemAt(index);
+        var gra = this.vizCards.getFeature(index);
         var geom = gra.geometry;
         var pos = this.view.camera.position;
         if (this.playing) {
@@ -724,17 +838,28 @@ define([
 
     // view clicked
     _viewClicked: function(evt) {
-      if (evt.graphic && evt.graphic.attributes.index) {
-        var index = evt.graphic.attributes.index;
-        this._selectGraphic(index);
-        this.vizCards.selectCard(index);
+      if (this.config.vizType === "Polygon Extrusion") {
+        var fld = this.vizLayer.featureSet.objectIdFieldName;
+        this.view.hitTest(evt.screenPoint).then(lang.hitch(this, function(obj){
+          if (obj.results.length > 0 && obj.results[0].graphic) {
+            var oid = obj.results[0].graphic.attributes[fld];
+            var gra = this.vizCards.findFeature(fld, oid);
+            if (gra) {
+              var index = gra.attributes.index;
+              this._selectGraphic(index);
+              this.vizCards.selectCard(index);
+            }
+          }
+        }));
+      } else {
+        this._selectRendererObj(evt);
       }
     },
 
     // select graphic
     _selectGraphic: function(index) {
       this.labelsLayer.removeAll();
-      var gra = this.graphicsLayer.graphics.getItemAt(index);
+      var gra = this.vizCards.getFeature(index);
       var geom = gra.geometry;
       var vizFld = this.vizLayer.fields[this.vizLayer.page].name;
       var value = gra.attributes[vizFld];
@@ -805,6 +930,48 @@ define([
         tilt: 0,
         heading: 0
       });
+    },
+
+    // **
+    // External Renderers
+    // **
+
+    _addRenderer: function(locations) {
+      var params = {
+        loop: false,
+        color: this.config.color
+      };
+      var obj;
+      switch (this.config.vizType) {
+        case "Pulse":
+          params.loop = true;
+          obj = new Pulse(this.view, locations, params);
+          break;
+        default:
+          obj = new PointExtrusion(this.view, locations, params);
+          break;
+      }
+      externalRenderers.add(this.view, obj);
+      this.renObjects.push(obj);
+    },
+
+    _clearRenderers: function() {
+      array.forEach(this.renObjects, lang.hitch(this, function(obj){
+        externalRenderers.remove(this.view, obj);
+      }));
+      this.renObjects = [];
+    },
+
+    _selectRendererObj: function(evt) {
+      if(this.renObjects.length > 0) {
+        var renObj = this.renObjects[0];
+        var gra = renObj.hitTest(evt);
+        if (gra) {
+          var index = gra.attributes.index;
+          this._selectGraphic(index);
+          this.vizCards.selectCard(index);
+        }
+      }
     }
 
   });

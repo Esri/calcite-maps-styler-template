@@ -59,6 +59,9 @@
       name: "application",
       location: package_path + '/js'
     }, {
+      name: "lib",
+      location: package_path + '/lib'
+    }, {
       name: "config",
       location: package_path + '/config'
     }, {
@@ -70,8 +73,9 @@
     dojoConfig.locale = RegExp.$1;
   }
   </script>
-  <script src="assets/js/calcite-web.js"></script>
+  <!-- <script src="assets/js/calcite-web.js"></script> -->
   <script type="text/javascript" src="//jsdev.arcgis.com/4.0/"></script>
+  <script src="./lib/three.min.js"></script>
   <script type="text/javascript">
   require([
     "config/templateConfig",
