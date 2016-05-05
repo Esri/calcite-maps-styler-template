@@ -83,7 +83,7 @@
     "reverse": true,
     "vizType": "Point Extrusion",
     "maxZ": 2000000,
-    "maxW": 10000,
+    "maxW": 100000,
     "interval": 20000,
     "showPercent": false
   }
