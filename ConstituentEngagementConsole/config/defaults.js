@@ -108,5 +108,7 @@ define({
     // to set the text of comment tab
     "mediaTabText": "Media",
     // to set the text of media tab
-    "commentsTabText": "Comments"
+    "commentsTabText": "Comments",
+    // to show/hide help icon
+    "showHelpIcon": false
 });

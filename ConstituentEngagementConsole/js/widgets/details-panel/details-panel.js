@@ -331,6 +331,16 @@ define([
                 domClass.remove(dom.byId("detailsPanelWrapperContainer"), "esriCTHideTabList");
             }
             this.tabList.style.display = "";
+        },
+
+        /**
+        * This function will call media widget's function which help to fit charts in the panel
+        * @memberOf widgets/details-panel/details-panel
+        */
+        resizeChart: function () {
+            if (this._mediaWidgetObj) {
+                this._mediaWidgetObj.showChartsOnResize();
+            }
         }
     });
 });

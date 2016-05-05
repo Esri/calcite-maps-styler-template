@@ -778,23 +778,20 @@ table
     text-align: center;
 }
 
-.esriCTDetailsPanelWrapperContainer .esriViewPopup .header
-{
-    margin-right: 24px;
-}
-
 .tab-content
 {
-    height: calc(100% - 40px);
-    padding: 10px;
+    height: calc(100% - 38px);
+    padding: 9px;
     font-size: 15px;
     overflow: auto;
     -webkit-overflow-scrolling: touch;
 }
+
 .esriCTDetailsPanelTabContainer
 {
     height: 100%;
 }
+
 .tab-pane
 {
     height: 100%;
@@ -829,6 +826,11 @@ table
 {
     padding: 0 15px;
     border-bottom: 1px solid #a9a9a9;
+}
+
+.esriCTDetailsPanelWrapperContainer .esriViewPopup .header
+{
+    margin-right: 30px;
 }
 
 /** Details panel container ends **/
@@ -1292,7 +1294,7 @@ table
 {
     width: 92%;
     clear: both;
-    height: 20px;
+    white-space: nowrap;
     cursor: pointer;
     margin: 7px 10px 7px 10px;
     overflow: hidden;
@@ -1538,8 +1540,8 @@ input.esriCTRadioButton
 
 .esriCTDetailsFieldValue
 {
-    padding: 0px 0 10px 0;
-    margin: 0 10px;
+    padding: 0;
+    margin: 0;
 }
 
 .esriCTCommentsContainer .mediaSection, .esriCTCommentsContainer .attachmentsSection
@@ -1787,6 +1789,14 @@ input.esriCTRadioButton
     float: right;
 }
 
+.esriCTRequireFieldStyle
+{
+    display: inline-block;
+    margin-left: 5px;
+    font-weight: normal;
+    font-size: 100%;
+}
+
 /** Popup form end **/
 
 /** Popup tab container ends **/
@@ -1802,6 +1812,7 @@ input.esriCTRadioButton
 .esriCTmediaWrapperContainer
 {
     height: 100%;
+    width: 100%;
 }
 
 .esriCTMediaContainer
@@ -1834,12 +1845,21 @@ input.esriCTRadioButton
     float: left;
 }
 
+.carousel-inner
+{
+    width: 100%;
+    height: 200px;
+    margin: 0 auto;
+    display: inline-block;
+    text-align: center;
+    overflow: hidden;
+}
+
 .carousel-inner > .item
 {
-    width: 80%;
-    margin: auto 10%;
-    height: 190px;
-    overflow: hidden;
+    width: calc(100% - 88px);
+    height: 100%;
+    margin: 0 44px;
 }
 
 .carousel-inner > .item > img, .esriViewPopup .gallery .frame img
@@ -1853,14 +1873,31 @@ input.esriCTRadioButton
     left: 0;
     bottom: 0;
     right: 0;
+    z-index: 1;
+}
+
+
+.esriViewPopup .gallery .frame div.chart
+{
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 1;
 }
 
 #esriCTChartContainer
 {
     overflow: hidden;
-    width: 250px;
-    height: 180px;
+    width: 100%;
+    height: auto;
     margin: 0 auto;
+    padding: 0px;
 }
 
 #esriCTChartContainer .mainSection, #esriCTChartContainer .attachmentsSection, #esriCTChartContainer .caption, #esriCTChartContainer .hzLine, #esriCTChartContainer .summary, #esriCTChartContainer .mediaHandle, #esriCTChartContainer .mediaSection .header
@@ -1901,6 +1938,24 @@ input.esriCTRadioButton
 {
     cursor: default !important;
     opacity: 0.4 !important;
+}
+
+.active .esriCTHeaderHover, .active .esriCTCaptionHover
+{
+    background-color: #fff;
+    opacity: 0.60;
+    display: block;
+    text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    position: relative;
+    z-index: 2;
+}
+
+.active .esriCTHeaderHover
+{
+    font-weight: bold;
 }
 
 /** Media tab container ends **/
@@ -2032,6 +2087,13 @@ input.esriCTRadioButton
     display: table;
     height: 100%;
     width: 100%;
+}
+
+.esriViewPopup .gallery
+{
+    height: 100%;
+    width: 100%;
+    position: inherit;
 }
 
 /* Sign out container ends */

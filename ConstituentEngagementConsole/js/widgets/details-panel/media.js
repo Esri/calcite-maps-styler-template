@@ -30,6 +30,9 @@ define([
     "dijit/_TemplatedMixin",
     "dijit/_WidgetsInTemplateMixin",
     "dojo/_base/lang",
+    "dojo/mouse",
+    "dojo/touch",
+    "dojox/gesture/tap",
     "dojo/domReady!"
 ], function (
     declare,
@@ -45,7 +48,10 @@ define([
     _WidgetBase,
     _TemplatedMixin,
     _WidgetsInTemplateMixin,
-    lang
+    lang,
+    mouse,
+    touch,
+    tap
 ) {
     return declare([_WidgetBase, _TemplatedMixin, _WidgetsInTemplateMixin], {
         templateString: template,
@@ -55,6 +61,13 @@ define([
         _infoWidget: null,
         _chartInfo: null,
         _chartIndex: 0,
+        _mouseEnterHandle: null,
+        _mouseLeaveHandle: null,
+        _tapHoldHandle: null,
+        _touchReleaseHandle: null,
+        _tapHandle: null,
+        _totalSlides: null,
+
         /**
         * This function is called when widget is constructed
         * @param{object} parameters of widget
@@ -85,6 +98,9 @@ define([
             this._chartInfo = this.popupInfo && this.popupInfo.mediaInfos;
             this._infoWidget = registry.byId(this._infoContent.id);
             this._showAttachments();
+            if (query(".tab-content")[0]) {
+                domStyle.set("carouselInnerContainer", "height", (query(".tab-content")[0].clientHeight - 75) + "px");
+            }
         },
 
         /**
@@ -129,6 +145,7 @@ define([
             }
 
             slideCount = this._addChartsToCarousel(slideCount);
+            this._totalSlides = slideCount;
 
             if (slideCount) {
                 this.showMediaTab();
@@ -149,6 +166,68 @@ define([
             } else {
                 this._showNoMediaFound();
             }
+            // mouse enter event to show header and caption
+            if (dom.byId('esriCTChartContainer')) {
+                if (this._mouseEnterHandle) {
+                    this._mouseEnterHandle.remove();
+                }
+                if (this._tapHoldHandle) {
+                    this._tapHoldHandle.remove();
+                }
+                this._mouseEnterHandle = on(dom.byId('esriCTChartContainer'), mouse.enter, lang.hitch(this, function () {
+                    this._showHeaderAndCaption();
+                }));
+                this._tapHoldHandle = on(dom.byId('esriCTChartContainer'), tap.hold, lang.hitch(this, function () {
+                    this._showHeaderAndCaption();
+                }));
+            }
+            // mouse leave event to hide header and caption
+            if (dom.byId('esriCTChartContainer')) {
+                if (this._mouseLeaveHandle) {
+                    this._mouseLeaveHandle.remove();
+                }
+                if (this._touchReleaseHandle) {
+                    this._touchReleaseHandle.remove();
+                }
+                this._mouseLeaveHandle = on(dom.byId('esriCTChartContainer'), mouse.leave, lang.hitch(this, function () {
+                    this._hideHeaderAndCaption();
+                }));
+                this._touchReleaseHandle = on(dom.byId('esriCTChartContainer'), touch.release, lang.hitch(this, function () {
+                    this._hideHeaderAndCaption();
+                }));
+            }
+        },
+
+        /**
+        * This function is used to show header & caption
+        * @memberOf widgets/details-panel/media
+        */
+        _showHeaderAndCaption: function () {
+            var headerSection, captionSection;
+            headerSection = query('.active .mediaSection .header')[0];
+            captionSection = query('.active .mediaSection .caption')[0];
+            if (headerSection) {
+                domClass.replace(headerSection, "esriCTHeaderHover", "header");
+            }
+            if (captionSection) {
+                domClass.replace(captionSection, "esriCTCaptionHover", "caption");
+            }
+        },
+
+        /**
+        * This function is used to hide header & caption
+        * @memberOf widgets/details-panel/media
+        */
+        _hideHeaderAndCaption: function () {
+            var headerSection, captionSection;
+            headerSection = query('.active .mediaSection .esriCTHeaderHover')[0];
+            captionSection = query('.active .mediaSection .esriCTCaptionHover')[0];
+            if (headerSection) {
+                domClass.replace(headerSection, "header", "esriCTHeaderHover");
+            }
+            if (captionSection) {
+                domClass.replace(captionSection, "caption", "esriCTCaptionHover");
+            }
         },
 
         /**
@@ -164,6 +243,7 @@ define([
             }
             for (i = 0; i < mediaImages.length; i++) {
                 this._eventCollection.push(on(mediaImages[i], "click", this._showImgInNewTab));
+                this._eventCollection.push(on(mediaImages[i], tap, this._showImgInNewTab));
             }
         },
 
@@ -248,8 +328,6 @@ define([
             var svgElement = query(".chart > svg"), i;
             if (svgElement && svgElement.length) {
                 for (i = 0; i < svgElement.length; i++) {
-                    svgElement[i].setAttribute('height', '160');
-                    svgElement[i].setAttribute('width', '200');
                     svgElement[i].setAttribute('preserveAspectRatio', 'xMidYMid meet');
                 }
             }
@@ -322,7 +400,22 @@ define([
         */
         showMediaTab: function () {
             return true;
-        }
+        },
 
+        /**
+        * This function is used fit charts in the media panel
+        * @memberOf widgets/details-panel/media
+        */
+        showChartsOnResize: function () {
+            if ((this._totalSlides > 0) && (this._chartInfo) && (this._chartInfo.length > 0)) {
+                if (query(".disableRightArrow")[0]) {
+                    this._infoWidget._goToPrevMedia();
+                    this._infoWidget._goToNextMedia();
+                } else {
+                    this._infoWidget._goToNextMedia();
+                    this._infoWidget._goToPrevMedia();
+                }
+            }
+        }
     });
 });

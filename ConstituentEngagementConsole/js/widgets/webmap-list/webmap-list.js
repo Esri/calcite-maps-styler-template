@@ -69,6 +69,7 @@ define([
         mapDivID: "webMapListMapDiv", // id of div in which web-map is created
         lastSelectedWebMapExtent: null, // to store last extent of web-map that was selected
         lastSelectedWebMapItemInfo: null, // to store item info of web-map that was last selected
+        selectedLayerId: null, // to store id of selected layer
 
         /**
         * This function is called when widget is constructed.
@@ -394,6 +395,7 @@ define([
         */
         _displaySelectedOperationalLayer: function (obj) {
             var layer, featureLayer, i;
+            this.selectedLayerId = obj.operationalLayerId;
             if (this.map) {
                 for (layer in this.map._layers) {
                     if (this.map._layers.hasOwnProperty(layer)) {
@@ -827,27 +829,26 @@ define([
         * @memberOf widgets/webmap-list/webmap-list
         */
         _displayNonEditableLayers: function () {
-            array.forEach(this._selectedMapResponse.itemInfo.itemData.operationalLayers, lang.hitch(this, function (currentLayer) {
+            array.forEach(this._selectedMapResponse.itemInfo.itemData.operationalLayers, lang.hitch(this, function (currentLayer, index) { //ignore jslint
                 if (currentLayer.resourceInfo && currentLayer.resourceInfo.capabilities && currentLayer.layerType === "ArcGISFeatureLayer") {
-                    // condition to check if feature layer is non-editable
+                    // condition to check if feature layer is non-editable & it is visible in the TOC
                     if ((currentLayer.resourceInfo.capabilities.indexOf("Create") === -1) &&
                             ((currentLayer.resourceInfo.capabilities.indexOf("Update") === -1) ||
-                            (currentLayer.resourceInfo.capabilities.indexOf("Editing") === -1))) {
-                        currentLayer.layerObject.show(); // display non-editable layer
+                            (currentLayer.resourceInfo.capabilities.indexOf("Editing") === -1)) && currentLayer.visibility) {
+                        if (currentLayer.layerObject.showLabels && currentLayer.layerObject.labelingInfo) {
+                            currentLayer.layerObject.visible = true;
+                        }
+                        currentLayer.layerObject.show();
                         // condition to check feature layer with create, edit, delete permissions and popup enabled, but all fields marked display only
                     } else if ((currentLayer.resourceInfo.capabilities.indexOf("Create") !== -1) &&
                             (currentLayer.resourceInfo.capabilities.indexOf("Editing") !== -1) &&
                             (currentLayer.resourceInfo.capabilities.indexOf("Update") !== -1) &&
                             (currentLayer.popupInfo) &&
-                            this._checkDisplayPropertyOfFields(currentLayer.popupInfo, currentLayer.layerObject.fields)) {
+                            this._checkDisplayPropertyOfFields(currentLayer.popupInfo, currentLayer.layerObject.fields) && this.selectedLayerId !== currentLayer.id) {
+                        if (currentLayer.layerObject.showLabels && currentLayer.layerObject.labelingInfo) {
+                            currentLayer.layerObject.visible = true;
+                        }
                         currentLayer.layerObject.show(); // display non-editable layer
-                        // condition to check feature layer with create, edit, delete permissions, but disabled on the layer in the map TOC
-                    } else if ((currentLayer.resourceInfo.capabilities.indexOf("Create") !== -1) &&
-                            (currentLayer.resourceInfo.capabilities.indexOf("Editing") !== -1) &&
-                            (currentLayer.resourceInfo.capabilities.indexOf("Update") !== -1) &&
-                            (!currentLayer.visibility)) {
-                        currentLayer.layerObject.show(); // display non-editable layer
-                        this.map.addLayer(currentLayer.layerObject); // add layer on map
                     } else {
                         currentLayer.layerObject.hide();
                     }
@@ -864,20 +865,25 @@ define([
             if (!popupInfo) {
                 return false;
             }
+            for (i = 0; i < popupInfo.fieldInfos.length; i++) {
+                if (popupInfo.fieldInfos[i].isEditable) {
+                    return false;
+                }
+            }
             // check if popup-info is available if not then return false
             if (popupInfo) {
                 for (i = 0; i < popupInfo.fieldInfos.length; i++) {
                     for (j = 0; j < fields.length; j++) {
                         if (popupInfo.fieldInfos[i].fieldName === fields[j].name) {
-                            // check if field is Editable
-                            if (!popupInfo.fieldInfos[i].visible) {
-                                return false;
+                            // check if at least one field is visible in popup
+                            if (popupInfo.fieldInfos[i].visible) {
+                                return true;
                             }
                         }
                     }
                 }
             }
-            return true;
+            return false;
         },
 
         /**

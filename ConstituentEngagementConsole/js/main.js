@@ -90,6 +90,8 @@ define([
         _mapZoomOutHandle: null, // to store zoom out handle of map panel
         _filterRefreshDataObj: null,
         _isFilterRefreshClicked: false,
+        _existingLayerIndex: null, // to store index of layer
+        _reorderLayers: false, // flag to reorder layers
 
         /**
         * This method is designed to handle processing after any DOM fragments have been actually added to the document.
@@ -184,6 +186,12 @@ define([
                 on(window, "orientationchange", lang.hitch(this, function () {
                     if (ApplicationUtils.isAndroid()) {
                         $(".esriCTFilterParentContainer").css("display", "none");
+                    }
+                    if (query(".tab-content")[0]) {
+                        domStyle.set("carouselInnerContainer", "height", (query(".tab-content")[0].clientHeight - 75) + "px");
+                    }
+                    if (this._detailsPanelWidget) {
+                        this._detailsPanelWidget.resizeChart();
                     }
                 }));
                 // set Application Theme
@@ -442,6 +450,7 @@ define([
                 setTimeout(lang.hitch(this, function () {
                     ApplicationUtils.showLoadingIndicator();
                     ApplicationUtils.hideOverlayContainer();
+                    this._reorderLayers = true;
                     $(".esriCTSignOutOption").addClass("esriCTHidden");
                     this._resetUpperAndLowerContainer();
                     // Reset last updated feature array
@@ -487,7 +496,7 @@ define([
                         this._destroyTimeSliderWidget();
                         this._hideContainerOfTimeSlider();
                     }
-                    this.map.addLayer(this._refinedOperationalLayer);
+                    this.map.addLayer(this._refinedOperationalLayer, this._existingLayerIndex);
                 }), 10);
             });
             // show message when there is no web map to display
@@ -622,6 +631,21 @@ define([
         },
 
         /**
+        * This function is used get existing index of layer
+        * @memberOf widgets/main/main
+        */
+        _getExistingIndex: function (layerID) {
+            var index, i;
+            this._existingLayerIndex = null;
+            for (i = 0; i < this._itemInfo.itemData.operationalLayers.length; i++) {
+                if (this._itemInfo.itemData.operationalLayers[i].id === layerID) {
+                    index = i + 1;
+                    this._existingLayerIndex = index;
+                }
+            }
+        },
+
+        /**
         * This function is used add selected operational layer in snapshot mode
         * @memberOf widgets/main/main
         */
@@ -630,6 +654,8 @@ define([
             //get selected operation layer details
             opLayerInfo = this._layerSelectionDetails.operationalLayerDetails;
             cloneRenderer = lang.clone(this.map.getLayer(opLayerInfo.id).renderer);
+            // get index of layer
+            this._getExistingIndex(opLayerInfo.id);
             //remove selected layer from map
             this.map.removeLayer(this.map.getLayer(opLayerInfo.id));
             //create feature layer in 'snapshot' mode
@@ -677,10 +703,26 @@ define([
             portal = new esriPortal.Portal(this.appConfig.sharinghost);
             portal.queryGroups(params).then(lang.hitch(this, function (groups) {
                 params = {
-                    q: "group:" + groups.results[0].id + " AND title:" + '"' + this.appConfig.orgInfo.defaultBasemap.title + '"' + " AND" + ' type:"Web Map" -type:"Web Mapping Application"'
+                    q: "group:" + groups.results[0].id + " AND" + ' type:"Web Map" -type:"Web Mapping Application"'
                 };
                 portal.queryItems(params).then(lang.hitch(this, function (results) {
-                    webMapListObj._createMap(results.results[0].id, "mapDiv");
+                    var baseMapID, i;
+                    baseMapID = null;
+                    if (results && results.results && results.results.length > 0) {
+                        for (i = 0; i < results.results.length; i++) {
+                            if (results.results[i].hasOwnProperty("title")) {
+                                if (results.results[i].title === this.appConfig.orgInfo.defaultBasemap.title) {
+                                    baseMapID = results.results[i].id;
+                                    break;
+                                }
+                            }
+                        }
+                        if (baseMapID) {
+                            webMapListObj._createMap(baseMapID, "mapDiv");
+                        } else {
+                            webMapListObj._createMap(results.results[0].id, "mapDiv");
+                        }
+                    }
                     ApplicationUtils.hideLoadingIndicator();
                 }));
             }));
@@ -836,6 +878,29 @@ define([
         },
 
         /**
+        * This function is used to reorder all the layers on map
+        * @memberOf widgets/main/main
+        */
+        _reorderAllLayers: function () {
+            var layer, i, layerInstance, index, basemapLength;
+            basemapLength = 1;
+            if ((this.map.layerIds) && (this.map.layerIds.length > 0)) {
+                basemapLength = this.map.layerIds.length;
+            }
+            for (i = 0; i < this._itemInfo.itemData.operationalLayers.length; i++) {
+                for (layer in this.map._layers) {
+                    if (this.map._layers.hasOwnProperty(layer)) {
+                        if (this.map._layers[layer].id === this._itemInfo.itemData.operationalLayers[i].id) {
+                            layerInstance = this.map.getLayer(this._itemInfo.itemData.operationalLayers[i].id);
+                            index = i + basemapLength;
+                            this.map.reorderLayer(layerInstance, index);
+                        }
+                    }
+                }
+            }
+        },
+
+        /**
         * This function is used to create event handles
         * @param{object} operational layer to which event needs to be attached
         * @memberOf widgets/main/main
@@ -848,6 +913,10 @@ define([
                 }));
 
                 this._dataViewerFeatureLayerUpdateEndHandle = on(this._refinedOperationalLayer, "update-end", lang.hitch(this, function () {
+                    if (this._reorderLayers) {
+                        this._reorderLayers = false;
+                        this._reorderAllLayers();
+                    }
                     this._refinedOperationalLayer.clearSelection();
                     this._toggleNoFeatureFoundDiv(true);
                     //Enable time slider if it was disable
@@ -1049,9 +1118,17 @@ define([
                 upperContainerHeight = parseFloat(domStyle.get("upperContainer", "height"));
                 lowerContainerHeight = mainContainerHeight - upperContainerHeight;
                 domStyle.set("lowerContainer", "height", lowerContainerHeight + "px");
+                // add for resize image container LB
+                if (query(".tab-content")[0]) {
+                    domStyle.set("carouselInnerContainer", "height", (query(".tab-content")[0].clientHeight - 18) + "px");
+                }
                 this._resizeMap();
                 if (query(".esriCTDataViewerMainContainer") && (query(".esriCTDataViewerMainContainer").length > 0) && query(".esriCTDataViewerMainContainer")[0].clientHeight) {
                     domStyle.set(this._dataViewerWidget.dataViewerContainer, "height", query(".esriCTDataViewerMainContainer")[0].clientHeight + "px");
+                }
+                // fit charts in media panel
+                if (this._detailsPanelWidget) {
+                    this._detailsPanelWidget.resizeChart();
                 }
                 ApplicationUtils.hideLoadingIndicator();
             }));

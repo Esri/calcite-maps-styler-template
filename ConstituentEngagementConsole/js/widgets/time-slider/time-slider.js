@@ -1,4 +1,4 @@
-﻿/*global define,dojo,alert,moment,$ */
+﻿/*global define,dojo,alert,moment,$,setTimeout */
 /*jslint sloppy:true */
 /*
 | Copyright 2014 Esri
@@ -165,6 +165,9 @@ define([
             startDate = new Date(sliderValue.startTime);
             endDate = new Date(sliderValue.endTime);
             this._getWebmapFormattedDate(startDate, endDate);
+            setTimeout(lang.hitch(this, function () {
+                this.selectedLayer.refresh();
+            }), 1200);
         },
 
         /**

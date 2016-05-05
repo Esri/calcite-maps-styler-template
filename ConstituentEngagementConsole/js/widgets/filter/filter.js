@@ -610,7 +610,7 @@ define([
                         this.appConfig._filterObject.inputs[obj.index].parameters[0].currentValue = feature.attributes[obj.displayColumn];
                         domAttr.set(option[i], "selected", true);
                         selectedOption = true;
-                    } else if (this.appConfig._filterObject.inputs[obj.index].parameters[0].defaultValue && this.appConfig._filterObject.inputs[obj.index].parameters[0].defaultValue.toString() === feature.attributes[obj.displayColumn].toString() && !selectedOption) {
+                    } else if (this.appConfig._filterObject.inputs[obj.index].parameters[0].defaultValue.toString() === feature.attributes[obj.displayColumn].toString() && !selectedOption) {
                         this.appConfig._filterObject.inputs[obj.index].parameters[0].dropDownValue = feature.attributes[obj.displayColumn];
                         this.appConfig._filterObject.inputs[obj.index].parameters[0].currentValue = feature.attributes[obj.displayColumn];
                         domAttr.set(option[i], "selected", true);
@@ -1269,12 +1269,12 @@ define([
                     } else if (input.parameters[0].valueFrom === "textBox") {
                         domAttr.set(this._openFilterParam[i].valueRadio, "checked", true);
                         this._showTextBox(this._openFilterParam[i]);
-                        // check active filter nodes
-                        this._checkFieldActiveNodes(columnName);
                     }
                     if ((input.parameters[0].valueFrom === "dropDown" || input.parameters[0].valueFrom === "textBox") && this._openFilterParam[i]) {
                         // check header icon on the basis of changes in the filter
                         this._onEditFilterOptionChangeIcon(this._openFilterParam[i].index, columnName);
+                        // check active filter nodes
+                        this._checkFieldActiveNodes(columnName);
                     }
                 }
             }));

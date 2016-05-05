@@ -85,6 +85,9 @@ define([
             on(this.applicationHeaderIcon, "load, error", lang.hitch(this, function () {
                 this._displaySignedInUserDetails();
                 this._setSignOutOptionText();
+                if (this.appConfig.showHelpIcon) {
+                    domClass.remove(this.helpButton, "esriCTHidden");
+                }
                 this._setWidthOfApplicationNameContainer();
                 if (this.displaySignInText) {
                     this._displaySignInText();
@@ -288,6 +291,7 @@ define([
                 this.hideWebMapList();
                 this._helpWidgetObj.startup();
             }));
+
         },
 
         /**
