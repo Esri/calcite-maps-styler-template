@@ -11,7 +11,7 @@
 			title: "Tạo Câu chuyện Không Khả dụng",
 			subtitle: "Xin lỗi, kích cỡ hiển thị nhỏ không được hỗ trợ. Vui lòng mở trong màn hình hiển thị hoặc thiết bị lớn hơn.",
 			close: "Đóng"
-		},		
+		},
 		answerText: {
 			seriesOfPlaces: "Tập hợp địa điểm",
 			mapsNarrative: "Câu chuyện với bản đồ",
@@ -47,5 +47,9 @@
 			spyglass: "So sánh hai bản đồ hoặc lớp bản đồ bằng kính phóng đại",
 			basic: "Suy nghĩ tối giản, tuyệt vời cho một bản đồ"
 		},
+		signInBuildDialog: {
+			welcome: "Đ_Welcome___ớ!",
+			continue: "Đ_Continue to {{APP_NAME}} builder___________ớ"
+		}
 	})
 );

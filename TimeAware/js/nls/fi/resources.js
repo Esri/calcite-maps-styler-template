@@ -19,7 +19,7 @@ define(
     map: {
       error: "Karttaa ei voi luoda"
     },
-    legend:{
+    legend: {
       title: "Selite"
     },
     share: {
@@ -30,17 +30,10 @@ define(
       error: "Oletusarvon mukaan järjestelmä käyttää Web-kartan kuvausta tai koodikatkelmaa. Määritä sovellus lisäämään mukautettu koodikatkelma Tietoja-ruutua varten."
     },
     time: {
-        enableTimeMessage: "Määritetty Web-kartta ei sisällä yhtäkään tasoa, jossa on aika käytössä. Lisätietoja on ohjeaiheessa ${link}. Jos haluat käyttää mallipohjaa ilman ajan näyttöä, poista asetus käytöstä määritysruudun avulla.",
-        enableTimeMessageLink: "http://doc.arcgis.com/en/arcgis-online/create-maps/configure-time.htm#ESRI_SECTION1_F1D4A275B4AB4CC79198CBA9D0AD8727",
-        datePattern: "d. MMMM yyyy",
-        hourTimePattern: "H",
-        millisecondTimePattern: "t:mm:ss",
-        minuteTimePattern: "h:mm a",
-        secondTimePattern: "t:mm:ss",
-        timeRange: "${startTime} - ${endTime}",
-        yearPattern: "yyyy"
+      enableTimeMessage: "Å_The specified web map does not contain any time enabled layers. View the ${link} help topic for details. To use the template without displaying time use the configuration panel to disable the time option______________________________________________________________ö.",
+      enableTimeMessageLink: "Å_http://doc.arcgis.com/en/arcgis-online/create-maps/configure-time.htm#ESRI_SECTION1_F1D4A275B4AB4CC79198CBA9D0AD8727____________________________________ö"
     },
-    histogram:{
+    histogram: {
       error: "Web-kartan tilannekuvatilassa ei ole käytössä yhtäkään kohdekarttatasoa, jossa on aika käytössä. Määritä sovellus käyttämään toista Web-karttaa tai poista histogrammiasetus käytöstä."
     }
   })

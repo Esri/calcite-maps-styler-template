@@ -11,7 +11,7 @@
 			title: "יצירת סיפור לא זמינה",
 			subtitle: "מצטערים, אפשרות זו לא נתמכת בתצוגה קטנה. פתח בתצוגה או במכשיר גדולים יותר.",
 			close: "סגור"
-		},		
+		},
 		answerText: {
 			seriesOfPlaces: "סט מקומות",
 			mapsNarrative: "תסריט עם מפות",
@@ -47,5 +47,9 @@
 			spyglass: "השוואה בין שתי מפות או שכבות מפה עם זכוכית מגדלת",
 			basic: "תחשוב בצורה מינימליסטית, מצוין עבור מפה אחת"
 		},
+		signInBuildDialog: {
+			welcome: "כן_Welcome___ש!",
+			continue: "כן_Continue to {{APP_NAME}} builder___________ש"
+		}
 	})
 );

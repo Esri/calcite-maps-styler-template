@@ -11,7 +11,7 @@
 			title: "Stāsta izveide nav pieejama",
 			subtitle: "Diemžēl šī iespēja nav atbalstīta mazā displejā. Atveriet to lielākā displejā vai ierīcē.",
 			close: "Aizvērt"
-		},		
+		},
 		answerText: {
 			seriesOfPlaces: "Vietu kopums",
 			mapsNarrative: "Stāstījums ar kartēm",
@@ -47,5 +47,9 @@
 			spyglass: "Salīdziniet divas kartes vai karšu slāņus, izmantojot tālskati",
 			basic: "Minimāla pieeja, lieliska vienai kartei"
 		},
+		signInBuildDialog: {
+			welcome: "ķ_Welcome___ū!",
+			continue: "ķ_Continue to {{APP_NAME}} builder___________ū"
+		}
 	})
 );

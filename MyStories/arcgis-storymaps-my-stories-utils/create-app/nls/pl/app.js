@@ -11,7 +11,7 @@
 			title: "Nie można utworzyć narracji",
 			subtitle: "Przykro nam, ale ta funkcja nie jest obsługiwana na małym ekranie. Spróbuj na większym ekranie lub urządzeniu.",
 			close: "Zamknij"
-		},		
+		},
 		answerText: {
 			seriesOfPlaces: "Zestaw miejsc",
 			mapsNarrative: "Narracja z mapami",
@@ -47,5 +47,9 @@
 			spyglass: "Porównywanie dwóch map lub warstw mapy za pomocą lupy",
 			basic: "Minimalistyczny interfejs — doskonały dla pojedynczej mapy"
 		},
+		signInBuildDialog: {
+			welcome: "ł_Welcome___ą!",
+			continue: "ł_Continue to {{APP_NAME}} builder___________ą"
+		}
 	})
 );

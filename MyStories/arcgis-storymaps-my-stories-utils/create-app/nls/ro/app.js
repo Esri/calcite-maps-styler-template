@@ -11,7 +11,7 @@
 			title: "Creare poveste nu este disponibilă",
 			subtitle: "Ne pare rău, această opţiune nu este acceptată pe un afişaj de dimensiuni mici. Deschideţi pe un afişaj sau dispozitiv mai mare.",
 			close: "Închidere"
-		},		
+		},
 		answerText: {
 			seriesOfPlaces: "Un set de locuri",
 			mapsNarrative: "O naraţiune cu hărţi",
@@ -47,5 +47,9 @@
 			spyglass: "Comparaţi două hărţi sau straturi tematice de hartă cu o lupă",
 			basic: "Gândiţi minimalist, excelent pentru o singură hartă"
 		},
+		signInBuildDialog: {
+			welcome: "Ă_Welcome___ș!",
+			continue: "Ă_Continue to {{APP_NAME}} builder___________ș"
+		}
 	})
 );

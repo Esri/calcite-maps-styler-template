@@ -11,7 +11,7 @@
 			title: "Crear historia no está disponible",
 			subtitle: "Lo sentimos, este elemento no se admite en pantalla pequeña. Ábrelo en una pantalla o dispositivo más grande.",
 			close: "Cerrar"
-		},		
+		},
 		answerText: {
 			seriesOfPlaces: "Un conjunto de lugares",
 			mapsNarrative: "Una narración con mapas",
@@ -47,5 +47,9 @@
 			spyglass: "Compara dos mapas o capas de mapa con una lupa",
 			basic: "Concepto minimalista, perfecto para un mapa"
 		},
+		signInBuildDialog: {
+			welcome: "á_Welcome___Ó!",
+			continue: "á_Continue to {{APP_NAME}} builder___________Ó"
+		}
 	})
 );

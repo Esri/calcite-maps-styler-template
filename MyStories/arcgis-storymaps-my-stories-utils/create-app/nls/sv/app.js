@@ -11,7 +11,7 @@
 			title: "Skapa berättelse är inte tillgängligt",
 			subtitle: "Tyvärr går detta inte att visa på liten skärm. Öppna på en större skärm eller enhet.",
 			close: "Stäng"
-		},		
+		},
 		answerText: {
 			seriesOfPlaces: "En uppsättning platser",
 			mapsNarrative: "En berättelse med kartor",
@@ -47,5 +47,9 @@
 			spyglass: "Jämför två kartor eller kartlager med en kikare",
 			basic: "Tänk minimalistiskt – fantastiskt för en karta"
 		},
+		signInBuildDialog: {
+			welcome: "Å_Welcome___ö!",
+			continue: "Å_Continue to {{APP_NAME}} builder___________ö"
+		}
 	})
 );

@@ -11,7 +11,7 @@
 			title: "Hikaye Oluşturma Kullanılamıyor",
 			subtitle: "Üzgünüz, bu işlem küçük ekranda desteklenmiyor. Daha büyük bir ekranda veya cihazda açın.",
 			close: "Kapat"
-		},		
+		},
 		answerText: {
 			seriesOfPlaces: "Yer grubu",
 			mapsNarrative: "Haritalı özet",
@@ -47,5 +47,9 @@
 			spyglass: "İki haritayı veya harita katmanını bir dürbünle karşılaştırın",
 			basic: "Minimalistik düşünün, tek harita için idealdir"
 		},
+		signInBuildDialog: {
+			welcome: "ı_Welcome___İ!",
+			continue: "ı_Continue to {{APP_NAME}} builder___________İ"
+		}
 	})
 );

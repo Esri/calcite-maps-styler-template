@@ -11,7 +11,7 @@
 			title: "建立故事不可用",
 			subtitle: "很抱歉，小顯示器不支援此動作。請在較大的顯示器或裝置中開啟它。",
 			close: "關閉"
-		},		
+		},
 		answerText: {
 			seriesOfPlaces: "位置集",
 			mapsNarrative: "包含地圖的敘事",
@@ -47,5 +47,9 @@
 			spyglass: "使用望遠鏡比較兩張地圖或地圖圖層",
 			basic: "製作一張極簡、優質的地圖"
 		},
+		signInBuildDialog: {
+			welcome: "試_Welcome___驗!",
+			continue: "試_Continue to {{APP_NAME}} builder___________驗"
+		}
 	})
 );

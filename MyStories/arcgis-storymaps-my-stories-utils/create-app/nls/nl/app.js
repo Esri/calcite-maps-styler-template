@@ -11,7 +11,7 @@
 			title: "Verhaal maken niet beschikbaar",
 			subtitle: "Sorry, dit wordt niet ondersteund op een klein display. Open dit op een groter display of op een groter apparaat.",
 			close: "Sluiten"
-		},		
+		},
 		answerText: {
 			seriesOfPlaces: "Een reeks plaatsen",
 			mapsNarrative: "Een verhaal met kaarten",
@@ -47,5 +47,9 @@
 			spyglass: "Vergelijk twee kaarten of kaartlagen d.m.v. een verrekijker",
 			basic: "Denk minimalistisch, perfect voor één kaart"
 		},
+		signInBuildDialog: {
+			welcome: "Ĳ_Welcome___ä!",
+			continue: "Ĳ_Continue to {{APP_NAME}} builder___________ä"
+		}
 	})
 );

@@ -11,7 +11,7 @@
 			title: "스토리 생성을 사용할 수 없음",
 			subtitle: "죄송합니다. 소형 디스플레이에서는 지원되지 않습니다. 대형 디스플레이 또는 기기에서 여세요.",
 			close: "닫기"
-		},		
+		},
 		answerText: {
 			seriesOfPlaces: "위치 집합",
 			mapsNarrative: "이야기가 포함된 맵",
@@ -47,5 +47,9 @@
 			spyglass: "투과 렌즈를 사용하여 두 맵이나 맵 레이어 비교",
 			basic: "최소 인터페이스 사용(단일 맵에 적합)"
 		},
+		signInBuildDialog: {
+			welcome: "한_Welcome___빠!",
+			continue: "한_Continue to {{APP_NAME}} builder___________빠"
+		}
 	})
 );

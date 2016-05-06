@@ -11,7 +11,7 @@
 			title: "创建故事不可用",
 			subtitle: "抱歉，不支持小显示器。请在更大的显示器或设备中打开。",
 			close: "关闭"
-		},		
+		},
 		answerText: {
 			seriesOfPlaces: "一组地点",
 			mapsNarrative: "通过地图进行叙述",
@@ -47,5 +47,9 @@
 			spyglass: "通过望远镜比较两个地图或地图图层",
 			basic: "极简操作，享您所想；一图在手，尽享所有"
 		},
+		signInBuildDialog: {
+			welcome: "试_Welcome___验!",
+			continue: "试_Continue to {{APP_NAME}} builder___________验"
+		}
 	})
 );

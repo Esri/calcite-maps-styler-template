@@ -11,7 +11,7 @@
 			title: "Vytvoření příběhu není k dispozici",
 			subtitle: "Toto bohužel v malém zobrazení není podporováno. Otevřete prosím ve větším zobrazení nebo zařízení.",
 			close: "Zavřít"
-		},		
+		},
 		answerText: {
 			seriesOfPlaces: "Sada míst",
 			mapsNarrative: "Příběh s mapami",
@@ -47,5 +47,9 @@
 			spyglass: "Porovnávejte dvě mapy nebo mapové vrstvy pomocí lupy",
 			basic: "Přemýšlejte minimalisticky, skvělé pro jednu mapu"
 		},
+		signInBuildDialog: {
+			welcome: "Ř_Welcome___ů!",
+			continue: "Ř_Continue to {{APP_NAME}} builder___________ů"
+		}
 	})
 );

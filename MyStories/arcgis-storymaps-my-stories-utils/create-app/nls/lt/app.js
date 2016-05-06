@@ -11,7 +11,7 @@
 			title: "Kurti pasakojimo negalima",
 			subtitle: "Deja, ši funkcija nepalaikoma mažuose ekranuose. Atidarykite didesnį ekraną arba įrenginį.",
 			close: "Užverti"
-		},		
+		},
 		answerText: {
 			seriesOfPlaces: "Vietų rinkinys",
 			mapsNarrative: "Pasakojimas su žemėlapiais",
@@ -47,5 +47,9 @@
 			spyglass: "Lygina du žemėlapius arba žemėlapių sluoksnius su žiūronu",
 			basic: "Visiškas minimalizmas – puikiai tinka vienam žemėlapiui"
 		},
+		signInBuildDialog: {
+			welcome: "Į_Welcome___š!",
+			continue: "Į_Continue to {{APP_NAME}} builder___________š"
+		}
 	})
 );

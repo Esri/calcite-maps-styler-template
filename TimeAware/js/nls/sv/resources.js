@@ -19,7 +19,7 @@ define(
     map: {
       error: "Det går inte att skapa kartan"
     },
-    legend:{
+    legend: {
       title: "Teckenförklaring"
     },
     share: {
@@ -30,17 +30,10 @@ define(
       error: "Som standard används webbkartbeskrivningen eller snippet. Konfigurera appen för att lägga till en anpassad snippet för panelen Om."
     },
     time: {
-        enableTimeMessage: "Den angivna webbkartan innehåller inga tidsaktiverade lager. Se ${link} hjälpavsnittet för mer information. Om du vill använda mallen utan att visa tid använder du konfigurationspanelen för att inaktivera tidsalternativet.",
-        enableTimeMessageLink: "http://doc.arcgis.com/en/arcgis-online/create-maps/configure-time.htm#ESRI_SECTION1_F1D4A275B4AB4CC79198CBA9D0AD8727",
-        datePattern: "mmmm d, åååå",
-        hourTimePattern: "h a",
-        millisecondTimePattern: "h:mm:ss a",
-        minuteTimePattern: "h:mm a",
-        secondTimePattern: "h:mm:ss a",
-        timeRange: "${startTime} till ${endTime}",
-        yearPattern: "åååå"
+      enableTimeMessage: "Å_The specified web map does not contain any time enabled layers. View the ${link} help topic for details. To use the template without displaying time use the configuration panel to disable the time option______________________________________________________________ö.",
+      enableTimeMessageLink: "Å_http://doc.arcgis.com/en/arcgis-online/create-maps/configure-time.htm#ESRI_SECTION1_F1D4A275B4AB4CC79198CBA9D0AD8727____________________________________ö"
     },
-    histogram:{
+    histogram: {
       error: "Inga tidsaktiverade geoobjektslager, i snapshotläge, finns tillgängliga i webbkartan. Konfigurera appen att använda en annan webbkarta eller inaktivera histogramalternativet."
     }
   })

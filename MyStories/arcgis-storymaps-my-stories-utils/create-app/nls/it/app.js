@@ -11,7 +11,7 @@
 			title: "Crea storia non disponibile",
 			subtitle: "Spiacenti, questa operazione non è supportata in uno schermo di piccole dimensioni. Aprire in uno schermo o dispositivo più grande.",
 			close: "Chiudi"
-		},		
+		},
 		answerText: {
 			seriesOfPlaces: "Insieme di luoghi",
 			mapsNarrative: "Racconto con mappe",
@@ -47,5 +47,9 @@
 			spyglass: "Confronta due mappe o layer tramite un cannocchiale",
 			basic: "Approccio minimalista, eccezionale per una sola mappa"
 		},
+		signInBuildDialog: {
+			welcome: "é_Welcome___È!",
+			continue: "é_Continue to {{APP_NAME}} builder___________È"
+		}
 	})
 );

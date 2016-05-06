@@ -11,7 +11,7 @@
 			title: "Tarinan luonti ei ole käytettävissä",
 			subtitle: "Valitettavasti tätä ei tueta pienessä näytössä. Avaa suuremmassa näytössä tai laitteessa.",
 			close: "Tallennettu"
-		},		
+		},
 		answerText: {
 			seriesOfPlaces: "Paikkajoukko",
 			mapsNarrative: "Kertomus, jossa on karttoja",
@@ -47,5 +47,9 @@
 			spyglass: "Vertaa kahta karttaa tai karttatasoa kiikarin avulla",
 			basic: "Ajattele minimalistisesti, sopii yhdelle kartalle"
 		},
+		signInBuildDialog: {
+			welcome: "Å_Welcome___ö!",
+			continue: "Å_Continue to {{APP_NAME}} builder___________ö"
+		}
 	})
 );

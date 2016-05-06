@@ -11,7 +11,7 @@
 			title: "Loo koostamine ei ole kättesaadav",
 			subtitle: "Kahjuks ei toetata seda väikesel ekraanil. Palun avage suuremal ekraanil või suuremas seadmes.",
 			close: "Sulge"
-		},		
+		},
 		answerText: {
 			seriesOfPlaces: "Asukohtade komplekt",
 			mapsNarrative: "Lugu koos kaartidega",
@@ -47,5 +47,9 @@
 			spyglass: "Võrrelge pikksilma abil kahte kaarti või kaardikihti",
 			basic: "Mõelge minimalistlikult, suurepärane ühe kaardi jaoks"
 		},
+		signInBuildDialog: {
+			welcome: "Š_Welcome___ä!",
+			continue: "Š_Continue to {{APP_NAME}} builder___________ä"
+		}
 	})
 );

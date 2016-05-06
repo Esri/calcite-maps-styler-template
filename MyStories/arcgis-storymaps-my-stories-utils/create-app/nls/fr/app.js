@@ -11,7 +11,7 @@
 			title: "La fonctionnalité Créer un récit n\'est pas disponible",
 			subtitle: "Cette fonctionnalité n\'est pas prise en charge à une petite échelle d\'affichage. Utilisez une échelle d\'affichage supérieure ou un périphérique de plus grande taille.",
 			close: "Fermer"
-		},		
+		},
 		answerText: {
 			seriesOfPlaces: "Un ensemble de sites",
 			mapsNarrative: "Une narration avec des cartes",
@@ -47,5 +47,9 @@
 			spyglass: "Comparer deux cartes ou couches avec une longue-vue",
 			basic: "Optimisez vos cartes en restant minimaliste"
 		},
+		signInBuildDialog: {
+			welcome: "æ_Welcome___Â!",
+			continue: "æ_Continue to {{APP_NAME}} builder___________Â"
+		}
 	})
 );

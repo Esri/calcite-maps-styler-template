@@ -19,7 +19,7 @@ define(
     map: {
       error: "Võimetu koostama kaarti"
     },
-    legend:{
+    legend: {
       title: "Legendiga kaart"
     },
     share: {
@@ -30,17 +30,10 @@ define(
       error: "Vaikimisi kasutatakse veebikaardi kirjeldust või mingit osa sellest. Kohandage rakendust, lisades vastava tekstilõigu juhtpaneeli kohta."
     },
     time: {
-        enableTimeMessage: "Määratud veebikaart ei sisalda ajateadlikke kihte. Täpsema teabe saamiseks vaadake ${link} teemat „Abi“. Keelake konfigureerimispaanil ajasuvand, et kasutada malli ilma aega kuvamata.",
-        enableTimeMessageLink: "http://doc.arcgis.com/en/arcgis-online/create-maps/configure-time.htm#ESRI_SECTION1_F1D4A275B4AB4CC79198CBA9D0AD8727",
-        datePattern: "d. MMMM yyyy",
-        hourTimePattern: "H",
-        millisecondTimePattern: "h:mm:ss",
-        minuteTimePattern: "h:mm",
-        secondTimePattern: "h:mm:ss",
-        timeRange: "${startTime} kuni ${endTime}",
-        yearPattern: "aaaa"
+      enableTimeMessage: "Š_The specified web map does not contain any time enabled layers. View the ${link} help topic for details. To use the template without displaying time use the configuration panel to disable the time option______________________________________________________________ä.",
+      enableTimeMessageLink: "Š_http://doc.arcgis.com/en/arcgis-online/create-maps/configure-time.htm#ESRI_SECTION1_F1D4A275B4AB4CC79198CBA9D0AD8727____________________________________ä"
     },
-    histogram:{
+    histogram: {
       error: "Veebikaardi läbilõikerežiimis pole ajafunktsiooni kihid saadaval. Kohandage rakendus mõne muu veebikaardi kasutamiseks või keelake histogrammi valik."
     }
   })

@@ -11,7 +11,7 @@
 			title: "Oppretting av historie ikke tilgjengelig",
 			subtitle: "Beklager, dette er ikke støttet på en liten skjerm. Åpne på en større skjerm eller enhet.",
 			close: "Lukk"
-		},		
+		},
 		answerText: {
 			seriesOfPlaces: "Et sett med steder",
 			mapsNarrative: "En fortelling med kart",
@@ -47,5 +47,9 @@
 			spyglass: "Sammenlign to kart eller kartlag med et forstørrelsesglass",
 			basic: "Tenk minimalistisk, smart for ett kart"
 		},
+		signInBuildDialog: {
+			welcome: "å_Welcome___ø!",
+			continue: "å_Continue to {{APP_NAME}} builder___________ø"
+		}
 	})
 );

@@ -11,7 +11,7 @@
 			title: "Criar História Não Disponível",
 			subtitle: "Lamentamos, não é suportado em ecrã pequeno. Por favor abra num ecrã ou dispositivo maior.",
 			close: "Fechar"
-		},		
+		},
 		answerText: {
 			seriesOfPlaces: "Um conjunto de locais",
 			mapsNarrative: "Uma narrativa com mapas",
@@ -47,5 +47,9 @@
 			spyglass: "Compare dois mapas ou camadas de mapas com uma lupa",
 			basic: "Pensamento minimalista, ótimo para um mapa"
 		},
+		signInBuildDialog: {
+			welcome: "ã_Welcome___Ç!",
+			continue: "ã_Continue to {{APP_NAME}} builder___________Ç"
+		}
 	})
 );

@@ -11,7 +11,7 @@
 			title: "إنشاء القصة غير متاح",
 			subtitle: "عذرًا، هذا غير مدعوم في العرض الصغير. يرجى الفتح في عرض أكبر أو جهاز أكبر.",
 			close: "إغلاق"
-		},		
+		},
 		answerText: {
 			seriesOfPlaces: "مجموعة من الأماكن",
 			mapsNarrative: "سرد مرفق بخرائط",
@@ -47,5 +47,9 @@
 			spyglass: "المقارنة بين خريطتين أو طبقتي خرائط ذات منظار",
 			basic: "اجعل الخريطة بسيطة ورائعة"
 		},
+		signInBuildDialog: {
+			welcome: "بيت_Welcome___لاحقة!",
+			continue: "بيت_Continue to {{APP_NAME}} builder___________لاحقة"
+		}
 	})
 );

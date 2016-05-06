@@ -11,7 +11,7 @@
 			title: "ストーリーの作成は利用できません",
 			subtitle: "これは小さいディスプレイではサポートされていません。大きいディスプレイまたはデバイスで開いてください。",
 			close: "閉じる"
-		},		
+		},
 		answerText: {
 			seriesOfPlaces: "一連の場所",
 			mapsNarrative: "マップによる注釈",
@@ -47,5 +47,9 @@
 			spyglass: "スパイグラスを使用して 2 つのマップまたはマップレイヤーを比較",
 			basic: "必要な機能だけを 1 つのマップで最適に"
 		},
+		signInBuildDialog: {
+			welcome: "須_Welcome___鷗!",
+			continue: "須_Continue to {{APP_NAME}} builder___________鷗"
+		}
 	})
 );

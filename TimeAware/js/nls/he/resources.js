@@ -19,7 +19,7 @@ define(
     map: {
       error: "לא ניתן ליצור מפה"
     },
-    legend:{
+    legend: {
       title: "מקרא"
     },
     share: {
@@ -30,17 +30,10 @@ define(
       error: "כברירת מחדל, המערכת תשתמש במקטע או בתיאור של מפת האינטרנט. התאם אישית את האפליקציה להוספת מקטע מותאם אישית עבור החלונית \'אודות\'."
     },
     time: {
-        enableTimeMessage: "web map שצוינה אינה מכילה שכבות בעלת הגדרת זמן מופעל. הצג את נושא העזרה ${link} לקבלת פרטים. כדי להשתמש בתבנית מבלי להציג את הגדרת הזמן, השתמש בחלונית התצורה כדי להפוך את אפשרות הזמן ללא פעילה.",
-        enableTimeMessageLink: "http://doc.arcgis.com/en/arcgis-online/create-maps/configure-time.htm#ESRI_SECTION1_F1D4A275B4AB4CC79198CBA9D0AD8727",
-        datePattern: "d, MMMM ,yyyy",
-        hourTimePattern: "h a",
-        millisecondTimePattern: "h:mm:ss a",
-        minuteTimePattern: "h:mm a",
-        secondTimePattern: "h:mm:ss a",
-        timeRange: "${startTime} ל- ${endTime}",
-        yearPattern: "yyyy"
+      enableTimeMessage: "כן_The specified web map does not contain any time enabled layers. View the ${link} help topic for details. To use the template without displaying time use the configuration panel to disable the time option______________________________________________________________ש.",
+      enableTimeMessageLink: "כן_http://doc.arcgis.com/en/arcgis-online/create-maps/configure-time.htm#ESRI_SECTION1_F1D4A275B4AB4CC79198CBA9D0AD8727____________________________________ש"
     },
-    histogram:{
+    histogram: {
       error: "במצב Snapshot, אין שכבות זמינות עם הגדרות זמן של ישויות במפת האינטרנט. הגדר את האפליקציה כך שתשתמש במפת אינטרנט אחרת או תשבית את אפשרות ההיסטוגרמות."
     }
   })

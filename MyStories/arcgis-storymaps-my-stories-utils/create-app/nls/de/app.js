@@ -11,7 +11,7 @@
 			title: "Story-Erstellung nicht möglich",
 			subtitle: "Leider wird dies auf kleinen Bildschirmen nicht unterstützt. Bitte öffnen Sie die Anwendung mit einem größeren Gerät oder Display.",
 			close: "Schließen"
-		},		
+		},
 		answerText: {
 			seriesOfPlaces: "Verschiedene Orte",
 			mapsNarrative: "Eine Zusammenfassung mit Karten",
@@ -47,5 +47,9 @@
 			spyglass: "Vergleichen Sie zwei Karten oder Karten-Layer mit einem Fernglas",
 			basic: "Denken Sie minimalistisch – dies ist optimal für eine Karte"
 		},
+		signInBuildDialog: {
+			welcome: "ä_Welcome___Ü!",
+			continue: "ä_Continue to {{APP_NAME}} builder___________Ü"
+		}
 	})
 );

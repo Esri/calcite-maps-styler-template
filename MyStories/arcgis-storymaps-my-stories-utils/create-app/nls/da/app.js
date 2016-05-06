@@ -11,7 +11,7 @@
 			title: "Opret en historie er ikke tilgængelig",
 			subtitle: "Beklager, dette understøttes ikke på et lille display. Åbn på et større display eller en større enhed.",
 			close: "Luk"
-		},		
+		},
 		answerText: {
 			seriesOfPlaces: "Et sæt steder",
 			mapsNarrative: "En fortælling med kort",
@@ -47,5 +47,9 @@
 			spyglass: "Sammenlign to kort eller to kortlag med en kikkert",
 			basic: "Tænk minimalistisk, glimrende til et enkelt kort"
 		},
+		signInBuildDialog: {
+			welcome: "ø_Welcome___å!",
+			continue: "ø_Continue to {{APP_NAME}} builder___________å"
+		}
 	})
 );

@@ -19,7 +19,7 @@ define(
     map: {
       error: "Karte kann nicht erstellt werden"
     },
-    legend:{
+    legend: {
       title: "Legende"
     },
     share: {
@@ -30,17 +30,10 @@ define(
       error: "Die Beschreibung oder der Ausschnitt der Webkarte wird standardmäßig verwendet. Konfigurieren Sie die App, um einen benutzerdefinierten Abschnitt für den Bereich \"Info\" hinzuzufügen."
     },
     time: {
-        enableTimeMessage: "Die angegebene Webkarte enthält keine Layer mit aktivierten Zeiteigenschaften. Einzelheiten finden Sie im Hilfethema ${link}. Um die Vorlage ohne Zeitanzeige zu verwenden, deaktivieren Sie die Zeitoption im Bereich \"Konfiguration\".",
-        enableTimeMessageLink: "http://doc.arcgis.com/en/arcgis-online/create-maps/configure-time.htm#ESRI_SECTION1_F1D4A275B4AB4CC79198CBA9D0AD8727",
-        datePattern: "d. MMMM yyyy",
-        hourTimePattern: "H",
-        millisecondTimePattern: "H:mm:ss",
-        minuteTimePattern: "H:mm",
-        secondTimePattern: "H:mm:ss",
-        timeRange: "${startTime} bis ${endTime}",
-        yearPattern: "JJJJ"
+      enableTimeMessage: "ä_The specified web map does not contain any time enabled layers. View the ${link} help topic for details. To use the template without displaying time use the configuration panel to disable the time option______________________________________________________________Ü.",
+      enableTimeMessageLink: "ä_http://doc.arcgis.com/en/arcgis-online/create-maps/configure-time.htm#ESRI_SECTION1_F1D4A275B4AB4CC79198CBA9D0AD8727____________________________________Ü"
     },
-    histogram:{
+    histogram: {
       error: "In der Webkarte sind keine Feature-Layer mit aktivierten Zeiteigenschaften im Snapshot-Modus verfügbar. Konfigurieren Sie die App, um eine andere Webkarte zu verwenden, oder deaktivieren Sie die Histogramm-Option."
     }
   })
