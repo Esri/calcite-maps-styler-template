@@ -14,8 +14,8 @@
  | See the License for the specific language governing permissions and
  | limitations under the License.
  */
-define(
-   ({
+define({
+  root: ({
     map: {
       error: "맵을 생성할 수 없음"
     },
@@ -36,5 +36,34 @@ define(
     histogram: {
       error: "스냅샷 모드에서는 웹 맵에서 사용할 수 있는 시간 활성화 피처 레이어가 없습니다. 히스토그램 옵션을 비활성화하거나 다른 웹 맵을 사용하도록 앱을 구성하세요."
     }
-  })
-);
+  }),
+  "ar": 1,
+  "cs": 1,
+  "da": 1,
+  "de": 1,
+  "el": 1,
+  "es": 1,
+  "et": 1,
+  "fi": 1,
+  "fr": 1,
+  "he": 1,
+  "it": 1,
+  "ja": 1,
+  "ko": 1,
+  "lt": 1,
+  "lv": 1,
+  "nl": 1,
+  "nb": 1,
+  "pl": 1,
+  "pt-br": 1,
+  "pt-pt": 1,
+  "ro": 1,
+  "ru": 1,
+  "sv": 1,
+  "tr": 1,
+  "th": 1,
+  "vi": 1,
+  "zh-cn": 1,
+  "zh-hk": 1,
+  "zh-tw": 1
+});

@@ -1,12 +1,10 @@
-﻿define(
-    ({
-      "map": {
-         "error": "Kreiranje mape nije moguće"
-      },
-      "tooltips": {
-         "logo": "Logotip",
-         "switchbasemap": "Promeni pozadinsku mapu",
-         "close": "Zatvori"
-      }
-   })
-);
+define({
+  "map": {
+    "error": "Kreiranje mape nije moguće"
+  },
+  "tooltips": {
+    "logo": "Logotip",
+    "switchbasemap": "Promeni pozadinsku mapu",
+    "close": "Zatvori"
+  }
+});

@@ -14,8 +14,8 @@
  | See the License for the specific language governing permissions and
  | limitations under the License.
  */
-define(
-     ({
+define({
+    root: ({
         map: {  // Map, feature layer, and comments table loading and checking
             error: "맵을 생성할 수 없음",
             layerLoad: "전체 맵을 불러올 수 없음",
@@ -66,5 +66,36 @@ define(
             linkToMapViewOptionTooltip: "현재 맵에 보이는 피처를 나열합니다.",
             likesForThisItemTooltip: "이 항목에 투표"
         }
-    })
-);
+    }),
+    "ar": 1,
+    "cs": 1,
+    "da": 1,
+    "de": 1,
+    "el": 1,
+    "es": 1,
+    "et": 1,
+    "fi": 1,
+    "fr": 1,
+    "he": 1,
+    "hr": 1,
+    "it": 1,
+    "ja": 1,
+    "ko": 1,
+    "lt": 1,
+    "lv": 1,
+    "nb": 1,
+    "nl": 1,
+    "pl": 1,
+    "pt-br": 1,
+    "pt-pt": 1,
+    "ro": 1,
+    "ru": 1,
+    "sr": 1,
+    "sv": 1,
+    "th": 1,
+    "tr": 1,
+    "vi": 1,
+    "zh-cn": 1,
+    "zh-hk": 1,
+    "zh-tw": 1
+});
