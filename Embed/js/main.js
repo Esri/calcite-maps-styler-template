@@ -279,10 +279,13 @@ define([
                 };
 
 
-                if(this.config.searchOptions && this.config.searchOptions.sources){
-                    searchOptions.applicationConfiguredSources = this.config.searchOptions.sources;
-                }else{
-                    searchOptions.geocoders = this.config.helperServices.geocode || [];
+                if (this.config.searchOptions && this.config.searchOptions.sources) {
+                  searchOptions.applicationConfiguredSources = this.config.searchOptions.sources;
+                  if(this.config.searchOptions.hasOwnProperty("activeSourceIndex")){
+                    searchOptions.activeSourceIndex = this.config.searchOptions.activeSourceIndex;
+                  }
+                } else {
+                  searchOptions.geocoders = this.config.helperServices.geocode || [];
                 }
                 var searchSources = new SearchSources(searchOptions);
 
