@@ -55,15 +55,21 @@ define(["dojo/_base/declare", "dojo/_base/lang", "dojo/_base/array", "dojo/_base
 
     _getActiveSource: function () {
       var activeIndex = 0;
-      if (this.sources && this.sources.length > 1) {
-        activeIndex = "all";
+      if (this.activeSourceIndex) {
+        activeIndex = this.activeSourceIndex;
       }
-      array.some(this.sources, function (s, index) {
-        if (!s.hasEsri && s.featureLayer) {
-          activeIndex = index;
-          return true;
+      else{
+        
+        if (this.sources && this.sources.length > 1) {
+          activeIndex = "all";
         }
-      });
+        array.some(this.sources, function (s, index) {
+          if (!s.hasEsri && s.featureLayer) {
+            activeIndex = index;
+            return true;
+          }
+        });
+      }
       return activeIndex;
     },
     _createHelperServiceSources: function () {
