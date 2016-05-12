@@ -23,7 +23,6 @@ Embed\js\nls
 Locator\js\nls
 MapJournal\resources\tpl\builder\nls
 MapJournal\resources\tpl\viewer\nls
-BasicViewer\apl\ElevationsChart\nls
 MapSeries\resources\tpl\viewer\nls
 MapSeries\resources\common\nls
 MapSeries\resources\tpl\builder\nls
