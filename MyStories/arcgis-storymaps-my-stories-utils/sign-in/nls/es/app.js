@@ -1,51 +1,20 @@
-﻿define({
-	root: ({
-		signInDialog: {
-			title: "Iniciar sesión en Story Maps",
-			subtitle: "Inicia sesión con tu cuenta de ArcGIS Online para:",
-			reasonOne: "Crear mapas impactantes que narren tus historias.",
-			reasonTwo: "Usar mapas y datos de ArcGIS Online en tus story maps.",
-			reasonThree: "Administrar los story maps y comprobar el estado de su contenido.",
-			noAccountYet: "¿No tienes una cuenta de ArcGIS Online? Regístrate para obtener una:",
-			publicAccount: "Cuenta pública gratuita no comercial",
-			subscriptionAccount: "Suscripción de prueba gratuita a ArcGIS",
-			signInExpired: "Tu sesión ha caducado. Inicia sesión de nuevo para continuar donde lo dejaste.",
-			somethingNotLoading: "Algún elemento no se está cargando correctamente. Prueba a actualizar la página."
-		},
-		unavailableDialog: {
-			title: "Inicio de sesión no disponible",
-			explanation: "Lo sentimos, este elemento no se admite en pantalla pequeña. Ábrelo en una pantalla o dispositivo más grande.",
-			close: "Cerrar",
-			returnButton: "Volver" 
-		}
-	}),
-	"ar": 1,
-	"cs": 1,
-	"da": 1,
-	"de": 1,
-	"el": 1,
-	"es": 1,
-	"et": 1,
-	"fi": 1,
-	"fr": 1,
-	"he": 1,
-	"it": 1,
-	"ja": 1,
-	"ko": 1,
-	"lt": 1,
-	"lv": 1,
-	"nl": 1,
-	"nb": 1,
-	"pl": 1,
-	"pt-br": 1,
-	"pt-pt": 1,
-	"ro": 1,
-	"ru": 1,
-	"sv": 1,
-	"th": 1,
-	"tr": 1,
-	"vi": 1,
-	"zh-cn": 1,
-	"zh-hk": 1, 
-	"zh-tw": 1 	
+define({
+  "signInDialog": {
+    "title": "Iniciar sesión en Story Maps",
+    "subtitle": "Inicia sesión con tu cuenta de ArcGIS Online para:",
+    "reasonOne": "Crear mapas impactantes que narren tus historias.",
+    "reasonTwo": "Usar mapas y datos de ArcGIS Online en tus story maps.",
+    "reasonThree": "Administrar los story maps y comprobar el estado de su contenido.",
+    "noAccountYet": "¿No tienes una cuenta de ArcGIS Online? Regístrate para obtener una:",
+    "publicAccount": "Cuenta pública gratuita no comercial",
+    "subscriptionAccount": "Suscripción de prueba gratuita a ArcGIS",
+    "signInExpired": "Tu sesión ha caducado. Inicia sesión de nuevo para continuar donde lo dejaste.",
+    "somethingNotLoading": "Algún elemento no se está cargando correctamente. Prueba a actualizar la página."
+  },
+  "unavailableDialog": {
+    "title": "Inicio de sesión no disponible",
+    "explanation": "Lo sentimos, este elemento no se admite en pantalla pequeña. Ábrelo en una pantalla o dispositivo más grande.",
+    "close": "Cerrar",
+    "returnButton": "Volver"
+  }
 });

@@ -1,51 +1,20 @@
-﻿define({
-	root: ({
-		signInDialog: {
-			title: "Logga in i berättelsekartor",
-			subtitle: "Logga in med ditt befintliga ArcGIS Online-konto på:",
-			reasonOne: "Skapa trevliga berättelsekartor för att berätta dina historier.",
-			reasonTwo: "Använd dina kartor och data från ArcGIS Online i berättelsekartorna.",
-			reasonThree: "Hantera dina berättelsekartor och kontrollera status för deras innehåll.",
-			noAccountYet: "Har du inget ArcGIS Online-konto? Registrera dig för ett:",
-			publicAccount: "Kostnadsfritt icke-kommersiellt konto",
-			subscriptionAccount: "Kostnadsfritt ArcGIS-provabonnemang",
-			signInExpired: "Inloggningen har gått ut. Logga in igen för att fortsätta där du slutade.",
-			somethingNotLoading: "Något läses inte in korrekt. Prova med att uppdatera sidan."
-		},
-		unavailableDialog: {
-			title: "Det går inte att logga in",
-			explanation: "Tyvärr går detta inte att visa på liten skärm. Öppna på en större skärm eller enhet.",
-			close: "Stäng",
-			returnButton: "Retur" 
-		}
-	}),
-	"ar": 1,
-	"cs": 1,
-	"da": 1,
-	"de": 1,
-	"el": 1,
-	"es": 1,
-	"et": 1,
-	"fi": 1,
-	"fr": 1,
-	"he": 1,
-	"it": 1,
-	"ja": 1,
-	"ko": 1,
-	"lt": 1,
-	"lv": 1,
-	"nl": 1,
-	"nb": 1,
-	"pl": 1,
-	"pt-br": 1,
-	"pt-pt": 1,
-	"ro": 1,
-	"ru": 1,
-	"sv": 1,
-	"th": 1,
-	"tr": 1,
-	"vi": 1,
-	"zh-cn": 1,
-	"zh-hk": 1, 
-	"zh-tw": 1 	
+define({
+  "signInDialog": {
+    "title": "Logga in i berättelsekartor",
+    "subtitle": "Logga in med ditt befintliga ArcGIS Online-konto på:",
+    "reasonOne": "Skapa trevliga berättelsekartor för att berätta dina historier.",
+    "reasonTwo": "Använd dina kartor och data från ArcGIS Online i berättelsekartorna.",
+    "reasonThree": "Hantera dina berättelsekartor och kontrollera status för deras innehåll.",
+    "noAccountYet": "Har du inget ArcGIS Online-konto? Registrera dig för ett:",
+    "publicAccount": "Kostnadsfritt icke-kommersiellt konto",
+    "subscriptionAccount": "Kostnadsfritt ArcGIS-provabonnemang",
+    "signInExpired": "Inloggningen har gått ut. Logga in igen för att fortsätta där du slutade.",
+    "somethingNotLoading": "Något läses inte in korrekt. Prova med att uppdatera sidan."
+  },
+  "unavailableDialog": {
+    "title": "Det går inte att logga in",
+    "explanation": "Tyvärr går detta inte att visa på liten skärm. Öppna på en större skärm eller enhet.",
+    "close": "Stäng",
+    "returnButton": "Retur"
+  }
 });

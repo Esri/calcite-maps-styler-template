@@ -1,51 +1,20 @@
-﻿define({
-	root: ({
-		signInDialog: {
-			title: "Tilbake",
-			subtitle: "Lukk",
-			reasonOne: "Opprett en ny historie",
-			reasonTwo: "Velg en app",
-			reasonThree: "Spør ekspertene",
-			noAccountYet: "Oppretting av historie ikke tilgjengelig",
-			publicAccount: "Beklager, dette er ikke støttet på en liten skjerm. Åpne på en større skjerm eller enhet.",
-			subscriptionAccount: "Lukk",
-			signInExpired: "Et sett med steder",
-			somethingNotLoading: "En fortelling med kart"
-		},
-		unavailableDialog: {
-			title: "En interaktiv sammenligning av to datasett",
-			explanation: "Ett enkelt kart",
-			close: "Ja",
-			returnButton: "Nei" 
-		}
-	}),
-	"ar": 1,
-	"cs": 1,
-	"da": 1,
-	"de": 1,
-	"el": 1,
-	"es": 1,
-	"et": 1,
-	"fi": 1,
-	"fr": 1,
-	"he": 1,
-	"it": 1,
-	"ja": 1,
-	"ko": 1,
-	"lt": 1,
-	"lv": 1,
-	"nl": 1,
-	"nb": 1,
-	"pl": 1,
-	"pt-br": 1,
-	"pt-pt": 1,
-	"ro": 1,
-	"ru": 1,
-	"sv": 1,
-	"th": 1,
-	"tr": 1,
-	"vi": 1,
-	"zh-cn": 1,
-	"zh-hk": 1, 
-	"zh-tw": 1 	
+define({
+  "signInDialog": {
+    "title": "Tilbake",
+    "subtitle": "Lukk",
+    "reasonOne": "Opprett en ny historie",
+    "reasonTwo": "Velg en app",
+    "reasonThree": "Spør ekspertene",
+    "noAccountYet": "Oppretting av historie ikke tilgjengelig",
+    "publicAccount": "Beklager, dette er ikke støttet på en liten skjerm. Åpne på en større skjerm eller enhet.",
+    "subscriptionAccount": "Lukk",
+    "signInExpired": "Et sett med steder",
+    "somethingNotLoading": "En fortelling med kart"
+  },
+  "unavailableDialog": {
+    "title": "En interaktiv sammenligning av to datasett",
+    "explanation": "Ett enkelt kart",
+    "close": "Ja",
+    "returnButton": "Nei"
+  }
 });

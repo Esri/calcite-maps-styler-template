@@ -1,51 +1,20 @@
-﻿define({
-	root: ({
-		signInDialog: {
-			title: "Entrar em Mapas Históricos",
-			subtitle: "Registre com sua conta existente do ArcGIS Online:",
-			reasonOne: "Crie mapas históricos convincentes para contar suas histórias.",
-			reasonTwo: "Utilize seus mapas e dados do ArcGIS Online em seus mapas históricos.",
-			reasonThree: "Gerencie seus mapas históricos e verifique o status do seu conteúdo.",
-			noAccountYet: "Não tem uma conta do ArcGIS Online? Registre para uma:",
-			publicAccount: "Conta pública gratuita não-comercial",
-			subscriptionAccount: "Assinatura de teste gratuito do ArcGIS",
-			signInExpired: "Seu registro expirou. Registre novamente para selecionar de onde você parou.",
-			somethingNotLoading: "Algo não está carregando corretamente. Tente atualizar a página."
-		},
-		unavailableDialog: {
-			title: "Registro Não Disponível",
-			explanation: "Desculpe, isto não é suportado em uma visualização pequena. Abra em uma visualização maior ou dispositivo.",
-			close: "Fechar",
-			returnButton: "Retornar" 
-		}
-	}),
-	"ar": 1,
-	"cs": 1,
-	"da": 1,
-	"de": 1,
-	"el": 1,
-	"es": 1,
-	"et": 1,
-	"fi": 1,
-	"fr": 1,
-	"he": 1,
-	"it": 1,
-	"ja": 1,
-	"ko": 1,
-	"lt": 1,
-	"lv": 1,
-	"nl": 1,
-	"nb": 1,
-	"pl": 1,
-	"pt-br": 1,
-	"pt-pt": 1,
-	"ro": 1,
-	"ru": 1,
-	"sv": 1,
-	"th": 1,
-	"tr": 1,
-	"vi": 1,
-	"zh-cn": 1,
-	"zh-hk": 1, 
-	"zh-tw": 1 	
+define({
+  "signInDialog": {
+    "title": "Entrar em Mapas Históricos",
+    "subtitle": "Registre com sua conta existente do ArcGIS Online:",
+    "reasonOne": "Crie mapas históricos convincentes para contar suas histórias.",
+    "reasonTwo": "Utilize seus mapas e dados do ArcGIS Online em seus mapas históricos.",
+    "reasonThree": "Gerencie seus mapas históricos e verifique o status do seu conteúdo.",
+    "noAccountYet": "Não tem uma conta do ArcGIS Online? Registre para uma:",
+    "publicAccount": "Conta pública gratuita não-comercial",
+    "subscriptionAccount": "Assinatura de teste gratuito do ArcGIS",
+    "signInExpired": "Seu registro expirou. Registre novamente para selecionar de onde você parou.",
+    "somethingNotLoading": "Algo não está carregando corretamente. Tente atualizar a página."
+  },
+  "unavailableDialog": {
+    "title": "Registro Não Disponível",
+    "explanation": "Desculpe, isto não é suportado em uma visualização pequena. Abra em uma visualização maior ou dispositivo.",
+    "close": "Fechar",
+    "returnButton": "Retornar"
+  }
 });

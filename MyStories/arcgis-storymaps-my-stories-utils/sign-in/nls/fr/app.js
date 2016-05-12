@@ -1,51 +1,20 @@
-﻿define({
-	root: ({
-		signInDialog: {
-			title: "Se connecter à Story Maps",
-			subtitle: "Connectez-vous via votre compte ArcGIS Online pour :",
-			reasonOne: "Créez des Story Maps captivantes pour partager vos récits cartographiques.",
-			reasonTwo: "Utilisez vos cartes et les données d\'ArcGIS Online dans vos Story Maps.",
-			reasonThree: "Gérez vos Story Maps et vérifiez le statut de leur contenu.",
-			noAccountYet: "Vous ne possédez pas de compte ArcGIS Online ? Créez un :",
-			publicAccount: "compte public gratuit à usage non commercial",
-			subscriptionAccount: "Abonnement à une version d’évaluation gratuite d’ArcGIS",
-			signInExpired: "Votre connexion a expiré. Reconnectez-vous pour reprendre là où vous vous êtes arrêté.",
-			somethingNotLoading: "Impossible de charger certains éléments. Essayez d\'actualiser la page."
-		},
-		unavailableDialog: {
-			title: "Connexion non disponible",
-			explanation: "Cette fonctionnalité n\'est pas prise en charge à une petite échelle d\'affichage. Utilisez une échelle d\'affichage supérieure ou un périphérique de plus grande taille.",
-			close: "Fermer",
-			returnButton: "Retour" 
-		}
-	}),
-	"ar": 1,
-	"cs": 1,
-	"da": 1,
-	"de": 1,
-	"el": 1,
-	"es": 1,
-	"et": 1,
-	"fi": 1,
-	"fr": 1,
-	"he": 1,
-	"it": 1,
-	"ja": 1,
-	"ko": 1,
-	"lt": 1,
-	"lv": 1,
-	"nl": 1,
-	"nb": 1,
-	"pl": 1,
-	"pt-br": 1,
-	"pt-pt": 1,
-	"ro": 1,
-	"ru": 1,
-	"sv": 1,
-	"th": 1,
-	"tr": 1,
-	"vi": 1,
-	"zh-cn": 1,
-	"zh-hk": 1, 
-	"zh-tw": 1 	
+define({
+  "signInDialog": {
+    "title": "Se connecter à Story Maps",
+    "subtitle": "Connectez-vous via votre compte ArcGIS Online pour :",
+    "reasonOne": "Créez des Story Maps captivantes pour partager vos récits cartographiques.",
+    "reasonTwo": "Utilisez vos cartes et les données d'ArcGIS Online dans vos Story Maps.",
+    "reasonThree": "Gérez vos Story Maps et vérifiez le statut de leur contenu.",
+    "noAccountYet": "Vous ne possédez pas de compte ArcGIS Online ? Créez un :",
+    "publicAccount": "compte public gratuit à usage non commercial",
+    "subscriptionAccount": "Abonnement à une version d’évaluation gratuite d’ArcGIS",
+    "signInExpired": "Votre connexion a expiré. Reconnectez-vous pour reprendre là où vous vous êtes arrêté.",
+    "somethingNotLoading": "Impossible de charger certains éléments. Essayez d'actualiser la page."
+  },
+  "unavailableDialog": {
+    "title": "Connexion non disponible",
+    "explanation": "Cette fonctionnalité n'est pas prise en charge à une petite échelle d'affichage. Utilisez une échelle d'affichage supérieure ou un périphérique de plus grande taille.",
+    "close": "Fermer",
+    "returnButton": "Retour"
+  }
 });

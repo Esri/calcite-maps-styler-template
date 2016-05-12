@@ -1,51 +1,20 @@
-﻿define({
-	root: ({
-		signInDialog: {
-			title: "Zaloguj się do Story Maps",
-			subtitle: "Zaloguj się za pomocą konta usługi ArcGIS Online aby:",
-			reasonOne: "tworzyć interesujące mapy narracyjne i opowiadać swoje narracje;",
-			reasonTwo: "korzystać z map i danych zgromadzonych w usłudze ArcGIS Online podczas tworzenia swoich map narracyjnych;",
-			reasonThree: "zarządzać mapami narracyjnymi i sprawdzać status ich zawartości.",
-			noAccountYet: "Nie masz jeszcze konta w usłudze ArcGIS Online? Zarejestruj się:",
-			publicAccount: "Bezpłatne konto publiczne do użytku niekomercyjnego",
-			subscriptionAccount: "Bezpłatna wersja próbna subskrypcji ArcGIS",
-			signInExpired: "Sesja wygasła. Zaloguj się ponownie, aby kontynuować.",
-			somethingNotLoading: "Wystąpił problem z wczytaniem zawartości. Spróbuj odświeżyć stronę."
-		},
-		unavailableDialog: {
-			title: "Nie można się zalogować",
-			explanation: "Przykro nam, ale ta funkcja nie jest obsługiwana na małym ekranie. Spróbuj na większym ekranie lub urządzeniu.",
-			close: "Zamknij",
-			returnButton: "Wróć" 
-		}
-	}),
-	"ar": 1,
-	"cs": 1,
-	"da": 1,
-	"de": 1,
-	"el": 1,
-	"es": 1,
-	"et": 1,
-	"fi": 1,
-	"fr": 1,
-	"he": 1,
-	"it": 1,
-	"ja": 1,
-	"ko": 1,
-	"lt": 1,
-	"lv": 1,
-	"nl": 1,
-	"nb": 1,
-	"pl": 1,
-	"pt-br": 1,
-	"pt-pt": 1,
-	"ro": 1,
-	"ru": 1,
-	"sv": 1,
-	"th": 1,
-	"tr": 1,
-	"vi": 1,
-	"zh-cn": 1,
-	"zh-hk": 1, 
-	"zh-tw": 1 	
+define({
+  "signInDialog": {
+    "title": "Zaloguj się do Story Maps",
+    "subtitle": "Zaloguj się za pomocą konta usługi ArcGIS Online aby:",
+    "reasonOne": "tworzyć interesujące mapy narracyjne i opowiadać swoje narracje;",
+    "reasonTwo": "korzystać z map i danych zgromadzonych w usłudze ArcGIS Online podczas tworzenia swoich map narracyjnych;",
+    "reasonThree": "zarządzać mapami narracyjnymi i sprawdzać status ich zawartości.",
+    "noAccountYet": "Nie masz jeszcze konta w usłudze ArcGIS Online? Zarejestruj się:",
+    "publicAccount": "Bezpłatne konto publiczne do użytku niekomercyjnego",
+    "subscriptionAccount": "Bezpłatna wersja próbna subskrypcji ArcGIS",
+    "signInExpired": "Sesja wygasła. Zaloguj się ponownie, aby kontynuować.",
+    "somethingNotLoading": "Wystąpił problem z wczytaniem zawartości. Spróbuj odświeżyć stronę."
+  },
+  "unavailableDialog": {
+    "title": "Nie można się zalogować",
+    "explanation": "Przykro nam, ale ta funkcja nie jest obsługiwana na małym ekranie. Spróbuj na większym ekranie lub urządzeniu.",
+    "close": "Zamknij",
+    "returnButton": "Wróć"
+  }
 });

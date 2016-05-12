@@ -1,51 +1,20 @@
-﻿define({
-	root: ({
-		signInDialog: {
-			title: "Accedi alle Story Map",
-			subtitle: "Accedi con l\'account dell\'abbonamento ad ArcGIS Online per:",
-			reasonOne: "Creare Story Map accattivanti per raccontare storie.",
-			reasonTwo: "Utilizzare mappe e dati di ArcGIS Online nelle Story Map.",
-			reasonThree: "Gestire le Story Map e verificare lo stato del relativo contenuto.",
-			noAccountYet: "Non si dispone di un account dell\'abbonamento ad ArcGIS Online? Richiedere un:",
-			publicAccount: "Account pubblico per uso non commerciale gratuito",
-			subscriptionAccount: "Abbonamento di prova gratuito ad ArcGIS",
-			signInExpired: "La registrazione è scaduta. Effettuare nuovamente la registrazione per riprendere da dove si era rimasti.",
-			somethingNotLoading: "Alcuni elementi non vengono caricati correttamente. Provare ad aggiornare la pagina."
-		},
-		unavailableDialog: {
-			title: "Registrazione non disponibile",
-			explanation: "Spiacenti ma non è supportato in uno schermo di piccole dimensioni. Aprire in uno schermo o dispositivo più grande.",
-			close: "Chiudi",
-			returnButton: "Restituisci" 
-		}
-	}),
-	"ar": 1,
-	"cs": 1,
-	"da": 1,
-	"de": 1,
-	"el": 1,
-	"es": 1,
-	"et": 1,
-	"fi": 1,
-	"fr": 1,
-	"he": 1,
-	"it": 1,
-	"ja": 1,
-	"ko": 1,
-	"lt": 1,
-	"lv": 1,
-	"nl": 1,
-	"nb": 1,
-	"pl": 1,
-	"pt-br": 1,
-	"pt-pt": 1,
-	"ro": 1,
-	"ru": 1,
-	"sv": 1,
-	"th": 1,
-	"tr": 1,
-	"vi": 1,
-	"zh-cn": 1,
-	"zh-hk": 1, 
-	"zh-tw": 1 	
+define({
+  "signInDialog": {
+    "title": "Accedi alle Story Map",
+    "subtitle": "Accedi con l'account dell'abbonamento ad ArcGIS Online per:",
+    "reasonOne": "Creare Story Map accattivanti per raccontare storie.",
+    "reasonTwo": "Utilizzare mappe e dati di ArcGIS Online nelle Story Map.",
+    "reasonThree": "Gestire le Story Map e verificare lo stato del relativo contenuto.",
+    "noAccountYet": "Non si dispone di un account dell'abbonamento ad ArcGIS Online? Richiedere un:",
+    "publicAccount": "Account pubblico per uso non commerciale gratuito",
+    "subscriptionAccount": "Abbonamento di prova gratuito ad ArcGIS",
+    "signInExpired": "La registrazione è scaduta. Effettuare nuovamente la registrazione per riprendere da dove si era rimasti.",
+    "somethingNotLoading": "Alcuni elementi non vengono caricati correttamente. Provare ad aggiornare la pagina."
+  },
+  "unavailableDialog": {
+    "title": "Registrazione non disponibile",
+    "explanation": "Spiacenti ma non è supportato in uno schermo di piccole dimensioni. Aprire in uno schermo o dispositivo più grande.",
+    "close": "Chiudi",
+    "returnButton": "Restituisci"
+  }
 });

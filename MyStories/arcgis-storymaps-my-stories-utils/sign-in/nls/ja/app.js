@@ -1,51 +1,20 @@
-﻿define({
-	root: ({
-		signInDialog: {
-			title: "ストーリー マップにサイン インする",
-			subtitle: "既存の ArcGIS Online アカウントを使用してサイン インする対象:",
-			reasonOne: "ストーリーを伝えるための、説得力のあるストーリー マップを作成する場合。",
-			reasonTwo: "ストーリー マップで ArcGIS Online のマップとデータを使用する場合。",
-			reasonThree: "ストーリー マップを管理し、それらのコンテンツの状態を確認する場合。",
-			noAccountYet: "ArcGIS Online アカウントをお持ちでない場合はサイン アップしてください:",
-			publicAccount: "非営利の無料個人アカウント",
-			subscriptionAccount: "無料の ArcGIS トライアル サブスクリプション",
-			signInExpired: "サイン インの期限が切れました。もう一度サイン インして、中断した場所を選択してください。",
-			somethingNotLoading: "正しく読み込まれていないものがあります。ページを更新してみてください。"
-		},
-		unavailableDialog: {
-			title: "サイン インは利用できません",
-			explanation: "これは小さいディスプレイではサポートされていません。大きいディスプレイまたはデバイスで開いてください。",
-			close: "閉じる",
-			returnButton: "戻る" 
-		}
-	}),
-	"ar": 1,
-	"cs": 1,
-	"da": 1,
-	"de": 1,
-	"el": 1,
-	"es": 1,
-	"et": 1,
-	"fi": 1,
-	"fr": 1,
-	"he": 1,
-	"it": 1,
-	"ja": 1,
-	"ko": 1,
-	"lt": 1,
-	"lv": 1,
-	"nl": 1,
-	"nb": 1,
-	"pl": 1,
-	"pt-br": 1,
-	"pt-pt": 1,
-	"ro": 1,
-	"ru": 1,
-	"sv": 1,
-	"th": 1,
-	"tr": 1,
-	"vi": 1,
-	"zh-cn": 1,
-	"zh-hk": 1, 
-	"zh-tw": 1 	
+define({
+  "signInDialog": {
+    "title": "ストーリー マップにサイン インする",
+    "subtitle": "既存の ArcGIS Online アカウントを使用してサイン インする対象:",
+    "reasonOne": "ストーリーを伝えるための、説得力のあるストーリー マップを作成する場合。",
+    "reasonTwo": "ストーリー マップで ArcGIS Online のマップとデータを使用する場合。",
+    "reasonThree": "ストーリー マップを管理し、それらのコンテンツの状態を確認する場合。",
+    "noAccountYet": "ArcGIS Online アカウントをお持ちでない場合はサイン アップしてください:",
+    "publicAccount": "非営利の無料個人アカウント",
+    "subscriptionAccount": "無料の ArcGIS トライアル サブスクリプション",
+    "signInExpired": "サイン インの期限が切れました。もう一度サイン インして、中断した場所を選択してください。",
+    "somethingNotLoading": "正しく読み込まれていないものがあります。ページを更新してみてください。"
+  },
+  "unavailableDialog": {
+    "title": "サイン インは利用できません",
+    "explanation": "これは小さいディスプレイではサポートされていません。大きいディスプレイまたはデバイスで開いてください。",
+    "close": "閉じる",
+    "returnButton": "戻る"
+  }
 });

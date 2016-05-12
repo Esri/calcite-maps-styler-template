@@ -1,51 +1,20 @@
-﻿define({
-	root: ({
-		signInDialog: {
-			title: "Jungtis prie Žemėlapių pasakojimų",
-			subtitle: "Naudodami savo esamą ArcGIS Online paskyrą prisijunkite prie:",
-			reasonOne: "Sukurkite įtaigių žemėlapių su pasakojimais, kuriais galėsite papasakoti savo istorijas.",
-			reasonTwo: "Žemėlapiuose su pasakojimais naudokite žemėlapius ir duomenis iš ArcGIS Online.",
-			reasonThree: "Valdykite žemėlapius su pasakojimais ir tikrinkite jų turinio būseną.",
-			noAccountYet: "Neturite ArcGIS Online paskyros? Užsisakykite:",
-			publicAccount: "Nekomercinę viešą paskyrą",
-			subscriptionAccount: "Nemokamą bandomąją ArcGIS prenumeratą",
-			signInExpired: "Jūsų registracija nebegalioja. Prisiregistruokite iš naujo, kad tęstumėte nuo ten, kur baigėte.",
-			somethingNotLoading: "Kažkas netinkamai įkeliama. Pabandykite atnaujinti puslapį."
-		},
-		unavailableDialog: {
-			title: "Prisijungti negalima",
-			explanation: "Deja, ši funkcija nepalaikoma mažuose ekranuose. Atidarykite didesnį ekraną arba įrenginį.",
-			close: "Užverti",
-			returnButton: "Grįžti" 
-		}
-	}),
-	"ar": 1,
-	"cs": 1,
-	"da": 1,
-	"de": 1,
-	"el": 1,
-	"es": 1,
-	"et": 1,
-	"fi": 1,
-	"fr": 1,
-	"he": 1,
-	"it": 1,
-	"ja": 1,
-	"ko": 1,
-	"lt": 1,
-	"lv": 1,
-	"nl": 1,
-	"nb": 1,
-	"pl": 1,
-	"pt-br": 1,
-	"pt-pt": 1,
-	"ro": 1,
-	"ru": 1,
-	"sv": 1,
-	"th": 1,
-	"tr": 1,
-	"vi": 1,
-	"zh-cn": 1,
-	"zh-hk": 1, 
-	"zh-tw": 1 	
+define({
+  "signInDialog": {
+    "title": "Jungtis prie Žemėlapių pasakojimų",
+    "subtitle": "Naudodami savo esamą ArcGIS Online paskyrą prisijunkite prie:",
+    "reasonOne": "Sukurkite įtaigių žemėlapių su pasakojimais, kuriais galėsite papasakoti savo istorijas.",
+    "reasonTwo": "Žemėlapiuose su pasakojimais naudokite žemėlapius ir duomenis iš ArcGIS Online.",
+    "reasonThree": "Valdykite žemėlapius su pasakojimais ir tikrinkite jų turinio būseną.",
+    "noAccountYet": "Neturite ArcGIS Online paskyros? Užsisakykite:",
+    "publicAccount": "Nekomercinę viešą paskyrą",
+    "subscriptionAccount": "Nemokamą bandomąją ArcGIS prenumeratą",
+    "signInExpired": "Jūsų registracija nebegalioja. Prisiregistruokite iš naujo, kad tęstumėte nuo ten, kur baigėte.",
+    "somethingNotLoading": "Kažkas netinkamai įkeliama. Pabandykite atnaujinti puslapį."
+  },
+  "unavailableDialog": {
+    "title": "Prisijungti negalima",
+    "explanation": "Deja, ši funkcija nepalaikoma mažuose ekranuose. Atidarykite didesnį ekraną arba įrenginį.",
+    "close": "Užverti",
+    "returnButton": "Grįžti"
+  }
 });

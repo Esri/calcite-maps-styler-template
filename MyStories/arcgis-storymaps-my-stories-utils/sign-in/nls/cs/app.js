@@ -1,51 +1,20 @@
-﻿define({
-	root: ({
-		signInDialog: {
-			title: "Přihlásit se do map s příběhem",
-			subtitle: "Přihlaste se pomocí svého účtu ArcGIS Online, abyste mohli:",
-			reasonOne: "Vytvářejte pro vyprávění svých příběhů poutavé příběhové mapy.",
-			reasonTwo: "Používejte své mapy a data z ArcGIS Online ve svých mapách s příběhem.",
-			reasonThree: "Spravujte své mapy s příběhem a kontrolujte stav jejich obsahu.",
-			noAccountYet: "Nemáte účet ArcGIS Online? Zaregistrujte se na:",
-			publicAccount: "Bezplatný nekomerční veřejný účet",
-			subscriptionAccount: "bezplatnou zkušební verzi předplatného ArcGIS",
-			signInExpired: "Vaše přihlášení vypršelo. Pro pokračování tam, kde jste skončili, se znovu přihlaste.",
-			somethingNotLoading: "Něco se nenačítá správně. Zkuste znovu načíst stránku."
-		},
-		unavailableDialog: {
-			title: "Přihlášení není k dispozici",
-			explanation: "Toto bohužel v malém zobrazení není podporováno. Otevřete prosím ve větším zobrazení nebo zařízení.",
-			close: "Zavřít",
-			returnButton: "Návrat" 
-		}
-	}),
-	"ar": 1,
-	"cs": 1,
-	"da": 1,
-	"de": 1,
-	"el": 1,
-	"es": 1,
-	"et": 1,
-	"fi": 1,
-	"fr": 1,
-	"he": 1,
-	"it": 1,
-	"ja": 1,
-	"ko": 1,
-	"lt": 1,
-	"lv": 1,
-	"nl": 1,
-	"nb": 1,
-	"pl": 1,
-	"pt-br": 1,
-	"pt-pt": 1,
-	"ro": 1,
-	"ru": 1,
-	"sv": 1,
-	"th": 1,
-	"tr": 1,
-	"vi": 1,
-	"zh-cn": 1,
-	"zh-hk": 1, 
-	"zh-tw": 1 	
+define({
+  "signInDialog": {
+    "title": "Přihlásit se do map s příběhem",
+    "subtitle": "Přihlaste se pomocí svého účtu ArcGIS Online, abyste mohli:",
+    "reasonOne": "Vytvářejte pro vyprávění svých příběhů poutavé příběhové mapy.",
+    "reasonTwo": "Používejte své mapy a data z ArcGIS Online ve svých mapách s příběhem.",
+    "reasonThree": "Spravujte své mapy s příběhem a kontrolujte stav jejich obsahu.",
+    "noAccountYet": "Nemáte účet ArcGIS Online? Zaregistrujte se na:",
+    "publicAccount": "Bezplatný nekomerční veřejný účet",
+    "subscriptionAccount": "bezplatnou zkušební verzi předplatného ArcGIS",
+    "signInExpired": "Vaše přihlášení vypršelo. Pro pokračování tam, kde jste skončili, se znovu přihlaste.",
+    "somethingNotLoading": "Něco se nenačítá správně. Zkuste znovu načíst stránku."
+  },
+  "unavailableDialog": {
+    "title": "Přihlášení není k dispozici",
+    "explanation": "Toto bohužel v malém zobrazení není podporováno. Otevřete prosím ve větším zobrazení nebo zařízení.",
+    "close": "Zavřít",
+    "returnButton": "Návrat"
+  }
 });

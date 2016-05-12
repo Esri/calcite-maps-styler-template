@@ -1,51 +1,20 @@
-﻿define({
-	root: ({
-		signInDialog: {
-			title: "התחבר למפות סיפור",
-			subtitle: "התחבר באמצעות חשבון ArcGIS Online הקיים שלך ל:",
-			reasonOne: "צור מפות סיפור מרתקות כדי לספר את הסיפורים שלך.",
-			reasonTwo: "השתמש בתוך מפות הסיפור שלך במפות ובנתונים שלך מ- ArcGIS Online .",
-			reasonThree: "נהל את מפות הסיפור שלך ובדוק את סטטוס התוכן שלהן.",
-			noAccountYet: "אין לך חשבון ArcGIS Online? הירשם לקבלת:",
-			publicAccount: "חשבון ציבורי לא מסחרי חופשי",
-			subscriptionAccount: "מנוי חופשי של ArcGIS לניסיון",
-			signInExpired: "תוקף ההתחברות שלך פג. התחבר שוב כדי להמשיך מהמקום שבו הפסקת.",
-			somethingNotLoading: "משהו אינו נטען כהלכה. נסה לרענן את הדף."
-		},
-		unavailableDialog: {
-			title: "התחברות לא זמינה",
-			explanation: "מצטערים, אפשרות זו לא נתמכת בתצוגה קטנה. פתח בתצוגה או במכשיר גדולים יותר.",
-			close: "סגור",
-			returnButton: "החזר" 
-		}
-	}),
-	"ar": 1,
-	"cs": 1,
-	"da": 1,
-	"de": 1,
-	"el": 1,
-	"es": 1,
-	"et": 1,
-	"fi": 1,
-	"fr": 1,
-	"he": 1,
-	"it": 1,
-	"ja": 1,
-	"ko": 1,
-	"lt": 1,
-	"lv": 1,
-	"nl": 1,
-	"nb": 1,
-	"pl": 1,
-	"pt-br": 1,
-	"pt-pt": 1,
-	"ro": 1,
-	"ru": 1,
-	"sv": 1,
-	"th": 1,
-	"tr": 1,
-	"vi": 1,
-	"zh-cn": 1,
-	"zh-hk": 1, 
-	"zh-tw": 1 	
+define({
+  "signInDialog": {
+    "title": "התחבר למפות סיפור",
+    "subtitle": "התחבר באמצעות חשבון ArcGIS Online הקיים שלך ל:",
+    "reasonOne": "צור מפות סיפור מרתקות כדי לספר את הסיפורים שלך.",
+    "reasonTwo": "השתמש בתוך מפות הסיפור שלך במפות ובנתונים שלך מ- ArcGIS Online .",
+    "reasonThree": "נהל את מפות הסיפור שלך ובדוק את סטטוס התוכן שלהן.",
+    "noAccountYet": "אין לך חשבון ArcGIS Online? הירשם לקבלת:",
+    "publicAccount": "חשבון ציבורי לא מסחרי חופשי",
+    "subscriptionAccount": "מנוי חופשי של ArcGIS לניסיון",
+    "signInExpired": "תוקף ההתחברות שלך פג. התחבר שוב כדי להמשיך מהמקום שבו הפסקת.",
+    "somethingNotLoading": "משהו אינו נטען כהלכה. נסה לרענן את הדף."
+  },
+  "unavailableDialog": {
+    "title": "התחברות לא זמינה",
+    "explanation": "מצטערים, אפשרות זו לא נתמכת בתצוגה קטנה. פתח בתצוגה או במכשיר גדולים יותר.",
+    "close": "סגור",
+    "returnButton": "החזר"
+  }
 });

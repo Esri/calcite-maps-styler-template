@@ -1,51 +1,20 @@
-﻿define({
-	root: ({
-		signInDialog: {
-			title: "登录到 Story Maps",
-			subtitle: "使用您现有的 ArcGIS Online 帐户登录执行以下操作:",
-			reasonOne: "创建引人注目的故事地图，讲述您自己的故事。",
-			reasonTwo: "将 ArcGIS Online 中的地图和数据用于您的故事地图。",
-			reasonThree: "管理您的故事地图，并检查其内容的状态。",
-			noAccountYet: "没有 ArcGIS Online 账户? 注册获取:",
-			publicAccount: "免费的非商业公共帐户",
-			subscriptionAccount: "免费试用 ArcGIS 订阅",
-			signInExpired: "您的登录已过期。请再次登录以返回您之前的操作。",
-			somethingNotLoading: "发生加载错误。请尝试刷新页面。"
-		},
-		unavailableDialog: {
-			title: "登录不可用",
-			explanation: "抱歉，不支持小显示器。请在更大的显示器或设备中打开。",
-			close: "关闭",
-			returnButton: "回波" 
-		}
-	}),
-	"ar": 1,
-	"cs": 1,
-	"da": 1,
-	"de": 1,
-	"el": 1,
-	"es": 1,
-	"et": 1,
-	"fi": 1,
-	"fr": 1,
-	"he": 1,
-	"it": 1,
-	"ja": 1,
-	"ko": 1,
-	"lt": 1,
-	"lv": 1,
-	"nl": 1,
-	"nb": 1,
-	"pl": 1,
-	"pt-br": 1,
-	"pt-pt": 1,
-	"ro": 1,
-	"ru": 1,
-	"sv": 1,
-	"th": 1,
-	"tr": 1,
-	"vi": 1,
-	"zh-cn": 1,
-	"zh-hk": 1, 
-	"zh-tw": 1 	
+define({
+  "signInDialog": {
+    "title": "登录到 Story Maps",
+    "subtitle": "使用您现有的 ArcGIS Online 帐户登录执行以下操作:",
+    "reasonOne": "创建引人注目的故事地图，讲述您自己的故事。",
+    "reasonTwo": "将 ArcGIS Online 中的地图和数据用于您的故事地图。",
+    "reasonThree": "管理您的故事地图，并检查其内容的状态。",
+    "noAccountYet": "没有 ArcGIS Online 账户? 注册获取:",
+    "publicAccount": "免费的非商业公共帐户",
+    "subscriptionAccount": "免费试用 ArcGIS 订阅",
+    "signInExpired": "您的登录已过期。请再次登录以返回您之前的操作。",
+    "somethingNotLoading": "发生加载错误。请尝试刷新页面。"
+  },
+  "unavailableDialog": {
+    "title": "登录不可用",
+    "explanation": "抱歉，不支持小显示器。请在更大的显示器或设备中打开。",
+    "close": "关闭",
+    "returnButton": "回波"
+  }
 });

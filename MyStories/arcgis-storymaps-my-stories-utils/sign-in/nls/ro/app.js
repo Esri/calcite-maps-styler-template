@@ -1,51 +1,20 @@
-﻿define({
-	root: ({
-		signInDialog: {
-			title: "Autentificaţi-vă la Hărţi informative",
-			subtitle: "Autentificaţi-vă la contul de ArcGIS Online existent pentru a:",
-			reasonOne: "Creaţi hărţi informative detaliate pentru a relata poveşti.",
-			reasonTwo: "Utilizaţi hărţile şi datele dvs. din ArcGIS Online în hărţile informative.",
-			reasonThree: "Gestionaţi hărţile informative şi verificaţi starea conţinutului acestora.",
-			noAccountYet: "Nu aveţi un cont ArcGIS Online? Înregistraţi-vă pentru un:",
-			publicAccount: "Cont public necomercial",
-			subscriptionAccount: "Abonament de evaluare gratuită ArcGIS",
-			signInExpired: "Autentificarea dvs. a expirat. Autentificaţi-vă din nou pentru a continua de unde aţi rămas.",
-			somethingNotLoading: "Ceva nu nu se încarcă corect. Încercaţi să reîmprospătaţi pagina."
-		},
-		unavailableDialog: {
-			title: "Autentificare indisponibilă",
-			explanation: "Ne pare rău, această opţiune nu este acceptată pe un afişaj de dimensiuni mici. Deschideţi pe un afişaj sau dispozitiv mai mare.",
-			close: "Închidere",
-			returnButton: "Revenire" 
-		}
-	}),
-	"ar": 1,
-	"cs": 1,
-	"da": 1,
-	"de": 1,
-	"el": 1,
-	"es": 1,
-	"et": 1,
-	"fi": 1,
-	"fr": 1,
-	"he": 1,
-	"it": 1,
-	"ja": 1,
-	"ko": 1,
-	"lt": 1,
-	"lv": 1,
-	"nl": 1,
-	"nb": 1,
-	"pl": 1,
-	"pt-br": 1,
-	"pt-pt": 1,
-	"ro": 1,
-	"ru": 1,
-	"sv": 1,
-	"th": 1,
-	"tr": 1,
-	"vi": 1,
-	"zh-cn": 1,
-	"zh-hk": 1, 
-	"zh-tw": 1 	
+define({
+  "signInDialog": {
+    "title": "Autentificaţi-vă la Hărţi informative",
+    "subtitle": "Autentificaţi-vă la contul de ArcGIS Online existent pentru a:",
+    "reasonOne": "Creaţi hărţi informative detaliate pentru a relata poveşti.",
+    "reasonTwo": "Utilizaţi hărţile şi datele dvs. din ArcGIS Online în hărţile informative.",
+    "reasonThree": "Gestionaţi hărţile informative şi verificaţi starea conţinutului acestora.",
+    "noAccountYet": "Nu aveţi un cont ArcGIS Online? Înregistraţi-vă pentru un:",
+    "publicAccount": "Cont public necomercial",
+    "subscriptionAccount": "Abonament de evaluare gratuită ArcGIS",
+    "signInExpired": "Autentificarea dvs. a expirat. Autentificaţi-vă din nou pentru a continua de unde aţi rămas.",
+    "somethingNotLoading": "Ceva nu nu se încarcă corect. Încercaţi să reîmprospătaţi pagina."
+  },
+  "unavailableDialog": {
+    "title": "Autentificare indisponibilă",
+    "explanation": "Ne pare rău, această opţiune nu este acceptată pe un afişaj de dimensiuni mici. Deschideţi pe un afişaj sau dispozitiv mai mare.",
+    "close": "Închidere",
+    "returnButton": "Revenire"
+  }
 });
