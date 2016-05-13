@@ -4,12 +4,9 @@
          "category":"Scene",
          "fields":[  
             {  
-               "type":"paragraph",
-               "value":"Choose up to two web scenes to compare"
-            },
-            {  
                "type":"webscene",
-               "selection":"multiple"
+               "selection":"multiple",
+               "limit": 2
             },
             {  
                "type":"appproxies"
