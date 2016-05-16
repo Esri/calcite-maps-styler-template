@@ -110,19 +110,14 @@
     <script type="text/javascript" src="//jsdev.arcgis.com/3.17/"></script>
         <script type="text/javascript">
         require([
-            "dojo/parser",
             "config/templateConfig",
             "application/template",
-            "application/main",
-            "dijit/layout/BorderContainer",
-            "dijit/layout/ContentPane",
+            "application/main"
         ], function(
-            parser,
             templateConfig,
             Template,
             Main
         ){
-          parser.parse();
           // create the template. This will take care of all the logic required for template applications
           var myTemplate = new Template(templateConfig);
           // create my main application. Start placing your logic in the main.js file.

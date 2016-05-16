@@ -23,6 +23,7 @@ define([
   "dojo/_base/Color",
   "dojo/_base/declare",
   "dojo/_base/lang",
+  "dojo/_base/kernel",
 
   "dojo/dom",
   "dojo/dom-geometry",
@@ -67,7 +68,7 @@ define([
 
   esriBundle,
 
-  array, Color, declare, lang,
+  array, Color, declare, lang, kernel,
 
   dom, domGeometry, domAttr, domClass,
   domConstruct, domStyle,
@@ -108,6 +109,10 @@ define([
       "shortDateLongTime24", "shortDateLELongTime24"
     ],
     startup: function(config) {
+      // Set lang attribute to current locale
+      document.documentElement.lang = kernel.locale;
+      console.log(document.documentElement.lang);
+
       // config will contain application and user defined info for the template such as i18n strings, the web map id
       // and application id and any url parameters and any application specific configuration information.
       if (config) {
@@ -818,7 +823,7 @@ define([
             }
             // Add a loading indicator to the Printing label
             esriBundle.widgets.print.NLS_printing = esriBundle.widgets.print.NLS_printing +
-            "<img class='loadPrint' src='./images/loading-small.png'/> ";
+              "<img class='loadPrint' src='./images/loading-small.png'/> ";
             this.print = new Print(printOptions,
               domConstruct.create("div"));
 
@@ -1013,22 +1018,18 @@ define([
           //  search.focus();
           if (this.map.infoWindow.isShowing) {
             this._focusPopup();
-            console.log(this.map.infoWindow.domNode);
             query(".esriPopupWrapper .contentPane").forEach(function(node) {
               var a = a11y.getFirstInTabbingOrder(node);
-              console.log("a", a);
 
               focusUtil.focus(a);
             });
 
-            //  var n = a11y.getFirstInTabbingOrder(this.map.infoWindow.domNode);
-            //    console.log(n);
-            //    focusUtil.focus(n);
-            console.log("Window Showing Already");
+          //  var n = a11y.getFirstInTabbingOrder(this.map.infoWindow.domNode);
+          //    console.log(n);
+          //    focusUtil.focus(n);
           } else {
             on.once(this.map.infoWindow, "show", lang.hitch(this, function() {
               this._focusPopup();
-              console.log("Event")
             }));
           }
 

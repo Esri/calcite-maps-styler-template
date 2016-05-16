@@ -99,7 +99,16 @@
       "label": "Define custom button text",
       "tooltip": "Define button text"
     }]
-  }, {
+  },{
+    "category": "Accessibility",
+    "fields":[{
+      "type":"string",
+      "stringFieldOption": "richtext",
+      "label": "Alternate Map Text",
+      "tooltip": "Define text that will be read by screen reader",
+      "fieldName":"altMapText"
+    }]
+  },{
     "category": "Toolbar",
     "fields": [{
       "type": "string",
