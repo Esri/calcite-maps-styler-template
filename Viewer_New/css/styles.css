@@ -11,7 +11,10 @@ html, body {
 .noscroll{
   overflow: hidden;
 }
-
+/*Set opacity for fill symbols when searching*/
+g#mapDiv_graphics_layer path {
+    fill-opacity: 0;
+}
 .modal-scrollbar {
   margin-right: 17px; }
 
