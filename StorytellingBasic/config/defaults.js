@@ -26,7 +26,7 @@ define({
   //Enter the url to the proxy if needed by the application. See the 'Using the proxy page' help topic for details
   //http://developers.arcgis.com/en/javascript/jshelp/ags_proxy.html
   "proxyurl": "",
-  "background":"#444",
+  "background": "#444",
   "color": "#fff",
   "legendTitleBackground": "#848484",
   "subtitleColor": "#CECECE",
@@ -52,12 +52,12 @@ define({
   //When searchextent is true the geocoder will prioritize results within
   //the current map extent
   "search": false,
-  "searchExtent": true, 
+  "searchExtent": true,
   "locationSearch": true,
-  "searchLayers":[{
-      "id": "",
-      "fields": []
-  }], 
+  "searchLayers": [{
+    "id": "",
+    "fields": []
+  }],
   //Replace these with your own bitly key
   "bitlyLogin": "arcgis",
   "bitlyKey": "R_b8a169f3a8b978b9697f64613bf1db6d",
@@ -66,7 +66,7 @@ define({
   "sharinghost": location.protocol + "//" + "www.arcgis.com",
   "units": null,
   //If your applcation needs to edit feature layer fields set this value to true. When false the map will
-  //be dreated with layers that are not set to editable which allows the FeatureLayer to load features optimally. 
+  //be dreated with layers that are not set to editable which allows the FeatureLayer to load features optimally.
   "editable": false,
   "helperServices": {
     "geometry": {
@@ -80,6 +80,6 @@ define({
     },
     "geocode": [{
       "url": null
-        }]
+    }]
   }
 });

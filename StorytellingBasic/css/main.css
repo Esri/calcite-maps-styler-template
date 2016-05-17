@@ -9,6 +9,7 @@ body{
   font-size: 14px;
   overflow: hidden;
 }
+
 /*Header Fonts*/
 @font-face {
   font-family: 'open_sanssemibold';
@@ -128,7 +129,6 @@ body{
   overflow: hidden;
 }
 #headerText{
-  font-family: "open_sanssemibold", sans-serif;
   padding-top:10px;
   padding-left:16px;
   width:70%;
@@ -139,6 +139,7 @@ body{
   padding-right:25px;
 }
 #title{
+  font-family: "open_sanssemibold", sans-serif;
   height:45px;
   padding-left:4px;
   padding-top:3px;
@@ -157,6 +158,7 @@ html, body, h1, h2, h3, h4, h5, h6, p, ul, form {
     margin: 0;
 }
 #subtitle{
+  font-family: "open_sansregular",sans-serif;
   padding-left:4px;
   line-height: 18px;
   word-wrap:break-word;
@@ -165,6 +167,9 @@ html, body, h1, h2, h3, h4, h5, h6, p, ul, form {
   font-weight: 400;
   overflow-x: hidden;
   overflow-y: auto !important;
+}
+#subtitle b, strong {
+  font-family: 'open_sanssemibold', sans-serif;
 }
 @media (max-width: 600px){
   .socialArea{
