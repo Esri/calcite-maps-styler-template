@@ -39,7 +39,7 @@ input
 
 .esriCTCategoriesHeader
 {
-    color: ${SelectedThemeColor} !important !important;
+    color: ${SelectedThemeColor} !important;
 }
 
 .esriCTAppImage
@@ -61,7 +61,7 @@ input
 
 .esriCTTagCloudHighlight
 {
-    background: ${SelectedThemeColor} !important;
+    background-color: ${SelectedThemeColor} !important;
 }
 
 .esriCTSharingTag

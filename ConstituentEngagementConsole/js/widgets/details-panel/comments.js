@@ -187,6 +187,9 @@ define([
                 var commentContentPaneContainer, commentContentPane;
                 commentContentPaneContainer = domConstruct.create("div", { "class": "esriCTCommentsPopup" }, commentsParentDiv);
                 commentContentPane = new ContentPane({}, commentContentPaneContainer);
+                if (!result.features[0].infoTemplate) {
+                    result.features[0].setInfoTemplate(new PopupTemplate(this._commentPopupTable.popupInfo));
+                }
                 commentContentPane.startup();
                 commentContentPane.set('content', result.features[0].getContent());
                 this._createCommentButton(commentContentPaneContainer, currentFeature);

@@ -33,6 +33,8 @@ define({
   "altMapText": null, // by default we'll read the web map snippet
   // Set splashModal to display a splash screen when the app loads
   // Define the splash content using splashTitle and splashContent.
+  // Add labels to the toolbar buttons
+  "toolbarLabels": false,
   "splashModal": false,
   "splashTitle": null,
   "splashContent": null,

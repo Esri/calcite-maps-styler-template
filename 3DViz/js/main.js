@@ -702,10 +702,9 @@ define([
 
       var stopsSize = [];
       var stopsColor = [];
-      for (var i = 1; i < 6; i++) {
-        var pct = i / 5;
+      for (var i = 1; i < 21; i++) {
+        var pct = i / 20;
         var blend = (1 - pct) * 0.8;
-
         var color = Color.fromString(options.color);
         var white = Color.fromString("#ffffff");
         var symColor = Color.blendColors(color, white, blend);

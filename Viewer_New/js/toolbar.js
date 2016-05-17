@@ -45,7 +45,6 @@ define(["dojo/Evented", "dojo/_base/declare", "dojo/_base/window",
         if (title) {
           title = title.toLowerCase();
           if (event.keyCode === keys.ENTER) {
-            console.log("Enter Pressed Activate Tool and Set Focus");
             //  WHen we hit enter key we can focus on first element in page body.
             this.activateTool(title);
             var a = a11y.getFirstInTabbingOrder("pageBody_" + title);
@@ -84,24 +83,28 @@ define(["dojo/Evented", "dojo/_base/declare", "dojo/_base/window",
       var pressed = (this.config.activeTool === name) ? true : false;
       // add tool  aria info (https://www.w3.org/WAI/PF/aria-practices/#toolbar)
       // http://heydonworks.com/practical_aria_examples/#toolbar-widget
+      var buttonText;
+      if (this.config.toolbarLabels) {
+        buttonText = "<span aria-hidden=true class='icon-color toolbar-icons " + "icon-" + name + "'><span class='btnText'>" + this.config.i18n.tooltips[name] + "<span></span>";
+      } else {
+        buttonText = "<span aria-hidden=true class='icon-color toolbar-icons " + "icon-" + name + "'></span>";
+      }
       var pTool = domConstruct.create("button", {
         className: "panelTool",
         //  tabindex: "-1",
         role: "button",
         name: name,
-        //"aria-activedescendent": "pageContent_" + name,
-        //"aria-pressed": "'" + pressed + "'",
-        //"aria-controls": "pageContent_" + name,
-        //"aria-label": this.config.i18n.tooltips[name] || name,
         title: this.config.i18n.tooltips[name] || name,
-        innerHTML: "<span aria-hidden=true class='icon-color toolbar-icons " + "icon-" + name + "'></span>",
+        innerHTML: buttonText,
         id: "panelTool_" + name
       }, this.pTools);
+      if (this.config.toolbarLabels) {
+        domStyle.set(pTool, "width", "auto");
+      }
       query(".icon-color").style("color", this.config.iconColor);
       if (pressed) {
         domClass.add(pTool, "pressed");
       }
-
       on(pTool, "click", lang.hitch(this, this._toolClick, name));
       this.tools.push(name);
 

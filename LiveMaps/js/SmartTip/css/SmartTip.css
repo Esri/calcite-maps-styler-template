@@ -1,0 +1,237 @@
+.esri-smart-tip {
+    position: absolute;
+    left: -400px;
+    top: 200px;
+    width: 300px;
+    height: auto;
+    overflow: hidden;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+     -ms-transform: translate(20px,-50%); /* IE 9 */
+    -webkit-transform: translate(20px,-50%); /* Safari */
+    transform: translate(20px,-50%);
+}
+
+.shadow {
+    -webkit-box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.3);
+    box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.3);
+}
+
+.esri-smart-tip .top {
+    width: 100%;
+    overflow: hidden;
+    display: block;
+}
+
+.esri-smart-tip .top img {
+    display: block;
+    width: 100%;
+}
+
+.esri-smart-tip .bottom {
+    position: relative;
+    width: 100%;
+    height: 116px;
+    overflow: hidden;
+    background-color: #ffffff;
+    color: #a3a3a3;
+    font-size: 12px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.esri-smart-tip a {
+  color: inherit;
+  opacity: 0.75;
+  text-decoration: none;
+}
+
+.esri-smart-tip .left {
+  position: absolute;
+  left: 10px;
+  right: 10px;
+  top: 10px;
+  bottom: 10px;
+  overflow: hidden;
+  display: block;
+}
+
+.esri-smart-tip .big .left {
+  right: 100px;
+}
+
+.esriRTL .esri-smart-tip .big .left {
+  left: 100px;
+}
+
+.esri-smart-tip .header {
+  position: absolute;
+  width: 100%;
+  height: 40px;
+  line-height: 30px;
+  font-size: 14px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+}
+
+.esri-smart-tip .avatar{
+  float: left;
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+  display: inline-block;
+}
+
+.esriRTL .esri-smart-tip .avatar{
+  float: right;
+  margin-left: 10px;
+  margin-right: 0;
+}
+
+.esri-smart-tip .avatar img{
+  width: 30px;
+  height: 30px;
+  border-radius: 15px;
+}
+
+.esri-smart-tip .title {
+  float: left;
+  max-width: 240px;
+  height: 100%;
+  line-height: 30px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: inline-block;
+  font-weight: bold;
+  color: #000000;
+}
+
+.esriRTL .esri-smart-tip .title {
+  float: right;
+}
+
+.esri-smart-tip .dateSmall {
+  float: right;
+  width: 60px;
+  height: 30px;
+  line-height: 30px;
+  font-size: 11px;
+  text-align: right;
+  display: inline-block;
+}
+
+.esriRTL .esri-smart-tip .dateSmall {
+  float: left;
+  text-align: left;
+}
+
+.esri-smart-tip .desc {
+  position: absolute;
+  top: 40px;
+  width: 100%;
+  height: 56px;
+  line-height: 14px;
+  font-size: 12px;
+  white-space: pre-wrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.esri-smart-tip .right {
+  position: absolute;
+  right: 0;
+  width: 90px;
+  top: 0;
+  bottom: 0;
+  display: none;
+  text-align: center;
+  font-size: 14px;
+  vertical-align: middle;
+  padding: 10px 0 10px 0;
+  line-height: 0.9;
+}
+
+.esriRTL .esri-smart-tip .right {
+  left: 0;
+}
+
+.esri-smart-tip .big .right {
+  display: block;
+}
+
+.esri-smart-tip .right .num {
+  font-size: 70px;
+  letter-spacing: -5px;
+}
+
+/* Animations */
+
+@keyframes pulse {
+    0% {
+        opacity: 0;
+        transform: scale(0.00);
+    }
+    20% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: scale(10);
+    }
+}
+
+circle[data-count="1"] {
+    -webkit-transform-origin: center;
+    -moz-transform-origin: center;
+    -ms-transform-origin: center;
+    -o-transform-origin: center;
+    animation-duration: 3s;
+    animation-name: pulse;
+    animation-iteration-count: infinite;
+    animation-delay: 0.9s;
+    animation-timing-function: cubic-bezier(0,.54,.53,1);
+    -webkit-animation-duration: 3s;
+    -webkit-animation-name: pulse;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-delay: 0.9s;
+    -webkit-animation-timing-function: cubic-bezier(0,.54,.53,1);
+}
+
+circle[data-count="2"] {
+    -webkit-transform-origin: center;
+    -moz-transform-origin: center;
+    -ms-transform-origin: center;
+    -o-transform-origin: center;
+    transform-origin: center;
+    animation-duration: 3s;
+    animation-name: pulse;
+    animation-timing-function: cubic-bezier(0,.54,.53,1);
+    animation-iteration-count: infinite;
+    animation-delay: 1.3s;
+    -webkit-animation-duration: 3s;
+    -webkit-animation-name: pulse;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-delay: 1.3s;
+    -webkit-animation-timing-function: cubic-bezier(0,.54,.53,1);
+}
+
+/* MEDIA SPECIFIC: SMALL DEVICES */
+
+@media only screen and (max-width: 500px) {
+    .esri-smart-tip {
+       -ms-transform: translate(-50%,-110%); /* IE 9 */
+      -webkit-transform: translate(,-50%, -110%); /* Safari */
+      transform: translate(-50%, -110%);
+  }
+}
+
+

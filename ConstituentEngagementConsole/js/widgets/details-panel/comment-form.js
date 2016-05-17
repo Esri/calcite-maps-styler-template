@@ -1107,11 +1107,7 @@ define([
             });
             // Attach datetime picker to the container
             $(parentNode).datetimepicker({ locale: kernel.locale }).on('dp.show', function (evt) {
-                var timePickerDialogBox, datePickerDialogBox, datePickerDialogBoxPosition;
-                timePickerDialogBox = query(".picker-switch.accordion-toggle", evt.currentTarget)[0];
-                if (timePickerDialogBox) {
-                    domStyle.set(timePickerDialogBox, "display", "none");
-                }
+                var datePickerDialogBox, datePickerDialogBoxPosition;
                 datePickerDialogBox = query(".bootstrap-datetimepicker-widget.dropdown-menu")[0];
                 if (datePickerDialogBox) {
                     datePickerDialogBoxPosition = domGeom.position(datePickerDialogBox, true);

@@ -2,7 +2,6 @@
   Version 1
   1/7/2016
 */
-/*global define,document,location,require */
 /*jslint sloppy:true,nomen:true,plusplus:true */
 /*
  | Copyright 2014 Esri
@@ -36,8 +35,7 @@ define(
     "esri/tasks/GeometryService",
 
     "dojo/promise/all",
-    "dojo/Deferred",
-
+    "dojo/Deferred"
   ],
   function(
     declare,

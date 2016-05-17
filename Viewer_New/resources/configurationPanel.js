@@ -37,10 +37,22 @@
       "type": "boolean",
       "fieldName": "popupPanel",
       "label": "Show popup content panel instead of popup window"
-    }, {
+    },{
       "type": "boolean",
       "fieldName": "scalebar",
       "label": "Display scalebar on map"
+    },{
+      "type": "paragraph",
+      "value": "Optionally add a Locate button to the map. Note that the Locate button is only available if site is using https"
+    },{
+      "type": "boolean",
+      "fieldName": "locate",
+      "label": "Display locate button on map",
+      "tooltip": "Display locate button"
+    }, {
+      "type": "boolean",
+      "fieldName": "locate_track",
+      "label": "Enable tracking of users location"
     }]
   }, {
     "category": "Theme",
@@ -99,7 +111,21 @@
       "label": "Define custom button text",
       "tooltip": "Define button text"
     }]
-  }, {
+  },{
+    "category": "Accessibility",
+    "fields":[{
+      "type":"string",
+      "stringFieldOption": "richtext",
+      "label": "Alternate Map Text",
+      "tooltip": "Define text that will be read by screen reader",
+      "fieldName":"altMapText"
+    },{
+      "type": "boolean",
+      "fieldName": "toolbarLabels",
+      "label": "Add toolbar labels",
+      "tooltip": "Add text next to toolbar icon"
+    }]
+  },{
     "category": "Toolbar",
     "fields": [{
       "type": "string",
@@ -151,14 +177,6 @@
       "type": "boolean",
       "fieldName": "tool_bookmarks",
       "label": "Bookmarks"
-    }, {
-      "type": "boolean",
-      "fieldName": "tool_locate",
-      "label": "Find Location"
-    }, {
-      "type": "boolean",
-      "fieldName": "locate_track",
-      "label": "Enable tracking of users location"
     }, {
       "type": "boolean",
       "fieldName": "tool_legend",
@@ -294,21 +312,22 @@
     "activeTool": "legend",
     "scalebar": false,
     "splashModal": false,
+    "toolbarLabels": false,
     "tool_print": true,
     "tool_print_layouts": false,
     "tool_print_legend": false,
     "tool_share": true,
-    "tool_overview": true,
-    "tool_measure": true,
+    "tool_overview": false,
+    "tool_measure": false,
     "tool_details": true,
-    "tool_legend": true,
+    "tool_legend": false,
     "tool_layers": true,
     "tool_sublayers": true,
     "tool_opacity": true,
     "tool_layerlegend": true,
-    "tool_locate": true,
+    "locate": false,
     "locate_track": false,
-    "tool_edit": true,
+    "tool_edit": false,
     "tool_edit_toolbar": false,
     "tool_bookmarks": true,
     "tool_basemap": true,

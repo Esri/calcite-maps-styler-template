@@ -19,7 +19,7 @@ define(
     map: {
       error: "Imposibil de creat harta"
     },
-    legend:{
+    legend: {
       title: "Legendă"
     },
     share: {
@@ -30,17 +30,10 @@ define(
       error: "În mod implicit, este utilizată descrierea elementului hărţii web sau un snippet. Configuraţi aplicaţia pentru a adăuga un snippet particularizat pentru panoul Despre."
     },
     time: {
-        enableTimeMessage: "Harta web specificată nu conţine straturi tematice cu variaţie temporală. Vizualizaţi secţiunea de ajutor ${link} pentru detalii. Pentru a utiliza şablonul fără să afişaţi timpul, utilizaţi panoul de configurare pentru a dezactiva opţiunea pentru timp.",
-        enableTimeMessageLink: "http://doc.arcgis.com/en/arcgis-online/create-maps/configure-time.htm#ESRI_SECTION1_F1D4A275B4AB4CC79198CBA9D0AD8727",
-        datePattern: "d. MMMM yyyy",
-        hourTimePattern: "H",
-        millisecondTimePattern: "H:mm:ss",
-        minuteTimePattern: "H:mm",
-        secondTimePattern: "H:mm:ss",
-        timeRange: "De la ${startTime} la ${endTime}",
-        yearPattern: "yyyy"
+      enableTimeMessage: "Ă_The specified web map does not contain any time enabled layers. View the ${link} help topic for details. To use the template without displaying time use the configuration panel to disable the time option______________________________________________________________ș.",
+      enableTimeMessageLink: "Ă_http://doc.arcgis.com/en/arcgis-online/create-maps/configure-time.htm#ESRI_SECTION1_F1D4A275B4AB4CC79198CBA9D0AD8727____________________________________ș"
     },
-    histogram:{
+    histogram: {
       error: "În harta web, în modul snapshot, nu sunt disponibile straturi tematice de obiecte spaţiale cu variaţie temporală. Configuraţi aplicaţia pentru a utiliza o altă hartă web sau dezactivaţi opţiunea pentru histogramă."
     }
   })

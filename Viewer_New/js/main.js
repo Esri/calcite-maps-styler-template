@@ -23,6 +23,7 @@ define([
   "dojo/_base/Color",
   "dojo/_base/declare",
   "dojo/_base/lang",
+  "dojo/_base/kernel",
 
   "dojo/dom",
   "dojo/dom-geometry",
@@ -67,7 +68,7 @@ define([
 
   esriBundle,
 
-  array, Color, declare, lang,
+  array, Color, declare, lang, kernel,
 
   dom, domGeometry, domAttr, domClass,
   domConstruct, domStyle,
@@ -108,6 +109,9 @@ define([
       "shortDateLongTime24", "shortDateLELongTime24"
     ],
     startup: function(config) {
+      // Set lang attribute to current locale
+      document.documentElement.lang = kernel.locale;
+
       // config will contain application and user defined info for the template such as i18n strings, the web map id
       // and application id and any url parameters and any application specific configuration information.
       if (config) {
@@ -322,7 +326,6 @@ define([
           this.updateAriaInfo();
           toolbar.updatePageNavigation();
           this._updateTheme();
-        //this._setActiveTool(toolbar);
         }));
       }));
     },
@@ -379,6 +382,7 @@ define([
         var basemapDiv = toolbar.createTool(tool, panelClass);
         var basemap = new BasemapGallery({
           id: "basemapGallery",
+          bingMapsKey: this.config.bingKey || "",
           map: this.map,
           showArcGISBasemaps: true,
           portalUrl: this.config.sharinghost,
@@ -521,6 +525,7 @@ define([
           layerInfos: this.editableLayers,
           toolbarVisible: has("edit-toolbar")
         };
+        this.map.enableSnapping();
         this.editor = new Editor({
           settings: settings
         }, domConstruct.create("div", {}, this.editorDiv));
@@ -602,11 +607,7 @@ define([
 
           domClass.add(legend.domNode, "legend");
           legend.startup();
-          /*if (this.config.activeTool !== "") {
-            toolbar.activateTool(this.config.activeTool || "legend");
-          } else {
-            toolbar.closePage();
-          }*/
+
           deferred.resolve(true);
 
         } else {
@@ -693,7 +694,7 @@ define([
                 var ovMap = new OverviewMap({
                   id: "overviewMap",
                   map: this.map,
-                  height: panelHeight,
+                  //height: panelHeight,
                   visible: false
                 }, domConstruct.create("div", {},
                   ovMapDiv));
@@ -818,7 +819,7 @@ define([
             }
             // Add a loading indicator to the Printing label
             esriBundle.widgets.print.NLS_printing = esriBundle.widgets.print.NLS_printing +
-            "<img class='loadPrint' src='./images/loading-small.png'/> ";
+              "<img class='loadPrint' src='./images/loading-small.png'/> ";
             this.print = new Print(printOptions,
               domConstruct.create("div"));
 
@@ -1005,30 +1006,11 @@ define([
 
 
         search.on("select-result", lang.hitch(this, function() {
-          // wcag support
-          // When the popup closes or escape is hit reset focus back to search
-          // When search results are selected focus on the popup
-          // need to handle for both popup in panel and popup itself
-          // also need to make popup content accessible (role, tabindex etc)
-          //  search.focus();
           if (this.map.infoWindow.isShowing) {
             this._focusPopup();
-            console.log(this.map.infoWindow.domNode);
-            query(".esriPopupWrapper .contentPane").forEach(function(node) {
-              var a = a11y.getFirstInTabbingOrder(node);
-              console.log("a", a);
-
-              focusUtil.focus(a);
-            });
-
-            //  var n = a11y.getFirstInTabbingOrder(this.map.infoWindow.domNode);
-            //    console.log(n);
-            //    focusUtil.focus(n);
-            console.log("Window Showing Already");
           } else {
             on.once(this.map.infoWindow, "show", lang.hitch(this, function() {
               this._focusPopup();
-              console.log("Event")
             }));
           }
 
@@ -1059,7 +1041,6 @@ define([
         }
 
       }));
-
 
       //Feature Search or find (if no search widget)
       if ( (this.config.find || (this.config.customUrlLayer.id !==
@@ -1136,28 +1117,9 @@ define([
 
     },
     _focusPopup: function() {
-      var searchText = dom.byId("search_more_results");
-      var focusItem = null;
-      if (searchText) {
-        domAttr.set(searchText, "tabindex", "-1");
-        domAttr.set(searchText, "role", "presentation");
-        query("#search_more_results div.moreItem").forEach(function(node) {
-          domAttr.set(node, "role", "presentation");
-          domAttr.set(node, "tabindex", "-1");
-        });
-        focusItem = searchText;
-      }
-      // Make title area focusable
-      query(".esriViewPopup div.header").forEach(function(node) {
-        domAttr.set(node, "role", "presentation");
-        domAttr.set(node, "tabindex", "-1");
-        focusItem = node;
+      query("a.action.zoomTo").forEach(function(node) {
+        focusUtil.focus(node);
       });
-    /*  if (focusItem && focusItem !== "undefined") {
-        focusUtil.focus(focusItem);
-      } else {
-        console.log("No Focus")
-      }*/
     },
     _enableButtonMode: function(search) {
       search.set("enableButtonMode", true);
@@ -1349,33 +1311,6 @@ define([
     },
     updateAriaInfo: function() {
       // update tab index and aria roles for slider buttons
-      query(".esriSimpleSlider").forEach(function(node) {
-        var children = node.children;
-        array.forEach(children, function(child) {
-          domAttr.set(child, "tabindex", "0");
-          domAttr.set(child, "role", "button");
-          domAttr.set(child, "aria-label", child.title);
-        });
-      });
-
-      query(".HomeButton .home").forEach(function(node) {
-        domAttr.set(node, "tabindex", "0");
-        domAttr.set(node, "role", "button");
-        domAttr.set(node, "aria-label", node.title);
-        domAttr.set(node, "aria-pressed", false);
-      });
-      query(".LocateButton .zoomLocateButton").forEach(function(node) {
-        domAttr.set(node, "tabindex", "0");
-        domAttr.set(node, "role", "button");
-        domAttr.set(node, "aria-label", node.title);
-        domAttr.set(node, "aria-pressed", false);
-      });
-      domAttr.set(query(".logo-med")[0], "aria-hidden", "true");
-      query("#mapDiv_root").forEach(function(node) {
-        domAttr.set(node, "tabIndex", "-1");
-        domAttr.set(node, "role", "presentation");
-      });
-
       // Popup Accessiblity updates
       query(".titleButton").forEach(function(node) {
         domAttr.set(node, "role", "button");
@@ -1390,21 +1325,12 @@ define([
           // set focus back to node
           e.preventDefault();
           on.once(this.map, "update-end", function() {
-            console.log("Zoom Update End");
             // set focus back to the popup zoom button after extent updates
             node.focus();
           });
-
         }));
       }));
-    /*if (this.config.popupPanel) {
-      query("#popupFooter > .action").forEach(function(node) {
-        domAttr.set(node, "role", "button");
-      });
-      query(".esriViewPopup").forEach(function(node) {
-        domAttr.set("role", "dialog");
-      });
-    }*/
+
     }
   });
 });

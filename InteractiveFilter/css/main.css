@@ -465,6 +465,9 @@ html, body {
   #locateDiv {
     top: 130px; } }
 
+.no-locate #homeDiv{
+  top:55px;
+}
 #homeDiv {
   position: absolute;
   top: 100px;
@@ -473,7 +476,11 @@ html, body {
 
 @media only screen and (min-width: 850px) {
   #homeDiv {
-    top: 175px; } }
+    top: 175px; }
+  .no-locate #homeDiv{
+    top:130px;
+  }
+  }
 
 .simpleGeocoder .esriGeocoderResults {
   color: #333; }

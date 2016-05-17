@@ -5,7 +5,8 @@
          "fields":[
             {
                "type":"webmap",
-               "selection":"multiple"
+               "selection":"multiple",
+               "limit": 4
             },
             {
                "type":"appproxies"

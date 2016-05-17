@@ -26,7 +26,9 @@
         "filter.hint1": "Filter",
         "filter.fieldname1": "",
         "filter.value1": "",
-        "featureSearcher.searchLayers": {},
+        "searchBox.hint": "Find",
+        "featureSearcher.searchLayersString": "[]",
+        "featureSearcher.displayLayersString": "[]",
         "highlighter.highlightZoomLevel": 16,
         "basemapBox.basemapgroupTitle": "",
         "basemapBox.basemapgroupOwner": "",
@@ -74,7 +76,7 @@
                 "value": "ScenicPurples"
             }],
             "tooltip": "Color of header bar and widget windows"
-        },{
+        }, {
             "label": "Basemap group",
             "fieldName": "basemapBox.basemapgroupTitle",
             "type": "string",
@@ -96,19 +98,43 @@
     }, {
         "category": "<b>Search Settings</b>",
         "fields": [{
-            "label": "Choose the layers and fields to search",
-            "fieldName": "featureSearcher.searchLayers",
-            "type": "search",
-            "tooltip": "Choose the layers - and the fields in those layers - to search"
+            "label": "Hint",
+            "fieldName": "searchBox.hint",
+            "type": "string",
+            "tooltip": "Search hint (e.g. Find a Pre-Incident Plan, Find a Park)"
         }, {
-            "label": "Zoom level for selected search results",
+            "label": "Find layers and fields",
+            "fieldName": "featureSearcher.searchLayersString",
+            "type": "multilayerandfieldselector",
+            "tooltip": "Choose the layers - and the fields in those layers - to search",
+            "layerOptions": {
+                "supportedTypes": ["FeatureLayer"],
+                "geometryTypes": ["esriGeometryPoint", "esriGeometryLine", "esriGeometryPolyline", "esriGeometryPolygon"]
+            },
+            "fieldOptions": {
+                "supportedTypes": ["esriFieldTypeString", "esriFieldTypeSmallInteger", "esriFieldTypeInteger"]
+            }
+        }, {
+            "label": "Result display layers and fields (optional)",
+            "fieldName": "featureSearcher.displayLayersString",
+            "type": "multilayerandfieldselector",
+            "tooltip": "Optionally, choose to return values from one or several fields in the search results. If no Result Display Layer is specified for a Find Layer, the Find Field value will be returned in the search results.",
+            "layerOptions": {
+                "supportedTypes": ["FeatureLayer"],
+                "geometryTypes": ["esriGeometryPoint", "esriGeometryLine", "esriGeometryPolyline", "esriGeometryPolygon"]
+            },
+            "fieldOptions": {
+                "supportedTypes": ["esriFieldTypeString", "esriFieldTypeSmallInteger", "esriFieldTypeInteger"]
+            }
+        }, {
+            "label": "Zoom level",
             "fieldName": "highlighter.highlightZoomLevel",
             "type": "number",
             "constraints": {
                 "min": 0,
                 "places": 0
             },
-            "tooltip": "Map zoom level for viewing selected features"
+            "tooltip": "Zoom level for selected search results"
         }]
     }, {
         "category": "<b>Filter & Edit Settings</b>",
@@ -134,7 +160,7 @@
         "classname": "js.LGNotes",
         "config": {
             "notes": [
-                "2fbbedf5a8ca324f 2016-02-18 11:52:24 -0800"
+                "bb868ac73d73edfd 2016-04-20 09:49:59 -0700"
             ]
         }
     }, {
@@ -194,6 +220,36 @@
             "fill": true
         }
     }, {
+        "classname": "js.LGSearchFeatureLayerMultiplexer",
+        "config": {
+            "rootId": "featureSearcher",
+            "parentDiv": "contentFrame",
+            "dependencyId": "map",
+            "busyIndicator": "busyIndicator",
+            "publishPointsOnly": false,
+            "searchPattern": "%${1}%",
+            "caseInsensitiveSearch": true
+        }
+    }, {
+        "classname": "js.LGSearchBoxByText",
+        "styles": ".searchBox{display:none;width:200px;max-height:224px;padding:4px;position:absolute;overflow:hidden;z-index:40;word-wrap:break-word;border:1px solid lightgray}.resultsListBox{top:53px;overflow:auto}.okIE .resultsListBox{position:absolute;left:4px;right:4px;bottom:4px;width:auto}.lt-ie9 .resultsListBox{width:100%;height:182px}.resultsListTable{width:97%;margin:4px}.lt-ie9 .resultsListTable{width:87%}.resultsListBody{width:80%}.resultsListSearching{background-image:url('images/loading.gif');background-position:center center;background-repeat:no-repeat;width:100%;height:1.5em}.resultsListEntry{width:84%;margin:2px;padding:4px;cursor:pointer}",
+        "config": {
+            "rootId": "searchBox",
+            "trigger": "search",
+            "publish": "showFeature",
+            "parentDiv": "contentFrame",
+            "rootClass": "searchBox",
+            "horizOffset": -2,
+            "vertOffset": [2, -2],
+            "searcher": "featureSearcher",
+            "showPrompt": "@tooltips.search",
+            "resultsListBoxClass": "resultsListBox",
+            "resultsListTableClass": "resultsListTable",
+            "resultsListBodyClass": "resultsListBody",
+            "resultsListSearchingClass": "resultsListSearching",
+            "resultsListEntryClass": "resultsListEntry"
+        }
+    }, {
         "classname": "js.LGHighlighter",
         "config": {
             "rootId": "highlighter",
@@ -223,7 +279,7 @@
             "dependencyId": "map",
             "rootClass": "dijitContainer",
             "horizOffset": 19,
-            "vertOffset": 151,
+            "vertOffset": 91,
             "dijitAmd": "esri/dijit/HomeButton"
         }
     }, {
@@ -234,20 +290,8 @@
             "dependencyId": "map",
             "rootClass": "dijitContainer",
             "horizOffset": 19,
-            "vertOffset": 201,
+            "vertOffset": 132,
             "dijitAmd": "esri/dijit/LocateButton"
-        }
-    }, {
-        "classname": "js.LGMapSearchDijitContainer",
-        "styles": ".arcgisSearch .searchBtn{padding:5px;}.arcgisSearch .searchGroup .searchInput{padding:5px 24px 5px 12px;}.arcgisSearch .hasButtonMode .searchExpandContainer{height:32px;}.arcgisSearch .hasButtonMode.searchExpanded .searchExpandContainer,.arcgisSearch .hasButtonMode .searchAnimate{width:237px;}.arcgisSearch .hasButtonMode.searchExpanded.hasMultipleSources .searchExpandContainer,.arcgisSearch .hasButtonMode.hasMultipleSources .searchAnimate{width:268px;}.arcgisSearch .searchClear{top:1px;}.esriSimpleSliderTL{left:20px;top:70px;}.dijitContainer{overflow:visible}",
-        "config": {
-            "rootId": "featureSearcher",
-            "parentDiv": "map",
-            "dependencyId": "map",
-            "rootClass": "dijitContainer",
-            "horizOffset": 20,
-            "vertOffset": 20,
-            "searchAlwaysExpanded": true
         }
     }, {
         "classname": "js.LGGallery",
@@ -347,6 +391,19 @@
             "busyIndicator": "busyIndicator",
             "nonieSwitchDelaySecs": "1.5",
             "ieSwitchDelaySecs": "3.0"
+        }
+    }, {
+        "classname": "js.LGCommand",
+        "config": {
+            "rootId": "search",
+            "tooltip": "@tooltips.search",
+            "iconJson": "[{'shape':{'type':'circle','cx':13,'cy':13,'r':10},'stroke':{'type':'stroke','color':{'r':255,'g':255,'b':255,'a':1},'style':'solid','width':2,'cap':'butt','join':4}},{'shape':{'type':'line','x1':20,'y1':20,'x2':30,'y2':30},'stroke':{'type':'stroke','color':{'r':255,'g':255,'b':255,'a':0.25},'style':'solid','width':2,'cap':'butt','join':4}}]",
+            "iconColorizerId": "colorizer",
+            "parentDiv": "commandPanel",
+            "rootClass": "commandButton",
+            "iconClass": "commandIcon",
+            "dependencyId": "featureSearcher",
+            "publish": "search"
         }
     }, {
         "classname": "js.LGCommand",

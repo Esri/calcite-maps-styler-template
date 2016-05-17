@@ -19,7 +19,7 @@ define(
     map: {
       error: "无法创建地图"
     },
-    legend:{
+    legend: {
       title: "图例"
     },
     share: {
@@ -30,17 +30,10 @@ define(
       error: "默认情况下，将使用 web 地图描述或代码片段。配置应用程序来为关于面板添加自定义代码片段。"
     },
     time: {
-        enableTimeMessage: "指定的 web 地图不包含任何已启用时间的图层。有关详细信息，请参阅 ${link} 帮助主题。要使用模板而不显示时间，请使用配置面板来禁用时间选项。",
-        enableTimeMessageLink: "http://doc.arcgis.com/en/arcgis-online/create-maps/configure-time.htm#ESRI_SECTION1_F1D4A275B4AB4CC79198CBA9D0AD8727",
-        datePattern: "yyyy 年 m 月 d 日",
-        hourTimePattern: "H",
-        millisecondTimePattern: "H:mm:ss",
-        minuteTimePattern: "H:mm",
-        secondTimePattern: "H:mm:ss",
-        timeRange: "${startTime} 至 ${endTime}",
-        yearPattern: "yyyy 年"
+      enableTimeMessage: "试_The specified web map does not contain any time enabled layers. View the ${link} help topic for details. To use the template without displaying time use the configuration panel to disable the time option______________________________________________________________验.",
+      enableTimeMessageLink: "试_http://doc.arcgis.com/en/arcgis-online/create-maps/configure-time.htm#ESRI_SECTION1_F1D4A275B4AB4CC79198CBA9D0AD8727____________________________________验"
     },
-    histogram:{
+    histogram: {
       error: "在快照模式下，web 地图中的已启用时间的要素层不可用。配置应用程序以使用另一个 web 地图或禁用直方图选项。"
     }
   })
