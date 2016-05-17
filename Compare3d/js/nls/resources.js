@@ -17,7 +17,11 @@
 define({
   root: ({
     scene: {
-      error: "Unable to create scene"
+      error: "Unable to create scene",
+      support: "Browser not supported",
+      noScene: "Specify scene id(s)",
+      noConfig: "Config is not defined",
+      invalidScene: "Unable to create scene"
     },
     tools: {
       linkLabel: "Link Views",
@@ -33,7 +37,7 @@ define({
   "fi": 1,
   "fr": 1,
   "he": 1,
-  "hr": 1, 
+  "hr": 1,
   "it": 1,
   "ja": 1,
   "ko": 1,
