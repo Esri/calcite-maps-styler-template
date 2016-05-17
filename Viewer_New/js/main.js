@@ -326,7 +326,6 @@ define([
           this.updateAriaInfo();
           toolbar.updatePageNavigation();
           this._updateTheme();
-        //this._setActiveTool(toolbar);
         }));
       }));
     },

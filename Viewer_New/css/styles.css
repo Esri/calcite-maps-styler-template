@@ -1110,6 +1110,13 @@ input[type=checkbox]{
   font-size:14px;
   color:#fff;
 }
+.btnText{
+  padding-right: .5em;
+  font-size: 12px;
+  line-height: 26px;
+  vertical-align: middle;
+  margin: 2px 0 2px 0;
+}
 .icon-edit:before {
     content: "\e61b";
 }
