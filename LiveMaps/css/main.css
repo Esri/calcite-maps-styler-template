@@ -1,0 +1,351 @@
+html,
+body {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Loading */
+
+.loading-indicator {
+    /* Loading status */
+    display: none;
+    height: 100%;
+    width: 100%;
+    z-index: 500;
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    background: #fff;
+}
+
+.app-loading .loading-indicator,
+.app-error .loading-indicator {
+    /* Show this class when loading or error */
+    display: block;
+}
+
+.app-loading .loading-indicator {
+    /* Loading image */
+    background-position: center center;
+    background-image: url(../images/loading.gif);
+    background-repeat: no-repeat;
+}
+
+.app-error .loading-message {
+    /* Error status */
+    background-position: top center;
+    background-image: url(../images/error.png);
+    background-repeat: no-repeat;
+    padding-top: 60px;
+    width: 100%;
+    position: absolute;
+    z-index: 2;
+    top: 40%;
+    left: 0;
+    text-align: center;
+}
+
+.shadow {
+    -webkit-box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.3);
+    box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.3);
+}
+
+
+/* Esri UI */
+
+.esriControlsBR {
+    position: absolute;
+    right: 5px;
+    bottom: 5px;
+    z-index: 30;
+    text-align: right;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+.esriRTL .esriControlsBR {
+    left: 5px;
+    right: auto;
+}
+
+.esriAttribution {
+    display: none !important;
+}
+
+#panelAttribution {
+    position: absolute;
+    right: 80px;
+    bottom: 0px;
+    z-index: 30;
+    text-align: right;
+    /*margin-bottom: -5px;*/
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+#panelAttribution img {
+    height: 40px;
+}
+
+.esriRTL #panelAttribution {
+  left: 80px;
+  right: auto;
+}
+
+.high {
+    bottom: 165px !important;
+}
+
+.esriSimpleSlider {
+    background-color: #000000;
+    color: #ffffff;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -o-border-radius: 0;
+    border-radius: 0;
+}
+
+.esriSimpleSliderTL {
+    top: 15px;
+    left: 15px;
+}
+
+.esriSimpleSliderVertical .esriSimpleSliderIncrementButton,
+.esriSimpleSliderVertical .esriSimpleSliderDecrementButton {
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -o-border-radius: 0;
+    border-radius: 0;
+}
+
+.esriSimpleSliderDecrementButton:hover, 
+.esriSimpleSliderIncrementButton:hover,
+.esriSimpleSliderDecrementButton:active, 
+.esriSimpleSliderIncrementButton:active {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.esriSimpleSliderDisabledButton, 
+.esriSimpleSliderDisabledButton:active, 
+.esriSimpleSliderDisabledButton:hover {
+    background-color: transparent;
+}
+
+
+/* Template */
+
+#panelMap {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#panelTop {
+    position: absolute;
+    left: 15px;
+    bottom: 15px;
+    width: 210px;
+    height: 210px;
+    display: inline-block;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+.closed {
+    bottom: 140px !important;
+    width: 40px !important;
+    height: 40px !important;
+    -webkit-border-radius: 20px !important;
+    border-radius: 20px !important;
+}
+
+.esriRTL #panelTop {
+    left: auto;
+    right: 15px;
+}
+
+#panelButtons {
+    position: absolute;
+    bottom: 0;
+    height: 40px;
+    display: block;
+    padding: 0;
+    white-space: nowrap;
+}
+
+.panelBtn {
+    float: left;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 18px;
+}
+
+.esriRTL .panelBtn {
+    float: right;
+}
+
+#btnToggle {
+    background-image: url(../images/grid.png);
+}
+
+.black #btnToggle {
+    background-image: url(../images/grid_b.png) !important;
+}
+
+#panelText {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+.closed #panelText {
+    width: 0;
+    height: 0;
+    overflow: hidden;
+}
+
+#panelTitle {
+    line-height: 25px;
+    font-size: 24px;
+    font-weight: 400;
+    display: block;
+    overflow: hidden;
+    height: auto;
+    max-height: 75px;
+    text-overflow: ellipsis;
+    padding: 10px 10px 5px 10px;
+}
+
+#panelSubtitle {
+    line-height: 15px;
+    font-size: 14px;
+    display: block;
+    overflow: hidden;
+    height: 15px;
+    padding: 0 10px 0 10px;
+    text-overflow: ellipsis;
+}
+
+#panelCounter {
+    position: absolute;
+    bottom: 40px;
+    line-height: 70px;
+    font-size: 70px;
+    display: block;
+    overflow: hidden;
+    height: 70px;
+    padding: 0 10px 0 10px;
+    text-overflow: ellipsis;
+}
+
+#panelBottom {
+    position: absolute;
+    bottom: -160px;
+    width: 100%;
+    height: 160px;
+    background-color: rgba(0, 0, 0, 0.8);
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+    display: block;
+    clear: both;
+}
+
+.opened {
+    bottom: 0px !important;
+}
+
+#panelInner {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 25px;
+    bottom: 0px;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+#panelContent {
+    width: 100%;
+    height: 100%;
+    display: block;
+    overflow-x: visible;
+    overflow-y: hidden;
+}
+
+.panelMsg {
+    color: #c8c8c8;
+    font-size: 12px;
+}
+
+
+/* MEDIA SPECIFIC: SMALL DEVICES */
+
+@media only screen and (max-width: 500px) {
+    .esriSimpleSlider {
+        display: none;
+    }
+    #panelAttribution {
+        right: 52px;
+    }
+    #panelAttribution img {
+        height: 20px;
+    }
+    .esriRTL #panelAttribution {
+      left: 52px;
+      right: auto;
+    }
+    #panelTop {
+        position: absolute;
+        left: 0px;
+        bottom: 0px;
+        width: 100%;
+        height: 150px;
+        z-index: 1000;
+    }
+    .closed {
+        left: 10px !important;
+    }
+    .esriRTL #panelTop {
+        right: 0px;
+        left: auto;
+    }
+    .esriRTL .closed {
+        left: auto !important;
+        right: 10px !important;
+    }
+    #panelTitle {
+        max-height: 50px;
+    }
+    #panelCounter {
+        line-height: 35px;
+        font-size: 30px;
+        height: 35px;
+    }
+}

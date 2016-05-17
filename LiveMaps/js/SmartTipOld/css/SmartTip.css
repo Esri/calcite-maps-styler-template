@@ -1,0 +1,168 @@
+.esri-smart-tip {
+    position: absolute;
+    left: 300px;
+    top: 100px;
+    width: 300px;
+    height: auto;
+    overflow: hidden;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+     -ms-transform: translate(20px,-50%); /* IE 9 */
+    -webkit-transform: translate(20px,-50%); /* Safari */
+    transform: translate(20px,-50%);
+}
+
+.shadow {
+    -webkit-box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.3);
+    box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.3);
+}
+
+.esri-smart-tip .top {
+    width: 100%;
+    overflow: hidden;
+    background-color: #ff0000;
+    display: block;
+}
+
+.esri-smart-tip .top img {
+    display: block;
+    width: 100%;
+}
+
+.esri-smart-tip .bottom {
+    width: 100%;
+    height: 110px;
+    padding: 10px;
+    overflow: hidden;
+    background-color: #ffffff;
+    color: #a3a3a3;
+    font-size: 12px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.esri-smart-tip .header {
+    position: relative;
+    width: 100%;
+    height: 40px;
+    display: block;
+}
+
+.esri-smart-tip .avatar {
+    position: absolute;
+    width: 40px;
+    height: 30px;
+}
+
+.esri-smart-tip .avatar img {
+    width: 30px;
+    height: 30px;
+    -webkit-border-radius: 15px;
+    border-radius: 15px;
+}
+
+.esri-smart-tip .title {
+    position: absolute;
+    left: 40px;
+    width: 180px;
+    height: 30px;
+    line-height: 30px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+    color: #000000;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.esri-smart-tip .title img {
+    width: 30px;
+    height: 30px;
+    -webkit-border-radius: 15px;
+}
+
+.esri-smart-tip .date {
+    position: absolute;
+    right: 0;
+    width: 60px;
+    height: 30px;
+    line-height: 30px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+    text-align: right;
+    color: #a3a3a3;
+}
+
+.esri-smart-tip .desc {
+    position: relative;
+    width: 100%;
+    height: 52px;
+    line-height: 13px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+    color: #a3a3a3;
+}
+
+/* Animations */
+
+@keyframes pulse {
+    0% {
+        opacity: 0;
+        transform: scale(0.00);
+    }
+    20% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: scale(10);
+    }
+}
+
+circle[data-count="1"] {
+    -webkit-transform-origin: center;
+    -moz-transform-origin: center;
+    -ms-transform-origin: center;
+    -o-transform-origin: center;
+    animation-duration: 3s;
+    animation-name: pulse;
+    animation-iteration-count: infinite;
+    animation-delay: 0.9s;
+    animation-timing-function: cubic-bezier(0,.54,.53,1);
+    -webkit-animation-duration: 3s;
+    -webkit-animation-name: pulse;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-delay: 0.9s;
+    -webkit-animation-timing-function: cubic-bezier(0,.54,.53,1);
+}
+
+circle[data-count="2"] {
+    -webkit-transform-origin: center;
+    -moz-transform-origin: center;
+    -ms-transform-origin: center;
+    -o-transform-origin: center;
+    transform-origin: center;
+    animation-duration: 3s;
+    animation-name: pulse;
+    animation-timing-function: cubic-bezier(0,.54,.53,1);
+    animation-iteration-count: infinite;
+    animation-delay: 1.3s;
+    -webkit-animation-duration: 3s;
+    -webkit-animation-name: pulse;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-delay: 1.3s;
+    -webkit-animation-timing-function: cubic-bezier(0,.54,.53,1);
+}
+
+
+
+
