@@ -382,6 +382,7 @@ define([
         var basemapDiv = toolbar.createTool(tool, panelClass);
         var basemap = new BasemapGallery({
           id: "basemapGallery",
+          bingMapsKey: this.config.bingKey || "",
           map: this.map,
           showArcGISBasemaps: true,
           portalUrl: this.config.sharinghost,
@@ -692,7 +693,7 @@ define([
                 var ovMap = new OverviewMap({
                   id: "overviewMap",
                   map: this.map,
-                  height: panelHeight,
+                  //height: panelHeight,
                   visible: false
                 }, domConstruct.create("div", {},
                   ovMapDiv));
