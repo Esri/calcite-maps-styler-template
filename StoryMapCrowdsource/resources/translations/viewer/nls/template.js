@@ -61,7 +61,14 @@ define({
       }
     },
     selectedShares: {
-      enlargePhotoButton: 'View Larger'
+      enlargePhotoButton: 'View Larger',
+      review: {
+        title: 'Review Item',
+        options: {
+          approve: 'Approve',
+          reject: 'Reject'
+        }
+      }
     },
     contribute: {
       login: {
@@ -109,7 +116,7 @@ define({
         imageUrl: 'The <% attribute %> must be a valid image URL. In most cases the URL will end with ".jpg", ".gif"., or ".png" extension.'
       },
       pattern: {
-        noSpace: 'The <% attribute %> cannot contain any spaces.'
+        commaSeparated: 'The <% attribute %> cannot contain any spaces.'
       },
       arcgis: {
         location: {
