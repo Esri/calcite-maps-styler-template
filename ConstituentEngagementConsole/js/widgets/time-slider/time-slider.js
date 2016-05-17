@@ -79,18 +79,34 @@ define([
         * @memberOf widgets/time-slider/time-slider
         */
         _createTimeSlider: function (timeInfoData) {
+            var timeExtent, timeSlider, lastTickCount;
             this.timeInfoData = timeInfoData;
-            var timeExtent = this._createTimeExtent(timeInfoData),
-                timeSlider = new TimeSlider({
-                    "thumbCount": timeInfoData.thumbCount
-                }, domConstruct.create("div", {}, this.timeSliderContainer));
-            timeSlider.setThumbIndexes([0, 1]);
+            timeExtent = this._createTimeExtent(timeInfoData);
+            timeSlider = new TimeSlider({
+                "thumbCount": timeInfoData.thumbCount
+            }, domConstruct.create("div", {}, this.timeSliderContainer));
             //Check the configuration of time slider in webmap, if timeStopInterval is available use it otherwise
             //create time slider ticks/interval by numberOfStops property
             if (timeInfoData.timeStopInterval) {
                 timeSlider.createTimeStopsByTimeInterval(timeExtent, timeInfoData.timeStopInterval.interval, timeInfoData.timeStopInterval.units);
             } else {
                 timeSlider.createTimeStopsByCount(timeExtent, timeInfoData.numberOfStops + 1);
+            }
+            // if filter is enabled set position of thumb index to 1
+            if (this.appConfig.enableFilter) {
+                timeSlider.setThumbIndexes([0, 1]);
+            } else { // if filter is disabled set position of thumb index to end of the timeslider
+                if (timeSlider.hasOwnProperty("_numTicks")) {
+                    lastTickCount = timeSlider._numTicks;
+                    lastTickCount--;
+                } else {
+                    lastTickCount = 1;
+                }
+                if (timeInfoData.thumbCount === 1) {
+                    timeSlider.setThumbIndexes([lastTickCount]);
+                } else {
+                    timeSlider.setThumbIndexes([0, lastTickCount]);
+                }
             }
             timeSlider.on("time-extent-change", lang.hitch(this, this._showSliderInfo));
             domAttr.set(this.timeSliderTextContainer, "innerHTML", this.appConfig.i18n.timeSlider.timeSliderLabel);

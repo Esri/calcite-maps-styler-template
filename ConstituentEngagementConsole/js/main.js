@@ -650,10 +650,13 @@ define([
         * @memberOf widgets/main/main
         */
         _addOperationalLayerInSnapShotMode: function () {
-            var opLayerInfo, staticDefinitionExpression, cloneRenderer;
+            var opLayerInfo, staticDefinitionExpression, cloneRenderer, cloneLabelingInfo;
             //get selected operation layer details
             opLayerInfo = this._layerSelectionDetails.operationalLayerDetails;
+            // clone renderer
             cloneRenderer = lang.clone(this.map.getLayer(opLayerInfo.id).renderer);
+            // clone labeling info
+            cloneLabelingInfo = lang.clone(this.map.getLayer(opLayerInfo.id).labelingInfo);
             // get index of layer
             this._getExistingIndex(opLayerInfo.id);
             //remove selected layer from map
@@ -680,6 +683,11 @@ define([
             }
             //set layer opacity configured in webmap
             this._refinedOperationalLayer.setOpacity(opLayerInfo.opacity);
+            // set labelling info
+            if (cloneLabelingInfo) {
+                this._refinedOperationalLayer.setLabelingInfo(cloneLabelingInfo);
+            }
+
         },
 
         /**
@@ -901,6 +909,38 @@ define([
         },
 
         /**
+        * This function is used to add feature layer in label layer
+        * @memberOf widgets/main/main
+        */
+        _addFeatureLayerInLabelLayer: function () {
+            var labelLayerObj;
+            labelLayerObj = this.map.getLayer("labels");
+            if (labelLayerObj && labelLayerObj.hasOwnProperty("featureLayers")) {
+                if (this._refinedOperationalLayer.hasOwnProperty("labelingInfo")) {
+                    labelLayerObj.featureLayers.push(this._refinedOperationalLayer);
+                    labelLayerObj.refresh();
+                }
+            }
+        },
+
+        /**
+        * This function is used to remove feature layer in label layer
+        * @memberOf widgets/main/main
+        */
+        _removeLayerFromLabelLayer: function (layerID) {
+            var labelLayerObj, i;
+            labelLayerObj = this.map.getLayer("labels");
+            if (labelLayerObj && labelLayerObj.hasOwnProperty("featureLayers")) {
+                for (i = 0; i < labelLayerObj.featureLayers.length; i++) {
+                    if (layerID === labelLayerObj.featureLayers[i].id) {
+                        labelLayerObj.featureLayers.splice(i, 1);
+                        break;
+                    }
+                }
+            }
+        },
+
+        /**
         * This function is used to create event handles
         * @param{object} operational layer to which event needs to be attached
         * @memberOf widgets/main/main
@@ -911,12 +951,13 @@ define([
                 this._featureLayerClickHandle = on(this._refinedOperationalLayer, "click", lang.hitch(this, function (evt) {
                     this._dataViewerWidget.onFeatureClick(evt);
                 }));
-
                 this._dataViewerFeatureLayerUpdateEndHandle = on(this._refinedOperationalLayer, "update-end", lang.hitch(this, function () {
                     if (this._reorderLayers) {
                         this._reorderLayers = false;
                         this._reorderAllLayers();
                     }
+                    this._removeLayerFromLabelLayer(this._refinedOperationalLayer.id);
+                    this._addFeatureLayerInLabelLayer();
                     this._refinedOperationalLayer.clearSelection();
                     this._toggleNoFeatureFoundDiv(true);
                     //Enable time slider if it was disable

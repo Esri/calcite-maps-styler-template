@@ -140,11 +140,15 @@ define([
                 if (this._features.length > 0) {
                     this._createDataViewerPanel();
                 } else {
-                    // Display message if no feature is available in current map extent for display
-                    domClass.remove(this.noFeatureDiv, "esriCTHidden");
-                    domClass.add(this.dataViewerContainer, "esriCTHidden");
-                    this.noFeatureDiv.innerHTML = this.appConfig.i18n.dataviewer.noIssuesReported;
-                    this.appUtils.hideLoadingIndicator();
+                    if (this.appConfig.enableFilter) {
+                        this._createDataViewerPanel();
+                    } else {
+                        // Display message if no feature is available in current map extent for display
+                        domClass.remove(this.noFeatureDiv, "esriCTHidden");
+                        domClass.add(this.dataViewerContainer, "esriCTHidden");
+                        this.noFeatureDiv.innerHTML = this.appConfig.i18n.dataviewer.noIssuesReported;
+                        this.appUtils.hideLoadingIndicator();
+                    }
                 }
             }
         },
@@ -497,7 +501,7 @@ define([
             thead = domConstruct.create("thead", {}, this._table);
             tr = domConstruct.create("tr", {}, thead);
             // if length of feature array is greater than 0 then
-            if (this._features.length > 0) {
+            if ((this._features.length > 0) || ((this._features.length === 0) && (this.appConfig.enableFilter))) {
                 this._getFieldProperties();
                 // loop through the this._displayColumn array for creating header columns of table
                 for (i = 0; i < this._displayColumn.length; i++) {
