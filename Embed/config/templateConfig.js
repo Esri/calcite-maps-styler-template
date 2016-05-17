@@ -58,6 +58,7 @@ define({
     "basemap_gallery",
     "alt_basemap",
     "legend",
+    "legendlayers",
     "popup_sidepanel",
     "details",
     "searchextent",

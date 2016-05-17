@@ -505,7 +505,7 @@ a {
   border: 1px solid #ccc;
 }
 /*.esriPopup.light .contentPane, .esriPopup.light .actionsPane{
-    background-color: $light-base-color;   
+    background-color: $light-base-color;
 }*/
 .esriPopup.light .titlePane {
   background-color: #e0e0df;
@@ -548,6 +548,10 @@ a {
 }
 .hide-toggle {
   display: none;
+}
+.esriLayerList .esriContainer{
+  border-bottom:none;
+  border-top: none;
 }
 /*Drawer*/
 .border-container-outer {

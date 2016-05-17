@@ -113,6 +113,10 @@
                "type":"boolean",
                "fieldName":"legend",
                "label":"Display a legend in side panel"
+            },{
+              "type":"boolean",
+              "fieldName":"layerlist",
+              "label": "Display layer list in side panel instead of legned"
             },
             {
                "type":"boolean",

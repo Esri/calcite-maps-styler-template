@@ -8,6 +8,7 @@ define([
   "dojo/_base/declare",
   "dojo/_base/lang",
   "dojo/query",
+  "dojo/Deferred",
   "dojo/dom",
   "dojo/dom-class",
   "dojo/dom-construct",
@@ -31,6 +32,7 @@ define([
   declare,
   lang,
   query,
+  Deferred,
   dom,
   domClass,
   domConstruct,
@@ -57,11 +59,7 @@ define([
         this.config = config;
         window.config = config;
 
-        // responsive drawer
-        /*if (!Drawer) {
-            domClass.add(document.body, "no-title");
-            return;
-        }*/
+
         if (has("drawer")) {
           this._drawer = new Drawer({
             borderContainer: "border_container",
@@ -70,7 +68,7 @@ define([
             // center content pane node id
             direction: this.config.i18n.direction,
             config: this.config,
-            displayDrawer: (this.config.legend || this.config.details || this.config.popup_sidepanel),
+            displayDrawer: (this.config.legend || this.config.details || this.config.popup_sidepanel || this.config.legendlayers),
             drawerOpen: this.config.show_panel
           });
 
@@ -166,6 +164,19 @@ define([
         domClass.add(document.body, "no-zoom");
       }
 
+      require(["application/sniff!legendlayers?esri/dijit/LayerList"], lang.hitch(this, function(LayerList) {
+        if (!LayerList) {
+          return;
+        }
+        var layerList = new LayerList({
+          map: this.map,
+          showLegend: true,
+          layers: arcgisUtils.getLayerList(this.config.response)
+        }, domConstruct.create("div", {}, registry.byId("legend").domNode));
+
+        layerList.startup();
+      }));
+      // if layer list is enabled don't add legend
       require(["application/sniff!legend?esri/dijit/Legend"], lang.hitch(this, function(Legend) {
         if (!Legend) {
           return;
@@ -177,11 +188,13 @@ define([
         legend.startup();
       }));
 
+
+
       if (this.config.details) {
         var template = "<div class='map-title'>{title}</div><div class='map-details'>{description}</div>";
         var content = {
           title: this.config.response.itemInfo.item.title,
-          description: this.config.response.itemInfo.item.description || this.config.i18n.tools.details.error,
+          description: this.config.response.itemInfo.item.description || this.config.i18n.tools.details.error
         };
         registry.byId("details").set("content", lang.replace(template, content));
       }
