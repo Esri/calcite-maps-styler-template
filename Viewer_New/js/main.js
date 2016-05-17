@@ -525,6 +525,7 @@ define([
           layerInfos: this.editableLayers,
           toolbarVisible: has("edit-toolbar")
         };
+        this.map.enableSnapping();
         this.editor = new Editor({
           settings: settings
         }, domConstruct.create("div", {}, this.editorDiv));
