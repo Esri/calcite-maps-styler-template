@@ -235,7 +235,7 @@ define(["dojo/has"], function(has) {
   });
   /*Detect https*/
   has.add("secure", function() {
-    return (location.protocol === "https");
+    return (document.location.protocol === "https");
   });
   /*Geolocation Feature Detection*/
   has.add("native-gelocation", function(g) {
