@@ -14,31 +14,29 @@
  | See the License for the specific language governing permissions and
  | limitations under the License.
  */
-define(
-     ({
-        map: {
-            error: "无法创建地图"
-        },
-        tools:{
-            bookmarkTool: "书签",
-            basemapTool: "底图",
-            legendTool: "图例",
-            detailsTool: "详细信息",
-            measureTool: "测量",
-            shareTool: "共享",
-            layerTool: "图层",
-            tableTool: "表",
-            editTool: "编辑",
-            printTool: "打印",
-            printLegend: "向输出添加图例",
-            printLayouts: {
-                  "label1": '横向',
-                  "label2": '纵向',
-                  "label3": '横向',
-                  "label4": '纵向'
-            },
-            printTitle: "标题",
-            printTitlePrompt: "添加自定义标题"
-        }
-    })
-);
+define({
+  "map": {
+    "error": "无法创建地图"
+  },
+  "tools": {
+    "bookmarkTool": "书签",
+    "basemapTool": "底图",
+    "legendTool": "图例",
+    "detailsTool": "详细信息",
+    "measureTool": "测量",
+    "shareTool": "共享",
+    "layerTool": "图层",
+    "tableTool": "表",
+    "editTool": "编辑",
+    "printTool": "打印",
+    "printLegend": "向输出添加图例",
+    "printLayouts": {
+      "label1": "横向",
+      "label2": "纵向",
+      "label3": "横向",
+      "label4": "纵向"
+    },
+    "printTitle": "标题",
+    "printTitlePrompt": "添加自定义标题"
+  }
+});

@@ -14,31 +14,29 @@
  | See the License for the specific language governing permissions and
  | limitations under the License.
  */
-define(
-     ({
-        map: {
-            error: "No se puede crear el mapa"
-        },
-        tools:{
-            bookmarkTool: "Marcadores (Bookmarks)",
-            basemapTool: "Mapas base",
-            legendTool: "Leyenda",
-            detailsTool: "Detalles",
-            measureTool: "Medición",
-            shareTool: "Compartir",
-            layerTool: "Capas",
-            tableTool: "Tabla",
-            editTool: "Editar",
-            printTool: "Imprimir",
-            printLegend: "Agregar leyenda a la salida",
-            printLayouts: {
-                  "label1": 'Horizontal',
-                  "label2": 'Vertical',
-                  "label3": 'Horizontal',
-                  "label4": 'Vertical'
-            },
-            printTitle: "Título",
-            printTitlePrompt: "Agregar título personalizado"
-        }
-    })
-);
+define({
+  "map": {
+    "error": "No se puede crear el mapa"
+  },
+  "tools": {
+    "bookmarkTool": "Marcadores (Bookmarks)",
+    "basemapTool": "Mapas base",
+    "legendTool": "Leyenda",
+    "detailsTool": "Detalles",
+    "measureTool": "Medición",
+    "shareTool": "Compartir",
+    "layerTool": "Capas",
+    "tableTool": "Tabla",
+    "editTool": "Editar",
+    "printTool": "Imprimir",
+    "printLegend": "Agregar leyenda a la salida",
+    "printLayouts": {
+      "label1": "Horizontal",
+      "label2": "Vertical",
+      "label3": "Horizontal",
+      "label4": "Vertical"
+    },
+    "printTitle": "Título",
+    "printTitlePrompt": "Agregar título personalizado"
+  }
+});

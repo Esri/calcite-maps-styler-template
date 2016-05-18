@@ -14,31 +14,29 @@
  | See the License for the specific language governing permissions and
  | limitations under the License.
  */
-define(
-     ({
-        map: {
-            error: "לא ניתן ליצור מפה"
-        },
-        tools:{
-            bookmarkTool: "סימניות",
-            basemapTool: "מפות בסיס",
-            legendTool: "מקרא",
-            detailsTool: "פרטים",
-            measureTool: "מדידה",
-            shareTool: "שתף",
-            layerTool: "שכבות",
-            tableTool: "טבלה",
-            editTool: "ערוך",
-            printTool: "הדפס",
-            printLegend: "הוסף מקרא לפלט",
-            printLayouts: {
-                  "label1": 'לרוחב',
-                  "label2": 'לאורך',
-                  "label3": 'לרוחב',
-                  "label4": 'לאורך'
-            },
-            printTitle: "כותרת",
-            printTitlePrompt: "הוסף כותרת מותאמת אישית"
-        }
-    })
-);
+define({
+  "map": {
+    "error": "לא ניתן ליצור מפה"
+  },
+  "tools": {
+    "bookmarkTool": "סימניות",
+    "basemapTool": "מפות בסיס",
+    "legendTool": "מקרא",
+    "detailsTool": "פרטים",
+    "measureTool": "מדידה",
+    "shareTool": "שתף",
+    "layerTool": "שכבות",
+    "tableTool": "טבלה",
+    "editTool": "ערוך",
+    "printTool": "הדפס",
+    "printLegend": "הוסף מקרא לפלט",
+    "printLayouts": {
+      "label1": "לרוחב",
+      "label2": "לאורך",
+      "label3": "לרוחב",
+      "label4": "לאורך"
+    },
+    "printTitle": "כותרת",
+    "printTitlePrompt": "הוסף כותרת מותאמת אישית"
+  }
+});

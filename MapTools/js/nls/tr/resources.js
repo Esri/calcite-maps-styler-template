@@ -14,31 +14,29 @@
  | See the License for the specific language governing permissions and
  | limitations under the License.
  */
-define(
-     ({
-        map: {
-            error: "Harita oluşturulamıyor"
-        },
-        tools:{
-            bookmarkTool: "Yer İşaretleri",
-            basemapTool: "Altlık Haritalar",
-            legendTool: "Gösterim",
-            detailsTool: "Ayrıntılar",
-            measureTool: "Ölç",
-            shareTool: "Paylaş",
-            layerTool: "Katmanlar",
-            tableTool: "Tablo",
-            editTool: "Düzenle",
-            printTool: "Yazdır",
-            printLegend: "Çıktıya gösterim ekle",
-            printLayouts: {
-                  "label1": 'Yatay',
-                  "label2": 'Dikey',
-                  "label3": 'Yatay',
-                  "label4": 'Dikey'
-            },
-            printTitle: "Başlık",
-            printTitlePrompt: "Özel başlık ekle"
-        }
-    })
-);
+define({
+  "map": {
+    "error": "Harita oluşturulamıyor"
+  },
+  "tools": {
+    "bookmarkTool": "Yer İşaretleri",
+    "basemapTool": "Altlık Haritalar",
+    "legendTool": "Gösterim",
+    "detailsTool": "Ayrıntılar",
+    "measureTool": "Ölç",
+    "shareTool": "Paylaş",
+    "layerTool": "Katmanlar",
+    "tableTool": "Tablo",
+    "editTool": "Düzenle",
+    "printTool": "Yazdır",
+    "printLegend": "Çıktıya gösterim ekle",
+    "printLayouts": {
+      "label1": "Yatay",
+      "label2": "Dikey",
+      "label3": "Yatay",
+      "label4": "Dikey"
+    },
+    "printTitle": "Başlık",
+    "printTitlePrompt": "Özel başlık ekle"
+  }
+});

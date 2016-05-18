@@ -1,10 +1,8 @@
-﻿define(
-     ({
-        "StatsBlock": {
-            "close": "sulge",
-            "next": "Järgmine",
-            "previous": "Eelmine",
-            "source":"Andmeallikas"
-        }
-    })
-);
+define({
+  "StatsBlock": {
+    "close": "sulge",
+    "next": "Järgmine",
+    "previous": "Eelmine",
+    "source": "Andmeallikas"
+  }
+});

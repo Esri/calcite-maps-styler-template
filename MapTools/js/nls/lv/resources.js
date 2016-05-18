@@ -14,31 +14,29 @@
  | See the License for the specific language governing permissions and
  | limitations under the License.
  */
-define(
-     ({
-        map: {
-            error: "Nevar izveidot karti"
-        },
-        tools:{
-            bookmarkTool: "Grāmatzīmes",
-            basemapTool: "Pamatkartes",
-            legendTool: "Apzīmējumi",
-            detailsTool: "Detaļas",
-            measureTool: "Izmērīt",
-            shareTool: "Kopīgot",
-            layerTool: "Slāņi",
-            tableTool: "Tabula",
-            editTool: "Rediģēt",
-            printTool: "Drukāt",
-            printLegend: "Pievienot apzīmējumus izvadei",
-            printLayouts: {
-                  "label1": 'Ainava',
-                  "label2": 'Portrets',
-                  "label3": 'Ainava',
-                  "label4": 'Portrets'
-            },
-            printTitle: "Nosaukums",
-            printTitlePrompt: "Pievienot pielāgotu virsrakstu"
-        }
-    })
-);
+define({
+  "map": {
+    "error": "Nevar izveidot karti"
+  },
+  "tools": {
+    "bookmarkTool": "Grāmatzīmes",
+    "basemapTool": "Pamatkartes",
+    "legendTool": "Apzīmējumi",
+    "detailsTool": "Detaļas",
+    "measureTool": "Izmērīt",
+    "shareTool": "Kopīgot",
+    "layerTool": "Slāņi",
+    "tableTool": "Tabula",
+    "editTool": "Rediģēt",
+    "printTool": "Drukāt",
+    "printLegend": "Pievienot apzīmējumus izvadei",
+    "printLayouts": {
+      "label1": "Ainava",
+      "label2": "Portrets",
+      "label3": "Ainava",
+      "label4": "Portrets"
+    },
+    "printTitle": "Nosaukums",
+    "printTitlePrompt": "Pievienot pielāgotu virsrakstu"
+  }
+});

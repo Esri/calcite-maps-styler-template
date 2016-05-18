@@ -14,31 +14,29 @@
  | See the License for the specific language governing permissions and
  | limitations under the License.
  */
-define(
-     ({
-        map: {
-            error: "ไม่สามารถสร้างแผนที่ได้"
-        },
-        tools:{
-            bookmarkTool: "บุ๊คมาร์ค",
-            basemapTool: "แผนที่ฐาน",
-            legendTool: "คำอธิบาย",
-            detailsTool: "รายละเอียด",
-            measureTool: "การวัด",
-            shareTool: "แชร์",
-            layerTool: "ชั้นข้อมูล",
-            tableTool: "ตาราง",
-            editTool: "แก้ไข",
-            printTool: "พิมพ์",
-            printLegend: "เพิ่มคำอธิบายแผนที่ไปยังส่วนผลลัพธ์",
-            printLayouts: {
-                  "label1": 'แนวนอน',
-                  "label2": 'แนวตั้ง',
-                  "label3": 'แนวนอน',
-                  "label4": 'แนวตั้ง'
-            },
-            printTitle: "ชื่อ",
-            printTitlePrompt: "เพิ่มชื่อที่ต้องการ"
-        }
-    })
-);
+define({
+  "map": {
+    "error": "ไม่สามารถสร้างแผนที่ได้"
+  },
+  "tools": {
+    "bookmarkTool": "บุ๊คมาร์ค",
+    "basemapTool": "แผนที่ฐาน",
+    "legendTool": "คำอธิบาย",
+    "detailsTool": "รายละเอียด",
+    "measureTool": "การวัด",
+    "shareTool": "แชร์",
+    "layerTool": "ชั้นข้อมูล",
+    "tableTool": "ตาราง",
+    "editTool": "แก้ไข",
+    "printTool": "พิมพ์",
+    "printLegend": "เพิ่มคำอธิบายแผนที่ไปยังส่วนผลลัพธ์",
+    "printLayouts": {
+      "label1": "แนวนอน",
+      "label2": "แนวตั้ง",
+      "label3": "แนวนอน",
+      "label4": "แนวตั้ง"
+    },
+    "printTitle": "ชื่อ",
+    "printTitlePrompt": "เพิ่มชื่อที่ต้องการ"
+  }
+});

@@ -14,31 +14,29 @@
  | See the License for the specific language governing permissions and
  | limitations under the License.
  */
-define(
-     ({
-        map: {
-            error: "Не удалось создать карту"
-        },
-        tools:{
-            bookmarkTool: "Закладки",
-            basemapTool: "Базовые карты",
-            legendTool: "Легенда",
-            detailsTool: "Детали",
-            measureTool: "Измерить",
-            shareTool: "Общий доступ",
-            layerTool: "Слои",
-            tableTool: "Таблица",
-            editTool: "Редактировать",
-            printTool: "Печать",
-            printLegend: "Добавить легенду к результату",
-            printLayouts: {
-                  "label1": 'Альбомная',
-                  "label2": 'Книжная',
-                  "label3": 'Альбомная',
-                  "label4": 'Книжная'
-            },
-            printTitle: "Название",
-            printTitlePrompt: "Добавить пользовательское название"
-        }
-    })
-);
+define({
+  "map": {
+    "error": "Не удалось создать карту"
+  },
+  "tools": {
+    "bookmarkTool": "Закладки",
+    "basemapTool": "Базовые карты",
+    "legendTool": "Легенда",
+    "detailsTool": "Детали",
+    "measureTool": "Измерить",
+    "shareTool": "Общий доступ",
+    "layerTool": "Слои",
+    "tableTool": "Таблица",
+    "editTool": "Редактировать",
+    "printTool": "Печать",
+    "printLegend": "Добавить легенду к результату",
+    "printLayouts": {
+      "label1": "Альбомная",
+      "label2": "Книжная",
+      "label3": "Альбомная",
+      "label4": "Книжная"
+    },
+    "printTitle": "Название",
+    "printTitlePrompt": "Добавить пользовательское название"
+  }
+});

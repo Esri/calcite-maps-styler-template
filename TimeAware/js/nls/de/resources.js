@@ -1,4 +1,4 @@
-﻿/*global define */
+/*global define */
 /*
  | Copyright 2014 Esri
  |
@@ -14,27 +14,25 @@
  | See the License for the specific language governing permissions and
  | limitations under the License.
  */
-define(
-   ({
-    map: {
-      error: "Karte kann nicht erstellt werden"
-    },
-    legend: {
-      title: "Legende"
-    },
-    share: {
-      title: "Freigeben"
-    },
-    about: {
-      title: "Informationen zu",
-      error: "Die Beschreibung oder der Ausschnitt der Webkarte wird standardmäßig verwendet. Konfigurieren Sie die App, um einen benutzerdefinierten Abschnitt für den Bereich \"Info\" hinzuzufügen."
-    },
-    time: {
-      enableTimeMessage: "ä_The specified web map does not contain any time enabled layers. View the ${link} help topic for details. To use the template without displaying time use the configuration panel to disable the time option______________________________________________________________Ü.",
-      enableTimeMessageLink: "ä_http://doc.arcgis.com/en/arcgis-online/create-maps/configure-time.htm#ESRI_SECTION1_F1D4A275B4AB4CC79198CBA9D0AD8727____________________________________Ü"
-    },
-    histogram: {
-      error: "In der Webkarte sind keine Feature-Layer mit aktivierten Zeiteigenschaften im Snapshot-Modus verfügbar. Konfigurieren Sie die App, um eine andere Webkarte zu verwenden, oder deaktivieren Sie die Histogramm-Option."
-    }
-  })
-);
+define({
+  "map": {
+    "error": "Karte kann nicht erstellt werden"
+  },
+  "legend": {
+    "title": "Legende"
+  },
+  "share": {
+    "title": "Freigeben"
+  },
+  "about": {
+    "title": "Informationen zu",
+    "error": "Die Beschreibung oder der Ausschnitt der Webkarte wird standardmäßig verwendet. Konfigurieren Sie die App, um einen benutzerdefinierten Abschnitt für den Bereich \"Info\" hinzuzufügen."
+  },
+  "time": {
+    "enableTimeMessage": "ä_The specified web map does not contain any time enabled layers. View the ${link} help topic for details. To use the template without displaying time use the configuration panel to disable the time option______________________________________________________________Ü.",
+    "enableTimeMessageLink": "ä_http://doc.arcgis.com/en/arcgis-online/create-maps/configure-time.htm#ESRI_SECTION1_F1D4A275B4AB4CC79198CBA9D0AD8727____________________________________Ü"
+  },
+  "histogram": {
+    "error": "In der Webkarte sind keine Feature-Layer mit aktivierten Zeiteigenschaften im Snapshot-Modus verfügbar. Konfigurieren Sie die App, um eine andere Webkarte zu verwenden, oder deaktivieren Sie die Histogramm-Option."
+  }
+});

@@ -1,4 +1,4 @@
-﻿/*global define */
+/*global define */
 /*
  | Copyright 2014 Esri
  |
@@ -14,34 +14,32 @@
  | See the License for the specific language governing permissions and
  | limitations under the License.
  */
-define(
-   ({
-    map: {
-      error: "Kreiranje mape nije moguće"
-    },
-    nav: {
-        "close": "Zatvori"
-    },
-    elevation: {
-        toggle: "Preklopite grafikon profila elevacije.",
-        drawTool: "Nacrtajte liniju na mapi da generišete profil elevacije.",
-        selectMessage: "Kliknite na linijski geoobjekat ili koristite alatku za crtanje da nacrtate liniju da prikažete profil elevacije"
-    },
-    splash: {
-        title: "Naslov",
-        content: "Konfigurišite da kreirate prilagođeni uvodni sadržaj"
-    },
-    legend: {
-        title: "Legenda",
-        tip: "Prikaz legende"
-    },
-    basemap: {
-        title: "Pozadinska mapa",
-        tip: "Promenite pozadinsku mapu"
-    },
-    share: {
-        title: "Podeli",
-        tip: "Podelite mapu"
-    }
-  })
-);
+define({
+  "map": {
+    "error": "Kreiranje mape nije moguće"
+  },
+  "nav": {
+    "close": "Zatvori"
+  },
+  "elevation": {
+    "toggle": "Preklopite grafikon profila elevacije.",
+    "drawTool": "Nacrtajte liniju na mapi da generišete profil elevacije.",
+    "selectMessage": "Kliknite na linijski geoobjekat ili koristite alatku za crtanje da nacrtate liniju da prikažete profil elevacije"
+  },
+  "splash": {
+    "title": "Naslov",
+    "content": "Konfigurišite da kreirate prilagođeni uvodni sadržaj"
+  },
+  "legend": {
+    "title": "Legenda",
+    "tip": "Prikaz legende"
+  },
+  "basemap": {
+    "title": "Pozadinska mapa",
+    "tip": "Promenite pozadinsku mapu"
+  },
+  "share": {
+    "title": "Podeli",
+    "tip": "Podelite mapu"
+  }
+});

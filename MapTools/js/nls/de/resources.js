@@ -14,31 +14,29 @@
  | See the License for the specific language governing permissions and
  | limitations under the License.
  */
-define(
-     ({
-        map: {
-            error: "Karte kann nicht erstellt werden"
-        },
-        tools:{
-            bookmarkTool: "Lesezeichen",
-            basemapTool: "Grundkarten",
-            legendTool: "Legende",
-            detailsTool: "Details",
-            measureTool: "Messen",
-            shareTool: "Freigeben",
-            layerTool: "Layer",
-            tableTool: "Tabelle",
-            editTool: "Bearbeiten",
-            printTool: "Drucken",
-            printLegend: "Legende zu Ausgabe hinzufügen",
-            printLayouts: {
-                  "label1": 'Querformat',
-                  "label2": 'Hochformat',
-                  "label3": 'Querformat',
-                  "label4": 'Hochformat'
-            },
-            printTitle: "Titel",
-            printTitlePrompt: "Benutzerdefinierten Titel hinzufügen"
-        }
-    })
-);
+define({
+  "map": {
+    "error": "Karte kann nicht erstellt werden"
+  },
+  "tools": {
+    "bookmarkTool": "Lesezeichen",
+    "basemapTool": "Grundkarten",
+    "legendTool": "Legende",
+    "detailsTool": "Details",
+    "measureTool": "Messen",
+    "shareTool": "Freigeben",
+    "layerTool": "Layer",
+    "tableTool": "Tabelle",
+    "editTool": "Bearbeiten",
+    "printTool": "Drucken",
+    "printLegend": "Legende zu Ausgabe hinzufügen",
+    "printLayouts": {
+      "label1": "Querformat",
+      "label2": "Hochformat",
+      "label3": "Querformat",
+      "label4": "Hochformat"
+    },
+    "printTitle": "Titel",
+    "printTitlePrompt": "Benutzerdefinierten Titel hinzufügen"
+  }
+});

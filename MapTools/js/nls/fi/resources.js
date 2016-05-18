@@ -14,31 +14,29 @@
  | See the License for the specific language governing permissions and
  | limitations under the License.
  */
-define(
-     ({
-        map: {
-            error: "Karttaa ei voi luoda"
-        },
-        tools:{
-            bookmarkTool: "Kirjanmerkit",
-            basemapTool: "Taustakartat",
-            legendTool: "Selite",
-            detailsTool: "Yksityiskohdat",
-            measureTool: "Mittaus",
-            shareTool: "Jaa",
-            layerTool: "Karttatasot",
-            tableTool: "Taulu",
-            editTool: "Muokkaa",
-            printTool: "Tulosta",
-            printLegend: "Lisää selite tulokseen",
-            printLayouts: {
-                  "label1": 'Vaaka',
-                  "label2": 'Pysty',
-                  "label3": 'Vaaka',
-                  "label4": 'Pysty'
-            },
-            printTitle: "Otsikko",
-            printTitlePrompt: "Lisää mukautettu otsikko"
-        }
-    })
-);
+define({
+  "map": {
+    "error": "Karttaa ei voi luoda"
+  },
+  "tools": {
+    "bookmarkTool": "Kirjanmerkit",
+    "basemapTool": "Taustakartat",
+    "legendTool": "Selite",
+    "detailsTool": "Yksityiskohdat",
+    "measureTool": "Mittaus",
+    "shareTool": "Jaa",
+    "layerTool": "Karttatasot",
+    "tableTool": "Taulu",
+    "editTool": "Muokkaa",
+    "printTool": "Tulosta",
+    "printLegend": "Lisää selite tulokseen",
+    "printLayouts": {
+      "label1": "Vaaka",
+      "label2": "Pysty",
+      "label3": "Vaaka",
+      "label4": "Pysty"
+    },
+    "printTitle": "Otsikko",
+    "printTitlePrompt": "Lisää mukautettu otsikko"
+  }
+});

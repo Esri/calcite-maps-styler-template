@@ -14,31 +14,29 @@
  | See the License for the specific language governing permissions and
  | limitations under the License.
  */
-define(
-     ({
-        map: {
-            error: "Kan ikke oprette kort"
-        },
-        tools:{
-            bookmarkTool: "Bogmærker",
-            basemapTool: "Basemaps",
-            legendTool: "Signaturforklaring",
-            detailsTool: "Oplysninger",
-            measureTool: "Mål",
-            shareTool: "Del",
-            layerTool: "Lag",
-            tableTool: "Table",
-            editTool: "Redigér",
-            printTool: "Udskriv",
-            printLegend: "Føj signaturforklaring til output",
-            printLayouts: {
-                  "label1": 'På langs',
-                  "label2": 'På højkant',
-                  "label3": 'På langs',
-                  "label4": 'På højkant'
-            },
-            printTitle: "Titel",
-            printTitlePrompt: "Tilføj brugerdefineret titel"
-        }
-    })
-);
+define({
+  "map": {
+    "error": "Kan ikke oprette kort"
+  },
+  "tools": {
+    "bookmarkTool": "Bogmærker",
+    "basemapTool": "Basemaps",
+    "legendTool": "Signaturforklaring",
+    "detailsTool": "Oplysninger",
+    "measureTool": "Mål",
+    "shareTool": "Del",
+    "layerTool": "Lag",
+    "tableTool": "Table",
+    "editTool": "Redigér",
+    "printTool": "Udskriv",
+    "printLegend": "Føj signaturforklaring til output",
+    "printLayouts": {
+      "label1": "På langs",
+      "label2": "På højkant",
+      "label3": "På langs",
+      "label4": "På højkant"
+    },
+    "printTitle": "Titel",
+    "printTitlePrompt": "Tilføj brugerdefineret titel"
+  }
+});

@@ -1,10 +1,8 @@
-﻿define(
-     ({
-        "StatsBlock": {
-            "close": "סגור",
-            "next": "הבא",
-            "previous": "קודם",
-            "source":"מקור הנתונים"
-        }
-    })
-);
+define({
+  "StatsBlock": {
+    "close": "סגור",
+    "next": "הבא",
+    "previous": "קודם",
+    "source": "מקור הנתונים"
+  }
+});

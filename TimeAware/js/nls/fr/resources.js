@@ -1,4 +1,4 @@
-﻿/*global define */
+/*global define */
 /*
  | Copyright 2014 Esri
  |
@@ -14,27 +14,25 @@
  | See the License for the specific language governing permissions and
  | limitations under the License.
  */
-define(
-   ({
-    map: {
-      error: "Impossible de créer la carte"
-    },
-    legend: {
-      title: "Légende"
-    },
-    share: {
-      title: "Partager"
-    },
-    about: {
-      title: "À propos de",
-      error: "Par défaut, la description de la carte Web ou l\'extrait est utilisé. Configurez l\'application afin d\'ajouter un extrait personnalisé pour le volet A propos."
-    },
-    time: {
-      enableTimeMessage: "æ_The specified web map does not contain any time enabled layers. View the ${link} help topic for details. To use the template without displaying time use the configuration panel to disable the time option______________________________________________________________Â.",
-      enableTimeMessageLink: "æ_http://doc.arcgis.com/en/arcgis-online/create-maps/configure-time.htm#ESRI_SECTION1_F1D4A275B4AB4CC79198CBA9D0AD8727____________________________________Â"
-    },
-    histogram: {
-      error: "Aucune couche d\'entités temporelles, en mode de capture instantanée, n\'est disponible dans la carte Web. Configurez l\'application de façon à utiliser une autre carte Web ou désactivez l\'option d\'histogramme."
-    }
-  })
-);
+define({
+  "map": {
+    "error": "Impossible de créer la carte"
+  },
+  "legend": {
+    "title": "Légende"
+  },
+  "share": {
+    "title": "Partager"
+  },
+  "about": {
+    "title": "À propos de",
+    "error": "Par défaut, la description de la carte Web ou l'extrait est utilisé. Configurez l'application afin d'ajouter un extrait personnalisé pour le volet A propos."
+  },
+  "time": {
+    "enableTimeMessage": "æ_The specified web map does not contain any time enabled layers. View the ${link} help topic for details. To use the template without displaying time use the configuration panel to disable the time option______________________________________________________________Â.",
+    "enableTimeMessageLink": "æ_http://doc.arcgis.com/en/arcgis-online/create-maps/configure-time.htm#ESRI_SECTION1_F1D4A275B4AB4CC79198CBA9D0AD8727____________________________________Â"
+  },
+  "histogram": {
+    "error": "Aucune couche d'entités temporelles, en mode de capture instantanée, n'est disponible dans la carte Web. Configurez l'application de façon à utiliser une autre carte Web ou désactivez l'option d'histogramme."
+  }
+});

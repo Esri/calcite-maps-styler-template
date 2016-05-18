@@ -14,31 +14,29 @@
  | See the License for the specific language governing permissions and
  | limitations under the License.
  */
-define(
-     ({
-        map: {
-            error: "Kan geen kaart creëren"
-        },
-        tools:{
-            bookmarkTool: "Bladwijzers",
-            basemapTool: "Basemaps",
-            legendTool: "Legenda",
-            detailsTool: "Details",
-            measureTool: "Meten",
-            shareTool: "Delen",
-            layerTool: "Kaartlagen",
-            tableTool: "Table",
-            editTool: "Bewerken",
-            printTool: "Afdrukken",
-            printLegend: "Legenda toevoegen aan uitvoer",
-            printLayouts: {
-                  "label1": 'Liggend',
-                  "label2": 'Staand',
-                  "label3": 'Liggend',
-                  "label4": 'Staand'
-            },
-            printTitle: "Titel",
-            printTitlePrompt: "Aangepaste titel toevoegen"
-        }
-    })
-);
+define({
+  "map": {
+    "error": "Kan geen kaart creëren"
+  },
+  "tools": {
+    "bookmarkTool": "Bladwijzers",
+    "basemapTool": "Basemaps",
+    "legendTool": "Legenda",
+    "detailsTool": "Details",
+    "measureTool": "Meten",
+    "shareTool": "Delen",
+    "layerTool": "Kaartlagen",
+    "tableTool": "Table",
+    "editTool": "Bewerken",
+    "printTool": "Afdrukken",
+    "printLegend": "Legenda toevoegen aan uitvoer",
+    "printLayouts": {
+      "label1": "Liggend",
+      "label2": "Staand",
+      "label3": "Liggend",
+      "label4": "Staand"
+    },
+    "printTitle": "Titel",
+    "printTitlePrompt": "Aangepaste titel toevoegen"
+  }
+});

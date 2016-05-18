@@ -14,31 +14,29 @@
  | See the License for the specific language governing permissions and
  | limitations under the License.
  */
-define(
-     ({
-        map: {
-            error: "يتعذر إنشاء الخريطة"
-        },
-        tools:{
-            bookmarkTool: "العلامات المرجعية",
-            basemapTool: "خرائط الأساس",
-            legendTool: "وسيلة إيضاح",
-            detailsTool: "التفاصيل",
-            measureTool: "قياس",
-            shareTool: "مشاركة",
-            layerTool: "الطبقات",
-            tableTool: "جدول",
-            editTool: "تحرير",
-            printTool: "طباعة",
-            printLegend: "إضافة وسيلة الإيضاح إلى الناتج",
-            printLayouts: {
-                  "label1": 'أفقي',
-                  "label2": 'عمودي',
-                  "label3": 'أفقي',
-                  "label4": 'عمودي'
-            },
-            printTitle: "العنوان",
-            printTitlePrompt: "إضافة عنوان مخصص"
-        }
-    })
-);
+define({
+  "map": {
+    "error": "يتعذر إنشاء الخريطة"
+  },
+  "tools": {
+    "bookmarkTool": "العلامات المرجعية",
+    "basemapTool": "خرائط الأساس",
+    "legendTool": "وسيلة إيضاح",
+    "detailsTool": "التفاصيل",
+    "measureTool": "قياس",
+    "shareTool": "مشاركة",
+    "layerTool": "الطبقات",
+    "tableTool": "جدول",
+    "editTool": "تحرير",
+    "printTool": "طباعة",
+    "printLegend": "إضافة وسيلة الإيضاح إلى الناتج",
+    "printLayouts": {
+      "label1": "أفقي",
+      "label2": "عمودي",
+      "label3": "أفقي",
+      "label4": "عمودي"
+    },
+    "printTitle": "العنوان",
+    "printTitlePrompt": "إضافة عنوان مخصص"
+  }
+});

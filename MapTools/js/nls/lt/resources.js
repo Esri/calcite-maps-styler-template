@@ -14,31 +14,29 @@
  | See the License for the specific language governing permissions and
  | limitations under the License.
  */
-define(
-     ({
-        map: {
-            error: "Žemėlapio sukurti nepavyko"
-        },
-        tools:{
-            bookmarkTool: "Žymės",
-            basemapTool: "Pagrindo žemėlapiai",
-            legendTool: "Legenda",
-            detailsTool: "Smulkesnė informacija",
-            measureTool: "Matuoti",
-            shareTool: "Bendrinti",
-            layerTool: "Sluoksniai",
-            tableTool: "Lentelė",
-            editTool: "Redaguoti",
-            printTool: "Spausdinti",
-            printLegend: "Įtraukti legendą į išvestį",
-            printLayouts: {
-                  "label1": 'Gulsčias',
-                  "label2": 'Stačias',
-                  "label3": 'Gulsčias',
-                  "label4": 'Stačias'
-            },
-            printTitle: "Pavadinimas",
-            printTitlePrompt: "Pridėti adaptuotą pavadinimą"
-        }
-    })
-);
+define({
+  "map": {
+    "error": "Žemėlapio sukurti nepavyko"
+  },
+  "tools": {
+    "bookmarkTool": "Žymės",
+    "basemapTool": "Pagrindo žemėlapiai",
+    "legendTool": "Legenda",
+    "detailsTool": "Smulkesnė informacija",
+    "measureTool": "Matuoti",
+    "shareTool": "Bendrinti",
+    "layerTool": "Sluoksniai",
+    "tableTool": "Lentelė",
+    "editTool": "Redaguoti",
+    "printTool": "Spausdinti",
+    "printLegend": "Įtraukti legendą į išvestį",
+    "printLayouts": {
+      "label1": "Gulsčias",
+      "label2": "Stačias",
+      "label3": "Gulsčias",
+      "label4": "Stačias"
+    },
+    "printTitle": "Pavadinimas",
+    "printTitlePrompt": "Pridėti adaptuotą pavadinimą"
+  }
+});

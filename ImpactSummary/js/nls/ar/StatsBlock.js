@@ -1,10 +1,8 @@
-﻿define(
-     ({
-        "StatsBlock": {
-            "close": "إغلاق",
-            "next": "التالي",
-            "previous": "السابق",
-            "source":"مصدر البيانات"
-        }
-    })
-);
+define({
+  "StatsBlock": {
+    "close": "إغلاق",
+    "next": "التالي",
+    "previous": "السابق",
+    "source": "مصدر البيانات"
+  }
+});

@@ -14,31 +14,29 @@
  | See the License for the specific language governing permissions and
  | limitations under the License.
  */
-define(
-     ({
-        map: {
-            error: "Nelze vytvořit mapu"
-        },
-        tools:{
-            bookmarkTool: "Záložky",
-            basemapTool: "Podkladové mapy",
-            legendTool: "Legenda",
-            detailsTool: "Podrobnosti",
-            measureTool: "Měření",
-            shareTool: "Sdílení",
-            layerTool: "Vrstvy",
-            tableTool: "Tabulka",
-            editTool: "Editace",
-            printTool: "Tisk",
-            printLegend: "Přidat legendu do výstupu",
-            printLayouts: {
-                  "label1": 'Na šířku',
-                  "label2": 'Na výšku',
-                  "label3": 'Na šířku',
-                  "label4": 'Na výšku'
-            },
-            printTitle: "Nadpis",
-            printTitlePrompt: "Přidat vlastní název"
-        }
-    })
-);
+define({
+  "map": {
+    "error": "Nelze vytvořit mapu"
+  },
+  "tools": {
+    "bookmarkTool": "Záložky",
+    "basemapTool": "Podkladové mapy",
+    "legendTool": "Legenda",
+    "detailsTool": "Podrobnosti",
+    "measureTool": "Měření",
+    "shareTool": "Sdílení",
+    "layerTool": "Vrstvy",
+    "tableTool": "Tabulka",
+    "editTool": "Editace",
+    "printTool": "Tisk",
+    "printLegend": "Přidat legendu do výstupu",
+    "printLayouts": {
+      "label1": "Na šířku",
+      "label2": "Na výšku",
+      "label3": "Na šířku",
+      "label4": "Na výšku"
+    },
+    "printTitle": "Nadpis",
+    "printTitlePrompt": "Přidat vlastní název"
+  }
+});

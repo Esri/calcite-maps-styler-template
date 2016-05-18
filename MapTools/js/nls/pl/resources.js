@@ -14,31 +14,29 @@
  | See the License for the specific language governing permissions and
  | limitations under the License.
  */
-define(
-     ({
-        map: {
-            error: "Nie można utworzyć mapy"
-        },
-        tools:{
-            bookmarkTool: "Zakładki",
-            basemapTool: "Mapy bazowe",
-            legendTool: "Legenda",
-            detailsTool: "Szczegóły",
-            measureTool: "Zmierz",
-            shareTool: "Udostępnij",
-            layerTool: "Warstwy",
-            tableTool: "Tabela",
-            editTool: "Edytuj",
-            printTool: "Drukuj",
-            printLegend: "Dodaj legendę do danych wynikowych",
-            printLayouts: {
-                  "label1": 'Poziomo',
-                  "label2": 'Pionowo',
-                  "label3": 'Poziomo',
-                  "label4": 'Pionowo'
-            },
-            printTitle: "Tytuł",
-            printTitlePrompt: "Dodaj niestandardowy tytuł"
-        }
-    })
-);
+define({
+  "map": {
+    "error": "Nie można utworzyć mapy"
+  },
+  "tools": {
+    "bookmarkTool": "Zakładki",
+    "basemapTool": "Mapy bazowe",
+    "legendTool": "Legenda",
+    "detailsTool": "Szczegóły",
+    "measureTool": "Zmierz",
+    "shareTool": "Udostępnij",
+    "layerTool": "Warstwy",
+    "tableTool": "Tabela",
+    "editTool": "Edytuj",
+    "printTool": "Drukuj",
+    "printLegend": "Dodaj legendę do danych wynikowych",
+    "printLayouts": {
+      "label1": "Poziomo",
+      "label2": "Pionowo",
+      "label3": "Poziomo",
+      "label4": "Pionowo"
+    },
+    "printTitle": "Tytuł",
+    "printTitlePrompt": "Dodaj niestandardowy tytuł"
+  }
+});

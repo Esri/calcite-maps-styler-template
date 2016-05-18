@@ -14,31 +14,29 @@
  | See the License for the specific language governing permissions and
  | limitations under the License.
  */
-define(
-     ({
-        map: {
-            error: "Không thể tạo bản đồ"
-        },
-        tools:{
-            bookmarkTool: "Đánh dấu",
-            basemapTool: "Bản đồ nền",
-            legendTool: "Chú giải",
-            detailsTool: "Chi tiết",
-            measureTool: "Đo lường",
-            shareTool: "Chia sẻ",
-            layerTool: "Lớp",
-            tableTool: "Bảng",
-            editTool: "Chỉnh sửa",
-            printTool: "In",
-            printLegend: "Thêm chú giải vào kết quả đầu ra",
-            printLayouts: {
-                  "label1": 'Hướng ngang',
-                  "label2": 'Hướng dọc',
-                  "label3": 'Hướng ngang',
-                  "label4": 'Hướng dọc'
-            },
-            printTitle: "Tiêu đề",
-            printTitlePrompt: "Thêm tiêu đề tùy chỉnh"
-        }
-    })
-);
+define({
+  "map": {
+    "error": "Không thể tạo bản đồ"
+  },
+  "tools": {
+    "bookmarkTool": "Đánh dấu",
+    "basemapTool": "Bản đồ nền",
+    "legendTool": "Chú giải",
+    "detailsTool": "Chi tiết",
+    "measureTool": "Đo lường",
+    "shareTool": "Chia sẻ",
+    "layerTool": "Lớp",
+    "tableTool": "Bảng",
+    "editTool": "Chỉnh sửa",
+    "printTool": "In",
+    "printLegend": "Thêm chú giải vào kết quả đầu ra",
+    "printLayouts": {
+      "label1": "Hướng ngang",
+      "label2": "Hướng dọc",
+      "label3": "Hướng ngang",
+      "label4": "Hướng dọc"
+    },
+    "printTitle": "Tiêu đề",
+    "printTitlePrompt": "Thêm tiêu đề tùy chỉnh"
+  }
+});

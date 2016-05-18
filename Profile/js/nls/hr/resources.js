@@ -1,4 +1,4 @@
-﻿/*global define */
+/*global define */
 /*
  | Copyright 2014 Esri
  |
@@ -14,34 +14,32 @@
  | See the License for the specific language governing permissions and
  | limitations under the License.
  */
-define(
-   ({
-    map: {
-      error: "Nije moguće stvoriti kartu"
-    },
-    nav: {
-        "close": "Zatvori"
-    },
-    elevation: {
-        toggle: "Preklopi profil terena.",
-        drawTool: "Povucite liniju na karti za izradu profila terena.",
-        selectMessage: "Kliknite na liniju geoobjekta ili upotrijebite alat za crtanje i nacrtajte liniju za prikaz profila terena"
-    },
-    splash: {
-        title: "Naziv",
-        content: "Konfigurirajte za izradu prilagođenog pozdravnog sadržaja"
-    },
-    legend: {
-        title: "Legenda",
-        tip: "Prikaz legende"
-    },
-    basemap: {
-        title: "Kartografska podloga",
-        tip: "Promijeni kartografsku podlogu"
-    },
-    share: {
-        title: "Podijeli",
-        tip: "Podijeli kartu"
-    }
-  })
-);
+define({
+  "map": {
+    "error": "Nije moguće stvoriti kartu"
+  },
+  "nav": {
+    "close": "Zatvori"
+  },
+  "elevation": {
+    "toggle": "Preklopi profil terena.",
+    "drawTool": "Povucite liniju na karti za izradu profila terena.",
+    "selectMessage": "Kliknite na liniju geoobjekta ili upotrijebite alat za crtanje i nacrtajte liniju za prikaz profila terena"
+  },
+  "splash": {
+    "title": "Naziv",
+    "content": "Konfigurirajte za izradu prilagođenog pozdravnog sadržaja"
+  },
+  "legend": {
+    "title": "Legenda",
+    "tip": "Prikaz legende"
+  },
+  "basemap": {
+    "title": "Kartografska podloga",
+    "tip": "Promijeni kartografsku podlogu"
+  },
+  "share": {
+    "title": "Podijeli",
+    "tip": "Podijeli kartu"
+  }
+});

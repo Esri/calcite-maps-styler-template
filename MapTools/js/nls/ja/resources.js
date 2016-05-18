@@ -14,31 +14,29 @@
  | See the License for the specific language governing permissions and
  | limitations under the License.
  */
-define(
-     ({
-        map: {
-            error: "マップを作成できません"
-        },
-        tools:{
-            bookmarkTool: "ブックマーク",
-            basemapTool: "ベースマップ",
-            legendTool: "凡例",
-            detailsTool: "詳細",
-            measureTool: "計測",
-            shareTool: "共有",
-            layerTool: "レイヤ",
-            tableTool: "テーブル",
-            editTool: "編集",
-            printTool: "印刷",
-            printLegend: "凡例を出力に追加",
-            printLayouts: {
-                  "label1": '横',
-                  "label2": '縦',
-                  "label3": '横',
-                  "label4": '縦'
-            },
-            printTitle: "タイトル",
-            printTitlePrompt: "カスタム タイトルの追加"
-        }
-    })
-);
+define({
+  "map": {
+    "error": "マップを作成できません"
+  },
+  "tools": {
+    "bookmarkTool": "ブックマーク",
+    "basemapTool": "ベースマップ",
+    "legendTool": "凡例",
+    "detailsTool": "詳細",
+    "measureTool": "計測",
+    "shareTool": "共有",
+    "layerTool": "レイヤ",
+    "tableTool": "テーブル",
+    "editTool": "編集",
+    "printTool": "印刷",
+    "printLegend": "凡例を出力に追加",
+    "printLayouts": {
+      "label1": "横",
+      "label2": "縦",
+      "label3": "横",
+      "label4": "縦"
+    },
+    "printTitle": "タイトル",
+    "printTitlePrompt": "カスタム タイトルの追加"
+  }
+});

@@ -1,4 +1,4 @@
-﻿/*global define */
+/*global define */
 /*
  | Copyright 2014 Esri
  |
@@ -14,27 +14,25 @@
  | See the License for the specific language governing permissions and
  | limitations under the License.
  */
-define(
-   ({
-    map: {
-      error: "Imposibil de creat harta"
-    },
-    legend: {
-      title: "Legendă"
-    },
-    share: {
-      title: "Partajarea"
-    },
-    about: {
-      title: "Despre",
-      error: "În mod implicit, este utilizată descrierea elementului hărţii web sau un snippet. Configuraţi aplicaţia pentru a adăuga un snippet particularizat pentru panoul Despre."
-    },
-    time: {
-      enableTimeMessage: "Ă_The specified web map does not contain any time enabled layers. View the ${link} help topic for details. To use the template without displaying time use the configuration panel to disable the time option______________________________________________________________ș.",
-      enableTimeMessageLink: "Ă_http://doc.arcgis.com/en/arcgis-online/create-maps/configure-time.htm#ESRI_SECTION1_F1D4A275B4AB4CC79198CBA9D0AD8727____________________________________ș"
-    },
-    histogram: {
-      error: "În harta web, în modul snapshot, nu sunt disponibile straturi tematice de obiecte spaţiale cu variaţie temporală. Configuraţi aplicaţia pentru a utiliza o altă hartă web sau dezactivaţi opţiunea pentru histogramă."
-    }
-  })
-);
+define({
+  "map": {
+    "error": "Imposibil de creat harta"
+  },
+  "legend": {
+    "title": "Legendă"
+  },
+  "share": {
+    "title": "Partajarea"
+  },
+  "about": {
+    "title": "Despre",
+    "error": "În mod implicit, este utilizată descrierea elementului hărţii web sau un snippet. Configuraţi aplicaţia pentru a adăuga un snippet particularizat pentru panoul Despre."
+  },
+  "time": {
+    "enableTimeMessage": "Ă_The specified web map does not contain any time enabled layers. View the ${link} help topic for details. To use the template without displaying time use the configuration panel to disable the time option______________________________________________________________ș.",
+    "enableTimeMessageLink": "Ă_http://doc.arcgis.com/en/arcgis-online/create-maps/configure-time.htm#ESRI_SECTION1_F1D4A275B4AB4CC79198CBA9D0AD8727____________________________________ș"
+  },
+  "histogram": {
+    "error": "În harta web, în modul snapshot, nu sunt disponibile straturi tematice de obiecte spaţiale cu variaţie temporală. Configuraţi aplicaţia pentru a utiliza o altă hartă web sau dezactivaţi opţiunea pentru histogramă."
+  }
+});

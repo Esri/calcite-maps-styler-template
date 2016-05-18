@@ -1,4 +1,4 @@
-﻿/*global define */
+/*global define */
 /*
  | Copyright 2014 Esri
  |
@@ -14,27 +14,25 @@
  | See the License for the specific language governing permissions and
  | limitations under the License.
  */
-define(
-   ({
-    map: {
-      error: "Kaart kan niet gemaakt worden"
-    },
-    legend: {
-      title: "Legenda"
-    },
-    share: {
-      title: "Delen"
-    },
-    about: {
-      title: "Over",
-      error: "Standaard wordt de webmapbeschrijving of snippet gebruikt. Configureer de app om een aangepaste snippet toe te voegen voor het deelvenster Over."
-    },
-    time: {
-      enableTimeMessage: "Ĳ_The specified web map does not contain any time enabled layers. View the ${link} help topic for details. To use the template without displaying time use the configuration panel to disable the time option______________________________________________________________ä.",
-      enableTimeMessageLink: "Ĳ_http://doc.arcgis.com/en/arcgis-online/create-maps/configure-time.htm#ESRI_SECTION1_F1D4A275B4AB4CC79198CBA9D0AD8727____________________________________ä"
-    },
-    histogram: {
-      error: "Er zijn geen objectlagen met tijdondersteuning, in snapshotmodus, beschikbaar in de webmap. Configureer de app om een andere webmap te gebruiken of schakel de histogramoptie uit."
-    }
-  })
-);
+define({
+  "map": {
+    "error": "Kaart kan niet gemaakt worden"
+  },
+  "legend": {
+    "title": "Legenda"
+  },
+  "share": {
+    "title": "Delen"
+  },
+  "about": {
+    "title": "Over",
+    "error": "Standaard wordt de webmapbeschrijving of snippet gebruikt. Configureer de app om een aangepaste snippet toe te voegen voor het deelvenster Over."
+  },
+  "time": {
+    "enableTimeMessage": "Ĳ_The specified web map does not contain any time enabled layers. View the ${link} help topic for details. To use the template without displaying time use the configuration panel to disable the time option______________________________________________________________ä.",
+    "enableTimeMessageLink": "Ĳ_http://doc.arcgis.com/en/arcgis-online/create-maps/configure-time.htm#ESRI_SECTION1_F1D4A275B4AB4CC79198CBA9D0AD8727____________________________________ä"
+  },
+  "histogram": {
+    "error": "Er zijn geen objectlagen met tijdondersteuning, in snapshotmodus, beschikbaar in de webmap. Configureer de app om een andere webmap te gebruiken of schakel de histogramoptie uit."
+  }
+});

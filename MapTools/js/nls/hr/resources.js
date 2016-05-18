@@ -14,31 +14,29 @@
  | See the License for the specific language governing permissions and
  | limitations under the License.
  */
-define(
-     ({
-        map: {
-            error: "Nije moguće stvoriti kartu"
-        },
-        tools:{
-            bookmarkTool: "Knjižne oznake",
-            basemapTool: "Kartografske podloge",
-            legendTool: "Legenda",
-            detailsTool: "Pojedinosti",
-            measureTool: "Mjera",
-            shareTool: "Podijeli",
-            layerTool: "Slojevi",
-            tableTool: "Tablica",
-            editTool: "Uredi",
-            printTool: "Ispis",
-            printLegend: "Dodaj legendu u izlaz",
-            printLayouts: {
-                  "label1": 'Vodoravno',
-                  "label2": 'Okomito',
-                  "label3": 'Vodoravno',
-                  "label4": 'Okomito'
-            },
-            printTitle: "Naziv",
-            printTitlePrompt: "Dodaj prilagođeni naslov"
-        }
-    })
-);
+define({
+  "map": {
+    "error": "Nije moguće stvoriti kartu"
+  },
+  "tools": {
+    "bookmarkTool": "Knjižne oznake",
+    "basemapTool": "Kartografske podloge",
+    "legendTool": "Legenda",
+    "detailsTool": "Pojedinosti",
+    "measureTool": "Mjera",
+    "shareTool": "Podijeli",
+    "layerTool": "Slojevi",
+    "tableTool": "Tablica",
+    "editTool": "Uredi",
+    "printTool": "Ispis",
+    "printLegend": "Dodaj legendu u izlaz",
+    "printLayouts": {
+      "label1": "Vodoravno",
+      "label2": "Okomito",
+      "label3": "Vodoravno",
+      "label4": "Okomito"
+    },
+    "printTitle": "Naziv",
+    "printTitlePrompt": "Dodaj prilagođeni naslov"
+  }
+});

@@ -14,31 +14,29 @@
  | See the License for the specific language governing permissions and
  | limitations under the License.
  */
-define(
-     ({
-        map: {
-            error: "Det gick inte att skapa kartan"
-        },
-        tools:{
-            bookmarkTool: "Bokmärken",
-            basemapTool: "Baskartor",
-            legendTool: "Teckenförklaring",
-            detailsTool: "Information",
-            measureTool: "Mät",
-            shareTool: "Dela",
-            layerTool: "Lager",
-            tableTool: "Tabell",
-            editTool: "Redigera",
-            printTool: "Skriv ut",
-            printLegend: "Lägg till teckenförklaring i utdata",
-            printLayouts: {
-                  "label1": 'Liggande',
-                  "label2": 'Stående',
-                  "label3": 'Liggande',
-                  "label4": 'Stående'
-            },
-            printTitle: "Titel",
-            printTitlePrompt: "Lägg till anpassad titel"
-        }
-    })
-);
+define({
+  "map": {
+    "error": "Det gick inte att skapa kartan"
+  },
+  "tools": {
+    "bookmarkTool": "Bokmärken",
+    "basemapTool": "Baskartor",
+    "legendTool": "Teckenförklaring",
+    "detailsTool": "Information",
+    "measureTool": "Mät",
+    "shareTool": "Dela",
+    "layerTool": "Lager",
+    "tableTool": "Tabell",
+    "editTool": "Redigera",
+    "printTool": "Skriv ut",
+    "printLegend": "Lägg till teckenförklaring i utdata",
+    "printLayouts": {
+      "label1": "Liggande",
+      "label2": "Stående",
+      "label3": "Liggande",
+      "label4": "Stående"
+    },
+    "printTitle": "Titel",
+    "printTitlePrompt": "Lägg till anpassad titel"
+  }
+});

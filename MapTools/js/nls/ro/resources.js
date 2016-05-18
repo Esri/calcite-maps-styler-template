@@ -14,31 +14,29 @@
  | See the License for the specific language governing permissions and
  | limitations under the License.
  */
-define(
-     ({
-        map: {
-            error: "Nu se poate crea harta"
-        },
-        tools:{
-            bookmarkTool: "Semne de carte",
-            basemapTool: "Hărţi fundal",
-            legendTool: "Legendă",
-            detailsTool: "Detalii",
-            measureTool: "Măsurare",
-            shareTool: "Partajare",
-            layerTool: "Straturi tematice",
-            tableTool: "Tabel",
-            editTool: "Editare",
-            printTool: "Imprimare",
-            printLegend: "Adăugare legendă în rezultate",
-            printLayouts: {
-                  "label1": 'Peisaj',
-                  "label2": 'Portret',
-                  "label3": 'Peisaj',
-                  "label4": 'Portret'
-            },
-            printTitle: "Titlu",
-            printTitlePrompt: "Adăugare titlu particularizat"
-        }
-    })
-);
+define({
+  "map": {
+    "error": "Nu se poate crea harta"
+  },
+  "tools": {
+    "bookmarkTool": "Semne de carte",
+    "basemapTool": "Hărţi fundal",
+    "legendTool": "Legendă",
+    "detailsTool": "Detalii",
+    "measureTool": "Măsurare",
+    "shareTool": "Partajare",
+    "layerTool": "Straturi tematice",
+    "tableTool": "Tabel",
+    "editTool": "Editare",
+    "printTool": "Imprimare",
+    "printLegend": "Adăugare legendă în rezultate",
+    "printLayouts": {
+      "label1": "Peisaj",
+      "label2": "Portret",
+      "label3": "Peisaj",
+      "label4": "Portret"
+    },
+    "printTitle": "Titlu",
+    "printTitlePrompt": "Adăugare titlu particularizat"
+  }
+});

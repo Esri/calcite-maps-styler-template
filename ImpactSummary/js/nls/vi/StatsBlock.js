@@ -1,10 +1,8 @@
-﻿define(
-     ({
-        "StatsBlock": {
-            "close": "đóng",
-            "next": "Tiếp theo",
-            "previous": "Trước",
-            "source":"Nguồn dữ liệu"
-        }
-    })
-);
+define({
+  "StatsBlock": {
+    "close": "đóng",
+    "next": "Tiếp theo",
+    "previous": "Trước",
+    "source": "Nguồn dữ liệu"
+  }
+});

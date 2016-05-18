@@ -14,31 +14,29 @@
  | See the License for the specific language governing permissions and
  | limitations under the License.
  */
-define(
-     ({
-        map: {
-            error: "Kreiranje mape nije moguće"
-        },
-        tools:{
-            bookmarkTool: "Obeleživači",
-            basemapTool: "Pozadinske mape",
-            legendTool: "Legenda",
-            detailsTool: "Detalji",
-            measureTool: "Merenje",
-            shareTool: "Podeli",
-            layerTool: "Slojevi",
-            tableTool: "Tabela",
-            editTool: "Izmeni",
-            printTool: "Štampaj",
-            printLegend: "Dodaj legendu u rezultate",
-            printLayouts: {
-                  "label1": 'Položeno',
-                  "label2": 'Uspravno',
-                  "label3": 'Položeno',
-                  "label4": 'Uspravno'
-            },
-            printTitle: "Naslov",
-            printTitlePrompt: "Dodaj prilagođeni naslov"
-        }
-    })
-);
+define({
+  "map": {
+    "error": "Kreiranje mape nije moguće"
+  },
+  "tools": {
+    "bookmarkTool": "Obeleživači",
+    "basemapTool": "Pozadinske mape",
+    "legendTool": "Legenda",
+    "detailsTool": "Detalji",
+    "measureTool": "Merenje",
+    "shareTool": "Podeli",
+    "layerTool": "Slojevi",
+    "tableTool": "Tabela",
+    "editTool": "Izmeni",
+    "printTool": "Štampaj",
+    "printLegend": "Dodaj legendu u rezultate",
+    "printLayouts": {
+      "label1": "Položeno",
+      "label2": "Uspravno",
+      "label3": "Položeno",
+      "label4": "Uspravno"
+    },
+    "printTitle": "Naslov",
+    "printTitlePrompt": "Dodaj prilagođeni naslov"
+  }
+});

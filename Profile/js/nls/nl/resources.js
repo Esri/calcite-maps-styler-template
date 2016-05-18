@@ -1,4 +1,4 @@
-﻿/*global define */
+/*global define */
 /*
  | Copyright 2014 Esri
  |
@@ -14,34 +14,32 @@
  | See the License for the specific language governing permissions and
  | limitations under the License.
  */
-define(
-   ({
-    map: {
-      error: "Kaart kan niet gemaakt worden"
-    },
-    nav: {
-        "close": "Sluiten"
-    },
-    elevation: {
-        toggle: "De hoogteprofielgrafiek wisselen.",
-        drawTool: "Teken een lijn op de kaart om een hoogteprofiel te genereren.",
-        selectMessage: "Klik op een lijnobject of gebruik het tekeninstrument om een lijn te tekenen om het hoogteprofiel weer te geven"
-    },
-    splash: {
-        title: "Titel",
-        content: "Configureren om aangepaste splash content te creëren"
-    },
-    legend: {
-        title: "Legenda",
-        tip: "Legenda weergeven"
-    },
-    basemap: {
-        title: "Basiskaart",
-        tip: "Wijzig basiskaart"
-    },
-    share: {
-        title: "Delen",
-        tip: "Kaart delen"
-    }
-  })
-);
+define({
+  "map": {
+    "error": "Kaart kan niet gemaakt worden"
+  },
+  "nav": {
+    "close": "Sluiten"
+  },
+  "elevation": {
+    "toggle": "De hoogteprofielgrafiek wisselen.",
+    "drawTool": "Teken een lijn op de kaart om een hoogteprofiel te genereren.",
+    "selectMessage": "Klik op een lijnobject of gebruik het tekeninstrument om een lijn te tekenen om het hoogteprofiel weer te geven"
+  },
+  "splash": {
+    "title": "Titel",
+    "content": "Configureren om aangepaste splash content te creëren"
+  },
+  "legend": {
+    "title": "Legenda",
+    "tip": "Legenda weergeven"
+  },
+  "basemap": {
+    "title": "Basiskaart",
+    "tip": "Wijzig basiskaart"
+  },
+  "share": {
+    "title": "Delen",
+    "tip": "Kaart delen"
+  }
+});

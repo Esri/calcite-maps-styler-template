@@ -14,31 +14,29 @@
  | See the License for the specific language governing permissions and
  | limitations under the License.
  */
-define(
-     ({
-        map: {
-            error: "Não foi possível criar o mapa"
-        },
-        tools:{
-            bookmarkTool: "Marcadores",
-            basemapTool: "Mapas Base",
-            legendTool: "Legenda",
-            detailsTool: "Detalhes",
-            measureTool: "Medir",
-            shareTool: "Compartilhar",
-            layerTool: "Camadas",
-            tableTool: "Tabela",
-            editTool: "Editar",
-            printTool: "Imprimir",
-            printLegend: "Adicionar legenda na saída",
-            printLayouts: {
-                  "label1": 'Paisagem',
-                  "label2": 'Retrato',
-                  "label3": 'Paisagem',
-                  "label4": 'Retrato'
-            },
-            printTitle: "Título",
-            printTitlePrompt: "Adicionar título personalizado"
-        }
-    })
-);
+define({
+  "map": {
+    "error": "Não foi possível criar o mapa"
+  },
+  "tools": {
+    "bookmarkTool": "Marcadores",
+    "basemapTool": "Mapas Base",
+    "legendTool": "Legenda",
+    "detailsTool": "Detalhes",
+    "measureTool": "Medir",
+    "shareTool": "Compartilhar",
+    "layerTool": "Camadas",
+    "tableTool": "Tabela",
+    "editTool": "Editar",
+    "printTool": "Imprimir",
+    "printLegend": "Adicionar legenda na saída",
+    "printLayouts": {
+      "label1": "Paisagem",
+      "label2": "Retrato",
+      "label3": "Paisagem",
+      "label4": "Retrato"
+    },
+    "printTitle": "Título",
+    "printTitlePrompt": "Adicionar título personalizado"
+  }
+});

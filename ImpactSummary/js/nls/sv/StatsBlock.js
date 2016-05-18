@@ -1,10 +1,8 @@
-﻿define(
-     ({
-        "StatsBlock": {
-            "close": "stäng",
-            "next": "Nästa",
-            "previous": "Föregående",
-            "source":"Datakälla"
-        }
-    })
-);
+define({
+  "StatsBlock": {
+    "close": "stäng",
+    "next": "Nästa",
+    "previous": "Föregående",
+    "source": "Datakälla"
+  }
+});

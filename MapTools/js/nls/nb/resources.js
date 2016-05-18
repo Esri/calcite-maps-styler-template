@@ -14,31 +14,29 @@
  | See the License for the specific language governing permissions and
  | limitations under the License.
  */
-define(
-     ({
-        map: {
-            error: "Kan ikke opprette kart"
-        },
-        tools:{
-            bookmarkTool: "Bokmerker",
-            basemapTool: "Bakgrunnskart",
-            legendTool: "Tegnforklaring",
-            detailsTool: "Detaljer",
-            measureTool: "Mål",
-            shareTool: "Del",
-            layerTool: "Lag",
-            tableTool: "Tabell",
-            editTool: "Rediger",
-            printTool: "Skriv ut",
-            printLegend: "Legg til kartforklaring i resultatet",
-            printLayouts: {
-                  "label1": 'Liggende',
-                  "label2": 'Stående',
-                  "label3": 'Liggende',
-                  "label4": 'Stående'
-            },
-            printTitle: "Tittel",
-            printTitlePrompt: "Legg til egendefinert tittel"
-        }
-    })
-);
+define({
+  "map": {
+    "error": "Kan ikke opprette kart"
+  },
+  "tools": {
+    "bookmarkTool": "Bokmerker",
+    "basemapTool": "Bakgrunnskart",
+    "legendTool": "Tegnforklaring",
+    "detailsTool": "Detaljer",
+    "measureTool": "Mål",
+    "shareTool": "Del",
+    "layerTool": "Lag",
+    "tableTool": "Tabell",
+    "editTool": "Rediger",
+    "printTool": "Skriv ut",
+    "printLegend": "Legg til kartforklaring i resultatet",
+    "printLayouts": {
+      "label1": "Liggende",
+      "label2": "Stående",
+      "label3": "Liggende",
+      "label4": "Stående"
+    },
+    "printTitle": "Tittel",
+    "printTitlePrompt": "Legg til egendefinert tittel"
+  }
+});

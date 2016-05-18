@@ -14,31 +14,29 @@
  | See the License for the specific language governing permissions and
  | limitations under the License.
  */
-define(
-     ({
-        map: {
-            error: "Kaarti ei saa luua"
-        },
-        tools:{
-            bookmarkTool: "Järjehoidjad",
-            basemapTool: "Aluskaardid",
-            legendTool: "Legend",
-            detailsTool: "Detailid",
-            measureTool: "Mõõda",
-            shareTool: "Jaga",
-            layerTool: "Kihid",
-            tableTool: "Tabel",
-            editTool: "Muuda",
-            printTool: "Prindi",
-            printLegend: "Lisa väljundile legend",
-            printLayouts: {
-                  "label1": 'Horisontaalpaigutus',
-                  "label2": 'Vertikaalpaigutus',
-                  "label3": 'Horisontaalpaigutus',
-                  "label4": 'Vertikaalpaigutus'
-            },
-            printTitle: "Pealkiri",
-            printTitlePrompt: "Lisa kohandatud pealkiri"
-        }
-    })
-);
+define({
+  "map": {
+    "error": "Kaarti ei saa luua"
+  },
+  "tools": {
+    "bookmarkTool": "Järjehoidjad",
+    "basemapTool": "Aluskaardid",
+    "legendTool": "Legend",
+    "detailsTool": "Detailid",
+    "measureTool": "Mõõda",
+    "shareTool": "Jaga",
+    "layerTool": "Kihid",
+    "tableTool": "Tabel",
+    "editTool": "Muuda",
+    "printTool": "Prindi",
+    "printLegend": "Lisa väljundile legend",
+    "printLayouts": {
+      "label1": "Horisontaalpaigutus",
+      "label2": "Vertikaalpaigutus",
+      "label3": "Horisontaalpaigutus",
+      "label4": "Vertikaalpaigutus"
+    },
+    "printTitle": "Pealkiri",
+    "printTitlePrompt": "Lisa kohandatud pealkiri"
+  }
+});

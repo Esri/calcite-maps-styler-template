@@ -14,31 +14,29 @@
  | See the License for the specific language governing permissions and
  | limitations under the License.
  */
-define(
-     ({
-        map: {
-            error: "Impossible de créer la carte"
-        },
-        tools:{
-            bookmarkTool: "Géosignets",
-            basemapTool: "Fonds de carte",
-            legendTool: "Légende",
-            detailsTool: "Détails",
-            measureTool: "Mesurer",
-            shareTool: "Partager",
-            layerTool: "Couches",
-            tableTool: "Table",
-            editTool: "Mettre à jour",
-            printTool: "Imprimer",
-            printLegend: "Ajouter la légende à la sortie",
-            printLayouts: {
-                  "label1": 'Paysage',
-                  "label2": 'Portrait',
-                  "label3": 'Paysage',
-                  "label4": 'Portrait'
-            },
-            printTitle: "Titre",
-            printTitlePrompt: "Ajouter un titre personnalisé"
-        }
-    })
-);
+define({
+  "map": {
+    "error": "Impossible de créer la carte"
+  },
+  "tools": {
+    "bookmarkTool": "Géosignets",
+    "basemapTool": "Fonds de carte",
+    "legendTool": "Légende",
+    "detailsTool": "Détails",
+    "measureTool": "Mesurer",
+    "shareTool": "Partager",
+    "layerTool": "Couches",
+    "tableTool": "Table",
+    "editTool": "Mettre à jour",
+    "printTool": "Imprimer",
+    "printLegend": "Ajouter la légende à la sortie",
+    "printLayouts": {
+      "label1": "Paysage",
+      "label2": "Portrait",
+      "label3": "Paysage",
+      "label4": "Portrait"
+    },
+    "printTitle": "Titre",
+    "printTitlePrompt": "Ajouter un titre personnalisé"
+  }
+});
