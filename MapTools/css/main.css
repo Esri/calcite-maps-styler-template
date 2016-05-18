@@ -105,6 +105,9 @@ body {
   background-repeat: repeat;
   background: #ebebeb;
 }
+g#mapDiv_graphics_layer path {
+    fill-opacity: 0;
+}
 #bc {
   margin-right: auto;
   margin-left: auto;
