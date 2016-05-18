@@ -8,7 +8,9 @@
   width: 100%;
   height: 38px;
   color: #333; }
-
+g#mapDiv_graphics_layer path {
+    fill-opacity: 0;
+}
 .esriRTL .top-bar {
   right: 0; }
 
