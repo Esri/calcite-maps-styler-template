@@ -16,6 +16,9 @@ body {
   width: 100%;
   font-family: "Avenir LT W01 65 Medium", Verdana, Helvetica, Arial, sans-serif;
 }
+g#mapDiv_graphics_layer path {
+    fill-opacity: 0;
+}
 a {
   text-decoration: none;
   color: #0177bf;
