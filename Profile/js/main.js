@@ -334,7 +334,7 @@ define([
           //Support find or custom url param
           if (this.config.find) {
             value = decodeURIComponent(this.config.find);
-          } else if (customUrl) {
+          } else if (this.config.customUrlLayer.id) {
             var source = null,
               value = null,
               searchLayer = null;
