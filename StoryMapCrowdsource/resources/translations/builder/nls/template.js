@@ -29,11 +29,11 @@ define({
         },
         subtitle: {
           label: 'Subtitle',
-          placeholder: 'Enter subtitle'
+          placeholder: 'Enter cover message'
         },
         exploreButton: {
           label: 'Explore Map Button',
-          placeholder: 'Enter explore button label'
+          placeholder: 'Enter label'
         }
       }
     },
@@ -77,7 +77,7 @@ define({
       }
     },
     fromScratchMessage: {
-      saving: 'Creating Application Items',
+      saving: 'Launching Crowdsource Story Builder',
       layerNameInWebmap: 'Crowdsource Layer (DO NOT REMOVE)'
     },
     help: {
@@ -177,10 +177,6 @@ define({
             bannerTitle: {
               label: 'Header Title',
               placeholder: 'Enter title'
-            },
-            participateButton: {
-              label: 'Participate Button Label',
-              placeholder: 'Enter label'
             }
           }
         },
@@ -226,6 +222,13 @@ define({
                 accept: 'Accept new contributions'
               }
             },
+            showNewFeatures: {
+              label: 'Show contributions',
+              optionLabels: {
+                'new': 'Immediately',
+                'approved': 'After review'
+              }
+            },
             loginOptions: {
               label: 'Participants can sign in with',
               optionLabels: {
@@ -233,6 +236,10 @@ define({
                 facebook: 'Facebook',
                 google: 'Google'
               }
+            },
+            participateButton: {
+              label: 'Participate Button Label',
+              placeholder: 'Enter label'
             }
           }
         }
@@ -264,7 +271,7 @@ define({
           },
           mapName: {
             label: 'Map Name',
-            placeholder: 'Enter name'
+            placeholder: 'Enter map name'
           },
           folderSelection: {
             label: 'Folder',
@@ -272,7 +279,7 @@ define({
           },
           featureServiceName: {
             label: 'Layer Name',
-            placeholder: 'Enter name'
+            placeholder: 'Enter layer name'
           }
         }
       },
@@ -284,18 +291,18 @@ define({
         selection: {
           stacked: {
             name: 'Stacked',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, doloremque!'
+            description: 'Switch between map-only and photos-only views of your Crowdsource Story.'
           },
           sidePanel: {
             name: 'Side Panel',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, doloremque!'
+            description: 'Explore the map and see photo thumbnails at the same time. The panel updates as the map is moved to show only photos in the current map view.'
           }
         }
       }
     },
     appDataPlaceholderText: {
       intro: {
-        subtitle: 'Add your your subtitle here'
+        subtitle: 'Add a cover message...'
       },
       globals: {
         participateShort: 'Participate',

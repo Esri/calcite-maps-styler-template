@@ -21,18 +21,24 @@
 	font-style: italic;
 	font-weight: 600;
 	src: local('Open Sans Semibold Italic'), local('OpenSans-SemiboldItalic'), url(resources/fonts/google/open-sans-600-italic.woff2) format('woff'), url(resources/fonts/google/open-sans-600-italic.woff) format('woff');
-}      $primary-font-sanserif: "Open Sans";      $primary-font-serif: "Open Sans";      $primary-font-monospace: "";      $primary-headings-weight: 300;h1, h2, h3, h4, h5, h6,
-.h1, .h2, .h3, .h4, .h5, .h6, .tooltip, .popover {
-  font-family: $primary-font-sanserif, 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
 }
 
-html, body, blockquote, .serif-face {
-  font-family: $primary-font-serif, Georgia, serif;
-}
-
-code,
-kbd,
-pre,
-samp {
-  font-family: $primary-font-monospace, 'Consolas', 'Andale Mono', 'Lucida Console', 'Monaco', 'Courier New', Courier, monospace;
-}
+.font-openSans {
+        h1, h2, h3, h4, h5, h6,
+        .h1, .h2, .h3, .h4, .h5, .h6, .tooltip, .popover {
+          font-family: "Open Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+        }
+      }
+      
+      html .font-openSans, body .font-openSans, .font-openSans blockquote, .font-openSans .serif-face {
+        font-family: "Open Sans", Georgia, serif;
+      }
+      
+      .font-openSans{
+        code,
+        kbd,
+        pre,
+        samp {
+          font-family: "", "Consolas", "Andale Mono", "Lucida Console", "Monaco", "Courier New", Courier, monospace;
+        }
+      }

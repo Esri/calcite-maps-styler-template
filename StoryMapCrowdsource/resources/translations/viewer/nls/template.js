@@ -105,8 +105,8 @@ define({
       fix: 'Fix it!',
       basic: {
         noValue: 'No value was provided',
-        required: 'The <% attribute %> field is required.',
-        regex: 'The <% attribute %> field does not match the match the required pattern.',
+        required: 'A <% attribute %> is required.',
+        regex: 'The <% attribute %> does not match the match the required pattern.',
         max: {
           string: 'The <% attribute %> cannot contain more than <% max %> characters.',
           number: 'The <% attribute %> must be less than or equal to <% max %>.'
@@ -133,7 +133,7 @@ define({
         heading: 'An Error Has Occured',
         invalidConfig: 'Invalid configuration',
         inaccessibleApp: 'Web Mapping Application does not exist or is inaccessible.',
-				invalidConfigNoApp: 'Web Mapping Application identifier not specified in index.html or url. If you have already specified the application id, make sure you are using a valid id. If you have not created a Crowdsource story yet, click the button below.',
+				invalidConfigNoApp: 'A valid web mapping application ID is not specified in the application\'s index.html file or URL. Correct the appid and try again.',
 				unspecifiedConfigOwner: 'Authorized owner hasn\'t been configured.',
 				invalidConfigOwner: 'Story owner is not authorized.',
 				createMap: 'Unable to create map',
@@ -146,7 +146,7 @@ define({
         crowdsourceLayerNotFound: 'Something went wrong, the story could not find or load the crowdsource map layer correctly.'
       },
       sharing: {
-        localhost: 'URL\'s with "localhost" cannot be shared.'
+        localhost: 'URLs with "localhost" cannot be shared.'
       }
     }
   }

@@ -45,18 +45,44 @@
 	font-style: italic;
 	font-weight: 700;
 	src: local('Merriweather Bold Italic'), local('Merriweather-BoldItalic'), url(resources/fonts/google/merriweather-700-italic.woff2) format('woff'), url(resources/fonts/google/merriweather-700-italic.woff) format('woff');
-}      $primary-font-sanserif: "Lato";      $primary-font-serif: "Merriweather";      $primary-font-monospace: "";      $primary-headings-weight: 300;h1, h2, h3, h4, h5, h6,
-.h1, .h2, .h3, .h4, .h5, .h6, .tooltip, .popover {
-  font-family: $primary-font-sanserif, 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
 }
 
-html, body, blockquote, .serif-face {
-  font-family: $primary-font-serif, Georgia, serif;
-}
+.font-latoMerriweather {
+        h1, h2, h3, h4, h5, h6,
+        .h1, .h2, .h3, .h4, .h5, .h6, .tooltip, .popover {
+          font-family: "Lato", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+        }
+      }
+      
+      html .font-latoMerriweather, body .font-latoMerriweather, .font-latoMerriweather blockquote, .font-latoMerriweather .serif-face {
+        font-family: "Merriweather", Georgia, serif;
+      }
+      
+      .font-latoMerriweather{
+        code,
+        kbd,
+        pre,
+        samp {
+          font-family: "", "Consolas", "Andale Mono", "Lucida Console", "Monaco", "Courier New", Courier, monospace;
+        }
+      }
 
-code,
-kbd,
-pre,
-samp {
-  font-family: $primary-font-monospace, 'Consolas', 'Andale Mono', 'Lucida Console', 'Monaco', 'Courier New', Courier, monospace;
-}
+.font-_latoMerriweather {
+        h1, h2, h3, h4, h5, h6,
+        .h1, .h2, .h3, .h4, .h5, .h6, .tooltip, .popover {
+          font-family: "Open Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+        }
+      }
+      
+      html .font-_latoMerriweather, body .font-_latoMerriweather, .font-_latoMerriweather blockquote, .font-_latoMerriweather .serif-face {
+        font-family: "Open Sans", Georgia, serif;
+      }
+      
+      .font-_latoMerriweather{
+        code,
+        kbd,
+        pre,
+        samp {
+          font-family: "", "Consolas", "Andale Mono", "Lucida Console", "Monaco", "Courier New", Courier, monospace;
+        }
+      }
