@@ -599,6 +599,8 @@ img {
   line-height: 16px;
   top:10px;
   cursor:pointer;
+  background-color: transparent;
+  border:none;
 }
 .popupButton:hover{
   /*match out of the box hover color for home and locate*/
