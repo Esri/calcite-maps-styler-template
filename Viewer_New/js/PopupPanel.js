@@ -19,6 +19,7 @@ define(
 
     "dijit/registry",
     "dijit/focus",
+    "dijit/a11y",
 
     "esri/domUtils",
     "esri/lang",
@@ -30,7 +31,7 @@ define(
     on, esriStrings, dom, domClass, domStyle, domConstruct,
     query, lang, win,
 
-    registry, focusUtil,
+    registry, focusUtil, a11y,
 
     domUtils, esriLang, Popup
   ) {
@@ -103,6 +104,8 @@ define(
           var panel = registry.byId(this.srcNode);
           if (panel) {
             panel.set("content", feature.getContent());
+            var focusNode = a11y.getFirstInTabbingOrder(panel.domNode);
+            focusUtil.focus(focusNode);
           }
           //update selection text
           var selectionString = esriStrings.widgets.popup.NLS_pagingInfo,
@@ -146,7 +149,10 @@ define(
         query(".panelPopup").forEach(function(node) {
           if (show) {
             domUtils.show(node);
-            focusUtil.focus(dom.byId("pageContent_popup"));
+            var focusableItem = a11y.getFirstInTabbingOrder("pageContent_popup");
+            if (focusableItem) {
+              focusUtil.focus(focusableItem);
+            }
           } else {
             domUtils.hide(node);
             // reset focus on search box if applicable
@@ -154,7 +160,6 @@ define(
             if (searchNode) {
               focusUtil.focus(searchNode);
             }
-
           }
         });
       },
