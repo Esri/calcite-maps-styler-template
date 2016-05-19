@@ -111,13 +111,18 @@
         <script type="text/javascript">
         require([
             "config/templateConfig",
+            "dojo/parser",
             "application/template",
-            "application/main"
-        ], function(
+            "application/main",
+            "dijit/layout/ContentPane",
+            "dijit/layout/BorderContainer"
+          ], function(
             templateConfig,
+            parser,
             Template,
             Main
         ){
+          parser.parse();
           // create the template. This will take care of all the logic required for template applications
           var myTemplate = new Template(templateConfig);
           // create my main application. Start placing your logic in the main.js file.
