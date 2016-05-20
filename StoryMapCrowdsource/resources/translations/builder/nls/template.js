@@ -1,5 +1,13 @@
 define({
   root: {
+    // TODO Remove after beta
+    betaMessage: {
+      title: 'This is a beta release of Story Map Crowdsource',
+      messageParagraphs: [
+        'A beta release means that some features of this app are not in their final form. In most cases, stories created with this beta version of the app it will simply continue to work when the final version is released.',
+        'If a Story Map Crowdsource is modified outside the builder, however, there is a possibility it may not work with the final version of the app. For more information please read the applicable FAQ in the Help section of the app.'
+      ]
+    },
     common: {
       appNameAppend: 'Builder',
       buttons: {
@@ -59,6 +67,9 @@ define({
           label: 'Add a photo',
           placeholder: 'Drag and Drop',
           attribute: 'photo'
+        },
+        termsAndConditions: {
+          legal: 'You warrant and represent that (1) you possess all rights, title, and ownership in the photos to be shared up to this site, and grant Esri, and its contractors the nonexclusive, royalty free right to use, copy, store, cache, host, prepare derivative works, reproduce, publicly display and perform, redistribute, rebroadcast, and retransmit the shared photo as part of this service, and (2) your sharing of photos and any associated geolocational information will not infringe or misappropriate any third party’s proprietary rights or rights of privacy or publicity. Sharing photos that could be deemed defamatory, obscene, pornographic, excessively violent, or to encourage unlawful activities are strictly prohibited.'
         }
       }
     },
@@ -86,7 +97,7 @@ define({
         {
           title: 'Introduction',
           paragraphs: [
-            'Story Map Crowdsource is an ArcGIS web application designed to collect photos and short stories on a topic you specify from anyone and display them on a map. The app is easy to use and configure and can be used in any web browser and on most devices, including smartphones and tablets. Contributors can log in with their Facebook or Google account or with an ArcGIS account if they have one.',
+            'Story Map Crowdsource is an ArcGIS web application designed to collect photos and captions, on a topic you specify, from anyone and display them on a map. The app is easy to use and configure, and can be used in a web browser on laptop and desktop computers, mobile phones, and tablets. Contributors can log in with their Facebook or Google account or with an ArcGIS account if they have one.',
             'To see examples of Crowdsource stories that other authors are creating, visit the <% galleryLink %>. You can also follow us on Twitter at <% twitterFollowLink %>.',
             'We would love to hear from you! Whether you have a question, want to request a new feature, or think you\'ve found a bug, please visit the <% geonet %>.'
           ],
@@ -99,7 +110,7 @@ define({
         {
           title: 'Configuration and Customization',
           paragraphs: [
-            'You can create your own unique Crowdsource story using the available configuration options. Click <% settings %> in the builder header and explore ways to change the layout, cover image, title, logo and sharing links, whether new submissions must be approved before they appear on the map, and more.',
+            'You can create your own unique Crowdsource story using the available configuration options. Click <% settings %> in the builder header and explore ways to change the layout, cover image, title, logo and sharing links, whether new submissions must be approved before they appear on the map, and more. We suggest that you enable submissions to appear immediately in order to reward your contributors. If you\'re concerned about objectionable posts, you can choose to approve them first.',
             'You can also set the <% homeMap %>, which is also the area of the map that is shown when your story loads. Just navigate the map to the area you want to use and press the "Update Home Map View" button (next to the map navigation controls) to store the current map view as the home view.',
             'If the available configuration options do not meet your needs or you wish to host the application on your own web server the application source code is available for developers to customize. To download the most recent version of the code and learn more about how to use it, visit its <% github %>.'
           ],
@@ -116,7 +127,7 @@ define({
           questions: [
             {
               question: 'Where are are the photos stored?',
-              response: 'Submitted photos are resampled to an appropriate size and stored in your ArcGIS account as feature service attachments. Images uploaded by you in the builder for the cover image and logo are stored as item resources with your story map application item.'
+              response: 'Submitted photos are resampled to an appropriate size and stored in your ArcGIS account (as feature service attachments). Images uploaded by you in the builder for the cover image and logo are stored as item resources with your story map application item.'
             },
             {
               question: 'Can I create a Crowdsource story using my ArcGIS Online public account?',
@@ -127,8 +138,12 @@ define({
               response: 'Yes, but contributors can log in to ArcGIS Online using their Facebook or Google account. Logging in with one of these social services will create a <% publicAccount %> for the contributor.'
             },
             {
-              question: 'Can I add other layers to the map?',
-              response: 'Yes, you can add other layers to your map for context. Open your story\'s <% map %>, add layers, and save your changes. The next time you load your story you will see the new layers. Be careful not to delete or modify the contributions layer in your map or your Crowdsource story may stop working properly.'
+              question: 'Will Crowdsource stories created with the beta version of the app continue to work when the final version is released?',
+              response: 'Yes it will work, but there are two possible exceptions. If you add layers to your beta Crowdsource story\'s web map (which can only be done outside the builder), those layers may stop working or their symbols may change after the final release. To avoid this situation you can convert any supporting layers to feature layers before adding them to your map and use simple symbols. There is also a possibility that the data model for the crowdsource layer feature service may change. If this occurs, we intend to provide a workflow or tool to update your feature service to the new data model.'
+            },
+            {
+              question: 'Can I add other layers to my Crowdsource story\'s map?',
+              response: 'Yes, you can add other layers to the map for context, but first read the previous question for important information about doing this with the beta release of Story Map Crowdsource. Open your story\'s <% map %>, add layers, and save your changes. The next time you load your story you will see the new layers. Be careful not to delete or modify the contributions layer in your map or your Crowdsource story may stop working properly.'
             },
             {
               question: 'Will my Crowdsource story consume credits?',
@@ -231,6 +246,7 @@ define({
             },
             loginOptions: {
               label: 'Participants can sign in with',
+              attribute: 'sign-in option',
               optionLabels: {
                 arcgis: 'ArcGIS',
                 facebook: 'Facebook',
@@ -240,6 +256,11 @@ define({
             participateButton: {
               label: 'Participate Button Label',
               placeholder: 'Enter label'
+            },
+            termsAndConditions: {
+              label: 'Terms and Conditions',
+              placeholder: 'Enter terms',
+              tooltip: 'These are the terms and conditions your participants must accept before they can add their contributions to the story.'
             }
           }
         }
@@ -250,7 +271,7 @@ define({
       sharePermissions: {
         'private': 'Private',
         'organization': 'Organization',
-        'public': 'Everyone'
+        'public': 'Public'
       },
       socialize: {
         header: 'Socialize'
@@ -326,7 +347,7 @@ define({
         heading: 'Form Error'
       },
       loading: {
-        notAuthorizedCreateNew: 'You are not authorized to create a Crowdsource story. An organizational account with privileges to create new items and publish features is required. Please contact your ArcGIS administrator for assistance.',
+        notAuthorizedCreateNew: 'To create a Crowdsource story you must use an ArcGIS Subscription Account with publishing privileges. If you are using a Subscription Account, contact your ArcGIS administrator to request additional privileges. If you are using an ArcGIS Public Account, <a href="http://www.arcgis.com/features/plans/pricing.html" target="-blank">upgrade</a> to a subscription or start a <a href="http://www.arcgis.com/features/free-trial.html" target="-blank">free trial</a>.',
         notAuthorizedEdit: 'You are not authorized to edit this story. If you are not the owner, make sure you have been <a href="http://blogs.esri.com/esri/arcgis/2015/07/14/enable-colleagues-to-update-your-maps-and-apps/" target="-blank">given edit permissions</a> by the owner. You must also have access to edit items and publish new hosted feature services in your organization. Contact your ArcGIS Online organization administrator for more privileges.',
         crowdsourceLayerNotFound: 'Something went wrong, the app could not find or load the crowdsource map layer correctly. Make sure you have permission to view the feature service.',
         builderNotSSL: 'This Crowdsource story map requires the use of an https connection to make sure your audience can securely login and share their entry. Make sure your server supports an https connection at this same url. Viewers coming to your map will automatically be redirected to the secure version of the app.'
@@ -336,6 +357,7 @@ define({
       }
     },
     validations: {
+      waitMessage: 'Checking',
       arcgis: {
         naming: {
           arcgisItemName: 'The <% attribute %> may not contain < or >.',
