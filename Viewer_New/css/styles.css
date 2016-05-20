@@ -1114,9 +1114,11 @@ input[type=checkbox]{
 .toolbar-icons{
   font-size:14px;
   color:#fff;
+  line-height: 30px;
+  vertical-align: middle;
 }
 .btnText{
-  padding-right: .5em;
+  padding: 0 .5em 0 .2em;
   font-size: 12px;
   line-height: 26px;
   vertical-align: middle;
