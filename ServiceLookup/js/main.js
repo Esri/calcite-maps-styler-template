@@ -28,6 +28,7 @@ define([
   "dojo/topic",
   "dojo/query",
   "dojo/dom-style",
+  "dojo/_base/kernel",
   "application/splash",
   "application/basemapButton",
   "application/navigationButtons",
@@ -49,6 +50,7 @@ function (
     topic,
     query,
     domStyle,
+    kernel,
     SplashScreen,
     BasemapButton,
     NavigationButtons,
@@ -59,6 +61,8 @@ function (
   return declare(null, {
     config: {},
     startup: function (config) {
+      // Set lang attribute to current locale
+      document.documentElement.lang = kernel.locale;
       var promise;
       // config will contain application and user defined info for the template such as i18n strings, the web map id
       // and application id

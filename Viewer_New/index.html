@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-us">
+<html>
   <head>
     <title></title> <!-- Define the versions of IE that will be used to render the page. See Microsoft documentation for details. Optional. -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -50,13 +50,13 @@
     <!-- Panel Content -->
     <div id="panelContent">
       <div id="panelPages"></div>
-      <div class="pageContent shadow medium panelPopup" id="pageContent_popup">
+      <div class="pageContent shadow medium panelPopup" tabindex="0" role="button" id="pageContent_popup">
         <div id="pageHeader_popup" class="popupHeader bg">
           <div class="popupTitle fc">
             <div id="popupTitle"></div>
-            <div id="popupButtonPrev" class="popupButton prev"></div>
-            <div id="popupButtonNext" class="popupButton next"></div>
-            <div id="popupButtonClose" class="popupButton close"></div>
+            <button id="popupButtonPrev" role="button" class="popupButton prev icon-color"></button>
+            <button id="popupButtonNext" role="button" class="popupButton next icon-color"></button>
+            <button id="popupButtonClose" role="button" class="popupButton close icon-color"></button>
           </div>
         </div>
         <div class="pageBody" id="pageBody_popup">
@@ -111,13 +111,18 @@
         <script type="text/javascript">
         require([
             "config/templateConfig",
+            "dojo/parser",
             "application/template",
-            "application/main"
-        ], function(
+            "application/main",
+            "dijit/layout/ContentPane",
+            "dijit/layout/BorderContainer"
+          ], function(
             templateConfig,
+            parser,
             Template,
             Main
         ){
+          parser.parse();
           // create the template. This will take care of all the logic required for template applications
           var myTemplate = new Template(templateConfig);
           // create my main application. Start placing your logic in the main.js file.

@@ -43,6 +43,7 @@
     <script type="text/javascript">
         var dataBrowser;
         require([
+        "dojo/_base/kernel",
         "esri/urlUtils",
         "esri/dijit/geoenrichment/DataBrowser",
         "dojo/on",
@@ -50,7 +51,10 @@
         "dojo/cookie",
         "dojo/domReady!"
         ], function (
-        urlUtils, DataBrowser, on, kernel, cookie) {
+        kernel, urlUtils, DataBrowser, on, esriKernel, cookie) {
+          
+            document.documentElement.lang = kernel.locale;
+          
             var userInfo = {};
             objRef = window.opener.selectedData;
             window.document.title = objRef.selectedTab + " - Data Browser";
@@ -94,7 +98,7 @@
                 cookie(cred, idString, { expires: 1 });
             }
             var idObject = JSON.parse(idString);
-            kernel.id.initialize(idObject);
+            esriKernel.id.initialize(idObject);
             dataBrowser = new DataBrowser({
                 okButton: 'Apply',
                 backButton: null, //Back button text. Can be set to -null- which should hide the button.

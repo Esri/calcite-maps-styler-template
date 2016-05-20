@@ -1,5 +1,6 @@
 define([
     "dojo/_base/declare",
+    "dojo/_base/kernel",
     "dojo/_base/lang",
     "esri/arcgis/utils",
     "dojo/json",
@@ -29,6 +30,7 @@ define([
 ],
   function (
     declare,
+    kernel,
     lang,
     arcgisUtils,
     JSON,
@@ -88,6 +90,9 @@ define([
         this._showDrawerSize = 850;
       },
       startup: function (config) {
+        
+        document.documentElement.lang = kernel.locale;
+        
         // config will contain application and user defined info for the template such as i18n strings, the web map id
         // and application id
         // any url parameters and any application specific configuration information.

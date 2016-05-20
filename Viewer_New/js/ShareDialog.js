@@ -1,7 +1,56 @@
-define(["dojo/Evented", "dojo/_base/declare", "dojo/_base/lang", "dojo/has", "esri/kernel", "dijit/_WidgetBase", "dijit/a11yclick", "dijit/_TemplatedMixin", "dojo/on",
+define([
+  "dojo/Evented",
+  "dojo/_base/declare",
+  "dojo/_base/lang",
+  "dojo/has",
+  "esri/kernel",
+  "esri/config",
+  "dijit/_WidgetBase",
+  "dijit/a11yclick",
+  "dijit/_TemplatedMixin",
+  "dojo/on",
+  "dojo/Deferred",
   // load template
-  "dojo/text!application/dijit/templates/ShareDialog.html", "dojo/i18n!application/nls/ShareDialog", "dojo/dom-class", "dojo/dom-style", "dojo/dom-attr", "dojo/dom-construct", "esri/request", "esri/urlUtils", "dijit/Dialog", "dojo/number", "dojo/_base/event"], function(
-  Evented, declare, lang, has, esriNS, _WidgetBase, a11yclick, _TemplatedMixin, on, dijitTemplate, i18n, domClass, domStyle, domAttr, domConstruct, esriRequest, urlUtils, Dialog, number, event) {
+  "dojo/text!application/dijit/templates/ShareDialog.html",
+  "dojo/i18n!application/nls/ShareDialog",
+  "dojo/dom-class",
+  "dojo/dom-style",
+  "dojo/dom-attr",
+  "dojo/dom-construct",
+  "esri/request",
+  "esri/geometry/webMercatorUtils",
+  "esri/SpatialReference",
+  "esri/tasks/ProjectParameters",
+  "esri/urlUtils",
+  "dijit/Dialog",
+  "dojo/number",
+  "dojo/_base/event"
+], function(
+  Evented,
+  declare,
+  lang,
+  has,
+  esriNS,
+  esriConfig,
+  _WidgetBase,
+  a11yclick,
+  _TemplatedMixin,
+  on,
+  Deferred,
+  dijitTemplate,
+  i18n,
+  domClass,
+  domStyle,
+  domAttr,
+  domConstruct,
+  esriRequest,
+  webMercatorUtils,
+  SpatialReference,
+  ProjectParametrs,
+  urlUtils,
+  Dialog,
+  number,
+  event) {
   var Widget = declare("esri.dijit.ShareDialog", [_WidgetBase, _TemplatedMixin, Evented], {
     templateString: dijitTemplate,
     options: {
@@ -180,39 +229,65 @@ define(["dojo/Evented", "dojo/_base/declare", "dojo/_base/lang", "dojo/has", "es
       if (urlObject.query.locale) {
         delete urlObject.query.locale;
       }
+      this._getProjectedExtent(map).then(lang.hitch(this, function(gExtent) {
+        if (gExtent) {
+          urlObject.query.extent = gExtent.xmin.toFixed(4) + "," + gExtent.ymin.toFixed(4) + "," + gExtent.xmax.toFixed(4) + "," + gExtent.ymax.toFixed(4);
+        } else {
+          urlObject.query.extent = null;
+        }
+
+        // create base url
+        url = window.location.protocol + "//" + window.location.host + window.location.pathname;
+        // each param
+        for (var i in urlObject.query) {
+          if (urlObject.query[i]) {
+            // use separator
+            if (useSeparator) {
+              url += "&";
+            } else {
+              url += "?";
+              useSeparator = true;
+            }
+
+            url += i + "=" + urlObject.query[i];
+          }
+        }
+        // update url
+        this.set("url", url);
+        // reset embed code
+        this._setEmbedCode();
+        // set url value
+        domAttr.set(this._shareMapUrlText, "value", url);
+      }));
+    },
+    _getProjectedExtent: function(map) {
+      var deferred = new Deferred();
       // include extent in url
       if (this.get("useExtent") && map) {
         // get map extent in geographic
-        var gExtent = map.geographicExtent;
-        // set extent string
-        urlObject.query.extent = gExtent.xmin.toFixed(4) + "," + gExtent.ymin.toFixed(4) + "," + gExtent.xmax.toFixed(4) + "," + gExtent.ymax.toFixed(4);
-
-      } else {
-        urlObject.query.extent = null;
-      }
-      // create base url
-      url = window.location.protocol + "//" + window.location.host + window.location.pathname;
-      // each param
-      for (var i in urlObject.query) {
-        if (urlObject.query[i]) {
-          // use separator
-          if (useSeparator) {
-            url += "&";
+        if (map.geographicExtent) {
+          deferred.resolve(map.geographicExtent);
+        } else {
+          var sr = new SpatialReference(4326);
+          if (webMercatorUtils.canProject(map.extent, sr)) {
+            deferred.resolve(webMercatorUtils.project(map.extent, sr));
           } else {
-            url += "?";
-            useSeparator = true;
+            var params = new ProjectParametrs();
+            params.geometries = [map.extent];
+            params.outSR = sr;
+            esriConfig.defaults.geometryService.project(params).then(function(results) {
+              if (results && results.length && results.length > 0) {
+                deferred.resolve(results[0]);
+              } else {
+                deferred.resolve();
+              }
+            });
           }
-
-          url += i + "=" + urlObject.query[i];
         }
+      } else {
+        deferred.resolve();
       }
-      // update url
-      this.set("url", url);
-      // reset embed code
-      this._setEmbedCode();
-      // set url value
-      domAttr.set(this._shareMapUrlText, "value", url);
-    //  domAttr.set(this._linkButton, "href", url);
+      return deferred.promise;
     },
     _init: function() {
       // set sizes for select box
@@ -281,7 +356,6 @@ define(["dojo/Evented", "dojo/_base/declare", "dojo/_base/lang", "dojo/has", "es
       var bitly = this.get("bitlyUrl");
       if (bitly) {
         domAttr.set(this._shareMapUrlText, "value", bitly);
-      //  domAttr.set(this._linkButton, "href", bitly);
       }
     },
     _shareLink: function() {

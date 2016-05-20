@@ -67,17 +67,10 @@
       "tooltip": "Title bar text color",
       "label": "Title Color:"
     }, {
-      "type": "string",
-      "fieldName": "icons",
+      "type": "color",
+      "fieldName": "iconColor",
       "tooltip": "Icon color",
-      "label": "Icon color:",
-      "options": [{
-        "label": "White",
-        "value": "white"
-      }, {
-        "label": "Black",
-        "value": "black"
-      }]
+      "label": "Icon color:"
     }, {
       "type": "paragraph",
       "value": "Use the Custom css option to paste css that overwrites rules in the app."
@@ -305,10 +298,10 @@
     }]
   }],
   "values": {
-    "icons": "white",
     "logo": "images/logo.png",
     "color": "#fff",
     "theme": "80ab00",
+    "iconColor":"#fff",
     "activeTool": "legend",
     "scalebar": false,
     "splashModal": false,

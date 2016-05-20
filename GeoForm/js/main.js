@@ -86,6 +86,9 @@ define([
     dateFormat: "LLL",
 
     startup: function (config, appResponse, isPreview, node) {
+      
+      document.documentElement.lang = kernel.locale;
+      
       this._appResponse = appResponse;
       var localStorageSupport = new localStorageHelper();
       if (localStorageSupport.supportsStorage() && localStorage.getItem("geoform_config")) {
