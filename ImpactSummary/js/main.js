@@ -1,5 +1,6 @@
 define([
     "dojo/_base/declare",
+    "dojo/_base/kernel",
     "dojo/_base/lang",
     "esri/arcgis/utils",
     "dojo/dom-construct",
@@ -26,7 +27,7 @@ define([
     "dojo/date/locale"
 ],
 function (
-    declare,
+    declare, kernel,
     lang,
     arcgisUtils,
     domConstruct,
@@ -84,6 +85,9 @@ function (
             this._showDrawerSize = 850;
         },
         startup: function (config, appResponse, userInfo) {
+          
+            document.documentElement.lang = kernel.locale;
+          
             //config will contain application and user defined info for the template such as i18n strings, the web map id
             // and application id
             // any url parameters and any application specific configuration information.
