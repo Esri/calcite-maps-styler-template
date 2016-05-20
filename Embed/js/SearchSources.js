@@ -154,6 +154,12 @@ declare, lang, array, dojoJson, domConstruct, esriLang, Locator, FeatureLayer, S
                             outFields: ["*"]
                         });
                     }
+          // Set default search fields if not specified
+          if (source.searchFields.length === 0) {
+            if (featureLayer && featureLayer.displayField) {
+              source.searchFields = [featureLayer.displayField];
+            }
+          }
                     source.featureLayer = featureLayer;
                 }
                 if (source.searchWithinMap) {
