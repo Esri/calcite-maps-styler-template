@@ -96,29 +96,7 @@ body{
 .arcgisSearch .searchExpandContainer .searchBtn{
   padding:6px 12px;
 }
-.HomeButton {
-  border-bottom: 1px solid #57585a;
-  width: 30px;
-  height: 30px;
-}
-.HomeButton .home {
-  background-color: #6c6d70;
-  background: url("../images/home_locate.png") no-repeat 0 0;
-}
-.HomeButton .home {
-  padding: 0px !important;
-  width: 30px;
-  height: 30px;
-}
 
-.HomeButton .home:hover {
-  background-color: #eee;
-  width: 30px;
-  height: 30px;
-  padding: 0px;
-  -webkit-border-radius: 0;
-  border-radius: 0;
-}
 .esriSimpleSlider{
   border-radius: 2px !important;
 }
