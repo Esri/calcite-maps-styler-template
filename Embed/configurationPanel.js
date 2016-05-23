@@ -115,7 +115,7 @@
                "label":"Display a legend in side panel"
             },{
               "type":"boolean",
-              "fieldName":"layerlist",
+              "fieldName":"legendlayers",
               "label": "Display layer list in side panel instead of legned"
             },
             {
@@ -230,7 +230,7 @@
       "logolink":null,
       "details":false,
       "legend":false,
-      "layerlist":false,
+      "legendlayers":false,
       "popup_sidepanel":false,
       "basemap_gallery":false,
       "disable_scroll":false
