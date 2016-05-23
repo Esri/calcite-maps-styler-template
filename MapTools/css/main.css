@@ -196,18 +196,19 @@ g#mapDiv_graphics_layer path {
 .toolbar button:hover:enabled {
   -webkit-box-shadow: 0 0 1px #51cbee;
   box-shadow: 0 0 1px #51cbee;
-  -webkit-border-radius: 4px;
-  border-radius: 4px;
+  -webkit-border-radius: 0;
+  border-radius: 0;
 }
 .toolbar button:focus {
   outline: none;
 }
 .tool-selected {
+  height:100%;
   background: rgba(0,0,0,0.2) !important;
   -webkit-box-shadow: 1px 1px 1px rgba(51,51,51,0.6);
   box-shadow: 1px 1px 1px rgba(51,51,51,0.6);
-  -webkit-border-radius: 4px;
-  border-radius: 4px;
+  -webkit-border-radius: 0;
+  border-radius: 0;
 }
 .toolbar button {
   display: inline-block;
@@ -240,9 +241,7 @@ g#mapDiv_graphics_layer path {
   cursor: default;
   color: #ccc;
 }
-.esriBasemapGalleryLabelContainer {
-  font-size: 12px;
-}
+
 #tableDiv {
   height: 0;
   background-color: #eee;
@@ -263,6 +262,9 @@ g#mapDiv_graphics_layer path {
 .esriPopup .pointer.bottom,
 .esriPopup .pointer.bottomRight {
   background: #fff !important;
+}
+.esriPopup.light .titlePane, .dj_ie7 .esriPopup.light .titlePane .title{
+  height:32px;
 }
 .sidepanel {
   width: 0;
@@ -291,34 +293,60 @@ g#mapDiv_graphics_layer path {
   -webkit-border-radius: 0 0 4px 4px;
   border-radius: 0 0 4px 4px;
 }
-/*overwrite claro styles*/
-.claro .dijitContentPane {
+/*overwrite calcite styles*/
+.calcite .dijitContentPane {
   padding: 0 !important;
 }
 .esriSimpleSlider span {
   display: none;
 }
-.HomeButton {
-  border-bottom: 1px solid #57585a;
-  width: 30px;
-  height: 30px;
+.esriSimpleSliderDecrementButton:hover, .esriSimpleSliderIncrementButton:hover, .HomeButton .home:hover {
+  border-radius: 0;
+  background-color: transparent;
+  background-color: rgba(0, 0, 0, 0.3);
+  zoom: 1;
+}
+
+.esriSimpleSliderVertical .esriSimpleSliderIncrementButton {
+  border: none !important;
 }
 .HomeButton .home {
-  -webkit-border-radius: 0;
-  border-radius: 0;
-  padding: 0px !important;
-  width: 30px;
-  height: 30px;
-  background-color: transparent;
-  background-image: none;
+    width: 30px;
+    height: 25px;
+  /*display:none;*/
+    background-color: transparent;
+    background-image: none;
+    vertical-align: middle;
+    text-align: center;
+    cursor: pointer;
+    padding: 0px !important;
 }
+
+.esriSimpleSlider {
+    text-align: center;
+    color: #ffffff;
+    background-color: transparent;
+    background-color: rgba(255, 255, 255, 0.8);
+    cursor: pointer;
+    border:none;
+    border-radius: 0;
+}
+
+.esriSimpleSliderVertical .esriSimpleSliderIncrementButton, .esriSimpleSliderVertical .esriSimpleSliderDecrementButton {
+    border-radius: 0;
+}
+
 #search.arcgisSearch {
   position: absolute;
   top: 160px;
   left: 20px;
   z-index: 40;
 }
+.arcgisSearch .searchBtn{
+  border:none;
+}
 .arcgisSearch .searchCollapsed .searchSubmit {
+  border-radius: 0;
   padding: 6px;
 }
 .arcgisSearch .searchIcon {
@@ -388,59 +416,7 @@ g#mapDiv_graphics_layer path {
   width: 300px;
   overflow-y: scroll;
 }
-.claro .dijitButton .dijitButtonNode, .claro .dijitDropDownButton .dijitButtonNode, .claro .dijitComboButton .dijitButtonNode, .claro .dijitToggleButton .dijitButtonNode {
-  margin: 0;
-  line-height: normal;
-  vertical-align: middle;
-  text-align: center;
-  white-space: nowrap; 
-  border:none;
-  color:#fff;
-  background-color: transparent;
-  background-image:none;
-  -webkit-box-shadow: none;
-  -moz-box-shadow: none;
-  box-shadow: none;
-}
-.esriPrintButton {
-  padding: 0.5em 1em 0.5em !important;
-  line-height: 32px;
-  background: #d3d3d3;
-  color: #fff;
-  padding: 0;
-  border: none;
-  display: inline-block;
-  white-space: nowrap;
-  cursor: pointer;
-  position: relative;
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  -ms-border-radius: 4px;
-  border-radius: 4px;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  -webkit-box-shadow: 1px 2px 1px rgba(0, 0, 0, 0.3);
-  -moz-box-shadow: 1px 2px 1px rgba(0, 0, 0, 0.3);
-  box-shadow: 1px 2px 1px rgba(0, 0, 0, 0.3);
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  -webkit-transition: all 0.5s linear;
-  -moz-transition: all 0.5s linear;
-  -ms-transition: all 0.5s linear;
-  -o-transition: all 0.5s linear;
-  transition: all 0.5s linear; }
 
-.esriPrintButton .esriPrintButton {
-  background: #d3d3d3;
- }
-
-.esriPrintButton:hover {
-  background: #a9a9a9;
-}
 #printDiv{
     padding:5px;
     height:120px;
@@ -454,9 +430,9 @@ g#mapDiv_graphics_layer path {
   color:#fff;
 }
 .printTitle{
-  width: 185px;
-  font-size: 14px;
-  border-width: 2px;
+  width: 100%;
+  font-size: 12px;
+  border-width: 1px;
   border-color: #CCC;
   border-style: solid;
   padding: 5px;
@@ -467,23 +443,23 @@ g#mapDiv_graphics_layer path {
   font-size:20px;
 }
 .esriPrintout a {
-  color: #5daddd; 
+  color: #5daddd;
 }
 .loadPrint{
     padding:0 0.3em;
     text-align: center;
     vertical-align: middle;
     line-height:32px;
-    -webkit-animation-name: rotate; 
-    -webkit-animation-duration: 1s; 
+    -webkit-animation-name: rotate;
+    -webkit-animation-duration: 1s;
     -webkit-animation-iteration-count: infinite;
     -webkit-animation-timing-function: linear;
-    -moz-animation-name: rotate; 
-    -moz-animation-duration: 1s; 
+    -moz-animation-name: rotate;
+    -moz-animation-duration: 1s;
     -moz-animation-iteration-count: infinite;
     -moz-animation-timing-function: linear;
-    animation-name: rotate; 
-    animation-duration: 1s; 
+    animation-name: rotate;
+    animation-duration: 1s;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
 }
@@ -502,34 +478,8 @@ g#mapDiv_graphics_layer path {
     to {transform: rotate(360deg);}
 }
 
-/*Styles for the print dialog checkbox*/
-#printDiv .checkbox {
-  display: inline-block;
-  cursor: pointer;
-  margin-left: 2px;
-  line-height: 18px;
-  padding: 4px;
-}
-#printDiv input[type=checkbox].checkbox {
-  display: none;
-}
-#printDiv .checkbox:before {
-  content: "";
-  display: inline-block;
-  width: 18px;
-  height: 18px;
-  vertical-align: middle;
-  background-color: #d3d3d3;
-  color: #f3f3f3;
-  text-align: center;
-  -webkit-border-radius: 3px;
-  border-radius: 3px;
-}
-#printDiv input[type=checkbox]:checked.checkbox + .checkbox:before {
-  content: "\2713";
-  text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
-  font-size: 15px;
-}
+
+
 #shareDiv {
   padding: 5px;
   height: auto;
@@ -547,7 +497,7 @@ g#mapDiv_graphics_layer path {
 }
 #galleryDiv {
   width: 380px;
-  height: 265px;
+  height: 285px;
   overflow-y: scroll;
 }
 .container_box {
@@ -555,20 +505,24 @@ g#mapDiv_graphics_layer path {
   border-radius: 0 0 4px 4px;
   position: relative;
   background: #fff;
-  border: 1px solid #333;
+  border: 1px solid #ccc;
   z-index: 60;
 }
 .esriBookmarks {
   border: none;
+}
+.esriBasemapGalleryLabelContainer{
+  font-size:10px;
+}
+.esriBasemapGallerySelectedNode .esriBasemapGalleryThumbnail{
+  border-width: 1px;
+  margin:1px;
 }
 @media screen and (max-width: 640px) {
   #galleryDiv {
     width: 140px;
     height: 265px;
   }
-}
-.basemap_title {
-  padding: 5px;
 }
 /*Share Dialog*/
 .icon-container {
@@ -654,31 +608,6 @@ g#mapDiv_graphics_layer path {
   border: 1px solid #dcdcdc;
   margin: 0 0 10px;
 }
-.share-dialog-checkbox {
-  display: inline-block;
-  cursor: pointer;
-  padding: 8px;
-}
-input[type=checkbox].share-dialog-checkbox {
-  display: none;
-}
-.share-dialog-checkbox:before {
-  content: "";
-  display: inline-block;
-  width: 18px;
-  height: 18px;
-  vertical-align: middle;
-  background-color: #d3d3d3;
-  color: #f3f3f3;
-  text-align: center;
-  -webkit-border-radius: 3px;
-  border-radius: 3px;
-}
-input[type=checkbox]:checked.share-dialog-checkbox + .share-dialog-checkbox:before {
-  content: "\2713";
-  text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
-  font-size: 15px;
-}
 #layerDiv {
   max-height: 300px;
   overflow: hidden;
@@ -714,4 +643,7 @@ input[type=checkbox]:checked.share-dialog-checkbox + .share-dialog-checkbox:befo
   -webkit-border-radius: 4px;
   border-radius: 4px;
   overflow: auto;
+}
+.esriLayerList .esriToggleButton{
+  margin-right:8px;
 }
