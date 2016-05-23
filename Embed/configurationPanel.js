@@ -230,6 +230,7 @@
       "logolink":null,
       "details":false,
       "legend":false,
+      "layerlist":false,
       "popup_sidepanel":false,
       "basemap_gallery":false,
       "disable_scroll":false
