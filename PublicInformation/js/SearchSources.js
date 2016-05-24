@@ -27,6 +27,7 @@ define(["dojo/_base/declare", "dojo/_base/lang", "dojo/_base/array", "dojo/_base
       return {
         map: this.map,
         sources: this._createSources(),
+        enableSearchingAll: this.enableSearchingAll,
         activeSourceIndex: this._getActiveSource()
       };
     },
@@ -55,12 +56,11 @@ define(["dojo/_base/declare", "dojo/_base/lang", "dojo/_base/array", "dojo/_base
 
     _getActiveSource: function () {
       var activeIndex = 0;
-      if (this.activeSourceIndex) {
+      if (this.hasOwnProperty("activeSourceIndex")) {
         activeIndex = this.activeSourceIndex;
       }
       else{
-        
-        if (this.sources && this.sources.length > 1) {
+        if (this.sources && this.enableSearchingAll && this.sources.length > 1) {
           activeIndex = "all";
         }
         array.some(this.sources, function (s, index) {
