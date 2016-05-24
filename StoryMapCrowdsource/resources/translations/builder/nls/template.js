@@ -4,8 +4,8 @@ define({
     betaMessage: {
       title: 'This is a beta release of Story Map Crowdsource',
       messageParagraphs: [
-        'A beta release means that some features of this app are not in their final form. In most cases, stories created with this beta version of the app it will simply continue to work when the final version is released.',
-        'If a Story Map Crowdsource is modified outside the builder, however, there is a possibility it may not work with the final version of the app. For more information please read the applicable FAQ in the Help section of the app.'
+        'A beta release means that some features of this app are not in their final form. In most cases, stories created with this beta version of the app will simply continue to work when the final version is released.',
+        'If a Crowdsource story is modified outside the Builder, however, there is a possibility it may not work with the final version of the app. For more information please read the FAQ section of the Help.'
       ]
     },
     common: {
@@ -46,7 +46,7 @@ define({
       }
     },
     contribute: {
-      defaultTitle: 'Add your share',
+      defaultTitle: 'Add your contribution',
       defaultForm: {
         name: {
           label: 'Add a title',
@@ -108,54 +108,72 @@ define({
           }
         },
         {
-          title: 'Configuration and Customization',
+          title: 'Configuration',
           paragraphs: [
-            'You can create your own unique Crowdsource story using the available configuration options. Click <% settings %> in the builder header and explore ways to change the layout, cover image, title, logo and sharing links, whether new submissions must be approved before they appear on the map, and more. We suggest that you enable submissions to appear immediately in order to reward your contributors. If you\'re concerned about objectionable posts, you can choose to approve them first.',
-            'You can also set the <% homeMap %>, which is also the area of the map that is shown when your story loads. Just navigate the map to the area you want to use and press the "Update Home Map View" button (next to the map navigation controls) to store the current map view as the home view.',
-            'If the available configuration options do not meet your needs or you wish to host the application on your own web server the application source code is available for developers to customize. To download the most recent version of the code and learn more about how to use it, visit its <% github %>.'
+            'You can create your own unique Crowdsource story using the available configuration options. Click <% settings %> in the Builder header and explore ways to change the layout, cover image, title, logo and sharing links, whether new submissions must be approved before they appear on the map, and more. To return to the cover page from the map, click the title in the header bar.',
+            'You can also set the <% homeMap %>, which is also the area of the map that is shown when your story loads. Just navigate the map to the area you want to use and press the "Update Home Map View" button (next to the map navigation controls) to store the current map view as the home view.'
           ],
           bold: {
             settings: 'Settings',
             homeMap: 'home map view'
           },
-          links: {
-            github: 'GitHub project page'
-          }
+        },
+        {
+          title: 'Reviewing Contributions',
+          paragraphs: [
+            'Having contributions appear immediately on the map is the best way to encourage and reward your contributors. However, if you\'re concerned about objectionable content, you can choose to review and approve submissions first.',
+            'To prevent content from appearing on the map before it is reviewed go to <% settings %> > <% contributions %> and choose to <% afterReview %>. When using this option new photos will be visible only to you until you approve them for display on the map.',
+            'To review new contributions go to the map in Crowdsource Builder and select <% newContributions %> in the header. Then click the map to view a contribution and choose <% approve %> or <% reject %>. You can change which contributions are shown on the map by choosing All, New, Approved, or Rejected in the header. It is possible to change your decision on any contribution by clicking it on the map and updating its approval status.'
+          ],
+          bold: {
+            settings: 'Settings',
+            contributions: 'Contributions',
+            afterReview: 'Show contributions: After review',
+            newContributions: 'Review: New Contributions',
+            approve: 'Approve',
+            reject: 'Reject'
+          },
         },
         {
           title: 'FAQ',
           questions: [
             {
-              question: 'Where are are the photos stored?',
-              response: 'Submitted photos are resampled to an appropriate size and stored in your ArcGIS account (as feature service attachments). Images uploaded by you in the builder for the cover image and logo are stored as item resources with your story map application item.'
-            },
-            {
-              question: 'Can I create a Crowdsource story using my ArcGIS Online public account?',
-              response: 'No, since Story Map Crowdsource uses feature service attachments to store the contributed images only Organizational Accounts are supported at this time.'
-            },
-            {
-              question: 'Do people need to have an ArcGIS account to contribute to my Crowdsource story?',
-              response: 'Yes, but contributors can log in to ArcGIS Online using their Facebook or Google account. Logging in with one of these social services will create a <% publicAccount %> for the contributor.'
-            },
-            {
-              question: 'Will Crowdsource stories created with the beta version of the app continue to work when the final version is released?',
-              response: 'Yes it will work, but there are two possible exceptions. If you add layers to your beta Crowdsource story\'s web map (which can only be done outside the builder), those layers may stop working or their symbols may change after the final release. To avoid this situation you can convert any supporting layers to feature layers before adding them to your map and use simple symbols. There is also a possibility that the data model for the crowdsource layer feature service may change. If this occurs, we intend to provide a workflow or tool to update your feature service to the new data model.'
+              question: 'Will a Crowdsource story created with the beta version of the app continue to work when the final version is released?',
+              response: 'Yes it will work, but there are two possible exceptions: 1) If you add layers to your beta Crowdsource story\'s web map (which can only be done outside the Builder), those layers may stop working or their symbols may change after the final release. To avoid this situation you can convert any supporting layers to feature layers before adding them to your map and use simple symbols. 2) There is also a possibility that the data model for the crowdsource layer may change. If this occurs, we intend to provide a workflow or tool to update your layer to the new data model.'
             },
             {
               question: 'Can I add other layers to my Crowdsource story\'s map?',
               response: 'Yes, you can add other layers to the map for context, but first read the previous question for important information about doing this with the beta release of Story Map Crowdsource. Open your story\'s <% map %>, add layers, and save your changes. The next time you load your story you will see the new layers. Be careful not to delete or modify the contributions layer in your map or your Crowdsource story may stop working properly.'
             },
             {
+              question: 'Where are are the photos stored?',
+              response: 'Submitted photos are resampled to an appropriate size and stored in your ArcGIS account (as feature service attachments). Images uploaded by you in the Builder for the cover image and logo are stored as item resources with your story map application item.'
+            },
+            {
+              question: 'Do people need an ArcGIS account to contribute to my Crowdsource story?',
+              response: 'Yes, but contributors can log in to ArcGIS Online using their <% facebook %> or <% google %> account. Logging in with one of these social services will create an ArcGIS public account for the contributor.'
+            },
+            {
+              question: 'Can I create a Crowdsource story using my ArcGIS Online public account?',
+              response: 'No, since Story Map Crowdsource uses feature service attachments to store the contributed images only Organizational Accounts are supported at this time.'
+            },
+            {
+              question: 'How else can I customize a Crowdsource story?',
+              response: 'If the available configuration options do not meet your needs, or if you wish to host the application on your own web server, the application source code is available. To download the most recent version visit the <% github %>.'
+            },
+            {
               question: 'Will my Crowdsource story consume credits?',
-              response: 'Yes, a Crowdsource story hosted on ArcGIS Online will consume a small amount of credits each month due to the storage of photos and data in a feature service. A typical story with several hundred photos will cost much less than US$1 per month. See more information about <% agoCredits %>.'
+              response: 'A Crowdsource story hosted on ArcGIS Online will consume a small amount of credits each month due to the storage of photos and data in a feature service. A typical story with several hundred photos will cost much less than US$1 per month. See more information about <% agoCredits %>.'
             }
           ],
           bold: {
-            publicAccount: 'public account'
+            facebook: 'Facebook',
+            google: 'Google'
           },
           links: {
             map: 'map',
-            agoCredits: 'ArcGIS Online service credits'
+            agoCredits: 'ArcGIS Online service credits',
+            github: 'GitHub project page'
           }
         }
       ]
@@ -354,6 +372,10 @@ define({
       },
       shareItems: {
         notShared: 'The following item(s) could not be shared'
+      },
+      saving: {
+        checkInternet: 'Your story could not be saved. Check your internet connection or refresh your page and try again.',
+        unknown: 'An unknown error occured and your story could not be saved. Refresh your page and try again.'
       }
     },
     validations: {

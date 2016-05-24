@@ -5,6 +5,7 @@ define({
       map: 'Loading map'
     },
     common: {
+      or: 'or',
       appNamePrepend: 'Story Map',
       appName: 'Crowdsource',
       buttons: {
@@ -29,7 +30,7 @@ define({
         title: 'Share',
         copied: 'Copied',
         linkHeader: 'Link to story',
-        linkHelper: 'Share this story through email or another services with the link below.',
+        linkHelper: 'Share this story through email or social media services with the link below.',
         copyShortLink: 'Copy short link',
         showShortLink: 'Show short link',
         copyFullLink: 'Copy full URL',
@@ -83,7 +84,7 @@ define({
       },
       form: {
         photo: {
-          pickFile: 'Pick a File',
+          pickFile: 'Tap to pick a file',
           choosePhoto: 'Upload a Photo',
           selectNew: 'Use a different photo'
         },
@@ -95,8 +96,8 @@ define({
           buttonShow: 'Show terms and conditions',
           buttonHide: 'Hide terms and conditions'
         },
-        save: 'Accept Terms and Save',
-        saving: 'Saving',
+        save: 'Accept Terms and Submit',
+        saving: 'Submittingad',
         requiredWarning: 'Required Fields'
       }
     },
