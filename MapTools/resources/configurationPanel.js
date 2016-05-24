@@ -178,7 +178,7 @@
             {
                "type":"boolean",
                "fieldName":"includelayerlegend",
-               "label":"Inlucde legend in Layer List"
+               "label":"Include legend in Layer List"
             },
             {
                "type":"boolean",
