@@ -98,7 +98,10 @@ body,html {
 .showtitle #search.window-top-left, .showtitle #search.window-top-right{
     top: 115px;
 }
-
+.nozoom #search.window-top-left{
+  left:initial !important;
+  right:20px;
+}
 .showtitle.nozoom #search {
     top: 50px;
 }
