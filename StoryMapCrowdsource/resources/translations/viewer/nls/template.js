@@ -98,7 +98,8 @@ define({
         },
         save: 'Accept Terms and Submit',
         saving: 'Submittingad',
-        requiredWarning: 'Required Fields'
+        requiredWarning: 'Required Fields',
+        changedCloseWarning: 'Are you sure you want to close? Your changes will be lost.'
       }
     },
     validations: {

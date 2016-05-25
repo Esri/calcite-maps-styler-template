@@ -51,7 +51,7 @@ define({
         name: {
           label: 'Add a title',
           attribute: 'title',
-          placeholder: 'Name your share'
+          placeholder: 'Enter a title'
         },
         description: {
           label: 'Add a description',
@@ -116,7 +116,7 @@ define({
           bold: {
             settings: 'Settings',
             homeMap: 'home map view'
-          },
+          }
         },
         {
           title: 'Reviewing Contributions',
@@ -132,7 +132,7 @@ define({
             newContributions: 'Review: New Contributions',
             approve: 'Approve',
             reject: 'Reject'
-          },
+          }
         },
         {
           title: 'FAQ',
@@ -215,6 +215,10 @@ define({
         },
         socialSharing: {
           title: 'Social Sharing',
+          extra: {
+            tweetLength: 'Estimated length',
+            tweetLengthWarning: 'Your tweet may be too long. Be sure to test it using the Twitter button in the header.'
+          },
           fields: {
             includeSharing: {
               label: 'Sharing buttons',
@@ -224,7 +228,7 @@ define({
             },
             twitterText: {
               label: 'Tweet',
-              tooltip: 'A link to your story will be added to the end of your tweet.',
+              tooltip: 'This message will be suggested to readers when they share your story on Twitter, but they can change it. A short link to your story will be added to the end of the tweet.',
               placeholder: 'Enter tweet text',
               attribute: 'tweet text field'
             },
@@ -257,6 +261,7 @@ define({
             },
             showNewFeatures: {
               label: 'Show contributions',
+              tooltip: 'This controls when new contributions appear on the map. "Immediately" shows contributions right away while "After review" requires you to approve or reject each contribution before it is visible to anyone else. See the Help for more information',
               optionLabels: {
                 'new': 'Immediately',
                 'approved': 'After review'
@@ -278,7 +283,7 @@ define({
             termsAndConditions: {
               label: 'Terms and Conditions',
               placeholder: 'Enter terms',
-              tooltip: 'These are the terms and conditions your participants must accept before they can add their contributions to the story.'
+              tooltip: 'These are the terms and conditions your participants must accept before they can add their contributions to this story.'
             }
           }
         }
@@ -366,27 +371,30 @@ define({
       },
       loading: {
         notAuthorizedCreateNew: 'To create a Crowdsource story you must use an ArcGIS Subscription Account with publishing privileges. If you are using a Subscription Account, contact your ArcGIS administrator to request additional privileges. If you are using an ArcGIS Public Account, <a href="http://www.arcgis.com/features/plans/pricing.html" target="-blank">upgrade</a> to a subscription or start a <a href="http://www.arcgis.com/features/free-trial.html" target="-blank">free trial</a>.',
-        notAuthorizedEdit: 'You are not authorized to edit this story. If you are not the owner, make sure you have been <a href="http://blogs.esri.com/esri/arcgis/2015/07/14/enable-colleagues-to-update-your-maps-and-apps/" target="-blank">given edit permissions</a> by the owner. You must also have access to edit items and publish new hosted feature services in your organization. Contact your ArcGIS Online organization administrator for more privileges.',
-        crowdsourceLayerNotFound: 'Something went wrong, the app could not find or load the crowdsource map layer correctly. Make sure you have permission to view the feature service.',
-        builderNotSSL: 'This Crowdsource story map requires the use of an https connection to make sure your audience can securely login and share their entry. Make sure your server supports an https connection at this same url. Viewers coming to your map will automatically be redirected to the secure version of the app.'
+        notAuthorizedEdit: 'You are not authorized to edit this story. If you are not the owner, make sure you have been <a href="http://blogs.esri.com/esri/arcgis/2015/07/14/enable-colleagues-to-update-your-maps-and-apps/" target="-blank">given edit permissions</a> by the owner. You must also have access to edit items and publish new hosted feature services in your organization. Contact your ArcGIS Online organization administrator to request these privileges.',
+        crowdsourceLayerNotFound: 'Could not find or load the crowdsource map layer correctly. Make sure you have permission to view the feature service.',
+        builderNotSSL: 'This Crowdsource story requires the use of a secure (https) connection to ensure your audience can securely log in and contribute their photos. Make sure your server supports an https connection at this same URL. Others attempting to access your story over http will be redirected to a secure connection, if possible.'
       },
       shareItems: {
         notShared: 'The following item(s) could not be shared'
       },
       saving: {
-        checkInternet: 'Your story could not be saved. Check your internet connection or refresh your page and try again.',
-        unknown: 'An unknown error occured and your story could not be saved. Refresh your page and try again.'
+        checkInternet: 'Your story could not be saved. Check your internet connection and reload the page to try again.',
+        unknown: 'Your story could not be saved. Reload the page to try again.'
+      },
+      scratchCreation: {
+        unknown: 'Could not create the items required for your story. Refresh the page to try again.'
       }
     },
     validations: {
-      waitMessage: 'Checking',
+      waitMessage: 'Checking...',
       arcgis: {
         naming: {
-          arcgisItemName: 'The <% attribute %> may not contain < or >.',
-          arcgisServiceNameFormat: 'The <% attribute %> may contain only contain letters, numbers, and underscores.'
+          arcgisItemName: 'The <% attribute %> must not contain < or >.',
+          arcgisServiceNameFormat: 'The <% attribute %> must contain only contain letters, numbers, and underscores and cannot begin with a number.'
         },
         portal: {
-          unableToCheckName: 'An unknown error occured and we are unable to check if the name is available. Please try again later.',
+          unableToCheckName: 'Unable to check if the name is available. Please try again.',
           nameNotString: 'Name must be normal text',
           nameNotAvailableFS: 'The name you have chosen for your layer is not available. Please choose a different name.'
         }
