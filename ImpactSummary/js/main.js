@@ -430,6 +430,8 @@ function (
           itemData: this.config.itemInfo.itemData
         };
         if (this.config.searchConfig) {
+          searchOptions.enableSearchingAll = this.config.searchConfig.enableSearchingAll;
+          searchOptions.activeSourceIndex = this.config.searchConfig.activeSourceIndex;
           searchOptions.applicationConfiguredSources = this.config.searchConfig.sources || [];
         } else {
           var configuredSearchLayers = (this.config.searchLayers instanceof Array) ? this.config.searchLayers : JSON.parse(this.config.searchLayers);

@@ -12,6 +12,7 @@ define(["dojo/_base/declare", "dojo/_base/lang", "dojo/_base/array", "dojo/_base
         //When true we restrict world locator to the map extent
         geocoders: [],
         esriSource: null,
+        enableSearchingAll: true,
         //Geocoders defined in helper services
         itemData: null,
         //web map item info includes operational layers and info about searches configured on web map
