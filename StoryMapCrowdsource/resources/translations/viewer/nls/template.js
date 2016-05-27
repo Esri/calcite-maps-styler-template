@@ -131,7 +131,7 @@ define({
         startFromScratch: 'Start building a new Crowdsource Story'
       },
       loading: {
-        heading: 'An Error Has Occured',
+        heading: 'Attention',
         invalidConfig: 'Invalid configuration',
         inaccessibleApp: 'Web Mapping Application does not exist or is inaccessible.',
 				invalidConfigNoApp: 'A valid web mapping application ID is not specified in the application\'s index.html file or URL. Correct the appid and try again.',
