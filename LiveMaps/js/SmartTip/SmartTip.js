@@ -5,9 +5,7 @@ define([
   'dojo/_base/Color',
   'dojo/_base/lang',
 
-  'dojo/dom',
   'dojo/dom-construct',
-  'dojo/dom-class',
   'dojo/dom-geometry',
   'dojo/dom-style',
 
@@ -29,7 +27,7 @@ define([
 ], function(
   Evented,
   declare, Color, lang,
-  dom, domConstruct, domClass, domGeom, domStyle,
+  domConstruct, domGeom, domStyle,
   on, query,
   _WidgetBase, _TemplatedMixin,
   template,
