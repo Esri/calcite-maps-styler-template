@@ -40,6 +40,8 @@ define([
   "esri/graphic",
   "esri/layers/GraphicsLayer",
 
+  "esri/request",
+
   "esri/renderers/SimpleRenderer",
   "esri/symbols/SimpleMarkerSymbol",
   "esri/symbols/SimpleLineSymbol",
@@ -63,6 +65,7 @@ define([
   on, query,
   arcgisUtils, geometryEngine, Point, webMercatorUtils,
   Graphic, GraphicsLayer,
+  esriRequest,
   SimpleRenderer, SimpleMarkerSymbol, SimpleLineSymbol,
   esriRequest,
   SpatialReference,
@@ -335,7 +338,7 @@ define([
             x: ptLL.x,
             y: ptLL.y,
             r: radius / 2,
-            bbox: pt1LL.x + "," + pt1LL.y + "," + pt2LL.x + "," + pt2.LL.y
+            bbox: pt1LL.x + "," + pt1LL.y + "," + pt2LL.x + "," + pt2LL.y
           };
           def.resolve(obj);
         }, function(error) {
@@ -357,11 +360,12 @@ define([
       //dom.byId("panelContent").innerHTML = "<br/><br/><img src='images/loading.gif'/>";
       var url = this.config.feedUrl;
       url += "?feed=" + this.config.feed;
-      url += "&lat=" + this.lat + "&lon=" + this.lon + "&radius=" + this.radius;
+      url += "&keyword=" + this.config.keyword;
       if (this.config.feed === "flickr") {
         url += "&bbox=" + this.bbox;
+      } else {
+        url += "&lat=" + this.lat + "&lon=" + this.lon + "&radius=" + this.radius;
       }
-      url += "&keyword=" + this.config.keyword;
       console.log("Url", url);
       var def = esriRequest({
         url: url

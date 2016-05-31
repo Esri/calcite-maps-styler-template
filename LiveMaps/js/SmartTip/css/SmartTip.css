@@ -37,11 +37,12 @@
 .esri-smart-tip .bottom {
     position: relative;
     width: 100%;
-    height: 116px;
+    height: auto;
     overflow: hidden;
     background-color: #ffffff;
     color: #a3a3a3;
     font-size: 12px;
+    padding: 10px;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
@@ -53,28 +54,9 @@
   text-decoration: none;
 }
 
-.esri-smart-tip .left {
-  position: absolute;
-  left: 10px;
-  right: 10px;
-  top: 10px;
-  bottom: 10px;
-  overflow: hidden;
-  display: block;
-}
-
-.esri-smart-tip .big .left {
-  right: 100px;
-}
-
-.esriRTL .esri-smart-tip .big .left {
-  left: 100px;
-}
-
 .esri-smart-tip .header {
-  position: absolute;
   width: 100%;
-  height: 40px;
+  height: 30px;
   line-height: 30px;
   font-size: 14px;
   overflow: hidden;
@@ -124,7 +106,7 @@
   width: 60px;
   height: 30px;
   line-height: 30px;
-  font-size: 11px;
+  font-size: 12px;
   text-align: right;
   display: inline-block;
 }
@@ -135,42 +117,24 @@
 }
 
 .esri-smart-tip .desc {
-  position: absolute;
-  top: 40px;
   width: 100%;
-  height: 56px;
-  line-height: 14px;
+  height: auto;
+  line-height: 16px;
   font-size: 12px;
   white-space: pre-wrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  margin-top: 4px;
 }
 
-.esri-smart-tip .right {
-  position: absolute;
-  right: 0;
-  width: 90px;
-  top: 0;
-  bottom: 0;
-  display: none;
-  text-align: center;
-  font-size: 14px;
-  vertical-align: middle;
-  padding: 10px 0 10px 0;
-  line-height: 0.9;
-}
+/* MEDIA SPECIFIC: SMALL DEVICES */
 
-.esriRTL .esri-smart-tip .right {
-  left: 0;
-}
-
-.esri-smart-tip .big .right {
-  display: block;
-}
-
-.esri-smart-tip .right .num {
-  font-size: 70px;
-  letter-spacing: -5px;
+@media only screen and (max-width: 500px) {
+    .esri-smart-tip {
+       -ms-transform: translate(-50%,-110%); /* IE 9 */
+      -webkit-transform: translate(,-50%, -110%); /* Safari */
+      transform: translate(-50%, -110%);
+  }
 }
 
 /* Animations */
@@ -222,16 +186,6 @@ circle[data-count="2"] {
     -webkit-animation-iteration-count: infinite;
     -webkit-animation-delay: 1.3s;
     -webkit-animation-timing-function: cubic-bezier(0,.54,.53,1);
-}
-
-/* MEDIA SPECIFIC: SMALL DEVICES */
-
-@media only screen and (max-width: 500px) {
-    .esri-smart-tip {
-       -ms-transform: translate(-50%,-110%); /* IE 9 */
-      -webkit-transform: translate(,-50%, -110%); /* Safari */
-      transform: translate(-50%, -110%);
-  }
 }
 
 
