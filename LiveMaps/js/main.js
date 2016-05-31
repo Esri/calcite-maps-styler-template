@@ -46,8 +46,6 @@ define([
   "esri/symbols/SimpleMarkerSymbol",
   "esri/symbols/SimpleLineSymbol",
 
-  "esri/request",
-
   "esri/SpatialReference",
 
   "esri/tasks/GeometryService",
@@ -67,7 +65,6 @@ define([
   Graphic, GraphicsLayer,
   esriRequest,
   SimpleRenderer, SimpleMarkerSymbol, SimpleLineSymbol,
-  esriRequest,
   SpatialReference,
   GeometryService, ProjectParameters,
   MapUrlParams, SmartCards, SmartTip
@@ -250,14 +247,6 @@ define([
         color: this.config.color,
         point: null,
         info: null
-        // info: {
-        //   title: "This is a title",
-        //   desc: "Human experience designer. Co-founded Adaptive Path. Wrote The Elements of User Experience. Blogged before blogging. Something Ajax something something.",
-        //   author: "Sajit Thomas",
-        //   date: new Date(),
-        //   avatar: "https://pbs.twimg.com/profile_images/2542678025/dg4p8aq3f4yizqli45j8_reasonably_small.jpeg"
-        //   //img: "https://pbs.twimg.com/media/ChtogPkW0AAVntJ.jpg"
-        // }
       };
       this.smartTip = new SmartTip(options, dom.byId("panelSmartTip"));
       this.smartTip.startup();
@@ -273,11 +262,6 @@ define([
         this.bbox = obj.bbox;
         this._startFeed();
       }));
-    },
-
-    // map clicked
-    _mapClicked: function(evt) {
-      
     },
 
     // toggle bottom
