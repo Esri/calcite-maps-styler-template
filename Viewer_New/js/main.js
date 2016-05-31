@@ -382,7 +382,7 @@ define([
         var basemapDiv = toolbar.createTool(tool, panelClass);
         var basemap = new BasemapGallery({
           id: "basemapGallery",
-          bingMapsKey: this.config.bingKey || "",
+          bingMapsKey: this.config.orgInfo.bingKey || "",
           map: this.map,
           showArcGISBasemaps: true,
           portalUrl: this.config.sharinghost,
@@ -1223,7 +1223,7 @@ define([
         //is the app editable
         usePopupManager: true,
         layerMixins: this.config.layerMixins,
-        bingMapsKey: this.config.bingKey
+        bingMapsKey: this.config.orgInfo.bingKey || ""
       }).then(lang.hitch(this, function(response) {
 
         this.map = response.map;

@@ -585,7 +585,7 @@ define([
         usePopupManager: true,
         layerMixins: this.config.layerMixins || [],
         editable: false,
-        bingMapsKey: this.config.bingKey
+        bingMapsKey: this.config.orgInfo.bingKey || ""
       }).then(lang.hitch(this, function(response) {
         this.map = response.map;
         if (params.markerGraphic) {
