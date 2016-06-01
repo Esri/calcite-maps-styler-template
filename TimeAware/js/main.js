@@ -509,8 +509,11 @@ define([
     _formatTime: function(timeInfo) {
       var start = new Date(timeInfo.startTime),
         end = new Date(timeInfo.endTime);
-
+      // Check to see if the hour/minute time is same. If so we'll hide it.
       var sameHour = moment(start).hour() === moment(end).hour();
+      if (sameHour) {
+        sameHour = moment(start).minute() === moment(end).minute();
+      }
       var formatInfo = {
         groupMeridiems: true, // True displays am/pm once when possible
         spaceBeforeMeridiem: this.config.spaceBeforeMeridiem || true, //True adds a space before am/pm
