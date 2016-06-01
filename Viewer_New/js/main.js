@@ -1006,13 +1006,6 @@ define([
 
 
         search.on("select-result", lang.hitch(this, function() {
-          if (this.map.infoWindow.isShowing) {
-            this._focusPopup();
-          } else {
-            on.once(this.map.infoWindow, "show", lang.hitch(this, function() {
-              this._focusPopup();
-            }));
-          }
 
           //if edit tool is enabled we'll have to delete/create
           //so info window behaves correctly.
@@ -1115,11 +1108,6 @@ define([
       //create the tools
       this._createUI();
 
-    },
-    _focusPopup: function() {
-      query("a.action.zoomTo").forEach(function(node) {
-        focusUtil.focus(node);
-      });
     },
     _enableButtonMode: function(search) {
       search.set("enableButtonMode", true);
@@ -1319,18 +1307,6 @@ define([
       query(".titlePane div.title").forEach(function(node) {
         domAttr.set(node, "tabindex", "0");
       });
-      query(".zoomTo.action").forEach(lang.hitch(this, function(node) {
-        //  domAttr.set(node, "role", "button");
-        on(node, "click", lang.hitch(this, function(e) {
-          // set focus back to node
-          e.preventDefault();
-          on.once(this.map, "update-end", function() {
-            // set focus back to the popup zoom button after extent updates
-            node.focus();
-          });
-        }));
-      }));
-
     }
   });
 });
