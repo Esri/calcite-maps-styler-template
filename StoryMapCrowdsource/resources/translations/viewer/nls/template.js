@@ -61,6 +61,11 @@ define({
         noDefaultSelection: 'Please choose an option...'
       }
     },
+    map: {
+      controls: {
+        homeButton: 'Go to home location'
+      }
+    },
     selectedShares: {
       enlargePhotoButton: 'View Larger',
       review: {
@@ -74,11 +79,11 @@ define({
     contribute: {
       login: {
         title: 'Sign In',
-        signInWith: 'Sign in with',
         services: {
-          arcgis: 'ArcGIS',
-          facebook: 'Facebook',
-          google: 'Google'
+          arcgis: 'Sign in with ArcGIS',
+          facebook: 'Sign in with Facebook',
+          google: 'Sign in with Google',
+          guest: 'Continue as Guest'
         },
         loginDescription: 'Before participating, you must first sign in with one of the services above.'
       },
@@ -97,7 +102,7 @@ define({
           buttonHide: 'Hide terms and conditions'
         },
         save: 'Accept Terms and Submit',
-        saving: 'Submittingad',
+        saving: 'Submitting',
         requiredWarning: 'Required Fields',
         changedCloseWarning: 'Are you sure you want to close? Your changes will be lost.'
       }
@@ -117,7 +122,8 @@ define({
         imageUrl: 'The <% attribute %> must be a valid image URL. In most cases the URL will end with ".jpg", ".gif"., or ".png" extension.'
       },
       pattern: {
-        commaSeparated: 'The <% attribute %> cannot contain any spaces.'
+        commaSeparated: 'The <% attribute %> cannot contain any spaces.',
+        noNewLine: 'The <% attribute %> cannot contain line breaks.'
       },
       arcgis: {
         location: {

@@ -49,6 +49,13 @@ define({
         }
       }
     },
+    map: {
+      editControls: {
+        homeLocation: {
+          tooltip: 'Save home location'
+        }
+      }
+    },
     contribute: {
       defaultTitle: 'Add your contribution',
       defaultForm: {
@@ -92,7 +99,7 @@ define({
       }
     },
     fromScratchMessage: {
-      saving: 'Launching Crowdsource Story Builder',
+      saving: 'Launching Crowdsource Builder',
       layerNameInWebmap: 'Crowdsource Layer (DO NOT REMOVE)'
     },
     help: {
@@ -231,16 +238,16 @@ define({
           }
         },
         socialSharing: {
-          title: 'Social Sharing',
+          title: 'Social',
           extra: {
             tweetLength: 'Estimated length',
             tweetLengthWarning: 'Your tweet may be too long. Be sure to test it using the Twitter button in the header.'
           },
           fields: {
             includeSharing: {
-              label: 'Sharing buttons',
+              label: 'Social buttons',
               optionLabels: {
-                include: 'Display sharing buttons'
+                include: 'Display social buttons'
               }
             },
             twitterText: {
@@ -287,20 +294,17 @@ define({
             loginOptions: {
               label: 'Participants can sign in with',
               attribute: 'sign-in option',
+              tooltip: 'placeholder tooltip',
               optionLabels: {
                 arcgis: 'ArcGIS',
                 facebook: 'Facebook',
-                google: 'Google'
+                google: 'Google',
+                guest: 'Guest'
               }
             },
             participateButton: {
               label: 'Participate Button Label',
               placeholder: 'Enter label'
-            },
-            termsAndConditions: {
-              label: 'Terms and Conditions',
-              placeholder: 'Enter terms',
-              tooltip: 'These are the terms and conditions your participants must accept before they can add their contributions to this story.'
             }
           }
         }
