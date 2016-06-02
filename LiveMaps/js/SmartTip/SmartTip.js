@@ -5,9 +5,7 @@ define([
   'dojo/_base/Color',
   'dojo/_base/lang',
 
-  'dojo/dom',
   'dojo/dom-construct',
-  'dojo/dom-class',
   'dojo/dom-geometry',
   'dojo/dom-style',
 
@@ -29,7 +27,7 @@ define([
 ], function(
   Evented,
   declare, Color, lang,
-  dom, domConstruct, domClass, domGeom, domStyle,
+  domConstruct, domGeom, domStyle,
   on, query,
   _WidgetBase, _TemplatedMixin,
   template,
@@ -140,32 +138,18 @@ define([
       var dt = null;
       var dtStr = "";
       this.dateNode.innerHTML = "";
-      this.rightNode.innerHTML = "";
       if (info.date) {
         dt = this._calcDate(new Date(info.date));
         dtStr = dt.value + " " + dt.units;
+        this.dateNode.innerHTML = dtStr;
       }
 
       // adjust based on desc
       this.descNode.innerHTML = "";
+      domStyle.set(this.descNode, "display", "none");
       if (info.desc && info.desc !== "") {
-        if (dt) {
-          this.dateNode.innerHTML = dtStr;
-        }
         this.descNode.innerHTML = info.desc;
-        domClass.remove(this.bottomNode, "big");
-      } else {
-        if (dt) {
-          dtStr = "<span class='num'>" + dt.value + "</span><br/>" + dt.units;
-          this.rightNode.innerHTML =  dtStr;
-          this.descNode.innerHTML = new Date(info.date).toDateString();
-          domClass.add(this.bottomNode, "big");
-        }
-
-        var node = this.titleNode;
-        if (node.clientWidth < node.scrollWidth) {
-          this.descNode.innerHTML = info.title;
-        }
+        domStyle.set(this.descNode, "display", "block");
       }
 
     },

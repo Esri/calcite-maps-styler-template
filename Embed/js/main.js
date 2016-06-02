@@ -338,7 +338,7 @@ define([
         }
         var galleryOptions = {
           showArcGISBasemaps: true,
-          bingMapsKey: this.config.bingKey,
+          bingMapsKey: this.config.orgInfo.bingKey || "",
           portalUrl: this.config.sharinghost,
           basemapsGroup: this._getBasemapGroup(),
           map: this.map
@@ -573,7 +573,7 @@ define([
         usePopupManager: true,
         layerMixins: this.config.layerMixins || [],
         editable: this.config.editable,
-        bingMapsKey: this.config.bingKey
+        bingMapsKey: this.config.orgInfo.bingKey || ""
       }).then(lang.hitch(this, function(response) {
         this.map = response.map;
         this.config.response = response;

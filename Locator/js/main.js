@@ -637,6 +637,7 @@ define([
         // Setup Modes
         _setupModes: function() {
             console.log("GET TRAVEL MODES");
+            this.curMode = null;
             var supModes = this.dirWidget.getSupportedTravelModeNames();
             var modes = [];
             array.forEach(supModes, function(mode) {
@@ -1246,10 +1247,15 @@ define([
             dom.byId("panelDestination").innerHTML = gra.getTitle();
             this._showPage(1);
             if (this.originObj) {
-                var promise = this._setTravelMode();
-                promise.then(lang.hitch(this, function() {
+                if (this.curMode) {
+                    var promise = this._setTravelMode();
+                    promise.then(lang.hitch(this, function() {
+                        console.log("Route To Dest", this.dirWidget.routeParams.travelMode);
+                        this.dirWidget.addStops([this.originObj, pt]);
+                    }));
+                } else {
                     this.dirWidget.addStops([this.originObj, pt]);
-                }));
+                }
             }
         },
 
@@ -1264,11 +1270,14 @@ define([
             var promise = this._clearDirections();
             promise.then(lang.hitch(this, function() {
                 this.dirOK = true;
-                var promise2 = this._setTravelMode();
-                promise2.then(lang.hitch(this, function() {
+                if (this.curMode) {
+                    var promise2 = this._setTravelMode();
+                    promise2.then(lang.hitch(this, function() {
+                        this.dirWidget.addStops(stops);
+                    }));
+                } else {
                     this.dirWidget.addStops(stops);
-                }));
-                //this.dirWidget.addStops(stops);
+                }
             }));
         },
 
@@ -1479,6 +1488,7 @@ define([
         // Get Proxied Route Url
         _getProxiedRouteUrl: function() {
             var routeUrl;
+            
             if (this.config.helperServices.route && this.config.helperServices.route.url !== "") {
                 array.some(this.config.layerMixins, lang.hitch(this, function(layerMixin) {
                     if (layerMixin.url === this.config.helperServices.route.url) {

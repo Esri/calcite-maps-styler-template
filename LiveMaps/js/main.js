@@ -40,11 +40,11 @@ define([
   "esri/graphic",
   "esri/layers/GraphicsLayer",
 
+  "esri/request",
+
   "esri/renderers/SimpleRenderer",
   "esri/symbols/SimpleMarkerSymbol",
   "esri/symbols/SimpleLineSymbol",
-
-  "esri/request",
 
   "esri/SpatialReference",
 
@@ -63,8 +63,8 @@ define([
   on, query,
   arcgisUtils, geometryEngine, Point, webMercatorUtils,
   Graphic, GraphicsLayer,
-  SimpleRenderer, SimpleMarkerSymbol, SimpleLineSymbol,
   esriRequest,
+  SimpleRenderer, SimpleMarkerSymbol, SimpleLineSymbol,
   SpatialReference,
   GeometryService, ProjectParameters,
   MapUrlParams, SmartCards, SmartTip
@@ -247,14 +247,6 @@ define([
         color: this.config.color,
         point: null,
         info: null
-        // info: {
-        //   title: "This is a title",
-        //   desc: "Human experience designer. Co-founded Adaptive Path. Wrote The Elements of User Experience. Blogged before blogging. Something Ajax something something.",
-        //   author: "Sajit Thomas",
-        //   date: new Date(),
-        //   avatar: "https://pbs.twimg.com/profile_images/2542678025/dg4p8aq3f4yizqli45j8_reasonably_small.jpeg"
-        //   //img: "https://pbs.twimg.com/media/ChtogPkW0AAVntJ.jpg"
-        // }
       };
       this.smartTip = new SmartTip(options, dom.byId("panelSmartTip"));
       this.smartTip.startup();
@@ -270,11 +262,6 @@ define([
         this.bbox = obj.bbox;
         this._startFeed();
       }));
-    },
-
-    // map clicked
-    _mapClicked: function(evt) {
-      
     },
 
     // toggle bottom
@@ -335,7 +322,7 @@ define([
             x: ptLL.x,
             y: ptLL.y,
             r: radius / 2,
-            bbox: pt1LL.x + "," + pt1LL.y + "," + pt2LL.x + "," + pt2.LL.y
+            bbox: pt1LL.x + "," + pt1LL.y + "," + pt2LL.x + "," + pt2LL.y
           };
           def.resolve(obj);
         }, function(error) {
@@ -357,11 +344,12 @@ define([
       //dom.byId("panelContent").innerHTML = "<br/><br/><img src='images/loading.gif'/>";
       var url = this.config.feedUrl;
       url += "?feed=" + this.config.feed;
-      url += "&lat=" + this.lat + "&lon=" + this.lon + "&radius=" + this.radius;
+      url += "&keyword=" + this.config.keyword;
       if (this.config.feed === "flickr") {
         url += "&bbox=" + this.bbox;
+      } else {
+        url += "&lat=" + this.lat + "&lon=" + this.lon + "&radius=" + this.radius;
       }
-      url += "&keyword=" + this.config.keyword;
       console.log("Url", url);
       var def = esriRequest({
         url: url
