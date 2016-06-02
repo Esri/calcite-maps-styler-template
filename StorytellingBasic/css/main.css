@@ -77,24 +77,8 @@ body{
 #search{
   position: absolute;
   top:120px;
-  left:17px;
+  left:16px;
   z-index: 40;
-}
-.arcgisSearch .searchGroup .searchInput {
-  width: 200px;
-  padding: 6px 17px 6px 18px;
-  zoom: 1;
- }
-
- .arcgisSearch .searchCollapsed .searchSubmit{
-
-  border-radius: 0;
- }
- .arcgisSearch .searchBtn{
-  padding:6px 5px;
- }
-.arcgisSearch .searchExpandContainer .searchBtn{
-  padding:6px 12px;
 }
 
 .esriSimpleSlider{
