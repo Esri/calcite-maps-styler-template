@@ -77,7 +77,7 @@ body{
 #search{
   position: absolute;
   top:120px;
-  left:20px;
+  left:17px;
   z-index: 40;
 }
 .arcgisSearch .searchGroup .searchInput {
