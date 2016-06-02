@@ -915,7 +915,10 @@ define([
     // do spin
     _doSpin: function() {
       var pos = this.view.camera.position;
-      var posGeo = webMercatorUtils.webMercatorToGeographic(pos);
+      var posGeo = pos;
+      if (pos.spatialReference.isWebMercator) {
+        posGeo = webMercatorUtils.webMercatorToGeographic(pos);
+      }
       var posX = posGeo.x - 1;
       if (posX <= -180) {
         posX = 179;
