@@ -23,6 +23,12 @@ define({
           flickr: {
             userNotFound: "User not found",
             photostream: "Photostream"
+          },
+          urlContent: {
+            uploadHeader: "Link to content on the web",
+            uploadText1: "Content from YouTube and Vimeo will be optimized; other content will be embedded as is.",
+            uploadText2: "It is recommended to use https:// URLs for linked content, when possible.",
+            placeholder: "http://... or https://... or <iframe>"
           }
         },
         sidePanel: {
@@ -55,7 +61,7 @@ define({
             searchLocation: {
               thisStory: "This Story",
               agol: "ArcGIS Online",
-              myOrg: "My Organization",
+              myOrg: "Organization", // context: "<Org Name> Organization"
               myContent: "My Content"
             },
             createContent: {

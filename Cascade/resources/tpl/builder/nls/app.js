@@ -20,8 +20,14 @@ define({
 					logoLink: "Logo Link",
 					customHeaderText: "Custom header text",
 					link: "Link",
-					enableSocialSharing: "Enable social media sharing links."
+					enableSocialSharing: "Enable social media sharing links"
 				}
+			},
+			mediaConfig: {
+				homeView: "Initial scene state"
+			},
+			imageGallery: {
+				reachedLimit: "A maximum of 4 items are allowed in an image gallery."
 			}
     }
   }),
