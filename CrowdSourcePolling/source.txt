@@ -1,9 +1,9 @@
 git repository crowdsource-polling, branch 
-develop
-commit dc1ec27825720d436d3991eea6085eddc865778c
+Jun_2016_release
+commit 356481bba0181f74e59cd1ff2acafe1c20854b80
 Author: MikeTschudi <mtschudi@esri.com>
-Date:   Wed Apr 20 09:38:54 2016 -0700
+Date:   Sun Jun 5 09:15:11 2016 -0700
 
-    Convert Date objects into milliseconds as required by the feature service REST endpoint
+    Be sure that field value is usable before accessing it
     
-    #131
+    #135
