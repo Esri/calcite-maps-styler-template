@@ -104,8 +104,8 @@ define(
           var panel = registry.byId(this.srcNode);
           if (panel) {
             panel.set("content", feature.getContent());
-            var focusNode = a11y.getFirstInTabbingOrder(panel.domNode);
-            focusUtil.focus(focusNode);
+          //var focusNode = a11y.getFirstInTabbingOrder(panel.domNode);
+          //focusUtil.focus(focusNode);
           }
           //update selection text
           var selectionString = esriStrings.widgets.popup.NLS_pagingInfo,
@@ -149,10 +149,10 @@ define(
         query(".panelPopup").forEach(function(node) {
           if (show) {
             domUtils.show(node);
-            var focusableItem = a11y.getFirstInTabbingOrder("pageContent_popup");
-            if (focusableItem) {
-              focusUtil.focus(focusableItem);
-            }
+          /*var focusableItem = a11y.getFirstInTabbingOrder("pageContent_popup");
+          if (focusableItem) {
+            focusUtil.focus(focusableItem);
+          }*/
           } else {
             domUtils.hide(node);
             // reset focus on search box if applicable
