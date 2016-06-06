@@ -59,6 +59,10 @@ define({
     forms: {
       select: {
         noDefaultSelection: 'Please choose an option...'
+      },
+      photo: {
+        loading: 'Loading Photo',
+        resizing: 'Resizing Photo'
       }
     },
     map: {
@@ -85,7 +89,7 @@ define({
           google: 'Sign in with Google',
           guest: 'Continue as Guest'
         },
-        loginDescription: 'Before participating, you must first sign in with one of the services above.'
+        loginDescription: 'To participate, please use one of the options above.'
       },
       form: {
         photo: {

@@ -154,6 +154,21 @@ define({
           }
         },
         {
+          title: 'Tracking Contributors',
+          paragraphs: [
+            'You can have people who contribute to your Crowdsource story identify themselves by signing in with their <% facebook %>, <% twitter %>, or <% arcgis %> account.',
+            'The Facebook and Twitter options use a technology called OAuth to create an ArcGIS account that is connected to the contributor\'s social media account. This makes it easy for contributors since they do not have to sign up for a new account to contribute to your story. Of course, if contributors already have an ArcGIS subscription or public account they can use that to log in.',
+            'You can also allow <% guestContributions %> so anyone can contribute without signing in, which may encourage more people to contribute to your story. However, guests will not be able to edit or remove their own contributions (not available in beta), and a username will not be recorded for guest contributions making it impossible to trace them back to an individual. If these capabilities are important to you then should you not allow guest contributions.',
+            'All of the sign-in options listed above are available to contributors unless you disable them. Facebook and Twitter sign in are not available on Portal.'
+          ],
+          bold: {
+            facebook: 'Facebook',
+            twitter: 'Twitter',
+            arcgis: 'ArcGIS',
+            guestContributions: 'guest contributions'
+          }
+        },
+        {
           title: 'FAQ',
           questions: [
             {
@@ -204,6 +219,12 @@ define({
     },
     settings: {
       title: 'Settings',
+      buttons: {
+        backTo: 'Back to'
+      },
+      messages: {
+        uploading: 'Uploading'
+      },
       panes: {
         header: {
           title: 'Header',
@@ -292,9 +313,9 @@ define({
               }
             },
             loginOptions: {
-              label: 'Participants can sign in with',
+              label: 'Contributors can sign in with',
               attribute: 'sign-in option',
-              tooltip: 'placeholder tooltip',
+              tooltip: 'Select the services contributors can use to identify themselves. Anyone can contribute to your story anonymously (without signing in) if the Guest option is checked. See the Help for more information about tracking contributors.',
               optionLabels: {
                 arcgis: 'ArcGIS',
                 facebook: 'Facebook',
