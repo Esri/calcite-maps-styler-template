@@ -76,7 +76,6 @@ define([
         _checkForFilters: function () {
             if (!this.appConfig._filterObject) {
                 this.appConfig._filterObject = {};
-
                 array.forEach(this.itemInfo.itemData.operationalLayers, lang.hitch(this, function (layer) {
                     if (this.selectedOperationalLayer.id === layer.id && layer.definitionEditor) {
                         this.appConfig._filterObject = layer.definitionEditor;
@@ -224,7 +223,7 @@ define([
                             "displayColumn": displayColumn
                         };
                         // if a radio button is called first time, then query distinct values of current field
-                        this._queryLayerForDistinctValues(radioParamObj);
+                        this._checkAttributeDistinctValues(radioParamObj);
                     }
                 } else {
                     // when parameter contains 2 parameters in case for between range
@@ -269,7 +268,7 @@ define([
             domConstruct.create("span", {
                 className: "glyphicon " + imageIconClass
             }, inputIconGroupAddOn);
-            // return Value
+            // returning node
             return inputIconGroupContainer;
         },
 
@@ -493,7 +492,79 @@ define([
             }
             this.appConfig._filterObject.inputs[radioParamObj.index].parameters[0].showTextBox = false;
             this.appConfig._filterObject.inputs[radioParamObj.index].parameters[0].showDropDown = true;
-            this._queryLayerForDistinctValues(radioParamObj);
+            this._checkAttributeDistinctValues(radioParamObj);
+        },
+
+        /**
+        * Function to 
+        * @param{object} contains nodes, _filterObject to change and maintain state
+        * @memberOf widgets/filter/filter
+        */
+        _checkAttributeDistinctValues: function (radioParamObj) {
+            if (this._isCodedValueColumn) { // for coded domain values which have selected permissible values
+                this._populateWithCodedDomainValues(radioParamObj);
+            } else if (this._isTypeIdfield) { // for coded domain values which have selected permissible values
+                this._populateWithTypeIdValues(radioParamObj);
+            } else { // else query layer to get all distinct values of the field and populate the dropdown
+                this._queryLayerForDistinctValues(radioParamObj);
+            }
+        },
+
+        /**
+        * Function to populate dropdown with coded domain values
+        * @param{object} contains nodes, _filterObject to change and maintain state
+        * @memberOf widgets/filter/filter
+        */
+        _populateWithCodedDomainValues: function (radioParamObj) {
+            var features = [], attributes;
+            array.forEach(this.selectedOperationalLayer.fields, lang.hitch(this, function (field) {
+                if (field.name === radioParamObj.displayColumn && field.domain && field.domain.codedValues.length > 0) {
+                    array.forEach(field.domain.codedValues, lang.hitch(this, function (codedValue, index) {//ignore jslint
+                        attributes = {};
+                        attributes[radioParamObj.displayColumn] = codedValue.code;
+                        features.push({ "attributes": attributes });
+                    }));
+                }
+            }));
+            this._populateDropDown(features, radioParamObj);
+        },
+
+        /**
+        * Function to populate dropdown with type id values (coded domain values)
+        * @param{object} contains nodes, _filterObject to change and maintain state
+        * @memberOf widgets/filter/filter
+        */
+        _populateWithTypeIdValues: function (radioParamObj) {
+            var attributes, features;
+            features = [];
+            array.forEach(this.selectedOperationalLayer.types, lang.hitch(this, function (type) {
+                attributes = {};
+                attributes[radioParamObj.displayColumn] = type.id;
+                features.push({ "attributes": attributes });
+            }));
+            this._populateDropDown(features, radioParamObj);
+        },
+
+        /**
+        * Function to set param as well as populating dropdown
+        * @param{array} contains features/distict values to populate dropdown
+        * @param{object} contains nodes, _filterObject to change and maintain state
+        * @memberOf widgets/filter/filter
+        */
+        _populateDropDown: function (features, radioParamObj) {
+            var dropDownContainerObj = {};
+            if (features.length > 0) {
+                dropDownContainerObj = {
+                    "features": features,
+                    "node": radioParamObj.selectOption,
+                    "index": radioParamObj.index,
+                    "closeDropDownSpan": radioParamObj.closeDropDownSpan,
+                    "displayColumn": radioParamObj.displayColumn
+                };
+                this._populateDropDownContainer(dropDownContainerObj);
+                // check active filter nodes
+                this._checkFieldActiveNodes(radioParamObj.displayColumn);
+            }
         },
 
         /**
@@ -502,7 +573,7 @@ define([
         * @memberOf widgets/filter/filter
         */
         _queryLayerForDistinctValues: function (radioParamObj) {
-            var queryTask, queryLayer, deferred, features;
+            var queryTask, queryLayer, deferred;
             // function to populate combobox
             queryTask = new QueryTask(this.selectedOperationalLayer.url);
             queryLayer = new Query();
@@ -513,19 +584,7 @@ define([
             deferred = new Deferred();
             queryTask.execute(queryLayer).then(lang.hitch(this, function (results) {
                 deferred.resolve(results);
-                if (results.features.length > 0) {
-                    features = results.features;
-                    var dropDownContainerObj = {
-                        "features": features,
-                        "node": radioParamObj.selectOption,
-                        "index": radioParamObj.index,
-                        "closeDropDownSpan": radioParamObj.closeDropDownSpan,
-                        "displayColumn": radioParamObj.displayColumn
-                    };
-                    this._populateDropDownContainer(dropDownContainerObj);
-                    // check active filter nodes
-                    this._checkFieldActiveNodes(radioParamObj.displayColumn);
-                }
+                this._populateDropDown(results.features, radioParamObj);
             }), lang.hitch(this, function () {
                 // if any error occur while quering the current field
                 this.appUtils.showMessage(this.appConfig.i18n.filter.distinctQueryFalied);
@@ -630,6 +689,7 @@ define([
             }
             if (obj.node.value !== "") {
                 domClass.replace(closeDropDownSpan, "esriCTActiveCloseSpan", "esriCTDisabledCloseSpan");
+                this.appConfig._filterObject.inputs[obj.index].parameters[0].prevValue = obj.node.value;
             } else {
                 domClass.replace(closeDropDownSpan, "esriCTDisabledCloseSpan", "esriCTActiveCloseSpan");
             }
@@ -684,14 +744,17 @@ define([
                 // Check whether the textbox value is empty and change close icon
                 if (value !== "") {
                     domClass.replace(closeTextBoxSpan, "esriCTActiveCloseSpan", "esriCTDisabledCloseSpan");
+                    // check active filter nodes
+                    this._checkFieldActiveNodes(displayColumn);
+                    this._setCurrentExpression();
+                    this._getFeatureCount(inputTextBox, index, closeTextBoxSpan, displayColumn, "textBox");
                 } else {
                     domAttr.set(inputTextBox, "value", "");
                     domClass.replace(closeTextBoxSpan, "esriCTDisabledCloseSpan", "esriCTActiveCloseSpan");
+                    this.appConfig._filterObject.inputs[index].parameters[0].prevValue = "";
+                    this._setCurrentExpression();
+                    this._applyParameterizedExpression();
                 }
-                // check active filter nodes
-                this._checkFieldActiveNodes(displayColumn);
-                this._setCurrentExpression();
-                this._getFeatureCount(inputTextBox, index, closeTextBoxSpan, displayColumn, "textBox");
             }));
         },
 
@@ -714,7 +777,7 @@ define([
                     // check active filter nodes
                     this._checkFieldActiveNodes(displayColumn);
                     this._setCurrentExpression();
-                    this._getFeatureCount(inputTextBox, index, closeTextBoxSpan, displayColumn, "textBox");
+                    this._applyParameterizedExpression();
                 }
             }));
         },
@@ -728,30 +791,41 @@ define([
         * @memberOf widgets/filter/filter
         */
         _attachDropDownChangeEvent: function (node, index, closeDropDownSpan, displayColumn) {
-            var getCount = false;
             // When another option is chosen from dropdown list
-            on(node, "change", lang.hitch(this, function () {
-                if (!getCount) {
-                    this.appUtils.showLoadingIndicator();
-                    this.appConfig._filterObject.inputs[index].parameters[0].dropDownValue = node.value;
-                    this.appConfig._filterObject.inputs[index].parameters[0].currentValue = node.value;
-                    // check if selected option is the default option of the dropdown
-                    if (domAttr.get(node[0], "selected") !== true) {
-                        domClass.replace(closeDropDownSpan, "esriCTActiveCloseSpan", "esriCTDisabledCloseSpan");
-                    } else {
-                        domClass.replace(closeDropDownSpan, "esriCTDisabledCloseSpan", "esriCTActiveCloseSpan");
-                        this.appConfig._filterObject.inputs[index].parameters[0].dropDownValue = "";
-                        this.appConfig._filterObject.inputs[index].parameters[0].currentValue = "";
-                    }
-                    // check header icon on the basis of changes in the filter
-                    this._onEditFilterOptionChangeIcon(index, displayColumn);
-                    // check active filter nodes
-                    this._checkFieldActiveNodes(displayColumn);
-                    this._setCurrentExpression();
-                    this._getFeatureCount(node, index, closeDropDownSpan, displayColumn, "dropDown");
-                    getCount = true;
-                }
-            }));
+            node.onchange = lang.hitch(this, function () {
+                this._onOptionChange(node, index, closeDropDownSpan, displayColumn);
+            });
+        },
+
+        /**
+        * Function on option change from the dropdown
+        * @param{node} contains input dropdown select option node
+        * @param{int} contains the index/parameter id of the input layer detail
+        * @param{node} contains close icon node
+        * @param{string} contains field name
+        * @memberOf widgets/filter/filter
+        */
+        _onOptionChange: function (node, index, closeDropDownSpan, displayColumn) {
+            this.appUtils.showLoadingIndicator();
+            this.appConfig._filterObject.inputs[index].parameters[0].dropDownValue = node.value;
+            this.appConfig._filterObject.inputs[index].parameters[0].currentValue = node.value;
+            // check if selected option is the default option of the dropdown
+            if (domAttr.get(node[0], "selected") !== true) {
+                domClass.replace(closeDropDownSpan, "esriCTActiveCloseSpan", "esriCTDisabledCloseSpan");
+                // check header icon on the basis of changes in the filter
+                this._onEditFilterOptionChangeIcon(index, displayColumn);
+                // check active filter nodes
+                this._checkFieldActiveNodes(displayColumn);
+                this._setCurrentExpression();
+                this._getFeatureCount(node, index, closeDropDownSpan, displayColumn, "dropDown");
+            } else {
+                domClass.replace(closeDropDownSpan, "esriCTDisabledCloseSpan", "esriCTActiveCloseSpan");
+                this.appConfig._filterObject.inputs[index].parameters[0].dropDownValue = "";
+                this.appConfig._filterObject.inputs[index].parameters[0].currentValue = "";
+                this.appConfig._filterObject.inputs[index].parameters[0].prevValue = "";
+                this._setCurrentExpression();
+                this._applyParameterizedExpression();
+            }
         },
 
         /**
@@ -773,7 +847,7 @@ define([
                     // check active filter nodes
                     this._checkFieldActiveNodes(displayColumn);
                     this._setCurrentExpression();
-                    this._getFeatureCount(node, index, closeDropDownSpan, displayColumn, "dropDown");
+                    this._applyParameterizedExpression();
                     getCount = true;
                 }
             }));
@@ -817,6 +891,7 @@ define([
             domClass.replace(closeTextBoxSpan, "esriCTDisabledCloseSpan", "esriCTActiveCloseSpan");
             this.appConfig._filterObject.inputs[index].parameters[0].textBoxValue = "";
             this.appConfig._filterObject.inputs[index].parameters[0].currentValue = "";
+            this.appConfig._filterObject.inputs[index].parameters[0].prevValue = "";
         },
 
         /**
@@ -831,6 +906,7 @@ define([
             domClass.replace(closeDropDownSpan, "esriCTDisabledCloseSpan", "esriCTActiveCloseSpan");
             this.appConfig._filterObject.inputs[index].parameters[0].dropDownValue = "";
             this.appConfig._filterObject.inputs[index].parameters[0].currentValue = "";
+            this.appConfig._filterObject.inputs[index].parameters[0].prevValue = "";
         },
 
         /**
@@ -848,7 +924,7 @@ define([
                     // check active filter nodes
                     this._checkFieldActiveNodes(queryDateObject.displayColumn);
                     this._setCurrentExpression();
-                    this._getFeatureCountForDatePicker(queryDateObject);
+                    this._applyParameterizedExpression();
                 }
             }));
         },
@@ -863,6 +939,7 @@ define([
         _resetDatePicker: function (icon, index, displayColumn) {
             domAttr.set(dom.byId(displayColumn + index), "value", "");
             this.appConfig._filterObject.inputs[index].parameters[0].currentValue = "";
+            this.appConfig._filterObject.inputs[index].parameters[0].prevValue = "";
             domClass.replace(icon, "esriCTDisabledCloseSpan", "esriCTActiveCloseSpan");
         },
 
@@ -1188,26 +1265,26 @@ define([
                                         id = this.appConfig._filterObject.inputs[j].parameters[0].parameterId;
                                         if (this.appConfig._filterObject.inputs[j].parameters[0].type === "esriFieldTypeDate") {
                                             if (innerSplitBy === " AND ") {
-                                                innerSplitterArray[i] = innerSplitterArray[i].split(id).join("0");
-                                                innerSplitterArray[i + 1] = innerSplitterArray[i + 1].split(id + 1).join("0");
+                                                innerSplitterArray[i] = innerSplitterArray[i].split("{" + id + "}").join("{0}");
+                                                innerSplitterArray[i + 1] = innerSplitterArray[i + 1].split("{" + (id + 1) + "}").join("{0}");
                                                 innerSplitterNewArray.push(lang.replace(innerSplitterArray[i], [this.appConfig._filterObject.inputs[j].parameters[0].currentValue.split(" ")[0] + " 00:00:00"]));
                                                 innerSplitterNewArray.push(lang.replace(innerSplitterArray[i + 1], [this.appConfig._filterObject.inputs[j].parameters[0].currentValue.split(" ")[0] + " 23:59:59"]));
                                             } else {
-                                                innerSplitterArray[i] = innerSplitterArray[i].split(id).join("0").split(id + 1).join("1");
+                                                innerSplitterArray[i] = innerSplitterArray[i].split("{" + id + "}").join("{0}").split("{" + (id + 1) + "}").join("{1}");
                                                 innerSplitterNewArray.push(lang.replace(innerSplitterArray[i], [this.appConfig._filterObject.inputs[j].parameters[0].currentValue.split(" ")[0] + " 00:00:00", this.appConfig._filterObject.inputs[j].parameters[0].currentValue.split(" ")[0] + " 23:59:59"]));
                                             }
                                         } else {
                                             if (this.appConfig._filterObject.inputs[j].parameters.length === 1) {
-                                                innerSplitterArray[i] = innerSplitterArray[i].split(id).join("0");
+                                                innerSplitterArray[i] = innerSplitterArray[i].split("{" + id + "}").join("{0}");
                                                 innerSplitterNewArray.push(lang.replace(innerSplitterArray[i], [this.appConfig._filterObject.inputs[j].parameters[0].currentValue]));
                                             } else {
                                                 if (innerSplitBy === " AND ") {
-                                                    innerSplitterArray[i] = innerSplitterArray[i].split(id).join("0");
-                                                    innerSplitterArray[i + 1] = innerSplitterArray[i + 1].split(id + 1).join("0");
+                                                    innerSplitterArray[i] = innerSplitterArray[i].split("{" + id + "}").join("{0}");
+                                                    innerSplitterArray[i + 1] = innerSplitterArray[i + 1].split("{" + (id + 1) + "}").join("{0}");
                                                     innerSplitterNewArray.push(lang.replace(innerSplitterArray[i], [this.appConfig._filterObject.inputs[j].parameters[0].currentValue]));
                                                     innerSplitterNewArray.push(lang.replace(innerSplitterArray[i + 1], [this.appConfig._filterObject.inputs[j].parameters[1].currentValue]));
                                                 } else {
-                                                    innerSplitterArray[i] = innerSplitterArray[i].split(id).join("0").split(id + 1).join("1");
+                                                    innerSplitterArray[i] = innerSplitterArray[i].split("{" + id + "}").join("{0}").split("{" + (id + 1) + "}").join("{1}");
                                                     innerSplitterNewArray.push(lang.replace(innerSplitterArray[i], [this.appConfig._filterObject.inputs[j].parameters[0].currentValue, this.appConfig._filterObject.inputs[j].parameters[1].currentValue]));
                                                 }
                                             }
@@ -1324,7 +1401,7 @@ define([
                         "displayColumn": displayColumn,
                         "selectOption": node
                     };
-                    this._queryLayerForDistinctValues(layerObj);
+                    this._checkAttributeDistinctValues(layerObj);
                 }
             }
         },
@@ -1384,6 +1461,7 @@ define([
                     domClass.replace(queryDateObject.closeDatePickerSpan, "esriCTActiveCloseSpan", "esriCTDisabledCloseSpan");
                 } else {
                     domClass.replace(queryDateObject.closeDatePickerSpan, "esriCTDisabledCloseSpan", "esriCTActiveCloseSpan");
+                    this._resetDatePicker(queryDateObject.closeDatePickerSpan, queryDateObject.index, queryDateObject.displayColumn);
                 }
                 // check active filter nodes
                 this._checkFieldActiveNodes(queryDateObject.displayColumn);
@@ -1468,6 +1546,8 @@ define([
             domAttr.set(secondInputBox, "value", "");
             this.appConfig._filterObject.inputs[index].parameters[0].currentValue = "";
             this.appConfig._filterObject.inputs[index].parameters[1].currentValue = "";
+            this.appConfig._filterObject.inputs[index].parameters[0].prevValue = "";
+            this.appConfig._filterObject.inputs[index].parameters[1].prevValue = "";
         },
 
         /**
@@ -1486,6 +1566,8 @@ define([
                     if (firstInputBox.value === "" && secondInputBox.value === "") {
                         // set textbox values to empty
                         this._resetTextBoxes(firstInputBox, secondInputBox, index);
+                        this._setCurrentExpression();
+                        this._applyParameterizedExpression();
                     }
                     // check header icon on the basis of changes in the filter
                     this._onEditFilterOptionChangeIcon(index, displayColumn);
@@ -1498,6 +1580,8 @@ define([
                     if (firstInputBox.value === "" && secondInputBox.value === "") {
                         // set textbox values to empty
                         this._resetTextBoxes(firstInputBox, secondInputBox, index);
+                        this._setCurrentExpression();
+                        this._applyParameterizedExpression();
                     }
                     // check header icon on the basis of changes in the filter
                     this._onEditFilterOptionChangeIcon(index, displayColumn);
@@ -1523,7 +1607,7 @@ define([
                 // check header icon on the basis of changes in the filter
                 this._onEditFilterOptionChangeIcon(index, displayColumn);
                 this._setCurrentExpression();
-                this._getFeatureCountForRange(firstInputBox, secondInputBox, index, closeTextBoxSpan);
+                this._applyParameterizedExpression();
             }));
         },
 

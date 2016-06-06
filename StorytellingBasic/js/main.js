@@ -36,6 +36,7 @@ define([
 
   "esri/arcgis/utils",
   "esri/domUtils",
+  "esri/lang",
 
   "esri/dijit/HomeButton",
 
@@ -51,6 +52,7 @@ define([
   registry,
   arcgisUtils,
   domUtils,
+  esriLang,
   HomeButton,
   MapUrlParams
 ) {
@@ -162,12 +164,12 @@ define([
         this.config.title = this.config.title || response.itemInfo.item.title || "";
         this.config.subtitle = this.config.subtitle || response.itemInfo.item.snippet || "";
 
-        document.title = this.config.title;
+        document.title = esriLang.stripTags(this.config.title);
         if (this.config.showTitle) {
-          dom.byId("title").innerHTML = this.config.title;
+          dom.byId("title").innerHTML = esriLang.stripTags(this.config.title);
         }
         if (this.config.showSubTitle) {
-          dom.byId("subtitle").innerHTML = this.config.subtitle;
+          dom.byId("subtitle").innerHTML = esriLang.stripTags(this.config.subtitle);
         }
         // Add the logo
         if (this.config.showLogo && this.config.logo) {

@@ -515,23 +515,25 @@ define([
 
                     value = entry.input.get("value");
 
-                    if (entry.inputTimeSupplement) {
-                        valueTimeSupplement = entry.inputTimeSupplement.get("value");
-                        value.setHours(valueTimeSupplement.getHours());
-                        value.setMinutes(valueTimeSupplement.getMinutes());
-                        value.setSeconds(valueTimeSupplement.getSeconds());
-                        value.setMilliseconds(valueTimeSupplement.getMilliseconds());
-                    }
+                    if (esriLang.isDefined(value)) {
+                        if (entry.inputTimeSupplement) {
+                            valueTimeSupplement = entry.inputTimeSupplement.get("value");
+                            value.setHours(valueTimeSupplement.getHours());
+                            value.setMinutes(valueTimeSupplement.getMinutes());
+                            value.setSeconds(valueTimeSupplement.getSeconds());
+                            value.setMilliseconds(valueTimeSupplement.getMilliseconds());
+                        }
 
-                    if (entry.field.domain && entry.field.domain.type === "codedValue") {
-                        // Convert list selection into the coded value
-                        attr[entry.field.name] = entry.field.domain.codedValues[parseInt(value, 10)].code;
-                    } else if (value.getTime) {
-                        // Convert Date objects into milliseconds as required by the feature service REST endpoint
-                        attr[entry.field.name] = value.getTime();
-                    } else {
-                        // Get the value
-                        attr[entry.field.name] = value;
+                        if (entry.field.domain && entry.field.domain.type === "codedValue") {
+                            // Convert list selection into the coded value
+                            attr[entry.field.name] = entry.field.domain.codedValues[parseInt(value, 10)].code;
+                        } else if (value.getTime) {
+                            // Convert Date objects into milliseconds as required by the feature service REST endpoint
+                            attr[entry.field.name] = value.getTime();
+                        } else {
+                            // Get the value
+                            attr[entry.field.name] = value;
+                        }
                     }
                 }));
             }

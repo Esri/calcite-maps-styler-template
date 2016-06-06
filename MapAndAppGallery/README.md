@@ -44,7 +44,7 @@ The Map and App Gallery is a web application template to create a configurable, 
 1. To deploy this application, download the template from Portal/ArcGIS Online and unzip it.
 2. Copy the unzipped folder containing the web app template files, such as index.html, to your web server. You can rename the folder to change the URL through which users will access the application. By default the URL to the app will be `http://<Your Web Server>/<app folder name>/index.html`
 3. Change the portalURL, found in config.js, to the sharing URL for ArcGIS Online or Portal. For ArcGIS Online users, use www.arcgis.com or specify the name of your organization.
-4. If you are using Portal or a local install of the ArcGIS API for JavaScript, change all references to the ArcGIS API for JavaScript in index.html to refer to your local copy of the API. Search for the references containing `"//jsdev.arcgis.com/3.17"` and replace this portion of the reference with the url to your local install.
+4. If you are using Portal or a local install of the ArcGIS API for JavaScript, change all references to the ArcGIS API for JavaScript in index.html to refer to your local copy of the API. Search for the references containing `"//js.arcgis.com/3.17"` and replace this portion of the reference with the url to your local install.
   - For example: `"//webadaptor.domain.com/arcgis/jsapi/jsapi"` where `arcgis` is the name of your Web Adaptor.
 5. Copy a group ID from Portal/ArcGIS Online and replace the default group ID in the application’s config.js file. You can now run the application on your web server or configure the application further.
 

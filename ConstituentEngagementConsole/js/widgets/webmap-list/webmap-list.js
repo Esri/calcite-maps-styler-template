@@ -835,9 +835,6 @@ define([
                     if ((currentLayer.resourceInfo.capabilities.indexOf("Create") === -1) &&
                             ((currentLayer.resourceInfo.capabilities.indexOf("Update") === -1) ||
                             (currentLayer.resourceInfo.capabilities.indexOf("Editing") === -1)) && currentLayer.visibility) {
-                        if (currentLayer.layerObject.showLabels && currentLayer.layerObject.labelingInfo) {
-                            currentLayer.layerObject.visible = true;
-                        }
                         currentLayer.layerObject.show();
                         // condition to check feature layer with create, edit, delete permissions and popup enabled, but all fields marked display only
                     } else if ((currentLayer.resourceInfo.capabilities.indexOf("Create") !== -1) &&
@@ -845,9 +842,6 @@ define([
                             (currentLayer.resourceInfo.capabilities.indexOf("Update") !== -1) &&
                             (currentLayer.popupInfo) &&
                             this._checkDisplayPropertyOfFields(currentLayer.popupInfo, currentLayer.layerObject.fields) && this.selectedLayerId !== currentLayer.id) {
-                        if (currentLayer.layerObject.showLabels && currentLayer.layerObject.labelingInfo) {
-                            currentLayer.layerObject.visible = true;
-                        }
                         currentLayer.layerObject.show(); // display non-editable layer
                     } else {
                         currentLayer.layerObject.hide();

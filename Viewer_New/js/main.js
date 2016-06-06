@@ -984,7 +984,11 @@ define([
             createdOptions.activeSourceIndex = this.config.searchConfig
               .activeSourceIndex;
           }
+          if (this.config.eanbleSearchingAll && this.config.searchConfig.enableSearchingAll !== null && this.config.searchConfig.enableSearchingAll !== undefined) {
+            createdOptions.enableSearchingAll = this.config.searchConfig.enableSearchingAll;
+          }
         }
+
         var search = new Search(createdOptions, domConstruct.create(
           "div", {
             id: "search"

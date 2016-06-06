@@ -909,6 +909,22 @@ define([
         },
 
         /**
+        * This function is used to pull label layer on top
+        * @memberOf widgets/main/main
+        */
+        _getLayerLayerOnTop: function () {
+            var labelLayerObj, numberOfLayers;
+            labelLayerObj = this.map.getLayer("labels");
+            numberOfLayers = 1000;
+            if ((typeof (Object.keys) === "function") && (this.map._layers)) {
+                numberOfLayers = Object.keys(this.map._layers).length + 1;
+            }
+            if (labelLayerObj) {
+                this.map.reorderLayer(labelLayerObj, numberOfLayers);
+            }
+        },
+
+        /**
         * This function is used to add feature layer in label layer
         * @memberOf widgets/main/main
         */
@@ -958,6 +974,7 @@ define([
                     }
                     this._removeLayerFromLabelLayer(this._refinedOperationalLayer.id);
                     this._addFeatureLayerInLabelLayer();
+                    this._getLayerLayerOnTop();
                     this._refinedOperationalLayer.clearSelection();
                     this._toggleNoFeatureFoundDiv(true);
                     //Enable time slider if it was disable
