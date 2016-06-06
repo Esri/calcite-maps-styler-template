@@ -229,7 +229,7 @@ a {
   left: 10px;
   height: 30px;
   width: 30px;
-  border: 1px solid #57575a;
+  border: 1px solid transparent;
   background-color: #fff;
   -webkit-user-select: none;
   -moz-user-select: none;
