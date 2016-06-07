@@ -985,7 +985,7 @@ define([
               .activeSourceIndex;
           }
           createdOptions.enableSearchingAll = false;
-          if(this.config.searchConfig && this.config.searchConfig.enableSearchingAll && this.config.searchConfig.enableSearchingAll ==  true){
+          if (this.config.searchConfig && this.config.searchConfig.enableSearchingAll && this.config.searchConfig.enableSearchingAll == true) {
             createdOptions.enableSearchingAll = true;
           }
         }
@@ -1219,6 +1219,7 @@ define([
       }).then(lang.hitch(this, function(response) {
 
         this.map = response.map;
+        domClass.add(this.map.infoWindow.domNode, "light");
 
         if (params.markerGraphic) {
           // Add a marker graphic with an optional info window if

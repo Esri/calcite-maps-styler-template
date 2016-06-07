@@ -588,6 +588,22 @@ img {
   text-decoration: none;
   color: #000;
 }
+.titlePane{
+  height:20px;
+  line-height: 16px;
+}
+.esriPopup.light .titlePane, .esriPopup.dark .titlePane{
+  font-size: 12px;
+  line-height: 16px;
+  height: 30px;
+  padding: 10px;
+  border: 0;
+  border-radius: 3px 3px 0 0;
+  -webkit-border-radius: 3px 3px 0 0;
+}
+.esriPopup.light .titlePane .title, .esriPopup.dark .titlePane .title{
+  line-height: 16px;
+}
 .popupTitle{
   width:100%;
   padding:10px;
