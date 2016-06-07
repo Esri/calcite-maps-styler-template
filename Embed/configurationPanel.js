@@ -116,7 +116,7 @@
             },{
               "type":"boolean",
               "fieldName":"legendlayers",
-              "label": "Display layer list in side panel instead of legend"
+              "label": "Display layer list in side panel as well as a legend"
             },
             {
                "type":"boolean",
