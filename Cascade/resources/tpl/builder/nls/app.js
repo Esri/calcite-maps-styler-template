@@ -11,16 +11,17 @@ define({
 					logoSharing: "Logo & Sharing"
 				},
 				bookmarks: {
-					title: "Title Text",
-					bookmark: "Bookmark Text"
+					title: "Section",
+					bookmark: "Bookmark",
+					intro: "Bookmarks are links to story sections that are shown in the header. Creating concise bookmarks for the main sections of your story helps readers get oriented."
 				},
 				logoSharing: {
 					logo: "Logo",
 					logoButton: "Use Esri Logo",
-					logoLink: "Logo Link",
-					customHeaderText: "Custom header text",
-					link: "Link",
-					enableSocialSharing: "Enable social media sharing links"
+					logoLink: "Logo link",
+					customHeaderText: "Tagline",
+					link: "Tagline link",
+					enableSocialSharing: "Display sharing button"
 				}
 			},
 			mediaConfig: {
@@ -28,6 +29,12 @@ define({
 			},
 			imageGallery: {
 				reachedLimit: "A maximum of 4 items are allowed in an image gallery."
+			},
+			credits: {
+				warning: "Both fields must be filled out",
+				content: "Content...",
+				source: "Source...",
+				linkPrompt: "Optional link..."
 			}
     }
   }),

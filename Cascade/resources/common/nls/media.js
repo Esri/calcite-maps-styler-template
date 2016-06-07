@@ -16,6 +16,7 @@ define({
           noAlbums: "No public album found",
           noPhotosFound: "No photos matched your search. Please try again.",
           noItemsFound: "No items matched your search. Please try again.",
+          noItemsInThisStory: "No content from ArcGIS has been added to this story yet.",
           cantRetrieveImages: "Unable to retrieve images",
           googlePhotos: {
             userNotFound: "Account not found"
@@ -68,7 +69,8 @@ define({
               or: "OR",
               dragAndDrop: "Drop an image here",
               uploadImage: "Upload an image",
-              useDifferent: "Use a different photo"
+              useDifferent: "Use a different photo",
+              saveBeforeUpload: "Once you save this story, you can upload images to ArcGIS here"
             },
             filterAndSort: {
               webmap: "Web Map",
