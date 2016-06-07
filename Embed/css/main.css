@@ -100,9 +100,9 @@ a {
   text-align: center;
 }
 /*Without this style the popup zoom button doesn't display with calcite*/
-.calcite .actionsPane .action {
+/*.calcite .actionsPane .action {
   text-indent: 0;
-}
+}*/
 /*Icon fonts for menu and nav arrows*/
 @font-face {
   font-family: 'icomoon';
@@ -226,19 +226,20 @@ a {
 .icon-basemap-container {
   position: relative;
   top: 155px;
-  left: 10px;
-  height: 30px;
-  width: 30px;
+  left: 15px;
+  height: 32px;
+  width: 32px;
   border: 1px solid transparent;
   background-color: #fff;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  -webkit-border-radius: 5px;
-  border-radius: 5px;
   cursor: pointer;
   color: #4c4c4c;
+  -moz-box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.5);
 }
 .esriRTL .icon-basemap-container {
   top: 110px;
@@ -298,8 +299,8 @@ a {
   height: 30px;
 }
 .light .HomeButton .home {
-  background-color: #f7f8f8;
-  background: url("../images/home_locate.png") no-repeat 0 0;
+  /*background-color: #f7f8f8;
+  background: url("../images/home_locate.png") no-repeat 0 0;*/
 }
 .HomeButton .home {
   padding: 0px !important;
@@ -308,17 +309,16 @@ a {
 }
 .dark .HomeButton .home {
   background-color: #6c6d70;
+  color:#fff;
 }
-.HomeButton .home:hover {
-  background-color: #eee;
+.dark .HomeButton .home:hover {
+  color:#fff;
+  /*background-color: #eee;
   width: 30px;
   height: 30px;
   padding: 0px;
   -webkit-border-radius: 0;
-  border-radius: 0;
-}
-.dark .HomeButton {
-  color: #fff;
+  border-radius: 0;*/
 }
 .dark .icon-basemap {
   background-image: url("../images/basemap_light.png");
@@ -338,9 +338,12 @@ a {
 .light .esriSimpleSlider {
   background-color: #f7f8f8;
 }
-.dark .esriSimpleSlider {
+.dark .esriSimpleSlider div{
   background-color: #6c6d70;
   color: #fff;
+}
+.dark .esriSimpleSlider .esriSimpleSliderIncrementButton{
+  border-bottom:none;
 }
 .light .icon-basemap-container {
   background-color: #f7f8f8;
@@ -354,9 +357,10 @@ a {
 .light .icon-basemap-container:hover {
   background-color: #eee;
 }
-.dark .esriSimpleSliderDecrementButton:hover,
-.dark .esriSimpleSliderIncrementButton:hover {
+.dark .esriSimpleSlider .esriSimpleSliderDecrementButton:hover,
+.dark .esriSimpleSlider .esriSimpleSliderIncrementButton:hover {
   background-color: #7a7b7f;
+  color:#fff;
 }
 .esriRTL .esriSimpleSliderTL {
   top: 10px !important;
@@ -466,7 +470,7 @@ a {
   position: relative;
   background: #fff;
   border: 1px solid #333;
-  width: 395px;
+  width: 355px;
   height: 265px;
 }
 .arrow_box:after,
@@ -507,30 +511,96 @@ a {
 .simpleGeocoder .esriGeocoder {
   border: 1px solid #ccc;
 }
-/*.esriPopup.light .contentPane, .esriPopup.light .actionsPane{
-    background-color: $light-base-color;
-}*/
+.calcite .dijitSplitContainer-child, .calcite .dijitBorderContainer-child{
+  border:none;
+}
+.calcite .dijitTab, .calcite .dijitTabContainerTop .dijitTabContainerTop-tabs .dijitTabChecked, .calcite .dijitTabContainerTop .dijitTabContainerTop-tabs .dijitTabChecked:hover, .calcite .dijitTabContainerTop .dijitTabContainerTop-tabs .dijitTabChecked:focus{
+  border:none;
+}
+.calcite .dijitTabPaneWrapper{
+  border:none;
+}
+.calcite .dijitTabContainerTop-dijitContentPane, .calcite .dijitTabContainerBottom-dijitContentPane, .calcite .dijitTabContainerLeft-dijitContentPane, .calcite .dijitTabContainerRight-dijitContentPane{
+  background-color:inherit;
+}
+.calcite .dijitTabContainerTop .dijitTabContainerTop-tabs .dijitTabChecked:hover{
+  padding-top:12px;
+}
 .esriPopup.light .titlePane {
   background-color: #e0e0df;
+}
+.esriPopup.dark{
+  color:#fff;
+}
+.calcite .esriViewPopup .gallery .mediaHandle.next, .calcite .esriViewPopup .gallery .mediaHandle.prev{
+  font-family:"CalciteWebCoreIcons";
+}
+.calcite .esriViewPopup .gallery{
+  width:auto;
 }
 .esriPopup.dark .contentPane,
 .esriPopup.dark .actionsPane {
   background-color: #4c4c4c;
 }
-.esriPopup.dark .pointer.top {
-  background: #323232;
+
+.calcite .esriPopup.light .pointer {
+  border-color: #e0e0df;
 }
+
 .esriPopup.dark .pointer {
-  background: #4c4c4c;
+  border-color: #323232;
 }
-.esriPopup.dark .outerPointer {
-  background: #4c4c4c;
+.esriPopup.dark .outerPointer{
+  border-color: #4c4c4c;
+}
+.esriPopup.light .pointer.bottomLeft,.esriPopup.light .pointer.bottomRight, .esriPopup.light .pointer.bottom{
+  border-color: #fff;
+}
+.esriPopup.dark .pointer.bottomLeft,.esriPopup.dark .pointer.bottomRight, .esriPopup.dark .pointer.bottom{
+  border-color: #4c4c4c;
+}
+.calcite .esriPopup.dark .actionsPane .action{
+  color:#fff;
+}
+.calcite .esriPopup.dark .titlePane .titleButton{
+  color:#fff;
+}
+.calcite .esriPopup.dark .outerPointer{
+  border-top-color: rgba(255,255,255,0);
+  border-bottom-color: rgba(255,255,255,0);
+}
+.calcite .esriPopup.dark .pointer.top, .calcite .esriPopup.light .pointer.top{
+  border-right-color: rgba(255,255,255,0);;
+  border-left-color: rgba(255,255,255,0);;
+}
+.calcite .esriPopup.dark .pointer.bottom, .calcite .esriPopup.light .pointer.bottom{
+  border-right-color: rgba(255,255,255,0);;
+  border-left-color: rgba(255,255,255,0);;
+}
+.calcite .esriPopup.dark .pointer.topLeft, .calcite .esriPopup.light .pointer.topLeft{
+  border-right-color: rgba(255,255,255,0);;
+  border-top-color: rgba(255,255,255,0);;
+}
+.calcite .esriPopup.dark .pointer.topRight, .calcite .esriPopup.light .pointer.topRight {
+  border-top-color: rgba(255,255,255,0);
+  border-left-color: rgba(255,255,255,0);;
+}
+.calcite .esriPopup.light .pointer.bottomRight, .calcite .esriPopup.dark .pointer.bottomRight{
+  border-left-color: rgba(0, 0, 0, 0);
+  border-bottom-color: rgba(0, 0, 0, 0);
+}
+.calcite .esriPopup.light .pointer.bottomLeft, .calcite .esriPopup.dark .pointer.bottomLeft{
+  border-right-color: rgba(0, 0, 0, 0);
+  border-bottom-color: rgba(0, 0, 0, 0);
 }
 .esriPopup.dark .titlePane {
   background-color: #323232;
 }
-.esriPopup.light .pointer.top {
+/*.esriPopup.light .pointer.top {
   background: #e0e0df;
+}*/
+.hidden{
+  display: none;
 }
 /*If the screen size is max-width or smaller and the drawer is open hide the geocder.*/
 @media screen and (max-width: 540px) {
@@ -690,14 +760,24 @@ a {
   white-space: nowrap;
   z-index: 3;
 }
+.calcite .dijitTabContainerTop .dijitTabPaneWrapper{
+  border:none;
+}
+.calcite .dijitTabContainerTop .dijitTabListContainer-top {
+    margin-top: 0;
+}
+.calcite .dijitTabContainerTop .dijitTabContainerTop-tabs .dijitTab:hover {
+    padding-top: 12px;
+    border:none;
+}
 .tab_1 .dijitTabContainerTop-tabs .dijitTab {
-  width: 260px;
+  width: 280px;
 }
 .tab_2 .dijitTabContainerTop-tabs .dijitTab {
-  width: 121px;
+  width: 140px;
 }
 .tab_3 .dijitTabContainerTop-tabs .dijitTab {
-  width: 73px;
+  width: 94px;
 }
 .dijitTab * {
   vertical-align: middle;
