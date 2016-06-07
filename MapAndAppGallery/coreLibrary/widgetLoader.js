@@ -124,6 +124,7 @@ define([
             var cssString, mediaCssString, headNode, styleNode, mediaStyleNode;
             //if theme is configured
             if (dojo.configData.values.theme) {
+                this._setConfiguredColor();
                 //substitute theme color values in theme template
                 cssString = string.substitute(ThemeCss, {
                     SelectedThemeColor: dojo.configData.values.theme
@@ -167,6 +168,21 @@ define([
                         "id": "mediaStyleNode"
                     }, headNode);
                 }
+            }
+        },
+
+        /**
+        * set color value for configured theme
+        * @memberOf coreLibrary/widgetLoader
+        */
+        _setConfiguredColor: function () {
+            //if theme is not configured from the color palette then set the color value for the respective themes to support backward compatibility
+            if (dojo.configData.values.theme === "blueTheme") {
+                dojo.configData.values.theme = "#007ac2";
+            } else if (dojo.configData.values.theme === "redTheme") {
+                dojo.configData.values.theme = "#800000";
+            } else if (dojo.configData.values.theme === "greenTheme") {
+                dojo.configData.values.theme = "#028d6a";
             }
         }
 
