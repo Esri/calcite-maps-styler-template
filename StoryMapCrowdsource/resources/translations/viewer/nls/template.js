@@ -30,7 +30,7 @@ define({
         title: 'Share',
         copied: 'Copied',
         linkHeader: 'Link to story',
-        linkHelper: 'Share this story through email or social media services with the link below.',
+        linkHelper: 'Share this story through email or social media with the link below.',
         copyShortLink: 'Copy short link',
         showShortLink: 'Show short link',
         copyFullLink: 'Copy full URL',
@@ -130,6 +130,9 @@ define({
         noNewLine: 'The <% attribute %> cannot contain line breaks.'
       },
       arcgis: {
+        basic: {
+          arcgisSupportedHtml: 'The <% attribute %> contains unsupported HTML.'
+        },
         location: {
           notValid: 'The location you entered is not valid, please try again.',
           noResults: 'The location you searched for cannot be found. Please try again and be as specifc as you can.'
