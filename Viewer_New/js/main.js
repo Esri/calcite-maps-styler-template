@@ -984,11 +984,11 @@ define([
             createdOptions.activeSourceIndex = this.config.searchConfig
               .activeSourceIndex;
           }
-          if (this.config.eanbleSearchingAll && this.config.searchConfig.enableSearchingAll !== null && this.config.searchConfig.enableSearchingAll !== undefined) {
-            createdOptions.enableSearchingAll = this.config.searchConfig.enableSearchingAll;
+          createdOptions.enableSearchingAll = false;
+          if(this.config.searchConfig && this.config.searchConfig.enableSearchingAll && this.config.searchConfig.enableSearchingAll ==  true){
+            createdOptions.enableSearchingAll = true;
           }
         }
-
         var search = new Search(createdOptions, domConstruct.create(
           "div", {
             id: "search"
