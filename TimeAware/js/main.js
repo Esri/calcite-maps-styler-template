@@ -543,7 +543,10 @@ define([
           if (!this.config.singleLineDate) {
             formatString = left + "<br>" + this.config.dateSeparator + "<br>" + right;
           } else {
-            formatString = left + this.config.dateSeparator + right;
+            if (this.config.dateSeparator === "") {
+              this.config.dateSeparator = "-";
+            }
+            formatString = left + " " + this.config.dateSeparator + " " + right;
           }
         }
         if (!this.config.showStartDate && this.config.showEndDate) {

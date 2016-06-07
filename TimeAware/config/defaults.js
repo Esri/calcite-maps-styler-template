@@ -33,7 +33,7 @@ define({
   "time": true,
   "showStartDate": true, // switch to 2 lines by default ?? or refresh div
   "showEndDate": true,
-  "dateSeparator": " - ", // TODO no sep option
+  "dateSeparator": "-", // TODO no sep option
   "singleLineDate": true, // when true start/end dates on single line
   "customFormatOption": null, // "dddd, MMMM Do YYYY, h:mm:ss a"
   // Show date for specified time period. Time period starts from now and goes back the specified amount. So if you specify 2 days the
