@@ -332,6 +332,9 @@ a {
 .dark .BasemapToggle .toggleButton {
   background: #6c6d70;
 }
+.calcite .HomeButton .home{
+  box-shadow: none;
+}
 .dark .HomeButton .home:hover {
   background-color: #7a7b7f;
 }
@@ -345,6 +348,16 @@ a {
 .dark .esriSimpleSlider .esriSimpleSliderIncrementButton{
   border-bottom:none;
 }
+.dark.calcite  .esriSimpleSlider .esriSimpleSliderDecrementButton{
+  border-top: none;
+}
+.calcite.no-home .esriSimpleSlider .esriSimpleSliderDecrementButton{
+  border-top:0;
+}
+.calcite .esriSimpleSlider .esriSimpleSliderDecrementButton{
+  border-top: solid 1px #efefef;
+}
+
 .light .icon-basemap-container {
   background-color: #f7f8f8;
 }
