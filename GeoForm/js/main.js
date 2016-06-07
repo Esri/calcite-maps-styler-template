@@ -837,13 +837,22 @@ define([
                 }, inputContent);
                 domClass.add(inputContent, "form-control");
               }
-              array.forEach(currentField.subTypes, lang.hitch(this, function (currentOption) {
-                selectOptions = domConstruct.create("option", {}, inputContent);
-                selectOptions.text = currentOption.name;
-                selectOptions.value = currentOption.id;
-                //default values for subtypes(if any) has to be handled here
-              }));
-
+              if(currentField.domain){
+                array.forEach(currentField.domain.codedValues, lang.hitch(this, function (currentOption) {
+                  selectOptions = domConstruct.create("option", {}, inputContent);
+                  selectOptions.text = currentOption.name;
+                  selectOptions.value = currentOption.code;
+                  //default values for subtypes(if any) has to be handled here
+                }));
+              }
+              else if(currentField.subTypes){
+                array.forEach(currentField.subTypes, lang.hitch(this, function (currentOption) {
+                  selectOptions = domConstruct.create("option", {}, inputContent);
+                  selectOptions.text = currentOption.name;
+                  selectOptions.value = currentOption.id;
+                  //default values for subtypes(if any) has to be handled here
+                }));
+              }
             }
             on($("#" + fieldname), "change", lang.hitch(this, function (evt) {
               //function call to take appropriate actions on selection of a subtypes
