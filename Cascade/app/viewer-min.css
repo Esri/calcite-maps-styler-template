@@ -2646,6 +2646,17 @@ body.mobile .discover-item img {
    font-size: 12px;
  }
 
+ body.builder-mode .block-caption {
+     min-height: 40px;
+     cursor: text;
+ }
+
+ body.builder-mode .block-caption:empty:before {
+   content: attr(data-placeholder);
+   font-style: italic;
+   color: #999;
+ }
+
 .background .caption {
  position: absolute;
  top: 650px;

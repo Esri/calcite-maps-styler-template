@@ -38,6 +38,9 @@ define({
 				content: "Content...",
 				source: "Source...",
 				linkPrompt: "Optional link..."
+			},
+			media: {
+				captionPlaceholder: "Your caption here..."
 			}
     }
   }),
