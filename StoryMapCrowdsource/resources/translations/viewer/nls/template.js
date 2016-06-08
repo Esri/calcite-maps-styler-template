@@ -93,7 +93,7 @@ define({
       },
       form: {
         photo: {
-          pickFile: 'Tap to pick a file',
+          pickFile: 'Click to pick a file',
           choosePhoto: 'Upload a Photo',
           selectNew: 'Use a different photo'
         },
