@@ -551,7 +551,7 @@ define([
         }
         if (!this.config.showStartDate && this.config.showEndDate) {
           // no start date but we have an end date (so only one line )
-          formatString = right;
+          formatString = " " + right;
         }
         if (this.config.showStartDate && !this.config.showEndDate) {
           formatString = left;
