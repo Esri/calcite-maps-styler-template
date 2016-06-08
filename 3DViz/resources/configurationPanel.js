@@ -33,7 +33,7 @@
     "category": "<b>Visualization</b>",
     "fields": [{
       "type": "paragraph",
-      "value": "By default, the first feature layer in the scene will be used for visualization. You can configure the popup for the layer in the 2D map viewer. Visible numeric fields and aliases will be used for visualization. The first visible string field will be used for labels by default."
+      "value": "By default, the first feature layer in the scene will be used for visualization. You can configure the popup for the layer in the 2D map viewer or on the visualization tab of the layer's item details page. Visible numeric fields and aliases will be used for visualization. The first visible string field will be used for labels by default."
     }, {
       "type": "string",
       "fieldName": "vizType",
@@ -52,12 +52,12 @@
     }, {
       "type": "number",
       "fieldName": "maxZ",
-      "label": "Maximum symbol height (meters)",
+      "label": "Maximum symbol height (meters).  Note: For the Pulse visualization type this value controls the placement of the points above the earth's surface and as a result it is recommened that you use a smaller value with this vizType.",
       "tooltip": "Maximum symbol height (meters)"
     }, {
       "type": "number",
       "fieldName": "maxW",
-      "label": "Maximum symbol width (meters)",
+      "label": "Maximum symbol width (meters). Note: This does not apply to polygon extrusion.",
       "tooltip": "Maximum symbol width (meters)"
     }, {
       "type": "number",

@@ -107,6 +107,9 @@
   },{
     "category": "Accessibility",
     "fields":[{
+      "type": "paragraph",
+      "value": "The primary purpose of alternative map text is to be read by screen readers to allow the content and function of the map to be accessible to users with visual or certain cognitive disabilities.  For more information see this article on <a href='http://webaim.org/techniques/alttext/' target='_blank'>Alt Text</a>. "
+    },{
       "type":"string",
       "stringFieldOption": "richtext",
       "label": "Alternate Map Text",
