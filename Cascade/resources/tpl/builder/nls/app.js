@@ -19,6 +19,9 @@ define({
 					logo: "Logo",
 					logoButton: "Use Esri Logo",
 					logoLink: "Logo link",
+					logoUploadProgress: "Logo upload in progress",
+					logoUploadSuccess: "Logo uploaded successfully",
+					logoUploadError: "Logo uploaded failed, switching back to default logo",
 					customHeaderText: "Tagline",
 					link: "Tagline link",
 					enableSocialSharing: "Display sharing button"

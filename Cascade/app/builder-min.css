@@ -3339,12 +3339,9 @@ p.block {
   width: 100%;
   height: 0;
 }
-.block.image.fit-height {
+.block.image.fit-height .block-media {
   max-height: 100vh;
-  /* The following allow to crop size=large but it creates a conflict with builder add block
-   *  adding a wrapper container would probably solve this
-   */
-  /*overflow: hidden;*/
+  overflow: hidden;
 }
 /*
 .foreground .image {
@@ -3621,9 +3618,6 @@ body.mobile-view .image-gallery .image-gallery-item:nth-child(n+3) {
 .esriPopup .actionsPane {
   display: none !important;
 }
-.background:not(.enable-events) .esriSimpleSlider {
-  display: none;
-}
 .legend {
   position: absolute;
   bottom: 10px;
@@ -3646,8 +3640,21 @@ body.mobile-view .image-gallery .image-gallery-item:nth-child(n+3) {
 }
 .block-type-webmap:not(.block-size-small) .layer-list-container {
   top: inherit;
-  bottom: 175px;
-  max-height: calc(100% - 175px);
+  bottom: 170px;
+  max-height: calc(100% - 170px);
+}
+.block-type-webmap.interaction-disabled:not(.block-size-small) .layer-list-container {
+  top: inherit;
+  bottom: 100px;
+  max-height: calc(100% - 100px);
+}
+.block-type-webmap.interaction-button:not(.block-size-small) .layer-list-container {
+  bottom: 115px;
+  max-height: calc(100% - 115px);
+}
+.block-type-webmap.interaction-button.interaction-enabled:not(.block-size-small) .layer-list-container {
+  bottom: 195px;
+  max-height: calc(100% - 195px);
 }
 .block-type-webmap.block-size-small .layer-list-container {
   right: -220px;
@@ -3740,7 +3747,7 @@ body.mobile-view .image-gallery .image-gallery-item:nth-child(n+3) {
   width: 100%;
   height: 100%;
 }
-.block-webpage.scroll-off .webpage {
+.scroll-off .webpage {
   pointer-events: none;
 }
 .background-type-empty {
@@ -3752,6 +3759,7 @@ body.mobile-view .image-gallery .image-gallery-item:nth-child(n+3) {
   width: 100%;
   height: 100%;
   background-color: #FFF;
+  pointer-events: none;
 }
 .media-empty .me-placeholder {
   position: absolute;
@@ -3773,6 +3781,7 @@ body.mobile-view .image-gallery .image-gallery-item:nth-child(n+3) {
   background: #FFF;
   border-radius: 2px;
   cursor: pointer;
+  pointer-events: all;
 }
 .media-empty .media-empty-add:hover {
   opacity: 0.9;
@@ -3969,6 +3978,7 @@ body.mobile-view .image-gallery .image-gallery-item:nth-child(n+3) {
 .media-cfg-panel {
   display: block;
   width: 100%;
+  font-family: 'open_sans', sans-serif;
 }
 .media-cfg-panel .builder-config {
   display: flex;
@@ -4348,7 +4358,9 @@ body.mobile-view .image-gallery .image-gallery-item:nth-child(n+3) {
   color: #666;
 }
 .image-gallery .image-gallery-item:last-child .builder-ui.ig-add {
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .image-gallery .image-gallery-item .ig-action-icon {
   color: white;
@@ -4359,7 +4371,8 @@ body.mobile-view .image-gallery .image-gallery-item:nth-child(n+3) {
 .image-gallery .image-gallery-item .ig-action-icon.ig-add-icon {
   color: #666;
   padding: 0;
-  top: 5px;
+  top: -1px;
+  left: 1px;
 }
 .block-type-video .builder-invite-background {
   left: 50% !important;
@@ -4443,22 +4456,12 @@ body.mobile-view .image-gallery .image-gallery-item:nth-child(n+3) {
   transform: translateZ(0);
   will-change: transform;
 }
-.section.events-always .background {
-  pointer-events: auto;
-}
-.background.enable-events > * {
-  pointer-events: auto;
-}
 /*
  * Foreground
  */
 .foreground {
   position: relative;
   padding-bottom: 45px;
-}
-.section.events-always .foreground,
-.section.events-button .foreground {
-  pointer-events: none;
 }
 /*
  *
@@ -4803,12 +4806,6 @@ body.mobile-view .section-layout-cover .cover-credits-right {
   overflow: hidden;
   text-align: center;
 }
-/* medium editor require 140px + the 45px of padding
-  can't seem to remove the padding and give it 140px
-  it must be scrolling by itself */
-body.builder-mode .section-layout-sequence .foreground {
-  min-height: 195px;
-}
 /*
  * Block
  */
@@ -4954,8 +4951,10 @@ body.mobile-view .section-layout-sequence .block {
 .section-layout-title .foreground .fg-title {
   display: inline-block;
   vertical-align: middle;
-  font-size: 2.5em;
+  font-size: 52px;
+  line-height: 80px;
   word-break: break-word;
+  pointer-events: all;
 }
 .section-layout-title.size-medium .foreground {
   height: 200px;
@@ -4967,6 +4966,7 @@ body.mobile-view .section-layout-sequence .block {
 }
 .section-layout-title .background {
   overflow: hidden;
+  pointer-events: inherit;
 }
 .section-layout-title .fg-credits {
   position: absolute;
@@ -5134,15 +5134,21 @@ body.builder-mode .section-immersive.active:not(.disable-snap) .background-title
 }
 /* transition: all is not working well in Chrome in builder
    the section width and left get animated... */
-body.builder-mode .section-immersive:not(.disable-transition) .background.transition-fade-slow {
-  transition: opacity 1s ease-in-out;
+/*
+body.builder-mode .section-immersive:not(.disable-transition) {
+  .background.transition-fade-slow {
+    transition: opacity 1s ease-in-out;
+  }
+
+  .background:not(.active).transition-none {
+    transition: opacity 1s ease-in-out;
+  }
+
+  .background.transition-fade-fast {
+    transition: opacity 0.4s ease-in-out;
+  }
 }
-body.builder-mode .section-immersive:not(.disable-transition) .background:not(.active).transition-none {
-  transition: opacity 1s ease-in-out;
-}
-body.builder-mode .section-immersive:not(.disable-transition) .background.transition-fade-fast {
-  transition: opacity 0.4s ease-in-out;
-}
+*/
 body.builder-mode .section-immersive .blocks {
   /* without that extra padding in builder can't have overflow: auto
     as the last add menu is overflowing the scrollbar always get displayed */
@@ -5153,6 +5159,9 @@ body.mobile-view .background-title h2 {
   line-height: 120%;
 }
 .section-immersive {
+  /*
+   * Using 'all' and not just opacity is much smoother in viewer
+   */
   /* prevent last image from fading out */
   /* TODO would need to flip the image order and have them in a container to do that properly? */
   /*
@@ -5171,9 +5180,6 @@ body.mobile-view .background-title h2 {
   pointer-events: inherit;
 }
 .section-immersive:not(.disable-transition) .background.transition-fade-slow {
-  transition: all 1s ease-in-out;
-}
-.section-immersive:not(.disable-transition) .background:not(.active).transition-none {
   transition: all 1s ease-in-out;
 }
 .section-immersive:not(.disable-transition) .background.transition-fade-fast {
@@ -5620,7 +5626,7 @@ body.mobile-view .section-immersive .imm-panel .block {
   right: 0;
   text-align: center;
   visibility: hidden;
-  margin-top: -15px;
+  margin-top: -20px;
   opacity: 0;
   z-index: 999;
   transition: opacity 0.2s ease-in-out;
@@ -5799,6 +5805,13 @@ body.mobile-view .section-immersive .imm-panel .block {
   text-align: left;
   color: #aaa;
 }
+/* medium editor require 140px + the 45px of padding
+  can't seem to remove the padding and give it 140px
+  it must be scrolling by itself */
+body.builder-mode .section:nth-child(2).section-layout-sequence .foreground {
+  min-height: 195px;
+  padding-bottom: 55px;
+}
 .builder-section-add-menu {
   position: absolute;
   top: -35px;
@@ -5847,20 +5860,23 @@ body.mobile-view .section-immersive .imm-panel .block {
   margin: auto;
 }
 .section-layout-title {
-  /* customize media-empty invite*/
+  /* customize media-empty invite */
 }
 .section-layout-title .fg-title {
   outline: none;
   border: 2px solid transparent;
 }
+.section-layout-title .fg-title:hover:not(:focus) {
+  border: 2px solid rgba(241, 248, 253, 0.14);
+}
 .section-layout-title .fg-title[contenteditable=true]:empty {
   border: 1px dashed #AAA;
   width: 400px;
   margin: auto;
-  color: #AAA;
+  color: #DDD;
   text-shadow: 0 0 8px #CCC;
   padding-left: 200px;
-  border: 2px solid rgba(241, 248, 253, 0.94);
+  border: 2px solid rgba(241, 248, 253, 0.14);
 }
 .section-layout-title .fg-title[contenteditable=true]:empty:before {
   display: block;
@@ -5878,6 +5894,14 @@ body.mobile-view .section-immersive .imm-panel .block {
 .section-layout-title .media-empty-add .media-empty-label {
   display: inline-block;
   vertical-align: middle;
+}
+.section-layout-title .media-cfg-panel {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.section-layout-title.hide-foreground .fg-title {
+  display: none !important;
 }
 .action-overlay-gradient {
   background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.3) 40%, #000000 100%);
@@ -5929,6 +5953,7 @@ body.mobile-view .section-immersive .imm-panel .block {
   width: 0;
   /* Prevents the white-space:nowrap property below from making the whole container larger */
   overflow: hidden;
+  background-color: white;
 }
 .op-item-main.builder-overview.tall {
   height: 130px;
@@ -6040,26 +6065,28 @@ body.mobile-view .section-immersive .imm-panel .block {
   justify-content: center;
 }
 .op-inline-add-container .add-button {
-  background: #ffffff;
+  background: #9a9a9a;
   cursor: pointer;
-  width: 25px;
-  height: 25px;
+  width: 26px;
+  height: 26px;
   border-radius: 15px;
   display: flex;
   justify-content: center;
   align-items: center;
   color: #000000;
 }
+.op-inline-add-container .add-button:hover {
+  background: #ffffff;
+}
 .op-inline-add-container .add-button .icon {
-  margin-top: -2px;
-  margin-left: 2px;
+  top: -1px;
+  left: 1px;
 }
 .op-transition-overlay .popover-content {
   padding: 5px 30px 20px;
 }
 .op-transition-overlay .title {
   text-align: center;
-  text-transform: uppercase;
 }
 .op-transition-overlay .list {
   padding-left: 0;
@@ -6318,6 +6345,10 @@ body.builder-mode .section-immersive .blocks {
 }
 /*
  * Builder
+ */
+/*
+ * /!\ The rules related to size and placement have couterpart in JavaScript
+ *  for the builder UI, see PanelBuilder > updateBuilderEditorPlacementRules
  */
 .imm-panel {
   min-height: 100vh;
@@ -6946,7 +6977,8 @@ body.builder-mode .section-builder-panel {
   right: 2px;
   font-size: 2.4rem;
   border: 1px solid #C1CCD2;
-  padding-left: 5px;
+  margin-left: 5px;
+  display: flex;
 }
 .section-builder-panel .builder-buttons .btn-share .btn-share-container.disabled {
   pointer-events: none;
@@ -6954,8 +6986,12 @@ body.builder-mode .section-builder-panel {
   opacity: 0.5;
 }
 .section-builder-panel .builder-buttons .btn-share .btn-share-container .btn-share-wrapper {
-  display: inline-block;
-  width: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 37px;
+  height: 36px;
+  flex: 1 1 auto;
   text-align: center;
   color: #396e8b;
   border-right: 1px solid #C1CCD2;
@@ -7212,8 +7248,11 @@ body.builder-mode .section-builder-panel {
   margin: 4px 8px;
   max-width: 100%;
 }
-.mp-gallery-item.unused {
+.mp-gallery-item.unused .title,
+.mp-gallery-item.unused img {
   opacity: 0.5;
+}
+.mp-gallery-item.unused img {
   border: 1px dashed #cccccc;
   padding: 4px;
 }
@@ -7271,6 +7310,12 @@ body.builder-mode .section-builder-panel {
   overflow-y: auto;
 }
 .mp-gallery .alert {
+  text-align: center;
+}
+.mp-gallery .placeholder {
+  font-size: 52px;
+  line-height: 1.5em;
+  color: #cccccc;
   text-align: center;
 }
 .mp-gallery .small-loader {
@@ -7804,4 +7849,15 @@ input.hc-checkbox.space {
 .hc-intro {
   font-size: 90%;
   margin-bottom: 20px;
+}
+.hc-logo-upload-msg {
+  display: none;
+  margin-top: 5px;
+  padding: 5px 10px;
+  flex: 1 0 auto;
+}
+.hc-logo-upload-msg.alert-success,
+.hc-logo-upload-msg.alert-warning,
+.hc-logo-upload-msg.alert-danger {
+  display: block;
 }

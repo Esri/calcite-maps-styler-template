@@ -19,17 +19,19 @@ define({
           noItemsInThisStory: "No content from ArcGIS has been added to this story yet.",
           cantRetrieveImages: "Unable to retrieve images",
           googlePhotos: {
-            userNotFound: "Account not found"
+            userNotFound: "Account not found",
+            searchAndBrowse: "Search and browse public photos on Picasa or Google Photos"
           },
           flickr: {
             userNotFound: "User not found",
-            photostream: "Photostream"
+            photostream: "Photostream",
+            searchAndBrowse: "Search and browse public photos on Flickr"
           },
           urlContent: {
             uploadHeader: "Link to content on the web",
             uploadText1: "Content from YouTube and Vimeo will be optimized; other content will be embedded as is.",
             uploadText2: "It is recommended to use https:// URLs for linked content, when possible.",
-            placeholder: "http://... or https://... or <iframe>"
+            placeholder: "https://... or http://... or <iframe>"
           }
         },
         sidePanel: {
