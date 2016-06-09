@@ -2632,6 +2632,7 @@ body.mobile .discover-item img {
 
  /* common with gallery */
  .block-caption {
+   outline: none;
    font-family: 'open_sans', sans-serif;
    font-size: 14px;
    line-height: 22px;
@@ -2724,6 +2725,17 @@ body.touch .background .caption {
 
 .interaction-container:not(.enabled) .int-container-enabled {
   display: none;
+}
+
+/*
+ * When builder config is open, interaction are always authorized
+ */
+.builder-config-open .media-media {
+  pointer-events: all !important;
+}
+
+.builder-config-open .interaction-container {
+  display: none !important;
 }
 
 /*
@@ -3219,6 +3231,9 @@ body.mobile-view .image-gallery .image-gallery-item:nth-child(n+3) {
 /*
  * Simple aspect ratio for the media height
  */
+.block-type-video {
+  position: relative;
+}
 .block-type-video .video {
   position: absolute;
   top: 0px;
@@ -3305,13 +3320,6 @@ body.mobile-view .image-gallery .image-gallery-item:nth-child(n+3) {
 .block-type-webmap.block-size-large .block-media {
   padding-top: calc(100vh - 120px);
 }
-/*
- * Interaction
- */
-.interaction-disabled .map .esriSimpleSlider,
-.interaction-button:not(.interaction-enabled) .map .esriSimpleSlider {
-  display: none;
-}
 .background-type-webmap .map {
   width: 100%;
   height: 100%;
@@ -3319,13 +3327,13 @@ body.mobile-view .image-gallery .image-gallery-item:nth-child(n+3) {
 /*
  * Map customization
  */
-.esriSimpleSlider {
+.esriSimpleSliderTL {
   top: initial;
   bottom: 60px;
   left: initial;
   right: 7px;
 }
-.interaction-button .esriSimpleSlider {
+.interaction-button .esriSimpleSliderTL {
   bottom: 90px;
 }
 .esriPopup .titleButton.close {
@@ -3346,43 +3354,6 @@ body.mobile-view .image-gallery .image-gallery-item:nth-child(n+3) {
   left: 10px;
   max-width: 200px;
   max-height: 300px;
-}
-/*
- * Builder
- */
-.layer-list-container {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  width: 220px;
-  overflow: auto;
-  z-index: 2;
-  text-align: left;
-}
-.block-type-webmap:not(.block-size-small) .layer-list-container {
-  top: inherit;
-  bottom: 170px;
-  max-height: calc(100% - 170px);
-}
-.block-type-webmap.interaction-disabled:not(.block-size-small) .layer-list-container {
-  top: inherit;
-  bottom: 100px;
-  max-height: calc(100% - 100px);
-}
-.block-type-webmap.interaction-button:not(.block-size-small) .layer-list-container {
-  bottom: 115px;
-  max-height: calc(100% - 115px);
-}
-.block-type-webmap.interaction-button.interaction-enabled:not(.block-size-small) .layer-list-container {
-  bottom: 195px;
-  max-height: calc(100% - 195px);
-}
-.block-type-webmap.block-size-small .layer-list-container {
-  right: -220px;
-}
-.background .layer-list-container {
-  top: 50px;
 }
 /*
  * Simple aspect ratio for the media height
@@ -3414,7 +3385,7 @@ body.mobile-view .image-gallery .image-gallery-item:nth-child(n+3) {
 .block-type-webscene .interaction-container {
   bottom: 23px;
 }
-.block-type-webscene.interaction-button .esri-ui-bottom-right {
+.block-type-webscene.interaction-button:not(.builder-config-open) .esri-ui-bottom-right {
   bottom: 35px;
 }
 .block-type-webscene.interaction-disabled .scene .esri-compass,
@@ -3422,6 +3393,10 @@ body.mobile-view .image-gallery .image-gallery-item:nth-child(n+3) {
 .block-type-webscene.interaction-disabled .scene .esri-zoom,
 .block-type-webscene.interaction-button:not(.interaction-enabled) .scene .esri-zoom {
   display: none;
+}
+.block-type-webscene.builder-config-open .scene .esri-compass,
+.block-type-webscene.builder-config-open .scene .esri-zoom {
+  display: inherit !important;
 }
 .background-type-webscene .scene {
   width: 100%;
@@ -3456,6 +3431,10 @@ body.mobile-view .image-gallery .image-gallery-item:nth-child(n+3) {
 }
 .block-webpage.block-size-large .block-media {
   padding-top: calc(100vh - 120px);
+}
+.block-webpage .interaction-container {
+  bottom: 5px;
+  right: 20px;
 }
 .background-type-webpage {
   width: 100%;
@@ -3510,6 +3489,17 @@ body.mobile-view .image-gallery .image-gallery-item:nth-child(n+3) {
 }
 .media-empty .media-empty-add .media-empty-label {
   margin-top: 5px;
+}
+.media-empty .media-empty-add .media-empty-icon-all,
+.media-empty .media-empty-add .media-empty-icon-image {
+  display: none;
+}
+.media-empty .media-empty-add.authorized-all .media-empty-icon-all {
+  display: inline-block;
+}
+.media-empty .media-empty-add.authorized-image .media-empty-icon-image {
+  display: inline-block;
+  vertical-align: -4px;
 }
 .media-color {
   width: 100%;
@@ -4265,12 +4255,14 @@ body.mobile-view .fg-title {
 .section-immersive .foreground {
   padding: 0 !important;
   bottom: 0 !important;
+  /*
+  .imm-panel:nth-child(1) .blocksWrapper {
+    margin-top: -125px;
+  }
+  */
 }
 .section-immersive .foreground .imm-panel .blocksWrapper {
   margin-top: 20px;
-}
-.section-immersive .foreground .imm-panel:nth-child(1) .blocksWrapper {
-  margin-top: -125px;
 }
 .section-immersive .background:not(.active) {
   pointer-events: none !important;
@@ -4400,21 +4392,15 @@ body.builder-mode .section-immersive.active:not(.disable-snap) .background-title
 }
 /* transition: all is not working well in Chrome in builder
    the section width and left get animated... */
-/*
-body.builder-mode .section-immersive:not(.disable-transition) {
-  .background.transition-fade-slow {
-    transition: opacity 1s ease-in-out;
-  }
-
-  .background:not(.active).transition-none {
-    transition: opacity 1s ease-in-out;
-  }
-
-  .background.transition-fade-fast {
-    transition: opacity 0.4s ease-in-out;
-  }
+body.builder-mode .section-immersive:not(.disable-transition) .background.transition-fade-slow {
+  transition: opacity 1s ease-in-out;
 }
-*/
+body.builder-mode .section-immersive:not(.disable-transition) .background:not(.active).transition-none {
+  transition: opacity 1s ease-in-out;
+}
+body.builder-mode .section-immersive:not(.disable-transition) .background.transition-fade-fast {
+  transition: opacity 0.4s ease-in-out;
+}
 body.builder-mode .section-immersive .blocks {
   /* without that extra padding in builder can't have overflow: auto
     as the last add menu is overflowing the scrollbar always get displayed */
@@ -4799,13 +4785,14 @@ body.builder-mode .progressjs-progress {
   display: flex;
   list-style-type: none;
   padding-left: 0;
-  flex: 1 1 auto;
+  flex: 1 1 0;
   justify-content: flex-end;
   margin: 2px 30px 0 30px;
   flex-wrap: wrap;
+  min-width: 40px;
 }
-.bookmarks.hidden {
-  display: none;
+.bookmarks.bookmarks-hidden {
+  visibility: hidden;
 }
 .bookmarks li {
   display: none;
@@ -4858,13 +4845,6 @@ body.builder-mode .progressjs-progress {
 body.mobile-view .header .bookmarks {
   margin: 0 10px;
 }
-body.mobile-view .header .dropdown-menu {
-  left: 50%;
-  right: auto;
-  overflow: auto;
-  transform: translateX(-50%);
-  float: none;
-}
 /*
  * Builder
  */
@@ -4901,30 +4881,29 @@ body.builder-mode .header {
   box-shadow: inherit;
 }
 .logo-title-container {
-  display: inline-block;
-  flex: 0 0 auto;
+  display: flex;
+  flex: 0 1 auto;
+  align-items: center;
+  max-width: 75%;
+  min-width: 0;
 }
 /*
  * Logo
  */
 .header .logo-wrapper {
-  display: inline-block;
-  float: left;
-  height: 42px;
-  line-height: 42px;
-  margin: 2px 0 0 4px;
+  flex: 0 1 auto;
+  margin-right: 4px;
 }
 .header .logoLink {
+  display: block;
   -moz-transition: background 1s ease-in;
   -webkit-transition: background 1s ease-in;
   -o-transition: background 1s ease-in;
   transition: background 1s ease-in;
 }
 .header .logoImg {
-  height: 100%;
-  width: 250px;
-  background-repeat: no-repeat;
-  background-position: 0 50%;
+  max-width: 210px;
+  max-height: 42px;
 }
 /* TODO: only for esri logo */
 .header.compact .logoImg {
@@ -4946,9 +4925,22 @@ body.builder-mode .header {
   transition: opacity 1s linear;
   color: #FFF;
   opacity: 1;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
 }
 .header.compact .title {
   opacity: 0;
+}
+/*
+ * Edit button
+ */
+.header-edit-button {
+  display: none;
+  margin-right: 8px;
+}
+.header-edit-button .header-edit-icon {
+  margin-right: 6px;
 }
 /*
  * Link
@@ -4965,6 +4957,8 @@ body.builder-mode .header {
  * Share
  */
 .header .share {
+  display: flex;
+  align-items: center;
   flex: 0 0 auto;
   color: #CECECE;
 }
@@ -4983,6 +4977,15 @@ body.builder-mode .header {
 }
 .header .share-btn:hover {
   opacity: 0.9;
+}
+/*
+  Responsive
+*/
+body.mobile-view .header .linkContainer {
+  display: none;
+}
+body.mobile-view .header .logo-title-container {
+  max-width: 90%;
 }
 /*
  * Refugee

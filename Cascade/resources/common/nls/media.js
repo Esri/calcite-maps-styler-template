@@ -28,10 +28,22 @@ define({
             searchAndBrowse: "Search and browse public photos on Flickr"
           },
           urlContent: {
-            uploadHeader: "Link to content on the web",
+            uploadHeaders: {
+              generic: "Link to content on the web",
+              imageOnly: "Link to an image on the web",
+              videoOnly: "Link to a video on the web",
+              imageAndVideo: "Link to an image or video on the web"
+            },
             uploadText1: "Content from YouTube and Vimeo will be optimized; other content will be embedded as is.",
             uploadText2: "It is recommended to use https:// URLs for linked content, when possible.",
-            placeholder: "https://... or http://... or <iframe>"
+            placeholder: "https://... or http://... or <iframe>",
+            uploadErrors: {
+              generic: "Something went wrong with the address entered. Please try again.",
+              imageOnly: "You must use an image in this part of the story. Please provide a link to an image " +
+                          "(.jpg, .png, .gif), or choose an image from ArcGIS, Flickr, or Google Photos.",
+              imageAndVideo: "You must use an image or video in this part of the story. Please provide a link to an image " +
+                          "(.jpg, .png, .gif) or a video on YouTube or Vimeo, or choose an image from ArcGIS, Flickr, or Google Photos.",
+            }
           }
         },
         sidePanel: {
