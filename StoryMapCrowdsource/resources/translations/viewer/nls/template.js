@@ -109,6 +109,13 @@ define({
         saving: 'Submitting',
         requiredWarning: 'Required Fields',
         changedCloseWarning: 'Are you sure you want to close? Your changes will be lost.'
+      },
+      messages: {
+        contributionShownAfterReview: {
+          title: 'Thanks for participating.',
+          body: 'Your contribution has been submitted and will appear on the map after it has been reviewed and approved. Please check back later.',
+          confirmBtn: 'Ok'
+        }
       }
     },
     validations: {

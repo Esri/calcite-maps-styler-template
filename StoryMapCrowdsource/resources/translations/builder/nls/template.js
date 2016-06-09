@@ -400,6 +400,15 @@ define({
         titleAppend: 'feature service'
       }
     },
+    messages: {
+      arcgisItems: {
+        webmapNotOwned: {
+          title: 'Web map is owned by another user',
+          body: 'In order to create a Crowdsource story, you must be the owner of the web map. We\'ll create a copy of the web map you\'re using and save it to your content.',
+          confirmBtn: 'Continue'
+        }
+      }
+    },
     errors: {
       actionsBtns: {
         redirectToSecureConnection: 'Reload with a secure connection'
