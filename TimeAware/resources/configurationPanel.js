@@ -207,7 +207,7 @@
       "tooltip": "Show day of week"
     }, {
       "type": "boolean",
-      "fieldName": "impliciteMinutes",
+      "fieldName": "implicitMinutes",
       "label": "Hide whole hours when possible",
       "tooltip": "Chop of :00 when possible"
     }, {
@@ -458,7 +458,7 @@
     "showEndDate": true,
     "singleLineDate": true,
     "intermediatechanges": false,
-    "impliciteMinutes": true,
+    "implicitMinutes": true,
     "implicitDate": false,
     "implicitYear": true,
     "hideYear": false,
