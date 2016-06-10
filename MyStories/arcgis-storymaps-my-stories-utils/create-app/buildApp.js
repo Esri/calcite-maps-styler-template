@@ -95,7 +95,12 @@ function(createStoryi18n, PortalHelper, UserAgentHelper, signInCreateDialog) {
         case 'StorytellingSwipe':
           appName = 'Swipe/Spyglass';
           break;
-
+        case 'Cascade':
+          appName = 'Cascade';
+          break;
+        case 'StoryMapCrowdsource':
+          appName = 'Crowdsource';
+          break;
         default:
           break;
       }
@@ -186,6 +191,14 @@ function(createStoryi18n, PortalHelper, UserAgentHelper, signInCreateDialog) {
     buildApp("MapSeries", layout);
   }
 
+  function buildCascade() {
+    buildApp('Cascade');
+  }
+
+  function buildCrowdsource() {
+    buildApp('StoryMapCrowdsource');
+  }
+
 
   var init = function(selector) {
     initUI(selector);
@@ -206,6 +219,14 @@ function(createStoryi18n, PortalHelper, UserAgentHelper, signInCreateDialog) {
 
     selector.find('[data-template="journal"]').off('click').on('click', function() {
       buildJournal();
+    });
+
+    selector.find('[data-template="crowdsource"]').off('click').on('click', function() {
+      buildCrowdsource();
+    });
+
+    selector.find('[data-template="cascade"]').off('click').on('click', function() {
+      buildCascade();
     });
 
     selector.find('[data-template="series"]').off('click').on('click', function() {
