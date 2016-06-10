@@ -89,7 +89,8 @@ define({
           google: 'Sign in with Google',
           guest: 'Continue as Guest'
         },
-        loginDescription: 'To participate, please use one of the options above.'
+        loginDescription: 'To participate, please use one of the options above.',
+        loginDescriptionSingle: 'To participate, please use the option above.'
       },
       form: {
         photo: {
