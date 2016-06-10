@@ -186,156 +186,39 @@
       "label": "Specify date separator value",
       "tooltip": "Defaults to - "
     }, {
-      "type": "boolean",
-      "fieldName": "hideDate",
-      "tooltip": "Hide date - useful when date is displayed elsewhere",
-      "label": "Hide date"
-    }, {
-      "type": "boolean",
-      "fieldName": "hideTime",
-      "tooltip": "Hide time",
-      "label": "Hide time"
-    }, {
-      "type": "boolean",
-      "fieldName": "hideYear",
-      "tooltip": "Hide year",
-      "label": "Hide year"
-    }, {
-      "type": "boolean",
-      "fieldName": "showDayOfWeek",
-      "label": "Show day of week",
-      "tooltip": "Show day of week"
-    }, {
-      "type": "boolean",
-      "fieldName": "implicitMinutes",
-      "label": "Hide whole hours when possible",
-      "tooltip": "Chop of :00 when possible"
-    }, {
-      "type": "boolean",
-      "fieldName": "implicitDate",
-      "tooltip": "Hide date if it is today",
-      "label": "Hide date if today"
-    }, {
-      "type": "boolean",
-      "fieldName": "implicitYear",
-      "tooltip": "Hide year if it is this year",
-      "label": "Hide current year"
-    }, {
       "type": "string",
-      "fieldName": "weekdayFormat",
-      "tooltip": "Specify day of week format",
-      "label": "Weekday format",
+      "fieldName": "preDefinedFormatOption",
+      "label": "Pre-defined date format",
       "options": [{
-        "label": "0 1 ... 5 6",
-        "value": "d"
+        "label": "July 2015",
+        "value": "MMMM YYYY"
       }, {
-        "label": "0th 1st .. 5th 6th",
-        "value": "do"
+        "label": "Jul 2015",
+        "value": "MMM YYYY"
       }, {
-        "label": "Fr",
-        "value": "dd"
+        "label": "July 21,2015",
+        "value": "MMMM D,YYYY"
       }, {
-        "label": "Fri",
-        "value": "ddd"
+        "label": "Tue Jul 21,2015",
+        "value": "ddd MMM DD,YYYY"
       }, {
-        "label": "Friday",
-        "value": "dddd"
-      }]
-    }, {
-      "type": "string",
-      "fieldName": "monthFormat",
-      "tooltip": "Specify month format",
-      "label": "Month format",
-      "options": [{
-        "label": "1 2 ... 11 12",
-        "value": "M"
+        "label": "7/21/2015",
+        "value": "M/DD/YYYY"
       }, {
-        "label": "1st 2nd .. 11th 12th",
-        "value": "Mo"
+        "label": "2015/7/21",
+        "value": "YYYY/M/DD"
       }, {
-        "label": "01 02 .. 11 12",
-        "value": "MM"
+        "label": "7/21/15",
+        "value": "M/DD/YY "
       }, {
-        "label": "Jan",
-        "value": "MMM"
-      }, {
-        "label": "January",
-        "value": "MMMM"
-      }]
-    }, {
-      "type": "string",
-      "fieldName": "dayFormat",
-      "tooltip": "Specify a format for the day of the year",
-      "label": "Day format",
-      "options": [{
-        "label": "2",
-        "value": "D"
-      }, {
-        "label": "1st 2nd .. 30th 31st",
-        "value": "Do"
-      }, {
-        "label": "02",
-        "value": "DD"
-      }, {
-        "label": "1st 2nd .. 364th 365th",
-        "value": "DDDo"
-      }, {
-        "label": "1 2 ... 364 365",
-        "value": "DDDD"
-      }]
-    }, {
-      "type": "string",
-      "fieldName": "yearFormat",
-      "tooltip": "Choose a year format",
-      "label": "Year Format",
-      "options": [{
         "label": "2015",
         "value": "YYYY"
       }, {
-        "label": "15",
-        "value": "YY"
-      }]
-    }, {
-      "type": "string",
-      "fieldName": "hourFormat",
-      "tooltip": "Format hour",
-      "label": "Hour format",
-      "options": [{
-        "label": "0 1 .. 22 23",
-        "value": "H"
+        "label": "7/21/2015 8:00 am",
+        "value": "M/DD/YYYY  h:mm a"
       }, {
-        "label": "00 01 .. 22 23",
-        "value": "HH"
-      }, {
-        "label": "1 2 .. 11 12",
-        "value": "h"
-      }, {
-        "label": "01 02 .. 11, 12",
-        "value": "hh"
-      }]
-    }, {
-      "type": "string",
-      "fieldName": "minuteFormat",
-      "tooltip": "Choose a minute format",
-      "label": "Minute Format",
-      "options": [{
-        "label": "0 1 .. 58 59",
-        "value": "m"
-      }, {
-        "label": "00 01 .. 58 59",
-        "value": "mm"
-      }]
-    }, {
-      "type": "string",
-      "fieldName": "meridiemFormat",
-      "tooltip": "Meridiem format",
-      "label": "Meridiem format",
-      "options": [{
-        "label": "AM",
-        "value": "A"
-      }, {
-        "label": "am",
-        "value": "a"
+        "label": "Tue Jul 21 8:00 am",
+        "value": "ddd MMM DD  h:mm a"
       }]
     }, {
       "type": "paragraph",
@@ -457,14 +340,6 @@
     "showStartDate": true,
     "showEndDate": true,
     "singleLineDate": true,
-    "intermediatechanges": false,
-    "implicitMinutes": true,
-    "implicitDate": false,
-    "implicitYear": true,
-    "hideYear": false,
-    "hideDate": false,
-    "hideTime": false,
-    "showDayOfWeek": false,
     "humanizeDuration": false,
     "scale": true,
     "zoomslider": true,
