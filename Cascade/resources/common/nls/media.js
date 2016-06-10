@@ -6,7 +6,8 @@ define({
         flickr: "Flickr",
         googlePhotos: "Google Photos",
         facebook: "Facebook",
-        urls: "URLs"
+        urls: "Link to Content",
+        urls_short: "Link"
       },
       browsePanel: {
         providers: {
@@ -39,10 +40,14 @@ define({
             placeholder: "https://... or http://... or <iframe>",
             uploadErrors: {
               generic: "Something went wrong with the address entered. Please try again.",
-              imageOnly: "You must use an image in this part of the story. Please provide a link to an image " +
-                          "(.jpg, .png, .gif), or choose an image from ArcGIS, Flickr, or Google Photos.",
-              imageAndVideo: "You must use an image or video in this part of the story. Please provide a link to an image " +
-                          "(.jpg, .png, .gif) or a video on YouTube or Vimeo, or choose an image from ArcGIS, Flickr, or Google Photos.",
+              imageOnly: [
+                "You must use an image in this part of the story.",
+                 "Please provide a link to an image (.jpg, .png, .gif), or choose an image from ArcGIS, Flickr, or Google Photos."
+              ],
+              imageAndVideo: [
+                "You must use an image or video in this part of the story.",
+                "Please provide a link to an image (.jpg, .png, .gif) or a video on YouTube or Vimeo, or choose an image from ArcGIS, Flickr, or Google Photos."
+              ]
             }
           }
         },

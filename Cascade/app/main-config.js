@@ -112,6 +112,8 @@ window.dojoConfig.locale = 'en';
 app.isInBuilder = getUrlVar('edit') || getUrlVar('fromScratch') || getUrlVar('fromscratch');
 app.indexCfg = configOptions; // eslint-disable-line no-undef
 
+app.isInBuilder = !! app.isInBuilder;
+
 loadCSS(app.pathJSAPI + 'esri/css/esri.css', true);
 loadCSS(app.pathJSAPI + 'dijit/themes/claro/claro.css', true);
 

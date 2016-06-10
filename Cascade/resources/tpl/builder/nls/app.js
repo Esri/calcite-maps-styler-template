@@ -31,7 +31,7 @@ define({
 				homeView: "Initial scene state"
 			},
 			imageGallery: {
-				reachedLimit: "A maximum of 4 items are allowed in an image gallery."
+				reachedLimit: "Only four images are allowed. To start a new row, add another image below."
 			},
 			credits: {
 				warning: "Both fields must be filled out",
