@@ -74,6 +74,7 @@ body {
 }
 
 .modal-open {
+  width: 100%;
   overflow-y: scroll !important;
   padding-right: 0 !important;
 }
@@ -2881,32 +2882,32 @@ body.mobile .discover-item img {
  */
 
  /* common with gallery */
- .block-caption {
-   outline: none;
-   font-family: 'open_sans', sans-serif;
-   font-size: 14px;
-   line-height: 22px;
-   opacity: .65;
-   width: 100%;
-   text-align: center;
-   padding-top: 5px;
-   margin-top: 0 !important;
- }
+.block-caption {
+  outline: none;
+  font-family: 'open_sans', sans-serif;
+  font-size: 14px;
+  line-height: 22px;
+  opacity: .65;
+  width: 100%;
+  text-align: center;
+  padding-top: 5px;
+  margin-top: 0 !important;
+}
 
- body.mobile-view .block-caption {
-   font-size: 12px;
- }
+body.mobile-view .block-caption {
+  font-size: 12px;
+}
 
- body.builder-mode .block-caption {
-     min-height: 40px;
-     cursor: text;
- }
+body.builder-mode .block-caption {
+  min-height: 40px;
+  cursor: text;
+}
 
- body.builder-mode .block-caption:empty:before {
-   content: attr(data-placeholder);
-   font-style: italic;
-   color: #999;
- }
+body.builder-mode .block-caption:not(:focus):empty:before {
+  content: attr(data-placeholder);
+  font-style: italic;
+  color: #999;
+}
 
 .background .caption {
  position: absolute;
@@ -3659,46 +3660,73 @@ body.mobile-view .image-gallery .image-gallery-item:nth-child(n+3) {
   max-height: 300px;
 }
 /*
+ * Interaction
+ */
+.interaction-disabled .map .esriSimpleSlider,
+.interaction-button:not(.interaction-enabled) .map .esriSimpleSlider {
+  display: none;
+}
+.builder-config-open .map .esriSimpleSliderTL {
+  display: block !important;
+}
+.builder-config-open.interaction-button .esriSimpleSliderTL {
+  bottom: 60px;
+}
+/*
  * Simple aspect ratio for the media height
  */
-.block-type-webscene {
+.block-type-webscene,
+.background-type-webscene {
   /*
    * Interaction
    */
 }
-.block-type-webscene .scene {
+.block-type-webscene .scene,
+.background-type-webscene .scene {
   position: absolute;
   top: 0px;
   left: 0px;
   right: 0px;
   bottom: 0px;
 }
-.block-type-webscene .block-media {
+.block-type-webscene .block-media,
+.background-type-webscene .block-media {
   padding-top: 50%;
 }
-.block-type-webscene.block-size-small .block-media {
+.block-type-webscene.block-size-small .block-media,
+.background-type-webscene.block-size-small .block-media {
   padding-top: 30%;
 }
-.block-type-webscene.block-size-large .block-media {
+.block-type-webscene.block-size-large .block-media,
+.background-type-webscene.block-size-large .block-media {
   padding-top: calc(100vh - 120px);
 }
-.block-type-webscene .esri-ui-bottom-right {
+.block-type-webscene .esri-ui-bottom-right,
+.background-type-webscene .esri-ui-bottom-right {
   margin-right: -7px;
 }
-.block-type-webscene .interaction-container {
+.block-type-webscene .interaction-container,
+.background-type-webscene .interaction-container {
   bottom: 23px;
 }
-.block-type-webscene.interaction-button:not(.builder-config-open) .esri-ui-bottom-right {
+.block-type-webscene.interaction-button:not(.builder-config-open) .esri-ui-bottom-right,
+.background-type-webscene.interaction-button:not(.builder-config-open) .esri-ui-bottom-right {
   bottom: 35px;
 }
 .block-type-webscene.interaction-disabled .scene .esri-compass,
+.background-type-webscene.interaction-disabled .scene .esri-compass,
 .block-type-webscene.interaction-button:not(.interaction-enabled) .scene .esri-compass,
+.background-type-webscene.interaction-button:not(.interaction-enabled) .scene .esri-compass,
 .block-type-webscene.interaction-disabled .scene .esri-zoom,
-.block-type-webscene.interaction-button:not(.interaction-enabled) .scene .esri-zoom {
+.background-type-webscene.interaction-disabled .scene .esri-zoom,
+.block-type-webscene.interaction-button:not(.interaction-enabled) .scene .esri-zoom,
+.background-type-webscene.interaction-button:not(.interaction-enabled) .scene .esri-zoom {
   display: none;
 }
 .block-type-webscene.builder-config-open .scene .esri-compass,
-.block-type-webscene.builder-config-open .scene .esri-zoom {
+.background-type-webscene.builder-config-open .scene .esri-compass,
+.block-type-webscene.builder-config-open .scene .esri-zoom,
+.background-type-webscene.builder-config-open .scene .esri-zoom {
   display: inherit !important;
 }
 .background-type-webscene .scene {
@@ -4094,6 +4122,9 @@ body.mobile-view .image-gallery .image-gallery-item:nth-child(n+3) {
   border-left: 22px solid gray;
   z-index: 1;
 }
+.media-cfg-panel .builder-config .builder-tabs .tab .config-tab-icon {
+  margin-right: 7px;
+}
 .media-cfg-panel .builder-config .builder-tabs:after {
   content: '';
   position: absolute;
@@ -4137,6 +4168,7 @@ body.mobile-view .image-gallery .image-gallery-item:nth-child(n+3) {
   flex: 2 1 0;
   display: flex;
   flex-direction: column;
+  text-align: center;
   /* SIZE PANEL */
 }
 .builder-config-section.centered {
@@ -4208,9 +4240,11 @@ body.mobile-view .image-gallery .image-gallery-item:nth-child(n+3) {
   flex: 0 1 40px;
 }
 .builder-config-section .aside {
-  flex: 1 1 auto;
+  flex: 0 1 auto;
   font-size: 13px;
   font-style: italic;
+  line-height: 1.3;
+  margin-top: 7px;
 }
 .builder-config-section .section-content.horizontal {
   display: flex;
@@ -4406,19 +4440,6 @@ body.mobile-view .image-gallery .image-gallery-item:nth-child(n+3) {
   left: 50% !important;
   bottom: 4px !important;
   margin-left: -17px !important;
-}
-/*
- * Interaction
- */
-.interaction-disabled .map .esriSimpleSlider,
-.interaction-button:not(.interaction-enabled) .map .esriSimpleSlider {
-  display: none;
-}
-.builder-config-open .map .esriSimpleSliderTL {
-  display: block !important;
-}
-.builder-config-open.interaction-button .esriSimpleSliderTL {
-  bottom: 60px;
 }
 /*
  * Layer list
@@ -4914,18 +4935,24 @@ body.mobile-view .section-layout-cover .cover-credits-right {
 .block-size-large {
   width: 100%;
 }
-.block-size-small .block-media {
+.block-size-small .block-media,
+.block-size-small .block-caption {
   width: 40%;
   margin-left: auto;
   margin-right: auto;
 }
-.block-size-medium .block-media {
+.block-size-medium .block-media,
+.block-size-medium .block-caption {
   width: 80%;
   margin-left: auto;
   margin-right: auto;
 }
-.block-size-large .block-media {
+.block-size-large .block-media,
+.block-size-large .block-caption {
   width: 100%;
+}
+.block-caption {
+  padding: 0 5px;
 }
 /*
  * Responsive
@@ -5298,6 +5325,10 @@ body.mobile-view .background-title h2 {
 /*
  * Swipe transition
  */
+/* TODO temporary fix when navigating away, need to unload properly the section */
+.section-immersive:not(.active) .background-swipe-trans-extras {
+  display: none !important;
+}
 .background-swipe-trans-extras {
   position: fixed;
   top: 0;
@@ -5492,13 +5523,16 @@ body.mobile-view .section-immersive .imm-panel .block {
   color: #DADADA;
   margin: auto;
   width: 90%;
-  padding-left: 45%;
+  border: 2px solid rgba(241, 248, 253, 0.14);
 }
-.section-layout-cover .cover-title[contenteditable=true]:empty:before {
+.section-layout-cover .cover-title[contenteditable=true]:not(:focus):empty:before {
   display: block;
   content: attr(placeholder-line1) '\a' attr(placeholder-line2);
   white-space: pre;
-  margin-left: -100%;
+}
+.section-layout-cover .cover-title[contenteditable=true]:focus {
+  font-size: 7em;
+  line-height: 115px;
 }
 .section-layout-cover .cover-title.title-error {
   border: 2px solid #e45050;
@@ -5508,13 +5542,11 @@ body.mobile-view .section-immersive .imm-panel .block {
   font-size: 18px;
   line-height: 32px;
   color: #d4d4d4;
-  padding-left: 45%;
   width: 90%;
 }
-.section-layout-cover .cover-subtitle[contenteditable=true]:empty:before {
+.section-layout-cover .cover-subtitle[contenteditable=true]:not(:focus):empty:before {
   display: block;
   content: attr(placeholder);
-  margin-left: -100%;
 }
 .section-layout-cover .cover-media-placeholder {
   position: absolute;
@@ -5900,6 +5932,7 @@ body.mobile-view .section-immersive .imm-panel .block {
   margin: 5px;
 }
 .medium-editor-placeholder:after {
+  font-family: 'open_sans', sans-serif;
   color: #cccccc;
 }
 /*
@@ -5928,6 +5961,12 @@ body.mobile-view .section-immersive .imm-panel .block {
 body.builder-mode .section:nth-child(2).section-layout-sequence .foreground {
   min-height: 195px;
   padding-bottom: 55px;
+}
+.section-layout-sequence .medium-editor-placeholder .block::after {
+  opacity: 1;
+  margin-top: 30px;
+  transition: none;
+  -webkit-transition: none;
 }
 .builder-section-add-menu {
   position: absolute;
@@ -5992,13 +6031,11 @@ body.builder-mode .section:nth-child(2).section-layout-sequence .foreground {
   margin: auto;
   color: #DDD;
   text-shadow: 0 0 8px #CCC;
-  padding-left: 200px;
   border: 2px solid rgba(241, 248, 253, 0.14);
 }
-.section-layout-title .fg-title[contenteditable=true]:empty:before {
+.section-layout-title .fg-title[contenteditable=true]:not(:focus):empty:before {
   display: block;
   content: attr(placeholder);
-  margin-left: -100%;
 }
 .section-layout-title .media-empty-add {
   position: absolute;
@@ -6401,7 +6438,7 @@ body.builder-mode .section:nth-child(2).section-layout-sequence .foreground {
   padding-left: 200px;
   border: 2px solid rgba(241, 248, 253, 0.94);
 }
-.background-title h2[contenteditable=true]:empty:before {
+.background-title h2[contenteditable=true]:not(:focus):empty:before {
   display: block;
   content: attr(placeholder);
   margin-left: -100%;
@@ -6416,6 +6453,7 @@ body.builder-mode .section-immersive .blocks {
   position: absolute;
   bottom: 0;
   left: 0;
+  z-index: 100;
 }
 .section-immersive .foreground {
   opacity: 1;
@@ -6429,6 +6467,9 @@ body.builder-mode .section-immersive .blocks {
 .section-immersive.hide-foreground .foreground {
   opacity: 0;
   visibility: hidden;
+}
+.section-immersive .background-type-webmap.builder-config-open .esriSimpleSliderTL {
+  bottom: 220px;
 }
 .section-layout-credits .credits {
   outline: none;
@@ -6477,16 +6518,11 @@ body.builder-mode .section-immersive .blocks {
    * Style
    */
   /*
-   * Size
-   */
-  /*
    * Placement
    */
 }
 .imm-panel .blocksWrapper {
   position: absolute;
-  min-width: 250px;
-  max-width: 400px;
 }
 .imm-panel .blocks {
   padding: 15px;
@@ -6511,17 +6547,6 @@ body.builder-mode .section-immersive .blocks {
   text-shadow: 0 0 8px #000000;
   background-color: inherit;
 }
-.imm-panel.size-small .blocksWrapper {
-  width: 28%;
-  max-width: 300px;
-}
-.imm-panel.size-medium .blocksWrapper {
-  width: 38%;
-}
-.imm-panel.size-large .blocksWrapper {
-  width: 48%;
-  max-width: 600px;
-}
 .imm-panel.placement-right .blocksWrapper {
   left: inherit;
   right: 30px;
@@ -6541,6 +6566,27 @@ body.builder-mode .section-immersive .blocks {
 }
 .layout-scroll-full .foreground .imm-panel {
   margin-left: 30px;
+  /*
+       * Size
+       */
+  /*
+       * Placement
+       */
+}
+.layout-scroll-full .foreground .imm-panel .blocksWrapper {
+  min-width: 250px;
+  max-width: 400px;
+}
+.layout-scroll-full .foreground .imm-panel.size-small .blocksWrapper {
+  width: 28%;
+  max-width: 300px;
+}
+.layout-scroll-full .foreground .imm-panel.size-medium .blocksWrapper {
+  width: 38%;
+}
+.layout-scroll-full .foreground .imm-panel.size-large .blocksWrapper {
+  width: 48%;
+  max-width: 600px;
 }
 .layout-scroll-full .foreground .imm-panel.placement-right {
   margin-right: 30px;
@@ -6567,6 +6613,8 @@ body.builder-mode .section-immersive .blocks {
   left: 30px;
   opacity: 0;
   visibility: hidden;
+  min-width: 250px;
+  max-width: 400px;
   /* less and calc */
   /*min-height: calc(~"100vh - 50px");*/
   /*
@@ -6576,6 +6624,31 @@ body.builder-mode .section-immersive .blocks {
         border-radius: 2px;
       }
       */
+  /*
+       * Size
+       */
+  /*
+       * Placement
+       */
+  /*
+       * scroll-partial centered behave like scroll-full
+       * can they all behae like that?
+       * TODO
+       */
+}
+.layout-scroll-partial .foreground .imm-panel .blocksWrapper {
+  width: 100%;
+}
+.layout-scroll-partial .foreground .imm-panel.size-small {
+  width: 21%;
+  max-width: 300px;
+}
+.layout-scroll-partial .foreground .imm-panel.size-medium {
+  width: 30%;
+}
+.layout-scroll-partial .foreground .imm-panel.size-large {
+  width: 37%;
+  max-width: 600px;
 }
 .layout-scroll-partial .foreground .imm-panel.placement-right {
   right: 30px;
@@ -6585,12 +6658,28 @@ body.builder-mode .section-immersive .blocks {
   left: 0 !important;
   right: 0;
   width: calc(100% - 250px);
+  min-width: inherit;
+  max-width: inherit;
 }
 .layout-scroll-partial .foreground .imm-panel.placement-center .blocksWrapper {
+  width: inherit;
   margin-left: auto;
   margin-right: auto;
   display: block;
   position: relative;
+  min-width: 250px;
+  max-width: 400px;
+}
+.layout-scroll-partial .foreground .imm-panel.placement-center.size-small .blocksWrapper {
+  width: 28%;
+  max-width: 300px;
+}
+.layout-scroll-partial .foreground .imm-panel.placement-center.size-medium .blocksWrapper {
+  width: 38%;
+}
+.layout-scroll-partial .foreground .imm-panel.placement-center.size-large .blocksWrapper {
+  width: 48%;
+  max-width: 600px;
 }
 .layout-scroll-partial:not(.active) .imm-panel {
   display: none;
@@ -6617,6 +6706,9 @@ body.builder-mode .section-immersive .blocks {
   /*
    * Panel block media config
    */
+}
+.imm-panel .panel-cfg {
+  font-family: 'open_sans', sans-serif;
 }
 .imm-panel .panel-cfg.active {
   display: block;
@@ -6903,7 +6995,16 @@ body.builder-mode .progressjs-progress {
 .bookmarks .dropdown .bookmark {
   white-space: nowrap;
   margin-left: 0;
-  border-top: none;
+  border: none;
+  border-left: 3px solid transparent;
+  padding-left: 10px;
+}
+.bookmarks .dropdown .bookmark:hover {
+  border-left-color: #007ac2;
+  color: #ACACAC;
+}
+.bookmarks .dropdown .bookmark.active {
+  border-left-color: #007ac2;
 }
 /*
  * Responsive
@@ -7130,10 +7231,20 @@ body.builder-mode .section-builder-panel {
 .section-builder-panel .builder-buttons .btn-save.error .btn-save-error {
   display: inline-block;
 }
+.section-builder-panel .builder-buttons .btn-save.saving,
+.section-builder-panel .builder-buttons .btn-save.saved,
+.section-builder-panel .builder-buttons .btn-save.error {
+  opacity: 0.95;
+}
 .section-builder-panel .builder-buttons .btn-save.saving .btn-save-icon,
 .section-builder-panel .builder-buttons .btn-save.saved .btn-save-icon,
 .section-builder-panel .builder-buttons .btn-save.error .btn-save-icon {
   display: none;
+}
+.section-builder-panel .builder-buttons .btn-save.btn-primary {
+  background-color: #107dc3 !important;
+  border-color: #0d6ead !important;
+  color: #FFF !important;
 }
 .section-builder-panel .builder-buttons .btn-save .btn-save-label {
   margin-left: 2px;
@@ -7239,7 +7350,7 @@ body.builder-mode .section-builder-panel {
 }
 .mp-browse-toggles {
   display: flex;
-  height: 80px;
+  height: 49px;
   text-align: center;
   flex: 0 0 auto;
   z-index: 2;
@@ -7249,18 +7360,15 @@ body.builder-mode .section-builder-panel {
   color: black;
   cursor: pointer;
   height: 100%;
-  font-size: 30px;
+  font-size: 27px;
   font-family: "Open Sans", sans-serif;
   font-weight: 400;
   line-height: 0.9em;
   flex: auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   padding: 0 15px;
 }
 .mp-browse-toggles .browse-toggle .provider-logo {
-  height: 26px;
+  height: 24px;
   width: 100%;
   background-repeat: no-repeat;
   background-position-x: center;
@@ -7269,7 +7377,7 @@ body.builder-mode .section-builder-panel {
 }
 .mp-browse-toggles .browse-toggle .longer-title.title-text,
 .mp-browse-toggles .browse-toggle .longer-title .title-text {
-  font-size: 26px;
+  font-size: 24px;
 }
 .mp-browse-toggles .browse-toggle .inline-title .fa {
   margin-right: 0.5em;
@@ -7279,7 +7387,7 @@ body.builder-mode .section-builder-panel {
 }
 .mp-browse-toggles .browse-toggle.selected:before,
 .mp-browse-toggles .browse-toggle.selected:after {
-  top: 52px;
+  top: 21px;
   left: 50%;
   border: solid transparent;
   content: " ";
@@ -7304,8 +7412,7 @@ body.builder-mode .section-builder-panel {
 .mp-browse-toggles .vert-divider {
   float: left;
   border-left: 1px solid #cccccc;
-  height: 27px;
-  margin-top: 27px;
+  height: 26px;
 }
 @media (max-width: 1200px) {
   .mp-browse-toggles .browse-toggle {
@@ -7317,6 +7424,9 @@ body.builder-mode .section-builder-panel {
   .mp-browse-toggles .browse-toggle .longer-title.title-text,
   .mp-browse-toggles .browse-toggle .longer-title .title-text {
     font-size: 20px;
+  }
+  .mp-browse-toggles .vert-divider {
+    height: 22px;
   }
 }
 @media (max-width: 992px) {
@@ -7330,29 +7440,35 @@ body.builder-mode .section-builder-panel {
   .mp-browse-toggles .browse-toggle .longer-title .title-text {
     font-size: 20px;
   }
+  .mp-browse-toggles .vert-divider {
+    height: 20px;
+  }
 }
 @media (max-width: 768px) {
   .mp-browse-toggles {
-    height: 60px;
+    height: 40px;
   }
   .mp-browse-toggles .browse-toggle {
+    min-width: 21%;
     padding: 0 8px;
-    font-size: 18px;
+    font-size: 17px;
   }
   .mp-browse-toggles .browse-toggle .provider-logo {
-    height: 14px;
+    height: 15px;
   }
   .mp-browse-toggles .browse-toggle .longer-title.title-text,
   .mp-browse-toggles .browse-toggle .longer-title .title-text {
-    font-size: 16px;
+    font-size: 15px;
+  }
+  .mp-browse-toggles .browse-toggle .inline-title .fa {
+    margin-right: 6px;
   }
   .mp-browse-toggles .browse-toggle.selected:before,
   .mp-browse-toggles .browse-toggle.selected:after {
-    top: 32px;
+    top: 12px;
   }
   .mp-browse-toggles .vert-divider {
-    height: 20px;
-    margin-top: 20px;
+    height: 17px;
   }
 }
 .breadcrumb a {
@@ -7678,6 +7794,9 @@ body.builder-mode .section-builder-panel {
     padding-right: 0;
   }
 }
+.mp-sidepanel .help-text {
+  margin: 0 0.5em;
+}
 .mp-sidepanel .type-toggle {
   width: 100%;
   font-size: inherit;
@@ -7686,36 +7805,42 @@ body.builder-mode .section-builder-panel {
   width: 50%;
   font-size: inherit;
 }
-.form-group.photo-input .alert {
+.photo-input .alert {
   margin-bottom: 0;
 }
-.form-group.photo-input .alert-default {
-  background-color: #cccccc;
+.photo-input .alert-default {
+  background-color: #e0e0e0;
 }
-.form-group.photo-input .drag-area.uploader {
+.photo-input .drag-area.uploader {
   font-size: 17px;
   line-height: 1.5em;
   text-align: center;
-  padding: 1em 0;
-  outline: 2px dotted #3b8fc4;
-  outline-offset: -0.5em;
+  padding: 0 0 1em;
+  border: 2px dashed #cccccc;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 @media (min-width: 769px) {
-  .form-group.photo-input .drag-area.uploader .block-md {
+  .photo-input .drag-area.uploader .block-md {
     display: block;
     margin: 0 auto;
   }
 }
 @media (max-width: 768px) {
-  .form-group.photo-input .drag-area.uploader .block-md {
-    margin-right: 5px;
+  .photo-input .drag-area.uploader {
+    display: block;
+  }
+  .photo-input .drag-area.uploader .block-md {
+    margin-right: 0.5em;
   }
 }
-.form-group.photo-input .btn-file {
+.photo-input .btn-file {
   position: relative;
   overflow: hidden;
 }
-.form-group.photo-input .btn-file input[type=file] {
+.photo-input .btn-file input[type=file] {
   position: absolute;
   top: 0;
   right: 0;
@@ -7727,8 +7852,13 @@ body.builder-mode .section-builder-panel {
   cursor: inherit;
   display: block;
 }
-.form-group.photo-input img {
+.photo-input img {
   width: 100%;
+}
+.mp-sidepanel {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 .mp-sidepanel .content-toggle {
   width: 100%;
@@ -7746,7 +7876,7 @@ body.builder-mode .section-builder-panel {
   width: 80%;
   text-align: center;
   border-bottom: 1px solid #959595;
-  margin: 25px auto;
+  margin: 10px auto 25px;
   line-height: 0;
 }
 .mp-sidepanel .divider span {
@@ -7754,28 +7884,14 @@ body.builder-mode .section-builder-panel {
   background: #fff;
   padding: 0 10px;
 }
-.mp-sidepanel .box {
-  background-color: lime;
-  outline: 2px dashed black;
-  outline-offset: -10px;
-  padding: 15px;
-  text-align: center;
+.mp-sidepanel .photo-input {
+  flex-grow: 1;
+  position: relative;
 }
-.mp-sidepanel .box .box__dragndrop,
-.mp-sidepanel .box .box__uploading,
-.mp-sidepanel .box .box__success,
-.mp-sidepanel .box .box__error,
-.mp-sidepanel .box .box__file {
-  display: none;
-}
-.mp-sidepanel .box.has-dnd .box__dragndrop {
-  display: inline;
-}
-.mp-sidepanel .box.has-dnd .box__button {
-  display: none;
-}
-.mp-sidepanel .box.no-dnd .box__button {
-  display: block;
+.mp-sidepanel .photo-input .drag-area {
+  position: absolute;
+  height: 100%;
+  width: 100%;
 }
 @media (min-width: 769px) {
   .mp-sidepanel .content-toggle > .btn {
@@ -7790,6 +7906,11 @@ body.builder-mode .section-builder-panel {
   }
 }
 @media (max-width: 768px) {
+  .mp-sidepanel .photo-input .drag-area {
+    position: static;
+    height: auto;
+    width: auto;
+  }
   .mp-sidepanel .col-xs-6 {
     width: 49%;
   }

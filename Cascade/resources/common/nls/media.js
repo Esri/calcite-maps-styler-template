@@ -21,12 +21,12 @@ define({
           cantRetrieveImages: "Unable to retrieve images",
           googlePhotos: {
             userNotFound: "Account not found",
-            searchAndBrowse: "Search and browse public photos on Picasa or Google Photos"
+            searchAndBrowse: "Browse photos on Picasa or Google Photos"
           },
           flickr: {
             userNotFound: "User not found",
             photostream: "Photostream",
-            searchAndBrowse: "Search and browse public photos on Flickr"
+            searchAndBrowse: "Search and browse photos on Flickr"
           },
           urlContent: {
             uploadHeaders: {
@@ -53,7 +53,11 @@ define({
         },
         sidePanel: {
           googlePhotos: {
-            placeholder: "Email or Picasa/Google+ ID"
+            brand1: "Picasa",
+            brand2: "Google Photos",
+            placeholder: "Email or Picasa/Google+ ID",
+            helpText: "You can add photos uploaded to ${brand1} or ${brand2} to your story. If you are using Google Photos, ${helpLinkText} to use your photos.",
+            helpLinkText: "follow these steps"
           },
           flickr: {
             // tabs for search type

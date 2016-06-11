@@ -23,6 +23,7 @@ define({
 					logoUploadSuccess: "Logo uploaded successfully",
 					logoUploadError: "Logo uploaded failed, switching back to default logo",
 					customHeaderText: "Tagline",
+					taglineLinkDisabledTooltip: "Enter a tagline to enable the link",
 					link: "Tagline link",
 					enableSocialSharing: "Display sharing button"
 				}

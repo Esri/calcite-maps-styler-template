@@ -74,6 +74,7 @@ body {
 }
 
 .modal-open {
+  width: 100%;
   overflow-y: scroll !important;
   padding-right: 0 !important;
 }
@@ -2661,32 +2662,32 @@ body.mobile .discover-item img {
  */
 
  /* common with gallery */
- .block-caption {
-   outline: none;
-   font-family: 'open_sans', sans-serif;
-   font-size: 14px;
-   line-height: 22px;
-   opacity: .65;
-   width: 100%;
-   text-align: center;
-   padding-top: 5px;
-   margin-top: 0 !important;
- }
+.block-caption {
+  outline: none;
+  font-family: 'open_sans', sans-serif;
+  font-size: 14px;
+  line-height: 22px;
+  opacity: .65;
+  width: 100%;
+  text-align: center;
+  padding-top: 5px;
+  margin-top: 0 !important;
+}
 
- body.mobile-view .block-caption {
-   font-size: 12px;
- }
+body.mobile-view .block-caption {
+  font-size: 12px;
+}
 
- body.builder-mode .block-caption {
-     min-height: 40px;
-     cursor: text;
- }
+body.builder-mode .block-caption {
+  min-height: 40px;
+  cursor: text;
+}
 
- body.builder-mode .block-caption:empty:before {
-   content: attr(data-placeholder);
-   font-style: italic;
-   color: #999;
- }
+body.builder-mode .block-caption:not(:focus):empty:before {
+  content: attr(data-placeholder);
+  font-style: italic;
+  color: #999;
+}
 
 .background .caption {
  position: absolute;
@@ -3386,46 +3387,73 @@ body.mobile-view .image-gallery .image-gallery-item:nth-child(n+3) {
   max-height: 300px;
 }
 /*
+ * Interaction
+ */
+.interaction-disabled .map .esriSimpleSlider,
+.interaction-button:not(.interaction-enabled) .map .esriSimpleSlider {
+  display: none;
+}
+.builder-config-open .map .esriSimpleSliderTL {
+  display: block !important;
+}
+.builder-config-open.interaction-button .esriSimpleSliderTL {
+  bottom: 60px;
+}
+/*
  * Simple aspect ratio for the media height
  */
-.block-type-webscene {
+.block-type-webscene,
+.background-type-webscene {
   /*
    * Interaction
    */
 }
-.block-type-webscene .scene {
+.block-type-webscene .scene,
+.background-type-webscene .scene {
   position: absolute;
   top: 0px;
   left: 0px;
   right: 0px;
   bottom: 0px;
 }
-.block-type-webscene .block-media {
+.block-type-webscene .block-media,
+.background-type-webscene .block-media {
   padding-top: 50%;
 }
-.block-type-webscene.block-size-small .block-media {
+.block-type-webscene.block-size-small .block-media,
+.background-type-webscene.block-size-small .block-media {
   padding-top: 30%;
 }
-.block-type-webscene.block-size-large .block-media {
+.block-type-webscene.block-size-large .block-media,
+.background-type-webscene.block-size-large .block-media {
   padding-top: calc(100vh - 120px);
 }
-.block-type-webscene .esri-ui-bottom-right {
+.block-type-webscene .esri-ui-bottom-right,
+.background-type-webscene .esri-ui-bottom-right {
   margin-right: -7px;
 }
-.block-type-webscene .interaction-container {
+.block-type-webscene .interaction-container,
+.background-type-webscene .interaction-container {
   bottom: 23px;
 }
-.block-type-webscene.interaction-button:not(.builder-config-open) .esri-ui-bottom-right {
+.block-type-webscene.interaction-button:not(.builder-config-open) .esri-ui-bottom-right,
+.background-type-webscene.interaction-button:not(.builder-config-open) .esri-ui-bottom-right {
   bottom: 35px;
 }
 .block-type-webscene.interaction-disabled .scene .esri-compass,
+.background-type-webscene.interaction-disabled .scene .esri-compass,
 .block-type-webscene.interaction-button:not(.interaction-enabled) .scene .esri-compass,
+.background-type-webscene.interaction-button:not(.interaction-enabled) .scene .esri-compass,
 .block-type-webscene.interaction-disabled .scene .esri-zoom,
-.block-type-webscene.interaction-button:not(.interaction-enabled) .scene .esri-zoom {
+.background-type-webscene.interaction-disabled .scene .esri-zoom,
+.block-type-webscene.interaction-button:not(.interaction-enabled) .scene .esri-zoom,
+.background-type-webscene.interaction-button:not(.interaction-enabled) .scene .esri-zoom {
   display: none;
 }
 .block-type-webscene.builder-config-open .scene .esri-compass,
-.block-type-webscene.builder-config-open .scene .esri-zoom {
+.background-type-webscene.builder-config-open .scene .esri-compass,
+.block-type-webscene.builder-config-open .scene .esri-zoom,
+.background-type-webscene.builder-config-open .scene .esri-zoom {
   display: inherit !important;
 }
 .background-type-webscene .scene {
@@ -4148,18 +4176,24 @@ body.mobile-view .section-layout-cover .cover-credits-right {
 .block-size-large {
   width: 100%;
 }
-.block-size-small .block-media {
+.block-size-small .block-media,
+.block-size-small .block-caption {
   width: 40%;
   margin-left: auto;
   margin-right: auto;
 }
-.block-size-medium .block-media {
+.block-size-medium .block-media,
+.block-size-medium .block-caption {
   width: 80%;
   margin-left: auto;
   margin-right: auto;
 }
-.block-size-large .block-media {
+.block-size-large .block-media,
+.block-size-large .block-caption {
   width: 100%;
+}
+.block-caption {
+  padding: 0 5px;
 }
 /*
  * Responsive
@@ -4532,6 +4566,10 @@ body.mobile-view .background-title h2 {
 /*
  * Swipe transition
  */
+/* TODO temporary fix when navigating away, need to unload properly the section */
+.section-immersive:not(.active) .background-swipe-trans-extras {
+  display: none !important;
+}
 .background-swipe-trans-extras {
   position: fixed;
   top: 0;
@@ -4657,16 +4695,11 @@ body.mobile-view .section-immersive .imm-panel .block {
    * Style
    */
   /*
-   * Size
-   */
-  /*
    * Placement
    */
 }
 .imm-panel .blocksWrapper {
   position: absolute;
-  min-width: 250px;
-  max-width: 400px;
 }
 .imm-panel .blocks {
   padding: 15px;
@@ -4691,17 +4724,6 @@ body.mobile-view .section-immersive .imm-panel .block {
   text-shadow: 0 0 8px #000000;
   background-color: inherit;
 }
-.imm-panel.size-small .blocksWrapper {
-  width: 28%;
-  max-width: 300px;
-}
-.imm-panel.size-medium .blocksWrapper {
-  width: 38%;
-}
-.imm-panel.size-large .blocksWrapper {
-  width: 48%;
-  max-width: 600px;
-}
 .imm-panel.placement-right .blocksWrapper {
   left: inherit;
   right: 30px;
@@ -4721,6 +4743,27 @@ body.mobile-view .section-immersive .imm-panel .block {
 }
 .layout-scroll-full .foreground .imm-panel {
   margin-left: 30px;
+  /*
+       * Size
+       */
+  /*
+       * Placement
+       */
+}
+.layout-scroll-full .foreground .imm-panel .blocksWrapper {
+  min-width: 250px;
+  max-width: 400px;
+}
+.layout-scroll-full .foreground .imm-panel.size-small .blocksWrapper {
+  width: 28%;
+  max-width: 300px;
+}
+.layout-scroll-full .foreground .imm-panel.size-medium .blocksWrapper {
+  width: 38%;
+}
+.layout-scroll-full .foreground .imm-panel.size-large .blocksWrapper {
+  width: 48%;
+  max-width: 600px;
 }
 .layout-scroll-full .foreground .imm-panel.placement-right {
   margin-right: 30px;
@@ -4747,6 +4790,8 @@ body.mobile-view .section-immersive .imm-panel .block {
   left: 30px;
   opacity: 0;
   visibility: hidden;
+  min-width: 250px;
+  max-width: 400px;
   /* less and calc */
   /*min-height: calc(~"100vh - 50px");*/
   /*
@@ -4756,6 +4801,31 @@ body.mobile-view .section-immersive .imm-panel .block {
         border-radius: 2px;
       }
       */
+  /*
+       * Size
+       */
+  /*
+       * Placement
+       */
+  /*
+       * scroll-partial centered behave like scroll-full
+       * can they all behae like that?
+       * TODO
+       */
+}
+.layout-scroll-partial .foreground .imm-panel .blocksWrapper {
+  width: 100%;
+}
+.layout-scroll-partial .foreground .imm-panel.size-small {
+  width: 21%;
+  max-width: 300px;
+}
+.layout-scroll-partial .foreground .imm-panel.size-medium {
+  width: 30%;
+}
+.layout-scroll-partial .foreground .imm-panel.size-large {
+  width: 37%;
+  max-width: 600px;
 }
 .layout-scroll-partial .foreground .imm-panel.placement-right {
   right: 30px;
@@ -4765,12 +4835,28 @@ body.mobile-view .section-immersive .imm-panel .block {
   left: 0 !important;
   right: 0;
   width: calc(100% - 250px);
+  min-width: inherit;
+  max-width: inherit;
 }
 .layout-scroll-partial .foreground .imm-panel.placement-center .blocksWrapper {
+  width: inherit;
   margin-left: auto;
   margin-right: auto;
   display: block;
   position: relative;
+  min-width: 250px;
+  max-width: 400px;
+}
+.layout-scroll-partial .foreground .imm-panel.placement-center.size-small .blocksWrapper {
+  width: 28%;
+  max-width: 300px;
+}
+.layout-scroll-partial .foreground .imm-panel.placement-center.size-medium .blocksWrapper {
+  width: 38%;
+}
+.layout-scroll-partial .foreground .imm-panel.placement-center.size-large .blocksWrapper {
+  width: 48%;
+  max-width: 600px;
 }
 .layout-scroll-partial:not(.active) .imm-panel {
   display: none;
@@ -4943,7 +5029,16 @@ body.builder-mode .progressjs-progress {
 .bookmarks .dropdown .bookmark {
   white-space: nowrap;
   margin-left: 0;
-  border-top: none;
+  border: none;
+  border-left: 3px solid transparent;
+  padding-left: 10px;
+}
+.bookmarks .dropdown .bookmark:hover {
+  border-left-color: #007ac2;
+  color: #ACACAC;
+}
+.bookmarks .dropdown .bookmark.active {
+  border-left-color: #007ac2;
 }
 /*
  * Responsive

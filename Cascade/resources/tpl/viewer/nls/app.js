@@ -57,7 +57,7 @@ define({
         copied: "Copied",
         open: "Open",
         embed: "Embed in web page",
-        embedExplain: "Use the following HTML code to embed the application in a web page.",
+        embedExplain: "Use the following HTML code to embed the story in a web page.",
         size: "Size (width/height):"
       }
     }
