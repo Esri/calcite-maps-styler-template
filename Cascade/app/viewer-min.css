@@ -2868,8 +2868,22 @@ body:not(.mobile-view) .shareDialog .social-container {
 	padding: 0 0 15px 0;
 }
 
-.shareDialog .shareIcon {
+.shareDialog .share-url-social {
+	display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.shareDialog .social-icon {
 	padding: 0 8px;
+	color: #AAA;
+	font-size: 36px;
+	cursor: pointer;
+}
+
+.shareDialog .social-icon:hover {
+	color: #666;
 }
 
 body.mobile-view .shareDialog .share-url-container {
@@ -2886,6 +2900,21 @@ body.mobile-view .shareDialog .share-embed-container {
 
 .shareDialog  .share-embed-container .share-btn {
 	padding-top: 17px;
+}
+
+
+body.mobile-view .shareDialog .share-url-social {
+	flex-direction: column;
+	margin-bottom: 0;
+}
+
+body.mobile-view .shareDialog .share-url-container .share-btn {
+	display: none;
+}
+@media (max-height: 400px) {
+	.shareDialog .modal-dialog {
+		margin-top: 0;
+	}
 }
 /* TODO some code to mutualize between URL and EMBED */
 
@@ -2940,7 +2969,7 @@ body.mobile-view .share-url-container .bitlylink {
 }
 
 .share-url-container .share-status-wrapper {
-	height: 20px;
+	height: 0;
 	font-weight: bold;
 	font-size: 1.2rem;
 	color: #66aa67;
@@ -5173,11 +5202,18 @@ body.builder-mode .header {
   cursor: pointer;
   padding-right: 2px;
 }
+.header .share-btn.share-disabled {
+  pointer-events: none;
+  opacity: 0.5;
+}
 .header .share-btn.active {
   display: inline-block;
 }
 .header .share-btn:hover {
   opacity: 0.9;
+}
+.tooltip.custom-share-tooltip {
+  opacity: 1;
 }
 /*
   Responsive

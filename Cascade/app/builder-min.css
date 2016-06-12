@@ -3088,8 +3088,22 @@ body:not(.mobile-view) .shareDialog .social-container {
 	padding: 0 0 15px 0;
 }
 
-.shareDialog .shareIcon {
+.shareDialog .share-url-social {
+	display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.shareDialog .social-icon {
 	padding: 0 8px;
+	color: #AAA;
+	font-size: 36px;
+	cursor: pointer;
+}
+
+.shareDialog .social-icon:hover {
+	color: #666;
 }
 
 body.mobile-view .shareDialog .share-url-container {
@@ -3106,6 +3120,21 @@ body.mobile-view .shareDialog .share-embed-container {
 
 .shareDialog  .share-embed-container .share-btn {
 	padding-top: 17px;
+}
+
+
+body.mobile-view .shareDialog .share-url-social {
+	flex-direction: column;
+	margin-bottom: 0;
+}
+
+body.mobile-view .shareDialog .share-url-container .share-btn {
+	display: none;
+}
+@media (max-height: 400px) {
+	.shareDialog .modal-dialog {
+		margin-top: 0;
+	}
 }
 /* TODO some code to mutualize between URL and EMBED */
 
@@ -3160,7 +3189,7 @@ body.mobile-view .share-url-container .bitlylink {
 }
 
 .share-url-container .share-status-wrapper {
-	height: 20px;
+	height: 0;
 	font-weight: bold;
 	font-size: 1.2rem;
 	color: #66aa67;
@@ -4367,7 +4396,7 @@ body.mobile-view .image-gallery .image-gallery-item:nth-child(n+3) {
   border-bottom: 100px solid rgba(232, 232, 232, 0.65);
   cursor: pointer !important;
 }
-.block.image .block-media:hover .img-gallery-invite {
+.block.image .block-media:hover .img-gallery-invite:not(.disabled) {
   visibility: visible !important;
   opacity: 1 ! important;
 }
@@ -6081,7 +6110,8 @@ body.builder-mode .section:nth-child(2).section-layout-sequence .foreground {
 }
 .op-action-overlay .action-icon {
   font-size: 18px;
-  padding: 10px;
+  padding: 5px;
+  margin: 5px;
 }
 .op-style-horizontal .op-action-overlay {
   right: 0;
@@ -6107,13 +6137,22 @@ body.builder-mode .section:nth-child(2).section-layout-sequence .foreground {
   width: 0;
   /* Prevents the white-space:nowrap property below from making the whole container larger */
   overflow: hidden;
-  background-color: white;
+  background-color: #CCC;
 }
 .op-item-main.builder-overview.tall {
   height: 130px;
 }
 .op-item-main.builder-overview.short {
   height: 60px;
+  position: relative;
+}
+.op-item-main.builder-overview.short .item-label {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 0;
 }
 .op-item-main.builder-overview .item-label {
   color: #ffffff;
@@ -7139,11 +7178,18 @@ body.builder-mode .header {
   cursor: pointer;
   padding-right: 2px;
 }
+.header .share-btn.share-disabled {
+  pointer-events: none;
+  opacity: 0.5;
+}
 .header .share-btn.active {
   display: inline-block;
 }
 .header .share-btn:hover {
   opacity: 0.9;
+}
+.tooltip.custom-share-tooltip {
+  opacity: 1;
 }
 /*
   Responsive
@@ -8276,4 +8322,12 @@ input.hc-checkbox.space {
 .hc-logo-upload-msg.alert-warning,
 .hc-logo-upload-msg.alert-danger {
   display: block;
+}
+/*
+* Responsive
+*/
+@media (max-height: 700px) {
+  .hc-dialog .modal-body {
+    height: 350px;
+  }
 }
