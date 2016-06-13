@@ -132,7 +132,7 @@
       "label": "Playback speed:",
       "fieldName": "thumbmovingrate",
       "type": "string",
-      "tooltip": "Rate at which slider plays (in milliseconds)"
+      "tooltip": "The default playback speed is 1000 milliseconds (one second) per time interval. Providing a smaller number will increase the playback speed of the animation by shortening the duration of each interval."
     }, {
       "type": "string",
       "fieldName": "timeposition",
