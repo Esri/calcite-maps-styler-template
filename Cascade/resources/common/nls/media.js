@@ -7,24 +7,31 @@ define({
         googlePhotos: "Google Photos",
         facebook: "Facebook",
         urls: "Link to Content",
-        urls_short: "Link"
+        urls_short: "Link",
+        // the keys for contentType should match constants.contentType
+        contentType: {
+          error: 'No authorized media',
+          starter: "In this part of the story, you can add ",
+          listSeparator: ",",
+          OR: 'or',
+          IMAGE: 'an image',
+          VIDEO: 'a video',
+          WEBPAGE: 'a webpage',
+          WEBMAP: 'a webmap',
+          WEBSCENE: 'a webscene'
+        }
       },
       browsePanel: {
         providers: {
-          albums: "albums",
           searchingFor: "Searching for",
           albumsOf: "Albums of", // Context: when displaying "Albums of [user]". Possessive.
-          noAlbums: "No public album found",
           noPhotosFound: "No photos matched your search. Please try again.",
           noItemsFound: "No items matched your search. Please try again.",
           noItemsInThisStory: "No content from ArcGIS has been added to this story yet.",
-          cantRetrieveImages: "Unable to retrieve images",
           googlePhotos: {
-            userNotFound: "Account not found",
             searchAndBrowse: "Browse photos on Picasa or Google Photos"
           },
           flickr: {
-            userNotFound: "User not found",
             photostream: "Photostream",
             searchAndBrowse: "Search and browse photos on Flickr"
           },
@@ -32,7 +39,6 @@ define({
             uploadHeaders: {
               generic: "Link to content on the web",
               imageOnly: "Link to an image on the web",
-              videoOnly: "Link to a video on the web",
               imageAndVideo: "Link to an image or video on the web"
             },
             uploadText1: "Content from YouTube and Vimeo will be optimized; other content will be embedded as is.",
@@ -47,7 +53,14 @@ define({
               imageAndVideo: [
                 "You must use an image or video in this part of the story.",
                 "Please provide a link to an image (.jpg, .png, .gif) or a video on YouTube or Vimeo, or choose an image from ArcGIS, Flickr, or Google Photos."
-              ]
+              ],
+              inaccessible: 'Unable to load ${media-type} at entered URL.',
+              tryAgain: 'Please check the address and try again.',
+              mediaTypes: {
+                VIDEO: 'video',
+                IMAGE: 'image',
+                generic: 'media'
+              }
             }
           }
         },
@@ -57,21 +70,29 @@ define({
             brand2: "Google Photos",
             placeholder: "Email or Picasa/Google+ ID",
             helpText: "You can add photos uploaded to ${brand1} or ${brand2} to your story. If you are using Google Photos, ${helpLinkText} to use your photos.",
-            helpLinkText: "follow these steps"
+            helpLinkText: "follow these steps",
+            cannotFindUser: "Cannot find user", // Context: "Cannot find user 'johnsmith'."
+            tryAgain: "Please try again."
           },
           flickr: {
             // tabs for search type
-            accountSearchType: "Flickr Account",
-            textSearchType: "All Flickr",
+            searchType: {
+              account: "Flickr Account",
+              text: "All Flickr"
+            },
             // placeholders for text search inputs
-            userSearchPlaceholder: "Search for account",
-            userTextSearchPlaceholder: "Search this account for photos",
-            textSearchPlaceholder: "Search for photos",
+            placeholders: {
+              user: "Search for account",
+              userText: "Search this account for photos",
+              text: "Search for photos"
+            },
             // error/warning messages
-            cannotFindUser: "Cannot find user", // Context: "Cannot find user 'helloworld'. Did you mean 'hello world'?"
-            noUserPhotos: "does not have any public photos.", // Context: "'helloworld' does not have any public photos. Did you mean 'hello world'?"
-            didYouMean: "Did you mean", // Context: "'helloworld' does not have any public photos. Did you mean 'hello world'?"
-            generalUserError: "Something went wrong when searching for user",
+            errors: {
+              cannotFindUser: "Cannot find user", // Context: "Cannot find user 'johnsmith'. Did you mean 'John Smith'?"
+              noUserPhotos: "does not have any public photos.", // Context: "'helloworld' does not have any public photos. Did you mean 'hello world'?"
+              didYouMean: "Did you mean", // Context: "'johnsmith' does not have any public photos. Did you mean 'John Smith'?"
+              generalUserError: "Something went wrong when searching for user"
+            },
             // licenses
             licenses: {
               public: 'Public Domain',
@@ -92,7 +113,6 @@ define({
               or: "OR",
               dragAndDrop: "Drop an image here",
               uploadImage: "Upload an image",
-              useDifferent: "Use a different photo",
               saveBeforeUpload: "Once you save this story, you can upload images to ArcGIS here"
             },
             filterAndSort: {

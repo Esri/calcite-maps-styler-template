@@ -2638,6 +2638,10 @@ body.mobile .discover-item img {
   position: relative;
 }
 
+body.mobile-view .block-media {
+  width: 100%;
+}
+
 /*
  * Loading
  */
@@ -2810,7 +2814,20 @@ body.mobile-view .section:not(.events-mobile-central) .interaction-container{
    right: 0;
    width: 100%;
    height: 100%
- }
+}
+
+/*
+ * Error
+ */
+
+.media-error {
+  background-color: rgba(255, 0, 0, 0.5);
+  border-radius: 4px;
+  color: #FFF;
+  padding: 15px;
+  width: 90%;
+  margin-left: 5%;
+}
 
 /*
  * Hide all builder UI in viewer
@@ -3346,6 +3363,7 @@ body.mobile-view .image-gallery .image-gallery-item:nth-child(n+3) {
 .background .video-viewport iframe {
   width: 100%;
   height: 100%;
+  pointer-events: none;
 }
 /*
  * Custom player controls
@@ -3360,6 +3378,12 @@ body.mobile-view .image-gallery .image-gallery-item:nth-child(n+3) {
  */
 .video {
   border: 0;
+}
+/*
+ * Responsive
+ */
+body.mobile-view .block-type-video .block-media {
+  padding-top: 50%;
 }
 /*
  * Simple aspect ratio for the media height
@@ -3427,6 +3451,12 @@ body.mobile-view .image-gallery .image-gallery-item:nth-child(n+3) {
 }
 .builder-config-open.interaction-button .esriSimpleSliderTL {
   bottom: 60px;
+}
+/*
+ * Responsive
+ */
+body.mobile-view .block-type-webmap.block-size-small .block-media {
+  padding-top: 50%;
 }
 /*
  * Simple aspect ratio for the media height
@@ -3497,6 +3527,15 @@ body.mobile-view .image-gallery .image-gallery-item:nth-child(n+3) {
 }
 .scene .esri-compass {
   margin-bottom: 15px;
+}
+/*
+ * Error
+ */
+.background-type-webscene .media-error {
+  top: 200px;
+  bottom: inherit;
+  width: 90%;
+  height: 80px;
 }
 /*
  * Simple aspect ratio for the media height
@@ -3591,6 +3630,9 @@ body.mobile-view .image-gallery .image-gallery-item:nth-child(n+3) {
   display: inline-block;
   vertical-align: -4px;
 }
+body:not(.builder-mode) .media-empty-add {
+  display: none;
+}
 .media-color {
   width: 100%;
   height: 100%;
@@ -3644,7 +3686,13 @@ body.mobile-view .image-gallery .image-gallery-item:nth-child(n+3) {
   border-color: rgba(80, 80, 80, 0.8);
 }
 .cr-input-container .cr-item-input.cr-error {
-  border-color: #af3232;
+  border-color: rgba(228, 80, 80, 0.8);
+}
+.cr-item:last-child .cr-builder-ui {
+  opacity: 1;
+}
+.cr-item:last-child .cr-add-button.cr-hidden {
+  display: block;
 }
 .cr-pipe {
   flex: 0 0 0;
@@ -3661,7 +3709,7 @@ body.mobile-view .image-gallery .image-gallery-item:nth-child(n+3) {
 }
 .cr-validation-warning {
   color: white;
-  background: #af3232;
+  background: rgba(228, 80, 80, 0.8);
   border: 2px solid transparent;
   padding: 0 6px;
   margin-right: 10px;
@@ -3688,24 +3736,28 @@ body.mobile-view .image-gallery .image-gallery-item:nth-child(n+3) {
 .cr-add-line {
   width: 100%;
   background: #333;
-  height: 2px;
+  height: 1px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 .cr-add-button {
-  background: white;
+  background: #AAA;
   height: 20px;
   width: 20px;
   border-radius: 15px;
+  position: relative;
 }
 .cr-add-button.cr-hidden {
   display: none;
 }
 .cr-add-button .cr-add-icon {
   color: #333;
-  top: -1px;
-  left: 3px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 0;
+  transform: translate(-50%, -50%);
 }
 .cr-input-container .popover-content {
   padding: 0;
@@ -3925,20 +3977,22 @@ body.builder-mode .section-layout-cover .wrapper {
   flex-direction: column;
   align-items: center;
 }
-.section-layout-cover .foreground h1 {
+.section-layout-cover .cover-title {
   font-size: 7em;
-  line-height: 115px;
+  line-height: 1.2;
   border: 2px solid transparent;
 }
-.section-layout-cover .foreground h2 {
+.section-layout-cover .cover-subtitle {
   margin-top: 30px;
   border: 2px solid transparent;
 }
-.section-layout-cover .foreground h1,
-.section-layout-cover .foreground h2 {
+.section-layout-cover .cover-title,
+.section-layout-cover .cover-subtitle {
   max-width: 100%;
   overflow-wrap: break-word;
   word-wrap: break-word;
+  padding-left: 50px;
+  padding-right: 50px;
 }
 /*.section-layout-cover .foreground h1, .section-layout-cover .foreground h2 {
   max-width: 100%;
@@ -4041,7 +4095,7 @@ body.builder-mode .section-layout-cover .wrapper {
   text-align: center;
 }
 body.mobile-view .section-layout-cover .scroll-invite {
-  padding-bottom: 50px;
+  padding-bottom: 10px;
 }
 .section-layout-cover .scroll-invite-btn {
   height: 52px;
@@ -4101,14 +4155,17 @@ body.mobile-view .section-layout-cover .scroll-invite {
  * Responsive
  */
 body.mobile-view .section-layout-cover .cover-title {
-  font-size: 4em;
+  font-size: 3em;
 }
 body.mobile-view .section-layout-cover .cover-subtitle {
-  font-size: 1.4em;
+  font-size: 1.2em;
   width: 100%;
-  padding-left: 5px;
-  padding-right: 5px;
   margin-top: 10px;
+}
+body.mobile-view .section-layout-cover .cover-title,
+body.mobile-view .section-layout-cover .cover-subtitle {
+  padding-left: 10px;
+  padding-right: 10px;
 }
 body.mobile-view .section-layout-cover .author-info {
   bottom: 70px;
@@ -4228,10 +4285,10 @@ body.mobile-view .section-layout-cover .cover-credits-right {
  * Responsive
  */
 body.mobile-view .section-layout-sequence .block {
-  width: 90%;
-}
-body.mobile-view .section-layout-sequence .block {
   font-size: 16px;
+}
+body.mobile-view .section-layout-sequence .block-media {
+  width: 100%;
 }
 /*
  * Huge first letter for first block of the sequence
@@ -4255,9 +4312,11 @@ body.mobile-view .section-layout-sequence .block {
 }
 .section-layout-sequence.sequence-2 .block {
   width: 90%;
+  margin-left: 5%;
   background-color: rgba(255, 0, 0, 0.5);
   border-radius: 4px;
   color: #FFF;
+  padding: 15px;
 }
 /*
  * test with background and scroll foreground
@@ -4370,7 +4429,8 @@ body.mobile-view .section-layout-sequence .block {
 }
 */
 body.mobile-view .fg-title {
-  font-size: 2.2em;
+  font-size: 34px !important;
+  line-height: 38px !important;
 }
 /*
  * Builder
@@ -4737,6 +4797,9 @@ body.mobile-view .section-immersive .imm-panel .block {
 .imm-panel .blocks .block-media {
   width: 100%;
 }
+.imm-panel .blocks .block-type-video .block-media {
+  padding-top: 50% !important;
+}
 .imm-panel.theme-white-over-black .blocks {
   color: #FFF;
   background-color: rgba(0, 0, 0, 0.5);
@@ -4889,6 +4952,12 @@ body.mobile-view .section-immersive .imm-panel .block {
 }
 .layout-scroll-partial:not(.active) .imm-panel {
   display: none;
+}
+/*
+ * Responsive
+ */
+body.mobile-view .imm-panel .blocks {
+  padding: 5px;
 }
 /*
  * Builder
@@ -5072,13 +5141,13 @@ body.builder-mode .progressjs-progress {
 /*
  * Responsive
  */
-body.mobile-view .header .bookmarks {
+body.mobile-view .story-header .bookmarks {
   margin: 0 10px;
 }
 /*
  * Builder
  */
-.header {
+.story-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -5100,11 +5169,11 @@ body.mobile-view .header .bookmarks {
   transition: background 1s linear;
   font-family: 'open_sans', sans-serif;
 }
-body.builder-mode .header {
+body.builder-mode .story-header {
   left: 250px;
   width: calc(100% - 250px);
 }
-.header.compact {
+.story-header.compact {
   background-color: rgba(0, 0, 0, 0);
   -webkit-box-shadow: inherit;
   -moz-box-shadow: inherit;
@@ -5120,23 +5189,23 @@ body.builder-mode .header {
 /*
  * Logo
  */
-.header .logo-wrapper {
+.story-header .logo-wrapper {
   flex: 0 1 auto;
   margin-right: 4px;
 }
-.header .logoLink {
+.story-header .logoLink {
   display: block;
   -moz-transition: background 1s ease-in;
   -webkit-transition: background 1s ease-in;
   -o-transition: background 1s ease-in;
   transition: background 1s ease-in;
 }
-.header .logoImg {
+.story-header .logoImg {
   max-width: 210px;
   max-height: 42px;
 }
 /* TODO: only for esri logo */
-.header.compact .logoImg {
+.story-header.compact .logoImg {
   /*background-position-y: -0;*/
   -webkit-filter: drop-shadow(0px 0px 3px #000000);
   filter: drop-shadow(0px 0px 3px #000000);
@@ -5144,7 +5213,7 @@ body.builder-mode .header {
 /*
  * Title
  */
-.header .title {
+.story-header .title {
   font-size: 2.1em;
   height: 42px;
   line-height: 38px;
@@ -5159,7 +5228,7 @@ body.builder-mode .header {
   overflow: hidden;
   white-space: nowrap;
 }
-.header.compact .title {
+.story-header.compact .title {
   opacity: 0;
 }
 /*
@@ -5172,44 +5241,47 @@ body.builder-mode .header {
 .header-edit-button .header-edit-icon {
   margin-right: 6px;
 }
+body.mobile-view .header-edit-button {
+  display: none !important;
+}
 /*
  * Link
  */
-.header .link {
+.story-header .link {
   color: inherit;
   margin-right: 8px;
   vertical-align: 1px;
 }
-.header .link:hover {
+.story-header .link:hover {
   color: #ACACAC;
 }
 /*
  * Share
  */
-.header .share {
+.story-header .share {
   display: flex;
   align-items: center;
   flex: 0 0 auto;
   color: #CECECE;
 }
-.header.compact .share {
+.story-header.compact .share {
   color: #FFF;
   text-shadow: 0 0 8px #000;
 }
-.header .share-btn {
+.story-header .share-btn {
   display: none;
   font-size: 1.2em;
   cursor: pointer;
   padding-right: 2px;
 }
-.header .share-btn.share-disabled {
+.story-header .share-btn.share-disabled {
   pointer-events: none;
   opacity: 0.5;
 }
-.header .share-btn.active {
+.story-header .share-btn.active {
   display: inline-block;
 }
-.header .share-btn:hover {
+.story-header .share-btn:hover {
   opacity: 0.9;
 }
 .tooltip.custom-share-tooltip {
@@ -5218,26 +5290,26 @@ body.builder-mode .header {
 /*
   Responsive
 */
-body.mobile-view .header .linkContainer {
+body.mobile-view .story-header .linkContainer {
   display: none;
 }
-body.mobile-view .header .logo-title-container {
+body.mobile-view .story-header .logo-title-container {
   max-width: 90%;
 }
 /*
  * Refugee
  */
-body.mobile-view .header:not(.compact) .logo-wrapper {
+body.mobile-view .story-header:not(.compact) .logo-wrapper {
   display: none;
 }
-body.mobile-view .header .title {
+body.mobile-view .story-header .title {
   font-size: 1.3em;
   margin-left: 5px;
   transition: initial;
 }
-body.mobile-view .header .shareIcon {
+body.mobile-view .story-header .shareIcon {
   vertical-align: 1px;
 }
-body.custom-story-usgs .header.compact .logoImg {
+body.custom-story-usgs .story-header.compact .logoImg {
   -webkit-filter: drop-shadow(0px 0px 5px rgba(255, 255, 255, 0.8));
 }
