@@ -403,9 +403,9 @@ define({
     messages: {
       arcgisItems: {
         webmapNotOwned: {
-          title: 'Web map is owned by another user',
-          body: 'In order to create a Crowdsource story, you must be the owner of the web map. We\'ll create a copy of the web map you\'re using and save it to your content.',
-          confirmBtn: 'Continue'
+          title: 'Message from Crowdsource Builder',
+          body: 'You tried to build a Crowdsource story using someone else\'s web map. A copy of their map was created in your account, and your story uses that copy.',
+          confirmBtn: 'Ok'
         }
       }
     },

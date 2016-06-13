@@ -99,7 +99,8 @@ define({
           selectNew: 'Use a different photo'
         },
         location: {
-          gettingLocatingAlt: 'Finding your location',
+          gettingLocation: 'Locating',
+          locate: 'Locate Me',
           search: 'Search'
         },
         termsAndConditions: {
