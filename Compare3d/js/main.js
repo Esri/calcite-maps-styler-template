@@ -38,6 +38,8 @@ define([
 
   "esri/portal/Portal",
 
+  "esri/request",
+
   "esri/views/SceneView",
   "esri/WebScene",
 
@@ -64,6 +66,7 @@ define([
   mapTemplate,
   registry,
   Portal,
+  esriRequest,
   SceneView,
   WebScene,
   Scheduler,
@@ -82,6 +85,16 @@ define([
           this.reportError(new Error(this.config.i18n.scene.support + config.webGLSupport.helpMessage));
           return;
         }
+
+        // temp fix for scene layer
+        var regex = /\/SceneServer\/layers\/\d+\/?$/;
+        esriRequest.setRequestPreCallback(function(request) {
+          if (request && typeof request === "object" && !request.content && regex.test(request.url)) {
+            request.content = { f: "json" };
+          }
+          return request;
+        });
+
         this.config = config;
         var scenes = [],
           sceneLength = 0,

@@ -46,6 +46,8 @@ define([
 
   "esri/renderers/SimpleRenderer",
 
+  "esri/request",
+
   "esri/symbols/ExtrudeSymbol3DLayer",
   "esri/symbols/PictureMarkerSymbol",
   "esri/symbols/PointSymbol3D",
@@ -75,6 +77,7 @@ define([
   Graphic, FeatureLayer, GraphicsLayer,
   PortalItem,
   SimpleRenderer,
+  esriRequest,
   ExtrudeSymbol3DLayer, PictureMarkerSymbol, PointSymbol3D, PolygonSymbol3D, ObjectSymbol3DLayer,
   QueryTask, Query,
   SceneView, externalRenderers, WebScene,
@@ -103,6 +106,16 @@ define([
           this.reportError(error);
           return;
         }
+
+        // temp fix for scene layer
+        var regex = /\/SceneServer\/layers\/\d+\/?$/;
+        esriRequest.setRequestPreCallback(function(request) {
+          if (request && typeof request === "object" && !request.content && regex.test(request.url)) {
+            request.content = { f: "json" };
+          }
+          return request;
+        });
+
         this.config = config;
         this.uiUtils = new uiUtils();
         this.uiUtils.init(config);
