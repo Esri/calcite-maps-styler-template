@@ -405,7 +405,8 @@ define([
         url: url,
         popupTemplate: lyr.popupTemplate,
         page: 0,
-        max: 0
+        max: 0,
+        expr: lyr.definitionExpression
       };
 
       var flds = [];
@@ -470,7 +471,7 @@ define([
       var query = new Query();
       query.returnGeometry = true;
       query.outFields = ["*"];
-      query.where = "1=1";
+      query.where = (this.vizLayer.expr) ? this.vizLayer.expr : "1=1";
       queryTask.execute(query).then(lang.hitch(this, function(results) {
         console.log(results);
         if (this.config.vizType === "Polygon Extrusion" && results.geometryType !== "polygon") {
