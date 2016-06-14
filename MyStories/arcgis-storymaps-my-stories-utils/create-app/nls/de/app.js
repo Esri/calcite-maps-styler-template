@@ -47,7 +47,7 @@ define({
     "basic": "Denken Sie minimalistisch – dies ist optimal für eine Karte"
   },
   "signInBuildDialog": {
-    "welcome": "ä_Welcome___Ü!",
-    "continue": "ä_Continue to {{APP_NAME}} builder___________Ü"
+    "welcome": "Willkommen!",
+    "continue": "Mit {{APP_NAME}} Builder fortfahren"
   }
 });

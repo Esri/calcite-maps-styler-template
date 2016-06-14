@@ -69,8 +69,8 @@ define({
     "geolocationBtnTitle": "Geolokalisering",
     "ascendingSort": "Stigande",
     "descendingSort": "Fallande",
-    "viewBtnTitle": "Å_View__ö",
-    "backButtonTitle": "Å_Back__ö"
+    "viewBtnTitle": "Visa",
+    "backButtonTitle": "Bakom"
   },
   "errorMessages": {
     "emptyGroup": "Den konfigurerade gruppen innehåller inga data för att köra frågan.",

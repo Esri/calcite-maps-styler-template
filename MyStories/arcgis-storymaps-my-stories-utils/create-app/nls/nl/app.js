@@ -47,7 +47,7 @@ define({
     "basic": "Denk minimalistisch, perfect voor één kaart"
   },
   "signInBuildDialog": {
-    "welcome": "Ĳ_Welcome___ä!",
-    "continue": "Ĳ_Continue to {{APP_NAME}} builder___________ä"
+    "welcome": "Welkom!",
+    "continue": "Doorgaan met {{APP_NAME}} builder"
   }
 });

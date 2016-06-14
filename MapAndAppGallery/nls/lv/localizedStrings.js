@@ -69,8 +69,8 @@ define({
     "geolocationBtnTitle": "Ģeoizvietojums",
     "ascendingSort": "Pieaugoši",
     "descendingSort": "Dilstošā secībā",
-    "viewBtnTitle": "ķ_View__ū",
-    "backButtonTitle": "ķ_Back__ū"
+    "viewBtnTitle": "Skats",
+    "backButtonTitle": "Atpakaļ"
   },
   "errorMessages": {
     "emptyGroup": "Konfigurētajā grupā nav nekādu datu, lai veiktu vaicājumu.",

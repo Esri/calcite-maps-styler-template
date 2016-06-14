@@ -2,9 +2,9 @@ define({
   "app": {
     "title": "مكتبة الخريطة",
     "errors": {
-      "noMaps": "بيت_This group does not contain any public web maps to display__________________لاحقة",
-      "noGroup": "بيت_Group not found______لاحقة",
-      "createGroup": "بيت_Unable to create group________لاحقة",
+      "noMaps": "لا تحتوي المجموعة الحالية على أي خرائط ويب عامة للعرض",
+      "noGroup": "المجموعة غير موجودة",
+      "createGroup": "يتعذر إنشاء المجموعة",
       "bitly": "يستخدم bitly لاختصار عنوان url حتى يمكن مشاركته. أظهر ملف \"اقرأني\" للحصول على تفاصيل إنشاء مفتاح bitly واستخدامه",
       "general": "خطأ"
     },

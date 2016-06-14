@@ -47,7 +47,7 @@ define({
     "basic": "เรียบง่าย เหมาะสำหรับหนึ่งแผนที่"
   },
   "signInBuildDialog": {
-    "welcome": "ก้_Welcome___ษฺ!",
-    "continue": "ก้_Continue to {{APP_NAME}} builder___________ษฺ"
+    "welcome": "ยินดีต้อนรับ!",
+    "continue": "ต่อเนื่องกับ{{APP_NAME}} บิวเดอร์"
   }
 });

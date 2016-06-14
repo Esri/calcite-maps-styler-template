@@ -47,7 +47,7 @@ define({
     "basic": "Минимальные усилия, идеально для одной карты"
   },
   "signInBuildDialog": {
-    "welcome": "Ж_Welcome___Я!",
-    "continue": "Ж_Continue to {{APP_NAME}} builder___________Я"
+    "welcome": "Добро пожаловать!",
+    "continue": "Перейти к конструктору {{APP_NAME}}"
   }
 });

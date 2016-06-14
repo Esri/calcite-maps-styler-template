@@ -32,41 +32,41 @@ define({
     "avgRating": "Vērtējums",
     "noWebMapInGroup": "Konfigurētā grupa nav derīga vai ar šo grupu vēl nav kopīgots neviens elements",
     "infoBtnToolTip": "Kartes informācija",
-    "openWebmapList": "ķ_Open panel____ū",
-    "closeWebmapList": "ķ_Close panel____ū"
+    "openWebmapList": "Atvērt paneli",
+    "closeWebmapList": "Aizvērt paneli"
   },
   "geoform": {
-    "enterInformation": "ķ_Details___ū",
-    "selectAttachments": "ķ_Attachments____ū",
-    "selectFileText": "ķ_Browse___ū",
-    "enterLocation": "ķ_Location___ū",
-    "reportItButton": "ķ_Submit___ū",
-    "cancelButton": "ķ_Cancel___ū",
-    "requiredField": "ķ_(required)____ū",
-    "selectDefaultText": "ķ_Select&hellip;_____ū",
-    "invalidInputValue": "ķ_Please enter valid value_________ū.",
-    "noFieldsConfiguredMessage": "ķ_Layer fields are not configured to capture data_______________ū",
-    "invalidSmallNumber": "ķ_Please enter an integer________ū",
+    "enterInformation": "Detaļas",
+    "selectAttachments": "Pielikumi",
+    "selectFileText": "Pārlūkot",
+    "enterLocation": "Izvietojums",
+    "reportItButton": "Iesniegt",
+    "cancelButton": "Atcelt",
+    "requiredField": "(nepieciešams)",
+    "selectDefaultText": "Izvēlēties&hellip;",
+    "invalidInputValue": "Lūdzu, ievadiet derīgu vērtību.",
+    "noFieldsConfiguredMessage": "Slāņa lauki nav konfigurēti datu tveršanai",
+    "invalidSmallNumber": "Lūdzu ievadiet veselu skaitli",
     "invalidNumber": "Lūdzu ievadiet veselu skaitli",
     "invalidFloat": "Lūdzu ievadiet numuru",
     "invalidDouble": "Lūdzu ievadiet numuru",
-    "requiredFields": "ķ_Please provide values for all required fields_______________ū",
-    "selectLocation": "ķ_Please select the location for your report______________ū",
-    "numericRangeHintMessage": "ķ_${openStrong}Hint:${closeStrong} Minimum value ${minValue} and maximum value ${maxValue}___________________________ū",
-    "dateRangeHintMessage": "ķ_${openStrong}Hint:${closeStrong} Minimum date ${minValue} and Maximum date ${maxValue}___________________________ū",
-    "errorsInApplyEdits": "ķ_Report could not be submitted__________ū",
-    "attachmentSelectedMsg": "ķ_attachment(s) selected________ū",
-    "attachmentUploadStatus": "ķ_${failed} of ${total} attachment(s) failed to upload_________________ū",
-    "geoLocationError": "ķ_Current location not available__________ū",
-    "geoLocationOutOfExtent": "ķ_Current location is out of basemap extent_____________ū",
-    "submitButtonTooltip": "ķ_Save__ū",
-    "cancelButtonTooltip": "ķ_Cancel___ū",
-    "geoformBackButtonTooltip": "ķ_Return to the report list_________ū",
-    "updateFeaturesConfirmationMsg": "ķ_${count} features will be updated___________ū",
-    "attachmentHeaderText": "ķ_Attachments____ū"
+    "requiredFields": "Lūdzu nodrošiniet vērtības visiem obligātajiem laukiem",
+    "selectLocation": "Lūdzu atlasiet vietu savam ziņojumam",
+    "numericRangeHintMessage": "${openStrong}Padoms.${closeStrong} Minimālā vērtība ${minValue} un maksimālā vērtība ${maxValue}",
+    "dateRangeHintMessage": "${openStrong}Padoms.${closeStrong} Minimālais datums ${minValue} un maksimālais datums ${maxValue}",
+    "errorsInApplyEdits": "Neizdevās iesniegt ziņojumu",
+    "attachmentSelectedMsg": "atlasītais(-ie) pielikums(-i)",
+    "attachmentUploadStatus": "${failed} no ${total} pielikuma(-iem) neizdevās augšupielādēt",
+    "geoLocationError": "Pašreizējā vieta nav pieejama",
+    "geoLocationOutOfExtent": "Pašreizējā vieta ir ārpus pamatkartes pārklājuma",
+    "submitButtonTooltip": "Saglabāt",
+    "cancelButtonTooltip": "Atcelt",
+    "geoformBackButtonTooltip": "Atgriezties pārskatu sarakstā",
+    "updateFeaturesConfirmationMsg": "${count} elementi tiks atjaunināti",
+    "attachmentHeaderText": "Piesaistes"
   },
   "mapViewer": {
-    "zoomInToolTip": "ķ_Zoom in___ū",
+    "zoomInToolTip": "Pietuvināt",
     "zoomOutToolTip": "Attālināt"
   },
   "applicationHeader": {
@@ -77,52 +77,52 @@ define({
   "dataviewer": {
     "noIssuesReported": "Nav pieejamu ziņojumu",
     "noFeatureGeometry": "Funkciju nevar parādīt",
-    "ascendingFlagTitle": "ķ_Sort in ascending order________ū",
-    "descendingFlagTitle": "ķ_Sort in descending order________ū",
-    "filterLabel": "ķ_Filter___ū",
-    "valueRadioButtonLabel": "ķ_Value___ū",
-    "uniqueRadioButtonLabel": "ķ_Unique___ū",
-    "selectLayerToBegin": "ķ_Select a category to get started___________ū",
-    "layerFeatureCount": "ķ_${featureCount} records________ū"
+    "ascendingFlagTitle": "Kārtot augošā secībā",
+    "descendingFlagTitle": "Kārtot dilstošā secībā",
+    "filterLabel": "Filtrs",
+    "valueRadioButtonLabel": "Lielums",
+    "uniqueRadioButtonLabel": "Unikāls",
+    "selectLayerToBegin": "Lai sāktu darbu, atlasiet kategoriju",
+    "layerFeatureCount": "${featureCount} ieraksti"
   },
   "timeSlider": {
-    "timeSliderLabel": "ķ_Time range____ū",
-    "timeSliderInEditModeAlert": "ķ_Time slider unavailable while editing____________ū"
+    "timeSliderLabel": "Laika diapazons",
+    "timeSliderInEditModeAlert": "Rediģējot laika slīdnis nav pieejams"
   },
   "comment": {
-    "commentsFormSubmitButton": "ķ_Save__ū",
-    "commentsFormCancelButton": "ķ_Cancel___ū",
-    "errorInSubmittingComment": "ķ_Edits could not be saved_________ū.",
-    "emptyCommentMessage": "ķ_Value required_____ū",
+    "commentsFormSubmitButton": "Saglabāt",
+    "commentsFormCancelButton": "Atcelt",
+    "errorInSubmittingComment": "Labojumus nevarēja saglabāt.",
+    "emptyCommentMessage": "Nepieciešama vērtība",
     "placeHolderText": "",
-    "noCommentsAvailableText": "ķ_No records available_______ū",
-    "remainingTextCount": "ķ_${0} character(s) remain________ū",
-    "showNoText": "ķ_No__ū"
+    "noCommentsAvailableText": "Nav pieejams neviens ieraksts",
+    "remainingTextCount": "Palikusi(-šas) ${0} rakstzīme(-s)",
+    "showNoText": "Nē"
   },
   "main": {
     "noGroup": "Nav konfigurētas grupas"
   },
   "search": {
-    "searchIconTooltip": "ķ_Search this layer______ū",
-    "noResultFoundText": "ķ_No results found______ū",
-    "searchInEditModeAlert": "ķ_Search unavailable while editing___________ū"
+    "searchIconTooltip": "Meklēt šo slāni",
+    "noResultFoundText": "Rezultāti nav atrasti",
+    "searchInEditModeAlert": "Rediģējot meklēšana nav pieejama"
   },
   "manualRefresh": {
-    "manualRefreshIconTooltip": "ķ_Refresh___ū",
+    "manualRefreshIconTooltip": "Atjaunot",
     "confirmManualRefeshText": "Visas atlases un nesaglabātās izmaiņas tiks atmestas"
   },
   "help": {
-    "helpIconTooltip": "ķ_Help__ū"
+    "helpIconTooltip": "Palīdzība"
   },
   "filter": {
-    "noFeatureFoundText": "ķ_No feature found for this value___________ū.",
-    "distinctQueryFalied": "ķ_No distinct values found for the field_____________ū.",
-    "andText": "ķ_and__ū",
-    "filterInEditModeAlert": "ķ_Filters unavailable while editing___________ū",
-    "dropdownSelectOption": "ķ_Select___ū"
+    "noFeatureFoundText": "Šai vērtībai nav atrasts neviens elements.",
+    "distinctQueryFalied": "Laukam nav atrasta neviena atšķirīga vērtība.",
+    "andText": "un",
+    "filterInEditModeAlert": "Rediģējot filtri nav pieejami",
+    "dropdownSelectOption": "Izvēlēties"
   },
   "detailsPanel": {
-    "editContentText": "ķ_Edit record____ū"
+    "editContentText": "Rediģēt ierakstu"
   },
   "signOutPage": {
     "signOutMessage": "Jūs esat veiksmīgi izrakstījies",

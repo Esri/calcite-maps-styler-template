@@ -69,8 +69,8 @@ define({
     "geolocationBtnTitle": "Γεωγραφική τοποθεσία",
     "ascendingSort": "Αύξουσα",
     "descendingSort": "Φθίνουσα",
-    "viewBtnTitle": "Đ_View__ớ",
-    "backButtonTitle": "Đ_Back__ớ"
+    "viewBtnTitle": "Προβολή",
+    "backButtonTitle": "Πίσω"
   },
   "errorMessages": {
     "emptyGroup": "Η διαμορφωμένη ομάδα δεν διαθέτει δεδομένα για να εκτελεστεί ερώτημα.",

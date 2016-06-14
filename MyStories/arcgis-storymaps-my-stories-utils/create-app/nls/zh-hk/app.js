@@ -47,7 +47,7 @@ define({
     "basic": "製作一張極簡、優質的地圖"
   },
   "signInBuildDialog": {
-    "welcome": "試_Welcome___驗!",
-    "continue": "試_Continue to {{APP_NAME}} builder___________驗"
+    "welcome": "歡迎使用!",
+    "continue": "繼續使用 {{APP_NAME}} 建立器"
   }
 });

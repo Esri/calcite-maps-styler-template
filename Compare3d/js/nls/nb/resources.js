@@ -17,10 +17,10 @@
 define({
   "scene": {
     "error": "Kan ikke opprette scenen",
-    "support": "å_Browser not supported_______ø",
-    "noScene": "å_Specify scene id(s)_______ø",
-    "noConfig": "å_Config is not defined_______ø",
-    "invalidScene": "å_Unable to create scene________ø"
+    "support": "Nettleseren støttes ikke",
+    "noScene": "Angi scene-ID",
+    "noConfig": "Konfigurasjon er ikke definert",
+    "invalidScene": "Kan ikke opprette scenen"
   },
   "tools": {
     "linkLabel": "Koble sammen visninger",

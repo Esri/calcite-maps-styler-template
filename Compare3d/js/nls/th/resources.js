@@ -17,10 +17,10 @@
 define({
   "scene": {
     "error": "ไม่สามารถสร้างเว็บซีน",
-    "support": "ก้_Browser not supported_______ษฺ",
-    "noScene": "ก้_Specify scene id(s)_______ษฺ",
-    "noConfig": "ก้_Config is not defined_______ษฺ",
-    "invalidScene": "ก้_Unable to create scene________ษฺ"
+    "support": "ไม่รองรับเบราว์เซอร์",
+    "noScene": "ระบุเลขของซีน",
+    "noConfig": "ไม่ได้กำหนดการปรับแต่งไว้",
+    "invalidScene": "ไม่สามารถสร้างเว็บซีน"
   },
   "tools": {
     "linkLabel": "วิวเชื่อมกัน",

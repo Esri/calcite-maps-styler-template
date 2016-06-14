@@ -47,7 +47,7 @@ define({
     "basic": "Ajattele minimalistisesti, sopii yhdelle kartalle"
   },
   "signInBuildDialog": {
-    "welcome": "Å_Welcome___ö!",
-    "continue": "Å_Continue to {{APP_NAME}} builder___________ö"
+    "welcome": "Tervetuloa!",
+    "continue": "Jatka muodostustoimintoon {{APP_NAME}}"
   }
 });

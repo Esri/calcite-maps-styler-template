@@ -2,9 +2,9 @@ define({
   "app": {
     "title": "Kartes karuselis",
     "errors": {
-      "noMaps": "ķ_This group does not contain any public web maps to display__________________ū",
-      "noGroup": "ķ_Group not found______ū",
-      "createGroup": "ķ_Unable to create group________ū",
+      "noMaps": "Šajā grupā nav ietverta neviena parādīšanai paredzēta publiska tīmekļa karte",
+      "noGroup": "Grupa nav atrasta",
+      "createGroup": "Nevar izveidot grupu",
       "bitly": "bitly tiek izmantots, lai saīsinātu url koplietošanai. Apskatīt readme faila informāciju par bitly atslēgas izveidošanas un lietošanas detaļām",
       "general": "Kļūda"
     },

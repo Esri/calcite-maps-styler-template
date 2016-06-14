@@ -17,10 +17,10 @@
 define({
   "scene": {
     "error": "Vaadet ei saanud luua",
-    "support": "Š_Browser not supported_______ä",
-    "noScene": "Š_Specify scene id(s)_______ä",
-    "noConfig": "Š_Config is not defined_______ä",
-    "invalidScene": "Š_Unable to create scene________ä"
+    "support": "Brauserit ei toetata",
+    "noScene": "Määra vaate ID-d",
+    "noConfig": "Konfiguratsioon on määramata",
+    "invalidScene": "Vaadet ei saanud luua"
   },
   "tools": {
     "linkLabel": "Lingi vaated",

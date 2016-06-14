@@ -47,7 +47,7 @@ define({
     "basic": "Optimisez vos cartes en restant minimaliste"
   },
   "signInBuildDialog": {
-    "welcome": "æ_Welcome___Â!",
-    "continue": "æ_Continue to {{APP_NAME}} builder___________Â"
+    "welcome": "Bienvenue !",
+    "continue": "Continuer dans le générateur {{APP_NAME}}"
   }
 });

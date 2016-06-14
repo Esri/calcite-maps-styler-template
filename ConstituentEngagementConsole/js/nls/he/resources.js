@@ -32,41 +32,41 @@ define({
     "avgRating": "דירוג",
     "noWebMapInGroup": "הקבוצה שהוגדרה לא חוקית או שלא שותפו עדיין פריטים עם קבוצה זו",
     "infoBtnToolTip": "מידע על המפה",
-    "openWebmapList": "כן_Open panel____ש",
-    "closeWebmapList": "כן_Close panel____ש"
+    "openWebmapList": "פתח את הפאנל",
+    "closeWebmapList": "סגור פאנל"
   },
   "geoform": {
-    "enterInformation": "כן_Details___ש",
-    "selectAttachments": "כן_Attachments____ש",
-    "selectFileText": "כן_Browse___ש",
-    "enterLocation": "כן_Location___ש",
-    "reportItButton": "כן_Submit___ש",
-    "cancelButton": "כן_Cancel___ש",
-    "requiredField": "כן_(required)____ש",
-    "selectDefaultText": "כן_Select&hellip;_____ש",
-    "invalidInputValue": "כן_Please enter valid value_________ש.",
-    "noFieldsConfiguredMessage": "כן_Layer fields are not configured to capture data_______________ש",
-    "invalidSmallNumber": "כן_Please enter an integer________ש",
+    "enterInformation": "פרטים",
+    "selectAttachments": "קבצים מקושרים",
+    "selectFileText": "נתב",
+    "enterLocation": "מיקום",
+    "reportItButton": "שלח",
+    "cancelButton": "ביטול",
+    "requiredField": "(נדרש)",
+    "selectDefaultText": "בחר&hellip;",
+    "invalidInputValue": "הזן ערך חוקי.",
+    "noFieldsConfiguredMessage": "שדות השכבות לא מוגדרים ללכידת נתונים",
+    "invalidSmallNumber": "הזן מספר שלם",
     "invalidNumber": "הזן מספר שלם",
     "invalidFloat": "הזן מספר",
     "invalidDouble": "הזן מספר",
-    "requiredFields": "כן_Please provide values for all required fields_______________ש",
-    "selectLocation": "כן_Please select the location for your report______________ש",
-    "numericRangeHintMessage": "כן_${openStrong}Hint:${closeStrong} Minimum value ${minValue} and maximum value ${maxValue}___________________________ש",
-    "dateRangeHintMessage": "כן_${openStrong}Hint:${closeStrong} Minimum date ${minValue} and Maximum date ${maxValue}___________________________ש",
-    "errorsInApplyEdits": "כן_Report could not be submitted__________ש",
-    "attachmentSelectedMsg": "כן_attachment(s) selected________ש",
-    "attachmentUploadStatus": "כן_${failed} of ${total} attachment(s) failed to upload_________________ש",
-    "geoLocationError": "כן_Current location not available__________ש",
-    "geoLocationOutOfExtent": "כן_Current location is out of basemap extent_____________ש",
-    "submitButtonTooltip": "כן_Save__ש",
-    "cancelButtonTooltip": "כן_Cancel___ש",
-    "geoformBackButtonTooltip": "כן_Return to the report list_________ש",
-    "updateFeaturesConfirmationMsg": "כן_${count} features will be updated___________ש",
-    "attachmentHeaderText": "כן_Attachments____ש"
+    "requiredFields": "ציין ערכים בכל שדות החובה",
+    "selectLocation": "בחר מיקום לדוח",
+    "numericRangeHintMessage": "${openStrong}רמז:${closeStrong} ערך מינימלי ${minValue} וערך מקסימלי ${maxValue}",
+    "dateRangeHintMessage": "${openStrong}רמז:${closeStrong} תאריך מינימלי ${minValue} ותאריך מקסימלי ${maxValue}",
+    "errorsInApplyEdits": "לא ניתן לשלוח דוח",
+    "attachmentSelectedMsg": "קבצים מצורפים נבחרו",
+    "attachmentUploadStatus": "נכשלה ההעלאה של ${failed} מתוך ${total} קבצים מצורפים",
+    "geoLocationError": "מיקום נוכחי לא זמין",
+    "geoLocationOutOfExtent": "המיקום נוכחי נמצא מחוץ לגבולות מפת הבסיס",
+    "submitButtonTooltip": "שמירה",
+    "cancelButtonTooltip": "ביטול",
+    "geoformBackButtonTooltip": "חזור לרשימת הדוחות",
+    "updateFeaturesConfirmationMsg": "${count} תכונות יעודכנו",
+    "attachmentHeaderText": "קבצים מקושרים"
   },
   "mapViewer": {
-    "zoomInToolTip": "כן_Zoom in___ש",
+    "zoomInToolTip": "התמקד פנימה",
     "zoomOutToolTip": "התמקד החוצה"
   },
   "applicationHeader": {
@@ -77,52 +77,52 @@ define({
   "dataviewer": {
     "noIssuesReported": "אין דוחות זמינים",
     "noFeatureGeometry": "לא ניתן להציג את הישות",
-    "ascendingFlagTitle": "כן_Sort in ascending order________ש",
-    "descendingFlagTitle": "כן_Sort in descending order________ש",
-    "filterLabel": "כן_Filter___ש",
-    "valueRadioButtonLabel": "כן_Value___ש",
-    "uniqueRadioButtonLabel": "כן_Unique___ש",
-    "selectLayerToBegin": "כן_Select a category to get started___________ש",
-    "layerFeatureCount": "כן_${featureCount} records________ש"
+    "ascendingFlagTitle": "מיין בסדר עולה",
+    "descendingFlagTitle": "מיין בסדר יורד",
+    "filterLabel": "מסנן",
+    "valueRadioButtonLabel": "ערך",
+    "uniqueRadioButtonLabel": "יחודי",
+    "selectLayerToBegin": "בחר קטגוריה כדי להתחיל",
+    "layerFeatureCount": "${featureCount} רשומות"
   },
   "timeSlider": {
-    "timeSliderLabel": "כן_Time range____ש",
-    "timeSliderInEditModeAlert": "כן_Time slider unavailable while editing____________ש"
+    "timeSliderLabel": "טווח זמן",
+    "timeSliderInEditModeAlert": "סרגל הזמן אינו זמין בעת עריכה"
   },
   "comment": {
-    "commentsFormSubmitButton": "כן_Save__ש",
-    "commentsFormCancelButton": "כן_Cancel___ש",
-    "errorInSubmittingComment": "כן_Edits could not be saved_________ש.",
-    "emptyCommentMessage": "כן_Value required_____ש",
+    "commentsFormSubmitButton": "שמירה",
+    "commentsFormCancelButton": "ביטול",
+    "errorInSubmittingComment": "לא ניתן לשמור פעולות עריכה.",
+    "emptyCommentMessage": "ערך דרוש",
     "placeHolderText": "",
-    "noCommentsAvailableText": "כן_No records available_______ש",
-    "remainingTextCount": "כן_${0} character(s) remain________ש",
-    "showNoText": "כן_No__ש"
+    "noCommentsAvailableText": "אין רשומות זמינות",
+    "remainingTextCount": "נותרו ${0} תווים",
+    "showNoText": "לא"
   },
   "main": {
     "noGroup": "לא הוגדרה קבוצה"
   },
   "search": {
-    "searchIconTooltip": "כן_Search this layer______ש",
-    "noResultFoundText": "כן_No results found______ש",
-    "searchInEditModeAlert": "כן_Search unavailable while editing___________ש"
+    "searchIconTooltip": "חפש בשכבה זו",
+    "noResultFoundText": "לא נמצאו תוצאות",
+    "searchInEditModeAlert": "חיפוש אינו זמין בעת עריכה"
   },
   "manualRefresh": {
-    "manualRefreshIconTooltip": "כן_Refresh___ש",
+    "manualRefreshIconTooltip": "רענן",
     "confirmManualRefeshText": "כל הבחירות והשינויים שלא נשמרו יבוטלו"
   },
   "help": {
-    "helpIconTooltip": "כן_Help__ש"
+    "helpIconTooltip": "עזרה"
   },
   "filter": {
-    "noFeatureFoundText": "כן_No feature found for this value___________ש.",
-    "distinctQueryFalied": "כן_No distinct values found for the field_____________ש.",
-    "andText": "כן_and__ש",
-    "filterInEditModeAlert": "כן_Filters unavailable while editing___________ש",
-    "dropdownSelectOption": "כן_Select___ש"
+    "noFeatureFoundText": "לא נמצאה תכונה עבור ערך זה.",
+    "distinctQueryFalied": "לא נמצאו ערכים מובנים עבור השדה.",
+    "andText": "וגם",
+    "filterInEditModeAlert": "מסננים אינם זמינים בעת עריכה",
+    "dropdownSelectOption": "בחר"
   },
   "detailsPanel": {
-    "editContentText": "כן_Edit record____ש"
+    "editContentText": "ערוך רשומה"
   },
   "signOutPage": {
     "signOutMessage": "התנתקת בהצלחה",

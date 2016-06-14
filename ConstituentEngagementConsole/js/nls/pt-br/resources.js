@@ -32,41 +32,41 @@ define({
     "avgRating": "Classificação",
     "noWebMapInGroup": "O grupo configurado é inválido ou nenhum item ainda foi compartilhado com este grupo",
     "infoBtnToolTip": "Informações do Mapa",
-    "openWebmapList": "ã_Open panel____Ç",
-    "closeWebmapList": "ã_Close panel____Ç"
+    "openWebmapList": "Abrir painel",
+    "closeWebmapList": "Fechar painel"
   },
   "geoform": {
-    "enterInformation": "ã_Details___Ç",
-    "selectAttachments": "ã_Attachments____Ç",
-    "selectFileText": "ã_Browse___Ç",
-    "enterLocation": "ã_Location___Ç",
-    "reportItButton": "ã_Submit___Ç",
-    "cancelButton": "ã_Cancel___Ç",
-    "requiredField": "ã_(required)____Ç",
-    "selectDefaultText": "ã_Select&hellip;_____Ç",
-    "invalidInputValue": "ã_Please enter valid value_________Ç.",
-    "noFieldsConfiguredMessage": "ã_Layer fields are not configured to capture data_______________Ç",
-    "invalidSmallNumber": "ã_Please enter an integer________Ç",
+    "enterInformation": "Detalhes",
+    "selectAttachments": "Anexos",
+    "selectFileText": "Procurar",
+    "enterLocation": "Localização",
+    "reportItButton": "Enviar",
+    "cancelButton": "Cancelar",
+    "requiredField": "(exigido)",
+    "selectDefaultText": "Selecionar&hellip;",
+    "invalidInputValue": "Insira um valor válido.",
+    "noFieldsConfiguredMessage": "Os campos da camada não configurados para capturar dados",
+    "invalidSmallNumber": "Digite um número inteiro",
     "invalidNumber": "Digite um número inteiro",
     "invalidFloat": "Digite um número",
     "invalidDouble": "Digite um número",
-    "requiredFields": "ã_Please provide values for all required fields_______________Ç",
-    "selectLocation": "ã_Please select the location for your report______________Ç",
-    "numericRangeHintMessage": "ã_${openStrong}Hint:${closeStrong} Minimum value ${minValue} and maximum value ${maxValue}___________________________Ç",
-    "dateRangeHintMessage": "ã_${openStrong}Hint:${closeStrong} Minimum date ${minValue} and Maximum date ${maxValue}___________________________Ç",
-    "errorsInApplyEdits": "ã_Report could not be submitted__________Ç",
-    "attachmentSelectedMsg": "ã_attachment(s) selected________Ç",
-    "attachmentUploadStatus": "ã_${failed} of ${total} attachment(s) failed to upload_________________Ç",
-    "geoLocationError": "ã_Current location not available__________Ç",
-    "geoLocationOutOfExtent": "ã_Current location is out of basemap extent_____________Ç",
-    "submitButtonTooltip": "ã_Save__Ç",
-    "cancelButtonTooltip": "ã_Cancel___Ç",
-    "geoformBackButtonTooltip": "ã_Return to the report list_________Ç",
-    "updateFeaturesConfirmationMsg": "ã_${count} features will be updated___________Ç",
-    "attachmentHeaderText": "ã_Attachments____Ç"
+    "requiredFields": "Forneça valores para todos os campos exigidos",
+    "selectLocation": "Selecione o local para seu relatório",
+    "numericRangeHintMessage": "${openStrong}Sugestão:${closeStrong} Valor mínimo ${minValue} e Valor máximo ${maxValue}",
+    "dateRangeHintMessage": "${openStrong}Sugestão:${closeStrong} Data mínima ${minValue} e Data máxima ${maxValue}",
+    "errorsInApplyEdits": "Não foi possível enviar o relatório",
+    "attachmentSelectedMsg": "anexos selecionados",
+    "attachmentUploadStatus": "Falha ao carregar ${failed} de ${total} anexos",
+    "geoLocationError": "O local atual não está disponível",
+    "geoLocationOutOfExtent": "O local atual está fora da extensão do mapa base",
+    "submitButtonTooltip": "Salvar",
+    "cancelButtonTooltip": "Cancelar",
+    "geoformBackButtonTooltip": "Retornar para lista de relatório",
+    "updateFeaturesConfirmationMsg": "${count} feições serão atualizadas",
+    "attachmentHeaderText": "Anexos"
   },
   "mapViewer": {
-    "zoomInToolTip": "ã_Zoom in___Ç",
+    "zoomInToolTip": "Mais Zoom",
     "zoomOutToolTip": "Menos Zoom"
   },
   "applicationHeader": {
@@ -77,52 +77,52 @@ define({
   "dataviewer": {
     "noIssuesReported": "Nenhum relatório disponível",
     "noFeatureGeometry": "A feição não pode ser exibida",
-    "ascendingFlagTitle": "ã_Sort in ascending order________Ç",
-    "descendingFlagTitle": "ã_Sort in descending order________Ç",
-    "filterLabel": "ã_Filter___Ç",
-    "valueRadioButtonLabel": "ã_Value___Ç",
-    "uniqueRadioButtonLabel": "ã_Unique___Ç",
-    "selectLayerToBegin": "ã_Select a category to get started___________Ç",
-    "layerFeatureCount": "ã_${featureCount} records________Ç"
+    "ascendingFlagTitle": "Classificar em ordem crescente",
+    "descendingFlagTitle": "Classificar em ordem decrescente",
+    "filterLabel": "Filtrar",
+    "valueRadioButtonLabel": "Valor",
+    "uniqueRadioButtonLabel": "Único",
+    "selectLayerToBegin": "Selecione uma categoria para iniciar",
+    "layerFeatureCount": "${featureCount} registros"
   },
   "timeSlider": {
-    "timeSliderLabel": "ã_Time range____Ç",
-    "timeSliderInEditModeAlert": "ã_Time slider unavailable while editing____________Ç"
+    "timeSliderLabel": "Intervalo de tempo",
+    "timeSliderInEditModeAlert": "Controle deslizante de tempo indisponível durante edição"
   },
   "comment": {
-    "commentsFormSubmitButton": "ã_Save__Ç",
-    "commentsFormCancelButton": "ã_Cancel___Ç",
-    "errorInSubmittingComment": "ã_Edits could not be saved_________Ç.",
-    "emptyCommentMessage": "ã_Value required_____Ç",
+    "commentsFormSubmitButton": "Salvar",
+    "commentsFormCancelButton": "Cancelar",
+    "errorInSubmittingComment": "Não foi possível salvar as edições.",
+    "emptyCommentMessage": "Valor exigido",
     "placeHolderText": "",
-    "noCommentsAvailableText": "ã_No records available_______Ç",
-    "remainingTextCount": "ã_${0} character(s) remain________Ç",
-    "showNoText": "ã_No__Ç"
+    "noCommentsAvailableText": "Nenhum registro disponível",
+    "remainingTextCount": "${0} caracteres restantes",
+    "showNoText": "Não"
   },
   "main": {
     "noGroup": "Nenhum grupo configurado"
   },
   "search": {
-    "searchIconTooltip": "ã_Search this layer______Ç",
-    "noResultFoundText": "ã_No results found______Ç",
-    "searchInEditModeAlert": "ã_Search unavailable while editing___________Ç"
+    "searchIconTooltip": "Pesquisar esta camada",
+    "noResultFoundText": "Nenhum resultado encontrado",
+    "searchInEditModeAlert": "Pesquisa indisponível durante edição"
   },
   "manualRefresh": {
-    "manualRefreshIconTooltip": "ã_Refresh___Ç",
+    "manualRefreshIconTooltip": "Atualizar",
     "confirmManualRefeshText": "Todas as seleções e alterações não salvas serão descartadas"
   },
   "help": {
-    "helpIconTooltip": "ã_Help__Ç"
+    "helpIconTooltip": "Ajuda"
   },
   "filter": {
-    "noFeatureFoundText": "ã_No feature found for this value___________Ç.",
-    "distinctQueryFalied": "ã_No distinct values found for the field_____________Ç.",
-    "andText": "ã_and__Ç",
-    "filterInEditModeAlert": "ã_Filters unavailable while editing___________Ç",
-    "dropdownSelectOption": "ã_Select___Ç"
+    "noFeatureFoundText": "Nenhuma feição encontrada para este valor.",
+    "distinctQueryFalied": "Nenhum valor distinto encontrado para o campo.",
+    "andText": "e",
+    "filterInEditModeAlert": "Filtros indisponíveis durante edição",
+    "dropdownSelectOption": "Selecionar"
   },
   "detailsPanel": {
-    "editContentText": "ã_Edit record____Ç"
+    "editContentText": "Editar registro"
   },
   "signOutPage": {
     "signOutMessage": "Você saiu com sucesso",

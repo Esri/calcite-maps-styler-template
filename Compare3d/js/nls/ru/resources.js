@@ -17,10 +17,10 @@
 define({
   "scene": {
     "error": "Невозможно создать сцену",
-    "support": "Ж_Browser not supported_______Я",
-    "noScene": "Ж_Specify scene id(s)_______Я",
-    "noConfig": "Ж_Config is not defined_______Я",
-    "invalidScene": "Ж_Unable to create scene________Я"
+    "support": "Браузер не поддерживается",
+    "noScene": "Выбрать идентификаторы сцены",
+    "noConfig": "Конфигурация не определена",
+    "invalidScene": "Невозможно создать сцену"
   },
   "tools": {
     "linkLabel": "Связать виды",

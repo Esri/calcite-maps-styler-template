@@ -32,41 +32,41 @@ define({
     "avgRating": "Hinnang",
     "noWebMapInGroup": "Konfigureeritud grupp ei kehti või ei ole selle grupiga veel objekte jagatud.",
     "infoBtnToolTip": "Kaarditeave",
-    "openWebmapList": "Š_Open panel____ä",
-    "closeWebmapList": "Š_Close panel____ä"
+    "openWebmapList": "Ava paneel",
+    "closeWebmapList": "Sulge paneel"
   },
   "geoform": {
-    "enterInformation": "Š_Details___ä",
-    "selectAttachments": "Š_Attachments____ä",
-    "selectFileText": "Š_Browse___ä",
-    "enterLocation": "Š_Location___ä",
-    "reportItButton": "Š_Submit___ä",
-    "cancelButton": "Š_Cancel___ä",
-    "requiredField": "Š_(required)____ä",
-    "selectDefaultText": "Š_Select&hellip;_____ä",
-    "invalidInputValue": "Š_Please enter valid value_________ä.",
-    "noFieldsConfiguredMessage": "Š_Layer fields are not configured to capture data_______________ä",
-    "invalidSmallNumber": "Š_Please enter an integer________ä",
+    "enterInformation": "Detailid",
+    "selectAttachments": "Manused",
+    "selectFileText": "Sirvi",
+    "enterLocation": "Asukoht",
+    "reportItButton": "Esita",
+    "cancelButton": "Tühista",
+    "requiredField": "(nõutud)",
+    "selectDefaultText": "Vali&hellip;",
+    "invalidInputValue": "Sisestage kehtiv väärtus.",
+    "noFieldsConfiguredMessage": "Kihi väljadele ei ole konfigureeritud andmete salvestamine.",
+    "invalidSmallNumber": "Palun sisestage täisarv",
     "invalidNumber": "Palun sisestage täisarv",
     "invalidFloat": "Palun sisestage arv",
     "invalidDouble": "Palun sisestage arv",
-    "requiredFields": "Š_Please provide values for all required fields_______________ä",
-    "selectLocation": "Š_Please select the location for your report______________ä",
-    "numericRangeHintMessage": "Š_${openStrong}Hint:${closeStrong} Minimum value ${minValue} and maximum value ${maxValue}___________________________ä",
-    "dateRangeHintMessage": "Š_${openStrong}Hint:${closeStrong} Minimum date ${minValue} and Maximum date ${maxValue}___________________________ä",
-    "errorsInApplyEdits": "Š_Report could not be submitted__________ä",
-    "attachmentSelectedMsg": "Š_attachment(s) selected________ä",
-    "attachmentUploadStatus": "Š_${failed} of ${total} attachment(s) failed to upload_________________ä",
-    "geoLocationError": "Š_Current location not available__________ä",
-    "geoLocationOutOfExtent": "Š_Current location is out of basemap extent_____________ä",
-    "submitButtonTooltip": "Š_Save__ä",
-    "cancelButtonTooltip": "Š_Cancel___ä",
-    "geoformBackButtonTooltip": "Š_Return to the report list_________ä",
-    "updateFeaturesConfirmationMsg": "Š_${count} features will be updated___________ä",
-    "attachmentHeaderText": "Š_Attachments____ä"
+    "requiredFields": "Palun sisestage väärtused kõigile nõutud väljadele.",
+    "selectLocation": "Valige oma aruande asukoht.",
+    "numericRangeHintMessage": "${openStrong}Vihje:${closeStrong} Miinimumväärtus ${minValue} ja maksimumväärtus ${maxValue}",
+    "dateRangeHintMessage": "${openStrong}Vihje:${closeStrong} Kuupäeva alampiir ${minValue} ja kuupäeva ülempiir ${maxValue}",
+    "errorsInApplyEdits": "Kommentaari ei saanud esitada.",
+    "attachmentSelectedMsg": "valitud manus(ed)",
+    "attachmentUploadStatus": "${failed} manust (kokku ${total} manust) ei saanud üles laadida",
+    "geoLocationError": "Praegune asukoht pole kättesaadav.",
+    "geoLocationOutOfExtent": "Praegune asukoht on lubatud vahemikust väljas.",
+    "submitButtonTooltip": "Salvesta",
+    "cancelButtonTooltip": "Tühista",
+    "geoformBackButtonTooltip": "Tagasi aruandelehele",
+    "updateFeaturesConfirmationMsg": "${count} objekti värskendatakse",
+    "attachmentHeaderText": "Manused"
   },
   "mapViewer": {
-    "zoomInToolTip": "Š_Zoom in___ä",
+    "zoomInToolTip": "Suurenda",
     "zoomOutToolTip": "Vähenda"
   },
   "applicationHeader": {
@@ -77,52 +77,52 @@ define({
   "dataviewer": {
     "noIssuesReported": "Ühtki aruannet ei ole saadaval.",
     "noFeatureGeometry": "Objekti ei saa kuvada.",
-    "ascendingFlagTitle": "Š_Sort in ascending order________ä",
-    "descendingFlagTitle": "Š_Sort in descending order________ä",
-    "filterLabel": "Š_Filter___ä",
-    "valueRadioButtonLabel": "Š_Value___ä",
-    "uniqueRadioButtonLabel": "Š_Unique___ä",
-    "selectLayerToBegin": "Š_Select a category to get started___________ä",
-    "layerFeatureCount": "Š_${featureCount} records________ä"
+    "ascendingFlagTitle": "Sordi kasvavalt",
+    "descendingFlagTitle": "Sordi kahanevalt",
+    "filterLabel": "Filter",
+    "valueRadioButtonLabel": "Väärtus",
+    "uniqueRadioButtonLabel": "Unikaalne",
+    "selectLayerToBegin": "Alustamiseks valige kategooria",
+    "layerFeatureCount": "${featureCount} kirjet"
   },
   "timeSlider": {
-    "timeSliderLabel": "Š_Time range____ä",
-    "timeSliderInEditModeAlert": "Š_Time slider unavailable while editing____________ä"
+    "timeSliderLabel": "Ajavahemik",
+    "timeSliderInEditModeAlert": "Ajaliugur pole muutmise ajal saadaval"
   },
   "comment": {
-    "commentsFormSubmitButton": "Š_Save__ä",
-    "commentsFormCancelButton": "Š_Cancel___ä",
-    "errorInSubmittingComment": "Š_Edits could not be saved_________ä.",
-    "emptyCommentMessage": "Š_Value required_____ä",
+    "commentsFormSubmitButton": "Salvesta",
+    "commentsFormCancelButton": "Tühista",
+    "errorInSubmittingComment": "Muudatusi ei saanud salvestada.",
+    "emptyCommentMessage": "Väärtus on nõutav",
     "placeHolderText": "",
-    "noCommentsAvailableText": "Š_No records available_______ä",
-    "remainingTextCount": "Š_${0} character(s) remain________ä",
-    "showNoText": "Š_No__ä"
+    "noCommentsAvailableText": "Kirjeid pole saadaval",
+    "remainingTextCount": "${0} tähemärki kasutamata",
+    "showNoText": "Ei"
   },
   "main": {
     "noGroup": "Ühtki gruppi ei ole konfigureeritud"
   },
   "search": {
-    "searchIconTooltip": "Š_Search this layer______ä",
-    "noResultFoundText": "Š_No results found______ä",
-    "searchInEditModeAlert": "Š_Search unavailable while editing___________ä"
+    "searchIconTooltip": "Otsi kihti",
+    "noResultFoundText": "Tulemusi ei leitud",
+    "searchInEditModeAlert": "Otsing pole töötlemise ajal saadaval"
   },
   "manualRefresh": {
-    "manualRefreshIconTooltip": "Š_Refresh___ä",
+    "manualRefreshIconTooltip": "Värskenda",
     "confirmManualRefeshText": "Teie salvestamata valikud ja muudatused lähevad kaotsi."
   },
   "help": {
-    "helpIconTooltip": "Š_Help__ä"
+    "helpIconTooltip": "Abi"
   },
   "filter": {
-    "noFeatureFoundText": "Š_No feature found for this value___________ä.",
-    "distinctQueryFalied": "Š_No distinct values found for the field_____________ä.",
-    "andText": "Š_and__ä",
-    "filterInEditModeAlert": "Š_Filters unavailable while editing___________ä",
-    "dropdownSelectOption": "Š_Select___ä"
+    "noFeatureFoundText": "Selle väärtuse jaoks ei leitud objekti.",
+    "distinctQueryFalied": "Välja jaoks ei leitud eraldi väärtusi.",
+    "andText": "ja",
+    "filterInEditModeAlert": "Filtrid pole töötlemise ajal saadaval",
+    "dropdownSelectOption": "Vali"
   },
   "detailsPanel": {
-    "editContentText": "Š_Edit record____ä"
+    "editContentText": "Muuda kirjet"
   },
   "signOutPage": {
     "signOutMessage": "Olete edukalt välja logitud.",

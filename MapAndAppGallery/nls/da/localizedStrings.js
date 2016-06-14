@@ -69,8 +69,8 @@ define({
     "geolocationBtnTitle": "Geoplacering",
     "ascendingSort": "Stigende",
     "descendingSort": "Faldende",
-    "viewBtnTitle": "ø_View__å",
-    "backButtonTitle": "ø_Back__å"
+    "viewBtnTitle": "Vis",
+    "backButtonTitle": "Tilbage"
   },
   "errorMessages": {
     "emptyGroup": "Den konfigurerede gruppe har ikke nogen data til kørsel af en forespørgsel.",

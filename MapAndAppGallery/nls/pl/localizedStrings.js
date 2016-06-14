@@ -69,8 +69,8 @@ define({
     "geolocationBtnTitle": "Geolokalizacja",
     "ascendingSort": "Rosnąco",
     "descendingSort": "Malejąco",
-    "viewBtnTitle": "ł_View__ą",
-    "backButtonTitle": "ł_Back__ą"
+    "viewBtnTitle": "Wyświetl",
+    "backButtonTitle": "Powrót"
   },
   "errorMessages": {
     "emptyGroup": "Skonfigurowana grupa nie zawiera danych, których można użyć do wykonania zapytania.",

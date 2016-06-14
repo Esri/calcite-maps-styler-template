@@ -29,8 +29,8 @@ define({
     "error": "Domyślnie użyty zostanie opis mapy internetowej lub ekstrakt. Skonfiguruj aplikację, aby dodać niestandardowy ekstrakt do panelu informacji o aplikacji."
   },
   "time": {
-    "enableTimeMessage": "ł_The specified web map does not contain any time enabled layers. View the ${link} help topic for details. To use the template without displaying time use the configuration panel to disable the time option______________________________________________________________ą.",
-    "enableTimeMessageLink": "ł_http://doc.arcgis.com/en/arcgis-online/create-maps/configure-time.htm#ESRI_SECTION1_F1D4A275B4AB4CC79198CBA9D0AD8727____________________________________ą"
+    "enableTimeMessage": "Wybrana mapa internetowa nie zawiera żadnych warstw czasowych. Kliknij temat pomocy ${link}, aby dowiedzieć się więcej. Aby używać szablonu bez wyświetlania czasu, należy wyłączyć opcję pokazywania czasu w panelu konfiguracyjnym.",
+    "enableTimeMessageLink": "http://doc.arcgis.com/en/arcgis-online/create-maps/configure-time.htm#ESRI_SECTION1_F1D4A275B4AB4CC79198CBA9D0AD8727"
   },
   "histogram": {
     "error": "W mapie internetowej nie są dostępne żadne warstwy czasowe obiektów w trybie migawki. Skonfiguruj aplikację tak, aby korzystała z innej mapy internetowej, lub wyłącz opcję histogramu."

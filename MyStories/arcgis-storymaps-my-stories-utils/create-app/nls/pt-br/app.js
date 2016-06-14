@@ -47,7 +47,7 @@ define({
     "basic": "Pense de forma minimalista, ótimo para um mapa"
   },
   "signInBuildDialog": {
-    "welcome": "ã_Welcome___Ç!",
-    "continue": "ã_Continue to {{APP_NAME}} builder___________Ç"
+    "welcome": "Bem-Vindo!",
+    "continue": "Continue no construtor {{APP_NAME}}"
   }
 });

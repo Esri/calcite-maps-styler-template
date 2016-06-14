@@ -47,7 +47,7 @@ define({
     "basic": "최소 인터페이스 사용(단일 맵에 적합)"
   },
   "signInBuildDialog": {
-    "welcome": "한_Welcome___빠!",
-    "continue": "한_Continue to {{APP_NAME}} builder___________빠"
+    "welcome": "시작",
+    "continue": "{{APP_NAME}} 빌더 계속하기"
   }
 });

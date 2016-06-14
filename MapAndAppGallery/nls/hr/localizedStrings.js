@@ -69,8 +69,8 @@ define({
     "geolocationBtnTitle": "Geolokacija",
     "ascendingSort": "Uzlazno",
     "descendingSort": "Silazno",
-    "viewBtnTitle": "Č_View__ž",
-    "backButtonTitle": "Č_Back__ž"
+    "viewBtnTitle": "Prikaz",
+    "backButtonTitle": "Natrag"
   },
   "errorMessages": {
     "emptyGroup": "Konfigurirana grupa ne sadrži podatke za izvršavanje upita.",

@@ -47,7 +47,7 @@ define({
     "basic": "תחשוב בצורה מינימליסטית, מצוין עבור מפה אחת"
   },
   "signInBuildDialog": {
-    "welcome": "כן_Welcome___ש!",
-    "continue": "כן_Continue to {{APP_NAME}} builder___________ש"
+    "welcome": "ברוך הבא!",
+    "continue": "המשך לבונה {{APP_NAME}}"
   }
 });

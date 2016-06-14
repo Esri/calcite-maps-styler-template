@@ -69,8 +69,8 @@ define({
     "geolocationBtnTitle": "Geolokasjon",
     "ascendingSort": "Stigende",
     "descendingSort": "Synkende",
-    "viewBtnTitle": "å_View__ø",
-    "backButtonTitle": "å_Back__ø"
+    "viewBtnTitle": "Vis",
+    "backButtonTitle": "Tilbake"
   },
   "errorMessages": {
     "emptyGroup": "Den konfigurerte gruppen har ingen data til å utføre spørring.",

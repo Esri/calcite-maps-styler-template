@@ -17,10 +17,10 @@
 define({
   "scene": {
     "error": "無法建立場景",
-    "support": "試_Browser not supported_______驗",
-    "noScene": "試_Specify scene id(s)_______驗",
-    "noConfig": "試_Config is not defined_______驗",
-    "invalidScene": "試_Unable to create scene________驗"
+    "support": "瀏覽器不受支援",
+    "noScene": "指定場景 ID",
+    "noConfig": "配置未定義",
+    "invalidScene": "無法建立場景"
   },
   "tools": {
     "linkLabel": "連結視圖",

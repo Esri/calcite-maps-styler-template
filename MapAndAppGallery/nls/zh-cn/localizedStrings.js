@@ -69,8 +69,8 @@ define({
     "geolocationBtnTitle": "地理位置",
     "ascendingSort": "升序",
     "descendingSort": "降序",
-    "viewBtnTitle": "试_View__验",
-    "backButtonTitle": "试_Back__验"
+    "viewBtnTitle": "查看",
+    "backButtonTitle": "返回"
   },
   "errorMessages": {
     "emptyGroup": "已配置的组不具有任何用于执行查询的数据。",

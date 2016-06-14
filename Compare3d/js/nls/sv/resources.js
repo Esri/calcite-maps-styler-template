@@ -17,10 +17,10 @@
 define({
   "scene": {
     "error": "Det går inte att skapa scenen",
-    "support": "Å_Browser not supported_______ö",
-    "noScene": "Å_Specify scene id(s)_______ö",
-    "noConfig": "Å_Config is not defined_______ö",
-    "invalidScene": "Å_Unable to create scene________ö"
+    "support": "Webbläsaren stöds inte",
+    "noScene": "Ange scen-ID",
+    "noConfig": "Konfigurationen har inte definierats",
+    "invalidScene": "Det går inte att skapa scenen"
   },
   "tools": {
     "linkLabel": "Länka vyer",

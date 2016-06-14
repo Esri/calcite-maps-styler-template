@@ -47,7 +47,7 @@ define({
     "basic": "اجعل الخريطة بسيطة ورائعة"
   },
   "signInBuildDialog": {
-    "welcome": "بيت_Welcome___لاحقة!",
-    "continue": "بيت_Continue to {{APP_NAME}} builder___________لاحقة"
+    "welcome": "مرحبًا بك!",
+    "continue": "الانتقال إلى منشئ {{APP_NAME}}"
   }
 });

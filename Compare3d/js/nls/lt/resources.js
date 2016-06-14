@@ -17,10 +17,10 @@
 define({
   "scene": {
     "error": "Neįmanoma sukurti scenos",
-    "support": "Į_Browser not supported_______š",
-    "noScene": "Į_Specify scene id(s)_______š",
-    "noConfig": "Į_Config is not defined_______š",
-    "invalidScene": "Į_Unable to create scene________š"
+    "support": "Naršyklė nepalaikoma",
+    "noScene": "Nurodykite scenos (-ų) ID",
+    "noConfig": "Neapibrėžta konfigūracija",
+    "invalidScene": "Neįmanoma sukurti scenos"
   },
   "tools": {
     "linkLabel": "Susieti peržiūras",

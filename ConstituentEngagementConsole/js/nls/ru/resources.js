@@ -32,41 +32,41 @@ define({
     "avgRating": "Рейтинг",
     "noWebMapInGroup": "Настроенная группа недействительна, или в указанной группе нет доступных элементов.",
     "infoBtnToolTip": "Информация карты",
-    "openWebmapList": "Ж_Open panel____Я",
-    "closeWebmapList": "Ж_Close panel____Я"
+    "openWebmapList": "Открыть панель",
+    "closeWebmapList": "Закрыть панель"
   },
   "geoform": {
-    "enterInformation": "Ж_Details___Я",
-    "selectAttachments": "Ж_Attachments____Я",
-    "selectFileText": "Ж_Browse___Я",
-    "enterLocation": "Ж_Location___Я",
-    "reportItButton": "Ж_Submit___Я",
-    "cancelButton": "Ж_Cancel___Я",
-    "requiredField": "Ж_(required)____Я",
-    "selectDefaultText": "Ж_Select&hellip;_____Я",
-    "invalidInputValue": "Ж_Please enter valid value_________Я.",
-    "noFieldsConfiguredMessage": "Ж_Layer fields are not configured to capture data_______________Я",
-    "invalidSmallNumber": "Ж_Please enter an integer________Я",
+    "enterInformation": "Детали",
+    "selectAttachments": "Вложения",
+    "selectFileText": "Просмотр",
+    "enterLocation": "Местоположение",
+    "reportItButton": "Подтвердить",
+    "cancelButton": "Отмена",
+    "requiredField": "(необходимо)",
+    "selectDefaultText": "Выбрать&hellip;",
+    "invalidInputValue": "Введите корректное значение.",
+    "noFieldsConfiguredMessage": "Поля слоя не настроены для получения данных",
+    "invalidSmallNumber": "Введите целое число",
     "invalidNumber": "Введите целое число",
     "invalidFloat": "Введите число",
     "invalidDouble": "Введите число",
-    "requiredFields": "Ж_Please provide values for all required fields_______________Я",
-    "selectLocation": "Ж_Please select the location for your report______________Я",
-    "numericRangeHintMessage": "Ж_${openStrong}Hint:${closeStrong} Minimum value ${minValue} and maximum value ${maxValue}___________________________Я",
-    "dateRangeHintMessage": "Ж_${openStrong}Hint:${closeStrong} Minimum date ${minValue} and Maximum date ${maxValue}___________________________Я",
-    "errorsInApplyEdits": "Ж_Report could not be submitted__________Я",
-    "attachmentSelectedMsg": "Ж_attachment(s) selected________Я",
-    "attachmentUploadStatus": "Ж_${failed} of ${total} attachment(s) failed to upload_________________Я",
-    "geoLocationError": "Ж_Current location not available__________Я",
-    "geoLocationOutOfExtent": "Ж_Current location is out of basemap extent_____________Я",
-    "submitButtonTooltip": "Ж_Save__Я",
-    "cancelButtonTooltip": "Ж_Cancel___Я",
-    "geoformBackButtonTooltip": "Ж_Return to the report list_________Я",
-    "updateFeaturesConfirmationMsg": "Ж_${count} features will be updated___________Я",
-    "attachmentHeaderText": "Ж_Attachments____Я"
+    "requiredFields": "Укажите значения для всех обязательных полей",
+    "selectLocation": "Выберите местоположение для отчета",
+    "numericRangeHintMessage": "${openStrong}Подсказка:${closeStrong} Минимальное значение ${minValue} и максимальное значение ${maxValue}",
+    "dateRangeHintMessage": "${openStrong}Hint:${closeStrong} Минимальная дата ${minValue} и Максимальная дата ${maxValue}",
+    "errorsInApplyEdits": "Невозможно добавить отчет.",
+    "attachmentSelectedMsg": "выбранные вложения",
+    "attachmentUploadStatus": "${failed} из ${total} вложений не удалось выгрузить.",
+    "geoLocationError": "Текущее местоположение недоступно",
+    "geoLocationOutOfExtent": "Текущее местоположение вне экстента базовой карты",
+    "submitButtonTooltip": "Сохранить",
+    "cancelButtonTooltip": "Отмена",
+    "geoformBackButtonTooltip": "Вернуться к списку отчетов",
+    "updateFeaturesConfirmationMsg": "${count} объектов будет обновлено",
+    "attachmentHeaderText": "Вложения"
   },
   "mapViewer": {
-    "zoomInToolTip": "Ж_Zoom in___Я",
+    "zoomInToolTip": "Увеличить",
     "zoomOutToolTip": "Уменьшить"
   },
   "applicationHeader": {
@@ -77,52 +77,52 @@ define({
   "dataviewer": {
     "noIssuesReported": "Нет доступных отчетов",
     "noFeatureGeometry": "Объекты невозможно отобразить",
-    "ascendingFlagTitle": "Ж_Sort in ascending order________Я",
-    "descendingFlagTitle": "Ж_Sort in descending order________Я",
-    "filterLabel": "Ж_Filter___Я",
-    "valueRadioButtonLabel": "Ж_Value___Я",
-    "uniqueRadioButtonLabel": "Ж_Unique___Я",
-    "selectLayerToBegin": "Ж_Select a category to get started___________Я",
-    "layerFeatureCount": "Ж_${featureCount} records________Я"
+    "ascendingFlagTitle": "Сортировать по возрастанию",
+    "descendingFlagTitle": "Сортировать по убыванию",
+    "filterLabel": "Фильтр",
+    "valueRadioButtonLabel": "Значение",
+    "uniqueRadioButtonLabel": "Уникальное",
+    "selectLayerToBegin": "Для начала работы выберите категорию",
+    "layerFeatureCount": "${featureCount} записей"
   },
   "timeSlider": {
-    "timeSliderLabel": "Ж_Time range____Я",
-    "timeSliderInEditModeAlert": "Ж_Time slider unavailable while editing____________Я"
+    "timeSliderLabel": "Временной диапазон",
+    "timeSliderInEditModeAlert": "Во время редактирования бегунок времени недоступен"
   },
   "comment": {
-    "commentsFormSubmitButton": "Ж_Save__Я",
-    "commentsFormCancelButton": "Ж_Cancel___Я",
-    "errorInSubmittingComment": "Ж_Edits could not be saved_________Я.",
-    "emptyCommentMessage": "Ж_Value required_____Я",
+    "commentsFormSubmitButton": "Сохранить",
+    "commentsFormCancelButton": "Отмена",
+    "errorInSubmittingComment": "Невозможно сохранить изменения.",
+    "emptyCommentMessage": "Необходимо значение",
     "placeHolderText": "",
-    "noCommentsAvailableText": "Ж_No records available_______Я",
-    "remainingTextCount": "Ж_${0} character(s) remain________Я",
-    "showNoText": "Ж_No__Я"
+    "noCommentsAvailableText": "Нет доступных записей",
+    "remainingTextCount": "Символов осталось: ${0}",
+    "showNoText": "Нет"
   },
   "main": {
     "noGroup": "Не задана группа"
   },
   "search": {
-    "searchIconTooltip": "Ж_Search this layer______Я",
-    "noResultFoundText": "Ж_No results found______Я",
-    "searchInEditModeAlert": "Ж_Search unavailable while editing___________Я"
+    "searchIconTooltip": "Поиск в этом слое",
+    "noResultFoundText": "Результаты не найдены",
+    "searchInEditModeAlert": "Во время редактирования поиск недоступен"
   },
   "manualRefresh": {
-    "manualRefreshIconTooltip": "Ж_Refresh___Я",
+    "manualRefreshIconTooltip": "Обновить",
     "confirmManualRefeshText": "Все выборки и несохраненные изменения будут удалены"
   },
   "help": {
-    "helpIconTooltip": "Ж_Help__Я"
+    "helpIconTooltip": "Справка"
   },
   "filter": {
-    "noFeatureFoundText": "Ж_No feature found for this value___________Я.",
-    "distinctQueryFalied": "Ж_No distinct values found for the field_____________Я.",
-    "andText": "Ж_and__Я",
-    "filterInEditModeAlert": "Ж_Filters unavailable while editing___________Я",
-    "dropdownSelectOption": "Ж_Select___Я"
+    "noFeatureFoundText": "Для этого значения не найдено ни одного объекта.",
+    "distinctQueryFalied": "Для этого поля не найдено различающихся значений.",
+    "andText": "и",
+    "filterInEditModeAlert": "Во время редактирования фильтры недоступны",
+    "dropdownSelectOption": "Выбрать"
   },
   "detailsPanel": {
-    "editContentText": "Ж_Edit record____Я"
+    "editContentText": "Редактировать запись"
   },
   "signOutPage": {
     "signOutMessage": "Выход успешно выполнен",

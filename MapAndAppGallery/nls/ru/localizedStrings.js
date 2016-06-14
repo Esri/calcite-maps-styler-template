@@ -69,8 +69,8 @@ define({
     "geolocationBtnTitle": "Геолокация",
     "ascendingSort": "По возрастанию",
     "descendingSort": "По убыванию",
-    "viewBtnTitle": "Ж_View__Я",
-    "backButtonTitle": "Ж_Back__Я"
+    "viewBtnTitle": "Просмотреть",
+    "backButtonTitle": "Назад"
   },
   "errorMessages": {
     "emptyGroup": "В указанной группе нет данных для выполнения запроса.",

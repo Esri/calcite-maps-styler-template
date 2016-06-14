@@ -47,7 +47,7 @@ define({
     "basic": "Přemýšlejte minimalisticky, skvělé pro jednu mapu"
   },
   "signInBuildDialog": {
-    "welcome": "Ř_Welcome___ů!",
-    "continue": "Ř_Continue to {{APP_NAME}} builder___________ů"
+    "welcome": "Vítejte!",
+    "continue": "Pokračujte do nástroje pro tvorbu {{APP_NAME}}"
   }
 });

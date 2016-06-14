@@ -47,7 +47,7 @@ define({
     "basic": "极简操作，享您所想；一图在手，尽享所有"
   },
   "signInBuildDialog": {
-    "welcome": "试_Welcome___验!",
-    "continue": "试_Continue to {{APP_NAME}} builder___________验"
+    "welcome": "欢迎!",
+    "continue": "继续使用 {{APP_NAME}} 构建器"
   }
 });

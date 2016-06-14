@@ -17,10 +17,10 @@
 define({
   "scene": {
     "error": "Görünüm oluşturulamıyor",
-    "support": "ı_Browser not supported_______İ",
-    "noScene": "ı_Specify scene id(s)_______İ",
-    "noConfig": "ı_Config is not defined_______İ",
-    "invalidScene": "ı_Unable to create scene________İ"
+    "support": "Tarayıcı desteklenmiyor",
+    "noScene": "Görünüm kimlikleri belirtin",
+    "noConfig": "Yapılandırma tanımlı değil",
+    "invalidScene": "Görünüm oluşturulamıyor"
   },
   "tools": {
     "linkLabel": "Bağlama Görünümleri",

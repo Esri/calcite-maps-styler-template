@@ -47,7 +47,7 @@ define({
     "basic": "Approccio minimalista, eccezionale per una sola mappa"
   },
   "signInBuildDialog": {
-    "welcome": "é_Welcome___È!",
-    "continue": "é_Continue to {{APP_NAME}} builder___________È"
+    "welcome": "Benvenuti",
+    "continue": "Continua in generatore {{APP_NAME}}"
   }
 });

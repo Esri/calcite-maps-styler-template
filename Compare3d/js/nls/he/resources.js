@@ -17,10 +17,10 @@
 define({
   "scene": {
     "error": "לא ניתן ליצור סצינה",
-    "support": "כן_Browser not supported_______ש",
-    "noScene": "כן_Specify scene id(s)_______ש",
-    "noConfig": "כן_Config is not defined_______ש",
-    "invalidScene": "כן_Unable to create scene________ש"
+    "support": "אין תמיכה בדפדפן",
+    "noScene": "ציין מזהה סצינה",
+    "noConfig": "Config לא מוגדר",
+    "invalidScene": "לא ניתן ליצור סצינה"
   },
   "tools": {
     "linkLabel": "תצוגות מקושרות",

@@ -47,7 +47,7 @@ define({
     "basic": "Σκεφτείτε μινιμαλιστικά, ιδανική λύση για έναν χάρτη"
   },
   "signInBuildDialog": {
-    "welcome": "Đ_Welcome___ớ!",
-    "continue": "Đ_Continue to {{APP_NAME}} builder___________ớ"
+    "welcome": "Καλώς ορίσατε!",
+    "continue": "Συνέχεια στο Εργαλείο δημιουργίας {{APP_NAME}}"
   }
 });

@@ -29,8 +29,8 @@ define({
     "error": "Podrazumevano, biće korišćen opis ili isečak veb mape. Konfigurišite aplikaciju da biste dodali prilagođeni isečak za tablu „više informacija“."
   },
   "time": {
-    "enableTimeMessage": "Č_The specified web map does not contain any time enabled layers. View the ${link} help topic for details. To use the template without displaying time use the configuration panel to disable the time option______________________________________________________________ž.",
-    "enableTimeMessageLink": "Č_http://doc.arcgis.com/en/arcgis-online/create-maps/configure-time.htm#ESRI_SECTION1_F1D4A275B4AB4CC79198CBA9D0AD8727____________________________________ž"
+    "enableTimeMessage": "Navedena veb mapa ne sadrži uvek dostupne slojeve. Pogledajte temu pomoći ${link} za više detalja. Da koristite šablon bez prikazivanja vremena upotrebe, koristite tablu za konfiguraciju da onemogućite opciju vremena.",
+    "enableTimeMessageLink": "http://doc.arcgis.com/en/arcgis-online/create-maps/configure-time.htm#ESRI_SECTION1_F1D4A275B4AB4CC79198CBA9D0AD8727"
   },
   "histogram": {
     "error": "Nema dostupnih slojeva sa omogućenom funkcijom vremena u veb mapi u režimu snimka. Konfigurišite aplikaciju da koristite drugu veb mapu ili onemogućite opciju histograma."

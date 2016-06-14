@@ -47,7 +47,7 @@ define({
     "basic": "Minimalistyczny interfejs — doskonały dla pojedynczej mapy"
   },
   "signInBuildDialog": {
-    "welcome": "ł_Welcome___ą!",
-    "continue": "ł_Continue to {{APP_NAME}} builder___________ą"
+    "welcome": "Witamy!",
+    "continue": "Przejdź do aplikacji {{APP_NAME}}"
   }
 });

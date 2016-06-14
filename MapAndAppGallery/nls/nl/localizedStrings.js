@@ -69,8 +69,8 @@ define({
     "geolocationBtnTitle": "Geografische locatie",
     "ascendingSort": "Oplopend",
     "descendingSort": "Aflopend",
-    "viewBtnTitle": "Ĳ_View__ä",
-    "backButtonTitle": "Ĳ_Back__ä"
+    "viewBtnTitle": "Weergeven",
+    "backButtonTitle": "Terug"
   },
   "errorMessages": {
     "emptyGroup": "De geconfigureerde groep bevat geen gegevens om een query uit te voeren.",

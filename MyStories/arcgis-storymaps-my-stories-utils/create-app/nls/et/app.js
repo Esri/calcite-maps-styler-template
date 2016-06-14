@@ -47,7 +47,7 @@ define({
     "basic": "Mõelge minimalistlikult, suurepärane ühe kaardi jaoks"
   },
   "signInBuildDialog": {
-    "welcome": "Š_Welcome___ä!",
-    "continue": "Š_Continue to {{APP_NAME}} builder___________ä"
+    "welcome": "Tere tulemast!",
+    "continue": "Hakake kasutama rakenduse {{APP_NAME}} koosturit"
   }
 });

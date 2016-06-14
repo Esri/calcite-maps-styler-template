@@ -17,10 +17,10 @@
 define({
   "scene": {
     "error": "Không thể tạo scene",
-    "support": "Đ_Browser not supported_______ớ",
-    "noScene": "Đ_Specify scene id(s)_______ớ",
-    "noConfig": "Đ_Config is not defined_______ớ",
-    "invalidScene": "Đ_Unable to create scene________ớ"
+    "support": "Trình duyệt không được hỗ trợ",
+    "noScene": "Chỉ định (các) id scene",
+    "noConfig": "Cấu hình không được xác định",
+    "invalidScene": "Không thể tạo scene"
   },
   "tools": {
     "linkLabel": "Liên kết các Chế độ Xem",

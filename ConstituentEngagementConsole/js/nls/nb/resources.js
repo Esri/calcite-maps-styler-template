@@ -32,41 +32,41 @@ define({
     "avgRating": "Vurdering",
     "noWebMapInGroup": "Konfigurert gruppe er ugyldig, eller ingen elementer er blitt delt med denne gruppen ennå",
     "infoBtnToolTip": "Kartinformasjon",
-    "openWebmapList": "å_Open panel____ø",
-    "closeWebmapList": "å_Close panel____ø"
+    "openWebmapList": "Åpne panel",
+    "closeWebmapList": "Lukk panel"
   },
   "geoform": {
-    "enterInformation": "å_Details___ø",
-    "selectAttachments": "å_Attachments____ø",
-    "selectFileText": "å_Browse___ø",
-    "enterLocation": "å_Location___ø",
-    "reportItButton": "å_Submit___ø",
-    "cancelButton": "å_Cancel___ø",
-    "requiredField": "å_(required)____ø",
-    "selectDefaultText": "å_Select&hellip;_____ø",
-    "invalidInputValue": "å_Please enter valid value_________ø.",
-    "noFieldsConfiguredMessage": "å_Layer fields are not configured to capture data_______________ø",
-    "invalidSmallNumber": "å_Please enter an integer________ø",
+    "enterInformation": "Detaljer",
+    "selectAttachments": "Vedlegg",
+    "selectFileText": "Bla gjennom",
+    "enterLocation": "Lokasjon",
+    "reportItButton": "Send inn",
+    "cancelButton": "Avbryt",
+    "requiredField": "(obligatorisk)",
+    "selectDefaultText": "Select&hellip;",
+    "invalidInputValue": "Du må angi en gyldig verdi.",
+    "noFieldsConfiguredMessage": "Lagfelt er ikke konfigurert til å samle inn data",
+    "invalidSmallNumber": "Angi et heltall",
     "invalidNumber": "Angi et heltall",
     "invalidFloat": "Angi et tall",
     "invalidDouble": "Angi et tall",
-    "requiredFields": "å_Please provide values for all required fields_______________ø",
-    "selectLocation": "å_Please select the location for your report______________ø",
-    "numericRangeHintMessage": "å_${openStrong}Hint:${closeStrong} Minimum value ${minValue} and maximum value ${maxValue}___________________________ø",
-    "dateRangeHintMessage": "å_${openStrong}Hint:${closeStrong} Minimum date ${minValue} and Maximum date ${maxValue}___________________________ø",
-    "errorsInApplyEdits": "å_Report could not be submitted__________ø",
-    "attachmentSelectedMsg": "å_attachment(s) selected________ø",
-    "attachmentUploadStatus": "å_${failed} of ${total} attachment(s) failed to upload_________________ø",
-    "geoLocationError": "å_Current location not available__________ø",
-    "geoLocationOutOfExtent": "å_Current location is out of basemap extent_____________ø",
-    "submitButtonTooltip": "å_Save__ø",
-    "cancelButtonTooltip": "å_Cancel___ø",
-    "geoformBackButtonTooltip": "å_Return to the report list_________ø",
-    "updateFeaturesConfirmationMsg": "å_${count} features will be updated___________ø",
-    "attachmentHeaderText": "å_Attachments____ø"
+    "requiredFields": "Angi verdier for alle obligatoriske felt",
+    "selectLocation": "Velg lokasjonen for rapporten",
+    "numericRangeHintMessage": "${openStrong}Hint:${closeStrong} Minimumsverdi  ${minValue} og maksimumsverdi ${maxValue}",
+    "dateRangeHintMessage": "${openStrong}Hint:${closeStrong} Laveste dato ${minValue} og høyeste dato ${maxValue}",
+    "errorsInApplyEdits": "Kan ikke sende inn rapporten",
+    "attachmentSelectedMsg": "vedlegg valgt",
+    "attachmentUploadStatus": "kan ikke laste opp ${failed} av ${total} vedlegg",
+    "geoLocationError": "Gjeldende plassering er ikke tilgjengelig",
+    "geoLocationOutOfExtent": "Gjeldende plassering er utenfor bakgrunnskartets utstrekning",
+    "submitButtonTooltip": "Lagre",
+    "cancelButtonTooltip": "Avbryt",
+    "geoformBackButtonTooltip": "Gå tilbake til rapportlisten",
+    "updateFeaturesConfirmationMsg": "${count} geoobjekter blir oppdatert",
+    "attachmentHeaderText": "Vedlegg"
   },
   "mapViewer": {
-    "zoomInToolTip": "å_Zoom in___ø",
+    "zoomInToolTip": "Zoom inn",
     "zoomOutToolTip": "Zoom ut"
   },
   "applicationHeader": {
@@ -77,52 +77,52 @@ define({
   "dataviewer": {
     "noIssuesReported": "Ingen tilgjengelige rapporter",
     "noFeatureGeometry": "Kan ikke vise geoobjekt",
-    "ascendingFlagTitle": "å_Sort in ascending order________ø",
-    "descendingFlagTitle": "å_Sort in descending order________ø",
-    "filterLabel": "å_Filter___ø",
-    "valueRadioButtonLabel": "å_Value___ø",
-    "uniqueRadioButtonLabel": "å_Unique___ø",
-    "selectLayerToBegin": "å_Select a category to get started___________ø",
-    "layerFeatureCount": "å_${featureCount} records________ø"
+    "ascendingFlagTitle": "Sorter i stigende rekkefølge",
+    "descendingFlagTitle": "Sorter i synkende rekkefølge",
+    "filterLabel": "Filter",
+    "valueRadioButtonLabel": "Verdi",
+    "uniqueRadioButtonLabel": "Unike",
+    "selectLayerToBegin": "Velg en kategori for å komme i gang",
+    "layerFeatureCount": "${featureCount} poster"
   },
   "timeSlider": {
-    "timeSliderLabel": "å_Time range____ø",
-    "timeSliderInEditModeAlert": "å_Time slider unavailable while editing____________ø"
+    "timeSliderLabel": "Tidsrom",
+    "timeSliderInEditModeAlert": "Glidebryteren for tid er ikke tilgjengelig under redigering"
   },
   "comment": {
-    "commentsFormSubmitButton": "å_Save__ø",
-    "commentsFormCancelButton": "å_Cancel___ø",
-    "errorInSubmittingComment": "å_Edits could not be saved_________ø.",
-    "emptyCommentMessage": "å_Value required_____ø",
+    "commentsFormSubmitButton": "Lagre",
+    "commentsFormCancelButton": "Avbryt",
+    "errorInSubmittingComment": "Kan ikke lagre redigeringer.",
+    "emptyCommentMessage": "Verdi er obligatorisk",
     "placeHolderText": "",
-    "noCommentsAvailableText": "å_No records available_______ø",
-    "remainingTextCount": "å_${0} character(s) remain________ø",
-    "showNoText": "å_No__ø"
+    "noCommentsAvailableText": "Ingen tilgjengelige poster",
+    "remainingTextCount": "${0} tegn gjenstår",
+    "showNoText": "Nei"
   },
   "main": {
     "noGroup": "Ingen gruppe er konfigurert"
   },
   "search": {
-    "searchIconTooltip": "å_Search this layer______ø",
-    "noResultFoundText": "å_No results found______ø",
-    "searchInEditModeAlert": "å_Search unavailable while editing___________ø"
+    "searchIconTooltip": "Søk i dette laget",
+    "noResultFoundText": "Fant ingen resultater",
+    "searchInEditModeAlert": "Søk er ikke tilgjengelig under redigering"
   },
   "manualRefresh": {
-    "manualRefreshIconTooltip": "å_Refresh___ø",
+    "manualRefreshIconTooltip": "Oppdater",
     "confirmManualRefeshText": "Alle utvalg og endringer som ikke er lagret, forkastes"
   },
   "help": {
-    "helpIconTooltip": "å_Help__ø"
+    "helpIconTooltip": "Hjelp"
   },
   "filter": {
-    "noFeatureFoundText": "å_No feature found for this value___________ø.",
-    "distinctQueryFalied": "å_No distinct values found for the field_____________ø.",
-    "andText": "å_and__ø",
-    "filterInEditModeAlert": "å_Filters unavailable while editing___________ø",
-    "dropdownSelectOption": "å_Select___ø"
+    "noFeatureFoundText": "Finner ingen geoobjekter for denne verdien.",
+    "distinctQueryFalied": "Finner ingen distinkte verdier for feltet.",
+    "andText": "og",
+    "filterInEditModeAlert": "Filtre er ikke tilgjengelig under redigering",
+    "dropdownSelectOption": "Velg"
   },
   "detailsPanel": {
-    "editContentText": "å_Edit record____ø"
+    "editContentText": "Rediger post"
   },
   "signOutPage": {
     "signOutMessage": "Du er logget av",
