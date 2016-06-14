@@ -28,6 +28,13 @@ define({
           noPhotosFound: "No photos matched your search. Please try again.",
           noItemsFound: "No items matched your search. Please try again.",
           noItemsInThisStory: "No content from ArcGIS has been added to this story yet.",
+          galleryItems: {
+            remove1: "Delete this unused image from your ArcGIS account.",
+            remove2: "(You'll need to upload it again if you decide to use it later.)",
+            modified: "Modified", // context: "Modified 3/18/16"
+            uploaded: "Uploaded", // context: "Uploaded 3/18/16"
+            by: "by" // context: "Webmap by John Smith"
+          },
           googlePhotos: {
             searchAndBrowse: "Browse photos on Picasa or Google Photos"
           },
@@ -41,8 +48,23 @@ define({
               imageOnly: "Link to an image on the web",
               imageAndVideo: "Link to an image or video on the web"
             },
-            uploadText1: "Content from YouTube and Vimeo will be optimized; other content will be embedded as is.",
-            uploadText2: "It is recommended to use https:// URLs for linked content, when possible.",
+            linkText: {
+              // context: full text for this section could be:
+              // starter + hasVideo. listStarterWithAlso + <list of content types>. ender.
+              // starter + listStarterWithoutAlso + <list of content types>. ender.
+              starter: "In the box above,",
+              hasVideo: "you can paste links or iframe code for videos from YouTube and Vimeo.",
+              listStarterWithAlso: "You can also link directly to",
+              listStarterWithoutAlso: "you can link directly to", // attaches directly to starter above
+              listSeparator: ",",
+              OR: 'or',
+              IMAGE: 'photos',
+              WEBPAGE: [
+                'web pages',
+                'web applications'
+              ],
+              ender: "When possible, use secure (https) links."
+            },
             placeholder: "https://... or http://... or <iframe>",
             uploadErrors: {
               generic: "Something went wrong with the address entered. Please try again.",
@@ -54,7 +76,8 @@ define({
                 "You must use an image or video in this part of the story.",
                 "Please provide a link to an image (.jpg, .png, .gif) or a video on YouTube or Vimeo, or choose an image from ArcGIS, Flickr, or Google Photos."
               ],
-              inaccessible: 'Unable to load ${media-type} at entered URL.',
+              badFormat: 'The link to the ${media-type} you are trying to add is formatted incorrectly.',
+              inaccessible: 'The ${media-type} you are trying to add is missing or not accessible.',
               tryAgain: 'Please check the address and try again.',
               mediaTypes: {
                 VIDEO: 'video',
@@ -112,8 +135,9 @@ define({
             createContent: {
               or: "OR",
               dragAndDrop: "Drop an image here",
-              uploadImage: "Upload an image",
-              saveBeforeUpload: "Once you save this story, you can upload images to ArcGIS here"
+              uploadImage: "Browse for an image",
+              agolInfo: "Images will be stored in your ArcGIS account and will be accessible inside your story.",
+              saveBeforeUpload: "Once you save this story, you can upload images to ArcGIS here."
             },
             filterAndSort: {
               webmap: "Web Map",
