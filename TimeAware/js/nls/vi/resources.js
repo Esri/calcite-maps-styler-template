@@ -31,8 +31,8 @@ define({
 hình ứng dụng để thêm một đoạn trích tùy chọn cho bảng điều khiển."
     },
     time: {
-      enableTimeMessage: "Đ_The specified web map does not contain any time enabled layers. View the ${link} help topic for details. To use the template without displaying time use the configuration panel to disable the time option______________________________________________________________ớ.",
-      enableTimeMessageLink: "Đ_http://doc.arcgis.com/en/arcgis-online/create-maps/configure-time.htm#ESRI_SECTION1_F1D4A275B4AB4CC79198CBA9D0AD8727____________________________________ớ"
+      enableTimeMessage: "Bản đồ web không có chứa bất kỳ lớp nào có chức năng kích hoạt thời gian. Tham khảo chủ đề hỗ trợ ${link} để biết thêm thông tin chi tiết. Để sử dụng mẫu mà không hiển thị thời gian, sử dụng bảng điều khiển cấu hình để tắt tùy chọn thời gian.",
+      enableTimeMessageLink: "http://doc.arcgis.com/en/arcgis-online/create-maps/configure-time.htm#ESRI_SECTION1_F1D4A275B4AB4CC79198CBA9D0AD8727"
     },
     histogram: {
       error: "Không có lớp đối tượng nào có chức năng kích hoạt thời gian, trong chế 
@@ -50,6 +50,7 @@ web khác hoặc tắt tùy chọn biểu đồ."
   "fi": 1,
   "fr": 1,
   "he": 1,
+  "hr": 1, 
   "it": 1,
   "ja": 1,
   "ko": 1,
@@ -62,11 +63,12 @@ web khác hoặc tắt tùy chọn biểu đồ."
   "pt-pt": 1,
   "ro": 1,
   "ru": 1,
+  "sr": 1,
   "sv": 1,
-  "tr": 1,
   "th": 1,
+  "tr": 1,
   "vi": 1,
   "zh-cn": 1,
-  "zh-hk": 1,
-  "zh-tw": 1
+  "zh-hk": 1, 
+  "zh-tw": 1 
 });

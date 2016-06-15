@@ -17,10 +17,10 @@
 define({
   "scene": {
     "error": "Kan ikke oprette scene",
-    "support": "ø_Browser not supported_______å",
-    "noScene": "ø_Specify scene id(s)_______å",
-    "noConfig": "ø_Config is not defined_______å",
-    "invalidScene": "ø_Unable to create scene________å"
+    "support": "Browser understøttes ikke",
+    "noScene": "Angive scene-id(er)",
+    "noConfig": "Konfiguration er ikke defineret",
+    "invalidScene": "Kan ikke oprette scene"
   },
   "tools": {
     "linkLabel": "Sammenkæd visninger",

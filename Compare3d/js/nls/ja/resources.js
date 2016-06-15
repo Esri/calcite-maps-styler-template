@@ -17,10 +17,10 @@
 define({
   "scene": {
     "error": "シーンを作成できません",
-    "support": "須_Browser not supported_______鷗",
-    "noScene": "須_Specify scene id(s)_______鷗",
-    "noConfig": "須_Config is not defined_______鷗",
-    "invalidScene": "須_Unable to create scene________鷗"
+    "support": "サポートされていないブラウザーです",
+    "noScene": "シーン ID の指定",
+    "noConfig": "構成が定義されていません",
+    "invalidScene": "シーンを作成できません"
   },
   "tools": {
     "linkLabel": "ビューのリンク",

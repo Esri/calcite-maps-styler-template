@@ -32,41 +32,41 @@ define({
     "avgRating": "Vurdering",
     "noWebMapInGroup": "Konfigureret gruppe er ugyldig, eller ingen elementer er endnu blevet delt med denne gruppe",
     "infoBtnToolTip": "Kortoplysninger",
-    "openWebmapList": "ø_Open panel____å",
-    "closeWebmapList": "ø_Close panel____å"
+    "openWebmapList": "Åbn panel",
+    "closeWebmapList": "Luk panel"
   },
   "geoform": {
-    "enterInformation": "ø_Details___å",
-    "selectAttachments": "ø_Attachments____å",
-    "selectFileText": "ø_Browse___å",
-    "enterLocation": "ø_Location___å",
-    "reportItButton": "ø_Submit___å",
-    "cancelButton": "ø_Cancel___å",
-    "requiredField": "ø_(required)____å",
-    "selectDefaultText": "ø_Select&hellip;_____å",
-    "invalidInputValue": "ø_Please enter valid value_________å.",
-    "noFieldsConfiguredMessage": "ø_Layer fields are not configured to capture data_______________å",
-    "invalidSmallNumber": "ø_Please enter an integer________å",
+    "enterInformation": "%1 - Vælg app-mappe",
+    "selectAttachments": "Vedhæftninger",
+    "selectFileText": "Gennemse",
+    "enterLocation": "Position",
+    "reportItButton": "Indsend",
+    "cancelButton": "Annullér",
+    "requiredField": "(obligatorisk)",
+    "selectDefaultText": "Select&hellip;",
+    "invalidInputValue": "Indtast en gyldig værdi.",
+    "noFieldsConfiguredMessage": "Lagfelter er ikke konfigureret til at hente data",
+    "invalidSmallNumber": "Indtast et heltal",
     "invalidNumber": "Indtast et heltal",
     "invalidFloat": "Indtast et tal",
     "invalidDouble": "Indtast et tal",
-    "requiredFields": "ø_Please provide values for all required fields_______________å",
-    "selectLocation": "ø_Please select the location for your report______________å",
-    "numericRangeHintMessage": "ø_${openStrong}Hint:${closeStrong} Minimum value ${minValue} and maximum value ${maxValue}___________________________å",
-    "dateRangeHintMessage": "ø_${openStrong}Hint:${closeStrong} Minimum date ${minValue} and Maximum date ${maxValue}___________________________å",
-    "errorsInApplyEdits": "ø_Report could not be submitted__________å",
-    "attachmentSelectedMsg": "ø_attachment(s) selected________å",
-    "attachmentUploadStatus": "ø_${failed} of ${total} attachment(s) failed to upload_________________å",
-    "geoLocationError": "ø_Current location not available__________å",
-    "geoLocationOutOfExtent": "ø_Current location is out of basemap extent_____________å",
-    "submitButtonTooltip": "ø_Save__å",
-    "cancelButtonTooltip": "ø_Cancel___å",
-    "geoformBackButtonTooltip": "ø_Return to the report list_________å",
-    "updateFeaturesConfirmationMsg": "ø_${count} features will be updated___________å",
-    "attachmentHeaderText": "ø_Attachments____å"
+    "requiredFields": "Angiv værdier for alle påkrævede felter",
+    "selectLocation": "Vælg en placering for din rapport",
+    "numericRangeHintMessage": "${openStrong}Tip:${closeStrong} Minimumværdi ${minValue} og maksimumværdi ${maxValue}",
+    "dateRangeHintMessage": "${openStrong}Tip:${closeStrong} Minimumdato ${minValue} og maksimumdato ${maxValue}",
+    "errorsInApplyEdits": "Rapport kunne ikke sendes",
+    "attachmentSelectedMsg": "vedhæftning(er) valgt",
+    "attachmentUploadStatus": "${mislykkedes} af ${total} vedhæftning(er) kunne ikke overføres",
+    "geoLocationError": "Aktuel position er ikke tilgængelig",
+    "geoLocationOutOfExtent": "Aktuel position ligger uden for baggrundskortets udstrækning",
+    "submitButtonTooltip": "Gem",
+    "cancelButtonTooltip": "Annullér",
+    "geoformBackButtonTooltip": "Vend tilbage til rapportlisten",
+    "updateFeaturesConfirmationMsg": "${count} objekter vil blive opdateret",
+    "attachmentHeaderText": "Vedhæftninger"
   },
   "mapViewer": {
-    "zoomInToolTip": "ø_Zoom in___å",
+    "zoomInToolTip": "Zoom ind",
     "zoomOutToolTip": "Zoom ud"
   },
   "applicationHeader": {
@@ -77,52 +77,52 @@ define({
   "dataviewer": {
     "noIssuesReported": "Ingen tilgængelige rapporter",
     "noFeatureGeometry": "Objekt kan ikke vises",
-    "ascendingFlagTitle": "ø_Sort in ascending order________å",
-    "descendingFlagTitle": "ø_Sort in descending order________å",
-    "filterLabel": "ø_Filter___å",
-    "valueRadioButtonLabel": "ø_Value___å",
-    "uniqueRadioButtonLabel": "ø_Unique___å",
-    "selectLayerToBegin": "ø_Select a category to get started___________å",
-    "layerFeatureCount": "ø_${featureCount} records________å"
+    "ascendingFlagTitle": "Sortér i stigende rækkefølge",
+    "descendingFlagTitle": "Sortér i faldende rækkefølge",
+    "filterLabel": "Filtrér",
+    "valueRadioButtonLabel": "Værdi",
+    "uniqueRadioButtonLabel": "Unik",
+    "selectLayerToBegin": "Vælg en kategori at starte med",
+    "layerFeatureCount": "${featureCount} poster"
   },
   "timeSlider": {
-    "timeSliderLabel": "ø_Time range____å",
-    "timeSliderInEditModeAlert": "ø_Time slider unavailable while editing____________å"
+    "timeSliderLabel": "Tidsinterval",
+    "timeSliderInEditModeAlert": "Tidsskyder er utilgængelig, når du redigerer"
   },
   "comment": {
-    "commentsFormSubmitButton": "ø_Save__å",
-    "commentsFormCancelButton": "ø_Cancel___å",
-    "errorInSubmittingComment": "ø_Edits could not be saved_________å.",
-    "emptyCommentMessage": "ø_Value required_____å",
+    "commentsFormSubmitButton": "Gem",
+    "commentsFormCancelButton": "Annullér",
+    "errorInSubmittingComment": "Redigeringer kunne ikke gemmes.",
+    "emptyCommentMessage": "Værdi er påkrævet",
     "placeHolderText": "",
-    "noCommentsAvailableText": "ø_No records available_______å",
-    "remainingTextCount": "ø_${0} character(s) remain________å",
-    "showNoText": "ø_No__å"
+    "noCommentsAvailableText": "Ingen poster er tilgængelige",
+    "remainingTextCount": "${0} tegn tilbage",
+    "showNoText": "Nej"
   },
   "main": {
     "noGroup": "Ingen gruppe konfigureret"
   },
   "search": {
-    "searchIconTooltip": "ø_Search this layer______å",
-    "noResultFoundText": "ø_No results found______å",
-    "searchInEditModeAlert": "ø_Search unavailable while editing___________å"
+    "searchIconTooltip": "Søg i dette lag",
+    "noResultFoundText": "Ingen resultater",
+    "searchInEditModeAlert": "Søgning er utilgængelig under redigering"
   },
   "manualRefresh": {
-    "manualRefreshIconTooltip": "ø_Refresh___å",
+    "manualRefreshIconTooltip": "Opdatér",
     "confirmManualRefeshText": "Alle markeringer og ikke-gemte ændringer vil gå tabt"
   },
   "help": {
-    "helpIconTooltip": "ø_Help__å"
+    "helpIconTooltip": "Hjælp"
   },
   "filter": {
-    "noFeatureFoundText": "ø_No feature found for this value___________å.",
-    "distinctQueryFalied": "ø_No distinct values found for the field_____________å.",
-    "andText": "ø_and__å",
-    "filterInEditModeAlert": "ø_Filters unavailable while editing___________å",
-    "dropdownSelectOption": "ø_Select___å"
+    "noFeatureFoundText": "Intet objekt fundet for denne værdi.",
+    "distinctQueryFalied": "Ingen forskellige værdier fundet for dette felt.",
+    "andText": "og",
+    "filterInEditModeAlert": "Filtre er utilgængelige under redigering",
+    "dropdownSelectOption": "Vælg"
   },
   "detailsPanel": {
-    "editContentText": "ø_Edit record____å"
+    "editContentText": "Redigér post"
   },
   "signOutPage": {
     "signOutMessage": "Du er blevet logget ud",

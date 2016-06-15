@@ -32,41 +32,41 @@ define({
     "avgRating": "評価",
     "noWebMapInGroup": "構成済みのグループが無効であるか、アイテムがこのグループと共有されていません",
     "infoBtnToolTip": "マップ情報",
-    "openWebmapList": "須_Open panel____鷗",
-    "closeWebmapList": "須_Close panel____鷗"
+    "openWebmapList": "パネルを開く",
+    "closeWebmapList": "パネルを閉じる"
   },
   "geoform": {
-    "enterInformation": "須_Details___鷗",
-    "selectAttachments": "須_Attachments____鷗",
-    "selectFileText": "須_Browse___鷗",
-    "enterLocation": "須_Location___鷗",
-    "reportItButton": "須_Submit___鷗",
-    "cancelButton": "須_Cancel___鷗",
-    "requiredField": "須_(required)____鷗",
-    "selectDefaultText": "須_Select&hellip;_____鷗",
-    "invalidInputValue": "須_Please enter valid value_________鷗.",
-    "noFieldsConfiguredMessage": "須_Layer fields are not configured to capture data_______________鷗",
-    "invalidSmallNumber": "須_Please enter an integer________鷗",
+    "enterInformation": "詳細",
+    "selectAttachments": "添付ファイル",
+    "selectFileText": "参照",
+    "enterLocation": "位置",
+    "reportItButton": "送信",
+    "cancelButton": "キャンセル",
+    "requiredField": "(必須)",
+    "selectDefaultText": "選択&hellip;",
+    "invalidInputValue": "有効な値を入力してください。",
+    "noFieldsConfiguredMessage": "レイヤー フィールドがデータを取得するように構成されていません",
+    "invalidSmallNumber": "整数を入力してください",
     "invalidNumber": "整数を入力してください",
     "invalidFloat": "数字を入力してください",
     "invalidDouble": "数字を入力してください",
-    "requiredFields": "須_Please provide values for all required fields_______________鷗",
-    "selectLocation": "須_Please select the location for your report______________鷗",
-    "numericRangeHintMessage": "須_${openStrong}Hint:${closeStrong} Minimum value ${minValue} and maximum value ${maxValue}___________________________鷗",
-    "dateRangeHintMessage": "須_${openStrong}Hint:${closeStrong} Minimum date ${minValue} and Maximum date ${maxValue}___________________________鷗",
-    "errorsInApplyEdits": "須_Report could not be submitted__________鷗",
-    "attachmentSelectedMsg": "須_attachment(s) selected________鷗",
-    "attachmentUploadStatus": "須_${failed} of ${total} attachment(s) failed to upload_________________鷗",
-    "geoLocationError": "須_Current location not available__________鷗",
-    "geoLocationOutOfExtent": "須_Current location is out of basemap extent_____________鷗",
-    "submitButtonTooltip": "須_Save__鷗",
-    "cancelButtonTooltip": "須_Cancel___鷗",
-    "geoformBackButtonTooltip": "須_Return to the report list_________鷗",
-    "updateFeaturesConfirmationMsg": "須_${count} features will be updated___________鷗",
-    "attachmentHeaderText": "須_Attachments____鷗"
+    "requiredFields": "すべての必須フィールドに値を指定してください",
+    "selectLocation": "レポート対象の位置を選択してください",
+    "numericRangeHintMessage": "${openStrong}ヒント:${closeStrong} 最小値 ${minValue} および最大値 ${maxValue}",
+    "dateRangeHintMessage": "${openStrong}ヒント:${closeStrong} 最小日付 ${minValue} および最大日付 ${maxValue}",
+    "errorsInApplyEdits": "レポートを送信できませんでした",
+    "attachmentSelectedMsg": "添付ファイルが選択されています",
+    "attachmentUploadStatus": "${total} 件のうち、${failed} 件の添付ファイルをアップロードできませんでした",
+    "geoLocationError": "現在の位置は利用できません",
+    "geoLocationOutOfExtent": "現在の位置はベースマップの範囲外です",
+    "submitButtonTooltip": "保存",
+    "cancelButtonTooltip": "キャンセル",
+    "geoformBackButtonTooltip": "レポート リストに戻る",
+    "updateFeaturesConfirmationMsg": "${count} フィーチャが更新されます",
+    "attachmentHeaderText": "添付ファイル"
   },
   "mapViewer": {
-    "zoomInToolTip": "須_Zoom in___鷗",
+    "zoomInToolTip": "拡大",
     "zoomOutToolTip": "縮小"
   },
   "applicationHeader": {
@@ -77,52 +77,52 @@ define({
   "dataviewer": {
     "noIssuesReported": "レポートがありません",
     "noFeatureGeometry": "フィーチャを表示できません",
-    "ascendingFlagTitle": "須_Sort in ascending order________鷗",
-    "descendingFlagTitle": "須_Sort in descending order________鷗",
-    "filterLabel": "須_Filter___鷗",
-    "valueRadioButtonLabel": "須_Value___鷗",
-    "uniqueRadioButtonLabel": "須_Unique___鷗",
-    "selectLayerToBegin": "須_Select a category to get started___________鷗",
-    "layerFeatureCount": "須_${featureCount} records________鷗"
+    "ascendingFlagTitle": "昇順に並べ替え",
+    "descendingFlagTitle": "降順に並べ替え",
+    "filterLabel": "フィルター",
+    "valueRadioButtonLabel": "値",
+    "uniqueRadioButtonLabel": "個別値",
+    "selectLayerToBegin": "開始するカテゴリを選択",
+    "layerFeatureCount": "${featureCount} レコード"
   },
   "timeSlider": {
-    "timeSliderLabel": "須_Time range____鷗",
-    "timeSliderInEditModeAlert": "須_Time slider unavailable while editing____________鷗"
+    "timeSliderLabel": "時間範囲",
+    "timeSliderInEditModeAlert": "編集中はタイム スライダーを使用できません"
   },
   "comment": {
-    "commentsFormSubmitButton": "須_Save__鷗",
-    "commentsFormCancelButton": "須_Cancel___鷗",
-    "errorInSubmittingComment": "須_Edits could not be saved_________鷗.",
-    "emptyCommentMessage": "須_Value required_____鷗",
+    "commentsFormSubmitButton": "保存",
+    "commentsFormCancelButton": "キャンセル",
+    "errorInSubmittingComment": "編集内容を保存できませんでした。",
+    "emptyCommentMessage": "値が必要です",
     "placeHolderText": "",
-    "noCommentsAvailableText": "須_No records available_______鷗",
-    "remainingTextCount": "須_${0} character(s) remain________鷗",
-    "showNoText": "須_No__鷗"
+    "noCommentsAvailableText": "レコードがありません",
+    "remainingTextCount": "${0} 文字が残っています",
+    "showNoText": "なし"
   },
   "main": {
     "noGroup": "グループが構成されていません"
   },
   "search": {
-    "searchIconTooltip": "須_Search this layer______鷗",
-    "noResultFoundText": "須_No results found______鷗",
-    "searchInEditModeAlert": "須_Search unavailable while editing___________鷗"
+    "searchIconTooltip": "このレイヤーを検索",
+    "noResultFoundText": "結果が見つかりませんでした",
+    "searchInEditModeAlert": "編集中は検索を使用できません"
   },
   "manualRefresh": {
-    "manualRefreshIconTooltip": "須_Refresh___鷗",
+    "manualRefreshIconTooltip": "更新",
     "confirmManualRefeshText": "すべての選択セットおよび保存されていない変更は破棄されます"
   },
   "help": {
-    "helpIconTooltip": "須_Help__鷗"
+    "helpIconTooltip": "ヘルプ"
   },
   "filter": {
-    "noFeatureFoundText": "須_No feature found for this value___________鷗.",
-    "distinctQueryFalied": "須_No distinct values found for the field_____________鷗.",
-    "andText": "須_and__鷗",
-    "filterInEditModeAlert": "須_Filters unavailable while editing___________鷗",
-    "dropdownSelectOption": "須_Select___鷗"
+    "noFeatureFoundText": "この値のフィーチャが見つかりません。",
+    "distinctQueryFalied": "フィールドの個別値が見つかりません。",
+    "andText": "および",
+    "filterInEditModeAlert": "編集中はフィルターを使用できません",
+    "dropdownSelectOption": "選択"
   },
   "detailsPanel": {
-    "editContentText": "須_Edit record____鷗"
+    "editContentText": "レコードの編集"
   },
   "signOutPage": {
     "signOutMessage": "正常にサイン アウトしました",

@@ -39,9 +39,9 @@ define({
       "signOut": "התנתק"
     },
     "mobileView": {
-      "tapForDetails": "הקש לקבלת פרטים",
+      "tapForDetails": "למידע נוסף",
       "clickForDetails": "מידע נוסף",
-      "swipeToExplore": "Swipe כדי לחקור",
+      "swipeToExplore": "החלק כדי לדפדף",
       "tapForMap": "הקש כדי לחזור למפה",
       "clickForMap": "חזור למפה"
     },

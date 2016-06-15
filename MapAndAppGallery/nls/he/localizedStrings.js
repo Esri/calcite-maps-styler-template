@@ -69,8 +69,8 @@ define({
     "geolocationBtnTitle": "מיקום מרחבי",
     "ascendingSort": "עולה",
     "descendingSort": "יורד",
-    "viewBtnTitle": "כן_View__ש",
-    "backButtonTitle": "כן_Back__ש"
+    "viewBtnTitle": "מבט",
+    "backButtonTitle": "חזור"
   },
   "errorMessages": {
     "emptyGroup": "אין לקבוצה שהוגדרה נתונים בכדי לבצע את השאילתא.",

@@ -32,41 +32,41 @@ define({
     "avgRating": "التقييم",
     "noWebMapInGroup": "المجموعات التي تم تكوينها غير صحيحة أو لم تتم مشاركة العناصر مع هذه المجموعة بعد",
     "infoBtnToolTip": "معلومات الخريطة",
-    "openWebmapList": "بيت_Open panel____لاحقة",
-    "closeWebmapList": "بيت_Close panel____لاحقة"
+    "openWebmapList": "افتح اللوحة",
+    "closeWebmapList": "إغلاق اللوحة"
   },
   "geoform": {
-    "enterInformation": "بيت_Details___لاحقة",
-    "selectAttachments": "بيت_Attachments____لاحقة",
-    "selectFileText": "بيت_Browse___لاحقة",
-    "enterLocation": "بيت_Location___لاحقة",
-    "reportItButton": "بيت_Submit___لاحقة",
-    "cancelButton": "بيت_Cancel___لاحقة",
-    "requiredField": "بيت_(required)____لاحقة",
-    "selectDefaultText": "بيت_Select&hellip;_____لاحقة",
-    "invalidInputValue": "بيت_Please enter valid value_________لاحقة.",
-    "noFieldsConfiguredMessage": "بيت_Layer fields are not configured to capture data_______________لاحقة",
-    "invalidSmallNumber": "بيت_Please enter an integer________لاحقة",
+    "enterInformation": "تفاصيل",
+    "selectAttachments": "مرفقات",
+    "selectFileText": "مربع حوار",
+    "enterLocation": "الموقع",
+    "reportItButton": "إرسال",
+    "cancelButton": "إلغاء الأمر",
+    "requiredField": "(مطلوب)",
+    "selectDefaultText": "حدد&hellip;",
+    "invalidInputValue": "يرجى إدخال قيمة صحيحة.",
+    "noFieldsConfiguredMessage": "لم يتم تكوين حقول الطبقة لالتقاط البيانات",
+    "invalidSmallNumber": "برجاء إدخال عدد صحيح",
     "invalidNumber": "برجاء إدخال عدد صحيح",
     "invalidFloat": "Please enter a number",
     "invalidDouble": "Please enter a number",
-    "requiredFields": "بيت_Please provide values for all required fields_______________لاحقة",
-    "selectLocation": "بيت_Please select the location for your report______________لاحقة",
-    "numericRangeHintMessage": "بيت_${openStrong}Hint:${closeStrong} Minimum value ${minValue} and maximum value ${maxValue}___________________________لاحقة",
-    "dateRangeHintMessage": "بيت_${openStrong}Hint:${closeStrong} Minimum date ${minValue} and Maximum date ${maxValue}___________________________لاحقة",
-    "errorsInApplyEdits": "بيت_Report could not be submitted__________لاحقة",
-    "attachmentSelectedMsg": "بيت_attachment(s) selected________لاحقة",
-    "attachmentUploadStatus": "بيت_${failed} of ${total} attachment(s) failed to upload_________________لاحقة",
-    "geoLocationError": "بيت_Current location not available__________لاحقة",
-    "geoLocationOutOfExtent": "بيت_Current location is out of basemap extent_____________لاحقة",
-    "submitButtonTooltip": "بيت_Save__لاحقة",
-    "cancelButtonTooltip": "بيت_Cancel___لاحقة",
-    "geoformBackButtonTooltip": "بيت_Return to the report list_________لاحقة",
-    "updateFeaturesConfirmationMsg": "بيت_${count} features will be updated___________لاحقة",
-    "attachmentHeaderText": "بيت_Attachments____لاحقة"
+    "requiredFields": "برجاء توفير قيم لجميع الحقول المطلوبة",
+    "selectLocation": "برجاء تحديد موقع التقرير",
+    "numericRangeHintMessage": "${openStrong}Hint:${closeStrong} الحد الأدنى للقيمة ${minValue} والحد الأقصى للقيمة ${maxValue}",
+    "dateRangeHintMessage": "${openStrong}Hint:${closeStrong} التاريخ الأدنى ${minValue} والتاريخ الأقصى ${maxValue}",
+    "errorsInApplyEdits": "يتعذر إرسال التقرير",
+    "attachmentSelectedMsg": "المرفقات المحددة",
+    "attachmentUploadStatus": "فشل تحميل المرفقات ${failed} من ${total}",
+    "geoLocationError": "الموقع الحالي غير متاح",
+    "geoLocationOutOfExtent": "الموقع الحالي خارج نطاق الخريطة",
+    "submitButtonTooltip": "حفظ",
+    "cancelButtonTooltip": "إلغاء الأمر",
+    "geoformBackButtonTooltip": "الرجوع إلى قائمة التقرير",
+    "updateFeaturesConfirmationMsg": "سيتم تحديث المعالم ${count}",
+    "attachmentHeaderText": "مرفقات"
   },
   "mapViewer": {
-    "zoomInToolTip": "بيت_Zoom in___لاحقة",
+    "zoomInToolTip": "التكبير",
     "zoomOutToolTip": "التصغير."
   },
   "applicationHeader": {
@@ -77,52 +77,52 @@ define({
   "dataviewer": {
     "noIssuesReported": "لا توجد تقارير متاحة",
     "noFeatureGeometry": "يتعذر عرض المعالم",
-    "ascendingFlagTitle": "بيت_Sort in ascending order________لاحقة",
-    "descendingFlagTitle": "بيت_Sort in descending order________لاحقة",
-    "filterLabel": "بيت_Filter___لاحقة",
-    "valueRadioButtonLabel": "بيت_Value___لاحقة",
-    "uniqueRadioButtonLabel": "بيت_Unique___لاحقة",
-    "selectLayerToBegin": "بيت_Select a category to get started___________لاحقة",
-    "layerFeatureCount": "بيت_${featureCount} records________لاحقة"
+    "ascendingFlagTitle": "فرز بالترتيب التصاعدي",
+    "descendingFlagTitle": "فرز بالترتيب التنازلي",
+    "filterLabel": "تصفية",
+    "valueRadioButtonLabel": "قيمة",
+    "uniqueRadioButtonLabel": "فريد",
+    "selectLayerToBegin": "تحديد فئة للبدء",
+    "layerFeatureCount": "تسجيلات ${featureCount}"
   },
   "timeSlider": {
-    "timeSliderLabel": "بيت_Time range____لاحقة",
-    "timeSliderInEditModeAlert": "بيت_Time slider unavailable while editing____________لاحقة"
+    "timeSliderLabel": "النطاق الزمني",
+    "timeSliderInEditModeAlert": "لا يتوفر منزلق الوقت أثناء التحرير"
   },
   "comment": {
-    "commentsFormSubmitButton": "بيت_Save__لاحقة",
-    "commentsFormCancelButton": "بيت_Cancel___لاحقة",
-    "errorInSubmittingComment": "بيت_Edits could not be saved_________لاحقة.",
-    "emptyCommentMessage": "بيت_Value required_____لاحقة",
+    "commentsFormSubmitButton": "حفظ",
+    "commentsFormCancelButton": "إلغاء الأمر",
+    "errorInSubmittingComment": "لا يمكن حفظ عمليات التحرير.",
+    "emptyCommentMessage": "القيمة المطلوبة",
     "placeHolderText": "",
-    "noCommentsAvailableText": "بيت_No records available_______لاحقة",
-    "remainingTextCount": "بيت_${0} character(s) remain________لاحقة",
-    "showNoText": "بيت_No__لاحقة"
+    "noCommentsAvailableText": "لا توجد تسجيلات متاحة",
+    "remainingTextCount": "يتبقى ${0} حرف",
+    "showNoText": "لا"
   },
   "main": {
     "noGroup": "لم يتم تكوين المجموعة"
   },
   "search": {
-    "searchIconTooltip": "بيت_Search this layer______لاحقة",
-    "noResultFoundText": "بيت_No results found______لاحقة",
-    "searchInEditModeAlert": "بيت_Search unavailable while editing___________لاحقة"
+    "searchIconTooltip": "البحث عن هذه الطبقة",
+    "noResultFoundText": "لم يتم العثور على أية نتائج",
+    "searchInEditModeAlert": "لا يتوفر البحث أثناء التحرير"
   },
   "manualRefresh": {
-    "manualRefreshIconTooltip": "بيت_Refresh___لاحقة",
+    "manualRefreshIconTooltip": "تحديث",
     "confirmManualRefeshText": "سيتم تجاهل جميع عمليات التحديد والتغييرات غير المحفوظة"
   },
   "help": {
-    "helpIconTooltip": "بيت_Help__لاحقة"
+    "helpIconTooltip": "مساعدة"
   },
   "filter": {
-    "noFeatureFoundText": "بيت_No feature found for this value___________لاحقة.",
-    "distinctQueryFalied": "بيت_No distinct values found for the field_____________لاحقة.",
-    "andText": "بيت_and__لاحقة",
-    "filterInEditModeAlert": "بيت_Filters unavailable while editing___________لاحقة",
-    "dropdownSelectOption": "بيت_Select___لاحقة"
+    "noFeatureFoundText": "لا توجد معالم للقيمة الحالية.",
+    "distinctQueryFalied": "لا توجد قيم مُحددة للحقل.",
+    "andText": "و",
+    "filterInEditModeAlert": "لا تتوفر عوامل التصفية أثناء التحرير",
+    "dropdownSelectOption": "تحديد"
   },
   "detailsPanel": {
-    "editContentText": "بيت_Edit record____لاحقة"
+    "editContentText": "تحرير التسجيل"
   },
   "signOutPage": {
     "signOutMessage": "تم تسجيل الخروج بنجاح",

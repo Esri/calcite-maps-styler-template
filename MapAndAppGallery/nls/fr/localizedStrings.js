@@ -69,8 +69,8 @@ define({
     "geolocationBtnTitle": "Géolocalisation",
     "ascendingSort": "Croissant",
     "descendingSort": "Décroissant",
-    "viewBtnTitle": "æ_View__Â",
-    "backButtonTitle": "æ_Back__Â"
+    "viewBtnTitle": "Afficher",
+    "backButtonTitle": "Précédent"
   },
   "errorMessages": {
     "emptyGroup": "Le groupe configuré ne possède aucune donnée pour réaliser la requête.",

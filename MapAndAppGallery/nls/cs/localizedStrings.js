@@ -69,8 +69,8 @@ define({
     "geolocationBtnTitle": "Geolokace",
     "ascendingSort": "Vzestupně",
     "descendingSort": "Sestupně",
-    "viewBtnTitle": "Ř_View__ů",
-    "backButtonTitle": "Ř_Back__ů"
+    "viewBtnTitle": "Zobrazit",
+    "backButtonTitle": "Zpět"
   },
   "errorMessages": {
     "emptyGroup": "Konfigurovaná skupina nemá k dispozici žádná data umožňující provedení dotazu.",

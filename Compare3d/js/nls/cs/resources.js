@@ -17,10 +17,10 @@
 define({
   "scene": {
     "error": "Nelze vytvořit scénu",
-    "support": "Ř_Browser not supported_______ů",
-    "noScene": "Ř_Specify scene id(s)_______ů",
-    "noConfig": "Ř_Config is not defined_______ů",
-    "invalidScene": "Ř_Unable to create scene________ů"
+    "support": "Prohlížeč není podporován",
+    "noScene": "Zadejte id scény/scén",
+    "noConfig": "Konfigurace není definována",
+    "invalidScene": "Nelze vytvořit scénu"
   },
   "tools": {
     "linkLabel": "Propojit zobrazení",

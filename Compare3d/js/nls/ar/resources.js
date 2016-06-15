@@ -17,10 +17,10 @@
 define({
   "scene": {
     "error": "يتعذر إنشاء المشهد",
-    "support": "بيت_Browser not supported_______لاحقة",
-    "noScene": "بيت_Specify scene id(s)_______لاحقة",
-    "noConfig": "بيت_Config is not defined_______لاحقة",
-    "invalidScene": "بيت_Unable to create scene________لاحقة"
+    "support": "المتصفح غير مدعوم",
+    "noScene": "تحديد مُعرفات المشهد",
+    "noConfig": "لم يتم تعريف التكوين",
+    "invalidScene": "يتعذر إنشاء المشهد"
   },
   "tools": {
     "linkLabel": "ربط العروض",

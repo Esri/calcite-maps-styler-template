@@ -69,8 +69,8 @@ define({
     "geolocationBtnTitle": "الموقع الجغرافي",
     "ascendingSort": "تصاعدي",
     "descendingSort": "تنازليًا",
-    "viewBtnTitle": "بيت_View__لاحقة",
-    "backButtonTitle": "بيت_Back__لاحقة"
+    "viewBtnTitle": "عرض",
+    "backButtonTitle": "سابق"
   },
   "errorMessages": {
     "emptyGroup": "الطبقة التي يتم تكوينها ليس بها أي بيانات للقيام بالاستعلام.",

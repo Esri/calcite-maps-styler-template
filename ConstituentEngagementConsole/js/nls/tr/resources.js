@@ -32,41 +32,41 @@ define({
     "avgRating": "Derecelendirme",
     "noWebMapInGroup": "Yapılandırılmış grup geçersiz veya bu grupla henüz öğe paylaşılmamış",
     "infoBtnToolTip": "Harita bilgileri",
-    "openWebmapList": "ı_Open panel____İ",
-    "closeWebmapList": "ı_Close panel____İ"
+    "openWebmapList": "Paneli aç",
+    "closeWebmapList": "Paneli kapat"
   },
   "geoform": {
-    "enterInformation": "ı_Details___İ",
-    "selectAttachments": "ı_Attachments____İ",
-    "selectFileText": "ı_Browse___İ",
-    "enterLocation": "ı_Location___İ",
-    "reportItButton": "ı_Submit___İ",
-    "cancelButton": "ı_Cancel___İ",
-    "requiredField": "ı_(required)____İ",
-    "selectDefaultText": "ı_Select&hellip;_____İ",
-    "invalidInputValue": "ı_Please enter valid value_________İ.",
-    "noFieldsConfiguredMessage": "ı_Layer fields are not configured to capture data_______________İ",
-    "invalidSmallNumber": "ı_Please enter an integer________İ",
+    "enterInformation": "Detaylar",
+    "selectAttachments": "Ekler",
+    "selectFileText": "...",
+    "enterLocation": "Konum",
+    "reportItButton": "Gönder",
+    "cancelButton": "İptal",
+    "requiredField": "(gerekli)",
+    "selectDefaultText": "Seç&hellip;",
+    "invalidInputValue": "Geçerli değer girin.",
+    "noFieldsConfiguredMessage": "Katman alanları veri yakalamak üzere yapılandırılmamış",
+    "invalidSmallNumber": "Tamsayı girin",
     "invalidNumber": "Tamsayı girin",
     "invalidFloat": "Lütfen bir sayı girin",
     "invalidDouble": "Lütfen bir sayı girin",
-    "requiredFields": "ı_Please provide values for all required fields_______________İ",
-    "selectLocation": "ı_Please select the location for your report______________İ",
-    "numericRangeHintMessage": "ı_${openStrong}Hint:${closeStrong} Minimum value ${minValue} and maximum value ${maxValue}___________________________İ",
-    "dateRangeHintMessage": "ı_${openStrong}Hint:${closeStrong} Minimum date ${minValue} and Maximum date ${maxValue}___________________________İ",
-    "errorsInApplyEdits": "ı_Report could not be submitted__________İ",
-    "attachmentSelectedMsg": "ı_attachment(s) selected________İ",
-    "attachmentUploadStatus": "ı_${failed} of ${total} attachment(s) failed to upload_________________İ",
-    "geoLocationError": "ı_Current location not available__________İ",
-    "geoLocationOutOfExtent": "ı_Current location is out of basemap extent_____________İ",
-    "submitButtonTooltip": "ı_Save__İ",
-    "cancelButtonTooltip": "ı_Cancel___İ",
-    "geoformBackButtonTooltip": "ı_Return to the report list_________İ",
-    "updateFeaturesConfirmationMsg": "ı_${count} features will be updated___________İ",
-    "attachmentHeaderText": "ı_Attachments____İ"
+    "requiredFields": "Tüm gerekli alanlar için değer girin",
+    "selectLocation": "Raporunuzun konumunu seçin",
+    "numericRangeHintMessage": "${openStrong}İpucu:${closeStrong} Minimum değer ${minValue} ve maksimum değer ${maxValue}",
+    "dateRangeHintMessage": "${openStrong}İpucu:${closeStrong} Minimum tarih ${minValue} ve Maksimum tarih ${maxValue}",
+    "errorsInApplyEdits": "Rapor gönderilemedi",
+    "attachmentSelectedMsg": "ek seçildi",
+    "attachmentUploadStatus": "${failed} / ${total} ek yüklenemedi",
+    "geoLocationError": "Geçerli konum kullanılamıyor",
+    "geoLocationOutOfExtent": "Geçerli konum altlık haritası yayılımı dışında",
+    "submitButtonTooltip": "Kaydet",
+    "cancelButtonTooltip": "İptal",
+    "geoformBackButtonTooltip": "Rapor listesine dön",
+    "updateFeaturesConfirmationMsg": "${count} detay güncellenecek",
+    "attachmentHeaderText": "Ekler"
   },
   "mapViewer": {
-    "zoomInToolTip": "ı_Zoom in___İ",
+    "zoomInToolTip": "Büyüt",
     "zoomOutToolTip": "Küçült"
   },
   "applicationHeader": {
@@ -77,52 +77,52 @@ define({
   "dataviewer": {
     "noIssuesReported": "Kullanılabilir rapor yok",
     "noFeatureGeometry": "Detay görüntülenemiyor",
-    "ascendingFlagTitle": "ı_Sort in ascending order________İ",
-    "descendingFlagTitle": "ı_Sort in descending order________İ",
-    "filterLabel": "ı_Filter___İ",
-    "valueRadioButtonLabel": "ı_Value___İ",
-    "uniqueRadioButtonLabel": "ı_Unique___İ",
-    "selectLayerToBegin": "ı_Select a category to get started___________İ",
-    "layerFeatureCount": "ı_${featureCount} records________İ"
+    "ascendingFlagTitle": "Artan düzende sırala",
+    "descendingFlagTitle": "Azalan düzende sırala",
+    "filterLabel": "Filtre",
+    "valueRadioButtonLabel": "Değer",
+    "uniqueRadioButtonLabel": "Tek",
+    "selectLayerToBegin": "Başlamak için bir kategori seçin",
+    "layerFeatureCount": "${featureCount} kayıt"
   },
   "timeSlider": {
-    "timeSliderLabel": "ı_Time range____İ",
-    "timeSliderInEditModeAlert": "ı_Time slider unavailable while editing____________İ"
+    "timeSliderLabel": "Zaman aralığı",
+    "timeSliderInEditModeAlert": "Düzenleme sırasında zaman kaydırıcı kullanılamaz"
   },
   "comment": {
-    "commentsFormSubmitButton": "ı_Save__İ",
-    "commentsFormCancelButton": "ı_Cancel___İ",
-    "errorInSubmittingComment": "ı_Edits could not be saved_________İ.",
-    "emptyCommentMessage": "ı_Value required_____İ",
+    "commentsFormSubmitButton": "Kaydet",
+    "commentsFormCancelButton": "İptal",
+    "errorInSubmittingComment": "Düzenlemeler kaydedilemedi.",
+    "emptyCommentMessage": "Değer gerekli",
     "placeHolderText": "",
-    "noCommentsAvailableText": "ı_No records available_______İ",
-    "remainingTextCount": "ı_${0} character(s) remain________İ",
-    "showNoText": "ı_No__İ"
+    "noCommentsAvailableText": "Kullanılabilir kayıt yok",
+    "remainingTextCount": "${0} karakter kaldı",
+    "showNoText": "Hayır"
   },
   "main": {
     "noGroup": "Yapılandırılan grup yok"
   },
   "search": {
-    "searchIconTooltip": "ı_Search this layer______İ",
-    "noResultFoundText": "ı_No results found______İ",
-    "searchInEditModeAlert": "ı_Search unavailable while editing___________İ"
+    "searchIconTooltip": "Bu katmanı ara",
+    "noResultFoundText": "Sonuç bulunamadı",
+    "searchInEditModeAlert": "Düzenleme sırasında arama yapılamaz"
   },
   "manualRefresh": {
-    "manualRefreshIconTooltip": "ı_Refresh___İ",
+    "manualRefreshIconTooltip": "Yenile",
     "confirmManualRefeshText": "Tüm seçimler ve kaydedilmemiş değişiklikler silinecek"
   },
   "help": {
-    "helpIconTooltip": "ı_Help__İ"
+    "helpIconTooltip": "Yardım"
   },
   "filter": {
-    "noFeatureFoundText": "ı_No feature found for this value___________İ.",
-    "distinctQueryFalied": "ı_No distinct values found for the field_____________İ.",
-    "andText": "ı_and__İ",
-    "filterInEditModeAlert": "ı_Filters unavailable while editing___________İ",
-    "dropdownSelectOption": "ı_Select___İ"
+    "noFeatureFoundText": "Bu değer için detay bulunamadı.",
+    "distinctQueryFalied": "Alan için farklı değer bulunamadı.",
+    "andText": "ve",
+    "filterInEditModeAlert": "Düzenleme sırasında filtre kullanılamaz",
+    "dropdownSelectOption": "Seç"
   },
   "detailsPanel": {
-    "editContentText": "ı_Edit record____İ"
+    "editContentText": "Kaydı düzenle"
   },
   "signOutPage": {
     "signOutMessage": "Oturumunuz başarıyla kapatıldı",

@@ -69,8 +69,8 @@ define({
     "geolocationBtnTitle": "Geolocaţie",
     "ascendingSort": "Ascendent",
     "descendingSort": "Descendent",
-    "viewBtnTitle": "Ă_View__ș",
-    "backButtonTitle": "Ă_Back__ș"
+    "viewBtnTitle": "Vizualizare",
+    "backButtonTitle": "Înapoi"
   },
   "errorMessages": {
     "emptyGroup": "Grupul configurat nu are nicio dată pentru a efectua interogarea.",

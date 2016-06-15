@@ -47,7 +47,7 @@ define({
     "basic": "Tenk minimalistisk, smart for ett kart"
   },
   "signInBuildDialog": {
-    "welcome": "å_Welcome___ø!",
-    "continue": "å_Continue to {{APP_NAME}} builder___________ø"
+    "welcome": "Velkommen!",
+    "continue": "Fortsett til byggeverktøyet {{APP_NAME}}"
   }
 });

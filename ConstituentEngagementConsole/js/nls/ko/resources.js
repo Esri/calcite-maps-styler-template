@@ -32,41 +32,41 @@ define({
     "avgRating": "평점",
     "noWebMapInGroup": "구성된 그룹이 유효하지 않거나 이 그룹과 공유된 항목이 아직 없습니다.",
     "infoBtnToolTip": "맵 정보",
-    "openWebmapList": "한_Open panel____빠",
-    "closeWebmapList": "한_Close panel____빠"
+    "openWebmapList": "패널 열기",
+    "closeWebmapList": "패널 닫기"
   },
   "geoform": {
-    "enterInformation": "한_Details___빠",
-    "selectAttachments": "한_Attachments____빠",
-    "selectFileText": "한_Browse___빠",
-    "enterLocation": "한_Location___빠",
-    "reportItButton": "한_Submit___빠",
-    "cancelButton": "한_Cancel___빠",
-    "requiredField": "한_(required)____빠",
-    "selectDefaultText": "한_Select&hellip;_____빠",
-    "invalidInputValue": "한_Please enter valid value_________빠.",
-    "noFieldsConfiguredMessage": "한_Layer fields are not configured to capture data_______________빠",
-    "invalidSmallNumber": "한_Please enter an integer________빠",
+    "enterInformation": "세부정보",
+    "selectAttachments": "첨부 파일",
+    "selectFileText": "찾아보기",
+    "enterLocation": "위치",
+    "reportItButton": "제출",
+    "cancelButton": "취소",
+    "requiredField": "(필수)",
+    "selectDefaultText": "선택&hellip;",
+    "invalidInputValue": "유효한 값을 입력하세요.",
+    "noFieldsConfiguredMessage": "데이터를 캡처하도록 레이어 필드가 구성되지 않음",
+    "invalidSmallNumber": "정수를 입력하세요.",
     "invalidNumber": "정수를 입력하세요.",
     "invalidFloat": "숫자를 입력하세요.",
     "invalidDouble": "숫자를 입력하세요.",
-    "requiredFields": "한_Please provide values for all required fields_______________빠",
-    "selectLocation": "한_Please select the location for your report______________빠",
-    "numericRangeHintMessage": "한_${openStrong}Hint:${closeStrong} Minimum value ${minValue} and maximum value ${maxValue}___________________________빠",
-    "dateRangeHintMessage": "한_${openStrong}Hint:${closeStrong} Minimum date ${minValue} and Maximum date ${maxValue}___________________________빠",
-    "errorsInApplyEdits": "한_Report could not be submitted__________빠",
-    "attachmentSelectedMsg": "한_attachment(s) selected________빠",
-    "attachmentUploadStatus": "한_${failed} of ${total} attachment(s) failed to upload_________________빠",
-    "geoLocationError": "한_Current location not available__________빠",
-    "geoLocationOutOfExtent": "한_Current location is out of basemap extent_____________빠",
-    "submitButtonTooltip": "한_Save__빠",
-    "cancelButtonTooltip": "한_Cancel___빠",
-    "geoformBackButtonTooltip": "한_Return to the report list_________빠",
-    "updateFeaturesConfirmationMsg": "한_${count} features will be updated___________빠",
-    "attachmentHeaderText": "한_Attachments____빠"
+    "requiredFields": "모든 필수 필드에 값을 제공하세요.",
+    "selectLocation": "보고서의 위치를 선택하세요.",
+    "numericRangeHintMessage": "${openStrong}힌트:${closeStrong} 최소값 ${minValue} 및 최대값 ${maxValue}",
+    "dateRangeHintMessage": "${openStrong}힌트:${closeStrong} 최소 날짜 ${minValue} 및 최대 날짜 ${maxValue}",
+    "errorsInApplyEdits": "보고서를 제출할 수 없음",
+    "attachmentSelectedMsg": "첨부 파일이 선택됨",
+    "attachmentUploadStatus": "${total}개 중 ${failed}개 첨부 파일 업로드 실패",
+    "geoLocationError": "현재 위치를 사용할 수 없음",
+    "geoLocationOutOfExtent": "현재 위치가 베이스맵 범위를 벗어남",
+    "submitButtonTooltip": "저장",
+    "cancelButtonTooltip": "취소",
+    "geoformBackButtonTooltip": "보고서 목록으로 돌아가기",
+    "updateFeaturesConfirmationMsg": "${count} 피처가 업데이트됨",
+    "attachmentHeaderText": "첨부 파일"
   },
   "mapViewer": {
-    "zoomInToolTip": "한_Zoom in___빠",
+    "zoomInToolTip": "확대",
     "zoomOutToolTip": "축소"
   },
   "applicationHeader": {
@@ -77,52 +77,52 @@ define({
   "dataviewer": {
     "noIssuesReported": "보고서를 사용할 수 없음",
     "noFeatureGeometry": "피처를 표시할 수 없음",
-    "ascendingFlagTitle": "한_Sort in ascending order________빠",
-    "descendingFlagTitle": "한_Sort in descending order________빠",
-    "filterLabel": "한_Filter___빠",
-    "valueRadioButtonLabel": "한_Value___빠",
-    "uniqueRadioButtonLabel": "한_Unique___빠",
-    "selectLayerToBegin": "한_Select a category to get started___________빠",
-    "layerFeatureCount": "한_${featureCount} records________빠"
+    "ascendingFlagTitle": "오름 차순으로 정렬",
+    "descendingFlagTitle": "내림 차순으로 정렬",
+    "filterLabel": "필터",
+    "valueRadioButtonLabel": "값",
+    "uniqueRadioButtonLabel": "고유값",
+    "selectLayerToBegin": "시작하려면 범주 선택",
+    "layerFeatureCount": "${featureCount} 레코드"
   },
   "timeSlider": {
-    "timeSliderLabel": "한_Time range____빠",
-    "timeSliderInEditModeAlert": "한_Time slider unavailable while editing____________빠"
+    "timeSliderLabel": "시간 범위",
+    "timeSliderInEditModeAlert": "편집 중에 시간 슬라이더를 사용할 수 없음"
   },
   "comment": {
-    "commentsFormSubmitButton": "한_Save__빠",
-    "commentsFormCancelButton": "한_Cancel___빠",
-    "errorInSubmittingComment": "한_Edits could not be saved_________빠.",
-    "emptyCommentMessage": "한_Value required_____빠",
+    "commentsFormSubmitButton": "저장",
+    "commentsFormCancelButton": "취소",
+    "errorInSubmittingComment": "편집 내용을 저장할 수 없습니다.",
+    "emptyCommentMessage": "값이 필요함",
     "placeHolderText": "",
-    "noCommentsAvailableText": "한_No records available_______빠",
-    "remainingTextCount": "한_${0} character(s) remain________빠",
-    "showNoText": "한_No__빠"
+    "noCommentsAvailableText": "레코드를 사용할 수 없음",
+    "remainingTextCount": "${0}자 남음",
+    "showNoText": "아니요"
   },
   "main": {
     "noGroup": "구성된 그룹 없음"
   },
   "search": {
-    "searchIconTooltip": "한_Search this layer______빠",
-    "noResultFoundText": "한_No results found______빠",
-    "searchInEditModeAlert": "한_Search unavailable while editing___________빠"
+    "searchIconTooltip": "이 레이어 검색",
+    "noResultFoundText": "결과를 찾을 수 없음",
+    "searchInEditModeAlert": "편집 중에 검색을 사용할 수 없음"
   },
   "manualRefresh": {
-    "manualRefreshIconTooltip": "한_Refresh___빠",
+    "manualRefreshIconTooltip": "새로 고침",
     "confirmManualRefeshText": "모든 선택 내역과 저장하지 않은 변경 내용이 취소됩니다."
   },
   "help": {
-    "helpIconTooltip": "한_Help__빠"
+    "helpIconTooltip": "도움말"
   },
   "filter": {
-    "noFeatureFoundText": "한_No feature found for this value___________빠.",
-    "distinctQueryFalied": "한_No distinct values found for the field_____________빠.",
-    "andText": "한_and__빠",
-    "filterInEditModeAlert": "한_Filters unavailable while editing___________빠",
-    "dropdownSelectOption": "한_Select___빠"
+    "noFeatureFoundText": "이 값에 대한 피처를 찾을 수 없습니다.",
+    "distinctQueryFalied": "필드에 대한 고유값을 찾을 수 없습니다.",
+    "andText": "및",
+    "filterInEditModeAlert": "편집 중에 필터를 사용할 수 없음",
+    "dropdownSelectOption": "선택"
   },
   "detailsPanel": {
-    "editContentText": "한_Edit record____빠"
+    "editContentText": "레코드 편집"
   },
   "signOutPage": {
     "signOutMessage": "로그아웃되었습니다.",

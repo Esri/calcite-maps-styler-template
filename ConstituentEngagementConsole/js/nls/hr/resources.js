@@ -32,38 +32,38 @@ define({
     "avgRating": "Ocjena",
     "noWebMapInGroup": "Konfigurirana grupa nije valjana ili s grupom još nisu podijeljene stavke",
     "infoBtnToolTip": "Informacije o karti",
-    "openWebmapList": "Č_Open panel____ž",
-    "closeWebmapList": "Č_Close panel____ž"
+    "openWebmapList": "Otvori ploču",
+    "closeWebmapList": "Zatvori ploču"
   },
   "geoform": {
-    "enterInformation": "Č_Details___ž",
-    "selectAttachments": "Č_Attachments____ž",
-    "selectFileText": "Č_Browse___ž",
-    "enterLocation": "Č_Location___ž",
-    "reportItButton": "Č_Submit___ž",
-    "cancelButton": "Č_Cancel___ž",
-    "requiredField": "Č_(required)____ž",
-    "selectDefaultText": "Č_Select&hellip;_____ž",
-    "invalidInputValue": "Č_Please enter valid value_________ž.",
-    "noFieldsConfiguredMessage": "Č_Layer fields are not configured to capture data_______________ž",
-    "invalidSmallNumber": "Č_Please enter an integer________ž",
+    "enterInformation": "Pojedinosti",
+    "selectAttachments": "Privici",
+    "selectFileText": "Pregledaj",
+    "enterLocation": "Lokacija",
+    "reportItButton": "Pošalji",
+    "cancelButton": "Ovdje pogledajte primjer primjene sa serijom klizača",
+    "requiredField": "(obavezno)",
+    "selectDefaultText": "Odabir&hellip;",
+    "invalidInputValue": "Unesite valjanu vrijednost.",
+    "noFieldsConfiguredMessage": "Polja slojeva nisu konfigurirana za prikupljanje podataka",
+    "invalidSmallNumber": "Unesite cijeli broj",
     "invalidNumber": "Unesite cijeli broj",
     "invalidFloat": "Unesite broj",
     "invalidDouble": "Unesite broj",
-    "requiredFields": "Č_Please provide values for all required fields_______________ž",
-    "selectLocation": "Č_Please select the location for your report______________ž",
-    "numericRangeHintMessage": "Č_${openStrong}Hint:${closeStrong} Minimum value ${minValue} and maximum value ${maxValue}___________________________ž",
-    "dateRangeHintMessage": "Č_${openStrong}Hint:${closeStrong} Minimum date ${minValue} and Maximum date ${maxValue}___________________________ž",
-    "errorsInApplyEdits": "Č_Report could not be submitted__________ž",
-    "attachmentSelectedMsg": "Č_attachment(s) selected________ž",
-    "attachmentUploadStatus": "Č_${failed} of ${total} attachment(s) failed to upload_________________ž",
-    "geoLocationError": "Č_Current location not available__________ž",
-    "geoLocationOutOfExtent": "Č_Current location is out of basemap extent_____________ž",
-    "submitButtonTooltip": "Č_Save__ž",
-    "cancelButtonTooltip": "Č_Cancel___ž",
-    "geoformBackButtonTooltip": "Č_Return to the report list_________ž",
-    "updateFeaturesConfirmationMsg": "Č_${count} features will be updated___________ž",
-    "attachmentHeaderText": "Č_Attachments____ž"
+    "requiredFields": "Upišite vrijednosti za sva obavezna polja",
+    "selectLocation": "Odaberite lokaciju za izvješće",
+    "numericRangeHintMessage": "${openStrong}Podsjetnik:${closeStrong} minimalna vrijednost ${minValue} i maksimalna vrijednost ${maxValue}",
+    "dateRangeHintMessage": "${openStrong}Podsjetnik:${closeStrong} minimalni datum ${minValue} i maksimalni datum ${maxValue}",
+    "errorsInApplyEdits": "Nije moguće podnijeti izvješće.",
+    "attachmentSelectedMsg": "odabrani privitak(-ci)",
+    "attachmentUploadStatus": "${failed} od ${total} privit(a)ka nije poslano",
+    "geoLocationError": "Trenutačna lokacija nije dostupna",
+    "geoLocationOutOfExtent": "Trenutačna lokacija izvan je obuhvata kartografske podloge",
+    "submitButtonTooltip": "Spremi",
+    "cancelButtonTooltip": "Ovdje pogledajte primjer primjene sa serijom klizača",
+    "geoformBackButtonTooltip": "Povratak na popis izvješća",
+    "updateFeaturesConfirmationMsg": "Ažurirat će se ${count} geoobjek(a)t(a)",
+    "attachmentHeaderText": "Privici"
   },
   "mapViewer": {
     "zoomInToolTip": "Povećaj",
@@ -77,52 +77,52 @@ define({
   "dataviewer": {
     "noIssuesReported": "Nema dostupnih izvješća",
     "noFeatureGeometry": "Geoobjekt se ne može prikazati",
-    "ascendingFlagTitle": "Č_Sort in ascending order________ž",
-    "descendingFlagTitle": "Č_Sort in descending order________ž",
-    "filterLabel": "Č_Filter___ž",
-    "valueRadioButtonLabel": "Č_Value___ž",
-    "uniqueRadioButtonLabel": "Č_Unique___ž",
-    "selectLayerToBegin": "Č_Select a category to get started___________ž",
-    "layerFeatureCount": "Č_${featureCount} records________ž"
+    "ascendingFlagTitle": "Sortiraj uzlaznim redoslijedom",
+    "descendingFlagTitle": "Sortiraj silaznim redoslijedom",
+    "filterLabel": "Filtriraj",
+    "valueRadioButtonLabel": "Vrijednost",
+    "uniqueRadioButtonLabel": "Jedinstveno",
+    "selectLayerToBegin": "Odaberite kategoriju za početak rada",
+    "layerFeatureCount": "${featureCount} zapis(a)"
   },
   "timeSlider": {
-    "timeSliderLabel": "Č_Time range____ž",
-    "timeSliderInEditModeAlert": "Č_Time slider unavailable while editing____________ž"
+    "timeSliderLabel": "Vremenski raspon",
+    "timeSliderInEditModeAlert": "Vremenski klizač nije dostupan tijekom uređivanja"
   },
   "comment": {
-    "commentsFormSubmitButton": "Č_Save__ž",
-    "commentsFormCancelButton": "Č_Cancel___ž",
-    "errorInSubmittingComment": "Č_Edits could not be saved_________ž.",
-    "emptyCommentMessage": "Č_Value required_____ž",
+    "commentsFormSubmitButton": "Spremi",
+    "commentsFormCancelButton": "Ovdje pogledajte primjer primjene sa serijom klizača",
+    "errorInSubmittingComment": "Uređivanja se nisu mogla spremiti.",
+    "emptyCommentMessage": "Potrebna vrijednost",
     "placeHolderText": "",
-    "noCommentsAvailableText": "Č_No records available_______ž",
-    "remainingTextCount": "Č_${0} character(s) remain________ž",
-    "showNoText": "Č_No__ž"
+    "noCommentsAvailableText": "Nema dostupnih zapisa",
+    "remainingTextCount": "preostalo ${0} znakova",
+    "showNoText": "Ne"
   },
   "main": {
     "noGroup": "Nema konfiguriranih grupa"
   },
   "search": {
-    "searchIconTooltip": "Č_Search this layer______ž",
-    "noResultFoundText": "Č_No results found______ž",
-    "searchInEditModeAlert": "Č_Search unavailable while editing___________ž"
+    "searchIconTooltip": "Pretraži ovaj sloj",
+    "noResultFoundText": "Nema rezultata",
+    "searchInEditModeAlert": "Pretraživanje nije dostupno tijekom uređivanja"
   },
   "manualRefresh": {
-    "manualRefreshIconTooltip": "Č_Refresh___ž",
+    "manualRefreshIconTooltip": "Osvježi",
     "confirmManualRefeshText": "Odbacit će se svi odabiri i nespremljene promjene"
   },
   "help": {
-    "helpIconTooltip": "Č_Help__ž"
+    "helpIconTooltip": "Pomoć"
   },
   "filter": {
-    "noFeatureFoundText": "Č_No feature found for this value___________ž.",
-    "distinctQueryFalied": "Č_No distinct values found for the field_____________ž.",
-    "andText": "Č_and__ž",
-    "filterInEditModeAlert": "Č_Filters unavailable while editing___________ž",
-    "dropdownSelectOption": "Č_Select___ž"
+    "noFeatureFoundText": "Nema geoobjekata za ovu vrijednost.",
+    "distinctQueryFalied": "Nema određenih vrijednosti za ovo polje.",
+    "andText": "i",
+    "filterInEditModeAlert": "Filtri nisu dostupni tijekom uređivanja",
+    "dropdownSelectOption": "Odaberi"
   },
   "detailsPanel": {
-    "editContentText": "Č_Edit record____ž"
+    "editContentText": "Uredi zapis"
   },
   "signOutPage": {
     "signOutMessage": "Uspješno ste se odjavili",

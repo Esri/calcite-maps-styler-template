@@ -17,10 +17,10 @@
 define({
   "scene": {
     "error": "씬을 생성할 수 없음",
-    "support": "한_Browser not supported_______빠",
-    "noScene": "한_Specify scene id(s)_______빠",
-    "noConfig": "한_Config is not defined_______빠",
-    "invalidScene": "한_Unable to create scene________빠"
+    "support": "브라우저가 지원되지 않음",
+    "noScene": "씬 ID 지정",
+    "noConfig": "구성이 정의되지 않음",
+    "invalidScene": "씬을 생성할 수 없음"
   },
   "tools": {
     "linkLabel": "뷰 링크",

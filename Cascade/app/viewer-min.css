@@ -5,6 +5,7 @@
 body {
   font-size: 14px;
   letter-spacing: inherit;
+  -ms-overflow-style: scrollbar;
 }
 
 /*
@@ -2450,8 +2451,14 @@ body {
  * Error box
  */
 
+#loadingOverlay.error {
+  display: block !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
 #fatalError {
-	position: absolute;
+	position: fixed;
 	display: none;
 	z-index: 3000;
 	top: 50%;
@@ -2632,10 +2639,17 @@ body.mobile .discover-item img {
 .block {
   position: relative;
   margin-top: 30px;
+  word-wrap: break-word;
 }
 
 .block-media {
   position: relative;
+}
+
+/* to avoid issue with map popup
+ * TODO: why is that needed? */
+.media-media {
+  line-height: normal;
 }
 
 body.mobile-view .block-media {
@@ -2710,7 +2724,7 @@ body.touch .background .caption {
   left: 0px;
   margin-left: auto;
   margin-right: auto;
-  top: initial !important;
+  top: inherit !important;
   bottom: 50px;
   width: 90%;
   right: 0;
@@ -2839,6 +2853,10 @@ body.mobile-view .section:not(.events-mobile-central) .interaction-container{
 
 body.builder-mode .builder-ui {
   display: inherit;
+}
+
+.builder-config-open .block-caption {
+  display: none;
 }
 .progressjs-inner{width:0}.progressjs-progress{z-index:9999999}.progressjs-theme-blue .progressjs-inner{height:2px;-webkit-transition:all .3s ease-out;-moz-transition:all .3s ease-out;-o-transition:all .3s ease-out;transition:all .3s ease-out;background-color:#3498db}.progressjs-theme-blue.progressjs-end{-webkit-transition:opacity .2s ease-out;-moz-transition:opacity .2s ease-out;-o-transition:opacity .2s ease-out;transition:opacity .2s ease-out;opacity:0}.progressjs-theme-blue .progressjs-percent{display:none}.progressjs-theme-blueOverlay{background-color:white;-webkit-transition:all .2s ease-out;-moz-transition:all .2s ease-out;-o-transition:all .2s ease-out;transition:all .2s ease-out}.progressjs-theme-blueOverlay .progressjs-inner{height:100%;-webkit-transition:all .3s ease-out;-moz-transition:all .3s ease-out;-o-transition:all .3s ease-out;transition:all .3s ease-out;background-color:#3498db}.progressjs-theme-blueOverlay.progressjs-end{opacity:0!important}.progressjs-theme-blueOverlay .progressjs-percent{display:none}.progressjs-theme-blueOverlay{background-color:white;-webkit-transition:all .2s ease-out;-moz-transition:all .2s ease-out;-o-transition:all .2s ease-out;transition:all .2s ease-out}.progressjs-theme-blueOverlay .progressjs-inner{height:100%;-webkit-transition:all .3s ease-out;-moz-transition:all .3s ease-out;-o-transition:all .3s ease-out;transition:all .3s ease-out;background-color:#3498db}.progressjs-theme-blueOverlay.progressjs-end{opacity:0!important}.progressjs-theme-blueOverlay .progressjs-percent{display:none}.progressjs-theme-blueOverlayRadius{background-color:white;-webkit-transition:all .2s ease-out;-moz-transition:all .2s ease-out;-o-transition:all .2s ease-out;transition:all .2s ease-out;border-radius:5px}.progressjs-theme-blueOverlayRadius .progressjs-inner{height:100%;-webkit-transition:all .3s ease-out;-moz-transition:all .3s ease-out;-o-transition:all .3s ease-out;transition:all .3s ease-out;background-color:#3498db;border-radius:5px}.progressjs-theme-blueOverlayRadius.progressjs-end{opacity:0!important}.progressjs-theme-blueOverlayRadius .progressjs-percent{display:none}.progressjs-theme-blueOverlayRadiusHalfOpacity{background-color:white;opacity:.5;-webkit-transition:all .2s ease-out;-moz-transition:all .2s ease-out;-o-transition:all .2s ease-out;transition:all .2s ease-out;border-radius:5px}.progressjs-theme-blueOverlayRadiusHalfOpacity .progressjs-inner{height:100%;-webkit-transition:all .3s ease-out;-moz-transition:all .3s ease-out;-o-transition:all .3s ease-out;transition:all .3s ease-out;background-color:#3498db;border-radius:5px}.progressjs-theme-blueOverlayRadiusHalfOpacity.progressjs-end{opacity:0!important}.progressjs-theme-blueOverlayRadiusHalfOpacity .progressjs-percent{display:none}.progressjs-theme-blueOverlayRadiusWithPercentBar{background-color:white;-webkit-transition:all .2s ease-out;-moz-transition:all .2s ease-out;-o-transition:all .2s ease-out;transition:all .2s ease-out;border-radius:5px}.progressjs-theme-blueOverlayRadiusWithPercentBar .progressjs-inner{height:100%;-webkit-transition:all .3s ease-out;-moz-transition:all .3s ease-out;-o-transition:all .3s ease-out;transition:all .3s ease-out;background-color:#3498db;border-radius:5px}.progressjs-theme-blueOverlayRadiusWithPercentBar.progressjs-end{opacity:0!important}.progressjs-theme-blueOverlayRadiusWithPercentBar .progressjs-percent{width:70px;text-align:center;height:40px;position:absolute;right:50%;margin-right:-35px;top:50%;margin-top:-20px;font-size:30px;opacity:.5}.progressjs-theme-blackRadiusInputs{height:10px;border-radius:10px;overflow:hidden}.progressjs-theme-blackRadiusInputs .progressjs-inner{height:2px;-webkit-transition:all 1s ease-out;-moz-transition:all 1s ease-out;-o-transition:all 1s ease-out;transition:all 1s ease-out;background-color:#34495e}.progressjs-theme-blackRadiusInputs.progressjs-end{-webkit-transition:opacity .2s ease-out;-moz-transition:opacity .2s ease-out;-o-transition:opacity .2s ease-out;transition:opacity .2s ease-out;opacity:0}.progressjs-theme-blackRadiusInputs .progressjs-percent{display:none}/* Prevent rule from Responsive.css that disable app popup on mobile */
 /* TODO should flag builder dialog to obly hide them */
@@ -3412,9 +3430,9 @@ body.mobile-view .block-type-video .block-media {
  * Map customization
  */
 .esriSimpleSliderTL {
-  top: initial;
+  top: auto;
   bottom: 60px;
-  left: initial;
+  left: auto;
   right: 7px;
 }
 .interaction-button .esriSimpleSliderTL {
@@ -3607,6 +3625,7 @@ body.mobile-view .block-type-webmap.block-size-small .block-media {
   margin: auto;
   text-align: center;
   padding: 5px 10px;
+  font-family: 'open_sans', sans-serif;
   font-size: 24px;
   background: #FFF;
   border-radius: 2px;
@@ -3705,7 +3724,7 @@ body:not(.builder-mode) .media-empty-add {
   margin-left: 10px;
 }
 .cr-item-remove.cr-hidden {
-  display: none;
+  visibility: hidden;
 }
 .cr-validation-warning {
   color: white;
@@ -4200,7 +4219,7 @@ body.mobile-view .section-layout-cover .cover-credits-left {
 body.mobile-view .section-layout-cover .cover-credits-right {
   bottom: 0;
   left: 5px;
-  right: initial;
+  right: inherit;
 }
 /*
  * Builder
@@ -4255,6 +4274,16 @@ body.mobile-view .section-layout-cover .cover-credits-right {
   width: 80%;
   margin-left: auto;
   margin-right: auto;
+}
+.section-layout-sequence blockquote {
+  font-family: 'lora', serif;
+  font-size: 24px;
+  line-height: 30px;
+  text-align: left;
+}
+body.mobile-view .section-layout-sequence blockquote {
+  font-size: 20px !important;
+  line-height: 24px;
 }
 /* TODO: For media but could be used for all? */
 .block-size-small,
@@ -4380,7 +4409,7 @@ body.mobile-view .section-layout-sequence .block-media {
   text-align: center;
   color: #FFF;
   padding-bottom: 0;
-  text-shadow: 2px 2px 2px #000000;
+  text-shadow: 0 0 8px rgba(0, 0, 0, 0.95);
   font-size: 1.5em;
   min-height: 90px;
   line-height: 90px;
@@ -4470,6 +4499,7 @@ body:not(.builder-mode) .section-immersive.layout-scroll-full .foreground .imm-p
   */
 }
 .section-immersive .foreground .imm-panel .blocksWrapper {
+  pointer-events: all !important;
   margin-top: 20px;
 }
 .section-immersive .background:not(.active) {
@@ -4515,7 +4545,8 @@ todo: for image only?
   top: 60px;
   z-index: 1;
   text-align: center;
-  text-shadow: 1px 1px 2px #FFF;
+  color: #FFF;
+  text-shadow: 0 0 8px rgba(0, 0, 0, 0.95);
   font-size: 120%;
   -webkit-transition: opacity 1s ease-out;
   -moz-transition: opacity 1s ease-out;
@@ -4582,7 +4613,8 @@ body.builder-mode .section-immersive.active:not(.disable-snap) .background-title
 }
 .section-immersive .foreground .blocks {
   min-height: 100px;
-  max-height: calc(100vh - 20px);
+  /* header + some margin */
+  max-height: calc(100vh - 50px - 50px);
   overflow-y: auto;
 }
 .section-immersive .foreground .block {
@@ -4597,17 +4629,6 @@ body.builder-mode .section-immersive.active:not(.disable-snap) .background-title
 .section-immersive .foreground .image img {
   max-width: 100%;
   height: inherit !important;
-}
-/* transition: all is not working well in Chrome in builder
-   the section width and left get animated... */
-body.builder-mode .section-immersive:not(.disable-transition) .background.transition-fade-slow {
-  transition: opacity 1s ease-in-out;
-}
-body.builder-mode .section-immersive:not(.disable-transition) .background:not(.active).transition-none {
-  transition: opacity 1s ease-in-out;
-}
-body.builder-mode .section-immersive:not(.disable-transition) .background.transition-fade-fast {
-  transition: opacity 0.4s ease-in-out;
 }
 body.builder-mode .section-immersive .blocks {
   /* without that extra padding in builder can't have overflow: auto
@@ -4636,14 +4657,15 @@ body.mobile-view .background-title h2 {
   pointer-events: none;
 }
 .section-immersive .background.active {
+  opacity: 1;
   visibility: visible;
   pointer-events: inherit;
 }
 .section-immersive:not(.disable-transition) .background.transition-fade-slow {
-  transition: all 1s ease-in-out;
+  transition: opacity 1s ease-in-out, visibility 2s ease-in-out;
 }
 .section-immersive:not(.disable-transition) .background.transition-fade-fast {
-  transition: all 0.5s ease-in-out;
+  transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
 }
 .section-immersive .background:not(.active):nth-last-child(2) {
   -webkit-transition: initial;
@@ -4710,7 +4732,7 @@ body.builder-mode .separator-horizontal {
 body.mobile-view .section-immersive .imm-panel {
   width: 50%;
   margin-left: 5px;
-  max-width: initial;
+  max-width: inherit;
 }
 body.mobile-view .section-immersive .imm-panel .block {
   font-size: 14px;
@@ -4757,6 +4779,10 @@ body.mobile-view .section-immersive .imm-panel .block {
   margin: auto;
   color: #FFF;
 }
+.section-layout-credits .foreground .blocks {
+  /* default alignement - but author can configure */
+  text-align: center;
+}
 .section-layout-credits .foreground .block {
   margin-top: 10px;
   padding-bottom: 0;
@@ -4794,7 +4820,8 @@ body.mobile-view .section-immersive .imm-panel .block {
   padding: 15px;
   /* no size config yet */
 }
-.imm-panel .blocks .block-media {
+.imm-panel .blocks .block-media,
+.imm-panel .blocks .block-caption {
   width: 100%;
 }
 .imm-panel .blocks .block-type-video .block-media {
@@ -4802,11 +4829,11 @@ body.mobile-view .section-immersive .imm-panel .block {
 }
 .imm-panel.theme-white-over-black .blocks {
   color: #FFF;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.75);
 }
 .imm-panel.theme-black-over-white .blocks {
   color: #000;
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.75);
 }
 .imm-panel.style-text-shadow.theme-black-over-white .blocks {
   text-shadow: 0 0 8px #ffffff;
@@ -4982,6 +5009,9 @@ body {
   margin: 0;
   padding: 0;
 }
+body.error {
+  position: fixed;
+}
 html,
 body,
 h1,
@@ -5075,7 +5105,9 @@ body.builder-mode .progressjs-progress {
   display: flex;
   list-style-type: none;
   padding-left: 0;
-  flex: 1 1 0;
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 0;
   justify-content: flex-end;
   margin: 2px 30px 0 30px;
   flex-wrap: wrap;

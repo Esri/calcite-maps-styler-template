@@ -69,8 +69,8 @@ define({
     "geolocationBtnTitle": "Geolocalização",
     "ascendingSort": "Ascendente",
     "descendingSort": "Decrescente",
-    "viewBtnTitle": "ã_View__Ç",
-    "backButtonTitle": "ã_Back__Ç"
+    "viewBtnTitle": "Ver",
+    "backButtonTitle": "Voltar"
   },
   "errorMessages": {
     "emptyGroup": "O grupo configurado não tem quaisquer dados para efetuar a pesquisa.",

@@ -69,8 +69,8 @@ define({
     "geolocationBtnTitle": "Geosijainti",
     "ascendingSort": "Nouseva",
     "descendingSort": "Laskeva",
-    "viewBtnTitle": "Å_View__ö",
-    "backButtonTitle": "Å_Back__ö"
+    "viewBtnTitle": "Näytä",
+    "backButtonTitle": "Takaisin"
   },
   "errorMessages": {
     "emptyGroup": "Määritetyssä ryhmässä ei ole aineistoa, jonka perusteella kyselyn voi suorittaa.",

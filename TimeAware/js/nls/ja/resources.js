@@ -29,8 +29,8 @@ define({
     "error": "デフォルトで Web マップの説明またはスニペットが使用されます。情報パネル用にカスタム スニペットを追加するようにアプリを構成します。"
   },
   "time": {
-    "enableTimeMessage": "須_The specified web map does not contain any time enabled layers. View the ${link} help topic for details. To use the template without displaying time use the configuration panel to disable the time option______________________________________________________________鷗.",
-    "enableTimeMessageLink": "須_http://doc.arcgis.com/en/arcgis-online/create-maps/configure-time.htm#ESRI_SECTION1_F1D4A275B4AB4CC79198CBA9D0AD8727____________________________________鷗"
+    "enableTimeMessage": "指定した Web マップに時間対応レイヤーが含まれていません。詳細については、${link} ヘルプ トピックをご参照ください。時間を表示せずにこのテンプレートを使用するには、構成パネルを使用して時間オプションを無効にします。",
+    "enableTimeMessageLink": "http://doc.arcgis.com/en/arcgis-online/create-maps/configure-time.htm#ESRI_SECTION1_F1D4A275B4AB4CC79198CBA9D0AD8727"
   },
   "histogram": {
     "error": "スナップショット モードの時間対応フィーチャ レイヤーを Web マップで使用できません。別の Web マップを使用するようにアプリを構成するか、ヒストグラム オプションを無効にします。"

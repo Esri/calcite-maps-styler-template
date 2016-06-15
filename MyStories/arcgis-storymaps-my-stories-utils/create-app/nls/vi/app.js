@@ -47,7 +47,7 @@ define({
     "basic": "Suy nghĩ tối giản, tuyệt vời cho một bản đồ"
   },
   "signInBuildDialog": {
-    "welcome": "Đ_Welcome___ớ!",
-    "continue": "Đ_Continue to {{APP_NAME}} builder___________ớ"
+    "welcome": "Xin chào!",
+    "continue": "Tiếp tục với bộ thiết lập {{APP_NAME}}"
   }
 });

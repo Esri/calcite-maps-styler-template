@@ -32,41 +32,41 @@ define({
     "avgRating": "评级",
     "noWebMapInGroup": "已配置的群组无效，或者没有与该群组共享的任何项目",
     "infoBtnToolTip": "地图信息",
-    "openWebmapList": "试_Open panel____验",
-    "closeWebmapList": "试_Close panel____验"
+    "openWebmapList": "打开面板",
+    "closeWebmapList": "关闭面板"
   },
   "geoform": {
-    "enterInformation": "试_Details___验",
-    "selectAttachments": "试_Attachments____验",
-    "selectFileText": "试_Browse___验",
-    "enterLocation": "试_Location___验",
-    "reportItButton": "试_Submit___验",
-    "cancelButton": "试_Cancel___验",
-    "requiredField": "试_(required)____验",
-    "selectDefaultText": "试_Select&hellip;_____验",
-    "invalidInputValue": "试_Please enter valid value_________验.",
-    "noFieldsConfiguredMessage": "试_Layer fields are not configured to capture data_______________验",
-    "invalidSmallNumber": "试_Please enter an integer________验",
+    "enterInformation": "详细信息",
+    "selectAttachments": "附件",
+    "selectFileText": "浏览",
+    "enterLocation": "位置",
+    "reportItButton": "提交",
+    "cancelButton": "取消",
+    "requiredField": "(必填)",
+    "selectDefaultText": "选择&hellip;",
+    "invalidInputValue": "请输入有效值。",
+    "noFieldsConfiguredMessage": "图层字段未被配置为捕获数据",
+    "invalidSmallNumber": "请输入一个整数",
     "invalidNumber": "请输入一个整数",
     "invalidFloat": "请输入一个数字",
     "invalidDouble": "请输入一个数字",
-    "requiredFields": "试_Please provide values for all required fields_______________验",
-    "selectLocation": "试_Please select the location for your report______________验",
-    "numericRangeHintMessage": "试_${openStrong}Hint:${closeStrong} Minimum value ${minValue} and maximum value ${maxValue}___________________________验",
-    "dateRangeHintMessage": "试_${openStrong}Hint:${closeStrong} Minimum date ${minValue} and Maximum date ${maxValue}___________________________验",
-    "errorsInApplyEdits": "试_Report could not be submitted__________验",
-    "attachmentSelectedMsg": "试_attachment(s) selected________验",
-    "attachmentUploadStatus": "试_${failed} of ${total} attachment(s) failed to upload_________________验",
-    "geoLocationError": "试_Current location not available__________验",
-    "geoLocationOutOfExtent": "试_Current location is out of basemap extent_____________验",
-    "submitButtonTooltip": "试_Save__验",
-    "cancelButtonTooltip": "试_Cancel___验",
-    "geoformBackButtonTooltip": "试_Return to the report list_________验",
-    "updateFeaturesConfirmationMsg": "试_${count} features will be updated___________验",
-    "attachmentHeaderText": "试_Attachments____验"
+    "requiredFields": "请为所有必填字段填写值",
+    "selectLocation": "请为您的报告选择位置",
+    "numericRangeHintMessage": "${openStrong}提示:${closeStrong} 最小值 ${minValue} 和最大值 ${maxValue}",
+    "dateRangeHintMessage": "${openStrong}提示:${closeStrong} 最小日期 ${minValue} 和最大日期 ${maxValue}",
+    "errorsInApplyEdits": "无法提交报告",
+    "attachmentSelectedMsg": "附件已选定",
+    "attachmentUploadStatus": "${failed} 个附件(共有 ${total} 个)上传失败",
+    "geoLocationError": "当前位置不可用",
+    "geoLocationOutOfExtent": "当前位置不在底图范围之内",
+    "submitButtonTooltip": "保存",
+    "cancelButtonTooltip": "取消",
+    "geoformBackButtonTooltip": "返回至报告列表",
+    "updateFeaturesConfirmationMsg": "将更新 ${count} 个要素",
+    "attachmentHeaderText": "附件"
   },
   "mapViewer": {
-    "zoomInToolTip": "试_Zoom in___验",
+    "zoomInToolTip": "放大",
     "zoomOutToolTip": "缩小"
   },
   "applicationHeader": {
@@ -77,52 +77,52 @@ define({
   "dataviewer": {
     "noIssuesReported": "无任何报告可用",
     "noFeatureGeometry": "无法显示要素",
-    "ascendingFlagTitle": "试_Sort in ascending order________验",
-    "descendingFlagTitle": "试_Sort in descending order________验",
-    "filterLabel": "试_Filter___验",
-    "valueRadioButtonLabel": "试_Value___验",
-    "uniqueRadioButtonLabel": "试_Unique___验",
-    "selectLayerToBegin": "试_Select a category to get started___________验",
-    "layerFeatureCount": "试_${featureCount} records________验"
+    "ascendingFlagTitle": "升序排列",
+    "descendingFlagTitle": "降序排列",
+    "filterLabel": "过滤器",
+    "valueRadioButtonLabel": "值",
+    "uniqueRadioButtonLabel": "唯一",
+    "selectLayerToBegin": "选择类别以开始操作",
+    "layerFeatureCount": "${featureCount} 条记录"
   },
   "timeSlider": {
-    "timeSliderLabel": "试_Time range____验",
-    "timeSliderInEditModeAlert": "试_Time slider unavailable while editing____________验"
+    "timeSliderLabel": "时间范围",
+    "timeSliderInEditModeAlert": "编辑期间时间滑块不可用"
   },
   "comment": {
-    "commentsFormSubmitButton": "试_Save__验",
-    "commentsFormCancelButton": "试_Cancel___验",
-    "errorInSubmittingComment": "试_Edits could not be saved_________验.",
-    "emptyCommentMessage": "试_Value required_____验",
+    "commentsFormSubmitButton": "保存",
+    "commentsFormCancelButton": "取消",
+    "errorInSubmittingComment": "无法保存编辑内容。",
+    "emptyCommentMessage": "所需值",
     "placeHolderText": "",
-    "noCommentsAvailableText": "试_No records available_______验",
-    "remainingTextCount": "试_${0} character(s) remain________验",
-    "showNoText": "试_No__验"
+    "noCommentsAvailableText": "无可用记录",
+    "remainingTextCount": "剩余 ${0} 个字符",
+    "showNoText": "否"
   },
   "main": {
     "noGroup": "未配置任何群组"
   },
   "search": {
-    "searchIconTooltip": "试_Search this layer______验",
-    "noResultFoundText": "试_No results found______验",
-    "searchInEditModeAlert": "试_Search unavailable while editing___________验"
+    "searchIconTooltip": "搜索此图层",
+    "noResultFoundText": "未找到任何结果",
+    "searchInEditModeAlert": "编辑期间搜索功能不可用"
   },
   "manualRefresh": {
-    "manualRefreshIconTooltip": "试_Refresh___验",
+    "manualRefreshIconTooltip": "刷新",
     "confirmManualRefeshText": "将放弃所有选择和未保存的更改"
   },
   "help": {
-    "helpIconTooltip": "试_Help__验"
+    "helpIconTooltip": "帮助"
   },
   "filter": {
-    "noFeatureFoundText": "试_No feature found for this value___________验.",
-    "distinctQueryFalied": "试_No distinct values found for the field_____________验.",
-    "andText": "试_and__验",
-    "filterInEditModeAlert": "试_Filters unavailable while editing___________验",
-    "dropdownSelectOption": "试_Select___验"
+    "noFeatureFoundText": "未找到该值的要素。",
+    "distinctQueryFalied": "未找到该字段的相异值。",
+    "andText": "且",
+    "filterInEditModeAlert": "编辑期间过滤功能不可用",
+    "dropdownSelectOption": "选择"
   },
   "detailsPanel": {
-    "editContentText": "试_Edit record____验"
+    "editContentText": "编辑记录"
   },
   "signOutPage": {
     "signOutMessage": "您已成功登出",

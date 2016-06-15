@@ -69,8 +69,8 @@ define({
     "geolocationBtnTitle": "Geoposizione",
     "ascendingSort": "Ascendente",
     "descendingSort": "Decrescente",
-    "viewBtnTitle": "é_View__È",
-    "backButtonTitle": "é_Back__È"
+    "viewBtnTitle": "Visualizza",
+    "backButtonTitle": "Indietro"
   },
   "errorMessages": {
     "emptyGroup": "Per il gruppo configurato non sono disponibili dati per eseguire interrogazioni.",

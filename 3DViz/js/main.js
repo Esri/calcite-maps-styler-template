@@ -46,6 +46,8 @@ define([
 
   "esri/renderers/SimpleRenderer",
 
+  "esri/request",
+
   "esri/symbols/ExtrudeSymbol3DLayer",
   "esri/symbols/PictureMarkerSymbol",
   "esri/symbols/PointSymbol3D",
@@ -75,6 +77,7 @@ define([
   Graphic, FeatureLayer, GraphicsLayer,
   PortalItem,
   SimpleRenderer,
+  esriRequest,
   ExtrudeSymbol3DLayer, PictureMarkerSymbol, PointSymbol3D, PolygonSymbol3D, ObjectSymbol3DLayer,
   QueryTask, Query,
   SceneView, externalRenderers, WebScene,
@@ -103,6 +106,16 @@ define([
           this.reportError(error);
           return;
         }
+
+        // temp fix for scene layer
+        var regex = /\/SceneServer\/layers\/\d+\/?$/;
+        esriRequest.setRequestPreCallback(function(request) {
+          if (request && typeof request === "object" && !request.content && regex.test(request.url)) {
+            request.content = { f: "json" };
+          }
+          return request;
+        });
+
         this.config = config;
         this.uiUtils = new uiUtils();
         this.uiUtils.init(config);
@@ -405,7 +418,8 @@ define([
         url: url,
         popupTemplate: lyr.popupTemplate,
         page: 0,
-        max: 0
+        max: 0,
+        expr: lyr.definitionExpression
       };
 
       var flds = [];
@@ -470,7 +484,7 @@ define([
       var query = new Query();
       query.returnGeometry = true;
       query.outFields = ["*"];
-      query.where = "1=1";
+      query.where = (this.vizLayer.expr) ? this.vizLayer.expr : "1=1";
       queryTask.execute(query).then(lang.hitch(this, function(results) {
         console.log(results);
         if (this.config.vizType === "Polygon Extrusion" && results.geometryType !== "polygon") {

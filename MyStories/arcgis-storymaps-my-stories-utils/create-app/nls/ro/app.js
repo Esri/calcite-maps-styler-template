@@ -47,7 +47,7 @@ define({
     "basic": "Gândiţi minimalist, excelent pentru o singură hartă"
   },
   "signInBuildDialog": {
-    "welcome": "Ă_Welcome___ș!",
-    "continue": "Ă_Continue to {{APP_NAME}} builder___________ș"
+    "welcome": "Bine aţi venit!",
+    "continue": "Continuaţi către creatorul {{APP_NAME}}"
   }
 });

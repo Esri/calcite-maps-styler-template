@@ -17,10 +17,10 @@
 define({
   "scene": {
     "error": "Nu a putut fi creată scena",
-    "support": "Ă_Browser not supported_______ș",
-    "noScene": "Ă_Specify scene id(s)_______ș",
-    "noConfig": "Ă_Config is not defined_______ș",
-    "invalidScene": "Ă_Unable to create scene________ș"
+    "support": "Browserul nu este acceptat",
+    "noScene": "Specificaţi ID-urile scenelor",
+    "noConfig": "Configuraţia nu este definită",
+    "invalidScene": "Nu a putut fi creată scena"
   },
   "tools": {
     "linkLabel": "Legare vizualizări",

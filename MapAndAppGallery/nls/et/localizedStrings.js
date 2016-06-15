@@ -69,8 +69,8 @@ define({
     "geolocationBtnTitle": "Geoasukoht",
     "ascendingSort": "Kahanev",
     "descendingSort": "Kahanev",
-    "viewBtnTitle": "Š_View__ä",
-    "backButtonTitle": "Š_Back__ä"
+    "viewBtnTitle": "Vaatamine",
+    "backButtonTitle": "Tagasi"
   },
   "errorMessages": {
     "emptyGroup": "Konfigureeritud rühmas pole päringu sooritamiseks andmeid.",

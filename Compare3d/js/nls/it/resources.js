@@ -17,10 +17,10 @@
 define({
   "scene": {
     "error": "Impossibile creare scena",
-    "support": "é_Browser not supported_______È",
-    "noScene": "é_Specify scene id(s)_______È",
-    "noConfig": "é_Config is not defined_______È",
-    "invalidScene": "é_Unable to create scene________È"
+    "support": "Browser non supportato",
+    "noScene": "Specifica ID scena",
+    "noConfig": "Configurazione non definita",
+    "invalidScene": "Impossibile creare scena"
   },
   "tools": {
     "linkLabel": "Collega viste",

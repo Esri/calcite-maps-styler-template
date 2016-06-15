@@ -47,7 +47,8 @@ define([
         colorText = this._getContrastYIQ(color);
       }
       this.config.colorText = colorText;
-      domStyle.set(win.body(), "color", color);
+      domStyle.set("panelTop", "color", color);
+      domStyle.set("panelBottom", "color", color);
       domStyle.set("panelText", "color", color);
       domStyle.set("btnToggle", "backgroundColor", color);
       domStyle.set("btnPlay", "backgroundColor", color);

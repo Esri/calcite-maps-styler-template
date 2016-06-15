@@ -32,41 +32,41 @@ define({
     "avgRating": "Arviointi",
     "noWebMapInGroup": "Määritetty ryhmä on virheellinen tai tämän ryhmän kanssa ei ole vielä jaettu yhtään kohdetta",
     "infoBtnToolTip": "Kartan tiedot",
-    "openWebmapList": "Å_Open panel____ö",
-    "closeWebmapList": "Å_Close panel____ö"
+    "openWebmapList": "Avaa ruutu",
+    "closeWebmapList": "Sulje ruutu"
   },
   "geoform": {
-    "enterInformation": "Å_Details___ö",
-    "selectAttachments": "Å_Attachments____ö",
-    "selectFileText": "Å_Browse___ö",
-    "enterLocation": "Å_Location___ö",
-    "reportItButton": "Å_Submit___ö",
-    "cancelButton": "Å_Cancel___ö",
-    "requiredField": "Å_(required)____ö",
-    "selectDefaultText": "Å_Select&hellip;_____ö",
-    "invalidInputValue": "Å_Please enter valid value_________ö.",
-    "noFieldsConfiguredMessage": "Å_Layer fields are not configured to capture data_______________ö",
-    "invalidSmallNumber": "Å_Please enter an integer________ö",
+    "enterInformation": "Yksityiskohdat",
+    "selectAttachments": "Liitteet",
+    "selectFileText": "Selaa",
+    "enterLocation": "Sijainti",
+    "reportItButton": "Lähetä",
+    "cancelButton": "Peruuta",
+    "requiredField": "(pakollinen)",
+    "selectDefaultText": "Valitse&hellip;",
+    "invalidInputValue": "Anna kelvollinen arvo.",
+    "noFieldsConfiguredMessage": "Karttatason kenttiä ei ole määritetty aineiston keräämistä varten",
+    "invalidSmallNumber": "Kirjoita kokonaisluku",
     "invalidNumber": "Kirjoita kokonaisluku",
     "invalidFloat": "Kirjoita numero",
     "invalidDouble": "Kirjoita numero",
-    "requiredFields": "Å_Please provide values for all required fields_______________ö",
-    "selectLocation": "Å_Please select the location for your report______________ö",
-    "numericRangeHintMessage": "Å_${openStrong}Hint:${closeStrong} Minimum value ${minValue} and maximum value ${maxValue}___________________________ö",
-    "dateRangeHintMessage": "Å_${openStrong}Hint:${closeStrong} Minimum date ${minValue} and Maximum date ${maxValue}___________________________ö",
-    "errorsInApplyEdits": "Å_Report could not be submitted__________ö",
-    "attachmentSelectedMsg": "Å_attachment(s) selected________ö",
-    "attachmentUploadStatus": "Å_${failed} of ${total} attachment(s) failed to upload_________________ö",
-    "geoLocationError": "Å_Current location not available__________ö",
-    "geoLocationOutOfExtent": "Å_Current location is out of basemap extent_____________ö",
-    "submitButtonTooltip": "Å_Save__ö",
-    "cancelButtonTooltip": "Å_Cancel___ö",
-    "geoformBackButtonTooltip": "Å_Return to the report list_________ö",
-    "updateFeaturesConfirmationMsg": "Å_${count} features will be updated___________ö",
-    "attachmentHeaderText": "Å_Attachments____ö"
+    "requiredFields": "Määritä arvot kaikille pakollisille kentille",
+    "selectLocation": "Valitse raportin sijainti",
+    "numericRangeHintMessage": "${openStrong}Vihje:${closeStrong} Vähimmäisarvo ${minValue} ja enimmäisarvo ${maxValue}",
+    "dateRangeHintMessage": "${openStrong}Vihje:${closeStrong} aikaisin ${minValue} ja myöhäisin päivämäärä ${maxValue}",
+    "errorsInApplyEdits": "Raportin lähetys ei onnistunut",
+    "attachmentSelectedMsg": "liite(ttä) on valittu",
+    "attachmentUploadStatus": "${failed}/${total} liitteen lataus epäonnistui",
+    "geoLocationError": "Nykyinen sijainti ei ole käytettävissä",
+    "geoLocationOutOfExtent": "Nykyinen sijainti ei ole taustakartan rajoissa",
+    "submitButtonTooltip": "Tallenna",
+    "cancelButtonTooltip": "Peruuta",
+    "geoformBackButtonTooltip": "Palaa raporttiluetteloon",
+    "updateFeaturesConfirmationMsg": "${count} kohdetta päivitetään",
+    "attachmentHeaderText": "Liitteet"
   },
   "mapViewer": {
-    "zoomInToolTip": "Å_Zoom in___ö",
+    "zoomInToolTip": "Lähennä",
     "zoomOutToolTip": "Loitonna"
   },
   "applicationHeader": {
@@ -77,52 +77,52 @@ define({
   "dataviewer": {
     "noIssuesReported": "Yhtään raporttia ei ole saatavilla",
     "noFeatureGeometry": "Kohdetta ei voi näyttää",
-    "ascendingFlagTitle": "Å_Sort in ascending order________ö",
-    "descendingFlagTitle": "Å_Sort in descending order________ö",
-    "filterLabel": "Å_Filter___ö",
-    "valueRadioButtonLabel": "Å_Value___ö",
-    "uniqueRadioButtonLabel": "Å_Unique___ö",
-    "selectLayerToBegin": "Å_Select a category to get started___________ö",
-    "layerFeatureCount": "Å_${featureCount} records________ö"
+    "ascendingFlagTitle": "Lajittele nousevassa järjestyksessä",
+    "descendingFlagTitle": "Lajittele laskevassa järjestyksessä",
+    "filterLabel": "Suodata",
+    "valueRadioButtonLabel": "Arvo",
+    "uniqueRadioButtonLabel": "Yksilöllinen",
+    "selectLayerToBegin": "Aloita valitsemalla luokka",
+    "layerFeatureCount": "${featureCount} tietuetta"
   },
   "timeSlider": {
-    "timeSliderLabel": "Å_Time range____ö",
-    "timeSliderInEditModeAlert": "Å_Time slider unavailable while editing____________ö"
+    "timeSliderLabel": "Aikaväli",
+    "timeSliderInEditModeAlert": "Ajan liukusäädin ei ole käytettävissä muokkauksen aikana"
   },
   "comment": {
-    "commentsFormSubmitButton": "Å_Save__ö",
-    "commentsFormCancelButton": "Å_Cancel___ö",
-    "errorInSubmittingComment": "Å_Edits could not be saved_________ö.",
-    "emptyCommentMessage": "Å_Value required_____ö",
+    "commentsFormSubmitButton": "Tallenna",
+    "commentsFormCancelButton": "Peruuta",
+    "errorInSubmittingComment": "Muokkausten tallennus epäonnistui.",
+    "emptyCommentMessage": "Arvo on pakollinen",
     "placeHolderText": "",
-    "noCommentsAvailableText": "Å_No records available_______ö",
-    "remainingTextCount": "Å_${0} character(s) remain________ö",
-    "showNoText": "Å_No__ö"
+    "noCommentsAvailableText": "Tietueita ei ole saatavilla",
+    "remainingTextCount": "${0} merkki(ä) jäljellä",
+    "showNoText": "Ei"
   },
   "main": {
     "noGroup": "Yhtään ryhmää ei ole määritetty"
   },
   "search": {
-    "searchIconTooltip": "Å_Search this layer______ö",
-    "noResultFoundText": "Å_No results found______ö",
-    "searchInEditModeAlert": "Å_Search unavailable while editing___________ö"
+    "searchIconTooltip": "Hae tätä karttatasoa",
+    "noResultFoundText": "Tuloksia ei löytynyt",
+    "searchInEditModeAlert": "Haku ei ole käytettävissä muokkauksen aikana"
   },
   "manualRefresh": {
-    "manualRefreshIconTooltip": "Å_Refresh___ö",
+    "manualRefreshIconTooltip": "Päivitä",
     "confirmManualRefeshText": "Kaikki valinnat ja tallentamattomat muutokset ohitetaan"
   },
   "help": {
-    "helpIconTooltip": "Å_Help__ö"
+    "helpIconTooltip": "Ohje"
   },
   "filter": {
-    "noFeatureFoundText": "Å_No feature found for this value___________ö.",
-    "distinctQueryFalied": "Å_No distinct values found for the field_____________ö.",
-    "andText": "Å_and__ö",
-    "filterInEditModeAlert": "Å_Filters unavailable while editing___________ö",
-    "dropdownSelectOption": "Å_Select___ö"
+    "noFeatureFoundText": "Tälle arvolle ei löytynyt kohdetta.",
+    "distinctQueryFalied": "Kentälle ei löytynyt erillisiä arvoja.",
+    "andText": "ja",
+    "filterInEditModeAlert": "Suodattimet eivät ole käytettävissä muokkauksen aikana",
+    "dropdownSelectOption": "Valitse"
   },
   "detailsPanel": {
-    "editContentText": "Å_Edit record____ö"
+    "editContentText": "Muokkaa tietuetta"
   },
   "signOutPage": {
     "signOutMessage": "Uloskirjautuminen onnistui",

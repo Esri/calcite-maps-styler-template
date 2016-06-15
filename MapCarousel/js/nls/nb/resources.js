@@ -2,9 +2,9 @@ define({
   "app": {
     "title": "Kartkarusell",
     "errors": {
-      "noMaps": "å_This group does not contain any public web maps to display__________________ø",
-      "noGroup": "å_Group not found______ø",
-      "createGroup": "å_Unable to create group________ø",
+      "noMaps": "Denne gruppen inneholder ingen offentlige webkart som kan vises",
+      "noGroup": "Fant ikke gruppen",
+      "createGroup": "Kan ikke opprette gruppen",
       "bitly": "bitly brukes til å forkorte URLen for deling. Les readme-filen for detaljer om å opprette og bruke en bitly-nøkkel.",
       "general": "Feil"
     },

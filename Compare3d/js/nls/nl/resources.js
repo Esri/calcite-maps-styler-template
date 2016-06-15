@@ -17,10 +17,10 @@
 define({
   "scene": {
     "error": "Scene kan niet gemaakt worden",
-    "support": "Ĳ_Browser not supported_______ä",
-    "noScene": "Ĳ_Specify scene id(s)_______ä",
-    "noConfig": "Ĳ_Config is not defined_______ä",
-    "invalidScene": "Ĳ_Unable to create scene________ä"
+    "support": "Browser niet ondersteund",
+    "noScene": "Scene-id(s) specificeren",
+    "noConfig": "Configuratie is niet gedefinieerd",
+    "invalidScene": "Scene kan niet gemaakt worden"
   },
   "tools": {
     "linkLabel": "Weergave koppelen",

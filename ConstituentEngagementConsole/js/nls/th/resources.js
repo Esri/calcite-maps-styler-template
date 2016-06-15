@@ -32,41 +32,41 @@ define({
     "avgRating": "อันดับ",
     "noWebMapInGroup": "กำหนดกลุ่มไม่ถูกต้องหรือยังไม่มีไอเท็มแชร์อยู่ในกลุ่ม",
     "infoBtnToolTip": "ข้อมูลรายละเอียดแผนที่",
-    "openWebmapList": "ก้_Open panel____ษฺ",
-    "closeWebmapList": "ก้_Close panel____ษฺ"
+    "openWebmapList": "เปิดพาแนล",
+    "closeWebmapList": "ปิดพาแนล"
   },
   "geoform": {
-    "enterInformation": "ก้_Details___ษฺ",
-    "selectAttachments": "ก้_Attachments____ษฺ",
-    "selectFileText": "ก้_Browse___ษฺ",
-    "enterLocation": "ก้_Location___ษฺ",
-    "reportItButton": "ก้_Submit___ษฺ",
-    "cancelButton": "ก้_Cancel___ษฺ",
-    "requiredField": "ก้_(required)____ษฺ",
-    "selectDefaultText": "ก้_Select&hellip;_____ษฺ",
-    "invalidInputValue": "ก้_Please enter valid value_________ษฺ.",
-    "noFieldsConfiguredMessage": "ก้_Layer fields are not configured to capture data_______________ษฺ",
-    "invalidSmallNumber": "ก้_Please enter an integer________ษฺ",
+    "enterInformation": "รายละเอียด",
+    "selectAttachments": "แนบ",
+    "selectFileText": "ค้นหา",
+    "enterLocation": "ตำแหน่ง",
+    "reportItButton": "ส่ง",
+    "cancelButton": "ยกเลิก",
+    "requiredField": "(จำเป็นต้องใช้)",
+    "selectDefaultText": "เลือก;",
+    "invalidInputValue": "กรุณากรอกข้อมูลที่ถูกต้อง",
+    "noFieldsConfiguredMessage": "ฟิลด์ชั้นข้อมูลไม่ได้ระบุเพื่อกำหนดการเก็บข้อมู,",
+    "invalidSmallNumber": "โปรดกรอกเลขจำนวนเต็ม",
     "invalidNumber": "โปรดกรอกเลขจำนวนเต็ม",
     "invalidFloat": "โปรดกรอกตัวเลข",
     "invalidDouble": "โปรดกรอกตัวเลข",
-    "requiredFields": "ก้_Please provide values for all required fields_______________ษฺ",
-    "selectLocation": "ก้_Please select the location for your report______________ษฺ",
-    "numericRangeHintMessage": "ก้_${openStrong}Hint:${closeStrong} Minimum value ${minValue} and maximum value ${maxValue}___________________________ษฺ",
-    "dateRangeHintMessage": "ก้_${openStrong}Hint:${closeStrong} Minimum date ${minValue} and Maximum date ${maxValue}___________________________ษฺ",
-    "errorsInApplyEdits": "ก้_Report could not be submitted__________ษฺ",
-    "attachmentSelectedMsg": "ก้_attachment(s) selected________ษฺ",
-    "attachmentUploadStatus": "ก้_${failed} of ${total} attachment(s) failed to upload_________________ษฺ",
-    "geoLocationError": "ก้_Current location not available__________ษฺ",
-    "geoLocationOutOfExtent": "ก้_Current location is out of basemap extent_____________ษฺ",
-    "submitButtonTooltip": "ก้_Save__ษฺ",
-    "cancelButtonTooltip": "ก้_Cancel___ษฺ",
-    "geoformBackButtonTooltip": "ก้_Return to the report list_________ษฺ",
-    "updateFeaturesConfirmationMsg": "ก้_${count} features will be updated___________ษฺ",
-    "attachmentHeaderText": "ก้_Attachments____ษฺ"
+    "requiredFields": "โปรดระปุค่าสำหรับฟิลด์ที่จำเป็นทั้งหมด",
+    "selectLocation": "โปรดเลือกสถานที่สำหรับรายงานของคุณ",
+    "numericRangeHintMessage": "${openStrong}แนะนำ:${closeStrong} ค่าต่ำสุด${minValue} และค่าสูงสุด${maxValue}",
+    "dateRangeHintMessage": "${openStrong}แนะนำ:${closeStrong} วันต่ำสุด${minValue} และวันศูงสุด${maxValue}",
+    "errorsInApplyEdits": "รายงานไม่สามารถส่งได้",
+    "attachmentSelectedMsg": "เลือกไฟล์แนบ",
+    "attachmentUploadStatus": "${failed} จาก ${total} ไฟล์แนบที่ไม่สามารถอัพโหลดได้",
+    "geoLocationError": "ไม่พร้อมใช้ตำแหน่งปัจจุบัน",
+    "geoLocationOutOfExtent": "ตำแหน่งปัจจุบันอยู่นอกขอบเขตของแผนที่ฐาน",
+    "submitButtonTooltip": "บันทึก",
+    "cancelButtonTooltip": "ยกเลิก",
+    "geoformBackButtonTooltip": "กลับสู่ลิสต์ของรายงาน",
+    "updateFeaturesConfirmationMsg": "${count} ฟีเจอร์จะถูกอัพเดท",
+    "attachmentHeaderText": "แนบ"
   },
   "mapViewer": {
-    "zoomInToolTip": "ก้_Zoom in___ษฺ",
+    "zoomInToolTip": "ขยายภาพ",
     "zoomOutToolTip": "ย่อภาพ"
   },
   "applicationHeader": {
@@ -77,52 +77,52 @@ define({
   "dataviewer": {
     "noIssuesReported": "ไม่มีรายงานให้",
     "noFeatureGeometry": "ไม่สามารถแสดงฟีเจอร์ได้",
-    "ascendingFlagTitle": "ก้_Sort in ascending order________ษฺ",
-    "descendingFlagTitle": "ก้_Sort in descending order________ษฺ",
-    "filterLabel": "ก้_Filter___ษฺ",
-    "valueRadioButtonLabel": "ก้_Value___ษฺ",
-    "uniqueRadioButtonLabel": "ก้_Unique___ษฺ",
-    "selectLayerToBegin": "ก้_Select a category to get started___________ษฺ",
-    "layerFeatureCount": "ก้_${featureCount} records________ษฺ"
+    "ascendingFlagTitle": "เรียงตามน้อยไปหามาก",
+    "descendingFlagTitle": "เรียงจากมากไปหาน้อย",
+    "filterLabel": "ตัวกรอง",
+    "valueRadioButtonLabel": "มูลค่า",
+    "uniqueRadioButtonLabel": "ลักษณะเฉพาะ",
+    "selectLayerToBegin": "เลือกประเภทเพื่อเริ่มงาน",
+    "layerFeatureCount": "${featureCount} เรคคอร์ท"
   },
   "timeSlider": {
-    "timeSliderLabel": "ก้_Time range____ษฺ",
-    "timeSliderInEditModeAlert": "ก้_Time slider unavailable while editing____________ษฺ"
+    "timeSliderLabel": "ช่วงเวลา",
+    "timeSliderInEditModeAlert": "เครื่องมือไทม์สไลเดอร์ไม่ทำงานขณะแก้ไข"
   },
   "comment": {
-    "commentsFormSubmitButton": "ก้_Save__ษฺ",
-    "commentsFormCancelButton": "ก้_Cancel___ษฺ",
-    "errorInSubmittingComment": "ก้_Edits could not be saved_________ษฺ.",
-    "emptyCommentMessage": "ก้_Value required_____ษฺ",
+    "commentsFormSubmitButton": "บันทึก",
+    "commentsFormCancelButton": "ยกเลิก",
+    "errorInSubmittingComment": "ไม่ถูกบันทึกการแก้ไข",
+    "emptyCommentMessage": "ต้องกรอกค่าข้อมูล",
     "placeHolderText": "",
-    "noCommentsAvailableText": "ก้_No records available_______ษฺ",
-    "remainingTextCount": "ก้_${0} character(s) remain________ษฺ",
-    "showNoText": "ก้_No__ษฺ"
+    "noCommentsAvailableText": "ไม่มีเรคคอร์ทื่ใช้งานได้",
+    "remainingTextCount": "${0} ตัวอักษร ที่เหลือ",
+    "showNoText": "ไม่"
   },
   "main": {
     "noGroup": "ยังไม่กำหนดกลุ่ม"
   },
   "search": {
-    "searchIconTooltip": "ก้_Search this layer______ษฺ",
-    "noResultFoundText": "ก้_No results found______ษฺ",
-    "searchInEditModeAlert": "ก้_Search unavailable while editing___________ษฺ"
+    "searchIconTooltip": "ค้นหาชั้นข้อมูล",
+    "noResultFoundText": "ไม่พบผลลัพธ์",
+    "searchInEditModeAlert": "ไม่สามารถค้นหาในขณะที่แก้ไข"
   },
   "manualRefresh": {
-    "manualRefreshIconTooltip": "ก้_Refresh___ษฺ",
+    "manualRefreshIconTooltip": "รีเฟรช",
     "confirmManualRefeshText": "การเลือกทั้งหมดและสิ่งที่ไม่ได้บันทึกการเปลี่ยนแปลงจะถูกละทิ้ง"
   },
   "help": {
-    "helpIconTooltip": "ก้_Help__ษฺ"
+    "helpIconTooltip": "ช่วยเหลือ"
   },
   "filter": {
-    "noFeatureFoundText": "ก้_No feature found for this value___________ษฺ.",
-    "distinctQueryFalied": "ก้_No distinct values found for the field_____________ษฺ.",
-    "andText": "ก้_and__ษฺ",
-    "filterInEditModeAlert": "ก้_Filters unavailable while editing___________ษฺ",
-    "dropdownSelectOption": "ก้_Select___ษฺ"
+    "noFeatureFoundText": "ไม่พบฟีเจอร์สำหรับค่านี้",
+    "distinctQueryFalied": "ไม่พบค่าที่แตกต่างกันในฟิลด์นี้",
+    "andText": "และ",
+    "filterInEditModeAlert": "ตัวกรองไม่สามารถใช้ได้ในขณะที่แก้ไข",
+    "dropdownSelectOption": "เลือก"
   },
   "detailsPanel": {
-    "editContentText": "ก้_Edit record____ษฺ"
+    "editContentText": "แก้ไขเรคคอร์ท"
   },
   "signOutPage": {
     "signOutMessage": "คุณได้ลงชื่อออกเรียบร้อยแล้ว",

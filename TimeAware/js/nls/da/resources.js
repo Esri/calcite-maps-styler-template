@@ -29,8 +29,8 @@ define({
     "error": "Som standard anvendes webkortbeskrivelsen eller snippet. Konfigurér app'en for at tilføje en brugertilpasset snippet til panelet Om."
   },
   "time": {
-    "enableTimeMessage": "ø_The specified web map does not contain any time enabled layers. View the ${link} help topic for details. To use the template without displaying time use the configuration panel to disable the time option______________________________________________________________å.",
-    "enableTimeMessageLink": "ø_http://doc.arcgis.com/en/arcgis-online/create-maps/configure-time.htm#ESRI_SECTION1_F1D4A275B4AB4CC79198CBA9D0AD8727____________________________________å"
+    "enableTimeMessage": "Det angivne webkort indeholder ingen tidsafhængige lag. Se hjælp-emnet ${link} for yderligere oplysninger. For at bruge skabelonen uden at vise tid skal tidsindstillingen deaktiveres i konfigurationspanelet.",
+    "enableTimeMessageLink": "http://doc.arcgis.com/en/arcgis-online/create-maps/configure-time.htm#ESRI_SECTION1_F1D4A275B4AB4CC79198CBA9D0AD8727"
   },
   "histogram": {
     "error": "Tidsaktiverede vektorlag i snapshot-tilstand er ikke tilgængelige i webkortet. Konfigurér app'en for at anvende et andet webkort eller deaktivere histogramindstillingen."

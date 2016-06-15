@@ -32,41 +32,41 @@ define({
     "avgRating": "Αξιολόγηση",
     "noWebMapInGroup": "Η παραμετροποιημένη ομάδα δεν είναι έγκυρη ή δεν έχει γίνει ακόμη κοινοποίηση στοιχείων σε αυτήν την ομάδα",
     "infoBtnToolTip": "Πληροφορίες χάρτη",
-    "openWebmapList": "Đ_Open panel____ớ",
-    "closeWebmapList": "Đ_Close panel____ớ"
+    "openWebmapList": "Άνοιγμα πλαισίου",
+    "closeWebmapList": "Κλείσιμο πλαισίου"
   },
   "geoform": {
-    "enterInformation": "Đ_Details___ớ",
-    "selectAttachments": "Đ_Attachments____ớ",
-    "selectFileText": "Đ_Browse___ớ",
-    "enterLocation": "Đ_Location___ớ",
-    "reportItButton": "Đ_Submit___ớ",
-    "cancelButton": "Đ_Cancel___ớ",
-    "requiredField": "Đ_(required)____ớ",
-    "selectDefaultText": "Đ_Select&hellip;_____ớ",
-    "invalidInputValue": "Đ_Please enter valid value_________ớ.",
-    "noFieldsConfiguredMessage": "Đ_Layer fields are not configured to capture data_______________ớ",
-    "invalidSmallNumber": "Đ_Please enter an integer________ớ",
+    "enterInformation": "Λεπτομ.",
+    "selectAttachments": "Συνημμένα",
+    "selectFileText": "Αναζήτηση",
+    "enterLocation": "Τοποθεσία",
+    "reportItButton": "Υποβολή",
+    "cancelButton": "Ακύρωση",
+    "requiredField": "(απαιτούμενο)",
+    "selectDefaultText": "Επιλέξτε&hellip;",
+    "invalidInputValue": "Εισαγάγετε μια έγκυρη τιμή.",
+    "noFieldsConfiguredMessage": "Τα πεδία του θεματικού επιπέδου δεν έχουν παραμετροποιηθεί για την καταγραφή δεδομένων",
+    "invalidSmallNumber": "Εισαγάγετε έναν ακέραιο αριθμό",
     "invalidNumber": "Εισαγάγετε έναν ακέραιο αριθμό",
     "invalidFloat": "Εισαγάγετε έναν αριθμό",
     "invalidDouble": "Εισαγάγετε έναν αριθμό",
-    "requiredFields": "Đ_Please provide values for all required fields_______________ớ",
-    "selectLocation": "Đ_Please select the location for your report______________ớ",
-    "numericRangeHintMessage": "Đ_${openStrong}Hint:${closeStrong} Minimum value ${minValue} and maximum value ${maxValue}___________________________ớ",
-    "dateRangeHintMessage": "Đ_${openStrong}Hint:${closeStrong} Minimum date ${minValue} and Maximum date ${maxValue}___________________________ớ",
-    "errorsInApplyEdits": "Đ_Report could not be submitted__________ớ",
-    "attachmentSelectedMsg": "Đ_attachment(s) selected________ớ",
-    "attachmentUploadStatus": "Đ_${failed} of ${total} attachment(s) failed to upload_________________ớ",
-    "geoLocationError": "Đ_Current location not available__________ớ",
-    "geoLocationOutOfExtent": "Đ_Current location is out of basemap extent_____________ớ",
-    "submitButtonTooltip": "Đ_Save__ớ",
-    "cancelButtonTooltip": "Đ_Cancel___ớ",
-    "geoformBackButtonTooltip": "Đ_Return to the report list_________ớ",
-    "updateFeaturesConfirmationMsg": "Đ_${count} features will be updated___________ớ",
-    "attachmentHeaderText": "Đ_Attachments____ớ"
+    "requiredFields": "Δώστε τιμές για όλα τα απαιτούμενα πεδία.",
+    "selectLocation": "Επιλέξτε τη θέση για την αναφορά σας",
+    "numericRangeHintMessage": "${openStrong}Υπόδειξη:${closeStrong} Ελάχιστη τιμή ${minValue} και μέγιστη τιμή ${maxValue}",
+    "dateRangeHintMessage": "${openStrong}Υπόδειξη:${closeStrong} Ελάχιστη ημερομηνία ${minValue} και μέγιστη ημερομηνία ${maxValue}",
+    "errorsInApplyEdits": "Δεν ήταν δυνατή η υποβολή της αναφοράς",
+    "attachmentSelectedMsg": "συνημμένα επιλέχθηκαν",
+    "attachmentUploadStatus": "Απέτυχε η μεταφόρτωση ${failed} από ${total} συνημμένων",
+    "geoLocationError": "Η τρέχουσα τοποθεσία δεν είναι διαθέσιμη",
+    "geoLocationOutOfExtent": "Η τρέχουσα τοποθεσία είναι εκτός της έκτασης του υποβάθρου",
+    "submitButtonTooltip": "Αποθήκευση",
+    "cancelButtonTooltip": "Ακύρωση",
+    "geoformBackButtonTooltip": "Επιστροφή στη λίστα αναφορών",
+    "updateFeaturesConfirmationMsg": "${count} στοιχεία θα ενημερωθούν",
+    "attachmentHeaderText": "Συνημμένα"
   },
   "mapViewer": {
-    "zoomInToolTip": "Đ_Zoom in___ớ",
+    "zoomInToolTip": "Εστίαση σε μεγαλύτερη κλίμακα",
     "zoomOutToolTip": "Απομάκρυνση σε μικρότερη κλίμακα"
   },
   "applicationHeader": {
@@ -77,52 +77,52 @@ define({
   "dataviewer": {
     "noIssuesReported": "Δεν υπάρχουν διαθέσιμες αναφορές",
     "noFeatureGeometry": "Δεν είναι δυνατή η εμφάνιση του στοιχείου",
-    "ascendingFlagTitle": "Đ_Sort in ascending order________ớ",
-    "descendingFlagTitle": "Đ_Sort in descending order________ớ",
-    "filterLabel": "Đ_Filter___ớ",
-    "valueRadioButtonLabel": "Đ_Value___ớ",
-    "uniqueRadioButtonLabel": "Đ_Unique___ớ",
-    "selectLayerToBegin": "Đ_Select a category to get started___________ớ",
-    "layerFeatureCount": "Đ_${featureCount} records________ớ"
+    "ascendingFlagTitle": "Ταξινόμηση με αύξουσα σειρά",
+    "descendingFlagTitle": "Ταξινόμηση με φθίνουσα σειρά",
+    "filterLabel": "Φίλτρο",
+    "valueRadioButtonLabel": "Τιμή",
+    "uniqueRadioButtonLabel": "Μοναδικό",
+    "selectLayerToBegin": "Επιλέξτε μια κατηγορία για να ξεκινήσετε",
+    "layerFeatureCount": "${featureCount} εγγραφές"
   },
   "timeSlider": {
-    "timeSliderLabel": "Đ_Time range____ớ",
-    "timeSliderInEditModeAlert": "Đ_Time slider unavailable while editing____________ớ"
+    "timeSliderLabel": "Εύρος χρόνου",
+    "timeSliderInEditModeAlert": "Η μπάρα κύλισης χρόνου δεν είναι διαθέσιμη κατά την επεξεργασία"
   },
   "comment": {
-    "commentsFormSubmitButton": "Đ_Save__ớ",
-    "commentsFormCancelButton": "Đ_Cancel___ớ",
-    "errorInSubmittingComment": "Đ_Edits could not be saved_________ớ.",
-    "emptyCommentMessage": "Đ_Value required_____ớ",
+    "commentsFormSubmitButton": "Αποθήκευση",
+    "commentsFormCancelButton": "Ακύρωση",
+    "errorInSubmittingComment": "Δεν ήταν δυνατή η αποθήκευση αλλαγών.",
+    "emptyCommentMessage": "Απαιτείται τιμή",
     "placeHolderText": "",
-    "noCommentsAvailableText": "Đ_No records available_______ớ",
-    "remainingTextCount": "Đ_${0} character(s) remain________ớ",
-    "showNoText": "Đ_No__ớ"
+    "noCommentsAvailableText": "Δεν υπάρχουν διαθέσιμες εγγραφές",
+    "remainingTextCount": "Απομένουν ${0} χαρακτήρες",
+    "showNoText": "Όχι"
   },
   "main": {
     "noGroup": "Δεν έχει παραμετροποιηθεί κάποια ομάδα"
   },
   "search": {
-    "searchIconTooltip": "Đ_Search this layer______ớ",
-    "noResultFoundText": "Đ_No results found______ớ",
-    "searchInEditModeAlert": "Đ_Search unavailable while editing___________ớ"
+    "searchIconTooltip": "Αναζήτηση σε αυτό το θεματικό επίπεδο",
+    "noResultFoundText": "Δεν βρέθηκαν αποτελέσματα",
+    "searchInEditModeAlert": "Η αναζήτηση δεν είναι διαθέσιμη κατά την επεξεργασία"
   },
   "manualRefresh": {
-    "manualRefreshIconTooltip": "Đ_Refresh___ớ",
+    "manualRefreshIconTooltip": "Ανανέωση",
     "confirmManualRefeshText": "Όλες οι επιλογές και οι μη αποθηκευμένες αλλαγές θα απορριφθούν"
   },
   "help": {
-    "helpIconTooltip": "Đ_Help__ớ"
+    "helpIconTooltip": "Βοήθεια"
   },
   "filter": {
-    "noFeatureFoundText": "Đ_No feature found for this value___________ớ.",
-    "distinctQueryFalied": "Đ_No distinct values found for the field_____________ớ.",
-    "andText": "Đ_and__ớ",
-    "filterInEditModeAlert": "Đ_Filters unavailable while editing___________ớ",
-    "dropdownSelectOption": "Đ_Select___ớ"
+    "noFeatureFoundText": "Δεν βρέθηκαν στοιχεία για αυτήν την τιμή.",
+    "distinctQueryFalied": "Δεν βρέθηκαν διακριτές τιμές για το πεδίο.",
+    "andText": "και",
+    "filterInEditModeAlert": "Τα φίλτρα δεν είναι διαθέσιμα κατά την επεξεργασία",
+    "dropdownSelectOption": "Επιλογή"
   },
   "detailsPanel": {
-    "editContentText": "Đ_Edit record____ớ"
+    "editContentText": "Επεξεργασία εγγραφής"
   },
   "signOutPage": {
     "signOutMessage": "Αποσυνδεθήκατε με επιτυχία",

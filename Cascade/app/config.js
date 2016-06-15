@@ -27,6 +27,9 @@ app.cfg = {
   WEBAPP_KEYWORD_GENERIC: ['JavaScript', 'Map', 'Mapping Site', 'Online Map', 'Ready To Use', 'selfConfigured', 'Web Map'],
   WEBAPP_KEYWORD_APP: ['Story Map', 'Story Maps', 'Cascade'],
 
+  HELP_URL: '//storymaps.arcgis.com/en/app-list/cascade/',
+  HELP_URL_PORTAL: '//storymaps.arcgis.com/en/app-list/cascade/',
+
   // Optional array of proxy rules
   PROXY_RULES: [
     /*{

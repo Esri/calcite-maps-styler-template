@@ -17,10 +17,10 @@
 define({
   "scene": {
     "error": "Impossible de créer la scène",
-    "support": "æ_Browser not supported_______Â",
-    "noScene": "æ_Specify scene id(s)_______Â",
-    "noConfig": "æ_Config is not defined_______Â",
-    "invalidScene": "æ_Unable to create scene________Â"
+    "support": "Navigateur non pris en charge",
+    "noScene": "Spécifier l'ID de la scène",
+    "noConfig": "La configuration n'est pas définie",
+    "invalidScene": "Impossible de créer la scène"
   },
   "tools": {
     "linkLabel": "Lier des vues",

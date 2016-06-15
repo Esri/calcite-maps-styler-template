@@ -47,7 +47,7 @@ define({
     "basic": "必要な機能だけを 1 つのマップで最適に"
   },
   "signInBuildDialog": {
-    "welcome": "須_Welcome___鷗!",
-    "continue": "須_Continue to {{APP_NAME}} builder___________鷗"
+    "welcome": "ようこそ",
+    "continue": "{{APP_NAME}} ビルダーに進む"
   }
 });

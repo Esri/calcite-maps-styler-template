@@ -17,10 +17,10 @@
 define({
   "scene": {
     "error": "Δεν είναι δυνατή η δημιουργία 3D προβολής",
-    "support": "Đ_Browser not supported_______ớ",
-    "noScene": "Đ_Specify scene id(s)_______ớ",
-    "noConfig": "Đ_Config is not defined_______ớ",
-    "invalidScene": "Đ_Unable to create scene________ớ"
+    "support": "Το πρόγραμμα περιήγησης δεν υποστηρίζεται",
+    "noScene": "Καθορισμός αναγνωριστικών 3D προβολής",
+    "noConfig": "Δεν έχει οριστεί παραμετροποίηση",
+    "invalidScene": "Δεν είναι δυνατή η δημιουργία 3D προβολής"
   },
   "tools": {
     "linkLabel": "Σύνδεση προβολών",

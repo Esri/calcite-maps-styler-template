@@ -17,10 +17,10 @@
 define({
   "scene": {
     "error": "Maisemaa ei voi luoda",
-    "support": "Å_Browser not supported_______ö",
-    "noScene": "Å_Specify scene id(s)_______ö",
-    "noConfig": "Å_Config is not defined_______ö",
-    "invalidScene": "Å_Unable to create scene________ö"
+    "support": "Selainta ei tueta",
+    "noScene": "Määritä maiseman tunnukset",
+    "noConfig": "Kokoonpanoa ei ole määritetty",
+    "invalidScene": "Maisemaa ei voi luoda"
   },
   "tools": {
     "linkLabel": "Linkitä näkymät",

@@ -32,41 +32,41 @@ define({
     "avgRating": "Classificazione",
     "noWebMapInGroup": "Il gruppo configurato non è valido oppure non sono stati ancora condivisi elementi con il gruppo.",
     "infoBtnToolTip": "Informazioni mappa",
-    "openWebmapList": "é_Open panel____È",
-    "closeWebmapList": "é_Close panel____È"
+    "openWebmapList": "Apri riquadro",
+    "closeWebmapList": "Chiudi pannello"
   },
   "geoform": {
-    "enterInformation": "é_Details___È",
-    "selectAttachments": "é_Attachments____È",
-    "selectFileText": "é_Browse___È",
-    "enterLocation": "é_Location___È",
-    "reportItButton": "é_Submit___È",
-    "cancelButton": "é_Cancel___È",
-    "requiredField": "é_(required)____È",
-    "selectDefaultText": "é_Select&hellip;_____È",
-    "invalidInputValue": "é_Please enter valid value_________È.",
-    "noFieldsConfiguredMessage": "é_Layer fields are not configured to capture data_______________È",
-    "invalidSmallNumber": "é_Please enter an integer________È",
+    "enterInformation": "Dettagli",
+    "selectAttachments": "Allegati",
+    "selectFileText": "Esplora",
+    "enterLocation": "Posizione",
+    "reportItButton": "Invia",
+    "cancelButton": "Annulla",
+    "requiredField": "(obbligatorio)",
+    "selectDefaultText": "Seleziona&hellip;",
+    "invalidInputValue": "Immettere un valore valido.",
+    "noFieldsConfiguredMessage": "I campi del layer non sono configurati per acquisire dati",
+    "invalidSmallNumber": "Immettere un numero intero",
     "invalidNumber": "Immettere un numero intero",
     "invalidFloat": "Si prega di immettere un numero",
     "invalidDouble": "Si prega di immettere un numero",
-    "requiredFields": "é_Please provide values for all required fields_______________È",
-    "selectLocation": "é_Please select the location for your report______________È",
-    "numericRangeHintMessage": "é_${openStrong}Hint:${closeStrong} Minimum value ${minValue} and maximum value ${maxValue}___________________________È",
-    "dateRangeHintMessage": "é_${openStrong}Hint:${closeStrong} Minimum date ${minValue} and Maximum date ${maxValue}___________________________È",
-    "errorsInApplyEdits": "é_Report could not be submitted__________È",
-    "attachmentSelectedMsg": "é_attachment(s) selected________È",
-    "attachmentUploadStatus": "é_${failed} of ${total} attachment(s) failed to upload_________________È",
-    "geoLocationError": "é_Current location not available__________È",
-    "geoLocationOutOfExtent": "é_Current location is out of basemap extent_____________È",
-    "submitButtonTooltip": "é_Save__È",
-    "cancelButtonTooltip": "é_Cancel___È",
-    "geoformBackButtonTooltip": "é_Return to the report list_________È",
-    "updateFeaturesConfirmationMsg": "é_${count} features will be updated___________È",
-    "attachmentHeaderText": "é_Attachments____È"
+    "requiredFields": "Specificare valori per tutti i campi obbligatori",
+    "selectLocation": "Selezionare la posizione del report",
+    "numericRangeHintMessage": "${openStrong}Suggerimento:${closeStrong} valore minimo ${minValue} e valore massimo ${maxValue}",
+    "dateRangeHintMessage": "${openStrong}Suggerimento:${closeStrong} data minima ${minValue} e data massima ${maxValue}",
+    "errorsInApplyEdits": "Impossibile inviare il rapporto",
+    "attachmentSelectedMsg": "allegato/i selezionato/i",
+    "attachmentUploadStatus": "Impossibile caricare ${failed} di ${total} allegati",
+    "geoLocationError": "Posizione corrente non disponibile",
+    "geoLocationOutOfExtent": "Posizione corrente esterna all'estensione della mappa di base",
+    "submitButtonTooltip": "Salva",
+    "cancelButtonTooltip": "Annulla",
+    "geoformBackButtonTooltip": "Torna all'elenco dei report",
+    "updateFeaturesConfirmationMsg": "${count} feature verranno aggiornate",
+    "attachmentHeaderText": "Allegati"
   },
   "mapViewer": {
-    "zoomInToolTip": "é_Zoom in___È",
+    "zoomInToolTip": "Zoom avanti",
     "zoomOutToolTip": "Zoom indietro"
   },
   "applicationHeader": {
@@ -77,52 +77,52 @@ define({
   "dataviewer": {
     "noIssuesReported": "Nessun report disponibile",
     "noFeatureGeometry": "Impossibile visualizzare la feature",
-    "ascendingFlagTitle": "é_Sort in ascending order________È",
-    "descendingFlagTitle": "é_Sort in descending order________È",
-    "filterLabel": "é_Filter___È",
-    "valueRadioButtonLabel": "é_Value___È",
-    "uniqueRadioButtonLabel": "é_Unique___È",
-    "selectLayerToBegin": "é_Select a category to get started___________È",
-    "layerFeatureCount": "é_${featureCount} records________È"
+    "ascendingFlagTitle": "Ordina in ordine crescente",
+    "descendingFlagTitle": "Ordina in ordine decrescente",
+    "filterLabel": "Filtro",
+    "valueRadioButtonLabel": "Valore",
+    "uniqueRadioButtonLabel": "Unico",
+    "selectLayerToBegin": "Selezionare una categoria per iniziare",
+    "layerFeatureCount": "${featureCount} record"
   },
   "timeSlider": {
-    "timeSliderLabel": "é_Time range____È",
-    "timeSliderInEditModeAlert": "é_Time slider unavailable while editing____________È"
+    "timeSliderLabel": "Intervallo temporale",
+    "timeSliderInEditModeAlert": "Cursore temporale non disponibile durante la modifica"
   },
   "comment": {
-    "commentsFormSubmitButton": "é_Save__È",
-    "commentsFormCancelButton": "é_Cancel___È",
-    "errorInSubmittingComment": "é_Edits could not be saved_________È.",
-    "emptyCommentMessage": "é_Value required_____È",
+    "commentsFormSubmitButton": "Salva",
+    "commentsFormCancelButton": "Annulla",
+    "errorInSubmittingComment": "Impossibile salvare le modifiche.",
+    "emptyCommentMessage": "Valore obbligatorio",
     "placeHolderText": "",
-    "noCommentsAvailableText": "é_No records available_______È",
-    "remainingTextCount": "é_${0} character(s) remain________È",
-    "showNoText": "é_No__È"
+    "noCommentsAvailableText": "Nessun record disponibile",
+    "remainingTextCount": "${0} caratteri rimanenti",
+    "showNoText": "No"
   },
   "main": {
     "noGroup": "Nessun gruppo configurato"
   },
   "search": {
-    "searchIconTooltip": "é_Search this layer______È",
-    "noResultFoundText": "é_No results found______È",
-    "searchInEditModeAlert": "é_Search unavailable while editing___________È"
+    "searchIconTooltip": "Cerca nel layer",
+    "noResultFoundText": "Nessun risultato trovato",
+    "searchInEditModeAlert": "Ricerca non disponibile durante la modifica"
   },
   "manualRefresh": {
-    "manualRefreshIconTooltip": "é_Refresh___È",
+    "manualRefreshIconTooltip": "Aggiorna",
     "confirmManualRefeshText": "Tutte le selezioni e le modifiche non salvate verranno ignorate"
   },
   "help": {
-    "helpIconTooltip": "é_Help__È"
+    "helpIconTooltip": "Guida"
   },
   "filter": {
-    "noFeatureFoundText": "é_No feature found for this value___________È.",
-    "distinctQueryFalied": "é_No distinct values found for the field_____________È.",
-    "andText": "é_and__È",
-    "filterInEditModeAlert": "é_Filters unavailable while editing___________È",
-    "dropdownSelectOption": "é_Select___È"
+    "noFeatureFoundText": "Nessuna feature trovata per questo valore.",
+    "distinctQueryFalied": "Nessun valore distinto trovato per il campo.",
+    "andText": "e",
+    "filterInEditModeAlert": "Filtri non disponibili durante la modifica",
+    "dropdownSelectOption": "Seleziona"
   },
   "detailsPanel": {
-    "editContentText": "é_Edit record____È"
+    "editContentText": "Modifica record"
   },
   "signOutPage": {
     "signOutMessage": "Disconnessione riuscita",

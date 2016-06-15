@@ -17,10 +17,10 @@
 define({
   "scene": {
     "error": "无法创建场景",
-    "support": "试_Browser not supported_______验",
-    "noScene": "试_Specify scene id(s)_______验",
-    "noConfig": "试_Config is not defined_______验",
-    "invalidScene": "试_Unable to create scene________验"
+    "support": "浏览器不受支持",
+    "noScene": "指定场景 id",
+    "noConfig": "配置未定义",
+    "invalidScene": "无法创建场景"
   },
   "tools": {
     "linkLabel": "链接视图",

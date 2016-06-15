@@ -35,6 +35,8 @@ define([
 
   "esri/portal/PortalItem",
 
+  "esri/request",
+
   "esri/views/SceneView",
   "esri/WebScene",
 
@@ -53,6 +55,7 @@ define([
   Camera,
   Point, SpatialReference,
   PortalItem,
+  esriRequest,
   SceneView, WebScene,
   Search, SearchVM,
   uiUtils, LayerList, SlideList
@@ -77,6 +80,16 @@ define([
           this.reportError(error);
           return;
         }
+
+        // temp fix for scene layer
+        var regex = /\/SceneServer\/layers\/\d+\/?$/;
+        esriRequest.setRequestPreCallback(function(request) {
+          if (request && typeof request === "object" && !request.content && regex.test(request.url)) {
+            request.content = { f: "json" };
+          }
+          return request;
+        });
+
         this.config = config;
         this.uiUtils = new uiUtils();
         this.uiUtils.init(config);

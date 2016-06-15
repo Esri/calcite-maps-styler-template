@@ -47,7 +47,7 @@ define({
     "basic": "Minimāla pieeja, lieliska vienai kartei"
   },
   "signInBuildDialog": {
-    "welcome": "ķ_Welcome___ū!",
-    "continue": "ķ_Continue to {{APP_NAME}} builder___________ū"
+    "welcome": "Laipni lūdzam!",
+    "continue": "Pāriet uz {{APP_NAME}} veidotāju"
   }
 });

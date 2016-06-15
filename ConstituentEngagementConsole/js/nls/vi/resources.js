@@ -32,41 +32,41 @@ define({
     "avgRating": "Xếp loại",
     "noWebMapInGroup": "Nhóm được cấu hình không hợp lệ hoặc vẫn chưa có mục nào được chia sẻ với nhóm này",
     "infoBtnToolTip": "Thông tin bản đồ",
-    "openWebmapList": "Đ_Open panel____ớ",
-    "closeWebmapList": "Đ_Close panel____ớ"
+    "openWebmapList": "Mở bảng điều khiển",
+    "closeWebmapList": "Đóng bảng điều khiển"
   },
   "geoform": {
-    "enterInformation": "Đ_Details___ớ",
-    "selectAttachments": "Đ_Attachments____ớ",
-    "selectFileText": "Đ_Browse___ớ",
-    "enterLocation": "Đ_Location___ớ",
-    "reportItButton": "Đ_Submit___ớ",
-    "cancelButton": "Đ_Cancel___ớ",
-    "requiredField": "Đ_(required)____ớ",
-    "selectDefaultText": "Đ_Select&hellip;_____ớ",
-    "invalidInputValue": "Đ_Please enter valid value_________ớ.",
-    "noFieldsConfiguredMessage": "Đ_Layer fields are not configured to capture data_______________ớ",
-    "invalidSmallNumber": "Đ_Please enter an integer________ớ",
+    "enterInformation": "Chi tiết",
+    "selectAttachments": "Tệp đính kèm",
+    "selectFileText": "Duyệt",
+    "enterLocation": "Vị trí",
+    "reportItButton": "Gửi",
+    "cancelButton": "Hủy",
+    "requiredField": "(bắt buộc)",
+    "selectDefaultText": "Chọn&hellip;",
+    "invalidInputValue": "Vui lòng nhập giá trị hợp lệ.",
+    "noFieldsConfiguredMessage": "Các trường không được cấu hình để chụp dữ liệu",
+    "invalidSmallNumber": "Vui lòng nhập số nguyên",
     "invalidNumber": "Vui lòng nhập số nguyên",
     "invalidFloat": "Vui lòng nhập một số",
     "invalidDouble": "Vui lòng nhập một số",
-    "requiredFields": "Đ_Please provide values for all required fields_______________ớ",
-    "selectLocation": "Đ_Please select the location for your report______________ớ",
-    "numericRangeHintMessage": "Đ_${openStrong}Hint:${closeStrong} Minimum value ${minValue} and maximum value ${maxValue}___________________________ớ",
-    "dateRangeHintMessage": "Đ_${openStrong}Hint:${closeStrong} Minimum date ${minValue} and Maximum date ${maxValue}___________________________ớ",
-    "errorsInApplyEdits": "Đ_Report could not be submitted__________ớ",
-    "attachmentSelectedMsg": "Đ_attachment(s) selected________ớ",
-    "attachmentUploadStatus": "Đ_${failed} of ${total} attachment(s) failed to upload_________________ớ",
-    "geoLocationError": "Đ_Current location not available__________ớ",
-    "geoLocationOutOfExtent": "Đ_Current location is out of basemap extent_____________ớ",
-    "submitButtonTooltip": "Đ_Save__ớ",
-    "cancelButtonTooltip": "Đ_Cancel___ớ",
-    "geoformBackButtonTooltip": "Đ_Return to the report list_________ớ",
-    "updateFeaturesConfirmationMsg": "Đ_${count} features will be updated___________ớ",
-    "attachmentHeaderText": "Đ_Attachments____ớ"
+    "requiredFields": "Vui lòng cung cấp giá trị cho tất cả các trường yêu cầu",
+    "selectLocation": "Vui lòng chọn vị trí cho báo cáo của bạn",
+    "numericRangeHintMessage": "${openStrong}Gợi ý:${closeStrong} Giá trị tối thiểu ${minValue} và giá trị tối đa ${maxValue}",
+    "dateRangeHintMessage": "${openStrong}Gợi ý:${closeStrong} Ngày tối thiểu ${minValue} và Ngày tối đa ${maxValue}",
+    "errorsInApplyEdits": "Không thể gửi báo cáo",
+    "attachmentSelectedMsg": "(các) tệp đính kèm được chọn",
+    "attachmentUploadStatus": "Không thể tải lên ${failed} trên ${total} tệp đính kèm",
+    "geoLocationError": "Vị trí hiện tại không khả dụng",
+    "geoLocationOutOfExtent": "Vị trí hiện tại ngoài phạm vi bản đồ nền",
+    "submitButtonTooltip": "Lưu",
+    "cancelButtonTooltip": "Hủy",
+    "geoformBackButtonTooltip": "Quay lại danh sách báo cáo",
+    "updateFeaturesConfirmationMsg": "${count} đối tượng sẽ được cập nhật",
+    "attachmentHeaderText": "Tệp đính kèm"
   },
   "mapViewer": {
-    "zoomInToolTip": "Đ_Zoom in___ớ",
+    "zoomInToolTip": "Thu nhỏ",
     "zoomOutToolTip": "Phóng to"
   },
   "applicationHeader": {
@@ -77,52 +77,52 @@ define({
   "dataviewer": {
     "noIssuesReported": "Không có báo cáo",
     "noFeatureGeometry": "Không thể hiển thị đối tượng",
-    "ascendingFlagTitle": "Đ_Sort in ascending order________ớ",
-    "descendingFlagTitle": "Đ_Sort in descending order________ớ",
-    "filterLabel": "Đ_Filter___ớ",
-    "valueRadioButtonLabel": "Đ_Value___ớ",
-    "uniqueRadioButtonLabel": "Đ_Unique___ớ",
-    "selectLayerToBegin": "Đ_Select a category to get started___________ớ",
-    "layerFeatureCount": "Đ_${featureCount} records________ớ"
+    "ascendingFlagTitle": "Sắp xếp theo thứ tự tăng dần",
+    "descendingFlagTitle": "Sắp xếp theo thứ tự giảm dần",
+    "filterLabel": "Bộ lọc",
+    "valueRadioButtonLabel": "Giá trị",
+    "uniqueRadioButtonLabel": "Duy nhất",
+    "selectLayerToBegin": "Chọn một danh mục để bắt đầu",
+    "layerFeatureCount": "${featureCount} bản ghi"
   },
   "timeSlider": {
-    "timeSliderLabel": "Đ_Time range____ớ",
-    "timeSliderInEditModeAlert": "Đ_Time slider unavailable while editing____________ớ"
+    "timeSliderLabel": "Khoảng thời gian",
+    "timeSliderInEditModeAlert": "Thanh trượt thời gian không khả dụng trong khi chỉnh sửa"
   },
   "comment": {
-    "commentsFormSubmitButton": "Đ_Save__ớ",
-    "commentsFormCancelButton": "Đ_Cancel___ớ",
-    "errorInSubmittingComment": "Đ_Edits could not be saved_________ớ.",
-    "emptyCommentMessage": "Đ_Value required_____ớ",
+    "commentsFormSubmitButton": "Lưu",
+    "commentsFormCancelButton": "Hủy",
+    "errorInSubmittingComment": "Không thể lưu các chỉnh sửa.",
+    "emptyCommentMessage": "Yêu cầu nhập giá trị",
     "placeHolderText": "",
-    "noCommentsAvailableText": "Đ_No records available_______ớ",
-    "remainingTextCount": "Đ_${0} character(s) remain________ớ",
-    "showNoText": "Đ_No__ớ"
+    "noCommentsAvailableText": "Không có bản ghi nào",
+    "remainingTextCount": "Còn ${0} ký tự",
+    "showNoText": "Không"
   },
   "main": {
     "noGroup": "Không có nhóm nào được cấu hình"
   },
   "search": {
-    "searchIconTooltip": "Đ_Search this layer______ớ",
-    "noResultFoundText": "Đ_No results found______ớ",
-    "searchInEditModeAlert": "Đ_Search unavailable while editing___________ớ"
+    "searchIconTooltip": "Tìm kiếm lớp này",
+    "noResultFoundText": "Không tìm thấy kết quả",
+    "searchInEditModeAlert": "Tìm kiếm không khả dụng trong khi chỉnh sửa"
   },
   "manualRefresh": {
-    "manualRefreshIconTooltip": "Đ_Refresh___ớ",
+    "manualRefreshIconTooltip": "Làm mới",
     "confirmManualRefeshText": "Tất cả các lựa chọn và các thay đổi chưa lưu sẽ bị hủy"
   },
   "help": {
-    "helpIconTooltip": "Đ_Help__ớ"
+    "helpIconTooltip": "Trợ giúp"
   },
   "filter": {
-    "noFeatureFoundText": "Đ_No feature found for this value___________ớ.",
-    "distinctQueryFalied": "Đ_No distinct values found for the field_____________ớ.",
-    "andText": "Đ_and__ớ",
-    "filterInEditModeAlert": "Đ_Filters unavailable while editing___________ớ",
-    "dropdownSelectOption": "Đ_Select___ớ"
+    "noFeatureFoundText": "Không tìm thấy đối tượng nào cho giá trị này.",
+    "distinctQueryFalied": "Không tìm thấy giá trị riêng biệt nào cho trường.",
+    "andText": "và",
+    "filterInEditModeAlert": "Bộ lọc không khả dụng trong khi chỉnh sửa",
+    "dropdownSelectOption": "Chọn"
   },
   "detailsPanel": {
-    "editContentText": "Đ_Edit record____ớ"
+    "editContentText": "Chỉnh sửa bản ghi"
   },
   "signOutPage": {
     "signOutMessage": "Bạn đã đăng xuất thành công",

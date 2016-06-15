@@ -17,10 +17,10 @@
 define({
   "scene": {
     "error": "Nie można utworzyć sceny",
-    "support": "ł_Browser not supported_______ą",
-    "noScene": "ł_Specify scene id(s)_______ą",
-    "noConfig": "ł_Config is not defined_______ą",
-    "invalidScene": "ł_Unable to create scene________ą"
+    "support": "Nieobsługiwana przeglądarka",
+    "noScene": "Podaj identyfikatory scen",
+    "noConfig": "Konifugracja niezdefiniowana",
+    "invalidScene": "Nie można utworzyć sceny"
   },
   "tools": {
     "linkLabel": "Połącz widoki",

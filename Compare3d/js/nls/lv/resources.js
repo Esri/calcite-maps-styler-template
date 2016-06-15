@@ -17,10 +17,10 @@
 define({
   "scene": {
     "error": "Nevarēja izveidot scēnu",
-    "support": "ķ_Browser not supported_______ū",
-    "noScene": "ķ_Specify scene id(s)_______ū",
-    "noConfig": "ķ_Config is not defined_______ū",
-    "invalidScene": "ķ_Unable to create scene________ū"
+    "support": "Pārlūks nav atbalstīts",
+    "noScene": "Norādīt scēnas identifikatoru(-s)",
+    "noConfig": "Konfigurācija nav definēta",
+    "invalidScene": "Nevarēja izveidot scēnu"
   },
   "tools": {
     "linkLabel": "Saistīt skatus",

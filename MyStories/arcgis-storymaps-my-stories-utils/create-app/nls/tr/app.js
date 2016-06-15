@@ -47,7 +47,7 @@ define({
     "basic": "Minimalistik düşünün, tek harita için idealdir"
   },
   "signInBuildDialog": {
-    "welcome": "ı_Welcome___İ!",
-    "continue": "ı_Continue to {{APP_NAME}} builder___________İ"
+    "welcome": "Hoş Geldiniz!",
+    "continue": "{{APP_NAME}} oluşturucuya devam edin"
   }
 });

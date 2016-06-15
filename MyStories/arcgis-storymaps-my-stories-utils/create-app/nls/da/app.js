@@ -47,7 +47,7 @@ define({
     "basic": "Tænk minimalistisk, glimrende til et enkelt kort"
   },
   "signInBuildDialog": {
-    "welcome": "ø_Welcome___å!",
-    "continue": "ø_Continue to {{APP_NAME}} builder___________å"
+    "welcome": "Velkommen!",
+    "continue": "Fortsæt til {{APP_NAME}}-builder"
   }
 });

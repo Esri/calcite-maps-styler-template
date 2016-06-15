@@ -69,8 +69,8 @@ define({
     "geolocationBtnTitle": "ตำแหน่งเชิงพื้นที่",
     "ascendingSort": "เรียงจากน้อยไปมาก",
     "descendingSort": "เรียงจากมากไปน้อย",
-    "viewBtnTitle": "ก้_View__ษฺ",
-    "backButtonTitle": "ก้_Back__ษฺ"
+    "viewBtnTitle": "วิว",
+    "backButtonTitle": "กลับ"
   },
   "errorMessages": {
     "emptyGroup": "กลุ่มการกำหนดค่าไม่ได้มีข้อมูลใด ๆ ที่จะดำเนินการแบบสอบถาม",

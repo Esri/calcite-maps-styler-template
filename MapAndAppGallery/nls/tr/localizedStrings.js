@@ -69,8 +69,8 @@ define({
     "geolocationBtnTitle": "Coğrafi Konum",
     "ascendingSort": "Artan",
     "descendingSort": "Azalan",
-    "viewBtnTitle": "ı_View__İ",
-    "backButtonTitle": "ı_Back__İ"
+    "viewBtnTitle": "Görüntüle",
+    "backButtonTitle": "Geri"
   },
   "errorMessages": {
     "emptyGroup": "Yapılandırılan grup için sorgu uygulanabilecek veri yok.",

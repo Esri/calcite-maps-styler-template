@@ -2,9 +2,9 @@ define({
   "app": {
     "title": "Carusel de hărţi",
     "errors": {
-      "noMaps": "Ă_This group does not contain any public web maps to display__________________ș",
-      "noGroup": "Ă_Group not found______ș",
-      "createGroup": "Ă_Unable to create group________ș",
+      "noMaps": "Acest grup nu conţine nicio hartă web publică disponibilă pentru afişare",
+      "noGroup": "Grupul nu a fost găsit",
+      "createGroup": "Grupul nu poate fi creat",
       "bitly": "O cheie bitly este utilizată pentru scurtarea URL-ului în vederea partajării. Vizualizaţi fişierul readme pentru detalii despre crearea şi utilizarea unei chei bitly",
       "general": "Eroare"
     },

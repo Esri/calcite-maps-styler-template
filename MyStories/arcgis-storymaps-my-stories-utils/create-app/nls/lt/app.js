@@ -47,7 +47,7 @@ define({
     "basic": "Visiškas minimalizmas – puikiai tinka vienam žemėlapiui"
   },
   "signInBuildDialog": {
-    "welcome": "Į_Welcome___š!",
-    "continue": "Į_Continue to {{APP_NAME}} builder___________š"
+    "welcome": "Sveiki",
+    "continue": "Eiti į {{APP_NAME}} kūrimo priemonę"
   }
 });

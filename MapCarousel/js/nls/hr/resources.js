@@ -1,13 +1,13 @@
 define({
   "app": {
-    "title": "Č_Map Carousel_____ž",
+    "title": "Map Carousel",
     "errors": {
-      "noMaps": "Č_This group does not contain any public web maps to display__________________ž",
-      "noGroup": "Č_Group not found______ž",
-      "createGroup": "Č_Unable to create group________ž",
-      "bitly": "Č_bitly is used to shorten the url for sharing. View the readme file for details on creating and using a bitly key___________________________________ž",
-      "general": "Č_Error___ž"
+      "noMaps": "Ova grupa ne sadrži javne web-karte za prikaz",
+      "noGroup": "Grupa nije pronađena",
+      "createGroup": "Nije moguće stvoriti grupu",
+      "bitly": "bitly se upotrebljava za skraćivanje url-ova za dijeljenje. Pojedinosti o stvaranju i upotrebi ključa za bitly potražite u datoteci readme",
+      "general": "Pogreška"
     },
-    "mapcount": "Č_Map ${page} of  ${total}________ž"
+    "mapcount": "Karta ${page} od  ${total}"
   }
 });

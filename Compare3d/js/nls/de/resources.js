@@ -17,10 +17,10 @@
 define({
   "scene": {
     "error": "Szene kann nicht erstellt werden",
-    "support": "ä_Browser not supported_______Ü",
-    "noScene": "ä_Specify scene id(s)_______Ü",
-    "noConfig": "ä_Config is not defined_______Ü",
-    "invalidScene": "ä_Unable to create scene________Ü"
+    "support": "Browser wird nicht unterstützt",
+    "noScene": "Szenen-ID(s) festlegen",
+    "noConfig": "Konfiguration ist nicht definiert",
+    "invalidScene": "Szene kann nicht erstellt werden"
   },
   "tools": {
     "linkLabel": "Ansichten verknüpfen",

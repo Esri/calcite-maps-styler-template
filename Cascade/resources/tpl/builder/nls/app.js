@@ -29,7 +29,7 @@ define({
 				}
 			},
 			mediaConfig: {
-				homeView: "Initial scene state"
+				homeView: "Initial view"
 			},
 			imageGallery: {
 				reachedLimit: "Only four images are allowed in a row. To start a new row, add another image below.",

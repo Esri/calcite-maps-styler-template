@@ -17,10 +17,10 @@
 define({
   "scene": {
     "error": "Kreiranje scene nije moguće",
-    "support": "Č_Browser not supported_______ž",
-    "noScene": "Č_Specify scene id(s)_______ž",
-    "noConfig": "Č_Config is not defined_______ž",
-    "invalidScene": "Č_Unable to create scene________ž"
+    "support": "Pregledač nije podržan",
+    "noScene": "Definišite ID scene",
+    "noConfig": "Konfiguracija nije definisana",
+    "invalidScene": "Kreiranje scene nije moguće"
   },
   "tools": {
     "linkLabel": "Poveži prikaze",

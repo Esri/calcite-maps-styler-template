@@ -29,8 +29,8 @@ define({
     "error": "預設情況下，將使用 web 地圖描述或代碼片段。配置應用程式來為關於面板新增自訂代碼片段。"
   },
   "time": {
-    "enableTimeMessage": "試_The specified web map does not contain any time enabled layers. View the ${link} help topic for details. To use the template without displaying time use the configuration panel to disable the time option______________________________________________________________驗.",
-    "enableTimeMessageLink": "試_http://doc.arcgis.com/en/arcgis-online/create-maps/configure-time.htm#ESRI_SECTION1_F1D4A275B4AB4CC79198CBA9D0AD8727____________________________________驗"
+    "enableTimeMessage": "指定的網上地圖不包含任何已啟用時間的圖層。有關詳細資訊，請參閱 ${link} 說明主題。要使用範本而不顯示時間，請使用設定面板來停用時間選項。",
+    "enableTimeMessageLink": "http://doc.arcgis.com/en/arcgis-online/create-maps/configure-time.htm#ESRI_SECTION1_F1D4A275B4AB4CC79198CBA9D0AD8727"
   },
   "histogram": {
     "error": "在快照模式下，web 地圖中的已啟用時間的圖徵層不可用。配置應用程式以使用另一個 web 地圖或停用長條圖選項。"

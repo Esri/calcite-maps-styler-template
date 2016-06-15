@@ -1,53 +1,53 @@
 define({
   "dialog": {
-    "back": "Č_Back__ž",
-    "close": "Č_Close___ž",
-    "createNewStory": "Č_Create a New Story______ž",
-    "pickApp": "Č_Pick an App____ž",
-    "askPros": "Č_Ask the Pros_____ž"
+    "back": "Nazad",
+    "close": "Zatvori",
+    "createNewStory": "Kreirajte novu priču",
+    "pickApp": "Odaberite aplikaciju",
+    "askPros": "Pitajte profesionalce"
   },
   "incompatibleNotice": {
-    "title": "Č_Create Story Not Available_________ž",
-    "subtitle": "Č_Sorry, this is not supported in a small display. Please open in a larger display or device____________________________ž.",
-    "close": "Č_Close___ž"
+    "title": "Kreiranje priče nije dostupno",
+    "subtitle": "Žao nam je, ovo nije podržano na ekranima malih dimenzija. Otvorite na uređaju sa većim ekranom.",
+    "close": "Zatvori"
   },
   "answerText": {
-    "seriesOfPlaces": "Č_A set of places______ž",
-    "mapsNarrative": "Č_A narrative with maps_______ž",
-    "compareDatasets": "Č_An interactive comparison of two datasets_____________ž",
-    "other": "Č_A single map_____ž",
-    "yes": "Č_Yes__ž",
-    "no": "Č_No__ž",
-    "click": "Č_Click___ž",
-    "scroll": "Č_Scroll___ž"
+    "seriesOfPlaces": "Skup mesta",
+    "mapsNarrative": "Priča sa mapom",
+    "compareDatasets": "Interaktivno poređenje dva skupa podataka",
+    "other": "Pojedinačna mapa",
+    "yes": "Da",
+    "no": "Ne",
+    "click": "Kliknite",
+    "scroll": "Pomerajte"
   },
   "questionText": {
-    "bestDescribesStory": "Č_What best describes your story__________ž?",
-    "showPhotos": "Č_Do you want to show photos for each location_______________ž?",
-    "clickOrScroll": "Č_Do you want your audience to click through tabs or scroll__________________ž?"
+    "bestDescribesStory": "Šta najbolje opisuje vašu priču?",
+    "showPhotos": "Želite li da prikažete fotografije za svaku lokaciju?",
+    "clickOrScroll": "Želite li da korisnici mogu da se kreću klikom na kartice ili pomeranjem?"
   },
   "finalApp": {
-    "weRecommend": "Č_We Recommend: {{STORY_TYPE}}_________ž",
-    "letsBuild": "Č_Let's build_____ž!",
-    "seeExample": "Č_See example____ž"
+    "weRecommend": "Preporučujemo: {{STORY_TYPE}}",
+    "letsBuild": "Hajde da kreiramo!",
+    "seeExample": "Pogledajte primer"
   },
   "reasons": {
-    "mapTour": "Č_This app presents a sequential, place-based narrative in the form of a series of geotagged photos and captions linked to an interactive map. Itâ€™s ideal for walking tours or for a series of locations youâ€™d like users to follow in sequence__________________________________________________________________________ž.",
-    "mapJournal": "Č_This app lets you create a compelling map-based narrative presented as a set of journal entries. It's ideal for creating multimedia stories that combine text, maps, images, and video, especially when you have lots of text or a rich array of content____________________________________________________________________________ž.",
-    "mapSeries": "Č_This app lets you present a series of maps via tabs, numbered bullets, or our expandable 'side accordion' control. You can also include images, video and web content in your series to tell your story_____________________________________________________________ž.",
-    "swipeSpyglass": "Č_This app enables users to compare two maps or two layers in the same map. It is particularly effective for showing before-and-after imagery or other changes over time___________________________________________________ž.",
-    "basic": "Č_This app lets you present a map via a very simple minimalist user interface. Apart from the title bar and an optional legend, the map fills the screen. Use this app to let your map speak for itself____________________________________________________________ž."
+    "mapTour": "Ova aplikacija predstavlja sekvencijalnu priču zasnovanu na određenom mestu u obliku niza geotagovanih fotografija i natpisa povezanih sa interaktivnom mapom. Idealna je za šetačke ture ili seriju lokacija koji želite da vaši korisnici prate u nizu.",
+    "mapJournal": "Ova aplikacija vam omogućava da kreirate zanimljivu priču zasnovanu na mapi, prezentovanu u obliku skupa unosa u dnevnik. Idealna je za kreiranje multimedijalnih priča koje kombinuju tekst, mape, snimke i video zapise, naročito ako imate mnogo teksta ili bogat sadržaj.",
+    "mapSeries": "Aplikacija vam omogućava da prezentujete seriju mapa kroz kartice, numerisano nabrajanje ili pomoću proširive bočne kontrole u vidu harmonike. Takođe, možete da uključite snimke, video zapise i veb sadržaj u serije da biste ispričali priču.",
+    "swipeSpyglass": "Ovo omogućava korisnicima da porede dve mape ili dva sloja u istoj mapi. Naročito je efektivno za prikazivanje snimaka pre i posle ili drugih promena tokom vremena.",
+    "basic": "Ova aplikacija vam omogućava da prezentujete mapu pomoću minimalističkog korisničkog interfejsa. Osim trake sa naslovom i opcione legende, mapa ispunjava ekran. Koristite ovu aplikaciju da biste omogućili da mapa priča sama za sebe."
   },
   "shortReasons": {
-    "mapTour": "Č_Guide people through a sequence of places_____________ž",
-    "mapJournal": "Č_Perfect for an in-depth narrative___________ž",
-    "mapSeries": "Č_Present a series of related maps___________ž",
-    "swipe": "Č_Compare two maps or map layers with a slider______________ž",
-    "spyglass": "Č_Compare two maps or map layers with a spyglass_______________ž",
-    "basic": "Č_Think minimalistic, great for one map____________ž"
+    "mapTour": "Vodite ljude kroz niz mesta",
+    "mapJournal": "Savršeno za detaljne priče",
+    "mapSeries": "Prezentujte seriju povezanih mapa",
+    "swipe": "Poredite dve mape ili slojeve mape pomoću klizača",
+    "spyglass": "Poredite dve mape ili slojeve mape pomoću lupe",
+    "basic": "Razmišljajte minimalistički, savršeno za jednu mapu"
   },
   "signInBuildDialog": {
-    "welcome": "Č_Welcome___ž!",
-    "continue": "Č_Continue to {{APP_NAME}} builder___________ž"
+    "welcome": "Dobro došli!",
+    "continue": "Nastavite do programa za izradu {{APP_NAME}}"
   }
 });

@@ -69,8 +69,8 @@ define({
     "geolocationBtnTitle": "地理位置",
     "ascendingSort": "升冪",
     "descendingSort": "降冪",
-    "viewBtnTitle": "試_View__驗",
-    "backButtonTitle": "試_Back__驗"
+    "viewBtnTitle": "檢視",
+    "backButtonTitle": "返回"
   },
   "errorMessages": {
     "emptyGroup": "已設定的群組沒有任何用於執行查詢的資料。",
