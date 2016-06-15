@@ -52,7 +52,7 @@ app.cfg = {
     ]
   },
   BUILDER_LINKS: {
-    picasaHelp: 'https://blogs.esri.com/esri/arcgis/2016/05/27/story-maps-and-picasa/'
+    picasaHelp: 'http://links.esri.com/storymaps/google-photos-help'
   },
   // Edit those to set a custom sharing or proxy URL
   // You have to edit those only if your webmap is deployed on Portal for ArcGIS instance and if you are not deploying the template on the Portal webserver

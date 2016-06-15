@@ -2473,6 +2473,7 @@ body {
  */
 
 #loadingOverlay.error {
+  position: fixed !important;
   display: block !important;
   opacity: 1 !important;
   visibility: visible !important;
@@ -3428,11 +3429,11 @@ h1 {
   line-height: 54px;
 }
 blockquote {
-  padding: 0 24px;
-  margin: 24px 24px;
-  font-size: 24px;
-  line-height: 34px;
   font-style: italic;
+  font-size: 30px;
+  line-height: 40px;
+  border-left: 2px solid #cccccc;
+  color: #777777 ;
 }
 .foreground:focus,
 .blocks:focus,
@@ -5103,7 +5104,7 @@ body.mobile-view .section-layout-cover .cover-credits-right {
 .section-layout-sequence h1,
 .section-layout-sequence h2,
 .section-layout-sequence blockquote {
-  width: 80%;
+  width: 45%;
   margin-left: auto;
   margin-right: auto;
 }
@@ -5146,7 +5147,26 @@ body.mobile-view .section-layout-sequence blockquote {
  * Responsive
  */
 body.mobile-view .section-layout-sequence .block {
+  margin-top: 20px;
+}
+body.mobile-view .section-layout-sequence p.block {
   font-size: 16px;
+  width: 90%;
+}
+body.mobile-view .section-layout-sequence h1,
+body.mobile-view .section-layout-sequence h2,
+body.mobile-view .section-layout-sequence blockquote {
+  width: 80%;
+}
+body.mobile-view .section-layout-sequence blockquote {
+  padding: 0 12px;
+}
+body.mobile-view .section-layout-sequence h1 {
+  font-size: 26px;
+  line-height: 32px;
+}
+body.mobile-view .section-layout-sequence h2 {
+  font-size: 24px;
 }
 body.mobile-view .section-layout-sequence .block-media {
   width: 100%;
@@ -5570,6 +5590,9 @@ body.mobile-view .section-immersive .imm-panel .block {
   font-size: 14px;
   line-height: 150%;
   padding: 5px;
+}
+body.mobile-view .section-immersive .imm-panel h2 {
+  font-size: 20px !important;
 }
 .section-immersive.disable-snap {
   min-height: 100vh !important;
@@ -6674,13 +6697,11 @@ body.builder-mode .section:nth-child(2).section-layout-sequence .foreground {
   margin: auto;
   color: #AAA;
   text-shadow: 0 0 8px rgba(0, 0, 0, 0.95);
-  padding-left: 200px;
   border: 2px solid rgba(241, 248, 253, 0.94);
 }
 .background-title h2[contenteditable=true]:not(:focus):empty:before {
   display: block;
   content: attr(placeholder);
-  margin-left: -100%;
 }
 body.builder-mode .section-immersive .blocks {
   width: 100%;
@@ -7812,9 +7833,14 @@ body.builder-mode .section-builder-panel {
 .agol-header .btn {
   border: 1px solid #cccccc;
   line-height: 2em;
+  color: #959595;
 }
 .agol-header .btn.active {
   box-shadow: none;
+  color: #4c4c4c;
+  border-color: #4c4c4c;
+  box-shadow: inset 1px 1px 0 #4c4c4c, inset -1px -1px 0 #4c4c4c;
+  font-weight: bold;
 }
 .agol-header .filter-toggle,
 .agol-header .filter-toggle .btn,
@@ -7825,7 +7851,7 @@ body.builder-mode .section-builder-panel {
 .agol-header .vert-divider {
   display: inline-block;
   vertical-align: middle;
-  border-left: 1px solid #959595;
+  border-left: 1px solid #cccccc;
   margin: 0 1em;
   height: 100%;
 }
@@ -7857,18 +7883,14 @@ body.builder-mode .section-builder-panel {
 .agol-header .filter-toggle .btn {
   width: 4em;
 }
-.agol-header .filter-toggle .btn.active {
-  border-color: #196fa6;
-  box-shadow: inset 1px 1px 0 #196fa6, inset -1px -1px 0 #196fa6;
-}
 .agol-header .filter-toggle .btn.active .floating-check {
   opacity: 1;
 }
+.agol-header .sort-toggle .btn {
+  width: 6em;
+}
 .agol-header .sort-toggle .btn.active {
   font-weight: bold;
-  color: #196fa6;
-  border-color: #196fa6;
-  box-shadow: inset 1px 1px 0 #196fa6, inset -1px -1px 0 #196fa6;
 }
 .agol-header .compound-media {
   width: 4em;
@@ -7915,7 +7937,6 @@ body.builder-mode .section-builder-panel {
 }
 .agol-header .compound-map .fa-map-marker,
 .agol-header .compound-map .fa-map-pin {
-  color: #196fa6;
   left: 0.45em;
 }
 .agol-header label {
@@ -7937,9 +7958,9 @@ body.builder-mode .section-builder-panel {
   height: 2em;
   width: 2em;
   text-align: right;
-  background: linear-gradient(to top right, transparent 49%, #196fa6 51%);
-  border-top: 1px solid #196fa6;
-  border-right: 1px solid #196fa6;
+  background: linear-gradient(to top right, transparent 49%, #4c4c4c 51%);
+  border-top: 1px solid #4c4c4c;
+  border-right: 1px solid #4c4c4c;
   transition: all 0.25s ease;
 }
 @media (max-width: 880px) {
@@ -8030,9 +8051,14 @@ body.builder-mode .section-builder-panel {
   justify-content: center;
   max-width: 100%;
   overflow-y: auto;
+  flex-grow: 1;
 }
 .mp-gallery .alert {
   text-align: center;
+}
+.mp-gallery .alert.limit-reached {
+  padding: 5px 10px;
+  margin: 1em 0;
 }
 .mp-gallery .placeholder {
   font-size: 52px;
@@ -8178,14 +8204,14 @@ body.builder-mode .section-builder-panel {
   margin-bottom: 0;
 }
 .photo-input .alert-default {
-  background-color: #efefef;
+  background-color: #e9f4fc;
 }
 .photo-input .drag-area.uploader {
   font-size: 17px;
   line-height: 1.5em;
   text-align: center;
   padding: 0 0 3em;
-  border: 2px dashed #959595;
+  border: 2px dashed #196fa6;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -8193,7 +8219,7 @@ body.builder-mode .section-builder-panel {
 }
 .photo-input .drag-area.uploader .bg-img {
   font-size: 200px;
-  color: #fcfcfc;
+  color: #ffffff;
   position: absolute;
   top: 50px;
   width: 100%;
@@ -8205,6 +8231,7 @@ body.builder-mode .section-builder-panel {
   transform: rotate(-20deg);
 }
 .photo-input .drag-area.uploader .info-footer {
+  color: #959595;
   font-size: 12px;
   font-style: italic;
   position: absolute;
@@ -8214,7 +8241,9 @@ body.builder-mode .section-builder-panel {
   line-height: 1.3em;
   padding: 0 12px 6px;
 }
-.photo-input .drag-area.uploader .info-footer .fa {
+.photo-input .drag-area.uploader .info-footer .fa,
+.photo-input .drag-area.uploader button .fa,
+.photo-input .drag-area.uploader .block-md .fa {
   margin-right: 6px;
 }
 @media (max-width: 992px) {
@@ -8314,6 +8343,9 @@ body.builder-mode .section-builder-panel {
   }
 }
 @media (max-width: 768px) {
+  .mp-sidepanel .photo-input {
+    flex-grow: 0;
+  }
   .mp-sidepanel .photo-input .drag-area {
     position: static;
     height: auto;
@@ -8407,6 +8439,7 @@ body.builder-mode .section-builder-panel {
 .mp-browse-panel-containers .browse-panel-container .column-sidepanel {
   width: 300px;
   flex: 0 0 auto;
+  height: 100%;
 }
 @media (max-width: 992px) {
   .mp-browse-panel-containers .browse-panel-container .column-sidepanel {

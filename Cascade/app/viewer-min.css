@@ -2473,6 +2473,7 @@ body {
  */
 
 #loadingOverlay.error {
+  position: fixed !important;
   display: block !important;
   opacity: 1 !important;
   visibility: visible !important;
@@ -3155,11 +3156,11 @@ h1 {
   line-height: 54px;
 }
 blockquote {
-  padding: 0 24px;
-  margin: 24px 24px;
-  font-size: 24px;
-  line-height: 34px;
   font-style: italic;
+  font-size: 30px;
+  line-height: 40px;
+  border-left: 2px solid #cccccc;
+  color: #777777 ;
 }
 .foreground:focus,
 .blocks:focus,
@@ -4317,7 +4318,7 @@ body.mobile-view .section-layout-cover .cover-credits-right {
 .section-layout-sequence h1,
 .section-layout-sequence h2,
 .section-layout-sequence blockquote {
-  width: 80%;
+  width: 45%;
   margin-left: auto;
   margin-right: auto;
 }
@@ -4360,7 +4361,26 @@ body.mobile-view .section-layout-sequence blockquote {
  * Responsive
  */
 body.mobile-view .section-layout-sequence .block {
+  margin-top: 20px;
+}
+body.mobile-view .section-layout-sequence p.block {
   font-size: 16px;
+  width: 90%;
+}
+body.mobile-view .section-layout-sequence h1,
+body.mobile-view .section-layout-sequence h2,
+body.mobile-view .section-layout-sequence blockquote {
+  width: 80%;
+}
+body.mobile-view .section-layout-sequence blockquote {
+  padding: 0 12px;
+}
+body.mobile-view .section-layout-sequence h1 {
+  font-size: 26px;
+  line-height: 32px;
+}
+body.mobile-view .section-layout-sequence h2 {
+  font-size: 24px;
 }
 body.mobile-view .section-layout-sequence .block-media {
   width: 100%;
@@ -4784,6 +4804,9 @@ body.mobile-view .section-immersive .imm-panel .block {
   font-size: 14px;
   line-height: 150%;
   padding: 5px;
+}
+body.mobile-view .section-immersive .imm-panel h2 {
+  font-size: 20px !important;
 }
 .section-immersive.disable-snap {
   min-height: 100vh !important;

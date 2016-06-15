@@ -28,6 +28,7 @@ define({
           noPhotosFound: "No photos matched your search. Please try again.",
           noItemsFound: "No items matched your search. Please try again.",
           noItemsInThisStory: "No content from ArcGIS has been added to this story yet.",
+          limitReached: "Showing 100 items. If you didn't find what you need, try a keyword search.",
           galleryItems: {
             remove1: "Delete this unused image from your ArcGIS account.",
             remove2: "(You'll need to upload it again if you decide to use it later.)",
@@ -136,7 +137,7 @@ define({
               or: "OR",
               dragAndDrop: "Drop an image here",
               uploadImage: "Browse for an image",
-              agolInfo: "Images will be stored in your ArcGIS account and will be accessible inside your story.",
+              agolInfo: "Images will be stored in your ArcGIS account and accessible inside your story.",
               saveBeforeUpload: "Once you save this story, you can upload images to ArcGIS here."
             },
             filterAndSort: {
