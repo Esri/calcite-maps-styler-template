@@ -1150,12 +1150,14 @@ define([
       return oid;
     },
     _cloneAndRemoveRelationshipFields: function(fieldInfos){
-     
-      return array.filter(fieldInfos, function (fieldInfo) {
-        return (fieldInfo.fieldName.indexOf('relationships/') === -1);
-          
-        
+      var newFieldArr = [];
+      array.forEach(fieldInfos, function (fieldInfo) {
+        if (fieldInfo.fieldName.indexOf('relationships/') === -1) {
+          newFieldArr.push(lang.clone(fieldInfo));
+
+        }     
       });
+      return newFieldArr;
     },
     _getPopupForResult: function (feature, layer) {
       try {
