@@ -122,15 +122,15 @@ body {
   color: #3276b1;
 }
 /*!
- *  Font Awesome 4.6.1 by @davegandy - http://fontawesome.io - @fontawesome
+ *  Font Awesome 4.6.3 by @davegandy - http://fontawesome.io - @fontawesome
  *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
  */
 /* FONT PATH
  * -------------------------- */
 @font-face {
   font-family: 'FontAwesome';
-  src: url('../resources/lib/font-awesome/fonts/fontawesome-webfont.eot?v=4.6.1');
-  src: url('../resources/lib/font-awesome/fonts/fontawesome-webfont.eot?#iefix&v=4.6.1') format('embedded-opentype'), url('../resources/lib/font-awesome/fonts/fontawesome-webfont.woff2?v=4.6.1') format('woff2'), url('../resources/lib/font-awesome/fonts/fontawesome-webfont.woff?v=4.6.1') format('woff'), url('../resources/lib/font-awesome/fonts/fontawesome-webfont.ttf?v=4.6.1') format('truetype'), url('../resources/lib/font-awesome/fonts/fontawesome-webfont.svg?v=4.6.1#fontawesomeregular') format('svg');
+  src: url('../resources/lib/font-awesome/fonts/fontawesome-webfont.eot?v=4.6.3');
+  src: url('../resources/lib/font-awesome/fonts/fontawesome-webfont.eot?#iefix&v=4.6.3') format('embedded-opentype'), url('../resources/lib/font-awesome/fonts/fontawesome-webfont.woff2?v=4.6.3') format('woff2'), url('../resources/lib/font-awesome/fonts/fontawesome-webfont.woff?v=4.6.3') format('woff'), url('../resources/lib/font-awesome/fonts/fontawesome-webfont.ttf?v=4.6.3') format('truetype'), url('../resources/lib/font-awesome/fonts/fontawesome-webfont.svg?v=4.6.3#fontawesomeregular') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -1506,7 +1506,7 @@ body {
 .fa-digg:before {
   content: "\f1a6";
 }
-.fa-pied-piper:before {
+.fa-pied-piper-pp:before {
   content: "\f1a7";
 }
 .fa-pied-piper-alt:before {
@@ -1632,6 +1632,7 @@ body {
   content: "\f1ce";
 }
 .fa-ra:before,
+.fa-resistance:before,
 .fa-rebel:before {
   content: "\f1d0";
 }
@@ -2279,6 +2280,26 @@ body {
 }
 .fa-snapchat-square:before {
   content: "\f2ad";
+}
+.fa-pied-piper:before {
+  content: "\f2ae";
+}
+.fa-first-order:before {
+  content: "\f2b0";
+}
+.fa-yoast:before {
+  content: "\f2b1";
+}
+.fa-themeisle:before {
+  content: "\f2b2";
+}
+.fa-google-plus-circle:before,
+.fa-google-plus-official:before {
+  content: "\f2b3";
+}
+.fa-fa:before,
+.fa-font-awesome:before {
+  content: "\f2b4";
 }
 .sr-only {
   position: absolute;
@@ -2943,9 +2964,10 @@ body.mobile-view .shareDialog .share-url-social {
 	margin-bottom: 0;
 }
 
-body.mobile-view .shareDialog .share-url-container .share-btn {
+.dj_ios .shareDialog .share-btn {
 	display: none;
 }
+
 @media (max-height: 400px) {
 	.shareDialog .modal-dialog {
 		margin-top: 0;
@@ -2999,6 +3021,10 @@ body.mobile-view .share-url-container .bitlylink {
 		padding-left: 4px;
 }
 
+.share-url-container .share-btn:hover {
+	background: #d4ebfd;
+}
+
 .share-url-container.touch .share-clipboard {
 	display: none;
 }
@@ -3036,6 +3062,10 @@ body.mobile-view .share-url-container .bitlylink {
 	padding-left: 2px;
 }
 
+.dj_ios .shareDialog .share-embed-container .share-embed-wrapper.touch .embedTextarea {
+	text-align: center;
+}
+
 .share-embed-container .embed-lbl-size {
 	color: #4F4F4F;
 }
@@ -3053,6 +3083,10 @@ body.mobile-view .share-url-container .bitlylink {
     width: 32px;
     padding-top: 26px;
     padding-left: 4px;
+}
+
+.share-embed-container .share-btn:hover {
+	background: #d4ebfd;
 }
 
 .share-embed-container .share-embed-wrapper.touch .share-clipboard {
@@ -3435,6 +3469,10 @@ body.mobile-view .block-type-video .block-media {
   left: auto;
   right: 7px;
 }
+.esriSimpleSliderTL .esriSimpleSliderIncrementButton,
+.esriSimpleSliderTL .esriSimpleSliderDecrementButton {
+  outline: none;
+}
 .interaction-button .esriSimpleSliderTL {
   bottom: 90px;
 }
@@ -3722,6 +3760,10 @@ body:not(.builder-mode) .media-empty-add {
 .cr-item-remove {
   cursor: pointer;
   margin-left: 10px;
+  color: #AAA;
+}
+.cr-item-remove:hover {
+  color: white;
 }
 .cr-item-remove.cr-hidden {
   visibility: hidden;
@@ -3766,6 +3808,10 @@ body:not(.builder-mode) .media-empty-add {
   width: 20px;
   border-radius: 15px;
   position: relative;
+  box-shadow: 0px 0px 0px 3px black;
+}
+.cr-add-button:hover {
+  background: white;
 }
 .cr-add-button.cr-hidden {
   display: none;
@@ -5068,9 +5114,6 @@ h4 {
 iframe {
   border: none;
 }
-a {
-  color: #73BAFF;
-}
 /*
  * Sections container
  */
@@ -5133,7 +5176,6 @@ body.builder-mode .progressjs-progress {
 }
 .bookmarks .bookmark:hover {
   border-bottom-color: #007ac2;
-  color: #ACACAC;
 }
 .bookmarks .bookmark.active {
   border-bottom-color: #007ac2;
@@ -5165,7 +5207,6 @@ body.builder-mode .progressjs-progress {
 }
 .bookmarks .dropdown .bookmark:hover {
   border-left-color: #007ac2;
-  color: #ACACAC;
 }
 .bookmarks .dropdown .bookmark.active {
   border-left-color: #007ac2;
@@ -5273,16 +5314,23 @@ body.builder-mode .story-header {
 .header-edit-button .header-edit-icon {
   margin-right: 6px;
 }
+.header-edit-button .header-edit-close {
+  margin-left: 5px;
+  cursor: pointer;
+  pointer-events: all;
+}
 body.mobile-view .header-edit-button {
   display: none !important;
 }
 /*
  * Link
  */
-.story-header .link {
-  color: inherit;
+.story-header .linkContainer {
   margin-right: 8px;
   vertical-align: 1px;
+}
+.story-header .linkContainer .link {
+  color: inherit;
 }
 .story-header .link:hover {
   color: #ACACAC;
@@ -5305,6 +5353,7 @@ body.mobile-view .header-edit-button {
   font-size: 1.2em;
   cursor: pointer;
   padding-right: 2px;
+  opacity: 0.9;
 }
 .story-header .share-btn.share-disabled {
   pointer-events: none;
@@ -5314,7 +5363,7 @@ body.mobile-view .header-edit-button {
   display: inline-block;
 }
 .story-header .share-btn:hover {
-  opacity: 0.9;
+  opacity: 1;
 }
 .tooltip.custom-share-tooltip {
   opacity: 1;

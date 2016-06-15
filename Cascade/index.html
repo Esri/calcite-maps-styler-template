@@ -62,7 +62,7 @@
 
     <script type="text/javascript">
       var app = {
-        version: '1.0.0-061416',
+        version: '1.0.0',
         pathJSAPI: '//js.arcgis.com/3.17/'
       };
     </script>
@@ -83,7 +83,7 @@
       </div>
       <ul class="bookmarks"></ul>
       <div class="share">
-        <button class="btn btn-sm btn-primary header-edit-button"><i class="header-edit-icon fa fa-pencil"></i>Edit</button>
+        <button class="btn btn-sm btn-primary header-edit-button"></button>
         <span class="linkContainer"></span>
         <div class="share-btn-container" data-toggle="tooltip">
           <i class="fa fa-share-alt share-btn" aria-hidden="true"></i>
@@ -184,20 +184,20 @@
            * Custom Javascript to be executed when the application is ready goes here
            */
 
-          //console.log('Cascade is ready');
+          console.log('Cascade is ready');
         });
 
         /*
          * Custom Javascript to be executed when a section becomes active
          */
         topic.subscribe("story-scroll-section", function(cfg){
-           //console.log("The section", cfg.index, "is now active", cfg.data);
+           //console.log("The section", cfg.index, "is now active");
         });
 
       });
     </script>
     <script type="text/javascript">
-      if ( ! app.isProduction ) {
+      if (! app.isProduction) {
         loadJS('//localhost:35729/livereload.js');
       }
     </script>
