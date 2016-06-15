@@ -423,7 +423,11 @@ define({
         builderNotSSL: 'This Crowdsource story requires the use of a secure (https) connection to ensure your audience can securely sign in and contribute their photos. Make sure your server supports an https connection at this same URL. Others attempting to access your story over http will be redirected to a secure connection, if possible.'
       },
       shareItems: {
-        notShared: 'The following item(s) could not be shared'
+        notShared: {
+          title: 'Attention',
+          body: 'Some item(s) in your story could not be shared. These item(s) may be owned by another user or require a subscription. The following item(s) could not be shared',
+          confirmBtn: 'Ok'
+        }
       },
       saving: {
         checkInternet: 'Your story could not be saved. Check your internet connection and reload the page to try again.',
