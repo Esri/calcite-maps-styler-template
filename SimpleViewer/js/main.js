@@ -195,7 +195,7 @@ define([
       //Add the location button if enabled
       // ST: added fix since chrome returns "https:"
       //if (this.config.locate && document.location.protocol === "https") {
-      if (this.config.locate && document.location.protocol.indexOf("https") !== -1) {
+      if (this.config.locate) {
         var location = new LocateButton({
           map: this.map
         }, domConstruct.create("div", {

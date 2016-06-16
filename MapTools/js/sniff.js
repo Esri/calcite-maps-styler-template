@@ -56,7 +56,7 @@ define(["dojo/has"], function(has) { /*App capabilities*/
   });
   has.add("locate", function(g) {
     var locate = g.config.locate;
-    locate = has("secure");
+    //locate = has("secure");
     return locate;
   });
   has.add("zoom", function(g) {
