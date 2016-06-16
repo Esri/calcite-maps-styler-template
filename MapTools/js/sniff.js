@@ -68,7 +68,9 @@ define(["dojo/has"], function(has) { /*App capabilities*/
     return print;
   });
   has.add("secure", function() {
-    return (document.location.protocol === "https");
+    // ST: added fix since chrome returns "https:"
+    //return (document.location.protocol === "https");
+    return (document.location.protocol.indexOf("https") !== -1);
   });
   return has;
 });
