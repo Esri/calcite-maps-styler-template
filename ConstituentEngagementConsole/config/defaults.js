@@ -102,7 +102,7 @@ define({
     // to set title for help dialog
     "helpDialogTitle": "Help Page",
     // to set content for help dialog
-    "helpDialogContent": "<p>Crowdsource Manager, a companion group template to Crowdsource Reporter, allows users within an organization to review problems or observations submitted through the Reporter application.</p>",
+    "helpDialogContent": "<p>Welcome to Crowdsource Manager! </p> <p>Use this application to review and update reports. To get started, choose a category and then choose a report from the table or map.</p> <p>The details of that report will load in the panel in the lower left corner of the screen. From this panel, you can also review images, charts, and other information associated with the selected report. Update the report details by clicking the pencil icon, or hold down the CTRL key while clicking multiple reports to open the batch editor.</p> <p>View the location of the report using the map in the lower right corner of the application.</p><p>Reports can be filtered by time or field values. If time filtering is enabled for your reports, a time slider will appear below the table. Drag the time slider handle(s) to show only reports from a specific time span in the map and table. If filtering based on field values is enabled for your reports, a filter icon will appear in the table header next to the name of the fields that can be used to filter the reports. Click the icon and specify which reports you'd like to see in the table and map.</p>",
     // to set the text of popup tab
     "popupTabText": "Popup",
     // to set the text of comment tab
