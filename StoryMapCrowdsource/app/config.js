@@ -1,4 +1,4 @@
-/*! story-map-crowdsource - v0.1.0 - 2016-06-16, 11:26:15 AM - This application is released under the Apache License V2.0 by Esri http://www.esri.com/ - https://github.com/Esri/crowdsource-storytelling-template-js */'use strict';
+/*! story-map-crowdsource - v0.1.0 - 2016-06-17, 01:01:32 PM - This application is released under the Apache License V2.0 by Esri http://www.esri.com/ - https://github.com/Esri/crowdsource-storytelling-template-js */'use strict';
 
 window.app.cfg = {
 	BITLY_API_KEY: {
