@@ -710,29 +710,33 @@ define([
             };
             portal = new esriPortal.Portal(this.appConfig.sharinghost);
             portal.queryGroups(params).then(lang.hitch(this, function (groups) {
-                params = {
-                    q: "group:" + groups.results[0].id + " AND" + ' type:"Web Map" -type:"Web Mapping Application"'
-                };
-                portal.queryItems(params).then(lang.hitch(this, function (results) {
-                    var baseMapID, i;
-                    baseMapID = null;
-                    if (results && results.results && results.results.length > 0) {
-                        for (i = 0; i < results.results.length; i++) {
-                            if (results.results[i].hasOwnProperty("title")) {
-                                if (results.results[i].title === this.appConfig.orgInfo.defaultBasemap.title) {
-                                    baseMapID = results.results[i].id;
-                                    break;
+                if (groups && groups.results && groups.results.length > 0) {
+                    params = {
+                        q: "group:" + groups.results[0].id + " AND" + ' type:"Web Map" -type:"Web Mapping Application"'
+                    };
+                    portal.queryItems(params).then(lang.hitch(this, function (results) {
+                        var baseMapID, i;
+                        baseMapID = null;
+                        if (results && results.results && results.results.length > 0) {
+                            for (i = 0; i < results.results.length; i++) {
+                                if (results.results[i].hasOwnProperty("title")) {
+                                    if (results.results[i].title === this.appConfig.orgInfo.defaultBasemap.title) {
+                                        baseMapID = results.results[i].id;
+                                        break;
+                                    }
                                 }
                             }
+                            if (baseMapID) {
+                                webMapListObj._createMap(baseMapID, "mapDiv");
+                            } else {
+                                webMapListObj._createMap(results.results[0].id, "mapDiv");
+                            }
                         }
-                        if (baseMapID) {
-                            webMapListObj._createMap(baseMapID, "mapDiv");
-                        } else {
-                            webMapListObj._createMap(results.results[0].id, "mapDiv");
-                        }
-                    }
-                    ApplicationUtils.hideLoadingIndicator();
-                }));
+                        ApplicationUtils.hideLoadingIndicator();
+                    }));
+                } else {
+                    this._handleNoWebMapToDisplay();
+                }
             }));
         },
 
