@@ -736,7 +736,7 @@ define([
                     }));
                 } else {
                     // Can't access org basemaps; use Topo
-                    webMapListObj._createMap("6e03e8c26aad4b9c92a87c1063ddb0e3", "mapDiv");
+                    webMapListObj._createMap(this.appConfig.fallbackBasemapId, "mapDiv");
                     ApplicationUtils.hideLoadingIndicator();
                 }
             }));
