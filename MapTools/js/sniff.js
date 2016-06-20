@@ -56,7 +56,7 @@ define(["dojo/has"], function(has) { /*App capabilities*/
   });
   has.add("locate", function(g) {
     var locate = g.config.locate;
-    //locate = has("secure");
+    locate = has("secure");
     return locate;
   });
   has.add("zoom", function(g) {
@@ -68,9 +68,7 @@ define(["dojo/has"], function(has) { /*App capabilities*/
     return print;
   });
   has.add("secure", function() {
-    // ST: added fix since chrome returns "https:"
-    //return (document.location.protocol === "https");
-    return (document.location.protocol.indexOf("https") !== -1);
+    return (document.location.protocol === "https:");
   });
   return has;
 });
