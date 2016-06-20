@@ -486,6 +486,12 @@ define([
                 // Push single row in array
                 entireFeatureDataArr.push(dataSet);
             }
+            // to sort features in desc order i.e, newest on top
+            entireFeatureDataArr.sort(lang.hitch(this, function (a, b) {
+                a = a[objectIdIndex];
+                b = b[objectIdIndex];
+                return a === b ? 0 : (a < b ? 1 : -1);
+            }));
             // Pass entire data for creation of a data-viewer table
             this._creatTableRows(entireFeatureDataArr, objectIdIndex);
         },
