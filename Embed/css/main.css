@@ -545,6 +545,9 @@ a {
 .esriPopup.dark{
   color:#fff;
 }
+.esriViewPopup{
+font-family: Verdana, Helvetica, Arial, sans-serif;
+}
 .calcite .esriViewPopup .gallery .mediaHandle.next, .calcite .esriViewPopup .gallery .mediaHandle.prev{
   font-family:"CalciteWebCoreIcons";
 }
@@ -578,10 +581,18 @@ a {
 .calcite .esriPopup.dark .titlePane .titleButton{
   color:#fff;
 }
+.esriPopup.light div.header{
+  color:#6d6e71;
+}
 .calcite .esriViewPopup div.header{
   font-weight: 600;
-  font-size:14px;
-  margin-top: 2px;
+  font-size:12px;
+  margin-top:2px;
+}
+.calcite .esriViewPopup div.header{
+  font-weight: 600;
+  font-size:12px;
+  margin-top:2px;
 }
 .calcite .esriPopup .titlePane .title{
   font-weight: normal;
