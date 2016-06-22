@@ -14,7 +14,7 @@ body {
   margin: 0;
   height: 100%;
   width: 100%;
-  font-family: "Avenir LT W01 65 Medium", Verdana, Helvetica, Arial, sans-serif;
+  font-family: "Avenir Next W01","Avenir Next","Avenir","Helvetica Neue","Helvetica","Arial",sans-serif;
 }
 g#mapDiv_graphics_layer path {
     fill-opacity: 0;
@@ -578,6 +578,17 @@ a {
 .calcite .esriPopup.dark .titlePane .titleButton{
   color:#fff;
 }
+.calcite .esriViewPopup div.header{
+  font-weight: 600;
+  font-size:14px;
+  margin-top: 2px;
+}
+.calcite .esriPopup .titlePane .title{
+  font-weight: normal;
+}
+.calcite .esriPopup .titlePane{
+  font-size:12px;
+}
 .calcite .esriPopup.dark .outerPointer{
   border-top-color: rgba(255,255,255,0);
   border-bottom-color: rgba(255,255,255,0);
@@ -919,7 +930,7 @@ a {
 
 .esriLayerList .esriClearFix:after {
     clear: both;
-} 
+}
 /*Layer list*/
 .esriLayerList .esriContainer{
   border-bottom:none;
@@ -1089,6 +1100,7 @@ a {
 }
 .dijitTab .tabLabel {
   font-size: 16px;
+  font-weight: 500;
   display: inline-block;
   -o-text-overflow: ellipsis;
   text-overflow: ellipsis;
