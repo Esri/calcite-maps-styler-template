@@ -1001,7 +1001,7 @@ h1, h2{
 /*Added hover to match the out-of-the-box hover for the home and locate buttons*/
 .no-touch .panelTool:hover {
   background-color: transparent;
-  background-color: rgba(102, 102, 102, 0.9);
+  background-color: rgba(102, 102, 102, 0.4);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#E6666666,endColorstr=#E6666666);
   zoom: 1; }
 
