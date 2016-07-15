@@ -658,17 +658,25 @@ font-family: Verdana, Helvetica, Arial, sans-serif;
   display: none;
 }
 /*layer list */
-
+.dark .esriLayerList .esriContainer{
+  background-color: #4c4c4c;
+  color: #fff;
+  border-top: 1px solid #929497;
+  border-bottom: 1px solid #929497;
+}
+.dark .esriLegendLayerLabel{
+  color:#fff;
+}
 .esriLayerList .esriContainer {
     background-color: #f8f8f8;
     color: #6e6e6e;
-    border-top: 2px solid #ccc;
-    border-bottom: 2px solid #ccc;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
 }
 
 .esriLayerList .esriTitleContainer {
     margin: 0;
-    border-top: 2px solid #ccc;
+    border-top: 1px solid #ccc;
 }
 
 .esriLayerList .esriLayer:first-child .esriTitleContainer {
