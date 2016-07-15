@@ -28,6 +28,8 @@ define({
             webcams: "Webcams.travel",
             instagram: "Instagram",
             instagramSettings: "Instagram Settings",
+            instagramUser: "Instagram Account",
+            instagramSignIn: "Sign in to Instagram",
             igTime: "Uploaded within the past number of days",
             youtube: "YouTube",
             youtubeSettings: "YouTube Settings",
@@ -47,6 +49,7 @@ define({
             tweetsFilteredBy: "tweets filtered by:",
             photosFilteredBy: "photos filtered by:",
             videosFilteredBy: "videos filtered by:",
+            instagramAccountStatus: "Enable the Instagram layer to see your status.",
             twitterAccountStatus: "Enable the Twitter layer to see your status."
         },
         general: {

@@ -38,6 +38,34 @@ define([
     Dialog,
     keys
   ) {
+  
+  var INSTAGRAM_ACCESS_TOKEN = "instagram_access_token";
+  
+    function parseParms(str) {
+        var pieces = str.replace("#", "").split("&"), data = {}, i, parts;
+        // process each query pair
+        for (i = 0; i < pieces.length; i++) {
+            parts = pieces[i].split("=");
+            if (parts.length < 2) {
+                parts.push("");
+            }
+            data[decodeURIComponent(parts[0])] = decodeURIComponent(parts[1]);
+        }
+        return data;
+    }
+  
+  // Feature test
+  function lsTest(){
+      var test = 'test';
+      try {
+          localStorage.setItem(test, test);
+          localStorage.removeItem(test);
+          return true;
+      } catch(e) {
+          return false;
+      }
+  }
+  
     return declare("", null, {
       initSocial: function () {
         // css classes for social layers
@@ -161,11 +189,15 @@ define([
         }
         // instagram enabled
         if (this.config.enableInstagram) {
+          var token = "";
+          if(lsTest()){
+            token = localStorage.getItem(INSTAGRAM_ACCESS_TOKEN) || "";
+          }
           // Instagram
           this._instagramLayer = new InstagramLayer({
             map: this.map,
-            visible: this.config.instagramVisible,
-            key: this.config.instagram_key
+            token: token,
+            visible: this.config.instagramVisible
           });
           // legend info
           this.socialLayers.push({
@@ -173,6 +205,9 @@ define([
             button: domConstruct.create("div", {
               id: 'instagram_cog',
               className: "esri-icon-settings layerListIcon"
+            }),
+            content: domConstruct.create("div", {
+              id: 'instagram_auth_status'
             }),
             id: this._instagramLayer.featureLayer.id,
             visibility: this._instagramLayer.featureLayer.visible,
@@ -225,6 +260,8 @@ define([
           igContent += this._createInstagramOption(6);
           igContent += this._createInstagramOption(7);
           igContent += '</select></div>';
+          igContent += '<div class="' + this.socialCSS.layerSettingsHeader + '">' + this.config.i18n.social.instagramUser + '</div>';
+          igContent += '<div id="instagram_settings_auth">' + this.config.i18n.social.instagramAccountStatus + '</div>';
           igContent += '<div id="instagram_search_submit" class="' + this.socialCSS.layerSettingsSubmit + '">' + this.config.i18n.social.search + '</div>';
           igContent += '</div>';
           var instagramDialogNode = domConstruct.create('div', {
@@ -254,6 +291,56 @@ define([
               this._updateInstagramSearch();
             }));
           }
+          // sign in/switch instagram node
+          this._instagramStatusNode = dom.byId('instagram_auth_status');
+          this._instagramStatus2Node = dom.byId('instagram_settings_auth');
+          this._instagramStatus3Node = dom.byId('instagram_legend_auth');
+          if (this._instagramStatusNode) {
+            // sign in click
+            on(this._instagramStatusNode, 'a:click', lang.hitch(this, function (evt) {
+              this._instagramSignIn(evt);
+            }));
+          }
+          if (this._instagramStatus2Node) {
+            // sign in click
+            on(this._instagramStatus2Node, 'a:click', lang.hitch(this, function (evt) {
+              this._instagramSignIn(evt);
+            }));
+          }
+          if (this._instagramStatus3Node) {
+            // sign in click
+            on(this._instagramStatus3Node, 'a:click', lang.hitch(this, function (evt) {
+              this._twitterSignIn(evt);
+            }));
+          }
+          // authorize check
+          on(this._instagramLayer, 'authorize', lang.hitch(this, function (evt) {
+            var status, longStatus;
+            // user signed in
+            if (evt.authorized) {
+              if (this._instagramStatusNode) {
+                this._instagramStatusNode.innerHTML = '';
+              }
+              if (this._instagramStatus2Node) {
+                this._instagramStatus2Node.innerHTML = status;
+              }
+              if (this._instagramStatus3Node) {
+                this._instagramStatus3Node.innerHTML = '';
+              }
+            } else {
+              status = '<a class="' + this.socialCSS.authStatus + '"><span class="' + this.socialCSS.iconAttention + '"></span>' + this.config.i18n.general.signIn + '</a>';
+              longStatus = '<a class="' + this.socialCSS.authStatus + '"><span class="' + this.socialCSS.iconAttention + '"></span>' + this.config.i18n.social.instagramSignIn + '</a>';
+              if (this._instagramStatusNode) {
+                this._instagramStatusNode.innerHTML = status;
+              }
+              if (this._instagramStatus2Node) {
+                this._instagramStatus2Node.innerHTML = status;
+              }
+              if (this._instagramStatus3Node) {
+                this._instagramStatus3Node.innerHTML = longStatus;
+              }
+            }
+          }));
         }
         // flickr enabled
         if (this.config.enableFlickr) {
@@ -649,6 +736,32 @@ define([
         }
         event.stop(evt);
       },
+      _instagramSignIn: function(evt){
+        this._instagramWindow();
+        event.stop(evt);
+      },
+      _instagramWindow: function () {
+        var package_path = window.location.pathname.substring(0, window.location.pathname.lastIndexOf('/'));
+        var redirect_uri = encodeURIComponent(location.protocol + '//' + location.host + package_path + '/oauth-callback.html');
+        var page = this.config.instagramSigninUrl + "/?client_id=" + this.config.instagramClientId + "&redirect_uri=" + redirect_uri + "&response_type=token";
+        var w = screen.width / 2;
+        var h = screen.height / 1.5;
+        var left = (screen.width / 2) - (w / 2);
+        var top = (screen.height / 2) - (h / 2);
+        if (page) {
+          window.open(page, "twoAuth", 'scrollbars=yes, resizable=yes, width=' + w + ', height=' + h + ', top=' + top + ', left=' + left, true);
+          var _instagramLayer = this._instagramLayer;
+          window.oAuthCallback = function (hash) {
+            var params = parseParms(hash);
+            var access_token = params.access_token;
+            if(lsTest()){
+              localStorage.setItem(INSTAGRAM_ACCESS_TOKEN, access_token);
+            }
+            _instagramLayer.set("token", access_token);
+            _instagramLayer.update(0);
+          };
+        }
+      },
       _twitterWindow: function (page, forceLogin) {
         var package_path = window.location.pathname.substring(0, window.location.pathname.lastIndexOf('/'));
         var redirect_uri = encodeURIComponent(location.protocol + '//' + location.host + package_path + '/oauth-callback.html');
@@ -668,8 +781,9 @@ define([
             page += 'redirect_uri=' + redirect_uri;
           }
           window.open(page, "twoAuth", 'scrollbars=yes, resizable=yes, width=' + w + ', height=' + h + ', top=' + top + ', left=' + left, true);
+          var twitterLayer = this._twitterLayer;
           window.oAuthCallback = function () {
-            window.location.reload();
+            twitterLayer.update(0);
           };
         }
       },

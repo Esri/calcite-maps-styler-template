@@ -19,7 +19,7 @@
         require([
             "dojo/domReady!"
         ], function () {
-            window.opener.oAuthCallback();
+            window.opener.oAuthCallback(location.hash);
             window.close();
         });
     </script>

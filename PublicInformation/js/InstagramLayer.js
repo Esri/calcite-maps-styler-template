@@ -50,6 +50,7 @@ function (
             time: 5, // from the past days: 1, 2, 3, 4, 5, 6, 7 
             key: '',
             refreshTime: 4000,
+            token: "",
             url : 'https://api.instagram.com/v1/media/search/'
         },
         constructor: function (options) {
@@ -286,6 +287,7 @@ function (
                 min_timestamp: unix_timestamp,
                 max_timestamp: Math.round(new Date().getTime() / 1000),
 				distance: radius.distance,
+              access_token: this.token,
                 page: 1,
                 format: "json"
             };
@@ -304,6 +306,12 @@ function (
                 preventCache: true,
                 load: lang.hitch(this, function (data) {
                     if (data.meta && data.meta.code === 200) {
+                      if(!this.get("authorized")){
+                        this.set("authorized", true);
+                        this.emit("authorize", {
+                            authorized: true
+                        });
+                      }
                         if (data.data.length > 0) {
                             this._mapResults(data);
                             // display results for multiple pages
@@ -320,6 +328,12 @@ function (
                         }
                     } else {
                         if(data.meta){
+                            if(data.meta.code === 400){
+                              this.set("authorized", false);
+                              this.emit("authorize", {
+                                  authorized: false
+                              });
+                            }
                             console.log('Instagram::' + data.meta.code + ' - ' + this.title + ': ' + data.meta.error_message);
                         }
                         // No results found, try another search term
