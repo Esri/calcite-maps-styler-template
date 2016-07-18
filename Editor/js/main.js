@@ -15,8 +15,8 @@
  | See the License for the specific language governing permissions and
  | limitations under the License.
  */
-define(["dojo/_base/declare", "dojo/has", "dojo/_base/lang", "dojo/_base/Color", "dojo/_base/array", "dojo/on", "dijit/registry", "esri/arcgis/utils", "esri/lang", "dojo/dom", "dojo/dom-geometry", "dojo/dom-attr", "dojo/dom-style", "dojo/query", "dojo/dom-construct", "dojo/dom-class", "application/Drawer", "esri/layers/FeatureLayer", "esri/dijit/editing/Editor", "esri/dijit/AttributeInspector", "esri/dijit/editing/TemplatePicker", "esri/tasks/query", "esri/domUtils", "application/SearchSources", "dojo/domReady!"], function(
-  declare, has, lang, Color, array, on, registry, arcgisUtils, esriLang, dom, domGeometry, domAttr, domStyle, query, domConstruct, domClass, Drawer, FeatureLayer, Editor, AttributeInspector, TemplatePicker, esriQuery, domUtils, SearchSources) {
+define(["dojo/_base/declare", "dojo/has", "dojo/_base/lang", "dojo/_base/kernel", "dojo/_base/Color", "dojo/_base/array", "dojo/on", "dijit/registry", "esri/arcgis/utils", "esri/lang", "dojo/dom", "dojo/dom-geometry", "dojo/dom-attr", "dojo/dom-style", "dojo/query", "dojo/dom-construct", "dojo/dom-class", "application/Drawer", "esri/layers/FeatureLayer", "esri/dijit/editing/Editor", "esri/dijit/AttributeInspector", "esri/dijit/editing/TemplatePicker", "esri/tasks/query", "esri/domUtils", "application/SearchSources", "dojo/domReady!"], function(
+  declare, has, lang, kernel, Color, array, on, registry, arcgisUtils, esriLang, dom, domGeometry, domAttr, domStyle, query, domConstruct, domClass, Drawer, FeatureLayer, Editor, AttributeInspector, TemplatePicker, esriQuery, domUtils, SearchSources) {
   return declare(null, {
     config: {},
     editor: null,
@@ -24,6 +24,7 @@ define(["dojo/_base/declare", "dojo/has", "dojo/_base/lang", "dojo/_base/Color",
     editableLayers: [],
     timeFormats: ["shortDateShortTime", "shortDateLEShortTime", "shortDateShortTime24", "shortDateLEShortTime24", "shortDateLongTime", "shortDateLELongTime", "shortDateLongTime24", "shortDateLELongTime24"],
     startup: function(config) {
+      document.documentElement.lang = kernel.locale;
       // config will contain application and user defined info for the template such as i18n strings, the web map id
       // and application id
       // any url parameters and any application specific configuration information.

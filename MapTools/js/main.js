@@ -23,6 +23,7 @@ define([
   "dojo/promise/all",
   "dojo/Deferred",
   "dojo/_base/lang",
+  "dojo/_base/kernel",
   "esri/domUtils",
   "esri/request",
   "esri/lang",
@@ -45,7 +46,7 @@ define([
   Color,
   all,
   Deferred,
-  lang,
+  lang, kernel,
   domUtils,
   esriRequest,
   esriLang,
@@ -70,7 +71,8 @@ define([
     tableHandler: null,
     timeFormats: ["shortDateShortTime", "shortDateLEShortTime", "shortDateShortTime24", "shortDateLEShortTime24", "shortDateLongTime", "shortDateLELongTime", "shortDateLongTime24", "shortDateLELongTime24"],
     startup: function(config) {
-
+      // Set lang attribute to current locale
+      document.documentElement.lang = kernel.locale;
       // config will contain application and user defined info for the template such as i18n strings, the web map id
       // and application id
       // any url parameters and any application specific configuration information.

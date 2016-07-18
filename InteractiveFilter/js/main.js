@@ -1,10 +1,35 @@
-define(["dojo/ready", "dojo/_base/declare", "dojo/dom", "dojo/_base/Color", "dojo/query", "dojo/_base/lang", "dojo/_base/array", "dojo/dom-construct", "dijit/registry", "dojo/has", "dojo/sniff", "esri/arcgis/utils", "esri/lang", "dojo/on", "application/Drawer", "application/Filter", "dojo/dom-class", "esri/tasks/query", "esri/tasks/QueryTask", "esri/layers/FeatureLayer", "esri/dijit/LocateButton", "esri/dijit/HomeButton"], function(
-  ready, declare, dom, Color, query, lang, array, domConstruct, registry, has, sniff, arcgisUtils, esriLang, on, Drawer, Filter, domClass, esriQuery, QueryTask, FeatureLayer, LocateButton, HomeButton) {
+define([
+  "dojo/ready",
+  "dojo/_base/declare",
+  "dojo/dom",
+  "dojo/_base/Color",
+  "dojo/query",
+  "dojo/_base/lang",
+  "dojo/_base/kernel",
+  "dojo/_base/array",
+  "dojo/dom-construct",
+  "dijit/registry",
+  "dojo/has",
+  "dojo/sniff",
+  "esri/arcgis/utils",
+  "esri/lang",
+  "dojo/on",
+  "application/Drawer",
+  "application/Filter",
+  "dojo/dom-class",
+  "esri/tasks/query",
+  "esri/tasks/QueryTask",
+  "esri/layers/FeatureLayer",
+  "esri/dijit/LocateButton",
+  "esri/dijit/HomeButton"], function(
+  ready, declare, dom, Color, query, lang, kernel, array, domConstruct, registry, has, sniff, arcgisUtils, esriLang, on, Drawer, Filter, domClass, esriQuery, QueryTask, FeatureLayer, LocateButton, HomeButton) {
   return declare("", null, {
     config: {},
     theme: null,
     color: null,
     startup: function(config) {
+
+      document.documentElement.lang = kernel.locale;
       // config will contain application and user defined info for the template such as i18n strings, the web map id
       // and application id
       // any url parameters and any application specific configuration information.

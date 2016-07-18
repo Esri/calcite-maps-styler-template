@@ -19,6 +19,7 @@ define([
   "dojo/_base/declare",
   "dojo/_base/array",
   "dojo/_base/lang",
+  "dojo/_base/kernel",
   "dojo/_base/Color",
 
   "dojo/on",
@@ -45,7 +46,7 @@ define([
 
   "dojo/domReady!"
 ], function(
-  declare, array, lang, Color,
+  declare, array, lang, kernel, Color,
   on, mouse, query,
   Deferred,
   baseFx,
@@ -61,6 +62,8 @@ define([
     config: {},
     containers: [],
     startup: function(config) {
+      // Set lang attribute to current locale
+      document.documentElement.lang = kernel.locale;
       var promise;
       // config will contain application and user defined info for the template such as i18n strings, the web map id
       // and application id

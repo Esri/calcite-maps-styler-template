@@ -2,6 +2,7 @@ define([
   "dojo/ready",
   "dojo/_base/declare",
   "dojo/_base/lang",
+  "dojo/_base/kernel",
   "dojo/_base/array",
   "dojo/_base/Color",
   "esri/arcgis/utils",
@@ -27,7 +28,7 @@ define([
   "esri/layers/FeatureLayer"
 ], function(
   ready,
-  declare, lang,
+  declare, lang, kernel,
   array, Color,
   arcgisUtils, urlUtils,
   on,
@@ -52,6 +53,8 @@ define([
     color: null,
     paneltheme: null,
     startup: function(config) {
+      // Set lang attribute to current locale
+      document.documentElement.lang = kernel.locale;
       // config will contain application and user defined info for the template such as i18n strings, the web map id
       // and application id
       // any url parameters and any application specific configuration information.

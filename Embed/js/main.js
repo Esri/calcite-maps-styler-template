@@ -7,6 +7,7 @@ define([
   "dojo/_base/array",
   "dojo/_base/declare",
   "dojo/_base/lang",
+  "dojo/_base/kernel",
   "dojo/query",
   "dojo/Deferred",
   "dojo/dom",
@@ -31,6 +32,7 @@ define([
   array,
   declare,
   lang,
+  kernel,
   query,
   Deferred,
   dom,
@@ -50,6 +52,7 @@ define([
   return declare(null, {
     config: {},
     startup: function(config) {
+      document.documentElement.lang = kernel.locale;
       var promise;
       parser.parse();
       // config will contain application and user defined info for the template such as i18n strings, the web map id
