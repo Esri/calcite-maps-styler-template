@@ -116,13 +116,12 @@ define([
       // and application id and any url parameters and any application specific configuration information.
       if (config) {
         this.config = config;
-        console.log(this.config);
         if (this.config.sharedThemeConfig && this.config.sharedThemeConfig.attributes && this.config.sharedThemeConfig.attributes.theme) {
           var sharedTheme = this.config.sharedThemeConfig.attributes;
           this.config.logo = sharedTheme.layout.header.component.settings.logoUrl || null;
           this.config.color = sharedTheme.theme.text.color;
           this.config.theme = sharedTheme.theme.body.bg;
-          this.config.title = sharedTheme.title;
+        //this.config.title = sharedTheme.title;
         // We also have an option to set the icon color on the toolbar
         //this.config.iconColor = sharedTheme.brand.gray;
         }

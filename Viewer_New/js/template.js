@@ -600,7 +600,7 @@ define([
     querySharedTheme: function() {
       var deferred = new Deferred();
       if (this.config && this.config.sharedTheme) {
-        esriConfig.defaults.io.corsEnabledServers.push("opendatadev.arcgis.com");
+        esriConfig.defaults.io.corsEnabledServers.push("opendata.arcgis.com");
         var sharedThemeStatus = this._getSharedThemeStatus(this.config.sharedTheme);
         this._getSharedThemeObject(sharedThemeStatus).then(function(response) {
           deferred.resolve(response);
@@ -608,6 +608,17 @@ define([
           var error = new Error("Unable to get theme");
           deferred.reject(error);
         });
+
+      } else if (this.config && this.config.sharedThemeItem) {
+        arcgisUtils.getItem(this.config.sharedThemeItem).then(lang.hitch(this, function(response) {
+          if (response && response.itemData && response.itemData.data) {
+            this.config.sharedThemeConfig = response.itemData.data;
+          }
+          deferred.resolve();
+        }), function(error) {
+          deferred.reject(error);
+        });
+
 
       } else {
         deferred.resolve();
@@ -654,12 +665,14 @@ define([
     _generateRequestUrl: function(status) {
       var requestUrl;
       switch (status.status) {
+        // "https://opendata.arcgis.com/api/v2/sites/" + status.output;
         case "siteId":
-          requestUrl = "https://opendatadev.arcgis.com/api/v2/sites/" + (status.output);
+          requestUrl = "https://opendata.arcgis.com/api/v2/sites/" + status.output;
           break;
         case "domain":
+          //"https://opendatadev.arcgis.com/api/v2/sites?filter%5Burl%5D=" + status.output;
           requestUrl = status.output;
-          requestUrl = "https://opendatadev.arcgis.com/api/v2/sites?filter%5Burl%5D=" + status.output;
+          requestUrl = "https://opendata.arcgis.com/api/v2/sites?filter%5Burl%5D=" + status.output;
           break;
         case "appId":
           break;
