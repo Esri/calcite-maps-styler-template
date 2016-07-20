@@ -27,6 +27,13 @@ define(["dojo/_base/declare", "dojo/_base/Color", "dojo/_base/kernel", "dojo/par
       if (config) {
         this.config = config;
 
+        // Create and add custom style sheet
+        if (this.config.customstyle) {
+          var style = document.createElement("style");
+          style.appendChild(document.createTextNode(this.config.customstyle));
+          document.head.appendChild(style);
+        }
+
         //set title and default app text if defined
         if (this.config.title) {
           document.title = this.config.title;
@@ -54,7 +61,6 @@ define(["dojo/_base/declare", "dojo/_base/Color", "dojo/_base/kernel", "dojo/par
             pane.toggle();
           }
         }
-
 
         this._createGrid();
 
@@ -285,6 +291,12 @@ define(["dojo/_base/declare", "dojo/_base/Color", "dojo/_base/kernel", "dojo/par
 
     },
     _updateTheme: function() {
+      if (this.config.sharedThemeConfig && this.config.sharedThemeConfig.attributes && this.config.sharedThemeConfig.attributes.theme) {
+        var sharedTheme = this.config.sharedThemeConfig.attributes;
+        this.config.theme_color = sharedTheme.theme.text.color;
+        this.config.theme_bg_color = sharedTheme.theme.body.bg;
+      }
+
       var bgcolor = this.setColor(this.config.theme_bg_color);
       var color = this.setColor(this.config.theme_color);
 

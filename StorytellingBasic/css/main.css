@@ -172,6 +172,7 @@ html, body, h1, h2, h3, h4, h5, h6, p, ul, form {
   height:60px;
   float:right;
   margin-top:5px;
+  width:100%;
 }
 .logoWrapper{
   height:50px;

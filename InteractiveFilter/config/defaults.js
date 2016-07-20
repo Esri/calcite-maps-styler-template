@@ -14,6 +14,10 @@ define([], function() {
     "bingmapskey": "", //Enter the url to your organizations bing maps key if you want to use bing basemaps
     //Defaults to arcgis.com. Set this value to your portal or organization host name.
     "sharinghost": location.protocol + "//" + "www.arcgis.com",
+    // This is an option added so that developers working with the
+    // hosted version of the application can apply custom styles
+    // not used in the download version.
+    "customstyle": null,
     //Color defines the text color for the menu icon and title that appear in the title bar.
     "color": "#fff",
     //Theme defines the background color of the title bar and also the background color of the popup

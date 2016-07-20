@@ -69,6 +69,26 @@ define([
       // any url parameters and any application specific configuration information.
       if (config) {
         this.config = config;
+        if (this.config.sharedThemeConfig && this.config.sharedThemeConfig.attributes && this.config.sharedThemeConfig.attributes.theme) {
+          var sharedTheme = this.config.sharedThemeConfig.attributes;
+          console.log(sharedTheme);
+          this.config.logo = sharedTheme.layout.header.component.settings.logoUrl || sharedTheme.theme.logo.small || null;
+          if (this.config.logo !== null) {
+            this.config.logoLink = null;
+          }
+          this.config.background = sharedTheme.theme.body.bg;
+          this.config.color = sharedTheme.theme.text.color;
+          this.config.legendTitleBackground = sharedTheme.theme.brand.primary;
+          this.config.subtitleColor = sharedTheme.theme.brand.secondary;
+        }
+
+        // Create and add custom style sheet
+        if (this.config.customstyle) {
+          var style = document.createElement("style");
+          style.appendChild(document.createTextNode(this.config.customstyle));
+          document.head.appendChild(style);
+        }
+
         // Hide legend container if not enabled
         dom.byId("legTogText").innerHTML = this.config.i18n.legendToggle.label;
         if (!this.config.legend) {

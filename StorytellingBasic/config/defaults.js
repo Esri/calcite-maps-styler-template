@@ -26,6 +26,10 @@ define({
   //Enter the url to the proxy if needed by the application. See the 'Using the proxy page' help topic for details
   //http://developers.arcgis.com/en/javascript/jshelp/ags_proxy.html
   "proxyurl": "",
+  // This is an option added so that developers working with the
+  // hosted version of the application can apply custom styles
+  // not used in the download version.
+  "customstyle": null,
   "background": "#444",
   "color": "#fff",
   "legendTitleBackground": "#848484",

@@ -313,12 +313,6 @@ a {
 }
 .dark .HomeButton .home:hover {
   color:#fff;
-  /*background-color: #eee;
-  width: 30px;
-  height: 30px;
-  padding: 0px;
-  -webkit-border-radius: 0;
-  border-radius: 0;*/
 }
 .dark .icon-basemap {
   background-image: url("../images/basemap_light.png");
@@ -1022,9 +1016,9 @@ font-family: Verdana, Helvetica, Arial, sans-serif;
   border: 0;
 }
 @media screen and (max-width: 850px) {
-  .app-loading .content-pane-left {
+  /*.app-loading .content-pane-left {
     width: 0px;
-  }
+  }*/
 }
 /*Tabs*/
 .tabs {

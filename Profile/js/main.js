@@ -70,7 +70,11 @@ define([
       // any url parameters and any application specific configuration information.
       if (config) {
         this.config = config;
-
+        if (this.config.sharedThemeConfig && this.config.sharedThemeConfig.attributes && this.config.sharedThemeConfig.attributes.theme) {
+          var sharedTheme = this.config.sharedThemeConfig.attributes;
+          this.config.color = sharedTheme.theme.text.color;
+          this.config.background = sharedTheme.theme.body.bg;
+        }
         // Create and add custom style sheet
         if (this.config.customstyle) {
           var style = document.createElement("style");

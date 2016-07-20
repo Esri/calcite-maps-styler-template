@@ -30,7 +30,18 @@ define(["dojo/_base/declare", "dojo/has", "dojo/_base/lang", "dojo/_base/kernel"
       // any url parameters and any application specific configuration information.
       if (config) {
         this.config = config;
+        if (this.config.sharedThemeConfig && this.config.sharedThemeConfig.attributes && this.config.sharedThemeConfig.attributes.theme) {
+          var sharedTheme = this.config.sharedThemeConfig.attributes;
+          this.config.color = sharedTheme.theme.text.color;
+          this.config.theme = sharedTheme.theme.body.bg;
+        }
 
+        // Create and add custom style sheet
+        if (this.config.customstyle) {
+          var style = document.createElement("style");
+          style.appendChild(document.createTextNode(this.config.customstyle));
+          document.head.appendChild(style);
+        }
         this.config.color = this._setColor(this.config.color);
         this.config.theme = this._setColor(this.config.theme);
 

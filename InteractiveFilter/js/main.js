@@ -54,6 +54,19 @@ define([
 
         // document ready
         ready(lang.hitch(this, function() {
+          if (this.config.sharedThemeConfig && this.config.sharedThemeConfig.attributes && this.config.sharedThemeConfig.attributes.theme) {
+            var sharedTheme = this.config.sharedThemeConfig.attributes;
+
+            this.config.color = sharedTheme.theme.text.color;
+            this.config.theme = sharedTheme.theme.body.bg;
+          }
+          // Create and add custom style sheet
+          if (this.config.customstyle) {
+            var style = document.createElement("style");
+            style.appendChild(document.createTextNode(this.config.customstyle));
+            document.head.appendChild(style);
+          }
+
 
           this.theme = this.setColor(this.config.theme);
           this.color = this.setColor(this.config.color);

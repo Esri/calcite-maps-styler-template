@@ -58,7 +58,26 @@ define([
       // and application id
       // any url parameters and any application specific configuration information.
       if (config) {
+
         this.config = config;
+        // Create and add custom style sheet
+        if (this.config.customstyle) {
+          var style = document.createElement("style");
+          style.appendChild(document.createTextNode(this.config.customstyle));
+          document.head.appendChild(style);
+        }
+
+        // shared styling support from open data
+        if (this.config.sharedThemeConfig && this.config.sharedThemeConfig.attributes && this.config.sharedThemeConfig.attributes.theme) {
+          var sharedTheme = this.config.sharedThemeConfig.attributes;
+          this.config.logo = sharedTheme.layout.header.component.settings.logoUrl || sharedTheme.theme.logo.small || null;
+          this.config.panelcolor = sharedTheme.theme.text.color;
+          this.config.panelbackground = sharedTheme.theme.body.bg;
+          this.config.timecolor = sharedTheme.theme.brand.secondary;
+          this.config.slidercolor = sharedTheme.theme.brand.primary;
+
+        }
+
         //supply either the webmap id or, if available, the item info
         var itemInfo = this.config.itemInfo || this.config.webmap;
         var mapParams = new MapUrlParams({

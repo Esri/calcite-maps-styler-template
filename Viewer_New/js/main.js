@@ -118,12 +118,9 @@ define([
         this.config = config;
         if (this.config.sharedThemeConfig && this.config.sharedThemeConfig.attributes && this.config.sharedThemeConfig.attributes.theme) {
           var sharedTheme = this.config.sharedThemeConfig.attributes;
-          this.config.logo = sharedTheme.layout.header.component.settings.logoUrl || null;
+          this.config.logo = sharedTheme.layout.header.component.settings.logoUrl || sharedTheme.theme.logo.small || null;
           this.config.color = sharedTheme.theme.text.color;
           this.config.theme = sharedTheme.theme.body.bg;
-        //this.config.title = sharedTheme.title;
-        // We also have an option to set the icon color on the toolbar
-        //this.config.iconColor = sharedTheme.brand.gray;
         }
         this.color = this._setColor(this.config.color);
         this.theme = this._setColor(this.config.theme);
