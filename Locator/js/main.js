@@ -1244,6 +1244,9 @@ define([
         // Route to destination
         _routeToDestination: function(gra) {
             var pt = gra.geometry;
+            if (gra.geometry.type !== "point") {
+                pt = gra.geometry.getExtent().getCenter();
+            }
             dom.byId("panelDestination").innerHTML = gra.getTitle();
             this._showPage(1);
             if (this.originObj) {
