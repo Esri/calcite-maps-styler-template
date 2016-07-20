@@ -25,7 +25,7 @@ define({
   // Use a local hosted webmap instead of a webmap on ArcGIS or portal.
   "useLocalWebmap": false,
   // support sending credentials with AJAX requests to specific domains. This will allow editing of feature services secured with web-tier authentication
-  webTierSecurity: true,
+  "webTierSecurity": false,
   // Webmap file to use for the local webmap
   "localWebmapFile": "config/demoMap",
   //When true the template will query arcgis.com for default settings for helper services, units etc. If you

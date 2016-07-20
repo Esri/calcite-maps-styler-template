@@ -1,9 +1,8 @@
 git repository crowdsource-polling, branch 
-Jun_2016_release
-commit 356481bba0181f74e59cd1ff2acafe1c20854b80
+develop
+commit cb9d6304faae1584dbeaf71dfc2b7267a3c57fe2
+Merge: 618eab6 28ae036
 Author: MikeTschudi <mtschudi@esri.com>
-Date:   Sun Jun 5 09:15:11 2016 -0700
+Date:   Wed Jul 20 15:23:42 2016 -0700
 
-    Be sure that field value is usable before accessing it
-    
-    #135
+    Merge branch 'RTL' into develop
