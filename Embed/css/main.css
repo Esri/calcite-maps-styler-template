@@ -655,10 +655,10 @@ font-family: Verdana, Helvetica, Arial, sans-serif;
 .dark .esriLayerList .esriContainer{
   background-color: #4c4c4c;
   color: #fff;
-  border-top: 1px solid #929497;
-  border-bottom: 1px solid #929497;
+  border-top: none !important;
+  border-bottom: none !important;
 }
-.dark .esriLegendLayerLabel{
+.dark .esriLegendLayerLabel, .dark .esriLegendServiceLabel{
   color:#fff;
 }
 .esriLayerList .esriContainer {
