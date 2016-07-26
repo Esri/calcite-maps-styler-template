@@ -70,7 +70,7 @@ define({
     "twitterSigninUrl": location.protocol + "//utility.arcgis.com/tproxy/signin",
     "flickr_key": "404ebea7d5bc27aa5251d1207620e99b",
     "webcams_key": "L0mSb0kxVHmsh2ZeMGs2CqmGERjap1h9oBTjsn3DXhiErQhFiF",
-    "instagramClientId": "28d2e53d74fb48e0a44f44b5a43e5039",
+    "instagramClientId": "47ce2d7ea1494adb98708f4b47319227",
     "instagramSigninUrl": "https://www.instagram.com/oauth/authorize",
     "enablePrintButton": false,
     //Enter the url to your organizations bing maps key if you want to use bing basemaps
