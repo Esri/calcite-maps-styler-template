@@ -139,41 +139,27 @@
                   delete config.appResponse;
                 }
                 if (config.appid || config.edit) {
-                    var userDetails = signIn.getPortalUser();
-                    if (userDetails) {
-                        userInfo.username = userDetails.email;
-                        userInfo.token = userDetails.token;
-                        userInfo.portal = signIn.getPortal();
-                        var canExecute = signIn.authenticateUser(config.edit, appResponse, userInfo);
-                        if (canExecute) {
-                            myApp.startup(config, appResponse, userInfo);
-                        }
-                        else{
-                            myApp.reportError(new Error('Could not authenticate user'));
-                        }
+                      if (config.edit) {
+                          signIn.createPortal().then(function (loggedInUser) {
+                              userInfo.username = loggedInUser.username;
+                              userInfo.token = loggedInUser.credential.token;
+                              userInfo.credential = loggedInUser.credential;
+                              userInfo.portal = signIn.getPortal();
+                              var canExecute = signIn.authenticateUser(config.edit, appResponse, userInfo);
+                              if (canExecute) {
+                              myApp.startup(config, appResponse, userInfo);
+                          }
+                          else{
+                              myApp.reportError(new Error('Could not authenticate user'));
+                          }
+                      }, function(error){
+                          myApp.reportError(error);
+                      });
                     }
                     else {
-                        if (config.edit) {
-                            signIn.createPortal().then(function (loggedInUser) {
-                                userInfo.username = loggedInUser.username;
-                                userInfo.token = loggedInUser.credential.token;
-                                userInfo.credential = loggedInUser.credential;
-                                userInfo.portal = signIn.getPortal();
-                                var canExecute = signIn.authenticateUser(config.edit, appResponse, userInfo);
-                                if (canExecute) {
-                                myApp.startup(config, appResponse, userInfo);
-                            }
-                            else{
-                                myApp.reportError(new Error('Could not authenticate user'));
-                            }
-                        }, function(error){
-                            myApp.reportError(error);
-                        });
+                        myApp.startup(config);
                     }
-                        else {
-                            myApp.startup(config);
-                        }
-                    }
+                    
                 }
                 else {
                     myApp.startup(config);
