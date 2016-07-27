@@ -67,6 +67,8 @@ define([
         _touchReleaseHandle: null,
         _tapHandle: null,
         _totalSlides: null,
+        _hyperlinkImageAttachment: [], // array stores hyperlink images from popup information
+        _hyperlinkVideoAttachment: [], // array stores hyperlink videos from popup information
 
         /**
         * This function is called when widget is constructed
@@ -94,8 +96,10 @@ define([
         * @memberOf widgets/details-panel/media
         */
         _createMediaUI: function () {
+            this._totalSlides = 0;
             this._infoContent = this.multipleFeatures[0].getContent();
             this._chartInfo = this.popupInfo && this.popupInfo.mediaInfos;
+            this._checkForHyperlinks();
             this._infoWidget = registry.byId(this._infoContent.id);
             this._showAttachments();
             if (query(".tab-content")[0]) {
@@ -114,7 +118,7 @@ define([
                 this.selectedOperationalLayer.queryAttachmentInfos(objectID,
                     lang.hitch(this, function (infos) {
                         // if attachments found
-                        if ((infos && infos.length > 0) || (this._chartInfo && this._chartInfo.length > 0)) {
+                        if ((infos && infos.length > 0) || (this._chartInfo && this._chartInfo.length > 0) || (this._hyperlinkImageAttachment && this._hyperlinkImageAttachment.length > 0) || (this._hyperlinkVideoAttachment && this._hyperlinkVideoAttachment.length > 0)) {
                             this._createDynamicCarousel(infos);
                         } else {
                             this._showNoMediaFound();
@@ -133,21 +137,25 @@ define([
         * @memberOf widgets/details-panel/media
         */
         _createDynamicCarousel: function (infos) {
-            var slideCount = 0, i, resizeEvent;
+            var i, resizeEvent;
             if (infos) {
                 for (i = 0; i < infos.length; i++) {
+                    // check if a attachment is of tiff image, then convert it into a non-image document
+                    if (infos[i].contentType.indexOf("image") !== -1 && infos[i].contentType.match(/(\/tiff)/)) {
+                        infos[i].contentType = "application/tiff";
+                    }
                     // add to carousel only if it is an image type
                     if (infos[i].contentType && infos[i].contentType.indexOf("image") > -1) {
                         $('<div class="item"><img onclick="window.open(this.src)" src="' + infos[i].url + '"></div>').appendTo('.carousel-inner');
-                        slideCount++;
+                        this._totalSlides++;
                     }
                 }
             }
+            // add images and videos from hyperlinks of info popup in carousel pod and return the slideCount
+            this._totalSlides = this._addHyperlinkImagesAndVideosToCarousel(this._totalSlides);
+            this._totalSlides = this._addChartsToCarousel(this._totalSlides);
 
-            slideCount = this._addChartsToCarousel(slideCount);
-            this._totalSlides = slideCount;
-
-            if (slideCount) {
+            if (this._totalSlides) {
                 this.showMediaTab();
                 $('.item').first().addClass('active');
                 $('#carousel-widget').carousel({
@@ -155,14 +163,15 @@ define([
                     wrap: false         // to stop circular rotation in carousel
                 }).on('slid.bs.carousel', lang.hitch(this, function () {
                     var currentIndex = $('#carousel-widget .carousel-inner .item.active').index();
-                    this._enableDisableArrow(currentIndex, slideCount);
+                    this._enableDisableArrow(currentIndex, this._totalSlides);
                 }));
-                this._enableDisableArrow(0, slideCount);
+                this._enableDisableArrow(0, this._totalSlides);
                 resizeEvent = on(dom.byId("mediaTab"), "click", lang.hitch(this, function () {
                     resizeEvent.remove();
                     this._openMediaImages();
-                    this._resizeMediaChart(0, slideCount);
+                    this._resizeMediaChart(0, this._totalSlides);
                 }));
+
             } else {
                 this._showNoMediaFound();
             }
@@ -248,7 +257,7 @@ define([
         },
 
         /**
-        * This function is used to show media images in diffrent tab when user clicks on it
+        * This function is used to show media images in different tab when user clicks on it
         * @memberOf widgets/details-panel/media
         */
         _showImgInNewTab: function () {
@@ -256,56 +265,91 @@ define([
         },
 
         /**
-        * This function is used to add charts in crousel panel
-        * @param{number} parameters to add charts in crousel panel
+        * This function is used to add charts in carousel panel
+        * @param{number} parameters to add charts in carousel panel
         * @memberOf widgets/details-panel/media
         */
         _addChartsToCarousel: function (slideCount) {
-            var chartContaner, popupContentPane, totalSlideCount = slideCount;
+            var chartContainer, popupContentPane, totalSlideCount = slideCount;
             if (this._chartInfo && this._chartInfo.length > 0) {
                 $('<div class="item"><div id="esriCTChartContainer"></div></div>').appendTo('.carousel-inner');
 
-                chartContaner = dom.byId("esriCTChartContainer");
-                popupContentPane = new ContentPane({}, chartContaner);
+                chartContainer = dom.byId("esriCTChartContainer");
+                popupContentPane = new ContentPane({}, chartContainer);
                 popupContentPane.startup();
                 popupContentPane.set("content", this._infoContent);
                 totalSlideCount = slideCount + 1;
                 this._attachNextPrevEvents(totalSlideCount);
                 this._showMediaCaption(0, totalSlideCount);
+                this._setWidthOfChartContainer();
+            } else {
+                this._attachNextPrevClickEventsForVideo();
             }
             return totalSlideCount;
         },
 
         /**
+        * This function is used to set the width of chart container. This needs to be done so that
+        * chart/image do not jump on mouse hover when long title/caption is configured
+        * @memberOf widgets/details-panel/media
+        */
+        _setWidthOfChartContainer: function () {
+            if (query(".tab-content")[0]) {
+                domStyle.set("esriCTChartContainer", "width", (query(".tab-content")[0].clientWidth - 106) + "px");
+            }
+        },
+
+        /**
         * This function is used to attached event to display chart on next and previous buttons
-        * @param{number} parameters to add events for charts in crousel panel
+        * @param{number} parameters to add events for charts in carousel panel
         * @memberOf widgets/details-panel/media
         */
         _attachNextPrevEvents: function (slideCount) {
             on(this.slidePrev, "click", lang.hitch(this, function (evt) {
-                var currentIndex = $('#carousel-widget .carousel-inner .item.active').index();
+                var imageNode, currentIndex;
+                currentIndex = $('#carousel-widget .carousel-inner .item.active').index();
+                this._setWidthOfChartContainer();
                 this._resizeMediaChart(currentIndex, slideCount);
                 if (parseInt(currentIndex, 10) === slideCount - 1 && this._chartIndex !== 0) {
+
                     this._chartIndex--;
                     evt.stopPropagation();
                     this._enableDisableArrow(currentIndex, slideCount);
                     this._infoWidget._goToPrevMedia();
+                    imageNode = query('.active .mediaSection .gallery .frame .esriPopupMediaImage');
+                    if (imageNode && imageNode[0] && ((imageNode[0].src.indexOf(".tif") > -1) || (imageNode[0].src.indexOf(".tiff") > -1))) {
+                        this._chartIndex--;
+                        evt.stopPropagation();
+                        this._enableDisableArrow(currentIndex, slideCount);
+                        this._infoWidget._goToPrevMedia();
+                    }
                 }
                 this._showMediaCaption(currentIndex, slideCount);
                 this._openMediaImages();
+                this._pauseVideo();
             }));
 
             on(this.slideNext, "click", lang.hitch(this, function (evt) {
-                var currentIndex = $('#carousel-widget .carousel-inner .item.active').index();
+                var imageNode, currentIndex;
+                currentIndex = $('#carousel-widget .carousel-inner .item.active').index();
+                this._setWidthOfChartContainer();
                 this._resizeMediaChart(currentIndex, slideCount);
                 if (parseInt(currentIndex, 10) === slideCount - 1 && this._chartIndex !== this._chartInfo.length - 1) {
                     this._chartIndex++;
                     evt.stopPropagation();
                     this._enableDisableArrow(currentIndex, slideCount);
                     this._infoWidget._goToNextMedia();
+                    imageNode = query('.active .mediaSection .gallery .frame .esriPopupMediaImage');
+                    if (imageNode && imageNode[0] && ((imageNode[0].src.indexOf(".tif") > -1) || (imageNode[0].src.indexOf(".tiff") > -1))) {
+                        this._chartIndex++;
+                        evt.stopPropagation();
+                        this._enableDisableArrow(currentIndex, slideCount);
+                        this._infoWidget._goToNextMedia();
+                    }
                 }
                 this._showMediaCaption(currentIndex, slideCount);
                 this._openMediaImages();
+                this._pauseVideo();
             }));
         },
 
@@ -416,6 +460,99 @@ define([
                     this._infoWidget._goToPrevMedia();
                 }
             }
+        },
+
+        /**
+        * This function is used to get hyperlink images and videos
+        * @memberOf widgets/details-panel/media
+        */
+        _checkForHyperlinks: function () {
+            var name, attributes, isVideoLink;
+            attributes = [];
+            this._hyperlinkImageAttachment = [];
+            this._hyperlinkVideoAttachment = [];
+            attributes = this.multipleFeatures[0].attributes;
+            for (name in attributes) {
+                if (attributes.hasOwnProperty(name) && attributes[name] && String(attributes[name]).match(/^(http(s?):)/)) {
+                    if (String(attributes[name]).match(/\.(png|jpg|jpeg|gif|bmp)(\/|$)/i)) {
+                        this._hyperlinkImageAttachment.push(attributes[name]);
+                    } else {
+                        isVideoLink = this._isVideoLink(attributes[name]);
+                        if (isVideoLink) {
+                            this._hyperlinkVideoAttachment.push(attributes[name]);
+                        }
+                    }
+                }
+            }
+        },
+
+        /**
+        * This function will return true or false if correct video format found
+        * @param{string} url : contains hyperlink
+        * @memberOf widgets/details-panel/media
+        */
+        _isVideoLink: function (url) {
+            // get video format, if any
+            var format = this._getVideoFormat(url);
+            return (format ? true : false);
+        },
+
+        /**
+        * This function will return video format from url
+        * @param{string} url : contains contains hyperlink
+        * @memberOf widgets/details-panel/media
+        */
+        _getVideoFormat: function (url) {
+            // match supported format cases
+            var format = url.match(/\.(mp4)(\/?)/i);
+            // if found then return format else return null
+            return (format ? format[1] : null);
+        },
+
+        /**
+        * This function will add hyperlink images in carousel pod
+        * @param{int} slideCount : contains existing count of the slides
+        * @memberOf widgets/details-panel/media
+        */
+        _addHyperlinkImagesAndVideosToCarousel: function (slideCount) {
+            var i, currentSlideCount;
+            currentSlideCount = slideCount;
+            if (this._hyperlinkImageAttachment.length > 0) {
+                for (i = 0; i < this._hyperlinkImageAttachment.length; i++) {
+                    $('<div class="item"><img onclick="window.open(this.src)" src="' + this._hyperlinkImageAttachment[i] + '"></div>').appendTo('.carousel-inner');
+                    currentSlideCount++;
+                }
+            }
+            if (this._hyperlinkVideoAttachment.length > 0) {
+                for (i = 0; i < this._hyperlinkVideoAttachment.length; i++) {
+                    $('<div class="item"><video src="' + this._hyperlinkVideoAttachment[i] + '"height="auto" width="430" controls><source src="' + this._hyperlinkVideoAttachment[i] + '" type="video/' + this._getVideoFormat(this._hyperlinkVideoAttachment[i]) + '" poster="' + this._hyperlinkVideoAttachment[i] + '"></video></div>').appendTo('.carousel-inner');
+                    currentSlideCount++;
+                }
+            }
+            return currentSlideCount;
+        },
+
+        /**
+        * This function is used to attached event to pause the playing video
+        * @memberOf widgets/details-panel/media
+        */
+        _attachNextPrevClickEventsForVideo: function () {
+            on(this.slidePrev, "click", lang.hitch(this, function () {
+                this._pauseVideo();
+            }));
+            on(this.slideNext, "click", lang.hitch(this, function () {
+                this._pauseVideo();
+            }));
+        },
+
+        /**
+        * This function will pause the playing video
+        * @memberOf widgets/details-panel/media
+        */
+        _pauseVideo: function () {
+            $("video").each(function () {
+                this.pause();
+            });
         }
     });
 });

@@ -1,4 +1,4 @@
-/*global define,document,setTimeout,window,dojo,$ */
+/*global define,setTimeout,window,dojo,$ */
 /*jslint sloppy:true */
 /*
 | Copyright 2014 Esri
@@ -33,7 +33,6 @@ define([
     "esri/layers/FeatureLayer",
     "widgets/time-slider/time-slider",
     "widgets/details-panel/details-panel",
-    "esri/arcgis/Portal",
     "esri/tasks/query",
     "dojo/query",
     "esri/dijit/PopupTemplate",
@@ -58,7 +57,6 @@ define([
     FeatureLayer,
     TimeSlider,
     DetailsPanel,
-    esriPortal,
     EsriQuery,
     query,
     PopupTemplate,
@@ -76,7 +74,6 @@ define([
         _existingDefinitionExpression: null, // to store existing definition expression of layer,
         _dataViewerFeatureLayerUpdateEndHandle: null, // update end handle of feature layer
         _itemInfo: null, // to store item info of webmap
-        _featureLayerClickHandle: null, // click handle of feature layer
         _mapPanelWidget: null, // to store object of map panel widget
         _layerSelectionDetails: null, // to store details when new operational layer is selected
         _selectRowGraphicsClickHandle: null, // graphics click handle to select a feature
@@ -92,6 +89,7 @@ define([
         _isFilterRefreshClicked: false,
         _existingLayerIndex: null, // to store index of layer
         _reorderLayers: false, // flag to reorder layers
+        _isGraphicLayerClicked: false, // to track whether graphic layer is clicked or not
 
         /**
         * This method is designed to handle processing after any DOM fragments have been actually added to the document.
@@ -295,7 +293,7 @@ define([
         _createApplicationHeader: function (displaySignInText) {
             var appHeaderParameter;
             this._destroyApplicationHeaderWidget();
-            // parameters needed for instantiating application header
+            // parameters needed to instantiate application header
             appHeaderParameter = {
                 "appConfig": this.appConfig,
                 "appUtils": ApplicationUtils,
@@ -309,7 +307,7 @@ define([
         },
 
         /**
-        * This function is used to attach event listener to applicaation header widget
+        * This function is used to attach event listener to application header widget
         * @memberOf widgets/main/main
         */
         _attachApplicationHeaderEventListener: function () {
@@ -385,7 +383,7 @@ define([
         */
         _createMapPanel: function () {
             var mapViewerParameter;
-            // parameters needed for instantiating map viewer panel
+            // parameters needed for instantiate map viewer panel
             mapViewerParameter = {
                 "appConfig": this.appConfig,
                 "appUtils": ApplicationUtils
@@ -424,7 +422,7 @@ define([
                 "numViews": this.appConfig.webMapInfoNumViews,
                 "avgRating": this.appConfig.webMapInfoAvgRating
             };
-            // parameters needed for instantiating web-map list widget
+            // parameters needed for instantiate web-map list widget
             webMapListConfigData = {
                 "webMapDescriptionFields": webMapDescriptionFields,
                 "appConfig": this.appConfig,
@@ -504,7 +502,7 @@ define([
                 this._handleNoWebMapToDisplay();
             });
             // to disable header icons
-            this._webMapListWidget.displayInitalLoad = lang.hitch(this, function () {
+            this._webMapListWidget.displayInitialLoad = lang.hitch(this, function () {
                 this._disableHeaderIcons();
             });
         },
@@ -528,28 +526,31 @@ define([
             if (this._mapResizeHandle) {
                 this._mapResizeHandle.remove();
             }
-
             if (this._mapClickHandle) {
                 this._mapClickHandle.remove();
             }
-
             if (this._mapZoomInHandle) {
                 this._mapZoomInHandle.remove();
             }
-
             if (this._mapZoomOutHandle) {
                 this._mapZoomOutHandle.remove();
             }
-
             this._mapResizeHandle = on(this.map, "resize", lang.hitch(this, function () {
                 this._resizeMap();
             }));
-
-            this._mapClickHandle = on(this.map, "click", lang.hitch(this, function () {
+            this._mapClickHandle = on(this.map, "click", lang.hitch(this, function (evt) {
                 $(".esriCTFilterParentContainer").css("display", "none");
                 if ((!domClass.contains("webmapListToggleButton", "esriCTWebMapPanelToggleButtonOpenDisabled")) && (!domClass.contains("webmapListToggleButton", "esriCTWebMapPanelToggleButtonCloseDisabled"))) {
                     this._webMapListWidget.hideWebMapList();
                 }
+                // to track that feature is clicked of feature layer
+                if (this._isGraphicLayerClicked) {
+                    this._dataViewerWidget.onFeatureClick(evt, true);
+                    this._isGraphicLayerClicked = false;
+                } else {
+                    this._dataViewerWidget.onFeatureClick(evt, false);
+                }
+
             }));
 
             this._mapZoomInHandle = on(query(".esriSimpleSliderIncrementButton")[0], "click", lang.hitch(this, function () {
@@ -708,7 +709,7 @@ define([
             params = {
                 q: this.appConfig.orgInfo.basemapGalleryGroupQuery
             };
-            portal = new esriPortal.Portal(this.appConfig.sharinghost);
+            portal = this._boilerPlateTemplate.portal;
             portal.queryGroups(params).then(lang.hitch(this, function (groups) {
                 if (groups && groups.results && groups.results.length > 0) {
                     params = {
@@ -735,8 +736,6 @@ define([
                         ApplicationUtils.hideLoadingIndicator();
                     }));
                 } else {
-                    // Can't access org basemaps; use Topo
-                    webMapListObj._createMap(this.appConfig.fallbackBasemapId, "mapDiv");
                     ApplicationUtils.hideLoadingIndicator();
                 }
             }));
@@ -778,13 +777,14 @@ define([
         * @memberOf widgets/main/main
         */
         _setFeatureLayerCountLabel: function (graphics) {
-            var count, countLabelString;
+            var count, countLabelString, selectedFeatureCountValue;
+            selectedFeatureCountValue = 0;
             if (graphics && graphics.length) {
                 count = graphics.length;
             } else {
                 count = 0;
             }
-            countLabelString = string.substitute(this.appConfig.i18n.dataviewer.layerFeatureCount, { featureCount: count });
+            countLabelString = string.substitute(this.appConfig.i18n.dataviewer.layerFeatureCount, { featureCount: count, selectedFeatureCount: selectedFeatureCountValue });
             dom.byId("layerFeatureCountContainer").innerHTML = countLabelString;
         },
 
@@ -829,7 +829,7 @@ define([
         },
 
         /**
-        * This function is used to remove handle attched with data viewer widget
+        * This function is used to remove handle attached with data viewer widget
         * @memberOf widgets/main/main
         */
         _removeDataViewerHandle: function () {
@@ -850,12 +850,10 @@ define([
             });
             this._dataViewerWidget.attachEventToGraphicsLayer = lang.hitch(this, function (graphicsLayer) {
                 // to select graphics on click of activated feature
-                this._selectRowGraphicsClickHandle = on(graphicsLayer, "click", lang.hitch(this, function (evt) {
+                this._selectRowGraphicsClickHandle = on(graphicsLayer, "click", lang.hitch(this, function () {
+                    this._isGraphicLayerClicked = true;
                     // Reset last updated feature array
                     this.updatedFeature = null;
-                    if (evt.graphic.geometry.type !== "point") {
-                        this._dataViewerWidget.onFeatureClick(evt);
-                    }
                 }));
             });
             this._dataViewerWidget.hideWebMapList = lang.hitch(this, function () {
@@ -969,10 +967,6 @@ define([
         */
         _createFeatureLayerHandle: function () {
             if (this._refinedOperationalLayer) {
-                // to enable/disable details button on click of feature layer
-                this._featureLayerClickHandle = on(this._refinedOperationalLayer, "click", lang.hitch(this, function (evt) {
-                    this._dataViewerWidget.onFeatureClick(evt);
-                }));
                 this._dataViewerFeatureLayerUpdateEndHandle = on(this._refinedOperationalLayer, "update-end", lang.hitch(this, function () {
                     if (this._reorderLayers) {
                         this._reorderLayers = false;
@@ -991,7 +985,7 @@ define([
                     if (this._applicationHeader) {
                         this._applicationHeader._handleSearchIconVisibility(0);
                     }
-                    //Check if time slider widget exsist, if yes then query and fetch features within current time extent
+                    //Check if time slider widget exist, if yes then query and fetch features within current time extent
                     if (this._timeSliderWidget) {
                         var timeExtent, timeQuery;
                         timeExtent = this._timeSliderWidget._createTimeExtent(this._timeSliderWidget.currentTimeInfo);
@@ -1115,7 +1109,7 @@ define([
             });
 
             this._detailsPanelWidget.onMultipleFeatureEditCancel = lang.hitch(this, function (feature) {
-                //highlight selected feature's row in table
+                //highlight selected features row in table
                 this._dataViewerWidget.highlightSelectedFeature(feature);
             });
 
@@ -1135,7 +1129,7 @@ define([
                 if (this._timeSliderWidget) {
                     this._timeSliderWidget._handleTimeSliderVisibility(featureLength);
                 }
-                //If search widget exsist, handle its visibility
+                //If search widget exist, handle its visibility
                 if (this._applicationHeader) {
                     this._applicationHeader._handleSearchIconVisibility(featureLength);
                 }
@@ -1165,7 +1159,7 @@ define([
         _resizeUpperAndLowerContainer: function () {
             //set jquery resizable on upper container
             $("#upperContainer").resizable({
-                alsoResizeReverse: "#lowerContainer", //on resizeing upper container resize the lower map container
+                alsoResizeReverse: "#lowerContainer", //on resizing upper container resize the lower map container
                 handles: 's', //show resize handel only at the bottom of the grid container
                 containment: "#UpperAndLowerWrapperContainer",
                 maxHeight: 550,
@@ -1203,10 +1197,6 @@ define([
         * @memberOf widgets/main/main
         */
         _removeFeatureLayerHandle: function () {
-            // removes previous feature layer click handle
-            if (this._featureLayerClickHandle) {
-                this._featureLayerClickHandle.remove();
-            }
             // removes previous feature layer update end handle
             if (this._dataViewerFeatureLayerUpdateEndHandle) {
                 this._dataViewerFeatureLayerUpdateEndHandle.remove();
@@ -1214,7 +1204,7 @@ define([
         },
 
         /**
-        * This function is used to show appropriate message when deatils panel is empty
+        * This function is used to show appropriate message when details panel is empty
         * @memberOf widgets/main/main
         */
         _handleEmptyDetailsPanel: function () {

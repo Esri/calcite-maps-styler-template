@@ -1,4 +1,4 @@
-﻿/*global define,dojo,alert,moment,$,console */
+﻿/*global define */
 /*jslint sloppy:true */
 /*
 | Copyright 2014 Esri
@@ -201,8 +201,8 @@ define([
         * @memberOf widgets/details-panel/comments
         */
         _createCommentButton: function (parentDiv, graphic) {
-            var commentBtnnDiv = domConstruct.create("div", { "class": "esriCTCommentButton", "title": this.appConfig.i18n.detailsPanel.editContentText }, parentDiv);
-            on(commentBtnnDiv, "click", lang.hitch(this, function () {
+            var commentBtnDiv = domConstruct.create("div", { "class": "esriCTCommentButton", "title": this.appConfig.i18n.detailsPanel.editContentText }, parentDiv);
+            on(commentBtnDiv, "click", lang.hitch(this, function () {
                 this._createCommentForm(graphic);
                 domStyle.set(this.commentsContainer, "display", "none");
             }));
@@ -256,7 +256,7 @@ define([
                     this.toggleDetailsPanel();
                 }
                 domStyle.set(this.commentsContainer, "display", "block");
-                //SCroll to top position when clicked cancel need ID to use scrollTop
+                //Scroll to top position when clicked cancel need ID to use scrollTop
                 dom.byId("tabContent").scrollTop = 0;
 
             });

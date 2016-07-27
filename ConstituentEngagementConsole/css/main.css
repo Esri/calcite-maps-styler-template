@@ -138,11 +138,6 @@ html, body
     font-style: italic;
 }
 
-.esriRTL label
-{
-    /*Example of a rule that will be applied if the app is viewed in a browser with a RTL locale like Hebrew or Arabic.*/
-}
-
 /** Loading indicator starts **/
 
 .loading-indicator
@@ -1707,7 +1702,7 @@ input.esriCTRadioButton
     cursor: pointer;
 }
 
-.esriCTNonImageNameMidle
+.esriCTNonImageNameMiddle
 {
     display: inline-block;
     vertical-align: middle; /* vertical alignment of the inline element */
@@ -1862,7 +1857,7 @@ input.esriCTRadioButton
     margin: 0 44px;
 }
 
-.carousel-inner > .item > img, .esriViewPopup .gallery .frame img
+.carousel-inner > .item > img, .carousel-inner > .item > video, .esriViewPopup .gallery .frame img
 {
     max-width: 100%;
     max-height: 100%;
@@ -1940,7 +1935,7 @@ input.esriCTRadioButton
     opacity: 0.4 !important;
 }
 
-.active .esriCTHeaderHover, .active .esriCTCaptionHover
+.active .esriCTHeaderHover
 {
     background-color: #fff;
     opacity: 0.60;
@@ -1951,6 +1946,15 @@ input.esriCTRadioButton
     text-overflow: ellipsis;
     position: relative;
     z-index: 2;
+}
+
+.active .esriCTCaptionHover
+{
+  background-color: #fff;
+  opacity: 0.60;
+  display: block;
+  position: relative;
+  z-index: 2;
 }
 
 .active .esriCTHeaderHover

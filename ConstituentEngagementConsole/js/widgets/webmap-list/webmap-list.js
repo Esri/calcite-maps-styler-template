@@ -1,4 +1,4 @@
-﻿/*global define,document,location,require,alert,console,dojo,$,setTimeout,moment,dojoConfig*/
+﻿/*global define,$,setTimeout,moment,dojoConfig*/
 /*jslint sloppy:true */
 /*
 | Copyright 2014 Esri
@@ -202,12 +202,12 @@ define([
                 if (response[i][0] && response[i][1].itemInfo.itemData.operationalLayers.length > 0) {
                     showWebmapInList = false;
                     operationalLayerCount = response[i][1].itemInfo.itemData.operationalLayers.length;
-                    // this loop will check if the layer is having valid capabilities and popinfo
+                    // this loop will check if the layer is having valid capabilities and popup info
                     // if not then it will remove that layer from array
                     for (j = 0; j < operationalLayerCount; j++) {
                         removeLayerFromList = true;
                         if (response[i][1].itemInfo.itemData.operationalLayers[j].visibility && response[i][1].itemInfo.itemData.operationalLayers[j].resourceInfo && response[i][1].itemInfo.itemData.operationalLayers[j].layerObject) {
-                            // check if layer is having valid capabilities and valid popupinfo
+                            // check if layer is having valid capabilities and valid popup info
                             if (this._validateLayerCapabilities(response[i][1].itemInfo.itemData.operationalLayers[j].resourceInfo.capabilities)) {
                                 if (this._validatePopupFields(response[i][1].itemInfo.itemData.operationalLayers[j].popupInfo, response[i][1].itemInfo.itemData.operationalLayers[j].layerObject.fields)) {
                                     showWebmapInList = true;
@@ -234,7 +234,7 @@ define([
                             j--;
                         }
                     }
-                    // if not then dont show that layer in webmaplist
+                    // if not then dont show that layer in webmap list
                     if (showWebmapInList) {
                         this._filteredWebMapResponseArr.push(response[i]);
                     }
@@ -371,10 +371,10 @@ define([
                     this.hideWebMapList();
                 } else {
                     this._handleWebmapToggling(parentDiv, this._filteredWebMapResponseArr[0][1].itemInfo.itemData.operationalLayers[0]);
-                    this.displayInitalLoad();
+                    this.displayInitialLoad();
                 }
             } else {
-                this.displayInitalLoad();
+                this.displayInitialLoad();
             }
         },
 
@@ -382,7 +382,7 @@ define([
         * This function is used to hide header icons like search, manual refresh
         * @memberOf widgets/webmap-list/webmap-list
         */
-        displayInitalLoad: function () {
+        displayInitialLoad: function () {
             return;
         },
 
@@ -601,7 +601,7 @@ define([
                 this._handleOperationalLayerClick(childListNode, webMap.itemInfo.itemData.operationalLayers[i]);
                 parentListNode.appendChild(childListNode);
             }
-            // stop event propogation so that no other event gets executed
+            // stop event propagation so that no other event gets executed
             on(parentListNode, "click", lang.hitch(this, function (evt) {
                 event.stop(evt);
             }));
@@ -708,7 +708,7 @@ define([
         },
 
         /**
-        * This function is used to validate the capabalites of the layer
+        * This function is used to validate the capabilities of the layer
         * @param{object} capabilities of layer
         * @memberOf widgets/webmap-list/webmap-list
         */

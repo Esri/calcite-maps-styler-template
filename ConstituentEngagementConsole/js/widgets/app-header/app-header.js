@@ -1,4 +1,4 @@
-﻿/*global define,dojoConfig,$,confirm,document */
+﻿/*global define,dojoConfig,$,document */
 /*jslint sloppy:true */
 /*
 | Copyright 2014 Esri
@@ -174,7 +174,7 @@ define([
         * @memberOf widgets/app-header/app-header
         */
         _setMaxWidthOfApplicationIcon: function () {
-            var searchIconWidth, manualRefreshIconWidth, helpIconWidth, applicationHeaderContainerWidth, headerIconsWidth, signInSeperatorWidth, signedInUserDetailsContainerWidth;
+            var searchIconWidth, manualRefreshIconWidth, helpIconWidth, applicationHeaderContainerWidth, headerIconsWidth, signInSeparatorWidth, signedInUserDetailsContainerWidth;
             applicationHeaderContainerWidth = $(this.applicationHeaderContainer).outerWidth(true);
             applicationHeaderContainerWidth = parseFloat(applicationHeaderContainerWidth);
             searchIconWidth = $(this.searchButton).outerWidth(true);
@@ -185,9 +185,9 @@ define([
             signedInUserDetailsContainerWidth = parseFloat(signedInUserDetailsContainerWidth);
             helpIconWidth = $(this.helpButton).outerWidth(true);
             helpIconWidth = parseFloat(helpIconWidth);
-            signInSeperatorWidth = $(this.signInSeperator).outerWidth(true);
-            signInSeperatorWidth = parseFloat(signInSeperatorWidth);
-            headerIconsWidth = searchIconWidth + manualRefreshIconWidth + helpIconWidth + signInSeperatorWidth;
+            signInSeparatorWidth = $(this.signInSeparator).outerWidth(true);
+            signInSeparatorWidth = parseFloat(signInSeparatorWidth);
+            headerIconsWidth = searchIconWidth + manualRefreshIconWidth + helpIconWidth + signInSeparatorWidth;
             domStyle.set(this.applicationHeaderIconContainer, "max-width", (applicationHeaderContainerWidth - headerIconsWidth) + "px");
         },
 
@@ -228,7 +228,7 @@ define([
         * @memberOf widgets/app-header/app-header
         */
         _setWidthOfApplicationNameContainer: function () {
-            var applicationIconWidth, searchIconWidth, manualRefreshIconWidth, helpIconWidth, applicationHeaderContainerWidth, headerIconsWidth, applicationNameContainerWidth, signInSeperatorWidth, signedInUserDetailsContainerWidth;
+            var applicationIconWidth, searchIconWidth, manualRefreshIconWidth, helpIconWidth, applicationHeaderContainerWidth, headerIconsWidth, applicationNameContainerWidth, signInSeparatorWidth, signedInUserDetailsContainerWidth;
             applicationHeaderContainerWidth = $(this.applicationHeaderContainer).outerWidth(true);
             applicationHeaderContainerWidth = parseFloat(applicationHeaderContainerWidth);
             applicationIconWidth = $(this.applicationHeaderIconContainer).outerWidth(true);
@@ -241,9 +241,9 @@ define([
             helpIconWidth = parseFloat(helpIconWidth);
             signedInUserDetailsContainerWidth = $(this.signedInUserDetailsContainer).outerWidth(true);
             signedInUserDetailsContainerWidth = parseFloat(signedInUserDetailsContainerWidth);
-            signInSeperatorWidth = $(this.signInSeperator).outerWidth(true);
-            signInSeperatorWidth = parseFloat(signInSeperatorWidth);
-            headerIconsWidth = applicationIconWidth + searchIconWidth + manualRefreshIconWidth + helpIconWidth + signedInUserDetailsContainerWidth + signInSeperatorWidth;
+            signInSeparatorWidth = $(this.signInSeparator).outerWidth(true);
+            signInSeparatorWidth = parseFloat(signInSeparatorWidth);
+            headerIconsWidth = applicationIconWidth + searchIconWidth + manualRefreshIconWidth + helpIconWidth + signedInUserDetailsContainerWidth + signInSeparatorWidth;
             applicationNameContainerWidth = applicationHeaderContainerWidth - headerIconsWidth;
             applicationNameContainerWidth = applicationNameContainerWidth - 30;
             domStyle.set(this.applicationNameContainer, "width", applicationNameContainerWidth + "px");

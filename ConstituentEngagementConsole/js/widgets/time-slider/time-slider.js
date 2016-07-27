@@ -1,4 +1,4 @@
-﻿/*global define,dojo,alert,moment,$,setTimeout */
+﻿/*global define,setTimeout */
 /*jslint sloppy:true */
 /*
 | Copyright 2014 Esri
@@ -148,7 +148,7 @@ define([
         },
 
         /**
-        * This function is used to hide webmaplist on slider tick click
+        * This function is used to hide webmap list on slider tick click
         * @memberOf widgets/time-slider/time-slider
         */
         _hideWebmapList: function () {
@@ -188,7 +188,7 @@ define([
 
         /**
         * This function is use to handle enabling/disabling of time slider
-        * @param{stirng} selected feature length
+        * @param{string} selected feature length
         * @memberOf widgets/time-slider/time-slider
         */
         _handleTimeSliderVisibility: function (featureLength) {
@@ -201,7 +201,7 @@ define([
 
         /**
         * This function is use to convert date in webmap format
-        * @param{stirng} start and end date to display
+        * @param{string} start and end date to display
         * @memberOf widgets/time-slider/time-slider
         */
         _getWebmapFormattedDate: function (startDate, endDate) {

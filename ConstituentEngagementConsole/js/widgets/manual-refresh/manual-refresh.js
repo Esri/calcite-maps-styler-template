@@ -1,4 +1,4 @@
-﻿/*global define,dojo,alert,moment,$,confirm */
+﻿/*global define,dojo,confirm */
 /*jslint sloppy:true */
 /*
 | Copyright 2014 Esri

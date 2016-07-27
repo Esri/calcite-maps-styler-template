@@ -1,4 +1,4 @@
-﻿/*global define,dojo,alert,moment,$,screen,setTimeout */
+﻿/*global define,dojo,$,screen,setTimeout */
 /*jslint sloppy:true */
 /*
 | Copyright 2014 Esri
@@ -117,7 +117,7 @@ define([
         * @memberOf widgets/filter/filter
         */
         _createFilterContainer: function (definitionEditorInput, index, displayColumn) {
-            var filterLabel, screenHeight, maxHeight, borderContainer, filterDisableContaner;
+            var filterLabel, screenHeight, maxHeight, borderContainer, filterDisableContainer;
             if (displayColumn === definitionEditorInput.parameters[0].fieldName) {
                 this._isCodedValueColumn = this._hasCodedDomain(displayColumn);
                 this._isTypeIdfield = this._hasTypeIdfield(displayColumn);
@@ -131,12 +131,12 @@ define([
                     screenHeight = screen.height;
                     maxHeight = screenHeight - 380;
                     domStyle.set(this.filterAttributesContainer, "max-height", maxHeight + "px");
-                    filterDisableContaner = domConstruct.create("div", { "class": "esriCTDisableFilterContainer esriCTHidden" }, this.filterAttributesContainer);
-                    on(filterDisableContaner, "click", lang.hitch(this, function () {
+                    filterDisableContainer = domConstruct.create("div", { "class": "esriCTDisableFilterContainer esriCTHidden" }, this.filterAttributesContainer);
+                    on(filterDisableContainer, "click", lang.hitch(this, function () {
                         this.appUtils.showMessage(this.appConfig.i18n.filter.filterInEditModeAlert);
                     }));
                 }
-                // Calling a function to append filter optipns in the container
+                // Calling a function to append filter options in the container
                 this._createFilterOptionBox(definitionEditorInput, index, displayColumn);
             }
         },
@@ -274,7 +274,7 @@ define([
 
         /**
         * Create datetime picker
-        * @param{ndoe} contains parent node of filter body
+        * @param{node} contains parent node of filter body
         * @param{object} contains parentNode, inputs, index and date input node to attached date time picker
         * @param{string} contains field name
         * @memberOf widgets/filter/filter
@@ -425,7 +425,7 @@ define([
                 this.appConfig._filterObject.inputs[radioParam.index].parameters[0].valueFrom = "textBox";
             }
 
-            // Attach radio button's change event
+            // Attach radio buttons change event
             this._attachRadioButtonEvents(radioButtonParam);
         },
 
@@ -496,7 +496,7 @@ define([
         },
 
         /**
-        * Function to 
+        * Function to
         * @param{object} contains nodes, _filterObject to change and maintain state
         * @memberOf widgets/filter/filter
         */
@@ -547,7 +547,7 @@ define([
 
         /**
         * Function to set param as well as populating dropdown
-        * @param{array} contains features/distict values to populate dropdown
+        * @param{array} contains features/distinct values to populate dropdown
         * @param{object} contains nodes, _filterObject to change and maintain state
         * @memberOf widgets/filter/filter
         */
@@ -586,7 +586,7 @@ define([
                 deferred.resolve(results);
                 this._populateDropDown(results.features, radioParamObj);
             }), lang.hitch(this, function () {
-                // if any error occur while quering the current field
+                // if any error occur while querying the current field
                 this.appUtils.showMessage(this.appConfig.i18n.filter.distinctQueryFalied);
                 deferred.resolve();
                 this.appUtils.hideLoadingIndicator();
@@ -598,7 +598,7 @@ define([
         * @param{node} contains the node for the textbox
         * @param{object} contains layer input details
         * @param{int} contains the index/parameter id of the input layer detail
-        * @param{node} conains close icon for textbox
+        * @param{node} contains close icon for textbox
         * @param{string} contains field name
         * @memberOf widgets/filter/filter
         */
@@ -625,11 +625,11 @@ define([
         /**
         * Function to populate combobox
         * @param{node} contains the node to fit the textbox
-        * @param{results} contains the distinct values came after quering the layer
+        * @param{results} contains the distinct values came after querying the layer
         * @memberOf widgets/filter/filter
         */
         _populateDropDownContainer: function (obj) {
-            var option = [], firstOption, selectedOption = false, closeDropDownSpan, coadedDomainValue, dropDownValue, prevValue;
+            var option = [], firstOption, selectedOption = false, closeDropDownSpan, codedDomainValue, dropDownValue, prevValue;
             domConstruct.empty(obj.node);
             closeDropDownSpan = obj.closeDropDownSpan;
             if (this.appConfig._filterObject && this.appConfig._filterObject.inputs[obj.index] && (this.appConfig._filterObject.inputs[obj.index].parameters[0].dropDownValue || this.appConfig._filterObject.inputs[obj.index].parameters[0].dropDownValue === "" || this.appConfig._filterObject.inputs[obj.index].parameters[0].dropDownValue === null)) {
@@ -643,14 +643,14 @@ define([
             array.forEach(obj.features, lang.hitch(this, function (feature, i) {
                 if (feature.attributes[obj.displayColumn] === 0 || (feature.attributes[obj.displayColumn] && (feature.attributes[obj.displayColumn] !== "" || feature.attributes[obj.displayColumn] !== null))) {
                     if (this._isCodedValueColumn) {
-                        coadedDomainValue = this._getCodedDomainValue(feature.attributes[obj.displayColumn], obj.displayColumn);
+                        codedDomainValue = this._getCodedDomainValue(feature.attributes[obj.displayColumn], obj.displayColumn);
                     } else if (this._isTypeIdfield) {
-                        coadedDomainValue = this._getTypeIdField(feature.attributes[obj.displayColumn]);
+                        codedDomainValue = this._getTypeIdField(feature.attributes[obj.displayColumn]);
                     } else {
-                        coadedDomainValue = feature.attributes[obj.displayColumn];
+                        codedDomainValue = feature.attributes[obj.displayColumn];
                     }
                     option[i] = domConstruct.create("option", {
-                        "innerHTML": coadedDomainValue,
+                        "innerHTML": codedDomainValue,
                         "value": feature.attributes[obj.displayColumn]
                     }, obj.node);
                     // Setting default selection value for the dropdown
@@ -729,7 +729,7 @@ define([
         /**
         * Function to attach 'blur' event of input textbox
         * @param{node} contains input textbox node
-        * @param{ndoe} contains close icon for textbox
+        * @param{node} contains close icon for textbox
         * @param{int} contains the index/parameter id of the input layer detail
         * @param{string} contains field name
         * @memberOf widgets/filter/filter
@@ -1128,7 +1128,7 @@ define([
         * @memberOf widgets/filter/filter
         */
         _getFeatureCount: function (node, index, closeSpan, displayColumn, valueFrom) {
-            var query, queryTask, deferred, alertPoped = false;
+            var query, queryTask, deferred, alertPopped = false;
             deferred = new Deferred();
             query = new Query();
             queryTask = new QueryTask(this.selectedOperationalLayer.url);
@@ -1154,7 +1154,7 @@ define([
                     }
                     this.appUtils.showMessage(this.appConfig.i18n.filter.noFeatureFoundText);
                     this.appUtils.hideLoadingIndicator();
-                    alertPoped = true;
+                    alertPopped = true;
                 }
             }), lang.hitch(this, function () {
                 deferred.resolve();
@@ -1163,7 +1163,7 @@ define([
                 } else {
                     this._resetToPrevDropDownValue(index, closeSpan, displayColumn, node);
                 }
-                if (!alertPoped) {
+                if (!alertPopped) {
                     this.appUtils.showMessage(this.appConfig.i18n.filter.noFeatureFoundText);
                     this.appUtils.hideLoadingIndicator();
                 }
@@ -1358,7 +1358,7 @@ define([
         },
 
         /**
-        * This function will reset textbox with fevious valid filter value
+        * This function will reset textbox with previous valid filter value
         * @param{int} contains index or parameterId of the field
         * @param{node} contains close icon for the textbox
         * @param{string} contains name of the field
@@ -1381,7 +1381,7 @@ define([
         },
 
         /**
-        * This function will reset dropDown with fevious valid filter value
+        * This function will reset dropDown with previous valid filter value
         * @param{int} contains index or parameterId of the field
         * @param{node} contains close icon for the dropdown
         * @param{string} contains name of the field
@@ -1412,7 +1412,7 @@ define([
         * @memberOf widgets/filter/filter
         */
         _getFeatureCountForDatePicker: function (queryDateObject) {
-            var query, queryTask, deferred, alertPoped = false;
+            var query, queryTask, deferred, alertPopped = false;
             deferred = new Deferred();
             query = new Query();
             queryTask = new QueryTask(this.selectedOperationalLayer.url);
@@ -1433,12 +1433,12 @@ define([
                     this._resetDatePickerToPrevValue(queryDateObject);
                     this.appUtils.showMessage(this.appConfig.i18n.filter.noFeatureFoundText);
                     this.appUtils.hideLoadingIndicator();
-                    alertPoped = true;
+                    alertPopped = true;
                 }
             }), lang.hitch(this, function () {
                 deferred.resolve();
                 this._resetDatePickerToPrevValue(queryDateObject);
-                if (!alertPoped) {
+                if (!alertPopped) {
                     this.appUtils.showMessage(this.appConfig.i18n.filter.noFeatureFoundText);
                     this.appUtils.hideLoadingIndicator();
                 }
@@ -1446,7 +1446,7 @@ define([
         },
 
         /**
-        * This function will reset dropDown with fevious valid filter value
+        * This function will reset dropDown with previous valid filter value
         * @param{object} contains required params to reset date picker
         * @memberOf widgets/filter/filter
         */
@@ -1529,7 +1529,7 @@ define([
             if ((firstPrevValue && secondPrevValue) || (firstPrevValue === "" && secondPrevValue === "")) {
                 this._setPrevValues(firstInputBox, secondInputBox, index, closeTextBoxSpan);
             } else {
-                this._setDefalutValues(firstInputBox, secondInputBox, index);
+                this._setDefaultValues(firstInputBox, secondInputBox, index);
             }
         },
 
@@ -1705,7 +1705,7 @@ define([
         * @param{index} contains parameter id
         * @memberOf widgets/filter/filter
         */
-        _setDefalutValues: function (firstInputBox, secondInputBox, index) {
+        _setDefaultValues: function (firstInputBox, secondInputBox, index) {
             domAttr.set(firstInputBox, "value", this.appConfig._filterObject.inputs[index].parameters[0].defaultValue);
             domAttr.set(secondInputBox, "value", this.appConfig._filterObject.inputs[index].parameters[1].defaultValue);
             this.appConfig._filterObject.inputs[index].parameters[0].currentValue = this.appConfig._filterObject.inputs[index].parameters[0].defaultValue;
@@ -1717,10 +1717,10 @@ define([
         /**
         * This function is use to handle enabling/disabling of filter container
         * @param{object} filter container
-        * @param{stirng} selected feature length
+        * @param{string} selected feature length
         * @memberOf widgets/filter/filter
         */
-        _handleFilterComponentVisibilty: function (filterContainer, featureLength, isEditMode) {
+        _handleFilterComponentVisibility: function (filterContainer, featureLength, isEditMode) {
             if (featureLength > 1 || isEditMode) {
                 if (query(".esriCTDisableFilterContainer", filterContainer)[0]) {
                     domClass.remove(query(".esriCTDisableFilterContainer", filterContainer)[0], "esriCTHidden");

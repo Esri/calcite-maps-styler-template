@@ -18,7 +18,7 @@
 define({
     // When true, the template will query arcgis.com for the webmap item.
     "queryForWebmap": false,
-    // When true, the template will query arcgis.com for the group's information.
+    // When true, the template will query arcgis.com for the groups information.
     "queryForGroupInfo": true,
     // When true, the template will query arcgis.com for the items contained within the group
     "queryForGroupItems": false,
@@ -46,7 +46,7 @@ define({
         "start": 0
     },
     // This option demonstrates how to handle additional custom url parameters. For example
-    // if you want users to be able to specify lat/lon coordinates that define the map's center or
+    // if you want users to be able to specify lat/lon coordinates that define the maps center or
     // specify an alternate basemap via a url parameter.
     "urlItems": [
         "embed",
@@ -57,5 +57,5 @@ define({
         "theme" // example param. ?theme=<my theme>
     ],
     // Most users will not need to modify this value. For esri hosting environments only. Will automatically create a "sharinghost" and "proxyurl" for the application. Only set this is to true if the app is going to be stored on Esri's hosting servers. If you are using your own custom hosted portal, set the "sharinghost" in defaults.js instead of setting this to true.
-    esriEnvironment: true
+    esriEnvironment: false
 });

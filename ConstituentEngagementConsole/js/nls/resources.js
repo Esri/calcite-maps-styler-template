@@ -63,7 +63,7 @@ define({
             submitButtonTooltip: "Save", // Command button to open the geoform
             cancelButtonTooltip: "Cancel", //tooltip for cancel button
             geoformBackButtonTooltip: "Return to the report list", //tooltip for Geoform back button
-            updateFeaturesConfirmationMsg: "${count} features will be updated", //confirmation essage to be displayed before updating the features
+            updateFeaturesConfirmationMsg: "${count} features will be updated", //confirmation message to be displayed before updating the features
             attachmentHeaderText: "Attachments" //attachment header Text
         },
         mapViewer: {
@@ -84,7 +84,7 @@ define({
             valueRadioButtonLabel: "Value", // Appears as a label for 'Value' radio button in filter container
             uniqueRadioButtonLabel: "Unique", // Appears as a label for 'Unique' radio button in filter container
             selectLayerToBegin: "Select a category to get started", // for showing default message on application load
-            layerFeatureCount: "${featureCount} records" // Appears beside operational layer name to display count of feature
+            layerFeatureCount: "${selectedFeatureCount} selected / ${featureCount} records" // Appears beside operational layer name to display count of total & selected feature
         },
         timeSlider: {
             timeSliderLabel: "Time range", // Appears beside time slider widget
