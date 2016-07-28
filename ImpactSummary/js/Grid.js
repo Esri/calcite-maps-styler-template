@@ -45,7 +45,7 @@ define([
 
               this._renderers = lang.mixin(this._renderers || {}, {
                   gallery: lang.hitch(this, function (obj) {
-                      obj.token = this.query && this.query.token ? "?token=" + this.query.token : "";
+                      obj.token = obj.thumbnailUrl && obj.thumbnailUrl.indexOf("?token") === -1 && this.query && this.query.token ? "?token=" + this.query.token : "";
                       obj.snippet = obj.snippet || "";
                       var div = put("div"),
                       node = new (declare([WidgetBase, TemplatedMixin, WidgetsInTemplateMixin], {
@@ -55,7 +55,7 @@ define([
                       return div;
                   }),
                   details: lang.hitch(this, function (obj) {
-                      obj.token = this.query && this.query.token ? "?token=" + this.query.token : "";
+                      obj.token = obj.thumbnailUrl && obj.thumbnailUrl.indexOf("?token") === -1 && this.query && this.query.token ? "?token=" + this.query.token : "";
                       obj.snippet = obj.snippet || "";
                       var div = put("div"),
                       node = new (declare([WidgetBase, TemplatedMixin, WidgetsInTemplateMixin], {
