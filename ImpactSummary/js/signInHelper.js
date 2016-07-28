@@ -41,7 +41,7 @@ function (declare, lang, _WidgetBase, on, arcgisUtils, portal, Deferred, cookie)
         },
 
         userIsAppOwner: function (itemData, userInfo) {
-          return (userInfo && (itemData.item.owner == userInfo.username || userInfo.role === "org_admin");
+          return (userInfo && (itemData.item.owner == userInfo.username || userInfo.role === "org_admin"));
         },
 
         authenticateUser: function (isEditMode, data, userInfo) {

@@ -44,7 +44,7 @@ define([
       },
 
       userIsAppOwner: function (itemData, userInfo) {
-        return (userInfo && (itemData.item.owner == userInfo.username || userInfo.role === "org_admin");
+        return (userInfo && (itemData.item.owner == userInfo.username || userInfo.role === "org_admin"));
       },
 
       reportError: function (error) {
