@@ -962,10 +962,13 @@ define([
         },
         _checkForLayerName: function () {
             var deferred = new Deferred(), checkLayerNameUrl;
+          if(this.checkLayerNameURL && this.userInfo && this.userInfo.portal){
             checkLayerNameUrl = string.substitute(this.checkLayerNameURL, {
                 userInfoPortalUrl: this.userInfo.portal.url,
                 userInfoPortalId: this.userInfo.portal.id
             });
+          }
+          if(checkLayerNameUrl){
             this.enrichedLayerName = domAttr.get(this.inputLayerName, "value");
             if (this.enrichedLayerName === "") {
                 this.enrichedLayerName = "Enriched" + this.map.getLayer(this.config.summaryLayer.id).name;
@@ -995,6 +998,10 @@ define([
                     deferred.reject(e);
                 })
             });
+          }
+          else{
+            deferred.reject(new Error("Could not enrich layer because user information is incomplete"));
+          }
             return deferred.promise;
         },
         _getShowCredits: function () {
