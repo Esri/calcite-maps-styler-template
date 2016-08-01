@@ -89,6 +89,11 @@ define([
             this._filteredWebMapResponseArr = [];
             this._createFilteredWebMapArr();
             this._toggleWebMapList();
+            if (this.appConfig.logInDetails && this.appConfig.logInDetails.token) {
+                if (domClass.contains(dom.byId("webMapListWrapperContainer"), "esriCTWebMapListClose")) {
+                    this._animateWebMapList();
+                }
+            }
             //Check for the flag and accordingly show/hide non editable layers
             if (this.appConfig.showNonEditableLayers) {
                 //Show all the non editable feature servers in webmap after selecting a layer from webmap list
@@ -833,15 +838,20 @@ define([
                 if (currentLayer.resourceInfo && currentLayer.resourceInfo.capabilities && currentLayer.layerType === "ArcGISFeatureLayer") {
                     // condition to check if feature layer is non-editable & it is visible in the TOC
                     if ((currentLayer.resourceInfo.capabilities.indexOf("Create") === -1) &&
-                            ((currentLayer.resourceInfo.capabilities.indexOf("Update") === -1) ||
-                            (currentLayer.resourceInfo.capabilities.indexOf("Editing") === -1)) && currentLayer.visibility) {
+                        ((currentLayer.resourceInfo.capabilities.indexOf("Update") === -1) || (currentLayer.resourceInfo.capabilities.indexOf("Editing") === -1)) &&
+                        currentLayer.visibility) {
                         currentLayer.layerObject.show();
                         // condition to check feature layer with create, edit, delete permissions and popup enabled, but all fields marked display only
                     } else if ((currentLayer.resourceInfo.capabilities.indexOf("Create") !== -1) &&
-                            (currentLayer.resourceInfo.capabilities.indexOf("Editing") !== -1) &&
-                            (currentLayer.resourceInfo.capabilities.indexOf("Update") !== -1) &&
-                            (currentLayer.popupInfo) &&
-                            this._checkDisplayPropertyOfFields(currentLayer.popupInfo, currentLayer.layerObject.fields) && this.selectedLayerId !== currentLayer.id) {
+                        (currentLayer.resourceInfo.capabilities.indexOf("Editing") !== -1) &&
+                        (currentLayer.resourceInfo.capabilities.indexOf("Update") !== -1) &&
+                        (currentLayer.popupInfo) &&
+                        this._checkDisplayPropertyOfFields(currentLayer.popupInfo, currentLayer.layerObject.fields) &&
+                        this.selectedLayerId !== currentLayer.id) {
+                        currentLayer.layerObject.show(); // display non-editable layer
+                        // display layer which is not having popup
+                    } else if ((!currentLayer.popupInfo) &&
+                        (currentLayer.visibility)) {
                         currentLayer.layerObject.show(); // display non-editable layer
                     } else {
                         currentLayer.layerObject.hide();

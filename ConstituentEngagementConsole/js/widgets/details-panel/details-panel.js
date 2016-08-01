@@ -53,7 +53,9 @@ define([
         _popupWidgetObj: null, // to store object of popup widget
         _mediaWidgetObj: null, // to store object of media widget
         _commentsWidgetObj: null, // to store object of comments widget
-        i18n: {},
+        i18n: {}, // to store nls object
+        isShowSelectedClicked: null, // to notify that show all option is clicked
+        isShowAllClicked: null, // to notify that show all option is clicked
 
         /**
         * This function is called when widget is constructed
@@ -134,7 +136,9 @@ define([
                 "appUtils": this.appUtils,
                 "itemInfo": this.itemInfo,
                 "popupInfo": this.popupInfo,
-                "multipleFeatures": this.multipleFeatures
+                "multipleFeatures": this.multipleFeatures,
+                "isShowSelectedClicked": this.isShowSelectedClicked,
+                "isShowAllClicked": this.isShowAllClicked
             };
             // Initialize popup widget
             this._popupWidgetObj = new PopupTab(popupParameters, domConstruct.create("div", {}, dom.byId("popupWrapperContainer")));
@@ -147,13 +151,12 @@ define([
         * @memberOf widgets/details-panel/details-panel
         */
         _attachPopupEventListener: function () {
-            this._popupWidgetObj.onFeatureUpdated = lang.hitch(this, function (feature) {
-                this.onFeatureUpdated(feature);
+            this._popupWidgetObj.onFeatureUpdated = lang.hitch(this, function (feature, isShowSelectedClicked) {
+                this.onFeatureUpdated(feature, isShowSelectedClicked);
             });
             this._popupWidgetObj.onMultipleFeatureEditCancel = lang.hitch(this, function (feature) {
                 this.onMultipleFeatureEditCancel(feature);
             });
-
             this._popupWidgetObj.popupEditModeEnabled = lang.hitch(this, function (isEditMode) {
                 this.popupEditModeEnabled(isEditMode);
             });
@@ -341,6 +344,32 @@ define([
             if (this._mediaWidgetObj) {
                 this._mediaWidgetObj.showChartsOnResize();
             }
+        },
+
+        /**
+        * This function is used to notify that show selected is clicked
+        * @memberOf widgets/details-panel/details-panel
+        */
+        showSelectedClicked: function () {
+            if (this._popupWidgetObj) {
+                this._popupWidgetObj.isShowSelectedClicked = true;
+                this._popupWidgetObj.isShowAllClicked = false;
+            }
+            this.isShowSelectedClicked = true;
+            this.isShowAllClicked = false;
+        },
+
+        /**
+        * This function is used to notify that show all is clicked
+        * @memberOf widgets/details-panel/details-panel
+        */
+        showAllClicked: function () {
+            if (this._popupWidgetObj) {
+                this._popupWidgetObj.isShowSelectedClicked = false;
+                this._popupWidgetObj.isShowAllClicked = true;
+            }
+            this.isShowSelectedClicked = false;
+            this.isShowAllClicked = true;
         }
     });
 });

@@ -51,6 +51,8 @@ define([
 ) {
     return declare([_WidgetBase, _TemplatedMixin, _WidgetsInTemplateMixin], {
         templateString: template,
+        isShowSelectedClicked: null, // to notify that show selected option is clicked
+        isShowAllClicked: null, // to notify that show all option is clicked
 
         /**
         * This function is called when widget is constructed
@@ -142,15 +144,17 @@ define([
                 popupInfo: this.popupInfo,
                 selectedFeatures: this.multipleFeatures
             }, domConstruct.create("div", {}, this.popupFormContainer));
-
             // attach handler on cancel button click
             this.popupFormInstance.onCancelButtonClick = lang.hitch(this, this._onFeatureUpdateCancel);
             // attach handler on save button click
             this.popupFormInstance.onPopupFormSubmitted = lang.hitch(this, function (feature) {
-                //close the comment form after submitting new comment
-                this._hidePanel(this.popupFormContainer);
-                this._showPanel(this.popupInfoParentContainer);
-                this.onFeatureUpdated(feature);
+                if ((!this.isShowSelectedClicked) ||
+                    ((this.isShowSelectedClicked) && (this.multipleFeatures) && (this.multipleFeatures.length === 1))) {
+                    // Close the comment form after submitting new comment
+                    this._hidePanel(this.popupFormContainer);
+                    this._showPanel(this.popupInfoParentContainer);
+                }
+                this.onFeatureUpdated(feature, this.isShowSelectedClicked);
             });
             this._showPanel(this.popupFormContainer);
             this._hidePanel(this.popupInfoParentContainer);
@@ -161,16 +165,21 @@ define([
         * @memberOf widgets/details-panel/popup
         */
         _onFeatureUpdateCancel: function () {
-            this._hidePanel(this.popupFormContainer);
-            this._showPanel(this.popupInfoParentContainer);
-            //display popup content for recently selected feature
-            if (this.multipleFeatures.length > 1) {
-                var selectedFeature = this.multipleFeatures[this.multipleFeatures.length - 1];
-                this.onMultipleFeatureEditCancel(selectedFeature);
+            // if not show selected
+            // if show selected & only one features is selected
+            if ((!this.isShowSelectedClicked) ||
+                ((this.isShowSelectedClicked) && (this.multipleFeatures) && (this.multipleFeatures.length === 1))) {
+                this._hidePanel(this.popupFormContainer);
+                this._showPanel(this.popupInfoParentContainer);
+                //display popup content for recently selected feature
+                if (this.multipleFeatures.length > 1) {
+                    var selectedFeature = this.multipleFeatures[this.multipleFeatures.length - 1];
+                    this.onMultipleFeatureEditCancel(selectedFeature);
+                }
+                //Scroll to top position when clicked cancel need ID to use scrollTop
+                dom.byId("tabContent").scrollTop = 0;
+                this.popupEditModeEnabled(false);
             }
-            //Scroll to top position when clicked cancel need ID to use scrollTop
-            dom.byId("tabContent").scrollTop = 0;
-            this.popupEditModeEnabled(false);
         },
 
         /**
@@ -375,7 +384,7 @@ define([
         * @memberOf widgets/details-panel/popup
         */
         _checkForHyperlinks: function (infos) {
-            var attributes, tiffObject, name;
+            var attributes, name;
             attributes = [];
             attributes = this.multipleFeatures[0].attributes;
             for (name in attributes) {
@@ -393,7 +402,7 @@ define([
         * @memberOf widgets/details-panel/popup
         */
         _checkTiffFormatImagesInPopupMedia: function (infos) {
-            var tiffImageObject, mediaInfos;
+            var mediaInfos;
             if (this.selectedOperationalLayer.infoTemplate && this.selectedOperationalLayer.infoTemplate.info && this.selectedOperationalLayer.infoTemplate.info.mediaInfos && this.selectedOperationalLayer.infoTemplate.info.mediaInfos.length > 0) {
                 mediaInfos = this.selectedOperationalLayer.infoTemplate.info.mediaInfos;
                 // loop all the media info array for tiff image

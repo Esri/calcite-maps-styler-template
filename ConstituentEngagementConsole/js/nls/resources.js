@@ -98,7 +98,12 @@ define({
             placeHolderText: "", // Shown as a placeholder in comments textbox
             noCommentsAvailableText: "No records available", // Shown when no comments are available for the selected issue
             remainingTextCount: "${0} character(s) remain", // Shown below the comments textbox indicating the number of characters that can be added
-            showNoText: "No" // Shown when comments character limit is exceeded
+            showNoText: "No", // Shown when comments character limit is exceeded
+            selectAttachments: "Attachments", // Appears above 'Select file' button indicating option to attach files while adding comments
+            selectFileText: "Browse", // Command button to open a dialog box to select file(s) to be attached
+            attachmentSelectedMsg: "attachment(s) selected", // Shown besides the select file button indicating the number of files attached
+            attachmentHeaderText: "Attachments", //attachment header Text
+            addRecordText: "Add Record" // shown to add record in comments tab under details panel
         },
         main: {
             noGroup: "No group configured" // Appears when no group is configured
@@ -110,17 +115,18 @@ define({
         },
         manualRefresh: {
             manualRefreshIconTooltip: "Refresh", // Displayed on hover of manual refresh icon
-            confirmManualRefeshText: "All selections and unsaved changes will be discarded" // Appears when user wants to do manual refresh
+            confirmManualRefreshText: "All selections and unsaved changes will be discarded" // Appears when user wants to do manual refresh
         },
         help: {
             helpIconTooltip: "Help" // Displayed on hover of manual refresh icon
         },
         filter: {
             noFeatureFoundText: "No feature found for this value.", // Displayed when no feature is found after applying filter
-            distinctQueryFalied: "No distinct values found for the field.", // Displayed when query fails while fetching distinct values in filter unique value section
+            distinctQueryFailed: "No distinct values found for the field.", // Displayed when query fails while fetching distinct values in filter unique value section
             andText: "and", // Displayed in filter UI when "is between" case is applied to its field
-            filterInEditModeAlert: "Filters unavailable while editing", // Displayed when user tries to applies filter in edit mode
-            dropdownSelectOption: "Select" // Displayed as a first option in a filter dropdown
+            filterInEditModeAlert: "Filters unavailable while editing.", // Displayed when user tries to applies filter in edit mode
+            dropdownSelectOption: "Select", // Displayed as a first option in a filter dropdown
+            filterInShowSelectedEditModeAlert: "Filters unavailable in 'Show Selected' mode." // Displayed when user tries to applies filter in 'Show Selected' mode
         },
         detailsPanel: {
             editContentText: "Edit record" // Displayed on hover of edit toggle button
@@ -128,6 +134,11 @@ define({
         signOutPage: {
             signOutMessage: "You've been successfully signed out", // Appears when user is successfully signed-out from application
             reSignInMessage: "Click here to sign in" // Appears when user is signed-out from application and wants to sign-in again
+        },
+        selectionOptions: {
+            selectionOptionsIconTooltip: "Selection Options", // Displayed on hover of selection options icon
+            showAllOptionText: "Show All", // Displayed as a option in list of selection options
+            showSelectedOptionText: "Show Selected" // Displayed as a option in list of selection options
         }
     }),
     "ar": 1,

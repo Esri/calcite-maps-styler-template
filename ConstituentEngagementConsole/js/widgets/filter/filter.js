@@ -132,8 +132,12 @@ define([
                     maxHeight = screenHeight - 380;
                     domStyle.set(this.filterAttributesContainer, "max-height", maxHeight + "px");
                     filterDisableContainer = domConstruct.create("div", { "class": "esriCTDisableFilterContainer esriCTHidden" }, this.filterAttributesContainer);
-                    on(filterDisableContainer, "click", lang.hitch(this, function () {
-                        this.appUtils.showMessage(this.appConfig.i18n.filter.filterInEditModeAlert);
+                    on(filterDisableContainer, "click", lang.hitch(this, function (evt) {
+                        if (domClass.contains(evt.currentTarget, "esriCTShowSelectedFilterMode")) {
+                            this.appUtils.showMessage(this.appConfig.i18n.filter.filterInShowSelectedEditModeAlert);
+                        } else {
+                            this.appUtils.showMessage(this.appConfig.i18n.filter.filterInEditModeAlert);
+                        }
                     }));
                 }
                 // Calling a function to append filter options in the container
@@ -587,7 +591,7 @@ define([
                 this._populateDropDown(results.features, radioParamObj);
             }), lang.hitch(this, function () {
                 // if any error occur while querying the current field
-                this.appUtils.showMessage(this.appConfig.i18n.filter.distinctQueryFalied);
+                this.appUtils.showMessage(this.appConfig.i18n.filter.distinctQueryFailed);
                 deferred.resolve();
                 this.appUtils.hideLoadingIndicator();
             }));
@@ -1721,13 +1725,19 @@ define([
         * @memberOf widgets/filter/filter
         */
         _handleFilterComponentVisibility: function (filterContainer, featureLength, isEditMode) {
-            if (featureLength > 1 || isEditMode) {
+            if (featureLength > 1 || isEditMode || this.isShowSelectedClicked) {
                 if (query(".esriCTDisableFilterContainer", filterContainer)[0]) {
                     domClass.remove(query(".esriCTDisableFilterContainer", filterContainer)[0], "esriCTHidden");
+                    if (this.isShowSelectedClicked) {
+                        domClass.add(query(".esriCTDisableFilterContainer", filterContainer)[0], "esriCTShowSelectedFilterMode");
+                    } else {
+                        domClass.remove(query(".esriCTDisableFilterContainer", filterContainer)[0], "esriCTShowSelectedFilterMode");
+                    }
                 }
             } else {
                 if (query(".esriCTDisableFilterContainer", filterContainer)[0]) {
                     domClass.add(query(".esriCTDisableFilterContainer", filterContainer)[0], "esriCTHidden");
+                    domClass.remove(query(".esriCTDisableFilterContainer", filterContainer)[0], "esriCTShowSelectedFilterMode");
                 }
             }
         }

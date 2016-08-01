@@ -90,6 +90,8 @@ define([
         _existingLayerIndex: null, // to store index of layer
         _reorderLayers: false, // flag to reorder layers
         _isGraphicLayerClicked: false, // to track whether graphic layer is clicked or not
+        _isShowSelectedClicked: false,
+        _disableTimeSliderClickHandle: null, // to store handle of disable time slider
 
         /**
         * This method is designed to handle processing after any DOM fragments have been actually added to the document.
@@ -320,6 +322,8 @@ define([
             });
             this._applicationHeader.confirmedManualRefresh = lang.hitch(this, function () {
                 this._isManualRefreshedClicked = true;
+                this._dataViewerWidget.isShowSelectedClicked = false;
+                this._dataViewerWidget.isShowAllClicked = false;
                 this._dataViewerWidget.storeDataForManualRefresh();
             });
             this._applicationHeader.reload = lang.hitch(this, function (logInDetails) {
@@ -333,6 +337,19 @@ define([
             });
             this._applicationHeader.onSearchApplied = lang.hitch(this, function (lastSearchedString) {
                 this.appConfig._filterObject.lastSearchedString = lastSearchedString;
+            });
+            this._applicationHeader.showAllClicked = lang.hitch(this, function () {
+                this._showAllRecords();
+            });
+            this._applicationHeader.showSelectedClicked = lang.hitch(this, function () {
+                this._dataViewerWidget.isShowSelectedClicked = true;
+                this._dataViewerWidget.isShowAllClicked = false;
+                this._detailsPanelWidget.showSelectedClicked();
+                if (this._timeSliderWidget) {
+                    this._timeSliderWidget.handleTimeSliderVisibility(2);
+                }
+                this._applicationHeader.disableSearchIcon();
+                this._dataViewerWidget.createDataViewerUI(false);
             });
         },
 
@@ -448,6 +465,7 @@ define([
                 setTimeout(lang.hitch(this, function () {
                     ApplicationUtils.showLoadingIndicator();
                     ApplicationUtils.hideOverlayContainer();
+                    this._applicationHeader.disableSelectionOptionsIcon();
                     this._reorderLayers = true;
                     $(".esriCTSignOutOption").addClass("esriCTHidden");
                     this._resetUpperAndLowerContainer();
@@ -503,6 +521,8 @@ define([
             });
             // to disable header icons
             this._webMapListWidget.displayInitialLoad = lang.hitch(this, function () {
+                this._setFeatureLayerCountLabel();
+                dom.byId("operationalLayerName").innerHTML = "";
                 this._disableHeaderIcons();
             });
         },
@@ -543,16 +563,18 @@ define([
                 if ((!domClass.contains("webmapListToggleButton", "esriCTWebMapPanelToggleButtonOpenDisabled")) && (!domClass.contains("webmapListToggleButton", "esriCTWebMapPanelToggleButtonCloseDisabled"))) {
                     this._webMapListWidget.hideWebMapList();
                 }
-                // to track that feature is clicked of feature layer
-                if (this._isGraphicLayerClicked) {
-                    this._dataViewerWidget.onFeatureClick(evt, true);
-                    this._isGraphicLayerClicked = false;
-                } else {
-                    this._dataViewerWidget.onFeatureClick(evt, false);
+                if ((evt.graphic) &&
+                    (evt.graphic._layer) &&
+                    ((evt.graphic._layer.id === this._refinedOperationalLayer.id) || (evt.graphic._layer.id === "selectedRowGraphicsLayer"))) {
+                    // to track that feature is clicked of feature layer
+                    if (this._isGraphicLayerClicked) {
+                        this._dataViewerWidget.onFeatureClick(evt, true);
+                        this._isGraphicLayerClicked = false;
+                    } else {
+                        this._dataViewerWidget.onFeatureClick(evt, false);
+                    }
                 }
-
             }));
-
             this._mapZoomInHandle = on(query(".esriSimpleSliderIncrementButton")[0], "click", lang.hitch(this, function () {
                 $(".esriCTFilterParentContainer").css("display", "none");
                 if ((!domClass.contains("webmapListToggleButton", "esriCTWebMapPanelToggleButtonOpenDisabled")) && (!domClass.contains("webmapListToggleButton", "esriCTWebMapPanelToggleButtonCloseDisabled"))) {
@@ -865,12 +887,45 @@ define([
             this._dataViewerWidget.updateManualRefreshData = lang.hitch(this, function (data) {
                 this._manualRefreshDataObj = data;
             });
-
             // to store data needed for filter refresh like scroll position, field order etc...
             this._dataViewerWidget.updateFilterRefreshData = lang.hitch(this, function (data) {
                 this._isFilterRefreshClicked = true;
                 this._filterRefreshDataObj = data;
             });
+            // to enable selection option icon
+            this._dataViewerWidget.enableSelectionOptionsIcon = lang.hitch(this, function () {
+                this._applicationHeader.enableSelectionOptionsIcon();
+            });
+            // to disable selection option icon
+            this._dataViewerWidget.disableSelectionOptionsIcon = lang.hitch(this, function () {
+                this._applicationHeader.disableSelectionOptionsIcon();
+            });
+            // to show all the records
+            this._dataViewerWidget.showAllClicked = lang.hitch(this, function () {
+                this._showAllRecords();
+            });
+            // to show all the records
+            this._dataViewerWidget.showSelectedClicked = lang.hitch(this, function () {
+                if (this._timeSliderWidget) {
+                    this._timeSliderWidget.handleTimeSliderVisibility(2);
+                }
+                this._detailsPanelWidget.showSelectedClicked();
+            });
+        },
+
+        /**
+        * This function is used to show all the records
+        * @memberOf widgets/main/main
+        */
+        _showAllRecords: function () {
+            this._dataViewerWidget.isShowSelectedClicked = false;
+            this._dataViewerWidget.isShowAllClicked = true;
+            if (this._timeSliderWidget) {
+                this._timeSliderWidget.handleTimeSliderVisibility(0);
+            }
+            this._applicationHeader.enableSearchIcon();
+            this._detailsPanelWidget.showAllClicked();
+            this._dataViewerWidget.createDataViewerUI(false);
         },
 
         /**
@@ -878,11 +933,18 @@ define([
         * @memberOf widgets/main/main
         */
         _destroyDataViewerWidget: function () {
+            var dataViewerGraphicsLayer;
+            if (this.map) {
+                dataViewerGraphicsLayer = this.map.getLayer("selectedRowGraphicsLayer");
+            }
             if (dom.byId("filterContainerWrapper")) {
                 domConstruct.empty(dom.byId("filterContainerWrapper"));
             }
             if (dom.byId("dataViewerWrapperContainer")) {
                 domConstruct.empty(dom.byId("dataViewerWrapperContainer"));
+            }
+            if (dataViewerGraphicsLayer) {
+                this.map.removeLayer(dataViewerGraphicsLayer);
             }
             if (this._dataViewerWidget) {
                 this._dataViewerWidget.destroy();
@@ -968,39 +1030,44 @@ define([
         _createFeatureLayerHandle: function () {
             if (this._refinedOperationalLayer) {
                 this._dataViewerFeatureLayerUpdateEndHandle = on(this._refinedOperationalLayer, "update-end", lang.hitch(this, function () {
-                    if (this._reorderLayers) {
-                        this._reorderLayers = false;
-                        this._reorderAllLayers();
-                    }
-                    this._removeLayerFromLabelLayer(this._refinedOperationalLayer.id);
-                    this._addFeatureLayerInLabelLayer();
-                    this._getLayerLayerOnTop();
-                    this._refinedOperationalLayer.clearSelection();
-                    this._toggleNoFeatureFoundDiv(true);
-                    //Enable time slider if it was disable
-                    if (this._timeSliderWidget) {
-                        this._timeSliderWidget._handleTimeSliderVisibility(0);
-                    }
-                    //Enable search if it was disable
-                    if (this._applicationHeader) {
-                        this._applicationHeader._handleSearchIconVisibility(0);
-                    }
-                    //Check if time slider widget exist, if yes then query and fetch features within current time extent
-                    if (this._timeSliderWidget) {
-                        var timeExtent, timeQuery;
-                        timeExtent = this._timeSliderWidget._createTimeExtent(this._timeSliderWidget.currentTimeInfo);
-                        timeQuery = new EsriQuery();
-                        timeQuery.timeExtent = timeExtent;
-                        timeQuery.where = "1=1";
-                        this._refinedOperationalLayer.queryFeatures(timeQuery, lang.hitch(this, function (featureSet) {
-                            //Change graphics of layer with latest fetched features
-                            this._refinedOperationalLayer.graphics = featureSet.features || [];
+                    if (this._isShowSelectedClicked) {
+                        this._isShowSelectedClicked = false;
+                        this._dataViewerWidget.createDataViewerUI(false);
+                    } else {
+                        if (this._reorderLayers) {
+                            this._reorderLayers = false;
+                            this._reorderAllLayers();
+                        }
+                        this._removeLayerFromLabelLayer(this._refinedOperationalLayer.id);
+                        this._addFeatureLayerInLabelLayer();
+                        this._getLayerLayerOnTop();
+                        this._refinedOperationalLayer.clearSelection();
+                        this._toggleNoFeatureFoundDiv(true);
+                        //Enable time slider if it was disable
+                        if (this._timeSliderWidget) {
+                            this._timeSliderWidget.handleTimeSliderVisibility(0);
+                        }
+                        //Enable search if it was disable
+                        if (this._applicationHeader) {
+                            this._applicationHeader._handleSearchIconVisibility(0);
+                        }
+                        //Check if time slider widget exist, if yes then query and fetch features within current time extent
+                        if (this._timeSliderWidget) {
+                            var timeExtent, timeQuery;
+                            timeExtent = this._timeSliderWidget._createTimeExtent(this._timeSliderWidget.currentTimeInfo);
+                            timeQuery = new EsriQuery();
+                            timeQuery.timeExtent = timeExtent;
+                            timeQuery.where = "1=1";
+                            this._refinedOperationalLayer.queryFeatures(timeQuery, lang.hitch(this, function (featureSet) {
+                                //Change graphics of layer with latest fetched features
+                                this._refinedOperationalLayer.graphics = featureSet.features || [];
+                                this._setFeatureLayerCountLabel(this._refinedOperationalLayer.graphics);
+                                this._createDataViewer();
+                            }));
+                        } else {
                             this._setFeatureLayerCountLabel(this._refinedOperationalLayer.graphics);
                             this._createDataViewer();
-                        }));
-                    } else {
-                        this._setFeatureLayerCountLabel(this._refinedOperationalLayer.graphics);
-                        this._createDataViewer();
+                        }
                     }
                 }));
             }
@@ -1031,8 +1098,11 @@ define([
             });
 
             this._timeSliderWidget.startup();
-            //Show alert message when user try to interact with the time slider in edit mode
-            on(dom.byId("disableTimeSliderWrapperContainer"), "click", lang.hitch(this, function () {
+            if (this._disableTimeSliderClickHandle) {
+                this._disableTimeSliderClickHandle.remove();
+            }
+            // Show alert message when user try to interact with the time slider in edit mode
+            this._disableTimeSliderClickHandle = on(dom.byId("disableTimeSliderWrapperContainer"), "click", lang.hitch(this, function () {
                 ApplicationUtils.showMessage(this.appConfig.i18n.timeSlider.timeSliderInEditModeAlert);
             }));
 
@@ -1084,12 +1154,16 @@ define([
                 "appUtils": ApplicationUtils,
                 "itemInfo": this._itemInfo,
                 "popupInfo": this._layerSelectionDetails.operationalLayerDetails.popupInfo,
-                "multipleFeatures": showDetailsPanelDataObj.multipleFeature
+                "multipleFeatures": showDetailsPanelDataObj.multipleFeature,
+                "isShowSelectedClicked": this._dataViewerWidget.isShowSelectedClicked,
+                "isShowAllClicked": this._dataViewerWidget.isShowAllClicked
             };
             this._detailsPanelWidget = new DetailsPanel(detailsPanelParameters, domConstruct.create("div", {}, dom.byId("detailsPanelWrapperContainer")));
             this._attachDetailsPanelEventListener();
             this._detailsPanelWidget.startup();
         },
+
+
 
         /**
         * This function is used to attach event listener to details panel widget
@@ -1102,9 +1176,10 @@ define([
                 }
             });
 
-            this._detailsPanelWidget.onFeatureUpdated = lang.hitch(this, function (updatedfeature) {
+            this._detailsPanelWidget.onFeatureUpdated = lang.hitch(this, function (updatedfeature, isShowSelectedClicked) {
                 this.updatedFeature = updatedfeature;
-                //refresh selected layer to get updated features
+                // Refresh selected layer to get updated features
+                this._isShowSelectedClicked = isShowSelectedClicked;
                 this._refinedOperationalLayer.refresh();
             });
 
@@ -1126,11 +1201,13 @@ define([
                         this._dataViewerWidget.isEditMode = false;
                     }
                 }
-                if (this._timeSliderWidget) {
-                    this._timeSliderWidget._handleTimeSliderVisibility(featureLength);
+                if (((this._timeSliderWidget) && (!this._dataViewerWidget)) ||
+                    ((this._timeSliderWidget) && (this._dataViewerWidget) && (!this._dataViewerWidget.isShowSelectedClicked))) {
+                    this._timeSliderWidget.handleTimeSliderVisibility(featureLength);
                 }
-                //If search widget exist, handle its visibility
-                if (this._applicationHeader) {
+                // If search widget exist, handle its visibility
+                if (((this._applicationHeader) && (!this._dataViewerWidget)) ||
+                    ((this._applicationHeader) && (this._dataViewerWidget) && (!this._dataViewerWidget.isShowSelectedClicked))) {
                     this._applicationHeader._handleSearchIconVisibility(featureLength);
                 }
             });
@@ -1178,7 +1255,9 @@ define([
                 domStyle.set("lowerContainer", "height", lowerContainerHeight + "px");
                 // add for resize image container LB
                 if (query(".tab-content")[0]) {
-                    domStyle.set("carouselInnerContainer", "height", (query(".tab-content")[0].clientHeight - 18) + "px");
+                    if (dom.byId("carouselInnerContainer")) {
+                        domStyle.set("carouselInnerContainer", "height", (query(".tab-content")[0].clientHeight - 18) + "px");
+                    }
                 }
                 this._resizeMap();
                 if (query(".esriCTDataViewerMainContainer") && (query(".esriCTDataViewerMainContainer").length > 0) && query(".esriCTDataViewerMainContainer")[0].clientHeight) {
@@ -1209,6 +1288,9 @@ define([
         */
         _handleEmptyDetailsPanel: function () {
             var noContentWrapperContainer;
+            if (dojo.query(".esriCTNoContentDetailsPanelWrapperContainer")[0]) {
+                domConstruct.destroy(dojo.query(".esriCTNoContentDetailsPanelWrapperContainer")[0]);
+            }
             noContentWrapperContainer = domConstruct.create("div", { "class": "esriCTNoContentDetailsPanelWrapperContainer" }, dom.byId("detailsPanelWrapperContainer"));
             domConstruct.create("div", { "class": "esriCTNoContentDetailsPanelContainer", "innerHTML": this.appConfig.selectFeatureMessage }, noContentWrapperContainer);
         },

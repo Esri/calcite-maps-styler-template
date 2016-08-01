@@ -111,6 +111,6 @@ define({
     "commentsTabText": "Comments",
     // to show/hide help icon
     "showHelpIcon": false,
-    // id of basemap to use if organization's basemap group is not available
-    "fallbackBasemapId": "6e03e8c26aad4b9c92a87c1063ddb0e3"
+    // to show as a label for attachment section in comments form where attachments can be added
+    "commentFormAttachmentSectionLabel": "Attachments"
 });

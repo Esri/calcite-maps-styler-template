@@ -314,9 +314,9 @@ define([
             if (enableSearch) {
                 // Track existing definition expression
                 this._getExistingDefinitionExpression();
-                this._enableSearchIcon();
+                this.enableSearchIcon();
             } else {
-                this._disableSearchIcon();
+                this.disableSearchIcon();
             }
             return enableSearch;
         },
@@ -325,7 +325,7 @@ define([
         * This function is used to enable search icon
         * @memberOf widgets/search/search
         */
-        _enableSearchIcon: function () {
+        enableSearchIcon: function () {
             domClass.replace(this.searchButton, "esriCTSearchIconContainer", "esriCTSearchIconContainerDisabled");
             domClass.replace(this.searchButton, "esriCTPointerCursor", "esriCTDefaultCursor");
         },
@@ -334,10 +334,10 @@ define([
         * This function is used to disable search icon
         * @memberOf widgets/search/search
         */
-        _disableSearchIcon: function () {
+        disableSearchIcon: function () {
             domClass.replace(this.searchButton, "esriCTSearchIconContainerDisabled", "esriCTSearchIconContainer");
             domClass.replace(this.searchButton, "esriCTDefaultCursor", "esriCTPointerCursor");
-            //also hide search options
+            // also hide search options
             domClass.add(this.searchOptions, "esriCTHidden");
         },
 

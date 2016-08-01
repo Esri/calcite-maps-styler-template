@@ -191,7 +191,7 @@ define([
         * @param{string} selected feature length
         * @memberOf widgets/time-slider/time-slider
         */
-        _handleTimeSliderVisibility: function (featureLength) {
+        handleTimeSliderVisibility: function (featureLength) {
             if (featureLength > 1) {
                 domClass.remove(dom.byId("disableTimeSliderWrapperContainer"), "esriCTHidden");
             } else {
