@@ -693,6 +693,7 @@ label.css-label
 .itemDetail .btnInverse {
     color: white;
     background-color: #007ac2;
+    cursor:default;
 }
 
 .itemDetail .btnInverse ::selection {

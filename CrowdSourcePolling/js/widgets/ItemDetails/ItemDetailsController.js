@@ -72,6 +72,8 @@ define([
             };
             this.votesField = null;
             this.commentFields = null;
+            this.votedItemList = [];
+            this._likeButtonClickHandler = null;
         },
 
         /**
@@ -141,16 +143,16 @@ define([
             SvgHelper.createSVGItem(this.appConfig.likeIcon, this.itemVotesIcon, 12, 12);
 
             domAttr.set(this.likeIcon, "src", "images/likeBlue.png");
-            this.likeButton.title = this.i18n.likeButtonTooltip;
+            domAttr.set(this.likeButton, "title", this.i18n.likeButtonTooltip);
 
             domAttr.set(this.commentIcon, "src", "images/commentBlue.png");
-            this.commentButton.title = this.i18n.commentButtonTooltip;
+            domAttr.set(this.commentButton, "title", this.i18n.commentButtonTooltip);
 
             domAttr.set(this.mapIcon, "src", "images/mapmarkerBlue.png");
-            this.mapButton.title = this.i18n.gotoMapViewTooltip;
+            domAttr.set(this.mapButton, "title", this.i18n.gotoMapViewTooltip);
 
             domAttr.set(this.galleryIcon, "src", "images/galleryBlue.png");
-            this.galleryButton.title = this.i18n.galleryButtonTooltip;
+            domAttr.set(this.galleryButton, "title", this.i18n.galleryButtonTooltip);
         },
 
         /**
@@ -160,8 +162,9 @@ define([
          * @param {boolean} toInvert Whether button should be shown in inverted state (true) or not
          * @param {object} button The button to modify
          * @param {object} icon The icon img in the button
+         * @param {object} tooltip Whether like button's tooltip should be changed or not
          */
-        invertButton: function (pngTag, toInvert, button, icon) {
+        invertButton: function (pngTag, toInvert, button, icon, tooltip) {
             if (toInvert) {
                 domClass.remove(button, "btnNormal");
                 domClass.add(button, "btnInverse");
@@ -170,6 +173,9 @@ define([
                 domClass.remove(button, "btnInverse");
                 domClass.add(button, "btnNormal");
                 domAttr.set(icon, "src", "images/" + pngTag + "Blue.png");
+            }
+            if (tooltip) {
+               domAttr.set(button, "title", tooltip);
             }
         },
 
@@ -190,10 +196,6 @@ define([
                 on(this.backIcon, 'click', function () {
                     topic.publish('detailsCancel');
                 }),
-                on(this.likeButton, 'click', lang.hitch(this, function () {
-                    topic.publish('addLike', self.item);
-                    this.invertButton("like", true, this.likeButton, this.likeIcon);
-                })),
                 on(this.commentButton, 'click', function () {
                     topic.publish('getComment', self.item);
                 }),
@@ -247,6 +249,8 @@ define([
         /**
          * Clears the display, sets the current item, and creates its display.
          * @param {object} item Item to become the current display item
+         * Checks if the item is already voted; if yes like button's color and tooltip is changed
+         * else a vote is registered and button's color, tooltip is changed. Then the event handler is removed.
          */
         setItem: function (item) {
             this.item = item;
@@ -256,7 +260,33 @@ define([
             this.itemVotes = this.getItemVotes(item);
             this.clearItemDisplay();
             this.buildItemDisplay();
-            this.invertButton("like", false, this.likeButton, this.likeIcon);
+
+            var objectId = item.attributes[item._layer.objectIdField];
+
+            if (this._likeButtonClickHandler) {
+                this._likeButtonClickHandler.remove();
+                this._likeButtonClickHandler = null;
+            }
+
+            if (array.indexOf(this.votedItemList, objectId) > -1) {
+                this.invertButton("like", true, this.likeButton, this.likeIcon, this.i18n.likeButtonInverseTooltip );
+
+            } else {
+                this._likeButtonClickHandler = on(this.likeButton, 'click', lang.hitch(this, function () {
+                    var objectId = this.item.attributes[this.item._layer.objectIdField];
+
+                    if (array.indexOf(this.votedItemList, objectId) === -1) {
+                        topic.publish('addLike', this.item);
+                        this.votedItemList.push(objectId);
+                        this.invertButton("like", true, this.likeButton, this.likeIcon, this.i18n.likeButtonInverseTooltip);
+                        this._likeButtonClickHandler.remove();
+                        this._likeButtonClickHandler = null;
+                    }
+                }));
+
+                this.invertButton("like", false, this.likeButton, this.likeIcon, this.i18n.likeButtonTooltip);
+            }
+
         },
 
         /**
@@ -450,7 +480,7 @@ define([
             if (!has("ff")) {
                 nodeToMakeVisible.scrollIntoView();
             } else {
-                setTimeout(function (){
+                setTimeout(function () {
                     nodeToMakeVisible.scrollIntoView();
                 }, 500);
             }

@@ -1,8 +1,0 @@
-git repository crowdsource-polling, branch 
-develop
-commit cb9d6304faae1584dbeaf71dfc2b7267a3c57fe2
-Merge: 618eab6 28ae036
-Author: MikeTschudi <mtschudi@esri.com>
-Date:   Wed Jul 20 15:23:42 2016 -0700
-
-    Merge branch 'RTL' into develop
