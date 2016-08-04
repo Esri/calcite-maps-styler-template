@@ -426,7 +426,7 @@ define([
         }
         // If intermediate changes is true
         if (this.config.intermediatechanges) {
-          timeSlider._slider.set("intermediateChanges", true);
+          timeSlider.set("intermediateChanges", true);
         }
 
         on(dom.byId("playSlider"), "click", lang.hitch(this, function() {
