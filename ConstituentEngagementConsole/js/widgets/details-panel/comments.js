@@ -1,4 +1,4 @@
-﻿/*global define,$,dojoConfig */
+﻿/*global define,$,dojoConfig,window */
 /*jslint sloppy:true */
 /*
 | Copyright 2014 Esri
@@ -170,12 +170,10 @@ define([
                 commentsContainerDiv = domConstruct.create("div", {}, parentDiv);
                 commentsParentDiv = domConstruct.create("div", { "class": "esriCTcommentsParentDiv" }, commentsContainerDiv);
                 function sortComments(a, b) {
-                    if (a.attributes[pThis._commentsTable.objectIdField] >
-                        b.attributes[pThis._commentsTable.objectIdField]) {
+                    if (a.attributes[pThis._commentsTable.objectIdField] > b.attributes[pThis._commentsTable.objectIdField]) {
                         return -1; // order a before b
                     }
-                    if (a.attributes[pThis._commentsTable.objectIdField] <
-                        b.attributes[pThis._commentsTable.objectIdField]) {
+                    if (a.attributes[pThis._commentsTable.objectIdField] < b.attributes[pThis._commentsTable.objectIdField]) {
                         return 1; // order b before a
                     }
                     return 0; // a & b have same date, so relative order doesn't matter
@@ -196,7 +194,7 @@ define([
                     }
                     this._attachEventToAddCommentButton();
                     this.showCommentsTab();
-                    domAttr.set(dom.byId("commentsTotalCount"), "innerHTML", "(" + 0 + ")");
+                    domAttr.set(dom.byId("commentsTotalCount"), "innerHTML", "(" + 0 + ")"); //ignore jslint
                     this.appUtils.hideLoadingIndicator();
                 }
             }), lang.hitch(this, function () {
@@ -255,8 +253,8 @@ define([
         * @memberOf widgets/details-panel/comments
         */
         _displayCommentsAndAttachments: function () {
-            for (var i = 0; i < this._entireCommentsArr.length; i++) {
-                var commentContentPaneContainer, commentContentPane, commentsParentDiv;
+            var i, commentContentPaneContainer, commentContentPane, commentsParentDiv;
+            for (i = 0; i < this._entireCommentsArr.length; i++) {
                 commentsParentDiv = query(".esriCTcommentsParentDiv")[0];
                 commentContentPaneContainer = domConstruct.create("div", { "class": "esriCTCommentsPopup" }, commentsParentDiv);
                 commentContentPane = new ContentPane({}, commentContentPaneContainer);
@@ -380,47 +378,47 @@ define([
         _fetchDocumentContentType: function (attachmentData, fileTypeContainer) {
             var attachmentType = attachmentData.contentType.split("/")[1], typeText;
             switch (attachmentType) {
-                case "pdf":
-                    typeText = ".PDF";
-                    break;
-                case "plain":
-                    typeText = ".TXT";
-                    break;
-                case "vnd.ms-powerpoint":
-                    typeText = ".PPT";
-                    break;
-                case "vnd.openxmlformats-officedocument.spreadsheetml.sheet":
-                    typeText = ".XLSX";
-                    break;
-                case "vnd.openxmlformats-officedocument.wordprocessingml.document":
-                    typeText = ".DOCX";
-                    break;
-                case "octet-stream":
-                    typeText = ".ZIP";
-                    break;
-                case "tiff":
-                    typeText = ".TIFF";
-                    break;
-                case "tif":
-                    typeText = ".TIF";
-                    break;
-                case "bmp":
-                    typeText = ".BMP";
-                    break;
-                case "jpeg":
-                    typeText = ".JPEG";
-                    break;
-                case "jpg":
-                    typeText = ".JPG";
-                    break;
-                case "gif":
-                    typeText = ".GIF";
-                    break;
-                case "png":
-                    typeText = ".PNG";
-                    break;
-                default:
-                    typeText = ".DOCX";
+            case "pdf":
+                typeText = ".PDF";
+                break;
+            case "plain":
+                typeText = ".TXT";
+                break;
+            case "vnd.ms-powerpoint":
+                typeText = ".PPT";
+                break;
+            case "vnd.openxmlformats-officedocument.spreadsheetml.sheet":
+                typeText = ".XLSX";
+                break;
+            case "vnd.openxmlformats-officedocument.wordprocessingml.document":
+                typeText = ".DOCX";
+                break;
+            case "octet-stream":
+                typeText = ".ZIP";
+                break;
+            case "tiff":
+                typeText = ".TIFF";
+                break;
+            case "tif":
+                typeText = ".TIF";
+                break;
+            case "bmp":
+                typeText = ".BMP";
+                break;
+            case "jpeg":
+                typeText = ".JPEG";
+                break;
+            case "jpg":
+                typeText = ".JPG";
+                break;
+            case "gif":
+                typeText = ".GIF";
+                break;
+            case "png":
+                typeText = ".PNG";
+                break;
+            default:
+                typeText = ".DOCX";
             }
             domAttr.set(fileTypeContainer, "innerHTML", typeText);
         },
@@ -435,7 +433,8 @@ define([
             var attachmentNameWrapper, attachmentName;
             attachmentNameWrapper = domConstruct.create("div", { "class": "esriCTNonImageName" }, container);
             attachmentName = domConstruct.create("div", {
-                "class": "esriCTNonImageNameMiddle", "innerHTML": attachmentData.name
+                "class": "esriCTNonImageNameMiddle",
+                "innerHTML": attachmentData.name
             }, attachmentNameWrapper);
         },
 

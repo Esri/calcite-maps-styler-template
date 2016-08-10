@@ -33,6 +33,9 @@ define([
     "dojo/mouse",
     "dojo/touch",
     "dojox/gesture/tap",
+    "dojo/_base/array",
+    "dojo/has",
+    "dojo/_base/sniff",
     "dojo/domReady!"
 ], function (
     declare,
@@ -51,11 +54,12 @@ define([
     lang,
     mouse,
     touch,
-    tap
+    tap,
+    array,
+    has
 ) {
     return declare([_WidgetBase, _TemplatedMixin, _WidgetsInTemplateMixin], {
         templateString: template,
-        _firstLoadedSvg: true,
         _eventCollection: [],
         _infoContent: null,
         _infoWidget: null,
@@ -98,13 +102,38 @@ define([
         _createMediaUI: function () {
             this._totalSlides = 0;
             this._infoContent = this.multipleFeatures[0].getContent();
-            this._chartInfo = this.popupInfo && this.popupInfo.mediaInfos;
+            this._chartInfo = this.popupInfo ? this._getMediaInfos() : [];
             this._checkForHyperlinks();
             this._infoWidget = registry.byId(this._infoContent.id);
             this._showAttachments();
             if (query(".tab-content")[0]) {
                 domStyle.set("carouselInnerContainer", "height", (query(".tab-content")[0].clientHeight - 75) + "px");
             }
+        },
+
+        /**
+        * This function is used to get popups valid media information
+        * @memberOf widgets/details-panel/media
+        */
+        _getMediaInfos: function () {
+            var mediaArray;
+            mediaArray = [];
+            array.forEach(this.popupInfo.mediaInfos, lang.hitch(this, function (mediaInfo) {
+                // if media type is image which consist of a source URL
+                if (mediaInfo.type === "image" && mediaInfo.value.sourceURL !== "") {
+                    mediaArray.push(mediaInfo);
+                }
+                // if media type is a chart which have valid numeric data
+                if (mediaInfo.type !== "image") {
+                    array.some(mediaInfo.value.fields, lang.hitch(this, function (field) {
+                        if (this.multipleFeatures[0].attributes[field] || this.multipleFeatures[0].attributes[field] === 0) {
+                            return mediaArray.push(mediaInfo);
+                        }
+                    }));
+                }
+            }));
+            // return only valid media infos
+            return mediaArray;
         },
 
         /**
@@ -273,7 +302,6 @@ define([
             var chartContainer, popupContentPane, totalSlideCount = slideCount;
             if (this._chartInfo && this._chartInfo.length > 0) {
                 $('<div class="item"><div id="esriCTChartContainer"></div></div>').appendTo('.carousel-inner');
-
                 chartContainer = dom.byId("esriCTChartContainer");
                 popupContentPane = new ContentPane({}, chartContainer);
                 popupContentPane.startup();
@@ -311,7 +339,6 @@ define([
                 this._setWidthOfChartContainer();
                 this._resizeMediaChart(currentIndex, slideCount);
                 if (parseInt(currentIndex, 10) === slideCount - 1 && this._chartIndex !== 0) {
-
                     this._chartIndex--;
                     evt.stopPropagation();
                     this._enableDisableArrow(currentIndex, slideCount);
@@ -327,8 +354,8 @@ define([
                 this._showMediaCaption(currentIndex, slideCount);
                 this._openMediaImages();
                 this._pauseVideo();
+                this._removeAndAddVideo();
             }));
-
             on(this.slideNext, "click", lang.hitch(this, function (evt) {
                 var imageNode, currentIndex;
                 currentIndex = $('#carousel-widget .carousel-inner .item.active').index();
@@ -350,7 +377,29 @@ define([
                 this._showMediaCaption(currentIndex, slideCount);
                 this._openMediaImages();
                 this._pauseVideo();
+                this._removeAndAddVideo();
             }));
+        },
+
+        /**
+        * This function is used to remove & add video
+        * @memberOf widgets/details-panel/media
+        */
+        _removeAndAddVideo: function () {
+            if (has("ie") === 9) { // only IE9
+                setTimeout(lang.hitch(this, function () {
+                    var currentActiveMedia, currentActiveMediaChild, currentActiveMediaChildClone;
+                    currentActiveMedia = $('#carousel-widget .carousel-inner .item.active');
+                    if (currentActiveMedia[0] && currentActiveMedia[0].children[0]) {
+                        currentActiveMediaChild = currentActiveMedia[0].children[0];
+                        if (currentActiveMediaChild.tagName.toLowerCase() === "video") {
+                            currentActiveMediaChildClone = lang.clone(currentActiveMediaChild);
+                            currentActiveMedia[0].removeChild(currentActiveMediaChild);
+                            currentActiveMedia[0].appendChild(currentActiveMediaChildClone);
+                        }
+                    }
+                }), 1000);
+            }
         },
 
         /**
@@ -375,13 +424,9 @@ define([
                     svgElement[i].setAttribute('preserveAspectRatio', 'xMidYMid meet');
                 }
             }
-            if (this._firstLoadedSvg) {
-                this._firstLoadedSvg = false;
-                setTimeout(lang.hitch(this, function () {
-                    this._infoWidget._goToNextMedia();
-                    this._infoWidget._goToPrevMedia();
-                }), 1000);
-            }
+            setTimeout(lang.hitch(this, function () {
+                this.showChartsOnResize();
+            }), 1000);
         },
 
         /**
@@ -539,9 +584,11 @@ define([
         _attachNextPrevClickEventsForVideo: function () {
             on(this.slidePrev, "click", lang.hitch(this, function () {
                 this._pauseVideo();
+                this._removeAndAddVideo();
             }));
             on(this.slideNext, "click", lang.hitch(this, function () {
                 this._pauseVideo();
+                this._removeAndAddVideo();
             }));
         },
 

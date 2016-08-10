@@ -86,9 +86,7 @@
 }
 
 .dj_rtl .esriCTCommentsBadgeContainer {
-    float: right;
-    right: auto;
-    left: 5px;
+    float: none;
 }
 
 .dj_rtl .esriCTDetailsPanelTabContainer .badge {
@@ -106,12 +104,8 @@
 
 .dj_rtl .esriCTAddCommentsIcon {
     float: right;
+    margin: 0 0 0 2px;
 }
-
-.dj_rtl .esriCTCommentsTotalCount {
-    margin: 0 5px 0 0;
-}
-
 
 /* Comments panel ends*/
 

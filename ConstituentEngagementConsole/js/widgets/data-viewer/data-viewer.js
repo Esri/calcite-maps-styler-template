@@ -1048,9 +1048,8 @@ define([
                 this._featureObjectID = parseInt(domAttr.get(evt.currentTarget, "OBJID"), 10);
                 this._selectedRowIndex = evt.currentTarget.rowIndex;
                 // if show selected is not clicked
-                if ((!this.isShowSelectedClicked) ||
-                    // if show selected is clicked & ctrl key is clicked
-                    ((this.isShowSelectedClicked) && (evt.ctrlKey))) {
+                // if show selected is clicked & ctrl key is clicked
+                if ((!this.isShowSelectedClicked) || ((this.isShowSelectedClicked) && (evt.ctrlKey))) {
                     this._highLightFeatureOnRowClick(this._featureObjectID, evt);
                 } else {
                     this.appUtils.hideLoadingIndicator();

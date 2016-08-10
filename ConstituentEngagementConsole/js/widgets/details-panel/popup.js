@@ -31,6 +31,7 @@ define([
     "widgets/details-panel/popup-form",
     "esri/tasks/query",
     "dojo/_base/array",
+    "esri/dijit/PopupTemplate",
     "dojo/domReady!"
 ], function (
     declare,
@@ -47,7 +48,8 @@ define([
     ContentPane,
     PopupForm,
     Query,
-    array
+    array,
+    PopupTemplate
 ) {
     return declare([_WidgetBase, _TemplatedMixin, _WidgetsInTemplateMixin], {
         templateString: template,
@@ -102,6 +104,9 @@ define([
                 this.selectedOperationalLayer.queryFeatures(queryFeature, lang.hitch(this, function (result) {
                     if (this.multipleFeatures[0]) {
                         var popupContentPane = new ContentPane({}, this.popupContainer);
+                        if (!result.features[0].infoTemplate) {
+                            result.features[0].setInfoTemplate(new PopupTemplate(this.popupInfo));
+                        }
                         popupContentPane.startup();
                         popupContentPane.set("content", result.features[0].getContent());
                         this._checkAttachments();
@@ -148,8 +153,7 @@ define([
             this.popupFormInstance.onCancelButtonClick = lang.hitch(this, this._onFeatureUpdateCancel);
             // attach handler on save button click
             this.popupFormInstance.onPopupFormSubmitted = lang.hitch(this, function (feature) {
-                if ((!this.isShowSelectedClicked) ||
-                    ((this.isShowSelectedClicked) && (this.multipleFeatures) && (this.multipleFeatures.length === 1))) {
+                if ((!this.isShowSelectedClicked) || ((this.isShowSelectedClicked) && (this.multipleFeatures) && (this.multipleFeatures.length === 1))) {
                     // Close the comment form after submitting new comment
                     this._hidePanel(this.popupFormContainer);
                     this._showPanel(this.popupInfoParentContainer);
@@ -167,8 +171,7 @@ define([
         _onFeatureUpdateCancel: function () {
             // if not show selected
             // if show selected & only one features is selected
-            if ((!this.isShowSelectedClicked) ||
-                ((this.isShowSelectedClicked) && (this.multipleFeatures) && (this.multipleFeatures.length === 1))) {
+            if ((!this.isShowSelectedClicked) || ((this.isShowSelectedClicked) && (this.multipleFeatures) && (this.multipleFeatures.length === 1))) {
                 this._hidePanel(this.popupFormContainer);
                 this._showPanel(this.popupInfoParentContainer);
                 //display popup content for recently selected feature

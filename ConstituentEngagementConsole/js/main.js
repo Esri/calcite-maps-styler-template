@@ -563,9 +563,7 @@ define([
                 if ((!domClass.contains("webmapListToggleButton", "esriCTWebMapPanelToggleButtonOpenDisabled")) && (!domClass.contains("webmapListToggleButton", "esriCTWebMapPanelToggleButtonCloseDisabled"))) {
                     this._webMapListWidget.hideWebMapList();
                 }
-                if ((evt.graphic) &&
-                    (evt.graphic._layer) &&
-                    ((evt.graphic._layer.id === this._refinedOperationalLayer.id) || (evt.graphic._layer.id === "selectedRowGraphicsLayer"))) {
+                if ((evt.graphic) && (evt.graphic._layer) && ((evt.graphic._layer.id === this._refinedOperationalLayer.id) || (evt.graphic._layer.id === "selectedRowGraphicsLayer"))) {
                     // to track that feature is clicked of feature layer
                     if (this._isGraphicLayerClicked) {
                         this._dataViewerWidget.onFeatureClick(evt, true);
@@ -1126,12 +1124,12 @@ define([
         _resizeMap: function () {
             var mapCenter;
             if ((this.map) && (domStyle.get(dom.byId("mapDiv"), "display") === "block")) {
-                mapCenter = this.map.extent.getCenter();
                 domStyle.set(dom.byId("mapDiv"), "height", "100%");
                 domStyle.set(dom.byId("mapDiv"), "width", "100%");
             }
             setTimeout(lang.hitch(this, function () {
                 if ((this.map) && (domStyle.get(dom.byId("mapDiv"), "display") === "block")) {
+                    mapCenter = this.map.extent.getCenter();
                     this.map.resize();
                     this.map.reposition();
                     this.map.centerAt(mapCenter);
@@ -1201,13 +1199,11 @@ define([
                         this._dataViewerWidget.isEditMode = false;
                     }
                 }
-                if (((this._timeSliderWidget) && (!this._dataViewerWidget)) ||
-                    ((this._timeSliderWidget) && (this._dataViewerWidget) && (!this._dataViewerWidget.isShowSelectedClicked))) {
+                if (((this._timeSliderWidget) && (!this._dataViewerWidget)) || ((this._timeSliderWidget) && (this._dataViewerWidget) && (!this._dataViewerWidget.isShowSelectedClicked))) {
                     this._timeSliderWidget.handleTimeSliderVisibility(featureLength);
                 }
                 // If search widget exist, handle its visibility
-                if (((this._applicationHeader) && (!this._dataViewerWidget)) ||
-                    ((this._applicationHeader) && (this._dataViewerWidget) && (!this._dataViewerWidget.isShowSelectedClicked))) {
+                if (((this._applicationHeader) && (!this._dataViewerWidget)) || ((this._applicationHeader) && (this._dataViewerWidget) && (!this._dataViewerWidget.isShowSelectedClicked))) {
                     this._applicationHeader._handleSearchIconVisibility(featureLength);
                 }
             });

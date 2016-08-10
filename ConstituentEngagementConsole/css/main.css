@@ -1433,12 +1433,13 @@ input.esriCTRadioButton {
 }
 
 .esriCTCommentTabTextContainer {
-    display: inline-flex;
+    float: left;
+    width: 100%;
 }
 
 .esriCTCommentsTotalCount {
-    float: left;
-    margin-left: 5px;
+    display: inline-block;
+    vertical-align: middle;
 }
 
 .nav-tabs-justified > li > a, .nav-tabs.nav-justified > li > a {
@@ -1451,8 +1452,8 @@ input.esriCTRadioButton {
     overflow: hidden;
     max-width: 80%;
     display: inline-block;
-    float: left;
     vertical-align: middle;
+    line-height: 22px;
 }
 
 .esriCTDetailsPanelTabContainer .badge {
