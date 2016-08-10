@@ -622,6 +622,7 @@ img {
   cursor:pointer;
   background-color: transparent;
   border:none;
+  overflow:visible;
 }
 .popupButton:hover{
   /*match out of the box hover color for home and locate*/
