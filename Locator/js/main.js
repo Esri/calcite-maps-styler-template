@@ -1517,6 +1517,10 @@ define([
                     }
                 }
             }
+            if (window.location.href.toLowerCase().indexOf("https:") > -1 && 
+                routeUrl.toLowerCase().indexOf("https:") === -1) {
+                 routeUrl.replace("http:", "https:");
+            }
             console.log("Fixed Route URL", routeUrl);
             return routeUrl;
         },
@@ -1547,6 +1551,10 @@ define([
                         proxyUrl: this.config.proxyurl
                     });
                 }
+            }
+            if (window.location.href.toLowerCase().indexOf("https:") > -1 &&
+                cfUrl.toLowerCase().indexOf("https:") === -1) {
+                 cfUrl.replace("http:", "https:");
             }
             console.log("Fixed Closest Facility URL", cfUrl);
             return cfUrl;
