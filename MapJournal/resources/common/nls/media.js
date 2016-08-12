@@ -32,7 +32,9 @@ define({
 				rightHeader: "Facebook Page",
 				pageExplain: "A Facebook page is a public brand/product or celebrity like <b>esrigis</b>. You can get the page name after the first '/' in the page URL.",
 				pageInputLbl: "Page name",
-				lookupMsgError: "Page not found"
+				lookupMsgError: "Page not found",
+				warning: "Facebook support has been discontinued, ${learn}.",
+				learn: "learn more"
 			},
 			imageSelectorPicasa: {
 				userInputLbl: "Email or Picasa/Google+ ID",
@@ -102,7 +104,10 @@ define({
 				lblPosition3Explain2: "(width will always fit the panel)",
 				lblPosition4Explain: "(may distort)",
 				unloadLbl: "Unload when reader navigates away",
-				unloadHelp: "If the Web Page has audio or video media, keep this option checked to stop that content from playing when the reader navigates away. Uncheck it for example to keep a soundtrack playing as the reader advances through the story.<br />If the Web Page is an application, uncheck this option so that the story does not reload if the reader returns to it."
+				unloadHelp: "If the Web Page has audio or video media, keep this option checked to stop that content from playing when the reader navigates away. Uncheck it for example to keep a soundtrack playing as the reader advances through the story.<br />If the Web Page is an application, uncheck this option so that the story does not reload if the reader returns to it.",
+				embedProtocolLabel: "Load page over a secure connection (HTTPS)",
+				embedProtocolWarning1: "As your story is configured to load over a secure connection, it is mandatory that all embedded page use a secure connection. If the page does not load it may be because the page is not available over a secure connection or that this page cannot be embedded (some websites restrict embedding).",
+				embedProtocolWarning2: "As your story is configured to load over an insecure connection, you can chose to load this page over a secure or insecure connection. We recommend that you always use a secure connection. If the page does not load it may be because the page is not available over the connection mode you selected or that this page cannot be embedded (some websites restrict embedding)."
 			},
 			editorActionGeocode: {
 				lblTitle: "Locate an address or place",
