@@ -58,5 +58,5 @@
     "widgettheme"
   ],
   "webTierSecurity": false,
-  "esriEnvironment": false
+  "esriEnvironment": true
 }
