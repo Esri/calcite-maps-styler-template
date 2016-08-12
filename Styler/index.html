@@ -49,7 +49,7 @@
         </div>
       </a>
       <ul class="dropdown-menu">
-        <li><a role="button" data-target="#panelAbout" aria-haspopup="true"><span class="glyphicon glyphicon-info-sign"></span> About</a></li>
+        <li id="menuAbout" class="hidden"><a role="button" data-target="#panelAbout" aria-haspopup="true"><span class="glyphicon glyphicon-info-sign"></span> About</a></li>
         <li><a role="button" data-target="#panelLegend" aria-haspopup="true"><span class="glyphicon glyphicon-th-list"></span> Legend</a></li>
         <li><a role="button" data-target="#panelBasemaps" aria-haspopup="true"><span class="glyphicon glyphicon-th-large"></span> Basemaps</a></li>
         <li><a role="button" id="calciteToggleNavbar" aria-haspopup="true"><span class="glyphicon glyphicon-fullscreen"></span> Full Map</a></li>
@@ -80,7 +80,7 @@
         
     <!-- About Panel -->
     
-    <div id="panelAbout" class="panel collapse">
+    <div id="panelAbout" class="panel collapse hidden">
       <div id="headingAbout" class="panel-heading" role="tab">
         <div class="panel-title">
           <a class="panel-toggle" role="button" data-toggle="collapse" href="#collapseAbout"  aria-expanded="true" aria-controls="collapseAbout"><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span><span class="panel-label">About</span></a> 

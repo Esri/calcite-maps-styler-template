@@ -68,6 +68,7 @@ define([
     subTitle: ".calcite-title-sub",
     titleDivider: ".calcite-title-divider",
     mainMenu: ".calcite-dropdown",
+    aboutMenu: "#menuAbout",
     aboutPanel: "#panelAbout",
     aboutPanelText: "#panelAbout .panel-body",
     basemapsPanel: "#panelBasemaps",
@@ -167,8 +168,7 @@ define([
           this._setWidgetEvents();
           this._showSearch(boilerplate.config.search);
           // Panels
-          this._setAboutPanelText(boilerplate.config.about);
-          this._showAboutPanel(boilerplate.config.showabout);
+          this._setAboutPanel(boilerplate.config);
           // Events
           this._setViewEvents();
           this._setPanelEvents();
@@ -299,15 +299,24 @@ define([
 
     // Panels
 
+    _setAboutPanel: function(config) {
+      var aboutText = config.about;
+      var showAboutStart = config.showabout;
+      if (aboutText) {
+        query(CSS_SELECTORS.aboutPanelText)[0].innerHTML = aboutText;
+        query(CSS_SELECTORS.aboutMenu).removeClass("hidden");
+        query(CSS_SELECTORS.aboutPanel).removeClass("hidden");
+        if (showAboutStart) {
+          query(CSS_SELECTORS.aboutPanel + ", " + CSS_SELECTORS.aboutPanel + " .panel-collapse").addClass("in");
+        }
+      }
+
+    },
+
     _setAboutPanelText: function(about) {
       query(CSS_SELECTORS.aboutPanelText)[0].innerHTML = about;
     },
 
-    _showAboutPanel: function(show) {
-      if (show) {
-        query(CSS_SELECTORS.aboutPanel + ", " + CSS_SELECTORS.aboutPanel + " .panel-collapse").addClass("in");
-      }
-    },
 
     // View Events
 
