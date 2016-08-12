@@ -1,0 +1,62 @@
+{
+  "webmap": {
+    "containerId": "mapViewDiv",
+    "fetch": true,
+    "useLocal": false,
+    "localFile": "boilerplate/demoWebmap.json"
+  },
+  "webscene": {
+    "containerId": "sceneViewDiv",
+    "fetch": true,
+    "useLocal": false,
+    "localFile": "boilerplate/demoWebscene.json"
+  },
+  "group": {
+    "fetchInfo": true,
+    "fetchItems": true,
+    "itemParams": {
+      "query": "group:\"{groupid}\" AND -type:\"Code Attachment\"",
+      "sortField": "modified",
+      "sortOrder": "desc",
+      "num": 9,
+      "start": 0
+    }
+  },
+  "portal": {
+    "fetch": true
+  },
+  "urlItems": [
+    "appid",
+    "basemapUrl",
+    "basemapReferenceUrl",
+    "center",
+    "components",
+    "embed",
+    "extent",
+    "find",
+    "group",
+    "level",
+    "mapOnly",
+    "marker",
+    "oauthappid",
+    "portalUrl",
+    "viewpoint",
+    "webmap",
+    "webscene",
+    "theme",
+    "bgcolor",
+    "opacity",
+    "textcolor",
+    "all",
+    "layout",
+    "navsize",
+    "about",
+    "showabout",
+    "search",
+    "title",
+    "subtitle",
+    "widgettheme"
+  ],
+  "webTierSecurity": false,
+  "esriEnvironment": false
+}
