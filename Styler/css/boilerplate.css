@@ -62,3 +62,7 @@ body:lang(ja) {
 #panelLegend .panel-body {
   background-color: white;
 }
+
+.calcite-widgets-dark #panelLegend .panel-body {
+  background-color: #333;
+}

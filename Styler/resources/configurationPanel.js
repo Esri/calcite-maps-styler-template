@@ -13,14 +13,14 @@
                 {
                     "type": "string",
                     "fieldName": "subtitle",
-                    "label": "Subtitle (Optional - Add some secondary text or a call-to-action to help users explore the app)",
+                    "label": "Subtitle (Optional - Add secondary text or a call-to-action to help users take the next step)",
                     "placeHolder": "e.g. Explore population, age and income",
                     "tooltip": "Provide some additional information for users or a call-to-action. What should they do next?"
                 },
                 {
                     "type": "string",
                     "fieldName": "about",
-                    "label": "About (Provide a little background about the app or your organization)",
+                    "label": "About (Provide a little background about your app or your organization)",
                     "tooltip": "",
                     "stringFieldOption": "richtext",
                     "placeHolder": "Tell everyone a little about your app. Add text, logo and contact information if applicable. This info will appear in the About panel."
@@ -28,9 +28,9 @@
                 {
                      "type": "boolean",
                      "fieldName": "showabout",
-                     "label": "Show the About window when app starts",
+                     "label": "Show the About window when your app starts",
                      "tooltip": "Show the about window when the app starts."
-               }
+                }
             ]
         },
         {
@@ -200,7 +200,6 @@
                             "label": "Bottom",
                             "value": "bottom"
                         }
-
                     ]
               },
               {
@@ -242,7 +241,7 @@
         "bgcolor": "dark-blue",
         "opacity": 1,
         "textcolor": "",
-        "widgettheme": "dark",
+        "widgettheme": "light",
         "all": false,
         "layout": "top",
         "navsize": "standard",
