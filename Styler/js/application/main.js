@@ -139,6 +139,7 @@ define([
         var calciteTheme = new ThemeManager();
         this._theme = calciteTheme;
         calciteTheme.setTheme(boilerplate.config.themeInfo);
+        calciteTheme.setWidgetTheme(boilerplate.config.widgettheme);
         calciteTheme.setLayout(boilerplate.config.layoutInfo);
 
         var paddingOptions = calciteTheme.getPadding();

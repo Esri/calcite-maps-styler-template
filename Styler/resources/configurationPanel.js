@@ -164,6 +164,22 @@
                             "value": "dark"
                         }
                     ]
+                },
+                {
+                    "type": "options",
+                    "fieldName": "widgettheme",
+                    "label": "Widget theme:",
+                    "tooltip": "Select a base color for the widgets.",
+                    "options": [
+                        {
+                            "label": "Light",
+                            "value": "light"
+                        }, 
+                        {
+                            "label": "Dark",
+                            "value": "dark"
+                        }
+                    ]
                 }
             ]
         },
@@ -226,6 +242,7 @@
         "bgcolor": "dark-blue",
         "opacity": 1,
         "textcolor": "",
+        "widgettheme": "dark",
         "all": false,
         "layout": "top",
         "navsize": "standard",

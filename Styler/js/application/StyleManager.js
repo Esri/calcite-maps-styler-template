@@ -112,6 +112,16 @@ function(
       this._applyTheme(theme);
     },
 
+    setWidgetTheme: function(configWidgetTheme) {
+      if (configWidgetTheme === "light") {
+        domClass.remove(document.body, CALCITE.THEME_STYLES.WIDGETS_DARK);
+        domClass.add(document.body, CALCITE.THEME_STYLES.WIDGETS_LIGHT);
+      } else if (configWidgetTheme === "dark") {
+        domClass.remove(document.body, CALCITE.THEME_STYLES.WIDGETS_LIGHT);
+        domClass.add(document.body, CALCITE.THEME_STYLES.WIDGETS_DARK);
+      }
+    },
+
     // Layout
 
     setLayout: function(configLayout) {

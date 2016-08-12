@@ -54,7 +54,8 @@
     "showabout",
     "search",
     "title",
-    "subtitle"
+    "subtitle",
+    "widgettheme"
   ],
   "webTierSecurity": false,
   "esriEnvironment": false
