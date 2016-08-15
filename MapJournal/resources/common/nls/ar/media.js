@@ -31,7 +31,9 @@ define({
       "rightHeader": "صفحة Facebook",
       "pageExplain": "صفحة Facebook هي علامة تجارية/منتج عام أو ذات شهرة مثل <b>esrigis</b>. يمكنك الحصول على اسم الصفحة بعد  '/' الأول في عنوان URL للصفحة.",
       "pageInputLbl": "اسم الصفحة",
-      "lookupMsgError": "لم يتم العثور على الصفحة"
+      "lookupMsgError": "لم يتم العثور على الصفحة",
+      "warning": "بيت_Facebook support has been discontinued, ${learn}________________لاحقة.",
+      "learn": "بيت_learn more____لاحقة"
     },
     "imageSelectorPicasa": {
       "userInputLbl": "البريد الإلكتروني أو Picasa/Google+ ID",
@@ -101,7 +103,10 @@ define({
       "lblPosition3Explain2": "(سوف يناسب دائما العرض اللوحة)",
       "lblPosition4Explain": "(يمكن الإتلاف)",
       "unloadLbl": "إلغاء التحميل عندما ينتقل القارئ بعيدًا",
-      "unloadHelp": "إذا احتوت صفحة الويب على وسائل مسموعة أو مرئية، لا تقوم بإلغاء التأشير على هذا الخيار لإيقاف تشغيل المحتوى عند انتقال القارئ. ولكن قم بإلغاء التأشير عليه على سبيل المثال لمتابعة تشغيل مسار صوتي في حين تقدّم القارئ في القصة.<br />إذا كانت صفحة الويب تطبيقًا، قم بإلغاء التأشير على هذا الخيار حتى لا يتم إعادة تحميل القصة إذا رجع القارئ إليها."
+      "unloadHelp": "إذا احتوت صفحة الويب على وسائل مسموعة أو مرئية، لا تقوم بإلغاء التأشير على هذا الخيار لإيقاف تشغيل المحتوى عند انتقال القارئ. ولكن قم بإلغاء التأشير عليه على سبيل المثال لمتابعة تشغيل مسار صوتي في حين تقدّم القارئ في القصة.<br />إذا كانت صفحة الويب تطبيقًا، قم بإلغاء التأشير على هذا الخيار حتى لا يتم إعادة تحميل القصة إذا رجع القارئ إليها.",
+      "embedProtocolLabel": "بيت_Load page over a secure connection (HTTPS)______________لاحقة",
+      "embedProtocolWarning1": "بيت_As your story is configured to load over a secure connection, it is mandatory that all embedded page use a secure connection. If the page does not load it may be because the page is not available over a secure connection or that this page cannot be embedded (some websites restrict embedding)_________________________________________________________________________________________لاحقة.",
+      "embedProtocolWarning2": "بيت_As your story is configured to load over an insecure connection, you can chose to load this page over a secure or insecure connection. We recommend that you always use a secure connection. If the page does not load it may be because the page is not available over the connection mode you selected or that this page cannot be embedded (some websites restrict embedding)________________________________________________________________________________________________________________لاحقة."
     },
     "editorActionGeocode": {
       "lblTitle": "تحديد موقع العنوان أو المكان",

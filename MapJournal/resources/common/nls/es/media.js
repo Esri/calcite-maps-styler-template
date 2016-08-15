@@ -31,7 +31,9 @@ define({
       "rightHeader": "Página de Facebook",
       "pageExplain": "Una página de Facebook es una marca/producto público o famoso como <b>esrigis</b>. Puedes obtener el nombre de la página después de la  primera '/' de la URL de la página.",
       "pageInputLbl": "Nombre de la página",
-      "lookupMsgError": "No se encontró la página"
+      "lookupMsgError": "No se encontró la página",
+      "warning": "á_Facebook support has been discontinued, ${learn}________________Ó.",
+      "learn": "á_learn more____Ó"
     },
     "imageSelectorPicasa": {
       "userInputLbl": "Dirección de correo electrónico o Id. de Picasa/Google+",
@@ -101,7 +103,10 @@ define({
       "lblPosition3Explain2": "(el ancho siempre se ajusta al panel)",
       "lblPosition4Explain": "(puede distorsionarse)",
       "unloadLbl": "Detener cuando el lector abandone la sección",
-      "unloadHelp": "Si la página web incluye contenido multimedia de audio o vídeo, deja marcada esta opción para evitar que el contenido se reproduzca cuando el lector se mueva. Desactiva la opción, por ejemplo, para que la pista de audio se siga reproduciendo a medida que el lector avanza por la historia.<br />Si la página web es una aplicación, desactiva la opción para que la historia no se vuelva a cargar si el lector regresa a ella."
+      "unloadHelp": "Si la página web incluye contenido multimedia de audio o vídeo, deja marcada esta opción para evitar que el contenido se reproduzca cuando el lector se mueva. Desactiva la opción, por ejemplo, para que la pista de audio se siga reproduciendo a medida que el lector avanza por la historia.<br />Si la página web es una aplicación, desactiva la opción para que la historia no se vuelva a cargar si el lector regresa a ella.",
+      "embedProtocolLabel": "á_Load page over a secure connection (HTTPS)______________Ó",
+      "embedProtocolWarning1": "á_As your story is configured to load over a secure connection, it is mandatory that all embedded page use a secure connection. If the page does not load it may be because the page is not available over a secure connection or that this page cannot be embedded (some websites restrict embedding)_________________________________________________________________________________________Ó.",
+      "embedProtocolWarning2": "á_As your story is configured to load over an insecure connection, you can chose to load this page over a secure or insecure connection. We recommend that you always use a secure connection. If the page does not load it may be because the page is not available over the connection mode you selected or that this page cannot be embedded (some websites restrict embedding)________________________________________________________________________________________________________________Ó."
     },
     "editorActionGeocode": {
       "lblTitle": "Buscar una dirección o un lugar",

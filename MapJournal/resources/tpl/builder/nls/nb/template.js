@@ -20,7 +20,9 @@ define({
       "cfgMedium": "Middels",
       "cfgLarge": "Stor",
       "socialLinksLabel": "Vis delingskoblinger nederst i hver seksjon",
-      "socialLinksDescr": "Dette gjør at leserne kan referere til og promotere bestemte seksjoner av %TPL_NAME%. Hvis du for eksempel bruker et delingsikon for seksjoner, lander leserne på den bestemte %TPL_NAME%-seksjonen i stedet for på begynnelsen av historien. Leserne kan bruke koblingen for sosiale medier i tittelseksjonen for å fremme hele %TPL_NAME% (overskriftskategorien) og få dem til å lande på starten av %TPL_NAME%."
+      "socialLinksDescr": "Dette gjør at leserne kan referere til og promotere bestemte seksjoner av %TPL_NAME%. Hvis du for eksempel bruker et delingsikon for seksjoner, lander leserne på den bestemte %TPL_NAME%-seksjonen i stedet for på begynnelsen av historien. Leserne kan bruke koblingen for sosiale medier i tittelseksjonen for å fremme hele %TPL_NAME% (overskriftskategorien) og få dem til å lande på starten av %TPL_NAME%.",
+      "socialDisabled": "å_This feature is only available with Floating Panel layout__________________ø",
+      "socialWarning": "å_Your story is using the Side Panel layout and we now recommend to only enable that option with Floating Panel layout. This prevent issues where the panel may not scroll to the desired section for narratives that contains images. You can continue to use that option but if you disable it, it will only be available with Floating Panel layout_______________________________________________________________________________________________________ø."
     },
     "settingsLayoutFonts": {
       "title": "Skrifter",

@@ -31,7 +31,9 @@ define({
       "rightHeader": "Facebook-side",
       "pageExplain": "En Facebook-side er for et offisielt merke, et produkt eller en kjendis, for eksempel <b>esrigis</b>. Du finner navnet på siden etter første / i sidens URL-adresse.",
       "pageInputLbl": "Sidenavn",
-      "lookupMsgError": "Finner ikke siden"
+      "lookupMsgError": "Finner ikke siden",
+      "warning": "å_Facebook support has been discontinued, ${learn}________________ø.",
+      "learn": "å_learn more____ø"
     },
     "imageSelectorPicasa": {
       "userInputLbl": "E-postadresse eller Picasa-/Google+-ID",
@@ -101,7 +103,10 @@ define({
       "lblPosition3Explain2": "(bredden passer alltid med panelet)",
       "lblPosition4Explain": "(kan bli forvrengt / vises skjevt)",
       "unloadLbl": "Last ut når leseren navigerer bort",
-      "unloadHelp": "Hvis websiden har lyd- eller videomedier, beholder du dette alternativet avmerket for å forhindre at det innholdet spilles av når leseren navigerer bort. Fjern merket for eksempel for å la et lydspor fortsette å spilles av mens leseren går gjennom historien.<br />Hvis websiden er et program, fjerner du avmerkingen for dette alternativet, slik at historien ikke lastes inn på nytt hvis leseren går tilbake til den."
+      "unloadHelp": "Hvis websiden har lyd- eller videomedier, beholder du dette alternativet avmerket for å forhindre at det innholdet spilles av når leseren navigerer bort. Fjern merket for eksempel for å la et lydspor fortsette å spilles av mens leseren går gjennom historien.<br />Hvis websiden er et program, fjerner du avmerkingen for dette alternativet, slik at historien ikke lastes inn på nytt hvis leseren går tilbake til den.",
+      "embedProtocolLabel": "å_Load page over a secure connection (HTTPS)______________ø",
+      "embedProtocolWarning1": "å_As your story is configured to load over a secure connection, it is mandatory that all embedded page use a secure connection. If the page does not load it may be because the page is not available over a secure connection or that this page cannot be embedded (some websites restrict embedding)_________________________________________________________________________________________ø.",
+      "embedProtocolWarning2": "å_As your story is configured to load over an insecure connection, you can chose to load this page over a secure or insecure connection. We recommend that you always use a secure connection. If the page does not load it may be because the page is not available over the connection mode you selected or that this page cannot be embedded (some websites restrict embedding)________________________________________________________________________________________________________________ø."
     },
     "editorActionGeocode": {
       "lblTitle": "Finn en adresse eller et sted",

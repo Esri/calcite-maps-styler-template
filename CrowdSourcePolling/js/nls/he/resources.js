@@ -54,6 +54,7 @@ define({
   },
   "item_details": {
     "likeButtonTooltip": "הצבע עבור פריט זה",
+    "likeButtonInverseTooltip": "כן_Vote counted_____ש",
     "commentButtonTooltip": "הוסף הערה",
     "gotoMapViewTooltip": "עבור לתצוגת מפה",
     "galleryButtonTooltip": "ראה קצבים מצורפים",

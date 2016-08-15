@@ -83,7 +83,7 @@ define({
     "valueRadioButtonLabel": "값",
     "uniqueRadioButtonLabel": "고유값",
     "selectLayerToBegin": "시작하려면 범주 선택",
-    "layerFeatureCount": "${featureCount} 레코드"
+    "layerFeatureCount": "한_${selectedFeatureCount} selected / ${featureCount} records__________________빠"
   },
   "timeSlider": {
     "timeSliderLabel": "시간 범위",
@@ -97,7 +97,12 @@ define({
     "placeHolderText": "",
     "noCommentsAvailableText": "레코드를 사용할 수 없음",
     "remainingTextCount": "${0}자 남음",
-    "showNoText": "아니요"
+    "showNoText": "아니요",
+    "selectAttachments": "한_Attachments____빠",
+    "selectFileText": "한_Browse___빠",
+    "attachmentSelectedMsg": "한_attachment(s) selected________빠",
+    "attachmentHeaderText": "한_Attachments____빠",
+    "addRecordText": "한_Add Record____빠"
   },
   "main": {
     "noGroup": "구성된 그룹 없음"
@@ -109,17 +114,18 @@ define({
   },
   "manualRefresh": {
     "manualRefreshIconTooltip": "새로 고침",
-    "confirmManualRefeshText": "모든 선택 내역과 저장하지 않은 변경 내용이 취소됩니다."
+    "confirmManualRefreshText": "한_All selections and unsaved changes will be discarded_________________빠"
   },
   "help": {
     "helpIconTooltip": "도움말"
   },
   "filter": {
     "noFeatureFoundText": "이 값에 대한 피처를 찾을 수 없습니다.",
-    "distinctQueryFalied": "필드에 대한 고유값을 찾을 수 없습니다.",
+    "distinctQueryFailed": "한_No distinct values found for the field_____________빠.",
     "andText": "및",
-    "filterInEditModeAlert": "편집 중에 필터를 사용할 수 없음",
-    "dropdownSelectOption": "선택"
+    "filterInEditModeAlert": "한_Filters unavailable while editing___________빠.",
+    "dropdownSelectOption": "선택",
+    "filterInShowSelectedEditModeAlert": "한_Filters unavailable in 'Show Selected' mode______________빠."
   },
   "detailsPanel": {
     "editContentText": "레코드 편집"
@@ -127,5 +133,10 @@ define({
   "signOutPage": {
     "signOutMessage": "로그아웃되었습니다.",
     "reSignInMessage": "로그인하려면 여기를 클릭"
+  },
+  "selectionOptions": {
+    "selectionOptionsIconTooltip": "한_Selection Options______빠",
+    "showAllOptionText": "한_Show All___빠",
+    "showSelectedOptionText": "한_Show Selected_____빠"
   }
 });

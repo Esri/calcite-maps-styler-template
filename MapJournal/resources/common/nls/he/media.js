@@ -31,7 +31,9 @@ define({
       "rightHeader": "עמוד פייסבוק",
       "pageExplain": "A Facebook page is a public brand/product or celebrity like <b>esrigis</b>. You can get the page name after the firstq'/' in the page URL.",
       "pageInputLbl": "שם דף",
-      "lookupMsgError": "עמוד לא נמצא"
+      "lookupMsgError": "עמוד לא נמצא",
+      "warning": "כן_Facebook support has been discontinued, ${learn}________________ש.",
+      "learn": "כן_learn more____ש"
     },
     "imageSelectorPicasa": {
       "userInputLbl": "אמייל או Picasa/Google+ ID",
@@ -101,7 +103,10 @@ define({
       "lblPosition3Explain2": "(רוחב תמיד יתאים ללוח)",
       "lblPosition4Explain": "(יכול להתעוות)",
       "unloadLbl": "בטל את הטעינה כשהקורא מנווט למקום אחר",
-      "unloadHelp": "אם דף האינטרנט מכיל מדיה של שמע או וידאו, השאר אפשרות זו מסומנת כדי למנוע הפעלת תוכן זה כשהקורא מנווט למקום אחר. בטל את סימון האפשרות, למשל, כדי לגרום לפסקול להמשיך לנגן בזמן שהקורא מתקדם לאורך הסיפור.<br />אם דף האינטרנט הוא אפליקציה, בטל את סימון האפשרות כדי שהאפליקציה לא תיטען מחדש אם הקורא יחזור לשם."
+      "unloadHelp": "אם דף האינטרנט מכיל מדיה של שמע או וידאו, השאר אפשרות זו מסומנת כדי למנוע הפעלת תוכן זה כשהקורא מנווט למקום אחר. בטל את סימון האפשרות, למשל, כדי לגרום לפסקול להמשיך לנגן בזמן שהקורא מתקדם לאורך הסיפור.<br />אם דף האינטרנט הוא אפליקציה, בטל את סימון האפשרות כדי שהאפליקציה לא תיטען מחדש אם הקורא יחזור לשם.",
+      "embedProtocolLabel": "כן_Load page over a secure connection (HTTPS)______________ש",
+      "embedProtocolWarning1": "כן_As your story is configured to load over a secure connection, it is mandatory that all embedded page use a secure connection. If the page does not load it may be because the page is not available over a secure connection or that this page cannot be embedded (some websites restrict embedding)_________________________________________________________________________________________ש.",
+      "embedProtocolWarning2": "כן_As your story is configured to load over an insecure connection, you can chose to load this page over a secure or insecure connection. We recommend that you always use a secure connection. If the page does not load it may be because the page is not available over the connection mode you selected or that this page cannot be embedded (some websites restrict embedding)________________________________________________________________________________________________________________ש."
     },
     "editorActionGeocode": {
       "lblTitle": "אתר כתובת או מקום",

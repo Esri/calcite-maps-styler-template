@@ -19,27 +19,28 @@ define({
     "error": "Karttaa ei voi luoda"
   },
   "nav": {
-    "close": "Sulje"
+    "close": "Å_Close___ö"
   },
   "elevation": {
-    "toggle": "Vaihda Korkeusprofiili-karttaa.",
-    "drawTool": "Luo korkeusprofiili piirtämällä viiva kartalle.",
-    "selectMessage": "Tuo korkeusprofiili näkyviin napsauttamalla viivakohdetta tai piirtämällä viiva piirtotyökalun avulla"
+    "toggle": "Å_Toggle the Elevation Profile Chart____________ö.",
+    "drawTool": "Å_Draw a line on the map to generate an elevation profile__________________ö.",
+    "selectMessage": "Å_Click a line feature or use the draw tool to draw a line to display the elevation profile____________________________ö",
+    "gainLossTemplate": "Å_Min: ${min}   Max: ${max}   Start: ${start}   End: ${end}   Change: ${gainLoss}_________________________ö"
   },
   "splash": {
-    "title": "Otsikko",
-    "content": "Luo mukautettua aloitusnäytön sisältöä määrittämällä"
+    "title": "Å_Title___ö",
+    "content": "Å_Configure to create custom splash content_____________ö"
   },
   "legend": {
-    "title": "Selite",
-    "tip": "Näytä selite"
+    "title": "Å_Legend___ö",
+    "tip": "Å_Display legend_____ö"
   },
   "basemap": {
-    "title": "Taustakartat",
-    "tip": "Muuta taustakarttaa"
+    "title": "Å_Basemap___ö",
+    "tip": "Å_Change basemap_____ö"
   },
   "share": {
-    "title": "Jaa",
-    "tip": "Jaa kartta"
+    "title": "Å_Share___ö",
+    "tip": "Å_Share map____ö"
   }
 });

@@ -31,7 +31,9 @@ define({
       "rightHeader": "Facebook puslapis",
       "pageExplain": "Facebook puslapis yra viešas prekės ženklas, produktas ar įžymybė kaip <b>esrigis</b>. Jūs galite pamatyti puslapio pavadinimą po pirmo '/' puslapio URL.",
       "pageInputLbl": "Puslapio pavadinimas",
-      "lookupMsgError": "Puslapis nerastas"
+      "lookupMsgError": "Puslapis nerastas",
+      "warning": "Į_Facebook support has been discontinued, ${learn}________________š.",
+      "learn": "Į_learn more____š"
     },
     "imageSelectorPicasa": {
       "userInputLbl": "E. pašto arba Picasa / Google+ ID",
@@ -101,7 +103,10 @@ define({
       "lblPosition3Explain2": "(plotis visada atitiks skydą)",
       "lblPosition4Explain": "(gali būti iškraipoma)",
       "unloadLbl": "Iškelti, kai skaitytojas palieka šią dalį",
-      "unloadHelp": "Jeigu tinklalapis turi garsinės arba vaizdinės medijos, palikite šią parinktį pažymėtą, kad turinys nebūtų leidžiamas, kai skaitytojas nutolsta. Parinktį pažymėkite, jeigu, pvz., norite leisti garso takelį skaitytojui keliaujant per pasakojimą.<br />Jeigu tinklalapis yra aplikacija, pašalinkite žymę, kad skaitytojui sugrįžus pasakojimas nebūtų įkeltas iš naujo."
+      "unloadHelp": "Jeigu tinklalapis turi garsinės arba vaizdinės medijos, palikite šią parinktį pažymėtą, kad turinys nebūtų leidžiamas, kai skaitytojas nutolsta. Parinktį pažymėkite, jeigu, pvz., norite leisti garso takelį skaitytojui keliaujant per pasakojimą.<br />Jeigu tinklalapis yra aplikacija, pašalinkite žymę, kad skaitytojui sugrįžus pasakojimas nebūtų įkeltas iš naujo.",
+      "embedProtocolLabel": "Į_Load page over a secure connection (HTTPS)______________š",
+      "embedProtocolWarning1": "Į_As your story is configured to load over a secure connection, it is mandatory that all embedded page use a secure connection. If the page does not load it may be because the page is not available over a secure connection or that this page cannot be embedded (some websites restrict embedding)_________________________________________________________________________________________š.",
+      "embedProtocolWarning2": "Į_As your story is configured to load over an insecure connection, you can chose to load this page over a secure or insecure connection. We recommend that you always use a secure connection. If the page does not load it may be because the page is not available over the connection mode you selected or that this page cannot be embedded (some websites restrict embedding)________________________________________________________________________________________________________________š."
     },
     "editorActionGeocode": {
       "lblTitle": "Raskite adresą arba vietą",

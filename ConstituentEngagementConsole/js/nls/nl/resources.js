@@ -83,7 +83,7 @@ define({
     "valueRadioButtonLabel": "Waarde",
     "uniqueRadioButtonLabel": "Uniek",
     "selectLayerToBegin": "Selecteer een categorie om te starten",
-    "layerFeatureCount": "${featureCount} records"
+    "layerFeatureCount": "Ĳ_${selectedFeatureCount} selected / ${featureCount} records__________________ä"
   },
   "timeSlider": {
     "timeSliderLabel": "Tijdsbereik",
@@ -97,7 +97,12 @@ define({
     "placeHolderText": "",
     "noCommentsAvailableText": "Geen records beschikbaar",
     "remainingTextCount": "${0} teken(s) over",
-    "showNoText": "Nee"
+    "showNoText": "Nee",
+    "selectAttachments": "Ĳ_Attachments____ä",
+    "selectFileText": "Ĳ_Browse___ä",
+    "attachmentSelectedMsg": "Ĳ_attachment(s) selected________ä",
+    "attachmentHeaderText": "Ĳ_Attachments____ä",
+    "addRecordText": "Ĳ_Add Record____ä"
   },
   "main": {
     "noGroup": "Geen groep geconfigureerd"
@@ -109,17 +114,18 @@ define({
   },
   "manualRefresh": {
     "manualRefreshIconTooltip": "Vernieuwen",
-    "confirmManualRefeshText": "Alle selecties en onopgeslagen wijzigingen worden genegeerd"
+    "confirmManualRefreshText": "Ĳ_All selections and unsaved changes will be discarded_________________ä"
   },
   "help": {
     "helpIconTooltip": "Help"
   },
   "filter": {
     "noFeatureFoundText": "Geen object gevonden voor deze waarde.",
-    "distinctQueryFalied": "Geen afzonderlijke waarden gevonden voor het veld.",
+    "distinctQueryFailed": "Ĳ_No distinct values found for the field_____________ä.",
     "andText": "en",
-    "filterInEditModeAlert": "Filters onbeschikbaar tijdens het bewerken",
-    "dropdownSelectOption": "Selecteren"
+    "filterInEditModeAlert": "Ĳ_Filters unavailable while editing___________ä.",
+    "dropdownSelectOption": "Selecteren",
+    "filterInShowSelectedEditModeAlert": "Ĳ_Filters unavailable in 'Show Selected' mode______________ä."
   },
   "detailsPanel": {
     "editContentText": "Record bewerken"
@@ -127,5 +133,10 @@ define({
   "signOutPage": {
     "signOutMessage": "U bent afgemeld.",
     "reSignInMessage": "Klik hier om u aan te melden."
+  },
+  "selectionOptions": {
+    "selectionOptionsIconTooltip": "Ĳ_Selection Options______ä",
+    "showAllOptionText": "Ĳ_Show All___ä",
+    "showSelectedOptionText": "Ĳ_Show Selected_____ä"
   }
 });

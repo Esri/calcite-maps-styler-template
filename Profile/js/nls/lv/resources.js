@@ -19,27 +19,28 @@ define({
     "error": "Nevar izveidot karti"
   },
   "nav": {
-    "close": "Aizvērt"
+    "close": "ķ_Close___ū"
   },
   "elevation": {
-    "toggle": "Pārslēdziet pacēluma profila diagrammu.",
-    "drawTool": "Uzzīmējiet kartē līniju, lai ģenerētu pacēluma profilu.",
-    "selectMessage": "Noklikšķiniet uz līnijas elementa vai izmantojiet zīmēšanas rīku, lai uzzīmētu līniju un parādītu pacēluma profilu"
+    "toggle": "ķ_Toggle the Elevation Profile Chart____________ū.",
+    "drawTool": "ķ_Draw a line on the map to generate an elevation profile__________________ū.",
+    "selectMessage": "ķ_Click a line feature or use the draw tool to draw a line to display the elevation profile____________________________ū",
+    "gainLossTemplate": "ķ_Min: ${min}   Max: ${max}   Start: ${start}   End: ${end}   Change: ${gainLoss}_________________________ū"
   },
   "splash": {
-    "title": "Nosaukums",
-    "content": "Konfigurējiet, lai izveidotu pielāgotu uzplaiksnījuma saturu"
+    "title": "ķ_Title___ū",
+    "content": "ķ_Configure to create custom splash content_____________ū"
   },
   "legend": {
-    "title": "Apzīmējumi",
-    "tip": "Parādīt leģendu"
+    "title": "ķ_Legend___ū",
+    "tip": "ķ_Display legend_____ū"
   },
   "basemap": {
-    "title": "Pamatkarte",
-    "tip": "Mainīt pamatkarti"
+    "title": "ķ_Basemap___ū",
+    "tip": "ķ_Change basemap_____ū"
   },
   "share": {
-    "title": "Koplietošana",
-    "tip": "Kopīgot karti"
+    "title": "ķ_Share___ū",
+    "tip": "ķ_Share map____ū"
   }
 });

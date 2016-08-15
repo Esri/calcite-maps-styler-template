@@ -83,7 +83,7 @@ define({
     "valueRadioButtonLabel": "Значение",
     "uniqueRadioButtonLabel": "Уникальное",
     "selectLayerToBegin": "Для начала работы выберите категорию",
-    "layerFeatureCount": "${featureCount} записей"
+    "layerFeatureCount": "Ж_${selectedFeatureCount} selected / ${featureCount} records__________________Я"
   },
   "timeSlider": {
     "timeSliderLabel": "Временной диапазон",
@@ -97,7 +97,12 @@ define({
     "placeHolderText": "",
     "noCommentsAvailableText": "Нет доступных записей",
     "remainingTextCount": "Символов осталось: ${0}",
-    "showNoText": "Нет"
+    "showNoText": "Нет",
+    "selectAttachments": "Ж_Attachments____Я",
+    "selectFileText": "Ж_Browse___Я",
+    "attachmentSelectedMsg": "Ж_attachment(s) selected________Я",
+    "attachmentHeaderText": "Ж_Attachments____Я",
+    "addRecordText": "Ж_Add Record____Я"
   },
   "main": {
     "noGroup": "Не задана группа"
@@ -109,17 +114,18 @@ define({
   },
   "manualRefresh": {
     "manualRefreshIconTooltip": "Обновить",
-    "confirmManualRefeshText": "Все выборки и несохраненные изменения будут удалены"
+    "confirmManualRefreshText": "Ж_All selections and unsaved changes will be discarded_________________Я"
   },
   "help": {
     "helpIconTooltip": "Справка"
   },
   "filter": {
     "noFeatureFoundText": "Для этого значения не найдено ни одного объекта.",
-    "distinctQueryFalied": "Для этого поля не найдено различающихся значений.",
+    "distinctQueryFailed": "Ж_No distinct values found for the field_____________Я.",
     "andText": "и",
-    "filterInEditModeAlert": "Во время редактирования фильтры недоступны",
-    "dropdownSelectOption": "Выбрать"
+    "filterInEditModeAlert": "Ж_Filters unavailable while editing___________Я.",
+    "dropdownSelectOption": "Выбрать",
+    "filterInShowSelectedEditModeAlert": "Ж_Filters unavailable in 'Show Selected' mode______________Я."
   },
   "detailsPanel": {
     "editContentText": "Редактировать запись"
@@ -127,5 +133,10 @@ define({
   "signOutPage": {
     "signOutMessage": "Выход успешно выполнен",
     "reSignInMessage": "Щелкните здесь, чтобы выполнить вход"
+  },
+  "selectionOptions": {
+    "selectionOptionsIconTooltip": "Ж_Selection Options______Я",
+    "showAllOptionText": "Ж_Show All___Я",
+    "showSelectedOptionText": "Ж_Show Selected_____Я"
   }
 });

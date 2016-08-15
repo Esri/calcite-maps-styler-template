@@ -36,7 +36,10 @@ define({
       "noViewerIE": "Bu hikaye %VERSION% öncesindeki Internet Explorer sürümlerinde desteklenmiyor. %UPGRADE%",
       "upgradeBrowser": "<a href='http://browsehappy.com/' target='_blank'>Tarayıcınızı güncelleyin</a>.",
       "mapLoadingFail": "Hata oluştu, harita düzgün şekilde yüklenmedi.",
-      "signOut": "Oturumu Kapat"
+      "signOut": "Oturumu Kapat",
+      "print0": "ı_Sorry, this story cannot be printed____________İ.",
+      "print1": "ı_To print this story, please use the print button located in the share dialog________________________İ.",
+      "print2": "ı_Sorry, a printable version of the story is typically accessible through the share dialog, but this dialog has been disabled by the author__________________________________________İ."
     },
     "mobileView": {
       "tapForDetails": "Ayrıntılar için dokunun",
@@ -85,7 +88,15 @@ define({
       "autoplayLabel": "Otomatik oynatma modu",
       "autoplayExplain1": "Otomatik oynatma modu düzenli aralıklarla hikayenizde ilerler. Bu özellik, bir kiosk ya da genel ekran için idealdir, ancak bunun bazı durumlarda hikayenin okunmasını güçleştirebileceğini unutmayın. Bu özellik küçük ekranlarda desteklenmez.",
       "autoplayExplain2": "Bu etkin durumdayken hikayeyi oynatacak/duraklatacak ve gezinme hızını ayarlayacak kontroller vardır.",
-      "linksupdated": "Bağlantılar güncellendi!"
+      "linksupdated": "Bağlantılar güncellendi!",
+      "print": "ı_Print___İ",
+      "printInstruction1": "ı_Please wait for all the content to load before ${printing} this page______________________İ.",
+      "printInstruction2": "ı_This page cannot be shared with others, instead share the ${link}_____________________İ.",
+      "link": "ı_link to the story______İ",
+      "printing": "ı_printing___İ",
+      "printWarning": "ı_This is a printed version of a story map. Dynamic content such as videos and interactive maps is only available in the online version at ${link}_____________________________________________İ.",
+      "printMSWarning": "ı_link available only in online story____________İ",
+      "printVideoWarning": "ı_This video can be viewed in the online version of this story map____________________İ"
     }
   }
 });

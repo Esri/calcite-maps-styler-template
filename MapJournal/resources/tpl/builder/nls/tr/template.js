@@ -20,7 +20,9 @@ define({
       "cfgMedium": "Orta",
       "cfgLarge": "Büyük",
       "socialLinksLabel": "Paylaşma bağlantılarını her bölümün en altında görüntüle",
-      "socialLinksDescr": "Bu, okuyuculara %TPL_NAME% öğenizin belirli bölümlerine başvuru yapma ve bunları tanıtma olanağı sağlar. Örneğin, bölüm paylaşımlı simge kullanıyorsanız, okuyucular hikayenizin başlangıcı yerine o belirli %TPL_NAME% bölümüne gider. okuyucularınız başlık bölümündeki sosyal medya bağlantısını kullanarak %TPL_NAME% (başlık sekmesi) öğenizin tamamını tanıtabilir ve %TPL_NAME% başlangıcına gidilmesini sağlayabilir."
+      "socialLinksDescr": "Bu, okuyuculara %TPL_NAME% öğenizin belirli bölümlerine başvuru yapma ve bunları tanıtma olanağı sağlar. Örneğin, bölüm paylaşımlı simge kullanıyorsanız, okuyucular hikayenizin başlangıcı yerine o belirli %TPL_NAME% bölümüne gider. okuyucularınız başlık bölümündeki sosyal medya bağlantısını kullanarak %TPL_NAME% (başlık sekmesi) öğenizin tamamını tanıtabilir ve %TPL_NAME% başlangıcına gidilmesini sağlayabilir.",
+      "socialDisabled": "ı_This feature is only available with Floating Panel layout__________________İ",
+      "socialWarning": "ı_Your story is using the Side Panel layout and we now recommend to only enable that option with Floating Panel layout. This prevent issues where the panel may not scroll to the desired section for narratives that contains images. You can continue to use that option but if you disable it, it will only be available with Floating Panel layout_______________________________________________________________________________________________________İ."
     },
     "settingsLayoutFonts": {
       "title": "Yazı Tipleri",

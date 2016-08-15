@@ -36,7 +36,10 @@ define({
       "noViewerIE": "Această poveste nu este suportată în versiunile Internet Explorer anterioare versiunii %VERSION%. %UPGRADE%",
       "upgradeBrowser": "<a href='http://browsehappy.com/' target='_blank'>Efectuaţi un upgrade al browserului</a>.",
       "mapLoadingFail": "Ceva nu a mers bine şi harta nu a fost încărcată corect.",
-      "signOut": "Ieşire"
+      "signOut": "Ieşire",
+      "print0": "Ă_Sorry, this story cannot be printed____________ș.",
+      "print1": "Ă_To print this story, please use the print button located in the share dialog________________________ș.",
+      "print2": "Ă_Sorry, a printable version of the story is typically accessible through the share dialog, but this dialog has been disabled by the author__________________________________________ș."
     },
     "mobileView": {
       "tapForDetails": "Atingeţi pentru detalii",
@@ -85,7 +88,15 @@ define({
       "autoplayLabel": "Mod redare automată",
       "autoplayExplain1": "Modul de redare automată va avansa prin scenariul dvs. la un interval regulat. Această opţiune este ideală pentru un chioşc sau un monitor pentru afişare publică, dar, reţineţi, că în alte situaţii poate face ca scenariul să fie dificil de urmărit. Această caracteristică nu este acceptată pe ecranele de dimensiuni mici.",
       "autoplayExplain2": "Când acest mod este activ, sunt afişate butoane pentru a reda/întrerupe scenariul şi pentru a regla viteza de navigare.",
-      "linksupdated": "Legătură actualizată!"
+      "linksupdated": "Legătură actualizată!",
+      "print": "Ă_Print___ș",
+      "printInstruction1": "Ă_Please wait for all the content to load before ${printing} this page______________________ș.",
+      "printInstruction2": "Ă_This page cannot be shared with others, instead share the ${link}_____________________ș.",
+      "link": "Ă_link to the story______ș",
+      "printing": "Ă_printing___ș",
+      "printWarning": "Ă_This is a printed version of a story map. Dynamic content such as videos and interactive maps is only available in the online version at ${link}_____________________________________________ș.",
+      "printMSWarning": "Ă_link available only in online story____________ș",
+      "printVideoWarning": "Ă_This video can be viewed in the online version of this story map____________________ș"
     }
   }
 });

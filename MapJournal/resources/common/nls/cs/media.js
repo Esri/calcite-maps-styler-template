@@ -31,7 +31,9 @@ define({
       "rightHeader": "Stránka služby Facebook",
       "pageExplain": "Stránka služby Facebook představuje veřejnou značku či službu nebo známou osobnost, jako je například <b>esrigis</b>. Název stránky začíná za prvním lomítkem (/) v URL adrese stránky.",
       "pageInputLbl": "Název stránky",
-      "lookupMsgError": "Stránka nenalezena"
+      "lookupMsgError": "Stránka nenalezena",
+      "warning": "Ř_Facebook support has been discontinued, ${learn}________________ů.",
+      "learn": "Ř_learn more____ů"
     },
     "imageSelectorPicasa": {
       "userInputLbl": "E-mail nebo identifikátor Picasa/Google+",
@@ -101,7 +103,10 @@ define({
       "lblPosition3Explain2": "(šířka se vždy přizpůsobí panelu)",
       "lblPosition4Explain": "(může dojít ke zkreslení)",
       "unloadLbl": "Zrušit spouštění, když čtenář opustí stránku",
-      "unloadHelp": "Pokud webová stránka obsahuje audio nebo video média, nechte tuto možnost zaškrtnutou, aby se přehrávání tohoto obsahu ukončilo, pokud čtenář stránku opustí. Zrušte její zaškrtnutí, pokud například chcete, aby hudební podkres hrál po celou dobu prohlížení příběhu.<br />Pokud je webová stránka aplikací, zrušte zaškrtnutí této možnosti, aby se příběh nespouštěl znovu, když se k němu čtenář vrátí."
+      "unloadHelp": "Pokud webová stránka obsahuje audio nebo video média, nechte tuto možnost zaškrtnutou, aby se přehrávání tohoto obsahu ukončilo, pokud čtenář stránku opustí. Zrušte její zaškrtnutí, pokud například chcete, aby hudební podkres hrál po celou dobu prohlížení příběhu.<br />Pokud je webová stránka aplikací, zrušte zaškrtnutí této možnosti, aby se příběh nespouštěl znovu, když se k němu čtenář vrátí.",
+      "embedProtocolLabel": "Ř_Load page over a secure connection (HTTPS)______________ů",
+      "embedProtocolWarning1": "Ř_As your story is configured to load over a secure connection, it is mandatory that all embedded page use a secure connection. If the page does not load it may be because the page is not available over a secure connection or that this page cannot be embedded (some websites restrict embedding)_________________________________________________________________________________________ů.",
+      "embedProtocolWarning2": "Ř_As your story is configured to load over an insecure connection, you can chose to load this page over a secure or insecure connection. We recommend that you always use a secure connection. If the page does not load it may be because the page is not available over the connection mode you selected or that this page cannot be embedded (some websites restrict embedding)________________________________________________________________________________________________________________ů."
     },
     "editorActionGeocode": {
       "lblTitle": "Najít adresu nebo místo",

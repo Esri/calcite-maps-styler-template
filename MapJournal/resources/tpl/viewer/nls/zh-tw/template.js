@@ -36,7 +36,10 @@ define({
       "noViewerIE": "低於版本 %VERSION% 的 Internet Explorer 不支援該故事。%UPGRADE%",
       "upgradeBrowser": "<a href='http://browsehappy.com/' target='_blank'>請更新您的瀏覽器</a>。",
       "mapLoadingFail": "發生了一些錯誤，地圖未正確載入。",
-      "signOut": "登出"
+      "signOut": "登出",
+      "print0": "試_Sorry, this story cannot be printed____________驗.",
+      "print1": "試_To print this story, please use the print button located in the share dialog________________________驗.",
+      "print2": "試_Sorry, a printable version of the story is typically accessible through the share dialog, but this dialog has been disabled by the author__________________________________________驗."
     },
     "mobileView": {
       "tapForDetails": "點選查看詳細資訊",
@@ -85,7 +88,15 @@ define({
       "autoplayLabel": "自動播放模式",
       "autoplayExplain1": "自動播放模式將以一定間隔向前播放您的故事。這很適用於書報攤或公共顯示器，但請注意，在其他情況下可能會使得故事更難閱讀。此圖徵不支援小畫面。",
       "autoplayExplain2": "啟用此模式時，可使用控制項來播放/暫停故事和調整瀏覽速度。",
-      "linksupdated": "已更新連結!"
+      "linksupdated": "已更新連結!",
+      "print": "試_Print___驗",
+      "printInstruction1": "試_Please wait for all the content to load before ${printing} this page______________________驗.",
+      "printInstruction2": "試_This page cannot be shared with others, instead share the ${link}_____________________驗.",
+      "link": "試_link to the story______驗",
+      "printing": "試_printing___驗",
+      "printWarning": "試_This is a printed version of a story map. Dynamic content such as videos and interactive maps is only available in the online version at ${link}_____________________________________________驗.",
+      "printMSWarning": "試_link available only in online story____________驗",
+      "printVideoWarning": "試_This video can be viewed in the online version of this story map____________________驗"
     }
   }
 });

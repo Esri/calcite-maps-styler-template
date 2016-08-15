@@ -31,7 +31,9 @@ define({
       "rightHeader": "Σελίδα Facebook",
       "pageExplain": "Μια Facebook σελίδα είναι μια εμπορική επωνυμία, ένα προϊόν ή μια διασημότητα, π.χ. <b>esrigis</b>. Το όνομα της σελίδας βρίσκεται μετά το πρώτο '/' στο URL της σελίδας.",
       "pageInputLbl": "Όνομα σελίδας",
-      "lookupMsgError": "Η σελίδα δεν βρέθηκε"
+      "lookupMsgError": "Η σελίδα δεν βρέθηκε",
+      "warning": "Đ_Facebook support has been discontinued, ${learn}________________ớ.",
+      "learn": "Đ_learn more____ớ"
     },
     "imageSelectorPicasa": {
       "userInputLbl": "Email ή Picasa/Google+ ID",
@@ -101,7 +103,10 @@ define({
       "lblPosition3Explain2": "(το πλάτος θα προσαρμόζεται πάντα στο πλαίσιο)",
       "lblPosition4Explain": "(μπορεί να παραμορφωθεί)",
       "unloadLbl": "Κατάργηση φόρτωσης όταν ο αναγνώστης απομακρύνεται",
-      "unloadHelp": "Εάν η ιστοσελίδα έχει πολυμέσα ήχου ή βίντεο, αφήστε ενεργοποιημένη αυτή την επιλογή για να σταματάει η αναπαραγωγή αυτού του περιεχομένου όταν ο αναγνώστης απομακρύνεται. Καταργήστε τη για να συνεχίζει, για παράδειγμα, η αναπαραγωγή μιας μουσικής υπόκρουσης καθώς ο αναγνώστης προχωράει στην αφήγηση..<br />Εάν η ιστοσελίδα είναι μια εφαρμογή, καταργήστε αυτή την επιλογή, ώστε η αφήγηση να μην φορτώνεται ξανά όταν ο αναγνώστης επιστρέφει σε αυτή."
+      "unloadHelp": "Εάν η ιστοσελίδα έχει πολυμέσα ήχου ή βίντεο, αφήστε ενεργοποιημένη αυτή την επιλογή για να σταματάει η αναπαραγωγή αυτού του περιεχομένου όταν ο αναγνώστης απομακρύνεται. Καταργήστε τη για να συνεχίζει, για παράδειγμα, η αναπαραγωγή μιας μουσικής υπόκρουσης καθώς ο αναγνώστης προχωράει στην αφήγηση..<br />Εάν η ιστοσελίδα είναι μια εφαρμογή, καταργήστε αυτή την επιλογή, ώστε η αφήγηση να μην φορτώνεται ξανά όταν ο αναγνώστης επιστρέφει σε αυτή.",
+      "embedProtocolLabel": "Đ_Load page over a secure connection (HTTPS)______________ớ",
+      "embedProtocolWarning1": "Đ_As your story is configured to load over a secure connection, it is mandatory that all embedded page use a secure connection. If the page does not load it may be because the page is not available over a secure connection or that this page cannot be embedded (some websites restrict embedding)_________________________________________________________________________________________ớ.",
+      "embedProtocolWarning2": "Đ_As your story is configured to load over an insecure connection, you can chose to load this page over a secure or insecure connection. We recommend that you always use a secure connection. If the page does not load it may be because the page is not available over the connection mode you selected or that this page cannot be embedded (some websites restrict embedding)________________________________________________________________________________________________________________ớ."
     },
     "editorActionGeocode": {
       "lblTitle": "Εντοπίστε μια διεύθυνση ή ένα μέρος",

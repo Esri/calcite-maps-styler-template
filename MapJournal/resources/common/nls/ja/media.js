@@ -31,7 +31,9 @@ define({
       "rightHeader": "Facebook ページ",
       "pageExplain": "Facebook ページは、<b>esrigis</b> などの、公開されたブランド/製品または著名人です。ページ URL 内の最初の「/」以降から、ページ名を取得できます。",
       "pageInputLbl": "ページ名",
-      "lookupMsgError": "ページが見つかりません"
+      "lookupMsgError": "ページが見つかりません",
+      "warning": "須_Facebook support has been discontinued, ${learn}________________鷗.",
+      "learn": "須_learn more____鷗"
     },
     "imageSelectorPicasa": {
       "userInputLbl": "電子メールまたは Picasa/Google+ ID",
@@ -101,7 +103,10 @@ define({
       "lblPosition3Explain2": "(幅は常にパネルに合わせて調整されます)",
       "lblPosition4Explain": "(歪みの可能性あり)",
       "unloadLbl": "ユーザが移動したときにアンロード",
-      "unloadHelp": "Web ページに音声やビデオ メディアが含まれている場合、このオプションをオンにすると、ユーザーが移動したときにコンテンツの再生が停止されます。たとえば、ユーザーが次のストーリーに進んでもサウンド トラックの再生を維持したいときはオフにします。<br />Web ページがアプリケーションである場合、ユーザーが戻ってもストーリーが再読み込みされないようにするには、このオプションをオフにします。"
+      "unloadHelp": "Web ページに音声やビデオ メディアが含まれている場合、このオプションをオンにすると、ユーザーが移動したときにコンテンツの再生が停止されます。たとえば、ユーザーが次のストーリーに進んでもサウンド トラックの再生を維持したいときはオフにします。<br />Web ページがアプリケーションである場合、ユーザーが戻ってもストーリーが再読み込みされないようにするには、このオプションをオフにします。",
+      "embedProtocolLabel": "須_Load page over a secure connection (HTTPS)______________鷗",
+      "embedProtocolWarning1": "須_As your story is configured to load over a secure connection, it is mandatory that all embedded page use a secure connection. If the page does not load it may be because the page is not available over a secure connection or that this page cannot be embedded (some websites restrict embedding)_________________________________________________________________________________________鷗.",
+      "embedProtocolWarning2": "須_As your story is configured to load over an insecure connection, you can chose to load this page over a secure or insecure connection. We recommend that you always use a secure connection. If the page does not load it may be because the page is not available over the connection mode you selected or that this page cannot be embedded (some websites restrict embedding)________________________________________________________________________________________________________________鷗."
     },
     "editorActionGeocode": {
       "lblTitle": "住所または位置の検索",

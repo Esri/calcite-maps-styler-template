@@ -83,7 +83,7 @@ define({
     "valueRadioButtonLabel": "Arvo",
     "uniqueRadioButtonLabel": "Yksilöllinen",
     "selectLayerToBegin": "Aloita valitsemalla luokka",
-    "layerFeatureCount": "${featureCount} tietuetta"
+    "layerFeatureCount": "Å_${selectedFeatureCount} selected / ${featureCount} records__________________ö"
   },
   "timeSlider": {
     "timeSliderLabel": "Aikaväli",
@@ -97,7 +97,12 @@ define({
     "placeHolderText": "",
     "noCommentsAvailableText": "Tietueita ei ole saatavilla",
     "remainingTextCount": "${0} merkki(ä) jäljellä",
-    "showNoText": "Ei"
+    "showNoText": "Ei",
+    "selectAttachments": "Å_Attachments____ö",
+    "selectFileText": "Å_Browse___ö",
+    "attachmentSelectedMsg": "Å_attachment(s) selected________ö",
+    "attachmentHeaderText": "Å_Attachments____ö",
+    "addRecordText": "Å_Add Record____ö"
   },
   "main": {
     "noGroup": "Yhtään ryhmää ei ole määritetty"
@@ -109,17 +114,18 @@ define({
   },
   "manualRefresh": {
     "manualRefreshIconTooltip": "Päivitä",
-    "confirmManualRefeshText": "Kaikki valinnat ja tallentamattomat muutokset ohitetaan"
+    "confirmManualRefreshText": "Å_All selections and unsaved changes will be discarded_________________ö"
   },
   "help": {
     "helpIconTooltip": "Ohje"
   },
   "filter": {
     "noFeatureFoundText": "Tälle arvolle ei löytynyt kohdetta.",
-    "distinctQueryFalied": "Kentälle ei löytynyt erillisiä arvoja.",
+    "distinctQueryFailed": "Å_No distinct values found for the field_____________ö.",
     "andText": "ja",
-    "filterInEditModeAlert": "Suodattimet eivät ole käytettävissä muokkauksen aikana",
-    "dropdownSelectOption": "Valitse"
+    "filterInEditModeAlert": "Å_Filters unavailable while editing___________ö.",
+    "dropdownSelectOption": "Valitse",
+    "filterInShowSelectedEditModeAlert": "Å_Filters unavailable in 'Show Selected' mode______________ö."
   },
   "detailsPanel": {
     "editContentText": "Muokkaa tietuetta"
@@ -127,5 +133,10 @@ define({
   "signOutPage": {
     "signOutMessage": "Uloskirjautuminen onnistui",
     "reSignInMessage": "Kirjaudu sisään napsauttamalla tätä"
+  },
+  "selectionOptions": {
+    "selectionOptionsIconTooltip": "Å_Selection Options______ö",
+    "showAllOptionText": "Å_Show All___ö",
+    "showSelectedOptionText": "Å_Show Selected_____ö"
   }
 });

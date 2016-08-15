@@ -36,7 +36,10 @@ define({
       "noViewerIE": "이 스토리는 %VERSION% 이전 버전의 Internet Explorer에서 지원되지 않습니다. %UPGRADE%",
       "upgradeBrowser": "<a href='http://browsehappy.com/' target='_blank'>브라우저를 업데이트하세요</a>.",
       "mapLoadingFail": "오류가 발생했습니다. 맵을 올바르게 불러오지 않았습니다.",
-      "signOut": "로그아웃"
+      "signOut": "로그아웃",
+      "print0": "한_Sorry, this story cannot be printed____________빠.",
+      "print1": "한_To print this story, please use the print button located in the share dialog________________________빠.",
+      "print2": "한_Sorry, a printable version of the story is typically accessible through the share dialog, but this dialog has been disabled by the author__________________________________________빠."
     },
     "mobileView": {
       "tapForDetails": "세부정보를 보려면 누릅니다.",
@@ -85,7 +88,15 @@ define({
       "autoplayLabel": "자동 재생 모드",
       "autoplayExplain1": "자동 재생 모드를 사용하면 스토리가 주기적으로 진행됩니다. 이 기능은 키오스크 또는 공공의 디스플레이 모니터에는 적합하지만 그 이외의 환경에서는 스토리 읽기가 더욱 어려워질 수 있습니다. 소형 디스플레이에서는 이 기능이 지원되지 않습니다.",
       "autoplayExplain2": "이 모드가 활성화되면 스토리를 재생/일시정지하고 탐색 속도를 조정하는 컨트롤이 나타납니다.",
-      "linksupdated": "링크가 업데이트되었습니다!"
+      "linksupdated": "링크가 업데이트되었습니다!",
+      "print": "한_Print___빠",
+      "printInstruction1": "한_Please wait for all the content to load before ${printing} this page______________________빠.",
+      "printInstruction2": "한_This page cannot be shared with others, instead share the ${link}_____________________빠.",
+      "link": "한_link to the story______빠",
+      "printing": "한_printing___빠",
+      "printWarning": "한_This is a printed version of a story map. Dynamic content such as videos and interactive maps is only available in the online version at ${link}_____________________________________________빠.",
+      "printMSWarning": "한_link available only in online story____________빠",
+      "printVideoWarning": "한_This video can be viewed in the online version of this story map____________________빠"
     }
   }
 });

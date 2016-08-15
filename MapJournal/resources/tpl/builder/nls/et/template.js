@@ -20,7 +20,9 @@ define({
       "cfgMedium": "Keskmine",
       "cfgLarge": "Suur",
       "socialLinksLabel": "Kuva jagamise lingid iga jaotise allservas",
-      "socialLinksDescr": "Sel viisil saavad lugejad viidata teie malli %TPL_NAME% kindlatele jaotistele ja neid esile tõsta. Kui kasutate näiteks jaotiste jagamise ikooni, satub lugeja lehel %TPL_NAME% sellesse konkreetsesse jaotisse, mitte loo algusse. Tiitlijaotises asuva sotsiaalmeedia lingi kaudu saavad lugejad tervet teie lehte %TPL_NAME% (päisesakki) jagada nii, et uus lugeja viiakse lehe %TPL_NAME% algusse."
+      "socialLinksDescr": "Sel viisil saavad lugejad viidata teie malli %TPL_NAME% kindlatele jaotistele ja neid esile tõsta. Kui kasutate näiteks jaotiste jagamise ikooni, satub lugeja lehel %TPL_NAME% sellesse konkreetsesse jaotisse, mitte loo algusse. Tiitlijaotises asuva sotsiaalmeedia lingi kaudu saavad lugejad tervet teie lehte %TPL_NAME% (päisesakki) jagada nii, et uus lugeja viiakse lehe %TPL_NAME% algusse.",
+      "socialDisabled": "Š_This feature is only available with Floating Panel layout__________________ä",
+      "socialWarning": "Š_Your story is using the Side Panel layout and we now recommend to only enable that option with Floating Panel layout. This prevent issues where the panel may not scroll to the desired section for narratives that contains images. You can continue to use that option but if you disable it, it will only be available with Floating Panel layout_______________________________________________________________________________________________________ä."
     },
     "settingsLayoutFonts": {
       "title": "Fondid",

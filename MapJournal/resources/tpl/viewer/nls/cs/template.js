@@ -36,7 +36,10 @@ define({
       "noViewerIE": "Tento příběh není podporován v prohlížeči Internet Explorer ve verzi nižší než %VERSION%. %UPGRADE%",
       "upgradeBrowser": "<a href='http://browsehappy.com/' target='_blank'>Prosím, aktualizujte prohlížeč</a>.",
       "mapLoadingFail": "Něco se pokazilo, mapa se nenahrála správně.",
-      "signOut": "Odhlásit"
+      "signOut": "Odhlásit",
+      "print0": "Ř_Sorry, this story cannot be printed____________ů.",
+      "print1": "Ř_To print this story, please use the print button located in the share dialog________________________ů.",
+      "print2": "Ř_Sorry, a printable version of the story is typically accessible through the share dialog, but this dialog has been disabled by the author__________________________________________ů."
     },
     "mobileView": {
       "tapForDetails": "Klepnutím zobrazíte podrobnosti.",
@@ -85,7 +88,15 @@ define({
       "autoplayLabel": "Režim automatického přehrávání",
       "autoplayExplain1": "Režim automatického přehrávání bude příběhem procházet v pravidelných intervalech. Ideální pro použití na výstavních stáncích nebo veřejných monitorech, buďte si však vědomi toho, že v některých případech to může znesnadnit čtení příběhu. Tato funkce není podporována na malých obrazovkách.",
       "autoplayExplain2": "Je-li tento režim aktivní, budou k dispozici ovládací prvky ke spuštění/pozastavení přehrávání příběhu a k nastavení rychlosti procházení.",
-      "linksupdated": "Odkazy aktualizovány!"
+      "linksupdated": "Odkazy aktualizovány!",
+      "print": "Ř_Print___ů",
+      "printInstruction1": "Ř_Please wait for all the content to load before ${printing} this page______________________ů.",
+      "printInstruction2": "Ř_This page cannot be shared with others, instead share the ${link}_____________________ů.",
+      "link": "Ř_link to the story______ů",
+      "printing": "Ř_printing___ů",
+      "printWarning": "Ř_This is a printed version of a story map. Dynamic content such as videos and interactive maps is only available in the online version at ${link}_____________________________________________ů.",
+      "printMSWarning": "Ř_link available only in online story____________ů",
+      "printVideoWarning": "Ř_This video can be viewed in the online version of this story map____________________ů"
     }
   }
 });

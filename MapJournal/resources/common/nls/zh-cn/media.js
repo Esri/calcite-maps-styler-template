@@ -31,7 +31,9 @@ define({
       "rightHeader": "Facebook 页面",
       "pageExplain": "Facebook 页面属于公共品牌/产品或像 <b>esrigis</b> 一样的名品。可以在页面 URL 的第一个“/”后面获得页面名称。",
       "pageInputLbl": "页面名称",
-      "lookupMsgError": "未找到页面"
+      "lookupMsgError": "未找到页面",
+      "warning": "试_Facebook support has been discontinued, ${learn}________________验.",
+      "learn": "试_learn more____验"
     },
     "imageSelectorPicasa": {
       "userInputLbl": "电子邮件或 Picasa/Google+ ID",
@@ -101,7 +103,10 @@ define({
       "lblPosition3Explain2": "(宽度将始终适应面板)",
       "lblPosition4Explain": "（可变形）",
       "unloadLbl": "读者定位到其他部分时进行卸载",
-      "unloadHelp": "如果网页中包含音频或视频介质，请将该选项选中以在读者定位到其他部分时停止内容播放。取消选中该选项可使读者在浏览故事的同时持续播放音轨。<br />如果网页是应用程序，请取消选中该选项，这样应用程序不必在读者返回此部分时重新加载。"
+      "unloadHelp": "如果网页中包含音频或视频介质，请将该选项选中以在读者定位到其他部分时停止内容播放。取消选中该选项可使读者在浏览故事的同时持续播放音轨。<br />如果网页是应用程序，请取消选中该选项，这样应用程序不必在读者返回此部分时重新加载。",
+      "embedProtocolLabel": "试_Load page over a secure connection (HTTPS)______________验",
+      "embedProtocolWarning1": "试_As your story is configured to load over a secure connection, it is mandatory that all embedded page use a secure connection. If the page does not load it may be because the page is not available over a secure connection or that this page cannot be embedded (some websites restrict embedding)_________________________________________________________________________________________验.",
+      "embedProtocolWarning2": "试_As your story is configured to load over an insecure connection, you can chose to load this page over a secure or insecure connection. We recommend that you always use a secure connection. If the page does not load it may be because the page is not available over the connection mode you selected or that this page cannot be embedded (some websites restrict embedding)________________________________________________________________________________________________________________验."
     },
     "editorActionGeocode": {
       "lblTitle": "定位地址或地点",

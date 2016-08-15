@@ -36,7 +36,10 @@ define({
       "noViewerIE": "هذه القصة غير مدعومة في Internet Explorer قبل الإصدار %VERSION%. %UPGRADE%",
       "upgradeBrowser": "<a href='http://browsehappy.com/' target='_blank'>الرجاء تحديث المستعرض</a>.",
       "mapLoadingFail": "‏‏حدث خطأ ما، لم يتم تحميل الخريطة بشكل صحيح.",
-      "signOut": "تسجيل الخروج"
+      "signOut": "تسجيل الخروج",
+      "print0": "بيت_Sorry, this story cannot be printed____________لاحقة.",
+      "print1": "بيت_To print this story, please use the print button located in the share dialog________________________لاحقة.",
+      "print2": "بيت_Sorry, a printable version of the story is typically accessible through the share dialog, but this dialog has been disabled by the author__________________________________________لاحقة."
     },
     "mobileView": {
       "tapForDetails": "الضغط للحصول على التفاصيل",
@@ -85,7 +88,15 @@ define({
       "autoplayLabel": "وضع التشغيل التلقائي",
       "autoplayExplain1": "يتقدّم وضع التشغيل التلقائي خلال القصة في فواصل منتظمة، وهو مثالي في عارض بيانات أو مراقبة عرض عام، ولكن انتبه، ففي مواقف أخرى، قد يجعل القصة أصعب في القراءة. ولا يتم دعم هذا المعلم في عروض صغيرة.",
       "autoplayExplain2": "عندما يكون هذا الوضع نشطًا، تتوفر عناصر تحكم تشغيل/إيقاف تشغيل القصة وتعديل سرعة الانتقال.",
-      "linksupdated": "تم تحديث الروابط!"
+      "linksupdated": "تم تحديث الروابط!",
+      "print": "بيت_Print___لاحقة",
+      "printInstruction1": "بيت_Please wait for all the content to load before ${printing} this page______________________لاحقة.",
+      "printInstruction2": "بيت_This page cannot be shared with others, instead share the ${link}_____________________لاحقة.",
+      "link": "بيت_link to the story______لاحقة",
+      "printing": "بيت_printing___لاحقة",
+      "printWarning": "بيت_This is a printed version of a story map. Dynamic content such as videos and interactive maps is only available in the online version at ${link}_____________________________________________لاحقة.",
+      "printMSWarning": "بيت_link available only in online story____________لاحقة",
+      "printVideoWarning": "بيت_This video can be viewed in the online version of this story map____________________لاحقة"
     }
   }
 });

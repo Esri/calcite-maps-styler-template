@@ -20,7 +20,9 @@ define({
       "cfgMedium": "בינוני",
       "cfgLarge": "גדול",
       "socialLinksLabel": "הצג את הקישורים המשותפים בחלק התחתון של כל קטע",
-      "socialLinksDescr": "זה מאפשר לקוראים להפנות ולקדם מקטעים מסוימים של ה-%TPL_NAME% שלך. לדוגמה, אם אתה משתמש בסמל שיתוף מקטעים, הקוראים יגיעו למקטע ספציפי ב-%TPL_NAME% במקום להגיע לתחילת הסיפור. הקוראים שלך יוכלו להשתמש בקישור המדיה החברתית במקטע הכותרת כדי לקדם את כל ה-%TPL_NAME% (לשונית הכותרת) ולהגיע לתחילת ה-%TPL_NAME%."
+      "socialLinksDescr": "זה מאפשר לקוראים להפנות ולקדם מקטעים מסוימים של ה-%TPL_NAME% שלך. לדוגמה, אם אתה משתמש בסמל שיתוף מקטעים, הקוראים יגיעו למקטע ספציפי ב-%TPL_NAME% במקום להגיע לתחילת הסיפור. הקוראים שלך יוכלו להשתמש בקישור המדיה החברתית במקטע הכותרת כדי לקדם את כל ה-%TPL_NAME% (לשונית הכותרת) ולהגיע לתחילת ה-%TPL_NAME%.",
+      "socialDisabled": "כן_This feature is only available with Floating Panel layout__________________ש",
+      "socialWarning": "כן_Your story is using the Side Panel layout and we now recommend to only enable that option with Floating Panel layout. This prevent issues where the panel may not scroll to the desired section for narratives that contains images. You can continue to use that option but if you disable it, it will only be available with Floating Panel layout_______________________________________________________________________________________________________ש."
     },
     "settingsLayoutFonts": {
       "title": "גופנים",

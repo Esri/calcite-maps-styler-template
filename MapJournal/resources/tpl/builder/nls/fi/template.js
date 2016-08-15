@@ -20,7 +20,9 @@ define({
       "cfgMedium": "Keskisuuri",
       "cfgLarge": "Suuri",
       "socialLinksLabel": "Näytä jakamislinkit kunkin osan alareunassa",
-      "socialLinksDescr": "Tämän toiminnon avulla lukijat voivat viitata tiettyihin tarinan %TPL_NAME% osiin tai mainostaa niitä. Jos käytät esimerkiksi osien jakamiskuvaketta, lukijat päätyvät tarinan %TPL_NAME% tiettyyn osaan eivätkä tarinan alkuun. Lukijat voivat käyttää otsikko-osan sosiaalisen median linkkiä koko tarinan %TPL_NAME% (Otsikko-välilehti) mainostamiseen, jolloin he päätyvät tarinan %TPL_NAME% alkuun."
+      "socialLinksDescr": "Tämän toiminnon avulla lukijat voivat viitata tiettyihin tarinan %TPL_NAME% osiin tai mainostaa niitä. Jos käytät esimerkiksi osien jakamiskuvaketta, lukijat päätyvät tarinan %TPL_NAME% tiettyyn osaan eivätkä tarinan alkuun. Lukijat voivat käyttää otsikko-osan sosiaalisen median linkkiä koko tarinan %TPL_NAME% (Otsikko-välilehti) mainostamiseen, jolloin he päätyvät tarinan %TPL_NAME% alkuun.",
+      "socialDisabled": "Å_This feature is only available with Floating Panel layout__________________ö",
+      "socialWarning": "Å_Your story is using the Side Panel layout and we now recommend to only enable that option with Floating Panel layout. This prevent issues where the panel may not scroll to the desired section for narratives that contains images. You can continue to use that option but if you disable it, it will only be available with Floating Panel layout_______________________________________________________________________________________________________ö."
     },
     "settingsLayoutFonts": {
       "title": "Fontit",

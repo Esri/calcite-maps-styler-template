@@ -31,7 +31,9 @@ define({
       "rightHeader": "Stranica Facebooka",
       "pageExplain": "Stranica na Facebooku javni je brand/proizvod ili poznati subjekt kao <b>esrigis</b>. Možete vidjeti naziv stranice nakon '/' na URL-u stranice.",
       "pageInputLbl": "Naziv stranice",
-      "lookupMsgError": "Stranica nije pronađena"
+      "lookupMsgError": "Stranica nije pronađena",
+      "warning": "Č_Facebook support has been discontinued, ${learn}________________ž.",
+      "learn": "Č_learn more____ž"
     },
     "imageSelectorPicasa": {
       "userInputLbl": "ID za e-poštu ili Picasu/Google+",
@@ -101,7 +103,10 @@ define({
       "lblPosition3Explain2": "(širina će uvijek stati na ploču)",
       "lblPosition4Explain": "(može se iskriviti)",
       "unloadLbl": "Uklonite kada se čitatelj udalji",
-      "unloadHelp": "Ako web-stranica sadrži zvučne medije ili videozapise, označite ovu opciju da biste zaustavili reprodukciju sadržaja kada se čitatelj udalji. Odznačite je, primjerice, ako želite da svira pozadinska glazba dok čitatelj napreduje kroz priču.<br />Ako je web-stranica aplikacija, odznačite ovu opciju tako da se priča ne učita ponovno kad se čitatelj vrati na nju."
+      "unloadHelp": "Ako web-stranica sadrži zvučne medije ili videozapise, označite ovu opciju da biste zaustavili reprodukciju sadržaja kada se čitatelj udalji. Odznačite je, primjerice, ako želite da svira pozadinska glazba dok čitatelj napreduje kroz priču.<br />Ako je web-stranica aplikacija, odznačite ovu opciju tako da se priča ne učita ponovno kad se čitatelj vrati na nju.",
+      "embedProtocolLabel": "Č_Load page over a secure connection (HTTPS)______________ž",
+      "embedProtocolWarning1": "Č_As your story is configured to load over a secure connection, it is mandatory that all embedded page use a secure connection. If the page does not load it may be because the page is not available over a secure connection or that this page cannot be embedded (some websites restrict embedding)_________________________________________________________________________________________ž.",
+      "embedProtocolWarning2": "Č_As your story is configured to load over an insecure connection, you can chose to load this page over a secure or insecure connection. We recommend that you always use a secure connection. If the page does not load it may be because the page is not available over the connection mode you selected or that this page cannot be embedded (some websites restrict embedding)________________________________________________________________________________________________________________ž."
     },
     "editorActionGeocode": {
       "lblTitle": "Pronađite adresu ili mjesto",

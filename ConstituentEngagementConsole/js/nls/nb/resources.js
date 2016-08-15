@@ -83,7 +83,7 @@ define({
     "valueRadioButtonLabel": "Verdi",
     "uniqueRadioButtonLabel": "Unike",
     "selectLayerToBegin": "Velg en kategori for å komme i gang",
-    "layerFeatureCount": "${featureCount} poster"
+    "layerFeatureCount": "å_${selectedFeatureCount} selected / ${featureCount} records__________________ø"
   },
   "timeSlider": {
     "timeSliderLabel": "Tidsrom",
@@ -97,7 +97,12 @@ define({
     "placeHolderText": "",
     "noCommentsAvailableText": "Ingen tilgjengelige poster",
     "remainingTextCount": "${0} tegn gjenstår",
-    "showNoText": "Nei"
+    "showNoText": "Nei",
+    "selectAttachments": "å_Attachments____ø",
+    "selectFileText": "å_Browse___ø",
+    "attachmentSelectedMsg": "å_attachment(s) selected________ø",
+    "attachmentHeaderText": "å_Attachments____ø",
+    "addRecordText": "å_Add Record____ø"
   },
   "main": {
     "noGroup": "Ingen gruppe er konfigurert"
@@ -109,17 +114,18 @@ define({
   },
   "manualRefresh": {
     "manualRefreshIconTooltip": "Oppdater",
-    "confirmManualRefeshText": "Alle utvalg og endringer som ikke er lagret, forkastes"
+    "confirmManualRefreshText": "å_All selections and unsaved changes will be discarded_________________ø"
   },
   "help": {
     "helpIconTooltip": "Hjelp"
   },
   "filter": {
     "noFeatureFoundText": "Finner ingen geoobjekter for denne verdien.",
-    "distinctQueryFalied": "Finner ingen distinkte verdier for feltet.",
+    "distinctQueryFailed": "å_No distinct values found for the field_____________ø.",
     "andText": "og",
-    "filterInEditModeAlert": "Filtre er ikke tilgjengelig under redigering",
-    "dropdownSelectOption": "Velg"
+    "filterInEditModeAlert": "å_Filters unavailable while editing___________ø.",
+    "dropdownSelectOption": "Velg",
+    "filterInShowSelectedEditModeAlert": "å_Filters unavailable in 'Show Selected' mode______________ø."
   },
   "detailsPanel": {
     "editContentText": "Rediger post"
@@ -127,5 +133,10 @@ define({
   "signOutPage": {
     "signOutMessage": "Du er logget av",
     "reSignInMessage": "Klikk her for å logge på"
+  },
+  "selectionOptions": {
+    "selectionOptionsIconTooltip": "å_Selection Options______ø",
+    "showAllOptionText": "å_Show All___ø",
+    "showSelectedOptionText": "å_Show Selected_____ø"
   }
 });

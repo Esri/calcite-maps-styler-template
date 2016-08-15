@@ -36,7 +36,10 @@ define({
       "noViewerIE": "Câu chuyện này không được hỗ trợ trong Internet Explorer trước phiên bản %VERSION%. %UPGRADE%",
       "upgradeBrowser": "<a href='http://browsehappy.com/' target='_blank'>Vui lòng cập nhật trình duyệt của bạn</a>.",
       "mapLoadingFail": "Đã xảy ra lỗi, bản đồ không tải đúng.",
-      "signOut": "Đăng xuất"
+      "signOut": "Đăng xuất",
+      "print0": "Đ_Sorry, this story cannot be printed____________ớ.",
+      "print1": "Đ_To print this story, please use the print button located in the share dialog________________________ớ.",
+      "print2": "Đ_Sorry, a printable version of the story is typically accessible through the share dialog, but this dialog has been disabled by the author__________________________________________ớ."
     },
     "mobileView": {
       "tapForDetails": "Chạm nhẹ vào để biết chi tiết",
@@ -85,7 +88,15 @@ define({
       "autoplayLabel": "Chế độ phát tự động",
       "autoplayExplain1": "Chế độ phát tự động sẽ chuyển qua câu chuyện của bạn theo khoảng thời gian định kỳ. Đây là tính năng lý tưởng đối với màn hình hiển thị nơi công cộng hoặc của ki-ốt, tuy nhiên, hãy lưu ý rằng trong các trường hợp khác, câu chuyện có thể trở nên khó đọc hơn. Tính năng này không được hỗ trợ trên các màn hình hiển thị nhỏ.",
       "autoplayExplain2": "Khi chế độ này được kích hoạt, có các nút điều khiển để phát/tạm dừng câu chuyện và điều chỉnh tốc độ điều hướng.",
-      "linksupdated": "Liên kết đã được cập nhật!"
+      "linksupdated": "Liên kết đã được cập nhật!",
+      "print": "Đ_Print___ớ",
+      "printInstruction1": "Đ_Please wait for all the content to load before ${printing} this page______________________ớ.",
+      "printInstruction2": "Đ_This page cannot be shared with others, instead share the ${link}_____________________ớ.",
+      "link": "Đ_link to the story______ớ",
+      "printing": "Đ_printing___ớ",
+      "printWarning": "Đ_This is a printed version of a story map. Dynamic content such as videos and interactive maps is only available in the online version at ${link}_____________________________________________ớ.",
+      "printMSWarning": "Đ_link available only in online story____________ớ",
+      "printVideoWarning": "Đ_This video can be viewed in the online version of this story map____________________ớ"
     }
   }
 });

@@ -83,7 +83,7 @@ define({
     "valueRadioButtonLabel": "Värde",
     "uniqueRadioButtonLabel": "Unik",
     "selectLayerToBegin": "Välj en kategori för att komma igång",
-    "layerFeatureCount": "${featureCount} poster"
+    "layerFeatureCount": "Å_${selectedFeatureCount} selected / ${featureCount} records__________________ö"
   },
   "timeSlider": {
     "timeSliderLabel": "Tidsintervall",
@@ -97,7 +97,12 @@ define({
     "placeHolderText": "",
     "noCommentsAvailableText": "Inga poster tillgängliga",
     "remainingTextCount": "${0} tecken återstår",
-    "showNoText": "Nej"
+    "showNoText": "Nej",
+    "selectAttachments": "Å_Attachments____ö",
+    "selectFileText": "Å_Browse___ö",
+    "attachmentSelectedMsg": "Å_attachment(s) selected________ö",
+    "attachmentHeaderText": "Å_Attachments____ö",
+    "addRecordText": "Å_Add Record____ö"
   },
   "main": {
     "noGroup": "Ingen grupp konfigurerad"
@@ -109,17 +114,18 @@ define({
   },
   "manualRefresh": {
     "manualRefreshIconTooltip": "Uppdatera",
-    "confirmManualRefeshText": "Alla urval och osparade ändringar ignoreras"
+    "confirmManualRefreshText": "Å_All selections and unsaved changes will be discarded_________________ö"
   },
   "help": {
     "helpIconTooltip": "Hjälp"
   },
   "filter": {
     "noFeatureFoundText": "Inget geoobjekt hittades för detta värde.",
-    "distinctQueryFalied": "Inga distinkta värden hittades för fältet.",
+    "distinctQueryFailed": "Å_No distinct values found for the field_____________ö.",
     "andText": "och",
-    "filterInEditModeAlert": "Filter är inte tillgängliga vid redigering",
-    "dropdownSelectOption": "Välj"
+    "filterInEditModeAlert": "Å_Filters unavailable while editing___________ö.",
+    "dropdownSelectOption": "Välj",
+    "filterInShowSelectedEditModeAlert": "Å_Filters unavailable in 'Show Selected' mode______________ö."
   },
   "detailsPanel": {
     "editContentText": "Redigera post"
@@ -127,5 +133,10 @@ define({
   "signOutPage": {
     "signOutMessage": "Du har loggat ut",
     "reSignInMessage": "Klicka här för att logga in"
+  },
+  "selectionOptions": {
+    "selectionOptionsIconTooltip": "Å_Selection Options______ö",
+    "showAllOptionText": "Å_Show All___ö",
+    "showSelectedOptionText": "Å_Show Selected_____ö"
   }
 });

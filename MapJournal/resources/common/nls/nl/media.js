@@ -31,7 +31,9 @@ define({
       "rightHeader": "Facebook-pagina",
       "pageExplain": "Een Facebook-pagina is een openbaar merk/product of beroemdheid zoals <b>esrigis</b>. U vindt de naam van de pagina achter de eerste  '/' in de URL van de pagina.",
       "pageInputLbl": "Paginanaam",
-      "lookupMsgError": "Pagina niet gevonden"
+      "lookupMsgError": "Pagina niet gevonden",
+      "warning": "Ĳ_Facebook support has been discontinued, ${learn}________________ä.",
+      "learn": "Ĳ_learn more____ä"
     },
     "imageSelectorPicasa": {
       "userInputLbl": "E-mail of Picasa-/Google+-ID",
@@ -101,7 +103,10 @@ define({
       "lblPosition3Explain2": "(breedte past altijd in het deelvenster)",
       "lblPosition4Explain": "(kan worden vervormd)",
       "unloadLbl": "Laden ongedaan maken als de lezer weggaat",
-      "unloadHelp": "Houd deze optie aangevinkt als de webpagina audio- of videomedia heeft om te voorkomen dat de content wordt afgespeeld als de lezer weggaat. Haal het vinkje weg om een soundtrack te laten doorspelen als de lezer verdergaat door het verhaal.<br />Als de webpagina een applicatie is, haal het vinkje dan weg zodat de applicatie het niet opnieuw laadt als de lezer terugkeert."
+      "unloadHelp": "Houd deze optie aangevinkt als de webpagina audio- of videomedia heeft om te voorkomen dat de content wordt afgespeeld als de lezer weggaat. Haal het vinkje weg om een soundtrack te laten doorspelen als de lezer verdergaat door het verhaal.<br />Als de webpagina een applicatie is, haal het vinkje dan weg zodat de applicatie het niet opnieuw laadt als de lezer terugkeert.",
+      "embedProtocolLabel": "Ĳ_Load page over a secure connection (HTTPS)______________ä",
+      "embedProtocolWarning1": "Ĳ_As your story is configured to load over a secure connection, it is mandatory that all embedded page use a secure connection. If the page does not load it may be because the page is not available over a secure connection or that this page cannot be embedded (some websites restrict embedding)_________________________________________________________________________________________ä.",
+      "embedProtocolWarning2": "Ĳ_As your story is configured to load over an insecure connection, you can chose to load this page over a secure or insecure connection. We recommend that you always use a secure connection. If the page does not load it may be because the page is not available over the connection mode you selected or that this page cannot be embedded (some websites restrict embedding)________________________________________________________________________________________________________________ä."
     },
     "editorActionGeocode": {
       "lblTitle": "Een adres of plaats zoeken",

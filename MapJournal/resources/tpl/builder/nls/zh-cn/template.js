@@ -20,7 +20,9 @@ define({
       "cfgMedium": "中",
       "cfgLarge": "大",
       "socialLinksLabel": "在每节底部显示共享链接",
-      "socialLinksDescr": "这使读者可以引用并提升 %TPL_NAME% 的特定节。例如，如果使用节共享图标，读者将会定位到该特定 %TPL_NAME% 节，而并非定位到故事的开头。读者可使用标题节中的社交媒体链接来提升整个 %TPL_NAME%（标题选项卡）并定位到 %TPL_NAME% 的开头。"
+      "socialLinksDescr": "这使读者可以引用并提升 %TPL_NAME% 的特定节。例如，如果使用节共享图标，读者将会定位到该特定 %TPL_NAME% 节，而并非定位到故事的开头。读者可使用标题节中的社交媒体链接来提升整个 %TPL_NAME%（标题选项卡）并定位到 %TPL_NAME% 的开头。",
+      "socialDisabled": "试_This feature is only available with Floating Panel layout__________________验",
+      "socialWarning": "试_Your story is using the Side Panel layout and we now recommend to only enable that option with Floating Panel layout. This prevent issues where the panel may not scroll to the desired section for narratives that contains images. You can continue to use that option but if you disable it, it will only be available with Floating Panel layout_______________________________________________________________________________________________________验."
     },
     "settingsLayoutFonts": {
       "title": "字体",

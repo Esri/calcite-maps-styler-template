@@ -54,6 +54,7 @@ define({
   },
   "item_details": {
     "likeButtonTooltip": "Ψηφίστε για αυτό το αντικείμενο",
+    "likeButtonInverseTooltip": "Đ_Vote counted_____ớ",
     "commentButtonTooltip": "Προσθήκη σχολίου",
     "gotoMapViewTooltip": "Μετάβαση στην προβολή χάρτη",
     "galleryButtonTooltip": "Προβολή συνημμένων αρχείων",

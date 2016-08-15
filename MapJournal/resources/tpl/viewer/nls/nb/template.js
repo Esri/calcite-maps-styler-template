@@ -36,7 +36,10 @@ define({
       "noViewerIE": "Denne historien er ikke støttet i Internet Explorer før versjon %VERSION%. %UPGRADE%",
       "upgradeBrowser": "<a href='http://browsehappy.com/' target='_blank'>Oppdater webleseren</a>.",
       "mapLoadingFail": "Noe gikk galt, og kartet ble ikke lastet inn på riktig måte.",
-      "signOut": "Logg ut"
+      "signOut": "Logg ut",
+      "print0": "å_Sorry, this story cannot be printed____________ø.",
+      "print1": "å_To print this story, please use the print button located in the share dialog________________________ø.",
+      "print2": "å_Sorry, a printable version of the story is typically accessible through the share dialog, but this dialog has been disabled by the author__________________________________________ø."
     },
     "mobileView": {
       "tapForDetails": "Trykk for å se detaljer",
@@ -85,7 +88,15 @@ define({
       "autoplayLabel": "Automatisk avspillingsmodus",
       "autoplayExplain1": "Automatisk avspillingsmodus går videre i historien med gitte intervaller. Dette fungerer utmerket til kiosker eller informasjonsskjermer, men kan i andre situasjoner gjøre det vanskeligere å lese historien. Denne funksjonen støttes ikke på små skjermer.",
       "autoplayExplain2": "Når denne modusen er aktivert, vises det kontroller for å spille av/pause historien og justere navigeringshastigheten.",
-      "linksupdated": "Koblingene ble oppdatert"
+      "linksupdated": "Koblingene ble oppdatert",
+      "print": "å_Print___ø",
+      "printInstruction1": "å_Please wait for all the content to load before ${printing} this page______________________ø.",
+      "printInstruction2": "å_This page cannot be shared with others, instead share the ${link}_____________________ø.",
+      "link": "å_link to the story______ø",
+      "printing": "å_printing___ø",
+      "printWarning": "å_This is a printed version of a story map. Dynamic content such as videos and interactive maps is only available in the online version at ${link}_____________________________________________ø.",
+      "printMSWarning": "å_link available only in online story____________ø",
+      "printVideoWarning": "å_This video can be viewed in the online version of this story map____________________ø"
     }
   }
 });

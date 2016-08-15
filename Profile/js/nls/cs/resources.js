@@ -19,27 +19,28 @@ define({
     "error": "Nelze vytvořit mapu"
   },
   "nav": {
-    "close": "Zavřít"
+    "close": "Ř_Close___ů"
   },
   "elevation": {
-    "toggle": "Přepnout graf výškového profilu.",
-    "drawTool": "Nakreslete na mapu linii pro vygenerování výškového profilu.",
-    "selectMessage": "Klikněte na liniový prvek nebo pomocí nástroje kreslení nakreslete linii, abyste zobrazili výškový profil."
+    "toggle": "Ř_Toggle the Elevation Profile Chart____________ů.",
+    "drawTool": "Ř_Draw a line on the map to generate an elevation profile__________________ů.",
+    "selectMessage": "Ř_Click a line feature or use the draw tool to draw a line to display the elevation profile____________________________ů",
+    "gainLossTemplate": "Ř_Min: ${min}   Max: ${max}   Start: ${start}   End: ${end}   Change: ${gainLoss}_________________________ů"
   },
   "splash": {
-    "title": "Nadpis",
-    "content": "Nakonfigurujte pro vytvoření vlastního úvodního obsahu"
+    "title": "Ř_Title___ů",
+    "content": "Ř_Configure to create custom splash content_____________ů"
   },
   "legend": {
-    "title": "Legenda",
-    "tip": "Zobrazit legendu"
+    "title": "Ř_Legend___ů",
+    "tip": "Ř_Display legend_____ů"
   },
   "basemap": {
-    "title": "Podkladová mapa",
-    "tip": "Změnit podkladovou mapu"
+    "title": "Ř_Basemap___ů",
+    "tip": "Ř_Change basemap_____ů"
   },
   "share": {
-    "title": "Sdílet",
-    "tip": "Sdílet mapu"
+    "title": "Ř_Share___ů",
+    "tip": "Ř_Share map____ů"
   }
 });

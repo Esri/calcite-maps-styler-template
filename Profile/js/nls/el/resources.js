@@ -19,27 +19,28 @@ define({
     "error": "Δεν είναι δυνατή η δημιουργία χάρτη"
   },
   "nav": {
-    "close": "Κλείσιμο"
+    "close": "Đ_Close___ớ"
   },
   "elevation": {
-    "toggle": "Κάντε εναλλαγή στο γράφημα Υψομετρικού προφίλ.",
-    "drawTool": "Σχεδιάστε μια γραμμή στο χάρτη για να δημιουργήσετε ένα υψομετρικό προφίλ.",
-    "selectMessage": "Κάντε κλικ σε ένα γραμμικό στοιχείο ή χρησιμοποιήστε το εργαλείο σχεδίασης για να σχεδιάσετε μια γραμμή που θα δείχνει το υψομετρικό προφίλ"
+    "toggle": "Đ_Toggle the Elevation Profile Chart____________ớ.",
+    "drawTool": "Đ_Draw a line on the map to generate an elevation profile__________________ớ.",
+    "selectMessage": "Đ_Click a line feature or use the draw tool to draw a line to display the elevation profile____________________________ớ",
+    "gainLossTemplate": "Đ_Min: ${min}   Max: ${max}   Start: ${start}   End: ${end}   Change: ${gainLoss}_________________________ớ"
   },
   "splash": {
-    "title": "Τίτλος",
-    "content": "Διαμορφώστε το για να δημιουργήσετε προσαρμοσμένο περιεχόμενο σε οθόνης εκκίνησης"
+    "title": "Đ_Title___ớ",
+    "content": "Đ_Configure to create custom splash content_____________ớ"
   },
   "legend": {
-    "title": "Υπόμνημα",
-    "tip": "Εμφάνιση υπομνήματος"
+    "title": "Đ_Legend___ớ",
+    "tip": "Đ_Display legend_____ớ"
   },
   "basemap": {
-    "title": "Υπόβαθρο",
-    "tip": "Αλλαγή υποβάθρου"
+    "title": "Đ_Basemap___ớ",
+    "tip": "Đ_Change basemap_____ớ"
   },
   "share": {
-    "title": "Κοινοποίηση",
-    "tip": "Κοινοποίηση χάρτη"
+    "title": "Đ_Share___ớ",
+    "tip": "Đ_Share map____ớ"
   }
 });

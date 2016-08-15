@@ -31,7 +31,9 @@ define({
       "rightHeader": "Trang Facebook",
       "pageExplain": "Trang Facebook là một thương hiệu/sản phẩm công cộng hay nổi tiếng như <b>esrigis</b>. Bạn có thể lấy tên trang sau '/' đầu tiên trong URL trang.",
       "pageInputLbl": "Tên trang",
-      "lookupMsgError": "Không tìm thấy trang"
+      "lookupMsgError": "Không tìm thấy trang",
+      "warning": "Đ_Facebook support has been discontinued, ${learn}________________ớ.",
+      "learn": "Đ_learn more____ớ"
     },
     "imageSelectorPicasa": {
       "userInputLbl": "ID Email hoặc ID Picasa/Google+",
@@ -101,7 +103,10 @@ define({
       "lblPosition3Explain2": "(chiều rộng sẽ luôn luôn vừa với bảng điều khiển)",
       "lblPosition4Explain": "(có thể bóp méo)",
       "unloadLbl": "Không tải khi người đọc điều hướng ra ngoài",
-      "unloadHelp": "Nếu Trang Web có phương tiện âm thanh hoặc video, tiếp tục chọn tùy chọn này để dừng phát nội dung đó khi người đọc điều hướng ra ngoài. Ví dụ: bỏ chọn để tiếp tục phát rãnh âm thanh khi trình đọc chuyển qua câu chuyện.<br />Nếu Trang Web là một ứng dụng, bỏ chọn tùy chọn này để câu chuyện không tải lại nếu người đọc quay lại."
+      "unloadHelp": "Nếu Trang Web có phương tiện âm thanh hoặc video, tiếp tục chọn tùy chọn này để dừng phát nội dung đó khi người đọc điều hướng ra ngoài. Ví dụ: bỏ chọn để tiếp tục phát rãnh âm thanh khi trình đọc chuyển qua câu chuyện.<br />Nếu Trang Web là một ứng dụng, bỏ chọn tùy chọn này để câu chuyện không tải lại nếu người đọc quay lại.",
+      "embedProtocolLabel": "Đ_Load page over a secure connection (HTTPS)______________ớ",
+      "embedProtocolWarning1": "Đ_As your story is configured to load over a secure connection, it is mandatory that all embedded page use a secure connection. If the page does not load it may be because the page is not available over a secure connection or that this page cannot be embedded (some websites restrict embedding)_________________________________________________________________________________________ớ.",
+      "embedProtocolWarning2": "Đ_As your story is configured to load over an insecure connection, you can chose to load this page over a secure or insecure connection. We recommend that you always use a secure connection. If the page does not load it may be because the page is not available over the connection mode you selected or that this page cannot be embedded (some websites restrict embedding)________________________________________________________________________________________________________________ớ."
     },
     "editorActionGeocode": {
       "lblTitle": "Định vị một địa chỉ hoặc địa điểm",

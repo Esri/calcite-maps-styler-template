@@ -36,7 +36,10 @@ define({
       "noViewerIE": "Эта история не поддерживается в Internet Explorer версии до %VERSION%. %UPGRADE%",
       "upgradeBrowser": "<a href='http://browsehappy.com/' target='_blank'>Обновите ваш браузер</a>.",
       "mapLoadingFail": "Произошла ошибка, карта загрузилась некорректно.",
-      "signOut": "Выйти"
+      "signOut": "Выйти",
+      "print0": "Ж_Sorry, this story cannot be printed____________Я.",
+      "print1": "Ж_To print this story, please use the print button located in the share dialog________________________Я.",
+      "print2": "Ж_Sorry, a printable version of the story is typically accessible through the share dialog, but this dialog has been disabled by the author__________________________________________Я."
     },
     "mobileView": {
       "tapForDetails": "Коснитесь для подробной информации",
@@ -85,7 +88,15 @@ define({
       "autoplayLabel": "Режим автовоспроизведения",
       "autoplayExplain1": "Режим автовоспроизведения будет проходить в вашей истории на указанном интервале. Это идеально подходит для информационных киосков или мониторов для публичного обозрения, но имейте в виду, что в некоторых случаях вашу историю будет тяжело читать. Эта возможность не поддерживается на маленьких мониторах.",
       "autoplayExplain2": "Когда активен данный режим, там есть элементы управления для включения/остановки воспроизведения истории и установки скорости перемещения.",
-      "linksupdated": "Ссылки обновлены!"
+      "linksupdated": "Ссылки обновлены!",
+      "print": "Ж_Print___Я",
+      "printInstruction1": "Ж_Please wait for all the content to load before ${printing} this page______________________Я.",
+      "printInstruction2": "Ж_This page cannot be shared with others, instead share the ${link}_____________________Я.",
+      "link": "Ж_link to the story______Я",
+      "printing": "Ж_printing___Я",
+      "printWarning": "Ж_This is a printed version of a story map. Dynamic content such as videos and interactive maps is only available in the online version at ${link}_____________________________________________Я.",
+      "printMSWarning": "Ж_link available only in online story____________Я",
+      "printVideoWarning": "Ж_This video can be viewed in the online version of this story map____________________Я"
     }
   }
 });

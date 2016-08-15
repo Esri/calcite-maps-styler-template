@@ -83,7 +83,7 @@ define({
     "valueRadioButtonLabel": "Väärtus",
     "uniqueRadioButtonLabel": "Unikaalne",
     "selectLayerToBegin": "Alustamiseks valige kategooria",
-    "layerFeatureCount": "${featureCount} kirjet"
+    "layerFeatureCount": "Š_${selectedFeatureCount} selected / ${featureCount} records__________________ä"
   },
   "timeSlider": {
     "timeSliderLabel": "Ajavahemik",
@@ -97,7 +97,12 @@ define({
     "placeHolderText": "",
     "noCommentsAvailableText": "Kirjeid pole saadaval",
     "remainingTextCount": "${0} tähemärki kasutamata",
-    "showNoText": "Ei"
+    "showNoText": "Ei",
+    "selectAttachments": "Š_Attachments____ä",
+    "selectFileText": "Š_Browse___ä",
+    "attachmentSelectedMsg": "Š_attachment(s) selected________ä",
+    "attachmentHeaderText": "Š_Attachments____ä",
+    "addRecordText": "Š_Add Record____ä"
   },
   "main": {
     "noGroup": "Ühtki gruppi ei ole konfigureeritud"
@@ -109,17 +114,18 @@ define({
   },
   "manualRefresh": {
     "manualRefreshIconTooltip": "Värskenda",
-    "confirmManualRefeshText": "Teie salvestamata valikud ja muudatused lähevad kaotsi."
+    "confirmManualRefreshText": "Š_All selections and unsaved changes will be discarded_________________ä"
   },
   "help": {
     "helpIconTooltip": "Abi"
   },
   "filter": {
     "noFeatureFoundText": "Selle väärtuse jaoks ei leitud objekti.",
-    "distinctQueryFalied": "Välja jaoks ei leitud eraldi väärtusi.",
+    "distinctQueryFailed": "Š_No distinct values found for the field_____________ä.",
     "andText": "ja",
-    "filterInEditModeAlert": "Filtrid pole töötlemise ajal saadaval",
-    "dropdownSelectOption": "Vali"
+    "filterInEditModeAlert": "Š_Filters unavailable while editing___________ä.",
+    "dropdownSelectOption": "Vali",
+    "filterInShowSelectedEditModeAlert": "Š_Filters unavailable in 'Show Selected' mode______________ä."
   },
   "detailsPanel": {
     "editContentText": "Muuda kirjet"
@@ -127,5 +133,10 @@ define({
   "signOutPage": {
     "signOutMessage": "Olete edukalt välja logitud.",
     "reSignInMessage": "Sisse logimiseks klikkige siia."
+  },
+  "selectionOptions": {
+    "selectionOptionsIconTooltip": "Š_Selection Options______ä",
+    "showAllOptionText": "Š_Show All___ä",
+    "showSelectedOptionText": "Š_Show Selected_____ä"
   }
 });

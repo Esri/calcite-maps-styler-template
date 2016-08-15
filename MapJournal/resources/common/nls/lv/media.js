@@ -31,7 +31,9 @@ define({
       "rightHeader": "Facebook Lapa",
       "pageExplain": "Facebook lapa ir publisks zīmols/produkts vai slavenība, piem., <b>esrigis</b>. Jūs varat saņemt lapas nosaukumu, pēc pirmās '/' lapas URL.",
       "pageInputLbl": "Lapas nosaukums",
-      "lookupMsgError": "Lapa nav atrasta"
+      "lookupMsgError": "Lapa nav atrasta",
+      "warning": "ķ_Facebook support has been discontinued, ${learn}________________ū.",
+      "learn": "ķ_learn more____ū"
     },
     "imageSelectorPicasa": {
       "userInputLbl": "E-pasta adrese vai Picasa/Google+ ID",
@@ -101,7 +103,10 @@ define({
       "lblPosition3Explain2": "(platums vienmēr atbildīs panelim)",
       "lblPosition4Explain": "(var tikt izkropļots)",
       "unloadLbl": "Izlādēt, ja lasītājs pārvietojas uz citurieni",
-      "unloadHelp": "Ja tīmekļa lapā ir audio vai video multivide, atzīmējiet šo iespēju, lai šis saturs netiktu atskaņots brīdī, kad lasītājs naviģē tālāk. Noņemiet atzīmi, ja vēlaties, lai, piemēram, tiktu turpināta skaņu celiņa atskaņošana, kamēr lasītājs virzās uz priekšu stāstā.<br />Ja tīmekļa lapa ir lietotne, noņemiet atzīmi pie šīs iespējas, lai stāsts netiktu ielādēts atkārtoti, lasītājam atgriežoties šajā sadaļā."
+      "unloadHelp": "Ja tīmekļa lapā ir audio vai video multivide, atzīmējiet šo iespēju, lai šis saturs netiktu atskaņots brīdī, kad lasītājs naviģē tālāk. Noņemiet atzīmi, ja vēlaties, lai, piemēram, tiktu turpināta skaņu celiņa atskaņošana, kamēr lasītājs virzās uz priekšu stāstā.<br />Ja tīmekļa lapa ir lietotne, noņemiet atzīmi pie šīs iespējas, lai stāsts netiktu ielādēts atkārtoti, lasītājam atgriežoties šajā sadaļā.",
+      "embedProtocolLabel": "ķ_Load page over a secure connection (HTTPS)______________ū",
+      "embedProtocolWarning1": "ķ_As your story is configured to load over a secure connection, it is mandatory that all embedded page use a secure connection. If the page does not load it may be because the page is not available over a secure connection or that this page cannot be embedded (some websites restrict embedding)_________________________________________________________________________________________ū.",
+      "embedProtocolWarning2": "ķ_As your story is configured to load over an insecure connection, you can chose to load this page over a secure or insecure connection. We recommend that you always use a secure connection. If the page does not load it may be because the page is not available over the connection mode you selected or that this page cannot be embedded (some websites restrict embedding)________________________________________________________________________________________________________________ū."
     },
     "editorActionGeocode": {
       "lblTitle": "Adreses vai vietas noteikšana",

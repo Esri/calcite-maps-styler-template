@@ -19,27 +19,28 @@ define({
     "error": "Nie można utworzyć mapy"
   },
   "nav": {
-    "close": "Zamknij"
+    "close": "ł_Close___ą"
   },
   "elevation": {
-    "toggle": "Przełącz wykres profilu wysokościowego.",
-    "drawTool": "Narysuj linię na mapie, aby wygenerować profil wysokościowy.",
-    "selectMessage": "Kliknij funkcję linii lub użyj narzędzia do rysowania, aby narysować linię i wyświetlić profil wysokościowy"
+    "toggle": "ł_Toggle the Elevation Profile Chart____________ą.",
+    "drawTool": "ł_Draw a line on the map to generate an elevation profile__________________ą.",
+    "selectMessage": "ł_Click a line feature or use the draw tool to draw a line to display the elevation profile____________________________ą",
+    "gainLossTemplate": "ł_Min: ${min}   Max: ${max}   Start: ${start}   End: ${end}   Change: ${gainLoss}_________________________ą"
   },
   "splash": {
-    "title": "Tytuł",
-    "content": "Skonfiguruj, aby utworzyć niestandardową zawartość ekranu powitalnego"
+    "title": "ł_Title___ą",
+    "content": "ł_Configure to create custom splash content_____________ą"
   },
   "legend": {
-    "title": "Legenda",
-    "tip": "Wyświetl legendę"
+    "title": "ł_Legend___ą",
+    "tip": "ł_Display legend_____ą"
   },
   "basemap": {
-    "title": "Mapa bazowa",
-    "tip": "Zmień mapę bazową"
+    "title": "ł_Basemap___ą",
+    "tip": "ł_Change basemap_____ą"
   },
   "share": {
-    "title": "Udostępnij",
-    "tip": "Udostępnij mapę"
+    "title": "ł_Share___ą",
+    "tip": "ł_Share map____ą"
   }
 });

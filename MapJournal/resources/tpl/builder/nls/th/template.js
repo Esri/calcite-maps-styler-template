@@ -20,7 +20,9 @@ define({
       "cfgMedium": "กลาง",
       "cfgLarge": "ใหญ่",
       "socialLinksLabel": "การเชื่อมโยงที่แสดงร่วมกันที่ด้านล่างของแต่ละส่วน",
-      "socialLinksDescr": "ซึ่งจะช่วยให้ผู้อ่านที่จะอ้างอิงและส่งเสริมเฉพาะบางส่วนของของคุณ TPL_NAME%% ตัวอย่างเช่นถ้าคุณใช้ไอคอนหุ้นส่วนผู้อ่านจะได้ที่ดินที่ว่า% เฉพาะส่วน TPL_NAME% มากกว่าที่จุดเริ่มต้นของเรื่องราวของคุณ คุณผู้อ่านสามารถใช้การเชื่อมโยงสื่อสังคมในส่วนชื่อเรื่องที่จะส่งเสริม%% TPL_NAME ทั้งหมดของคุณ (แท็บหัว) และพวกเขามีที่ดินที่เริ่มต้นของ TPL_NAME%%"
+      "socialLinksDescr": "ซึ่งจะช่วยให้ผู้อ่านที่จะอ้างอิงและส่งเสริมเฉพาะบางส่วนของของคุณ TPL_NAME%% ตัวอย่างเช่นถ้าคุณใช้ไอคอนหุ้นส่วนผู้อ่านจะได้ที่ดินที่ว่า% เฉพาะส่วน TPL_NAME% มากกว่าที่จุดเริ่มต้นของเรื่องราวของคุณ คุณผู้อ่านสามารถใช้การเชื่อมโยงสื่อสังคมในส่วนชื่อเรื่องที่จะส่งเสริม%% TPL_NAME ทั้งหมดของคุณ (แท็บหัว) และพวกเขามีที่ดินที่เริ่มต้นของ TPL_NAME%%",
+      "socialDisabled": "ก้_This feature is only available with Floating Panel layout__________________ษฺ",
+      "socialWarning": "ก้_Your story is using the Side Panel layout and we now recommend to only enable that option with Floating Panel layout. This prevent issues where the panel may not scroll to the desired section for narratives that contains images. You can continue to use that option but if you disable it, it will only be available with Floating Panel layout_______________________________________________________________________________________________________ษฺ."
     },
     "settingsLayoutFonts": {
       "title": "ประเภทตัวอักษร",

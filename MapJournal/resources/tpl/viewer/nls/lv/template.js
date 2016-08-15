@@ -36,7 +36,10 @@ define({
       "noViewerIE": "Šis stāsts netiek atbalstīts Internet Explorer versijās, kas ir vecākas par %VERSION%. %UPGRADE%",
       "upgradeBrowser": "<a href='http://browsehappy.com/' target='_blank'>Lūdzu, atjauniniet savu pārlūku</a>.",
       "mapLoadingFail": "Ir atgadījusies kļūme — karte netika ielādēta pareizi.",
-      "signOut": "Izrakstīties"
+      "signOut": "Izrakstīties",
+      "print0": "ķ_Sorry, this story cannot be printed____________ū.",
+      "print1": "ķ_To print this story, please use the print button located in the share dialog________________________ū.",
+      "print2": "ķ_Sorry, a printable version of the story is typically accessible through the share dialog, but this dialog has been disabled by the author__________________________________________ū."
     },
     "mobileView": {
       "tapForDetails": "Pieskarieties, lai iegūtu detalizētu informāciju",
@@ -85,7 +88,15 @@ define({
       "autoplayLabel": "Automātiskās demonstrēšanas režīms",
       "autoplayExplain1": "Automātiskās demonstrēšanas režīms darbosies jūsu stāstā ar regulāriem intervāliem. Tas ir izcili piemērots rādīšanai stendos vai publiskās demonstrēšanas monitorā, bet ņemiet vērā, ka citās situācijās šis režīms var padarīt stāstu grūtāk izlasāmu. Šī funkcija netiek atbalstīta maza izmēra displejos.",
       "autoplayExplain2": "Pēc šī režīma aktivizēšanas ir pieejamas vadīklas stāsta demonstrēšanai/apturēšanai un navigācijas ātruma regulēšanai.",
-      "linksupdated": "Saites ir atjauninātas."
+      "linksupdated": "Saites ir atjauninātas.",
+      "print": "ķ_Print___ū",
+      "printInstruction1": "ķ_Please wait for all the content to load before ${printing} this page______________________ū.",
+      "printInstruction2": "ķ_This page cannot be shared with others, instead share the ${link}_____________________ū.",
+      "link": "ķ_link to the story______ū",
+      "printing": "ķ_printing___ū",
+      "printWarning": "ķ_This is a printed version of a story map. Dynamic content such as videos and interactive maps is only available in the online version at ${link}_____________________________________________ū.",
+      "printMSWarning": "ķ_link available only in online story____________ū",
+      "printVideoWarning": "ķ_This video can be viewed in the online version of this story map____________________ū"
     }
   }
 });

@@ -20,7 +20,9 @@ define({
       "cfgMedium": "Mittel",
       "cfgLarge": "Groß",
       "socialLinksLabel": "Freigabe-Links im unteren Bereich jedes Abschnitts anzeigen",
-      "socialLinksDescr": "Auf diese Weise können Leser bestimmte Abschnitte von %TPL_NAME% referenzieren und bewerben. Wenn Sie beispielsweise das Freigabesymbol eines Abschnitts verwenden, gelangen Benutzer zu diesem bestimmten Abschnitt von %TPL_NAME%, statt zum Anfang Ihrer Story. Ihre Leser können den Link zu sozialen Medien im Titelabschnitt verwenden, um %TPL_NAME% vollständig (Registerkarte \"Kopfzeile\") zu bewerben, und am Anfang von %TPL_NAME% zu landen."
+      "socialLinksDescr": "Auf diese Weise können Leser bestimmte Abschnitte von %TPL_NAME% referenzieren und bewerben. Wenn Sie beispielsweise das Freigabesymbol eines Abschnitts verwenden, gelangen Benutzer zu diesem bestimmten Abschnitt von %TPL_NAME%, statt zum Anfang Ihrer Story. Ihre Leser können den Link zu sozialen Medien im Titelabschnitt verwenden, um %TPL_NAME% vollständig (Registerkarte \"Kopfzeile\") zu bewerben, und am Anfang von %TPL_NAME% zu landen.",
+      "socialDisabled": "ä_This feature is only available with Floating Panel layout__________________Ü",
+      "socialWarning": "ä_Your story is using the Side Panel layout and we now recommend to only enable that option with Floating Panel layout. This prevent issues where the panel may not scroll to the desired section for narratives that contains images. You can continue to use that option but if you disable it, it will only be available with Floating Panel layout_______________________________________________________________________________________________________Ü."
     },
     "settingsLayoutFonts": {
       "title": "Schriftarten",

@@ -83,7 +83,7 @@ define({
     "valueRadioButtonLabel": "Wert",
     "uniqueRadioButtonLabel": "Eindeutig",
     "selectLayerToBegin": "Zum Einstieg eine Kategorie auswählen",
-    "layerFeatureCount": "${featureCount} Datensätze"
+    "layerFeatureCount": "ä_${selectedFeatureCount} selected / ${featureCount} records__________________Ü"
   },
   "timeSlider": {
     "timeSliderLabel": "Zeitbereich",
@@ -97,7 +97,12 @@ define({
     "placeHolderText": "",
     "noCommentsAvailableText": "Keine Datensätze verfügbar",
     "remainingTextCount": "${0} Zeichen verbleiben",
-    "showNoText": "Nein"
+    "showNoText": "Nein",
+    "selectAttachments": "ä_Attachments____Ü",
+    "selectFileText": "ä_Browse___Ü",
+    "attachmentSelectedMsg": "ä_attachment(s) selected________Ü",
+    "attachmentHeaderText": "ä_Attachments____Ü",
+    "addRecordText": "ä_Add Record____Ü"
   },
   "main": {
     "noGroup": "Keine Gruppe konfiguriert"
@@ -109,17 +114,18 @@ define({
   },
   "manualRefresh": {
     "manualRefreshIconTooltip": "Aktualisieren",
-    "confirmManualRefeshText": "Gesamte Auswahl und nicht gespeicherte Änderungen werden verworfen"
+    "confirmManualRefreshText": "ä_All selections and unsaved changes will be discarded_________________Ü"
   },
   "help": {
     "helpIconTooltip": "Hilfe"
   },
   "filter": {
     "noFeatureFoundText": "Für diesen Wert wurde kein Feature gefunden.",
-    "distinctQueryFalied": "Für dieses Feld wurden keine eindeutigen Werte gefunden.",
+    "distinctQueryFailed": "ä_No distinct values found for the field_____________Ü.",
     "andText": "und",
-    "filterInEditModeAlert": "Filter sind während der Bearbeitung nicht verfügbar",
-    "dropdownSelectOption": "Auswählen"
+    "filterInEditModeAlert": "ä_Filters unavailable while editing___________Ü.",
+    "dropdownSelectOption": "Auswählen",
+    "filterInShowSelectedEditModeAlert": "ä_Filters unavailable in 'Show Selected' mode______________Ü."
   },
   "detailsPanel": {
     "editContentText": "Datensatz bearbeiten"
@@ -127,5 +133,10 @@ define({
   "signOutPage": {
     "signOutMessage": "Sie wurden erfolgreich abgemeldet",
     "reSignInMessage": "Klicken Sie hier, um sich anzumelden"
+  },
+  "selectionOptions": {
+    "selectionOptionsIconTooltip": "ä_Selection Options______Ü",
+    "showAllOptionText": "ä_Show All___Ü",
+    "showSelectedOptionText": "ä_Show Selected_____Ü"
   }
 });

@@ -31,7 +31,9 @@ define({
       "rightHeader": "Facebook Sayfası",
       "pageExplain": "Facebook sayfası, <b>esrigis</b> gibi genel bir marka/ürün veya ünlü kişiliktir. Sayfa adını sayfa URL'sindeki ilk '/' karakterinden alabilirsiniz.",
       "pageInputLbl": "Sayfa adı",
-      "lookupMsgError": "Sayfa bulunamadı"
+      "lookupMsgError": "Sayfa bulunamadı",
+      "warning": "ı_Facebook support has been discontinued, ${learn}________________İ.",
+      "learn": "ı_learn more____İ"
     },
     "imageSelectorPicasa": {
       "userInputLbl": "E-posta veya Picasa/Google+ ID",
@@ -101,7 +103,10 @@ define({
       "lblPosition3Explain2": "(genişlik her zaman panele sığacaktır)",
       "lblPosition4Explain": "(şekil değiştirebilir)",
       "unloadLbl": "Okuyucu başka yere gittiğinde yüklemeyi kaldır",
-      "unloadHelp": "Web Sayfasında ses ya da video ortamı varsa, okuyucu başka bir yere gittiğinde içeriğin oynatımını durdurmak için bu seçeneği işaretli bırakın. Okuyucu metin boyunca ilerlerken örneğin bir arka plan müziğini oynatmaya devam etmek için işareti kaldırın.<br />Web Sayfası bir uygulamaysa, bu seçeneğin işaretini kaldırarak, okuyucu geri döndüğünde hikayenin yeniden yüklenmesini önleyebilirsiniz."
+      "unloadHelp": "Web Sayfasında ses ya da video ortamı varsa, okuyucu başka bir yere gittiğinde içeriğin oynatımını durdurmak için bu seçeneği işaretli bırakın. Okuyucu metin boyunca ilerlerken örneğin bir arka plan müziğini oynatmaya devam etmek için işareti kaldırın.<br />Web Sayfası bir uygulamaysa, bu seçeneğin işaretini kaldırarak, okuyucu geri döndüğünde hikayenin yeniden yüklenmesini önleyebilirsiniz.",
+      "embedProtocolLabel": "ı_Load page over a secure connection (HTTPS)______________İ",
+      "embedProtocolWarning1": "ı_As your story is configured to load over a secure connection, it is mandatory that all embedded page use a secure connection. If the page does not load it may be because the page is not available over a secure connection or that this page cannot be embedded (some websites restrict embedding)_________________________________________________________________________________________İ.",
+      "embedProtocolWarning2": "ı_As your story is configured to load over an insecure connection, you can chose to load this page over a secure or insecure connection. We recommend that you always use a secure connection. If the page does not load it may be because the page is not available over the connection mode you selected or that this page cannot be embedded (some websites restrict embedding)________________________________________________________________________________________________________________İ."
     },
     "editorActionGeocode": {
       "lblTitle": "Adres veya yer bul",

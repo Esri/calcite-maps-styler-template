@@ -19,27 +19,28 @@ define({
     "error": "Kaarti ei saa luua"
   },
   "nav": {
-    "close": "Sule"
+    "close": "Š_Close___ä"
   },
   "elevation": {
-    "toggle": "Lülita kõrgusprofiili graafik sisse/välja.",
-    "drawTool": "Kõrgusprofiili loomiseks tõmmake kaardil joon.",
-    "selectMessage": "Kõrgusprofiili kuvamiseks klõpsake joonobjekti või tõmmake joonistamise tööriista abil joon."
+    "toggle": "Š_Toggle the Elevation Profile Chart____________ä.",
+    "drawTool": "Š_Draw a line on the map to generate an elevation profile__________________ä.",
+    "selectMessage": "Š_Click a line feature or use the draw tool to draw a line to display the elevation profile____________________________ä",
+    "gainLossTemplate": "Š_Min: ${min}   Max: ${max}   Start: ${start}   End: ${end}   Change: ${gainLoss}_________________________ä"
   },
   "splash": {
-    "title": "Pealkiri",
-    "content": "Konfigureerige, et luua kohandatud lisalehe sisu."
+    "title": "Š_Title___ä",
+    "content": "Š_Configure to create custom splash content_____________ä"
   },
   "legend": {
-    "title": "Legend",
-    "tip": "Kuva legend"
+    "title": "Š_Legend___ä",
+    "tip": "Š_Display legend_____ä"
   },
   "basemap": {
-    "title": "Aluskaart",
-    "tip": "Muuda aluskaarti"
+    "title": "Š_Basemap___ä",
+    "tip": "Š_Change basemap_____ä"
   },
   "share": {
-    "title": "Jaga",
-    "tip": "Jaga kaarti"
+    "title": "Š_Share___ä",
+    "tip": "Š_Share map____ä"
   }
 });

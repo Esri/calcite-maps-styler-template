@@ -36,7 +36,10 @@ define({
       "noViewerIE": "Ta narracja nie jest obsługiwana przez przeglądarkę Internet Explorer w wersji starszej niż %VERSION%. %UPGRADE%",
       "upgradeBrowser": "<a href='http://browsehappy.com/' target='_blank'>Zaktualizuj przeglądarkę</a>.",
       "mapLoadingFail": "Wystąpił pewien problem, nie wczytano mapy prawidłowo.",
-      "signOut": "Wyloguj się"
+      "signOut": "Wyloguj się",
+      "print0": "ł_Sorry, this story cannot be printed____________ą.",
+      "print1": "ł_To print this story, please use the print button located in the share dialog________________________ą.",
+      "print2": "ł_Sorry, a printable version of the story is typically accessible through the share dialog, but this dialog has been disabled by the author__________________________________________ą."
     },
     "mobileView": {
       "tapForDetails": "Wskaż, aby uzyskać szczegółowe informacje",
@@ -85,7 +88,15 @@ define({
       "autoplayLabel": "Tryb automatycznego odtwarzania",
       "autoplayExplain1": "W trybie automatycznego odtwarzania narracja jest prezentowana w stałym tempie. Ten tryb doskonale nadaje się do monitora kiosku internetowego lub wyświetlacza publicznego, ale należy pamiętać, że w innych sytuacjach może pogorszyć czytelność narracji. Ta funkcja nie jest obsługiwana na małych wyświetlaczach.",
       "autoplayExplain2": "Po włączeniu tego trybu udostępniane są elementy sterujące do włączania odtwarzania/wstrzymywania narracji oraz do regulacji szybkości nawigacji.",
-      "linksupdated": "Zaktualizowano łącza!"
+      "linksupdated": "Zaktualizowano łącza!",
+      "print": "ł_Print___ą",
+      "printInstruction1": "ł_Please wait for all the content to load before ${printing} this page______________________ą.",
+      "printInstruction2": "ł_This page cannot be shared with others, instead share the ${link}_____________________ą.",
+      "link": "ł_link to the story______ą",
+      "printing": "ł_printing___ą",
+      "printWarning": "ł_This is a printed version of a story map. Dynamic content such as videos and interactive maps is only available in the online version at ${link}_____________________________________________ą.",
+      "printMSWarning": "ł_link available only in online story____________ą",
+      "printVideoWarning": "ł_This video can be viewed in the online version of this story map____________________ą"
     }
   }
 });

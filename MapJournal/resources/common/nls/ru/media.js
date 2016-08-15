@@ -31,7 +31,9 @@ define({
       "rightHeader": "Страница Facebook",
       "pageExplain": "Страница Facebook - это публичный продукт, как <b>esrigis</b>. Вы можете взять имя страницы, расположенное после первой косой черты '/' в URL страницы.",
       "pageInputLbl": "Имя страницы",
-      "lookupMsgError": "Страница не найдена"
+      "lookupMsgError": "Страница не найдена",
+      "warning": "Ж_Facebook support has been discontinued, ${learn}________________Я.",
+      "learn": "Ж_learn more____Я"
     },
     "imageSelectorPicasa": {
       "userInputLbl": "Электронная почта или Picasa / ID Google +",
@@ -101,7 +103,10 @@ define({
       "lblPosition3Explain2": "(ширина всегда будет соответствовать панели)",
       "lblPosition4Explain": "(может исказиться)",
       "unloadLbl": "Выгрузить, когда читатель уйдет",
-      "unloadHelp": "Если на веб-странице есть аудио или видео медиа, оставьте эту опцию включенной, чтобы остановить проигрывание ресурса при уходе читателя. Отключите ее, например, чтобы саундтрек проигрывался, пока читатель перемещается по истории.<br /> Если веб-является приложением, отключите эту опцию, чтобы приложение не перезагружалось при возврате читателя в этот раздел."
+      "unloadHelp": "Если на веб-странице есть аудио или видео медиа, оставьте эту опцию включенной, чтобы остановить проигрывание ресурса при уходе читателя. Отключите ее, например, чтобы саундтрек проигрывался, пока читатель перемещается по истории.<br /> Если веб-является приложением, отключите эту опцию, чтобы приложение не перезагружалось при возврате читателя в этот раздел.",
+      "embedProtocolLabel": "Ж_Load page over a secure connection (HTTPS)______________Я",
+      "embedProtocolWarning1": "Ж_As your story is configured to load over a secure connection, it is mandatory that all embedded page use a secure connection. If the page does not load it may be because the page is not available over a secure connection or that this page cannot be embedded (some websites restrict embedding)_________________________________________________________________________________________Я.",
+      "embedProtocolWarning2": "Ж_As your story is configured to load over an insecure connection, you can chose to load this page over a secure or insecure connection. We recommend that you always use a secure connection. If the page does not load it may be because the page is not available over the connection mode you selected or that this page cannot be embedded (some websites restrict embedding)________________________________________________________________________________________________________________Я."
     },
     "editorActionGeocode": {
       "lblTitle": "Найдите адрес или место",

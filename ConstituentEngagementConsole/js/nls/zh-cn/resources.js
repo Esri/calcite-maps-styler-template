@@ -83,7 +83,7 @@ define({
     "valueRadioButtonLabel": "值",
     "uniqueRadioButtonLabel": "唯一",
     "selectLayerToBegin": "选择类别以开始操作",
-    "layerFeatureCount": "${featureCount} 条记录"
+    "layerFeatureCount": "试_${selectedFeatureCount} selected / ${featureCount} records__________________验"
   },
   "timeSlider": {
     "timeSliderLabel": "时间范围",
@@ -97,7 +97,12 @@ define({
     "placeHolderText": "",
     "noCommentsAvailableText": "无可用记录",
     "remainingTextCount": "剩余 ${0} 个字符",
-    "showNoText": "否"
+    "showNoText": "否",
+    "selectAttachments": "试_Attachments____验",
+    "selectFileText": "试_Browse___验",
+    "attachmentSelectedMsg": "试_attachment(s) selected________验",
+    "attachmentHeaderText": "试_Attachments____验",
+    "addRecordText": "试_Add Record____验"
   },
   "main": {
     "noGroup": "未配置任何群组"
@@ -109,17 +114,18 @@ define({
   },
   "manualRefresh": {
     "manualRefreshIconTooltip": "刷新",
-    "confirmManualRefeshText": "将放弃所有选择和未保存的更改"
+    "confirmManualRefreshText": "试_All selections and unsaved changes will be discarded_________________验"
   },
   "help": {
     "helpIconTooltip": "帮助"
   },
   "filter": {
     "noFeatureFoundText": "未找到该值的要素。",
-    "distinctQueryFalied": "未找到该字段的相异值。",
+    "distinctQueryFailed": "试_No distinct values found for the field_____________验.",
     "andText": "且",
-    "filterInEditModeAlert": "编辑期间过滤功能不可用",
-    "dropdownSelectOption": "选择"
+    "filterInEditModeAlert": "试_Filters unavailable while editing___________验.",
+    "dropdownSelectOption": "选择",
+    "filterInShowSelectedEditModeAlert": "试_Filters unavailable in 'Show Selected' mode______________验."
   },
   "detailsPanel": {
     "editContentText": "编辑记录"
@@ -127,5 +133,10 @@ define({
   "signOutPage": {
     "signOutMessage": "您已成功登出",
     "reSignInMessage": "单击此处以登录"
+  },
+  "selectionOptions": {
+    "selectionOptionsIconTooltip": "试_Selection Options______验",
+    "showAllOptionText": "试_Show All___验",
+    "showSelectedOptionText": "试_Show Selected_____验"
   }
 });

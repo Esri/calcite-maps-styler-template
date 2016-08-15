@@ -31,7 +31,9 @@ define({
       "rightHeader": "Facebook 페이지",
       "pageExplain": "Facebook 페이지는 공용 브랜드/제품 또는 <b>esrigis</b>와 같은 유명 브랜드/제품입니다. 페이지 URL의 첫 번째 '/' 뒤에서 페이지 이름을 확인할 수 있습니다.",
       "pageInputLbl": "페이지 이름",
-      "lookupMsgError": "페이지를 찾을 수 없음"
+      "lookupMsgError": "페이지를 찾을 수 없음",
+      "warning": "한_Facebook support has been discontinued, ${learn}________________빠.",
+      "learn": "한_learn more____빠"
     },
     "imageSelectorPicasa": {
       "userInputLbl": "이메일 또는 Picasa/Google+ ID",
@@ -101,7 +103,10 @@ define({
       "lblPosition3Explain2": "(너비는 항상 패널에 맞춤)",
       "lblPosition4Explain": "(왜곡될 수 있음)",
       "unloadLbl": "독자가 다른 위치를 탐색할 때 언로드",
-      "unloadHelp": "웹 페이지에 오디오 또는 비디오 미디어가 있는 경우 이 옵션을 선택 상태로 유지하여 독자가 다른 위치를 탐색할 때 콘텐츠가 재생되는 것을 방지할 수 있습니다. 독자가 스토리를 진행할 때 사운드 트랙이 재생되도록 하려는 등의 경우에는 옵션을 선택 취소합니다.<br />웹 페이지가 응용프로그램인 경우 독자가 돌아왔을 때 스토리를 다시 불러오지 않도록 이 옵션을 선택 취소합니다."
+      "unloadHelp": "웹 페이지에 오디오 또는 비디오 미디어가 있는 경우 이 옵션을 선택 상태로 유지하여 독자가 다른 위치를 탐색할 때 콘텐츠가 재생되는 것을 방지할 수 있습니다. 독자가 스토리를 진행할 때 사운드 트랙이 재생되도록 하려는 등의 경우에는 옵션을 선택 취소합니다.<br />웹 페이지가 응용프로그램인 경우 독자가 돌아왔을 때 스토리를 다시 불러오지 않도록 이 옵션을 선택 취소합니다.",
+      "embedProtocolLabel": "한_Load page over a secure connection (HTTPS)______________빠",
+      "embedProtocolWarning1": "한_As your story is configured to load over a secure connection, it is mandatory that all embedded page use a secure connection. If the page does not load it may be because the page is not available over a secure connection or that this page cannot be embedded (some websites restrict embedding)_________________________________________________________________________________________빠.",
+      "embedProtocolWarning2": "한_As your story is configured to load over an insecure connection, you can chose to load this page over a secure or insecure connection. We recommend that you always use a secure connection. If the page does not load it may be because the page is not available over the connection mode you selected or that this page cannot be embedded (some websites restrict embedding)________________________________________________________________________________________________________________빠."
     },
     "editorActionGeocode": {
       "lblTitle": "주소 또는 장소 찾기",

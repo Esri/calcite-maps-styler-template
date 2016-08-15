@@ -83,7 +83,7 @@ define({
     "valueRadioButtonLabel": "値",
     "uniqueRadioButtonLabel": "個別値",
     "selectLayerToBegin": "開始するカテゴリを選択",
-    "layerFeatureCount": "${featureCount} レコード"
+    "layerFeatureCount": "須_${selectedFeatureCount} selected / ${featureCount} records__________________鷗"
   },
   "timeSlider": {
     "timeSliderLabel": "時間範囲",
@@ -97,7 +97,12 @@ define({
     "placeHolderText": "",
     "noCommentsAvailableText": "レコードがありません",
     "remainingTextCount": "${0} 文字が残っています",
-    "showNoText": "なし"
+    "showNoText": "なし",
+    "selectAttachments": "須_Attachments____鷗",
+    "selectFileText": "須_Browse___鷗",
+    "attachmentSelectedMsg": "須_attachment(s) selected________鷗",
+    "attachmentHeaderText": "須_Attachments____鷗",
+    "addRecordText": "須_Add Record____鷗"
   },
   "main": {
     "noGroup": "グループが構成されていません"
@@ -109,17 +114,18 @@ define({
   },
   "manualRefresh": {
     "manualRefreshIconTooltip": "更新",
-    "confirmManualRefeshText": "すべての選択セットおよび保存されていない変更は破棄されます"
+    "confirmManualRefreshText": "須_All selections and unsaved changes will be discarded_________________鷗"
   },
   "help": {
     "helpIconTooltip": "ヘルプ"
   },
   "filter": {
     "noFeatureFoundText": "この値のフィーチャが見つかりません。",
-    "distinctQueryFalied": "フィールドの個別値が見つかりません。",
+    "distinctQueryFailed": "須_No distinct values found for the field_____________鷗.",
     "andText": "および",
-    "filterInEditModeAlert": "編集中はフィルターを使用できません",
-    "dropdownSelectOption": "選択"
+    "filterInEditModeAlert": "須_Filters unavailable while editing___________鷗.",
+    "dropdownSelectOption": "選択",
+    "filterInShowSelectedEditModeAlert": "須_Filters unavailable in 'Show Selected' mode______________鷗."
   },
   "detailsPanel": {
     "editContentText": "レコードの編集"
@@ -127,5 +133,10 @@ define({
   "signOutPage": {
     "signOutMessage": "正常にサイン アウトしました",
     "reSignInMessage": "ここをクリックしてサイン インします"
+  },
+  "selectionOptions": {
+    "selectionOptionsIconTooltip": "須_Selection Options______鷗",
+    "showAllOptionText": "須_Show All___鷗",
+    "showSelectedOptionText": "須_Show Selected_____鷗"
   }
 });

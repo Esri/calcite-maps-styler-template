@@ -36,7 +36,10 @@ define({
       "noViewerIE": "Dit verhaal wordt niet ondersteund op eerdere versies van Internet Explorer dan versie %VERSION%. %UPGRADE%",
       "upgradeBrowser": "<a href='http://browsehappy.com/' target='_blank'>Werk uw browser bij</a>.",
       "mapLoadingFail": "Er is een probleem opgetreden. De kaart is niet correct geladen.",
-      "signOut": "Afmelden"
+      "signOut": "Afmelden",
+      "print0": "Ĳ_Sorry, this story cannot be printed____________ä.",
+      "print1": "Ĳ_To print this story, please use the print button located in the share dialog________________________ä.",
+      "print2": "Ĳ_Sorry, a printable version of the story is typically accessible through the share dialog, but this dialog has been disabled by the author__________________________________________ä."
     },
     "mobileView": {
       "tapForDetails": "Tik voor details",
@@ -85,7 +88,15 @@ define({
       "autoplayLabel": "Autoplaymodus",
       "autoplayExplain1": "Autoplaymodus speelt uw verhaal regelmatig af. Dit is ideaal voor een kiosk of monitor in een openbare ruimte, maar houd er rekening mee dat het verhaal in andere situaties moeilijker te lezen is. Deze functie wordt niet ondersteund op kleine schermen.",
       "autoplayExplain2": "Wanneer deze modus actief is, kan het verhaal worden afgespeeld en gepauzeerd en kan de navigatiesnelheid worden aangepast.",
-      "linksupdated": "Links bijgewerkt!"
+      "linksupdated": "Links bijgewerkt!",
+      "print": "Ĳ_Print___ä",
+      "printInstruction1": "Ĳ_Please wait for all the content to load before ${printing} this page______________________ä.",
+      "printInstruction2": "Ĳ_This page cannot be shared with others, instead share the ${link}_____________________ä.",
+      "link": "Ĳ_link to the story______ä",
+      "printing": "Ĳ_printing___ä",
+      "printWarning": "Ĳ_This is a printed version of a story map. Dynamic content such as videos and interactive maps is only available in the online version at ${link}_____________________________________________ä.",
+      "printMSWarning": "Ĳ_link available only in online story____________ä",
+      "printVideoWarning": "Ĳ_This video can be viewed in the online version of this story map____________________ä"
     }
   }
 });

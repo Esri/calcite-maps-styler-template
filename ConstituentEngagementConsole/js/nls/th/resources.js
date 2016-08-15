@@ -83,7 +83,7 @@ define({
     "valueRadioButtonLabel": "มูลค่า",
     "uniqueRadioButtonLabel": "ลักษณะเฉพาะ",
     "selectLayerToBegin": "เลือกประเภทเพื่อเริ่มงาน",
-    "layerFeatureCount": "${featureCount} เรคคอร์ท"
+    "layerFeatureCount": "ก้_${selectedFeatureCount} selected / ${featureCount} records__________________ษฺ"
   },
   "timeSlider": {
     "timeSliderLabel": "ช่วงเวลา",
@@ -97,7 +97,12 @@ define({
     "placeHolderText": "",
     "noCommentsAvailableText": "ไม่มีเรคคอร์ทื่ใช้งานได้",
     "remainingTextCount": "${0} ตัวอักษร ที่เหลือ",
-    "showNoText": "ไม่"
+    "showNoText": "ไม่",
+    "selectAttachments": "ก้_Attachments____ษฺ",
+    "selectFileText": "ก้_Browse___ษฺ",
+    "attachmentSelectedMsg": "ก้_attachment(s) selected________ษฺ",
+    "attachmentHeaderText": "ก้_Attachments____ษฺ",
+    "addRecordText": "ก้_Add Record____ษฺ"
   },
   "main": {
     "noGroup": "ยังไม่กำหนดกลุ่ม"
@@ -109,17 +114,18 @@ define({
   },
   "manualRefresh": {
     "manualRefreshIconTooltip": "รีเฟรช",
-    "confirmManualRefeshText": "การเลือกทั้งหมดและสิ่งที่ไม่ได้บันทึกการเปลี่ยนแปลงจะถูกละทิ้ง"
+    "confirmManualRefreshText": "ก้_All selections and unsaved changes will be discarded_________________ษฺ"
   },
   "help": {
     "helpIconTooltip": "ช่วยเหลือ"
   },
   "filter": {
     "noFeatureFoundText": "ไม่พบฟีเจอร์สำหรับค่านี้",
-    "distinctQueryFalied": "ไม่พบค่าที่แตกต่างกันในฟิลด์นี้",
+    "distinctQueryFailed": "ก้_No distinct values found for the field_____________ษฺ.",
     "andText": "และ",
-    "filterInEditModeAlert": "ตัวกรองไม่สามารถใช้ได้ในขณะที่แก้ไข",
-    "dropdownSelectOption": "เลือก"
+    "filterInEditModeAlert": "ก้_Filters unavailable while editing___________ษฺ.",
+    "dropdownSelectOption": "เลือก",
+    "filterInShowSelectedEditModeAlert": "ก้_Filters unavailable in 'Show Selected' mode______________ษฺ."
   },
   "detailsPanel": {
     "editContentText": "แก้ไขเรคคอร์ท"
@@ -127,5 +133,10 @@ define({
   "signOutPage": {
     "signOutMessage": "คุณได้ลงชื่อออกเรียบร้อยแล้ว",
     "reSignInMessage": "กดที่นี่ เพื่อลงชื่อเข้าใช้"
+  },
+  "selectionOptions": {
+    "selectionOptionsIconTooltip": "ก้_Selection Options______ษฺ",
+    "showAllOptionText": "ก้_Show All___ษฺ",
+    "showSelectedOptionText": "ก้_Show Selected_____ษฺ"
   }
 });

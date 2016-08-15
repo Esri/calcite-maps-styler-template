@@ -20,7 +20,9 @@ define({
       "cfgMedium": "中",
       "cfgLarge": "大",
       "socialLinksLabel": "各セクションの下部に共有リンクを表示",
-      "socialLinksDescr": "これを使用して、ユーザに %TPL_NAME% の特定のセクションを参照させたり推奨することができます。たとえば、セクションの共有アイコンを使用すると、ユーザはストーリーの最初ではなく、%TPL_NAME% の特定のセクションに移動します。ユーザは、タイトル セクションのソーシャル メディア リンクを使用して、%TPL_NAME% 全体 (ヘッダー タブ) を推奨し、%TPL_NAME% の冒頭に移動させることができます。"
+      "socialLinksDescr": "これを使用して、ユーザに %TPL_NAME% の特定のセクションを参照させたり推奨することができます。たとえば、セクションの共有アイコンを使用すると、ユーザはストーリーの最初ではなく、%TPL_NAME% の特定のセクションに移動します。ユーザは、タイトル セクションのソーシャル メディア リンクを使用して、%TPL_NAME% 全体 (ヘッダー タブ) を推奨し、%TPL_NAME% の冒頭に移動させることができます。",
+      "socialDisabled": "須_This feature is only available with Floating Panel layout__________________鷗",
+      "socialWarning": "須_Your story is using the Side Panel layout and we now recommend to only enable that option with Floating Panel layout. This prevent issues where the panel may not scroll to the desired section for narratives that contains images. You can continue to use that option but if you disable it, it will only be available with Floating Panel layout_______________________________________________________________________________________________________鷗."
     },
     "settingsLayoutFonts": {
       "title": "フォント",

@@ -31,7 +31,9 @@ define({
       "rightHeader": "เพจเฟสบุค",
       "pageExplain": "หน้าเฟสบุคเป็นที่นิยมสำหรับการแสดงแบรนด์สินค้าและผู้มีชื่อเสียง<b>esrigis</b>. คุณสามารถให้ชื่อเพจหลัง'/' ในหน้า URL ได้",
       "pageInputLbl": "ชื่อเพจ",
-      "lookupMsgError": "ไม่พบหน้านี้"
+      "lookupMsgError": "ไม่พบหน้านี้",
+      "warning": "ก้_Facebook support has been discontinued, ${learn}________________ษฺ.",
+      "learn": "ก้_learn more____ษฺ"
     },
     "imageSelectorPicasa": {
       "userInputLbl": "อีเมล์  หรือ  Picasa/Google+ ID",
@@ -101,7 +103,10 @@ define({
       "lblPosition3Explain2": "(ความกว้างจะต้องพอดีกับแผงข้อมูล)",
       "lblPosition4Explain": "(อาจจะเบี้ยว)",
       "unloadLbl": "ยกเลิกการโหลดเมื่อผู้อ่านเลือกไปส่วนที่แตกต่าง",
-      "unloadHelp": "หากหน้าเวปมีเสียง หรือวิดีโอ ให้เก็บตัวเลือกนี้ไว้ เลือกเพื่อที่จะหยุดเนื้อหาจากการเล่น เมื่อผู้ใช้งานไม่ได้เคลื่อนไหวยกเลิกการเลือกตัวอย่างเช่น ต้องการที่จะเก็บซาวแทร๊กของการเล่นผ่านเรื่องราว<br />ถ้าเวปเพจมีแอพลิเคชัน ยกเลิกการเลือกนี้ ดังนั้น เรื่องราวจะไม่ถูกเรียกซ้ำ"
+      "unloadHelp": "หากหน้าเวปมีเสียง หรือวิดีโอ ให้เก็บตัวเลือกนี้ไว้ เลือกเพื่อที่จะหยุดเนื้อหาจากการเล่น เมื่อผู้ใช้งานไม่ได้เคลื่อนไหวยกเลิกการเลือกตัวอย่างเช่น ต้องการที่จะเก็บซาวแทร๊กของการเล่นผ่านเรื่องราว<br />ถ้าเวปเพจมีแอพลิเคชัน ยกเลิกการเลือกนี้ ดังนั้น เรื่องราวจะไม่ถูกเรียกซ้ำ",
+      "embedProtocolLabel": "ก้_Load page over a secure connection (HTTPS)______________ษฺ",
+      "embedProtocolWarning1": "ก้_As your story is configured to load over a secure connection, it is mandatory that all embedded page use a secure connection. If the page does not load it may be because the page is not available over a secure connection or that this page cannot be embedded (some websites restrict embedding)_________________________________________________________________________________________ษฺ.",
+      "embedProtocolWarning2": "ก้_As your story is configured to load over an insecure connection, you can chose to load this page over a secure or insecure connection. We recommend that you always use a secure connection. If the page does not load it may be because the page is not available over the connection mode you selected or that this page cannot be embedded (some websites restrict embedding)________________________________________________________________________________________________________________ษฺ."
     },
     "editorActionGeocode": {
       "lblTitle": "ตำแหน่งของที่อยู่หรือสถานที่",

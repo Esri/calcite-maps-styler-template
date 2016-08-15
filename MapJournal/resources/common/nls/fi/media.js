@@ -31,7 +31,9 @@ define({
       "rightHeader": "Facebook-sivu",
       "pageExplain": "Facebook-sivu on julkinen tuotemerkki tai tunnettu tuote, kuten <b>esrigis</b>. Saat sivun nimen sivun URL-osoitteessa olevan ensimmäisen vinoviivan (/) jälkeen.",
       "pageInputLbl": "Sivun nimi",
-      "lookupMsgError": "Sivua ei löydy"
+      "lookupMsgError": "Sivua ei löydy",
+      "warning": "Å_Facebook support has been discontinued, ${learn}________________ö.",
+      "learn": "Å_learn more____ö"
     },
     "imageSelectorPicasa": {
       "userInputLbl": "Sähköpostiosoite tai Picasa-/Google+-tunnus",
@@ -101,7 +103,10 @@ define({
       "lblPosition3Explain2": "(leveys sopii aina paneeliin)",
       "lblPosition4Explain": "(voi vääristyä)",
       "unloadLbl": "Poista lataus, kun lukija siirtyy",
-      "unloadHelp": "Jos Web-sivulla on ääni- tai videomediaa, pidä tämä asetus valittuna, jotta sisällön toisto pysähtyy, kun lukija siirtyy pois. Poista valinta, jos haluat toistaa ääniraitaa lukijan edetessä tarinassa.<br />Jos Web-sivu on sovellus, poista valinta, jotta tarina ei lataudu uudelleen, kun lukija palaa tarinaan."
+      "unloadHelp": "Jos Web-sivulla on ääni- tai videomediaa, pidä tämä asetus valittuna, jotta sisällön toisto pysähtyy, kun lukija siirtyy pois. Poista valinta, jos haluat toistaa ääniraitaa lukijan edetessä tarinassa.<br />Jos Web-sivu on sovellus, poista valinta, jotta tarina ei lataudu uudelleen, kun lukija palaa tarinaan.",
+      "embedProtocolLabel": "Å_Load page over a secure connection (HTTPS)______________ö",
+      "embedProtocolWarning1": "Å_As your story is configured to load over a secure connection, it is mandatory that all embedded page use a secure connection. If the page does not load it may be because the page is not available over a secure connection or that this page cannot be embedded (some websites restrict embedding)_________________________________________________________________________________________ö.",
+      "embedProtocolWarning2": "Å_As your story is configured to load over an insecure connection, you can chose to load this page over a secure or insecure connection. We recommend that you always use a secure connection. If the page does not load it may be because the page is not available over the connection mode you selected or that this page cannot be embedded (some websites restrict embedding)________________________________________________________________________________________________________________ö."
     },
     "editorActionGeocode": {
       "lblTitle": "Paikanna osoite tai paikka",

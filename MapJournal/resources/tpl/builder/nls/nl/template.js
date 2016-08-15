@@ -20,7 +20,9 @@ define({
       "cfgMedium": "Middel",
       "cfgLarge": "Groot",
       "socialLinksLabel": "Koppelingen om te delen weergeven onder aan elke sectie",
-      "socialLinksDescr": "Hiermee kunnen lezers verwijzen naar specifieke secties van uw %TPL_NAME% en deze promoten. Als u bijvoorbeeld een pictogram voor het delen van secties gebruikt, worden lezers naar die specifieke %TPL_NAME%-sectie gebracht in plaats van naar het begin van uw verhaal. Uw lezers kunnen de sociale-mediakoppeling in de titelsectie gebruiken om uw volledige %TPL_NAME% (tabblad Koptekst) te promoten en naar het begin van de %TPL_NAME% te worden gebracht."
+      "socialLinksDescr": "Hiermee kunnen lezers verwijzen naar specifieke secties van uw %TPL_NAME% en deze promoten. Als u bijvoorbeeld een pictogram voor het delen van secties gebruikt, worden lezers naar die specifieke %TPL_NAME%-sectie gebracht in plaats van naar het begin van uw verhaal. Uw lezers kunnen de sociale-mediakoppeling in de titelsectie gebruiken om uw volledige %TPL_NAME% (tabblad Koptekst) te promoten en naar het begin van de %TPL_NAME% te worden gebracht.",
+      "socialDisabled": "Ĳ_This feature is only available with Floating Panel layout__________________ä",
+      "socialWarning": "Ĳ_Your story is using the Side Panel layout and we now recommend to only enable that option with Floating Panel layout. This prevent issues where the panel may not scroll to the desired section for narratives that contains images. You can continue to use that option but if you disable it, it will only be available with Floating Panel layout_______________________________________________________________________________________________________ä."
     },
     "settingsLayoutFonts": {
       "title": "Lettertypen",

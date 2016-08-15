@@ -20,7 +20,9 @@ define({
       "cfgMedium": "متوسط",
       "cfgLarge": "كبير",
       "socialLinksLabel": "عرض مشاركة الروابط أسفل كل جزء",
-      "socialLinksDescr": "يُمكن ذلك القراء من إرجاع المقاطع المحددة من %TPL_NAME%. على سبيل المثال، عند استخدام مقاطع تشارك رمز، سيقوم القراء بالوصول إلى مقطع %TPL_NAME% المحدد عوضًا عن بداية القصة. يمكن للقراء استخدام رابط الوسائط الاجتماعية في مقطع العنوان لترقية %TPL_NAME% (علامة تبويب العنوان) الكلية وكذلك الوصول إلى بداية  %TPL_NAME%."
+      "socialLinksDescr": "يُمكن ذلك القراء من إرجاع المقاطع المحددة من %TPL_NAME%. على سبيل المثال، عند استخدام مقاطع تشارك رمز، سيقوم القراء بالوصول إلى مقطع %TPL_NAME% المحدد عوضًا عن بداية القصة. يمكن للقراء استخدام رابط الوسائط الاجتماعية في مقطع العنوان لترقية %TPL_NAME% (علامة تبويب العنوان) الكلية وكذلك الوصول إلى بداية  %TPL_NAME%.",
+      "socialDisabled": "بيت_This feature is only available with Floating Panel layout__________________لاحقة",
+      "socialWarning": "بيت_Your story is using the Side Panel layout and we now recommend to only enable that option with Floating Panel layout. This prevent issues where the panel may not scroll to the desired section for narratives that contains images. You can continue to use that option but if you disable it, it will only be available with Floating Panel layout_______________________________________________________________________________________________________لاحقة."
     },
     "settingsLayoutFonts": {
       "title": "خطوط",

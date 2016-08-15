@@ -31,7 +31,9 @@ define({
       "rightHeader": "Facebook-Seite",
       "pageExplain": "Eine Facebook-Seite entspricht einer öffentlichen Marke/einem Produkt oder einer prominenten Person wie <b>esrigis</b>. Den Seitennamen können sie dem Text nach dem ersten Schrägstrich ('/') in der Seiten-URL entnehmen.",
       "pageInputLbl": "Seitenname",
-      "lookupMsgError": "Seite nicht gefunden"
+      "lookupMsgError": "Seite nicht gefunden",
+      "warning": "ä_Facebook support has been discontinued, ${learn}________________Ü.",
+      "learn": "ä_learn more____Ü"
     },
     "imageSelectorPicasa": {
       "userInputLbl": "E-Mail-Adresse oder Picasa/Google+-ID",
@@ -101,7 +103,10 @@ define({
       "lblPosition3Explain2": "(Breite wird immer an den Bereich angepasst)",
       "lblPosition4Explain": "(Verzerren möglich)",
       "unloadLbl": "Wird angehalten, wenn Leser zu einem anderen Ort navigiert",
-      "unloadHelp": "Wenn die Webseite über Audio- oder Video-Medien verfügt, lassen Sie diese Option aktiviert, um die Wiedergabe dieses Inhalts zu beenden, wenn der Leser zu einem anderen Ort navigiert. Deaktivieren Sie sie, um beispielsweise die Wiedergabe eines Soundtracks fortzusetzen, während der Leser durch die Story blättert.<br />Wenn es sich bei der Webseite um eine Anwendung handelt, deaktivieren Sie diese Option, damit die Story nicht erneut geladen wird, wenn der Leser zu ihr zurückkehrt."
+      "unloadHelp": "Wenn die Webseite über Audio- oder Video-Medien verfügt, lassen Sie diese Option aktiviert, um die Wiedergabe dieses Inhalts zu beenden, wenn der Leser zu einem anderen Ort navigiert. Deaktivieren Sie sie, um beispielsweise die Wiedergabe eines Soundtracks fortzusetzen, während der Leser durch die Story blättert.<br />Wenn es sich bei der Webseite um eine Anwendung handelt, deaktivieren Sie diese Option, damit die Story nicht erneut geladen wird, wenn der Leser zu ihr zurückkehrt.",
+      "embedProtocolLabel": "ä_Load page over a secure connection (HTTPS)______________Ü",
+      "embedProtocolWarning1": "ä_As your story is configured to load over a secure connection, it is mandatory that all embedded page use a secure connection. If the page does not load it may be because the page is not available over a secure connection or that this page cannot be embedded (some websites restrict embedding)_________________________________________________________________________________________Ü.",
+      "embedProtocolWarning2": "ä_As your story is configured to load over an insecure connection, you can chose to load this page over a secure or insecure connection. We recommend that you always use a secure connection. If the page does not load it may be because the page is not available over the connection mode you selected or that this page cannot be embedded (some websites restrict embedding)________________________________________________________________________________________________________________Ü."
     },
     "editorActionGeocode": {
       "lblTitle": "Adresse oder Ort suchen",

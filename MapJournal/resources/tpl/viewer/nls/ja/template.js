@@ -36,7 +36,10 @@ define({
       "noViewerIE": "このストーリーは、Internet Explorer %VERSION% より前のバージョンではサポートされていません。%UPGRADE%",
       "upgradeBrowser": "<a href='http://browsehappy.com/' target='_blank'>ブラウザを更新してください</a>。",
       "mapLoadingFail": "問題が発生しました。マップを正しく読み込みませんでした。",
-      "signOut": "サイン アウト"
+      "signOut": "サイン アウト",
+      "print0": "須_Sorry, this story cannot be printed____________鷗.",
+      "print1": "須_To print this story, please use the print button located in the share dialog________________________鷗.",
+      "print2": "須_Sorry, a printable version of the story is typically accessible through the share dialog, but this dialog has been disabled by the author__________________________________________鷗."
     },
     "mobileView": {
       "tapForDetails": "タップして詳細を表示",
@@ -85,7 +88,15 @@ define({
       "autoplayLabel": "自動再生モード",
       "autoplayExplain1": "自動再生モードでは、ストーリーが一定の間隔で進みます。このモードは、売店や公共の表示モニターでは理想的ですが、その他の状況では、ストーリーを読むのを難しくする場合があることに注意してください。この機能は、小さいディスプレイではサポートされません。",
       "autoplayExplain2": "このモードがアクティブの場合、ストーリーの再生/一時停止および再生速度の調整を行うコントロールが表示されます。",
-      "linksupdated": "リンクが更新されました"
+      "linksupdated": "リンクが更新されました",
+      "print": "須_Print___鷗",
+      "printInstruction1": "須_Please wait for all the content to load before ${printing} this page______________________鷗.",
+      "printInstruction2": "須_This page cannot be shared with others, instead share the ${link}_____________________鷗.",
+      "link": "須_link to the story______鷗",
+      "printing": "須_printing___鷗",
+      "printWarning": "須_This is a printed version of a story map. Dynamic content such as videos and interactive maps is only available in the online version at ${link}_____________________________________________鷗.",
+      "printMSWarning": "須_link available only in online story____________鷗",
+      "printVideoWarning": "須_This video can be viewed in the online version of this story map____________________鷗"
     }
   }
 });

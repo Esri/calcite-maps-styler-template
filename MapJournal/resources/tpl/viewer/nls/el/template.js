@@ -36,7 +36,10 @@ define({
       "noViewerIE": "Αυτή η αφήγηση δεν υποστηρίζεται στον Internet Explorer πριν από την έκδοση %VERSION%. %UPGRADE%",
       "upgradeBrowser": "<a href='http://browsehappy.com/' target='_blank'>Ενημερώστε το πρόγραμμα περιήγησης</a>.",
       "mapLoadingFail": "Υπήρξε κάποιο πρόβλημα, ο χάρτης δεν φορτώθηκε σωστά.",
-      "signOut": "Έξοδος"
+      "signOut": "Έξοδος",
+      "print0": "Đ_Sorry, this story cannot be printed____________ớ.",
+      "print1": "Đ_To print this story, please use the print button located in the share dialog________________________ớ.",
+      "print2": "Đ_Sorry, a printable version of the story is typically accessible through the share dialog, but this dialog has been disabled by the author__________________________________________ớ."
     },
     "mobileView": {
       "tapForDetails": "Πατήστε για λεπτομέρειες",
@@ -85,7 +88,15 @@ define({
       "autoplayLabel": "Λειτουργία αυτόματης αναπαραγωγής",
       "autoplayExplain1": "Η λειτουργία αυτόματης αναπαραγωγής θα συνεχίζει στην αφήγησή σας σε τακτικά διαστήματα. Αυτό είναι ιδανικό για τις οθόνες καταστημάτων ή δημόσιας προβολής, αλλά σημειώστε ότι σε άλλες περιπτώσεις, ενδέχεται να είναι δυσκολότερη η ανάγνωση της αφήγησης. Αυτή η δυνατότητα δεν υποστηρίζεται σε μικρές οθόνες.",
       "autoplayExplain2": "Όταν αυτή η λειτουργία είναι ενεργή υπάρχουν στοιχεία ελέγχου για την αναπαραγωγή/παύση της αφήγησης και τη ρύθμιση της ταχύτητας πλοήγησης.",
-      "linksupdated": "Οι σύνδεσμοι ενημερώθηκαν!"
+      "linksupdated": "Οι σύνδεσμοι ενημερώθηκαν!",
+      "print": "Đ_Print___ớ",
+      "printInstruction1": "Đ_Please wait for all the content to load before ${printing} this page______________________ớ.",
+      "printInstruction2": "Đ_This page cannot be shared with others, instead share the ${link}_____________________ớ.",
+      "link": "Đ_link to the story______ớ",
+      "printing": "Đ_printing___ớ",
+      "printWarning": "Đ_This is a printed version of a story map. Dynamic content such as videos and interactive maps is only available in the online version at ${link}_____________________________________________ớ.",
+      "printMSWarning": "Đ_link available only in online story____________ớ",
+      "printVideoWarning": "Đ_This video can be viewed in the online version of this story map____________________ớ"
     }
   }
 });

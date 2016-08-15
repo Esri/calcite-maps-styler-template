@@ -31,7 +31,9 @@ define({
       "rightHeader": "Pagină Facebook",
       "pageExplain": "O pagină de Facebook este o marcă sau un produs public sau o celebritate precum <b>esrigis</b>. Puteţi prelua numele paginii după primul caracter „/” din URL-ul paginii.",
       "pageInputLbl": "Nume pagină",
-      "lookupMsgError": "Pagină negăsită"
+      "lookupMsgError": "Pagină negăsită",
+      "warning": "Ă_Facebook support has been discontinued, ${learn}________________ș.",
+      "learn": "Ă_learn more____ș"
     },
     "imageSelectorPicasa": {
       "userInputLbl": "E-mail sau ID Picasa/Google+",
@@ -101,7 +103,10 @@ define({
       "lblPosition3Explain2": "(lăţimea va corespunde întotdeauna panoului)",
       "lblPosition4Explain": "(poate fi distorsionat)",
       "unloadLbl": "Se revocă încărcarea când cititorul trece în altă secţiune",
-      "unloadHelp": "Dacă pagina web conţine materiale audio sau video, păstraţi această opţiune bifată pentru a opri redarea în momentul în care cititorul trece în altă secţiune. Debifaţi-o, de exemplu, pentru a continua redarea unei melodii când cititorul avansează în jurnal.<br />Dacă pagina web este o aplicaţie, debifaţi această opţiune pentru ca povestea să nu fie nevoită să se încarce din nou când cititorul revine în secţiunea respectivă."
+      "unloadHelp": "Dacă pagina web conţine materiale audio sau video, păstraţi această opţiune bifată pentru a opri redarea în momentul în care cititorul trece în altă secţiune. Debifaţi-o, de exemplu, pentru a continua redarea unei melodii când cititorul avansează în jurnal.<br />Dacă pagina web este o aplicaţie, debifaţi această opţiune pentru ca povestea să nu fie nevoită să se încarce din nou când cititorul revine în secţiunea respectivă.",
+      "embedProtocolLabel": "Ă_Load page over a secure connection (HTTPS)______________ș",
+      "embedProtocolWarning1": "Ă_As your story is configured to load over a secure connection, it is mandatory that all embedded page use a secure connection. If the page does not load it may be because the page is not available over a secure connection or that this page cannot be embedded (some websites restrict embedding)_________________________________________________________________________________________ș.",
+      "embedProtocolWarning2": "Ă_As your story is configured to load over an insecure connection, you can chose to load this page over a secure or insecure connection. We recommend that you always use a secure connection. If the page does not load it may be because the page is not available over the connection mode you selected or that this page cannot be embedded (some websites restrict embedding)________________________________________________________________________________________________________________ș."
     },
     "editorActionGeocode": {
       "lblTitle": "Localizaţi o adresă sau un loc",

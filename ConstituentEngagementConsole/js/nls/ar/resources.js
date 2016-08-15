@@ -83,7 +83,7 @@ define({
     "valueRadioButtonLabel": "قيمة",
     "uniqueRadioButtonLabel": "فريد",
     "selectLayerToBegin": "تحديد فئة للبدء",
-    "layerFeatureCount": "تسجيلات ${featureCount}"
+    "layerFeatureCount": "بيت_${selectedFeatureCount} selected / ${featureCount} records__________________لاحقة"
   },
   "timeSlider": {
     "timeSliderLabel": "النطاق الزمني",
@@ -97,7 +97,12 @@ define({
     "placeHolderText": "",
     "noCommentsAvailableText": "لا توجد تسجيلات متاحة",
     "remainingTextCount": "يتبقى ${0} حرف",
-    "showNoText": "لا"
+    "showNoText": "لا",
+    "selectAttachments": "بيت_Attachments____لاحقة",
+    "selectFileText": "بيت_Browse___لاحقة",
+    "attachmentSelectedMsg": "بيت_attachment(s) selected________لاحقة",
+    "attachmentHeaderText": "بيت_Attachments____لاحقة",
+    "addRecordText": "بيت_Add Record____لاحقة"
   },
   "main": {
     "noGroup": "لم يتم تكوين المجموعة"
@@ -109,17 +114,18 @@ define({
   },
   "manualRefresh": {
     "manualRefreshIconTooltip": "تحديث",
-    "confirmManualRefeshText": "سيتم تجاهل جميع عمليات التحديد والتغييرات غير المحفوظة"
+    "confirmManualRefreshText": "بيت_All selections and unsaved changes will be discarded_________________لاحقة"
   },
   "help": {
     "helpIconTooltip": "مساعدة"
   },
   "filter": {
     "noFeatureFoundText": "لا توجد معالم للقيمة الحالية.",
-    "distinctQueryFalied": "لا توجد قيم مُحددة للحقل.",
+    "distinctQueryFailed": "بيت_No distinct values found for the field_____________لاحقة.",
     "andText": "و",
-    "filterInEditModeAlert": "لا تتوفر عوامل التصفية أثناء التحرير",
-    "dropdownSelectOption": "تحديد"
+    "filterInEditModeAlert": "بيت_Filters unavailable while editing___________لاحقة.",
+    "dropdownSelectOption": "تحديد",
+    "filterInShowSelectedEditModeAlert": "بيت_Filters unavailable in 'Show Selected' mode______________لاحقة."
   },
   "detailsPanel": {
     "editContentText": "تحرير التسجيل"
@@ -127,5 +133,10 @@ define({
   "signOutPage": {
     "signOutMessage": "تم تسجيل الخروج بنجاح",
     "reSignInMessage": "انقر هنا لتسجيل الدخول"
+  },
+  "selectionOptions": {
+    "selectionOptionsIconTooltip": "بيت_Selection Options______لاحقة",
+    "showAllOptionText": "بيت_Show All___لاحقة",
+    "showSelectedOptionText": "بيت_Show Selected_____لاحقة"
   }
 });

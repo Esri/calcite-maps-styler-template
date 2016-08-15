@@ -20,7 +20,9 @@ define({
       "cfgMedium": "Srednje",
       "cfgLarge": "Veliko",
       "socialLinksLabel": "Prikaži poveznice za dijeljenje na dnu svakog odjeljka",
-      "socialLinksDescr": "To omogućuje čitateljima da referenciraju i promoviraju određene odjeljke predloška %TPL_NAME%. Primjerice, ako upotrijebite ikonu za dijeljenje u odjeljku, čitatelji će biti prebačeni na taj određeni odjeljak predloška %TPL_NAME%, a ne na početak vaše priče. Vaši čitatelji mogu upotrijebiti poveznicu društvenih medija u naslovu kako bi promovirali vaš cijeli predložak %TPL_NAME% (kartica zaglavlja) i kako bi se prebacili na početak predloška %TPL_NAME%."
+      "socialLinksDescr": "To omogućuje čitateljima da referenciraju i promoviraju određene odjeljke predloška %TPL_NAME%. Primjerice, ako upotrijebite ikonu za dijeljenje u odjeljku, čitatelji će biti prebačeni na taj određeni odjeljak predloška %TPL_NAME%, a ne na početak vaše priče. Vaši čitatelji mogu upotrijebiti poveznicu društvenih medija u naslovu kako bi promovirali vaš cijeli predložak %TPL_NAME% (kartica zaglavlja) i kako bi se prebacili na početak predloška %TPL_NAME%.",
+      "socialDisabled": "Č_This feature is only available with Floating Panel layout__________________ž",
+      "socialWarning": "Č_Your story is using the Side Panel layout and we now recommend to only enable that option with Floating Panel layout. This prevent issues where the panel may not scroll to the desired section for narratives that contains images. You can continue to use that option but if you disable it, it will only be available with Floating Panel layout_______________________________________________________________________________________________________ž."
     },
     "settingsLayoutFonts": {
       "title": "Fontovi",

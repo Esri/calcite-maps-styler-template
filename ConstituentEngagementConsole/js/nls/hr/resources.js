@@ -83,7 +83,7 @@ define({
     "valueRadioButtonLabel": "Vrijednost",
     "uniqueRadioButtonLabel": "Jedinstveno",
     "selectLayerToBegin": "Odaberite kategoriju za početak rada",
-    "layerFeatureCount": "${featureCount} zapis(a)"
+    "layerFeatureCount": "Č_${selectedFeatureCount} selected / ${featureCount} records__________________ž"
   },
   "timeSlider": {
     "timeSliderLabel": "Vremenski raspon",
@@ -97,7 +97,12 @@ define({
     "placeHolderText": "",
     "noCommentsAvailableText": "Nema dostupnih zapisa",
     "remainingTextCount": "preostalo ${0} znakova",
-    "showNoText": "Ne"
+    "showNoText": "Ne",
+    "selectAttachments": "Č_Attachments____ž",
+    "selectFileText": "Č_Browse___ž",
+    "attachmentSelectedMsg": "Č_attachment(s) selected________ž",
+    "attachmentHeaderText": "Č_Attachments____ž",
+    "addRecordText": "Č_Add Record____ž"
   },
   "main": {
     "noGroup": "Nema konfiguriranih grupa"
@@ -109,17 +114,18 @@ define({
   },
   "manualRefresh": {
     "manualRefreshIconTooltip": "Osvježi",
-    "confirmManualRefeshText": "Odbacit će se svi odabiri i nespremljene promjene"
+    "confirmManualRefreshText": "Č_All selections and unsaved changes will be discarded_________________ž"
   },
   "help": {
     "helpIconTooltip": "Pomoć"
   },
   "filter": {
     "noFeatureFoundText": "Nema geoobjekata za ovu vrijednost.",
-    "distinctQueryFalied": "Nema određenih vrijednosti za ovo polje.",
+    "distinctQueryFailed": "Č_No distinct values found for the field_____________ž.",
     "andText": "i",
-    "filterInEditModeAlert": "Filtri nisu dostupni tijekom uređivanja",
-    "dropdownSelectOption": "Odaberi"
+    "filterInEditModeAlert": "Č_Filters unavailable while editing___________ž.",
+    "dropdownSelectOption": "Odaberi",
+    "filterInShowSelectedEditModeAlert": "Č_Filters unavailable in 'Show Selected' mode______________ž."
   },
   "detailsPanel": {
     "editContentText": "Uredi zapis"
@@ -127,5 +133,10 @@ define({
   "signOutPage": {
     "signOutMessage": "Uspješno ste se odjavili",
     "reSignInMessage": "Kliknite ovdje za prijavu"
+  },
+  "selectionOptions": {
+    "selectionOptionsIconTooltip": "Č_Selection Options______ž",
+    "showAllOptionText": "Č_Show All___ž",
+    "showSelectedOptionText": "Č_Show Selected_____ž"
   }
 });
