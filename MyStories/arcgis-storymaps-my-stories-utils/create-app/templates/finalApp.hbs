@@ -1,6 +1,6 @@
 <div class="app-item final">
   <h3 class="ask-pros-title">{{title}}</h3>
-  <div class="version {{#if app.multiple}}multiple{{/if}}">
+  <div class="version">
     {{#ifEquals app.value 'basic'}}
       <div class="create-app-image-container final trailer-half">
         <a href={{app.url}} class="image-wrapper" target="_blank">
@@ -10,27 +10,11 @@
       <a href={{app.url}} class="btn clear clear-inverse" target="_blank">{{finalApp.letsBuild}}</a>
     {{else}}
       <div class="create-app-image-container final trailer-half">
-        <img src="{{app.thumbnail}}" data-template="{{app.template}}" {{#if app.layout}}data-layout="{{app.layout}}"{{/if}}>
+        <img src="{{app.thumbnail}}" data-template="{{app.template}}">
       </div>
-      <a class="btn clear clear-inverse" data-template="{{app.template}}" {{#if app.layout}}data-layout="{{app.layout}}"{{/if}}>{{finalApp.letsBuild}}</a>
-    {{/ifEquals}}
-  </div>{{#if app.multiple}}<div class="version multiple">
-    {{#ifEquals app.value 'basic'}}
-      <div class="create-app-image-container final trailer-half">
-        <a href={{app.urlTwo}} class="image-wrapper" target="_blank">
-          <img src="{{app.thumbnailTwo}}">
-        </a>
-      </div>
-      <a href={{app.urlTwo}} class="btn clear clear-inverse" target="_blank">{{finalApp.letsBuild}}</a>
-    {{else}}
-      <div class="create-app-image-container final trailer-half">
-        <img src="{{app.thumbnailTwo}}" data-template="{{app.templateTwo}}" {{#if app.layoutTwo}}data-layout="{{app.layoutTwo}}"{{/if}}>
-      </div>
-      <a class="btn clear clear-inverse" data-template="{{app.templateTwo}}" {{#if app.layoutTwo}}data-layout="{{app.layoutTwo}}"{{/if}}>{{finalApp.letsBuild}}</a>
+      <a class="btn clear clear-inverse" data-template="{{app.template}}">{{finalApp.letsBuild}}</a>
     {{/ifEquals}}
   </div>
-  {{/if}}
-
   <div class="app-reason">
     <p>{{app.reason}}</p>
   </div>

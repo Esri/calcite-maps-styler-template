@@ -1,20 +1,17 @@
 {{#if isPortal}}
 {{else}}
 <div id="sign-in-left">
-	<div id="sign-in-title" class="trailer-1">
+	<div id="sign-in-title" class="trailer-2">
 		<h2>{{labels.title}}</h2>
 	</div>
-	<div id="my-stories-explanation" class="trailer-1">
-		<div class="trailer-half">
-			<span class="subordinate-text">{{labels.subtitle}}</span>
-		</div>
-		<div class="explanation trailer-half">
+	<div id="my-stories-explanation" class="trailer-2">
+		<div class="explanation trailer-1">
 			<div class="explanation-icon icon-check"></div><!--
 		 --><div class="explanation-text-container">
 				<h4 class="explanation-text">{{labels.reasonOne}}</h4>
 			</div>
 		</div>
-		<div class="explanation trailer-half">
+		<div class="explanation trailer-1">
 			<div class="explanation-icon icon-check"></div><!--
 		 --><div class="explanation-text-container">
 				<h4 class="explanation-text">{{labels.reasonTwo}}</h4>
@@ -28,9 +25,9 @@
 		</div>
 	</div>
 	<div id="how-sign-up">
-		<div class="explanation-icon icon-check invisible"></div><!--
-	 --><div class="sign-up-text-container">
-	 		<span class="subordinate-text">{{labels.noAccountYet}}</span>
+		<div class="sign-up-text-container">
+	 		<h5 class="subordinate-text">{{labels.noAccountYet}}</h5>
+			<h5 class="subordinate-text">{{labels.signUpFor}}</h5>
 	 		<div>
 	 			&bull;<a href="{{publicLink}}" target="_blank" class="sign-up-link">{{labels.publicAccount}}</a>
 	 		</div>

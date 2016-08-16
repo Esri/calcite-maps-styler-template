@@ -101,6 +101,9 @@ function(createStoryi18n, PortalHelper, UserAgentHelper, signInCreateDialog) {
         case 'StoryMapCrowdsource':
           appName = 'Crowdsource';
           break;
+        case 'Shortlist':
+          appName = 'Shortlist';
+          break;
         default:
           break;
       }
@@ -171,9 +174,9 @@ function(createStoryi18n, PortalHelper, UserAgentHelper, signInCreateDialog) {
     }
   }
 
-  function buildSwipe(layout)
+  function buildSwipe()
   {
-    buildApp("StorytellingSwipe", layout);
+    buildApp("StorytellingSwipe");
   }
 
   function buildTour()
@@ -197,6 +200,10 @@ function(createStoryi18n, PortalHelper, UserAgentHelper, signInCreateDialog) {
 
   function buildCrowdsource() {
     buildApp('StoryMapCrowdsource');
+  }
+
+  function buildShortlist() {
+    buildApp('Shortlist');
   }
 
 
@@ -229,6 +236,10 @@ function(createStoryi18n, PortalHelper, UserAgentHelper, signInCreateDialog) {
       buildCascade();
     });
 
+    selector.find('[data-template="shortlist"]').off('click').on('click', function() {
+      buildShortlist();
+    });
+
     selector.find('[data-template="series"]').off('click').on('click', function() {
       var layout = $(this).data('layout');
       if(layout) {
@@ -240,13 +251,7 @@ function(createStoryi18n, PortalHelper, UserAgentHelper, signInCreateDialog) {
     });
 
     selector.find('[data-template="swipeSpyglass"]').off('click').on('click', function() {
-      var layout = $(this).data('layout');
-      if(layout) {
-        buildSwipe(layout);
-      }
-      else {
-        buildSwipe();
-      }
+      buildSwipe();
     });
   };
 
