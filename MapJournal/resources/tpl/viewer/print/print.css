@@ -21,6 +21,32 @@
 	font-style: normal;
 }
 
+/*
+ * Bootstrap extract for print icon
+ */
+
+@font-face {
+  font-family: 'Glyphicons Halflings';
+  src: url('../../../lib/bootstrap/fonts/glyphicons-halflings-regular.eot');
+  src: url('../../../lib/bootstrap/fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../../../lib/bootstrap/fonts/glyphicons-halflings-regular.woff2') format('woff2'), url('../../../lib/bootstrap/fonts/glyphicons-halflings-regular.woff') format('woff'), url('../../../lib/bootstrap/fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('../../../lib/bootstrap/fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
+}
+
+.glyphicon {
+  position: relative;
+  top: 1px;
+  display: inline-block;
+  font-family: 'Glyphicons Halflings';
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.glyphicon-print:before {
+  content: "\e045";
+}
+
 html, body, h1, h2, h4, h5, h6, p, ul, form {
     margin: 0;
 }
@@ -43,6 +69,7 @@ strong {
  */
 
 .print-warning {
+	position: relative;
 	display: block;
 	margin: 20px auto;
 	padding: 10px;
@@ -66,6 +93,22 @@ strong {
 .share-warning {
 	font-size: 14px;
 	margin-top: 4px;
+}
+
+.print-btn {
+	position: absolute;
+	top: 0;
+	left: 100%;
+	margin-left: 20px;
+	border: 1px solid #CCC;
+	border-radius: 3px;
+	padding: 7px 10px;
+	cursor: pointer;
+}
+
+.print-btn:hover {
+	background-color: #e6e6e6;
+	border-color: #adadad;
 }
 
 /*
@@ -93,13 +136,20 @@ header {
  */
 
 section {
-	page-break-inside: avoid;
+	page-break-before: always;
+	/*page-break-inside: avoid;*/
 	margin-top: 20px;
+	word-wrap: break-word;
 }
 
 section:nth-of-type(1) {
 	font-size: 18px;
+	page-break-before: auto;
 	page-break-inside: auto;
+}
+
+.title-media-block {
+	/*page-break-inside: avoid;*/
 }
 
 /*
@@ -107,6 +157,7 @@ section:nth-of-type(1) {
  */
 
 .media-image {
+	page-break-inside: avoid;
 	text-align: center;
 }
 
@@ -116,6 +167,7 @@ section:nth-of-type(1) {
 }
 
 .media-map, .media-video iframe, .media-webpage iframe {
+	page-break-inside: avoid;
 	width: 100%;
 	height: 500px;
 }
@@ -130,6 +182,7 @@ section:nth-of-type(1) {
 
 /* Inline video & web page */
 .section-narrative .iframe-container iframe {
+	page-break-inside: avoid;
 	width: 100%;
 	height: 400px;
 }
@@ -137,6 +190,7 @@ section:nth-of-type(1) {
 /* Inline image */
 .section-narrative img,
 .section-narrative .image-container img {
+	page-break-inside: avoid;
 	max-width: 100%; 
 }
 
@@ -208,7 +262,11 @@ iframe {
 /*
  * Map Legend
  */
- 
+
+.media-map-legend {
+	page-break-inside: avoid;
+}
+
 .esriLegendService {
 	display: inline-block !important;
 	margin-right: 20px;

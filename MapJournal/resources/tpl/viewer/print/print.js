@@ -25,9 +25,13 @@ require([
 	document.title = $('<div>' + title + '</div>').text();
 	
 	storyHTML += '<div class="print-warning">';
-	storyHTML += i18n.viewer.shareFromCommon.printInstruction1.replace('${printing}', '<a href="#" onclick="window.print()">' + i18n.viewer.shareFromCommon.printing + '</a>');
+	storyHTML += i18n.viewer.shareFromCommon.printInstruction1;
 	storyHTML += '<div class="share-warning">';
 	storyHTML += i18n.viewer.shareFromCommon.printInstruction2.replace('${link}', '<a href="' + storyURL + '">' + i18n.viewer.shareFromCommon.link + '</a>');
+	storyHTML += '</div>';
+	storyHTML += '<div class="print-btn">';
+	storyHTML += '<span class="glyphicon glyphicon-print" aria-hidden="true"></span>';
+	storyHTML += i18n.viewer.shareFromCommon.print;
 	storyHTML += '</div>';
 	storyHTML += '</div>';
 	
@@ -40,19 +44,25 @@ require([
 
 	$.each(sections, function(i, section) {			
 		storyHTML += '<section>';
-		if (i === 0) {
-			storyHTML += exportMediaBlock(i, section.media);
-			storyHTML += exportNarrative(section.content);
-		}
-		else {
+		
+		storyHTML += '<div class="title-media-block">';
+		if (i !== 0) {
 			storyHTML += section.title;
-			storyHTML += exportNarrative(section.content);
-			storyHTML += exportMediaBlock(i, section.media);
 		}
+		
+		storyHTML += exportMediaBlock(i, section.media);
+		storyHTML += '</div>';
+		
+		storyHTML += exportNarrative(section.content);
+		
 		storyHTML += '</section>';
 	});
 
 	$('body').html(storyHTML);
+	
+	$('.print-btn').click(function(){ 
+		window.print();
+	});
 
 	// Load webmap now that DOM is ready
 	// That case should be shared with MainStage.js but as of today it's not modular enough
@@ -74,8 +84,12 @@ require([
 		
 		loadWebmap(media.webmap.id, $('#media-section-' + i)[0], extent).then(function(response) {
 			
-			// Not sure why that's required, the extent passed in createMap is ignored...
-			response.map.setExtent(extent);
+			if (extent) {
+				// Not sure why that's required, the extent passed in createMap is ignored...
+				response.map.setExtent(extent);
+			}
+			
+			response.map.disableScrollWheelZoom();
 			
 			//
 			// Take care of layer overrides
