@@ -332,13 +332,13 @@ define({
       "lookupMsgError": "Pagina non trovata"
     },
     "viewPicasa": {
-      "title": "Importazione da Picasa/Google+",
-      "header": "Immettere l'e-mail o l'ID dell'account Picasa o Google+.",
-      "userInputLbl": "Immettere un'e-mail o un ID",
+      "title": "é_Picasa import_____È",
+      "header": "é_Enter your email address or your Picasa id______________È.",
+      "userInputLbl": "é_Email or Picasa id______È",
       "signInMsg2": "Account non trovato",
       "signInMsg3": "Nessun album pubblico",
-      "howToFind": "Come trovare l'ID di un account Picasa o Google+",
-      "howToFind2": "Copiare le cifre tra il primo e il secondo '/' di qualsiasi pagina Picasa o G+"
+      "howToFind": "é_How to find a Picasa id________È",
+      "howToFind2": "é_Copy digits between the first and second '/' of any Picasa page____________________È"
     },
     "viewCSV": {
       "title": "Importazione da CSV",
@@ -434,6 +434,8 @@ define({
         "div6": "<b>Si desidera riutilizzare un feature service esistente</b> che archivia le immagini come allegati o che fa riferimento a immagini esterne: consultare la sezione dettagliata di seguito.",
         "div7": "<b>Utenti di una versione precedente</b> del modello di Tour mappa e già in possesso del CSV che fa riferimento alle immagini e alle anteprime: è possibile importare e ottimizzare i dati. Il generatore supporta solo CSV che utilizzano campi relativi a latitudine/longitudine; è possibile continuare a utilizzare CSV basati su indirizzi mediante la mappa Web (vedere la sezione di seguito)",
         "div8": "Importare da servizi di condivisione di immagini online",
+        "div9a": "é_Facebook support has been discontinued, ${learn}________________È.",
+        "learn": "é_learn more____È",
         "div9": "L'operazione di importazione fa riferimento a immagini già ospitate tramite la memorizzazione dei relativi URL in una raccolta di feature mappa Web. Le immagini non vengono archiviate in ArcGIS Online. Se le immagini ospitate risultano inaccessibili, non saranno disponibili in Tour mappa e verrà utilizzata un'immagine \"Immagine non disponibile\". A seconda del provider di servizi per le foto, il Tour mappa importerà o meno il nome, la descrizione e la posizione delle immagini. Tali attributi sono memorizzati nella mappa Web e le eventuali modifiche ai servizi online non verranno applicate al Tour mappa.",
         "div10": "Archiviare le immagini su un server Web",
         "div11": "Se si sceglie di ospitare le immagini per proprio conto, è necessario creare manualmente le anteprime delle immagini. Se per le anteprime si utilizzano immagini a risoluzione piena, ne risultano prestazioni scarse. Per tale motivo si consiglia di utilizzare un servizio di condivisione di foto online o un feature service che effettui l'operazione.",

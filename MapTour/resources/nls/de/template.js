@@ -332,13 +332,13 @@ define({
       "lookupMsgError": "Seite nicht gefunden"
     },
     "viewPicasa": {
-      "title": "Import über Picasa/Google+",
-      "header": "Geben Sie die E-Mail-Adresse oder die ID Ihres Picasa- oder Google+-Kontos ein.",
-      "userInputLbl": "E-Mail-Adresse oder ID eingeben",
+      "title": "ä_Picasa import_____Ü",
+      "header": "ä_Enter your email address or your Picasa id______________Ü.",
+      "userInputLbl": "ä_Email or Picasa id______Ü",
       "signInMsg2": "Konto nicht gefunden",
       "signInMsg3": "Kein öffentliches Album",
-      "howToFind": "So finden Sie eine Picasa- oder Google+-Konto-ID",
-      "howToFind2": "Kopieren Sie die Ziffern zwischen dem ersten und zweiten Schrägstrich ('/') einer Picasa- oder G+-Seite"
+      "howToFind": "ä_How to find a Picasa id________Ü",
+      "howToFind2": "ä_Copy digits between the first and second '/' of any Picasa page____________________Ü"
     },
     "viewCSV": {
       "title": "CSV-Import",
@@ -434,6 +434,8 @@ define({
         "div6": "<b>Sie möchten einen vorhandenen Feature-Service verwenden</b>, in dem Ihre Bilder als Anlagen gespeichert werden oder auf externe Bilder verwiesen wird: Lesen Sie die ausführlichen Informationen im Abschnitt unten.",
         "div7": "<b>Sie verwenden eine frühere Version</b> der Map Tour-Vorlage und verfügen bereits über eine CSV-Datei mit Verweis auf Ihre Bilder und Miniaturansichten: Sie können diese Vorlage importieren und die Daten optimieren. Der Builder unterstützt nur CSV-Dateien mit Verwendung von Längen-/Breitengradfeldern; eine adressbasierte CSV-Datei kann weiter durch Ihre Webkarte verwendet werden (siehe Abschnitt unten).",
         "div8": "Importieren aus Online-Fotofreigabe-Services",
+        "div9a": "ä_Facebook support has been discontinued, ${learn}________________Ü.",
+        "learn": "ä_learn more____Ü",
         "div9": "Beim Importvorgang wird auf bereits gehostete Bilder verwiesen, indem die URLs in einer Webkarten-Feature-Sammlung gespeichert werden. Die Bilder werden nicht in ArcGIS Online gespeichert. Wenn auf die gehosteten Bilder nicht zugegriffen werden kann, sind sie nicht in der Map Tour verfügbar, stattdessen wird \"Bild nicht verfügbar\" angezeigt. Abhängig vom Service-Provider werden Name, Beschreibung und Position der Bilder nicht in die Map Tour importiert. Diese Attribute werden in der Webkarte gespeichert, Änderungen in den Online-Services werden nicht in die Map Tour übernommen.",
         "div10": "Speichern der Bilder auf einem Webserver",
         "div11": "Wenn Sie die Bilder selbst hosten, müssen Sie manuell Miniaturansichten der Bilder erstellen. Wenn für die Miniaturansichten die Bilder in voller Auflösung verwendet werden, wirkt sich dies negativ auf die Performance aus. Aus diesem Grund empfiehlt es sich, einen Online-Fotofreigabe-Service oder einen Feature-Service zu verwenden, der dies für Sie übernimmt.",

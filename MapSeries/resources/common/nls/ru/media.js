@@ -31,13 +31,15 @@ define({
       "rightHeader": "Страница Facebook",
       "pageExplain": "Страница Facebook - это публичный продукт, как <b>esrigis</b>. Вы можете использовать имя страницы, расположенное после первой косой черты '/' в URL-адресе страницы.",
       "pageInputLbl": "Имя страницы",
-      "lookupMsgError": "Страница не найдена"
+      "lookupMsgError": "Страница не найдена",
+      "warning": "Ж_Facebook support has been discontinued, ${learn}________________Я.",
+      "learn": "Ж_learn more____Я"
     },
     "imageSelectorPicasa": {
-      "userInputLbl": "Электронная почта или Picasa / ID Google +",
+      "userInputLbl": "Ж_Email or Picasa id______Я",
       "signInMsg2": "Учетная запись не найдена",
-      "howToFind": "Как найти ID учетной записи Picasa или Google+",
-      "howToFind2": "Скопируйте цифры, расположенные между первой и второй косой чертой '/' любой страницы Picasa или G+"
+      "howToFind": "Ж_How to find a Picasa id________Я",
+      "howToFind2": "Ж_Copy digits between the first and second '/' of any Picasa page____________________Я"
     },
     "videoSelectorCommon": {
       "check": "Проверить",
@@ -101,7 +103,10 @@ define({
       "lblPosition3Explain2": "(ширина всегда будет соответствовать панели)",
       "lblPosition4Explain": "(может исказиться)",
       "unloadLbl": "Выгрузить, когда читатель уйдет",
-      "unloadHelp": "Если на веб-странице есть аудио или видео медиа, оставьте эту опцию включенной, чтобы остановить проигрывание ресурса при уходе читателя. Отключите ее, например, чтобы саундтрек проигрывался, пока читатель перемещается по истории.<br /> Если веб-страница является приложением, отключите эту опцию, чтобы приложение не перезагружалось при возврате читателя в этот раздел."
+      "unloadHelp": "Если на веб-странице есть аудио или видео медиа, оставьте эту опцию включенной, чтобы остановить проигрывание ресурса при уходе читателя. Отключите ее, например, чтобы саундтрек проигрывался, пока читатель перемещается по истории.<br /> Если веб-страница является приложением, отключите эту опцию, чтобы приложение не перезагружалось при возврате читателя в этот раздел.",
+      "embedProtocolLabel": "Ж_Load page over a secure connection (HTTPS)______________Я",
+      "embedProtocolWarning1": "Ж_Your story is configured to load over a secure connection (https), so web page show in the story must also use a secure connection. If the page does not load it may be because it is not available over a secure connection or that it cannot be included in your story (some websites restrict this). You may need to create a hyperlink to open the page in a new browser tab________________________________________________________________________________________________________________Я.",
+      "embedProtocolWarning2": "Ж_Your story is configured to load over an insecure connection (http), so you can choose to load this page over a secure (recommended) or insecure connection. If the page does not load, it may be because it does not support the connection type you selected or that it cannot be included in your story (some websites restrict this). You may need to create a hyperlink to open the page in a new browser tab__________________________________________________________________________________________________________________________Я."
     },
     "editorActionGeocode": {
       "lblTitle": "Найдите адрес или место",

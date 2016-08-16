@@ -31,13 +31,15 @@ define({
       "rightHeader": "Página do Facebook",
       "pageExplain": "A página do Facebook é um produto/marca pública ou figura pública como<b>esrigis</b>. Você pode obter um nome de página após o primeiro '/' na URL da página.",
       "pageInputLbl": "Nome da página",
-      "lookupMsgError": "Página não encontrada"
+      "lookupMsgError": "Página não encontrada",
+      "warning": "ã_Facebook support has been discontinued, ${learn}________________Ç.",
+      "learn": "ã_learn more____Ç"
     },
     "imageSelectorPicasa": {
-      "userInputLbl": "E-mail ou Picasa/Google+ ID",
+      "userInputLbl": "ã_Email or Picasa id______Ç",
       "signInMsg2": "Conta não encontrada",
-      "howToFind": "Como encontrar um ID de conta do Picasa ou Google+",
-      "howToFind2": "Copie dígitos entre o primeiro e segundo '/' de qualquer página do Picasa ou G+"
+      "howToFind": "ã_How to find a Picasa id________Ç",
+      "howToFind2": "ã_Copy digits between the first and second '/' of any Picasa page____________________Ç"
     },
     "videoSelectorCommon": {
       "check": "Verificar",
@@ -101,7 +103,10 @@ define({
       "lblPosition3Explain2": "(a largura sempre se ajustará no painel)",
       "lblPosition4Explain": "(pode distorcer)",
       "unloadLbl": "Descarregar quando o leitor navegar",
-      "unloadHelp": "Se a Página da Web tiver mídia de áudio ou de vídeo, mantenha esta opção marcada para interromper a execução do conteúdo quando o leitor navegar fora da página. Desmarque isto, por exemplo, para manter uma trilha sonora tocando quando o leitor avançar pela história.<br />Se as Página da Web for um aplicativo, desmarque esta opção de forma que a história não recarregue se o leitor retornar a ela."
+      "unloadHelp": "Se a Página da Web tiver mídia de áudio ou de vídeo, mantenha esta opção marcada para interromper a execução do conteúdo quando o leitor navegar fora da página. Desmarque isto, por exemplo, para manter uma trilha sonora tocando quando o leitor avançar pela história.<br />Se as Página da Web for um aplicativo, desmarque esta opção de forma que a história não recarregue se o leitor retornar a ela.",
+      "embedProtocolLabel": "ã_Load page over a secure connection (HTTPS)______________Ç",
+      "embedProtocolWarning1": "ã_Your story is configured to load over a secure connection (https), so web page show in the story must also use a secure connection. If the page does not load it may be because it is not available over a secure connection or that it cannot be included in your story (some websites restrict this). You may need to create a hyperlink to open the page in a new browser tab________________________________________________________________________________________________________________Ç.",
+      "embedProtocolWarning2": "ã_Your story is configured to load over an insecure connection (http), so you can choose to load this page over a secure (recommended) or insecure connection. If the page does not load, it may be because it does not support the connection type you selected or that it cannot be included in your story (some websites restrict this). You may need to create a hyperlink to open the page in a new browser tab__________________________________________________________________________________________________________________________Ç."
     },
     "editorActionGeocode": {
       "lblTitle": "Localizar um endereço ou lugar",

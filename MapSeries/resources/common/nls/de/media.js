@@ -31,13 +31,15 @@ define({
       "rightHeader": "Facebook-Seite",
       "pageExplain": "Eine Facebook-Seite entspricht einer öffentlichen Marke/einem Produkt oder einer prominenten Person wie <b>esrigis</b>. Den Seitennamen können sie dem Text nach dem ersten Schrägstrich ('/') in der Seiten-URL entnehmen.",
       "pageInputLbl": "Seitenname",
-      "lookupMsgError": "Seite nicht gefunden"
+      "lookupMsgError": "Seite nicht gefunden",
+      "warning": "ä_Facebook support has been discontinued, ${learn}________________Ü.",
+      "learn": "ä_learn more____Ü"
     },
     "imageSelectorPicasa": {
-      "userInputLbl": "E-Mail-Adresse oder Picasa/Google+-ID",
+      "userInputLbl": "ä_Email or Picasa id______Ü",
       "signInMsg2": "Konto nicht gefunden",
-      "howToFind": "So finden Sie eine Picasa- oder Google+-Konto-ID",
-      "howToFind2": "Kopieren Sie die Ziffern zwischen dem ersten und zweiten Schrägstrich ('/') einer Picasa- oder G+-Seite"
+      "howToFind": "ä_How to find a Picasa id________Ü",
+      "howToFind2": "ä_Copy digits between the first and second '/' of any Picasa page____________________Ü"
     },
     "videoSelectorCommon": {
       "check": "Aktivieren",
@@ -101,7 +103,10 @@ define({
       "lblPosition3Explain2": "(Breite wird immer an den Bereich angepasst)",
       "lblPosition4Explain": "(Verzerren möglich)",
       "unloadLbl": "Unload when reader navigates away",
-      "unloadHelp": "Wenn die Webseite über Audio- oder Video-Medien verfügt, lassen Sie diese Option aktiviert, um die Wiedergabe dieses Inhalts zu beenden, wenn der Leser zu einem anderen Ort navigiert. Deaktivieren Sie sie, um beispielsweise die Wiedergabe eines Soundtracks fortzusetzen, während der Leser durch die Story blättert.<br />Wenn es sich bei der Webseite um eine Anwendung handelt, deaktivieren Sie diese Option, damit die Story nicht erneut geladen wird, wenn der Leser zu ihr zurückkehrt."
+      "unloadHelp": "Wenn die Webseite über Audio- oder Video-Medien verfügt, lassen Sie diese Option aktiviert, um die Wiedergabe dieses Inhalts zu beenden, wenn der Leser zu einem anderen Ort navigiert. Deaktivieren Sie sie, um beispielsweise die Wiedergabe eines Soundtracks fortzusetzen, während der Leser durch die Story blättert.<br />Wenn es sich bei der Webseite um eine Anwendung handelt, deaktivieren Sie diese Option, damit die Story nicht erneut geladen wird, wenn der Leser zu ihr zurückkehrt.",
+      "embedProtocolLabel": "ä_Load page over a secure connection (HTTPS)______________Ü",
+      "embedProtocolWarning1": "ä_Your story is configured to load over a secure connection (https), so web page show in the story must also use a secure connection. If the page does not load it may be because it is not available over a secure connection or that it cannot be included in your story (some websites restrict this). You may need to create a hyperlink to open the page in a new browser tab________________________________________________________________________________________________________________Ü.",
+      "embedProtocolWarning2": "ä_Your story is configured to load over an insecure connection (http), so you can choose to load this page over a secure (recommended) or insecure connection. If the page does not load, it may be because it does not support the connection type you selected or that it cannot be included in your story (some websites restrict this). You may need to create a hyperlink to open the page in a new browser tab__________________________________________________________________________________________________________________________Ü."
     },
     "editorActionGeocode": {
       "lblTitle": "Locate an address or place",

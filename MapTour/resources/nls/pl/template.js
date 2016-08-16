@@ -332,13 +332,13 @@ define({
       "lookupMsgError": "Nie znaleziono strony"
     },
     "viewPicasa": {
-      "title": "Import z serwisu Picasa/Google+",
-      "header": "Wprowadź adres e-mail lub identyfikator powiązany z Twoim kontem Picasa bądź Google+.",
-      "userInputLbl": "Wprowadź adres e-mail lub identyfikator",
+      "title": "ł_Picasa import_____ą",
+      "header": "ł_Enter your email address or your Picasa id______________ą.",
+      "userInputLbl": "ł_Email or Picasa id______ą",
       "signInMsg2": "Nie odnaleziono konta",
       "signInMsg3": "Brak albumów publicznych",
-      "howToFind": "Jak znaleźć identyfikator konta Picasa lub Google+",
-      "howToFind2": "Skopiuj cyfry znajdujące się między pierwszym a drugim znakiem „/” dowolnej strony Picasa lub G+"
+      "howToFind": "ł_How to find a Picasa id________ą",
+      "howToFind2": "ł_Copy digits between the first and second '/' of any Picasa page____________________ą"
     },
     "viewCSV": {
       "title": "Import z pliku CSV",
@@ -434,6 +434,8 @@ define({
         "div6": "<b>Chcesz ponownie użyć istniejącej już usługi obiektowej</b> przechowującej obrazy w postaci załączników lub zawierającej odnośniki do obrazów zewnętrznych. Szczegółowe informacje znajdują się w poniższej sekcji.",
         "div7": "<b>Jesteś użytkownikiem poprzedniej wersji</b> szablonu mapy wycieczki i masz już plik CSV zawierający odnośniki do obrazów i miniatury. Będziesz mieć możliwość zaimportowania go i dopracowania danych. Kreator obsługuje jedynie pliki CSV korzystające z szerokości/długości geograficznej. Plików CSV bazujących na danych adresowych można nadal używać za pomocą mapy internetowej (patrz poniższa sekcja).",
         "div8": "Importowanie z internetowych serwisów udostępniających zdjęcia",
+        "div9a": "ł_Facebook support has been discontinued, ${learn}________________ą.",
+        "learn": "ł_learn more____ą",
         "div9": "Operacja importowania tworzy odnośniki do już hostowanych obrazów poprzez zapisanie ich adresów URL w zbiorze obiektów mapy internetowej. Obrazy te nie są przechowywane w usłudze ArcGIS Online. Jeśli nie można uzyskać dostępu do hostowanych obrazów, nie będą one dostępne na mapie wycieczki i wyświetlany będzie obrazek zastępczy „Obraz niedostępny”. W zależności od dostawcy używanego serwisu udostępniania zdjęć dostępna lub niedostępna może być funkcja importowania do mapy wycieczki nazwy, opisu i lokalizacji obrazów. Te atrybuty są przechowywane na mapie internetowej, dlatego zmiany dokonywane w usługach internetowych nie będą widoczne na mapie wycieczki.",
         "div10": "Przechowywanie obrazów na serwerze WWW",
         "div11": "Jeśli zdecydujesz się na samodzielne hostowanie obrazów, konieczne będzie ręczne utworzenie ich miniatur. Używanie obrazów w pełnej rozdzielczości jako miniatur powoduje zmniejszenie wydajności. Z tego powodu zalecane jest korzystanie z internetowych serwisów udostępniających zdjęcia lub usług obiektowych, które są hostowane.",

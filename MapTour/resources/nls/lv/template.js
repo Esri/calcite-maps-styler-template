@@ -332,13 +332,13 @@ define({
       "lookupMsgError": "Lapa nav atrasta"
     },
     "viewPicasa": {
-      "title": "Picasa/Google+ imports",
-      "header": "Ievadiet epastu vai ID no jūsu Picasa vai Google+ konta.",
-      "userInputLbl": "Ievadiet epastu vai ID",
+      "title": "ķ_Picasa import_____ū",
+      "header": "ķ_Enter your email address or your Picasa id______________ū.",
+      "userInputLbl": "ķ_Email or Picasa id______ū",
       "signInMsg2": "Konts nav atrasts",
       "signInMsg3": "Nav publiska albuma",
-      "howToFind": "Kā atrast Picasa vai Google+ konta ID",
-      "howToFind2": "Kopēt ciparus starp pirmo un otro '/' no jebkura Picasa vai G+ lapa"
+      "howToFind": "ķ_How to find a Picasa id________ū",
+      "howToFind2": "ķ_Copy digits between the first and second '/' of any Picasa page____________________ū"
     },
     "viewCSV": {
       "title": "CSV imports",
@@ -434,6 +434,8 @@ define({
         "div6": "<b>Jūs meklējat, lai atkārtoti lietotu esošo Feature Service</b> kas glabā jūsu bildes kā piesaistes, vai kas atsaucas uz ārējām bildēm: skatiet detalizētāku nodaļu apakšā.",
         "div7": "<b>Jūs esat iepriekšējās versijas lietotājs</b> Map Tour šablonam un jau ir jūsu CSV, kas atsaucas jūsu bildēm un sīktēliem: jums būs iespēja importēt un uzlabot savus datus. Veidotājs atbalsta tikai CSV, kas lieto plat/gar laukus; uz adresēm balstīts CSV var tikt turpināts lietot caur jūsu web karti (skatīt nodaļu zemāk).",
         "div8": "Importē no tiešsaistes foto koplietošanas servisu",
+        "div9a": "ķ_Facebook support has been discontinued, ${learn}________________ū.",
+        "learn": "ķ_learn more____ū",
         "div9": "Importa operācijas atsaucas uz attēliem, kas tiek viesoti, saglabājot to URL web kartes elementu kolekcijā. Attēli netiek saglabāti ArcGIS Online. Ja viesotiem attēliem nevar piekļūt, tie nebūs pieejami Map Tour un jūs redzēsiet 'Attēls nav pieejams' attēlu. Atkarībā no attēlu servisu sniedzēja, Map Tour tiks vai netiks importēts nosaukums, apraksts un attēla izvietojums. Šie atribūti tiek glabāti web kartē un jebkādi labojumi uz tiešsaistes servisiem netiks atspoguļoti Map Tour.",
         "div10": "Uzglabā bildes uz web servera",
         "div11": "Ja vēlaties viesot bildes pats, jums būs manuāli jāizveido sīktēli jūsu attēliem. Izmantojot pilnas rezolūcijas bildes priekš sīktēliem radīs sliktu sniegumu. Šī iemesla dēļ mēs noteikti iesakām, ka jūs izmantojat tiešsaistes foto koplietošanas servisus vai elementu servisu, kas to veiks jūsu vietā.",
