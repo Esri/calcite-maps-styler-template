@@ -50,12 +50,20 @@
     "all",
     "layout",
     "navsize",
-    "about",
+    "abouttext",
     "showabout",
+    "showdescription",
+    "showsummary",
     "search",
     "title",
     "subtitle",
-    "widgettheme"
+    "widgettheme",
+    "menulegend",
+    "menubasemaps",
+    "menutoggleNav",
+    "menudrawer",
+    "showbasemaptoggle",
+    "nextbasemap"
   ],
   "webTierSecurity": false,
   "esriEnvironment": true

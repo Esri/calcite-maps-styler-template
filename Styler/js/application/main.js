@@ -16,11 +16,25 @@
 define([
 
   "application/StyleManager",
-  "application/ViewManager",
+
+  "boilerplate/ItemHelper",
 
   "esri/core/Accessor",
   "esri/core/Evented",
   "esri/core/watchUtils",
+
+  "esri/layers/UnsupportedLayer",
+  "esri/layers/UnknownLayer",
+
+  "esri/widgets/Zoom",
+  "esri/widgets/Attribution",
+  "esri/widgets/Compass",
+  "esri/widgets/Home",  
+  "esri/widgets/Search",
+  "esri/widgets/Legend",
+  "esri/widgets/BasemapToggle",
+
+  "esri/views/ui/Component",
 
   "dojo/dom",
   "dojo/dom-attr",
@@ -35,12 +49,19 @@ define([
   "bootstrap/Collapse",
   "bootstrap/Dropdown",
   "bootstrap/Tab",
+  "bootstrap/Alert",
 
   // Calcite Maps
   "calcite-maps/calcitemaps-v0.2"
 ], function (
-  ThemeManager, ViewManager,
-  watchUtils, Accessor, Evented,
+  StyleManager,
+  ItemHelper,
+  Accessor, Evented, watchUtils,
+  UnsupportedLayer, UnknownLayer,
+
+  Zoom, Attribution, Compass, Home, Search, Legend, BasemapToggle,
+  Component,
+
   dom, domAttr, domClass, query,
   i18n,
   lang,
@@ -53,9 +74,6 @@ define([
   //
   //--------------------------------------------------------------------------
 
-  // Test only 
-  //styler = null;
-
   var CSS = {
     loading: "boilerplate--loading",
     error: "boilerplate--error",
@@ -67,12 +85,21 @@ define([
     mainTitle: ".calcite-title-main",
     subTitle: ".calcite-title-sub",
     titleDivider: ".calcite-title-divider",
+
     mainMenu: ".calcite-dropdown",
-    aboutMenu: "#menuAbout",
-    aboutPanel: "#panelAbout",
-    aboutPanelText: "#panelAbout .panel-body",
-    basemapsPanel: "#panelBasemaps",
-    legendPanel: "#panelLegend",
+    menuTitle: ".calcite-dropdown-toggle > span",
+    menuAbout: "#menuAbout",
+    menuLegend: "#menuLegend",
+    menuBasemaps: "#menuBasemaps",
+    menuToggleNav: "#menuToggleNav",
+
+    dropdownMenu: ".calcite-dropdown .dropdown-menu",
+
+    panelAbout: "#panelAbout",
+    panelAboutText: "#panelAbout .panel-body",
+    panelLegend: "#panelLegend",
+    panelBasemaps: "#panelBasemaps",
+    
     searchContainer: ".calcite-navbar-search"
   };
 
@@ -86,7 +113,7 @@ define([
 
     constructor: function () {
       // Test only
-      //styler = this;
+      styler = this;
     },
 
     //--------------------------------------------------------------------------
@@ -107,6 +134,23 @@ define([
 
     _screenWidth: null,
 
+    _defaultWidgetComponents: ["attribution"],
+
+    _removeLoadingTimeout: 15000, 
+
+    _errorTitle: {
+      warning: "Warning"
+    },
+
+    _errorMessage: {
+      general: "We apologize but some parts of your webmap could not be loaded. You can still use your application however except some layers and functionality might not be available. Please stay tuned as <a href='https://developers.arcgis.com/javascript/latest/guide/migrating/index.html'>full support</a> for webmaps with the <a href='https://developers.arcgis.com/javascript/'>ArcGIS API for Javascript 4</a> is coming soon!",
+      layerUnsupported: "Layer unsupported",
+      layerUnknown: "Layer unknown",
+      layerLoadFailed: "Layer failed to load"
+    },
+
+    _showConsoleErrors: true,
+
     //--------------------------------------------------------------------------
     //
     //  Public Methods
@@ -123,6 +167,7 @@ define([
         this._updateConfigTitle(boilerplate);
         this._updateConfigThemeInfo(boilerplate);
         this._updateConfigLayoutInfo(boilerplate);
+        this._updateConfigWidgets(boilerplate);
 
         //-----------------------------------------------------------------------
         // Configure the document
@@ -132,63 +177,121 @@ define([
         this._setDocumentLocale(boilerplate.direction, boilerplate.locale);
         this._setDocumentTitle(boilerplate.config.title);
 
+        // Title
+        this._setTitleText(boilerplate.config.title);
+        this._setSubTitleText(boilerplate.config.subtitle);
+
+        // Menu
+        this._setMenuTitleText(i18n);
+
+        // Panels
+        this._setPanelTitleText(i18n);
+        this._setAboutPanelText(boilerplate);
+        this._setBasemapPanelText(i18n);
+        this._setMenusPanelsVisible(boilerplate);
+        this._setMainMenuStyle(boilerplate);
+
         //-----------------------------------------------------------------------
-        // Configure the app
+        // Apply the app theme
         //-----------------------------------------------------------------------
 
         // Theme
-        var calciteTheme = new ThemeManager();
+        var calciteTheme = new StyleManager();
         this._theme = calciteTheme;
         calciteTheme.setTheme(boilerplate.config.themeInfo);
         calciteTheme.setWidgetTheme(boilerplate.config.widgettheme);
         calciteTheme.setLayout(boilerplate.config.layoutInfo);
 
-        var paddingOptions = calciteTheme.getPadding();
+        var itemHelper = new ItemHelper();
 
-        // Title
-        this._setTitleText(boilerplate.config.title);
-        this._setSubTitleText(boilerplate.config.subtitle);
+        var deferredWebMap = null;
+        var container = null;
 
         //-----------------------------------------------------------------------
-        // Configure the view (map or scene) and set up the remaining app ui
+        // Get the webmap or webscene
         //-----------------------------------------------------------------------
 
-        // View
-        var viewManager = new ViewManager();
-        this._viewManager = viewManager;
+        if (boilerplate.results.webmapItem) {
+          container = boilerplate.settings.webmap.containerId;
+          deferredWebMap = itemHelper.createWebMap(boilerplate.results.webmapItem);
+        } else if (boilerplate.results.websceneItem) {
+          container = boilerplate.settings.webscene.containerId;
+          deferredWebMap = itemHelper.createWebScene(boilerplate.results.websceneItem);
+        } else {
+          this.reportError(new Error("main:: WebMapItem or WebSceneItem could not be created from data or item."));
+          return;
+        }
 
-        viewManager.createView(boilerplate, paddingOptions).then(function(view) {
-          // Set view
-          this._activeView = view;
-          
-          // Nav
-          this._showNavbar(true);
-          // Widgets
-          this._createWidgets();
-          this._setWidgetEvents();
-          this._showSearch(boilerplate.config.search);
-          // Panels
-          this._setAboutPanel(boilerplate.config);
-          // Events
-          this._setViewEvents();
-          this._setPanelEvents();
-          this._setBasemapEvents();
-          this._setPopupEvents(); 
+        //-----------------------------------------------------------------------
+        // Create the view (map or scene) and widgets
+        //-----------------------------------------------------------------------
 
-          // Finished loading app...
-          view.then(function() {
-            this._removeLoading();
-            // Do other things here if we need to wait for the view.ready...
+        if (deferredWebMap) {
+          deferredWebMap.then(function(results) {            
+            // Check layer support
+            this._showLoadErrors(results.webMapOrWebScene);
+
+            // View options
+            var paddingOptions = this._theme.getPadding();
+
+            var viewOptions = {
+              map: results.webMapOrWebScene,
+              container: container,
+              padding: paddingOptions.padding,
+              ui: {
+                components: this._defaultWidgetComponents,
+                padding: paddingOptions.ui.padding
+              }
+            }
+            
+            // Create the view
+            var view = new results.View(viewOptions);
+
+            view.then(function(results) {
+              this._removeLoading();
+              // Do more stuff here if necessary...
+            }.bind(this), function(error) {
+              this.reportError(new Error("main:: Error loading view for this webmap or webscene: " + error));
+            }.bind(this));
+
+            view.always(function() {
+              window.setTimeout(this._removeLoading(), this._removeLoadingTimeout);
+            }.bind(this));
+
+            this._activeView = view;
+
+            // Widgets
+            this._createMapWidgets(boilerplate.config.view.ui);
+            this._setMapWidgetEvents();
+            this._createAppWidgets();
+            this._showSearch(boilerplate.config.showsearch);
+
+            // Nav and panels
+            this._showNavbar(true);
+            this._showAboutPanel(boilerplate.config);
+
+            // Events
+            this._setViewEvents();
+            this._setPanelEvents();
+            this._setBasemapEvents();
+            this._setPopupEvents(); 
+
           }.bind(this), function(error) {
-            this.reportError(error);
-          }.bind(this));
-        }.bind(this), function(error) {
-          this.reportError(error);
-        }.bind(this));
+            this.reportError(new Error("main:: Error loading webmap or webscene for this item: " + error));  
+          });
+        } else {
+          this.reportError(new Error("main:: Webmap or webscene could not be created for this item."));
+        }
       } else {
         this.reportError(new Error("main:: Boilerplate is not defined"));
       }
     },
+
+    //--------------------------------------------------------------------------
+    //
+    //  Error handling
+    //
+    //--------------------------------------------------------------------------
 
     reportError: function (error) {
       // remove loading class from body
@@ -205,6 +308,65 @@ define([
         node.innerHTML = "<h1><span class=\"" + CSS.errorIcon + "\"></span> " + i18n.error + "</h1><p>" + error.message + "</p>";
       }
       return error;
+    },
+
+    // Webmap layer check
+
+    _showLoadErrors: function(webMapOrWebScene) {
+      webMapOrWebScene.then(function(map) {
+        map.allLayers.forEach(function(layer) {
+          if (layer instanceof UnsupportedLayer) {
+            var error = this._errorMessage.layerUnsupported + ": " + layer.title;
+            this._showError(this._errorTitle.warning, error, err);
+          }
+
+          if (layer instanceof UnknownLayer) {
+            var error = this._errorMessage.layerUnknown + ": " + layer.title;
+            this._showError(this._errorTitle.warning, error, err);
+          }
+                    
+          layer.watch("loadStatus", function(err) {
+            if (err === "failed") {
+              var error = this._errorMessage.layerLoadFailed + ": " + layer.title;
+              this._showError(this._errorTitle.warning, error, err);
+            }
+          }.bind(this));
+
+          // layer.watch("loadError", function(err) {
+          //   if (err) {
+          //     var error = "Layer Load Error: " + layer.title;
+          //     this._showError(error, error + " " + err);
+          //   }
+          // }.bind(this));
+
+        }.bind(this));
+      }.bind(this));
+    },
+
+    _showError: function(errorTitle, errorMessage, error) {
+      if (error) {
+        var node = dom.byId("calciteErrorMessage");
+        if (node) {
+          node.innerHTML = "<strong>" + this._errorTitle.warning + "</strong>" + ": " + this._errorMessage.general;
+          // Use this if you want to accumulate messages...
+          // if (node.innerHTML) {
+          //   node.innerHTML = node.innerHTML + "<br>" + error ;
+          // } else {
+          //   node.innerHTML = "<strong>" + this._errorTitle + "</strong>" + this._errorLoadingWebmapMsg + "<br><br>";
+          //   node.innerHTML = node.innerHTML + error;
+          // }
+          query(".calcite-alert").removeClass("hidden");
+        }        
+      }
+      if (this._showConsoleErrors){
+        console.log(errorTitle + ": " + errorMessage + " - " + error);
+      }
+    },
+
+    // Loading
+
+    _removeLoading: function() {
+      domClass.remove(document.body, CSS.loading);
     },
 
     //--------------------------------------------------------------------------
@@ -252,6 +414,18 @@ define([
       }
     },
 
+    _updateConfigWidgets: function(boilerplate) {
+      var showBasemaptoggle = boilerplate.config.showbasemaptoggle;
+      var nextBasemap = boilerplate.config.nextbasemap;
+      var components = boilerplate.config.view.ui.components;
+      for (var i = 0; i < components.length; i++) {
+        if (components[i].name === "basemaptoggle") {
+          components[i].visible = showBasemaptoggle === false ? false : true;
+          components[i].nextBasemap = nextBasemap || components[i].nextBasemap;
+        }
+      }
+    },
+
     // Document
 
     _setDocumentLocale: function(locale, direction) {
@@ -279,6 +453,64 @@ define([
       }
     },
 
+    // Menu
+
+    _setMainMenuStyle: function(boilerplate) {
+      if (boilerplate.config.menudrawer) {
+        query(CSS_SELECTORS.dropdownMenu).addClass("calcite-menu-drawer");
+      } else {
+        query(CSS_SELECTORS.dropdownMenu).removeClass("calcite-menu-drawer");
+      }
+    },
+
+    _setMenuTitleText: function(i18n) {
+      query(CSS_SELECTORS.menuTitle)[0].innerHTML = i18n.menu.title;
+      query(CSS_SELECTORS.menuAbout + " a")[0].innerHTML = query(CSS_SELECTORS.menuAbout + " a")[0].innerHTML + "&nbsp;" + i18n.menu.items.about;
+      query(CSS_SELECTORS.menuLegend + " a")[0].innerHTML = query(CSS_SELECTORS.menuLegend + " a")[0].innerHTML + "&nbsp;" + i18n.menu.items.legend;
+      query(CSS_SELECTORS.menuBasemaps + " a")[0].innerHTML = query(CSS_SELECTORS.menuBasemaps + " a")[0].innerHTML + "&nbsp;" + i18n.menu.items.basemaps;
+      query(CSS_SELECTORS.menuToggleNav + " a")[0].innerHTML = query(CSS_SELECTORS.menuToggleNav + " a")[0].innerHTML + "&nbsp;" + i18n.menu.items.toggleNav;
+    },
+
+    // Panels
+
+    _setPanelTitleText: function(i18n) {
+      query("#panelAbout .panel-label")[0].innerHTML = i18n.menu.items.about;
+      query("#panelLegend .panel-label")[0].innerHTML = i18n.menu.items.legend;
+      query("#panelBasemaps .panel-label")[0].innerHTML = i18n.menu.items.basemaps;
+    },
+
+    _setMenusPanelsVisible: function(boilerplate) {
+      if (boilerplate.config.menulegend === false) {
+        query(CSS_SELECTORS.menuLegend).addClass("hidden");
+        // query(CSS_SELECTORS.panelLegend).removeClass("hidden");
+      }
+      if (boilerplate.config.menubasemaps === false) {
+        query(CSS_SELECTORS.menuBasemaps).addClass("hidden");
+        // query(CSS_SELECTORS.panelBasemaps).removeClass("hidden");
+      }
+      if (boilerplate.config.menutogglenav === false) {
+        query(CSS_SELECTORS.menuToggleNav).addClass("hidden");
+      }
+    },
+
+    // Basemaps
+
+    _setBasemapPanelText: function(i18n) {
+      query("#selectBasemapPanel [data-vector=select]")[0].innerHTML = "--- " + i18n.basemaps.select + " ---";
+      query("#selectBasemapPanel [data-vector=streets-vector]")[0].innerHTML = i18n.basemaps.streets;
+      query("#selectBasemapPanel [data-vector=satellite]")[0].innerHTML = i18n.basemaps.satellite;
+      query("#selectBasemapPanel [data-vector=hybrid]")[0].innerHTML = i18n.basemaps.hybrid;
+      query("#selectBasemapPanel [data-vector=national-geographic]")[0].innerHTML = i18n.basemaps.nationalgeographic;
+      query("#selectBasemapPanel [data-vector=topo-vector]")[0].innerHTML = i18n.basemaps.topographic;
+      query("#selectBasemapPanel [data-vector=oceans]")[0].innerHTML = i18n.basemaps.oceans;
+      query("#selectBasemapPanel [data-vector=gray-vector]")[0].innerHTML = i18n.basemaps.gray;
+      query("#selectBasemapPanel [data-vector=dark-gray-vector]")[0].innerHTML = i18n.basemaps.darkgray;
+      query("#selectBasemapPanel [data-vector=osm]")[0].innerHTML = i18n.basemaps.osm;
+      query("#selectBasemapPanel [data-vector=streets-night-vector]")[0].innerHTML = i18n.basemaps.streetsnight;
+      query("#selectBasemapPanel [data-vector=streets-navigation-vector]")[0].innerHTML = i18n.basemaps.streetsmobile;
+      query("#selectBasemapPanel [data-vector=streets-relief-vector]")[0].innerHTML = i18n.basemaps.streetsrelief;
+    },
+
     // Nav
 
     _showNavbar: function(visible) {
@@ -299,24 +531,58 @@ define([
 
     // Panels
 
-    _setAboutPanel: function(config) {
-      var aboutText = config.about;
-      var showAboutStart = config.showabout;
-      if (aboutText) {
-        query(CSS_SELECTORS.aboutPanelText)[0].innerHTML = aboutText;
-        query(CSS_SELECTORS.aboutMenu).removeClass("hidden");
-        query(CSS_SELECTORS.aboutPanel).removeClass("hidden");
-        if (showAboutStart) {
-          query(CSS_SELECTORS.aboutPanel + ", " + CSS_SELECTORS.aboutPanel + " .panel-collapse").addClass("in");
+    _setAboutPanelText: function(boilerplate) {
+      var aboutText  = boilerplate.config.abouttext;
+      var addDesc = boilerplate.config.showdescription;
+      var addSummary = boilerplate.config.showsummary;
+      var summaryText = null;
+      var descriptionText = null;
+      
+      if (addDesc || addSummary) {
+        if (boilerplate.results.webmapItem) {
+          descriptionText = boilerplate.results.webmapItem.data.description;
+          summaryText =  boilerplate.results.webmapItem.data.snippet;
+        } else if (boilerplate.results.websceneItem) {
+          descriptionText = boilerplate.results.websceneItem.data.description;
+          summaryText =  boilerplate.results.websceneItem.data.snippet;
+        }
+      }
+      // Summary text
+      if (addSummary && summaryText) {
+        if (aboutText) {
+          aboutText = aboutText + "<br>" +  summaryText;
+        } else {
+          aboutText = summaryText;
+        }
+      }
+      // Description text
+      if (addDesc && descriptionText) {
+        if (aboutText) {
+          aboutText = aboutText + "<br>" +  descriptionText;
+        } else {
+          aboutText = descriptionText;
         }
       }
 
+      if (aboutText) {
+        boilerplate.config.abouttext = aboutText;
+        query(CSS_SELECTORS.panelAboutText)[0].innerHTML = aboutText;
+      }
     },
 
-    _setAboutPanelText: function(about) {
-      query(CSS_SELECTORS.aboutPanelText)[0].innerHTML = about;
+    _showAboutPanel: function(config) {
+      var showAbout = config.showabout;
+      var aboutMenu = config.menuabout;
+      var aboutText = config.abouttext;
+      if (!aboutText || aboutMenu === false) {
+        query(CSS_SELECTORS.menuAbout).addClass("hidden");
+        query(CSS_SELECTORS.panelAbout).addClass("hidden");
+      } else if (aboutText && aboutMenu !== false && showAbout) {
+        query(CSS_SELECTORS.panelAbout + ", " + CSS_SELECTORS.panelAbout + " .panel-collapse").addClass("in");
+      }
     },
 
+    // View
 
     // View Events
 
@@ -388,7 +654,7 @@ define([
       if (activeView) {
         // Basemap events
         query("#selectBasemapPanel").on("change", lang.hitch(this, function(e) {
-          if (e.target.value) {
+          if (e.target.value !== "select") {
             if (activeView.type === "2d") {
               activeView.map.basemap = e.target.options[e.target.selectedIndex].dataset.vector;
             } else {
@@ -401,15 +667,101 @@ define([
 
     // Widgets
 
-    _createWidgets: function() {
-      var activeView = this._activeView;
-      if (activeView) {
-        this._searchWidget = this._viewManager.createSearchWidget("searchDiv", {view: activeView});
-        this._legendWidget = this._viewManager.createLegendWidget("legendDiv", {view: activeView});        
+    _createMapWidgets: function(ui) {
+      var view = this._activeView;
+      if (view) {
+        for (var i=0; i < ui.components.length; i++){
+          if (ui.components[i].visible) {
+            component = this._createComponent(view, ui.components[i]);
+            view.ui.add(component, ui.components[i].position);
+          }
+        }
       }
     },
 
-    _setWidgetEvents: function() {
+    _createComponent: function(view, componentInfo) {
+      var component,
+        widget = this._createWidget(view, componentInfo);
+      component = new Component({
+        node: widget, 
+        id: componentInfo.name
+      });
+      return component;
+    },
+
+    _createWidget: function(view, componentInfo) {
+      var widget,
+        viewModel = {
+          view: view
+        }
+      switch (componentInfo.name) {
+        case "zoom":
+          widget = new Zoom({
+            viewModel: viewModel
+          });
+          break;
+        case "home":
+          widget = new Home({
+            viewModel: viewModel
+          });
+          break;
+        case "compass":
+          widget = new Compass({
+            viewModel: viewModel
+          });
+          break;
+        case "locate":
+          widget = new Locate({
+            viewModel: viewModel
+          });
+          break;
+        case "basemaptoggle":
+          widget = new BasemapToggle({
+            viewModel: viewModel,
+            nextBasemap: componentInfo.nextBasemap
+          });
+          break;
+        case "search":
+          widget = new Search({
+            viewModel: viewModel
+          });
+          break;
+      }
+      widget.visible = componentInfo.visible;
+      widget.startup();
+
+      return widget;
+    },
+
+    _createAppWidgets: function() {
+      var activeView = this._activeView;
+      if (activeView) {
+        this._searchWidget = this._createSearchWidget("searchDiv", {view: activeView});
+        this._legendWidget = this._createLegendWidget("legendDiv", {view: activeView});        
+      }
+    },
+
+    _createSearchWidget: function(id, searchOptions) {
+      var options =   {
+        highlightEnabled: false,
+        popupEnabled: true,
+        showPopupOnSelect: true
+      }
+      lang.mixin(options, searchOptions);
+      var search = new Search(options, id);
+      search.startup();
+      return search;
+    },
+
+    _createLegendWidget: function(id, legendOptions) {
+      var options = {};
+      lang.mixin(options, legendOptions);
+      var legend = new Legend(options, id);
+      legend.startup();
+      return legend;
+    },
+
+    _setMapWidgetEvents: function() {
       this._setCompassEvents();
       this._setHomeEvents();
     },
@@ -448,6 +800,7 @@ define([
           ready: false,
           clicked:false
         }
+        
         function setHomeVisible(visible) {
           if (home._state.ready) {
             if (home._state.clicked) {
@@ -460,11 +813,13 @@ define([
             }
           }
         }
+        
         home.viewModel.watch("state", function(result) {
           if (result === "going-home") {
             home._state.clicked = true;            
           }
         });
+
         function doneLoading(evt) {
           //console.log(evt + ": ready: " + activeView.ready + " | working: " + activeView.layerViewManager.factory.working + " | stationary: " + activeView.stationary + " | updating: " + activeView.updating);
           if (!activeView.layerViewManager.factory.working && activeView.stationary && !activeView.updating || activeView.interacting) {
@@ -476,6 +831,7 @@ define([
             }
           }
         }
+        
         activeView.layerViewManager.factory.watch("working", function(newVal, oldVal) {
           doneLoading("LayerViewManager");
         });
@@ -507,12 +863,6 @@ define([
       query(".calcite-dropdown").on("hide.bs.dropdown", function () {
         query(".calcite-dropdown-toggle").removeClass("open");
       });
-    },
-
-    // Loading
-
-    _removeLoading: function() {
-      domClass.remove(document.body, CSS.loading);
     }
 
   });
