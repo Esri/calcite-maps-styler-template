@@ -41,7 +41,7 @@ define([
         deferred.reject(item.data);
       }
       else {
-        require(["esri/WebMap"], function (WebMap) {
+        require(["esri/WebMap", "esri/views/MapView"], function (WebMap, MapView) {
           var wm;
           if (item.data) {
             wm = new WebMap({
@@ -56,7 +56,7 @@ define([
             deferred.reject(new Error("ItemHelper:: WebMap does not have usable data."));
           }
           else {
-            deferred.resolve(wm);
+            deferred.resolve({webMapOrWebScene: wm, View: MapView});
           }
         });
       }
@@ -72,7 +72,7 @@ define([
         deferred.reject(item.data);
       }
       else {
-        require(["esri/WebScene"], function (WebScene) {
+        require(["esri/WebScene", "esri/views/SceneView"], function (WebScene, SceneView) {
           var ws;
           if (item.data) {
             ws = new WebScene({
@@ -87,7 +87,7 @@ define([
             deferred.reject(new Error("ItemHelper:: WebScene does not have usable data."));
           }
           else {
-            deferred.resolve(ws);
+            deferred.resolve({webMapOrWebScene: ws, View: SceneView});
           }
         });
       }

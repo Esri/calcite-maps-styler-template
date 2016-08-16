@@ -19,7 +19,7 @@
                 },
                 {
                     "type": "string",
-                    "fieldName": "about",
+                    "fieldName": "abouttext",
                     "label": "About (Provide a little background about your app or your organization)",
                     "tooltip": "",
                     "stringFieldOption": "richtext",
@@ -27,9 +27,21 @@
                 },
                 {
                      "type": "boolean",
+                     "fieldName": "showsummary",
+                     "label": "Add webmap/webscene Summary to the About panel",
+                     "tooltip": "Append the webmap/webscene Summary to the text in the About panel"
+                },
+                {
+                     "type": "boolean",
+                     "fieldName": "showdescription",
+                     "label": "Add webmap/webscene Description to the About panel",
+                     "tooltip": "Append the webmap/webscene Description to the text in the About panel"
+                },
+                {
+                     "type": "boolean",
                      "fieldName": "showabout",
-                     "label": "Show the About window when your app starts",
-                     "tooltip": "Show the about window when the app starts."
+                     "label": "Show the About panel when the app starts",
+                     "tooltip": "Show About panel when the app starts. Ensure 'Menu > About' is checked!"
                 }
             ]
         },
@@ -221,22 +233,133 @@
             ]
         },
         {
+            "category": "Menu",
+            "fields": [
+                {
+                    "type": "boolean",
+                    "fieldName": "menuabout",
+                    "tooltip": "Show menu and panel for About information",
+                    "label": "About"
+                },
+                {
+                    "type": "boolean",
+                    "fieldName": "menulegend",
+                    "tooltip": "Show menu and panel for legend",
+                    "label": "Legend"
+                },
+                {
+                    "type": "boolean",
+                    "fieldName": "menubasemaps",
+                    "tooltip": "Show menu and panel for basemaps",
+                    "label": "Basemaps"
+                },
+                {
+                    "type": "boolean",
+                    "fieldName": "menutogglenav",
+                    "tooltip": "Allow full-map toggle",
+                    "label": "Full-map Toggle"
+                },
+                {
+                    "type": "boolean",
+                    "fieldName": "menudrawer",
+                    "tooltip": "Show the main menu as a full sliding drawer",
+                    "label": "Show main menu as a full sliding drawer"
+                }
+            ]
+        },
+        {
             "category": "Widgets",
             "fields": [
                 {
                     "type": "boolean",
-                    "fieldName": "search",
+                    "fieldName": "showsearch",
                     "tooltip": "Show expanding search in nav.",
-                    "label": "Show search"
+                    "label": "Show Search"
+                },
+                {
+                    "type": "boolean",
+                    "fieldName": "showbasemaptoggle",
+                    "tooltip": "Show basemaptoggle on map.",
+                    "label": "Show Basemap Toggle"
+                }, 
+                {
+                    "type": "options",
+                    "fieldName": "nextbasemap",
+                    "tooltip": "Select a basemap to toggle to.",
+                    "label": "Select a second basemap to toggle to:",
+                    "options": [
+                        {
+                            "label": "Streets",
+                            "value": "streets"
+                        },
+                        {
+                            "label": "Satellite",
+                            "value": "imagery"
+                        },
+                        {
+                            "label": "Hybrid",
+                            "value": "hybrid"
+                        },
+                        {
+                            "label": "Topography",
+                            "value": "topo"
+                        },
+                        {
+                            "label": "Gray",
+                            "value": "gray"
+                        },
+                        {
+                            "label": "Dark Gray",
+                            "value": "dark-gray"
+                        },
+                        {
+                            "label": "Oceans",
+                            "value": "oceans"
+                        },
+                        {
+                            "label": "National Geographic",
+                            "value": "national-geographic"
+                        },
+                        {
+                            "label": "Streets Vector",
+                            "value": "streets-vector"
+                        },
+                        {
+                            "label": "Gray Vector",
+                            "value": "gray-vector"
+                        },
+                        {
+                            "label": "Dark Gray Vector",
+                            "value": "dark-gray-vector"
+                        },
+                        {
+                            "label": "Topo Vector",
+                            "value": "topo-vector"
+                        },
+                        {
+                            "label": "Streets Relief Vector",
+                            "value": "streets-relief-vector"
+                        },
+                        {
+                            "label": "Streets Navigation Vector",
+                            "value": "streets-navigation-vector"
+                        },
+                        {
+                            "label": "Streets Night Vector",
+                            "value": "streets-night-vector"
+                        }
+                    ]
                 }
             ]
         }
     ],
     "values": {
-        "about": "",
-        "showabout": false,
         "title": "",
         "subtitle": "",
+        "abouttext": "",
+        "showabout": true,
+        "showsummary": true,
+        "showdescription": false,
         "theme": "light",
         "bgcolor": "dark-blue",
         "opacity": 1,
@@ -245,6 +368,13 @@
         "all": false,
         "layout": "top",
         "navsize": "standard",
-        "search": true
+        "menuabout": true,
+        "menulegend": true,
+        "menubasemaps": true,
+        "menutogglenav": true,
+        "menudrawer": false,
+        "showsearch": true,
+        "showbasemaptoggle": false,
+        "nextbasemap": "imagery"
     }
 }

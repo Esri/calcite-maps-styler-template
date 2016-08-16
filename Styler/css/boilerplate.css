@@ -66,3 +66,12 @@ body:lang(ja) {
 .calcite-widgets-dark #panelLegend .panel-body {
   background-color: #333;
 }
+
+.calcite-alert {
+  position: absolute;
+  top: 40%;
+  width: 100%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  z-index: 2000;
+}
