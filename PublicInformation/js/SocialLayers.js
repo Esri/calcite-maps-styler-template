@@ -160,6 +160,9 @@ define([
           });
         }
         // instagram enabled
+        // todo: Instagram API authentication
+        // disable instagram due to the new API guidelines
+        this.config.enableInstagram = false;
         if (this.config.enableInstagram) {
           // Instagram
           this._instagramLayer = new InstagramLayer({
