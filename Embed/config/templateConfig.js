@@ -70,6 +70,7 @@ define({
     "find",
     "feature",
     "disable_scroll",
+    "disable_nav",
     "zoom_position",
     "logoimage",
     "logolink",

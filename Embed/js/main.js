@@ -671,7 +671,11 @@ define([
       domClass.add(document.body, this.config.theme);
       domClass.add(customPopup.domNode, this.config.theme);
       params = params || {};
+      if (this.config.disable_nav) {
+        this.config.zoom = false;
+      }
       params.mapOptions.slider = this.config.zoom;
+
       params.mapOptions.sliderPosition = this.config.zoom_position;
       params.mapOptions.infoWindow = customPopup;
       if (this.config.sharedThemeConfig && this.config.sharedThemeConfig.attributes && this.config.sharedThemeConfig.attributes.theme) {
@@ -691,6 +695,13 @@ define([
         this.map = response.map;
         this.config.response = response;
         this._adjustPopupSize();
+        if (this.config.disable_nav) {
+          this.map.disableMapNavigation();
+          this.map.disableKeyboardNavigation();
+          this.map.disablePan();
+          this.map.disableRubberBandZoom();
+          this.map.disableScrollWheelZoom();
+        }
         if (this.config.logoimage) {
           query(".esriControlsBR").forEach(lang.hitch(this, function(node) {
             var link = null;

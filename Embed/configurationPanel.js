@@ -101,12 +101,16 @@
             },
             {
                "type":"paragraph",
-               "value":"Disabled scrolling is important when embedding maps into websites or blogs.  If this will be a stand-alone app, you may want to uncheck 'Disable scrolling in app' if you want to provide the ability to use the mouse scroll wheel to navigate in this app."
+               "value":"Disabled scrolling is important when embedding maps into websites or blogs.  If this will be a stand-alone app, you may want to uncheck 'Disable scrolling in app' if you want to provide the ability to use the mouse scroll wheel to navigate in this app. To disable all map navigation check the Disable map navigation checkbox."
             },
             {
                "type":"boolean",
                "fieldName":"disable_scroll",
                "label":"Disable scrolling in app"
+            },{
+              "type": "boolean",
+              "fieldName": "disable_nav",
+              "label": "Disable all map navigation"
             },
             {
                "type":"paragraph",
@@ -241,6 +245,7 @@
       "legendlayers":false,
       "popup_sidepanel":false,
       "basemap_gallery":false,
-      "disable_scroll":false
+      "disable_scroll":false,
+      "disable_nav": false
    }
 }
