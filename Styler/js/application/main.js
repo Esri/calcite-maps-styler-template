@@ -144,7 +144,7 @@ define([
     },
 
     _errorMessage: {
-      general: "We apologize but some parts of your webmap could not be loaded. You can still use your application however except some layers and functionality might not be available. Please stay tuned as <a href='https://developers.arcgis.com/javascript/latest/guide/migrating/index.html'>full support</a> for webmaps with the <a href='https://developers.arcgis.com/javascript/'>ArcGIS API for Javascript 4</a> is coming soon!",
+      general: "We apologize but your webmap could not be fully loaded. You can still use your application however except some layers and functionality might not be available. Please stay tuned as <a href='https://developers.arcgis.com/javascript/latest/guide/migrating/index.html'>full support</a> for webmaps with the <a href='https://developers.arcgis.com/javascript/'>ArcGIS API for Javascript 4</a> is coming soon!",
       layerUnsupported: "Layer unsupported",
       layerUnknown: "Layer unknown",
       layerLoadFailed: "Layer failed to load"
