@@ -71,7 +71,6 @@ define([
         this.config = config;
         if (this.config.sharedThemeConfig && this.config.sharedThemeConfig.attributes && this.config.sharedThemeConfig.attributes.theme) {
           var sharedTheme = this.config.sharedThemeConfig.attributes;
-          console.log(sharedTheme);
           this.config.logo = sharedTheme.layout.header.component.settings.logoUrl || sharedTheme.theme.logo.small || null;
           if (this.config.logo !== null) {
             this.config.logoLink = null;
@@ -97,13 +96,10 @@ define([
         // Hide header if embed is specified
         if (this.config.embed || this.config.headerHeight == "0") {
           domUtils.hide(dom.byId("header"));
-          registry.byId("mainWindow").layout();
         } else {
           // Set header height
           domStyle.set(dom.byId("header"), "height", this.config.headerHeight + "px");
-          registry.byId("mainWindow").layout();
         }
-
         //supply either the webmap id or, if available, the item info
         var itemInfo = this.config.itemInfo || this.config.webmap;
         var mapParams = new MapUrlParams({
@@ -188,12 +184,12 @@ define([
         this.config.title = this.config.title || response.itemInfo.item.title || "";
         this.config.subtitle = this.config.subtitle || response.itemInfo.item.snippet || "";
 
-        document.title = esriLang.stripTags(this.config.title);
+        document.title = this.config.title;
         if (this.config.showTitle) {
-          dom.byId("title").innerHTML = esriLang.stripTags(this.config.title);
+          dom.byId("title").innerHTML = this.config.title;
         }
         if (this.config.showSubTitle) {
-          dom.byId("subtitle").innerHTML = esriLang.stripTags(this.config.subtitle);
+          dom.byId("subtitle").innerHTML = this.config.subtitle;
         }
         // Add the logo
         if (this.config.showLogo && this.config.logo) {
@@ -318,7 +314,7 @@ define([
 
           }));
         }
-
+        registry.byId("mainWindow").layout();
         // return for promise
         return response;
       // map has been created. You can start using it.
