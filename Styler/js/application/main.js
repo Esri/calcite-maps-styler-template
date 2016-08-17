@@ -56,6 +56,7 @@ define([
 ], function (
   StyleManager,
   ItemHelper,
+
   Accessor, Evented, watchUtils,
   UnsupportedLayer, UnknownLayer,
 
@@ -186,7 +187,6 @@ define([
 
         // Panels
         this._setPanelTitleText(i18n);
-        this._setAboutPanelText(boilerplate);
         this._setBasemapPanelText(i18n);
         this._setMenusPanelsVisible(boilerplate);
         this._setMainMenuStyle(boilerplate);
@@ -211,12 +211,12 @@ define([
         // Get the webmap or webscene
         //-----------------------------------------------------------------------
 
-        if (boilerplate.results.webmapItem) {
+        if (boilerplate.results.webMapItem) {
           container = boilerplate.settings.webmap.containerId;
-          deferredWebMap = itemHelper.createWebMap(boilerplate.results.webmapItem);
-        } else if (boilerplate.results.websceneItem) {
+          deferredWebMap = itemHelper.createWebMap(boilerplate.results.webMapItem);
+        } else if (boilerplate.results.webSceneItem) {
           container = boilerplate.settings.webscene.containerId;
-          deferredWebMap = itemHelper.createWebScene(boilerplate.results.websceneItem);
+          deferredWebMap = itemHelper.createWebScene(boilerplate.results.webSceneItem);
         } else {
           this.reportError(new Error("main:: WebMapItem or WebSceneItem could not be created from data or item."));
           return;
@@ -227,7 +227,8 @@ define([
         //-----------------------------------------------------------------------
 
         if (deferredWebMap) {
-          deferredWebMap.then(function(results) {            
+          deferredWebMap.then(function(results) {   
+
             // Check layer support
             this._showLoadErrors(results.webMapOrWebScene);
 
@@ -254,9 +255,9 @@ define([
               this.reportError(new Error("main:: Error loading view for this webmap or webscene: " + error));
             }.bind(this));
 
-            view.always(function() {
-              window.setTimeout(this._removeLoading(), this._removeLoadingTimeout);
-            }.bind(this));
+            // view.always(function() {
+            //   window.setTimeout(this._removeLoading(), this._removeLoadingTimeout);
+            // }.bind(this));
 
             this._activeView = view;
 
@@ -268,6 +269,7 @@ define([
 
             // Nav and panels
             this._showNavbar(true);
+            this._setAboutPanelText(boilerplate, results.webMapOrWebScene);
             this._showAboutPanel(boilerplate.config);
 
             // Events
@@ -277,8 +279,8 @@ define([
             this._setPopupEvents(); 
 
           }.bind(this), function(error) {
-            this.reportError(new Error("main:: Error loading webmap or webscene for this item: " + error));  
-          });
+            this.reportError(error);  
+          }.bind(this));
         } else {
           this.reportError(new Error("main:: Webmap or webscene could not be created for this item."));
         }
@@ -379,7 +381,7 @@ define([
 
     _updateConfigTitle: function(boilerplate) {
       // Set title if no title was provided
-      var portalItem = boilerplate.results.webmapItem || boilerplate.results.websceneItem;
+      var portalItem = boilerplate.results.webMapItem || boilerplate.results.webSceneItem;
       if (!boilerplate.config.title && portalItem && portalItem.data.title) {
         boilerplate.config.title = portalItem.data.title;
       }
@@ -531,42 +533,39 @@ define([
 
     // Panels
 
-    _setAboutPanelText: function(boilerplate) {
-      var aboutText  = boilerplate.config.abouttext;
-      var addDesc = boilerplate.config.showdescription;
-      var addSummary = boilerplate.config.showsummary;
-      var summaryText = null;
-      var descriptionText = null;
-      
-      if (addDesc || addSummary) {
-        if (boilerplate.results.webmapItem) {
-          descriptionText = boilerplate.results.webmapItem.data.description;
-          summaryText =  boilerplate.results.webmapItem.data.snippet;
-        } else if (boilerplate.results.websceneItem) {
-          descriptionText = boilerplate.results.websceneItem.data.description;
-          summaryText =  boilerplate.results.websceneItem.data.snippet;
+    _setAboutPanelText: function(boilerplate, webMapOrWebScene) {
+      if (boilerplate && webMapOrWebScene.portalItem) {
+        var aboutText  = boilerplate.config.abouttext;
+        var addDesc = boilerplate.config.showdescription;
+        var addSummary = boilerplate.config.showsummary;
+        var summaryText = null;
+        var descriptionText = null;
+        
+        if (addDesc || addSummary) {
+          descriptionText = webMapOrWebScene.portalItem.description;
+          summaryText =  webMapOrWebScene.portalItem.snippet;
         }
-      }
-      // Summary text
-      if (addSummary && summaryText) {
-        if (aboutText) {
-          aboutText = aboutText + "<br>" +  summaryText;
-        } else {
-          aboutText = summaryText;
+        // Summary text
+        if (addSummary && summaryText) {
+          if (aboutText) {
+            aboutText = aboutText + "<br>" +  summaryText;
+          } else {
+            aboutText = summaryText;
+          }
         }
-      }
-      // Description text
-      if (addDesc && descriptionText) {
-        if (aboutText) {
-          aboutText = aboutText + "<br>" +  descriptionText;
-        } else {
-          aboutText = descriptionText;
+        // Description text
+        if (addDesc && descriptionText) {
+          if (aboutText) {
+            aboutText = aboutText + "<br>" +  descriptionText;
+          } else {
+            aboutText = descriptionText;
+          }
         }
-      }
 
-      if (aboutText) {
-        boilerplate.config.abouttext = aboutText;
-        query(CSS_SELECTORS.panelAboutText)[0].innerHTML = aboutText;
+        if (aboutText) {
+          boilerplate.config.abouttext = aboutText;
+          query(CSS_SELECTORS.panelAboutText)[0].innerHTML = aboutText;
+        }
       }
     },
 
