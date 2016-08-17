@@ -517,10 +517,10 @@ define([
                       time: true
                     };
                   }
-                  //Add all editable fields even if not visible.
-                  //if (field.visible) {
-                  fieldInfos.push(field);
-                //}
+                  //Only add visible fields
+                  if (field.visible) {
+                    fieldInfos.push(field);
+                  }
                 }));
 
               layer.fieldInfos = fieldInfos;
