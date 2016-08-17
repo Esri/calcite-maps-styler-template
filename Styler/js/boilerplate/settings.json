@@ -1,4 +1,7 @@
 {
+  "localConfig": {
+    "fetch": true
+  },
   "webmap": {
     "containerId": "mapViewDiv",
     "fetch": true,
