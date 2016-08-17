@@ -1,20 +1,26 @@
 define({
   "signInDialog": {
-    "title": "Prijavite se na Story Maps",
-    "subtitle": "Prijavite se sa postojećim ArcGIS Online nalogom da biste:",
-    "reasonOne": "kreirali živopisne story mape i ispričali priče.",
-    "reasonTwo": "koristili mape i podatke iz platforme ArcGIS Online u story mapama.",
-    "reasonThree": "upravljali story mapama i proverili status njihovog sadržaja.",
-    "noAccountYet": "Nemate ArcGIS Online nalog? Prijavite se za:",
+    "title": "Č_Start Telling Stories________ž!",
+    "reasonOne": "Č_Create compelling story maps_________ž",
+    "reasonTwo": "Č_Use the power of ArcGIS________ž",
+    "reasonThree": "Č_Manage your stories_______ž",
+    "noAccountYet": "Č_Don't have an ArcGIS Online account____________ž?",
+    "signUpFor": "Č_Sign up for a_____ž:",
     "publicAccount": "besplatan nekomercijalan javni nalog",
     "subscriptionAccount": "besplatnu probnu ArcGIS pretplatu",
     "signInExpired": "Prijava je istekla. Prijavite se ponovo da nastavite gde ste stali.",
     "somethingNotLoading": "Učitavanje nije uspešno obavljeno. Osvežite stranicu."
   },
+  "signedInPrompt": {
+    "signedIn": "Č_You are now signed in________ž.",
+    "backToStoryMaps": "Č_Back to Story Maps______ž",
+    "closeRefresh": "Č_Close this tab and refresh the website_____________ž.",
+    "close": "Zatvori"
+  },
   "unavailableDialog": {
     "title": "Prijavljivanje nije dostupno",
     "explanation": "Žao nam je, ovo nije podržano na ekranima malih dimenzija. Otvorite na uređaju sa većim ekranom.",
-    "close": "Zatvori",
+    "close": "Č_Close___ž",
     "returnButton": "Povratak"
   }
 });

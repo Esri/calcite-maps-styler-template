@@ -98,10 +98,10 @@ define({
     "noCommentsAvailableText": "Kullanılabilir kayıt yok",
     "remainingTextCount": "${0} karakter kaldı",
     "showNoText": "Hayır",
-    "selectAttachments": "ı_Attachments____İ",
-    "selectFileText": "ı_Browse___İ",
-    "attachmentSelectedMsg": "ı_attachment(s) selected________İ",
-    "attachmentHeaderText": "ı_Attachments____İ",
+    "selectAttachments": "Ekler",
+    "selectFileText": "...",
+    "attachmentSelectedMsg": "ek seçildi",
+    "attachmentHeaderText": "Ekler",
     "addRecordText": "ı_Add Record____İ"
   },
   "main": {

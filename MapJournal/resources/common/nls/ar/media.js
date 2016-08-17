@@ -36,10 +36,10 @@ define({
       "learn": "بيت_learn more____لاحقة"
     },
     "imageSelectorPicasa": {
-      "userInputLbl": "البريد الإلكتروني أو Picasa/Google+ ID",
+      "userInputLbl": "بيت_Email or Picasa id______لاحقة",
       "signInMsg2": "لم يتم العثور على الحساب",
-      "howToFind": "كيفية إيجاد Picasa أو Google+ أو معرف الحساب",
-      "howToFind2": "نسخ الأرقام بين الأول والثاني '/'  لأي من Picasa او صفحة G+"
+      "howToFind": "بيت_How to find a Picasa id________لاحقة",
+      "howToFind2": "بيت_Copy digits between the first and second '/' of any Picasa page____________________لاحقة"
     },
     "videoSelectorCommon": {
       "check": "فحص",
@@ -105,8 +105,8 @@ define({
       "unloadLbl": "إلغاء التحميل عندما ينتقل القارئ بعيدًا",
       "unloadHelp": "إذا احتوت صفحة الويب على وسائل مسموعة أو مرئية، لا تقوم بإلغاء التأشير على هذا الخيار لإيقاف تشغيل المحتوى عند انتقال القارئ. ولكن قم بإلغاء التأشير عليه على سبيل المثال لمتابعة تشغيل مسار صوتي في حين تقدّم القارئ في القصة.<br />إذا كانت صفحة الويب تطبيقًا، قم بإلغاء التأشير على هذا الخيار حتى لا يتم إعادة تحميل القصة إذا رجع القارئ إليها.",
       "embedProtocolLabel": "بيت_Load page over a secure connection (HTTPS)______________لاحقة",
-      "embedProtocolWarning1": "بيت_As your story is configured to load over a secure connection, it is mandatory that all embedded page use a secure connection. If the page does not load it may be because the page is not available over a secure connection or that this page cannot be embedded (some websites restrict embedding)_________________________________________________________________________________________لاحقة.",
-      "embedProtocolWarning2": "بيت_As your story is configured to load over an insecure connection, you can chose to load this page over a secure or insecure connection. We recommend that you always use a secure connection. If the page does not load it may be because the page is not available over the connection mode you selected or that this page cannot be embedded (some websites restrict embedding)________________________________________________________________________________________________________________لاحقة."
+      "embedProtocolWarning1": "بيت_Your story is configured to load over a secure connection (https), so web page show in the story must also use a secure connection. If the page does not load it may be because it is not available over a secure connection or that it cannot be included in your story (some websites restrict this). You may need to create a hyperlink to open the page in a new browser tab________________________________________________________________________________________________________________لاحقة.",
+      "embedProtocolWarning2": "بيت_Your story is configured to load over an insecure connection (http), so you can choose to load this page over a secure (recommended) or insecure connection. If the page does not load, it may be because it does not support the connection type you selected or that it cannot be included in your story (some websites restrict this). You may need to create a hyperlink to open the page in a new browser tab__________________________________________________________________________________________________________________________لاحقة."
     },
     "editorActionGeocode": {
       "lblTitle": "تحديد موقع العنوان أو المكان",

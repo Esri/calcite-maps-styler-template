@@ -22,7 +22,7 @@ define({
       "socialLinksLabel": "Prikažite veze za deljenje na dnu svakog odeljka",
       "socialLinksDescr": "Ovo omogućava čitaocima da povežu i promovišu određene odeljke %TPL_NAME%. Na primer, ako koristite ikonicu deljenja odeljaka, čitaoci će se naći na tom posebnom %TPL_NAME% odeljku umesto na početku priče. Čitaoci mogu da koriste vezu društvenih medija u odeljku naslova da promovišu celu %TPL_NAME% (karticu zaglavlja) i da se nađu na početku %TPL_NAME%.",
       "socialDisabled": "Č_This feature is only available with Floating Panel layout__________________ž",
-      "socialWarning": "Č_Your story is using the Side Panel layout and we now recommend to only enable that option with Floating Panel layout. This prevent issues where the panel may not scroll to the desired section for narratives that contains images. You can continue to use that option but if you disable it, it will only be available with Floating Panel layout_______________________________________________________________________________________________________ž."
+      "socialWarning": "Č_Your story is using Side Panel layout, but we now recommend using this option only with Floating Panel layout to avoid an issue where the panel may not position itself to the desired section for narratives with images. You may continue to use this option, but if you disable it, it will then only be available when using Floating Panel layout________________________________________________________________________________________________________ž."
     },
     "settingsLayoutFonts": {
       "title": "Fontovi",

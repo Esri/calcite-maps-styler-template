@@ -90,11 +90,12 @@ define({
       "autoplayExplain2": "Când acest mod este activ, sunt afişate butoane pentru a reda/întrerupe scenariul şi pentru a regla viteza de navigare.",
       "linksupdated": "Legătură actualizată!",
       "print": "Ă_Print___ș",
-      "printInstruction1": "Ă_Please wait for all the content to load before ${printing} this page______________________ș.",
-      "printInstruction2": "Ă_This page cannot be shared with others, instead share the ${link}_____________________ș.",
+      "printInstruction1": "Ă_Please wait for all the content to load before printing this page_____________________ș",
+      "printInstruction1a": "Ă_Some content may not print unless you enable \"Print Background Colors and Images\" in the Print Page setup dialog___________________________________ș",
+      "printInstruction2": "Ă_This page cannot be shared with others, instead share the ${link}_____________________ș",
       "link": "Ă_link to the story______ș",
-      "printing": "Ă_printing___ș",
-      "printWarning": "Ă_This is a printed version of a story map. Dynamic content such as videos and interactive maps is only available in the online version at ${link}_____________________________________________ș.",
+      "printOptPageBreak": "Ă_Begin each section on a new page___________ș",
+      "printWarning": "Ă_This is a printed version of a story map. Dynamic content such as videos and interactive maps is only available in the online version at ${link}____________________________________________ș",
       "printMSWarning": "Ă_link available only in online story____________ș",
       "printVideoWarning": "Ă_This video can be viewed in the online version of this story map____________________ș"
     }

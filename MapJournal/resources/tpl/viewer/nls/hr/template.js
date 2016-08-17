@@ -90,11 +90,12 @@ define({
       "autoplayExplain2": "Kada je ovaj način rada aktivan, postoje kontrole za reprodukciju/pauziranje priče i podešavanje brzine navigacije.",
       "linksupdated": "Poveznice ažurirane!",
       "print": "Č_Print___ž",
-      "printInstruction1": "Č_Please wait for all the content to load before ${printing} this page______________________ž.",
-      "printInstruction2": "Č_This page cannot be shared with others, instead share the ${link}_____________________ž.",
+      "printInstruction1": "Č_Please wait for all the content to load before printing this page_____________________ž",
+      "printInstruction1a": "Č_Some content may not print unless you enable \"Print Background Colors and Images\" in the Print Page setup dialog___________________________________ž",
+      "printInstruction2": "Č_This page cannot be shared with others, instead share the ${link}_____________________ž",
       "link": "Č_link to the story______ž",
-      "printing": "Č_printing___ž",
-      "printWarning": "Č_This is a printed version of a story map. Dynamic content such as videos and interactive maps is only available in the online version at ${link}_____________________________________________ž.",
+      "printOptPageBreak": "Č_Begin each section on a new page___________ž",
+      "printWarning": "Č_This is a printed version of a story map. Dynamic content such as videos and interactive maps is only available in the online version at ${link}____________________________________________ž",
       "printMSWarning": "Č_link available only in online story____________ž",
       "printVideoWarning": "Č_This video can be viewed in the online version of this story map____________________ž"
     }

@@ -98,10 +98,10 @@ define({
     "noCommentsAvailableText": "Kirjeid pole saadaval",
     "remainingTextCount": "${0} tähemärki kasutamata",
     "showNoText": "Ei",
-    "selectAttachments": "Š_Attachments____ä",
-    "selectFileText": "Š_Browse___ä",
-    "attachmentSelectedMsg": "Š_attachment(s) selected________ä",
-    "attachmentHeaderText": "Š_Attachments____ä",
+    "selectAttachments": "Manused",
+    "selectFileText": "Sirvi",
+    "attachmentSelectedMsg": "valitud manus(ed)",
+    "attachmentHeaderText": "Manused",
     "addRecordText": "Š_Add Record____ä"
   },
   "main": {

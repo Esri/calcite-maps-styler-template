@@ -113,7 +113,7 @@ define({
       "mapMarkerExplain": "用户在单击链接时会看到地图标记"
     },
     "editorActionMedia": {
-      "lblTitle": "更改主要阶段内容"
+      "lblTitle": "更改主舞台内容"
     },
     "editorInlineMedia": {
       "lblTitle": "插入图像、视频或网页"

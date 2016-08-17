@@ -1,7 +1,7 @@
 define({
   "viewer": {
     "loading": {
-      "step1": "A CARREGAR A HISTÓRIA",
+      "step1": "A CARREGAR HISTÓRIA",
       "step2": "A CARREGAR DADOS...",
       "step3": "A INICIAR A APRESENTAÇÃO...",
       "loadBuilder": "A MUDAR PARA O MODO DE BUILDER...",

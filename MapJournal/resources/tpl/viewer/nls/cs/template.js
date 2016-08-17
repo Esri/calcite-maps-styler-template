@@ -90,11 +90,12 @@ define({
       "autoplayExplain2": "Je-li tento režim aktivní, budou k dispozici ovládací prvky ke spuštění/pozastavení přehrávání příběhu a k nastavení rychlosti procházení.",
       "linksupdated": "Odkazy aktualizovány!",
       "print": "Ř_Print___ů",
-      "printInstruction1": "Ř_Please wait for all the content to load before ${printing} this page______________________ů.",
-      "printInstruction2": "Ř_This page cannot be shared with others, instead share the ${link}_____________________ů.",
+      "printInstruction1": "Ř_Please wait for all the content to load before printing this page_____________________ů",
+      "printInstruction1a": "Ř_Some content may not print unless you enable \"Print Background Colors and Images\" in the Print Page setup dialog___________________________________ů",
+      "printInstruction2": "Ř_This page cannot be shared with others, instead share the ${link}_____________________ů",
       "link": "Ř_link to the story______ů",
-      "printing": "Ř_printing___ů",
-      "printWarning": "Ř_This is a printed version of a story map. Dynamic content such as videos and interactive maps is only available in the online version at ${link}_____________________________________________ů.",
+      "printOptPageBreak": "Ř_Begin each section on a new page___________ů",
+      "printWarning": "Ř_This is a printed version of a story map. Dynamic content such as videos and interactive maps is only available in the online version at ${link}____________________________________________ů",
       "printMSWarning": "Ř_link available only in online story____________ů",
       "printVideoWarning": "Ř_This video can be viewed in the online version of this story map____________________ů"
     }

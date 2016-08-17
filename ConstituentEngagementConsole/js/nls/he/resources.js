@@ -70,7 +70,7 @@ define({
     "zoomOutToolTip": "התמקד החוצה"
   },
   "applicationHeader": {
-    "signInOption": "הירשם",
+    "signInOption": "התחבר",
     "signOutOption": "התנתק",
     "pleaseSignInText": "אנא התחבר"
   },
@@ -98,10 +98,10 @@ define({
     "noCommentsAvailableText": "אין רשומות זמינות",
     "remainingTextCount": "נותרו ${0} תווים",
     "showNoText": "לא",
-    "selectAttachments": "כן_Attachments____ש",
-    "selectFileText": "כן_Browse___ש",
-    "attachmentSelectedMsg": "כן_attachment(s) selected________ש",
-    "attachmentHeaderText": "כן_Attachments____ש",
+    "selectAttachments": "קבצים מקושרים",
+    "selectFileText": "נתב",
+    "attachmentSelectedMsg": "קבצים מצורפים נבחרו",
+    "attachmentHeaderText": "קבצים מקושרים",
     "addRecordText": "כן_Add Record____ש"
   },
   "main": {

@@ -98,10 +98,10 @@ define({
     "noCommentsAvailableText": "Δεν υπάρχουν διαθέσιμες εγγραφές",
     "remainingTextCount": "Απομένουν ${0} χαρακτήρες",
     "showNoText": "Όχι",
-    "selectAttachments": "Đ_Attachments____ớ",
-    "selectFileText": "Đ_Browse___ớ",
-    "attachmentSelectedMsg": "Đ_attachment(s) selected________ớ",
-    "attachmentHeaderText": "Đ_Attachments____ớ",
+    "selectAttachments": "Συνημμένα",
+    "selectFileText": "Αναζήτηση",
+    "attachmentSelectedMsg": "συνημμένα επιλέχθηκαν",
+    "attachmentHeaderText": "Συνημμένα",
     "addRecordText": "Đ_Add Record____ớ"
   },
   "main": {

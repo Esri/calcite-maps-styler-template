@@ -36,10 +36,10 @@ define({
       "learn": "כן_learn more____ש"
     },
     "imageSelectorPicasa": {
-      "userInputLbl": "אמייל או Picasa/Google+ ID",
+      "userInputLbl": "כן_Email or Picasa id______ש",
       "signInMsg2": "חשבון לא נמצא",
-      "howToFind": "כיצד למצוא את ה- ID של חשבון ה- Picasa או Google+",
-      "howToFind2": "העתק תווים בין ה '/'  הראשון לשני של כל עמוד Picasa או G+"
+      "howToFind": "כן_How to find a Picasa id________ש",
+      "howToFind2": "כן_Copy digits between the first and second '/' of any Picasa page____________________ש"
     },
     "videoSelectorCommon": {
       "check": "בדיקה",
@@ -88,7 +88,7 @@ define({
       "lblLabel2": "טקסט מוצג בריחוף",
       "lblLabel3": "ללא",
       "lblLabelPH": "הכנס טקסט כלשהו...",
-      "lblMaximize": "כלול את כפתור ה-maximize  בפינת התמונה",
+      "lblMaximize": "כלול את לחצן ה-maximize  בפינת התמונה",
       "lblMaximizeHelp": "מומלץ רק לתמונות באיכות גבוהה",
       "lblPosition": "מיקום",
       "lblPosition1": "ממורכז",
@@ -105,8 +105,8 @@ define({
       "unloadLbl": "בטל את הטעינה כשהקורא מנווט למקום אחר",
       "unloadHelp": "אם דף האינטרנט מכיל מדיה של שמע או וידאו, השאר אפשרות זו מסומנת כדי למנוע הפעלת תוכן זה כשהקורא מנווט למקום אחר. בטל את סימון האפשרות, למשל, כדי לגרום לפסקול להמשיך לנגן בזמן שהקורא מתקדם לאורך הסיפור.<br />אם דף האינטרנט הוא אפליקציה, בטל את סימון האפשרות כדי שהאפליקציה לא תיטען מחדש אם הקורא יחזור לשם.",
       "embedProtocolLabel": "כן_Load page over a secure connection (HTTPS)______________ש",
-      "embedProtocolWarning1": "כן_As your story is configured to load over a secure connection, it is mandatory that all embedded page use a secure connection. If the page does not load it may be because the page is not available over a secure connection or that this page cannot be embedded (some websites restrict embedding)_________________________________________________________________________________________ש.",
-      "embedProtocolWarning2": "כן_As your story is configured to load over an insecure connection, you can chose to load this page over a secure or insecure connection. We recommend that you always use a secure connection. If the page does not load it may be because the page is not available over the connection mode you selected or that this page cannot be embedded (some websites restrict embedding)________________________________________________________________________________________________________________ש."
+      "embedProtocolWarning1": "כן_Your story is configured to load over a secure connection (https), so web page show in the story must also use a secure connection. If the page does not load it may be because it is not available over a secure connection or that it cannot be included in your story (some websites restrict this). You may need to create a hyperlink to open the page in a new browser tab________________________________________________________________________________________________________________ש.",
+      "embedProtocolWarning2": "כן_Your story is configured to load over an insecure connection (http), so you can choose to load this page over a secure (recommended) or insecure connection. If the page does not load, it may be because it does not support the connection type you selected or that it cannot be included in your story (some websites restrict this). You may need to create a hyperlink to open the page in a new browser tab__________________________________________________________________________________________________________________________ש."
     },
     "editorActionGeocode": {
       "lblTitle": "אתר כתובת או מקום",

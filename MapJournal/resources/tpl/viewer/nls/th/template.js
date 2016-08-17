@@ -90,11 +90,12 @@ define({
       "autoplayExplain2": "เมื่อโหมดนี้มีการใช้งานยังมีการควบคุมการเล่น / หยุดชั่วคราวเรื่องราวและปรับความเร็วลูกศร",
       "linksupdated": "ลิงค์นี้อัพเดทแล้ว",
       "print": "ก้_Print___ษฺ",
-      "printInstruction1": "ก้_Please wait for all the content to load before ${printing} this page______________________ษฺ.",
-      "printInstruction2": "ก้_This page cannot be shared with others, instead share the ${link}_____________________ษฺ.",
+      "printInstruction1": "ก้_Please wait for all the content to load before printing this page_____________________ษฺ",
+      "printInstruction1a": "ก้_Some content may not print unless you enable \"Print Background Colors and Images\" in the Print Page setup dialog___________________________________ษฺ",
+      "printInstruction2": "ก้_This page cannot be shared with others, instead share the ${link}_____________________ษฺ",
       "link": "ก้_link to the story______ษฺ",
-      "printing": "ก้_printing___ษฺ",
-      "printWarning": "ก้_This is a printed version of a story map. Dynamic content such as videos and interactive maps is only available in the online version at ${link}_____________________________________________ษฺ.",
+      "printOptPageBreak": "ก้_Begin each section on a new page___________ษฺ",
+      "printWarning": "ก้_This is a printed version of a story map. Dynamic content such as videos and interactive maps is only available in the online version at ${link}____________________________________________ษฺ",
       "printMSWarning": "ก้_link available only in online story____________ษฺ",
       "printVideoWarning": "ก้_This video can be viewed in the online version of this story map____________________ษฺ"
     }

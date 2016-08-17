@@ -98,10 +98,10 @@ define({
     "noCommentsAvailableText": "Geen records beschikbaar",
     "remainingTextCount": "${0} teken(s) over",
     "showNoText": "Nee",
-    "selectAttachments": "Ĳ_Attachments____ä",
-    "selectFileText": "Ĳ_Browse___ä",
-    "attachmentSelectedMsg": "Ĳ_attachment(s) selected________ä",
-    "attachmentHeaderText": "Ĳ_Attachments____ä",
+    "selectAttachments": "Bijlagen",
+    "selectFileText": "Bladeren",
+    "attachmentSelectedMsg": "bijlage(n) geselecteerd",
+    "attachmentHeaderText": "Bijlagen",
     "addRecordText": "Ĳ_Add Record____ä"
   },
   "main": {

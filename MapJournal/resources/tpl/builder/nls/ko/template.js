@@ -22,7 +22,7 @@ define({
       "socialLinksLabel": "각 섹션의 하단에 공유 링크 표시",
       "socialLinksDescr": "사용자가 %TPL_NAME%의 특정 섹션을 참조하고 홍보할 수 있도록 합니다. 예를 들어 섹션 공유 아이콘을 사용하는 경우 사용자는 스토리 시작 부분 대신 특정 %TPL_NAME% 섹션으로 이동합니다. 사용자는 제목 섹션에 있는 소셜 미디어 링크를 사용하여 전체 %TPL_NAME%(머리글 탭)을(를) 홍보하고 %TPL_NAME% 시작 부분에 둘 수 있습니다.",
       "socialDisabled": "한_This feature is only available with Floating Panel layout__________________빠",
-      "socialWarning": "한_Your story is using the Side Panel layout and we now recommend to only enable that option with Floating Panel layout. This prevent issues where the panel may not scroll to the desired section for narratives that contains images. You can continue to use that option but if you disable it, it will only be available with Floating Panel layout_______________________________________________________________________________________________________빠."
+      "socialWarning": "한_Your story is using Side Panel layout, but we now recommend using this option only with Floating Panel layout to avoid an issue where the panel may not position itself to the desired section for narratives with images. You may continue to use this option, but if you disable it, it will then only be available when using Floating Panel layout________________________________________________________________________________________________________빠."
     },
     "settingsLayoutFonts": {
       "title": "글꼴",

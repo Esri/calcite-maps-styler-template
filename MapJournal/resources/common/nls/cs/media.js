@@ -36,10 +36,10 @@ define({
       "learn": "Ř_learn more____ů"
     },
     "imageSelectorPicasa": {
-      "userInputLbl": "E-mail nebo identifikátor Picasa/Google+",
+      "userInputLbl": "Ř_Email or Picasa id______ů",
       "signInMsg2": "Účet nenalezen",
-      "howToFind": "Jak najít identifikátor účtu Picasa nebo Google+",
-      "howToFind2": "Zkopírujte číslice mezi prvním a druhým lomítkem (/) libovolné stránky služeb Picasa nebo Google+."
+      "howToFind": "Ř_How to find a Picasa id________ů",
+      "howToFind2": "Ř_Copy digits between the first and second '/' of any Picasa page____________________ů"
     },
     "videoSelectorCommon": {
       "check": "Kontrola",
@@ -105,8 +105,8 @@ define({
       "unloadLbl": "Zrušit spouštění, když čtenář opustí stránku",
       "unloadHelp": "Pokud webová stránka obsahuje audio nebo video média, nechte tuto možnost zaškrtnutou, aby se přehrávání tohoto obsahu ukončilo, pokud čtenář stránku opustí. Zrušte její zaškrtnutí, pokud například chcete, aby hudební podkres hrál po celou dobu prohlížení příběhu.<br />Pokud je webová stránka aplikací, zrušte zaškrtnutí této možnosti, aby se příběh nespouštěl znovu, když se k němu čtenář vrátí.",
       "embedProtocolLabel": "Ř_Load page over a secure connection (HTTPS)______________ů",
-      "embedProtocolWarning1": "Ř_As your story is configured to load over a secure connection, it is mandatory that all embedded page use a secure connection. If the page does not load it may be because the page is not available over a secure connection or that this page cannot be embedded (some websites restrict embedding)_________________________________________________________________________________________ů.",
-      "embedProtocolWarning2": "Ř_As your story is configured to load over an insecure connection, you can chose to load this page over a secure or insecure connection. We recommend that you always use a secure connection. If the page does not load it may be because the page is not available over the connection mode you selected or that this page cannot be embedded (some websites restrict embedding)________________________________________________________________________________________________________________ů."
+      "embedProtocolWarning1": "Ř_Your story is configured to load over a secure connection (https), so web page show in the story must also use a secure connection. If the page does not load it may be because it is not available over a secure connection or that it cannot be included in your story (some websites restrict this). You may need to create a hyperlink to open the page in a new browser tab________________________________________________________________________________________________________________ů.",
+      "embedProtocolWarning2": "Ř_Your story is configured to load over an insecure connection (http), so you can choose to load this page over a secure (recommended) or insecure connection. If the page does not load, it may be because it does not support the connection type you selected or that it cannot be included in your story (some websites restrict this). You may need to create a hyperlink to open the page in a new browser tab__________________________________________________________________________________________________________________________ů."
     },
     "editorActionGeocode": {
       "lblTitle": "Najít adresu nebo místo",

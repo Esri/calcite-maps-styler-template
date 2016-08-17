@@ -90,11 +90,12 @@ define({
       "autoplayExplain2": "Po włączeniu tego trybu udostępniane są elementy sterujące do włączania odtwarzania/wstrzymywania narracji oraz do regulacji szybkości nawigacji.",
       "linksupdated": "Zaktualizowano łącza!",
       "print": "ł_Print___ą",
-      "printInstruction1": "ł_Please wait for all the content to load before ${printing} this page______________________ą.",
-      "printInstruction2": "ł_This page cannot be shared with others, instead share the ${link}_____________________ą.",
+      "printInstruction1": "ł_Please wait for all the content to load before printing this page_____________________ą",
+      "printInstruction1a": "ł_Some content may not print unless you enable \"Print Background Colors and Images\" in the Print Page setup dialog___________________________________ą",
+      "printInstruction2": "ł_This page cannot be shared with others, instead share the ${link}_____________________ą",
       "link": "ł_link to the story______ą",
-      "printing": "ł_printing___ą",
-      "printWarning": "ł_This is a printed version of a story map. Dynamic content such as videos and interactive maps is only available in the online version at ${link}_____________________________________________ą.",
+      "printOptPageBreak": "ł_Begin each section on a new page___________ą",
+      "printWarning": "ł_This is a printed version of a story map. Dynamic content such as videos and interactive maps is only available in the online version at ${link}____________________________________________ą",
       "printMSWarning": "ł_link available only in online story____________ą",
       "printVideoWarning": "ł_This video can be viewed in the online version of this story map____________________ą"
     }

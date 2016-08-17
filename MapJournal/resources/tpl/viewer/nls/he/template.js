@@ -90,11 +90,12 @@ define({
       "autoplayExplain2": "כאשר מצב זה פעיל, קיימים פקדים להפעלה/הפסקה של הסיפור ולהתאמת מהירות הניווט.",
       "linksupdated": "הקישורים התעדכנו!",
       "print": "כן_Print___ש",
-      "printInstruction1": "כן_Please wait for all the content to load before ${printing} this page______________________ש.",
-      "printInstruction2": "כן_This page cannot be shared with others, instead share the ${link}_____________________ש.",
+      "printInstruction1": "כן_Please wait for all the content to load before printing this page_____________________ש",
+      "printInstruction1a": "כן_Some content may not print unless you enable \"Print Background Colors and Images\" in the Print Page setup dialog___________________________________ש",
+      "printInstruction2": "כן_This page cannot be shared with others, instead share the ${link}_____________________ש",
       "link": "כן_link to the story______ש",
-      "printing": "כן_printing___ש",
-      "printWarning": "כן_This is a printed version of a story map. Dynamic content such as videos and interactive maps is only available in the online version at ${link}_____________________________________________ש.",
+      "printOptPageBreak": "כן_Begin each section on a new page___________ש",
+      "printWarning": "כן_This is a printed version of a story map. Dynamic content such as videos and interactive maps is only available in the online version at ${link}____________________________________________ש",
       "printMSWarning": "כן_link available only in online story____________ש",
       "printVideoWarning": "כן_This video can be viewed in the online version of this story map____________________ש"
     }

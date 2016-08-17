@@ -40,7 +40,7 @@ define({
   },
   "cantFindStories": {
     "whereAreStories": "ไม่สามารถแสดงผลเรื่องราวของคุณ?",
-    "notSeeExplanation": "สตอรี่ของฉันจะมีเพียงรายการแผนที่ที่เก็บอยู่ใน ArcGIS และสร้างด้วย{{STORY_MAP_TOUR}}, {{JOURNAL}}, {{MAP_SERIES}} หรือ {{SWIPE_SPYGLASS}} แอพลิเคชัน  ดูใน {{FAQ}} สำหรับข้อมูลเพิ่มเติม",
+    "notSeeExplanation": "ก้_My Stories will only list story maps hosted in ArcGIS ({{STORY_MAP_BASIC}} is currently not supported). See our {{FAQ}} for more information___________________________________________ษฺ.",
     "faq": "คำถามที่พบบ่อย",
     "followingStoriesToUpdate": "เรื่องราวด้านล่างนี้ ถูกสร้างขึ้นด้วยเวอชั่นก่อนหน้าของโปรแกรม ซึ่งต้องอัพเดทก่อนที่แสดงรายการในเรื่องราวของฉัน",
     "gettingStories": "กำลังค้นหาเรื่องราวที่ถูกสร้างขึ้นด้วยเวอร์ชั่นก่อนหน้าของโปรแกรม ซึ่งต้องการการอัพเดท",
@@ -88,27 +88,16 @@ define({
     "layerPrivate": "จัดทำชั้นข้อมูลส่วนตัว จะทำให้เรื่องราวของคุณ"
   },
   "collectionList": {
-    "advocacy": "การสนับสนุนและบริการ",
-    "architecture": "สถาปัตยกรรมศาสตร์และการออกแบบ",
-    "conservation": "การอนุรักษ์และการพัฒนาอย่างยั่งยืน",
-    "culture": "วัฒนธรรม",
-    "destinations": "จุดหมายปลายทางและการท่องเที่ยว",
-    "disasters": "ภัยพิบัติและการฟื้นฟู",
-    "economy": "เศรษฐกิจและการพัฒนา",
-    "entertainment": "ความบันเทิง",
-    "history": "ประวัติ",
-    "infrastructure": "โครงสร้างพื้นฐาน",
-    "marketing": "การตลาด",
-    "nature": "ธรรมชาติและสิ่งแวดล้อม",
-    "news": "ข่าวสารและกิจกรรม",
-    "oceans": "มหาสมุทร",
-    "parks": "สวนสาธารณะและสันทนาการ",
+    "business": "ก้_Business and Economy_______ษฺ",
+    "history": "ก้_History and Culture_______ษฺ",
+    "inNews": "ก้_In The News____ษฺ",
+    "infrastructure": "ก้_Infrastructure and Construction__________ษฺ",
+    "nature": "ก้_Nature and Conservation________ษฺ",
     "people": "ประชากรและสังคม",
-    "planning": "การวางแผนและการวิเคราะห์",
-    "publicArt": "ศิลปะสาธารณะ",
+    "planning": "ก้_Planning and Design_______ษฺ",
     "science": "วิทยาศาสตร์และเทคโนโลยี",
-    "sport": "กีฬา",
-    "travelogues": "สารคดีท่องเที่ยว"
+    "sports": "ก้_Sports and Entertainment________ษฺ",
+    "travel": "ก้_Travel and Recreation_______ษฺ"
   },
   "types": {
     "custom": "แก้ไขเอง",
@@ -227,6 +216,7 @@ define({
   "content": {
     "media": {
       "maps": "แผนที่",
+      "scenes": "ก้_Scenes___ษฺ",
       "images": "ภาพ",
       "videos": "วิดีโอ",
       "webpages": "เวปเพจ",
@@ -244,22 +234,30 @@ define({
       "bullet": "บูลเล็ท",
       "tab": "แท็บ",
       "accordion": "ส่วน",
-      "mapJournal": "ส่วน"
+      "mapJournal": "ส่วน",
+      "cascade": "ก้_Section___ษฺ",
+      "crowdsource": "ก้_Contribution_____ษฺ",
+      "shortlist": "ก้_Tab__ษฺ"
     },
     "titleType": {
       "mapTour": "คำอธิบาย",
       "mapJournal": "URL",
-      "mapSeries": "URL"
+      "mapSeries": "URL",
+      "cascade": "ก้_URL__ษฺ",
+      "crowdsource": "ก้_URL__ษฺ",
+      "shortlist": "ก้_URL__ษฺ"
     },
     "actions": {
       "viewMap": "ดูแผนที่",
       "editMap": "แก้ไขแผนที่",
+      "editScene": "ก้_Edit Scene____ษฺ",
       "fix": "แก้ไข",
       "viewLayer": "แสดงผลชั้นข้อมูล"
     },
     "contentType": {
       "mainStage": "การดำเนินการขั้นตอนหลัก",
-      "sidePanel": "คำอธิบาย"
+      "sidePanel": "คำอธิบาย",
+      "introImage": "ก้_(cover page photo)______ษฺ"
     },
     "notification": {
       "refreshExplanation": "ตรวจสอบเรื่องของคุณอีกครั้ง",
@@ -300,6 +298,7 @@ define({
       "publicDisabled": "เปิดการใช้งานการแชร์ข้อมูลต่อสาธารณะโดยผู้ดูแลระบบ",
       "orgDisabled": "เปิดการใช้งานการแชร์ข้อมูลในองค์กรโดยผู้ดูแลระบบ",
       "noMapName": "ไม่สามารถเรียกชื่อแผนที่",
+      "noSceneName": "ก้_Could Not Retrieve Scene________ษฺ",
       "notPublic": "ไม่แบ่งปันสู่สาธารณะ",
       "inaccessible": "ไม่สามารถเข้าถึง",
       "deleted": "ลบ",
@@ -351,6 +350,8 @@ define({
       "cantScanThisTypeAlt": "เราไม่สามารถตรวจสอบประเภทของชั้นข้อมูล",
       "cantScanThisType": "ชั้นข้อมูลไม่ใช่ประเภทที่เราสามารถตรวจสอบได้",
       "webpageNotScanned": "เวปเพจไม่สามารถตรวจสอบปัญหาได้",
+      "sceneNotScanned": "ก้_Scenes are not currently checked for issues, please make sure that the scene and all of its layers are shared correctly_____________________________________ษฺ",
+      "scenesNotScannedGlobally": "ก้_There are scenes in this story, and scenes are not currently checked for issues. Please make sure that the scenes and all of their layers are shared correctly________________________________________________ษฺ",
       "ignoredIssue": "คุณได้ละเลยข้อผิดพลาดในชั้นข้อมูลนี้ โหลดสตอรี่นี้อีกครั้งเพื่อตรวจสอบข้อผิดพลาด",
       "ignoredIssueBuilder": "คุณได้ละเลยข้อผิดพลาดในชั้นข้อมูลนี้ โหลดบิวเดอร์นี้อีกครั้งเพื่อตรวจสอบข้อผิดพลาด"
     },
@@ -450,18 +451,26 @@ define({
       "secondValueC": "แท็บ",
       "thirdTitle": "maps"
     },
+    "cascade": {
+      "firstTitle": "ก้_sections___ษฺ",
+      "secondTitle": "ก้_maps__ษฺ"
+    },
     "swipeSpyglass": {
-      "firstTitle": "จุดที่สนใจ",
+      "firstTitle": "ก้_points of interest______ษฺ",
       "secondTitle": "รูปแบบ",
       "secondValueA": "เลื่อน",
       "secondValueB": "กล้องส่องทางไกล",
       "thirdTitle": "maps"
     },
     "crowdsource": {
-      "firstTitle": "การมีส่วนร่วม",
-      "secondTitle": "รูปแบบ",
-      "secondValueA": "แผนด้านข้าง",
-      "secondValueB": "ซ้อนกัน",
+      "firstTitle": "ก้_contributions_____ษฺ",
+      "secondTitle": "ก้_basemap___ษฺ",
+      "secondValueLoading": "ก้_Loading____ษฺ...",
+      "secondValueUnknown": "ก้_unknown___ษฺ"
+    },
+    "shortlist": {
+      "firstTitle": "ก้_places___ษฺ",
+      "secondTitle": "ก้_tabs__ษฺ",
       "thirdTitle": "แผนที่ฐาน",
       "thirdValueLoading": "กำลังโหลด...",
       "thirdValueUnknown": "ไม่ทราบ"

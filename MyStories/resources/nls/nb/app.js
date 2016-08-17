@@ -40,7 +40,7 @@ define({
   },
   "cantFindStories": {
     "whereAreStories": "Ser du ikke historien din?",
-    "notSeeExplanation": "I Mine historier finner du bare en liste over historiekart som er hostet i ArcGIS opprettet med applikasjonene {{STORY_MAP_TOUR}}, {{JOURNAL}}, {{MAP_SERIES}} eller {{SWIPE_SPYGLASS}}. Se {{FAQ}} hvis du vil ha mer informasjon.",
+    "notSeeExplanation": "å_My Stories will only list story maps hosted in ArcGIS ({{STORY_MAP_BASIC}} is currently not supported). See our {{FAQ}} for more information___________________________________________ø.",
     "faq": "Vanlige spørsmål",
     "followingStoriesToUpdate": "De følgende historiene, opprettet med tidlige versjoner av programmene våre, må oppdateres for at de skal bli oppført i My Stories:",
     "gettingStories": "Søker etter historier opprettet med tidlige versjoner av programmene våre som trenger å oppdateres...",
@@ -88,27 +88,16 @@ define({
     "layerPrivate": "Hvis du gjør laget privat, kommer det til å ødelegge historien"
   },
   "collectionList": {
-    "advocacy": "Interesse- og hjelpearbeid",
-    "architecture": "Arkitektur og design",
-    "conservation": "Naturforvaltning og bærekraftighet",
-    "culture": "Kultur",
-    "destinations": "Reisemål og turisme",
-    "disasters": "Katastrofer og katastrofehåndtering",
-    "economy": "Økonomi og utvikling",
-    "entertainment": "Underholdning",
-    "history": "Historikk",
-    "infrastructure": "Infrastruktur",
-    "marketing": "Markedsføring",
-    "nature": "Natur og miljø",
-    "news": "Nyheter og arrangementer",
-    "oceans": "Hav",
-    "parks": "Parker og rekreasjon",
+    "business": "å_Business and Economy_______ø",
+    "history": "å_History and Culture_______ø",
+    "inNews": "å_In The News____ø",
+    "infrastructure": "å_Infrastructure and Construction__________ø",
+    "nature": "å_Nature and Conservation________ø",
     "people": "Personer og samfunn",
-    "planning": "Planlegging og analyse",
-    "publicArt": "Offentlig kunst",
+    "planning": "å_Planning and Design_______ø",
     "science": "Vitenskap og teknologi",
-    "sport": "Sport",
-    "travelogues": "Reisebeskrivelser"
+    "sports": "å_Sports and Entertainment________ø",
+    "travel": "å_Travel and Recreation_______ø"
   },
   "types": {
     "custom": "Tilpasset",
@@ -227,6 +216,7 @@ define({
   "content": {
     "media": {
       "maps": "Kart",
+      "scenes": "å_Scenes___ø",
       "images": "Bilder",
       "videos": "Videoer",
       "webpages": "Websider",
@@ -244,22 +234,30 @@ define({
       "bullet": "Punkt",
       "tab": "Kategori",
       "accordion": "Seksjon",
-      "mapJournal": "Seksjon"
+      "mapJournal": "Seksjon",
+      "cascade": "å_Section___ø",
+      "crowdsource": "å_Contribution_____ø",
+      "shortlist": "å_Tab__ø"
     },
     "titleType": {
       "mapTour": "Undertekst",
       "mapJournal": "URL",
-      "mapSeries": "URL"
+      "mapSeries": "URL",
+      "cascade": "å_URL__ø",
+      "crowdsource": "å_URL__ø",
+      "shortlist": "å_URL__ø"
     },
     "actions": {
       "viewMap": "Vis kart",
       "editMap": "Rediger kart",
+      "editScene": "å_Edit Scene____ø",
       "fix": "Fiks",
       "viewLayer": "Vis lag"
     },
     "contentType": {
       "mainStage": "handling på hovedstadiet",
-      "sidePanel": "description"
+      "sidePanel": "description",
+      "introImage": "å_(cover page photo)______ø"
     },
     "notification": {
       "refreshExplanation": "Kontroller historien på nytt",
@@ -300,6 +298,7 @@ define({
       "publicDisabled": "En administrator har deaktivert offentlig deling",
       "orgDisabled": "En administrator har deaktivert deling i organisasjonen",
       "noMapName": "Kan ikke hente kartnavn",
+      "noSceneName": "å_Could Not Retrieve Scene________ø",
       "notPublic": "IKKE OFFENTLIG",
       "inaccessible": "IKKE TILGJENGELIG",
       "deleted": "SLETTET",
@@ -351,6 +350,8 @@ define({
       "cantScanThisTypeAlt": "Vi kan ikke kontrollere denne typen lag",
       "cantScanThisType": "Laget er ikke av en type vi kan kontrollere",
       "webpageNotScanned": "Websider kontrolleres ikke for problemer",
+      "sceneNotScanned": "å_Scenes are not currently checked for issues, please make sure that the scene and all of its layers are shared correctly_____________________________________ø",
+      "scenesNotScannedGlobally": "å_There are scenes in this story, and scenes are not currently checked for issues. Please make sure that the scenes and all of their layers are shared correctly________________________________________________ø",
       "ignoredIssue": "Du har ignorert en feil i dette laget. Last inn siden på nytt og kontroller historien en gang til for å se gjennom feilen",
       "ignoredIssueBuilder": "Du har ignorert en feil i dette laget. Last inn byggeverktøyet på nytt og kontroller feilen"
     },
@@ -450,18 +451,26 @@ define({
       "secondValueC": "kategoribasert",
       "thirdTitle": "kart"
     },
+    "cascade": {
+      "firstTitle": "å_sections___ø",
+      "secondTitle": "å_maps__ø"
+    },
     "swipeSpyglass": {
-      "firstTitle": "interessepunkter",
+      "firstTitle": "å_points of interest______ø",
       "secondTitle": "stil",
       "secondValueA": "sveiping",
       "secondValueB": "forstørrelsesglass",
       "thirdTitle": "kart"
     },
     "crowdsource": {
-      "firstTitle": "bidrag",
-      "secondTitle": "stil",
-      "secondValueA": "sidepanel",
-      "secondValueB": "stablet",
+      "firstTitle": "å_contributions_____ø",
+      "secondTitle": "å_basemap___ø",
+      "secondValueLoading": "å_Loading____ø...",
+      "secondValueUnknown": "å_unknown___ø"
+    },
+    "shortlist": {
+      "firstTitle": "å_places___ø",
+      "secondTitle": "å_tabs__ø",
       "thirdTitle": "bakgrunnskart",
       "thirdValueLoading": "Laster inn...",
       "thirdValueUnknown": "ukjent"

@@ -98,10 +98,10 @@ define({
     "noCommentsAvailableText": "Нет доступных записей",
     "remainingTextCount": "Символов осталось: ${0}",
     "showNoText": "Нет",
-    "selectAttachments": "Ж_Attachments____Я",
-    "selectFileText": "Ж_Browse___Я",
-    "attachmentSelectedMsg": "Ж_attachment(s) selected________Я",
-    "attachmentHeaderText": "Ж_Attachments____Я",
+    "selectAttachments": "Вложения",
+    "selectFileText": "Просмотр",
+    "attachmentSelectedMsg": "выбранные вложения",
+    "attachmentHeaderText": "Вложения",
     "addRecordText": "Ж_Add Record____Я"
   },
   "main": {

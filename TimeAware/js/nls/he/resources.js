@@ -33,6 +33,6 @@ define({
     "enableTimeMessageLink": "http://doc.arcgis.com/en/arcgis-online/create-maps/configure-time.htm#ESRI_SECTION1_F1D4A275B4AB4CC79198CBA9D0AD8727"
   },
   "histogram": {
-    "error": "במצב Snapshot, אין שכבות זמינות עם הגדרות זמן של ישויות במפת האינטרנט. הגדר את האפליקציה כך שתשתמש במפת אינטרנט אחרת או תשבית את אפשרות ההיסטוגרמות."
+    "error": "במצב Snapshot, אין שכבות זמינות עם הגדרות זמן של ישויות ב- web map. הגדר את האפליקציה כך שתשתמש ב- web map אחר או תשבית את אפשרות ההיסטוגרמות."
   }
 });

@@ -98,10 +98,10 @@ define({
     "noCommentsAvailableText": "Įrašų nėra",
     "remainingTextCount": "liko simbolių: ${0}",
     "showNoText": "Ne",
-    "selectAttachments": "Į_Attachments____š",
-    "selectFileText": "Į_Browse___š",
-    "attachmentSelectedMsg": "Į_attachment(s) selected________š",
-    "attachmentHeaderText": "Į_Attachments____š",
+    "selectAttachments": "Priedai",
+    "selectFileText": "Parinkti",
+    "attachmentSelectedMsg": "pasirinktas (-i) priedas (-ai)",
+    "attachmentHeaderText": "Priedai",
     "addRecordText": "Į_Add Record____š"
   },
   "main": {

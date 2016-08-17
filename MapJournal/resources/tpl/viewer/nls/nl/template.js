@@ -90,11 +90,12 @@ define({
       "autoplayExplain2": "Wanneer deze modus actief is, kan het verhaal worden afgespeeld en gepauzeerd en kan de navigatiesnelheid worden aangepast.",
       "linksupdated": "Links bijgewerkt!",
       "print": "Ĳ_Print___ä",
-      "printInstruction1": "Ĳ_Please wait for all the content to load before ${printing} this page______________________ä.",
-      "printInstruction2": "Ĳ_This page cannot be shared with others, instead share the ${link}_____________________ä.",
+      "printInstruction1": "Ĳ_Please wait for all the content to load before printing this page_____________________ä",
+      "printInstruction1a": "Ĳ_Some content may not print unless you enable \"Print Background Colors and Images\" in the Print Page setup dialog___________________________________ä",
+      "printInstruction2": "Ĳ_This page cannot be shared with others, instead share the ${link}_____________________ä",
       "link": "Ĳ_link to the story______ä",
-      "printing": "Ĳ_printing___ä",
-      "printWarning": "Ĳ_This is a printed version of a story map. Dynamic content such as videos and interactive maps is only available in the online version at ${link}_____________________________________________ä.",
+      "printOptPageBreak": "Ĳ_Begin each section on a new page___________ä",
+      "printWarning": "Ĳ_This is a printed version of a story map. Dynamic content such as videos and interactive maps is only available in the online version at ${link}____________________________________________ä",
       "printMSWarning": "Ĳ_link available only in online story____________ä",
       "printVideoWarning": "Ĳ_This video can be viewed in the online version of this story map____________________ä"
     }

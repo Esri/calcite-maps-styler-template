@@ -98,10 +98,10 @@ define({
     "noCommentsAvailableText": "Nejsou k dispozici žádné záznamy",
     "remainingTextCount": "Počet zbývajících znaků: ${0}",
     "showNoText": "Ne",
-    "selectAttachments": "Ř_Attachments____ů",
-    "selectFileText": "Ř_Browse___ů",
-    "attachmentSelectedMsg": "Ř_attachment(s) selected________ů",
-    "attachmentHeaderText": "Ř_Attachments____ů",
+    "selectAttachments": "Přílohy",
+    "selectFileText": "Procházet",
+    "attachmentSelectedMsg": "příloh vybráno",
+    "attachmentHeaderText": "Přílohy",
     "addRecordText": "Ř_Add Record____ů"
   },
   "main": {

@@ -12,13 +12,13 @@ define({
     },
     "errors": {
       "boxTitle": "Ein Fehler ist aufgetreten",
-      "portalSelf": "Schwerwiegender Fehler: Die Portalkonfiguration konnte nicht abgerufen werden",
+      "portalSelf": "Schwerwiegender Fehler: Die Portalkonfiguration konnte nicht abgerufen werden.",
       "invalidConfig": "Schwerwiegender Fehler: Ungültige Konfiguration",
       "invalidConfigOwner": "Schwerwiegender Fehler: Ungültige Konfiguration (autorisierter Benutzer erforderlich)",
       "invalidConfigNoWebmap": "Schwerwiegender Fehler: Ungültige Konfiguration (Webkarte oder Anwendungskennung nicht in \"index.html\" angegeben)",
       "invalidConfigNoAppDev": "In den URL-Parametern (?appid= oder ?webmap=) ist keine Kennung einer Web Mapping-Anwendung und keine Webkarte angegeben. Im Entwicklungsmodus wird die appid- und webmap-Konfiguration in der Datei index.html ignoriert.",
       "createMap": "Karte kann nicht erstellt werden",
-      "invalidApp": "Schwerwiegender Fahler: Die Story kann nicht geladen werden",
+      "invalidApp": "Schwerwiegender Fahler: Die Story kann nicht geladen werden.",
       "noLayer": "Die Webkarte enthält keinen gültigen Daten-Layer für Map Tour.",
       "noLayerMobile": "Der Map Tour Builder wird bei dieser Anzeigegröße nicht unterstützt. Ändern Sie nach Möglichkeit die Browser-Größe, um auf den Builder zuzugreifen, oder erstellen Sie Ihre Story auf einem Gerät mit größerem Bildschirm.",
       "noLayerMobile2": "Halten Sie das Gerät im Querformat, wenn Sie den Map Tour Builder verwenden.",
@@ -270,7 +270,7 @@ define({
       "uploadPicAndThumb": "Übernehmen"
     },
     "headerJS": {
-      "editMe": "Edit me!",
+      "editMe": "Bearbeiten!",
       "templateTitle": "Vorlagentitel festlegen",
       "templateSubtitle": "Untertitel der Vorlage festlegen"
     },
@@ -370,7 +370,7 @@ define({
       "header": "Geben Sie einen YouTube-Benutzernamen ein, um nach öffentlich freigegebenen Videos zu suchen.",
       "pageInputLbl": "YouTube-Benutzername eingeben",
       "lookupMsgError": "Benutzer nicht gefunden",
-      "howToFind": "How to find a YouTube user name",
+      "howToFind": "So finden Sie einen YouTube-Benutzernamen",
       "howToFind2": "Benutzername wird unter Videos angezeigt",
       "found": "Gefunden",
       "noData": "Keine öffentlichen Videos gefunden"
@@ -510,8 +510,8 @@ define({
     "share": {
       "firstSaveTitle": "Tour gespeichert",
       "manageStory": "Ihre Story verwalten",
-      "manageStoryA1": "Tipp: Mithilfe von %LINK1% können Sie Ihre Story auf Fehler überprüfen und die Freigabe der einzelnen Komponenten ändern. My Stories hilft Ihnen außerdem dabei, die Darstellung Ihrer Story in sozialen Netzwerken zu optimieren. Informationen zu weiteren nützlichen Features von My Stories finden Sie in diesen %LINK2%.",
-      "manageStoryA1V1": "My Stories",
+      "manageStoryA1": "Tipp: Mithilfe von %LINK1% können Sie Ihre Story auf Fehler überprüfen und die Freigabe der einzelnen Komponenten ändern.\" Eigene Storys\"  hilft Ihnen außerdem dabei, die Darstellung Ihrer Story in sozialen Netzwerken zu optimieren. Informationen zu weiteren nützlichen Features von \" Eigene Storys\"  finden Sie in diesen %LINK2%.",
+      "manageStoryA1V1": "Eigene Storys",
       "manageStoryA1V2": "Blog-Postings",
       "shareTitle": "Freigeben Ihrer Tour",
       "sharePrivateHeader": "Ihre Tour ist nicht freigegeben. Möchten Sie sie freigeben?",
@@ -543,7 +543,7 @@ define({
       "panel2q2": "Elementtitel",
       "panel3": "Wenn Sie das Aussehen Ihrer Story in den Social Media zusätzlich verbessern möchten, fügen Sie mithilfe von ${MYSTORIES} eine Zusammenfassung und eine Miniaturansicht hinzu.",
       "panel4": "Für diese Story keine Warnmeldung mehr anzeigen",
-      "mystories": "My Stories",
+      "mystories": "Eigene Storys",
       "btnSave": "Speichern"
     }
   }

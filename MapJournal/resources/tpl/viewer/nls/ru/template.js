@@ -90,11 +90,12 @@ define({
       "autoplayExplain2": "Когда активен данный режим, там есть элементы управления для включения/остановки воспроизведения истории и установки скорости перемещения.",
       "linksupdated": "Ссылки обновлены!",
       "print": "Ж_Print___Я",
-      "printInstruction1": "Ж_Please wait for all the content to load before ${printing} this page______________________Я.",
-      "printInstruction2": "Ж_This page cannot be shared with others, instead share the ${link}_____________________Я.",
+      "printInstruction1": "Ж_Please wait for all the content to load before printing this page_____________________Я",
+      "printInstruction1a": "Ж_Some content may not print unless you enable \"Print Background Colors and Images\" in the Print Page setup dialog___________________________________Я",
+      "printInstruction2": "Ж_This page cannot be shared with others, instead share the ${link}_____________________Я",
       "link": "Ж_link to the story______Я",
-      "printing": "Ж_printing___Я",
-      "printWarning": "Ж_This is a printed version of a story map. Dynamic content such as videos and interactive maps is only available in the online version at ${link}_____________________________________________Я.",
+      "printOptPageBreak": "Ж_Begin each section on a new page___________Я",
+      "printWarning": "Ж_This is a printed version of a story map. Dynamic content such as videos and interactive maps is only available in the online version at ${link}____________________________________________Я",
       "printMSWarning": "Ж_link available only in online story____________Я",
       "printVideoWarning": "Ж_This video can be viewed in the online version of this story map____________________Я"
     }

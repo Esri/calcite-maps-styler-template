@@ -98,10 +98,10 @@ define({
     "noCommentsAvailableText": "Inga poster tillgängliga",
     "remainingTextCount": "${0} tecken återstår",
     "showNoText": "Nej",
-    "selectAttachments": "Å_Attachments____ö",
-    "selectFileText": "Å_Browse___ö",
-    "attachmentSelectedMsg": "Å_attachment(s) selected________ö",
-    "attachmentHeaderText": "Å_Attachments____ö",
+    "selectAttachments": "Bilagor",
+    "selectFileText": "Bläddra",
+    "attachmentSelectedMsg": "bilagor markerade",
+    "attachmentHeaderText": "Bilagor",
     "addRecordText": "Å_Add Record____ö"
   },
   "main": {

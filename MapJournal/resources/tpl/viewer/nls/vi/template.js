@@ -90,11 +90,12 @@ define({
       "autoplayExplain2": "Khi chế độ này được kích hoạt, có các nút điều khiển để phát/tạm dừng câu chuyện và điều chỉnh tốc độ điều hướng.",
       "linksupdated": "Liên kết đã được cập nhật!",
       "print": "Đ_Print___ớ",
-      "printInstruction1": "Đ_Please wait for all the content to load before ${printing} this page______________________ớ.",
-      "printInstruction2": "Đ_This page cannot be shared with others, instead share the ${link}_____________________ớ.",
+      "printInstruction1": "Đ_Please wait for all the content to load before printing this page_____________________ớ",
+      "printInstruction1a": "Đ_Some content may not print unless you enable \"Print Background Colors and Images\" in the Print Page setup dialog___________________________________ớ",
+      "printInstruction2": "Đ_This page cannot be shared with others, instead share the ${link}_____________________ớ",
       "link": "Đ_link to the story______ớ",
-      "printing": "Đ_printing___ớ",
-      "printWarning": "Đ_This is a printed version of a story map. Dynamic content such as videos and interactive maps is only available in the online version at ${link}_____________________________________________ớ.",
+      "printOptPageBreak": "Đ_Begin each section on a new page___________ớ",
+      "printWarning": "Đ_This is a printed version of a story map. Dynamic content such as videos and interactive maps is only available in the online version at ${link}____________________________________________ớ",
       "printMSWarning": "Đ_link available only in online story____________ớ",
       "printVideoWarning": "Đ_This video can be viewed in the online version of this story map____________________ớ"
     }

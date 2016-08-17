@@ -98,10 +98,10 @@ define({
     "noCommentsAvailableText": "Không có bản ghi nào",
     "remainingTextCount": "Còn ${0} ký tự",
     "showNoText": "Không",
-    "selectAttachments": "Đ_Attachments____ớ",
-    "selectFileText": "Đ_Browse___ớ",
-    "attachmentSelectedMsg": "Đ_attachment(s) selected________ớ",
-    "attachmentHeaderText": "Đ_Attachments____ớ",
+    "selectAttachments": "Tệp đính kèm",
+    "selectFileText": "Duyệt",
+    "attachmentSelectedMsg": "(các) tệp đính kèm được chọn",
+    "attachmentHeaderText": "Tệp đính kèm",
     "addRecordText": "Đ_Add Record____ớ"
   },
   "main": {

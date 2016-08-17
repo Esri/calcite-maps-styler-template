@@ -98,10 +98,10 @@ define({
     "noCommentsAvailableText": "ไม่มีเรคคอร์ทื่ใช้งานได้",
     "remainingTextCount": "${0} ตัวอักษร ที่เหลือ",
     "showNoText": "ไม่",
-    "selectAttachments": "ก้_Attachments____ษฺ",
-    "selectFileText": "ก้_Browse___ษฺ",
-    "attachmentSelectedMsg": "ก้_attachment(s) selected________ษฺ",
-    "attachmentHeaderText": "ก้_Attachments____ษฺ",
+    "selectAttachments": "แนบ",
+    "selectFileText": "ค้นหา",
+    "attachmentSelectedMsg": "เลือกไฟล์แนบ",
+    "attachmentHeaderText": "แนบ",
     "addRecordText": "ก้_Add Record____ษฺ"
   },
   "main": {

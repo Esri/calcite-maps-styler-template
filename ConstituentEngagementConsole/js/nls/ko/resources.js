@@ -98,10 +98,10 @@ define({
     "noCommentsAvailableText": "레코드를 사용할 수 없음",
     "remainingTextCount": "${0}자 남음",
     "showNoText": "아니요",
-    "selectAttachments": "한_Attachments____빠",
-    "selectFileText": "한_Browse___빠",
-    "attachmentSelectedMsg": "한_attachment(s) selected________빠",
-    "attachmentHeaderText": "한_Attachments____빠",
+    "selectAttachments": "첨부 파일",
+    "selectFileText": "찾아보기",
+    "attachmentSelectedMsg": "첨부 파일이 선택됨",
+    "attachmentHeaderText": "첨부 파일",
     "addRecordText": "한_Add Record____빠"
   },
   "main": {

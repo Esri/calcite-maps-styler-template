@@ -14,7 +14,7 @@ define({
         "starting": "מתחיל",
         "performingAnalysis": "מבצע ניתוח...",
         "checkLayerName": "מחפש שם שכבה... ",
-        "addingLayer": "מוסיף שכבה למפת אינטרנט ",
+        "addingLayer": "מוסיף שכבה ל- webmap ",
         "layerNameExist": "שם השכבה כבר קיים.",
         "clickOnSave": " לחץ על לחצן 'שמור' כדי לטעון מחדש את האפליקציה.",
         "clickOnOk": " לחץ על לחצן 'אישור' כדי לנסות שוב.",
@@ -30,7 +30,7 @@ define({
         "shareFailed": "שיתוף שכבה מועשרת נכשל. נסה שוב.",
         "refreshServiceFailed": "רענון שכבה נכשל. נסה שוב.",
         "layerJsonFailed": "יצירת JSON עבור השכבה נכשלה. נסה שוב.",
-        "addToWebmapFailed": "הוספת שכבה למפת אינטרנט נכשלה. נסה שוב.",
+        "addToWebmapFailed": "הוספת שכבה ל- webmap נכשלה. נסה שוב.",
         "bufferAreaHelpText": "הזן ערך קטן מאשר ",
         "invalidBufferInput": "הערך שהוזן אינו חוקי.",
         "emptyBufferInput": "בחר ערך תקף."

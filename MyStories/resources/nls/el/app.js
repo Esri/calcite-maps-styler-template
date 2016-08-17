@@ -40,7 +40,7 @@ define({
   },
   "cantFindStories": {
     "whereAreStories": "Δεν βλέπετε την αφήγησή σας;",
-    "notSeeExplanation": "Η ενότητα \"Οι αφηγήσεις μου\" παραθέτει μόνο τους αφηγηματικούς χάρτες που φιλοξενούνται στο ArcGIS Online και δημιουργήθηκαν με τις εφαρμογές {{STORY_MAP_TOUR}}, {{JOURNAL}}, {{MAP_SERIES}} ή {{SWIPE_SPYGLASS}}. Για περισσότερες πληροφορίες, ανατρέξτε στις {{FAQ}} μας.",
+    "notSeeExplanation": "Đ_My Stories will only list story maps hosted in ArcGIS ({{STORY_MAP_BASIC}} is currently not supported). See our {{FAQ}} for more information___________________________________________ớ.",
     "faq": "Συνήθεις ερωτήσεις",
     "followingStoriesToUpdate": "Οι παρακάτω αφηγήσεις δημιουργήθηκαν με πρώιμες εκδόσεις των εφαρμογών μας και πρέπει να ενημερωθούν για να εμφανιστούν στην ενότητα \"Οι αφηγήσεις μου\":",
     "gettingStories": "Αναζήτηση για αφηγήσεις που δημιουργήθηκαν με πρώιμες εκδόσεις των εφαρμογών μας και πρέπει να ενημερωθούν...",
@@ -88,27 +88,16 @@ define({
     "layerPrivate": "Ο ορισμός του θεματικού επιπέδου σας ως ιδιωτικού θα διακόψει την αφήγησή σας"
   },
   "collectionList": {
-    "advocacy": "Συνηγορία και Δραστηριότητες προβολής",
-    "architecture": "Αρχιτεκτονική και σχεδίαση",
-    "conservation": "Διατήρηση και βιωσιμότητα",
-    "culture": "Πολιτισμός",
-    "destinations": "Προορισμοί και τουρισμός",
-    "disasters": "Καταστροφές και διάσωση",
-    "economy": "Οικονομία και ανάπτυξη",
-    "entertainment": "Ψυχαγωγία",
-    "history": "Ιστορία",
-    "infrastructure": "Υποδομές",
-    "marketing": "Μάρκετινγκ",
-    "nature": "Φύση και περιβάλλον",
-    "news": "Ειδήσεις και γεγονότα",
-    "oceans": "Ωκεανοί",
-    "parks": "Πάρκα και αναψυχή",
+    "business": "Đ_Business and Economy_______ớ",
+    "history": "Đ_History and Culture_______ớ",
+    "inNews": "Đ_In The News____ớ",
+    "infrastructure": "Đ_Infrastructure and Construction__________ớ",
+    "nature": "Đ_Nature and Conservation________ớ",
     "people": "Άνθρωποι και κοινωνία",
-    "planning": "Σχεδιασμός και ανάλυση",
-    "publicArt": "Δημόσιες τέχνες",
+    "planning": "Đ_Planning and Design_______ớ",
     "science": "Επιστήμη και τεχνολογία",
-    "sport": "Σπορ",
-    "travelogues": "Οδοιπορικά"
+    "sports": "Đ_Sports and Entertainment________ớ",
+    "travel": "Đ_Travel and Recreation_______ớ"
   },
   "types": {
     "custom": "Προσαρμοσμένη",
@@ -227,6 +216,7 @@ define({
   "content": {
     "media": {
       "maps": "Χάρτες",
+      "scenes": "Đ_Scenes___ớ",
       "images": "Εικόνες",
       "videos": "Βίντεο",
       "webpages": "Ιστοσελίδες",
@@ -244,22 +234,30 @@ define({
       "bullet": "Κουκκίδα",
       "tab": "Καρτέλα",
       "accordion": "Ενότητα",
-      "mapJournal": "Ενότητα"
+      "mapJournal": "Ενότητα",
+      "cascade": "Đ_Section___ớ",
+      "crowdsource": "Đ_Contribution_____ớ",
+      "shortlist": "Đ_Tab__ớ"
     },
     "titleType": {
       "mapTour": "Λεζάντα",
       "mapJournal": "URL",
-      "mapSeries": "URL"
+      "mapSeries": "URL",
+      "cascade": "Đ_URL__ớ",
+      "crowdsource": "Đ_URL__ớ",
+      "shortlist": "Đ_URL__ớ"
     },
     "actions": {
       "viewMap": "Προβολή χάρτη",
       "editMap": "Επεξεργασία χάρτη",
+      "editScene": "Đ_Edit Scene____ớ",
       "fix": "Διόρθωση",
       "viewLayer": "Προβολή θεματικού επιπέδου"
     },
     "contentType": {
       "mainStage": "ενέργεια κεντρικής σκηνής",
-      "sidePanel": "περιγραφή"
+      "sidePanel": "περιγραφή",
+      "introImage": "Đ_(cover page photo)______ớ"
     },
     "notification": {
       "refreshExplanation": "Επανέλεγχος της αφήγησής σας",
@@ -300,6 +298,7 @@ define({
       "publicDisabled": "Η δημόσια κοινοποίηση έχει απενεργοποιηθεί από κάποιον Διαχειριστή",
       "orgDisabled": "Η κοινοποίηση στον οργανισμό σας έχει απενεργοποιηθεί από κάποιον Διαχειριστή",
       "noMapName": "Δεν ήταν δυνατή η ανάκτηση του ονόματος του χάρτη",
+      "noSceneName": "Đ_Could Not Retrieve Scene________ớ",
       "notPublic": "ΜΗ ΔΗΜΟΣΙΟ",
       "inaccessible": "ΧΩΡΙΣ ΔΥΝΑΤΟΤΗΤΑ ΠΡΟΣΒΑΣΗΣ",
       "deleted": "ΔΙΑΓΡΑΦΗΚΕ",
@@ -351,6 +350,8 @@ define({
       "cantScanThisTypeAlt": "Δεν μπορούμε να ελέγξουμε αυτόν τον τύπο θεματικού επιπέδου",
       "cantScanThisType": "Το θεματικό επίπεδο δεν είναι τύπου που μπορούμε να ελέγξουμε",
       "webpageNotScanned": "Οι ιστοσελίδες δεν ελέγχονται για προβλήματα",
+      "sceneNotScanned": "Đ_Scenes are not currently checked for issues, please make sure that the scene and all of its layers are shared correctly_____________________________________ớ",
+      "scenesNotScannedGlobally": "Đ_There are scenes in this story, and scenes are not currently checked for issues. Please make sure that the scenes and all of their layers are shared correctly________________________________________________ớ",
       "ignoredIssue": "Έχετε παραβλέψει ένα σφάλμα σε αυτό το επίπεδο. Φορτώστε εκ νέου τη σελίδα και ελέγξτε ξανά αυτήν την αφήγηση για την αναθεώρηση του σφάλματος",
       "ignoredIssueBuilder": "Έχετε παραβλέψει ένα σφάλμα σε αυτό το επίπεδο. Επαναφορτώστε το Eργαλείο δημιουργίας για να ελέγξετε ξανά αυτό το σφάλμα"
     },
@@ -450,18 +451,26 @@ define({
       "secondValueC": "με καρτέλες",
       "thirdTitle": "χάρτες"
     },
+    "cascade": {
+      "firstTitle": "Đ_sections___ớ",
+      "secondTitle": "Đ_maps__ớ"
+    },
     "swipeSpyglass": {
-      "firstTitle": "σημεία ενδιαφέροντος",
+      "firstTitle": "Đ_points of interest______ớ",
       "secondTitle": "στυλ",
       "secondValueA": "swipe",
       "secondValueB": "spyglass",
       "thirdTitle": "χάρτες"
     },
     "crowdsource": {
-      "firstTitle": "συνεισφορές",
-      "secondTitle": "στυλ",
-      "secondValueA": "πλαϊνό πλαίσιο",
-      "secondValueB": "σε στοίβες",
+      "firstTitle": "Đ_contributions_____ớ",
+      "secondTitle": "Đ_basemap___ớ",
+      "secondValueLoading": "Đ_Loading____ớ...",
+      "secondValueUnknown": "Đ_unknown___ớ"
+    },
+    "shortlist": {
+      "firstTitle": "Đ_places___ớ",
+      "secondTitle": "Đ_tabs__ớ",
       "thirdTitle": "υπόβαθρο",
       "thirdValueLoading": "Φόρτωση...",
       "thirdValueUnknown": "άγνωστο"

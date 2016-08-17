@@ -98,10 +98,10 @@ define({
     "noCommentsAvailableText": "Ingen tilgjengelige poster",
     "remainingTextCount": "${0} tegn gjenstår",
     "showNoText": "Nei",
-    "selectAttachments": "å_Attachments____ø",
-    "selectFileText": "å_Browse___ø",
-    "attachmentSelectedMsg": "å_attachment(s) selected________ø",
-    "attachmentHeaderText": "å_Attachments____ø",
+    "selectAttachments": "Vedlegg",
+    "selectFileText": "Bla gjennom",
+    "attachmentSelectedMsg": "vedlegg valgt",
+    "attachmentHeaderText": "Vedlegg",
     "addRecordText": "å_Add Record____ø"
   },
   "main": {

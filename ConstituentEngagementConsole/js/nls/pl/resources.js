@@ -24,7 +24,7 @@ define({
     "created": "Data utworzenia",
     "modified": "Ostatnia modyfikacja",
     "description": "Opis",
-    "snippet": "Summary",
+    "snippet": "Podsumowanie",
     "licenseInfo": "Ograniczenia dostępu i użytkowania",
     "accessInformation": "Udostępniający zasoby",
     "tags": "Tags",
@@ -98,10 +98,10 @@ define({
     "noCommentsAvailableText": "Brak dostępnych rekordów",
     "remainingTextCount": "Pozostało znaków: ${0}",
     "showNoText": "Nie",
-    "selectAttachments": "ł_Attachments____ą",
-    "selectFileText": "ł_Browse___ą",
-    "attachmentSelectedMsg": "ł_attachment(s) selected________ą",
-    "attachmentHeaderText": "ł_Attachments____ą",
+    "selectAttachments": "Załączniki",
+    "selectFileText": "Przeglądaj",
+    "attachmentSelectedMsg": "wybrany(-e/-ych) załącznik(-i/-ów)",
+    "attachmentHeaderText": "Załączniki",
     "addRecordText": "ł_Add Record____ą"
   },
   "main": {

@@ -36,10 +36,10 @@ define({
       "learn": "Į_learn more____š"
     },
     "imageSelectorPicasa": {
-      "userInputLbl": "E. pašto arba Picasa / Google+ ID",
+      "userInputLbl": "Į_Email or Picasa id______š",
       "signInMsg2": "Paskyra nerasta",
-      "howToFind": "Kaip surasti Picasa arba Google+ paskyros ID",
-      "howToFind2": "Nukopijuokite skaičius tarp pirmo ir antro '/' bet kuriame Picasa ar G+ puslapyje"
+      "howToFind": "Į_How to find a Picasa id________š",
+      "howToFind2": "Į_Copy digits between the first and second '/' of any Picasa page____________________š"
     },
     "videoSelectorCommon": {
       "check": "Tikrinti",
@@ -105,8 +105,8 @@ define({
       "unloadLbl": "Iškelti, kai skaitytojas palieka šią dalį",
       "unloadHelp": "Jeigu tinklalapis turi garsinės arba vaizdinės medijos, palikite šią parinktį pažymėtą, kad turinys nebūtų leidžiamas, kai skaitytojas nutolsta. Parinktį pažymėkite, jeigu, pvz., norite leisti garso takelį skaitytojui keliaujant per pasakojimą.<br />Jeigu tinklalapis yra aplikacija, pašalinkite žymę, kad skaitytojui sugrįžus pasakojimas nebūtų įkeltas iš naujo.",
       "embedProtocolLabel": "Į_Load page over a secure connection (HTTPS)______________š",
-      "embedProtocolWarning1": "Į_As your story is configured to load over a secure connection, it is mandatory that all embedded page use a secure connection. If the page does not load it may be because the page is not available over a secure connection or that this page cannot be embedded (some websites restrict embedding)_________________________________________________________________________________________š.",
-      "embedProtocolWarning2": "Į_As your story is configured to load over an insecure connection, you can chose to load this page over a secure or insecure connection. We recommend that you always use a secure connection. If the page does not load it may be because the page is not available over the connection mode you selected or that this page cannot be embedded (some websites restrict embedding)________________________________________________________________________________________________________________š."
+      "embedProtocolWarning1": "Į_Your story is configured to load over a secure connection (https), so web page show in the story must also use a secure connection. If the page does not load it may be because it is not available over a secure connection or that it cannot be included in your story (some websites restrict this). You may need to create a hyperlink to open the page in a new browser tab________________________________________________________________________________________________________________š.",
+      "embedProtocolWarning2": "Į_Your story is configured to load over an insecure connection (http), so you can choose to load this page over a secure (recommended) or insecure connection. If the page does not load, it may be because it does not support the connection type you selected or that it cannot be included in your story (some websites restrict this). You may need to create a hyperlink to open the page in a new browser tab__________________________________________________________________________________________________________________________š."
     },
     "editorActionGeocode": {
       "lblTitle": "Raskite adresą arba vietą",

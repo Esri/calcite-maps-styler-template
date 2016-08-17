@@ -22,7 +22,7 @@ define({
       "socialLinksLabel": "Hiển thị liên kết chia sẻ ở cuối mỗi phần",
       "socialLinksDescr": "Điều này cho phép người đọc tham chiếu và thúc đẩy các phần cụ thể của %TPL_NAME%. Ví dụ: nếu bạn sử dụng một biểu tượng trong phần chia sẻ, người đọc sẽ dừng ở phần %TPL_NAME% cụ thể đó chứ không phải là khi bắt đầu câu chuyện của bạn. Người đọc có thể sử dụng liên kết truyền thông xã hội trong phần tiêu đề để thúc đẩy toàn bộ %TPL_NAME% (tab đầu trang) và dừng tại thời điểm bắt đầu %TPL_NAME%.",
       "socialDisabled": "Đ_This feature is only available with Floating Panel layout__________________ớ",
-      "socialWarning": "Đ_Your story is using the Side Panel layout and we now recommend to only enable that option with Floating Panel layout. This prevent issues where the panel may not scroll to the desired section for narratives that contains images. You can continue to use that option but if you disable it, it will only be available with Floating Panel layout_______________________________________________________________________________________________________ớ."
+      "socialWarning": "Đ_Your story is using Side Panel layout, but we now recommend using this option only with Floating Panel layout to avoid an issue where the panel may not position itself to the desired section for narratives with images. You may continue to use this option, but if you disable it, it will then only be available when using Floating Panel layout________________________________________________________________________________________________________ớ."
     },
     "settingsLayoutFonts": {
       "title": "Phông chữ",

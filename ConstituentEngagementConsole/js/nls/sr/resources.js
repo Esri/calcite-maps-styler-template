@@ -98,10 +98,10 @@ define({
     "noCommentsAvailableText": "Nema dostupnih vrednosti",
     "remainingTextCount": "preostalo ${0} karaktera",
     "showNoText": "Ne",
-    "selectAttachments": "Č_Attachments____ž",
-    "selectFileText": "Č_Browse___ž",
-    "attachmentSelectedMsg": "Č_attachment(s) selected________ž",
-    "attachmentHeaderText": "Č_Attachments____ž",
+    "selectAttachments": "Prilozi",
+    "selectFileText": "Pregledaj",
+    "attachmentSelectedMsg": "izabrani prilog/prilozi",
+    "attachmentHeaderText": "Prilozi",
     "addRecordText": "Č_Add Record____ž"
   },
   "main": {

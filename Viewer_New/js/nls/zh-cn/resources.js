@@ -34,9 +34,9 @@ define({
     },
     "print": {
       "layouts": {
-        "label1": "景观",
+        "label1": "横向",
         "label2": "纵向",
-        "label3": "景观",
+        "label3": "横向",
         "label4": "纵向"
       },
       "legend": "向输出添加图例",

@@ -74,7 +74,7 @@ define({
       "lblUrl": "Webseiten-URL",
       "lblEmbed": "Eingebundener Code",
       "lblOR": "ODER",
-      "lblError1": "Fehler - löschen Sie den Inhalt eines der beiden Eingabefelder.",
+      "lblError1": "Fehler. Löschen Sie den Inhalt eines der beiden Eingabefelder.",
       "lblError2": "Der eingebettete Code darf nur ein %IFRAMETAG% enthalten",
       "configure": "Konfigurieren"
     },
@@ -102,21 +102,21 @@ define({
       "lblPosition3Explain": "(Zuschneiden nicht möglich)",
       "lblPosition3Explain2": "(Breite wird immer an den Bereich angepasst)",
       "lblPosition4Explain": "(Verzerren möglich)",
-      "unloadLbl": "Unload when reader navigates away",
+      "unloadLbl": "Anhalten, wenn Benutzer zu einem anderen Ort navigiert",
       "unloadHelp": "Wenn die Webseite über Audio- oder Video-Medien verfügt, lassen Sie diese Option aktiviert, um die Wiedergabe dieses Inhalts zu beenden, wenn der Leser zu einem anderen Ort navigiert. Deaktivieren Sie sie, um beispielsweise die Wiedergabe eines Soundtracks fortzusetzen, während der Leser durch die Story blättert.<br />Wenn es sich bei der Webseite um eine Anwendung handelt, deaktivieren Sie diese Option, damit die Story nicht erneut geladen wird, wenn der Leser zu ihr zurückkehrt.",
       "embedProtocolLabel": "ä_Load page over a secure connection (HTTPS)______________Ü",
       "embedProtocolWarning1": "ä_Your story is configured to load over a secure connection (https), so web page show in the story must also use a secure connection. If the page does not load it may be because it is not available over a secure connection or that it cannot be included in your story (some websites restrict this). You may need to create a hyperlink to open the page in a new browser tab________________________________________________________________________________________________________________Ü.",
       "embedProtocolWarning2": "ä_Your story is configured to load over an insecure connection (http), so you can choose to load this page over a secure (recommended) or insecure connection. If the page does not load, it may be because it does not support the connection type you selected or that it cannot be included in your story (some websites restrict this). You may need to create a hyperlink to open the page in a new browser tab__________________________________________________________________________________________________________________________Ü."
     },
     "editorActionGeocode": {
-      "lblTitle": "Locate an address or place",
-      "mapMarkerExplain": "User will see a map marker when clicking the link"
+      "lblTitle": "Adresse oder Ort suchen",
+      "mapMarkerExplain": "Beim Klicken auf den Link wird ein Karten-Marker angezeigt."
     },
     "editorActionMedia": {
-      "lblTitle": "Change the Main Stage content"
+      "lblTitle": "Inhalt der Hauptanzeige ändern"
     },
     "editorInlineMedia": {
-      "lblTitle": "Insert an image, video or web page"
+      "lblTitle": "Bild, Video oder Website einfügen"
     }
   }
 });

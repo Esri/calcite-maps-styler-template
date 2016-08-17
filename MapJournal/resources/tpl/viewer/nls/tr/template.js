@@ -90,11 +90,12 @@ define({
       "autoplayExplain2": "Bu etkin durumdayken hikayeyi oynatacak/duraklatacak ve gezinme hızını ayarlayacak kontroller vardır.",
       "linksupdated": "Bağlantılar güncellendi!",
       "print": "ı_Print___İ",
-      "printInstruction1": "ı_Please wait for all the content to load before ${printing} this page______________________İ.",
-      "printInstruction2": "ı_This page cannot be shared with others, instead share the ${link}_____________________İ.",
+      "printInstruction1": "ı_Please wait for all the content to load before printing this page_____________________İ",
+      "printInstruction1a": "ı_Some content may not print unless you enable \"Print Background Colors and Images\" in the Print Page setup dialog___________________________________İ",
+      "printInstruction2": "ı_This page cannot be shared with others, instead share the ${link}_____________________İ",
       "link": "ı_link to the story______İ",
-      "printing": "ı_printing___İ",
-      "printWarning": "ı_This is a printed version of a story map. Dynamic content such as videos and interactive maps is only available in the online version at ${link}_____________________________________________İ.",
+      "printOptPageBreak": "ı_Begin each section on a new page___________İ",
+      "printWarning": "ı_This is a printed version of a story map. Dynamic content such as videos and interactive maps is only available in the online version at ${link}____________________________________________İ",
       "printMSWarning": "ı_link available only in online story____________İ",
       "printVideoWarning": "ı_This video can be viewed in the online version of this story map____________________İ"
     }

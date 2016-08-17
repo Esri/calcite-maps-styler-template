@@ -90,11 +90,12 @@ define({
       "autoplayExplain2": "啟用此模式時，可使用控制項來播放/暫停故事和調整瀏覽速度。",
       "linksupdated": "已更新連結!",
       "print": "試_Print___驗",
-      "printInstruction1": "試_Please wait for all the content to load before ${printing} this page______________________驗.",
-      "printInstruction2": "試_This page cannot be shared with others, instead share the ${link}_____________________驗.",
+      "printInstruction1": "試_Please wait for all the content to load before printing this page_____________________驗",
+      "printInstruction1a": "試_Some content may not print unless you enable \"Print Background Colors and Images\" in the Print Page setup dialog___________________________________驗",
+      "printInstruction2": "試_This page cannot be shared with others, instead share the ${link}_____________________驗",
       "link": "試_link to the story______驗",
-      "printing": "試_printing___驗",
-      "printWarning": "試_This is a printed version of a story map. Dynamic content such as videos and interactive maps is only available in the online version at ${link}_____________________________________________驗.",
+      "printOptPageBreak": "試_Begin each section on a new page___________驗",
+      "printWarning": "試_This is a printed version of a story map. Dynamic content such as videos and interactive maps is only available in the online version at ${link}____________________________________________驗",
       "printMSWarning": "試_link available only in online story____________驗",
       "printVideoWarning": "試_This video can be viewed in the online version of this story map____________________驗"
     }

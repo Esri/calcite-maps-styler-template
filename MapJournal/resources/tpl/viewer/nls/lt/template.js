@@ -90,11 +90,12 @@ define({
       "autoplayExplain2": "Kai šis režimas aktyvus, yra valdikliai, kuriais galima leisti / pristabdyti pasakojimą ir reguliuoti naršymo greitį.",
       "linksupdated": "Nuorodos atnaujintos!",
       "print": "Į_Print___š",
-      "printInstruction1": "Į_Please wait for all the content to load before ${printing} this page______________________š.",
-      "printInstruction2": "Į_This page cannot be shared with others, instead share the ${link}_____________________š.",
+      "printInstruction1": "Į_Please wait for all the content to load before printing this page_____________________š",
+      "printInstruction1a": "Į_Some content may not print unless you enable \"Print Background Colors and Images\" in the Print Page setup dialog___________________________________š",
+      "printInstruction2": "Į_This page cannot be shared with others, instead share the ${link}_____________________š",
       "link": "Į_link to the story______š",
-      "printing": "Į_printing___š",
-      "printWarning": "Į_This is a printed version of a story map. Dynamic content such as videos and interactive maps is only available in the online version at ${link}_____________________________________________š.",
+      "printOptPageBreak": "Į_Begin each section on a new page___________š",
+      "printWarning": "Į_This is a printed version of a story map. Dynamic content such as videos and interactive maps is only available in the online version at ${link}____________________________________________š",
       "printMSWarning": "Į_link available only in online story____________š",
       "printVideoWarning": "Į_This video can be viewed in the online version of this story map____________________š"
     }

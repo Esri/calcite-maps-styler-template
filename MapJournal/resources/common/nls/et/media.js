@@ -36,10 +36,10 @@ define({
       "learn": "Š_learn more____ä"
     },
     "imageSelectorPicasa": {
-      "userInputLbl": "e-post või Picasa/Google+ ID",
+      "userInputLbl": "Š_Email or Picasa id______ä",
       "signInMsg2": "Kontot ei leitud",
-      "howToFind": "Kuidas leida Picasa või Google+ konto ID-d",
-      "howToFind2": "Kopeeri numbrikohad esimese ja teise '/' vahelt Picasa või G+ lehelt"
+      "howToFind": "Š_How to find a Picasa id________ä",
+      "howToFind2": "Š_Copy digits between the first and second '/' of any Picasa page____________________ä"
     },
     "videoSelectorCommon": {
       "check": "Kontrolli",
@@ -105,8 +105,8 @@ define({
       "unloadLbl": "Laadi maha, kui lugeja liigub mujale",
       "unloadHelp": "Kui veebileht sisaldab audio- või videosisu, jätke see valik märgituks, et lõpetada selle sisu esitamine, kui lugeja liigub mujale. Tühjendage see valik näiteks siis, kui soovite, et heliriba esitataks samal ajal, kui lugeja läbi loo liigub.<br />Kui veebileht on rakendus, tühjendage see valik, et kasutaja naasmisel ei laaditaks lugu uuesti.",
       "embedProtocolLabel": "Š_Load page over a secure connection (HTTPS)______________ä",
-      "embedProtocolWarning1": "Š_As your story is configured to load over a secure connection, it is mandatory that all embedded page use a secure connection. If the page does not load it may be because the page is not available over a secure connection or that this page cannot be embedded (some websites restrict embedding)_________________________________________________________________________________________ä.",
-      "embedProtocolWarning2": "Š_As your story is configured to load over an insecure connection, you can chose to load this page over a secure or insecure connection. We recommend that you always use a secure connection. If the page does not load it may be because the page is not available over the connection mode you selected or that this page cannot be embedded (some websites restrict embedding)________________________________________________________________________________________________________________ä."
+      "embedProtocolWarning1": "Š_Your story is configured to load over a secure connection (https), so web page show in the story must also use a secure connection. If the page does not load it may be because it is not available over a secure connection or that it cannot be included in your story (some websites restrict this). You may need to create a hyperlink to open the page in a new browser tab________________________________________________________________________________________________________________ä.",
+      "embedProtocolWarning2": "Š_Your story is configured to load over an insecure connection (http), so you can choose to load this page over a secure (recommended) or insecure connection. If the page does not load, it may be because it does not support the connection type you selected or that it cannot be included in your story (some websites restrict this). You may need to create a hyperlink to open the page in a new browser tab__________________________________________________________________________________________________________________________ä."
     },
     "editorActionGeocode": {
       "lblTitle": "Märgi aadress või asukoht",

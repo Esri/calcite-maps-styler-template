@@ -90,11 +90,12 @@ define({
       "autoplayExplain2": "Cuando este modo está activado, hay disponibles controles para reproducir o detener la historia y para ajustar la velocidad de navegación.",
       "linksupdated": "Vínculos actualizados",
       "print": "á_Print___Ó",
-      "printInstruction1": "á_Please wait for all the content to load before ${printing} this page______________________Ó.",
-      "printInstruction2": "á_This page cannot be shared with others, instead share the ${link}_____________________Ó.",
+      "printInstruction1": "á_Please wait for all the content to load before printing this page_____________________Ó",
+      "printInstruction1a": "á_Some content may not print unless you enable \"Print Background Colors and Images\" in the Print Page setup dialog___________________________________Ó",
+      "printInstruction2": "á_This page cannot be shared with others, instead share the ${link}_____________________Ó",
       "link": "á_link to the story______Ó",
-      "printing": "á_printing___Ó",
-      "printWarning": "á_This is a printed version of a story map. Dynamic content such as videos and interactive maps is only available in the online version at ${link}_____________________________________________Ó.",
+      "printOptPageBreak": "á_Begin each section on a new page___________Ó",
+      "printWarning": "á_This is a printed version of a story map. Dynamic content such as videos and interactive maps is only available in the online version at ${link}____________________________________________Ó",
       "printMSWarning": "á_link available only in online story____________Ó",
       "printVideoWarning": "á_This video can be viewed in the online version of this story map____________________Ó"
     }

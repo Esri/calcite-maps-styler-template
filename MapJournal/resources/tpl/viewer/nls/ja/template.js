@@ -90,11 +90,12 @@ define({
       "autoplayExplain2": "このモードがアクティブの場合、ストーリーの再生/一時停止および再生速度の調整を行うコントロールが表示されます。",
       "linksupdated": "リンクが更新されました",
       "print": "須_Print___鷗",
-      "printInstruction1": "須_Please wait for all the content to load before ${printing} this page______________________鷗.",
-      "printInstruction2": "須_This page cannot be shared with others, instead share the ${link}_____________________鷗.",
+      "printInstruction1": "須_Please wait for all the content to load before printing this page_____________________鷗",
+      "printInstruction1a": "須_Some content may not print unless you enable \"Print Background Colors and Images\" in the Print Page setup dialog___________________________________鷗",
+      "printInstruction2": "須_This page cannot be shared with others, instead share the ${link}_____________________鷗",
       "link": "須_link to the story______鷗",
-      "printing": "須_printing___鷗",
-      "printWarning": "須_This is a printed version of a story map. Dynamic content such as videos and interactive maps is only available in the online version at ${link}_____________________________________________鷗.",
+      "printOptPageBreak": "須_Begin each section on a new page___________鷗",
+      "printWarning": "須_This is a printed version of a story map. Dynamic content such as videos and interactive maps is only available in the online version at ${link}____________________________________________鷗",
       "printMSWarning": "須_link available only in online story____________鷗",
       "printVideoWarning": "須_This video can be viewed in the online version of this story map____________________鷗"
     }

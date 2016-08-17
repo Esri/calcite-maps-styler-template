@@ -98,10 +98,10 @@ define({
     "noCommentsAvailableText": "لا توجد تسجيلات متاحة",
     "remainingTextCount": "يتبقى ${0} حرف",
     "showNoText": "لا",
-    "selectAttachments": "بيت_Attachments____لاحقة",
-    "selectFileText": "بيت_Browse___لاحقة",
-    "attachmentSelectedMsg": "بيت_attachment(s) selected________لاحقة",
-    "attachmentHeaderText": "بيت_Attachments____لاحقة",
+    "selectAttachments": "مرفقات",
+    "selectFileText": "مربع حوار",
+    "attachmentSelectedMsg": "المرفقات المحددة",
+    "attachmentHeaderText": "مرفقات",
     "addRecordText": "بيت_Add Record____لاحقة"
   },
   "main": {

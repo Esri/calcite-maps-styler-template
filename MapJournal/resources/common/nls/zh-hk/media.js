@@ -36,10 +36,10 @@ define({
       "learn": "試_learn more____驗"
     },
     "imageSelectorPicasa": {
-      "userInputLbl": "電子郵件或 Picasa/Google+ ID",
+      "userInputLbl": "試_Email or Picasa id______驗",
       "signInMsg2": "未找到帳戶",
-      "howToFind": "如何查詢 Picasa 或 Google+ 帳戶 ID",
-      "howToFind2": "複製任何 Picasa 或 G+ 頁面第一個和第二個 '/' 之間的數字"
+      "howToFind": "試_How to find a Picasa id________驗",
+      "howToFind2": "試_Copy digits between the first and second '/' of any Picasa page____________________驗"
     },
     "videoSelectorCommon": {
       "check": "勾選",
@@ -105,8 +105,8 @@ define({
       "unloadLbl": "讀者定位到其他部分時進行卸載",
       "unloadHelp": "如果網頁中包含音頻或影片介質，請將該選項選中以在讀者定位到其他部分時停止內容播放。取消勾選該選項可使讀者在瀏覽故事的同時持續播放音軌。<br />如果網頁是應用程式，請取消勾選該選項，這樣故事不必在讀者返回此部分時重新載入。",
       "embedProtocolLabel": "試_Load page over a secure connection (HTTPS)______________驗",
-      "embedProtocolWarning1": "試_As your story is configured to load over a secure connection, it is mandatory that all embedded page use a secure connection. If the page does not load it may be because the page is not available over a secure connection or that this page cannot be embedded (some websites restrict embedding)_________________________________________________________________________________________驗.",
-      "embedProtocolWarning2": "試_As your story is configured to load over an insecure connection, you can chose to load this page over a secure or insecure connection. We recommend that you always use a secure connection. If the page does not load it may be because the page is not available over the connection mode you selected or that this page cannot be embedded (some websites restrict embedding)________________________________________________________________________________________________________________驗."
+      "embedProtocolWarning1": "試_Your story is configured to load over a secure connection (https), so web page show in the story must also use a secure connection. If the page does not load it may be because it is not available over a secure connection or that it cannot be included in your story (some websites restrict this). You may need to create a hyperlink to open the page in a new browser tab________________________________________________________________________________________________________________驗.",
+      "embedProtocolWarning2": "試_Your story is configured to load over an insecure connection (http), so you can choose to load this page over a secure (recommended) or insecure connection. If the page does not load, it may be because it does not support the connection type you selected or that it cannot be included in your story (some websites restrict this). You may need to create a hyperlink to open the page in a new browser tab__________________________________________________________________________________________________________________________驗."
     },
     "editorActionGeocode": {
       "lblTitle": "定位地址或地點",

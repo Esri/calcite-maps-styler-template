@@ -22,7 +22,7 @@ define({
   },
   "sidebar_header": {
     "menuButtonTooltip": "הצג תפריט",
-    "signInButton": "הירשם",
+    "signInButton": "התחבר",
     "signInButtonTooltip": "התחבר",
     "signOutButton": "התנתק",
     "signOutButtonTooltip": "יציאה",

@@ -98,10 +98,10 @@ define({
     "noCommentsAvailableText": "Aucun enregistrement disponible",
     "remainingTextCount": "${0} caractère(s) restant(s)",
     "showNoText": "Non",
-    "selectAttachments": "æ_Attachments____Â",
-    "selectFileText": "æ_Browse___Â",
-    "attachmentSelectedMsg": "æ_attachment(s) selected________Â",
-    "attachmentHeaderText": "æ_Attachments____Â",
+    "selectAttachments": "Pièces jointes",
+    "selectFileText": "Parcourir",
+    "attachmentSelectedMsg": "pièce(s) jointe(s) sélectionnée(s)",
+    "attachmentHeaderText": "Pièces jointes",
     "addRecordText": "æ_Add Record____Â"
   },
   "main": {

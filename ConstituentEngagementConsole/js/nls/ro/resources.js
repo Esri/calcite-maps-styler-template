@@ -98,10 +98,10 @@ define({
     "noCommentsAvailableText": "Nu există înregistrări disponibile",
     "remainingTextCount": "${0} caractere rămase",
     "showNoText": "Nu",
-    "selectAttachments": "Ă_Attachments____ș",
-    "selectFileText": "Ă_Browse___ș",
-    "attachmentSelectedMsg": "Ă_attachment(s) selected________ș",
-    "attachmentHeaderText": "Ă_Attachments____ș",
+    "selectAttachments": "Ataşări",
+    "selectFileText": "Parcurgere",
+    "attachmentSelectedMsg": "ataşări selectate",
+    "attachmentHeaderText": "Ataşări",
     "addRecordText": "Ă_Add Record____ș"
   },
   "main": {

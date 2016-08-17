@@ -36,10 +36,10 @@ define({
       "learn": "ã_learn more____Ç"
     },
     "imageSelectorPicasa": {
-      "userInputLbl": "Email ou ID do Picasa/Google+",
+      "userInputLbl": "ã_Email or Picasa id______Ç",
       "signInMsg2": "Conta não encontrada",
-      "howToFind": "Como encontrar o ID de uma conta de Picasa ou Google+",
-      "howToFind2": "Copiar os dígitos que estão entre a primeira e a segunda barra ( / ) de qualquer página Picasa ou G+"
+      "howToFind": "ã_How to find a Picasa id________Ç",
+      "howToFind2": "ã_Copy digits between the first and second '/' of any Picasa page____________________Ç"
     },
     "videoSelectorCommon": {
       "check": "Verificar",
@@ -105,8 +105,8 @@ define({
       "unloadLbl": "Descarregue quando o leitor navegar para uma secção diferente",
       "unloadHelp": "Se a Página Web tiver media em áudio ou em vídeo, mantenha esta opção selecionada para que esse conteúdo pare de ser reproduzido quando navegar para fora do leitor. Desselecione-a, por exemplo, para manter uma banda sonora a tocar enquanto o leitor avança pela história.<br />Caso a página web seja uma aplicação, desselecione esta opção para que a história não seja recarregada se o leitor regressar.",
       "embedProtocolLabel": "ã_Load page over a secure connection (HTTPS)______________Ç",
-      "embedProtocolWarning1": "ã_As your story is configured to load over a secure connection, it is mandatory that all embedded page use a secure connection. If the page does not load it may be because the page is not available over a secure connection or that this page cannot be embedded (some websites restrict embedding)_________________________________________________________________________________________Ç.",
-      "embedProtocolWarning2": "ã_As your story is configured to load over an insecure connection, you can chose to load this page over a secure or insecure connection. We recommend that you always use a secure connection. If the page does not load it may be because the page is not available over the connection mode you selected or that this page cannot be embedded (some websites restrict embedding)________________________________________________________________________________________________________________Ç."
+      "embedProtocolWarning1": "ã_Your story is configured to load over a secure connection (https), so web page show in the story must also use a secure connection. If the page does not load it may be because it is not available over a secure connection or that it cannot be included in your story (some websites restrict this). You may need to create a hyperlink to open the page in a new browser tab________________________________________________________________________________________________________________Ç.",
+      "embedProtocolWarning2": "ã_Your story is configured to load over an insecure connection (http), so you can choose to load this page over a secure (recommended) or insecure connection. If the page does not load, it may be because it does not support the connection type you selected or that it cannot be included in your story (some websites restrict this). You may need to create a hyperlink to open the page in a new browser tab__________________________________________________________________________________________________________________________Ç."
     },
     "editorActionGeocode": {
       "lblTitle": "Localizar um endereço ou lugar",

@@ -98,10 +98,10 @@ define({
     "noCommentsAvailableText": "Keine Datensätze verfügbar",
     "remainingTextCount": "${0} Zeichen verbleiben",
     "showNoText": "Nein",
-    "selectAttachments": "ä_Attachments____Ü",
-    "selectFileText": "ä_Browse___Ü",
-    "attachmentSelectedMsg": "ä_attachment(s) selected________Ü",
-    "attachmentHeaderText": "ä_Attachments____Ü",
+    "selectAttachments": "Anlagen",
+    "selectFileText": "Durchsuchen",
+    "attachmentSelectedMsg": "Anlage(n) ausgewählt",
+    "attachmentHeaderText": "Anlagen",
     "addRecordText": "ä_Add Record____Ü"
   },
   "main": {

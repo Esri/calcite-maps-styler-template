@@ -98,10 +98,10 @@ define({
     "noCommentsAvailableText": "レコードがありません",
     "remainingTextCount": "${0} 文字が残っています",
     "showNoText": "なし",
-    "selectAttachments": "須_Attachments____鷗",
-    "selectFileText": "須_Browse___鷗",
-    "attachmentSelectedMsg": "須_attachment(s) selected________鷗",
-    "attachmentHeaderText": "須_Attachments____鷗",
+    "selectAttachments": "添付ファイル",
+    "selectFileText": "参照",
+    "attachmentSelectedMsg": "添付ファイルが選択されています",
+    "attachmentHeaderText": "添付ファイル",
     "addRecordText": "須_Add Record____鷗"
   },
   "main": {

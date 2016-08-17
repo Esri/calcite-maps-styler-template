@@ -39,7 +39,7 @@ define({
         "contentLabel": "我的内容",
         "favoritesLabel": "我的收藏夹"
       },
-      "title": "选择组",
+      "title": "选择群组",
       "searchTitle": "搜索",
       "ok": "确定",
       "cancel": "取消",

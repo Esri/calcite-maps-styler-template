@@ -15,7 +15,7 @@
  | limitations under the License.
  */
 define({
-  "tagHeaderText": "Tagi",
+  "tagHeaderText": "Atslēgas vārdi",
   "expandGroupDescText": "Vairāk",
   "shrinkGroupDescText": "Mazāk",
   "layoutText": "Izkārtojums",
@@ -42,7 +42,7 @@ define({
   "reviewText": "Komentāri",
   "itemDetailsLegendTab": "LEĢENDA",
   "itemDetailsInfoTab": "INFORMĀCIJA",
-  "tagsText": "Tagi",
+  "tagsText": "Atslēgas vārdi",
   "sizeText": "Lielums",
   "accessConstraintsText": "Piekļuves un izmantošanas ierobežojumi",
   "numberOfCommentsText": "Komentāri",
@@ -54,7 +54,7 @@ define({
   "clearBtnTitle": "Notīrīt",
   "addressSearchBtnTitle": "Adreses meklēšana",
   "fullScreenBtnTitle": "Pilnekrāna režīms",
-  "noLegendText": "Bez leģendas",
+  "noLegendText": "Bez apzīmējumiem",
   "sizeUnitKB": "KB",
   "sizeUnitMB": "MB",
   "itemUnavailableText": "Šajā ierīcē vienība nav pieejama.",

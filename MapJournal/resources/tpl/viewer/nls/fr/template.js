@@ -90,11 +90,12 @@ define({
       "autoplayExplain2": "Lorsque ce mode est actif, vous disposez de contrôles pour lire le récit ou le mettre en pause, ainsi que régler la vitesse de navigation.",
       "linksupdated": "Liens mis à jour",
       "print": "æ_Print___Â",
-      "printInstruction1": "æ_Please wait for all the content to load before ${printing} this page______________________Â.",
-      "printInstruction2": "æ_This page cannot be shared with others, instead share the ${link}_____________________Â.",
+      "printInstruction1": "æ_Please wait for all the content to load before printing this page_____________________Â",
+      "printInstruction1a": "æ_Some content may not print unless you enable \"Print Background Colors and Images\" in the Print Page setup dialog___________________________________Â",
+      "printInstruction2": "æ_This page cannot be shared with others, instead share the ${link}_____________________Â",
       "link": "æ_link to the story______Â",
-      "printing": "æ_printing___Â",
-      "printWarning": "æ_This is a printed version of a story map. Dynamic content such as videos and interactive maps is only available in the online version at ${link}_____________________________________________Â.",
+      "printOptPageBreak": "æ_Begin each section on a new page___________Â",
+      "printWarning": "æ_This is a printed version of a story map. Dynamic content such as videos and interactive maps is only available in the online version at ${link}____________________________________________Â",
       "printMSWarning": "æ_link available only in online story____________Â",
       "printVideoWarning": "æ_This video can be viewed in the online version of this story map____________________Â"
     }

@@ -98,10 +98,10 @@ define({
     "noCommentsAvailableText": "Nav pieejams neviens ieraksts",
     "remainingTextCount": "Palikusi(-šas) ${0} rakstzīme(-s)",
     "showNoText": "Nē",
-    "selectAttachments": "ķ_Attachments____ū",
-    "selectFileText": "ķ_Browse___ū",
-    "attachmentSelectedMsg": "ķ_attachment(s) selected________ū",
-    "attachmentHeaderText": "ķ_Attachments____ū",
+    "selectAttachments": "Pielikumi",
+    "selectFileText": "Pārlūkot",
+    "attachmentSelectedMsg": "atlasītais(-ie) pielikums(-i)",
+    "attachmentHeaderText": "Piesaistes",
     "addRecordText": "ķ_Add Record____ū"
   },
   "main": {

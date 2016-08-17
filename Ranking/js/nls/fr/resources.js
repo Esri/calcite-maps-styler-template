@@ -14,8 +14,22 @@
  | See the License for the specific language governing permissions and
  | limitations under the License.
  */
-define(({
-  map: {
-    error: "Impossible de créer la carte"
+define({
+  "map": {
+    "error": "�_Unable to create map_______�"
+  },
+  "errors": {
+    "layerNotFound": "�_Ranking layer not specified_________�"
+  },
+  "closebutton": {
+    "label": "�_Explore___�"
+  },
+  "toolbar": {
+    "infoLabel": "�_info__�",
+    "legendLabel": "�_legend___�"
+  },
+  "navigation": {
+    "nextLabel": "�_Next__�",
+    "previousLabel": "�_Previous___�"
   }
-}));
+});

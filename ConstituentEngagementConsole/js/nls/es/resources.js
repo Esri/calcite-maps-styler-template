@@ -98,10 +98,10 @@ define({
     "noCommentsAvailableText": "No hay registros disponibles",
     "remainingTextCount": "${0} caracteres restantes",
     "showNoText": "No",
-    "selectAttachments": "á_Attachments____Ó",
-    "selectFileText": "á_Browse___Ó",
-    "attachmentSelectedMsg": "á_attachment(s) selected________Ó",
-    "attachmentHeaderText": "á_Attachments____Ó",
+    "selectAttachments": "Adjuntos",
+    "selectFileText": "Examinar",
+    "attachmentSelectedMsg": "adjuntos seleccionados",
+    "attachmentHeaderText": "Adjuntos",
     "addRecordText": "á_Add Record____Ó"
   },
   "main": {

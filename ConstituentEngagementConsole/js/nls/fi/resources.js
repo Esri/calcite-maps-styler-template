@@ -98,10 +98,10 @@ define({
     "noCommentsAvailableText": "Tietueita ei ole saatavilla",
     "remainingTextCount": "${0} merkki(ä) jäljellä",
     "showNoText": "Ei",
-    "selectAttachments": "Å_Attachments____ö",
-    "selectFileText": "Å_Browse___ö",
-    "attachmentSelectedMsg": "Å_attachment(s) selected________ö",
-    "attachmentHeaderText": "Å_Attachments____ö",
+    "selectAttachments": "Liitteet",
+    "selectFileText": "Selaa",
+    "attachmentSelectedMsg": "liite(ttä) on valittu",
+    "attachmentHeaderText": "Liitteet",
     "addRecordText": "Å_Add Record____ö"
   },
   "main": {

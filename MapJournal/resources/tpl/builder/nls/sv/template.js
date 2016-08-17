@@ -22,7 +22,7 @@ define({
       "socialLinksLabel": "Visa delningslänkar längst ned i varje avsnitt",
       "socialLinksDescr": "Detta gör att användaren kan referera till och framhålla specifika avsnitt av din %TPL_NAME%. Om du till exempel använder en ikon för avsnittsdelning kommer användaren till det specifika %TPL_NAME%-avsnittet i stället för till början av berättelsen. Användarna kan använda länken till sociala media i rubrikavsnittet för att framhålla hela din %TPL_NAME% (rubrikfliken) och komma till början av %TPL_NAME%.",
       "socialDisabled": "Å_This feature is only available with Floating Panel layout__________________ö",
-      "socialWarning": "Å_Your story is using the Side Panel layout and we now recommend to only enable that option with Floating Panel layout. This prevent issues where the panel may not scroll to the desired section for narratives that contains images. You can continue to use that option but if you disable it, it will only be available with Floating Panel layout_______________________________________________________________________________________________________ö."
+      "socialWarning": "Å_Your story is using Side Panel layout, but we now recommend using this option only with Floating Panel layout to avoid an issue where the panel may not position itself to the desired section for narratives with images. You may continue to use this option, but if you disable it, it will then only be available when using Floating Panel layout________________________________________________________________________________________________________ö."
     },
     "settingsLayoutFonts": {
       "title": "Teckensnitt",

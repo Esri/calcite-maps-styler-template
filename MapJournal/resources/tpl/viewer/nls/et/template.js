@@ -90,11 +90,12 @@ define({
       "autoplayExplain2": "Kui see režiim on aktiveeritud, saate kasutada loo esitamise või peatamise ja liikumiskiiruse reguleerimise juhtelemente.",
       "linksupdated": "Lingid on värskendatud!",
       "print": "Š_Print___ä",
-      "printInstruction1": "Š_Please wait for all the content to load before ${printing} this page______________________ä.",
-      "printInstruction2": "Š_This page cannot be shared with others, instead share the ${link}_____________________ä.",
+      "printInstruction1": "Š_Please wait for all the content to load before printing this page_____________________ä",
+      "printInstruction1a": "Š_Some content may not print unless you enable \"Print Background Colors and Images\" in the Print Page setup dialog___________________________________ä",
+      "printInstruction2": "Š_This page cannot be shared with others, instead share the ${link}_____________________ä",
       "link": "Š_link to the story______ä",
-      "printing": "Š_printing___ä",
-      "printWarning": "Š_This is a printed version of a story map. Dynamic content such as videos and interactive maps is only available in the online version at ${link}_____________________________________________ä.",
+      "printOptPageBreak": "Š_Begin each section on a new page___________ä",
+      "printWarning": "Š_This is a printed version of a story map. Dynamic content such as videos and interactive maps is only available in the online version at ${link}____________________________________________ä",
       "printMSWarning": "Š_link available only in online story____________ä",
       "printVideoWarning": "Š_This video can be viewed in the online version of this story map____________________ä"
     }

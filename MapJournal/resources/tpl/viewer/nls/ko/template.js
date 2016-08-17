@@ -90,11 +90,12 @@ define({
       "autoplayExplain2": "이 모드가 활성화되면 스토리를 재생/일시정지하고 탐색 속도를 조정하는 컨트롤이 나타납니다.",
       "linksupdated": "링크가 업데이트되었습니다!",
       "print": "한_Print___빠",
-      "printInstruction1": "한_Please wait for all the content to load before ${printing} this page______________________빠.",
-      "printInstruction2": "한_This page cannot be shared with others, instead share the ${link}_____________________빠.",
+      "printInstruction1": "한_Please wait for all the content to load before printing this page_____________________빠",
+      "printInstruction1a": "한_Some content may not print unless you enable \"Print Background Colors and Images\" in the Print Page setup dialog___________________________________빠",
+      "printInstruction2": "한_This page cannot be shared with others, instead share the ${link}_____________________빠",
       "link": "한_link to the story______빠",
-      "printing": "한_printing___빠",
-      "printWarning": "한_This is a printed version of a story map. Dynamic content such as videos and interactive maps is only available in the online version at ${link}_____________________________________________빠.",
+      "printOptPageBreak": "한_Begin each section on a new page___________빠",
+      "printWarning": "한_This is a printed version of a story map. Dynamic content such as videos and interactive maps is only available in the online version at ${link}____________________________________________빠",
       "printMSWarning": "한_link available only in online story____________빠",
       "printVideoWarning": "한_This video can be viewed in the online version of this story map____________________빠"
     }

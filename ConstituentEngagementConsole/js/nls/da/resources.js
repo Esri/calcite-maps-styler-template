@@ -98,10 +98,10 @@ define({
     "noCommentsAvailableText": "Ingen poster er tilgængelige",
     "remainingTextCount": "${0} tegn tilbage",
     "showNoText": "Nej",
-    "selectAttachments": "ø_Attachments____å",
-    "selectFileText": "ø_Browse___å",
-    "attachmentSelectedMsg": "ø_attachment(s) selected________å",
-    "attachmentHeaderText": "ø_Attachments____å",
+    "selectAttachments": "Vedhæftninger",
+    "selectFileText": "Gennemse",
+    "attachmentSelectedMsg": "vedhæftning(er) valgt",
+    "attachmentHeaderText": "Vedhæftninger",
     "addRecordText": "ø_Add Record____å"
   },
   "main": {

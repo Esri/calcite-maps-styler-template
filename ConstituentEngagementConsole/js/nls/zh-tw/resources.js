@@ -98,10 +98,10 @@ define({
     "noCommentsAvailableText": "沒有可用的記錄",
     "remainingTextCount": "剩餘 ${0} 個字元",
     "showNoText": "否",
-    "selectAttachments": "試_Attachments____驗",
-    "selectFileText": "試_Browse___驗",
-    "attachmentSelectedMsg": "試_attachment(s) selected________驗",
-    "attachmentHeaderText": "試_Attachments____驗",
+    "selectAttachments": "附件",
+    "selectFileText": "瀏覽",
+    "attachmentSelectedMsg": "已選定附件",
+    "attachmentHeaderText": "附件",
     "addRecordText": "試_Add Record____驗"
   },
   "main": {

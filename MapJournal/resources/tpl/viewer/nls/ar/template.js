@@ -90,11 +90,12 @@ define({
       "autoplayExplain2": "عندما يكون هذا الوضع نشطًا، تتوفر عناصر تحكم تشغيل/إيقاف تشغيل القصة وتعديل سرعة الانتقال.",
       "linksupdated": "تم تحديث الروابط!",
       "print": "بيت_Print___لاحقة",
-      "printInstruction1": "بيت_Please wait for all the content to load before ${printing} this page______________________لاحقة.",
-      "printInstruction2": "بيت_This page cannot be shared with others, instead share the ${link}_____________________لاحقة.",
+      "printInstruction1": "بيت_Please wait for all the content to load before printing this page_____________________لاحقة",
+      "printInstruction1a": "بيت_Some content may not print unless you enable \"Print Background Colors and Images\" in the Print Page setup dialog___________________________________لاحقة",
+      "printInstruction2": "بيت_This page cannot be shared with others, instead share the ${link}_____________________لاحقة",
       "link": "بيت_link to the story______لاحقة",
-      "printing": "بيت_printing___لاحقة",
-      "printWarning": "بيت_This is a printed version of a story map. Dynamic content such as videos and interactive maps is only available in the online version at ${link}_____________________________________________لاحقة.",
+      "printOptPageBreak": "بيت_Begin each section on a new page___________لاحقة",
+      "printWarning": "بيت_This is a printed version of a story map. Dynamic content such as videos and interactive maps is only available in the online version at ${link}____________________________________________لاحقة",
       "printMSWarning": "بيت_link available only in online story____________لاحقة",
       "printVideoWarning": "بيت_This video can be viewed in the online version of this story map____________________لاحقة"
     }

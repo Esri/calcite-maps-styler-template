@@ -90,11 +90,12 @@ define({
       "autoplayExplain2": "Når denne modusen er aktivert, vises det kontroller for å spille av/pause historien og justere navigeringshastigheten.",
       "linksupdated": "Koblingene ble oppdatert",
       "print": "å_Print___ø",
-      "printInstruction1": "å_Please wait for all the content to load before ${printing} this page______________________ø.",
-      "printInstruction2": "å_This page cannot be shared with others, instead share the ${link}_____________________ø.",
+      "printInstruction1": "å_Please wait for all the content to load before printing this page_____________________ø",
+      "printInstruction1a": "å_Some content may not print unless you enable \"Print Background Colors and Images\" in the Print Page setup dialog___________________________________ø",
+      "printInstruction2": "å_This page cannot be shared with others, instead share the ${link}_____________________ø",
       "link": "å_link to the story______ø",
-      "printing": "å_printing___ø",
-      "printWarning": "å_This is a printed version of a story map. Dynamic content such as videos and interactive maps is only available in the online version at ${link}_____________________________________________ø.",
+      "printOptPageBreak": "å_Begin each section on a new page___________ø",
+      "printWarning": "å_This is a printed version of a story map. Dynamic content such as videos and interactive maps is only available in the online version at ${link}____________________________________________ø",
       "printMSWarning": "å_link available only in online story____________ø",
       "printVideoWarning": "å_This video can be viewed in the online version of this story map____________________ø"
     }

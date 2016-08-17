@@ -88,7 +88,7 @@ define({
       "lblLabel2": "טקסט מוצג בריחוף",
       "lblLabel3": "ללא",
       "lblLabelPH": "הכנס טקסט כלשהו...",
-      "lblMaximize": "כלול את כפתור ה-maximize  בפינת התמונה",
+      "lblMaximize": "כלול את לחצן ה-maximize  בפינת התמונה",
       "lblMaximizeHelp": "מומלץ רק לתמונות באיכות גבוהה",
       "lblPosition": "מיקום",
       "lblPosition1": "ממורכז",
