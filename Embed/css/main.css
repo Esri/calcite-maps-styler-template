@@ -1179,3 +1179,38 @@ font-family: Verdana, Helvetica, Arial, sans-serif;
   min-width: 60px;
   text-align: center;
 }
+.calcite .esriPopup.esriPopupMaximized{
+  z-index: 99;
+}
+.calcite .esriViewPopup .mainSection .attrTable td.attrName{
+    font-weight:normal;
+    color:#4c4c4c;
+
+}
+.calcite .esriViewPopup .mainSection .attrTable{
+    table-layout: auto;
+}
+.calcite .esriPopup .actionsPane .actionList {
+    margin-left: 4px;
+}
+.calcite .esriPopup .actionsPane .actionList a {
+    color:#4c4c4c;
+}
+.calcite .esriPopup a{
+    font-size:12px;
+    padding:0;
+    color: #21759b;
+}
+.calcite .esriPopup .sizer{
+  width:280px;
+}
+.calcite .esriPopup .titlePane{
+  font-size: 12px;
+  font-weight: normal;
+}
+.calcite .dijitContentPane{
+  padding:0;
+}
+.calcite .esriPopup .contentPane{
+  padding: 0 8px;
+}

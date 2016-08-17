@@ -346,13 +346,12 @@ img{
     table-layout: auto;
 }
 .calcite .esriPopup .actionsPane .actionList {
-    margin-left: 5px;
+    margin-left: 4px;
 }
 .calcite .esriPopup a{
     font-size:12px;
     padding:0;
     color: #21759b;  
-    font-family: "Avenir Next W01", "Avenir Next", Avenir, "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 .calcite .esriPopup .sizer{
   width:280px;
@@ -360,4 +359,15 @@ img{
 .calcite .esriPopup .titlePane{
   font-size: 12px;
   font-weight: normal;
+}
+.calcite .esriPopup .contentPane{
+  padding: 0 8px;
+}
+.calcite .esriPopup .actionsPane .actionList a {
+    color:#4c4c4c;
+}
+.calcite .esriPopup a{
+    font-size:12px;
+    padding:0;
+    color: #21759b;
 }
