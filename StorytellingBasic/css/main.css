@@ -334,3 +334,29 @@ img{
   left: 0;
   text-align: center;
 }
+.calcite .dijitContentPane{
+  padding:0;
+}
+.calcite .esriViewPopup .mainSection .attrTable td.attrName{
+    font-weight:normal;
+    color:#4c4c4c;
+
+}
+.calcite .esriViewPopup .mainSection .attrTable{
+    table-layout: auto;
+}
+.calcite .esriPopup .actionsPane .actionList {
+    margin-left: 5px;
+}
+.calcite .esriPopup a{
+    font-size:12px;
+    padding:0;
+    color: #21759b;
+}
+.calcite .esriPopup .sizer{
+  width:280px;
+}
+.calcite .esriPopup .titlePane{
+  font-size: 12px;
+  font-weight: normal;
+}
