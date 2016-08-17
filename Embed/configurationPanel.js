@@ -120,15 +120,18 @@
                "type":"boolean",
                "fieldName":"show_panel",
                "label":"Display the side panel when the app loads."
+            },{
+               "type":"paragraph",
+               "value": "Choose to display either the legend alone or as an integrated legend + layer list."
             },
             {
                "type":"boolean",
                "fieldName":"legend",
-               "label":"Display a legend in side panel"
+               "label":"Display a legend"
             },{
               "type":"boolean",
               "fieldName":"legendlayers",
-              "label": "Display layer list in side panel as well as a legend"
+              "label": "Display legend + layer list"
             },
             {
                "type":"boolean",
