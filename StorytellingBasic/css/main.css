@@ -351,7 +351,8 @@ img{
 .calcite .esriPopup a{
     font-size:12px;
     padding:0;
-    color: #21759b;
+    color: #21759b;  
+    font-family: "Avenir Next W01", "Avenir Next", Avenir, "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 .calcite .esriPopup .sizer{
   width:280px;
