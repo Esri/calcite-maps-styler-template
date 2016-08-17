@@ -105,9 +105,9 @@ define([
           geometryService: this.config.helperServices.geometry.url
         });
         mapParams.processUrlParams().then(lang.hitch(this, function(urlParams) {
-          promise = this._createWebMap(itemInfo, urlParams);
+          this._createWebMap(itemInfo, urlParams);
         }), lang.hitch(this, function(error) {
-          console.log(error);
+          this.reportError(error);
         }));
 
       }));
@@ -332,11 +332,12 @@ define([
         //resource.js file located in the nls folder because we've set the application up
         //for localization. If you don't need to support multiple languages you can hardcode the
         //strings here and comment out the call in index.html to get the localization strings.
-        if (this.config && this.config.i18n) {
+        /*if (this.config && this.config.i18n) {
           alert(this.config.i18n.map.error + ": " + error.message);
         } else {
           alert("Unable to create map: " + error.message);
-        }
+        }*/
+        this.reportError(error.message);
       }));
     },
     setColor: function(value) {
@@ -411,6 +412,17 @@ define([
         }
       }
       return info;
+    },
+    reportError: function(error) {
+      // remove loading class from body
+      domClass.remove(document.body, "app-loading");
+      domClass.add(document.body, "app-error");
+      var node = dom.byId("loading_message");
+      if (node) {
+        node.innerHTML = error;
+      }
+
+      return error;
     }
   });
 });
