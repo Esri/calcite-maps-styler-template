@@ -29,11 +29,12 @@ require([
 	storyHTML += '<div class="print-warning">';
 	storyHTML += i18n.viewer.shareFromCommon.printInstruction1;
 	
-	if (! has('chrome') || has('safari')) {
-		storyHTML += '<div class="print-warning2">' + i18n.viewer.shareFromCommon.printInstruction1a + '</div>';
+	storyHTML += '<div class="share-warning">';
+	
+	if (! has('chrome') || ! has('safari')) {
+		storyHTML += i18n.viewer.shareFromCommon.printInstruction1a + '. ';
 	}
 	
-	storyHTML += '<div class="share-warning">';
 	storyHTML += i18n.viewer.shareFromCommon.printInstruction2.replace('${link}', '<a href="' + storyURL + '">' + i18n.viewer.shareFromCommon.link + '</a>');
 	storyHTML += '</div>';
 	storyHTML += '<div class="print-btn">';
@@ -42,10 +43,17 @@ require([
 	storyHTML += '</div>';
 	
 	storyHTML += '<div class="print-options">';
+	storyHTML += '<table style="width: 100%"><tr><td style="width: 50%">';
 	storyHTML += '<div class="checkbox"><label>';
 	storyHTML += '<input type="checkbox" value="pageBreak">';
 	storyHTML += i18n.viewer.shareFromCommon.printOptPageBreak;
 	storyHTML += '</label></div>';
+	storyHTML += '</td><td style="width: 50%">';
+	storyHTML += '<div class="checkbox"><label>';
+	storyHTML += '<input type="checkbox" value="blackText">';
+	storyHTML += 'Make all text black'; // TODO
+	storyHTML += '</label></div>';
+	storyHTML += '</td></tr></table>';
 	storyHTML += '</div>';
 	
 	storyHTML += '</div>';
@@ -80,6 +88,10 @@ require([
 	
 	$('input[value=pageBreak]').change(function() {
 		$('section').toggleClass('page-break', $(this).prop('checked'));
+	});
+	
+	$('input[value=blackText]').change(function() {
+		$('section').toggleClass('blackText', $(this).prop('checked'));
 	});
 
 	// Load webmap now that DOM is ready
