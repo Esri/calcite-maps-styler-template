@@ -8,12 +8,14 @@ require([
 	"dojo/_base/lang", 
 	"esri/dijit/Legend",
 	"esri/geometry/Extent",
+	"dojo/has",
 	"dojo/ready"
 ], function(
 	i18n, 
 	arcgisUtils, 
 	lang, 
 	LegendDijit,
+	has,
 	Extent
 ) {
 	var sections = app.data.getStorySections(),
@@ -26,6 +28,11 @@ require([
 	
 	storyHTML += '<div class="print-warning">';
 	storyHTML += i18n.viewer.shareFromCommon.printInstruction1;
+	
+	if (! has('chrome') || has('safari')) {
+		storyHTML += '<div class="print-warning2">' + i18n.viewer.shareFromCommon.printInstruction1a + '</div>';
+	}
+	
 	storyHTML += '<div class="share-warning">';
 	storyHTML += i18n.viewer.shareFromCommon.printInstruction2.replace('${link}', '<a href="' + storyURL + '">' + i18n.viewer.shareFromCommon.link + '</a>');
 	storyHTML += '</div>';
@@ -33,9 +40,16 @@ require([
 	storyHTML += '<span class="glyphicon glyphicon-print" aria-hidden="true"></span>';
 	storyHTML += i18n.viewer.shareFromCommon.print;
 	storyHTML += '</div>';
+	
+	storyHTML += '<div class="print-options">';
+	storyHTML += '<div class="checkbox"><label>';
+	storyHTML += '<input type="checkbox" value="pageBreak">';
+	storyHTML += i18n.viewer.shareFromCommon.printOptPageBreak;
+	storyHTML += '</label></div>';
 	storyHTML += '</div>';
 	
-
+	storyHTML += '</div>';
+	
 	storyHTML += '<header>';
 	storyHTML += '<div class="story-title">' + title + '</div>';
 
@@ -62,6 +76,10 @@ require([
 	
 	$('.print-btn').click(function(){ 
 		window.print();
+	});
+	
+	$('input[value=pageBreak]').change(function() {
+		$('section').toggleClass('page-break', $(this).prop('checked'));
 	});
 
 	// Load webmap now that DOM is ready

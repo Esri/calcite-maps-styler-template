@@ -91,11 +91,12 @@ define({
 				autoplayExplain2: "When this mode is active there are controls to play/pause the story and adjust the navigation speed.",
 				linksupdated: "Links updated!",
 				print: "Print",
-				printInstruction1: "Please wait for all the content to load before ${printing} this page.",
-				printInstruction2: "This page cannot be shared with others, instead share the ${link}.",
+				printInstruction1: "Please wait for all the content to load before printing this page",
+				printInstruction1a: "Some content may not print unless you enable \"Print Background Colors and Images\" in the Print Page setup dialog",
+				printInstruction2: "This page cannot be shared with others, instead share the ${link}",
 				link: "link to the story",
-				printing: "printing",
-				printWarning: "This is a printed version of a story map. Dynamic content such as videos and interactive maps is only available in the online version at ${link}.",
+				printOptPageBreak: "Begin each section on a new page",
+				printWarning: "This is a printed version of a story map. Dynamic content such as videos and interactive maps is only available in the online version at ${link}",
 				printMSWarning: "link available only in online story",
 				printVideoWarning: "This video can be viewed in the online version of this story map"
 			}

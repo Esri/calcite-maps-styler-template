@@ -57,6 +57,7 @@ body {
 	width: 700px;
 	margin-left: auto;
 	margin-right: auto;
+	-webkit-print-color-adjust: exact;
 }
 
 strong {
@@ -90,6 +91,11 @@ strong {
 	}
 }
 
+.print-warning2 {
+	margin: 8px 0;
+	font-size: 90%;
+}
+
 .share-warning {
 	font-size: 14px;
 	margin-top: 4px;
@@ -109,6 +115,15 @@ strong {
 .print-btn:hover {
 	background-color: #e6e6e6;
 	border-color: #adadad;
+}
+
+.print-options {
+	font-size: 14px;
+    margin-top: 12px;
+}
+
+.print-options input {
+	vertical-align: -2px;
 }
 
 /*
@@ -136,10 +151,13 @@ header {
  */
 
 section {
-	page-break-before: always;
 	/*page-break-inside: avoid;*/
 	margin-top: 20px;
 	word-wrap: break-word;
+}
+
+section.page-break {
+	page-break-before: always;
 }
 
 section:nth-of-type(1) {
@@ -149,7 +167,7 @@ section:nth-of-type(1) {
 }
 
 .title-media-block {
-	/*page-break-inside: avoid;*/
+	page-break-inside: avoid;
 }
 
 /*
