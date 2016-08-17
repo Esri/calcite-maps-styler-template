@@ -1,44 +1,44 @@
-/*global define */
-/*
- | Copyright 2014 Esri
- |
- | Licensed under the Apache License, Version 2.0 (the "License");
- | you may not use this file except in compliance with the License.
- | You may obtain a copy of the License at
- |
- |    http://www.apache.org/licenses/LICENSE-2.0
- |
- | Unless required by applicable law or agreed to in writing, software
- | distributed under the License is distributed on an "AS IS" BASIS,
- | WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- | See the License for the specific language governing permissions and
- | limitations under the License.
- */
-define({
+  /*global define */
+  /*
+  | Copyright 2014 Esri
+  |
+  | Licensed under the Apache License, Version 2.0 (the "License");
+  | you may not use this file except in compliance with the License.
+  | You may obtain a copy of the License at
+  |
+  |    http://www.apache.org/licenses/LICENSE-2.0
+  |
+  | Unless required by applicable law or agreed to in writing, software
+  | distributed under the License is distributed on an "AS IS" BASIS,
+  | WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  | See the License for the specific language governing permissions and
+  | limitations under the License.
+  */
+  define({
   root: ({
-  	"error": "error",
+    "error": "error",
     "menu": {
-    	"title": "Main Menu",
-    	"items": {
-	      "about": "About",
-	      "basemaps": "Basemaps",
-	      "legend": "Legend",
-	      "toggleNav": "Full Map"    		
-    	}
+      "title": "Main Menu",
+      "items": {
+        "about": "About",
+        "basemaps": "Basemaps",
+        "legend": "Legend",
+        "toggleNav": "Full Map"     
+      }
     },
     "basemaps": {
-    	"select": "Select a basemap",
-    	"streets": "Streets",
-    	"satellite": "Satellite",
-    	"hybrid": "Hybrid",
-    	"nationalgeographic": "National Geographic",
-    	"topographic": "Topographic",
+      "select": "Select a basemap",
+      "streets": "Streets",
+      "satellite": "Satellite",
+      "hybrid": "Hybrid",
+      "nationalgeographic": "National Geographic",
+      "topographic": "Topographic",
       "oceans": "Oceans",
-    	"gray": "Gray",
-    	"darkgray": "Dark Gray",
-    	"osm": "Open Street Map",
-    	"streetsnight": "Streets Night",
-    	"streetsmobile": "Streets Mobile",
+      "gray": "Gray",
+      "darkgray": "Dark Gray",
+      "osm": "Open Street Map",
+      "streetsnight": "Streets Night",
+      "streetsmobile": "Streets Mobile",
       "streetsrelief": "Streets Relief"
     }
   }),
@@ -73,4 +73,4 @@ define({
   "zh-cn": 1,
   "zh-hk": 1, 
   "zh-tw": 1 
-});
+  });
