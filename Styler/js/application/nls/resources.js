@@ -23,7 +23,7 @@ define({
 	      "about": "About",
 	      "basemaps": "Basemaps",
 	      "legend": "Legend",
-	      "toggleNav": "Full Map"    		
+	      "toggleNav": "Full Map"
     	}
     },
     "basemaps": {
