@@ -219,7 +219,7 @@ define([
           container = boilerplate.settings.webscene.containerId;
           deferredWebMap = itemHelper.createWebScene(boilerplate.results.webSceneItem);
         } else {
-          this.reportError(new Error("main:: WebMapItem or WebSceneItem could not be created from data or item."));
+          this.reportError(new Error("main:: WebMapItem or WebSceneItem could not be created for this item."));
           return;
         }
 
