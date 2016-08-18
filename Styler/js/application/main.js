@@ -83,6 +83,7 @@ define([
 
   var CSS_SELECTORS = {
     navbar: ".calcite-navbar",
+    title: ".calcite-title",
     mainTitle: ".calcite-title-main",
     subTitle: ".calcite-title-sub",
     titleDivider: ".calcite-title-divider",
@@ -183,12 +184,12 @@ define([
         this._setSubTitleText(boilerplate.config.subtitle);
 
         // Menu
-        this._setMenuTitleText(i18n);
+        this._setMenusTitleText(i18n);
 
         // Panels
-        this._setPanelTitleText(i18n);
+        this._setPanelsTitleText(i18n);
         this._setBasemapPanelText(i18n);
-        this._setMenusPanelsVisible(boilerplate);
+        //this._setMenusVisible(boilerplate);
         this._setMainMenuStyle(boilerplate);
 
         //-----------------------------------------------------------------------
@@ -265,11 +266,17 @@ define([
             this._createMapWidgets(boilerplate.config.view.ui);
             this._setMapWidgetEvents();
             this._createAppWidgets();
-            this._showSearch(boilerplate.config.showsearch);
+            this._showSearchWidget(boilerplate.config.widgetsearch);
+
+            // About panel
+            this._updateConfigAboutText(boilerplate, results.webMapOrWebScene);
+            this._setAboutPanelText(boilerplate.config.abouttext);
+            
+            // Menus (requires about text set!)
+            this._setMenusVisible(boilerplate);
 
             // Nav and panels
             this._showNavbar(true);
-            this._setAboutPanelText(boilerplate, results.webMapOrWebScene);
             this._showAboutPanel(boilerplate.config);
 
             // Events
@@ -417,7 +424,7 @@ define([
     },
 
     _updateConfigWidgets: function(boilerplate) {
-      var showBasemaptoggle = boilerplate.config.showbasemaptoggle;
+      var showBasemaptoggle = boilerplate.config.widgetbasemaptoggle;
       var nextBasemap = boilerplate.config.nextbasemap;
       var components = boilerplate.config.view.ui.components;
       for (var i = 0; i < components.length; i++) {
@@ -458,14 +465,14 @@ define([
     // Menu
 
     _setMainMenuStyle: function(boilerplate) {
-      if (boilerplate.config.menudrawer) {
+      if (boilerplate.config.menustyledrawer) {
         query(CSS_SELECTORS.dropdownMenu).addClass("calcite-menu-drawer");
       } else {
         query(CSS_SELECTORS.dropdownMenu).removeClass("calcite-menu-drawer");
       }
     },
 
-    _setMenuTitleText: function(i18n) {
+    _setMenusTitleText: function(i18n) {
       query(CSS_SELECTORS.menuTitle)[0].innerHTML = i18n.menu.title;
       query(CSS_SELECTORS.menuAbout + " a")[0].innerHTML = query(CSS_SELECTORS.menuAbout + " a")[0].innerHTML + "&nbsp;" + i18n.menu.items.about;
       query(CSS_SELECTORS.menuLegend + " a")[0].innerHTML = query(CSS_SELECTORS.menuLegend + " a")[0].innerHTML + "&nbsp;" + i18n.menu.items.legend;
@@ -475,23 +482,30 @@ define([
 
     // Panels
 
-    _setPanelTitleText: function(i18n) {
+    _setPanelsTitleText: function(i18n) {
       query("#panelAbout .panel-label")[0].innerHTML = i18n.menu.items.about;
       query("#panelLegend .panel-label")[0].innerHTML = i18n.menu.items.legend;
       query("#panelBasemaps .panel-label")[0].innerHTML = i18n.menu.items.basemaps;
     },
 
-    _setMenusPanelsVisible: function(boilerplate) {
-      if (boilerplate.config.menulegend === false) {
-        query(CSS_SELECTORS.menuLegend).addClass("hidden");
-        // query(CSS_SELECTORS.panelLegend).removeClass("hidden");
-      }
-      if (boilerplate.config.menubasemaps === false) {
-        query(CSS_SELECTORS.menuBasemaps).addClass("hidden");
-        // query(CSS_SELECTORS.panelBasemaps).removeClass("hidden");
-      }
-      if (boilerplate.config.menutogglenav === false) {
-        query(CSS_SELECTORS.menuToggleNav).addClass("hidden");
+    _setMenusVisible: function(boilerplate) {
+      // Remove main menu if no menus visible
+      if (boilerplate.config.menuabout === false && boilerplate.config.menulegend === false && boilerplate.config.menubasemaps === false && boilerplate.config.menutogglenav === false) {
+        query(CSS_SELECTORS.mainMenu).addClass("hidden");
+        query(CSS_SELECTORS.title).addClass("calcite-title-left-margin");
+      } else { // Hide menus, default is visible
+        if (boilerplate.config.menuabout === false || !boilerplate.config.abouttext) {
+          query(CSS_SELECTORS.menuAbout).addClass("hidden");
+        }
+        if (boilerplate.config.menulegend === false) {
+          query(CSS_SELECTORS.menuLegend).addClass("hidden");
+        }
+        if (boilerplate.config.menubasemaps === false) {
+          query(CSS_SELECTORS.menuBasemaps).addClass("hidden");
+        }
+        if (boilerplate.config.menutogglenav === false) {
+          query(CSS_SELECTORS.menuToggleNav).addClass("hidden");
+        }
       }
     },
 
@@ -525,15 +539,15 @@ define([
 
     // Widgets
 
-    _showSearch: function(visible) {
-      if (!visible) {
+    _showSearchWidget: function(visible) {
+      if (visible === false) {
         query(CSS_SELECTORS.searchContainer).addClass("hidden");
       }
     },
 
     // Panels
 
-    _setAboutPanelText: function(boilerplate, webMapOrWebScene) {
+    _updateConfigAboutText: function(boilerplate, webMapOrWebScene) {
       if (boilerplate && webMapOrWebScene.portalItem) {
         var aboutText  = boilerplate.config.abouttext;
         var addDesc = boilerplate.config.showdescription;
@@ -561,22 +575,26 @@ define([
             aboutText = descriptionText;
           }
         }
-
         if (aboutText) {
           boilerplate.config.abouttext = aboutText;
-          query(CSS_SELECTORS.panelAboutText)[0].innerHTML = aboutText;
         }
+      }
+    },
+
+    _setAboutPanelText: function(aboutText) {
+      if (aboutText) {
+        query(CSS_SELECTORS.panelAboutText)[0].innerHTML = aboutText;
       }
     },
 
     _showAboutPanel: function(config) {
       var showAbout = config.showabout;
-      var aboutMenu = config.menuabout;
+      var menuAbout = config.menuabout;
       var aboutText = config.abouttext;
-      if (!aboutText || aboutMenu === false) {
+      if (!aboutText) {
         query(CSS_SELECTORS.menuAbout).addClass("hidden");
         query(CSS_SELECTORS.panelAbout).addClass("hidden");
-      } else if (aboutText && aboutMenu !== false && showAbout) {
+      } else if (showAbout && menuAbout !== false) {
         query(CSS_SELECTORS.panelAbout + ", " + CSS_SELECTORS.panelAbout + " .panel-collapse").addClass("in");
       }
     },

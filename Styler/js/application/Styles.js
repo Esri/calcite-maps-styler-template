@@ -53,6 +53,23 @@ define([
           textStyle: "calcite-text-light",
           bgRgbColor: null
         }
+      },
+      CUSTOM: {
+        nav: {
+          bgStyle: "calcite-bg-custom",
+          textStyle: "calcite-text-light",
+          bgRgbColor: null
+        },
+        dropdown: {
+          bgStyle: "calcite-bg-light",
+          textStyle: "calcite-text-dark",
+          bgRgbColor: null
+        },
+        panel: {
+          bgStyle: "calcite-bg-custom",
+          textStyle: "calcite-text-light",
+          bgRgbColor: null
+        }
       }
     },
 
