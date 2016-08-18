@@ -99,6 +99,13 @@ define([
         } else {
           // Set header height
           domStyle.set(dom.byId("header"), "height", this.config.headerHeight + "px");
+          // update title area height to be a percentage of the new header height
+          if (parseInt(this.config.headerHeight, 10) > 58) {
+            domStyle.set("subtitle", "height", this.config.headerHeight - 58 + "px");
+          } else {
+            domStyle.set("subtitle", "height", "auto");
+          }
+
         }
         //supply either the webmap id or, if available, the item info
         var itemInfo = this.config.itemInfo || this.config.webmap;
