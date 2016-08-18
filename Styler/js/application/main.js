@@ -212,14 +212,14 @@ define([
         // Get the webmap or webscene
         //-----------------------------------------------------------------------
 
-        if (boilerplate.results.webMapItem) {
+        if (boilerplate.results.webMapItem && boilerplate.results.webMapItem.data && boilerplate.results.webMapItem.data.type === "Web Map") {
           container = boilerplate.settings.webmap.containerId;
           deferredWebMap = itemHelper.createWebMap(boilerplate.results.webMapItem);
-        } else if (boilerplate.results.webSceneItem) {
+        } else if (boilerplate.results.webSceneItem && boilerplate.results.webSceneItem.data && boilerplate.results.webSceneItem.data.type === "Web Scene") {
           container = boilerplate.settings.webscene.containerId;
           deferredWebMap = itemHelper.createWebScene(boilerplate.results.webSceneItem);
         } else {
-          this.reportError(new Error("main:: WebMapItem or WebSceneItem could not be created from data or item."));
+          this.reportError(new Error("main:: WebMapItem or WebSceneItem could not be created for this item."));
           return;
         }
 
