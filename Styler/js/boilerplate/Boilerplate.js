@@ -60,6 +60,7 @@ define([
   var RTL_LANGS = ["ar", "he"];
   var LTR = "ltr";
   var RTL = "rtl";
+  var LOCALSTORAGE_PREFIX = "boilerplate_config_";
 
   return Promise.createSubclass({
 
@@ -205,6 +206,8 @@ define([
           // get org data
           portal: this._queryPortal()
         }).always(function () {
+          // gets a temporary config from the users local storage
+          this.results.localStorageConfig = this._getLocalConfig();
           // mixin all new settings from org and app
           this._mixinAllConfigs();
           // let's set up a few things
@@ -212,9 +215,9 @@ define([
           // then execute these async
           return promiseList({
             // webmap item
-            webmapItem: this._queryWebmapItem(),
+            webMapItem: this._queryWebMapItem(),
             // webscene item
-            websceneItem: this._queryWebsceneItem(),
+            webSceneItem: this._queryWebSceneItem(),
             // group information
             groupInfo: this._queryGroupInfo(),
             // items within a specific group
@@ -224,7 +227,20 @@ define([
       }.bind(this));
     },
 
-    _queryWebmapItem: function () {
+    _getLocalConfig: function () {
+      var appid = this.config.appid;
+      if (window.localStorage && appid && this.settings.localConfig.fetch) {
+        var lsItem = localStorage.getItem(LOCALSTORAGE_PREFIX + appid);
+        if (lsItem) {
+          var config = JSON.parse(lsItem);
+          if (config) {
+            return config;
+          }
+        }
+      }
+    },
+
+    _queryWebMapItem: function () {
       var deferred;
       // Get details about the specified web map. If the web map is not shared publicly users will
       // be prompted to log-in by the Identity Manager.
@@ -239,10 +255,10 @@ define([
           require(["dojo/text!" + this.settings.webmap.localFile], function (webmapText) {
             // return web scene json
             var json = JSON.parse(webmapText);
-            this.results.webmapItem = {
+            this.results.webMapItem = {
               json: json
             };
-            deferred.resolve(this.results.webmapItem);
+            deferred.resolve(this.results.webMapItem);
           }.bind(this));
         }
         // use webmap from id
@@ -251,15 +267,15 @@ define([
             id: this.config.webmap
           }).load();
           mapItem.then(function (itemData) {
-            this.results.webmapItem = {
+            this.results.webMapItem = {
               data: itemData
             };
-            deferred.resolve(this.results.webmapItem);
+            deferred.resolve(this.results.webMapItem);
           }.bind(this), function (error) {
             if (!error) {
               error = new Error("Boilerplate:: Error retrieving webmap item.");
             }
-            this.results.webmapItem = {
+            this.results.webMapItem = {
               data: error
             };
             deferred.reject(error);
@@ -305,7 +321,7 @@ define([
       return deferred.promise;
     },
 
-    _queryWebsceneItem: function () {
+    _queryWebSceneItem: function () {
       var deferred, sceneItem;
       // Get details about the specified web scene. If the web scene is not shared publicly users will
       // be prompted to log-in by the Identity Manager.
@@ -320,10 +336,10 @@ define([
           require(["dojo/text!" + this.settings.webscene.localFile], function (websceneText) {
             // return web scene json
             var json = JSON.parse(websceneText);
-            this.results.websceneItem = {
+            this.results.webSceneItem = {
               json: json
             };
-            deferred.resolve(this.results.websceneItem);
+            deferred.resolve(this.results.webSceneItem);
           }.bind(this));
         }
         // use webscene from id
@@ -332,15 +348,15 @@ define([
             id: this.config.webscene
           }).load();
           sceneItem.then(function (itemData) {
-            this.results.websceneItem = {
+            this.results.webSceneItem = {
               data: itemData
             };
-            deferred.resolve(this.results.websceneItem);
+            deferred.resolve(this.results.webSceneItem);
           }.bind(this), function (error) {
             if (!error) {
               error = new Error("Boilerplate:: Error retrieving webscene item.");
             }
-            this.results.websceneItem = {
+            this.results.webSceneItem = {
               data: error
             };
             deferred.reject(error);
@@ -504,8 +520,8 @@ define([
       var applicationExtent = this.config.application_extent;
       var results = this.results;
       if (this.config.appid && applicationExtent && applicationExtent.length > 0) {
-        this._overwriteExtent(results.websceneItem.data, applicationExtent);
-        this._overwriteExtent(results.webmapItem.data, applicationExtent);
+        this._overwriteExtent(results.webSceneItem.data, applicationExtent);
+        this._overwriteExtent(results.webMapItem.data, applicationExtent);
       }
       // get helper services
       var configHelperServices = this.config.helperServices;
@@ -544,6 +560,7 @@ define([
       lang.mixin(
         this.config,
         this.results.applicationItem ? this.results.applicationItem.config : null,
+        this.results.localStorageConfig,
         this.results.urlParams ? this.results.urlParams.config : null
       );
     },

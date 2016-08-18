@@ -81,6 +81,9 @@ function(
         case "dark":
           theme = CALCITE.THEMES.DARK;
           break;
+        case "custom":
+          theme = CALCITE.THEMES.CUSTOM;
+          break;
         default:
           theme = CALCITE.THEMES.LIGHT;
       }
@@ -89,7 +92,7 @@ function(
       if (rgba) {
         theme.nav.bgStyle = CALCITE.THEME_STYLES.BG_CUSTOM;
         theme.nav.bgRgbColor = rgba;
-        if (all) {
+        if (theme === CALCITE.THEMES.CUSTOM) {
           theme.panel.bgStyle = CALCITE.THEME_STYLES.BG_CUSTOM;
           theme.panel.bgRgbColor = rgba;
         }
@@ -97,14 +100,14 @@ function(
       // Text color override
       if (textStyleOverride) {
         theme.nav.textStyle = textStyleOverride;
-        if (all) {
+        if (theme === CALCITE.THEMES.CUSTOM) {
           theme.panel.textStyle = textStyleOverride;
         }
       } else { // Auto select the best text style for the rgb
         if (rgba) {
           textStyleOverride = this._getTextStyleFromRgba(rgba);
           theme.nav.textStyle = textStyleOverride;
-          if (all) {
+          if (theme === CALCITE.THEMES.CUSTOM) {
             theme.panel.textStyle = textStyleOverride; 
           }
         }

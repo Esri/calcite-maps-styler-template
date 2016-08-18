@@ -75,3 +75,11 @@ body:lang(ja) {
   padding-bottom: 20px;
   z-index: 2000;
 }
+
+.calcite-title-left-margin {
+  margin-left: 15px;
+}
+
+.calcite-dropdown .dropdown-menu {
+  overflow-y: hidden;
+}
