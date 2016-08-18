@@ -221,19 +221,35 @@
                     "label": "Navbar Size:",
                     "options": [
                         {
-                            "label": "Standard",
-                            "value": "standard"
+                            "label": "Default",
+                            "value": ""
                         },
                         {
                             "label": "Larger",
                             "value": "larger"
                         }
                     ]
+                },
+                {
+                    "type": "options",
+                    "fieldName": "menustyledrawer",
+                    "tooltip": "Show the main menu as a full sliding drawer",
+                    "label": "Menu Style:",
+                    "options": [
+                        {
+                            "label": "Default",
+                            "value": ""
+                        },
+                        {
+                            "label": "Drawer",
+                            "value": "drawer"
+                        }
+                    ]
                 }
             ]
         },
         {
-            "category": "Menu",
+            "category": "Menus",
             "fields": [
                 {
                     "type": "boolean",
@@ -256,15 +272,10 @@
                 {
                     "type": "boolean",
                     "fieldName": "menutogglenav",
-                    "tooltip": "Allow full-map toggle",
-                    "label": "Full-map Toggle"
-                },
-                {
-                    "type": "boolean",
-                    "fieldName": "menudrawer",
-                    "tooltip": "Show the main menu as a full sliding drawer",
-                    "label": "Show main menu as a full sliding drawer"
+                    "tooltip": "Show a menu item that can show and hide the title bar",
+                    "label": "Full Map"
                 }
+
             ]
         },
         {
@@ -272,15 +283,15 @@
             "fields": [
                 {
                     "type": "boolean",
-                    "fieldName": "showsearch",
+                    "fieldName": "widgetsearch",
                     "tooltip": "Show expanding search in nav.",
-                    "label": "Show Search"
+                    "label": "Search"
                 },
                 {
                     "type": "boolean",
-                    "fieldName": "showbasemaptoggle",
+                    "fieldName": "widgetbasemaptoggle",
                     "tooltip": "Show basemaptoggle on map.",
-                    "label": "Show Basemap Toggle"
+                    "label": "Basemap Toggle (For best results select Basemap Toggle OR Menu > Basemaps, not both.)"
                 }, 
                 {
                     "type": "options",
@@ -294,7 +305,7 @@
                         },
                         {
                             "label": "Satellite",
-                            "value": "imagery"
+                            "value": "satellite"
                         },
                         {
                             "label": "Hybrid",
@@ -367,14 +378,14 @@
         "widgettheme": "light",
         "all": false,
         "layout": "top",
-        "navsize": "standard",
+        "navsize": "default",
         "menuabout": true,
         "menulegend": true,
         "menubasemaps": true,
         "menutogglenav": true,
-        "menudrawer": false,
-        "showsearch": true,
-        "showbasemaptoggle": false,
+        "menustyledrawer": "",
+        "widgetsearch": true,
+        "widgetbasemaptoggle": false,
         "nextbasemap": "imagery"
     }
 }
