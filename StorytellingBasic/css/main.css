@@ -84,7 +84,9 @@ body{
 .esriSimpleSlider{
   border-radius: 2px !important;
 }
-
+.calcite .esriSimpleSlider .esriSimpleSliderDecrementButton, .calcite .esriSimpleSlider .esriSimpleSliderDecrementButton:hover, .calcite .esriSimpleSlider .esriSimpleSliderDecrementButton:focus{
+  border-top:solid 1px #efefef;
+}
 /*Header styles (title, logo, subtitle, social links)*/
 #header{
   margin:0;
@@ -351,7 +353,7 @@ img{
 .calcite .esriPopup a{
     font-size:12px;
     padding:0;
-    color: #21759b;  
+    color: #21759b;
 }
 .calcite .esriPopup .sizer{
   width:280px;
