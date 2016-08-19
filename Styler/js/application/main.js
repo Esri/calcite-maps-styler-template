@@ -145,7 +145,7 @@ define([
     },
 
     _errorMessage: {
-      general: "We apologize but your webmap could not be fully loaded. You can still use your application however except some layers and functionality might not be available. Please stay tuned as <a href='https://developers.arcgis.com/javascript/latest/guide/migrating/index.html'>full support</a> for webmaps with the <a href='https://developers.arcgis.com/javascript/'>ArcGIS API for Javascript 4</a> is coming soon!",
+      general: "We apologize but your webmap could not be fully loaded. You can still use your application however some layers and functionality might not be available. Please stay tuned as <a target='_blank' href='https://developers.arcgis.com/javascript/latest/guide/migrating/index.html#webmap'>full support</a> for webmaps with the <a target='_blank' href='https://developers.arcgis.com/javascript/'>ArcGIS API for Javascript 4</a> is coming soon!",
       layerUnsupported: "Layer unsupported",
       layerUnknown: "Layer unknown",
       layerLoadFailed: "Layer failed to load"
@@ -219,7 +219,7 @@ define([
           container = boilerplate.settings.webscene.containerId;
           deferredWebMap = itemHelper.createWebScene(boilerplate.results.webSceneItem);
         } else {
-          this.reportError(new Error("main:: WebMapItem or WebSceneItem could not be created for this item."));
+          this.reportError(new Error("Styler:: WebMap or WebScene item could not be created for this item."));
           return;
         }
 
@@ -253,7 +253,7 @@ define([
               this._removeLoading();
               // Do more stuff here if necessary...
             }.bind(this), function(error) {
-              this.reportError(new Error("main:: Error loading view for this webmap or webscene: " + error));
+              this.reportError(new Error("Styler:: Error loading view for this webmap or webscene: " + error));
             }.bind(this));
 
             // view.always(function() {
@@ -289,10 +289,10 @@ define([
             this.reportError(error);  
           }.bind(this));
         } else {
-          this.reportError(new Error("main:: Webmap or webscene could not be created for this item."));
+          this.reportError(new Error("Styler:: Webmap or webscene could not be created for this item."));
         }
       } else {
-        this.reportError(new Error("main:: Boilerplate is not defined"));
+        this.reportError(new Error("Styler:: Boilerplate is not defined"));
       }
     },
 
