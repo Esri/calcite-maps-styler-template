@@ -141,14 +141,20 @@ define([
     _removeLoadingTimeout: 15000, 
 
     _errorTitle: {
-      warning: "Warning"
+      warning: "Warning:",
+      error: "Error:",
+      attention: "Attention:",
+      snap: "Aw, Snap!"
     },
 
     _errorMessage: {
-      general: "We apologize but your webmap could not be fully loaded. You can still use your application however some layers and functionality might not be available. Please stay tuned as <a target='_blank' href='https://developers.arcgis.com/javascript/latest/guide/migrating/index.html#webmap'>full support</a> for webmaps with the <a target='_blank' href='https://developers.arcgis.com/javascript/'>ArcGIS API for Javascript 4</a> is coming soon!",
+      base: "Styler Error:",
+      general: "We apologize but the map could not be fully loaded and some layers and/or functionality might not be available. Please stay tuned as <a target='_blank' href='https://developers.arcgis.com/javascript/latest/guide/migrating/index.html#webmap'>full support</a> for webmaps with the <a target='_blank' href='https://developers.arcgis.com/javascript/'>ArcGIS API for Javascript 4</a> is coming soon!",
+      load: "We apologize but it is taking longer than normal to load the map and some layers and/or functionality might not be available. Please stay tuned as <a target='_blank' href='https://developers.arcgis.com/javascript/latest/guide/migrating/index.html#webmap'>full support</a> for webmaps with the <a target='_blank' href='https://developers.arcgis.com/javascript/'>ArcGIS API for Javascript 4</a> is coming soon!",
       layerUnsupported: "Layer unsupported",
       layerUnknown: "Layer unknown",
-      layerLoadFailed: "Layer failed to load"
+      layerLoadFailed: "Layer failed to load",
+      webMapOrWebSceneLoadError: "Webmap or WebScene failed to load"
     },
 
     _showConsoleErrors: true,
@@ -205,7 +211,7 @@ define([
 
         var itemHelper = new ItemHelper();
 
-        var deferredWebMap = null;
+        var deferredWebMapOrWebScene = null;
         var container = null;
 
         //-----------------------------------------------------------------------
@@ -214,12 +220,12 @@ define([
 
         if (boilerplate.results.webMapItem && boilerplate.results.webMapItem.data && boilerplate.results.webMapItem.data.type === "Web Map") {
           container = boilerplate.settings.webmap.containerId;
-          deferredWebMap = itemHelper.createWebMap(boilerplate.results.webMapItem);
+          deferredWebMapOrWebScene = itemHelper.createWebMap(boilerplate.results.webMapItem);
         } else if (boilerplate.results.webSceneItem && boilerplate.results.webSceneItem.data && boilerplate.results.webSceneItem.data.type === "Web Scene") {
           container = boilerplate.settings.webscene.containerId;
-          deferredWebMap = itemHelper.createWebScene(boilerplate.results.webSceneItem);
+          deferredWebMapOrWebScene = itemHelper.createWebScene(boilerplate.results.webSceneItem);
         } else {
-          this.reportError(new Error("Styler:: WebMap or WebScene item could not be created for this item."));
+          this.reportError(new Error("Styler:: WebMap or WebScene item could not be created from the parameters provided."));
           return;
         }
 
@@ -227,11 +233,11 @@ define([
         // Create the view (map or scene) and widgets
         //-----------------------------------------------------------------------
 
-        if (deferredWebMap) {
-          deferredWebMap.then(function(results) {   
+        if (deferredWebMapOrWebScene) {
+          deferredWebMapOrWebScene.then(function(results) {   
 
             // Check layer support
-            this._showLoadErrors(results.webMapOrWebScene);
+            this._watchForLoadErrors(results.webMapOrWebScene);
 
             // View options
             var paddingOptions = this._theme.getPadding();
@@ -256,9 +262,13 @@ define([
               this.reportError(new Error("Styler:: Error loading view for this webmap or webscene: " + error));
             }.bind(this));
 
-            // view.always(function() {
-            //   window.setTimeout(this._removeLoading(), this._removeLoadingTimeout);
-            // }.bind(this));
+            // Show a loading message in 15s if the view isn't fully ready
+            window.setTimeout(function() {
+              if (!view.ready) {
+                this._removeLoading();
+                this._showError(this._errorTitle.snap, this._errorMessage.load, this._errorMessage.base + " View exceeded timeout.");
+              }
+            }.bind(this), this._removeLoadingTimeout);
 
             this._activeView = view;
 
@@ -321,54 +331,57 @@ define([
 
     // Webmap layer check
 
-    _showLoadErrors: function(webMapOrWebScene) {
+    _watchForLoadErrors: function(webMapOrWebScene) {
+      // Webmap/webscene load errors
+      webMapOrWebScene.watch("loadStatus", function(status) {
+        if (status === "failed") {
+          var errorConsole = this._errorMessage.base + " " + this._errorMessage.webMapOrWebSceneLoadError + " - " + layer.title;
+          this._showError(this._errorTitle.snap, this._errorMessage.general, errorConsole + " " + status);
+        };
+      }.bind(this));
+
+      // Map layers load errors
       webMapOrWebScene.then(function(map) {
         map.allLayers.forEach(function(layer) {
+          // Unsupported layer
           if (layer instanceof UnsupportedLayer) {
-            var error = this._errorMessage.layerUnsupported + ": " + layer.title;
-            this._showError(this._errorTitle.warning, error, err);
+            var errorConsole = this._errorMessage.base + " " + this._errorMessage.layerUnsupported + " - " + layer.title;
+            this._showError(this._errorTitle.snap, this._errorMessage.general, errorConsole);
           }
-
+          // Unknow layer
           if (layer instanceof UnknownLayer) {
-            var error = this._errorMessage.layerUnknown + ": " + layer.title;
-            this._showError(this._errorTitle.warning, error, err);
+            var errorConsole = this._errorMessage.base + " " + this._errorMessage.layerUnknown + " - " + layer.title;
+            this._showError(this._errorTitle.snap, this._errorMessage.general, errorConsole);
           }
-                    
+          // Layer load failed (notified by loadFailed)
           layer.watch("loadStatus", function(err) {
             if (err === "failed") {
-              var error = this._errorMessage.layerLoadFailed + ": " + layer.title;
-              this._showError(this._errorTitle.warning, error, err);
+            var errorConsole = this._errorMessage.base + " " + this._errorMessage.layerLoadFailed + " - " + layer.title;
+              this._showError(this._errorTitle.snap, this._errorMessage.general, errorConsole + " " + err);
             }
           }.bind(this));
-
-          // layer.watch("loadError", function(err) {
-          //   if (err) {
-          //     var error = "Layer Load Error: " + layer.title;
-          //     this._showError(error, error + " " + err);
-          //   }
-          // }.bind(this));
-
+        }.bind(this), function(err) {
+          this._showError(this._errorTitle.snap, this._errorMessage.general, this._errorMessage.base + " " + this._errorMessage.webMapOrWebSceneLoadError + " " + err);
         }.bind(this));
       }.bind(this));
     },
 
-    _showError: function(errorTitle, errorMessage, error) {
-      if (error) {
-        var node = dom.byId("calciteErrorMessage");
-        if (node) {
-          node.innerHTML = "<strong>" + this._errorTitle.warning + "</strong>" + ": " + this._errorMessage.general;
-          // Use this if you want to accumulate messages...
-          // if (node.innerHTML) {
-          //   node.innerHTML = node.innerHTML + "<br>" + error ;
-          // } else {
-          //   node.innerHTML = "<strong>" + this._errorTitle + "</strong>" + this._errorLoadingWebmapMsg + "<br><br>";
-          //   node.innerHTML = node.innerHTML + error;
-          // }
-          query(".calcite-alert").removeClass("hidden");
-        }        
+    _showError: function(errorTitle, errorMessage, errorConsole) {
+      var node = dom.byId("calciteErrorMessage");
+      if (node) {
+        this._removeLoading();
+        node.innerHTML = "<strong>" + errorTitle + "</strong>" + " " + errorMessage;
+        // Use this if you want to accumulate messages...
+        // if (node.innerHTML) {
+        //   node.innerHTML = node.innerHTML + "<br>" + error ;
+        // } else {
+        //   node.innerHTML = "<strong>" + this._errorTitle + "</strong>" + this._errorLoadingWebmapMsg + "<br><br>";
+        //   node.innerHTML = node.innerHTML + error;
+        // }
+        query(".calcite-alert").removeClass("hidden");
       }
       if (this._showConsoleErrors){
-        console.log(errorTitle + ": " + errorMessage + " - " + error);
+        console.log(errorConsole);
       }
     },
 
