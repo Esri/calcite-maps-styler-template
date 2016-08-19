@@ -193,6 +193,11 @@ a[data-storymaps] {
 	cursor: default;
 }
 
+a[data-storymaps].navigate-error {
+	border-bottom: 1px dashed red;
+	color: red;
+}
+
 /*
  * Iframe style
  */
