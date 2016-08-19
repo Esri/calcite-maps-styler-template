@@ -57,7 +57,7 @@
 <body>
 <div id="message">
 	<div id="inner-message">
-		<h1 class="title">You are now signed in.</h1>
+		<h1 id="title" class="title">You are now signed in.</h1>
 		<div id="close-window" class="button">Back to Story Maps</div>
 		<div id="instructions">
 			<h3 id="instructions-message">Close this tab and refresh the website.</h3>
@@ -346,7 +346,7 @@
 			if (cookieEnd == -1) {
 				cookieEnd = cookieValue.length;
 			}
-			cookieValue = unescape(cookieValue.substring(cookieStart, cookieEnd));
+			cookieValue = decodeURIComponent(cookieValue.substring(cookieStart, cookieEnd));
 		}
 		return cookieValue;
 	},
@@ -387,7 +387,36 @@
 			window.location.href = inputUrl;
 		});
 
+		localizeStrings();
+
 		document.getElementById('message').style.display = 'block';
+	},
+
+
+	localizeStrings = function() {
+		var welcomeStrings = JSON.parse(fetchCookie('welcome'));
+		if (welcomeStrings) {
+			for (var prop in welcomeStrings) {
+				if (welcomeStrings.hasOwnProperty(prop)) {
+					if (welcomeStrings[prop] && typeof welcomeStrings[prop] === 'string') {
+						welcomeStrings[prop] = welcomeStrings[prop].replace(/<.*?>/, '');
+					}
+				}
+			}
+			
+			if (welcomeStrings.titleOne && typeof welcomeStrings.titleOne === 'string') {
+				document.getElementById('title').innerHTML = welcomeStrings.titleOne;
+			}
+			if (welcomeStrings.buttonOne && typeof welcomeStrings.buttonOne === 'string') {
+				document.getElementById('close-window').innerHTML = welcomeStrings.buttonOne;
+			}
+			if (welcomeStrings.titleTwo && typeof welcomeStrings.titleTwo === 'string') {
+				document.getElementById('instructions-message').innerHTML = welcomeStrings.titleTwo;
+			}
+			if (welcomeStrings.buttonTwo && typeof welcomeStrings.buttonTwo === 'string') {
+				document.getElementById('close-window-instructions').innerHTML = welcomeStrings.buttonTwo;
+			}
+		}
 	};
 
 

@@ -429,13 +429,14 @@ We nix out the before (left) pseudo element and instead add the stylings to the 
   cursor: default; }
 
 #my-stories-header {
-  background-image: url("../../images/my-stories/boardwalk.jpg");
+  background-image: url("../../images/my-stories/background.jpg");
   background-position: top center;
   color: white;
   font-family: "Avenir LT W01 65 Medium", "Lato", Arial, Helvetica, sans-serif;
   height: 350px;
   padding: 0 20px;
-  position: relative; }
+  position: relative;
+  background-size: cover; }
 
 #header-container {
   height: 350px;
@@ -447,6 +448,9 @@ We nix out the before (left) pseudo element and instead add the stylings to the 
   height: 100%;
   position: relative; }
 
+.header-plain-text {
+  text-shadow: 1px 1px 10px black; }
+
 #header-buttons {
   text-align: center; }
 
@@ -456,19 +460,19 @@ We nix out the before (left) pseudo element and instead add the stylings to the 
 
 .clear-button {
   background-color: black;
-  background-color: rgba(0, 0, 0, 0.55); }
+  background-color: rgba(0, 0, 0, 0.7); }
 
 .btn.clear-button {
   border: 1px solid rgba(255, 255, 255, 0.4); }
 
 .clear-button:hover, .btn.clear-button:hover {
-  background-color: rgba(0, 0, 0, 0.65); }
+  background-color: rgba(0, 0, 0, 0.8); }
 
 #search, .header-dropdown-button.btn {
-  border: none; }
+  border: 1px solid rgba(150, 150, 150, 0.4); }
 
 #search:hover, .header-dropdown-button:hover {
-  background-color: rgba(0, 0, 0, 0.65); }
+  background-color: rgba(0, 0, 0, 0.8); }
 
 #title {
   display: inline-block;
@@ -718,6 +722,9 @@ We nix out the before (left) pseudo element and instead add the stylings to the 
   background: rgba(0, 0, 0, 0.5);
   z-index: 200; }
 
+#no-create-story-modal {
+  display: none; }
+
 .modal.create-story-modal {
   background: white;
   overflow-y: auto; }
@@ -830,6 +837,9 @@ We nix out the before (left) pseudo element and instead add the stylings to the 
 .create-app-list .app-item a.btn, #ask-pros .app-item a.btn {
   border-radius: 15px; }
 
+.create-app-list .app-item a.btn {
+  font-size: 0.7rem; }
+
 /***********************  "ASK THE PROS" STYLINGS  *************************/
 #ask-pros {
   text-align: center; }
@@ -876,6 +886,9 @@ We nix out the before (left) pseudo element and instead add the stylings to the 
   display: inline-block;
   line-height: 1.3;
   vertical-align: middle; }
+
+#ask-pros .detail {
+  display: flex; }
 
 #ask-pros .detail .answer-detail {
   flex: 0 0 50%;
@@ -928,7 +941,7 @@ We nix out the before (left) pseudo element and instead add the stylings to the 
   color: white; }
 
 /***********************  SUGGESTION SCREEN STYLINGS  **************************/
-.app-item-final {
+.app-item.final {
   max-width: 90%;
   display: inline-block; }
 
@@ -1014,8 +1027,17 @@ We nix out the before (left) pseudo element and instead add the stylings to the 
   .create-app-list {
     margin-top: 55px; }
 
+  .create-app-image-container .image-hover-text span {
+    font-size: 0.85rem; }
+
   #ask-pros .square {
     height: 270px; }
+
+  #ask-pros .detail {
+    margin-top: 24px; }
+
+  .create-app-image-container.answer img {
+    width: 55%; }
 
   .app-item.final .ask-pros-title {
     font-size: 1.5rem;
@@ -1026,7 +1048,7 @@ We nix out the before (left) pseudo element and instead add the stylings to the 
 
   #ask-pros .app-reason {
     margin-top: 16px; } }
-@media (max-width: 750px) {
+@media (max-width: 820px) {
   .modal.create-story-modal {
     margin-left: -275px;
     width: 550px; }
@@ -1039,10 +1061,19 @@ We nix out the before (left) pseudo element and instead add the stylings to the 
     padding: 10px 35px; }
 
   .create-app-list .app-item a.btn, #ask-pros .app-item a.btn {
-    font-size: 0.7rem; }
+    font-size: 0.6rem; }
 
   .create-app-image-container .image-hover-text span {
-    font-size: 0.8rem; } }
+    font-size: 0.65rem; }
+
+  #ask-pros .app-reason p {
+    font-size: 0.85rem; } }
+@media (max-width: 630px) {
+  #create-story-modal {
+    display: none; }
+
+  #no-create-story-modal {
+    display: block; } }
 @media (max-height: 710px) {
   .modal.create-story-modal {
     max-height: 83%; }
@@ -1919,12 +1950,27 @@ a.modal-dismiss {
   top: -14px;
   width: 30px; }
 
+.item-status-icon.warning {
+  color: #E89D48;
+  border-radius: 0;
+  height: 22px;
+  left: -4px;
+  top: -7px;
+  width: 8px; }
+
 .item-status-icon:before {
   left: -2px;
   position: absolute;
   top: -2px; }
 
-.has-issues .item-status-icon {
+.item-status-icon.warning:before {
+  left: -13px;
+  top: -9px; }
+
+.has-warning .item-status-icon.warning {
+  display: block; }
+
+.has-issues .item-status-icon.error {
   display: block; }
 
 .item-metadata-container.whole-line {
@@ -2341,6 +2387,9 @@ This rule exists ONLY so that when the item-title is empty, it doesn't collapse 
 .content-tab.tab-error:before {
   color: #C24A56; }
 
+.content-tab.tab-warning:before {
+  color: #E89D48; }
+
 .content-tab.active {
   border-bottom: 3px solid #396e8b;
   color: #396e8b;
@@ -2638,6 +2687,12 @@ tr + .media-row {
 .sharing-alert-text {
   display: inline;
   margin-left: 10px; }
+
+.item[data-story-type="Cascade"] .media-row .sections .tooltip-wrapper {
+  display: none; }
+
+.media-title.scene {
+  cursor: default; }
 
 .scrollable-table thead {
   display: table;

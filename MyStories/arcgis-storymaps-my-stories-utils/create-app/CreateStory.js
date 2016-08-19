@@ -1,6 +1,13 @@
-define(['dojo/i18n!./nls/app.js?v=' + app.cfg.version, 'lib-build/hbars!./templates/createStory', 'lib-build/hbars!./templates/finalApp',
-	'lib-build/hbars!./templates/noCreateStory', 'lib-build/hbars!./templates/pickApp', 'lib-build/hbars!./templates/question', 'create-app/buildApp'],
-	function(createStoryi18n, createStoryTemplate, finalAppTemplate, noCreateStoryTemplate, pickAppTemplate, questionTemplate, buildApp) {
+define([
+	'dojo/i18n!./nls/app.js?v=' + app.cfg.version,
+	'lib-build/hbars!./templates/createStory',
+	'lib-build/hbars!./templates/finalApp',
+	'lib-build/hbars!./templates/noCreateStory',
+	'lib-build/hbars!./templates/pickApp',
+	'lib-build/hbars!./templates/question',
+	'create-app/buildApp'
+],
+function(createStoryi18n, createStoryTemplate, finalAppTemplate, noCreateStoryTemplate, pickAppTemplate, questionTemplate, buildApp) {
 	'use strict';
 	// click on large pictures takes to builder
 
@@ -115,202 +122,204 @@ define(['dojo/i18n!./nls/app.js?v=' + app.cfg.version, 'lib-build/hbars!./templa
 		return count++;
 	},
 
-	placesCategoriesQuestion = {
-		id: generateId(),
-		txt: strings.questionText.categories,
-		answerFormat: 'button',
-		answers: [
-			{
-				id: generateId(),
-				txt: strings.answerText.yes,
-				app: apps.shortlist,
-				question: null
-			},
-			{
-				id: generateId(),
-				txt: strings.answerText.no,
-				app: apps.mapTour,
-				question: null
-			}
-		]
-	},
 
-	narrativeQuestion = {
-		id: generateId(),
-		txt: strings.questionText.narrative,
-		answerFormat: 'detail',
-		answers: [
-			{
-				id: generateId(),
-				detailThumbnail: imageBase + 'map-journal.jpg',
-				detailTxt: strings.answerText.detailJournal,
-				txt: strings.answerText.pickThis,
-				app: apps.mapJournal,
-				question: null
-			},
-			{
-				id: generateId(),
-				detailThumbnail: imageBase + 'cascade.jpg',
-				detailTxt: strings.answerText.detailCascade,
-				txt: strings.answerText.pickThis,
-				app: apps.cascade,
-				question: null
-			}
-		]
-	},
+	createStory = function(inIsPortal) {
+		var isPortal = inIsPortal,
 
-	howManyDatasetsQuestion = {
-		id: generateId(),
-		txt: strings.questionText.datasets,
-		answerFormat: 'button',
-		answers: [
-			{
+			placesCategoriesQuestion = {
 				id: generateId(),
-				txt: strings.answerText.two,
-				app: apps.swipeSpyglass,
-				question: null
+				txt: strings.questionText.categories,
+				answerFormat: 'button',
+				answers: [
+					{
+						id: generateId(),
+						txt: strings.answerText.yes,
+						app: apps.shortlist,
+						question: null
+					},
+					{
+						id: generateId(),
+						txt: strings.answerText.no,
+						app: apps.mapTour,
+						question: null
+					}
+				]
 			},
-			{
-				id: generateId(),
-				txt: strings.answerText.moreThanTwo,
-				app: apps.mapSeries,
-				question: null
-			}
-		]
-	},
 
-	crowdsourceQuestion = {
-		id: generateId(),
-		txt: strings.questionText.crowdsource,
-		answerFormat: 'button',
-		answers: [
-			{
+			narrativeQuestion = {
 				id: generateId(),
-				txt: strings.answerText.yes,
-				app: apps.crowdsource,
-				question: null
+				txt: strings.questionText.narrative,
+				answerFormat: 'detail',
+				answers: [
+					{
+						id: generateId(),
+						detailThumbnail: imageBase + 'map-journal.jpg',
+						detailTxt: strings.answerText.detailJournal,
+						txt: strings.answerText.pickThis,
+						app: apps.mapJournal,
+						question: null
+					},
+					{
+						id: generateId(),
+						detailThumbnail: imageBase + 'cascade.jpg',
+						detailTxt: strings.answerText.detailCascade,
+						txt: strings.answerText.pickThis,
+						app: apps.cascade,
+						question: null
+					}
+				]
 			},
-			{
-				id: generateId(),
-				txt: strings.answerText.no,
-				app: null,
-				question: placesCategoriesQuestion
-			}
-		]
-	},
 
-	clickScrollPlaceQuestion = {
-		id: generateId(),
-		txt: strings.questionText.clickOrScroll,
-		answerFormat: 'button',
-		answers: [
-			{
+			howManyDatasetsQuestion = {
 				id: generateId(),
-				txt: strings.answerText.click,
-				app: apps.mapSeries,
-				question: null
+				txt: strings.questionText.datasets,
+				answerFormat: 'button',
+				answers: [
+					{
+						id: generateId(),
+						txt: strings.answerText.two,
+						app: apps.swipeSpyglass,
+						question: null
+					},
+					{
+						id: generateId(),
+						txt: strings.answerText.moreThanTwo,
+						app: apps.mapSeries,
+						question: null
+					}
+				]
 			},
-			{
-				id: generateId(),
-				txt: strings.answerText.scroll,
-				app: apps.mapJournal,
-				question: null
-			}
-		]
-	},
 
-	clickScrollNarrativeQuestion = {
-		id: generateId(),
-		txt: strings.questionText.clickOrScroll,
-		answerFormat: 'button',
-		answers: [
-			{
+			crowdsourceQuestion = {
 				id: generateId(),
-				txt: strings.answerText.click,
-				app: apps.mapSeries,
-				question: null
+				txt: strings.questionText.crowdsource,
+				answerFormat: 'button',
+				answers: [
+					{
+						id: generateId(),
+						txt: strings.answerText.yes,
+						app: apps.crowdsource,
+						question: null
+					},
+					{
+						id: generateId(),
+						txt: strings.answerText.no,
+						app: null,
+						question: placesCategoriesQuestion
+					}
+				]
 			},
-			{
-				id: generateId(),
-				txt: strings.answerText.scroll,
-				app: null,
-				question: narrativeQuestion
-			}
-		]
-	},
 
-	showPhotosQuestion = {
-		id: generateId(),
-		txt: strings.questionText.showPhotos,
-		answerFormat: 'button',
-		answers: [
-			{
+			clickScrollPlaceQuestion = {
 				id: generateId(),
-				txt: strings.answerText.yes,
-				app: null,
-				question: crowdsourceQuestion
+				txt: strings.questionText.clickOrScroll,
+				answerFormat: 'button',
+				answers: [
+					{
+						id: generateId(),
+						txt: strings.answerText.click,
+						app: apps.mapSeries,
+						question: null
+					},
+					{
+						id: generateId(),
+						txt: strings.answerText.scroll,
+						app: apps.mapJournal,
+						question: null
+					}
+				]
 			},
-			{
-				id: generateId(),
-				txt: strings.answerText.no,
-				app: null,
-				question: clickScrollPlaceQuestion
-			}
-		]
-	},
 
-	questionStructure = {
-		/*
-		Question {
-				id: '',
-				txt: '',
-				answerFormat: 'button' || 'detail'
-				answers: []
-			}
-		*/
-		/*
-		Answer {
-				id: '',
-				txt: '',
-				app: {} // The app object (title and valueId) of the answer. Null if answer leads to another question instead of to a final solution.
-				question: {} // null if this answer is the final answer, because there are no more questions needed.
-			}
-		*/
-
-		id: generateId(),
-		txt: strings.questionText.bestDescribesStory,
-		answerFormat: 'button',
-		answers: [
-			{
+			clickScrollNarrativeQuestion = {
 				id: generateId(),
-				txt: strings.answerText.seriesOfPlaces,
-				app: null,
-				question: showPhotosQuestion
+				txt: strings.questionText.clickOrScroll,
+				answerFormat: 'button',
+				answers: [
+					{
+						id: generateId(),
+						txt: strings.answerText.click,
+						app: apps.mapSeries,
+						question: null
+					},
+					{
+						id: generateId(),
+						txt: strings.answerText.scroll,
+						app: isPortal ? apps.mapJournal : null,
+						question: isPortal ? null : narrativeQuestion
+					}
+				]
 			},
-			{
-				id: generateId(),
-				txt: strings.answerText.mapsNarrative,
-				app: null,
-				question: clickScrollNarrativeQuestion
-			},
-			{
-				id: generateId(),
-				txt: strings.answerText.compareDatasets,
-				app: null,
-				question: howManyDatasetsQuestion
-			},
-			{
-				id: generateId(),
-				txt: strings.answerText.other,
-				app: apps.basic,
-				question: null
-			}
-		]
-	},
 
+			showPhotosQuestion = {
+				id: generateId(),
+				txt: strings.questionText.showPhotos,
+				answerFormat: 'button',
+				answers: [
+					{
+						id: generateId(),
+						txt: strings.answerText.yes,
+						app: isPortal ? apps.mapTour : null,
+						question: isPortal ? null : crowdsourceQuestion
+					},
+					{
+						id: generateId(),
+						txt: strings.answerText.no,
+						app: null,
+						question: clickScrollPlaceQuestion
+					}
+				]
+			},
 
-	createStory = function() {
-		var toggleButton = null,
+			questionStructure = {
+				/*
+				Question {
+						id: '',
+						txt: '',
+						answerFormat: 'button' || 'detail'
+						answers: []
+					}
+				*/
+				/*
+				Answer {
+						id: '',
+						txt: '',
+						app: {} // The app object (title and valueId) of the answer. Null if answer leads to another question instead of to a final solution.
+						question: {} // null if this answer is the final answer, because there are no more questions needed.
+					}
+				*/
+
+				id: generateId(),
+				txt: strings.questionText.bestDescribesStory,
+				answerFormat: 'button',
+				answers: [
+					{
+						id: generateId(),
+						txt: strings.answerText.seriesOfPlaces,
+						app: null,
+						question: showPhotosQuestion
+					},
+					{
+						id: generateId(),
+						txt: strings.answerText.mapsNarrative,
+						app: null,
+						question: clickScrollNarrativeQuestion
+					},
+					{
+						id: generateId(),
+						txt: strings.answerText.compareDatasets,
+						app: null,
+						question: howManyDatasetsQuestion
+					},
+					{
+						id: generateId(),
+						txt: strings.answerText.other,
+						app: apps.basic,
+						question: null
+					}
+				]
+			},
+
+			toggleButton = null,
 			askProsView = null,
 			backButton = null,
 			questionState = [],
@@ -507,7 +516,7 @@ define(['dojo/i18n!./nls/app.js?v=' + app.cfg.version, 'lib-build/hbars!./templa
 			$('#create-story-modal').html(createStoryTemplate(
 				{
 					strings: strings,
-					pickAppWidget: templatizePickApp(),
+					pickAppWidget: templatizePickApp(isPortal),
 					askProsWidget: templatizeQuestion()
 				}
 			));
@@ -539,12 +548,13 @@ define(['dojo/i18n!./nls/app.js?v=' + app.cfg.version, 'lib-build/hbars!./templa
 		},
 
 
-		templatizePickApp = function() {
+		templatizePickApp = function(inIsPortal) {
 			var pickAppWidget = pickAppTemplate({
 				appTypes: appTypes,
 				strings: strings,
 				basicUrl: basicUrl,
-				imageBase: imageBase
+				imageBase: imageBase,
+				isPortal: inIsPortal
 			});
 
 			return pickAppWidget;
