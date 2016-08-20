@@ -32,6 +32,8 @@ define({
           galleryItems: {
             remove1: "Delete this unused image from your ArcGIS account.",
             remove2: "(You'll need to upload it again if you decide to use it later.)",
+            removeFailed: "Remove this inaccessible image from this list.",
+            uploadError: "Sorry, this item failed to upload",
             modified: "Modified", // context: "Modified 3/18/16"
             uploaded: "Uploaded", // context: "Uploaded 3/18/16"
             by: "by" // context: "Webmap by John Smith"
@@ -138,7 +140,9 @@ define({
               dragAndDrop: "Drop an image here",
               uploadImage: "Browse for an image",
               agolInfo: "Images will be stored in your ArcGIS account and accessible inside your story.",
-              saveBeforeUpload: "Once you save this story, you can upload images to ArcGIS here."
+              saveBeforeUpload: "Once you save this story, you can upload images to ArcGIS here.",
+              fileTypes: "Supported file types:",
+              listSeparator: ","
             },
             filterAndSort: {
               webmap: "Web Map",
@@ -146,6 +150,7 @@ define({
               image: "Image",
               date: "Date",
               title: "Title",
+              views: "Views",
               search: "Search by keyword or ID"
             }
           }

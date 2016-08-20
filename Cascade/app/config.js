@@ -1,23 +1,11 @@
 app.cfg = {
   HEADER_SOCIAL: {
-    facebook: true,
-    twitter: true,
     bitly: {
-      enable: true,
       login: 'esristorymaps',
       key: 'R_14fc9f92e48f7c78c21db32bd01f7014'
     }
   },
-  HEADER: {
-    logo: {
-      url: 'resources/tpl/viewer/icons/esri-logo-both.png',
-      target: 'http://www.esri.com'
-    },
-    link: {
-      title: 'A Story Map',
-      url: 'http://storymaps.arcgis.com/'
-    }
-  },
+
   TIMEOUT_VIEWER_LOAD: 5000,
 
   TPL_NAME: 'Story Map Cascade',
