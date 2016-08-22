@@ -171,8 +171,8 @@ function(
       this._setTextStyle(CALCITE.THEME_SELECTORS.NAVBAR, theme.nav.textStyle);
       this._setBgRgbColor(CALCITE.THEME_SELECTORS.NAVBAR, theme.nav.bgRgbColor);
       // Dropdown
-      this._setBgStyle(CALCITE.THEME_SELECTORS.DROPDOWN, theme.dropdown.bgStyle);
-      this._setTextStyle(CALCITE.THEME_SELECTORS.DROPDOWN, theme.dropdown.textStyle);
+      //this._setBgStyle(CALCITE.THEME_SELECTORS.DROPDOWN, theme.dropdown.bgStyle);
+      //this._setTextStyle(CALCITE.THEME_SELECTORS.DROPDOWN, theme.dropdown.textStyle);
       // this._setBgRgbaColor(CALCITE.THEME_SELECTORS.DROPDOWN_MENU, styles.dropdown.bgRgbaColor);
       // Panel
       this._setBgStyle(CALCITE.THEME_SELECTORS.PANELS, theme.panel.bgStyle);
