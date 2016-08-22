@@ -40,7 +40,7 @@ define({
   },
   "cantFindStories": {
     "whereAreStories": "Ziet u uw verhaal niet?",
-    "notSeeExplanation": "My Stories geeft alleen een lijst met storymaps die in ArcGIS gehost zijn en gemaakt zijn met de applicaties {{STORY_MAP_TOUR}}, {{JOURNAL}}, {{MAP_SERIES}} of {{SWIPE_SPYGLASS}}. Bekijk onze {{FAQ}} voor meer informatie.",
+    "notSeeExplanation": "Ĳ_My Stories will only list story maps hosted in ArcGIS ({{STORY_MAP_BASIC}} is currently not supported). See our {{FAQ}} for more information___________________________________________ä.",
     "faq": "Veelgestelde vragen",
     "followingStoriesToUpdate": "De volgende verhalen, gemaakt met eerdere versies van onze applicaties, moeten geactualiseerd worden zodat ze in My Stories opgelijst worden:",
     "gettingStories": "Verhalen zoeken die met eerdere versies van onze applicaties gemaakt zijn en geactualiseerd moeten worden...",
@@ -88,27 +88,16 @@ define({
     "layerPrivate": "Uw kaartlaag privé maken zal uw verhaal defect maken"
   },
   "collectionList": {
-    "advocacy": "Belangenbehartiging en meningen",
-    "architecture": "Architectuur en design",
-    "conservation": "Bescherming en duurzaamheid",
-    "culture": "Cultuur",
-    "destinations": "Bestemmingen en toerisme",
-    "disasters": "Rampen en herstel",
-    "economy": "Economie en ontwikkeling",
-    "entertainment": "Entertainment",
-    "history": "Historie",
-    "infrastructure": "Infrastructuur",
-    "marketing": "Marketing",
-    "nature": "Natuur en milieu",
-    "news": "Nieuws en evenementen",
-    "oceans": "Oceanen",
-    "parks": "Parken en recreatie",
+    "business": "Ĳ_Business and Economy_______ä",
+    "history": "Ĳ_History and Culture_______ä",
+    "inNews": "Ĳ_In The News____ä",
+    "infrastructure": "Ĳ_Infrastructure and Construction__________ä",
+    "nature": "Ĳ_Nature and Conservation________ä",
     "people": "Mensen en de gemeenschap",
-    "planning": "Planning en analyse",
-    "publicArt": "Openbare kunst",
+    "planning": "Ĳ_Planning and Design_______ä",
     "science": "Wetenschap en technologie",
-    "sport": "Sport",
-    "travelogues": "Reisverhalen"
+    "sports": "Ĳ_Sports and Entertainment________ä",
+    "travel": "Ĳ_Travel and Recreation_______ä"
   },
   "types": {
     "custom": "Aangepast",
@@ -227,6 +216,7 @@ define({
   "content": {
     "media": {
       "maps": "Maps",
+      "scenes": "Ĳ_Scenes___ä",
       "images": "Afbeeldingen",
       "videos": "Video's",
       "webpages": "Webpagina's",
@@ -244,22 +234,30 @@ define({
       "bullet": "Opsommingstekens",
       "tab": "Tab:",
       "accordion": "Sectie",
-      "mapJournal": "Sectie"
+      "mapJournal": "Sectie",
+      "cascade": "Ĳ_Section___ä",
+      "crowdsource": "Ĳ_Contribution_____ä",
+      "shortlist": "Ĳ_Tab__ä"
     },
     "titleType": {
       "mapTour": "Bijschrift",
       "mapJournal": "URL",
-      "mapSeries": "URL"
+      "mapSeries": "URL",
+      "cascade": "Ĳ_URL__ä",
+      "crowdsource": "Ĳ_URL__ä",
+      "shortlist": "Ĳ_URL__ä"
     },
     "actions": {
       "viewMap": "Kaart weergeven",
       "editMap": "Kaart bewerken",
+      "editScene": "Ĳ_Edit Scene____ä",
       "fix": "Herstel",
       "viewLayer": "Kaartlagen weergeven"
     },
     "contentType": {
       "mainStage": "actie van hoofdvenster",
-      "sidePanel": "description"
+      "sidePanel": "description",
+      "introImage": "Ĳ_(cover page photo)______ä"
     },
     "notification": {
       "refreshExplanation": "Controleer uw verhaal nogmaals",
@@ -300,6 +298,7 @@ define({
       "publicDisabled": "Openbaar delen is uitgeschakeld door een beheerder",
       "orgDisabled": "Delen met uw organisatie is uitgeschakeld door een beheerder",
       "noMapName": "Kon de kaartnaam niet laden",
+      "noSceneName": "Ĳ_Could Not Retrieve Scene________ä",
       "notPublic": "NIET OPENBAAR",
       "inaccessible": "NIET TOEGANKELIJK",
       "deleted": "VERWIJDERD",
@@ -351,6 +350,8 @@ define({
       "cantScanThisTypeAlt": "We kunnen dit type kaartlaag niet controleren",
       "cantScanThisType": "Kaartlaag is geen kaartlaagtype dat we kunnen controleren",
       "webpageNotScanned": "Webpagina's worden niet gecontroleerd op problemen",
+      "sceneNotScanned": "Ĳ_Scenes are not currently checked for issues, please make sure that the scene and all of its layers are shared correctly_____________________________________ä",
+      "scenesNotScannedGlobally": "Ĳ_There are scenes in this story, and scenes are not currently checked for issues. Please make sure that the scenes and all of their layers are shared correctly________________________________________________ä",
       "ignoredIssue": "U negeert een fout op deze laag. Laad de pagina opnieuw en controleer dit verhaal nogmaals om de fout te beoordelen",
       "ignoredIssueBuilder": "U negeert een fout op deze laag. Laad de builder opnieuw om deze fout weer te controleren"
     },
@@ -450,18 +451,26 @@ define({
       "secondValueC": "met tabbladen",
       "thirdTitle": "kaarten"
     },
+    "cascade": {
+      "firstTitle": "Ĳ_sections___ä",
+      "secondTitle": "Ĳ_maps__ä"
+    },
     "swipeSpyglass": {
-      "firstTitle": "nuttige plaatsen",
+      "firstTitle": "Ĳ_points of interest______ä",
       "secondTitle": "style",
       "secondValueA": "swipe",
       "secondValueB": "verrekijker",
       "thirdTitle": "kaarten"
     },
     "crowdsource": {
-      "firstTitle": "bijdragen",
-      "secondTitle": "style",
-      "secondValueA": "zijvenster",
-      "secondValueB": "gestapeld",
+      "firstTitle": "Ĳ_contributions_____ä",
+      "secondTitle": "Ĳ_basemap___ä",
+      "secondValueLoading": "Ĳ_Loading____ä...",
+      "secondValueUnknown": "Ĳ_unknown___ä"
+    },
+    "shortlist": {
+      "firstTitle": "Ĳ_places___ä",
+      "secondTitle": "Ĳ_tabs__ä",
       "thirdTitle": "basiskaart",
       "thirdValueLoading": "Bezig met laden...",
       "thirdValueUnknown": "onbekend"

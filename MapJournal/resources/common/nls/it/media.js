@@ -31,13 +31,15 @@ define({
       "rightHeader": "Pagina Facebook",
       "pageExplain": "Una pagina Facebook è un marchio/prodotto pubblico o un personaggio pubblico come <b>esrigis</b>. È possibile ottenere il nome della pagina dopo il primo '/' nell'URL della pagina.",
       "pageInputLbl": "Nome pagina",
-      "lookupMsgError": "Pagina non trovata"
+      "lookupMsgError": "Pagina non trovata",
+      "warning": "é_Facebook support has been discontinued, ${learn}________________È.",
+      "learn": "é_learn more____È"
     },
     "imageSelectorPicasa": {
-      "userInputLbl": "E-mail o ID Picasa/Google+",
+      "userInputLbl": "é_Email or Picasa id______È",
       "signInMsg2": "Account non trovato",
-      "howToFind": "Come trovare l'ID di un account Picasa o Google+",
-      "howToFind2": "Copiare le cifre tra il primo e il secondo '/' di qualsiasi pagina Picasa o G+"
+      "howToFind": "é_How to find a Picasa id________È",
+      "howToFind2": "é_Copy digits between the first and second '/' of any Picasa page____________________È"
     },
     "videoSelectorCommon": {
       "check": "Seleziona",
@@ -101,7 +103,10 @@ define({
       "lblPosition3Explain2": "(la larghezza viene sempre adattata al pannello)",
       "lblPosition4Explain": "(possibile distorsione)",
       "unloadLbl": "Scarica quando il lettore passa a un altro elemento",
-      "unloadHelp": "Se la pagina Web dispone di supporti audio o video, mantenere l'opzione selezionata per arrestare la riproduzione del contenuto quando il lettore passa a un elemento diverso. Deselezionarla, per esempio, per mantenere la riproduzione di una colonna sonora mentre il lettore continua a leggere la storia.<br />Se la pagina Web è un'applicazione, deselezionare l'opzione in modo che la storia non venga ricaricata se il lettore torna alla pagina."
+      "unloadHelp": "Se la pagina Web dispone di supporti audio o video, mantenere l'opzione selezionata per arrestare la riproduzione del contenuto quando il lettore passa a un elemento diverso. Deselezionarla, per esempio, per mantenere la riproduzione di una colonna sonora mentre il lettore continua a leggere la storia.<br />Se la pagina Web è un'applicazione, deselezionare l'opzione in modo che la storia non venga ricaricata se il lettore torna alla pagina.",
+      "embedProtocolLabel": "é_Load page over a secure connection (HTTPS)______________È",
+      "embedProtocolWarning1": "é_Your story is configured to load over a secure connection (https), so web page show in the story must also use a secure connection. If the page does not load it may be because it is not available over a secure connection or that it cannot be included in your story (some websites restrict this). You may need to create a hyperlink to open the page in a new browser tab________________________________________________________________________________________________________________È.",
+      "embedProtocolWarning2": "é_Your story is configured to load over an insecure connection (http), so you can choose to load this page over a secure (recommended) or insecure connection. If the page does not load, it may be because it does not support the connection type you selected or that it cannot be included in your story (some websites restrict this). You may need to create a hyperlink to open the page in a new browser tab__________________________________________________________________________________________________________________________È."
     },
     "editorActionGeocode": {
       "lblTitle": "Trova un indirizzo o un luogo",

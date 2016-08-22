@@ -14,6 +14,9 @@ define(['dojo/i18n!sign-in/nls/app.js?v=' + app.cfg.version, 'lib-build/hbars!./
 			templatizeSignInUnavailableDialog();
 		},
 
+		getStrings = function() {
+			return strings;
+		},
 
 		templatizeSignInDialog = function() {
 			var publicLink = 'https://' + app.cfg.DEFAULT_PORTAL_URL + '/home/createaccount.html';
@@ -39,6 +42,10 @@ define(['dojo/i18n!sign-in/nls/app.js?v=' + app.cfg.version, 'lib-build/hbars!./
 
 
 		init();
+
+		return {
+			getStrings: getStrings
+		};
 	};
 
 

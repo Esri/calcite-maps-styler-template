@@ -19,27 +19,28 @@ define({
     "error": "マップを作成できません"
   },
   "nav": {
-    "close": "閉じる"
+    "close": "須_Close___鷗"
   },
   "elevation": {
-    "toggle": "標高グラフを切り替えます。",
-    "drawTool": "マップ上にラインを描画して、標高グラフを生成します。",
-    "selectMessage": "ライン フィーチャをクリックするか、描画ツールを使用してラインを描画し、標高グラフを表示します。"
+    "toggle": "須_Toggle the Elevation Profile Chart____________鷗.",
+    "drawTool": "須_Draw a line on the map to generate an elevation profile__________________鷗.",
+    "selectMessage": "須_Click a line feature or use the draw tool to draw a line to display the elevation profile____________________________鷗",
+    "gainLossTemplate": "須_Min: ${min}   Max: ${max}   Start: ${start}   End: ${end}   Change: ${gainLoss}_________________________鷗"
   },
   "splash": {
-    "title": "タイトル",
-    "content": "構成してカスタム スプラッシュ コンテンツを作成する"
+    "title": "須_Title___鷗",
+    "content": "須_Configure to create custom splash content_____________鷗"
   },
   "legend": {
-    "title": "凡例",
-    "tip": "凡例の表示"
+    "title": "須_Legend___鷗",
+    "tip": "須_Display legend_____鷗"
   },
   "basemap": {
-    "title": "ベースマップ",
-    "tip": "ベースマップの変更"
+    "title": "須_Basemap___鷗",
+    "tip": "須_Change basemap_____鷗"
   },
   "share": {
-    "title": "共有",
-    "tip": "マップの共有"
+    "title": "須_Share___鷗",
+    "tip": "須_Share map____鷗"
   }
 });

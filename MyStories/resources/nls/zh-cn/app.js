@@ -40,7 +40,7 @@ define({
   },
   "cantFindStories": {
     "whereAreStories": "无法查看您的故事？",
-    "notSeeExplanation": "“我的故事”将仅会列出托管在 ArcGIS 主机上，并由 {{STORY_MAP_TOUR}}、{{JOURNAL}}、{{MAP_SERIES}} 或 {{SWIPE_SPYGLASS}} 应用程序创建的故事地图。有关详细信息，请参阅我们的 {{FAQ}}。",
+    "notSeeExplanation": "试_My Stories will only list story maps hosted in ArcGIS ({{STORY_MAP_BASIC}} is currently not supported). See our {{FAQ}} for more information___________________________________________验.",
     "faq": "FAQ",
     "followingStoriesToUpdate": "以下使用早期版本应用程序创建的故事需要在更新后才能在“我的故事”中列出:",
     "gettingStories": "搜索使用需要进行更新的早期版本应用程序创建的故事...",
@@ -88,27 +88,16 @@ define({
     "layerPrivate": "将图层设为私有会使故事中断"
   },
   "collectionList": {
-    "advocacy": "宣传和推广",
-    "architecture": "建筑和设计",
-    "conservation": "保护和可持续性",
-    "culture": "文化",
-    "destinations": "目的地和旅游",
-    "disasters": "灾难和恢复",
-    "economy": "经济和发展",
-    "entertainment": "娱乐",
-    "history": "历史",
-    "infrastructure": "基础设施",
-    "marketing": "市场营销",
-    "nature": "自然和环境",
-    "news": "新闻和活动",
-    "oceans": "海洋图",
-    "parks": "公园和娱乐场所",
+    "business": "试_Business and Economy_______验",
+    "history": "试_History and Culture_______验",
+    "inNews": "试_In The News____验",
+    "infrastructure": "试_Infrastructure and Construction__________验",
+    "nature": "试_Nature and Conservation________验",
     "people": "人与社会",
-    "planning": "规划和分析",
-    "publicArt": "公共艺术",
+    "planning": "试_Planning and Design_______验",
     "science": "科学和技术",
-    "sport": "运动",
-    "travelogues": "旅行见闻"
+    "sports": "试_Sports and Entertainment________验",
+    "travel": "试_Travel and Recreation_______验"
   },
   "types": {
     "custom": "自定义",
@@ -227,6 +216,7 @@ define({
   "content": {
     "media": {
       "maps": "地图",
+      "scenes": "试_Scenes___验",
       "images": "影像",
       "videos": "视频",
       "webpages": "网页",
@@ -244,22 +234,30 @@ define({
       "bullet": "项目符号",
       "tab": "选项卡",
       "accordion": "节",
-      "mapJournal": "节"
+      "mapJournal": "节",
+      "cascade": "试_Section___验",
+      "crowdsource": "试_Contribution_____验",
+      "shortlist": "试_Tab__验"
     },
     "titleType": {
       "mapTour": "标题",
       "mapJournal": "URL",
-      "mapSeries": "URL"
+      "mapSeries": "URL",
+      "cascade": "试_URL__验",
+      "crowdsource": "试_URL__验",
+      "shortlist": "试_URL__验"
     },
     "actions": {
       "viewMap": "查看地图",
       "editMap": "编辑地图",
-      "fix": "定位",
+      "editScene": "试_Edit Scene____验",
+      "fix": "固定",
       "viewLayer": "查看图层"
     },
     "contentType": {
-      "mainStage": "主阶段操作",
-      "sidePanel": "description"
+      "mainStage": "主舞台操作",
+      "sidePanel": "描述",
+      "introImage": "试_(cover page photo)______验"
     },
     "notification": {
       "refreshExplanation": "重新检查您的故事",
@@ -300,6 +298,7 @@ define({
       "publicDisabled": "管理员已禁用公开共享",
       "orgDisabled": "管理员已禁用共享到您的组织",
       "noMapName": "无法检索地图名称",
+      "noSceneName": "试_Could Not Retrieve Scene________验",
       "notPublic": "未公开",
       "inaccessible": "无法访问",
       "deleted": "已删除",
@@ -351,6 +350,8 @@ define({
       "cantScanThisTypeAlt": "无法检查此类图层",
       "cantScanThisType": "图层是我们无法查看的图层类型",
       "webpageNotScanned": "未检查网页是否存在问题",
+      "sceneNotScanned": "试_Scenes are not currently checked for issues, please make sure that the scene and all of its layers are shared correctly_____________________________________验",
+      "scenesNotScannedGlobally": "试_There are scenes in this story, and scenes are not currently checked for issues. Please make sure that the scenes and all of their layers are shared correctly________________________________________________验",
       "ignoredIssue": "您忽略了此图层上的一个错误。请重新加载此页面并重新检查此故事以检查错误",
       "ignoredIssueBuilder": "您忽略了此图层上的一个错误。请重新加载构建器以再次检查此错误"
     },
@@ -450,18 +451,26 @@ define({
       "secondValueC": "选项卡式",
       "thirdTitle": "地图"
     },
+    "cascade": {
+      "firstTitle": "试_sections___验",
+      "secondTitle": "试_maps__验"
+    },
     "swipeSpyglass": {
-      "firstTitle": "感兴趣点",
+      "firstTitle": "试_points of interest______验",
       "secondTitle": "样式",
       "secondValueA": "卷帘",
       "secondValueB": "望远镜",
       "thirdTitle": "地图"
     },
     "crowdsource": {
-      "firstTitle": "贡献",
-      "secondTitle": "样式",
-      "secondValueA": "侧面板",
-      "secondValueB": "堆叠",
+      "firstTitle": "试_contributions_____验",
+      "secondTitle": "试_basemap___验",
+      "secondValueLoading": "试_Loading____验...",
+      "secondValueUnknown": "试_unknown___验"
+    },
+    "shortlist": {
+      "firstTitle": "试_places___验",
+      "secondTitle": "试_tabs__验",
       "thirdTitle": "底图",
       "thirdValueLoading": "正在加载...",
       "thirdValueUnknown": "未知"

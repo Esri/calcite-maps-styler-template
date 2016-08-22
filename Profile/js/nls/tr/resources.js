@@ -19,27 +19,28 @@ define({
     "error": "Harita oluşturulamıyor"
   },
   "nav": {
-    "close": "Kapat"
+    "close": "ı_Close___İ"
   },
   "elevation": {
-    "toggle": "Yükselti Profili Grafiğini Açın/Kapatın.",
-    "drawTool": "Yükselti profili oluşturmak için haritada bir çizgi çizin.",
-    "selectMessage": "Yükselti profilini görüntülemek için çizgi detayına tıklayın veya çizim aracını kullanarak bir çizgi çizin"
+    "toggle": "ı_Toggle the Elevation Profile Chart____________İ.",
+    "drawTool": "ı_Draw a line on the map to generate an elevation profile__________________İ.",
+    "selectMessage": "ı_Click a line feature or use the draw tool to draw a line to display the elevation profile____________________________İ",
+    "gainLossTemplate": "ı_Min: ${min}   Max: ${max}   Start: ${start}   End: ${end}   Change: ${gainLoss}_________________________İ"
   },
   "splash": {
-    "title": "Başlık",
-    "content": "Özel açılış içeriği oluşturmak için yapılandır"
+    "title": "ı_Title___İ",
+    "content": "ı_Configure to create custom splash content_____________İ"
   },
   "legend": {
-    "title": "Açıklama",
-    "tip": "Göstergeyi göster"
+    "title": "ı_Legend___İ",
+    "tip": "ı_Display legend_____İ"
   },
   "basemap": {
-    "title": "Altlık Harita",
-    "tip": "Altlık haritasını değiştir"
+    "title": "ı_Basemap___İ",
+    "tip": "ı_Change basemap_____İ"
   },
   "share": {
-    "title": "Paylaş",
-    "tip": "Haritayı paylaş"
+    "title": "ı_Share___İ",
+    "tip": "ı_Share map____İ"
   }
 });

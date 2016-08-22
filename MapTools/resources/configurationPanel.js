@@ -110,7 +110,15 @@
                "fieldName":"titlecolor",
                "tooltip":"Title text color",
                "label":"Title text color"
-            }
+            },{
+               "type": "paragraph",
+               "value": "Use the Custom css option to paste css that overwrites rules in the app."
+             }, {
+               "type": "string",
+               "fieldName": "customstyle",
+               "tooltip": "Custom css",
+               "label": "Custom css"
+             }
          ]
       },
       {

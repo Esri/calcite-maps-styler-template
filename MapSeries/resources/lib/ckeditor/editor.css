@@ -21,7 +21,7 @@ For licensing, see LICENSE.md or http://ckeditor.com/license
 		url('../../common/font/OpenSans-Semibold-webfont.woff') format('woff'),
 		url('../../common/font/OpenSans-Semibold-webfont.ttf') format('truetype'),
 		url('../../common/font/OpenSans-Semibold-webfont.svg#open_sanssemibold') format('svg');
-	font-weight: normal;
+	font-weight: bold;
 	font-style: normal;
 }
 
@@ -53,7 +53,7 @@ p {
 
 strong {
 	font-family: 'open_sanssemibold', sans-serif;
-	font-weight: normal;
+	font-weight: bold;
 }
 
 .cke_editable

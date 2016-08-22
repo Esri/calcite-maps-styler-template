@@ -36,7 +36,10 @@ define({
       "noViewerIE": "低于版本 %VERSION%. %UPGRADE% 的 Internet Explorer 不支持此故事。",
       "upgradeBrowser": "<a href='http://browsehappy.com/' target='_blank'>请更新您的浏览器</a>。",
       "mapLoadingFail": "发生了一些错误，地图未正确加载。",
-      "signOut": "登出"
+      "signOut": "登出",
+      "print0": "试_Sorry, this story cannot be printed____________验.",
+      "print1": "试_To print this story, please use the print button located in the share dialog________________________验.",
+      "print2": "试_Sorry, a printable version of the story is typically accessible through the share dialog, but this dialog has been disabled by the author__________________________________________验."
     },
     "mobileView": {
       "tapForDetails": "点击查看详细信息",
@@ -85,7 +88,16 @@ define({
       "autoplayLabel": "自动播放模式",
       "autoplayExplain1": "自动播放模式将定期持续播放您的故事。该模式是广告亭或公共显示屏的理想选择，但请注意，在其他情景下会使故事难以阅读。小型显示器不支持该功能。",
       "autoplayExplain2": "激活此模式时，可使用控件播放/暂停故事和调整导航速度。",
-      "linksupdated": "链接已更新!"
+      "linksupdated": "链接已更新!",
+      "print": "试_Print___验",
+      "printInstruction1": "试_Please wait for all the content to load before printing this page_____________________验",
+      "printInstruction1a": "试_Some content may not print unless you enable \"Print Background Colors and Images\" in the Print Page setup dialog___________________________________验",
+      "printInstruction2": "试_This page cannot be shared with others, instead share the ${link}_____________________验",
+      "link": "试_link to the story______验",
+      "printOptPageBreak": "试_Begin each section on a new page___________验",
+      "printWarning": "试_This is a printed version of a story map. Dynamic content such as videos and interactive maps is only available in the online version at ${link}____________________________________________验",
+      "printMSWarning": "试_link available only in online story____________验",
+      "printVideoWarning": "试_This video can be viewed in the online version of this story map____________________验"
     }
   }
 });

@@ -83,7 +83,7 @@ define({
     "valueRadioButtonLabel": "Valore",
     "uniqueRadioButtonLabel": "Unico",
     "selectLayerToBegin": "Selezionare una categoria per iniziare",
-    "layerFeatureCount": "${featureCount} record"
+    "layerFeatureCount": "é_${selectedFeatureCount} selected / ${featureCount} records__________________È"
   },
   "timeSlider": {
     "timeSliderLabel": "Intervallo temporale",
@@ -97,7 +97,12 @@ define({
     "placeHolderText": "",
     "noCommentsAvailableText": "Nessun record disponibile",
     "remainingTextCount": "${0} caratteri rimanenti",
-    "showNoText": "No"
+    "showNoText": "No",
+    "selectAttachments": "Allegati",
+    "selectFileText": "Esplora",
+    "attachmentSelectedMsg": "allegato/i selezionato/i",
+    "attachmentHeaderText": "Allegati",
+    "addRecordText": "é_Add Record____È"
   },
   "main": {
     "noGroup": "Nessun gruppo configurato"
@@ -109,17 +114,18 @@ define({
   },
   "manualRefresh": {
     "manualRefreshIconTooltip": "Aggiorna",
-    "confirmManualRefeshText": "Tutte le selezioni e le modifiche non salvate verranno ignorate"
+    "confirmManualRefreshText": "é_All selections and unsaved changes will be discarded_________________È"
   },
   "help": {
     "helpIconTooltip": "Guida"
   },
   "filter": {
     "noFeatureFoundText": "Nessuna feature trovata per questo valore.",
-    "distinctQueryFalied": "Nessun valore distinto trovato per il campo.",
+    "distinctQueryFailed": "é_No distinct values found for the field_____________È.",
     "andText": "e",
-    "filterInEditModeAlert": "Filtri non disponibili durante la modifica",
-    "dropdownSelectOption": "Seleziona"
+    "filterInEditModeAlert": "é_Filters unavailable while editing___________È.",
+    "dropdownSelectOption": "Seleziona",
+    "filterInShowSelectedEditModeAlert": "é_Filters unavailable in 'Show Selected' mode______________È."
   },
   "detailsPanel": {
     "editContentText": "Modifica record"
@@ -127,5 +133,10 @@ define({
   "signOutPage": {
     "signOutMessage": "Disconnessione riuscita",
     "reSignInMessage": "Fare clic qui per effettuare l'accesso"
+  },
+  "selectionOptions": {
+    "selectionOptionsIconTooltip": "é_Selection Options______È",
+    "showAllOptionText": "é_Show All___È",
+    "showSelectedOptionText": "é_Show Selected_____È"
   }
 });

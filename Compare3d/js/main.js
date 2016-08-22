@@ -18,6 +18,7 @@
 define([
   "dojo/_base/declare",
   "dojo/_base/lang",
+  "dojo/_base/kernel",
   "dojo/_base/array",
 
   "dojo/Deferred",
@@ -52,6 +53,7 @@ define([
   "dojo/domReady!"], function(
   declare,
   lang,
+  kernel,
   array,
   Deferred,
   all,
@@ -77,6 +79,7 @@ define([
     linkHandler: null,
     views: [],
     startup: function(config) {
+      document.documentElement.lang = kernel.locale;
       // config will contain application and user defined info for the template such as i18n strings, the web map id
       // and application id
       // any url parameters and any application specific configuration information.
@@ -90,7 +93,9 @@ define([
         var regex = /\/SceneServer\/layers\/\d+\/?$/;
         esriRequest.setRequestPreCallback(function(request) {
           if (request && typeof request === "object" && !request.content && regex.test(request.url)) {
-            request.content = { f: "json" };
+            request.content = {
+              f: "json"
+            };
           }
           return request;
         });

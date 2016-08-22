@@ -24,7 +24,7 @@
     <meta property="og:site_name" content="esri" />
     <!-- End Facebook -->
     <!--Use protocol relative urls that way if the browser is viewing the page via HTTPS the js/css file will be requested using the HTTPS protocol-->
-    <link rel="stylesheet" type="text/css" href="//js.arcgis.com/3.17/esri/css/esri.css">
+    <link rel="stylesheet" type="text/css" href="//jsdev.arcgis.com/3.18/esri/css/esri.css">
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lato:300,400,700" />
     <!--Load any application specific styles-->
     <link id="claroTheme" rel="stylesheet" type="text/css" />
@@ -111,7 +111,7 @@
           dojoConfig.locale = RegExp.$1;
         }
     </script>
-    <script type="text/javascript" src="//js.arcgis.com/3.17"></script>
+    <script type="text/javascript" src="//jsdev.arcgis.com/3.18"></script>
     <script type="text/javascript">
         require([
             "config/templateConfig",
@@ -139,41 +139,27 @@
                   delete config.appResponse;
                 }
                 if (config.appid || config.edit) {
-                    var userDetails = signIn.getPortalUser();
-                    if (userDetails) {
-                        userInfo.username = userDetails.email;
-                        userInfo.token = userDetails.token;
-                        userInfo.portal = signIn.getPortal();
-                        var canExecute = signIn.authenticateUser(config.edit, appResponse, userInfo);
-                        if (canExecute) {
-                            myApp.startup(config, appResponse, userInfo);
-                        }
-                        else{
-                            myApp.reportError(new Error('Could not authenticate user'));
-                        }
+                      if (config.edit) {
+                          signIn.createPortal().then(function (loggedInUser) {
+                              userInfo.username = loggedInUser.username;
+                              userInfo.token = loggedInUser.credential.token;
+                              userInfo.credential = loggedInUser.credential;
+                              userInfo.portal = signIn.getPortal();
+                              var canExecute = signIn.authenticateUser(config.edit, appResponse, userInfo);
+                              if (canExecute) {
+                              myApp.startup(config, appResponse, userInfo);
+                          }
+                          else{
+                              myApp.reportError(new Error('Could not authenticate user'));
+                          }
+                      }, function(error){
+                          myApp.reportError(error);
+                      });
                     }
                     else {
-                        if (config.edit) {
-                            signIn.createPortal().then(function (loggedInUser) {
-                                userInfo.username = loggedInUser.username;
-                                userInfo.token = loggedInUser.credential.token;
-                                userInfo.credential = loggedInUser.credential;
-                                userInfo.portal = signIn.getPortal();
-                                var canExecute = signIn.authenticateUser(config.edit, appResponse, userInfo);
-                                if (canExecute) {
-                                myApp.startup(config, appResponse, userInfo);
-                            }
-                            else{
-                                myApp.reportError(new Error('Could not authenticate user'));
-                            }
-                        }, function(error){
-                            myApp.reportError(error);
-                        });
+                        myApp.startup(config);
                     }
-                        else {
-                            myApp.startup(config);
-                        }
-                    }
+                    
                 }
                 else {
                     myApp.startup(config);

@@ -40,7 +40,7 @@ define({
   },
   "cantFindStories": {
     "whereAreStories": "Ваша история не видна?",
-    "notSeeExplanation": "В разделе Мои истории отображаются только карты-истории, созданные на ArcGIS с помощью приложений {{STORY_MAP_TOUR}}, {{JOURNAL}}, {{MAP_SERIES}} или {{SWIPE_SPYGLASS}}. Для получения более подробной информации смотри {{FAQ}}.",
+    "notSeeExplanation": "Ж_My Stories will only list story maps hosted in ArcGIS ({{STORY_MAP_BASIC}} is currently not supported). See our {{FAQ}} for more information___________________________________________Я.",
     "faq": "Часто задаваемые вопросы",
     "followingStoriesToUpdate": "Следующие истории, созданные в более ранних версиях наших приложений, следует обновить, чтобы они появились в Моих историях:",
     "gettingStories": "Поиск историй, созданных в старых версиях приложений, которые следует обновить...",
@@ -88,27 +88,16 @@ define({
     "layerPrivate": "Закрытие доступа для слоя испортит всю историю"
   },
   "collectionList": {
-    "advocacy": "Адвокаты и защита свидетелей",
-    "architecture": "Архитектура и дизайн",
-    "conservation": "Охрана природы и устойчивое развитие",
-    "culture": "Культура",
-    "destinations": "Достопримечательности и туризм",
-    "disasters": "Чрезвычайные ситуации и спасение",
-    "economy": "Экономика и развитие",
-    "entertainment": "Развлечения",
-    "history": "История",
-    "infrastructure": "Инфраструктура",
-    "marketing": "Маркетинг",
-    "nature": "Природа и окружающая среда",
-    "news": "Новости и события",
-    "oceans": "Океаны",
-    "parks": "Парки и зоны отдыха",
+    "business": "Ж_Business and Economy_______Я",
+    "history": "Ж_History and Culture_______Я",
+    "inNews": "Ж_In The News____Я",
+    "infrastructure": "Ж_Infrastructure and Construction__________Я",
+    "nature": "Ж_Nature and Conservation________Я",
     "people": "Люди и общество",
-    "planning": "Планирование и анализ",
-    "publicArt": "Искусство",
+    "planning": "Ж_Planning and Design_______Я",
     "science": "Наука и технология",
-    "sport": "Спорт",
-    "travelogues": "Отчеты о путешествиях"
+    "sports": "Ж_Sports and Entertainment________Я",
+    "travel": "Ж_Travel and Recreation_______Я"
   },
   "types": {
     "custom": "Пользовательские",
@@ -227,6 +216,7 @@ define({
   "content": {
     "media": {
       "maps": "Карты",
+      "scenes": "Ж_Scenes___Я",
       "images": "Изображения",
       "videos": "Видеоролики",
       "webpages": "Веб-страницы",
@@ -244,22 +234,30 @@ define({
       "bullet": "Маркер",
       "tab": "Закладка",
       "accordion": "Секция",
-      "mapJournal": "Секция"
+      "mapJournal": "Секция",
+      "cascade": "Ж_Section___Я",
+      "crowdsource": "Ж_Contribution_____Я",
+      "shortlist": "Ж_Tab__Я"
     },
     "titleType": {
       "mapTour": "Заголовок",
       "mapJournal": "URL-адрес",
-      "mapSeries": "URL-адрес"
+      "mapSeries": "URL-адрес",
+      "cascade": "Ж_URL__Я",
+      "crowdsource": "Ж_URL__Я",
+      "shortlist": "Ж_URL__Я"
     },
     "actions": {
       "viewMap": "Просмотреть карту",
       "editMap": "Редактировать карту",
+      "editScene": "Ж_Edit Scene____Я",
       "fix": "Зафиксировать",
       "viewLayer": "Просмотреть слой"
     },
     "contentType": {
       "mainStage": "действие главной площадки",
-      "sidePanel": "описание"
+      "sidePanel": "описание",
+      "introImage": "Ж_(cover page photo)______Я"
     },
     "notification": {
       "refreshExplanation": "Еще раз проверьте вашу историю",
@@ -300,6 +298,7 @@ define({
       "publicDisabled": "Общий доступ был отключен Администратором",
       "orgDisabled": "Общий доступ в пределах организации был отключен Администратором",
       "noMapName": "Не удалось получить имя карты",
+      "noSceneName": "Ж_Could Not Retrieve Scene________Я",
       "notPublic": "НЕ ОБЩЕДОСТУПНО",
       "inaccessible": "НЕДОСТУПНО",
       "deleted": "УДАЛЕНО",
@@ -351,6 +350,8 @@ define({
       "cantScanThisTypeAlt": "У вас нет возможности выбрать этот тип слоя.",
       "cantScanThisType": "Слой не соответствует типу, который вы можете выбрать",
       "webpageNotScanned": "Веб-страницы не проверены на проблемы",
+      "sceneNotScanned": "Ж_Scenes are not currently checked for issues, please make sure that the scene and all of its layers are shared correctly_____________________________________Я",
+      "scenesNotScannedGlobally": "Ж_There are scenes in this story, and scenes are not currently checked for issues. Please make sure that the scenes and all of their layers are shared correctly________________________________________________Я",
       "ignoredIssue": "Вы проигнорировали ошибку данного слоя. Обновите страницу и ещё раз проверьте эту историю на наличие ошибки",
       "ignoredIssueBuilder": "Вы проигнорировали ошибку данного слоя. Обновите конструктор и ещё раз проверьте на наличие ошибки"
     },
@@ -450,18 +451,26 @@ define({
       "secondValueC": "tabbed",
       "thirdTitle": "карты"
     },
+    "cascade": {
+      "firstTitle": "Ж_sections___Я",
+      "secondTitle": "Ж_maps__Я"
+    },
     "swipeSpyglass": {
-      "firstTitle": "точки интереса",
+      "firstTitle": "Ж_points of interest______Я",
       "secondTitle": "стиль",
       "secondValueA": "swipe",
       "secondValueB": "spyglass",
       "thirdTitle": "карты"
     },
     "crowdsource": {
-      "firstTitle": "вклад",
-      "secondTitle": "стиль",
-      "secondValueA": "боковая панель",
-      "secondValueB": "перенос",
+      "firstTitle": "Ж_contributions_____Я",
+      "secondTitle": "Ж_basemap___Я",
+      "secondValueLoading": "Ж_Loading____Я...",
+      "secondValueUnknown": "Ж_unknown___Я"
+    },
+    "shortlist": {
+      "firstTitle": "Ж_places___Я",
+      "secondTitle": "Ж_tabs__Я",
       "thirdTitle": "базовая карта",
       "thirdValueLoading": "Загрузка...",
       "thirdValueUnknown": "неизвестный"

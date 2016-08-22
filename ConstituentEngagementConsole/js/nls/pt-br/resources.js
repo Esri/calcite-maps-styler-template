@@ -83,7 +83,7 @@ define({
     "valueRadioButtonLabel": "Valor",
     "uniqueRadioButtonLabel": "Único",
     "selectLayerToBegin": "Selecione uma categoria para iniciar",
-    "layerFeatureCount": "${featureCount} registros"
+    "layerFeatureCount": "ã_${selectedFeatureCount} selected / ${featureCount} records__________________Ç"
   },
   "timeSlider": {
     "timeSliderLabel": "Intervalo de tempo",
@@ -97,7 +97,12 @@ define({
     "placeHolderText": "",
     "noCommentsAvailableText": "Nenhum registro disponível",
     "remainingTextCount": "${0} caracteres restantes",
-    "showNoText": "Não"
+    "showNoText": "Não",
+    "selectAttachments": "Anexos",
+    "selectFileText": "Procurar",
+    "attachmentSelectedMsg": "anexos selecionados",
+    "attachmentHeaderText": "Anexos",
+    "addRecordText": "ã_Add Record____Ç"
   },
   "main": {
     "noGroup": "Nenhum grupo configurado"
@@ -109,17 +114,18 @@ define({
   },
   "manualRefresh": {
     "manualRefreshIconTooltip": "Atualizar",
-    "confirmManualRefeshText": "Todas as seleções e alterações não salvas serão descartadas"
+    "confirmManualRefreshText": "ã_All selections and unsaved changes will be discarded_________________Ç"
   },
   "help": {
     "helpIconTooltip": "Ajuda"
   },
   "filter": {
     "noFeatureFoundText": "Nenhuma feição encontrada para este valor.",
-    "distinctQueryFalied": "Nenhum valor distinto encontrado para o campo.",
+    "distinctQueryFailed": "ã_No distinct values found for the field_____________Ç.",
     "andText": "e",
-    "filterInEditModeAlert": "Filtros indisponíveis durante edição",
-    "dropdownSelectOption": "Selecionar"
+    "filterInEditModeAlert": "ã_Filters unavailable while editing___________Ç.",
+    "dropdownSelectOption": "Selecionar",
+    "filterInShowSelectedEditModeAlert": "ã_Filters unavailable in 'Show Selected' mode______________Ç."
   },
   "detailsPanel": {
     "editContentText": "Editar registro"
@@ -127,5 +133,10 @@ define({
   "signOutPage": {
     "signOutMessage": "Você saiu com sucesso",
     "reSignInMessage": "Clique aqui para entrar"
+  },
+  "selectionOptions": {
+    "selectionOptionsIconTooltip": "ã_Selection Options______Ç",
+    "showAllOptionText": "ã_Show All___Ç",
+    "showSelectedOptionText": "ã_Show Selected_____Ç"
   }
 });

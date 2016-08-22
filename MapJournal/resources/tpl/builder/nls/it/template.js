@@ -20,7 +20,9 @@ define({
       "cfgMedium": "Medio",
       "cfgLarge": "Grande",
       "socialLinksLabel": "Visualizza i collegamenti per la condivisione nella parte inferiore di ogni sezione",
-      "socialLinksDescr": "In questo modo i lettori possono fare riferimento e dare maggiore risalto a sezioni specifiche di %TPL_NAME%. Se ad esempio si utilizza un'icona per condividere le sezioni, i lettori potranno passare direttamente a tale sezione specifica di %TPL_NAME% anziché partire dall'inizio della storia. I lettori possono utilizzare il collegamento ai social media nella sezione del titolo per promuovere la scheda di intestazione di %TPL_NAME% e posizionarsi all'inizio di %TPL_NAME%."
+      "socialLinksDescr": "In questo modo i lettori possono fare riferimento e dare maggiore risalto a sezioni specifiche di %TPL_NAME%. Se ad esempio si utilizza un'icona per condividere le sezioni, i lettori potranno passare direttamente a tale sezione specifica di %TPL_NAME% anziché partire dall'inizio della storia. I lettori possono utilizzare il collegamento ai social media nella sezione del titolo per promuovere la scheda di intestazione di %TPL_NAME% e posizionarsi all'inizio di %TPL_NAME%.",
+      "socialDisabled": "é_This feature is only available with Floating Panel layout__________________È",
+      "socialWarning": "é_Your story is using Side Panel layout, but we now recommend using this option only with Floating Panel layout to avoid an issue where the panel may not position itself to the desired section for narratives with images. You may continue to use this option, but if you disable it, it will then only be available when using Floating Panel layout________________________________________________________________________________________________________È."
     },
     "settingsLayoutFonts": {
       "title": "Caratteri",

@@ -305,7 +305,7 @@
     "color": "#fff",
     "theme": "80ab00",
     "iconColor":"#fff",
-    "activeTool": "legend",
+    "activeTool": "",
     "scalebar": false,
     "splashModal": false,
     "toolbarLabels": false,

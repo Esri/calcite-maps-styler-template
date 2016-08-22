@@ -52,11 +52,32 @@ define([
   return declare(null, {
     config: {},
     startup: function(config) {
+      // Set lang attribute to current locale
+      document.documentElement.lang = kernel.locale;
       // config will contain application and user defined info for the template such as i18n strings, the web map id
       // and application id
       // any url parameters and any application specific configuration information.
       if (config) {
+
         this.config = config;
+        // Create and add custom style sheet
+        if (this.config.customstyle) {
+          var style = document.createElement("style");
+          style.appendChild(document.createTextNode(this.config.customstyle));
+          document.head.appendChild(style);
+        }
+
+        // shared styling support from open data
+        if (this.config.sharedThemeConfig && this.config.sharedThemeConfig.attributes && this.config.sharedThemeConfig.attributes.theme) {
+          var sharedTheme = this.config.sharedThemeConfig.attributes;
+          this.config.logo = sharedTheme.layout.header.component.settings.logoUrl || sharedTheme.theme.logo.small || null;
+          this.config.panelcolor = sharedTheme.theme.text.color;
+          this.config.panelbackground = sharedTheme.theme.body.bg;
+          this.config.timecolor = sharedTheme.theme.brand.secondary;
+          this.config.slidercolor = sharedTheme.theme.brand.primary;
+
+        }
+
         //supply either the webmap id or, if available, the item info
         var itemInfo = this.config.itemInfo || this.config.webmap;
         var mapParams = new MapUrlParams({
@@ -328,36 +349,12 @@ define([
       }
     },
     _updatePlayButton: function(add, remove) {
+      // add is icon to add e.g. icon-pause
+      // remove is icon to remove e.g. icon-play
       //switch play/pause icon
       var play = dom.byId("playSlider");
       domClass.remove(play, remove);
       domClass.add(play, add);
-
-      // if loop is disabled and if
-      // slider is at end reset if
-      // play/pause button is pressed.
-      if (!this.config.looptime) {
-        var slider = registry.byId("timeSlider");
-        //get slider value
-        var val = null;
-        if (lang.isArray(slider._slider.value)) {
-          val = slider._slider.value[1];
-        } else {
-          val = slider._slider.value;
-        }
-
-        if (val == slider._slider.maximum) {
-          slider.pause();
-          if (slider.thumbCount > 1) {
-            slider.setThumbIndexes([0, 1]);
-          } else {
-            slider.setThumbIndexes(0);
-          }
-
-          domClass.remove(play, "icon-pause");
-          domClass.add(play, "icon-play");
-        }
-      }
     },
     _displayTime: function() {
       //position the time window
@@ -376,10 +373,7 @@ define([
       if (this.config.durationTime && this.config.durationPeriod && this.config.tickTime && this.config.tickPeriod) {
         //var customEnd = moment().format("YYYY-MM-DD[T]HH:mm");
         var customEnd = moment(); //.format("MMMM Do YYYY , h:mm:ss a");
-
-        console.log(customEnd, " should be now");
         var customStart = moment().subtract(this.config.durationTime, this.config.durationPeriod); //.format("MMMM Do YYYY , h:mm:ss a");
-        console.log(customStart, " start");
         timeExtent = new TimeExtent(new Date(customStart), new Date(customEnd));
         timeProperties.startTime = customStart;
         timeProperties.endTime = customEnd;
@@ -432,7 +426,7 @@ define([
         }
         // If intermediate changes is true
         if (this.config.intermediatechanges) {
-          timeSlider._slider.set("intermediateChanges", true);
+          timeSlider.set("intermediateChanges", true);
         }
 
         on(dom.byId("playSlider"), "click", lang.hitch(this, function() {
@@ -444,7 +438,6 @@ define([
             removeClass = "icon-play";
             addClass = "icon-pause";
             timeSlider.play();
-
           } else { //Switch to the play icon and press pause
             removeClass = "icon-pause";
             addClass = "icon-play";
@@ -457,10 +450,31 @@ define([
         //Listen for time extent changes
         on(timeSlider, "time-extent-change", lang.hitch(this, function(e) {
           if (!e.startTime && e.endTime) {
-            console.log("We don't have start and end times ");
+            console.log("Missing start time");
           }
           this._formatTime(e);
-
+          // Are we at the end?
+          var slider = timeSlider._slider,
+            val;
+          if (lang.isArray(slider.value)) {
+            val = slider.value[1];
+          } else {
+            val = slider.value;
+          }
+          if (val == slider.maximum && timeSlider.loop !== true) {
+            // At slider end so set play buttton
+            this._updatePlayButton("icon-play", "icon-pause");
+            on.once(dom.byId("playSlider"), "click", function() {
+              if (val == slider.maximum) {
+                timeSlider.play();
+                if (timeSlider.thumbCount > 1) {
+                  timeSlider.setThumbIndexes([0, 1]);
+                } else {
+                  timeSlider.setThumbIndexes(0);
+                }
+              }
+            });
+          }
         }));
 
         //Hide the play controls if configured.

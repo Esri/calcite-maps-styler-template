@@ -83,7 +83,7 @@ define({
     "valueRadioButtonLabel": "Hodnota",
     "uniqueRadioButtonLabel": "Jedinečný",
     "selectLayerToBegin": "Začněte výběrem kategorie",
-    "layerFeatureCount": "${featureCount} záznamů"
+    "layerFeatureCount": "Ř_${selectedFeatureCount} selected / ${featureCount} records__________________ů"
   },
   "timeSlider": {
     "timeSliderLabel": "Časový rozsah",
@@ -97,7 +97,12 @@ define({
     "placeHolderText": "",
     "noCommentsAvailableText": "Nejsou k dispozici žádné záznamy",
     "remainingTextCount": "Počet zbývajících znaků: ${0}",
-    "showNoText": "Ne"
+    "showNoText": "Ne",
+    "selectAttachments": "Přílohy",
+    "selectFileText": "Procházet",
+    "attachmentSelectedMsg": "příloh vybráno",
+    "attachmentHeaderText": "Přílohy",
+    "addRecordText": "Ř_Add Record____ů"
   },
   "main": {
     "noGroup": "Není nakonfigurována žádná skupina"
@@ -109,17 +114,18 @@ define({
   },
   "manualRefresh": {
     "manualRefreshIconTooltip": "Obnovit",
-    "confirmManualRefeshText": "Všechny výběry a neuložené změny budou zrušeny."
+    "confirmManualRefreshText": "Ř_All selections and unsaved changes will be discarded_________________ů"
   },
   "help": {
     "helpIconTooltip": "Nápověda"
   },
   "filter": {
     "noFeatureFoundText": "Pro tuto hodnotu nebyl nalezen žádný prvek.",
-    "distinctQueryFalied": "Pro toto pole nebyly nalezeny žádné jedinečné hodnoty.",
+    "distinctQueryFailed": "Ř_No distinct values found for the field_____________ů.",
     "andText": "a",
-    "filterInEditModeAlert": "Při editaci nejsou filtry k dispozici",
-    "dropdownSelectOption": "Vybrat (Select)"
+    "filterInEditModeAlert": "Ř_Filters unavailable while editing___________ů.",
+    "dropdownSelectOption": "Vybrat (Select)",
+    "filterInShowSelectedEditModeAlert": "Ř_Filters unavailable in 'Show Selected' mode______________ů."
   },
   "detailsPanel": {
     "editContentText": "Upravit záznam"
@@ -127,5 +133,10 @@ define({
   "signOutPage": {
     "signOutMessage": "Byli jste úspěšně odhlášeni.",
     "reSignInMessage": "Klikněte sem pro přihlášení."
+  },
+  "selectionOptions": {
+    "selectionOptionsIconTooltip": "Ř_Selection Options______ů",
+    "showAllOptionText": "Ř_Show All___ů",
+    "showSelectedOptionText": "Ř_Show Selected_____ů"
   }
 });

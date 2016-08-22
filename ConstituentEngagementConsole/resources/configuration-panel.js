@@ -26,7 +26,8 @@
 		"popupTabText": "Info",
 		"mediaTabText": "Media",
 		"commentsTabText": "Comments",
-        "showHelpIcon": false
+		"showHelpIcon": false,
+		"commentFormAttachmentSectionLabel": "Attachments"
     },
 	"configurationSettings": [{
 	    "category": "<b>App Settings</b>",
@@ -172,6 +173,11 @@
 	        "fieldName": "commentField",
 	        "label": "Provide the name of a single field to display, regardless of the popup settings. This value is ignored if you choose to build the form from the comment table popup (below).",
 	        "tooltip": "Only content from related tables that have this field will be accessible through the application."
+	    }, {
+	        "label": "Header for section of the comments form where photos and other supporting files can be added to the comments. This section is only available when attachments are enabled on the layer.",
+	        "tooltip": "Header for the section of the comments form where supporting files can be attached to the comments.",
+	        "type": "string",
+	        "fieldName": "commentFormAttachmentSectionLabel"
 	    }, {
 	        "type": "boolean",
 	        "fieldName": "usePopupConfigurationForComment",

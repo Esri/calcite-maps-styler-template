@@ -31,13 +31,15 @@ define({
       "rightHeader": "Página de Facebook",
       "pageExplain": "Una página de Facebook es una marca/producto público o famoso como <b>esrigis</b>. Puedes obtener el nombre de la página después de la  primera '/' de la URL de la página.",
       "pageInputLbl": "Nombre de la página",
-      "lookupMsgError": "No se encontró la página"
+      "lookupMsgError": "No se encontró la página",
+      "warning": "á_Facebook support has been discontinued, ${learn}________________Ó.",
+      "learn": "á_learn more____Ó"
     },
     "imageSelectorPicasa": {
-      "userInputLbl": "Dirección de correo electrónico o Id. de Picasa/Google+",
+      "userInputLbl": "á_Email or Picasa id______Ó",
       "signInMsg2": "Cuenta no encontrada",
-      "howToFind": "Cómo encontrar el ID de una cuenta Picasa or Google+",
-      "howToFind2": "Copia los dígitos que hay entre la primera y la segunda '/' de cualquier página de Picasa o G+"
+      "howToFind": "á_How to find a Picasa id________Ó",
+      "howToFind2": "á_Copy digits between the first and second '/' of any Picasa page____________________Ó"
     },
     "videoSelectorCommon": {
       "check": "Comprobar",
@@ -101,7 +103,10 @@ define({
       "lblPosition3Explain2": "(el ancho siempre se ajusta al panel)",
       "lblPosition4Explain": "(puede distorsionarse)",
       "unloadLbl": "Detener cuando el lector abandone la sección",
-      "unloadHelp": "Si la página web incluye contenido multimedia de audio o vídeo, deja marcada esta opción para evitar que el contenido se reproduzca cuando el lector se mueva. Desactiva la opción, por ejemplo, para que la pista de audio se siga reproduciendo a medida que el lector avanza por la historia.<br />Si la página web es una aplicación, desactiva la opción para que la historia no se vuelva a cargar si el lector regresa a ella."
+      "unloadHelp": "Si la página web incluye contenido multimedia de audio o vídeo, deja marcada esta opción para evitar que el contenido se reproduzca cuando el lector se mueva. Desactiva la opción, por ejemplo, para que la pista de audio se siga reproduciendo a medida que el lector avanza por la historia.<br />Si la página web es una aplicación, desactiva la opción para que la historia no se vuelva a cargar si el lector regresa a ella.",
+      "embedProtocolLabel": "á_Load page over a secure connection (HTTPS)______________Ó",
+      "embedProtocolWarning1": "á_Your story is configured to load over a secure connection (https), so web page show in the story must also use a secure connection. If the page does not load it may be because it is not available over a secure connection or that it cannot be included in your story (some websites restrict this). You may need to create a hyperlink to open the page in a new browser tab________________________________________________________________________________________________________________Ó.",
+      "embedProtocolWarning2": "á_Your story is configured to load over an insecure connection (http), so you can choose to load this page over a secure (recommended) or insecure connection. If the page does not load, it may be because it does not support the connection type you selected or that it cannot be included in your story (some websites restrict this). You may need to create a hyperlink to open the page in a new browser tab__________________________________________________________________________________________________________________________Ó."
     },
     "editorActionGeocode": {
       "lblTitle": "Buscar una dirección o un lugar",

@@ -83,7 +83,7 @@ define({
     "valueRadioButtonLabel": "Lielums",
     "uniqueRadioButtonLabel": "Unikāls",
     "selectLayerToBegin": "Lai sāktu darbu, atlasiet kategoriju",
-    "layerFeatureCount": "${featureCount} ieraksti"
+    "layerFeatureCount": "ķ_${selectedFeatureCount} selected / ${featureCount} records__________________ū"
   },
   "timeSlider": {
     "timeSliderLabel": "Laika diapazons",
@@ -97,7 +97,12 @@ define({
     "placeHolderText": "",
     "noCommentsAvailableText": "Nav pieejams neviens ieraksts",
     "remainingTextCount": "Palikusi(-šas) ${0} rakstzīme(-s)",
-    "showNoText": "Nē"
+    "showNoText": "Nē",
+    "selectAttachments": "Pielikumi",
+    "selectFileText": "Pārlūkot",
+    "attachmentSelectedMsg": "atlasītais(-ie) pielikums(-i)",
+    "attachmentHeaderText": "Piesaistes",
+    "addRecordText": "ķ_Add Record____ū"
   },
   "main": {
     "noGroup": "Nav konfigurētas grupas"
@@ -109,17 +114,18 @@ define({
   },
   "manualRefresh": {
     "manualRefreshIconTooltip": "Atjaunot",
-    "confirmManualRefeshText": "Visas atlases un nesaglabātās izmaiņas tiks atmestas"
+    "confirmManualRefreshText": "ķ_All selections and unsaved changes will be discarded_________________ū"
   },
   "help": {
     "helpIconTooltip": "Palīdzība"
   },
   "filter": {
     "noFeatureFoundText": "Šai vērtībai nav atrasts neviens elements.",
-    "distinctQueryFalied": "Laukam nav atrasta neviena atšķirīga vērtība.",
+    "distinctQueryFailed": "ķ_No distinct values found for the field_____________ū.",
     "andText": "un",
-    "filterInEditModeAlert": "Rediģējot filtri nav pieejami",
-    "dropdownSelectOption": "Izvēlēties"
+    "filterInEditModeAlert": "ķ_Filters unavailable while editing___________ū.",
+    "dropdownSelectOption": "Izvēlēties",
+    "filterInShowSelectedEditModeAlert": "ķ_Filters unavailable in 'Show Selected' mode______________ū."
   },
   "detailsPanel": {
     "editContentText": "Rediģēt ierakstu"
@@ -127,5 +133,10 @@ define({
   "signOutPage": {
     "signOutMessage": "Jūs esat veiksmīgi izrakstījies",
     "reSignInMessage": "Noklikšķiniet šeit, lai pierakstītos"
+  },
+  "selectionOptions": {
+    "selectionOptionsIconTooltip": "ķ_Selection Options______ū",
+    "showAllOptionText": "ķ_Show All___ū",
+    "showSelectedOptionText": "ķ_Show Selected_____ū"
   }
 });

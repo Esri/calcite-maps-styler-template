@@ -1,5 +1,5 @@
 CKEDITOR.plugins.add('storymapsAction', {
-	icons: 'geocode,media,removeAction,previewAction',
+	icons: 'geocode,media,navigate,removeAction,previewAction',
 	init: function(editor) {
 		
 		var getSelectedActionId = function(path)
@@ -11,6 +11,18 @@ CKEDITOR.plugins.add('storymapsAction', {
 				elem: elem,
 				id: elem.getAttribute('data-storymaps')
 			} : null;
+		};
+		
+		var isPreviewableAction = function(path)
+		{
+			var elem = path.lastElement && path.lastElement.getAscendant( 'a', true ),
+				elemIsAction = elem && elem.getName() == 'a' && elem.getAttribute('data-storymaps') && elem.getChildCount();
+			
+			if (elemIsAction) {
+				return elem.getAttribute('data-storymaps-type') == 'media' || elem.getAttribute('data-storymaps-type') == 'zoom';
+			}
+			
+			return false;
 		};
 		
 		var getLink = function(path)
@@ -110,6 +122,51 @@ CKEDITOR.plugins.add('storymapsAction', {
 		});
 		
 		/*
+		 * Navigate
+		 */
+		CKEDITOR.navigateCommand = function(){ };
+		CKEDITOR.navigateCommand.prototype = {
+			exec: function(editor) {
+				var action = getSelectedActionId(editor.elementPath());
+
+				require(["dojo/topic"], function(topic){
+					topic.publish("EDITOR-OPEN-NAVIGATE", {
+						selectedActionId: action ? action.id : null,
+						text: action ? action.elem.getHtml() : editor.getSelection().getSelectedText(),
+						editorCallback: function(cfg){
+							var link = editor.document.createElement('a');
+							link.setAttribute('data-storymaps', cfg.id);
+							link.setAttribute('data-storymaps-type', 'navigate');
+							link.setHtml(cfg.text);
+							editor.insertElement(link);
+						}
+					});
+				});
+			},
+			refresh: function(/*editor, path*/) {
+				/*
+				var elem = path.lastElement && path.lastElement.getAscendant( 'a', true ),
+					elemIsLink = elem && elem.getName() == 'a',
+					elemIsMedia = elem && elem.getAttribute('data-storymaps-type') == "media";
+				
+				if (elemIsLink && ! elemIsMedia)
+					this.setState(CKEDITOR.TRISTATE_DISABLED);
+				else
+					this.setState(CKEDITOR.TRISTATE_OFF);
+				*/
+			},
+			contextSensitive: 1,
+			startDisabled: 1
+		};
+		
+		editor.addCommand('navigateCommand', new CKEDITOR.navigateCommand());
+		editor.ui.addButton('Navigate', {
+			label: 'Navigate to a section', // TODO
+			command: 'navigateCommand',
+			toolbar: 'storymaps'
+		});
+		
+		/*
 		 * Remove map action or unlink
 		 */
 		
@@ -157,7 +214,7 @@ CKEDITOR.plugins.add('storymapsAction', {
 					window.open(getLink(path), '_blank');
 			},
 			refresh: function(editor, path) {
-				if ( getSelectedActionId(path) || getLink(path) )
+				if ( isPreviewableAction(path) || getLink(path) )
 					this.setState(CKEDITOR.TRISTATE_OFF);
 				else
 					this.setState(CKEDITOR.TRISTATE_DISABLED);

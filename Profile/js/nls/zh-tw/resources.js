@@ -19,27 +19,28 @@ define({
     "error": "無法建立地圖"
   },
   "nav": {
-    "close": "關閉"
+    "close": "試_Close___驗"
   },
   "elevation": {
-    "toggle": "切換高程剖面圖圖表。",
-    "drawTool": "在地圖上畫一條線來產生一個高程剖面。",
-    "selectMessage": "按一下線條圖徵，或使用繪製工具畫一條線來顯示高程剖面"
+    "toggle": "試_Toggle the Elevation Profile Chart____________驗.",
+    "drawTool": "試_Draw a line on the map to generate an elevation profile__________________驗.",
+    "selectMessage": "試_Click a line feature or use the draw tool to draw a line to display the elevation profile____________________________驗",
+    "gainLossTemplate": "試_Min: ${min}   Max: ${max}   Start: ${start}   End: ${end}   Change: ${gainLoss}_________________________驗"
   },
   "splash": {
-    "title": "標題",
-    "content": "設定以建立自訂啟動內容"
+    "title": "試_Title___驗",
+    "content": "試_Configure to create custom splash content_____________驗"
   },
   "legend": {
-    "title": "圖例",
-    "tip": "顯示圖例"
+    "title": "試_Legend___驗",
+    "tip": "試_Display legend_____驗"
   },
   "basemap": {
-    "title": "底圖",
-    "tip": "變更底圖"
+    "title": "試_Basemap___驗",
+    "tip": "試_Change basemap_____驗"
   },
   "share": {
-    "title": "分享",
-    "tip": "共用地圖"
+    "title": "試_Share___驗",
+    "tip": "試_Share map____驗"
   }
 });

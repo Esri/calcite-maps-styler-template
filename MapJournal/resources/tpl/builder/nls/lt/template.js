@@ -20,7 +20,9 @@ define({
       "cfgMedium": "Vidutinis",
       "cfgLarge": "Didelis",
       "socialLinksLabel": "Kiekvienos skilties apačioje rodomos bendrinimo nuorodos",
-      "socialLinksDescr": "Skaitytojai gali nurodyti ir reklamuoti konkrečias jūsų %TPL_NAME% skiltis. Pvz., jei naudojate skilties bendrinimo piktogramą, skaitytojai bus nukreipti į konkrečią %TPL_NAME% skiltį, o ne į pasakojimo pradžią. Be to, skaitytojai gali naudoti pavadinimo skiltyje pateiktą socialinių tinklų nuorodą ir reklamuoti visą %TPL_NAME% (antraštės skirtukas), tada jie bus nukreipti į %TPL_NAME% pradžią."
+      "socialLinksDescr": "Skaitytojai gali nurodyti ir reklamuoti konkrečias jūsų %TPL_NAME% skiltis. Pvz., jei naudojate skilties bendrinimo piktogramą, skaitytojai bus nukreipti į konkrečią %TPL_NAME% skiltį, o ne į pasakojimo pradžią. Be to, skaitytojai gali naudoti pavadinimo skiltyje pateiktą socialinių tinklų nuorodą ir reklamuoti visą %TPL_NAME% (antraštės skirtukas), tada jie bus nukreipti į %TPL_NAME% pradžią.",
+      "socialDisabled": "Į_This feature is only available with Floating Panel layout__________________š",
+      "socialWarning": "Į_Your story is using Side Panel layout, but we now recommend using this option only with Floating Panel layout to avoid an issue where the panel may not position itself to the desired section for narratives with images. You may continue to use this option, but if you disable it, it will then only be available when using Floating Panel layout________________________________________________________________________________________________________š."
     },
     "settingsLayoutFonts": {
       "title": "Šriftai",

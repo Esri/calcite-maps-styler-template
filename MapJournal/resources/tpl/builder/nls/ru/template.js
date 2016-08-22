@@ -20,7 +20,9 @@ define({
       "cfgMedium": "Средний",
       "cfgLarge": "Большой",
       "socialLinksLabel": "Отображать ссылки на публикацию в нижней части каждого раздела",
-      "socialLinksDescr": "Это дает возможность читателям, делать ссылки и повышать популярность отдельных разделов %TPL_NAME%.  Например, если вы используйте в разделе значок поделиться, читатели скорее обратятся к этому разделу %TPL_NAME%, чем  к началу. Они могут с помощью ссылок на социальные сети, расположенных у названия раздела, сделать известным весь %TPL_NAME% (закладка названия) и выполнить переход в начало %TPL_NAME%."
+      "socialLinksDescr": "Это дает возможность читателям, делать ссылки и повышать популярность отдельных разделов %TPL_NAME%.  Например, если вы используйте в разделе значок поделиться, читатели скорее обратятся к этому разделу %TPL_NAME%, чем  к началу. Они могут с помощью ссылок на социальные сети, расположенных у названия раздела, сделать известным весь %TPL_NAME% (закладка названия) и выполнить переход в начало %TPL_NAME%.",
+      "socialDisabled": "Ж_This feature is only available with Floating Panel layout__________________Я",
+      "socialWarning": "Ж_Your story is using Side Panel layout, but we now recommend using this option only with Floating Panel layout to avoid an issue where the panel may not position itself to the desired section for narratives with images. You may continue to use this option, but if you disable it, it will then only be available when using Floating Panel layout________________________________________________________________________________________________________Я."
     },
     "settingsLayoutFonts": {
       "title": "Шрифты",

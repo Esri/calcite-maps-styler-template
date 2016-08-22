@@ -40,7 +40,7 @@ define({
   },
   "cantFindStories": {
     "whereAreStories": "Etkö näe tarinaasi?",
-    "notSeeExplanation": "Omat tarinat -luettelossa näkyvät vain kartat, joita isännöidään ArcGISissa ja jotka on luotu sovelluksella {{STORY_MAP_TOUR}}, {{JOURNAL}}, {{MAP_SERIES}} tai {{SWIPE_SPYGLASS}}. Lisätietoja on kohdassa {{FAQ}}.",
+    "notSeeExplanation": "Å_My Stories will only list story maps hosted in ArcGIS ({{STORY_MAP_BASIC}} is currently not supported). See our {{FAQ}} for more information___________________________________________ö.",
     "faq": "Usein kysytyt kysymykset",
     "followingStoriesToUpdate": "Seuraavat tarinat, jotka on luotu sovellusten aiemmilla versioilla, on päivitettävä, jotta ne näkyvät Omat tarinat -luettelossa:",
     "gettingStories": "Etsitään tarinoita, jotka on luotu sovellusten aiemmilla versioilla ja jotka on päivitettävä...",
@@ -88,27 +88,16 @@ define({
     "layerPrivate": "Karttatason määrittäminen yksityiseksi katkaisee tarinasi"
   },
   "collectionList": {
-    "advocacy": "Edunvalvonta ja aktiivinen palvelutarjonta",
-    "architecture": "Arkkitehtuuri ja suunnittelu",
-    "conservation": "Luonnonsuojelu ja kestävä kehitys",
-    "culture": "Kulttuuri",
-    "destinations": "Kohteet ja turismi",
-    "disasters": "Katastrofit ja niistä toipuminen",
-    "economy": "Talous ja kehitys",
-    "entertainment": "Viihde",
-    "history": "Historia",
-    "infrastructure": "Infrastruktuuri",
-    "marketing": "Markkinointi",
-    "nature": "Luonto ja ympäristö",
-    "news": "Uutiset ja tapahtumat",
-    "oceans": "Oceans",
-    "parks": "Puistot ja virkistysalueet",
+    "business": "Å_Business and Economy_______ö",
+    "history": "Å_History and Culture_______ö",
+    "inNews": "Å_In The News____ö",
+    "infrastructure": "Å_Infrastructure and Construction__________ö",
+    "nature": "Å_Nature and Conservation________ö",
     "people": "Ihmiset ja yhteiskunta",
-    "planning": "Suunnittelu ja analysointi",
-    "publicArt": "Julkinen taide",
+    "planning": "Å_Planning and Design_______ö",
     "science": "Luonnontieteet ja tekniikka",
-    "sport": "Urheilu",
-    "travelogues": "Matkakertomukset"
+    "sports": "Å_Sports and Entertainment________ö",
+    "travel": "Å_Travel and Recreation_______ö"
   },
   "types": {
     "custom": "Virhe yhteyden muodostuksessa taustakarttapalveluun. Varmista, että SSL (HTTPS) -suojaus on käytössä palvelussa. Mahdolliset lisätiedot näkyvät alla.",
@@ -227,6 +216,7 @@ define({
   "content": {
     "media": {
       "maps": "Maps",
+      "scenes": "Å_Scenes___ö",
       "images": "Kuva-aineistot",
       "videos": "Videot",
       "webpages": "Web-sivut",
@@ -244,22 +234,30 @@ define({
       "bullet": "Luettelomerkki",
       "tab": "Sarkain",
       "accordion": "Osa",
-      "mapJournal": "Osa"
+      "mapJournal": "Osa",
+      "cascade": "Å_Section___ö",
+      "crowdsource": "Å_Contribution_____ö",
+      "shortlist": "Å_Tab__ö"
     },
     "titleType": {
       "mapTour": "Seloste",
       "mapJournal": "URL-osoite",
-      "mapSeries": "URL-osoite"
+      "mapSeries": "URL-osoite",
+      "cascade": "Å_URL__ö",
+      "crowdsource": "Å_URL__ö",
+      "shortlist": "Å_URL__ö"
     },
     "actions": {
       "viewMap": "Näytä kartta",
       "editMap": "Muokkaa karttaa",
+      "editScene": "Å_Edit Scene____ö",
       "fix": "Korjaa",
       "viewLayer": "Näytä karttataso"
     },
     "contentType": {
       "mainStage": "päävaiheen toiminto",
-      "sidePanel": "kuvaus"
+      "sidePanel": "kuvaus",
+      "introImage": "Å_(cover page photo)______ö"
     },
     "notification": {
       "refreshExplanation": "Tarkista tarinasi uudelleen",
@@ -300,6 +298,7 @@ define({
       "publicDisabled": "Pääkäyttäjä on poistanut julkisen jakamisen käytöstä",
       "orgDisabled": "Pääkäyttäjä on poistanut käytöstä jakamisen organisaation kanssa",
       "noMapName": "Kartan nimen nouto ei onnistunut",
+      "noSceneName": "Å_Could Not Retrieve Scene________ö",
       "notPublic": "EI JULKINEN",
       "inaccessible": "EI KÄYTETTÄVISSÄ",
       "deleted": "POISTETTU",
@@ -351,6 +350,8 @@ define({
       "cantScanThisTypeAlt": "Tämäntyyppistä karttatasoa ei voi tarkistaa",
       "cantScanThisType": "Karttatason tyyppi ei ole sellainen, jonka voi tarkistaa",
       "webpageNotScanned": "Web-sivujen ongelmia ei tarkisteta",
+      "sceneNotScanned": "Å_Scenes are not currently checked for issues, please make sure that the scene and all of its layers are shared correctly_____________________________________ö",
+      "scenesNotScannedGlobally": "Å_There are scenes in this story, and scenes are not currently checked for issues. Please make sure that the scenes and all of their layers are shared correctly________________________________________________ö",
       "ignoredIssue": "Olet ohittanut tämän karttatason virheen. Tarkista virhe lataamalla sivu uudelleen ja valitsemalla tämä tarina uudelleen",
       "ignoredIssueBuilder": "Olet ohittanut tämän karttatason virheen. Tarkista tämä virhe uudelleen lataamalla luontitoiminto uudelleen"
     },
@@ -450,18 +451,26 @@ define({
       "secondValueC": "välilehtiin jaettu",
       "thirdTitle": "kartat"
     },
+    "cascade": {
+      "firstTitle": "Å_sections___ö",
+      "secondTitle": "Å_maps__ö"
+    },
     "swipeSpyglass": {
-      "firstTitle": "kiinnostuksenkohde",
+      "firstTitle": "Å_points of interest______ö",
       "secondTitle": "tyyli",
       "secondValueA": "pyyhkäise",
       "secondValueB": "kiikari",
       "thirdTitle": "kartat"
     },
     "crowdsource": {
-      "firstTitle": "lisäykset",
-      "secondTitle": "tyyli",
-      "secondValueA": "sivupaneeli",
-      "secondValueB": "pinottu",
+      "firstTitle": "Å_contributions_____ö",
+      "secondTitle": "Å_basemap___ö",
+      "secondValueLoading": "Å_Loading____ö...",
+      "secondValueUnknown": "Å_unknown___ö"
+    },
+    "shortlist": {
+      "firstTitle": "Å_places___ö",
+      "secondTitle": "Å_tabs__ö",
       "thirdTitle": "peruskartta",
       "thirdValueLoading": "Ladataan...",
       "thirdValueUnknown": "tuntematon"

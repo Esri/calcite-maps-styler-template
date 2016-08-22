@@ -83,7 +83,7 @@ define({
     "valueRadioButtonLabel": "Giá trị",
     "uniqueRadioButtonLabel": "Duy nhất",
     "selectLayerToBegin": "Chọn một danh mục để bắt đầu",
-    "layerFeatureCount": "${featureCount} bản ghi"
+    "layerFeatureCount": "Đ_${selectedFeatureCount} selected / ${featureCount} records__________________ớ"
   },
   "timeSlider": {
     "timeSliderLabel": "Khoảng thời gian",
@@ -97,7 +97,12 @@ define({
     "placeHolderText": "",
     "noCommentsAvailableText": "Không có bản ghi nào",
     "remainingTextCount": "Còn ${0} ký tự",
-    "showNoText": "Không"
+    "showNoText": "Không",
+    "selectAttachments": "Tệp đính kèm",
+    "selectFileText": "Duyệt",
+    "attachmentSelectedMsg": "(các) tệp đính kèm được chọn",
+    "attachmentHeaderText": "Tệp đính kèm",
+    "addRecordText": "Đ_Add Record____ớ"
   },
   "main": {
     "noGroup": "Không có nhóm nào được cấu hình"
@@ -109,17 +114,18 @@ define({
   },
   "manualRefresh": {
     "manualRefreshIconTooltip": "Làm mới",
-    "confirmManualRefeshText": "Tất cả các lựa chọn và các thay đổi chưa lưu sẽ bị hủy"
+    "confirmManualRefreshText": "Đ_All selections and unsaved changes will be discarded_________________ớ"
   },
   "help": {
     "helpIconTooltip": "Trợ giúp"
   },
   "filter": {
     "noFeatureFoundText": "Không tìm thấy đối tượng nào cho giá trị này.",
-    "distinctQueryFalied": "Không tìm thấy giá trị riêng biệt nào cho trường.",
+    "distinctQueryFailed": "Đ_No distinct values found for the field_____________ớ.",
     "andText": "và",
-    "filterInEditModeAlert": "Bộ lọc không khả dụng trong khi chỉnh sửa",
-    "dropdownSelectOption": "Chọn"
+    "filterInEditModeAlert": "Đ_Filters unavailable while editing___________ớ.",
+    "dropdownSelectOption": "Chọn",
+    "filterInShowSelectedEditModeAlert": "Đ_Filters unavailable in 'Show Selected' mode______________ớ."
   },
   "detailsPanel": {
     "editContentText": "Chỉnh sửa bản ghi"
@@ -127,5 +133,10 @@ define({
   "signOutPage": {
     "signOutMessage": "Bạn đã đăng xuất thành công",
     "reSignInMessage": "Bấm vào đây để đăng nhập"
+  },
+  "selectionOptions": {
+    "selectionOptionsIconTooltip": "Đ_Selection Options______ớ",
+    "showAllOptionText": "Đ_Show All___ớ",
+    "showSelectedOptionText": "Đ_Show Selected_____ớ"
   }
 });

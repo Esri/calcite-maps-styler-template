@@ -20,7 +20,9 @@ define({
       "cfgMedium": "Médio",
       "cfgLarge": "Grande",
       "socialLinksLabel": "Exibir ligações para partilha no fundo de cada secção.",
-      "socialLinksDescr": "Isto permite aos leitores referenciar e promover secções específicas do seu %TPL_NAME%. Por exemplo, se utilizar o ícone de partilha de uma secção, os leitores irão ser dirigidos para essa secção %TPL_NAME% específica, e não para o início da sua história. Os seus leitores podem utilizar a ligação para redes sociais na secção do título para promover o seu %TPL_NAME% (separador do cabeçalho) completo e dirigi-los para o início do %TPL_NAME%."
+      "socialLinksDescr": "Isto permite aos leitores referenciar e promover secções específicas do seu %TPL_NAME%. Por exemplo, se utilizar o ícone de partilha de uma secção, os leitores irão ser dirigidos para essa secção %TPL_NAME% específica, e não para o início da sua história. Os seus leitores podem utilizar a ligação para redes sociais na secção do título para promover o seu %TPL_NAME% (separador do cabeçalho) completo e dirigi-los para o início do %TPL_NAME%.",
+      "socialDisabled": "ã_This feature is only available with Floating Panel layout__________________Ç",
+      "socialWarning": "ã_Your story is using Side Panel layout, but we now recommend using this option only with Floating Panel layout to avoid an issue where the panel may not position itself to the desired section for narratives with images. You may continue to use this option, but if you disable it, it will then only be available when using Floating Panel layout________________________________________________________________________________________________________Ç."
     },
     "settingsLayoutFonts": {
       "title": "Fontes",

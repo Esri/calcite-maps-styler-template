@@ -116,6 +116,12 @@ define([
       // and application id and any url parameters and any application specific configuration information.
       if (config) {
         this.config = config;
+        if (this.config.sharedThemeConfig && this.config.sharedThemeConfig.attributes && this.config.sharedThemeConfig.attributes.theme) {
+          var sharedTheme = this.config.sharedThemeConfig.attributes;
+          this.config.logo = sharedTheme.layout.header.component.settings.logoUrl || sharedTheme.theme.logo.small || null;
+          this.config.color = sharedTheme.theme.text.color;
+          this.config.theme = sharedTheme.theme.body.bg;
+        }
         this.color = this._setColor(this.config.color);
         this.theme = this._setColor(this.config.theme);
         this.iconColor = this._setColor(this.config.iconColor);
@@ -511,10 +517,10 @@ define([
                       time: true
                     };
                   }
-                  //Add all editable fields even if not visible.
-                  //if (field.visible) {
-                  fieldInfos.push(field);
-                //}
+                  //Only add visible fields
+                  if (field.visible) {
+                    fieldInfos.push(field);
+                  }
                 }));
 
               layer.fieldInfos = fieldInfos;

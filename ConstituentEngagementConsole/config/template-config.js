@@ -18,7 +18,7 @@
 define({
     // When true, the template will query arcgis.com for the webmap item.
     "queryForWebmap": false,
-    // When true, the template will query arcgis.com for the group's information.
+    // When true, the template will query arcgis.com for the groups information.
     "queryForGroupInfo": true,
     // When true, the template will query arcgis.com for the items contained within the group
     "queryForGroupItems": false,
@@ -46,7 +46,7 @@ define({
         "start": 0
     },
     // This option demonstrates how to handle additional custom url parameters. For example
-    // if you want users to be able to specify lat/lon coordinates that define the map's center or
+    // if you want users to be able to specify lat/lon coordinates that define the maps center or
     // specify an alternate basemap via a url parameter.
     "urlItems": [
         "embed",

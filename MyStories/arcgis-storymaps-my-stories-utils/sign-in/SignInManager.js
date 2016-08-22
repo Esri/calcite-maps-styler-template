@@ -222,7 +222,7 @@ define(['dojo/Deferred', 'sign-in/SignInDialog', 'sign-in/PortalHelper', 'create
 					performBuildAppCallback(buildCookie);
 				}
 				else {
-					destroyCookie();
+					destroyCookie('buildApp');
 				}
 			}
 
@@ -257,6 +257,30 @@ define(['dojo/Deferred', 'sign-in/SignInDialog', 'sign-in/PortalHelper', 'create
 	},
 
 
+	createCookie = function(cookieName, cookieObj) {
+		document.cookie = cookieName + '=' + encodeURIComponent(JSON.stringify(cookieObj));
+	},
+
+
+	setWelcomeCookie = function(strings) {
+		var cookieName = 'welcome';
+
+		var cookieObj = {
+			titleOne: clearHtmlTags(strings.signedInPrompt.signedIn),
+			buttonOne: clearHtmlTags(strings.signedInPrompt.backToStoryMaps),
+			titleTwo: clearHtmlTags(strings.signedInPrompt.closeRefresh),
+			buttonTwo: clearHtmlTags(strings.signedInPrompt.close)
+		};
+
+		document.cookie = 'welcome=' + encodeURIComponent(JSON.stringify(cookieObj)) + '; path=/';
+	},
+
+
+	clearHtmlTags = function(inString) {
+		return inString.replace(/<.*?>/, '');
+	},
+
+
 	performBuildAppCallback = function(cookie) {
 
 		var cookieObj = JSON.parse(cookie),
@@ -265,12 +289,11 @@ define(['dojo/Deferred', 'sign-in/SignInDialog', 'sign-in/PortalHelper', 'create
 
 		buildApp.showContinueBuildDialog(myApp, myLayout);
 
-		destroyCookie();
-    },
+		destroyCookie('buildApp');
+	},
 
-
-    destroyCookie = function() {
-    	document.cookie = 'buildApp=; expires=' + new Date('1970');
+    destroyCookie = function(cookieName) {
+    	document.cookie = cookieName + '=; expires=' + new Date('1970');
     },
 
 
@@ -338,7 +361,10 @@ define(['dojo/Deferred', 'sign-in/SignInDialog', 'sign-in/PortalHelper', 'create
 			canGoBack = null;
 
 		portalPromise.then(function(isPortal) {
-			new SignInDialog(isPortal);
+			var dialog = new SignInDialog(isPortal);
+			var strings = dialog.getStrings();
+			destroyCookie('welcome');			
+			setWelcomeCookie(strings);
 
 			// we should be doing the same check here as we are elsewhere -- first checking the URL and then using default if not on it...
 			var baseUrl = PortalHelper.getBaseUrl(null),
@@ -380,7 +406,7 @@ define(['dojo/Deferred', 'sign-in/SignInDialog', 'sign-in/PortalHelper', 'create
 
 			var locale = window.dojoConfig.locale;
 
-			if(!locale) {
+			if (!locale) {
 				locale = 'en';
 			}
 
@@ -411,7 +437,7 @@ define(['dojo/Deferred', 'sign-in/SignInDialog', 'sign-in/PortalHelper', 'create
 			$('#sign-in-container').off('click').on('click', function(e) {
 				// if the element that triggered this is the container (and not one of its children), dismiss the dialog.
 				if(e.target === e.currentTarget) {
-					destroyCookie();
+					destroyCookie('buildApp');
 					hideSignInDialog(true);
 				}
 			});

@@ -40,7 +40,7 @@ define({
   },
   "cantFindStories": {
     "whereAreStories": "Ne vidite svoju priču?",
-    "notSeeExplanation": "U dijelu Moje priče prikazat će se samo karte s pričom koje se nalaze na ArcGIS-u i koje su izrađene s pomoću aplikacija {{STORY_MAP_TOUR}}, {{JOURNAL}}, {{MAP_SERIES}} ili {{SWIPE_SPYGLASS}}. Pogledajte odjeljak {{FAQ}} za više informacija.",
+    "notSeeExplanation": "Č_My Stories will only list story maps hosted in ArcGIS ({{STORY_MAP_BASIC}} is currently not supported). See our {{FAQ}} for more information___________________________________________ž.",
     "faq": "Najčešća pitanja",
     "followingStoriesToUpdate": "Sljedeće priče izrađene s pomoću ranih verzija naših aplikacija treba ažurirati da bi bile navedene u dijelu Moje priče:",
     "gettingStories": "Pretraživanje priča izrađenih s pomoću ranih verzija naših aplikacija koje treba ažurirati...",
@@ -88,27 +88,16 @@ define({
     "layerPrivate": "Ako učinite sloj privatnim, priča će postati neispravna"
   },
   "collectionList": {
-    "advocacy": "Zagovaranje i komuniciranje s javnošću",
-    "architecture": "Arhitektura i dizajn",
-    "conservation": "Očuvanje i održivost",
-    "culture": "Kultura",
-    "destinations": "Odredišta i turizam",
-    "disasters": "Nepogode i obnova",
-    "economy": "Gospodarstvo i razvoj",
-    "entertainment": "Zabava",
-    "history": "Povijest",
-    "infrastructure": "Infrastruktura",
-    "marketing": "Marketing",
-    "nature": "Priroda i okoliš",
-    "news": "Novosti i događanja",
-    "oceans": "Oceani",
-    "parks": "Parkovi i rekreacija",
+    "business": "Č_Business and Economy_______ž",
+    "history": "Č_History and Culture_______ž",
+    "inNews": "Č_In The News____ž",
+    "infrastructure": "Č_Infrastructure and Construction__________ž",
+    "nature": "Č_Nature and Conservation________ž",
     "people": "Ljudi i društvo",
-    "planning": "Planiranje i analiza",
-    "publicArt": "Javna umjetnost",
+    "planning": "Č_Planning and Design_______ž",
     "science": "Znanost i tehnologija",
-    "sport": "Sport",
-    "travelogues": "Putopisi"
+    "sports": "Č_Sports and Entertainment________ž",
+    "travel": "Č_Travel and Recreation_______ž"
   },
   "types": {
     "custom": "Prilagođeno",
@@ -227,6 +216,7 @@ define({
   "content": {
     "media": {
       "maps": "Karte",
+      "scenes": "Č_Scenes___ž",
       "images": "Slike",
       "videos": "Videozapisi",
       "webpages": "Web-stranice",
@@ -244,22 +234,30 @@ define({
       "bullet": "Grafička oznaka",
       "tab": "Kartica",
       "accordion": "Odjeljak",
-      "mapJournal": "Odjeljak"
+      "mapJournal": "Odjeljak",
+      "cascade": "Č_Section___ž",
+      "crowdsource": "Č_Contribution_____ž",
+      "shortlist": "Č_Tab__ž"
     },
     "titleType": {
       "mapTour": "Natpis",
       "mapJournal": "URL",
-      "mapSeries": "URL"
+      "mapSeries": "URL",
+      "cascade": "Č_URL__ž",
+      "crowdsource": "Č_URL__ž",
+      "shortlist": "Č_URL__ž"
     },
     "actions": {
       "viewMap": "Prikaz karte",
       "editMap": "Uredi kartu",
+      "editScene": "Č_Edit Scene____ž",
       "fix": "Popravi",
       "viewLayer": "Prikaz sloja"
     },
     "contentType": {
       "mainStage": "radnje u glavnom prozoru",
-      "sidePanel": "opis"
+      "sidePanel": "opis",
+      "introImage": "Č_(cover page photo)______ž"
     },
     "notification": {
       "refreshExplanation": "Ponovno pogledajte svoju priču",
@@ -300,6 +298,7 @@ define({
       "publicDisabled": "Administrator je onemogućio javno dijeljenje",
       "orgDisabled": "Administrator je onemogućio dijeljenje s organizacijom",
       "noMapName": "Nije moguće dohvaćanje naziva karte",
+      "noSceneName": "Č_Could Not Retrieve Scene________ž",
       "notPublic": "NIJE JAVNO",
       "inaccessible": "NEDOSTUPNO",
       "deleted": "IZBRISANO",
@@ -351,6 +350,8 @@ define({
       "cantScanThisTypeAlt": "Ne možemo prikazati ovu vrstu sloja",
       "cantScanThisType": "Sloj ne spada u vrstu sloja koju možemo provjeriti",
       "webpageNotScanned": "Web-stranica nije provjerena na moguće probleme.",
+      "sceneNotScanned": "Č_Scenes are not currently checked for issues, please make sure that the scene and all of its layers are shared correctly_____________________________________ž",
+      "scenesNotScannedGlobally": "Č_There are scenes in this story, and scenes are not currently checked for issues. Please make sure that the scenes and all of their layers are shared correctly________________________________________________ž",
       "ignoredIssue": "Zanemarili ste pogrešku na ovom sloju. Ponovno učitajte stranicu i provjerite pogreške u priči",
       "ignoredIssueBuilder": "Zanemarili ste pogrešku na ovom sloju. Ponovno učitajte sastavljača za provjeru pogreške"
     },
@@ -450,18 +451,26 @@ define({
       "secondValueC": "prikaz u karticama",
       "thirdTitle": "karte"
     },
+    "cascade": {
+      "firstTitle": "Č_sections___ž",
+      "secondTitle": "Č_maps__ž"
+    },
     "swipeSpyglass": {
-      "firstTitle": "zanimljive lokacije",
+      "firstTitle": "Č_points of interest______ž",
       "secondTitle": "stil",
       "secondValueA": "klizač",
       "secondValueB": "povećalo",
       "thirdTitle": "karte"
     },
     "crowdsource": {
-      "firstTitle": "doprinosi",
-      "secondTitle": "stil",
-      "secondValueA": "bočna ploča",
-      "secondValueB": "naslagano",
+      "firstTitle": "Č_contributions_____ž",
+      "secondTitle": "Č_basemap___ž",
+      "secondValueLoading": "Č_Loading____ž...",
+      "secondValueUnknown": "Č_unknown___ž"
+    },
+    "shortlist": {
+      "firstTitle": "Č_places___ž",
+      "secondTitle": "Č_tabs__ž",
       "thirdTitle": "kartografska podloga",
       "thirdValueLoading": "Učitavanje...",
       "thirdValueUnknown": "nepoznato"

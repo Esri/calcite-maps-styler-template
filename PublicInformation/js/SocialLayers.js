@@ -160,6 +160,9 @@ define([
           });
         }
         // instagram enabled
+        // todo: Instagram API authentication
+        // disable instagram due to the new API guidelines
+        this.config.enableInstagram = false;
         if (this.config.enableInstagram) {
           // Instagram
           this._instagramLayer = new InstagramLayer({
@@ -668,8 +671,9 @@ define([
             page += 'redirect_uri=' + redirect_uri;
           }
           window.open(page, "twoAuth", 'scrollbars=yes, resizable=yes, width=' + w + ', height=' + h + ', top=' + top + ', left=' + left, true);
+          var twitterLayer = this._twitterLayer;
           window.oAuthCallback = function () {
-            window.location.reload();
+            twitterLayer.update(0);
           };
         }
       },

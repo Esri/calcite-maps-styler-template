@@ -1,4 +1,4 @@
-﻿/*global define,dojo,alert,moment,$,console */
+﻿/*global define,$,dojoConfig,window */
 /*jslint sloppy:true */
 /*
 | Copyright 2014 Esri
@@ -36,6 +36,8 @@ define([
     "dijit/layout/ContentPane",
     "widgets/details-panel/comment-form",
     "dojo/_base/array",
+    "dojo/DeferredList",
+    "dojo/query",
     "dojo/domReady!"
 ], function (
     declare,
@@ -57,13 +59,19 @@ define([
     PopupTemplate,
     ContentPane,
     CommentForm,
-    arrayUtil
+    arrayUtil,
+    DeferredList,
+    query
 ) {
     return declare([_WidgetBase, _TemplatedMixin, _WidgetsInTemplateMixin], {
         templateString: template,
         _commentPopupTable: null, // stores object of comments popup table
         _relatedRecords: [], // stores object of related record features
-        _commentformInstance: null,
+        _commentformInstance: null, // to store instance of comments form
+        _addCommentBtnClickHandle: null, // to store click handle of add comments button
+        _entireCommentsArr: null, // to store comments
+        _entireAttachmentsArr: null, // to store attachments
+        i18n: {}, // to stores nls strings
 
         /**
         * This function is called when widget is constructed
@@ -72,6 +80,7 @@ define([
         */
         constructor: function (options) {
             lang.mixin(this, options);
+            this.i18n = this.appConfig.i18n;
         },
 
         /**
@@ -90,6 +99,9 @@ define([
         */
         _showComments: function (graphic, parentDiv) {
             var relatedTableURL;
+            this.appUtils.showLoadingIndicator();
+            this._entireCommentsArr = null;
+            this._entireAttachmentsArr = null;
             // if comment field is present in config file and the layer contains related table, fetch the first related table URL
             if (this.selectedOperationalLayer.relationships.length > 0) {
                 // Construct the related table URL form operational layer URL and the related table id
@@ -138,6 +150,128 @@ define([
         },
 
         /**
+        * This function is used to fetch comments from table
+        * @param {object} graphic contains related feature object
+        * @memberOf widgets/details-panel/comments
+        */
+        _fetchComments: function (graphic, parentDiv) {
+            var relatedQuery, currentID;
+            currentID = graphic.attributes[this.selectedOperationalLayer.objectIdField];
+            relatedQuery = new RelationshipQuery();
+            relatedQuery.outFields = ["*"];
+            relatedQuery.relationshipId = this.selectedOperationalLayer.relationships[0].id;
+            relatedQuery.objectIds = [currentID];
+            // Query for related features and showing comments
+            this.selectedOperationalLayer.queryRelatedFeatures(relatedQuery, lang.hitch(this, function (relatedFeatures) {
+                var commentsParentDiv, pThis, commentsContainerDiv, i, deferredListArr;
+                deferredListArr = [];
+                pThis = this;
+                this._relatedRecords = relatedFeatures;
+                commentsContainerDiv = domConstruct.create("div", {}, parentDiv);
+                commentsParentDiv = domConstruct.create("div", { "class": "esriCTcommentsParentDiv" }, commentsContainerDiv);
+                function sortComments(a, b) {
+                    if (a.attributes[pThis._commentsTable.objectIdField] > b.attributes[pThis._commentsTable.objectIdField]) {
+                        return -1; // order a before b
+                    }
+                    if (a.attributes[pThis._commentsTable.objectIdField] < b.attributes[pThis._commentsTable.objectIdField]) {
+                        return 1; // order b before a
+                    }
+                    return 0; // a & b have same date, so relative order doesn't matter
+                }
+                if (this._relatedRecords[currentID] && this._relatedRecords[currentID].features && this._relatedRecords[currentID].features.length > 0) {
+                    this._attachEventToAddCommentButton();
+                    this._relatedRecords[currentID].features.sort(sortComments);
+                    for (i = 0; i < this._relatedRecords[currentID].features.length; i++) {
+                        if (!this.appConfig.usePopupConfigurationForComment) {
+                            this._createPopUpForSingleField(this._relatedRecords[currentID].features[i]);
+                        }
+                        deferredListArr.push(this._createPopUpContent(this._relatedRecords[currentID].features[i], commentsParentDiv));
+                    }
+                    this._getAllComments(deferredListArr);
+                } else {
+                    if (!this.appConfig.usePopupConfigurationForComment) {
+                        this._createPopUpForSingleField();
+                    }
+                    this._attachEventToAddCommentButton();
+                    this.showCommentsTab();
+                    domAttr.set(dom.byId("commentsTotalCount"), "innerHTML", "(" + 0 + ")"); //ignore jslint
+                    this.appUtils.hideLoadingIndicator();
+                }
+            }), lang.hitch(this, function () {
+                this.hideCommentsTab();
+                this.appUtils.hideLoadingIndicator();
+            }));
+        },
+
+        /**
+        * This function is used to get all the comments
+        * @memberOf widgets/details-panel/comments
+        */
+        _getAllComments: function (deferredListArr) {
+            var deferredList;
+            deferredList = new DeferredList(deferredListArr);
+            deferredList.then(lang.hitch(this, function (response) {
+                this._entireCommentsArr = response;
+                if (this._entireCommentsArr.length > 0) {
+                    if (this._commentsTable.hasAttachments) {
+                        this._getAllAttachments();
+                    } else {
+                        this._displayCommentsAndAttachments();
+                    }
+                } else {
+                    this.hideCommentsTab();
+                    this.appUtils.hideLoadingIndicator();
+                }
+            }), lang.hitch(this, function () {
+                this.hideCommentsTab();
+                this.appUtils.hideLoadingIndicator();
+            }));
+        },
+
+        /**
+        * This function is used to get all the attachments
+        * @memberOf widgets/details-panel/comments
+        */
+        _getAllAttachments: function () {
+            var deferredList, deferredListArr, i;
+            deferredListArr = [];
+            for (i = 0; i < this._entireCommentsArr.length; i++) {
+                deferredListArr.push(this._commentsTable.queryAttachmentInfos(this._entireCommentsArr[i][1].features[0].attributes[this.selectedOperationalLayer.objectIdField]));
+            }
+            deferredList = new DeferredList(deferredListArr);
+            deferredList.then(lang.hitch(this, function (response) {
+                this._entireAttachmentsArr = response;
+                this._displayCommentsAndAttachments();
+            }), lang.hitch(this, function () {
+                this.hideCommentsTab();
+                this.appUtils.hideLoadingIndicator();
+            }));
+        },
+
+        /**
+        * This function is used display comments and attachments
+        * @memberOf widgets/details-panel/comments
+        */
+        _displayCommentsAndAttachments: function () {
+            var i, commentContentPaneContainer, commentContentPane, commentsParentDiv;
+            for (i = 0; i < this._entireCommentsArr.length; i++) {
+                commentsParentDiv = query(".esriCTcommentsParentDiv")[0];
+                commentContentPaneContainer = domConstruct.create("div", { "class": "esriCTCommentsPopup" }, commentsParentDiv);
+                commentContentPane = new ContentPane({}, commentContentPaneContainer);
+                if (!this._entireCommentsArr[i][1].features[0].infoTemplate) {
+                    this._entireCommentsArr[i][1].features[0].setInfoTemplate(new PopupTemplate(this._commentPopupTable.popupInfo));
+                }
+                commentContentPane.startup();
+                commentContentPane.set('content', this._entireCommentsArr[i][1].features[0].getContent());
+                this._checkAttachments(commentContentPaneContainer, i);
+                this._createCommentButton(commentContentPaneContainer, this._entireCommentsArr[i][1].features[0]);
+            }
+            this.showCommentsTab();
+            domAttr.set(dom.byId("commentsTotalCount"), "innerHTML", "(" + this._entireCommentsArr.length + ")");
+            this.appUtils.hideLoadingIndicator();
+        },
+
+        /**
         * This function is used to check whether one of the field is editable or not
         * @memberOf widgets/details-panel/comments
         */
@@ -176,24 +310,141 @@ define([
         * This function is used to create common popup comment contents
         * @memberOf widgets/details-panel/comments
         */
-        _createPopUpContent: function (currentFeature, commentsParentDiv) {
+        _createPopUpContent: function (currentFeature) {
             var queryFeature, currentDateTime = new Date().getTime();
             queryFeature = new Query();
             queryFeature.objectIds = [parseInt(currentFeature.attributes[this.selectedOperationalLayer.objectIdField], 10)];
             queryFeature.outFields = ["*"];
             queryFeature.where = currentDateTime + "=" + currentDateTime;
             this._commentsTable.setInfoTemplate(new PopupTemplate(this._commentPopupTable.popupInfo));
-            this._commentsTable.queryFeatures(queryFeature, lang.hitch(this, function (result) {
-                var commentContentPaneContainer, commentContentPane;
-                commentContentPaneContainer = domConstruct.create("div", { "class": "esriCTCommentsPopup" }, commentsParentDiv);
-                commentContentPane = new ContentPane({}, commentContentPaneContainer);
-                if (!result.features[0].infoTemplate) {
-                    result.features[0].setInfoTemplate(new PopupTemplate(this._commentPopupTable.popupInfo));
+            return this._commentsTable.queryFeatures(queryFeature);
+        },
+
+        /**
+        * Check whether attachments are available in layer and enabled in webmap
+        * @memberOf widgets/details-panel/comments
+        **/
+        _checkAttachments: function (commentContentPaneContainer, index) {
+            if (this._commentsTable.hasAttachments) {
+                var attachmentsDiv = $(".attachmentsSection", commentContentPaneContainer)[0];
+                if (attachmentsDiv) {
+                    domConstruct.empty(attachmentsDiv);
+                    domStyle.set(attachmentsDiv, "display", "block");
+                    domClass.remove(attachmentsDiv, "hidden");
+                    this._showAttachments(attachmentsDiv, index);
                 }
-                commentContentPane.startup();
-                commentContentPane.set('content', result.features[0].getContent());
-                this._createCommentButton(commentContentPaneContainer, currentFeature);
-            }));
+            }
+        },
+
+        /**
+        * Query layer to get attachments
+        * @param{object} graphic
+        * @param{object} attachmentContainer
+        * @memberOf widgets/details-panel/comments
+        **/
+        _showAttachments: function (attachmentContainer, index) {
+            var fieldContent, i, attachmentWrapper, imageThumbnailContainer, imageThumbnailContent, imageContainer, fileTypeContainer, isAttachmentAvailable, imagePath, imageDiv;
+            //check if attachments found
+            if (this._entireAttachmentsArr[index][1] && this._entireAttachmentsArr[index][1].length > 0) {
+                //Create attachment header text
+                domConstruct.create("div", { "innerHTML": this.appConfig.i18n.comment.attachmentHeaderText, "class": "esriCTAttachmentHeader" }, attachmentContainer);
+                fieldContent = domConstruct.create("div", { "class": "esriCTThumbnailContainer" }, attachmentContainer);
+                // display all attached images in thumbnails
+                for (i = 0; i < this._entireAttachmentsArr[index][1].length; i++) {
+                    attachmentWrapper = domConstruct.create("div", {}, fieldContent);
+                    imageThumbnailContainer = domConstruct.create("div", { "class": "esriCTNonImageContainer", "alt": this._entireAttachmentsArr[index][1][i].url }, attachmentWrapper);
+                    imageThumbnailContent = domConstruct.create("div", { "class": "esriCTNonImageContent" }, imageThumbnailContainer);
+                    imageContainer = domConstruct.create("div", {}, imageThumbnailContent);
+                    fileTypeContainer = domConstruct.create("div", { "class": "esriCTNonFileTypeContent" }, imageThumbnailContent);
+                    isAttachmentAvailable = true;
+                    // set default image path if attachment has no image URL
+                    imagePath = dojoConfig.baseURL + this.appConfig.noAttachmentIcon;
+                    imageDiv = domConstruct.create("img", { "alt": this._entireAttachmentsArr[index][1][i].url, "class": "esriCTAttachmentImg", "src": imagePath }, imageContainer);
+                    this._fetchDocumentContentType(this._entireAttachmentsArr[index][1][i], fileTypeContainer);
+                    this._fetchDocumentName(this._entireAttachmentsArr[index][1][i], imageThumbnailContainer);
+                    on(imageThumbnailContainer, "click", lang.hitch(this, this._displayImageAttachments));
+                }
+                if (!isAttachmentAvailable) {
+                    domClass.add(attachmentContainer, "hidden");
+                }
+            }
+        },
+
+        /**
+        * Function to fetch document content type
+        * @param{object} attachment object
+        * @memberOf widgets/details-panel/comments
+        **/
+        _fetchDocumentContentType: function (attachmentData, fileTypeContainer) {
+            var attachmentType = attachmentData.contentType.split("/")[1], typeText;
+            switch (attachmentType) {
+            case "pdf":
+                typeText = ".PDF";
+                break;
+            case "plain":
+                typeText = ".TXT";
+                break;
+            case "vnd.ms-powerpoint":
+                typeText = ".PPT";
+                break;
+            case "vnd.openxmlformats-officedocument.spreadsheetml.sheet":
+                typeText = ".XLSX";
+                break;
+            case "vnd.openxmlformats-officedocument.wordprocessingml.document":
+                typeText = ".DOCX";
+                break;
+            case "octet-stream":
+                typeText = ".ZIP";
+                break;
+            case "tiff":
+                typeText = ".TIFF";
+                break;
+            case "tif":
+                typeText = ".TIF";
+                break;
+            case "bmp":
+                typeText = ".BMP";
+                break;
+            case "jpeg":
+                typeText = ".JPEG";
+                break;
+            case "jpg":
+                typeText = ".JPG";
+                break;
+            case "gif":
+                typeText = ".GIF";
+                break;
+            case "png":
+                typeText = ".PNG";
+                break;
+            default:
+                typeText = ".DOCX";
+            }
+            domAttr.set(fileTypeContainer, "innerHTML", typeText);
+        },
+
+        /**
+        * Function to fetch document name
+        * @param{object} attachment object
+        * @param{object} dom node
+        * @memberOf widgets/details-panel/comments
+        **/
+        _fetchDocumentName: function (attachmentData, container) {
+            var attachmentNameWrapper, attachmentName;
+            attachmentNameWrapper = domConstruct.create("div", { "class": "esriCTNonImageName" }, container);
+            attachmentName = domConstruct.create("div", {
+                "class": "esriCTNonImageNameMiddle",
+                "innerHTML": attachmentData.name
+            }, attachmentNameWrapper);
+        },
+
+        /**
+        * This function is used to show attachments in new window when user clicks on the attachment thumbnail
+        * @param{object} evt
+        * @memberOf widgets/details-panel/comments
+        **/
+        _displayImageAttachments: function (evt) {
+            window.open(domAttr.get(evt.currentTarget, "alt"));
         },
 
         /**
@@ -201,9 +452,12 @@ define([
         * @memberOf widgets/details-panel/comments
         */
         _createCommentButton: function (parentDiv, graphic) {
-            var commentBtnnDiv = domConstruct.create("div", { "class": "esriCTCommentButton", "title": this.appConfig.i18n.detailsPanel.editContentText }, parentDiv);
-            on(commentBtnnDiv, "click", lang.hitch(this, function () {
-                this._createCommentForm(graphic);
+            var commentBtnDiv;
+            commentBtnDiv = domConstruct.create("div", { "class": "esriCTCommentButton", "title": this.appConfig.i18n.detailsPanel.editContentText }, parentDiv);
+            on(commentBtnDiv, "click", lang.hitch(this, function () {
+                this.appUtils.showLoadingIndicator();
+                domClass.add(this.addCommentsBtnWrapperContainer, "esriCTHidden");
+                this._createCommentForm(graphic, false);
                 domStyle.set(this.commentsContainer, "display", "none");
             }));
         },
@@ -229,7 +483,7 @@ define([
         * @param {object} item contains selected feature object
         * @memberOf widgets/details-panel/comments
         */
-        _createCommentForm: function (item) {
+        _createCommentForm: function (item, addComments) {
             if (this._commentformInstance) {
                 this._commentformInstance.destroy();
             }
@@ -243,12 +497,15 @@ define([
                 appUtils: this.appUtils,
                 nls: this.appConfig.i18n,
                 item: item,
-                selectedLayer: this.selectedOperationalLayer
+                selectedLayer: this.selectedOperationalLayer,
+                addComments: addComments
             }, domConstruct.create("div", {}, dom.byId("commentformContainer")));
 
             // attach cancel button click event
             this._commentformInstance.onCancelButtonClick = lang.hitch(this, function () {
                 this._showPanel(dom.byId("commentformContainer"));
+                // display add comment button
+                domClass.remove(this.addCommentsBtnWrapperContainer, "esriCTHidden");
                 this.isCommentFormOpen = false;
                 //Check if application is running on android devices, and show/hide the details panel
                 //This resolves the jumbling of content in details panel on android devices
@@ -256,18 +513,21 @@ define([
                     this.toggleDetailsPanel();
                 }
                 domStyle.set(this.commentsContainer, "display", "block");
-                //SCroll to top position when clicked cancel need ID to use scrollTop
+                //Scroll to top position when clicked cancel need ID to use scrollTop
                 dom.byId("tabContent").scrollTop = 0;
-
+                this.appUtils.hideLoadingIndicator();
             });
             this._commentformInstance.onCommentFormSubmitted = lang.hitch(this, function () {
                 //close the comment form after submitting new comment
                 this._showPanel(dom.byId("commentformContainer"));
+                // display add comment button
+                domClass.remove(this.addCommentsBtnWrapperContainer, "esriCTHidden");
                 this.isCommentFormOpen = false;
                 //update comment list
                 domConstruct.empty(this.commentsContainer);
-                this._showComments(this.multipleFeatures[0], this.commentsContainer);
                 domStyle.set(this.commentsContainer, "display", "block");
+                this._showComments(this.multipleFeatures[0], this.commentsContainer);
+                // this.appUtils.hideLoadingIndicator();
             });
             this._showPanel(dom.byId("commentformContainer"));
             //If Comment form is close, update the comment form open flag
@@ -303,55 +563,33 @@ define([
         },
 
         /**
-        * This function is used to fetch comments from table
-        * @param {object} graphic contains related feature object
+        * This function is used to attach click event to add comment button
         * @memberOf widgets/details-panel/comments
         */
-        _fetchComments: function (graphic, parentDiv) {
-            var relatedQuery, currentID;
-            currentID = graphic.attributes[this.selectedOperationalLayer.objectIdField];
-            relatedQuery = new RelationshipQuery();
-            relatedQuery.outFields = ["*"];
-            relatedQuery.relationshipId = this.selectedOperationalLayer.relationships[0].id;
-            relatedQuery.objectIds = [currentID];
-            // Query for related features and showing comments
-            this.selectedOperationalLayer.queryRelatedFeatures(relatedQuery,
-                lang.hitch(this, function (relatedFeatures) {
-                    var commentsParentDiv, pThis, commentsContainerDiv, i;
-                    pThis = this;
-                    this._relatedRecords = relatedFeatures;
-                    commentsContainerDiv = domConstruct.create("div", {}, parentDiv);
-                    commentsParentDiv = domConstruct.create("div", { "class": "esriCTcommentsParentDiv" }, commentsContainerDiv);
-
-                    function sortComments(a, b) {
-                        if (a.attributes[pThis._commentsTable.objectIdField] >
-                                b.attributes[pThis._commentsTable.objectIdField]) {
-                            return -1; // order a before b
-                        }
-                        if (a.attributes[pThis._commentsTable.objectIdField] <
-                                b.attributes[pThis._commentsTable.objectIdField]) {
-                            return 1; // order b before a
-                        }
-                        return 0; // a & b have same date, so relative order doesn't matter
-                    }
-
-                    if (this._relatedRecords[currentID] && this._relatedRecords[currentID].features && this._relatedRecords[currentID].features.length > 0) {
-                        this._relatedRecords[currentID].features.sort(sortComments);
-                        for (i = 0; i < this._relatedRecords[currentID].features.length; i++) {
-                            if (!this.appConfig.usePopupConfigurationForComment) {
-                                this._createPopUpForSingleField(this._relatedRecords[currentID].features[i]);
-                            }
-                            this._createPopUpContent(this._relatedRecords[currentID].features[i], commentsParentDiv);
-                        }
-                        this.showCommentsTab();
-                        domAttr.set(dom.byId("commentsTotalCount"), "innerHTML", this._relatedRecords[currentID].features.length);
-                    } else {
-                        this.hideCommentsTab();
-                    }
-                    this.appUtils.hideLoadingIndicator();
-                }), lang.hitch(this, function () {
-                    this.appUtils.hideLoadingIndicator();
+        _attachEventToAddCommentButton: function () {
+            if (this._addCommentBtnClickHandle) {
+                this._addCommentBtnClickHandle.remove();
+            }
+            if (this.addCommentsBtnWrapperContainer) {
+                this._addCommentBtnClickHandle = on(this.addCommentsBtnWrapperContainer, "click", lang.hitch(this, function () {
+                    this.appUtils.showLoadingIndicator();
+                    this._openAddCommentsForm();
                 }));
+            }
+        },
+
+        /**
+        * This function is used to open add comments form
+        * @memberOf widgets/details-panel/comments
+        */
+        _openAddCommentsForm: function () {
+            var item = {};
+            domStyle.set(this.commentsContainer, "display", "none");
+            domClass.add(this.addCommentsBtnWrapperContainer, "esriCTHidden");
+            item.attributes = {};
+            // Initialize the related keyfield value as default
+            item.attributes[this.selectedOperationalLayer.relationships[0].keyField] = this.multipleFeatures[0].attributes[this.selectedOperationalLayer.relationships[0].keyField];
+            this._createCommentForm(item, true);
         },
 
         /**
@@ -376,12 +614,14 @@ define([
                         tooltip: "",
                         visible: true
                     });
-                    //check for blank single field comment and handle space for pencil icon
-                    singlefieldComment = currentFeature.attributes[this.appConfig.commentField];
-                    if (singlefieldComment && singlefieldComment !== "") {
-                        popupInfo.description = "{" + this.appConfig.commentField + "}" + "\n <div class='commentRow'></div>";
-                    } else {
-                        popupInfo.description = "{" + this.appConfig.commentField + "}" + "\n <div class='commentRow'>&nbsp</div>";
+                    if (currentFeature) {
+                        //check for blank single field comment and handle space for pencil icon
+                        singlefieldComment = currentFeature.attributes[this.appConfig.commentField];
+                        if (singlefieldComment && singlefieldComment !== "") {
+                            popupInfo.description = "{" + this.appConfig.commentField + "}" + "\n <div class='commentRow'></div>";
+                        } else {
+                            popupInfo.description = "{" + this.appConfig.commentField + "}" + "\n <div class='commentRow'>&nbsp</div>";
+                        }
                     }
                     break;
                 }

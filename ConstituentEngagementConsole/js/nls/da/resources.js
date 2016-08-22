@@ -83,7 +83,7 @@ define({
     "valueRadioButtonLabel": "Værdi",
     "uniqueRadioButtonLabel": "Unik",
     "selectLayerToBegin": "Vælg en kategori at starte med",
-    "layerFeatureCount": "${featureCount} poster"
+    "layerFeatureCount": "ø_${selectedFeatureCount} selected / ${featureCount} records__________________å"
   },
   "timeSlider": {
     "timeSliderLabel": "Tidsinterval",
@@ -97,7 +97,12 @@ define({
     "placeHolderText": "",
     "noCommentsAvailableText": "Ingen poster er tilgængelige",
     "remainingTextCount": "${0} tegn tilbage",
-    "showNoText": "Nej"
+    "showNoText": "Nej",
+    "selectAttachments": "Vedhæftninger",
+    "selectFileText": "Gennemse",
+    "attachmentSelectedMsg": "vedhæftning(er) valgt",
+    "attachmentHeaderText": "Vedhæftninger",
+    "addRecordText": "ø_Add Record____å"
   },
   "main": {
     "noGroup": "Ingen gruppe konfigureret"
@@ -109,17 +114,18 @@ define({
   },
   "manualRefresh": {
     "manualRefreshIconTooltip": "Opdatér",
-    "confirmManualRefeshText": "Alle markeringer og ikke-gemte ændringer vil gå tabt"
+    "confirmManualRefreshText": "ø_All selections and unsaved changes will be discarded_________________å"
   },
   "help": {
     "helpIconTooltip": "Hjælp"
   },
   "filter": {
     "noFeatureFoundText": "Intet objekt fundet for denne værdi.",
-    "distinctQueryFalied": "Ingen forskellige værdier fundet for dette felt.",
+    "distinctQueryFailed": "ø_No distinct values found for the field_____________å.",
     "andText": "og",
-    "filterInEditModeAlert": "Filtre er utilgængelige under redigering",
-    "dropdownSelectOption": "Vælg"
+    "filterInEditModeAlert": "ø_Filters unavailable while editing___________å.",
+    "dropdownSelectOption": "Vælg",
+    "filterInShowSelectedEditModeAlert": "ø_Filters unavailable in 'Show Selected' mode______________å."
   },
   "detailsPanel": {
     "editContentText": "Redigér post"
@@ -127,5 +133,10 @@ define({
   "signOutPage": {
     "signOutMessage": "Du er blevet logget ud",
     "reSignInMessage": "Klik her for at logge ind"
+  },
+  "selectionOptions": {
+    "selectionOptionsIconTooltip": "ø_Selection Options______å",
+    "showAllOptionText": "ø_Show All___å",
+    "showSelectedOptionText": "ø_Show Selected_____å"
   }
 });

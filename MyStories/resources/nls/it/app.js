@@ -40,7 +40,7 @@ define({
   },
   "cantFindStories": {
     "whereAreStories": "Non vedi la tua storia?",
-    "notSeeExplanation": "My Stories elenca solo Story Map ospitate in ArcGIS e create con le applicazioni {{STORY_MAP_TOUR}}, {{JOURNAL}}, {{MAP_SERIES}} o {{SWIPE_SPYGLASS}}. Per ulteriori informazioni, vedere {{FAQ}}.",
+    "notSeeExplanation": "é_My Stories will only list story maps hosted in ArcGIS ({{STORY_MAP_BASIC}} is currently not supported). See our {{FAQ}} for more information___________________________________________È.",
     "faq": "DOMANDE FREQUENTI",
     "followingStoriesToUpdate": "Le seguenti storie create con versioni precedenti delle applicazioni devono essere aggiornate per essere elencate in My Stories:",
     "gettingStories": "Ricerca di storie create con versioni precedenti delle applicazioni che devono essere aggiornate...",
@@ -88,27 +88,16 @@ define({
     "layerPrivate": "Se si rende il layer privato, la storia verrà interrotta"
   },
   "collectionList": {
-    "advocacy": "Perorazione e coinvolgimento",
-    "architecture": "Architettura e design",
-    "conservation": "Conservazione e sostenibilità",
-    "culture": "Cultura",
-    "destinations": "Destinazioni e turismo",
-    "disasters": "Calamità e ripristino",
-    "economy": "Economia e sviluppo",
-    "entertainment": "Intrattenimento",
-    "history": "Storico",
-    "infrastructure": "Infrastruttura",
-    "marketing": "Marketing",
-    "nature": "Natura e ambiente",
-    "news": "Notizie ed eventi",
-    "oceans": "Oceani",
-    "parks": "Parchi e attività ricreative",
+    "business": "é_Business and Economy_______È",
+    "history": "é_History and Culture_______È",
+    "inNews": "é_In The News____È",
+    "infrastructure": "é_Infrastructure and Construction__________È",
+    "nature": "é_Nature and Conservation________È",
     "people": "Persone e società",
-    "planning": "Pianificazione e analisi",
-    "publicArt": "Arte pubblica",
+    "planning": "é_Planning and Design_______È",
     "science": "Scienza e tecnologia",
-    "sport": "Sport",
-    "travelogues": "Documentari turistici"
+    "sports": "é_Sports and Entertainment________È",
+    "travel": "é_Travel and Recreation_______È"
   },
   "types": {
     "custom": "Personalizzata",
@@ -227,6 +216,7 @@ define({
   "content": {
     "media": {
       "maps": "Mappe",
+      "scenes": "é_Scenes___È",
       "images": "Immagini",
       "videos": "Video",
       "webpages": "Pagine Web",
@@ -244,22 +234,30 @@ define({
       "bullet": "Punto elenco",
       "tab": "Scheda",
       "accordion": "Sezione",
-      "mapJournal": "Sezione"
+      "mapJournal": "Sezione",
+      "cascade": "é_Section___È",
+      "crowdsource": "é_Contribution_____È",
+      "shortlist": "é_Tab__È"
     },
     "titleType": {
       "mapTour": "Didascalia",
       "mapJournal": "URL",
-      "mapSeries": "URL"
+      "mapSeries": "URL",
+      "cascade": "é_URL__È",
+      "crowdsource": "é_URL__È",
+      "shortlist": "é_URL__È"
     },
     "actions": {
       "viewMap": "Visualizza mappa",
       "editMap": "Modifica mappa",
+      "editScene": "é_Edit Scene____È",
       "fix": "Correzione",
       "viewLayer": "Visualizza layer"
     },
     "contentType": {
       "mainStage": "azione visualizzazione principale",
-      "sidePanel": "descrizione"
+      "sidePanel": "descrizione",
+      "introImage": "é_(cover page photo)______È"
     },
     "notification": {
       "refreshExplanation": "Controlla nuovamente la storia",
@@ -300,6 +298,7 @@ define({
       "publicDisabled": "La condivisione pubblica è stata disabilitata da un amministratore",
       "orgDisabled": "La condivisione nell'organizzazione è stata disabilitata da un amministratore",
       "noMapName": "Impossibile recuperare il nome della mappa",
+      "noSceneName": "é_Could Not Retrieve Scene________È",
       "notPublic": "NON PUBBLICO",
       "inaccessible": "INACCESSIBILE",
       "deleted": "ELIMINATO",
@@ -351,6 +350,8 @@ define({
       "cantScanThisTypeAlt": "Impossibile verificare questo tipo di layer",
       "cantScanThisType": "Il layer non è di un tipo che è possibile verificare",
       "webpageNotScanned": "Le pagine Web non sono sottoposte a controlli",
+      "sceneNotScanned": "é_Scenes are not currently checked for issues, please make sure that the scene and all of its layers are shared correctly_____________________________________È",
+      "scenesNotScannedGlobally": "é_There are scenes in this story, and scenes are not currently checked for issues. Please make sure that the scenes and all of their layers are shared correctly________________________________________________È",
       "ignoredIssue": "È stato ignorato un errore su questo layer. Ricaricare la pagina e verificare nuovamente la storia per esaminare l'errore",
       "ignoredIssueBuilder": "È stato ignorato un errore su questo layer. Ricaricare il generatore per verificare nuovamente l'errore"
     },
@@ -450,18 +451,26 @@ define({
       "secondValueC": "schede",
       "thirdTitle": "mappe"
     },
+    "cascade": {
+      "firstTitle": "é_sections___È",
+      "secondTitle": "é_maps__È"
+    },
     "swipeSpyglass": {
-      "firstTitle": "punti di interesse",
+      "firstTitle": "é_points of interest______È",
       "secondTitle": "stile",
       "secondValueA": "scorrimento con dito",
       "secondValueB": "cannocchiale",
       "thirdTitle": "mappe"
     },
     "crowdsource": {
-      "firstTitle": "collaborazioni",
-      "secondTitle": "stile",
-      "secondValueA": "riquadro laterale",
-      "secondValueB": "impilato",
+      "firstTitle": "é_contributions_____È",
+      "secondTitle": "é_basemap___È",
+      "secondValueLoading": "é_Loading____È...",
+      "secondValueUnknown": "é_unknown___È"
+    },
+    "shortlist": {
+      "firstTitle": "é_places___È",
+      "secondTitle": "é_tabs__È",
       "thirdTitle": "mappa di base",
       "thirdValueLoading": "Caricamento in corso...",
       "thirdValueUnknown": "sconosciuta"

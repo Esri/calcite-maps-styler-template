@@ -70,7 +70,7 @@ define({
     "zoomOutToolTip": "התמקד החוצה"
   },
   "applicationHeader": {
-    "signInOption": "הירשם",
+    "signInOption": "התחבר",
     "signOutOption": "התנתק",
     "pleaseSignInText": "אנא התחבר"
   },
@@ -83,7 +83,7 @@ define({
     "valueRadioButtonLabel": "ערך",
     "uniqueRadioButtonLabel": "יחודי",
     "selectLayerToBegin": "בחר קטגוריה כדי להתחיל",
-    "layerFeatureCount": "${featureCount} רשומות"
+    "layerFeatureCount": "כן_${selectedFeatureCount} selected / ${featureCount} records__________________ש"
   },
   "timeSlider": {
     "timeSliderLabel": "טווח זמן",
@@ -97,7 +97,12 @@ define({
     "placeHolderText": "",
     "noCommentsAvailableText": "אין רשומות זמינות",
     "remainingTextCount": "נותרו ${0} תווים",
-    "showNoText": "לא"
+    "showNoText": "לא",
+    "selectAttachments": "קבצים מקושרים",
+    "selectFileText": "נתב",
+    "attachmentSelectedMsg": "קבצים מצורפים נבחרו",
+    "attachmentHeaderText": "קבצים מקושרים",
+    "addRecordText": "כן_Add Record____ש"
   },
   "main": {
     "noGroup": "לא הוגדרה קבוצה"
@@ -109,17 +114,18 @@ define({
   },
   "manualRefresh": {
     "manualRefreshIconTooltip": "רענן",
-    "confirmManualRefeshText": "כל הבחירות והשינויים שלא נשמרו יבוטלו"
+    "confirmManualRefreshText": "כן_All selections and unsaved changes will be discarded_________________ש"
   },
   "help": {
     "helpIconTooltip": "עזרה"
   },
   "filter": {
     "noFeatureFoundText": "לא נמצאה תכונה עבור ערך זה.",
-    "distinctQueryFalied": "לא נמצאו ערכים מובנים עבור השדה.",
+    "distinctQueryFailed": "כן_No distinct values found for the field_____________ש.",
     "andText": "וגם",
-    "filterInEditModeAlert": "מסננים אינם זמינים בעת עריכה",
-    "dropdownSelectOption": "בחר"
+    "filterInEditModeAlert": "כן_Filters unavailable while editing___________ש.",
+    "dropdownSelectOption": "בחר",
+    "filterInShowSelectedEditModeAlert": "כן_Filters unavailable in 'Show Selected' mode______________ש."
   },
   "detailsPanel": {
     "editContentText": "ערוך רשומה"
@@ -127,5 +133,10 @@ define({
   "signOutPage": {
     "signOutMessage": "התנתקת בהצלחה",
     "reSignInMessage": "לחץ כאן כדי להתחבר"
+  },
+  "selectionOptions": {
+    "selectionOptionsIconTooltip": "כן_Selection Options______ש",
+    "showAllOptionText": "כן_Show All___ש",
+    "showSelectedOptionText": "כן_Show Selected_____ש"
   }
 });

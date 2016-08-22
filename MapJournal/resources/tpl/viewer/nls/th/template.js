@@ -36,7 +36,10 @@ define({
       "noViewerIE": "เรื่องนี้ไม่ได้รับการสนับสนุนใน Internet Explorer รุ่นก่อน %VERSION%. %UPGRADE%",
       "upgradeBrowser": "<a href='http://browsehappy.com/' target='_blank'>กรุณาอัพเดทเบราว์เซอร์ของคุณ</a>.",
       "mapLoadingFail": "มีบางอย่างไม่ถูกต้อง โหลดแผนที่ไม่ถูกต้อง",
-      "signOut": "ลงชื่อออก"
+      "signOut": "ลงชื่อออก",
+      "print0": "ก้_Sorry, this story cannot be printed____________ษฺ.",
+      "print1": "ก้_To print this story, please use the print button located in the share dialog________________________ษฺ.",
+      "print2": "ก้_Sorry, a printable version of the story is typically accessible through the share dialog, but this dialog has been disabled by the author__________________________________________ษฺ."
     },
     "mobileView": {
       "tapForDetails": "เลือกสำหรับรายละเอียด",
@@ -85,7 +88,16 @@ define({
       "autoplayLabel": "โหมดเล่นอัตโนมัติ",
       "autoplayExplain1": "โหมดการเล่นอัตโนมัติจะเลื่อนผ่านสตอรี่ของคุณในช่วงเวลาปกติ นี้เหมาะในตู้คีออสหรือแสดงบนจอภาพสาธารณะ แต่ทราบว่าในสถานการณ์อื่น ๆ ก็อาจจะทำให้เรื่องยากที่จะอ่าน คุณลักษณะนี้ไม่รองรับบนจอแสดงผลขนาดเล็ก",
       "autoplayExplain2": "เมื่อโหมดนี้มีการใช้งานยังมีการควบคุมการเล่น / หยุดชั่วคราวเรื่องราวและปรับความเร็วลูกศร",
-      "linksupdated": "ลิงค์นี้อัพเดทแล้ว"
+      "linksupdated": "ลิงค์นี้อัพเดทแล้ว",
+      "print": "ก้_Print___ษฺ",
+      "printInstruction1": "ก้_Please wait for all the content to load before printing this page_____________________ษฺ",
+      "printInstruction1a": "ก้_Some content may not print unless you enable \"Print Background Colors and Images\" in the Print Page setup dialog___________________________________ษฺ",
+      "printInstruction2": "ก้_This page cannot be shared with others, instead share the ${link}_____________________ษฺ",
+      "link": "ก้_link to the story______ษฺ",
+      "printOptPageBreak": "ก้_Begin each section on a new page___________ษฺ",
+      "printWarning": "ก้_This is a printed version of a story map. Dynamic content such as videos and interactive maps is only available in the online version at ${link}____________________________________________ษฺ",
+      "printMSWarning": "ก้_link available only in online story____________ษฺ",
+      "printVideoWarning": "ก้_This video can be viewed in the online version of this story map____________________ษฺ"
     }
   }
 });

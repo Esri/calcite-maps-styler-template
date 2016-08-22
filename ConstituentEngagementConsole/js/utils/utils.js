@@ -98,7 +98,7 @@ define([
             var cssString, head, style, link, rgbColor;
             //if theme is configured
             if (appConfig.theme) {
-                //Convert hex color to rgb and add opacity to get ligher shade of configured color
+                //Convert hex color to rgb and add opacity to get lighter shade of configured color
                 rgbColor = new Color(appConfig.theme);
                 rgbColor.a = 0.6;
                 //substitute theme color values in theme template
@@ -209,16 +209,16 @@ define([
         },
 
         /**
-        * This function is used to convert number to thousand seperator
-        * @param{integer} number that needs to be converted into thousand seperator
+        * This function is used to convert number to thousand separator
+        * @param{integer} number that needs to be converted into thousand separator
         * @memberOf utils/utils
         */
-        convertNumberToThousandSeperator: function (number, decimalPlace) {
+        convertNumberToThousandSeparator: function (number, decimalPlace) {
             return numberformatter.format(number, { places: decimalPlace });
         },
 
         /**
-        * To determine the andriod operating system
+        * To determine the android operating system
         * @returns {bool}
         * @memberOf utils/utils
         */

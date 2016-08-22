@@ -24,7 +24,7 @@ define({
     "created": "Data utworzenia",
     "modified": "Ostatnia modyfikacja",
     "description": "Opis",
-    "snippet": "Summary",
+    "snippet": "Podsumowanie",
     "licenseInfo": "Ograniczenia dostępu i użytkowania",
     "accessInformation": "Udostępniający zasoby",
     "tags": "Tags",
@@ -83,7 +83,7 @@ define({
     "valueRadioButtonLabel": "Wartość",
     "uniqueRadioButtonLabel": "Unikalne",
     "selectLayerToBegin": "Wybierz kategorię, aby rozpocząć",
-    "layerFeatureCount": "Liczba rekordów: ${featureCount}"
+    "layerFeatureCount": "ł_${selectedFeatureCount} selected / ${featureCount} records__________________ą"
   },
   "timeSlider": {
     "timeSliderLabel": "Zakres czasu",
@@ -97,7 +97,12 @@ define({
     "placeHolderText": "",
     "noCommentsAvailableText": "Brak dostępnych rekordów",
     "remainingTextCount": "Pozostało znaków: ${0}",
-    "showNoText": "Nie"
+    "showNoText": "Nie",
+    "selectAttachments": "Załączniki",
+    "selectFileText": "Przeglądaj",
+    "attachmentSelectedMsg": "wybrany(-e/-ych) załącznik(-i/-ów)",
+    "attachmentHeaderText": "Załączniki",
+    "addRecordText": "ł_Add Record____ą"
   },
   "main": {
     "noGroup": "Nie skonfigurowano żadnej grupy"
@@ -109,17 +114,18 @@ define({
   },
   "manualRefresh": {
     "manualRefreshIconTooltip": "Odśwież",
-    "confirmManualRefeshText": "Wszystkie selekcje i niezapisane zmiany zostaną odrzucone"
+    "confirmManualRefreshText": "ł_All selections and unsaved changes will be discarded_________________ą"
   },
   "help": {
     "helpIconTooltip": "Pomoc"
   },
   "filter": {
     "noFeatureFoundText": "Nie znaleziono obiektu dla tej wartości.",
-    "distinctQueryFalied": "Nie znaleziono różnych wartości dla pola.",
+    "distinctQueryFailed": "ł_No distinct values found for the field_____________ą.",
     "andText": "i",
-    "filterInEditModeAlert": "Filtry niedostępne w trybie edycji",
-    "dropdownSelectOption": "Zaznacz"
+    "filterInEditModeAlert": "ł_Filters unavailable while editing___________ą.",
+    "dropdownSelectOption": "Zaznacz",
+    "filterInShowSelectedEditModeAlert": "ł_Filters unavailable in 'Show Selected' mode______________ą."
   },
   "detailsPanel": {
     "editContentText": "Edytuj rekord"
@@ -127,5 +133,10 @@ define({
   "signOutPage": {
     "signOutMessage": "Wylogowanie pomyślne",
     "reSignInMessage": "Kliknij tutaj, aby się zalogować"
+  },
+  "selectionOptions": {
+    "selectionOptionsIconTooltip": "ł_Selection Options______ą",
+    "showAllOptionText": "ł_Show All___ą",
+    "showSelectedOptionText": "ł_Show Selected_____ą"
   }
 });

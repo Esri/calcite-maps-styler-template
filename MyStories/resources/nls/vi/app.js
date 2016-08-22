@@ -40,7 +40,7 @@ define({
   },
   "cantFindStories": {
     "whereAreStories": "Không thấy câu chuyện của bạn?",
-    "notSeeExplanation": "Câu chuyện Của tôi sẽ chỉ liệt kê các story map được lưu trữ trong ArcGIS và được tạo bằng ứng dụng {{STORY_MAP_TOUR}}, {{JOURNAL}}, {{MAP_SERIES}} hoặc {{SWIPE_SPYGLASS}}. Hãy xem {{FAQ}} của chúng tôi để biết thêm thông tin.",
+    "notSeeExplanation": "Đ_My Stories will only list story maps hosted in ArcGIS ({{STORY_MAP_BASIC}} is currently not supported). See our {{FAQ}} for more information___________________________________________ớ.",
     "faq": "Câu hỏi thường gặp",
     "followingStoriesToUpdate": "Các câu chuyện sau được tạo bằng các ứng dung phiên bản cũ của chúng tôi, vì vậy cần được cập nhật để các câu chuyện được liệt kê trong Câu chuyện Của tôi:",
     "gettingStories": "Tìm kiếm câu chuyện được tạo bằng phiên bản cũ hơn của các ứng dụng của chúng tôi cần được cập nhật...",
@@ -88,27 +88,16 @@ define({
     "layerPrivate": "Để lớp của bạn ở chế độ riêng tư sẽ phá vỡ câu chuyện của bạn"
   },
   "collectionList": {
-    "advocacy": "Bênh vực và Cứu trợ",
-    "architecture": "Kiến trúc và Thiết kế",
-    "conservation": "Bảo tồn và Bền vững",
-    "culture": "Văn hóa",
-    "destinations": "Điểm đến và Du lịch",
-    "disasters": "Thảm họa và Phục hồi",
-    "economy": "Kinh tế và Phát triển",
-    "entertainment": "Giải trí",
-    "history": "Lịch sử",
-    "infrastructure": "Hạ tầng",
-    "marketing": "Tiếp thị",
-    "nature": "Thiên nhiên và Môi trường",
-    "news": "Tin tức và Sự kiện",
-    "oceans": "Đại dương",
-    "parks": "Công viên và Giải trí",
+    "business": "Đ_Business and Economy_______ớ",
+    "history": "Đ_History and Culture_______ớ",
+    "inNews": "Đ_In The News____ớ",
+    "infrastructure": "Đ_Infrastructure and Construction__________ớ",
+    "nature": "Đ_Nature and Conservation________ớ",
     "people": "Con người và Xã hội",
-    "planning": "Kế hoạch và Phân tích",
-    "publicArt": "Nghệ thuật Công chúng",
+    "planning": "Đ_Planning and Design_______ớ",
     "science": "Khoa học và Công nghệ",
-    "sport": "Thể thao",
-    "travelogues": "Chiếu phim thám hiểm"
+    "sports": "Đ_Sports and Entertainment________ớ",
+    "travel": "Đ_Travel and Recreation_______ớ"
   },
   "types": {
     "custom": "Tùy chỉnh",
@@ -227,6 +216,7 @@ define({
   "content": {
     "media": {
       "maps": "Bản đồ",
+      "scenes": "Đ_Scenes___ớ",
       "images": "Hình ảnh",
       "videos": "Video",
       "webpages": "Trang web",
@@ -244,22 +234,30 @@ define({
       "bullet": "Dấu đầu dòng",
       "tab": "Tab",
       "accordion": "Phần",
-      "mapJournal": "Phần"
+      "mapJournal": "Phần",
+      "cascade": "Đ_Section___ớ",
+      "crowdsource": "Đ_Contribution_____ớ",
+      "shortlist": "Đ_Tab__ớ"
     },
     "titleType": {
       "mapTour": "Chú thích",
       "mapJournal": "URL",
-      "mapSeries": "URL"
+      "mapSeries": "URL",
+      "cascade": "Đ_URL__ớ",
+      "crowdsource": "Đ_URL__ớ",
+      "shortlist": "Đ_URL__ớ"
     },
     "actions": {
       "viewMap": "Xem Bản đồ",
       "editMap": "Chỉnh sửa Bản đồ",
+      "editScene": "Đ_Edit Scene____ớ",
       "fix": "Sửa",
       "viewLayer": "Xem Lớp"
     },
     "contentType": {
       "mainStage": "hành động trong sân khấu chính",
-      "sidePanel": "mô tả"
+      "sidePanel": "mô tả",
+      "introImage": "Đ_(cover page photo)______ớ"
     },
     "notification": {
       "refreshExplanation": "Kiểm tra lại câu chuyện của bạn",
@@ -300,6 +298,7 @@ define({
       "publicDisabled": "Người quản trị đã vô hiệu hóa tính năng chia sẻ công khai",
       "orgDisabled": "Người quản trị đã vô hiệu hóa tính năng chia sẻ đến tổ chức của bạn",
       "noMapName": "Không thể Truy xuất Tên Bản đồ",
+      "noSceneName": "Đ_Could Not Retrieve Scene________ớ",
       "notPublic": "KHÔNG CÔNG KHAI",
       "inaccessible": "KHÔNG THỂ TRUY CẬP ĐƯỢC",
       "deleted": "ĐÃ XÓA",
@@ -351,6 +350,8 @@ define({
       "cantScanThisTypeAlt": "Chúng tôi không thể kiểm tra loại lớp này",
       "cantScanThisType": "Lớp không thuộc loại lớp mà chúng tôi có thể kiểm tra",
       "webpageNotScanned": "Trang web không được kiểm tra để phát hiện sự cố",
+      "sceneNotScanned": "Đ_Scenes are not currently checked for issues, please make sure that the scene and all of its layers are shared correctly_____________________________________ớ",
+      "scenesNotScannedGlobally": "Đ_There are scenes in this story, and scenes are not currently checked for issues. Please make sure that the scenes and all of their layers are shared correctly________________________________________________ớ",
       "ignoredIssue": "Bạn đã bỏ qua một lỗi trong lớp này. Hãy tải lại trang và kiểm tra lại câu chuyện này để xem xét lỗi đó",
       "ignoredIssueBuilder": "Bạn đã bỏ qua một lỗi trong lớp này. Hãy tải lại bộ thiết lập để kiểm tra lại lỗi đó"
     },
@@ -450,18 +451,26 @@ define({
       "secondValueC": "đã thêm tab",
       "thirdTitle": "bản đồ"
     },
+    "cascade": {
+      "firstTitle": "Đ_sections___ớ",
+      "secondTitle": "Đ_maps__ớ"
+    },
     "swipeSpyglass": {
-      "firstTitle": "điểm quan tâm",
+      "firstTitle": "Đ_points of interest______ớ",
       "secondTitle": "kiểu",
       "secondValueA": "trượt nhanh",
       "secondValueB": "kính phóng đại",
       "thirdTitle": "bản đồ"
     },
     "crowdsource": {
-      "firstTitle": "đóng góp",
-      "secondTitle": "kiểu",
-      "secondValueA": "bảng điều khiển bên",
-      "secondValueB": "đã xếp chồng",
+      "firstTitle": "Đ_contributions_____ớ",
+      "secondTitle": "Đ_basemap___ớ",
+      "secondValueLoading": "Đ_Loading____ớ...",
+      "secondValueUnknown": "Đ_unknown___ớ"
+    },
+    "shortlist": {
+      "firstTitle": "Đ_places___ớ",
+      "secondTitle": "Đ_tabs__ớ",
       "thirdTitle": "bản đồ nền",
       "thirdValueLoading": "Đang tải...",
       "thirdValueUnknown": "không xác định"

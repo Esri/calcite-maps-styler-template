@@ -19,27 +19,28 @@ define({
     "error": "Não foi possível criar mapa"
   },
   "nav": {
-    "close": "Fechar"
+    "close": "ã_Close___Ç"
   },
   "elevation": {
-    "toggle": "Alterne o Gráfico de Perfil de Elevação.",
-    "drawTool": "Desenhe uma linha no mapa para gerar um perfil de elevação.",
-    "selectMessage": "Clique num elemento de linha ou utilize a ferramenta de desenho para traçar uma linha para exibir o perfil de elevação."
+    "toggle": "ã_Toggle the Elevation Profile Chart____________Ç.",
+    "drawTool": "ã_Draw a line on the map to generate an elevation profile__________________Ç.",
+    "selectMessage": "ã_Click a line feature or use the draw tool to draw a line to display the elevation profile____________________________Ç",
+    "gainLossTemplate": "ã_Min: ${min}   Max: ${max}   Start: ${start}   End: ${end}   Change: ${gainLoss}_________________________Ç"
   },
   "splash": {
-    "title": "Título",
-    "content": "Configure para criar conteúdo de página inicial personalizado"
+    "title": "ã_Title___Ç",
+    "content": "ã_Configure to create custom splash content_____________Ç"
   },
   "legend": {
-    "title": "Legenda",
-    "tip": "Exibir legenda"
+    "title": "ã_Legend___Ç",
+    "tip": "ã_Display legend_____Ç"
   },
   "basemap": {
-    "title": "Mapa Base",
-    "tip": "Alterar mapa base"
+    "title": "ã_Basemap___Ç",
+    "tip": "ã_Change basemap_____Ç"
   },
   "share": {
-    "title": "Partilhar",
-    "tip": "Partilhar mapa"
+    "title": "ã_Share___Ç",
+    "tip": "ã_Share map____Ç"
   }
 });

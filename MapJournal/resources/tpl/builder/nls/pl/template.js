@@ -20,7 +20,9 @@ define({
       "cfgMedium": "Średni",
       "cfgLarge": "Duży",
       "socialLinksLabel": "Wyświetlaj łącza do udostępniania u dołu każdej sekcji",
-      "socialLinksDescr": "Umożliwia to użytkownikom tworzenie odnośników do określonych sekcji aplikacji %TPL_NAME% i ich promowanie. Na przykład, jeżeli użyjesz ikony udostępniania sekcji, użytkownicy zostaną przekierowani do określonej sekcji aplikacji %TPL_NAME%, zamiast do początku opowiadania. Użytkownicy mogą skorzystać z łącza mediów społecznościowych w sekcji tytułu, aby promować całą aplikację %TPL_NAME% (karta nagłówka) — w tym przypadku użytkownicy są przekierowywani do początku aplikacji %TPL_NAME%."
+      "socialLinksDescr": "Umożliwia to użytkownikom tworzenie odnośników do określonych sekcji aplikacji %TPL_NAME% i ich promowanie. Na przykład, jeżeli użyjesz ikony udostępniania sekcji, użytkownicy zostaną przekierowani do określonej sekcji aplikacji %TPL_NAME%, zamiast do początku opowiadania. Użytkownicy mogą skorzystać z łącza mediów społecznościowych w sekcji tytułu, aby promować całą aplikację %TPL_NAME% (karta nagłówka) — w tym przypadku użytkownicy są przekierowywani do początku aplikacji %TPL_NAME%.",
+      "socialDisabled": "ł_This feature is only available with Floating Panel layout__________________ą",
+      "socialWarning": "ł_Your story is using Side Panel layout, but we now recommend using this option only with Floating Panel layout to avoid an issue where the panel may not position itself to the desired section for narratives with images. You may continue to use this option, but if you disable it, it will then only be available when using Floating Panel layout________________________________________________________________________________________________________ą."
     },
     "settingsLayoutFonts": {
       "title": "Czcionki",

@@ -36,7 +36,10 @@ define({
       "noViewerIE": "Priča nije podržana na pregledaču Internet Explorer pre verzije %VERSION%. %UPGRADE%",
       "upgradeBrowser": "<a href=’http://browsehappy.com/’ target=’_blank’>Ažurirajte pregledač</a>.",
       "mapLoadingFail": "Došlo je do greške, mapa se nije učitala pravilno.",
-      "signOut": "Odjavite se"
+      "signOut": "Odjavite se",
+      "print0": "Č_Sorry, this story cannot be printed____________ž.",
+      "print1": "Č_To print this story, please use the print button located in the share dialog________________________ž.",
+      "print2": "Č_Sorry, a printable version of the story is typically accessible through the share dialog, but this dialog has been disabled by the author__________________________________________ž."
     },
     "mobileView": {
       "tapForDetails": "Dodirnite za detalje",
@@ -85,7 +88,16 @@ define({
       "autoplayLabel": "Režim automatske reprodukcije",
       "autoplayExplain1": "Režim automatske reprodukcije će ići kroz priču uobičajenim intervalom. Ovo je idealno na terminalima ili javim ekranima, ali imajte u vidu da u drugim situacijama čitanje priče može da bude otežano. Ova funkcija nije podržana na ekranima malih dimenzija.",
       "autoplayExplain2": "Kada je ovaj režim aktiviran, postoje kontrole da se priča reprodukuje/pauzira i da se prilagodi brzina navigacije.",
-      "linksupdated": "Linkovi su ažurirani!"
+      "linksupdated": "Linkovi su ažurirani!",
+      "print": "Č_Print___ž",
+      "printInstruction1": "Č_Please wait for all the content to load before printing this page_____________________ž",
+      "printInstruction1a": "Č_Some content may not print unless you enable \"Print Background Colors and Images\" in the Print Page setup dialog___________________________________ž",
+      "printInstruction2": "Č_This page cannot be shared with others, instead share the ${link}_____________________ž",
+      "link": "Č_link to the story______ž",
+      "printOptPageBreak": "Č_Begin each section on a new page___________ž",
+      "printWarning": "Č_This is a printed version of a story map. Dynamic content such as videos and interactive maps is only available in the online version at ${link}____________________________________________ž",
+      "printMSWarning": "Č_link available only in online story____________ž",
+      "printVideoWarning": "Č_This video can be viewed in the online version of this story map____________________ž"
     }
   }
 });

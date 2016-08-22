@@ -83,7 +83,7 @@ define({
     "valueRadioButtonLabel": "Τιμή",
     "uniqueRadioButtonLabel": "Μοναδικό",
     "selectLayerToBegin": "Επιλέξτε μια κατηγορία για να ξεκινήσετε",
-    "layerFeatureCount": "${featureCount} εγγραφές"
+    "layerFeatureCount": "Đ_${selectedFeatureCount} selected / ${featureCount} records__________________ớ"
   },
   "timeSlider": {
     "timeSliderLabel": "Εύρος χρόνου",
@@ -97,7 +97,12 @@ define({
     "placeHolderText": "",
     "noCommentsAvailableText": "Δεν υπάρχουν διαθέσιμες εγγραφές",
     "remainingTextCount": "Απομένουν ${0} χαρακτήρες",
-    "showNoText": "Όχι"
+    "showNoText": "Όχι",
+    "selectAttachments": "Συνημμένα",
+    "selectFileText": "Αναζήτηση",
+    "attachmentSelectedMsg": "συνημμένα επιλέχθηκαν",
+    "attachmentHeaderText": "Συνημμένα",
+    "addRecordText": "Đ_Add Record____ớ"
   },
   "main": {
     "noGroup": "Δεν έχει παραμετροποιηθεί κάποια ομάδα"
@@ -109,17 +114,18 @@ define({
   },
   "manualRefresh": {
     "manualRefreshIconTooltip": "Ανανέωση",
-    "confirmManualRefeshText": "Όλες οι επιλογές και οι μη αποθηκευμένες αλλαγές θα απορριφθούν"
+    "confirmManualRefreshText": "Đ_All selections and unsaved changes will be discarded_________________ớ"
   },
   "help": {
     "helpIconTooltip": "Βοήθεια"
   },
   "filter": {
     "noFeatureFoundText": "Δεν βρέθηκαν στοιχεία για αυτήν την τιμή.",
-    "distinctQueryFalied": "Δεν βρέθηκαν διακριτές τιμές για το πεδίο.",
+    "distinctQueryFailed": "Đ_No distinct values found for the field_____________ớ.",
     "andText": "και",
-    "filterInEditModeAlert": "Τα φίλτρα δεν είναι διαθέσιμα κατά την επεξεργασία",
-    "dropdownSelectOption": "Επιλογή"
+    "filterInEditModeAlert": "Đ_Filters unavailable while editing___________ớ.",
+    "dropdownSelectOption": "Επιλογή",
+    "filterInShowSelectedEditModeAlert": "Đ_Filters unavailable in 'Show Selected' mode______________ớ."
   },
   "detailsPanel": {
     "editContentText": "Επεξεργασία εγγραφής"
@@ -127,5 +133,10 @@ define({
   "signOutPage": {
     "signOutMessage": "Αποσυνδεθήκατε με επιτυχία",
     "reSignInMessage": "Κάντε κλικ εδώ για να συνδεθείτε"
+  },
+  "selectionOptions": {
+    "selectionOptionsIconTooltip": "Đ_Selection Options______ớ",
+    "showAllOptionText": "Đ_Show All___ớ",
+    "showSelectedOptionText": "Đ_Show Selected_____ớ"
   }
 });

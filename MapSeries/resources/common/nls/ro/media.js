@@ -31,13 +31,15 @@ define({
       "rightHeader": "Pagină Facebook",
       "pageExplain": "O pagină de Facebook este o marcă sau un produs public sau o celebritate precum <b>esrigis</b>. Puteţi prelua numele paginii după primul caracter „/” din URL-ul paginii.",
       "pageInputLbl": "Nume pagină",
-      "lookupMsgError": "Pagină negăsită"
+      "lookupMsgError": "Pagină negăsită",
+      "warning": "Ă_Facebook support has been discontinued, ${learn}________________ș.",
+      "learn": "Ă_learn more____ș"
     },
     "imageSelectorPicasa": {
-      "userInputLbl": "E-mail sau ID Picasa/Google+",
+      "userInputLbl": "Ă_Email or Picasa id______ș",
       "signInMsg2": "Cont negăsit",
-      "howToFind": "Găsirea unui ID de cont Picasa sau Google+",
-      "howToFind2": "Copiaţi cifrele dintre primul şi al doilea caracter „/” a unei pagini Picasa sau G+"
+      "howToFind": "Ă_How to find a Picasa id________ș",
+      "howToFind2": "Ă_Copy digits between the first and second '/' of any Picasa page____________________ș"
     },
     "videoSelectorCommon": {
       "check": "Bifaţi",
@@ -101,7 +103,10 @@ define({
       "lblPosition3Explain2": "(lăţimea va corespunde întotdeauna panoului)",
       "lblPosition4Explain": "(poate fi distorsionat)",
       "unloadLbl": "Se revocă încărcarea când cititorul trece în altă secţiune",
-      "unloadHelp": "Dacă pagina web conţine materiale audio sau video, păstraţi această opţiune bifată pentru a opri redarea în momentul în care cititorul trece în altă secţiune. Debifaţi-o, de exemplu, pentru a continua redarea unei melodii când cititorul avansează în jurnal.<br />Dacă pagina web este o aplicaţie, debifaţi această opţiune pentru ca povestea să nu fie nevoită să se încarce din nou când cititorul revine în secţiunea respectivă."
+      "unloadHelp": "Dacă pagina web conţine materiale audio sau video, păstraţi această opţiune bifată pentru a opri redarea în momentul în care cititorul trece în altă secţiune. Debifaţi-o, de exemplu, pentru a continua redarea unei melodii când cititorul avansează în jurnal.<br />Dacă pagina web este o aplicaţie, debifaţi această opţiune pentru ca povestea să nu fie nevoită să se încarce din nou când cititorul revine în secţiunea respectivă.",
+      "embedProtocolLabel": "Ă_Load page over a secure connection (HTTPS)______________ș",
+      "embedProtocolWarning1": "Ă_Your story is configured to load over a secure connection (https), so web page show in the story must also use a secure connection. If the page does not load it may be because it is not available over a secure connection or that it cannot be included in your story (some websites restrict this). You may need to create a hyperlink to open the page in a new browser tab________________________________________________________________________________________________________________ș.",
+      "embedProtocolWarning2": "Ă_Your story is configured to load over an insecure connection (http), so you can choose to load this page over a secure (recommended) or insecure connection. If the page does not load, it may be because it does not support the connection type you selected or that it cannot be included in your story (some websites restrict this). You may need to create a hyperlink to open the page in a new browser tab__________________________________________________________________________________________________________________________ș."
     },
     "editorActionGeocode": {
       "lblTitle": "Localizaţi o adresă sau un loc",

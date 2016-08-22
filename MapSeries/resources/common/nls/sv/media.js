@@ -31,13 +31,15 @@ define({
       "rightHeader": "Facebook-sida",
       "pageExplain": "En Facebook-sida är ett offentligt varumärke/produkt eller en kändis, till exempel <b>esrigis</b>. Du kan hitta sidnamnet efter det första '/'-tecknet i sidans webbadress.",
       "pageInputLbl": "Sidnamn",
-      "lookupMsgError": "Det gick inte att hitta sidan"
+      "lookupMsgError": "Det gick inte att hitta sidan",
+      "warning": "Å_Facebook support has been discontinued, ${learn}________________ö.",
+      "learn": "Å_learn more____ö"
     },
     "imageSelectorPicasa": {
-      "userInputLbl": "E-postadress eller ID för Picasa/Google+",
+      "userInputLbl": "Å_Email or Picasa id______ö",
       "signInMsg2": "Det gick inte att hitta kontot",
-      "howToFind": "Så här hittar du ett konto-ID för Picasa eller Google+",
-      "howToFind2": "Kopiera siffrorna mellan det första och andra '/'-tecknet på en Picasa- eller G+-sida"
+      "howToFind": "Å_How to find a Picasa id________ö",
+      "howToFind2": "Å_Copy digits between the first and second '/' of any Picasa page____________________ö"
     },
     "videoSelectorCommon": {
       "check": "Kontroll",
@@ -101,7 +103,10 @@ define({
       "lblPosition3Explain2": "(bredden kommer alltid att fylla rutan)",
       "lblPosition4Explain": "(kan förvrängas)",
       "unloadLbl": "Ta bort när användaren navigerar vidare",
-      "unloadHelp": "Om webbsidan innehåller ljud- eller videomedia behåller du det här alternativet markerat så att innehållet inte spelas när användaren navigerar vidare. Avmarkera det till exempel om du vill att ett ljudspår ska spelas när användaren bläddrar vidare genom berättelsen.<br />Om webbplatsen är en applikation avmarkerar du alternativet så att berättelsen inte läses in på nytt om användaren återvänder till den."
+      "unloadHelp": "Om webbsidan innehåller ljud- eller videomedia behåller du det här alternativet markerat så att innehållet inte spelas när användaren navigerar vidare. Avmarkera det till exempel om du vill att ett ljudspår ska spelas när användaren bläddrar vidare genom berättelsen.<br />Om webbplatsen är en applikation avmarkerar du alternativet så att berättelsen inte läses in på nytt om användaren återvänder till den.",
+      "embedProtocolLabel": "Å_Load page over a secure connection (HTTPS)______________ö",
+      "embedProtocolWarning1": "Å_Your story is configured to load over a secure connection (https), so web page show in the story must also use a secure connection. If the page does not load it may be because it is not available over a secure connection or that it cannot be included in your story (some websites restrict this). You may need to create a hyperlink to open the page in a new browser tab________________________________________________________________________________________________________________ö.",
+      "embedProtocolWarning2": "Å_Your story is configured to load over an insecure connection (http), so you can choose to load this page over a secure (recommended) or insecure connection. If the page does not load, it may be because it does not support the connection type you selected or that it cannot be included in your story (some websites restrict this). You may need to create a hyperlink to open the page in a new browser tab__________________________________________________________________________________________________________________________ö."
     },
     "editorActionGeocode": {
       "lblTitle": "Hitta en adress eller plats",

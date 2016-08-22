@@ -2,6 +2,7 @@ define([
   "dojo/ready",
   "dojo/_base/declare",
   "dojo/_base/lang",
+  "dojo/_base/kernel",
   "dojo/_base/array",
   "dojo/_base/Color",
   "esri/arcgis/utils",
@@ -27,7 +28,7 @@ define([
   "esri/layers/FeatureLayer"
 ], function(
   ready,
-  declare, lang,
+  declare, lang, kernel,
   array, Color,
   arcgisUtils, urlUtils,
   on,
@@ -52,6 +53,8 @@ define([
     color: null,
     paneltheme: null,
     startup: function(config) {
+      // Set lang attribute to current locale
+      document.documentElement.lang = kernel.locale;
       // config will contain application and user defined info for the template such as i18n strings, the web map id
       // and application id
       // any url parameters and any application specific configuration information.
@@ -71,7 +74,19 @@ define([
 
       // document ready
       ready(lang.hitch(this, function() {
+        if (this.config.sharedThemeConfig && this.config.sharedThemeConfig.attributes && this.config.sharedThemeConfig.attributes.theme) {
+          var sharedTheme = this.config.sharedThemeConfig.attributes;
+          this.config.color = sharedTheme.theme.text.color;
+          this.config.theme = sharedTheme.theme.body.bg;
+          this.config.paneltheme = sharedTheme.theme.brand.primary;
 
+        }
+        // Create and add custom style sheet
+        if (this.config.customstyle) {
+          var style = document.createElement("style");
+          style.appendChild(document.createTextNode(this.config.customstyle));
+          document.head.appendChild(style);
+        }
         this.theme = this.setColor(this.config.theme);
         this.color = this.setColor(this.config.color);
         this.paneltheme = this.setColor(this.config.paneltheme);
@@ -90,9 +105,9 @@ define([
           geometryService: this.config.helperServices.geometry.url
         });
         mapParams.processUrlParams().then(lang.hitch(this, function(urlParams) {
-          promise = this._createWebMap(itemInfo, urlParams);
+          this._createWebMap(itemInfo, urlParams);
         }), lang.hitch(this, function(error) {
-          console.log(error);
+          this.reportError(error);
         }));
 
       }));
@@ -317,11 +332,12 @@ define([
         //resource.js file located in the nls folder because we've set the application up
         //for localization. If you don't need to support multiple languages you can hardcode the
         //strings here and comment out the call in index.html to get the localization strings.
-        if (this.config && this.config.i18n) {
+        /*if (this.config && this.config.i18n) {
           alert(this.config.i18n.map.error + ": " + error.message);
         } else {
           alert("Unable to create map: " + error.message);
-        }
+        }*/
+        this.reportError(error.message);
       }));
     },
     setColor: function(value) {
@@ -396,6 +412,17 @@ define([
         }
       }
       return info;
+    },
+    reportError: function(error) {
+      // remove loading class from body
+      domClass.remove(document.body, "app-loading");
+      domClass.add(document.body, "app-error");
+      var node = dom.byId("loading_message");
+      if (node) {
+        node.innerHTML = error;
+      }
+
+      return error;
     }
   });
 });

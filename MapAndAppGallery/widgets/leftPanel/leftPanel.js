@@ -480,17 +480,22 @@ define([
         * @memberOf widgets/leftPanel/leftPanel
         */
         _createNoDataContainer: function () {
-            if (query(".esriCTInnerRightPanel")[0]) {
-                domClass.replace(query(".esriCTInnerRightPanel")[0], "displayNoneAll", "displayBlockAll");
+            var innerRightPanel = query(".esriCTInnerRightPanel")[0];
+            if (innerRightPanel) {
+                domClass.replace(innerRightPanel, "displayNoneAll", "displayBlockAll");
             }
             if (query(".esriCTNoResults")[0]) {
                 domConstruct.destroy(query(".esriCTNoResults")[0]);
             }
-            domConstruct.create('div', { "class": "esriCTDivClear esriCTNoResults", "innerHTML": nls.noResultsText }, query(".esriCTRightPanel")[0]);
-            if (domClass.contains(query(".esriCTInnerRightPanel")[0], "displayNone")) {
-                domClass.replace(query(".esriCTNoResults")[0], "displayNoneAll", "displayBlockAll");
-            } else {
-                domClass.replace(query(".esriCTNoResults")[0], "displayBlockAll", "displayNoneAll");
+            if (query(".esriCTRightPanel")[0]) {
+                domConstruct.create('div', { "class": "esriCTDivClear esriCTNoResults", "innerHTML": nls.noResultsText }, query(".esriCTRightPanel")[0]);
+                if (innerRightPanel) {
+                    if (domClass.contains(innerRightPanel, "displayNone")) {
+                        domClass.replace(query(".esriCTNoResults")[0], "displayNoneAll", "displayBlockAll");
+                    } else {
+                        domClass.replace(query(".esriCTNoResults")[0], "displayBlockAll", "displayNoneAll");
+                    }
+                }
             }
             topic.publish("hideProgressIndicator");
         },

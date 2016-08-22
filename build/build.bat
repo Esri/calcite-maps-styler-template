@@ -75,6 +75,7 @@ mkdir %BUILD_OUTPUT%\Panels
 mkdir %BUILD_OUTPUT%\PanelsLegend
 mkdir %BUILD_OUTPUT%\PublicGallery
 mkdir %BUILD_OUTPUT%\Profile
+mkdir %BUILD_OUTPUT%\Ranking
 mkdir %BUILD_OUTPUT%\ServiceLookup
 mkdir %BUILD_OUTPUT%\InformationLookup
 mkdir %BUILD_OUTPUT%\SimpleMapViewer
@@ -83,6 +84,7 @@ mkdir %BUILD_OUTPUT%\SocialMedia
 mkdir %BUILD_OUTPUT%\Solutions
 mkdir %BUILD_OUTPUT%\StorytellingSwipe
 mkdir %BUILD_OUTPUT%\StorytellingTextLegend
+mkdir %BUILD_OUTPUT%\Styler
 mkdir %BUILD_OUTPUT%\Time
 mkdir %BUILD_OUTPUT%\TimeAware
 mkdir %BUILD_OUTPUT%\ThumbnailGenerator
@@ -183,6 +185,8 @@ xcopy %TEMPLATES_ROOT%\archive\TwoPaneSeaside                   %BUILD_OUTPUT%\T
 xcopy %TEMPLATES_ROOT%\PublicInformation                        %BUILD_OUTPUT%\PublicInformation                    /E /Y
 xcopy %TEMPLATES_ROOT%\ImpactSummary                            %BUILD_OUTPUT%\ImpactSummary                        /E /Y
 xcopy %TEMPLATES_ROOT%\SummaryViewer                            %BUILD_OUTPUT%\SummaryViewer                        /E /Y
+xcopy %TEMPLATES_ROOT%\Styler                                   %BUILD_OUTPUT%\Styler                               /E /Y
+xcopy %TEMPLATES_ROOT%\Ranking                                  %BUILD_OUTPUT%\Ranking                              /E /Y
 xcopy %TEMPLATES_ROOT%\MapTools                                 %BUILD_OUTPUT%\MapTools                             /E /Y
 xcopy %TEMPLATES_ROOT%\MapJournal                               %BUILD_OUTPUT%\MapJournal                           /E /Y
 xcopy %TEMPLATES_ROOT%\MapSeries                                %BUILD_OUTPUT%\MapSeries                            /E /Y

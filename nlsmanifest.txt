@@ -12,6 +12,7 @@ PublicInformation\js\nls
 Profile\js\nls
 SimpleViewer\js\nls
 SummaryViewer\js\nls
+Styler\js\application\nls
 StorytellingSwipe\resources\nls
 MapCarousel\js\nls
 MapAndAppGallery\nls
@@ -36,3 +37,4 @@ CrowdSourcePolling\js\nls
 3DScene\js\nls
 Compare3d\js\nls
 StorytellingBasic\js\nls
+Ranking\js\nls

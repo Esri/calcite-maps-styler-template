@@ -83,7 +83,7 @@ define({
     "valueRadioButtonLabel": "Valoare",
     "uniqueRadioButtonLabel": "Unic",
     "selectLayerToBegin": "Selectaţi o categorie pentru a începe",
-    "layerFeatureCount": "${featureCount} înregistrări"
+    "layerFeatureCount": "Ă_${selectedFeatureCount} selected / ${featureCount} records__________________ș"
   },
   "timeSlider": {
     "timeSliderLabel": "Interval de timp",
@@ -97,7 +97,12 @@ define({
     "placeHolderText": "",
     "noCommentsAvailableText": "Nu există înregistrări disponibile",
     "remainingTextCount": "${0} caractere rămase",
-    "showNoText": "Nu"
+    "showNoText": "Nu",
+    "selectAttachments": "Ataşări",
+    "selectFileText": "Parcurgere",
+    "attachmentSelectedMsg": "ataşări selectate",
+    "attachmentHeaderText": "Ataşări",
+    "addRecordText": "Ă_Add Record____ș"
   },
   "main": {
     "noGroup": "Niciun grup configurat"
@@ -109,17 +114,18 @@ define({
   },
   "manualRefresh": {
     "manualRefreshIconTooltip": "Reîmprospătare",
-    "confirmManualRefeshText": "Toate selecţiile şi modificările nesalvate vor fi eliminate"
+    "confirmManualRefreshText": "Ă_All selections and unsaved changes will be discarded_________________ș"
   },
   "help": {
     "helpIconTooltip": "Ajutor"
   },
   "filter": {
     "noFeatureFoundText": "Nu a fost găsit niciun obiect spaţia pentru această valoare.",
-    "distinctQueryFalied": "Nu există valori distincte pentru câmp.",
+    "distinctQueryFailed": "Ă_No distinct values found for the field_____________ș.",
     "andText": "şi",
-    "filterInEditModeAlert": "Filtrele nu sunt disponibile în timpul editării",
-    "dropdownSelectOption": "Selectare"
+    "filterInEditModeAlert": "Ă_Filters unavailable while editing___________ș.",
+    "dropdownSelectOption": "Selectare",
+    "filterInShowSelectedEditModeAlert": "Ă_Filters unavailable in 'Show Selected' mode______________ș."
   },
   "detailsPanel": {
     "editContentText": "Editare înregistrare"
@@ -127,5 +133,10 @@ define({
   "signOutPage": {
     "signOutMessage": "V-aţi deconectat cu succes",
     "reSignInMessage": "Faceţi clic aici pentru a vă autentifica"
+  },
+  "selectionOptions": {
+    "selectionOptionsIconTooltip": "Ă_Selection Options______ș",
+    "showAllOptionText": "Ă_Show All___ș",
+    "showSelectedOptionText": "Ă_Show Selected_____ș"
   }
 });

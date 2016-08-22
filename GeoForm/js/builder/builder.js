@@ -50,6 +50,7 @@ define([
     locationSearchOption: null,
 
     constructor: function (config, response) {
+      this._layerIds = [];
       this.config = config;
       this.response = response;
       this.onDemandResources = [
@@ -1158,6 +1159,7 @@ define([
         filteredLayer.value = fLayer.value = layerId;
         dom.byId("selectLayer").appendChild(filteredLayer);
         dom.byId("layerSelect").appendChild(fLayer);
+        this._layerIds.push(layerId);
         fLayer.selected = true;
         this.previousValue = layerId;
         this.fieldInfo[layerId] = {};
@@ -1276,7 +1278,12 @@ define([
         this.currentConfig.viewSubmissionsText = dom.byId("viewSubmissionsText").value;
         break;
       case "fields":
-        if (layerObj !== "all") {
+        if(layerObj === "all"){
+          array.forEach(this._layerIds, lang.hitch(this, function(layerId){
+            this._updateAppConfiguration(prevNavigationTab, layerId);
+          }));
+        }
+        else {
           var innerObj = [];
           var fieldName, fieldLabel, fieldDescription, visible, preventPast, preventFuture, setCurrentDate, hiddenDate;
           this.currentSelectedLayer[layerObj] = dom.byId('geoFormFieldsTable');
@@ -1385,7 +1392,7 @@ define([
       this._addProgressBar();
       $("#myModal").modal('show');
       arcgisUtils.getItem(this.currentConfig.appid).then(lang.hitch(this, function (response) {
-        var updateURL = this.userInfo.portal.url + "/sharing/rest/content/users/" + this.userInfo.username + (response.item.ownerFolder ? ("/" + response.item.ownerFolder) : "") + "/items/" + this.currentConfig.appid + "/update";
+        var updateURL = this.userInfo.portal.url + "/sharing/rest/content/users/" + response.item.owner + (response.item.ownerFolder ? ("/" + response.item.ownerFolder) : "") + "/items/" + this.currentConfig.appid + "/update";
         esriRequest({
           url: updateURL,
           content: rqData,

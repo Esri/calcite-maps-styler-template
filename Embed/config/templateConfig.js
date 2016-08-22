@@ -70,11 +70,12 @@ define({
     "find",
     "feature",
     "disable_scroll",
+    "disable_nav",
     "zoom_position",
     "logoimage",
     "logolink",
     "preventId",
-    "theme" // example param. ?theme=<my theme>
+    "theme", "sharedTheme", "sharedThemeItem"
   ],
   // Most users will not need to modify this value. For esri hosting environments only. Will automatically create a "sharinghost" and "proxyurl" for the application. Only set this is to true if the app is going to be stored on Esri's hosting servers. If you are using your own custom hosted portal, set the "sharinghost" in defaults.js instead of setting this to true.
   esriEnvironment: true

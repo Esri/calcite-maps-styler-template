@@ -18,6 +18,7 @@
 define([
   "dojo/_base/declare",
   "dojo/_base/lang",
+  "dojo/_base/kernel",
 
   "dojo/Deferred",
   "dojo/query",
@@ -44,7 +45,7 @@ define([
 
   "dojo/domReady!"
 ], function(
-  declare, lang,
+  declare, lang, kernel,
   Deferred,
   query, on,
   Toggler, coreFx,
@@ -59,12 +60,34 @@ define([
   return declare(null, {
     config: {},
     startup: function(config) {
+      // Set lang attribute to current locale
+      document.documentElement.lang = kernel.locale;
+
       var promise;
       // config will contain application and user defined info for the template such as i18n strings, the web map id
       // and application id
       // any url parameters and any application specific configuration information.
       if (config) {
         this.config = config;
+        if (this.config.sharedThemeConfig && this.config.sharedThemeConfig.attributes && this.config.sharedThemeConfig.attributes.theme) {
+          var sharedTheme = this.config.sharedThemeConfig.attributes;
+          this.config.logo = sharedTheme.layout.header.component.settings.logoUrl || sharedTheme.theme.logo.small || null;
+          if (this.config.logo !== null) {
+            this.config.logoLink = null;
+          }
+          this.config.background = sharedTheme.theme.body.bg;
+          this.config.color = sharedTheme.theme.text.color;
+          this.config.legendTitleBackground = sharedTheme.theme.brand.primary;
+          this.config.subtitleColor = sharedTheme.theme.brand.secondary;
+        }
+
+        // Create and add custom style sheet
+        if (this.config.customstyle) {
+          var style = document.createElement("style");
+          style.appendChild(document.createTextNode(this.config.customstyle));
+          document.head.appendChild(style);
+        }
+
         // Hide legend container if not enabled
         dom.byId("legTogText").innerHTML = this.config.i18n.legendToggle.label;
         if (!this.config.legend) {
@@ -73,13 +96,17 @@ define([
         // Hide header if embed is specified
         if (this.config.embed || this.config.headerHeight == "0") {
           domUtils.hide(dom.byId("header"));
-          registry.byId("mainWindow").layout();
         } else {
           // Set header height
           domStyle.set(dom.byId("header"), "height", this.config.headerHeight + "px");
-          registry.byId("mainWindow").layout();
-        }
+          // update title area height to be a percentage of the new header height
+          if (parseInt(this.config.headerHeight, 10) > 58) {
+            domStyle.set("subtitle", "height", this.config.headerHeight - 58 + "px");
+          } else {
+            domStyle.set("subtitle", "height", "auto");
+          }
 
+        }
         //supply either the webmap id or, if available, the item info
         var itemInfo = this.config.itemInfo || this.config.webmap;
         var mapParams = new MapUrlParams({
@@ -164,12 +191,12 @@ define([
         this.config.title = this.config.title || response.itemInfo.item.title || "";
         this.config.subtitle = this.config.subtitle || response.itemInfo.item.snippet || "";
 
-        document.title = esriLang.stripTags(this.config.title);
+        document.title = this.config.title;
         if (this.config.showTitle) {
-          dom.byId("title").innerHTML = esriLang.stripTags(this.config.title);
+          dom.byId("title").innerHTML = this.config.title;
         }
         if (this.config.showSubTitle) {
-          dom.byId("subtitle").innerHTML = esriLang.stripTags(this.config.subtitle);
+          dom.byId("subtitle").innerHTML = this.config.subtitle;
         }
         // Add the logo
         if (this.config.showLogo && this.config.logo) {
@@ -294,7 +321,7 @@ define([
 
           }));
         }
-
+        registry.byId("mainWindow").layout();
         // return for promise
         return response;
       // map has been created. You can start using it.

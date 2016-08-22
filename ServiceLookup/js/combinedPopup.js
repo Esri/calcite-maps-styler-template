@@ -400,10 +400,10 @@ define([
       var reLay = null;
       array.some(this.layers, function (layer) {
 
-        if (layer.featureCollection !== null) {
-          if (layer.featureCollection.layers !== null) {
+        if (layer.featureCollection !== undefined && layer.featureCollection !== null) {
+          if (layer.featureCollection.layers !== undefined && layer.featureCollection.layers !== null) {
             array.forEach(layer.featureCollection.layers, function (subLyrs) {
-              if (subLyrs.layerObject !== null) {
+              if (subLyrs.layerObject !== undefined && subLyrs.layerObject !== null) {
                 if (subLyrs.layerObject.id === layid) {
                   reLay = subLyrs;
                   return true;
@@ -413,8 +413,8 @@ define([
               }
             }, this);
           }
-        } else if (layer.layerObject !== null) {
-          if (layer.layerObject.layerInfos !== null) {
+        } else if (layer.layerObject !== undefined && layer.layerObject !== null) {
+          if (layer.layerObject.layerInfos !== undefined && layer.layerObject.layerInfos !== null) {
             array.forEach(layer.layerObject.layerInfos, function (subLyrs) {
 
               if (subLyrs.id === layid) {

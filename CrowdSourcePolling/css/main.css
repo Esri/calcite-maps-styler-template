@@ -17,56 +17,62 @@
 /* application-boilerplate */
 html,
 body {
-  padding: 0;
-  margin: 0;
-  height: 100%;
-  width: 100%;
-  font-family: Arial, Helvetica, sans-serif;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    width: 100%;
 }
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body:lang(ja) {
+    font-family: meiryo, Arial, Helvetica, sans-serif;
+}
+
 #mapDiv {
-  padding: 0;
-  margin: 0;
-  width: 100%;
-  height: 100%;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
 }
-.esriRTL label {
-  /*Example of a rule that will be applied if the app is viewed in a browser with a RTL locale like Hebrew or Arabic.*/
-}
+
 .loading-indicator {
-  /* Loading status */
-  display: none;
-  height: 100%;
-  width: 100%;
-  z-index: 500;
-  position: absolute;
-  top: 0;
-  left: 0;
-  overflow: hidden;
-  background: #fff;
+    /* Loading status */
+    display: none;
+    height: 100%;
+    width: 100%;
+    z-index: 500;
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    background: #fff;
 }
 .app-loading .loading-indicator,
 .app-error .loading-indicator {
-  /* Show this class when loading or error */
-  display: block;
+    /* Show this class when loading or error */
+    display: block;
 }
 .app-loading .loading-indicator {
-  /* Loading image */
-  background-position: center center;
-  background-image: url(../images/loading-indicator.gif);
-  background-repeat: no-repeat;
+    /* Loading image */
+    background-position: center center;
+    background-image: url(../images/loading-indicator.gif);
+    background-repeat: no-repeat;
 }
 .app-error .loading-message {
-  /* Error status */
-  background-position: top center;
-  background-image: url(../images/error.png);
-  background-repeat: no-repeat;
-  padding-top: 60px;
-  width: 100%;
-  position: absolute;
-  z-index: 2;
-  top: 40%;
-  left: 0;
-  text-align: center;
+    /* Error status */
+    background-position: top center;
+    background-image: url(../images/error.png);
+    background-repeat: no-repeat;
+    padding-top: 60px;
+    width: 100%;
+    position: absolute;
+    z-index: 2;
+    top: 40%;
+    left: 0;
+    text-align: center;
 }
 .absoluteCover {
     position: absolute;
@@ -85,7 +91,7 @@ textarea {
     font-size: 14px;
 }
 .mblBackground {
-  background-color: white;
+    background-color: white;
 }
 .mblSwitchBg {
     font-weight: normal;
@@ -171,17 +177,16 @@ textarea {
 }
 
 .busy {
-  /* Loading overlay image */
-  background-position: center center;
-  background-image: url(../images/loading-indicator.gif);
-  background-repeat: no-repeat;
-  opacity: 0.5;filter:Alpha(opacity=50);
-  position: absolute;
-  left: 0px;
-  right: 0px;
-  top: 0px;
-  bottom: 0px;
-
+    /* Loading overlay image */
+    background-position: center center;
+    background-image: url(../images/loading-indicator.gif);
+    background-repeat: no-repeat;
+    opacity: 0.5;filter:Alpha(opacity=50);
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    bottom: 0px;
 }
 
 .esriSimpleSlider, .esriSimpleSliderVertical .esriSimpleSliderIncrementButton, .esriSimpleSliderVertical .esriSimpleSliderDecrementButton {
@@ -220,17 +225,17 @@ textarea {
 
 .arcgisSearch .hasButtonMode.searchCollapsed .searchExpandContainer,
 .arcgisSearch .hasButtonMode.searchCollapsed.hasMultipleSources .searchExpandContainer {
-  width: 0px;
+    width: 0px;
 }
 
 .arcgisSearch .hasButtonMode.searchExpanded .searchExpandContainer,
 .arcgisSearch .hasButtonMode .searchAnimate {
-  width: 237px;
+    width: 237px;
 }
 
 .arcgisSearch .hasButtonMode.searchExpanded.hasMultipleSources .searchExpandContainer,
 .arcgisSearch .hasButtonMode.hasMultipleSources .searchAnimate {
-  width: 268px;
+    width: 268px;
 }
 
 .arcgisSearch .searchClear {
@@ -471,24 +476,24 @@ textarea {
 }
 
 .itemList .itemSummary {
-  padding: 10px;
-  border-bottom: 1px solid #ccc;
-  cursor: pointer;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    cursor: pointer;
 }
 
 .itemSummary {
-  line-height: 0; /* reset */
+    line-height: 0; /* reset */
 }
 
 .itemList .itemSummary:hover {
-  background-color: white;
+    background-color: white;
 }
 
 .itemSummary .itemTitle {
-  width: 75%;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  overflow-x: hidden;
+    width: 75%;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow-x: hidden;
 }
 
 .itemListTitleOverride {
@@ -505,7 +510,7 @@ textarea {
 
 .itemList .itemTitle,
 .itemList .itemFav {
-  line-height: 30px;
+    line-height: 30px;
 }
 
 .itemFav {
@@ -513,19 +518,19 @@ textarea {
 }
 
 .itemSummary > div, .itemFav > div {
-  display: inline-block;
+    display: inline-block;
 }
 
 .itemSummary .itemFav {
-  float: right;
-  font-size: 20px;
-  color: rgb(150, 150, 150)!important;
-  color: rgba(0, 0, 0, 0.35)!important;
-  padding-left: 8px;
+    float: right;
+    font-size: 20px;
+    color: rgb(150, 150, 150)!important;
+    color: rgba(0, 0, 0, 0.35)!important;
+    padding-left: 8px;
 }
 
 .itemList .itemVotes {
-  margin-right: 0.5em;
+    margin-right: 0.5em;
 }
 
 .esriCTClear
@@ -606,27 +611,27 @@ label.css-label
     background-position: 0 -16px;
 }
 
-/* ---------- itemDetail ---------- */
+/* ---------- ItemDetails ---------- */
 
 .itemDetail {
     color: #555;
 }
 
 .itemDetail > .itemSummary > div {
-  padding: 10px;
-  line-height: 20px;
-  box-sizing: border-box;
+    padding: 10px;
+    line-height: 20px;
+    box-sizing: border-box;
 }
 
 .itemDetail .itemSummary .back {
-  cursor: pointer;
-  line-height: 0;
-  float: left;
+    cursor: pointer;
+    line-height: 0;
+    float: left;
 }
 
 .itemDetail .itemSummary .itemTitle {
-  width: 69%;
-  padding-right: 5px;
+    width: 69%;
+    padding-right: 5px;
 }
 
 .itemDetailTitleOverride {
@@ -634,43 +639,43 @@ label.css-label
 }
 
 .itemDetail .itemSummary .itemFav {
-  font-size: inherit;
-  padding-left: 0px;
+    font-size: inherit;
+    padding-left: 0px;
 }
 
 .itemDetail .itemFav .icon {
-  font-size: 20px;
-  margin-left: 5px;
+    font-size: 20px;
+    margin-left: 5px;
 }
 
 .itemDetail .itemDescription {
-  background-color: #fff;
-  color: #999;
-  padding: 10px;
+    background-color: #fff;
+    color: #999;
+    padding: 10px;
 }
 
 .itemDetail .header {
-  width: 100%;
-  margin-bottom: 5px;
-  font-weight: bold;
-  font-size: 16px;
+    width: 100%;
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-size: 16px;
 }
 
 .itemDetail .userName {
-  display: inline-block;
+    display: inline-block;
 }
 
 .itemDetail .btn {
-  width: 15%;
-  max-width: 80px;
-  height: 18px;
-  border: 1px solid #ccc;
-  display: inline-block;
-  margin-right: 5px;
-  padding: 4px 6px;
-  border-radius: 2px;
-  cursor: pointer;
-  text-align: center;
+    width: 15%;
+    max-width: 80px;
+    height: 18px;
+    border: 1px solid #ccc;
+    display: inline-block;
+    margin-right: 5px;
+    padding: 4px 6px;
+    border-radius: 2px;
+    cursor: pointer;
+    text-align: center;
 }
 
 .itemDetail .btnNormal {
@@ -688,6 +693,7 @@ label.css-label
 .itemDetail .btnInverse {
     color: white;
     background-color: #007ac2;
+    cursor:default;
 }
 
 .itemDetail .btnInverse ::selection {
@@ -720,62 +726,62 @@ label.css-label
 }
 
 .itemDetail .float-right {
-  float: right;
+    float: right;
 }
 
 .itemDetail .right-edge {
-  margin-right: 0;
+    margin-right: 0;
 }
 
 .itemDetail .space-below {
-  margin-bottom: 10px;
+    margin-bottom: 10px;
 }
 
 .itemDetail .large-text {
-  font-size: 16px;
+    font-size: 16px;
 }
 
 .itemDetail .medium-text {
-  font-size: 14px;
+    font-size: 14px;
 }
 
 .itemDetail .small-text {
-  font-size: 12px;
+    font-size: 12px;
 }
 
 .itemDetail .itemComments {
-  background-color: #eee;
-  padding: 10px;
+    background-color: #eee;
+    padding: 10px;
 }
 
 .btn > div {
-  display: inline-block;
+    display: inline-block;
 }
 
 .btn .icon {
-  margin-right: 2px;
-  position: relative;
-  top: 2px;
+    margin-right: 2px;
+    position: relative;
+    top: 2px;
 }
 
 .hide {
-  display: none !important;
+    display: none !important;
 }
 
 .center-please {
-  text-align: center;
+    text-align: center;
 }
 
 .itemDetail .attachmentsSection {
-  display: none;
-  margin-bottom: 12px;
+    display: none;
+    margin-bottom: 12px;
 }
 
 .itemDetail .attachmentsSection .attachment {
-  max-width: 96%!important;
-  max-height: 120px!important;
-  margin: 0px 5px 5px 0px;
-  cursor: pointer;
+    max-width: 96%!important;
+    max-height: 120px!important;
+    margin: 0px 5px 5px 0px;
+    cursor: pointer;
 }
 
 .commentsForm {

@@ -31,13 +31,15 @@ define({
       "rightHeader": "Facebook-sivu",
       "pageExplain": "Facebook-sivu on julkinen tuotemerkki tai tunnettu tuote, kuten <b>esrigis</b>. Saat sivun nimen sivun URL-osoitteessa olevan ensimmäisen vinoviivan (/) jälkeen.",
       "pageInputLbl": "Sivun nimi",
-      "lookupMsgError": "Sivua ei löydy"
+      "lookupMsgError": "Sivua ei löydy",
+      "warning": "Å_Facebook support has been discontinued, ${learn}________________ö.",
+      "learn": "Å_learn more____ö"
     },
     "imageSelectorPicasa": {
-      "userInputLbl": "Sähköpostiosoite tai Picasa-/Google+-tunnus",
+      "userInputLbl": "Å_Email or Picasa id______ö",
       "signInMsg2": "Tiliä ei löydy",
-      "howToFind": "Picasa- tai Google+-tilitunnuksen etsiminen",
-      "howToFind2": "Kopioi minkä tahansa Picasa- tai Google+-sivun ensimmäisen ja toisen vinoviivan (/) välissä olevat luvut"
+      "howToFind": "Å_How to find a Picasa id________ö",
+      "howToFind2": "Å_Copy digits between the first and second '/' of any Picasa page____________________ö"
     },
     "videoSelectorCommon": {
       "check": "Valitse",
@@ -101,7 +103,10 @@ define({
       "lblPosition3Explain2": "(leveys sopii aina paneeliin)",
       "lblPosition4Explain": "(voi vääristyä)",
       "unloadLbl": "Poista lataus, kun lukija siirtyy",
-      "unloadHelp": "Jos Web-sivulla on ääni- tai videomediaa, pidä tämä asetus valittuna, jotta sisällön toisto pysähtyy, kun lukija siirtyy pois. Poista valinta, jos haluat toistaa ääniraitaa lukijan edetessä tarinassa.<br />Jos Web-sivu on sovellus, poista valinta, jotta tarina ei lataudu uudelleen, kun lukija palaa tarinaan."
+      "unloadHelp": "Jos Web-sivulla on ääni- tai videomediaa, pidä tämä asetus valittuna, jotta sisällön toisto pysähtyy, kun lukija siirtyy pois. Poista valinta, jos haluat toistaa ääniraitaa lukijan edetessä tarinassa.<br />Jos Web-sivu on sovellus, poista valinta, jotta tarina ei lataudu uudelleen, kun lukija palaa tarinaan.",
+      "embedProtocolLabel": "Å_Load page over a secure connection (HTTPS)______________ö",
+      "embedProtocolWarning1": "Å_Your story is configured to load over a secure connection (https), so web page show in the story must also use a secure connection. If the page does not load it may be because it is not available over a secure connection or that it cannot be included in your story (some websites restrict this). You may need to create a hyperlink to open the page in a new browser tab________________________________________________________________________________________________________________ö.",
+      "embedProtocolWarning2": "Å_Your story is configured to load over an insecure connection (http), so you can choose to load this page over a secure (recommended) or insecure connection. If the page does not load, it may be because it does not support the connection type you selected or that it cannot be included in your story (some websites restrict this). You may need to create a hyperlink to open the page in a new browser tab__________________________________________________________________________________________________________________________ö."
     },
     "editorActionGeocode": {
       "lblTitle": "Paikanna osoite tai paikka",

@@ -19,27 +19,28 @@ define({
     "error": "Karte kann nicht erstellt werden"
   },
   "nav": {
-    "close": "Schließen"
+    "close": "ä_Close___Ü"
   },
   "elevation": {
-    "toggle": "Höhenprofildiagramm umschalten",
-    "drawTool": "Zeichnen Sie eine Linie auf die Karte, um ein Höhenprofil zu erstellen.",
-    "selectMessage": "Klicken Sie auf ein Linien-Feature, oder zeichnen Sie mit dem Zeichenwerkzeug eine Linie, um das Höhenprofil anzuzeigen."
+    "toggle": "ä_Toggle the Elevation Profile Chart____________Ü.",
+    "drawTool": "ä_Draw a line on the map to generate an elevation profile__________________Ü.",
+    "selectMessage": "ä_Click a line feature or use the draw tool to draw a line to display the elevation profile____________________________Ü",
+    "gainLossTemplate": "ä_Min: ${min}   Max: ${max}   Start: ${start}   End: ${end}   Change: ${gainLoss}_________________________Ü"
   },
   "splash": {
-    "title": "Titel",
-    "content": "Konfigurieren Sie dies, um benutzerdefinierten Begrüßungsinhalt zu erstellen."
+    "title": "ä_Title___Ü",
+    "content": "ä_Configure to create custom splash content_____________Ü"
   },
   "legend": {
-    "title": "Legende",
-    "tip": "Legende anzeigen"
+    "title": "ä_Legend___Ü",
+    "tip": "ä_Display legend_____Ü"
   },
   "basemap": {
-    "title": "Grundkarte",
-    "tip": "Grundkarte ändern"
+    "title": "ä_Basemap___Ü",
+    "tip": "ä_Change basemap_____Ü"
   },
   "share": {
-    "title": "Freigeben",
-    "tip": "Karte freigeben"
+    "title": "ä_Share___Ü",
+    "tip": "ä_Share map____Ü"
   }
 });

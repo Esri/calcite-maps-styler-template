@@ -23,6 +23,7 @@ define([
   "dojo/promise/all",
   "dojo/Deferred",
   "dojo/_base/lang",
+  "dojo/_base/kernel",
   "esri/domUtils",
   "esri/request",
   "esri/lang",
@@ -45,7 +46,7 @@ define([
   Color,
   all,
   Deferred,
-  lang,
+  lang, kernel,
   domUtils,
   esriRequest,
   esriLang,
@@ -70,14 +71,33 @@ define([
     tableHandler: null,
     timeFormats: ["shortDateShortTime", "shortDateLEShortTime", "shortDateShortTime24", "shortDateLEShortTime24", "shortDateLongTime", "shortDateLELongTime", "shortDateLongTime24", "shortDateLELongTime24"],
     startup: function(config) {
-
+      // Set lang attribute to current locale
+      document.documentElement.lang = kernel.locale;
       // config will contain application and user defined info for the template such as i18n strings, the web map id
       // and application id
       // any url parameters and any application specific configuration information.
       if (config) {
         this.config = config;
         window.config = config;
+        if (this.config.sharedThemeConfig && this.config.sharedThemeConfig.attributes && this.config.sharedThemeConfig.attributes.theme) {
+          var sharedTheme = this.config.sharedThemeConfig.attributes;
+          if (sharedTheme.layout && sharedTheme.layout.header && sharedTheme.layout.header.component && sharedTheme.layout.header.component.settings && sharedTheme.layout.header.component.settings.logoUrl) {
+            this.config.logoimage = sharedTheme.layout.header.component.settings.logoUrl;
+            this.config.logointitle = true;
+          } else if (sharedTheme.theme && sharedTheme.theme.logo && sharedTheme.theme.logo.small) {
+            this.config.logoimage = sharedTheme.theme.logo.small;
+          }
+          this.config.color = sharedTheme.theme.text.color;
+          this.config.theme = sharedTheme.theme.body.bg;
+          this.config.titlecolor = sharedTheme.theme.brand.primary;
+        }
 
+        // Create and add custom style sheet
+        if (this.config.customstyle) {
+          var style = document.createElement("style");
+          style.appendChild(document.createTextNode(this.config.customstyle));
+          document.head.appendChild(style);
+        }
         //supply either the webmap id or, if available, the item info
         var itemInfo = this.config.itemInfo || this.config.webmap;
 

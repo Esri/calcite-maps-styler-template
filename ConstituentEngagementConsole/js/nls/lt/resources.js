@@ -83,7 +83,7 @@ define({
     "valueRadioButtonLabel": "Reikšmė",
     "uniqueRadioButtonLabel": "Unikalios",
     "selectLayerToBegin": "Jei norite pradėti, pasirinkite kategoriją",
-    "layerFeatureCount": "${featureCount} įrašai"
+    "layerFeatureCount": "Į_${selectedFeatureCount} selected / ${featureCount} records__________________š"
   },
   "timeSlider": {
     "timeSliderLabel": "Laiko intervalas",
@@ -97,7 +97,12 @@ define({
     "placeHolderText": "",
     "noCommentsAvailableText": "Įrašų nėra",
     "remainingTextCount": "liko simbolių: ${0}",
-    "showNoText": "Ne"
+    "showNoText": "Ne",
+    "selectAttachments": "Priedai",
+    "selectFileText": "Parinkti",
+    "attachmentSelectedMsg": "pasirinktas (-i) priedas (-ai)",
+    "attachmentHeaderText": "Priedai",
+    "addRecordText": "Į_Add Record____š"
   },
   "main": {
     "noGroup": "Sukonfigūruotų grupių nėra"
@@ -109,17 +114,18 @@ define({
   },
   "manualRefresh": {
     "manualRefreshIconTooltip": "Atnaujinti",
-    "confirmManualRefeshText": "Visi pasirinkimai ir neišsaugoti pakeitimai bus atmesti"
+    "confirmManualRefreshText": "Į_All selections and unsaved changes will be discarded_________________š"
   },
   "help": {
     "helpIconTooltip": "Pagalba"
   },
   "filter": {
     "noFeatureFoundText": "Šiai reikšmei elementų nerasta.",
-    "distinctQueryFalied": "Šiam laukui atskirų reikšmių nerasta.",
+    "distinctQueryFailed": "Į_No distinct values found for the field_____________š.",
     "andText": "ir",
-    "filterInEditModeAlert": "Redaguojant filtrai nepasiekiami",
-    "dropdownSelectOption": "Pasirinkite"
+    "filterInEditModeAlert": "Į_Filters unavailable while editing___________š.",
+    "dropdownSelectOption": "Pasirinkite",
+    "filterInShowSelectedEditModeAlert": "Į_Filters unavailable in 'Show Selected' mode______________š."
   },
   "detailsPanel": {
     "editContentText": "Redaguoti įrašą"
@@ -127,5 +133,10 @@ define({
   "signOutPage": {
     "signOutMessage": "Sėkmingai atsijungėte",
     "reSignInMessage": "Paspauskite prisijungti"
+  },
+  "selectionOptions": {
+    "selectionOptionsIconTooltip": "Į_Selection Options______š",
+    "showAllOptionText": "Į_Show All___š",
+    "showSelectedOptionText": "Į_Show Selected_____š"
   }
 });

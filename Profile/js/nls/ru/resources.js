@@ -19,27 +19,28 @@ define({
     "error": "Не удалось создать карту"
   },
   "nav": {
-    "close": "Закрыть"
+    "close": "Ж_Close___Я"
   },
   "elevation": {
-    "toggle": "Переключите диаграмму профиля высот.",
-    "drawTool": "Нарисуйте линию на карте, чтобы создать профиль высот.",
-    "selectMessage": "Щелкните на линейном объекте на карте или с помощью инструмента рисования нарисуйте линию, чтобы создать профиль высот."
+    "toggle": "Ж_Toggle the Elevation Profile Chart____________Я.",
+    "drawTool": "Ж_Draw a line on the map to generate an elevation profile__________________Я.",
+    "selectMessage": "Ж_Click a line feature or use the draw tool to draw a line to display the elevation profile____________________________Я",
+    "gainLossTemplate": "Ж_Min: ${min}   Max: ${max}   Start: ${start}   End: ${end}   Change: ${gainLoss}_________________________Я"
   },
   "splash": {
-    "title": "Заголовок",
-    "content": "Настройте пользовательскую заставку"
+    "title": "Ж_Title___Я",
+    "content": "Ж_Configure to create custom splash content_____________Я"
   },
   "legend": {
-    "title": "Легенда",
-    "tip": "Показать легенду"
+    "title": "Ж_Legend___Я",
+    "tip": "Ж_Display legend_____Я"
   },
   "basemap": {
-    "title": "Базовая карта",
-    "tip": "Изменить базовую карту"
+    "title": "Ж_Basemap___Я",
+    "tip": "Ж_Change basemap_____Я"
   },
   "share": {
-    "title": "Опубликовать",
-    "tip": "Опубликовать карту"
+    "title": "Ж_Share___Я",
+    "tip": "Ж_Share map____Я"
   }
 });

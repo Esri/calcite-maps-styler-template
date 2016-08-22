@@ -36,7 +36,10 @@ define({
       "noViewerIE": "סיפור זה אינו נתמך ב- Internet Explorer לפני גירסה %VERSION%‏.‏ %UPGRADE%",
       "upgradeBrowser": "<a href='http://browsehappy.com/' target='_blank'>עדכן את הדפדפן שלך</a>.",
       "mapLoadingFail": "משהו השתבש, המפה לא נטענה באופן תקין.",
-      "signOut": "התנתק"
+      "signOut": "התנתק",
+      "print0": "כן_Sorry, this story cannot be printed____________ש.",
+      "print1": "כן_To print this story, please use the print button located in the share dialog________________________ש.",
+      "print2": "כן_Sorry, a printable version of the story is typically accessible through the share dialog, but this dialog has been disabled by the author__________________________________________ש."
     },
     "mobileView": {
       "tapForDetails": "למידע נוסף",
@@ -85,7 +88,16 @@ define({
       "autoplayLabel": "מצב ניגון אוטומטי",
       "autoplayExplain1": "מצב ניגון אוטומטי יתקדם בסיפור שלך במרווחים קבועים. מצב זה אידיאלי עבור צג תצוגה בקיוסק או צג ציבורי, אבל שים לב שבמצבים אחרים, הוא עשוי להפוך את הסיפור לקשה יותר לקריאה. ישות זו אינה נתמכת בתצוגות קטנות.",
       "autoplayExplain2": "כאשר מצב זה פעיל, קיימים פקדים להפעלה/הפסקה של הסיפור ולהתאמת מהירות הניווט.",
-      "linksupdated": "הקישורים התעדכנו!"
+      "linksupdated": "הקישורים התעדכנו!",
+      "print": "כן_Print___ש",
+      "printInstruction1": "כן_Please wait for all the content to load before printing this page_____________________ש",
+      "printInstruction1a": "כן_Some content may not print unless you enable \"Print Background Colors and Images\" in the Print Page setup dialog___________________________________ש",
+      "printInstruction2": "כן_This page cannot be shared with others, instead share the ${link}_____________________ש",
+      "link": "כן_link to the story______ש",
+      "printOptPageBreak": "כן_Begin each section on a new page___________ש",
+      "printWarning": "כן_This is a printed version of a story map. Dynamic content such as videos and interactive maps is only available in the online version at ${link}____________________________________________ש",
+      "printMSWarning": "כן_link available only in online story____________ש",
+      "printVideoWarning": "כן_This video can be viewed in the online version of this story map____________________ש"
     }
   }
 });

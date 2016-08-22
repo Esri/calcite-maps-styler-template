@@ -31,13 +31,15 @@ define({
       "rightHeader": "Facebook-side",
       "pageExplain": "En Facebook-side er et offentligt varemærke//produkt eller en celebritet ligesom <b>esrigis</b>. Du kan få sidenavnet efter den første '/' i sidens URL.",
       "pageInputLbl": "Sidenavn",
-      "lookupMsgError": "Side ikke fundet"
+      "lookupMsgError": "Side ikke fundet",
+      "warning": "ø_Facebook support has been discontinued, ${learn}________________å.",
+      "learn": "ø_learn more____å"
     },
     "imageSelectorPicasa": {
-      "userInputLbl": "E-mail eller Picasa/Google+ ID",
+      "userInputLbl": "ø_Email or Picasa id______å",
       "signInMsg2": "Kontoen kunne ikke findes",
-      "howToFind": "Sådan findes et Picasa- eller Google+ konto-ID",
-      "howToFind2": "Kopier tal mellem første og anden '/' på Picasa eller en G+-side"
+      "howToFind": "ø_How to find a Picasa id________å",
+      "howToFind2": "ø_Copy digits between the first and second '/' of any Picasa page____________________å"
     },
     "videoSelectorCommon": {
       "check": "Kontrollér",
@@ -101,7 +103,10 @@ define({
       "lblPosition3Explain2": "(bredden vil altid passe til panelet)",
       "lblPosition4Explain": "(kan forvrænges)",
       "unloadLbl": "Udlæs, når læseren navigerer væk",
-      "unloadHelp": "Bevar markeringen af denne indstilling, hvis websiden har medier med lyd eller video, for at forhindre, at indholdet afspilles, når læseren navigerer til en anden sektion. Fjern markeringen, hvis lydsporet skal afspilles, mens læseren gennemgår historien.<br />Fjern markeringen af denne indstilling, hvis websiden er en applikation, så genindlæses historien ikke, hvis læseren vender tilbage til den."
+      "unloadHelp": "Bevar markeringen af denne indstilling, hvis websiden har medier med lyd eller video, for at forhindre, at indholdet afspilles, når læseren navigerer til en anden sektion. Fjern markeringen, hvis lydsporet skal afspilles, mens læseren gennemgår historien.<br />Fjern markeringen af denne indstilling, hvis websiden er en applikation, så genindlæses historien ikke, hvis læseren vender tilbage til den.",
+      "embedProtocolLabel": "ø_Load page over a secure connection (HTTPS)______________å",
+      "embedProtocolWarning1": "ø_Your story is configured to load over a secure connection (https), so web page show in the story must also use a secure connection. If the page does not load it may be because it is not available over a secure connection or that it cannot be included in your story (some websites restrict this). You may need to create a hyperlink to open the page in a new browser tab________________________________________________________________________________________________________________å.",
+      "embedProtocolWarning2": "ø_Your story is configured to load over an insecure connection (http), so you can choose to load this page over a secure (recommended) or insecure connection. If the page does not load, it may be because it does not support the connection type you selected or that it cannot be included in your story (some websites restrict this). You may need to create a hyperlink to open the page in a new browser tab__________________________________________________________________________________________________________________________å."
     },
     "editorActionGeocode": {
       "lblTitle": "Find en adresse eller et sted",

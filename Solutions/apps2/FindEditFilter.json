@@ -25,7 +25,7 @@
         "colorizer.theme": "EarthBrowns",
         "filter.hint1": "Filter",
         "filter.fieldname1": "",
-        "filter.value1": "",
+        "filter.value1": null,
         "searchBox.hint": "Find",
         "featureSearcher.searchLayersString": "[]",
         "featureSearcher.displayLayersString": "[]",
@@ -160,7 +160,7 @@
         "classname": "js.LGNotes",
         "config": {
             "notes": [
-                "bb868ac73d73edfd 2016-04-20 09:49:59 -0700"
+                "72e32ca5762726b2 2016-08-03 15:49:59 -0700"
             ]
         }
     }, {

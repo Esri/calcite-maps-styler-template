@@ -40,7 +40,7 @@ define({
   },
   "cantFindStories": {
     "whereAreStories": "ストーリーが表示されませんか？",
-    "notSeeExplanation": "マイ ストーリーは、{{STORY_MAP_TOUR}}、{{JOURNAL}}、{{MAP_SERIES}}、または {{SWIPE_SPYGLASS}} アプリケーションで作成され、ArcGIS でホストされたストーリー マップのみをリスト表示します。詳細については、{{FAQ}} をご参照ください。",
+    "notSeeExplanation": "須_My Stories will only list story maps hosted in ArcGIS ({{STORY_MAP_BASIC}} is currently not supported). See our {{FAQ}} for more information___________________________________________鷗.",
     "faq": "FAQ",
     "followingStoriesToUpdate": "旧バージョンのアプリケーションで作成された以下のストーリーは、マイ ストーリーにリスト表示するために更新する必要があります。",
     "gettingStories": "旧バージョンのアプリケーションで作成された、更新する必要のあるストーリーを検索しています...",
@@ -88,27 +88,16 @@ define({
     "layerPrivate": "レイヤーをプライベートにすると、ストーリーが壊れます。"
   },
   "collectionList": {
-    "advocacy": "支援活動と奉仕活動",
-    "architecture": "アーキテクチャとデザイン",
-    "conservation": "保護と持続可能性",
-    "culture": "文化",
-    "destinations": "目的地と観光",
-    "disasters": "災害と復旧",
-    "economy": "経済と開発",
-    "entertainment": "エンターテイメント",
-    "history": "歴史",
-    "infrastructure": "インフラストラクチャ",
-    "marketing": "マーケティング",
-    "nature": "自然と環境",
-    "news": "ニュースとイベント",
-    "oceans": "海洋",
-    "parks": "公園とレクリエーション",
+    "business": "須_Business and Economy_______鷗",
+    "history": "須_History and Culture_______鷗",
+    "inNews": "須_In The News____鷗",
+    "infrastructure": "須_Infrastructure and Construction__________鷗",
+    "nature": "須_Nature and Conservation________鷗",
     "people": "人と社会",
-    "planning": "計画と分析",
-    "publicArt": "公衆芸術",
+    "planning": "須_Planning and Design_______鷗",
     "science": "科学と技術",
-    "sport": "スポーツ",
-    "travelogues": "トラベログ"
+    "sports": "須_Sports and Entertainment________鷗",
+    "travel": "須_Travel and Recreation_______鷗"
   },
   "types": {
     "custom": "カスタム",
@@ -227,6 +216,7 @@ define({
   "content": {
     "media": {
       "maps": "マップ",
+      "scenes": "須_Scenes___鷗",
       "images": "画像",
       "videos": "ビデオ",
       "webpages": "Web ページ",
@@ -244,22 +234,30 @@ define({
       "bullet": "箇条書き",
       "tab": "タブ",
       "accordion": "セクション",
-      "mapJournal": "セクション"
+      "mapJournal": "セクション",
+      "cascade": "須_Section___鷗",
+      "crowdsource": "須_Contribution_____鷗",
+      "shortlist": "須_Tab__鷗"
     },
     "titleType": {
       "mapTour": "キャプション",
       "mapJournal": "URL",
-      "mapSeries": "URL"
+      "mapSeries": "URL",
+      "cascade": "須_URL__鷗",
+      "crowdsource": "須_URL__鷗",
+      "shortlist": "須_URL__鷗"
     },
     "actions": {
       "viewMap": "マップの表示",
       "editMap": "マップの編集",
+      "editScene": "須_Edit Scene____鷗",
       "fix": "修正",
       "viewLayer": "レイヤーの表示"
     },
     "contentType": {
       "mainStage": "メイン ステージ アクション",
-      "sidePanel": "説明"
+      "sidePanel": "説明",
+      "introImage": "須_(cover page photo)______鷗"
     },
     "notification": {
       "refreshExplanation": "もう一度ストーリーをチェックする",
@@ -300,6 +298,7 @@ define({
       "publicDisabled": "パブリックな共有は、管理者によって無効化されています",
       "orgDisabled": "組織での共有は、管理者によって無効化されています",
       "noMapName": "マップ名を取得できませんでした",
+      "noSceneName": "須_Could Not Retrieve Scene________鷗",
       "notPublic": "パブリックではありません",
       "inaccessible": "アクセス不可",
       "deleted": "削除されました",
@@ -351,6 +350,8 @@ define({
       "cantScanThisTypeAlt": "このタイプのレイヤーをチェックすることはできません",
       "cantScanThisType": "レイヤーは、チェックできるタイプのレイヤーではありません",
       "webpageNotScanned": "Web ページの問題がチェックされていません",
+      "sceneNotScanned": "須_Scenes are not currently checked for issues, please make sure that the scene and all of its layers are shared correctly_____________________________________鷗",
+      "scenesNotScannedGlobally": "須_There are scenes in this story, and scenes are not currently checked for issues. Please make sure that the scenes and all of their layers are shared correctly________________________________________________鷗",
       "ignoredIssue": "このレイヤーのエラーを無視しています。ページを再読み込みし、このストーリーをもう一度チェックしてエラーを確認してください。",
       "ignoredIssueBuilder": "このレイヤーのエラーを無視しています。ビルダーを再読み込みし、このエラーをもう一度確認してください。"
     },
@@ -450,18 +451,26 @@ define({
       "secondValueC": "タブ付き",
       "thirdTitle": "マップ"
     },
+    "cascade": {
+      "firstTitle": "須_sections___鷗",
+      "secondTitle": "須_maps__鷗"
+    },
     "swipeSpyglass": {
-      "firstTitle": "主要地",
-      "secondTitle": "シンボル",
+      "firstTitle": "須_points of interest______鷗",
+      "secondTitle": "スタイル",
       "secondValueA": "スワイプ",
       "secondValueB": "スパイグラス",
       "thirdTitle": "マップ"
     },
     "crowdsource": {
-      "firstTitle": "提供者",
-      "secondTitle": "スタイル",
-      "secondValueA": "サイド パネル",
-      "secondValueB": "改行",
+      "firstTitle": "須_contributions_____鷗",
+      "secondTitle": "須_basemap___鷗",
+      "secondValueLoading": "須_Loading____鷗...",
+      "secondValueUnknown": "須_unknown___鷗"
+    },
+    "shortlist": {
+      "firstTitle": "須_places___鷗",
+      "secondTitle": "須_tabs__鷗",
       "thirdTitle": "ベースマップ",
       "thirdValueLoading": "読み込んでいます...",
       "thirdValueUnknown": "不明"

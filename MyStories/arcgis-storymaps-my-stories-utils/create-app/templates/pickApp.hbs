@@ -1,0 +1,74 @@
+<ul class="create-app-list">
+  <li class="app-item">
+    <div class="create-app-image-container trailer-half" data-template="tour">
+      <div class="image-hover-text"><!--
+      --><span>{{strings.shortReasons.mapTour}}</span>
+      </div>
+      <img src="{{imageBase}}map-tour.jpg">
+    </div>
+    <a class="btn clear clear-inverse" data-template="tour">{{appTypes.mapTour}}</a>
+  </li><!--
+ --><li class="app-item">
+    <div class="create-app-image-container trailer-half" data-template="journal">
+      <div class="image-hover-text"><!--
+      --><span>{{strings.shortReasons.mapJournal}}</span>
+      </div>
+      <img src="{{imageBase}}map-journal.jpg">
+    </div>
+    <a class="btn clear clear-inverse" data-template="journal">{{appTypes.mapJournal}}</a>
+  </li><!--
+ -->{{#unless isPortal}}<li class="app-item">
+    <div class="create-app-image-container trailer-half" data-template="cascade">
+      <div class="image-hover-text"><!--
+      --><span>{{strings.shortReasons.cascade}}</span>
+      </div>
+      <img src="{{imageBase}}cascade.jpg">
+    </div>
+    <a class="btn clear clear-inverse" data-template="cascade">{{appTypes.cascade}}</a>
+  </li>{{/unless}}<!--
+ --><li class="app-item">
+    <div class="create-app-image-container trailer-half" data-template="series">
+      <div class="image-hover-text"><!--
+      --><span>{{strings.shortReasons.mapSeries}}</span>
+      </div>
+      <img src="{{imageBase}}tabbed-viewer.jpg">
+    </div>
+    <a class="btn clear clear-inverse" data-template="series">{{appTypes.mapSeries}}</a>
+  </li><!--
+ -->{{#unless isPortal}}<li class="app-item">
+    <div class="create-app-image-container trailer-half" data-template="crowdsource">
+      <div class="image-hover-text"><!--
+      --><span>{{strings.shortReasons.crowdsource}}</span>
+      </div>
+      <img src="{{imageBase}}crowdsource.jpg">
+    </div>
+    <a class="btn clear clear-inverse" data-template="crowdsource">{{appTypes.crowdsource}}</a>
+  </li><!--
+ --><li class="app-item">
+    <div class="create-app-image-container trailer-half" data-template="shortlist">
+      <div class="image-hover-text"><!--
+      --><span>{{strings.shortReasons.shortlist}}</span>
+      </div>
+      <img src="{{imageBase}}shortlist.jpg">
+    </div>
+    <a class="btn clear clear-inverse" data-template="shortlist">{{appTypes.shortlist}}</a>
+  </li>{{/unless}}<!--
+ --><li class="app-item">
+    <div class="create-app-image-container trailer-half" data-template="swipeSpyglass">
+      <div class="image-hover-text"><!--
+      --><span>{{strings.shortReasons.swipeSpyglass}}</span>
+      </div>
+      <img src="{{imageBase}}swipe.jpg">
+    </div>
+    <a class="btn clear clear-inverse" data-template="swipeSpyglass">{{appTypes.swipeSpyglass}}</a>
+  </li><!--
+ --><li class="app-item">
+    <a href="{{basicUrl}}" class="create-app-image-container trailer-half" target="_blank">
+      <div class="image-hover-text"><!--
+      --><span>{{strings.shortReasons.basic}}</span>
+      </div>
+      <img src="{{imageBase}}basic.jpg">
+    </a>
+    <a href="{{basicUrl}}" class="btn clear clear-inverse" target="_blank">{{appTypes.basic}}</a>
+  </li>
+</ul>

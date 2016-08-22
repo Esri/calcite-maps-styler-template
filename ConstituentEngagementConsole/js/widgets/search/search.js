@@ -1,4 +1,4 @@
-﻿/*global define,dojo,alert,moment,$ */
+﻿/*global define,$ */
 /*jslint sloppy:true */
 /*
 | Copyright 2014 Esri
@@ -126,7 +126,7 @@ define([
             } else {
                 this.searchBox.value = "";
                 //if function is called for manual refresh and search is empty,
-                //then just set the existing def exprn so that the layer will get updated records
+                //then just set the existing def expression so that the layer will get updated records
                 if (!this._searchedFromSearchWidget) {
                     this.selectedOperationalLayer.refresh();
                 } else {
@@ -184,7 +184,7 @@ define([
                     }
                 }
             }), lang.hitch(this, function () {
-                // if any error occur while quering the current expression
+                // if any error occur while querying the current expression
                 this.selectedOperationalLayer.setDefinitionExpression(this._existingDefinitionExpression);
                 this._removeNoResultFoundMessage();
             }));
@@ -253,7 +253,7 @@ define([
         },
 
         /**
-        * This function is used to show or hide serchbox
+        * This function is used to show or hide search box
         * @memberOf widgets/search/search
         */
         _toggleOptions: function () {
@@ -310,13 +310,13 @@ define([
                     }
                 }
             }
-            //if enableSearch flag is true enalbel search icon else disable it
+            //if enableSearch flag is true enable search icon else disable it
             if (enableSearch) {
                 // Track existing definition expression
                 this._getExistingDefinitionExpression();
-                this._enableSearchIcon();
+                this.enableSearchIcon();
             } else {
-                this._disableSearchIcon();
+                this.disableSearchIcon();
             }
             return enableSearch;
         },
@@ -325,7 +325,7 @@ define([
         * This function is used to enable search icon
         * @memberOf widgets/search/search
         */
-        _enableSearchIcon: function () {
+        enableSearchIcon: function () {
             domClass.replace(this.searchButton, "esriCTSearchIconContainer", "esriCTSearchIconContainerDisabled");
             domClass.replace(this.searchButton, "esriCTPointerCursor", "esriCTDefaultCursor");
         },
@@ -334,10 +334,10 @@ define([
         * This function is used to disable search icon
         * @memberOf widgets/search/search
         */
-        _disableSearchIcon: function () {
+        disableSearchIcon: function () {
             domClass.replace(this.searchButton, "esriCTSearchIconContainerDisabled", "esriCTSearchIconContainer");
             domClass.replace(this.searchButton, "esriCTDefaultCursor", "esriCTPointerCursor");
-            //also hide search options
+            // also hide search options
             domClass.add(this.searchOptions, "esriCTHidden");
         },
 

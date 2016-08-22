@@ -36,7 +36,10 @@ define({
       "noViewerIE": "Seda lugu ei toetata Internet Exploreri varasemas versioonis %VERSION%. %UPGRADE%",
       "upgradeBrowser": "<a href='http://browsehappy.com/' target='_blank'>Värskendage oma brauserit</a>.",
       "mapLoadingFail": "Midagi läks valesti ning kaarti ei laaditud õigesti.",
-      "signOut": "Logi välja"
+      "signOut": "Logi välja",
+      "print0": "Š_Sorry, this story cannot be printed____________ä.",
+      "print1": "Š_To print this story, please use the print button located in the share dialog________________________ä.",
+      "print2": "Š_Sorry, a printable version of the story is typically accessible through the share dialog, but this dialog has been disabled by the author__________________________________________ä."
     },
     "mobileView": {
       "tapForDetails": "Üksikasjade kuvamiseks puudutage",
@@ -85,7 +88,16 @@ define({
       "autoplayLabel": "Automaatesituse režiim",
       "autoplayExplain1": "Automaatesituse režiimis keritakse teie lugu kindla ajavahemiku järel edasi. Seda on hea kasutada kioskite või avalike kohtade ekraanidel, kuid arvestage, et muudel juhtudel võib see raskendada teie loo lugemist. See funktsioon pole väikestel ekraanidel toetatud.",
       "autoplayExplain2": "Kui see režiim on aktiveeritud, saate kasutada loo esitamise või peatamise ja liikumiskiiruse reguleerimise juhtelemente.",
-      "linksupdated": "Lingid on värskendatud!"
+      "linksupdated": "Lingid on värskendatud!",
+      "print": "Š_Print___ä",
+      "printInstruction1": "Š_Please wait for all the content to load before printing this page_____________________ä",
+      "printInstruction1a": "Š_Some content may not print unless you enable \"Print Background Colors and Images\" in the Print Page setup dialog___________________________________ä",
+      "printInstruction2": "Š_This page cannot be shared with others, instead share the ${link}_____________________ä",
+      "link": "Š_link to the story______ä",
+      "printOptPageBreak": "Š_Begin each section on a new page___________ä",
+      "printWarning": "Š_This is a printed version of a story map. Dynamic content such as videos and interactive maps is only available in the online version at ${link}____________________________________________ä",
+      "printMSWarning": "Š_link available only in online story____________ä",
+      "printVideoWarning": "Š_This video can be viewed in the online version of this story map____________________ä"
     }
   }
 });

@@ -20,7 +20,9 @@ define({
       "cfgMedium": "Moyen",
       "cfgLarge": "Grand",
       "socialLinksLabel": "Afficher les liens de partage au bas de chaque section",
-      "socialLinksDescr": "Ceci permet aux lecteurs de référencer et de promouvoir des sections spécifiques de votre %TPL_NAME%. Par exemple, si vous utilisez une icône de partage des sections, les lecteurs accéderont directement à cette section de %TPL_NAME% spécifique et non au début de votre narration. Vos lecteurs peuvent utiliser le lien de réseau social dans la section de titre pour promouvoir l'intégralité de votre %TPL_NAME% (onglet d'en-tête) et faciliter l'accès au début de %TPL_NAME%."
+      "socialLinksDescr": "Ceci permet aux lecteurs de référencer et de promouvoir des sections spécifiques de votre %TPL_NAME%. Par exemple, si vous utilisez une icône de partage des sections, les lecteurs accéderont directement à cette section de %TPL_NAME% spécifique et non au début de votre narration. Vos lecteurs peuvent utiliser le lien de réseau social dans la section de titre pour promouvoir l'intégralité de votre %TPL_NAME% (onglet d'en-tête) et faciliter l'accès au début de %TPL_NAME%.",
+      "socialDisabled": "æ_This feature is only available with Floating Panel layout__________________Â",
+      "socialWarning": "æ_Your story is using Side Panel layout, but we now recommend using this option only with Floating Panel layout to avoid an issue where the panel may not position itself to the desired section for narratives with images. You may continue to use this option, but if you disable it, it will then only be available when using Floating Panel layout________________________________________________________________________________________________________Â."
     },
     "settingsLayoutFonts": {
       "title": "Polices",

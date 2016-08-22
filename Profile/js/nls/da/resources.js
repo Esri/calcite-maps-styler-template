@@ -19,27 +19,28 @@ define({
     "error": "Kan ikke oprette kort"
   },
   "nav": {
-    "close": "Luk"
+    "close": "ø_Close___å"
   },
   "elevation": {
-    "toggle": "Skift højdeprofildiagram.",
-    "drawTool": "Tegn en linje på kortet for at generere en højdeprofil.",
-    "selectMessage": "Klik på et linjeobjekt, eller brug tegneværktøjet til at tegne en linje for at vise højdeprofilen"
+    "toggle": "ø_Toggle the Elevation Profile Chart____________å.",
+    "drawTool": "ø_Draw a line on the map to generate an elevation profile__________________å.",
+    "selectMessage": "ø_Click a line feature or use the draw tool to draw a line to display the elevation profile____________________________å",
+    "gainLossTemplate": "ø_Min: ${min}   Max: ${max}   Start: ${start}   End: ${end}   Change: ${gainLoss}_________________________å"
   },
   "splash": {
-    "title": "Titel",
-    "content": "Konfigurér for at oprette brugerdefineret indhold til velkomstskærmen"
+    "title": "ø_Title___å",
+    "content": "ø_Configure to create custom splash content_____________å"
   },
   "legend": {
-    "title": "Signaturforklaring",
-    "tip": "Vis signaturforklaring"
+    "title": "ø_Legend___å",
+    "tip": "ø_Display legend_____å"
   },
   "basemap": {
-    "title": "Baggrundskort",
-    "tip": "Skift baggrundskort"
+    "title": "ø_Basemap___å",
+    "tip": "ø_Change basemap_____å"
   },
   "share": {
-    "title": "Del",
-    "tip": "Del kort"
+    "title": "ø_Share___å",
+    "tip": "ø_Share map____å"
   }
 });

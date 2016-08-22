@@ -20,7 +20,9 @@ define({
       "cfgMedium": "Μεσαίο",
       "cfgLarge": "Μεγάλο",
       "socialLinksLabel": "Εμφάνιση συνδέσμων κοινοποίησης στο κάτω μέρος κάθε ενότητας",
-      "socialLinksDescr": "Αυτή η επιλογή επιτρέπει στους αναγνώστες να αναφέρουν και να προωθούν συγκεκριμένες ενότητες του %TPL_NAME%. Για παράδειγμα, εάν χρησιμοποιήσετε ένα εικονίδιο κοινοποίησης ενοτήτων, οι αναγνώστες θα μεταφέρονται στη συγκεκριμένη ενότητα του %TPL_NAME% και όχι στην αρχή της αφήγησής σας. Οι αναγνώστες σας μπορούν να χρησιμοποιήσουν το σύνδεσμο των μέσων κοινωνικής δικτύωσης στην ενότητα τίτλου για να προωθήσουν ολόκληρο το %TPL_NAME% (καρτέλα κεφαλίδας) και να μεταφερθούν στην αρχή του %TPL_NAME%."
+      "socialLinksDescr": "Αυτή η επιλογή επιτρέπει στους αναγνώστες να αναφέρουν και να προωθούν συγκεκριμένες ενότητες του %TPL_NAME%. Για παράδειγμα, εάν χρησιμοποιήσετε ένα εικονίδιο κοινοποίησης ενοτήτων, οι αναγνώστες θα μεταφέρονται στη συγκεκριμένη ενότητα του %TPL_NAME% και όχι στην αρχή της αφήγησής σας. Οι αναγνώστες σας μπορούν να χρησιμοποιήσουν το σύνδεσμο των μέσων κοινωνικής δικτύωσης στην ενότητα τίτλου για να προωθήσουν ολόκληρο το %TPL_NAME% (καρτέλα κεφαλίδας) και να μεταφερθούν στην αρχή του %TPL_NAME%.",
+      "socialDisabled": "Đ_This feature is only available with Floating Panel layout__________________ớ",
+      "socialWarning": "Đ_Your story is using Side Panel layout, but we now recommend using this option only with Floating Panel layout to avoid an issue where the panel may not position itself to the desired section for narratives with images. You may continue to use this option, but if you disable it, it will then only be available when using Floating Panel layout________________________________________________________________________________________________________ớ."
     },
     "settingsLayoutFonts": {
       "title": "Γραμματοσειρές",

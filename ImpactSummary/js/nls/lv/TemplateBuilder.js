@@ -54,10 +54,10 @@ define({
       "prevButtonText": "Iepriekšējais",
       "enterLabelText": "Ievadīt kartes aprakstu",
       "SelectedFeatureText": "Atlasītais elements",
-      "layerHelpTextMessage": "Šai aplikācijai nepieciešams slānis ar ciparu laukiem",
+      "layerHelpTextMessage": "Šai lietotnei nepieciešams slānis ar ciparu laukiem",
       "alertMessage": {
         "resetVariableMessage": "Vai tiešām vēlaties atiestatīt mainīgo?",
-        "emptyAppTitleMessage": "Aplikācijas nosaukums nevar būt tukšs",
+        "emptyAppTitleMessage": "Lietotnes nosaukums nevar būt tukšs",
         "emptyDescriptionMessage": "Apraksts nevar būt tukšs",
         "maxVariableSelection": "Nevarat atlasīt vairāk par 25 papildu mainīgajiem",
         "signInFail": "Pierakstīšanās neizdevās",

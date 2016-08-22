@@ -31,13 +31,15 @@ define({
       "rightHeader": "Facebook-pagina",
       "pageExplain": "Een Facebook-pagina is een openbaar merk/product of beroemdheid zoals <b>esrigis</b>. U vindt de naam van de pagina achter de eerste  '/' in de URL van de pagina.",
       "pageInputLbl": "Paginanaam",
-      "lookupMsgError": "Pagina niet gevonden"
+      "lookupMsgError": "Pagina niet gevonden",
+      "warning": "Ĳ_Facebook support has been discontinued, ${learn}________________ä.",
+      "learn": "Ĳ_learn more____ä"
     },
     "imageSelectorPicasa": {
-      "userInputLbl": "E-mail of Picasa-/Google+-ID",
+      "userInputLbl": "Ĳ_Email or Picasa id______ä",
       "signInMsg2": "Account niet gevonden",
-      "howToFind": "Zoeken naar een Picasa- of Google+-account-ID",
-      "howToFind2": "Kopieer getallen tussen de eerste en tweede '/' van een pagina van Picasa of G+"
+      "howToFind": "Ĳ_How to find a Picasa id________ä",
+      "howToFind2": "Ĳ_Copy digits between the first and second '/' of any Picasa page____________________ä"
     },
     "videoSelectorCommon": {
       "check": "Controleren",
@@ -101,7 +103,10 @@ define({
       "lblPosition3Explain2": "(breedte past altijd in het deelvenster)",
       "lblPosition4Explain": "(kan worden vervormd)",
       "unloadLbl": "Laden ongedaan maken als de lezer weggaat",
-      "unloadHelp": "Houd deze optie aangevinkt als de webpagina audio- of videomedia heeft om te voorkomen dat de content wordt afgespeeld als de lezer weggaat. Haal het vinkje weg om een soundtrack te laten doorspelen als de lezer verdergaat door het verhaal.<br />Als de webpagina een applicatie is, haal het vinkje dan weg zodat de applicatie het niet opnieuw laadt als de lezer terugkeert."
+      "unloadHelp": "Houd deze optie aangevinkt als de webpagina audio- of videomedia heeft om te voorkomen dat de content wordt afgespeeld als de lezer weggaat. Haal het vinkje weg om een soundtrack te laten doorspelen als de lezer verdergaat door het verhaal.<br />Als de webpagina een applicatie is, haal het vinkje dan weg zodat de applicatie het niet opnieuw laadt als de lezer terugkeert.",
+      "embedProtocolLabel": "Ĳ_Load page over a secure connection (HTTPS)______________ä",
+      "embedProtocolWarning1": "Ĳ_Your story is configured to load over a secure connection (https), so web page show in the story must also use a secure connection. If the page does not load it may be because it is not available over a secure connection or that it cannot be included in your story (some websites restrict this). You may need to create a hyperlink to open the page in a new browser tab________________________________________________________________________________________________________________ä.",
+      "embedProtocolWarning2": "Ĳ_Your story is configured to load over an insecure connection (http), so you can choose to load this page over a secure (recommended) or insecure connection. If the page does not load, it may be because it does not support the connection type you selected or that it cannot be included in your story (some websites restrict this). You may need to create a hyperlink to open the page in a new browser tab__________________________________________________________________________________________________________________________ä."
     },
     "editorActionGeocode": {
       "lblTitle": "Een adres of plaats zoeken",

@@ -36,7 +36,10 @@ define({
       "noViewerIE": "Questa storia non è supportata nelle versioni di Internet Explorer precedenti a %VERSION%. %UPGRADE%.",
       "upgradeBrowser": "<a href='http://browsehappy.com/' target='_blank'>Aggiornare il browser</a>.",
       "mapLoadingFail": "Si è verificato un errore. La mappa non è stata caricata correttamente.",
-      "signOut": "Disconnetti"
+      "signOut": "Disconnetti",
+      "print0": "é_Sorry, this story cannot be printed____________È.",
+      "print1": "é_To print this story, please use the print button located in the share dialog________________________È.",
+      "print2": "é_Sorry, a printable version of the story is typically accessible through the share dialog, but this dialog has been disabled by the author__________________________________________È."
     },
     "mobileView": {
       "tapForDetails": "Toccare per i dettagli",
@@ -85,7 +88,16 @@ define({
       "autoplayLabel": "Modalità di riproduzione automatica",
       "autoplayExplain1": "La modalità di riproduzione automatica consente di avanzare nella storia a intervalli regolari. Questa soluzione è ideale in un chiosco o monitor pubblico, ma occorre tenere presente che in altre situazioni potrebbe creare problemi di lettura della storia. Questa funzione non è supportata su display di piccole dimensioni.",
       "autoplayExplain2": "Quando questa modalità è attiva, sono disponibili controlli per riprodurre/sospendere la storia e regolare la velocità di navigazione.",
-      "linksupdated": "Collegamenti aggiornati"
+      "linksupdated": "Collegamenti aggiornati",
+      "print": "é_Print___È",
+      "printInstruction1": "é_Please wait for all the content to load before printing this page_____________________È",
+      "printInstruction1a": "é_Some content may not print unless you enable \"Print Background Colors and Images\" in the Print Page setup dialog___________________________________È",
+      "printInstruction2": "é_This page cannot be shared with others, instead share the ${link}_____________________È",
+      "link": "é_link to the story______È",
+      "printOptPageBreak": "é_Begin each section on a new page___________È",
+      "printWarning": "é_This is a printed version of a story map. Dynamic content such as videos and interactive maps is only available in the online version at ${link}____________________________________________È",
+      "printMSWarning": "é_link available only in online story____________È",
+      "printVideoWarning": "é_This video can be viewed in the online version of this story map____________________È"
     }
   }
 });

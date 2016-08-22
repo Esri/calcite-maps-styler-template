@@ -20,7 +20,9 @@ define({
       "cfgMedium": "Mediu",
       "cfgLarge": "Mare",
       "socialLinksLabel": "Afişare linkuri de partajare în partea de jos a fiecărei secţiuni",
-      "socialLinksDescr": "Acest lucru le permite cititorilor să consulte şi să promoveze anumite secţiuni din %TPL_NAME%. De exemplu, dacă utilizaţi o pictogramă pentru partajare de secţiuni, cititorii vor ajunge în secţiunea %TPL_NAME% respectivă şi nu la începutul informaţiilor. Cititorii pot utiliza linkul pentru servicii de socializare din secţiunea pentru titlu pentru a promova întregul %TPL_NAME% (fila titlului) şi pot ajunge la începutul %TPL_NAME%."
+      "socialLinksDescr": "Acest lucru le permite cititorilor să consulte şi să promoveze anumite secţiuni din %TPL_NAME%. De exemplu, dacă utilizaţi o pictogramă pentru partajare de secţiuni, cititorii vor ajunge în secţiunea %TPL_NAME% respectivă şi nu la începutul informaţiilor. Cititorii pot utiliza linkul pentru servicii de socializare din secţiunea pentru titlu pentru a promova întregul %TPL_NAME% (fila titlului) şi pot ajunge la începutul %TPL_NAME%.",
+      "socialDisabled": "Ă_This feature is only available with Floating Panel layout__________________ș",
+      "socialWarning": "Ă_Your story is using Side Panel layout, but we now recommend using this option only with Floating Panel layout to avoid an issue where the panel may not position itself to the desired section for narratives with images. You may continue to use this option, but if you disable it, it will then only be available when using Floating Panel layout________________________________________________________________________________________________________ș."
     },
     "settingsLayoutFonts": {
       "title": "Fonturi",

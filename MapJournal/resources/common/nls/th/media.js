@@ -31,13 +31,15 @@ define({
       "rightHeader": "เพจเฟสบุค",
       "pageExplain": "หน้าเฟสบุคเป็นที่นิยมสำหรับการแสดงแบรนด์สินค้าและผู้มีชื่อเสียง<b>esrigis</b>. คุณสามารถให้ชื่อเพจหลัง'/' ในหน้า URL ได้",
       "pageInputLbl": "ชื่อเพจ",
-      "lookupMsgError": "ไม่พบหน้านี้"
+      "lookupMsgError": "ไม่พบหน้านี้",
+      "warning": "ก้_Facebook support has been discontinued, ${learn}________________ษฺ.",
+      "learn": "ก้_learn more____ษฺ"
     },
     "imageSelectorPicasa": {
-      "userInputLbl": "อีเมล์  หรือ  Picasa/Google+ ID",
+      "userInputLbl": "ก้_Email or Picasa id______ษฺ",
       "signInMsg2": "ไม่พบชื่อบัญชี",
-      "howToFind": "วิธีการค้นหา Picasa หรือ บัญชี ID Google+",
-      "howToFind2": "คัดลอกตัวเลขระหว่างลำดับที่หนึ่งและสอง  / ของ Picasa หรือ หน้า G+"
+      "howToFind": "ก้_How to find a Picasa id________ษฺ",
+      "howToFind2": "ก้_Copy digits between the first and second '/' of any Picasa page____________________ษฺ"
     },
     "videoSelectorCommon": {
       "check": "ตรวจสอบ",
@@ -101,7 +103,10 @@ define({
       "lblPosition3Explain2": "(ความกว้างจะต้องพอดีกับแผงข้อมูล)",
       "lblPosition4Explain": "(อาจจะเบี้ยว)",
       "unloadLbl": "ยกเลิกการโหลดเมื่อผู้อ่านเลือกไปส่วนที่แตกต่าง",
-      "unloadHelp": "หากหน้าเวปมีเสียง หรือวิดีโอ ให้เก็บตัวเลือกนี้ไว้ เลือกเพื่อที่จะหยุดเนื้อหาจากการเล่น เมื่อผู้ใช้งานไม่ได้เคลื่อนไหวยกเลิกการเลือกตัวอย่างเช่น ต้องการที่จะเก็บซาวแทร๊กของการเล่นผ่านเรื่องราว<br />ถ้าเวปเพจมีแอพลิเคชัน ยกเลิกการเลือกนี้ ดังนั้น เรื่องราวจะไม่ถูกเรียกซ้ำ"
+      "unloadHelp": "หากหน้าเวปมีเสียง หรือวิดีโอ ให้เก็บตัวเลือกนี้ไว้ เลือกเพื่อที่จะหยุดเนื้อหาจากการเล่น เมื่อผู้ใช้งานไม่ได้เคลื่อนไหวยกเลิกการเลือกตัวอย่างเช่น ต้องการที่จะเก็บซาวแทร๊กของการเล่นผ่านเรื่องราว<br />ถ้าเวปเพจมีแอพลิเคชัน ยกเลิกการเลือกนี้ ดังนั้น เรื่องราวจะไม่ถูกเรียกซ้ำ",
+      "embedProtocolLabel": "ก้_Load page over a secure connection (HTTPS)______________ษฺ",
+      "embedProtocolWarning1": "ก้_Your story is configured to load over a secure connection (https), so web page show in the story must also use a secure connection. If the page does not load it may be because it is not available over a secure connection or that it cannot be included in your story (some websites restrict this). You may need to create a hyperlink to open the page in a new browser tab________________________________________________________________________________________________________________ษฺ.",
+      "embedProtocolWarning2": "ก้_Your story is configured to load over an insecure connection (http), so you can choose to load this page over a secure (recommended) or insecure connection. If the page does not load, it may be because it does not support the connection type you selected or that it cannot be included in your story (some websites restrict this). You may need to create a hyperlink to open the page in a new browser tab__________________________________________________________________________________________________________________________ษฺ."
     },
     "editorActionGeocode": {
       "lblTitle": "ตำแหน่งของที่อยู่หรือสถานที่",

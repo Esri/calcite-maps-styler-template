@@ -40,7 +40,7 @@ define({
   },
   "cantFindStories": {
     "whereAreStories": "Nie widzisz narracji?",
-    "notSeeExplanation": "Karta Moje narracje będzie zawierać tylko mapy narracyjne hostowane na platformie ArcGIS, utworzone za pomocą aplikacji {{STORY_MAP_TOUR}}, {{JOURNAL}}, {{MAP_SERIES}} i {{SWIPE_SPYGLASS}}. Więcej informacji — {{FAQ}}.",
+    "notSeeExplanation": "ł_My Stories will only list story maps hosted in ArcGIS ({{STORY_MAP_BASIC}} is currently not supported). See our {{FAQ}} for more information___________________________________________ą.",
     "faq": "FAQ",
     "followingStoriesToUpdate": "Następujące narracje utworzone przy użyciu wcześniejszych wersji naszych aplikacji należy zaktualizować, aby wyświetlać je na karcie Moje narracje:",
     "gettingStories": "Wyszukiwanie narracji utworzonych przy użyciu wcześniejszych wersji naszych aplikacji, które należy zaktualizować...",
@@ -61,11 +61,11 @@ define({
   },
   "signIn": {
     "signInTitle": "Zaloguj się do Story Maps",
-    "signInTo": "Zaloguj się za pomocą konta usługi ArcGIS Online aby:",
+    "signInTo": "Zaloguj się za pomocą konta ArcGIS Online aby:",
     "explanationOne": "tworzyć interesujące mapy narracyjne i opowiadać swoje narracje;",
-    "explanationTwo": "korzystać z map i danych zgromadzonych w usłudze ArcGIS Online podczas tworzenia swoich map narracyjnych;",
+    "explanationTwo": "korzystać z map i danych zgromadzonych w ArcGIS Online podczas tworzenia swoich map narracyjnych;",
     "explanationThree": "zarządzać mapami narracyjnymi i sprawdzać status ich zawartości.",
-    "dontHaveAccount": "Nie masz jeszcze konta w usłudze ArcGIS Online? Zarejestruj się:",
+    "dontHaveAccount": "Nie masz jeszcze konta w ArcGIS Online? Zarejestruj się:",
     "publicAccount": "Bezpłatne konto publiczne do użytku niekomercyjnego",
     "orgAccount": "Bezpłatna wersja próbna subskrypcji ArcGIS",
     "timeExpired": "Sesja wygasła. Zaloguj się ponownie, aby kontynuować.",
@@ -74,8 +74,8 @@ define({
     "letsGo": "Zaczynamy!"
   },
   "sharingLevel": {
-    "publicMessage": "Publiczny",
-    "privateMessage": "Prywatny",
+    "publicMessage": "Publiczna",
+    "privateMessage": "Prywatna",
     "organization": "Instytucja",
     "changedSharing": "Zmieniono poziom udostępniania.",
     "unableToChange": "Nie można zmienić poziomu udostępniania.",
@@ -88,27 +88,16 @@ define({
     "layerPrivate": "Zmiana statusu warstwy na prywatny rozbije narrację."
   },
   "collectionList": {
-    "advocacy": "Wspieranie i popularyzacja",
-    "architecture": "Architektura i projektowanie",
-    "conservation": "Ochrona i zrównoważony rozwój",
-    "culture": "Kultura",
-    "destinations": "Cele podróży i turystyka",
-    "disasters": "Katastrofy i odbudowa",
-    "economy": "Gospodarka i rozwój",
-    "entertainment": "Rozrywka",
-    "history": "Historia",
-    "infrastructure": "Infrastruktura",
-    "marketing": "Marketing",
-    "nature": "Natura i środowisko",
-    "news": "Wiadomości i wydarzenia",
-    "oceans": "Oceany",
-    "parks": "Parki i rekreacja",
+    "business": "ł_Business and Economy_______ą",
+    "history": "ł_History and Culture_______ą",
+    "inNews": "ł_In The News____ą",
+    "infrastructure": "ł_Infrastructure and Construction__________ą",
+    "nature": "ł_Nature and Conservation________ą",
     "people": "Ludzie i społeczeństwo",
-    "planning": "Planowanie i analiza",
-    "publicArt": "Sztuka publiczna",
+    "planning": "ł_Planning and Design_______ą",
     "science": "Nauka i technologia",
-    "sport": "Sport",
-    "travelogues": "Program podróżniczy"
+    "sports": "ł_Sports and Entertainment________ą",
+    "travel": "ł_Travel and Recreation_______ą"
   },
   "types": {
     "custom": "Niestandardowy",
@@ -227,6 +216,7 @@ define({
   "content": {
     "media": {
       "maps": "Mapy",
+      "scenes": "ł_Scenes___ą",
       "images": "Obrazy",
       "videos": "Wideo",
       "webpages": "Witryny internetowe",
@@ -244,22 +234,30 @@ define({
       "bullet": "Wyróżniki",
       "tab": "Karta:",
       "accordion": "Sekcja",
-      "mapJournal": "Sekcja"
+      "mapJournal": "Sekcja",
+      "cascade": "ł_Section___ą",
+      "crowdsource": "ł_Contribution_____ą",
+      "shortlist": "ł_Tab__ą"
     },
     "titleType": {
       "mapTour": "Podpis",
       "mapJournal": "Adres URL",
-      "mapSeries": "Adres URL"
+      "mapSeries": "Adres URL",
+      "cascade": "ł_URL__ą",
+      "crowdsource": "ł_URL__ą",
+      "shortlist": "ł_URL__ą"
     },
     "actions": {
       "viewMap": "Wyświetl mapę",
       "editMap": "Edytuj mapę",
+      "editScene": "ł_Edit Scene____ą",
       "fix": "Napraw",
       "viewLayer": "Wyświetl warstwę"
     },
     "contentType": {
       "mainStage": "działanie w obszarze głównym",
-      "sidePanel": "opis"
+      "sidePanel": "opis",
+      "introImage": "ł_(cover page photo)______ą"
     },
     "notification": {
       "refreshExplanation": "Ponownie sprawdź narrację",
@@ -300,6 +298,7 @@ define({
       "publicDisabled": "Opcja publicznego udostępniania została wyłączona przez Administratora",
       "orgDisabled": "Opcja udostępniania w instytucji została wyłączona przez Administratora",
       "noMapName": "Nie można pobrać nazwy mapy",
+      "noSceneName": "ł_Could Not Retrieve Scene________ą",
       "notPublic": "NIEPUBLICZNE",
       "inaccessible": "NIEDOSTĘPNE",
       "deleted": "USUNIĘTO",
@@ -351,6 +350,8 @@ define({
       "cantScanThisTypeAlt": "Nie można sprawdzić warstwy tego typu",
       "cantScanThisType": "Warstwy tego typu nie można sprawdzić",
       "webpageNotScanned": "Strony internetowe nie zostały sprawdzone pod kątem problemów",
+      "sceneNotScanned": "ł_Scenes are not currently checked for issues, please make sure that the scene and all of its layers are shared correctly_____________________________________ą",
+      "scenesNotScannedGlobally": "ł_There are scenes in this story, and scenes are not currently checked for issues. Please make sure that the scenes and all of their layers are shared correctly________________________________________________ą",
       "ignoredIssue": "Zignorowano błąd na tej warstwie. Odśwież stronę i ponownie sprawdź tę narrację, aby poprawić błąd",
       "ignoredIssueBuilder": "Zignorowano błąd na tej warstwie. Ponownie uruchom kreator, aby ponownie sprawdzić ten błąd"
     },
@@ -450,18 +451,26 @@ define({
       "secondValueC": "przy użyciu kart",
       "thirdTitle": "mapy"
     },
+    "cascade": {
+      "firstTitle": "ł_sections___ą",
+      "secondTitle": "ł_maps__ą"
+    },
     "swipeSpyglass": {
-      "firstTitle": "punkty zainteresowania (POI)",
-      "secondTitle": "nadaj styl",
+      "firstTitle": "ł_points of interest______ą",
+      "secondTitle": "styl",
       "secondValueA": "zwijaj",
       "secondValueB": "lupa",
       "thirdTitle": "mapy"
     },
     "crowdsource": {
-      "firstTitle": "udostępnianie zasobów",
-      "secondTitle": "styl",
-      "secondValueA": "panel boczny",
-      "secondValueB": "piętrowo",
+      "firstTitle": "ł_contributions_____ą",
+      "secondTitle": "ł_basemap___ą",
+      "secondValueLoading": "ł_Loading____ą...",
+      "secondValueUnknown": "ł_unknown___ą"
+    },
+    "shortlist": {
+      "firstTitle": "ł_places___ą",
+      "secondTitle": "ł_tabs__ą",
       "thirdTitle": "mapa bazowa",
       "thirdValueLoading": "Wczytywanie...",
       "thirdValueUnknown": "nieznany"

@@ -1,4 +1,4 @@
-﻿/*global define,dojo,$,setTimeout,window,dojoConfig */
+﻿/*global define,$,setTimeout,window,dojoConfig */
 /*jslint sloppy:true */
 /*
 | Copyright 2014 Esri
@@ -30,6 +30,8 @@ define([
     "dijit/layout/ContentPane",
     "widgets/details-panel/popup-form",
     "esri/tasks/query",
+    "dojo/_base/array",
+    "esri/dijit/PopupTemplate",
     "dojo/domReady!"
 ], function (
     declare,
@@ -45,11 +47,14 @@ define([
     on,
     ContentPane,
     PopupForm,
-    Query
-
+    Query,
+    array,
+    PopupTemplate
 ) {
     return declare([_WidgetBase, _TemplatedMixin, _WidgetsInTemplateMixin], {
         templateString: template,
+        isShowSelectedClicked: null, // to notify that show selected option is clicked
+        isShowAllClicked: null, // to notify that show all option is clicked
 
         /**
         * This function is called when widget is constructed
@@ -99,6 +104,9 @@ define([
                 this.selectedOperationalLayer.queryFeatures(queryFeature, lang.hitch(this, function (result) {
                     if (this.multipleFeatures[0]) {
                         var popupContentPane = new ContentPane({}, this.popupContainer);
+                        if (!result.features[0].infoTemplate) {
+                            result.features[0].setInfoTemplate(new PopupTemplate(this.popupInfo));
+                        }
                         popupContentPane.startup();
                         popupContentPane.set("content", result.features[0].getContent());
                         this._checkAttachments();
@@ -109,7 +117,7 @@ define([
         },
 
         /**
-        * This function is used to create esit button
+        * This function is used to create edit button
         * @memberOf widgets/details-panel/popup
         */
         _createEditFormButton: function () {
@@ -141,15 +149,16 @@ define([
                 popupInfo: this.popupInfo,
                 selectedFeatures: this.multipleFeatures
             }, domConstruct.create("div", {}, this.popupFormContainer));
-
             // attach handler on cancel button click
             this.popupFormInstance.onCancelButtonClick = lang.hitch(this, this._onFeatureUpdateCancel);
             // attach handler on save button click
             this.popupFormInstance.onPopupFormSubmitted = lang.hitch(this, function (feature) {
-                //close the comment form after submitting new comment
-                this._hidePanel(this.popupFormContainer);
-                this._showPanel(this.popupInfoParentContainer);
-                this.onFeatureUpdated(feature);
+                if ((!this.isShowSelectedClicked) || ((this.isShowSelectedClicked) && (this.multipleFeatures) && (this.multipleFeatures.length === 1))) {
+                    // Close the comment form after submitting new comment
+                    this._hidePanel(this.popupFormContainer);
+                    this._showPanel(this.popupInfoParentContainer);
+                }
+                this.onFeatureUpdated(feature, this.isShowSelectedClicked);
             });
             this._showPanel(this.popupFormContainer);
             this._hidePanel(this.popupInfoParentContainer);
@@ -160,16 +169,20 @@ define([
         * @memberOf widgets/details-panel/popup
         */
         _onFeatureUpdateCancel: function () {
-            this._hidePanel(this.popupFormContainer);
-            this._showPanel(this.popupInfoParentContainer);
-            //display popup content for recently selected feature
-            if (this.multipleFeatures.length > 1) {
-                var selectedFeature = this.multipleFeatures[this.multipleFeatures.length - 1];
-                this.onMultipleFeatureEditCancel(selectedFeature);
+            // if not show selected
+            // if show selected & only one features is selected
+            if ((!this.isShowSelectedClicked) || ((this.isShowSelectedClicked) && (this.multipleFeatures) && (this.multipleFeatures.length === 1))) {
+                this._hidePanel(this.popupFormContainer);
+                this._showPanel(this.popupInfoParentContainer);
+                //display popup content for recently selected feature
+                if (this.multipleFeatures.length > 1) {
+                    var selectedFeature = this.multipleFeatures[this.multipleFeatures.length - 1];
+                    this.onMultipleFeatureEditCancel(selectedFeature);
+                }
+                //Scroll to top position when clicked cancel need ID to use scrollTop
+                dom.byId("tabContent").scrollTop = 0;
+                this.popupEditModeEnabled(false);
             }
-            //Scroll to top position when clicked cancel need ID to use scrollTop
-            dom.byId("tabContent").scrollTop = 0;
-            this.popupEditModeEnabled(false);
         },
 
         /**
@@ -232,11 +245,15 @@ define([
         * @memberOf widgets/details-panel/popup
         **/
         _showAttachments: function (graphic, attachmentContainer) {
-            var objectID, fieldContent, imageDiv, imagePath, i, isAttachmentAvailable = false, imageThumbnailContainer, attahmentWrapper, imageThumbnailContent, imageContainer, fileTypeContainer;
+            var objectID, fieldContent, imageDiv, imagePath, i, isAttachmentAvailable = false, imageThumbnailContainer, attachmentWrapper, imageThumbnailContent, imageContainer, fileTypeContainer;
             if (graphic) {
                 objectID = graphic.attributes[this.selectedOperationalLayer.objectIdField];
                 domConstruct.empty(attachmentContainer);
                 this.selectedOperationalLayer.queryAttachmentInfos(objectID, lang.hitch(this, function (infos) {
+                    // check if a hyperlink contains tiff image, then convert it into a non-image document
+                    infos = this._checkForHyperlinks(infos);
+                    // check if infoMedia contains tiff images then show them as non-image document
+                    infos = this._checkTiffFormatImagesInPopupMedia(infos);
                     //check if attachments found
                     if (infos && infos.length > 0) {
                         //Create attachment header text
@@ -251,13 +268,17 @@ define([
 
                         // display all attached images in thumbnails
                         for (i = 0; i < infos.length; i++) {
+                            // check if a attachment is of tiff image, then convert it into a non-image document
+                            if (infos[i].contentType.indexOf("image") !== -1 && infos[i].contentType.match(/(\/tiff)/)) {
+                                infos[i].contentType = "application/tiff";
+                            }
                             if (infos[i].contentType.indexOf("image") === -1) {
-                                attahmentWrapper = domConstruct.create("div", {}, fieldContent);
+                                attachmentWrapper = domConstruct.create("div", {}, fieldContent);
 
                                 imageThumbnailContainer = domConstruct.create("div", {
                                     "class": "esriCTNonImageContainer",
                                     "alt": infos[i].url
-                                }, attahmentWrapper);
+                                }, attachmentWrapper);
 
                                 imageThumbnailContent = domConstruct.create("div", {
                                     "class": "esriCTNonImageContent"
@@ -316,6 +337,9 @@ define([
             case "octet-stream":
                 typeText = ".ZIP";
                 break;
+            case "tiff":
+                typeText = ".TIFF";
+                break;
             default:
                 typeText = ".DOCX";
             }
@@ -335,7 +359,7 @@ define([
             }, container);
 
             attachmentName = domConstruct.create("div", {
-                "class": "esriCTNonImageNameMidle",
+                "class": "esriCTNonImageNameMiddle",
                 "innerHTML": attachmentData.name
             }, attachmentNameWrapper);
         },
@@ -350,11 +374,62 @@ define([
         },
 
         /**
-        * Event listner for edit mode
+        * Event listener for edit mode
         * @memberOf widgets/details-panel/popup
         **/
         popupEditModeEnabled: function (isEditMode) {
             return isEditMode;
+        },
+
+        /**
+        * This function is used to get tiff images from hyperlinks
+        * @param{object} contains attachments information
+        * @memberOf widgets/details-panel/popup
+        */
+        _checkForHyperlinks: function (infos) {
+            var attributes, name;
+            attributes = [];
+            attributes = this.multipleFeatures[0].attributes;
+            for (name in attributes) {
+                if (attributes.hasOwnProperty(name) && attributes[name] && String(attributes[name]).match(/^(http(s?):)/) && String(attributes[name]).match(/\.(tif|tiff)(\/|$)/i)) {
+                    // if the hyperlink contains a tiff image
+                    infos.push(this._getTiffImageObject(attributes[name]));
+                }
+            }
+            return infos;
+        },
+
+        /**
+        * This function is use to get tiff images from media info
+        * @param{object} contains attachments information
+        * @memberOf widgets/details-panel/popup
+        */
+        _checkTiffFormatImagesInPopupMedia: function (infos) {
+            var mediaInfos;
+            if (this.selectedOperationalLayer.infoTemplate && this.selectedOperationalLayer.infoTemplate.info && this.selectedOperationalLayer.infoTemplate.info.mediaInfos && this.selectedOperationalLayer.infoTemplate.info.mediaInfos.length > 0) {
+                mediaInfos = this.selectedOperationalLayer.infoTemplate.info.mediaInfos;
+                // loop all the media info array for tiff image
+                array.forEach(mediaInfos, lang.hitch(this, function (mediaInfo) {
+                    if (mediaInfo.type === "image" && mediaInfo.value.sourceURL !== "" && mediaInfo.value.sourceURL.match(/\.(tiff|tif)/)) {
+                        // if the hyperlink contains a tiff image
+                        infos.push(this._getTiffImageObject(mediaInfo.value.sourceURL));
+                    }
+                }));
+            }
+            return infos;
+        },
+
+        /**
+        * This function will return an object as document type of tiff image
+        * @param{string} contains url
+        * @memberOf widgets/details-panel/popup
+        */
+        _getTiffImageObject: function (url) {
+            var tiffImageObject = {};
+            tiffImageObject.contentType = 'application/tiff';
+            tiffImageObject.url = url;
+            tiffImageObject.name = url.substr(url.lastIndexOf('/') + 1);
+            return tiffImageObject;
         }
     });
 });

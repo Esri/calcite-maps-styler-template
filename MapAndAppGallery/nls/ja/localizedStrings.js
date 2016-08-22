@@ -69,7 +69,7 @@ define({
     "geolocationBtnTitle": "ジオロケーション",
     "ascendingSort": "昇順",
     "descendingSort": "降順",
-    "viewBtnTitle": "ビュー",
+    "viewBtnTitle": "表示",
     "backButtonTitle": "戻る"
   },
   "errorMessages": {

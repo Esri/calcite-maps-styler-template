@@ -1,4 +1,4 @@
-﻿/*global define,require,alert,dojo,$,window,moment,console,setTimeout,confirm*/
+﻿/*global define,dojo,$,setTimeout,confirm*/
 /*jslint sloppy:true */
 /*
 | Copyright 2014 Esri
@@ -108,7 +108,7 @@ define([
 
         /**
         * This function is designed to handle creation of popup form.
-        * @memberOfwidgets/details-panel/popup-form
+        * @memberOf widgets/details-panel/popup-form
         */
         _initializePopupForm: function () {
             this._filterLayerFields();
@@ -1129,7 +1129,7 @@ define([
         * @memberOf widgets/details-panel/popup-form
         */
         _createDateField: function (parentNode, isRangeField, fieldname, currentField) {
-            var dateInputField, picker, selectedDate, minVlaue, maxValue, value, dateFormat;
+            var dateInputField, picker, selectedDate, minValue, maxValue, value, dateFormat;
             domClass.add(parentNode, "date");
             // create input container for DateTimePicker
             dateInputField = domConstruct.create("input", {
@@ -1164,9 +1164,9 @@ define([
                 }
                 if (isRangeField) {
                     value = new Date(query("input", this)[0].value);
-                    minVlaue = new Date(currentField.domain.minValue);
+                    minValue = new Date(currentField.domain.minValue);
                     maxValue = new Date(currentField.domain.maxValue);
-                    if ((value > minVlaue && value > maxValue) || (value < minVlaue && value < maxValue)) {
+                    if ((value > minValue && value > maxValue) || (value < minValue && value < maxValue)) {
                         query("input", this)[0].value = "";
                     }
                 }
@@ -1206,7 +1206,7 @@ define([
                 $(parentNode).data("DateTimePicker").maxDate(new Date(currentField.domain.maxValue));
                 $(parentNode).data("DateTimePicker").minDate(new Date(currentField.domain.minValue));
             }
-            //set date fomat in date picker
+            //set date format in date picker
             if (currentField.format && currentField.format.dateFormat) {
                 dateFormat = this.appUtils.getDateFormat(currentField.format.dateFormat).dateFormat;
                 $(parentNode).data("DateTimePicker").format(dateFormat);

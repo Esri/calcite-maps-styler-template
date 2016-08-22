@@ -1,4 +1,4 @@
-﻿/*global define,dojo,alert,moment,$,confirm */
+﻿/*global define,dojo,confirm */
 /*jslint sloppy:true */
 /*
 | Copyright 2014 Esri
@@ -69,7 +69,7 @@ define([
         */
         _manualRefreshApplication: function () {
             var searchEnabledIcon, confirmValue;
-            confirmValue = confirm(this.appConfig.i18n.manualRefresh.confirmManualRefeshText);
+            confirmValue = confirm(this.appConfig.i18n.manualRefresh.confirmManualRefreshText);
             if (confirmValue) {
                 this.appUtils.showLoadingIndicator();
                 this.confirmedManualRefresh();
