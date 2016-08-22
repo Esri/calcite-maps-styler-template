@@ -139,7 +139,7 @@
     }]
   }],
   "values": {
-    "legend": false,
+    "legend": true,
     "order": "DESC",
     "count":10,
     "symbolcolor": "#337ab7",
