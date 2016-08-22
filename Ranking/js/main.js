@@ -61,7 +61,6 @@ define([
     config: {},
     startup: function(config) {
       parser.parse();
-      var promise;
       // config will contain application and user defined info for the template such as i18n strings, the web map id
       // and application id
       // any url parameters and any application specific configuration information.
@@ -100,7 +99,7 @@ define([
         });
 
         mapParams.processUrlParams().then(lang.hitch(this, function(urlParams) {
-          promise = this._createWebMap(itemInfo, urlParams);
+          this._createWebMap(itemInfo, urlParams);
         }), lang.hitch(this, function(error) {
           this.reportError(error);
         }));
@@ -110,9 +109,7 @@ define([
         this.reportError(error);
         var def = new Deferred();
         def.reject(error);
-        promise = def.promise;
       }
-      return promise;
     },
     reportError: function(error) {
       // remove loading class from body
@@ -122,7 +119,6 @@ define([
       if (node) {
         node.innerHTML = error;
       }
-
       return error;
     },
     _addLocalizedText: function() {
@@ -152,7 +148,7 @@ define([
       // turn the slider off, display info windows, disable wraparound 180,
       // slider position and more.
       params.mapOptions.showInfoWindowOnClick = false;
-      return arcgisUtils.createMap(itemInfo, "mapDiv", {
+      arcgisUtils.createMap(itemInfo, "mapDiv", {
         mapOptions: params.mapOptions || {},
         usePopupManager: true,
         layerMixins: this.config.layerMixins || [],
@@ -161,10 +157,9 @@ define([
       }).then(lang.hitch(this, function(response) {
         this.map = response.map;
 
-
         dom.byId("title").innerHTML = this.config.title || response.itemInfo.item.title;
         dom.byId("description").innerHTML = this.config.description || response.itemInfo.item.description;
-
+        domClass.remove(document.body, "app-loading");
         if (params.markerGraphic) {
           // Add a marker graphic with an optional info window if
           // one was specified via the marker url parameter
@@ -181,7 +176,6 @@ define([
             this.map.centerAt(params.markerGraphic.geometry);
           }));
         }
-
         if (this.config.legend) {
           // enable legend button and add legend
           require(["esri/dijit/Legend"], lang.hitch(this, function(Legend) {
@@ -213,6 +207,7 @@ define([
             }
           }));
         }
+
         if (analysisLayer) {
           analysisLayer.styling = false;
           // Setup selection color, opacity, size
@@ -220,48 +215,62 @@ define([
           var customStyle = "path[data-selected] {stroke:" + this.config.symbolcolor + ";stroke-width: " + this.config.symbolsize + ";stroke-opacity: " + this.config.symbolopacity + ";}";
           style.appendChild(document.createTextNode(customStyle));
           document.head.appendChild(style);
+
           this._calculateStatistics(analysisLayer);
-        } else {
-          console.log(this.config.i18n.errors.layerNotFound);
-          this.reportError(this.config.i18n.errors.layerNotFound);
         }
-        return response;
-      }), this.reportError(this.config.i18n.map.error));
+      }), function(error) {
+        this.reportError(error);
+      });
     },
     _calculateStatistics: function(layer) {
       // does the layer support adv queries (necessary for order by)?
+
       if (layer && layer.type && layer.type === "Feature Layer") {
+
         if (layer.supportsAdvancedQueries) {
           domClass.add(document.body, "app-loading");
           var query = new Query();
           query.where = "1=1";
           query.returnGeometry = false;
-          query.orderByFields = [this.config.layerInfo.fields[0] + " " + this.config.order]; // field + ASC or DESC
-          query.outFields = ["*"];
+          var fields = this.config.layerInfo.fields || null;
+          if (fields && fields.length) {
+            var fieldName = fields[0];
+            if (fieldName.hasOwnProperty("fields")) {
+              fieldName = fieldName.fields[0] || null;
+            }
+            query.orderByFields = [fieldName + " " + this.config.order]; // field + ASC or DESC
+            query.outFields = ["*"];
 
-          layer.queryFeatures(query, lang.hitch(this, function(results) {
-            // get top x features and create slides.
-            domClass.remove(document.body, "app-loading");
-            var topResults = results.features.slice(0, this.config.count);
-            // enable explore button
-            domClass.remove("closeInfo", "disabled");
-            on.once(dom.byId("closeInfo"), "click", lang.hitch(this, function() {
-              // hide the info panel
-              domClass.add("titleHeader", "hide");
-              domClass.remove("slideNav", "hide");
-              this._createFeatureSlides(topResults, layer);
+            layer.queryFeatures(query, lang.hitch(this, function(results) {
+              // get top x features and create slides.
+              domClass.remove(document.body, "app-loading");
+              var topResults = results.features.slice(0, this.config.count);
+              // enable explore button
+              domClass.remove("closeInfo", "disabled");
+
+              on.once(dom.byId("closeInfo"), "click", lang.hitch(this, function() {
+                // hide the info panel
+                domClass.add("titleHeader", "hide");
+                domClass.remove("slideNav", "hide");
+                this._createFeatureSlides(topResults, layer);
+              }));
+            }), lang.hitch(this, function(error) {
+              console.log("Error", error);
+              this.reportError(error);
             }));
-          }), lang.hitch(this, function(error) {
-            console.log("Error", error);
-            this.reportError(error);
-          }));
+          } else {
+            console.log("No query field specified");
+            this.reportError(this.config.layer + " does not have a query field specified");
+          }
+
         } else {
-          this.reportError(this.config.layer + " does not support advanced queries");
           console.log("Advanced Queries not supported");
+          this.reportError(this.config.layer + " does not support advanced queries");
         }
       }
     },
     _createFeatureSlides: function(features, layer) {
+      console.log("Lets created slides", layer, features)
       features.forEach(lang.hitch(this, function(feature, i) {
         var idAttributeField = feature.getLayer().objectIdField;
         var featureContent = feature.getContent();
