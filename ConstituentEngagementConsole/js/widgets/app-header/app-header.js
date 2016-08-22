@@ -130,7 +130,13 @@ define([
         * @memberOf widgets/app-header/app-header
         */
         _setApplicationShortcutIcon: function () {
-            this._loadIcons("shortcut icon", this.applicationHeaderIcon.src);
+            var faviconIconValue;
+            faviconIconValue = lang.trim(this.appConfig.applicationFavicon);
+            if ((faviconIconValue !== null) && (faviconIconValue !== "")) {
+                this._loadIcons("shortcut icon", this.appConfig.applicationFavicon);
+            } else {
+                this._loadIcons("shortcut icon", this.applicationHeaderIcon.src);
+            }
         },
 
         /**
