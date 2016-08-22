@@ -63,10 +63,6 @@ body:lang(ja) {
   background-color: white;
 }
 
-.calcite-widgets-dark #panelLegend .panel-body {
-  background-color: #333;
-}
-
 .calcite-alert {
   position: absolute;
   top: 40%;
@@ -78,8 +74,4 @@ body:lang(ja) {
 
 .calcite-title-left-margin {
   margin-left: 15px;
-}
-
-.calcite-dropdown .dropdown-menu {
-  overflow-y: hidden;
 }

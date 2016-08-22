@@ -1,6 +1,14 @@
 {
     "configurationSettings": [
-        {
+            {
+            "category": "Map",
+                "fields": [{
+                  "type": "webmap"
+                }, {
+                  "type": "appproxies"
+                }]
+            },
+            {
             "category": "App",
             "fields": [
                 {
@@ -61,6 +69,10 @@
                         {
                             "label": "Dark",
                             "value": "dark"
+                        },
+                           {
+                            "label": "Custom",
+                            "value": "custom"
                         }
                     ]
                 },
