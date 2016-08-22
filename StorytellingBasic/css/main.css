@@ -373,3 +373,6 @@ img{
     padding:0;
     color: #21759b;
 }
+div.mainSection > div.header {
+    font-weight: bold;
+}
