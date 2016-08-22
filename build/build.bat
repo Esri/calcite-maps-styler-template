@@ -103,6 +103,7 @@ mkdir %BUILD_OUTPUT%\View
 mkdir %BUILD_OUTPUT%\MyStories
 mkdir %BUILD_OUTPUT%\StoryMapCrowdsource
 mkdir %BUILD_OUTPUT%\Cascade
+mkdir %BUILD_OUTPUT%\Shortlist
 
 
 xcopy %TEMPLATES_ROOT%\archive\CompareConfigure                 %BUILD_OUTPUT%\Compare\Configure                    /E /Y
@@ -194,6 +195,7 @@ xcopy %TEMPLATES_ROOT%\ThumbnailGenerator                       %BUILD_OUTPUT%\T
 xcopy %TEMPLATES_ROOT%\MyStories                                %BUILD_OUTPUT%\MyStories                            /E /Y
 xcopy %TEMPLATES_ROOT%\StoryMapCrowdsource                      %BUILD_OUTPUT%\StoryMapCrowdsource                  /E /Y
 xcopy %TEMPLATES_ROOT%\Cascade                                  %BUILD_OUTPUT%\Cascade                              /E /Y
+xcopy %TEMPLATES_ROOT%\Shortlist                                %BUILD_OUTPUT%\Shortlist                            /E /Y
 
 
 
