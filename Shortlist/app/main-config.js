@@ -81,6 +81,7 @@ function defineDojoConfig()
 app.isProduction = true;
 
 defineDojoConfig();
+window.dojoConfig.locale = 'en';
 
 app.isInBuilder = getUrlVar('edit') || getUrlVar('fromScratch') || getUrlVar('fromscratch');
 app.indexCfg = configOptions;
