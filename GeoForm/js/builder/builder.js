@@ -1268,7 +1268,6 @@ define([
 
     //function takes the previous tab's details as input parameter and saves the setting to config
     _updateAppConfiguration: function (prevNavigationTab, layerObj) {
-      console.log(layerObj);
       switch (prevNavigationTab) {
       case "webmap":
         break;
