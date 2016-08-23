@@ -27,6 +27,7 @@ define({
         invalidConfigNoAppDev: "No Web Mapping Application identifier is specified in URL parameters (?appid=). In development mode, the appid configuration in index.html is ignored.",
         unspecifiedConfigOwner: "Authorized owner hasn't been configured.",
         invalidConfigOwner: "Story owner is not authorized.",
+        invalidConfignoOAuth: "The story require authentication, please configure an ArcGIS OAuth ID in index.html or make the story public.",
         invalidApp: "This story cannot be loaded.",
         appLoadingFail: "Something went wrong, the {TPL_NAME} did not load correctly.",
         notConfiguredDesktop: "The story is not configured yet.",
