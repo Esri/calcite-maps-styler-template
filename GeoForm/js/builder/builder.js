@@ -281,7 +281,6 @@ define([
             this._updateAppConfiguration("fields", opt.value);
             this.previousValue = opt.value;
           }));
-          dom.byId("layerSelect")[dom.byId("layerSelect").options.length - 1].selected = true;
           this.currentConfig.form_layer.id = "all";
           $("#ShowHideLayerOption")[0].disabled = true;
         } else if (evt.currentTarget.value !== "") {
@@ -313,9 +312,12 @@ define([
       }));
 
       on(dom.byId("layerSelect"), "change", lang.hitch(this, function (evt) {
-        this._updateAppConfiguration("fields", this.previousValue);
+        if(!this._layerSelectValue){
+         this._layerSelectValue = dom.byId("layerSelect").options[dom.byId("layerSelect").options.length - 1].value;
+        }
+        this._updateAppConfiguration("fields", this._layerSelectValue);
         this._populateFields(evt.currentTarget.value);
-        this.previousValue = evt.currentTarget.value;
+        this._layerSelectValue = evt.currentTarget.value;
       }));
       on(dom.byId('selectAll'), "change", lang.hitch(this, function (evt) {
         array.forEach(query(".fieldCheckbox"), lang.hitch(this, function (currentCheckBox) {
@@ -504,7 +506,6 @@ define([
             }
             domAttr.set(dom.byId("selectLayer"), "disabled", false);
             domStyle.set(dom.byId("layerSelectPane"), 'display', 'block');
-            dom.byId("layerSelect")[dom.byId("layerSelect").options.length - 1].selected = true;
             this.currentConfig.form_layer.id = "all";
           } else {
             this.previousValue = this.currentConfig.form_layer.id;
@@ -1267,6 +1268,7 @@ define([
 
     //function takes the previous tab's details as input parameter and saves the setting to config
     _updateAppConfiguration: function (prevNavigationTab, layerObj) {
+      console.log(layerObj);
       switch (prevNavigationTab) {
       case "webmap":
         break;
