@@ -696,11 +696,11 @@ define([
             var slide = this._slides.find(function(slide) {
               return slide.id === id;
             });
-            // Scene
-            if (this._activeView.type === "3d") {
-             slide.applyTo(this._activeView);            
-            } else { // Map
+            // Map
+            if (this._isWebMap) {
               this._activeView.goTo({target: slide.viewpoint.targetGeometry});
+            } else { // Scene
+             slide.applyTo(this._activeView);
             }
           }.bind(this));
         } else {
