@@ -654,24 +654,26 @@ define([
 
         function createSlidesFromBookmarks(bookmarks) {
           var slides = new Collection();
-          for (var i = 0; i < bookmarks.length; i++) {
-            var bookmark = bookmarks[i];
-            var extent = new Extent({
-                  xmin: bookmark.extent.xmin,
-                  xmax: bookmark.extent.xmax,
-                  ymin: bookmark.extent.ymin,
-                  ymax: bookmark.extent.ymax,
-                  spatialReference: {wkid: bookmark.extent.spatialReference.wkid}
-                });
-            var slide = new Slide({
-              id: bookmark.name.replace(/\s+/g, '_'),
-              title: {text: bookmark.name},
-              viewpoint: new Viewpoint({
-                targetGeometry: extent
-              }),
-              thumbnail: {url: "images/bookmark.png"}
-            });
-            slides.add(slide);
+          if (bookmarks) {
+            for (var i = 0; i < bookmarks.length; i++) {
+              var bookmark = bookmarks[i];
+              var extent = new Extent({
+                    xmin: bookmark.extent.xmin,
+                    xmax: bookmark.extent.xmax,
+                    ymin: bookmark.extent.ymin,
+                    ymax: bookmark.extent.ymax,
+                    spatialReference: {wkid: bookmark.extent.spatialReference.wkid}
+                  });
+              var slide = new Slide({
+                id: bookmark.name.replace(/\s+/g, '_'),
+                title: {text: bookmark.name},
+                viewpoint: new Viewpoint({
+                  targetGeometry: extent
+                }),
+                thumbnail: {url: "images/bookmark.png"}
+              });
+              slides.add(slide);
+            }
           }
           return slides;
         }
