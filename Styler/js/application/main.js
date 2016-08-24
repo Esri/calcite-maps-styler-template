@@ -35,11 +35,16 @@ define([
   "esri/widgets/BasemapToggle",
 
   "esri/views/ui/Component",
+  "esri/webscene/Slide",
+  "esri/core/Collection",
+  "esri/Viewpoint",
+  "esri/geometry/Extent",
 
   "dojo/dom",
   "dojo/dom-attr",
   "dojo/dom-class",
   "dojo/query",
+  "dojo/dom-construct",
 
   "dojo/i18n!./nls/resources",
   "dojo/_base/lang",
@@ -50,6 +55,7 @@ define([
   "bootstrap/Dropdown",
   "bootstrap/Tab",
   "bootstrap/Alert",
+  "bootstrap/Carousel",
 
   // Calcite Maps
   "calcite-maps/calcitemaps-v0.2"
@@ -61,9 +67,9 @@ define([
   UnsupportedLayer, UnknownLayer,
 
   Zoom, Attribution, Compass, Home, Search, Legend, BasemapToggle,
-  Component,
+  Component, Slide, Collection, Viewpoint, Extent,
 
-  dom, domAttr, domClass, query,
+  dom, domAttr, domClass, query, domConstruct,
   i18n,
   lang,
   declare
@@ -93,6 +99,7 @@ define([
     menuAbout: "#menuAbout",
     menuLegend: "#menuLegend",
     menuBasemaps: "#menuBasemaps",
+    menuBookmarks: "#menuBookmarks",
     menuToggleNav: "#menuToggleNav",
 
     dropdownMenu: ".calcite-dropdown .dropdown-menu",
@@ -129,6 +136,8 @@ define([
     _viewManager: null,
 
     _activeView: null,
+
+    _isWebMap: false,
 
     _searchWidget: null,
 
@@ -219,9 +228,11 @@ define([
         //-----------------------------------------------------------------------
 
         if (boilerplate.results.webMapItem && boilerplate.results.webMapItem.data && boilerplate.results.webMapItem.data.type === "Web Map") {
+          this._isWebMap = true;
           container = boilerplate.settings.webmap.containerId;
           deferredWebMapOrWebScene = itemHelper.createWebMap(boilerplate.results.webMapItem);
         } else if (boilerplate.results.webSceneItem && boilerplate.results.webSceneItem.data && boilerplate.results.webSceneItem.data.type === "Web Scene") {
+          this._isWebMap = false;
           container = boilerplate.settings.webscene.containerId;
           deferredWebMapOrWebScene = itemHelper.createWebScene(boilerplate.results.webSceneItem);
         } else {
@@ -255,8 +266,10 @@ define([
             // Create the view
             var view = new results.View(viewOptions);
 
-            view.then(function(results) {
+            view.then(function() {
               this._removeLoading();
+              // Slides panel
+              this._setSlidesPanel(boilerplate.config.menubookmarks, results.webMapOrWebScene);
               // Do more stuff here if necessary...
             }.bind(this), function(error) {
               this.reportError(new Error("Styler:: Error loading view for this webmap or webscene: " + error));
@@ -490,6 +503,7 @@ define([
       query(CSS_SELECTORS.menuAbout + " a")[0].innerHTML = query(CSS_SELECTORS.menuAbout + " a")[0].innerHTML + "&nbsp;" + i18n.menu.items.about;
       query(CSS_SELECTORS.menuLegend + " a")[0].innerHTML = query(CSS_SELECTORS.menuLegend + " a")[0].innerHTML + "&nbsp;" + i18n.menu.items.legend;
       query(CSS_SELECTORS.menuBasemaps + " a")[0].innerHTML = query(CSS_SELECTORS.menuBasemaps + " a")[0].innerHTML + "&nbsp;" + i18n.menu.items.basemaps;
+      query(CSS_SELECTORS.menuBookmarks + " a")[0].innerHTML = query(CSS_SELECTORS.menuBookmarks + " a")[0].innerHTML + "&nbsp;" + i18n.menu.items.bookmarks;
       query(CSS_SELECTORS.menuToggleNav + " a")[0].innerHTML = query(CSS_SELECTORS.menuToggleNav + " a")[0].innerHTML + "&nbsp;" + i18n.menu.items.toggleNav;
     },
 
@@ -499,6 +513,7 @@ define([
       query("#panelAbout .panel-label")[0].innerHTML = i18n.menu.items.about;
       query("#panelLegend .panel-label")[0].innerHTML = i18n.menu.items.legend;
       query("#panelBasemaps .panel-label")[0].innerHTML = i18n.menu.items.basemaps;
+      query("#panelBookmarks .panel-label")[0].innerHTML = i18n.menu.items.bookmarks;
     },
 
     _setMenusVisible: function(boilerplate) {
@@ -515,6 +530,9 @@ define([
         }
         if (boilerplate.config.menubasemaps === false) {
           query(CSS_SELECTORS.menuBasemaps).addClass("hidden");
+        }
+        if (boilerplate.config.menubookmarks === false) {
+          query(CSS_SELECTORS.menuBookmarks).addClass("hidden");
         }
         if (boilerplate.config.menutogglenav === false) {
           query(CSS_SELECTORS.menuToggleNav).addClass("hidden");
@@ -609,6 +627,89 @@ define([
         query(CSS_SELECTORS.panelAbout).addClass("hidden");
       } else if (showAbout && menuAbout !== false) {
         query(CSS_SELECTORS.panelAbout + ", " + CSS_SELECTORS.panelAbout + " .panel-collapse").addClass("in");
+      }
+    },
+
+    // Slides
+
+    _setSlidesPanel: function(showBookmarks, webMapOrWebScene) {
+      var slides = null;
+
+      // Don't auto-start
+      query("#carouselBookmarks").carousel({interval: false});
+
+      if (showBookmarks) {
+
+        function createSlidesFromBookmarks(bookmarks) {
+          var slides = new Collection();
+          for (var i = 0; i < bookmarks.length; i++) {
+            var bookmark = bookmarks[i];
+            var extent = new Extent({
+                  xmin: bookmark.extent.xmin,
+                  xmax: bookmark.extent.xmax,
+                  ymin: bookmark.extent.ymin,
+                  ymax: bookmark.extent.ymax,
+                  spatialReference: {wkid: bookmark.extent.spatialReference.wkid}
+                });
+            var slide = new Slide({
+              id: bookmark.name.replace(/\s+/g, '_'),
+              title: {text: bookmark.name},
+              viewpoint: new Viewpoint({
+                targetGeometry: extent
+              }),
+              thumbnail: {url: "images/bookmark.png"}
+            });
+            slides.add(slide);
+          }
+          return slides;
+        }
+
+        // Map
+        if (this._isWebMap) {
+          slides = createSlidesFromBookmarks(webMapOrWebScene.bookmarks);
+        } else { // Scene
+          slides = webMapOrWebScene.presentation.slides;
+        }
+        
+        this._slides = slides;
+        
+        if (slides && slides.length > 0) {
+          var carouselIndicators = query("#carouselBookmarks .carousel-indicators")[0];
+          var carouselInner = query("#carouselBookmarks .carousel-inner")[0];
+          
+          slides.forEach(function(slide, i) {
+            var active = i === 0 ? "active" : "";
+            var indicator = "<li data-target='#carouselBookmarks' data-slide-to='" + i + "' class='" + active + "'></li>";
+            domConstruct.place(indicator, carouselIndicators, i);
+            // FF to slide indicator
+            query("#carouselBookmarks [data-slide-to=" + i + "]").on("click", function() {
+              slide.applyTo(this._activeView);
+              query("#carouselBookmarks").carousel(i);
+            }.bind(this));
+            var item = "<div id=" + slide.id + " class='item " + active + "'><img src=" + slide.thumbnail.url + "><div class='carousel-caption'>" + slide.title.text + "</div></div>";
+            domConstruct.place(item, carouselInner, i);
+          });
+
+          // Zoom to slide after slid
+          query("#carouselBookmarks").on("slid.bs.carousel", function(e) {
+            var id = query("#carouselBookmarks .item.active")[0].id;
+            var slide = this._slides.find(function(slide) {
+              return slide.id === id;
+            });
+            // Scene
+            if (this._activeView.type === "3d") {
+             slide.applyTo(this._activeView);            
+            } else { // Map
+              this._activeView.goTo({target: slide.viewpoint.targetGeometry});
+            }
+          }.bind(this));
+        } else {
+          query(CSS_SELECTORS.menuBookmarks).addClass("hidden");
+          query(CSS_SELECTORS.panelBookmarks).addClass("hidden");
+        }
+      } else {
+        query(CSS_SELECTORS.menuBookmarks).addClass("hidden");
+        query(CSS_SELECTORS.panelBookmarks).addClass("hidden");
       }
     },
 

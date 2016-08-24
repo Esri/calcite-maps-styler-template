@@ -59,8 +59,56 @@ body:lang(ja) {
 
 /* Calcite Maps */
 
+.dropdown-menu span.glyphicon {
+  margin-right: 2px;
+}
+
 #panelLegend .panel-body {
   background-color: white;
+}
+
+#carouselBookmarks {
+  margin-top: 7px;
+  margin-bottom: 25px;
+}
+
+#carouselBookmarks .carousel-indicators {
+  bottom: -30px;
+  margin-bottom: 0;
+}
+
+#carouselBookmarks .carousel-indicators > li {
+  background-color: #929292;
+}
+
+#carouselBookmarks .item {
+  text-align: center;
+}
+
+#carouselBookmarks .item img {
+  margin: 0 auto;
+  /*border: 5px solid transparent;*/
+}
+
+#carouselBookmarks .item {
+  text-align: center;
+}
+
+#carouselBookmarks .carousel-caption {
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding-bottom: 20px;
+}
+
+#carouselBookmarks .carousel-control {
+  margin: 0 20px;
+  background-image: none;
+}
+
+#carouselBookmarks .carousel-control > span {
+  font-size: 22px;
+  color: #adadad;
 }
 
 .calcite-alert {

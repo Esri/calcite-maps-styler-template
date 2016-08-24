@@ -23,6 +23,7 @@
         "about": "About",
         "basemaps": "Basemaps",
         "legend": "Legend",
+        "bookmarks": "Bookmarks",
         "toggleNav": "Full Map"
       }
     },
