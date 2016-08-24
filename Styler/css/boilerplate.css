@@ -114,9 +114,10 @@ body:lang(ja) {
 .calcite-alert {
   position: absolute;
   top: 40%;
-  width: 100%;
+  margin: 0 15px;  
   padding-top: 20px;
   padding-bottom: 20px;
+  font-size: 14px;
   z-index: 2000;
 }
 

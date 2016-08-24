@@ -162,7 +162,7 @@ define([
 
     _errorMessage: {
       base: "Styler Error:",
-      general: "We apologize but the map could not be fully loaded and some layers and/or functionality might not be available. Please stay tuned as <a target='_blank' href='https://developers.arcgis.com/javascript/latest/guide/migrating/index.html#webmap'>full support</a> for webmaps with the <a target='_blank' href='https://developers.arcgis.com/javascript/'>ArcGIS API for Javascript 4</a> is coming soon!",
+      general: "We apologize but the map could not be fully loaded and some layers/functionality might not be available. Please stay tuned as <a target='_blank' href='https://developers.arcgis.com/javascript/latest/guide/migrating/index.html#webmap'>full support</a> for webmaps with the <a target='_blank' href='https://developers.arcgis.com/javascript/'>ArcGIS API for Javascript 4</a> is coming soon!",
       load: "We apologize but it is taking longer than normal to load the map and some layers and/or functionality might not be available. Please stay tuned as <a target='_blank' href='https://developers.arcgis.com/javascript/latest/guide/migrating/index.html#webmap'>full support</a> for webmaps with the <a target='_blank' href='https://developers.arcgis.com/javascript/'>ArcGIS API for Javascript 4</a> is coming soon!",
       layerUnsupported: "Layer unsupported",
       layerUnknown: "Layer unknown",
