@@ -43,6 +43,8 @@ define([], function() {
       "id": "",
       "fields": []
     }],
+    // when true string data will show in dropdown
+    "uniqueVals": false,
     //If the web map has multiple filters they will be displayed in a dropdown when
     //this value is true.
     "filterDropdown": false,

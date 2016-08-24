@@ -102,12 +102,6 @@ define([
       return error;
     },
     _mapLoaded: function() {
-      //add the loading icon
-      /*domConstruct.create("img", {
-          id: "loader",
-          src: "images/loading.gif",
-          className: "loader"
-      }, "mapDiv");*/
       var filter = new Filter({
         map: this.map,
         layers: this.config.response.itemInfo.itemData.operationalLayers,
@@ -118,7 +112,8 @@ define([
         displayClear: this.config.displayClear || false,
         displayZoom: this.config.displayZoom || false,
         filterOnLoad: this.config.filterOnLoad || false,
-        filterInstructions: this.config.filterInstructions || null
+        filterInstructions: this.config.filterInstructions || null,
+        uniqueVals: this.config.uniqueVals || false
       });
       filter.createFilterContent().then(lang.hitch(this, function(content) {
         registry.byId("cp_left").set("content", content);

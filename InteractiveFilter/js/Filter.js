@@ -11,7 +11,8 @@ define(["dojo/_base/declare", "dojo/_base/array", "dojo/_base/lang", "dojo/_base
       displayClear: false,
       dislayZoom: false,
       filterOnLoad: false,
-      filterInstructions: null
+      filterInstructions: null,
+      uniqueVals: false
     },
     constructor: function(options) {
       // mixin options
@@ -120,10 +121,10 @@ define(["dojo/_base/declare", "dojo/_base/array", "dojo/_base/lang", "dojo/_base
       this._startIndicator();
       //get the input values to the filter - if not value is specified use the defaults
       var values = [];
-
       array.forEach(layer.definitionEditor.inputs, lang.hitch(this, function(input) {
 
         array.forEach(input.parameters, lang.hitch(this, function(param) {
+
           var widget_id = layer.id + "." + param.parameterId + ".value";
           var widget = dom.byId(widget_id);
           var value = widget.value;
@@ -194,6 +195,7 @@ define(["dojo/_base/declare", "dojo/_base/array", "dojo/_base/lang", "dojo/_base
 
     },
     _addFilter: function(layer) {
+
       var content = domConstruct.create("div");
       array.forEach(layer.definitionEditor.inputs, lang.hitch(this, function(input) {
         domConstruct.create("label", {
@@ -202,16 +204,19 @@ define(["dojo/_base/declare", "dojo/_base/array", "dojo/_base/lang", "dojo/_base
         var pcontent = domConstruct.create("div", {
           className: "row"
         }, content);
-        array.forEach(input.parameters, function(param, index) {
+        array.forEach(input.parameters, lang.hitch(this, function(param, index) {
           //at this release only numeric and string inputs are supported for interactive queries.  Dates will come later.
           var paramInputs = null;
           param.inputId = layer.id + "." + param.parameterId + ".value";
           var field = null;
           var fields = null;
+          var distLayer = null;
           if (layer.layerObject && layer.layerObject.fields) {
             fields = layer.layerObject.fields;
+            distLayer = layer.layerObject;
           } else if (layer.fields) {
             fields = layer.fields;
+            distLayer = layer;
           }
           array.some(fields, function(f) {
             if (f.name === param.fieldName) {
@@ -220,33 +225,45 @@ define(["dojo/_base/declare", "dojo/_base/array", "dojo/_base/lang", "dojo/_base
             }
           });
           if (field && field.domain && field.domain.codedValues) {
-            //create a select tag
-            var container = domConstruct.create("div", {
-              className: "styled-select small"
-            });
-            var select = domConstruct.create("select", {
-              id: param.inputId
-            }, container);
-            /*  var select = domConstruct.create("select", {
-                id: param.inputId
-              });*/
-            var options = select.options;
-            options.length = 0;
-            array.forEach(field.domain.codedValues, function(val, index) {
-              options[index] = new Option(val.name, val.code);
-            });
-            paramInputs = container; //select;
+            paramInputs = this._createDropdownList(param.inputId, field.domain.codedValues);
           } else if (field && field.type === "esriFieldTypeInteger") { //the pattern forces the numeric keyboard on iOS. The numeric type works on webkit browsers only
             paramInputs = lang.replace("<input class='param_inputs'  type='number'  id='{inputId}' pattern='[0-9]*'  value='{defaultValue}' />", param);
           } else { //string
-            paramInputs = lang.replace("<input class='param_inputs'  type='text'  id='{inputId}' value='{defaultValue}' />", param);
+            var capabilities = distLayer.advancedQueryCapabilities;
+            if (capabilities.supportsDistinct && this.uniqueVals) {
+              var distinctQuery = new Query();
+              distinctQuery.where = "1=1";
+              distinctQuery.orderByFields = [field.name];
+              distinctQuery.returnGeometry = false;
+              distinctQuery.outFields = [field.name];
+              distinctQuery.returnDistinctValues = true;
+              var container = domConstruct.create("div", {
+                className: "styled-select small"
+              });
+              var select = domConstruct.create("select", {
+                id: param.inputId
+              }, container);
+              var options = select.options;
+              options.length = 0;
+              paramInputs = container;
+              var qt = new QueryTask(layer.url);
+              qt.execute(distinctQuery, lang.hitch(this, function(results) {
+                results.features.forEach(function(f, index) {
+                  var val = f.attributes[field.name];
+                  select.options[index] = new Option(val);
+                });
+              }));
+            } else {
+              // string
+              paramInputs = lang.replace("<input class='param_inputs'  type='text'  id='{inputId}' value='{defaultValue}' />", param);
+            }
           }
           if (index < input.parameters.length - 1) {
             //insert an AND into the expression
             paramInputs += " <div class='connector'> AND</div> ";
           }
           domConstruct.place(paramInputs, pcontent);
-        });
+        }));
 
         domConstruct.create("label", {
           className: "hint",
@@ -259,6 +276,20 @@ define(["dojo/_base/declare", "dojo/_base/array", "dojo/_base/lang", "dojo/_base
 
       return content;
     //create a label and input for each filter param
+    },
+    _createDropdownList: function(id, values) {
+      var container = domConstruct.create("div", {
+        className: "styled-select small"
+      });
+      var select = domConstruct.create("select", {
+        id: id
+      }, container);
+      var options = select.options;
+      options.length = 0;
+      array.forEach(values, function(val, index) {
+        options[index] = new Option(val.name, val.code);
+      });
+      return container;
     },
     _getLayerFields: function(layer) {
       var deferred = new Deferred();

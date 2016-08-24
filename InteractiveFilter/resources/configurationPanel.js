@@ -105,6 +105,13 @@
                "type":"boolean",
                "fieldName":"displayClear",
                "label":"Display clear button"
+            },{
+              "type": "paragraph",
+              "value": "When true string values will appear in a dropdown list of unique values."
+            },{
+              "type":"boolean",
+              "fieldName": "uniqueVals",
+              "label": "Display unique values in dropdown list"
             }
          ]
       },
@@ -169,6 +176,7 @@
       "displayClear":false,
       "toggleFilterVisibility":false,
       "legend":false,
-      "legendOpen":false
+      "legendOpen":false,
+      "uniqueVals": false
    }
 }
