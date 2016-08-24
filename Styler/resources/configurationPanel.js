@@ -285,7 +285,7 @@
                     "type": "boolean",
                     "fieldName": "menubookmarks",
                     "tooltip": "Show menu and panel for bookmarks or slides",
-                    "label": "Bookmarks"
+                    "label": "Slide Show"
                 },
                 {
                     "type": "boolean",
