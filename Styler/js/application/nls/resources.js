@@ -28,19 +28,7 @@
       }
     },
     "basemaps": {
-      "select": "Select a basemap",
-      "streets": "Streets",
-      "satellite": "Satellite",
-      "hybrid": "Hybrid",
-      "nationalgeographic": "National Geographic",
-      "topographic": "Topographic",
-      "oceans": "Oceans",
-      "gray": "Gray",
-      "darkgray": "Dark Gray",
-      "osm": "Open Street Map",
-      "streetsnight": "Streets Night",
-      "streetsmobile": "Streets Mobile",
-      "streetsrelief": "Streets Relief"
+      "select": "Select a basemap"
     }
   }),
   "ar": 1,

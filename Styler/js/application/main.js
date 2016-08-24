@@ -26,6 +26,8 @@ define([
   "esri/layers/UnsupportedLayer",
   "esri/layers/UnknownLayer",
 
+  "esri/support/basemapDefinitions",
+
   "esri/widgets/Zoom",
   "esri/widgets/Attribution",
   "esri/widgets/Compass",
@@ -65,6 +67,8 @@ define([
 
   Accessor, Evented, watchUtils,
   UnsupportedLayer, UnknownLayer,
+
+  basemapDefs,
 
   Zoom, Attribution, Compass, Home, Search, Legend, BasemapToggle,
   Component, Slide, Collection, Viewpoint, Extent,
@@ -187,13 +191,31 @@ define([
         this._updateConfigWidgets(boilerplate);
 
         //-----------------------------------------------------------------------
+        // Get the webmap or webscene
+        //-----------------------------------------------------------------------
+
+        var itemHelper = new ItemHelper();
+        var deferredWebMapOrWebScene = null;
+        var container = null;
+
+        if (boilerplate.results.webMapItem && boilerplate.results.webMapItem.data && boilerplate.results.webMapItem.data.type === "Web Map") {
+          this._isWebMap = true;
+          container = boilerplate.settings.webmap.containerId;
+        } else if (boilerplate.results.webSceneItem && boilerplate.results.webSceneItem.data && boilerplate.results.webSceneItem.data.type === "Web Scene") {
+          this._isWebMap = false;
+          container = boilerplate.settings.webscene.containerId;
+        } else {
+          this.reportError(new Error("Styler:: WebMap or WebScene item could not be created from the parameters provided."));
+          return;
+        }
+
+        //-----------------------------------------------------------------------
         // Configure the document
         //-----------------------------------------------------------------------
 
-        // Document
         this._setDocumentLocale(boilerplate.direction, boilerplate.locale);
         this._setDocumentTitle(boilerplate.config.title);
-
+  
         // Title
         this._setTitleText(boilerplate.config.title);
         this._setSubTitleText(boilerplate.config.subtitle);
@@ -218,31 +240,15 @@ define([
         calciteTheme.setWidgetTheme(boilerplate.config.widgettheme);
         calciteTheme.setLayout(boilerplate.config.layoutInfo);
 
-        var itemHelper = new ItemHelper();
-
-        var deferredWebMapOrWebScene = null;
-        var container = null;
-
         //-----------------------------------------------------------------------
-        // Get the webmap or webscene
+        // Create the view (map or scene), widgets and rest of UI
         //-----------------------------------------------------------------------
 
-        if (boilerplate.results.webMapItem && boilerplate.results.webMapItem.data && boilerplate.results.webMapItem.data.type === "Web Map") {
-          this._isWebMap = true;
-          container = boilerplate.settings.webmap.containerId;
+        if (this._isWebMap) {
           deferredWebMapOrWebScene = itemHelper.createWebMap(boilerplate.results.webMapItem);
-        } else if (boilerplate.results.webSceneItem && boilerplate.results.webSceneItem.data && boilerplate.results.webSceneItem.data.type === "Web Scene") {
-          this._isWebMap = false;
-          container = boilerplate.settings.webscene.containerId;
-          deferredWebMapOrWebScene = itemHelper.createWebScene(boilerplate.results.webSceneItem);
         } else {
-          this.reportError(new Error("Styler:: WebMap or WebScene item could not be created from the parameters provided."));
-          return;
+          deferredWebMapOrWebScene = itemHelper.createWebScene(boilerplate.results.webSceneItem);
         }
-
-        //-----------------------------------------------------------------------
-        // Create the view (map or scene) and widgets
-        //-----------------------------------------------------------------------
 
         if (deferredWebMapOrWebScene) {
           deferredWebMapOrWebScene.then(function(results) {   
@@ -268,7 +274,7 @@ define([
 
             view.then(function() {
               this._removeLoading();
-              // Slides panel
+              // Slides panel (needs the view)
               this._setSlidesPanel(boilerplate.config.menubookmarks, results.webMapOrWebScene);
               // Do more stuff here if necessary...
             }.bind(this), function(error) {
@@ -544,18 +550,24 @@ define([
 
     _setBasemapPanelText: function(i18n) {
       query("#selectBasemapPanel [data-vector=select]")[0].innerHTML = "--- " + i18n.basemaps.select + " ---";
-      query("#selectBasemapPanel [data-vector=streets-vector]")[0].innerHTML = i18n.basemaps.streets;
-      query("#selectBasemapPanel [data-vector=satellite]")[0].innerHTML = i18n.basemaps.satellite;
-      query("#selectBasemapPanel [data-vector=hybrid]")[0].innerHTML = i18n.basemaps.hybrid;
-      query("#selectBasemapPanel [data-vector=national-geographic]")[0].innerHTML = i18n.basemaps.nationalgeographic;
-      query("#selectBasemapPanel [data-vector=topo-vector]")[0].innerHTML = i18n.basemaps.topographic;
-      query("#selectBasemapPanel [data-vector=oceans]")[0].innerHTML = i18n.basemaps.oceans;
-      query("#selectBasemapPanel [data-vector=gray-vector]")[0].innerHTML = i18n.basemaps.gray;
-      query("#selectBasemapPanel [data-vector=dark-gray-vector]")[0].innerHTML = i18n.basemaps.darkgray;
-      query("#selectBasemapPanel [data-vector=osm]")[0].innerHTML = i18n.basemaps.osm;
-      query("#selectBasemapPanel [data-vector=streets-night-vector]")[0].innerHTML = i18n.basemaps.streetsnight;
-      query("#selectBasemapPanel [data-vector=streets-navigation-vector]")[0].innerHTML = i18n.basemaps.streetsmobile;
-      query("#selectBasemapPanel [data-vector=streets-relief-vector]")[0].innerHTML = i18n.basemaps.streetsrelief;
+      query("#selectBasemapPanel [data-vector=streets-vector]")[0].innerHTML = this._isWebMap ? basemapDefs["streets-vector"].title : basemapDefs["streets"].title;
+      query("#selectBasemapPanel [data-vector=satellite]")[0].innerHTML = basemapDefs["satellite"].title;
+      query("#selectBasemapPanel [data-vector=hybrid]")[0].innerHTML = basemapDefs["hybrid"].title;
+      query("#selectBasemapPanel [data-vector=national-geographic]")[0].innerHTML = basemapDefs["national-geographic"].title;
+      query("#selectBasemapPanel [data-vector=topo-vector]")[0].innerHTML = this._isWebMap ? basemapDefs["topo-vector"].title : basemapDefs["topo"].title;
+      query("#selectBasemapPanel [data-vector=oceans]")[0].innerHTML = basemapDefs["oceans"].title;
+      query("#selectBasemapPanel [data-vector=gray-vector]")[0].innerHTML = this._isWebMap ? basemapDefs["gray-vector"].title : basemapDefs["gray"].title;
+      query("#selectBasemapPanel [data-vector=dark-gray-vector]")[0].innerHTML = this._isWebMap ? basemapDefs["dark-gray-vector"].title : basemapDefs["dark-gray"].title;
+      query("#selectBasemapPanel [data-vector=osm]")[0].innerHTML = basemapDefs["osm"].title;
+      if (this._isWebMap) {
+        query("#selectBasemapPanel [data-vector=streets-night-vector]")[0].innerHTML = basemapDefs["streets-night-vector"].title;
+        query("#selectBasemapPanel [data-vector=streets-navigation-vector]")[0].innerHTML = basemapDefs["streets-navigation-vector"].title;
+        query("#selectBasemapPanel [data-vector=streets-relief-vector]")[0].innerHTML = basemapDefs["streets-relief-vector"].title;
+      } else {
+        query("#selectBasemapPanel [data-vector=streets-night-vector]").addClass("hidden");
+        query("#selectBasemapPanel [data-vector=streets-navigation-vector]").addClass("hidden");
+        query("#selectBasemapPanel [data-vector=streets-relief-vector]").addClass("hidden");
+      }
     },
 
     // Nav
