@@ -14,7 +14,7 @@
   background: transparent;
   padding: 5px;
   height: 34px;
-  font: 16px Arial, Helvetica !important; }
+  font: 12px Arial, Helvetica !important; }
 .styled-select.small select{
   font-size:12px !important;
   width:auto;

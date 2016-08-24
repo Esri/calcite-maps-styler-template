@@ -195,7 +195,7 @@ define(["dojo/_base/declare", "dojo/_base/array", "dojo/_base/lang", "dojo/_base
 
     },
     _addFilter: function(layer) {
-
+      var deferred = new Deferred();
       var content = domConstruct.create("div");
       array.forEach(layer.definitionEditor.inputs, lang.hitch(this, function(input) {
         domConstruct.create("label", {
@@ -204,92 +204,107 @@ define(["dojo/_base/declare", "dojo/_base/array", "dojo/_base/lang", "dojo/_base
         var pcontent = domConstruct.create("div", {
           className: "row"
         }, content);
+        var filterLayer = (layer.layerObject) ? layer.layerObject : layer;
+        var fields = (layer.layerObject) ? layer.layerObject.fields : layer.fields;
+        var params = [];
         array.forEach(input.parameters, lang.hitch(this, function(param, index) {
-          //at this release only numeric and string inputs are supported for interactive queries.  Dates will come later.
-          var paramInputs = null;
-          param.inputId = layer.id + "." + param.parameterId + ".value";
-          var field = null;
-          var fields = null;
-          var distLayer = null;
-          if (layer.layerObject && layer.layerObject.fields) {
-            fields = layer.layerObject.fields;
-            distLayer = layer.layerObject;
-          } else if (layer.fields) {
-            fields = layer.fields;
-            distLayer = layer;
-          }
-          array.some(fields, function(f) {
-            if (f.name === param.fieldName) {
-              field = f;
-              return true;
+          var paramDef = new Deferred();
+          this._createFilterField(param, filterLayer, fields).then(function(paramResults) {
+            if (index < input.parameters.length - 1) {
+              //insert an AND into the expression
+              paramResults += " <div class='connector'> AND</div> ";
             }
+            domConstruct.place(paramResults, pcontent);
+            paramDef.resolve();
+            return paramDef.promise;
           });
-          if (field && field.domain && field.domain.codedValues) {
-            paramInputs = this._createDropdownList(param.inputId, field.domain.codedValues);
-          } else if (field && field.type === "esriFieldTypeInteger") { //the pattern forces the numeric keyboard on iOS. The numeric type works on webkit browsers only
-            paramInputs = lang.replace("<input class='param_inputs'  type='number'  id='{inputId}' pattern='[0-9]*'  value='{defaultValue}' />", param);
-          } else { //string
-            var capabilities = distLayer.advancedQueryCapabilities;
-            if (capabilities.supportsDistinct && this.uniqueVals) {
-              var distinctQuery = new Query();
-              distinctQuery.where = "1=1";
-              distinctQuery.orderByFields = [field.name];
-              distinctQuery.returnGeometry = false;
-              distinctQuery.outFields = [field.name];
-              distinctQuery.returnDistinctValues = true;
-              var container = domConstruct.create("div", {
-                className: "styled-select small"
-              });
-              var select = domConstruct.create("select", {
-                id: param.inputId
-              }, container);
-              var options = select.options;
-              options.length = 0;
-              paramInputs = container;
-              var qt = new QueryTask(layer.url);
-              qt.execute(distinctQuery, lang.hitch(this, function(results) {
-                results.features.forEach(function(f, index) {
-                  var val = f.attributes[field.name];
-                  select.options[index] = new Option(val);
-                });
-              }));
-            } else {
-              // string
-              paramInputs = lang.replace("<input class='param_inputs'  type='text'  id='{inputId}' value='{defaultValue}' />", param);
-            }
-          }
-          if (index < input.parameters.length - 1) {
-            //insert an AND into the expression
-            paramInputs += " <div class='connector'> AND</div> ";
-          }
-          domConstruct.place(paramInputs, pcontent);
+          params.push(paramDef);
         }));
-
-        domConstruct.create("label", {
-          className: "hint",
-          innerHTML: input.hint
-        }, content); //add  help tip for inputs
-        domConstruct.create("div", {
-          className: "clearBoth"
-        }, content);
+        all(params).then(lang.hitch(this, function() {
+          domConstruct.create("label", {
+            className: "hint",
+            innerHTML: input.hint
+          }, content); //add  help tip for inputs
+          domConstruct.create("div", {
+            className: "clearBoth"
+          }, content);
+          deferred.resolve(content);
+        }), function(error) {
+          deferred.resolve(error);
+        });
       }));
-
-      return content;
+      return deferred.promise;
+    //return content;
     //create a label and input for each filter param
     },
-    _createDropdownList: function(id, values) {
+    _createFilterField: function(param, filterLayer, fields) {
+
+      var deferred = new Deferred();
+      var field = null,
+        paramInputs = null;
+      param.inputId = filterLayer.id + "." + param.parameterId + ".value";
+
+      array.some(fields, function(f) {
+        if (f.name === param.fieldName) {
+          field = f;
+          return true;
+        }
+      });
+      if (field && field.domain && field.domain.codedValues) {
+        paramInputs = this._createDropdownList(param, field.domain.codedValues);
+        deferred.resolve(paramInputs);
+      } else if (field && field.type === "esriFieldTypeInteger") { //the pattern forces the numeric keyboard on iOS. The numeric type works on webkit browsers only
+        paramInputs = lang.replace("<input class='param_inputs'  type='number'  id='{inputId}' pattern='[0-9]*'  value='{defaultValue}' />", param);
+        deferred.resolve(paramInputs);
+      } else { //string
+        var capabilities = filterLayer.advancedQueryCapabilities;
+        if (capabilities.supportsDistinct && this.uniqueVals) {
+          var distinctQuery = new Query();
+          distinctQuery.where = "1=1";
+          distinctQuery.orderByFields = [field.name];
+          distinctQuery.returnGeometry = false;
+          distinctQuery.outFields = [field.name];
+          distinctQuery.returnDistinctValues = true;
+
+          var qt = new QueryTask(filterLayer.url);
+          qt.execute(distinctQuery, lang.hitch(this, function(results) {
+            var values = results.features.map(function(f, index) {
+              return {
+                name: f.attributes[field.name],
+                code: f.attributes[field.name]
+              };
+            });
+
+            var container = this._createDropdownList(param, values);
+            deferred.resolve(container);
+          }), function(error) {
+            deferred.resolve(error);
+          });
+        } else {
+          // string
+          paramInputs = lang.replace("<input class='param_inputs'  type='text'  id='{inputId}' value='{defaultValue}' />", param);
+          deferred.resolve(paramInputs);
+        }
+      }
+      return deferred.promise;
+    },
+    _createDropdownList: function(param, values) {
       var container = domConstruct.create("div", {
         className: "styled-select small"
       });
       var select = domConstruct.create("select", {
-        id: id
+        id: param.inputId
       }, container);
-      var options = select.options;
-      options.length = 0;
+
       array.forEach(values, function(val, index) {
-        options[index] = new Option(val.name, val.code);
+        domConstruct.create("option", {
+          value: val.code,
+          innerHTML: val.name,
+          selected: (val.name === param.defaultValue) ? true : false
+        }, select);
       });
-      return container;
+      var node = container.outerHTML ? container.outerHTML : container.innerHTML;
+      return node;
     },
     _getLayerFields: function(layer) {
       var deferred = new Deferred();
@@ -384,64 +399,67 @@ define(["dojo/_base/declare", "dojo/_base/array", "dojo/_base/lang", "dojo/_base
 
 
         var results = this._addFilter(layer);
-        domConstruct.place(results, filterGroup);
+        results.then(lang.hitch(this, function(results) {
+          domConstruct.place(results, filterGroup);
 
-        //add an apply button to the layer filter group
-        var b = domConstruct.create("input", {
-          type: "button",
-          className: "submitButton bg fc",
-          id: layer.id + "_apply",
-          value: this.button_text || i18n.viewer.button_text
-        }, filterGroup, "last");
+          //add an apply button to the layer filter group
+          var b = domConstruct.create("input", {
+            type: "button",
+            className: "submitButton bg fc",
+            id: layer.id + "_apply",
+            value: this.button_text || i18n.viewer.button_text
+          }, filterGroup, "last");
 
 
 
-        if (this.displayClear) {
+          if (this.displayClear) {
 
-          var clear = domConstruct.create("span", {
-            className: "cancelButton icon-cancel",
-            id: layer.id + "_clear",
-            title: "Clear" //i18n.viewer.clear_text
-          }, filterGroup);
-          on(clear, "click", lang.hitch(this, function() {
-            if (layer.layerType && layer.layerType === "ArcGISStreamLayer") {
-              layer.clear();
-            } else {
-              this._applyDefinitionExpression(layer, null);
-            }
-            if (this.map.infoWindow.isShowing) {
-              this.map.infoWindow.hide();
-            }
-          }));
-
-        }
-
-        //only valid for hosted feature layers.
-        if (this.displayZoom) {
-          if (layer.layerObject && layer.layerObject.type && layer.layerObject.type === "Feature Layer" && layer.layerObject.url && this._isHosted(layer.layerObject.url)) {
-            var zoom = domConstruct.create("span", {
-              className: "zoomButton icon-search",
-              id: layer.id + "_zoom",
-              title: "Zoom"
+            var clear = domConstruct.create("span", {
+              className: "cancelButton icon-cancel",
+              id: layer.id + "_clear",
+              title: "Clear" //i18n.viewer.clear_text
             }, filterGroup);
-            on(zoom, "click", lang.hitch(this, function() {
-              this._zoomFilter(layer);
+            on(clear, "click", lang.hitch(this, function() {
+              if (layer.layerType && layer.layerType === "ArcGISStreamLayer") {
+                layer.clear();
+              } else {
+                this._applyDefinitionExpression(layer, null);
+              }
+              if (this.map.infoWindow.isShowing) {
+                this.map.infoWindow.hide();
+              }
             }));
+
           }
-        }
+
+          //only valid for hosted feature layers.
+          if (this.displayZoom) {
+            if (layer.layerObject && layer.layerObject.type && layer.layerObject.type === "Feature Layer" && layer.layerObject.url && this._isHosted(layer.layerObject.url)) {
+              var zoom = domConstruct.create("span", {
+                className: "zoomButton icon-search",
+                id: layer.id + "_zoom",
+                title: "Zoom"
+              }, filterGroup);
+              on(zoom, "click", lang.hitch(this, function() {
+                this._zoomFilter(layer);
+              }));
+            }
+          }
 
 
-        //clear the default filter if config option is set
-        if (this.filterOnLoad === false) {
-          this._applyDefinitionExpression(layer, null);
+          //clear the default filter if config option is set
+          if (this.filterOnLoad === false) {
+            this._applyDefinitionExpression(layer, null);
 
-        }
+          }
 
-        on(b, "click", lang.hitch(this, function() {
-          this._startIndicator();
-          this._createDefinitionExpression(layer);
+          on(b, "click", lang.hitch(this, function() {
+            this._startIndicator();
+            this._createDefinitionExpression(layer);
 
+          }));
         }));
+
 
       }));
 
