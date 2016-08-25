@@ -28,6 +28,7 @@ define({
     "enableModifiedDate": true,
     "enableViewsCount": true,
     "enableMoreInfo": true,
+    "enableScalebar": false,
     "defaultBasemap": "topo",
     "nextBasemap": "hybrid",
     "swipeLayer": [{

@@ -161,6 +161,12 @@
         },
         {  
           "type":"boolean",
+          "fieldName":"enableScalebar",
+          "label":"Enable Scalebar on the map",
+          "tooltip":"Enable Scalebar on the map"
+        },
+        {  
+          "type":"boolean",
           "fieldName":"enableLegendPanel",
           "label":"Enable Legend Panel",
           "tooltip":"Enable Legend"
@@ -641,6 +647,7 @@
     "enableBookmarks":true,
     "enableOverviewMap":true,
     "openOverviewMap":false,
+    "enableScalebar": false,
     "enablePrintButton":false,
     "nextBasemap":"hybrid",
     "defaultBasemap":"topo",

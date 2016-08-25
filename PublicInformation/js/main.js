@@ -395,6 +395,17 @@ define([
             this._resizeOverviewMap();
           }));
         }
+        // Scalebar
+        if (this.config.enableScalebar) {
+          require([
+            "esri/dijit/Scalebar",
+          ], lang.hitch(this, function(Scalebar) {
+            var scalebar = new Scalebar({
+              map: this.map,
+              attachTo: "bottom-left"
+            });
+          }));
+        }
         // geocoders
         this._createGeocoders();
         // startup social
