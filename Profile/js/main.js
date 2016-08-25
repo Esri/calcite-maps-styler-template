@@ -254,7 +254,6 @@ define([
         }));
       }));
       // setup the basemap tool
-
       if (this.config.basemaps) {
         require(["esri/dijit/BasemapGallery"], lang.hitch(this, function(BasemapGallery) {
           var basemapGallery = new BasemapGallery({
@@ -595,8 +594,18 @@ define([
 
       this.elevationWidget = new ElevationProfileSetup(params);
       this.elevationWidget.setupProfile();
-
+      if (this.elevationWidget.profileWidget && this.elevationWidget.profileWidget._directionButton) {
+        on(this.elevationWidget.profileWidget._directionButton, "click", lang.hitch(this, function() {
+          console.log("Click");
+          on.once(this.elevationWidget.profileWidget._profileChart, "chart-update", lang.hitch(this, function() {
+            console.log("Chart updated");
+            var content = esriLang.substitute(this.elevationWidget.generateElevationInfo(), this.config.i18n.elevation.gainLossTemplate);
+            dom.byId("elevInfo").innerHTML = content;
+          }));
+        }));
+      }
       on(this.elevationWidget, "profile-generated", lang.hitch(this, function() {
+        console.log("Profile Generated");
         //open profile chart if closed
         var height = domStyle.get(dom.byId("panelContent"), "height");
         if (height <= 0) {

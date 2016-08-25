@@ -135,11 +135,11 @@ g#mapDiv_graphics_layer path {
 /*Icon Fonts*/
 @font-face {
   font-family: 'elevfonts';
-  src:url('../fonts/icomoon.eot?-dk7kju');
-  src:url('../fonts/icomoon.eot?#iefix-dk7kju') format('embedded-opentype'),
-    url('../fonts/icomoon.ttf?-dk7kju') format('truetype'),
-    url('../fonts/icomoon.woff?-dk7kju') format('woff'),
-    url('../fonts/icomoon.svg?-dk7kju#icomoon') format('svg');
+  src:url('../fonts/tool-icons.eot?o2bzxw');
+  src:url('../fonts/tool-icons.eot?o2bzxw#iefix') format('embedded-opentype'),
+    url('../fonts/tool-icons.ttf?o2bzxw') format('truetype'),
+    url('../fonts/tool-icons.woff?o2bzxw') format('woff'),
+    url('../fonts/tool-icons.svg?o2bzxw#tool-icons') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -253,8 +253,31 @@ elevation profile widget */
   height:100%;
   width:98%;
 }
+
 .esriElevationProfile .esriElevationProfileSourceLabel{
   display: none;
+}
+.esriElevationProfile .esriElevationProfileDirectionButton{
+    margin:0 !important;
+    position: absolute !important;
+    bottom:-2px !important;
+    right: 5px;
+    width:35px !important;
+}
+.esriElevationProfile .esriElevationProfileDirectionButton:before{
+  content:"\e900";
+  font-family: "elevfonts"
+}
+.esriElevationProfile .esriElevationProfileDirectionForward,.esriElevationProfile .esriElevationProfileDirectionForward:hover, .esriElevationProfile .esriElevationProfileDirectionReverse,  .esriElevationProfile .esriElevationProfileDirectionReverse:hover{
+  background:none !important;
+}
+.esriElevationProfile .esriElevationProfileDirectionButton:hover {
+    color: rgba(59,60,64,0.4) !important;
+    font-weight: bold !important;
+}
+/*standby widget updates*/
+#dojox_widget_Standby_0 > div:nth-child(1){
+  background-color:rgba(0,0,0,0) !important;
 }
 #desc{
   display:none;
@@ -432,9 +455,10 @@ that appear below the zoom slider */
 }
 .closeBtn{
   font-size: 14px;
+  font-weight: bold;
   position: absolute;
-  top:2px;
-  right:2px;
+  top:4px;
+  right:5px;
   cursor:pointer;
   padding:4px;
   z-index: 30;
@@ -444,7 +468,7 @@ that appear below the zoom slider */
 }
 .dialog-header{
   width:100%;
-  height:20px;
+  margin-bottom:4px;
 }
 
 #legendContainer, #basemapContainer, #shareContainer{
@@ -459,7 +483,7 @@ that appear below the zoom slider */
 #legendDiv, #basemapDiv, #shareDiv{
   overflow: auto;
   height: auto;
-  width:255px;
+  width:240px;
   max-height: 300px;
   padding:1em;
 }

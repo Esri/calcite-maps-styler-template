@@ -45,10 +45,6 @@ define([
       this.profileWidget = new ElevationProfile(profileParams, this.elevProfileChartNode);
       this.profileWidget.startup();
 
-      this.profileWidget.on("chart-update", function() {
-        console.log("HOla");
-      });
-
       this.selGraphicsLayer = new GraphicsLayer();
       this.map.addLayer(this.selGraphicsLayer);
 
