@@ -26,6 +26,8 @@ define([
   "esri/layers/UnsupportedLayer",
   "esri/layers/UnknownLayer",
 
+  "esri/support/basemapDefinitions",
+
   "esri/widgets/Zoom",
   "esri/widgets/Attribution",
   "esri/widgets/Compass",
@@ -35,11 +37,16 @@ define([
   "esri/widgets/BasemapToggle",
 
   "esri/views/ui/Component",
+  "esri/webscene/Slide",
+  "esri/core/Collection",
+  "esri/Viewpoint",
+  "esri/geometry/Extent",
 
   "dojo/dom",
   "dojo/dom-attr",
   "dojo/dom-class",
   "dojo/query",
+  "dojo/dom-construct",
 
   "dojo/i18n!./nls/resources",
   "dojo/_base/lang",
@@ -50,6 +57,7 @@ define([
   "bootstrap/Dropdown",
   "bootstrap/Tab",
   "bootstrap/Alert",
+  "bootstrap/Carousel",
 
   // Calcite Maps
   "calcite-maps/calcitemaps-v0.2"
@@ -60,10 +68,12 @@ define([
   Accessor, Evented, watchUtils,
   UnsupportedLayer, UnknownLayer,
 
-  Zoom, Attribution, Compass, Home, Search, Legend, BasemapToggle,
-  Component,
+  basemapDefs,
 
-  dom, domAttr, domClass, query,
+  Zoom, Attribution, Compass, Home, Search, Legend, BasemapToggle,
+  Component, Slide, Collection, Viewpoint, Extent,
+
+  dom, domAttr, domClass, query, domConstruct,
   i18n,
   lang,
   declare
@@ -93,6 +103,7 @@ define([
     menuAbout: "#menuAbout",
     menuLegend: "#menuLegend",
     menuBasemaps: "#menuBasemaps",
+    menuBookmarks: "#menuBookmarks",
     menuToggleNav: "#menuToggleNav",
 
     dropdownMenu: ".calcite-dropdown .dropdown-menu",
@@ -130,6 +141,8 @@ define([
 
     _activeView: null,
 
+    _isWebMap: false,
+
     _searchWidget: null,
 
     _legendWidget: null,
@@ -149,7 +162,7 @@ define([
 
     _errorMessage: {
       base: "Styler Error:",
-      general: "We apologize but the map could not be fully loaded and some layers and/or functionality might not be available. Please stay tuned as <a target='_blank' href='https://developers.arcgis.com/javascript/latest/guide/migrating/index.html#webmap'>full support</a> for webmaps with the <a target='_blank' href='https://developers.arcgis.com/javascript/'>ArcGIS API for Javascript 4</a> is coming soon!",
+      general: "We apologize but the map could not be fully loaded and some layers/functionality might not be available. Please stay tuned as <a target='_blank' href='https://developers.arcgis.com/javascript/latest/guide/migrating/index.html#webmap'>full support</a> for webmaps with the <a target='_blank' href='https://developers.arcgis.com/javascript/'>ArcGIS API for Javascript 4</a> is coming soon!",
       load: "We apologize but it is taking longer than normal to load the map and some layers and/or functionality might not be available. Please stay tuned as <a target='_blank' href='https://developers.arcgis.com/javascript/latest/guide/migrating/index.html#webmap'>full support</a> for webmaps with the <a target='_blank' href='https://developers.arcgis.com/javascript/'>ArcGIS API for Javascript 4</a> is coming soon!",
       layerUnsupported: "Layer unsupported",
       layerUnknown: "Layer unknown",
@@ -178,13 +191,31 @@ define([
         this._updateConfigWidgets(boilerplate);
 
         //-----------------------------------------------------------------------
+        // Get the webmap or webscene
+        //-----------------------------------------------------------------------
+
+        var itemHelper = new ItemHelper();
+        var deferredWebMapOrWebScene = null;
+        var container = null;
+
+        if (boilerplate.results.webMapItem && boilerplate.results.webMapItem.data && boilerplate.results.webMapItem.data.type === "Web Map") {
+          this._isWebMap = true;
+          container = boilerplate.settings.webmap.containerId;
+        } else if (boilerplate.results.webSceneItem && boilerplate.results.webSceneItem.data && boilerplate.results.webSceneItem.data.type === "Web Scene") {
+          this._isWebMap = false;
+          container = boilerplate.settings.webscene.containerId;
+        } else {
+          this.reportError(new Error("Styler:: WebMap or WebScene item could not be created from the parameters provided."));
+          return;
+        }
+
+        //-----------------------------------------------------------------------
         // Configure the document
         //-----------------------------------------------------------------------
 
-        // Document
         this._setDocumentLocale(boilerplate.direction, boilerplate.locale);
         this._setDocumentTitle(boilerplate.config.title);
-
+  
         // Title
         this._setTitleText(boilerplate.config.title);
         this._setSubTitleText(boilerplate.config.subtitle);
@@ -209,29 +240,15 @@ define([
         calciteTheme.setWidgetTheme(boilerplate.config.widgettheme);
         calciteTheme.setLayout(boilerplate.config.layoutInfo);
 
-        var itemHelper = new ItemHelper();
-
-        var deferredWebMapOrWebScene = null;
-        var container = null;
-
         //-----------------------------------------------------------------------
-        // Get the webmap or webscene
+        // Create the view (map or scene), widgets and rest of UI
         //-----------------------------------------------------------------------
 
-        if (boilerplate.results.webMapItem && boilerplate.results.webMapItem.data && boilerplate.results.webMapItem.data.type === "Web Map") {
-          container = boilerplate.settings.webmap.containerId;
+        if (this._isWebMap) {
           deferredWebMapOrWebScene = itemHelper.createWebMap(boilerplate.results.webMapItem);
-        } else if (boilerplate.results.webSceneItem && boilerplate.results.webSceneItem.data && boilerplate.results.webSceneItem.data.type === "Web Scene") {
-          container = boilerplate.settings.webscene.containerId;
-          deferredWebMapOrWebScene = itemHelper.createWebScene(boilerplate.results.webSceneItem);
         } else {
-          this.reportError(new Error("Styler:: WebMap or WebScene item could not be created from the parameters provided."));
-          return;
+          deferredWebMapOrWebScene = itemHelper.createWebScene(boilerplate.results.webSceneItem);
         }
-
-        //-----------------------------------------------------------------------
-        // Create the view (map or scene) and widgets
-        //-----------------------------------------------------------------------
 
         if (deferredWebMapOrWebScene) {
           deferredWebMapOrWebScene.then(function(results) {   
@@ -255,8 +272,10 @@ define([
             // Create the view
             var view = new results.View(viewOptions);
 
-            view.then(function(results) {
+            view.then(function() {
               this._removeLoading();
+              // Slides panel (needs the view)
+              this._setSlidesPanel(boilerplate.config.menubookmarks, results.webMapOrWebScene);
               // Do more stuff here if necessary...
             }.bind(this), function(error) {
               this.reportError(new Error("Styler:: Error loading view for this webmap or webscene: " + error));
@@ -490,6 +509,7 @@ define([
       query(CSS_SELECTORS.menuAbout + " a")[0].innerHTML = query(CSS_SELECTORS.menuAbout + " a")[0].innerHTML + "&nbsp;" + i18n.menu.items.about;
       query(CSS_SELECTORS.menuLegend + " a")[0].innerHTML = query(CSS_SELECTORS.menuLegend + " a")[0].innerHTML + "&nbsp;" + i18n.menu.items.legend;
       query(CSS_SELECTORS.menuBasemaps + " a")[0].innerHTML = query(CSS_SELECTORS.menuBasemaps + " a")[0].innerHTML + "&nbsp;" + i18n.menu.items.basemaps;
+      query(CSS_SELECTORS.menuBookmarks + " a")[0].innerHTML = query(CSS_SELECTORS.menuBookmarks + " a")[0].innerHTML + "&nbsp;" + i18n.menu.items.bookmarks;
       query(CSS_SELECTORS.menuToggleNav + " a")[0].innerHTML = query(CSS_SELECTORS.menuToggleNav + " a")[0].innerHTML + "&nbsp;" + i18n.menu.items.toggleNav;
     },
 
@@ -499,6 +519,7 @@ define([
       query("#panelAbout .panel-label")[0].innerHTML = i18n.menu.items.about;
       query("#panelLegend .panel-label")[0].innerHTML = i18n.menu.items.legend;
       query("#panelBasemaps .panel-label")[0].innerHTML = i18n.menu.items.basemaps;
+      query("#panelBookmarks .panel-label")[0].innerHTML = i18n.menu.items.bookmarks;
     },
 
     _setMenusVisible: function(boilerplate) {
@@ -516,6 +537,9 @@ define([
         if (boilerplate.config.menubasemaps === false) {
           query(CSS_SELECTORS.menuBasemaps).addClass("hidden");
         }
+        if (boilerplate.config.menubookmarks === false) {
+          query(CSS_SELECTORS.menuBookmarks).addClass("hidden");
+        }
         if (boilerplate.config.menutogglenav === false) {
           query(CSS_SELECTORS.menuToggleNav).addClass("hidden");
         }
@@ -526,18 +550,24 @@ define([
 
     _setBasemapPanelText: function(i18n) {
       query("#selectBasemapPanel [data-vector=select]")[0].innerHTML = "--- " + i18n.basemaps.select + " ---";
-      query("#selectBasemapPanel [data-vector=streets-vector]")[0].innerHTML = i18n.basemaps.streets;
-      query("#selectBasemapPanel [data-vector=satellite]")[0].innerHTML = i18n.basemaps.satellite;
-      query("#selectBasemapPanel [data-vector=hybrid]")[0].innerHTML = i18n.basemaps.hybrid;
-      query("#selectBasemapPanel [data-vector=national-geographic]")[0].innerHTML = i18n.basemaps.nationalgeographic;
-      query("#selectBasemapPanel [data-vector=topo-vector]")[0].innerHTML = i18n.basemaps.topographic;
-      query("#selectBasemapPanel [data-vector=oceans]")[0].innerHTML = i18n.basemaps.oceans;
-      query("#selectBasemapPanel [data-vector=gray-vector]")[0].innerHTML = i18n.basemaps.gray;
-      query("#selectBasemapPanel [data-vector=dark-gray-vector]")[0].innerHTML = i18n.basemaps.darkgray;
-      query("#selectBasemapPanel [data-vector=osm]")[0].innerHTML = i18n.basemaps.osm;
-      query("#selectBasemapPanel [data-vector=streets-night-vector]")[0].innerHTML = i18n.basemaps.streetsnight;
-      query("#selectBasemapPanel [data-vector=streets-navigation-vector]")[0].innerHTML = i18n.basemaps.streetsmobile;
-      query("#selectBasemapPanel [data-vector=streets-relief-vector]")[0].innerHTML = i18n.basemaps.streetsrelief;
+      query("#selectBasemapPanel [data-vector=streets-vector]")[0].innerHTML = this._isWebMap ? basemapDefs["streets-vector"].title : basemapDefs["streets"].title;
+      query("#selectBasemapPanel [data-vector=satellite]")[0].innerHTML = basemapDefs["satellite"].title;
+      query("#selectBasemapPanel [data-vector=hybrid]")[0].innerHTML = basemapDefs["hybrid"].title;
+      query("#selectBasemapPanel [data-vector=national-geographic]")[0].innerHTML = basemapDefs["national-geographic"].title;
+      query("#selectBasemapPanel [data-vector=topo-vector]")[0].innerHTML = this._isWebMap ? basemapDefs["topo-vector"].title : basemapDefs["topo"].title;
+      query("#selectBasemapPanel [data-vector=oceans]")[0].innerHTML = basemapDefs["oceans"].title;
+      query("#selectBasemapPanel [data-vector=gray-vector]")[0].innerHTML = this._isWebMap ? basemapDefs["gray-vector"].title : basemapDefs["gray"].title;
+      query("#selectBasemapPanel [data-vector=dark-gray-vector]")[0].innerHTML = this._isWebMap ? basemapDefs["dark-gray-vector"].title : basemapDefs["dark-gray"].title;
+      query("#selectBasemapPanel [data-vector=osm]")[0].innerHTML = basemapDefs["osm"].title;
+      if (this._isWebMap) {
+        query("#selectBasemapPanel [data-vector=streets-night-vector]")[0].innerHTML = basemapDefs["streets-night-vector"].title;
+        query("#selectBasemapPanel [data-vector=streets-navigation-vector]")[0].innerHTML = basemapDefs["streets-navigation-vector"].title;
+        query("#selectBasemapPanel [data-vector=streets-relief-vector]")[0].innerHTML = basemapDefs["streets-relief-vector"].title;
+      } else {
+        query("#selectBasemapPanel [data-vector=streets-night-vector]").addClass("hidden");
+        query("#selectBasemapPanel [data-vector=streets-navigation-vector]").addClass("hidden");
+        query("#selectBasemapPanel [data-vector=streets-relief-vector]").addClass("hidden");
+      }
     },
 
     // Nav
@@ -609,6 +639,91 @@ define([
         query(CSS_SELECTORS.panelAbout).addClass("hidden");
       } else if (showAbout && menuAbout !== false) {
         query(CSS_SELECTORS.panelAbout + ", " + CSS_SELECTORS.panelAbout + " .panel-collapse").addClass("in");
+      }
+    },
+
+    // Slides
+
+    _setSlidesPanel: function(showBookmarks, webMapOrWebScene) {
+      var slides = null;
+
+      // Don't auto-start
+      query("#carouselBookmarks").carousel({interval: false});
+
+      if (showBookmarks) {
+
+        function createSlidesFromBookmarks(bookmarks) {
+          var slides = new Collection();
+          if (bookmarks) {
+            for (var i = 0; i < bookmarks.length; i++) {
+              var bookmark = bookmarks[i];
+              var extent = new Extent({
+                    xmin: bookmark.extent.xmin,
+                    xmax: bookmark.extent.xmax,
+                    ymin: bookmark.extent.ymin,
+                    ymax: bookmark.extent.ymax,
+                    spatialReference: {wkid: bookmark.extent.spatialReference.wkid}
+                  });
+              var slide = new Slide({
+                id: bookmark.name.replace(/\s+/g, '_'),
+                title: {text: bookmark.name},
+                viewpoint: new Viewpoint({
+                  targetGeometry: extent
+                }),
+                thumbnail: {url: "images/bookmark.png"}
+              });
+              slides.add(slide);
+            }
+          }
+          return slides;
+        }
+
+        // Map
+        if (this._isWebMap) {
+          slides = createSlidesFromBookmarks(webMapOrWebScene.bookmarks);
+        } else { // Scene
+          slides = webMapOrWebScene.presentation.slides;
+        }
+        
+        this._slides = slides;
+        
+        if (slides && slides.length > 0) {
+          var carouselIndicators = query("#carouselBookmarks .carousel-indicators")[0];
+          var carouselInner = query("#carouselBookmarks .carousel-inner")[0];
+          
+          slides.forEach(function(slide, i) {
+            var active = i === 0 ? "active" : "";
+            var indicator = "<li data-target='#carouselBookmarks' data-slide-to='" + i + "' class='" + active + "'></li>";
+            domConstruct.place(indicator, carouselIndicators, i);
+            // FF to slide indicator
+            query("#carouselBookmarks [data-slide-to=" + i + "]").on("click", function() {
+              slide.applyTo(this._activeView);
+              query("#carouselBookmarks").carousel(i);
+            }.bind(this));
+            var item = "<div id=" + slide.id + " class='item " + active + "'><img src=" + slide.thumbnail.url + "><div class='carousel-caption'>" + slide.title.text + "</div></div>";
+            domConstruct.place(item, carouselInner, i);
+          });
+
+          // Zoom to slide after slid
+          query("#carouselBookmarks").on("slid.bs.carousel", function(e) {
+            var id = query("#carouselBookmarks .item.active")[0].id;
+            var slide = this._slides.find(function(slide) {
+              return slide.id === id;
+            });
+            // Map
+            if (this._isWebMap) {
+              this._activeView.goTo({target: slide.viewpoint.targetGeometry});
+            } else { // Scene
+             slide.applyTo(this._activeView);
+            }
+          }.bind(this));
+        } else {
+          query(CSS_SELECTORS.menuBookmarks).addClass("hidden");
+          query(CSS_SELECTORS.panelBookmarks).addClass("hidden");
+        }
+      } else {
+        query(CSS_SELECTORS.menuBookmarks).addClass("hidden");
+        query(CSS_SELECTORS.panelBookmarks).addClass("hidden");
       }
     },
 

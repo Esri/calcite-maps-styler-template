@@ -283,6 +283,12 @@
                 },
                 {
                     "type": "boolean",
+                    "fieldName": "menubookmarks",
+                    "tooltip": "Show menu and panel for bookmarks or slides",
+                    "label": "Slide Show"
+                },
+                {
+                    "type": "boolean",
                     "fieldName": "menutogglenav",
                     "tooltip": "Show a menu item that can show and hide the title bar",
                     "label": "Full Map"
@@ -394,6 +400,7 @@
         "menuabout": true,
         "menulegend": true,
         "menubasemaps": true,
+        "menubookmarks": true,
         "menutogglenav": true,
         "menustyledrawer": "",
         "widgetsearch": true,
