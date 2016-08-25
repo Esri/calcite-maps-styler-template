@@ -48,6 +48,7 @@ define({
   "headerHeight": "115",
   "embed": false,
   "legend": true,
+  "legendOpen": false,
   "scalebar": true,
   "markerSymbol": "./images/EsriBluePinCircle26.png",
   "markerSymbolWidth": 26,

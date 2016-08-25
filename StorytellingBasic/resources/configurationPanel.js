@@ -130,6 +130,10 @@
                "fieldName": "legend",
                "label": "Legend"
             },{
+              "type":"boolean",
+              "fieldName": "legendOpen",
+              "label": "Open legend on startup"
+            },{
                "type": "boolean",
                "fieldName": "scalebar",
                "label": "Scalebar"
@@ -165,6 +169,7 @@
       "showSocialText": true,
       "subtitleColor": "#CECECE",
       "legend": true,
+      "legendOpen": false,
       "scalebar": true,
       "search": false
    }

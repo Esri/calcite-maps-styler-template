@@ -284,6 +284,9 @@ define([
                 layerInfos: layerInfo
               }, "legendDiv");
               legend.startup();
+              if (this.config.legendOpen) {
+                dom.byId("legendToggle").click();
+              }
             }
           }));
 
