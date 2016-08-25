@@ -336,9 +336,7 @@ img{
   left: 0;
   text-align: center;
 }
-.calcite .dijitContentPane{
-  padding:5px;
-}
+
 .calcite .esriViewPopup .mainSection .attrTable td.attrName{
     font-weight:normal;
     color:#4c4c4c;
