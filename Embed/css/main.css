@@ -1201,9 +1201,6 @@ font-family: Verdana, Helvetica, Arial, sans-serif;
     padding:0;
     color: #21759b;
 }
-.calcite .esriPopup .sizer{
-  width:280px;
-}
 .calcite .esriPopup .titlePane{
   font-size: 12px;
   font-weight: normal;
