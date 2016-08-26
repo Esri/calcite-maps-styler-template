@@ -87,7 +87,7 @@ if(app.isProduction){
 	loadCSS('resources/lib/medium-editor/dist/css/themes/flat.css');
 	loadCSS('resources/lib/medium-editor/dist/font-awesome/css/font-awesome.min.css');
 
-	loadCSS('resources/lib/jquery-ui.min.css');
+	//loadCSS('resources/lib/jquery-ui.min.css');
 	loadCSS('resources/lib/spectrum/spectrum.css');
 }else{
 	loadCSS('lib-app/Swiper/swiper.min.css');
@@ -96,7 +96,7 @@ if(app.isProduction){
 	loadCSS('lib-app/medium-editor/dist/css/themes/flat.css');
 	loadCSS('lib-app/medium-editor/dist/font-awesome/css/font-awesome.min.css');
 
-	loadCSS('lib-app/jquery-ui.min.css');
+	//loadCSS('lib-app/jquery-ui.min.css');
 	loadCSS('lib-app/spectrum/spectrum.css');
 
 
@@ -111,7 +111,7 @@ if( app.isProduction ) {
 
 loadCSS(app.pathJSAPI + "esri/css/esri.css", true);
 loadCSS(app.pathJSAPI + "dijit/themes/claro/claro.css", true);
-loadCSS(app.pathJSAPI + "esri/themes/calcite/dijit/calcite.css", true);
+//loadCSS(app.pathJSAPI + "esri/themes/calcite/dijit/calcite.css", true);
 
 if(app.isProduction){
 	loadJS('resources/lib/Swiper/swiper.min.js');
