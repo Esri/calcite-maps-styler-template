@@ -146,14 +146,16 @@ g#mapDiv_graphics_layer path {
   position: absolute;
   right: 0;
   left: 0;
-  top: 10px;
+  top: 0;
   border-top: none;
   border-right: none;
   border-left: none; }
-
+  .esriEditor .dojoxGridScrollbox{
+    top:20px;
+  }
 @media only screen and (min-width: 720px) {
   .esriEditor .esriDrawingToolbar {
-    top: 10px;
+    top: 0;
     right: 0;
     left: 0; } }
 
