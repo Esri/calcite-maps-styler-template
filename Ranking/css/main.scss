@@ -124,7 +124,6 @@ body{
 }
 /*Small devices like phones.*/
 @media (max-width: 767px){
-
   #sidebar.hidden-xs {
     position: absolute;
     bottom: 0;
@@ -136,6 +135,10 @@ body{
     display: inline-block !important;
     z-index: 35;
     background: #fff;
+  }
+  #mapDiv{
+    position: absolute;
+    bottom:220px;
   }
 }
 
@@ -224,4 +227,24 @@ path[data-selected] {
 }
 div.header{
   font-weight: bold;
+}
+.calcite .esriViewPopup .mainSection .attrTable td.attrName{
+    font-weight:normal;
+    color:#4c4c4c;
+}
+.calcite .esriPopup .actionsPane .actionList a {
+    color:#4c4c4c;
+}
+.calcite .esriPopup a{
+    font-size:12px;
+    padding:0;
+    color: #21759b;
+}
+.calcite .esriPopup .titlePane{
+  padding: 5px 10px;
+  font-size: 12px;
+  font-weight: normal;
+}
+.calcite .esriPopup .contentPane{
+  padding: 0 8px;
 }

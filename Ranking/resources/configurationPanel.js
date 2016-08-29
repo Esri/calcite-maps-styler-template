@@ -136,6 +136,13 @@
         "label": "Descending",
         "value": "DESC"
       }]
+    },{
+      "type": "paragraph",
+      "value": "By default the app will zoom to the extent of the selected features. If you'd like to modify the zoom level specify a new zoom level value here."
+    },{
+      "type": "number",
+      "fieldName": "level",
+      "label": "Specify zoom level"
     }]
   }],
   "values": {
@@ -144,7 +151,7 @@
     "count":10,
     "symbolcolor": "#337ab7",
     "symbolsize": "11",
-    "symbolopacity": ".8",
+    "symbolopacity": "0.80",
     "navcolor": "black",
     "bgcolor": "#fff",
     "textcolor": "#5d5d5d",

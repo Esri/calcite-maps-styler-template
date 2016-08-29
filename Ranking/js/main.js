@@ -69,7 +69,6 @@ define([
         //supply either the webmap id or, if available, the item info
         var itemInfo = this.config.itemInfo || this.config.webmap;
 
-
         if (this.config.sharedThemeConfig && this.config.sharedThemeConfig.attributes && this.config.sharedThemeConfig.attributes.theme) {
           var sharedTheme = this.config.sharedThemeConfig.attributes;
           this.config.logo = sharedTheme.layout.header.component.settings.logoUrl || sharedTheme.theme.logo.small || null;
@@ -147,7 +146,7 @@ define([
       // Optionally define additional map config here for example you can
       // turn the slider off, display info windows, disable wraparound 180,
       // slider position and more.
-      params.mapOptions.showInfoWindowOnClick = false;
+      //params.mapOptions.showInfoWindowOnClick = false;
       arcgisUtils.createMap(itemInfo, "mapDiv", {
         mapOptions: params.mapOptions || {},
         usePopupManager: true,
@@ -195,27 +194,29 @@ define([
           }));
         }
         // Get the analysis layer and make sure it supports statistics
-
         var analysisLayer = null;
         if (this.config.layerInfo.id !== null && this.config.layerInfo.fields.length > 0) {
           analysisLayer = this.map.getLayer(this.config.layerInfo.id);
         } else {
-          response.itemInfo.itemData.operationalLayers.forEach(lang.hitch(this, function(l) {
-            if (l.layerType === "ArcGISFeatureLayer" && l.layerObject) {
-              analysisLayer = l.layerObject;
-              this.config.layerInfo.fields = [l.layerObject.fields[0].name];
+          response.itemInfo.itemData.operationalLayers.some(lang.hitch(this, function(l) {
+            //if a layer isn't defined get the first feature layer with popups defined from the map
+            // and use the first field as the analysis field.
+            if (l.layerObject) {
+              var type = l.layerType || l.layerObject.type;
+              if (l.layerObject.infoTemplate !== undefined && (type === "Feature Layer" || type === "ArcGISFeatureLayer")) {
+                analysisLayer = l.layerObject;
+                this.config.layerInfo.fields = [analysisLayer.fields[0].name];
+                return true;
+              }
             }
           }));
         }
-
         if (analysisLayer) {
-          analysisLayer.styling = false;
           // Setup selection color, opacity, size
           var style = document.createElement("style");
           var customStyle = "path[data-selected] {stroke:" + this.config.symbolcolor + ";stroke-width: " + this.config.symbolsize + ";stroke-opacity: " + this.config.symbolopacity + ";}";
           style.appendChild(document.createTextNode(customStyle));
           document.head.appendChild(style);
-
           this._calculateStatistics(analysisLayer);
         }
       }), function(error) {
@@ -223,8 +224,7 @@ define([
       });
     },
     _calculateStatistics: function(layer) {
-      // does the layer support adv queries (necessary for order by)?
-
+      // Check for advanced query support so we can use order by
       if (layer && layer.type && layer.type === "Feature Layer") {
 
         if (layer.supportsAdvancedQueries) {
@@ -252,6 +252,7 @@ define([
                 // hide the info panel
                 domClass.add("titleHeader", "hide");
                 domClass.remove("slideNav", "hide");
+                layer.styling = false;
                 this._createFeatureSlides(topResults, layer);
               }));
             }), lang.hitch(this, function(error) {
@@ -262,7 +263,6 @@ define([
             console.log("No query field specified");
             this.reportError(this.config.layer + " does not have a query field specified");
           }
-
         } else {
           console.log("Advanced Queries not supported");
           this.reportError(this.config.layer + " does not support advanced queries");
@@ -270,7 +270,6 @@ define([
       }
     },
     _createFeatureSlides: function(features, layer) {
-      console.log("Lets created slides", layer, features)
       features.forEach(lang.hitch(this, function(feature, i) {
         var idAttributeField = feature.getLayer().objectIdField;
         var featureContent = feature.getContent();
@@ -296,18 +295,18 @@ define([
       });
       //setup click handle for button to toggle title and desc on small devices
       on(dom.byId("toggleInfo"), "click", lang.hitch(this, function(e) {
-        this._toggleInfoPanel("info");
+        this._toggleInfoPanel("info", layer);
       }));
       // Button on info dialog that closes info panel
       on(dom.byId("closeInfo"), "click", lang.hitch(this, function(e) {
-        this._toggleInfoPanel("popup");
+        this._toggleInfoPanel("popup", layer);
       }));
       if (this.config.legend) {
         on(dom.byId("legendInfo"), "click", lang.hitch(this, function() {
-          this._toggleInfoPanel("legend");
+          this._toggleInfoPanel("legend", layer);
         }));
         on(dom.byId("closeLegend"), "click", lang.hitch(this, function() {
-          this._toggleInfoPanel("popup");
+          this._toggleInfoPanel("popup", layer);
         }));
       }
       // Navigate to the first feature
@@ -318,50 +317,32 @@ define([
         this._selectFeatures(featureSwipe.slides[featureSwipe.activeIndex].id, layer);
       }));
     },
-    _toggleInfoPanel: function(active) {
+    _toggleInfoPanel: function(active, layer) {
       domQuery(".panel-nav").addClass("hide");
       // remove just the active
+      layer.styling = false;
+      layer.refresh();
       if (active === "legend") {
         domClass.remove("legendPanel", "hide");
       } else if (active === "popup") {
         domClass.remove("popupContainer", "hide");
         domClass.remove("slideNav", "hide");
       } else { // activate info
+        layer.styling = true;
+        layer.refresh();
         domClass.remove("titleHeader", "hide");
       }
-    /*if (active === "legend") {
-      //hide slide nav, title area and popup and show legend
-      domClass.add("slideNav", "hide");
-      domClass.add("titleHeader", "hide");
-      domClass.add("popupContainer", "hide");
-      domClass.remove("legendPanel", "hide");
-    } else if (active === "info") {
-      // hide slide nav, legend and popup and show title area
-      domClass.add("slideNav", "hide");
-      domClass.remove("titleHeader", "hide");
-      domClass.add("popupContainer", "hide");
-      domClass.add("legendPanel", "hide");
-    } else if (active === "popup") {
-      // show slide nav and hide title area and legend
-      domClass.remove("slideNav", "hide");
-      domClass.add("titleHeader", "hide");
-      domClass.remove("popupContainer", "hide");
-      domClass.add("legendPanel", "hide");
-    }*/
-    /*domClass.toggle(dom.byId("titleHeader"), "hide");
-    domClass.toggle("slideNav", "hide");
-    if (this.config.legend) {
-      domClass.add("legendPanel", "hide");
-    }*/
     },
     _selectFeatures: function(id, layer) {
       var q = new Query();
       q.objectIds = [id];
       layer.selectFeatures(q).then(lang.hitch(this, function() {
         var sel = layer.getSelectedFeatures();
+        var level = this.config.level || this.map.infoWindow.zoomFactor;
         if (sel && sel.length && sel.length > 0) {
           var extent = graphicsUtils.graphicsExtent(sel);
-          this.map.setExtent(extent, true);
+          var zoomLoc = extent.getCenter();
+          this.map.centerAndZoom(zoomLoc, level);
         }
       }));
     }
