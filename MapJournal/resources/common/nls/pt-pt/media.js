@@ -32,14 +32,14 @@ define({
       "pageExplain": "Uma página do Facebook é uma celebridade ou marca/produto público, como <b>esrigis</b>. Pode obter o nome da página após a primeira barra ( / ) no URL da página.",
       "pageInputLbl": "Nome da página",
       "lookupMsgError": "Página não encontrada",
-      "warning": "ã_Facebook support has been discontinued, ${learn}________________Ç.",
-      "learn": "ã_learn more____Ç"
+      "warning": "O suporte para Facebook foi descontinuado, ${learn}.",
+      "learn": "saber mais"
     },
     "imageSelectorPicasa": {
-      "userInputLbl": "ã_Email or Picasa id______Ç",
+      "userInputLbl": "Email ou id do Picasa",
       "signInMsg2": "Conta não encontrada",
-      "howToFind": "ã_How to find a Picasa id________Ç",
-      "howToFind2": "ã_Copy digits between the first and second '/' of any Picasa page____________________Ç"
+      "howToFind": "Como encontrar a id do Picasa",
+      "howToFind2": "Copiar os dígitos que estão entre a primeira e a segunda  '/'  de qualquer página do Picasa"
     },
     "videoSelectorCommon": {
       "check": "Verificar",
@@ -104,9 +104,9 @@ define({
       "lblPosition4Explain": "(pode distorcer)",
       "unloadLbl": "Descarregue quando o leitor navegar para uma secção diferente",
       "unloadHelp": "Se a Página Web tiver media em áudio ou em vídeo, mantenha esta opção selecionada para que esse conteúdo pare de ser reproduzido quando navegar para fora do leitor. Desselecione-a, por exemplo, para manter uma banda sonora a tocar enquanto o leitor avança pela história.<br />Caso a página web seja uma aplicação, desselecione esta opção para que a história não seja recarregada se o leitor regressar.",
-      "embedProtocolLabel": "ã_Load page over a secure connection (HTTPS)______________Ç",
-      "embedProtocolWarning1": "ã_Your story is configured to load over a secure connection (https), so web page show in the story must also use a secure connection. If the page does not load it may be because it is not available over a secure connection or that it cannot be included in your story (some websites restrict this). You may need to create a hyperlink to open the page in a new browser tab________________________________________________________________________________________________________________Ç.",
-      "embedProtocolWarning2": "ã_Your story is configured to load over an insecure connection (http), so you can choose to load this page over a secure (recommended) or insecure connection. If the page does not load, it may be because it does not support the connection type you selected or that it cannot be included in your story (some websites restrict this). You may need to create a hyperlink to open the page in a new browser tab__________________________________________________________________________________________________________________________Ç."
+      "embedProtocolLabel": "Carregar página através de uma ligação segura (HTTPS)",
+      "embedProtocolWarning1": "A sua história está configurada para ser carregada através de uma ligação segura (https), portanto a exibição de página web na história também tem de utilizar uma ligação segura. Caso a página não seja carregada, isso poderá dever-se ao facto de não se encontrar disponível através de uma ligação segura ou não poder ser incluída na sua história (alguns sites web restringem esta ação). Poderá ter de criar uma hiperligação para que a a página seja aberta num novo separador de navegador.",
+      "embedProtocolWarning2": "A sua história está configurada para ser carregada através de uma ligação insegura (http), por isso pode optar por carregar estab página através de uma ligação segura (recomendado) ou insegura. Caso a página não seja carregada, isso poderá dever-se ao facto de a mesma não suportar o tipo de ligação que escolheu ou não poder ser incluída na sua história (alguns sites web restringem esta ação). Poderá ter de criar uma hiperligação para que a a página seja aberta num novo separador de navegador."
     },
     "editorActionGeocode": {
       "lblTitle": "Localizar um endereço ou lugar",

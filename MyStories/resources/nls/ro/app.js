@@ -40,7 +40,7 @@ define({
   },
   "cantFindStories": {
     "whereAreStories": "Nu vedeţi povestea dvs.?",
-    "notSeeExplanation": "Ă_My Stories will only list story maps hosted in ArcGIS ({{STORY_MAP_BASIC}} is currently not supported). See our {{FAQ}} for more information___________________________________________ș.",
+    "notSeeExplanation": "Scenariile mele va enumera doar hărţile de scenarii găzduite în ArcGIS ({{STORY_MAP_BASIC}} nu este acceptat momentan). Pentru mai multe informaţii, consultaţi {{FAQ}}.",
     "faq": "Întrebări frecvente",
     "followingStoriesToUpdate": "Următoarele poveşti create cu versiuni mai vechi ale aplicaţiilor noastre trebuie actualizate pentru a fi enumerate în Relatările mele:",
     "gettingStories": "Se caută poveşti create cu versiuni mai vechi ale aplicaţiilor noastre, care trebuie actualizate...",
@@ -88,16 +88,16 @@ define({
     "layerPrivate": "Dacă faceţi stratul tematic privat, povestea va fi afectată"
   },
   "collectionList": {
-    "business": "Ă_Business and Economy_______ș",
-    "history": "Ă_History and Culture_______ș",
-    "inNews": "Ă_In The News____ș",
-    "infrastructure": "Ă_Infrastructure and Construction__________ș",
-    "nature": "Ă_Nature and Conservation________ș",
+    "business": "Afaceri şi economie",
+    "history": "Istorie şi cultură",
+    "inNews": "De actualitate",
+    "infrastructure": "Infrastructură şi construcţii",
+    "nature": "Natură şi conservare",
     "people": "Oameni şi societate",
-    "planning": "Ă_Planning and Design_______ș",
+    "planning": "Planificare şi design",
     "science": "Ştiinţă şi tehnologie",
-    "sports": "Ă_Sports and Entertainment________ș",
-    "travel": "Ă_Travel and Recreation_______ș"
+    "sports": "Sport şi divertisment",
+    "travel": "Călătorii şi recreere"
   },
   "types": {
     "custom": "Personalizat",
@@ -216,7 +216,7 @@ define({
   "content": {
     "media": {
       "maps": "Hărţi",
-      "scenes": "Ă_Scenes___ș",
+      "scenes": "Scene",
       "images": "Imagini",
       "videos": "Videoclipuri",
       "webpages": "Pagini web",
@@ -235,29 +235,29 @@ define({
       "tab": "Filă",
       "accordion": "Secţiune",
       "mapJournal": "Secţiune",
-      "cascade": "Ă_Section___ș",
-      "crowdsource": "Ă_Contribution_____ș",
-      "shortlist": "Ă_Tab__ș"
+      "cascade": "Secţiune",
+      "crowdsource": "Contribuţie",
+      "shortlist": "Filă"
     },
     "titleType": {
       "mapTour": "Subtitlu",
       "mapJournal": "URL",
       "mapSeries": "URL",
-      "cascade": "Ă_URL__ș",
-      "crowdsource": "Ă_URL__ș",
-      "shortlist": "Ă_URL__ș"
+      "cascade": "URL",
+      "crowdsource": "URL",
+      "shortlist": "URL"
     },
     "actions": {
       "viewMap": "Vizualizare hartă",
       "editMap": "Editare hartă",
-      "editScene": "Ă_Edit Scene____ș",
+      "editScene": "Editare scenă",
       "fix": "Fixare",
       "viewLayer": "Vizualizare strat tematic"
     },
     "contentType": {
       "mainStage": "acţiune nivel principal",
       "sidePanel": "descriere",
-      "introImage": "Ă_(cover page photo)______ș"
+      "introImage": "(fotografie copertă)"
     },
     "notification": {
       "refreshExplanation": "Verificaţi povestea din nou",
@@ -298,7 +298,7 @@ define({
       "publicDisabled": "Partajarea cu publicul a fost dezactivată de un Administrator",
       "orgDisabled": "Partajarea cu organizaţia dvs. a fost dezactivată de un Administrator",
       "noMapName": "Nu a putut fi preluat numele hărţii",
-      "noSceneName": "Ă_Could Not Retrieve Scene________ș",
+      "noSceneName": "Nu a putut fi preluată scena",
       "notPublic": "NU ESTE PUBLIC",
       "inaccessible": "INACCESIBIL",
       "deleted": "ŞTERS",
@@ -350,8 +350,8 @@ define({
       "cantScanThisTypeAlt": "Nu putem să verificăm acest tip de strat tematic",
       "cantScanThisType": "Stratul tematic nu este de un tip pe care putem să îl verificăm",
       "webpageNotScanned": "Paginile web nu sunt verificate pentru a se descoperi problemele",
-      "sceneNotScanned": "Ă_Scenes are not currently checked for issues, please make sure that the scene and all of its layers are shared correctly_____________________________________ș",
-      "scenesNotScannedGlobally": "Ă_There are scenes in this story, and scenes are not currently checked for issues. Please make sure that the scenes and all of their layers are shared correctly________________________________________________ș",
+      "sceneNotScanned": "Momentan, scenele nu sunt verificate pentru depistarea problemelor, asiguraţi-vă că scena şi toate straturile tematice ale acesteia sunt partajate corect",
+      "scenesNotScannedGlobally": "Acest scenariu conţine scene şi, momentan, scenele nu sunt verificate pentru depistarea problemelor. Asiguraţi-vă că scenele şi toate straturile tematice ale acestora sunt partajate corect",
       "ignoredIssue": "Aţi ignorat o eroare din cadrul acestui strat tematic. Reîncărcaţi pagina şi verificaţi, din nou, acest scenariu pentru a revizui eroarea",
       "ignoredIssueBuilder": "Aţi ignorat o eroare din cadrul acestui strat tematic. Reîncărcaţi aplicația pentru a verifica această eroare, din nou"
     },
@@ -452,25 +452,25 @@ define({
       "thirdTitle": "hărţi"
     },
     "cascade": {
-      "firstTitle": "Ă_sections___ș",
-      "secondTitle": "Ă_maps__ș"
+      "firstTitle": "secţiuni",
+      "secondTitle": "hărţi"
     },
     "swipeSpyglass": {
-      "firstTitle": "Ă_points of interest______ș",
+      "firstTitle": "puncte de interes",
       "secondTitle": "stil",
       "secondValueA": "preluare",
       "secondValueB": "ochean",
       "thirdTitle": "hărţi"
     },
     "crowdsource": {
-      "firstTitle": "Ă_contributions_____ș",
-      "secondTitle": "Ă_basemap___ș",
-      "secondValueLoading": "Ă_Loading____ș...",
-      "secondValueUnknown": "Ă_unknown___ș"
+      "firstTitle": "contribuţii",
+      "secondTitle": "hartă fundal",
+      "secondValueLoading": "Se încarcă...",
+      "secondValueUnknown": "necunoscută"
     },
     "shortlist": {
-      "firstTitle": "Ă_places___ș",
-      "secondTitle": "Ă_tabs__ș",
+      "firstTitle": "locuri",
+      "secondTitle": "file",
       "thirdTitle": "hartă fundal",
       "thirdValueLoading": "Se încarcă...",
       "thirdValueUnknown": "necunoscută"

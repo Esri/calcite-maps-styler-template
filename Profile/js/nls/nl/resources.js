@@ -19,28 +19,28 @@ define({
     "error": "Kaart kan niet gemaakt worden"
   },
   "nav": {
-    "close": "Ĳ_Close___ä"
+    "close": "Sluiten"
   },
   "elevation": {
-    "toggle": "Ĳ_Toggle the Elevation Profile Chart____________ä.",
-    "drawTool": "Ĳ_Draw a line on the map to generate an elevation profile__________________ä.",
-    "selectMessage": "Ĳ_Click a line feature or use the draw tool to draw a line to display the elevation profile____________________________ä",
-    "gainLossTemplate": "Ĳ_Min: ${min}   Max: ${max}   Start: ${start}   End: ${end}   Change: ${gainLoss}_________________________ä"
+    "toggle": "De hoogteprofielgrafiek wisselen.",
+    "drawTool": "Teken een lijn op de kaart om een hoogteprofiel te genereren.",
+    "selectMessage": "Klik op een lijnobject of gebruik het tekeninstrument om een lijn te tekenen om het hoogteprofiel weer te geven",
+    "gainLossTemplate": "Min: ${min}   Max: ${max}   Start: ${start}   Einde: ${end}   Wijziging: ${gainLoss}"
   },
   "splash": {
-    "title": "Ĳ_Title___ä",
-    "content": "Ĳ_Configure to create custom splash content_____________ä"
+    "title": "Titel",
+    "content": "Configureren om aangepaste splash content te creëren"
   },
   "legend": {
-    "title": "Ĳ_Legend___ä",
-    "tip": "Ĳ_Display legend_____ä"
+    "title": "Legenda",
+    "tip": "Legenda weergeven"
   },
   "basemap": {
-    "title": "Ĳ_Basemap___ä",
-    "tip": "Ĳ_Change basemap_____ä"
+    "title": "Basemap",
+    "tip": "Wijzig basiskaart"
   },
   "share": {
-    "title": "Ĳ_Share___ä",
-    "tip": "Ĳ_Share map____ä"
+    "title": "Delen",
+    "tip": "Kaart delen"
   }
 });

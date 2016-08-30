@@ -83,7 +83,7 @@ define({
     "valueRadioButtonLabel": "Arvo",
     "uniqueRadioButtonLabel": "Yksilöllinen",
     "selectLayerToBegin": "Aloita valitsemalla luokka",
-    "layerFeatureCount": "Å_${selectedFeatureCount} selected / ${featureCount} records__________________ö"
+    "layerFeatureCount": "${selectedFeatureCount} valittu / ${featureCount} tietuetta"
   },
   "timeSlider": {
     "timeSliderLabel": "Aikaväli",
@@ -102,7 +102,7 @@ define({
     "selectFileText": "Selaa",
     "attachmentSelectedMsg": "liite(ttä) on valittu",
     "attachmentHeaderText": "Liitteet",
-    "addRecordText": "Å_Add Record____ö"
+    "addRecordText": "Lisää tietue"
   },
   "main": {
     "noGroup": "Yhtään ryhmää ei ole määritetty"
@@ -114,18 +114,18 @@ define({
   },
   "manualRefresh": {
     "manualRefreshIconTooltip": "Päivitä",
-    "confirmManualRefreshText": "Å_All selections and unsaved changes will be discarded_________________ö"
+    "confirmManualRefreshText": "Kaikki valinnat ja tallentamattomat muutokset ohitetaan"
   },
   "help": {
     "helpIconTooltip": "Ohje"
   },
   "filter": {
     "noFeatureFoundText": "Tälle arvolle ei löytynyt kohdetta.",
-    "distinctQueryFailed": "Å_No distinct values found for the field_____________ö.",
+    "distinctQueryFailed": "Kentälle ei löytynyt erillisiä arvoja.",
     "andText": "ja",
-    "filterInEditModeAlert": "Å_Filters unavailable while editing___________ö.",
+    "filterInEditModeAlert": "Suodattimet eivät ole käytettävissä muokkauksen aikana.",
     "dropdownSelectOption": "Valitse",
-    "filterInShowSelectedEditModeAlert": "Å_Filters unavailable in 'Show Selected' mode______________ö."
+    "filterInShowSelectedEditModeAlert": "Suodattimet eivät ole käytettävissä Näytä valitut kohteet -tilassa."
   },
   "detailsPanel": {
     "editContentText": "Muokkaa tietuetta"
@@ -135,8 +135,8 @@ define({
     "reSignInMessage": "Kirjaudu sisään napsauttamalla tätä"
   },
   "selectionOptions": {
-    "selectionOptionsIconTooltip": "Å_Selection Options______ö",
-    "showAllOptionText": "Å_Show All___ö",
-    "showSelectedOptionText": "Å_Show Selected_____ö"
+    "selectionOptionsIconTooltip": "Valinta-asetukset",
+    "showAllOptionText": "Näytä kaikki",
+    "showSelectedOptionText": "Näytä valitut kohteet"
   }
 });

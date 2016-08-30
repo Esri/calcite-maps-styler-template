@@ -13,27 +13,27 @@ define({
   },
   "answerText": {
     "seriesOfPlaces": "Sada míst",
-    "mapsNarrative": "Ř_A narrative____ů",
-    "compareDatasets": "Ř_A comparison of datasets________ů",
+    "mapsNarrative": "Příběh",
+    "compareDatasets": "Porovnání datových sad",
     "other": "Jedna mapa",
     "yes": "Ano",
     "no": "Ne",
     "click": "Klepněte na",
     "scroll": "Posunout",
-    "two": "Ř_Two__ů",
-    "moreThanTwo": "Ř_More than two_____ů",
-    "pickThis": "Ř_Pick this____ů",
-    "detailJournal": "...Ř_appear in a side panel next to your featured media_________________ů?",
-    "detailCascade": "...Ř_fill the whole page with a mix of text and media appearing in sequence_______________________ů?"
+    "two": "Dvě",
+    "moreThanTwo": "Více než dvě",
+    "pickThis": "Vybrat toto",
+    "detailJournal": "...figuroval v postranním panelu vedle vašich vybraných médií?",
+    "detailCascade": "...vyplnil celou stránku kombinací textu a médií, která se budou zobrazovat jedno po druhém?"
   },
   "questionText": {
     "bestDescribesStory": "Jak lze váš příběh nejlépe popsat?",
     "showPhotos": "Chcete pro každé umístění zobrazovat fotografie?",
     "clickOrScroll": "Chcete, aby se vaše publikum mezi kartami pohybovalo klikáním nebo posouváním?",
-    "crowdsource": "Ř_Do you want to crowdsource places from your audience_________________ů?",
-    "categories": "Ř_Are your places organized into categories______________ů?",
-    "datasets": "Ř_How many datasets will be compared____________ů?",
-    "narrative": "Ř_Do you want your narrative to__________ů:"
+    "crowdsource": "Chcete místa získávat od svého publika?",
+    "categories": "Jsou vaše místa organizována do kategorií?",
+    "datasets": "Kolik datových sad bude porovnáváno?",
+    "narrative": "Chcete, aby váš příběh:"
   },
   "finalApp": {
     "weRecommend": "Doporučujeme: {{STORY_TYPE}}",
@@ -42,22 +42,22 @@ define({
   },
   "reasons": {
     "mapTour": "Tato aplikace představuje řazený příběh založený na místech ve formě řady fotografií a popisků s geotagy spojených s interaktivní mapou. Je ideální pro pěší prohlídky nebo řadu umístění, která mají vaši uživatelé procházet v určitém pořadí.",
-    "mapJournal": "Ř_This app lets you present an in-depth narrative in a scrolling side panel and organized into sections. Each section has an associated featured media such as a map, image, video, etc________________________________________________________ů.",
-    "cascade": "Ř_This app lets you present your narrative as a compelling, full-page scrolling experience. Sections containing text and in-line media can be interspersed with 'immersive' sections that fill the page and can include effects like map animations and visual transitions_________________________________________________________________________________ů.",
+    "mapJournal": "Tato aplikace vám umožní prezentovat podrobný příběh organizovaný do sekcí v posuvném postranním panelu. Ke každé sekci jsou přiřazena vybraná média, například mapy, obrázky, videa atd.",
+    "cascade": "Tato aplikace vám umožní prezentovat příběh v atraktivní celostránkové formě s možností posouvání. Sekce obsahující text a vložená média lze prokládat „poutavými“ sekcemi, které zaplní celou stránku a mohou obsahovat efekty, jako jsou např. mapové animace a vizuální přechody.",
     "mapSeries": "Tato aplikace vám umožní prezentovat sérii map pomocí záložek, číslovaných odrážek, nebo naší navigace v podobě postranního rozbalovacího panelu. V sérii můžete při vyprávění svého příběhu použít také obrázky, video a webový obsah.",
-    "crowdsource": "Ř_This app lets you publish and manage a crowdsourced story which anyone can contribute to. Use it to engage a specific audience or the general public on the subject of your choice. A vetting function lets you review and approve contributions_________________________________________________________________________ů.",
-    "shortlist": "Ř_This app lets you present a set of places of interest organized into tabs based on themes, such as parks, attractions, hotels, etc. The tabs update to show people what's in the area they are looking at on the map, making it easy and fun to find out what's available_________________________________________________________________________________ů.",
+    "crowdsource": "Tato aplikace vám umožní publikovat a spravovat příběh z externích zdrojů, do kterého může kdokoli přispívat. Můžete s její pomocí oslovit konkrétní publikum nebo širokou veřejnost svým vybraným tématem. Díky funkci vetování můžete kontrolovat a schvalovat příspěvky.",
+    "shortlist": "Tato aplikace vám umožní prezentovat sadu zajímavých míst organizovaných do karet na základě témat, např. parky, atrakce, hotely atd. Karty se aktualizují tak, aby lidé viděli, co se nachází v oblasti mapy, kterou si prohlížejí, a mohli snadno a zábavnou formou zjišťovat, co mají k dispozici.",
     "swipeSpyglass": "Tato aplikace umožňuje uživatelům porovnat dvě mapy nebo dvě vrstvy ve stejné mapě. Je vhodná především pro zobrazení snímků „před a po“ nebo jiných změn v průběhu času.",
     "basic": "Tato aplikace vám umožní prezentovat mapu pomocí velmi jednoduchého a minimalistického uživatelského rozhraní. Kromě záhlaví a volitelné legendy obsahuje rozhraní pouze mapu, která vyplňuje obrazovku. Pomocí této aplikace můžete mapě umožnit, aby mluvila sama za sebe."
   },
   "shortReasons": {
     "mapTour": "Provádějte uživatele sérií míst",
-    "mapJournal": "Ř_Present a narrative in a scrolling side panel_______________ů",
-    "cascade": "Ř_Present a narrative with immersive, full-page scroll_________________ů",
+    "mapJournal": "Prezentujte příběh v posuvném postranním panelu",
+    "cascade": "Prezentujte příběh v poutavé celostránkové formě s možností posouvání",
     "mapSeries": "Prezentujte řadu souvisejících map",
-    "crowdsource": "Ř_Publish a story anyone can contribute to_____________ů",
-    "shortlist": "Ř_Present places of interest organized into tabs_______________ů",
-    "swipeSpyglass": "Ř_Compare two maps or layers with a slider or spyglass_________________ů",
+    "crowdsource": "Publikujte příběh, do kterého může kdokoli přispívat",
+    "shortlist": "Prezentujte zajímavá místa organizovaná do karet",
+    "swipeSpyglass": "Porovnejte dvě mapy nebo vrstvy posuvníkem nebo lupou",
     "basic": "Přemýšlejte minimalisticky, skvělé pro jednu mapu"
   },
   "signInBuildDialog": {

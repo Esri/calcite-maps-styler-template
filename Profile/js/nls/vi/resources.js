@@ -19,28 +19,28 @@ define({
     "error": "Không thể tạo bản đồ"
   },
   "nav": {
-    "close": "Đ_Close___ớ"
+    "close": "Đóng"
   },
   "elevation": {
-    "toggle": "Đ_Toggle the Elevation Profile Chart____________ớ.",
-    "drawTool": "Đ_Draw a line on the map to generate an elevation profile__________________ớ.",
-    "selectMessage": "Đ_Click a line feature or use the draw tool to draw a line to display the elevation profile____________________________ớ",
-    "gainLossTemplate": "Đ_Min: ${min}   Max: ${max}   Start: ${start}   End: ${end}   Change: ${gainLoss}_________________________ớ"
+    "toggle": "Chuyển đổi Biểu đồ Thông tin Độ cao.",
+    "drawTool": "Vẽ một đường trên bản đồ để tạo thông tin độ cao.",
+    "selectMessage": "Nhấp vào đối tượng dòng hoặc sử dụng công cụ vẽ để vẽ một đường để hiển thị thông tin độ cao",
+    "gainLossTemplate": "Tối thiểu: ${min}   Tối đa: ${max}   Bắt đầu: ${start}   Kết thúc: ${end}   Thay đổi: ${gainLoss}"
   },
   "splash": {
-    "title": "Đ_Title___ớ",
-    "content": "Đ_Configure to create custom splash content_____________ớ"
+    "title": "Tiêu đề",
+    "content": "Cấu hình để tạo nội dung khởi động tùy chỉnh"
   },
   "legend": {
-    "title": "Đ_Legend___ớ",
-    "tip": "Đ_Display legend_____ớ"
+    "title": "Chú giải",
+    "tip": "Hiển thị chú giải"
   },
   "basemap": {
-    "title": "Đ_Basemap___ớ",
-    "tip": "Đ_Change basemap_____ớ"
+    "title": "Bản đồ nền",
+    "tip": "Thay đổi bản đồ nền"
   },
   "share": {
-    "title": "Đ_Share___ớ",
-    "tip": "Đ_Share map____ớ"
+    "title": "Chia sẻ",
+    "tip": "Chia sẻ bản đồ"
   }
 });

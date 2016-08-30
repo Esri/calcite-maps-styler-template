@@ -40,7 +40,7 @@ define({
   },
   "cantFindStories": {
     "whereAreStories": "Nevidíte svůj příběh?",
-    "notSeeExplanation": "Ř_My Stories will only list story maps hosted in ArcGIS ({{STORY_MAP_BASIC}} is currently not supported). See our {{FAQ}} for more information___________________________________________ů.",
+    "notSeeExplanation": "Sekce Moje příběhy zobrazuje pouze mapy s příběhem hostované v systému ArcGIS ({{STORY_MAP_BASIC}} momentálně není podporováno). Pro další informace viz {{FAQ}}.",
     "faq": "Často kladené dotazy",
     "followingStoriesToUpdate": "Následující příběhy vytvořené dřívějšími verzemi našich aplikací je třeba aktualizovat, aby byly uvedeny v sekci Moje příběhy:",
     "gettingStories": "Probíhá vyhledávání příběhů vytvořených dřívějšími verzemi našich aplikací, které je třeba aktualizovat...",
@@ -88,16 +88,16 @@ define({
     "layerPrivate": "Nastavení vaší vrstvy na soukromou by rozbilo příběh"
   },
   "collectionList": {
-    "business": "Ř_Business and Economy_______ů",
-    "history": "Ř_History and Culture_______ů",
-    "inNews": "Ř_In The News____ů",
-    "infrastructure": "Ř_Infrastructure and Construction__________ů",
-    "nature": "Ř_Nature and Conservation________ů",
+    "business": "Obchod a ekonomika",
+    "history": "Dějiny a kultura",
+    "inNews": "Ve zprávách",
+    "infrastructure": "Infrastruktura a stavebnictví",
+    "nature": "Příroda a její ochrana",
     "people": "Lidé a společnost",
-    "planning": "Ř_Planning and Design_______ů",
+    "planning": "Plánování a design",
     "science": "Věda a technologie",
-    "sports": "Ř_Sports and Entertainment________ů",
-    "travel": "Ř_Travel and Recreation_______ů"
+    "sports": "Sport a zábava",
+    "travel": "Cestování a odpočinek"
   },
   "types": {
     "custom": "Vlastní",
@@ -216,7 +216,7 @@ define({
   "content": {
     "media": {
       "maps": "Mapy",
-      "scenes": "Ř_Scenes___ů",
+      "scenes": "Scény",
       "images": "Snímky",
       "videos": "Videa",
       "webpages": "Webové stránky",
@@ -235,29 +235,29 @@ define({
       "tab": "Záložka",
       "accordion": "Část",
       "mapJournal": "Část",
-      "cascade": "Ř_Section___ů",
-      "crowdsource": "Ř_Contribution_____ů",
-      "shortlist": "Ř_Tab__ů"
+      "cascade": "Část",
+      "crowdsource": "Příspěvek",
+      "shortlist": "Záložka"
     },
     "titleType": {
       "mapTour": "Popis",
       "mapJournal": "Adresa URL",
       "mapSeries": "Adresa URL",
-      "cascade": "Ř_URL__ů",
-      "crowdsource": "Ř_URL__ů",
-      "shortlist": "Ř_URL__ů"
+      "cascade": "Adresa URL",
+      "crowdsource": "Adresa URL",
+      "shortlist": "Adresa URL"
     },
     "actions": {
       "viewMap": "Prohlížet mapu",
       "editMap": "Upravit mapu",
-      "editScene": "Ř_Edit Scene____ů",
+      "editScene": "Upravit scénu",
       "fix": "Opravit",
       "viewLayer": "Zobrazit vrstvu"
     },
     "contentType": {
       "mainStage": "akce hlavní úrovně",
       "sidePanel": "popis",
-      "introImage": "Ř_(cover page photo)______ů"
+      "introImage": "(fotografie na titulní straně)"
     },
     "notification": {
       "refreshExplanation": "Znovu zkontrolujte svůj příběh",
@@ -298,7 +298,7 @@ define({
       "publicDisabled": "Veřejné sdílení bylo zakázáno administrátorem",
       "orgDisabled": "Sdílení s vaší organizací bylo zakázáno administrátorem",
       "noMapName": "Nepodařilo se získat název mapy",
-      "noSceneName": "Ř_Could Not Retrieve Scene________ů",
+      "noSceneName": "Nepodařilo se načíst scénu",
       "notPublic": "NEVEŘEJNÉ",
       "inaccessible": "NEPŘÍSTUPNÉ",
       "deleted": "ODSTRANĚNO",
@@ -350,8 +350,8 @@ define({
       "cantScanThisTypeAlt": "Nejsme schopni zkontrolovat tento typ vrstvy",
       "cantScanThisType": "Vrstva není typ, který dokážeme zkontrolovat",
       "webpageNotScanned": "Webové stránky nejsou zkontrolovány",
-      "sceneNotScanned": "Ř_Scenes are not currently checked for issues, please make sure that the scene and all of its layers are shared correctly_____________________________________ů",
-      "scenesNotScannedGlobally": "Ř_There are scenes in this story, and scenes are not currently checked for issues. Please make sure that the scenes and all of their layers are shared correctly________________________________________________ů",
+      "sceneNotScanned": "U scén se momentálně neprovádí kontroly případných chyb. Ujistěte se, že scéna a všechny její vrstvy jsou správně sdíleny.",
+      "scenesNotScannedGlobally": "Tento příběh obsahuje scény, přičemž u scén se momentálně neprovádí kontroly případných chyb. Ujistěte se, že scény a všechny jejich vrstvy jsou správně sdíleny.",
       "ignoredIssue": "Ignorovali jste chybu na této vrstvě. Obnovte stránku, zkontrolujte příběh znovu a přezkoumejte tuto chybu.",
       "ignoredIssueBuilder": "Ignorovali jste chybu na této vrstvě. Obnovte nástroj pro tvorbu a přezkoumejte tuto chybu."
     },
@@ -452,25 +452,25 @@ define({
       "thirdTitle": "mapy"
     },
     "cascade": {
-      "firstTitle": "Ř_sections___ů",
-      "secondTitle": "Ř_maps__ů"
+      "firstTitle": "sekce",
+      "secondTitle": "mapy"
     },
     "swipeSpyglass": {
-      "firstTitle": "Ř_points of interest______ů",
+      "firstTitle": "body zájmu",
       "secondTitle": "style",
       "secondValueA": "překrývání",
       "secondValueB": "lupa",
       "thirdTitle": "mapy"
     },
     "crowdsource": {
-      "firstTitle": "Ř_contributions_____ů",
-      "secondTitle": "Ř_basemap___ů",
-      "secondValueLoading": "Ř_Loading____ů...",
-      "secondValueUnknown": "Ř_unknown___ů"
+      "firstTitle": "příspěvky",
+      "secondTitle": "podkladová mapa",
+      "secondValueLoading": "Načítání…...",
+      "secondValueUnknown": "neznámý"
     },
     "shortlist": {
-      "firstTitle": "Ř_places___ů",
-      "secondTitle": "Ř_tabs__ů",
+      "firstTitle": "místa",
+      "secondTitle": "záložky",
       "thirdTitle": "podkladová mapa",
       "thirdValueLoading": "Načítání…...",
       "thirdValueUnknown": "neznámý"

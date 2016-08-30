@@ -83,7 +83,7 @@ define({
     "valueRadioButtonLabel": "Değer",
     "uniqueRadioButtonLabel": "Tek",
     "selectLayerToBegin": "Başlamak için bir kategori seçin",
-    "layerFeatureCount": "ı_${selectedFeatureCount} selected / ${featureCount} records__________________İ"
+    "layerFeatureCount": "${selectedFeatureCount} seçili / ${featureCount} kayıt"
   },
   "timeSlider": {
     "timeSliderLabel": "Zaman aralığı",
@@ -102,7 +102,7 @@ define({
     "selectFileText": "...",
     "attachmentSelectedMsg": "ek seçildi",
     "attachmentHeaderText": "Ekler",
-    "addRecordText": "ı_Add Record____İ"
+    "addRecordText": "Kayıt Ekle"
   },
   "main": {
     "noGroup": "Yapılandırılan grup yok"
@@ -114,18 +114,18 @@ define({
   },
   "manualRefresh": {
     "manualRefreshIconTooltip": "Yenile",
-    "confirmManualRefreshText": "ı_All selections and unsaved changes will be discarded_________________İ"
+    "confirmManualRefreshText": "Tüm seçimler ve kaydedilmemiş değişiklikler silinecek"
   },
   "help": {
     "helpIconTooltip": "Yardım"
   },
   "filter": {
     "noFeatureFoundText": "Bu değer için detay bulunamadı.",
-    "distinctQueryFailed": "ı_No distinct values found for the field_____________İ.",
+    "distinctQueryFailed": "Alan için farklı değer bulunamadı.",
     "andText": "ve",
-    "filterInEditModeAlert": "ı_Filters unavailable while editing___________İ.",
+    "filterInEditModeAlert": "Düzenleme sırasında filtre kullanılamaz.",
     "dropdownSelectOption": "Seç",
-    "filterInShowSelectedEditModeAlert": "ı_Filters unavailable in 'Show Selected' mode______________İ."
+    "filterInShowSelectedEditModeAlert": "'Seçileni Göster' modunda filtre kullanılamaz."
   },
   "detailsPanel": {
     "editContentText": "Kaydı düzenle"
@@ -135,8 +135,8 @@ define({
     "reSignInMessage": "Oturum açmak için buraya tıklayın"
   },
   "selectionOptions": {
-    "selectionOptionsIconTooltip": "ı_Selection Options______İ",
-    "showAllOptionText": "ı_Show All___İ",
-    "showSelectedOptionText": "ı_Show Selected_____İ"
+    "selectionOptionsIconTooltip": "Seçim Seçenekleri",
+    "showAllOptionText": "Tümünü Göster",
+    "showSelectedOptionText": "Seçileni Göster"
   }
 });

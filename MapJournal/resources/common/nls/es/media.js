@@ -32,14 +32,14 @@ define({
       "pageExplain": "Una página de Facebook es una marca/producto público o famoso como <b>esrigis</b>. Puedes obtener el nombre de la página después de la  primera '/' de la URL de la página.",
       "pageInputLbl": "Nombre de la página",
       "lookupMsgError": "No se encontró la página",
-      "warning": "á_Facebook support has been discontinued, ${learn}________________Ó.",
-      "learn": "á_learn more____Ó"
+      "warning": "Facebook ya no se admite, ${learn}.",
+      "learn": "más información"
     },
     "imageSelectorPicasa": {
-      "userInputLbl": "á_Email or Picasa id______Ó",
+      "userInputLbl": "Dirección de correo electrónico o Id. de Picasa",
       "signInMsg2": "Cuenta no encontrada",
-      "howToFind": "á_How to find a Picasa id________Ó",
-      "howToFind2": "á_Copy digits between the first and second '/' of any Picasa page____________________Ó"
+      "howToFind": "Cómo encontrar un Id. de Picasa",
+      "howToFind2": "Copie los dígitos que hay entre la primera y la segunda '/' de cualquier página de Picasa"
     },
     "videoSelectorCommon": {
       "check": "Comprobar",
@@ -104,9 +104,9 @@ define({
       "lblPosition4Explain": "(puede distorsionarse)",
       "unloadLbl": "Detener cuando el lector abandone la sección",
       "unloadHelp": "Si la página web incluye contenido multimedia de audio o vídeo, deja marcada esta opción para evitar que el contenido se reproduzca cuando el lector se mueva. Desactiva la opción, por ejemplo, para que la pista de audio se siga reproduciendo a medida que el lector avanza por la historia.<br />Si la página web es una aplicación, desactiva la opción para que la historia no se vuelva a cargar si el lector regresa a ella.",
-      "embedProtocolLabel": "á_Load page over a secure connection (HTTPS)______________Ó",
-      "embedProtocolWarning1": "á_Your story is configured to load over a secure connection (https), so web page show in the story must also use a secure connection. If the page does not load it may be because it is not available over a secure connection or that it cannot be included in your story (some websites restrict this). You may need to create a hyperlink to open the page in a new browser tab________________________________________________________________________________________________________________Ó.",
-      "embedProtocolWarning2": "á_Your story is configured to load over an insecure connection (http), so you can choose to load this page over a secure (recommended) or insecure connection. If the page does not load, it may be because it does not support the connection type you selected or that it cannot be included in your story (some websites restrict this). You may need to create a hyperlink to open the page in a new browser tab__________________________________________________________________________________________________________________________Ó."
+      "embedProtocolLabel": "Cargue la página a través de una conexión de Internet segura (HTTPS)",
+      "embedProtocolWarning1": "Su historia está configurada para cargarse a través de una conexión a Internet segura (https), de modo que la página Web que se muestre en la historia también debe utilizar una conexión segura. Si la página no se carga puede ser debido a que no está disponible a través de una conexión segura o a no se puede incluir en su historia (algunos sitios web lo restringen). Puede que tenga que crear un hipervínculo para abrir la página en una nueva pestaña del navegador.",
+      "embedProtocolWarning2": "Su historia está configurada para cargarse a través de una conexión a Internet no segura (http), de modo que puede optar por cargar esta página a través de una conexión segura (recomendado) o una conexión no segura. Si la página no se carga puede ser debido a que no se admite el tipo de conexión que ha seleccionado o a no se puede incluir en su historia (algunos sitios web lo restringen). Puede que tenga que crear un hipervínculo para abrir la página en una nueva pestaña del navegador."
     },
     "editorActionGeocode": {
       "lblTitle": "Buscar una dirección o un lugar",

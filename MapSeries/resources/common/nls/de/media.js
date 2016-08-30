@@ -32,14 +32,14 @@ define({
       "pageExplain": "Eine Facebook-Seite entspricht einer öffentlichen Marke/einem Produkt oder einer prominenten Person wie <b>esrigis</b>. Den Seitennamen können sie dem Text nach dem ersten Schrägstrich ('/') in der Seiten-URL entnehmen.",
       "pageInputLbl": "Seitenname",
       "lookupMsgError": "Seite nicht gefunden",
-      "warning": "ä_Facebook support has been discontinued, ${learn}________________Ü.",
-      "learn": "ä_learn more____Ü"
+      "warning": "Facebook wird nicht mehr unterstützt, ${learn}.",
+      "learn": "Weitere Informationen"
     },
     "imageSelectorPicasa": {
-      "userInputLbl": "ä_Email or Picasa id______Ü",
+      "userInputLbl": "E-Mail oder Picasa-ID",
       "signInMsg2": "Konto nicht gefunden",
-      "howToFind": "ä_How to find a Picasa id________Ü",
-      "howToFind2": "ä_Copy digits between the first and second '/' of any Picasa page____________________Ü"
+      "howToFind": "Eine Picasa-ID suchen",
+      "howToFind2": "Ziffern zwischen dem ersten und zweiten '/' einer beliebigen Picasa-Seite kopieren"
     },
     "videoSelectorCommon": {
       "check": "Aktivieren",
@@ -104,9 +104,9 @@ define({
       "lblPosition4Explain": "(Verzerren möglich)",
       "unloadLbl": "Anhalten, wenn Benutzer zu einem anderen Ort navigiert",
       "unloadHelp": "Wenn die Webseite über Audio- oder Video-Medien verfügt, lassen Sie diese Option aktiviert, um die Wiedergabe dieses Inhalts zu beenden, wenn der Leser zu einem anderen Ort navigiert. Deaktivieren Sie sie, um beispielsweise die Wiedergabe eines Soundtracks fortzusetzen, während der Leser durch die Story blättert.<br />Wenn es sich bei der Webseite um eine Anwendung handelt, deaktivieren Sie diese Option, damit die Story nicht erneut geladen wird, wenn der Leser zu ihr zurückkehrt.",
-      "embedProtocolLabel": "ä_Load page over a secure connection (HTTPS)______________Ü",
-      "embedProtocolWarning1": "ä_Your story is configured to load over a secure connection (https), so web page show in the story must also use a secure connection. If the page does not load it may be because it is not available over a secure connection or that it cannot be included in your story (some websites restrict this). You may need to create a hyperlink to open the page in a new browser tab________________________________________________________________________________________________________________Ü.",
-      "embedProtocolWarning2": "ä_Your story is configured to load over an insecure connection (http), so you can choose to load this page over a secure (recommended) or insecure connection. If the page does not load, it may be because it does not support the connection type you selected or that it cannot be included in your story (some websites restrict this). You may need to create a hyperlink to open the page in a new browser tab__________________________________________________________________________________________________________________________Ü."
+      "embedProtocolLabel": "Seite über eine sichere Verbindung (HTTPS) laden",
+      "embedProtocolWarning1": "Ihre Story ist so konfiguriert, dass sie über eine sichere Verbindung (HTTPS) geladen wird, daher muss die in der Story angezeigte Webseite ebenfalls eine sichere Verbindung verwenden. Wenn die Seite nicht geladen wird, kann dies darauf zurückzuführen sein, dass sie nicht über eine sichere Verbindung verfügbar ist oder nicht in Ihre Story eingefügt werden kann (dies wird durch einige Websites eingeschränkt). Sie müssen möglicherweise einen Hyperlink erstellen, um die Seite in einer neuen Browser-Registerkarte zu öffnen.",
+      "embedProtocolWarning2": "Ihre Story ist so konfiguriert, dass sie über eine nicht gesicherte Verbindung (HTTP) geladen wird, daher können Sie diese Seite über eine sichere (empfohlen) oder eine nicht gesicherte Verbindung laden. Wenn die Seite nicht geladen wird, kann dies darauf zurückzuführen sein, dass sie den ausgewählten Verbindungstyp nicht unterstützt oder nicht in Ihre Story eingefügt werden kann (dies wird durch einige Websites eingeschränkt). Sie müssen möglicherweise einen Hyperlink erstellen, um die Seite in einer neuen Browser-Registerkarte zu öffnen."
     },
     "editorActionGeocode": {
       "lblTitle": "Adresse oder Ort suchen",

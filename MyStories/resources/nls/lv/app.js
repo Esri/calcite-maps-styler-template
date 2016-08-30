@@ -40,7 +40,7 @@ define({
   },
   "cantFindStories": {
     "whereAreStories": "Vai neredzat savu stāstu?",
-    "notSeeExplanation": "ķ_My Stories will only list story maps hosted in ArcGIS ({{STORY_MAP_BASIC}} is currently not supported). See our {{FAQ}} for more information___________________________________________ū.",
+    "notSeeExplanation": "Sadaļā Mani stāsti tiks norādītas tikai stāstu kartes, kas viesotas ArcGIS ({{STORY_MAP_BASIC}} pašlaik netiek atbalstīts). Lai saņemtu papildinformāciju, aplūkojiet sadaļu {{FAQ}}.",
     "faq": "Biežāk uzdotie jautājumi",
     "followingStoriesToUpdate": "Lai tālāk minētos stāstus, kas izveidoti mūsu lietotņu iepriekšējās versijās, varētu parādīt sadaļā Mani stāsti, tie ir jāatjaunina:",
     "gettingStories": "Meklē stāstus, kas izveidoti mūsu lietotņu iepriekšējās versijās un ir jāatjaunina...",
@@ -88,16 +88,16 @@ define({
     "layerPrivate": "Privāta statusa piešķiršana slānim var sabojāt jūsu stāstu"
   },
   "collectionList": {
-    "business": "ķ_Business and Economy_______ū",
-    "history": "ķ_History and Culture_______ū",
-    "inNews": "ķ_In The News____ū",
-    "infrastructure": "ķ_Infrastructure and Construction__________ū",
-    "nature": "ķ_Nature and Conservation________ū",
+    "business": "Uzņēmējdarbība un ekonomika",
+    "history": "Vēsture un kultūra",
+    "inNews": "Jaunumi",
+    "infrastructure": "Infrastruktūra un būvniecība",
+    "nature": "Daba un dabas aizsardzība",
     "people": "Cilvēki un sabiedrība",
-    "planning": "ķ_Planning and Design_______ū",
+    "planning": "Plānošana un projektēšana",
     "science": "Zinātne un tehnoloģija",
-    "sports": "ķ_Sports and Entertainment________ū",
-    "travel": "ķ_Travel and Recreation_______ū"
+    "sports": "Sports un izklaide",
+    "travel": "Ceļojumi un atpūta"
   },
   "types": {
     "custom": "Pielāgots",
@@ -216,7 +216,7 @@ define({
   "content": {
     "media": {
       "maps": "Kartes",
-      "scenes": "ķ_Scenes___ū",
+      "scenes": "Scēnas",
       "images": "Attēli",
       "videos": "Video",
       "webpages": "Tīmekļa lapas",
@@ -235,29 +235,29 @@ define({
       "tab": "Cilne",
       "accordion": "Sadaļa",
       "mapJournal": "Sadaļa",
-      "cascade": "ķ_Section___ū",
-      "crowdsource": "ķ_Contribution_____ū",
-      "shortlist": "ķ_Tab__ū"
+      "cascade": "Sadaļa",
+      "crowdsource": "Līdzdalība",
+      "shortlist": "Cilne"
     },
     "titleType": {
       "mapTour": "Virsraksts",
       "mapJournal": "Vietrādis URL",
       "mapSeries": "Vietrādis URL",
-      "cascade": "ķ_URL__ū",
-      "crowdsource": "ķ_URL__ū",
-      "shortlist": "ķ_URL__ū"
+      "cascade": "URL",
+      "crowdsource": "URL",
+      "shortlist": "URL"
     },
     "actions": {
       "viewMap": "Skatīt karti",
       "editMap": "Rediģēt karti",
-      "editScene": "ķ_Edit Scene____ū",
+      "editScene": "Rediģēt scēnu",
       "fix": "Labot",
       "viewLayer": "Skatīt slāni"
     },
     "contentType": {
       "mainStage": "galvenā posma darbība",
       "sidePanel": "apraksts",
-      "introImage": "ķ_(cover page photo)______ū"
+      "introImage": "(titullapas fotoattēls)"
     },
     "notification": {
       "refreshExplanation": "Vēlreiz pārbaudiet savu stāstu",
@@ -298,7 +298,7 @@ define({
       "publicDisabled": "Administrators ir atspējojis publisku koplietošanu",
       "orgDisabled": "Administrators ir atspējojis koplietošanu jūsu organizācijā",
       "noMapName": "Neizdevās atgūt kartes nosaukumu",
-      "noSceneName": "ķ_Could Not Retrieve Scene________ū",
+      "noSceneName": "Scēnu nevarēja izgūt",
       "notPublic": "NAV PUBLISKS",
       "inaccessible": "NEPIEEJAMS",
       "deleted": "DZĒSTS",
@@ -350,8 +350,8 @@ define({
       "cantScanThisTypeAlt": "Nevar pārbaudīt šāda tipa slāni",
       "cantScanThisType": "Šis nav tāda tipa slānis, ko varētu pārbaudīt",
       "webpageNotScanned": "Tīmekļa lapas netiek pārbaudītas, meklējot problēmas",
-      "sceneNotScanned": "ķ_Scenes are not currently checked for issues, please make sure that the scene and all of its layers are shared correctly_____________________________________ū",
-      "scenesNotScannedGlobally": "ķ_There are scenes in this story, and scenes are not currently checked for issues. Please make sure that the scenes and all of their layers are shared correctly________________________________________________ū",
+      "sceneNotScanned": "Scēnās šobrīd netiek pārbaudītas problēmas, pārliecinieties, ka scēna un visi tās slāņi tiek koplietoti pareizi.",
+      "scenesNotScannedGlobally": "Šajā stāstā ir scēnas, un scēnās šobrīd netiek pārbaudītas problēmas. Pārliecinieties, ka scēnas un visi to slāņi tiek koplietoti pareizi.",
       "ignoredIssue": "Jūs ignorējāt šajā slānī esošu kļūdu. Atkārtoti ielādējiet lapu un vēlreiz pārbaudiet stāstu, lai pārskatītu kļūdu",
       "ignoredIssueBuilder": "Jūs ignorējāt šajā slānī esošu kļūdu. Atkārtoti ielādējiet veidotāju, lai vēlreiz pārbaudītu kļūdu"
     },
@@ -452,25 +452,25 @@ define({
       "thirdTitle": "kartes"
     },
     "cascade": {
-      "firstTitle": "ķ_sections___ū",
-      "secondTitle": "ķ_maps__ū"
+      "firstTitle": "sadaļas",
+      "secondTitle": "kartes"
     },
     "swipeSpyglass": {
-      "firstTitle": "ķ_points of interest______ū",
+      "firstTitle": "interešu punkti",
       "secondTitle": "stils",
       "secondValueA": "pārvilkt",
       "secondValueB": "tālskatis",
       "thirdTitle": "kartes"
     },
     "crowdsource": {
-      "firstTitle": "ķ_contributions_____ū",
-      "secondTitle": "ķ_basemap___ū",
-      "secondValueLoading": "ķ_Loading____ū...",
-      "secondValueUnknown": "ķ_unknown___ū"
+      "firstTitle": "līdzdalība",
+      "secondTitle": "pamatkarte",
+      "secondValueLoading": "Ielādē...",
+      "secondValueUnknown": "nezināms"
     },
     "shortlist": {
-      "firstTitle": "ķ_places___ū",
-      "secondTitle": "ķ_tabs__ū",
+      "firstTitle": "vietas",
+      "secondTitle": "cilnes",
       "thirdTitle": "pamatkarte",
       "thirdValueLoading": "Ielādē...",
       "thirdValueUnknown": "nezināms"

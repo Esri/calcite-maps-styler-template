@@ -40,7 +40,7 @@ define({
   },
   "cantFindStories": {
     "whereAreStories": "스토리가 보이지 않나요?",
-    "notSeeExplanation": "한_My Stories will only list story maps hosted in ArcGIS ({{STORY_MAP_BASIC}} is currently not supported). See our {{FAQ}} for more information___________________________________________빠.",
+    "notSeeExplanation": "내 스토리에는 ArcGIS에서 호스팅되는 스토리 맵만 나열됩니다({{STORY_MAP_BASIC}}은 현재 지원되지 않음). 자세한 내용은 {{FAQ}}를 참고하세요.",
     "faq": "FAQ",
     "followingStoriesToUpdate": "이전 버전의 응용프로그램을 사용하여 생성한 다음 스토리는 업데이트해야 내 스토리에 나열됩니다.",
     "gettingStories": "이전 버전의 응용프로그램을 사용하여 생성했으며 업데이트해야 하는 스토리 검색 중...",
@@ -88,16 +88,16 @@ define({
     "layerPrivate": "레이어를 비공개로 설정하면 스토리가 구분됩니다."
   },
   "collectionList": {
-    "business": "한_Business and Economy_______빠",
-    "history": "한_History and Culture_______빠",
-    "inNews": "한_In The News____빠",
-    "infrastructure": "한_Infrastructure and Construction__________빠",
-    "nature": "한_Nature and Conservation________빠",
+    "business": "비즈니스 및 경제",
+    "history": "역사 및 문화",
+    "inNews": "뉴스에서",
+    "infrastructure": "인프라 및 건설",
+    "nature": "자연 및 보호",
     "people": "사람과 사회",
-    "planning": "한_Planning and Design_______빠",
+    "planning": "계획 및 설계",
     "science": "과학과 기술",
-    "sports": "한_Sports and Entertainment________빠",
-    "travel": "한_Travel and Recreation_______빠"
+    "sports": "스포츠 및 엔터테인먼트",
+    "travel": "여행 및 레크리에이션"
   },
   "types": {
     "custom": "사용자 정의",
@@ -216,7 +216,7 @@ define({
   "content": {
     "media": {
       "maps": "맵",
-      "scenes": "한_Scenes___빠",
+      "scenes": "씬",
       "images": "이미지",
       "videos": "비디오",
       "webpages": "웹 페이지",
@@ -235,29 +235,29 @@ define({
       "tab": "탭",
       "accordion": "섹션",
       "mapJournal": "섹션",
-      "cascade": "한_Section___빠",
-      "crowdsource": "한_Contribution_____빠",
-      "shortlist": "한_Tab__빠"
+      "cascade": "섹션",
+      "crowdsource": "참여",
+      "shortlist": "탭"
     },
     "titleType": {
       "mapTour": "캡션",
       "mapJournal": "URL",
       "mapSeries": "URL",
-      "cascade": "한_URL__빠",
-      "crowdsource": "한_URL__빠",
-      "shortlist": "한_URL__빠"
+      "cascade": "URL",
+      "crowdsource": "URL",
+      "shortlist": "URL"
     },
     "actions": {
       "viewMap": "맵 보기",
       "editMap": "맵 편집",
-      "editScene": "한_Edit Scene____빠",
+      "editScene": "씬 편집",
       "fix": "수정",
       "viewLayer": "레이어 보기"
     },
     "contentType": {
       "mainStage": "기본 단계 작업",
       "sidePanel": "설명",
-      "introImage": "한_(cover page photo)______빠"
+      "introImage": "(커버 페이지 사진)"
     },
     "notification": {
       "refreshExplanation": "스토리를 다시 확인하세요.",
@@ -298,7 +298,7 @@ define({
       "publicDisabled": "관리자가 공개적으로 공유하지 못하도록 설정했음",
       "orgDisabled": "관리자가 기관과 공유하지 못하도록 설정했음",
       "noMapName": "맵 이름을 검색할 수 없음",
-      "noSceneName": "한_Could Not Retrieve Scene________빠",
+      "noSceneName": "씬을 검색할 수 없음",
       "notPublic": "공개 아님",
       "inaccessible": "접근 불가",
       "deleted": "삭제됨",
@@ -350,8 +350,8 @@ define({
       "cantScanThisTypeAlt": "이 레이어 유형을 확인할 수 없습니다.",
       "cantScanThisType": "레이어가 확인 가능한 레이어 유형이 아닙니다.",
       "webpageNotScanned": "웹 페이지에서 문제를 확인하지 않았습니다.",
-      "sceneNotScanned": "한_Scenes are not currently checked for issues, please make sure that the scene and all of its layers are shared correctly_____________________________________빠",
-      "scenesNotScannedGlobally": "한_There are scenes in this story, and scenes are not currently checked for issues. Please make sure that the scenes and all of their layers are shared correctly________________________________________________빠",
+      "sceneNotScanned": "현재 씬에 문제가 있는지 확인되지 않은 상태입니다. 씬과 모든 해당 레이어가 올바르게 공유되었는지 확인하세요.",
+      "scenesNotScannedGlobally": "이 스토리에 씬이 있으며 현재는 씬에 문제가 있는지 확인되지 않은 상태입니다. 씬과 모든 해당 레이어가 올바르게 공유되었는지 확인하세요.",
       "ignoredIssue": "이 레이어의 오류를 무시했습니다. 페이지를 다시 불러와 이 스토리를 다시 확인하여 오류를 검토하세요.",
       "ignoredIssueBuilder": "이 레이어의 오류를 무시했습니다. 빌더를 다시 불러와 이 오류를 다시 검토하세요."
     },
@@ -452,25 +452,25 @@ define({
       "thirdTitle": "맵"
     },
     "cascade": {
-      "firstTitle": "한_sections___빠",
-      "secondTitle": "한_maps__빠"
+      "firstTitle": "섹션",
+      "secondTitle": "맵"
     },
     "swipeSpyglass": {
-      "firstTitle": "한_points of interest______빠",
+      "firstTitle": "관심지역",
       "secondTitle": "스타일",
       "secondValueA": "스와이프",
       "secondValueB": "투과 렌즈",
       "thirdTitle": "맵"
     },
     "crowdsource": {
-      "firstTitle": "한_contributions_____빠",
-      "secondTitle": "한_basemap___빠",
-      "secondValueLoading": "한_Loading____빠...",
-      "secondValueUnknown": "한_unknown___빠"
+      "firstTitle": "기여도",
+      "secondTitle": "베이스맵",
+      "secondValueLoading": "불러오는 중...",
+      "secondValueUnknown": "알 수 없음"
     },
     "shortlist": {
-      "firstTitle": "한_places___빠",
-      "secondTitle": "한_tabs__빠",
+      "firstTitle": "장소",
+      "secondTitle": "탭",
       "thirdTitle": "베이스맵",
       "thirdValueLoading": "불러오는 중...",
       "thirdValueUnknown": "알 수 없음"

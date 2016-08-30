@@ -40,7 +40,7 @@ define({
   },
   "cantFindStories": {
     "whereAreStories": "هل ترى الحكاية؟",
-    "notSeeExplanation": "بيت_My Stories will only list story maps hosted in ArcGIS ({{STORY_MAP_BASIC}} is currently not supported). See our {{FAQ}} for more information___________________________________________لاحقة.",
+    "notSeeExplanation": "لا يدعم الحكايات التي سيتم إدراجها خرائط الحكاية المستضافة في ArcGIS ({{STORY_MAP_BASIC}}). راجع {{الأسئلة المتداولة}} للمزيد من المعلومات.",
     "faq": "الأسئلة المتداولة",
     "followingStoriesToUpdate": "تم إنشاء الحكايات التالية مع الإصدارات السابقة للتطبيقات التي تحتاج تحديث ليتم إدراجها في الحكايات:",
     "gettingStories": "البحث عن الحكايات التالية مع الإصدارات السابقة للتطبيقات التي تحتاج التحديث...",
@@ -88,16 +88,16 @@ define({
     "layerPrivate": "قد يقوم عمل الطبقة خاصة بوقف الحكاية"
   },
   "collectionList": {
-    "business": "بيت_Business and Economy_______لاحقة",
-    "history": "بيت_History and Culture_______لاحقة",
-    "inNews": "بيت_In The News____لاحقة",
-    "infrastructure": "بيت_Infrastructure and Construction__________لاحقة",
-    "nature": "بيت_Nature and Conservation________لاحقة",
+    "business": "العمل والاقتصاد",
+    "history": "التاريخ والثقافة",
+    "inNews": "الأحداث",
+    "infrastructure": "البنية التحتية والإنشاءات",
+    "nature": "الطبيعة والحفظ",
     "people": "أشخاص ومجتمع",
-    "planning": "بيت_Planning and Design_______لاحقة",
+    "planning": "التخطيط والتصميم",
     "science": "العلوم والتكنولوجيا",
-    "sports": "بيت_Sports and Entertainment________لاحقة",
-    "travel": "بيت_Travel and Recreation_______لاحقة"
+    "sports": "الرياضة والترفيه",
+    "travel": "السفر والاستجمام"
   },
   "types": {
     "custom": "تخصيص",
@@ -216,7 +216,7 @@ define({
   "content": {
     "media": {
       "maps": "خرائط",
-      "scenes": "بيت_Scenes___لاحقة",
+      "scenes": "مشاهد",
       "images": "الصور",
       "videos": "الفيديو",
       "webpages": "صفحات الويب",
@@ -235,29 +235,29 @@ define({
       "tab": "علامة تبويب",
       "accordion": "قسم",
       "mapJournal": "قسم",
-      "cascade": "بيت_Section___لاحقة",
-      "crowdsource": "بيت_Contribution_____لاحقة",
-      "shortlist": "بيت_Tab__لاحقة"
+      "cascade": "قسم",
+      "crowdsource": "المشاركة",
+      "shortlist": "علامة تبويب"
     },
     "titleType": {
       "mapTour": "تسمية وضيحية",
       "mapJournal": "عنوان URL",
       "mapSeries": "عنوان URL",
-      "cascade": "بيت_URL__لاحقة",
-      "crowdsource": "بيت_URL__لاحقة",
-      "shortlist": "بيت_URL__لاحقة"
+      "cascade": "عنوان URL",
+      "crowdsource": "عنوان URL",
+      "shortlist": "عنوان URL"
     },
     "actions": {
       "viewMap": "عرض الخريطة",
       "editMap": "تحرير الخريطة",
-      "editScene": "بيت_Edit Scene____لاحقة",
+      "editScene": "تحرير المشهد",
       "fix": "تصحيح",
       "viewLayer": "عرض الطبقة"
     },
     "contentType": {
       "mainStage": "إجراء الخطوة الأساسية",
       "sidePanel": "الوصف",
-      "introImage": "بيت_(cover page photo)______لاحقة"
+      "introImage": "(صورة صفحة البداية)"
     },
     "notification": {
       "refreshExplanation": "تحقق من الحكاية مرة أخرى",
@@ -298,7 +298,7 @@ define({
       "publicDisabled": "قام المسئول بتعطيل المشاركة العامة",
       "orgDisabled": "قام المسئول بتعطيل المشاركة في المؤسسة",
       "noMapName": "لا يمكن استعادة اسم الخريطة",
-      "noSceneName": "بيت_Could Not Retrieve Scene________لاحقة",
+      "noSceneName": "لا يمكن استرجاع المشهد",
       "notPublic": "خاص",
       "inaccessible": "غير قابل للوصول",
       "deleted": "تم الحذف",
@@ -350,8 +350,8 @@ define({
       "cantScanThisTypeAlt": "لا يمكننا التحقق من نوع الطبقة الحالي",
       "cantScanThisType": "الطبقة ليست نوع طبقة يمكن التحقق منه",
       "webpageNotScanned": "لم يتم التحقق من صفحات الويب للموضوعات",
-      "sceneNotScanned": "بيت_Scenes are not currently checked for issues, please make sure that the scene and all of its layers are shared correctly_____________________________________لاحقة",
-      "scenesNotScannedGlobally": "بيت_There are scenes in this story, and scenes are not currently checked for issues. Please make sure that the scenes and all of their layers are shared correctly________________________________________________لاحقة",
+      "sceneNotScanned": "لم يتم تحديد المشاهد لأية مشكلات. يرجى التأكد من أن المشهد وجميع طبقاته مشاركة بشكل صحيح",
+      "scenesNotScannedGlobally": "هناك مشاهد في هذه الحكاية ومشاهد لم يتم تحديدها لأية مشكلات. يرجى التأكد من أن المشهد وجميع طبقاته مشاركة بشكل صحيح",
       "ignoredIssue": "لقد تجاهلت خطأً في هذه الطبقة. أعند تحميل الصفحة وقم بالتأشير على هذه القصة مجددًا لمراجعة الخطأ.",
       "ignoredIssueBuilder": "لقد تجاهلت خطأً في هذه الطبقة. أعند تحميل المنشئ وقم بالتأشير على هذا الخطأ مجددًا"
     },
@@ -452,25 +452,25 @@ define({
       "thirdTitle": "خرائط"
     },
     "cascade": {
-      "firstTitle": "بيت_sections___لاحقة",
-      "secondTitle": "بيت_maps__لاحقة"
+      "firstTitle": "الأقسام",
+      "secondTitle": "خرائط"
     },
     "swipeSpyglass": {
-      "firstTitle": "بيت_points of interest______لاحقة",
+      "firstTitle": "نقاط الاهتمام",
       "secondTitle": "النمط",
       "secondValueA": "سحب",
       "secondValueB": "العسة المُكبرة",
       "thirdTitle": "خرائط"
     },
     "crowdsource": {
-      "firstTitle": "بيت_contributions_____لاحقة",
-      "secondTitle": "بيت_basemap___لاحقة",
-      "secondValueLoading": "بيت_Loading____لاحقة...",
-      "secondValueUnknown": "بيت_unknown___لاحقة"
+      "firstTitle": "المساهمات",
+      "secondTitle": "خريطة الأساس",
+      "secondValueLoading": "جارِ التحميل...",
+      "secondValueUnknown": "غير معروف"
     },
     "shortlist": {
-      "firstTitle": "بيت_places___لاحقة",
-      "secondTitle": "بيت_tabs__لاحقة",
+      "firstTitle": "حفظ الأماكن",
+      "secondTitle": "علامات التبويب",
       "thirdTitle": "خريطة الأساس",
       "thirdValueLoading": "جارِ التحميل...",
       "thirdValueUnknown": "غير معروف"

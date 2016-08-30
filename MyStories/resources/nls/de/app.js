@@ -40,7 +40,7 @@ define({
   },
   "cantFindStories": {
     "whereAreStories": "Ihre Story wird nicht angezeigt?",
-    "notSeeExplanation": "ä_My Stories will only list story maps hosted in ArcGIS ({{STORY_MAP_BASIC}} is currently not supported). See our {{FAQ}} for more information___________________________________________Ü.",
+    "notSeeExplanation": "Unter \"Eigene Stories\" werden nur in ArcGIS Online gehostete Story Maps aufgeführt ({{STORY_MAP_BASIC}} wird derzeit nicht unterstützt). Weitere Informationen finden Sie in unseren {{FAQ}}.",
     "faq": "FAQ",
     "followingStoriesToUpdate": "Die folgenden Storys, die mit früheren Versionen unserer Anwendungen erstellt wurden, müssen aktualisiert werden, damit sie in \"Eigene Storys\" aufgeführt werden:",
     "gettingStories": "Es wird nach Storys gesucht, die mit früheren Versionen unserer Anwendungen erstellt wurden und aktualisiert werden müssen...",
@@ -88,16 +88,16 @@ define({
     "layerPrivate": "Wenn Sie Ihren Layer als privat einstufen, wird das Ihre Story beeinträchtigen."
   },
   "collectionList": {
-    "business": "ä_Business and Economy_______Ü",
-    "history": "ä_History and Culture_______Ü",
-    "inNews": "ä_In The News____Ü",
-    "infrastructure": "ä_Infrastructure and Construction__________Ü",
-    "nature": "ä_Nature and Conservation________Ü",
+    "business": "Wirtschaft",
+    "history": "Geschichte und Kultur",
+    "inNews": "In den Nachrichten",
+    "infrastructure": "Infrastruktur und Baugewerbe",
+    "nature": "Natur und Naturschutz",
     "people": "Menschen und Gesellschaft",
-    "planning": "ä_Planning and Design_______Ü",
+    "planning": "Planung und Design",
     "science": "Wissenschaft und Technologie",
-    "sports": "ä_Sports and Entertainment________Ü",
-    "travel": "ä_Travel and Recreation_______Ü"
+    "sports": "Sport und Unterhaltung",
+    "travel": "Reise und Erholung"
   },
   "types": {
     "custom": "Benutzerdefiniert",
@@ -216,7 +216,7 @@ define({
   "content": {
     "media": {
       "maps": "Karten",
-      "scenes": "ä_Scenes___Ü",
+      "scenes": "Szenen",
       "images": "Bilder",
       "videos": "Videos",
       "webpages": "Webseiten",
@@ -235,29 +235,29 @@ define({
       "tab": "Registerkarte",
       "accordion": "Abschnitt",
       "mapJournal": "Abschnitt",
-      "cascade": "ä_Section___Ü",
-      "crowdsource": "ä_Contribution_____Ü",
-      "shortlist": "ä_Tab__Ü"
+      "cascade": "Abschnitt",
+      "crowdsource": "Beitrag",
+      "shortlist": "Registerkarte"
     },
     "titleType": {
       "mapTour": "Beschriftung",
       "mapJournal": "URL",
       "mapSeries": "URL",
-      "cascade": "ä_URL__Ü",
-      "crowdsource": "ä_URL__Ü",
-      "shortlist": "ä_URL__Ü"
+      "cascade": "URL",
+      "crowdsource": "URL",
+      "shortlist": "URL"
     },
     "actions": {
       "viewMap": "Karte anzeigen",
       "editMap": "Karte bearbeiten",
-      "editScene": "ä_Edit Scene____Ü",
+      "editScene": "Szene bearbeiten",
       "fix": "Fix",
       "viewLayer": "Layer anzeigen"
     },
     "contentType": {
       "mainStage": "Aktion der Hauptanzeige",
       "sidePanel": "Beschreibung",
-      "introImage": "ä_(cover page photo)______Ü"
+      "introImage": "(Foto auf der Titelseite)"
     },
     "notification": {
       "refreshExplanation": "Die Story erneut prüfen",
@@ -298,7 +298,7 @@ define({
       "publicDisabled": "Die öffentliche Freigabe wurde von einem Administrator deaktiviert",
       "orgDisabled": "Die Freigabe für Ihre Organisation wurde von einem Administrator deaktiviert",
       "noMapName": "Kartenname konnte nicht abgerufen werden",
-      "noSceneName": "ä_Could Not Retrieve Scene________Ü",
+      "noSceneName": "Szene konnte nicht abgerufen werden",
       "notPublic": "NICHT ÖFFENTLICH",
       "inaccessible": "ZUGRIFF NICHT MÖGLICH",
       "deleted": "GELÖSCHT",
@@ -350,8 +350,8 @@ define({
       "cantScanThisTypeAlt": "Dieser Layer-Typ kann nicht überprüft werden.",
       "cantScanThisType": "Der Layer ist ein Layer-Typ, der nicht überprüft werden kann.",
       "webpageNotScanned": "Webseiten werden nicht auf Probleme überprüft.",
-      "sceneNotScanned": "ä_Scenes are not currently checked for issues, please make sure that the scene and all of its layers are shared correctly_____________________________________Ü",
-      "scenesNotScannedGlobally": "ä_There are scenes in this story, and scenes are not currently checked for issues. Please make sure that the scenes and all of their layers are shared correctly________________________________________________Ü",
+      "sceneNotScanned": "Szenen werden derzeit nicht auf Probleme überprüft. Stellen Sie sicher, dass die Szene und deren Layer ordnungsgemäß freigegeben wurden..",
+      "scenesNotScannedGlobally": "Diese Story enthält Szenen, und Szenen werden derzeit nicht auf Probleme überprüft. Stellen Sie sicher, dass die Szene und deren Layer ordnungsgemäß freigegeben wurden..",
       "ignoredIssue": "Sie haben einen Fehler in diesem Layer ignoriert. Laden Sie die Seite erneut, und überprüfen Sie diese Story noch einmal, um den Fehler wieder anzuzeigen.",
       "ignoredIssueBuilder": "Sie haben einen Fehler in diesem Layer ignoriert. Laden Sie den Builder erneut, um den Fehler erneut zu überprüfen."
     },
@@ -452,25 +452,25 @@ define({
       "thirdTitle": "Karten"
     },
     "cascade": {
-      "firstTitle": "ä_sections___Ü",
-      "secondTitle": "ä_maps__Ü"
+      "firstTitle": "Abschnitte",
+      "secondTitle": "Karten"
     },
     "swipeSpyglass": {
-      "firstTitle": "ä_points of interest______Ü",
+      "firstTitle": "Points of Interest",
       "secondTitle": "Style",
       "secondValueA": "vergleichen",
       "secondValueB": "Fernglas",
       "thirdTitle": "Karten"
     },
     "crowdsource": {
-      "firstTitle": "ä_contributions_____Ü",
-      "secondTitle": "ä_basemap___Ü",
-      "secondValueLoading": "ä_Loading____Ü...",
-      "secondValueUnknown": "ä_unknown___Ü"
+      "firstTitle": "Beiträge",
+      "secondTitle": "Grundkarte",
+      "secondValueLoading": "Wird geladen...",
+      "secondValueUnknown": "Unbekannt"
     },
     "shortlist": {
-      "firstTitle": "ä_places___Ü",
-      "secondTitle": "ä_tabs__Ü",
+      "firstTitle": "Orte",
+      "secondTitle": "Registerkarten",
       "thirdTitle": "Grundkarte",
       "thirdValueLoading": "Wird geladen...",
       "thirdValueUnknown": "Unbekannt"

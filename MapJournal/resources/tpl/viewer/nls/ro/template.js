@@ -37,9 +37,9 @@ define({
       "upgradeBrowser": "<a href='http://browsehappy.com/' target='_blank'>Efectuaţi un upgrade al browserului</a>.",
       "mapLoadingFail": "Ceva nu a mers bine şi harta nu a fost încărcată corect.",
       "signOut": "Ieşire",
-      "print0": "Ă_Sorry, this story cannot be printed____________ș.",
-      "print1": "Ă_To print this story, please use the print button located in the share dialog________________________ș.",
-      "print2": "Ă_Sorry, a printable version of the story is typically accessible through the share dialog, but this dialog has been disabled by the author__________________________________________ș."
+      "print0": "Ne pare rău, acest scenariu nu poate fi imprimat.",
+      "print1": "Pentru a imprima acest scenariu, folosiţi butonul de imprimare din caseta de dialog pentru partajare.",
+      "print2": "Ne pare rău, de obicei, o versiune printabilă a scenariului poate fi accesată din caseta de dialog pentru partajare, dar această casetă de dialog a fost dezactivată de autor."
     },
     "mobileView": {
       "tapForDetails": "Atingeţi pentru detalii",
@@ -89,15 +89,15 @@ define({
       "autoplayExplain1": "Modul de redare automată va avansa prin scenariul dvs. la un interval regulat. Această opţiune este ideală pentru un chioşc sau un monitor pentru afişare publică, dar, reţineţi, că în alte situaţii poate face ca scenariul să fie dificil de urmărit. Această caracteristică nu este acceptată pe ecranele de dimensiuni mici.",
       "autoplayExplain2": "Când acest mod este activ, sunt afişate butoane pentru a reda/întrerupe scenariul şi pentru a regla viteza de navigare.",
       "linksupdated": "Legătură actualizată!",
-      "print": "Ă_Print___ș",
-      "printInstruction1": "Ă_Please wait for all the content to load before printing this page_____________________ș",
-      "printInstruction1a": "Ă_Some content may not print unless you enable \"Print Background Colors and Images\" in the Print Page setup dialog___________________________________ș",
-      "printInstruction2": "Ă_This page cannot be shared with others, instead share the ${link}_____________________ș",
-      "link": "Ă_link to the story______ș",
-      "printOptPageBreak": "Ă_Begin each section on a new page___________ș",
-      "printWarning": "Ă_This is a printed version of a story map. Dynamic content such as videos and interactive maps is only available in the online version at ${link}____________________________________________ș",
-      "printMSWarning": "Ă_link available only in online story____________ș",
-      "printVideoWarning": "Ă_This video can be viewed in the online version of this story map____________________ș"
+      "print": "Imprimare",
+      "printInstruction1": "Aşteptaţi să se încarce tot conţinutul înainte de a imprima această pagină",
+      "printInstruction1a": "Unele conţinuturi nu pot fi imprimate decât dacă activaţi opţiunea „Imprimare culori şi imagini de fundal” din caseta de dialog pentru configurare Imprimare pagină",
+      "printInstruction2": "Această pagină nu poate fi partajată cu alţi utilizatori, partajaţi în schimb linkul ${link}",
+      "link": "către scenariu",
+      "printOptPageBreak": "Începeţi fiecare secţiune pe o pagină nouă",
+      "printWarning": "Aceasta este o versiune imprimată a unei hărţi informative. Conţinutul dinamic, cum ar fi videoclipurile şi hărţile interactive, este disponibil doar în versiunea online pe care o puteţi accesa cu linkul ${link}",
+      "printMSWarning": "disponibil doar în scenariul online",
+      "printVideoWarning": "Acest videoclip poate fi vizualizat în versiunea online a acestei hărţi informative"
     }
   }
 });

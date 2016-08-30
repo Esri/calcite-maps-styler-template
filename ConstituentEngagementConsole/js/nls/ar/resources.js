@@ -83,7 +83,7 @@ define({
     "valueRadioButtonLabel": "قيمة",
     "uniqueRadioButtonLabel": "فريد",
     "selectLayerToBegin": "تحديد فئة للبدء",
-    "layerFeatureCount": "بيت_${selectedFeatureCount} selected / ${featureCount} records__________________لاحقة"
+    "layerFeatureCount": "تم تحديد ${selectedFeatureCount} / تسجيلات ${featureCount}"
   },
   "timeSlider": {
     "timeSliderLabel": "النطاق الزمني",
@@ -102,7 +102,7 @@ define({
     "selectFileText": "مربع حوار",
     "attachmentSelectedMsg": "المرفقات المحددة",
     "attachmentHeaderText": "مرفقات",
-    "addRecordText": "بيت_Add Record____لاحقة"
+    "addRecordText": "إضافة تسجيل"
   },
   "main": {
     "noGroup": "لم يتم تكوين المجموعة"
@@ -114,18 +114,18 @@ define({
   },
   "manualRefresh": {
     "manualRefreshIconTooltip": "تحديث",
-    "confirmManualRefreshText": "بيت_All selections and unsaved changes will be discarded_________________لاحقة"
+    "confirmManualRefreshText": "سيتم تجاهل جميع عمليات التحديد والتغييرات غير المحفوظة"
   },
   "help": {
     "helpIconTooltip": "مساعدة"
   },
   "filter": {
     "noFeatureFoundText": "لا توجد معالم للقيمة الحالية.",
-    "distinctQueryFailed": "بيت_No distinct values found for the field_____________لاحقة.",
+    "distinctQueryFailed": "لا توجد قيم مُحددة للحقل.",
     "andText": "و",
-    "filterInEditModeAlert": "بيت_Filters unavailable while editing___________لاحقة.",
+    "filterInEditModeAlert": "لا تتوفر عوامل التصفية أثناء التحرير.",
     "dropdownSelectOption": "تحديد",
-    "filterInShowSelectedEditModeAlert": "بيت_Filters unavailable in 'Show Selected' mode______________لاحقة."
+    "filterInShowSelectedEditModeAlert": "لا تتوفر عوامل التصفية في وضع 'العرض المُحدد'"
   },
   "detailsPanel": {
     "editContentText": "تحرير التسجيل"
@@ -135,8 +135,8 @@ define({
     "reSignInMessage": "انقر هنا لتسجيل الدخول"
   },
   "selectionOptions": {
-    "selectionOptionsIconTooltip": "بيت_Selection Options______لاحقة",
-    "showAllOptionText": "بيت_Show All___لاحقة",
-    "showSelectedOptionText": "بيت_Show Selected_____لاحقة"
+    "selectionOptionsIconTooltip": "خيارات التحديد",
+    "showAllOptionText": "إظهار الكل",
+    "showSelectedOptionText": "إظهار سجلات المعالم المحددة"
   }
 });

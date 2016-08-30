@@ -54,7 +54,7 @@ define({
   },
   "item_details": {
     "likeButtonTooltip": "Hääletage selle objekti kohta",
-    "likeButtonInverseTooltip": "Š_Vote counted_____ä",
+    "likeButtonInverseTooltip": "Hääl on arvesse võetud",
     "commentButtonTooltip": "Lisa kommentaar",
     "gotoMapViewTooltip": "Mine kaardivaatesse",
     "galleryButtonTooltip": "Vaadake manustatud faile",

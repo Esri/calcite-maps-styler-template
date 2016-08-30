@@ -13,27 +13,27 @@ define({
   },
   "answerText": {
     "seriesOfPlaces": "Un conjunto de lugares",
-    "mapsNarrative": "á_A narrative____Ó",
-    "compareDatasets": "á_A comparison of datasets________Ó",
+    "mapsNarrative": "Una narración",
+    "compareDatasets": "Una comparación de datasets",
     "other": "Un solo mapa",
     "yes": "Sí",
     "no": "No",
     "click": "Clic",
     "scroll": "Desplazamiento",
-    "two": "á_Two__Ó",
-    "moreThanTwo": "á_More than two_____Ó",
-    "pickThis": "á_Pick this____Ó",
-    "detailJournal": "...á_appear in a side panel next to your featured media_________________Ó?",
-    "detailCascade": "...á_fill the whole page with a mix of text and media appearing in sequence_______________________Ó?"
+    "two": "Dos",
+    "moreThanTwo": "Más de dos",
+    "pickThis": "Elegir este",
+    "detailJournal": "¿...aparece en un panel lateral situado junto a sus medios?",
+    "detailCascade": "¿...rellena la página completa con una mezcla de texto y medios que aparecen en orden?"
   },
   "questionText": {
     "bestDescribesStory": "¿Cómo es tu historia?",
     "showPhotos": "¿Quieres mostrar fotos para cada ubicación?",
     "clickOrScroll": "¿Quieres que la gente haga clic en pestañas o se desplace verticalmente?",
-    "crowdsource": "á_Do you want to crowdsource places from your audience_________________Ó?",
-    "categories": "á_Are your places organized into categories______________Ó?",
-    "datasets": "á_How many datasets will be compared____________Ó?",
-    "narrative": "á_Do you want your narrative to__________Ó:"
+    "crowdsource": "¿Desea lugares con aportaciones colectivas de su público?",
+    "categories": "¿Están sus lugares organizados en categorías?",
+    "datasets": "¿Cuántos datasets se compararán?",
+    "narrative": "Desea que su narración:"
   },
   "finalApp": {
     "weRecommend": "Recomendamos: {{STORY_TYPE}}",
@@ -42,22 +42,22 @@ define({
   },
   "reasons": {
     "mapTour": "Esta aplicación presenta una narración secuencial basada en lugares como una serie de fotos geoetiquetadas y títulos vinculados a un mapa interactivo. Resulta ideal para recorridos o para una serie de ubicaciones que quieras que los usuarios recorran en orden.",
-    "mapJournal": "á_This app lets you present an in-depth narrative in a scrolling side panel and organized into sections. Each section has an associated featured media such as a map, image, video, etc________________________________________________________Ó.",
-    "cascade": "á_This app lets you present your narrative as a compelling, full-page scrolling experience. Sections containing text and in-line media can be interspersed with 'immersive' sections that fill the page and can include effects like map animations and visual transitions_________________________________________________________________________________Ó.",
+    "mapJournal": "Esta aplicación le permite presentar una narración detallada y organizada en secciones en un panel lateral deslizante. Cada sección tiene unos medios asociados como un mapa, una imagen, un vídeo, etc.",
+    "cascade": "Esta aplicación le permite presentar su narración como una atractiva experiencia de visualización a toda pantalla con desplazamiento. Las secciones que contienen texto y contenido multimedia insertado se pueden alternar con secciones \"envolventes\" que rellenen la pantalla y puedan incluir efectos como animaciones de mapas y transiciones visuales.",
     "mapSeries": "Esta aplicación te permite presentar una serie de mapas a través de pestañas, viñetas numeradas o un panel lateral expandible. También puedes incluir imágenes, vídeo y contenido web en tu serie para contar tu historia.",
-    "crowdsource": "á_This app lets you publish and manage a crowdsourced story which anyone can contribute to. Use it to engage a specific audience or the general public on the subject of your choice. A vetting function lets you review and approve contributions_________________________________________________________________________Ó.",
-    "shortlist": "á_This app lets you present a set of places of interest organized into tabs based on themes, such as parks, attractions, hotels, etc. The tabs update to show people what's in the area they are looking at on the map, making it easy and fun to find out what's available_________________________________________________________________________________Ó.",
+    "crowdsource": "Esta aplicación le permite publicar y administrar una historia con aportaciones colectivas a la puede contribuir cualquier persona. Utilícela para atraer a un público concreto o al público general sobre el tema que haya elegido. Una función de veto le permite revisar y aprobar las contribuciones.",
+    "shortlist": "Esta aplicación le permite presentar una serie de lugares de interés organizados en pestañas basadas en temas, como parques, atracciones, hoteles, etc. Las pestañas se actualizan para mostrar a las personas lo que hay en el área que están mirando en el mapa, de forma que descubrir qué está disponible es fácil y divertido.",
     "swipeSpyglass": "Esta aplicación permite a los usuarios comparar dos mapas o dos capas en el mismo mapa. Resulta especialmente eficaz para mostrar imágenes del antes y el después u otros cambios en el tiempo.",
     "basic": "Esta aplicación te permite presentar un mapa a través de una interfaz de usuario minimalista muy sencilla. Aparte de la barra de título y una leyenda opcional, el mapa ocupa toda la pantalla. Utiliza esta aplicación para hacer que el mapa hable por sí mismo."
   },
   "shortReasons": {
     "mapTour": "Guía a los usuarios por una secuencia de lugares",
-    "mapJournal": "á_Present a narrative in a scrolling side panel_______________Ó",
-    "cascade": "á_Present a narrative with immersive, full-page scroll_________________Ó",
+    "mapJournal": "Presentar una narración en un panel lateral deslizante",
+    "cascade": "Presentar una narración de forma envolvente, con deslizamiento de la pantalla completa",
     "mapSeries": "Presenta una serie de mapas relacionados",
-    "crowdsource": "á_Publish a story anyone can contribute to_____________Ó",
-    "shortlist": "á_Present places of interest organized into tabs_______________Ó",
-    "swipeSpyglass": "á_Compare two maps or layers with a slider or spyglass_________________Ó",
+    "crowdsource": "Publicar una historia a la que puede contribuir cualquier persona",
+    "shortlist": "Presentar lugares de interés organizados en pestañas.",
+    "swipeSpyglass": "Comparar dos mapas o capas con una barra deslizante o una lupa",
     "basic": "Concepto minimalista, perfecto para un mapa"
   },
   "signInBuildDialog": {

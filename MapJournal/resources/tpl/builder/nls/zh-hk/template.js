@@ -21,8 +21,8 @@ define({
       "cfgLarge": "大",
       "socialLinksLabel": "在每節底部顯示分享連結",
       "socialLinksDescr": "這使讀者可以引用並提升 %TPL_NAME% 的特定章節。例如，如果使用章節分享圖示，讀者將會定位到該特定 %TPL_NAME% 章節，而並非定位到故事的開頭。讀者可使用標題章節中的社交媒體連結來提升整個 %TPL_NAME%（標題索引標籤）並定位到 %TPL_NAME% 的開頭。",
-      "socialDisabled": "試_This feature is only available with Floating Panel layout__________________驗",
-      "socialWarning": "試_Your story is using Side Panel layout, but we now recommend using this option only with Floating Panel layout to avoid an issue where the panel may not position itself to the desired section for narratives with images. You may continue to use this option, but if you disable it, it will then only be available when using Floating Panel layout________________________________________________________________________________________________________驗."
+      "socialDisabled": "此圖徵只能與「浮動面板」版面配置搭配使用",
+      "socialWarning": "您的故事正在使用「側面板」版面配置，但我們目前建議您僅搭配使用此選項與「浮動面板」版面配置以避免發生問題，發生此問題時，面板不會針對內含圖片的敘述，將其本身置於所要的部分。您可以繼續使用此選項，但如果停用，則只有在使用「浮動面板」版面配置時才能使用它。"
     },
     "settingsLayoutFonts": {
       "title": "字體",

@@ -54,7 +54,7 @@ define({
   },
   "item_details": {
     "likeButtonTooltip": "ลงคะแนนสำหรับรายการนี้",
-    "likeButtonInverseTooltip": "ก้_Vote counted_____ษฺ",
+    "likeButtonInverseTooltip": "นับผลโหวต",
     "commentButtonTooltip": "เพิ่มความคิดเห็น",
     "gotoMapViewTooltip": "ไปที่การแสดงแผนที่",
     "galleryButtonTooltip": "ดูไฟล์แนบ",

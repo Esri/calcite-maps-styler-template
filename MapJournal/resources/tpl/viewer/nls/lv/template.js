@@ -37,9 +37,9 @@ define({
       "upgradeBrowser": "<a href='http://browsehappy.com/' target='_blank'>Lūdzu, atjauniniet savu pārlūku</a>.",
       "mapLoadingFail": "Ir atgadījusies kļūme — karte netika ielādēta pareizi.",
       "signOut": "Izrakstīties",
-      "print0": "ķ_Sorry, this story cannot be printed____________ū.",
-      "print1": "ķ_To print this story, please use the print button located in the share dialog________________________ū.",
-      "print2": "ķ_Sorry, a printable version of the story is typically accessible through the share dialog, but this dialog has been disabled by the author__________________________________________ū."
+      "print0": "Diemžēl šo stāstu nav iespējams drukāt.",
+      "print1": "Lai drukātu šo stāstu, izmantojiet drukas pogu, kas atrodas koplietošanas dialogā.",
+      "print2": "Atvainojiet, stāsta drukas versija parasti ir pieejama koplietošanas dialogā, bet autors šo dialogu ir atspējojis."
     },
     "mobileView": {
       "tapForDetails": "Pieskarieties, lai iegūtu detalizētu informāciju",
@@ -89,15 +89,15 @@ define({
       "autoplayExplain1": "Automātiskās demonstrēšanas režīms darbosies jūsu stāstā ar regulāriem intervāliem. Tas ir izcili piemērots rādīšanai stendos vai publiskās demonstrēšanas monitorā, bet ņemiet vērā, ka citās situācijās šis režīms var padarīt stāstu grūtāk izlasāmu. Šī funkcija netiek atbalstīta maza izmēra displejos.",
       "autoplayExplain2": "Pēc šī režīma aktivizēšanas ir pieejamas vadīklas stāsta demonstrēšanai/apturēšanai un navigācijas ātruma regulēšanai.",
       "linksupdated": "Saites ir atjauninātas.",
-      "print": "ķ_Print___ū",
-      "printInstruction1": "ķ_Please wait for all the content to load before printing this page_____________________ū",
-      "printInstruction1a": "ķ_Some content may not print unless you enable \"Print Background Colors and Images\" in the Print Page setup dialog___________________________________ū",
-      "printInstruction2": "ķ_This page cannot be shared with others, instead share the ${link}_____________________ū",
-      "link": "ķ_link to the story______ū",
-      "printOptPageBreak": "ķ_Begin each section on a new page___________ū",
-      "printWarning": "ķ_This is a printed version of a story map. Dynamic content such as videos and interactive maps is only available in the online version at ${link}____________________________________________ū",
-      "printMSWarning": "ķ_link available only in online story____________ū",
-      "printVideoWarning": "ķ_This video can be viewed in the online version of this story map____________________ū"
+      "print": "Drukāt",
+      "printInstruction1": "Pirms lapas drukāšanas pagaidiet, līdz tiek ielādēts viss saturs.",
+      "printInstruction1a": "Daļu satura var nebūt iespējams izdrukāt, ja nebūsiet Drukas lapas iestatījumu dialogā iespējojis opciju \"Drukāt fona krāsas un attēlus\".",
+      "printInstruction2": "Šo lapu nav iespējams koplietot ar citiem, tā vietā koplietojiet ${link}",
+      "link": "saite uz stāstu",
+      "printOptPageBreak": "Sāciet katru sadaļu jaunā lapā",
+      "printWarning": "Šī ir stāsta kartes drukas versija. Dinamiskais saturs, piemēram, video un interaktīvās mapes ir pieejami tikai tiešsaistes versijā: ${link}",
+      "printMSWarning": "saite uz stāstu, kas pieejams tikai tiešsaistē",
+      "printVideoWarning": "Šo video var skatīties šīs stāstu kartes tiešsaistes versijā."
     }
   }
 });

@@ -40,7 +40,7 @@ define({
   },
   "cantFindStories": {
     "whereAreStories": "Hikayenizi göremiyor musunuz?",
-    "notSeeExplanation": "ı_My Stories will only list story maps hosted in ArcGIS ({{STORY_MAP_BASIC}} is currently not supported). See our {{FAQ}} for more information___________________________________________İ.",
+    "notSeeExplanation": "Hikayelerim yalnızca ArcGIS içinde barındırılan hikaye haritalarında listelenir ({{STORY_MAP_BASIC}} şu anda desteklenmemektedir). Daha fazla bilgi için {{FAQ}} bölümümüzü inceleyin.",
     "faq": "SSS",
     "followingStoriesToUpdate": "Uygulamalarımızın önceki sürümleri ile oluşturulan aşağıdaki hikayelerin, Hikayelerim içinde listelenebilmesi için güncelleştirilmesi gerekir:",
     "gettingStories": "Uygulamalarımızın önceki sürümleri ile oluşturulan ve güncellenmesi gereken hikayeler aranıyor...",
@@ -88,16 +88,16 @@ define({
     "layerPrivate": "Katmanınızın özel yapılması hikayenizi kesintiye uğratabilir"
   },
   "collectionList": {
-    "business": "ı_Business and Economy_______İ",
-    "history": "ı_History and Culture_______İ",
-    "inNews": "ı_In The News____İ",
-    "infrastructure": "ı_Infrastructure and Construction__________İ",
-    "nature": "ı_Nature and Conservation________İ",
+    "business": "İş ve Ekonomi",
+    "history": "Tarih ve Kültür",
+    "inNews": "Haberlerde Öne Çıkanlar",
+    "infrastructure": "Altyapı ve İnşaat",
+    "nature": "Doğa ve Koruma",
     "people": "İnsanlar ve Toplum",
-    "planning": "ı_Planning and Design_______İ",
+    "planning": "Planlama ve Tasarım",
     "science": "Bilim ve Teknoloji",
-    "sports": "ı_Sports and Entertainment________İ",
-    "travel": "ı_Travel and Recreation_______İ"
+    "sports": "Spor ve Eğlence",
+    "travel": "Seyahat ve Tatil"
   },
   "types": {
     "custom": "Özel",
@@ -216,7 +216,7 @@ define({
   "content": {
     "media": {
       "maps": "Haritalar",
-      "scenes": "ı_Scenes___İ",
+      "scenes": "Sahneler",
       "images": "Görüntüler",
       "videos": "Videolar",
       "webpages": "Web sayfaları",
@@ -235,29 +235,29 @@ define({
       "tab": "Sekme",
       "accordion": "Bölüm",
       "mapJournal": "Bölüm",
-      "cascade": "ı_Section___İ",
-      "crowdsource": "ı_Contribution_____İ",
-      "shortlist": "ı_Tab__İ"
+      "cascade": "Bölüm",
+      "crowdsource": "Katkı",
+      "shortlist": "Sekme"
     },
     "titleType": {
       "mapTour": "Yakalama:",
       "mapJournal": "URL",
       "mapSeries": "URL",
-      "cascade": "ı_URL__İ",
-      "crowdsource": "ı_URL__İ",
-      "shortlist": "ı_URL__İ"
+      "cascade": "URL",
+      "crowdsource": "URL",
+      "shortlist": "URL"
     },
     "actions": {
       "viewMap": "Haritayı Görüntüle",
       "editMap": "Harita Düzenle",
-      "editScene": "ı_Edit Scene____İ",
+      "editScene": "Görünümü Düzenle",
       "fix": "Düzelt",
       "viewLayer": "Katmanı Görüntüle"
     },
     "contentType": {
       "mainStage": "ana aşama eylemi",
       "sidePanel": "açıklama",
-      "introImage": "ı_(cover page photo)______İ"
+      "introImage": "(kapak sayfası fotoğrafı)"
     },
     "notification": {
       "refreshExplanation": "Hikayenizi yeniden denetleyin",
@@ -298,7 +298,7 @@ define({
       "publicDisabled": "Genel paylaşım bir Yönetici tarafından devre dışı bırakıldı",
       "orgDisabled": "Kuruluşunuzla paylaşma bir Yönetici tarafından devre dışı bırakıldı",
       "noMapName": "Harita Adı Alınamadı",
-      "noSceneName": "ı_Could Not Retrieve Scene________İ",
+      "noSceneName": "Görünüm Alınamadı",
       "notPublic": "GENEL DEĞİL",
       "inaccessible": "ERİŞİLEMEZ",
       "deleted": "SİLİNDİ",
@@ -350,8 +350,8 @@ define({
       "cantScanThisTypeAlt": "Bu katman türü denetlenemiyor",
       "cantScanThisType": "Katman denetleyebildiğimiz bir katman türü değil",
       "webpageNotScanned": "Web sayfaları sorunlar açısından denetlenmez",
-      "sceneNotScanned": "ı_Scenes are not currently checked for issues, please make sure that the scene and all of its layers are shared correctly_____________________________________İ",
-      "scenesNotScannedGlobally": "ı_There are scenes in this story, and scenes are not currently checked for issues. Please make sure that the scenes and all of their layers are shared correctly________________________________________________İ",
+      "sceneNotScanned": "Görünümlerde şu an için sorun denetimi yapılamıyor, görünümün ve tüm katmanlarının düzgün biçimde paylaşıldığından emin olun",
+      "scenesNotScannedGlobally": "Bunlar hikayede bulunan ve henüz sorunlar açısından denetlenmemiş olan görünümlerdir. Görünümlerin ve tüm katmanlarının düzgün biçimde paylaşıldığından emin olun",
       "ignoredIssue": "Bu katmandaki bir hatayı yok saydınız. Sayfayı yeniden yükleyin ve hatayı incelemek için bu hikayeyi yeniden denetleyin",
       "ignoredIssueBuilder": "Bu katmandaki bir hatayı yok saydınız. Oluşturucuyu yeniden yükleyin ve bu hatayı yeniden inceleyin"
     },
@@ -452,25 +452,25 @@ define({
       "thirdTitle": "haritalar"
     },
     "cascade": {
-      "firstTitle": "ı_sections___İ",
-      "secondTitle": "ı_maps__İ"
+      "firstTitle": "bölümler",
+      "secondTitle": "haritalar"
     },
     "swipeSpyglass": {
-      "firstTitle": "ı_points of interest______İ",
+      "firstTitle": "gezilecek yerler",
       "secondTitle": "stil",
       "secondValueA": "kaydır",
       "secondValueB": "dürbün",
       "thirdTitle": "haritalar"
     },
     "crowdsource": {
-      "firstTitle": "ı_contributions_____İ",
-      "secondTitle": "ı_basemap___İ",
-      "secondValueLoading": "ı_Loading____İ...",
-      "secondValueUnknown": "ı_unknown___İ"
+      "firstTitle": "katkıda bulunanlar",
+      "secondTitle": "altlık harita",
+      "secondValueLoading": "Yükleniyor...",
+      "secondValueUnknown": "bilinmeyen"
     },
     "shortlist": {
-      "firstTitle": "ı_places___İ",
-      "secondTitle": "ı_tabs__İ",
+      "firstTitle": "yerler",
+      "secondTitle": "sekmeler",
       "thirdTitle": "altlık harita",
       "thirdValueLoading": "Yükleniyor...",
       "thirdValueUnknown": "bilinmeyen"

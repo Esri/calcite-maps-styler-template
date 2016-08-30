@@ -37,9 +37,9 @@ define({
       "upgradeBrowser": "<a href='http://browsehappy.com/' target='_blank'>Uppdatera din webbläsare</a>.",
       "mapLoadingFail": "Något gick fel, kartan lästes inte in på rätt sätt.",
       "signOut": "Logga ut",
-      "print0": "Å_Sorry, this story cannot be printed____________ö.",
-      "print1": "Å_To print this story, please use the print button located in the share dialog________________________ö.",
-      "print2": "Å_Sorry, a printable version of the story is typically accessible through the share dialog, but this dialog has been disabled by the author__________________________________________ö."
+      "print0": "Det går tyvärr inte att skriva ut berättelsen.",
+      "print1": "Om du vill skriva ut berättelsen använder du utskriftsknappen i dialogrutan Dela.",
+      "print2": "Det finns vanligtvis en utskrivbar version av berättelsen tillgänglig i dialogrutan Dela, men den dialogrutan har inaktiverats av författaren."
     },
     "mobileView": {
       "tapForDetails": "Peka för information",
@@ -89,15 +89,15 @@ define({
       "autoplayExplain1": "Autouppspelningsläge kommer att köras på din berättelse med ett regelbundet intervall. Detta är idealiskt för informationskiosker och offentliga bildskärmar, men du bör vara medveten om att det i andra situationer kan göra berättelsen svårare att läsa. Funktionen stöds inte på små skärmar.",
       "autoplayExplain2": "När läget är aktivt finns det kontroller för att spela upp/pausa berättelsen och anpassa navigeringshastigheten.",
       "linksupdated": "Länkarna har uppdaterats",
-      "print": "Å_Print___ö",
-      "printInstruction1": "Å_Please wait for all the content to load before printing this page_____________________ö",
-      "printInstruction1a": "Å_Some content may not print unless you enable \"Print Background Colors and Images\" in the Print Page setup dialog___________________________________ö",
-      "printInstruction2": "Å_This page cannot be shared with others, instead share the ${link}_____________________ö",
-      "link": "Å_link to the story______ö",
-      "printOptPageBreak": "Å_Begin each section on a new page___________ö",
-      "printWarning": "Å_This is a printed version of a story map. Dynamic content such as videos and interactive maps is only available in the online version at ${link}____________________________________________ö",
-      "printMSWarning": "Å_link available only in online story____________ö",
-      "printVideoWarning": "Å_This video can be viewed in the online version of this story map____________________ö"
+      "print": "Skriv ut",
+      "printInstruction1": "Vänta tills allt innehåll har lästs in innan du skriver ut den här sidan",
+      "printInstruction1a": "En del innehåll kanske inte skrivs ut om du inte aktiverar Skriv ut bakgrundsfärger och bilder i dialogrutan Utskriftsformat",
+      "printInstruction2": "Det går inte att dela den här sidan med andra, dela i stället ${link}",
+      "link": "länken till berättelsen",
+      "printOptPageBreak": "Börja varje avsnitt på en ny sida",
+      "printWarning": "Det här är en utskriven version av en berättelsekarta. Dynamiskt innehåll som videor och interaktiva kartor är bara tillgängliga i onlineversionen på ${link}",
+      "printMSWarning": "länken är endast tillgänglig i onlineberättelsen",
+      "printVideoWarning": "Den här videon kan bara visas i onlineversionen av berättelsekartan"
     }
   }
 });

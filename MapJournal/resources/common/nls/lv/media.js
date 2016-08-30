@@ -32,14 +32,14 @@ define({
       "pageExplain": "Facebook lapa ir publisks zīmols/produkts vai slavenība, piem., <b>esrigis</b>. Jūs varat saņemt lapas nosaukumu, pēc pirmās '/' lapas URL.",
       "pageInputLbl": "Lapas nosaukums",
       "lookupMsgError": "Lapa nav atrasta",
-      "warning": "ķ_Facebook support has been discontinued, ${learn}________________ū.",
-      "learn": "ķ_learn more____ū"
+      "warning": "Facebook atbalsts ir pārtraukts, ${learn}.",
+      "learn": "uzzināt vairāk"
     },
     "imageSelectorPicasa": {
-      "userInputLbl": "ķ_Email or Picasa id______ū",
+      "userInputLbl": "E-pasts vai Picasa ID",
       "signInMsg2": "Konts nav atrasts",
-      "howToFind": "ķ_How to find a Picasa id________ū",
-      "howToFind2": "ķ_Copy digits between the first and second '/' of any Picasa page____________________ū"
+      "howToFind": "Picasa ID atrašana",
+      "howToFind2": "Iekopējiet ciparus starp jebkuras Picasa lapas pirmo un otro '/'."
     },
     "videoSelectorCommon": {
       "check": "Pārbaudīt",
@@ -104,9 +104,9 @@ define({
       "lblPosition4Explain": "(var tikt izkropļots)",
       "unloadLbl": "Izlādēt, ja lasītājs pārvietojas uz citurieni",
       "unloadHelp": "Ja tīmekļa lapā ir audio vai video multivide, atzīmējiet šo iespēju, lai šis saturs netiktu atskaņots brīdī, kad lasītājs naviģē tālāk. Noņemiet atzīmi, ja vēlaties, lai, piemēram, tiktu turpināta skaņu celiņa atskaņošana, kamēr lasītājs virzās uz priekšu stāstā.<br />Ja tīmekļa lapa ir lietotne, noņemiet atzīmi pie šīs iespējas, lai stāsts netiktu ielādēts atkārtoti, lasītājam atgriežoties šajā sadaļā.",
-      "embedProtocolLabel": "ķ_Load page over a secure connection (HTTPS)______________ū",
-      "embedProtocolWarning1": "ķ_Your story is configured to load over a secure connection (https), so web page show in the story must also use a secure connection. If the page does not load it may be because it is not available over a secure connection or that it cannot be included in your story (some websites restrict this). You may need to create a hyperlink to open the page in a new browser tab________________________________________________________________________________________________________________ū.",
-      "embedProtocolWarning2": "ķ_Your story is configured to load over an insecure connection (http), so you can choose to load this page over a secure (recommended) or insecure connection. If the page does not load, it may be because it does not support the connection type you selected or that it cannot be included in your story (some websites restrict this). You may need to create a hyperlink to open the page in a new browser tab__________________________________________________________________________________________________________________________ū."
+      "embedProtocolLabel": "Ielādēt lapu, izmantojot drošu savienojumu (HTTPS)",
+      "embedProtocolWarning1": "Jūsu stāsts ir konfigurēts, lai tiktu ielādēts, izmantojot drošu savienojumu (https), tāpēc arī stāstā iekļautai tīmekļa lapai ir jāizmanto drošs savienojums. Ja lapa netiek ielādēta, tas var būt tāpēc, ka tā nav pieejama drošā savienojumā, vai tā nevar tikt iekļauta jūsu stāstā (dažas tīmekļa vietnes ierobežo šo iespēju). Iespējams, būs nepieciešams izveidot hipersaiti, lai atvērtu lapu jaunā pārlūkprogrammas cilnē.",
+      "embedProtocolWarning2": "Jūsu stāsts ir konfigurēts, lai tiktu ielādēts, izmantojot nedrošu savienojumu (http), tāpēc jūs varat izvēlēties ielādēt šo lapu, izmantojot drošu (ieteicams) vai nedrošu savienojumu. Ja lapa netiek ielādēta, tas var būt tāpēc, ka tā neatbalsta jūsu atlasīto savienojuma veidu, vai tā nevar tikt iekļauta jūsu stāstā (dažas tīmekļa vietnes ierobežo šo iespēju). Iespējams, būs nepieciešams izveidot hipersaiti, lai atvērtu lapu jaunā pārlūkprogrammas cilnē."
     },
     "editorActionGeocode": {
       "lblTitle": "Adreses vai vietas noteikšana",

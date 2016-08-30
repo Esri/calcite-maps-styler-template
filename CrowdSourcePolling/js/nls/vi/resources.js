@@ -54,7 +54,7 @@ define({
   },
   "item_details": {
     "likeButtonTooltip": "Bình chọn cho mục này",
-    "likeButtonInverseTooltip": "Đ_Vote counted_____ớ",
+    "likeButtonInverseTooltip": "Bình chọn đã được đếm",
     "commentButtonTooltip": "Thêm một bình luận",
     "gotoMapViewTooltip": "Đến chế độ xem bản đồ",
     "galleryButtonTooltip": "Xem tệp đính kèm",

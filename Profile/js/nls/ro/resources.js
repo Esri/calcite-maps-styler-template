@@ -19,28 +19,28 @@ define({
     "error": "Imposibil de creat harta"
   },
   "nav": {
-    "close": "Ă_Close___ș"
+    "close": "Închidere"
   },
   "elevation": {
-    "toggle": "Ă_Toggle the Elevation Profile Chart____________ș.",
-    "drawTool": "Ă_Draw a line on the map to generate an elevation profile__________________ș.",
-    "selectMessage": "Ă_Click a line feature or use the draw tool to draw a line to display the elevation profile____________________________ș",
-    "gainLossTemplate": "Ă_Min: ${min}   Max: ${max}   Start: ${start}   End: ${end}   Change: ${gainLoss}_________________________ș"
+    "toggle": "Comutaţi Diagramă profil de elevaţie.",
+    "drawTool": "Trasaţi o linie pe hartă pentru a genera un profil de elevaţie.",
+    "selectMessage": "Faceţi clic pe un obiect spaţial liniar sau utilizaţi instrumentul de trasare pentru a trasa o linie care va afişată în profilul de elevaţie.",
+    "gainLossTemplate": "Min: ${min}   Max: ${max}   Început: ${start}   Sfârşit: ${end}   Modificare: ${gainLoss}"
   },
   "splash": {
-    "title": "Ă_Title___ș",
-    "content": "Ă_Configure to create custom splash content_____________ș"
+    "title": "Titlu",
+    "content": "Configuraţi pentru a crea conţinut personalizat de întâmpinare"
   },
   "legend": {
-    "title": "Ă_Legend___ș",
-    "tip": "Ă_Display legend_____ș"
+    "title": "Legendă",
+    "tip": "Afişare legendă"
   },
   "basemap": {
-    "title": "Ă_Basemap___ș",
-    "tip": "Ă_Change basemap_____ș"
+    "title": "Hartă fundal",
+    "tip": "Schimbare hartă fundal"
   },
   "share": {
-    "title": "Ă_Share___ș",
-    "tip": "Ă_Share map____ș"
+    "title": "Partajare",
+    "tip": "Partajare hartă"
   }
 });

@@ -83,7 +83,7 @@ define({
     "valueRadioButtonLabel": "ערך",
     "uniqueRadioButtonLabel": "יחודי",
     "selectLayerToBegin": "בחר קטגוריה כדי להתחיל",
-    "layerFeatureCount": "כן_${selectedFeatureCount} selected / ${featureCount} records__________________ש"
+    "layerFeatureCount": "נבחרו ${selectedFeatureCount} / ${featureCount} רשומות"
   },
   "timeSlider": {
     "timeSliderLabel": "טווח זמן",
@@ -102,7 +102,7 @@ define({
     "selectFileText": "נתב",
     "attachmentSelectedMsg": "קבצים מצורפים נבחרו",
     "attachmentHeaderText": "קבצים מקושרים",
-    "addRecordText": "כן_Add Record____ש"
+    "addRecordText": "הוסף רשומה"
   },
   "main": {
     "noGroup": "לא הוגדרה קבוצה"
@@ -114,18 +114,18 @@ define({
   },
   "manualRefresh": {
     "manualRefreshIconTooltip": "רענן",
-    "confirmManualRefreshText": "כן_All selections and unsaved changes will be discarded_________________ש"
+    "confirmManualRefreshText": "כל הבחירות והשינויים שלא נשמרו יבוטלו"
   },
   "help": {
     "helpIconTooltip": "עזרה"
   },
   "filter": {
     "noFeatureFoundText": "לא נמצאה תכונה עבור ערך זה.",
-    "distinctQueryFailed": "כן_No distinct values found for the field_____________ש.",
+    "distinctQueryFailed": "לא נמצאו ערכים יחודיים עבור השדה.",
     "andText": "וגם",
-    "filterInEditModeAlert": "כן_Filters unavailable while editing___________ש.",
+    "filterInEditModeAlert": "מסננים אינם זמינים בעת עריכה.",
     "dropdownSelectOption": "בחר",
-    "filterInShowSelectedEditModeAlert": "כן_Filters unavailable in 'Show Selected' mode______________ש."
+    "filterInShowSelectedEditModeAlert": "מסננים אינם זמינים במצב 'הצג נבחרים'."
   },
   "detailsPanel": {
     "editContentText": "ערוך רשומה"
@@ -135,8 +135,8 @@ define({
     "reSignInMessage": "לחץ כאן כדי להתחבר"
   },
   "selectionOptions": {
-    "selectionOptionsIconTooltip": "כן_Selection Options______ש",
-    "showAllOptionText": "כן_Show All___ש",
-    "showSelectedOptionText": "כן_Show Selected_____ש"
+    "selectionOptionsIconTooltip": "אפשרויות בחירה",
+    "showAllOptionText": "הצג הכל",
+    "showSelectedOptionText": "הצג בחורים"
   }
 });

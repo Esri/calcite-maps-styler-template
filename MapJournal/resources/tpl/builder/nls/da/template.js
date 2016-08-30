@@ -21,8 +21,8 @@ define({
       "cfgLarge": "Stor",
       "socialLinksLabel": "Vis delings-links nederst i hver sektion",
       "socialLinksDescr": "Dette gør det muligt for læserne henvise til og fremhæve bestemte sektioner i din %TPL_NAME%. Hvis du f.eks. bruger et sektionsdelingsikon, vil læserne lande på den specifikke %TPL_NAME%-sektion i stedet for på begyndelsen af historien. Dine læsere kan bruge linket til sociale medier i titelsektionen til at fremhæve hele din %TPL_NAME% (header-fane) og få dem til at lande i starten af %TPL_NAME%.",
-      "socialDisabled": "ø_This feature is only available with Floating Panel layout__________________å",
-      "socialWarning": "ø_Your story is using Side Panel layout, but we now recommend using this option only with Floating Panel layout to avoid an issue where the panel may not position itself to the desired section for narratives with images. You may continue to use this option, but if you disable it, it will then only be available when using Floating Panel layout________________________________________________________________________________________________________å."
+      "socialDisabled": "Dette objekt er kun tilgængeligt med Flydende  panel-layout",
+      "socialWarning": "Din historie bruger Sidepanel-layout, men vi anbefaler nu, at du kun benytter denne indstilling med Flydende  panel-layout for at undgå et problem, hvor panelet måske ikke placeres i den ønskede sektion for fortællinger med billeder. Du kan fortsætte med at bruge denne indstilling, men hvis du deaktiverer den, vil den kun være tilgængelig, når du bruger Flydende panel-layout."
     },
     "settingsLayoutFonts": {
       "title": "Skrifttyper",

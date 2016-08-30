@@ -40,7 +40,7 @@ define({
   },
   "cantFindStories": {
     "whereAreStories": "Não vê a sua história?",
-    "notSeeExplanation": "ã_My Stories will only list story maps hosted in ArcGIS ({{STORY_MAP_BASIC}} is currently not supported). See our {{FAQ}} for more information___________________________________________Ç.",
+    "notSeeExplanation": "My Stories irá apenas listar story maps alojados em ArcGIS ({{STORY_MAP_BASIC}} não é suportado de momento). Consulte as nossas {{FAQ}} para obter mais informações.",
     "faq": "FAQ",
     "followingStoriesToUpdate": "As seguintes histórias, criadas com versões antigas das nossas aplicações, têm de ser atualizadas para que possam ser listadas em My Stories.",
     "gettingStories": "A procurar histórias criadas com versões antigas das nossas aplicações que têm de ser atualizadas.",
@@ -88,16 +88,16 @@ define({
     "layerPrivate": "Tornar a sua camada privada iria quebrar a sua história."
   },
   "collectionList": {
-    "business": "ã_Business and Economy_______Ç",
-    "history": "ã_History and Culture_______Ç",
-    "inNews": "ã_In The News____Ç",
-    "infrastructure": "ã_Infrastructure and Construction__________Ç",
-    "nature": "ã_Nature and Conservation________Ç",
+    "business": "Negócios e Economia",
+    "history": "História e Cultura",
+    "inNews": "Nas Notícias",
+    "infrastructure": "Infraestruturas e Construção",
+    "nature": "Natureza e Conservação",
     "people": "Pessoas e Sociedade",
-    "planning": "ã_Planning and Design_______Ç",
+    "planning": "Planeamento e Design",
     "science": "Ciência e Tecnologia",
-    "sports": "ã_Sports and Entertainment________Ç",
-    "travel": "ã_Travel and Recreation_______Ç"
+    "sports": "Desporto e Entertenimento",
+    "travel": "Viagens e Lazer"
   },
   "types": {
     "custom": "Personalizar",
@@ -216,7 +216,7 @@ define({
   "content": {
     "media": {
       "maps": "Mapas",
-      "scenes": "ã_Scenes___Ç",
+      "scenes": "Cenas 3D",
       "images": "Imagens",
       "videos": "Vídeos",
       "webpages": "Páginas Web",
@@ -235,29 +235,29 @@ define({
       "tab": "Separador",
       "accordion": "Secção",
       "mapJournal": "Secção",
-      "cascade": "ã_Section___Ç",
-      "crowdsource": "ã_Contribution_____Ç",
-      "shortlist": "ã_Tab__Ç"
+      "cascade": "Secção",
+      "crowdsource": "Contributo",
+      "shortlist": "Separador"
     },
     "titleType": {
       "mapTour": "Legenda",
       "mapJournal": "URL",
       "mapSeries": "URL",
-      "cascade": "ã_URL__Ç",
-      "crowdsource": "ã_URL__Ç",
-      "shortlist": "ã_URL__Ç"
+      "cascade": "URL",
+      "crowdsource": "URL",
+      "shortlist": "URL"
     },
     "actions": {
       "viewMap": "Ver Mapa",
       "editMap": "Editar Mapa",
-      "editScene": "ã_Edit Scene____Ç",
+      "editScene": "Editar Cena",
       "fix": "Corrigir",
       "viewLayer": "Visualizar Camada"
     },
     "contentType": {
       "mainStage": "ação principal",
       "sidePanel": "descrição",
-      "introImage": "ã_(cover page photo)______Ç"
+      "introImage": "(fotografia da página de capa)"
     },
     "notification": {
       "refreshExplanation": "Volte a verificar a sua história",
@@ -298,7 +298,7 @@ define({
       "publicDisabled": "Partilhar publicidade foi desactivado por um Administrador.",
       "orgDisabled": "Partilhar com a sua organização foi desactivado por um Administrador.",
       "noMapName": "Não Foi Possível Obter o Nome do Mapa",
-      "noSceneName": "ã_Could Not Retrieve Scene________Ç",
+      "noSceneName": "Não Foi Possível Obter Cena",
       "notPublic": "NÃO PÚBLICO",
       "inaccessible": "INACESSÍVEL",
       "deleted": "ELIMINADO",
@@ -350,8 +350,8 @@ define({
       "cantScanThisTypeAlt": "Não nos é possível verificar este tipo de camada",
       "cantScanThisType": "A camada não é de um tipo que possamos verificar",
       "webpageNotScanned": "Os problemas das páginas web não são verificados",
-      "sceneNotScanned": "ã_Scenes are not currently checked for issues, please make sure that the scene and all of its layers are shared correctly_____________________________________Ç",
-      "scenesNotScannedGlobally": "ã_There are scenes in this story, and scenes are not currently checked for issues. Please make sure that the scenes and all of their layers are shared correctly________________________________________________Ç",
+      "sceneNotScanned": "As cenas não se encontram sinalizadas como tendo problemas; por favor, garanta que a cena e todas as respetivas camadas se encontram partilhadas corretamente.",
+      "scenesNotScannedGlobally": "Existem cenas nesta história, e as cenas não se encontram sinalizadas como tendo problemas. Por favor, garanta que as cenas e todas as respetivas camadas se encontram corretamente partilhadas.",
       "ignoredIssue": "Ignorou um erro nesta camada. Recarregue a página e valide outra vez esta história para rever o erro.",
       "ignoredIssueBuilder": "Ignorou um erro nesta camada. Recarregue o edifício para validar este erro outra vez"
     },
@@ -452,25 +452,25 @@ define({
       "thirdTitle": "mapas"
     },
     "cascade": {
-      "firstTitle": "ã_sections___Ç",
-      "secondTitle": "ã_maps__Ç"
+      "firstTitle": "secções",
+      "secondTitle": "mapas"
     },
     "swipeSpyglass": {
-      "firstTitle": "ã_points of interest______Ç",
+      "firstTitle": "pontos de interesse",
       "secondTitle": "estilo",
       "secondValueA": "varrimento",
       "secondValueB": "lupa",
       "thirdTitle": "mapas"
     },
     "crowdsource": {
-      "firstTitle": "ã_contributions_____Ç",
-      "secondTitle": "ã_basemap___Ç",
-      "secondValueLoading": "ã_Loading____Ç...",
-      "secondValueUnknown": "ã_unknown___Ç"
+      "firstTitle": "contribuições",
+      "secondTitle": "mapa base",
+      "secondValueLoading": "Carregando...",
+      "secondValueUnknown": "desconhecido"
     },
     "shortlist": {
-      "firstTitle": "ã_places___Ç",
-      "secondTitle": "ã_tabs__Ç",
+      "firstTitle": "locais",
+      "secondTitle": "separadores",
       "thirdTitle": "mapa base",
       "thirdValueLoading": "Carregando...",
       "thirdValueUnknown": "desconhecido"

@@ -111,7 +111,7 @@ define({
       "logoNone": "Kein Logo",
       "logoCustom": "Benutzerdefiniertes Logo",
       "logoCustomPlaceholder": "URL (max. 250x50 Pixel)",
-      "logoCustomTargetPlaceholder": "Ziel-URL",
+      "logoCustomTargetPlaceholder": "Click-Through-Link",
       "logoSocialExplain": "Passen Sie den Kopfzeilen-Link an.",
       "logoSocialText": "Text",
       "logoSocialLink": "Link",

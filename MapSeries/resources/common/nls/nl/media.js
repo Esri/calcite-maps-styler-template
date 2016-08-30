@@ -32,14 +32,14 @@ define({
       "pageExplain": "Een Facebook-pagina is een openbaar merk/product of beroemdheid zoals <b>esrigis</b>. U vindt de naam van de pagina achter de eerste  '/' in de URL van de pagina.",
       "pageInputLbl": "Paginanaam",
       "lookupMsgError": "Pagina niet gevonden",
-      "warning": "Ĳ_Facebook support has been discontinued, ${learn}________________ä.",
-      "learn": "Ĳ_learn more____ä"
+      "warning": "Facebook ondersteuning is stopgezet, ${learn}.",
+      "learn": "meer informatie"
     },
     "imageSelectorPicasa": {
-      "userInputLbl": "Ĳ_Email or Picasa id______ä",
+      "userInputLbl": "E-mail- of Picasa-ID",
       "signInMsg2": "Account niet gevonden",
-      "howToFind": "Ĳ_How to find a Picasa id________ä",
-      "howToFind2": "Ĳ_Copy digits between the first and second '/' of any Picasa page____________________ä"
+      "howToFind": "Hoe een Picasa-ID vinden",
+      "howToFind2": "Kopieer getallen tussen de eerste en tweede '/' van een pagina van Picasa"
     },
     "videoSelectorCommon": {
       "check": "Controleren",
@@ -104,9 +104,9 @@ define({
       "lblPosition4Explain": "(kan worden vervormd)",
       "unloadLbl": "Laden ongedaan maken als lezer weggaat",
       "unloadHelp": "Houd deze optie aangevinkt als de webpagina audio- of videomedia heeft om te voorkomen dat de content wordt afgespeeld als de lezer weggaat. Haal het vinkje weg om een soundtrack te laten doorspelen als de lezer verdergaat door het verhaal.<br />Als de webpagina een applicatie is, haal het vinkje dan weg zodat de applicatie het niet opnieuw laadt als de lezer terugkeert.",
-      "embedProtocolLabel": "Ĳ_Load page over a secure connection (HTTPS)______________ä",
-      "embedProtocolWarning1": "Ĳ_Your story is configured to load over a secure connection (https), so web page show in the story must also use a secure connection. If the page does not load it may be because it is not available over a secure connection or that it cannot be included in your story (some websites restrict this). You may need to create a hyperlink to open the page in a new browser tab________________________________________________________________________________________________________________ä.",
-      "embedProtocolWarning2": "Ĳ_Your story is configured to load over an insecure connection (http), so you can choose to load this page over a secure (recommended) or insecure connection. If the page does not load, it may be because it does not support the connection type you selected or that it cannot be included in your story (some websites restrict this). You may need to create a hyperlink to open the page in a new browser tab__________________________________________________________________________________________________________________________ä."
+      "embedProtocolLabel": "Pagina laden d.m.v. een beveiligde verbinding (HTTPS)",
+      "embedProtocolWarning1": "Uw verhaal is geconfigureerd om te laden d.m.v. een beveiligde verbinding (https), dus moeten internetpagina's die in het verhaal weergegeven worden ook een beveligde verbinding gebruiken. Als de pagina niet laadt dan is dat mogelijk omdat deze niet beschikbaar is via een beveiligde verbinding of dat deze niet in uw verhaal inbegrepen kan worden (sommige websites verhinderen dit). U moet mogelijk een hyperlink maken om de pagina in een nieuw browsertabblad te openen.",
+      "embedProtocolWarning2": "Uw verhaal is geconfigureerd om te laden d.m.v. een onbeveiligde verbinding (http), dus kunt u kiezen om deze pagina te laden via een beveiligde verbinding (aanbevolen) of onbeveiligde verbinding. Als de pagina niet geladen wordt, dan is dat mogelijk omdat deze het door u geselecteerde verbindingstype niet ondersteunt of dat deze niet in uw verhaal inbegrepen kan worden (sommige websites verhinderen dit). U moet mogelijk een hyperlink maken om de pagina in een nieuw browsertabblad te openen."
     },
     "editorActionGeocode": {
       "lblTitle": "Een adres of plaats zoeken",

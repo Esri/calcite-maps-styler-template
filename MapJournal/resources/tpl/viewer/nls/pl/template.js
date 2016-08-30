@@ -37,9 +37,9 @@ define({
       "upgradeBrowser": "<a href='http://browsehappy.com/' target='_blank'>Zaktualizuj przeglądarkę</a>.",
       "mapLoadingFail": "Wystąpił pewien problem, nie wczytano mapy prawidłowo.",
       "signOut": "Wyloguj się",
-      "print0": "ł_Sorry, this story cannot be printed____________ą.",
-      "print1": "ł_To print this story, please use the print button located in the share dialog________________________ą.",
-      "print2": "ł_Sorry, a printable version of the story is typically accessible through the share dialog, but this dialog has been disabled by the author__________________________________________ą."
+      "print0": "Niestety, tej narracji nie można wydrukować.",
+      "print1": "Aby wydrukować tę narrację, użyj przycisku drukowania znajdującego się w oknie dialogowym udostępniania.",
+      "print2": "Niestety, wersja narracji przeznaczona do druku jest zwykle dostępna za pośrednictwem okna dialogowego udostępniania, ale to okno zostało zablokowane przez autora."
     },
     "mobileView": {
       "tapForDetails": "Wskaż, aby uzyskać szczegółowe informacje",
@@ -89,15 +89,15 @@ define({
       "autoplayExplain1": "W trybie automatycznego odtwarzania narracja jest prezentowana w stałym tempie. Ten tryb doskonale nadaje się do monitora kiosku internetowego lub wyświetlacza publicznego, ale należy pamiętać, że w innych sytuacjach może pogorszyć czytelność narracji. Ta funkcja nie jest obsługiwana na małych wyświetlaczach.",
       "autoplayExplain2": "Po włączeniu tego trybu udostępniane są elementy sterujące do włączania odtwarzania/wstrzymywania narracji oraz do regulacji szybkości nawigacji.",
       "linksupdated": "Zaktualizowano łącza!",
-      "print": "ł_Print___ą",
-      "printInstruction1": "ł_Please wait for all the content to load before printing this page_____________________ą",
-      "printInstruction1a": "ł_Some content may not print unless you enable \"Print Background Colors and Images\" in the Print Page setup dialog___________________________________ą",
-      "printInstruction2": "ł_This page cannot be shared with others, instead share the ${link}_____________________ą",
-      "link": "ł_link to the story______ą",
-      "printOptPageBreak": "ł_Begin each section on a new page___________ą",
-      "printWarning": "ł_This is a printed version of a story map. Dynamic content such as videos and interactive maps is only available in the online version at ${link}____________________________________________ą",
-      "printMSWarning": "ł_link available only in online story____________ą",
-      "printVideoWarning": "ł_This video can be viewed in the online version of this story map____________________ą"
+      "print": "Drukuj",
+      "printInstruction1": "Poczekaj na wczytanie całej zawartości przed drukowaniem tej strony",
+      "printInstruction1a": "Niektóre zasoby mogą nie być drukowane, dopóki nie zostanie włączona opcja „Drukuj kolory i obrazy w tle” w oknie dialogowym ustawień drukowania",
+      "printInstruction2": "Tej strony nie można udostępnić innym użytkownikom, zamiast niej można udostępnić łącze ${link}",
+      "link": "łącze do narracji",
+      "printOptPageBreak": "Zacznij każdą sekcję na nowej stronie",
+      "printWarning": "To jest drukowana wersja mapy narracyjnej. Zasoby dynamiczne, takie jak wideo i mapy interaktywne są dostępne wyłącznie w wersji online na stronie ${link}",
+      "printMSWarning": "łącze dostępne tylko w narracji online",
+      "printVideoWarning": "To wideo można obejrzeć w wersji online tej mapy narracyjnej"
     }
   }
 });

@@ -83,7 +83,7 @@ define({
     "valueRadioButtonLabel": "Vrijednost",
     "uniqueRadioButtonLabel": "Jedinstveno",
     "selectLayerToBegin": "Odaberite kategoriju za početak rada",
-    "layerFeatureCount": "Č_${selectedFeatureCount} selected / ${featureCount} records__________________ž"
+    "layerFeatureCount": "${selectedFeatureCount} odabrano / ${featureCount} zapis/a"
   },
   "timeSlider": {
     "timeSliderLabel": "Vremenski raspon",
@@ -102,7 +102,7 @@ define({
     "selectFileText": "Pregledaj",
     "attachmentSelectedMsg": "odabrani privitak(-ci)",
     "attachmentHeaderText": "Privici",
-    "addRecordText": "Č_Add Record____ž"
+    "addRecordText": "Dodaj zapis"
   },
   "main": {
     "noGroup": "Nema konfiguriranih grupa"
@@ -114,18 +114,18 @@ define({
   },
   "manualRefresh": {
     "manualRefreshIconTooltip": "Osvježi",
-    "confirmManualRefreshText": "Č_All selections and unsaved changes will be discarded_________________ž"
+    "confirmManualRefreshText": "Odbacit će se svi odabiri i nespremljene promjene"
   },
   "help": {
     "helpIconTooltip": "Pomoć"
   },
   "filter": {
     "noFeatureFoundText": "Nema geoobjekata za ovu vrijednost.",
-    "distinctQueryFailed": "Č_No distinct values found for the field_____________ž.",
+    "distinctQueryFailed": "Nema određenih vrijednosti za ovo polje.",
     "andText": "i",
-    "filterInEditModeAlert": "Č_Filters unavailable while editing___________ž.",
+    "filterInEditModeAlert": "Filtri nisu dostupni tijekom uređivanja.",
     "dropdownSelectOption": "Odaberi",
-    "filterInShowSelectedEditModeAlert": "Č_Filters unavailable in 'Show Selected' mode______________ž."
+    "filterInShowSelectedEditModeAlert": "Filtri nisu dostupni u načinu „Prikaži odabrane”."
   },
   "detailsPanel": {
     "editContentText": "Uredi zapis"
@@ -135,8 +135,8 @@ define({
     "reSignInMessage": "Kliknite ovdje za prijavu"
   },
   "selectionOptions": {
-    "selectionOptionsIconTooltip": "Č_Selection Options______ž",
-    "showAllOptionText": "Č_Show All___ž",
-    "showSelectedOptionText": "Č_Show Selected_____ž"
+    "selectionOptionsIconTooltip": "Opcije odabira",
+    "showAllOptionText": "Prikaži sve",
+    "showSelectedOptionText": "Prikaži odabrano"
   }
 });

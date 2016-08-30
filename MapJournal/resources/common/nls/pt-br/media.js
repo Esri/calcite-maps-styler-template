@@ -32,14 +32,14 @@ define({
       "pageExplain": "A página do Facebook é um produto/marca pública ou figura pública como<b>esrigis</b>. Você pode obter um nome de página após o primeiro '/' na URL da página.",
       "pageInputLbl": "Nome da página",
       "lookupMsgError": "Página não encontrada",
-      "warning": "ã_Facebook support has been discontinued, ${learn}________________Ç.",
-      "learn": "ã_learn more____Ç"
+      "warning": "O suporte do Facebook foi descontinuado, ${learn}.",
+      "learn": "mais informações"
     },
     "imageSelectorPicasa": {
-      "userInputLbl": "ã_Email or Picasa id______Ç",
+      "userInputLbl": "E-mail ou ID do Picasa",
       "signInMsg2": "Conta não encontrada",
-      "howToFind": "ã_How to find a Picasa id________Ç",
-      "howToFind2": "ã_Copy digits between the first and second '/' of any Picasa page____________________Ç"
+      "howToFind": "Como encontrar um ID do Picasa",
+      "howToFind2": "Copie dígitos entre a primeira e segunda '/' de qualquer página do Picasa"
     },
     "videoSelectorCommon": {
       "check": "Verificar",
@@ -104,9 +104,9 @@ define({
       "lblPosition4Explain": "(pode distorcer)",
       "unloadLbl": "Descarregar quando o leitor navegar",
       "unloadHelp": "Se a Página da Web tiver mídia de áudio ou de vídeo, mantenha esta opção marcada para interromper a execução do conteúdo quando o leitor navegar fora da página. Desmarque isto, por exemplo, para manter uma trilha sonora tocando quando o leitor avançar pela história.<br />Se a Página da Web for um aplicativo, desmarque esta opção de forma que a história não recarregue se o leitor retornar a ela.",
-      "embedProtocolLabel": "ã_Load page over a secure connection (HTTPS)______________Ç",
-      "embedProtocolWarning1": "ã_Your story is configured to load over a secure connection (https), so web page show in the story must also use a secure connection. If the page does not load it may be because it is not available over a secure connection or that it cannot be included in your story (some websites restrict this). You may need to create a hyperlink to open the page in a new browser tab________________________________________________________________________________________________________________Ç.",
-      "embedProtocolWarning2": "ã_Your story is configured to load over an insecure connection (http), so you can choose to load this page over a secure (recommended) or insecure connection. If the page does not load, it may be because it does not support the connection type you selected or that it cannot be included in your story (some websites restrict this). You may need to create a hyperlink to open the page in a new browser tab__________________________________________________________________________________________________________________________Ç."
+      "embedProtocolLabel": "Carregar página ao longo de uma conexão segura (HTTPS)",
+      "embedProtocolWarning1": "Sua história está configurada para carregar ao longo de uma conexão segura (https), então a página da web mostrada na história deverá também utilizar uma conexão segura. Se a página não carregá-la, pode ser devido a não estar disponível ao longo de uma conexão segura ou que não pode ser incluída em sua história (alguns sites da web restringem isto). Você pode precisar criar um hiperlink para abrir a página em uma nova guia do navegador.",
+      "embedProtocolWarning2": "Sua história está configurada para carregar ao longo de uma conexão insegura (hTTP), então você pode escolher para carregar esta página ao longo de uma conexão insegura ou segura (recomendado). Se a página não carregar, pode ser devido a não suportar o tipo de conexão que você selecionou ou que não pode ser incluída em sua história (alguns sites da web restringem isto). Você pode precisar criar um hiperlink para abrir a página em uma nova guia do navegador."
     },
     "editorActionGeocode": {
       "lblTitle": "Localizar um endereço ou lugar",

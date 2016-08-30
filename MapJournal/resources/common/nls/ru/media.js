@@ -32,14 +32,14 @@ define({
       "pageExplain": "Страница Facebook - это публичный продукт, как <b>esrigis</b>. Вы можете взять имя страницы, расположенное после первой косой черты '/' в URL страницы.",
       "pageInputLbl": "Имя страницы",
       "lookupMsgError": "Страница не найдена",
-      "warning": "Ж_Facebook support has been discontinued, ${learn}________________Я.",
-      "learn": "Ж_learn more____Я"
+      "warning": "Поддержка Facebook отменена, ${learn}.",
+      "learn": "более подробно"
     },
     "imageSelectorPicasa": {
-      "userInputLbl": "Ж_Email or Picasa id______Я",
+      "userInputLbl": "Email или Picasa id",
       "signInMsg2": "Учетная запись не найдена",
-      "howToFind": "Ж_How to find a Picasa id________Я",
-      "howToFind2": "Ж_Copy digits between the first and second '/' of any Picasa page____________________Я"
+      "howToFind": "Как найти Picasa id",
+      "howToFind2": "Скопируйте цифры, расположенные между первой и второй косой чертой '/' любой страницы Picasa"
     },
     "videoSelectorCommon": {
       "check": "Проверить",
@@ -104,9 +104,9 @@ define({
       "lblPosition4Explain": "(может исказиться)",
       "unloadLbl": "Выгрузить, когда читатель уйдет",
       "unloadHelp": "Если на веб-странице есть аудио или видео медиа, оставьте эту опцию включенной, чтобы остановить проигрывание ресурса при уходе читателя. Отключите ее, например, чтобы саундтрек проигрывался, пока читатель перемещается по истории.<br /> Если веб-является приложением, отключите эту опцию, чтобы приложение не перезагружалось при возврате читателя в этот раздел.",
-      "embedProtocolLabel": "Ж_Load page over a secure connection (HTTPS)______________Я",
-      "embedProtocolWarning1": "Ж_Your story is configured to load over a secure connection (https), so web page show in the story must also use a secure connection. If the page does not load it may be because it is not available over a secure connection or that it cannot be included in your story (some websites restrict this). You may need to create a hyperlink to open the page in a new browser tab________________________________________________________________________________________________________________Я.",
-      "embedProtocolWarning2": "Ж_Your story is configured to load over an insecure connection (http), so you can choose to load this page over a secure (recommended) or insecure connection. If the page does not load, it may be because it does not support the connection type you selected or that it cannot be included in your story (some websites restrict this). You may need to create a hyperlink to open the page in a new browser tab__________________________________________________________________________________________________________________________Я."
+      "embedProtocolLabel": "Загрузить страницу через безопасное подключение (HTTPS)",
+      "embedProtocolWarning1": "Эта история настроена для загрузки через безопасное подключение (https), то есть веб-страница с историей должна использовать безопасное подключение. Если страница не загружается, причиной этого может быть недоступность загрузки через безопасное подключение или эта страница не может быть включена в вашу историю (некоторые веб-сайты это ограничивают). Вам может понадобиться создать гиперссылку, чтобы страница открывалась в новой вкладке браузера.",
+      "embedProtocolWarning2": "Эта история настроена для загрузки через обычное подключение (http), то есть вы можете выбрать, загрузить ли эту страницу через безопасное подключение (рекомендуется) или использовать обычное подключение. Если страница не загружается, возможно, выбранный тип подключения не поддерживается, или эта страница не может быть включена в вашу историю (некоторые веб-сайты это ограничивают). Вам может понадобиться создать гиперссылку, чтобы страница открывалась в новой вкладке браузера."
     },
     "editorActionGeocode": {
       "lblTitle": "Найдите адрес или место",

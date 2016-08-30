@@ -32,14 +32,14 @@ define({
       "pageExplain": "O pagină de Facebook este o marcă sau un produs public sau o celebritate precum <b>esrigis</b>. Puteţi prelua numele paginii după primul caracter „/” din URL-ul paginii.",
       "pageInputLbl": "Nume pagină",
       "lookupMsgError": "Pagină negăsită",
-      "warning": "Ă_Facebook support has been discontinued, ${learn}________________ș.",
-      "learn": "Ă_learn more____ș"
+      "warning": "Asistenţa Facebook a fost suspendată, ${learn}.",
+      "learn": "aflaţi mai multe"
     },
     "imageSelectorPicasa": {
-      "userInputLbl": "Ă_Email or Picasa id______ș",
+      "userInputLbl": "E-mail sau ID Picasa",
       "signInMsg2": "Cont negăsit",
-      "howToFind": "Ă_How to find a Picasa id________ș",
-      "howToFind2": "Ă_Copy digits between the first and second '/' of any Picasa page____________________ș"
+      "howToFind": "Găsirea unui ID Picasa",
+      "howToFind2": "Copiaţi cifrele dintre primul şi al doilea caracter „/” al oricărei pagini Picasa"
     },
     "videoSelectorCommon": {
       "check": "Bifaţi",
@@ -104,9 +104,9 @@ define({
       "lblPosition4Explain": "(poate fi distorsionat)",
       "unloadLbl": "Se revocă încărcarea când cititorul trece în altă secţiune",
       "unloadHelp": "Dacă pagina web conţine materiale audio sau video, păstraţi această opţiune bifată pentru a opri redarea în momentul în care cititorul trece în altă secţiune. Debifaţi-o, de exemplu, pentru a continua redarea unei melodii când cititorul avansează în jurnal.<br />Dacă pagina web este o aplicaţie, debifaţi această opţiune pentru ca povestea să nu fie nevoită să se încarce din nou când cititorul revine în secţiunea respectivă.",
-      "embedProtocolLabel": "Ă_Load page over a secure connection (HTTPS)______________ș",
-      "embedProtocolWarning1": "Ă_Your story is configured to load over a secure connection (https), so web page show in the story must also use a secure connection. If the page does not load it may be because it is not available over a secure connection or that it cannot be included in your story (some websites restrict this). You may need to create a hyperlink to open the page in a new browser tab________________________________________________________________________________________________________________ș.",
-      "embedProtocolWarning2": "Ă_Your story is configured to load over an insecure connection (http), so you can choose to load this page over a secure (recommended) or insecure connection. If the page does not load, it may be because it does not support the connection type you selected or that it cannot be included in your story (some websites restrict this). You may need to create a hyperlink to open the page in a new browser tab__________________________________________________________________________________________________________________________ș."
+      "embedProtocolLabel": "Încărcaţi pagina printr-o conexiune securizată (HTTPS)",
+      "embedProtocolWarning1": "Scenariul dvs. este configurat să se încarce printr-o conexiune securizată (https), astfel că pagina web afişată în scenariu trebuie să utilizeze şi ea o conexiune securizată. Dacă pagina nu se încarcă, este posibil să nu fie disponibilă printr-o conexiune securizată, sau să nu poată fi inclusă în scenariul dvs. (unele site-uri web au restricţii în acest sens). Este posibil să fie nevoie să creaţi un hiperlink pentru a deschide pagina într-o filă de browser nouă.",
+      "embedProtocolWarning2": "Scenariul dvs. este configurat să se încarce printr-o conexiune nesecurizată (http), astfel că puteţi alege să încărcaţi această pagină printr-o conexiune securizată (recomandat) sau o conexiune nesecurizată. Dacă pagina nu se încarcă, este posibil să nu accepte tipul de conexiune selectat de dumneavoastră, sau să nu poată fi inclusă în scenariul dvs. (unele site-uri web au restricţii în acest sens). Este posibil să fie nevoie să creaţi un hiperlink pentru a deschide pagina într-o filă de browser nouă."
     },
     "editorActionGeocode": {
       "lblTitle": "Localizaţi o adresă sau un loc",

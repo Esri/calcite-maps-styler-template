@@ -32,14 +32,14 @@ define({
       "pageExplain": "דף Facebook הוא מותג/מוצר ציבורי או סלבריטי כגון <b>esrigis</b>. תוכל להשיג את שם הדף לאחר ה-'/' הראשון ב-URL של הדף.",
       "pageInputLbl": "שם דף",
       "lookupMsgError": "עמוד לא נמצא",
-      "warning": "כן_Facebook support has been discontinued, ${learn}________________ש.",
-      "learn": "כן_learn more____ש"
+      "warning": "התמיכה של Facebook נותקה, ${learn}.",
+      "learn": "מידע נוסף"
     },
     "imageSelectorPicasa": {
-      "userInputLbl": "כן_Email or Picasa id______ש",
+      "userInputLbl": "אמייל או Picasa ID",
       "signInMsg2": "חשבון לא נמצא",
-      "howToFind": "כן_How to find a Picasa id________ש",
-      "howToFind2": "כן_Copy digits between the first and second '/' of any Picasa page____________________ש"
+      "howToFind": "כיצד למצוא Picasa ID?",
+      "howToFind2": "העתק תווים בין הראשון לשני '/' של כל דף Picasa"
     },
     "videoSelectorCommon": {
       "check": "בדיקה",
@@ -88,7 +88,7 @@ define({
       "lblLabel2": "טקסט מוצג בריחוף",
       "lblLabel3": "ללא",
       "lblLabelPH": "הכנס טקסט כלשהו...",
-      "lblMaximize": "כלול את לחצן ה-maximize  בפינת התמונה",
+      "lblMaximize": "כלול את לחצן ה-maximize בפינת התמונה",
       "lblMaximizeHelp": "מומלץ רק לתמונות באיכות גבוהה",
       "lblPosition": "מיקום",
       "lblPosition1": "ממורכז",
@@ -104,9 +104,9 @@ define({
       "lblPosition4Explain": "(יכול להתעוות)",
       "unloadLbl": "בטל את הטעינה כשהקורא מנווט למקום אחר",
       "unloadHelp": "אם דף האינטרנט מכיל מדיה של שמע או וידאו, השאר אפשרות זו מסומנת כדי למנוע הפעלת תוכן זה כשהקורא מנווט למקום אחר. בטל את סימון האפשרות, למשל, כדי לגרום לפסקול להמשיך לנגן בזמן שהקורא מתקדם לאורך הסיפור.<br />אם דף האינטרנט הוא אפליקציה, בטל את סימון האפשרות כדי שהאפליקציה לא תיטען מחדש אם הקורא יחזור לשם.",
-      "embedProtocolLabel": "כן_Load page over a secure connection (HTTPS)______________ש",
-      "embedProtocolWarning1": "כן_Your story is configured to load over a secure connection (https), so web page show in the story must also use a secure connection. If the page does not load it may be because it is not available over a secure connection or that it cannot be included in your story (some websites restrict this). You may need to create a hyperlink to open the page in a new browser tab________________________________________________________________________________________________________________ש.",
-      "embedProtocolWarning2": "כן_Your story is configured to load over an insecure connection (http), so you can choose to load this page over a secure (recommended) or insecure connection. If the page does not load, it may be because it does not support the connection type you selected or that it cannot be included in your story (some websites restrict this). You may need to create a hyperlink to open the page in a new browser tab__________________________________________________________________________________________________________________________ש."
+      "embedProtocolLabel": "טען דף באמצעות חיבור מאובטח (HTTPS)",
+      "embedProtocolWarning1": "הסיפור שלך מוגדר כך שיבצע טעינה באמצעות חיבור מאובטח (HTTPS), לכן על דף האינטרנט המוצג בסיפור לעשות גם כן שימוש בחיבור מאובטח. אם הדף אינו נטען יתכן שהסיבה היא כי אינו זמין דרך חיבור מאובטח או כי אין אפשרות לכלול אותו בסיפור שלך (אתרי אינטרנט מסוימים אוסרים זאת). יתכן שתידרש ליצור קישור כדי לפתוח את דף האינטרנט בלשונית דפדפן חדשה.",
+      "embedProtocolWarning2": "הסיפור שלך מוגדר כך שיבצע טעינה באמצעות חיבור בלתי מאובטח (HTTP), באפשרותך לבחור לטעון דף זה באמצעות חיבור מאובטח (מומלץ) או בלתי מאובטח. אם הדף אינו נטען יתכן שהסיבה היא כי אינו תומך בסוג החיבור שבחרת או כי אין אפשרות לכלול אותו בסיפור שלך (אתרי אינטרנט מסוימים אוסרים זאת). יתכן שתידרש ליצור קישור כדי לפתוח את דף האינטרנט בלשונית דפדפן חדשה."
     },
     "editorActionGeocode": {
       "lblTitle": "אתר כתובת או מקום",

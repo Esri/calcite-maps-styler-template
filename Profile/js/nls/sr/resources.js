@@ -19,28 +19,28 @@ define({
     "error": "Kreiranje mape nije moguće"
   },
   "nav": {
-    "close": "Č_Close___ž"
+    "close": "Zatvori"
   },
   "elevation": {
-    "toggle": "Č_Toggle the Elevation Profile Chart____________ž.",
-    "drawTool": "Č_Draw a line on the map to generate an elevation profile__________________ž.",
-    "selectMessage": "Č_Click a line feature or use the draw tool to draw a line to display the elevation profile____________________________ž",
-    "gainLossTemplate": "Č_Min: ${min}   Max: ${max}   Start: ${start}   End: ${end}   Change: ${gainLoss}_________________________ž"
+    "toggle": "Uključite/isključite grafikon profila elevacije.",
+    "drawTool": "Nacrtajte liniju na mapi da generišete profil elevacije.",
+    "selectMessage": "Kliknite na linijski geoobjekat ili koristite alatku za crtanje da nacrtate liniju da prikažete profil elevacije",
+    "gainLossTemplate": "Min: ${min}   Maks: ${max}   Početak: ${start}   Kraj: ${end}   Promeni: ${gainLoss}"
   },
   "splash": {
-    "title": "Č_Title___ž",
-    "content": "Č_Configure to create custom splash content_____________ž"
+    "title": "Naslov",
+    "content": "Konfigurišite da kreirate prilagođeni uvodni sadržaj"
   },
   "legend": {
-    "title": "Č_Legend___ž",
-    "tip": "Č_Display legend_____ž"
+    "title": "Legenda",
+    "tip": "Prikaz legende"
   },
   "basemap": {
-    "title": "Č_Basemap___ž",
-    "tip": "Č_Change basemap_____ž"
+    "title": "Pozadinska mapa",
+    "tip": "Promenite pozadinsku mapu"
   },
   "share": {
-    "title": "Č_Share___ž",
-    "tip": "Č_Share map____ž"
+    "title": "Podeli",
+    "tip": "Podelite mapu"
   }
 });

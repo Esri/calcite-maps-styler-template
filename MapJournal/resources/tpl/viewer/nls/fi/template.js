@@ -37,9 +37,9 @@ define({
       "upgradeBrowser": "<a href='http://browsehappy.com/' target='_blank'>Päivitä selain</a>.",
       "mapLoadingFail": "Tapahtui virhe, eikä kartta latautunut oikein.",
       "signOut": "Kirjaudu ulos",
-      "print0": "Å_Sorry, this story cannot be printed____________ö.",
-      "print1": "Å_To print this story, please use the print button located in the share dialog________________________ö.",
-      "print2": "Å_Sorry, a printable version of the story is typically accessible through the share dialog, but this dialog has been disabled by the author__________________________________________ö."
+      "print0": "Valitettavasti tätä tarinaa ei voi tulostaa.",
+      "print1": "Jos haluat tulostaa tämän tarinan, käytä tulostuspainiketta jakamisen valintaikkunassa.",
+      "print2": "Tarinan tulostettava versio on tavallisesti käytettävissä jakamisen valintaikkunassa, mutta tekijä on poistanut kyseisen valintaikkunan käytöstä."
     },
     "mobileView": {
       "tapForDetails": "Saat tiedot näkyviin napauttamalla",
@@ -89,15 +89,15 @@ define({
       "autoplayExplain1": "Automaattisen toiston tilassa tarina etenee säännöllisin väliajoin. Tämä soveltuu hyvin kioskin näyttöön tai julkiseen näyttöön. Huomaa kuitenkin, että muissa tilanteissa tarinan lukeminen voi olla vaikeampaa. Tätä ominaisuutta ei tueta pienissä näytöissä.",
       "autoplayExplain2": "Kun tämä tila on käytössä, tarinan voi toistaa tai keskeyttää tai sen nopeutta voi säätää ohjausobjekteilla.",
       "linksupdated": "Linkit on päivitetty.",
-      "print": "Å_Print___ö",
-      "printInstruction1": "Å_Please wait for all the content to load before printing this page_____________________ö",
-      "printInstruction1a": "Å_Some content may not print unless you enable \"Print Background Colors and Images\" in the Print Page setup dialog___________________________________ö",
-      "printInstruction2": "Å_This page cannot be shared with others, instead share the ${link}_____________________ö",
-      "link": "Å_link to the story______ö",
-      "printOptPageBreak": "Å_Begin each section on a new page___________ö",
-      "printWarning": "Å_This is a printed version of a story map. Dynamic content such as videos and interactive maps is only available in the online version at ${link}____________________________________________ö",
-      "printMSWarning": "Å_link available only in online story____________ö",
-      "printVideoWarning": "Å_This video can be viewed in the online version of this story map____________________ö"
+      "print": "Tulosta",
+      "printInstruction1": "Odota, että koko sisältö on latautunut, ennen kuin tulostat tämän sivun",
+      "printInstruction1a": "Kaikkea sisältöä ei ehkä tulosteta, ellet ota Tulosta taustavärit ja kuvat -asetusta käyttöön Tulostussivun asetukset -valintaikkunassa",
+      "printInstruction2": "Tätä sivua ei voi jakaa muiden kanssa. Jaa sen sijaan ${link}",
+      "link": "linkki tarinaan",
+      "printOptPageBreak": "Aloita jokainen osa uudelta sivulta",
+      "printWarning": "Tämä on tarinakartan tulostettu versio. Dynaaminen sisältö, kuten videot ja vuorovaikutteiset kartat, ovat käytettävissä vain online-versiossa osoitteessa ${link}",
+      "printMSWarning": "linkki käytettävissä vain online-tarinassa",
+      "printVideoWarning": "Tämän videon voi katsoa tarinakartan online-versiossa"
     }
   }
 });

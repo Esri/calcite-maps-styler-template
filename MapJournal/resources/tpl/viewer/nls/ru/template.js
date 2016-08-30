@@ -37,9 +37,9 @@ define({
       "upgradeBrowser": "<a href='http://browsehappy.com/' target='_blank'>Обновите ваш браузер</a>.",
       "mapLoadingFail": "Произошла ошибка, карта загрузилась некорректно.",
       "signOut": "Выйти",
-      "print0": "Ж_Sorry, this story cannot be printed____________Я.",
-      "print1": "Ж_To print this story, please use the print button located in the share dialog________________________Я.",
-      "print2": "Ж_Sorry, a printable version of the story is typically accessible through the share dialog, but this dialog has been disabled by the author__________________________________________Я."
+      "print0": "К сожалению эта история не может быть напечатана.",
+      "print1": "Для того, чтобы распечатать историю, используйте кнопку Печать, расположенную в диалоговом окне общего доступа.",
+      "print2": "Печатная версия истории обычно доступна через диалог общего доступа, но, к сожалению, это диалоговое окно отключено автором истории."
     },
     "mobileView": {
       "tapForDetails": "Коснитесь для подробной информации",
@@ -89,15 +89,15 @@ define({
       "autoplayExplain1": "Режим автовоспроизведения будет проходить в вашей истории на указанном интервале. Это идеально подходит для информационных киосков или мониторов для публичного обозрения, но имейте в виду, что в некоторых случаях вашу историю будет тяжело читать. Эта возможность не поддерживается на маленьких мониторах.",
       "autoplayExplain2": "Когда активен данный режим, там есть элементы управления для включения/остановки воспроизведения истории и установки скорости перемещения.",
       "linksupdated": "Ссылки обновлены!",
-      "print": "Ж_Print___Я",
-      "printInstruction1": "Ж_Please wait for all the content to load before printing this page_____________________Я",
-      "printInstruction1a": "Ж_Some content may not print unless you enable \"Print Background Colors and Images\" in the Print Page setup dialog___________________________________Я",
-      "printInstruction2": "Ж_This page cannot be shared with others, instead share the ${link}_____________________Я",
-      "link": "Ж_link to the story______Я",
-      "printOptPageBreak": "Ж_Begin each section on a new page___________Я",
-      "printWarning": "Ж_This is a printed version of a story map. Dynamic content such as videos and interactive maps is only available in the online version at ${link}____________________________________________Я",
-      "printMSWarning": "Ж_link available only in online story____________Я",
-      "printVideoWarning": "Ж_This video can be viewed in the online version of this story map____________________Я"
+      "print": "Печать",
+      "printInstruction1": "Дождитесь загрузки всего содержания перед тем, как отправить страницу на печать",
+      "printInstruction1a": "Часть содержания не может быть напечатана, если вы не включите опцию \"Печатать фоновые цвета и изображения\" в диалоговом окне \"Параметры страницы и печати\"",
+      "printInstruction2": "Этой страницу нельзя предоставить в общий доступ, для этого воспользуйтесь ссылкой ${link}",
+      "link": "ссылка на историю",
+      "printOptPageBreak": "Начинать каждый раздел с новой страницы",
+      "printWarning": "Это печатная версия карты-истории. Динамические ресурсы, такие как видео или интерактивные карты доступны только в онлайн-версии на ${link}",
+      "printMSWarning": "ссылка доступна только для онлайн-истории",
+      "printVideoWarning": "Это видео можно посмотреть в онлайн-версии карты-истории"
     }
   }
 });

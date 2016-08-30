@@ -40,7 +40,7 @@ define({
   },
   "cantFindStories": {
     "whereAreStories": "Ne vidite vašu priču?",
-    "notSeeExplanation": "Č_My Stories will only list story maps hosted in ArcGIS ({{STORY_MAP_BASIC}} is currently not supported). See our {{FAQ}} for more information___________________________________________ž.",
+    "notSeeExplanation": "Moje priče će izlistati samo story mape koje hostuje ArcGIS ({{STORY_MAP_BASIC}} trenutno nije podržano). Pogledajte {{FAQ}} za dodatne informacije.",
     "faq": "Najčešća pitanja",
     "followingStoriesToUpdate": "Sledeće priče kreirane pomoću ranijih verzija naše aplikacije moraju da budu ažurirane da bi bile na listi „Moje priče“:",
     "gettingStories": "Traženje priča kreiranih pomoću ranijih verzija naše aplikacije koje moraju da budu ažurirane...",
@@ -88,16 +88,16 @@ define({
     "layerPrivate": "Označavanje sloja privatnim bi oštetilo priču"
   },
   "collectionList": {
-    "business": "Č_Business and Economy_______ž",
-    "history": "Č_History and Culture_______ž",
-    "inNews": "Č_In The News____ž",
-    "infrastructure": "Č_Infrastructure and Construction__________ž",
-    "nature": "Č_Nature and Conservation________ž",
+    "business": "Posao i ekonomija",
+    "history": "Istorija i kultura",
+    "inNews": "U vestima",
+    "infrastructure": "Infrastruktura i izgradnja",
+    "nature": "Priroda i zaštita prirode",
     "people": "Ljudi i društvo",
-    "planning": "Č_Planning and Design_______ž",
+    "planning": "Planiranje i projektovanje",
     "science": "Nauka i tehnologija",
-    "sports": "Č_Sports and Entertainment________ž",
-    "travel": "Č_Travel and Recreation_______ž"
+    "sports": "Sportovi i zabava",
+    "travel": "Putovanje i rekreacija"
   },
   "types": {
     "custom": "Prilagođeno",
@@ -216,7 +216,7 @@ define({
   "content": {
     "media": {
       "maps": "Mape",
-      "scenes": "Č_Scenes___ž",
+      "scenes": "Scene",
       "images": "Snimci",
       "videos": "Video zapisi",
       "webpages": "Veb stranice",
@@ -235,29 +235,29 @@ define({
       "tab": "Kartica",
       "accordion": "Odeljak",
       "mapJournal": "Odeljak",
-      "cascade": "Č_Section___ž",
-      "crowdsource": "Č_Contribution_____ž",
-      "shortlist": "Č_Tab__ž"
+      "cascade": "Odeljak",
+      "crowdsource": "Doprinos",
+      "shortlist": "Kartica"
     },
     "titleType": {
       "mapTour": "Natpis",
       "mapJournal": "URL adresa",
       "mapSeries": "URL adresa",
-      "cascade": "Č_URL__ž",
-      "crowdsource": "Č_URL__ž",
-      "shortlist": "Č_URL__ž"
+      "cascade": "URL adresa",
+      "crowdsource": "URL adresa",
+      "shortlist": "URL adresa"
     },
     "actions": {
       "viewMap": "Prikaži mapu",
       "editMap": "Izmeni mapu",
-      "editScene": "Č_Edit Scene____ž",
+      "editScene": "Uredi scenu",
       "fix": "Popravi",
       "viewLayer": "Prikaži sloj"
     },
     "contentType": {
       "mainStage": "radnja na centralnom delu",
       "sidePanel": "opis",
-      "introImage": "Č_(cover page photo)______ž"
+      "introImage": "(fotografija naslovne stranice)"
     },
     "notification": {
       "refreshExplanation": "Ponovo proverite priču",
@@ -298,7 +298,7 @@ define({
       "publicDisabled": "Javno deljenje je onemogućeno od strane administratora",
       "orgDisabled": "Deljenje sa organizacijom je onemogućeno od strane administratora",
       "noMapName": "Preuzimanje naziva mape nije uspelo",
-      "noSceneName": "Č_Could Not Retrieve Scene________ž",
+      "noSceneName": "Nije moguće preuzeti scenu",
       "notPublic": "NIJE JAVNO",
       "inaccessible": "NEDOSTUPNO",
       "deleted": "OBRISANO",
@@ -350,8 +350,8 @@ define({
       "cantScanThisTypeAlt": "Nismo u mogućnosti da proverimo ovaj tip sloja",
       "cantScanThisType": "Sloj nije tipa sloja koji možemo da proverimo",
       "webpageNotScanned": "Veb stranice nisu proverene za sporne stavke",
-      "sceneNotScanned": "Č_Scenes are not currently checked for issues, please make sure that the scene and all of its layers are shared correctly_____________________________________ž",
-      "scenesNotScannedGlobally": "Č_There are scenes in this story, and scenes are not currently checked for issues. Please make sure that the scenes and all of their layers are shared correctly________________________________________________ž",
+      "sceneNotScanned": "Trenutno nije provereno da li postoje problemi sa scenama, proverite da li je scena sa svim svojim slojevima pravilno podeljena",
+      "scenesNotScannedGlobally": "U ovoj priči postoje scene i trenutno nije provereno da li postoje problemi sa scenama. Proverite da li su scene sa svim svojim slojevima pravilno podeljene",
       "ignoredIssue": "Zanemarili ste grešku na ovom sloju. Ponovo učitajte stranicu i proverite ovu priču da biste pregledali grešku",
       "ignoredIssueBuilder": "Zanemarili ste grešku na ovom sloju. Ponovo učitajte alatku za izradu da biste proverili ovu grešku ponovo"
     },
@@ -452,25 +452,25 @@ define({
       "thirdTitle": "mape"
     },
     "cascade": {
-      "firstTitle": "Č_sections___ž",
-      "secondTitle": "Č_maps__ž"
+      "firstTitle": "odeljci",
+      "secondTitle": "mape"
     },
     "swipeSpyglass": {
-      "firstTitle": "Č_points of interest______ž",
+      "firstTitle": "tačke od interesa",
       "secondTitle": "stil",
       "secondValueA": "brzo prevlačenje",
       "secondValueB": "durbin",
       "thirdTitle": "mape"
     },
     "crowdsource": {
-      "firstTitle": "Č_contributions_____ž",
-      "secondTitle": "Č_basemap___ž",
-      "secondValueLoading": "Č_Loading____ž...",
-      "secondValueUnknown": "Č_unknown___ž"
+      "firstTitle": "doprinosi",
+      "secondTitle": "pozadinska mapa",
+      "secondValueLoading": "Učitavanje...",
+      "secondValueUnknown": "nepoznato"
     },
     "shortlist": {
-      "firstTitle": "Č_places___ž",
-      "secondTitle": "Č_tabs__ž",
+      "firstTitle": "mesta",
+      "secondTitle": "kartice",
       "thirdTitle": "pozadinska mapa",
       "thirdValueLoading": "Učitavanje...",
       "thirdValueUnknown": "nepoznato"

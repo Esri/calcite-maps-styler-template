@@ -19,28 +19,28 @@ define({
     "error": "Harita oluşturulamıyor"
   },
   "nav": {
-    "close": "ı_Close___İ"
+    "close": "Kapat"
   },
   "elevation": {
-    "toggle": "ı_Toggle the Elevation Profile Chart____________İ.",
-    "drawTool": "ı_Draw a line on the map to generate an elevation profile__________________İ.",
-    "selectMessage": "ı_Click a line feature or use the draw tool to draw a line to display the elevation profile____________________________İ",
-    "gainLossTemplate": "ı_Min: ${min}   Max: ${max}   Start: ${start}   End: ${end}   Change: ${gainLoss}_________________________İ"
+    "toggle": "Yükselti Profili Grafiğini Açın/Kapatın.",
+    "drawTool": "Yükselti profili oluşturmak için haritada bir çizgi çizin.",
+    "selectMessage": "Yükselti profilini görüntülemek için çizgi detayına tıklayın veya çizim aracını kullanarak bir çizgi çizin",
+    "gainLossTemplate": "Min: ${min}   Maks: ${max}   Başlangıç: ${start}   Bitiş: ${end}   Değişim: ${gainLoss}"
   },
   "splash": {
-    "title": "ı_Title___İ",
-    "content": "ı_Configure to create custom splash content_____________İ"
+    "title": "Başlık",
+    "content": "Özel açılış içeriği oluşturmak için yapılandır"
   },
   "legend": {
-    "title": "ı_Legend___İ",
-    "tip": "ı_Display legend_____İ"
+    "title": "Gösterim",
+    "tip": "Göstergeyi göster"
   },
   "basemap": {
-    "title": "ı_Basemap___İ",
-    "tip": "ı_Change basemap_____İ"
+    "title": "Altlık Harita",
+    "tip": "Altlık haritasını değiştir"
   },
   "share": {
-    "title": "ı_Share___İ",
-    "tip": "ı_Share map____İ"
+    "title": "Paylaş",
+    "tip": "Haritayı paylaş"
   }
 });

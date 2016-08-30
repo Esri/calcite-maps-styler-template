@@ -54,7 +54,7 @@ define({
   },
   "item_details": {
     "likeButtonTooltip": "Głosuj na ten element",
-    "likeButtonInverseTooltip": "ł_Vote counted_____ą",
+    "likeButtonInverseTooltip": "Głos policzony",
     "commentButtonTooltip": "Dodaj komentarz",
     "gotoMapViewTooltip": "Przejdź do widoku mapy",
     "galleryButtonTooltip": "Zobacz załączone pliki",

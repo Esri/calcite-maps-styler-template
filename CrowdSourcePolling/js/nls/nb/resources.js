@@ -54,7 +54,7 @@ define({
   },
   "item_details": {
     "likeButtonTooltip": "Stem på dette elementet",
-    "likeButtonInverseTooltip": "å_Vote counted_____ø",
+    "likeButtonInverseTooltip": "Stemmen er registrert",
     "commentButtonTooltip": "Legg til en kommentar",
     "gotoMapViewTooltip": "Gå til kartvisning",
     "galleryButtonTooltip": "Se vedlagte filer",

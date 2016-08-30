@@ -332,13 +332,13 @@ define({
       "lookupMsgError": "Pagina niet gevonden"
     },
     "viewPicasa": {
-      "title": "Ĳ_Picasa import_____ä",
-      "header": "Ĳ_Enter your email address or your Picasa id______________ä.",
-      "userInputLbl": "Ĳ_Email or Picasa id______ä",
+      "title": "Importeren uit Picasa",
+      "header": "Voer uw e-mailadres of Picasa-ID in.",
+      "userInputLbl": "E-mail- of Picasa-ID",
       "signInMsg2": "Account niet gevonden",
       "signInMsg3": "Geen openbaar album",
-      "howToFind": "Ĳ_How to find a Picasa id________ä",
-      "howToFind2": "Ĳ_Copy digits between the first and second '/' of any Picasa page____________________ä"
+      "howToFind": "Hoe een Picasa-ID vinden",
+      "howToFind2": "Kopieer getallen tussen de eerste en tweede '/' van een pagina van Picasa"
     },
     "viewCSV": {
       "title": "Importeren van CSV",
@@ -434,8 +434,8 @@ define({
         "div6": "<b>U wilt een bestaande Featureservice opnieuw gebruiken</b> waarin uw afbeeldingen als bijlagen zijn opgeslagen of die naar externe afbeeldingen verwijst: zie de uitgebreide sectie hierna.",
         "div7": "<b>U gebruikt een eerdere versie</b> van de Kaarttour-template en beschikt al over uw CSV-bestand met een verwijzing naar uw afbeeldingen en miniaturen: u kunt deze importeren en uw gegevens verfijnen. De builder ondersteunt alleen CSV-bestanden met lengte- en breedtegraadvelden. Op adressen gebaseerde CSV-bestanden kunt u blijven gebruiken via uw webmap (zie de sectie hierna).",
         "div8": "Importeren uit online diensten voor het delen van foto's",
-        "div9a": "Ĳ_Facebook support has been discontinued, ${learn}________________ä.",
-        "learn": "Ĳ_learn more____ä",
+        "div9a": "Facebook ondersteuning is stopgezet, ${learn}.",
+        "learn": "meer informatie",
         "div9": "Bij het importeren wordt naar reeds gehoste afbeeldingen verwezen door de URL's op te slaan in een webmapverzameling. De afbeeldingen worden niet opgeslagen in ArcGIS Online. Als de gehoste afbeeldingen niet kunnen worden geopend, zijn ze niet beschikbaar in de Kaarttour en wordt een afbeelding 'Afbeelding niet beschikbaar' weergegeven. Afhankelijk van de fotoserviceprovider importeert de Kaarttour al dan niet de naam, beschrijving en locatie van de afbeeldingen. Die attributen worden opgeslagen in de webmap en bewerkingen in de onlinediensten zijn niet zichtbaar in de Kaarttour.",
         "div10": "De afbeeldingen opslaan op een webserver",
         "div11": "Als u ervoor kiest om de afbeeldingen zelf te hosten, moet u handmatig miniaturen van uw foto's maken. Het gebruik van de volledige afbeeldingen voor miniaturen levert slechte prestaties op. Daarom raden we sterk aan om een onlinedienst voor het delen van foto's te gebruiken of een featureservice die dat voor u doet.",

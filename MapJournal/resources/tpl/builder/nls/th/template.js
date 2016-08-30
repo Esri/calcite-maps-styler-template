@@ -21,8 +21,8 @@ define({
       "cfgLarge": "ใหญ่",
       "socialLinksLabel": "การเชื่อมโยงที่แสดงร่วมกันที่ด้านล่างของแต่ละส่วน",
       "socialLinksDescr": "ซึ่งจะช่วยให้ผู้อ่านที่จะอ้างอิงและส่งเสริมเฉพาะบางส่วนของของคุณ TPL_NAME%% ตัวอย่างเช่นถ้าคุณใช้ไอคอนหุ้นส่วนผู้อ่านจะได้ที่ดินที่ว่า% เฉพาะส่วน TPL_NAME% มากกว่าที่จุดเริ่มต้นของเรื่องราวของคุณ คุณผู้อ่านสามารถใช้การเชื่อมโยงสื่อสังคมในส่วนชื่อเรื่องที่จะส่งเสริม%% TPL_NAME ทั้งหมดของคุณ (แท็บหัว) และพวกเขามีที่ดินที่เริ่มต้นของ TPL_NAME%%",
-      "socialDisabled": "ก้_This feature is only available with Floating Panel layout__________________ษฺ",
-      "socialWarning": "ก้_Your story is using Side Panel layout, but we now recommend using this option only with Floating Panel layout to avoid an issue where the panel may not position itself to the desired section for narratives with images. You may continue to use this option, but if you disable it, it will then only be available when using Floating Panel layout________________________________________________________________________________________________________ษฺ."
+      "socialDisabled": "คุณลักษณะนี้ใช้ได้กับรูปแบบโครงร่าง Floating เท่านั้น",
+      "socialWarning": "เรื่องราวของคุณใช้โครงร่างแบบ Side Panel แต่เราแนะนำให้คุณใช้การตั้งค่าเฉพาะโครงร่าง Floating เท่านั้น เพื่อหลีกเลี่ยงปัญหาที่ panel จะไม่ได้วางตำแหน่งตัวเองไปยังส่วนที่ต้องการสำหรับการเล่าเรื่องด้วยภาพ คุณสามารถใช้ตัวเลือกนี้ได้ แต่ถ้าหากปิดการใช้งาน จะแสดงเมื่อใช้โครงร่าง Floating เท่านั้น"
     },
     "settingsLayoutFonts": {
       "title": "ประเภทตัวอักษร",

@@ -21,8 +21,8 @@ define({
       "cfgLarge": "Liels",
       "socialLinksLabel": "Katras sadaļas apakšā parādīt koplietošanas saites",
       "socialLinksDescr": "Tas sniedz lasītājiem iespēju veidot atsauces uz jūsu %TPL_NAME%, kā arī reklamēt konkrētas šī vienuma sadaļas. Piemēram, ja izmantosiet sadaļu koplietošanas ikonu, lasītāji nokļūs šajā konkrētajā %TPL_NAME% sadaļā, nevis jūsu stāsta sākumā. Jūsu lasītāji var izmantot virsraksta sadaļā esošo sociālās multivides saiti, lai reklamētu visu jūsu %TPL_NAME% (galvenes cilne), kā arī varat veicināt viņu nokļūšanu %TPL_NAME% sākumā.",
-      "socialDisabled": "ķ_This feature is only available with Floating Panel layout__________________ū",
-      "socialWarning": "ķ_Your story is using Side Panel layout, but we now recommend using this option only with Floating Panel layout to avoid an issue where the panel may not position itself to the desired section for narratives with images. You may continue to use this option, but if you disable it, it will then only be available when using Floating Panel layout________________________________________________________________________________________________________ū."
+      "socialDisabled": "Šis elements ir pieejams tikai peldošā paneļa izkārtojumā",
+      "socialWarning": "Jūsu stāstam tiek izmantots sāna paneļa izkārtojums, bet būtu ieteicams šo opciju izmantot tikai kopā ar peldošā paneļa izkārtojumu, lai izvairītos no problēmas, kad panelis stāstos ar attēliem netiek novietots vēlamajā sadaļā. Jūs varat turpināt izmantot šo opciju, bet, ja tā tiks atspējota, tā būs pieejama tikai, izmantojot peldošā paneļa izkārtojumu."
     },
     "settingsLayoutFonts": {
       "title": "Fonti",

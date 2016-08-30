@@ -40,7 +40,7 @@ define({
   },
   "cantFindStories": {
     "whereAreStories": "Kas Te ei näe oma lugu?",
-    "notSeeExplanation": "Š_My Stories will only list story maps hosted in ArcGIS ({{STORY_MAP_BASIC}} is currently not supported). See our {{FAQ}} for more information___________________________________________ä.",
+    "notSeeExplanation": "Lehel Minu lood on loetletud ainult ArcGIS-is majutatud kaardilood (versiooni {{STORY_MAP_BASIC}} praegu ei toetata). Lisateavet leiate jaotisest {{FAQ}}.",
     "faq": "KKK",
     "followingStoriesToUpdate": "Järgmised meie rakenduste varasemate versioonidega loodud lood vajavad uuendamist, et neid saaks My Stories portaalis loetleda.",
     "gettingStories": "Meie rakenduste varasemate versioonidega loodud ja uuendamist vajavate lugude otsimine...",
@@ -88,16 +88,16 @@ define({
     "layerPrivate": "Kui teete oma kihi privaatseks, muutub lugu vigaseks"
   },
   "collectionList": {
-    "business": "Š_Business and Economy_______ä",
-    "history": "Š_History and Culture_______ä",
-    "inNews": "Š_In The News____ä",
-    "infrastructure": "Š_Infrastructure and Construction__________ä",
-    "nature": "Š_Nature and Conservation________ä",
+    "business": "Äri ja majandus",
+    "history": "Ajalugu ja kultuur",
+    "inNews": "Uudistes",
+    "infrastructure": "Taristu ja ehitus",
+    "nature": "Loodus- ja keskkonnahoid",
     "people": "Inimesed ja ühiskond",
-    "planning": "Š_Planning and Design_______ä",
+    "planning": "Planeerimine ja disain",
     "science": "Teadus ja tehnoloogia",
-    "sports": "Š_Sports and Entertainment________ä",
-    "travel": "Š_Travel and Recreation_______ä"
+    "sports": "Sport ja meelelahutus",
+    "travel": "Reisimine ja vaba aeg"
   },
   "types": {
     "custom": "Kohandatud",
@@ -216,7 +216,7 @@ define({
   "content": {
     "media": {
       "maps": "Kaardid",
-      "scenes": "Š_Scenes___ä",
+      "scenes": "Stseenid",
       "images": "Pildid",
       "videos": "Videod",
       "webpages": "Veebilehed",
@@ -235,29 +235,29 @@ define({
       "tab": "Vahekaart",
       "accordion": "Jaotis",
       "mapJournal": "Jaotis",
-      "cascade": "Š_Section___ä",
-      "crowdsource": "Š_Contribution_____ä",
-      "shortlist": "Š_Tab__ä"
+      "cascade": "Jaotis",
+      "crowdsource": "Kaastöö",
+      "shortlist": "Vahekaart"
     },
     "titleType": {
       "mapTour": "Alapealkiri",
       "mapJournal": "URL",
       "mapSeries": "URL",
-      "cascade": "Š_URL__ä",
-      "crowdsource": "Š_URL__ä",
-      "shortlist": "Š_URL__ä"
+      "cascade": "URL",
+      "crowdsource": "URL",
+      "shortlist": "URL"
     },
     "actions": {
       "viewMap": "Kuva kaart",
       "editMap": "Muuda kaarti",
-      "editScene": "Š_Edit Scene____ä",
+      "editScene": "Muuda stseeni",
       "fix": "Parenda",
       "viewLayer": "Kuva kihti"
     },
     "contentType": {
       "mainStage": "põhisektsiooni toiming",
       "sidePanel": "kirjeldus",
-      "introImage": "Š_(cover page photo)______ä"
+      "introImage": "(Esilehe foto)"
     },
     "notification": {
       "refreshExplanation": "Kontrollige oma lugu uuesti",
@@ -298,7 +298,7 @@ define({
       "publicDisabled": "Avalikult jagamine on administraatori poolt välja lülitatud",
       "orgDisabled": "Teie organisatsiooniga jagamine on administraatori poolt välja lülitatud",
       "noMapName": "Ei saanud hankida kaardi nime",
-      "noSceneName": "Š_Could Not Retrieve Scene________ä",
+      "noSceneName": "Ei saanud stseeni tuua",
       "notPublic": "POLE AVALIK",
       "inaccessible": "LIGIPÄÄSMATU",
       "deleted": "KUSTUTATUD",
@@ -350,8 +350,8 @@ define({
       "cantScanThisTypeAlt": "Seda tüüpi kihti ei saa kontrollida",
       "cantScanThisType": "Seda tüüpi kihti ei saa kontrollida",
       "webpageNotScanned": "Veebilehti ei kontrollita probleemide suhtes",
-      "sceneNotScanned": "Š_Scenes are not currently checked for issues, please make sure that the scene and all of its layers are shared correctly_____________________________________ä",
-      "scenesNotScannedGlobally": "Š_There are scenes in this story, and scenes are not currently checked for issues. Please make sure that the scenes and all of their layers are shared correctly________________________________________________ä",
+      "sceneNotScanned": "Stseene pole praegu probleemide suhtes kontrollitud. Veenduge, et stseeni ja kõiki selle kihte jagataks õigesti",
+      "scenesNotScannedGlobally": "See lugu sisaldab stseene ja neid pole praegu probleemide suhtes kontrollitud. Veenduge, et stseene ja kõiki nende kihte jagataks õigesti",
       "ignoredIssue": "Olete eiranud selles kihis tõrget. Laadige leht uuesti ja kontrollige tõrke ülevaatamiseks seda lugu",
       "ignoredIssueBuilder": "Olete eiranud selles kihis tõrget. Laadige tõrke ülevaatamiseks koostur uuesti"
     },
@@ -452,25 +452,25 @@ define({
       "thirdTitle": "kaardid"
     },
     "cascade": {
-      "firstTitle": "Š_sections___ä",
-      "secondTitle": "Š_maps__ä"
+      "firstTitle": "jaotised",
+      "secondTitle": "kaardid"
     },
     "swipeSpyglass": {
-      "firstTitle": "Š_points of interest______ä",
+      "firstTitle": "huvipunktid",
       "secondTitle": "stiil",
       "secondValueA": "rullimine",
       "secondValueB": "pikksilm",
       "thirdTitle": "kaardid"
     },
     "crowdsource": {
-      "firstTitle": "Š_contributions_____ä",
-      "secondTitle": "Š_basemap___ä",
-      "secondValueLoading": "Š_Loading____ä...",
-      "secondValueUnknown": "Š_unknown___ä"
+      "firstTitle": "toetused",
+      "secondTitle": "aluskaart",
+      "secondValueLoading": "Laadimine...",
+      "secondValueUnknown": "tundmatu"
     },
     "shortlist": {
-      "firstTitle": "Š_places___ä",
-      "secondTitle": "Š_tabs__ä",
+      "firstTitle": "kohad",
+      "secondTitle": "vahekaardid",
       "thirdTitle": "aluskaart",
       "thirdValueLoading": "Laadimine...",
       "thirdValueUnknown": "tundmatu"

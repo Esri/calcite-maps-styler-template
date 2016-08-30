@@ -40,7 +40,7 @@ define({
   },
   "cantFindStories": {
     "whereAreStories": "ไม่สามารถแสดงผลเรื่องราวของคุณ?",
-    "notSeeExplanation": "ก้_My Stories will only list story maps hosted in ArcGIS ({{STORY_MAP_BASIC}} is currently not supported). See our {{FAQ}} for more information___________________________________________ษฺ.",
+    "notSeeExplanation": "เรื่องราวของฉันจะมีรายการอยู่ในโฮสต์ของ ArcGIS เท่านั้น  ({{STORY_MAP_BASIC}} ปัจจุบันยังไม่สนับสนุน ). ดูรายละเอียด {{FAQ}} สำหรับรายละเอียดเพิ่มเติม",
     "faq": "คำถามที่พบบ่อย",
     "followingStoriesToUpdate": "เรื่องราวด้านล่างนี้ ถูกสร้างขึ้นด้วยเวอชั่นก่อนหน้าของโปรแกรม ซึ่งต้องอัพเดทก่อนที่แสดงรายการในเรื่องราวของฉัน",
     "gettingStories": "กำลังค้นหาเรื่องราวที่ถูกสร้างขึ้นด้วยเวอร์ชั่นก่อนหน้าของโปรแกรม ซึ่งต้องการการอัพเดท",
@@ -88,16 +88,16 @@ define({
     "layerPrivate": "จัดทำชั้นข้อมูลส่วนตัว จะทำให้เรื่องราวของคุณ"
   },
   "collectionList": {
-    "business": "ก้_Business and Economy_______ษฺ",
-    "history": "ก้_History and Culture_______ษฺ",
-    "inNews": "ก้_In The News____ษฺ",
-    "infrastructure": "ก้_Infrastructure and Construction__________ษฺ",
-    "nature": "ก้_Nature and Conservation________ษฺ",
+    "business": "ธุรกิจและเศรษฐกิจ",
+    "history": "ประวัติศาสตร์และวัฒนธรรม",
+    "inNews": "ข่าว",
+    "infrastructure": "โครงสร้างพื้นฐานและการก่อสร้าง",
+    "nature": "ธรรมชาติและการอนุรักษ์",
     "people": "ประชากรและสังคม",
-    "planning": "ก้_Planning and Design_______ษฺ",
+    "planning": "การวางแผนและการออกแบบ",
     "science": "วิทยาศาสตร์และเทคโนโลยี",
-    "sports": "ก้_Sports and Entertainment________ษฺ",
-    "travel": "ก้_Travel and Recreation_______ษฺ"
+    "sports": "กีฬาและความบันเทิง",
+    "travel": "การท่องเที่ยวและสันทนาการ"
   },
   "types": {
     "custom": "แก้ไขเอง",
@@ -216,7 +216,7 @@ define({
   "content": {
     "media": {
       "maps": "แผนที่",
-      "scenes": "ก้_Scenes___ษฺ",
+      "scenes": "ซีน",
       "images": "ภาพ",
       "videos": "วิดีโอ",
       "webpages": "เวปเพจ",
@@ -235,29 +235,29 @@ define({
       "tab": "แท็บ",
       "accordion": "ส่วน",
       "mapJournal": "ส่วน",
-      "cascade": "ก้_Section___ษฺ",
-      "crowdsource": "ก้_Contribution_____ษฺ",
-      "shortlist": "ก้_Tab__ษฺ"
+      "cascade": "ส่วน",
+      "crowdsource": "การสนับสนุน",
+      "shortlist": "แท็บ"
     },
     "titleType": {
       "mapTour": "คำอธิบาย",
       "mapJournal": "URL",
       "mapSeries": "URL",
-      "cascade": "ก้_URL__ษฺ",
-      "crowdsource": "ก้_URL__ษฺ",
-      "shortlist": "ก้_URL__ษฺ"
+      "cascade": "URL",
+      "crowdsource": "URL",
+      "shortlist": "URL"
     },
     "actions": {
       "viewMap": "ดูแผนที่",
       "editMap": "แก้ไขแผนที่",
-      "editScene": "ก้_Edit Scene____ษฺ",
+      "editScene": "การแก้ไขซีน",
       "fix": "แก้ไข",
       "viewLayer": "แสดงผลชั้นข้อมูล"
     },
     "contentType": {
       "mainStage": "การดำเนินการขั้นตอนหลัก",
       "sidePanel": "คำอธิบาย",
-      "introImage": "ก้_(cover page photo)______ษฺ"
+      "introImage": "รูปปกของเพจ"
     },
     "notification": {
       "refreshExplanation": "ตรวจสอบเรื่องของคุณอีกครั้ง",
@@ -298,7 +298,7 @@ define({
       "publicDisabled": "เปิดการใช้งานการแชร์ข้อมูลต่อสาธารณะโดยผู้ดูแลระบบ",
       "orgDisabled": "เปิดการใช้งานการแชร์ข้อมูลในองค์กรโดยผู้ดูแลระบบ",
       "noMapName": "ไม่สามารถเรียกชื่อแผนที่",
-      "noSceneName": "ก้_Could Not Retrieve Scene________ษฺ",
+      "noSceneName": "ไม่สามารถเรียกฉาก",
       "notPublic": "ไม่แบ่งปันสู่สาธารณะ",
       "inaccessible": "ไม่สามารถเข้าถึง",
       "deleted": "ลบ",
@@ -350,8 +350,8 @@ define({
       "cantScanThisTypeAlt": "เราไม่สามารถตรวจสอบประเภทของชั้นข้อมูล",
       "cantScanThisType": "ชั้นข้อมูลไม่ใช่ประเภทที่เราสามารถตรวจสอบได้",
       "webpageNotScanned": "เวปเพจไม่สามารถตรวจสอบปัญหาได้",
-      "sceneNotScanned": "ก้_Scenes are not currently checked for issues, please make sure that the scene and all of its layers are shared correctly_____________________________________ษฺ",
-      "scenesNotScannedGlobally": "ก้_There are scenes in this story, and scenes are not currently checked for issues. Please make sure that the scenes and all of their layers are shared correctly________________________________________________ษฺ",
+      "sceneNotScanned": "ซีนยังไม่ได้มีการตรวจสอบ โปรดตรวจสอบให้แน่ใจว่า ซีนทั้งหมดของชั้นข้อมูลมีการแบ่งปันอย่างถูกต้อง",
+      "scenesNotScannedGlobally": "ซีนยังไม่ได้มีการตรวจสอบ โปรดตรวจสอบให้แน่ใจว่า ซีนทั้งหมดของชั้นข้อมูลมีการแบ่งปันอย่างถูกต้อง",
       "ignoredIssue": "คุณได้ละเลยข้อผิดพลาดในชั้นข้อมูลนี้ โหลดสตอรี่นี้อีกครั้งเพื่อตรวจสอบข้อผิดพลาด",
       "ignoredIssueBuilder": "คุณได้ละเลยข้อผิดพลาดในชั้นข้อมูลนี้ โหลดบิวเดอร์นี้อีกครั้งเพื่อตรวจสอบข้อผิดพลาด"
     },
@@ -452,25 +452,25 @@ define({
       "thirdTitle": "maps"
     },
     "cascade": {
-      "firstTitle": "ก้_sections___ษฺ",
-      "secondTitle": "ก้_maps__ษฺ"
+      "firstTitle": "ส่วน",
+      "secondTitle": "แผนที่"
     },
     "swipeSpyglass": {
-      "firstTitle": "ก้_points of interest______ษฺ",
+      "firstTitle": "จุดที่สนใจ",
       "secondTitle": "รูปแบบ",
       "secondValueA": "เลื่อน",
       "secondValueB": "กล้องส่องทางไกล",
       "thirdTitle": "maps"
     },
     "crowdsource": {
-      "firstTitle": "ก้_contributions_____ษฺ",
-      "secondTitle": "ก้_basemap___ษฺ",
-      "secondValueLoading": "ก้_Loading____ษฺ...",
-      "secondValueUnknown": "ก้_unknown___ษฺ"
+      "firstTitle": "การมีส่วนร่วม",
+      "secondTitle": "แผนที่ฐาน",
+      "secondValueLoading": "กำลังโหลด...",
+      "secondValueUnknown": "ไม่ทราบ"
     },
     "shortlist": {
-      "firstTitle": "ก้_places___ษฺ",
-      "secondTitle": "ก้_tabs__ษฺ",
+      "firstTitle": "สถานที่",
+      "secondTitle": "แท็บ",
       "thirdTitle": "แผนที่ฐาน",
       "thirdValueLoading": "กำลังโหลด...",
       "thirdValueUnknown": "ไม่ทราบ"

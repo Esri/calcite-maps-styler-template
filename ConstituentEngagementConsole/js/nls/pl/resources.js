@@ -83,7 +83,7 @@ define({
     "valueRadioButtonLabel": "Wartość",
     "uniqueRadioButtonLabel": "Unikalne",
     "selectLayerToBegin": "Wybierz kategorię, aby rozpocząć",
-    "layerFeatureCount": "ł_${selectedFeatureCount} selected / ${featureCount} records__________________ą"
+    "layerFeatureCount": "Wybrane rekordy: ${selectedFeatureCount} z ${featureCount}"
   },
   "timeSlider": {
     "timeSliderLabel": "Zakres czasu",
@@ -102,7 +102,7 @@ define({
     "selectFileText": "Przeglądaj",
     "attachmentSelectedMsg": "wybrany(-e/-ych) załącznik(-i/-ów)",
     "attachmentHeaderText": "Załączniki",
-    "addRecordText": "ł_Add Record____ą"
+    "addRecordText": "Dodaj rekord"
   },
   "main": {
     "noGroup": "Nie skonfigurowano żadnej grupy"
@@ -114,18 +114,18 @@ define({
   },
   "manualRefresh": {
     "manualRefreshIconTooltip": "Odśwież",
-    "confirmManualRefreshText": "ł_All selections and unsaved changes will be discarded_________________ą"
+    "confirmManualRefreshText": "Wszystkie selekcje i niezapisane zmiany zostaną odrzucone"
   },
   "help": {
     "helpIconTooltip": "Pomoc"
   },
   "filter": {
     "noFeatureFoundText": "Nie znaleziono obiektu dla tej wartości.",
-    "distinctQueryFailed": "ł_No distinct values found for the field_____________ą.",
+    "distinctQueryFailed": "Nie znaleziono różnych wartości dla pola.",
     "andText": "i",
-    "filterInEditModeAlert": "ł_Filters unavailable while editing___________ą.",
+    "filterInEditModeAlert": "Filtry niedostępne w trybie edycji.",
     "dropdownSelectOption": "Zaznacz",
-    "filterInShowSelectedEditModeAlert": "ł_Filters unavailable in 'Show Selected' mode______________ą."
+    "filterInShowSelectedEditModeAlert": "Filtry niedostępne w trybie Pokaż wybrane."
   },
   "detailsPanel": {
     "editContentText": "Edytuj rekord"
@@ -135,8 +135,8 @@ define({
     "reSignInMessage": "Kliknij tutaj, aby się zalogować"
   },
   "selectionOptions": {
-    "selectionOptionsIconTooltip": "ł_Selection Options______ą",
-    "showAllOptionText": "ł_Show All___ą",
-    "showSelectedOptionText": "ł_Show Selected_____ą"
+    "selectionOptionsIconTooltip": "Opcje selekcji",
+    "showAllOptionText": "Pokaż wszystko",
+    "showSelectedOptionText": "Pokaż wybrane"
   }
 });

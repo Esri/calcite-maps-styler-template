@@ -32,14 +32,14 @@ define({
       "pageExplain": "En Facebook-sida är ett offentligt varumärke/produkt eller en kändis, till exempel <b>esrigis</b>. Du kan hitta sidnamnet efter det första '/'-tecknet i sidans webbadress.",
       "pageInputLbl": "Sidnamn",
       "lookupMsgError": "Det gick inte att hitta sidan",
-      "warning": "Å_Facebook support has been discontinued, ${learn}________________ö.",
-      "learn": "Å_learn more____ö"
+      "warning": "Facebook-stödet har avslutats, ${learn}.",
+      "learn": "läs mer"
     },
     "imageSelectorPicasa": {
-      "userInputLbl": "Å_Email or Picasa id______ö",
+      "userInputLbl": "E-postadress eller ID för Picasa",
       "signInMsg2": "Det gick inte att hitta kontot",
-      "howToFind": "Å_How to find a Picasa id________ö",
-      "howToFind2": "Å_Copy digits between the first and second '/' of any Picasa page____________________ö"
+      "howToFind": "Hitta ett Picasa-ID",
+      "howToFind2": "Kopiera siffrorna mellan det första och andra \"/\"-tecknet på en Picasa-sida"
     },
     "videoSelectorCommon": {
       "check": "Kontroll",
@@ -104,9 +104,9 @@ define({
       "lblPosition4Explain": "(kan förvrängas)",
       "unloadLbl": "Ta bort när användaren navigerar vidare",
       "unloadHelp": "Om webbsidan innehåller ljud- eller videomedia behåller du det här alternativet markerat så att innehållet inte spelas när användaren navigerar vidare. Avmarkera det till exempel om du vill att ett ljudspår ska spelas när användaren bläddrar vidare genom berättelsen.<br />Om webbplatsen är en applikation avmarkerar du alternativet så att berättelsen inte läses in på nytt om användaren återvänder till den.",
-      "embedProtocolLabel": "Å_Load page over a secure connection (HTTPS)______________ö",
-      "embedProtocolWarning1": "Å_Your story is configured to load over a secure connection (https), so web page show in the story must also use a secure connection. If the page does not load it may be because it is not available over a secure connection or that it cannot be included in your story (some websites restrict this). You may need to create a hyperlink to open the page in a new browser tab________________________________________________________________________________________________________________ö.",
-      "embedProtocolWarning2": "Å_Your story is configured to load over an insecure connection (http), so you can choose to load this page over a secure (recommended) or insecure connection. If the page does not load, it may be because it does not support the connection type you selected or that it cannot be included in your story (some websites restrict this). You may need to create a hyperlink to open the page in a new browser tab__________________________________________________________________________________________________________________________ö."
+      "embedProtocolLabel": "Läs in sidan via en säker anslutning (HTTPS)",
+      "embedProtocolWarning1": "Berättelsen är konfigurerad att läsas in via en säker anslutning (https), så webbsidesvisningen i berättelsen måste också använda en säker anslutning. Om sidan inte läses in kan det bero på att den inte är tillgänglig via en säker anslutning eller att den inte kan inkluderas i din berättelse (vissa webbplatser begränsar det). Du kan behöva skapa en hyperlänk för att öppna i sidan i en ny webbläsarflik.",
+      "embedProtocolWarning2": "Berättelsen är konfigurerad att läsas in via en osäker anslutning (http), så du kan välja att läsa in sidan via en säker (rekommenderas) eller osäker anslutning. Om sidan inte läses in kan det bero på att den inte stöder den anslutningstyp du valde eller att den inte kan inkluderas i din berättelse (vissa webbplatser begränsar det). Du kan behöva skapa en hyperlänk för att öppna i sidan i en ny webbläsarflik."
     },
     "editorActionGeocode": {
       "lblTitle": "Hitta en adress eller plats",

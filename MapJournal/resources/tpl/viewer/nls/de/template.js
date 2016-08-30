@@ -37,9 +37,9 @@ define({
       "upgradeBrowser": "<a href='http://browsehappy.com/' target='_blank'>Aktualisieren Sie Ihren Browser</a>.",
       "mapLoadingFail": "Ein Fehler ist aufgetreten. Die Karte wurde nicht korrekt geladen.",
       "signOut": "Abmelden",
-      "print0": "ä_Sorry, this story cannot be printed____________Ü.",
-      "print1": "ä_To print this story, please use the print button located in the share dialog________________________Ü.",
-      "print2": "ä_Sorry, a printable version of the story is typically accessible through the share dialog, but this dialog has been disabled by the author__________________________________________Ü."
+      "print0": "Diese Story kann leider nicht gedruckt werden.",
+      "print1": "Verwenden Sie zum Drucken dieser Story die Schaltfläche \"Drucken\" im Freigabe-Dialogfeld.",
+      "print2": "Eine druckbare Version dieser Story kann in der Regel über das Freigabe-Dialogfeld aufgerufen werden. Dieses Dialogfeld wurde jedoch leider vom Autor deaktiviert."
     },
     "mobileView": {
       "tapForDetails": "Zum Anzeigen von Details tippen",
@@ -89,15 +89,15 @@ define({
       "autoplayExplain1": "Im Modus für automatische Wiedergabe wird die Story regelmäßig fortgesetzt. Er ist ideal für Kiosks oder öffentliche Monitore. In anderen Situationen wird dadurch allerdings die Lesbarkeit der Story beeinträchtigt. Dieses Feature wird für kleine Anzeigegrößen nicht unterstützt.",
       "autoplayExplain2": "Ist dieser Modus aktiviert, stehen Steuerelemente für Wiedergabe/Pause der Story und zum Einstellen der Navigationsgeschwindigkeit zur Verfügung.",
       "linksupdated": "Links aktualisiert!",
-      "print": "ä_Print___Ü",
-      "printInstruction1": "ä_Please wait for all the content to load before printing this page_____________________Ü",
-      "printInstruction1a": "ä_Some content may not print unless you enable \"Print Background Colors and Images\" in the Print Page setup dialog___________________________________Ü",
-      "printInstruction2": "ä_This page cannot be shared with others, instead share the ${link}_____________________Ü",
-      "link": "ä_link to the story______Ü",
-      "printOptPageBreak": "ä_Begin each section on a new page___________Ü",
-      "printWarning": "ä_This is a printed version of a story map. Dynamic content such as videos and interactive maps is only available in the online version at ${link}____________________________________________Ü",
-      "printMSWarning": "ä_link available only in online story____________Ü",
-      "printVideoWarning": "ä_This video can be viewed in the online version of this story map____________________Ü"
+      "print": "Drucken",
+      "printInstruction1": "Warten Sie, bis der gesamte Inhalt geladen wurde, bevor Sie diese Seite drucken.",
+      "printInstruction1a": "Einige Inhalte werden möglicherweise nicht gedruckt, es sei denn, Sie aktivieren die Option \"Hintergrundfarben und -bilder drucken\" im Setup-Dialogfeld \"Seite drucken\".",
+      "printInstruction2": "Diese Seite kann nicht für andere freigegeben werden; geben Sie stattdessen ${link} frei.",
+      "link": "Link zur Story",
+      "printOptPageBreak": "Jeden Abschnitt auf einer neuen Seite beginnen",
+      "printWarning": "Dies ist eine gedruckte Version einer Story Map. Dynamische Inhalte wie Videos und interaktive Karten sind nur in der Online-Version unter ${link} verfügbar.",
+      "printMSWarning": "Link ist nur in Online-Story verfügbar",
+      "printVideoWarning": "Dieses Video kann in der Online-Version dieser Story Map angezeigt werden."
     }
   }
 });

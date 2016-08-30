@@ -32,14 +32,14 @@ define({
       "pageExplain": "Stránka služby Facebook představuje veřejnou značku či službu nebo známou osobnost, jako je například <b>esrigis</b>. Název stránky začíná za prvním lomítkem (/) v URL adrese stránky.",
       "pageInputLbl": "Název stránky",
       "lookupMsgError": "Stránka nenalezena",
-      "warning": "Ř_Facebook support has been discontinued, ${learn}________________ů.",
-      "learn": "Ř_learn more____ů"
+      "warning": "Podpora Facebooku byla ukončena, ${learn}.",
+      "learn": "další informace"
     },
     "imageSelectorPicasa": {
-      "userInputLbl": "Ř_Email or Picasa id______ů",
+      "userInputLbl": "E-mail nebo identifikátor služby Picasa",
       "signInMsg2": "Účet nenalezen",
-      "howToFind": "Ř_How to find a Picasa id________ů",
-      "howToFind2": "Ř_Copy digits between the first and second '/' of any Picasa page____________________ů"
+      "howToFind": "Jak zjistit identifikátor služby Picasa",
+      "howToFind2": "Zkopírujte čísla mezi prvním a druhým znakem „/“ na libovolné stránce služby Picasa"
     },
     "videoSelectorCommon": {
       "check": "Kontrola",
@@ -104,9 +104,9 @@ define({
       "lblPosition4Explain": "(může dojít ke zkreslení)",
       "unloadLbl": "Zrušit spouštění, když čtenář opustí stránku",
       "unloadHelp": "Pokud webová stránka obsahuje audio nebo video média, nechte tuto možnost zaškrtnutou, aby se přehrávání tohoto obsahu ukončilo, pokud čtenář stránku opustí. Zrušte její zaškrtnutí, pokud například chcete, aby hudební podkres hrál po celou dobu prohlížení příběhu.<br />Pokud je webová stránka aplikací, zrušte zaškrtnutí této možnosti, aby se příběh nespouštěl znovu, když se k němu čtenář vrátí.",
-      "embedProtocolLabel": "Ř_Load page over a secure connection (HTTPS)______________ů",
-      "embedProtocolWarning1": "Ř_Your story is configured to load over a secure connection (https), so web page show in the story must also use a secure connection. If the page does not load it may be because it is not available over a secure connection or that it cannot be included in your story (some websites restrict this). You may need to create a hyperlink to open the page in a new browser tab________________________________________________________________________________________________________________ů.",
-      "embedProtocolWarning2": "Ř_Your story is configured to load over an insecure connection (http), so you can choose to load this page over a secure (recommended) or insecure connection. If the page does not load, it may be because it does not support the connection type you selected or that it cannot be included in your story (some websites restrict this). You may need to create a hyperlink to open the page in a new browser tab__________________________________________________________________________________________________________________________ů."
+      "embedProtocolLabel": "Nahrát stránku přes zabezpečené připojení (HTTPS)",
+      "embedProtocolWarning1": "Váš příběh je nastaven, aby se nahrával přes zabezpečené připojení (https), takže webové stránky zobrazené v příběhu musí také používat zabezpečené připojení. Pokud se stránka nenačte, může být důvodem to, že není k dispozici přes zabezpečené připojení nebo ji do příběhu nelze zahrnout (některé webové stránky tuto možnost omezují). Chcete-li stránku otevírat nové kartě prohlížeče, může být nutné vytvořit hypertextový odkaz.",
+      "embedProtocolWarning2": "Váš příběh je nastaven tak, aby se nahrával přes nezabezpečené připojení (http), takže si můžete vybrat, zda se tato stránka bude nahrávat přes zabezpečené (doporučeno) nebo nezabezpečené připojení. Pokud se stránka nenačte, může být důvodem to, že nepodporuje vybraný typ připojení nebo ji do příběhu nelze zahrnout (některé webové stránky tuto možnost omezují). Chcete-li stránku otevírat nové kartě prohlížeče, může být nutné vytvořit hypertextový odkaz."
     },
     "editorActionGeocode": {
       "lblTitle": "Najít adresu nebo místo",

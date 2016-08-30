@@ -83,7 +83,7 @@ define({
     "valueRadioButtonLabel": "มูลค่า",
     "uniqueRadioButtonLabel": "ลักษณะเฉพาะ",
     "selectLayerToBegin": "เลือกประเภทเพื่อเริ่มงาน",
-    "layerFeatureCount": "ก้_${selectedFeatureCount} selected / ${featureCount} records__________________ษฺ"
+    "layerFeatureCount": "${นับข้อมูลที่เลือก} เลือก / ${นับข้อมูล} เรคคอร์ด"
   },
   "timeSlider": {
     "timeSliderLabel": "ช่วงเวลา",
@@ -102,7 +102,7 @@ define({
     "selectFileText": "ค้นหา",
     "attachmentSelectedMsg": "เลือกไฟล์แนบ",
     "attachmentHeaderText": "แนบ",
-    "addRecordText": "ก้_Add Record____ษฺ"
+    "addRecordText": "เพิ่มเรคคอร์ด"
   },
   "main": {
     "noGroup": "ยังไม่กำหนดกลุ่ม"
@@ -114,18 +114,18 @@ define({
   },
   "manualRefresh": {
     "manualRefreshIconTooltip": "รีเฟรช",
-    "confirmManualRefreshText": "ก้_All selections and unsaved changes will be discarded_________________ษฺ"
+    "confirmManualRefreshText": "การเลือกทั้งหมดและสิ่งที่ไม่ได้บันทึกการเปลี่ยนแปลงจะถูกละทิ้ง"
   },
   "help": {
     "helpIconTooltip": "ช่วยเหลือ"
   },
   "filter": {
     "noFeatureFoundText": "ไม่พบฟีเจอร์สำหรับค่านี้",
-    "distinctQueryFailed": "ก้_No distinct values found for the field_____________ษฺ.",
+    "distinctQueryFailed": "ไม่พบค่าที่แตกต่างกันในฟิลด์นี้",
     "andText": "และ",
-    "filterInEditModeAlert": "ก้_Filters unavailable while editing___________ษฺ.",
+    "filterInEditModeAlert": "ฟิลเตอร์ไม่ทำงานเมื่อมีการแก้ไข",
     "dropdownSelectOption": "เลือก",
-    "filterInShowSelectedEditModeAlert": "ก้_Filters unavailable in 'Show Selected' mode______________ษฺ."
+    "filterInShowSelectedEditModeAlert": "ฟิลเตอร์ไม่ทำงาน เมื่ออยู่ในโหมดแสดงการเลือก"
   },
   "detailsPanel": {
     "editContentText": "แก้ไขเรคคอร์ท"
@@ -135,8 +135,8 @@ define({
     "reSignInMessage": "กดที่นี่ เพื่อลงชื่อเข้าใช้"
   },
   "selectionOptions": {
-    "selectionOptionsIconTooltip": "ก้_Selection Options______ษฺ",
-    "showAllOptionText": "ก้_Show All___ษฺ",
-    "showSelectedOptionText": "ก้_Show Selected_____ษฺ"
+    "selectionOptionsIconTooltip": "เลือกการตั้งค่า",
+    "showAllOptionText": "แสดงทั้งหมด",
+    "showSelectedOptionText": "แสดงที่เลือก"
   }
 });

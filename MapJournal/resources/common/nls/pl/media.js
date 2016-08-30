@@ -32,14 +32,14 @@ define({
       "pageExplain": "Strona Facebook to publiczna strona marki/produktu lub znanej osoby, np.<b>esrigis</b>. Nazwa strony została umieszczona po pierwszym znaku „/” w adresie URL strony.",
       "pageInputLbl": "Nazwa strony",
       "lookupMsgError": "Nie znaleziono strony",
-      "warning": "ł_Facebook support has been discontinued, ${learn}________________ą.",
-      "learn": "ł_learn more____ą"
+      "warning": "Facebook nie jest już obsługiwany, ${learn}.",
+      "learn": "więcej informacji"
     },
     "imageSelectorPicasa": {
-      "userInputLbl": "ł_Email or Picasa id______ą",
+      "userInputLbl": "Adres e-mail lub identyfikator z serwisu Picasa",
       "signInMsg2": "Nie odnaleziono konta",
-      "howToFind": "ł_How to find a Picasa id________ą",
-      "howToFind2": "ł_Copy digits between the first and second '/' of any Picasa page____________________ą"
+      "howToFind": "Jak znaleźć identyfikator Picasa",
+      "howToFind2": "Skopiuj cyfry znajdujące się między pierwszym a drugim znakiem „/” dowolnej strony Picasa"
     },
     "videoSelectorCommon": {
       "check": "Zaznacz",
@@ -104,9 +104,9 @@ define({
       "lblPosition4Explain": "(obraz może zostać zniekształcony)",
       "unloadLbl": "Usuń, gdy czytelnik przechodzi dalej",
       "unloadHelp": "Gdy w witrynie internetowej są udostępnione materiały audio lub wideo, ta opcja powinna być zaznaczona, aby po przejściu czytelnika dalej odtwarzanie tych treści było przerywane. Należy wyłączyć zaznaczenie opcji, aby na przykład podczas czytania tekstu przez czytelnika odtwarzane były utwory muzyczne.<br />Jeżeli witryna internetowa jest aplikacją, tę opcję należy odznaczyć, aby uniknąć ponownego wczytywania tej aplikacji, gdy czytelnik do niej wróci.",
-      "embedProtocolLabel": "ł_Load page over a secure connection (HTTPS)______________ą",
-      "embedProtocolWarning1": "ł_Your story is configured to load over a secure connection (https), so web page show in the story must also use a secure connection. If the page does not load it may be because it is not available over a secure connection or that it cannot be included in your story (some websites restrict this). You may need to create a hyperlink to open the page in a new browser tab________________________________________________________________________________________________________________ą.",
-      "embedProtocolWarning2": "ł_Your story is configured to load over an insecure connection (http), so you can choose to load this page over a secure (recommended) or insecure connection. If the page does not load, it may be because it does not support the connection type you selected or that it cannot be included in your story (some websites restrict this). You may need to create a hyperlink to open the page in a new browser tab__________________________________________________________________________________________________________________________ą."
+      "embedProtocolLabel": "Wczytywanie strony przez bezpieczne połączenie (HTTPS)",
+      "embedProtocolWarning1": "Ta narracja jest skonfigurowana do wczytywania przez bezpieczne połączenie (https), dlatego strona internetowa wyświetlana w narracji musi również używać bezpiecznego połączenia. Jeśli strona nie wczytuje się, być może nie jest dostępna przez bezpieczne połączenie albo nie może zostać włączona do narracji (niektóre witryny ograniczają tę możliwość). Może być konieczne utworzenie hiperłącza w celu otwarcia strony w nowej karcie przeglądarki.",
+      "embedProtocolWarning2": "Ta narracja jest skonfigurowana do wczytywania przez połączenie niezabezpieczone (http), dlatego ta strona internetowa może zostać wczytana przez bezpieczne połączenie (zalecane) lub przez połączenie niezabezpieczone. Jeśli strona nie wczytuje się, być może nie obsługuje wybranego typu połączenia albo nie może zostać włączona do narracji (niektóre witryny ograniczają tę możliwość). Może być konieczne utworzenie hiperłącza w celu otwarcia strony w nowej karcie przeglądarki."
     },
     "editorActionGeocode": {
       "lblTitle": "Lokalizuj adres lub miejsce",

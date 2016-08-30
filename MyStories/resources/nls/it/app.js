@@ -40,7 +40,7 @@ define({
   },
   "cantFindStories": {
     "whereAreStories": "Non vedi la tua storia?",
-    "notSeeExplanation": "é_My Stories will only list story maps hosted in ArcGIS ({{STORY_MAP_BASIC}} is currently not supported). See our {{FAQ}} for more information___________________________________________È.",
+    "notSeeExplanation": "My Stories elenca solo Story Map ospitate in ArcGIS ({{STORY_MAP_BASIC}} non è al momento supportato). Vedere la nostra {{FAQ}} per ulteriori informazioni.",
     "faq": "DOMANDE FREQUENTI",
     "followingStoriesToUpdate": "Le seguenti storie create con versioni precedenti delle applicazioni devono essere aggiornate per essere elencate in My Stories:",
     "gettingStories": "Ricerca di storie create con versioni precedenti delle applicazioni che devono essere aggiornate...",
@@ -88,16 +88,16 @@ define({
     "layerPrivate": "Se si rende il layer privato, la storia verrà interrotta"
   },
   "collectionList": {
-    "business": "é_Business and Economy_______È",
-    "history": "é_History and Culture_______È",
-    "inNews": "é_In The News____È",
-    "infrastructure": "é_Infrastructure and Construction__________È",
-    "nature": "é_Nature and Conservation________È",
+    "business": "Affari ed economia",
+    "history": "Storia e cultura",
+    "inNews": "Tra le novità",
+    "infrastructure": "Infrastrutture e costruzioni",
+    "nature": "Natura e conservazione",
     "people": "Persone e società",
-    "planning": "é_Planning and Design_______È",
+    "planning": "Pianificazione e design",
     "science": "Scienza e tecnologia",
-    "sports": "é_Sports and Entertainment________È",
-    "travel": "é_Travel and Recreation_______È"
+    "sports": "Sport e intrattenimento",
+    "travel": "Viaggi e attività ricreative"
   },
   "types": {
     "custom": "Personalizzata",
@@ -216,7 +216,7 @@ define({
   "content": {
     "media": {
       "maps": "Mappe",
-      "scenes": "é_Scenes___È",
+      "scenes": "Scene",
       "images": "Immagini",
       "videos": "Video",
       "webpages": "Pagine Web",
@@ -235,29 +235,29 @@ define({
       "tab": "Scheda",
       "accordion": "Sezione",
       "mapJournal": "Sezione",
-      "cascade": "é_Section___È",
-      "crowdsource": "é_Contribution_____È",
-      "shortlist": "é_Tab__È"
+      "cascade": "Sezione",
+      "crowdsource": "Collaborazione",
+      "shortlist": "Scheda"
     },
     "titleType": {
       "mapTour": "Didascalia",
       "mapJournal": "URL",
       "mapSeries": "URL",
-      "cascade": "é_URL__È",
-      "crowdsource": "é_URL__È",
-      "shortlist": "é_URL__È"
+      "cascade": "URL",
+      "crowdsource": "URL",
+      "shortlist": "URL"
     },
     "actions": {
       "viewMap": "Visualizza mappa",
       "editMap": "Modifica mappa",
-      "editScene": "é_Edit Scene____È",
+      "editScene": "Modifica scena",
       "fix": "Correzione",
       "viewLayer": "Visualizza layer"
     },
     "contentType": {
       "mainStage": "azione visualizzazione principale",
       "sidePanel": "descrizione",
-      "introImage": "é_(cover page photo)______È"
+      "introImage": "(foto copertina)"
     },
     "notification": {
       "refreshExplanation": "Controlla nuovamente la storia",
@@ -298,7 +298,7 @@ define({
       "publicDisabled": "La condivisione pubblica è stata disabilitata da un amministratore",
       "orgDisabled": "La condivisione nell'organizzazione è stata disabilitata da un amministratore",
       "noMapName": "Impossibile recuperare il nome della mappa",
-      "noSceneName": "é_Could Not Retrieve Scene________È",
+      "noSceneName": "Impossibile recuperare la scena",
       "notPublic": "NON PUBBLICO",
       "inaccessible": "INACCESSIBILE",
       "deleted": "ELIMINATO",
@@ -350,8 +350,8 @@ define({
       "cantScanThisTypeAlt": "Impossibile verificare questo tipo di layer",
       "cantScanThisType": "Il layer non è di un tipo che è possibile verificare",
       "webpageNotScanned": "Le pagine Web non sono sottoposte a controlli",
-      "sceneNotScanned": "é_Scenes are not currently checked for issues, please make sure that the scene and all of its layers are shared correctly_____________________________________È",
-      "scenesNotScannedGlobally": "é_There are scenes in this story, and scenes are not currently checked for issues. Please make sure that the scenes and all of their layers are shared correctly________________________________________________È",
+      "sceneNotScanned": "Le scene non sono attualmente sottoposte a controlli, accertarsi che la scena e tutti i relativi layer siano correttamente condivisi",
+      "scenesNotScannedGlobally": "Queste sono scene nella storia e le scene non sono attualmente sottoposte a controlli. Accertarsi che le scene e tutti i relativi layer siano correttamente condivisi",
       "ignoredIssue": "È stato ignorato un errore su questo layer. Ricaricare la pagina e verificare nuovamente la storia per esaminare l'errore",
       "ignoredIssueBuilder": "È stato ignorato un errore su questo layer. Ricaricare il generatore per verificare nuovamente l'errore"
     },
@@ -452,25 +452,25 @@ define({
       "thirdTitle": "mappe"
     },
     "cascade": {
-      "firstTitle": "é_sections___È",
-      "secondTitle": "é_maps__È"
+      "firstTitle": "sezioni",
+      "secondTitle": "mappe"
     },
     "swipeSpyglass": {
-      "firstTitle": "é_points of interest______È",
+      "firstTitle": "punti di interesse",
       "secondTitle": "stile",
       "secondValueA": "scorrimento con dito",
       "secondValueB": "cannocchiale",
       "thirdTitle": "mappe"
     },
     "crowdsource": {
-      "firstTitle": "é_contributions_____È",
-      "secondTitle": "é_basemap___È",
-      "secondValueLoading": "é_Loading____È...",
-      "secondValueUnknown": "é_unknown___È"
+      "firstTitle": "collaborazioni",
+      "secondTitle": "mappa di base",
+      "secondValueLoading": "Caricamento in corso...",
+      "secondValueUnknown": "sconosciuta"
     },
     "shortlist": {
-      "firstTitle": "é_places___È",
-      "secondTitle": "é_tabs__È",
+      "firstTitle": "località",
+      "secondTitle": "schede",
       "thirdTitle": "mappa di base",
       "thirdValueLoading": "Caricamento in corso...",
       "thirdValueUnknown": "sconosciuta"

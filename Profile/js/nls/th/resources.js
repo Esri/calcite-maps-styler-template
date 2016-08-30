@@ -19,28 +19,28 @@ define({
     "error": "ไม่สามารถสร้างแผนที่ได้"
   },
   "nav": {
-    "close": "ก้_Close___ษฺ"
+    "close": "ปิด"
   },
   "elevation": {
-    "toggle": "ก้_Toggle the Elevation Profile Chart____________ษฺ.",
-    "drawTool": "ก้_Draw a line on the map to generate an elevation profile__________________ษฺ.",
-    "selectMessage": "ก้_Click a line feature or use the draw tool to draw a line to display the elevation profile____________________________ษฺ",
-    "gainLossTemplate": "ก้_Min: ${min}   Max: ${max}   Start: ${start}   End: ${end}   Change: ${gainLoss}_________________________ษฺ"
+    "toggle": "แผนภูมิข้อมูลความสูง",
+    "drawTool": "วาดเส้นบนแผนที่ เพื่อแสดงข้อมูลรายละเอียดความสูง",
+    "selectMessage": "คลิกข้อมูลเส้น หรือใช้เครื่องมือวาดเพื่อวาดเส้นในการแสดงข้อมูลความสูง",
+    "gainLossTemplate": "ค่ำต่ำสุด: ${ค่าต่ำสุด}   ค่าสูงสุด: ${ค่าสูงสุด}   เริ่มต้น: ${เริ่มต้น}   สิ้นสุด: ${สิ้นสุด}   เปลี่ยน: ${ได้รับความสูญเสีย}"
   },
   "splash": {
-    "title": "ก้_Title___ษฺ",
-    "content": "ก้_Configure to create custom splash content_____________ษฺ"
+    "title": "ชื่อ",
+    "content": "ตั้งค่าเพื่อสร้างเนื้อหาของตัวเอง"
   },
   "legend": {
-    "title": "ก้_Legend___ษฺ",
-    "tip": "ก้_Display legend_____ษฺ"
+    "title": "คำอธิบายสัญลักษณ์",
+    "tip": "แสดงคำอธิบาย"
   },
   "basemap": {
-    "title": "ก้_Basemap___ษฺ",
-    "tip": "ก้_Change basemap_____ษฺ"
+    "title": "แผนที่ฐาน",
+    "tip": "เปลี่ยนแผนที่ฐาน"
   },
   "share": {
-    "title": "ก้_Share___ษฺ",
-    "tip": "ก้_Share map____ษฺ"
+    "title": "แบ่งปัน",
+    "tip": "แชร์แผนที่"
   }
 });

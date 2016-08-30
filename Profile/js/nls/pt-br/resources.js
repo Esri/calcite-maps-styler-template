@@ -19,28 +19,28 @@ define({
     "error": "Não foi possível criar o mapa"
   },
   "nav": {
-    "close": "ã_Close___Ç"
+    "close": "Fechar"
   },
   "elevation": {
-    "toggle": "ã_Toggle the Elevation Profile Chart____________Ç.",
-    "drawTool": "ã_Draw a line on the map to generate an elevation profile__________________Ç.",
-    "selectMessage": "ã_Click a line feature or use the draw tool to draw a line to display the elevation profile____________________________Ç",
-    "gainLossTemplate": "ã_Min: ${min}   Max: ${max}   Start: ${start}   End: ${end}   Change: ${gainLoss}_________________________Ç"
+    "toggle": "Alternar o Gráfico do Perfil de Elevação.",
+    "drawTool": "Desenha uma linha no mapa para gerar um perfil de elevação.",
+    "selectMessage": "Clique em uma feição de linha ou utilize a ferramenta de desenho para desenhar uma linha para exibir no perfil de elevação",
+    "gainLossTemplate": "Mín: ${min}   Máx: ${max}   Iniciar: ${start}   Finalizar: ${end}   Alterar: ${gainLoss}"
   },
   "splash": {
-    "title": "ã_Title___Ç",
-    "content": "ã_Configure to create custom splash content_____________Ç"
+    "title": "Título",
+    "content": "Configurar para criar conteúdo personalizado da tela"
   },
   "legend": {
-    "title": "ã_Legend___Ç",
-    "tip": "ã_Display legend_____Ç"
+    "title": "Legenda",
+    "tip": "Exibir legenda"
   },
   "basemap": {
-    "title": "ã_Basemap___Ç",
-    "tip": "ã_Change basemap_____Ç"
+    "title": "Mapa Base",
+    "tip": "Alterar mapa base"
   },
   "share": {
-    "title": "ã_Share___Ç",
-    "tip": "ã_Share map____Ç"
+    "title": "Compartilhar",
+    "tip": "Compartilhar mapa"
   }
 });

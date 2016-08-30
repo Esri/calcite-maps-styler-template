@@ -83,7 +83,7 @@ define({
     "valueRadioButtonLabel": "Väärtus",
     "uniqueRadioButtonLabel": "Unikaalne",
     "selectLayerToBegin": "Alustamiseks valige kategooria",
-    "layerFeatureCount": "Š_${selectedFeatureCount} selected / ${featureCount} records__________________ä"
+    "layerFeatureCount": "${selectedFeatureCount} valitud, kokku ${featureCount} kirjet"
   },
   "timeSlider": {
     "timeSliderLabel": "Ajavahemik",
@@ -102,7 +102,7 @@ define({
     "selectFileText": "Sirvi",
     "attachmentSelectedMsg": "valitud manus(ed)",
     "attachmentHeaderText": "Manused",
-    "addRecordText": "Š_Add Record____ä"
+    "addRecordText": "Lisa kirje"
   },
   "main": {
     "noGroup": "Ühtki gruppi ei ole konfigureeritud"
@@ -114,18 +114,18 @@ define({
   },
   "manualRefresh": {
     "manualRefreshIconTooltip": "Värskenda",
-    "confirmManualRefreshText": "Š_All selections and unsaved changes will be discarded_________________ä"
+    "confirmManualRefreshText": "Teie salvestamata valikud ja muudatused lähevad kaotsi."
   },
   "help": {
     "helpIconTooltip": "Abi"
   },
   "filter": {
     "noFeatureFoundText": "Selle väärtuse jaoks ei leitud objekti.",
-    "distinctQueryFailed": "Š_No distinct values found for the field_____________ä.",
+    "distinctQueryFailed": "Välja jaoks ei leitud eraldi väärtusi.",
     "andText": "ja",
-    "filterInEditModeAlert": "Š_Filters unavailable while editing___________ä.",
+    "filterInEditModeAlert": "Filtrid pole töötlemise ajal saadaval.",
     "dropdownSelectOption": "Vali",
-    "filterInShowSelectedEditModeAlert": "Š_Filters unavailable in 'Show Selected' mode______________ä."
+    "filterInShowSelectedEditModeAlert": "Filtrid pole režiimis „Kuva valitud” saadaval."
   },
   "detailsPanel": {
     "editContentText": "Muuda kirjet"
@@ -135,8 +135,8 @@ define({
     "reSignInMessage": "Sisse logimiseks klikkige siia."
   },
   "selectionOptions": {
-    "selectionOptionsIconTooltip": "Š_Selection Options______ä",
-    "showAllOptionText": "Š_Show All___ä",
-    "showSelectedOptionText": "Š_Show Selected_____ä"
+    "selectionOptionsIconTooltip": "Valikuvõimalused",
+    "showAllOptionText": "Kuva kõik",
+    "showSelectedOptionText": "Kuva valitud"
   }
 });

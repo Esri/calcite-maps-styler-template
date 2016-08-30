@@ -40,7 +40,7 @@ define({
   },
   "cantFindStories": {
     "whereAreStories": "Ваша история не видна?",
-    "notSeeExplanation": "Ж_My Stories will only list story maps hosted in ArcGIS ({{STORY_MAP_BASIC}} is currently not supported). See our {{FAQ}} for more information___________________________________________Я.",
+    "notSeeExplanation": "В разделе Мои истории отображаются только карты-истории, созданные в ArcGIS (в настоящий момент {{STORY_MAP_BASIC}} не поддерживается). Для получения более подробной информации смотри {{FAQ}}.",
     "faq": "Часто задаваемые вопросы",
     "followingStoriesToUpdate": "Следующие истории, созданные в более ранних версиях наших приложений, следует обновить, чтобы они появились в Моих историях:",
     "gettingStories": "Поиск историй, созданных в старых версиях приложений, которые следует обновить...",
@@ -88,16 +88,16 @@ define({
     "layerPrivate": "Закрытие доступа для слоя испортит всю историю"
   },
   "collectionList": {
-    "business": "Ж_Business and Economy_______Я",
-    "history": "Ж_History and Culture_______Я",
-    "inNews": "Ж_In The News____Я",
-    "infrastructure": "Ж_Infrastructure and Construction__________Я",
-    "nature": "Ж_Nature and Conservation________Я",
+    "business": "Бизнес и экономика",
+    "history": "История и культура",
+    "inNews": "В новостях",
+    "infrastructure": "Инфраструктура и строительство",
+    "nature": "Природа и охрана окружающей среды",
     "people": "Люди и общество",
-    "planning": "Ж_Planning and Design_______Я",
+    "planning": "Планирование и дизайн",
     "science": "Наука и технология",
-    "sports": "Ж_Sports and Entertainment________Я",
-    "travel": "Ж_Travel and Recreation_______Я"
+    "sports": "Спорт и развлечения",
+    "travel": "Путешествия и отдых"
   },
   "types": {
     "custom": "Пользовательские",
@@ -216,7 +216,7 @@ define({
   "content": {
     "media": {
       "maps": "Карты",
-      "scenes": "Ж_Scenes___Я",
+      "scenes": "Сцены",
       "images": "Изображения",
       "videos": "Видеоролики",
       "webpages": "Веб-страницы",
@@ -235,29 +235,29 @@ define({
       "tab": "Закладка",
       "accordion": "Секция",
       "mapJournal": "Секция",
-      "cascade": "Ж_Section___Я",
-      "crowdsource": "Ж_Contribution_____Я",
-      "shortlist": "Ж_Tab__Я"
+      "cascade": "Секция",
+      "crowdsource": "Вклад",
+      "shortlist": "Вкладка"
     },
     "titleType": {
       "mapTour": "Заголовок",
       "mapJournal": "URL-адрес",
       "mapSeries": "URL-адрес",
-      "cascade": "Ж_URL__Я",
-      "crowdsource": "Ж_URL__Я",
-      "shortlist": "Ж_URL__Я"
+      "cascade": "URL-адрес",
+      "crowdsource": "URL-адрес",
+      "shortlist": "URL-адрес"
     },
     "actions": {
       "viewMap": "Просмотреть карту",
       "editMap": "Редактировать карту",
-      "editScene": "Ж_Edit Scene____Я",
+      "editScene": "Редактировать сцену",
       "fix": "Зафиксировать",
       "viewLayer": "Просмотреть слой"
     },
     "contentType": {
       "mainStage": "действие главной площадки",
       "sidePanel": "описание",
-      "introImage": "Ж_(cover page photo)______Я"
+      "introImage": "(фотография обложки)"
     },
     "notification": {
       "refreshExplanation": "Еще раз проверьте вашу историю",
@@ -298,7 +298,7 @@ define({
       "publicDisabled": "Общий доступ был отключен Администратором",
       "orgDisabled": "Общий доступ в пределах организации был отключен Администратором",
       "noMapName": "Не удалось получить имя карты",
-      "noSceneName": "Ж_Could Not Retrieve Scene________Я",
+      "noSceneName": "Не удалось получить сцену",
       "notPublic": "НЕ ОБЩЕДОСТУПНО",
       "inaccessible": "НЕДОСТУПНО",
       "deleted": "УДАЛЕНО",
@@ -350,8 +350,8 @@ define({
       "cantScanThisTypeAlt": "У вас нет возможности выбрать этот тип слоя.",
       "cantScanThisType": "Слой не соответствует типу, который вы можете выбрать",
       "webpageNotScanned": "Веб-страницы не проверены на проблемы",
-      "sceneNotScanned": "Ж_Scenes are not currently checked for issues, please make sure that the scene and all of its layers are shared correctly_____________________________________Я",
-      "scenesNotScannedGlobally": "Ж_There are scenes in this story, and scenes are not currently checked for issues. Please make sure that the scenes and all of their layers are shared correctly________________________________________________Я",
+      "sceneNotScanned": "Сцены не проверены на наличие ошибок, убедитесь, что сцена и все ее слои опубликованы корректно",
+      "scenesNotScannedGlobally": "Эта история содержит сцены, которые не проверены на наличие ошибок, убедитесь, что сцены и входящие в них слои опубликованы корректно.",
       "ignoredIssue": "Вы проигнорировали ошибку данного слоя. Обновите страницу и ещё раз проверьте эту историю на наличие ошибки",
       "ignoredIssueBuilder": "Вы проигнорировали ошибку данного слоя. Обновите конструктор и ещё раз проверьте на наличие ошибки"
     },
@@ -452,25 +452,25 @@ define({
       "thirdTitle": "карты"
     },
     "cascade": {
-      "firstTitle": "Ж_sections___Я",
-      "secondTitle": "Ж_maps__Я"
+      "firstTitle": "разделы",
+      "secondTitle": "карты"
     },
     "swipeSpyglass": {
-      "firstTitle": "Ж_points of interest______Я",
+      "firstTitle": "точки интереса",
       "secondTitle": "стиль",
       "secondValueA": "swipe",
       "secondValueB": "spyglass",
       "thirdTitle": "карты"
     },
     "crowdsource": {
-      "firstTitle": "Ж_contributions_____Я",
-      "secondTitle": "Ж_basemap___Я",
-      "secondValueLoading": "Ж_Loading____Я...",
-      "secondValueUnknown": "Ж_unknown___Я"
+      "firstTitle": "вклады",
+      "secondTitle": "базовая карта",
+      "secondValueLoading": "Загрузка...",
+      "secondValueUnknown": "неизвестный"
     },
     "shortlist": {
-      "firstTitle": "Ж_places___Я",
-      "secondTitle": "Ж_tabs__Я",
+      "firstTitle": "Местоположения",
+      "secondTitle": "вкладки",
       "thirdTitle": "базовая карта",
       "thirdValueLoading": "Загрузка...",
       "thirdValueUnknown": "неизвестный"

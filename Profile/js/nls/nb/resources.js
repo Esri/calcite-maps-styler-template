@@ -19,28 +19,28 @@ define({
     "error": "Kan ikke opprette kart"
   },
   "nav": {
-    "close": "å_Close___ø"
+    "close": "Ja"
   },
   "elevation": {
-    "toggle": "å_Toggle the Elevation Profile Chart____________ø.",
-    "drawTool": "å_Draw a line on the map to generate an elevation profile__________________ø.",
-    "selectMessage": "å_Click a line feature or use the draw tool to draw a line to display the elevation profile____________________________ø",
-    "gainLossTemplate": "å_Min: ${min}   Max: ${max}   Start: ${start}   End: ${end}   Change: ${gainLoss}_________________________ø"
+    "toggle": "Aktiver/deaktiver høydeprofildiagrammet.",
+    "drawTool": "Tegn en linje på kartet for å generere en høydeprofil.",
+    "selectMessage": "Klikk på et linjegeoobjekt, eller bruk tegneverktøyet for å tegne en linje for å vise høydeprofilen",
+    "gainLossTemplate": "Min: ${min}   Maks: ${max}   Start: ${start}   Slutt: ${end}   Endring: ${gainLoss}"
   },
   "splash": {
-    "title": "å_Title___ø",
-    "content": "å_Configure to create custom splash content_____________ø"
+    "title": "Tittel",
+    "content": "Konfigurer for å opprette egendefinert innhold på velkomstskjermen"
   },
   "legend": {
-    "title": "å_Legend___ø",
-    "tip": "å_Display legend_____ø"
+    "title": "Tegnforklaring",
+    "tip": "Vis tegnforklaring"
   },
   "basemap": {
-    "title": "å_Basemap___ø",
-    "tip": "å_Change basemap_____ø"
+    "title": "Bakgrunnskart",
+    "tip": "Endre bakgrunnskart"
   },
   "share": {
-    "title": "å_Share___ø",
-    "tip": "å_Share map____ø"
+    "title": "Dele",
+    "tip": "Del kart"
   }
 });

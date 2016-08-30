@@ -83,7 +83,7 @@ define({
     "valueRadioButtonLabel": "Værdi",
     "uniqueRadioButtonLabel": "Unik",
     "selectLayerToBegin": "Vælg en kategori at starte med",
-    "layerFeatureCount": "ø_${selectedFeatureCount} selected / ${featureCount} records__________________å"
+    "layerFeatureCount": "${selectedFeatureCount} valgt / ${featureCount} poster"
   },
   "timeSlider": {
     "timeSliderLabel": "Tidsinterval",
@@ -102,7 +102,7 @@ define({
     "selectFileText": "Gennemse",
     "attachmentSelectedMsg": "vedhæftning(er) valgt",
     "attachmentHeaderText": "Vedhæftninger",
-    "addRecordText": "ø_Add Record____å"
+    "addRecordText": "Tilføj post"
   },
   "main": {
     "noGroup": "Ingen gruppe konfigureret"
@@ -114,18 +114,18 @@ define({
   },
   "manualRefresh": {
     "manualRefreshIconTooltip": "Opdatér",
-    "confirmManualRefreshText": "ø_All selections and unsaved changes will be discarded_________________å"
+    "confirmManualRefreshText": "Alle markeringer og ikke-gemte ændringer vil gå tabt"
   },
   "help": {
     "helpIconTooltip": "Hjælp"
   },
   "filter": {
     "noFeatureFoundText": "Intet objekt fundet for denne værdi.",
-    "distinctQueryFailed": "ø_No distinct values found for the field_____________å.",
+    "distinctQueryFailed": "Ingen forskellige værdier fundet for dette felt.",
     "andText": "og",
-    "filterInEditModeAlert": "ø_Filters unavailable while editing___________å.",
+    "filterInEditModeAlert": "Filtre er utilgængelige under redigering.",
     "dropdownSelectOption": "Vælg",
-    "filterInShowSelectedEditModeAlert": "ø_Filters unavailable in 'Show Selected' mode______________å."
+    "filterInShowSelectedEditModeAlert": "Filtre er utilgængelige i 'Vis udvalgte'-tilstand."
   },
   "detailsPanel": {
     "editContentText": "Redigér post"
@@ -135,8 +135,8 @@ define({
     "reSignInMessage": "Klik her for at logge ind"
   },
   "selectionOptions": {
-    "selectionOptionsIconTooltip": "ø_Selection Options______å",
-    "showAllOptionText": "ø_Show All___å",
-    "showSelectedOptionText": "ø_Show Selected_____å"
+    "selectionOptionsIconTooltip": "Valgmuligheder",
+    "showAllOptionText": "Vis alle",
+    "showSelectedOptionText": "Vis valgte"
   }
 });

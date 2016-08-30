@@ -40,7 +40,7 @@ define({
   },
   "cantFindStories": {
     "whereAreStories": "לא רואה את הסיפור שלך?",
-    "notSeeExplanation": "כן_My Stories will only list story maps hosted in ArcGIS ({{STORY_MAP_BASIC}} is currently not supported). See our {{FAQ}} for more information___________________________________________ש.",
+    "notSeeExplanation": "'הסיפורים שלי' יציגו רק מפות סיפור שמתארחות ב-ArcGIS‏ ({{STORY_MAP_BASIC}} אינו נתמך כעת). עיין ב{{שאלות נפוצות}} לקבלת מידע נוסף.",
     "faq": "שאלות ותשובות",
     "followingStoriesToUpdate": "סיפורים שנוצרו בגירסאות קודמות של האפליקציות שלנו וצריכים להתעדכן בכדי שיופיעו ב'הסיפורים שלי':",
     "gettingStories": "מחפש סיפורים שנוצרו בגירסאות קודמות של האפליקציות שלנו ושיש צורך לעדכן אותם...",
@@ -88,16 +88,16 @@ define({
     "layerPrivate": "הפיכת השכבה שלך לפרטית תבטל את הסיפור שלך"
   },
   "collectionList": {
-    "business": "כן_Business and Economy_______ש",
-    "history": "כן_History and Culture_______ש",
-    "inNews": "כן_In The News____ש",
-    "infrastructure": "כן_Infrastructure and Construction__________ש",
-    "nature": "כן_Nature and Conservation________ש",
+    "business": "עסקים וכלכלה",
+    "history": "היסטוריה ותרבות",
+    "inNews": "בחדשות",
+    "infrastructure": "הנדסה ובניין",
+    "nature": "טבע ושימור",
     "people": "אנשים וחברה",
-    "planning": "כן_Planning and Design_______ש",
+    "planning": "תכנון ועיצוב",
     "science": "מדע וטכנולוגיה",
-    "sports": "כן_Sports and Entertainment________ש",
-    "travel": "כן_Travel and Recreation_______ש"
+    "sports": "ספורט ובידור",
+    "travel": "נסיעות ונופש"
   },
   "types": {
     "custom": "מותאם",
@@ -216,7 +216,7 @@ define({
   "content": {
     "media": {
       "maps": "מפות",
-      "scenes": "כן_Scenes___ש",
+      "scenes": "סצינות",
       "images": "תמונות",
       "videos": "סרטונים",
       "webpages": "דפי אינטרנט",
@@ -235,29 +235,29 @@ define({
       "tab": "לשונית",
       "accordion": "חלק",
       "mapJournal": "חלק",
-      "cascade": "כן_Section___ש",
-      "crowdsource": "כן_Contribution_____ש",
-      "shortlist": "כן_Tab__ש"
+      "cascade": "קטע",
+      "crowdsource": "תרומה",
+      "shortlist": "לשונית"
     },
     "titleType": {
       "mapTour": "כותרת",
       "mapJournal": "URL",
       "mapSeries": "URL",
-      "cascade": "כן_URL__ש",
-      "crowdsource": "כן_URL__ש",
-      "shortlist": "כן_URL__ש"
+      "cascade": "URL",
+      "crowdsource": "URL",
+      "shortlist": "URL"
     },
     "actions": {
       "viewMap": "הצג מפה",
       "editMap": "ערוך מפה",
-      "editScene": "כן_Edit Scene____ש",
+      "editScene": "ערוך סצינה",
       "fix": "תקן",
       "viewLayer": "הצג שכבה"
     },
     "contentType": {
       "mainStage": "פעולת תצוגה ראשית",
       "sidePanel": "תיאור",
-      "introImage": "כן_(cover page photo)______ש"
+      "introImage": "(תמונת כריכה)"
     },
     "notification": {
       "refreshExplanation": "בדוק שוב את הסיפור שלך",
@@ -298,7 +298,7 @@ define({
       "publicDisabled": "שיתוף עם הציבור הוגדר כלא פעיל על-ידי מנהל",
       "orgDisabled": "שיתוף עם הארגון שלך הוגדר כלא פעיל על-ידי מנהל",
       "noMapName": "לא ניתן לאחזר שם מפה",
-      "noSceneName": "כן_Could Not Retrieve Scene________ש",
+      "noSceneName": "אין אפשרות לאחזר סצינה",
       "notPublic": "לא ציבורי",
       "inaccessible": "לא נגיש",
       "deleted": "נמחק",
@@ -350,8 +350,8 @@ define({
       "cantScanThisTypeAlt": "לא ניתן לבדוק סוג שכבה זה",
       "cantScanThisType": "השכבה אינה סוג שכבה שניתן לבדוק",
       "webpageNotScanned": "בעיות בדפי אינטרנט לא נבדקות",
-      "sceneNotScanned": "כן_Scenes are not currently checked for issues, please make sure that the scene and all of its layers are shared correctly_____________________________________ש",
-      "scenesNotScannedGlobally": "כן_There are scenes in this story, and scenes are not currently checked for issues. Please make sure that the scenes and all of their layers are shared correctly________________________________________________ש",
+      "sceneNotScanned": "בעת הזו לא נבדקות בעיות בסצנות, ודא שהסצנה וכל השכבות שלה משותפות בצורה תקינה",
+      "scenesNotScannedGlobally": "קיימות סצנות בסיפור, ובעת הזו לא נבדקות בעיות בסצנות. ודא שהסצנות וכל השכבות שלהן משותפות בצורה תקינה",
       "ignoredIssue": "התעלמת משגיאה בשכבה זו. טען מחדש את הדף ובדוק שוב את הסיפור כדי לסקור את השגיאה",
       "ignoredIssueBuilder": "התעלמת משגיאה בשכבה זו. טען מחדש את הבונה כדי לבדוק שוב שגיאה זו"
     },
@@ -452,25 +452,25 @@ define({
       "thirdTitle": "מפות"
     },
     "cascade": {
-      "firstTitle": "כן_sections___ש",
-      "secondTitle": "כן_maps__ש"
+      "firstTitle": "קטעים",
+      "secondTitle": "מפות"
     },
     "swipeSpyglass": {
-      "firstTitle": "כן_points of interest______ש",
+      "firstTitle": "נקודת עניין",
       "secondTitle": "style",
       "secondValueA": "החלף",
       "secondValueB": "זכוכית מגדלת",
       "thirdTitle": "מפות"
     },
     "crowdsource": {
-      "firstTitle": "כן_contributions_____ש",
-      "secondTitle": "כן_basemap___ש",
-      "secondValueLoading": "כן_Loading____ש...",
-      "secondValueUnknown": "כן_unknown___ש"
+      "firstTitle": "תרומות",
+      "secondTitle": "מפת רקע",
+      "secondValueLoading": "טוען...",
+      "secondValueUnknown": "לא מוכר"
     },
     "shortlist": {
-      "firstTitle": "כן_places___ש",
-      "secondTitle": "כן_tabs__ש",
+      "firstTitle": "מקומות",
+      "secondTitle": "לשוניות",
       "thirdTitle": "מפת רקע",
       "thirdValueLoading": "טוען...",
       "thirdValueUnknown": "לא ידוע"

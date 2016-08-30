@@ -37,9 +37,9 @@ define({
       "upgradeBrowser": "<a href='http://browsehappy.com/' target='_blank'>Vui lòng cập nhật trình duyệt của bạn</a>.",
       "mapLoadingFail": "Đã xảy ra lỗi, bản đồ không tải đúng.",
       "signOut": "Đăng xuất",
-      "print0": "Đ_Sorry, this story cannot be printed____________ớ.",
-      "print1": "Đ_To print this story, please use the print button located in the share dialog________________________ớ.",
-      "print2": "Đ_Sorry, a printable version of the story is typically accessible through the share dialog, but this dialog has been disabled by the author__________________________________________ớ."
+      "print0": "Rất tiếc, không thể in câu chuyện này.",
+      "print1": "Để in câu chuyện này, vui lòng sử dụng nút in nằm trong hộp thoại chia sẻ.",
+      "print2": "Rất tiếc, thông thường phiên bản có chức năng in của câu chuyện sẽ được truy cập thông qua hộp thoại chia sẻ. Tuy nhiên, hộp thoại này đã bị tác giả vô hiệu hóa."
     },
     "mobileView": {
       "tapForDetails": "Chạm nhẹ vào để biết chi tiết",
@@ -89,15 +89,15 @@ define({
       "autoplayExplain1": "Chế độ phát tự động sẽ chuyển qua câu chuyện của bạn theo khoảng thời gian định kỳ. Đây là tính năng lý tưởng đối với màn hình hiển thị nơi công cộng hoặc của ki-ốt, tuy nhiên, hãy lưu ý rằng trong các trường hợp khác, câu chuyện có thể trở nên khó đọc hơn. Tính năng này không được hỗ trợ trên các màn hình hiển thị nhỏ.",
       "autoplayExplain2": "Khi chế độ này được kích hoạt, có các nút điều khiển để phát/tạm dừng câu chuyện và điều chỉnh tốc độ điều hướng.",
       "linksupdated": "Liên kết đã được cập nhật!",
-      "print": "Đ_Print___ớ",
-      "printInstruction1": "Đ_Please wait for all the content to load before printing this page_____________________ớ",
-      "printInstruction1a": "Đ_Some content may not print unless you enable \"Print Background Colors and Images\" in the Print Page setup dialog___________________________________ớ",
-      "printInstruction2": "Đ_This page cannot be shared with others, instead share the ${link}_____________________ớ",
-      "link": "Đ_link to the story______ớ",
-      "printOptPageBreak": "Đ_Begin each section on a new page___________ớ",
-      "printWarning": "Đ_This is a printed version of a story map. Dynamic content such as videos and interactive maps is only available in the online version at ${link}____________________________________________ớ",
-      "printMSWarning": "Đ_link available only in online story____________ớ",
-      "printVideoWarning": "Đ_This video can be viewed in the online version of this story map____________________ớ"
+      "print": "In",
+      "printInstruction1": "Vui lòng chờ toàn bộ nội dung được tải xong rồi mới in trang này",
+      "printInstruction1a": "Có thể không in được một số nội dung trừ khi kích hoạt \"In màu và hình nền\" trong hộp thoại thiết lập In Trang",
+      "printInstruction2": "Không thể chia sẻ trang này với người khác, thay vào đó, hãy chia sẻ ${link}",
+      "link": "liên kết đến câu chuyện",
+      "printOptPageBreak": "Bắt đầu mỗi phần trên trang mới",
+      "printWarning": "Đây là phiên bản in của story map. Nội dung động như video và bản đồ tương tác chỉ khả dụng trong phiên bản trực tuyến tại địa chỉ ${link}",
+      "printMSWarning": "liên kết chỉ khả dụng trong Story trực tuyến",
+      "printVideoWarning": "Video này chỉ xem được trong phiên bản trực tuyến của Story map."
     }
   }
 });

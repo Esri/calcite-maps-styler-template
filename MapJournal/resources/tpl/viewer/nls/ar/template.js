@@ -37,9 +37,9 @@ define({
       "upgradeBrowser": "<a href='http://browsehappy.com/' target='_blank'>الرجاء تحديث المستعرض</a>.",
       "mapLoadingFail": "‏‏حدث خطأ ما، لم يتم تحميل الخريطة بشكل صحيح.",
       "signOut": "تسجيل الخروج",
-      "print0": "بيت_Sorry, this story cannot be printed____________لاحقة.",
-      "print1": "بيت_To print this story, please use the print button located in the share dialog________________________لاحقة.",
-      "print2": "بيت_Sorry, a printable version of the story is typically accessible through the share dialog, but this dialog has been disabled by the author__________________________________________لاحقة."
+      "print0": "نأسف، لا يمكن طباعة هذه الحكاية.",
+      "print1": "لطباعة هذه الحكاية، يرجى استخدام زر طباعة الموجود في مربع حوار مشاركة.",
+      "print2": "نأسف، يمكن الوصول للإصدار القابل للطبع عبر مربع حوار المشاركة ولكن تم تعطيل مربع الحوار باستخدام المؤلف."
     },
     "mobileView": {
       "tapForDetails": "الضغط للحصول على التفاصيل",
@@ -89,15 +89,15 @@ define({
       "autoplayExplain1": "يتقدّم وضع التشغيل التلقائي خلال القصة في فواصل منتظمة، وهو مثالي في عارض بيانات أو مراقبة عرض عام، ولكن انتبه، ففي مواقف أخرى، قد يجعل القصة أصعب في القراءة. ولا يتم دعم هذا المعلم في عروض صغيرة.",
       "autoplayExplain2": "عندما يكون هذا الوضع نشطًا، تتوفر عناصر تحكم تشغيل/إيقاف تشغيل القصة وتعديل سرعة الانتقال.",
       "linksupdated": "تم تحديث الروابط!",
-      "print": "بيت_Print___لاحقة",
-      "printInstruction1": "بيت_Please wait for all the content to load before printing this page_____________________لاحقة",
-      "printInstruction1a": "بيت_Some content may not print unless you enable \"Print Background Colors and Images\" in the Print Page setup dialog___________________________________لاحقة",
-      "printInstruction2": "بيت_This page cannot be shared with others, instead share the ${link}_____________________لاحقة",
-      "link": "بيت_link to the story______لاحقة",
-      "printOptPageBreak": "بيت_Begin each section on a new page___________لاحقة",
-      "printWarning": "بيت_This is a printed version of a story map. Dynamic content such as videos and interactive maps is only available in the online version at ${link}____________________________________________لاحقة",
-      "printMSWarning": "بيت_link available only in online story____________لاحقة",
-      "printVideoWarning": "بيت_This video can be viewed in the online version of this story map____________________لاحقة"
+      "print": "طباعة",
+      "printInstruction1": "يرجى الانتظار لتحميل المحتوى بالكامل قبل طباعة الصفحة الحالية",
+      "printInstruction1a": "لن يتم طباعة بعض المحتوى مالم يتم تمكين \"طباعة ألوان الخلفية والصور\" في مربع حوار إعداد صفحة الطباعة",
+      "printInstruction2": "لا يمكن مشاركة الصفحة مع الآخرين بدلاً من مشاركة ${link}",
+      "link": "رابط الحكاية",
+      "printOptPageBreak": "بدء كل جزء في الصفحة الجديدة",
+      "printWarning": "ها هو الإصدار المطبوع من خريطة الحكاية. يتوفر المحتوى الديناميكي باعتباره مقاطع فيديو وخرائط تفاعلية فقط في الإصدار المتصل في ${link}",
+      "printMSWarning": "رابط متوفر فقط في الحكاية المتصلة",
+      "printVideoWarning": "يمكن عرض مقطع الفيديو في الإصدار المتصل لخريطة الحكاية"
     }
   }
 });

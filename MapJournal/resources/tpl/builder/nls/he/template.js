@@ -21,8 +21,8 @@ define({
       "cfgLarge": "גדול",
       "socialLinksLabel": "הצג את הקישורים המשותפים בחלק התחתון של כל קטע",
       "socialLinksDescr": "זה מאפשר לקוראים להפנות ולקדם מקטעים מסוימים של ה-%TPL_NAME% שלך. לדוגמה, אם אתה משתמש בסמל שיתוף מקטעים, הקוראים יגיעו למקטע ספציפי ב-%TPL_NAME% במקום להגיע לתחילת הסיפור. הקוראים שלך יוכלו להשתמש בקישור המדיה החברתית במקטע הכותרת כדי לקדם את כל ה-%TPL_NAME% (לשונית הכותרת) ולהגיע לתחילת ה-%TPL_NAME%.",
-      "socialDisabled": "כן_This feature is only available with Floating Panel layout__________________ש",
-      "socialWarning": "כן_Your story is using Side Panel layout, but we now recommend using this option only with Floating Panel layout to avoid an issue where the panel may not position itself to the desired section for narratives with images. You may continue to use this option, but if you disable it, it will then only be available when using Floating Panel layout________________________________________________________________________________________________________ש."
+      "socialDisabled": "אפשרות זו זמינה רק עבור סידור סרגלים צפים",
+      "socialWarning": "הסיפור שלך עושה שימוש בסרגלי צד, אבל אנחנו ממליצים לעשות שימוש באפשרות זו רק בסידור סרגלים צפים כדי להימנע מבעיה שעלול לחול כאשר סרגל לא ימוקם בקטע המבוקש עבור תסריטים עם תמונות. באפשרותך להמשיך להשתמש באפשרות זו, אבל אם תשבית אותה, היא תהיה זמינה רק בעת השימוש בסידור של סרגלים צפים."
     },
     "settingsLayoutFonts": {
       "title": "גופנים",

@@ -37,9 +37,9 @@ define({
       "upgradeBrowser": "<a href='http://browsehappy.com/' target='_blank'>กรุณาอัพเดทเบราว์เซอร์ของคุณ</a>.",
       "mapLoadingFail": "มีบางอย่างไม่ถูกต้อง โหลดแผนที่ไม่ถูกต้อง",
       "signOut": "ลงชื่อออก",
-      "print0": "ก้_Sorry, this story cannot be printed____________ษฺ.",
-      "print1": "ก้_To print this story, please use the print button located in the share dialog________________________ษฺ.",
-      "print2": "ก้_Sorry, a printable version of the story is typically accessible through the share dialog, but this dialog has been disabled by the author__________________________________________ษฺ."
+      "print0": "ขออภัย เรื่องราวนี้ไม่สามารถสั่งพิมพ์ได้",
+      "print1": "หากต้องการพิมพ์เรื่องราว ให้ใฃ้ปุ่มพิมพ์ในหน้าต่างแชร์ไดอะล็อก",
+      "print2": "ขออภัย รุ่นพิมพ์ของเรื่องนี้ ปกติสามารถเข้าถึงได้จากการแชร์ไดอะล็อก แต่ไดอะล็อกนี้ถูกปิดการใช้งานโดยผู้เขียน"
     },
     "mobileView": {
       "tapForDetails": "เลือกสำหรับรายละเอียด",
@@ -89,15 +89,15 @@ define({
       "autoplayExplain1": "โหมดการเล่นอัตโนมัติจะเลื่อนผ่านสตอรี่ของคุณในช่วงเวลาปกติ นี้เหมาะในตู้คีออสหรือแสดงบนจอภาพสาธารณะ แต่ทราบว่าในสถานการณ์อื่น ๆ ก็อาจจะทำให้เรื่องยากที่จะอ่าน คุณลักษณะนี้ไม่รองรับบนจอแสดงผลขนาดเล็ก",
       "autoplayExplain2": "เมื่อโหมดนี้มีการใช้งานยังมีการควบคุมการเล่น / หยุดชั่วคราวเรื่องราวและปรับความเร็วลูกศร",
       "linksupdated": "ลิงค์นี้อัพเดทแล้ว",
-      "print": "ก้_Print___ษฺ",
-      "printInstruction1": "ก้_Please wait for all the content to load before printing this page_____________________ษฺ",
-      "printInstruction1a": "ก้_Some content may not print unless you enable \"Print Background Colors and Images\" in the Print Page setup dialog___________________________________ษฺ",
-      "printInstruction2": "ก้_This page cannot be shared with others, instead share the ${link}_____________________ษฺ",
-      "link": "ก้_link to the story______ษฺ",
-      "printOptPageBreak": "ก้_Begin each section on a new page___________ษฺ",
-      "printWarning": "ก้_This is a printed version of a story map. Dynamic content such as videos and interactive maps is only available in the online version at ${link}____________________________________________ษฺ",
-      "printMSWarning": "ก้_link available only in online story____________ษฺ",
-      "printVideoWarning": "ก้_This video can be viewed in the online version of this story map____________________ษฺ"
+      "print": "พิมพ์",
+      "printInstruction1": "โปรดรอให้เนื้อหาทั้งหมดถูกโหลดชึ้นมาก่อนทำการพิมพ์",
+      "printInstruction1a": "เนื้อหาบางส่วนไม่สามารถพิมพ์ได้ จนกระทั่งสั่งเปิด “พิมพ์สีพื้นหลังและรูปภาพ” ในหน้าต่างการตั้งค่าไดอะล๊อกการพิมพ์",
+      "printInstruction2": "หน้าต่างนี้ ไม่สามารถแบ่งปันผู้อื่นได้ เว้นแต่แบ่งปันลิงค์",
+      "link": "เชื่อมต่อเรื่องราว",
+      "printOptPageBreak": "เริ่มต้นแต่ละส่วนที่หน้าต่างใหม่",
+      "printWarning": "นี่คือรูปแบบการพิมพ์ของแผนที่เรื่องราว ที่มีการไดนามิกของเนื้อหา ไม่ว่าจะเป็นวีดีโอ และการโต้ตอบของแผนที่นั้น จะเรียกดูผ่านลิงค์ออนไลน์",
+      "printMSWarning": "ลิงค์สามารถเรียกดูได้บนเรื่องราวออนไลน์เท่านั้น",
+      "printVideoWarning": "วีดีโอนี้สามารถเรียกดูได้ในส่วนของเวอร์ชั่นออนไลน์ของแผนที่เรื่องราว"
     }
   }
 });

@@ -83,7 +83,7 @@ define({
     "valueRadioButtonLabel": "Värde",
     "uniqueRadioButtonLabel": "Unik",
     "selectLayerToBegin": "Välj en kategori för att komma igång",
-    "layerFeatureCount": "Å_${selectedFeatureCount} selected / ${featureCount} records__________________ö"
+    "layerFeatureCount": "${selectedFeatureCount} valda / ${featureCount} poster"
   },
   "timeSlider": {
     "timeSliderLabel": "Tidsintervall",
@@ -102,7 +102,7 @@ define({
     "selectFileText": "Bläddra",
     "attachmentSelectedMsg": "bilagor markerade",
     "attachmentHeaderText": "Bilagor",
-    "addRecordText": "Å_Add Record____ö"
+    "addRecordText": "Lägg till post"
   },
   "main": {
     "noGroup": "Ingen grupp konfigurerad"
@@ -114,18 +114,18 @@ define({
   },
   "manualRefresh": {
     "manualRefreshIconTooltip": "Uppdatera",
-    "confirmManualRefreshText": "Å_All selections and unsaved changes will be discarded_________________ö"
+    "confirmManualRefreshText": "Alla urval och osparade ändringar ignoreras"
   },
   "help": {
     "helpIconTooltip": "Hjälp"
   },
   "filter": {
     "noFeatureFoundText": "Inget geoobjekt hittades för detta värde.",
-    "distinctQueryFailed": "Å_No distinct values found for the field_____________ö.",
+    "distinctQueryFailed": "Inga distinkta värden hittades för fältet.",
     "andText": "och",
-    "filterInEditModeAlert": "Å_Filters unavailable while editing___________ö.",
+    "filterInEditModeAlert": "Filter är inte tillgängliga vid redigering.",
     "dropdownSelectOption": "Välj",
-    "filterInShowSelectedEditModeAlert": "Å_Filters unavailable in 'Show Selected' mode______________ö."
+    "filterInShowSelectedEditModeAlert": "Filter är inte tillgängliga i läget Visa valda."
   },
   "detailsPanel": {
     "editContentText": "Redigera post"
@@ -135,8 +135,8 @@ define({
     "reSignInMessage": "Klicka här för att logga in"
   },
   "selectionOptions": {
-    "selectionOptionsIconTooltip": "Å_Selection Options______ö",
-    "showAllOptionText": "Å_Show All___ö",
-    "showSelectedOptionText": "Å_Show Selected_____ö"
+    "selectionOptionsIconTooltip": "Alternativ för urval",
+    "showAllOptionText": "Visa alla",
+    "showSelectedOptionText": "Visa valda"
   }
 });

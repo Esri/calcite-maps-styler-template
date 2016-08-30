@@ -13,27 +13,27 @@ define({
   },
   "answerText": {
     "seriesOfPlaces": "Tập hợp địa điểm",
-    "mapsNarrative": "Đ_A narrative____ớ",
-    "compareDatasets": "Đ_A comparison of datasets________ớ",
+    "mapsNarrative": "Câu chuyện",
+    "compareDatasets": "So sánh Bộ dữ liệu",
     "other": "Bản đồ duy nhất",
     "yes": "Có",
     "no": "Không",
     "click": "Bấm",
     "scroll": "Cuộn",
-    "two": "Đ_Two__ớ",
-    "moreThanTwo": "Đ_More than two_____ớ",
-    "pickThis": "Đ_Pick this____ớ",
-    "detailJournal": "...Đ_appear in a side panel next to your featured media_________________ớ?",
-    "detailCascade": "...Đ_fill the whole page with a mix of text and media appearing in sequence_______________________ớ?"
+    "two": "Hai",
+    "moreThanTwo": "Nhiều hơn hai",
+    "pickThis": "Chọn",
+    "detailJournal": "...xuất hiện trong bảng điều khiển bên ở bên cạnh phương tiện truyền thông nổi bật của bạn?",
+    "detailCascade": "...điền toàn bộ trang bằng cách kết hợp nội dung chữ với cửa sổ phương tiện truyền thông xuất hiện theo trình tự?"
   },
   "questionText": {
     "bestDescribesStory": "Điều gì mô tả chính xác nhất câu chuyện của bạn?",
     "showPhotos": "Bạn có muốn hiện hình ảnh cho từng vị trí không?",
     "clickOrScroll": "Bạn muốn khán giả của mình nhấp qua các tab hay cuộn?",
-    "crowdsource": "Đ_Do you want to crowdsource places from your audience_________________ớ?",
-    "categories": "Đ_Are your places organized into categories______________ớ?",
-    "datasets": "Đ_How many datasets will be compared____________ớ?",
-    "narrative": "Đ_Do you want your narrative to__________ớ:"
+    "crowdsource": "Bạn có muốn crowdsource địa điểm từ đối tượng của bạn không?",
+    "categories": "Các địa điểm của bạn có được tổ chức thành loại không?",
+    "datasets": "Bao nhiêu bộ dữ liệu sẽ được so sánh?",
+    "narrative": "Bạn có muốn câu chuyện của mình:"
   },
   "finalApp": {
     "weRecommend": "Chúng tôi Khuyến nghị: {{STORY_TYPE}}",
@@ -42,22 +42,22 @@ define({
   },
   "reasons": {
     "mapTour": "Ứng dụng này trình bày một câu chuyện theo trình tự, dựa vào địa điểm dưới dạng một loạt hình ảnh được đánh dấu vị trí và chú thích liên kết đến bản đồ tương tác. Đây là ứng dụng lý tưởng cho các hành trình đi bộ hoặc một chuỗi vị trí mà bạn muốn người sử dụng đi theo trình tự.",
-    "mapJournal": "Đ_This app lets you present an in-depth narrative in a scrolling side panel and organized into sections. Each section has an associated featured media such as a map, image, video, etc________________________________________________________ớ.",
-    "cascade": "Đ_This app lets you present your narrative as a compelling, full-page scrolling experience. Sections containing text and in-line media can be interspersed with 'immersive' sections that fill the page and can include effects like map animations and visual transitions_________________________________________________________________________________ớ.",
+    "mapJournal": "Ứng dụng này giúp bạn trình bày câu chuyện chuyên sâu bằng bảng điều khiển dạng cuốn và được chia thành từng phần. Mỗi phần có các phương tiện truyền thông nổi bật tượng ứng được liên kết như bản đồ, hình ảnh, video, v.v.",
+    "cascade": "Ứng dụng này giúp bạn trình bày câu chuyện thông qua một giao diện hấp dẫn với thao tác cuộn trang tiện lợi. Mỗi phần sẽ chứa nội dung văn bản và phương tiện trên cùng một trang, và có thể đan xen với các phần \"tạo không gian\" chiếm diện tích của cả trang và mỗi phần nội dung có thể bao gồm các bản đồ sinh động với việc luân chuyển hình ảnh linh hoạt.",
     "mapSeries": "Ứng dụng này cho phép bạn trình bày một chuỗi bản đồ thông qua tab, dưới dạng đầu đoạn đánh số chỉ mục hoặc bộ điều khiển 'xếp ngang' của chúng tôi. Bạn cũng có thể đưa vào hình ảnh, video, và nội dung web trong các chuỗi của mình để kể câu chuyện của bạn.",
-    "crowdsource": "Đ_This app lets you publish and manage a crowdsourced story which anyone can contribute to. Use it to engage a specific audience or the general public on the subject of your choice. A vetting function lets you review and approve contributions_________________________________________________________________________ớ.",
-    "shortlist": "Đ_This app lets you present a set of places of interest organized into tabs based on themes, such as parks, attractions, hotels, etc. The tabs update to show people what's in the area they are looking at on the map, making it easy and fun to find out what's available_________________________________________________________________________________ớ.",
+    "crowdsource": "Ứng dụng này giúp bạn xuất bản và quản lý các câu chuyện dạng crowdsource mà bất kỳ ai cũng có thể đóng góp. Hãy sử dụng ứng dụng này để tiếp cận các đối tượng khách hàng cụ thể hoặc công chúng nói chung về vấn đề bạn chọn. Chức năng hiệu chỉnh cho phép bạn xem xét và phê duyệt các nội dung được đóng góp.",
+    "shortlist": "Ứng dụng này giúp bạn trình bày một tập hợp các địa điểm đáng chú ý được phân vào nhiều tab theo chủ đề, ví dụ như công viên, danh lam thắng cảng, khách sạn, v.v. Các tab được thiết lập để chỉ hiển thị những đối tượng nằm trong khu vực mà người dùng đang tìm kiếm trên bản đồ, giúp việc tìm hiểu những gì có sẵn trở nên dễ dàng và thú vị hơn.",
     "swipeSpyglass": "Ứng dụng này cho phép người sử dụng so sánh hai bản đồ hoặc hai lớp trong cùng bản đồ. Đây là ứng dụng đặc biệt hữu dụng để xem hình ảnh trước và sau hoặc các thay đổi khác theo thời gian.",
     "basic": "Ứng dụng này cho phép bạn trình bày bản đồ thông qua giao diện người sử dụng được tối giản rất đơn giản. Ngoài thanh tiêu đề và chú giải tùy chọn, bản đồ sẽ lấp đầy màn hình. Sử dụng ứng dụng này để cho phép bản đồ của bạn hiển thị trực quan."
   },
   "shortReasons": {
     "mapTour": "Hướng dẫn mọi người tuần tự qua các địa điểm",
-    "mapJournal": "Đ_Present a narrative in a scrolling side panel_______________ớ",
-    "cascade": "Đ_Present a narrative with immersive, full-page scroll_________________ớ",
+    "mapJournal": "Trình bày câu chuyện với bản điều khiển cuộn bên.",
+    "cascade": "Trình bày câu chuyện bằng các phần tạo không gian, cuộn toàn trang",
     "mapSeries": "Trình bày chuỗi bản đồ liên quan",
-    "crowdsource": "Đ_Publish a story anyone can contribute to_____________ớ",
-    "shortlist": "Đ_Present places of interest organized into tabs_______________ớ",
-    "swipeSpyglass": "Đ_Compare two maps or layers with a slider or spyglass_________________ớ",
+    "crowdsource": "Xuất bản câu chuyện mà ai cũng có thể đóng góp",
+    "shortlist": "Trình bày các địa điểm đáng chú ý vào tab",
+    "swipeSpyglass": "So sánh hai bản đồ hoặc lớp bằng thanh trượt hoặc kính phóng đại",
     "basic": "Suy nghĩ tối giản, tuyệt vời cho một bản đồ"
   },
   "signInBuildDialog": {

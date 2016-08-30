@@ -19,28 +19,28 @@ define({
     "error": "맵을 생성할 수 없음"
   },
   "nav": {
-    "close": "한_Close___빠"
+    "close": "닫기"
   },
   "elevation": {
-    "toggle": "한_Toggle the Elevation Profile Chart____________빠.",
-    "drawTool": "한_Draw a line on the map to generate an elevation profile__________________빠.",
-    "selectMessage": "한_Click a line feature or use the draw tool to draw a line to display the elevation profile____________________________빠",
-    "gainLossTemplate": "한_Min: ${min}   Max: ${max}   Start: ${start}   End: ${end}   Change: ${gainLoss}_________________________빠"
+    "toggle": "고도 프로파일 차트를 전환합니다.",
+    "drawTool": "맵에 라인을 그려 고도 프로파일을 생성합니다.",
+    "selectMessage": "라인 피처를 클릭하거나 그리기 도구를 사용하여 라인을 그려서 고도 프로파일 디스플레이",
+    "gainLossTemplate": "최소: ${min}   최대: ${max}   시작: ${start}   종료: ${end}   변경: ${gainLoss}"
   },
   "splash": {
-    "title": "한_Title___빠",
-    "content": "한_Configure to create custom splash content_____________빠"
+    "title": "제목",
+    "content": "사용자 정의 시작 콘텐츠를 생성하도록 구성"
   },
   "legend": {
-    "title": "한_Legend___빠",
-    "tip": "한_Display legend_____빠"
+    "title": "범례",
+    "tip": "범례 표시"
   },
   "basemap": {
-    "title": "한_Basemap___빠",
-    "tip": "한_Change basemap_____빠"
+    "title": "베이스맵",
+    "tip": "베이스맵 변경"
   },
   "share": {
-    "title": "한_Share___빠",
-    "tip": "한_Share map____빠"
+    "title": "공유",
+    "tip": "맵 공유"
   }
 });

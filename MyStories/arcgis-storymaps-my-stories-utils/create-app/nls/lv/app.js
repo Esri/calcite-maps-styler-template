@@ -13,27 +13,27 @@ define({
   },
   "answerText": {
     "seriesOfPlaces": "Vietu kopums",
-    "mapsNarrative": "ķ_A narrative____ū",
-    "compareDatasets": "ķ_A comparison of datasets________ū",
+    "mapsNarrative": "Stāsts",
+    "compareDatasets": "Datu kopu salīdzinājums",
     "other": "Viena  karte",
     "yes": "Jā",
     "no": "Nē",
     "click": "Noklikšķiniet",
     "scroll": "Ritiniet",
-    "two": "ķ_Two__ū",
-    "moreThanTwo": "ķ_More than two_____ū",
-    "pickThis": "ķ_Pick this____ū",
-    "detailJournal": "...ķ_appear in a side panel next to your featured media_________________ū?",
-    "detailCascade": "...ķ_fill the whole page with a mix of text and media appearing in sequence_______________________ū?"
+    "two": "Divas",
+    "moreThanTwo": "Vairāk nekā divas",
+    "pickThis": "Izdot šo",
+    "detailJournal": "...būtu redzams sānu panelī blakus piedāvātajiem medijiem?",
+    "detailCascade": "...aizpildītu visu lapu ar teksta un multivides sajaukumu, kas tiktu rādīts noteiktā secībā?"
   },
   "questionText": {
     "bestDescribesStory": "Kas visprecīzāk apraksta jūsu stāstu?",
     "showPhotos": "Vai vēlaties rādīt katras vietas fotoattēlus?",
     "clickOrScroll": "Vai vēlaties, lai skatītāji klikšķina uz cilnēm vai ritina?",
-    "crowdsource": "ķ_Do you want to crowdsource places from your audience_________________ū?",
-    "categories": "ķ_Are your places organized into categories______________ū?",
-    "datasets": "ķ_How many datasets will be compared____________ū?",
-    "narrative": "ķ_Do you want your narrative to__________ū:"
+    "crowdsource": "Vai jūs vēlaties veidot pūļpakalpojuma vietas no savas auditorijas?",
+    "categories": "Vai jūsu vietas ir organizētas pa kategorijām?",
+    "datasets": "Cik datu kopas tiks salīdzinātas?",
+    "narrative": "Vai vēlaties, lai jūsu stāsts:"
   },
   "finalApp": {
     "weRecommend": "Mēs iesakām: {{STORY_TYPE}}",
@@ -42,22 +42,22 @@ define({
   },
   "reasons": {
     "mapTour": "Lietotne piedāvā secīgu, ar vietām saistītu stāstījumu kā fotoattēlu sēriju ar ģeogrāfiskajām atzīmēm un virsrakstiem, kas ir piesaistīta interaktīvai kartei. Tā ir ideāli piemērota ekskursijām vai gadījumiem, kad vēlaties, lai lietotāji secīgi aplūko kādu vietu kopumu.",
-    "mapJournal": "ķ_This app lets you present an in-depth narrative in a scrolling side panel and organized into sections. Each section has an associated featured media such as a map, image, video, etc________________________________________________________ū.",
-    "cascade": "ķ_This app lets you present your narrative as a compelling, full-page scrolling experience. Sections containing text and in-line media can be interspersed with 'immersive' sections that fill the page and can include effects like map animations and visual transitions_________________________________________________________________________________ū.",
+    "mapJournal": "Šī lietotne ļauj jums prezentēt padziļinātu stāstu ritināmā sānu panelī un organizēt to sadaļās. Katrai sadaļai ir saistīts piedāvātais materiāls, piemēram, karte, attēls, video u.c.",
+    "cascade": "Šī lietotne jums ļauj prezentēt savu stāstu kā aizraujošu pilnas lapas ritināmo pieredzi. Sadaļas, kurās iekļauts teksts un iebūvētie materiāli, var tikt piebārstītas ar 'iekļaujošām' sadaļām, kas aizpilda lapu un var ietvert dažādus efektus, piemēram, kartes animācijas un vizuālās pārejas.",
     "mapSeries": "Lietotne ļauj attēlot vairākas kartes, izmantojot cilnes, numurētas aizzīmes vai mūsu izvēršamo sānu ciļņu vadīklu. Varat iekļaut karšu sērijā arī attēlus, video un tīmekļa saturu, lai pavēstītu savu stāstu.",
-    "crowdsource": "ķ_This app lets you publish and manage a crowdsourced story which anyone can contribute to. Use it to engage a specific audience or the general public on the subject of your choice. A vetting function lets you review and approve contributions_________________________________________________________________________ū.",
-    "shortlist": "ķ_This app lets you present a set of places of interest organized into tabs based on themes, such as parks, attractions, hotels, etc. The tabs update to show people what's in the area they are looking at on the map, making it easy and fun to find out what's available_________________________________________________________________________________ū.",
+    "crowdsource": "Šī lietotne jums ļauj publicēt un pārvaldīt pūļpakalpojuma stāstu, kurā ieguldījumu var sniegt jebkurš. Izmantojiet to, lai piesaistītu jūsu izvēlētajai tēmai konkrētus lasītājus vai vispārējo sabiedrību. Pārbaudes funkcija jums ļauj pārskatīt un apstiprināt ieguldījumus.",
+    "shortlist": "Šī lietotne jums ļauj prezentēt apskates vietu kopu, kas organizēta cilnēs pēc tēmām, piemēram, parki, apskates objekti, viesnīcas u.c. Cilnes tiek atjauninātas, lai parādītu cilvēkiem, kas atrodas apgabalā, kuru viņi kartē skata, padarot pieejamo vietu meklēšanu vienkāršu un jautru.",
     "swipeSpyglass": "Lietotne ļauj lietotājiem salīdzināt divas kartes vai divus slāņus vienā kartē. Tā ir īpaši noderīga, parādot “pirms” un “pēc” attēlus vai citas laika gaitā veiktas izmaiņas.",
     "basic": "Lietotne ļauj attēlot karti, izmantojot ļoti vienkāršu, minimālu lietotāja saskarni. Karte aizpilda visu ekrānu, izņemot virsraksta joslu un pēc izvēles pievienojamu apzīmējumu. Izmantojiet šo lietotni, lai ļautu kartei runāt pašai."
   },
   "shortReasons": {
     "mapTour": "Vediet skatītājus no vienas vietas uz citu",
-    "mapJournal": "ķ_Present a narrative in a scrolling side panel_______________ū",
-    "cascade": "ķ_Present a narrative with immersive, full-page scroll_________________ū",
+    "mapJournal": "Prezentēt stāstu ritināmā sānu panelī",
+    "cascade": "Prezentēt stāstu ar iekļaujošu pilnas lapas rulli",
     "mapSeries": "Parādiet vairāku saistītu karšu sēriju",
-    "crowdsource": "ķ_Publish a story anyone can contribute to_____________ū",
-    "shortlist": "ķ_Present places of interest organized into tabs_______________ū",
-    "swipeSpyglass": "ķ_Compare two maps or layers with a slider or spyglass_________________ū",
+    "crowdsource": "Publicēt stāstu, kurā ieguldījumu var sniegt jebkurš",
+    "shortlist": "Prezentēt apskates vietas organizētas cilnēs",
+    "swipeSpyglass": "Salīdzināt divas kartes vai slāņus ar slīdni vai tālskati",
     "basic": "Minimāla pieeja, lieliska vienai kartei"
   },
   "signInBuildDialog": {

@@ -54,7 +54,7 @@ define({
   },
   "item_details": {
     "likeButtonTooltip": "Balsot par šo vienumu",
-    "likeButtonInverseTooltip": "ķ_Vote counted_____ū",
+    "likeButtonInverseTooltip": "Balss pieskaitīta",
     "commentButtonTooltip": "Pievienot komentāru",
     "gotoMapViewTooltip": "Iet uz kartes skatu",
     "galleryButtonTooltip": "Skatīt pievienotos failus",

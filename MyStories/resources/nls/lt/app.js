@@ -40,7 +40,7 @@ define({
   },
   "cantFindStories": {
     "whereAreStories": "Nematote savo pasakojimo?",
-    "notSeeExplanation": "Į_My Stories will only list story maps hosted in ArcGIS ({{STORY_MAP_BASIC}} is currently not supported). See our {{FAQ}} for more information___________________________________________š.",
+    "notSeeExplanation": "Skyriuje Mano pasakojimai bus pateikiami tik žemėlapių pasakojimai, saugomi ArcGIS ({{STORY_MAP_BASIC}} šiuo metu nepalaikoma). Daugiau informacijos rasite mūsų {{DUK}}.",
     "faq": "DUK",
     "followingStoriesToUpdate": "Šiuos pasakojimus, sukurtus ankstesne mūsų programos versija, reikia atnaujinti, kad juos būtų galima pateikti puslapyje Mano pasakojimai:",
     "gettingStories": "Ieškoma ankstesnėmis mūsų aplikacijų versijomis sukurtų pasakojimų, kuriuos reikia atnaujinti...",
@@ -88,16 +88,16 @@ define({
     "layerPrivate": "Pavertę žemėlapį asmeniniu pažeisite savo istoriją"
   },
   "collectionList": {
-    "business": "Į_Business and Economy_______š",
-    "history": "Į_History and Culture_______š",
-    "inNews": "Į_In The News____š",
-    "infrastructure": "Į_Infrastructure and Construction__________š",
-    "nature": "Į_Nature and Conservation________š",
+    "business": "Verslas ir ekonomika",
+    "history": "Istorija ir kultūra",
+    "inNews": "Aktualijos",
+    "infrastructure": "Infrastruktūra ir statybos",
+    "nature": "Gamtos apsauga",
     "people": "Žmonės ir visuomenė",
-    "planning": "Į_Planning and Design_______š",
+    "planning": "Planavimas ir dizainas",
     "science": "Mokslas ir technologija",
-    "sports": "Į_Sports and Entertainment________š",
-    "travel": "Į_Travel and Recreation_______š"
+    "sports": "Sportas ir pramogos",
+    "travel": "Kelionės ir poilsis"
   },
   "types": {
     "custom": "Adaptuotas",
@@ -216,7 +216,7 @@ define({
   "content": {
     "media": {
       "maps": "Žemėlapiai",
-      "scenes": "Į_Scenes___š",
+      "scenes": "Scenos",
       "images": "Atvaizdai",
       "videos": "Vaizdo įrašai",
       "webpages": "Tinklalapiai",
@@ -235,29 +235,29 @@ define({
       "tab": "Kortelė",
       "accordion": "Skiltis",
       "mapJournal": "Skiltis",
-      "cascade": "Į_Section___š",
-      "crowdsource": "Į_Contribution_____š",
-      "shortlist": "Į_Tab__š"
+      "cascade": "Skiltis",
+      "crowdsource": "Prisidėjimas",
+      "shortlist": "Kortelė"
     },
     "titleType": {
       "mapTour": "Antraštė",
       "mapJournal": "URL",
       "mapSeries": "URL",
-      "cascade": "Į_URL__š",
-      "crowdsource": "Į_URL__š",
-      "shortlist": "Į_URL__š"
+      "cascade": "URL",
+      "crowdsource": "URL",
+      "shortlist": "URL"
     },
     "actions": {
       "viewMap": "Peržiūrėti žemėlapį",
       "editMap": "Redaguoti žemėlapį",
-      "editScene": "Į_Edit Scene____š",
+      "editScene": "Redaguoti sceną",
       "fix": "Pataisyti",
       "viewLayer": "Peržiūrėti sluoksnį"
     },
     "contentType": {
       "mainStage": "pagrindinės srities veiksmas",
       "sidePanel": "aprašas",
-      "introImage": "Į_(cover page photo)______š"
+      "introImage": "(pagrindinio puslapio nuotrauka)"
     },
     "notification": {
       "refreshExplanation": "Dar kartą patikrinkite savo pasakojimą",
@@ -298,7 +298,7 @@ define({
       "publicDisabled": "Viešojo bendrinimo funkciją išjungė administratorius",
       "orgDisabled": "Bendrinimo organizacijoje funkciją išjungė administratorius",
       "noMapName": "Nepavyko gauti žemėlapio pavadinimo",
-      "noSceneName": "Į_Could Not Retrieve Scene________š",
+      "noSceneName": "Scenos gauti nepavyko",
       "notPublic": "NEVIEŠA",
       "inaccessible": "NEPRIEINAMA",
       "deleted": "PANAIKINTA",
@@ -350,8 +350,8 @@ define({
       "cantScanThisTypeAlt": "Negalime tikrinti šio tipo sluoksnio",
       "cantScanThisType": "Sluoksnis priklauso tipui, kurio mes negalime tikrinti",
       "webpageNotScanned": "Tinklalapiai netikrinami, ar juose yra nesklandumų",
-      "sceneNotScanned": "Į_Scenes are not currently checked for issues, please make sure that the scene and all of its layers are shared correctly_____________________________________š",
-      "scenesNotScannedGlobally": "Į_There are scenes in this story, and scenes are not currently checked for issues. Please make sure that the scenes and all of their layers are shared correctly________________________________________________š",
+      "sceneNotScanned": "Šiuo metu netikrinama, ar scenos veikia be trikdžių. Įsitikinkite, kad scena ir visi jos sluoksniai bendrinami tinkamai",
+      "scenesNotScannedGlobally": "Šiame pasakojime yra scenų, tačiau šiuo metu netikrinama, ar scenos veikia be trikdžių. Įsitikinkite, kad scenos ir visi jų sluoksniai bendrinami tinkamai",
       "ignoredIssue": "Ignoravote klaidą šiame sluoksnyje. Įkelkite puslapį iš naujo ir dar kartą peržiūrėkite pasakojimą ir klaidą",
       "ignoredIssueBuilder": "Ignoravote klaidą šiame sluoksnyje. Įkelkite kūrimo priemonę iš naujo ir dar kartą peržiūrėkite šią klaidą"
     },
@@ -452,25 +452,25 @@ define({
       "thirdTitle": "žemėlapiai"
     },
     "cascade": {
-      "firstTitle": "Į_sections___š",
-      "secondTitle": "Į_maps__š"
+      "firstTitle": "skiltys",
+      "secondTitle": "žemėlapiai"
     },
     "swipeSpyglass": {
-      "firstTitle": "Į_points of interest______š",
+      "firstTitle": "lankytinos vietos",
       "secondTitle": "stilius",
       "secondValueA": "keitiklis",
       "secondValueB": "žiūronas",
       "thirdTitle": "žemėlapiai"
     },
     "crowdsource": {
-      "firstTitle": "Į_contributions_____š",
-      "secondTitle": "Į_basemap___š",
-      "secondValueLoading": "Į_Loading____š...",
-      "secondValueUnknown": "Į_unknown___š"
+      "firstTitle": "prisidėjimai",
+      "secondTitle": "pagrindo žemėlapis",
+      "secondValueLoading": "Įkeliama...",
+      "secondValueUnknown": "nežinoma"
     },
     "shortlist": {
-      "firstTitle": "Į_places___š",
-      "secondTitle": "Į_tabs__š",
+      "firstTitle": "vietos",
+      "secondTitle": "skirtukai",
       "thirdTitle": "pagrindo žemėlapis",
       "thirdValueLoading": "Įkeliama...",
       "thirdValueUnknown": "nežinoma"

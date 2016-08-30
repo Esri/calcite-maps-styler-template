@@ -83,7 +83,7 @@ define({
     "valueRadioButtonLabel": "Valor",
     "uniqueRadioButtonLabel": "Única",
     "selectLayerToBegin": "Seleccione una categoría para empezar",
-    "layerFeatureCount": "á_${selectedFeatureCount} selected / ${featureCount} records__________________Ó"
+    "layerFeatureCount": "${selectedFeatureCount} seleccionadas / ${featureCount} registros"
   },
   "timeSlider": {
     "timeSliderLabel": "Rango de tiempo",
@@ -102,7 +102,7 @@ define({
     "selectFileText": "Examinar",
     "attachmentSelectedMsg": "adjuntos seleccionados",
     "attachmentHeaderText": "Adjuntos",
-    "addRecordText": "á_Add Record____Ó"
+    "addRecordText": "Agregar registro"
   },
   "main": {
     "noGroup": "No hay ningún grupo configurado"
@@ -114,18 +114,18 @@ define({
   },
   "manualRefresh": {
     "manualRefreshIconTooltip": "Actualizar",
-    "confirmManualRefreshText": "á_All selections and unsaved changes will be discarded_________________Ó"
+    "confirmManualRefreshText": "Se descartarán todas las seleccione y cambios sin guardar"
   },
   "help": {
     "helpIconTooltip": "Ayuda"
   },
   "filter": {
     "noFeatureFoundText": "No se ha encontrado ninguna entidad para este valor.",
-    "distinctQueryFailed": "á_No distinct values found for the field_____________Ó.",
+    "distinctQueryFailed": "No se han encontrado valores diferenciados para el campo.",
     "andText": "y",
-    "filterInEditModeAlert": "á_Filters unavailable while editing___________Ó.",
+    "filterInEditModeAlert": "Los filtros no están disponibles durante la edición.",
     "dropdownSelectOption": "Seleccionar",
-    "filterInShowSelectedEditModeAlert": "á_Filters unavailable in 'Show Selected' mode______________Ó."
+    "filterInShowSelectedEditModeAlert": "Los filtros no están disponibles en el modo \"Mostrar seleccionado\""
   },
   "detailsPanel": {
     "editContentText": "Editar registro"
@@ -135,8 +135,8 @@ define({
     "reSignInMessage": "Haz clic aquí para iniciar sesión"
   },
   "selectionOptions": {
-    "selectionOptionsIconTooltip": "á_Selection Options______Ó",
-    "showAllOptionText": "á_Show All___Ó",
-    "showSelectedOptionText": "á_Show Selected_____Ó"
+    "selectionOptionsIconTooltip": "Opciones de selección",
+    "showAllOptionText": "Mostrar todo",
+    "showSelectedOptionText": "Mostrar seleccionado"
   }
 });

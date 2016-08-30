@@ -21,8 +21,8 @@ define({
       "cfgLarge": "Veliko",
       "socialLinksLabel": "Prikaži poveznice za dijeljenje na dnu svakog odjeljka",
       "socialLinksDescr": "To omogućuje čitateljima da referenciraju i promoviraju određene odjeljke predloška %TPL_NAME%. Primjerice, ako upotrijebite ikonu za dijeljenje u odjeljku, čitatelji će biti prebačeni na taj određeni odjeljak predloška %TPL_NAME%, a ne na početak vaše priče. Vaši čitatelji mogu upotrijebiti poveznicu društvenih medija u naslovu kako bi promovirali vaš cijeli predložak %TPL_NAME% (kartica zaglavlja) i kako bi se prebacili na početak predloška %TPL_NAME%.",
-      "socialDisabled": "Č_This feature is only available with Floating Panel layout__________________ž",
-      "socialWarning": "Č_Your story is using Side Panel layout, but we now recommend using this option only with Floating Panel layout to avoid an issue where the panel may not position itself to the desired section for narratives with images. You may continue to use this option, but if you disable it, it will then only be available when using Floating Panel layout________________________________________________________________________________________________________ž."
+      "socialDisabled": "Ova je značajka dostupna samo s izgledom plutajuće ploče",
+      "socialWarning": "Vaša priča upotrebljava izgled bočne ploče, no sada preporučujemo upotrebu te opcije samo s izgledom plutajuće ploče kako bi se izbjegao problem u kojem se ploča ne želi postaviti u željeni odjeljak za priče sa slikama. Možete nastaviti upotrebljavati ovu opciju, no ako je onemogućite, tada će biti dostupna samo kada upotrebljavate izgled plutajuće ploče."
     },
     "settingsLayoutFonts": {
       "title": "Fontovi",

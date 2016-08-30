@@ -83,7 +83,7 @@ define({
     "valueRadioButtonLabel": "Waarde",
     "uniqueRadioButtonLabel": "Uniek",
     "selectLayerToBegin": "Selecteer een categorie om te starten",
-    "layerFeatureCount": "Ĳ_${selectedFeatureCount} selected / ${featureCount} records__________________ä"
+    "layerFeatureCount": "${selectedFeatureCount} geselecteerd / ${featureCount} items"
   },
   "timeSlider": {
     "timeSliderLabel": "Tijdsbereik",
@@ -102,7 +102,7 @@ define({
     "selectFileText": "Bladeren",
     "attachmentSelectedMsg": "bijlage(n) geselecteerd",
     "attachmentHeaderText": "Bijlagen",
-    "addRecordText": "Ĳ_Add Record____ä"
+    "addRecordText": "Item toevoegen"
   },
   "main": {
     "noGroup": "Geen groep geconfigureerd"
@@ -114,18 +114,18 @@ define({
   },
   "manualRefresh": {
     "manualRefreshIconTooltip": "Vernieuwen",
-    "confirmManualRefreshText": "Ĳ_All selections and unsaved changes will be discarded_________________ä"
+    "confirmManualRefreshText": "Alle selecties en onopgeslagen wijzigingen worden genegeerd"
   },
   "help": {
     "helpIconTooltip": "Help"
   },
   "filter": {
     "noFeatureFoundText": "Geen object gevonden voor deze waarde.",
-    "distinctQueryFailed": "Ĳ_No distinct values found for the field_____________ä.",
+    "distinctQueryFailed": "Geen afzonderlijke waarden gevonden voor het veld.",
     "andText": "en",
-    "filterInEditModeAlert": "Ĳ_Filters unavailable while editing___________ä.",
+    "filterInEditModeAlert": "Filters niet beschikbaar tijdens het bewerken.",
     "dropdownSelectOption": "Selecteren",
-    "filterInShowSelectedEditModeAlert": "Ĳ_Filters unavailable in 'Show Selected' mode______________ä."
+    "filterInShowSelectedEditModeAlert": "Filters niet beschikbaar in modus 'Geef geselecteerde weer'."
   },
   "detailsPanel": {
     "editContentText": "Record bewerken"
@@ -135,8 +135,8 @@ define({
     "reSignInMessage": "Klik hier om u aan te melden."
   },
   "selectionOptions": {
-    "selectionOptionsIconTooltip": "Ĳ_Selection Options______ä",
-    "showAllOptionText": "Ĳ_Show All___ä",
-    "showSelectedOptionText": "Ĳ_Show Selected_____ä"
+    "selectionOptionsIconTooltip": "Selectie-opties",
+    "showAllOptionText": "Alles tonen",
+    "showSelectedOptionText": "Geef geselecteerde weer"
   }
 });

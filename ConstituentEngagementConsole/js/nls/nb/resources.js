@@ -83,7 +83,7 @@ define({
     "valueRadioButtonLabel": "Verdi",
     "uniqueRadioButtonLabel": "Unike",
     "selectLayerToBegin": "Velg en kategori for å komme i gang",
-    "layerFeatureCount": "å_${selectedFeatureCount} selected / ${featureCount} records__________________ø"
+    "layerFeatureCount": "${selectedFeatureCount} valgt / ${featureCount} poster"
   },
   "timeSlider": {
     "timeSliderLabel": "Tidsrom",
@@ -102,7 +102,7 @@ define({
     "selectFileText": "Bla gjennom",
     "attachmentSelectedMsg": "vedlegg valgt",
     "attachmentHeaderText": "Vedlegg",
-    "addRecordText": "å_Add Record____ø"
+    "addRecordText": "Legg til post"
   },
   "main": {
     "noGroup": "Ingen gruppe er konfigurert"
@@ -114,18 +114,18 @@ define({
   },
   "manualRefresh": {
     "manualRefreshIconTooltip": "Oppdater",
-    "confirmManualRefreshText": "å_All selections and unsaved changes will be discarded_________________ø"
+    "confirmManualRefreshText": "Alle utvalg og endringer som ikke er lagret, forkastes"
   },
   "help": {
     "helpIconTooltip": "Hjelp"
   },
   "filter": {
     "noFeatureFoundText": "Finner ingen geoobjekter for denne verdien.",
-    "distinctQueryFailed": "å_No distinct values found for the field_____________ø.",
+    "distinctQueryFailed": "Finner ingen distinkte verdier for feltet.",
     "andText": "og",
-    "filterInEditModeAlert": "å_Filters unavailable while editing___________ø.",
+    "filterInEditModeAlert": "Filtrene er utilgjengelige under redigering.",
     "dropdownSelectOption": "Velg",
-    "filterInShowSelectedEditModeAlert": "å_Filters unavailable in 'Show Selected' mode______________ø."
+    "filterInShowSelectedEditModeAlert": "Filtre er utilgjengelig i «Vis valgte»-modus."
   },
   "detailsPanel": {
     "editContentText": "Rediger post"
@@ -135,8 +135,8 @@ define({
     "reSignInMessage": "Klikk her for å logge på"
   },
   "selectionOptions": {
-    "selectionOptionsIconTooltip": "å_Selection Options______ø",
-    "showAllOptionText": "å_Show All___ø",
-    "showSelectedOptionText": "å_Show Selected_____ø"
+    "selectionOptionsIconTooltip": "Alternativer for utvalg",
+    "showAllOptionText": "Vis alle",
+    "showSelectedOptionText": "Vis valgte"
   }
 });

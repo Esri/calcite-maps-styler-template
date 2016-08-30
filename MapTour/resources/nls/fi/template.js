@@ -332,13 +332,13 @@ define({
       "lookupMsgError": "Sivua ei löydy"
     },
     "viewPicasa": {
-      "title": "Å_Picasa import_____ö",
-      "header": "Å_Enter your email address or your Picasa id______________ö.",
-      "userInputLbl": "Å_Email or Picasa id______ö",
+      "title": "Picasa-tuonti",
+      "header": "Anna sähköpostiosoite tai Picasa-tunnus.",
+      "userInputLbl": "Sähköpostiosoite tai Picasa-tunnus",
       "signInMsg2": "Tiliä ei löydy",
       "signInMsg3": "Ei julkista albumia",
-      "howToFind": "Å_How to find a Picasa id________ö",
-      "howToFind2": "Å_Copy digits between the first and second '/' of any Picasa page____________________ö"
+      "howToFind": "Picasa-tunnuksen etsiminen",
+      "howToFind2": "Kopioi minkä tahansa Picasa-sivun ensimmäisen ja toisen vinoviivan (/) välissä olevat luvut"
     },
     "viewCSV": {
       "title": "CSV-tuonti",
@@ -434,8 +434,8 @@ define({
         "div6": "<b>Haluat käyttää uudelleen nykyistä kohdepalvelua</b>, johon kuvasi on tallennettu liitteinä tai joka viittaa ulkoisiin kuviin. Lisätietoja on alla olevassa osassa.",
         "div7": "<b>Olet karttakierrosmallin aiemman version</b> käyttäjä, ja sinulla on jo CSV-tiedosto, joka viittaa kuviisi ja pikkukuvaan: voit tuoda sen ja muokata tietojasi. Muodostusohjelma tukee vain pituus- ja leveysasteiden kenttiä käyttäviä CSV-tiedostoja. Osoitteeseen perustuvia CSV-tiedostoja voi edelleen käyttää web-kartan kautta (lisätietoja on alla olevassa osassa).",
         "div8": "Valokuvien verkkojakamispalveluista tuominen",
-        "div9a": "Å_Facebook support has been discontinued, ${learn}________________ö.",
-        "learn": "Å_learn more____ö",
+        "div9a": "Facebook-tuki on lopetettu, ${learn}.",
+        "learn": "lisätietoja",
         "div9": "Tuontitoiminto viittaa jo isännöityihin kuviin tallentamalla niiden URL-osoitteet web-kartan kohdekokoelmaan. Kuvia ei ole tallennettu ArcGIS Onlineen. Jos isännöityjä kuvia ei voi käyttää, ne eivät ole käytettävissä karttakierroksella ja näet Kuva ei ole käytettävissä -kuvan. Se, tuoko karttakierros kuvien nimen, kuvauksen ja sijainnin, määräytyy valokuvan palveluntarjoajan mukaan. Kyseiset määritteet tallennetaan web-kartalle. Web-palveluihin tehdyt muutokset eivät näy karttakierroksella.",
         "div10": "Kuvien tallentaminen web-palvelimeen",
         "div11": "Jos haluat isännöidä kuvia itse, sinun on luotava kuvien pikkukuvat manuaalisesti. Täyden tarkkuuden kuvien käyttäminen pikkukuvina heikentää laatua. Siksi suosittelemme käyttämään valokuvien verkkojakamispalvelua tai kohdepalvelua, joka tekee tämän puolestasi.",

@@ -40,7 +40,7 @@ define({
   },
   "cantFindStories": {
     "whereAreStories": "看不到您的故事?",
-    "notSeeExplanation": "試_My Stories will only list story maps hosted in ArcGIS ({{STORY_MAP_BASIC}} is currently not supported). See our {{FAQ}} for more information___________________________________________驗.",
+    "notSeeExplanation": "我的故事只會列出 ArcGIS 中託管的故事地圖 (目前不支援 {{STORY_MAP_BASIC}})。如需詳細資訊，請參閱我們的 {{FAQ}}。",
     "faq": "常見問題集",
     "followingStoriesToUpdate": "下列故事是使用我們早期的應用程式版本建立，需要為它們進行「我的故事」所列出的更新:",
     "gettingStories": "正在搜尋使用我們的早期應用程式版本建立且需要更新的故事...",
@@ -88,16 +88,16 @@ define({
     "layerPrivate": "將您的圖層設為私有會中斷您的故事"
   },
   "collectionList": {
-    "business": "試_Business and Economy_______驗",
-    "history": "試_History and Culture_______驗",
-    "inNews": "試_In The News____驗",
-    "infrastructure": "試_Infrastructure and Construction__________驗",
-    "nature": "試_Nature and Conservation________驗",
+    "business": "商業與經濟",
+    "history": "歷史與文化",
+    "inNews": "新聞報導",
+    "infrastructure": "基礎設施與建築",
+    "nature": "自然與保育",
     "people": "人們和社會",
-    "planning": "試_Planning and Design_______驗",
+    "planning": "規劃與設計",
     "science": "科學和技術",
-    "sports": "試_Sports and Entertainment________驗",
-    "travel": "試_Travel and Recreation_______驗"
+    "sports": "運動與娛樂",
+    "travel": "旅遊與娛樂"
   },
   "types": {
     "custom": "自訂",
@@ -216,7 +216,7 @@ define({
   "content": {
     "media": {
       "maps": "地圖",
-      "scenes": "試_Scenes___驗",
+      "scenes": "場景",
       "images": "影像",
       "videos": "影片",
       "webpages": "網頁",
@@ -235,29 +235,29 @@ define({
       "tab": "索引標籤",
       "accordion": "節",
       "mapJournal": "節",
-      "cascade": "試_Section___驗",
-      "crowdsource": "試_Contribution_____驗",
-      "shortlist": "試_Tab__驗"
+      "cascade": "節",
+      "crowdsource": "貢獻",
+      "shortlist": "索引標籤"
     },
     "titleType": {
       "mapTour": "說明文字",
       "mapJournal": "URL",
       "mapSeries": "URL",
-      "cascade": "試_URL__驗",
-      "crowdsource": "試_URL__驗",
-      "shortlist": "試_URL__驗"
+      "cascade": "URL",
+      "crowdsource": "URL",
+      "shortlist": "URL"
     },
     "actions": {
       "viewMap": "檢視地圖",
       "editMap": "編輯地圖",
-      "editScene": "試_Edit Scene____驗",
+      "editScene": "編輯場景",
       "fix": "修復",
       "viewLayer": "檢視圖層"
     },
     "contentType": {
       "mainStage": "主舞台動作",
       "sidePanel": "description",
-      "introImage": "試_(cover page photo)______驗"
+      "introImage": "(封面相片)"
     },
     "notification": {
       "refreshExplanation": "重新檢查您的故事",
@@ -298,7 +298,7 @@ define({
       "publicDisabled": "管理員已停用公開分享",
       "orgDisabled": "管理員已停用分享到您的組織",
       "noMapName": "無法擷取地圖名稱",
-      "noSceneName": "試_Could Not Retrieve Scene________驗",
+      "noSceneName": "無法擷取場景",
       "notPublic": "未公開",
       "inaccessible": "無法存取",
       "deleted": "已刪除",
@@ -350,8 +350,8 @@ define({
       "cantScanThisTypeAlt": "我們無法檢查此類型的圖層",
       "cantScanThisType": "圖層不屬於我們可檢查的圖層類型",
       "webpageNotScanned": "未檢查網頁的問題",
-      "sceneNotScanned": "試_Scenes are not currently checked for issues, please make sure that the scene and all of its layers are shared correctly_____________________________________驗",
-      "scenesNotScannedGlobally": "試_There are scenes in this story, and scenes are not currently checked for issues. Please make sure that the scenes and all of their layers are shared correctly________________________________________________驗",
+      "sceneNotScanned": "目前並未檢查場景的問題，請確定已正確分享場景及其所有圖層",
+      "scenesNotScannedGlobally": "此故事中有場景，且目前並未檢查場景的問題。請確定已正確分享場景及其所有圖層",
       "ignoredIssue": "您已忽略此圖層上的錯誤。請重新載入頁面，並重新檢查此故事來檢閱錯誤",
       "ignoredIssueBuilder": "您已忽略此圖層上的錯誤。請重新載入建立器來檢查此錯誤"
     },
@@ -452,25 +452,25 @@ define({
       "thirdTitle": "地圖"
     },
     "cascade": {
-      "firstTitle": "試_sections___驗",
-      "secondTitle": "試_maps__驗"
+      "firstTitle": "部分",
+      "secondTitle": "地圖"
     },
     "swipeSpyglass": {
-      "firstTitle": "試_points of interest______驗",
+      "firstTitle": "景點",
       "secondTitle": "樣式",
       "secondValueA": "刷屏",
       "secondValueB": "望遠鏡",
       "thirdTitle": "地圖"
     },
     "crowdsource": {
-      "firstTitle": "試_contributions_____驗",
-      "secondTitle": "試_basemap___驗",
-      "secondValueLoading": "試_Loading____驗...",
-      "secondValueUnknown": "試_unknown___驗"
+      "firstTitle": "貢獻",
+      "secondTitle": "底圖",
+      "secondValueLoading": "正在載入...",
+      "secondValueUnknown": "未知"
     },
     "shortlist": {
-      "firstTitle": "試_places___驗",
-      "secondTitle": "試_tabs__驗",
+      "firstTitle": "地點",
+      "secondTitle": "索引標籤",
       "thirdTitle": "底圖",
       "thirdValueLoading": "正在載入...",
       "thirdValueUnknown": "未知"

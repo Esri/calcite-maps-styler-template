@@ -54,7 +54,7 @@ define({
   },
   "item_details": {
     "likeButtonTooltip": "Bu öğeye oy ver",
-    "likeButtonInverseTooltip": "ı_Vote counted_____İ",
+    "likeButtonInverseTooltip": "Sayılan oy",
     "commentButtonTooltip": "Yorum ekle",
     "gotoMapViewTooltip": "Harita görünümüne git",
     "galleryButtonTooltip": "Ekteki dosyaları incele",

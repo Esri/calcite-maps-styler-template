@@ -37,9 +37,9 @@ define({
       "upgradeBrowser": "<a href='http://browsehappy.com/' target='_blank'>Ενημερώστε το πρόγραμμα περιήγησης</a>.",
       "mapLoadingFail": "Υπήρξε κάποιο πρόβλημα, ο χάρτης δεν φορτώθηκε σωστά.",
       "signOut": "Έξοδος",
-      "print0": "Đ_Sorry, this story cannot be printed____________ớ.",
-      "print1": "Đ_To print this story, please use the print button located in the share dialog________________________ớ.",
-      "print2": "Đ_Sorry, a printable version of the story is typically accessible through the share dialog, but this dialog has been disabled by the author__________________________________________ớ."
+      "print0": "Λυπούμαστε, αυτή η αφήγηση δεν μπορεί να εκτυπωθεί.",
+      "print1": "Για να εκτυπώσετε αυτήν την αφήγηση, χρησιμοποιήστε το κουμπί εκτύπωσης που βρίσκεται στο παράθυρο διαλόγου κοινοποίησης.",
+      "print2": "Λυπούμαστε, μια εκτυπώσιμη έκδοση της αφήγησης συνήθως είναι προσβάσιμη μέσω του παραθύρου διαλόγου κοινοποίησης, αλλά αυτό το παράθυρο διαλόγου έχει απενεργοποιηθεί από τον συντάκτη."
     },
     "mobileView": {
       "tapForDetails": "Πατήστε για λεπτομέρειες",
@@ -89,15 +89,15 @@ define({
       "autoplayExplain1": "Η λειτουργία αυτόματης αναπαραγωγής θα συνεχίζει στην αφήγησή σας σε τακτικά διαστήματα. Αυτό είναι ιδανικό για τις οθόνες καταστημάτων ή δημόσιας προβολής, αλλά σημειώστε ότι σε άλλες περιπτώσεις, ενδέχεται να είναι δυσκολότερη η ανάγνωση της αφήγησης. Αυτή η δυνατότητα δεν υποστηρίζεται σε μικρές οθόνες.",
       "autoplayExplain2": "Όταν αυτή η λειτουργία είναι ενεργή υπάρχουν στοιχεία ελέγχου για την αναπαραγωγή/παύση της αφήγησης και τη ρύθμιση της ταχύτητας πλοήγησης.",
       "linksupdated": "Οι σύνδεσμοι ενημερώθηκαν!",
-      "print": "Đ_Print___ớ",
-      "printInstruction1": "Đ_Please wait for all the content to load before printing this page_____________________ớ",
-      "printInstruction1a": "Đ_Some content may not print unless you enable \"Print Background Colors and Images\" in the Print Page setup dialog___________________________________ớ",
-      "printInstruction2": "Đ_This page cannot be shared with others, instead share the ${link}_____________________ớ",
-      "link": "Đ_link to the story______ớ",
-      "printOptPageBreak": "Đ_Begin each section on a new page___________ớ",
-      "printWarning": "Đ_This is a printed version of a story map. Dynamic content such as videos and interactive maps is only available in the online version at ${link}____________________________________________ớ",
-      "printMSWarning": "Đ_link available only in online story____________ớ",
-      "printVideoWarning": "Đ_This video can be viewed in the online version of this story map____________________ớ"
+      "print": "Εκτύπωση",
+      "printInstruction1": "Περιμένετε μέχρι να εκτυπωθεί όλο το περιεχόμενο, προτού εκτυπώσετε αυτήν τη σελίδα",
+      "printInstruction1a": "Ορισμένο περιεχόμενο μπορεί να μην εκτυπωθεί, εκτός εάν ενεργοποιήσετε την επιλογή \"Εκτύπωση εικόνων και χρωμάτων φόντου\" στο παράθυρο διαλόγου ρύθμισης \"Εκτύπωση σελίδας\"",
+      "printInstruction2": "Αυτή η σελίδα δεν μπορεί να κοινοποιηθεί σε άλλους. Μπορείτε να κοινοποιήσετε τη διεύθυνση ${link}",
+      "link": "σύνδεσμος για την αφήγηση",
+      "printOptPageBreak": "Ξεκινήστε κάθε ενότητα σε νέα σελίδα",
+      "printWarning": "Αυτή είναι η εκτυπωμένη έκδοση ενός αφηγηματικού χάρτη. Το δυναμικό περιεχόμενο όπως βίντεο και διαδραστικοί χάρτες διατίθενται μόνο στην online έκδοση, στη διεύθυνση ${link}",
+      "printMSWarning": "ο σύνδεσμος είναι διαθέσιμος μόνο στην online αφήγηση",
+      "printVideoWarning": "Αυτό το βίντεο μπορεί να προβληθεί στην online έκδοση αυτού του αφηγηματικού χάρτη"
     }
   }
 });

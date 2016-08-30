@@ -19,28 +19,28 @@ define({
     "error": "マップを作成できません"
   },
   "nav": {
-    "close": "須_Close___鷗"
+    "close": "閉じる"
   },
   "elevation": {
-    "toggle": "須_Toggle the Elevation Profile Chart____________鷗.",
-    "drawTool": "須_Draw a line on the map to generate an elevation profile__________________鷗.",
-    "selectMessage": "須_Click a line feature or use the draw tool to draw a line to display the elevation profile____________________________鷗",
-    "gainLossTemplate": "須_Min: ${min}   Max: ${max}   Start: ${start}   End: ${end}   Change: ${gainLoss}_________________________鷗"
+    "toggle": "標高グラフを切り替えます。",
+    "drawTool": "マップ上にラインを描画して、標高グラフを生成します。",
+    "selectMessage": "ライン フィーチャをクリックするか、描画ツールを使用してラインを描画し、標高グラフを表示します。",
+    "gainLossTemplate": "最小: ${min} 最大: ${max} 始点: ${start} 終点: ${end} 標高差: ${gainLoss}"
   },
   "splash": {
-    "title": "須_Title___鷗",
-    "content": "須_Configure to create custom splash content_____________鷗"
+    "title": "タイトル",
+    "content": "構成してカスタム スプラッシュ コンテンツを作成する"
   },
   "legend": {
-    "title": "須_Legend___鷗",
-    "tip": "須_Display legend_____鷗"
+    "title": "凡例",
+    "tip": "凡例の表示"
   },
   "basemap": {
-    "title": "須_Basemap___鷗",
-    "tip": "須_Change basemap_____鷗"
+    "title": "ベースマップ",
+    "tip": "ベースマップの変更"
   },
   "share": {
-    "title": "須_Share___鷗",
-    "tip": "須_Share map____鷗"
+    "title": "共有",
+    "tip": "マップの共有"
   }
 });

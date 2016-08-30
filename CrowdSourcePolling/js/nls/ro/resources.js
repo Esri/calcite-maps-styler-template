@@ -54,7 +54,7 @@ define({
   },
   "item_details": {
     "likeButtonTooltip": "Votaţi pentru acest element",
-    "likeButtonInverseTooltip": "Ă_Vote counted_____ș",
+    "likeButtonInverseTooltip": "Vot numărat",
     "commentButtonTooltip": "Adăugare comentariu",
     "gotoMapViewTooltip": "Accesare vizualizare hartă",
     "galleryButtonTooltip": "Vizualizare fişiere ataşate",

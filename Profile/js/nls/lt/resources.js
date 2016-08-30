@@ -19,28 +19,28 @@ define({
     "error": "Žemėlapio sukurti nepavyko"
   },
   "nav": {
-    "close": "Į_Close___š"
+    "close": "Uždaryti"
   },
   "elevation": {
-    "toggle": "Į_Toggle the Elevation Profile Chart____________š.",
-    "drawTool": "Į_Draw a line on the map to generate an elevation profile__________________š.",
-    "selectMessage": "Į_Click a line feature or use the draw tool to draw a line to display the elevation profile____________________________š",
-    "gainLossTemplate": "Į_Min: ${min}   Max: ${max}   Start: ${start}   End: ${end}   Change: ${gainLoss}_________________________š"
+    "toggle": "Perjungti aukščio profilio diagramą.",
+    "drawTool": "Brėžkite liniją žemėlapyje, kad sugeneruotumėte aukščio profilį.",
+    "selectMessage": "Spustelėkite linijos objektą arba brėžimo įrankiu nubrėžkite liniją, rodančią aukščio profilį",
+    "gainLossTemplate": "Min.: ${min}   Maks.: ${max}   Pradžia: ${start}   Pabaiga: ${end}   Keitimas: ${gainLoss}"
   },
   "splash": {
-    "title": "Į_Title___š",
-    "content": "Į_Configure to create custom splash content_____________š"
+    "title": "Pavadinimas",
+    "content": "Konfigūruokite, jeigu norite sukurti pasirinktinį pradžios ekraną"
   },
   "legend": {
-    "title": "Į_Legend___š",
-    "tip": "Į_Display legend_____š"
+    "title": "Legenda",
+    "tip": "Rodyti legendą"
   },
   "basemap": {
-    "title": "Į_Basemap___š",
-    "tip": "Į_Change basemap_____š"
+    "title": "Pagrindo žemėlapis",
+    "tip": "Pakeisti pagrindo žemėlapį"
   },
   "share": {
-    "title": "Į_Share___š",
-    "tip": "Į_Share map____š"
+    "title": "Bendrinti",
+    "tip": "Bendrinkite žemėlapį"
   }
 });

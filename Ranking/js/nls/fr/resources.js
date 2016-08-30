@@ -16,20 +16,20 @@
  */
 define({
   "map": {
-    "error": "�_Unable to create map_______�"
+    "error": "Impossible de cr�er la carte"
   },
   "errors": {
-    "layerNotFound": "�_Ranking layer not specified_________�"
+    "layerNotFound": "Couche de classement non sp�cifi�e"
   },
   "closebutton": {
-    "label": "�_Explore___�"
+    "label": "Explorer"
   },
   "toolbar": {
-    "infoLabel": "�_info__�",
-    "legendLabel": "�_legend___�"
+    "infoLabel": "info",
+    "legendLabel": "l�gende"
   },
   "navigation": {
-    "nextLabel": "�_Next__�",
-    "previousLabel": "�_Previous___�"
+    "nextLabel": "Suivant",
+    "previousLabel": "Pr�c�dent"
   }
 });

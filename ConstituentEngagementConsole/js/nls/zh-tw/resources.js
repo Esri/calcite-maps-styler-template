@@ -83,7 +83,7 @@ define({
     "valueRadioButtonLabel": "數值",
     "uniqueRadioButtonLabel": "唯一",
     "selectLayerToBegin": "選擇類別以開始使用",
-    "layerFeatureCount": "試_${selectedFeatureCount} selected / ${featureCount} records__________________驗"
+    "layerFeatureCount": "已選擇 ${selectedFeatureCount} / ${featureCount} 筆記錄"
   },
   "timeSlider": {
     "timeSliderLabel": "時間範圍",
@@ -102,7 +102,7 @@ define({
     "selectFileText": "瀏覽",
     "attachmentSelectedMsg": "已選定附件",
     "attachmentHeaderText": "附件",
-    "addRecordText": "試_Add Record____驗"
+    "addRecordText": "新增記錄"
   },
   "main": {
     "noGroup": "未配置任何群組"
@@ -114,18 +114,18 @@ define({
   },
   "manualRefresh": {
     "manualRefreshIconTooltip": "重新整理",
-    "confirmManualRefreshText": "試_All selections and unsaved changes will be discarded_________________驗"
+    "confirmManualRefreshText": "將放棄所有選擇和未儲存的更改"
   },
   "help": {
     "helpIconTooltip": "幫助"
   },
   "filter": {
     "noFeatureFoundText": "找不到此值的圖徵。",
-    "distinctQueryFailed": "試_No distinct values found for the field_____________驗.",
+    "distinctQueryFailed": "找不到欄位的不同值。",
     "andText": "和",
-    "filterInEditModeAlert": "試_Filters unavailable while editing___________驗.",
+    "filterInEditModeAlert": "編輯時無法使用篩選器。",
     "dropdownSelectOption": "選擇",
-    "filterInShowSelectedEditModeAlert": "試_Filters unavailable in 'Show Selected' mode______________驗."
+    "filterInShowSelectedEditModeAlert": "無法在「顯示所選」模式中使用篩選器。"
   },
   "detailsPanel": {
     "editContentText": "編輯記錄"
@@ -135,8 +135,8 @@ define({
     "reSignInMessage": "按一下此處以登入"
   },
   "selectionOptions": {
-    "selectionOptionsIconTooltip": "試_Selection Options______驗",
-    "showAllOptionText": "試_Show All___驗",
-    "showSelectedOptionText": "試_Show Selected_____驗"
+    "selectionOptionsIconTooltip": "選擇選項",
+    "showAllOptionText": "顯示全部",
+    "showSelectedOptionText": "顯示所選"
   }
 });

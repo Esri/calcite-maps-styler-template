@@ -83,7 +83,7 @@ define({
     "valueRadioButtonLabel": "Valor",
     "uniqueRadioButtonLabel": "Único",
     "selectLayerToBegin": "Selecione uma categoria para iniciar",
-    "layerFeatureCount": "ã_${selectedFeatureCount} selected / ${featureCount} records__________________Ç"
+    "layerFeatureCount": "${selectedFeatureCount} selecionado / ${featureCount} registros"
   },
   "timeSlider": {
     "timeSliderLabel": "Intervalo de tempo",
@@ -102,7 +102,7 @@ define({
     "selectFileText": "Procurar",
     "attachmentSelectedMsg": "anexos selecionados",
     "attachmentHeaderText": "Anexos",
-    "addRecordText": "ã_Add Record____Ç"
+    "addRecordText": "Adicionar Registros"
   },
   "main": {
     "noGroup": "Nenhum grupo configurado"
@@ -114,18 +114,18 @@ define({
   },
   "manualRefresh": {
     "manualRefreshIconTooltip": "Atualizar",
-    "confirmManualRefreshText": "ã_All selections and unsaved changes will be discarded_________________Ç"
+    "confirmManualRefreshText": "Todas as seleções e alterações não salvas serão descartadas"
   },
   "help": {
     "helpIconTooltip": "Ajuda"
   },
   "filter": {
     "noFeatureFoundText": "Nenhuma feição encontrada para este valor.",
-    "distinctQueryFailed": "ã_No distinct values found for the field_____________Ç.",
+    "distinctQueryFailed": "Nenhum valor distinto encontrado para o campo.",
     "andText": "e",
-    "filterInEditModeAlert": "ã_Filters unavailable while editing___________Ç.",
+    "filterInEditModeAlert": "Filtros indisponíveis durante edição.",
     "dropdownSelectOption": "Selecionar",
-    "filterInShowSelectedEditModeAlert": "ã_Filters unavailable in 'Show Selected' mode______________Ç."
+    "filterInShowSelectedEditModeAlert": "Filtros indisponíveis no modo 'Mostrar Selecionado'."
   },
   "detailsPanel": {
     "editContentText": "Editar registro"
@@ -135,8 +135,8 @@ define({
     "reSignInMessage": "Clique aqui para entrar"
   },
   "selectionOptions": {
-    "selectionOptionsIconTooltip": "ã_Selection Options______Ç",
-    "showAllOptionText": "ã_Show All___Ç",
-    "showSelectedOptionText": "ã_Show Selected_____Ç"
+    "selectionOptionsIconTooltip": "Opções de Seleção",
+    "showAllOptionText": "Mostrar Todos",
+    "showSelectedOptionText": "Mostrar Selecionados"
   }
 });

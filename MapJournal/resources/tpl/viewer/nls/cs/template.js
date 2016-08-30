@@ -37,9 +37,9 @@ define({
       "upgradeBrowser": "<a href='http://browsehappy.com/' target='_blank'>Prosím, aktualizujte prohlížeč</a>.",
       "mapLoadingFail": "Něco se pokazilo, mapa se nenahrála správně.",
       "signOut": "Odhlásit",
-      "print0": "Ř_Sorry, this story cannot be printed____________ů.",
-      "print1": "Ř_To print this story, please use the print button located in the share dialog________________________ů.",
-      "print2": "Ř_Sorry, a printable version of the story is typically accessible through the share dialog, but this dialog has been disabled by the author__________________________________________ů."
+      "print0": "Je nám líto, tento příběh nelze vytisknout.",
+      "print1": "Chcete-li tento příběh vytisknout, použijte tlačítko tisku v dialogovém okně sdílení.",
+      "print2": "Omlouváme se. Tisknutelná verze příběhu je zpravidla přístupná přes dialogové okno sdílení, ale autor toto dialogové okno zakázal."
     },
     "mobileView": {
       "tapForDetails": "Klepnutím zobrazíte podrobnosti.",
@@ -89,15 +89,15 @@ define({
       "autoplayExplain1": "Režim automatického přehrávání bude příběhem procházet v pravidelných intervalech. Ideální pro použití na výstavních stáncích nebo veřejných monitorech, buďte si však vědomi toho, že v některých případech to může znesnadnit čtení příběhu. Tato funkce není podporována na malých obrazovkách.",
       "autoplayExplain2": "Je-li tento režim aktivní, budou k dispozici ovládací prvky ke spuštění/pozastavení přehrávání příběhu a k nastavení rychlosti procházení.",
       "linksupdated": "Odkazy aktualizovány!",
-      "print": "Ř_Print___ů",
-      "printInstruction1": "Ř_Please wait for all the content to load before printing this page_____________________ů",
-      "printInstruction1a": "Ř_Some content may not print unless you enable \"Print Background Colors and Images\" in the Print Page setup dialog___________________________________ů",
-      "printInstruction2": "Ř_This page cannot be shared with others, instead share the ${link}_____________________ů",
-      "link": "Ř_link to the story______ů",
-      "printOptPageBreak": "Ř_Begin each section on a new page___________ů",
-      "printWarning": "Ř_This is a printed version of a story map. Dynamic content such as videos and interactive maps is only available in the online version at ${link}____________________________________________ů",
-      "printMSWarning": "Ř_link available only in online story____________ů",
-      "printVideoWarning": "Ř_This video can be viewed in the online version of this story map____________________ů"
+      "print": "Tisk",
+      "printInstruction1": "Před vytisknutím této stránky počkejte, než se načte všechen obsah.",
+      "printInstruction1a": "Některý obsah se nemusí vytisknout, pokud neaktivujete volbu „Tisknout obrázky a barvy pozadí“ v dialogovém okně nastavení tisknuté stránky.",
+      "printInstruction2": "Tuto stránku nelze sdílet s ostatními, sdílejte místo toho ${link}.",
+      "link": "odkaz na příběh",
+      "printOptPageBreak": "Zahajte každou sekci na nové straně",
+      "printWarning": "Toto je tištěná verze mapy s příběhem. Dynamický obsah, jako jsou videa a interaktivní mapy, je k dispozici pouze v online verzi na adrese ${link}.",
+      "printMSWarning": "odkaz je k dispozici pouze v online příběhu",
+      "printVideoWarning": "Toto video lze zobrazit v online verzi této mapy s příběhem."
     }
   }
 });

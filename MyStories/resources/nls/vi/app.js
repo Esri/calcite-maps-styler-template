@@ -40,7 +40,7 @@ define({
   },
   "cantFindStories": {
     "whereAreStories": "Không thấy câu chuyện của bạn?",
-    "notSeeExplanation": "Đ_My Stories will only list story maps hosted in ArcGIS ({{STORY_MAP_BASIC}} is currently not supported). See our {{FAQ}} for more information___________________________________________ớ.",
+    "notSeeExplanation": "Câu chuyện Của tôi sẽ chỉ liệt kê các story map được lưu trữ trong ArcGIS ({{STORY_MAP_BASIC}} hiện không được hỗ trợ). Hã xem {{FAQ}} của chúng tôi để biết thêm thông tin.",
     "faq": "Câu hỏi thường gặp",
     "followingStoriesToUpdate": "Các câu chuyện sau được tạo bằng các ứng dung phiên bản cũ của chúng tôi, vì vậy cần được cập nhật để các câu chuyện được liệt kê trong Câu chuyện Của tôi:",
     "gettingStories": "Tìm kiếm câu chuyện được tạo bằng phiên bản cũ hơn của các ứng dụng của chúng tôi cần được cập nhật...",
@@ -88,16 +88,16 @@ define({
     "layerPrivate": "Để lớp của bạn ở chế độ riêng tư sẽ phá vỡ câu chuyện của bạn"
   },
   "collectionList": {
-    "business": "Đ_Business and Economy_______ớ",
-    "history": "Đ_History and Culture_______ớ",
-    "inNews": "Đ_In The News____ớ",
-    "infrastructure": "Đ_Infrastructure and Construction__________ớ",
-    "nature": "Đ_Nature and Conservation________ớ",
+    "business": "Kinh doanh và Kinh tế",
+    "history": "Lịch sử và Văn hóa",
+    "inNews": "Theo dòng thời sự",
+    "infrastructure": "Cơ sở hạ tầng và Xây dựng",
+    "nature": "Thiên nhiên và Bảo tồn",
     "people": "Con người và Xã hội",
-    "planning": "Đ_Planning and Design_______ớ",
+    "planning": "Hoạch định và Thiết kế",
     "science": "Khoa học và Công nghệ",
-    "sports": "Đ_Sports and Entertainment________ớ",
-    "travel": "Đ_Travel and Recreation_______ớ"
+    "sports": "Thể thao và Giải trí",
+    "travel": "Du lịch và Giải trí"
   },
   "types": {
     "custom": "Tùy chỉnh",
@@ -216,7 +216,7 @@ define({
   "content": {
     "media": {
       "maps": "Bản đồ",
-      "scenes": "Đ_Scenes___ớ",
+      "scenes": "Scene",
       "images": "Hình ảnh",
       "videos": "Video",
       "webpages": "Trang web",
@@ -235,29 +235,29 @@ define({
       "tab": "Tab",
       "accordion": "Phần",
       "mapJournal": "Phần",
-      "cascade": "Đ_Section___ớ",
-      "crowdsource": "Đ_Contribution_____ớ",
-      "shortlist": "Đ_Tab__ớ"
+      "cascade": "Phần",
+      "crowdsource": "Đóng góp",
+      "shortlist": "Tab"
     },
     "titleType": {
       "mapTour": "Chú thích",
       "mapJournal": "URL",
       "mapSeries": "URL",
-      "cascade": "Đ_URL__ớ",
-      "crowdsource": "Đ_URL__ớ",
-      "shortlist": "Đ_URL__ớ"
+      "cascade": "URL",
+      "crowdsource": "URL",
+      "shortlist": "URL"
     },
     "actions": {
       "viewMap": "Xem Bản đồ",
       "editMap": "Chỉnh sửa Bản đồ",
-      "editScene": "Đ_Edit Scene____ớ",
+      "editScene": "Chỉnh sửa Scene",
       "fix": "Sửa",
       "viewLayer": "Xem Lớp"
     },
     "contentType": {
       "mainStage": "hành động trong sân khấu chính",
       "sidePanel": "mô tả",
-      "introImage": "Đ_(cover page photo)______ớ"
+      "introImage": "(ảnh trang bìa)"
     },
     "notification": {
       "refreshExplanation": "Kiểm tra lại câu chuyện của bạn",
@@ -298,7 +298,7 @@ define({
       "publicDisabled": "Người quản trị đã vô hiệu hóa tính năng chia sẻ công khai",
       "orgDisabled": "Người quản trị đã vô hiệu hóa tính năng chia sẻ đến tổ chức của bạn",
       "noMapName": "Không thể Truy xuất Tên Bản đồ",
-      "noSceneName": "Đ_Could Not Retrieve Scene________ớ",
+      "noSceneName": "Không thể truy xuất scene",
       "notPublic": "KHÔNG CÔNG KHAI",
       "inaccessible": "KHÔNG THỂ TRUY CẬP ĐƯỢC",
       "deleted": "ĐÃ XÓA",
@@ -350,8 +350,8 @@ define({
       "cantScanThisTypeAlt": "Chúng tôi không thể kiểm tra loại lớp này",
       "cantScanThisType": "Lớp không thuộc loại lớp mà chúng tôi có thể kiểm tra",
       "webpageNotScanned": "Trang web không được kiểm tra để phát hiện sự cố",
-      "sceneNotScanned": "Đ_Scenes are not currently checked for issues, please make sure that the scene and all of its layers are shared correctly_____________________________________ớ",
-      "scenesNotScannedGlobally": "Đ_There are scenes in this story, and scenes are not currently checked for issues. Please make sure that the scenes and all of their layers are shared correctly________________________________________________ớ",
+      "sceneNotScanned": "Các scene hiện không được kiểm tra để xem có vấn đề hay không, vui lòng bảo đảm rằng scene này và tất cả lớp của scene được chia sẻ đúng cách.",
+      "scenesNotScannedGlobally": "Có nhiều scene trong câu chuyện này, các scene hiện không được kiểm tra để xem có vấn đề hay không. Vui lòng bảo đảm rằng scene này và tất cả lớp của scene được chia sẻ đúng cách.",
       "ignoredIssue": "Bạn đã bỏ qua một lỗi trong lớp này. Hãy tải lại trang và kiểm tra lại câu chuyện này để xem xét lỗi đó",
       "ignoredIssueBuilder": "Bạn đã bỏ qua một lỗi trong lớp này. Hãy tải lại bộ thiết lập để kiểm tra lại lỗi đó"
     },
@@ -452,25 +452,25 @@ define({
       "thirdTitle": "bản đồ"
     },
     "cascade": {
-      "firstTitle": "Đ_sections___ớ",
-      "secondTitle": "Đ_maps__ớ"
+      "firstTitle": "phần",
+      "secondTitle": "các bản đồ"
     },
     "swipeSpyglass": {
-      "firstTitle": "Đ_points of interest______ớ",
+      "firstTitle": "điểm quan tâm",
       "secondTitle": "kiểu",
       "secondValueA": "trượt nhanh",
       "secondValueB": "kính phóng đại",
       "thirdTitle": "bản đồ"
     },
     "crowdsource": {
-      "firstTitle": "Đ_contributions_____ớ",
-      "secondTitle": "Đ_basemap___ớ",
-      "secondValueLoading": "Đ_Loading____ớ...",
-      "secondValueUnknown": "Đ_unknown___ớ"
+      "firstTitle": "đóng góp",
+      "secondTitle": "bản đồ nền",
+      "secondValueLoading": "Đang tải...",
+      "secondValueUnknown": "không xác định"
     },
     "shortlist": {
-      "firstTitle": "Đ_places___ớ",
-      "secondTitle": "Đ_tabs__ớ",
+      "firstTitle": "địa điểm",
+      "secondTitle": "tab",
       "thirdTitle": "bản đồ nền",
       "thirdValueLoading": "Đang tải...",
       "thirdValueUnknown": "không xác định"

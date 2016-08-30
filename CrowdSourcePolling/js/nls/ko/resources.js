@@ -54,7 +54,7 @@ define({
   },
   "item_details": {
     "likeButtonTooltip": "이 항목에 투표",
-    "likeButtonInverseTooltip": "한_Vote counted_____빠",
+    "likeButtonInverseTooltip": "투표수 집계",
     "commentButtonTooltip": "설명 추가",
     "gotoMapViewTooltip": "맵 보기로 이동",
     "galleryButtonTooltip": "첨부 파일 보기",

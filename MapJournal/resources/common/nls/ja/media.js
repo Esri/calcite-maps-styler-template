@@ -32,14 +32,14 @@ define({
       "pageExplain": "Facebook ページは、<b>esrigis</b> などの、公開されたブランド/製品または著名人です。ページ URL 内の最初の「/」以降から、ページ名を取得できます。",
       "pageInputLbl": "ページ名",
       "lookupMsgError": "ページが見つかりません",
-      "warning": "須_Facebook support has been discontinued, ${learn}________________鷗.",
-      "learn": "須_learn more____鷗"
+      "warning": "Facebook のサポートは中止されました。${learn}。",
+      "learn": "詳細"
     },
     "imageSelectorPicasa": {
-      "userInputLbl": "須_Email or Picasa id______鷗",
+      "userInputLbl": "電子メールまたは Picasa ID",
       "signInMsg2": "アカウントが見つかりません",
-      "howToFind": "須_How to find a Picasa id________鷗",
-      "howToFind2": "須_Copy digits between the first and second '/' of any Picasa page____________________鷗"
+      "howToFind": "Picasa ID を見つける方法",
+      "howToFind2": "任意の Picasa のページの 1 番目と 2 番目の「/」の間の数字をコピーします。"
     },
     "videoSelectorCommon": {
       "check": "チェック",
@@ -104,9 +104,9 @@ define({
       "lblPosition4Explain": "(歪みの可能性あり)",
       "unloadLbl": "ユーザが移動したときにアンロード",
       "unloadHelp": "Web ページに音声やビデオ メディアが含まれている場合、このオプションをオンにすると、ユーザーが移動したときにコンテンツの再生が停止されます。たとえば、ユーザーが次のストーリーに進んでもサウンド トラックの再生を維持したいときはオフにします。<br />Web ページがアプリケーションである場合、ユーザーが戻ってもストーリーが再読み込みされないようにするには、このオプションをオフにします。",
-      "embedProtocolLabel": "須_Load page over a secure connection (HTTPS)______________鷗",
-      "embedProtocolWarning1": "須_Your story is configured to load over a secure connection (https), so web page show in the story must also use a secure connection. If the page does not load it may be because it is not available over a secure connection or that it cannot be included in your story (some websites restrict this). You may need to create a hyperlink to open the page in a new browser tab________________________________________________________________________________________________________________鷗.",
-      "embedProtocolWarning2": "須_Your story is configured to load over an insecure connection (http), so you can choose to load this page over a secure (recommended) or insecure connection. If the page does not load, it may be because it does not support the connection type you selected or that it cannot be included in your story (some websites restrict this). You may need to create a hyperlink to open the page in a new browser tab__________________________________________________________________________________________________________________________鷗."
+      "embedProtocolLabel": "セキュリティで保護された接続 (HTTPS) を介してページを読み込みます",
+      "embedProtocolWarning1": "ストーリーは、セキュリティで保護された接続 (HTTPS) を介して読み込むように構成されます。そのため、ストーリーに表示される Web ページも、セキュリティで保護された接続を使用する必要があります。ページが読み込まれない場合、それは、そのページが、セキュリティで保護された接続を介して使用できない、またはストーリーに含めることができないため (一部の Web サイトはこれを制限しています) である可能性があります。ハイパーリンクを作成し、そのページを新しいブラウザー タブで開くことが必要になる場合があります。",
+      "embedProtocolWarning2": "ストーリーは、セキュリティで保護されていない接続 (HTTP) を介して読み込むように構成されます。そのため、セキュリティで保護された接続 (推奨) またはセキュリティで保護されていない接続を介してこのページを読み込むことを選択できます。ページが読み込まれない場合、それは、そのページが、選択した接続タイプをサポートしていない、またはストーリーに含めることができないため (一部の Web サイトはこれを制限しています) である可能性があります。ハイパーリンクを作成し、そのページを新しいブラウザー タブで開くことが必要になる場合があります。"
     },
     "editorActionGeocode": {
       "lblTitle": "住所または位置の検索",

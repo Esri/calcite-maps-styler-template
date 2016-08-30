@@ -40,7 +40,7 @@ define({
   },
   "cantFindStories": {
     "whereAreStories": "Ziet u uw verhaal niet?",
-    "notSeeExplanation": "Ĳ_My Stories will only list story maps hosted in ArcGIS ({{STORY_MAP_BASIC}} is currently not supported). See our {{FAQ}} for more information___________________________________________ä.",
+    "notSeeExplanation": "Mijn verhalen zal alleen storymaps bevatten die in ArcGIS gehost zijn ({{STORY_MAP_BASIC}} is momenteel niet ondersteund). Zie onze {{FAQ}} voor meer informatie.",
     "faq": "Veelgestelde vragen",
     "followingStoriesToUpdate": "De volgende verhalen, gemaakt met eerdere versies van onze applicaties, moeten geactualiseerd worden zodat ze in My Stories opgelijst worden:",
     "gettingStories": "Verhalen zoeken die met eerdere versies van onze applicaties gemaakt zijn en geactualiseerd moeten worden...",
@@ -88,16 +88,16 @@ define({
     "layerPrivate": "Uw kaartlaag privé maken zal uw verhaal defect maken"
   },
   "collectionList": {
-    "business": "Ĳ_Business and Economy_______ä",
-    "history": "Ĳ_History and Culture_______ä",
-    "inNews": "Ĳ_In The News____ä",
-    "infrastructure": "Ĳ_Infrastructure and Construction__________ä",
-    "nature": "Ĳ_Nature and Conservation________ä",
+    "business": "Zaken en economie",
+    "history": "Geschiedenis en cultuur",
+    "inNews": "In het nieuws",
+    "infrastructure": "Infrastructuur en bouw",
+    "nature": "Natuur en conservatie",
     "people": "Mensen en de gemeenschap",
-    "planning": "Ĳ_Planning and Design_______ä",
+    "planning": "Planning en design",
     "science": "Wetenschap en technologie",
-    "sports": "Ĳ_Sports and Entertainment________ä",
-    "travel": "Ĳ_Travel and Recreation_______ä"
+    "sports": "Sport en ontspanning",
+    "travel": "Reizen en recreatie"
   },
   "types": {
     "custom": "Aangepast",
@@ -216,7 +216,7 @@ define({
   "content": {
     "media": {
       "maps": "Maps",
-      "scenes": "Ĳ_Scenes___ä",
+      "scenes": "Scenes",
       "images": "Afbeeldingen",
       "videos": "Video's",
       "webpages": "Webpagina's",
@@ -235,29 +235,29 @@ define({
       "tab": "Tab:",
       "accordion": "Sectie",
       "mapJournal": "Sectie",
-      "cascade": "Ĳ_Section___ä",
-      "crowdsource": "Ĳ_Contribution_____ä",
-      "shortlist": "Ĳ_Tab__ä"
+      "cascade": "Sectie",
+      "crowdsource": "Bijdrage",
+      "shortlist": "Tab:"
     },
     "titleType": {
       "mapTour": "Bijschrift",
       "mapJournal": "URL",
       "mapSeries": "URL",
-      "cascade": "Ĳ_URL__ä",
-      "crowdsource": "Ĳ_URL__ä",
-      "shortlist": "Ĳ_URL__ä"
+      "cascade": "URL",
+      "crowdsource": "URL",
+      "shortlist": "URL"
     },
     "actions": {
       "viewMap": "Kaart weergeven",
       "editMap": "Kaart bewerken",
-      "editScene": "Ĳ_Edit Scene____ä",
+      "editScene": "Scene bewerken",
       "fix": "Herstel",
       "viewLayer": "Kaartlagen weergeven"
     },
     "contentType": {
       "mainStage": "actie van hoofdvenster",
       "sidePanel": "description",
-      "introImage": "Ĳ_(cover page photo)______ä"
+      "introImage": "(foto coverpagina)"
     },
     "notification": {
       "refreshExplanation": "Controleer uw verhaal nogmaals",
@@ -298,7 +298,7 @@ define({
       "publicDisabled": "Openbaar delen is uitgeschakeld door een beheerder",
       "orgDisabled": "Delen met uw organisatie is uitgeschakeld door een beheerder",
       "noMapName": "Kon de kaartnaam niet laden",
-      "noSceneName": "Ĳ_Could Not Retrieve Scene________ä",
+      "noSceneName": "Kon scene niet laden",
       "notPublic": "NIET OPENBAAR",
       "inaccessible": "NIET TOEGANKELIJK",
       "deleted": "VERWIJDERD",
@@ -350,8 +350,8 @@ define({
       "cantScanThisTypeAlt": "We kunnen dit type kaartlaag niet controleren",
       "cantScanThisType": "Kaartlaag is geen kaartlaagtype dat we kunnen controleren",
       "webpageNotScanned": "Webpagina's worden niet gecontroleerd op problemen",
-      "sceneNotScanned": "Ĳ_Scenes are not currently checked for issues, please make sure that the scene and all of its layers are shared correctly_____________________________________ä",
-      "scenesNotScannedGlobally": "Ĳ_There are scenes in this story, and scenes are not currently checked for issues. Please make sure that the scenes and all of their layers are shared correctly________________________________________________ä",
+      "sceneNotScanned": "Scenes worden momenteel niet gecontroleerd op problemen, zorg ervoor dat de scene en alle lagen ervan juist gedeeld worden",
+      "scenesNotScannedGlobally": "Dit verhaal bevat scenes, en scenes worden momenteel niet gecontroleerd op problemen, zorg ervoor dat de scene en alle lagen ervan juist gedeeld worden",
       "ignoredIssue": "U negeert een fout op deze laag. Laad de pagina opnieuw en controleer dit verhaal nogmaals om de fout te beoordelen",
       "ignoredIssueBuilder": "U negeert een fout op deze laag. Laad de builder opnieuw om deze fout weer te controleren"
     },
@@ -452,25 +452,25 @@ define({
       "thirdTitle": "kaarten"
     },
     "cascade": {
-      "firstTitle": "Ĳ_sections___ä",
-      "secondTitle": "Ĳ_maps__ä"
+      "firstTitle": "secties",
+      "secondTitle": "kaarten"
     },
     "swipeSpyglass": {
-      "firstTitle": "Ĳ_points of interest______ä",
+      "firstTitle": "nuttige plaatsen",
       "secondTitle": "style",
       "secondValueA": "swipe",
       "secondValueB": "verrekijker",
       "thirdTitle": "kaarten"
     },
     "crowdsource": {
-      "firstTitle": "Ĳ_contributions_____ä",
-      "secondTitle": "Ĳ_basemap___ä",
-      "secondValueLoading": "Ĳ_Loading____ä...",
-      "secondValueUnknown": "Ĳ_unknown___ä"
+      "firstTitle": "bijdragen",
+      "secondTitle": "basiskaart",
+      "secondValueLoading": "Bezig met laden...",
+      "secondValueUnknown": "onbekend"
     },
     "shortlist": {
-      "firstTitle": "Ĳ_places___ä",
-      "secondTitle": "Ĳ_tabs__ä",
+      "firstTitle": "plaatsen",
+      "secondTitle": "tabbladen",
       "thirdTitle": "basiskaart",
       "thirdValueLoading": "Bezig met laden...",
       "thirdValueUnknown": "onbekend"

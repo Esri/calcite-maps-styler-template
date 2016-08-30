@@ -37,9 +37,9 @@ define({
       "upgradeBrowser": "<a href='http://browsehappy.com/' target='_blank'>Atnaujinkite naršyklę</a>.",
       "mapLoadingFail": "Įvyko klaida ir žemėlapio nepavyko tinkamai įkelti.",
       "signOut": "Atsijungti",
-      "print0": "Į_Sorry, this story cannot be printed____________š.",
-      "print1": "Į_To print this story, please use the print button located in the share dialog________________________š.",
-      "print2": "Į_Sorry, a printable version of the story is typically accessible through the share dialog, but this dialog has been disabled by the author__________________________________________š."
+      "print0": "Deja, šio pasakojimo išspausdinti nepavyko.",
+      "print1": "Norėdami išspausdinti šį pasakojimą, naudokite spausdinimo mygtuką, esantį bendrinimo dialogo lange.",
+      "print2": "Šio pasakojimo spaudos versija paprastai pasiekiama bendrinimo dialogo lange. Deja, autorius šį dialogo langą yra išjungęs."
     },
     "mobileView": {
       "tapForDetails": "Išsamiai informacijai bakstelėkite",
@@ -89,15 +89,15 @@ define({
       "autoplayExplain1": "Veikiant automatinio paleidimo režimu, jūsų pasakojimas bus pateikiamas reguliariais intervalais. Tai puikiai tinkama parinktis informaciniuose terminaluose arba viešuosiuose ekranuose, tačiau nepamirškite, kad kitais atvejais pasakojimą gali būti sudėtinga perskaityti. Ši funkcija nepalaikoma mažuose ekranuose.",
       "autoplayExplain2": "Kai šis režimas aktyvus, yra valdikliai, kuriais galima leisti / pristabdyti pasakojimą ir reguliuoti naršymo greitį.",
       "linksupdated": "Nuorodos atnaujintos!",
-      "print": "Į_Print___š",
-      "printInstruction1": "Į_Please wait for all the content to load before printing this page_____________________š",
-      "printInstruction1a": "Į_Some content may not print unless you enable \"Print Background Colors and Images\" in the Print Page setup dialog___________________________________š",
-      "printInstruction2": "Į_This page cannot be shared with others, instead share the ${link}_____________________š",
-      "link": "Į_link to the story______š",
-      "printOptPageBreak": "Į_Begin each section on a new page___________š",
-      "printWarning": "Į_This is a printed version of a story map. Dynamic content such as videos and interactive maps is only available in the online version at ${link}____________________________________________š",
-      "printMSWarning": "Į_link available only in online story____________š",
-      "printVideoWarning": "Į_This video can be viewed in the online version of this story map____________________š"
+      "print": "Spausdinti",
+      "printInstruction1": "Prieš spausdindami šį puslapį, palaukite, kol bus įkeltas visas turinys",
+      "printInstruction1a": "Dalies turinio gali nepavykti išspausdinti, jei nuostatų dialogo lange Spausdinti puslapį neįjungsite „Spausdinti fono spalvas ir atvaizdus“",
+      "printInstruction2": "Šio puslapio negalima bendrinti su kitais. Užuot bendrinę puslapį, bendrinkite šią nuorodą ${link}",
+      "link": "nuoroda į pasakojimą",
+      "printOptPageBreak": "Kiekvieną skyrių pradėkite naujame puslapyje",
+      "printWarning": "Tai yra žemėlapių pasakojimų spausdinta versija. Dinaminis turinys, pvz., vaizdo įrašai ir interaktyvūs žemėlapiai, prieinami tik internetinėje versijoje ${link}",
+      "printMSWarning": "Nuoroda prieinama tik pasakojime internete",
+      "printVideoWarning": "Šį vaizdo įrašą galima peržiūrėti internetinėje žemėlapio pasakojimo versijoje"
     }
   }
 });

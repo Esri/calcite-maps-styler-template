@@ -332,13 +332,13 @@ define({
       "lookupMsgError": "未找到頁面"
     },
     "viewPicasa": {
-      "title": "試_Picasa import_____驗",
-      "header": "試_Enter your email address or your Picasa id______________驗.",
-      "userInputLbl": "試_Email or Picasa id______驗",
+      "title": "Picasa 匯入",
+      "header": "輸入您的電子郵件位址或您的 Picasa id。",
+      "userInputLbl": "電子郵件或 Picasa id",
       "signInMsg2": "未找到帳戶",
       "signInMsg3": "無公開圖片集",
-      "howToFind": "試_How to find a Picasa id________驗",
-      "howToFind2": "試_Copy digits between the first and second '/' of any Picasa page____________________驗"
+      "howToFind": "如何尋找 Picasa id",
+      "howToFind2": "複製任何 Picasa 頁面第一個和第二個 '/' 之間的數字"
     },
     "viewCSV": {
       "title": "CSV 匯入",
@@ -434,8 +434,8 @@ define({
         "div6": "<b>您希望重複使用現有圖徵服務</b>將圖片儲存為附件或引用外部圖片: 請參閱下面的詳細描述部分。",
         "div7": "<b>您是上一版 Map Tour </b>範本的使用者，且已經擁有引用圖片和縮圖的 CSV: 您可以匯入該 CSV 並最佳化資料。建構器僅支援使用緯度/經度欄位的 CSV; 以地址為基礎的 CSV 可以繼續在您的 web 地圖中使用 (請參閱以下部分)。",
         "div8": "從線上照片分享服務中匯入",
-        "div9a": "試_Facebook support has been discontinued, ${learn}________________驗.",
-        "learn": "試_learn more____驗",
+        "div9a": "Facebook 支援已中斷，${learn}。",
+        "learn": "瞭解詳細資訊",
         "div9": "匯入操作透過在 web 地圖圖徵集中儲存其 URL 來引用已託管的圖片。圖片並未儲存在 ArcGIS Online 中。如果無法存取託管的圖片，則無法在 Map Tour 中使用，您將看到“圖片不可用”的圖像。依您的照片服務提供者而定，Map Tour 可能不會匯入圖片的名稱、描述和位置。這些屬性儲存在 web 地圖中，對在線上服務進行的任何編輯都不會反映在 Map Tour 中。",
         "div10": "在 web 伺服器上儲存圖片",
         "div11": "如果選擇自己託管圖片，則需要手動建立圖片的縮圖。使用全解析度的圖片建立縮圖將導致效能不佳。因此，強烈建議您使用線上照片分享服務或圖徵服務來進行此操作。",

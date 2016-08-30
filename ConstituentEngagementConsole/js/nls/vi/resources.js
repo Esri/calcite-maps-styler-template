@@ -83,7 +83,7 @@ define({
     "valueRadioButtonLabel": "Giá trị",
     "uniqueRadioButtonLabel": "Duy nhất",
     "selectLayerToBegin": "Chọn một danh mục để bắt đầu",
-    "layerFeatureCount": "Đ_${selectedFeatureCount} selected / ${featureCount} records__________________ớ"
+    "layerFeatureCount": "${selectedFeatureCount} được chọn / ${featureCount} hồ sơ"
   },
   "timeSlider": {
     "timeSliderLabel": "Khoảng thời gian",
@@ -102,7 +102,7 @@ define({
     "selectFileText": "Duyệt",
     "attachmentSelectedMsg": "(các) tệp đính kèm được chọn",
     "attachmentHeaderText": "Tệp đính kèm",
-    "addRecordText": "Đ_Add Record____ớ"
+    "addRecordText": "Thêm Bản ghi"
   },
   "main": {
     "noGroup": "Không có nhóm nào được cấu hình"
@@ -114,18 +114,18 @@ define({
   },
   "manualRefresh": {
     "manualRefreshIconTooltip": "Làm mới",
-    "confirmManualRefreshText": "Đ_All selections and unsaved changes will be discarded_________________ớ"
+    "confirmManualRefreshText": "Tất cả các lựa chọn và các thay đổi chưa lưu sẽ bị hủy"
   },
   "help": {
     "helpIconTooltip": "Trợ giúp"
   },
   "filter": {
     "noFeatureFoundText": "Không tìm thấy đối tượng nào cho giá trị này.",
-    "distinctQueryFailed": "Đ_No distinct values found for the field_____________ớ.",
+    "distinctQueryFailed": "Không tìm thấy giá trị riêng biệt nào cho trường.",
     "andText": "và",
-    "filterInEditModeAlert": "Đ_Filters unavailable while editing___________ớ.",
+    "filterInEditModeAlert": "Bộ lọc không khả dụng khi đang chỉnh sửa.",
     "dropdownSelectOption": "Chọn",
-    "filterInShowSelectedEditModeAlert": "Đ_Filters unavailable in 'Show Selected' mode______________ớ."
+    "filterInShowSelectedEditModeAlert": "Bộ lọc không khả dụng trong chế độ \"Hiện Mục được Chọn\"."
   },
   "detailsPanel": {
     "editContentText": "Chỉnh sửa bản ghi"
@@ -135,8 +135,8 @@ define({
     "reSignInMessage": "Bấm vào đây để đăng nhập"
   },
   "selectionOptions": {
-    "selectionOptionsIconTooltip": "Đ_Selection Options______ớ",
-    "showAllOptionText": "Đ_Show All___ớ",
-    "showSelectedOptionText": "Đ_Show Selected_____ớ"
+    "selectionOptionsIconTooltip": "Các Tùy chọn Lựa chọn",
+    "showAllOptionText": "Hiển thị tất cả",
+    "showSelectedOptionText": "Hiện Mục được Chọn"
   }
 });

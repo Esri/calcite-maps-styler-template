@@ -54,7 +54,7 @@ define({
   },
   "item_details": {
     "likeButtonTooltip": "Голосовать за этот элемент",
-    "likeButtonInverseTooltip": "Ж_Vote counted_____Я",
+    "likeButtonInverseTooltip": "Голоса подсчитаны",
     "commentButtonTooltip": "Добавить комментарий",
     "gotoMapViewTooltip": "Перейти к виду карты",
     "galleryButtonTooltip": "Просмотр вложенных файлов",

@@ -40,7 +40,7 @@ define({
   },
   "cantFindStories": {
     "whereAreStories": "Ser du inte din berättelse?",
-    "notSeeExplanation": "Å_My Stories will only list story maps hosted in ArcGIS ({{STORY_MAP_BASIC}} is currently not supported). See our {{FAQ}} for more information___________________________________________ö.",
+    "notSeeExplanation": "Mina berättelser visar bara berättelsekartor som driftas i ArcGIS ({{STORY_MAP_BASIC}} stöds för närvarande inte). Se vår {{FAQ}} för mer information.",
     "faq": "Vanliga frågor och svar",
     "followingStoriesToUpdate": "Följande berättelser som skapats med tidigare versioner av våra applikationer behöver uppdateras för att de ska visas i Mina berättelser:",
     "gettingStories": "Söker efter berättelser som skapats med tidigare versioner av våra applikationer som behöver uppdateras ...",
@@ -88,16 +88,16 @@ define({
     "layerPrivate": "Om du gör lagret privat avslöjas din berättelse"
   },
   "collectionList": {
-    "business": "Å_Business and Economy_______ö",
-    "history": "Å_History and Culture_______ö",
-    "inNews": "Å_In The News____ö",
-    "infrastructure": "Å_Infrastructure and Construction__________ö",
-    "nature": "Å_Nature and Conservation________ö",
+    "business": "Affärsliv och ekonomi",
+    "history": "Historia och kultur",
+    "inNews": "I nyheterna",
+    "infrastructure": "Infrastruktur och konstruktion",
+    "nature": "Natur och naturvård",
     "people": "Människor och samhälle",
-    "planning": "Å_Planning and Design_______ö",
+    "planning": "Planering och design",
     "science": "Vetenskap och teknik",
-    "sports": "Å_Sports and Entertainment________ö",
-    "travel": "Å_Travel and Recreation_______ö"
+    "sports": "Sport och underhållning",
+    "travel": "Resor och fritid"
   },
   "types": {
     "custom": "Anpassat",
@@ -216,7 +216,7 @@ define({
   "content": {
     "media": {
       "maps": "Kartor",
-      "scenes": "Å_Scenes___ö",
+      "scenes": "Scener",
       "images": "Bilder",
       "videos": "Videoklipp",
       "webpages": "Webbsidor",
@@ -235,29 +235,29 @@ define({
       "tab": "Flik",
       "accordion": "Sektion",
       "mapJournal": "Sektion",
-      "cascade": "Å_Section___ö",
-      "crowdsource": "Å_Contribution_____ö",
-      "shortlist": "Å_Tab__ö"
+      "cascade": "Sektion",
+      "crowdsource": "Bidrag",
+      "shortlist": "Flik"
     },
     "titleType": {
       "mapTour": "Bildtext",
       "mapJournal": "URL",
       "mapSeries": "URL",
-      "cascade": "Å_URL__ö",
-      "crowdsource": "Å_URL__ö",
-      "shortlist": "Å_URL__ö"
+      "cascade": "URL",
+      "crowdsource": "URL",
+      "shortlist": "URL"
     },
     "actions": {
       "viewMap": "Visa karta",
       "editMap": "Redigera karta",
-      "editScene": "Å_Edit Scene____ö",
+      "editScene": "Redigera scen",
       "fix": "Fixa",
       "viewLayer": "Visa lager"
     },
     "contentType": {
       "mainStage": "åtgärd på huvudscenen",
       "sidePanel": "beskrivning",
-      "introImage": "Å_(cover page photo)______ö"
+      "introImage": "(foto för försättsblad)"
     },
     "notification": {
       "refreshExplanation": "Kontrollera berättelsen igen",
@@ -298,7 +298,7 @@ define({
       "publicDisabled": "Publik delning har inaktiverats av en administratör",
       "orgDisabled": "Delning till din organisation har inaktiverats av en administratör",
       "noMapName": "Det gick inte att hämta kartans namn",
-      "noSceneName": "Å_Could Not Retrieve Scene________ö",
+      "noSceneName": "Det gick inte att hämta scenen",
       "notPublic": "INTE PUBLIK",
       "inaccessible": "EJ TILLGÄNGLIG",
       "deleted": "BORTTAGEN",
@@ -350,8 +350,8 @@ define({
       "cantScanThisTypeAlt": "Vi kan inte kontrollera denna typ av lager",
       "cantScanThisType": "Lagret är inte en typ av lager som vi kan kontrollera",
       "webpageNotScanned": "Webbsidor kontrolleras inte med avseende på problem",
-      "sceneNotScanned": "Å_Scenes are not currently checked for issues, please make sure that the scene and all of its layers are shared correctly_____________________________________ö",
-      "scenesNotScannedGlobally": "Å_There are scenes in this story, and scenes are not currently checked for issues. Please make sure that the scenes and all of their layers are shared correctly________________________________________________ö",
+      "sceneNotScanned": "Scener kontrolleras för närvarande inte efter problem, kontrollera att scenen och alla dess lager delas korrekt",
+      "scenesNotScannedGlobally": "Det finns scener i den här berättelsen, och scener kontrolleras för närvarande inte efter problem. Kontrollera att scenerna och alla deras lager delas korrekt",
       "ignoredIssue": "Du har ignorerat ett fel i det här lagret. Läs in sidan igen och kontrollera berättelsen för att granska felet",
       "ignoredIssueBuilder": "Du har ignorerat ett fel i det här lagret. Läs in byggverktyget för att kontrollera felet igen"
     },
@@ -452,25 +452,25 @@ define({
       "thirdTitle": "kartor"
     },
     "cascade": {
-      "firstTitle": "Å_sections___ö",
-      "secondTitle": "Å_maps__ö"
+      "firstTitle": "sektioner",
+      "secondTitle": "kartor"
     },
     "swipeSpyglass": {
-      "firstTitle": "Å_points of interest______ö",
+      "firstTitle": "intressanta platser",
       "secondTitle": "stil",
       "secondValueA": "svep",
       "secondValueB": "kikare",
       "thirdTitle": "kartor"
     },
     "crowdsource": {
-      "firstTitle": "Å_contributions_____ö",
-      "secondTitle": "Å_basemap___ö",
-      "secondValueLoading": "Å_Loading____ö...",
-      "secondValueUnknown": "Å_unknown___ö"
+      "firstTitle": "bidrag",
+      "secondTitle": "baskarta",
+      "secondValueLoading": "Läser in...",
+      "secondValueUnknown": "okänt"
     },
     "shortlist": {
-      "firstTitle": "Å_places___ö",
-      "secondTitle": "Å_tabs__ö",
+      "firstTitle": "platser",
+      "secondTitle": "flikar",
       "thirdTitle": "baskarta",
       "thirdValueLoading": "Läser in...",
       "thirdValueUnknown": "okänt"

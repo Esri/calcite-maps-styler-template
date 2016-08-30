@@ -32,14 +32,14 @@ define({
       "pageExplain": "Facebook stranica je javni brend/proizvod ili svetski poznat <b>esrigis</b>. Možete da dobijete naziv stranice nakon prve ‘/’u URL adresi stranice.",
       "pageInputLbl": "Naziv stranice",
       "lookupMsgError": "Stranica nije pronađena",
-      "warning": "Č_Facebook support has been discontinued, ${learn}________________ž.",
-      "learn": "Č_learn more____ž"
+      "warning": "Podrška za Facebook je ukinuta, ${learn}.",
+      "learn": "saznajte više"
     },
     "imageSelectorPicasa": {
-      "userInputLbl": "Č_Email or Picasa id______ž",
+      "userInputLbl": "E-pošta ili ID naloga za stranicu Picasa",
       "signInMsg2": "Nalog nije pronađen",
-      "howToFind": "Č_How to find a Picasa id________ž",
-      "howToFind2": "Č_Copy digits between the first and second '/' of any Picasa page____________________ž"
+      "howToFind": "Kako da pronađete ID naloga za stranicu Picasa",
+      "howToFind2": "Kopirajte cifre između prvog i drugog znaka „/” na bilo kojoj Picasa stranici"
     },
     "videoSelectorCommon": {
       "check": "Proverite",
@@ -104,9 +104,9 @@ define({
       "lblPosition4Explain": "(izobličenje je moguće)",
       "unloadLbl": "Poništi učitavanje kada čitalac napusti stranicu",
       "unloadHelp": "Ako veb stranica ima sadržaje audio ili video formata, označite ovu opciju kao potvrđenu da zaustavite reprodukciju tog sadržaja kada čitalac napusti stranicu. Označite je kao nepotvrđenu da zvuk nastavi sa reprodukcijom kako čitalac „ide“ kroz priču.<br />Ako je veb stranica aplikacija, označite ovu opciju kao nepotvrđenu tako da se priča ne učitava ponovo kada se čitalac vrati na nju.",
-      "embedProtocolLabel": "Č_Load page over a secure connection (HTTPS)______________ž",
-      "embedProtocolWarning1": "Č_Your story is configured to load over a secure connection (https), so web page show in the story must also use a secure connection. If the page does not load it may be because it is not available over a secure connection or that it cannot be included in your story (some websites restrict this). You may need to create a hyperlink to open the page in a new browser tab________________________________________________________________________________________________________________ž.",
-      "embedProtocolWarning2": "Č_Your story is configured to load over an insecure connection (http), so you can choose to load this page over a secure (recommended) or insecure connection. If the page does not load, it may be because it does not support the connection type you selected or that it cannot be included in your story (some websites restrict this). You may need to create a hyperlink to open the page in a new browser tab__________________________________________________________________________________________________________________________ž."
+      "embedProtocolLabel": "Učitaj stranicu preko bezbedne veze (HTTPS)",
+      "embedProtocolWarning1": "Vaša priča je konfigurisana tako da se učita preko bezbedne veze (https), tako da prikaz veb stranice u priči takođe mora da koristi bezbednu vezu. Ako se stranica ne učitava, to može biti usled toga što nije dostupna preko bezbedne veze ili što ne može da bude uključena u vašu priču (neki veb sajtovi ograničavaju ovo). Možda ćete morati da kreirate hiperlink da biste otvorili stranicu u novoj kartici pregledača.",
+      "embedProtocolWarning2": "Vaša priča je konfigurisana tako da se učita preko bezbedne veze (https), tako da možete da izaberete da učitate ovu stranicu putem bezbedne veze (preporučeno) ili nebezbedne veze. Ako se stranica ne učitava, to može biti usled toga što ne podržava vrstu veze koju ste izabrali ili što ne može da bude uključena u vašu priču (neki veb sajtovi ograničavaju ovo). Možda ćete morati da kreirate hiperlink da biste otvorili stranicu u novoj kartici pregledača."
     },
     "editorActionGeocode": {
       "lblTitle": "Locirajte adresu ili mesto",

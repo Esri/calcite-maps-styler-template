@@ -19,28 +19,28 @@ define({
     "error": "Nelze vytvořit mapu"
   },
   "nav": {
-    "close": "Ř_Close___ů"
+    "close": "Zavřít"
   },
   "elevation": {
-    "toggle": "Ř_Toggle the Elevation Profile Chart____________ů.",
-    "drawTool": "Ř_Draw a line on the map to generate an elevation profile__________________ů.",
-    "selectMessage": "Ř_Click a line feature or use the draw tool to draw a line to display the elevation profile____________________________ů",
-    "gainLossTemplate": "Ř_Min: ${min}   Max: ${max}   Start: ${start}   End: ${end}   Change: ${gainLoss}_________________________ů"
+    "toggle": "Přepnout graf výškového profilu.",
+    "drawTool": "Nakreslete na mapu linii pro vygenerování výškového profilu.",
+    "selectMessage": "Klikněte na liniový prvek nebo pomocí nástroje kreslení nakreslete linii, abyste zobrazili výškový profil.",
+    "gainLossTemplate": "Min.: ${min}   Max.: ${max}   Začátek: ${start}   Konec: ${end}   Změna: ${gainLoss}"
   },
   "splash": {
-    "title": "Ř_Title___ů",
-    "content": "Ř_Configure to create custom splash content_____________ů"
+    "title": "Název",
+    "content": "Nakonfigurujte pro vytvoření vlastního úvodního obsahu"
   },
   "legend": {
-    "title": "Ř_Legend___ů",
-    "tip": "Ř_Display legend_____ů"
+    "title": "Legenda",
+    "tip": "Zobrazit legendu"
   },
   "basemap": {
-    "title": "Ř_Basemap___ů",
-    "tip": "Ř_Change basemap_____ů"
+    "title": "Podkladová mapa",
+    "tip": "Změnit podkladovou mapu"
   },
   "share": {
-    "title": "Ř_Share___ů",
-    "tip": "Ř_Share map____ů"
+    "title": "Sdílet",
+    "tip": "Sdílet mapu"
   }
 });

@@ -21,8 +21,8 @@ define({
       "cfgLarge": "Grande",
       "socialLinksLabel": "Mostrar vínculos de uso compartido en la parte inferior de cada sección",
       "socialLinksDescr": "Esto permite a los lectores hacer referencia a secciones concretas de tu %TPL_NAME% y promocionarlas. Por ejemplo, si usas un icono para compartir secciones, los lectores llegarán a esa sección de %TPL_NAME% y no al comienzo de tu historia. Los lectores pueden usar el vínculo de las redes sociales de la sección de título para promocionar todo tu %TPL_NAME% (pestaña de encabezado) y hacer que los usuarios lleguen al inicio de %TPL_NAME%.",
-      "socialDisabled": "á_This feature is only available with Floating Panel layout__________________Ó",
-      "socialWarning": "á_Your story is using Side Panel layout, but we now recommend using this option only with Floating Panel layout to avoid an issue where the panel may not position itself to the desired section for narratives with images. You may continue to use this option, but if you disable it, it will then only be available when using Floating Panel layout________________________________________________________________________________________________________Ó."
+      "socialDisabled": "Esta característica solo está disponible con el diseño de Panel flotante",
+      "socialWarning": "Su historia utiliza el diseño de Panel lateral, pero ahora recomendamos utilizar esta opción solo con el diseño de Panel flotante para evitar un problema donde haya posibilidad de que el panel no se coloque en la sección deseada para las narraciones con imágenes. Puede seguir usando esta opción, pero si la deshabilita, solo estará disponible cuando se utilice el diseño de Panel flotante."
     },
     "settingsLayoutFonts": {
       "title": "Fuentes",

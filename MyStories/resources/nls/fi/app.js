@@ -40,7 +40,7 @@ define({
   },
   "cantFindStories": {
     "whereAreStories": "Etkö näe tarinaasi?",
-    "notSeeExplanation": "Å_My Stories will only list story maps hosted in ArcGIS ({{STORY_MAP_BASIC}} is currently not supported). See our {{FAQ}} for more information___________________________________________ö.",
+    "notSeeExplanation": "Omat tarinat -luettelossa on vain ArcGIS-sovelluksessa isännöidyt tarinakartat ({{STORY_MAP_BASIC}}-sovellusta ei tueta tällä hetkellä). Lisätietoja on kohdassa {{FAQ}}.",
     "faq": "Usein kysytyt kysymykset",
     "followingStoriesToUpdate": "Seuraavat tarinat, jotka on luotu sovellusten aiemmilla versioilla, on päivitettävä, jotta ne näkyvät Omat tarinat -luettelossa:",
     "gettingStories": "Etsitään tarinoita, jotka on luotu sovellusten aiemmilla versioilla ja jotka on päivitettävä...",
@@ -88,16 +88,16 @@ define({
     "layerPrivate": "Karttatason määrittäminen yksityiseksi katkaisee tarinasi"
   },
   "collectionList": {
-    "business": "Å_Business and Economy_______ö",
-    "history": "Å_History and Culture_______ö",
-    "inNews": "Å_In The News____ö",
-    "infrastructure": "Å_Infrastructure and Construction__________ö",
-    "nature": "Å_Nature and Conservation________ö",
+    "business": "Liiketoiminta ja talous",
+    "history": "Historia ja kulttuuri",
+    "inNews": "Uutisissa",
+    "infrastructure": "Infrastruktuuri ja rakentaminen",
+    "nature": "Luonto ja luonnonsuojelu",
     "people": "Ihmiset ja yhteiskunta",
-    "planning": "Å_Planning and Design_______ö",
+    "planning": "Suunnittelu ja muotoilu",
     "science": "Luonnontieteet ja tekniikka",
-    "sports": "Å_Sports and Entertainment________ö",
-    "travel": "Å_Travel and Recreation_______ö"
+    "sports": "Urheilu ja viihde",
+    "travel": "Matkustaminen ja vapaa-aika"
   },
   "types": {
     "custom": "Virhe yhteyden muodostuksessa taustakarttapalveluun. Varmista, että SSL (HTTPS) -suojaus on käytössä palvelussa. Mahdolliset lisätiedot näkyvät alla.",
@@ -216,7 +216,7 @@ define({
   "content": {
     "media": {
       "maps": "Maps",
-      "scenes": "Å_Scenes___ö",
+      "scenes": "Maisemat",
       "images": "Kuva-aineistot",
       "videos": "Videot",
       "webpages": "Web-sivut",
@@ -235,29 +235,29 @@ define({
       "tab": "Sarkain",
       "accordion": "Osa",
       "mapJournal": "Osa",
-      "cascade": "Å_Section___ö",
-      "crowdsource": "Å_Contribution_____ö",
-      "shortlist": "Å_Tab__ö"
+      "cascade": "Osa",
+      "crowdsource": "Lisäykset",
+      "shortlist": "Sarkain"
     },
     "titleType": {
       "mapTour": "Seloste",
       "mapJournal": "URL-osoite",
       "mapSeries": "URL-osoite",
-      "cascade": "Å_URL__ö",
-      "crowdsource": "Å_URL__ö",
-      "shortlist": "Å_URL__ö"
+      "cascade": "URL-osoite",
+      "crowdsource": "URL-osoite",
+      "shortlist": "URL-osoite"
     },
     "actions": {
       "viewMap": "Näytä kartta",
       "editMap": "Muokkaa karttaa",
-      "editScene": "Å_Edit Scene____ö",
+      "editScene": "Muokkaa maisemaa",
       "fix": "Korjaa",
       "viewLayer": "Näytä karttataso"
     },
     "contentType": {
       "mainStage": "päävaiheen toiminto",
       "sidePanel": "kuvaus",
-      "introImage": "Å_(cover page photo)______ö"
+      "introImage": "(kansisivun kuva)"
     },
     "notification": {
       "refreshExplanation": "Tarkista tarinasi uudelleen",
@@ -298,7 +298,7 @@ define({
       "publicDisabled": "Pääkäyttäjä on poistanut julkisen jakamisen käytöstä",
       "orgDisabled": "Pääkäyttäjä on poistanut käytöstä jakamisen organisaation kanssa",
       "noMapName": "Kartan nimen nouto ei onnistunut",
-      "noSceneName": "Å_Could Not Retrieve Scene________ö",
+      "noSceneName": "Maiseman nouto epäonnistui",
       "notPublic": "EI JULKINEN",
       "inaccessible": "EI KÄYTETTÄVISSÄ",
       "deleted": "POISTETTU",
@@ -350,8 +350,8 @@ define({
       "cantScanThisTypeAlt": "Tämäntyyppistä karttatasoa ei voi tarkistaa",
       "cantScanThisType": "Karttatason tyyppi ei ole sellainen, jonka voi tarkistaa",
       "webpageNotScanned": "Web-sivujen ongelmia ei tarkisteta",
-      "sceneNotScanned": "Å_Scenes are not currently checked for issues, please make sure that the scene and all of its layers are shared correctly_____________________________________ö",
-      "scenesNotScannedGlobally": "Å_There are scenes in this story, and scenes are not currently checked for issues. Please make sure that the scenes and all of their layers are shared correctly________________________________________________ö",
+      "sceneNotScanned": "Virheitä ei tällä hetkellä tarkisteta maisemista. Varmista, että maisema ja kaikki sen tasot on jaettu oikein",
+      "scenesNotScannedGlobally": "Tämä tarina sisältää maisemia, ja virheitä ei tällä hetkellä tarkisteta maisemista. Varmista, että maisemat ja kaikki sen tasot on jaettu oikein",
       "ignoredIssue": "Olet ohittanut tämän karttatason virheen. Tarkista virhe lataamalla sivu uudelleen ja valitsemalla tämä tarina uudelleen",
       "ignoredIssueBuilder": "Olet ohittanut tämän karttatason virheen. Tarkista tämä virhe uudelleen lataamalla luontitoiminto uudelleen"
     },
@@ -452,25 +452,25 @@ define({
       "thirdTitle": "kartat"
     },
     "cascade": {
-      "firstTitle": "Å_sections___ö",
-      "secondTitle": "Å_maps__ö"
+      "firstTitle": "osat",
+      "secondTitle": "kartat"
     },
     "swipeSpyglass": {
-      "firstTitle": "Å_points of interest______ö",
+      "firstTitle": "kiinnostuksenkohde",
       "secondTitle": "tyyli",
       "secondValueA": "pyyhkäise",
       "secondValueB": "kiikari",
       "thirdTitle": "kartat"
     },
     "crowdsource": {
-      "firstTitle": "Å_contributions_____ö",
-      "secondTitle": "Å_basemap___ö",
-      "secondValueLoading": "Å_Loading____ö...",
-      "secondValueUnknown": "Å_unknown___ö"
+      "firstTitle": "lisäykset",
+      "secondTitle": "peruskartta",
+      "secondValueLoading": "Ladataan...",
+      "secondValueUnknown": "tuntematon"
     },
     "shortlist": {
-      "firstTitle": "Å_places___ö",
-      "secondTitle": "Å_tabs__ö",
+      "firstTitle": "paikat",
+      "secondTitle": "välilehdet",
       "thirdTitle": "peruskartta",
       "thirdValueLoading": "Ladataan...",
       "thirdValueUnknown": "tuntematon"

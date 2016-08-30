@@ -32,14 +32,14 @@ define({
       "pageExplain": "Facebooki leht on avalik kaubamärk/toode nagu <b>esrigis</b>. Lehe nime leiate lehe URL-ist pärast '/'.",
       "pageInputLbl": "Lehe nimi",
       "lookupMsgError": "Lehte ei leitud",
-      "warning": "Š_Facebook support has been discontinued, ${learn}________________ä.",
-      "learn": "Š_learn more____ä"
+      "warning": "Facebooki tuge ei pakuta enam, ${learn}.",
+      "learn": "lisateave"
     },
     "imageSelectorPicasa": {
-      "userInputLbl": "Š_Email or Picasa id______ä",
+      "userInputLbl": "E-post või Picasa ID",
       "signInMsg2": "Kontot ei leitud",
-      "howToFind": "Š_How to find a Picasa id________ä",
-      "howToFind2": "Š_Copy digits between the first and second '/' of any Picasa page____________________ä"
+      "howToFind": "Kuidas leida Picasa ID-d?",
+      "howToFind2": "Kopeerige mis tahes Picasa lehe esimese ja teise kaldkriipsu vahel asuvad numbrikohad"
     },
     "videoSelectorCommon": {
       "check": "Kontrolli",
@@ -104,9 +104,9 @@ define({
       "lblPosition4Explain": "(võib moonutada)",
       "unloadLbl": "Laadi maha, kui lugeja liigub mujale",
       "unloadHelp": "Kui veebileht sisaldab audio- või videosisu, jätke see valik märgituks, et lõpetada selle sisu esitamine, kui lugeja liigub mujale. Tühjendage see valik näiteks siis, kui soovite, et heliriba esitataks samal ajal, kui lugeja läbi loo liigub.<br />Kui veebileht on rakendus, tühjendage see valik, et kasutaja naasmisel ei laaditaks lugu uuesti.",
-      "embedProtocolLabel": "Š_Load page over a secure connection (HTTPS)______________ä",
-      "embedProtocolWarning1": "Š_Your story is configured to load over a secure connection (https), so web page show in the story must also use a secure connection. If the page does not load it may be because it is not available over a secure connection or that it cannot be included in your story (some websites restrict this). You may need to create a hyperlink to open the page in a new browser tab________________________________________________________________________________________________________________ä.",
-      "embedProtocolWarning2": "Š_Your story is configured to load over an insecure connection (http), so you can choose to load this page over a secure (recommended) or insecure connection. If the page does not load, it may be because it does not support the connection type you selected or that it cannot be included in your story (some websites restrict this). You may need to create a hyperlink to open the page in a new browser tab__________________________________________________________________________________________________________________________ä."
+      "embedProtocolLabel": "Lehe laadimine turvalise ühenduse (HTTPS) kaudu",
+      "embedProtocolWarning1": "Lugu on konfigureeritud nii, et see laaditakse turvalise ühenduse (https) kaudu, seega peavad ka loos kuvatavad veebilehed kasutama turvalist ühendust. Kui lehte ei laadita, võib põhjus olla selles, et leht pole turvalise ühenduse kaudu saadaval või ei saa seda teie loosse lisada (mõni veebisait seab sellele piiranguid). Võib-olla peate looma hüperlingi, et avada leht uuel brauseri vahekaardil.",
+      "embedProtocolWarning2": "Lugu on konfigureeritud nii, et see laaditakse mitteturvalise ühenduse (http) kaudu, seega saate valida, kas see leht laaditakse turvalise (soovitatav) või mitteturvalise ühenduse kaudu. Kui lehte ei laadita, võib põhjus olla selles, et leht ei toeta teie valitud ühendusetüüpi või ei saa seda teie loosse lisada (mõni veebisait seab sellele piiranguid). Võib-olla peate looma hüperlingi, et avada leht uuel brauseri vahekaardil."
     },
     "editorActionGeocode": {
       "lblTitle": "Märgi aadress või asukoht",

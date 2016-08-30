@@ -1,26 +1,26 @@
 define({
   "signInDialog": {
-    "title": "ı_Start Telling Stories________İ!",
-    "reasonOne": "ı_Create compelling story maps_________İ",
-    "reasonTwo": "ı_Use the power of ArcGIS________İ",
-    "reasonThree": "ı_Manage your stories_______İ",
-    "noAccountYet": "ı_Don't have an ArcGIS Online account____________İ?",
-    "signUpFor": "ı_Sign up for a_____İ:",
+    "title": "Hikaye Anlatmaya Başlayın!",
+    "reasonOne": "İlgi çekici hikaye haritaları oluşturun",
+    "reasonTwo": "ArcGIS uygulamasının gücünü kullanın",
+    "reasonThree": "Hikayelerinizi yönetin",
+    "noAccountYet": "ArcGIS Online hesabınız yok mu?",
+    "signUpFor": "Aşağıdaki için kaydınızı yaptırın:",
     "publicAccount": "Ticari olmayan ücretsiz genel hesap",
     "subscriptionAccount": "Ücretsiz ArcGIS deneme sürümü",
     "signInExpired": "Oturumunuzun süresi doldu. Kaldığınız yerden devam etmek için yeniden oturum açın.",
     "somethingNotLoading": "Düzgün yüklenmeyen şeyler var. Sayfayı yenilemeyi deneyin."
   },
   "signedInPrompt": {
-    "signedIn": "ı_You are now signed in________İ.",
-    "backToStoryMaps": "ı_Back to Story Maps______İ",
-    "closeRefresh": "ı_Close this tab and refresh the website_____________İ.",
+    "signedIn": "Şu anda oturum açmış durumdasınız.",
+    "backToStoryMaps": "Hikaye Haritalarına Dön",
+    "closeRefresh": "Bu sekmeyi kapatın ve web sitesini yenileyin.",
     "close": "Kapat"
   },
   "unavailableDialog": {
     "title": "Oturum Açılamıyor",
     "explanation": "Üzgünüz, bu işlem küçük ekranda desteklenmiyor. Daha büyük bir ekranda veya cihazda açın.",
-    "close": "ı_Close___İ",
+    "close": "Kapat",
     "returnButton": "Dön"
   }
 });

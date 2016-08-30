@@ -32,14 +32,14 @@ define({
       "pageExplain": "Facebook 頁面屬￿公開品牌/產品或像 <b>esrigis</b> 一樣的名品。您可以在 URL 頁面的第一個 '/' 後面取得頁面名稱。",
       "pageInputLbl": "頁面名稱",
       "lookupMsgError": "未找到頁面",
-      "warning": "試_Facebook support has been discontinued, ${learn}________________驗.",
-      "learn": "試_learn more____驗"
+      "warning": "Facebook 支援已中斷，${learn}。",
+      "learn": "瞭解詳細資訊"
     },
     "imageSelectorPicasa": {
-      "userInputLbl": "試_Email or Picasa id______驗",
+      "userInputLbl": "電子郵件或 Picasa id",
       "signInMsg2": "未找到帳戶",
-      "howToFind": "試_How to find a Picasa id________驗",
-      "howToFind2": "試_Copy digits between the first and second '/' of any Picasa page____________________驗"
+      "howToFind": "如何尋找 Picasa id",
+      "howToFind2": "複製任何 Picasa 頁面第一個和第二個 '/' 之間的數字"
     },
     "videoSelectorCommon": {
       "check": "勾選",
@@ -104,9 +104,9 @@ define({
       "lblPosition4Explain": "（可變形）",
       "unloadLbl": "讀者定位到其他部分時進行卸載",
       "unloadHelp": "如果網頁中包含音頻或影片介質，請將該選項選中以在讀者定位到其他部分時停止內容播放。取消勾選該選項可使讀者在瀏覽故事的同時持續播放音軌。<br />如果網頁是應用程式，請取消勾選該選項，這樣故事不必在讀者返回此部分時重新載入。",
-      "embedProtocolLabel": "試_Load page over a secure connection (HTTPS)______________驗",
-      "embedProtocolWarning1": "試_Your story is configured to load over a secure connection (https), so web page show in the story must also use a secure connection. If the page does not load it may be because it is not available over a secure connection or that it cannot be included in your story (some websites restrict this). You may need to create a hyperlink to open the page in a new browser tab________________________________________________________________________________________________________________驗.",
-      "embedProtocolWarning2": "試_Your story is configured to load over an insecure connection (http), so you can choose to load this page over a secure (recommended) or insecure connection. If the page does not load, it may be because it does not support the connection type you selected or that it cannot be included in your story (some websites restrict this). You may need to create a hyperlink to open the page in a new browser tab__________________________________________________________________________________________________________________________驗."
+      "embedProtocolLabel": "透過安全連線 (HTTPS) 載入頁面",
+      "embedProtocolWarning1": "已將您的故事配置為透過安全連線 (https) 載入，所以故事中顯示的網頁也必須使用安全連線。如果網頁未載入故事，則可能是因為無法透過安全連線取得，或無法在您的故事中包含它 (部分網站限制這種作法)。您可能需要建立超連結，以便在新的瀏覽器頁籤中開啟網頁。",
+      "embedProtocolWarning2": "已將您的故事配置為透過不安全連線 (http) 載入，所以您可以選擇透過安全 (建議作法) 或不安全連線載入此網頁。如果網頁未載入，則可能是因為它不支援您選擇的連線類型，或無法在您的故事中包含它 (部分網站限制這種作法)。您可能需要建立超連結，以便在新的瀏覽器頁籤中開啟網頁。"
     },
     "editorActionGeocode": {
       "lblTitle": "定位地址或地點",

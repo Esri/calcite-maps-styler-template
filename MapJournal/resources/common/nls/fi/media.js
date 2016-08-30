@@ -32,14 +32,14 @@ define({
       "pageExplain": "Facebook-sivu on julkinen tuotemerkki tai tunnettu tuote, kuten <b>esrigis</b>. Saat sivun nimen sivun URL-osoitteessa olevan ensimmäisen vinoviivan (/) jälkeen.",
       "pageInputLbl": "Sivun nimi",
       "lookupMsgError": "Sivua ei löydy",
-      "warning": "Å_Facebook support has been discontinued, ${learn}________________ö.",
-      "learn": "Å_learn more____ö"
+      "warning": "Facebook-tuki on lopetettu, ${learn}.",
+      "learn": "lisätietoja"
     },
     "imageSelectorPicasa": {
-      "userInputLbl": "Å_Email or Picasa id______ö",
+      "userInputLbl": "Sähköpostiosoite tai Picasa-tunnus",
       "signInMsg2": "Tiliä ei löydy",
-      "howToFind": "Å_How to find a Picasa id________ö",
-      "howToFind2": "Å_Copy digits between the first and second '/' of any Picasa page____________________ö"
+      "howToFind": "Picasa-tunnuksen etsiminen",
+      "howToFind2": "Kopioi minkä tahansa Picasa-sivun ensimmäisen ja toisen vinoviivan (/) välissä olevat luvut"
     },
     "videoSelectorCommon": {
       "check": "Valitse",
@@ -104,9 +104,9 @@ define({
       "lblPosition4Explain": "(voi vääristyä)",
       "unloadLbl": "Poista lataus, kun lukija siirtyy",
       "unloadHelp": "Jos Web-sivulla on ääni- tai videomediaa, pidä tämä asetus valittuna, jotta sisällön toisto pysähtyy, kun lukija siirtyy pois. Poista valinta, jos haluat toistaa ääniraitaa lukijan edetessä tarinassa.<br />Jos Web-sivu on sovellus, poista valinta, jotta tarina ei lataudu uudelleen, kun lukija palaa tarinaan.",
-      "embedProtocolLabel": "Å_Load page over a secure connection (HTTPS)______________ö",
-      "embedProtocolWarning1": "Å_Your story is configured to load over a secure connection (https), so web page show in the story must also use a secure connection. If the page does not load it may be because it is not available over a secure connection or that it cannot be included in your story (some websites restrict this). You may need to create a hyperlink to open the page in a new browser tab________________________________________________________________________________________________________________ö.",
-      "embedProtocolWarning2": "Å_Your story is configured to load over an insecure connection (http), so you can choose to load this page over a secure (recommended) or insecure connection. If the page does not load, it may be because it does not support the connection type you selected or that it cannot be included in your story (some websites restrict this). You may need to create a hyperlink to open the page in a new browser tab__________________________________________________________________________________________________________________________ö."
+      "embedProtocolLabel": "Lataa sivu suojatun yhteyden kautta (HTTPS)",
+      "embedProtocolWarning1": "Tarinasi on määritetty latautumaan suojatun yhteyden (https) kautta, joten tarinassa näkyvän verkkosivun on käytettävä myös suojattua yhteyttä. Jos sivu ei lataudu, se ei ole ehkä käytettävissä suojatun yhteyden kautta tai suojattua yhteyttä ei voi lisätä tarinaasi (jotkin verkkosivustot estävät tämän). Sinun on ehkä luotava hyperlinkki, jotta voit avata sivun uudessa välilehdessä selaimessa.",
+      "embedProtocolWarning2": "Tarinasi on määritetty latautumaan suojaamattoman yhteyden (http) kautta, joten voit valita, ladataanko tämä sivu suojatun (suositus) vai suojaamattoman yhteyden kautta. Jos sivu ei lataudu, se ei ehkä tue valitsemaasi yhteystyyppiä tai valittua yhteyttä ei voi lisätä tarinaasi (jotkin verkkosivustot estävät tämän). Sinun on ehkä luotava hyperlinkki, jotta voit avata sivun uudessa välilehdessä selaimessa."
     },
     "editorActionGeocode": {
       "lblTitle": "Paikanna osoite tai paikka",

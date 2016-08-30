@@ -32,14 +32,14 @@ define({
       "pageExplain": "Facebook sayfası, <b>esrigis</b> gibi genel bir marka/ürün veya ünlü kişiliktir. Sayfa adını sayfa URL'sindeki ilk '/' karakterinden alabilirsiniz.",
       "pageInputLbl": "Sayfa adı",
       "lookupMsgError": "Sayfa bulunamadı",
-      "warning": "ı_Facebook support has been discontinued, ${learn}________________İ.",
-      "learn": "ı_learn more____İ"
+      "warning": "Facebook desteği artık verilmemektedir, ${learn}.",
+      "learn": "daha fazla bilgi"
     },
     "imageSelectorPicasa": {
-      "userInputLbl": "ı_Email or Picasa id______İ",
+      "userInputLbl": "E-posta veya Picasa kimliği",
       "signInMsg2": "Hesap bulunamadı",
-      "howToFind": "ı_How to find a Picasa id________İ",
-      "howToFind2": "ı_Copy digits between the first and second '/' of any Picasa page____________________İ"
+      "howToFind": "Picasa kimliğini bulma",
+      "howToFind2": "Herhangi bir Picasa sayfasının ilk ve ikinci '/' karakteri arasındaki rakamları kopyalayın"
     },
     "videoSelectorCommon": {
       "check": "Kontrol",
@@ -104,9 +104,9 @@ define({
       "lblPosition4Explain": "(şekil değiştirebilir)",
       "unloadLbl": "Okuyucu başka yere gittiğinde yüklemeyi kaldır",
       "unloadHelp": "Web Sayfasında ses ya da video ortamı varsa, okuyucu başka bir yere gittiğinde içeriğin oynatımını durdurmak için bu seçeneği işaretli bırakın. Okuyucu metin boyunca ilerlerken örneğin bir arka plan müziğini oynatmaya devam etmek için işareti kaldırın.<br />Web Sayfası bir uygulamaysa, bu seçeneğin işaretini kaldırarak, okuyucu geri döndüğünde hikayenin yeniden yüklenmesini önleyebilirsiniz.",
-      "embedProtocolLabel": "ı_Load page over a secure connection (HTTPS)______________İ",
-      "embedProtocolWarning1": "ı_Your story is configured to load over a secure connection (https), so web page show in the story must also use a secure connection. If the page does not load it may be because it is not available over a secure connection or that it cannot be included in your story (some websites restrict this). You may need to create a hyperlink to open the page in a new browser tab________________________________________________________________________________________________________________İ.",
-      "embedProtocolWarning2": "ı_Your story is configured to load over an insecure connection (http), so you can choose to load this page over a secure (recommended) or insecure connection. If the page does not load, it may be because it does not support the connection type you selected or that it cannot be included in your story (some websites restrict this). You may need to create a hyperlink to open the page in a new browser tab__________________________________________________________________________________________________________________________İ."
+      "embedProtocolLabel": "Sayfayı bir güvenli bağlantı üzerinden yükle (HTTPS)",
+      "embedProtocolWarning1": "Hikayeniz güvenli bir bağlantı (https) üzerinden yüklenecek şekilde yapılandırılmış, bu nedenle hikayedeki web sayfası gösteriminin de güvenli bağlantı kullanması gerekir. Sayfa yüklenmiyorsa, bunun nedeni güvenli bir bağlantı sağlanamaması veya sayfanın hikayenize eklenememesi (bazı web siteleri bunu kısıtlamaktadır) olabilir. Sayfayı yeni bir tarayıcı sekmesinde açmak için bir köprü metni oluşturmanız gerekir.",
+      "embedProtocolWarning2": "Hikayeniz güvenli olmayan bir bağlantı (http) üzerinden yüklenecek şekilde yapılandırılmış, bu nedenle bu sayfayı güvenli (önerilen) veya güvenli olmayan bağlantı üzerinden yüklemeyi seçebilirsiniz. Sayfa yüklenmiyorsa, bunun nedeni sayfanın seçtiğiniz bağlantı türünü desteklememesi veya hikayenize eklenememesi (bazı web siteleri bunu kısıtlamaktadır) olabilir. Sayfayı yeni bir tarayıcı sekmesinde açmak için bir köprü metni oluşturmanız gerekir."
     },
     "editorActionGeocode": {
       "lblTitle": "Adres veya yer bul",

@@ -13,27 +13,27 @@ define({
   },
   "answerText": {
     "seriesOfPlaces": "مجموعة من الأماكن",
-    "mapsNarrative": "بيت_A narrative____لاحقة",
-    "compareDatasets": "بيت_A comparison of datasets________لاحقة",
+    "mapsNarrative": "سرد",
+    "compareDatasets": "مقارنة مجموعات البيانات",
     "other": "خريطة فردية",
     "yes": "نعم",
     "no": "لا",
     "click": "انقر فوق",
     "scroll": "التمرير",
-    "two": "بيت_Two__لاحقة",
-    "moreThanTwo": "بيت_More than two_____لاحقة",
-    "pickThis": "بيت_Pick this____لاحقة",
-    "detailJournal": "...بيت_appear in a side panel next to your featured media_________________لاحقة?",
-    "detailCascade": "...بيت_fill the whole page with a mix of text and media appearing in sequence_______________________لاحقة?"
+    "two": "اثنان",
+    "moreThanTwo": "أكثر من أثنين",
+    "pickThis": "اختر هذا",
+    "detailJournal": "...يظهر في اللوحة الجانبية بجوار الوسائط المتعددة المميزة؟",
+    "detailCascade": "...ملأ الصفحة بأكملها بجوار النص والوسائط المتعددة التي تظهر في التسلسل؟"
   },
   "questionText": {
     "bestDescribesStory": "ما هو أفضل وصف للقصة؟",
     "showPhotos": "هل تريد عرض الصور لكل موقع؟",
     "clickOrScroll": "هل تريد من جمهور المستخدمين النقر على علامات التبويب أم التمرير؟",
-    "crowdsource": "بيت_Do you want to crowdsource places from your audience_________________لاحقة?",
-    "categories": "بيت_Are your places organized into categories______________لاحقة?",
-    "datasets": "بيت_How many datasets will be compared____________لاحقة?",
-    "narrative": "بيت_Do you want your narrative to__________لاحقة:"
+    "crowdsource": "هل تريد أماكن التعهيد الجماعي من المتلقين؟",
+    "categories": "هل تم ترتيب الأماكن في فئات؟",
+    "datasets": "كم عدد مجموعات البيانات التي تم مقارنتها؟",
+    "narrative": "هل تريد السرد أن يقوم بـ:"
   },
   "finalApp": {
     "weRecommend": "نحن نوصي: {{STORY_TYPE}}",
@@ -42,22 +42,22 @@ define({
   },
   "reasons": {
     "mapTour": "يُمثل هذا التطبيق سردًا تسلسليًا قائم على المكان في شكل سلسلة من الصور والتسميات التوضيحية ذات العلامات الجغرافية المرتبطة بخريطة تفاعلية، وهوâ€™ مثالي لرحلات المشي أو سلسلة من المواقع التي تريدâ€™ للمستخدمين اتباعها بشكل تسلسلي.",
-    "mapJournal": "بيت_This app lets you present an in-depth narrative in a scrolling side panel and organized into sections. Each section has an associated featured media such as a map, image, video, etc________________________________________________________لاحقة.",
-    "cascade": "بيت_This app lets you present your narrative as a compelling, full-page scrolling experience. Sections containing text and in-line media can be interspersed with 'immersive' sections that fill the page and can include effects like map animations and visual transitions_________________________________________________________________________________لاحقة.",
+    "mapJournal": "يتيح لك التطبيق سرد دقيق في اللوحة الجانبية للتمرير والمرتبة في أقسام. يحتوي كل قسم على سائط متعددة مميزة متعلقة مثل الخريطة والصورة ومقطع الفيديو إلخ.",
+    "cascade": "يتيح لك تقديم السرد باعتباره مقنع وذات خبرة تمرير للصفحة بأكملها. يمكن توزيع الأقسام التي تحتوي على نص ووسائط متعددة محاذية مع أقسام 'مستحوذة' التي تملأ الصفحة ويمكنها تضمين التأثيرات مثل الرسوم المتحركة بالخريطة والانتقالات المرئية.",
     "mapSeries": "يتيح لك هذا التطبيق عرض سلسلة من الخرائط عبر علامات التبويب أو التعداد النقطي المُرقم أو عناصر التحكم الجانبية القابلة للتوسيع، ويمكنك أيضًا تضمين الصور ومقاطع الفيديو ومحتوى الويب في السلسلة لسرد القصة.",
-    "crowdsource": "بيت_This app lets you publish and manage a crowdsourced story which anyone can contribute to. Use it to engage a specific audience or the general public on the subject of your choice. A vetting function lets you review and approve contributions_________________________________________________________________________لاحقة.",
-    "shortlist": "بيت_This app lets you present a set of places of interest organized into tabs based on themes, such as parks, attractions, hotels, etc. The tabs update to show people what's in the area they are looking at on the map, making it easy and fun to find out what's available_________________________________________________________________________________لاحقة.",
+    "crowdsource": "يتيح التطبيق نشر حكاية التعهد الجماعي وإدارته التي يمكن للجميع للمشاركة بها. استخدمها لمشاركة متلقين مُحددين أو للعامة في موضوع من اختيارك. تتيح لك ميزة التدقيق مراجعة المشاركات والموافقة عليها.",
+    "shortlist": "يتيح التطبيق تمثيل مجموعة من أمكان الاهتمام المرتبة في علامات تبويب تستند على المواضيع مثل الحدائق ومناطق الجذب والفنادق وإلخ. يتم تحديث علامات التبويب لعرض ما هو داخل المنطقة التي يعرضها الأشخاص بالخريطة ويجعل البحث عن المتوفر سهلاً وممتع.",
     "swipeSpyglass": "يعمل هذا التطبيق على تمكين المستخدمين من المقارنة بين خريطتين أو طبقتين في نفس الطبقة، وهو ما يعد فعالاً على وجه الخصوص لعرض الصور \"وقبل وبعد\" أو تغييرات أخرى عبر الوقت.",
     "basic": "يتيح هذا التطبيق تمثيل الخريطة عبر واجهة مستخدم بسيطة للغاية. وبعيدًا عن شريط العنوان ووسيلة إيضاح اختيارية، فإن الخريطة تملأ الشاشة. استخدم هذا التطبيق لجعل خريطتك تُعبّر عن محتواها بنفسها."
   },
   "shortReasons": {
     "mapTour": "إرشاد المستخدمين خلال تسلسل الأماكن",
-    "mapJournal": "بيت_Present a narrative in a scrolling side panel_______________لاحقة",
-    "cascade": "بيت_Present a narrative with immersive, full-page scroll_________________لاحقة",
+    "mapJournal": "يقدم سرد في اللوحة الجانبية للتمرير",
+    "cascade": "يمثل سرد مع استحواذ وتمرير للصفحة الكاملة",
     "mapSeries": "يُمثل سلسلة من الخرائط ذات الصلة",
-    "crowdsource": "بيت_Publish a story anyone can contribute to_____________لاحقة",
-    "shortlist": "بيت_Present places of interest organized into tabs_______________لاحقة",
-    "swipeSpyglass": "بيت_Compare two maps or layers with a slider or spyglass_________________لاحقة",
+    "crowdsource": "نشر القصة ليتمكن أي شخص من المشاركة في",
+    "shortlist": "يمثل أماكن الاهتمام المرتبة في علامات تبويب",
+    "swipeSpyglass": "مقارنة خريطتان أو طبقتان مع مرر أو عدسة مكبرة",
     "basic": "اجعل الخريطة بسيطة ورائعة"
   },
   "signInBuildDialog": {

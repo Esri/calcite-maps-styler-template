@@ -83,7 +83,7 @@ define({
     "valueRadioButtonLabel": "값",
     "uniqueRadioButtonLabel": "고유값",
     "selectLayerToBegin": "시작하려면 범주 선택",
-    "layerFeatureCount": "한_${selectedFeatureCount} selected / ${featureCount} records__________________빠"
+    "layerFeatureCount": "${featureCount}개 레코드 중 ${selectedFeatureCount}개 선택됨"
   },
   "timeSlider": {
     "timeSliderLabel": "시간 범위",
@@ -102,7 +102,7 @@ define({
     "selectFileText": "찾아보기",
     "attachmentSelectedMsg": "첨부 파일이 선택됨",
     "attachmentHeaderText": "첨부 파일",
-    "addRecordText": "한_Add Record____빠"
+    "addRecordText": "레코드 추가"
   },
   "main": {
     "noGroup": "구성된 그룹 없음"
@@ -114,18 +114,18 @@ define({
   },
   "manualRefresh": {
     "manualRefreshIconTooltip": "새로 고침",
-    "confirmManualRefreshText": "한_All selections and unsaved changes will be discarded_________________빠"
+    "confirmManualRefreshText": "모든 선택 내역과 저장하지 않은 변경 내용이 취소됩니다."
   },
   "help": {
     "helpIconTooltip": "도움말"
   },
   "filter": {
     "noFeatureFoundText": "이 값에 대한 피처를 찾을 수 없습니다.",
-    "distinctQueryFailed": "한_No distinct values found for the field_____________빠.",
+    "distinctQueryFailed": "필드에 대한 고유값을 찾을 수 없습니다.",
     "andText": "및",
-    "filterInEditModeAlert": "한_Filters unavailable while editing___________빠.",
+    "filterInEditModeAlert": "편집 중에 필터를 사용할 수 없습니다.",
     "dropdownSelectOption": "선택",
-    "filterInShowSelectedEditModeAlert": "한_Filters unavailable in 'Show Selected' mode______________빠."
+    "filterInShowSelectedEditModeAlert": "'선택한 항목 보기' 모드에서는 필터를 사용할 수 없습니다."
   },
   "detailsPanel": {
     "editContentText": "레코드 편집"
@@ -135,8 +135,8 @@ define({
     "reSignInMessage": "로그인하려면 여기를 클릭"
   },
   "selectionOptions": {
-    "selectionOptionsIconTooltip": "한_Selection Options______빠",
-    "showAllOptionText": "한_Show All___빠",
-    "showSelectedOptionText": "한_Show Selected_____빠"
+    "selectionOptionsIconTooltip": "선택 옵션",
+    "showAllOptionText": "모두 보기",
+    "showSelectedOptionText": "선택한 항목 보기"
   }
 });

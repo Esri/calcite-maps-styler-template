@@ -83,7 +83,7 @@ define({
     "valueRadioButtonLabel": "Valoare",
     "uniqueRadioButtonLabel": "Unic",
     "selectLayerToBegin": "Selectaţi o categorie pentru a începe",
-    "layerFeatureCount": "Ă_${selectedFeatureCount} selected / ${featureCount} records__________________ș"
+    "layerFeatureCount": "${selectedFeatureCount} selectat / ${featureCount} înregistrări"
   },
   "timeSlider": {
     "timeSliderLabel": "Interval de timp",
@@ -102,7 +102,7 @@ define({
     "selectFileText": "Parcurgere",
     "attachmentSelectedMsg": "ataşări selectate",
     "attachmentHeaderText": "Ataşări",
-    "addRecordText": "Ă_Add Record____ș"
+    "addRecordText": "Adăugare înregistrare"
   },
   "main": {
     "noGroup": "Niciun grup configurat"
@@ -114,18 +114,18 @@ define({
   },
   "manualRefresh": {
     "manualRefreshIconTooltip": "Reîmprospătare",
-    "confirmManualRefreshText": "Ă_All selections and unsaved changes will be discarded_________________ș"
+    "confirmManualRefreshText": "Toate selecţiile şi modificările nesalvate vor fi eliminate"
   },
   "help": {
     "helpIconTooltip": "Ajutor"
   },
   "filter": {
     "noFeatureFoundText": "Nu a fost găsit niciun obiect spaţia pentru această valoare.",
-    "distinctQueryFailed": "Ă_No distinct values found for the field_____________ș.",
+    "distinctQueryFailed": "Nu există valori distincte pentru câmp.",
     "andText": "şi",
-    "filterInEditModeAlert": "Ă_Filters unavailable while editing___________ș.",
+    "filterInEditModeAlert": "Filtrele nu sunt disponibile în timpul editării.",
     "dropdownSelectOption": "Selectare",
-    "filterInShowSelectedEditModeAlert": "Ă_Filters unavailable in 'Show Selected' mode______________ș."
+    "filterInShowSelectedEditModeAlert": "Filtrele nu sunt disponibile în modul „Afişare elemente selectate”."
   },
   "detailsPanel": {
     "editContentText": "Editare înregistrare"
@@ -135,8 +135,8 @@ define({
     "reSignInMessage": "Faceţi clic aici pentru a vă autentifica"
   },
   "selectionOptions": {
-    "selectionOptionsIconTooltip": "Ă_Selection Options______ș",
-    "showAllOptionText": "Ă_Show All___ș",
-    "showSelectedOptionText": "Ă_Show Selected_____ș"
+    "selectionOptionsIconTooltip": "Opţiuni selecţie",
+    "showAllOptionText": "Afişare toate+",
+    "showSelectedOptionText": "Afişare obiecte selectate"
   }
 });

@@ -37,9 +37,9 @@ define({
       "upgradeBrowser": "<a href='http://browsehappy.com/' target='_blank'>Werk uw browser bij</a>.",
       "mapLoadingFail": "Er is een probleem opgetreden. De kaart is niet correct geladen.",
       "signOut": "Afmelden",
-      "print0": "Ĳ_Sorry, this story cannot be printed____________ä.",
-      "print1": "Ĳ_To print this story, please use the print button located in the share dialog________________________ä.",
-      "print2": "Ĳ_Sorry, a printable version of the story is typically accessible through the share dialog, but this dialog has been disabled by the author__________________________________________ä."
+      "print0": "Onze excuses, dit verhaal kan niet worden afgedrukt.",
+      "print1": "Om dit verhaal af te drukken, gebruik de knop Afdrukken in het dialoogvenster Delen.",
+      "print2": "Onze excuses, een afdrukbare versie van het verhaal is gewoonlijk beschikbaar via het dialoogvenster Delen, maar dit dialoogvenster is door de auteur uitgeschakeld."
     },
     "mobileView": {
       "tapForDetails": "Tik voor details",
@@ -89,15 +89,15 @@ define({
       "autoplayExplain1": "Autoplaymodus speelt uw verhaal regelmatig af. Dit is ideaal voor een kiosk of monitor in een openbare ruimte, maar houd er rekening mee dat het verhaal in andere situaties moeilijker te lezen is. Deze functie wordt niet ondersteund op kleine schermen.",
       "autoplayExplain2": "Wanneer deze modus actief is, kan het verhaal worden afgespeeld en gepauzeerd en kan de navigatiesnelheid worden aangepast.",
       "linksupdated": "Links bijgewerkt!",
-      "print": "Ĳ_Print___ä",
-      "printInstruction1": "Ĳ_Please wait for all the content to load before printing this page_____________________ä",
-      "printInstruction1a": "Ĳ_Some content may not print unless you enable \"Print Background Colors and Images\" in the Print Page setup dialog___________________________________ä",
-      "printInstruction2": "Ĳ_This page cannot be shared with others, instead share the ${link}_____________________ä",
-      "link": "Ĳ_link to the story______ä",
-      "printOptPageBreak": "Ĳ_Begin each section on a new page___________ä",
-      "printWarning": "Ĳ_This is a printed version of a story map. Dynamic content such as videos and interactive maps is only available in the online version at ${link}____________________________________________ä",
-      "printMSWarning": "Ĳ_link available only in online story____________ä",
-      "printVideoWarning": "Ĳ_This video can be viewed in the online version of this story map____________________ä"
+      "print": "Afdrukken",
+      "printInstruction1": "Wacht tot alle content geladen is alvorens de pagina af te drukken",
+      "printInstruction1a": "Bepaalde content wordt mogelijk niet afgedrukt tenzij u \"Achtergrondkleuren en beelden afdrukken\" activeert in het dialoogvenster Pagina afdrukken",
+      "printInstruction2": "Deze pagina kan niet met anderen gedeeld worden, deel in plaats daarvan de ${link}",
+      "link": "koppeling naar het verhaal",
+      "printOptPageBreak": "Begin elke sectie op een nieuwe pagina",
+      "printWarning": "Dit is een afgedrukt versie van een storymap. Dynamische content zoals video's en interactieve kaarten is alleen beschikbaar in de onlineversie op ${link}",
+      "printMSWarning": "koppeling beschikbaar in het onlineverhaal",
+      "printVideoWarning": "Deze video kan bekeken worden in de onlineversie van deze storymap"
     }
   }
 });

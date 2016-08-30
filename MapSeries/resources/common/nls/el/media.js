@@ -32,14 +32,14 @@ define({
       "pageExplain": "Μια Facebook σελίδα είναι μια εμπορική επωνυμία, ένα προϊόν ή μια διασημότητα, π.χ. <b>esrigis</b>. Το όνομα της σελίδας βρίσκεται μετά το πρώτο '/' στο URL της σελίδας.",
       "pageInputLbl": "Όνομα σελίδας",
       "lookupMsgError": "Η σελίδα δεν βρέθηκε",
-      "warning": "Đ_Facebook support has been discontinued, ${learn}________________ớ.",
-      "learn": "Đ_learn more____ớ"
+      "warning": "Η υποστήριξη του Facebook έχει διακοπεί, ${learn}.",
+      "learn": "μάθετε περισσότερα"
     },
     "imageSelectorPicasa": {
-      "userInputLbl": "Đ_Email or Picasa id______ớ",
+      "userInputLbl": "Email ή αναγνωριστικό Picasa",
       "signInMsg2": "Ο λογαριασμός δεν βρέθηκε",
-      "howToFind": "Đ_How to find a Picasa id________ớ",
-      "howToFind2": "Đ_Copy digits between the first and second '/' of any Picasa page____________________ớ"
+      "howToFind": "Πώς να βρείτε ένα αναγνωριστικό Picasa",
+      "howToFind2": "Αντιγράψτε τα ψηφία ανάμεσα στο πρώτο και στο δεύτερο \"/\" οποιασδήποτε σελίδας Picasa"
     },
     "videoSelectorCommon": {
       "check": "Έλεγχος",
@@ -104,9 +104,9 @@ define({
       "lblPosition4Explain": "(μπορεί να παραμορφωθεί)",
       "unloadLbl": "Κατάργηση φόρτωσης όταν ο αναγνώστης απομακρύνεται",
       "unloadHelp": "Εάν η ιστοσελίδα έχει πολυμέσα ήχου ή βίντεο, αφήστε ενεργοποιημένη αυτή την επιλογή για να σταματάει η αναπαραγωγή αυτού του περιεχομένου όταν ο αναγνώστης απομακρύνεται. Καταργήστε τη για να συνεχίζει, για παράδειγμα, η αναπαραγωγή μιας μουσικής υπόκρουσης καθώς ο αναγνώστης προχωράει στην αφήγηση..<br />Εάν η ιστοσελίδα είναι μια εφαρμογή, καταργήστε αυτή την επιλογή, ώστε η αφήγηση να μην φορτώνεται ξανά όταν ο αναγνώστης επιστρέφει σε αυτή.",
-      "embedProtocolLabel": "Đ_Load page over a secure connection (HTTPS)______________ớ",
-      "embedProtocolWarning1": "Đ_Your story is configured to load over a secure connection (https), so web page show in the story must also use a secure connection. If the page does not load it may be because it is not available over a secure connection or that it cannot be included in your story (some websites restrict this). You may need to create a hyperlink to open the page in a new browser tab________________________________________________________________________________________________________________ớ.",
-      "embedProtocolWarning2": "Đ_Your story is configured to load over an insecure connection (http), so you can choose to load this page over a secure (recommended) or insecure connection. If the page does not load, it may be because it does not support the connection type you selected or that it cannot be included in your story (some websites restrict this). You may need to create a hyperlink to open the page in a new browser tab__________________________________________________________________________________________________________________________ớ."
+      "embedProtocolLabel": "Φορτώστε τη σελίδα μέσω ασφαλούς σύνδεσης (HTTPS)",
+      "embedProtocolWarning1": "Η αφήγησή σας έχει διαμορφωθεί για φόρτωση μέσω ασφαλούς σύνδεσης (https), επομένως η ιστοσελίδα που εμφανίζεται στην αφήγηση πρέπει, επίσης, να χρησιμοποιεί ασφαλή σύνδεση. Αν η σελίδα δεν τη φορτώνει, αυτό μπορεί να οφείλεται στο ότι δεν διατίθεται μέσω ασφαλούς σύνδεσης ή στο ότι δεν μπορεί να συμπεριληφθεί στην αφήγησή σας (ορισμένοι ιστότοποι έχουν σχετικό περιορισμό). Ίσως πρέπει να δημιουργήσετε έναν υπερσύνδεσμο, για να ανοίξετε τη σελίδα σε μια νέα καρτέλα του προγράμματος περιήγησης.",
+      "embedProtocolWarning2": "Η αφήγησή σας έχει διαμορφωθεί για φόρτωση μέσω μη ασφαλούς σύνδεσης (http), επομένως μπορείτε να επιλέξετε να φορτώσετε αυτήν τη σελίδα μέσω ασφαλούς (συνιστάται) ή μη ασφαλούς σύνδεσης. Αν δεν γίνεται φόρτωση της σελίδας, αυτό μπορεί να οφείλεται στο ότι δεν υποστηρίζει τον τύπο σύνδεσης που έχετε επιλέξει ή στο ότι δεν μπορεί να συμπεριληφθεί στην αφήγησή σας (ορισμένοι ιστότοποι έχουν σχετικό περιορισμό). Ίσως πρέπει να δημιουργήσετε έναν υπερσύνδεσμο, για να ανοίξετε τη σελίδα σε μια νέα καρτέλα του προγράμματος περιήγησης."
     },
     "editorActionGeocode": {
       "lblTitle": "Εντοπίστε μια διεύθυνση ή ένα μέρος",

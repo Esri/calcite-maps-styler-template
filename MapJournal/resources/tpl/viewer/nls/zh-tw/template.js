@@ -37,9 +37,9 @@ define({
       "upgradeBrowser": "<a href='http://browsehappy.com/' target='_blank'>請更新您的瀏覽器</a>。",
       "mapLoadingFail": "發生了一些錯誤，地圖未正確載入。",
       "signOut": "登出",
-      "print0": "試_Sorry, this story cannot be printed____________驗.",
-      "print1": "試_To print this story, please use the print button located in the share dialog________________________驗.",
-      "print2": "試_Sorry, a printable version of the story is typically accessible through the share dialog, but this dialog has been disabled by the author__________________________________________驗."
+      "print0": "很抱歉，無法列印此故事。",
+      "print1": "若要列印此故事，請使用分享對話方塊中的列印按鈕。",
+      "print2": "很抱歉，一般可透過分享對話方塊存取故事的可列印版本，但創作者已停用此對話方塊。"
     },
     "mobileView": {
       "tapForDetails": "點選查看詳細資訊",
@@ -89,15 +89,15 @@ define({
       "autoplayExplain1": "自動播放模式將以一定間隔向前播放您的故事。這很適用於書報攤或公共顯示器，但請注意，在其他情況下可能會使得故事更難閱讀。此圖徵不支援小畫面。",
       "autoplayExplain2": "啟用此模式時，可使用控制項來播放/暫停故事和調整瀏覽速度。",
       "linksupdated": "已更新連結!",
-      "print": "試_Print___驗",
-      "printInstruction1": "試_Please wait for all the content to load before printing this page_____________________驗",
-      "printInstruction1a": "試_Some content may not print unless you enable \"Print Background Colors and Images\" in the Print Page setup dialog___________________________________驗",
-      "printInstruction2": "試_This page cannot be shared with others, instead share the ${link}_____________________驗",
-      "link": "試_link to the story______驗",
-      "printOptPageBreak": "試_Begin each section on a new page___________驗",
-      "printWarning": "試_This is a printed version of a story map. Dynamic content such as videos and interactive maps is only available in the online version at ${link}____________________________________________驗",
-      "printMSWarning": "試_link available only in online story____________驗",
-      "printVideoWarning": "試_This video can be viewed in the online version of this story map____________________驗"
+      "print": "列印",
+      "printInstruction1": "請等到全部內容皆載入完畢，再列印此頁面",
+      "printInstruction1a": "除非您在「列印頁面」設定對話方塊中啟用「列印背景顏色和圖片」，否則可能無法列印部分內容",
+      "printInstruction2": "無法與其他人分享此頁面，請改為分享 ${link}",
+      "link": "連結至故事",
+      "printOptPageBreak": "在一個新頁面上開始每個部分",
+      "printWarning": "這是列印版本的故事地圖。只能在 ${link} 的線上版本中取得影片和互動式地圖之類的動態內容",
+      "printMSWarning": "只能在線上故事中取得的連結",
+      "printVideoWarning": "可在此故事地圖的線上版本中檢視這段影片"
     }
   }
 });

@@ -83,7 +83,7 @@ define({
     "valueRadioButtonLabel": "Значение",
     "uniqueRadioButtonLabel": "Уникальное",
     "selectLayerToBegin": "Для начала работы выберите категорию",
-    "layerFeatureCount": "Ж_${selectedFeatureCount} selected / ${featureCount} records__________________Я"
+    "layerFeatureCount": "${selectedFeatureCount} выбрано / ${featureCount} записей"
   },
   "timeSlider": {
     "timeSliderLabel": "Временной диапазон",
@@ -102,7 +102,7 @@ define({
     "selectFileText": "Просмотр",
     "attachmentSelectedMsg": "выбранные вложения",
     "attachmentHeaderText": "Вложения",
-    "addRecordText": "Ж_Add Record____Я"
+    "addRecordText": "Добавить запись"
   },
   "main": {
     "noGroup": "Не задана группа"
@@ -114,18 +114,18 @@ define({
   },
   "manualRefresh": {
     "manualRefreshIconTooltip": "Обновить",
-    "confirmManualRefreshText": "Ж_All selections and unsaved changes will be discarded_________________Я"
+    "confirmManualRefreshText": "Все выборки и несохраненные изменения будут удалены"
   },
   "help": {
     "helpIconTooltip": "Справка"
   },
   "filter": {
     "noFeatureFoundText": "Для этого значения не найдено ни одного объекта.",
-    "distinctQueryFailed": "Ж_No distinct values found for the field_____________Я.",
+    "distinctQueryFailed": "Для этого поля не найдено различающихся значений.",
     "andText": "и",
-    "filterInEditModeAlert": "Ж_Filters unavailable while editing___________Я.",
+    "filterInEditModeAlert": "Во время редактирования фильтры недоступны.",
     "dropdownSelectOption": "Выбрать",
-    "filterInShowSelectedEditModeAlert": "Ж_Filters unavailable in 'Show Selected' mode______________Я."
+    "filterInShowSelectedEditModeAlert": "В режиме Показать выбранные фильтры недоступны."
   },
   "detailsPanel": {
     "editContentText": "Редактировать запись"
@@ -135,8 +135,8 @@ define({
     "reSignInMessage": "Щелкните здесь, чтобы выполнить вход"
   },
   "selectionOptions": {
-    "selectionOptionsIconTooltip": "Ж_Selection Options______Я",
-    "showAllOptionText": "Ж_Show All___Я",
-    "showSelectedOptionText": "Ж_Show Selected_____Я"
+    "selectionOptionsIconTooltip": "Опции выборки",
+    "showAllOptionText": "Показать все",
+    "showSelectedOptionText": "Показать выбранные"
   }
 });

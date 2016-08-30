@@ -83,7 +83,7 @@ define({
     "valueRadioButtonLabel": "値",
     "uniqueRadioButtonLabel": "個別値",
     "selectLayerToBegin": "開始するカテゴリを選択",
-    "layerFeatureCount": "須_${selectedFeatureCount} selected / ${featureCount} records__________________鷗"
+    "layerFeatureCount": "${selectedFeatureCount}/${featureCount} レコードが選択されました"
   },
   "timeSlider": {
     "timeSliderLabel": "時間範囲",
@@ -102,7 +102,7 @@ define({
     "selectFileText": "参照",
     "attachmentSelectedMsg": "添付ファイルが選択されています",
     "attachmentHeaderText": "添付ファイル",
-    "addRecordText": "須_Add Record____鷗"
+    "addRecordText": "レコードの追加"
   },
   "main": {
     "noGroup": "グループが構成されていません"
@@ -114,18 +114,18 @@ define({
   },
   "manualRefresh": {
     "manualRefreshIconTooltip": "更新",
-    "confirmManualRefreshText": "須_All selections and unsaved changes will be discarded_________________鷗"
+    "confirmManualRefreshText": "すべての選択セットおよび保存されていない変更は破棄されます"
   },
   "help": {
     "helpIconTooltip": "ヘルプ"
   },
   "filter": {
     "noFeatureFoundText": "この値のフィーチャが見つかりません。",
-    "distinctQueryFailed": "須_No distinct values found for the field_____________鷗.",
+    "distinctQueryFailed": "フィールドの個別値が見つかりません。",
     "andText": "および",
-    "filterInEditModeAlert": "須_Filters unavailable while editing___________鷗.",
+    "filterInEditModeAlert": "編集中はフィルターを使用できません。",
     "dropdownSelectOption": "選択",
-    "filterInShowSelectedEditModeAlert": "須_Filters unavailable in 'Show Selected' mode______________鷗."
+    "filterInShowSelectedEditModeAlert": "[選択レイヤーの表示] モードではフィルターを使用できません。"
   },
   "detailsPanel": {
     "editContentText": "レコードの編集"
@@ -135,8 +135,8 @@ define({
     "reSignInMessage": "ここをクリックしてサイン インします"
   },
   "selectionOptions": {
-    "selectionOptionsIconTooltip": "須_Selection Options______鷗",
-    "showAllOptionText": "須_Show All___鷗",
-    "showSelectedOptionText": "須_Show Selected_____鷗"
+    "selectionOptionsIconTooltip": "選択オプション",
+    "showAllOptionText": "すべて表示",
+    "showSelectedOptionText": "選択レイヤーの表示"
   }
 });

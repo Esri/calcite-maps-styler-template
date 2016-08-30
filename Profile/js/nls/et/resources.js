@@ -19,28 +19,28 @@ define({
     "error": "Kaarti ei saa luua"
   },
   "nav": {
-    "close": "Š_Close___ä"
+    "close": "Sule"
   },
   "elevation": {
-    "toggle": "Š_Toggle the Elevation Profile Chart____________ä.",
-    "drawTool": "Š_Draw a line on the map to generate an elevation profile__________________ä.",
-    "selectMessage": "Š_Click a line feature or use the draw tool to draw a line to display the elevation profile____________________________ä",
-    "gainLossTemplate": "Š_Min: ${min}   Max: ${max}   Start: ${start}   End: ${end}   Change: ${gainLoss}_________________________ä"
+    "toggle": "Lülita kõrgusprofiili graafik sisse/välja.",
+    "drawTool": "Kõrgusprofiili loomiseks tõmmake kaardil joon.",
+    "selectMessage": "Kõrgusprofiili kuvamiseks klõpsake joonobjekti või tõmmake joonistamise tööriista abil joon.",
+    "gainLossTemplate": "Min: {min}   Max: ${max}   Algus: ${start}   Lõpp: ${end}   Muutus: ${gainLoss}"
   },
   "splash": {
-    "title": "Š_Title___ä",
-    "content": "Š_Configure to create custom splash content_____________ä"
+    "title": "Pealkiri",
+    "content": "Konfigureerige, et luua kohandatud lisalehe sisu."
   },
   "legend": {
-    "title": "Š_Legend___ä",
-    "tip": "Š_Display legend_____ä"
+    "title": "Legendiga kaart",
+    "tip": "Kuva legend"
   },
   "basemap": {
-    "title": "Š_Basemap___ä",
-    "tip": "Š_Change basemap_____ä"
+    "title": "Aluskaart",
+    "tip": "Muuda aluskaarti"
   },
   "share": {
-    "title": "Š_Share___ä",
-    "tip": "Š_Share map____ä"
+    "title": "Jaga",
+    "tip": "Jaga kaarti"
   }
 });

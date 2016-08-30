@@ -40,7 +40,7 @@ define({
   },
   "cantFindStories": {
     "whereAreStories": "Nie widzisz narracji?",
-    "notSeeExplanation": "ł_My Stories will only list story maps hosted in ArcGIS ({{STORY_MAP_BASIC}} is currently not supported). See our {{FAQ}} for more information___________________________________________ą.",
+    "notSeeExplanation": "Na karcie Moje narracje będą wyświetlane tylko mapy narracyjne hostowane w systemie ArcGIS ({{STORY_MAP_BASIC}} nie jest obecnie obsługiwane). Dodatkowe informacje zawierają {{FAQ}}.",
     "faq": "FAQ",
     "followingStoriesToUpdate": "Następujące narracje utworzone przy użyciu wcześniejszych wersji naszych aplikacji należy zaktualizować, aby wyświetlać je na karcie Moje narracje:",
     "gettingStories": "Wyszukiwanie narracji utworzonych przy użyciu wcześniejszych wersji naszych aplikacji, które należy zaktualizować...",
@@ -88,16 +88,16 @@ define({
     "layerPrivate": "Zmiana statusu warstwy na prywatny rozbije narrację."
   },
   "collectionList": {
-    "business": "ł_Business and Economy_______ą",
-    "history": "ł_History and Culture_______ą",
-    "inNews": "ł_In The News____ą",
-    "infrastructure": "ł_Infrastructure and Construction__________ą",
-    "nature": "ł_Nature and Conservation________ą",
+    "business": "Biznes i gospodarka",
+    "history": "Historia i kultura",
+    "inNews": "Wiadomości",
+    "infrastructure": "Infrastruktura i budownictwo",
+    "nature": "Przyroda i ochrona przyrody",
     "people": "Ludzie i społeczeństwo",
-    "planning": "ł_Planning and Design_______ą",
+    "planning": "Planowanie i projektowanie",
     "science": "Nauka i technologia",
-    "sports": "ł_Sports and Entertainment________ą",
-    "travel": "ł_Travel and Recreation_______ą"
+    "sports": "Sport i rozrywka",
+    "travel": "Podróże i rekreacja"
   },
   "types": {
     "custom": "Niestandardowy",
@@ -216,7 +216,7 @@ define({
   "content": {
     "media": {
       "maps": "Mapy",
-      "scenes": "ł_Scenes___ą",
+      "scenes": "Sceny",
       "images": "Obrazy",
       "videos": "Wideo",
       "webpages": "Witryny internetowe",
@@ -235,29 +235,29 @@ define({
       "tab": "Karta:",
       "accordion": "Sekcja",
       "mapJournal": "Sekcja",
-      "cascade": "ł_Section___ą",
-      "crowdsource": "ł_Contribution_____ą",
-      "shortlist": "ł_Tab__ą"
+      "cascade": "Sekcja",
+      "crowdsource": "Udostępnianie zasobów",
+      "shortlist": "Karta:"
     },
     "titleType": {
       "mapTour": "Podpis",
       "mapJournal": "Adres URL",
       "mapSeries": "Adres URL",
-      "cascade": "ł_URL__ą",
-      "crowdsource": "ł_URL__ą",
-      "shortlist": "ł_URL__ą"
+      "cascade": "Adres URL",
+      "crowdsource": "Adres URL",
+      "shortlist": "Adres URL"
     },
     "actions": {
       "viewMap": "Wyświetl mapę",
       "editMap": "Edytuj mapę",
-      "editScene": "ł_Edit Scene____ą",
+      "editScene": "Edytuj scenę",
       "fix": "Napraw",
       "viewLayer": "Wyświetl warstwę"
     },
     "contentType": {
       "mainStage": "działanie w obszarze głównym",
       "sidePanel": "opis",
-      "introImage": "ł_(cover page photo)______ą"
+      "introImage": "(zdjęcie na stronę tytułową)"
     },
     "notification": {
       "refreshExplanation": "Ponownie sprawdź narrację",
@@ -298,7 +298,7 @@ define({
       "publicDisabled": "Opcja publicznego udostępniania została wyłączona przez Administratora",
       "orgDisabled": "Opcja udostępniania w instytucji została wyłączona przez Administratora",
       "noMapName": "Nie można pobrać nazwy mapy",
-      "noSceneName": "ł_Could Not Retrieve Scene________ą",
+      "noSceneName": "Nie można pobrać sceny",
       "notPublic": "NIEPUBLICZNE",
       "inaccessible": "NIEDOSTĘPNE",
       "deleted": "USUNIĘTO",
@@ -350,8 +350,8 @@ define({
       "cantScanThisTypeAlt": "Nie można sprawdzić warstwy tego typu",
       "cantScanThisType": "Warstwy tego typu nie można sprawdzić",
       "webpageNotScanned": "Strony internetowe nie zostały sprawdzone pod kątem problemów",
-      "sceneNotScanned": "ł_Scenes are not currently checked for issues, please make sure that the scene and all of its layers are shared correctly_____________________________________ą",
-      "scenesNotScannedGlobally": "ł_There are scenes in this story, and scenes are not currently checked for issues. Please make sure that the scenes and all of their layers are shared correctly________________________________________________ą",
+      "sceneNotScanned": "Sceny nie są obecnie sprawdzane pod kątem problemów. Dopilnuj, aby scena i jej wszystkie warstwy były udostępniane poprawnie",
+      "scenesNotScannedGlobally": "Ta narracja zawiera sceny, a sceny nie są obecnie sprawdzane pod kątem problemów. Dopilnuj, aby scena i jej wszystkie warstwy były udostępniane poprawnie",
       "ignoredIssue": "Zignorowano błąd na tej warstwie. Odśwież stronę i ponownie sprawdź tę narrację, aby poprawić błąd",
       "ignoredIssueBuilder": "Zignorowano błąd na tej warstwie. Ponownie uruchom kreator, aby ponownie sprawdzić ten błąd"
     },
@@ -452,25 +452,25 @@ define({
       "thirdTitle": "mapy"
     },
     "cascade": {
-      "firstTitle": "ł_sections___ą",
-      "secondTitle": "ł_maps__ą"
+      "firstTitle": "sekcje",
+      "secondTitle": "mapy"
     },
     "swipeSpyglass": {
-      "firstTitle": "ł_points of interest______ą",
+      "firstTitle": "punkty zainteresowania (POI)",
       "secondTitle": "styl",
       "secondValueA": "zwijaj",
       "secondValueB": "lupa",
       "thirdTitle": "mapy"
     },
     "crowdsource": {
-      "firstTitle": "ł_contributions_____ą",
-      "secondTitle": "ł_basemap___ą",
-      "secondValueLoading": "ł_Loading____ą...",
-      "secondValueUnknown": "ł_unknown___ą"
+      "firstTitle": "udostępnianie zasobów",
+      "secondTitle": "mapa bazowa",
+      "secondValueLoading": "Wczytywanie...",
+      "secondValueUnknown": "nieznany"
     },
     "shortlist": {
-      "firstTitle": "ł_places___ą",
-      "secondTitle": "ł_tabs__ą",
+      "firstTitle": "miejsca",
+      "secondTitle": "kart(-y)",
       "thirdTitle": "mapa bazowa",
       "thirdValueLoading": "Wczytywanie...",
       "thirdValueUnknown": "nieznany"

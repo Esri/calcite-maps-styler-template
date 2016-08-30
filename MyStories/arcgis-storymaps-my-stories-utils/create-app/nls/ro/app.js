@@ -13,27 +13,27 @@ define({
   },
   "answerText": {
     "seriesOfPlaces": "Un set de locuri",
-    "mapsNarrative": "Ă_A narrative____ș",
-    "compareDatasets": "Ă_A comparison of datasets________ș",
+    "mapsNarrative": "O naraţiune",
+    "compareDatasets": "O comparaţie între seturi de date",
     "other": "O singură hartă",
     "yes": "Da",
     "no": "Nu",
     "click": "Faceţi clic pe",
     "scroll": "Derulare",
-    "two": "Ă_Two__ș",
-    "moreThanTwo": "Ă_More than two_____ș",
-    "pickThis": "Ă_Pick this____ș",
-    "detailJournal": "...Ă_appear in a side panel next to your featured media_________________ș?",
-    "detailCascade": "...Ă_fill the whole page with a mix of text and media appearing in sequence_______________________ș?"
+    "two": "Două",
+    "moreThanTwo": "Mai mult de două",
+    "pickThis": "Alegeţi",
+    "detailJournal": "...apar într-un panou lateral lângă conţinutul dvs. media?",
+    "detailCascade": "...umplu întreaga pagină cu un amestec de text şi conţinut media care apare în succesiune?"
   },
   "questionText": {
     "bestDescribesStory": "Ce descrie cel mai bine poveste dumneavoastră?",
     "showPhotos": "Doriţi să afişaţi fotografii pentru fiecare locaţie?",
     "clickOrScroll": "Doriţi ca publicul să facă clic pe file sau doriţi să deruleze?",
-    "crowdsource": "Ă_Do you want to crowdsource places from your audience_________________ș?",
-    "categories": "Ă_Are your places organized into categories______________ș?",
-    "datasets": "Ă_How many datasets will be compared____________ș?",
-    "narrative": "Ă_Do you want your narrative to__________ș:"
+    "crowdsource": "Doriţi să preluaţi locaţii de la audienţă?",
+    "categories": "Locaţiile dvs. sunt organizate pe categorii?",
+    "datasets": "Câte seturi de date vor fi comparate?",
+    "narrative": "Doriţi ca naraţiunea dvs. să:"
   },
   "finalApp": {
     "weRecommend": "Vă recomandăm: {{STORY_TYPE}}",
@@ -42,22 +42,22 @@ define({
   },
   "reasons": {
     "mapTour": "Această aplicaţie prezintă o naraţiune în etape, bazată pe locuri sub forma unei serii de fotografii şi subtitluri geoetichetate conectate la o hartă interactivă. Este ideală pentru plimbări pe jos sau pentru o serie de locaţii prin care aţi dori ca utilizatorii să treacă în ordine.",
-    "mapJournal": "Ă_This app lets you present an in-depth narrative in a scrolling side panel and organized into sections. Each section has an associated featured media such as a map, image, video, etc________________________________________________________ș.",
-    "cascade": "Ă_This app lets you present your narrative as a compelling, full-page scrolling experience. Sections containing text and in-line media can be interspersed with 'immersive' sections that fill the page and can include effects like map animations and visual transitions_________________________________________________________________________________ș.",
+    "mapJournal": "Această aplicaţie vă permite să prezentaţi o naraţiune detaliată într-un panou lateral derulant, organizată pe secţiuni. Fiecare secţiune are un conţinut media asociat, cum ar fi o hartă, o imagine, un videoclip etc.",
+    "cascade": "Această aplicaţie vă permite să prezentaţi naraţiunea dvs. sub forma unei experienţe captivante, derulate pe întreaga pagină. Secţiunile care conţin text şi material media aliniat se pot intercala cu secţiuni „captivante” care umplu pagina şi pot include efecte, cum ar fi animaţiile pe hartă şi tranziţiile vizuale.",
     "mapSeries": "Această aplicaţie vă permite să prezentaţi o serie de hărţi prin intermediul unor file, puncte numerotate sau prin controlul extensibil lateral de tip acordeon. Puteţi, de asemenea, să includeţi imagini, materiale video şi conţinut web în seria dvs. pentru a relata povestea.",
-    "crowdsource": "Ă_This app lets you publish and manage a crowdsourced story which anyone can contribute to. Use it to engage a specific audience or the general public on the subject of your choice. A vetting function lets you review and approve contributions_________________________________________________________________________ș.",
-    "shortlist": "Ă_This app lets you present a set of places of interest organized into tabs based on themes, such as parks, attractions, hotels, etc. The tabs update to show people what's in the area they are looking at on the map, making it easy and fun to find out what's available_________________________________________________________________________________ș.",
+    "crowdsource": "Această aplicaţie vă permite să publicaţi şi să gestionaţi un scenariu colectat la care poate contribui oricine. Folosiţi-o pentru a vă adresa unui public specific sau publicului larg cu privire la subiectul ales de dvs. O funcţie de verificare vă permite să revizuiţi şi să aprobaţi contribuţiile.",
+    "shortlist": "Această aplicaţie vă permite să prezentaţi un set de locuri de interes organizate în file, după temă, cum ar fi parcurile, atracţiile, hotelurile etc. Filele sunt actualizate pentru a arăta oamenilor ce se găseşte în zona în care caută pe hartă, făcând astfel mai uşoară şi mai distractivă găsirea punctelor de interes disponibile.",
     "swipeSpyglass": "Această aplicaţie permite utilizatorilor să compare două hărţi sau două straturi tematice de pe aceeaşi hartă. Este eficientă în special pentru prezentarea de imagini „înainte” şi „după” sau alte schimbări în timp.",
     "basic": "Această aplicaţie vă permite să prezentaţi o hartă prin intermediul unei interfeţe minimaliste foarte simple. Pe lângă bara de titlu şi legenda opţională, harta umple ecranul. Utilizaţi această hartă pentru ca aceasta să furnizeze toate explicaţiile."
   },
   "shortReasons": {
     "mapTour": "Ghidaţi persoanele printr-o succesiune de locuri",
-    "mapJournal": "Ă_Present a narrative in a scrolling side panel_______________ș",
-    "cascade": "Ă_Present a narrative with immersive, full-page scroll_________________ș",
+    "mapJournal": "Prezentaţi o naraţiune într-un panou lateral derulant",
+    "cascade": "Prezentaţi o naraţiune sub forma unei experienţe captivante, derulate pe întreaga pagină",
     "mapSeries": "Prezentaţi o serie de hărţi asociate",
-    "crowdsource": "Ă_Publish a story anyone can contribute to_____________ș",
-    "shortlist": "Ă_Present places of interest organized into tabs_______________ș",
-    "swipeSpyglass": "Ă_Compare two maps or layers with a slider or spyglass_________________ș",
+    "crowdsource": "Publicaţi un scenariu la care poate contribui oricine",
+    "shortlist": "Prezentaţi puncte de interes organizate în file",
+    "swipeSpyglass": "Comparaţi două hărţi sau straturi tematice cu un glisor sau o lupă",
     "basic": "Gândiţi minimalist, excelent pentru o singură hartă"
   },
   "signInBuildDialog": {
