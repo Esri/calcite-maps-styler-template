@@ -49,10 +49,11 @@ define([
   "esri/request",
 
   "esri/symbols/ExtrudeSymbol3DLayer",
-  "esri/symbols/PictureMarkerSymbol",
+  "esri/symbols/LabelSymbol3D",
   "esri/symbols/PointSymbol3D",
   "esri/symbols/PolygonSymbol3D",
   "esri/symbols/ObjectSymbol3DLayer",
+  "esri/symbols/TextSymbol3DLayer",
 
   "esri/tasks/QueryTask",
   "esri/tasks/support/Query",
@@ -78,7 +79,7 @@ define([
   PortalItem,
   SimpleRenderer,
   esriRequest,
-  ExtrudeSymbol3DLayer, PictureMarkerSymbol, PointSymbol3D, PolygonSymbol3D, ObjectSymbol3DLayer,
+  ExtrudeSymbol3DLayer, LabelSymbol3D, PointSymbol3D, PolygonSymbol3D, ObjectSymbol3DLayer, TextSymbol3DLayer,
   QueryTask, Query,
   SceneView, externalRenderers, WebScene,
   uiUtils, VizCards,
@@ -186,6 +187,10 @@ define([
         if (this.config.components) {
           viewProperties.ui = {
             components: this.config.components.split(",")
+          };
+        } else {
+          viewProperties.ui = {
+            components: ["zoom", "compass", "attribution"]
           };
         }
         var camera = this._setCameraViewpoint();
@@ -881,32 +886,44 @@ define([
       if (ht <= 0) {
         ht = 500;
       }
-      var symTxt = this._getLabel(label);
+      var sym = new LabelSymbol3D({
+        symbolLayers: [new TextSymbol3DLayer({
+          material: { 
+            color: [255, 255, 255] 
+          },
+          text: label,
+          size: 9
+        })]
+      });
       var pt = new Point(geom.x, geom.y, ht, geom.spatialReference);
-      var graLbl = new Graphic(pt, symTxt, {});
+      var graLbl = new Graphic(pt, sym, {});
       this.labelsLayer.add(graLbl);
+      // var symTxt = this._getLabel(label);
+      // var pt = new Point(geom.x, geom.y, ht, geom.spatialReference);
+      // var graLbl = new Graphic(pt, symTxt, {});
+      // this.labelsLayer.add(graLbl);
     },
 
-    // get label
-    _getLabel: function(value) {
-      var w = value.length * 10;
-      var ctx = dom.byId('panelLabel').getContext('2d');
-      ctx.canvas.width = w;
-      ctx.canvas.height = 50;
-      ctx.fillStyle = 'rgba(0,0,0,0.2)';
-      //ctx.strokeStyle = this.config.color;
-      ctx.rect(0, 20, w, 30);
-      ctx.fill();
-      //ctx.stroke();
-      ctx.textAlign = "center";
-      ctx.textBaseline = "middle";
-      ctx.font = "14px Arial";
-      ctx.fillStyle = "#ffffff";
-      ctx.fillText(value, w / 2, 35);
-      var url = ctx.canvas.toDataURL();
-      var symTxt = new PictureMarkerSymbol(url, w, 50);
-      return symTxt;
-    },
+    // // get label
+    // _getLabel: function(value) {
+    //   var w = value.length * 10;
+    //   var ctx = dom.byId('panelLabel').getContext('2d');
+    //   ctx.canvas.width = w;
+    //   ctx.canvas.height = 50;
+    //   ctx.fillStyle = 'rgba(0,0,0,0.2)';
+    //   //ctx.strokeStyle = this.config.color;
+    //   ctx.rect(0, 20, w, 30);
+    //   ctx.fill();
+    //   //ctx.stroke();
+    //   ctx.textAlign = "center";
+    //   ctx.textBaseline = "middle";
+    //   ctx.font = "14px Arial";
+    //   ctx.fillStyle = "#ffffff";
+    //   ctx.fillText(value, w / 2, 35);
+    //   var url = ctx.canvas.toDataURL();
+    //   var symTxt = new PictureMarkerSymbol(url, w, 50);
+    //   return symTxt;
+    // },
 
     // **
     // Spin Options
