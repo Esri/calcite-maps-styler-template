@@ -36,6 +36,7 @@ define([
   "esri/arcgis/utils",
   "esri/tasks/query",
 
+  "esri/dijit/HomeButton",
   "esri/layers/FeatureLayer",
   "esri/graphicsUtils",
 
@@ -52,7 +53,7 @@ define([
   ContentPane,
   registry,
   arcgisUtils,
-  Query,
+  Query, HomeButton,
   FeatureLayer,
   graphicsUtils,
   MapUrlParams
@@ -159,6 +160,13 @@ define([
         dom.byId("title").innerHTML = this.config.title || response.itemInfo.item.title;
         dom.byId("description").innerHTML = this.config.description || response.itemInfo.item.description;
         domClass.remove(document.body, "app-loading");
+
+        // Add home button
+        var home = new HomeButton({
+          map: this.map
+        }, domConstruct.create("div", {}, domQuery(".esriSimpleSliderIncrementButton")[0], "after"));
+        home.startup();
+
         if (params.markerGraphic) {
           // Add a marker graphic with an optional info window if
           // one was specified via the marker url parameter
@@ -338,12 +346,16 @@ define([
       q.objectIds = [id];
       layer.selectFeatures(q).then(lang.hitch(this, function() {
         var sel = layer.getSelectedFeatures();
-        var level = this.config.level || this.map.infoWindow.zoomFactor;
-        if (sel && sel.length && sel.length > 0) {
-          var extent = graphicsUtils.graphicsExtent(sel);
+        var level = this.config.selectionZoomLevel;
+        var extent = graphicsUtils.graphicsExtent(sel);
+
+        if (sel && sel.length && sel.length > 0 && level !== null) {
           var zoomLoc = extent.getCenter();
           this.map.centerAndZoom(zoomLoc, level);
+        } else {
+          this.map.setExtent(extent, true);
         }
+        layer.refresh();
       }));
     }
   });
