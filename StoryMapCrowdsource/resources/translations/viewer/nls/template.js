@@ -96,12 +96,17 @@ define({
         photo: {
           pickFile: 'Click to pick a file',
           choosePhoto: 'Upload a Photo',
-          selectNew: 'Use a different photo'
+          selectNew: 'Use a different photo',
+          photoTooSmall: 'Your photo is too small. The smallest side must be at least'
         },
         location: {
           gettingLocation: 'Locating',
           locate: 'Locate Me',
-          search: 'Search'
+          search: 'Search',
+          longitude: 'Longitude',
+          latitude: 'Latitude',
+          nullIsland: 'Null Island',
+          photoLocation: 'Do you want to use the location where your photo was taken?'
         },
         termsAndConditions: {
           buttonShow: 'Show terms and conditions',
