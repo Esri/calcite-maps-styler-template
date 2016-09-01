@@ -53,7 +53,8 @@ define({
       bottomNav: {
         home: 'Home',
         map: 'Map',
-        gallery: 'Gallery'
+        gallery: 'Gallery',
+        participate: 'Participate'
       }
     },
     forms: {
@@ -102,6 +103,9 @@ define({
         location: {
           gettingLocation: 'Locating',
           locate: 'Locate Me',
+          findOnMap: 'Find on Map',
+          findOnMapTooltip: 'Click on the map or drag this point to refine your location.',
+          saveLocation: 'Save Location',
           search: 'Search',
           longitude: 'Longitude',
           latitude: 'Latitude',
