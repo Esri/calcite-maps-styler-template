@@ -253,7 +253,9 @@ elevation profile widget */
   height:100%;
   width:98%;
 }
-
+.esriElevationProfile .esriElevationProfileInfoNode{
+    display:none;
+}
 .esriElevationProfile .esriElevationProfileSourceLabel{
   display: none;
 }
