@@ -145,7 +145,7 @@
                               userInfo.token = loggedInUser.credential.token;
                               userInfo.credential = loggedInUser.credential;
                               userInfo.portal = signIn.getPortal();
-                              var canExecute = signIn.authenticateUser(config.edit, appResponse, userInfo);
+                              var canExecute = signIn.authenticateUser(config.edit, appResponse, loggedInUser);
                               if (canExecute) {
                               myApp.startup(config, appResponse, userInfo);
                           }
