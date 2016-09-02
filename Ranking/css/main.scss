@@ -82,12 +82,14 @@ body{
 }
 #closeInfo{
   border-radius: 0;
+  opacity: 1 !important;
 }
 #description{
   overflow-y:auto;
   height: calc(100% - 112px);
   padding-left:.4em;
   padding-right: .4em;
+  padding-bottom: 32px;
 }
 #title{
   padding: 0 5px 0 5px;
