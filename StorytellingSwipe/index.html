@@ -139,7 +139,7 @@
 		</script>
 
 		<script type="text/javascript">
-			var version = '1.9.1-083016';
+			var version = '1.9.1-090216';
 			var isProduction = true;
 
 			function loadJS(url, isExternal)
@@ -166,8 +166,8 @@
 				document.getElementsByTagName("head")[0].appendChild(el);
 			}
 
-			loadCSS("//jsdev.arcgis.com/3.18/esri/css/esri.css", true);
-			loadCSS("//jsdev.arcgis.com/3.18/dijit/themes/claro/claro.css", true);
+			loadCSS("//js.arcgis.com/3.18/esri/css/esri.css", true);
+			loadCSS("//js.arcgis.com/3.18/dijit/themes/claro/claro.css", true);
 
 			if( isProduction ) {
 				loadCSS("app/swipe-min.css");
@@ -895,7 +895,7 @@
 		</div>
 
 		<script type="text/javascript">
-			loadJS('//jsdev.arcgis.com/3.18/init.js', true);
+			loadJS('//js.arcgis.com/3.18/init.js', true);
 			loadJS('app/swipe-config.js');
 
 			function getUrlVar(name)

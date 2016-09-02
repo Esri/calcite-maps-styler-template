@@ -44,8 +44,8 @@ define({
 				betaFeedback: "Beta feedback",
 				betaNote: "${APP_NAME} is in beta. Please let us know what you think or if something is not working as you expected.",
 				notSharedNote: "Your story isn't shared, only you can see it",
-				organizationWarning: "To ensure this story can be seen by others when shared with your organization, you must also share its maps, scenes, layers, or apps with your organization using the My Content page of ${ARCGIS_COM}.",
-				publicWarning: "To ensure this story can be seen by others when shared publicly, you must also share its maps, scenes, layers, or apps publicly using the My Content page of ${ARCGIS_COM}.",
+				organizationWarning: "To ensure this story can be seen by others when shared with your organization, you must also share its maps, scenes, layers, or apps with your organization using the check story button below.",
+				publicWarning: "To ensure this story can be seen by others when shared publicly, you must also share its maps, scenes, layers, or apps publicly using the check story button below.",
 				addTitleNote: "Add a title for your story on the cover to save",
 				saveError: "There was an error saving your story.",
 				organize: "Organize",
@@ -69,7 +69,8 @@ define({
 				tabs: {
 					appearance: "Appearance",
 					manage: "Manage",
-					size: "Size"
+					size: "Size",
+					position: "Position"
 				},
 				manage: {
 					changeMedia: "Change media",
@@ -99,6 +100,12 @@ define({
 					small: "Small",
 					medium: "Medium",
 					large: "Large"
+				},
+				position: {
+					noCrop: "Do not crop image",
+					mostImportantPart: "Choose the most important point",
+					cropExplanation: "Select a point on the image to choose how your image will be cropped at different screen sizes. The point you select will always be visible",
+					previews: "Previews"
 				}
 			},
 			imageGallery: {
@@ -106,8 +113,7 @@ define({
 				addImage: "Add another image to this row"
 			},
 			cover: {
-				titlePromptLineOne: "Welcome ${USER_NAME}",
-				titlePromptLineTwo: "Enter your story title...",
+				titlePrompt: "Enter your story title...",
 				subtitlePrompt: "Scroll down to get started or enter an optional subtitle",
 				mediaPlaceholder: "Add your image or video",
 				saveError: "Save failed, you already have an item with this title"

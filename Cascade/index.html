@@ -69,9 +69,9 @@
 
     <script type="text/javascript">
       var app = {
-        version: '1.1.0-082216',
-        pathJSAPI3: '//jsdev.arcgis.com/3.18/',
-        pathJSAPI4: '//jsdev.arcgis.com/4.1/'
+        version: '1.1.0-090216',
+        pathJSAPI3: '//js.arcgis.com/3.18/',
+        pathJSAPI4: '//js.arcgis.com/4.1/'
       };
     </script>
   </head>
@@ -198,7 +198,7 @@
         /*
          * Custom Javascript to be executed when a section becomes active
          */
-        topic.subscribe("story-scroll-section", function(cfg){
+        topic.subscribe("story-navigated-section", function(cfg){
            //console.log("The section", cfg.index, "is now active");
         });
 

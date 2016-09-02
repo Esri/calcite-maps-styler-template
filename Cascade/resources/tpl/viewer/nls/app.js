@@ -2,23 +2,23 @@ define({
   root: ({
     viewer: {
       common: {
-				add: "Add",
-				edit: "Edit",
-				save: "Save",
-				next: "Next",
-				cancel: "Cancel",
-				back: "Back",
-				apply: "Apply",
-				close: "Close",
-				open: "Open",
-				start: "Start",
-				loading: "Loading",
-				disabledAdmin: "This feature has been disabled by the Administrator",
-				width: "Width",
-				height: "Height",
-				create: "Create",
-				yes: "Yes",
-				no: "No"
+		add: "Add",
+		edit: "Edit",
+		save: "Save",
+		next: "Next",
+		cancel: "Cancel",
+		back: "Back",
+		apply: "Apply",
+		close: "Close",
+		open: "Open",
+		start: "Start",
+		loading: "Loading",
+		disabledAdmin: "This feature has been disabled by the Administrator",
+		width: "Width",
+		height: "Height",
+		create: "Create",
+		yes: "Yes",
+		no: "No"
       },
       errors: {
         boxTitle: "An error has occurred",
@@ -41,17 +41,18 @@ define({
         signOut: "Sign Out"
       },
       signin: {
-				title: "Authentication is required",
-				explainViewer: "Please sign in with an account on %PORTAL_LINK% to access the story.",
-				explainBuilder: "Please sign in with an account on %PORTAL_LINK% to configure the story."
-			},
+		title: "Authentication is required",
+		explainViewer: "Please sign in with an account on %PORTAL_LINK% to access the story.",
+		explainBuilder: "Please sign in with an account on %PORTAL_LINK% to configure the story."
+	  },
       headerFromCommon: {
         storymapsText: "A story map",
         builderButton: "Edit",
         facebookTooltip: "Share on Facebook",
-				twitterTooltip: "Share on Twitter",
-				bitlyTooltip: "Get a short link",
-        share: "Share"
+		twitterTooltip: "Share on Twitter",
+		bitlyTooltip: "Get a short link",
+        share: "Share",
+        tooltipAutoplayDisabled: "This isn't available in autoplay mode"
       },
       shareFromCommon: {
         copy: "Copy",
@@ -59,7 +60,11 @@ define({
         open: "Open",
         embed: "Embed in web page",
         embedExplain: "Use the following HTML code to embed the story in a web page.",
-        size: "Size (width/height):"
+        size: "Size (width/height):",
+        autoplayLabel: "Autoplay mode",
+		autoplayExplain1: "Autoplay mode will advance through your story at a regular interval. This is ideal on a kiosk or public display monitor, but be aware that in other situations it may make the story harder to read. This feature isn't supported on small displays.",
+		autoplayExplain2: "When this mode is active there are controls to play/pause the story and adjust the navigation speed.",
+        linksupdated: "Links updated!"
       }
     }
   }),

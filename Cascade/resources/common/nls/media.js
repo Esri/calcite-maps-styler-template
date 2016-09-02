@@ -137,8 +137,8 @@ define({
             },
             createContent: {
               or: "OR",
-              dragAndDrop: "Drop an image here",
-              uploadImage: "Browse for an image",
+              dragAndDrop: "Drop image(s) here",
+              uploadImage: "Browse for image(s)",
               agolInfo: "Images will be stored in your ArcGIS account and accessible inside your story.",
               saveBeforeUpload: "Once you save this story, you can upload images to ArcGIS here.",
               fileTypes: "Supported file types:",
