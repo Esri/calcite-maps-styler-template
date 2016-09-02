@@ -36,6 +36,8 @@ define({
   //"layerId": "OSMPTrails_5787",
   //"field": "Length_mi",
   "order": "DESC", // ASC or DESC
+  "rankText": "Rank #",
+  "showRankText": true,
   "count": 10,
   "symbolcolor": "#337ab7",
   "symbolsize": "11",
@@ -50,7 +52,7 @@ define({
   "selectionZoomLevel": null, // set zoom level
   "bingKey": "", //Enter the url to your organizations bing maps key if you want to use bing basemaps
   //Defaults to arcgis.com. Set this value to your portal or organization host name.
-  "sharinghost": location.protocol + "//" + "www.arcgis.com",
+  "sharinghost": location.protocol + "//" + "devext.arcgis.com",
   "units": null,
   //If your applcation needs to edit feature layer fields set this value to true. When false the map will
   //be dreated with layers that are not set to editable which allows the FeatureLayer to load features optimally.

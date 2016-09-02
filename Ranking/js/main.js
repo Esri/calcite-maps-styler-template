@@ -289,7 +289,7 @@ define([
         }, "slideWrapper");
         var pane = new ContentPane({
           tooltip: feature.getTitle() || feature.attributes[idAttributeField],
-          title: featureTitle, //i + 1,
+          title: featureTitle,
           content: featureContent
         }, domConstruct.create("div"));
         pane.startup();
@@ -319,11 +319,29 @@ define([
       }
       // Navigate to the first feature
       if (featureSwipe && featureSwipe.slides && featureSwipe.slides.length && featureSwipe.slides.length > 0) {
-        this._selectFeatures(featureSwipe.slides[featureSwipe.activeIndex].id, layer);
+        this._goToSlide(featureSwipe, layer);
       }
       featureSwipe.on("SlideChangeStart", lang.hitch(this, function() {
-        this._selectFeatures(featureSwipe.slides[featureSwipe.activeIndex].id, layer);
+        this._goToSlide(featureSwipe, layer);
       }));
+    },
+    _goToSlide: function(featureSwipe, layer) {
+      // calculate ranking text
+      if (this.config.showRankText) {
+        var rankLabel = dom.byId("rankLabel");
+        var count;
+        var rankTemplate = "{rankText} {rankCount}";
+        if (this.config.order === "ASC") {
+          count = featureSwipe.activeIndex + 1;
+        } else {
+          count = featureSwipe.slides.length - featureSwipe.activeIndex;
+        }
+        rankLabel.innerHTML = lang.replace(rankTemplate, {
+          rankText: this.config.rankText,
+          rankCount: count
+        });
+      }
+      this._selectFeatures(featureSwipe.slides[featureSwipe.activeIndex].id, layer);
     },
     _toggleInfoPanel: function(active, layer) {
       domQuery(".panel-nav").addClass("hide");
@@ -346,16 +364,18 @@ define([
       q.objectIds = [id];
       layer.selectFeatures(q).then(lang.hitch(this, function() {
         var sel = layer.getSelectedFeatures();
-        var level = this.config.selectionZoomLevel;
-        var extent = graphicsUtils.graphicsExtent(sel);
 
-        if (sel && sel.length && sel.length > 0 && level !== null) {
-          var zoomLoc = extent.getCenter();
-          this.map.centerAndZoom(zoomLoc, level);
-        } else {
-          this.map.setExtent(extent, true);
+        var level = this.config.selectionZoomLevel;
+        if (sel && sel.length && sel.length > 0) {
+          var extent = graphicsUtils.graphicsExtent(sel);
+          if (level !== null) {
+            var zoomLoc = extent.getCenter();
+            this.map.centerAndZoom(zoomLoc, level);
+          } else {
+            this.map.setExtent(extent, true);
+          }
+          layer.refresh();
         }
-        layer.refresh();
       }));
     }
   });
