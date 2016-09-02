@@ -336,46 +336,15 @@ img{
   left: 0;
   text-align: center;
 }
-
-.calcite .esriViewPopup .mainSection .attrTable td.attrName{
-    font-weight:normal;
-    color:#4c4c4c;
-}
-.calcite .esriViewPopup .mainSection .attrTable{
-    table-layout: auto;
-}
-.calcite .esriPopup .actionsPane{
-  margin:4px;
-}
-.calcite .esriPopup .actionsPane .actionList {
-    margin: 8px;
+.calcite .esriPopup .header{
+  font-size: 14px;
 }
 .calcite .esriPopup a{
-    font-size:12px;
-    padding:0;
     color: #21759b;
-}
-.calcite .esriPopup .header{
-  font-weight: bold;
-}
-.calcite .esriPopup .sizer{
-  width:340px;
-}
-.calcite .esriPopup .titlePane{
-  font-size: 12px;
-  font-weight: normal;
-}
-.calcite .esriPopup .contentPane{
-  padding: 0 8px;
 }
 .calcite .esriPopup .actionsPane .actionList a {
-    color:#4c4c4c;
+    color:#6e6e6e;
 }
 .calcite .esriPopup .actionsPane .actionList a:hover {
-    color:#333;
-}
-.calcite .esriPopup a{
-    font-size:12px;
-    padding:0;
-    color: #21759b;
+  color:#323232;
 }
