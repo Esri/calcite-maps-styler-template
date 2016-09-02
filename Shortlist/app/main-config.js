@@ -46,7 +46,7 @@ function defineDojoConfig()
 		parseOnLoad: true,
 		isDebug: false,
 		useDeferredInstrumentation: true,
-		cacheBust: ! app.isProduction,
+		//cacheBust: ! app.isProduction,
 		packages: [
 			{
 				name: 'storymaps',
@@ -80,28 +80,6 @@ window.dojoConfig.locale = 'en';
 app.isInBuilder = getUrlVar('edit') || getUrlVar('fromScratch') || getUrlVar('fromscratch');
 app.indexCfg = configOptions;
 
-if(app.isProduction){
-	loadCSS('resources/lib/Swiper/swiper.min.css');
-
-	loadCSS('resources/lib/medium-editor/dist/css/medium-editor.min.css');
-	loadCSS('resources/lib/medium-editor/dist/css/themes/flat.css');
-	loadCSS('resources/lib/medium-editor/dist/font-awesome/css/font-awesome.min.css');
-
-	//loadCSS('resources/lib/jquery-ui.min.css');
-	loadCSS('resources/lib/spectrum/spectrum.css');
-}else{
-	loadCSS('lib-app/Swiper/swiper.min.css');
-
-	loadCSS('lib-app/medium-editor/dist/css/medium-editor.min.css');
-	loadCSS('lib-app/medium-editor/dist/css/themes/flat.css');
-	loadCSS('lib-app/medium-editor/dist/font-awesome/css/font-awesome.min.css');
-
-	//loadCSS('lib-app/jquery-ui.min.css');
-	loadCSS('lib-app/spectrum/spectrum.css');
-
-
-}
-
 if( app.isProduction ) {
 	if ( app.isInBuilder )
 		loadCSS("app/builder-min.css");
@@ -113,26 +91,10 @@ loadCSS(app.pathJSAPI + "esri/css/esri.css", true);
 loadCSS(app.pathJSAPI + "dijit/themes/claro/claro.css", true);
 //loadCSS(app.pathJSAPI + "esri/themes/calcite/dijit/calcite.css", true);
 
-if(app.isProduction){
-	loadJS('resources/lib/Swiper/swiper.min.js');
-	loadJS('resources/lib/medium-editor/dist/js/medium-editor.min.js');
-
-	loadJS('resources/lib/jquery.js');
-	loadJS('resources/lib/jquery-ui.min.js');
-	loadJS('resources/lib/jquery.ui.touch-punch.js');
-	loadJS('resources/lib/spectrum/spectrum.js');
-}else{
-	loadJS('lib-app/Swiper/swiper.min.js');
-	loadJS('lib-app/medium-editor/dist/js/medium-editor.min.js');
-
-	loadJS('lib-app/jquery.js');
-	loadJS('lib-app/jquery-ui.min.js');
-	loadJS('lib-app/jquery.ui.touch-punch.js');
-	loadJS('lib-app/spectrum/spectrum.js');
-}
 
 loadJS(app.pathJSAPI + 'init.js', true);
 loadJS('app/config.js');
+
 
 
 

@@ -7,8 +7,7 @@ if (document.location.protocol == "file:") {
 }
 else {
 	var i18n = null;
-	// TODO keep an eye on this.  could be JS 3.15
-	//define.amd.jQuery = true;
+	define.amd.jQuery = true;
 
 	require([
 			"dojo/i18n!./resources/tpl/viewer/nls/template.js?v=" + app.version,
