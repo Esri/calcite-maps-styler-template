@@ -585,9 +585,7 @@ font-family: Verdana, Helvetica, Arial, sans-serif;
 .calcite .esriPopup .titlePane .title{
   font-weight: normal;
 }
-.calcite .esriPopup a{
-    color: #21759b;
-}
+
 .calcite .esriPopup .actionsPane .actionList a {
     color:#6e6e6e;
 }
