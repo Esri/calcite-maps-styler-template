@@ -892,11 +892,12 @@ define([
             color: [255, 255, 255] 
           },
           text: label,
-          size: 9
+          size: 10
         })]
       });
       var pt = new Point(geom.x, geom.y, ht, geom.spatialReference);
       var graLbl = new Graphic(pt, sym, {});
+      console.log(graLbl);
       this.labelsLayer.add(graLbl);
       // var symTxt = this._getLabel(label);
       // var pt = new Point(geom.x, geom.y, ht, geom.spatialReference);
@@ -999,6 +1000,7 @@ define([
       if(this.renObjects.length > 0) {
         var renObj = this.renObjects[0];
         var gra = renObj.hitTest(evt);
+        console.log(gra);
         if (gra) {
           var index = gra.attributes.index;
           this._selectGraphic(index);
