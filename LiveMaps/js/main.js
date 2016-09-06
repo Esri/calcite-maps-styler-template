@@ -344,7 +344,8 @@ define([
       //dom.byId("panelContent").innerHTML = "<br/><br/><img src='images/loading.gif'/>";
       var url = this.config.feedUrl;
       url += "?feed=" + this.config.feed;
-      url += "&keyword=" + this.config.keyword;
+      //url += "&keyword=" + this.config.keyword;
+      url += "&keyword=" + encodeURIComponent(this.config.keyword);
       if (this.config.feed === "flickr") {
         url += "&bbox=" + this.bbox;
       } else {
