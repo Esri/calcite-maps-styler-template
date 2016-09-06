@@ -35,20 +35,20 @@
                 },
                 {
                      "type": "boolean",
-                     "fieldName": "showsummary",
-                     "label": "Add webmap/webscene Summary to the About panel",
+                     "fieldName": "aboutsummary",
+                     "label": "Add item Summary to the About panel",
                      "tooltip": "Append the webmap/webscene Summary to the text in the About panel"
                 },
                 {
                      "type": "boolean",
-                     "fieldName": "showdescription",
-                     "label": "Add webmap/webscene Description to the About panel",
+                     "fieldName": "aboutdescription",
+                     "label": "Add item Description to the About panel",
                      "tooltip": "Append the webmap/webscene Description to the text in the About panel"
                 },
                 {
                      "type": "boolean",
-                     "fieldName": "showabout",
-                     "label": "Show the About panel when the app starts",
+                     "fieldName": "activepanel",
+                     "label": "Show the About panel when at startup",
                      "tooltip": "Show About panel when the app starts. Ensure 'Menu > About' is checked!"
                 }
             ]
@@ -214,32 +214,25 @@
                     "type": "options",
                     "fieldName": "layout",
                     "tooltip": "Set the location of the title bar. Position at the top to make the title stand our more. Position at the bottom to encourage users to interact with the map.",
-                    "label": "Navbar Position:",
+                    "label": "Navbar Style:",
                     "options": [
                         {
                             "label": "Top",
                             "value": "top"
                         },
                         {
-                            "label": "Bottom",
-                            "value": "bottom"
-                        }
-                    ]
-              },
-              {
-                    "type": "options",
-                    "fieldName": "navsize",
-                    "tooltip": "Set the height of the title bar. Use Larger to emphasize the name of you map more.",
-                    "label": "Navbar Size:",
-                    "options": [
-                        {
-                            "label": "Default",
-                            "value": ""
+                            "label": "Top Large",
+                            "value": "top-large"
                         },
                         {
-                            "label": "Larger",
-                            "value": "larger"
+                            "label": "Bottom",
+                            "value": "bottom"
+                        },
+                        {
+                            "label": "Bottom Large",
+                            "value": "bottom-large"
                         }
+
                     ]
                 },
                 {
@@ -261,7 +254,7 @@
             ]
         },
         {
-            "category": "Menus",
+            "category": "Panels",
             "fields": [
                 {
                     "type": "boolean",
@@ -313,7 +306,7 @@
                 }, 
                 {
                     "type": "options",
-                    "fieldName": "nextbasemap",
+                    "fieldName": "widgetnextbasemap",
                     "tooltip": "Select a basemap to toggle to.",
                     "label": "Select a second basemap to toggle to:",
                     "options": [
@@ -386,9 +379,9 @@
         "title": "",
         "subtitle": "",
         "abouttext": "",
-        "showabout": true,
-        "showsummary": true,
-        "showdescription": false,
+        "aboutsummary": true,
+        "aboutdescription": false,
+        "activepanel": true,
         "theme": "light",
         "bgcolor": "dark-blue",
         "opacity": 1,
@@ -396,7 +389,6 @@
         "widgettheme": "light",
         "all": false,
         "layout": "top",
-        "navsize": "default",
         "menuabout": true,
         "menulegend": true,
         "menubasemaps": true,
@@ -405,6 +397,6 @@
         "menustyledrawer": "",
         "widgetsearch": true,
         "widgetbasemaptoggle": false,
-        "nextbasemap": "imagery"
+        "widgetnextbasemap": "imagery"
     }
 }

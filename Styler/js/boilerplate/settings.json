@@ -49,16 +49,15 @@
     "title",
     "subtitle",
     "abouttext",
-    "showabout",
-    "showdescription",
-    "showsummary",
+    "aboutdescription",
+    "aboutsummary",
+    "activepanel",
     "theme",
     "bgcolor",
     "opacity",
     "textcolor",
     "all",
     "layout",
-    "navsize",
     "widgettheme",
     "menuabout",
     "menulegend",
@@ -68,7 +67,7 @@
     "menustyledrawer",
     "widgetsearch",
     "widgetbasemaptoggle",
-    "nextbasemap"
+    "widgetnextbasemap"
   ],
   "webTierSecurity": false,
   "esriEnvironment": true

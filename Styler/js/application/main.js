@@ -447,17 +447,13 @@ define([
     _updateConfigLayoutInfo: function(boilerplate) {
       // Name
       if (boilerplate.config.layout) {
-        if (boilerplate.config.navsize === "larger") {
-           boilerplate.config.layoutInfo.name = boilerplate.config.layout + "-medium";
-        } else {
-          boilerplate.config.layoutInfo.name = boilerplate.config.layout
-        }
+        boilerplate.config.layoutInfo.name = boilerplate.config.layout
       }
     },
 
     _updateConfigWidgets: function(boilerplate) {
       var showBasemaptoggle = boilerplate.config.widgetbasemaptoggle;
-      var nextBasemap = boilerplate.config.nextbasemap;
+      var nextBasemap = boilerplate.config.widgetnextbasemap;
       var components = boilerplate.config.view.ui.components;
       for (var i = 0; i < components.length; i++) {
         if (components[i].name === "basemaptoggle") {
@@ -593,8 +589,8 @@ define([
     _updateConfigAboutText: function(boilerplate, webMapOrWebScene) {
       if (boilerplate && webMapOrWebScene.portalItem) {
         var aboutText  = boilerplate.config.abouttext;
-        var addDesc = boilerplate.config.showdescription;
-        var addSummary = boilerplate.config.showsummary;
+        var addDesc = boilerplate.config.aboutdescription;
+        var addSummary = boilerplate.config.aboutsummary;
         var summaryText = null;
         var descriptionText = null;
         
@@ -631,7 +627,7 @@ define([
     },
 
     _showAboutPanel: function(config) {
-      var showAbout = config.showabout;
+      var showAbout = config.activepanel;
       var menuAbout = config.menuabout;
       var aboutText = config.abouttext;
       if (!aboutText) {
