@@ -103,7 +103,7 @@ define([
     menuAbout: "#menuAbout",
     menuLegend: "#menuLegend",
     menuBasemaps: "#menuBasemaps",
-    menuBookmarks: "#menuBookmarks",
+    menuSlides: "#menuSlides",
     menuToggleNav: "#menuToggleNav",
 
     dropdownMenu: ".calcite-dropdown .dropdown-menu",
@@ -112,6 +112,7 @@ define([
     panelAboutText: "#panelAbout .panel-body",
     panelLegend: "#panelLegend",
     panelBasemaps: "#panelBasemaps",
+    panelSlides: "#panelSlides",
     
     searchContainer: ".calcite-navbar-search"
   };
@@ -275,7 +276,7 @@ define([
             view.then(function() {
               this._removeLoading();
               // Slides panel (needs the view)
-              this._setSlidesPanel(boilerplate.config.menubookmarks, results.webMapOrWebScene);
+              this._setSlidesPanel(boilerplate.config.menuslides, results.webMapOrWebScene);
               // Do more stuff here if necessary...
             }.bind(this), function(error) {
               this.reportError(new Error("Styler:: Error loading view for this webmap or webscene: " + error));
@@ -505,7 +506,7 @@ define([
       query(CSS_SELECTORS.menuAbout + " a")[0].innerHTML = query(CSS_SELECTORS.menuAbout + " a")[0].innerHTML + "&nbsp;" + i18n.menu.items.about;
       query(CSS_SELECTORS.menuLegend + " a")[0].innerHTML = query(CSS_SELECTORS.menuLegend + " a")[0].innerHTML + "&nbsp;" + i18n.menu.items.legend;
       query(CSS_SELECTORS.menuBasemaps + " a")[0].innerHTML = query(CSS_SELECTORS.menuBasemaps + " a")[0].innerHTML + "&nbsp;" + i18n.menu.items.basemaps;
-      query(CSS_SELECTORS.menuBookmarks + " a")[0].innerHTML = query(CSS_SELECTORS.menuBookmarks + " a")[0].innerHTML + "&nbsp;" + i18n.menu.items.bookmarks;
+      query(CSS_SELECTORS.menuSlides + " a")[0].innerHTML = query(CSS_SELECTORS.menuSlides + " a")[0].innerHTML + "&nbsp;" + i18n.menu.items.slides;
       query(CSS_SELECTORS.menuToggleNav + " a")[0].innerHTML = query(CSS_SELECTORS.menuToggleNav + " a")[0].innerHTML + "&nbsp;" + i18n.menu.items.toggleNav;
     },
 
@@ -515,12 +516,12 @@ define([
       query("#panelAbout .panel-label")[0].innerHTML = i18n.menu.items.about;
       query("#panelLegend .panel-label")[0].innerHTML = i18n.menu.items.legend;
       query("#panelBasemaps .panel-label")[0].innerHTML = i18n.menu.items.basemaps;
-      query("#panelBookmarks .panel-label")[0].innerHTML = i18n.menu.items.bookmarks;
+      query("#panelSlides .panel-label")[0].innerHTML = i18n.menu.items.slides;
     },
 
     _setMenusVisible: function(boilerplate) {
       // Remove main menu if no menus visible
-      if (boilerplate.config.menuabout === false && boilerplate.config.menulegend === false && boilerplate.config.menubasemaps === false && boilerplate.config.menutogglenav === false) {
+      if (boilerplate.config.menuabout === false && boilerplate.config.menulegend === false && boilerplate.config.menubasemaps === false && boilerplate.config.menuslides === false && boilerplate.config.menutogglenav === false) {
         query(CSS_SELECTORS.mainMenu).addClass("hidden");
         query(CSS_SELECTORS.title).addClass("calcite-title-left-margin");
       } else { // Hide menus, default is visible
@@ -533,8 +534,8 @@ define([
         if (boilerplate.config.menubasemaps === false) {
           query(CSS_SELECTORS.menuBasemaps).addClass("hidden");
         }
-        if (boilerplate.config.menubookmarks === false) {
-          query(CSS_SELECTORS.menuBookmarks).addClass("hidden");
+        if (boilerplate.config.menuslides === false) {
+          query(CSS_SELECTORS.menuSlides).addClass("hidden");
         }
         if (boilerplate.config.menutogglenav === false) {
           query(CSS_SELECTORS.menuToggleNav).addClass("hidden");
@@ -640,13 +641,13 @@ define([
 
     // Slides
 
-    _setSlidesPanel: function(showBookmarks, webMapOrWebScene) {
+    _setSlidesPanel: function(showSlides, webMapOrWebScene) {
       var slides = null;
 
       // Don't auto-start
-      query("#carouselBookmarks").carousel({interval: false});
+      query("#carouselSlides").carousel({interval: false});
 
-      if (showBookmarks) {
+      if (showSlides) {
 
         function createSlidesFromBookmarks(bookmarks) {
           var slides = new Collection();
@@ -684,25 +685,25 @@ define([
         this._slides = slides;
         
         if (slides && slides.length > 0) {
-          var carouselIndicators = query("#carouselBookmarks .carousel-indicators")[0];
-          var carouselInner = query("#carouselBookmarks .carousel-inner")[0];
+          var carouselIndicators = query("#carouselSlides .carousel-indicators")[0];
+          var carouselInner = query("#carouselSlides .carousel-inner")[0];
           
           slides.forEach(function(slide, i) {
             var active = i === 0 ? "active" : "";
-            var indicator = "<li data-target='#carouselBookmarks' data-slide-to='" + i + "' class='" + active + "'></li>";
+            var indicator = "<li data-target='#carouselSlides' data-slide-to='" + i + "' class='" + active + "'></li>";
             domConstruct.place(indicator, carouselIndicators, i);
             // FF to slide indicator
-            query("#carouselBookmarks [data-slide-to=" + i + "]").on("click", function() {
+            query("#carouselSlides [data-slide-to=" + i + "]").on("click", function() {
               slide.applyTo(this._activeView);
-              query("#carouselBookmarks").carousel(i);
+              query("#carouselSlides").carousel(i);
             }.bind(this));
             var item = "<div id=" + slide.id + " class='item " + active + "'><img src=" + slide.thumbnail.url + "><div class='carousel-caption'>" + slide.title.text + "</div></div>";
             domConstruct.place(item, carouselInner, i);
           });
 
           // Zoom to slide after slid
-          query("#carouselBookmarks").on("slid.bs.carousel", function(e) {
-            var id = query("#carouselBookmarks .item.active")[0].id;
+          query("#carouselSlides").on("slid.bs.carousel", function(e) {
+            var id = query("#carouselSlides .item.active")[0].id;
             var slide = this._slides.find(function(slide) {
               return slide.id === id;
             });
@@ -714,12 +715,12 @@ define([
             }
           }.bind(this));
         } else {
-          query(CSS_SELECTORS.menuBookmarks).addClass("hidden");
-          query(CSS_SELECTORS.panelBookmarks).addClass("hidden");
+          query(CSS_SELECTORS.menuSlides).addClass("hidden");
+          query(CSS_SELECTORS.panelSlides).addClass("hidden");
         }
       } else {
-        query(CSS_SELECTORS.menuBookmarks).addClass("hidden");
-        query(CSS_SELECTORS.panelBookmarks).addClass("hidden");
+        query(CSS_SELECTORS.menuSlides).addClass("hidden");
+        query(CSS_SELECTORS.panelSlides).addClass("hidden");
       }
     },
 

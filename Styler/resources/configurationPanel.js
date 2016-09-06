@@ -276,9 +276,9 @@
                 },
                 {
                     "type": "boolean",
-                    "fieldName": "menubookmarks",
-                    "tooltip": "Show menu and panel for bookmarks or slides",
-                    "label": "Slide Show"
+                    "fieldName": "menuslides",
+                    "tooltip": "Show menu and panel for slides",
+                    "label": "Slides"
                 },
                 {
                     "type": "boolean",
@@ -392,7 +392,7 @@
         "menuabout": true,
         "menulegend": true,
         "menubasemaps": true,
-        "menubookmarks": true,
+        "menuslides": true,
         "menutogglenav": true,
         "menustyledrawer": "",
         "widgetsearch": true,
