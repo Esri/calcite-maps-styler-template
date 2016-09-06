@@ -18,6 +18,7 @@ define({
 				boxTitle: "An error has occurred",
 				invalidConfig: "Invalid configuration",
 				invalidConfigNoApp: "Web Mapping Application identifier not specified in index.html.",
+				invalidConfigNoAppDev: "No Web Mapping Application identifier is specified in URL parameters (?appid=). In development mode, the appid configuration in index.html is ignored.",
 				unspecifiedConfigOwner: "Authorized owner hasn't been configured.",
 				invalidConfigOwner: "Application owner is not authorized.",
 				createMap: "Unable to create map",
@@ -77,6 +78,6 @@ define({
 	"tr": 1,
 	"vi": 1,
 	"zh-cn": 1,
-	"zh-hk": 1, 
-	"zh-tw": 1 
+	"zh-hk": 1,
+	"zh-tw": 1
 });
