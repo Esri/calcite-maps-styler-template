@@ -506,7 +506,7 @@ define([
       query(CSS_SELECTORS.menuAbout + " a")[0].innerHTML = query(CSS_SELECTORS.menuAbout + " a")[0].innerHTML + "&nbsp;" + i18n.menu.items.about;
       query(CSS_SELECTORS.menuLegend + " a")[0].innerHTML = query(CSS_SELECTORS.menuLegend + " a")[0].innerHTML + "&nbsp;" + i18n.menu.items.legend;
       query(CSS_SELECTORS.menuBasemaps + " a")[0].innerHTML = query(CSS_SELECTORS.menuBasemaps + " a")[0].innerHTML + "&nbsp;" + i18n.menu.items.basemaps;
-      query(CSS_SELECTORS.menuSlides + " a")[0].innerHTML = query(CSS_SELECTORS.menuSlides + " a")[0].innerHTML + "&nbsp;" + i18n.menu.items.slides;
+      query(CSS_SELECTORS.menuSlides + " a")[0].innerHTML = query(CSS_SELECTORS.menuSlides + " a")[0].innerHTML + "&nbsp;" + i18n.menu.items.bookmarks;
       query(CSS_SELECTORS.menuToggleNav + " a")[0].innerHTML = query(CSS_SELECTORS.menuToggleNav + " a")[0].innerHTML + "&nbsp;" + i18n.menu.items.toggleNav;
     },
 
@@ -516,7 +516,7 @@ define([
       query("#panelAbout .panel-label")[0].innerHTML = i18n.menu.items.about;
       query("#panelLegend .panel-label")[0].innerHTML = i18n.menu.items.legend;
       query("#panelBasemaps .panel-label")[0].innerHTML = i18n.menu.items.basemaps;
-      query("#panelSlides .panel-label")[0].innerHTML = i18n.menu.items.slides;
+      query("#panelSlides .panel-label")[0].innerHTML = i18n.menu.items.bookmarks;
     },
 
     _setMenusVisible: function(boilerplate) {
