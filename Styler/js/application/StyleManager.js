@@ -392,16 +392,16 @@ function(
           layout = CALCITE.LAYOUTS.BOTTOM_FIXED;
           break;
         // Custom LAYOUTS
-        case "top-large":
+        case "top-xlarge":
           layout = CALCITE.LAYOUTS.TOP_LARGE;
           break;
-        case "bottom-large":
+        case "bottom-xlarge":
           layout = CALCITE.LAYOUTS.BOTTOM_LARGE;
           break;
-        case "top-medium":
+        case "top-large":
           layout = CALCITE.LAYOUTS.TOP_MEDIUM;
           break;
-        case "bottom-medium":
+        case "bottom-large":
           layout = CALCITE.LAYOUTS.BOTTOM_MEDIUM;
           break;
         case "top-inline-left":

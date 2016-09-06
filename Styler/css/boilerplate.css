@@ -67,46 +67,46 @@ body:lang(ja) {
   background-color: white;
 }
 
-#carouselBookmarks {
+#carouselSlides {
   margin-top: 7px;
   margin-bottom: 25px;
 }
 
-#carouselBookmarks .carousel-indicators {
+#carouselSlides .carousel-indicators {
   bottom: -30px;
   margin-bottom: 0;
 }
 
-#carouselBookmarks .carousel-indicators > li {
+#carouselSlides .carousel-indicators > li {
   background-color: #929292;
 }
 
-#carouselBookmarks .item {
+#carouselSlides .item {
   text-align: center;
 }
 
-#carouselBookmarks .item img {
+#carouselSlides .item img {
   margin: 0 auto;
   /*border: 5px solid transparent;*/
 }
 
-#carouselBookmarks .item {
+#carouselSlides .item {
   text-align: center;
 }
 
-#carouselBookmarks .carousel-caption {
+#carouselSlides .carousel-caption {
   left: 0;
   right: 0;
   bottom: 0;
   padding-bottom: 20px;
 }
 
-#carouselBookmarks .carousel-control {
+#carouselSlides .carousel-control {
   margin: 0 20px;
   background-image: none;
 }
 
-#carouselBookmarks .carousel-control > span {
+#carouselSlides .carousel-control > span {
   font-size: 22px;
   color: #adadad;
 }
