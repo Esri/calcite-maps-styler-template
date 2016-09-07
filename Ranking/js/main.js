@@ -306,6 +306,7 @@ define([
         domConstruct.place(pane.domNode, dom.byId(slide.id));
       }));
       var featureSwipe = new Swiper(".swiper-container", {
+        a11y: true,
         pagination: ".swiper-pagination",
         paginationType: "custom",
         paginationCustomRender: lang.hitch(this, function(swiper, current, total) {
