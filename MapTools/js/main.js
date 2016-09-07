@@ -396,7 +396,6 @@ define([
         this.tableHandler = on.pausable(layer, "click", lang.hitch(this, function(results) {
           table.selectRows([results.graphic]);
           this._zoomToFeature(results.graphic.geometry, selectionSymbol);
-
         }));
 
         this.tableHandler.pause();
@@ -404,8 +403,9 @@ define([
         table.startup();
         //sync feature selection and table selection
         on(table, "row-select", lang.hitch(this, function(evt) {
-          if (evt && evt.length > 0) {
-            var id = evt[0].data[layer.objectIdField];
+          console.log(evt);
+          if (evt && evt.rows.length > 0) {
+            var id = evt.rows[0].data[layer.objectIdField];
             var q = new esriQuery();
             q.objectIds = [id];
             q.outFields = ["*"];
