@@ -58,6 +58,7 @@ define([
   "bootstrap/Tab",
   "bootstrap/Alert",
   "bootstrap/Carousel",
+  "bootstrap/Tooltip",
 
   // Calcite Maps
   "calcite-maps/calcitemaps-v0.2"
@@ -277,6 +278,12 @@ define([
               this._removeLoading();
               // Slides panel (needs the view)
               this._setSlidesPanel(boilerplate.config.menuslides, results.webMapOrWebScene);
+              query('[data-toggle="tooltip"]').tooltip({ 
+                "show": 100, 
+                "hide": 100,
+                container: "panelSlides"
+              });        
+
               // Do more stuff here if necessary...
             }.bind(this), function(error) {
               this.reportError(new Error("Styler:: Error loading view for this webmap or webscene: " + error));
@@ -506,7 +513,7 @@ define([
       query(CSS_SELECTORS.menuAbout + " a")[0].innerHTML = query(CSS_SELECTORS.menuAbout + " a")[0].innerHTML + "&nbsp;" + i18n.menu.items.about;
       query(CSS_SELECTORS.menuLegend + " a")[0].innerHTML = query(CSS_SELECTORS.menuLegend + " a")[0].innerHTML + "&nbsp;" + i18n.menu.items.legend;
       query(CSS_SELECTORS.menuBasemaps + " a")[0].innerHTML = query(CSS_SELECTORS.menuBasemaps + " a")[0].innerHTML + "&nbsp;" + i18n.menu.items.basemaps;
-      query(CSS_SELECTORS.menuSlides + " a")[0].innerHTML = query(CSS_SELECTORS.menuSlides + " a")[0].innerHTML + "&nbsp;" + i18n.menu.items.bookmarks;
+      query(CSS_SELECTORS.menuSlides + " a")[0].innerHTML = query(CSS_SELECTORS.menuSlides + " a")[0].innerHTML + "&nbsp;" + "Slides";
       query(CSS_SELECTORS.menuToggleNav + " a")[0].innerHTML = query(CSS_SELECTORS.menuToggleNav + " a")[0].innerHTML + "&nbsp;" + i18n.menu.items.toggleNav;
     },
 
@@ -516,7 +523,7 @@ define([
       query("#panelAbout .panel-label")[0].innerHTML = i18n.menu.items.about;
       query("#panelLegend .panel-label")[0].innerHTML = i18n.menu.items.legend;
       query("#panelBasemaps .panel-label")[0].innerHTML = i18n.menu.items.basemaps;
-      query("#panelSlides .panel-label")[0].innerHTML = i18n.menu.items.bookmarks;
+      query("#panelSlides .panel-label")[0].innerHTML = "Slides";
     },
 
     _setMenusVisible: function(boilerplate) {
@@ -690,7 +697,7 @@ define([
           
           slides.forEach(function(slide, i) {
             var active = i === 0 ? "active" : "";
-            var indicator = "<li data-target='#carouselSlides' data-slide-to='" + i + "' class='" + active + "'></li>";
+            var indicator = `<li data-target="#carouselSlides" data-slide-to="${i}" data-toggle="tooltip" data-placement="bottom" title="${slide.title.text}" class="${active}"></li>`;
             domConstruct.place(indicator, carouselIndicators, i);
             // FF to slide indicator
             query("#carouselSlides [data-slide-to=" + i + "]").on("click", function() {
