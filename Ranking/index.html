@@ -7,7 +7,7 @@
   <!-- Define the versions of IE that will be used to render the page. See Microsoft documentation for details. Optional. -->
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <!-- Responsive -->
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
@@ -41,7 +41,7 @@
               </div>
             </div>
             <div id="legendPanel" class="hide legend-panel panel-nav">
-              <button id="closeLegend" type="button" class="btn btn-link nav-btn" aria-label="Left Align">
+              <button id="closeLegend" type="button" class="btn btn-link nav-btn" aria-label="Close">
                 <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
               </button>
               <div id="legendDiv"></div>
@@ -49,10 +49,10 @@
             <div id="popupContainer" class="swiper-container panel-nav">
                 <toolbar id="toolbar">
                   <span id="rankLabel"></span>
-                  <button id="toggleInfo" type="button" class="btn btn-link nav-btn" aria-label="Left Align">
+                  <button id="toggleInfo" type="button" class="btn btn-link nav-btn" aria-label="Info">
                     <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
                   </button>
-                  <button id="legendInfo" type="button" class="btn btn-link nav-btn hide" aria-label="Left Align">
+                  <button id="legendInfo" type="button" class="btn btn-link nav-btn hide" aria-label="Legend">
                     <span class="glyphicon glyphicon-th-list" aria-hidden="true"></span>
                   </button>
                 </toolbar>
@@ -61,9 +61,10 @@
                 </div>
             </div>
             <span id="slideNav" class="navbar-fixed-bottom hide panel-nav">
-              <div id="prev" class="swiper-pagination fgcolor"></div>
-              <div id="next" class="swiper-button-next navcolor"></div>
-              <div class="swiper-button-prev navcolor"></div>
+              <div class="swiper-pagination fgcolor"></div>
+              <div role="button" tabindex="0" id="next" class="swiper-button-next navcolor"></div>
+              <button id="next" class="swiper-button-prev navcolor"></button>
+              <button id="prev" class="swiper-button-prev navcolor"></button>
             </span>
 
       </div>

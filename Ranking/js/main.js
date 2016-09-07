@@ -19,6 +19,7 @@ define([
   "dojo/_base/declare",
   "dojo/_base/lang",
   "dojo/_base/array",
+  "dojo/_base/kernel",
 
   "dojo/parser",
   "dojo/Deferred",
@@ -46,6 +47,7 @@ define([
 ], function(
   declare, lang,
   array,
+  kernel,
   parser,
   Deferred,
   domQuery, on,
@@ -62,6 +64,7 @@ define([
     config: {},
     startup: function(config) {
       parser.parse();
+      document.documentElement.lang = kernel.locale;
       // config will contain application and user defined info for the template such as i18n strings, the web map id
       // and application id
       // any url parameters and any application specific configuration information.
@@ -123,8 +126,9 @@ define([
     },
     _addLocalizedText: function() {
       dom.byId("closeInfo").innerHTML = this.config.buttontext || this.config.i18n.closebutton.label;
-      dom.byId("legendInfo").title = this.config.i18n.toolbar.legendLabel;
-      dom.byId("toggleInfo").title = this.config.i18n.toolbar.infoLabel;
+      dom.byId("legendInfo").value = this.config.i18n.toolbar.legendLabel;
+      dom.byId("toggleInfo").value = this.config.i18n.toolbar.infoLabel;
+
       dom.byId("next").title = this.config.i18n.navigation.nextLabel;
       dom.byId("prev").title = this.config.i18n.navigation.previousLabel;
     },
@@ -156,8 +160,9 @@ define([
         bingMapsKey: this.config.bingKey
       }).then(lang.hitch(this, function(response) {
         this.map = response.map;
-
-        dom.byId("title").innerHTML = this.config.title || response.itemInfo.item.title;
+        var title = this.config.title || response.itemInfo.item.title;
+        document.title = title;
+        dom.byId("title").innerHTML = title;
         dom.byId("description").innerHTML = this.config.description || response.itemInfo.item.description;
         domClass.remove(document.body, "app-loading");
 

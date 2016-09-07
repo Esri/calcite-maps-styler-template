@@ -64,6 +64,10 @@ body{
     height: calc(100% - 70px);
     overflow-y:auto;
 }
+.swiper-button-black{
+  border: none;
+  background-color: inherit;
+}
 #toolbar{
   margin-top:5px;
   width:100%;
