@@ -129,6 +129,8 @@ define([
       dom.byId("legendInfo").value = this.config.i18n.toolbar.legendLabel;
       dom.byId("toggleInfo").value = this.config.i18n.toolbar.infoLabel;
 
+      dom.byId("next").value = this.config.i18n.navigation.nextLabel;
+      dom.byId("prev").value = this.config.i18n.navigation.previousLabel;
       dom.byId("next").title = this.config.i18n.navigation.nextLabel;
       dom.byId("prev").title = this.config.i18n.navigation.previousLabel;
     },
@@ -265,6 +267,7 @@ define([
                 // hide the info panel
                 domClass.add("titleHeader", "hide");
                 domClass.remove("slideNav", "hide");
+                domClass.remove("toolbar", "hide");
                 layer.styling = false;
                 this._createFeatureSlides(topResults, layer);
               }));
