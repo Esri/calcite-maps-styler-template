@@ -4,7 +4,7 @@ define({
       browseToggle: {
         arcGIS: "ArcGIS",
         flickr: "Flickr",
-        googlePhotos: "Google Photos",
+        googlePhotos: "Google+",
         facebook: "Facebook",
         urls: "Link to Content",
         urls_short: "Link",
@@ -39,7 +39,7 @@ define({
             by: "by" // context: "Webmap by John Smith"
           },
           googlePhotos: {
-            searchAndBrowse: "Browse photos on Picasa or Google Photos"
+            searchAndBrowse: "Browse photos on Picasa or Google+"
           },
           flickr: {
             photostream: "Photostream",
@@ -73,11 +73,11 @@ define({
               generic: "Something went wrong with the address entered. Please try again.",
               imageOnly: [
                 "You must use an image in this part of the story.",
-                 "Please provide a link to an image (.jpg, .png, .gif), or choose an image from ArcGIS, Flickr, or Google Photos."
+                 "Please provide a link to an image (.jpg, .png, .gif), or choose an image from ArcGIS, Flickr, or Google+."
               ],
               imageAndVideo: [
                 "You must use an image or video in this part of the story.",
-                "Please provide a link to an image (.jpg, .png, .gif) or a video on YouTube or Vimeo, or choose an image from ArcGIS, Flickr, or Google Photos."
+                "Please provide a link to an image (.jpg, .png, .gif) or a video on YouTube or Vimeo, or choose an image from ArcGIS, Flickr, or Google+."
               ],
               badFormat: 'The link to the ${media-type} you are trying to add is formatted incorrectly.',
               inaccessible: 'The ${media-type} you are trying to add is missing or not accessible.',
@@ -93,10 +93,10 @@ define({
         sidePanel: {
           googlePhotos: {
             brand1: "Picasa",
-            brand2: "Google Photos",
+            brand2: "Google+",
             placeholder: "Email or Picasa/Google+ ID",
-            helpText: "You can add photos uploaded to ${brand1} or ${brand2} to your story. If you are using Google Photos, ${helpLinkText} to use your photos.",
-            helpLinkText: "follow these steps",
+            helpText: "You can add photos uploaded to ${brand1} or ${brand2} to your story. ${helpLinkText} about using images stored in your Google account in your stories.",
+            helpLinkText: "Learn more",
             cannotFindUser: "Cannot find user", // Context: "Cannot find user 'johnsmith'."
             tryAgain: "Please try again."
           },

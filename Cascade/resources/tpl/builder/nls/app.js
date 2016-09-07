@@ -70,7 +70,7 @@ define({
 					appearance: "Appearance",
 					manage: "Manage",
 					size: "Size",
-					position: "Position"
+					background: "Background"
 				},
 				manage: {
 					changeMedia: "Change media",
@@ -96,15 +96,19 @@ define({
 					slide: "Slide",
 					noSlides: "No slides available."
 				},
+				mediaAppearance: {
+					layout: "Layout"
+				},
 				size: {
 					small: "Small",
 					medium: "Medium",
 					large: "Large"
 				},
-				position: {
+				background: {
 					noCrop: "Do not crop image",
 					mostImportantPart: "Choose the most important point",
-					cropExplanation: "Select a point on the image to choose how your image will be cropped at different screen sizes. The point you select will always be visible",
+					cropExplanationImmersive: "Select a point on the image to choose how your image will be cropped at different screen sizes. The point you select will always be visible. Check the box below if your media needs to be fully visible.",
+					cropExplanation: "Select a point on the image to choose how your image will be cropped at different screen sizes. The point you select will always be visible.",
 					previews: "Previews"
 				}
 			},

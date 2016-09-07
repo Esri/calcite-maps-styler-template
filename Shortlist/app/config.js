@@ -80,6 +80,22 @@ app.cfg = {
 	TAB_NAMES: [],
 	//
 
+	FIELDNAME_NUMBER: ["number"],
+	FIELDNAME_TITLE: ["name"],
+	FIELDNAME_SHORTDESC: ["description"],
+	FIELDNAME_IMAGEURL: ["pic_url"],
+	FIELDNAME_THUMBURL: ["thumb_url"],
+	FIELDNAME_ADDRESS: ["Address"],
+	FIELDNAME_HOURS: ["Hours"],
+	FIELDNAME_WEBSITE: ["website"],
+	FIELDNAME_DESC1: ["Desc1"],
+	FIELDNAME_DESC2: ["Desc2"],
+	FIELDNAME_DESC3: ["Desc3"],
+	FIELDNAME_DESC4: ["Desc4"],
+	FIELDNAME_DESC5: ["Desc5"],
+	FIELDNAME_ID: ["shortlist_id"],
+	FIELDNAME_TAB: ["tab_id"],
+
 	/*lutIconSpecs: {
 		tiny: new iconSpecs(28,31,5,12),
 		medium: new iconSpecs(31,35,5,13),
@@ -185,8 +201,8 @@ app.cfg = {
 	// Edit those to set a custom sharing or proxy URL
 	// You have to edit those only if your webmap is deployed on Portal for ArcGIS instance and if you are not deploying the template on the Portal webserver
 	// If you are using ArcGIS Online or deploying the template on a Portal instance, you don't have to edit those URL
-	DEFAULT_SHARING_URL: "//www.arcgis.com/sharing/content/items",
-	//DEFAULT_SHARING_URL: "//story.mapsdevext.arcgis.com/sharing/content/items",
+	//DEFAULT_SHARING_URL: "//www.arcgis.com/sharing/content/items",
+	DEFAULT_SHARING_URL: "//story.mapsdevext.arcgis.com/sharing/content/items",
 	//DEFAULT_SHARING_URL: "//story.maps.arcgis.com/sharing/content/items",
 	//DEFAULT_SHARING_URL: "//portal.internal.com/arcgis/sharing/content/items",
 	DEFAULT_PROXY_URL: "//www.arcgis.com/sharing/proxy"

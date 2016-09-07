@@ -4,6 +4,7 @@ define.amd.jQuery = true;
 	
 require([
 	"dojo/i18n!../nls/template.js?v=" + app.version,
+	"esri/arcgis/Portal",
 	"esri/arcgis/utils", 
 	"dojo/_base/lang", 
 	"esri/dijit/Legend",
@@ -12,6 +13,7 @@ require([
 	"dojo/ready"
 ], function(
 	i18n, 
+	arcgisPortal,
 	arcgisUtils, 
 	lang, 
 	LegendDijit,
@@ -22,6 +24,7 @@ require([
 		title = sections[0].title,
 		storyHTML = '';
 
+	esri.arcgis.utils.arcgisUrl = window.opener.esri.arcgis.utils.arcgisUrl;
 	esri.id.initialize(window.opener.esri.id);
 
 	document.title = $('<div>' + title + '</div>').text();
