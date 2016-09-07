@@ -215,7 +215,7 @@ define([
         // Configure the document
         //-----------------------------------------------------------------------
 
-        this._setDocumentLocale(boilerplate.direction, boilerplate.locale);
+        this._setDocumentLocale(boilerplate.locale, boilerplate.direction);
         this._setDocumentTitle(boilerplate.config.title);
   
         // Title

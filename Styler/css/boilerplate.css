@@ -59,6 +59,10 @@ body:lang(ja) {
 
 /* Calcite Maps */
 
+.dropdown-toggle {
+  background-color: transparent;
+}
+
 .dropdown-menu span.glyphicon {
   margin-right: 2px;
 }
@@ -68,7 +72,6 @@ body:lang(ja) {
 }
 
 #carouselSlides {
-  margin-top: 7px;
   margin-bottom: 25px;
 }
 
@@ -83,6 +86,7 @@ body:lang(ja) {
 
 #carouselSlides .item {
   text-align: center;
+  padding: 24px 0 0;
 }
 
 #carouselSlides .item img {
@@ -95,11 +99,22 @@ body:lang(ja) {
 }
 
 #carouselSlides .carousel-caption {
+  top: -20px;
   left: 0;
   right: 0;
-  bottom: 0;
-  padding-bottom: 20px;
+  text-shadow: none;
+  font-size: 12px;
+  font-weight: 500;
 }
+
+.calcite-text-dark .carousel-caption {
+  color: #777;
+}
+
+.calcite-text-light .carousel-caption {
+  color: #fefefe;
+}
+
 
 #carouselSlides .carousel-control {
   margin: 0 20px;
