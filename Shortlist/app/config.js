@@ -80,22 +80,6 @@ app.cfg = {
 	TAB_NAMES: [],
 	//
 
-	FIELDNAME_NUMBER: ["number"],
-	FIELDNAME_TITLE: ["name"],
-	FIELDNAME_SHORTDESC: ["description"],
-	FIELDNAME_IMAGEURL: ["pic_url"],
-	FIELDNAME_THUMBURL: ["thumb_url"],
-	FIELDNAME_ADDRESS: ["Address"],
-	FIELDNAME_HOURS: ["Hours"],
-	FIELDNAME_WEBSITE: ["website"],
-	FIELDNAME_DESC1: ["Desc1"],
-	FIELDNAME_DESC2: ["Desc2"],
-	FIELDNAME_DESC3: ["Desc3"],
-	FIELDNAME_DESC4: ["Desc4"],
-	FIELDNAME_DESC5: ["Desc5"],
-	FIELDNAME_ID: ["shortlist_id"],
-	FIELDNAME_TAB: ["tab_id"],
-
 	/*lutIconSpecs: {
 		tiny: new iconSpecs(28,31,5,12),
 		medium: new iconSpecs(31,35,5,13),
