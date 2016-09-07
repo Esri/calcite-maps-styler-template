@@ -35,9 +35,8 @@ define({
   },
   //"layerId": "OSMPTrails_5787",
   //"field": "Length_mi",
-  "order": "DESC", // ASC or DESC
-  "rankText": "Rank #",
-  "showRankText": true,
+  "order": "ASC", // ASC or DESC
+  "rankLabelTemplate": "Rank {current} of {total}",
   "count": 10,
   "symbolcolor": "#337ab7",
   "symbolsize": "11",

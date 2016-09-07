@@ -138,14 +138,12 @@
       }]
     },{
       "type": "paragraph",
-      "value": "Display text listing the rank # of the selected feature. Define custom text to append to the rank number."
-    },{
-      "type":"boolean",
-      "fieldName": "showRankText"
+      "value": "Display text listing the rank # of the selected feature. Define custom text to wrap around the current rank and total. "
     },{
       "type": "string",
-      "fieldName": "rankText",
-      "label": "Custom text to append to rank #"
+      "fieldName": "rankLabelTemplate",
+      "label": "Custom text to display in paging area",
+      "placeHolder": "Rank {current} of {total}"
     },{
       "type": "paragraph",
       "value": "By default the app will zoom to the extent of the selected features. If you'd like to modify the zoom level specify a new zoom level value here."
@@ -160,7 +158,6 @@
     "legend": true,
     "order": "DESC",
     "count":10,
-    "showRankText": true,
     "symbolcolor": "#337ab7",
     "symbolsize": "11",
     "symbolopacity": "0.80",

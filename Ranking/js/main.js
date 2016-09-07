@@ -257,6 +257,7 @@ define([
             query.outFields = ["*"];
 
             layer.queryFeatures(query, lang.hitch(this, function(results) {
+
               // get top x features and create slides.
               domClass.remove(document.body, "app-loading");
               var topResults = results.features.slice(0, this.config.count);
@@ -269,6 +270,7 @@ define([
                 domClass.remove("slideNav", "hide");
                 domClass.remove("toolbar", "hide");
                 layer.styling = false;
+                topResults = topResults.reverse();
                 this._createFeatureSlides(topResults, layer);
               }));
             }), lang.hitch(this, function(error) {
@@ -305,7 +307,18 @@ define([
       }));
       var featureSwipe = new Swiper(".swiper-container", {
         pagination: ".swiper-pagination",
-        paginationType: "fraction",
+        paginationType: "custom",
+        paginationCustomRender: lang.hitch(this, function(swiper, current, total) {
+          var template = this.config.rankLabelTemplate;
+          if (template === "") {
+            template = "Rank {current} of {total}";
+          }
+          var labelObj = {
+            current: swiper.slides.length - swiper.activeIndex,
+            total: total
+          };
+          return "<span class='page-label'>" + lang.replace(template, labelObj) + "</span>";
+        }),
         nextButton: ".swiper-button-next",
         prevButton: ".swiper-button-prev"
       });
@@ -334,21 +347,6 @@ define([
       }));
     },
     _goToSlide: function(featureSwipe, layer) {
-      // calculate ranking text
-      if (this.config.showRankText) {
-        var rankLabel = dom.byId("rankLabel");
-        var count;
-        var rankTemplate = "{rankText} {rankCount}";
-        if (this.config.order === "ASC") {
-          count = featureSwipe.activeIndex + 1;
-        } else {
-          count = featureSwipe.slides.length - featureSwipe.activeIndex;
-        }
-        rankLabel.innerHTML = lang.replace(rankTemplate, {
-          rankText: this.config.rankText,
-          rankCount: count
-        });
-      }
       this._selectFeatures(featureSwipe.slides[featureSwipe.activeIndex].id, layer);
     },
     _toggleInfoPanel: function(active, layer) {
