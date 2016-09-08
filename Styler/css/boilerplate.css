@@ -104,7 +104,7 @@ body:lang(ja) {
   right: 0;
   text-shadow: none;
   font-size: 12px;
-  font-weight: 500;
+  font-weight: 400;
 }
 
 .calcite-text-dark .carousel-caption {
@@ -112,12 +112,11 @@ body:lang(ja) {
 }
 
 .calcite-text-light .carousel-caption {
-  color: #fefefe;
+  color: #dedede;
 }
 
-
 #carouselSlides .carousel-control {
-  margin: 0 20px;
+  margin: 17px 20px 0;
   background-image: none;
 }
 

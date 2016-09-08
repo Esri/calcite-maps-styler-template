@@ -88,7 +88,17 @@ function(
           theme = CALCITE.THEMES.LIGHT;
       }
       // Background color override, override bgStyle also
-      var rgba = this._getRgba(bgColorOverride, opacity);
+      var rgba;
+      if (bgColorOverride) {
+        rgba = this._getRgba(bgColorOverride, opacity);
+      } else {
+        if (theme === CALCITE.THEMES.LIGHT) {
+          rgba = this._getRgba("light", opacity);        
+        } else if (theme === CALCITE.THEMES.DARK) {
+          rgba = this._getRgba("dark", opacity);        
+        }
+      }
+      
       if (rgba) {
         theme.nav.bgStyle = CALCITE.THEME_STYLES.BG_CUSTOM;
         theme.nav.bgRgbColor = rgba;
@@ -242,16 +252,9 @@ function(
     },
 
     _getRgbaColorFromStyle: function(calciteBgColorStyle) {
-      // TODO - create these in calcite-maps
-      if (calciteBgColorStyle === "calcite-bgcolor-light") {
-        rgba = "rgba(255,255,155,1)"; // #fff
-      } else if (calciteBgColorStyle === "calcite-bgcolor-dark") {
-        rgba = "rgba(51,51,51,1)"; // #333
-      } else {
         var div = domConstruct.create("div", { id: "calcitecolor", class: calciteBgColorStyle }, document.body );
         rgba = query(div).style("background-color")[0];
         domConstruct.destroy(div);
-      }
       return rgba;
     },
 
