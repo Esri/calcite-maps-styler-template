@@ -150,8 +150,7 @@
     },{
       "type": "number",
       "fieldName": "selectionZoomLevel",
-      "label": "Specify zoom level",
-      "placeHolder": "Defaults to Rank #"
+      "label": "Specify zoom level"
     }]
   }],
   "values": {
