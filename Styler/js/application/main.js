@@ -283,7 +283,7 @@ define([
                 "hide": 100,
                 container: "panelSlides"
               });        
-
+              this._setPopupEvents(); 
               // Do more stuff here if necessary...
             }.bind(this), function(error) {
               this.reportError(new Error("Styler:: Error loading view for this webmap or webscene: " + error));
@@ -320,7 +320,6 @@ define([
             this._setViewEvents();
             this._setPanelEvents();
             this._setBasemapEvents();
-            this._setPopupEvents(); 
 
           }.bind(this), function(error) {
             this.reportError(error);  
@@ -1000,8 +999,8 @@ define([
 
     _setPopupEvents: function() {
       var activeView = this._activeView;
-      query(".esri-popup .esri-title").on("click", lang.hitch(activeView, function(e){
-        query(".esri-popup .esri-container").toggleClass("esri-popup-collapsed");
+      query(".esri-popup__header-title").on("click", lang.hitch(activeView, function(e){
+        query(".esri-popup__main-container").toggleClass("esri-popup-collapsed");
         activeView.popup.reposition();
       }));
     },
