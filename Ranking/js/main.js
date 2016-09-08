@@ -356,6 +356,8 @@ define([
       layer.styling = false;
       layer.refresh();
       if (active === "legend") {
+        layer.styling = true;
+        layer.refresh();
         domClass.remove("legendPanel", "hide");
       } else if (active === "popup") {
         domClass.remove("popupContainer", "hide");
