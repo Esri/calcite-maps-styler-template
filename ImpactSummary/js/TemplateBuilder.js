@@ -64,41 +64,32 @@ function (
         },
         // start widget. called by user
         startup: function () {
-            //console.log('edit mode');
-            // builder mode class to body
-            domClass.add(document.body, this.css.builderMode);
-            // builder node
-            var builderNode = domConstruct.create('div', {
-                className: this.css.root
-            });
-            // place node in body
-            // top content pane
-            var builderContentPane = new ContentPane({
-                region: "top"
-            }, builderNode);
-            // add pane to border container
-            this.get("drawer")._borderContainer.addChild(builderContentPane);
-            this.get("drawer").resize();
-            var bulilderModeHelpText = domConstruct.create("div", { innerHTML: nls.widgets.TemplateBuilder.builderModeHelpText, "class": this.css.rootContainer }, builderNode);
             this.aoiLayer = this.map.getLayer(this.config.summaryLayer.id);
             // resize border container
             if (this.config.edit) {
+                //console.log('edit mode');
+                // builder mode class to body
+                domClass.add(document.body, this.css.builderMode);
+                // builder node
+                var builderNode = domConstruct.create('div', {
+                    className: this.css.root
+                });
+                // place node in body
+                // top content pane
+                var builderContentPane = new ContentPane({
+                    region: "top"
+                }, builderNode);
+                // add pane to border container
+                this.get("drawer")._borderContainer.addChild(builderContentPane);
+                this.get("drawer").resize();
+                var bulilderModeHelpText = domConstruct.create("div", { innerHTML: nls.widgets.TemplateBuilder.builderModeHelpText, "class": this.css.rootContainer }, builderNode);
                 this._showBuilderMode(builderNode);
             }
-            else {
-                //show button to allow user to enter builder mode
-                domAttr.set(bulilderModeHelpText, "innerHTML", nls.widgets.TemplateBuilder.enterBuilderModeHelpText);
-                var buttonContainer = domConstruct.create("div", { "class": "esriButtonContainer" }, builderNode);
-                var switchTOBuilderModeButton = domConstruct.create("button", { innerHTML: nls.widgets.TemplateBuilder.enterBuilderButtonText, "class": "esriButton" }, buttonContainer);
-                on(switchTOBuilderModeButton, "click", function () {
-                    var newURL = location.href + "&edit=true";
-                    window.location.href = newURL;
-                });
-            }
             this._loadCSS();
+            this.get("drawer").resize();
             setTimeout(lang.hitch(this, function () {
                 this.get("drawer").resize();
-            }), 200);
+            }), 250);
             this.entireAreaPrevState = this.config.enableEntireAreaButton;
             this.enrichLayer = new EnrichLayer({ map: this.map, userInfo: this.userInfo, config: this.config, webmapInfo: this.webMapConfiguration });
         },
