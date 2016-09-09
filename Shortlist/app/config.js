@@ -124,7 +124,7 @@ app.cfg = {
 	 * Builder
 	 */
 
-	HELP_URL: "http://storymaps.arcgis.com",
+	HELP_URL: "http://storymaps.arcgis.com/en/app-list/shortlist/",
 	HELP_URL_PORTAL: "http://storymaps.arcgis.com",
 
 	// Control the authorized data source (for initialization and import screen)
@@ -186,11 +186,8 @@ app.cfg = {
 	// You have to edit those only if your webmap is deployed on Portal for ArcGIS instance and if you are not deploying the template on the Portal webserver
 	// If you are using ArcGIS Online or deploying the template on a Portal instance, you don't have to edit those URL
 	DEFAULT_SHARING_URL: "//www.arcgis.com/sharing/content/items",
-	//DEFAULT_SHARING_URL: "//story.mapsdevext.arcgis.com/sharing/content/items",
-	//DEFAULT_SHARING_URL: "//story.maps.arcgis.com/sharing/content/items",
 	//DEFAULT_SHARING_URL: "//portal.internal.com/arcgis/sharing/content/items",
 	DEFAULT_PROXY_URL: "//www.arcgis.com/sharing/proxy"
-	//DEFAULT_PROXY_URL: "//markc2:8080/proxy/proxy.ashx"
 	//DEFAULT_PROXY_URL: "//portal.internal.com/arcgis/sharing/proxy"
 };
 
