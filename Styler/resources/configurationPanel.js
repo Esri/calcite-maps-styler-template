@@ -9,7 +9,7 @@
                 }]
             },
             {
-            "category": "App",
+            "category": "About",
             "fields": [
                 {
                     "type": "string",
@@ -28,7 +28,7 @@
                 {
                     "type": "string",
                     "fieldName": "abouttext",
-                    "label": "About (Provide a little background about your app or your organization)",
+                    "label": "About Panel Text (Provide a little background about your app or your organization)",
                     "tooltip": "",
                     "stringFieldOption": "richtext",
                     "placeHolder": "Tell everyone a little about your app. Add text, logo and contact information if applicable. This info will appear in the About panel."
@@ -85,6 +85,14 @@
                         {
                             "label": "Default",
                             "value": ""
+                        },
+                        {
+                            "label": "Light",
+                            "value": "light"
+                        },
+                        {
+                            "label": "Dark",
+                            "value": "dark"
                         },
                         {
                             "label": "Transparent",
@@ -208,7 +216,7 @@
             ]
         },
         {
-            "category": "Layout",
+            "category": "Navbar",
             "fields": [
               {
                     "type": "options",
