@@ -33,6 +33,7 @@ mkdir %BUILD_OUTPUT%\Elevations
 mkdir %BUILD_OUTPUT%\Embed
 mkdir %BUILD_OUTPUT%\Filter
 mkdir %BUILD_OUTPUT%\GeoForm
+mkdir %BUILD_OUTPUT%\GeoTour
 mkdir %BUILD_OUTPUT%\HeaderFooter
 mkdir %BUILD_OUTPUT%\HeaderFooter\Chrome
 mkdir %BUILD_OUTPUT%\HeaderFooter\pavement
@@ -75,7 +76,6 @@ mkdir %BUILD_OUTPUT%\Panels
 mkdir %BUILD_OUTPUT%\PanelsLegend
 mkdir %BUILD_OUTPUT%\PublicGallery
 mkdir %BUILD_OUTPUT%\Profile
-mkdir %BUILD_OUTPUT%\Ranking
 mkdir %BUILD_OUTPUT%\ServiceLookup
 mkdir %BUILD_OUTPUT%\InformationLookup
 mkdir %BUILD_OUTPUT%\SimpleMapViewer
@@ -186,7 +186,7 @@ xcopy %TEMPLATES_ROOT%\PublicInformation                        %BUILD_OUTPUT%\P
 xcopy %TEMPLATES_ROOT%\ImpactSummary                            %BUILD_OUTPUT%\ImpactSummary                        /E /Y
 xcopy %TEMPLATES_ROOT%\SummaryViewer                            %BUILD_OUTPUT%\SummaryViewer                        /E /Y
 xcopy %TEMPLATES_ROOT%\Styler                                   %BUILD_OUTPUT%\Styler                               /E /Y
-xcopy %TEMPLATES_ROOT%\Ranking                                  %BUILD_OUTPUT%\Ranking                              /E /Y
+xcopy %TEMPLATES_ROOT%\Ranking                                  %BUILD_OUTPUT%\GeoTour                              /E /Y
 xcopy %TEMPLATES_ROOT%\MapTools                                 %BUILD_OUTPUT%\MapTools                             /E /Y
 xcopy %TEMPLATES_ROOT%\MapJournal                               %BUILD_OUTPUT%\MapJournal                           /E /Y
 xcopy %TEMPLATES_ROOT%\MapSeries                                %BUILD_OUTPUT%\MapSeries                            /E /Y
