@@ -10,7 +10,7 @@ Use the application to configure apps for ArcGIS Online or Portal for ArcGIS or 
 `Web Scene`
 [http://esri.github.io/calcite-maps-styler-template/index.html?webscene=91b46c2b162c48dba264b2190e1dbcff](http://esri.github.io/calcite-maps-styler-template/index.html?webscene=91b46c2b162c48dba264b2190e1dbcff)
 
-NOTE: The application requires a pre-existing [Web Map](https://doc.arcgis.com/en/arcgis-online/create-maps/make-your-first-map.htm) or [Web Scene](https://doc.arcgis.com/en/arcgis-online/create-maps/make-your-first-scene.htm) ID in order to run. Learn more about creating web maps and web scenes [here](https://doc.arcgis.com/en/arcgis-online/create-maps/create-maps-and-apps.htm).
+NOTE: The application requires a pre-existing [Web Map](https://doc.arcgis.com/en/arcgis-online/create-maps/make-your-first-map.htm) or [Web Scene](https://doc.arcgis.com/en/arcgis-online/create-maps/make-your-first-scene.htm) ID to run. Learn more about creating web maps and web scenes [here](https://doc.arcgis.com/en/arcgis-online/create-maps/create-maps-and-apps.htm).
 
 ## Features
 
@@ -158,7 +158,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 
-A copy of the license is available in the repository's [license.txt](https://raw.github.com/Esri/calcite-maps-styler-template/master/license.txt) file.
+A copy of the license is available in the repository's [license.txt](https://github.com/Esri/calcite-maps-styler-template/blob/master/license.txt) file.
 
 [](Esri Tags: ArcGIS ArcGIS Online Web Application boilerplate template widget Bootstrap Calcite Calcite-Maps Esri JavaScript application)
 [](Esri Language: JavaScript)
