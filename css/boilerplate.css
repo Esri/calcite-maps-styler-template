@@ -1,0 +1,169 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  /*font-family: Arial, Helvetica, sans-serif;*/
+}
+
+body:lang(ja) {
+  font-family: meiryo, Arial, Helvetica, sans-serif;
+}
+
+.boilerplate-view {
+  top: 0;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.boilerplate-loading-indicator {
+  display: none;
+  height: 100%;
+  width: 100%;
+  z-index: 500;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  background-color: #fff;
+}
+
+.boilerplate--loading .boilerplate-loading-indicator {
+  display: block;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-image: url(../images/loading.gif);
+}
+
+.boilerplate--error .boilerplate-loading-indicator {
+  display: block;
+}
+
+.boilerplate-loading-message {
+  background-position: top center;
+  background-repeat: no-repeat;
+  padding-top: 60px;
+  width: 100%;
+  position: absolute;
+  z-index: 2;
+  top: 40%;
+  left: 0;
+  text-align: center;
+}
+
+/* Calcite Maps */
+
+.calcite-title-left-margin {
+  margin-left: 15px;
+}
+
+.dropdown-toggle {
+  background-color: transparent;
+}
+
+.dropdown-menu span.glyphicon {
+  margin-right: 2px;
+}
+
+#panelLegend .panel-body {
+  background-color: white;
+}
+
+#carouselSlides {
+  margin-bottom: 25px;
+}
+
+#carouselSlides .carousel-indicators {
+  bottom: -30px;
+  margin-bottom: 0;
+  width: 100%;
+  margin-left: -50%;
+}
+
+#carouselSlides .carousel-indicators > li {
+  background-color: #929292;
+}
+
+#carouselSlides .item {
+  text-align: center;
+  padding: 24px 0 0;
+}
+
+#carouselSlides .item img {
+  margin: 0 auto;
+  /*border: 5px solid transparent;*/
+}
+
+#carouselSlides .item {
+  text-align: center;
+}
+
+#carouselSlides .carousel-caption {
+  top: -21px;
+  left: 0;
+  right: 0;
+  text-shadow: none;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.calcite-text-dark .carousel-caption {
+  color: #777;
+}
+
+.calcite-text-light .carousel-caption {
+  color: #dedede;
+}
+
+#carouselSlides .carousel-control {
+  margin: 17px 20px 0;
+  background-image: none;
+}
+
+#carouselSlides .carousel-control > span {
+  font-size: 22px;
+  color: #adadad;
+}
+
+.esri-icon-notice-round {
+  font-size: 24px;
+}
+
+.calcite-err-msg {
+  vertical-align: super;
+}
+
+.calcite-err-msg strong {
+  font-size: 15px;
+}
+
+.calcite-alert {
+  position: absolute;
+  top: 40%;
+  left: 0;
+  right: 0;
+  margin: 30px 15px 0;
+  padding-top: 20px;
+  padding-bottom: 18px;
+  font-size: 14px;
+  z-index: 2000;
+}
+
+#calciteErrorMessage {
+  text-align: center;
+}
+
+.esri-ui-bottom-left, .esri-ui-bottom-right {
+  flex-flow: column nowrap;
+}
+
+.esri-ui-bottom-left .esri-widget.esri-component, 
+.esri-ui-bottom-right .esri-widget.esri-component {
+  margin-top: 10px;
+}
