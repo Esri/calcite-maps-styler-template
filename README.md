@@ -14,7 +14,7 @@ NOTE: The application requires a pre-existing [Web Map](https://doc.arcgis.com/e
 
 ## Features
 
-*	Use to create ArcGIS Online, Portal for ArcGIS or as a stand-alone applications
+*	Use to create ArcGIS Online, Portal for ArcGIS or as a stand-alone configurable applications
 *	Style apps with Calcite colors and themes
 * Apply custom colors with transparency
 * Choose custom layouts
