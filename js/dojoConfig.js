@@ -20,10 +20,10 @@ dojoConfig = {
     location: package_path + "/config"
   }, {
     name: "bootstrap",
-    location: "http://esri.github.com/calcite-maps/dist/vendor/dojo-bootstrap"
+    location: "https://esri.github.io/calcite-maps/dist/vendor/dojo-bootstrap"
   }, {
     name: "calcite-maps",
-    location: "http://esri.github.com/calcite-maps/dist/js/dojo"
+    location: "https://esri.github.io/calcite-maps/dist/js/dojo"
   }]
 };
 if (location.search.match(/locale=([\w-]+)/)) {
