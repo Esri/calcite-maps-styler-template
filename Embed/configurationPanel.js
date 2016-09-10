@@ -66,6 +66,10 @@
                "label":"Zoom Slider"
             },
             {
+              "type": "paragraph",
+              "value": "The Home Extent Button requires that the zoom slider is enabled."
+            },
+            {
                "type":"string",
                "fieldName":"zoom_position",
                "tooltip":"Choose the location of the zoom slider.",
