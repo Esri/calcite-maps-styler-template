@@ -1536,6 +1536,7 @@ ul.tilelist {
 	/* initial width -- will be re-calculated in app */
 	width: 495px;
 	padding-left: 17px;
+	padding-bottom: 10px;
     display: inline-block;
 	overflow: auto;
 	position: absolute;
@@ -4750,7 +4751,7 @@ body{
 
 .bookmarkTooltip{
 	position: absolute;
-    top: 94px;
+    top: 176px;
     left: 125px;
 }
 .settings-mapoptions {
@@ -7566,11 +7567,9 @@ body{
   border-style: none !important;
 }
 .medium-toolbar-arrow-over:before {
-  top: 32px !important;
   /*border-color: transparent transparent @medium-editor-bgcolor transparent !important;*/
   /* make it under */
-  border-color: #ffffff transparent transparent transparent !important;
-  border-width: 8px 8px 0 8px !important;
+  border-color: transparent transparent #ffffff transparent !important;
 }
 .medium-editor-toolbar {
   background-color: #ffffff !important;
@@ -7631,9 +7630,6 @@ body{
 .medium-editor-toolbar-form a {
   color: #000000 !important;
 }
-.medium-editor-anchor-preview {
-  margin-top: -8px !important;
-}
 .medium-editor-toolbar-anchor-preview {
   background: #FFF !important;
   box-shadow: 0px 0px 8px 0 rgba(0, 0, 0, 0.8) !important;
@@ -7645,6 +7641,18 @@ body{
 .medium-editor-placeholder:after {
   font-family: 'open_sans', sans-serif !important;
   color: #cccccc !important;
+}
+
+
+/* dirty override for the Anchor dialog, would be solve by using the Anchor plugin */
+.medium-editor-toolbar-form {
+  height: 32px;
+}
+
+.medium-editor-toolbar-form input {
+  height: 25px !important;
+  margin-top: -4px;
+  vertical-align: 3px;
 }
 .opt-select-all-container {
   display: none;
@@ -8858,6 +8866,10 @@ body.layout-float .mapConfigOverlay.toc {
 	padding: 30px 25px 20px;
 	font-size: 1.15em;
 	vertical-align: top;
+}
+
+.tab-cfg-location {
+	display: none;
 }
 .sp-container .sp-input {
   background-color: #FFF;
