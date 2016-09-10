@@ -5,7 +5,7 @@ define({
         arcGIS: "ArcGIS",
         flickr: "Flickr",
         googlePhotos: "Google+",
-        facebook: "Facebook",
+        unsplash: "Unsplash",
         urls: "Link to Content",
         urls_short: "Link",
         // the keys for contentType should match constants.contentType
@@ -30,13 +30,15 @@ define({
           noItemsInThisStory: "No content from ArcGIS has been added to this story yet.",
           limitReached: "Showing 100 items. If you didn't find what you need, try a keyword search.",
           galleryItems: {
+            uploadError: "Sorry, this item failed to upload",
+          },
+          agol: {
             remove1: "Delete this unused image from your ArcGIS account.",
             remove2: "(You'll need to upload it again if you decide to use it later.)",
             removeFailed: "Remove this inaccessible image from this list.",
-            uploadError: "Sorry, this item failed to upload",
-            modified: "Modified", // context: "Modified 3/18/16"
-            uploaded: "Uploaded", // context: "Uploaded 3/18/16"
-            by: "by" // context: "Webmap by John Smith"
+            modified: "Modified ${date}", // context: "Modified 3/18/16"
+            uploaded: "Uploaded ${date}", // context: "Uploaded 3/18/16"
+            contentByAuthor: "${contentType} by ${author}" // context: "Webmap by John Smith".
           },
           googlePhotos: {
             searchAndBrowse: "Browse photos on Picasa or Google+"
@@ -44,6 +46,11 @@ define({
           flickr: {
             photostream: "Photostream",
             searchAndBrowse: "Search and browse photos on Flickr"
+          },
+          unsplash: {
+            searchAndBrowse: "Search photos on Unsplash",
+            photoBy: "Photo by ${username}", // username to be supplied by app
+            userLink: "Go to ${username}'s Unsplash page"
           },
           urlContent: {
             uploadHeaders: {
@@ -99,6 +106,13 @@ define({
             helpLinkText: "Learn more",
             cannotFindUser: "Cannot find user", // Context: "Cannot find user 'johnsmith'."
             tryAgain: "Please try again."
+          },
+          unsplash: {
+            placeholder: "Search for photos",
+            brand: "Unsplash",
+            aboutText: "${brand} is a curated collection of free, high-quality photos.",
+            copyrightText: "All photos published on ${brand} are licensed under ${copyrightLinkText}, which means you can copy, modify, distribute and use the photos for free (including for commercial purposes) without asking permission from, or providing attribution to, the photographer or Unsplash.",
+            copyrightLinkText: "Creative Commons Zero"
           },
           flickr: {
             // tabs for search type

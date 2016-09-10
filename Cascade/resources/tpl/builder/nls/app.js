@@ -48,6 +48,7 @@ define({
 				publicWarning: "To ensure this story can be seen by others when shared publicly, you must also share its maps, scenes, layers, or apps publicly using the check story button below.",
 				addTitleNote: "Add a title for your story on the cover to save",
 				saveError: "There was an error saving your story.",
+				duplicate: "Duplicate",
 				organize: "Organize",
 				done: "Done"
 			},
@@ -96,7 +97,7 @@ define({
 					slide: "Slide",
 					noSlides: "No slides available."
 				},
-				mediaAppearance: {
+				sectionAppearance: {
 					layout: "Layout"
 				},
 				size: {
@@ -109,6 +110,7 @@ define({
 					mostImportantPart: "Choose the most important point",
 					cropExplanationImmersive: "Select a point on the image to choose how your image will be cropped at different screen sizes. The point you select will always be visible. Check the box below if your media needs to be fully visible.",
 					cropExplanation: "Select a point on the image to choose how your image will be cropped at different screen sizes. The point you select will always be visible.",
+					color: "Color",
 					previews: "Previews"
 				}
 			},
@@ -128,6 +130,11 @@ define({
 				source: "Source...",
 				linkPrompt: "Optional link...",
 				introductionPlaceholder: "Enter an optional introduction to your credits section..."
+			},
+			immersive: {
+				titleConfig: {
+					theme: "Theme"
+				}
 			},
 			media: {
 				captionPlaceholder: "Your caption here..."
