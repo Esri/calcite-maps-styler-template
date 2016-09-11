@@ -4733,6 +4733,28 @@ body{
 	margin-left: 20px;
 }
 
+.homeLocation{
+	position: relative;
+	top: -20px;
+	left: -25px;
+	font-size: 14px;
+}
+
+.tab-cfg-extent-btns {
+	position: relative;
+	top: -15px;
+}
+
+.generalSettingsButtons{
+	margin-top: -35px;
+}
+
+.extentModeTooltip {
+	left: 5px;
+    top: -14px;
+    position: relative;
+}
+
 .opt-more-infoLink-alias-cont {
 	display: none;
 	margin-left: 25px;
@@ -4751,7 +4773,7 @@ body{
 
 .bookmarkTooltip{
 	position: absolute;
-    top: 176px;
+    top: 139px;
     left: 125px;
 }
 .settings-mapoptions {
