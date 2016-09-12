@@ -853,7 +853,11 @@ define([
                             this.enrichJobID = enrichJobID.jobId;
                             this._updateService().then(lang.hitch(this, function () {
                                 this._geoEnrichLayer().then(lang.hitch(this, function (enrichedLayerUrl) {
-                                    this.enrichedUrl = enrichedLayerUrl.value.url;
+                                    var serviceUrl = enrichedLayerUrl.value.url;
+                                    if (window.location.protocol === "https:") {
+                                      serviceUrl = serviceUrl.replace(/^http:\/\//i, 'https://');
+                                    }
+                                    this.enrichedUrl = serviceUrl;
                                     this._shareItem(enrichedLayerUrl.value.itemId).then(lang.hitch(this, function () {
                                         this._refreshService().then(lang.hitch(this, function () {
                                             this._updateService().then(lang.hitch(this, function () {
