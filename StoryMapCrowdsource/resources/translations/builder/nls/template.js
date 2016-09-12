@@ -17,6 +17,7 @@ define({
     },
     banner: {
       buttons: {
+        feedback: 'Feedback',
         help: 'Help',
         preview: 'View Live',
         share: 'Share',
