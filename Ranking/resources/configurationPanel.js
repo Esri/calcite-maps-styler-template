@@ -42,27 +42,6 @@
       "label": "Button text color"
     }]
   },{
-    "category": "Selection Symbol",
-    "fields":[
-      {
-        "type": "color",
-        "fieldName": "symbolcolor",
-        "tooltip": "Feature selection color",
-        "label": "Color Theme:"
-      },{
-        "type": "number",
-        "fieldName": "symbolsize",
-        "label": "Symbol size"
-      },
-      {
-        "type":"number",
-        "fieldName": "symbolopacity",
-        "label": "Opacity",
-        "tooltip": "Defaults to .8",
-        "constraints":{"min":0 , "max":1, "places": 2 }
-      }
-    ]
-  }, {
     "category": "Theme",
     "fields": [{
       "type": "options",
