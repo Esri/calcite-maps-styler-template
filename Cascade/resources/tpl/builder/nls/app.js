@@ -98,7 +98,8 @@ define({
 					noSlides: "No slides available."
 				},
 				sectionAppearance: {
-					layout: "Layout"
+					layout: "Layout",
+					theme: "Theme"
 				},
 				size: {
 					small: "Small",
