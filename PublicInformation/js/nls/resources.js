@@ -30,7 +30,6 @@ define({
             instagramSettings: "Instagram Settings",
             instagramUser: "Instagram Account",
             instagramSignIn: "Sign in to Instagram",
-            igTime: "Uploaded within the past number of days",
             youtube: "YouTube",
             youtubeSettings: "YouTube Settings",
             ytSettingsInfo: "View user-generated videos including network and professional content.",

@@ -46,7 +46,6 @@ define({
     "hideNotesLayerPopups": true,
     "enableInstagram": true,
     "instagramVisible": false,
-    "instagramTime": "",
     "enableFlickr": true,
     "flickrVisible": false,
     "flickrSearch": "",

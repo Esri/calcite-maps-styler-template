@@ -37,7 +37,7 @@ function (
             filterWords: [],
             autopage: true,
             visible: true,
-            maxpage: 3,
+            maxpage: 10,
             limit: 100,
             title: 'Instagram',
             id: 'instagram',
@@ -47,11 +47,12 @@ function (
             maxScale: null,
             symbol: null,
             infoTemplate: null,
-            time: 5, // from the past days: 1, 2, 3, 4, 5, 6, 7 
-            key: '',
+            key: "",
             refreshTime: 4000,
             token: "",
-            url : 'https://api.instagram.com/v1/media/search/'
+            // todo:
+            // url : 'https://api.instagram.com/v1/media/search/'
+            url : 'https://api.instagram.com/v1/users/self/media/recent/'
         },
         constructor: function (options) {
             // mixin options
@@ -75,7 +76,6 @@ function (
             this.set("minScale", defaults.minScale);
             this.set("maxScale", defaults.maxScale);
             this.set("refreshTime", defaults.refreshTime);
-            this.set("time", defaults.time);
             this.set("graphics", []);
             this.set("noGeo", []);
             // listeners
@@ -270,25 +270,14 @@ function (
 				distance : radius
             };
         },
-        _getTimestamp: function(){
-            var days = parseInt(this.get("time"), 10) || 5;
-            var d = new Date();
-            d.setDate(d.getDate() - days);
-            return Math.round(d.getTime() / 1000);
-        },
         _constructQuery: function () {
-            var unix_timestamp = this._getTimestamp();
             var radius = this._getRadius();
             this.query = {
-                client_id: this.key,
                 count: this.limit,
-				lat: radius.lat,
-				lng: radius.lng,
-                min_timestamp: unix_timestamp,
-                max_timestamp: Math.round(new Date().getTime() / 1000),
-				distance: radius.distance,
-              access_token: this.token,
-                page: 1,
+                lat: radius.lat,
+                lng: radius.lng,
+				        distance: radius.distance,
+                access_token: this.token,
                 format: "json"
             };
             // make the actual API call
@@ -315,9 +304,9 @@ function (
                         if (data.data.length > 0) {
                             this._mapResults(data);
                             // display results for multiple pages
-                            if ((this.autopage) && (this.maxpage > this.pageCount) && (data.data.length === this.limit) && (this.query)) {
+                            if ((this.autopage) && (!this.maxpage || this.maxpage > this.pageCount) && data.pagination && data.pagination.next_max_id) {
                                 this.pageCount++;
-                                this.query.page++;
+                                this.query.max_id = data.pagination.next_max_id;
                                 this._sendRequest(this.url, this.query);
                             } else {
                                 this._updateEnd();
@@ -391,7 +380,9 @@ function (
                 result.height = result.images.thumbnail.height;
                 result.username = result.user.username;
                 result.full_name = result.user.full_name;
-                result.location_name = result.location.name;
+                if(result.location){
+                  result.location_name = result.location.name;
+                }
                 // eliminate geo photos which we already have on the map
                 if (this._dataIds[result.id]) {
                     return;

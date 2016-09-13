@@ -197,6 +197,7 @@ define([
           this._instagramLayer = new InstagramLayer({
             map: this.map,
             token: token,
+            key: this.config.instagramClientId,
             visible: this.config.instagramVisible
           });
           // legend info
@@ -243,23 +244,10 @@ define([
       configureSocial: function () {
         // instagram enabled
         if (this.config.enableInstagram) {
-          if (!this.config.instagramTime) {
-            this.config.instagramTime = 5;
-          }
           // Instagram Dialog
           var igContent = '';
           igContent += '<div class="' + this.socialCSS.dialogContent + '">';
           igContent += '<div class="' + this.socialCSS.layerSettingsDescription + '">' + this.config.i18n.social.igSettingsInfo + '</div>';
-          igContent += '<div class="' + this.socialCSS.layerSettingsHeader + '">' + this.config.i18n.social.igTime + '</div>';
-          igContent += '<div class="' + this.socialCSS.layerSettingsSelect + '"><select id="instagram_search_time">';
-          igContent += this._createInstagramOption(1);
-          igContent += this._createInstagramOption(2);
-          igContent += this._createInstagramOption(3);
-          igContent += this._createInstagramOption(4);
-          igContent += this._createInstagramOption(5);
-          igContent += this._createInstagramOption(6);
-          igContent += this._createInstagramOption(7);
-          igContent += '</select></div>';
           igContent += '<div class="' + this.socialCSS.layerSettingsHeader + '">' + this.config.i18n.social.instagramUser + '</div>';
           igContent += '<div id="instagram_settings_auth">' + this.config.i18n.social.instagramAccountStatus + '</div>';
           igContent += '<div id="instagram_search_submit" class="' + this.socialCSS.layerSettingsSubmit + '">' + this.config.i18n.social.search + '</div>';
@@ -318,6 +306,7 @@ define([
             var status, longStatus;
             // user signed in
             if (evt.authorized) {
+              status = '<a class="' + this.socialCSS.authStatus + '">' + this.config.i18n.general.switchAccount + '</a>';
               if (this._instagramStatusNode) {
                 this._instagramStatusNode.innerHTML = '';
               }
@@ -569,17 +558,6 @@ define([
           this._updateYouTubeFilter();
         }
       },
-      _createInstagramOption: function (value) {
-        var html = '<option ';
-        html += 'value = "' + value + '"';
-        if (parseInt(value, 10) === parseInt(this.config.instagramTime)) {
-          html += ' selected';
-        }
-        html += '>';
-        html += value;
-        html += '</option>';
-        return html;
-      },
       _createFlickrOption: function (value, text) {
         var html = '<option ';
         html += 'value = "' + value + '"';
@@ -647,10 +625,6 @@ define([
       _updateInstagramSearch: function (inputNode) {
         this._instagramLayer.clear();
         this._instagramLayer.show();
-        var igSearchTime = dom.byId('instagram_search_time');
-        if (igSearchTime) {
-          this._instagramLayer.set('time', igSearchTime.value);
-        }
         this._instagramLayer.update(0);
         this._instagramDialog.hide();
       },
@@ -737,13 +711,16 @@ define([
         event.stop(evt);
       },
       _instagramSignIn: function(evt){
+        if(lsTest()){
+          localStorage.removeItem(INSTAGRAM_ACCESS_TOKEN);
+        }
         this._instagramWindow();
         event.stop(evt);
       },
       _instagramWindow: function () {
         var package_path = window.location.pathname.substring(0, window.location.pathname.lastIndexOf('/'));
         var redirect_uri = encodeURIComponent(location.protocol + '//' + location.host + package_path + '/oauth-callback.html');
-        var page = this.config.instagramSigninUrl + "/?client_id=" + this.config.instagramClientId + "&redirect_uri=" + redirect_uri + "&response_type=token";
+        var page = this.config.instagramSigninUrl + "/?client_id=" + this.config.instagramClientId + "&redirect_uri=" + redirect_uri + "&response_type=token&scope=public_content";
         var w = screen.width / 2;
         var h = screen.height / 1.5;
         var left = (screen.width / 2) - (w / 2);
