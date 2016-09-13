@@ -50,9 +50,7 @@ function (
             key: "",
             refreshTime: 4000,
             token: "",
-            // todo:
-            // url : 'https://api.instagram.com/v1/media/search/'
-            url : 'https://api.instagram.com/v1/users/self/media/recent/'
+            url : 'https://api.instagram.com/v1/media/search/'
         },
         constructor: function (options) {
             // mixin options
