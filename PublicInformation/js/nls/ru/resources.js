@@ -27,7 +27,8 @@ define({
     "webcams": "Webcams.travel",
     "instagram": "Instagram",
     "instagramSettings": "Настройки Instagram",
-    "igTime": "Загружены в течение последних нескольких дней",
+    "instagramUser": "Instagram Account",
+    "instagramSignIn": "Sign in to Instagram",
     "youtube": "YouTube",
     "youtubeSettings": "Настройки YouTube",
     "ytSettingsInfo": "Просмотр созданных пользователем видео, включая сетевые и профессиональные ресурсы.",
@@ -46,8 +47,6 @@ define({
     "tweetsFilteredBy": "твиты отфильтрованы по:",
     "photosFilteredBy": "фотографии отфильтрованы по",
     "videosFilteredBy": "видео отобраны по:",
-    "instagramUser": "Instagram Account",
-    "instagramSignIn": "Sign in to Instagram",
     "instagramAccountStatus": "Enable the Instagram layer to see your status.",
     "twitterAccountStatus": "Включить слой Twitter для просмотра статусов."
   },

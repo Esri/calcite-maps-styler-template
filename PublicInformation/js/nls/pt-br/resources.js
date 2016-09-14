@@ -27,7 +27,8 @@ define({
     "webcams": "Webcams",
     "instagram": "Instagram",
     "instagramSettings": "Configurações do Instagram",
-    "igTime": "Carregado dentro do número de dias passados",
+    "instagramUser": "Instagram Account",
+    "instagramSignIn": "Sign in to Instagram",
     "youtube": "YouTube",
     "youtubeSettings": "Configurações do YouTube",
     "ytSettingsInfo": "Veja os vídeos gerados por usuários, incluindo conteúdo da rede e profissional.",
@@ -46,8 +47,6 @@ define({
     "tweetsFilteredBy": "tweets filtrados por:",
     "photosFilteredBy": "fotos filtradas por:",
     "videosFilteredBy": "vídeos filtrados por:",
-    "instagramUser": "Instagram Account",
-    "instagramSignIn": "Sign in to Instagram",
     "instagramAccountStatus": "Enable the Instagram layer to see your status.",
     "twitterAccountStatus": "Habilite a camada do Twitter para visualizar seu status."
   },
