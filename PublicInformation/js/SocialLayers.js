@@ -719,8 +719,11 @@ define([
       },
       _instagramWindow: function () {
         var package_path = window.location.pathname.substring(0, window.location.pathname.lastIndexOf('/'));
-        var redirect_uri = encodeURIComponent(location.protocol + '//' + location.host + package_path + '/oauth-callback.html');
+        
+        var redirect_uri = encodeURIComponent(location.protocol + "//www.arcgis.com/apps/PublicInformation/instagram-callback.html?redirect=" + location.protocol + "//" + location.host + package_path + "/instagram-callback.html");
+        
         var page = this.config.instagramSigninUrl + "/?client_id=" + this.config.instagramClientId + "&redirect_uri=" + redirect_uri + "&response_type=token&scope=public_content";
+        
         var w = screen.width / 2;
         var h = screen.height / 1.5;
         var left = (screen.width / 2) - (w / 2);
@@ -728,7 +731,7 @@ define([
         if (page) {
           window.open(page, "twoAuth", 'scrollbars=yes, resizable=yes, width=' + w + ', height=' + h + ', top=' + top + ', left=' + left, true);
           var _instagramLayer = this._instagramLayer;
-          window.oAuthCallback = function (hash) {
+          window.instagramCallback = function (hash) {
             var params = parseParms(hash);
             var access_token = params.access_token;
             if(lsTest()){
@@ -741,7 +744,7 @@ define([
       },
       _twitterWindow: function (page, forceLogin) {
         var package_path = window.location.pathname.substring(0, window.location.pathname.lastIndexOf('/'));
-        var redirect_uri = encodeURIComponent(location.protocol + '//' + location.host + package_path + '/oauth-callback.html');
+        var redirect_uri = encodeURIComponent(location.protocol + '//' + location.host + package_path + '/twitter-callback.html');
         var w = screen.width / 2;
         var h = screen.height / 1.5;
         var left = (screen.width / 2) - (w / 2);
@@ -759,7 +762,7 @@ define([
           }
           window.open(page, "twoAuth", 'scrollbars=yes, resizable=yes, width=' + w + ', height=' + h + ', top=' + top + ', left=' + left, true);
           var twitterLayer = this._twitterLayer;
-          window.oAuthCallback = function () {
+          window.twitterCallback = function () {
             twitterLayer.update(0);
           };
         }
