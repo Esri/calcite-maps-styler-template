@@ -1,6 +1,6 @@
 {
     "values": {
-        "group": "4c4ea6122c1a4313bab674bc4d9cf83b",
+        "group": "",
 		"theme": "#f26e1f",
 		"applicationName": "",
 		"applicationIcon": "",

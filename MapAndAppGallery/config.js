@@ -21,7 +21,7 @@
      ],
 
     "values": {
-        "group": "03d0b3fe76494125ab404a2b87b40c5c",
+        "group": "",
         "appid": "",
         "oauthappid": "",
         "applicationName": "Gallery",

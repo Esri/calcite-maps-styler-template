@@ -20,7 +20,7 @@
         "http://solutions.arcgis.com/state-government/help/finder/"
      ],
     "values": {
-        "webmap": "d3df161ab8204e848b359d5f352b5b65",
+        "webmap": "",
         "titleBar.title": "Finder",
         "titleBar.iconUrl": "images/onlineapp.png",
         "colorizer.theme": "SeaBlues",

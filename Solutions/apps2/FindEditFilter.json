@@ -19,7 +19,7 @@
         "http://solutions.arcgis.com/local-government/help/find-edit-filter/"
     ],
     "values": {
-        "webmap": "5f6354220f8f45f0a08f31aa5424725a",
+        "webmap": "",
         "titleBar.title": "Find, Edit, and Filter",
         "titleBar.iconUrl": "images/onlineapp.png",
         "colorizer.theme": "EarthBrowns",
