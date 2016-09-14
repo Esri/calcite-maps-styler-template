@@ -46,6 +46,9 @@ define({
     "tweetsFilteredBy": "tweet žinutės filtruojamos pagal:",
     "photosFilteredBy": "fotografijos filtruojamos pagal:",
     "videosFilteredBy": "vaizdo įrašai, filtruoti pagal:",
+    "instagramUser": "Instagram Account",
+    "instagramSignIn": "Sign in to Instagram",
+    "instagramAccountStatus": "Enable the Instagram layer to see your status.",
     "twitterAccountStatus": "Įjunkite Twitter sluoksnį savo būsenos matymui."
   },
   "general": {

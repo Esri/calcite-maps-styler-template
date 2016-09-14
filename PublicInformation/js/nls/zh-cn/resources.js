@@ -46,6 +46,9 @@ define({
     "tweetsFilteredBy": "推文过滤依据:",
     "photosFilteredBy": "照片过滤依据:",
     "videosFilteredBy": "视频过滤条件:",
+    "instagramUser": "Instagram Account",
+    "instagramSignIn": "Sign in to Instagram",
+    "instagramAccountStatus": "Enable the Instagram layer to see your status.",
     "twitterAccountStatus": "启用 Twitter 图层查看状态。"
   },
   "general": {

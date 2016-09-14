@@ -46,6 +46,9 @@ define({
     "tweetsFilteredBy": "lọc bài đăng theo:",
     "photosFilteredBy": "lọc ảnh theo:",
     "videosFilteredBy": "lọc video theo:",
+    "instagramUser": "Instagram Account",
+    "instagramSignIn": "Sign in to Instagram",
+    "instagramAccountStatus": "Enable the Instagram layer to see your status.",
     "twitterAccountStatus": "Bật lớp Twitter để xem trạng thái của bạn."
   },
   "general": {

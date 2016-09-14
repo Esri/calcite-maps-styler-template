@@ -47,7 +47,6 @@ define({
     "hideNotesLayerPopups": true,
     "enableInstagram": true,
     "instagramVisible": false,
-    "instagramTime": "",
     "enableFlickr": true,
     "flickrVisible": false,
     "flickrSearch": "",
@@ -71,7 +70,8 @@ define({
     "twitterSigninUrl": location.protocol + "//utility.arcgis.com/tproxy/signin",
     "flickr_key": "404ebea7d5bc27aa5251d1207620e99b",
     "webcams_key": "L0mSb0kxVHmsh2ZeMGs2CqmGERjap1h9oBTjsn3DXhiErQhFiF",
-    "instagram_key": "288c36a1a42c49de9a2480a05d054619",
+    "instagramClientId": "47ce2d7ea1494adb98708f4b47319227",
+    "instagramSigninUrl": "https://www.instagram.com/oauth/authorize",
     "enablePrintButton": false,
     //Enter the url to your organizations bing maps key if you want to use bing basemaps
     "bingmapskey": "",

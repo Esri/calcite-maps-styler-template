@@ -46,6 +46,9 @@ define({
     "tweetsFilteredBy": "推文篩選依據:",
     "photosFilteredBy": "照片篩選依據:",
     "videosFilteredBy": "影片篩選條件:",
+    "instagramUser": "Instagram Account",
+    "instagramSignIn": "Sign in to Instagram",
+    "instagramAccountStatus": "Enable the Instagram layer to see your status.",
     "twitterAccountStatus": "啟用 Twitter 圖層以查看您的狀態。"
   },
   "general": {

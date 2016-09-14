@@ -46,6 +46,9 @@ define({
     "tweetsFilteredBy": "tweets filtrés par :",
     "photosFilteredBy": "photos filtrées par :",
     "videosFilteredBy": "vidéos filtrées par :",
+    "instagramUser": "Instagram Account",
+    "instagramSignIn": "Sign in to Instagram",
+    "instagramAccountStatus": "Enable the Instagram layer to see your status.",
     "twitterAccountStatus": "Activez la couche Twitter pour voir votre statut."
   },
   "general": {

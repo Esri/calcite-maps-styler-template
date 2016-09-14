@@ -259,6 +259,7 @@ define([
           content += '<div class="' + this.css.panelContainer + '">';
           content += '<div class="' + this.css.panelPadding + '">';
           content += '<div id="twitter_legend_auth"></div>';
+          content += '<div id="instagram_legend_auth"></div>';
           content += '<div id="LegendDiv"></div>';
           content += '</div>';
           content += '</div>';

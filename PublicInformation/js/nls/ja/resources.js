@@ -46,6 +46,9 @@ define({
     "tweetsFilteredBy": "ツイートのフィルタ:",
     "photosFilteredBy": "写真のフィルタ:",
     "videosFilteredBy": "ビデオのフィルタ:",
+    "instagramUser": "Instagram Account",
+    "instagramSignIn": "Sign in to Instagram",
+    "instagramAccountStatus": "Enable the Instagram layer to see your status.",
     "twitterAccountStatus": "Twitter レイヤでステータスを表示できるようにします。"
   },
   "general": {

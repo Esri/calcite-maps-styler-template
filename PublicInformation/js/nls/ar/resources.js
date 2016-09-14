@@ -46,6 +46,9 @@ define({
     "tweetsFilteredBy": "يتم تنقية التغريدات بواسطة:",
     "photosFilteredBy": "يتم تنقية الصور بواسطة:",
     "videosFilteredBy": "تتم تصفية مقاطع الفيديو بواسطة:",
+    "instagramUser": "Instagram Account",
+    "instagramSignIn": "Sign in to Instagram",
+    "instagramAccountStatus": "Enable the Instagram layer to see your status.",
     "twitterAccountStatus": "قم بتمكين طبقة Twitter لرؤية حالتك."
   },
   "general": {
