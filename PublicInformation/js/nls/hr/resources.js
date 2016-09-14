@@ -46,6 +46,9 @@ define({
     "tweetsFilteredBy": "tweetovi filtrirani prema:",
     "photosFilteredBy": "fotografije filtrirane prema:",
     "videosFilteredBy": "videozapisi filtrirani prema:",
+    "instagramUser": "Instagram Account",
+    "instagramSignIn": "Sign in to Instagram",
+    "instagramAccountStatus": "Enable the Instagram layer to see your status.",
     "twitterAccountStatus": "Omogućite Twitter sloj da vidite svoj status."
   },
   "general": {

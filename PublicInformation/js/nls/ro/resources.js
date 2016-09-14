@@ -46,6 +46,9 @@ define({
     "tweetsFilteredBy": "tweeturi filtrate după:",
     "photosFilteredBy": "Fotografii filtrate după:",
     "videosFilteredBy": "clipuri video filtrate după:",
+    "instagramUser": "Instagram Account",
+    "instagramSignIn": "Sign in to Instagram",
+    "instagramAccountStatus": "Enable the Instagram layer to see your status.",
     "twitterAccountStatus": "Activaţi stratul tematic Twitter pentru a vă vedea starea."
   },
   "general": {

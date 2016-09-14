@@ -46,6 +46,9 @@ define({
     "tweetsFilteredBy": "סינון ציוצים על ידי:",
     "photosFilteredBy": "סינון תמונות על ידי:",
     "videosFilteredBy": "קטעי וידאו מסוננים על ידי:",
+    "instagramUser": "Instagram Account",
+    "instagramSignIn": "Sign in to Instagram",
+    "instagramAccountStatus": "Enable the Instagram layer to see your status.",
     "twitterAccountStatus": "אפשר את שכבת הציוצים כדי לראות את הסטטוס שלך."
   },
   "general": {

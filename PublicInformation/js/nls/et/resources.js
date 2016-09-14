@@ -46,6 +46,9 @@ define({
     "tweetsFilteredBy": "säutsud on filtreeritud:",
     "photosFilteredBy": "fotod on filtreeritud:",
     "videosFilteredBy": "videomaterjali filtreerimine:",
+    "instagramUser": "Instagram Account",
+    "instagramSignIn": "Sign in to Instagram",
+    "instagramAccountStatus": "Enable the Instagram layer to see your status.",
     "twitterAccountStatus": "Luba Twitteri kihti, et näha enda staatust."
   },
   "general": {

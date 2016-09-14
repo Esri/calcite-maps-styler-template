@@ -46,6 +46,9 @@ define({
     "tweetsFilteredBy": "กรองทวีตโดย:",
     "photosFilteredBy": "กรองรูปภาพโดย:",
     "videosFilteredBy": "วิดีโอที่กรองด้วย:",
+    "instagramUser": "Instagram Account",
+    "instagramSignIn": "Sign in to Instagram",
+    "instagramAccountStatus": "Enable the Instagram layer to see your status.",
     "twitterAccountStatus": "กำหนดให้ชั้นข้อมูลทวิตเตอร์มองเห็นสถานะของคุณ"
   },
   "general": {

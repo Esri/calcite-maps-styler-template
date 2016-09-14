@@ -46,6 +46,9 @@ define({
     "tweetsFilteredBy": "tweet filtreleme ölçütü:",
     "photosFilteredBy": "fotoğraf filtreleme ölçütü:",
     "videosFilteredBy": "Video filtreleme kriteri:",
+    "instagramUser": "Instagram Account",
+    "instagramSignIn": "Sign in to Instagram",
+    "instagramAccountStatus": "Enable the Instagram layer to see your status.",
     "twitterAccountStatus": "Durumunuzu görmek için Twitter katmanını etkinleştirin."
   },
   "general": {

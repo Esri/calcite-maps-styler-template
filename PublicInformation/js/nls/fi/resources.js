@@ -46,6 +46,9 @@ define({
     "tweetsFilteredBy": "twiittien suodatusperuste:",
     "photosFilteredBy": "valokuvien suodatusperuste:",
     "videosFilteredBy": "videoiden suodatusperuste:",
+    "instagramUser": "Instagram Account",
+    "instagramSignIn": "Sign in to Instagram",
+    "instagramAccountStatus": "Enable the Instagram layer to see your status.",
     "twitterAccountStatus": "Ota Twitter-karttataso käyttöön, jotta näet tilasi."
   },
   "general": {
