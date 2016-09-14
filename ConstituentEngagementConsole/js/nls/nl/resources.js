@@ -83,7 +83,7 @@ define({
     "valueRadioButtonLabel": "Waarde",
     "uniqueRadioButtonLabel": "Uniek",
     "selectLayerToBegin": "Selecteer een categorie om te starten",
-    "layerFeatureCount": "${featureCount} records"
+    "layerFeatureCount": "${selectedFeatureCount} geselecteerd / ${featureCount} items"
   },
   "timeSlider": {
     "timeSliderLabel": "Tijdsbereik",
@@ -97,7 +97,12 @@ define({
     "placeHolderText": "",
     "noCommentsAvailableText": "Geen records beschikbaar",
     "remainingTextCount": "${0} teken(s) over",
-    "showNoText": "Nee"
+    "showNoText": "Nee",
+    "selectAttachments": "Bijlagen",
+    "selectFileText": "Bladeren",
+    "attachmentSelectedMsg": "bijlage(n) geselecteerd",
+    "attachmentHeaderText": "Bijlagen",
+    "addRecordText": "Item toevoegen"
   },
   "main": {
     "noGroup": "Geen groep geconfigureerd"
@@ -109,17 +114,18 @@ define({
   },
   "manualRefresh": {
     "manualRefreshIconTooltip": "Vernieuwen",
-    "confirmManualRefeshText": "Alle selecties en onopgeslagen wijzigingen worden genegeerd"
+    "confirmManualRefreshText": "Alle selecties en onopgeslagen wijzigingen worden genegeerd"
   },
   "help": {
     "helpIconTooltip": "Help"
   },
   "filter": {
     "noFeatureFoundText": "Geen object gevonden voor deze waarde.",
-    "distinctQueryFalied": "Geen afzonderlijke waarden gevonden voor het veld.",
+    "distinctQueryFailed": "Geen afzonderlijke waarden gevonden voor het veld.",
     "andText": "en",
-    "filterInEditModeAlert": "Filters onbeschikbaar tijdens het bewerken",
-    "dropdownSelectOption": "Selecteren"
+    "filterInEditModeAlert": "Filters niet beschikbaar tijdens het bewerken.",
+    "dropdownSelectOption": "Selecteren",
+    "filterInShowSelectedEditModeAlert": "Filters niet beschikbaar in modus 'Geef geselecteerde weer'."
   },
   "detailsPanel": {
     "editContentText": "Record bewerken"
@@ -127,5 +133,10 @@ define({
   "signOutPage": {
     "signOutMessage": "U bent afgemeld.",
     "reSignInMessage": "Klik hier om u aan te melden."
+  },
+  "selectionOptions": {
+    "selectionOptionsIconTooltip": "Selectie-opties",
+    "showAllOptionText": "Alles tonen",
+    "showSelectedOptionText": "Geef geselecteerde weer"
   }
 });

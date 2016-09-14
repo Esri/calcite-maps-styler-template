@@ -250,12 +250,12 @@ define(["dojo/Evented", "dojo/_base/declare", "dojo/_base/lang", "dijit/_WidgetB
 
         if (this.drawerOpen) {
           this._toggleNode.click();
+          this.resize();
         } else {
           //close the drawer
           domClass.add(document.body, this.css.drawerOpen);
           this.toggle(false).always(lang.hitch(this, function() {
             this.resize();
-
           }));
         }
         // set loaded property

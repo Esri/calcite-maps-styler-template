@@ -83,7 +83,7 @@ define({
     "valueRadioButtonLabel": "値",
     "uniqueRadioButtonLabel": "個別値",
     "selectLayerToBegin": "開始するカテゴリを選択",
-    "layerFeatureCount": "${featureCount} レコード"
+    "layerFeatureCount": "${selectedFeatureCount}/${featureCount} レコードが選択されました"
   },
   "timeSlider": {
     "timeSliderLabel": "時間範囲",
@@ -97,7 +97,12 @@ define({
     "placeHolderText": "",
     "noCommentsAvailableText": "レコードがありません",
     "remainingTextCount": "${0} 文字が残っています",
-    "showNoText": "なし"
+    "showNoText": "なし",
+    "selectAttachments": "添付ファイル",
+    "selectFileText": "参照",
+    "attachmentSelectedMsg": "添付ファイルが選択されています",
+    "attachmentHeaderText": "添付ファイル",
+    "addRecordText": "レコードの追加"
   },
   "main": {
     "noGroup": "グループが構成されていません"
@@ -109,17 +114,18 @@ define({
   },
   "manualRefresh": {
     "manualRefreshIconTooltip": "更新",
-    "confirmManualRefeshText": "すべての選択セットおよび保存されていない変更は破棄されます"
+    "confirmManualRefreshText": "すべての選択セットおよび保存されていない変更は破棄されます"
   },
   "help": {
     "helpIconTooltip": "ヘルプ"
   },
   "filter": {
     "noFeatureFoundText": "この値のフィーチャが見つかりません。",
-    "distinctQueryFalied": "フィールドの個別値が見つかりません。",
+    "distinctQueryFailed": "フィールドの個別値が見つかりません。",
     "andText": "および",
-    "filterInEditModeAlert": "編集中はフィルターを使用できません",
-    "dropdownSelectOption": "選択"
+    "filterInEditModeAlert": "編集中はフィルターを使用できません。",
+    "dropdownSelectOption": "選択",
+    "filterInShowSelectedEditModeAlert": "[選択レイヤーの表示] モードではフィルターを使用できません。"
   },
   "detailsPanel": {
     "editContentText": "レコードの編集"
@@ -127,5 +133,10 @@ define({
   "signOutPage": {
     "signOutMessage": "正常にサイン アウトしました",
     "reSignInMessage": "ここをクリックしてサイン インします"
+  },
+  "selectionOptions": {
+    "selectionOptionsIconTooltip": "選択オプション",
+    "showAllOptionText": "すべて表示",
+    "showSelectedOptionText": "選択レイヤーの表示"
   }
 });

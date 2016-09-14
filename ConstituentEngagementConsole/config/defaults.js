@@ -33,7 +33,7 @@ define({
     // Defaults to arcgis.com. Set this value to your portal or organization host name.
     "sharinghost": location.protocol + "//" + "arcgis.com",
     "units": null,
-    // If your applcation needs to edit feature layer fields set this value to true. When false the map will
+    // If your application needs to edit feature layer fields set this value to true. When false the map will
     // be created with layers that are not set to editable which allows the FeatureLayer to load features optimally.
     "editable": false,
     "markerSymbol": "./images/esri-blue-pin-circle-26.png",
@@ -104,13 +104,13 @@ define({
     // to set content for help dialog
     "helpDialogContent": "<p>Welcome to Crowdsource Manager! </p> <p>Use this application to review and update reports. To get started, choose a category and then choose a report from the table or map.</p> <p>The details of that report will load in the panel in the lower left corner of the screen. From this panel, you can also review images, charts, and other information associated with the selected report. Update the report details by clicking the pencil icon, or hold down the CTRL key while clicking multiple reports to open the batch editor.</p> <p>View the location of the report using the map in the lower right corner of the application.</p><p>Reports can be filtered by time or field values. If time filtering is enabled for your reports, a time slider will appear below the table. Drag the time slider handle(s) to show only reports from a specific time span in the map and table. If filtering based on field values is enabled for your reports, a filter icon will appear in the table header next to the name of the fields that can be used to filter the reports. Click the icon and specify which reports you'd like to see in the table and map.</p>",
     // to set the text of popup tab
-    "popupTabText": "Popup",
+    "popupTabText": "Info",
     // to set the text of comment tab
     "mediaTabText": "Media",
     // to set the text of media tab
     "commentsTabText": "Comments",
     // to show/hide help icon
     "showHelpIcon": false,
-    // id of basemap to use if organization's basemap group is not available
-    "fallbackBasemapId": "6e03e8c26aad4b9c92a87c1063ddb0e3"
+    // to show as a label for attachment section in comments form where attachments can be added
+    "commentFormAttachmentSectionLabel": "Attachments"
 });

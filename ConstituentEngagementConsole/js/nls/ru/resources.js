@@ -83,7 +83,7 @@ define({
     "valueRadioButtonLabel": "Значение",
     "uniqueRadioButtonLabel": "Уникальное",
     "selectLayerToBegin": "Для начала работы выберите категорию",
-    "layerFeatureCount": "${featureCount} записей"
+    "layerFeatureCount": "${selectedFeatureCount} выбрано / ${featureCount} записей"
   },
   "timeSlider": {
     "timeSliderLabel": "Временной диапазон",
@@ -97,7 +97,12 @@ define({
     "placeHolderText": "",
     "noCommentsAvailableText": "Нет доступных записей",
     "remainingTextCount": "Символов осталось: ${0}",
-    "showNoText": "Нет"
+    "showNoText": "Нет",
+    "selectAttachments": "Вложения",
+    "selectFileText": "Просмотр",
+    "attachmentSelectedMsg": "выбранные вложения",
+    "attachmentHeaderText": "Вложения",
+    "addRecordText": "Добавить запись"
   },
   "main": {
     "noGroup": "Не задана группа"
@@ -109,17 +114,18 @@ define({
   },
   "manualRefresh": {
     "manualRefreshIconTooltip": "Обновить",
-    "confirmManualRefeshText": "Все выборки и несохраненные изменения будут удалены"
+    "confirmManualRefreshText": "Все выборки и несохраненные изменения будут удалены"
   },
   "help": {
     "helpIconTooltip": "Справка"
   },
   "filter": {
     "noFeatureFoundText": "Для этого значения не найдено ни одного объекта.",
-    "distinctQueryFalied": "Для этого поля не найдено различающихся значений.",
+    "distinctQueryFailed": "Для этого поля не найдено различающихся значений.",
     "andText": "и",
-    "filterInEditModeAlert": "Во время редактирования фильтры недоступны",
-    "dropdownSelectOption": "Выбрать"
+    "filterInEditModeAlert": "Во время редактирования фильтры недоступны.",
+    "dropdownSelectOption": "Выбрать",
+    "filterInShowSelectedEditModeAlert": "В режиме Показать выбранные фильтры недоступны."
   },
   "detailsPanel": {
     "editContentText": "Редактировать запись"
@@ -127,5 +133,10 @@ define({
   "signOutPage": {
     "signOutMessage": "Выход успешно выполнен",
     "reSignInMessage": "Щелкните здесь, чтобы выполнить вход"
+  },
+  "selectionOptions": {
+    "selectionOptionsIconTooltip": "Опции выборки",
+    "showAllOptionText": "Показать все",
+    "showSelectedOptionText": "Показать выбранные"
   }
 });

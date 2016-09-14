@@ -24,10 +24,11 @@ define({
   "elevation": {
     "toggle": "Přepnout graf výškového profilu.",
     "drawTool": "Nakreslete na mapu linii pro vygenerování výškového profilu.",
-    "selectMessage": "Klikněte na liniový prvek nebo pomocí nástroje kreslení nakreslete linii, abyste zobrazili výškový profil."
+    "selectMessage": "Klikněte na liniový prvek nebo pomocí nástroje kreslení nakreslete linii, abyste zobrazili výškový profil.",
+    "gainLossTemplate": "Min.: ${min}   Max.: ${max}   Začátek: ${start}   Konec: ${end}   Změna: ${gainLoss}"
   },
   "splash": {
-    "title": "Nadpis",
+    "title": "Název",
     "content": "Nakonfigurujte pro vytvoření vlastního úvodního obsahu"
   },
   "legend": {

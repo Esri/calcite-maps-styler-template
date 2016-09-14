@@ -42,14 +42,22 @@ define({
   "find": null,
   "feature": null,
   "show_panel": false,
+  // This is an option added so that developers working with the
+  // hosted version of the application can apply custom styles
+  // not used in the download version.
+  "customstyle": null,
   "theme": "light",
-  //"popuptheme": "light", //light or dark
+  // Or define background and text colors
+  "background": null,
+  "color": null,
+  "iconcolor": null,
   "markerSymbol": "./images/EsriBluePinCircle26.png",
   "markerSymbolWidth": 26,
   "markerSymbolHeight": 26,
   "level": null,
   "center": null,
   "disable_scroll": true,
+  "disable_nav": false, // set to true to disable all map navigation
   //Enter the url to the proxy if needed by the application. See the 'Using the proxy page' help topic for details
   //http://developers.arcgis.com/en/javascript/jshelp/ags_proxy.html
   "proxyurl": "",

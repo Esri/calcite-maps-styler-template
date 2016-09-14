@@ -83,7 +83,7 @@ define({
     "valueRadioButtonLabel": "Vrijednost",
     "uniqueRadioButtonLabel": "Jedinstveno",
     "selectLayerToBegin": "Odaberite kategoriju za početak rada",
-    "layerFeatureCount": "${featureCount} zapis(a)"
+    "layerFeatureCount": "${selectedFeatureCount} odabrano / ${featureCount} zapis/a"
   },
   "timeSlider": {
     "timeSliderLabel": "Vremenski raspon",
@@ -97,7 +97,12 @@ define({
     "placeHolderText": "",
     "noCommentsAvailableText": "Nema dostupnih zapisa",
     "remainingTextCount": "preostalo ${0} znakova",
-    "showNoText": "Ne"
+    "showNoText": "Ne",
+    "selectAttachments": "Privici",
+    "selectFileText": "Pregledaj",
+    "attachmentSelectedMsg": "odabrani privitak(-ci)",
+    "attachmentHeaderText": "Privici",
+    "addRecordText": "Dodaj zapis"
   },
   "main": {
     "noGroup": "Nema konfiguriranih grupa"
@@ -109,17 +114,18 @@ define({
   },
   "manualRefresh": {
     "manualRefreshIconTooltip": "Osvježi",
-    "confirmManualRefeshText": "Odbacit će se svi odabiri i nespremljene promjene"
+    "confirmManualRefreshText": "Odbacit će se svi odabiri i nespremljene promjene"
   },
   "help": {
     "helpIconTooltip": "Pomoć"
   },
   "filter": {
     "noFeatureFoundText": "Nema geoobjekata za ovu vrijednost.",
-    "distinctQueryFalied": "Nema određenih vrijednosti za ovo polje.",
+    "distinctQueryFailed": "Nema određenih vrijednosti za ovo polje.",
     "andText": "i",
-    "filterInEditModeAlert": "Filtri nisu dostupni tijekom uređivanja",
-    "dropdownSelectOption": "Odaberi"
+    "filterInEditModeAlert": "Filtri nisu dostupni tijekom uređivanja.",
+    "dropdownSelectOption": "Odaberi",
+    "filterInShowSelectedEditModeAlert": "Filtri nisu dostupni u načinu „Prikaži odabrane”."
   },
   "detailsPanel": {
     "editContentText": "Uredi zapis"
@@ -127,5 +133,10 @@ define({
   "signOutPage": {
     "signOutMessage": "Uspješno ste se odjavili",
     "reSignInMessage": "Kliknite ovdje za prijavu"
+  },
+  "selectionOptions": {
+    "selectionOptionsIconTooltip": "Opcije odabira",
+    "showAllOptionText": "Prikaži sve",
+    "showSelectedOptionText": "Prikaži odabrano"
   }
 });

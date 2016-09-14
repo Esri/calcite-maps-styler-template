@@ -1,15 +1,21 @@
 define({
   "signInDialog": {
-    "title": "Iniciar Sessão no Story Maps",
-    "subtitle": "Iniciar sessão com a sua conta ArcGIS Online em:",
-    "reasonOne": "Crie story maps envolventes para contar as suas histórias.",
-    "reasonTwo": "Utilize os seus mapas e dados do ArcGIS Online nos seus story maps.",
-    "reasonThree": "Efetue a gestão dos seus story maps e verifique o estado do respetivo conteúdo.",
-    "noAccountYet": "Não possui uma conta do ArcGIS Online? Registe-se para uma:",
+    "title": "Comece a Contar Histórias!",
+    "reasonOne": "Crie story maps envolventes",
+    "reasonTwo": "Utilize o potencial de ArcGIS",
+    "reasonThree": "Efetue a gestão das suas histórias",
+    "noAccountYet": "Ainda não possui uma conta do ArcGIS Online?",
+    "signUpFor": "Iniciar sessão para uma:",
     "publicAccount": "Conta pública gratuita, não-comercial",
     "subscriptionAccount": "Subscrição de conta teste ArcGIS",
     "signInExpired": "O seu início de sessão expirou. Volte a iniciar sessão para retomar.",
     "somethingNotLoading": "Algo não está a ser carregado corretamente. Tente atualizar a página."
+  },
+  "signedInPrompt": {
+    "signedIn": "Agora tem sessão iniciada.",
+    "backToStoryMaps": "Voltar para Story Maps",
+    "closeRefresh": "Feche este separador e atualize o site web.",
+    "close": "Fechar"
   },
   "unavailableDialog": {
     "title": "Início de Sessão Indisponível",

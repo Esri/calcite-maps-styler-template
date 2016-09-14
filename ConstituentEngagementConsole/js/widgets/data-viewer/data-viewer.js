@@ -1,4 +1,4 @@
-﻿/*global define,dojo,alert,moment,$,setTimeout */
+﻿/*global define,moment,$,setTimeout,clearTimeout */
 /*jslint sloppy:true */
 /*
 | Copyright 2014 Esri
@@ -44,6 +44,9 @@ define([
     "dojo/query",
     "dojo/_base/array",
     "dojo/dom-geometry",
+    "esri/geometry/Extent",
+    "dojo/string",
+    "dojo/dom",
     "dojo/domReady!"
 ], function (
     declare,
@@ -73,7 +76,10 @@ define([
     domStyle,
     query,
     array,
-    domGeom
+    domGeom,
+    Extent,
+    string,
+    dom
 ) {
     return declare([_WidgetBase, _TemplatedMixin, _WidgetsInTemplateMixin], {
         templateString: template,
@@ -88,12 +94,20 @@ define([
         _isRowFound: false, // keeps track whether row is available in grid when user selects feature from map
         _manualRefreshDataObj: {}, // keep the track of last sorting and the column number on which sorting performed
         _filterRefreshDataObj: {}, // keep the track of last horizontal position to regain data-viewer position after filter applied
-        isEditMode: false,
+        isEditMode: false, // to keep track whether popup panel is in edit mode or not
+        _rowScrollTimer: null, // Timer to select row when stacked feature is selected
+        _graphicLayerAddHandle: null, // to store graphics-add handle event of graphics layer
+        _graphicLayerRemoveHandle: null, // to store graphics-remove handle event of graphics layer
+        _graphicLayerClearHandle: null, // to store graphics-clear handle event of graphics layer
+        isShowSelectedClicked: null, // to notify that show selected option is clicked
+        isShowAllClicked: null, // to notify that show all option is clicked
+        _selectedRowIndex: null, // to store index of row that is selected
+        _isRowRemovedAfterMapClick: null, // to track whether row is removed after map click
 
         /**
         * This function is called when widget is constructed
         * @param{object} parameters of widget
-        * @memberOf widgets/data-viewer/details-helper
+        * @memberOf widgets/data-viewer/data-viewer
         */
         constructor: function (options) {
             lang.mixin(this, options);
@@ -105,7 +119,7 @@ define([
         * @memberOf widgets/data-viewer/data-viewer
         */
         startup: function (operationalLayerSelected) {
-            this._createDataViewerUI(operationalLayerSelected);
+            this.createDataViewerUI(operationalLayerSelected);
         },
 
         /**
@@ -113,7 +127,7 @@ define([
         * @param{boolean} whether new operational layer is selected or not
         * @memberOf widgets/data-viewer/data-viewer
         */
-        _createDataViewerUI: function (operationalLayerSelected) {
+        createDataViewerUI: function (operationalLayerSelected) {
             domConstruct.empty(this.dataViewerContainer);
             // If a new operational layer is selected than reset panel & clear selected records etc...
             if (operationalLayerSelected) {
@@ -135,7 +149,12 @@ define([
             }
             // If selected operational exists.
             if (this._selectedOperationalLayer) {
-                this._features = this._selectedOperationalLayer.graphics;
+                if (this.isShowSelectedClicked) {
+                    this._features = this._selectedOperationalLayer.graphics;
+                    this._features = this._getSelectedFeatures();
+                } else {
+                    this._features = this._selectedOperationalLayer.graphics;
+                }
                 // Display data-viewer if features are available in current map extent
                 if (this._features.length > 0) {
                     this._createDataViewerPanel();
@@ -154,6 +173,125 @@ define([
         },
 
         /**
+        * This function is used to update the count of selected & total features
+        * @memberOf widgets/data-viewer/data-viewer
+        */
+        _getSelectedFeatures: function () {
+            var filteredFeature, filteredFeatureArr, filterFeatureID, selectedFeatureArr, i, j;
+            filteredFeatureArr = [];
+            selectedFeatureArr = [];
+            for (i = 0; i < this._selectRowGraphicsLayer.graphics.length; i++) {
+                filterFeatureID = this._selectRowGraphicsLayer.graphics[i].attributes[this._selectedOperationalLayer.objectIdField];
+                filteredFeature = this._getFilteredFeature(filterFeatureID);
+                filteredFeatureArr.push(filteredFeature);
+            }
+            for (j = 0; j < filteredFeatureArr.length; j++) {
+                selectedFeatureArr.push(filteredFeatureArr[j][0]);
+            }
+            return selectedFeatureArr;
+        },
+
+        /**
+        * This function is used to get the filtered feature i.e. feature which are selected
+        * @memberOf widgets/data-viewer/data-viewer
+        */
+        _getFilteredFeature: function (filterFeatureID) {
+            var filteredFeature;
+            filteredFeature = $.grep(this._features, lang.hitch(this, function (feature) {
+                return feature.attributes[this._selectedOperationalLayer.objectIdField] === filterFeatureID;
+            }));
+            return filteredFeature;
+        },
+
+        /**
+        * This function is used to update the count of selected & total features
+        * whenever feature is selected/de-selected
+        * @memberOf widgets/data-viewer/data-viewer
+        */
+        _updateSelectedAndTotalRecordCounts: function () {
+            var countLabelString;
+            countLabelString = string.substitute(this.appConfig.i18n.dataviewer.layerFeatureCount, {
+                featureCount: this._selectedOperationalLayer.graphics.length,
+                selectedFeatureCount: this._selectRowGraphicsLayer.graphics.length
+            });
+            dom.byId("layerFeatureCountContainer").innerHTML = countLabelString;
+        },
+
+        /**
+        * This function is used to attach event listener whenever feature is added/removed from
+        * graphics layer
+        * @memberOf widgets/data-viewer/data-viewer
+        */
+        _removeAndAttachGraphicLayerClickHandle: function () {
+            if (this._graphicLayerAddHandle) {
+                this._graphicLayerAddHandle.remove();
+            }
+            if (this._graphicLayerRemoveHandle) {
+                this._graphicLayerRemoveHandle.remove();
+            }
+            if (this._graphicLayerClearHandle) {
+                this._graphicLayerClearHandle.remove();
+            }
+            // Update record count on selection of feature
+            this._graphicLayerAddHandle = on(this._selectRowGraphicsLayer, "graphic-add", lang.hitch(this, function () {
+                this._updateSelectedAndTotalRecordCounts();
+                if (this._selectRowGraphicsLayer.graphics.length > 0) {
+                    this.enableSelectionOptionsIcon();
+                }
+            }));
+            // Update record count on de-selection of feature
+            this._graphicLayerRemoveHandle = on.pausable(this._selectRowGraphicsLayer, "graphic-remove", lang.hitch(this, function () {
+                this._updateSelectedAndTotalRecordCounts();
+                if ((this._selectRowGraphicsLayer.graphics.length === 0)) {
+                    this.disableSelectionOptionsIcon();
+                    if (this.isShowSelectedClicked) {
+                        this.showAllClicked();
+                    }
+                }
+                if ((this._selectRowGraphicsLayer.graphics.length === 1) && (this.isShowSelectedClicked)) {
+                    this.showSelectedClicked();
+                }
+            }));
+            this._graphicLayerClearHandle = on(this._selectRowGraphicsLayer, "graphics-clear", lang.hitch(this, function () {
+                if (this._graphicLayerRemoveHandle) {
+                    this._graphicLayerRemoveHandle.resume();
+                }
+            }));
+        },
+
+        /**
+        * This function is used to enable selection option icon
+        * @memberOf widgets/data-viewer/data-viewer
+        */
+        showAllClicked: function () {
+            return;
+        },
+
+        /**
+        * This function is used to notify that show selected is clicked
+        * @memberOf widgets/data-viewer/data-viewer
+        */
+        showSelectedClicked: function () {
+            return;
+        },
+
+        /**
+        * This function is used to enable selection option icon
+        * @memberOf widgets/data-viewer/data-viewer
+        */
+        enableSelectionOptionsIcon: function () {
+            return;
+        },
+
+        /**
+        * This function is used to disable selection option icon
+        * @memberOf widgets/data-viewer/data-viewer
+        */
+        disableSelectionOptionsIcon: function () {
+            return;
+        },
+
+        /**
         * This function is used to add graphic layer on map
         * @memberOf widgets/data-viewer/data-viewer
         */
@@ -161,11 +299,13 @@ define([
             this._selectRowGraphicsLayer = this.map.getLayer("selectedRowGraphicsLayer");
             // if graphic layer is available than clear it else create it and add on map
             if (this._selectRowGraphicsLayer) {
+                this._removeAndAttachGraphicLayerClickHandle();
                 this._selectRowGraphicsLayer.clear();
             } else {
                 this._selectRowGraphicsLayer = new GraphicsLayer({
                     "id": "selectedRowGraphicsLayer"
                 });
+                this._removeAndAttachGraphicLayerClickHandle();
                 if (this.popupInfo) {
                     this._selectRowGraphicsLayer.setInfoTemplate(new PopupTemplate(this.popupInfo));
                 }
@@ -199,9 +339,7 @@ define([
                 for (j = 0; j < this._selectedOperationalLayer.fields.length; j++) {
                     if (this._selectedOperationalLayer.fields[j].name === this.popupInfo.fieldInfos[i].fieldName) {
                         // If fields are editable or visible than only display it.
-                        if ((this.popupInfo.fieldInfos[i].visible) || (this.popupInfo
-                                .fieldInfos[i].fieldName.toLowerCase() === this._selectedOperationalLayer
-                                .objectIdField.toLowerCase()) || (this.popupInfo.fieldInfos[i].isEditable)) {
+                        if ((this.popupInfo.fieldInfos[i].visible) || (this.popupInfo.fieldInfos[i].fieldName.toLowerCase() === this._selectedOperationalLayer.objectIdField.toLowerCase()) || (this.popupInfo.fieldInfos[i].isEditable)) {
                             obj = {};
                             obj.type = this._selectedOperationalLayer.fields[j].type;
                             obj.displayField = true;
@@ -215,7 +353,7 @@ define([
                             }
                             // Tracks whether a date format is applied or not
                             if ((this.popupInfo.fieldInfos[i].format) && (this.popupInfo
-                                    .fieldInfos[i].format.dateFormat)) {
+                                .fieldInfos[i].format.dateFormat)) {
                                 obj.format = this.popupInfo.fieldInfos[i].format.dateFormat;
                             }
                             // Tracks whether a coded domain value is applied or not
@@ -228,7 +366,7 @@ define([
                             }
                             // Tracks whether a number formatter is applied or not
                             if ((this.popupInfo.fieldInfos[i].format) && (this.popupInfo
-                                    .fieldInfos[i].format.digitSeparator) && (this.popupInfo
+                                .fieldInfos[i].format.digitSeparator) && (this.popupInfo
                                     .fieldInfos[i].format.hasOwnProperty("places"))) {
                                 // If places is applied to number formatter.
                                 obj.numberFormat = this.popupInfo.fieldInfos[i].format;
@@ -245,7 +383,7 @@ define([
                                 obj.showInDetailsTab = true;
                             }
                             if ((this.popupInfo.fieldInfos[i].visible) && (this.popupInfo
-                                    .fieldInfos[i].fieldName.toLowerCase() === this._selectedOperationalLayer
+                                .fieldInfos[i].fieldName.toLowerCase() === this._selectedOperationalLayer
                                     .objectIdField.toLowerCase())) {
                                 obj.showObjectIdField = true;
                             }
@@ -261,14 +399,14 @@ define([
         * @memberOf widgets/data-viewer/data-viewer
         */
         _createDataViewerPanel: function () {
-            var i, colums;
+            var i, columns;
             domClass.remove(this.dataViewerContainer, "esriCTHidden");
             this._createDataViewerHeaderPanel();
             this._createDataViewerDataPanel();
             this._bindTableSorterEvent();
-            colums = query(".tableFloatingHeaderOriginal th", this._table);
+            columns = query(".tableFloatingHeaderOriginal th", this._table);
             // loop through columns to create filter container for each table headers
-            for (i = 0; i < colums.length; i++) {
+            for (i = 0; i < columns.length; i++) {
                 this._createHeaderOptionContainer(i);
             }
             this._bindDataViewerScrollEvent();
@@ -276,7 +414,7 @@ define([
             // manual refresh invoke the sorting function with the same parameters to sort them
             if (this.isManualRefreshedClicked) {
                 if (this._manualRefreshDataObj && this._manualRefreshDataObj.columnNumber && this._manualRefreshDataObj.sortingOrder) {
-                    this._sortByColoumn(this._manualRefreshDataObj.columnNumber, this._manualRefreshDataObj.sortingOrder);
+                    this._sortByColumn(this._manualRefreshDataObj.columnNumber, this._manualRefreshDataObj.sortingOrder);
                 }
                 // if last table vertical position captured before manual refresh invoke the scroll top
                 // function to bring the focus of table at same position
@@ -291,16 +429,55 @@ define([
                     this._scrollToActivatedFeature(0, false);
                 }
             }
-            this._highlightUpdatedFeature();
+
+            if ((this.isShowSelectedClicked) || (this.isShowAllClicked)) {
+                this._highlightFeatureInShowSelectedMode();
+                this._highlightFeatureInShowAllMode();
+            } else {
+                this._highlightUpdatedFeature();
+            }
         },
 
         /**
-        * highlight table row for the respective updated feature
+        * This function is used to highlight feature in show selected mode
+        * @memberOf widgets/data-viewer/data-viewer
+        */
+        _highlightFeatureInShowSelectedMode: function () {
+            var i, objectID;
+            if ((this.isShowSelectedClicked) && (this._features.length > 0)) {
+                for (i = 0; i < this._features.length; i++) {
+                    objectID = this._features[i].attributes[this._selectedOperationalLayer.objectIdField];
+                    this._selectRowOnFeatureClick(objectID, true, true);
+                }
+            }
+        },
+
+        /**
+        * This function is used to highlight feature in show all mode
+        * @memberOf widgets/data-viewer/data-viewer
+        */
+        _highlightFeatureInShowAllMode: function () {
+            var i, objectID;
+            if ((this.isShowAllClicked) && (this._selectRowGraphicsLayer.graphics.length > 0)) {
+                for (i = 0; i < this._selectRowGraphicsLayer.graphics.length; i++) {
+                    objectID = this._selectRowGraphicsLayer.graphics[i].attributes[this._selectedOperationalLayer.objectIdField];
+                    this._selectRowOnFeatureClick(objectID, true, true);
+                }
+            }
+            this.isShowAllClicked = false;
+        },
+
+        /**
+        * Highlight table row for the respective updated feature
         * @memberOf widgets/data-viewer/data-viewer
         */
         _highlightUpdatedFeature: function () {
             if (this.updatedFeature) {
-                this._selectFeatureOnMapClick({ graphic: this.updatedFeature });
+                if (this.isManualRefreshedClicked) {
+                    this.isManualRefreshedClicked = true;
+                } else {
+                    this._selectFeatureOnMapClick({ graphic: this.updatedFeature }, true, false);
+                }
             } else {
                 this.isManualRefreshedClicked = false;
                 this.isFilterRefreshClicked = false;
@@ -315,7 +492,7 @@ define([
             if (feature) {
                 this._clearSelection();
                 this._deselectTableRows();
-                this._selectFeatureOnMapClick({ graphic: feature });
+                this._selectFeatureOnMapClick({ graphic: feature }, true, false);
             }
         },
 
@@ -325,7 +502,7 @@ define([
         * @param{string} Index number of OBJECT ID field in feature array
         * @memberOf widgets/data-viewer/data-viewer
         */
-        _creatTableRows: function (entireFeatureDataArr, objectIdIndex) {
+        _createTableRows: function (entireFeatureDataArr, objectIdIndex) {
             var i, tr, tbody, j, td;
             // to create table headers
             tbody = domConstruct.create("tbody", {}, this._table);
@@ -410,7 +587,7 @@ define([
                                 isCodeMatched = false;
                                 if (value || value === 0) {
                                     for (k = 0; k < this._displayColumn[j].codedValues.length; k++) {
-                                        if (this._displayColumn[j].codedValues[k].code === value) {
+                                        if (this._displayColumn[j].codedValues[k].code.toString() === value.toString()) {
                                             isCodeMatched = true;
                                             dataSet.push(this._displayColumn[j].codedValues[k].name);
                                         }
@@ -467,7 +644,7 @@ define([
                                 if (this._displayColumn[j].numberFormat) {
                                     if (value || value === 0) {
                                         if (this._displayColumn[j].numberFormat.digitSeparator) {
-                                            number = this.appUtils.convertNumberToThousandSeperator(value, this._displayColumn[j].numberFormat.places);
+                                            number = this.appUtils.convertNumberToThousandSeparator(value, this._displayColumn[j].numberFormat.places);
                                             dataSet.push(number);
                                         } else {
                                             dataSet.push(value.toFixed(this._displayColumn[j].numberFormat.places));
@@ -493,7 +670,7 @@ define([
                 return a === b ? 0 : (a < b ? 1 : -1);
             }));
             // Pass entire data for creation of a data-viewer table
-            this._creatTableRows(entireFeatureDataArr, objectIdIndex);
+            this._createTableRows(entireFeatureDataArr, objectIdIndex);
         },
 
         /**
@@ -623,7 +800,7 @@ define([
                             }
                         }), 50);
                     }
-                    this._filterWidgetObj._handleFilterComponentVisibilty(currentChildNode, this._selectRowGraphicsLayer.graphics.length, this.isEditMode);
+                    this._filterWidgetObj._handleFilterComponentVisibility(currentChildNode, this._selectRowGraphicsLayer.graphics.length, this.isEditMode);
                 }
             })));
         },
@@ -655,13 +832,13 @@ define([
             // binding click event of table sorting in ascending order
             on(ascFlagContainer, "click", lang.hitch(this, function () {
                 columnNumber = parseInt(domAttr.get(ascFlagContainer, "colID"), 10);
-                this._sortByColoumn(columnNumber, "ASC");
+                this._sortByColumn(columnNumber, "ASC");
             }));
 
             // binding click event of table sorting in descending order
             on(descFlagContainer, "click", lang.hitch(this, function () {
                 columnNumber = parseInt(domAttr.get(descFlagContainer, "colID"), 10);
-                this._sortByColoumn(columnNumber, "DESC");
+                this._sortByColumn(columnNumber, "DESC");
             }));
             // creating Filter widget, only if the field contains 'ask for value' filter checked on the layer
             this._createFilterWidget(filterParentContainer, i, this._displayColumn[i].fieldName);
@@ -799,9 +976,10 @@ define([
                 "itemInfo": this.itemInfo,
                 "displayColumn": label,
                 "selectedOperationalLayerID": this.selectedOperationalLayerID,
-                "selectedOperationalLayer": this.selectedOperationalLayer
+                "selectedOperationalLayer": this.selectedOperationalLayer,
+                "isShowSelectedClicked": this.isShowSelectedClicked
             };
-            // Instantiating filter object for the fields configured with 'ask for value'
+            // Instantiate filter object for the fields configured with 'ask for value'
             this._filterWidgetObj = new Filter(filterParameters, domConstruct.create("div", {}, filterParentContainer));
             // creating UI Filters, only if the field contains 'ask for value' filters checked for the layer
             this._filterWidgetObj.startup();
@@ -840,7 +1018,7 @@ define([
         * descending order on column wise
         * @memberOf widgets/data-viewer/data-viewer
         */
-        _sortByColoumn: function (columnNumber, sortingOrder) {
+        _sortByColumn: function (columnNumber, sortingOrder) {
             // if the sorting flag is set as "ASC" the sort in ascending order
             // otherwise sort in descending order
             if (sortingOrder === "ASC") {
@@ -862,18 +1040,35 @@ define([
         * @memberOf widgets/data-viewer/data-viewer
         */
         _onRowClick: function (tr) {
-            // click event binded on table rows for feature selection
+            // Click event binded on table rows for feature selection
             on(tr, "click", lang.hitch(this, function (evt) {
+                this.appUtils.showLoadingIndicator();
                 this.hideWebMapList();
                 this._hideFilterContainer();
-                this.appUtils.showLoadingIndicator();
                 this._featureObjectID = parseInt(domAttr.get(evt.currentTarget, "OBJID"), 10);
-                this._highLightFeatureOnRowClick(this._featureObjectID, evt);
+                this._selectedRowIndex = evt.currentTarget.rowIndex;
+                // if show selected is not clicked
+                // if show selected is clicked & ctrl key is clicked
+                if ((!this.isShowSelectedClicked) || ((this.isShowSelectedClicked) && (evt.ctrlKey))) {
+                    this._highLightFeatureOnRowClick(this._featureObjectID, evt);
+                } else {
+                    this.appUtils.hideLoadingIndicator();
+                }
             }));
         },
 
         /**
-        * This function will clear selected faetures
+        * This function is used to delete row from the table
+        * @memberOf widgets/data-viewer/data-viewer
+        */
+        _deleteRowFromTable: function (evt) {
+            if ((this.isShowSelectedClicked) && (evt.ctrlKey)) {
+                this._table.deleteRow(this._selectedRowIndex);
+            }
+        },
+
+        /**
+        * This function will clear selected features
         * @memberOf widgets/data-viewer/data-viewer
         */
         _clearSelection: function () {
@@ -897,10 +1092,28 @@ define([
         * This function is used attach click event to features
         * @memberOf widgets/data-viewer/data-viewer
         */
-        onFeatureClick: function (evt) {
+        onFeatureClick: function (evt, graphicLayerClick) {
             this.appUtils.showLoadingIndicator();
             this._hideFilterContainer();
-            this._selectFeatureOnMapClick(evt);
+            this._selectFeatureOnMapClick(evt, false, graphicLayerClick);
+        },
+
+        /**
+        * This function is used to get extent from point.
+        * @memberOf widgets/data-viewer/data-viewer
+        */
+        _extentFromPoint: function (point) {
+            var pixelWidth, toleranceInMapCoords;
+            //calculate map coords represented per pixel
+            pixelWidth = this.map.extent.getWidth() / this.map.width;
+            //calculate map coords for tolerance in pixel
+            toleranceInMapCoords = 10 * pixelWidth;
+            //calculate & return computed extent
+            return new Extent(point.x - toleranceInMapCoords,
+                point.y - toleranceInMapCoords,
+                point.x + toleranceInMapCoords,
+                point.y + toleranceInMapCoords,
+                this.map.spatialReference);
         },
 
         /**
@@ -908,15 +1121,33 @@ define([
         * @param{object} feature that needs to be selected
         * @memberOf widgets/data-viewer/data-viewer
         */
-        _selectFeatureOnMapClick: function (evt) {
-            var objectId, featureQuery, featureLayer, feature, ctrlFlag = false, selectFlag, definitionExpression;
+        _selectFeatureOnMapClick: function (evt, updatedFeature, graphicLayerClick) {
+            var objectId, featureQuery, featureLayer, feature, ctrlFlag, selectFlag, definitionExpression, geometryExtent, currentDateTime;
+            ctrlFlag = false;
+            currentDateTime = new Date().getTime();
             featureQuery = new Query();
-            feature = evt.graphic;
-            objectId = feature.attributes[this._selectedOperationalLayer.objectIdField];
-            featureQuery.objectIds = [parseInt(objectId, 10)];
+            if (updatedFeature) {
+                if (evt.graphic) {
+                    feature = evt.graphic;
+                    objectId = feature.attributes[this._selectedOperationalLayer.objectIdField];
+                    featureQuery.objectIds = [parseInt(objectId, 10)];
+                }
+            } else {
+                // to select stacked features
+                if ((this._selectedOperationalLayer.geometryType === "esriGeometryPoint") && (!updatedFeature)) {
+                    geometryExtent = this._extentFromPoint(evt.mapPoint);
+                    featureQuery.geometry = geometryExtent;
+                } else if ((this._selectedOperationalLayer.geometryType === "esriGeometryPolygon") && (!updatedFeature)) {
+                    featureQuery.geometry = evt.mapPoint;
+                } else if ((this._selectedOperationalLayer.geometryType === "esriGeometryPolyline") && (!updatedFeature)) {
+                    geometryExtent = this._extentFromPoint(evt.mapPoint);
+                    featureQuery.geometry = geometryExtent;
+                }
+            }
             featureQuery.outSpatialReference = this.map.spatialReference;
             featureQuery.returnGeometry = true;
             featureQuery.outFields = ["*"];
+            featureQuery.where = currentDateTime + "=" + currentDateTime;
             // Consider if feature is selected & updated with certain value.
             // Now if user selects same feature from the map and pans the map. Since we retain the selected features in the grid.
             // So to maintain updated value of the selected feature, a new object of the feature layer is required.
@@ -930,45 +1161,81 @@ define([
                 featureLayer.setInfoTemplate(new PopupTemplate(this.popupInfo));
             }
             featureLayer.queryFeatures(featureQuery, lang.hitch(this, function (featureSet) {
-
+                var i, showDetailsPanelDataObj, selectedRowArr;
+                this._rowScrollTimer = null;
+                this._isRowRemovedAfterMapClick = false;
                 this._getSelectedLayerOnTop();
                 // if ctrl key is pressed for multiple feature selection
                 // then set ctrlFlag to true else keep it as false
                 if (!evt.ctrlKey) {
-                    this._clearSelection();
+                    if (this.isShowSelectedClicked) {
+                        this._graphicLayerRemoveHandle.pause();
+                        this._clearSelection();
+                    } else {
+                        this._clearSelection();
+                    }
+                    if (featureSet && featureSet.hasOwnProperty("features") && featureSet.features.length > 1) {
+                        if (graphicLayerClick) {
+                            selectedRowArr = query(".esriCTRowHighlighted", this._table);
+                            if (selectedRowArr.length <= featureSet.features.length) {
+                                this._deselectTableRows();
+                                ctrlFlag = false;
+                            } else {
+                                graphicLayerClick = false;
+                                this._deselectTableRows();
+                                ctrlFlag = true;
+                            }
+                        } else {
+                            selectedRowArr = query(".esriCTRowHighlighted", this._table);
+                            if (selectedRowArr.length === featureSet.features.length) {
+                                graphicLayerClick = true;
+                                this._deselectTableRows();
+                                ctrlFlag = false;
+                            } else {
+                                this._deselectTableRows();
+                                ctrlFlag = true;
+                            }
+                        }
+                    }
                 } else {
                     ctrlFlag = true;
                 }
-
                 if (this.updatedfeature) {
                     this.updatedfeature = null;
                 }
-
-                if (this.isManualRefreshedClicked) {
-                    this.isManualRefreshedClicked = false;
-                    selectFlag = this._selectRowOnFeatureClick(objectId, false, ctrlFlag);
-                } else {
-                    selectFlag = this._selectRowOnFeatureClick(objectId, true, ctrlFlag);
-                }
-
-                if (featureSet.features && featureSet.features.length > 0) {
-                    // feature is selected on table row click
-                    if (selectFlag) {
-                        // if feature geometry found them show selected feature on map else
-                        // show error message
-                        if (featureSet.features[0].geometry) {
-                            this._selectRowGraphicsLayer.add(this._getHighLightSymbol(featureSet.features[0], false));
+                if (featureSet && featureSet.hasOwnProperty("features") && featureSet.features.length > 0) {
+                    for (i = 0; i < featureSet.features.length; i++) {
+                        if (featureSet && featureSet.hasOwnProperty("features") && featureSet.features.length > 1 && graphicLayerClick) {
+                            selectFlag = false;
                         } else {
-                            this._selectRowGraphicsLayer.add(featureSet.features[0]);
-                            this.appUtils.showMessage(this.appConfig.i18n.dataviewer.noFeatureGeometry);
+                            if (this.isManualRefreshedClicked) {
+                                this.isManualRefreshedClicked = false;
+                                selectFlag = this._selectRowOnFeatureClick(featureSet.features[i].attributes[this._selectedOperationalLayer.objectIdField], false, ctrlFlag);
+                            } else {
+                                selectFlag = this._selectRowOnFeatureClick(featureSet.features[i].attributes[this._selectedOperationalLayer.objectIdField], true, ctrlFlag);
+                            }
+                        }
+                        // feature is selected on table row click
+                        if ((selectFlag) || ((!selectFlag) && (this.isShowSelectedClicked) && (!this._isRowRemovedAfterMapClick))) {
+                            // if feature geometry found them show selected feature on map else
+                            // show error message
+                            if (featureSet.features[i].geometry) {
+                                this._selectRowGraphicsLayer.add(this._getHighLightSymbol(featureSet.features[i], false));
+                            } else {
+                                this._selectRowGraphicsLayer.add(featureSet.features[i]);
+                                this.appUtils.showMessage(this.appConfig.i18n.dataviewer.noFeatureGeometry);
+                            }
                         }
                     }
                 }
-                //open details panel with feature information
-                var showDetailsPanelDataObj = {};
+                // Open details panel with feature information
+                showDetailsPanelDataObj = {};
                 showDetailsPanelDataObj.singleFeature = featureSet;
                 showDetailsPanelDataObj.multipleFeature = this._selectRowGraphicsLayer.graphics;
                 this.showDetailsPanel(showDetailsPanelDataObj);
+                if (this.isShowSelectedClicked) {
+                    this.createDataViewerUI(false);
+                }
                 this.appUtils.hideLoadingIndicator();
             }), lang.hitch(this, function () {
                 this.appUtils.hideLoadingIndicator();
@@ -1035,8 +1302,9 @@ define([
                     //open details panel with feature information
                     var showDetailsPanelDataObj = {};
                     showDetailsPanelDataObj.singleFeature = featureSet;
-                    showDetailsPanelDataObj.multipleFeature = this._selectRowGraphicsLayer.graphics;
+                    showDetailsPanelDataObj.multipleFeature = this._getSelectedFeatures();
                     this.showDetailsPanel(showDetailsPanelDataObj);
+                    this._deleteRowFromTable(evt);
                     this.appUtils.hideLoadingIndicator();
                 }), lang.hitch(this, function () { this.appUtils.hideLoadingIndicator(); }));
         },
@@ -1057,6 +1325,7 @@ define([
                         if (domClass.contains(this._table.rows[i], "esriCTRowHighlighted")) {
                             if (ctrlFlag) {
                                 this._removeHighLightedFeatureOnRowClick(objectId);
+                                this._isRowRemovedAfterMapClick = true;
                                 domClass.remove(this._table.rows[i], "esriCTRowHighlighted");
                                 isRowSelected = false;
                             } else {
@@ -1089,7 +1358,12 @@ define([
                 this.appUtils.hideLoadingIndicator();
             }
             if (this._isRowFound && selectRow) {
-                this._scrollToActivatedFeature(rowNumber);
+                if (this._rowScrollTimer) {
+                    clearTimeout(this._rowScrollTimer);
+                }
+                this._rowScrollTimer = setTimeout(lang.hitch(this, function () {
+                    this._scrollToActivatedFeature(rowNumber);
+                }), 700);
             } else {
                 if (this._isRowFound) {
                     this.appUtils.hideLoadingIndicator();
@@ -1108,8 +1382,7 @@ define([
             for (i = 0; i < this._selectRowGraphicsLayer.graphics.length; i++) {
                 objectID = this._selectRowGraphicsLayer.graphics[i].attributes[this._selectedOperationalLayer.objectIdField];
                 if (parseInt(objectID, 10) === parseInt(objectId, 10)) {
-                    this._selectRowGraphicsLayer.remove(this._selectRowGraphicsLayer
-                            .graphics[i]);
+                    this._selectRowGraphicsLayer.remove(this._selectRowGraphicsLayer.graphics[i]);
                     break;
                 }
             }

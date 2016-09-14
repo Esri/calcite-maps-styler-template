@@ -108,6 +108,15 @@ define([
                 //supply either the webmap id or, if available, the item info
                 itemInfo = this.config.itemInfo || this.config.webmap;
 
+                //If application is loaded in RTL mode, change styles of required nodes
+                if (this.config.i18n.direction === "rtl") {
+                    link = document.createElement('link');
+                    link.rel = 'stylesheet';
+                    link.type = 'text/css';
+                    link.href = "./css/rtl.css";
+                    document.getElementsByTagName('head')[0].appendChild(link);
+                }
+
                 promise = this._launch(itemInfo);
             } else {
                 error = new Error("Main:: Config is not defined");

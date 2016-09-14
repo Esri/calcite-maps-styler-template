@@ -24,7 +24,8 @@ define({
   "elevation": {
     "toggle": "고도 프로파일 차트를 전환합니다.",
     "drawTool": "맵에 라인을 그려 고도 프로파일을 생성합니다.",
-    "selectMessage": "라인 피처를 클릭하거나 그리기 도구를 사용하여 라인을 그려서 고도 프로파일 디스플레이"
+    "selectMessage": "라인 피처를 클릭하거나 그리기 도구를 사용하여 라인을 그려서 고도 프로파일 디스플레이",
+    "gainLossTemplate": "최소: ${min}   최대: ${max}   시작: ${start}   종료: ${end}   변경: ${gainLoss}"
   },
   "splash": {
     "title": "제목",

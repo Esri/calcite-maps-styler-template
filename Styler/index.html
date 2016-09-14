@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <!-- Define the versions of IE that will be used to render the page. See Microsoft documentation for details. Optional. -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <!-- Responsive -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <!-- End Responsive -->
+
+  <!-- Calcite Bootstrap -->
+  <link rel="stylesheet" href="//esri.github.com/calcite-maps/dist/css/calcite-bootstrap.min-v0.2.css">
+
+  <!-- Calcite Maps -->
+  <link rel="stylesheet" href="//esri.github.com/calcite-maps/dist/css/calcite-maps-arcgis-4.x.min-v0.2.css">
+  
+  <!-- Use protocol relative urls that way if the browser is viewing the page via HTTPS the js/css file will be requested using the HTTPS protocol -->
+  <link rel="stylesheet" href="//js.arcgis.com/4.1/esri/css/main.css">
+
+  <!-- Load any application specific styles -->
+  <link rel="stylesheet" href="css/boilerplate.css">
+
+</head>
+
+<body class="calcite calcite-maps calcite-nav-top boilerplate--loading">
+  <div class="boilerplate-loading-indicator">
+    <div class="boilerplate-loading-message" id="loading_message"></div>
+  </div>
+
+  <div class="calcite-alert alert alert-warning alert-dismissible hidden" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    <div id="calciteErrorMessage"></div>
+  </div>
+  
+  <!-- Navbar -->
+
+  <nav class="navbar calcite-navbar navbar-fixed-top calcite-bg-light calcite-text-dark hidden">
+    <!-- Menu -->
+    <div class="dropdown calcite-dropdown calcite-bg-light calcite-text-dark" role="presentation">
+      <button class="dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false">
+        <div class="calcite-dropdown-toggle">
+          <span class="sr-only"></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </button>
+      <ul class="dropdown-menu">
+        <li id="menuAbout"><a role="button" data-target="#panelAbout" aria-haspopup="true"><span class="glyphicon glyphicon-info-sign"></span></a></li>
+        <li id="menuLegend"><a role="button" data-target="#panelLegend" aria-haspopup="true"><span class="glyphicon glyphicon-th-list"></span></a></li>
+        <li id="menuBasemaps"><a role="button" data-target="#panelBasemaps" aria-haspopup="true"><span class="glyphicon glyphicon-th-large"></span></a></li>
+        <li id="menuSlides"><a role="button" data-target="#panelSlides" aria-haspopup="true"><span class="glyphicon glyphicon-picture"></span></a></li>
+        <li id="menuToggleNav"><a role="button" id="calciteToggleNavbar" aria-haspopup="true"><span class="glyphicon glyphicon-fullscreen"></span></a></li>
+      </ul>
+    </div>
+    <!-- Title -->
+    <div class="calcite-title calcite-overflow-hidden">
+      <span class="calcite-title-main"></span>
+      <span class="calcite-title-divider hidden hidden-xs"></span>
+      <span class="calcite-title-sub hidden-xs"></span> 
+    </div>
+     <!-- Nav -->
+    <ul class="calcite-nav nav navbar-nav">
+      <li><div class="calcite-navbar-search calcite-search-expander"><div id="searchDiv"></div></div></li>
+    </ul>
+  </nav><!--/.navbar -->
+
+  <!-- Map Container  -->
+
+  <div class="calcite-map calcite-map-absolute">
+    <div id="mapViewDiv" class="boilerplate-view"></div>
+    <div id="sceneViewDiv" class="boilerplate-view"></div>
+  </div>
+
+  <!-- Panel Container -->
+
+  <div class="calcite-panels calcite-panels-right calcite-text-dark calcite-bg-light panel-group" role="tablist" aria-multiselectable="false">
+        
+    <!-- About Panel -->
+    
+    <div id="panelAbout" class="panel collapse">
+      <div id="headingAbout" class="panel-heading" role="tab">
+        <div class="panel-title">
+          <a class="panel-toggle" role="button" data-toggle="collapse" href="#collapseAbout"  aria-expanded="true" aria-controls="collapseAbout"><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span><span class="panel-label"></span></a> 
+          <a class="panel-close" role="button" data-toggle="collapse" data-target="#panelAbout"><span class="esri-icon esri-icon-close" aria-hidden="true"></span></a>  
+        </div>
+      </div>
+      <div id="collapseAbout" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingAbout">
+        <div class="panel-body"></div>
+     </div>
+    </div>
+
+    <!-- Legend Panel -->
+    
+    <div id="panelLegend" class="panel collapse">
+      <div id="headingLegend" class="panel-heading" role="tab">
+        <div class="panel-title">
+          <a class="panel-toggle" role="button" data-toggle="collapse" href="#collapseLegend"  aria-expanded="true" aria-controls="collapseLegend"><span class="glyphicon glyphicon-th-list" aria-hidden="true"></span><span class="panel-label"></span></a> 
+          <a class="panel-close" role="button" data-toggle="collapse" data-target="#panelLegend"><span class="esri-icon esri-icon-close" aria-hidden="true"></span></a>  
+        </div>
+      </div>
+      <div id="collapseLegend" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingLegend">
+        <div class="panel-body">
+          <div id="legendDiv"></div>
+        </div>
+     </div>
+    </div>
+
+    <!-- Basemaps Panel -->
+    
+    <div id="panelBasemaps" class="panel collapse"> 
+      <div id="headingBasemaps" class="panel-heading" role="tab">
+        <div class="panel-title">
+          <a class="panel-toggle collapsed" role="button" data-toggle="collapse" href="#collapseBasemaps" aria-expanded="false"   aria-controls="collapseBasemaps"><span class="glyphicon glyphicon-th-large" aria-hidden="true"></span><span class="panel-label"></span></a> 
+          <a class="panel-close" role="button" data-toggle="collapse" data-target="#panelBasemaps"><span class="esri-icon esri-icon-close" aria-hidden="true"></span></a>  
+        </div>
+      </div>
+      <div id="collapseBasemaps" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingBasemaps">
+        <div class="panel-body">
+          <select id="selectBasemapPanel" class="form-control">
+            <option value="select" data-vector="select" selected></option>
+            <option value="streets" data-vector="streets-vector"></option>
+            <option value="satellite" data-vector="satellite"></option>
+            <option value="hybrid" data-vector="hybrid"></option>
+            <option value="national-geographic" data-vector="national-geographic"></option>
+            <option value="oceans" data-vector="oceans"></option>
+            <option value="topo" data-vector="topo-vector"></option>
+            <option value="gray" data-vector="gray-vector"></option>
+            <option value="dark-gray" data-vector="dark-gray-vector"></option>
+            <option value="osm" data-vector="osm"></option>
+            <option value="dark-gray" data-vector="streets-night-vector"></option>
+            <option value="streets" data-vector="streets-navigation-vector"></option>
+            <option value="streets" data-vector="streets-relief-vector"></option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slides Panel -->
+    
+    <div id="panelSlides" class="panel collapse"> 
+      <div id="headingSlides" class="panel-heading" role="tab">
+        <div class="panel-title">
+          <a class="panel-toggle collapsed" role="button" data-toggle="collapse" href="#collapseSlides" aria-expanded="false"   aria-controls="collapseSlides"><span class="glyphicon glyphicon-picture" aria-hidden="true"></span><span class="panel-label"></span></a> 
+          <a class="panel-close" role="button" data-toggle="collapse" data-target="#panelSlides"><span class="esri-icon esri-icon-close" aria-hidden="true"></span></a>  
+        </div>
+      </div>
+      <div id="collapseSlides" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSlides">
+        <div class="panel-body">
+          <div id="carouselSlides" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators"></ol>
+            <div class="carousel-inner" role="listbox"></div>
+            <a class="left carousel-control" href="#carouselSlides" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#carouselSlides" role="button" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div> <!-- /.calcite-panels -->
+
+  <script type="text/javascript" src="js/dojoConfig.js"></script>
+  <script type="text/javascript" src="//js.arcgis.com/4.1/"></script>
+
+
+  <script type="text/javascript">
+    require([
+      "boilerplate",
+      "dojo/text!boilerplate/settings.json",
+      "application"
+    ], function (
+      Boilerplate,
+      boilerplateSettings,
+      applicationMain
+    ) {
+
+      // create my main application. Start placing your logic in the main.js file.
+      var mainApp = new applicationMain();
+
+      // create the template. This will take care of all the logic required for template applications.
+      new Boilerplate(JSON.parse(boilerplateSettings)).always(function (boilerplate) {
+        mainApp.init(boilerplate);
+      });
+
+    });
+
+  </script>
+</body>
+
+</html>

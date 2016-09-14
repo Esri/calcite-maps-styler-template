@@ -83,7 +83,7 @@ define({
     "valueRadioButtonLabel": "Valoare",
     "uniqueRadioButtonLabel": "Unic",
     "selectLayerToBegin": "Selectaţi o categorie pentru a începe",
-    "layerFeatureCount": "${featureCount} înregistrări"
+    "layerFeatureCount": "${selectedFeatureCount} selectat / ${featureCount} înregistrări"
   },
   "timeSlider": {
     "timeSliderLabel": "Interval de timp",
@@ -97,7 +97,12 @@ define({
     "placeHolderText": "",
     "noCommentsAvailableText": "Nu există înregistrări disponibile",
     "remainingTextCount": "${0} caractere rămase",
-    "showNoText": "Nu"
+    "showNoText": "Nu",
+    "selectAttachments": "Ataşări",
+    "selectFileText": "Parcurgere",
+    "attachmentSelectedMsg": "ataşări selectate",
+    "attachmentHeaderText": "Ataşări",
+    "addRecordText": "Adăugare înregistrare"
   },
   "main": {
     "noGroup": "Niciun grup configurat"
@@ -109,17 +114,18 @@ define({
   },
   "manualRefresh": {
     "manualRefreshIconTooltip": "Reîmprospătare",
-    "confirmManualRefeshText": "Toate selecţiile şi modificările nesalvate vor fi eliminate"
+    "confirmManualRefreshText": "Toate selecţiile şi modificările nesalvate vor fi eliminate"
   },
   "help": {
     "helpIconTooltip": "Ajutor"
   },
   "filter": {
     "noFeatureFoundText": "Nu a fost găsit niciun obiect spaţia pentru această valoare.",
-    "distinctQueryFalied": "Nu există valori distincte pentru câmp.",
+    "distinctQueryFailed": "Nu există valori distincte pentru câmp.",
     "andText": "şi",
-    "filterInEditModeAlert": "Filtrele nu sunt disponibile în timpul editării",
-    "dropdownSelectOption": "Selectare"
+    "filterInEditModeAlert": "Filtrele nu sunt disponibile în timpul editării.",
+    "dropdownSelectOption": "Selectare",
+    "filterInShowSelectedEditModeAlert": "Filtrele nu sunt disponibile în modul „Afişare elemente selectate”."
   },
   "detailsPanel": {
     "editContentText": "Editare înregistrare"
@@ -127,5 +133,10 @@ define({
   "signOutPage": {
     "signOutMessage": "V-aţi deconectat cu succes",
     "reSignInMessage": "Faceţi clic aici pentru a vă autentifica"
+  },
+  "selectionOptions": {
+    "selectionOptionsIconTooltip": "Opţiuni selecţie",
+    "showAllOptionText": "Afişare toate+",
+    "showSelectedOptionText": "Afişare obiecte selectate"
   }
 });

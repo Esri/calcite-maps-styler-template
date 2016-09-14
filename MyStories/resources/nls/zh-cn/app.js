@@ -40,7 +40,7 @@ define({
   },
   "cantFindStories": {
     "whereAreStories": "无法查看您的故事？",
-    "notSeeExplanation": "“我的故事”将仅会列出托管在 ArcGIS 主机上，并由 {{STORY_MAP_TOUR}}、{{JOURNAL}}、{{MAP_SERIES}} 或 {{SWIPE_SPYGLASS}} 应用程序创建的故事地图。有关详细信息，请参阅我们的 {{FAQ}}。",
+    "notSeeExplanation": "“我的故事”中仅会列出在 ArcGIS 中托管的故事地图(当前不支持 {{STORY_MAP_BASIC}})。有关详细信息请参阅 {{常见问题}}。",
     "faq": "FAQ",
     "followingStoriesToUpdate": "以下使用早期版本应用程序创建的故事需要在更新后才能在“我的故事”中列出:",
     "gettingStories": "搜索使用需要进行更新的早期版本应用程序创建的故事...",
@@ -88,27 +88,16 @@ define({
     "layerPrivate": "将图层设为私有会使故事中断"
   },
   "collectionList": {
-    "advocacy": "宣传和推广",
-    "architecture": "建筑和设计",
-    "conservation": "保护和可持续性",
-    "culture": "文化",
-    "destinations": "目的地和旅游",
-    "disasters": "灾难和恢复",
-    "economy": "经济和发展",
-    "entertainment": "娱乐",
-    "history": "历史",
-    "infrastructure": "基础设施",
-    "marketing": "市场营销",
-    "nature": "自然和环境",
-    "news": "新闻和活动",
-    "oceans": "海洋图",
-    "parks": "公园和娱乐场所",
+    "business": "商业和经济",
+    "history": "历史和文化",
+    "inNews": "时事新闻",
+    "infrastructure": "基础设施和建设",
+    "nature": "自然与资源保护",
     "people": "人与社会",
-    "planning": "规划和分析",
-    "publicArt": "公共艺术",
+    "planning": "规划和设计",
     "science": "科学和技术",
-    "sport": "运动",
-    "travelogues": "旅行见闻"
+    "sports": "运动和娱乐",
+    "travel": "旅行和休闲"
   },
   "types": {
     "custom": "自定义",
@@ -227,6 +216,7 @@ define({
   "content": {
     "media": {
       "maps": "地图",
+      "scenes": "场景",
       "images": "影像",
       "videos": "视频",
       "webpages": "网页",
@@ -244,22 +234,30 @@ define({
       "bullet": "项目符号",
       "tab": "选项卡",
       "accordion": "节",
-      "mapJournal": "节"
+      "mapJournal": "节",
+      "cascade": "章节",
+      "crowdsource": "贡献",
+      "shortlist": "选项卡"
     },
     "titleType": {
       "mapTour": "标题",
       "mapJournal": "URL",
-      "mapSeries": "URL"
+      "mapSeries": "URL",
+      "cascade": "URL",
+      "crowdsource": "URL",
+      "shortlist": "URL"
     },
     "actions": {
       "viewMap": "查看地图",
       "editMap": "编辑地图",
-      "fix": "定位",
+      "editScene": "编辑场景",
+      "fix": "固定",
       "viewLayer": "查看图层"
     },
     "contentType": {
-      "mainStage": "主阶段操作",
-      "sidePanel": "description"
+      "mainStage": "主舞台操作",
+      "sidePanel": "描述",
+      "introImage": "(封面页照片)"
     },
     "notification": {
       "refreshExplanation": "重新检查您的故事",
@@ -300,6 +298,7 @@ define({
       "publicDisabled": "管理员已禁用公开共享",
       "orgDisabled": "管理员已禁用共享到您的组织",
       "noMapName": "无法检索地图名称",
+      "noSceneName": "无法检索场景",
       "notPublic": "未公开",
       "inaccessible": "无法访问",
       "deleted": "已删除",
@@ -351,6 +350,8 @@ define({
       "cantScanThisTypeAlt": "无法检查此类图层",
       "cantScanThisType": "图层是我们无法查看的图层类型",
       "webpageNotScanned": "未检查网页是否存在问题",
+      "sceneNotScanned": "目前尚未检查场景是否存在问题，请确保场景及其所有图层均已正确共享",
+      "scenesNotScannedGlobally": "本故事中含有场景，且目前尚未检查场景是否存在问题。请确保场景及其所有图层均已正确共享",
       "ignoredIssue": "您忽略了此图层上的一个错误。请重新加载此页面并重新检查此故事以检查错误",
       "ignoredIssueBuilder": "您忽略了此图层上的一个错误。请重新加载构建器以再次检查此错误"
     },
@@ -450,6 +451,10 @@ define({
       "secondValueC": "选项卡式",
       "thirdTitle": "地图"
     },
+    "cascade": {
+      "firstTitle": "章节",
+      "secondTitle": "地图"
+    },
     "swipeSpyglass": {
       "firstTitle": "感兴趣点",
       "secondTitle": "样式",
@@ -459,9 +464,13 @@ define({
     },
     "crowdsource": {
       "firstTitle": "贡献",
-      "secondTitle": "样式",
-      "secondValueA": "侧面板",
-      "secondValueB": "堆叠",
+      "secondTitle": "底图",
+      "secondValueLoading": "正在加载...",
+      "secondValueUnknown": "未知"
+    },
+    "shortlist": {
+      "firstTitle": "地点",
+      "secondTitle": "选项卡",
       "thirdTitle": "底图",
       "thirdValueLoading": "正在加载...",
       "thirdValueUnknown": "未知"

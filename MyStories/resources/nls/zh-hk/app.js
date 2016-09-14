@@ -40,7 +40,7 @@ define({
   },
   "cantFindStories": {
     "whereAreStories": "看不到您的故事?",
-    "notSeeExplanation": "我的故事只會列出以 {{STORY_MAP_TOUR}}、{{JOURNAL}}、{{MAP_SERIES}} 或 {{SWIPE_SPYGLASS}} 應用程式建立的 ArcGIS 中所託管的故事地圖。如需詳細資訊，請參閱我們的 {{FAQ}}。",
+    "notSeeExplanation": "我的故事只會列出 ArcGIS 中託管的故事地圖 (目前不支援 {{STORY_MAP_BASIC}})。如需詳細資訊，請參閱我們的 {{FAQ}}。",
     "faq": "常見問題集",
     "followingStoriesToUpdate": "下列故事是使用我們早期的應用程式版本建立，需要為它們進行「我的故事」所列出的更新:",
     "gettingStories": "正在搜尋使用我們的早期應用程式版本建立且需要更新的故事...",
@@ -88,27 +88,16 @@ define({
     "layerPrivate": "將您的圖層設為私有會中斷您的故事"
   },
   "collectionList": {
-    "advocacy": "宣傳和推廣",
-    "architecture": "架構和設計",
-    "conservation": "保護和可持續發展",
-    "culture": "文化",
-    "destinations": "目的地和旅遊",
-    "disasters": "災難和復原",
-    "economy": "經濟和發展",
-    "entertainment": "娛樂",
-    "history": "歷程記錄",
-    "infrastructure": "基礎設施",
-    "marketing": "行銷",
-    "nature": "自然和環境",
-    "news": "新增和事件",
-    "oceans": "海洋圖",
-    "parks": "公園和娛樂",
+    "business": "商業與經濟",
+    "history": "歷史與文化",
+    "inNews": "新聞報導",
+    "infrastructure": "基礎設施與建築",
+    "nature": "自然與保育",
     "people": "人們和社會",
-    "planning": "規劃和分析",
-    "publicArt": "公開藝術",
+    "planning": "規劃與設計",
     "science": "科學和技術",
-    "sport": "運動",
-    "travelogues": "遊記"
+    "sports": "運動與娛樂",
+    "travel": "旅遊與娛樂"
   },
   "types": {
     "custom": "自訂",
@@ -227,6 +216,7 @@ define({
   "content": {
     "media": {
       "maps": "地圖",
+      "scenes": "場景",
       "images": "影像",
       "videos": "影片",
       "webpages": "網頁",
@@ -244,22 +234,30 @@ define({
       "bullet": "項目符號",
       "tab": "索引標籤",
       "accordion": "節",
-      "mapJournal": "節"
+      "mapJournal": "節",
+      "cascade": "節",
+      "crowdsource": "貢獻",
+      "shortlist": "索引標籤"
     },
     "titleType": {
       "mapTour": "說明文字",
       "mapJournal": "URL",
-      "mapSeries": "URL"
+      "mapSeries": "URL",
+      "cascade": "URL",
+      "crowdsource": "URL",
+      "shortlist": "URL"
     },
     "actions": {
       "viewMap": "檢視地圖",
       "editMap": "編輯地圖",
+      "editScene": "編輯場景",
       "fix": "修復",
       "viewLayer": "檢視圖層"
     },
     "contentType": {
       "mainStage": "主舞台動作",
-      "sidePanel": "description"
+      "sidePanel": "description",
+      "introImage": "(封面相片)"
     },
     "notification": {
       "refreshExplanation": "重新檢查您的故事",
@@ -300,6 +298,7 @@ define({
       "publicDisabled": "管理員已停用公開分享",
       "orgDisabled": "管理員已停用分享到您的組織",
       "noMapName": "無法擷取地圖名稱",
+      "noSceneName": "無法擷取場景",
       "notPublic": "未公開",
       "inaccessible": "無法存取",
       "deleted": "已刪除",
@@ -351,6 +350,8 @@ define({
       "cantScanThisTypeAlt": "我們無法檢查此類型的圖層",
       "cantScanThisType": "圖層不屬於我們可檢查的圖層類型",
       "webpageNotScanned": "未檢查網頁的問題",
+      "sceneNotScanned": "目前並未檢查場景的問題，請確定已正確分享場景及其所有圖層",
+      "scenesNotScannedGlobally": "此故事中有場景，且目前並未檢查場景的問題。請確定已正確分享場景及其所有圖層",
       "ignoredIssue": "您已忽略此圖層上的錯誤。請重新載入頁面，並重新檢查此故事來檢閱錯誤",
       "ignoredIssueBuilder": "您已忽略此圖層上的錯誤。請重新載入建立器來檢查此錯誤"
     },
@@ -450,6 +451,10 @@ define({
       "secondValueC": "索引標籤式",
       "thirdTitle": "地圖"
     },
+    "cascade": {
+      "firstTitle": "部分",
+      "secondTitle": "地圖"
+    },
     "swipeSpyglass": {
       "firstTitle": "景點",
       "secondTitle": "樣式",
@@ -459,9 +464,13 @@ define({
     },
     "crowdsource": {
       "firstTitle": "貢獻",
-      "secondTitle": "樣式",
-      "secondValueA": "側面板",
-      "secondValueB": "已堆疊",
+      "secondTitle": "底圖",
+      "secondValueLoading": "正在載入...",
+      "secondValueUnknown": "未知"
+    },
+    "shortlist": {
+      "firstTitle": "地點",
+      "secondTitle": "索引標籤",
       "thirdTitle": "底圖",
       "thirdValueLoading": "正在載入...",
       "thirdValueUnknown": "未知"

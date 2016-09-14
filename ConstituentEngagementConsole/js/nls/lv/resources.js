@@ -83,7 +83,7 @@ define({
     "valueRadioButtonLabel": "Lielums",
     "uniqueRadioButtonLabel": "Unikāls",
     "selectLayerToBegin": "Lai sāktu darbu, atlasiet kategoriju",
-    "layerFeatureCount": "${featureCount} ieraksti"
+    "layerFeatureCount": "${selectedFeatureCount} atlasīts / ${featureCount} ieraksti"
   },
   "timeSlider": {
     "timeSliderLabel": "Laika diapazons",
@@ -97,7 +97,12 @@ define({
     "placeHolderText": "",
     "noCommentsAvailableText": "Nav pieejams neviens ieraksts",
     "remainingTextCount": "Palikusi(-šas) ${0} rakstzīme(-s)",
-    "showNoText": "Nē"
+    "showNoText": "Nē",
+    "selectAttachments": "Pielikumi",
+    "selectFileText": "Pārlūkot",
+    "attachmentSelectedMsg": "atlasītais(-ie) pielikums(-i)",
+    "attachmentHeaderText": "Piesaistes",
+    "addRecordText": "Pievienot ierakstu"
   },
   "main": {
     "noGroup": "Nav konfigurētas grupas"
@@ -109,17 +114,18 @@ define({
   },
   "manualRefresh": {
     "manualRefreshIconTooltip": "Atjaunot",
-    "confirmManualRefeshText": "Visas atlases un nesaglabātās izmaiņas tiks atmestas"
+    "confirmManualRefreshText": "Visas atlases un nesaglabātās izmaiņas tiks atmestas"
   },
   "help": {
     "helpIconTooltip": "Palīdzība"
   },
   "filter": {
     "noFeatureFoundText": "Šai vērtībai nav atrasts neviens elements.",
-    "distinctQueryFalied": "Laukam nav atrasta neviena atšķirīga vērtība.",
+    "distinctQueryFailed": "Laukam nav atrasta neviena atšķirīga vērtība.",
     "andText": "un",
-    "filterInEditModeAlert": "Rediģējot filtri nav pieejami",
-    "dropdownSelectOption": "Izvēlēties"
+    "filterInEditModeAlert": "Rediģēšanas laikā filtri nav pieejami.",
+    "dropdownSelectOption": "Izvēlēties",
+    "filterInShowSelectedEditModeAlert": "Režīmā 'Rādīt izvēlētos' filtri nav pieejami."
   },
   "detailsPanel": {
     "editContentText": "Rediģēt ierakstu"
@@ -127,5 +133,10 @@ define({
   "signOutPage": {
     "signOutMessage": "Jūs esat veiksmīgi izrakstījies",
     "reSignInMessage": "Noklikšķiniet šeit, lai pierakstītos"
+  },
+  "selectionOptions": {
+    "selectionOptionsIconTooltip": "Atlases opcijas",
+    "showAllOptionText": "Rādīt visus",
+    "showSelectedOptionText": "Rādīt izvēlētos"
   }
 });

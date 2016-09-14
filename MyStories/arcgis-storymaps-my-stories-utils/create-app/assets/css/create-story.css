@@ -101,10 +101,10 @@
 
 .modal.create-story-modal {
   height: 650px;
-  margin-left: -400px;
+  margin-left: -425px;
   max-height: 85%;
   max-width: 90%;
-  width: 800px; }
+  width: 850px; }
 
 .create-story-modal .dialog-header {
   padding: 12px 0; }
@@ -134,20 +134,20 @@
 
 /***********************  "CREATE AN APP" STYLINGS  ******************************/
 .create-app-list {
-  margin-top: 36px;
+  margin-top: 66px;
   margin-bottom: 3px;
   text-align: center; }
 
 .create-app-list li {
   display: inline-block;
-  width: 29%;
-  margin-right: 6%;
+  width: 22%;
+  margin-right: 4%;
   text-align: center; }
 
-.create-app-list li:nth-child(n+4) {
+.create-app-list li:nth-child(n+5) {
   margin-top: 26px; }
 
-.create-app-list li:nth-child(3n), .create-app-list li:last-child {
+.create-app-list li:nth-child(4n), .create-app-list li:last-child {
   margin-right: 0; }
 
 .create-app-image-container {
@@ -157,7 +157,7 @@
   position: relative; }
 
 .create-app-image-container .image-hover-text {
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.6);
   border-radius: 5px;
   cursor: pointer;
   display: none;
@@ -182,21 +182,31 @@
   color: white;
   cursor: pointer;
   display: inline-block;
-  font-size: 0.95rem;
-  line-height: 1.3;
+  font-size: 0.9rem;
+  line-height: 1.2;
   margin-bottom: 0;
-  padding: 10px 5px;
+  padding: 10px 7px;
   vertical-align: middle;
-  width: 95%; }
+  width: 100%;
+}
 
 .create-app-list .app-item img {
   height: auto;
   width: 100%; }
 
 .create-app-list .app-item a.btn, #ask-pros .app-item a.btn {
-  border-radius: 15px; }
+  border-radius: 15px;
+}
+
+.create-app-list .app-item a.btn {
+  font-size: 0.7rem;
+}
 
 /***********************  "ASK THE PROS" STYLINGS  *************************/
+#ask-pros {
+  text-align: center;
+}
+
 .ask-pros-title {
   font-weight: bold;
   margin: 72px 0 24px; }
@@ -204,7 +214,7 @@
 .ask-pros-title.question {
   display: inline-block;
   margin: 36px 0 0;
-  width: 75%; }
+}
 
 #ask-pros .square {
   border: 2px solid #F4F4F4;
@@ -241,6 +251,17 @@
   line-height: 1.3;
   vertical-align: middle; }
 
+#ask-pros .detail {
+  display: flex;
+}
+
+#ask-pros .detail .answer-detail {
+  flex: 0 0 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
 #ask-pros .question-list {
   display: inline-block;
   width: 50%;
@@ -267,20 +288,35 @@
   color: white; }
 
 .toggle.toggle-button.two-button {
-  padding: 15px 45px; }
+  padding: 15px 45px;
+}
 
 .toggle.toggle-button.two-button:first-child {
-  border-radius: 10px 0 0 10px; }
+  border-radius: 10px 0 0 10px;
+}
 
 .toggle.toggle-button.two-button:last-child {
   border-radius: 0 10px 10px 0;
-  border-left: 2px solid #396e8b; }
+  border-left: 2px solid #396e8b;
+}
+
+.toggle.toggle.two-button.solo {
+  border-radius: 10px;
+  align-self: center;
+  margin-top: auto;
+}
 
 .toggle.toggle-button.two-button:hover {
   background-color: #396e8b;
-  color: white; }
+  color: white;
+}
 
 /***********************  SUGGESTION SCREEN STYLINGS  **************************/
+.app-item.final {
+  max-width: 90%;
+  display: inline-block;
+}
+
 .app-item.final .ask-pros-title {
   font-size: 1.75rem;
   margin-top: 24px; }
@@ -294,32 +330,55 @@
 
 .create-app-image-container.final {
   display: block;
-  margin-bottom: 24px; }
+  margin-bottom: 24px;
+}
 
 .create-app-image-container.final img {
   cursor: pointer;
-  width: 35%; }
+  width: 35%;
+}
 
 .create-app-image-container.final .image-wrapper {
   cursor: pointer;
   display: inline-block;
-  width: 35%; }
+  width: 35%;
+}
 
 .create-app-image-container.final .image-wrapper img {
-  width: 100%; }
+  width: 100%;
+}
 
 .final .version.multiple .create-app-image-container.final img {
-  width: 70%; }
+  width: 70%;
+}
+
+.create-app-image-container.answer {
+  margin-bottom: 0;
+}
+
+.create-app-image-container.answer img {
+  width: 68%;
+}
 
 #ask-pros .app-reason {
-  margin-top: 24px; }
+  margin-top: 24px;
+}
 
 #ask-pros .app-reason p {
   display: inline-block;
   font-size: 1.0rem;
   line-height: 1.4;
   margin-bottom: 10px;
-  width: 80%; }
+  width: 90%;
+}
+
+#ask-pros .app-reason.reason-answer {
+  margin-top: 12px;
+}
+
+#ask-pros .app-reason.reason-answer p {
+  margin-bottom: 24px;
+}
 
 #ask-pros .see-example a {
   text-decoration: underline; }
@@ -342,14 +401,31 @@
 @media (max-width: 1140px) {
   .modal.create-story-modal {
     height: 600px;
-    margin-left: -350px;
-    width: 700px; }
+    margin-left: -400px;
+    width: 800px; }
 
   .create-story-modal .dialog-header {
     padding: 12px 0; }
 
+  .create-app-list {
+    margin-top: 55px;
+  }
+
+  .create-app-image-container .image-hover-text span {
+    font-size: 0.85rem;
+  }
+
   #ask-pros .square {
-    height: 270px; }
+    height: 270px;
+  }
+
+  #ask-pros .detail {
+    margin-top: 24px;
+  }
+
+  .create-app-image-container.answer img {
+    width: 55%;
+  }
 
   .app-item.final .ask-pros-title {
     font-size: 1.5rem;
@@ -407,5 +483,3 @@
 
   .create-story-modal .dialog-body {
     max-height: 56%; } }
-
-/*# sourceMappingURL=create-story.css.map */

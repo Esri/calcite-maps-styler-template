@@ -54,6 +54,7 @@ define({
   },
   "item_details": {
     "likeButtonTooltip": "投票支持此项目",
+    "likeButtonInverseTooltip": "已计数投票",
     "commentButtonTooltip": "添加评论",
     "gotoMapViewTooltip": "转至地图视图",
     "galleryButtonTooltip": "参见随附文件",

@@ -1,0 +1,266 @@
+@import 'mixins';
+$selection-color: #337ab7;
+$background-color:#fff;
+html,
+body{
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  overflow:hidden;
+}
+.container-fluid{
+  height:100%;
+  padding:0;
+}
+.container-row{
+  height:100%;
+  margin:0;
+}
+.map-container{
+  height:100%;
+  padding-left:0;
+  padding-right:0;
+}
+#mapDiv{
+  height:100%;
+  width:100%;
+}
+.title-header{
+  height:100%;
+  margin: 5px 0 2px 5px;
+  border-bottom: none;
+  /*display: none;*/
+}
+.col-sm-4{
+  padding-left:0;
+}
+.mainSection{
+  padding-left:15px;
+}
+.hzLine{
+  border: none;
+  border-bottom: 1px solid #efefef;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-left:-15px;
+  display: none;
+}
+#sidebar{
+  padding-right:0;
+  margin:0 auto;
+  height:35%;
+  background-color: $background-color;
+}
+.hide{
+  display: none;
+}
+/*Swipe Container*/
+.swiper-container {
+    width: 100%;
+    height: 100%;
+}
+.swiper-slide{
+    height: calc(100% - 70px);
+    overflow-y:auto;
+}
+.swiper-button-black{
+  border: none;
+  background-color: inherit;
+}
+.swiper-button-white{
+  border: none;
+  background-color: inherit;
+}
+#toolbar{
+  margin-top:5px;
+  width:100%;
+  height:25px;
+  line-height: 25px;
+  float:right;
+  padding-right:10px;
+  padding-left:10px;
+}
+.calcite .esriSimpleSlider .esriSimpleSliderDecrementButton, .calcite .esriSimpleSlider .esriSimpleSliderDecrementButton:hover, .calcite .esriSimpleSlider .esriSimpleSliderDecrementButton:focus{
+  border-top: 1px solid #efefef;
+}
+.closeNav{
+  position: absolute;
+  bottom:0;
+  left:0;
+  right:0;
+}
+#closeInfo{
+  border-radius: 0;
+  opacity: 1 !important;
+}
+#description{
+  overflow-y:auto;
+  height: calc(100% - 112px);
+  padding-left:.4em;
+  padding-right: .4em;
+  padding-bottom: 48px;
+}
+#title{
+  padding: 0 5px 0 5px;
+}
+#legendDiv{
+  margin-top:30px;
+  overflow-y:auto;
+  height: calc(100% - 112px);
+  padding:1em;
+}
+
+#toggleInfo, #legendInfo{
+  margin: 0 4px 0 4px;
+  color:#333;
+  font-size:16px;
+  height:18px;
+  line-height: 18px;
+  width:18px;
+  padding: 0 4px 0 4px;
+  float:right;
+}
+#closeLegend{
+  position: absolute;
+  height:25px;
+  line-height: 25px;
+  top:4px;
+  right:2px;
+}
+
+/*Tablet and larger*/
+@media only screen and (min-width : 768px) {
+  .hzLine{
+    display: block;
+  }
+  #sidebar{
+    height:100%;
+  }
+}
+/*Small devices like phones.*/
+@media (max-width: 767px){
+  #sidebar.hidden-xs {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    margin: 0 !important;
+    left: 0;
+    right: 0;
+    padding:0;
+    display: inline-block !important;
+    z-index: 35;
+    background: #fff;
+  }
+  #mapDiv{
+    position: absolute;
+    bottom:160px;
+  }
+}
+
+#slideNav{
+  position: absolute;
+  bottom:0;
+  left:0;
+  right:0;
+  width:100%;
+  margin-top:1em;
+  height:50px;
+  z-index:40;
+  background-color: inherit;
+}
+
+/*move next/prev buttons to the bottom around the paging*/
+.swiper-button-next, .swiper-button-prev{
+  top:auto;
+  bottom:10px;
+  height:32px;
+}
+/*css styling for selected features in feature layer*/
+path[data-selected] {
+    fill: none;
+    stroke: $selection-color;
+    stroke-width: 11;
+    stroke-opacity: 0.85;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.esriRTL label {
+  /*Example of a rule that will be applied if the app is viewed in a browser with a RTL locale like Hebrew or Arabic.*/
+}
+.loading-indicator {
+  /* Loading status */
+  display: none;
+  height: 100%;
+  width: 100%;
+  z-index: 500;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  background: #fff;
+}
+.app-loading .loading-indicator,
+.app-error .loading-indicator {
+  /* Show this class when loading or error */
+  display: block;
+}
+.app-loading .loading-indicator {
+  /* Loading image */
+  background-position: center center;
+  background-image: url(../images/loading.gif);
+  background-repeat: no-repeat;
+}
+.app-error .loading-message {
+  /* Error status */
+  background-position: top center;
+  background-image: url(../images/error.png);
+  background-repeat: no-repeat;
+  padding-top: 60px;
+  width: 100%;
+  position: absolute;
+  z-index: 2;
+  top: 40%;
+  left: 0;
+  text-align: center;
+}
+/*Calcite popup fixes*/
+.calcite .esriPopup a {
+    font-size: 12px;
+    padding: 0;
+    color: #21759b;
+}
+.calcite .esriViewPopup .mainSection .attrTable td.attrName {
+    font-weight: normal;
+    color: #4c4c4c;
+}
+.calcite .esriViewPopup .mainSection .attrTable {
+    table-layout: auto;
+}
+.calcite .esriPopup .actionsPane .actionList {
+    margin-left: 5px;
+}
+div.header{
+  font-weight: bold;
+}
+.calcite .esriViewPopup .mainSection .attrTable td.attrName{
+    font-weight:normal;
+    color:#4c4c4c;
+}
+.calcite .esriPopup .actionsPane .actionList a {
+    color:#4c4c4c;
+}
+.calcite .esriPopup a{
+    font-size:12px;
+    padding:0;
+    color: #21759b;
+}
+.calcite .esriPopup .titlePane{
+  padding: 5px 10px;
+  font-size: 12px;
+  font-weight: normal;
+}
+.calcite .esriPopup .contentPane{
+  padding: 0 8px;
+}

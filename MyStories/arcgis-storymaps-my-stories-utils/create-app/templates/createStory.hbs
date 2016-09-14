@@ -9,64 +9,10 @@
     </div>
   </div>
   <div class="toggle-view selected" data-toggle="pick-app">
-    <ul class="create-app-list">
-      <li class="app-item">
-        <div class="create-app-image-container trailer-half" data-template="tour">
-          <div class="image-hover-text">
-            <span>{{strings.shortReasons.mapTour}}</span>
-          </div>
-          <img src="{{imageBase}}map-tour.jpg">
-        </div>
-        <a class="btn clear clear-inverse" data-template="tour">{{appTypes.mapTour}}</a>
-      </li><!--
-     --><li class="app-item">
-        <div class="create-app-image-container trailer-half" data-template="journal">
-          <div class="image-hover-text">
-            <span>{{strings.shortReasons.mapJournal}}</span>
-          </div>
-          <img src="{{imageBase}}map-journal.jpg">
-        </div>
-        <a class="btn clear clear-inverse" data-template="journal">{{appTypes.mapJournal}}</a></li><!--
-     --><li class="app-item">
-        <div class="create-app-image-container trailer-half" data-template="series">
-          <div class="image-hover-text">
-            <span>{{strings.shortReasons.mapSeries}}</span>
-          </div>
-          <img src="{{imageBase}}tabbed-viewer.jpg">
-        </div>
-        <a class="btn clear clear-inverse" data-template="series">{{appTypes.mapSeries}}</a>
-      </li><!--
-     --><li class="app-item">
-        <div class="create-app-image-container trailer-half" data-template="swipeSpyglass" data-layout="swipe">
-          <div class="image-hover-text">
-            <span>{{strings.shortReasons.swipe}}</span>
-          </div>
-          <img src="{{imageBase}}swipe.jpg">
-        </div>
-        <a class="btn clear clear-inverse" data-template="swipeSpyglass" data-layout="swipe">{{appTypes.swipe}}</a>
-      </li><!--
-     --><li class="app-item">
-        <div class="create-app-image-container trailer-half" data-template="swipeSpyglass" data-layout="spyglass">
-          <div class="image-hover-text">
-            <span>{{strings.shortReasons.spyglass}}</span>
-          </div>
-          <img src="{{imageBase}}spyglass.jpg">
-        </div>
-        <a class="btn clear clear-inverse" data-template="swipeSpyglass" data-layout="spyglass">{{appTypes.spyglass}}</a>
-      </li><!--
-     --><li class="app-item">
-        <a href="{{basicUrl}}" class="create-app-image-container trailer-half" target="_blank">
-          <div class="image-hover-text">
-            <span>{{strings.shortReasons.basic}}</span>
-          </div>
-          <img src="{{imageBase}}basic.jpg">
-        </a>
-        <a href="{{basicUrl}}" class="btn clear clear-inverse" target="_blank">{{appTypes.basic}}</a>
-      </li>
-    </ul>
+    {{{pickAppWidget}}}
   </div>
   <div id="ask-pros" class="toggle-view" data-toggle="ask-pros">
-    {{{questionWidget}}}
+    {{{askProsWidget}}}
   </div>
 </div>
 <div class="modal-footer">

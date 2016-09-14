@@ -24,7 +24,8 @@ define({
   "elevation": {
     "toggle": "Slå på/av diagrammet Profil för höjdkurva.",
     "drawTool": "Rita en linje på kartan för att generera en profil för höjdkurva.",
-    "selectMessage": "Klicka på ett linjegeoobjekt eller använd ritverktyget för att rita en linje som visar höjdprofilen"
+    "selectMessage": "Klicka på ett linjegeoobjekt eller använd ritverktyget för att rita en linje som visar höjdprofilen",
+    "gainLossTemplate": "Min: ${min}   Max: ${max}   Start: ${start}   Slut: ${end}   Ändring: ${gainLoss}"
   },
   "splash": {
     "title": "Titel",

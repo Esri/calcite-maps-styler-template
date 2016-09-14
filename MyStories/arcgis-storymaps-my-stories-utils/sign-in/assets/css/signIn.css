@@ -34,7 +34,7 @@
 
 .subordinate-text {
 	color: #444;
-	font-size: 0.9rem;
+	font-size: 1.0rem;
 }
 
 .explanation-icon, .explanation-text-container, .sign-up-text-container {
@@ -70,7 +70,7 @@
 }
 
 .sign-up-link {
-	font-size: 0.9rem;
+	font-size: 1.0rem;
 	margin-left: 5px;
 }
 

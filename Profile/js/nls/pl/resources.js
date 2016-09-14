@@ -24,7 +24,8 @@ define({
   "elevation": {
     "toggle": "Przełącz wykres profilu wysokościowego.",
     "drawTool": "Narysuj linię na mapie, aby wygenerować profil wysokościowy.",
-    "selectMessage": "Kliknij funkcję linii lub użyj narzędzia do rysowania, aby narysować linię i wyświetlić profil wysokościowy"
+    "selectMessage": "Kliknij funkcję linii lub użyj narzędzia do rysowania, aby narysować linię i wyświetlić profil wysokościowy",
+    "gainLossTemplate": "Min.: ${min}   Maks.: ${max}   Początek: ${start}   Koniec: ${end}   Zmiana: ${gainLoss}"
   },
   "splash": {
     "title": "Tytuł",
@@ -39,7 +40,7 @@ define({
     "tip": "Zmień mapę bazową"
   },
   "share": {
-    "title": "Udostępnij",
+    "title": "Udostępnianie",
     "tip": "Udostępnij mapę"
   }
 });

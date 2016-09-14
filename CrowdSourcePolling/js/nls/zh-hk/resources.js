@@ -54,6 +54,7 @@ define({
   },
   "item_details": {
     "likeButtonTooltip": "票選此項目",
+    "likeButtonInverseTooltip": "計數的票數",
     "commentButtonTooltip": "增加評論",
     "gotoMapViewTooltip": "轉至地圖檢視",
     "galleryButtonTooltip": "參閱隨附的檔案",

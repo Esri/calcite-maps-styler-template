@@ -24,7 +24,8 @@ define({
   "elevation": {
     "toggle": "切換高程剖面圖圖表。",
     "drawTool": "在地圖上畫一條線來產生一個高程剖面。",
-    "selectMessage": "按一下線條圖徵，或使用繪製工具畫一條線來顯示高程剖面"
+    "selectMessage": "按一下線條圖徵，或使用繪製工具畫一條線來顯示高程剖面",
+    "gainLossTemplate": "最小值: ${min}   最大值: ${max}   起始值: ${start}   終止值: ${end}   變化值: ${gainLoss}"
   },
   "splash": {
     "title": "標題",

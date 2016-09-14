@@ -83,7 +83,7 @@ define({
     "valueRadioButtonLabel": "Τιμή",
     "uniqueRadioButtonLabel": "Μοναδικό",
     "selectLayerToBegin": "Επιλέξτε μια κατηγορία για να ξεκινήσετε",
-    "layerFeatureCount": "${featureCount} εγγραφές"
+    "layerFeatureCount": "${selectedFeatureCount} επιλεγμένα / ${featureCount} εγγραφές"
   },
   "timeSlider": {
     "timeSliderLabel": "Εύρος χρόνου",
@@ -97,7 +97,12 @@ define({
     "placeHolderText": "",
     "noCommentsAvailableText": "Δεν υπάρχουν διαθέσιμες εγγραφές",
     "remainingTextCount": "Απομένουν ${0} χαρακτήρες",
-    "showNoText": "Όχι"
+    "showNoText": "Όχι",
+    "selectAttachments": "Συνημμένα",
+    "selectFileText": "Αναζήτηση",
+    "attachmentSelectedMsg": "συνημμένα επιλέχθηκαν",
+    "attachmentHeaderText": "Συνημμένα",
+    "addRecordText": "Προσθήκη εγγραφής"
   },
   "main": {
     "noGroup": "Δεν έχει παραμετροποιηθεί κάποια ομάδα"
@@ -109,17 +114,18 @@ define({
   },
   "manualRefresh": {
     "manualRefreshIconTooltip": "Ανανέωση",
-    "confirmManualRefeshText": "Όλες οι επιλογές και οι μη αποθηκευμένες αλλαγές θα απορριφθούν"
+    "confirmManualRefreshText": "Όλες οι επιλογές και οι μη αποθηκευμένες αλλαγές θα απορριφθούν"
   },
   "help": {
     "helpIconTooltip": "Βοήθεια"
   },
   "filter": {
     "noFeatureFoundText": "Δεν βρέθηκαν στοιχεία για αυτήν την τιμή.",
-    "distinctQueryFalied": "Δεν βρέθηκαν διακριτές τιμές για το πεδίο.",
+    "distinctQueryFailed": "Δεν βρέθηκαν διακριτές τιμές για το πεδίο.",
     "andText": "και",
-    "filterInEditModeAlert": "Τα φίλτρα δεν είναι διαθέσιμα κατά την επεξεργασία",
-    "dropdownSelectOption": "Επιλογή"
+    "filterInEditModeAlert": "Τα φίλτρα δεν είναι διαθέσιμα κατά την επεξεργασία.",
+    "dropdownSelectOption": "Επιλογή",
+    "filterInShowSelectedEditModeAlert": "Τα φίλτρα δεν είναι διαθέσιμα στη λειτουργία \"Εμφάνιση επιλεγμένων\"."
   },
   "detailsPanel": {
     "editContentText": "Επεξεργασία εγγραφής"
@@ -127,5 +133,10 @@ define({
   "signOutPage": {
     "signOutMessage": "Αποσυνδεθήκατε με επιτυχία",
     "reSignInMessage": "Κάντε κλικ εδώ για να συνδεθείτε"
+  },
+  "selectionOptions": {
+    "selectionOptionsIconTooltip": "Δυνατότητες επιλογής",
+    "showAllOptionText": "Εμφάνιση όλων",
+    "showSelectedOptionText": "Εμφάνιση επιλεγμένων"
   }
 });

@@ -83,7 +83,7 @@ define({
     "valueRadioButtonLabel": "Valeur",
     "uniqueRadioButtonLabel": "Unique",
     "selectLayerToBegin": "Sélectionnez une catégorie pour commencer",
-    "layerFeatureCount": "${featureCount} enregistrements"
+    "layerFeatureCount": "${selectedFeatureCount} sélectionnées / ${featureCount} enregistrements"
   },
   "timeSlider": {
     "timeSliderLabel": "Période",
@@ -97,7 +97,12 @@ define({
     "placeHolderText": "",
     "noCommentsAvailableText": "Aucun enregistrement disponible",
     "remainingTextCount": "${0} caractère(s) restant(s)",
-    "showNoText": "Non"
+    "showNoText": "Non",
+    "selectAttachments": "Pièces jointes",
+    "selectFileText": "Parcourir",
+    "attachmentSelectedMsg": "pièce(s) jointe(s) sélectionnée(s)",
+    "attachmentHeaderText": "Pièces jointes",
+    "addRecordText": "Ajouter un enregistrement"
   },
   "main": {
     "noGroup": "Aucun groupe configuré"
@@ -109,17 +114,18 @@ define({
   },
   "manualRefresh": {
     "manualRefreshIconTooltip": "Actualiser",
-    "confirmManualRefeshText": "Toutes les sélections et les modifications non enregistrées seront ignorées"
+    "confirmManualRefreshText": "Toutes les sélections et les modifications non enregistrées seront ignorées"
   },
   "help": {
     "helpIconTooltip": "Aide"
   },
   "filter": {
     "noFeatureFoundText": "Aucune entité trouvée pour cette valeur.",
-    "distinctQueryFalied": "Aucune valeur distincte trouvée pour le champ.",
+    "distinctQueryFailed": "Aucune valeur distincte trouvée pour le champ.",
     "andText": "et",
-    "filterInEditModeAlert": "Les filtres sont indisponibles pendant la mise à jour",
-    "dropdownSelectOption": "Sélectionner"
+    "filterInEditModeAlert": "Les filtres sont indisponibles pendant la mise à jour.",
+    "dropdownSelectOption": "Sélectionner",
+    "filterInShowSelectedEditModeAlert": "Les filtres sont indisponibles en mode Afficher les entités sélectionnées."
   },
   "detailsPanel": {
     "editContentText": "Mettre à jour l'enregistrement"
@@ -127,5 +133,10 @@ define({
   "signOutPage": {
     "signOutMessage": "Vous avez été déconnecté",
     "reSignInMessage": "Cliquez ici pour vous connecter"
+  },
+  "selectionOptions": {
+    "selectionOptionsIconTooltip": "Options de sélection",
+    "showAllOptionText": "Afficher tout",
+    "showSelectedOptionText": "Afficher les entités sélectionnées"
   }
 });

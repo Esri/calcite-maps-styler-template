@@ -174,7 +174,8 @@ define([
          */
         generateForm: function (formDivName, fields) {
             var pThis = this, formDiv, form, actionsBar, dynamicFormCancel, nextReqFldStatusFlag = 1,
-                i18n = this.appConfig.i18n.dynamic_form;
+                i18n = this.appConfig.i18n.dynamic_form,
+                isRTL = this.appConfig.i18n.direction === "rtl";
 
 
             // Clear out the existing form
@@ -194,7 +195,8 @@ define([
 
             // Submit
             this.dynamicFormSubmit = domConstruct.create("div", {
-                className: "dynamicFormAction dynamicFormActionLeft appTheme appThemeHover"
+                className: "dynamicFormAction appTheme appThemeHover "
+                    + (isRTL ? "dynamicFormActionRight" : "dynamicFormActionLeft")
             }, actionsBar);
             on(this.dynamicFormSubmit, "click", lang.hitch(this, function () {
                 var submission = this.assembleFormValues(this._entryForm);
@@ -208,7 +210,8 @@ define([
 
             // Cancel
             dynamicFormCancel = domConstruct.create("div", {
-                className: "dynamicFormAction dynamicFormActionRight appThemeInverted appThemeInvertedHover"
+                className: "dynamicFormAction appThemeInverted appThemeInvertedHover "
+                    + (isRTL ? "dynamicFormActionLeft" : "dynamicFormActionRight")
             }, actionsBar);
             on(dynamicFormCancel, "click", lang.hitch(this, function () {
                 topic.publish("cancelForm");

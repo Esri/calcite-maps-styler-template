@@ -24,14 +24,15 @@ define({
   "elevation": {
     "toggle": "Lülita kõrgusprofiili graafik sisse/välja.",
     "drawTool": "Kõrgusprofiili loomiseks tõmmake kaardil joon.",
-    "selectMessage": "Kõrgusprofiili kuvamiseks klõpsake joonobjekti või tõmmake joonistamise tööriista abil joon."
+    "selectMessage": "Kõrgusprofiili kuvamiseks klõpsake joonobjekti või tõmmake joonistamise tööriista abil joon.",
+    "gainLossTemplate": "Min: {min}   Max: ${max}   Algus: ${start}   Lõpp: ${end}   Muutus: ${gainLoss}"
   },
   "splash": {
     "title": "Pealkiri",
     "content": "Konfigureerige, et luua kohandatud lisalehe sisu."
   },
   "legend": {
-    "title": "Legend",
+    "title": "Legendiga kaart",
     "tip": "Kuva legend"
   },
   "basemap": {

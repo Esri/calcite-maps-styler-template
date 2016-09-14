@@ -54,6 +54,7 @@ define({
   },
   "item_details": {
     "likeButtonTooltip": "Glasaj za ovu stavku",
+    "likeButtonInverseTooltip": "Zbrojeni glasovi",
     "commentButtonTooltip": "Dodaj komentar",
     "gotoMapViewTooltip": "Idi na prikaz karte",
     "galleryButtonTooltip": "Vidi datoteke u privitku",

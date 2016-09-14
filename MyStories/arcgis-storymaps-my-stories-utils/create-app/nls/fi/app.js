@@ -13,18 +13,27 @@ define({
   },
   "answerText": {
     "seriesOfPlaces": "Paikkajoukko",
-    "mapsNarrative": "Kertomus, jossa on karttoja",
-    "compareDatasets": "Kahden aineistoryhmän vuorovaikutteinen vertailu",
+    "mapsNarrative": "Tarina",
+    "compareDatasets": "Aineistoryhmien vertailu",
     "other": "Yksittäinen kartta",
     "yes": "Kyllä",
     "no": "Ei",
     "click": "Napsauta",
-    "scroll": "Vieritä"
+    "scroll": "Vieritä",
+    "two": "Kaksi",
+    "moreThanTwo": "Yli kaksi",
+    "pickThis": "Valitse tämä",
+    "detailJournal": "...näkyy sivupaneelissa esittelemäsi median vieressä?",
+    "detailCascade": "...näytetään koko sivulla ja että se sisältää tekstiä ja mediaa peräkkäin?"
   },
   "questionText": {
     "bestDescribesStory": "Mikä kuvaa tarinaasi parhaiten?",
     "showPhotos": "Haluatko näyttää kunkin sijainnin valokuvat?",
-    "clickOrScroll": "Haluatko, että kohderyhmäsi napsauttaa välilehtiä vai selaa niitä vierittämällä?"
+    "clickOrScroll": "Haluatko, että kohderyhmäsi napsauttaa välilehtiä vai selaa niitä vierittämällä?",
+    "crowdsource": "Haluatko joukkohankkia paikkoja käyttäjiltäsi?",
+    "categories": "Onko paikkasi järjestetty luokkiin?",
+    "datasets": "Miten montaa aineistoryhmää haluat vertailla?",
+    "narrative": "Haluatko, että tarinasi"
   },
   "finalApp": {
     "weRecommend": "Suosittelemme: {{STORY_TYPE}}",
@@ -33,17 +42,22 @@ define({
   },
   "reasons": {
     "mapTour": "Tämä sovellus esittää peräkkäisiin paikkoihin tai järjestyksessä seurattaviin sijainteihin perustuvan tarinan sellaisten paikkamerkittyjen valokuvien ja kuvatekstien sarjana, jotka on linkitetty vuorovaikutteiseen karttaan. Se soveltuu hyvin kävelyreittien tai sellaisten sijaintien esittämiseen, joita haluat käyttäjien seuraavaan järjestyksessä.",
-    "mapJournal": "Tämän sovelluksen avulla voit luoda karttapohjaisen kertomuksen, joka on esitetty päiväkirjamerkintöinä. Se soveltuu hyvin sellaisten multimediatarinoiden luontiin, joissa on yhdistetty tekstiä, karttoja, kuvia ja videokuvaa. Sovelluksesta on hyötyä erityisesti silloin, kun tekstiä on paljon, tai siihen liittyy kuvia ja videoita.",
+    "mapJournal": "Tämän sovelluksen avulla voit esittää yksityiskohtaisen tarinan vieritettävässä sivupaneelissa ja osiin järjestettynä. Jokaiseen osaan on liitetty esitelty media, kuten kartta, kuva tai video.",
+    "cascade": "Tämän sovelluksen avulla voit esittää tarinan mukaansatempaavasti koko sivulla, jota voi vierittää. Tekstiä ja yhdenmukaista mediaa sisältävät osat voidaan yhdistää immersiivisiin osiin, jotka täyttävät koko sivun ja voivat sisältää tehosteita, kuten kartta-animaatioita ja visuaalisia siirtymiä.",
     "mapSeries": "Tämän sovelluksen avulla voit esittää karttasarjan välilehtien, numeroitujen luettelomerkkien tai laajennettavan \"sivuhaitarin\" avulla. Voit myös sisällyttää kuvia, videokuvaa ja verkkosisältöä sarjaasi tarinan kerrontaa varten.",
+    "crowdsource": "Tämän sovelluksen avulla voit julkaista joukkohankinnan avulla luodun tarinan, johon kuka tahansa voi lisätä sisältöä, ja hallita sitä. Sovelluksen avulla voit herättää tietyn kohderyhmän tai yleisen kohderyhmän kiinnostuksen tiettyyn aiheeseen. Tarkistustoiminnon avulla voit tarkistaa ja hyväksyä sisältöä.",
+    "shortlist": "Tämän sovelluksen avulla voit esittää kiinnostavia paikkoja (esimerkiksi puistoja, nähtävyyksiä ja hotelleja) välilehdillä teemojen mukaan järjestettynä. Välilehdet päivittyvät näyttämään käyttäjille kohteita, jotka ovat sen alueen lähellä, jota he tarkastelevat kartalla. Näin he voivat tutustua tarjontaan kätevästi.",
     "swipeSpyglass": "Tämän sovelluksen avulla käyttäjät voivat verrata kahta karttaa tai saman kartan kahta karttatasoa. Se on erityisen tehokas ennen ja jälkeen -kuvien tai muiden ajan mittaan tapahtuneiden muutosten esittämiseen.",
     "basic": "Tämän sovelluksen avulla voit esittää kartan hyvin yksinkertaisen minimalistisen käyttöliittymän kautta. Otsikkoriviä ja valinnaista selitettä lukuun ottamatta kartta täyttää näytön. Tämän sovelluksen avulla kartta puhuu puolestaan."
   },
   "shortReasons": {
     "mapTour": "Opasta ihmisiä seuraaviin paikkoihin",
-    "mapJournal": "Sopii erinomaisesti perusteelliseen kertomukseen",
+    "mapJournal": "Esitä tarina vieritettävässä sivupaneelissa",
+    "cascade": "Esitä tarina immersiivisesti koko sivulla, jota voi vierittää",
     "mapSeries": "Esitä toisiinsa liittyvien karttojen sarja",
-    "swipe": "Vertaa kahta karttaa tai karttatasoa liukusäätimen avulla",
-    "spyglass": "Vertaa kahta karttaa tai karttatasoa kiikarin avulla",
+    "crowdsource": "Julkaise tarina, johon kuka tahansa voi lisätä sisältöä",
+    "shortlist": "Esitä mielenkiintoisia paikkoja välilehdille järjestettyinä",
+    "swipeSpyglass": "Vertaile kahta karttaa tai karttatasoa liukusäätimen tai suurennuslasin avulla",
     "basic": "Ajattele minimalistisesti, sopii yhdelle kartalle"
   },
   "signInBuildDialog": {

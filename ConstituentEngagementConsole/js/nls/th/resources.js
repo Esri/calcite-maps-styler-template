@@ -83,7 +83,7 @@ define({
     "valueRadioButtonLabel": "มูลค่า",
     "uniqueRadioButtonLabel": "ลักษณะเฉพาะ",
     "selectLayerToBegin": "เลือกประเภทเพื่อเริ่มงาน",
-    "layerFeatureCount": "${featureCount} เรคคอร์ท"
+    "layerFeatureCount": "${นับข้อมูลที่เลือก} เลือก / ${นับข้อมูล} เรคคอร์ด"
   },
   "timeSlider": {
     "timeSliderLabel": "ช่วงเวลา",
@@ -97,7 +97,12 @@ define({
     "placeHolderText": "",
     "noCommentsAvailableText": "ไม่มีเรคคอร์ทื่ใช้งานได้",
     "remainingTextCount": "${0} ตัวอักษร ที่เหลือ",
-    "showNoText": "ไม่"
+    "showNoText": "ไม่",
+    "selectAttachments": "แนบ",
+    "selectFileText": "ค้นหา",
+    "attachmentSelectedMsg": "เลือกไฟล์แนบ",
+    "attachmentHeaderText": "แนบ",
+    "addRecordText": "เพิ่มเรคคอร์ด"
   },
   "main": {
     "noGroup": "ยังไม่กำหนดกลุ่ม"
@@ -109,17 +114,18 @@ define({
   },
   "manualRefresh": {
     "manualRefreshIconTooltip": "รีเฟรช",
-    "confirmManualRefeshText": "การเลือกทั้งหมดและสิ่งที่ไม่ได้บันทึกการเปลี่ยนแปลงจะถูกละทิ้ง"
+    "confirmManualRefreshText": "การเลือกทั้งหมดและสิ่งที่ไม่ได้บันทึกการเปลี่ยนแปลงจะถูกละทิ้ง"
   },
   "help": {
     "helpIconTooltip": "ช่วยเหลือ"
   },
   "filter": {
     "noFeatureFoundText": "ไม่พบฟีเจอร์สำหรับค่านี้",
-    "distinctQueryFalied": "ไม่พบค่าที่แตกต่างกันในฟิลด์นี้",
+    "distinctQueryFailed": "ไม่พบค่าที่แตกต่างกันในฟิลด์นี้",
     "andText": "และ",
-    "filterInEditModeAlert": "ตัวกรองไม่สามารถใช้ได้ในขณะที่แก้ไข",
-    "dropdownSelectOption": "เลือก"
+    "filterInEditModeAlert": "ฟิลเตอร์ไม่ทำงานเมื่อมีการแก้ไข",
+    "dropdownSelectOption": "เลือก",
+    "filterInShowSelectedEditModeAlert": "ฟิลเตอร์ไม่ทำงาน เมื่ออยู่ในโหมดแสดงการเลือก"
   },
   "detailsPanel": {
     "editContentText": "แก้ไขเรคคอร์ท"
@@ -127,5 +133,10 @@ define({
   "signOutPage": {
     "signOutMessage": "คุณได้ลงชื่อออกเรียบร้อยแล้ว",
     "reSignInMessage": "กดที่นี่ เพื่อลงชื่อเข้าใช้"
+  },
+  "selectionOptions": {
+    "selectionOptionsIconTooltip": "เลือกการตั้งค่า",
+    "showAllOptionText": "แสดงทั้งหมด",
+    "showSelectedOptionText": "แสดงที่เลือก"
   }
 });

@@ -54,6 +54,7 @@ define({
   },
   "item_details": {
     "likeButtonTooltip": "تصويت لهذا العنصر",
+    "likeButtonInverseTooltip": "الاقتراع المحسوب",
     "commentButtonTooltip": "إضافة تعليق",
     "gotoMapViewTooltip": "انتقال إلى عرض الخريطة",
     "galleryButtonTooltip": "روية الملفات المرفقة",

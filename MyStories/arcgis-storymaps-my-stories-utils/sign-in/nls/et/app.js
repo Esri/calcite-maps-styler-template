@@ -1,15 +1,21 @@
 define({
   "signInDialog": {
-    "title": "Logige sisse portaali Story Maps",
-    "subtitle": "Logige sisse oma olemasoleva ArcGIS Online kontoga.",
-    "reasonOne": "Saate luua oma lugude rääkimiseks haaravaid kaardilugusid.",
-    "reasonTwo": "Saate kasutada oma kaardilugudes enda kaarte ja ArcGIS Online andmeid.",
-    "reasonThree": "Saate hallata oma kaardilugusid ja vaadata nende sisu olekut.",
-    "noAccountYet": "Kas Teil pole veel ArcGIS Online kontot? Registreeruge kohe.",
+    "title": "Hakake lugusid jutustama!",
+    "reasonOne": "Looge köitavate lugudega kaarte",
+    "reasonTwo": "Kasutage ArcGIS-i võimalusi",
+    "reasonThree": "Hallake oma lugusid",
+    "noAccountYet": "Kas teil pole veel rakenduse ArcGIS Online kontot?",
+    "signUpFor": "Registreeruge:",
     "publicAccount": "Tasuta mitteärilistel eesmärkidel põhinev avalik konto",
     "subscriptionAccount": "ArcGIS-i tellimuse tasuta prooviversioon",
     "signInExpired": "Teie sisselogimisseanss aegus. Logige uuesti sisse, et jätkata poolelijäänud kohast.",
     "somethingNotLoading": "Millegi laadimine ebaõnnestus. Proovige lehte värskendada."
+  },
+  "signedInPrompt": {
+    "signedIn": "Olete nüüd sisse logitud.",
+    "backToStoryMaps": "Tagasi kaardilugude juurde",
+    "closeRefresh": "Sulgege see vahekaart ja värskendage veebisaiti.",
+    "close": "Sulge"
   },
   "unavailableDialog": {
     "title": "Sisselogimine pole saadaval",

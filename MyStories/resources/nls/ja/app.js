@@ -40,7 +40,7 @@ define({
   },
   "cantFindStories": {
     "whereAreStories": "ストーリーが表示されませんか？",
-    "notSeeExplanation": "マイ ストーリーは、{{STORY_MAP_TOUR}}、{{JOURNAL}}、{{MAP_SERIES}}、または {{SWIPE_SPYGLASS}} アプリケーションで作成され、ArcGIS でホストされたストーリー マップのみをリスト表示します。詳細については、{{FAQ}} をご参照ください。",
+    "notSeeExplanation": "マイ ストーリーは、ArcGIS でホストされているストーリー マップのみをリスト表示します ({{STORY_MAP_BASIC}} は現在サポートされていません)。詳細は、{{FAQ}} をご参照ください。",
     "faq": "FAQ",
     "followingStoriesToUpdate": "旧バージョンのアプリケーションで作成された以下のストーリーは、マイ ストーリーにリスト表示するために更新する必要があります。",
     "gettingStories": "旧バージョンのアプリケーションで作成された、更新する必要のあるストーリーを検索しています...",
@@ -88,27 +88,16 @@ define({
     "layerPrivate": "レイヤーをプライベートにすると、ストーリーが壊れます。"
   },
   "collectionList": {
-    "advocacy": "支援活動と奉仕活動",
-    "architecture": "アーキテクチャとデザイン",
-    "conservation": "保護と持続可能性",
-    "culture": "文化",
-    "destinations": "目的地と観光",
-    "disasters": "災害と復旧",
-    "economy": "経済と開発",
-    "entertainment": "エンターテイメント",
-    "history": "歴史",
-    "infrastructure": "インフラストラクチャ",
-    "marketing": "マーケティング",
-    "nature": "自然と環境",
-    "news": "ニュースとイベント",
-    "oceans": "海洋",
-    "parks": "公園とレクリエーション",
+    "business": "ビジネスと経済",
+    "history": "歴史と文化",
+    "inNews": "ニュース",
+    "infrastructure": "インフラと建築",
+    "nature": "自然と保護",
     "people": "人と社会",
-    "planning": "計画と分析",
-    "publicArt": "公衆芸術",
+    "planning": "計画と設計",
     "science": "科学と技術",
-    "sport": "スポーツ",
-    "travelogues": "トラベログ"
+    "sports": "スポーツとエンターテイメント",
+    "travel": "旅行とレクリエーション"
   },
   "types": {
     "custom": "カスタム",
@@ -227,6 +216,7 @@ define({
   "content": {
     "media": {
       "maps": "マップ",
+      "scenes": "シーン",
       "images": "画像",
       "videos": "ビデオ",
       "webpages": "Web ページ",
@@ -244,22 +234,30 @@ define({
       "bullet": "箇条書き",
       "tab": "タブ",
       "accordion": "セクション",
-      "mapJournal": "セクション"
+      "mapJournal": "セクション",
+      "cascade": "セクション",
+      "crowdsource": "提供者",
+      "shortlist": "タブ"
     },
     "titleType": {
       "mapTour": "キャプション",
       "mapJournal": "URL",
-      "mapSeries": "URL"
+      "mapSeries": "URL",
+      "cascade": "URL",
+      "crowdsource": "URL",
+      "shortlist": "URL"
     },
     "actions": {
       "viewMap": "マップの表示",
       "editMap": "マップの編集",
+      "editScene": "シーンの編集",
       "fix": "修正",
       "viewLayer": "レイヤーの表示"
     },
     "contentType": {
       "mainStage": "メイン ステージ アクション",
-      "sidePanel": "説明"
+      "sidePanel": "説明",
+      "introImage": "(表紙の写真)"
     },
     "notification": {
       "refreshExplanation": "もう一度ストーリーをチェックする",
@@ -300,6 +298,7 @@ define({
       "publicDisabled": "パブリックな共有は、管理者によって無効化されています",
       "orgDisabled": "組織での共有は、管理者によって無効化されています",
       "noMapName": "マップ名を取得できませんでした",
+      "noSceneName": "シーンを取得できませんでした",
       "notPublic": "パブリックではありません",
       "inaccessible": "アクセス不可",
       "deleted": "削除されました",
@@ -351,6 +350,8 @@ define({
       "cantScanThisTypeAlt": "このタイプのレイヤーをチェックすることはできません",
       "cantScanThisType": "レイヤーは、チェックできるタイプのレイヤーではありません",
       "webpageNotScanned": "Web ページの問題がチェックされていません",
+      "sceneNotScanned": "現在、シーンに問題があるかどうかの確認は行っていません。シーンおよびそのすべてのレイヤーが正常に共有されていることを確認してください。",
+      "scenesNotScannedGlobally": "ストーリーにはシーンが存在します。現在、シーンに問題があるかどうかの確認は行っていません。シーンおよびそれらのすべてのレイヤーが正常に共有されていることを確認してください。",
       "ignoredIssue": "このレイヤーのエラーを無視しています。ページを再読み込みし、このストーリーをもう一度チェックしてエラーを確認してください。",
       "ignoredIssueBuilder": "このレイヤーのエラーを無視しています。ビルダーを再読み込みし、このエラーをもう一度確認してください。"
     },
@@ -450,18 +451,26 @@ define({
       "secondValueC": "タブ付き",
       "thirdTitle": "マップ"
     },
+    "cascade": {
+      "firstTitle": "セクション",
+      "secondTitle": "マップ"
+    },
     "swipeSpyglass": {
       "firstTitle": "主要地",
-      "secondTitle": "シンボル",
+      "secondTitle": "スタイル",
       "secondValueA": "スワイプ",
       "secondValueB": "スパイグラス",
       "thirdTitle": "マップ"
     },
     "crowdsource": {
       "firstTitle": "提供者",
-      "secondTitle": "スタイル",
-      "secondValueA": "サイド パネル",
-      "secondValueB": "改行",
+      "secondTitle": "ベースマップ",
+      "secondValueLoading": "読み込んでいます...",
+      "secondValueUnknown": "不明"
+    },
+    "shortlist": {
+      "firstTitle": "場所",
+      "secondTitle": "タブ",
       "thirdTitle": "ベースマップ",
       "thirdValueLoading": "読み込んでいます...",
       "thirdValueUnknown": "不明"

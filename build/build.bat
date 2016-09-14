@@ -33,6 +33,7 @@ mkdir %BUILD_OUTPUT%\Elevations
 mkdir %BUILD_OUTPUT%\Embed
 mkdir %BUILD_OUTPUT%\Filter
 mkdir %BUILD_OUTPUT%\GeoForm
+mkdir %BUILD_OUTPUT%\GeoTour
 mkdir %BUILD_OUTPUT%\HeaderFooter
 mkdir %BUILD_OUTPUT%\HeaderFooter\Chrome
 mkdir %BUILD_OUTPUT%\HeaderFooter\pavement
@@ -83,6 +84,7 @@ mkdir %BUILD_OUTPUT%\SocialMedia
 mkdir %BUILD_OUTPUT%\Solutions
 mkdir %BUILD_OUTPUT%\StorytellingSwipe
 mkdir %BUILD_OUTPUT%\StorytellingTextLegend
+mkdir %BUILD_OUTPUT%\Styler
 mkdir %BUILD_OUTPUT%\Time
 mkdir %BUILD_OUTPUT%\TimeAware
 mkdir %BUILD_OUTPUT%\ThumbnailGenerator
@@ -103,6 +105,7 @@ mkdir %BUILD_OUTPUT%\View
 mkdir %BUILD_OUTPUT%\MyStories
 mkdir %BUILD_OUTPUT%\StoryMapCrowdsource
 mkdir %BUILD_OUTPUT%\Cascade
+mkdir %BUILD_OUTPUT%\Shortlist
 
 
 xcopy %TEMPLATES_ROOT%\archive\CompareConfigure                 %BUILD_OUTPUT%\Compare\Configure                    /E /Y
@@ -182,6 +185,8 @@ xcopy %TEMPLATES_ROOT%\archive\TwoPaneSeaside                   %BUILD_OUTPUT%\T
 xcopy %TEMPLATES_ROOT%\PublicInformation                        %BUILD_OUTPUT%\PublicInformation                    /E /Y
 xcopy %TEMPLATES_ROOT%\ImpactSummary                            %BUILD_OUTPUT%\ImpactSummary                        /E /Y
 xcopy %TEMPLATES_ROOT%\SummaryViewer                            %BUILD_OUTPUT%\SummaryViewer                        /E /Y
+xcopy %TEMPLATES_ROOT%\Styler                                   %BUILD_OUTPUT%\Styler                               /E /Y
+xcopy %TEMPLATES_ROOT%\Ranking                                  %BUILD_OUTPUT%\GeoTour                              /E /Y
 xcopy %TEMPLATES_ROOT%\MapTools                                 %BUILD_OUTPUT%\MapTools                             /E /Y
 xcopy %TEMPLATES_ROOT%\MapJournal                               %BUILD_OUTPUT%\MapJournal                           /E /Y
 xcopy %TEMPLATES_ROOT%\MapSeries                                %BUILD_OUTPUT%\MapSeries                            /E /Y
@@ -194,6 +199,7 @@ xcopy %TEMPLATES_ROOT%\ThumbnailGenerator                       %BUILD_OUTPUT%\T
 xcopy %TEMPLATES_ROOT%\MyStories                                %BUILD_OUTPUT%\MyStories                            /E /Y
 xcopy %TEMPLATES_ROOT%\StoryMapCrowdsource                      %BUILD_OUTPUT%\StoryMapCrowdsource                  /E /Y
 xcopy %TEMPLATES_ROOT%\Cascade                                  %BUILD_OUTPUT%\Cascade                              /E /Y
+xcopy %TEMPLATES_ROOT%\Shortlist                                %BUILD_OUTPUT%\Shortlist                            /E /Y
 
 
 

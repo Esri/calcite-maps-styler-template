@@ -19,6 +19,7 @@ define([
   "dojo/_base/declare",
   "dojo/_base/array",
   "dojo/_base/lang",
+  "dojo/_base/kernel",
   "dojo/_base/Color",
 
   "dojo/on",
@@ -39,13 +40,14 @@ define([
   "esri/units",
   "esri/domUtils",
   "esri/arcgis/utils",
+  "esri/lang",
 
   "application/MapUrlParams",
   "application/ElevationProfileSetup",
 
   "dojo/domReady!"
 ], function(
-  declare, array, lang, Color,
+  declare, array, lang, kernel, Color,
   on, mouse, query,
   Deferred,
   baseFx,
@@ -54,6 +56,7 @@ define([
   Units,
   domUtils,
   arcgisUtils,
+  esriLang,
   MapUrlParams,
   ElevationProfileSetup
 ) {
@@ -61,13 +64,19 @@ define([
     config: {},
     containers: [],
     startup: function(config) {
+      // Set lang attribute to current locale
+      document.documentElement.lang = kernel.locale;
       var promise;
       // config will contain application and user defined info for the template such as i18n strings, the web map id
       // and application id
       // any url parameters and any application specific configuration information.
       if (config) {
         this.config = config;
-
+        if (this.config.sharedThemeConfig && this.config.sharedThemeConfig.attributes && this.config.sharedThemeConfig.attributes.theme) {
+          var sharedTheme = this.config.sharedThemeConfig.attributes;
+          this.config.color = sharedTheme.theme.text.color;
+          this.config.background = sharedTheme.theme.body.bg;
+        }
         // Create and add custom style sheet
         if (this.config.customstyle) {
           var style = document.createElement("style");
@@ -245,7 +254,6 @@ define([
         }));
       }));
       // setup the basemap tool
-
       if (this.config.basemaps) {
         require(["esri/dijit/BasemapGallery"], lang.hitch(this, function(BasemapGallery) {
           var basemapGallery = new BasemapGallery({
@@ -265,6 +273,67 @@ define([
           on(basemapButton, "click", lang.hitch(this, function() {
             this._toggleButtonContainer(basemapButton, "basemapContainer");
           }));
+        }));
+      }
+      if (this.config.basemapToggle) {
+        require(["esri/dijit/BasemapToggle", "esri/basemaps"], lang.hitch(this, function(BasemapToggle, basemaps) {
+
+          /* Start temporary until after JSAPI 4.0 is released */
+          var bmLayers = [],
+            mapLayers = this.map.getLayersVisibleAtScale(this.map.getScale());
+          if (mapLayers) {
+            for (var i = 0; i < mapLayers.length; i++) {
+              if (mapLayers[i]._basemapGalleryLayerType) {
+                var bmLayer = this.map.getLayer(mapLayers[i].id);
+                if (bmLayer) {
+                  bmLayers.push(bmLayer);
+                }
+              }
+            }
+          }
+          on.once(this.map, "basemap-change", lang.hitch(this, function() {
+            if (bmLayers && bmLayers.length) {
+              for (var i = 0; i < bmLayers.length; i++) {
+                bmLayers[i].setVisibility(false);
+              }
+            }
+          })); /* END temporary until after JSAPI 4.0 is released */
+
+
+          var toggle = new BasemapToggle({
+            map: this.map,
+            basemap: this.config.alt_basemap || "satellite"
+          }, "toggle");
+          toggle.startup();
+          if (this.config.panelLocation === "top-center") {
+            domClass.add(toggle.domNode, "bottom");
+          }
+
+
+          if (this.config.response && this.config.response.itemInfo && this.config.response.itemInfo.itemData && this.config.response.itemInfo.itemData.baseMap) {
+            var b = this.config.response.itemInfo.itemData.baseMap;
+            if (b.title === "World Dark Gray Base") {
+              b.title = "Dark Gray Canvas";
+            }
+            if (b.title) {
+              for (var j in basemaps) {
+                //use this to handle translated titles
+                if (b.title === this._getBasemapName(j)) {
+                  toggle.defaultBasemap = j;
+                  //remove at 4.0
+                  if (j === "dark-gray") {
+                    if (this.map.layerIds && this.map.layerIds.length > 0) {
+                      this.map.basemapLayerIds = this.map.layerIds.slice(0);
+                      this.map._basemap = "dark-gray";
+                    }
+                  }
+                  //end remove at 4.0
+                  this.map.setBasemap(j);
+                }
+              }
+            }
+          }
+
         }));
       }
       // setup the legend tool
@@ -481,7 +550,6 @@ define([
     _setupProfile: function() {
       // Set the panel location
       domClass.add(dom.byId("panelContainer"), this.config.panelLocation);
-
       var units = this.config.units;
       if (units === "english" || units === "metric") {
         units = (units === "english") ? Units.MILES : Units.KILOMETERS;
@@ -518,7 +586,8 @@ define([
               color: [255, 255, 255],
               width: 1
             }
-          }
+          },
+          busyIndicatorImageUrl: "./images/ajax-loader.gif"
         },
         profileTaskUrl: profileUrl,
         scalebarUnits: units
@@ -526,15 +595,29 @@ define([
 
       this.elevationWidget = new ElevationProfileSetup(params);
       this.elevationWidget.setupProfile();
-
+      if (this.elevationWidget.profileWidget && this.elevationWidget.profileWidget._directionButton) {
+        on(this.elevationWidget.profileWidget._directionButton, "click", lang.hitch(this, function() {
+          on.once(this.elevationWidget.profileWidget._profileChart, "chart-update", lang.hitch(this, function() {
+            var content = esriLang.substitute(this.elevationWidget.generateElevationInfo(), this.config.i18n.elevation.gainLossTemplate);
+            dom.byId("elevInfo").innerHTML = content;
+          }));
+        }));
+      }
       on(this.elevationWidget, "profile-generated", lang.hitch(this, function() {
         //open profile chart if closed
-        var element = dom.byId("panelContent");
         var height = domStyle.get(dom.byId("panelContent"), "height");
         if (height <= 0) {
           this._togglePanel("panelContent");
         }
+        on.once(this.elevationWidget.profileWidget._profileChart, "chart-clear", function() {
+          dom.byId("elevInfo").innerHTML = "";
+        });
+        on.once(this.elevationWidget.profileWidget._profileChart, "chart-update", lang.hitch(this, function() {
+          var content = esriLang.substitute(this.elevationWidget.generateElevationInfo(), this.config.i18n.elevation.gainLossTemplate);
+          dom.byId("elevInfo").innerHTML = content;
+        }));
       }));
+
     },
     _updateTheme: function() {
       var bgColor = this.config.background;
@@ -585,7 +668,6 @@ define([
         height = domStyle.get(element, "height"),
         opacity = parseInt(domStyle.get(element, "opacity")),
         visibility = domStyle.get(element, "visibility");
-      var btn = dom.byId("toggleProfile");
       // Toggle Active
       domClass.toggle("toggleProfile", "active");
 
@@ -623,6 +705,42 @@ define([
           domClass.add("modal", "hide");
         }));
       }
+    },
+    _getBasemapName: function(name) {
+      var current = null;
+      switch (name) {
+        case "dark-gray":
+          current = "Dark Gray Canvas";
+          break;
+        case "gray":
+          current = "Light Gray Canvas";
+          break;
+        case "hybrid":
+          current = "Imagery with Labels";
+          break;
+        case "national-geographic":
+          current = "National Geographic";
+          break;
+        case "oceans":
+          current = "Oceans";
+          break;
+        case "osm":
+          current = "OpenStreetMap";
+          break;
+        case "satellite":
+          current = "Imagery";
+          break;
+        case "streets":
+          current = "Streets";
+          break;
+        case "terrain":
+          current = "Terrain with Labels";
+          break;
+        case "topo":
+          current = "Topographic";
+          break;
+      }
+      return current;
     }
 
   });

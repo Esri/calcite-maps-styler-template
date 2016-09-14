@@ -54,6 +54,7 @@ define({
   },
   "item_details": {
     "likeButtonTooltip": "Op dit item stemmen",
+    "likeButtonInverseTooltip": "Stem geteld",
     "commentButtonTooltip": "Een opmerking toevoegen",
     "gotoMapViewTooltip": "Ga naar kaartweergave",
     "galleryButtonTooltip": "Zie bijgesloten bestanden",

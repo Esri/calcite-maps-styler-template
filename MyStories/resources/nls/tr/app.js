@@ -40,7 +40,7 @@ define({
   },
   "cantFindStories": {
     "whereAreStories": "Hikayenizi göremiyor musunuz?",
-    "notSeeExplanation": "Hikayelerim yalnızca {{STORY_MAP_TOUR}}, {{JOURNAL}}, {{MAP_SERIES}} veya {{SWIPE_SPYGLASS}} uygulamaları kullanılarak oluşturulan ve ArcGIS'de barındırılan hikaye haritalarını listeler. Daha fazla bilgi için {{FAQ}} bölümümüzü inceleyin.",
+    "notSeeExplanation": "Hikayelerim yalnızca ArcGIS içinde barındırılan hikaye haritalarında listelenir ({{STORY_MAP_BASIC}} şu anda desteklenmemektedir). Daha fazla bilgi için {{FAQ}} bölümümüzü inceleyin.",
     "faq": "SSS",
     "followingStoriesToUpdate": "Uygulamalarımızın önceki sürümleri ile oluşturulan aşağıdaki hikayelerin, Hikayelerim içinde listelenebilmesi için güncelleştirilmesi gerekir:",
     "gettingStories": "Uygulamalarımızın önceki sürümleri ile oluşturulan ve güncellenmesi gereken hikayeler aranıyor...",
@@ -88,27 +88,16 @@ define({
     "layerPrivate": "Katmanınızın özel yapılması hikayenizi kesintiye uğratabilir"
   },
   "collectionList": {
-    "advocacy": "Destek ve Erişim",
-    "architecture": "Mimari ve Tasarım",
-    "conservation": "Koruma ve Sürdürülebilirlik",
-    "culture": "Kültür",
-    "destinations": "Destinasyonlar ve Turizm",
-    "disasters": "Felaket ve Kurtarma",
-    "economy": "Ekonomi ve Kalkınma",
-    "entertainment": "Eğlence",
-    "history": "Tarih",
-    "infrastructure": "Altyapı",
-    "marketing": "Pazarlama",
-    "nature": "Doğa ve Çevre",
-    "news": "Haberler ve Olaylar",
-    "oceans": "Okyanuslar",
-    "parks": "Parklar ve Gezinti Yerleri",
+    "business": "İş ve Ekonomi",
+    "history": "Tarih ve Kültür",
+    "inNews": "Haberlerde Öne Çıkanlar",
+    "infrastructure": "Altyapı ve İnşaat",
+    "nature": "Doğa ve Koruma",
     "people": "İnsanlar ve Toplum",
-    "planning": "Planlama ve Analiz",
-    "publicArt": "Popüler Sanat",
+    "planning": "Planlama ve Tasarım",
     "science": "Bilim ve Teknoloji",
-    "sport": "Spor",
-    "travelogues": "Gezi Günlükleri"
+    "sports": "Spor ve Eğlence",
+    "travel": "Seyahat ve Tatil"
   },
   "types": {
     "custom": "Özel",
@@ -227,6 +216,7 @@ define({
   "content": {
     "media": {
       "maps": "Haritalar",
+      "scenes": "Sahneler",
       "images": "Görüntüler",
       "videos": "Videolar",
       "webpages": "Web sayfaları",
@@ -244,22 +234,30 @@ define({
       "bullet": "Madde İşareti",
       "tab": "Sekme",
       "accordion": "Bölüm",
-      "mapJournal": "Bölüm"
+      "mapJournal": "Bölüm",
+      "cascade": "Bölüm",
+      "crowdsource": "Katkı",
+      "shortlist": "Sekme"
     },
     "titleType": {
       "mapTour": "Yakalama:",
       "mapJournal": "URL",
-      "mapSeries": "URL"
+      "mapSeries": "URL",
+      "cascade": "URL",
+      "crowdsource": "URL",
+      "shortlist": "URL"
     },
     "actions": {
       "viewMap": "Haritayı Görüntüle",
       "editMap": "Harita Düzenle",
+      "editScene": "Görünümü Düzenle",
       "fix": "Düzelt",
       "viewLayer": "Katmanı Görüntüle"
     },
     "contentType": {
       "mainStage": "ana aşama eylemi",
-      "sidePanel": "açıklama"
+      "sidePanel": "açıklama",
+      "introImage": "(kapak sayfası fotoğrafı)"
     },
     "notification": {
       "refreshExplanation": "Hikayenizi yeniden denetleyin",
@@ -300,6 +298,7 @@ define({
       "publicDisabled": "Genel paylaşım bir Yönetici tarafından devre dışı bırakıldı",
       "orgDisabled": "Kuruluşunuzla paylaşma bir Yönetici tarafından devre dışı bırakıldı",
       "noMapName": "Harita Adı Alınamadı",
+      "noSceneName": "Görünüm Alınamadı",
       "notPublic": "GENEL DEĞİL",
       "inaccessible": "ERİŞİLEMEZ",
       "deleted": "SİLİNDİ",
@@ -351,6 +350,8 @@ define({
       "cantScanThisTypeAlt": "Bu katman türü denetlenemiyor",
       "cantScanThisType": "Katman denetleyebildiğimiz bir katman türü değil",
       "webpageNotScanned": "Web sayfaları sorunlar açısından denetlenmez",
+      "sceneNotScanned": "Görünümlerde şu an için sorun denetimi yapılamıyor, görünümün ve tüm katmanlarının düzgün biçimde paylaşıldığından emin olun",
+      "scenesNotScannedGlobally": "Bunlar hikayede bulunan ve henüz sorunlar açısından denetlenmemiş olan görünümlerdir. Görünümlerin ve tüm katmanlarının düzgün biçimde paylaşıldığından emin olun",
       "ignoredIssue": "Bu katmandaki bir hatayı yok saydınız. Sayfayı yeniden yükleyin ve hatayı incelemek için bu hikayeyi yeniden denetleyin",
       "ignoredIssueBuilder": "Bu katmandaki bir hatayı yok saydınız. Oluşturucuyu yeniden yükleyin ve bu hatayı yeniden inceleyin"
     },
@@ -450,6 +451,10 @@ define({
       "secondValueC": "sekmeli",
       "thirdTitle": "haritalar"
     },
+    "cascade": {
+      "firstTitle": "bölümler",
+      "secondTitle": "haritalar"
+    },
     "swipeSpyglass": {
       "firstTitle": "gezilecek yerler",
       "secondTitle": "stil",
@@ -459,9 +464,13 @@ define({
     },
     "crowdsource": {
       "firstTitle": "katkıda bulunanlar",
-      "secondTitle": "stil",
-      "secondValueA": "yan pano",
-      "secondValueB": "yığın",
+      "secondTitle": "altlık harita",
+      "secondValueLoading": "Yükleniyor...",
+      "secondValueUnknown": "bilinmeyen"
+    },
+    "shortlist": {
+      "firstTitle": "yerler",
+      "secondTitle": "sekmeler",
       "thirdTitle": "altlık harita",
       "thirdValueLoading": "Yükleniyor...",
       "thirdValueUnknown": "bilinmeyen"

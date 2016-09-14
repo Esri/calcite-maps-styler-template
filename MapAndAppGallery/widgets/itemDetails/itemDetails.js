@@ -610,7 +610,9 @@ define([
                         this.map.setExtent(this.mapExtent);
                     }), 500);
                 }
-                domClass.toggle(query(".esriCTMapGeoLocation")[0], "displayNone");
+                if (query(".esriCTMapGeoLocation")[0]) {
+                    domClass.toggle(query(".esriCTMapGeoLocation")[0], "displayNone");
+                }
             }
             if (this.map && this.map.extent) {
                 this.map.setExtent(this.map.extent);

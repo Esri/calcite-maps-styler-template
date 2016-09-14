@@ -41,6 +41,14 @@
                      "value":"dark"
                   }
                ]
+            },{
+              "type": "paragraph",
+              "value": "Use the Custom css option to paste css that overwrites rules in the app."
+            }, {
+              "type": "string",
+              "fieldName": "customstyle",
+              "tooltip": "Custom css",
+              "label": "Custom css"
             }
          ]
       },
@@ -56,6 +64,10 @@
                "type":"boolean",
                "fieldName":"zoom",
                "label":"Zoom Slider"
+            },
+            {
+              "type": "paragraph",
+              "value": "The Home Extent Button requires that the zoom slider is enabled."
             },
             {
                "type":"string",
@@ -93,12 +105,16 @@
             },
             {
                "type":"paragraph",
-               "value":"Disabled scrolling is important when embedding maps into websites or blogs.  If this will be a stand-alone app, you may want to uncheck 'Disable scrolling in app' if you want to provide the ability to use the mouse scroll wheel to navigate in this app."
+               "value":"Disabled scrolling is important when embedding maps into websites or blogs.  If this will be a stand-alone app, you may want to uncheck 'Disable scrolling in app' if you want to provide the ability to use the mouse scroll wheel to navigate in this app. To disable all map navigation check the Disable map navigation checkbox."
             },
             {
                "type":"boolean",
                "fieldName":"disable_scroll",
                "label":"Disable scrolling in app"
+            },{
+              "type": "boolean",
+              "fieldName": "disable_nav",
+              "label": "Disable all map navigation"
             },
             {
                "type":"paragraph",
@@ -108,15 +124,18 @@
                "type":"boolean",
                "fieldName":"show_panel",
                "label":"Display the side panel when the app loads."
+            },{
+               "type":"paragraph",
+               "value": "Choose to display either the legend alone or as an integrated legend + layer list."
             },
             {
                "type":"boolean",
                "fieldName":"legend",
-               "label":"Display a legend in side panel"
+               "label":"Display a legend"
             },{
               "type":"boolean",
               "fieldName":"legendlayers",
-              "label": "Display layer list in side panel as well as a legend"
+              "label": "Display legend + layer list"
             },
             {
                "type":"boolean",
@@ -233,6 +252,7 @@
       "legendlayers":false,
       "popup_sidepanel":false,
       "basemap_gallery":false,
-      "disable_scroll":false
+      "disable_scroll":false,
+      "disable_nav": false
    }
 }

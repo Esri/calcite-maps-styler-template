@@ -1,15 +1,21 @@
 define({
   "signInDialog": {
-    "title": "Prijava u Story Maps",
-    "subtitle": "Prijavite se s postojećim računom za ArcGIS Online na:",
-    "reasonOne": "Izradite iznimne karte s pričama i ispričajte svoje priče.",
-    "reasonTwo": "Koristite se kartama i podacima iz ArcGIS Online u svojim kartama s pričama.",
-    "reasonThree": "Upravljajte svojim kartama s pričama i provjerite status njihovog sadržaja.",
-    "noAccountYet": "Nemate račun za ArcGIS Online? Prijavite se za:",
+    "title": "Počnite pričati priče!",
+    "reasonOne": "Stvorite izuzetne karte s pričom",
+    "reasonTwo": "Iskoristite moć ArcGIS-a",
+    "reasonThree": "Upravljajte svojim pričama",
+    "noAccountYet": "Nemate račun za ArcGIS Online?",
+    "signUpFor": "Prijavite se za sljedeće:",
     "publicAccount": "Besplatni nekomercijalni javni račun",
     "subscriptionAccount": "Besplatnu probnu pretplatu za ArcGIS",
     "signInExpired": "Vaša je prijava istekla. Ponovno se prijavite i nastavite gdje ste stali.",
     "somethingNotLoading": "Nešto se ne učitava ispravno. Pokušajte osvježiti stranicu."
+  },
+  "signedInPrompt": {
+    "signedIn": "Sada ste prijavljeni.",
+    "backToStoryMaps": "Natrag na Story Maps",
+    "closeRefresh": "Zatvorite ovu karticu i osvježite web-mjesto.",
+    "close": "Zatvori"
   },
   "unavailableDialog": {
     "title": "Prijava nije dostupna",

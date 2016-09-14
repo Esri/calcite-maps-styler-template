@@ -40,7 +40,7 @@ define({
   },
   "cantFindStories": {
     "whereAreStories": "Nematote savo pasakojimo?",
-    "notSeeExplanation": "Puslapyje Mano pasakojimai bus pateikiami tik ArcGIS pasakojimų žemėlapiai, sukurti naudojant {{STORY_MAP_TOUR}}, {{JOURNAL}}, {{MAP_SERIES}} arba {{SWIPE_SPYGLASS}} aplikacijas. Jeigu reikia daugiau informacijos, žr. mūsų {{FAQ}}.",
+    "notSeeExplanation": "Skyriuje Mano pasakojimai bus pateikiami tik žemėlapių pasakojimai, saugomi ArcGIS ({{STORY_MAP_BASIC}} šiuo metu nepalaikoma). Daugiau informacijos rasite mūsų {{DUK}}.",
     "faq": "DUK",
     "followingStoriesToUpdate": "Šiuos pasakojimus, sukurtus ankstesne mūsų programos versija, reikia atnaujinti, kad juos būtų galima pateikti puslapyje Mano pasakojimai:",
     "gettingStories": "Ieškoma ankstesnėmis mūsų aplikacijų versijomis sukurtų pasakojimų, kuriuos reikia atnaujinti...",
@@ -88,27 +88,16 @@ define({
     "layerPrivate": "Pavertę žemėlapį asmeniniu pažeisite savo istoriją"
   },
   "collectionList": {
-    "advocacy": "Dalijimasis nuomone ir informavimas",
-    "architecture": "Architektūra ir dizainas",
-    "conservation": "Apsauga ir tvarumas",
-    "culture": "Kultūra",
-    "destinations": "Kelionės paskirtys ir turizmas",
-    "disasters": "Nelaimės ir pagalba",
-    "economy": "Ekonomika ir vystymasis",
-    "entertainment": "Pramogos",
-    "history": "Istorija",
-    "infrastructure": "Infrastruktūra",
-    "marketing": "Rinkodara",
-    "nature": "Gamta ir aplinka",
-    "news": "Naujienos ir renginiai",
-    "oceans": "Vandenynai",
-    "parks": "Parkai ir poilsis",
+    "business": "Verslas ir ekonomika",
+    "history": "Istorija ir kultūra",
+    "inNews": "Aktualijos",
+    "infrastructure": "Infrastruktūra ir statybos",
+    "nature": "Gamtos apsauga",
     "people": "Žmonės ir visuomenė",
-    "planning": "Planavimas ir analizė",
-    "publicArt": "Viešasis menas",
+    "planning": "Planavimas ir dizainas",
     "science": "Mokslas ir technologija",
-    "sport": "Sportas",
-    "travelogues": "Kelionių dienoraščiai"
+    "sports": "Sportas ir pramogos",
+    "travel": "Kelionės ir poilsis"
   },
   "types": {
     "custom": "Adaptuotas",
@@ -227,6 +216,7 @@ define({
   "content": {
     "media": {
       "maps": "Žemėlapiai",
+      "scenes": "Scenos",
       "images": "Atvaizdai",
       "videos": "Vaizdo įrašai",
       "webpages": "Tinklalapiai",
@@ -244,22 +234,30 @@ define({
       "bullet": "Ženklelis",
       "tab": "Kortelė",
       "accordion": "Skiltis",
-      "mapJournal": "Skiltis"
+      "mapJournal": "Skiltis",
+      "cascade": "Skiltis",
+      "crowdsource": "Prisidėjimas",
+      "shortlist": "Kortelė"
     },
     "titleType": {
       "mapTour": "Antraštė",
       "mapJournal": "URL",
-      "mapSeries": "URL"
+      "mapSeries": "URL",
+      "cascade": "URL",
+      "crowdsource": "URL",
+      "shortlist": "URL"
     },
     "actions": {
       "viewMap": "Peržiūrėti žemėlapį",
       "editMap": "Redaguoti žemėlapį",
+      "editScene": "Redaguoti sceną",
       "fix": "Pataisyti",
       "viewLayer": "Peržiūrėti sluoksnį"
     },
     "contentType": {
       "mainStage": "pagrindinės srities veiksmas",
-      "sidePanel": "aprašas"
+      "sidePanel": "aprašas",
+      "introImage": "(pagrindinio puslapio nuotrauka)"
     },
     "notification": {
       "refreshExplanation": "Dar kartą patikrinkite savo pasakojimą",
@@ -300,6 +298,7 @@ define({
       "publicDisabled": "Viešojo bendrinimo funkciją išjungė administratorius",
       "orgDisabled": "Bendrinimo organizacijoje funkciją išjungė administratorius",
       "noMapName": "Nepavyko gauti žemėlapio pavadinimo",
+      "noSceneName": "Scenos gauti nepavyko",
       "notPublic": "NEVIEŠA",
       "inaccessible": "NEPRIEINAMA",
       "deleted": "PANAIKINTA",
@@ -351,6 +350,8 @@ define({
       "cantScanThisTypeAlt": "Negalime tikrinti šio tipo sluoksnio",
       "cantScanThisType": "Sluoksnis priklauso tipui, kurio mes negalime tikrinti",
       "webpageNotScanned": "Tinklalapiai netikrinami, ar juose yra nesklandumų",
+      "sceneNotScanned": "Šiuo metu netikrinama, ar scenos veikia be trikdžių. Įsitikinkite, kad scena ir visi jos sluoksniai bendrinami tinkamai",
+      "scenesNotScannedGlobally": "Šiame pasakojime yra scenų, tačiau šiuo metu netikrinama, ar scenos veikia be trikdžių. Įsitikinkite, kad scenos ir visi jų sluoksniai bendrinami tinkamai",
       "ignoredIssue": "Ignoravote klaidą šiame sluoksnyje. Įkelkite puslapį iš naujo ir dar kartą peržiūrėkite pasakojimą ir klaidą",
       "ignoredIssueBuilder": "Ignoravote klaidą šiame sluoksnyje. Įkelkite kūrimo priemonę iš naujo ir dar kartą peržiūrėkite šią klaidą"
     },
@@ -450,6 +451,10 @@ define({
       "secondValueC": "su skirtukais",
       "thirdTitle": "žemėlapiai"
     },
+    "cascade": {
+      "firstTitle": "skiltys",
+      "secondTitle": "žemėlapiai"
+    },
     "swipeSpyglass": {
       "firstTitle": "lankytinos vietos",
       "secondTitle": "stilius",
@@ -459,9 +464,13 @@ define({
     },
     "crowdsource": {
       "firstTitle": "prisidėjimai",
-      "secondTitle": "stilius",
-      "secondValueA": "šoninis skydelis",
-      "secondValueB": "vienas ant kito",
+      "secondTitle": "pagrindo žemėlapis",
+      "secondValueLoading": "Įkeliama...",
+      "secondValueUnknown": "nežinoma"
+    },
+    "shortlist": {
+      "firstTitle": "vietos",
+      "secondTitle": "skirtukai",
       "thirdTitle": "pagrindo žemėlapis",
       "thirdValueLoading": "Įkeliama...",
       "thirdValueUnknown": "nežinoma"

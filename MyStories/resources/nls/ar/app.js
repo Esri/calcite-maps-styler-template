@@ -40,7 +40,7 @@ define({
   },
   "cantFindStories": {
     "whereAreStories": "هل ترى الحكاية؟",
-    "notSeeExplanation": "ستُدرج القصص خرائط القصص المستضافة فقط في ArcGIS، والتي تم إنشائها بتطبيقات {{STORY_MAP_TOUR}} أو {{JOURNAL}} أو {{MAP_SERIES}} أو {{SWIPE_SPYGLASS}}. راجع الأسئلة المتداولة لمزيد من المعلومات.",
+    "notSeeExplanation": "لا يدعم الحكايات التي سيتم إدراجها خرائط الحكاية المستضافة في ArcGIS ({{STORY_MAP_BASIC}}). راجع {{الأسئلة المتداولة}} للمزيد من المعلومات.",
     "faq": "الأسئلة المتداولة",
     "followingStoriesToUpdate": "تم إنشاء الحكايات التالية مع الإصدارات السابقة للتطبيقات التي تحتاج تحديث ليتم إدراجها في الحكايات:",
     "gettingStories": "البحث عن الحكايات التالية مع الإصدارات السابقة للتطبيقات التي تحتاج التحديث...",
@@ -88,27 +88,16 @@ define({
     "layerPrivate": "قد يقوم عمل الطبقة خاصة بوقف الحكاية"
   },
   "collectionList": {
-    "advocacy": "دعم وتجاوز",
-    "architecture": "بنية والتصميم",
-    "conservation": "الصيانة والاستدامة",
-    "culture": "ثقافة",
-    "destinations": "وجهات وسياحة",
-    "disasters": "كوارث واسترجاع",
-    "economy": "اقتصاد وتطوير",
-    "entertainment": "ترفيه",
-    "history": "المحفوظات",
-    "infrastructure": "البنية الأساسية",
-    "marketing": "التسويق",
-    "nature": "الطبيعة والبيئة",
-    "news": "أخبار وأحداث",
-    "oceans": "محيطات",
-    "parks": "المتنزهات وإعادة الإنشاء",
+    "business": "العمل والاقتصاد",
+    "history": "التاريخ والثقافة",
+    "inNews": "الأحداث",
+    "infrastructure": "البنية التحتية والإنشاءات",
+    "nature": "الطبيعة والحفظ",
     "people": "أشخاص ومجتمع",
-    "planning": "التخطيط والتحليل",
-    "publicArt": "الفن العام",
+    "planning": "التخطيط والتصميم",
     "science": "العلوم والتكنولوجيا",
-    "sport": "الرياضة",
-    "travelogues": "حكايات السفر"
+    "sports": "الرياضة والترفيه",
+    "travel": "السفر والاستجمام"
   },
   "types": {
     "custom": "تخصيص",
@@ -227,6 +216,7 @@ define({
   "content": {
     "media": {
       "maps": "خرائط",
+      "scenes": "مشاهد",
       "images": "الصور",
       "videos": "الفيديو",
       "webpages": "صفحات الويب",
@@ -244,22 +234,30 @@ define({
       "bullet": "رمز نقطي",
       "tab": "علامة تبويب",
       "accordion": "قسم",
-      "mapJournal": "قسم"
+      "mapJournal": "قسم",
+      "cascade": "قسم",
+      "crowdsource": "المشاركة",
+      "shortlist": "علامة تبويب"
     },
     "titleType": {
       "mapTour": "تسمية وضيحية",
       "mapJournal": "عنوان URL",
-      "mapSeries": "عنوان URL"
+      "mapSeries": "عنوان URL",
+      "cascade": "عنوان URL",
+      "crowdsource": "عنوان URL",
+      "shortlist": "عنوان URL"
     },
     "actions": {
       "viewMap": "عرض الخريطة",
       "editMap": "تحرير الخريطة",
+      "editScene": "تحرير المشهد",
       "fix": "تصحيح",
       "viewLayer": "عرض الطبقة"
     },
     "contentType": {
       "mainStage": "إجراء الخطوة الأساسية",
-      "sidePanel": "الوصف"
+      "sidePanel": "الوصف",
+      "introImage": "(صورة صفحة البداية)"
     },
     "notification": {
       "refreshExplanation": "تحقق من الحكاية مرة أخرى",
@@ -300,6 +298,7 @@ define({
       "publicDisabled": "قام المسئول بتعطيل المشاركة العامة",
       "orgDisabled": "قام المسئول بتعطيل المشاركة في المؤسسة",
       "noMapName": "لا يمكن استعادة اسم الخريطة",
+      "noSceneName": "لا يمكن استرجاع المشهد",
       "notPublic": "خاص",
       "inaccessible": "غير قابل للوصول",
       "deleted": "تم الحذف",
@@ -351,6 +350,8 @@ define({
       "cantScanThisTypeAlt": "لا يمكننا التحقق من نوع الطبقة الحالي",
       "cantScanThisType": "الطبقة ليست نوع طبقة يمكن التحقق منه",
       "webpageNotScanned": "لم يتم التحقق من صفحات الويب للموضوعات",
+      "sceneNotScanned": "لم يتم تحديد المشاهد لأية مشكلات. يرجى التأكد من أن المشهد وجميع طبقاته مشاركة بشكل صحيح",
+      "scenesNotScannedGlobally": "هناك مشاهد في هذه الحكاية ومشاهد لم يتم تحديدها لأية مشكلات. يرجى التأكد من أن المشهد وجميع طبقاته مشاركة بشكل صحيح",
       "ignoredIssue": "لقد تجاهلت خطأً في هذه الطبقة. أعند تحميل الصفحة وقم بالتأشير على هذه القصة مجددًا لمراجعة الخطأ.",
       "ignoredIssueBuilder": "لقد تجاهلت خطأً في هذه الطبقة. أعند تحميل المنشئ وقم بالتأشير على هذا الخطأ مجددًا"
     },
@@ -450,6 +451,10 @@ define({
       "secondValueC": "مبوبة",
       "thirdTitle": "خرائط"
     },
+    "cascade": {
+      "firstTitle": "الأقسام",
+      "secondTitle": "خرائط"
+    },
     "swipeSpyglass": {
       "firstTitle": "نقاط الاهتمام",
       "secondTitle": "النمط",
@@ -459,9 +464,13 @@ define({
     },
     "crowdsource": {
       "firstTitle": "المساهمات",
-      "secondTitle": "النمط",
-      "secondValueA": "لوحة جانبية",
-      "secondValueB": "مُكدّس",
+      "secondTitle": "خريطة الأساس",
+      "secondValueLoading": "جارِ التحميل...",
+      "secondValueUnknown": "غير معروف"
+    },
+    "shortlist": {
+      "firstTitle": "حفظ الأماكن",
+      "secondTitle": "علامات التبويب",
       "thirdTitle": "خريطة الأساس",
       "thirdValueLoading": "جارِ التحميل...",
       "thirdValueUnknown": "غير معروف"

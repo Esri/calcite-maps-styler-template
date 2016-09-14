@@ -83,7 +83,7 @@ define({
     "valueRadioButtonLabel": "Wert",
     "uniqueRadioButtonLabel": "Eindeutig",
     "selectLayerToBegin": "Zum Einstieg eine Kategorie auswählen",
-    "layerFeatureCount": "${featureCount} Datensätze"
+    "layerFeatureCount": "${selectedFeatureCount} ausgewählt / ${featureCount} Datensätze"
   },
   "timeSlider": {
     "timeSliderLabel": "Zeitbereich",
@@ -97,7 +97,12 @@ define({
     "placeHolderText": "",
     "noCommentsAvailableText": "Keine Datensätze verfügbar",
     "remainingTextCount": "${0} Zeichen verbleiben",
-    "showNoText": "Nein"
+    "showNoText": "Nein",
+    "selectAttachments": "Anlagen",
+    "selectFileText": "Durchsuchen",
+    "attachmentSelectedMsg": "Anlage(n) ausgewählt",
+    "attachmentHeaderText": "Anlagen",
+    "addRecordText": "Datensatz hinzufügen"
   },
   "main": {
     "noGroup": "Keine Gruppe konfiguriert"
@@ -109,17 +114,18 @@ define({
   },
   "manualRefresh": {
     "manualRefreshIconTooltip": "Aktualisieren",
-    "confirmManualRefeshText": "Gesamte Auswahl und nicht gespeicherte Änderungen werden verworfen"
+    "confirmManualRefreshText": "Gesamte Auswahl und nicht gespeicherte Änderungen werden verworfen"
   },
   "help": {
     "helpIconTooltip": "Hilfe"
   },
   "filter": {
     "noFeatureFoundText": "Für diesen Wert wurde kein Feature gefunden.",
-    "distinctQueryFalied": "Für dieses Feld wurden keine eindeutigen Werte gefunden.",
+    "distinctQueryFailed": "Für dieses Feld wurden keine eindeutigen Werte gefunden.",
     "andText": "und",
-    "filterInEditModeAlert": "Filter sind während der Bearbeitung nicht verfügbar",
-    "dropdownSelectOption": "Auswählen"
+    "filterInEditModeAlert": "Filter sind während der Bearbeitung nicht verfügbar.",
+    "dropdownSelectOption": "Auswählen",
+    "filterInShowSelectedEditModeAlert": "Filter sind im Modus 'Anzeigen: Ausgewählte' nicht verfügbar."
   },
   "detailsPanel": {
     "editContentText": "Datensatz bearbeiten"
@@ -127,5 +133,10 @@ define({
   "signOutPage": {
     "signOutMessage": "Sie wurden erfolgreich abgemeldet",
     "reSignInMessage": "Klicken Sie hier, um sich anzumelden"
+  },
+  "selectionOptions": {
+    "selectionOptionsIconTooltip": "Auswahloptionen",
+    "showAllOptionText": "Alle anzeigen",
+    "showSelectedOptionText": "Ausgewählte anzeigen"
   }
 });

@@ -1,22 +1,28 @@
 define({
 	root: ({
 		signInDialog: {
-			title: "Sign in to Story Maps",
-			subtitle: "Sign in with your existing ArcGIS Online account to:",
-			reasonOne: "Create compelling story maps to tell your stories.",
-			reasonTwo: "Use your maps and data from ArcGIS Online in your story maps.",
-			reasonThree: "Manage your story maps and check the status of their content.",
-			noAccountYet: "Don't have an ArcGIS Online account? Sign up for a:",
+			title: "Start Telling Stories!",
+			reasonOne: "Create compelling story maps",
+			reasonTwo: "Use the power of ArcGIS",
+			reasonThree: "Manage your stories",
+			noAccountYet: "Don't have an ArcGIS Online account?",
+			signUpFor: "Sign up for a:",
 			publicAccount: "Free non-commercial public account",
 			subscriptionAccount: "Free trial ArcGIS subscription",
 			signInExpired: "Your sign-in expired. Sign in again to pick up where you left off.",
 			somethingNotLoading: "Something isn't loading correctly. Try refreshing the page."
 		},
+		signedInPrompt: {
+			signedIn: "You are now signed in.",
+			backToStoryMaps: "Back to Story Maps",
+			closeRefresh: "Close this tab and refresh the website.",
+			close: "Close"
+		},
 		unavailableDialog: {
 			title: "Sign-In Not Available",
 			explanation: "Sorry, this is not supported in a small display. Please open in a larger display or device.",
 			close: "Close",
-			returnButton: "Return" 
+			returnButton: "Return"
 		}
 	}),
 	"ar": 1,
@@ -46,6 +52,6 @@ define({
 	"tr": 1,
 	"vi": 1,
 	"zh-cn": 1,
-	"zh-hk": 1, 
-	"zh-tw": 1 	
+	"zh-hk": 1,
+	"zh-tw": 1
 });

@@ -83,7 +83,7 @@ define({
     "valueRadioButtonLabel": "Vrednost",
     "uniqueRadioButtonLabel": "Jedinstveno",
     "selectLayerToBegin": "Odaberite kategoriju da biste otpočeli",
-    "layerFeatureCount": "${featureCount} zapisa"
+    "layerFeatureCount": "${selectedFeatureCount} izabrani / ${featureCount} zapisi"
   },
   "timeSlider": {
     "timeSliderLabel": "Vremenski opseg",
@@ -97,7 +97,12 @@ define({
     "placeHolderText": "",
     "noCommentsAvailableText": "Nema dostupnih vrednosti",
     "remainingTextCount": "preostalo ${0} karaktera",
-    "showNoText": "Ne"
+    "showNoText": "Ne",
+    "selectAttachments": "Prilozi",
+    "selectFileText": "Pregledaj",
+    "attachmentSelectedMsg": "izabrani prilog/prilozi",
+    "attachmentHeaderText": "Prilozi",
+    "addRecordText": "Dodaj zapis"
   },
   "main": {
     "noGroup": "Nijedna grupa nije konfigurisana"
@@ -109,17 +114,18 @@ define({
   },
   "manualRefresh": {
     "manualRefreshIconTooltip": "Osveži",
-    "confirmManualRefeshText": "Svi izbori i nesačuvane izmene će biti odbačene"
+    "confirmManualRefreshText": "Svi izbori i nesačuvane izmene će biti odbačene"
   },
   "help": {
     "helpIconTooltip": "Pomoć"
   },
   "filter": {
     "noFeatureFoundText": "Nema pronađenih geoobjekata za ovu vrednost.",
-    "distinctQueryFalied": "Nema pronađenih posebnih vrednosti za ovo polje.",
+    "distinctQueryFailed": "Nema pronađenih posebnih vrednosti za ovo polje.",
     "andText": "i",
-    "filterInEditModeAlert": "Filteri nisu dostupni tokom pravljenja izmena",
-    "dropdownSelectOption": "Odaberi"
+    "filterInEditModeAlert": "Filteri nisu dostupni za vreme uređivanja.",
+    "dropdownSelectOption": "Odaberi",
+    "filterInShowSelectedEditModeAlert": "Filteri nisu dostupni u režimu „Prikaži izabrano”."
   },
   "detailsPanel": {
     "editContentText": "Izmeni zapis"
@@ -127,5 +133,10 @@ define({
   "signOutPage": {
     "signOutMessage": "Uspešno ste se odjavili",
     "reSignInMessage": "Kliknite ovde da se prijavite"
+  },
+  "selectionOptions": {
+    "selectionOptionsIconTooltip": "Opcije odabira",
+    "showAllOptionText": "Prikaži sve",
+    "showSelectedOptionText": "Pokaži izabrano"
   }
 });

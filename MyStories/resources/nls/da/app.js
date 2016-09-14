@@ -40,7 +40,7 @@ define({
   },
   "cantFindStories": {
     "whereAreStories": "Får du ikke vist din historie?",
-    "notSeeExplanation": "Mine historier vil kun vise historiekort, der er \"hosted\" i ArcGIS og oprettet med {{STORY_MAP_TOUR}}-, {{JOURNAL}}-, {{MAP_SERIES}}- og {{SWIPE_SPYGLASS}}-applikationerne. Se vores {{FAQ}} for at få yderligere oplysninger.",
+    "notSeeExplanation": "Mine historier vil kun vise historiekort, der er \"hosted\" i ArcGIS ({{STORY_MAP_BASIC}} understøttes ikke på nuværende tidspunkt). Se vores {{FAQ}} for at få yderligere oplysninger.",
     "faq": "FAQ",
     "followingStoriesToUpdate": "Følgende historier, der er oprettet med tidligere versioner af vores applikationer, skal opdateres, så de kan vises i Mine historier:",
     "gettingStories": "Søger efter historier, der er oprettet med tidligere versioner af vores applikationer, og som bør opdateres...",
@@ -88,27 +88,16 @@ define({
     "layerPrivate": "Hvis du gør laget privat, vil det ødelægge din historie"
   },
   "collectionList": {
-    "advocacy": "Støtte- og fokuskampagner",
-    "architecture": "Arkitektur og design",
-    "conservation": "Bevarelse og bæredygtighed",
-    "culture": "Kultur",
-    "destinations": "Rejsemål og turisme",
-    "disasters": "Katastrofer og genrejsning",
-    "economy": "Økonomi og udvikling",
-    "entertainment": "Underholdning",
-    "history": "Historik",
-    "infrastructure": "Infrastruktur",
-    "marketing": "Markedsføring",
-    "nature": "Natur og miljø",
-    "news": "Nyheder og begivenheder",
-    "oceans": "Oceans",
-    "parks": "Parker og rekreative områder",
+    "business": "Forretning og økonomi",
+    "history": "Historie og kultur",
+    "inNews": "I nyhederne",
+    "infrastructure": "Infrastruktur og byggeri",
+    "nature": "Natur og bevarelse",
     "people": "Mennesker og samfund",
-    "planning": "Planlægning og analyse",
-    "publicArt": "Offentligt tilgængelig kunst",
+    "planning": "Planlægning og design",
     "science": "Videnskab og teknologi",
-    "sport": "Sport",
-    "travelogues": "Rejsebeskrivelser"
+    "sports": "Sport og underholdning",
+    "travel": "Rejser og fornøjelser"
   },
   "types": {
     "custom": "Brugerdefineret",
@@ -227,6 +216,7 @@ define({
   "content": {
     "media": {
       "maps": "Kort",
+      "scenes": "Scener",
       "images": "Billeder",
       "videos": "Videoer",
       "webpages": "Websider",
@@ -244,22 +234,30 @@ define({
       "bullet": "Punkttegn",
       "tab": "Fane:",
       "accordion": "Sektion",
-      "mapJournal": "Sektion"
+      "mapJournal": "Sektion",
+      "cascade": "Sektion",
+      "crowdsource": "Bidrag",
+      "shortlist": "Fane:"
     },
     "titleType": {
       "mapTour": "Billedtekst",
       "mapJournal": "URL",
-      "mapSeries": "URL"
+      "mapSeries": "URL",
+      "cascade": "URL",
+      "crowdsource": "URL",
+      "shortlist": "URL"
     },
     "actions": {
       "viewMap": "Vis kort",
       "editMap": "Redigér kort",
+      "editScene": "Redigér scene",
       "fix": "Ret",
       "viewLayer": "Vis lag"
     },
     "contentType": {
       "mainStage": "handlinger i hovedområdet",
-      "sidePanel": "beskrivelse"
+      "sidePanel": "beskrivelse",
+      "introImage": "(forsidefoto)"
     },
     "notification": {
       "refreshExplanation": "Kontrollér din historie igen",
@@ -300,6 +298,7 @@ define({
       "publicDisabled": "Offentlig deling er blevet deaktiveret af en administrator",
       "orgDisabled": "Deling af din organisation er blevet deaktiveret af en administrator",
       "noMapName": "Kunne ikke hente kortnavn",
+      "noSceneName": "Kunne ikke hente scene",
       "notPublic": "IKKE OFFENTLIGT",
       "inaccessible": "UTILGÆNGELIGT",
       "deleted": "SLETTET",
@@ -351,6 +350,8 @@ define({
       "cantScanThisTypeAlt": "Vi kan ikke kontrollere denne type lag",
       "cantScanThisType": "Laget er ikke en type lag, som vi kan kontrollere",
       "webpageNotScanned": "Websider kontrolleres ikke for problemer",
+      "sceneNotScanned": "Scener kontrolleres ikke for fejl på nuværende tidspunkt. Sørg for, at denne scene og alle dens lag bliver delt korrekt",
+      "scenesNotScannedGlobally": "Der er scener i denne historie, og scener kontrolleres ikke for fejl på nuværende tidspunkt. Sørg for, at disse scener og alle deres lag bliver delt korrekt",
       "ignoredIssue": "Du har ignoreret en fejl i dette lag. Genindlæs siden, og tjek din historie igen, og kontrollér, at fejlen er blevet afhjulpet",
       "ignoredIssueBuilder": "Du har ignoreret en fejl i dette lag. Genindlæs builder-programmet, og tjek denne fejl igen"
     },
@@ -450,6 +451,10 @@ define({
       "secondValueC": "faneblade",
       "thirdTitle": "kort"
     },
+    "cascade": {
+      "firstTitle": "sektioner",
+      "secondTitle": "kort"
+    },
     "swipeSpyglass": {
       "firstTitle": "interessepunkter",
       "secondTitle": "typografi",
@@ -459,9 +464,13 @@ define({
     },
     "crowdsource": {
       "firstTitle": "bidrag",
-      "secondTitle": "typografi",
-      "secondValueA": "sidepanel",
-      "secondValueB": "stakket",
+      "secondTitle": "baggrundskort",
+      "secondValueLoading": "Indlæser...",
+      "secondValueUnknown": "ukendt"
+    },
+    "shortlist": {
+      "firstTitle": "steder",
+      "secondTitle": "faner",
       "thirdTitle": "baggrundskort",
       "thirdValueLoading": "Indlæser...",
       "thirdValueUnknown": "ukendt"

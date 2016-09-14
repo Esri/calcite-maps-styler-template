@@ -83,7 +83,7 @@ define({
     "valueRadioButtonLabel": "Valor",
     "uniqueRadioButtonLabel": "Único",
     "selectLayerToBegin": "Selecione uma categoria para começar",
-    "layerFeatureCount": "${featureCount} registos"
+    "layerFeatureCount": "${selectedFeatureCount} selecionados / ${featureCount} registos"
   },
   "timeSlider": {
     "timeSliderLabel": "Intervalo de tempo",
@@ -97,7 +97,12 @@ define({
     "placeHolderText": "",
     "noCommentsAvailableText": "Não existem  registos disponíveis",
     "remainingTextCount": "${0} caractere(s) mantem-se",
-    "showNoText": "Não"
+    "showNoText": "Não",
+    "selectAttachments": "Anexos",
+    "selectFileText": "Procurar",
+    "attachmentSelectedMsg": "anexo(s) seleccionado(s)",
+    "attachmentHeaderText": "Anexos",
+    "addRecordText": "Adicionar Registo"
   },
   "main": {
     "noGroup": "Nenhum grupo configurado"
@@ -109,17 +114,18 @@ define({
   },
   "manualRefresh": {
     "manualRefreshIconTooltip": "Atualizar",
-    "confirmManualRefeshText": "Todas as selecções e alterações não guardadas serão discartadas"
+    "confirmManualRefreshText": "Todas as selecções e alterações não guardadas serão discartadas"
   },
   "help": {
     "helpIconTooltip": "Ajuda"
   },
   "filter": {
     "noFeatureFoundText": "Não foi encontrado qualquer elemento para este valor.",
-    "distinctQueryFalied": "Não foram encontrados valores distintos para o campo.",
+    "distinctQueryFailed": "Não foram encontrados valores distintos para o campo.",
     "andText": "e",
-    "filterInEditModeAlert": "Filtros indisponíveis durante a edição",
-    "dropdownSelectOption": "Seleccionar"
+    "filterInEditModeAlert": "Filtros indisponíveis durante a edição.",
+    "dropdownSelectOption": "Seleccionar",
+    "filterInShowSelectedEditModeAlert": "Filtros indisponíveis no modo ‘Exibir Selecionado’."
   },
   "detailsPanel": {
     "editContentText": "Editar registo"
@@ -127,5 +133,10 @@ define({
   "signOutPage": {
     "signOutMessage": "Terminou sessão com sucesso",
     "reSignInMessage": "Clique aqui para iniciar sessão"
+  },
+  "selectionOptions": {
+    "selectionOptionsIconTooltip": "Opções de Seleção",
+    "showAllOptionText": "Mostrar Todos",
+    "showSelectedOptionText": "Exibir Selecionados"
   }
 });

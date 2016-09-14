@@ -83,7 +83,7 @@ define({
     "valueRadioButtonLabel": "Arvo",
     "uniqueRadioButtonLabel": "Yksilöllinen",
     "selectLayerToBegin": "Aloita valitsemalla luokka",
-    "layerFeatureCount": "${featureCount} tietuetta"
+    "layerFeatureCount": "${selectedFeatureCount} valittu / ${featureCount} tietuetta"
   },
   "timeSlider": {
     "timeSliderLabel": "Aikaväli",
@@ -97,7 +97,12 @@ define({
     "placeHolderText": "",
     "noCommentsAvailableText": "Tietueita ei ole saatavilla",
     "remainingTextCount": "${0} merkki(ä) jäljellä",
-    "showNoText": "Ei"
+    "showNoText": "Ei",
+    "selectAttachments": "Liitteet",
+    "selectFileText": "Selaa",
+    "attachmentSelectedMsg": "liite(ttä) on valittu",
+    "attachmentHeaderText": "Liitteet",
+    "addRecordText": "Lisää tietue"
   },
   "main": {
     "noGroup": "Yhtään ryhmää ei ole määritetty"
@@ -109,17 +114,18 @@ define({
   },
   "manualRefresh": {
     "manualRefreshIconTooltip": "Päivitä",
-    "confirmManualRefeshText": "Kaikki valinnat ja tallentamattomat muutokset ohitetaan"
+    "confirmManualRefreshText": "Kaikki valinnat ja tallentamattomat muutokset ohitetaan"
   },
   "help": {
     "helpIconTooltip": "Ohje"
   },
   "filter": {
     "noFeatureFoundText": "Tälle arvolle ei löytynyt kohdetta.",
-    "distinctQueryFalied": "Kentälle ei löytynyt erillisiä arvoja.",
+    "distinctQueryFailed": "Kentälle ei löytynyt erillisiä arvoja.",
     "andText": "ja",
-    "filterInEditModeAlert": "Suodattimet eivät ole käytettävissä muokkauksen aikana",
-    "dropdownSelectOption": "Valitse"
+    "filterInEditModeAlert": "Suodattimet eivät ole käytettävissä muokkauksen aikana.",
+    "dropdownSelectOption": "Valitse",
+    "filterInShowSelectedEditModeAlert": "Suodattimet eivät ole käytettävissä Näytä valitut kohteet -tilassa."
   },
   "detailsPanel": {
     "editContentText": "Muokkaa tietuetta"
@@ -127,5 +133,10 @@ define({
   "signOutPage": {
     "signOutMessage": "Uloskirjautuminen onnistui",
     "reSignInMessage": "Kirjaudu sisään napsauttamalla tätä"
+  },
+  "selectionOptions": {
+    "selectionOptionsIconTooltip": "Valinta-asetukset",
+    "showAllOptionText": "Näytä kaikki",
+    "showSelectedOptionText": "Näytä valitut kohteet"
   }
 });

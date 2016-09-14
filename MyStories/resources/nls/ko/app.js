@@ -40,7 +40,7 @@ define({
   },
   "cantFindStories": {
     "whereAreStories": "스토리가 보이지 않나요?",
-    "notSeeExplanation": "내 스토리에는 {{STORY_MAP_TOUR}}, {{JOURNAL}}, {{MAP_SERIES}} 또는 {{SWIPE_SPYGLASS}} 응용프로그램을 사용하여 생성했으며 ArcGIS에서 호스팅되는 스토리 맵만 나열됩니다. 자세한 내용은 {{FAQ}}를 참고하세요.",
+    "notSeeExplanation": "내 스토리에는 ArcGIS에서 호스팅되는 스토리 맵만 나열됩니다({{STORY_MAP_BASIC}}은 현재 지원되지 않음). 자세한 내용은 {{FAQ}}를 참고하세요.",
     "faq": "FAQ",
     "followingStoriesToUpdate": "이전 버전의 응용프로그램을 사용하여 생성한 다음 스토리는 업데이트해야 내 스토리에 나열됩니다.",
     "gettingStories": "이전 버전의 응용프로그램을 사용하여 생성했으며 업데이트해야 하는 스토리 검색 중...",
@@ -88,27 +88,16 @@ define({
     "layerPrivate": "레이어를 비공개로 설정하면 스토리가 구분됩니다."
   },
   "collectionList": {
-    "advocacy": "광고와 홍보",
-    "architecture": "건축과 설계",
-    "conservation": "보호와 지속 가능성",
-    "culture": "문화",
-    "destinations": "목적지와 여행지",
-    "disasters": "재해와 복구",
-    "economy": "경제와 개발",
-    "entertainment": "오락",
-    "history": "히스토리",
-    "infrastructure": "인프라",
-    "marketing": "마케팅",
-    "nature": "자연과 환경",
-    "news": "뉴스와 이벤트",
-    "oceans": "해양",
-    "parks": "공원과 휴양",
+    "business": "비즈니스 및 경제",
+    "history": "역사 및 문화",
+    "inNews": "뉴스에서",
+    "infrastructure": "인프라 및 건설",
+    "nature": "자연 및 보호",
     "people": "사람과 사회",
-    "planning": "계획과 분석",
-    "publicArt": "공공 미술",
+    "planning": "계획 및 설계",
     "science": "과학과 기술",
-    "sport": "스포츠",
-    "travelogues": "여행기"
+    "sports": "스포츠 및 엔터테인먼트",
+    "travel": "여행 및 레크리에이션"
   },
   "types": {
     "custom": "사용자 정의",
@@ -227,6 +216,7 @@ define({
   "content": {
     "media": {
       "maps": "맵",
+      "scenes": "씬",
       "images": "이미지",
       "videos": "비디오",
       "webpages": "웹 페이지",
@@ -244,22 +234,30 @@ define({
       "bullet": "글머리 기호",
       "tab": "탭",
       "accordion": "섹션",
-      "mapJournal": "섹션"
+      "mapJournal": "섹션",
+      "cascade": "섹션",
+      "crowdsource": "참여",
+      "shortlist": "탭"
     },
     "titleType": {
       "mapTour": "캡션",
       "mapJournal": "URL",
-      "mapSeries": "URL"
+      "mapSeries": "URL",
+      "cascade": "URL",
+      "crowdsource": "URL",
+      "shortlist": "URL"
     },
     "actions": {
       "viewMap": "맵 보기",
       "editMap": "맵 편집",
+      "editScene": "씬 편집",
       "fix": "수정",
       "viewLayer": "레이어 보기"
     },
     "contentType": {
       "mainStage": "기본 단계 작업",
-      "sidePanel": "설명"
+      "sidePanel": "설명",
+      "introImage": "(커버 페이지 사진)"
     },
     "notification": {
       "refreshExplanation": "스토리를 다시 확인하세요.",
@@ -300,6 +298,7 @@ define({
       "publicDisabled": "관리자가 공개적으로 공유하지 못하도록 설정했음",
       "orgDisabled": "관리자가 기관과 공유하지 못하도록 설정했음",
       "noMapName": "맵 이름을 검색할 수 없음",
+      "noSceneName": "씬을 검색할 수 없음",
       "notPublic": "공개 아님",
       "inaccessible": "접근 불가",
       "deleted": "삭제됨",
@@ -351,6 +350,8 @@ define({
       "cantScanThisTypeAlt": "이 레이어 유형을 확인할 수 없습니다.",
       "cantScanThisType": "레이어가 확인 가능한 레이어 유형이 아닙니다.",
       "webpageNotScanned": "웹 페이지에서 문제를 확인하지 않았습니다.",
+      "sceneNotScanned": "현재 씬에 문제가 있는지 확인되지 않은 상태입니다. 씬과 모든 해당 레이어가 올바르게 공유되었는지 확인하세요.",
+      "scenesNotScannedGlobally": "이 스토리에 씬이 있으며 현재는 씬에 문제가 있는지 확인되지 않은 상태입니다. 씬과 모든 해당 레이어가 올바르게 공유되었는지 확인하세요.",
       "ignoredIssue": "이 레이어의 오류를 무시했습니다. 페이지를 다시 불러와 이 스토리를 다시 확인하여 오류를 검토하세요.",
       "ignoredIssueBuilder": "이 레이어의 오류를 무시했습니다. 빌더를 다시 불러와 이 오류를 다시 검토하세요."
     },
@@ -450,6 +451,10 @@ define({
       "secondValueC": "탭",
       "thirdTitle": "맵"
     },
+    "cascade": {
+      "firstTitle": "섹션",
+      "secondTitle": "맵"
+    },
     "swipeSpyglass": {
       "firstTitle": "관심지역",
       "secondTitle": "스타일",
@@ -459,9 +464,13 @@ define({
     },
     "crowdsource": {
       "firstTitle": "기여도",
-      "secondTitle": "스타일",
-      "secondValueA": "사이드 패널",
-      "secondValueB": "누적",
+      "secondTitle": "베이스맵",
+      "secondValueLoading": "불러오는 중...",
+      "secondValueUnknown": "알 수 없음"
+    },
+    "shortlist": {
+      "firstTitle": "장소",
+      "secondTitle": "탭",
       "thirdTitle": "베이스맵",
       "thirdValueLoading": "불러오는 중...",
       "thirdValueUnknown": "알 수 없음"

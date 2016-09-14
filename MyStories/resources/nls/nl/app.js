@@ -40,7 +40,7 @@ define({
   },
   "cantFindStories": {
     "whereAreStories": "Ziet u uw verhaal niet?",
-    "notSeeExplanation": "My Stories geeft alleen een lijst met storymaps die in ArcGIS gehost zijn en gemaakt zijn met de applicaties {{STORY_MAP_TOUR}}, {{JOURNAL}}, {{MAP_SERIES}} of {{SWIPE_SPYGLASS}}. Bekijk onze {{FAQ}} voor meer informatie.",
+    "notSeeExplanation": "Mijn verhalen zal alleen storymaps bevatten die in ArcGIS gehost zijn ({{STORY_MAP_BASIC}} is momenteel niet ondersteund). Zie onze {{FAQ}} voor meer informatie.",
     "faq": "Veelgestelde vragen",
     "followingStoriesToUpdate": "De volgende verhalen, gemaakt met eerdere versies van onze applicaties, moeten geactualiseerd worden zodat ze in My Stories opgelijst worden:",
     "gettingStories": "Verhalen zoeken die met eerdere versies van onze applicaties gemaakt zijn en geactualiseerd moeten worden...",
@@ -88,27 +88,16 @@ define({
     "layerPrivate": "Uw kaartlaag privé maken zal uw verhaal defect maken"
   },
   "collectionList": {
-    "advocacy": "Belangenbehartiging en meningen",
-    "architecture": "Architectuur en design",
-    "conservation": "Bescherming en duurzaamheid",
-    "culture": "Cultuur",
-    "destinations": "Bestemmingen en toerisme",
-    "disasters": "Rampen en herstel",
-    "economy": "Economie en ontwikkeling",
-    "entertainment": "Entertainment",
-    "history": "Historie",
-    "infrastructure": "Infrastructuur",
-    "marketing": "Marketing",
-    "nature": "Natuur en milieu",
-    "news": "Nieuws en evenementen",
-    "oceans": "Oceanen",
-    "parks": "Parken en recreatie",
+    "business": "Zaken en economie",
+    "history": "Geschiedenis en cultuur",
+    "inNews": "In het nieuws",
+    "infrastructure": "Infrastructuur en bouw",
+    "nature": "Natuur en conservatie",
     "people": "Mensen en de gemeenschap",
-    "planning": "Planning en analyse",
-    "publicArt": "Openbare kunst",
+    "planning": "Planning en design",
     "science": "Wetenschap en technologie",
-    "sport": "Sport",
-    "travelogues": "Reisverhalen"
+    "sports": "Sport en ontspanning",
+    "travel": "Reizen en recreatie"
   },
   "types": {
     "custom": "Aangepast",
@@ -227,6 +216,7 @@ define({
   "content": {
     "media": {
       "maps": "Maps",
+      "scenes": "Scenes",
       "images": "Afbeeldingen",
       "videos": "Video's",
       "webpages": "Webpagina's",
@@ -244,22 +234,30 @@ define({
       "bullet": "Opsommingstekens",
       "tab": "Tab:",
       "accordion": "Sectie",
-      "mapJournal": "Sectie"
+      "mapJournal": "Sectie",
+      "cascade": "Sectie",
+      "crowdsource": "Bijdrage",
+      "shortlist": "Tab:"
     },
     "titleType": {
       "mapTour": "Bijschrift",
       "mapJournal": "URL",
-      "mapSeries": "URL"
+      "mapSeries": "URL",
+      "cascade": "URL",
+      "crowdsource": "URL",
+      "shortlist": "URL"
     },
     "actions": {
       "viewMap": "Kaart weergeven",
       "editMap": "Kaart bewerken",
+      "editScene": "Scene bewerken",
       "fix": "Herstel",
       "viewLayer": "Kaartlagen weergeven"
     },
     "contentType": {
       "mainStage": "actie van hoofdvenster",
-      "sidePanel": "description"
+      "sidePanel": "description",
+      "introImage": "(foto coverpagina)"
     },
     "notification": {
       "refreshExplanation": "Controleer uw verhaal nogmaals",
@@ -300,6 +298,7 @@ define({
       "publicDisabled": "Openbaar delen is uitgeschakeld door een beheerder",
       "orgDisabled": "Delen met uw organisatie is uitgeschakeld door een beheerder",
       "noMapName": "Kon de kaartnaam niet laden",
+      "noSceneName": "Kon scene niet laden",
       "notPublic": "NIET OPENBAAR",
       "inaccessible": "NIET TOEGANKELIJK",
       "deleted": "VERWIJDERD",
@@ -351,6 +350,8 @@ define({
       "cantScanThisTypeAlt": "We kunnen dit type kaartlaag niet controleren",
       "cantScanThisType": "Kaartlaag is geen kaartlaagtype dat we kunnen controleren",
       "webpageNotScanned": "Webpagina's worden niet gecontroleerd op problemen",
+      "sceneNotScanned": "Scenes worden momenteel niet gecontroleerd op problemen, zorg ervoor dat de scene en alle lagen ervan juist gedeeld worden",
+      "scenesNotScannedGlobally": "Dit verhaal bevat scenes, en scenes worden momenteel niet gecontroleerd op problemen, zorg ervoor dat de scene en alle lagen ervan juist gedeeld worden",
       "ignoredIssue": "U negeert een fout op deze laag. Laad de pagina opnieuw en controleer dit verhaal nogmaals om de fout te beoordelen",
       "ignoredIssueBuilder": "U negeert een fout op deze laag. Laad de builder opnieuw om deze fout weer te controleren"
     },
@@ -450,6 +451,10 @@ define({
       "secondValueC": "met tabbladen",
       "thirdTitle": "kaarten"
     },
+    "cascade": {
+      "firstTitle": "secties",
+      "secondTitle": "kaarten"
+    },
     "swipeSpyglass": {
       "firstTitle": "nuttige plaatsen",
       "secondTitle": "style",
@@ -459,9 +464,13 @@ define({
     },
     "crowdsource": {
       "firstTitle": "bijdragen",
-      "secondTitle": "style",
-      "secondValueA": "zijvenster",
-      "secondValueB": "gestapeld",
+      "secondTitle": "basiskaart",
+      "secondValueLoading": "Bezig met laden...",
+      "secondValueUnknown": "onbekend"
+    },
+    "shortlist": {
+      "firstTitle": "plaatsen",
+      "secondTitle": "tabbladen",
       "thirdTitle": "basiskaart",
       "thirdValueLoading": "Bezig met laden...",
       "thirdValueUnknown": "onbekend"

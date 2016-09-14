@@ -1,15 +1,21 @@
 define({
   "signInDialog": {
-    "title": "Accedi alle Story Map",
-    "subtitle": "Accedi con l'account dell'abbonamento ad ArcGIS Online per:",
-    "reasonOne": "Creare Story Map accattivanti per raccontare storie.",
-    "reasonTwo": "Utilizzare mappe e dati di ArcGIS Online nelle Story Map.",
-    "reasonThree": "Gestire le Story Map e verificare lo stato del relativo contenuto.",
-    "noAccountYet": "Non si dispone di un account dell'abbonamento ad ArcGIS Online? Richiedere un:",
+    "title": "Inizia a raccontare storie",
+    "reasonOne": "Crea Story Map avvincenti",
+    "reasonTwo": "Utilizza la potenza di ArcGIS",
+    "reasonThree": "Gestisci le tue storie",
+    "noAccountYet": "Non disponi di un account ArcGIS Online?",
+    "signUpFor": "Richiedere un:",
     "publicAccount": "Account pubblico per uso non commerciale gratuito",
     "subscriptionAccount": "Abbonamento di prova gratuito ad ArcGIS",
     "signInExpired": "La registrazione è scaduta. Effettuare nuovamente la registrazione per riprendere da dove si era rimasti.",
     "somethingNotLoading": "Alcuni elementi non vengono caricati correttamente. Provare ad aggiornare la pagina."
+  },
+  "signedInPrompt": {
+    "signedIn": "Utente connesso.",
+    "backToStoryMaps": "Torna a Story Map",
+    "closeRefresh": "Chiudere questa scheda e aggiornare il sito Web.",
+    "close": "Chiudi"
   },
   "unavailableDialog": {
     "title": "Registrazione non disponibile",

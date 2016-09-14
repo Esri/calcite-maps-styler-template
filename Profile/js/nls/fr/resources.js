@@ -24,7 +24,8 @@ define({
   "elevation": {
     "toggle": "Activez/Désactivez le diagramme du profil d'altitude.",
     "drawTool": "Tracez une ligne sur la carte pour générer un profil d'altitude.",
-    "selectMessage": "Cliquez sur une entité linéaire ou utilisez l'outil de dessin pour tracer une ligne et afficher le profil d'altitude."
+    "selectMessage": "Cliquez sur une entité linéaire ou utilisez l'outil de dessin pour tracer une ligne et afficher le profil d'altitude.",
+    "gainLossTemplate": "Min : ${min}   Max : ${max}   Début : ${start}   Fin : ${end}   Changement : ${gainLoss}"
   },
   "splash": {
     "title": "Titre",

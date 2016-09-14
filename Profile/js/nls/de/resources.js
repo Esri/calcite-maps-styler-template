@@ -24,7 +24,8 @@ define({
   "elevation": {
     "toggle": "Höhenprofildiagramm umschalten",
     "drawTool": "Zeichnen Sie eine Linie auf die Karte, um ein Höhenprofil zu erstellen.",
-    "selectMessage": "Klicken Sie auf ein Linien-Feature, oder zeichnen Sie mit dem Zeichenwerkzeug eine Linie, um das Höhenprofil anzuzeigen."
+    "selectMessage": "Klicken Sie auf ein Linien-Feature, oder zeichnen Sie mit dem Zeichenwerkzeug eine Linie, um das Höhenprofil anzuzeigen.",
+    "gainLossTemplate": "Min.: ${min}   Max.: ${max}   Start: ${start}   Ende: ${end}   Änderung: ${gainLoss}"
   },
   "splash": {
     "title": "Titel",

@@ -1,346 +1,341 @@
 ﻿/** Application header container starts **/
 
-.dj_rtl .esriCTApplicationHeaderIconContainer
-{
+.dj_rtl .esriCTApplicationHeaderIconContainer {
     float: right;
 }
 
-.dj_rtl .esriCTApplicationNameContainer
-{
+.dj_rtl .esriCTApplicationNameContainer {
     float: right;
 }
 
-.dj_rtl .esriCTHelpIconContainer
-{
+.dj_rtl .esriCTHelpIconContainer {
     float: left;
 }
 
-.dj_rtl .esriCTSearchIconContainer, .dj_rtl .esriCTSearchIconContainerDisabled
-{
+.dj_rtl .esriCTSearchIconContainer, .dj_rtl .esriCTSearchIconContainerDisabled {
     float: left;
 }
 
-.dj_rtl .esriCTManualRefreshIconContainer, .dj_rtl .esriCTManualRefreshIconContainerDisable
-{
+.dj_rtl .esriCTManualRefreshIconContainer, .dj_rtl .esriCTManualRefreshIconContainerDisable {
     float: left;
 }
 
-.dj_rtl .esriCTApplicationName
-{
+.dj_rtl .esriCTApplicationName {
     text-align: right;
 }
 
-.dj_rtl .esriCTSearchBox
-{
+.dj_rtl .esriCTSearchBox {
     float: right;
 }
 
-.dj_rtl .esriCTClearBtn
-{
+.dj_rtl .esriCTClearBtn {
     float: right;
 }
 
-.dj_rtl .esriCTClearDiv
-{
+.dj_rtl .esriCTClearDiv {
     border-left: 1px solid #DFDFDF;
     border-right: none;
 }
 
-.dj_rtl .esriCTSearchButton
-{
+.dj_rtl .esriCTSearchButton {
     margin-right: 5px;
 }
+
+.dj_rtl .esriCTSelectionOptionsContainerDisabled {
+    float: left;
+    margin-left: 17px !important;
+}
+
+.dj_rtl .esriCTSelectionOptionsContainerEnabled {
+    float: left;
+    margin-left: 17px !important;
+}
+
+
 /** Application header container ends **/
+
 
 /** Details panel container starts **/
 
-.dj_rtl .esriCTDetailsPanelWrapperContainer
-{
+.dj_rtl .esriCTDetailsPanelWrapperContainer {
     float: right;
     border-left: 1px solid #bdbdbd;
     border-right: none;
     padding: 20px 0px 0px 0px;
 }
 
-
-.dj_rtl .esriCTCancelCommentButton, .dj_rtl .esriCTCancelPopupButton
-{
+.dj_rtl .esriCTCancelCommentButton, .dj_rtl .esriCTCancelPopupButton {
     float: left;
 }
 
+
 /* Comments panel starts*/
 
-.dj_rtl .esriCTCommentformContainer
-{
+.dj_rtl .esriCTCommentformContainer {
     right: auto;
 }
 
-.dj_rtl .esriCTCommentButton, .dj_rtl .esriCTEditFeatureButton
-{
+.dj_rtl .esriCTCommentButton, .dj_rtl .esriCTEditFeatureButton {
     right: auto;
     left: 8px;
 }
 
-.input-group-addon:first-child
-{
+.input-group-addon:first-child {
     border-left: 0;
     border-right: 1px solid;
 }
 
-.dj_rtl .esriCTCommentsBadgeContainer
-{
-    float: right;
-    right: auto;
-    left: 5px;
+.dj_rtl .esriCTCommentsBadgeContainer {
+    float: none;
 }
 
-.dj_rtl .esriCTDetailsPanelTabContainer .badge
-{
+.dj_rtl .esriCTDetailsPanelTabContainer .badge {
     float: right;
+}
+
+.dj_rtl .esriCTAddCommentButton {
+    margin-left: 0;
+    margin-right: 2px;
+}
+
+.dj_rtl .esriCTNonImageContainer {
+    margin: 5px 0 5px 10px;
+}
+
+.dj_rtl .esriCTAddCommentsIcon {
+    float: right;
+    margin: 0 0 0 2px;
 }
 
 /* Comments panel ends*/
 
+
 /* Popup panel starts*/
 
-.dj_rtl .esriCTNonImageContainer
-{
+.dj_rtl .esriCTNonImageContainer {
     float: right;
 }
 
+
 /* Popup panel ends*/
+
 
 /** Details panel container ends **/
 
+
 /** Map panel container starts **/
 
-.dj_rtl .esriCTMapPanelWrapperContainer
-{
+.dj_rtl .esriCTMapPanelWrapperContainer {
     float: left;
 }
 
-.dj_rtl .esriSimpleSliderTL
-{
+.dj_rtl .esriSimpleSliderTL {
     top: 20px;
     left: auto;
     right: 20px;
 }
 
-.dj_rtl .esriCTDetailsPanelWrapperContainer .esriViewPopup .header
-{
+.dj_rtl .esriCTDetailsPanelWrapperContainer .esriViewPopup .header {
     margin-right: 0px;
     margin-left: 30px;
 }
+
+
 /** Map panel container ends **/
+
 
 /** Webmap list panel starts **/
 
-.dj_rtl .esriCTInfoImgRight
-{
+.dj_rtl .esriCTInfoImgRight {
     float: left;
 }
 
-.dj_rtl .esriCTMultiLineEllipsisdiv
-{
+.dj_rtl .esriCTMultiLineEllipsisdiv {
     margin-left: auto;
     margin-right: 10px;
 }
 
-.dj_rtl .esriCTWebMapPanelToggleBtnPosition
-{
-    right: 40px;
-    float: left;
-}
-.dj_rtl .esriCTWebMapPanelToggleBtnPositionClose
-{
+.dj_rtl .esriCTWebMapPanelToggleBtnPosition {
     right: 40px;
     float: left;
 }
 
-.dj_rtl .esriCTWebMapListWrapperContainer
-{
+.dj_rtl .esriCTWebMapPanelToggleBtnPositionClose {
+    right: 40px;
+    float: left;
+}
+
+.dj_rtl .esriCTWebMapListWrapperContainer {
     border-left: 1px solid #cccccc;
     border-right: 0px;
 }
 
+
 /** Webmap list panel ends **/
+
 
 /** Data viewer container starts **/
 
-.dj_rtl .esriCTTableHeader
-{
+.dj_rtl .esriCTTableHeader {
     float: right;
 }
+
 
 /** Data viewer container ends **/
 
+
 /** Filter panel container starts **/
 
-.dj_rtl .esriCTFilterLabel
-{
+.dj_rtl .esriCTFilterLabel {
     float: right;
 }
 
-.dj_rtl .esriCTInputTextBoxDiv, .dj_rtl .esriCTSelectOptionDiv
-{
+.dj_rtl .esriCTInputTextBoxDiv, .dj_rtl .esriCTSelectOptionDiv {
     float: right;
 }
 
-.dj_rtl .esriCTInputTextBox
-{
+.dj_rtl .esriCTInputTextBox {
     float: right;
     padding-right: 5px;
     padding-top: 0px;
     padding-bottom: 0px;
 }
 
-.dj_rtl .esriCTRadioButtonDiv
-{
+.dj_rtl .esriCTRadioButtonDiv {
     float: right;
 }
 
-.dj_rtl input.esriCTRadioButton
-{
+.dj_rtl input.esriCTRadioButton {
     float: right;
     margin: 5px 0 0 5px;
 }
 
-.dj_rtl .esriCTRadioButtonLabel
-{
+.dj_rtl .esriCTRadioButtonLabel {
     float: right;
     margin: 0 0 0 5px;
 }
 
-.dj_rtl .esriCTSelectOption
-{
+.dj_rtl .esriCTSelectOption {
     float: right;
     padding: 0px 1px 0px 0px;
 }
 
-.dj_rtl .esriCTFilterParentContainer .input-group.date
-{
+.dj_rtl .esriCTFilterParentContainer .input-group.date {
     float: right;
 }
 
-.dj_rtl .esriCTDisabledCloseSpan, .dj_rtl .esriCTActiveCloseSpan
-{
+.dj_rtl .esriCTDisabledCloseSpan, .dj_rtl .esriCTActiveCloseSpan {
     float: left;
 }
 
-.dj_rtl .esriCTFilterParentContainer .input-group-addon
-{
+.dj_rtl .esriCTFilterParentContainer .input-group-addon {
     border-right: 1px solid #959595;
     border-left: 0;
 }
 
-.dj_rtl .esriCTBlackCaretIcon
-{
+.dj_rtl .esriCTBlackCaretIcon {
     float: left;
     padding-right: 5px;
     margin-left: 0;
 }
 
-.dj_rtl .esriCTFilterIcon, .dj_rtl .esriCTDisableFilterIcon
-{
+.dj_rtl .esriCTFilterIcon, .dj_rtl .esriCTDisableFilterIcon {
     float: left;
     margin: 4px 0 0 5px;
 }
 
-.dj_rtl .esriCTFilterContainer
-{
+.dj_rtl .esriCTFilterContainer {
     float: none;
 }
 
+
 /** Filter panel container ends **/
+
 
 /** Time Slider container start **/
 
-.dj_rtl .esriCTTimeSliderContainer
-{
+.dj_rtl .esriCTTimeSliderContainer {
     float: right;
 }
 
-.dj_rtl .esriCTDataViewerContainer .divTableWithFloatingHeader
-{
+.dj_rtl .esriCTDataViewerContainer .divTableWithFloatingHeader {
     width: 100%;
 }
 
-.dj_rtl .esriCTTimeSliderTextContainer
-{
+.dj_rtl .esriCTTimeSliderTextContainer {
     float: right;
     text-align: left;
     margin-right: 10px;
     margin-left: 0px;
 }
 
+
 /** Time Slider container end **/
 
 
 /* Help Dialog start */
 
-.dj_rtl .esriCTClose
-{
+.dj_rtl .esriCTClose {
     float: left;
 }
 
+
 /* Help Dialog ends */
+
 
 /* Search Panel starts */
 
-.dj_rtl .esriCTSearchContainer
-{
+.dj_rtl .esriCTSearchContainer {
     right: auto;
     left: 2px;
 }
 
+
 /* Search Panel ends */
+
 
 /* Sign-in container starts */
 
-.dj_rtl .esriCTSignInDetailContainer
-{
+.dj_rtl .esriCTSignInDetailContainer {
     float: left;
 }
 
-.dj_rtl .esriCTSignInUserNameDetails
-{
+.dj_rtl .esriCTSignInUserNameDetails {
     float: right;
 }
 
-.dj_rtl .esriSignedInUserDetailsCaretIcon
-{
+.dj_rtl .esriSignedInUserDetailsCaretIcon {
     padding-left: auto;
     padding-right: 2px;
 }
 
-.dj_rtl .esriCTSignOutOption
-{
+.dj_rtl .esriCTSignOutOption {
     right: auto;
     left: 0px;
     text-align: right;
 }
 
-.dj_rtl .esriCTSignOutOptionErrorMode
-{
+.dj_rtl .esriCTSignOutOptionErrorMode {
     right: auto;
     left: 0px;
 }
 
-.dj_rtl .esriCTSeperator
-{
+.dj_rtl .esriCTSeparator {
     float: left;
 }
 
+
 /* Sign-in container ends */
+
 
 /* Layer Title Container Starts */
 
-.dj_rtl .esriCTFeatureCount
-{
+.dj_rtl .esriCTFeatureCount {
     padding-left: 15px;
     float: left;
     padding-right: 0px;
     text-align: left;
 }
+
 
 /* Layer Title Container Ends */

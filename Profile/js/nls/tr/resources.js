@@ -24,14 +24,15 @@ define({
   "elevation": {
     "toggle": "Yükselti Profili Grafiğini Açın/Kapatın.",
     "drawTool": "Yükselti profili oluşturmak için haritada bir çizgi çizin.",
-    "selectMessage": "Yükselti profilini görüntülemek için çizgi detayına tıklayın veya çizim aracını kullanarak bir çizgi çizin"
+    "selectMessage": "Yükselti profilini görüntülemek için çizgi detayına tıklayın veya çizim aracını kullanarak bir çizgi çizin",
+    "gainLossTemplate": "Min: ${min}   Maks: ${max}   Başlangıç: ${start}   Bitiş: ${end}   Değişim: ${gainLoss}"
   },
   "splash": {
     "title": "Başlık",
     "content": "Özel açılış içeriği oluşturmak için yapılandır"
   },
   "legend": {
-    "title": "Açıklama",
+    "title": "Gösterim",
     "tip": "Göstergeyi göster"
   },
   "basemap": {

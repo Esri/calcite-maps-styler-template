@@ -25,7 +25,7 @@ define({
   // Use a local hosted webmap instead of a webmap on ArcGIS or portal.
   "useLocalWebmap": false,
   // support sending credentials with AJAX requests to specific domains. This will allow editing of feature services secured with web-tier authentication
-  webTierSecurity: true,
+  "webTierSecurity": false,
   // Webmap file to use for the local webmap
   "localWebmapFile": "config/demoMap",
   //When true the template will query arcgis.com for default settings for helper services, units etc. If you
@@ -53,4 +53,3 @@ define({
   // Most users will not need to modify this value. For esri hosting environments only. Will automatically create a "sharinghost" and "proxyurl" for the application. Only set this is to true if the app is going to be stored on Esri's hosting servers. If you are using your own custom hosted portal, set the "sharinghost" in defaults.js instead of setting this to true.
   esriEnvironment: true
 });
-

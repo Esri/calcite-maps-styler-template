@@ -24,7 +24,8 @@ define({
   "elevation": {
     "toggle": "Comutaţi Diagramă profil de elevaţie.",
     "drawTool": "Trasaţi o linie pe hartă pentru a genera un profil de elevaţie.",
-    "selectMessage": "Faceţi clic pe un obiect spaţial liniar sau utilizaţi instrumentul de trasare pentru a trasa o linie care va afişată în profilul de elevaţie."
+    "selectMessage": "Faceţi clic pe un obiect spaţial liniar sau utilizaţi instrumentul de trasare pentru a trasa o linie care va afişată în profilul de elevaţie.",
+    "gainLossTemplate": "Min: ${min}   Max: ${max}   Început: ${start}   Sfârşit: ${end}   Modificare: ${gainLoss}"
   },
   "splash": {
     "title": "Titlu",

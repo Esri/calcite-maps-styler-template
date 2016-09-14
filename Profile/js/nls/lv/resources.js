@@ -24,10 +24,11 @@ define({
   "elevation": {
     "toggle": "Pārslēdziet pacēluma profila diagrammu.",
     "drawTool": "Uzzīmējiet kartē līniju, lai ģenerētu pacēluma profilu.",
-    "selectMessage": "Noklikšķiniet uz līnijas elementa vai izmantojiet zīmēšanas rīku, lai uzzīmētu līniju un parādītu pacēluma profilu"
+    "selectMessage": "Noklikšķiniet uz līnijas elementa vai izmantojiet zīmēšanas rīku, lai uzzīmētu līniju un parādītu pacēluma profilu",
+    "gainLossTemplate": "Minim.: ${min}   Maks.: ${max}   Sākums: ${start}   Beigas: ${end}   Izmaiņas: ${gainLoss}"
   },
   "splash": {
-    "title": "Nosaukums",
+    "title": "Virsraksts",
     "content": "Konfigurējiet, lai izveidotu pielāgotu uzplaiksnījuma saturu"
   },
   "legend": {
@@ -39,7 +40,7 @@ define({
     "tip": "Mainīt pamatkarti"
   },
   "share": {
-    "title": "Koplietošana",
-    "tip": "Kopīgot karti"
+    "title": "Koplietot",
+    "tip": "Koplietot karti"
   }
 });

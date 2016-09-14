@@ -24,7 +24,8 @@ define({
   "elevation": {
     "toggle": "Skift højdeprofildiagram.",
     "drawTool": "Tegn en linje på kortet for at generere en højdeprofil.",
-    "selectMessage": "Klik på et linjeobjekt, eller brug tegneværktøjet til at tegne en linje for at vise højdeprofilen"
+    "selectMessage": "Klik på et linjeobjekt, eller brug tegneværktøjet til at tegne en linje for at vise højdeprofilen",
+    "gainLossTemplate": "Min.: ${min}   Maks.: ${max}   Start: ${start}   Slut: ${end}   Ændring: ${gainLoss}"
   },
   "splash": {
     "title": "Titel",
@@ -39,7 +40,7 @@ define({
     "tip": "Skift baggrundskort"
   },
   "share": {
-    "title": "Del",
+    "title": "Opdatér",
     "tip": "Del kort"
   }
 });

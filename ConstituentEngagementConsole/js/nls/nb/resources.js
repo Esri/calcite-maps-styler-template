@@ -83,7 +83,7 @@ define({
     "valueRadioButtonLabel": "Verdi",
     "uniqueRadioButtonLabel": "Unike",
     "selectLayerToBegin": "Velg en kategori for å komme i gang",
-    "layerFeatureCount": "${featureCount} poster"
+    "layerFeatureCount": "${selectedFeatureCount} valgt / ${featureCount} poster"
   },
   "timeSlider": {
     "timeSliderLabel": "Tidsrom",
@@ -97,7 +97,12 @@ define({
     "placeHolderText": "",
     "noCommentsAvailableText": "Ingen tilgjengelige poster",
     "remainingTextCount": "${0} tegn gjenstår",
-    "showNoText": "Nei"
+    "showNoText": "Nei",
+    "selectAttachments": "Vedlegg",
+    "selectFileText": "Bla gjennom",
+    "attachmentSelectedMsg": "vedlegg valgt",
+    "attachmentHeaderText": "Vedlegg",
+    "addRecordText": "Legg til post"
   },
   "main": {
     "noGroup": "Ingen gruppe er konfigurert"
@@ -109,17 +114,18 @@ define({
   },
   "manualRefresh": {
     "manualRefreshIconTooltip": "Oppdater",
-    "confirmManualRefeshText": "Alle utvalg og endringer som ikke er lagret, forkastes"
+    "confirmManualRefreshText": "Alle utvalg og endringer som ikke er lagret, forkastes"
   },
   "help": {
     "helpIconTooltip": "Hjelp"
   },
   "filter": {
     "noFeatureFoundText": "Finner ingen geoobjekter for denne verdien.",
-    "distinctQueryFalied": "Finner ingen distinkte verdier for feltet.",
+    "distinctQueryFailed": "Finner ingen distinkte verdier for feltet.",
     "andText": "og",
-    "filterInEditModeAlert": "Filtre er ikke tilgjengelig under redigering",
-    "dropdownSelectOption": "Velg"
+    "filterInEditModeAlert": "Filtrene er utilgjengelige under redigering.",
+    "dropdownSelectOption": "Velg",
+    "filterInShowSelectedEditModeAlert": "Filtre er utilgjengelig i «Vis valgte»-modus."
   },
   "detailsPanel": {
     "editContentText": "Rediger post"
@@ -127,5 +133,10 @@ define({
   "signOutPage": {
     "signOutMessage": "Du er logget av",
     "reSignInMessage": "Klikk her for å logge på"
+  },
+  "selectionOptions": {
+    "selectionOptionsIconTooltip": "Alternativer for utvalg",
+    "showAllOptionText": "Vis alle",
+    "showSelectedOptionText": "Vis valgte"
   }
 });

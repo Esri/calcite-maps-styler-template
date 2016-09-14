@@ -54,6 +54,7 @@ define({
   },
   "item_details": {
     "likeButtonTooltip": "Balsuokite už šį elementą",
+    "likeButtonInverseTooltip": "Balsas įskaičiuotas",
     "commentButtonTooltip": "Pridėti komentarą",
     "gotoMapViewTooltip": "Eiti į žemėlapio vaizdą",
     "galleryButtonTooltip": "Rodyti pridėtus failus",

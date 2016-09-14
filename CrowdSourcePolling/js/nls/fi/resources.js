@@ -54,6 +54,7 @@ define({
   },
   "item_details": {
     "likeButtonTooltip": "ääni tälle kohteelle",
+    "likeButtonInverseTooltip": "Ääni laskettu",
     "commentButtonTooltip": "Lisää kommentti",
     "gotoMapViewTooltip": "Siirry karttanäkymään",
     "galleryButtonTooltip": "Näytä liitetyt tiedostot",

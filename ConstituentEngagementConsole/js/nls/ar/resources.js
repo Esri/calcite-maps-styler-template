@@ -83,7 +83,7 @@ define({
     "valueRadioButtonLabel": "قيمة",
     "uniqueRadioButtonLabel": "فريد",
     "selectLayerToBegin": "تحديد فئة للبدء",
-    "layerFeatureCount": "تسجيلات ${featureCount}"
+    "layerFeatureCount": "تم تحديد ${selectedFeatureCount} / تسجيلات ${featureCount}"
   },
   "timeSlider": {
     "timeSliderLabel": "النطاق الزمني",
@@ -97,7 +97,12 @@ define({
     "placeHolderText": "",
     "noCommentsAvailableText": "لا توجد تسجيلات متاحة",
     "remainingTextCount": "يتبقى ${0} حرف",
-    "showNoText": "لا"
+    "showNoText": "لا",
+    "selectAttachments": "مرفقات",
+    "selectFileText": "مربع حوار",
+    "attachmentSelectedMsg": "المرفقات المحددة",
+    "attachmentHeaderText": "مرفقات",
+    "addRecordText": "إضافة تسجيل"
   },
   "main": {
     "noGroup": "لم يتم تكوين المجموعة"
@@ -109,17 +114,18 @@ define({
   },
   "manualRefresh": {
     "manualRefreshIconTooltip": "تحديث",
-    "confirmManualRefeshText": "سيتم تجاهل جميع عمليات التحديد والتغييرات غير المحفوظة"
+    "confirmManualRefreshText": "سيتم تجاهل جميع عمليات التحديد والتغييرات غير المحفوظة"
   },
   "help": {
     "helpIconTooltip": "مساعدة"
   },
   "filter": {
     "noFeatureFoundText": "لا توجد معالم للقيمة الحالية.",
-    "distinctQueryFalied": "لا توجد قيم مُحددة للحقل.",
+    "distinctQueryFailed": "لا توجد قيم مُحددة للحقل.",
     "andText": "و",
-    "filterInEditModeAlert": "لا تتوفر عوامل التصفية أثناء التحرير",
-    "dropdownSelectOption": "تحديد"
+    "filterInEditModeAlert": "لا تتوفر عوامل التصفية أثناء التحرير.",
+    "dropdownSelectOption": "تحديد",
+    "filterInShowSelectedEditModeAlert": "لا تتوفر عوامل التصفية في وضع 'العرض المُحدد'"
   },
   "detailsPanel": {
     "editContentText": "تحرير التسجيل"
@@ -127,5 +133,10 @@ define({
   "signOutPage": {
     "signOutMessage": "تم تسجيل الخروج بنجاح",
     "reSignInMessage": "انقر هنا لتسجيل الدخول"
+  },
+  "selectionOptions": {
+    "selectionOptionsIconTooltip": "خيارات التحديد",
+    "showAllOptionText": "إظهار الكل",
+    "showSelectedOptionText": "إظهار سجلات المعالم المحددة"
   }
 });

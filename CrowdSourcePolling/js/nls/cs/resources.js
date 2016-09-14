@@ -54,6 +54,7 @@ define({
   },
   "item_details": {
     "likeButtonTooltip": "Hlasovat pro tuto položku",
+    "likeButtonInverseTooltip": "Hlas byl započítán",
     "commentButtonTooltip": "Přidat komentář",
     "gotoMapViewTooltip": "Přejít na zobrazení mapy",
     "galleryButtonTooltip": "Zobrazit připojené soubory",

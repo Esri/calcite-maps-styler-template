@@ -1,15 +1,21 @@
 define({
   "signInDialog": {
-    "title": "Pierakstīšanās pakalpojumā Story Maps",
-    "subtitle": "Pierakstieties ar savu ArcGIS Online kontu, lai varētu:",
-    "reasonOne": "Izveidot aizraujošus karšu stāstus, kas pauž jūsu vēstījumu.",
-    "reasonTwo": "Karšu stāstos izmantot savas ArcGIS Online kartes un datus.",
-    "reasonThree": "Pārvaldīt karšu stāstus un pārbaudīt to satura statusu.",
-    "noAccountYet": "Vai jums nav ArcGIS Online konta? Pierakstieties:",
+    "title": "Sāciet stāstīt stāstus!",
+    "reasonOne": "Veidojiet aizraujošus karšu stāstus",
+    "reasonTwo": "Izmantojiet ArcGIS spēku",
+    "reasonThree": "Pārvaldiet savus stāstus",
+    "noAccountYet": "Vai jums nav ArcGIS Online konta?",
+    "signUpFor": "Pierakstieties:",
     "publicAccount": "Bezmaksas nekomerciāls publiskais konts",
     "subscriptionAccount": "ArcGIS bezmaksas izmēģinājuma abonements",
     "signInExpired": "Pierakstīšanās sesija ir beigusies. Lai turpinātu iesākto darbu, pierakstieties vēlreiz.",
     "somethingNotLoading": "Ielāde nenotiek pareizi. Mēģiniet atsvaidzināt lapu."
+  },
+  "signedInPrompt": {
+    "signedIn": "Jūs šobrīd esat pierakstījies.",
+    "backToStoryMaps": "Atpakaļ uz sadaļu Karšu stāsti",
+    "closeRefresh": "Aizvērt šo cilni un atsvaidzināt tīmekļa vietni.",
+    "close": "Aizvērt"
   },
   "unavailableDialog": {
     "title": "Pierakstīšanās nav pieejama",

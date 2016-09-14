@@ -83,7 +83,7 @@ define({
     "valueRadioButtonLabel": "Valore",
     "uniqueRadioButtonLabel": "Unico",
     "selectLayerToBegin": "Selezionare una categoria per iniziare",
-    "layerFeatureCount": "${featureCount} record"
+    "layerFeatureCount": "${selectedFeatureCount} selezionato/ ${featureCount} record"
   },
   "timeSlider": {
     "timeSliderLabel": "Intervallo temporale",
@@ -97,7 +97,12 @@ define({
     "placeHolderText": "",
     "noCommentsAvailableText": "Nessun record disponibile",
     "remainingTextCount": "${0} caratteri rimanenti",
-    "showNoText": "No"
+    "showNoText": "No",
+    "selectAttachments": "Allegati",
+    "selectFileText": "Esplora",
+    "attachmentSelectedMsg": "allegato/i selezionato/i",
+    "attachmentHeaderText": "Allegati",
+    "addRecordText": "Aggiungi record"
   },
   "main": {
     "noGroup": "Nessun gruppo configurato"
@@ -109,17 +114,18 @@ define({
   },
   "manualRefresh": {
     "manualRefreshIconTooltip": "Aggiorna",
-    "confirmManualRefeshText": "Tutte le selezioni e le modifiche non salvate verranno ignorate"
+    "confirmManualRefreshText": "Tutte le selezioni e le modifiche non salvate verranno ignorate"
   },
   "help": {
     "helpIconTooltip": "Guida"
   },
   "filter": {
     "noFeatureFoundText": "Nessuna feature trovata per questo valore.",
-    "distinctQueryFalied": "Nessun valore distinto trovato per il campo.",
+    "distinctQueryFailed": "Nessun valore distinto trovato per il campo.",
     "andText": "e",
-    "filterInEditModeAlert": "Filtri non disponibili durante la modifica",
-    "dropdownSelectOption": "Seleziona"
+    "filterInEditModeAlert": "Filtri non disponibili durante la modifica.",
+    "dropdownSelectOption": "Seleziona",
+    "filterInShowSelectedEditModeAlert": "Filtri non disponibili nella modalità 'Mostra selezionate'."
   },
   "detailsPanel": {
     "editContentText": "Modifica record"
@@ -127,5 +133,10 @@ define({
   "signOutPage": {
     "signOutMessage": "Disconnessione riuscita",
     "reSignInMessage": "Fare clic qui per effettuare l'accesso"
+  },
+  "selectionOptions": {
+    "selectionOptionsIconTooltip": "Opzioni di selezione",
+    "showAllOptionText": "Mostra tutto",
+    "showSelectedOptionText": "Mostra selezionate"
   }
 });

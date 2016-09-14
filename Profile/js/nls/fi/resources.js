@@ -24,7 +24,8 @@ define({
   "elevation": {
     "toggle": "Vaihda Korkeusprofiili-karttaa.",
     "drawTool": "Luo korkeusprofiili piirtämällä viiva kartalle.",
-    "selectMessage": "Tuo korkeusprofiili näkyviin napsauttamalla viivakohdetta tai piirtämällä viiva piirtotyökalun avulla"
+    "selectMessage": "Tuo korkeusprofiili näkyviin napsauttamalla viivakohdetta tai piirtämällä viiva piirtotyökalun avulla",
+    "gainLossTemplate": "Min.: ${min}   Maks.: ${max}   Alku: ${start}   Loppu: ${end}   Muutos: ${gainLoss}"
   },
   "splash": {
     "title": "Otsikko",
@@ -35,7 +36,7 @@ define({
     "tip": "Näytä selite"
   },
   "basemap": {
-    "title": "Taustakartat",
+    "title": "Taustakartta",
     "tip": "Muuta taustakarttaa"
   },
   "share": {

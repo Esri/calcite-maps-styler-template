@@ -22,9 +22,10 @@ define({
     "close": "Zatvori"
   },
   "elevation": {
-    "toggle": "Preklopite grafikon profila elevacije.",
+    "toggle": "Uključite/isključite grafikon profila elevacije.",
     "drawTool": "Nacrtajte liniju na mapi da generišete profil elevacije.",
-    "selectMessage": "Kliknite na linijski geoobjekat ili koristite alatku za crtanje da nacrtate liniju da prikažete profil elevacije"
+    "selectMessage": "Kliknite na linijski geoobjekat ili koristite alatku za crtanje da nacrtate liniju da prikažete profil elevacije",
+    "gainLossTemplate": "Min: ${min}   Maks: ${max}   Početak: ${start}   Kraj: ${end}   Promeni: ${gainLoss}"
   },
   "splash": {
     "title": "Naslov",

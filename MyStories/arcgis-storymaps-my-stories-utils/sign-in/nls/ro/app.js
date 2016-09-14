@@ -1,15 +1,21 @@
 define({
   "signInDialog": {
-    "title": "Autentificaţi-vă la Hărţi informative",
-    "subtitle": "Autentificaţi-vă la contul de ArcGIS Online existent pentru a:",
-    "reasonOne": "Creaţi hărţi informative detaliate pentru a relata poveşti.",
-    "reasonTwo": "Utilizaţi hărţile şi datele dvs. din ArcGIS Online în hărţile informative.",
-    "reasonThree": "Gestionaţi hărţile informative şi verificaţi starea conţinutului acestora.",
-    "noAccountYet": "Nu aveţi un cont ArcGIS Online? Înregistraţi-vă pentru un:",
+    "title": "Începeţi să povestiţi!",
+    "reasonOne": "Creaţi hărţi cu scenarii captivante",
+    "reasonTwo": "Folosiţi potenţialul ArcGIS",
+    "reasonThree": "Gestionaţi-vă scenariile",
+    "noAccountYet": "Nu aveţi un cont ArcGIS Online?",
+    "signUpFor": "Înscrieţi-vă pentru un:",
     "publicAccount": "Cont public necomercial",
     "subscriptionAccount": "Abonament de evaluare gratuită ArcGIS",
     "signInExpired": "Autentificarea dvs. a expirat. Autentificaţi-vă din nou pentru a continua de unde aţi rămas.",
     "somethingNotLoading": "Ceva nu nu se încarcă corect. Încercaţi să reîmprospătaţi pagina."
+  },
+  "signedInPrompt": {
+    "signedIn": "Acum sunteţi autentificat.",
+    "backToStoryMaps": "Revenire la Hărţi scenariu",
+    "closeRefresh": "Închideţi această filă şi reîmprospătaţi site-ul web.",
+    "close": "Închidere"
   },
   "unavailableDialog": {
     "title": "Autentificare indisponibilă",

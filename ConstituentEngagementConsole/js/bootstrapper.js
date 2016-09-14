@@ -1,4 +1,4 @@
-﻿/*global define,document,$ */
+﻿/*global define,document */
 /*jslint sloppy:true */
 /*
 | Copyright 2014 Esri

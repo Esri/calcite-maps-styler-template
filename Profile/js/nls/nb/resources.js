@@ -24,7 +24,8 @@ define({
   "elevation": {
     "toggle": "Aktiver/deaktiver høydeprofildiagrammet.",
     "drawTool": "Tegn en linje på kartet for å generere en høydeprofil.",
-    "selectMessage": "Klikk på et linjegeoobjekt, eller bruk tegneverktøyet for å tegne en linje for å vise høydeprofilen"
+    "selectMessage": "Klikk på et linjegeoobjekt, eller bruk tegneverktøyet for å tegne en linje for å vise høydeprofilen",
+    "gainLossTemplate": "Min: ${min}   Maks: ${max}   Start: ${start}   Slutt: ${end}   Endring: ${gainLoss}"
   },
   "splash": {
     "title": "Tittel",

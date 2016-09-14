@@ -83,7 +83,7 @@ define({
     "valueRadioButtonLabel": "Hodnota",
     "uniqueRadioButtonLabel": "Jedinečný",
     "selectLayerToBegin": "Začněte výběrem kategorie",
-    "layerFeatureCount": "${featureCount} záznamů"
+    "layerFeatureCount": "${selectedFeatureCount} vybráno / ${featureCount} záznamů"
   },
   "timeSlider": {
     "timeSliderLabel": "Časový rozsah",
@@ -97,7 +97,12 @@ define({
     "placeHolderText": "",
     "noCommentsAvailableText": "Nejsou k dispozici žádné záznamy",
     "remainingTextCount": "Počet zbývajících znaků: ${0}",
-    "showNoText": "Ne"
+    "showNoText": "Ne",
+    "selectAttachments": "Přílohy",
+    "selectFileText": "Procházet",
+    "attachmentSelectedMsg": "příloh vybráno",
+    "attachmentHeaderText": "Přílohy",
+    "addRecordText": "Přidat záznam"
   },
   "main": {
     "noGroup": "Není nakonfigurována žádná skupina"
@@ -109,17 +114,18 @@ define({
   },
   "manualRefresh": {
     "manualRefreshIconTooltip": "Obnovit",
-    "confirmManualRefeshText": "Všechny výběry a neuložené změny budou zrušeny."
+    "confirmManualRefreshText": "Všechny výběry a neuložené změny budou zrušeny."
   },
   "help": {
     "helpIconTooltip": "Nápověda"
   },
   "filter": {
     "noFeatureFoundText": "Pro tuto hodnotu nebyl nalezen žádný prvek.",
-    "distinctQueryFalied": "Pro toto pole nebyly nalezeny žádné jedinečné hodnoty.",
+    "distinctQueryFailed": "Pro toto pole nebyly nalezeny žádné jedinečné hodnoty.",
     "andText": "a",
-    "filterInEditModeAlert": "Při editaci nejsou filtry k dispozici",
-    "dropdownSelectOption": "Vybrat (Select)"
+    "filterInEditModeAlert": "Při editaci nejsou filtry k dispozici.",
+    "dropdownSelectOption": "Vybrat (Select)",
+    "filterInShowSelectedEditModeAlert": "V režimu „Zobrazit vybrané“ nejsou filtry k dispozici."
   },
   "detailsPanel": {
     "editContentText": "Upravit záznam"
@@ -127,5 +133,10 @@ define({
   "signOutPage": {
     "signOutMessage": "Byli jste úspěšně odhlášeni.",
     "reSignInMessage": "Klikněte sem pro přihlášení."
+  },
+  "selectionOptions": {
+    "selectionOptionsIconTooltip": "Možnosti výběru",
+    "showAllOptionText": "Zobrazit vše",
+    "showSelectedOptionText": "Zobrazovat vybrané"
   }
 });

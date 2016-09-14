@@ -40,7 +40,7 @@ define({
   },
   "cantFindStories": {
     "whereAreStories": "Etkö näe tarinaasi?",
-    "notSeeExplanation": "Omat tarinat -luettelossa näkyvät vain kartat, joita isännöidään ArcGISissa ja jotka on luotu sovelluksella {{STORY_MAP_TOUR}}, {{JOURNAL}}, {{MAP_SERIES}} tai {{SWIPE_SPYGLASS}}. Lisätietoja on kohdassa {{FAQ}}.",
+    "notSeeExplanation": "Omat tarinat -luettelossa on vain ArcGIS-sovelluksessa isännöidyt tarinakartat ({{STORY_MAP_BASIC}}-sovellusta ei tueta tällä hetkellä). Lisätietoja on kohdassa {{FAQ}}.",
     "faq": "Usein kysytyt kysymykset",
     "followingStoriesToUpdate": "Seuraavat tarinat, jotka on luotu sovellusten aiemmilla versioilla, on päivitettävä, jotta ne näkyvät Omat tarinat -luettelossa:",
     "gettingStories": "Etsitään tarinoita, jotka on luotu sovellusten aiemmilla versioilla ja jotka on päivitettävä...",
@@ -88,27 +88,16 @@ define({
     "layerPrivate": "Karttatason määrittäminen yksityiseksi katkaisee tarinasi"
   },
   "collectionList": {
-    "advocacy": "Edunvalvonta ja aktiivinen palvelutarjonta",
-    "architecture": "Arkkitehtuuri ja suunnittelu",
-    "conservation": "Luonnonsuojelu ja kestävä kehitys",
-    "culture": "Kulttuuri",
-    "destinations": "Kohteet ja turismi",
-    "disasters": "Katastrofit ja niistä toipuminen",
-    "economy": "Talous ja kehitys",
-    "entertainment": "Viihde",
-    "history": "Historia",
-    "infrastructure": "Infrastruktuuri",
-    "marketing": "Markkinointi",
-    "nature": "Luonto ja ympäristö",
-    "news": "Uutiset ja tapahtumat",
-    "oceans": "Oceans",
-    "parks": "Puistot ja virkistysalueet",
+    "business": "Liiketoiminta ja talous",
+    "history": "Historia ja kulttuuri",
+    "inNews": "Uutisissa",
+    "infrastructure": "Infrastruktuuri ja rakentaminen",
+    "nature": "Luonto ja luonnonsuojelu",
     "people": "Ihmiset ja yhteiskunta",
-    "planning": "Suunnittelu ja analysointi",
-    "publicArt": "Julkinen taide",
+    "planning": "Suunnittelu ja muotoilu",
     "science": "Luonnontieteet ja tekniikka",
-    "sport": "Urheilu",
-    "travelogues": "Matkakertomukset"
+    "sports": "Urheilu ja viihde",
+    "travel": "Matkustaminen ja vapaa-aika"
   },
   "types": {
     "custom": "Virhe yhteyden muodostuksessa taustakarttapalveluun. Varmista, että SSL (HTTPS) -suojaus on käytössä palvelussa. Mahdolliset lisätiedot näkyvät alla.",
@@ -227,6 +216,7 @@ define({
   "content": {
     "media": {
       "maps": "Maps",
+      "scenes": "Maisemat",
       "images": "Kuva-aineistot",
       "videos": "Videot",
       "webpages": "Web-sivut",
@@ -244,22 +234,30 @@ define({
       "bullet": "Luettelomerkki",
       "tab": "Sarkain",
       "accordion": "Osa",
-      "mapJournal": "Osa"
+      "mapJournal": "Osa",
+      "cascade": "Osa",
+      "crowdsource": "Lisäykset",
+      "shortlist": "Sarkain"
     },
     "titleType": {
       "mapTour": "Seloste",
       "mapJournal": "URL-osoite",
-      "mapSeries": "URL-osoite"
+      "mapSeries": "URL-osoite",
+      "cascade": "URL-osoite",
+      "crowdsource": "URL-osoite",
+      "shortlist": "URL-osoite"
     },
     "actions": {
       "viewMap": "Näytä kartta",
       "editMap": "Muokkaa karttaa",
+      "editScene": "Muokkaa maisemaa",
       "fix": "Korjaa",
       "viewLayer": "Näytä karttataso"
     },
     "contentType": {
       "mainStage": "päävaiheen toiminto",
-      "sidePanel": "kuvaus"
+      "sidePanel": "kuvaus",
+      "introImage": "(kansisivun kuva)"
     },
     "notification": {
       "refreshExplanation": "Tarkista tarinasi uudelleen",
@@ -300,6 +298,7 @@ define({
       "publicDisabled": "Pääkäyttäjä on poistanut julkisen jakamisen käytöstä",
       "orgDisabled": "Pääkäyttäjä on poistanut käytöstä jakamisen organisaation kanssa",
       "noMapName": "Kartan nimen nouto ei onnistunut",
+      "noSceneName": "Maiseman nouto epäonnistui",
       "notPublic": "EI JULKINEN",
       "inaccessible": "EI KÄYTETTÄVISSÄ",
       "deleted": "POISTETTU",
@@ -351,6 +350,8 @@ define({
       "cantScanThisTypeAlt": "Tämäntyyppistä karttatasoa ei voi tarkistaa",
       "cantScanThisType": "Karttatason tyyppi ei ole sellainen, jonka voi tarkistaa",
       "webpageNotScanned": "Web-sivujen ongelmia ei tarkisteta",
+      "sceneNotScanned": "Virheitä ei tällä hetkellä tarkisteta maisemista. Varmista, että maisema ja kaikki sen tasot on jaettu oikein",
+      "scenesNotScannedGlobally": "Tämä tarina sisältää maisemia, ja virheitä ei tällä hetkellä tarkisteta maisemista. Varmista, että maisemat ja kaikki sen tasot on jaettu oikein",
       "ignoredIssue": "Olet ohittanut tämän karttatason virheen. Tarkista virhe lataamalla sivu uudelleen ja valitsemalla tämä tarina uudelleen",
       "ignoredIssueBuilder": "Olet ohittanut tämän karttatason virheen. Tarkista tämä virhe uudelleen lataamalla luontitoiminto uudelleen"
     },
@@ -450,6 +451,10 @@ define({
       "secondValueC": "välilehtiin jaettu",
       "thirdTitle": "kartat"
     },
+    "cascade": {
+      "firstTitle": "osat",
+      "secondTitle": "kartat"
+    },
     "swipeSpyglass": {
       "firstTitle": "kiinnostuksenkohde",
       "secondTitle": "tyyli",
@@ -459,9 +464,13 @@ define({
     },
     "crowdsource": {
       "firstTitle": "lisäykset",
-      "secondTitle": "tyyli",
-      "secondValueA": "sivupaneeli",
-      "secondValueB": "pinottu",
+      "secondTitle": "peruskartta",
+      "secondValueLoading": "Ladataan...",
+      "secondValueUnknown": "tuntematon"
+    },
+    "shortlist": {
+      "firstTitle": "paikat",
+      "secondTitle": "välilehdet",
       "thirdTitle": "peruskartta",
       "thirdValueLoading": "Ladataan...",
       "thirdValueUnknown": "tuntematon"

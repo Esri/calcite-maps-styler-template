@@ -83,7 +83,7 @@ define({
     "valueRadioButtonLabel": "Giá trị",
     "uniqueRadioButtonLabel": "Duy nhất",
     "selectLayerToBegin": "Chọn một danh mục để bắt đầu",
-    "layerFeatureCount": "${featureCount} bản ghi"
+    "layerFeatureCount": "${selectedFeatureCount} được chọn / ${featureCount} hồ sơ"
   },
   "timeSlider": {
     "timeSliderLabel": "Khoảng thời gian",
@@ -97,7 +97,12 @@ define({
     "placeHolderText": "",
     "noCommentsAvailableText": "Không có bản ghi nào",
     "remainingTextCount": "Còn ${0} ký tự",
-    "showNoText": "Không"
+    "showNoText": "Không",
+    "selectAttachments": "Tệp đính kèm",
+    "selectFileText": "Duyệt",
+    "attachmentSelectedMsg": "(các) tệp đính kèm được chọn",
+    "attachmentHeaderText": "Tệp đính kèm",
+    "addRecordText": "Thêm Bản ghi"
   },
   "main": {
     "noGroup": "Không có nhóm nào được cấu hình"
@@ -109,17 +114,18 @@ define({
   },
   "manualRefresh": {
     "manualRefreshIconTooltip": "Làm mới",
-    "confirmManualRefeshText": "Tất cả các lựa chọn và các thay đổi chưa lưu sẽ bị hủy"
+    "confirmManualRefreshText": "Tất cả các lựa chọn và các thay đổi chưa lưu sẽ bị hủy"
   },
   "help": {
     "helpIconTooltip": "Trợ giúp"
   },
   "filter": {
     "noFeatureFoundText": "Không tìm thấy đối tượng nào cho giá trị này.",
-    "distinctQueryFalied": "Không tìm thấy giá trị riêng biệt nào cho trường.",
+    "distinctQueryFailed": "Không tìm thấy giá trị riêng biệt nào cho trường.",
     "andText": "và",
-    "filterInEditModeAlert": "Bộ lọc không khả dụng trong khi chỉnh sửa",
-    "dropdownSelectOption": "Chọn"
+    "filterInEditModeAlert": "Bộ lọc không khả dụng khi đang chỉnh sửa.",
+    "dropdownSelectOption": "Chọn",
+    "filterInShowSelectedEditModeAlert": "Bộ lọc không khả dụng trong chế độ \"Hiện Mục được Chọn\"."
   },
   "detailsPanel": {
     "editContentText": "Chỉnh sửa bản ghi"
@@ -127,5 +133,10 @@ define({
   "signOutPage": {
     "signOutMessage": "Bạn đã đăng xuất thành công",
     "reSignInMessage": "Bấm vào đây để đăng nhập"
+  },
+  "selectionOptions": {
+    "selectionOptionsIconTooltip": "Các Tùy chọn Lựa chọn",
+    "showAllOptionText": "Hiển thị tất cả",
+    "showSelectedOptionText": "Hiện Mục được Chọn"
   }
 });

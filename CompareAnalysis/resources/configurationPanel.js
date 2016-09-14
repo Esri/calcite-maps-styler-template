@@ -27,7 +27,15 @@
                "fieldName":"theme_bg_color",
                "tooltip":"Background color for panel",
                "label":"Panel background color:"
-            }
+            },{
+            "type": "paragraph",
+            "value": "Use the Custom css option to paste css that overwrites rules in the app."
+          }, {
+            "type": "string",
+            "fieldName": "customstyle",
+            "tooltip": "Custom css",
+            "label": "Custom css"
+          }
          ]
       },
       {

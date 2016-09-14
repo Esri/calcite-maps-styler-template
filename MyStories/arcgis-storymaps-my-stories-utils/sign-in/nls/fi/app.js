@@ -1,20 +1,26 @@
 define({
   "signInDialog": {
-    "title": "Kirjaudu Tarinakartat-sovellukseen",
-    "subtitle": "Kirjaudu sisään olemassa olevalla ArcGIS Online -tililläsi, kun haluat",
-    "reasonOne": "Luo karttapohjaisia tarinakarttoja tarinoittesi kertomiseen.",
-    "reasonTwo": "Käytä ArcGIS Onlinen karttoja ja aineistoa tarinakartoissasi.",
-    "reasonThree": "Hallitse tarinakarttojasi ja tarkista niiden sisältö.",
-    "noAccountYet": "Eikö sinulla ole ArcGIS Online -tiliä? Rekisteröidy:",
+    "title": "Aloita tarinoiden kertominen!",
+    "reasonOne": "Luo mukaansatempaavia tarinakarttoja",
+    "reasonTwo": "Hyödynnä ArcGIS-sovelluksen tehokkaita ominaisuuksia",
+    "reasonThree": "Hallitse tarinoitasi",
+    "noAccountYet": "Eikö sinulla ole ArcGIS Online -tiliä?",
+    "signUpFor": "Rekisteröidy:",
     "publicAccount": "Ilmainen, muu kuin kaupallinen julkinen tili",
     "subscriptionAccount": "Ilmainen ArcGIS-kokeilutilaus",
     "signInExpired": "Sisäänkirjautumisesi on vanhentunut. Kirjaudu sisään uudelleen jatkaaksesi siitä, mihin jäit.",
     "somethingNotLoading": "Jokin ei lataudu oikein. Kokeile sivun päivitystä."
   },
+  "signedInPrompt": {
+    "signedIn": "Olet nyt kirjautuneena sisään.",
+    "backToStoryMaps": "Takaisin tarinakarttoihin",
+    "closeRefresh": "Sulje tämä välilehti ja päivitä verkkosivusto.",
+    "close": "Tallennettu"
+  },
   "unavailableDialog": {
     "title": "Sisäänkirjautuminen ei ole käytettävissä",
     "explanation": "Valitettavasti tätä ei tueta pienessä näytössä. Avaa suuremmassa näytössä tai laitteessa.",
-    "close": "Tallennettu",
+    "close": "Sulje",
     "returnButton": "Palauta"
   }
 });

@@ -83,7 +83,7 @@ define({
     "valueRadioButtonLabel": "Väärtus",
     "uniqueRadioButtonLabel": "Unikaalne",
     "selectLayerToBegin": "Alustamiseks valige kategooria",
-    "layerFeatureCount": "${featureCount} kirjet"
+    "layerFeatureCount": "${selectedFeatureCount} valitud, kokku ${featureCount} kirjet"
   },
   "timeSlider": {
     "timeSliderLabel": "Ajavahemik",
@@ -97,7 +97,12 @@ define({
     "placeHolderText": "",
     "noCommentsAvailableText": "Kirjeid pole saadaval",
     "remainingTextCount": "${0} tähemärki kasutamata",
-    "showNoText": "Ei"
+    "showNoText": "Ei",
+    "selectAttachments": "Manused",
+    "selectFileText": "Sirvi",
+    "attachmentSelectedMsg": "valitud manus(ed)",
+    "attachmentHeaderText": "Manused",
+    "addRecordText": "Lisa kirje"
   },
   "main": {
     "noGroup": "Ühtki gruppi ei ole konfigureeritud"
@@ -109,17 +114,18 @@ define({
   },
   "manualRefresh": {
     "manualRefreshIconTooltip": "Värskenda",
-    "confirmManualRefeshText": "Teie salvestamata valikud ja muudatused lähevad kaotsi."
+    "confirmManualRefreshText": "Teie salvestamata valikud ja muudatused lähevad kaotsi."
   },
   "help": {
     "helpIconTooltip": "Abi"
   },
   "filter": {
     "noFeatureFoundText": "Selle väärtuse jaoks ei leitud objekti.",
-    "distinctQueryFalied": "Välja jaoks ei leitud eraldi väärtusi.",
+    "distinctQueryFailed": "Välja jaoks ei leitud eraldi väärtusi.",
     "andText": "ja",
-    "filterInEditModeAlert": "Filtrid pole töötlemise ajal saadaval",
-    "dropdownSelectOption": "Vali"
+    "filterInEditModeAlert": "Filtrid pole töötlemise ajal saadaval.",
+    "dropdownSelectOption": "Vali",
+    "filterInShowSelectedEditModeAlert": "Filtrid pole režiimis „Kuva valitud” saadaval."
   },
   "detailsPanel": {
     "editContentText": "Muuda kirjet"
@@ -127,5 +133,10 @@ define({
   "signOutPage": {
     "signOutMessage": "Olete edukalt välja logitud.",
     "reSignInMessage": "Sisse logimiseks klikkige siia."
+  },
+  "selectionOptions": {
+    "selectionOptionsIconTooltip": "Valikuvõimalused",
+    "showAllOptionText": "Kuva kõik",
+    "showSelectedOptionText": "Kuva valitud"
   }
 });

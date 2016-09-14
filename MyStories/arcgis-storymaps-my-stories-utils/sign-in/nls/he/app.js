@@ -1,15 +1,21 @@
 define({
   "signInDialog": {
-    "title": "התחבר למפות סיפור",
-    "subtitle": "התחבר באמצעות חשבון ArcGIS Online הקיים שלך ל:",
-    "reasonOne": "צור מפות סיפור מרתקות כדי לספר את הסיפורים שלך.",
-    "reasonTwo": "השתמש בתוך מפות הסיפור שלך במפות ובנתונים שלך מ- ArcGIS Online .",
-    "reasonThree": "נהל את מפות הסיפור שלך ובדוק את סטטוס התוכן שלהן.",
-    "noAccountYet": "אין לך חשבון ArcGIS Online? הירשם לקבלת:",
+    "title": "התחל לספר סיפורים!",
+    "reasonOne": "צור מפות סיפור משכנעות",
+    "reasonTwo": "נצל את העוצמה של ArcGIS",
+    "reasonThree": "נהל את הסיפורים שלך",
+    "noAccountYet": "אין לך חשבון ArcGIS Online?",
+    "signUpFor": "הירשם ל:",
     "publicAccount": "חשבון ציבורי לא מסחרי חופשי",
     "subscriptionAccount": "מנוי חופשי של ArcGIS לניסיון",
     "signInExpired": "תוקף ההתחברות שלך פג. התחבר שוב כדי להמשיך מהמקום שבו הפסקת.",
     "somethingNotLoading": "משהו אינו נטען כהלכה. נסה לרענן את הדף."
+  },
+  "signedInPrompt": {
+    "signedIn": "אתה מחובר כעת.",
+    "backToStoryMaps": "חזרה אל מפות הסיפור",
+    "closeRefresh": "סגור את הכרטיסייה הזאת ורענן את האתר.",
+    "close": "סגור"
   },
   "unavailableDialog": {
     "title": "התחברות לא זמינה",

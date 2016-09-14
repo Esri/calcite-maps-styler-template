@@ -67,7 +67,7 @@
     background-color: ${LighterShadeThemeColor};
 }
 
-.esriCTPostPopupButton:hover, .esriCTPostPopupButton, .esriCTPostCommentButton, .esriCTPostCommentButton:hover
+.esriCTPostPopupButton:hover, .esriCTPostPopupButton, .esriCTPostCommentButton, .esriCTPostCommentButton:hover, .esriCTAddCommentsBtnWrapperContainer:hover
 {
       background-color: ${SelectedThemeColor} !important;
 }
@@ -77,11 +77,10 @@
     color: ${SelectedThemeColor} !important;
 }
 
-#commentsTotalCount.badge
+.esriCTAddCommentAttachmentsButton, .esriCTAddCommentAttachmentsButton:hover
 {
-    background-color: ${SelectedThemeColor} !important;
+      background-color: ${SelectedThemeColor} !important;
 }
-
 /* Details panel ends */
 
 /* Theme style CSS ends */

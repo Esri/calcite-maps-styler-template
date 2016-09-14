@@ -83,7 +83,7 @@ define({
     "valueRadioButtonLabel": "Valor",
     "uniqueRadioButtonLabel": "Único",
     "selectLayerToBegin": "Selecione uma categoria para iniciar",
-    "layerFeatureCount": "${featureCount} registros"
+    "layerFeatureCount": "${selectedFeatureCount} selecionado / ${featureCount} registros"
   },
   "timeSlider": {
     "timeSliderLabel": "Intervalo de tempo",
@@ -97,7 +97,12 @@ define({
     "placeHolderText": "",
     "noCommentsAvailableText": "Nenhum registro disponível",
     "remainingTextCount": "${0} caracteres restantes",
-    "showNoText": "Não"
+    "showNoText": "Não",
+    "selectAttachments": "Anexos",
+    "selectFileText": "Procurar",
+    "attachmentSelectedMsg": "anexos selecionados",
+    "attachmentHeaderText": "Anexos",
+    "addRecordText": "Adicionar Registros"
   },
   "main": {
     "noGroup": "Nenhum grupo configurado"
@@ -109,17 +114,18 @@ define({
   },
   "manualRefresh": {
     "manualRefreshIconTooltip": "Atualizar",
-    "confirmManualRefeshText": "Todas as seleções e alterações não salvas serão descartadas"
+    "confirmManualRefreshText": "Todas as seleções e alterações não salvas serão descartadas"
   },
   "help": {
     "helpIconTooltip": "Ajuda"
   },
   "filter": {
     "noFeatureFoundText": "Nenhuma feição encontrada para este valor.",
-    "distinctQueryFalied": "Nenhum valor distinto encontrado para o campo.",
+    "distinctQueryFailed": "Nenhum valor distinto encontrado para o campo.",
     "andText": "e",
-    "filterInEditModeAlert": "Filtros indisponíveis durante edição",
-    "dropdownSelectOption": "Selecionar"
+    "filterInEditModeAlert": "Filtros indisponíveis durante edição.",
+    "dropdownSelectOption": "Selecionar",
+    "filterInShowSelectedEditModeAlert": "Filtros indisponíveis no modo 'Mostrar Selecionado'."
   },
   "detailsPanel": {
     "editContentText": "Editar registro"
@@ -127,5 +133,10 @@ define({
   "signOutPage": {
     "signOutMessage": "Você saiu com sucesso",
     "reSignInMessage": "Clique aqui para entrar"
+  },
+  "selectionOptions": {
+    "selectionOptionsIconTooltip": "Opções de Seleção",
+    "showAllOptionText": "Mostrar Todos",
+    "showSelectedOptionText": "Mostrar Selecionados"
   }
 });

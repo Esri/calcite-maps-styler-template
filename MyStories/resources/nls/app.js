@@ -41,7 +41,7 @@ define({
 		},
 		cantFindStories: {
 			whereAreStories: "Not seeing your story?",
-			notSeeExplanation: "My Stories will only list story maps hosted in ArcGIS and created with the {{STORY_MAP_TOUR}}, {{JOURNAL}}, {{MAP_SERIES}} or {{SWIPE_SPYGLASS}} applications. See our {{FAQ}} for more information.",
+			notSeeExplanation: "My Stories will only list story maps hosted in ArcGIS ({{STORY_MAP_BASIC}} is currently not supported). See our {{FAQ}} for more information.",
 			faq: "FAQ",
 			followingStoriesToUpdate: "The following stories created with early versions of our applications need to be updated for them to be listed in My Stories:",
 			gettingStories: "Searching for stories created with early versions of our applications that need to be updated...",
@@ -89,27 +89,16 @@ define({
 			layerPrivate: "Making your layer private would break your story"
 		},
 		collectionList: {
-			advocacy: "Advocacy and Outreach",
-			architecture: "Architecture and Design",
-			conservation: "Conservation and Sustainability",
-			culture: "Culture",
-			destinations: "Destinations and Tourism",
-			disasters: "Disasters and Recovery",
-			economy: "Economy and Development",
-			entertainment: "Entertainment",
-			history: "History",
-			infrastructure: "Infrastructure",
-			marketing: "Marketing",
-			nature: "Nature and Environment",
-			news: "News and Events",
-			oceans: "Oceans",
-			parks: "Parks and Recreation",
+			business: "Business and Economy",
+			history: "History and Culture",
+			inNews: "In The News",
+			infrastructure: "Infrastructure and Construction",
+			nature: "Nature and Conservation",
 			people: "People and Society",
-			planning: "Planning and Analysis",
-			publicArt: "Public Art",
+			planning: "Planning and Design",
 			science: "Science and Technology",
-			sport: "Sport",
-			travelogues: "Travelogues"
+			sports: "Sports and Entertainment",
+			travel: "Travel and Recreation"
 		},
 		types: {
 			custom: "Custom",
@@ -228,6 +217,7 @@ define({
 		content: {
 			media: {
 				maps: "Maps",
+				scenes: "Scenes",
 				images: "Images",
 				videos: "Videos",
 				webpages: "Webpages",
@@ -245,22 +235,30 @@ define({
 				bullet: "Bullet",
 				tab: "Tab",
 				accordion: "Section",
-				mapJournal: "Section"
+				mapJournal: "Section",
+				cascade: "Section",
+				crowdsource: "Contribution",
+				shortlist: "Tab"
 			},
 			titleType: {
 				mapTour: "Caption",
 				mapJournal: "URL",
-				mapSeries: "URL"
+				mapSeries: "URL",
+				cascade: "URL",
+				crowdsource: "URL",
+				shortlist: "URL"
 			},
 			actions: {
 				viewMap: "View Map",
 				editMap: "Edit Map",
+				editScene: "Edit Scene",
 				fix: "Fix",
 				viewLayer: "View Layer"
 			},
 			contentType: {
 				mainStage: "main stage action",
-				sidePanel: "description"
+				sidePanel: "description",
+				introImage: "(cover page photo)"
 			},
 			notification: {
 				refreshExplanation: "Check your story again",
@@ -301,6 +299,7 @@ define({
 				publicDisabled: "Sharing publicly has been disabled by an Administrator",
 				orgDisabled: "Sharing to your organization has been disabled by an Administrator",
 				noMapName: "Could Not Retrieve Map Name",
+				noSceneName: "Could Not Retrieve Scene",
 				notPublic: "NOT PUBLIC",
 				inaccessible: "INACCESSIBLE",
 				deleted: "DELETED",
@@ -352,6 +351,8 @@ define({
 				cantScanThisTypeAlt: "We're not able to check this type of layer",
 				cantScanThisType: "Layer is not a type of layer we can check",
 				webpageNotScanned: "Webpages are not checked for issues",
+				sceneNotScanned: "Scenes are not currently checked for issues, please make sure that the scene and all of its layers are shared correctly",
+				scenesNotScannedGlobally: "There are scenes in this story, and scenes are not currently checked for issues. Please make sure that the scenes and all of their layers are shared correctly",
 				ignoredIssue: "You have ignored an error on this layer. Reload the page and check this story again to review the error",
 				ignoredIssueBuilder: "You have ignored an error on this layer. Reload the builder to check this error again"
 			},
@@ -451,6 +452,10 @@ define({
 				secondValueC: "tabbed",
 				thirdTitle: "maps"
 			},
+			cascade: {
+				firstTitle: "sections",
+				secondTitle: "maps"
+			},
 			swipeSpyglass: {
 				firstTitle: "points of interest",
 				secondTitle: "style",
@@ -460,9 +465,13 @@ define({
 			},
 			crowdsource: {
 				firstTitle: "contributions",
-				secondTitle: "style",
-				secondValueA: "side panel",
-				secondValueB: "stacked",
+				secondTitle: "basemap",
+				secondValueLoading: "Loading...",
+				secondValueUnknown: "unknown"
+			},
+			shortlist: {
+				firstTitle: "places",
+				secondTitle: "tabs",
 				thirdTitle: "basemap",
 				thirdValueLoading: "Loading...",
 				thirdValueUnknown: "unknown"

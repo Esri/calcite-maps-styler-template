@@ -7,8 +7,10 @@ define([
   "dojo/_base/array",
   "dojo/_base/declare",
   "dojo/_base/lang",
+  "dojo/_base/kernel",
   "dojo/query",
   "dojo/Deferred",
+  "dojo/promise/all",
   "dojo/dom",
   "dojo/dom-class",
   "dojo/dom-construct",
@@ -31,8 +33,10 @@ define([
   array,
   declare,
   lang,
+  kernel,
   query,
   Deferred,
+  all,
   dom,
   domClass,
   domConstruct,
@@ -50,6 +54,7 @@ define([
   return declare(null, {
     config: {},
     startup: function(config) {
+      document.documentElement.lang = kernel.locale;
       var promise;
       parser.parse();
       // config will contain application and user defined info for the template such as i18n strings, the web map id
@@ -58,8 +63,15 @@ define([
       if (config) {
         this.config = config;
         window.config = config;
-
-
+        if (this.config.sharedThemeConfig && this.config.sharedThemeConfig.attributes && this.config.sharedThemeConfig.attributes.theme) {
+          this.config.theme = "light";
+        }
+        // Create and add custom style sheet
+        if (this.config.customstyle) {
+          var style = document.createElement("style");
+          style.appendChild(document.createTextNode(this.config.customstyle));
+          document.head.appendChild(style);
+        }
         if (has("drawer")) {
           this._drawer = new Drawer({
             borderContainer: "border_container",
@@ -74,7 +86,6 @@ define([
 
           // startup drawer
           this._drawer.startup();
-
         } else {
           domClass.add(document.body, "no-title");
         }
@@ -127,45 +138,49 @@ define([
         }
       }
     },
-    loadMapWidgets: function() {
+    _addScalebar: function() {
+      var deferred = new Deferred();
       require(["application/sniff!scale?esri/dijit/Scalebar"], lang.hitch(this, function(Scalebar) {
         if (!Scalebar) {
+          deferred.resolve();
           return;
         }
         var scalebar = new Scalebar({
           map: this.map,
           scalebarUnit: this.config.units
         });
-
+        deferred.resolve();
       }));
-
+      return deferred.promise;
+    },
+    _addZoom: function() {
+      var deferred = new Deferred();
       //Zoom slider needs to be visible to add home
       if (this.config.home && this.config.zoom) {
         require(["application/sniff!home?esri/dijit/HomeButton"], lang.hitch(this, function(HomeButton) {
           if (!HomeButton) {
+            deferred.resolve();
             return;
           }
           var home = new HomeButton({
             map: this.map
           }, domConstruct.create("div", {}, query(".esriSimpleSliderIncrementButton")[0], "after"));
           home.startup();
+          deferred.resolve();
         }));
 
       } else {
         //add class so we can move basemap gallery button
         domClass.add(document.body, "no-home");
+        deferred.resolve();
       }
-      //Position basemap gallery higher if zoom isn't taking up space
-      if (this.config.zoom === false) {
-        //add class so we can move basemap gallery button
-        domClass.add(document.body, "no-zoom");
-      }
-      if (this.config.zoom && this.config.zoom_position && this.config.zoom_position !== "top-left") {
-        domClass.add(document.body, "no-zoom");
-      }
-
+      return deferred.promise;
+    },
+    _addLayerList: function() {
+      var deferred = new Deferred();
       require(["application/sniff!legendlayers?esri/dijit/LayerList"], lang.hitch(this, function(LayerList) {
         if (!LayerList) {
+          deferred.resolve();
           return;
         }
         var layerList = new LayerList({
@@ -175,10 +190,16 @@ define([
         }, domConstruct.create("div", {}, registry.byId("legend").domNode));
 
         layerList.startup();
+        deferred.resolve();
       }));
+      return deferred.promise;
+    },
+    _addLegend: function() {
+      var deferred = new Deferred();
       // if layer list is enabled don't add legend
       require(["application/sniff!legend?esri/dijit/Legend"], lang.hitch(this, function(Legend) {
         if (!Legend) {
+          deferred.resolve();
           return;
         }
         var legend = new Legend({
@@ -186,23 +207,19 @@ define([
           layerInfos: arcgisUtils.getLegendLayers(this.config.response)
         }, domConstruct.create("div", {}, registry.byId("legend").domNode));
         legend.startup();
+        deferred.resolve();
       }));
-
-
-
-      if (this.config.details) {
-        var template = "<div class='map-title'>{title}</div><div class='map-details'>{description}</div>";
-        var content = {
-          title: this.config.response.itemInfo.item.title,
-          description: this.config.response.itemInfo.item.description || this.config.i18n.tools.details.error
-        };
-        registry.byId("details").set("content", lang.replace(template, content));
-      }
-
+      return deferred.promise;
+    },
+    _setupFind: function() {
+      var deferred = new Deferred();
       //Feature Search or find (if no search widget)
       if (this.config.find || this.config.feature || (this.config.customUrlLayer.id !== null && this.config.customUrlLayer.fields.length > 0 && this.config.customUrlParam !== null)) {
         require(["esri/dijit/Search", "esri/urlUtils"], lang.hitch(this, function(Search, urlUtils) {
-
+          if (!Search && !urlUtils) {
+            deferred.resolve();
+            return;
+          }
           //get the search value
           var feature = null,
             find = null,
@@ -281,14 +298,21 @@ define([
               urlSearch.destroy();
             }));
           }));
+          deferred.resolve();
         }));
 
 
+      } else {
+        deferred.resolve();
       }
-
+      return deferred.proise;
+    },
+    _setupSearch: function() {
       //Add the location search widget
+      var deferred = new Deferred();
       require(["application/sniff!search?esri/dijit/Search", "application/sniff!search?esri/tasks/locator", "application/sniff!search?application/SearchSources"], lang.hitch(this, function(Search, Locator, SearchSources) {
         if (!Search && !Locator && !SearchSources) {
+          deferred.resolve();
           return;
         }
         var searchOptions = {
@@ -296,7 +320,6 @@ define([
           useMapExtent: this.config.searchextent,
           itemData: this.config.response.itemInfo.itemData
         };
-
 
         if (this.config.searchOptions && this.config.searchOptions.sources) {
           searchOptions.applicationConfiguredSources = this.config.searchOptions.sources;
@@ -328,12 +351,15 @@ define([
             search.set("activeSourceIndex", activeIndex);
           });
         }
-
+        deferred.resolve();
       }));
-
-
+      return deferred.promise;
+    },
+    _addBasemapGallery: function() {
+      var deferred = new Deferred();
       require(["application/sniff!basemap_gallery?esri/dijit/BasemapGallery"], lang.hitch(this, function(BasemapGallery) {
         if (!BasemapGallery) {
+          deferred.resolve();
           return;
         }
         var galleryOptions = {
@@ -389,11 +415,15 @@ define([
 
         //Hide the basemap gallery at startup
         this._displayBasemapContainer();
-
+        deferred.resolve();
       }));
-
+      return deferred.promise;
+    },
+    _addBasemapToggle: function() {
+      var deferred = new Deferred();
       require(["application/sniff!basemap_toggle?esri/dijit/BasemapToggle", "application/sniff!basemap_toggle?esri/basemaps"], lang.hitch(this, function(BasemapToggle, basemaps) {
         if (!BasemapToggle && !basemaps) {
+          deferred.resolve();
           return;
         }
 
@@ -463,9 +493,45 @@ define([
 
 
         toggle.startup();
-
+        deferred.resolve();
 
       }));
+      return deferred.promise;
+    },
+    loadMapWidgets: function() {
+      var promises = [];
+      promises.push(lang.hitch(this, this._addScalebar()));
+      promises.push(lang.hitch(this, this._addZoom()));
+
+
+      //Position basemap gallery higher if zoom isn't taking up space
+      if (this.config.zoom === false) {
+        //add class so we can move basemap gallery button
+        domClass.add(document.body, "no-zoom");
+      }
+      if (this.config.zoom && this.config.zoom_position && this.config.zoom_position !== "top-left") {
+        domClass.add(document.body, "no-zoom");
+      }
+      promises.push(this._addLayerList());
+      promises.push(this._addLegend());
+
+
+
+      if (this.config.details) {
+        var template = "<div class='map-title'>{title}</div><div class='map-details'>{description}</div>";
+        var content = {
+          title: this.config.response.itemInfo.item.title,
+          description: this.config.response.itemInfo.item.description || this.config.i18n.tools.details.error
+        };
+        registry.byId("details").set("content", lang.replace(template, content));
+      }
+
+      promises.push(lang.hitch(this, this._setupFind()));
+
+      promises.push(lang.hitch(this, this._setupSearch()));
+
+      promises.push(lang.hitch(this._addBasemapGallery()));
+      promises.push(lang.hitch(this, this._addBasemapToggle()));
 
       if (this.config.active_panel) {
         var tabs = registry.byId("tabContainer");
@@ -480,7 +546,50 @@ define([
       if (bc) {
         bc.resize();
       }
-
+      all(promises).then(lang.hitch(this, function() {
+        // update color theme if defined.
+        if (this.config.sharedThemeConfig && this.config.sharedThemeConfig.attributes && this.config.sharedThemeConfig.attributes.theme) {
+          var sharedTheme = this.config.sharedThemeConfig.attributes;
+          this.config.color = sharedTheme.theme.text.color;
+          this.config.background = sharedTheme.theme.body.bg;
+        }
+        if (this.config.color) {
+          query("." + this.config.theme + " .menu-button").style({
+            color: this.config.color
+          });
+          query("." + this.config.theme + " .vertical-line").style({
+            background: this.config.color
+          });
+          query("." + this.config.theme + " .HomeButton .home").style({
+            color: this.config.color
+          });
+          query(".esriPopup div.titlePane, .esriPopup .titleButton").style({
+            color: this.config.color
+          });
+          query(".esriSimpleSliderIncrementButton, .esriSimpleSliderDecrementButton").style({
+            color: this.config.color
+          });
+        }
+        if (this.config.background) {
+          query(".esriPopup div.titlePane").style({
+            "background-color": this.config.background
+          });
+          query("." + this.config.theme + " .menu-button").style({
+            background: this.config.background
+          });
+          query(".icon-basemap-container").style({
+            background: this.config.background,
+            color: this.config.color || "#4c4c4c"
+          });
+          query("." + this.config.theme + " .HomeButton .home").style({
+            background: this.config.background
+          });
+          query(".esriSimpleSliderIncrementButton, .esriSimpleSliderDecrementButton").style({
+            "background-color": this.config.background,
+            "border-color": this.config.background
+          });
+        }
+      }));
     },
     _getBasemapName: function(name) {
       var current = null;
@@ -562,9 +671,17 @@ define([
       domClass.add(document.body, this.config.theme);
       domClass.add(customPopup.domNode, this.config.theme);
       params = params || {};
+      if (this.config.disable_nav) {
+        this.config.zoom = false;
+      }
       params.mapOptions.slider = this.config.zoom;
+
       params.mapOptions.sliderPosition = this.config.zoom_position;
       params.mapOptions.infoWindow = customPopup;
+      if (this.config.sharedThemeConfig && this.config.sharedThemeConfig.attributes && this.config.sharedThemeConfig.attributes.theme) {
+        var sharedTheme = this.config.sharedThemeConfig.attributes;
+        this.config.logoimage = sharedTheme.layout.header.component.settings.logoUrl || sharedTheme.theme.logo.small || null;
+      }
       params.mapOptions.logo = (this.config.logoimage === null) ? true : false;
 
 
@@ -578,6 +695,13 @@ define([
         this.map = response.map;
         this.config.response = response;
         this._adjustPopupSize();
+        if (this.config.disable_nav) {
+          this.map.disableMapNavigation();
+          this.map.disableKeyboardNavigation();
+          this.map.disablePan();
+          this.map.disableRubberBandZoom();
+          this.map.disableScrollWheelZoom();
+        }
         if (this.config.logoimage) {
           query(".esriControlsBR").forEach(lang.hitch(this, function(node) {
             var link = null;

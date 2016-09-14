@@ -40,7 +40,7 @@ define({
   },
   "cantFindStories": {
     "whereAreStories": "¿No ves tu historia?",
-    "notSeeExplanation": "Mis historias solo mostrará los story maps alojados en ArcGIS y creados con las aplicaciones {{STORY_MAP_TOUR}}, {{JOURNAL}}, {{MAP_SERIES}} o {{SWIPE_SPYGLASS}}. Consulta nuestra sección {{FAQ}} para obtener más información.",
+    "notSeeExplanation": "Mis historias solo mostrará los story maps alojados en ArcGIS ({{STORY_MAP_BASIC}} no es compatible actualmente). Consulte nuestra sección {{FAQ}} para obtener más información.",
     "faq": "Preguntas frecuentes",
     "followingStoriesToUpdate": "Las siguientes historias creadas con versiones antiguas de nuestras aplicaciones se deben actualizar para que aparezcan en Mis historias:",
     "gettingStories": "Buscando historias creadas con versiones anteriores de nuestras aplicaciones que es necesario actualizar...",
@@ -88,27 +88,16 @@ define({
     "layerPrivate": "Si haces la capa privada, se dañará la historia."
   },
   "collectionList": {
-    "advocacy": "Defensa y alcance",
-    "architecture": "Arquitectura y diseño",
-    "conservation": "Conservación y sostenibilidad",
-    "culture": "Cultura",
-    "destinations": "Destinos y turismo",
-    "disasters": "Desastres y recuperación",
-    "economy": "Economía y desarrollo",
-    "entertainment": "Ocio",
-    "history": "Historia",
-    "infrastructure": "Infraestructuras",
-    "marketing": "Marketing",
-    "nature": "Naturaleza y Medio Ambiente",
-    "news": "Noticias y eventos",
-    "oceans": "Océanos",
-    "parks": "Parques y áreas de recreo",
+    "business": "Negocios y economía",
+    "history": "Historia y cultura",
+    "inNews": "Es noticia",
+    "infrastructure": "Infraestructura y construcción",
+    "nature": "Naturaleza y conservación",
     "people": "Gente y sociedad",
-    "planning": "Planificación y análisis",
-    "publicArt": "Arte público",
+    "planning": "Planificación y diseño",
     "science": "Ciencia y tecnología",
-    "sport": "Deporte",
-    "travelogues": "Diario de viaje"
+    "sports": "Deporte y entretenimiento",
+    "travel": "Viajes y entretenimiento"
   },
   "types": {
     "custom": "Personalizado",
@@ -227,6 +216,7 @@ define({
   "content": {
     "media": {
       "maps": "Mapas",
+      "scenes": "Escenas",
       "images": "Imágenes",
       "videos": "Vídeos",
       "webpages": "Páginas web",
@@ -244,22 +234,30 @@ define({
       "bullet": "Viñeta",
       "tab": "Pestaña",
       "accordion": "Sección",
-      "mapJournal": "Sección"
+      "mapJournal": "Sección",
+      "cascade": "Sección",
+      "crowdsource": "Contribución",
+      "shortlist": "Pestaña"
     },
     "titleType": {
       "mapTour": "Leyenda",
       "mapJournal": "Dirección URL",
-      "mapSeries": "Dirección URL"
+      "mapSeries": "Dirección URL",
+      "cascade": "Dirección URL",
+      "crowdsource": "Dirección URL",
+      "shortlist": "Dirección URL"
     },
     "actions": {
       "viewMap": "Ver mapa",
       "editMap": "Editar mapa",
+      "editScene": "Editar escena",
       "fix": "Solucionar",
       "viewLayer": "Ver capa"
     },
     "contentType": {
       "mainStage": "acción de la sección principal",
-      "sidePanel": "descripción"
+      "sidePanel": "descripción",
+      "introImage": "(foto de la portada)"
     },
     "notification": {
       "refreshExplanation": "Comprueba de nuevo la historia",
@@ -300,6 +298,7 @@ define({
       "publicDisabled": "El administrador ha deshabilitado la opción para compartir públicamente",
       "orgDisabled": "El administrador ha deshabilitado la opción para compartir con la organización",
       "noMapName": "No se pudo recuperar el nombre del mapa.",
+      "noSceneName": "No se pudo recuperar la escena",
       "notPublic": "NO PÚBLICO",
       "inaccessible": "INACCESIBLE",
       "deleted": "ELIMINADO",
@@ -351,6 +350,8 @@ define({
       "cantScanThisTypeAlt": "No podemos comprobar este tipo de capa",
       "cantScanThisType": "La capa no es un tipo de capa que podamos comprobar",
       "webpageNotScanned": "Las páginas web no se comprueban para ver si contienen problemas.",
+      "sceneNotScanned": "Actualmente, las escenas no se comprueban para ver si contienen problemas, asegúrese de que la escena y todas sus capas se han compartido correctamente.",
+      "scenesNotScannedGlobally": "Hay escenas en esta historia y en la actualidad las escenas no se comprueban para ver si contienen problemas. Asegúrese de que las escenas y todas sus capas se han compartido correctamente.",
       "ignoredIssue": "Has ignorado un error en esta capa. Vuelve a cargar la página y comprueba de nuevo la historia para revisar el error",
       "ignoredIssueBuilder": "Has ignorado un error en esta capa. Vuelve a cargar el builder y comprueba de nuevo este error"
     },
@@ -450,6 +451,10 @@ define({
       "secondValueC": "tabbed",
       "thirdTitle": "mapas"
     },
+    "cascade": {
+      "firstTitle": "secciones",
+      "secondTitle": "mapas"
+    },
     "swipeSpyglass": {
       "firstTitle": "puntos de interés",
       "secondTitle": "estilo",
@@ -459,9 +464,13 @@ define({
     },
     "crowdsource": {
       "firstTitle": "contribuciones",
-      "secondTitle": "estilo",
-      "secondValueA": "panel lateral",
-      "secondValueB": "apiladas",
+      "secondTitle": "mapa base",
+      "secondValueLoading": "Cargando...",
+      "secondValueUnknown": "desconocidos"
+    },
+    "shortlist": {
+      "firstTitle": "lugares",
+      "secondTitle": "pestañas",
       "thirdTitle": "mapa base",
       "thirdValueLoading": "Cargando...",
       "thirdValueUnknown": "desconocidos"

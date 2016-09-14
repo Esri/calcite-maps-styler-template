@@ -40,9 +40,9 @@ define({
   },
   "cantFindStories": {
     "whereAreStories": "Ihre Story wird nicht angezeigt?",
-    "notSeeExplanation": "Unter \"My Stories\" werden nur in ArcGIS gehostete Story Maps aufgeführt, die mit den Anwendungen {{STORY_MAP_TOUR}}, {{JOURNAL}}, {{MAP_SERIES}} oder {{SWIPE_SPYGLASS}} erstellt wurden. Weitere Informationen finden Sie in unseren {{FAQ}}.",
+    "notSeeExplanation": "Unter \"Eigene Stories\" werden nur in ArcGIS Online gehostete Story Maps aufgeführt ({{STORY_MAP_BASIC}} wird derzeit nicht unterstützt). Weitere Informationen finden Sie in unseren {{FAQ}}.",
     "faq": "FAQ",
-    "followingStoriesToUpdate": "Die folgenden Storys, die mit früheren Versionen unserer Anwendungen erstellt wurden, müssen aktualisiert werden, damit sie in \"My Stories\" aufgeführt werden:",
+    "followingStoriesToUpdate": "Die folgenden Storys, die mit früheren Versionen unserer Anwendungen erstellt wurden, müssen aktualisiert werden, damit sie in \"Eigene Storys\" aufgeführt werden:",
     "gettingStories": "Es wird nach Storys gesucht, die mit früheren Versionen unserer Anwendungen erstellt wurden und aktualisiert werden müssen...",
     "title": "Titel",
     "typeOfStoryMap": "Typ",
@@ -88,27 +88,16 @@ define({
     "layerPrivate": "Wenn Sie Ihren Layer als privat einstufen, wird das Ihre Story beeinträchtigen."
   },
   "collectionList": {
-    "advocacy": "Interessenvertretung und Öffentlichkeitsarbeit",
-    "architecture": "Architektur und Design",
-    "conservation": "Naturschutz und Nachhaltigkeit",
-    "culture": "Kultur",
-    "destinations": "Reiseziele und Tourismus",
-    "disasters": "Katastrophen und Wiederaufbau",
-    "economy": "Wirtschaft und Entwicklung",
-    "entertainment": "Unterhaltung",
-    "history": "Geschichte",
-    "infrastructure": "Infrastruktur",
-    "marketing": "Marketing",
-    "nature": "Natur und Umwelt",
-    "news": "Nachrichten und Ereignisse",
-    "oceans": "Ozeane",
-    "parks": "Parks und Freizeiteinrichtungen",
+    "business": "Wirtschaft",
+    "history": "Geschichte und Kultur",
+    "inNews": "In den Nachrichten",
+    "infrastructure": "Infrastruktur und Baugewerbe",
+    "nature": "Natur und Naturschutz",
     "people": "Menschen und Gesellschaft",
-    "planning": "Planung und Analyse",
-    "publicArt": "Öffentliche Kunst",
+    "planning": "Planung und Design",
     "science": "Wissenschaft und Technologie",
-    "sport": "Sport",
-    "travelogues": "Reiseberichte"
+    "sports": "Sport und Unterhaltung",
+    "travel": "Reise und Erholung"
   },
   "types": {
     "custom": "Benutzerdefiniert",
@@ -141,8 +130,8 @@ define({
       "medium": "mittel",
       "large": "groß",
       "custom": "benutzerdefiniert",
-      "widthAbbreviation": "w",
-      "heightAbbreviation": "h",
+      "widthAbbreviation": "B",
+      "heightAbbreviation": "H",
       "emptyDimension": "Geben Sie eine Dimension ein.",
       "seeExample": "Vorschau der Einbettung anzeigen",
       "removeHeader": "Anwendungskopfzeile ausblenden"
@@ -227,6 +216,7 @@ define({
   "content": {
     "media": {
       "maps": "Karten",
+      "scenes": "Szenen",
       "images": "Bilder",
       "videos": "Videos",
       "webpages": "Webseiten",
@@ -244,22 +234,30 @@ define({
       "bullet": "Aufzählungszeichen",
       "tab": "Registerkarte",
       "accordion": "Abschnitt",
-      "mapJournal": "Abschnitt"
+      "mapJournal": "Abschnitt",
+      "cascade": "Abschnitt",
+      "crowdsource": "Beitrag",
+      "shortlist": "Registerkarte"
     },
     "titleType": {
       "mapTour": "Beschriftung",
       "mapJournal": "URL",
-      "mapSeries": "URL"
+      "mapSeries": "URL",
+      "cascade": "URL",
+      "crowdsource": "URL",
+      "shortlist": "URL"
     },
     "actions": {
       "viewMap": "Karte anzeigen",
       "editMap": "Karte bearbeiten",
+      "editScene": "Szene bearbeiten",
       "fix": "Fix",
       "viewLayer": "Layer anzeigen"
     },
     "contentType": {
       "mainStage": "Aktion der Hauptanzeige",
-      "sidePanel": "description"
+      "sidePanel": "Beschreibung",
+      "introImage": "(Foto auf der Titelseite)"
     },
     "notification": {
       "refreshExplanation": "Die Story erneut prüfen",
@@ -300,6 +298,7 @@ define({
       "publicDisabled": "Die öffentliche Freigabe wurde von einem Administrator deaktiviert",
       "orgDisabled": "Die Freigabe für Ihre Organisation wurde von einem Administrator deaktiviert",
       "noMapName": "Kartenname konnte nicht abgerufen werden",
+      "noSceneName": "Szene konnte nicht abgerufen werden",
       "notPublic": "NICHT ÖFFENTLICH",
       "inaccessible": "ZUGRIFF NICHT MÖGLICH",
       "deleted": "GELÖSCHT",
@@ -307,10 +306,10 @@ define({
       "noStoriesFound": "Wir konnten keine Story Maps in Ihren Inhalten finden.",
       "cantShowStories": "Ihre Story Maps können nicht angezeigt werden. Versuchen Sie es später erneut.",
       "consolationSearch": "Es konnten keine Storys gefunden werden.",
-      "notCompatibleWithBrowser": "\"My Stories\" wird von Internet Explorer-Versionen unter {{VERSION_NUMBER}} nicht unterstützt.",
+      "notCompatibleWithBrowser": "\"Eigene Storys\" wird von Internet Explorer-Versionen unter {{VERSION_NUMBER}} nicht unterstützt.",
       "pleaseUpdateBrowser": "Aktualisieren Sie Ihren Browser.",
       "searchTip": "Bitte versuchen Sie, es ein wenig zu vereinfachen.",
-      "consolationNoStories": "Willkommen bei My Stories!",
+      "consolationNoStories": "Willkommen bei Eigene Storys!",
       "noStoriesTip": "Schauen Sie auf die Apps-Seite, um Ihre erste Story Map zu erstellen.",
       "letsGo": "Los geht's",
       "cantChangeSharingLevel": "Freigabe-Level konnte nicht geändert werden",
@@ -351,6 +350,8 @@ define({
       "cantScanThisTypeAlt": "Dieser Layer-Typ kann nicht überprüft werden.",
       "cantScanThisType": "Der Layer ist ein Layer-Typ, der nicht überprüft werden kann.",
       "webpageNotScanned": "Webseiten werden nicht auf Probleme überprüft.",
+      "sceneNotScanned": "Szenen werden derzeit nicht auf Probleme überprüft. Stellen Sie sicher, dass die Szene und deren Layer ordnungsgemäß freigegeben wurden..",
+      "scenesNotScannedGlobally": "Diese Story enthält Szenen, und Szenen werden derzeit nicht auf Probleme überprüft. Stellen Sie sicher, dass die Szene und deren Layer ordnungsgemäß freigegeben wurden..",
       "ignoredIssue": "Sie haben einen Fehler in diesem Layer ignoriert. Laden Sie die Seite erneut, und überprüfen Sie diese Story noch einmal, um den Fehler wieder anzuzeigen.",
       "ignoredIssueBuilder": "Sie haben einen Fehler in diesem Layer ignoriert. Laden Sie den Builder erneut, um den Fehler erneut zu überprüfen."
     },
@@ -450,6 +451,10 @@ define({
       "secondValueC": "mit Registerkarten",
       "thirdTitle": "Karten"
     },
+    "cascade": {
+      "firstTitle": "Abschnitte",
+      "secondTitle": "Karten"
+    },
     "swipeSpyglass": {
       "firstTitle": "Points of Interest",
       "secondTitle": "Style",
@@ -459,9 +464,13 @@ define({
     },
     "crowdsource": {
       "firstTitle": "Beiträge",
-      "secondTitle": "Style",
-      "secondValueA": "Seitenfenster",
-      "secondValueB": "Gestapelt",
+      "secondTitle": "Grundkarte",
+      "secondValueLoading": "Wird geladen...",
+      "secondValueUnknown": "Unbekannt"
+    },
+    "shortlist": {
+      "firstTitle": "Orte",
+      "secondTitle": "Registerkarten",
       "thirdTitle": "Grundkarte",
       "thirdValueLoading": "Wird geladen...",
       "thirdValueUnknown": "Unbekannt"

@@ -54,6 +54,7 @@ define({
   },
   "item_details": {
     "likeButtonTooltip": "このアイテムに投票",
+    "likeButtonInverseTooltip": "投票数",
     "commentButtonTooltip": "コメントを追加",
     "gotoMapViewTooltip": "マップ ビューに移動",
     "galleryButtonTooltip": "添付したファイルを参照",

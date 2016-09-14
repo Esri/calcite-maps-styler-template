@@ -161,6 +161,10 @@ define([
           viewProperties.ui = {
             components: this.config.components.split(",")
           };
+        } else {
+          viewProperties.ui = {
+            components: ["zoom", "compass", "attribution"]
+          };
         }
         var camera = this._setCameraViewpoint();
         if (camera) {

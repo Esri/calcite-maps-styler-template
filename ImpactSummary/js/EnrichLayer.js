@@ -853,7 +853,11 @@ define([
                             this.enrichJobID = enrichJobID.jobId;
                             this._updateService().then(lang.hitch(this, function () {
                                 this._geoEnrichLayer().then(lang.hitch(this, function (enrichedLayerUrl) {
-                                    this.enrichedUrl = enrichedLayerUrl.value.url;
+                                    var serviceUrl = enrichedLayerUrl.value.url;
+                                    if (window.location.protocol === "https:") {
+                                      serviceUrl = serviceUrl.replace(/^http:\/\//i, 'https://');
+                                    }
+                                    this.enrichedUrl = serviceUrl;
                                     this._shareItem(enrichedLayerUrl.value.itemId).then(lang.hitch(this, function () {
                                         this._refreshService().then(lang.hitch(this, function () {
                                             this._updateService().then(lang.hitch(this, function () {
@@ -962,10 +966,13 @@ define([
         },
         _checkForLayerName: function () {
             var deferred = new Deferred(), checkLayerNameUrl;
+          if(this.checkLayerNameURL && this.userInfo && this.userInfo.portal){
             checkLayerNameUrl = string.substitute(this.checkLayerNameURL, {
                 userInfoPortalUrl: this.userInfo.portal.url,
                 userInfoPortalId: this.userInfo.portal.id
             });
+          }
+          if(checkLayerNameUrl){
             this.enrichedLayerName = domAttr.get(this.inputLayerName, "value");
             if (this.enrichedLayerName === "") {
                 this.enrichedLayerName = "Enriched" + this.map.getLayer(this.config.summaryLayer.id).name;
@@ -995,6 +1002,10 @@ define([
                     deferred.reject(e);
                 })
             });
+          }
+          else{
+            deferred.reject(new Error("Could not enrich layer because user information is incomplete"));
+          }
             return deferred.promise;
         },
         _getShowCredits: function () {

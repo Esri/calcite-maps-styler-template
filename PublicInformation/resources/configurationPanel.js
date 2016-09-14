@@ -89,7 +89,7 @@
       "fields":[  
         {  
           "type":"paragraph",
-          "value":"Provide general information about your application with a title nad description."
+          "value":"Provide general information about your application with a title and description."
         },
         {  
           "type":"string",
@@ -158,6 +158,12 @@
           "fieldName":"enableMoreInfo",
           "label":"Enable More Information link",
           "tooltip":"Enable More Information link"
+        },
+        {  
+          "type":"boolean",
+          "fieldName":"enableScalebar",
+          "label":"Enable Scalebar on the map",
+          "tooltip":"Enable Scalebar on the map"
         },
         {  
           "type":"boolean",
@@ -472,7 +478,7 @@
         },
         {  
           "type":"paragraph",
-          "value":"Use the following twitter search query. See <a href=\"http://support.twitter.com/articles/71577-how-to-use-advanced-twitter-search\" target=\"_blank\">Advanced search</a> for more information."
+          "value": "Use the following twitter search query. See <a href=\"http://support.twitter.com/articles/71577-how-to-use-advanced-twitter-search\" target=\"_blank\">Advanced search</a> and the query operators section of <a href=\"https://dev.twitter.com/rest/public/search\" target=\"_blank\">this topic</a> for more information."
         },
         {  
           "type":"string",
@@ -605,6 +611,7 @@
     "enableBookmarks":true,
     "enableOverviewMap":true,
     "openOverviewMap":false,
+    "enableScalebar": false,
     "enablePrintButton":false,
     "nextBasemap":"hybrid",
     "defaultBasemap":"topo",

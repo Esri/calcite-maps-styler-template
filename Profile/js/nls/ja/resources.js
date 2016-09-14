@@ -24,7 +24,8 @@ define({
   "elevation": {
     "toggle": "標高グラフを切り替えます。",
     "drawTool": "マップ上にラインを描画して、標高グラフを生成します。",
-    "selectMessage": "ライン フィーチャをクリックするか、描画ツールを使用してラインを描画し、標高グラフを表示します。"
+    "selectMessage": "ライン フィーチャをクリックするか、描画ツールを使用してラインを描画し、標高グラフを表示します。",
+    "gainLossTemplate": "最小: ${min} 最大: ${max} 始点: ${start} 終点: ${end} 標高差: ${gainLoss}"
   },
   "splash": {
     "title": "タイトル",

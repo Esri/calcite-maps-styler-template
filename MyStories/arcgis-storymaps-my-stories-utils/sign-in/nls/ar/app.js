@@ -1,15 +1,21 @@
 define({
   "signInDialog": {
-    "title": "تسجيل الدخول إلى خرائط القصة",
-    "subtitle": "تسجيل الدخول باستخدام حساب ArcGIS Online الحالي على:",
-    "reasonOne": "إنشاء خرائط قصص مُقنعة للتعبير عن القصص التي تريد التعبير عنها.",
-    "reasonTwo": "استخدم الخرائط والبيانات من ArcGIS Online في خرائط القصة.",
-    "reasonThree": "إدارة خرائط القصص وفحص حالة المحتوى الخاص بها.",
-    "noAccountYet": "هل لا يوجد لديك حساب على ArcGIS Online؟ اشترك:",
+    "title": "بدأ سرد الحكايات!",
+    "reasonOne": "إنشاء خرائط الحكايات المقنعة",
+    "reasonTwo": "استخدام قوة ArcGIS",
+    "reasonThree": "إدارة الحكايات",
+    "noAccountYet": "هل ليس لديك حساب على ArcGIS Online؟",
+    "signUpFor": "الاشتراك في:",
     "publicAccount": "حساب عام مجاني للاستخدام غير التجاري",
     "subscriptionAccount": "اشتراك ArcGIS التجريبي المجاني",
     "signInExpired": "انتهت صلاحية تسجيل دخولك. سجل الدخول مجددًا للاستمرار حيث انتهيت.",
     "somethingNotLoading": "لم يتم تحميل بعض العناصر بشكل صحيح. حاول تحديث الصفحة مرة أخرى."
+  },
+  "signedInPrompt": {
+    "signedIn": "تم تسجيل الدخول الآن.",
+    "backToStoryMaps": "الرجوع لخرائط الحكاية",
+    "closeRefresh": "إغلاق علامة التبويب وتنشيط الموقع.",
+    "close": "إغلاق"
   },
   "unavailableDialog": {
     "title": "تسجيل الدخول غير متاح",

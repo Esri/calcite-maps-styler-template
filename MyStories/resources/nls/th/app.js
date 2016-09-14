@@ -40,7 +40,7 @@ define({
   },
   "cantFindStories": {
     "whereAreStories": "ไม่สามารถแสดงผลเรื่องราวของคุณ?",
-    "notSeeExplanation": "สตอรี่ของฉันจะมีเพียงรายการแผนที่ที่เก็บอยู่ใน ArcGIS และสร้างด้วย{{STORY_MAP_TOUR}}, {{JOURNAL}}, {{MAP_SERIES}} หรือ {{SWIPE_SPYGLASS}} แอพลิเคชัน  ดูใน {{FAQ}} สำหรับข้อมูลเพิ่มเติม",
+    "notSeeExplanation": "เรื่องราวของฉันจะมีรายการอยู่ในโฮสต์ของ ArcGIS เท่านั้น  ({{STORY_MAP_BASIC}} ปัจจุบันยังไม่สนับสนุน ). ดูรายละเอียด {{FAQ}} สำหรับรายละเอียดเพิ่มเติม",
     "faq": "คำถามที่พบบ่อย",
     "followingStoriesToUpdate": "เรื่องราวด้านล่างนี้ ถูกสร้างขึ้นด้วยเวอชั่นก่อนหน้าของโปรแกรม ซึ่งต้องอัพเดทก่อนที่แสดงรายการในเรื่องราวของฉัน",
     "gettingStories": "กำลังค้นหาเรื่องราวที่ถูกสร้างขึ้นด้วยเวอร์ชั่นก่อนหน้าของโปรแกรม ซึ่งต้องการการอัพเดท",
@@ -88,27 +88,16 @@ define({
     "layerPrivate": "จัดทำชั้นข้อมูลส่วนตัว จะทำให้เรื่องราวของคุณ"
   },
   "collectionList": {
-    "advocacy": "การสนับสนุนและบริการ",
-    "architecture": "สถาปัตยกรรมศาสตร์และการออกแบบ",
-    "conservation": "การอนุรักษ์และการพัฒนาอย่างยั่งยืน",
-    "culture": "วัฒนธรรม",
-    "destinations": "จุดหมายปลายทางและการท่องเที่ยว",
-    "disasters": "ภัยพิบัติและการฟื้นฟู",
-    "economy": "เศรษฐกิจและการพัฒนา",
-    "entertainment": "ความบันเทิง",
-    "history": "ประวัติ",
-    "infrastructure": "โครงสร้างพื้นฐาน",
-    "marketing": "การตลาด",
-    "nature": "ธรรมชาติและสิ่งแวดล้อม",
-    "news": "ข่าวสารและกิจกรรม",
-    "oceans": "มหาสมุทร",
-    "parks": "สวนสาธารณะและสันทนาการ",
+    "business": "ธุรกิจและเศรษฐกิจ",
+    "history": "ประวัติศาสตร์และวัฒนธรรม",
+    "inNews": "ข่าว",
+    "infrastructure": "โครงสร้างพื้นฐานและการก่อสร้าง",
+    "nature": "ธรรมชาติและการอนุรักษ์",
     "people": "ประชากรและสังคม",
-    "planning": "การวางแผนและการวิเคราะห์",
-    "publicArt": "ศิลปะสาธารณะ",
+    "planning": "การวางแผนและการออกแบบ",
     "science": "วิทยาศาสตร์และเทคโนโลยี",
-    "sport": "กีฬา",
-    "travelogues": "สารคดีท่องเที่ยว"
+    "sports": "กีฬาและความบันเทิง",
+    "travel": "การท่องเที่ยวและสันทนาการ"
   },
   "types": {
     "custom": "แก้ไขเอง",
@@ -227,6 +216,7 @@ define({
   "content": {
     "media": {
       "maps": "แผนที่",
+      "scenes": "ซีน",
       "images": "ภาพ",
       "videos": "วิดีโอ",
       "webpages": "เวปเพจ",
@@ -244,22 +234,30 @@ define({
       "bullet": "บูลเล็ท",
       "tab": "แท็บ",
       "accordion": "ส่วน",
-      "mapJournal": "ส่วน"
+      "mapJournal": "ส่วน",
+      "cascade": "ส่วน",
+      "crowdsource": "การสนับสนุน",
+      "shortlist": "แท็บ"
     },
     "titleType": {
       "mapTour": "คำอธิบาย",
       "mapJournal": "URL",
-      "mapSeries": "URL"
+      "mapSeries": "URL",
+      "cascade": "URL",
+      "crowdsource": "URL",
+      "shortlist": "URL"
     },
     "actions": {
       "viewMap": "ดูแผนที่",
       "editMap": "แก้ไขแผนที่",
+      "editScene": "การแก้ไขซีน",
       "fix": "แก้ไข",
       "viewLayer": "แสดงผลชั้นข้อมูล"
     },
     "contentType": {
       "mainStage": "การดำเนินการขั้นตอนหลัก",
-      "sidePanel": "คำอธิบาย"
+      "sidePanel": "คำอธิบาย",
+      "introImage": "รูปปกของเพจ"
     },
     "notification": {
       "refreshExplanation": "ตรวจสอบเรื่องของคุณอีกครั้ง",
@@ -300,6 +298,7 @@ define({
       "publicDisabled": "เปิดการใช้งานการแชร์ข้อมูลต่อสาธารณะโดยผู้ดูแลระบบ",
       "orgDisabled": "เปิดการใช้งานการแชร์ข้อมูลในองค์กรโดยผู้ดูแลระบบ",
       "noMapName": "ไม่สามารถเรียกชื่อแผนที่",
+      "noSceneName": "ไม่สามารถเรียกฉาก",
       "notPublic": "ไม่แบ่งปันสู่สาธารณะ",
       "inaccessible": "ไม่สามารถเข้าถึง",
       "deleted": "ลบ",
@@ -351,6 +350,8 @@ define({
       "cantScanThisTypeAlt": "เราไม่สามารถตรวจสอบประเภทของชั้นข้อมูล",
       "cantScanThisType": "ชั้นข้อมูลไม่ใช่ประเภทที่เราสามารถตรวจสอบได้",
       "webpageNotScanned": "เวปเพจไม่สามารถตรวจสอบปัญหาได้",
+      "sceneNotScanned": "ซีนยังไม่ได้มีการตรวจสอบ โปรดตรวจสอบให้แน่ใจว่า ซีนทั้งหมดของชั้นข้อมูลมีการแบ่งปันอย่างถูกต้อง",
+      "scenesNotScannedGlobally": "ซีนยังไม่ได้มีการตรวจสอบ โปรดตรวจสอบให้แน่ใจว่า ซีนทั้งหมดของชั้นข้อมูลมีการแบ่งปันอย่างถูกต้อง",
       "ignoredIssue": "คุณได้ละเลยข้อผิดพลาดในชั้นข้อมูลนี้ โหลดสตอรี่นี้อีกครั้งเพื่อตรวจสอบข้อผิดพลาด",
       "ignoredIssueBuilder": "คุณได้ละเลยข้อผิดพลาดในชั้นข้อมูลนี้ โหลดบิวเดอร์นี้อีกครั้งเพื่อตรวจสอบข้อผิดพลาด"
     },
@@ -450,6 +451,10 @@ define({
       "secondValueC": "แท็บ",
       "thirdTitle": "maps"
     },
+    "cascade": {
+      "firstTitle": "ส่วน",
+      "secondTitle": "แผนที่"
+    },
     "swipeSpyglass": {
       "firstTitle": "จุดที่สนใจ",
       "secondTitle": "รูปแบบ",
@@ -459,9 +464,13 @@ define({
     },
     "crowdsource": {
       "firstTitle": "การมีส่วนร่วม",
-      "secondTitle": "รูปแบบ",
-      "secondValueA": "แผนด้านข้าง",
-      "secondValueB": "ซ้อนกัน",
+      "secondTitle": "แผนที่ฐาน",
+      "secondValueLoading": "กำลังโหลด...",
+      "secondValueUnknown": "ไม่ทราบ"
+    },
+    "shortlist": {
+      "firstTitle": "สถานที่",
+      "secondTitle": "แท็บ",
       "thirdTitle": "แผนที่ฐาน",
       "thirdValueLoading": "กำลังโหลด...",
       "thirdValueUnknown": "ไม่ทราบ"

@@ -70,7 +70,7 @@ define({
     "zoomOutToolTip": "התמקד החוצה"
   },
   "applicationHeader": {
-    "signInOption": "הירשם",
+    "signInOption": "התחבר",
     "signOutOption": "התנתק",
     "pleaseSignInText": "אנא התחבר"
   },
@@ -83,7 +83,7 @@ define({
     "valueRadioButtonLabel": "ערך",
     "uniqueRadioButtonLabel": "יחודי",
     "selectLayerToBegin": "בחר קטגוריה כדי להתחיל",
-    "layerFeatureCount": "${featureCount} רשומות"
+    "layerFeatureCount": "נבחרו ${selectedFeatureCount} / ${featureCount} רשומות"
   },
   "timeSlider": {
     "timeSliderLabel": "טווח זמן",
@@ -97,7 +97,12 @@ define({
     "placeHolderText": "",
     "noCommentsAvailableText": "אין רשומות זמינות",
     "remainingTextCount": "נותרו ${0} תווים",
-    "showNoText": "לא"
+    "showNoText": "לא",
+    "selectAttachments": "קבצים מקושרים",
+    "selectFileText": "נתב",
+    "attachmentSelectedMsg": "קבצים מצורפים נבחרו",
+    "attachmentHeaderText": "קבצים מקושרים",
+    "addRecordText": "הוסף רשומה"
   },
   "main": {
     "noGroup": "לא הוגדרה קבוצה"
@@ -109,17 +114,18 @@ define({
   },
   "manualRefresh": {
     "manualRefreshIconTooltip": "רענן",
-    "confirmManualRefeshText": "כל הבחירות והשינויים שלא נשמרו יבוטלו"
+    "confirmManualRefreshText": "כל הבחירות והשינויים שלא נשמרו יבוטלו"
   },
   "help": {
     "helpIconTooltip": "עזרה"
   },
   "filter": {
     "noFeatureFoundText": "לא נמצאה תכונה עבור ערך זה.",
-    "distinctQueryFalied": "לא נמצאו ערכים מובנים עבור השדה.",
+    "distinctQueryFailed": "לא נמצאו ערכים יחודיים עבור השדה.",
     "andText": "וגם",
-    "filterInEditModeAlert": "מסננים אינם זמינים בעת עריכה",
-    "dropdownSelectOption": "בחר"
+    "filterInEditModeAlert": "מסננים אינם זמינים בעת עריכה.",
+    "dropdownSelectOption": "בחר",
+    "filterInShowSelectedEditModeAlert": "מסננים אינם זמינים במצב 'הצג נבחרים'."
   },
   "detailsPanel": {
     "editContentText": "ערוך רשומה"
@@ -127,5 +133,10 @@ define({
   "signOutPage": {
     "signOutMessage": "התנתקת בהצלחה",
     "reSignInMessage": "לחץ כאן כדי להתחבר"
+  },
+  "selectionOptions": {
+    "selectionOptionsIconTooltip": "אפשרויות בחירה",
+    "showAllOptionText": "הצג הכל",
+    "showSelectedOptionText": "הצג בחורים"
   }
 });

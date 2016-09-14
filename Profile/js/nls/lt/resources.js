@@ -24,10 +24,11 @@ define({
   "elevation": {
     "toggle": "Perjungti aukščio profilio diagramą.",
     "drawTool": "Brėžkite liniją žemėlapyje, kad sugeneruotumėte aukščio profilį.",
-    "selectMessage": "Spustelėkite linijos objektą arba brėžimo įrankiu nubrėžkite liniją, rodančią aukščio profilį"
+    "selectMessage": "Spustelėkite linijos objektą arba brėžimo įrankiu nubrėžkite liniją, rodančią aukščio profilį",
+    "gainLossTemplate": "Min.: ${min}   Maks.: ${max}   Pradžia: ${start}   Pabaiga: ${end}   Keitimas: ${gainLoss}"
   },
   "splash": {
-    "title": "Antraštė",
+    "title": "Pavadinimas",
     "content": "Konfigūruokite, jeigu norite sukurti pasirinktinį pradžios ekraną"
   },
   "legend": {

@@ -53,7 +53,8 @@ define({
       bottomNav: {
         home: 'Home',
         map: 'Map',
-        gallery: 'Gallery'
+        gallery: 'Gallery',
+        participate: 'Participate'
       }
     },
     forms: {
@@ -96,12 +97,20 @@ define({
         photo: {
           pickFile: 'Click to pick a file',
           choosePhoto: 'Upload a Photo',
-          selectNew: 'Use a different photo'
+          selectNew: 'Use a different photo',
+          photoTooSmall: 'Your photo is too small. The smallest side must be at least'
         },
         location: {
           gettingLocation: 'Locating',
           locate: 'Locate Me',
-          search: 'Search'
+          findOnMap: 'Find on Map',
+          findOnMapTooltip: 'Click on the map or drag this point to refine your location.',
+          saveLocation: 'Save Location',
+          search: 'Search',
+          longitude: 'Longitude',
+          latitude: 'Latitude',
+          nullIsland: 'Null Island',
+          photoLocation: 'Do you want to use the location where your photo was taken?'
         },
         termsAndConditions: {
           buttonShow: 'Show terms and conditions',

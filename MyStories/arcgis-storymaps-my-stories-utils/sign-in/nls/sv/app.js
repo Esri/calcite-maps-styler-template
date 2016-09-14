@@ -1,15 +1,21 @@
 define({
   "signInDialog": {
-    "title": "Logga in i berättelsekartor",
-    "subtitle": "Logga in med ditt befintliga ArcGIS Online-konto på:",
-    "reasonOne": "Skapa trevliga berättelsekartor för att berätta dina historier.",
-    "reasonTwo": "Använd dina kartor och data från ArcGIS Online i berättelsekartorna.",
-    "reasonThree": "Hantera dina berättelsekartor och kontrollera status för deras innehåll.",
-    "noAccountYet": "Har du inget ArcGIS Online-konto? Registrera dig för ett:",
+    "title": "Börja berätta historier!",
+    "reasonOne": "Skapa fängslande berättelsekartor",
+    "reasonTwo": "Använd kraften hos ArcGIS",
+    "reasonThree": "Hantera dina berättelser",
+    "noAccountYet": "Har du inte något ArcGIS Online-konto?",
+    "signUpFor": "Registrera dig för ett:",
     "publicAccount": "Kostnadsfritt icke-kommersiellt konto",
     "subscriptionAccount": "Kostnadsfritt ArcGIS-provabonnemang",
     "signInExpired": "Inloggningen har gått ut. Logga in igen för att fortsätta där du slutade.",
     "somethingNotLoading": "Något läses inte in korrekt. Prova med att uppdatera sidan."
+  },
+  "signedInPrompt": {
+    "signedIn": "Du är nu inloggad.",
+    "backToStoryMaps": "Tillbaka till berättelsekartor",
+    "closeRefresh": "Stäng den här fliken och uppdatera webbplatsen.",
+    "close": "Stäng"
   },
   "unavailableDialog": {
     "title": "Det går inte att logga in",

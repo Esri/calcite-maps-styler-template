@@ -24,7 +24,8 @@ define({
   "elevation": {
     "toggle": "De hoogteprofielgrafiek wisselen.",
     "drawTool": "Teken een lijn op de kaart om een hoogteprofiel te genereren.",
-    "selectMessage": "Klik op een lijnobject of gebruik het tekeninstrument om een lijn te tekenen om het hoogteprofiel weer te geven"
+    "selectMessage": "Klik op een lijnobject of gebruik het tekeninstrument om een lijn te tekenen om het hoogteprofiel weer te geven",
+    "gainLossTemplate": "Min: ${min}   Max: ${max}   Start: ${start}   Einde: ${end}   Wijziging: ${gainLoss}"
   },
   "splash": {
     "title": "Titel",
@@ -35,7 +36,7 @@ define({
     "tip": "Legenda weergeven"
   },
   "basemap": {
-    "title": "Basiskaart",
+    "title": "Basemap",
     "tip": "Wijzig basiskaart"
   },
   "share": {

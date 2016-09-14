@@ -17,6 +17,7 @@ define({
     },
     banner: {
       buttons: {
+        feedback: 'Feedback',
         help: 'Help',
         preview: 'View Live',
         share: 'Share',
@@ -124,8 +125,12 @@ define({
             'To create your own unique Crowdsource story use the Builder\'s configuration options. Click <% settings %> in the Builder toolbar to change the cover image, title, logo and sharing options, and more.',
             'To specify the geographic area that your participants will see when they load your story, pan and zoom the map to the desired location and then click the blue <% saveHomeLocation %> button next to the map navigation controls.',
             'Configuration changes are <% autosaved %> as you make them. Modifications to text fields can be undone using your browser\'s undo command.',
+            'In this beta release, authors are limited to the simple form provided. In a future release, we will include a form builder which allows you to edit the questions that you ask your participants. Until then, you can modify the form labels by following this <% formEditBlog %>.',
             'Tip: to return to the <% coverPage %> from the map, click the title bar.'
           ],
+          links: {
+            formEditBlog: 'blog post'
+          },
           bold: {
             settings: 'Settings',
             saveHomeLocation: 'Save home location',

@@ -303,9 +303,9 @@
   "values": {
     "logo": "images/logo.png",
     "color": "#fff",
-    "theme": "80ab00",
+    "theme": "#105e78",
     "iconColor":"#fff",
-    "activeTool": "legend",
+    "activeTool": "",
     "scalebar": false,
     "splashModal": false,
     "toolbarLabels": false,

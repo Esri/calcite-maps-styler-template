@@ -42,7 +42,7 @@ body {
 }
 #linkViewBtn{
   position: absolute;
-  top:115px;
+  top:210px;
   left:15px;
 }
 .map-grid, .map-details{
@@ -181,8 +181,8 @@ body {
   opacity: 0.6;
 }
 .compare-map-btn{
-  width: 26px;
-  height: 26px;
+  width: 32px;
+  height: 32px;
   text-align: center;
   font-size: 14px;
   border: 1px solid transparent;

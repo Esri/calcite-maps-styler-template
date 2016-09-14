@@ -22,12 +22,13 @@ define({
     "close": "Zatvori"
   },
   "elevation": {
-    "toggle": "Preklopi profil terena.",
-    "drawTool": "Povucite liniju na karti za izradu profila terena.",
-    "selectMessage": "Kliknite na liniju geoobjekta ili upotrijebite alat za crtanje i nacrtajte liniju za prikaz profila terena"
+    "toggle": "Preklopi grafikon profila nadmorske visine.",
+    "drawTool": "Povucite liniju na karti za izradu profila nadmorske visine.",
+    "selectMessage": "Kliknite na liniju geoobjekta ili upotrijebite alat za crtanje i nacrtajte liniju za prikaz profila nadmorske visine",
+    "gainLossTemplate": "Min.: ${min}   Maks.: ${max}   Početak: ${start}   Kraj: ${end}   Promjena: ${gainLoss}"
   },
   "splash": {
-    "title": "Naziv",
+    "title": "Naslov",
     "content": "Konfigurirajte za izradu prilagođenog pozdravnog sadržaja"
   },
   "legend": {

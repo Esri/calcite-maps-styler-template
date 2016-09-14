@@ -1,15 +1,21 @@
 define({
   "signInDialog": {
-    "title": "Entrar em Mapas Históricos",
-    "subtitle": "Registre com sua conta existente do ArcGIS Online:",
-    "reasonOne": "Crie mapas históricos convincentes para contar suas histórias.",
-    "reasonTwo": "Utilize seus mapas e dados do ArcGIS Online em seus mapas históricos.",
-    "reasonThree": "Gerencie seus mapas históricos e verifique o status do seu conteúdo.",
-    "noAccountYet": "Não tem uma conta do ArcGIS Online? Registre para uma:",
+    "title": "Comece a Contar Histórias!",
+    "reasonOne": "Crie mapas históricos atrativos",
+    "reasonTwo": "Utilize a capacidade do ArcGIS",
+    "reasonThree": "Gerencie suas histórias",
+    "noAccountYet": "Não tem uma conta do ArcGIS Online?",
+    "signUpFor": "Registre para uma:",
     "publicAccount": "Conta pública gratuita não-comercial",
     "subscriptionAccount": "Assinatura de teste gratuito do ArcGIS",
     "signInExpired": "Seu registro expirou. Registre novamente para selecionar de onde você parou.",
     "somethingNotLoading": "Algo não está carregando corretamente. Tente atualizar a página."
+  },
+  "signedInPrompt": {
+    "signedIn": "Você não está registrado agora.",
+    "backToStoryMaps": "Voltar para Mapas Históricos",
+    "closeRefresh": "Feche esta guia e atualize o site da web.",
+    "close": "Fechar"
   },
   "unavailableDialog": {
     "title": "Registro Não Disponível",

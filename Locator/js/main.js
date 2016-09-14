@@ -1244,6 +1244,9 @@ define([
         // Route to destination
         _routeToDestination: function(gra) {
             var pt = gra.geometry;
+            if (gra.geometry.type !== "point") {
+                pt = gra.geometry.getExtent().getCenter();
+            }
             dom.byId("panelDestination").innerHTML = gra.getTitle();
             this._showPage(1);
             if (this.originObj) {
@@ -1514,6 +1517,10 @@ define([
                     }
                 }
             }
+            if (window.location.href.toLowerCase().indexOf("https:") > -1 && 
+                routeUrl.toLowerCase().indexOf("https:") === -1) {
+                 routeUrl.replace("http:", "https:");
+            }
             console.log("Fixed Route URL", routeUrl);
             return routeUrl;
         },
@@ -1544,6 +1551,10 @@ define([
                         proxyUrl: this.config.proxyurl
                     });
                 }
+            }
+            if (window.location.href.toLowerCase().indexOf("https:") > -1 &&
+                cfUrl.toLowerCase().indexOf("https:") === -1) {
+                 cfUrl.replace("http:", "https:");
             }
             console.log("Fixed Closest Facility URL", cfUrl);
             return cfUrl;

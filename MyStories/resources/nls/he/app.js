@@ -40,7 +40,7 @@ define({
   },
   "cantFindStories": {
     "whereAreStories": "לא רואה את הסיפור שלך?",
-    "notSeeExplanation": "'הסיפורים שלי' יציג רק מפות סיפור שמתארחות ב-ArcGIS שנוצרו עם האפליקציות {{STORY_MAP_TOUR}}‏, {{JOURNAL}}‏, {{MAP_SERIES}} או {{SWIPE_SPYGLASS}}. עיין ב{{שאלות נפוצות}} לקבלת מידע נוסף.",
+    "notSeeExplanation": "'הסיפורים שלי' יציגו רק מפות סיפור שמתארחות ב-ArcGIS‏ ({{STORY_MAP_BASIC}} אינו נתמך כעת). עיין ב{{שאלות נפוצות}} לקבלת מידע נוסף.",
     "faq": "שאלות ותשובות",
     "followingStoriesToUpdate": "סיפורים שנוצרו בגירסאות קודמות של האפליקציות שלנו וצריכים להתעדכן בכדי שיופיעו ב'הסיפורים שלי':",
     "gettingStories": "מחפש סיפורים שנוצרו בגירסאות קודמות של האפליקציות שלנו ושיש צורך לעדכן אותם...",
@@ -88,27 +88,16 @@ define({
     "layerPrivate": "הפיכת השכבה שלך לפרטית תבטל את הסיפור שלך"
   },
   "collectionList": {
-    "advocacy": "Advocacy and Outreach",
-    "architecture": "אדריכלות ותכנון",
-    "conservation": "שימור וקיימות",
-    "culture": "תרבות",
-    "destinations": "יעדים ותיירות",
-    "disasters": "אסונות ושיקום",
-    "economy": "כלכלה ופיתוח",
-    "entertainment": "בידור",
-    "history": "היסטוריה",
-    "infrastructure": "תשתית",
-    "marketing": "שיווק",
-    "nature": "טבע וסביבה",
-    "news": "חדשות ואירועים",
-    "oceans": "אוקינוסים",
-    "parks": "פארקים ונופש",
+    "business": "עסקים וכלכלה",
+    "history": "היסטוריה ותרבות",
+    "inNews": "בחדשות",
+    "infrastructure": "הנדסה ובניין",
+    "nature": "טבע ושימור",
     "people": "אנשים וחברה",
-    "planning": "תכנון וניתוח",
-    "publicArt": "אמנות ציבורית",
+    "planning": "תכנון ועיצוב",
     "science": "מדע וטכנולוגיה",
-    "sport": "ספורט",
-    "travelogues": "סרטי מסעות"
+    "sports": "ספורט ובידור",
+    "travel": "נסיעות ונופש"
   },
   "types": {
     "custom": "מותאם",
@@ -227,6 +216,7 @@ define({
   "content": {
     "media": {
       "maps": "מפות",
+      "scenes": "סצינות",
       "images": "תמונות",
       "videos": "סרטונים",
       "webpages": "דפי אינטרנט",
@@ -244,22 +234,30 @@ define({
       "bullet": "תבליט",
       "tab": "לשונית",
       "accordion": "חלק",
-      "mapJournal": "חלק"
+      "mapJournal": "חלק",
+      "cascade": "קטע",
+      "crowdsource": "תרומה",
+      "shortlist": "לשונית"
     },
     "titleType": {
       "mapTour": "כותרת",
       "mapJournal": "URL",
-      "mapSeries": "URL"
+      "mapSeries": "URL",
+      "cascade": "URL",
+      "crowdsource": "URL",
+      "shortlist": "URL"
     },
     "actions": {
       "viewMap": "הצג מפה",
       "editMap": "ערוך מפה",
+      "editScene": "ערוך סצינה",
       "fix": "תקן",
       "viewLayer": "הצג שכבה"
     },
     "contentType": {
       "mainStage": "פעולת תצוגה ראשית",
-      "sidePanel": "תיאור"
+      "sidePanel": "תיאור",
+      "introImage": "(תמונת כריכה)"
     },
     "notification": {
       "refreshExplanation": "בדוק שוב את הסיפור שלך",
@@ -300,6 +298,7 @@ define({
       "publicDisabled": "שיתוף עם הציבור הוגדר כלא פעיל על-ידי מנהל",
       "orgDisabled": "שיתוף עם הארגון שלך הוגדר כלא פעיל על-ידי מנהל",
       "noMapName": "לא ניתן לאחזר שם מפה",
+      "noSceneName": "אין אפשרות לאחזר סצינה",
       "notPublic": "לא ציבורי",
       "inaccessible": "לא נגיש",
       "deleted": "נמחק",
@@ -351,6 +350,8 @@ define({
       "cantScanThisTypeAlt": "לא ניתן לבדוק סוג שכבה זה",
       "cantScanThisType": "השכבה אינה סוג שכבה שניתן לבדוק",
       "webpageNotScanned": "בעיות בדפי אינטרנט לא נבדקות",
+      "sceneNotScanned": "בעת הזו לא נבדקות בעיות בסצנות, ודא שהסצנה וכל השכבות שלה משותפות בצורה תקינה",
+      "scenesNotScannedGlobally": "קיימות סצנות בסיפור, ובעת הזו לא נבדקות בעיות בסצנות. ודא שהסצנות וכל השכבות שלהן משותפות בצורה תקינה",
       "ignoredIssue": "התעלמת משגיאה בשכבה זו. טען מחדש את הדף ובדוק שוב את הסיפור כדי לסקור את השגיאה",
       "ignoredIssueBuilder": "התעלמת משגיאה בשכבה זו. טען מחדש את הבונה כדי לבדוק שוב שגיאה זו"
     },
@@ -450,6 +451,10 @@ define({
       "secondValueC": "באמצעות לשוניות",
       "thirdTitle": "מפות"
     },
+    "cascade": {
+      "firstTitle": "קטעים",
+      "secondTitle": "מפות"
+    },
     "swipeSpyglass": {
       "firstTitle": "נקודת עניין",
       "secondTitle": "style",
@@ -459,9 +464,13 @@ define({
     },
     "crowdsource": {
       "firstTitle": "תרומות",
-      "secondTitle": "style",
-      "secondValueA": "חלונית צדדית",
-      "secondValueB": "מוערם",
+      "secondTitle": "מפת רקע",
+      "secondValueLoading": "טוען...",
+      "secondValueUnknown": "לא מוכר"
+    },
+    "shortlist": {
+      "firstTitle": "מקומות",
+      "secondTitle": "לשוניות",
       "thirdTitle": "מפת רקע",
       "thirdValueLoading": "טוען...",
       "thirdValueUnknown": "לא ידוע"

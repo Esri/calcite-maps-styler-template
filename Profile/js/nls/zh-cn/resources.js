@@ -24,11 +24,12 @@ define({
   "elevation": {
     "toggle": "切换 Elevation Profile Chart。",
     "drawTool": "在地图上绘制一条线，以生成高程剖面。",
-    "selectMessage": "单击线要素或使用绘制工具绘制一条线，以显示高程剖面。"
+    "selectMessage": "单击线要素或使用绘制工具绘制一条线，以显示高程剖面。",
+    "gainLossTemplate": "最小值：${min}   最大值：${max}   起始值：${start}   终止值：${end}   变化值：${gainLoss}"
   },
   "splash": {
     "title": "标题",
-    "content": "配置为创建自定义启动画面内容"
+    "content": "配置以创建自定义启动画面内容"
   },
   "legend": {
     "title": "图例",

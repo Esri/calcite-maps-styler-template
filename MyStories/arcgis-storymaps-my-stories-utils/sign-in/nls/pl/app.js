@@ -1,15 +1,21 @@
 define({
   "signInDialog": {
-    "title": "Zaloguj się do Story Maps",
-    "subtitle": "Zaloguj się za pomocą konta usługi ArcGIS Online aby:",
-    "reasonOne": "tworzyć interesujące mapy narracyjne i opowiadać swoje narracje;",
-    "reasonTwo": "korzystać z map i danych zgromadzonych w usłudze ArcGIS Online podczas tworzenia swoich map narracyjnych;",
-    "reasonThree": "zarządzać mapami narracyjnymi i sprawdzać status ich zawartości.",
-    "noAccountYet": "Nie masz jeszcze konta w usłudze ArcGIS Online? Zarejestruj się:",
+    "title": "Zacznij opowiadać historie!",
+    "reasonOne": "Twórz atrakcyjne mapy narracyjne",
+    "reasonTwo": "Użyj możliwości platformy ArcGIS",
+    "reasonThree": "Zarządzaj swoimi narracjami",
+    "noAccountYet": "Nie masz konta usługi ArcGIS Online?",
+    "signUpFor": "Zarejestruj się:",
     "publicAccount": "Bezpłatne konto publiczne do użytku niekomercyjnego",
     "subscriptionAccount": "Bezpłatna wersja próbna subskrypcji ArcGIS",
     "signInExpired": "Sesja wygasła. Zaloguj się ponownie, aby kontynuować.",
     "somethingNotLoading": "Wystąpił problem z wczytaniem zawartości. Spróbuj odświeżyć stronę."
+  },
+  "signedInPrompt": {
+    "signedIn": "Użytkownik jest teraz zalogowany.",
+    "backToStoryMaps": "Wróć do witryny Story Maps",
+    "closeRefresh": "Zamknij tę kartę i odśwież witrynę.",
+    "close": "Zamknij"
   },
   "unavailableDialog": {
     "title": "Nie można się zalogować",

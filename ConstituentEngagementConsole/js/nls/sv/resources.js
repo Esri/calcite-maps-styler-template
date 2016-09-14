@@ -83,7 +83,7 @@ define({
     "valueRadioButtonLabel": "Värde",
     "uniqueRadioButtonLabel": "Unik",
     "selectLayerToBegin": "Välj en kategori för att komma igång",
-    "layerFeatureCount": "${featureCount} poster"
+    "layerFeatureCount": "${selectedFeatureCount} valda / ${featureCount} poster"
   },
   "timeSlider": {
     "timeSliderLabel": "Tidsintervall",
@@ -97,7 +97,12 @@ define({
     "placeHolderText": "",
     "noCommentsAvailableText": "Inga poster tillgängliga",
     "remainingTextCount": "${0} tecken återstår",
-    "showNoText": "Nej"
+    "showNoText": "Nej",
+    "selectAttachments": "Bilagor",
+    "selectFileText": "Bläddra",
+    "attachmentSelectedMsg": "bilagor markerade",
+    "attachmentHeaderText": "Bilagor",
+    "addRecordText": "Lägg till post"
   },
   "main": {
     "noGroup": "Ingen grupp konfigurerad"
@@ -109,17 +114,18 @@ define({
   },
   "manualRefresh": {
     "manualRefreshIconTooltip": "Uppdatera",
-    "confirmManualRefeshText": "Alla urval och osparade ändringar ignoreras"
+    "confirmManualRefreshText": "Alla urval och osparade ändringar ignoreras"
   },
   "help": {
     "helpIconTooltip": "Hjälp"
   },
   "filter": {
     "noFeatureFoundText": "Inget geoobjekt hittades för detta värde.",
-    "distinctQueryFalied": "Inga distinkta värden hittades för fältet.",
+    "distinctQueryFailed": "Inga distinkta värden hittades för fältet.",
     "andText": "och",
-    "filterInEditModeAlert": "Filter är inte tillgängliga vid redigering",
-    "dropdownSelectOption": "Välj"
+    "filterInEditModeAlert": "Filter är inte tillgängliga vid redigering.",
+    "dropdownSelectOption": "Välj",
+    "filterInShowSelectedEditModeAlert": "Filter är inte tillgängliga i läget Visa valda."
   },
   "detailsPanel": {
     "editContentText": "Redigera post"
@@ -127,5 +133,10 @@ define({
   "signOutPage": {
     "signOutMessage": "Du har loggat ut",
     "reSignInMessage": "Klicka här för att logga in"
+  },
+  "selectionOptions": {
+    "selectionOptionsIconTooltip": "Alternativ för urval",
+    "showAllOptionText": "Visa alla",
+    "showSelectedOptionText": "Visa valda"
   }
 });

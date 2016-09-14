@@ -83,7 +83,7 @@ define({
     "valueRadioButtonLabel": "Valor",
     "uniqueRadioButtonLabel": "Única",
     "selectLayerToBegin": "Seleccione una categoría para empezar",
-    "layerFeatureCount": "${featureCount} registros"
+    "layerFeatureCount": "${selectedFeatureCount} seleccionadas / ${featureCount} registros"
   },
   "timeSlider": {
     "timeSliderLabel": "Rango de tiempo",
@@ -97,7 +97,12 @@ define({
     "placeHolderText": "",
     "noCommentsAvailableText": "No hay registros disponibles",
     "remainingTextCount": "${0} caracteres restantes",
-    "showNoText": "No"
+    "showNoText": "No",
+    "selectAttachments": "Adjuntos",
+    "selectFileText": "Examinar",
+    "attachmentSelectedMsg": "adjuntos seleccionados",
+    "attachmentHeaderText": "Adjuntos",
+    "addRecordText": "Agregar registro"
   },
   "main": {
     "noGroup": "No hay ningún grupo configurado"
@@ -109,17 +114,18 @@ define({
   },
   "manualRefresh": {
     "manualRefreshIconTooltip": "Actualizar",
-    "confirmManualRefeshText": "Se descartarán todas las seleccione y cambios sin guardar"
+    "confirmManualRefreshText": "Se descartarán todas las seleccione y cambios sin guardar"
   },
   "help": {
     "helpIconTooltip": "Ayuda"
   },
   "filter": {
     "noFeatureFoundText": "No se ha encontrado ninguna entidad para este valor.",
-    "distinctQueryFalied": "No se han encontrado valores diferenciados para el campo.",
+    "distinctQueryFailed": "No se han encontrado valores diferenciados para el campo.",
     "andText": "y",
-    "filterInEditModeAlert": "Los filtros no están disponibles durante la edición",
-    "dropdownSelectOption": "Seleccionar"
+    "filterInEditModeAlert": "Los filtros no están disponibles durante la edición.",
+    "dropdownSelectOption": "Seleccionar",
+    "filterInShowSelectedEditModeAlert": "Los filtros no están disponibles en el modo \"Mostrar seleccionado\""
   },
   "detailsPanel": {
     "editContentText": "Editar registro"
@@ -127,5 +133,10 @@ define({
   "signOutPage": {
     "signOutMessage": "Has cerrado sesión correctamente",
     "reSignInMessage": "Haz clic aquí para iniciar sesión"
+  },
+  "selectionOptions": {
+    "selectionOptionsIconTooltip": "Opciones de selección",
+    "showAllOptionText": "Mostrar todo",
+    "showSelectedOptionText": "Mostrar seleccionado"
   }
 });

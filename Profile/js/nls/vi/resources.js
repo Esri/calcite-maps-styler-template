@@ -24,7 +24,8 @@ define({
   "elevation": {
     "toggle": "Chuyển đổi Biểu đồ Thông tin Độ cao.",
     "drawTool": "Vẽ một đường trên bản đồ để tạo thông tin độ cao.",
-    "selectMessage": "Nhấp vào đối tượng dòng hoặc sử dụng công cụ vẽ để vẽ một đường để hiển thị thông tin độ cao"
+    "selectMessage": "Nhấp vào đối tượng dòng hoặc sử dụng công cụ vẽ để vẽ một đường để hiển thị thông tin độ cao",
+    "gainLossTemplate": "Tối thiểu: ${min}   Tối đa: ${max}   Bắt đầu: ${start}   Kết thúc: ${end}   Thay đổi: ${gainLoss}"
   },
   "splash": {
     "title": "Tiêu đề",

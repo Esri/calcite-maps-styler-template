@@ -26,6 +26,8 @@
 			//  whose application are allowed to be viewed by this Crowdsource deployment
 			// This is the Portal username of the Crowdsource owner (e.g. ["user1"] or ["user1", "user2"])
 			authorizedOwners: ["*"],
+      // Optionally to secure Crowdsource's access, use an OAuth application ID (example: 6gyOg377fLUhUk6f)
+      oAuthAppId: ""
 		};
 		// Optionally sharing, proxy URLs, Bing Maps key, Geometry and Geocode service's URLs can be configured in app/config.js. This is only required
 		//   when the webmap is not hosted on ArcGIS Online or a Portal for ArcGIS instance and the application isn't deployed as /home/StoryMapCrowdsource/ or /apps/StoryMapCrowdsource/.
@@ -41,8 +43,8 @@
     alert('This app requires a modern browsers to run properly. Please update your browser then visit this page again.');
     window.location = "http://browsehappy.com/";
   </script>
-  <![endif]--></head><body class="claro">
+  <![endif]--></head><body class="calcite">
   <style>
     /* CUSTOM CSS RULES */
   </style>
-  <div id="app"></div><div id="loadingOverlay"><div id="loadingIndicator" class="loadingIndicator"><img src="resources/images/loader-light.gif"></div></div><!-- Loading --><style>body,html{margin:0;padding:0}#loadingOverlay{position:absolute;top:0;width:100vw;height:100vh;background-color:#E5E5E5;-webkit-box-shadow:inset 0 0 82px 19px rgba(0,0,0,.3);-moz-box-shadow:inset 0 0 82px 19px rgba(0,0,0,.3);box-shadow:inset 0 0 82px 19px rgba(0,0,0,.3)}#loadingIndicator{position:fixed;margin:-50px 0 0 -50px;top:50%;left:50%;text-align:center;z-index:900}#loadingIndicator img{position:relative;height:60px;width:60px;margin:20px}</style><script type="text/javascript">var app={version:"0.1.0",pathJSAPI:"//js.arcgis.com/3.17/"};</script><script type="text/javascript" src="app/main-config.min.js"></script></body></html>
+  <div id="app"></div><div id="loadingOverlay"><div id="loadingIndicator" class="loadingIndicator"><img src="resources/images/loader-light.gif"></div></div><!-- Loading --><style>body,html{margin:0;padding:0}#loadingOverlay{position:absolute;top:0;width:100%;height:100%;background-color:#E5E5E5;-webkit-box-shadow:inset 0 0 82px 19px rgba(0,0,0,.3);-moz-box-shadow:inset 0 0 82px 19px rgba(0,0,0,.3);box-shadow:inset 0 0 82px 19px rgba(0,0,0,.3)}#loadingIndicator{position:fixed;margin:-50px 0 0 -50px;top:50%;left:50%;text-align:center;z-index:900}#loadingIndicator img{position:relative;height:60px;width:60px;margin:20px}</style><script type="text/javascript">var app={version:"0.2.0",pathJSAPI:"//js.arcgis.com/3.18/"};</script><script type="text/javascript" src="app/main-config.min.js"></script></body></html>

@@ -174,7 +174,8 @@ define([
                if (this.config && this.config.i18n) {
                   tip = this.config.i18n.tooltips.directions;
                }
-               if (geom.type == "point" && this.config.showDirections == true) {
+               //if (geom.type == "point" && this.config.showDirections == true) {
+               if (this.config.showDirections === true) {
                   var recRoute = domConstruct.create("div", {
                      title: tip
                   }, recHeader);

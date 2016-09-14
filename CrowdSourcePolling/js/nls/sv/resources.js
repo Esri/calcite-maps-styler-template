@@ -54,6 +54,7 @@ define({
   },
   "item_details": {
     "likeButtonTooltip": "Rösta på det här objektet",
+    "likeButtonInverseTooltip": "Rösten har räknats",
     "commentButtonTooltip": "Lägg till en kommentar",
     "gotoMapViewTooltip": "Gå till kartvy",
     "galleryButtonTooltip": "Se bifogade filer",

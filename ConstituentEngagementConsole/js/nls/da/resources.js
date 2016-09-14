@@ -83,7 +83,7 @@ define({
     "valueRadioButtonLabel": "Værdi",
     "uniqueRadioButtonLabel": "Unik",
     "selectLayerToBegin": "Vælg en kategori at starte med",
-    "layerFeatureCount": "${featureCount} poster"
+    "layerFeatureCount": "${selectedFeatureCount} valgt / ${featureCount} poster"
   },
   "timeSlider": {
     "timeSliderLabel": "Tidsinterval",
@@ -97,7 +97,12 @@ define({
     "placeHolderText": "",
     "noCommentsAvailableText": "Ingen poster er tilgængelige",
     "remainingTextCount": "${0} tegn tilbage",
-    "showNoText": "Nej"
+    "showNoText": "Nej",
+    "selectAttachments": "Vedhæftninger",
+    "selectFileText": "Gennemse",
+    "attachmentSelectedMsg": "vedhæftning(er) valgt",
+    "attachmentHeaderText": "Vedhæftninger",
+    "addRecordText": "Tilføj post"
   },
   "main": {
     "noGroup": "Ingen gruppe konfigureret"
@@ -109,17 +114,18 @@ define({
   },
   "manualRefresh": {
     "manualRefreshIconTooltip": "Opdatér",
-    "confirmManualRefeshText": "Alle markeringer og ikke-gemte ændringer vil gå tabt"
+    "confirmManualRefreshText": "Alle markeringer og ikke-gemte ændringer vil gå tabt"
   },
   "help": {
     "helpIconTooltip": "Hjælp"
   },
   "filter": {
     "noFeatureFoundText": "Intet objekt fundet for denne værdi.",
-    "distinctQueryFalied": "Ingen forskellige værdier fundet for dette felt.",
+    "distinctQueryFailed": "Ingen forskellige værdier fundet for dette felt.",
     "andText": "og",
-    "filterInEditModeAlert": "Filtre er utilgængelige under redigering",
-    "dropdownSelectOption": "Vælg"
+    "filterInEditModeAlert": "Filtre er utilgængelige under redigering.",
+    "dropdownSelectOption": "Vælg",
+    "filterInShowSelectedEditModeAlert": "Filtre er utilgængelige i 'Vis udvalgte'-tilstand."
   },
   "detailsPanel": {
     "editContentText": "Redigér post"
@@ -127,5 +133,10 @@ define({
   "signOutPage": {
     "signOutMessage": "Du er blevet logget ud",
     "reSignInMessage": "Klik her for at logge ind"
+  },
+  "selectionOptions": {
+    "selectionOptionsIconTooltip": "Valgmuligheder",
+    "showAllOptionText": "Vis alle",
+    "showSelectedOptionText": "Vis valgte"
   }
 });

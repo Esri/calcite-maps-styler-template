@@ -40,7 +40,7 @@ define({
   },
   "cantFindStories": {
     "whereAreStories": "Nevidíte svůj příběh?",
-    "notSeeExplanation": "Sekce Moje příběhy zobrazuje pouze mapy s příběhem hostované v systému ArcGIS a vytvořené pomocí aplikací {{STORY_MAP_TOUR}}, {{JOURNAL}}, {{MAP_SERIES}} nebo {{SWIPE_SPYGLASS}}. Pro další informace viz {{FAQ}}.",
+    "notSeeExplanation": "Sekce Moje příběhy zobrazuje pouze mapy s příběhem hostované v systému ArcGIS ({{STORY_MAP_BASIC}} momentálně není podporováno). Pro další informace viz {{FAQ}}.",
     "faq": "Často kladené dotazy",
     "followingStoriesToUpdate": "Následující příběhy vytvořené dřívějšími verzemi našich aplikací je třeba aktualizovat, aby byly uvedeny v sekci Moje příběhy:",
     "gettingStories": "Probíhá vyhledávání příběhů vytvořených dřívějšími verzemi našich aplikací, které je třeba aktualizovat...",
@@ -88,27 +88,16 @@ define({
     "layerPrivate": "Nastavení vaší vrstvy na soukromou by rozbilo příběh"
   },
   "collectionList": {
-    "advocacy": "Obhajoba a osvěta",
-    "architecture": "Architektura a design",
-    "conservation": "Ochrana přírody a udržitelnost",
-    "culture": "Kultura",
-    "destinations": "Destinace a turismus",
-    "disasters": "Katastrofy a obnova",
-    "economy": "Ekonomika a rozvoj",
-    "entertainment": "Zábava",
-    "history": "Historie",
-    "infrastructure": "Infrastruktura",
-    "marketing": "Marketing",
-    "nature": "Příroda a životní prostředí",
-    "news": "Zprávy a události",
-    "oceans": "Oceány",
-    "parks": "Parky a rekreační prostory",
+    "business": "Obchod a ekonomika",
+    "history": "Dějiny a kultura",
+    "inNews": "Ve zprávách",
+    "infrastructure": "Infrastruktura a stavebnictví",
+    "nature": "Příroda a její ochrana",
     "people": "Lidé a společnost",
-    "planning": "Plánování a analýza",
-    "publicArt": "Veřejné umění",
+    "planning": "Plánování a design",
     "science": "Věda a technologie",
-    "sport": "Sport",
-    "travelogues": "Cestopisy"
+    "sports": "Sport a zábava",
+    "travel": "Cestování a odpočinek"
   },
   "types": {
     "custom": "Vlastní",
@@ -227,6 +216,7 @@ define({
   "content": {
     "media": {
       "maps": "Mapy",
+      "scenes": "Scény",
       "images": "Snímky",
       "videos": "Videa",
       "webpages": "Webové stránky",
@@ -244,22 +234,30 @@ define({
       "bullet": "Odrážka",
       "tab": "Záložka",
       "accordion": "Část",
-      "mapJournal": "Část"
+      "mapJournal": "Část",
+      "cascade": "Část",
+      "crowdsource": "Příspěvek",
+      "shortlist": "Záložka"
     },
     "titleType": {
       "mapTour": "Popis",
       "mapJournal": "Adresa URL",
-      "mapSeries": "Adresa URL"
+      "mapSeries": "Adresa URL",
+      "cascade": "Adresa URL",
+      "crowdsource": "Adresa URL",
+      "shortlist": "Adresa URL"
     },
     "actions": {
       "viewMap": "Prohlížet mapu",
       "editMap": "Upravit mapu",
+      "editScene": "Upravit scénu",
       "fix": "Opravit",
       "viewLayer": "Zobrazit vrstvu"
     },
     "contentType": {
       "mainStage": "akce hlavní úrovně",
-      "sidePanel": "popis"
+      "sidePanel": "popis",
+      "introImage": "(fotografie na titulní straně)"
     },
     "notification": {
       "refreshExplanation": "Znovu zkontrolujte svůj příběh",
@@ -300,6 +298,7 @@ define({
       "publicDisabled": "Veřejné sdílení bylo zakázáno administrátorem",
       "orgDisabled": "Sdílení s vaší organizací bylo zakázáno administrátorem",
       "noMapName": "Nepodařilo se získat název mapy",
+      "noSceneName": "Nepodařilo se načíst scénu",
       "notPublic": "NEVEŘEJNÉ",
       "inaccessible": "NEPŘÍSTUPNÉ",
       "deleted": "ODSTRANĚNO",
@@ -351,6 +350,8 @@ define({
       "cantScanThisTypeAlt": "Nejsme schopni zkontrolovat tento typ vrstvy",
       "cantScanThisType": "Vrstva není typ, který dokážeme zkontrolovat",
       "webpageNotScanned": "Webové stránky nejsou zkontrolovány",
+      "sceneNotScanned": "U scén se momentálně neprovádí kontroly případných chyb. Ujistěte se, že scéna a všechny její vrstvy jsou správně sdíleny.",
+      "scenesNotScannedGlobally": "Tento příběh obsahuje scény, přičemž u scén se momentálně neprovádí kontroly případných chyb. Ujistěte se, že scény a všechny jejich vrstvy jsou správně sdíleny.",
       "ignoredIssue": "Ignorovali jste chybu na této vrstvě. Obnovte stránku, zkontrolujte příběh znovu a přezkoumejte tuto chybu.",
       "ignoredIssueBuilder": "Ignorovali jste chybu na této vrstvě. Obnovte nástroj pro tvorbu a přezkoumejte tuto chybu."
     },
@@ -450,6 +451,10 @@ define({
       "secondValueC": "se záložkami",
       "thirdTitle": "mapy"
     },
+    "cascade": {
+      "firstTitle": "sekce",
+      "secondTitle": "mapy"
+    },
     "swipeSpyglass": {
       "firstTitle": "body zájmu",
       "secondTitle": "style",
@@ -459,9 +464,13 @@ define({
     },
     "crowdsource": {
       "firstTitle": "příspěvky",
-      "secondTitle": "style",
-      "secondValueA": "postranní panel",
-      "secondValueB": "skládané",
+      "secondTitle": "podkladová mapa",
+      "secondValueLoading": "Načítání…...",
+      "secondValueUnknown": "neznámý"
+    },
+    "shortlist": {
+      "firstTitle": "místa",
+      "secondTitle": "záložky",
       "thirdTitle": "podkladová mapa",
       "thirdValueLoading": "Načítání…...",
       "thirdValueUnknown": "neznámý"

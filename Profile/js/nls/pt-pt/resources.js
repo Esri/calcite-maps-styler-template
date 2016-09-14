@@ -24,7 +24,8 @@ define({
   "elevation": {
     "toggle": "Alterne o Gráfico de Perfil de Elevação.",
     "drawTool": "Desenhe uma linha no mapa para gerar um perfil de elevação.",
-    "selectMessage": "Clique num elemento de linha ou utilize a ferramenta de desenho para traçar uma linha para exibir o perfil de elevação."
+    "selectMessage": "Clique num elemento de linha ou utilize a ferramenta de desenho para traçar uma linha para exibir o perfil de elevação.",
+    "gainLossTemplate": "Mín: ${min}   Máx: ${max}   Início: ${start}   Fim: ${end}   Alterar: ${gainLoss}"
   },
   "splash": {
     "title": "Título",

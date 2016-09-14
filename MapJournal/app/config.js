@@ -56,7 +56,8 @@ app.cfg = {
 			sizes: { small: '25%', medium: '35%', large: '45%' },
 			positions: ["right", "left"],
 			themes: [
-				{name: "float-default-1", themeMajor: "black", dotNav: "#000000", panel: "#000000", media: "#FFFFFF", text: "#FFFFFF", textLink: "#DDD", softText: "#FFF",    softBtn: "#AAA", esriLogo: "white"}
+				{name: "float-default-1", themeMajor: "black", dotNav: "#000000", panel: "#000000", media: "#FFFFFF", text: "#FFFFFF", textLink: "#DDD", softText: "#FFF",    softBtn: "#AAA", esriLogo: "white"},
+				{name: "float-default-2", themeMajor: "white", dotNav: "#FFFFFF", panel: "#FFFFFF", media: "#EEEEEE", text: "#000000", textLink: "#555", softText: "#c0c0c0", softBtn: "#737373", esriLogo: "black", panelOpa: 0.95, dotNavActive: "#000"}
 			]
 		}
 	],
@@ -101,11 +102,6 @@ app.cfg = {
 	
 	// Online photo sharing services connection parameters
 	FLICKR_API_KEY: "750b36a2ac65a72e03cf9cef06d79f45",
-	// The Facebook ID is only valid on arcgis.com domain
-	// If used on another domain, user will have an error in the Facebook popup after login
-	// To use Facebook import on Portal for ArcGIS, create your own ID at https://developers.facebook.com/ 
-	// or set AUTHORIZED_IMPORT_SOURCE.facebook to false
-	FACEBOOK_APP_ID: "276669785846752",
 	// This Youtube key is valid for application running on arcgis.com and esri.com domains
 	// If the application is deployed on Portal for ArcGIS or your own server, the Youtube api call 
 	//  won't be perfomed until you set the following flag and provide your own key

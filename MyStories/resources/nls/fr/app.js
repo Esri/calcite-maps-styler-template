@@ -40,7 +40,7 @@ define({
   },
   "cantFindStories": {
     "whereAreStories": "Votre récit n'apparaît pas ?",
-    "notSeeExplanation": "Mes récits répertorie uniquement les cartes de narration hébergées dans ArcGIS et créées avec les applications {{STORY_MAP_TOUR}}, {{JOURNAL}}, {{MAP_SERIES}} et {{SWIPE_SPYGLASS}}. Consultez notre {{FAQ}} pour plus d'informations.",
+    "notSeeExplanation": "Mes récits répertorie uniquement les cartes de narration hébergées dans ArcGIS ({{STORY_MAP_BASIC}} n'est actuellement pas pris en charge). Consultez notre {{FAQ}} pour plus d'informations.",
     "faq": "FAQ",
     "followingStoriesToUpdate": "Les récits suivants, créés avec des versions antérieures de nos applications, doivent être mis à jour pour être répertoriés dans Mes récits cartographiques :",
     "gettingStories": "Recherche de récits créés avec des versions antérieures de nos applications qui doivent être mis à jour...",
@@ -88,27 +88,16 @@ define({
     "layerPrivate": "En rendant votre couche privée, vous allez corrompre votre récit"
   },
   "collectionList": {
-    "advocacy": "Défense et sensibilisation",
-    "architecture": "Architecture et design",
-    "conservation": "Conservation et durabilité",
-    "culture": "Culture",
-    "destinations": "Destination et tourisme",
-    "disasters": "Catastrophes et reconstruction",
-    "economy": "Economie et développement",
-    "entertainment": "Divertissement",
-    "history": "Historique",
-    "infrastructure": "Infrastructure",
-    "marketing": "Marketing",
-    "nature": "Nature et environnement",
-    "news": "Actualités et événements",
-    "oceans": "Océans",
-    "parks": "Parcs et loisirs",
+    "business": "Commerce et économie",
+    "history": "Histoire et culture",
+    "inNews": "Dans les actualités",
+    "infrastructure": "Infrastructure et construction",
+    "nature": "Nature et conservation",
     "people": "Population et société",
-    "planning": "Planification et analyse",
-    "publicArt": "Art public",
+    "planning": "Planification et conception",
     "science": "Science et technologie",
-    "sport": "Sport",
-    "travelogues": "Carnets de voyage"
+    "sports": "Sports et loisirs",
+    "travel": "Voyages et loisirs"
   },
   "types": {
     "custom": "Personnalisé",
@@ -227,6 +216,7 @@ define({
   "content": {
     "media": {
       "maps": "Cartes",
+      "scenes": "Scènes",
       "images": "Images",
       "videos": "Vidéos",
       "webpages": "Pages Web",
@@ -244,22 +234,30 @@ define({
       "bullet": "Puce",
       "tab": "Tabulation",
       "accordion": "Section",
-      "mapJournal": "Section"
+      "mapJournal": "Section",
+      "cascade": "Section",
+      "crowdsource": "Contribution",
+      "shortlist": "Tabulation"
     },
     "titleType": {
       "mapTour": "Désignation",
       "mapJournal": "URL",
-      "mapSeries": "URL"
+      "mapSeries": "URL",
+      "cascade": "URL",
+      "crowdsource": "URL",
+      "shortlist": "URL"
     },
     "actions": {
       "viewMap": "Afficher la carte",
       "editMap": "Modifier la carte",
+      "editScene": "Mettre à jour la scène",
       "fix": "Localisation",
       "viewLayer": "Afficher la couche"
     },
     "contentType": {
       "mainStage": "action de grande scène",
-      "sidePanel": "Description"
+      "sidePanel": "Description",
+      "introImage": "(photo de la page de couverture)"
     },
     "notification": {
       "refreshExplanation": "Revérifiez votre récit",
@@ -300,6 +298,7 @@ define({
       "publicDisabled": "Le partage public a été désactivé par un administrateur",
       "orgDisabled": "Le partage avec votre organisation a été désactivé par un administrateur",
       "noMapName": "Impossible de récupérer le nom de la carte",
+      "noSceneName": "Impossible d’extraire la scène",
       "notPublic": "NON PUBLIC",
       "inaccessible": "INACCESSIBLE",
       "deleted": "SUPPRIME",
@@ -351,6 +350,8 @@ define({
       "cantScanThisTypeAlt": "Nous ne sommes pas en mesure de vérifier ce type de couche",
       "cantScanThisType": "Nous ne pouvons pas vérifier le type de la couche",
       "webpageNotScanned": "La recherche d'erreurs n'a pas lieu sur les pages Web",
+      "sceneNotScanned": "Les scènes ne font actuellement l'objet d'aucune recherche de problèmes éventuels. Vérifiez que la scène et toutes ses couches sont partagées correctement.",
+      "scenesNotScannedGlobally": "Ce récit comporte des scènes, et les scènes ne font actuellement l'objet d'aucune recherche de problèmes éventuels. Vérifiez que les scènes et toutes leurs couches sont partagées correctement.",
       "ignoredIssue": "Vous avez ignoré une erreur sur cette couche. Rechargez la page et consultez à nouveau ce récit pour visualiser l'erreur",
       "ignoredIssueBuilder": "Vous avez ignoré une erreur sur cette couche. Rechargez le générateur pour consulter à nouveau cette erreur"
     },
@@ -450,6 +451,10 @@ define({
       "secondValueC": "à onglets",
       "thirdTitle": "cartes"
     },
+    "cascade": {
+      "firstTitle": "Section",
+      "secondTitle": "cartes"
+    },
     "swipeSpyglass": {
       "firstTitle": "points d'intérêt",
       "secondTitle": "style",
@@ -459,9 +464,13 @@ define({
     },
     "crowdsource": {
       "firstTitle": "contributions",
-      "secondTitle": "style",
-      "secondValueA": "volet latéral",
-      "secondValueB": "empilé",
+      "secondTitle": "fond de carte",
+      "secondValueLoading": "Chargement en cours...",
+      "secondValueUnknown": "Inconnu"
+    },
+    "shortlist": {
+      "firstTitle": "localisations géographiques",
+      "secondTitle": "onglets",
       "thirdTitle": "fond de carte",
       "thirdValueLoading": "Chargement en cours...",
       "thirdValueUnknown": "Inconnu"

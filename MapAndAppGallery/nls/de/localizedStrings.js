@@ -21,7 +21,7 @@ define({
   "layoutText": "Layout",
   "signInText": "Anmelden",
   "signOutText": "Abmelden",
-  "showNullValue": "N/A",
+  "showNullValue": "N. z.",
   "detailsDisplayText": "Details",
   "sortByText": "Sortieren nach",
   "sortByViewText": "Aufrufe",
