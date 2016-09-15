@@ -704,6 +704,10 @@ define([
         if (this._twitterLayer.get("authorized")) {
           // authorized user
           this._twitterWindow(this.config.twitterSigninUrl, true);
+          setTimeout(lang.hitch(this, function(){
+            this._twitterLayer.clear();
+            this._twitterLayer.update(0);
+          }), 500);
         } else {
           // unauthorized user
           this._twitterWindow(this.config.twitterSigninUrl);
@@ -720,6 +724,7 @@ define([
             localStorage.removeItem(INSTAGRAM_ACCESS_TOKEN);
           }
           this._instagramLayer.set("token", "");
+          this._instagramLayer.clear();
           this._instagramLayer.update(0);
         }), 500);
       },
