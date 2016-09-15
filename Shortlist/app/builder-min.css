@@ -2164,7 +2164,7 @@ ul.tilelist .longNumBlurb {
 	font-weight: 400;
 	border: none;
 	background-color: #666;
-	height: 35px;
+	height: auto;
 	line-height: 35px;
 	width: 160px;
 }
