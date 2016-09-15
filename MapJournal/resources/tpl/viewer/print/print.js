@@ -17,8 +17,8 @@ require([
 	arcgisUtils, 
 	lang, 
 	LegendDijit,
-	has,
-	Extent
+	Extent,
+	has
 ) {
 	var sections = app.data.getStorySections(),
 		title = sections[0].title,
@@ -114,6 +114,8 @@ require([
 				extent = null;
 			}
 		}
+		
+		console.log(extent)
 		
 		loadWebmap(media.webmap.id, $('#media-section-' + i)[0], extent).then(function(response) {
 			
