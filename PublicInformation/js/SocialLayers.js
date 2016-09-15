@@ -717,16 +717,22 @@ define([
         }
       },
       _instagramSwitchAccount: function(evt){
-        event.stop(evt);
-        window.open("https://instagram.com/accounts/logout");
-        setTimeout(lang.hitch(this, function(){
-          if(lsTest()){
-            localStorage.removeItem(INSTAGRAM_ACCESS_TOKEN);
-          }
-          this._instagramLayer.set("token", "");
-          this._instagramLayer.clear();
-          this._instagramLayer.update(0);
-        }), 500);
+        if (this._instagramLayer.get("authorized")) {
+          event.stop(evt);
+          var logoutWindow = window.open("https://instagram.com/accounts/logout");
+          setTimeout(lang.hitch(this, function(){
+            if(lsTest()){
+              localStorage.removeItem(INSTAGRAM_ACCESS_TOKEN);
+            }
+            this._instagramLayer.set("token", "");
+            this._instagramLayer.clear();
+            this._instagramLayer.update(0);
+            logoutWindow.close();
+          }), 1000);
+        }
+        else{
+          this._instagramSignIn(evt);
+        }
       },
       _instagramSignIn: function(evt){
         if(lsTest()){
