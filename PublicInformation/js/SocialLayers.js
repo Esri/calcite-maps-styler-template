@@ -292,13 +292,13 @@ define([
           if (this._instagramStatus2Node) {
             // sign in click
             on(this._instagramStatus2Node, 'a:click', lang.hitch(this, function (evt) {
-              this._instagramSignIn(evt);
+              this._instagramSwitchAccount(evt);
             }));
           }
           if (this._instagramStatus3Node) {
             // sign in click
             on(this._instagramStatus3Node, 'a:click', lang.hitch(this, function (evt) {
-              this._twitterSignIn(evt);
+              this._instagramSignIn(evt);
             }));
           }
           // authorize check
@@ -708,14 +708,31 @@ define([
           // unauthorized user
           this._twitterWindow(this.config.twitterSigninUrl);
         }
+        if(evt){
+          event.stop(evt);
+        }
+      },
+      _instagramSwitchAccount: function(evt){
         event.stop(evt);
+        window.open("https://instagram.com/accounts/logout");
+        setTimeout(lang.hitch(this, function(){
+          if(lsTest()){
+            localStorage.removeItem(INSTAGRAM_ACCESS_TOKEN);
+          }
+          this._instagramLayer.set("token", "");
+          this._instagramLayer.update(0);
+        }), 500);
       },
       _instagramSignIn: function(evt){
         if(lsTest()){
           localStorage.removeItem(INSTAGRAM_ACCESS_TOKEN);
         }
+        this._instagramLayer.set("token", "");
+        this._instagramLayer.update(0);
         this._instagramWindow();
-        event.stop(evt);
+        if(evt){
+          event.stop(evt);
+        }
       },
       _instagramWindow: function () {
         var package_path = window.location.pathname.substring(0, window.location.pathname.lastIndexOf('/'));
