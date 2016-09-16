@@ -1175,7 +1175,7 @@ define([
       //Set the font color using the configured color value
       query(".fc").style("color", this.color.toString());
       query(".esriPopup .titlePane").style("color", this.color.toString());
-      query(".esriPopup. .titleButton").style("color", this.color.toString());
+      query(".esriPopup .titleButton").style("color", this.color.toString());
 
     },
     _adjustPopupSize: function() {
