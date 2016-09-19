@@ -337,7 +337,7 @@ img{
   text-align: center;
 }
 .calcite .esriPopup .header{
-  font-size: 14px;
+  font-size: 12px;
 }
 .calcite .esriPopup a{
   padding:0;
@@ -348,4 +348,7 @@ img{
 }
 .calcite .esriPopup .actionsPane .actionList a:hover {
   color:#323232;
+}
+.calcite .esriPopup .titlePane .title{
+  font-size: 12px;
 }
