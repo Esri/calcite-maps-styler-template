@@ -303,6 +303,7 @@ define([
                 this._destroyEditor();
                 this.map.setInfoWindowOnClick(false);
                 this._createEditor();
+                domClass.remove(dom.byId("page_edit"), "hide");
               } else {
                 //activate the popup and destroy editor if necessary
                 this._destroyEditor();
