@@ -51,9 +51,13 @@
             "category": "Colors",
             "fields": [
                 {
+                    "type": "paragraph",
+                    "value": "Set the base theme, background color and text color:"
+                },
+                {
                     "type": "options",
                     "fieldName": "theme",
-                    "label": "Theme:",
+                    "label": "Theme",
                     "tooltip": "Select a base color for the entire app.",
                     "options": [
                         {
@@ -73,7 +77,7 @@
                 {
                     "type": "options",
                     "fieldName": "bgcolor",
-                    "label": "Background Color:",
+                    "label": "Background Color",
                     "tooltip": "Select the background color for the main title bar.",
                     "options": [
                         {
@@ -145,13 +149,13 @@
                 {
                     "type": "color",
                     "fieldName": "bgcolor",
-                    "label": "Background Color (custom):",
+                    "label": "Background Color (custom)",
                     "tooltip": "Select a custom background color. NOTE: This will override the background color selected above."
                 },
                 { 
                      "type": "options",
                      "fieldName": "opacity",
-                     "label": "Background Color Opacity:",
+                     "label": "Background Color Opacity",
                      "tooltip": "Make the navbar background semi-transparent",
                       "options": [
                         {
@@ -175,7 +179,7 @@
                 {
                     "type": "options",
                     "fieldName": "textcolor",
-                    "label": "Text Color (optional):",
+                    "label": "Text Color (optional)",
                     "tooltip": "Select the text color. Your selection will override the default.",
                     "options": [
                         {
@@ -192,9 +196,13 @@
                     ]
                 },
                 {
+                    "type": "paragraph",
+                    "value": "Set the widget theme:"
+                },
+                {
                     "type": "options",
                     "fieldName": "widgettheme",
-                    "label": "Widget theme:",
+                    "label": "",
                     "tooltip": "Select a base color for the widgets.",
                     "options": [
                         {
@@ -212,11 +220,15 @@
         {
             "category": "Navbar",
             "fields": [
-              {
+                {
+                    "type": "paragraph",
+                    "value": "Set the location of the navbar and the style of the dropdown menu:"
+                },
+                {
                     "type": "options",
                     "fieldName": "layout",
                     "tooltip": "Set the location of the title bar. Position at the top to make the title stand our more. Position at the bottom to encourage users to interact with the map.",
-                    "label": "Navbar:",
+                    "label": "Position",
                     "options": [
                         {
                             "label": "Top",
@@ -241,15 +253,15 @@
                     "type": "options",
                     "fieldName": "menustyledrawer",
                     "tooltip": "Show the main menu as a full sliding drawer",
-                    "label": "Menu:",
+                    "label": "Menu Style",
                     "options": [
                         {
-                            "label": "Default",
-                            "value": ""
+                            "label": "Popup",
+                            "value": false
                         },
                         {
                             "label": "Drawer",
-                            "value": "drawer"
+                            "value": true
                         }
                     ]
                 }
@@ -258,6 +270,10 @@
         {
             "category": "Panels",
             "fields": [
+                {
+                    "type": "paragraph",
+                    "value": "Select the panels (and menus) to display:"
+                },
                 {
                     "type": "boolean",
                     "fieldName": "menuabout",
@@ -279,8 +295,8 @@
                 {
                     "type": "boolean",
                     "fieldName": "menuslides",
-                    "tooltip": "Show menu and panel for slides",
-                    "label": "Slide Show"
+                    "tooltip": "Show menu and panel for slides/bookmarks",
+                    "label": "Slides/Bookmarks"
                 },
                 {
                     "type": "boolean",
@@ -292,7 +308,7 @@
                     "type": "options",
                     "fieldName": "activepanel",
                     "tooltip": "Select the panel to show when the app starts",
-                    "label": "Active Panel:",
+                    "label": "Show this panel at start up:",
                     "options": [
                         {
                             "label": "None",
@@ -311,7 +327,7 @@
                             "value": "basemaps"
                         },
                         {
-                            "label": "Slides",
+                            "label": "Slides/Bookmarks",
                             "value": "slides"
                         }
                     ]
@@ -320,49 +336,347 @@
             ]
         },
         {
+            "category": "Popup",
+            "fields": [
+                {
+                    "type": "paragraph",
+                    "value": "Set the behavior of the popup:"
+                },
+                {
+                    "type": "options",
+                    "fieldName": "dockposition",
+                    "tooltip": "Set the docking position for the popup",
+                    "label": "Docking Position",
+                    "options": [
+                        {
+                            "label": "Top Left",
+                            "value": "top-left"
+                        },
+                        {
+                            "label": "Top Center",
+                            "value": "top-center"
+                        },
+                        {
+                            "label": "Top Right",
+                            "value": "top-right"
+                        },
+                        {
+                            "label": "Bottom Left",
+                            "value": "bottom-left"
+                        },
+                        {
+                            "label": "Bottom Center",
+                            "value": "bottom-center"
+                        },
+                        {
+                            "label": "Bottom Right",
+                            "value": "bottom-right"
+                        },
+                        {
+                            "label": "No Docking",
+                            "value": "none"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
             "category": "Widgets",
             "fields": [
                 {
-                    "type": "boolean",
+                    "type": "paragraph",
+                    "value": "Choose a default layout for all of the widgets:"
+                },
+                {
+                    "type": "options",
+                    "fieldName": "widgetslayout",
+                    "tooltip": "Set the position for all of the widgets and the panel:",
+                    "label": "",
+                    "options": [
+                        {
+                            "label": "Nav [Top Left] - Panels [Right]",
+                            "value": "top-left"
+                        },
+                        {
+                            "label": "Nav [Top Right] - Panels [Left]",
+                            "value": "top-right"
+                        },
+                        {
+                            "label": "Nav [Bottom Left] - Panels [Right]",
+                            "value": "bottom-left"
+                        },
+                        {
+                            "label": "Nav [Bottom Right] - Panels [Left]",
+                            "value": "bottom-right"
+                        }
+
+                    ]
+                },
+                {
+                    "type": "paragraph",
+                    "value": "Or set the position of each widget manually (optional):"
+                },
+                {
+                    "type": "options",
                     "fieldName": "widgetzoom",
-                    "tooltip": "Zoom the map in or out.",
-                    "label": "Zoom"
+                    "tooltip": "Manually position the zoom widget.",
+                    "label": "Zoom",
+                    "options": [
+                        {
+                            "label": "Default",
+                            "value": "show"
+                        },
+                        {
+                            "label": "Top Left",
+                            "value": "top-left"
+                        },
+                        {
+                            "label": "Top Right",
+                            "value": "top-right"
+                        },
+                        {
+                            "label": "Bottom Left",
+                            "value": "bottom-left"
+                        },
+                        {
+                            "label": "Bottom Right",
+                            "value": "bottom-right"
+                        },
+                        {
+                            "label": "Hide",
+                            "value": "hide"
+                        }
+                    ]
                 },
                 {
-                    "type": "boolean",
+                    "type": "options",
                     "fieldName": "widgethome",
-                    "tooltip": "Move map back to default position.",
-                    "label": "Home"
+                    "tooltip": "Manually position the home widget. This widget will zoom to the default location of the map.",
+                    "label": "Home",
+                    "options": [
+                        {
+                            "label": "Default",
+                            "value": "show"
+                        },
+                        {
+                            "label": "Top Left",
+                            "value": "top-left"
+                        },
+                        {
+                            "label": "Top Right",
+                            "value": "top-right"
+                        },
+                        {
+                            "label": "Bottom Left",
+                            "value": "bottom-left"
+                        },
+                        {
+                            "label": "Bottom Right",
+                            "value": "bottom-right"
+                        },
+                        {
+                            "label": "Hide",
+                            "value": "hide"
+                        }
+                    ]
                 },
                 {
-                    "type": "boolean",
+                    "type": "options",
+                    "fieldName": "widgetnavtoggle",
+                    "tooltip": "Manually position the NavigationToggle widget. This widget will allow you to rotate and pan 3D views.",
+                    "label": "Nav (3D only)",
+                    "options": [
+                        {
+                            "label": "Default",
+                            "value": "show"
+                        },
+                        {
+                            "label": "Top Left",
+                            "value": "top-left"
+                        },
+                        {
+                            "label": "Top Right",
+                            "value": "top-right"
+                        },
+                        {
+                            "label": "Bottom Left",
+                            "value": "bottom-left"
+                        },
+                        {
+                            "label": "Bottom Right",
+                            "value": "bottom-right"
+                        },
+                        {
+                            "label": "Hide",
+                            "value": "hide"
+                        }
+                    ]
+                },
+                {
+                    "type": "options",
                     "fieldName": "widgetlocate",
-                    "tooltip": "Move the map to your geolocation.",
-                    "label": "Locate"
+                    "tooltip": "Manually position the locate widget. This widget will navigate to your current geolocation.",
+                    "label": "Locate",
+                    "options": [
+                        {
+                            "label": "Default",
+                            "value": "show"
+                        },
+                        {
+                            "label": "Top Left",
+                            "value": "top-left"
+                        },
+                        {
+                            "label": "Top Right",
+                            "value": "top-right"
+                        },
+                        {
+                            "label": "Bottom Left",
+                            "value": "bottom-left"
+                        },
+                        {
+                            "label": "Bottom Right",
+                            "value": "bottom-right"
+                        },
+                        {
+                            "label": "Hide",
+                            "value": "hide"
+                        }
+                    ]
                 },
                 {
-                    "type": "boolean",
+                    "type": "options",
                     "fieldName": "widgettrack",
-                    "tooltip": "Continuously moves the map to your geolocation.",
-                    "label": "Track"
+                    "tooltip": "Manually position the track widget. This widget will continually navigate to your current geolocation.",
+                    "label": "Track",
+                    "options": [
+                        {
+                            "label": "Default",
+                            "value": "show"
+                        },
+                        {
+                            "label": "Top Left",
+                            "value": "top-left"
+                        },
+                        {
+                            "label": "Top Right",
+                            "value": "top-right"
+                        },
+                        {
+                            "label": "Bottom Left",
+                            "value": "bottom-left"
+                        },
+                        {
+                            "label": "Bottom Right",
+                            "value": "bottom-right"
+                        },
+                        {
+                            "label": "Hide",
+                            "value": "hide"
+                        }
+                    ]
                 },
                 {
-                    "type": "boolean",
+                    "type": "options",
+                    "fieldName": "widgetcompass",
+                    "tooltip": "Manually position the compass widget. This widget will show you the orientation of the map.",
+                    "label": "Compass",
+                    "options": [
+                        {
+                            "label": "Default",
+                            "value": "show"
+                        },
+                        {
+                            "label": "Top Left",
+                            "value": "top-left"
+                        },
+                        {
+                            "label": "Top Right",
+                            "value": "top-right"
+                        },
+                        {
+                            "label": "Bottom Left",
+                            "value": "bottom-left"
+                        },
+                        {
+                            "label": "Bottom Right",
+                            "value": "bottom-right"
+                        },
+                        {
+                            "label": "Hide",
+                            "value": "hide"
+                        }
+                    ]
+                },
+                {
+                    "type": "options",
                     "fieldName": "widgetsearch",
-                    "tooltip": "Show expanding search in nav.",
-                    "label": "Search"
-                },
+                    "tooltip": "Manually position the search widget on the map.",
+                    "label": "Search",
+                    "options": [
+                        {
+                            "label": "Default",
+                            "value": "show"
+                        },
+                        {
+                            "label": "Top Left",
+                            "value": "top-left"
+                        },
+                        {
+                            "label": "Top Right",
+                            "value": "top-right"
+                        },
+                        {
+                            "label": "Bottom Left",
+                            "value": "bottom-left"
+                        },
+                        {
+                            "label": "Bottom Right",
+                            "value": "bottom-right"
+                        },
+                        {
+                            "label": "Hide",
+                            "value": "hide"
+                        }
+                    ]
+                },                
                 {
-                    "type": "boolean",
+                    "type": "options",
                     "fieldName": "widgetbasemaptoggle",
-                    "tooltip": "Show basemaptoggle on map.",
-                    "label": "Basemap Toggle (For best results select Basemap Toggle OR Menu > Basemaps, not both.)"
-                }, 
+                    "tooltip": "Manually position the basemaptoggle widget. This widget will change the basemap.",
+                    "label": "BasemapToggle",
+                    "options": [
+                        {
+                            "label": "Default",
+                            "value": "show"
+                        },
+                        {
+                            "label": "Top Left",
+                            "value": "top-left"
+                        },
+                        {
+                            "label": "Top Right",
+                            "value": "top-right"
+                        },
+                        {
+                            "label": "Bottom Left",
+                            "value": "bottom-left"
+                        },
+                        {
+                            "label": "Bottom Right",
+                            "value": "bottom-right"
+                        },
+                        {
+                            "label": "Hide",
+                            "value": "hide"
+                        }
+                    ]
+                },
                 {
                     "type": "options",
                     "fieldName": "nextbasemap",
                     "tooltip": "Select a basemap to toggle to.",
-                    "label": "Select a second basemap to toggle to:",
+                    "label": "BasemapToggle Second Basemap",
                     "options": [
                         {
                             "label": "Streets",
@@ -425,31 +739,38 @@
                             "value": "streets-night-vector"
                         }
                     ]
+                }
+            ]
+        },
+        {
+            "category": "Search",
+            "fields": [
+                {
+                    "type": "paragraph",
+                    "value": "Set the search behavior:"
                 },
                 {
-                    "type": "options",
-                    "fieldName": "widgetslayout",
-                    "tooltip": "Set the location of the widgets on the map.",
-                    "label": "Position Sets:",
-                    "options": [
-                        {
-                            "label": "Top Left",
-                            "value": "top-left"
-                        },
-                        {
-                            "label": "Top Right",
-                            "value": "top-right"
-                        },
-                        {
-                            "label": "Bottom Left",
-                            "value": "bottom-left"
-                        },
-                        {
-                            "label": "Bottom Right",
-                            "value": "bottom-right"
-                        }
-
-                    ]
+                    "type": "boolean",
+                    "fieldName": "widgetsearchnav",
+                    "tooltip": "Show search widget in nav.",
+                    "label": "Show search in navbar"
+                },
+                {
+                    "type": "boolean",
+                    "fieldName": "findplaces",
+                    "tooltip": "Allow the app to find places when the user long-taps (holds) on the map. Search cities, neighborhoods, parks, restaurants...",
+                    "label": "Find places (click-hold/long-tap on the map to find neighborhoods, parks, restaurants...)"
+                }
+            ]
+        },
+        {
+            "category": "Advanced",
+            "fields": [
+                {
+                    "type": "boolean",
+                    "fieldName": "showerrors",
+                    "tooltip": "Show error messages when webmaps or webscenes fail to load completely.",
+                    "label": "Show errors"
                 }
             ]
         }
@@ -460,7 +781,7 @@
         "abouttext": "",
         "aboutsummary": true,
         "aboutdescription": false,
-        "theme": "",
+        "theme": "dark",
         "bgcolor": "",
         "opacity": 1,
         "textcolor": "",
@@ -473,14 +794,20 @@
         "menubasemaps": true,
         "menuslides": true,
         "menutogglenav": true,
-        "menustyledrawer": "",
-        "widgetzoom": true,
-        "widgethome": true,
-        "widgetlocate": true,
-        "widgettrack": false,
-        "widgetsearch": true,
-        "widgetbasemaptoggle": false,
+        "menustyledrawer": false,
+        "dockposition": "top-right",
+        "widgetzoom": "show",
+        "widgethome": "show",
+        "widgetnavtoggle": "show",
+        "widgetlocate": "show",
+        "widgettrack": "hide",
+        "widgetcompass": "show",
+        "widgetsearch": "hide",
+        "widgetbasemaptoggle": "show",
         "widgetnextbasemap": "imagery",
-        "activepanel": "about"
+        "widgetsearchnav": true,
+        "activepanel": "about",
+        "findplaces": true,
+        "showerrors": true
     }
 }

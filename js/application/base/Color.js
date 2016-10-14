@@ -44,28 +44,33 @@ function(
     getRgba: function(bgColor, opacity) {
       var rgba;
       // rgb
-      if (bgColor) {
-        //rgb or #xxx
-        var c = Color.fromString(bgColor);
-        if (c && (bgColor.indexOf("#") > -1 || bgColor.indexOf("rgb") > -1 || bgColor.indexOf("rgba") > -1)) {
-          rgba = c.toString();
-        } else { // calcite style
-          var bgColorStyle = "calcite-bgcolor-" + bgColor;
-          rgba = this.getRgbaColorFromStyle(bgColorStyle);
-          if (rgba === "rgba(0, 0, 0, 0)" && bgColor !== "transparent") {
-            rgba = null; // invalid calcite color
-          }
-        }
-        // Apply opacity
-        if (rgba) {
-          var cRgba = new Color(rgba);
-          if (opacity) {
-            var val = parseFloat(opacity);
-            if (!isNaN(val)) {
-              cRgba.a = val;
+      if (bgColor && typeof bgColor === "string") {
+        // Handle transparent bg color
+        var trans = bgColor.toLowerCase().replace(/\s+/g, '');
+        if (trans === "transparent" || trans === "rgba(0,0,0,0") {
+          rgba = "rgba(0, 0, 0, 0)";
+        } else { //rgb, rgba or #xxx
+          var c = Color.fromString(bgColor);
+          if (c && (bgColor.indexOf("#") > -1 || bgColor.indexOf("rgb") > -1 || bgColor.indexOf("rgba") > -1)) {
+            rgba = c.toString();
+          } else { // calcite style
+            var bgColorStyle = "calcite-bgcolor-" + bgColor;
+            rgba = this.getRgbaColorFromStyle(bgColorStyle);
+            if (rgba === "rgba(0, 0, 0, 0)") {
+              rgba = null; // invalid calcite color
             }
           }
-          rgba = cRgba.toCss(true);
+          // Apply opacity
+          if (rgba) {
+            var cRgba = new Color(rgba);
+            if (opacity) {
+              var val = parseFloat(opacity);
+              if (!isNaN(val)) {
+                cRgba.a = val;
+              }
+            }
+            rgba = cRgba.toCss(true);
+          }
         }
       }
       return rgba;

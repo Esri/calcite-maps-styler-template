@@ -14,15 +14,16 @@
  | limitations under the License.
  */
 define([
-  "application/view/widgetslayout",
-  "application/base/reporterror",
+  "application/base/widgetslayout",
+  "application/base/message",
 
   "boilerplate/ItemHelper",
 
   "esri/views/ui/Component",
 
   "esri/widgets/Zoom",
-  "esri/widgets/Home",  
+  "esri/widgets/Home",
+  "esri/widgets/NavigationToggle",
   "esri/widgets/Locate", 
   "esri/widgets/Track", 
   "esri/widgets/Compass",
@@ -41,15 +42,16 @@ define([
   "dojo/dom-construct",
   "dojo/Deferred",
   "dojo/_base/lang",
+  "dojo/promise/all",
 
   "dojo/_base/declare",
 ], function (
-  WIDGETS_LAYOUT, Err,
+  WIDGETS_LAYOUT, Message,
   ItemHelper,
   Component,
-  Zoom, Home, Locate, Track, Compass, Search, Legend, BasemapToggle, Attribution,
+  Zoom, Home, NavigationToggle, Locate, Track, Compass, Search, Legend, BasemapToggle, Attribution,
   UnsupportedLayer, UnknownLayer,
-  dom, domAttr, domClass, query, domConstruct, Deferred, lang,
+  dom, domAttr, domClass, query, domConstruct, Deferred, lang, all,
   declare
 ) {
 
@@ -65,6 +67,12 @@ define([
 
       this._boilerplate = boilerplate;
 
+      var widgetsLayoutName = boilerplate.config.widgetslayout;
+
+      this.widgetsLayout = this._getWidgetsLayout(widgetsLayoutName);
+
+      this._showErrors = boilerplate.config.showerrors;
+
     },
 
     //--------------------------------------------------------------------------
@@ -76,11 +84,6 @@ define([
     _boilerplate: null,
 
     _webItem: null,
-
-    _webItemType: {
-      webMap: "Web Map",
-      webScene: "Web Scene"
-    }, 
 
     _defaultViewOptions: {
       padding: {top: 15, bottom: 30},
@@ -94,10 +97,16 @@ define([
 
     _defaultWidgetPosition: "top-left",
 
+    _defaultPopupDockPosition: "top-right",
+
     _errorMessage: {
-      webMapOrSceneLoadFailure: "could not be fully loaded. Stay tuned as <a target='_blank' href='https://developers.arcgis.com/javascript/latest/guide/migrating/index.html#webmap'>full support</a> for webmaps with the <a target='_blank' href='https://developers.arcgis.com/javascript/'>ArcGIS API for Javascript 4</a> is coming soon!",
-      layerLoadFailure: "One or more layers could not be loaded. Stay tuned as <a target='_blank' href='https://developers.arcgis.com/javascript/latest/guide/migrating/index.html#webmap'>full support</a> for webmaps with the <a target='_blank' href='https://developers.arcgis.com/javascript/'>ArcGIS API for Javascript 4</a> is coming soon!"
+      webMapOrSceneUnknownItemType: "Web Map or Web Scene could not be created. Unknown item type.",
+      webMapOrSceneLoadFailureLong: "could not be fully loaded. Stay tuned as <a target='_blank' href='https://developers.arcgis.com/javascript/latest/guide/migrating/index.html#webmap'>full support</a> for webmaps with the <a target='_blank' href='https://developers.arcgis.com/javascript/'>ArcGIS API for Javascript 4</a> is coming soon!",
+      webMapOrSceneNotFullyLoaded: "could not be fully loaded.",
+      layerLoadFailure: "A layer could not be loaded"
     },
+
+    _showErrors: false,
 
     //--------------------------------------------------------------------------
     //
@@ -109,154 +118,152 @@ define([
 
     widgetsLayout: null,
 
+    searchWidget: null,
+
+    legendWidget: null,
+
     // View
 
-    createView: function(webItem, options) {
+    createViewFromItem: function(webItem, options) {
       var deferred = new Deferred();
       options = options || {};
-
       this._webItem = webItem;
-
-      // Create the web map
-      if (webItem.data.type === this._webItemType.webMap) {
-
-        this.createWebMap(webItem).then(function (webMap) {
-          this._watchForLoadErrors(webMap);
-          // Create the map view
-          options.map = webMap;
-          
-          this.createViewByType(webItem.data.type, options).then(function(view) {
-            this.view = view;
-            deferred.resolve({
-              view: view,
-              webMap: webMap,
-              webScene: null
-            });
-          }.bind(this), function(error) {
+      // Promise return values
+      var results = {
+        view: null,
+        webMap: null,
+        webScene: null
+      }
+      var itemHelper = new ItemHelper();
+      // Create map or scene view
+      if (webItem.data.type === "Web Map") {
+        itemHelper.createWebMap(webItem)
+          .then(function(webMap) {
+            results.webMap = webMap;
+            this._loadView(webMap, options, results, deferred);
+          }.bind(this))
+          .otherwise(function(error) {
             deferred.reject(error);
           });
-        
-        }.bind(this), function(error) {
-          deferred.reject(error);
-        });
-
-      // Create the web scene
-      } else if (webItem.data.type === this._webItemType.webScene) { 
-
-        this.createWebScene(webItem).then(function (webScene) {
-          this._watchForLoadErrors(webScene);
-          // Create the scene view
-          options.map = webScene;
-          
-          this.createViewByType(webItem.data.type, options).then(function(view) {
-            this.view = view;
-            deferred.resolve({
-              view: view,
-              webMap: null,
-              webScene: webScene
-            });
-          }.bind(this), function(error) {
+      } else if (webItem.data.type === "Web Scene") {
+        itemHelper.createWebScene(webItem)
+          .then(function(webScene) {
+            results.webScene = webScene;
+            this._loadView(webScene, options, results, deferred);
+          }.bind(this))
+          .otherwise(function(error) {
             deferred.reject(error);
           });
-        
-        }.bind(this), function(error) {
-          deferred.reject(error);
-        });
-
       } else {
-        deferred.reject(new Error("ViewManager:: Web Map or Web Scene could not be created. Unknown item type."));
+        deferred.reject(new Error(this._errorMessage.webMapOrSceneUnknownItemType));
       }
       return deferred.promise;
     },
 
-    createViewByType: function(type, options) {
-      var deferred = new Deferred();
+    // Load map and view
+
+    _loadView: function(webMapOrWebScene, options, results, deferred) {
+      // Load the map and layers and then view
+      webMapOrWebScene.load()
+        .then(function() {
+          this._createView(webMapOrWebScene, options, results).then(function(view) {
+            this.view = view;
+            results.view = view;
+            deferred.resolve(results); // done
+          }.bind(this))
+          .otherwise(function(error) {
+            error.userMsg = "Creating view";
+            deferred.reject(error);
+          })
+          this._reportLayerLoadErrors(webMapOrWebScene.allLayers);
+        }.bind(this))
+        .otherwise(function (error) {
+          error.userMsg = webMapOrWebScene.portalItem.type + " " + this._errorMessage.webMapOrSceneNotFullyLoaded;
+          deferred.reject(error);
+        }.bind(this));
+    },
+    
+    // Create the map/scene view
+    
+    _createView: function(webMapOrWebScene, options) {
+      var viewDeferred = new Deferred();
       // View options
       options = options || { ui:{} };
       var defaultOptions = this._defaultViewOptions;
       var allOptions = lang.mixin({}, defaultOptions, options);
       allOptions.ui = lang.mixin({}, defaultOptions.ui, allOptions.ui);
-      // MapView
-      if (type === this._webItemType.webMap) {
-        require(["esri/views/MapView"], function (MapView) {
-          var view = new MapView(allOptions);
-          deferred.resolve(view);
-        });
-      } else if (type === this._webItemType.webScene) { // SceneView
-        require(["esri/views/SceneView"], function (SceneView) {
-          var view = new SceneView(allOptions);
-          deferred.resolve(view);
-        });
-      } else {
-        deferred.reject(new Error("ViewManager:: Could not create view. Unknow item type."));
+      // Create view
+      var module = webMapOrWebScene.portalItem.type === "Web Map" ? "esri/views/MapView" : "esri/views/SceneView";
+      require([module], function(View){
+        //allOptions.map = webMapOrWebScene; // This fails!
+        var view = new View(allOptions);
+        view.map = webMapOrWebScene; // This works
+        viewDeferred.resolve(view);
+      });
+      return viewDeferred.promise;
+    },
+
+    // Widgets for the app
+
+    createAppWidgets: function() {
+      var view = this.view;
+      if (view) {
+        var settings = this._boilerplate.settings;
+        this.searchWidget = this._createSearchWidget(settings.widgetSearch.containerId, {view: view});
+        this.legendWidget = this._createLegendWidget(settings.widgetLegend.containerId, {view: view});        
       }
-      return deferred.promise;
     },
 
-    // WebMap
-
-    createWebMap: function(webItem) {
-      var deferred = new Deferred();
-      var itemHelper = new ItemHelper();
-      itemHelper.createWebMap(webItem).then(function(webMap) {
-        deferred.resolve(webMap);
-      }.bind(this), function(error) {
-        deferred.reject(error);
-      });
-      return deferred.promise;
-    },
-
-    // WebScene
-
-    createWebScene: function(webItem) {
-      var deferred = new Deferred();
-      var itemHelper = new ItemHelper();
-      itemHelper.createWebScene(webItem).then(function(webScene) {
-        deferred.resolve(webScene);
-      }.bind(this), function(error) {
-        deferred.reject(error);
-      });
-      return deferred.promise;
-    },
-    
     // Widgets for the map/scene view
 
     createMapWidgets: function() {
       var view = this.view;
       if (view) {
         var config = this._boilerplate.config;
-        this.widgetsLayout = this._getWidgetsLayout(config.widgetslayout);
         // Add widgets
         if (config.widgetzoom) {
-          this._addWidget("zoom", config.widgetzoompos, null);
+          this._addWidget("zoom", config.widgetzoom, null);
         }
         if (config.widgethome) {
-          this._addWidget("home", config.widgethomepos, null);
+          this._addWidget("home", config.widgethome, null);
+        }
+        if (config.widgetnavtoggle && view.type !== "2d") {
+          this._addWidget("navtoggle", config.widgetnavtoggle, null);
         }
         if (config.widgetcompass) {
-          this._addWidget("compass", config.widgetcompasspos, null);
+          this._addWidget("compass", config.widgetcompass, null);
         }
         if (config.widgetlocate) {
-          this._addWidget("locate", config.widgetlocatepos, null);
+          this._addWidget("locate", config.widgetlocate, null);
         }
         if (config.widgettrack) {
-          this._addWidget("track", config.widgettrackpos, null);
+          this._addWidget("track", config.widgettrack, null);
         }
         if (config.widgetsearch) {
-          this._addWidget("search", config.widgetsearchpos, null);
+          this._addWidget("search", config.widgetsearch, null);
         }        
         if (config.widgetbasemaptoggle) {
-          this._addWidget("basemaptoggle", config.widgetbasemaptogglepos, { nextBasemap: config.widgetnextbasemap });
+          this._addWidget("basemaptoggle", config.widgetbasemaptoggle, { nextBasemap: config.widgetnextbasemap });
         }
       }
     },
 
-    createAppWidgets: function() {
+    setPopupPosition: function(position) {
       var view = this.view;
       if (view) {
-        var settings = this._boilerplate.settings;
-        this._searchWidget = this._createSearchWidget(settings.widgetSearch.containerId, {view: view});
-        this._legendWidget = this._createLegendWidget(settings.widgetLegend.containerId, {view: view});        
+        view.then(function() {
+          var position = position || this._boilerplate.config.dockposition || this._defaultPopupDockPosition;
+          if (position.match(/^(top-left|top-center|top-right|bottom-left|bottom-center|bottom-right)$/)) {
+            view.popup.dockOptions = {
+              position: position
+            }
+          } else if (position.match(/^(none)$/)) {
+            view.popup.dockEnabled = false;
+            view.popup.dockOptions = {
+              buttonEnabled: false
+            }
+          }                    
+        }.bind(this));
       }
     },
 
@@ -268,13 +275,18 @@ define([
 
     _addWidget: function(name, position, options) {
       if (this.view) {
-        var widget = this._createWidget(name, options);
-        if (widget) {
-          var component = this._createComponent(name, widget);
-          // Can provide custom position
-          position = position || this._getWidgetPosition(name);
-          position = this._returnValidPosition(position);
-          this.view.ui.add(component, position);
+        if (position && position !== "hide") { // TODO
+          var widget = this._createWidget(name, options);
+          if (widget) {
+            var component = this._createComponent(name, widget);
+            // Can provide custom position
+            if (position === "show") {
+              position = this._getDefaultWidgetPosition(name); 
+            } else {
+              position = this._returnValidPosition(position);
+            }
+            this.view.ui.add(component, position);
+          }
         }
       }
     },
@@ -293,7 +305,7 @@ define([
     _getWidgetsLayout: function(widgetsLayoutName) {
       var widgetsLayout;
       widgetsLayoutName = widgetsLayoutName || this._defaultWidgetsLayoutName;
-      widgetsLayoutName.toLowerCase();
+      widgetsLayoutName = widgetsLayoutName.toLowerCase();
       switch (widgetsLayoutName) {
         case "top-left":
           widgetsLayout = WIDGETS_LAYOUT.topLeft;
@@ -313,7 +325,7 @@ define([
       return widgetsLayout;
     },
 
-    _getWidgetPosition: function(name) {
+    _getDefaultWidgetPosition: function(name) {
       var position;
       var widgetsLayout = this.widgetsLayout;
       if (name && widgetsLayout) {
@@ -348,6 +360,11 @@ define([
           break;
         case "home":
           widget = new Home({
+            viewModel: viewModel
+          });
+          break;
+        case "navtoggle":
+          widget = new NavigationToggle({
             viewModel: viewModel
           });
           break;
@@ -390,153 +407,47 @@ define([
     },
 
     _createSearchWidget: function(id, searchOptions) {
-      var options =   {
-        highlightEnabled: false,
-        popupEnabled: true,
-        showPopupOnSelect: true
+      var search;
+      if (id) {
+        var options =   {
+          highlightEnabled: false,
+          popupEnabled: true,
+          showPopupOnSelect: true
+        }
+        lang.mixin(options, searchOptions);
+        search = new Search(options, id);
+        search.startup();
       }
-      lang.mixin(options, searchOptions);
-      var search = new Search(options, id);
-      search.startup();
       return search;
     },
 
     _createLegendWidget: function(id, legendOptions) {
-      var options = {};
-      lang.mixin(options, legendOptions);
-      var legend = new Legend(options, id);
-      legend.startup();
+      var legend;
+      if (id) {
+        var options = {};
+        lang.mixin(options, legendOptions);
+        legend = new Legend(options, id);
+        legend.startup();
+      }
       return legend;
-    },
-
-    _setMapWidgetEvents: function() {
-      this._setCompassEvents();
-      this._setHomeEvents();
-    },
-
-    _setCompassEvents: function() {
-      var activeView = this._activeView;
-      if (activeView) {
-        var compass = activeView.ui.find("compass");
-        if (activeView.type === "2d") {
-          activeView.watch("rotation", function(result) { //
-            if (compass && activeView.viewpoint) {
-              var visible = Math.round(result) !== 0;
-              if (visible !== compass.widget.visible) {
-                compass.widget.visible = visible; // TODO - fade in/out  
-              }
-            }
-          });
-        } else {
-          activeView.watch("scale", function(result) { //
-            if (compass && activeView.viewpoint) {
-              var visible = Math.round(activeView.viewpoint.rotation) !== 0;
-              if (visible !== compass.widget.visible) {
-                compass.widget.visible = visible; // TODO - fade in/out  
-              }
-            }
-          });
-        }
-      }
-    },
-
-    _setHomeEvents: function() {
-      var activeView = this._activeView;
-      if (activeView) {
-        var home = activeView.ui.find("home").widget;
-        home._state = {
-          ready: false,
-          clicked:false
-        }
-        
-        function setHomeVisible(visible) {
-          if (home._state.ready) {
-            if (home._state.clicked) {
-              home.visible = false;
-              home._state.clicked = false;
-            } else {
-              if (home.visible !== visible) {
-                home.visible = visible; // TODO - fade in/out
-              }
-            }
-          }
-        }
-        
-        home.viewModel.watch("state", function(result) {
-          if (result === "going-home") {
-            home._state.clicked = true;            
-          }
-        });
-
-        function doneLoading(evt) {
-          //console.log(evt + ": ready: " + activeView.ready + " | working: " + activeView.layerViewManager.factory.working + " | stationary: " + activeView.stationary + " | updating: " + activeView.updating);
-          if (!activeView.layerViewManager.factory.working && activeView.stationary && !activeView.updating || activeView.interacting) {
-            if (!home._state.ready) {
-              home._state.ready = true;
-              setHomeVisible(false);
-            } else {
-              setHomeVisible(true);
-            }
-          }
-        }
-        
-        activeView.layerViewManager.factory.watch("working", function(newVal, oldVal) {
-          doneLoading("LayerViewManager");
-        });
-        activeView.watch("stationary", function(newVal, oldVal) {
-          doneLoading("Stationary");
-        });
-        activeView.watch("updating", function(newVal, oldVal) {
-          doneLoading("Updating");
-        });
-        activeView.watch("interacting", function(newVal, oldVal) {
-          doneLoading("interacting");
-        });
-      }
     },
 
     // Webmap/webscene layer check
 
-    _watchForLoadErrors: function(webMapOrWebScene) {
-
-      var webItemType = this._webItem.data.type === this._webItemType.webMap ? this._webItemType.webMap : this._webItemType.webScene;
-
-      // Webmap/webscene load errors
-      webMapOrWebScene.watch("loadStatus", function(status) {
-        if (status === "failed") {
-          Err.show(Err.name.snap, webItemType + " " + this._errorMessage.webMapOrSceneLoadFailure + " - " + status);
-        };
-      }.bind(this));
-
-      // Map layers load errors
-      webMapOrWebScene.then(function(map) {
-
-        map.allLayers.forEach(function(layer) {
-          
-          // Unsupported layer
-          if (layer instanceof UnsupportedLayer) {
-            Err.show(Err.name.snap, this._errorMessage.layerLoadFailure + ": " + layer.title + " " + "UnsupportedLayer");
-          }
-          // Unknow layer
-          if (layer instanceof UnknownLayer) {
-            Err.show(Err.name.snap, this._errorMessage.layerLoadFailure + ": " + layer.title + " " + "UnknownLayer");
-          }
-
-          // Layer load failed (notified by loadFailed)
-          layer.watch("loadStatus", function(err) {
-            if (err === "failed") {
-              Err.show(Err.name.snap, this._errorMessage.layerLoadFailure + ": " + layer.title + " " + err);
-            }
+    _reportLayerLoadErrors: function(allLayers) {
+      var webItemType = this._webItem.data.type;
+      allLayers.forEach(function(layer) {
+        if (layer instanceof UnsupportedLayer) {
+          Message.show(Message.type.snap, new Error(this._errorMessage.layerLoadFailure + ". " + layer.title + " is unsupported."), true, this._showErrors);
+        } else if (layer instanceof UnknownLayer) {
+          Message.show(Message.type.snap, new Error(this._errorMessage.layerLoadFailure + ". " + " is an unknown type."), true, this._showErrors);
+        } else {
+          layer.load().otherwise(function(error){
+            error.userMsg = this._errorMessage.layerLoadFailure + ". " + layer.title;
+            Message.show(Message.type.snap, error, true, this._showErrors);
           }.bind(this));
-
-        }.bind(this), function(err) {
-          Err.show(Err.name.snap, this._errorMessage.layerLoadFailure + ": " + layer.title + " " + err);
-        }.bind(this));
-
-      }.bind(this), function(err){
-        Err.show(Err.name.snap, webItemType + " " + this._errorMessage.webMapOrSceneLoadFailure + " - " + err);
-      }.bind(this));
-
+        }
+      }.bind(this));   
     }
 
   })

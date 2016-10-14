@@ -26,37 +26,61 @@ define([
     errorIcon: "esri-icon-notice-round"
   };
 
-  var Name = {
+  var Type = {
     error: "Error:",
     warning: "Warning:",
     attention: "Attention:",
     snap: "Aw, Snap!"
   };
 
-	var Err = {
- 		show: function(errType, errMsg) {
-      domClass.remove(document.body, CSS.loading);
-      var node = dom.byId("calciteErrorMessage");
-      if (node) {
-        node.innerHTML = `<span class="esri-icon-notice-round"></span><span class="calcite-err-msg"><strong>&nbsp;&nbsp;${errType}</strong>&nbsp;${errMsg}</span>`;
-        query(".calcite-alert").removeClass("hidden");
+  var _getMessage = function(error) {
+      var userMsg;
+      if (error.userMsg) {
+        userMsg = error.userMsg + " " + error.message + ".";
+      } else {
+        userMsg = error.message + ".";
       }
-      var err = new Error(errType + " " + errMsg);
-      return err;
+      return userMsg;
+  }
+
+	var Message = {
+ 		show: function(errType, error, log, showMessages) {
+      errType = errType || Message.type.error;
+      error = error || new Error("Styler error");
+      var userMsg = Message.getMessage(error);
+      // Hide loading
+      domClass.remove(document.body, CSS.loading);
+      // Show window
+      if (showMessages) {
+        var node = query(".calcite-alert .alert-message")[0];
+        if (node) {
+          node.innerHTML = `<span><strong>${errType}</strong>&nbsp;${userMsg}</span>`;
+          query(".calcite-alert").removeClass("hidden");
+        }
+      }
+      if (log) {
+        console.error(userMsg + " " + error.name);
+      }
+      return error;
     },
     hide: function() {
-       var node = dom.byId("calciteErrorMessage");
+      var node = dom.byId("calciteErrorMessage");
       if (node) {
         query(".calcite-alert").addClass("hidden");
       }
+    },
+    log: function(errType, error) {
+      var userMsg = Message.getMessage(errType, error);
+      console.error(userMsg + " " + error.name);
     },
     removeLoading: function() {
     	domClass.remove(document.body, CSS.loading);
     }	  
 	}
 
-	Err.CSS = CSS;
-  Err.name = Name;
+	Message.CSS = CSS;
+  Message.type = Type;
+  Message.getMessage = _getMessage;
 
-	return Err;
+	return Message;
 });

@@ -29,13 +29,13 @@ NOTE: Web Maps are only [partially supported](https://developers.arcgis.com/java
 
 ## Settings & Configuration
 
-These are the configuration options for the application. `appSettings.json`
+These are the configuration options for the application. You can specify in the URL or in `appSettings.json`.
 
 |property|description|type|options|
 |---|---|---|---|
 |appid|Application ID for querying application configuration|String|""|
-|webscene|Webscene ID for querying a webscene|String|"19faa71a3bf6468cae35b4fce9393a7d"|
-|webmap|Webmap ID for querying a webmap|String|""|
+|webmap|Webmap ID for querying a webmap|String|"e1653fe614c04b6aa4efba5ba7b56d05"|
+|webscene|Webscene ID for querying a webscene|String|"bdc09d6c8ef8492783ebe2c572950931"|
 |title|Title of the application|String|""|
 |subtitle|Subtitle of the application|String|""|
 |abouttext|Information about your application|String|""|
@@ -49,18 +49,23 @@ These are the configuration options for the application. `appSettings.json`
 |layout|The position of the navbar|String|"top", "top-large", "top-margin", "bottom", "bottom-large", "bottom-margin"|
 |panelslayout|The position of the panels|String|"left", "right"|
 |widgetslayout|The position set for widgets|String|"top-left", "top-right", "bottom-left", "bottom-right"|
-|menuXXX|Name of the menus to display (menuabout, menulegend, menubasemaps, menuslides, menutogglenav)|Boolean|true, false|
-|menuStyleDrawer|The style of the menu|Boolean|true,false|
-|widgetXXX|Name of the widget to add to the view (widgetzoom, widgethome, widgetlocate, widgettrack, widgetsearch, widgetbasemaptoggle)|Boolean|true, false|
-|widgetnextbasemap|The name of the next basemap for the toggle|String|"streets", "satellite..."|
+|menuxxx|Name of the menus and panels to display (menuabout, menulegend, menubasemaps, menuslides, menutogglenav)|Boolean|true, false|
+|menustyledrawer|The style of the menu|Boolean|true,false|
+|dockposition|Position to dock the popup. See ArcGIS JS API|String|"top-right", "top-center", "top-left", "bottom-right", "bottom-center", "bottom-left"|
+|widgetxxx|Name of the widget to add to the view (widgetzoom, widgethome, widgetlocate, widgettrack, widgetsearch, widgetbasemaptoggle)|Boolean|true, false|
+|widgetnextbasemap|The name of the next basemap for the toggle. See ArcGIS JS API|String|"streets", "satellite..."|
 |widgetsearchnav|Show the search widget in the navbar|Boolean|true, false|
 |activepanel|Name of the panel to show when app loads|String|"about", "legend", "basemaps", "slides"|
+|findplaces|Enable long-tap/hold search for restaurants, parks, stores...|Boolean|true, false|
+|showerrors|Display errors in a window when webmap or webscene have load failures|Boolean|true, false|
 
 ### JSON Example
 
 ```js
 {
-  "webmap": "",
+  "appid": "",
+  "group": "",
+  "webmap": "e1653fe614c04b6aa4efba5ba7b56d05",
   "webscene": "",
 
   "title": "",
@@ -76,8 +81,8 @@ These are the configuration options for the application. `appSettings.json`
   "widgettheme": "",
 
   "layout": "top",
-  "panelslayout": "right",
-  "widgetslayout": "topleft",
+  "panelslayout": "",
+  "widgetslayout": "top-left",
 
   "menuabout": true,
   "menulegend": true,
@@ -87,18 +92,24 @@ These are the configuration options for the application. `appSettings.json`
 
   "menustyledrawer": false,
 
-  "widgetzoom": true,
-  "widgethome": true,
-  "widgetcompass": true,
-  "widgetlocate": true,
-  "widgettrack": false,
-  "widgetsearch": false,
-  "widgetbasemaptoggle": true,
+  "dockposition": "top-right",
+
+  "widgetzoom": "show",
+  "widgethome": "show",
+  "widgetcompass": "show",
+  "widgetnavtoggle": "show",
+  "widgetlocate": "show",
+  "widgettrack": "hide",
+  "widgetsearch": "hide",
+  "widgetbasemaptoggle": "show",
   "widgetnextbasemap": "streets",
   "widgetsearchnav": true,
 
-  "activepanel": ""
-  }
+  "activepanel": "about",
+
+  "findplaces": true,
+
+  "showerrors": true
 }
 ```
 

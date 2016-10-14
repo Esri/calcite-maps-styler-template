@@ -5,7 +5,7 @@ dojoConfig = {
   packages: [
   {
     name: "dojo",
-    location: "https://js.arcgis.com/4.1/dojo"
+    location: "http://localhost/GitHub/arcgis-js-api/dojo/"
   }, 
   {
     name: "application",

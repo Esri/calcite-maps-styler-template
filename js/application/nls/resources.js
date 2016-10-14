@@ -24,6 +24,7 @@
         "basemaps": "Basemaps",
         "legend": "Legend",
         "slides": "Slides",
+        "bookmarks": "Bookmarks",
         "toggleNav": "Full Map"
       }
     },

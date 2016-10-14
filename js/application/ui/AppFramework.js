@@ -67,7 +67,6 @@ define([
     setEvents: function() {
     	this._setViewEvents();
     	this._setPanelEvents();
-    	this._setPopupEvents();
     },
 
 		// View Events
@@ -94,9 +93,10 @@ define([
     _setPanelVisibility: function() {
       var activeView = this._activeView;
       if (activeView) {
-        var isMobileScreen = activeView.widthBreakpoint === "xsmall" || activeView.widthBreakpoint === "small",
-          isDockedVisible = activeView.popup.visible && activeView.popup.currentDockPosition,
-          isDockedBottom = activeView.popup.currentDockPosition && activeView.popup.currentDockPosition.indexOf("bottom") > -1;
+        var isMobileScreen = activeView.widthBreakpoint === "xsmall" || activeView.widthBreakpoint === "small";
+        var isDockedVisible = activeView.popup.visible && activeView.popup.currentDockPosition;
+        var isDockedBottom = activeView.popup.currentDockPosition && activeView.popup.currentDockPosition.indexOf("bottom") > -1;
+        var isCollision = this._isPanelPopupCollision();
         // Mobile (xsmall/small)
         if (isMobileScreen) {
           if (isDockedVisible && isDockedBottom) {
@@ -105,7 +105,7 @@ define([
             query(CALCITE_SELECTORS.panels).removeClass("invisible");
           }
         } else { // Desktop (medium+)
-          if (isDockedVisible) {
+          if (isDockedVisible && isCollision) {
             query(CALCITE_SELECTORS.panels).addClass("invisible");
           } else {
             query(CALCITE_SELECTORS.panels).removeClass("invisible");          
@@ -121,7 +121,7 @@ define([
       if (activeView) {
         // Panels - Dock popup when panels show (desktop or mobile)
         query(CALCITE_SELECTORS.panelsPanel).on("show.bs.collapse", lang.hitch(this, function(e) {
-          if (activeView.popup.currentDockPosition || activeView.widthBreakpoint === "xsmall") {
+          if ((activeView.popup.currentDockPosition && this._isPanelPopupCollision()) || activeView.widthBreakpoint === "xsmall") {
             activeView.popup.dockEnabled = false;
           }
         }));
@@ -135,14 +135,10 @@ define([
 
     },
 
-    // Collapsible popup
-
-    _setPopupEvents: function() {
+    _isPanelPopupCollision: function() {
       var activeView = this._activeView;
-      query(".esri-popup .esri-title").on("click", lang.hitch(activeView, function(e){
-        query(".esri-popup .esri-container").toggleClass("esri-popup-collapsed");
-        activeView.popup.reposition();
-      }));
+      var collision = (activeView.popup.currentDockPosition === "top-right" && query(".calcite-panels.calcite-panels-right").length > 0) || (activeView.popup.currentDockPosition === "top-left" && query(".calcite-panels.calcite-panels-left").length > 0);
+      return collision;
     },
 
     // Menu

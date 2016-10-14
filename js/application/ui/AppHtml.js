@@ -20,6 +20,8 @@ define([
 
   "esri/webscene/Slide",
   "esri/core/Collection",
+  "esri/views/MapView",
+  "esri/Map",
   "esri/Viewpoint",
   "esri/geometry/Extent",
 
@@ -33,7 +35,7 @@ define([
 ], function (
   SELECTORS,
   basemapDefs,
-  Slide, Collection, Viewpoint, Extent,
+  Slide, Collection, MapView, Map, Viewpoint, Extent,
   dom, domAttr, domClass, query, domConstruct,
   declare
 ) {
@@ -52,6 +54,8 @@ define([
 
       this._webItem = webItem;
 
+      this._isWebMap = this._getIsWebMap(webItem);
+
       this._i18n = i18n;
 
     },
@@ -64,15 +68,11 @@ define([
 
     _boilerplate: null,
 
-    _i18n: null,
-
-    _activeView: null,
-
-    _webMap: null,
-
-    _webScene: null,
+    _webItem: null,
 
     _isWebMap: false,
+
+    _i18n: null,
 
     //--------------------------------------------------------------------------
     //
@@ -87,6 +87,7 @@ define([
       this.setMenusHtml();
       this.setPanelsHtml();
       this.setWidgetsVisible();
+      this.setActivePanelVisible();
     },
 
     setNavbarHtml: function() {
@@ -103,7 +104,6 @@ define([
     setPanelsHtml: function() {
       this._setPanelTitles();
       this._setAboutPanelText();
-      this._setActivePanelVisible();
     },
 
     setWidgetsVisible: function() {
@@ -111,33 +111,42 @@ define([
       this._setSearchWidgetVisible();
     },
 
-    // Set map and view props
-
-    setViewProperties: function(viewProps) {
-      this._activeView = viewProps.view;
-      this._webMap = viewProps.webMap;
-      this._webScene = viewProps.webScene;
-      this._isWebMap = this._getIsWebMap();
-    },
-
     // Create content, requires view
 
-    setViewPanelsHtml: function() {
-      this._setSlidesPanel();
-      this._setBasemapPanel();
+    createViewPanelsHtml: function(view, webMapOrWebScene) {
+      this._setSlidesPanel(view, webMapOrWebScene);
+      this._setBasemapPanel(view);
+      this._setTooltips(view);
     },
 
-    // Bootstrap tooltips
+    // Active panel
 
-    setTooltips: function() {
-      if (this._activeView) {
-        this._activeView.then(function() {
-          query('[data-toggle="tooltip"]').tooltip({ 
-            "show": 100, 
-            "hide": 100,
-            container: "panelSlides"
-          });        
-        })
+    setActivePanelVisible: function() {
+      var panelName = this._boilerplate.config.activepanel;
+      if (panelName) {
+        var panelSelector;
+        switch (panelName) {
+          case "about":
+            panelSelector = SELECTORS.panelAbout;
+            break;
+          case "legend":
+            panelSelector = SELECTORS.panelLegend;
+            break;
+          case "basemaps":
+            panelSelector = SELECTORS.panelBasemaps;
+            break;
+          case "slides":
+            panelSelector = SELECTORS.panelSlides;
+            break;
+          default:
+            panelSelector = null;
+        }
+        if (panelSelector) {
+          var menu = this._boilerplate.config["menu" + panelName]; // has menu visible
+          if (menu) {
+            query(panelSelector + ", " + panelSelector + " .panel-collapse").addClass("in");
+          }
+        }
       }
     },
  
@@ -147,9 +156,9 @@ define([
     //
     //--------------------------------------------------------------------------
 
-    _getIsWebMap: function() {
-      if (this._activeView) {
-        return this._activeView.type === "2d";
+    _getIsWebMap: function(webItem) {
+      if (webItem && webItem.data && webItem.data.type) {
+        return webItem.data.type === "Web Map";
       }
     },
 
@@ -184,7 +193,7 @@ define([
       query(SELECTORS.menuAbout + " a")[0].innerHTML = query(SELECTORS.menuAbout + " a")[0].innerHTML + "&nbsp;" + i18n.menu.items.about;
       query(SELECTORS.menuLegend + " a")[0].innerHTML = query(SELECTORS.menuLegend + " a")[0].innerHTML + "&nbsp;" + i18n.menu.items.legend;
       query(SELECTORS.menuBasemaps + " a")[0].innerHTML = query(SELECTORS.menuBasemaps + " a")[0].innerHTML + "&nbsp;" + i18n.menu.items.basemaps;
-      query(SELECTORS.menuSlides + " a")[0].innerHTML = query(SELECTORS.menuSlides + " a")[0].innerHTML + "&nbsp;" + i18n.menu.items.slides;
+      query(SELECTORS.menuSlides + " a")[0].innerHTML = query(SELECTORS.menuSlides + " a")[0].innerHTML + "&nbsp;" + (this._isWebMap ? i18n.menu.items.bookmarks : i18n.menu.items.slides);
       query(SELECTORS.menuToggleNav + " a")[0].innerHTML = query(SELECTORS.menuToggleNav + " a")[0].innerHTML + "&nbsp;" + i18n.menu.items.toggleNav;
     },
 
@@ -195,12 +204,12 @@ define([
       query(SELECTORS.panelAbout + " " + SELECTORS.panelTitle)[0].innerHTML = i18n.menu.items.about;
       query(SELECTORS.panelLegend + " " + SELECTORS.panelTitle)[0].innerHTML = i18n.menu.items.legend;
       query(SELECTORS.panelBasemaps + " " + SELECTORS.panelTitle)[0].innerHTML = i18n.menu.items.basemaps;
-      query(SELECTORS.panelSlides + " " + SELECTORS.panelTitle)[0].innerHTML = i18n.menu.items.slides;
+      query(SELECTORS.panelSlides + " " + SELECTORS.panelTitle)[0].innerHTML = (this._isWebMap ? i18n.menu.items.bookmarks : i18n.menu.items.slides);      
     },
 
     _setMenusVisible: function(boilerplate) {
       var boilerplate = this._boilerplate;
-      // Remove main menu if no menus visible
+      // Remove main menu if no menus are visible
       if (boilerplate.config.menuabout === false && boilerplate.config.menulegend === false && boilerplate.config.menubasemaps === false && boilerplate.config.menutogglenav === false) {
         query(SELECTORS.mainMenu).addClass("hidden");
         query(SELECTORS.title).addClass("calcite-title-left-margin");
@@ -235,12 +244,12 @@ define([
     // Panels
 
     _getAboutPanelText: function() {
-      var boilerplate = this._boilerplate;
+      var config = this._boilerplate.config;
       var webItem = this._webItem;
       if (webItem && webItem.data) {
-        var aboutText  = boilerplate.config.abouttext;
-        var addSummary = boilerplate.config.aboutsummary;
-        var addDesc = boilerplate.config.aboutdescription;
+        var aboutText  = config.abouttext;
+        var addSummary = config.aboutsummary;
+        var addDesc = config.aboutdescription;
         var summaryText = null;
         var descriptionText = null;
         
@@ -266,7 +275,7 @@ define([
         }
         // TODO
         if (aboutText) {
-          boilerplate.config.abouttext = aboutText;
+          config.abouttext = aboutText;
         }
         return aboutText;
       }
@@ -280,36 +289,9 @@ define([
       }
     },
 
-    _setActivePanelVisible: function() {
-      var panelName = this._boilerplate.config.activepanel;
-      if (panelName) {
-        var panelSelector;
-        switch (panelName) {
-          case "about":
-            panelSelector = SELECTORS.panelAbout;
-            break;
-          case "legend":
-            panelSelector = SELECTORS.panelLegend;
-            break;
-          case "basemaps":
-            panelSelector = SELECTORS.panelBasemaps;
-            break;
-          case "slides":
-            panelSelector = SELECTORS.panelSlides;
-            break;
-          default:
-            panelSelector = null;
-        }
-        if (panelSelector) {
-          query(panelSelector + ", " + panelSelector + " .panel-collapse").addClass("in");
-        }
-      }
-    },
-
     // Basemaps
 
-    _setBasemapEvents: function() {
-      var view = this._activeView;
+    _setBasemapEvents: function(view) {
       if (view) {
         query("#selectBasemapPanel").on("change", function(e) {
           if (e.target.value !== "select") {
@@ -323,8 +305,7 @@ define([
       }
     },
 
-    _setBasemapPanel: function() {
-      var view = this._activeView;
+    _setBasemapPanel: function(view) {
       if (view) {
         var isWebMap = this._isWebMap;
         query("#selectBasemapPanel [data-vector=select]")[0].innerHTML = "--- " + this._i18n.basemaps.select + " ---";
@@ -378,20 +359,19 @@ define([
       return slides;
     },
 
-    _setSlidesPanel: function() {
-
-      var webMapOrWebScene = this._webMap || this._webScene;
-
-      if (this._activeView && webMapOrWebScene) {
+    _setSlidesPanel: function(view, webMapOrWebScene) {
+      if (view && webMapOrWebScene) {
 
         // Prevent auto-start - configurable option?
         query(SELECTORS.carouselSlides).carousel({interval: false});
 
         // Build the slides when the view is ready
-        this._activeView.then(function(view) {
+        view.then(function(view) {
 
           var slides;
           var isWebMap = this._isWebMap;
+
+          var slideMap;
 
           function goToSlide(slide) {
             if (isWebMap) { // Map
@@ -403,6 +383,9 @@ define([
 
           if (isWebMap) { // Map
             slides = this._createSlidesFromBookmarks(webMapOrWebScene.bookmarks);
+            slideMap = new Map({
+              basemap: view.map.basemap
+            });
           } else { // Scene
             slides = webMapOrWebScene.presentation.slides;
           }
@@ -421,9 +404,32 @@ define([
                 goToSlide(slide);
                 query(SELECTORS.carouselSlides).carousel(i);
               });
-              var item = "<div id=" + slide.id + " class='item " + active + "'><img src=" + slide.thumbnail.url + "><div class='carousel-caption'>" + slide.title.text + "</div></div>";
+              var item;
+              if (isWebMap) {
+                var mapId = slide.id + "map";
+                item = "<div id=" + slide.id + " class='item " + active + "'><div class='slide-map' id='" + mapId + "'><div class='carousel-caption'>" + slide.title.text + "</div></div>";
+              } else {
+                item = "<div id=" + slide.id + " class='item " + active + "'><img src=" + slide.thumbnail.url + "><div class='carousel-caption'>" + slide.title.text + "</div></div>";
+              }
               domConstruct.place(item, carouselInner, i);
-            });
+
+              // Create a view for each slide
+              if (isWebMap) {
+                var slideView = new MapView({
+                  container: mapId,
+                  map: slideMap,
+                  ui: {components: []},
+                  extent: slide.viewpoint.targetGeometry
+                });
+                slideView.then(function(){
+                  slideView.constraints = {
+                    minScale: slideView.scale,
+                    maxScale: slideView.scale,
+                    rotationEnabled: false
+                  }
+                });
+              }
+            }.bind(this));
 
             // Zoom to slide after it is slid
             query(SELECTORS.carouselSlides).on("slid.bs.carousel", function(e) {
@@ -442,6 +448,21 @@ define([
       } else {
         query(SELECTORS.menuSlides).addClass("hidden");
         query(SELECTORS.panelSlides).addClass("hidden");
+      }
+    },
+
+
+    // Bootstrap tooltips
+
+    _setTooltips: function(view) {
+      if (view) {
+        view.then(function() {
+          query('[data-toggle="tooltip"]').tooltip({ 
+            "show": 100, 
+            "hide": 100,
+            container: "panelSlides"
+          });        
+        })
       }
     }
 

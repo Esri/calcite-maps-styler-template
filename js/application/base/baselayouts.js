@@ -16,10 +16,9 @@
 define([
   "application/base/styles",
   "application/base/padding",
-], function (
-  STYLES, PADDING) {
+], function (STYLES, PADDING) {
 
-  var LAYOUT = {
+  var BASELAYOUTS = {
       top: {
         name: "top",
         theme: "",
@@ -225,5 +224,5 @@ define([
 
   // })
 
-  return LAYOUT;
+  return BASELAYOUTS;
 });

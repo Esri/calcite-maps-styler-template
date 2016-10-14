@@ -15,11 +15,12 @@
  */
 define([
 
-  "application/style/Styler",
-  "application/ui/HtmlBuilder",
-  "application/ui/Framework",
+  "application/ui/AppStyler",
+  "application/ui/AppHtml",
+  "application/ui/AppFramework",
   "application/view/ViewManager",
-  "application/base/reporterror",
+  "application/widgets/WidgetsExt",
+  "application/base/message",
 
   "dojo/dom",
   "dojo/dom-class",
@@ -30,6 +31,9 @@ define([
   "dojo/_base/lang",
   "dojo/_base/declare",
 
+  // Calcite Maps
+  "calcite-maps/calcitemaps-v0.2",
+
   // Bootstrap
   "bootstrap/Collapse",
   "bootstrap/Dropdown",
@@ -38,17 +42,15 @@ define([
   "bootstrap/Carousel",
   "bootstrap/Tooltip",
 
-  // Calcite Maps
-  "calcite-maps/calcitemaps-v0.2",
-
-  "domReady!"
+  "dojo/domReady!"
 
 ], function (
-  Styler, HtmlBuilder, Framework, ViewManager, Err,
+  AppStyler, AppHtml, AppFramework, ViewManager, WidgetsExt, Message,
   dom, domClass, domAttr, query,
   i18n,
   lang,
-  declare
+  declare,
+  calciteMaps
 ) {
 
   //--------------------------------------------------------------------------
@@ -67,7 +69,11 @@ define([
     //
     //--------------------------------------------------------------------------
 
-    constructor: function () {},
+    constructor: function () {
+
+      calciteMaps.stickyDropdownDesktop = false;
+
+    },
 
     //--------------------------------------------------------------------------
     //
@@ -77,11 +83,15 @@ define([
 
     _boilerplate: null,
 
-    _appStyle: null,
+    _appStyler: null,
 
-    _appUI: null,
+    _appHtml: null,
 
     _appViewManager: null,
+
+    _appFramework: null,
+
+    _showErrors: false,
 
     //--------------------------------------------------------------------------
     //
@@ -91,47 +101,25 @@ define([
 
     init: function (boilerplate) {
       if (boilerplate) {
-
         this._boilerplate = boilerplate;
-
-        // Get the webmap or webscene item
+        // Get the webmap or webscene portal item
         var webItem = this._getWebItem();
-        if (!webItem) {
-          var errorInfo = this._getWebItemErrorInfo(webItem);
-          Err.show(Err.name.error, `${errorInfo.type} could not be created for: ${errorInfo.id}`);
-          return;
+        if (webItem) {
+          this._showErrors = boilerplate.config.showerrors;
+          // Document language, direction and title
+          this._setDocumentProperties(webItem);
+          // Theme, layout and widget styles
+          this._setStyles(boilerplate);
+          // Page content (that doesn't need the view)
+          this._setHtml(boilerplate, webItem, i18n);
+          // Map or scene view, widgets and app
+          this._createView(boilerplate, webItem);
+        } else {
+            var errMsg = this._getWebItemErrorMessage(webItem);
+            Message.show(Message.type.error, new Error(errMsg), true, this._showErrors);
         }
-
-        // Set document properties
-        this._setDocumentProperties(webItem);
-
-        // Set theme, layout and widget styles
-        this._appStyle = new Styler(boilerplate);
-        this._appStyle.setStyles();
-        
-        // Set app html
-        this._appUI = new HtmlBuilder(boilerplate, webItem, i18n);
-        this._appUI.setBaseHtml();
-
-        var viewOptions = this._getViewOptions(webItem);
-
-        // Create the view
-        this._appViewManager = new ViewManager(this._boilerplate);
-        this._appViewManager.createView(webItem, viewOptions).then(function(viewProps) {
-
-          // Create the remaining app
-          this._initApp(viewProps);
-
-        }.bind(this), function(error) {
-          if (!error) {
-            var errorInfo = this._getWebItemErrorInfo(webItem);
-            error = `View could not be created for item: ${errorInfo.id}`;
-          }
-          Err.show(Err.name.error, error);
-        }.bind(this));
-
       } else {
-        Err.show(Err.name.error, "Boilerplate is not defined");
+        Message.show(Message.type.error, new Error("Boilerplate is not defined"), true, this._showErrors);
       }
     },
 
@@ -141,38 +129,63 @@ define([
     //
     //--------------------------------------------------------------------------
 
-    _initApp: function(viewProps) {
+    _setStyles: function(boilerplate) {
+      this._appStyler = new AppStyler(boilerplate);
+      this._appStyler.setThemeStyles();
+      this._appStyler.setWidgetStyle();
+      this._appStyler.setMenuStyle();
+      this._appStyler.setLayoutStyles();
+    },
 
-      var view = viewProps.view;
+    _setHtml: function(boilerplate, webItem, i18n) {
+      this._appHtml = new AppHtml(boilerplate, webItem, i18n);
+      this._appHtml.setNavbarHtml();
+      this._appHtml.setMenusHtml();
+      this._appHtml.setPanelsHtml();
+      this._appHtml.setWidgetsVisible();
+      this._appHtml.setActivePanelVisible();
+    },
 
-      // Create widgets
-      this._appViewManager.createMapWidgets();
-      this._appViewManager.createAppWidgets();
- 
-      // Set app ui
-      this._appUI.setViewProperties(viewProps);
-      this._appUI.setViewPanelsHtml();
-      this._appUI.setTooltips();
-           
-      // Set panel, menu and popup events
-      var appFramework = new Framework(view);
-      appFramework.setEvents();
-
-      // Remove loading message
-      view.then(function() {
-        this._removeLoading();
-      }.bind(this))
-      .otherwise(function(err) {
-        Err.reportError(Err.name.error, err);
-      }.bind(this))
-      .always(function() {
-        setTimeout(this._removeLoading, VIEW_TIMEOUT);
-      }.bind(this));
+    _createView: function(boilerplate, webItem) {
+      // View options
+      var options = {
+        container: this._getContainerId(webItem),
+        padding: this._appStyler.layout.padding.viewPadding,
+        ui: {
+          padding: this._appStyler.layout.padding.uiPadding
+        }
+      }
+      // Create a view manager
+      this._appViewManager = new ViewManager(boilerplate);
+      this._appViewManager.createViewFromItem(webItem, options)
+        .then(function(results) {
+          var view = results.view;
+          // Create widgets
+          this._appViewManager.createMapWidgets();
+          this._appViewManager.createAppWidgets();
+          this._appViewManager.setPopupPosition();
+          // Widget extensions
+          var widgetsExt = new WidgetsExt(view, this._appViewManager.searchWidget, boilerplate);
+          widgetsExt.setExtensions();
+          // Create html that requires the view...
+          var webMapOrwebScene = results.webMap || results.webScene;
+          this._appHtml.createViewPanelsHtml(view, webMapOrwebScene);
+          // Set panel, menu and popup events
+          this._appFramework = new AppFramework(view);
+          this._appFramework.setEvents();
+          // Do more stuff with the view...
+        }.bind(this))
+        .otherwise(function(error) {
+          Message.show(Message.type.error, error, true, this._showErrors);
+        }.bind(this))
+        .always(function() {
+          Message.removeLoading();
+        });
     },
 
     _getWebItem: function() {
       var boilerplateResults = this._boilerplate.results;
-      var item = null;
+      var item;
       if (boilerplateResults.webMapItem && 
         boilerplateResults.webMapItem.data && 
         boilerplateResults.webMapItem.data.type === "Web Map") {
@@ -185,26 +198,30 @@ define([
       return item;
     },
 
-    _getWebItemErrorInfo: function() {
-      var boilerplate = this._boilerplate;
-      var errorInfo = {
-        id: "NULL", 
-        type: "Web Map or Web Scene"
-      };
-      if (boilerplate.config.webmap) {
-        errorInfo.id = boilerplate.config.webmap;
-        errorInfo.type = "Web Map";
-      } else if (boilerplate.config.webscene) {
-        errorInfo.id = boilerplate.config.webscene;
-        errorInfo.type = "Web Scene";
-      } else if (boilerplate.config.appid) {
-        errorInfo.id = boilerplate.config.appid;
-        errorInfo.type = "Web App";
+    _getContainerId: function(webItem) {
+      if (webItem.data.type === "Web Map") {
+        return this._boilerplate.settings.webmap.containerId;
+      } else {
+        return this._boilerplate.settings.webscene.containerId
       }
-      return errorInfo;
     },
 
-    _setDocumentProperties: function(webItem) {
+    _getWebItemErrorMessage: function() {
+      var boilerplate = this._boilerplate;
+      var msg;
+      if (boilerplate.config.webmap) {
+        msg = "Web Map could not be created for id: " + boilerplate.config.webmap;
+      } else if (boilerplate.config.webscene) {
+        msg = "Web Scene could not be create for id: " + boilerplate.config.webscene;
+      } else if (boilerplate.config.appid) {
+        msg = "Web Map or Web Scene could not be created for appid: " + boilerplate.config.appid + ". <br>Please ensure the value is set in the configuration panel and the items are accessible.";
+      } else {
+        msg = "Web App, Web Map or Web Scene missing or inaccessible.";
+      }
+      return msg;
+    },
+
+    _setDocumentProperties: function() {
         this._setDocumentLocale();
         this._updateConfigTitle();
         this._setDocumentTitle();
@@ -226,29 +243,6 @@ define([
 
     _setDocumentTitle: function() {
       document.title = this._boilerplate.config.title;
-    },
-
-    _getViewOptions: function(webItem) {
-      var containerId;
-      if (webItem.data.type === "Web Map") {
-        containerId = this._boilerplate.settings.webmap.containerId;
-      } else {
-        containerId = this._boilerplate.settings.webscene.containerId
-      }
-      var padding = this._appStyle.padding.viewPadding;
-      var uiPadding = this._appStyle.padding.uiPadding;
-      var options = {
-        container: containerId,
-        padding: padding,
-        ui: {
-          padding: uiPadding
-        }
-      }
-      return options;
-    },
-
-    _removeLoading: function() {
-      domClass.remove(document.body, Err.CSS.loading);
     }
 
   });

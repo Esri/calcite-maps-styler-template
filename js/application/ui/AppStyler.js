@@ -16,10 +16,9 @@
 define([ 
   "application/base/styles",
   "application/base/selectors",
-  "application/base/layout",
-
-  "application/style/ThemeBase",
-  "application/color/Color",
+  "application/base/baselayouts",
+  "application/base/basethemes",
+  "application/base/Color",
 
   "dojo/_base/lang",
   "dojo/query",
@@ -30,8 +29,7 @@ define([
   "dojo/domReady!"
 ], 
 function(
-  CALCITE_STYLES, CALCITE_SELECTORS, LAYOUT, 
-  ThemeBase, Color,
+  CALCITE_STYLES, CALCITE_SELECTORS, BASE_LAYOUTS, BASE_THEMES, Color,
   lang, query, domClass, domStyle,
   declare) {
 
@@ -47,22 +45,7 @@ function(
 
       this._boilerplate = boilerplate;
 
-      this._colors = new Color();
-
-      // Theme
-      this.theme = this._getTheme();
-
-      // Layout
-      this.layout = this._getLayout();
-
-      // Padding
-      this.padding = this.layout.padding;
-      
-      // Widgets
-      this.widgetTheme = this._getWidgetTheme();
-      
-      // Menu
-      this.isMenuDrawer = this._getMenuStyle();
+      this._color = new Color();
 
     },
 
@@ -74,7 +57,7 @@ function(
 
     _boilerplate: null,
 
-    _colors: null,
+    _color: null,
 
     //--------------------------------------------------------------------------
     //
@@ -85,11 +68,6 @@ function(
     theme: null,
 
     layout: null,
-
-    padding: { 
-      view: null,
-      uiPadding: null
-    },
 
     widgetTheme: null,
 
@@ -107,7 +85,8 @@ function(
     // Theme
 
     setThemeStyles: function(theme) {
-      var theme = theme || this.theme;
+      var theme = theme || this._getTheme();
+      this.theme = theme;
       if (theme) {
         // Navbar
         this._setBgStyle(CALCITE_SELECTORS.navbar, theme.navbar.bgStyle);
@@ -126,8 +105,9 @@ function(
 
     // Widgets
 
-    setWidgetStyle: function(theme) {
-      var widgetTheme = widgetTheme || this.widgetTheme;
+    setWidgetStyle: function(widgetTheme) {
+      var widgetTheme = widgetTheme || this._getWidgetTheme();
+      this.widgetTheme = widgetTheme;
       if (widgetTheme) {
         this._setWidgetThemeStyle(widgetTheme);
       }
@@ -136,17 +116,37 @@ function(
     // Menu
 
     setMenuStyle: function(isDrawer) {
-      var isDrawer = isDrawer || this.isMenuDrawer;
+      var isDrawer = isDrawer || this._getMenuStyle();
+      this.isMenuDrawer = isDrawer;
       this._setMenuStyleDrawer(isDrawer);
     },
 
     // Layout
 
     setLayoutStyles: function(layout) {
-      var layout = layout || this.layout;
+      var layout = layout || this._getLayout();
+      this.layout = layout;
       if (layout) {
         this._removeLayoutStyles();
         this._setLayoutStyles(layout);
+      }
+    },
+
+    // Panels
+
+    setPanelStyle: function(panelStyle) {
+      var panels = query(CALCITE_SELECTORS.panels)[0];
+      domClass.remove(panels, CALCITE_STYLES.ALL.panels);
+      switch (panelStyle) {
+        case "left":
+          domClass.add(panels, CALCITE_STYLES.panelsLeft);
+          break;
+        case "right":
+          domClass.add(panels, CALCITE_STYLES.panelsRight);
+          break;
+        default:
+          domClass.add(panels, CALCITE_STYLES.panelsLeft);
+          break;
       }
     },
 
@@ -160,24 +160,23 @@ function(
     // Theme
     //----------------------------------
 
-    _getTheme: function(config) {
-      var config = config || this._boilerplate.config;
-      var themeBase = new ThemeBase();
+    _getTheme: function() {
+      var config = this._boilerplate.config;
       var theme;
       // Get the theme
       var themeName = config.theme; // light, dark, custom, null
       switch (themeName) {
         case "light":
-          theme = themeBase.light;
+          theme = BASE_THEMES.light;
           break;
         case "dark":
-          theme = themeBase.dark;
+          theme = BASE_THEMES.dark;
           break;
         case "custom":
-          theme = themeBase.custom;
+          theme = BASE_THEMES.custom;
           break;
         default:
-          theme = themeBase.light;  // Default
+          theme = BASE_THEMES.light;  // Default
       }
       // Theme overrides
       this._updateThemeRgba(config.bgcolor, config.opacity, theme);
@@ -188,15 +187,15 @@ function(
     _updateThemeRgba: function(bgColor, opacity, theme) {
       var rgba;
       if (bgColor) {
-        rgba = this._colors.getRgba(bgColor, opacity);
+        rgba = this._color.getRgba(bgColor, opacity);
       }
       if (!rgba) {
         if (theme.type === "dark") {
-          rgba = this._colors.getRgba("dark", opacity);
+          rgba = this._color.getRgba("dark", opacity);
         } else if (theme.type === "light") {
-          rgba = this._colors.getRgba("light", opacity);
+          rgba = this._color.getRgba("light", opacity);
         } else {
-          rgba = this._colors.getRgba("light", opacity);
+          rgba = this._color.getRgba("light", opacity);
         }
       }
       if (rgba) {
@@ -212,9 +211,9 @@ function(
       var textStyle;
       var rgba = theme.navbar.bgRgbColor;
       if (textColor) {
-        textStyle = this._colors.getTextStyle(textColor);
+        textStyle = this._color.getTextStyle(textColor);
       } else if (!textColor && rgba) {
-        textStyle = this._colors.getTextStyleFromRgba(rgba);
+        textStyle = this._color.getTextStyleFromRgba(rgba);
       }
       if (textStyle) {
         theme.navbar.textStyle = textStyle;
@@ -222,6 +221,91 @@ function(
           theme.panel.textStyle = textStyle;
         }
       }
+    },
+  
+    //----------------------------------
+    // Layout
+    //----------------------------------
+
+    _getLayout: function() {
+      var config = this._boilerplate.config;
+      var layoutName = config.layout
+      var layout;
+      // Get layout and padding
+      switch (layoutName) {
+        // case "top-small":
+        //   layout = LAYOUT.topSmall;
+        case "top": // default
+          layout = BASE_LAYOUTS.top;
+          break;
+        case "top-margin":
+          layout = BASE_LAYOUTS.topMargin;
+          break;
+        case "top-large":
+          layout = BASE_LAYOUTS.topLarge;
+          break;
+        // case "bottom-small":
+        //   layout = LAYOUT.bottomSmall;
+        case "bottom":
+          layout = BASE_LAYOUTS.bottom;
+          break;
+        case "bottom-margin":
+          layout = BASE_LAYOUTS.bottomMargin;
+          break;
+        case "bottom-large":
+          layout = BASE_LAYOUTS.bottomLarge;
+          break;
+        default: // Defaults
+          layout = BASE_LAYOUTS.top;
+          break;
+      }
+      // Layout overrides
+      var panelsLayout = config.panelslayout;
+      var widgetsLayout = config.widgetslayout;
+      this._updatePanelPosition(panelsLayout, widgetsLayout, layout);
+      return layout;
+    },
+
+    _updatePanelPosition: function(panelsLayout, widgetsLayout, layout) {
+      // NOTE: If no panel layout but a widget layout, set to opposite of widget layout 
+      if (!panelsLayout && widgetsLayout) {
+        if (widgetsLayout.indexOf("left") > 0) {
+          panelsLayout = "right";
+        } else if (widgetsLayout.indexOf("right") > 0) {
+          panelsLayout = "left";
+        }
+      }
+      switch (panelsLayout) {
+        case "left":
+          layout.panels = CALCITE_STYLES.panelsLeft;
+          break;
+        case "right":
+          layout.panels = CALCITE_STYLES.panelsRight;
+          break;
+        default:
+          layout.panels = CALCITE_STYLES.panelsRight; // Default
+      }       
+    },
+
+    _setLayoutStyles: function(layout) {
+      var layout = layout || this.layout;
+      if (layout) {
+        var body = query(CALCITE_SELECTORS.body)[0],
+          navbar = query(CALCITE_SELECTORS.navbar)[0],
+          panels = query(CALCITE_SELECTORS.panels)[0];
+        domClass.add(body, layout.navbar.position + " " + layout.navbar.margin + " " + layout.theme);
+        domClass.add(navbar, layout.navbar.fixedPosition);
+        domClass.add(panels, layout.panels);        
+      }
+    },
+
+    _removeLayoutStyles: function() {
+      var body = query(CALCITE_SELECTORS.body)[0],
+        navbar = query(CALCITE_SELECTORS.navbar)[0], 
+        panels = query(CALCITE_SELECTORS.panels)[0];
+      domClass.remove(body, CALCITE_STYLES.ALL.body);
+      domClass.remove(navbar, CALCITE_STYLES.ALL.navbar);
+      domClass.remove(panels, CALCITE_STYLES.ALL.panels);
     },
 
     //----------------------------------
@@ -303,81 +387,6 @@ function(
     //   this._applyStyles();
     // },
 
-  
-    //----------------------------------
-    // Layout
-    //----------------------------------
-
-    _getLayout: function(config) {
-      var config = config || this._boilerplate.config;
-      var layoutName = config.layout
-      var layout = null;
-      // Get layout and padding
-      switch (layoutName) {
-        // case "top-small":
-        //   layout = LAYOUT.topSmall;
-        case "top": // default
-          layout = LAYOUT.top;
-          break;
-        case "top-margin":
-          layout = LAYOUT.topMargin;
-          break;
-        case "top-large":
-          layout = LAYOUT.topLarge;
-          break;
-        // case "bottom-small":
-        //   layout = LAYOUT.bottomSmall;
-        case "bottom":
-          layout = LAYOUT.bottom;
-          break;
-        case "bottom-margin":
-          layout = LAYOUT.bottomMargin;
-          break;
-        case "bottom-large":
-          layout = LAYOUT.bottomLarge;
-          break;
-        default: // Defaults
-          layout = LAYOUT.top;
-          break;
-      }
-      // Layout overrides
-      this._updatePanelPosition(config.panelslayout, layout);
-      return layout;
-    },
-
-    _updatePanelPosition: function(panelslayout, layout) {
-      switch (panelslayout) {
-        case "left":
-          layout.panels = CALCITE_STYLES.panelsLeft;
-          break;
-        case "right":
-          layout.panels = CALCITE_STYLES.panelsRight;
-          break;
-        default:
-          layout.panels = CALCITE_STYLES.panelsRight;
-      }
-    },
-
-    _setLayoutStyles: function(layout) {
-      var layout = layout || this.layout;
-      if (layout) {
-        var body = query(CALCITE_SELECTORS.body)[0],
-          navbar = query(CALCITE_SELECTORS.navbar)[0],
-          panels = query(CALCITE_SELECTORS.panels)[0];
-        domClass.add(body, layout.navbar.position + " " + layout.navbar.margin + " " + layout.theme);
-        domClass.add(navbar, layout.navbar.fixedPosition);
-        domClass.add(panels, layout.panels);        
-      }
-    },
-
-    _removeLayoutStyles: function() {
-      var body = query(CALCITE_SELECTORS.body)[0],
-        navbar = query(CALCITE_SELECTORS.navbar)[0], 
-        panels = query(CALCITE_SELECTORS.panels)[0];
-      domClass.remove(body, CALCITE_STYLES.ALL.body);
-      domClass.remove(navbar, CALCITE_STYLES.ALL.navbar);
-      domClass.remove(panels, CALCITE_STYLES.ALL.panels);
-    }
 
   });
 });

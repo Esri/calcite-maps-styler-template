@@ -14,32 +14,31 @@
  | limitations under the License.
  */
 define([
-"application/style/Styleset"
+  "application/base/Styleset"
 ], function (StyleSet) {
 
-  var ThemeBase = function() {
+  var styleset = new StyleSet();
 
-    var styleset = new StyleSet();
+  var BASETHEMES = {
     
-    this.type = {
+    type: {
       LIGHT: "light",
       DARK: "dark",
       CUSTOM: "custom"
-    };
-    
-    this.light = {
+    },
+    light: {
       type: "light",
       navbar: styleset.getLight(),
       dropdown: styleset.getLight(),
       panel: styleset.getLight()
-    };
-    this.dark = {
+    },
+    dark: {
       type: "dark",
       navbar: styleset.getDark(),
       dropdown: styleset.getDark(),
       panel: styleset.getDark()
-    };
-    this.custom = {
+    },
+    custom: {
       type: "custom",
       navbar: styleset.getCustom(),
       dropdown: styleset.getLight(),
@@ -47,5 +46,5 @@ define([
     }
   }
 
-  return ThemeBase;
+  return BASETHEMES;
 });

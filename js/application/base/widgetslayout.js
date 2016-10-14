@@ -22,10 +22,11 @@ define([], function () {
     bottomRight: "bottom-right"
   };
 
-  var WIDGETS_LAYOUT = {
+  var WIDGETS_LAYOUTS = {
     topLeft: {
       zoom: POSITION.topLeft,
       home: POSITION.topLeft,
+      navtoggle: POSITION.topLeft,
       locate: POSITION.topLeft,
       track: POSITION.topLeft,
       compass: POSITION.bottomLeft,
@@ -35,6 +36,7 @@ define([], function () {
     topRight:  {
       zoom: POSITION.topRight,
       home: POSITION.topRight,
+      navtoggle: POSITION.topRight,
       locate: POSITION.topRight,
       track: POSITION.topRight,
       compass: POSITION.bottomRight,
@@ -44,6 +46,7 @@ define([], function () {
     bottomLeft: {
       zoom: POSITION.bottomLeft,
       home: POSITION.bottomLeft,
+      navtoggle: POSITION.bottomLeft,
       locate: POSITION.bottomLeft,
       track: POSITION.bottomLeft,
       compass: POSITION.topLeft,
@@ -53,6 +56,7 @@ define([], function () {
     bottomRight: {
       zoom: POSITION.bottomRight,
       home: POSITION.bottomRight,
+      navtoggle: POSITION.topRight,
       locate: POSITION.bottomRight,
       track: POSITION.bottomRight,
       compass: POSITION.topRight,
@@ -61,8 +65,8 @@ define([], function () {
     }
   };
 
-  WIDGETS_LAYOUT.POSITION = POSITION;
+  WIDGETS_LAYOUTS.POSITION = POSITION;
 
-  return WIDGETS_LAYOUT;
+  return WIDGETS_LAYOUTS;
 });
  

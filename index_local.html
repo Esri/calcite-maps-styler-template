@@ -20,7 +20,9 @@
   
   <!-- Use protocol relative urls that way if the browser is viewing the page via HTTPS the js/css file will be requested using the HTTPS protocol -->
   <link rel="stylesheet" href="https://js.arcgis.com/4.1/esri/css/main.css">
+  <!--link rel="stylesheet" href="http://localhost/GitHub/arcgis-js-api/esri/css/main.css"-->
   
+
   <!-- Load any application specific styles -->
   <link rel="stylesheet" href="css/boilerplate.css">
 
@@ -32,9 +34,8 @@
   </div>
 
   <div class="calcite-alert alert alert-warning alert-dismissible hidden" role="alert">
-    <div class="alert-left"><span class="esri-icon-notice-round"></span></div>
-    <div class="alert-message"></div>
-    <button type="button" class="alert-right close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>  
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    <div id="calciteErrorMessage"></div>
   </div>
   
   <!-- Navbar -->
@@ -173,7 +174,9 @@
 
   <script type="text/javascript" src="js/dojoConfig.js"></script>
 
-  <script type="text/javascript" src="https://js.arcgis.com/4.1/"></script>
+  <!--script type="text/javascript" src="https://js.arcgis.com/4.1/"></script-->
+
+  <script type="text/javascript" src="http://localhost/GitHub/arcgis-js-api/dojo/dojo.js"></script>
 
   <script type="text/javascript">
     require([
