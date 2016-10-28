@@ -6,6 +6,8 @@ dojoConfig = {
   {
     name: "dojo",
     location: "https://js.arcgis.com/4.1/dojo"
+    //location: "https://jsdev.arcgis.com/4.2/dojo"
+    // location: "http://localhost/GitHub/arcgis-js-api/dojo/"
   }, 
   {
     name: "application",
@@ -20,10 +22,10 @@ dojoConfig = {
     location: package_path + "/config"
   }, {
     name: "bootstrap",
-    location: "https://esri.github.io/calcite-maps/dist/vendor/dojo-bootstrap"
+    location: package_path + "/calcite-maps/dist/vendor/dojo-bootstrap"
   }, {
     name: "calcite-maps",
-    location: "https://esri.github.io/calcite-maps/dist/js/dojo"
+    location: package_path + "/calcite-maps/dist/js/dojo"
   }]
 };
 if (location.search.match(/locale=([\w-]+)/)) {

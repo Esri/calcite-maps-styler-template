@@ -48,7 +48,7 @@ define([], function () {
     },
     bottomSmall: {
       viewPadding: { top: 0 , bottom: 40 },
-      uiPadding: { top: 15, bottom: 30 },
+      uiPadding: { top: 30, bottom: 15 },
       hidden: { top: 0 , bottom: 0 }
     },
     bottomSmallMargin: {

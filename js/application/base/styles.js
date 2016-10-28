@@ -34,7 +34,6 @@ define([], function () {
     rgbaDefault: "", // default (no bg color), // TODO
     null: "", // TODO
     layoutThemeSmall: "calcite-layout-small-title",
-    layoutThemeMedium: "calcite-layout-medium-title",
     layoutThemeLarge: "calcite-layout-large-title",
     layoutThemeInlineRight: "calcite-layout-inline-right",
     layoutThemeInlineLeft: "calcite-layout-inline-left",
@@ -55,7 +54,7 @@ define([], function () {
   }
 
   CALCITE_STYLES.ALL = {
-    body: CALCITE_STYLES.layoutThemeSmall + " " + CALCITE_STYLES.layoutThemeMedium + " " + CALCITE_STYLES.layoutThemeLarge + " " + CALCITE_STYLES.layoutThemeInlineLeft + " " + CALCITE_STYLES.layoutThemeInlineRight + " " +
+    body: CALCITE_STYLES.layoutThemeSmall + " " + CALCITE_STYLES.layoutThemeLarge + " " + CALCITE_STYLES.layoutThemeInlineLeft + " " + CALCITE_STYLES.layoutThemeInlineRight + " " +
       CALCITE_STYLES.navPositionTop + " " + CALCITE_STYLES.navPositionBottom + " " + CALCITE_STYLES.navPositionTopFixed + " " + CALCITE_STYLES.navPositionBottomFixed + " " +
       CALCITE_STYLES.navMarginTop + " " + CALCITE_STYLES.navMarginBottom + " " + CALCITE_STYLES.navMarginAll + " " +
       CALCITE_STYLES.navMiniBar + " " + 

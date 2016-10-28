@@ -165,6 +165,9 @@ function(
       var theme;
       // Get the theme
       var themeName = config.theme; // light, dark, custom, null
+      if (config.themecustom === true) {
+        themeName = "custom";
+      }
       switch (themeName) {
         case "light":
           theme = BASE_THEMES.light;
@@ -233,9 +236,10 @@ function(
       var layout;
       // Get layout and padding
       switch (layoutName) {
-        // case "top-small":
-        //   layout = LAYOUT.topSmall;
-        case "top": // default
+        case "top-small":
+          layout = BASE_LAYOUTS.topSmall;
+          break;
+        case "top-medium": // default
           layout = BASE_LAYOUTS.top;
           break;
         case "top-margin":
@@ -244,9 +248,10 @@ function(
         case "top-large":
           layout = BASE_LAYOUTS.topLarge;
           break;
-        // case "bottom-small":
-        //   layout = LAYOUT.bottomSmall;
-        case "bottom":
+        case "bottom-small":
+          layout = BASE_LAYOUTS.bottomSmall;
+          break;
+        case "bottom-medium":
           layout = BASE_LAYOUTS.bottom;
           break;
         case "bottom-margin":

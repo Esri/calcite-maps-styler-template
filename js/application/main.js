@@ -19,7 +19,6 @@ define([
   "application/ui/AppHtml",
   "application/ui/AppFramework",
   "application/view/ViewManager",
-  "application/widgets/WidgetsExt",
   "application/base/message",
 
   "dojo/dom",
@@ -45,7 +44,7 @@ define([
   "dojo/domReady!"
 
 ], function (
-  AppStyler, AppHtml, AppFramework, ViewManager, WidgetsExt, Message,
+  AppStyler, AppHtml, AppFramework, ViewManager, Message,
   dom, domClass, domAttr, query,
   i18n,
   lang,
@@ -102,21 +101,21 @@ define([
     init: function (boilerplate) {
       if (boilerplate) {
         this._boilerplate = boilerplate;
+        this._showErrors = boilerplate.config.showerrors;
         // Get the webmap or webscene portal item
         var webItem = this._getWebItem();
         if (webItem) {
-          this._showErrors = boilerplate.config.showerrors;
           // Document language, direction and title
           this._setDocumentProperties(webItem);
           // Theme, layout and widget styles
           this._setStyles(boilerplate);
           // Page content (that doesn't need the view)
           this._setHtml(boilerplate, webItem, i18n);
-          // Map or scene view, widgets and app
+          // Create map or scene view, widgets and rest of app
           this._createView(boilerplate, webItem);
         } else {
-            var errMsg = this._getWebItemErrorMessage(webItem);
-            Message.show(Message.type.error, new Error(errMsg), true, this._showErrors);
+          var errMsg = this._getWebItemErrorMessage(webItem);
+          Message.show(Message.type.error, new Error(errMsg), true, this._showErrors);
         }
       } else {
         Message.show(Message.type.error, new Error("Boilerplate is not defined"), true, this._showErrors);
@@ -160,20 +159,28 @@ define([
       this._appViewManager.createViewFromItem(webItem, options)
         .then(function(results) {
           var view = results.view;
+          var webMap = results.webMap;
+          var webScene = results.webScene;
           // Create widgets
+          this._appViewManager.setBasemap();
           this._appViewManager.createMapWidgets();
           this._appViewManager.createAppWidgets();
           this._appViewManager.setPopupPosition();
-          // Widget extensions
-          var widgetsExt = new WidgetsExt(view, this._appViewManager.searchWidget, boilerplate);
-          widgetsExt.setExtensions();
+          this._appViewManager.setWidgetExtensions({
+            home: false,
+            compass: true,
+            navtoggle: true,
+            findplaces: boilerplate.config.findplaces,
+            mapcoords: true, //boilerplate.config.mapcoords,
+            popup: true
+          });
+          this._appViewManager.setExtent();
           // Create html that requires the view...
-          var webMapOrwebScene = results.webMap || results.webScene;
-          this._appHtml.createViewPanelsHtml(view, webMapOrwebScene);
+          this._appHtml.createViewPanelsHtml(view, webMap || webScene);
           // Set panel, menu and popup events
           this._appFramework = new AppFramework(view);
           this._appFramework.setEvents();
-          // Do more stuff with the view...
+          // Do more stuff with the view here...
         }.bind(this))
         .otherwise(function(error) {
           Message.show(Message.type.error, error, true, this._showErrors);
@@ -186,7 +193,10 @@ define([
     _getWebItem: function() {
       var boilerplateResults = this._boilerplate.results;
       var item;
-      if (boilerplateResults.webMapItem && 
+      if (boilerplateResults.applicationItem &&
+        boilerplateResults.applicationItem.data instanceof Error) {
+        item = null;
+      } else if (boilerplateResults.webMapItem && 
         boilerplateResults.webMapItem.data && 
         boilerplateResults.webMapItem.data.type === "Web Map") {
         item = boilerplateResults.webMapItem;
@@ -212,11 +222,11 @@ define([
       if (boilerplate.config.webmap) {
         msg = "Web Map could not be created for id: " + boilerplate.config.webmap;
       } else if (boilerplate.config.webscene) {
-        msg = "Web Scene could not be create for id: " + boilerplate.config.webscene;
+        msg = "Web Scene could not be created for id: " + boilerplate.config.webscene;
       } else if (boilerplate.config.appid) {
         msg = "Web Map or Web Scene could not be created for appid: " + boilerplate.config.appid + ". <br>Please ensure the value is set in the configuration panel and the items are accessible.";
       } else {
-        msg = "Web App, Web Map or Web Scene missing or inaccessible.";
+        msg = "Web App, Web Map or Web Scene missing or inaccessible";
       }
       return msg;
     },

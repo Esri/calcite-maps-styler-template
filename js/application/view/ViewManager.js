@@ -14,7 +14,8 @@
  | limitations under the License.
  */
 define([
-  "application/base/widgetslayout",
+  "application/view/widgetslayout",
+  "application/widgets/WidgetsExt",
   "application/base/message",
 
   "boilerplate/ItemHelper",
@@ -35,6 +36,12 @@ define([
   "esri/layers/UnsupportedLayer",
   "esri/layers/UnknownLayer",
 
+  "esri/geometry/Point",
+  "esri/Viewpoint",
+  "esri/Camera",
+
+  "esri/core/watchUtils",
+
   "dojo/dom",
   "dojo/dom-attr",
   "dojo/dom-class",
@@ -46,11 +53,13 @@ define([
 
   "dojo/_base/declare",
 ], function (
-  WIDGETS_LAYOUT, Message,
+  WIDGETS_LAYOUT, WidgetsExt, Message,
   ItemHelper,
   Component,
   Zoom, Home, NavigationToggle, Locate, Track, Compass, Search, Legend, BasemapToggle, Attribution,
   UnsupportedLayer, UnknownLayer,
+  Point, Viewpoint, Camera,
+  watchUtils,
   dom, domAttr, domClass, query, domConstruct, Deferred, lang, all,
   declare
 ) {
@@ -98,6 +107,8 @@ define([
     _defaultWidgetPosition: "top-left",
 
     _defaultPopupDockPosition: "top-right",
+
+    _widgetsExt: null,
 
     _errorMessage: {
       webMapOrSceneUnknownItemType: "Web Map or Web Scene could not be created. Unknown item type.",
@@ -220,30 +231,34 @@ define([
       var view = this.view;
       if (view) {
         var config = this._boilerplate.config;
+        var options = {
+          visible: true
+        }
         // Add widgets
         if (config.widgetzoom) {
-          this._addWidget("zoom", config.widgetzoom, null);
+          this._addWidget("zoom", config.widgetzoom, options);
         }
         if (config.widgethome) {
-          this._addWidget("home", config.widgethome, null);
+          this._addWidget("home", config.widgethome, options);
         }
         if (config.widgetnavtoggle && view.type !== "2d") {
-          this._addWidget("navtoggle", config.widgetnavtoggle, null);
+          this._addWidget("navtoggle", config.widgetnavtoggle, options);
         }
         if (config.widgetcompass) {
-          this._addWidget("compass", config.widgetcompass, null);
+          this._addWidget("compass", config.widgetcompass, options);
         }
         if (config.widgetlocate) {
-          this._addWidget("locate", config.widgetlocate, null);
+          this._addWidget("locate", config.widgetlocate, options);
         }
         if (config.widgettrack) {
-          this._addWidget("track", config.widgettrack, null);
+          this._addWidget("track", config.widgettrack, options);          
         }
         if (config.widgetsearch) {
-          this._addWidget("search", config.widgetsearch, null);
+          this._addWidget("search", config.widgetsearch, options);
         }        
         if (config.widgetbasemaptoggle) {
-          this._addWidget("basemaptoggle", config.widgetbasemaptoggle, { nextBasemap: config.widgetnextbasemap });
+          options.nextBasemap = config.widgetnextbasemap; // TODO
+          this._addWidget("basemaptoggle", config.widgetbasemaptoggle, options);
         }
       }
     },
@@ -262,8 +277,179 @@ define([
             view.popup.dockOptions = {
               buttonEnabled: false
             }
-          }                    
+          } else {
+            view.popup.dockOptions = {
+              position: this._defaultPopupDockPosition
+            }
+          }                   
         }.bind(this));
+      }
+    },
+
+    setWidgetExtensions: function(widgetOptions) {
+      var view = this.view;
+      var search = this.searchWidget;
+      if (view && search) {
+        // Widget extensions
+        var widgetsExt = new WidgetsExt(view, search);
+        widgetsExt.setExtensions(widgetOptions);
+        this._widgetsExt = widgetsExt;
+      }
+    },
+
+    setExtent: function() {
+      var view = this.view;
+      if (view) {
+        var lat = getNumber(this._boilerplate.config.lat, -90, 90, 100000, 0);
+        var lon = getNumber(this._boilerplate.config.lon, -180, 180, 100000, 0);
+        var zoom = getNumber(this._boilerplate.config.zoom, 0, 18, 1, null);
+        var scale = getNumber(this._boilerplate.config.scale, 250, 500000000, 1, null);
+        var tilt = getNumber(this._boilerplate.config.tilt, 0, 90, 1, null);
+        var rotation = getNumber(this._boilerplate.config.rotation || this._boilerplate.config.heading, 0, 360, 1, null);
+        // 1-20 levels
+        var zoomArray = [295828035, 147914382, 73957191, 36978595, 18489298, 9244649, 4622324, 2311162, 1155581, 577791, 288895, 144448, 72224, 36112, 18056, 9028, 4514, 2257, 1128]
+
+        var is2d = view.type === "2d";
+
+        function getNumber(n, min, max, rnd, def) {
+          var n = parseFloat(n);
+          if (!isNaN(n) && isFinite(n)) {
+            if (n >= min && n <=max) {
+              n = Math.round(n * rnd) / rnd; 
+            } else {
+              n = def;
+            }
+            return n;
+          } else {
+            return null;
+          }
+        }
+
+        view.then(function() {
+          function setPosition() {
+            //var viewpoint = new Viewpoint();
+
+            var params = {};
+            var pt;
+            if (lat && lon) {
+              pt = new Point({
+                latitude: lat,
+                longitude: lon
+              });
+            } else {
+              pt = view.center; // TODO
+            }
+            // Center or camera position
+            // params.center = [lon, lat, scale];
+            params.center = pt;
+            // if (is2d) {
+            //   params.center = pt;
+            // } else {
+            //   params.position = pt;
+            // }
+            // // Scale or Zoom
+            if (scale) {
+              // parmas.zoom = zoom; // Bug - won't goTo({zoom: xxx})
+              //params.scale = zoomArray[zoom];
+              params.scale = scale;
+            } else if (zoom) {
+              params.scale = zoomArray[zoom];
+            }
+            // params.center = [lon, lat, scale];
+            // Rotation
+            if (rotation) {
+              params.rotation = rotation;
+            }
+            // Tilt
+            if (!is2d && tilt) {
+              params.tilt = tilt;
+            }
+            // Go to the location
+
+            // TEST
+            // view.center = pt;
+            // if (params.scale) {
+            //   view.scale = scale;
+            // }
+
+            var promise = view.goTo(params).then(function() {
+              if (!is2d) {
+                var cameraParams = {};
+                if (params.rotation) {
+                  cameraParams.heading = params.rotation;
+                }
+                if (params.tilt) {
+                  cameraParams.tilt = params.tilt;
+                }
+                cameraParams.position = params.center;
+                view.viewpoint.camera = new Camera(cameraParams);
+                // if (!is2d && params.center) {
+                //   //view.viewpoint.camera.position = params.center;
+                // }
+                // if (params.center) {
+                //   view.viewpoint.camera.position = params.center;
+                // }
+                // if (params.rotation) {
+                //   view.viewpoint.camera.heading = params.rotation;
+                // }
+                // if (params.tilt) {
+                //   view.viewpoint.camera.tilt = params.tilt;
+                // }
+              }
+            });
+            return promise;
+          }
+
+          function setHomeWidget() {
+            var home = view.ui.find("home").widget;
+            if (home) {
+              home.viewpoint = view.viewpoint.clone();
+            }   
+          }
+          // Map
+          if (is2d) {  
+            setPosition().then(function(){
+              setHomeWidget();
+            });              
+          } else { // Scene
+            watchUtils.whenTrueOnce(view, "ready", function() {
+              setPosition().then(function(){
+                setHomeWidget();
+              });
+            });            
+          }
+        })
+        .otherwise(function(err){
+          console.log(err);
+        });
+      }
+    },
+
+    setBasemap: function() {
+      var view = this.view;
+      var basemap = this._boilerplate.config.basemap;
+      if (view && basemap) {
+        if (basemap.match(/^(streets|satellite|hybrid|terrain|topo|gray|dark-gray|oceans|national-geographic|osm|dark-gray-vector|gray-vector|streets-vector|topo-vector|streets-night-vector|streets-relief-vector|streets-navigation-vector)$/)) {
+          if (view.type === "3d") {
+            var v = "-vector";
+            var i = basemap.indexOf(v);
+            if (i > -1) {
+              basemap = basemap.substring(i, basemap.legend - i);
+              switch (basemap) {
+                case "streets-night":
+                  basemap = "dark-gray";
+                  break;
+                case "streets-relief":
+                  basemap = "streets";
+                  break;
+                case "streets-navigation":
+                  basemap = "streets";
+                  break;
+              }
+            }
+          }
+          view.map.basemap = basemap;          
+        }
       }
     },
 
@@ -291,7 +477,62 @@ define([
       }
     },
 
-    _returnValidPosition: function(position) {
+    _createComponent: function(name, widget) {
+      var component = new Component({
+          node: widget, 
+          id: name
+        });
+      return component;
+    },
+
+    _createWidget: function(name, options) {
+      var view = this.view;
+      var widget = null;
+      var viewModel = {
+          view: view
+        };
+      var allOptions = lang.mixin(viewModel, options);
+      switch (name) {
+        case "zoom":
+          widget = new Zoom(allOptions);
+          break;
+        case "home":
+          widget = new Home(allOptions);
+          break;
+        case "navtoggle":
+          widget = new NavigationToggle(allOptions);
+          break;
+        case "compass":
+          widget = new Compass(allOptions);
+          break;
+        case "locate":
+          widget = new Locate(allOptions);
+          break;
+        case "track":
+          widget = new Track(allOptions);
+          break;
+        case "basemaptoggle":
+          widget = new BasemapToggle({
+            viewModel: viewModel,
+            nextBasemap: options.nextBasemap
+          });
+          break;
+        case "search":
+          widget = new Search(allOptions);
+          break;
+        default:
+          widget = null;
+      }
+
+      if (widget) {
+        //widget.visible = options.visible;
+        widget.startup();
+      }
+
+      return widget;
+    },
+
+        _returnValidPosition: function(position) {
       if (position === WIDGETS_LAYOUT.POSITION.topLeft || 
         position === WIDGETS_LAYOUT.POSITION.topRight || 
         position === WIDGETS_LAYOUT.POSITION.bottomLeft || 
@@ -336,74 +577,6 @@ define([
         }
       }
       return position;
-    },
-
-    _createComponent: function(name, widget) {
-      var component = new Component({
-          node: widget, 
-          id: name
-        });
-      return component;
-    },
-
-    _createWidget: function(name, options) {
-      var view = this.view;
-      var widget = null;
-      var viewModel = {
-          view: view
-        };
-      switch (name) {
-        case "zoom":
-          widget = new Zoom({
-            viewModel: viewModel
-          });
-          break;
-        case "home":
-          widget = new Home({
-            viewModel: viewModel
-          });
-          break;
-        case "navtoggle":
-          widget = new NavigationToggle({
-            viewModel: viewModel
-          });
-          break;
-        case "compass":
-          widget = new Compass({
-            viewModel: viewModel
-          });
-          break;
-        case "locate":
-          widget = new Locate({
-            viewModel: viewModel
-          });
-          break;
-        case "track":
-          widget = new Track({
-            viewModel: viewModel
-          });
-          break;
-        case "basemaptoggle":
-          widget = new BasemapToggle({
-            viewModel: viewModel,
-            nextBasemap: options.nextBasemap
-          });
-          break;
-        case "search":
-          widget = new Search({
-            viewModel: viewModel
-          });
-          break;
-        default:
-          widget = null;
-      }
-
-      if (widget) {
-        //widget.visible = options.visible;
-        widget.startup();
-      }
-
-      return widget;
     },
 
     _createSearchWidget: function(id, searchOptions) {

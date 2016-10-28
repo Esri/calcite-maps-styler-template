@@ -25,6 +25,13 @@ define([
   "esri/Viewpoint",
   "esri/geometry/Extent",
 
+  "esri/core/watchUtils",
+
+  "dojo/_base/lang",
+
+  "dojo/on",
+  "dojo/touch",
+
   "dojo/dom",
   "dojo/dom-attr",
   "dojo/dom-class",
@@ -36,6 +43,9 @@ define([
   SELECTORS,
   basemapDefs,
   Slide, Collection, MapView, Map, Viewpoint, Extent,
+  watchUtils,
+  lang,
+  on, touch,
   dom, domAttr, domClass, query, domConstruct,
   declare
 ) {
@@ -328,7 +338,7 @@ define([
           query("#selectBasemapPanel [data-vector=streets-relief-vector]").addClass("hidden");
         }       
       }
-      this._setBasemapEvents();
+      this._setBasemapEvents(view);
     },
 
     // Slides

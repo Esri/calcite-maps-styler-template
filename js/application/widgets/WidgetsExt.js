@@ -15,10 +15,12 @@
  */
 define([
   "application/widgets/FindPlaces",
+  "application/widgets/MapCoords",
+
   "dojo/query",
   "dojo/_base/declare"
 ], function (
-  FindPlaces,
+  FindPlaces, MapCoords,
   query, declare
 ) {
 
@@ -30,23 +32,30 @@ define([
     //
     //--------------------------------------------------------------------------
 
-    constructor: function (view, searchWidget, boilerplate) {
+    constructor: function (view, searchWidget) {
       this._view = view;
       this._searchWidget = searchWidget;
-      this._boilerplate = boilerplate;
     },
 
-  	setExtensions: function() {
-      // Home
-      this._setHomeEvents();
-      // Compass
-      this._setCompassEvents();
-      // Nav Toggle (3d)
-      this._setNavToggleEvents();
-      // Find places
-      this._setFindPlacesEvents();
-      // Popup
-      this._setPopupCollapseEvents();
+  	setExtensions: function(options) {
+      if (options.home) {
+        this._setHomeEvents();        
+      }
+      if (options.compass) {
+        this._setCompassEvents();      
+      }
+      if (options.navtoggle) {
+        this._setNavToggleEvents();      
+      }
+      if (options.findplaces) {
+        this._setFindPlacesEvents();
+      }
+      if (options.mapcoords) {
+        this._setMapCoords();
+      }
+      if (options.popup) {
+        this._setPopupCollapseEvents();        
+      }
     },
 
     _setCompassEvents: function() {
@@ -165,14 +174,16 @@ define([
 
     _setFindPlacesEvents: function() {
       var view = this._view;
-      var boilerplate = this._boilerplate;
       var searchWidget = this._searchWidget;
-      if (view && boilerplate && searchWidget) {
-        var findPlaces = boilerplate.config.findplaces;
-        if (findPlaces) {
-          searchWidget._language = this._boilerplate.locale; // TODO
-          new FindPlaces(view, searchWidget);
-        }        
+      if (view && searchWidget) {
+        new FindPlaces(view, searchWidget);
+      }
+    },
+
+    _setMapCoords: function() {
+      var view = this._view;
+      if (view) {
+        new MapCoords(view);
       }
     },
 

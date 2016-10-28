@@ -57,6 +57,7 @@ define([
   var LTR = "ltr";
   var RTL = "rtl";
   var LOCALSTORAGE_PREFIX = "boilerplate_config_";
+  var DEFAULT_URL_PARAM = "default";
 
   return Promise.createSubclass({
 
@@ -532,6 +533,30 @@ define([
       if (geometryUrl) {
         // set the esri config to use the geometry service
         esriConfig.geometryServiceUrl = geometryUrl;
+      }
+      // Default to webmap or webscene
+      // if ((!this.config.webmap || this.config.webmap === DEFAULT_URL_PARAM) && this.settings.defaultWebmap) {
+      //   this.config.webmap = this.settings.defaultWebmap;
+      // }
+      // if ((!this.config.webscene || this.config.webscene === DEFAULT_URL_PARAM) && this.settings.defaultWebscene) {
+      //   this.config.webscene = this.settings.defaultWebscene;
+      // }
+      // if ((!this.config.group || this.config.group === DEFAULT_URL_PARAM) && this.settings.defaultGroup) {
+      //   this.config.group = this.settings.defaultGroup;
+      // }
+      if (!this.config.webmap && !this.config.webscene) {
+        if (this.settings.defaultWebmap) {
+          this.config.webmap = this.settings.defaultWebmap;
+        } else if (this.settings.defaultWebscene) {
+          this.config.webscene = this.settings.defaultWebscene;
+        }
+      } else if (this.config.webmap === DEFAULT_URL_PARAM && this.settings.defaultWebmap) {
+        this.config.webmap = this.settings.defaultWebmap;
+      } else if (this.config.webscene === DEFAULT_URL_PARAM  && this.settings.defaultWebscene) {
+        this.config.webscene = this.settings.defaultWebscene;
+      }
+      if ((!this.config.group || this.config.group === DEFAULT_URL_PARAM) && this.settings.defaultGroup) {
+        this.config.group = this.settings.defaultGroup;
       }
     },
 

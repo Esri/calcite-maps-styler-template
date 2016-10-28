@@ -207,11 +207,75 @@ body:lang(ja) {
   font-size: 12px;
 }
 
+.calcite-coords-container {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
+  bottom: 0;
+  max-height: 24px;
+  min-width: 380px;
+  margin: 0 auto;
+  display: block;
+  text-align: center;
+  /*box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);*/
+  color: #323232;
+  background-color: rgba(255,255,255,0.9);
+  font-size:  11px;
+}
+
+.calcite-coords {
+  display: inline-block;
+  padding: 3px 3px 1px;
+}
+
+.calcite-coords-share {
+  float: right;
+  padding: 5px 5px 4px;
+}
+
+.calcite-coords-share:focus,
+.calcite-coords-share:hover {
+  /*color: #f2f2f2;*/
+  background-color: rgba(0, 0, 0, 0.15);
+}
+
+@media (max-width: 768px) {
+  .calcite-coords-container {
+    min-width: 245px;
+  }
+  .calcite-coords {
+    padding: 2px 4px 0;
+  }
+
+}
+
+/* Calcite Maps TODO */
+
+@media (min-width: 767px) {
+
+  .calcite-nav-top.calcite-layout-small-title.calcite-nav-hidden .calcite-panels.calcite-panels-left {
+    top: 55px;
+  }  
+
+  .calcite-nav-top.calcite-nav-hidden .calcite-panels.calcite-panels-left {
+    top: 65px;
+  }
+
+  .calcite-nav-top.calcite-layout-medium-title.calcite-nav-hidden .calcite-panels.calcite-panels-left {
+    top: 75px;
+  }  
+}
+
 .esri-ui-bottom-left, .esri-ui-bottom-right {
   flex-flow: column nowrap;
 }
 
 .esri-ui-bottom-left .esri-widget.esri-component, 
 .esri-ui-bottom-right .esri-widget.esri-component {
-  margin-top: 10px;
+  margin-top: 9px;
+}
+
+.esri-ui-top-left .esri-component, 
+.esri-ui-top-right .esri-component {
+  margin-bottom: 9px;
 }

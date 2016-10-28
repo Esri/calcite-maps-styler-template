@@ -68,7 +68,7 @@ define([
 
     _placesLayer: null,
 
-    _popupDefaultTitle: "Place search", // TODO
+    _popupDefaultTitle: "Places Search", // TODO
 
     _popupLocationId: "location",
 
@@ -153,11 +153,12 @@ define([
     },
 
     _createGraphicsLayers: function() {
-      this._placesLayer = new GraphicsLayer();
+      this._placesLayer = new GraphicsLayer({popupEnabled: true});
       this._placesSelectLayer = new GraphicsLayer();
       if (this._view) {
         this._view.map.add(this._placesLayer);
         this._view.map.add(this._placesSelectLayer);
+        // this._placesLayer = this._view._graphicsView;
       }
     },
 
@@ -544,6 +545,12 @@ define([
       this._placesLayer.removeAll();
     },
 
+    _formatCoords: function(point) {
+      var lat = Math.round(point.latitude * 100000) / 100000;
+      var lon = Math.round(point.longitude * 100000) / 100000;
+      return lat + "," + lon;
+    },
+
     _createLocationGraphic: function(point) {
       var popupTemplate = this._createPopupTemplate("location", false);
       var lat = Math.round(point.latitude * 100000) / 100000;
@@ -556,7 +563,8 @@ define([
         attributes: {
           id: this._popupLocationId,
           name: this._popupDefaultTitle,
-          address: tempContent // Until template is applied
+          address: tempContent//, // Until template is applied
+          //coords: this._formatCoords(point)
         },
         popupTemplate: popupTemplate,
         layer: this._placesLayer // Bug
@@ -576,9 +584,9 @@ define([
       var popupTemplate = this._createPopupTemplate("places", false);
       var graphics = [];
       // Post-process locations with same location and name attributes?
-      //var results = this._postProcessResults(response); // TODO
+      responseProcessed = this._postProcessResults(response); // TODO
       // Create graphics
-      response.forEach(function(feature) {
+      responseProcessed.forEach(function(feature) {
         // Fix spatial reference
         var point = new Point({
           latitude: feature.location.latitude,
@@ -590,7 +598,8 @@ define([
           symbol: markerSymbol,
           attributes: {
             name: feature.attributes.PlaceName || feature.address,
-            address: feature.attributes.Place_addr || feature.attributes.address // TODO
+            address: feature.attributes.Place_addr || feature.attributes.address//, // TODO
+            //coords: this._formatCoords(point)
           },
           popupTemplate: popupTemplate,
           layer: this._placesLayer // Bug
@@ -601,11 +610,29 @@ define([
       return promise;
     },
 
-    // _postProcessResults: function(response) {
-    //   if (this._activeSearchKey === "City" || this._activeSearchKey === "Neighborhood") {
-
-    //   }
-    // },
+    _postProcessResults: function(response) {
+      var processedResponse = [];
+      var primaryItem;
+      if (this._activeSearchKey === "City" || this._activeSearchKey === "Neighborhood") {
+        response.forEach(function(item,i){
+          if (i === 0) {
+            primaryItem = item;
+            processedResponse.push(primaryItem);
+          } else {
+            // Use the first place only, remove duplicates
+            if (primaryItem.location.latitude !== item.location.latitude && 
+              primaryItem.location.longitude !== item.location.longitude) { //var english = /^[A-Za-z0-9]*$/;
+                processedResponse.push(item); 
+            } else {
+              console.warn("Place rejected: " + item.attributes.PlaceName + " - " + item.attributes.Place_addr); // TODO
+            }
+          }
+        });
+      } else {
+        processedResponse = response;
+      }
+      return processedResponse;
+    },
 
     _findLocationGraphic: function() {
       var location = this._placesLayer.graphics.find(function(g) {

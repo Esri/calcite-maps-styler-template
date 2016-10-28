@@ -34,15 +34,22 @@ These are the configuration options for the application. You can specify in the 
 |property|description|type|options|
 |---|---|---|---|
 |appid|Application ID for querying application configuration|String|""|
-|webmap|Webmap ID for querying a webmap|String|"e1653fe614c04b6aa4efba5ba7b56d05"|
-|webscene|Webscene ID for querying a webscene|String|"bdc09d6c8ef8492783ebe2c572950931"|
+|webmap|Webmap ID for querying a webmap|String|"default", "e1653fe614c04b6aa4efba5ba7b56d05"|
+|webscene|Webscene ID for querying a webscene|String|"default", "bdc09d6c8ef8492783ebe2c572950931"|
+|lat|Latitude to move the map to|Number|45|
+|lon|Longitude to move the map to|Number|-120|
+|zoom|Level of Detail (LOD) to zoom to when the map displays|Number|1-20|
+|scale|The scale the map displays at|Number|1-100000000|
+|tilt|Angle ov view for 3D maps|Number|0-90|
+|rotation|Rotation of view|Number|0-360|
+|basemap|Basemap to use for the map. See ArcGIS JS API reference|String|"streets", "satellite..."|
 |title|Title of the application|String|""|
 |subtitle|Subtitle of the application|String|""|
 |abouttext|Information about your application|String|""|
 |aboutsummary|Includes item summary (snippet) in about text|Boolean|""|
 |aboutdescription|Includes item description in about text|Boolean|""|
 |theme|The base color theme used to style the app|String|"light", "dark", "custom"|
-|bgcolor|The base background color for navbar and panels|String|"light", "dark", "blue"..., "rgb(24,24,24)", "rgba(24,24,24,.5)"|
+|bgcolor|The base background color for navbar and panels. See Calcite Colors|String|"light", "dark", "blue"..., "rgb(24,24,24)", "rgba(24,24,24,.5)"|
 |textcolor|The base text color for navbar and panels|String|"light", "dark"|
 |opacity|The opacity to use for navbar and panels|String|"0-1"|
 |widgettheme|The base color for the widgets|String|"light", "dark"|
@@ -53,7 +60,7 @@ These are the configuration options for the application. You can specify in the 
 |menustyledrawer|The style of the menu|Boolean|true,false|
 |dockposition|Position to dock the popup. See ArcGIS JS API|String|"top-right", "top-center", "top-left", "bottom-right", "bottom-center", "bottom-left"|
 |widgetxxx|Name of the widget to add to the view (widgetzoom, widgethome, widgetlocate, widgettrack, widgetsearch, widgetbasemaptoggle)|Boolean|true, false|
-|widgetnextbasemap|The name of the next basemap for the toggle. See ArcGIS JS API|String|"streets", "satellite..."|
+|widgetnextbasemap|The name of the next basemap for the toggle. See ArcGIS JS API reference|String|"streets", "satellite..."|
 |widgetsearchnav|Show the search widget in the navbar|Boolean|true, false|
 |activepanel|Name of the panel to show when app loads|String|"about", "legend", "basemaps", "slides"|
 |findplaces|Enable long-tap/hold search for restaurants, parks, stores...|Boolean|true, false|
