@@ -97,12 +97,10 @@ define([
       on(this._coordsElement, [touch.over, touch.press], function() {
         this._inCoordTouch = true;
         this._showCoordsUI(true);
-        //console.log("inCoordTouch");
       }.bind(this));
       on(this._coordsElement, [touch.out, touch.release], function() {
         this._inCoordTouch = false;
         this._showCoordsUI(false);
-        //console.log("outcoordtouch");
       }.bind(this));
       // Show panel from widget
       on(this._coordsShare, touch.press, function() {
@@ -154,7 +152,6 @@ define([
       }
       // Update ui while user interacts
       view.watch("extent", function(ext){
-        // console.log("extent");
         if (this._is2d) {
           this._updateCoordsUI();
         } else {
@@ -165,13 +162,9 @@ define([
       }.bind(this));
       //view.watch("rotation", function(val){ // fails in 3d
       view.watch(["viewpoint.rotation"], function(val){ // fails in 3d
-        // console.log("rotation: " + val);
         this._updateCoordsUI();
       }.bind(this));
-      // view.watch("scale", function(scale) {
-      //   //console.log("scale: " + scale + " " + view.zoom);
-      // });
-      // view.watch("zoom", function(val) {
+      // view.watch("zoom", function(val) { // fails
       //   //console.log("zoom: " + val);
       // });
     },
@@ -233,7 +226,7 @@ define([
 					this._coordsInner.innerHTML = params.lat + "," + params.lon + " | " + params.zoom + " | 1:" + params.scale;
         } else {
           if (this._is2d) {
-            this._coordsInner.innerHTML = "Center: " + params.lat + "," + params.lon + " | Zoom: " + params.zoom + " | 1:" + params.scale + " | " + params.rotation + "&deg;" ;  
+            this._coordsInner.innerHTML = "Center: " + params.lat + "," + params.lon + " | Zoom: " + params.zoom + " | 1:" + params.scale + " | " + (params.rotation === 360 ? 0 : params.rotation) + "&deg;" ;  
           } else {
             this._coordsInner.innerHTML = "Center: " + params.lat + "," + params.lon + " | Zoom: " + params.zoom + " | 1:" + params.scale + " | " + (params.heading === 360 ? 0 : params.heading) + "&deg;" +  " | " + params.tilt + "&deg;";
           }
@@ -252,11 +245,11 @@ define([
         this._uiVisible = true;   
         this._updateCoordsUI();
         query(".calcite-coords-container").addClass("in"); 
-        console.log("showing...")
+        // console.log("showing...")
       } else if (!show && this._uiVisible && !this._inTouch && !this._inCoordTouch) { // lots of tests...
         this._timeoutCoords = setTimeout(function() {
           this._uiVisible = false;
-          // query(".calcite-coords-container").removeClass("in");              
+          query(".calcite-coords-container").removeClass("in");              
           // console.log("hiding...");              
         }.bind(this), this._fadeTimeout); 
       }
