@@ -44,18 +44,24 @@ define([
     constructor: function (view) {
     	if (view) {
 	    	this._view = view;
-	    	this._isView2d = view.type === "2d";
+	    	this._is2d = view.type === "2d";
 	    	this._setMapCoordsEvents();    		
     	}
     },
 
     _view: null,
 
-    _isView2d: false,
+    _is2d: false,
 
-    _mapCoordsHtml: `<div class="calcite-coords-container esri-component fade">
+    _fadeTimeout: 2000,
+
+    _mapCoordsHtml2d: `<div class="calcite-coords-container calcite-coords-2d esri-component fade">
                   		<span class="calcite-coords"></span><span class="esri-icon-share calcite-coords-share"></span>
                 		</div>`,
+
+    _mapCoordsHtml3d: `<div class="calcite-coords-container calcite-coords-3d esri-component fade">
+                      <span class="calcite-coords"></span><span class="esri-icon-share calcite-coords-share"></span>
+                    </div>`,
 
     _uiContainer: null,
 
@@ -77,91 +83,122 @@ define([
 
     _isUpdatingUI: false,
 
+    _isSharePanelVisible: false,
+
+    _sharePanelUrlText: query("#shareUrlText")[0],
+
+    _setWidgetEvents: function(view) {
+      this._uiContainer = query(".esri-ui-inner-container.esri-ui-corner-container")[0];
+      var html = this._is2d ? this._mapCoordsHtml2d : this._mapCoordsHtml3d;
+      this._coordsElement = domConstruct.place(html, this._uiContainer);
+      this._coordsInner = this._coordsElement.children[0];
+      this._coordsShare = this._coordsElement.children[1];
+      // Widget UI Elements
+      on(this._coordsElement, [touch.over, touch.press], function() {
+        this._inCoordTouch = true;
+        this._showCoordsUI(true);
+        //console.log("inCoordTouch");
+      }.bind(this));
+      on(this._coordsElement, [touch.out, touch.release], function() {
+        this._inCoordTouch = false;
+        this._showCoordsUI(false);
+        //console.log("outcoordtouch");
+      }.bind(this));
+      // Show panel from widget
+      on(this._coordsShare, touch.press, function() {
+        this._isSharePanelVisible = true;
+        this._updateUrl();
+        on.emit(query("#menuShare > a")[0], "click", { bubbles: true, cancelable: true });
+        //query("#shareUrlText")[0].select();
+      }.bind(this));
+    },
+
+    _setPanelEvents: function(view) {
+      // Update panel
+      if (domClass.contains("collapseShare","in")) {
+        this._isSharePanelVisible = true;
+        this._updateUrl();
+      }
+      query("#collapseShare").on("show.bs.collapse", function(e) {
+          this._isSharePanelVisible = true;
+          this._updateUrl();  
+      }.bind(this));
+      query("#collapseShare").on("hide.bs.collapse", function(e) {
+          this._isSharePanelVisible = false;  
+      }.bind(this));
+      // Select text
+      query("#shareUrlBtn").on("click", function() {
+        query("#shareUrlText")[0].select();
+      });
+    },
+
+    _setViewEvents: function(view) {
+      // View 2d
+      if (this._is2d) {
+        view.watch(["stationary", "interacting"], function(isTrue,oldVal,evt) {
+          //console.log(evt + " " + isTrue); // TODO
+          if (evt === "stationary" && !isTrue || evt === "interacting" && isTrue) {
+            this._showCoordsUI(true);
+          } else {
+            this._showCoordsUI(false);
+          }
+        }.bind(this));
+      } else { // 3d
+        view.watch(["stationary", "interacting", "updating"], function(isTrue,oldVal,evt) {
+          if (!view.stationary || view.updating) {
+            this._showCoordsUI(true);
+          } else if (view.stationary && !view.updating && !view.animating && !view.interacting) {
+            this._showCoordsUI(false);
+          }
+        }.bind(this));
+      }
+      // Update ui while user interacts
+      view.watch("extent", function(ext){
+        // console.log("extent");
+        if (this._is2d) {
+          this._updateCoordsUI();
+        } else {
+          if (view.interacting || view.updating) {
+            this._updateCoordsUI();            
+          }
+        }
+      }.bind(this));
+      //view.watch("rotation", function(val){ // fails in 3d
+      view.watch(["viewpoint.rotation"], function(val){ // fails in 3d
+        // console.log("rotation: " + val);
+        this._updateCoordsUI();
+      }.bind(this));
+      // view.watch("scale", function(scale) {
+      //   //console.log("scale: " + scale + " " + view.zoom);
+      // });
+      // view.watch("zoom", function(val) {
+      //   //console.log("zoom: " + val);
+      // });
+    },
+
+    _setTouchEvents: function(view) {
+      query(".esri-view-surface").on(touch.press, function(evt) {
+        this._inTouch = true;
+        if (!this._inCoordTouch) {
+          this._showCoordsUI(true);            
+        }
+      }.bind(this));
+      query(".esri-view-surface").on(touch.release, function(evt) {
+        this._inTouch = false;
+        if (!this._inCoordTouch) {
+          this._showCoordsUI(false);            
+        }
+      }.bind(this));
+    },
+ 
 		_setMapCoordsEvents: function() {
 			var view = this._view;
       if (view) {
-        // Set up listeners
         view.then(function() {
-
-          // UI element
-          this._uiContainer = query(".esri-ui-inner-container.esri-ui-corner-container")[0];
-          this._coordsElement = domConstruct.place(this._mapCoordsHtml, this._uiContainer);
-          this._coordsInner = this._coordsElement.children[0];
-          this._coordsShare = this._coordsElement.children[1];
-          
-          // Elements
-          on(this._coordsElement, [touch.over, touch.press], function() {
-            this._inCoordTouch = true;
-            this._showCoordsUI(true);
-            //console.log("inCoordTouch");
-          }.bind(this));
-          on(this._coordsElement, [touch.out, touch.release], function() {
-            this._inCoordTouch = false;
-            this._showCoordsUI(false);
-            //console.log("outcoordtouch");
-          }.bind(this));
-          on(this._coordsShare, touch.press, function() {
-          	this._updateUrl();
-          }.bind(this));
-
-          // View 2d
-          if (this._isView2d) {
-            view.watch(["stationary", "interacting"], function(isTrue,oldVal,evt) {
-              //console.log(evt + " " + isTrue); // TODO
-              if (evt === "stationary" && !isTrue || evt === "interacting" && isTrue) {
-                this._showCoordsUI(true);
-              } else {
-                this._showCoordsUI(false);
-              }
-            }.bind(this));
-          } else { // 3d
-            view.watch(["stationary", "interacting", "updating"], function(isTrue,oldVal,evt) {
-              if (!view.stationary || view.updating) {
-                this._showCoordsUI(true);
-              } else if (view.stationary && !view.updating && !view.animating && !view.interacting) {
-                this._showCoordsUI(false);
-              }
-            }.bind(this));
-          }
-
-          // Update ui while user interacts
-          view.watch("extent", function(ext){
-          	// console.log("extent");
-            if (this._isView2d) {
-              this._updateCoordsUI();
-            } else {
-              if (view.interacting || view.updating) {
-                this._updateCoordsUI();            
-              }
-            }
-          }.bind(this));
-
-          //view.watch("rotation", function(val){ // fails in 3d
-          view.watch(["viewpoint.rotation"], function(val){ // fails in 3d
-          	// console.log("rotation: " + val);
-          	this._updateCoordsUI();
-          }.bind(this));
-
-          // view.watch("scale", function(scale) {
-          //   //console.log("scale: " + scale + " " + view.zoom);
-          // });
-          // view.watch("zoom", function(val) {
-          //   //console.log("zoom: " + val);
-          // });
-
-          // Touch
-          query(".esri-view-surface").on(touch.press, function(evt) {
-            this._inTouch = true;
-            if (!this._inCoordTouch) {
-              this._showCoordsUI(true);            
-            }
-          }.bind(this));
-          query(".esri-view-surface").on(touch.release, function(evt) {
-            this._inTouch = false;
-            if (!this._inCoordTouch) {
-              this._showCoordsUI(false);            
-            }
-          }.bind(this));       
+          this._setWidgetEvents(view);
+          this._setPanelEvents(view);
+          this._setViewEvents(view);
+          this._setTouchEvents(view);
         }.bind(this)).otherwise(function(err) {
           console.log(err);
         }.bind(this));
@@ -169,25 +206,20 @@ define([
     }, 
 
     _getCoordParams: function() {
-      var pt = this._isView2d ? this._view.center : this._view.viewpoint.camera.position;
-      //var pt = this._view.center;
       var params = {};
-      params.lat = Math.round(pt.latitude * 100000) / 100000; 
-      params.lon = Math.round(pt.longitude * 100000) / 100000;
-      params.zoom =  Math.round(this._view.zoom * 1) / 1;
-      // var zoom = this._view.zoom; // Bug 1 - sometimes -1, can't watch this value
-      // zoom = this._scaleToZoom(); // TODO
-      //zoom = this._isView2d ? Math.round(zoom * 1) / 1 : Math.round(zoom * 10) / 10; // Bug 2 - can pass in decimals
-      //zoom = Math.round(zoom * 1) / 1;
+      var pt = this._view.center; //this._is2d ? this._view.center : this._view.viewpoint.camera.position;
+      params.lat = parseFloat(Math.round(pt.latitude * 100000) / 100000).toFixed(5); 
+      params.lon = parseFloat(Math.round(pt.longitude * 100000) / 100000).toFixed(5);
+      params.zoom =  Math.round(this._view.zoom * 1) / 1; // Bug 1 - sometimes -1, can't watch this value
+      // params.zoom = this._scaleToZoom(this._view.scale); // TODO
+      //zoom = this._is2d ? Math.round(zoom * 1) / 1 : Math.round(zoom * 10) / 10; // Bug 2 - can't pass in decimals
       params.scale = Math.round(this._view.viewpoint.scale);
-      //if (this._isView2d) {
-      	params.rotation = Math.round(this._view.viewpoint.rotation);
-      // } else {
-      // 	params.heading = this._view.viewpoint.camera.heading;
-      // }
-      // params.rotation = Math.round(this._view.viewpoint.rotation);
-      if (!this._isView2d) {
-      	params.tilt = Math.round(this._view.viewpoint.camera.tilt * 1) / 1;
+      if (this._is2d) {
+        params.rotation = Math.round(this._view.viewpoint.rotation);
+      } else {
+        params.heading =  Math.round(this._view.viewpoint.camera.heading);
+      	params.tilt = Math.round(this._view.viewpoint.camera.tilt);
+        params.altitude = Math.round(this._view.viewpoint.camera.position.z);
       }
       return params;
     },
@@ -195,11 +227,20 @@ define([
     _updateCoordsUI: function() {
       if (this._uiVisible && !this._isUpdatingUI) {
       	this._isUpdatingUI = true;
+        // Update coords
         var params = this._getCoordParams();
         if (this._view.widthBreakpoint === "xsmall" || this._view.widthBreakpoint === "small") {
 					this._coordsInner.innerHTML = params.lat + "," + params.lon + " | " + params.zoom + " | 1:" + params.scale;
         } else {
-          this._coordsInner.innerHTML = "Center: " + params.lat + "," + params.lon + " | Zoom: " + params.zoom + " | 1:" + params.scale + " | " + params.rotation + "&deg;" + (params.tilt ?  " | " + params.tilt + "&deg;" : "");
+          if (this._is2d) {
+            this._coordsInner.innerHTML = "Center: " + params.lat + "," + params.lon + " | Zoom: " + params.zoom + " | 1:" + params.scale + " | " + params.rotation + "&deg;" ;  
+          } else {
+            this._coordsInner.innerHTML = "Center: " + params.lat + "," + params.lon + " | Zoom: " + params.zoom + " | 1:" + params.scale + " | " + (params.heading === 360 ? 0 : params.heading) + "&deg;" +  " | " + params.tilt + "&deg;";
+          }
+        }
+        // Update panel url
+        if (this._isSharePanelVisible) {
+          this._updateUrl(params);
         }
         this._isUpdatingUI = false;
       }
@@ -212,28 +253,20 @@ define([
         this._updateCoordsUI();
         query(".calcite-coords-container").addClass("in"); 
         console.log("showing...")
-      } else if (!show && this._uiVisible && !this._inTouch && !this._inCoordTouch){
+      } else if (!show && this._uiVisible && !this._inTouch && !this._inCoordTouch) { // lots of tests...
         this._timeoutCoords = setTimeout(function() {
           this._uiVisible = false;
-          query(".calcite-coords-container").removeClass("in");              
-          console.log("hiding...");              
-        }.bind(this), 2000); 
+          // query(".calcite-coords-container").removeClass("in");              
+          // console.log("hiding...");              
+        }.bind(this), this._fadeTimeout); 
       }
     },
 
-    _updateUrl: function() {
-      var newParams = this._getCoordParams();
-      // Limit params to url...
-      // var newParams = {
-      //   lat: params.lat,
-      //   lon: params.lon,
-      //   //zoom: params.zoom//,
-      //   scale: params.scale
-      // }
+    _updateUrl: function(params) {
+      var params = params || this._getCoordParams();
       var queryParams = this._queryStringToJSON();
-      var queryAll = lang.mixin(queryParams, newParams);
+      var queryAll = lang.mixin(queryParams, params);
       var querySearch = this._jsonToQueryString(queryAll);
-
       var baseUrl;
       if (window.location.href.indexOf("?") > -1) {
         baseUrl = window.location.href.split('?')[0];
@@ -242,8 +275,11 @@ define([
       }
       var pushUrl = baseUrl + "?" + querySearch;
       // window.history.pushState("", "", pushUrl);
-      window.history.replaceState("", "", pushUrl);
-      console.log(pushUrl);
+      //window.history.replaceState("", "", pushUrl);
+      if (this._isSharePanelVisible) {
+        this._sharePanelUrlText.value = pushUrl;
+      }
+      // console.log(pushUrl);
     },
 
     _queryStringToJSON() {

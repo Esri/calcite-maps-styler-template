@@ -168,7 +168,7 @@ define([
           this._appViewManager.setPopupPosition();
           this._appViewManager.setWidgetExtensions({
             home: false,
-            compass: true,
+            compass: false,
             navtoggle: true,
             findplaces: boilerplate.config.findplaces,
             mapcoords: true, //boilerplate.config.mapcoords,

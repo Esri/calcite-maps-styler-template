@@ -14,12 +14,14 @@
 
   <!-- Calcite Bootstrap -->
   <link rel="stylesheet" href="./calcite-maps/dist/css/calcite-bootstrap.min-v0.2.css">
+  <!--link rel="stylesheet" href="http://localhost/GitHub/calcite-maps/dist/css/calcite-bootstrap.min-v0.2.css"-->
 
   <!-- Calcite Maps -->
   <link rel="stylesheet" href="./calcite-maps/dist/css/calcite-maps-arcgis-4.x.min-v0.2.css">
-  
+  <!--link rel="stylesheet" href="http://localhost/GitHub/calcite-maps/dist/css/calcite-maps-arcgis-4.x.min-v0.2.css"-->
+
   <!-- Use protocol relative urls that way if the browser is viewing the page via HTTPS the js/css file will be requested using the HTTPS protocol -->
-  <link rel="stylesheet" href="https://js.arcgis.com/4.1/esri/css/main.css">
+  <link rel="stylesheet" href="https://jsdev.arcgis.com/4.2/esri/css/main.css">
   <!--link rel="stylesheet" href="https://jsdev.arcgis.com/4.2/esri/css/main.css"-->
   <!--link rel="stylesheet" href="http://localhost/GitHub/arcgis-js-api/esri/css/main.css"-->
 
@@ -59,6 +61,7 @@
         <li id="menuLegend"><a role="button" data-target="#panelLegend" aria-haspopup="true"><span class="glyphicon glyphicon-th-list"></span></a></li>
         <li id="menuBasemaps"><a role="button" data-target="#panelBasemaps" aria-haspopup="true"><span class="glyphicon glyphicon-th-large"></span></a></li>
         <li id="menuSlides"><a role="button" data-target="#panelSlides" aria-haspopup="true"><span class="glyphicon glyphicon-picture"></span></a></li>
+        <li id="menuShare"><a role="button" data-target="#panelShare" aria-haspopup="true"><span class="esri-icon-share"></span></a></li>
         <li id="menuToggleNav"><a role="button" id="calciteToggleNavbar" aria-haspopup="true"><span class="glyphicon glyphicon-fullscreen"></span></a></li>
       </ul>
     </div>
@@ -172,14 +175,36 @@
       </div>
     </div>
 
+     <!-- Share Panel -->
+    
+    <div id="panelShare" class="panel collapse">
+      <div id="headingShare" class="panel-heading" role="tab">
+        <div class="panel-title">
+          <a class="panel-toggle" role="button" data-toggle="collapse" href="#collapseShare"  aria-expanded="true" aria-controls="collapseShare"><span class="esri-icon-share" aria-hidden="true"></span><span class="panel-label"></span></a> 
+          <a class="panel-close" role="button" data-toggle="collapse" data-target="#panelShare"><span class="esri-icon esri-icon-close" aria-hidden="true"></span></a>  
+        </div>
+      </div>
+      <div id="collapseShare" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingShare">
+        <div class="panel-body">
+          <form class="form-horizontal">
+            <div class="form-group">
+              <div class="col-xs-12">
+                <textarea class="form-control" id="shareUrlText" placeholder="" rows="3"></textarea>
+              </div>
+            </div>
+            <button id="shareUrlBtn" type="button" class="btn btn-primary pull-right">Select to Copy</button>
+          </form>
+        </div>
+     </div>
+    </div>
+
   </div> <!-- /.calcite-panels -->
 
   <script type="text/javascript" src="js/dojoConfig.js"></script>
 
-  <script type="text/javascript" src="https://js.arcgis.com/4.1/"></script>
+  <script type="text/javascript" src="https://jsdev.arcgis.com/4.2/"></script>
   <!--script type="text/javascript" src="https://jsdev.arcgis.com/4.2/"></script-->
   <!--script type="text/javascript" src="http://localhost/GitHub/arcgis-js-api/dojo/dojo.js"></script-->
-
 
   <script type="text/javascript">
     require([

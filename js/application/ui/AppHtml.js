@@ -148,6 +148,9 @@ define([
           case "slides":
             panelSelector = SELECTORS.panelSlides;
             break;
+          case "share":
+            panelSelector = SELECTORS.panelShare;
+            break;
           default:
             panelSelector = null;
         }
@@ -204,6 +207,7 @@ define([
       query(SELECTORS.menuLegend + " a")[0].innerHTML = query(SELECTORS.menuLegend + " a")[0].innerHTML + "&nbsp;" + i18n.menu.items.legend;
       query(SELECTORS.menuBasemaps + " a")[0].innerHTML = query(SELECTORS.menuBasemaps + " a")[0].innerHTML + "&nbsp;" + i18n.menu.items.basemaps;
       query(SELECTORS.menuSlides + " a")[0].innerHTML = query(SELECTORS.menuSlides + " a")[0].innerHTML + "&nbsp;" + (this._isWebMap ? i18n.menu.items.bookmarks : i18n.menu.items.slides);
+      query(SELECTORS.menuShare + " a")[0].innerHTML = query(SELECTORS.menuShare + " a")[0].innerHTML + "&nbsp;" + i18n.menu.items.share;
       query(SELECTORS.menuToggleNav + " a")[0].innerHTML = query(SELECTORS.menuToggleNav + " a")[0].innerHTML + "&nbsp;" + i18n.menu.items.toggleNav;
     },
 
@@ -215,6 +219,7 @@ define([
       query(SELECTORS.panelLegend + " " + SELECTORS.panelTitle)[0].innerHTML = i18n.menu.items.legend;
       query(SELECTORS.panelBasemaps + " " + SELECTORS.panelTitle)[0].innerHTML = i18n.menu.items.basemaps;
       query(SELECTORS.panelSlides + " " + SELECTORS.panelTitle)[0].innerHTML = (this._isWebMap ? i18n.menu.items.bookmarks : i18n.menu.items.slides);      
+      query(SELECTORS.panelShare + " " + SELECTORS.panelTitle)[0].innerHTML = i18n.menu.items.share;
     },
 
     _setMenusVisible: function(boilerplate) {

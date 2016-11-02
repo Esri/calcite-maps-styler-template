@@ -39,6 +39,7 @@ define([
   "esri/geometry/Point",
   "esri/Viewpoint",
   "esri/Camera",
+  "esri/geometry/support/webMercatorUtils",
 
   "esri/core/watchUtils",
 
@@ -58,7 +59,7 @@ define([
   Component,
   Zoom, Home, NavigationToggle, Locate, Track, Compass, Search, Legend, BasemapToggle, Attribution,
   UnsupportedLayer, UnknownLayer,
-  Point, Viewpoint, Camera,
+  Point, Viewpoint, Camera, webMercatorUtils,
   watchUtils,
   dom, domAttr, domClass, query, domConstruct, Deferred, lang, all,
   declare
@@ -297,115 +298,42 @@ define([
       }
     },
 
+    _getNumber: function (n, min, max, rnd, def) {
+      var n = parseFloat(n);
+      if (!isNaN(n) && isFinite(n)) {
+        if (n >= min && n <=max) {
+          n = Math.round(n * rnd) / rnd; 
+        } else {
+          n = def;
+        }
+        return n;
+      } else {
+        return null;
+      }
+    },
+
     setExtent: function() {
       var view = this.view;
       if (view) {
-        var lat = getNumber(this._boilerplate.config.lat, -90, 90, 100000, 0);
-        var lon = getNumber(this._boilerplate.config.lon, -180, 180, 100000, 0);
-        var zoom = getNumber(this._boilerplate.config.zoom, 0, 18, 1, null);
-        var scale = getNumber(this._boilerplate.config.scale, 250, 500000000, 1, null);
-        var tilt = getNumber(this._boilerplate.config.tilt, 0, 90, 1, null);
-        var rotation = getNumber(this._boilerplate.config.rotation || this._boilerplate.config.heading, 0, 360, 1, null);
-        // 1-20 levels
+        var is2d = view.type === "2d";
+        // Params
+        var lat = this._getNumber(this._boilerplate.config.lat, -90, 90, 100000, null);
+        var lon = this._getNumber(this._boilerplate.config.lon, -180, 180, 100000, null);
+        var zoom = this._getNumber(this._boilerplate.config.zoom, 0, 18, 1, null);
+        var scale = this._getNumber(this._boilerplate.config.scale, 250, 500000000, 1, null);
+        var tilt = this._getNumber(this._boilerplate.config.tilt, 0, 90, 1, null);
+        var altitude = this._getNumber(this._boilerplate.config.altitude, 0, 1000000000, 1, null);
+        var rotation = this._getNumber(this._boilerplate.config.rotation, 0, 360, 1, null);
+        var heading = this._getNumber(this._boilerplate.config.heading, 0, 360, 1, null);
+        // 1-20 level converter - TODO
         var zoomArray = [295828035, 147914382, 73957191, 36978595, 18489298, 9244649, 4622324, 2311162, 1155581, 577791, 288895, 144448, 72224, 36112, 18056, 9028, 4514, 2257, 1128]
 
-        var is2d = view.type === "2d";
-
-        function getNumber(n, min, max, rnd, def) {
-          var n = parseFloat(n);
-          if (!isNaN(n) && isFinite(n)) {
-            if (n >= min && n <=max) {
-              n = Math.round(n * rnd) / rnd; 
-            } else {
-              n = def;
-            }
-            return n;
-          } else {
-            return null;
-          }
+        // Invalid coords
+        if (!lat || !lon) {
+          return;
         }
 
         view.then(function() {
-          function setPosition() {
-            //var viewpoint = new Viewpoint();
-
-            var params = {};
-            var pt;
-            if (lat && lon) {
-              pt = new Point({
-                latitude: lat,
-                longitude: lon
-              });
-            } else {
-              pt = view.center; // TODO
-            }
-            // Center or camera position
-            // params.center = [lon, lat, scale];
-            params.center = pt;
-            // if (is2d) {
-            //   params.center = pt;
-            // } else {
-            //   params.position = pt;
-            // }
-            // // Scale or Zoom
-            if (scale) {
-              // parmas.zoom = zoom; // Bug - won't goTo({zoom: xxx})
-              //params.scale = zoomArray[zoom];
-              params.scale = scale;
-            } else if (zoom) {
-              params.scale = zoomArray[zoom];
-            }
-            // params.center = [lon, lat, scale];
-            // Rotation
-            if (rotation) {
-              params.rotation = rotation;
-            }
-            // Tilt
-            if (!is2d && tilt) {
-              params.tilt = tilt;
-            }
-            // Go to the location
-
-            // TEST
-            // view.center = pt;
-            // if (params.scale) {
-            //   view.scale = scale;
-            // }
-
-            var promise = view.goTo(params).then(function() {
-              if (!is2d) {
-                var cameraParams = {};
-                if (params.rotation) {
-                  cameraParams.heading = params.rotation;
-                }
-                if (params.tilt) {
-                  cameraParams.tilt = params.tilt;
-                }
-                cameraParams.position = params.center;
-                view.viewpoint.camera = new Camera(cameraParams);
-                // if (!is2d && params.center) {
-                //   //view.viewpoint.camera.position = params.center;
-                // }
-                // if (params.center) {
-                //   view.viewpoint.camera.position = params.center;
-                // }
-                // if (params.rotation) {
-                //   view.viewpoint.camera.heading = params.rotation;
-                // }
-                // if (params.tilt) {
-                //   view.viewpoint.camera.tilt = params.tilt;
-                // }
-              }
-            });
-            return promise;
-          }
-
-          function setHomeWidget() {
-            var home = view.ui.find("home").widget;
-            if (home) {
-              home.viewpoint = view.viewpoint.clone();
-            }   
-          }
           // Map
           if (is2d) {  
             setPosition().then(function(){
@@ -422,6 +350,71 @@ define([
         .otherwise(function(err){
           console.log(err);
         });
+
+        function getCenter(lon, lat) {
+          var pt;
+          if (lat && lon) {
+            pt = new Point({
+              latitude: lat,
+              longitude: lon
+            });
+            pt = webMercatorUtils.geographicToWebMercator(pt); // TODO - assume mercator
+          } else {
+            pt = view.center.clone(); // TODO - or null
+          }
+          return pt;
+        }
+      
+        function setPosition() {
+          var params = {};
+          // Center
+          var pt = getCenter(lon,lat);
+          // Altitude
+          if (altitude) {
+            pt.z = params.altitude;
+          }
+          params.center = pt;
+          // params.target = pt;
+          // Scale
+          if (scale) {
+            // parmas.zoom = zoom; // Bug - won't goTo({zoom: xxx}), have to use scale
+            //params.scale = zoomArray[zoom];
+            params.scale = scale;
+          } else if (zoom) { // Zoom
+            //params.scale = zoomArray[zoom];
+            params.zoom = zoom;
+          }
+          // Rotation
+          if (is2d && rotation) {
+            params.rotation = rotation;
+          }
+          // Heading
+          if (!is2d && heading) {
+            params.heading = heading;
+          }
+          // Tilt
+          // if (tilt) {
+          //   params.tilt = tilt;
+          // }
+          // Go to...
+          // var promise = view.goTo(params);
+          var promise = view.goTo(params).then(function(){
+            if (!is2d) {
+              return view.goTo({
+                center: pt,
+                tilt: tilt
+              }); 
+            }
+          });
+          return promise;
+        }
+
+        function setHomeWidget() {
+          var home = view.ui.find("home").widget;
+          if (home) {
+            home.viewpoint = view.viewpoint.clone();
+          }   
+        }
       }
     },
 

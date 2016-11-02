@@ -35,6 +35,7 @@ define([], function () {
     menuLegend: "#menuLegend",
     menuBasemaps: "#menuBasemaps",
     menuSlides: "#menuSlides",
+    menuShare: "#menuShare",
     menuToggleNav: "#menuToggleNav",
     widgetSearchContainer: ".calcite-navbar-search",
     widgetLegendContainer: ".calcite-panel-legend",
@@ -46,7 +47,9 @@ define([], function () {
     panelLegend: "#panelLegend",
     panelBasemaps: "#panelBasemaps",
     panelSlides: "#panelSlides",
+    panelShare: "#panelShare",
     carouselSlides: "#carouselSlides"
+
   }
 
   return CALCITE_SELECTORS;

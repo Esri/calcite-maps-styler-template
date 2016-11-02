@@ -25,6 +25,7 @@
         "legend": "Legend",
         "slides": "Slides",
         "bookmarks": "Bookmarks",
+        "share": "Share",
         "toggleNav": "Full Map"
       }
     },

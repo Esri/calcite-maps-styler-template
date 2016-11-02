@@ -84,8 +84,10 @@
     "lon",
     "zoom",
     "scale",
-    "tilt",
     "rotation",
+    "heading",
+    "altitude",
+    "tilt",
     "basemap"
   ],
   "webTierSecurity": false,

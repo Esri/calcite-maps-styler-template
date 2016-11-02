@@ -92,13 +92,9 @@ body:lang(ja) {
     padding: 11px 7px 10px;
 }
 
-.dropdown-toggle {
+/*.dropdown-toggle {
   background-color: transparent;
-}
-
-.dropdown-menu span.glyphicon {
-  margin-right: 2px;
-}
+}*/
 
 #panelLegend .panel-body {
   background-color: white;
@@ -207,13 +203,20 @@ body:lang(ja) {
   font-size: 12px;
 }
 
+.calcite-coords-2d {
+  min-width: 340px;  
+}
+
+.calcite-coords-3d {
+  min-width: 390px;
+}
+
 .calcite-coords-container {
   position: absolute;
   left: 50%;
   transform: translate(-50%, 0);
   bottom: 0;
   max-height: 24px;
-  min-width: 380px;
   margin: 0 auto;
   display: block;
   text-align: center;
@@ -225,18 +228,23 @@ body:lang(ja) {
 
 .calcite-coords {
   display: inline-block;
-  padding: 3px 3px 1px;
+  padding: 3px 3px 2px;
 }
 
 .calcite-coords-share {
   float: right;
   padding: 5px 5px 4px;
+  font-size: 11px;
 }
 
 .calcite-coords-share:focus,
 .calcite-coords-share:hover {
   /*color: #f2f2f2;*/
   background-color: rgba(0, 0, 0, 0.15);
+}
+
+#shareUrlText {
+  min-height: 100px;
 }
 
 @media (max-width: 768px) {
