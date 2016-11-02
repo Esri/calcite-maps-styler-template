@@ -229,6 +229,7 @@ body:lang(ja) {
 .calcite-coords {
   display: inline-block;
   padding: 3px 3px 2px;
+  margin: 0 10px;
 }
 
 .calcite-coords-share {

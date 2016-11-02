@@ -88,7 +88,9 @@
     "heading",
     "altitude",
     "tilt",
-    "basemap"
+    "basemap",
+    "x",
+    "y"
   ],
   "webTierSecurity": false,
   "esriEnvironment": true

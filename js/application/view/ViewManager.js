@@ -319,6 +319,8 @@ define([
         // Params
         var lat = this._getNumber(this._boilerplate.config.lat, -90, 90, 100000, null);
         var lon = this._getNumber(this._boilerplate.config.lon, -180, 180, 100000, null);
+        var x = this._getNumber(this._boilerplate.config.x, -100000000, 10000000, 1000, null);
+        var y = this._getNumber(this._boilerplate.config.y, -100000000, 10000000, 1000, null);
         var zoom = this._getNumber(this._boilerplate.config.zoom, 0, 18, 1, null);
         var scale = this._getNumber(this._boilerplate.config.scale, 250, 500000000, 1, null);
         var tilt = this._getNumber(this._boilerplate.config.tilt, 0, 90, 1, null);
@@ -328,8 +330,8 @@ define([
         // 1-20 level converter - TODO
         var zoomArray = [295828035, 147914382, 73957191, 36978595, 18489298, 9244649, 4622324, 2311162, 1155581, 577791, 288895, 144448, 72224, 36112, 18056, 9028, 4514, 2257, 1128]
 
-        // Invalid coords
-        if (!lat || !lon) {
+        // Invalid params
+        if ((!lat || !lon) && (!x || !y)) {
           return;
         }
 
@@ -351,14 +353,24 @@ define([
           console.log(err);
         });
 
-        function getCenter(lon, lat) {
+        function getCenter() {
           var pt;
           if (lat && lon) {
             pt = new Point({
               latitude: lat,
               longitude: lon
             });
-            pt = webMercatorUtils.geographicToWebMercator(pt); // TODO - assume mercator
+            if (view.spatialReference.isWebMercator) {
+              pt = webMercatorUtils.geographicToWebMercator(pt); // TODO - assume mercator
+            } else {
+              pt.spatialReference = view.spatialReference;
+            }
+          } else if (x && y) {
+            pt = new Point({
+              x: x,
+              y: y
+            })
+            pt.spatialReference = view.spatialReference;
           } else {
             pt = view.center.clone(); // TODO - or null
           }
@@ -368,7 +380,7 @@ define([
         function setPosition() {
           var params = {};
           // Center
-          var pt = getCenter(lon,lat);
+          var pt = getCenter();
           // Altitude
           if (altitude) {
             pt.z = params.altitude;
@@ -392,18 +404,13 @@ define([
           if (!is2d && heading) {
             params.heading = heading;
           }
-          // Tilt
-          // if (tilt) {
-          //   params.tilt = tilt;
-          // }
-          // Go to...
-          // var promise = view.goTo(params);
+
           var promise = view.goTo(params).then(function(){
             if (!is2d) {
               return view.goTo({
                 center: pt,
                 tilt: tilt
-              }); 
+              }, {duration: 1000}); 
             }
           });
           return promise;

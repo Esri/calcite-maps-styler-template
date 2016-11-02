@@ -201,11 +201,16 @@ define([
     _getCoordParams: function() {
       var params = {};
       var pt = this._view.center; //this._is2d ? this._view.center : this._view.viewpoint.camera.position;
-      params.lat = parseFloat(Math.round(pt.latitude * 100000) / 100000).toFixed(5); 
-      params.lon = parseFloat(Math.round(pt.longitude * 100000) / 100000).toFixed(5);
-      params.zoom =  Math.round(this._view.zoom * 1) / 1; // Bug 1 - sometimes -1, can't watch this value
+      if (pt.latitude) { // Geographic
+        params.lat = parseFloat(Math.round(pt.latitude * 100000) / 100000).toFixed(5); 
+        params.lon = parseFloat(Math.round(pt.longitude * 100000) / 100000).toFixed(5);        
+      } else { // Web Mercator or projected
+        params.x = parseFloat(Math.round(pt.x * 1000) / 1000).toFixed(3); 
+        params.y = parseFloat(Math.round(pt.y * 1000) / 1000).toFixed(3);
+      }
+      params.zoom =  Math.round(this._view.zoom * 1) / 1; // Bug 1 - always "-1", can't access this value or watch it
       // params.zoom = this._scaleToZoom(this._view.scale); // TODO
-      //zoom = this._is2d ? Math.round(zoom * 1) / 1 : Math.round(zoom * 10) / 10; // Bug 2 - can't pass in decimals
+      //zoom = this._is2d ? Math.round(zoom * 1) / 1 : Math.round(zoom * 10) / 10; // Bug 2 - can't pass in decimals, crashes
       params.scale = Math.round(this._view.viewpoint.scale);
       if (this._is2d) {
         params.rotation = Math.round(this._view.viewpoint.rotation);
@@ -223,12 +228,12 @@ define([
         // Update coords
         var params = this._getCoordParams();
         if (this._view.widthBreakpoint === "xsmall" || this._view.widthBreakpoint === "small") {
-					this._coordsInner.innerHTML = params.lat + "," + params.lon + " | " + params.zoom + " | 1:" + params.scale;
+					this._coordsInner.innerHTML = (params.lat || params.x) + "," + params.lon + " | " + params.zoom + " | 1:" + params.scale;
         } else {
           if (this._is2d) {
-            this._coordsInner.innerHTML = "Center: " + params.lat + "," + params.lon + " | Zoom: " + params.zoom + " | 1:" + params.scale + " | " + (params.rotation === 360 ? 0 : params.rotation) + "&deg;" ;  
+            this._coordsInner.innerHTML = "Center: " + (params.lat || params.x) + "," + (params.lon || params.y) + " | Zoom: " + params.zoom + " | 1:" + params.scale + " | " + (params.rotation === 360 ? 0 : params.rotation) + "&deg;" ;  
           } else {
-            this._coordsInner.innerHTML = "Center: " + params.lat + "," + params.lon + " | Zoom: " + params.zoom + " | 1:" + params.scale + " | " + (params.heading === 360 ? 0 : params.heading) + "&deg;" +  " | " + params.tilt + "&deg;";
+            this._coordsInner.innerHTML = "Center: " + (params.lat || params.x) + "," + (params.lon || params.y) + " | Zoom: " + params.zoom + " | 1:" + params.scale + " | " + (params.heading === 360 ? 0 : params.heading) + "&deg;" +  " | " + params.tilt + "&deg;";
           }
         }
         // Update panel url
