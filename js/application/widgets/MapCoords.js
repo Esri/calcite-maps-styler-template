@@ -233,9 +233,11 @@ define([
   					this._coordsInner.innerHTML = (params.lat || params.x) + "," + params.lon + " | " + params.zoom + " | 1:" + params.scale;
           } else {
             if (this._is2d) {
-              this._coordsInner.innerHTML = "Center: " + (params.lat || params.x) + "," + (params.lon || params.y) + " | Zoom: " + params.zoom + " | 1:" + params.scale + " | " + (params.rotation === 360 ? 0 : params.rotation) + "&deg;" ;  
+              //this._coordsInner.innerHTML = "Center: " + (params.lat || params.x) + "," + (params.lon || params.y) + " | Zoom: " + params.zoom + " | 1:" + params.scale + " | " + (params.rotation === 360 ? 0 : params.rotation) + "&deg;" ;  
+              this._coordsInner.innerHTML = (params.lat || params.x) + "," + (params.lon || params.y) + " | " + params.zoom + " | 1:" + params.scale + " | " + (params.rotation === 360 ? 0 : params.rotation) + "&deg;" ;  
             } else {
-              this._coordsInner.innerHTML = "Center: " + (params.lat || params.x) + "," + (params.lon || params.y) + " | Zoom: " + params.zoom + " | 1:" + params.scale + " | " + (params.heading === 360 ? 0 : params.heading) + "&deg;" +  " | " + params.tilt + "&deg;";
+              //this._coordsInner.innerHTML = "Center: " + (params.lat || params.x) + "," + (params.lon || params.y) + " | Zoom: " + params.zoom + " | 1:" + params.scale + " | " + (params.heading === 360 ? 0 : params.heading) + "&deg;" +  " | " + params.tilt + "&deg;";
+              this._coordsInner.innerHTML = (params.lat || params.x) + "," + (params.lon || params.y) + " | " + params.zoom + " | 1:" + params.scale + " | " + (params.heading === 360 ? 0 : params.heading) + "&deg;" +  " | " + params.tilt + "&deg;";
             }
           }
           // Update panel url

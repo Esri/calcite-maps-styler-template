@@ -196,11 +196,13 @@ body:lang(ja) {
 }
 
 .calcite-coords-2d {
-  min-width: 340px;  
+  /*min-width: 340px;  */
+  min-width: 300px;
 }
 
 .calcite-coords-3d {
-  min-width: 390px;
+  /*min-width: 390px;*/
+  min-width: 300px;
 }
 
 .calcite-coords-container {
