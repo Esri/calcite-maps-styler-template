@@ -241,6 +241,9 @@ define([
         if (boilerplate.config.menuslides === false) {
           query(SELECTORS.menuSlides).addClass("hidden");
         }
+        if (boilerplate.config.menushare === false) {
+          query(SELECTORS.menuShare).addClass("hidden");
+        }
         if (boilerplate.config.menutogglenav === false) {
           query(SELECTORS.menuToggleNav).addClass("hidden");
         }

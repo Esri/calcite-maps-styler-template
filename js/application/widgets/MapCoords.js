@@ -87,6 +87,20 @@ define([
 
     _sharePanelUrlText: query("#shareUrlText")[0],
 
+    _setMapCoordsEvents: function() {
+      var view = this._view;
+      if (view) {
+        view.then(function() {
+          this._setWidgetEvents(view);
+          this._setPanelEvents(view);
+          this._setViewEvents(view);
+          this._setTouchEvents(view);
+        }.bind(this)).otherwise(function(err) {
+          //console.log(err);
+        }.bind(this));
+      }
+    }, 
+
     _setWidgetEvents: function(view) {
       this._uiContainer = query(".esri-ui-inner-container.esri-ui-corner-container")[0];
       var html = this._is2d ? this._mapCoordsHtml2d : this._mapCoordsHtml3d;
@@ -102,11 +116,13 @@ define([
         this._inCoordTouch = false;
         this._showCoordsUI(false);
       }.bind(this));
-      // Show panel from widget
+      // Widget button to show panel...
       on(this._coordsShare, touch.press, function() {
         this._isSharePanelVisible = true;
-        this._updateUrl();
-        on.emit(query("#menuShare > a")[0], "click", { bubbles: true, cancelable: true });
+        this._updateUrlUI();
+        query(".calcite-panels .collapse.in").removeClass("in");
+        query("#panelShare .panel-label, #panelShare .panel-close").removeClass("visible-mobile-only");
+        query("#panelShare, #collapseShare").collapse("show", false);        
         //query("#shareUrlText")[0].select();
       }.bind(this));
     },
@@ -115,11 +131,11 @@ define([
       // Update panel
       if (domClass.contains("collapseShare","in")) {
         this._isSharePanelVisible = true;
-        this._updateUrl();
+        this._updateUrlUI();
       }
       query("#collapseShare").on("show.bs.collapse", function(e) {
           this._isSharePanelVisible = true;
-          this._updateUrl();  
+          this._updateUrlUI();  
       }.bind(this));
       query("#collapseShare").on("hide.bs.collapse", function(e) {
           this._isSharePanelVisible = false;  
@@ -183,25 +199,11 @@ define([
         }
       }.bind(this));
     },
- 
-		_setMapCoordsEvents: function() {
-			var view = this._view;
-      if (view) {
-        view.then(function() {
-          this._setWidgetEvents(view);
-          this._setPanelEvents(view);
-          this._setViewEvents(view);
-          this._setTouchEvents(view);
-        }.bind(this)).otherwise(function(err) {
-          console.log(err);
-        }.bind(this));
-      }
-    }, 
 
     _getCoordParams: function() {
       var params = {};
       var pt = this._view.center; //this._is2d ? this._view.center : this._view.viewpoint.camera.position;
-      if (pt.latitude) { // Geographic
+      if (pt.latitude) { // Geographic // TODO - let user choose coords to display
         params.lat = parseFloat(Math.round(pt.latitude * 100000) / 100000).toFixed(5); 
         params.lon = parseFloat(Math.round(pt.longitude * 100000) / 100000).toFixed(5);        
       } else { // Web Mercator or projected
@@ -225,21 +227,21 @@ define([
     _updateCoordsUI: function() {
       if (this._uiVisible && !this._isUpdatingUI) {
       	this._isUpdatingUI = true;
-        // Update coords
-        var params = this._getCoordParams();
-        if (this._view.widthBreakpoint === "xsmall" || this._view.widthBreakpoint === "small") {
-					this._coordsInner.innerHTML = (params.lat || params.x) + "," + params.lon + " | " + params.zoom + " | 1:" + params.scale;
-        } else {
-          if (this._is2d) {
-            this._coordsInner.innerHTML = "Center: " + (params.lat || params.x) + "," + (params.lon || params.y) + " | Zoom: " + params.zoom + " | 1:" + params.scale + " | " + (params.rotation === 360 ? 0 : params.rotation) + "&deg;" ;  
+          // Update coords
+          var params = this._getCoordParams();
+          if (this._view.widthBreakpoint === "xsmall" || this._view.widthBreakpoint === "small") {
+  					this._coordsInner.innerHTML = (params.lat || params.x) + "," + params.lon + " | " + params.zoom + " | 1:" + params.scale;
           } else {
-            this._coordsInner.innerHTML = "Center: " + (params.lat || params.x) + "," + (params.lon || params.y) + " | Zoom: " + params.zoom + " | 1:" + params.scale + " | " + (params.heading === 360 ? 0 : params.heading) + "&deg;" +  " | " + params.tilt + "&deg;";
+            if (this._is2d) {
+              this._coordsInner.innerHTML = "Center: " + (params.lat || params.x) + "," + (params.lon || params.y) + " | Zoom: " + params.zoom + " | 1:" + params.scale + " | " + (params.rotation === 360 ? 0 : params.rotation) + "&deg;" ;  
+            } else {
+              this._coordsInner.innerHTML = "Center: " + (params.lat || params.x) + "," + (params.lon || params.y) + " | Zoom: " + params.zoom + " | 1:" + params.scale + " | " + (params.heading === 360 ? 0 : params.heading) + "&deg;" +  " | " + params.tilt + "&deg;";
+            }
           }
-        }
-        // Update panel url
-        if (this._isSharePanelVisible) {
-          this._updateUrl(params);
-        }
+          // Update panel url
+          if (this._isSharePanelVisible) {
+            this._updateUrlUI(params);
+          }
         this._isUpdatingUI = false;
       }
     },
@@ -260,10 +262,10 @@ define([
       }
     },
 
-    _updateUrl: function(params) {
+    _updateUrlUI: function(params) {
       var params = params || this._getCoordParams();
       var queryParams = this._queryStringToJSON();
-      var queryAll = lang.mixin(queryParams, params);
+      var queryAll = lang.mixin(queryParams, params); // TODO - sort params in preferred order
       var querySearch = this._jsonToQueryString(queryAll);
       var baseUrl;
       if (window.location.href.indexOf("?") > -1) {
@@ -272,12 +274,10 @@ define([
         baseUrl = window.location.href;
       }
       var pushUrl = baseUrl + "?" + querySearch;
+      // Auto-update browser URL...
       // window.history.pushState("", "", pushUrl);
       //window.history.replaceState("", "", pushUrl);
-      if (this._isSharePanelVisible) {
-        this._sharePanelUrlText.value = pushUrl;
-      }
-      // console.log(pushUrl);
+      this._sharePanelUrlText.value = pushUrl;
     },
 
     _queryStringToJSON() {
@@ -296,6 +296,7 @@ define([
     _jsonToQueryString(obj) {
       var str = "";
       var seperator = "";
+      // TODO - Add sorting code in here lat,lon,zoom,scale,heading,rotation,tilt...
       for (key in obj) {
         str += seperator;
         str += encodeURIComponent(key) + "=" + encodeURIComponent(obj[key]);

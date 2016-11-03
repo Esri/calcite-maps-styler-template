@@ -247,11 +247,12 @@
 .calcite-panels .esri-color-picker {
   width: 100%; }
 
-.calcite-map .esri-popup .esri-container {
+.calcite-map .esri-popup__position-container {
   z-index: 3; }
 
 .calcite-map .esri-popup__header-title {
   padding: 8px 15px 6px;
+  font-size: 15px;
   cursor: pointer; }
 
 .calcite-map .esri-popup .esri-popup-collapsed .esri-popup__content,

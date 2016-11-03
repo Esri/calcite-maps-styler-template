@@ -72,14 +72,6 @@ body:lang(ja) {
   -webkit-user-select: none;
 }
 
-.esri-popup .esri-popup__size-container {
-  z-index: 10;
-}
-
-.esri-popup__header-title {
-  font-size: 15px;
-}
-
 .esri-popup .calcite-title-left-margin {
   margin-left: 15px;
 }

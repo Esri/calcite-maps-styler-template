@@ -171,7 +171,7 @@ define([
             compass: false,
             navtoggle: true,
             findplaces: boilerplate.config.findplaces,
-            mapcoords: true, //boilerplate.config.mapcoords,
+            mapcoords: boilerplate.config.widgetcoords,
             popup: true
           });
           this._appViewManager.setExtent();

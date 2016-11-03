@@ -317,6 +317,12 @@
                 },
                 {
                     "type": "boolean",
+                    "fieldName": "menushare",
+                    "tooltip": "Include menu and panel for sharing out your current map via URL.",
+                    "label": "Share"
+                },
+                {
+                    "type": "boolean",
                     "fieldName": "menutogglenav",
                     "tooltip": "Include a menu item that can show and hide the title bar",
                     "label": "Full Map Toggle"
@@ -760,6 +766,20 @@
                             "value": "streets-night-vector"
                         }
                     ]
+                },
+                {
+                    "type": "paragraph",
+                    "value": "<br><hr>"
+                },                
+                {
+                    "type": "paragraph",
+                    "value": "<b>Map Widgets (optional)</b><br>"
+                },
+                {
+                    "type": "boolean",
+                    "fieldName": "widgetcoords",
+                    "tooltip": "Show map coordinates on the map or scene.",
+                    "label": "Show map coordinates"
                 }
             ]
         },
@@ -895,16 +915,34 @@
                     "label": "Zoom (1-20)"
                 },
                 {
-                    "fieldName": "tilt",
+                    "fieldName": "scale",
                     "type": "number",
-                    "value": 45,
-                    "label": "Tilt (0-90)"
+                    "value": 1000000,
+                    "label": "Scale"
                 },
                 {
                     "fieldName": "rotation",
                     "type": "number",
                     "value": 0,
-                    "label": "Rotation (0-360)"
+                    "label": "Rotation (0-360) 2D Only"
+                },
+                {
+                    "fieldName": "heading",
+                    "type": "number",
+                    "value": 0,
+                    "label": "Heading (0-360) 3D Only"
+                },
+                {
+                    "fieldName": "tilt",
+                    "type": "number",
+                    "value": 45,
+                    "label": "Tilt (0-90) 3D Only"
+                },
+                {
+                    "fieldName": "altitude",
+                    "type": "number",
+                    "value": 1000,
+                    "label": "Altitude 3D Only"
                 },
                 {
                     "type": "boolean",
@@ -933,6 +971,7 @@
         "menulegend": true,
         "menubasemaps": true,
         "menuslides": true,
+        "menushare": true,
         "menutogglenav": true,
         "menustyledrawer": false,
         "dockposition": "top-right",
@@ -946,16 +985,19 @@
         "widgetsearch": "hide",
         "widgetbasemaptoggle": "show",
         "widgetnextbasemap": "satellite",
+        "widgetcoords": true,
         "widgetsearchnav": true,
         "activepanel": "about",
         "findplaces": true,
-        "mapcoords": true,
         "showerrors": true,
         "lon": null,
         "lat": null,
         "zoom": null,
-        "tilt": null,
+        "scale": null,
         "rotation": null,
+        "heading": null,
+        "tilt": null,
+        "altitude": null,
         "basemap": ""
     }
 }
