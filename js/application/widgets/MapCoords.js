@@ -90,11 +90,9 @@ define([
 
     _isUpdatingUI: false,
 
-    _isSharePanelVisible: false,
+    _isCoordsLocked: false,
 
-    //_sharePanelUrlText: query("#shareUrlText")[0],
-
-    _shareCoordsUrlText: null,
+    _coordsUrlTextarea: null,
 
     _setMapCoordsEvents: function() {
       var view = this._view;
@@ -112,38 +110,27 @@ define([
     _setWidgetEvents: function(view) {
       this._uiContainer = query(".esri-ui-inner-container.esri-ui-corner-container")[0];
       this._coordsElement = domConstruct.place(this._mapCoordsHtml, this._uiContainer);
-      this._coordsInner = query(".calcite-coords")[0];//this._coordsElement.children[0];
-      this._coordsShare = query(".calcite-coords-container .esri-icon-share")[0];//this._coordsElement.children[1];
-      this._coordsClose = query(".calcite-coords-container .esri-icon-close")[0];//this._coordsElement.children[1];
-      this._shareCoordsUrlText = query(".calcite-coords-url")[0];
+      this._coordsInner = query(".calcite-coords")[0];
+      this._coordsShare = query(".calcite-coords-container .esri-icon-share")[0];
+      this._coordsClose = query(".calcite-coords-container .esri-icon-close")[0];
+      this._coordsUrlTextarea = query(".calcite-coords-url")[0];
       // Widget UI Elements
-      on(this._coordsElement, [touch.over, touch.press], function() {
-        this._inCoordTouch = true;
-        this._showCoordsUI(true);
-      }.bind(this));
-      on(this._coordsElement, [touch.out, touch.release], function() {
-        this._inCoordTouch = false;
-        this._showCoordsUI(false);
-      }.bind(this));
       
       function setCoordsUIVisible(visible, me) {
         var card = query("#myCard")[0];
         if (visible) {
-          me._isSharePanelVisible = true;
-          me._inTouch = true;
-          me._inCoordTouch = true;
+          me._isCoordsLocked = true;
           me._showCoordsUI(true);
           me._updateUrlUI();
           query(card).addClass("flip");
           setTimeout(function() {
-            // this._shareCoordsUrlText.focus();
-            me._shareCoordsUrlText.select();
+            // this._coordsUrlTextarea.focus();
+            me._coordsUrlTextarea.select();
           }.bind(me), 250);   
         } else {
-          me._isSharePanelVisible = false;
-          me._inTouch = false;
-          me._inCoordTouch = false;
-          query(card).removeClass("flip");   
+          me._isCoordsLocked = false;
+          me._showCoordsUI(false);
+          query(card).removeClass("flip");
         }
       }
 
@@ -161,6 +148,7 @@ define([
         var flip = !domClass.contains(query("#myCard")[0], "flip");
         setCoordsUIVisible(flip, me);
       }.bind(this));
+
     },
 
     _setViewEvents: function(view) {
@@ -205,13 +193,11 @@ define([
     _setTouchEvents: function(view) {
       query(".esri-view-surface").on(touch.press, function(evt) {
         this._inTouch = true;
-        if (!this._inCoordTouch) {
-          this._showCoordsUI(true);            
-        }
+        this._showCoordsUI(true);            
       }.bind(this));
       query(".esri-view-surface").on(touch.release, function(evt) {
         this._inTouch = false;
-        if (!this._inCoordTouch) {
+        if (!this._isCoordsLocked) {
           this._showCoordsUI(false);            
         }
       }.bind(this));
@@ -250,15 +236,13 @@ define([
   					this._coordsInner.innerHTML = (params.lat || params.x) + "," + params.lon + " | " + params.zoom + " | 1:" + params.scale;
           } else {
             if (this._is2d) {
-              //this._coordsInner.innerHTML = "Center: " + (params.lat || params.x) + "," + (params.lon || params.y) + " | Zoom: " + params.zoom + " | 1:" + params.scale + " | " + (params.rotation === 360 ? 0 : params.rotation) + "&deg;" ;  
               this._coordsInner.innerHTML = (params.lat || params.x) + "," + (params.lon || params.y) + " | " + params.zoom + " | 1:" + params.scale + " | " + (params.rotation === 360 ? 0 : params.rotation) + "&deg;" ;  
             } else {
-              //this._coordsInner.innerHTML = "Center: " + (params.lat || params.x) + "," + (params.lon || params.y) + " | Zoom: " + params.zoom + " | 1:" + params.scale + " | " + (params.heading === 360 ? 0 : params.heading) + "&deg;" +  " | " + params.tilt + "&deg;";
               this._coordsInner.innerHTML = (params.lat || params.x) + "," + (params.lon || params.y) + " | " + params.zoom + " | 1:" + params.scale + " | " + (params.heading === 360 ? 0 : params.heading) + "&deg;" +  " | " + params.tilt + "&deg;";
             }
           }
           // Update panel url
-          if (this._isSharePanelVisible) {
+          if (this._isCoordsLocked) {
             this._updateUrlUI(params);
           }
         this._isUpdatingUI = false;
@@ -271,12 +255,12 @@ define([
         this._uiVisible = true;   
         this._updateCoordsUI();
         query(".calcite-coords-container").addClass("in"); 
-        // console.log("showing...")
-      } else if (!show && this._uiVisible && !this._inTouch && !this._inCoordTouch) { // lots of tests...
+        console.log("showing...")
+      } else if (!show && this._uiVisible && !this._inTouch && !this._isCoordsLocked) { // lots of tests...
         this._timeoutCoords = setTimeout(function() {
           this._uiVisible = false;
           query(".calcite-coords-container").removeClass("in");              
-          // console.log("hiding...");              
+          console.log("hiding...");              
         }.bind(this), this._fadeTimeout); 
       }
     },
@@ -297,7 +281,7 @@ define([
       // window.history.pushState("", "", pushUrl);
       //window.history.replaceState("", "", pushUrl);
       //this._sharePanelUrlText.value = pushUrl;
-      this._shareCoordsUrlText.value = pushUrl;
+      this._coordsUrlTextarea.value = pushUrl;
     },
 
     _queryStringToJSON() {
