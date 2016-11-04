@@ -148,9 +148,6 @@ define([
           case "slides":
             panelSelector = SELECTORS.panelSlides;
             break;
-          case "share":
-            panelSelector = SELECTORS.panelShare;
-            break;
           default:
             panelSelector = null;
         }
@@ -219,7 +216,6 @@ define([
       query(SELECTORS.panelLegend + " " + SELECTORS.panelTitle)[0].innerHTML = i18n.menu.items.legend;
       query(SELECTORS.panelBasemaps + " " + SELECTORS.panelTitle)[0].innerHTML = i18n.menu.items.basemaps;
       query(SELECTORS.panelSlides + " " + SELECTORS.panelTitle)[0].innerHTML = (this._isWebMap ? i18n.menu.items.bookmarks : i18n.menu.items.slides);      
-      query(SELECTORS.panelShare + " " + SELECTORS.panelTitle)[0].innerHTML = i18n.menu.items.share;
     },
 
     _setMenusVisible: function(boilerplate) {

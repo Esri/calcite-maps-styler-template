@@ -56,12 +56,25 @@ define([
     _fadeTimeout: 2000,
 
     _mapCoordsHtml2d: `<div class="calcite-coords-container calcite-coords-2d esri-component fade">
-                  		<span class="calcite-coords"></span><span class="esri-icon-share calcite-coords-share"></span>
+                  		<span class="calcite-coords"></span><span class="esri-icon-share calcite-coords-icon"></span>
                 		</div>`,
 
-    _mapCoordsHtml3d: `<div class="calcite-coords-container calcite-coords-3d esri-component fade">
-                      <span class="calcite-coords"></span><span class="esri-icon-share calcite-coords-share"></span>
-                    </div>`,
+    // _mapCoordsHtml3d: `<div class="calcite-coords-container calcite-coords-3d esri-component fade">
+    //                   <span class="calcite-coords"></span><span class="esri-icon-share calcite-coords-share"></span>
+    //                 </div>`,
+
+    _mapCoordsHtml3d: `<div class="calcite-coords-container esri-component fade">
+                        <div id="myCard" class="flip-container">
+                          <div class="flipper">
+                            <div class="front">
+                              <span class="calcite-coords"></span><span class="esri-icon-share calcite-coords-icon"></span>
+                            </div>
+                            <div class="back">
+                              <textarea class="calcite-coords-url" value="This is a url!" rows="5"></textarea><span class="esri-icon-close calcite-coords-icon"></span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>`,
 
     _uiContainer: null,
 
@@ -70,6 +83,8 @@ define([
     _coordsInner: null,
 
     _coordsShare: null,
+
+    _coordsClose: null,
 
     _timeoutCoords: null,
 
@@ -85,14 +100,15 @@ define([
 
     _isSharePanelVisible: false,
 
-    _sharePanelUrlText: query("#shareUrlText")[0],
+    //_sharePanelUrlText: query("#shareUrlText")[0],
+
+    _shareCoordsUrlText: null,
 
     _setMapCoordsEvents: function() {
       var view = this._view;
       if (view) {
         view.then(function() {
           this._setWidgetEvents(view);
-          this._setPanelEvents(view);
           this._setViewEvents(view);
           this._setTouchEvents(view);
         }.bind(this)).otherwise(function(err) {
@@ -105,8 +121,10 @@ define([
       this._uiContainer = query(".esri-ui-inner-container.esri-ui-corner-container")[0];
       var html = this._is2d ? this._mapCoordsHtml2d : this._mapCoordsHtml3d;
       this._coordsElement = domConstruct.place(html, this._uiContainer);
-      this._coordsInner = this._coordsElement.children[0];
-      this._coordsShare = this._coordsElement.children[1];
+      this._coordsInner = query(".calcite-coords")[0];//this._coordsElement.children[0];
+      this._coordsShare = query(".calcite-coords-container .esri-icon-share")[0];//this._coordsElement.children[1];
+      this._coordsClose = query(".calcite-coords-container .esri-icon-close")[0];//this._coordsElement.children[1];
+      this._shareCoordsUrlText = query(".calcite-coords-url")[0];
       // Widget UI Elements
       on(this._coordsElement, [touch.over, touch.press], function() {
         this._inCoordTouch = true;
@@ -116,34 +134,42 @@ define([
         this._inCoordTouch = false;
         this._showCoordsUI(false);
       }.bind(this));
-      // Widget button to show panel...
-      on(this._coordsShare, touch.press, function() {
-        this._isSharePanelVisible = true;
-        this._updateUrlUI();
-        query(".calcite-panels .collapse.in").removeClass("in");
-        query("#panelShare .panel-label, #panelShare .panel-close").removeClass("visible-mobile-only");
-        query("#panelShare, #collapseShare").collapse("show", false);        
-        //query("#shareUrlText")[0].select();
-      }.bind(this));
-    },
-
-    _setPanelEvents: function(view) {
-      // Update panel
-      if (domClass.contains("collapseShare","in")) {
-        this._isSharePanelVisible = true;
-        this._updateUrlUI();
+      
+      function setCoordsUIVisible(visible, me) {
+        var card = query("#myCard")[0];
+        if (visible) {
+          me._isSharePanelVisible = true;
+          me._inTouch = true;
+          me._inCoordTouch = true;
+          me._showCoordsUI(true);
+          me._updateUrlUI();
+          query(card).addClass("flip");
+          setTimeout(function() {
+            // this._shareCoordsUrlText.focus();
+            me._shareCoordsUrlText.select();
+          }.bind(me), 250);   
+        } else {
+          me._isSharePanelVisible = false;
+          me._inTouch = false;
+          me._inCoordTouch = false;
+          query(card).removeClass("flip");   
+        }
       }
-      query("#collapseShare").on("show.bs.collapse", function(e) {
-          this._isSharePanelVisible = true;
-          this._updateUrlUI();  
+
+      // Button share
+      var me = this;
+      on(this._coordsShare, touch.press, function() {
+        setCoordsUIVisible(true, me);
       }.bind(this));
-      query("#collapseShare").on("hide.bs.collapse", function(e) {
-          this._isSharePanelVisible = false;  
+      // Button close
+      on(this._coordsClose, touch.press, function() {
+        setCoordsUIVisible(false, me);        
       }.bind(this));
-      // Select text
-      query("#shareUrlBtn").on("click", function() {
-        query("#shareUrlText")[0].select();
-      });
+      // Menu share
+      query("#menuShare").on(touch.press, function() {
+        var flip = !domClass.contains(query("#myCard")[0], "flip");
+        setCoordsUIVisible(flip, me);
+      }.bind(this));
     },
 
     _setViewEvents: function(view) {
@@ -279,7 +305,8 @@ define([
       // Auto-update browser URL...
       // window.history.pushState("", "", pushUrl);
       //window.history.replaceState("", "", pushUrl);
-      this._sharePanelUrlText.value = pushUrl;
+      //this._sharePanelUrlText.value = pushUrl;
+      this._shareCoordsUrlText.value = pushUrl;
     },
 
     _queryStringToJSON() {
