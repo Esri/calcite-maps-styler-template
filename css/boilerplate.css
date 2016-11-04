@@ -195,14 +195,20 @@ body:lang(ja) {
   color: #323232;
 }
 
-.calcite-coords, .calcite-coords-url {
+.calcite-coords {
   order: 1;
   display: inline-block;
   width: 100%;
   overflow-x: hidden;
   padding: 3px 3px 2px;
   margin: 0 10px;
-  /*font-size: 11px;*/
+}
+
+.calcite-container-url {
+  order: 1;
+  width: 100%;
+  margin: 5px 5px 5px 10px;
+  overflow-x: hidden;
 }
 
 .calcite-coords {
@@ -210,8 +216,7 @@ body:lang(ja) {
 }
 
 .calcite-coords-url {
-  margin: 0 0 0 2px;
-  height: 65px;
+  width: 100%;
   word-break: break-all;
   border: none;
   overflow: auto;
@@ -261,6 +266,7 @@ body:lang(ja) {
   width: 320px;
   background: #fff;
   font-size: 11px;
+  z-index: 100;
 }
 
 /* flip speed goes here */
@@ -286,7 +292,7 @@ body:lang(ja) {
 
 /* front pane, placed above back */
 .front {
-  z-index: 2;
+  /*z-index: 2;*/
   transform: rotateY(0deg);
   text-align: center;
   /*visibility: visible;*/
@@ -299,11 +305,8 @@ body:lang(ja) {
 }
 
 @media (max-width: 768px) {
-  .calcite-coords-container {
-    min-width: 245px;
-  }
-  .calcite-coords {
-    padding: 2px 4px 0;
+  .flip-container, .front, .back {
+    width: 170px;
   }
 }
 

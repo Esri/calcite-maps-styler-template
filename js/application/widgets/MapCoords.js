@@ -62,7 +62,7 @@ define([
                               <span class="calcite-coords"></span><span class="esri-icon-share calcite-coords-icon"></span>
                             </div>
                             <div class="back">
-                              <textarea class="calcite-coords-url" value="This is a url!" rows="5"></textarea><span class="esri-icon-close calcite-coords-icon"></span>
+                              <div class="calcite-container-url"><textarea class="calcite-coords-url" value="This is a url!" rows="5"></textarea></div><span class="esri-icon-close calcite-coords-icon"></span>
                             </div>
                           </div>
                         </div>
@@ -114,7 +114,17 @@ define([
       this._coordsShare = query(".calcite-coords-container .esri-icon-share")[0];
       this._coordsClose = query(".calcite-coords-container .esri-icon-close")[0];
       this._coordsUrlTextarea = query(".calcite-coords-url")[0];
-      // Widget UI Elements
+
+      // Widget UI - show on hover, hide on out
+
+      on(this._coordsElement, [touch.over, touch.press], function() {
+        this._showCoordsUI(true);
+      }.bind(this));
+      on(this._coordsElement, [touch.out, touch.release], function() {
+        this._showCoordsUI(false);
+      }.bind(this));
+
+      // Widget UI Elements - show/hide on icon click
       
       function setCoordsUIVisible(visible, me) {
         var card = query("#myCard")[0];
@@ -233,7 +243,8 @@ define([
           // Update coords
           var params = this._getCoordParams();
           if (this._view.widthBreakpoint === "xsmall" || this._view.widthBreakpoint === "small") {
-  					this._coordsInner.innerHTML = (params.lat || params.x) + "," + params.lon + " | " + params.zoom + " | 1:" + params.scale;
+  					//this._coordsInner.innerHTML = (params.lat || params.x) + "," + params.lon + " | " + params.zoom + " | 1:" + params.scale;
+            this._coordsInner.innerHTML = (params.lat || params.x) + "," + params.lon;
           } else {
             if (this._is2d) {
               this._coordsInner.innerHTML = (params.lat || params.x) + "," + (params.lon || params.y) + " | " + params.zoom + " | 1:" + params.scale + " | " + (params.rotation === 360 ? 0 : params.rotation) + "&deg;" ;  
