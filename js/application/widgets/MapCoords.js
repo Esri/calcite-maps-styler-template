@@ -62,7 +62,7 @@ define([
                               <span class="calcite-coords"></span><span class="esri-icon-share calcite-coords-icon"></span>
                             </div>
                             <div class="back">
-                              <div class="calcite-container-url"><textarea class="calcite-coords-url" value="This is a url!" rows="5"></textarea></div><span class="esri-icon-close calcite-coords-icon"></span>
+                              <textarea class="calcite-coords-textarea" value="This is a url!"></textarea><span class="esri-icon-close calcite-coords-icon"></span>
                             </div>
                           </div>
                         </div>
@@ -113,7 +113,7 @@ define([
       this._coordsInner = query(".calcite-coords")[0];
       this._coordsShare = query(".calcite-coords-container .esri-icon-share")[0];
       this._coordsClose = query(".calcite-coords-container .esri-icon-close")[0];
-      this._coordsUrlTextarea = query(".calcite-coords-url")[0];
+      this._coordsUrlTextarea = query(".calcite-coords-textarea")[0];
 
       // Widget UI - show on hover, hide on out
 
@@ -244,7 +244,7 @@ define([
           var params = this._getCoordParams();
           if (this._view.widthBreakpoint === "xsmall" || this._view.widthBreakpoint === "small") {
   					//this._coordsInner.innerHTML = (params.lat || params.x) + "," + params.lon + " | " + params.zoom + " | 1:" + params.scale;
-            this._coordsInner.innerHTML = (params.lat || params.x) + "," + params.lon;
+            this._coordsInner.innerHTML = (params.lat || params.x) + "," + (params.lon || params.x);
           } else {
             if (this._is2d) {
               this._coordsInner.innerHTML = (params.lat || params.x) + "," + (params.lon || params.y) + " | " + params.zoom + " | 1:" + params.scale + " | " + (params.rotation === 360 ? 0 : params.rotation) + "&deg;" ;  
@@ -266,12 +266,12 @@ define([
         this._uiVisible = true;   
         this._updateCoordsUI();
         query(".calcite-coords-container").addClass("in"); 
-        console.log("showing...")
+        //console.log("showing...")
       } else if (!show && this._uiVisible && !this._inTouch && !this._isCoordsLocked) { // lots of tests...
         this._timeoutCoords = setTimeout(function() {
           this._uiVisible = false;
           query(".calcite-coords-container").removeClass("in");              
-          console.log("hiding...");              
+          //console.log("hiding...");              
         }.bind(this), this._fadeTimeout); 
       }
     },

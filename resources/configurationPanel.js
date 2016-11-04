@@ -318,7 +318,7 @@
                 {
                     "type": "boolean",
                     "fieldName": "menushare",
-                    "tooltip": "Include menu and panel for sharing out your current map via URL.",
+                    "tooltip": "Include menu for sharing out your current map via URL.",
                     "label": "Share"
                 },
                 {
