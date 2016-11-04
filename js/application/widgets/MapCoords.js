@@ -55,15 +55,7 @@ define([
 
     _fadeTimeout: 2000,
 
-    _mapCoordsHtml2d: `<div class="calcite-coords-container calcite-coords-2d esri-component fade">
-                  		<span class="calcite-coords"></span><span class="esri-icon-share calcite-coords-icon"></span>
-                		</div>`,
-
-    // _mapCoordsHtml3d: `<div class="calcite-coords-container calcite-coords-3d esri-component fade">
-    //                   <span class="calcite-coords"></span><span class="esri-icon-share calcite-coords-share"></span>
-    //                 </div>`,
-
-    _mapCoordsHtml3d: `<div class="calcite-coords-container esri-component fade">
+    _mapCoordsHtml: `<div class="calcite-coords-container esri-component fade">
                         <div id="myCard" class="flip-container">
                           <div class="flipper">
                             <div class="front">
@@ -119,8 +111,7 @@ define([
 
     _setWidgetEvents: function(view) {
       this._uiContainer = query(".esri-ui-inner-container.esri-ui-corner-container")[0];
-      var html = this._is2d ? this._mapCoordsHtml2d : this._mapCoordsHtml3d;
-      this._coordsElement = domConstruct.place(html, this._uiContainer);
+      this._coordsElement = domConstruct.place(this._mapCoordsHtml, this._uiContainer);
       this._coordsInner = query(".calcite-coords")[0];//this._coordsElement.children[0];
       this._coordsShare = query(".calcite-coords-container .esri-icon-share")[0];//this._coordsElement.children[1];
       this._coordsClose = query(".calcite-coords-container .esri-icon-close")[0];//this._coordsElement.children[1];

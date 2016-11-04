@@ -228,6 +228,7 @@ body:lang(ja) {
   float: right;
   padding: 5px 5px 4px;
   /*font-size: 11px;*/
+  max-height: 21px;
 }
 
 .flip-container {
@@ -317,11 +318,12 @@ body:lang(ja) {
   padding: 5px 5px 4px;
   font-size: 11px;
 }
+*/
 
-.calcite-coords-share:focus,
-.calcite-coords-share:hover {
+.calcite-coords-icon:focus,
+.calcite-coords-icon:hover {
   background-color: rgba(0, 0, 0, 0.15);
-}*/
+}
 
 #shareUrlText {
   min-height: 100px;
