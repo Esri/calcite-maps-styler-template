@@ -54,7 +54,12 @@ define([
       if (showMessages) {
         var node = query(".calcite-alert .alert-message")[0];
         if (node) {
-          node.innerHTML = `<span><strong>${errType}</strong>&nbsp;${userMsg}</span>`;
+          // Accumulate all error messages
+          if (node.innerHTML) {
+            node.innerHTML = node.innerHTML + `<br><span><strong>${errType}</strong>&nbsp;${userMsg}</span>`;
+          } else {
+            node.innerHTML = `<span><strong>${errType}</strong>&nbsp;${userMsg}</span>`;
+          }        
           query(".calcite-alert").removeClass("hidden");
         }
       }

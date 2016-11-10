@@ -23,6 +23,9 @@
   "widgetLegend": {
     "containerId": "legendDiv"
   },
+  "widgetLayers": {
+    "containerId": "layersDiv"
+  },
   "group": {
     "fetchInfo": true,
     "fetchItems": true,
@@ -62,6 +65,7 @@
     "widgettheme",
     "menuabout",
     "menulegend",
+    "menulayers",
     "menubasemaps",
     "menuslides",
     "menushare",

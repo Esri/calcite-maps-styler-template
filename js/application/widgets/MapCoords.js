@@ -41,11 +41,12 @@ define([
     //
     //--------------------------------------------------------------------------
 
-    constructor: function (view) {
+    constructor: function (view, share) {
     	if (view) {
 	    	this._view = view;
 	    	this._is2d = view.type === "2d";
-	    	this._setMapCoordsEvents();    		
+        this._share = share;
+	    	this._setMapCoordsEvents();		
     	}
     },
 
@@ -53,16 +54,31 @@ define([
 
     _is2d: false,
 
+    _share: true,
+
     _fadeTimeout: 2000,
 
     _mapCoordsHtml: `<div class="calcite-coords-container esri-component fade">
-                        <div id="myCard" class="flip-container">
+                        <div id="coordsFlipDiv" class="coords-flip-container">
                           <div class="flipper">
                             <div class="front">
                               <span class="calcite-coords"></span><span class="esri-icon-share calcite-coords-icon"></span>
                             </div>
                             <div class="back">
-                              <textarea class="calcite-coords-textarea" value="This is a url!"></textarea><span class="esri-icon-close calcite-coords-icon"></span>
+                              <textarea class="calcite-coords-textarea" value=""></textarea><span class="esri-icon-close calcite-coords-icon"></span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>`,
+
+    _mapCoordsHtmlNoShare: `<div class="calcite-coords-container esri-component fade">
+                        <div id="coordsFlipDiv" class="coords-flip-container">
+                          <div class="flipper">
+                            <div class="front">
+                              <span class="calcite-coords"></span>
+                            </div>
+                            <div class="back">
+                              <textarea class="calcite-coords-textarea" value=""></textarea><span class="esri-icon-close calcite-coords-icon"></span>
                             </div>
                           </div>
                         </div>
@@ -109,7 +125,8 @@ define([
 
     _setWidgetEvents: function(view) {
       this._uiContainer = query(".esri-ui-inner-container.esri-ui-corner-container")[0];
-      this._coordsElement = domConstruct.place(this._mapCoordsHtml, this._uiContainer);
+      var html = this._share ? this._mapCoordsHtml : this._mapCoordsHtmlNoShare;
+      this._coordsElement = domConstruct.place(html, this._uiContainer);
       this._coordsInner = query(".calcite-coords")[0];
       this._coordsShare = query(".calcite-coords-container .esri-icon-share")[0];
       this._coordsClose = query(".calcite-coords-container .esri-icon-close")[0];
@@ -127,12 +144,12 @@ define([
       // Widget UI Elements - show/hide on icon click
       
       function setCoordsUIVisible(visible, me) {
-        var card = query("#myCard")[0];
+        var coordsFlip = query("#coordsFlipDiv")[0];
         if (visible) {
           me._isCoordsLocked = true;
           me._showCoordsUI(true);
           me._updateUrlUI();
-          query(card).addClass("flip");
+          query(coordsFlip).addClass("flip");
           setTimeout(function() {
             // this._coordsUrlTextarea.focus();
             me._coordsUrlTextarea.select();
@@ -140,22 +157,24 @@ define([
         } else {
           me._isCoordsLocked = false;
           me._showCoordsUI(false);
-          query(card).removeClass("flip");
+          query(coordsFlip).removeClass("flip");
         }
       }
 
       // Button share
       var me = this;
-      on(this._coordsShare, touch.press, function() {
-        setCoordsUIVisible(true, me);
-      }.bind(this));
+      if (this._coordsShare) {
+        on(this._coordsShare, touch.press, function() {
+          setCoordsUIVisible(true, me);
+        }.bind(this));        
+      }
       // Button close
       on(this._coordsClose, touch.press, function() {
         setCoordsUIVisible(false, me);        
       }.bind(this));
       // Menu share
       query("#menuShare").on(touch.press, function() {
-        var flip = !domClass.contains(query("#myCard")[0], "flip");
+        var flip = !domClass.contains(query("#coordsFlipDiv")[0], "flip");
         setCoordsUIVisible(flip, me);
       }.bind(this));
 

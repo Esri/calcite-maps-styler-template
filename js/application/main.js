@@ -31,7 +31,7 @@ define([
   "dojo/_base/declare",
 
   // Calcite Maps
-  "calcite-maps/calcitemaps-v0.2",
+  "calcite-maps/calcitemaps-v0.3",
 
   // Bootstrap
   "bootstrap/Collapse",
@@ -169,9 +169,10 @@ define([
           this._appViewManager.setWidgetExtensions({
             home: false,
             compass: false,
-            navtoggle: true,
-            findplaces: boilerplate.config.findplaces,
-            mapcoords: boilerplate.config.widgetcoords,
+            navToggle: true,
+            findPlaces: boilerplate.config.findplaces,
+            mapCoords: boilerplate.config.widgetcoords,
+            mapCoordsShare: boilerplate.config.menushare,
             popup: true
           });
           this._appViewManager.setExtent();

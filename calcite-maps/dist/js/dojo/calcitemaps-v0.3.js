@@ -36,7 +36,7 @@ define([
 
     activePanel: null,
 
-    stickyDropdownDesktop: true,
+    stickyDropdownDesktop: false,
 
     stickyDropdownMobile: false,
 

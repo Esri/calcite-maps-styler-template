@@ -30,6 +30,7 @@ define([
   "esri/widgets/Compass",
   "esri/widgets/Search",
   "esri/widgets/Legend",
+  // "esri/widgets/LayerList",
   "esri/widgets/BasemapToggle",
   "esri/widgets/Attribution",
 
@@ -134,6 +135,8 @@ define([
 
     legendWidget: null,
 
+    layersWidget: null,
+
     // View
 
     createViewFromItem: function(webItem, options) {
@@ -222,7 +225,8 @@ define([
       if (view) {
         var settings = this._boilerplate.settings;
         this.searchWidget = this._createSearchWidget(settings.widgetSearch.containerId, {view: view});
-        this.legendWidget = this._createLegendWidget(settings.widgetLegend.containerId, {view: view});        
+        this.legendWidget = this._createLegendWidget(settings.widgetLegend.containerId, {view: view});
+        //this.layersWidget = this._createLayersWidget(settings.widgetLayers.containerId, {view: view});
       }
     },
 

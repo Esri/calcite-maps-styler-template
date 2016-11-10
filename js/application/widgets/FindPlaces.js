@@ -16,11 +16,17 @@
 define([
   "esri/geometry/Point",
   "esri/Graphic",
-  "esri/layers/GraphicsLayer",
+  // "esri/layers/GraphicsLayer",
+  "esri/layers/FeatureLayer",
+  "esri/layers/support/Field",
+  "esri/core/Collection",
   "esri/symbols/SimpleMarkerSymbol",
   "esri/symbols/PictureMarkerSymbol",
   "esri/PopupTemplate",
   "esri/widgets/Spinner",
+  "esri/geometry/SpatialReference",
+  "esri/geometry/support/webMercatorUtils",
+  "esri/tasks/GeometryService",
   "esri/core/watchUtils",
 
   "dojo/Deferred",
@@ -30,7 +36,7 @@ define([
   "dojo/dom-construct",
   "dojo/_base/declare"
 ], function (
-  Point, Graphic, GraphicsLayer, SimpleMarkerSymbol, PictureMarkerSymbol, PopupTemplate, Spinner, watchUtils,
+  Point, Graphic, FeatureLayer, Field, Collection, SimpleMarkerSymbol, PictureMarkerSymbol, PopupTemplate, Spinner, SpatialReference, webMercatorUtils, GeometryService, watchUtils,
   Deferred, on, touch, query, domConstruct, declare
 ) {
 
@@ -99,11 +105,19 @@ define([
     _selectedColor: [0, 122, 194, 0.95],
     // _selectedColor: [222, 41, 0, 0.8],
 
-    _touchSpinnerThreshold: 150, // milliseconds
+    _touchSpinnerThreshold: 200, // milliseconds
 
     _touchHoldThreshold: 500, // milliseconds
 
+    _touchSpinnerTimer: null,
+
+    _touchHoldTimer: null,
+
     _findScaleThreshold: 8000000, // about state-level
+
+    _goToDurationSlow: 300,
+
+    _goToDurationFast: 150,
 
     _init: function() {
       var view = this._view;
@@ -153,8 +167,45 @@ define([
     },
 
     _createGraphicsLayers: function() {
-      this._placesLayer = new GraphicsLayer({popupEnabled: true});
-      this._placesSelectLayer = new GraphicsLayer();
+      var fields = [
+        new Field({
+         "name": "ObjectID",
+         "alias": "ObjectID",
+         "type": "oid"
+        }), new Field({
+         "name": "name",
+         "alias": "Name",
+         "type": "string"
+        }), new Field ({
+         "name": "address",
+         "alias": "Address",
+         "type": "string"
+        }), new Field ({
+         "name": "id",
+         "alias": "id",
+         "type": "integer"
+        })
+      ];
+      this._placesLayer = new FeatureLayer({
+        popupEnabled: true,
+        legendEnabled: false,
+        elevationInfo: {mode: "on-the-ground"},
+        source: new Collection(),
+        fields: fields,
+        objectIdField: "ObjectID",  // field name of the Object IDs
+        geometryType: "point",
+        popupTemplate: this._createPopupTemplate("places", false)
+      });
+      this._placesSelectLayer = new FeatureLayer({
+        popupEnabled: true,
+        legendEnabled: false,
+        elevationInfo: {mode: "on-the-ground"},
+        source: new Collection(),
+        fields: fields,
+        objectIdField: "ObjectID",  // field name of the Object IDs
+        geometryType: "point",
+        popupTemplate: this._createPopupTemplate("places", false)
+      });
       if (this._view) {
         this._view.map.add(this._placesLayer);
         this._view.map.add(this._placesSelectLayer);
@@ -286,56 +337,62 @@ define([
       if (view) {
         var popup = view.popup;
         var pressHold = false;
-        var pressTimer;
-        var spinnerTimer;
 
-        // Press
+        // Press (start)
         query(".esri-view-surface").on(touch.press, function(evt) {
           if (!this._isFindScaleThreshold()) {
             return;
           }
           pressHold = true;
-          // Delay, show spinner
-          clearTimeout(spinnerTimer);
-          spinnerTimer = setTimeout(function() {
-            if (pressHold && !view.interacting) {
-              this._spinner.viewModel.point = view.toMap(evt.clientX,evt.clientY);
-            }
-          }.bind(this), this._touchSpinnerThreshold);
-          // Delay longer, show popup
-          clearTimeout(pressTimer);
-          pressTimer = setTimeout(function() {
-            if (pressHold && !view.interacting) {
-              // Find places...
-              this._showPopup(evt);
-            }
-            pressHold = false;
-          }.bind(this), this._touchHoldThreshold);
-          return false;
+          
+          if (!view.interacting) {
+            // Delay a bit, then show spinner (150ms)
+            clearTimeout(this._touchSpinnerTimer);
+            this._touchSpinnerTimer = setTimeout(function() {
+              if (pressHold && !view.interacting) {
+                this._spinner.viewModel.point = view.toMap(evt.clientX,evt.clientY);
+              }
+            }.bind(this), this._touchSpinnerThreshold);
+            
+            // Delay longer, show popup (500ms)
+            clearTimeout(this._touchHoldTimer);
+            this._touchHoldTimer = setTimeout(function() {
+              if (pressHold && !view.interacting) {
+                // Find places...
+                this._showPopup(evt);
+              }
+              pressHold = false;
+            }.bind(this), this._touchHoldThreshold);
+          }
+
         }.bind(this));
 
         // Move (cancel)
         query(".esri-view-surface").on(touch.move, function(evt){
-          if (!this._isFindScaleThreshold()) {
-            return;
-          }
           pressHold = false;
-          return false;
+          this._spinner.viewModel.point = null;
+          if (this._promise) {
+            this._promise.cancel();
+            this._popup.visible = false;
+          }
         }.bind(this));
         
         // Release
         query(".esri-view-surface").on(touch.release, function(evt){
-          if (!this._isFindScaleThreshold()) {
-            return;
-          }
           pressHold = false;
-          if (this._promise) {
-            this._spinner.viewModel.point = this._popup.location;
-          } else {
+          if (!this._promise) {
             this._spinner.viewModel.point = null;
           }
-          return false;
         }.bind(this));
+
+        // Interaction - stop!
+        // view.watch("interacting", function(interacting) {
+        //   if (pressHold && interacting) {
+        //     console.log("interacting");
+        //     pressHold = false;
+        //     this._spinner.viewModel.point = null;
+        //   }
+        // }.bind(this));
       }
     },
 
@@ -451,7 +508,8 @@ define([
       actions.push(goBackAction);
       var goBackTriggerAction = function(event){
         if (event.action.id === "goback"){
-          this._placesSelectLayer.removeAll();
+          //this._placesSelectLayer.removeAll();
+          this._placesSelectLayer.source.removeAll();
           this._showLocationPopup();
         }
       }
@@ -541,8 +599,10 @@ define([
     //----------------------------------------------------
 
     _clearGraphics: function() {
-      this._placesSelectLayer.removeAll();
-      this._placesLayer.removeAll();
+      // this._placesSelectLayer.removeAll();
+      this._placesSelectLayer.source.removeAll()
+      // this._placesLayer.removeAll();
+      this._placesLayer.source.removeAll();
     },
 
     _formatCoords: function(point) {
@@ -553,18 +613,16 @@ define([
 
     _createLocationGraphic: function(point) {
       var popupTemplate = this._createPopupTemplate("location", false);
-      var lat = Math.round(point.latitude * 100000) / 100000;
-      var lon = Math.round(point.longitude * 100000) / 100000;
       var tempContent = "&nbsp;";
       // Graphic
       var locationGraphic = new Graphic({
         geometry: point,
         symbol: this._locationSymbol,
         attributes: {
+          ObjectID: 0,
           id: this._popupLocationId,
           name: this._popupDefaultTitle,
-          address: tempContent//, // Until template is applied
-          //coords: this._formatCoords(point)
+          address: tempContent // Until template is applied
         },
         popupTemplate: popupTemplate,
         layer: this._placesLayer // Bug
@@ -574,7 +632,8 @@ define([
 
     _addLocationGraphic: function(graphic, visible) {
       graphic.visible = visible;
-      this._placesLayer.graphics.add(graphic);
+      // this._placesLayer.graphics.add(graphic);
+      this._placesLayer.source.add(graphic);
       return graphic;
     },
 
@@ -583,30 +642,38 @@ define([
       var markerSymbol = this._placesSymbol;
       var popupTemplate = this._createPopupTemplate("places", false);
       var graphics = [];
-      // Post-process locations with same location and name attributes?
-      responseProcessed = this._postProcessResults(response); // TODO
+      // Post-process locations with same location and name attributes
+      responseProcessed = this._postProcessResults(response); // TODO - revisit if needed at next AGO release
       // Create graphics
-      responseProcessed.forEach(function(feature) {
-        // Fix spatial reference
+      responseProcessed.forEach(function(feature, i) {
+        // Create point
         var point = new Point({
           latitude: feature.location.latitude,
           longitude: feature.location.longitude,
-          spatialReference: this._view.spatialReference
+          spatialReference: SpatialReference.WGS84
         });
+        // Project
+        if (webMercatorUtils.canProject(point.spatialReference, this._view.spatialReference)) {
+          point = webMercatorUtils.project(point, this._view.spatialReference);
+        // ) else { // TODO - project here or project batch...
+        }
+        // Create graphic
         var pointGraphic = new Graphic({
           geometry: point,
           symbol: markerSymbol,
           attributes: {
+            ObjectID: i + 1,
             name: feature.attributes.PlaceName || feature.address,
             address: feature.attributes.Place_addr || feature.attributes.address//, // TODO
             //coords: this._formatCoords(point)
           },
-          popupTemplate: popupTemplate,
+          //popupTemplate: popupTemplate,
           layer: this._placesLayer // Bug
         });
         graphics.push(pointGraphic);
       }.bind(this));
-      var promise = this._placesLayer.addMany(graphics);
+      // var promise = this._placesLayer.addMany(graphics);
+      var promise = this._placesLayer.source.addMany(graphics);
       return promise;
     },
 
@@ -635,7 +702,8 @@ define([
     },
 
     _findLocationGraphic: function() {
-      var location = this._placesLayer.graphics.find(function(g) {
+      //var location = this._placesLayer.graphics.find(function(g) {
+      var location = this._placesLayer.source.find(function(g) {
         return item.attributes.id === this._popupLocationId;
       }.bind(this));
       return location;
@@ -673,7 +741,8 @@ define([
     _setPopupFeatures: function(selectedIndex) {
       // Places
       var features = [];
-      var graphics = this._placesLayer.graphics;
+      //var graphics = this._placesLayer.graphics;
+      var graphics = this._placesLayer.source;
       graphics.forEach(function(g) {
         features.push(g);
       }.bind(this));
@@ -686,6 +755,7 @@ define([
     _isPlace: function(feature) {
       var isPlace = false;
       if (feature) {
+        //isPlace = (feature.layer === this._placesLayer);
         isPlace = (feature.layer === this._placesLayer);
       }
       return isPlace;
@@ -702,7 +772,8 @@ define([
     },
 
     _placeIndex: function(feature) {
-      var index = this._placesLayer.graphics.findIndex(function(item) {
+      //var index = this._placesLayer.graphics.findIndex(function(item) {
+      var index = this._placesLayer.source.findIndex(function(item) {
         return item === feature;
       });
       return index;
@@ -716,7 +787,8 @@ define([
       this._popup.watch("selectedFeature", function(feature) {
         if (this._isPlace(feature)) {
           // Remove selected symbol
-          this._placesSelectLayer.removeAll();
+          // this._placesSelectLayer.removeAll();
+          this._placesSelectLayer.source.removeAll();
           var isLocation = this._isPlaceLocation(feature);
           // Set filter events
           if (isLocation) {
@@ -724,7 +796,8 @@ define([
           } else { // Highlight place
             var selectedFeature = feature.clone();
             selectedFeature.symbol = this._placesSymbolSelected; 
-            this._placesSelectLayer.add(selectedFeature);
+            // this._placesSelectLayer.add(selectedFeature);
+            this._placesSelectLayer.source.add(selectedFeature);
           }
           // Move popup immediately
           var point = feature.geometry.clone();
@@ -775,7 +848,8 @@ define([
             var searchKeyword = evt.target.value;
             this._activeSearchKey = searchKeyword;
             // Show popup
-            var location = this._placesLayer.graphics.items[0];
+            //var location = this._placesLayer.graphics.items[0];
+            var location = this._placesLayer.source.items[0];
             if (location) {
               var point = location.geometry;
               this._showPopup({mapPoint: point});
@@ -800,7 +874,7 @@ define([
       }
       var promise = this._view.goTo(options, {
           animate: !(this._view.widthBreakpoint === "small" || this._view.widthBreakpoint === "xsmall"), // Not for mobile,
-          duration: this._view.scale < 100000 ? 150 : 300 // Fast vs slower pan
+          duration: this._view.scale < 100000 ? this._goToDurationFast : this._goToDurationSlow // Fast vs slower pan
         });
       return promise;
     }

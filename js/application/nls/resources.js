@@ -23,6 +23,7 @@
         "about": "About",
         "basemaps": "Basemaps",
         "legend": "Legend",
+        "layers": "Layers",
         "slides": "Slides",
         "bookmarks": "Bookmarks",
         "share": "Share",

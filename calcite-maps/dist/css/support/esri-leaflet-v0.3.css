@@ -6,7 +6,7 @@
   line-height: 1; }
 
 .calcite-navbar-search {
-  padding-top: 9px; }
+  margin-top: 15px; }
 
 .calcite-panels {
   z-index: 1000; }
@@ -15,9 +15,9 @@
   margin: 15px 15px 30px 15px; }
 
 .calcite-map .leaflet-control-zoom.leaflet-bar > a {
-  width: 32px;
-  height: 32px;
-  line-height: 32px;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
   border-radius: 0; }
 
 .calcite-nav-top .calcite-map .leaflet-control-zoom {

@@ -44,14 +44,14 @@ define([
       if (options.compass) {
         this._setCompassEvents();      
       }
-      if (options.navtoggle) {
+      if (options.navToggle) {
         this._setNavToggleEvents();      
       }
-      if (options.findplaces) {
+      if (options.findPlaces) {
         this._setFindPlacesEvents();
       }
-      if (options.mapcoords) {
-        this._setMapCoords();
+      if (options.mapCoords) {
+        this._setMapCoords(options.mapCoordsShare);
       }
       if (options.popup) {
         this._setPopupCollapseEvents();        
@@ -180,10 +180,10 @@ define([
       }
     },
 
-    _setMapCoords: function() {
+    _setMapCoords: function(share) {
       var view = this._view;
       if (view) {
-        new MapCoords(view);
+        new MapCoords(view, share);
       }
     },
 
