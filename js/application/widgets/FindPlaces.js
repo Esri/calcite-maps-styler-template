@@ -325,10 +325,10 @@ define([
       var findPlacesTriggerAction = function(event){
         if (event.action.id === "findPlaces"){
           // Show popup
-          var location = this._popup.location.clone();
+          var location = this._popup.location;
           if (location) {
             this._searchWidget.clear();
-            this._showPopup({mapPoint: location});              
+            this._showPopupFindPlaces(location);              
           }
         }
       }
@@ -502,9 +502,8 @@ define([
             clearTimeout(this._touchHoldTimer);
             this._touchHoldTimer = setTimeout(function() {
               if (pressHold && !view.interacting) {
-                // Find places...
                 var searchPoint = this._view.toMap(evt.clientX, evt.clientY);
-                this._showPopup(searchPoint);
+                this._showPopupFindPlaces(searchPoint); // Find places
               }
               pressHold = false;
             }.bind(this), this._touchHoldThreshold);
@@ -516,10 +515,6 @@ define([
         query(".esri-view-surface").on(touch.move, function(evt){
           pressHold = false;
           this._spinner.viewModel.point = null;
-          if (this._promise) {
-            this._promise.cancel();
-            // this._popup.visible = false;
-          }
         }.bind(this));
         
         // Release
@@ -579,21 +574,23 @@ define([
       }
     },
 
-    _showPopup: function showPopup(searchPoint) {
+    _showPopupFindPlaces: function(searchPoint) {
       if (this._popup && searchPoint) {
+        var pt = searchPoint.clone();
         // Spinner
         this._popup._spinner.viewModel.point = null;
-        this._spinner.viewModel.point = searchPoint.clone();
+        this._spinner.viewModel.point = pt;
         // Clean up
         this._popup.clear();
         this._searchWidget.clear();
         this._clearGraphics();
         // Show location popup
-        var location = this._createLocationGraphic(searchPoint);
+        var location = this._createLocationGraphic(pt);
+        this._addLocationGraphic(location, true);
         this._showLocationPopup(location);
         // Add Places
         this._cancelPromise();
-        this._promise = this._findPlaces(searchPoint);
+        this._promise = this._findPlaces(pt);
         this._promise
           .then(function(results){
             this._spinner.viewModel.point = null;
@@ -604,16 +601,16 @@ define([
             //     graphic.visible = true;  
             //   }, 250);
             // }.bind(this));
-            this._addLocationGraphic(location, true);
+            // this._addLocationGraphic(location, true);
             this._addPlacesGraphics(results);
-            this._setPopupFeatures();
-            // this._popup.visible = true;
+            this._setPopupFeatures(); // Shows popup
           }.bind(this))
           .otherwise(function(err){
-            // Cancelled or failed, nothing to do here
+            // Cancelled or failed...
+            console.log(err);
           })
           .always(function(results){
-            //this._promise = null;
+            // Nothing to do...
           }.bind(this));
       }
     },
@@ -697,7 +694,7 @@ define([
 
     _clearGraphics: function() {
       // this._placesSelectLayer.removeAll();
-      this._placesSelectLayer.source.removeAll()
+      this._placesSelectLayer.source.removeAll();
       // this._placesLayer.removeAll();
       this._placesLayer.source.removeAll();
     },
@@ -895,9 +892,11 @@ define([
             // Show popup
             //var location = this._placesLayer.graphics.items[0];
             //var location = this._placesLayer.source.items[0];
-            var searchPoint = this._popup.location;
-            this._showPopup(searchPoint);
-            return false;
+            //if (location.geometry) {
+            var pt = this._popup.location;
+            if (pt) {
+              this._showPopupFindPlaces(pt);              
+            }
           }.bind(this));
         } else { // Safety
           var stop = new Date();
