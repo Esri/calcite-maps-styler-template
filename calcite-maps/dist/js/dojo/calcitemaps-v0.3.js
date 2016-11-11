@@ -52,7 +52,6 @@ define([
       this.setDropdownToggleEvents();
       this.setToggleNavbarClick();
       this.setPanelEvents();
-      this.setTouchEvents();
 
     },
 
@@ -177,25 +176,6 @@ define([
         });
       }
       
-    },
-
-    //----------------------------------
-    // Map Touch Events
-    //----------------------------------
-
-    setTouchEvents: function() {
-
-      var funcContext = function setTouchEvents(e) {
-        if (this.preventOverscrolling) {
-          if (e.target instanceof SVGSVGElement) {
-            e.preventDefault();
-          }
-        }
-      } 
-
-      // Prevent browser overscroll/bouncing when panning map on mobile
-      query(".calcite-map").on("touchmove", lang.hitch(this, funcContext));
-
     }
 
   });
