@@ -101,6 +101,10 @@ define([
 
     _locationSymbol: null,
 
+    _placesSymbolSelected: null,
+
+    _renderer: null,
+
     _spinner: null,
 
     _promise: null,
@@ -116,7 +120,7 @@ define([
 
     _touchSpinnerThreshold: 200, // milliseconds
 
-    _touchHoldThreshold: 500, // milliseconds
+    _touchHoldThreshold: 250, // milliseconds
 
     _touchSpinnerTimer: null,
 
@@ -173,10 +177,10 @@ define([
           name: "Coffee Shops",
           value: "Coffee Shop"
         },
-        {
-          name: "Night Life",
-          value: "Nightlife Spot"
-        },
+        // {
+        //   name: "Night Life",
+        //   value: "Nightlife Spot"
+        // },
         {
           name: "Gas Stations",
           value: "Gas Station"
@@ -420,9 +424,9 @@ define([
       });
       uvr.addUniqueValueInfo(this._placeKeys.place, this._placesSymbol);
       uvr.addUniqueValueInfo(this._placeKeys.location, this._locationSymbol);
-      //uvr.addUniqueValueInfo("placeSelected", this._placesSymbolSelected);
+      //uvr.addUniqueValueInfo(this._placeKeys.selectedPlace, this._placesSymbolSelected);
 
-      this._renderer = uvr;
+      // this._renderer = uvr.clone();
 
       var popupTemplate = this._createPopupTemplate(this._placeKeys.place, false);
 
@@ -484,24 +488,27 @@ define([
           if (!this._isFindScaleThreshold()) {
             return;
           }
-          pressHold = true;
           if (!view.interacting) {
-            // Delay a bit, then show spinner (150ms)
+            pressHold = true;
+            // Delay and then show spinner (200ms)
             clearTimeout(this._touchSpinnerTimer);
             this._touchSpinnerTimer = setTimeout(function() {
               if (pressHold && !view.interacting) {
-                this._spinner.viewModel.point = view.toMap(evt.clientX,evt.clientY);
+                var point = view.toMap(evt.clientX,evt.clientY);
+                this._spinner.viewModel.point = point;
+                // Delay more and then do search (250ms)
+                clearTimeout(this._touchHoldTimer);
+                this._touchHoldTimer = setTimeout(function() {
+                  if (pressHold) {
+                    this._showPopupFindPlaces(point);
+                  } else {
+                    this._spinner.viewModel.point = null;
+                  }
+                }.bind(this), this._touchHoldThreshold);
+              } else {
+                this._spinner.viewModel.point = null;
               }
             }.bind(this), this._touchSpinnerThreshold);
-            // Delay longer, show popup (500ms)
-            clearTimeout(this._touchHoldTimer);
-            this._touchHoldTimer = setTimeout(function() {
-              if (pressHold && !view.interacting) {
-                var searchPoint = this._view.toMap(evt.clientX, evt.clientY);
-                this._showPopupFindPlaces(searchPoint); // Find places
-              }
-              pressHold = false;
-            }.bind(this), this._touchHoldThreshold);
           }
           return false;
         }.bind(this));
@@ -519,15 +526,6 @@ define([
             this._spinner.viewModel.point = null;
           }
         }.bind(this));
-
-        // Interaction - stop!
-        // view.watch("interacting", function(interacting) {
-        //   if (pressHold && interacting) {
-        //     console.log("interacting");
-        //     pressHold = false;
-        //     this._spinner.viewModel.point = null;
-        //   }
-        // }.bind(this));
       }
     },
 
@@ -579,41 +577,33 @@ define([
         this._popup.clear();
         this._searchWidget.clear();
         this._clearGraphics();
-        this._lastSelectedIndex = 0;
         // Show location popup
         var location = this._createLocationGraphic(pt);
-        this._addLocationGraphic(location, true);
-        this._showLocationPopup(location);
+        //location.visible = false; // Bug, can't be set invisible
+        this._addLocationGraphic(location);
+        this._setPopupFeatures(0); // Show location popup immediately
         // Add Places
         this._cancelPromise();
         this._promise = this._findPlaces(pt);
         this._promise
           .then(function(results){
             this._spinner.viewModel.point = null;
-            // Delayed draw to wait for spinner, but can't use due visible bug
-            // var graphic = this._addLocationGraphic(location, false); 
-            // this._addPlacesGraphics(results).then(function(){
-            //   setTimeout(function(){
-            //     graphic.visible = true;  
-            //   }, 250);
-            // }.bind(this));
-            // this._addLocationGraphic(location, true);
+            // Give spinner time to fade out and then make visible // Bug, always visible
+            // setTimeout(function() {
+            //   location.visible = true;
+            // }.bind(this), 500);
+            // Add more features
             this._addPlacesGraphics(results);
-            this._setPopupFeatures(); // Shows popup
+            this._setPopupFeatures(0); 
           }.bind(this))
-          .otherwise(function(err){
+          .otherwise(function(err) {
             // Cancelled or failed...
-            console.log(err);
+            this._spinner.viewModel.point = null;
           })
-          .always(function(results){
+          .always(function(results) {
             // Nothing to do...
           }.bind(this));
       }
-    },
-
-    _showLocationPopup: function(feature) {
-      // Show popup immediately for selectedFeature
-      this._popup.features = [feature];
     },
 
     //----------------------------------------------------
@@ -635,13 +625,13 @@ define([
           type: this._placeKeys.location
         },
         popupTemplate: popupTemplate,
+        //visible: false, // Bug
         layer: this._placesLayer // Bug
       });
       return locationGraphic;
     },
 
     _addLocationGraphic: function(graphic, visible) {
-      graphic.visible = visible;
       // this._placesLayer.graphics.add(graphic);
       this._placesLayer.source.add(graphic);
       return graphic;
@@ -755,16 +745,9 @@ define([
     // Set Features
 
     _setPopupFeatures: function(selectedIndex) {
-      // Places
-      var features = [];
-      //var graphics = this._placesLayer.graphics;
-      // var graphics = this._placesLayer.source;
-      // graphics.forEach(function(g) {
-      //   features.push(g);
-      // }.bind(this));
-      // this._popup.features = features;
-      this._popup.features = this._placesLayer.source.toArray();
-      if (selectedIndex > -1) {
+      var graphics = this._placesLayer.source.toArray();
+      if (graphics.length > 0 && selectedIndex < graphics.length) {
+        this._popup.features = graphics;
         this._popup.selectedFeatureIndex = selectedIndex;
       }
     },
@@ -797,18 +780,8 @@ define([
     },
 
     //----------------------------------------------------
-    // Watch for selected feature changes
+    // Handle selected feature changes and clicks
     //----------------------------------------------------
-
-    _replaceFeatureSymbol: function(feature, symbol, i) {
-      if (i > 0) {
-        var clone = feature.clone();
-        clone.symbol = symbol;
-        this._placesLayer.source.splice(i, 1, clone);
-        this._popup.features.splice(i, 1, clone);
-        return clone;     
-      }
-    },
 
     _watchSelectedFeature: function() {
       this._popup.watch("selectedFeature", function(feature) {
@@ -818,50 +791,28 @@ define([
           if (isLocation) { // index === 0
             this._setFilterHandler();
           } 
-          // // Reset old symbol (by attribute)
+          // // Reset old symbol (by attribute) - TODO
           // if (this._lastSelectedFeature) {
-          //   this._lastSelectedFeature.attributes.type = "place";
+          //   this._lastSelectedFeature.attributes.type = this._placeKeys.place;
           // }
           // // Set new symbol (by attribute)
           // if (!isLocation) {
-          //   feature.attributes.type = "placeSelected";
+          //   feature.attributes.type = this._placeKeys.selectedPlace;
           //   this._lastSelectedFeature = feature;
-          //   this._placesLayer.renderer = this._renderer.clone(); // Fails in 3d
+          //   this._placesLayer.renderer = this._renderer.clone(); // Does not highlight in 3d
           // }
           // Reposition popup
           this._movePopup(feature);
         }
       }.bind(this));
 
-      // Work-around for click on location to re-show features in popup
+      // Work-around for click on location to re-populate features (1-50) in popup
       this._view.on("click", function(result) {
-        function setFeatures(feature, instance) {
-          if (instance._isPlace(feature)) {
-            var index;
-            if (instance._popup.featureCount > 1) {
-              index = instance._popup.selectedFeatureIndex;
-            } else {
-              index = instance._placeIndex(feature);
-            }
-            instance._setPopupFeatures(index);
-          }
+        var feature = this._popup.selectedFeature;  // Feature is set by the system automatically
+        if (feature && this._isPlace(feature)) {
+          var index = this._placeIndex(feature);
+          this._setPopupFeatures(index);
         }
-        // Feature was selected automatically
-        var feature = this._popup.selectedFeature;
-        if (feature) {
-          setFeatures(feature, this);
-        }
-      //   } else {
-      //     // Feature is missing, try to select manually - Bug - TODO
-      //     if (!feature) {
-      //       this._view.hitTest(result.screenPoint).then(function(results) {
-      //         if (results.length) {
-      //           feature = results[0];
-      //           setFeatures(feature, this);
-      //         }
-      //       }.bind(this));
-      //     }
-      //   }
       }.bind(this));
     },
 
