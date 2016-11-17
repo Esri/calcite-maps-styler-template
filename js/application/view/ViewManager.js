@@ -30,7 +30,7 @@ define([
   "esri/widgets/Compass",
   "esri/widgets/Search",
   "esri/widgets/Legend",
-  // "esri/widgets/LayerList",
+  "esri/widgets/LayerList",
   "esri/widgets/BasemapToggle",
   "esri/widgets/Attribution",
 
@@ -58,7 +58,7 @@ define([
   WIDGETS_LAYOUT, WidgetsExt, Message,
   ItemHelper,
   Component,
-  Zoom, Home, NavigationToggle, Locate, Track, Compass, Search, Legend, BasemapToggle, Attribution,
+  Zoom, Home, NavigationToggle, Locate, Track, Compass, Search, Legend, LayerList, BasemapToggle, Attribution,
   UnsupportedLayer, UnknownLayer,
   Point, Viewpoint, Camera, webMercatorUtils,
   watchUtils,
@@ -135,7 +135,7 @@ define([
 
     legendWidget: null,
 
-    layersWidget: null,
+    layerListWidget: null,
 
     // View
 
@@ -226,7 +226,7 @@ define([
         var settings = this._boilerplate.settings;
         this.searchWidget = this._createSearchWidget(settings.widgetSearch.containerId, {view: view});
         this.legendWidget = this._createLegendWidget(settings.widgetLegend.containerId, {view: view});
-        //this.layersWidget = this._createLayersWidget(settings.widgetLayers.containerId, {view: view});
+        this.layerListWidget = this._createlayerListWidget(settings.widgetLayers.containerId, {view: view});
       }
     },
 
@@ -604,9 +604,19 @@ define([
         var options = {};
         lang.mixin(options, legendOptions);
         legend = new Legend(options, id);
-        legend.startup();
       }
       return legend;
+    },
+
+    _createlayerListWidget: function(id, layerListOptions) {
+      var layerList;
+      layerListOptions = layerListOptions || {};
+      if (id) {
+        //var options = {};
+        //lang.mixin(options, legendOptions);
+        layerList = new LayerList(layerListOptions, id);
+      }
+      return layerList;
     },
 
     // Webmap/webscene layer check

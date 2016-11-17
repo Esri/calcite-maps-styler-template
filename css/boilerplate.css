@@ -84,6 +84,14 @@ body:lang(ja) {
   background-color: white;
 }
 
+#panelLayers .panel-body {
+  background-color: #f8f8f8;
+}
+
+#layersDiv {
+  width: 100%;
+}
+
 /* Navigation (3D) */
 .esri-navigation-toggle__button--rotate {
   border-top: 0;
@@ -115,17 +123,12 @@ body:lang(ja) {
 }
 
 #carouselSlides .item {
-  /*text-align: center;*/
   padding: 24px 0 0;
 }
 
 #carouselSlides .item img {
   margin: 0 auto;
   /*border: 5px solid transparent;*/
-}
-
-#carouselSlides .item {
-  /*text-align: center;*/
 }
 
 #carouselSlides .carousel-caption {

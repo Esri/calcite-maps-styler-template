@@ -305,6 +305,12 @@
                 },
                 {
                     "type": "boolean",
+                    "fieldName": "menulayers",
+                    "tooltip": "Include menu and panel to show layers",
+                    "label": "Layers"
+                },
+                {
+                    "type": "boolean",
                     "fieldName": "menubasemaps",
                     "tooltip": "Include menu and panel for basemaps",
                     "label": "Basemaps"
@@ -344,6 +350,10 @@
                         {
                             "label": "Legend",
                             "value": "legend"
+                        },
+                        {
+                            "label": "Layers",
+                            "value": "layers"
                         },
                         {
                             "label": "Basemaps",
@@ -965,10 +975,11 @@
         "opacity": 1,
         "textcolor": "",
         "widgettheme": "light",
-        "layout": "top",
+        "layout": "top-medium",
         "panelslayout": "right",
         "menuabout": true,
         "menulegend": true,
+        "menulayers": true,
         "menubasemaps": true,
         "menuslides": true,
         "menushare": true,

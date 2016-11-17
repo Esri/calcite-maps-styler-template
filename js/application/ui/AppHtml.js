@@ -142,9 +142,9 @@ define([
           case "legend":
             panelSelector = SELECTORS.panelLegend;
             break;
-          // case "layers":
-          //   panelSelector = SELECTORS.panelLayers;
-          //   break;
+          case "layers":
+            panelSelector = SELECTORS.panelLayers;
+            break;
           case "basemaps":
             panelSelector = SELECTORS.panelBasemaps;
             break;
@@ -205,7 +205,7 @@ define([
       query(SELECTORS.dropdownMenuTitle)[0].innerHTML = i18n.menu.title;
       query(SELECTORS.menuAbout + " a")[0].innerHTML = query(SELECTORS.menuAbout + " a")[0].innerHTML + "&nbsp;" + i18n.menu.items.about;
       query(SELECTORS.menuLegend + " a")[0].innerHTML = query(SELECTORS.menuLegend + " a")[0].innerHTML + "&nbsp;" + i18n.menu.items.legend;
-      // query(SELECTORS.menuLayers + " a")[0].innerHTML = query(SELECTORS.menuLayers + " a")[0].innerHTML + "&nbsp;" + i18n.menu.items.layers;
+      query(SELECTORS.menuLayers + " a")[0].innerHTML = query(SELECTORS.menuLayers + " a")[0].innerHTML + "&nbsp;" + i18n.menu.items.layers;
       query(SELECTORS.menuBasemaps + " a")[0].innerHTML = query(SELECTORS.menuBasemaps + " a")[0].innerHTML + "&nbsp;" + i18n.menu.items.basemaps;
       query(SELECTORS.menuSlides + " a")[0].innerHTML = query(SELECTORS.menuSlides + " a")[0].innerHTML + "&nbsp;" + (this._isWebMap ? i18n.menu.items.bookmarks : i18n.menu.items.slides);
       query(SELECTORS.menuShare + " a")[0].innerHTML = query(SELECTORS.menuShare + " a")[0].innerHTML + "&nbsp;" + i18n.menu.items.share;
@@ -218,7 +218,7 @@ define([
       var i18n = this._i18n;
       query(SELECTORS.panelAbout + " " + SELECTORS.panelTitle)[0].innerHTML = i18n.menu.items.about;
       query(SELECTORS.panelLegend + " " + SELECTORS.panelTitle)[0].innerHTML = i18n.menu.items.legend;
-      // query(SELECTORS.panelLayers + " " + SELECTORS.panelTitle)[0].innerHTML = i18n.menu.items.layers;
+      query(SELECTORS.panelLayers + " " + SELECTORS.panelTitle)[0].innerHTML = i18n.menu.items.layers;
       query(SELECTORS.panelBasemaps + " " + SELECTORS.panelTitle)[0].innerHTML = i18n.menu.items.basemaps;
       query(SELECTORS.panelSlides + " " + SELECTORS.panelTitle)[0].innerHTML = (this._isWebMap ? i18n.menu.items.bookmarks : i18n.menu.items.slides);      
     },
@@ -236,9 +236,9 @@ define([
         if (boilerplate.config.menulegend === false) {
           query(SELECTORS.menuLegend).addClass("hidden");
         }
-        // if (boilerplate.config.menulayers === false) {
-        //   query(SELECTORS.menuLayers).addClass("hidden");
-        // }
+        if (boilerplate.config.menulayers === false) {
+          query(SELECTORS.menuLayers).addClass("hidden");
+        }
         if (boilerplate.config.menubasemaps === false) {
           query(SELECTORS.menuBasemaps).addClass("hidden");
         }

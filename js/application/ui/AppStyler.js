@@ -323,7 +323,7 @@ function(
 
     _setWidgetThemeStyle: function(widgetTheme) {
       if (widgetTheme === "light") {
-        domClass.remove(document.body, CALCITE_STYLES.widgetsDark);
+        // Do nothing
       } else if (widgetTheme === "dark") {
         domClass.add(document.body, CALCITE_STYLES.widgetsDark);
       }
