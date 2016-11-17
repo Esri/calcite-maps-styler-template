@@ -71,9 +71,17 @@ define([
 
     _searchWidget: null,
 
-    _placesSelectLayer: null,
-
     _placesLayer: null,
+
+    _showInLegend: true,
+
+    _showInLayerList: true,
+
+    _placeKeys: {
+      place: "Place",
+      selectedPlace: "Selected",
+      location: "Location"
+    },
 
     _popupDefaultTitle: "Places Search", // TODO
 
@@ -215,7 +223,7 @@ define([
       var searchWidget = this._searchWidget;
       if (view) {
         if (searchWidget && searchWidget.viewModel.sources.length > 0) {
-          this._geocoder = searchWidget.viewModel.sources.items[0].locator;
+          this._geocoder = searchWidget.viewModel.sources.items[0].locator; // World geocoder
           this._geocoder.outSpatialReference = view.map.spatialReference;
         }        
       }
@@ -228,7 +236,7 @@ define([
     _createPopupTemplate: function(type, overwriteActions) {
       var content = "";
       // Location template
-      if (type === "location") {
+      if (type === this._placeKeys.location) {
         var options = this._createOptions();
         content = `<span class='calcite-popup-content'>
                     <select id='filterPlaces' class='calcite-popup-filter'>` 
@@ -244,10 +252,10 @@ define([
       });
       var actions = [];
       var overwriteActions = false;
-      if (type === "location") {
+      if (type === this._placeKeys.location) {
         actions = this._getLocationPopupActions();
         overwriteActions = false;
-      } else if (type === "places") { // TODO
+      } else if (type === this._placeKeys.place) { // TODO
         //actions = this._getPlacesPopupActions();
       }
       popupTemplate.overwriteActions = overwriteActions;
@@ -305,8 +313,6 @@ define([
       actions.push(goBackAction);
       var goBackTriggerAction = function(event){
         if (event.action.id === "goback"){
-          //this._placesSelectLayer.removeAll();
-          this._placesSelectLayer.source.removeAll();
           this._showLocationPopup();
         }
       }
@@ -403,7 +409,7 @@ define([
          "type": "double"
         }), new Field ({
          "name": "type",
-         "alias": "type",
+         "alias": "Type",
          "type": "string"
         })
       ];
@@ -412,44 +418,34 @@ define([
       var uvr = new UniqueValueRenderer({
         field: "type"
       });
-      uvr.addUniqueValueInfo("place", this._placesSymbol);
-      uvr.addUniqueValueInfo("location", this._locationSymbol);
+      uvr.addUniqueValueInfo(this._placeKeys.place, this._placesSymbol);
+      uvr.addUniqueValueInfo(this._placeKeys.location, this._locationSymbol);
+      //uvr.addUniqueValueInfo("placeSelected", this._placesSymbolSelected);
 
-      var popupTemplate = this._createPopupTemplate("places", false);
+      this._renderer = uvr;
+
+      var popupTemplate = this._createPopupTemplate(this._placeKeys.place, false);
 
       // Places layer
       this._placesLayer = new FeatureLayer({
         popupEnabled: true,
-        legendEnabled: false,
+        // Don't show places in legend or layerlist
+        legendEnabled: this._showInLegend,
+        listMode: this._showInLayerList,
         // elevationInfo: {mode: "on-the-ground"},  // Bug - causes popup to fail
         source: new Collection(),
         fields: fields,
         outFields: ["*"],
-        objectIdField: "ObjectID",  // field name of the Object IDs
+        objectIdField: "ObjectID",
         geometryType: "point",
         spatialReference: this._view.spatialReference,
         renderer: uvr,
         popupTemplate: popupTemplate,
-        returnZ: true
-      });
-
-      // Selected places
-      this._placesSelectLayer = new FeatureLayer({
-        popupEnabled: true,
-        legendEnabled: false,
-        // elevationInfo: {mode: "on-the-ground"},
-        source: new Collection(),
-        fields: fields,
-        outFields: ["*"],
-        objectIdField: "ObjectID",  // field name of the Object IDs
-        geometryType: "point",
-        spatialReference: this._view.spatialReference,
-        popupTemplate: popupTemplate,
-        returnZ: true
+        returnZ: true,
+        title: "Places Search"
       });
 
       this._view.map.add(this._placesLayer);
-      this._view.map.add(this._placesSelectLayer);
       // this._placesLayer = this._view._graphicsView;
     },
 
@@ -489,7 +485,6 @@ define([
             return;
           }
           pressHold = true;
-          
           if (!view.interacting) {
             // Delay a bit, then show spinner (150ms)
             clearTimeout(this._touchSpinnerTimer);
@@ -584,6 +579,7 @@ define([
         this._popup.clear();
         this._searchWidget.clear();
         this._clearGraphics();
+        this._lastSelectedIndex = 0;
         // Show location popup
         var location = this._createLocationGraphic(pt);
         this._addLocationGraphic(location, true);
@@ -625,7 +621,7 @@ define([
     //----------------------------------------------------
 
     _createLocationGraphic: function(point) {
-      var popupTemplate = this._createPopupTemplate("location", false);
+      var popupTemplate = this._createPopupTemplate(this._placeKeys.location, false);
       var tempContent = "&nbsp;";
       // Graphic
       var locationGraphic = new Graphic({
@@ -636,7 +632,7 @@ define([
           id: this._popupLocationId,
           name: this._popupDefaultTitle,
           address: tempContent, // Until template is applied
-          type: "location"
+          type: this._placeKeys.location
         },
         popupTemplate: popupTemplate,
         layer: this._placesLayer // Bug
@@ -679,7 +675,7 @@ define([
             ObjectID: i + 2,
             name: feature.attributes.PlaceName || feature.address,
             address: feature.attributes.Place_addr || feature.attributes.address, // TODO
-            type: "place"
+            type: this._placeKeys.place
           },
           //popupTemplate: popupTemplate,
           layer: this._placesLayer // Bug
@@ -693,8 +689,6 @@ define([
     },
 
     _clearGraphics: function() {
-      // this._placesSelectLayer.removeAll();
-      this._placesSelectLayer.source.removeAll();
       // this._placesLayer.removeAll();
       this._placesLayer.source.removeAll();
     },
@@ -764,11 +758,12 @@ define([
       // Places
       var features = [];
       //var graphics = this._placesLayer.graphics;
-      var graphics = this._placesLayer.source;
-      graphics.forEach(function(g) {
-        features.push(g);
-      }.bind(this));
-      this._popup.features = features;
+      // var graphics = this._placesLayer.source;
+      // graphics.forEach(function(g) {
+      //   features.push(g);
+      // }.bind(this));
+      // this._popup.features = features;
+      this._popup.features = this._placesLayer.source.toArray();
       if (selectedIndex > -1) {
         this._popup.selectedFeatureIndex = selectedIndex;
       }
@@ -805,39 +800,36 @@ define([
     // Watch for selected feature changes
     //----------------------------------------------------
 
-    _watchSelectedFeature: function() {
-      this._popup.watch("selectedFeatureIndex", function(index) {
-        console.log(index);
-      });
+    _replaceFeatureSymbol: function(feature, symbol, i) {
+      if (i > 0) {
+        var clone = feature.clone();
+        clone.symbol = symbol;
+        this._placesLayer.source.splice(i, 1, clone);
+        this._popup.features.splice(i, 1, clone);
+        return clone;     
+      }
+    },
 
+    _watchSelectedFeature: function() {
       this._popup.watch("selectedFeature", function(feature) {
         if (this._isPlace(feature)) {
-          // Remove selected symbol
-          // this._placesSelectLayer.removeAll();
-          this._placesSelectLayer.source.removeAll();
           var isLocation = this._isPlaceLocation(feature);
-          // Set filter events
-          if (isLocation) {
+          // Location - remove when renderer event is exposed
+          if (isLocation) { // index === 0
             this._setFilterHandler();
-          } else { // Highlight place
-            var selectedFeature = feature.clone();
-            selectedFeature.symbol = this._placesSymbolSelected; 
-            // this._placesSelectLayer.add(selectedFeature);
-            this._placesSelectLayer.source.add(selectedFeature);
-          }
-          // Move popup immediately
-          var point = feature.geometry.clone();
-          if (this._view.type === "2d") {
-            this._popup.location = point;  
-          }
-          // Center map
-          this._centerMap(point).then(function(){
-            // Move popup after
-            if (this._view.type === "3d") {
-              var scenePoint = this._view.center;
-              this._popup.location = scenePoint;
-            }
-          }.bind(this));
+          } 
+          // // Reset old symbol (by attribute)
+          // if (this._lastSelectedFeature) {
+          //   this._lastSelectedFeature.attributes.type = "place";
+          // }
+          // // Set new symbol (by attribute)
+          // if (!isLocation) {
+          //   feature.attributes.type = "placeSelected";
+          //   this._lastSelectedFeature = feature;
+          //   this._placesLayer.renderer = this._renderer.clone(); // Fails in 3d
+          // }
+          // Reposition popup
+          this._movePopup(feature);
         }
       }.bind(this));
 
@@ -858,17 +850,18 @@ define([
         var feature = this._popup.selectedFeature;
         if (feature) {
           setFeatures(feature, this);
-        } else {
-          // Feature is missing, try to select manually - Bug - TODO
-          if (!feature) {
-            this._view.hitTest(result.screenPoint).then(function(results) {
-              if (results.length) {
-                feature = results[0];
-                setFeatures(feature, this);
-              }
-            }.bind(this));
-          }
         }
+      //   } else {
+      //     // Feature is missing, try to select manually - Bug - TODO
+      //     if (!feature) {
+      //       this._view.hitTest(result.screenPoint).then(function(results) {
+      //         if (results.length) {
+      //           feature = results[0];
+      //           setFeatures(feature, this);
+      //         }
+      //       }.bind(this));
+      //     }
+      //   }
       }.bind(this));
     },
 
@@ -889,10 +882,7 @@ define([
             // Set active key
             var searchKeyword = evt.target.value;
             this._activeSearchKey = searchKeyword;
-            // Show popup
-            //var location = this._placesLayer.graphics.items[0];
-            //var location = this._placesLayer.source.items[0];
-            //if (location.geometry) {
+            // Redo search
             var pt = this._popup.location;
             if (pt) {
               this._showPopupFindPlaces(pt);              
@@ -907,6 +897,24 @@ define([
           }
         }    
       }.bind(this), 50);
+    },
+
+    _movePopup: function(feature) {
+      var point = feature.geometry;
+      if (point) {
+        // Move popup
+        if (this._view.type === "2d") {
+          this._popup.location = point;  
+        }
+        // Center map
+        this._centerMap(point).then(function(){
+          // Move popup afterwards - Bug
+          if (this._view.type === "3d") {
+            var scenePoint = this._view.center;
+            this._popup.location = scenePoint;
+          }
+        }.bind(this));        
+      }
     },
 
     _centerMap: function(point) {
