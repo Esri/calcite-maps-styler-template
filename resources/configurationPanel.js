@@ -724,8 +724,12 @@
                             "value": "satellite"
                         },
                         {
-                            "label": "Hybrid",
+                            "label": "Satellite with Labels",
                             "value": "hybrid"
+                        },
+                        {
+                            "label": "Terrain",
+                            "value": "terrain"
                         },
                         {
                             "label": "Topography",
@@ -748,31 +752,35 @@
                             "value": "national-geographic"
                         },
                         {
-                            "label": "Streets Vector (2D)",
+                            "label": "OpenStreetMap",
+                            "value": "osm"
+                        },
+                        {
+                            "label": "Streets Vector",
                             "value": "streets-vector"
                         },
                         {
-                            "label": "Gray Vector (2D)",
+                            "label": "Gray Vector",
                             "value": "gray-vector"
                         },
                         {
-                            "label": "Dark Gray Vector (2D)",
+                            "label": "Dark Gray Vector",
                             "value": "dark-gray-vector"
                         },
                         {
-                            "label": "Topo Vector (2D)",
+                            "label": "Topo Vector",
                             "value": "topo-vector"
                         },
                         {
-                            "label": "Streets Relief Vector (2D)",
+                            "label": "Streets Relief Vector",
                             "value": "streets-relief-vector"
                         },
                         {
-                            "label": "Streets Navigation Vector (2D)",
+                            "label": "Streets Navigation Vector",
                             "value": "streets-navigation-vector"
                         },
                         {
-                            "label": "Streets Night Vector (2D)",
+                            "label": "Streets Night Vector",
                             "value": "streets-night-vector"
                         }
                     ]

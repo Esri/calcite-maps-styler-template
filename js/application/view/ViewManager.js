@@ -434,24 +434,6 @@ define([
       var basemap = this._boilerplate.config.basemap;
       if (view && basemap) {
         if (basemap.match(/^(streets|satellite|hybrid|terrain|topo|gray|dark-gray|oceans|national-geographic|osm|dark-gray-vector|gray-vector|streets-vector|topo-vector|streets-night-vector|streets-relief-vector|streets-navigation-vector)$/)) {
-          if (view.type === "3d") {
-            var v = "-vector";
-            var i = basemap.indexOf(v);
-            if (i > -1) {
-              basemap = basemap.substring(i, basemap.legend - i);
-              switch (basemap) {
-                case "streets-night":
-                  basemap = "dark-gray";
-                  break;
-                case "streets-relief":
-                  basemap = "streets";
-                  break;
-                case "streets-navigation":
-                  basemap = "streets";
-                  break;
-              }
-            }
-          }
           view.map.basemap = basemap;          
         }
       }
@@ -536,7 +518,7 @@ define([
       return widget;
     },
 
-        _returnValidPosition: function(position) {
+    _returnValidPosition: function(position) {
       if (position === WIDGETS_LAYOUT.POSITION.topLeft || 
         position === WIDGETS_LAYOUT.POSITION.topRight || 
         position === WIDGETS_LAYOUT.POSITION.bottomLeft || 

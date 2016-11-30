@@ -317,11 +317,7 @@ define([
       if (view) {
         query("#selectBasemapPanel").on("change", function(e) {
           if (e.target.value !== "select") {
-            if (this._isWebMap) {
-              view.map.basemap = e.target.options[e.target.selectedIndex].dataset.vector;
-            } else {
-              view.map.basemap = e.target.value;  
-            }
+            view.map.basemap = e.target.value;  
           }
         }.bind(this));
       }
@@ -329,28 +325,23 @@ define([
 
     _setBasemapPanel: function(view) {
       if (view) {
-        var isWebMap = this._isWebMap;
-        query("#selectBasemapPanel [data-vector=select]")[0].innerHTML = "--- " + this._i18n.basemaps.select + " ---";
-        query("#selectBasemapPanel [data-vector=streets-vector]")[0].innerHTML = isWebMap ? basemapDefs["streets-vector"].title : basemapDefs["streets"].title;
-        query("#selectBasemapPanel [data-vector=satellite]")[0].innerHTML = basemapDefs["satellite"].title;
-        query("#selectBasemapPanel [data-vector=hybrid]")[0].innerHTML = basemapDefs["hybrid"].title;
-        query("#selectBasemapPanel [data-vector=national-geographic]")[0].innerHTML = basemapDefs["national-geographic"].title;
-        query("#selectBasemapPanel [data-vector=topo-vector]")[0].innerHTML = isWebMap ? basemapDefs["topo-vector"].title : basemapDefs["topo"].title;
-        query("#selectBasemapPanel [data-vector=oceans]")[0].innerHTML = basemapDefs["oceans"].title;
-        query("#selectBasemapPanel [data-vector=gray-vector]")[0].innerHTML = isWebMap ? basemapDefs["gray-vector"].title : basemapDefs["gray"].title;
-        query("#selectBasemapPanel [data-vector=dark-gray-vector]")[0].innerHTML = isWebMap ? basemapDefs["dark-gray-vector"].title : basemapDefs["dark-gray"].title;
-        query("#selectBasemapPanel [data-vector=osm]")[0].innerHTML = basemapDefs["osm"].title;
-        if (isWebMap) {
-          query("#selectBasemapPanel [data-vector=streets-night-vector]")[0].innerHTML = basemapDefs["streets-night-vector"].title;
-          query("#selectBasemapPanel [data-vector=streets-navigation-vector]")[0].innerHTML = basemapDefs["streets-navigation-vector"].title;
-          query("#selectBasemapPanel [data-vector=streets-relief-vector]")[0].innerHTML = basemapDefs["streets-relief-vector"].title;
-        } else {
-          query("#selectBasemapPanel [data-vector=streets-night-vector]").addClass("hidden");
-          query("#selectBasemapPanel [data-vector=streets-navigation-vector]").addClass("hidden");
-          query("#selectBasemapPanel [data-vector=streets-relief-vector]").addClass("hidden");
-        }       
+        var id = "select";
+        var title = "--- " + this._i18n.basemaps.select + " ---";
+        // Add select option
+        var optionsHtml = `<option value="${id}" selected>${title}</option>`;
+        // Add all basemap options
+        for (var key in basemapDefs) {
+          if (basemapDefs.hasOwnProperty(key)){
+            id = basemapDefs[key].id;
+            title = basemapDefs[key].title;
+            var option = `<option value="${id}">${title}</option>`;
+            optionsHtml += option;
+          }
+        }
+        // Set HTML
+        query("#selectBasemapPanel")[0].innerHTML = optionsHtml;
+        this._setBasemapEvents(view);
       }
-      this._setBasemapEvents(view);
     },
 
     // Slides
