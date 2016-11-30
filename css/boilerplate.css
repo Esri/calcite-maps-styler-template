@@ -64,8 +64,10 @@ body:lang(ja) {
 .calcite-popup-content {
   color: #6e6e6e; 
   font-size: 13px;
-  margin-left: 0px;
-  margin-right: -7px;
+}
+
+.calcite-popup-content select {
+    margin-bottom: 5px;
 }
 
 .calcite-popup-filter {
@@ -85,7 +87,7 @@ body:lang(ja) {
 }
 
 #panelLayers .panel-body {
-  background-color: #f8f8f8;
+  background-color: #f2f2f2;
 }
 
 #layersDiv {
