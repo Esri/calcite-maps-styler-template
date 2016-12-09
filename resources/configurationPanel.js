@@ -1,7 +1,7 @@
 {
    "configurationSettings":[
       {
-         "category":"Title",
+         "category":"About",
          "fields":[
             {
                "type":"string",
