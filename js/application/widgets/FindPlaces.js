@@ -131,8 +131,6 @@ define([
 
     _goToDurationFast: 150,
 
-    _geometryServiceUrl: "https://utility.arcgisonline.com/ArcGIS/rest/services/Geometry/GeometryServer",
-
     _init: function() {
       var view = this._view;
       if (view) {
