@@ -175,7 +175,7 @@ define([
             mapCoordsShare: boilerplate.config.menushare,
             popup: true
           });
-          this._appViewManager.setExtent();
+          this._appViewManager.setViewpoint();
           // Create html that requires the view...
           this._appHtml.createViewPanelsHtml(view, webMap || webScene);
           // Set panel, menu and popup events

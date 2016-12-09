@@ -316,7 +316,7 @@ define([
       }
     },
 
-    setExtent: function() {
+    setViewpoint: function() {
       var view = this.view;
       if (view) {
         var is2d = view.type === "2d";
