@@ -16,7 +16,6 @@
 define([
   "esri/geometry/Point",
   "esri/Graphic",
-  // "esri/layers/GraphicsLayer",
   "esri/layers/FeatureLayer",
   "esri/layers/support/Field",
   "esri/core/Collection",
@@ -28,6 +27,7 @@ define([
   "esri/geometry/SpatialReference",
   "esri/geometry/support/webMercatorUtils",
   "esri/tasks/GeometryService",
+  "esri/tasks/support/ProjectParameters",
   "esri/core/watchUtils",
 
   "dojo/Deferred",
@@ -36,7 +36,7 @@ define([
   "dojo/dom-construct",
   "dojo/_base/declare"
 ], function (
-  Point, Graphic, FeatureLayer, Field, Collection, SimpleMarkerSymbol, PictureMarkerSymbol, UniqueValueRenderer, PopupTemplate, Spinner, SpatialReference, webMercatorUtils, GeometryService, watchUtils,
+  Point, Graphic, FeatureLayer, Field, Collection, SimpleMarkerSymbol, PictureMarkerSymbol, UniqueValueRenderer, PopupTemplate, Spinner, SpatialReference, webMercatorUtils, GeometryService, ProjectParameters, watchUtils,
   Deferred, on, query, domConstruct, declare
 ) {
 
@@ -72,9 +72,9 @@ define([
 
     _placesLayer: null,
 
-    _showInLegend: true,
+    _showInLegend: false,
 
-    _showInLayerList: "show",
+    _showInLayerList: "hide",
 
     _placeKeys: {
       place: "Place",
@@ -131,6 +131,8 @@ define([
 
     _goToDurationFast: 150,
 
+    _geometryServiceUrl: "https://utility.arcgisonline.com/ArcGIS/rest/services/Geometry/GeometryServer",
+
     _init: function() {
       var view = this._view;
       if (view) {
@@ -152,8 +154,10 @@ define([
           this._setViewEvents();
           // Popup events
           this._watchSelectedFeature();
-          //Spinner
+          // Spinner
           this._createSpinner();
+          // Integrate with Legend and List
+          this._setLayerWidgetVisibility();
         }.bind(this));
       }
     },
@@ -431,7 +435,7 @@ define([
       this._placesLayer = new FeatureLayer({
         popupEnabled: true,
         legendEnabled: this._showInLegend,
-        listMode: this._showInLayerList, // Bug in Scene, turns layer off when zoom away
+        listMode: this._showInLayerList,
         //elevationInfo: {mode: "on-the-ground"}, // Flatten symbols
         source: new Collection(),
         fields: fields,
@@ -446,7 +450,22 @@ define([
       });
 
       this._view.map.add(this._placesLayer);
-      // this._placesLayer = this._view._graphicsView;
+    },
+
+    _setLayerWidgetVisibility: function() {
+      var view = this._view;
+      if (view) {
+        watchUtils.watch(this._placesLayer, "source.length", function(val){
+          // Features present or not
+          if (val === 0) {
+            this._placesLayer.legendEnabled = false;
+            this._placesLayer.listMode = "hide";
+          } else {
+            this._placesLayer.legendEnabled = true;
+            this._placesLayer.listMode = "show";
+          }
+        }.bind(this));
+      }
     },
 
     //----------------------------------------------------
@@ -624,13 +643,11 @@ define([
         },
         //popupTemplate: popupTemplate,
         //visible: false, // Bug
-        layer: this._placesLayer // Bug
       });
       return locationGraphic;
     },
 
     _addLocationGraphic: function(graphic, visible) {
-      // this._placesLayer.graphics.add(graphic);
       this._placesLayer.source.add(graphic);
       return graphic;
     },
@@ -640,44 +657,30 @@ define([
       //var markerSymbol = this._placesSymbol;
       //var popupTemplate = this._createPopupTemplate("places", false);
       var graphics = [];
+      var view = this._view;
       // Post-process locations with same location and name attributes
-      responseProcessed = this._postProcessResults(response); // TODO - revisit if needed at next AGO release
+      responseProcessed = this._postProcessResults(response); // TODO - revisit/remove if needed at next AGO release
       // Create graphics
       responseProcessed.forEach(function(feature, i) {
-        // Create point
-        var point = new Point({
-          latitude: feature.location.latitude,
-          longitude: feature.location.longitude,
-          spatialReference: SpatialReference.WGS84
-        });
-        // Project
-        if (webMercatorUtils.canProject(point.spatialReference, this._view.spatialReference)) {
-          point = webMercatorUtils.project(point, this._view.spatialReference);
-        // ) else { // TODO - project here or project batch...
-        }
         // Create graphic
         var pointGraphic = new Graphic({
-          geometry: point,
+          geometry: feature.location,
           //symbol: markerSymbol,
           attributes: {
             ObjectID: i + 2,
             name: feature.attributes.PlaceName || feature.address,
             address: feature.attributes.Place_addr || feature.attributes.address, // TODO
             type: this._placeKeys.place
-          },
-          //popupTemplate: popupTemplate,
-          layer: this._placesLayer // Bug
+          }
+          //popupTemplate: popupTemplate
         });
         graphics.push(pointGraphic);
       }.bind(this));
-      // var promise = this._placesLayer.addMany(graphics);
       var promise = this._placesLayer.source.addMany(graphics);
-      //var promise = this._placesLayer.source = graphics;
       return promise;
     },
 
     _clearGraphics: function() {
-      // this._placesLayer.removeAll();
       this._placesLayer.source.removeAll();
     },
 
@@ -706,7 +709,6 @@ define([
     },
 
     _findLocationGraphic: function() {
-      //var location = this._placesLayer.graphics.find(function(g) {
       var location = this._placesLayer.source.find(function(g) {
         return item.attributes.id === this._popupLocationId;
       }.bind(this));
@@ -734,8 +736,13 @@ define([
         distance: distance,
         maxLocations: max,
         searchExtent: view.extent,
-        outFields: outFields
+        outFields: outFields,
+        outSpatialReference: view.spatialReference,
+        outSR: view.spatialReference
       }
+      // Set out spatial reference
+      this._geocoder.outSpatialReference = view.spatialReference;
+      // Geocode
       var promise = this._geocoder.addressToLocations(params);       
       return promise;
     },
@@ -753,7 +760,6 @@ define([
     _isPlace: function(feature) {
       var isPlace = false;
       if (feature) {
-        //isPlace = (feature.layer === this._placesLayer);
         isPlace = (feature.layer === this._placesLayer);
       }
       return isPlace;
@@ -770,7 +776,6 @@ define([
     },
 
     _placeIndex: function(feature) {
-      //var index = this._placesLayer.graphics.findIndex(function(item) {
       var index = this._placesLayer.source.findIndex(function(item) {
         return item === feature;
       });
@@ -803,12 +808,6 @@ define([
             this._setPopupFeatures(index);
           }
 
-          // Location - remove when renderer event is exposed
-          var isLocation = this._isPlaceLocation(feature);
-          if (isLocation) { // index === 0
-            this._setFilterHandler();
-          }
-
           // // Reset old symbol (by attribute) - TODO
           // if (this._lastSelectedFeature) {
           //   this._lastSelectedFeature.attributes.type = this._placeKeys.place;
@@ -825,53 +824,38 @@ define([
         }
       }.bind(this));
 
-      // Wire up handler - TODO when implemented, remove setFilterHandler timer
-      // this._popup.watch("rendered", function(feature) {
-      //   alert("renderered " + feature);
-      // });
+      // Wire up handler
+      this._popup.watch("rendered", function(rendered) {
+        if (rendered) {
+          var feature = this._popup.selectedFeature;
+          var isLocation = this._isPlaceLocation(feature);
+          if (isLocation) {
+            this._setFilterHandler();
+          }          
+        }
+      }.bind(this));
 
-      // Work-around for click on location to re-populate features (1-50) in popup
-      // this._view.on("click", function(result) {
-      //   var feature = this._popup.selectedFeature;  // Feature is set by the system automatically
-      //   if (feature && this._isPlace(feature)) {
-      //     var index = this._placeIndex(feature);
-      //     this._setPopupFeatures(index);
-      //   }
-      // }.bind(this));
     },
 
     _setFilterHandler: function() {
-      var start = new Date();
-      var timer = setInterval(function() {
-        // Create a keyword places filter
-        var filterPlaces = query("#filterPlaces");
-        if (filterPlaces.length > 0) {
-          if (timer) {
-            clearTimeout(timer);
+      // Create a keyword places filter
+      var filterPlaces = query("#filterPlaces");
+      if (filterPlaces.length > 0) {
+        var filter = filterPlaces[0];
+        // Setup select handler
+        query(filter).on("change", function(evt){
+          // iPhone fix
+          filter.blur();
+          // Set active key
+          var searchKeyword = evt.target.value;
+          this._activeSearchKey = searchKeyword;
+          // Redo search
+          var pt = this._popup.location;
+          if (pt) {
+            this._showPopupFindPlaces(pt);              
           }
-          var filter = filterPlaces[0];
-          // Setup select handler
-          query(filter).on("change", function(evt){
-            // iPhone fix
-            filter.blur();
-            // Set active key
-            var searchKeyword = evt.target.value;
-            this._activeSearchKey = searchKeyword;
-            // Redo search
-            var pt = this._popup.location;
-            if (pt) {
-              this._showPopupFindPlaces(pt);              
-            }
-          }.bind(this));
-        } else { // Safety
-          var stop = new Date();
-          if ((stop - start)/1000 > 5) {
-            if (timer) {
-              clearTimeout(timer);            
-            }
-          }
-        }    
-      }.bind(this), 50);
+        }.bind(this));
+      }    
     },
 
     _movePopup: function(feature) {
