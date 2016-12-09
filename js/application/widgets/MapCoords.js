@@ -98,8 +98,6 @@ define([
 
     _uiVisible: false,
 
-    _uiVisible: false,
-
     _inTouch: false,
 
     _inCoordTouch: false,
