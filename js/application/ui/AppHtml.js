@@ -387,10 +387,12 @@ define([
           var slideMap;
 
           function goToSlide(slide) {
-            if (isWebMap) { // Map
-              view.goTo({target: slide.viewpoint.targetGeometry});
-            } else { // Scene
-             slide.applyTo(view);
+            if (slide) {
+              if (isWebMap) { // Map
+                view.goTo({target: slide.viewpoint.targetGeometry});
+              } else { // Scene
+               slide.applyTo(view);
+              }              
             }
           }
 
@@ -447,10 +449,12 @@ define([
             // Zoom to slide after it is slid
             query(SELECTORS.carouselSlides).on("slid.bs.carousel", function(e) {
               var id = query(SELECTORS.carouselSlides + " .item.active")[0].id;
-              var slide = slides.find(function(slide) {
-                return slide.id === id;
-              });
-              goToSlide(slide);
+              if (slides) {
+                var slide = slides.find(function(slide) {
+                  return slide.id === id;
+                });
+                goToSlide(slide);                
+              }
             });
             
           } else {
