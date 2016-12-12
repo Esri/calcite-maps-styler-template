@@ -596,7 +596,7 @@ define([
         var location = this._createLocationGraphic(pt);
         //location.visible = false; // Bug, can't be set invisible
         this._addLocationGraphic(location);
-        this._setPopupFeatures(0); // Show location popup immediately
+        this._setPopupFeatures(0, true); // Show location popup immediately
         // Add Places
         this._cancelPromise();
         this._promise = this._findPlaces(pt);
@@ -609,7 +609,7 @@ define([
             // }.bind(this), 500);
             // Add more features
             this._addPlacesGraphics(results);
-            this._setPopupFeatures(0); 
+            this._setPopupFeatures(0, true); 
           }.bind(this))
           .otherwise(function(err) {
             // Cancelled or failed...
@@ -747,11 +747,14 @@ define([
 
     // Set Features
 
-    _setPopupFeatures: function(selectedIndex) {
+    _setPopupFeatures: function(selectedIndex, visible) {
       var graphics = this._placesLayer.source.toArray();
       if (graphics.length > 0 && selectedIndex < graphics.length) {
         this._popup.features = graphics;
         this._popup.selectedFeatureIndex = selectedIndex;
+        if (visible) {
+          this._popup.visible = true;
+        }
       }
     },
 
@@ -803,7 +806,7 @@ define([
               });
             }
             // Show paging
-            this._setPopupFeatures(index);
+            this._setPopupFeatures(index, true);
           }
 
           // // Reset old symbol (by attribute) - TODO
