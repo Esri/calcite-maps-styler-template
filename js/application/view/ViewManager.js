@@ -139,10 +139,11 @@ define([
 
     // View
 
-    createViewFromItem: function(webItem, options) {
+    createViewFromItem: function(webItem, viewOptions) {
       var deferred = new Deferred();
-      options = options || {};
+      viewOptions = viewOptions || {};
       this._webItem = webItem;
+
       // Promise return values
       var results = {
         view: null,
@@ -150,58 +151,60 @@ define([
         webScene: null
       }
       var itemHelper = new ItemHelper();
-      // Create map or scene view
+
+      function loadAll(webMapOrWebScene, options, ref) {
+        // Load view
+        ref._loadView(webMapOrWebScene, options)
+          .then(function(view){
+            ref.view = view;
+            results.view = view;
+            // Load map
+            ref._loadMap(webMapOrWebScene)
+              .then(function(map){
+                // Option to override basemap
+                ref._setBasemap(map);
+                // Set view map
+                view.map = map;
+                deferred.resolve(results);
+              })
+              .otherwise(function(err){
+                deferred.reject(err);
+              });
+          })
+          .otherwise(function(err){
+            deferred.reject(err);
+          });
+      }
+
+      // Load map or scene view
       if (webItem.data.type === "Web Map") {
         itemHelper.createWebMap(webItem)
           .then(function(webMap) {
             results.webMap = webMap;
-            this._loadView(webMap, options, results, deferred);
+            loadAll(webMap, viewOptions, this);
           }.bind(this))
           .otherwise(function(error) {
             deferred.reject(error);
-          });
+          }.bind(this));
       } else if (webItem.data.type === "Web Scene") {
         itemHelper.createWebScene(webItem)
           .then(function(webScene) {
             results.webScene = webScene;
-            this._loadView(webScene, options, results, deferred);
+            loadAll(webScene, viewOptions, this);
           }.bind(this))
           .otherwise(function(error) {
             deferred.reject(error);
-          });
+          }.bind(this));
       } else {
         deferred.reject(new Error(this._errorMessage.webMapOrSceneUnknownItemType));
       }
       return deferred.promise;
     },
 
-    // Load map and view
-
-    _loadView: function(webMapOrWebScene, options, results, deferred) {
-      // Load the map and layers and then view
-      webMapOrWebScene.load()
-        .then(function() {
-          this._createView(webMapOrWebScene, options, results).then(function(view) {
-            this.view = view;
-            results.view = view;
-            deferred.resolve(results); // done
-          }.bind(this))
-          .otherwise(function(error) {
-            error.userMsg = "Creating view";
-            deferred.reject(error);
-          })
-          this._reportLayerLoadErrors(webMapOrWebScene.allLayers);
-        }.bind(this))
-        .otherwise(function (error) {
-          error.userMsg = webMapOrWebScene.portalItem.type + " " + this._errorMessage.webMapOrSceneNotFullyLoaded;
-          deferred.reject(error);
-        }.bind(this));
-    },
-    
     // Create the map/scene view
     
-    _createView: function(webMapOrWebScene, options) {
-      var viewDeferred = new Deferred();
+    _loadView: function(webMapOrWebScene, options) {
+      var deferredView = new Deferred();
       // View options
       options = options || { ui:{} };
       var defaultOptions = this._defaultViewOptions;
@@ -210,14 +213,58 @@ define([
       // Create view
       var module = webMapOrWebScene.portalItem.type === "Web Map" ? "esri/views/MapView" : "esri/views/SceneView";
       require([module], function(View){
-        //allOptions.map = webMapOrWebScene; // This fails!
         var view = new View(allOptions);
-        view.map = webMapOrWebScene; // This works
-        viewDeferred.resolve(view);
+        deferredView.resolve(view);
       });
-      return viewDeferred.promise;
+      return deferredView.promise;
     },
 
+    // Load map
+
+    _loadMap:function (webMapOrWebScene) {
+      var deferredMap = new Deferred();
+      // Work-around for MapView zoom property
+      webMapOrWebScene.load()
+        .then(function(webmapscene){
+          this._reportLayerLoadErrors(webmapscene.allLayers);
+          webmapscene.load()
+            .then(function(map){
+              map.basemap.load()
+                .then(function(basemap){
+                  var baseLyrs = basemap.baseLayers;
+                  if (baseLyrs && baseLyrs.length > 0) {
+                    var lyr = basemap.baseLayers.getItemAt(0);
+                    lyr.load()
+                      .then(function(lyr){
+                        deferredMap.resolve(map); // Done!
+                      })
+                      .otherwise(function(error){
+                        error.userMsg = "Basemap layer could not be loaded";
+                        deferredMap.reject(error);
+                      }.bind(this))
+                  } else {
+                    error.userMsg = "Basemap layer missing";
+                    deferredMap.reject(error);
+                  }
+                }.bind(this))
+                .otherwise(function(error){
+                  error.userMsg = "Basemap layers missing";
+                  deferredMap.reject(error);
+                })            
+              }.bind(this))
+              .otherwise(function(error){
+                error.userMsg = "Basemap could not be loaded";
+                deferredMap.reject(error);
+              });
+            }.bind(this))
+            .otherwise(function(error){
+              var userMsg = webMapOrWebScene.portalItem.type + " " + this._errorMessage.webMapOrSceneNotFullyLoaded;
+              error.userMsg = "Basemap could not be loaded";
+              deferredMap.reject(error);
+            });
+      return deferredMap;
+    },
+    
     // Widgets for the app
 
     createAppWidgets: function() {
@@ -331,17 +378,14 @@ define([
         var altitude = this._getNumber(this._boilerplate.config.altitude, 0, 1000000000, 1, null);
         var rotation = this._getNumber(this._boilerplate.config.rotation, 0, 360, 1, null);
         var heading = this._getNumber(this._boilerplate.config.heading, 0, 360, 1, null);
-        // 1-20 level converter - TODO
-        var zoomArray = [295828035, 147914382, 73957191, 36978595, 18489298, 9244649, 4622324, 2311162, 1155581, 577791, 288895, 144448, 72224, 36112, 18056, 9028, 4514, 2257, 1128]
-
+       
         // Invalid params
         // if ((!lat || !lon) && (!x || !y)) {
         //   return;
         // }
 
         view.then(function() {
-          // Map
-          if (is2d) {  
+          if (is2d) { // Map
             setPosition().then(function(){
               setHomeWidget();
             });              
@@ -387,17 +431,13 @@ define([
           var pt = getCenter();
           // Altitude
           if (altitude) {
-            pt.z = params.altitude;
+            pt.z = altitude;
           }
           params.center = pt;
-          // params.target = pt;
           // Scale
           if (scale) {
-            // parmas.zoom = zoom; // Bug - won't goTo({zoom: xxx}), have to use scale
-            //params.scale = zoomArray[zoom];
             params.scale = scale;
           } else if (zoom) { // Zoom
-            //params.scale = zoomArray[zoom];
             params.zoom = zoom;
           }
           // Rotation
@@ -409,14 +449,16 @@ define([
             params.heading = heading;
           }
 
-          var promise = view.goTo(params).then(function(){
-            if (!is2d) {
-              return view.goTo({
-                center: pt,
-                tilt: tilt
-              }, {duration: 1000}); 
-            }
-          });
+          // Set viewpoint
+          var promise = view.goTo(params)
+            .then(function(){
+              if (!is2d && tilt) {
+                return view.goTo({
+                  center: pt,
+                  tilt: tilt
+                }, {duration: 500}); 
+              }
+            }.bind(this));
           return promise;
         }
 
@@ -429,12 +471,22 @@ define([
       }
     },
 
-    setBasemap: function() {
-      var view = this.view;
+    _getBasemap: function() {
+      var validBasemap;
       var basemap = this._boilerplate.config.basemap;
-      if (view && basemap) {
+      if (basemap) {
         if (basemap.match(/^(streets|satellite|hybrid|terrain|topo|gray|dark-gray|oceans|national-geographic|osm|dark-gray-vector|gray-vector|streets-vector|topo-vector|streets-night-vector|streets-relief-vector|streets-navigation-vector)$/)) {
-          view.map.basemap = basemap;          
+          validBasemap = basemap;
+        }
+      }
+      return validBasemap;
+    },
+
+    _setBasemap: function(map) {
+      var basemap = this._boilerplate.config.basemap;
+      if (map && basemap) {
+        if (basemap.match(/^(streets|satellite|hybrid|terrain|topo|gray|dark-gray|oceans|national-geographic|osm|dark-gray-vector|gray-vector|streets-vector|topo-vector|streets-night-vector|streets-relief-vector|streets-navigation-vector)$/)) {
+          map.basemap = basemap;          
         }
       }
     },

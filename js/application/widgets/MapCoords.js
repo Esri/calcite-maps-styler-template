@@ -240,7 +240,7 @@ define([
         params.x = parseFloat(Math.round(pt.x * 1000) / 1000).toFixed(3); 
         params.y = parseFloat(Math.round(pt.y * 1000) / 1000).toFixed(3);
       }
-      params.zoom =  Math.round(this._view.zoom * 1) / 1; // Bug 1 - always "-1", can't access this value or watch it
+      params.zoom =  Math.round(this._view.zoom); // Bug 1 - always "-1", can't access this value or watch it
       // params.zoom = this._scaleToZoom(this._view.scale); // TODO
       //zoom = this._is2d ? Math.round(zoom * 1) / 1 : Math.round(zoom * 10) / 10; // Bug 2 - can't pass in decimals, crashes
       params.scale = Math.round(this._view.viewpoint.scale);

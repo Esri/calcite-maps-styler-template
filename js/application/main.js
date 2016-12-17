@@ -161,8 +161,9 @@ define([
           var view = results.view;
           var webMap = results.webMap;
           var webScene = results.webScene;
-          // Create widgets
-          this._appViewManager.setBasemap();
+          // Set view from config params
+          this._appViewManager.setViewpoint();
+          // Set Widgets from config params
           this._appViewManager.createMapWidgets();
           this._appViewManager.createAppWidgets();
           this._appViewManager.setPopupPosition();
@@ -175,7 +176,6 @@ define([
             mapCoordsShare: boilerplate.config.menushare,
             popup: true
           });
-          this._appViewManager.setViewpoint();
           // Create html that requires the view...
           this._appHtml.createViewPanelsHtml(view, webMap || webScene);
           // Set panel, menu and popup events
