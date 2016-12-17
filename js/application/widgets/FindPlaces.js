@@ -447,6 +447,8 @@ define([
         title: "Places Search"
       });
 
+      this._setLayerPopupVisibility();
+
       this._view.map.add(this._placesLayer);
     },
 
@@ -461,6 +463,20 @@ define([
           } else {
             this._placesLayer.legendEnabled = true;
             this._placesLayer.listMode = "show";
+          }
+        }.bind(this));
+      }
+    },
+   
+    _setLayerPopupVisibility: function() {
+      if (this._placesLayer) {
+        this._placesLayer.watch("visible", function(visible){
+          if (this._isPlace(this._popup.selectedFeature)) {
+            if (visible) {
+              this._popup.visible = true;
+            } else {
+              this._popup.visible = false;
+            }
           }
         }.bind(this));
       }
