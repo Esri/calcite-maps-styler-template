@@ -925,6 +925,24 @@
                "label":"Longitude (-180-180)"
             },
             {
+               "fieldName":"x",
+               "type":"number",
+               "value":0,
+               "label":"x"
+            },
+            {
+               "fieldName":"y",
+               "type":"number",
+               "value":0,
+               "label":"y"
+            },
+            {
+               "fieldName":"wkid",
+               "type":"number",
+               "value":0,
+               "label":"wkid"
+            },
+            {
                "fieldName":"zoom",
                "type":"number",
                "value":10,
@@ -1009,6 +1027,9 @@
       "showerrors":true,
       "lon":null,
       "lat":null,
+      "x":null,
+      "y":null,
+      "wkid":null,
       "zoom":null,
       "scale":null,
       "rotation":null,
