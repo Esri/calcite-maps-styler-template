@@ -232,24 +232,25 @@ define([
 
     _getCoordParams: function() {
       var params = {};
-      var pt = this._view.center; //this._is2d ? this._view.center : this._view.viewpoint.camera.position;
-      if (pt.latitude) { // Geographic // TODO - let user choose coords to display
+      var pt = this._view.center;
+      if (pt.latitude) { // Geographic
         params.lat = parseFloat(Math.round(pt.latitude * 100000) / 100000).toFixed(5); 
         params.lon = parseFloat(Math.round(pt.longitude * 100000) / 100000).toFixed(5);        
       } else { // Web Mercator or projected
         params.x = parseFloat(Math.round(pt.x * 1000) / 1000).toFixed(3); 
         params.y = parseFloat(Math.round(pt.y * 1000) / 1000).toFixed(3);
       }
-      params.zoom =  Math.round(this._view.zoom); // Bug 1 - always "-1", can't access this value or watch it
-      // params.zoom = this._scaleToZoom(this._view.scale); // TODO
-      //zoom = this._is2d ? Math.round(zoom * 1) / 1 : Math.round(zoom * 10) / 10; // Bug 2 - can't pass in decimals, crashes
+      params.wkid = this._view.spatialReference.wkid;
+      params.zoom =  Math.round(this._view.zoom);
+      //zoom = this._is2d ? Math.round(zoom * 1) / 1 : Math.round(zoom * 10) / 10; // Bug - can't pass in decimals, crashes
       params.scale = Math.round(this._view.viewpoint.scale);
       if (this._is2d) {
         params.rotation = Math.round(this._view.viewpoint.rotation);
       } else {
         params.heading =  Math.round(this._view.viewpoint.camera.heading);
       	params.tilt = Math.round(this._view.viewpoint.camera.tilt);
-        params.altitude = Math.round(this._view.viewpoint.camera.position.z);
+        //params.altitude = Math.round(this._view.viewpoint.camera.position.z);
+        params.altitude = Math.round(this._view.center.z);  // use z here instead to match ViewManager loading code
       }
       return params;
     },

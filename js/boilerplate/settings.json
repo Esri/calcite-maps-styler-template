@@ -96,7 +96,8 @@
     "tilt",
     "basemap",
     "x",
-    "y"
+    "y",
+    "wkid"
   ],
   "webTierSecurity": false,
   "esriEnvironment": true

@@ -41,6 +41,9 @@ define([
   "esri/Viewpoint",
   "esri/Camera",
   "esri/geometry/support/webMercatorUtils",
+  "esri/tasks/GeometryService",
+  "esri/tasks/support/ProjectParameters",
+  "esri/geometry/SpatialReference",
 
   "esri/core/watchUtils",
 
@@ -60,7 +63,7 @@ define([
   Component,
   Zoom, Home, NavigationToggle, Locate, Track, Compass, Search, Legend, LayerList, BasemapToggle, Attribution,
   UnsupportedLayer, UnknownLayer,
-  Point, Viewpoint, Camera, webMercatorUtils,
+  Point, Viewpoint, Camera, webMercatorUtils, GeometryService, ProjectParameters, SpatialReference,
   watchUtils,
   dom, domAttr, domClass, query, domConstruct, Deferred, lang, all,
   declare
@@ -83,6 +86,8 @@ define([
       this.widgetsLayout = this._getWidgetsLayout(widgetsLayoutName);
 
       this._showErrors = boilerplate.config.showerrors;
+
+      this._geometryService = new GeometryService("https://utility.arcgisonline.com/ArcGIS/rest/services/Geometry/GeometryServer");
 
     },
 
@@ -378,63 +383,82 @@ define([
         var altitude = this._getNumber(this._boilerplate.config.altitude, 0, 1000000000, 1, null);
         var rotation = this._getNumber(this._boilerplate.config.rotation, 0, 360, 1, null);
         var heading = this._getNumber(this._boilerplate.config.heading, 0, 360, 1, null);
+        var wkid = this._getNumber(this._boilerplate.config.wkid, 0, 1000000, 1, null);
+        // Project point if necessary
+        var geometryService = this._geometryService;
        
-        // Invalid params
-        // if ((!lat || !lon) && (!x || !y)) {
-        //   return;
-        // }
-
-        view.then(function() {
-          if (is2d) { // Map
-            setPosition().then(function(){
-              setHomeWidget();
-            });              
-          } else { // Scene
-            watchUtils.whenTrueOnce(view, "ready", function() {
-              setPosition().then(function(){
-                setHomeWidget();
-              });
-            });            
-          }
-        })
-        .otherwise(function(err){
-          console.log(err);
-        });
-
-        function getCenter() {
-          var pt;
-          if (lat && lon) {
-            pt = new Point({
-              latitude: lat,
-              longitude: lon
-            });
-            if (view.spatialReference.isWebMercator) {
-              pt = webMercatorUtils.geographicToWebMercator(pt); // TODO - assume mercator
-            } else {
-              pt.spatialReference = view.spatialReference;
-            }
-          } else if (x && y) {
-            pt = new Point({
-              x: x,
-              y: y
-            })
-            pt.spatialReference = view.spatialReference;
-          } else {
-            pt = view.center.clone(); // TODO - or null
-          }
-          return pt;
+        // No location params provided
+        if (((!zoom && !scale && !tilt && !altitude && !rotation && !heading)) && ((!lat && !lon) || (!x && !y && !wkid))) {
+          return;
         }
-      
-        function setPosition() {
+
+        // Re-center and zoom if there are valid params
+        view
+          .then(function() {
+            getCenter(lat, lon, x, y, view, geometryService)
+              .then(zoomMap)
+              .then(setHomeWidget, function(error){
+                console.log(error);
+              }.bind(this));
+          }.bind(this))
+          .otherwise(function(err){
+            console.log(err);
+          });
+
+        function getCenter(lat, lon, x, y, view, geometryService) {
+          var deferred = new Deferred();
+          // Create point from params
+          var pt = new Point();
+          // Geographic
+          if (lat && lon) {  
+            pt.latitude = lat;
+            pt.longitude = lon;
+            pt.spatialReference = SpatialReference.WGS84;
+          } else if (x && y && wkid) {  // Web Mercator
+            pt.x = x;
+            pt.y = y;
+            pt.spatialReference = new SpatialReference({
+              wkid: wkid
+            });
+          } else {  // Coords missing, use center
+            pt = view.center.clone();
+          }
+          // Project point if necessary
+          if (!pt.spatialReference.equals(view.spatialReference.wkid)) {
+            // Geographic or WebMercator
+            if (webMercatorUtils.canProject(pt, view.spatialReference)) {
+              pt = webMercatorUtils.project(pt, view.spatialReference);
+              deferred.resolve(pt);
+            } else { // Project
+              var params = new ProjectParameters({
+                geometries: [pt],
+                outSR: view.spatialReference
+              });
+              geometryService.project(params)
+                .then(function(result){
+                  var ptProj = result && result[0];
+                  deferred.resolve(ptProj);
+                }.bind(this))
+                .otherwise(function(err){
+                  pt = view.center.clone();
+                  deferred.resolve(pt);
+                }.bind(this));
+            }
+          } else {
+            deferred.resolve(pt);
+          }
+          return deferred;
+        }
+
+        function zoomMap(pt) {
           var params = {};
           // Center
-          var pt = getCenter();
+          params.center = pt;
           // Altitude
           if (altitude) {
             pt.z = altitude;
           }
-          params.center = pt;
-          // Scale
+          // Scale (prevails)
           if (scale) {
             params.scale = scale;
           } else if (zoom) { // Zoom
@@ -448,9 +472,8 @@ define([
           if (!is2d && heading) {
             params.heading = heading;
           }
-
-          // Set viewpoint
-          var promise = view.goTo(params)
+          // Set viewpoint and params, tilt secondarily to maintain center point
+          return view.goTo(params)
             .then(function(){
               if (!is2d && tilt) {
                 return view.goTo({
@@ -459,15 +482,15 @@ define([
                 }, {duration: 500}); 
               }
             }.bind(this));
-          return promise;
         }
-
+      
         function setHomeWidget() {
           var home = view.ui.find("home").widget;
           if (home) {
             home.viewpoint = view.viewpoint.clone();
           }   
         }
+
       }
     },
 
