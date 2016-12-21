@@ -46,7 +46,8 @@ define([
 	    	this._view = view;
 	    	this._is2d = view.type === "2d";
         this._share = share;
-	    	this._setMapCoordsEvents();		
+	    	this._setMapCoordsEvents();
+        this._setBasemapEvents();	
     	}
     },
 
@@ -107,6 +108,20 @@ define([
     _isCoordsLocked: false,
 
     _coordsUrlTextarea: null,
+
+    _currentBasemapId: null,
+
+    _setBasemapEvents: function() {
+      var view = this._view;
+      if (view) {
+        view.then(function() {
+          view.map.watch("basemap", function(basemap){
+            this._currentBasemapId = basemap.id;
+            this._updateCoordsUI();
+          }.bind(this));
+        }.bind(this));
+      }
+    },
 
     _setMapCoordsEvents: function() {
       var view = this._view;
@@ -252,6 +267,10 @@ define([
         //params.altitude = Math.round(this._view.viewpoint.camera.position.z);
         params.altitude = Math.round(this._view.center.z);  // use z here instead to match ViewManager loading code
       }
+      if (this._currentBasemapId) {
+        params.basemap = this._currentBasemapId;  
+      }
+      
       return params;
     },
 
