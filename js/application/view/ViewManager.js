@@ -420,7 +420,7 @@ define([
             pt.spatialReference = new SpatialReference({
               wkid: wkid
             });
-          } else {  // Coords missing, use center
+          } else {  // Coord params missing, use center
             pt = view.center.clone();
           }
           // Project point if necessary
