@@ -99,6 +99,13 @@ body:lang(ja) {
   border-top: 0;
 }
 
+/* Attribution */
+.esri-attribution.esri-widget button, 
+.esri-attribution.esri-widget [role="button"] {
+    font-family: inherit;
+    font-size: 11px;
+}
+
 /* Slides/Bookmarks */
 
 .slide-map {
