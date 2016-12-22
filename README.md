@@ -1,16 +1,20 @@
 # Calcite Maps Styler Template
 
-An application template for building 2D and 3D ArcGIS Online configurable applications with the ArcGIS API for JavaScript version 4. The template allows you to change the color, theme, styles and layout of an application on-the-fly. The template is built with [Calcite Maps](https://github.com/Esri/calcite-maps), [Bootstrap](http://getbootstrap.com) and the [Applicaiton Boilerplate](http://www.github.com/Esri/application-boilerplate-js/).
+An application template for building 2D and 3D ArcGIS Online configurable applications with the ArcGIS API for JavaScript version 4. The template allows you to configure and style the color, theme and layout of the application on-the-fly. The template is built with [Calcite Maps](https://github.com/Esri/calcite-maps), [Bootstrap](http://getbootstrap.com) and the [Applicaiton Boilerplate](http://www.github.com/Esri/application-boilerplate-js/).
 
-Use the application to configure apps for ArcGIS Online or Portal for ArcGIS or to configure apps dynamically by specifying URL parameters in a browser. 
+You can use the application to 1) create and share maps on-the-fly with just the default app and URL params or 2) configure apps for ArcGIS Online or Portal for ArcGIS by create apps.
 
 `Web Map`
-[http://esri.github.io/calcite-maps-styler-template/index.html?webmap=2442dfb3b1c2413392c22cee5b74370a](http://esri.github.io/calcite-maps-styler-template/index.html?webmap=2442dfb3b1c2413392c22cee5b74370a)
+[http://esri.github.io/calcite-maps-styler-template/index.html?webmap=default](http://esri.github.io/calcite-maps-styler-template/index.html?webmap=default)
+
+[http://esri.github.io/calcite-maps-styler-template/index.html?webmap=default&title=Santa%20Monica%20(2D)&bgcolor=dark-blue&theme=custom&lat=34.01945&lon=-118.49119&zoom=12&activepanel=none](http://esri.github.io/calcite-maps-styler-template/index.html?webmap=default&title=Santa%20Monica%20(2D)&bgcolor=dark-blue&theme=custom&lat=34.01945&lon=-118.49119&zoom=12&activepanel=none)
 
 `Web Scene`
-[http://esri.github.io/calcite-maps-styler-template/index.html?webscene=91b46c2b162c48dba264b2190e1dbcff](http://esri.github.io/calcite-maps-styler-template/index.html?webscene=91b46c2b162c48dba264b2190e1dbcff)
+[http://esri.github.io/calcite-maps-styler-template/index.html?webscene=default](http://esri.github.io/calcite-maps-styler-template/index.html?webscene=default)
 
-NOTE: The application requires a pre-existing [Web Map](https://doc.arcgis.com/en/arcgis-online/create-maps/make-your-first-map.htm) or [Web Scene](https://doc.arcgis.com/en/arcgis-online/create-maps/make-your-first-scene.htm) ID to run. Learn more about creating web maps and web scenes [here](https://doc.arcgis.com/en/arcgis-online/create-maps/create-maps-and-apps.htm).
+[http://localhost/GitHub/calcite-maps-styler-template/index.html?webscene=default&title=Santa%20Monica%20(3D)&bgcolor=transparent&textcolor=dark&lat=34.03449&lon=-118.50716&zoom=14&activepanel=none&wkid=102100&scale=26409&heading=0&tilt=77&altitude=58](http://localhost/GitHub/calcite-maps-styler-template/index.html?webscene=default&title=Santa%20Monica%20(3D)&bgcolor=transparent&textcolor=dark&lat=34.03449&lon=-118.50716&zoom=14&activepanel=none&wkid=102100&scale=26409&heading=0&tilt=77&altitude=58)
+
+NOTE: You can also pass in your own [Web Map](https://doc.arcgis.com/en/arcgis-online/create-maps/make-your-first-map.htm) or [Web Scene](https://doc.arcgis.com/en/arcgis-online/create-maps/make-your-first-scene.htm) ID to the app. Learn more about creating web maps and web scenes [here](https://doc.arcgis.com/en/arcgis-online/create-maps/create-maps-and-apps.htm).
 
 ## Features
 
@@ -29,20 +33,24 @@ NOTE: Web Maps are only [partially supported](https://developers.arcgis.com/java
 
 ## Settings & Configuration
 
-These are the configuration options for the application. You can specify in the URL or in `appSettings.json`.
+These are the configuration options that you can specify in ArcGIS Online, the `appSettings.json` file or the URL.
 
 |property|description|type|options|
 |---|---|---|---|
 |appid|Application ID for querying application configuration|String|""|
-|webmap|Webmap ID for querying a webmap|String|"default", "e1653fe614c04b6aa4efba5ba7b56d05"|
-|webscene|Webscene ID for querying a webscene|String|"default", "bdc09d6c8ef8492783ebe2c572950931"|
-|lat|Latitude to move the map to|Number|45|
-|lon|Longitude to move the map to|Number|-120|
-|zoom|Level of Detail (LOD) to zoom to when the map displays|Number|1-20|
-|scale|The scale the map displays at|Number|1-100000000|
-|tilt|Angle ov view for 3D maps|Number|0-90|
-|rotation|Rotation of view|Number|0-360|
-|basemap|Basemap to use for the map. See ArcGIS JS API reference|String|"streets", "satellite..."|
+|webmap|Webmap ID for webmap|String|"default", "e1653fe614c04b6aa4efba5ba7b56d05"|
+|webscene|Webscene ID for webscene|String|"default", "bdc09d6c8ef8492783ebe2c572950931"|
+|lat|Latitude to move the map to on start-up|Number|45|
+|lon|Longitude to move the map to on start-up|Number|-120|
+|x|Coordinate to move the map to on start-up|Number|-50000000|
+|y|Coordinate to move the map to on start-up|Number|50000000|
+|wkid|Spatial reference value to support x/y values on start-up|Number|103500|
+|zoom|Level of Detail (LOD) to zoom to on start-up|Number|1-20|
+|scale|The scale the map displays on start-up. This prevails over zoom.|Number|1-100000000|
+|rotation|Rotation of the 2D view on start-up|Number|0-360|
+|tilt|Angle of the 3D view on start-up|Number|0-90|
+|heading|Heading of the 3D view on start-up|Number|0-360|
+|basemap|Basemap to use for the map on start-up. See ArcGIS JS API reference|String|"streets", "satellite..."|
 |title|Title of the application|String|""|
 |subtitle|Subtitle of the application|String|""|
 |abouttext|Information about your application|String|""|
@@ -82,6 +90,7 @@ These are the configuration options for the application. You can specify in the 
   "aboutdescription": false,
 
   "theme": "dark",
+  "themecustom": false,
   "bgcolor": "",
   "textcolor": "",
   "opacity": "1",
@@ -89,18 +98,20 @@ These are the configuration options for the application. You can specify in the 
 
   "layout": "top",
   "panelslayout": "",
-  "widgetslayout": "top-left",
 
   "menuabout": true,
   "menulegend": true,
+  "menulayers": true,
   "menubasemaps": true,
   "menuslides": true,
+  "menushare": true,
   "menutogglenav": true,
 
   "menustyledrawer": false,
 
   "dockposition": "top-right",
 
+  "widgetslayout": "top-left",
   "widgetzoom": "show",
   "widgethome": "show",
   "widgetcompass": "show",
@@ -110,11 +121,28 @@ These are the configuration options for the application. You can specify in the 
   "widgetsearch": "hide",
   "widgetbasemaptoggle": "show",
   "widgetnextbasemap": "streets",
+
+  "widgetcoords": true,
+  
   "widgetsearchnav": true,
 
   "activepanel": "about",
 
   "findplaces": true,
+
+  "lat": null,
+  "lon": null,
+  "x": null,
+  "y": null,
+  "wkid": null,
+  "zoom": null,
+  "scale": null,
+  "rotation": null,
+  "heading": null,
+  "tilt": null,
+  "altitude": null,
+
+  "basemap": "",
 
   "showerrors": true
 }
