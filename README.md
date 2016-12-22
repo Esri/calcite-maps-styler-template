@@ -1,31 +1,54 @@
-# Calcite Maps Styler Template
+# Calcite Maps - Styler Template
 
-An application template for building 2D and 3D ArcGIS Online configurable applications with the ArcGIS API for JavaScript version 4. The template allows you to configure and style the color, theme and layout of the application on-the-fly. The template is built with [Calcite Maps](https://github.com/Esri/calcite-maps), [Bootstrap](http://getbootstrap.com) and the [Applicaiton Boilerplate](http://www.github.com/Esri/application-boilerplate-js/).
+An application that allows you to create and share 2D and 3D maps on-the-fly and to build configurable applications with ArcGIS Online or Portal. The app allows you to configure and style the color, theme and layout of the application on-the-fly. Styler is built with the new [ArcGIS API for JavaScript version 4](https://developers.arcgis.com/javascript).
 
-You can use the application to 1) create and share maps on-the-fly with just the default app and URL params or 2) configure apps for ArcGIS Online or Portal for ArcGIS by create apps.
+The easiest way to get started is to:
 
-`Web Map`
+1. Access the default endpoint ([2D map](http://esri.github.io/calcite-maps-styler-template/index.html?webmap=default)) or ([3D scene](http://esri.github.io/calcite-maps-styler-template/index.html?webscene=default))
+2. Search or zoom to a place of interest
+3. Select your favorite basemap
+4. Use the `Share` menu to get the URL so you can share it with others
+
+Here are some examples:
+
+`Web Map (Default)`
+
+```
 [http://esri.github.io/calcite-maps-styler-template/index.html?webmap=default](http://esri.github.io/calcite-maps-styler-template/index.html?webmap=default)
+```
 
+`Web Map (Default with params)`
+
+```
 [http://esri.github.io/calcite-maps-styler-template/index.html?webmap=default&title=Santa%20Monica%20(2D)&bgcolor=dark-blue&theme=custom&lat=34.01945&lon=-118.49119&zoom=12&activepanel=none](http://esri.github.io/calcite-maps-styler-template/index.html?webmap=default&title=Santa%20Monica%20(2D)&bgcolor=dark-blue&theme=custom&lat=34.01945&lon=-118.49119&zoom=12&activepanel=none)
+```
 
-`Web Scene`
+`Web Scene (Default)`
+
+```
 [http://esri.github.io/calcite-maps-styler-template/index.html?webscene=default](http://esri.github.io/calcite-maps-styler-template/index.html?webscene=default)
+```
 
+`Web Scene (Default with params)`
+
+```
 [http://localhost/GitHub/calcite-maps-styler-template/index.html?webscene=default&title=Santa%20Monica%20(3D)&bgcolor=transparent&textcolor=dark&lat=34.03449&lon=-118.50716&zoom=14&activepanel=none&wkid=102100&scale=26409&heading=0&tilt=77&altitude=58](http://localhost/GitHub/calcite-maps-styler-template/index.html?webscene=default&title=Santa%20Monica%20(3D)&bgcolor=transparent&textcolor=dark&lat=34.03449&lon=-118.50716&zoom=14&activepanel=none&wkid=102100&scale=26409&heading=0&tilt=77&altitude=58)
+```
 
 NOTE: You can also pass in your own [Web Map](https://doc.arcgis.com/en/arcgis-online/create-maps/make-your-first-map.htm) or [Web Scene](https://doc.arcgis.com/en/arcgis-online/create-maps/make-your-first-scene.htm) ID to the app. Learn more about creating web maps and web scenes [here](https://doc.arcgis.com/en/arcgis-online/create-maps/create-maps-and-apps.htm).
 
 ## Features
 
+* Dynamically create and share 2D and 3D maps
 *	Use to create ArcGIS Online, Portal for ArcGIS or as a stand-alone configurable applications
+* Configure titles, menus and panels
 *	Style apps with Calcite colors and themes
 * Apply custom colors with transparency
 * Choose custom layouts
-* Customize titles, menus and panels
+* Add and remove widgets to map
 * Configuration via JSON or or URL parameters
 
-NOTE: Web Maps are only [partially supported](https://developers.arcgis.com/javascript/latest/guide/migrating/index.html#webmap) by the ArcGIS API for Javascript version 4 and some web maps may not load. Re-saving old web maps may help.
+The application is built with the [ArcGIS API for JavaScript version 4](https://developers.arcgis.com/javascript), [Calcite Maps](https://github.com/Esri/calcite-maps), [Bootstrap](http://getbootstrap.com) and the [Applicaiton Boilerplate](http://www.github.com/Esri/application-boilerplate-js/).
 
 [View it live](http://esri.github.io/calcite-maps-styler-template/index.html?webscene=91b46c2b162c48dba264b2190e1dbcff)
 
