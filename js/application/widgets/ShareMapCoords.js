@@ -15,6 +15,8 @@
  */
 define([
 
+  "application/base/selectors",
+
   "esri/core/watchUtils",
 
   "dojo/_base/lang",
@@ -28,6 +30,7 @@ define([
 
   "dojo/_base/declare",
 ], function (
+  CALCITE_SELECTORS,
   watchUtils,
   lang, on, touch, dom, domAttr, domClass, query, domConstruct,
   declare
@@ -47,7 +50,8 @@ define([
 	    	this._is2d = view.type === "2d";
         this._share = share;
 	    	this._setMapCoordsEvents();
-        this._setBasemapEvents();	
+        this._setBasemapEvents();
+        this._setTitles();
     	}
     },
 
@@ -111,6 +115,10 @@ define([
 
     _currentBasemapId: null,
 
+    _currentTitle: null,
+
+    _currentSubTitle: null,
+
     _setBasemapEvents: function() {
       var view = this._view;
       if (view) {
@@ -121,6 +129,11 @@ define([
           }.bind(this));
         }.bind(this));
       }
+    },
+
+    _setTitles: function() {
+      this._currentTitle = query(CALCITE_SELECTORS.mainTitle)[0].innerHTML;
+      this._currentSubTitle = query(CALCITE_SELECTORS.subTitle)[0].innerHTML;
     },
 
     _setMapCoordsEvents: function() {
@@ -227,9 +240,6 @@ define([
       view.watch(["viewpoint.rotation"], function(val){ // fails in 3d
         this._updateCoordsUI();
       }.bind(this));
-      // view.watch("zoom", function(val) { // fails
-      //   //console.log("zoom: " + val);
-      // });
     },
 
     _setTouchEvents: function(view) {
@@ -247,6 +257,14 @@ define([
 
     _getCoordParams: function() {
       var params = {};
+      // Titles
+      if (this._currentTitle) {
+        params.title = this._currentTitle;
+      }
+      if (this._currentSubTitle) {
+        params.subTitle = this._currentSubTitle;
+      }
+      // Coords
       var pt = this._view.center;
       if (pt.latitude) { // Geographic
         params.lat = parseFloat(Math.round(pt.latitude * 100000) / 100000).toFixed(5); 
@@ -265,8 +283,9 @@ define([
         params.heading =  Math.round(this._view.viewpoint.camera.heading);
       	params.tilt = Math.round(this._view.viewpoint.camera.tilt);
         //params.altitude = Math.round(this._view.viewpoint.camera.position.z);
-        params.altitude = Math.round(this._view.center.z);  // use z here instead to match ViewManager loading code
+        params.altitude = Math.round(this._view.center.z);  // use z here instead to match ViewManager loading
       }
+      // Basemap
       if (this._currentBasemapId) {
         params.basemap = this._currentBasemapId;  
       }

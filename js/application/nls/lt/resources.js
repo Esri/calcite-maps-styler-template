@@ -22,7 +22,10 @@ define({
       "about": "Apie",
       "basemaps": "Pagrindo žemėlapiai",
       "legend": "Legenda",
-      "bookmarks": "Į_Slide Show____š",
+      "layers": "Sluoksniai",
+      "slides": "Skaidrės",
+      "bookmarks": "Žymės",
+      "share": "Bendrinti",
       "toggleNav": "Visas žemėlapis"
     }
   },

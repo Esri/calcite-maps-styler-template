@@ -22,7 +22,10 @@ define({
       "about": "Om",
       "basemaps": "Baskartor",
       "legend": "Teckenförklaring",
-      "bookmarks": "Å_Slide Show____ö",
+      "layers": "Lager",
+      "slides": "Bilder",
+      "bookmarks": "Bokmärken",
+      "share": "Dela",
       "toggleNav": "Full karta"
     }
   },

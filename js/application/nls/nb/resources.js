@@ -22,7 +22,10 @@ define({
       "about": "Om",
       "basemaps": "Bakgrunnskart",
       "legend": "Tegnforklaring",
-      "bookmarks": "å_Slide Show____ø",
+      "layers": "Lag",
+      "slides": "Lysbilder",
+      "bookmarks": "Bokmerker",
+      "share": "Del",
       "toggleNav": "Fullt kart"
     }
   },

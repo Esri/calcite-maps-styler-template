@@ -22,7 +22,10 @@ define({
       "about": "Hakkında",
       "basemaps": "Altlık harita",
       "legend": "Gösterim",
-      "bookmarks": "ı_Slide Show____İ",
+      "layers": "Katmanlar",
+      "slides": "Slaytlar",
+      "bookmarks": "Yer imleri",
+      "share": "Paylaş",
       "toggleNav": "Haritanın Tamamı"
     }
   },

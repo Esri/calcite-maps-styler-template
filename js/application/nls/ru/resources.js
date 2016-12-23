@@ -22,7 +22,10 @@ define({
       "about": "Описание",
       "basemaps": "Базовые карты",
       "legend": "Легенда",
-      "bookmarks": "Ж_Slide Show____Я",
+      "layers": "Слои",
+      "slides": "Слайды",
+      "bookmarks": "Закладки",
+      "share": "Опубликовать",
       "toggleNav": "Полная карта"
     }
   },

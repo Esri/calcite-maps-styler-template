@@ -15,7 +15,7 @@
  */
 define([
   "application/widgets/FindPlaces",
-  "application/widgets/MapCoords",
+  "application/widgets/ShareMapCoords",
 
   "dojo/query",
   "dojo/_base/declare"

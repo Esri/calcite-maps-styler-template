@@ -22,7 +22,10 @@ define({
       "about": "Giới thiệu",
       "basemaps": "Bản đồ nền",
       "legend": "Chú giải",
-      "bookmarks": "Đ_Slide Show____ớ",
+      "layers": "Lớp",
+      "slides": "Trang trình chiếu",
+      "bookmarks": "Đánh dấu",
+      "share": "Chia sẻ",
       "toggleNav": "Bản đồ Đầy đủ"
     }
   },

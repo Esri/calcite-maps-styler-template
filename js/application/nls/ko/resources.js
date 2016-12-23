@@ -22,7 +22,10 @@ define({
       "about": "정보",
       "basemaps": "베이스맵",
       "legend": "범례",
-      "bookmarks": "한_Slide Show____빠",
+      "layers": "레이어",
+      "slides": "슬라이드",
+      "bookmarks": "책갈피",
+      "share": "공유",
       "toggleNav": "전체 맵"
     }
   },

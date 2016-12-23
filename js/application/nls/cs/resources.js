@@ -22,7 +22,10 @@ define({
       "about": "O aplikaci",
       "basemaps": "Podkladové mapy",
       "legend": "Legenda",
-      "bookmarks": "Ř_Slide Show____ů",
+      "layers": "Vrstvy",
+      "slides": "Snímky",
+      "bookmarks": "Záložky",
+      "share": "Sdílet",
       "toggleNav": "Plná mapa"
     }
   },

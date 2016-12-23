@@ -22,7 +22,10 @@ define({
       "about": "バージョン情報",
       "basemaps": "ベースマップ",
       "legend": "凡例",
-      "bookmarks": "須_Slide Show____鷗",
+      "layers": "レイヤー",
+      "slides": "スライド",
+      "bookmarks": "ブックマーク",
+      "share": "共有",
       "toggleNav": "マップ全体"
     }
   },

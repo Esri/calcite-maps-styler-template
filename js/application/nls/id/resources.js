@@ -22,7 +22,10 @@ define({
       "about": "Tentang",
       "basemaps": "Peta Dasar",
       "legend": "Legenda",
-      "bookmarks": "ng_Slide Show____ny",
+      "layers": "Layer",
+      "slides": "Slide",
+      "bookmarks": "Penanda Lokasi",
+      "share": "Bagikan",
       "toggleNav": "Peta Lengkap"
     }
   },

@@ -22,7 +22,10 @@ define({
       "about": "Par",
       "basemaps": "Pamatkartes",
       "legend": "Apzīmējumi",
-      "bookmarks": "ķ_Slide Show____ū",
+      "layers": "Slāņi",
+      "slides": "Slaidi",
+      "bookmarks": "Grāmatzīmes",
+      "share": "Kopīgot",
       "toggleNav": "Pilna karte"
     }
   },

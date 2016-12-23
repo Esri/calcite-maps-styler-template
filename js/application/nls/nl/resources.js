@@ -22,7 +22,10 @@ define({
       "about": "Info",
       "basemaps": "Basiskaarten",
       "legend": "Legenda",
-      "bookmarks": "Ĳ_Slide Show____ä",
+      "layers": "Kaartlagen",
+      "slides": "Dia's",
+      "bookmarks": "Bladwijzers",
+      "share": "Delen",
       "toggleNav": "Volledige kaart"
     }
   },

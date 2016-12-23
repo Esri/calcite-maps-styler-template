@@ -148,6 +148,10 @@ define([
           case "basemaps":
             panelSelector = SELECTORS.panelBasemaps;
             break;
+          case "bookmarks":
+            panelName = "slides";
+            panelSelector = SELECTORS.panelSlides;
+            break;
           case "slides":
             panelSelector = SELECTORS.panelSlides;
             break;
@@ -226,7 +230,7 @@ define([
     _setMenusVisible: function(boilerplate) {
       var boilerplate = this._boilerplate;
       // Remove main menu if no menus are visible
-      if (boilerplate.config.menuabout === false && boilerplate.config.menulegend === false && boilerplate.config.menubasemaps === false && boilerplate.config.menutogglenav === false) {
+      if (boilerplate.config.menuabout === false && boilerplate.config.menulegend === false && boilerplate.config.menulayers === false && boilerplate.config.menubasemaps === false && boilerplate.config.menutogglenav === false && boilerplate.config.menuslides === false && boilerplate.config.menubookmarks === false) {
         query(SELECTORS.mainMenu).addClass("hidden");
         query(SELECTORS.title).addClass("calcite-title-left-margin");
       } else { // Hide menus, default is visible
@@ -242,8 +246,11 @@ define([
         if (boilerplate.config.menubasemaps === false) {
           query(SELECTORS.menuBasemaps).addClass("hidden");
         }
-        if (boilerplate.config.menuslides === false) {
+        if (boilerplate.config.menuslides === false && boilerplate.config.menubookmarks === false) {
           query(SELECTORS.menuSlides).addClass("hidden");
+        } else {
+          boilerplate.config.menuslides = true;
+          boilerplate.config.menubookmarks = true;
         }
         if (boilerplate.config.menushare === false) {
           query(SELECTORS.menuShare).addClass("hidden");

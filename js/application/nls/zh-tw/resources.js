@@ -22,7 +22,10 @@ define({
       "about": "關於",
       "basemaps": "底圖",
       "legend": "圖例",
-      "bookmarks": "試_Slide Show____驗",
+      "layers": "圖層",
+      "slides": "幻燈片",
+      "bookmarks": "書簽",
+      "share": "分享",
       "toggleNav": "完整地圖"
     }
   },
