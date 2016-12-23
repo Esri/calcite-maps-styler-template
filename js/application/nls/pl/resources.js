@@ -22,7 +22,10 @@ define({
       "about": "Informacje o",
       "basemaps": "Mapy bazowe",
       "legend": "Legenda",
-      "bookmarks": "ł_Slide Show____ą",
+      "layers": "Warstwy",
+      "slides": "Slajdy",
+      "bookmarks": "Zakładki",
+      "share": "Udostępnianie",
       "toggleNav": "Pełna mapa"
     }
   },

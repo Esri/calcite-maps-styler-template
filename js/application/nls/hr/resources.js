@@ -22,7 +22,10 @@ define({
       "about": "Informacije",
       "basemaps": "Kartografske podloge",
       "legend": "Legenda",
-      "bookmarks": "Č_Slide Show____ž",
+      "layers": "Slojevi",
+      "slides": "Slajdovi",
+      "bookmarks": "Knjižne oznake",
+      "share": "Podijeli",
       "toggleNav": "Cijela karta"
     }
   },

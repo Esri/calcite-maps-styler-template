@@ -22,7 +22,10 @@ define({
       "about": "Acerca de",
       "basemaps": "Mapas base",
       "legend": "Leyenda",
-      "bookmarks": "á_Slide Show____Ó",
+      "layers": "Capas",
+      "slides": "Diapositivas",
+      "bookmarks": "Marcadores",
+      "share": "Compartir",
       "toggleNav": "Mapa completo"
     }
   },

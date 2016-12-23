@@ -22,7 +22,10 @@ define({
       "about": "Tietoja",
       "basemaps": "Taustakartat",
       "legend": "Selite",
-      "bookmarks": "Å_Slide Show____ö",
+      "layers": "Karttatasot",
+      "slides": "Diat",
+      "bookmarks": "Kirjanmerkit",
+      "share": "Jaa",
       "toggleNav": "Koko kartta"
     }
   },

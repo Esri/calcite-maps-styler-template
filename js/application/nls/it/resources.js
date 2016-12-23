@@ -22,7 +22,10 @@ define({
       "about": "Informazioni su",
       "basemaps": "Mappe di base",
       "legend": "Legenda",
-      "bookmarks": "é_Slide Show____È",
+      "layers": "Livelli",
+      "slides": "Diapositive",
+      "bookmarks": "Segnalibri",
+      "share": "Condividi",
       "toggleNav": "Mappa completa"
     }
   },

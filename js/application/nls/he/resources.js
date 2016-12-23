@@ -22,7 +22,10 @@ define({
       "about": "אודות",
       "basemaps": "מפות בסיס",
       "legend": "מקרא",
-      "bookmarks": "כן_Slide Show____ש",
+      "layers": "שכבות",
+      "slides": "שקופיות",
+      "bookmarks": "סימניות",
+      "share": "שתף",
       "toggleNav": "מפה שלמה"
     }
   },

@@ -22,7 +22,10 @@ define({
       "about": "Despre",
       "basemaps": "Hărţi fundal",
       "legend": "Legendă",
-      "bookmarks": "Ă_Slide Show____ș",
+      "layers": "Straturi tematice",
+      "slides": "Diapozitive",
+      "bookmarks": "Semne de carte",
+      "share": "Partajare",
       "toggleNav": "Hartă completă"
     }
   },

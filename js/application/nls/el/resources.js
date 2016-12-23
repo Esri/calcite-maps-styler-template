@@ -22,7 +22,10 @@ define({
       "about": "Πληροφορίες",
       "basemaps": "Υπόβαθρα",
       "legend": "Υπόμνημα",
-      "bookmarks": "Đ_Slide Show____ớ",
+      "layers": "Θεμ. επίπ.",
+      "slides": "Διαφάνειες",
+      "bookmarks": "Σελ/κτες",
+      "share": "Κοινοποίηση",
       "toggleNav": "Πλήρης χάρτης"
     }
   },

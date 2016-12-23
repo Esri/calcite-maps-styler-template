@@ -22,7 +22,10 @@ define({
       "about": "เกี่ยวกับ",
       "basemaps": "แผนที่ฐาน",
       "legend": "คำอธิบายสัญลักษณ์",
-      "bookmarks": "ก้_Slide Show____ษฺ",
+      "layers": "เลเยอร์",
+      "slides": "สไลด์",
+      "bookmarks": "บุ๊คมาร์ค",
+      "share": "แบ่งปัน",
       "toggleNav": "แผนที่เต็ม"
     }
   },

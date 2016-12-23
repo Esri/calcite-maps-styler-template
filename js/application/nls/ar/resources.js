@@ -22,7 +22,10 @@ define({
       "about": "نبذة عن",
       "basemaps": "الخرائط الأساسية",
       "legend": "وسيلة إيضاح",
-      "bookmarks": "بيت_Slide Show____لاحقة",
+      "layers": "طبقات",
+      "slides": "شرائح",
+      "bookmarks": "إشارات مرجعية",
+      "share": "مشاركة",
       "toggleNav": "الخريطة الكاملة"
     }
   },

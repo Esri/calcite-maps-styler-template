@@ -94,6 +94,11 @@ body:lang(ja) {
   width: 100%;
 }
 
+/* Layer List */
+.calcite-maps .calcite-widgets-dark .esri-layer-list.esri-widget {
+  background-color: auto;
+}
+
 /* Navigation (3D) */
 .esri-navigation-toggle__button--rotate {
   border-top: 0;

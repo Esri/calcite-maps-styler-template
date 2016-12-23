@@ -22,7 +22,10 @@ define({
       "about": "Osnovni podaci",
       "basemaps": "Pozadinske mape",
       "legend": "Legenda",
-      "bookmarks": "Č_Slide Show____ž",
+      "layers": "Slojevi",
+      "slides": "Slajdovi",
+      "bookmarks": "Obeleživači",
+      "share": "Podeli",
       "toggleNav": "Cela mapa"
     }
   },

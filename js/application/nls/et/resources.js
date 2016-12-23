@@ -22,7 +22,10 @@ define({
       "about": "Info",
       "basemaps": "Aluskaardid",
       "legend": "Legendiga kaart",
-      "bookmarks": "Š_Slide Show____ä",
+      "layers": "Kihid",
+      "slides": "Slaidid",
+      "bookmarks": "Järjehoidjad",
+      "share": "Jaga",
       "toggleNav": "Täielik kaart"
     }
   },
