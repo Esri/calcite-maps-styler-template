@@ -2,19 +2,19 @@
 
 Styler is a new [configurable application](http://server.arcgis.com/en/portal/latest/use/application-templates.htm) that makes it easy to create and share modern-looking, responsive map apps in 2D or 3D. The app is built with the [new ArcGIS API for JavaScript version 4](https://developers.arcgis.com/javascript), [Calcite Maps](https://github.com/Esri/calcite-maps) and [Bootstrap](http://getbootstrap.com). 
 
-You can create and style maps on-the-fly with no programming by specifying URL parameters in a web browser (see below) or you can configure and save map apps step-by-step using the new [Styler configurable application with ArcGIS](http://www.arcgis.com/home/item.html?id=7217645840b8465ab03d6e3efbe21d1d). You can use the [Configuration Parameters](#configurationParameters) to configure everything from the title, menus and panels, to the color, theme and layout, to the location of widgets on the view. The default application and allows you to perform standard mapping operations such as zoom, search, showing/hiding layers and switching basemaps. Additionally you can find places (restaurants, parks, gas stations...), scroll through bookmarks or slides (if your web map/web scene contains them), and share the current map view with your friends at any time with a URL.
+You can create and style maps on-the-fly with no programming by specifying URL parameters in a web browser (see below) or you can configure and save map apps step-by-step using the [new Styler configurable application with ArcGIS](http://www.arcgis.com/home/item.html?id=7217645840b8465ab03d6e3efbe21d1d). You can use the [Configuration Parameters](#configurationParameters) to configure the title, menus and panels, the color, theme and layout, and the location of widgets on the view. The default application and allows you to perform standard mapping operations such as zoom, search, showing/hiding layers and switching basemaps. Additionally you can find places (restaurants, parks, gas stations...), scroll through bookmarks or slides (if your web map/web scene contains them), and share the current map view with your friends at any time with a URL.
 
 Styler is super-handy if you want to create, style and share a map quickly. Give it a try!
 
-## How to style a new map app
+## Steps to style a new map app
 
-1. Go to the default map or scene.
+1. Go to the default map (2D) or scene (3D).
  - [Default Map](http://esri.github.io/calcite-maps-styler-template/index.html?webmap=default) `https://esri.github.io/calcite-maps-styler-template/index.html?webmap=default`
  - [Default Scene](http://esri.github.io/calcite-maps-styler-template/index.html?webscene=default) `https://esri.github.io/calcite-maps-styler-template/index.html?webscene=default`
 2. Search or zoom to a place of interest e.g. "New York City" or "Big Bear, CA" or
 3. Use the `Share` menu to create a URL that you can share with others. That's it. Your done!
 
-Now try applying different [configuration parameters](#configurationParameters) to style your map further.
+>Now try applying different [configuration parameters](#configurationParameters) to style your map further.
 
 ###Example 1: [Default Map + styled title, location, about text and basemap](https://esri.github.io/calcite-maps-styler-template/index.html?webmap=default&title=Explore New%20York%20&abouttext=Click + hold on the map to find interesting places&lat=40.71862&lon=-73.99343&zoom=13&basemap=streets-navigation-vector&activepanel=about)
 
@@ -46,7 +46,7 @@ https://esri.github.io/calcite-maps-styler-template/index.html?webmap=742e3546ff
   &activepanel=bookmarks
 ```
 
-###Example 3: [Default Scene + styled titles, RBG colors, light theme, about text and manual widget positioning](https://esri.github.io/calcite-maps-styler-template/index.html?webscene=default&title=Big%20Bear%20Lake%2C%20California&subtitle=A%20great%20vacation%20get away&bgcolor=rgb(140, 94, 42)&theme=light&widgetzoom=bottom-left&widgethome=hide&widgetnavtoggle=bottom-left&lat=34.24513&lon=-116.89622&heading=174&tilt=80&altitude=2086&scale=14739&&abouttext=&abouttext=Come explore the mountains in SoCal!)
+###Example 3: [Default Scene + styled titles, RBG colors, light theme, about text and manual widget positioning](https://esri.github.io/calcite-maps-styler-template/index.html?webscene=default&title=Big%20Bear%20Lake%2C%20California&subtitle=A%20great%20vacation%20getaway&bgcolor=rgb(140, 94, 42)&theme=light&widgetzoom=bottom-left&widgethome=hide&widgetnavtoggle=bottom-left&lat=34.24513&lon=-116.89622&heading=174&tilt=80&altitude=2086&scale=14739&&abouttext=&abouttext=Come explore the mountains in SoCal!)
 
 ![demo-3d-bigbear.png](./demo-3d-bigbear.png?raw=true)
 
@@ -75,7 +75,7 @@ https://esri.github.io/calcite-maps-styler-template/index.html?webscene=default
 ```
 https://esri.github.io/calcite-maps-styler-template/index.html?webscene=128ba9498cca447ab6ec356b84fee879
   &title=Airflow%20Globe
-  &subtitle=Air%20Traffic%20Routes
+  &subtitle=Air Traffic Routes
   &bgcolor=transparent
   &theme=dark
   &widgettheme=dark
