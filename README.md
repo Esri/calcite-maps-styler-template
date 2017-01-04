@@ -1,24 +1,36 @@
-# Calcite Maps Styler
+# Calcite Maps - Styler
 
-Styler is a new [configurable application](http://server.arcgis.com/en/portal/latest/use/application-templates.htm) that makes it easy to create and share modern-looking, responsive map apps in 2D or 3D. The app is built with the [new ArcGIS API for JavaScript version 4](https://developers.arcgis.com/javascript), [Calcite Maps](https://github.com/Esri/calcite-maps) and [Bootstrap](http://getbootstrap.com). 
+Styler is a [new ArcGIS configurable application](http://server.arcgis.com/en/portal/latest/use/application-templates.htm) that can be used to easily create, style and share modern 2D and 3D map apps. Using simple [configuration parameters](#configurationParameters) you can customize everything from the title, menus and text, to the overall color, theme and layout. The app is hosted on [ArcGIS Online](http://www.arcgis.com/home/item.html?id=7217645840b8465ab03d6e3efbe21d1d) so you can style maps **on-the-fly** by using [URL parameters](#configurationParameters) in your browser or if you have an existing web map or web scene, you can create (more advanced) apps **step-by-step** by configuring them with the [new Styler template](http://www.arcgis.com/home/item.html?id=7217645840b8465ab03d6e3efbe21d1d). Once styled, share your app at any time just by sharing the URL.
 
-You can create and style maps on-the-fly with no programming by specifying URL parameters in a web browser (see below) or you can configure and save map apps step-by-step using the [new Styler configurable application with ArcGIS](http://www.arcgis.com/home/item.html?id=7217645840b8465ab03d6e3efbe21d1d). You can use the [Configuration Parameters](#configurationParameters) to configure the title, menus and panels, the color, theme and layout, and the location of widgets on the view. The default application and allows you to perform standard mapping operations such as zoom, search, showing/hiding layers and switching basemaps. Additionally you can find places (restaurants, parks, gas stations...), scroll through bookmarks or slides (if your web map/web scene contains them), and share the current map view with your friends at any time with a URL.
+Styler is built with the [new ArcGIS API for JavaScript v4](https://developers.arcgis.com/javascript), [Calcite Maps](https://github.com/Esri/calcite-maps) and [Bootstrap](http://getbootstrap.com). The application is fully responsive and implements Calcite design patterns. It supports many features of the new JavaScript v4 API such as loading 2D web maps and 3D web scenes, displaying image and vector tile basemaps, showing legend and layers, positioning widgets on the view, and searching and finding places. The app can be [accessed online](http://www.arcgis.com/home/item.html?id=7217645840b8465ab03d6e3efbe21d1d) or downloaded, configured and hosted on your own server or [Portal for ArcGIS](http://server.arcgis.com/en/portal/).
 
-Styler is super-handy if you want to create, style and share a map quickly. Give it a try!
+## Examples of styling maps on-the-fly
 
-## Steps to style a new map app
+<table>
+ <tr>
+ <td><a href="#example1"><img src="./demo-2d-nyexplore.png?raw=true"></a></td>
+ <td><a href="#example2"><img src="./demo-2d-missing-migrants.png?raw=true"></a></td>
+ <td><a href="#example3"><img src="./demo-3d-bigbear.png?raw=true"></a></td>
+ <td><a href="#example4"><img src="./demo-3d-airflow.png?raw=true"></a></td>
+<tr>
+</table>
 
-1. Go to the default map (2D) or scene (3D).
- - [Default Map](http://esri.github.io/calcite-maps-styler-template/index.html?webmap=default) `https://esri.github.io/calcite-maps-styler-template/index.html?webmap=default`
- - [Default Scene](http://esri.github.io/calcite-maps-styler-template/index.html?webscene=default) `https://esri.github.io/calcite-maps-styler-template/index.html?webscene=default`
-2. Search or zoom to a place of interest e.g. "New York City" or "Big Bear, CA" or
-3. Use the `Share` menu to create a URL that you can share with others. That's it. Your done!
+## How to create, style and share an app
 
->Now try applying different [configuration parameters](#configurationParameters) to style your map further.
+1. Open the default [2D map](http://esri.github.io/calcite-maps-styler-template/index.html?webmap=default) or [3D scene](http://esri.github.io/calcite-maps-styler-template/index.html?webscene=default) and search for a place of interest. e.g. "New York City"
 
-###Example 1: [Default Map + styled title, location, about text and basemap](https://esri.github.io/calcite-maps-styler-template/index.html?webmap=default&title=Explore New%20York%20&abouttext=Click + hold on the map to find interesting places&lat=40.71862&lon=-73.99343&zoom=13&basemap=streets-navigation-vector&activepanel=about)
+2. Select the `Share` menu and add/edit the URL [configuration parameters](#configurationParameters) e.g. title, bgcolor, basemap... to customize the map. Refresh to apply.
+ 
+ ```
+ https://esri.github.io/calcite-maps-styler-template/index.html?webmap=default&title=New York City at Night&bgcolor=dark-blue&basemap=streets-night-vector&lat=40.72461&lon=-73.99893&zoom=12
+ https://esri.github.io/calcite-maps-styler-template/index.html?webscene=128ba9498cca447ab6ec356b84fee879
+ ```
 
-![demo-2d-nyexplore.png](./demo-2d-nyexplore.png?raw=true)
+3. Now share your URL with others.
+
+That's it, your done! See more examples of the [configuration parameters](#configurationParameters) below.
+
+### <a id="example1"></a>Example 1: [Default Map + Styled title, location, about text and basemap](https://esri.github.io/calcite-maps-styler-template/index.html?webmap=default&title=Explore New%20York%20&abouttext=Click + hold on the map to find interesting places&lat=40.71862&lon=-73.99343&zoom=13&basemap=streets-navigation-vector&activepanel=about)
 
 ```
 https://esri.github.io/calcite-maps-styler-template/index.html?webmap=default
@@ -31,9 +43,9 @@ https://esri.github.io/calcite-maps-styler-template/index.html?webmap=default
   &activepanel=about
 ```
 
-### Example 2: [Web Map + custom colors and theme, bottom layout and bookmark panel](https://esri.github.io/calcite-maps-styler-template/index.html?webmap=742e3546ff1e4e0bba3360ae5004d0e1&bgcolor=dark-blue&opacity=.75&widgettheme=light&theme=custom&layout=bottom-medium&aboutsummary=true&menubookmarks=true&activepanel=bookmarks)
+![demo-2d-nyexplore.png](./demo-2d-nyexplore.png?raw=true)
 
-![demo-2d-missing-migrants.png](./demo-2d-missing-migrants.png?raw=true)
+### <a id="example2"></a>Example 2: [Existing Map + Styled colors, theme, bottom layout and bookmark panel](https://esri.github.io/calcite-maps-styler-template/index.html?webmap=742e3546ff1e4e0bba3360ae5004d0e1&bgcolor=dark-blue&opacity=.75&widgettheme=light&theme=custom&layout=bottom-medium&aboutsummary=true&menubookmarks=true&activepanel=bookmarks)
 
 ```
 https://esri.github.io/calcite-maps-styler-template/index.html?webmap=742e3546ff1e4e0bba3360ae5004d0e1
@@ -46,13 +58,13 @@ https://esri.github.io/calcite-maps-styler-template/index.html?webmap=742e3546ff
   &activepanel=bookmarks
 ```
 
-###Example 3: [Default Scene + styled titles, RBG colors, light theme, about text and manual widget positioning](https://esri.github.io/calcite-maps-styler-template/index.html?webscene=default&title=Big%20Bear%20Lake%2C%20California&subtitle=A%20great%20vacation%20getaway&bgcolor=rgb(140, 94, 42)&theme=light&widgetzoom=bottom-left&widgethome=hide&widgetnavtoggle=bottom-left&lat=34.24513&lon=-116.89622&heading=174&tilt=80&altitude=2086&scale=14739&&abouttext=&abouttext=Come explore the mountains in SoCal!)
+![demo-2d-missing-migrants.png](./demo-2d-missing-migrants.png?raw=true)
 
-![demo-3d-bigbear.png](./demo-3d-bigbear.png?raw=true)
+### <a id="example3"></a>Example 3: [Default Scene + Styled titles, RBG color, light theme, about text and manual widget positioning](https://esri.github.io/calcite-maps-styler-template/index.html?webscene=default&title=Big%20Bear%20Lake%2C%20California&subtitle=A%20great%20vacation%20getaway&bgcolor=rgb(140, 94, 42)&theme=light&widgetzoom=bottom-left&widgethome=hide&widgetnavtoggle=bottom-left&lat=34.24513&lon=-116.89622&heading=174&tilt=80&altitude=2086&scale=14739&&abouttext=&abouttext=Come explore the mountains in SoCal!)
 
 ```
 https://esri.github.io/calcite-maps-styler-template/index.html?webscene=default
-  &title=BigBearLake, California
+  &title=Big Bear Lake, California
   &subtitle=A great vacation getaway
   &abouttext=Come explore the mountains in SoCal!
   &bgcolor=rgb(140, 94, 42)
@@ -68,9 +80,9 @@ https://esri.github.io/calcite-maps-styler-template/index.html?webscene=default
   &scale=14739
 ```
 
-###Example 4: [Web Scene + styled transparent colors, dark widgets, theme dark, small top layout, widget layout right, panels left, about with Web Scene description](https://esri.github.io/calcite-maps-styler-template/index.html?webscene=128ba9498cca447ab6ec356b84fee879%20&bgcolor=transparent&widgettheme=dark&widgetslayout=top-right&panelslayout=left&layout=top-small&lat=43.72115&lon=9.82826&activepanel=about&aboutdescription=true&zoom=2)
+![demo-3d-bigbear.png](./demo-3d-bigbear.png?raw=true)
 
-![demo-3d-airflow.png](./demo-3d-airflow.png?raw=true)
+### <a id="example4"></a>Example 4: [Existing Scene + Styled transparent color, dark widgets, theme dark, small top layout, widget layout right, panels left, about with Web Scene description](https://esri.github.io/calcite-maps-styler-template/index.html?webscene=128ba9498cca447ab6ec356b84fee879%20&bgcolor=transparent&widgettheme=dark&widgetslayout=top-right&panelslayout=left&layout=top-small&lat=43.72115&lon=9.82826&activepanel=about&aboutdescription=true&zoom=2)
 
 ```
 https://esri.github.io/calcite-maps-styler-template/index.html?webscene=128ba9498cca447ab6ec356b84fee879
@@ -89,7 +101,7 @@ https://esri.github.io/calcite-maps-styler-template/index.html?webscene=128ba949
   &aboutdescription=true
 ```
 
-NOTE: You can pass in any [Web Map](https://doc.arcgis.com/en/arcgis-online/create-maps/make-your-first-map.htm) or [Web Scene](https://doc.arcgis.com/en/arcgis-online/create-maps/make-your-first-scene.htm) ID to the app.
+![demo-3d-airflow.png](./demo-3d-airflow.png?raw=true)
 
 ## Features
 
