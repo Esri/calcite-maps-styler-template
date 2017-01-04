@@ -346,7 +346,7 @@ define([
       var pushUrl = baseUrl + "?" + querySearch;
       // Auto-update browser URL...
       // window.history.pushState("", "", pushUrl);
-      //window.history.replaceState("", "", pushUrl);
+      window.history.replaceState("", "", pushUrl);
       //this._sharePanelUrlText.value = pushUrl;
       this._coordsUrlTextarea.value = pushUrl;
     },
