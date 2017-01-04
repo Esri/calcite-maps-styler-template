@@ -26,9 +26,9 @@ Styler is built with the [new ArcGIS API for JavaScript v4](https://developers.a
  https://esri.github.io/calcite-maps-styler-template/index.html?webscene=128ba9498cca447ab6ec356b84fee879
  ```
 
-3. Now share you're URL with others.
+3. Now share your URL with others.
 
-That's it, your done! See more examples of the [configuration parameters](#configurationParameters) below.
+That's it, you're done! See more examples of the [configuration parameters](#configurationParameters) below.
 
 ### <a id="example1"></a>Example 1: [Default Map + Styled title, location, about text and basemap](https://esri.github.io/calcite-maps-styler-template/index.html?webmap=default&title=Explore New%20York%20&abouttext=Click + hold on the map to find interesting places&lat=40.71862&lon=-73.99343&zoom=13&basemap=streets-navigation-vector&activepanel=about)
 
@@ -134,19 +134,19 @@ Here are the parameters you can configure in a URL or in a JSON file.
 
 |parameter|description|type|example|
 |---|---|---|---|
-|webmap|Webmap ID for webmap|String|"default", `e1653fe614c04b6aa4efba5ba7b56d05`|
-|webscene|Webscene ID for webscene|String|"default", `bdc09d6c8ef8492783ebe2c572950931`|
-|lat|Latitude to move the map to on start-up|Number|45|
-|lon|Longitude to move the map to on start-up|Number|-120|
-|x|X coordinate to move the map to on start-up|Number|-50000000|
-|y|Y coordinate to move the map to on start-up|Number|50000000|
-|wkid|Spatial reference value to support x/y values on start-up|Number|103500|
-|zoom|Level of Detail (LOD) to zoom to on start-up|Number|1-20|
-|scale|The scale the map displays on start-up. This prevails over zoom.|Number|1-100000000|
-|rotation|Rotation of the 2D view on start-up|Number|0-360|
-|tilt|Angle of the 3D view on start-up|Number|0-90|
-|heading|Heading of the 3D view on start-up|Number|0-360|
-|basemap|Basemap to use for the map on start-up. See ArcGIS JS API reference|String|`streets`, `satellite...`|
+|webmap|Webmap ID for webmap|String|`default`, `e1653fe614c04b6aa4efba5ba7b56d05`|
+|webscene|Webscene ID for webscene|String|`default`, `bdc09d6c8ef8492783ebe2c572950931`|
+|lat|Latitude to move the map to on start-up|Number|`45`|
+|lon|Longitude to move the map to on start-up|Number|`-120`|
+|x|X coordinate to move the map to on start-up|Number|`-50000000`|
+|y|Y coordinate to move the map to on start-up|Number|`50000000`|
+|wkid|Spatial reference value to support x/y values on start-up|Number|`103500`|
+|zoom|Level of Detail (LOD) to zoom to on start-up |Number|`1`-`20`|
+|scale|The scale the map displays on start-up. This prevails over zoom.|Number|`1`-`100000000`|
+|rotation|Rotation of the 2D view on start-up|Number|`0`-`360`|
+|tilt|Angle of the 3D view on start-up|Number|`0`-`90`|
+|heading|Heading of the 3D view on start-up|Number|`0`-`360`|
+|basemap|Basemap to use for the map on start-up. See ArcGIS JS API reference|String|`streets`, `satellite`...|
 |title|Title of the application|String|`New York`|
 |subtitle|Subtitle of the application|String|`A great place to visit`|
 |abouttext|Information about your application|String|`Map of the Big Apple`|
@@ -155,7 +155,7 @@ Here are the parameters you can configure in a URL or in a JSON file.
 |theme|The base color theme used to style the app. "custom" applies your color to the entire app.|String|`light`, `dark`, `custom`|
 |bgcolor|The base background color for navbar and panels. Use Calcite colors or RGB/RGBA colors.|String|`light`, `dark`, `blue`..., `rgb(24,24,24)`, `rgba(24,24,24,.5)`|
 |textcolor|The base text color for navbar and panels|String|`light`, `dark`|
-|opacity|The opacity to use for navbar and panels|String|`0-1`|
+|opacity|The opacity to use for navbar and panels|String|`0`-`1`|
 |widgettheme|The base color for the widgets|String|`light`, `dark`|
 |layout|The position of the navbar|String|`top-small`, `top-medium`, `top-medium`, `bottom-small`, `bottom-medium`, `bottom-large`|
 |panelslayout|The position of the panels|String|`left`, `right`|
@@ -164,7 +164,7 @@ Here are the parameters you can configure in a URL or in a JSON file.
 |menustyledrawer|The style of the menu|Boolean|`true`,`false`|
 |dockposition|Position to dock the popup. See ArcGIS JS API|String|`top-right`, `top-center`, `top-left`, `bottom-right`, `bottom-center`, `bottom-left`|
 |widgetXXX|Name of the widget to add to the view (widgetzoom, widgethome, widgetlocate, widgettrack, widgetsearch, widgetbasemaptoggle)|String|`show`, `hide`, `top-left`, `top-right`, `bottom-left`, `bottom-right`|
-|widgetnextbasemap|The name of the next basemap for the toggle. See ArcGIS JS API reference|String|`streets`, `satellite...`|
+|widgetnextbasemap|The name of the next basemap for the toggle. See ArcGIS JS API reference|String|`streets`, `satellite`...|
 |widgetsearchnav|Show the search widget in the navbar|Boolean|`true`, `false`|
 |activepanel|Name of the panel to show when app loads|String|`about`, `legend`, `basemaps`, `slides`, `layers`|
 |findplaces|Enable long-tap/hold search for restaurants, parks, stores...|Boolean|`true`, `false`|
@@ -174,8 +174,6 @@ Here are the parameters you can configure in a URL or in a JSON file.
 
 ```js
 {
-  "appid": "",
-  "group": "",
   "webmap": "e1653fe614c04b6aa4efba5ba7b56d05",
   "webscene": "",
 
