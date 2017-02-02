@@ -62,7 +62,7 @@ define([
         if (this._isValidParamValue(param,val)) {
           validatedParams[param] = val;
         } else {
-          console.warning("Styler - Unrecognized parameter or value: " + param + "=" + val) // TODO
+          console.warn("Styler - Unrecognized parameter or value: " + param + "=" + val) // TODO
         }
       }
       return validatedParams;
