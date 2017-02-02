@@ -158,7 +158,8 @@
                "type":"color",
                "fieldName":"bgcolor",
                "label":"Color (custom)",
-               "tooltip":"Select a custom background color. NOTE: This will override the background color selected above."
+               "tooltip":"Select a custom background color. NOTE: This will override the background color selected above.",
+               "sharedThemeProperty":"header.background"
             },
             {
                "type":"options",
