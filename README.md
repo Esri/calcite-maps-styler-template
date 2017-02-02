@@ -17,16 +17,21 @@ Styler is built with the [new ArcGIS API for JavaScript v4](https://developers.a
 
 ## How to create, style and share an app
 
-1. Open the default [2D map](http://esri.github.io/calcite-maps-styler-template/index.html?webmap=default) or [3D scene](http://esri.github.io/calcite-maps-styler-template/index.html?webscene=default) and search for a place of interest. e.g. "New York City"
+1. Open the default [2D map](http://esri.github.io/calcite-maps-styler-template/index.html?webmap=default) or [3D scene](http://esri.github.io/calcite-maps-styler-template/index.html?webscene=default) and zoom to or search for a place of interest. e.g. "New York City"
 
-2. At the top, click the `main menu` > `Share`. This updates the browser URL. Now you can add or edit the URL [configuration parameters](#configurationParameters) e.g. title, bgcolor, basemap... to customize the map. Refresh to apply.
+2. At the top, click the `main menu` > `Share`. In the window, feel free to add or edit the URL [configuration parameters](#configurationParameters) to style your map further. e.g. title, bgcolor, basemap... to customize the map. Hit `Enter` to apply.
  
  ```
- https://esri.github.io/calcite-maps-styler-template/index.html?webmap=default&title=New York City at Night&bgcolor=dark-blue&basemap=streets-night-vector&lat=40.72461&lon=-73.99893&zoom=12
- https://esri.github.io/calcite-maps-styler-template/index.html?webscene=128ba9498cca447ab6ec356b84fee879
+ https://esri.github.io/calcite-maps-styler-template/index.html?webmap=default
+ &title=New York City at Night
+ &bgcolor=dark-blue
+ &basemap=streets-night-vector
+ &lat=40.72461
+ &lon=-73.99893
+ &zoom=12
  ```
 
-3. Now share your URL with others.
+3. Now just copy and paste the URL to share your styled map with others.
 
 That's it, you're done! See more examples of the [configuration parameters](#configurationParameters) below.
 
