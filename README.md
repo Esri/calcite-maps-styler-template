@@ -1,6 +1,6 @@
 # Calcite Maps - Styler
 
-Styler is a [new ArcGIS configurable application](http://server.arcgis.com/en/portal/latest/use/application-templates.htm) that can be used to easily create, style and share modern 2D and 3D map apps. Using simple [configuration parameters](#configurationParameters) you can customize everything from the title, menus and text, to the overall color, theme and layout. The app is hosted on [ArcGIS Online](http://www.arcgis.com/home/item.html?id=7217645840b8465ab03d6e3efbe21d1d) so you can style maps **on-the-fly** by using [URL parameters](#configurationParameters) in your browser or if you have an existing web map or web scene, you can create (more advanced) apps **step-by-step** by configuring them with the [new Styler template](http://www.arcgis.com/home/item.html?id=7217645840b8465ab03d6e3efbe21d1d). Once styled, share your app at any time just by sharing the URL - with no programming.
+Styler is a [new ArcGIS configurable application](http://server.arcgis.com/en/portal/latest/use/application-templates.htm) that can be used to easily create, style and share modern 2D and 3D map apps. Using simple [configuration parameters](#configurationParameters) you can customize everything from the title, menus and text, to the overall color, theme and layout. The app is hosted on [ArcGIS Online](http://www.arcgis.com/home/item.html?id=7217645840b8465ab03d6e3efbe21d1d) and [GitHub](https://esri.github.io/calcite-maps-styler-template/index.html?webmap=default) so you can style maps **on-the-fly** just by adding [URL parameters](#configurationParameters) or if you have an existing web map or web scene, you can style (more advanced) apps **step-by-step** by configuring them with the [new Styler template](http://www.arcgis.com/home/item.html?id=7217645840b8465ab03d6e3efbe21d1d). Once styled, share your app at any time just by sharing the URL - no programming required.
 
 Styler is built with the [new ArcGIS API for JavaScript v4](https://developers.arcgis.com/javascript), [Calcite Maps](https://github.com/Esri/calcite-maps) and [Bootstrap](http://getbootstrap.com). The application is fully responsive and supports many features of the new JavaScript v4 API such as loading 2D web maps and 3D web scenes, displaying image and vector tile basemaps, showing legend and layers, positioning widgets on the view, and searching and finding places. The app can be accessed in [ArcGIS Online](http://www.arcgis.com/home/item.html?id=7217645840b8465ab03d6e3efbe21d1d) or configured further with [ArcGIS Enterprise](http://www.esri.com/arcgis/products/arcgis-enterprise/Overview), or if you download and host it locally.
 
@@ -19,7 +19,12 @@ Styler is built with the [new ArcGIS API for JavaScript v4](https://developers.a
 
 1. Open the default [2D map](http://esri.github.io/calcite-maps-styler-template/index.html?webmap=default) or [3D scene](http://esri.github.io/calcite-maps-styler-template/index.html?webscene=default) and zoom to or search for a place of interest. e.g. "New York City"
 
-2. At the top, click the `main menu` > `Share`. In the window, feel free to add or edit the URL [configuration parameters](#configurationParameters) to style your map further. e.g. title, bgcolor, basemap... to customize the map. Hit `Enter` to apply.
+ ```
+ https://esri.github.io/calcite-maps-styler-template/index.html?webmap=default
+ https://esri.github.io/calcite-maps-styler-template/index.html?webscene=default
+ ```
+
+2. At the top, click the `main menu` > `Share`. In the share window, Add or edit URL [configuration parameters](#configurationParameters) to style your map further. e.g. title, bgcolor, basemap... to customize the map. Hit `Enter` to apply.
  
  ```
  https://esri.github.io/calcite-maps-styler-template/index.html?webmap=default
