@@ -243,11 +243,11 @@ define([
       // Location template
       if (type === this._placeKeys.location) {
         var options = this._createOptions();
-        content = `<div class='calcite-popup-content'>
-                    <select id='filterPlaces' class='calcite-popup-filter'>` 
-                      + options + `
-                    </select>
-                  </div>`;
+        content = "<div class='calcite-popup-content'>" +
+                    "<select id='filterPlaces' class='calcite-popup-filter'>"
+                      + options + 
+                    "</select>" +
+                  "</div>";
       } else { // Places template
         content = "<div class='calcite-popup-content'>{address}</div>";
       }
@@ -270,7 +270,7 @@ define([
 
     _createOptions: function() {
       function createOption(name, value, selected) {
-        var option = `<option ${selected} value='${value}'>${name}</option>`;
+        var option = "<option " + selected + " value='" + value + "'" + ">" + name + "</option>";
         return option;
       }
       var keys = this._searchKeys;

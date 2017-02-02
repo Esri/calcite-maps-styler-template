@@ -335,13 +335,13 @@ define([
         var id = "select";
         var title = "--- " + this._i18n.basemaps.select + " ---";
         // Add select option
-        var optionsHtml = `<option value="${id}" selected>${title}</option>`;
+        var optionsHtml = "<option value='" + id + "'" + "selected>" + title + "</option>";
         // Add all basemap options
         for (var key in basemapDefs) {
           if (basemapDefs.hasOwnProperty(key)){
             id = basemapDefs[key].id;
             title = basemapDefs[key].title;
-            var option = `<option value="${id}">${title}</option>`;
+            var option = "<option value='" + id + "'" + ">" + title + "</option>";
             optionsHtml += option;
           }
         }
@@ -419,7 +419,7 @@ define([
             
             slides.forEach(function(slide, i) {
               var active = i === 0 ? "active" : "";
-              var indicator = `<li data-target="#carouselSlides" data-slide-to="${i}" data-toggle="tooltip" data-placement="bottom" title="${slide.title.text}" class="${active}"></li>`;
+              var indicator = "<li data-target='#carouselSlides' data-slide-to=" + i + " data-toggle='tooltip' data-placement='bottom' title=" + slide.title.text + " class=" + active + "></li>";
               domConstruct.place(indicator, carouselIndicators, i);
               // FF to slide indicator
               query(SELECTORS.carouselSlides + " [data-slide-to=" + i + "]").on("click", function() {
