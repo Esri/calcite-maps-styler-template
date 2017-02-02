@@ -16,11 +16,14 @@
 define([
 
   "application/base/selectors",
+  "application/base/message",
+  "application/base/ParamValidator",
 
   "esri/core/watchUtils",
 
   "dojo/_base/lang",
   "dojo/on",
+  "dojo/keys",
   "dojo/touch",
   "dojo/dom",
   "dojo/dom-attr",
@@ -30,9 +33,9 @@ define([
 
   "dojo/_base/declare",
 ], function (
-  CALCITE_SELECTORS,
+  CALCITE_SELECTORS, Message, ParamValidator,
   watchUtils,
-  lang, on, touch, dom, domAttr, domClass, query, domConstruct,
+  lang, on, keys, touch, dom, domAttr, domClass, query, domConstruct,
   declare
 ) {
 
@@ -52,6 +55,7 @@ define([
 	    	this._setMapCoordsEvents();
         this._setBasemapEvents();
         this._setTitles();
+        this._paramValidator = new ParamValidator();
     	}
     },
 
@@ -63,31 +67,31 @@ define([
 
     _fadeTimeout: 2000,
 
-    _mapCoordsHtml: `<div class="calcite-coords-container esri-component fade">
-                        <div id="coordsFlipDiv" class="coords-flip-container">
-                          <div class="flipper">
-                            <div class="front">
-                              <span class="calcite-coords"></span><span class="esri-icon-share calcite-coords-icon"></span>
-                            </div>
-                            <div class="back">
-                              <textarea class="calcite-coords-textarea" value=""></textarea><span class="esri-icon-close calcite-coords-icon"></span>
-                            </div>
-                          </div>
-                        </div>
-                      </div>`,
+    _mapCoordsHtml: "<div class='calcite-coords-container esri-component fade'>" +
+                        "<div id='coordsFlipDiv' class='coords-flip-container'>" +
+                          "<div class='flipper'>" +
+                            "<div class='front'>" +
+                              "<span class='calcite-coords'></span><span class='esri-icon-share calcite-coords-icon'></span>" +
+                            "</div>" +
+                            "<div class='back'>" +
+                              "<textarea class='calcite-coords-textarea' value=''></textarea><span class='esri-icon-close calcite-coords-icon'></span>" +
+                            "</div>" +
+                          "</div>" +
+                        "</div>" +
+                      "</div>",
 
-    _mapCoordsHtmlNoShare: `<div class="calcite-coords-container esri-component fade">
-                        <div id="coordsFlipDiv" class="coords-flip-container">
-                          <div class="flipper">
-                            <div class="front">
-                              <span class="calcite-coords"></span>
-                            </div>
-                            <div class="back">
-                              <textarea class="calcite-coords-textarea" value=""></textarea><span class="esri-icon-close calcite-coords-icon"></span>
-                            </div>
-                          </div>
-                        </div>
-                      </div>`,
+    _mapCoordsHtmlNoShare: "<div class='calcite-coords-container esri-component fade'>" +
+                        "<div id='coordsFlipDiv' class='coords-flip-container'>" +
+                          "<div class='flipper'>" +
+                            "<div class='front'>" +
+                              "<span class='calcite-coords'></span>" +
+                            "</div>" +
+                            "<div class='back'>" +
+                              "<textarea class='calcite-coords-textarea' value=''></textarea><span class='esri-icon-close calcite-coords-icon'></span>" +
+                            "</div>" +
+                          "</div>" +
+                        "</div>" +
+                      "</div>",
 
     _uiContainer: null,
 
@@ -119,6 +123,8 @@ define([
 
     _currentSubTitle: null,
 
+    _paramValidator: null,
+
     _setBasemapEvents: function() {
       var view = this._view;
       if (view) {
@@ -131,9 +137,9 @@ define([
       }
     },
 
-    _setTitles: function() {
-      this._currentTitle = query(CALCITE_SELECTORS.mainTitle)[0].innerHTML;
-      this._currentSubTitle = query(CALCITE_SELECTORS.subTitle)[0].innerHTML;
+    _setTitles: function(title, subTitle) {
+      this._currentTitle = title || query(CALCITE_SELECTORS.mainTitle)[0].innerHTML;
+      this._currentSubTitle = subTitle || query(CALCITE_SELECTORS.subTitle)[0].innerHTML;
     },
 
     _setMapCoordsEvents: function() {
@@ -174,7 +180,7 @@ define([
         if (visible) {
           me._isCoordsLocked = true;
           me._showCoordsUI(true);
-          me._updateUrlUI();
+          me._updateUrlUI(me._getCoordParams(),true);
           query(coordsFlip).addClass("flip");
           setTimeout(function() {
             // this._coordsUrlTextarea.focus();
@@ -194,14 +200,47 @@ define([
           setCoordsUIVisible(true, me);
         }.bind(this));        
       }
+
       // Button close
       on(this._coordsClose, touch.press, function() {
         setCoordsUIVisible(false, me);        
       }.bind(this));
+
       // Menu share
       query("#menuShare").on(touch.press, function() {
         var flip = !domClass.contains(query("#coordsFlipDiv")[0], "flip");
         setCoordsUIVisible(flip, me);
+      }.bind(this));
+
+      // Textarea ENTER - Auto-update URL and reload browser
+      on(this._coordsUrlTextarea, "keypress", function(e){
+        if (e.keyCode === keys.ENTER) {
+          e.preventDefault();
+          // Find what changed in text
+          var text = this._coordsUrlTextarea.value;
+          var strip = text.indexOf("?");
+          if (strip > -1) {
+            text = text.substring(strip + 1, text.length);
+          }
+
+          // Need text or param validation - TODO
+          var textareaParams = this._paramStringToJSON(text);
+
+          var validatedParams = this._paramValidator.getValidParams(textareaParams);
+
+          // Add validation here
+          // var err = validateParams.validateAll(textareaParams);
+          // if (err) {
+          //Message.show(Message.type.error, new Error("Invalid input parameters. See https://github.com/Esri/calcite-maps-styler-template for help"), true, true);
+          //return;
+          //}
+          
+          // Update URL with new params
+          //this._updateUrlUI(textareaParams);
+          this._updateUrlUI(validatedParams, false);
+          // Refresh browser
+          window.location.reload(true);
+        }
       }.bind(this));
 
     },
@@ -289,7 +328,6 @@ define([
       if (this._currentBasemapId) {
         params.basemap = this._currentBasemapId;  
       }
-      
       return params;
     },
 
@@ -310,7 +348,7 @@ define([
           }
           // Update panel url
           if (this._isCoordsLocked) {
-            this._updateUrlUI(params);
+            this._updateUrlUI(params, true);
           }
         this._isUpdatingUI = false;
       }
@@ -332,30 +370,44 @@ define([
       }
     },
 
-    _updateUrlUI: function(params) {
+    _setDefaultWebmap: function(queryParams,params) {
+      if (params.webmap || params.webscene) {
+        delete queryParams.webmap;
+        delete queryParams.webscene;
+      }
+    },
+
+    _updateUrlUI: function(params, mergeParams) {
       var params = params || this._getCoordParams();
-      var queryParams = this._queryStringToJSON();
-      var queryAll = lang.mixin(queryParams, params); // TODO - sort params in preferred order
-      var querySearch = this._jsonToQueryString(queryAll);
+      var queryAllParams;
+      if (!mergeParams) {
+        queryAllParams = this._jsonToParamString(params);  
+      } else {
+        var urlParams = this._paramStringToJSON(location.search.slice(1));
+        this._setDefaultWebmap(urlParams,params);
+        var queryMix = lang.mixin(urlParams, params); // TODO - sort params in preferred order, remove dupes        
+        queryAllParams = this._jsonToParamString(queryMix);        
+      }
+      
       var baseUrl;
       if (window.location.href.indexOf("?") > -1) {
         baseUrl = window.location.href.split('?')[0];
       } else {
         baseUrl = window.location.href;
       }
-      var pushUrl = baseUrl + "?" + querySearch;
+      var pushUrl = baseUrl + "?" + queryAllParams;
       // Auto-update browser URL...
       // window.history.pushState("", "", pushUrl);
       window.history.replaceState("", "", pushUrl);
       //this._sharePanelUrlText.value = pushUrl;
-      this._coordsUrlTextarea.value = pushUrl;
+      this._coordsUrlTextarea.value = decodeURI(pushUrl);
     },
 
-    _queryStringToJSON() {
-      var search = location.search;
+    _paramStringToJSON: function(paramString) {
+      // var search = location.search;
       var result = {};
-      if (search) {
-        var pairs = location.search.slice(1).split('&');
+      if (paramString) {
+        var pairs = paramString.slice(0).split('&');
         pairs.forEach(function(pair) {
             pair = pair.split('=');
             result[pair[0]] = decodeURIComponent(pair[1] || '');
@@ -364,7 +416,7 @@ define([
       return JSON.parse(JSON.stringify(result));
     },
 
-    _jsonToQueryString(obj) {
+    _jsonToParamString: function(obj) {
       var str = "";
       var seperator = "";
       // TODO - Add sorting code in here lat,lon,zoom,scale,heading,rotation,tilt...
