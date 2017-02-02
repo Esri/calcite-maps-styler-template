@@ -239,6 +239,9 @@ function(
         case "top-small":
           layout = BASE_LAYOUTS.topSmall;
           break;
+        case "top": // default
+          layout = BASE_LAYOUTS.top;
+          break;
         case "top-medium": // default
           layout = BASE_LAYOUTS.top;
           break;
@@ -250,6 +253,9 @@ function(
           break;
         case "bottom-small":
           layout = BASE_LAYOUTS.bottomSmall;
+          break;
+        case "bottom":
+          layout = BASE_LAYOUTS.bottom;
           break;
         case "bottom-medium":
           layout = BASE_LAYOUTS.bottom;
