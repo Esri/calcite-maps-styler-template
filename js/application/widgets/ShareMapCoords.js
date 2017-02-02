@@ -400,7 +400,7 @@ define([
       // window.history.pushState("", "", pushUrl);
       window.history.replaceState("", "", pushUrl);
       //this._sharePanelUrlText.value = pushUrl;
-      this._coordsUrlTextarea.value = decodeURI(pushUrl);
+      this._coordsUrlTextarea.value = decodeURIComponent(pushUrl);
     },
 
     _paramStringToJSON: function(paramString) {
