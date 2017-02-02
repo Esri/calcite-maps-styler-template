@@ -341,7 +341,7 @@ define([
           if (basemapDefs.hasOwnProperty(key)){
             id = basemapDefs[key].id;
             title = basemapDefs[key].title;
-            var option = "<option value='" + id + "'" + ">" + title + "</option>";
+            var option = "<option value='" + id + "'" + ">" + (id.indexOf("vector") > -1 ? "Vector " : "") + title + "</option>";
             optionsHtml += option;
           }
         }
