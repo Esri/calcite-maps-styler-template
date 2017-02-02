@@ -66,6 +66,15 @@ body:lang(ja) {
   font-size: 13px;
 }
 
+.calcite-widgets-dark .calcite-popup-content,
+.calcite-widgets-dark .calcite-popup-filter {
+  color: #f8f8f8;
+}
+
+.calcite-widgets-dark .calcite-popup-filter {
+  border-color: #f8f8f8;
+}
+
 .calcite-popup-content select {
     margin-bottom: 5px;
 }
