@@ -200,9 +200,10 @@
       var app = new appMain();
 
       // create the template. This will take care of all the logic required for template applications.
-      new Boilerplate(JSON.parse(configSettings), JSON.parse(boilerplateSettings)).always(function (boilerplate) {
-        app.init(boilerplate);
-      });
+      new Boilerplate(JSON.parse(configSettings), JSON.parse(boilerplateSettings))
+        .then(function (boilerplate) {
+          app.init(boilerplate);
+        });
 
     });
 
