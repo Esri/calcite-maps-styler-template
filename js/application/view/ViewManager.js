@@ -585,11 +585,6 @@ define([
           widget = null;
       }
 
-      if (widget) {
-        //widget.visible = options.visible;
-        widget.startup();
-      }
-
       return widget;
     },
 
