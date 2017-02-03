@@ -41,6 +41,10 @@
 .calcite-layout-inline-right .calcite-dropdown .dropdown-toggle {
   padding: 22px 20px 24px 21px; }
 
+.calcite-layout-inline-left .calcite-navbar-search,
+.calcite-layout-inline-right .calcite-navbar-search {
+  margin: 15px; }
+
 .calcite.calcite-layout-inline-left.calcite-nav-top.calcite-margin-all .esriSimpleSlider,
 .calcite.calcite-layout-inline-left.calcite-nav-bottom.calcite-margin-all .esriSimpleSlider,
 .calcite.calcite-layout-inline-right.calcite-nav-top.calcite-margin-all .esriSimpleSlider,
