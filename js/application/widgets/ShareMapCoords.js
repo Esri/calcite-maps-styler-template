@@ -223,21 +223,21 @@ define([
             text = text.substring(strip + 1, text.length);
           }
 
-          // Need text or param validation - TODO
+          // Get params
           var textareaParams = this._paramStringToJSON(text);
 
-          var validatedParams = this._paramValidator.getValidParams(textareaParams);
+          // Validate params
+          var paramsReturn = this._paramValidator.getValidParams(textareaParams);
 
           // Add validation here
-          // var err = validateParams.validateAll(textareaParams);
-          // if (err) {
-          //Message.show(Message.type.error, new Error("Invalid input parameters. See https://github.com/Esri/calcite-maps-styler-template for help"), true, true);
-          //return;
-          //}
+          if (paramsReturn.invalidParams) {
+            Message.show(Message.type.warning, new Error("Invalid parameters: " + paramsReturn.invalidParams + " See https://github.com/Esri/calcite-maps-styler-template for help"), false, true, true);
+            return;
+          }
           
           // Update URL with new params
           //this._updateUrlUI(textareaParams);
-          this._updateUrlUI(validatedParams, false);
+          this._updateUrlUI(paramsReturn.validParams, false);
           // Refresh browser
           window.location.reload(true);
         }

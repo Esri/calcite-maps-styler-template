@@ -44,7 +44,7 @@ define([
   }
 
 	var Message = {
- 		show: function(errType, error, log, showMessages) {
+ 		show: function(errType, error, log, showMessages, clear) {
       errType = errType || Message.type.error;
       error = error || new Error("Styler error");
       var userMsg = Message.getMessage(error);
@@ -55,12 +55,18 @@ define([
         var node = query(".calcite-alert .alert-message")[0];
         if (node) {
           // Accumulate all error messages
-          if (node.innerHTML) {
+          if (node.innerHTML && !clear) {
             node.innerHTML = node.innerHTML + "<br><span><strong>" + errType + "</strong>&nbsp;" + userMsg + "</span>";
           } else {
             node.innerHTML = "<span><strong>" + errType + "</strong>&nbsp;" + userMsg + "</span>";
           }        
           query(".calcite-alert").removeClass("hidden");
+          query(".calcite-alert .close").on("click", function(){
+            query(".calcite-alert").addClass("hidden");
+            if (node) {
+              node.innerHTML = null;
+            }
+          });
         }
       }
       if (log) {

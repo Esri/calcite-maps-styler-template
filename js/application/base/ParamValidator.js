@@ -56,16 +56,19 @@ define([
 
     getValidParams: function(paramsIn) {
       var validatedParams = {};
+      var invalidParams = "";
       for (var param in paramsIn) {
         if (!paramsIn.hasOwnProperty(param)) continue;
         var val = paramsIn[param];
         if (this._isValidParamValue(param,val)) {
           validatedParams[param] = val;
         } else {
-          console.warn("Styler - Unrecognized parameter or value: " + param + "=" + val) // TODO
+          //console.warn("Styler - Unrecognized parameter or value: " + param + "=" + val) // TODO
+          invalidParams = invalidParams + param + "=" + val + " ";
         }
       }
-      return validatedParams;
+      return {validParams: validatedParams,
+        invalidParams: invalidParams};
     },
 
     //--------------------------------------------------------------------------
