@@ -574,10 +574,25 @@ define([
       var template = this._searchWidget.popupTemplate;
       var actions = this._getSearchPopupActions();
       template.actions = actions;
-      // Clear find places popup
+      // Clear find places popup and set z-value
       this._searchWidget.watch("selectedResult", function(result) {
         if (result) {
-          this._clearGraphics(true);          
+          this._clearGraphics(true);
+          // Maintain popup on pan and tilt
+          if (this._view.type === "3d") {
+            watchUtils.once(this._view.popup, "selectedFeature", function(feature) {
+              if (feature.geometry.type === "point" && !feature.geometry.hasZ) {
+                this._view.map.ground.queryElevation(feature.geometry)
+                  .then(function(result){
+                    var pt = this._view.popup.location;
+                    pt.z = result.geometry.z;
+                  }.bind(this))
+                  .otherwise(function(err){
+                    console.log(err);
+                  }) 
+              }
+            }.bind(this));            
+          }
         }
       }.bind(this));
       this._searchWidget.on("search-clear", function(evt) {
