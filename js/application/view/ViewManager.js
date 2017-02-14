@@ -228,45 +228,26 @@ define([
 
     _loadMap:function (webMapOrWebScene) {
       var deferredMap = new Deferred();
-      // Work-around for MapView zoom property
+      // Work-around for MapView zoom property bug
+      // Load the webmap
       webMapOrWebScene.load()
         .then(function(webmapscene){
           this._reportLayerLoadErrors(webmapscene.allLayers);
-          webmapscene.load()
+          // Load the map or scene
+          webmapscene.load()  
             .then(function(map){
-              map.basemap.load()
-                .then(function(basemap){
-                  var baseLyrs = basemap.baseLayers;
-                  if (baseLyrs && baseLyrs.length > 0) {
-                    var lyr = basemap.baseLayers.getItemAt(0);
-                    lyr.load()
-                      .then(function(lyr){
-                        deferredMap.resolve(map); // Done!
-                      })
-                      .otherwise(function(error){
-                        error.userMsg = "Basemap layer could not be loaded";
-                        deferredMap.reject(error);
-                      }.bind(this))
-                  } else {
-                    error.userMsg = "Basemap layer missing";
-                    deferredMap.reject(error);
-                  }
-                }.bind(this))
-                .otherwise(function(error){
-                  error.userMsg = "Basemap layers missing";
-                  deferredMap.reject(error);
-                })            
-              }.bind(this))
+              deferredMap.resolve(map); // Done!
+            }.bind(this)) // map
               .otherwise(function(error){
                 error.userMsg = "Basemap could not be loaded";
                 deferredMap.reject(error);
               });
-            }.bind(this))
-            .otherwise(function(error){
-              var userMsg = webMapOrWebScene.portalItem.type + " " + this._errorMessage.webMapOrSceneNotFullyLoaded;
-              error.userMsg = "Basemap could not be loaded";
-              deferredMap.reject(error);
-            });
+          }.bind(this)) // webmap/webscene
+          .otherwise(function(error){
+            var userMsg = webMapOrWebScene.portalItem.type + " " + this._errorMessage.webMapOrSceneNotFullyLoaded;
+            error.userMsg = "Basemap could not be loaded";
+            deferredMap.reject(error);
+          });
       return deferredMap;
     },
     
@@ -583,11 +564,6 @@ define([
           break;
         default:
           widget = null;
-      }
-
-      if (widget) {
-        //widget.visible = options.visible;
-        widget.startup();
       }
 
       return widget;
