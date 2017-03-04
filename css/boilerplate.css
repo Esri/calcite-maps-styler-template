@@ -190,11 +190,17 @@ body:lang(ja) {
   transform: translate(-50%, 0);
   -webkit-transform: translate(-50%, 0);
   -ms-transform: translate(-50%, 0);
+  top: auto;
   bottom: 0;
-  margin: 0 auto;
+  margin: auto;
   display: block;
   color: #6e6e6e;
   font-size: 11px;
+}
+
+.calcite-coords-container.esri-ui.esri-component {
+  overflow: visible;
+  right: auto;
 }
 
 .calcite-coords {

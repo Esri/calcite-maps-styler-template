@@ -67,7 +67,7 @@ define([
 
     _fadeTimeout: 2000,
 
-    _mapCoordsHtml: "<div class='calcite-coords-container esri-component fade'>" +
+    _mapCoordsHtml: "<div class='calcite-coords-container esri-ui esri-component fade'>" +
                         "<div id='coordsFlipDiv' class='coords-flip-container'>" +
                           "<div class='flipper'>" +
                             "<div class='front'>" +
@@ -157,6 +157,7 @@ define([
 
     _setWidgetEvents: function(view) {
       this._uiContainer = query(".esri-ui-inner-container.esri-ui-corner-container")[0];
+      //this._uiContainer = query(".esri-view")[0];
       var html = this._share ? this._mapCoordsHtml : this._mapCoordsHtmlNoShare;
       this._coordsElement = domConstruct.place(html, this._uiContainer);
       this._coordsInner = query(".calcite-coords")[0];
