@@ -838,6 +838,8 @@ define([
             }
             // Show paging
             this._setPopupFeatures(index, true);
+            // Wire-up UI
+            this._setFilterHandler();
           }
 
           // // Reset old symbol (by attribute) - TODO
@@ -869,25 +871,59 @@ define([
 
     },
 
+    // _setFilterHandler: function() {
+    //   // Create a keyword places filter
+    //   var filterPlaces = query("#filterPlaces");
+    //   if (filterPlaces.length > 0) {
+    //     var filter = filterPlaces[0];
+    //     // Setup select handler
+    //     query(filter).on("change", function(evt){
+    //       // iPhone fix
+    //       filter.blur();
+    //       // Set active key
+    //       var searchKeyword = evt.target.value;
+    //       this._activeSearchKey = searchKeyword;
+    //       // Redo search
+    //       var pt = this._popup.location;
+    //       if (pt) {
+    //         this._showPopupFindPlaces(pt);              
+    //       }
+    //     }.bind(this));
+    //   }    
+    // },
+
     _setFilterHandler: function() {
-      // Create a keyword places filter
-      var filterPlaces = query("#filterPlaces");
-      if (filterPlaces.length > 0) {
-        var filter = filterPlaces[0];
-        // Setup select handler
-        query(filter).on("change", function(evt){
-          // iPhone fix
-          filter.blur();
-          // Set active key
-          var searchKeyword = evt.target.value;
-          this._activeSearchKey = searchKeyword;
-          // Redo search
-          var pt = this._popup.location;
-          if (pt) {
-            this._showPopupFindPlaces(pt);              
+      var start = new Date();
+      var timer = setInterval(function() {
+        // Create a keyword places filter
+        var filterPlaces = query("#filterPlaces");
+        if (filterPlaces.length > 0) {
+          if (timer) {
+            clearTimeout(timer);
           }
-        }.bind(this));
-      }    
+          var filter = filterPlaces[0];
+          // Setup select handler
+          query(filter).on("change", function(evt){
+            // iPhone fix
+            filter.blur();
+            // Set active key
+            var searchKeyword = evt.target.value;
+            this._activeSearchKey = searchKeyword;
+            // Redo search
+            var pt = this._popup.location;
+            if (pt) {
+              this._showPopupFindPlaces(pt);              
+            }
+          }.bind(this));
+        } else { // Safety
+          var stop = new Date();
+          if ((stop - start)/1000 > 5) {
+            if (timer) {
+              clearTimeout(timer);            
+            }
+          }
+        }    
+      }.bind(this), 50);
     },
 
     _movePopup: function(feature) {
