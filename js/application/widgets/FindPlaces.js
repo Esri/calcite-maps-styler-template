@@ -23,7 +23,6 @@ define([
   "esri/symbols/PictureMarkerSymbol",
   "esri/renderers/UniqueValueRenderer",
   "esri/PopupTemplate",
-  "esri/widgets/Spinner",
   "esri/geometry/SpatialReference",
   "esri/geometry/support/webMercatorUtils",
   "esri/tasks/GeometryService",
@@ -36,7 +35,7 @@ define([
   "dojo/dom-construct",
   "dojo/_base/declare"
 ], function (
-  Point, Graphic, FeatureLayer, Field, Collection, SimpleMarkerSymbol, PictureMarkerSymbol, UniqueValueRenderer, PopupTemplate, Spinner, SpatialReference, webMercatorUtils, GeometryService, ProjectParameters, watchUtils,
+  Point, Graphic, FeatureLayer, Field, Collection, SimpleMarkerSymbol, PictureMarkerSymbol, UniqueValueRenderer, PopupTemplate, SpatialReference, webMercatorUtils, GeometryService, ProjectParameters, watchUtils,
   Deferred, on, query, domConstruct, declare
 ) {
 
@@ -49,13 +48,61 @@ define([
     //--------------------------------------------------------------------------
 
     constructor: function (view, searchWidget) {
-
       this._view = view;
       this._popup = view.popup;
       this._searchWidget = searchWidget;
-      
       this._init();          
+    },
 
+    //--------------------------------------------------------------------------
+    //
+    //  Public
+    //
+    //--------------------------------------------------------------------------
+
+    findByCategory: function(category, pt) {
+      if (!category) {
+        return;
+      }
+      this._init()
+        .then(function(){
+          pt = pt || this._view.extent.center;
+          var keyVal = this._getValidSearchKey(category)
+          if (keyVal) { 
+            this._activeSearchKey = keyVal;
+            this._showPopupFindPlaces(pt);  
+          }                  
+        }.bind(this));
+    },
+
+    //--------------------------------------------------------------------------
+    //
+    //  Private
+    //
+    //--------------------------------------------------------------------------
+
+    _getValidSearchKey: function(category) {
+      var keyVal;
+      var keys = this._searchKeys;
+      for (var i=0; i < keys.length; i++) {
+        if (category.toLowerCase() === keys[i].name.toLowerCase()) {  // TODO - better fuzzy logic
+          keyVal = keys[i].value; // actual value
+          break;
+        }
+      }
+      return keyVal;
+    },
+
+    _getSearchKeyName: function(key) {
+      var keyName;
+      var keys = this._searchKeys;
+      for (var i=0; i < keys.length; i++) {
+        if (key.toLowerCase() === keys[i].value.toLowerCase()) {  // TODO - better fuzzy logic
+          keyName = keys[i].name; // actual value
+          break;
+        }
+      }
+      return keyName;
     },
 
     //--------------------------------------------------------------------------
@@ -64,6 +111,8 @@ define([
     //
     //--------------------------------------------------------------------------
 
+    _initialized: false,
+
     _view: null,
 
     _popup: null,
@@ -71,6 +120,8 @@ define([
     _searchWidget: null,
 
     _placesLayer: null,
+
+    _placesLayerView: null,
 
     _showInLegend: false,
 
@@ -104,8 +155,6 @@ define([
 
     _renderer: null,
 
-    _spinner: null,
-
     _promise: null,
 
     // _defaultColor: [100, 180, 255, .90],
@@ -132,11 +181,14 @@ define([
     _goToDurationFast: 150,
 
     _init: function() {
+      var deferred = new Deferred();
+
+      // Geocode categories
+      this._setSearchKeys();
+
       var view = this._view;
-      if (view) {
-        view.then(function(){
-          // Geocode categories
-          this._setSearchKeys();
+      if (view && !this._initialized) {
+        view.then(function(){ // TODO
           // Override default behavior
           this._hideNoFeaturesFound();
           // Geocoder
@@ -152,12 +204,22 @@ define([
           this._setViewEvents();
           // Popup events
           this._watchSelectedFeature();
-          // Spinner
-          this._createSpinner();
           // Integrate with Legend and List
           this._setLayerWidgetVisibility();
-        }.bind(this));
+          // Highlight
+          this._setHighlightOptions();
+
+          this._initialized = true;
+
+          deferred.resolve(view);
+        }.bind(this))
+        .otherwise(function(err){
+          console.log(err);
+        })
+      } else {
+        deferred.resolve(view);
       }
+      return deferred.promise;
     },
 
     _setSearchKeys: function() {
@@ -234,6 +296,14 @@ define([
       }
     },
 
+    _setHighlightOptions: function() {
+      this._view.highlightOptions = {
+          color: [0, 255, 255],
+          fillOpacity: 0,
+          haloOpacity: 1
+        }
+    },
+
     //----------------------------------------------------
     // Template
     //----------------------------------------------------
@@ -262,6 +332,8 @@ define([
         overwriteActions = false;
       } else if (type === this._placeKeys.place) { // TODO
         //actions = this._getPlacesPopupActions();
+        actions = this._getLocationPopupActions();
+        overwriteActions = false;
       }
       popupTemplate.overwriteActions = overwriteActions;
       popupTemplate.actions = actions;
@@ -291,7 +363,7 @@ define([
       var actions = [];
       // Clear Action
       var searchClearAction = {
-          title: "Clear",
+          title: "Clear All",
           id: "clear",
           className: "esri-icon-close"
       }
@@ -299,8 +371,9 @@ define([
       var clearTriggerAction = function(event){
         if (event.action.id === "clear"){
           this._cancelPromise();
-          this._spinner.viewModel.point = null;
+          this._popup._spinner.hide();  
           this._clearGraphics();
+          this._popup.features = [];
           this._popup.close();
         }
       }
@@ -339,7 +412,7 @@ define([
           var location = this._popup.location;
           if (location) {
             this._searchWidget.clear();
-            this._showPopupFindPlaces(location);              
+            this._showPopupFindPlaces(location, true);              
           }
         }
       }
@@ -374,26 +447,11 @@ define([
       });
     },
 
-    _createSpinner: function() {
-      this._spinner = new Spinner({
-        visible: true,
-        viewModel: {
-          view: this._view
-        }
-      });
-      this._spinner.startup();
-      this._spinner.set({
-        visible: true
-      });
-      domConstruct.place(this._spinner.domNode, this._view.root);
-    },
-
     //----------------------------------------------------
     // FeatureLayers
     //----------------------------------------------------
 
     _createGraphicsLayers: function() {
-
       // Fields
       var fields = [
         new Field({
@@ -444,19 +502,30 @@ define([
         renderer: uvr,
         popupTemplate: popupTemplate,
         returnZ: true,
-        title: "Places Search"
+        title: "Places Search",
+        id: "Places Search"
       });
 
       this._setLayerPopupVisibility();
-
+            
       this._view.map.add(this._placesLayer);
+
+      this._setLayerView();
+    },
+
+    _setLayerView: function() {
+      if (this._placesLayer) {
+        this._view.whenLayerView(this._placesLayer).then(function(lyrView){
+          this._placesLayerView = lyrView;
+        }.bind(this));
+      }
     },
 
     _setLayerWidgetVisibility: function() {
       var view = this._view;
       if (view) {
         watchUtils.watch(this._placesLayer, "source.length", function(val){
-          // Features present or not
+          // Features present or not  
           if (val === 0) {
             this._placesLayer.legendEnabled = false;
             this._placesLayer.listMode = "hide";
@@ -464,6 +533,8 @@ define([
             this._placesLayer.legendEnabled = true;
             this._placesLayer.listMode = "show";
           }
+          // TODO - Force refresh of legend and layerlist
+          this._view.map.reorder(this._placesLayer, this._view.map.allLayers.length - 1);
         }.bind(this));
       }
     },
@@ -489,16 +560,11 @@ define([
     _setViewEvents: function() {
       var view = this._view;
       if (view) {
-        var defaultSpinner = view.popup._spinner;
-        var customSpinner = this._spinner;
         view.watch("interacting,stationary", function(interacting,stationary) {
           if (interacting || !stationary) {
-            if (defaultSpinner && customSpinner) {
-              // defaultSpinner.visible = false; // TODO
-              customSpinner.visible = false;
-            }
+            view.popup._spinner.hide();
           }
-        });        
+        }.bind(this));        
       }
     },
 
@@ -524,19 +590,19 @@ define([
             this._touchSpinnerTimer = setTimeout(function() {
               if (pressHold && !view.interacting) {
                 var point = view.toMap(evt.x,evt.y);
-                this._spinner.viewModel.point = point;
+                popup._spinner.show({location: point});
                 // Delay more and then do search (250ms)
                 clearTimeout(this._touchHoldTimer);
                 this._touchHoldTimer = setTimeout(function() {
                   if (pressHold) {
                     evt.stopPropagation();
-                    this._showPopupFindPlaces(point);
+                    this._showPopupFindPlaces(point, true);
                   } else {
-                    this._spinner.viewModel.point = null;
+                    popup._spinner.hide();
                   }
                 }.bind(this), this._touchHoldThreshold);
               } else {
-                this._spinner.viewModel.point = null;
+                popup._spinner.hide();
               }
             }.bind(this), this._touchSpinnerThreshold);
           }
@@ -545,15 +611,17 @@ define([
 
         // Move (cancel)
         view.on("pointer-move", function(){
+          if (pressHold) {
+            popup._spinner.hide();  
+          }
           pressHold = false;
-          this._spinner.viewModel.point = null;
         }.bind(this));
         
         // Release
         view.on("pointer-up", function(){
           pressHold = false;
           if (!this._promise) {
-            this._spinner.viewModel.point = null;
+            popup._spinner.hide();  
           }
         }.bind(this));
       }
@@ -581,7 +649,7 @@ define([
           // Maintain popup on pan and tilt
           if (this._view.type === "3d") {
             watchUtils.once(this._view.popup, "selectedFeature", function(feature) {
-              if (feature.geometry.type === "point" && !feature.geometry.hasZ) {
+              if (feature && feature.geometry.type === "point" && !feature.geometry.hasZ) {
                 this._view.map.ground.queryElevation(feature.geometry)
                   .then(function(result){
                     var pt = this._view.popup.location;
@@ -615,40 +683,41 @@ define([
     _showPopupFindPlaces: function(searchPoint) {
       if (this._popup && searchPoint) {
         var pt = searchPoint.clone();
-        // Spinner
-        this._popup._spinner.viewModel.point = null;
-        this._spinner.viewModel.point = pt;
-        // Clean up
-        this._popup.clear();
-        this._searchWidget.clear();
-        this._clearGraphics();
-        this._placesLayer.visible = true; // Bug
-        // Show location popup
-        var location = this._createLocationGraphic(pt);
-        //location.visible = false; // Bug, can't be set invisible
-        this._addLocationGraphic(location);
-        this._setPopupFeatures(0, true); // Show location popup immediately
-        // Add Places
-        this._cancelPromise();
-        this._promise = this._findPlaces(pt);
-        this._promise
-          .then(function(results){
-            this._spinner.viewModel.point = null;
-            // Give spinner time to fade out and then make visible // Bug, always visible
-            // setTimeout(function() {
-            //   location.visible = true;
-            // }.bind(this), 500);
-            // Add more features
-            this._addPlacesGraphics(results);
-            this._setPopupFeatures(0, true); 
-          }.bind(this))
-          .otherwise(function(err) {
-            // Cancelled or failed...
-            this._spinner.viewModel.point = null;
-          })
-          .always(function(results) {
-            // Nothing to do...
-          }.bind(this));
+        try {
+          // Spinner
+          this._popup._spinner.hide();
+          // this._spinner.viewModel.point = pt;
+          // Clean up
+          //this._popup.clear();  // TODO - causes missing popup content and bad formatting
+          this._searchWidget.clear(); // TODO - Causes error on load with places in url...  
+          this._clearGraphics();
+          //this._placesLayer.visible = true; // Bug
+          // Show location popup
+          var location = this._createLocationGraphic(pt);
+          this._addLocationGraphic(location);
+          this._setPopupFeatures(0, true); // Show location popup immediately
+          // Add Places
+          this._cancelPromise();
+          this._promise = this._findPlaces(pt);
+          this._promise
+            .then(function(results){
+              this._popup._spinner.hide();  
+              // Add more features
+              this._addPlacesGraphics(results);
+              this._setPopupFeatures(0, true); 
+            }.bind(this))
+            .otherwise(function(err) {
+              // Cancelled or failed...
+              console.error(err);
+              this._popup._spinner.hide();  
+            }.bind(this))
+            .always(function(results) {
+              this._popup._spinner.hide();  
+            }.bind(this));
+          } catch(err){
+            console.error(err);
+          }
+
       }
     },
 
@@ -657,7 +726,7 @@ define([
     //----------------------------------------------------
 
     _createLocationGraphic: function(point) {
-      var popupTemplate = this._createPopupTemplate(this._placeKeys.location, false);
+      //var popupTemplate = this._createPopupTemplate(this._placeKeys.location, false);
       var tempContent = "&nbsp;";
       // Graphic
       var locationGraphic = new Graphic({
@@ -670,8 +739,9 @@ define([
           address: tempContent, // Until template is applied
           type: this._placeKeys.location
         },
+        layer: this._placesLayer,
+        placeName: this._getSearchKeyName(this._activeSearchKey),
         //popupTemplate: popupTemplate,
-        //visible: false, // Bug
       });
       return locationGraphic;
     },
@@ -700,8 +770,9 @@ define([
             name: feature.attributes.PlaceName || feature.address,
             address: feature.attributes.Place_addr || feature.attributes.address, // TODO
             type: this._placeKeys.place
-          }
+          },
           //popupTemplate: popupTemplate
+          layer: this._placesLayer
         });
         graphics.push(pointGraphic);
       }.bind(this));
@@ -818,14 +889,28 @@ define([
     // Handle selected feature changes and clicks
     //----------------------------------------------------
 
+    _setHighlight: function(graphic) {
+      if (this._placesLayerView) {
+        if (this._highlight) {
+          this._highlight.remove();
+        }
+        if (graphic) {
+          this._highlight = this._placesLayerView.highlight(graphic);
+        }
+      }
+    },
+
     _watchSelectedFeature: function() {
       // Move popup when selected
       this._popup.watch("selectedFeature", function(feature) {
         if (this._isPlace(feature)) {
           var index = this._placeIndex(feature);
-          // Override template for location - Bug in 2d
+          // Override template for location search
           if (index === 0) {
+            // Add places select HTML
             feature.popupTemplate = this._createPopupTemplate(this._placeKeys.location, true);
+            // Wire up HTML
+            this._setFilterHandler();
           }
           // Set all features back into the popup to show paging
           if (index > -1) {
@@ -838,36 +923,26 @@ define([
             }
             // Show paging
             this._setPopupFeatures(index, true);
-            // Wire-up UI
-            this._setFilterHandler();
-          }
-
-          // // Reset old symbol (by attribute) - TODO
-          // if (this._lastSelectedFeature) {
-          //   this._lastSelectedFeature.attributes.type = this._placeKeys.place;
-          // }
-          // // Set new symbol (by attribute)
-          // if (!isLocation) {
-          //   feature.attributes.type = this._placeKeys.selectedPlace;
-          //   this._lastSelectedFeature = feature;
-          //   this._placesLayer.renderer = this._renderer.clone(); // Does not highlight in 3d
-          // }
-
+          } 
           // Reposition popup
           this._movePopup(feature);
         }
       }.bind(this));
 
       // Wire up handler
-      this._popup.watch("rendered", function(rendered) {
-        if (rendered) {
-          var feature = this._popup.selectedFeature;
-          var isLocation = this._isPlaceLocation(feature);
-          if (isLocation) {
-            this._setFilterHandler();
-          }          
-        }
-      }.bind(this));
+      // this._popup.watch("rendered", function(rendered) {
+      //   if (rendered) {
+      //     var feature = this._popup.selectedFeature;
+      //     var isLocation = this._isPlaceLocation(feature);
+      //     if (isLocation) {
+      //       this._setFilterHandler();
+      //     }          
+      //   }
+      // }.bind(this));
+
+      // this._popup.watch("content", function(e){
+      //   console.log(e);
+      // }.bind(this));
 
     },
 
@@ -912,7 +987,7 @@ define([
             // Redo search
             var pt = this._popup.location;
             if (pt) {
-              this._showPopupFindPlaces(pt);              
+              this._showPopupFindPlaces(pt, true);              
             }
           }.bind(this));
         } else { // Safety
@@ -928,19 +1003,23 @@ define([
 
     _movePopup: function(feature) {
       var point = feature.geometry;
+      var is2d = this._view.type === "2d";
       if (point) {
         // Move popup
-        if (this._view.type === "2d") {
-          this._popup.location = point;  
-        }
-        // Center map
-        this._centerMap(point).then(function(){
-          // Move popup afterwards - Bug
-          if (this._view.type === "3d") {
-            var scenePoint = this._view.center;
-            this._popup.location = scenePoint;
+        if (is2d) {
+          this._popup.location = point;
+          this._centerMap(point);
+        } else {
+          var ground = this._view.map.ground;
+          if (ground) {
+            ground.queryElevation(point, {})
+              .then(function(result){
+                var pointZ = result.geometry || point;
+                this._popup.location = pointZ;
+                this._centerMap(pointZ);
+              }.bind(this));
           }
-        }.bind(this));        
+        }
       }
     },
 

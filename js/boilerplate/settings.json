@@ -17,14 +17,17 @@
     "useLocal": false,
     "localFile": "boilerplate/demoWebscene.json"
   },
-  "widgetSearch": {
+  "search": {
     "containerId": "searchDiv"
   },
-  "widgetLegend": {
+  "legend": {
     "containerId": "legendDiv"
   },
   "widgetLayers": {
     "containerId": "layersDiv"
+  },
+  "widgetPrint": {
+    "containerId": "printDiv"
   },
   "group": {
     "fetchInfo": true,
@@ -69,24 +72,28 @@
     "menubasemaps",
     "menuslides",
     "menubookmarks",
+    "menuprint",
     "menushare",
     "menutogglenav",
     "menustyledrawer",
-    "dockposition",
+    "popupDocking",
     "widgetslayout",
-    "widgetzoom",
-    "widgethome",
-    "widgetcompass",
-    "widgetlocate",
-    "widgetnavtoggle",
-    "widgettrack",
-    "widgetsearch",
-    "widgetbasemaptoggle",
-    "widgetnextbasemap",
-    "widgetcoords",
-    "widgetsearchnav",
+    "zoomin",
+    "home",
+    "compass",
+    "locate",
+    "navtoggle",
+    "track",
+    "legend",
+    "scalebar",
+    "basemaptoggle",
+    "nextbasemap",
+    "mapcoords",
+    "searchnav",
     "activepanel",
     "findplaces",
+    "search",
+    "places",
     "showerrors",
     "lat",
     "lon",

@@ -15,7 +15,7 @@
  */
 define([
   "application/widgets/FindPlaces",
-  "application/widgets/ShareMapCoords",
+  "application/widgets/MapCoords",
 
   "dojo/query",
   "dojo/_base/declare"
@@ -37,6 +37,21 @@ define([
       this._searchWidget = searchWidget;
     },
 
+    //--------------------------------------------------------------------------
+    //
+    //  Variables
+    //
+    //--------------------------------------------------------------------------
+
+    findPlaces: null,
+    mapCoords: null,
+
+    //--------------------------------------------------------------------------
+    //
+    //  Public
+    //
+    //--------------------------------------------------------------------------
+
   	setExtensions: function(options) {
       if (options.home) {
         this._setHomeEvents();        
@@ -48,7 +63,7 @@ define([
         this._setNavToggleEvents();      
       }
       if (options.findPlaces) {
-        this._setFindPlacesEvents();
+        this._setFindPlaces(options.places);
       }
       if (options.mapCoords) {
         this._setMapCoords(options.mapCoordsShare);
@@ -172,18 +187,19 @@ define([
 
     // Find places on click-hold
 
-    _setFindPlacesEvents: function() {
+    _setFindPlaces: function(findPlacesCategory) {
       var view = this._view;
       var searchWidget = this._searchWidget;
       if (view && searchWidget) {
-        new FindPlaces(view, searchWidget);
-      }
+        this.findPlaces = new FindPlaces(view, searchWidget);  
+      }          
     },
 
-    _setMapCoords: function(share) {
+    _setMapCoords: function() {
       var view = this._view;
-      if (view) {
-        new MapCoords(view, share);
+      var searchWidget = this._searchWidget;
+      if (view && searchWidget) {
+        this.mapCoords = new MapCoords(view, searchWidget);
       }
     },
 

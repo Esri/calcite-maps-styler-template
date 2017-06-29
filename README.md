@@ -68,7 +68,7 @@ https://esri.github.io/calcite-maps-styler-template/index.html?webmap=742e3546ff
 
 ![example-2.png](./example-2.png?raw=true)
 
-### <a id="example3"></a>Example 3: [Default Scene + Styled titles, RBG color, light theme, about text and manual widget positioning](https://esri.github.io/calcite-maps-styler-template/index.html?webscene=default&title=Big%20Bear%20Lake%2C%20California&subtitle=A%20great%20vacation%20getaway&bgcolor=rgb(140, 94, 42)&theme=light&widgetzoom=bottom-left&widgethome=hide&widgetnavtoggle=bottom-left&lat=34.24513&lon=-116.89622&heading=174&tilt=80&altitude=2086&scale=14739&&abouttext=&abouttext=Come explore the mountains in SoCal!)
+### <a id="example3"></a>Example 3: [Default Scene + Styled titles, RBG color, light theme, about text and manual widget positioning](https://esri.github.io/calcite-maps-styler-template/index.html?webscene=default&title=Big%20Bear%20Lake%2C%20California&subtitle=A%20great%20vacation%20getaway&bgcolor=rgb(140, 94, 42)&theme=light&zoom=bottom-left&home=hide&widgetnavtoggle=bottom-left&lat=34.24513&lon=-116.89622&heading=174&tilt=80&altitude=2086&scale=14739&&abouttext=&abouttext=Come explore the mountains in SoCal!)
 
 ```
 https://esri.github.io/calcite-maps-styler-template/index.html?webscene=default
@@ -77,8 +77,8 @@ https://esri.github.io/calcite-maps-styler-template/index.html?webscene=default
   &abouttext=Come explore the mountains in SoCal!
   &bgcolor=rgb(140, 94, 42)
   &theme=light
-  &widgetzoom=bottom-left
-  &widgethome=hide
+  &zoom=bottom-left
+  &home=hide
   &widgetnavtoggle=bottom-left
   &lat=34.24513
   &lon=-116.89622
@@ -144,6 +144,7 @@ Here are the parameters you can configure in a URL or in a JSON file.
 |---|---|---|---|
 |webmap|Webmap ID for webmap|String|`default`, `e1653fe614c04b6aa4efba5ba7b56d05`|
 |webscene|Webscene ID for webscene|String|`default`, `bdc09d6c8ef8492783ebe2c572950931`|
+|Map| | | |
 |lat|Latitude to move the map to on start-up|Number|`45`|
 |lon|Longitude to move the map to on start-up|Number|`-120`|
 |x|X coordinate to move the map to on start-up|Number|`-50000000`|
@@ -155,6 +156,7 @@ Here are the parameters you can configure in a URL or in a JSON file.
 |tilt|Angle of the 3D view on start-up|Number|`0`-`90`|
 |heading|Heading of the 3D view on start-up|Number|`0`-`360`|
 |basemap|Basemap to use for the map on start-up. See ArcGIS JS API reference|String|`streets`, `satellite`...|
+|App| | | |
 |title|Title of the application|String|`New York`|
 |subtitle|Subtitle of the application|String|`A great place to visit`|
 |abouttext|Information about your application|String|`Map of the Big Apple`|
@@ -167,15 +169,34 @@ Here are the parameters you can configure in a URL or in a JSON file.
 |widgettheme|The base color for the widgets|String|`light`, `dark`|
 |layout|The position of the navbar|String|`top-small`, `top-medium`, `top-medium`, `bottom-small`, `bottom-medium`, `bottom-large`|
 |panelslayout|The position of the panels|String|`left`, `right`|
+|Panels| | | |
 |widgetslayout|The position set for all widgets|String|`top-left`, `top-right`, `bottom-left`, `bottom-right`|
-|menuXXX|Name of the menus and panels to display (menuabout, menulegend, menulayers, menubasemaps, menuslides, menubookmarks, menutogglenav, menushare)|Boolean|`true`, `false`|
-|menustyledrawer|The style of the menu|Boolean|`true`,`false`|
-|dockposition|Position to dock the popup. See ArcGIS JS API|String|`top-right`, `top-center`, `top-left`, `bottom-right`, `bottom-center`, `bottom-left`|
-|widgetXXX|Name of the widget to add to the view (widgetzoom, widgethome, widgetlocate, widgettrack, widgetsearch, widgetbasemaptoggle)|String|`show`, `hide`, `top-left`, `top-right`, `bottom-left`, `bottom-right`|
-|widgetnextbasemap|The name of the next basemap for the toggle. See ArcGIS JS API reference|String|`streets`, `satellite`...|
-|widgetsearchnav|Show the search widget in the navbar|Boolean|`true`, `false`|
-|activepanel|Name of the panel to show when app loads|String|`about`, `legend`, `basemaps`, `slides`, `layers`|
-|findplaces|Enable long-tap/hold search for restaurants, parks, stores...|Boolean|`true`, `false`|
+|menuabout|Show or hide menu and panel|Boolean|`true`, `false`|
+|menulegend|Show or hide menu and panel|Boolean|`true`, `false`|
+|menulayers|Show or hide menu and panel|Boolean|`true`, `false`|
+|menubasemaps|Show or hide menu and panel|Boolean|`true`, `false`|
+|menuslides|Show or hide menu and panel|Boolean|`true`, `false`|
+|menubookmarks|Show or hide menu and panel|Boolean|`true`, `false`|
+|menushare|Show or hide menu and panel|Boolean|`true`, `false`|
+|menuprint|Show or hide menu and panel|Boolean|`true`, `false`|
+|menutogglenav|Show or hide menu and panel|Boolean|`true`, `false`|
+|menustyledrawer|Change the style of the main menu to partial or full height|Boolean|`true`, `false`|
+|activepanel|Name of the panel to show when app loads|String|`about`, `legend`, `basemaps`, `slides`, `layers`,`print`,`share`|
+|Widgets| | | |
+|zoomin|Name of the widget to add to the view|String|`show`, `hide`, `top-left`, `top-right`, `bottom-left`, `bottom-right`|
+|home|Name of the widget to add to the view|String|`show`, `hide`, `top-left`, `top-right`, `bottom-left`, `bottom-right`|
+|locate|Name of the widget to add to the view|String|`show`, `hide`, `top-left`, `top-right`, `bottom-left`, `bottom-right`|
+|track|Name of the widget to add to the view|String|`show`, `hide`, `top-left`, `top-right`, `bottom-left`, `bottom-right`|
+|search|Name of the widget to add to the view|String|`show`, `hide`, `top-left`, `top-right`, `bottom-left`, `bottom-right`|
+|scalebar|Name of the widget to add to the view|String|`show`, `hide`, `top-left`, `top-right`, `bottom-left`, `bottom-right`|
+|legend|Name of the widget to add to the view|String|`show`, `hide`, `top-left`, `top-right`, `bottom-left`, `bottom-right`|
+|basemaptoggle|Name of the widget to add to the view|String|`show`, `hide`, `top-left`, `top-right`, `bottom-left`, `bottom-right`|
+|nextbasemap|Name of the widget to add to the view|String|`show`, `hide`, `top-left`, `top-right`, `bottom-left`, `bottom-right`|
+|popup|Position to dock the popup. See ArcGIS JS API|String|`top-right`, `top-center`, `top-left`, `bottom-right`, `bottom-center`, `bottom-left`|
+|mapcoords|Show the map coordinates widget|Boolean|`true`,`false`|
+|searchnav|Show the search widget in the navbar|Boolean|`true`, `false`|
+|search|Search for location|String| e.g. `Los Angeles`|
+|places|Enable long-tap/hold search for restaurants, parks, stores...|Boolean|`true`, `false`|
 |showerrors|Display errors in a window when webmap or webscene have load failures|Boolean|`true`, `false`|
 
 ### JSON Example
@@ -214,19 +235,19 @@ Here are the parameters you can configure in a URL or in a JSON file.
   "dockposition": "top-right",
 
   "widgetslayout": "top-left",
-  "widgetzoom": "show",
-  "widgethome": "show",
-  "widgetcompass": "show",
+  "zoom": "show",
+  "home": "show",
+  "compass": "show",
   "widgetnavtoggle": "show",
-  "widgetlocate": "show",
-  "widgettrack": "hide",
-  "widgetsearch": "hide",
-  "widgetbasemaptoggle": "show",
-  "widgetnextbasemap": "streets",
+  "locate": "show",
+  "track": "hide",
+  "search": "hide",
+  "basemaptoggle": "show",
+  "nextbasemap": "streets",
 
-  "widgetcoords": true,
+  "mapcoords": true,
   
-  "widgetsearchnav": true,
+  "searchnav": true,
 
   "activepanel": "about",
 

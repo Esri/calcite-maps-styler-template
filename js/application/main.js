@@ -17,7 +17,6 @@ define([
 
   "application/ui/AppStyler",
   "application/ui/AppHtml",
-  "application/ui/AppFramework",
   "application/view/ViewManager",
   "application/base/message",
 
@@ -31,7 +30,7 @@ define([
   "dojo/_base/declare",
 
   // Calcite Maps
-  "calcite-maps/calcitemaps-v0.3",
+  "calcite-maps/calcitemaps-v0.4",
 
   // Bootstrap
   "bootstrap/Collapse",
@@ -44,7 +43,7 @@ define([
   "dojo/domReady!"
 
 ], function (
-  AppStyler, AppHtml, AppFramework, ViewManager, Message,
+  AppStyler, AppHtml, ViewManager, Message,
   dom, domClass, domAttr, query,
   i18n,
   lang,
@@ -90,6 +89,8 @@ define([
 
     _appFramework: null,
 
+    _appState: null,
+
     _showErrors: false,
 
     //--------------------------------------------------------------------------
@@ -105,14 +106,18 @@ define([
         // Get the webmap or webscene portal item
         var webItem = this._getWebItem();
         if (webItem) {
-          // Document language, direction and title
-          this._setDocumentProperties(webItem);
-          // Theme, layout and widget styles
-          this._setStyles(boilerplate);
-          // Page content (that doesn't need the view)
-          this._setHtml(boilerplate, webItem, i18n);
-          // Create map or scene view, widgets and rest of app
-          this._createView(boilerplate, webItem);
+          try {
+            // Document language, direction and title
+            this._setDocumentProperties(webItem);
+            // Theme, layout and widget styles
+            this._setStyles(boilerplate);
+            // Page content (that doesn't need the view)
+            this._setHtml(boilerplate, webItem, i18n);
+            // Create map or scene view, widgets and rest of app
+            this._createView(boilerplate, webItem);
+          } catch(err) {
+            console.error(err);
+          }
         } else {
           var errMsg = this._getWebItemErrorMessage(webItem);
           Message.show(Message.type.error, new Error(errMsg), true, this._showErrors);
@@ -161,29 +166,20 @@ define([
           var view = results.view;
           var webMap = results.webMap;
           var webScene = results.webScene;
-          // Set view from config params
-          this._appViewManager.setViewpoint();
           // Set Widgets from config params
           this._appViewManager.createMapWidgets();
           this._appViewManager.createAppWidgets();
           this._appViewManager.setPopupPosition();
-          this._appViewManager.setWidgetExtensions({
-            home: false,
-            compass: false,
-            navToggle: true,
-            findPlaces: boilerplate.config.findplaces,
-            mapCoords: boilerplate.config.widgetcoords,
-            mapCoordsShare: boilerplate.config.menushare,
-            popup: true
-          });
+          this._appViewManager.setWidgetExtensions();
+          this._appViewManager.setShare();
+          // Set view from config params
+          this._appViewManager.setViewpointAll();
           // Create html that requires the view...
           this._appHtml.createViewPanelsHtml(view, webMap || webScene);
-          // Set panel, menu and popup events
-          this._appFramework = new AppFramework(view);
-          this._appFramework.setEvents();
-          // Do more stuff with the view here...
+          this._appHtml.showValidMenusOnly(view);
+
         }.bind(this))
-        .otherwise(function(error) {
+        .otherwise(function(error) { // Create view failed
           Message.show(Message.type.error, error, true, this._showErrors);
         }.bind(this))
         .always(function() {
@@ -233,9 +229,9 @@ define([
     },
 
     _setDocumentProperties: function() {
-        this._setDocumentLocale();
-        this._updateConfigTitle();
-        this._setDocumentTitle();
+      this._setDocumentLocale();
+      this._updateConfigTitle();
+      this._setDocumentTitle();
     },
 
     _setDocumentLocale: function() {

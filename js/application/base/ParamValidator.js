@@ -67,8 +67,13 @@ define([
           invalidParams = invalidParams + param + "=" + val + " ";
         }
       }
-      return {validParams: validatedParams,
-        invalidParams: invalidParams};
+
+      // Remove params not needed - TODO
+      //this._trimParams(validatedParams);
+
+      return { validParams: validatedParams,
+          invalidParams: invalidParams
+        };
     },
 
     //--------------------------------------------------------------------------
@@ -76,6 +81,17 @@ define([
     //  Private Functions
     //
     //--------------------------------------------------------------------------
+
+    _trimParams: function(validParams) {
+      // Scale and Zoom, just need one
+      if (validParams.hasOwnProperty("scale") && validParams.hasOwnProperty("zoom")) {
+        delete validParams["zoom"];
+      }
+      // Rotation, remove if "0"
+      if (validParams.hasOwnProperty("rotation") && validParams["rotation"] === "0") {
+        delete validParams["rotation"];
+      }
+    },
 
     _isValidParamValue: function(param,value) {
       var valid = false;

@@ -84,6 +84,8 @@ define([
 
     _i18n: null,
 
+    _defaultBasemap: null,
+
     //--------------------------------------------------------------------------
     //
     //  Public Members
@@ -125,6 +127,7 @@ define([
 
     createViewPanelsHtml: function(view, webMapOrWebScene) {
       this._setSlidesPanel(view, webMapOrWebScene);
+      this._setDefaultBasemap(view);
       this._setBasemapPanel(view);
       this._setTooltips(view);
     },
@@ -155,6 +158,12 @@ define([
           case "slides":
             panelSelector = SELECTORS.panelSlides;
             break;
+          case "print":
+            panelSelector = SELECTORS.panelPrint;
+            break;
+           case "share":
+            panelSelector = SELECTORS.panelShare;
+            break;
           default:
             panelSelector = null;
         }
@@ -163,6 +172,21 @@ define([
           if (menu) {
             query(panelSelector + ", " + panelSelector + " .panel-collapse").addClass("in");
           }
+        }
+      }
+    },
+
+    showValidMenusOnly:function(view) {
+      if (view.map) {
+        // Only show menus if layers are present
+        var cnt = view.map.layers.length;
+        if (cnt === 0) {
+          query(SELECTORS.menuLegend).addClass("hidden");
+          query(SELECTORS.menuLayers).addClass("hidden");
+        }
+        // Printing is not supported in 3D
+        if (!this._isWebMap) {
+          query(SELECTORS.menuPrint).addClass("hidden"); 
         }
       }
     },
@@ -213,6 +237,7 @@ define([
       query(SELECTORS.menuBasemaps + " a")[0].innerHTML = query(SELECTORS.menuBasemaps + " a")[0].innerHTML + "&nbsp;" + i18n.menu.items.basemaps;
       query(SELECTORS.menuSlides + " a")[0].innerHTML = query(SELECTORS.menuSlides + " a")[0].innerHTML + "&nbsp;" + (this._isWebMap ? i18n.menu.items.bookmarks : i18n.menu.items.slides);
       query(SELECTORS.menuShare + " a")[0].innerHTML = query(SELECTORS.menuShare + " a")[0].innerHTML + "&nbsp;" + i18n.menu.items.share;
+      query(SELECTORS.menuPrint + " a")[0].innerHTML = query(SELECTORS.menuPrint + " a")[0].innerHTML + "&nbsp;" + i18n.menu.items.print;
       query(SELECTORS.menuToggleNav + " a")[0].innerHTML = query(SELECTORS.menuToggleNav + " a")[0].innerHTML + "&nbsp;" + i18n.menu.items.toggleNav;
     },
 
@@ -224,7 +249,9 @@ define([
       query(SELECTORS.panelLegend + " " + SELECTORS.panelTitle)[0].innerHTML = i18n.menu.items.legend;
       query(SELECTORS.panelLayers + " " + SELECTORS.panelTitle)[0].innerHTML = i18n.menu.items.layers;
       query(SELECTORS.panelBasemaps + " " + SELECTORS.panelTitle)[0].innerHTML = i18n.menu.items.basemaps;
-      query(SELECTORS.panelSlides + " " + SELECTORS.panelTitle)[0].innerHTML = (this._isWebMap ? i18n.menu.items.bookmarks : i18n.menu.items.slides);      
+      query(SELECTORS.panelSlides + " " + SELECTORS.panelTitle)[0].innerHTML = (this._isWebMap ? i18n.menu.items.bookmarks : i18n.menu.items.slides);
+      query(SELECTORS.panelPrint + " " + SELECTORS.panelTitle)[0].innerHTML = i18n.menu.items.print;
+      query(SELECTORS.panelShare + " " + SELECTORS.panelTitle)[0].innerHTML = i18n.menu.items.share;
     },
 
     _setMenusVisible: function(boilerplate) {
@@ -264,7 +291,7 @@ define([
     // Widgets
 
     _setSearchWidgetVisible: function() {
-      var visible = this._boilerplate.config.widgetsearchnav;
+      var visible = this._boilerplate.config.searchnav;
       if (visible === false) {
         query(SELECTORS.widgetSearchContainer).addClass("hidden");
       }
@@ -320,11 +347,20 @@ define([
 
     // Basemaps
 
+    _setDefaultBasemap: function(view) {
+      this._defaultBasemapId;
+      view.then(function(){
+        this._defaultBasemap = view.map.basemap;
+      }.bind(this));
+    },
+
     _setBasemapEvents: function(view) {
       if (view) {
         query("#selectBasemapPanel").on("change", function(e) {
-          if (e.target.value !== "select") {
-            view.map.basemap = e.target.value;  
+          if (e.target.value === "Default") {
+            view.map.basemap = this._defaultBasemap;
+          } else {
+            view.map.basemap = e.target.value;
           }
         }.bind(this));
       }
@@ -335,7 +371,9 @@ define([
         var id = "select";
         var title = "--- " + this._i18n.basemaps.select + " ---";
         // Add select option
-        var optionsHtml = "<option value='" + id + "'" + "selected>" + title + "</option>";
+        //var optionsHtml = "<option value='" + id + "'" + title + "</option>";
+        var optionsHtml = "<option value='Default' selected>Default</option>";
+
         // Add all basemap options
         for (var key in basemapDefs) {
           if (basemapDefs.hasOwnProperty(key)){

@@ -36,10 +36,11 @@ define([], function () {
     menuLayers: "#menuLayers",
     menuBasemaps: "#menuBasemaps",
     menuSlides: "#menuSlides",
+    menuPrint: "#menuPrint",
     menuShare: "#menuShare",
     menuToggleNav: "#menuToggleNav",
     widgetSearchContainer: ".calcite-navbar-search",
-    widgetLegendContainer: ".calcite-panel-legend",
+    widgetlegendContainer: ".calcite-panel-legend",
     panels: ".calcite-panels",
     panelsPanel: ".calcite-panels .panel",
     panelBody: ".panel-body",
@@ -49,6 +50,7 @@ define([], function () {
     panelLayers: "#panelLayers",
     panelBasemaps: "#panelBasemaps",
     panelSlides: "#panelSlides",
+    panelPrint: "#panelPrint",
     panelShare: "#panelShare",
     carouselSlides: "#carouselSlides"
 

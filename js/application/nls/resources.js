@@ -26,6 +26,7 @@
         "layers": "Layers",
         "slides": "Slides",
         "bookmarks": "Bookmarks",
+        "print": "Print",
         "share": "Share",
         "toggleNav": "Full Map"
       }

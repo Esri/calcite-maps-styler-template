@@ -556,7 +556,8 @@ define([
         // if ((!this.config.group || this.config.group === DEFAULT_URL_PARAM) && this.settings.defaultGroup) {
         //   this.config.group = this.settings.defaultGroup;
         // }
-        
+   
+        // No webmap or scene, default to webmap     
         if (!this.config.webmap && !this.config.webscene) {
           if (this.settings.defaultWebmap) {
             this.config.webmap = this.settings.defaultWebmap;

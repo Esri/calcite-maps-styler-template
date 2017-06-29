@@ -37,7 +37,7 @@
   },
   "theme": {
     "type": "value",
-    "values": "dark,light"
+    "values": "dark,light,custom"
   },
   "themecustom": {
     "type": "boolean",
@@ -83,6 +83,10 @@
     "type": "boolean",
     "values": [true,false]
   },
+  "menuprint": {
+    "type": "boolean",
+    "values": [true,false]
+  },
   "menushare": {
     "type": "boolean",
     "values": [true,false]
@@ -93,13 +97,13 @@
   },
   "activepanel": {
     "type": "value",
-    "values": "about,basemaps,legend,layers,slides,bookmarks"
+    "values": "about,basemaps,legend,layers,slides,bookmarks,print"
   },
   "menustyledrawer": {
     "type": "boolean",
     "values": [true,false]
   },
-  "dockposition": {
+  "popupDocking": {
     "type": "value",
     "values": "auto,top-center,top-right,top-left,bottom-right,bottom-left,bottom-center"
   },
@@ -115,55 +119,69 @@
     "type": "value",
     "values": "top-right,top-left,bottom-right,bottom-left"
   },
-  
-  "widgetzoom": {
+  "zoomin": {
     "type": "value",
     "values": "show,hide,top-right,top-left,bottom-right,bottom-left"
   },
-  "widgethome": {
+  "home": {
     "type": "value",
     "values": "show,hide,top-right,top-left,bottom-right,bottom-left"
   },
-  "widgetcompass": {
+  "compass": {
     "type": "value",
     "values": "show,hide,top-right,top-left,bottom-right,bottom-left"
   },
-  "widgetnavtoggle": {
+  "navtoggle": {
     "type": "value",
     "values": "show,hide,top-right,top-left,bottom-right,bottom-left"
   },
-  "widgetlocate": {
+  "locate": {
     "type": "value",
     "values": "show,hide,top-right,top-left,bottom-right,bottom-left"
   },
-  "widgettrack": {
+  "track": {
     "type": "value",
     "values": "show,hide,top-right,top-left,bottom-right,bottom-left"
   },
-  "widgetsearch": {
+  "search": {
     "type": "value",
     "values": "show,hide,top-right,top-left,bottom-right,bottom-left"
   },
-  "widgetbasemaptoggle": {
+  "legend": {
     "type": "value",
     "values": "show,hide,top-right,top-left,bottom-right,bottom-left"
   },
-
-  "widgetnextbasemap": {
+  "scalebar": {
+    "type": "value",
+    "values": "show,hide,top-right,top-left,bottom-right,bottom-left"
+  },
+  "basemaptoggle": {
+    "type": "value",
+    "values": "show,hide,top-right,top-left,bottom-right,bottom-left"
+  },
+  "nextbasemap": {
     "type": "value",
     "values": "streets,satellite,hybrid,topo,gray,dark-gray,oceans,national-geographic,terrain,osm,dark-gray-vector,gray-vector,streets-vector,topo-vector,streets-night-vector,streets-relief-vector,streets-navigation-vector"
   },
-  "widgetcoords": {
+  "mapcoords": {
     "type": "boolean",
     "values": [true,false]
   },
-  "widgetsearchnav": {
+  "searchnav": {
     "type": "boolean",
     "values": [true,false]
   },
   "findplaces": {
     "type": "boolean",
     "values": [true,false]
+  },
+  "search": {
+    "type": "string",
+    "values": "*"
+  },
+  "places": {
+    "type": "string",
+    "values": "*"
   },
   "showerrors": {
     "type": "boolean",

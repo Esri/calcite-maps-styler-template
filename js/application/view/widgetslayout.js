@@ -24,42 +24,46 @@ define([], function () {
 
   var WIDGETS_LAYOUTS = {
     topLeft: {
-      zoom: POSITION.topLeft,
+      zoomin: POSITION.topLeft,
       home: POSITION.topLeft,
       navtoggle: POSITION.topLeft,
       locate: POSITION.topLeft,
       track: POSITION.topLeft,
-      compass: POSITION.bottomLeft,
+      compass: POSITION.topLeft,
+      scalebar: POSITION.bottomLeft,
       search: POSITION.topRight,
       basemaptoggle: POSITION.bottomRight
     },
     topRight:  {
-      zoom: POSITION.topRight,
+      zoomin: POSITION.topRight,
       home: POSITION.topRight,
       navtoggle: POSITION.topRight,
       locate: POSITION.topRight,
       track: POSITION.topRight,
-      compass: POSITION.bottomRight,
+      compass: POSITION.topRight,
+      scalebar: POSITION.bottomLeft,
       search: POSITION.topLeft,
-      basemaptoggle: POSITION.bottomLeft
+      basemaptoggle: POSITION.bottomRight
     },
     bottomLeft: {
-      zoom: POSITION.bottomLeft,
+      zoomin: POSITION.bottomLeft,
       home: POSITION.bottomLeft,
       navtoggle: POSITION.bottomLeft,
       locate: POSITION.bottomLeft,
       track: POSITION.bottomLeft,
-      compass: POSITION.topLeft,
+      scalebar: POSITION.topLeft,
+      compass: POSITION.bottomLeft,
       search: POSITION.topRight,
       basemaptoggle: POSITION.bottomRight
     },
     bottomRight: {
-      zoom: POSITION.bottomRight,
+      zoomin: POSITION.bottomRight,
       home: POSITION.bottomRight,
       navtoggle: POSITION.topRight,
       locate: POSITION.bottomRight,
       track: POSITION.bottomRight,
-      compass: POSITION.topRight,
+      compass: POSITION.bottomRight,
+      scalebar: POSITION.bottomLeft,
       search: POSITION.topLeft,
       basemaptoggle: POSITION.bottomLeft
     }
