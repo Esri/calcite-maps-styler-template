@@ -1,6 +1,6 @@
 # Calcite Maps - Styler
 
-Styler is a [new ArcGIS configurable application](http://server.arcgis.com/en/portal/latest/use/application-templates.htm) that can be used to easily create, style and share modern 2D and 3D map apps. Using simple [configuration parameters](#configurationParameters) you can customize everything from the title, menus and text, to the overall color, theme and layout. The app is hosted on [ArcGIS Online](http://www.arcgis.com/home/item.html?id=7217645840b8465ab03d6e3efbe21d1d) and [GitHub](https://esri.github.io/calcite-maps-styler-template/index.html?webmap=default) so you can 1) style maps **on-the-fly** just by adding [URL parameters](#configurationParameters) or 2) if you have an existing web map or web scene, you can style (more advanced) apps **step-by-step** by configuring them with the [new Styler template](http://www.arcgis.com/home/item.html?id=7217645840b8465ab03d6e3efbe21d1d). Once styled, share your app at any time just by sharing the URL - no programming required.
+Styler is a [new ArcGIS configurable application](http://server.arcgis.com/en/portal/latest/use/application-templates.htm) that can be used to easily create, style and share modern 2D and 3D map apps. Using simple [styler parameters](#configurationParameters) you can customize everything from the title, menus and text, to the overall color, theme and layout. The app is hosted on [ArcGIS Online](http://www.arcgis.com/home/item.html?id=7217645840b8465ab03d6e3efbe21d1d) and [GitHub](https://esri.github.io/calcite-maps-styler-template/index.html?webmap=default) so you can 1) style maps **on-the-fly** just by adding [URL parameters](#configurationParameters) or 2) if you have an existing web map or web scene, you can style (more advanced) apps **step-by-step** by configuring them with the [new Styler template](http://www.arcgis.com/home/item.html?id=7217645840b8465ab03d6e3efbe21d1d). Once styled, share your app at any time just by sharing the URL - no programming required.
 
 Styler is built with the [new ArcGIS API for JavaScript v4](https://developers.arcgis.com/javascript), [Calcite Maps](https://github.com/Esri/calcite-maps) and [Bootstrap](http://getbootstrap.com). The application is fully responsive and supports many features of the new JavaScript v4 API such as loading 2D web maps and 3D web scenes, displaying image and vector tile basemaps, showing legend and layers, positioning widgets on the view, and searching and finding places. The app can be accessed in [ArcGIS Online](http://www.arcgis.com/home/item.html?id=7217645840b8465ab03d6e3efbe21d1d) and [ArcGIS Enterprise](http://www.esri.com/arcgis/products/arcgis-enterprise/Overview) or downloaded and hosted locally.
 
@@ -38,7 +38,7 @@ Styler is built with the [new ArcGIS API for JavaScript v4](https://developers.a
 
 ## Examples
 
-### <a id="example1"></a>Example 1: [Create a 2D map on-the-fly to find parks in New York](https://esri.github.io/calcite-maps-styler-template/index.html?title=Explore&nbsp;New&nbsp;York&abouttext=Click&nbsp;and&nbsp;hold&nbsp;on&nbsp;the&nbsp;map&nbsp;to&nbsp;find&nbsp;interesting&nbsp;places&lat=40.71862&lon=-73.99343&zoom=13&basemap=streets-navigation-vector&activepanel=about&places=parks)
+### <a id="example1"></a>Example 1: [Create a 2D map to find parks in New York](https://esri.github.io/calcite-maps-styler-template/index.html?title=Explore&nbsp;New&nbsp;York&abouttext=Click&nbsp;and&nbsp;hold&nbsp;on&nbsp;the&nbsp;map&nbsp;to&nbsp;find&nbsp;interesting&nbsp;places&lat=40.71862&lon=-73.99343&zoom=13&basemap=streets-navigation-vector&activepanel=about&places=parks)
 
 ```
 https://esri.github.io/calcite-maps-styler-template/index.html?webmap=default
@@ -69,7 +69,7 @@ https://esri.github.io/calcite-maps-styler-template/index.html?webmap=742e3546ff
 
 ![example-2.png](./example-2.png?raw=true)
 
-### <a id="example3"></a>Example 3: [Create a 3D map on-the-fly, search, and manually position widgets](https://esri.github.io/calcite-maps-styler-template/index.html?webscene=default&title=Big&nbsp;Bear&nbsp;Lake&nbsp;California&subtitle=A&nbsp;great&nbsp;vacation&nbsp;getaway&bgcolor=rgb(140,94,42)&theme=light&zoomin=bottom-left&home=hide&navtoggle=bottom-left&compass=bottom-left&search=Big&nbsp;Bear&nbsp;,CA&heading=174&tilt=80&scale=14739&abouttext=Come&nbsp;explore&nbsp;the&nbsp;mountains&nbsp;in&nbsp;SoCal!)
+### <a id="example3"></a>Example 3: [Create a 3D to search for a city and manually position widgets](https://esri.github.io/calcite-maps-styler-template/index.html?webscene=default&title=Big&nbsp;Bear&nbsp;Lake&nbsp;California&subtitle=A&nbsp;great&nbsp;vacation&nbsp;getaway&bgcolor=rgb(140,94,42)&theme=light&zoomin=bottom-left&home=hide&navtoggle=bottom-left&compass=bottom-left&search=Big&nbsp;Bear&nbsp;,CA&heading=174&tilt=80&scale=14739&abouttext=Come&nbsp;explore&nbsp;the&nbsp;mountains&nbsp;in&nbsp;SoCal!)
 
 ```
 https://esri.github.io/calcite-maps-styler-template/index.html?webscene=default
@@ -141,7 +141,7 @@ What mapping operations can you perform?
 
 Here are the parameters you can configure in a URL or in a JSON file.
 
-|parameter|description|type|example|
+|Parameter|Description|Type|Example|
 |---|---|---|---|
 |webmap|Webmap ID for webmap|String|`default`, `e1653fe614c04b6aa4efba5ba7b56d05`|
 |webscene|Webscene ID for webscene|String|`default`, `bdc09d6c8ef8492783ebe2c572950931`|
@@ -156,7 +156,7 @@ Here are the parameters you can configure in a URL or in a JSON file.
 |rotation|Rotation of the 2D view on start-up|Number|`0`-`360`|
 |tilt|Angle of the 3D view on start-up|Number|`0`-`90`|
 |heading|Heading of the 3D view on start-up|Number|`0`-`360`|
-|basemap|Basemap to use for the map on start-up. See ArcGIS JS API reference|String|`streets`, `satellite`...|
+|basemap|Basemap to use for the map on start-up. See ArcGIS JS API reference|String|`streets`, `satellite`, `hybrid`, `topo`, `gray`, `dark-gray`, `oceans`, `national-geographic`, `terrain`, `osm`, `dark-gray-vector`, `gray-vector`, `streets-vector`, `streets-night-vector`, `streets-relief-vector`, `streets-navigation-vector`|
 |App| | | |
 |title|Title of the application|String|`New York`|
 |subtitle|Subtitle of the application|String|`A great place to visit`|
@@ -192,7 +192,7 @@ Here are the parameters you can configure in a URL or in a JSON file.
 |scalebar|Add the scalebar widget to the view|String|`show`, `hide`, `top-left`, `top-right`, `bottom-left`, `bottom-right`|
 |legend|Add the legend to the view|String|`show`, `hide`, `top-left`, `top-right`, `bottom-left`, `bottom-right`|
 |basemaptoggle|Add the basemaptoggle widget to the view|String|`show`, `hide`, `top-left`, `top-right`, `bottom-left`, `bottom-right`|
-|nextbasemap|Set the next basemap for the basemaptoggle widget|String|`satellite`, `streets`...|
+|nextbasemap|Set the next basemap for the basemaptoggle widget|String|`streets`, `satellite`, `hybrid`, `topo`, `gray`, `dark-gray`, `oceans`, `national-geographic`, `terrain`, `osm`, `dark-gray-vector`, `gray-vector`, `streets-vector`, `streets-night-vector`, `streets-relief-vector`, `streets-navigation-vector`|
 |popup|Position to dock the popup. See ArcGIS JS API|String|`top-right`, `top-center`, `top-left`, `bottom-right`, `bottom-center`, `bottom-left`|
 |mapcoords|Show the map coordinates widget|Boolean|`true`,`false`|
 |searchnav|Show the search widget in the navbar|Boolean|`true`, `false`|
