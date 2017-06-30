@@ -69,7 +69,7 @@ https://esri.github.io/calcite-maps-styler-template/index.html?webmap=742e3546ff
 
 ![example-2.png](./example-2.png?raw=true)
 
-### <a id="example3"></a>Example 3: [Create a 3D map on-the-fly and manually position widgets](https://esri.github.io/calcite-maps-styler-template/index.html?webscene=default&title=Big&nbsp;Bear&nbsp;Lake&nbsp;California&subtitle=A&nbsp;great&nbsp;vacation&nbsp;getaway&bgcolor=rgb(140,94,42)&theme=light&zoomin=bottom-left&home=hide&navtoggle=bottom-left&compass=bottom-left&lat=34.24513&lon=-116.89622&heading=174&tilt=80&scale=14739&abouttext=Come&nbsp;explore&nbsp;the&nbsp;mountains&nbsp;in&nbsp;SoCal!)
+### <a id="example3"></a>Example 3: [Create a 3D map on-the-fly, search, and manually position widgets](https://esri.github.io/calcite-maps-styler-template/index.html?webscene=default&title=Big&nbsp;Bear&nbsp;Lake&nbsp;California&subtitle=A&nbsp;great&nbsp;vacation&nbsp;getaway&bgcolor=rgb(140,94,42)&theme=light&zoomin=bottom-left&home=hide&navtoggle=bottom-left&compass=bottom-left&search=Big&nbsp;Bear&nbsp;,CA&heading=174&tilt=80&scale=14739&abouttext=Come&nbsp;explore&nbsp;the&nbsp;mountains&nbsp;in&nbsp;SoCal!)
 
 ```
 https://esri.github.io/calcite-maps-styler-template/index.html?webscene=default
@@ -82,8 +82,7 @@ https://esri.github.io/calcite-maps-styler-template/index.html?webscene=default
   &home=hide
   &navtoggle=bottom-left
   &compass=bottom-left
-  &lat=34.24513
-  &lon=-116.89622
+  &search=Big Bear,CA
   &heading=174
   &tilt=80
   &scale=14739
@@ -91,7 +90,7 @@ https://esri.github.io/calcite-maps-styler-template/index.html?webscene=default
 
 ![example-3.png](./example-3.png?raw=true)
 
-### <a id="example4"></a>Example 4: [Load an existing scene and style the layout and theme](https://esri.github.io/calcite-maps-styler-template/index.html?webscene=128ba9498cca447ab6ec356b84fee879&bgcolor=transparent&widgettheme=dark&widgetslayout=top-right&panelslayout=left&layout=top-small&lat=43.72115&lon=9.82826&activepanel=about&aboutdescription=true&zoom=2)
+### <a id="example4"></a>Example 4: [Load an existing scene and style the layout and theme](https://esri.github.io/calcite-maps-styler-template/index.html?webscene=128ba9498cca447ab6ec356b84fee879&bgcolor=transparent&widgettheme=dark&widgetslayout=top-right&panelslayout=left&layout=top-small&lat=43.72115&lon=9.82826&activepanel=about&aboutdescription=true&zoom=2&nextbasemap=satellite)
 
 ```
 https://esri.github.io/calcite-maps-styler-template/index.html?webscene=128ba9498cca447ab6ec356b84fee879
@@ -108,6 +107,7 @@ https://esri.github.io/calcite-maps-styler-template/index.html?webscene=128ba949
   &zoom=2
   &activepanel=about
   &aboutdescription=true
+  &nextbasemap=satellite
 ```
 
 ![example-4.png](./example-4.png?raw=true)
