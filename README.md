@@ -38,7 +38,7 @@ Styler is built with the [new ArcGIS API for JavaScript v4](https://developers.a
 
 ## Examples
 
-### <a id="example1"></a>Example 1: [Default Map + Styled title, location, about text and basemap](https%3A%2F%2Fesri.github.io%2Fcalcite-maps-styler-template%2Findex.html%3Fwebmap%3Ddefault%26title%3DExplore%2520New%2520York%2520%26abouttext%3DClick%2520%2B%2520hold%20on%20the%20map%20to%20find%20interesting%20places%26lat%3D40.71862%26lon%3D-73.99343%26zoom%3D13%26basemap%3Dstreets-navigation-vector%26activepanel%3Dabout)
+### <a id="example1"></a>Example 1: [Create a 2D map on-the-fly to find parks in New York](https://esri.github.io/calcite-maps-styler-template/index.html?title=Explore&nbsp;New&nbsp;York&abouttext=Click&nbsp;and&nbsp;hold&nbsp;on&nbsp;the&nbsp;map&nbsp;to&nbsp;find&nbsp;interesting&nbsp;places&lat=40.71862&lon=-73.99343&zoom=13&basemap=streets-navigation-vector&activepanel=about&places=parks)
 
 ```
 https://esri.github.io/calcite-maps-styler-template/index.html?webmap=default
@@ -49,11 +49,12 @@ https://esri.github.io/calcite-maps-styler-template/index.html?webmap=default
   &zoom=13
   &basemap=streets-navigation-vector
   &activepanel=about
+  &places=parks
 ```
 
 ![example-1.png](./example-1.png?raw=true)
 
-### <a id="example2"></a>Example 2: [Existing Map + Styled colors, theme, bottom layout and bookmark panel](https%3A%2F%2Fesri.github.io%2Fcalcite-maps-styler-template%2Findex.html%3Fwebmap%3D742e3546ff1e4e0bba3360ae5004d0e1%26bgcolor%3Ddark-blue%26opacity%3D.75%26widgettheme%3Dlight%26theme%3Dcustom%26layout%3Dbottom-medium%26aboutsummary%3Dtrue%26menubookmarks%3Dtrue%26activepanel%3Dbookmarks)
+### <a id="example2"></a>Example 2: [Load an existing webmap and style with colors](https://esri.github.io/calcite-maps-styler-template/index.html?webmap=742e3546ff1e4e0bba3360ae5004d0e1&bgcolor=dark-blue&opacity=.75&widgettheme=light&theme=custom&layout=bottom-medium&aboutsummary=true&menubookmarks=true&activepanel=bookmarks)
 
 ```
 https://esri.github.io/calcite-maps-styler-template/index.html?webmap=742e3546ff1e4e0bba3360ae5004d0e1
@@ -68,7 +69,7 @@ https://esri.github.io/calcite-maps-styler-template/index.html?webmap=742e3546ff
 
 ![example-2.png](./example-2.png?raw=true)
 
-### <a id="example3"></a>Example 3: [Default Scene + Styled titles, RBG color, light theme, about text and manual widget positioning](https%3A%2F%2Fesri.github.io%2Fcalcite-maps-styler-template%2Findex.html%3Fwebscene%3Ddefault%26title%3DBig%2520Bear%2520Lake%252C%2520California%26subtitle%3DA%2520great%2520vacation%2520getaway%26bgcolor%3Drgb%28140%2C%2094%2C%2042%29%26theme%3Dlight%26zoom%3Dbottom-left%26home%3Dhide%26widgetnavtoggle%3Dbottom-left%26lat%3D34.24513%26lon%3D-116.89622%26heading%3D174%26tilt%3D80%26altitude%3D2086%26scale%3D14739%26%26abouttext%3D%26abouttext%3DCome%20explore%20the%20mountains%20in%20SoCal%21)
+### <a id="example3"></a>Example 3: [Create a 3D map on-the-fly and manually position widgets](https://esri.github.io/calcite-maps-styler-template/index.html?webscene=default&title=Big&nbsp;Bear&nbsp;Lake&nbsp;California&subtitle=A&nbsp;great&nbsp;vacation&nbsp;getaway&bgcolor=rgb(140,94,42)&theme=light&zoomin=bottom-left&home=hide&navtoggle=bottom-left&compass=bottom-left&lat=34.24513&lon=-116.89622&heading=174&tilt=80&scale=14739&abouttext=Come&nbsp;explore&nbsp;the&nbsp;mountains&nbsp;in&nbsp;SoCal!)
 
 ```
 https://esri.github.io/calcite-maps-styler-template/index.html?webscene=default
@@ -77,20 +78,20 @@ https://esri.github.io/calcite-maps-styler-template/index.html?webscene=default
   &abouttext=Come explore the mountains in SoCal!
   &bgcolor=rgb(140, 94, 42)
   &theme=light
-  &zoom=bottom-left
+  &zoomin=bottom-left
   &home=hide
-  &widgetnavtoggle=bottom-left
+  &navtoggle=bottom-left
+  &compass=bottom-left
   &lat=34.24513
   &lon=-116.89622
   &heading=174
   &tilt=80
-  &altitude=2086
   &scale=14739
 ```
 
 ![example-3.png](./example-3.png?raw=true)
 
-### <a id="example4"></a>Example 4: [Existing Scene + Styled transparent color, dark widgets, theme dark, small top layout, widget layout right, panels left, about with Web Scene description](https%3A%2F%2Fesri.github.io%2Fcalcite-maps-styler-template%2Findex.html%3Fwebscene%3D128ba9498cca447ab6ec356b84fee879%2520%26bgcolor%3Dtransparent%26widgettheme%3Ddark%26widgetslayout%3Dtop-right%26panelslayout%3Dleft%26layout%3Dtop-small%26lat%3D43.72115%26lon%3D9.82826%26activepanel%3Dabout%26aboutdescription%3Dtrue%26zoom%3D2)
+### <a id="example4"></a>Example 4: [Load an existing scene and style the layout and theme](https://esri.github.io/calcite-maps-styler-template/index.html?webscene=128ba9498cca447ab6ec356b84fee879&bgcolor=transparent&widgettheme=dark&widgetslayout=top-right&panelslayout=left&layout=top-small&lat=43.72115&lon=9.82826&activepanel=about&aboutdescription=true&zoom=2)
 
 ```
 https://esri.github.io/calcite-maps-styler-template/index.html?webscene=128ba9498cca447ab6ec356b84fee879
