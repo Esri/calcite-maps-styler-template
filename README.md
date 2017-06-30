@@ -22,7 +22,7 @@ Styler is built with the [new ArcGIS API for JavaScript v4](https://developers.a
  https://esri.github.io/calcite-maps-styler-template/index.html?webscene=default
  ```
 
-2. Click the `Main Menu` > `Share`, add URL [configuration parameters](#configurationParameters) and hit `Enter` to style your map. e.g.
+2. Click the `Main Menu` > `Share`, add URL [style parameters](#configurationParameters) and hit `Enter` to style your map. e.g.
  
  ```
  https://esri.github.io/calcite-maps-styler-template/index.html?webmap=default
@@ -137,7 +137,7 @@ What mapping operations can you perform?
 - View coordinates, zoom level, scale, tilt, rotation
 - Share your current map view with others
 
-## <a id="configurationParameters"></a>Configuration Parameters
+## <a id="configurationParameters"></a>Style Parameters
 
 Here are the parameters you can configure in a URL or in a JSON file.
 
@@ -172,27 +172,27 @@ Here are the parameters you can configure in a URL or in a JSON file.
 |panelslayout|The position of the panels|String|`left`, `right`|
 |Panels| | | |
 |widgetslayout|The position set for all widgets|String|`top-left`, `top-right`, `bottom-left`, `bottom-right`|
-|menuabout|Show or hide menu and panel|Boolean|`true`, `false`|
-|menulegend|Show or hide menu and panel|Boolean|`true`, `false`|
-|menulayers|Show or hide menu and panel|Boolean|`true`, `false`|
-|menubasemaps|Show or hide menu and panel|Boolean|`true`, `false`|
-|menuslides|Show or hide menu and panel|Boolean|`true`, `false`|
-|menubookmarks|Show or hide menu and panel|Boolean|`true`, `false`|
-|menushare|Show or hide menu and panel|Boolean|`true`, `false`|
-|menuprint|Show or hide menu and panel|Boolean|`true`, `false`|
-|menutogglenav|Show or hide menu and panel|Boolean|`true`, `false`|
+|menuabout|Show or hide the about menu and panel|Boolean|`true`, `false`|
+|menulegend|Show or hide the legend menu and panel|Boolean|`true`, `false`|
+|menulayers|Show or hide the layers menu and panel|Boolean|`true`, `false`|
+|menubasemaps|Show or hide the basemaps menu and panel|Boolean|`true`, `false`|
+|menuslides|Show or hide the slides menu and panel|Boolean|`true`, `false`|
+|menubookmarks|Show or hide the bookmarks menu and panel|Boolean|`true`, `false`|
+|menushare|Show or hide the share menu and panel|Boolean|`true`, `false`|
+|menuprint|Show or hide the print menu and panel|Boolean|`true`, `false`|
+|menutogglenav|Show or hide the toggle nav menu and panel|Boolean|`true`, `false`|
 |menustyledrawer|Change the style of the main menu to partial or full height|Boolean|`true`, `false`|
 |activepanel|Name of the panel to show when app loads|String|`about`, `legend`, `basemaps`, `slides`, `layers`,`print`,`share`|
 |Widgets| | | |
-|zoomin|Name of the widget to add to the view|String|`show`, `hide`, `top-left`, `top-right`, `bottom-left`, `bottom-right`|
-|home|Name of the widget to add to the view|String|`show`, `hide`, `top-left`, `top-right`, `bottom-left`, `bottom-right`|
-|locate|Name of the widget to add to the view|String|`show`, `hide`, `top-left`, `top-right`, `bottom-left`, `bottom-right`|
-|track|Name of the widget to add to the view|String|`show`, `hide`, `top-left`, `top-right`, `bottom-left`, `bottom-right`|
-|search|Name of the widget to add to the view|String|`show`, `hide`, `top-left`, `top-right`, `bottom-left`, `bottom-right`|
-|scalebar|Name of the widget to add to the view|String|`show`, `hide`, `top-left`, `top-right`, `bottom-left`, `bottom-right`|
-|legend|Name of the widget to add to the view|String|`show`, `hide`, `top-left`, `top-right`, `bottom-left`, `bottom-right`|
-|basemaptoggle|Name of the widget to add to the view|String|`show`, `hide`, `top-left`, `top-right`, `bottom-left`, `bottom-right`|
-|nextbasemap|Name of the widget to add to the view|String|`show`, `hide`, `top-left`, `top-right`, `bottom-left`, `bottom-right`|
+|zoomin|Add the zoom widget to the view|String|`show`, `hide`, `top-left`, `top-right`, `bottom-left`, `bottom-right`|
+|home|Add the home widget the view|String|`show`, `hide`, `top-left`, `top-right`, `bottom-left`, `bottom-right`|
+|locate|Add the locate widget to the view|String|`show`, `hide`, `top-left`, `top-right`, `bottom-left`, `bottom-right`|
+|track|Add the track widget to the view|String|`show`, `hide`, `top-left`, `top-right`, `bottom-left`, `bottom-right`|
+|search|Add the search widget to the view|String|`show`, `hide`, `top-left`, `top-right`, `bottom-left`, `bottom-right`|
+|scalebar|Add the scalebar widget to the view|String|`show`, `hide`, `top-left`, `top-right`, `bottom-left`, `bottom-right`|
+|legend|Add the legend to the view|String|`show`, `hide`, `top-left`, `top-right`, `bottom-left`, `bottom-right`|
+|basemaptoggle|Add the basemaptoggle widget to the view|String|`show`, `hide`, `top-left`, `top-right`, `bottom-left`, `bottom-right`|
+|nextbasemap|Set the next basemap for the basemaptoggle widget|String|`satellite`, `streets`...|
 |popup|Position to dock the popup. See ArcGIS JS API|String|`top-right`, `top-center`, `top-left`, `bottom-right`, `bottom-center`, `bottom-left`|
 |mapcoords|Show the map coordinates widget|Boolean|`true`,`false`|
 |searchnav|Show the search widget in the navbar|Boolean|`true`, `false`|
