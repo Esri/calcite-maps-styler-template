@@ -1,7 +1,18 @@
 {
    "configurationSettings": [{
-         "category": "About",
+         "category": "General",
          "fields": [{
+               "type": "subcategory",
+               "label": "Scene"
+            },
+            {
+               "type": "webscene"
+            },
+            {
+               "type": "subcategory",
+               "label": "Title"
+            },
+            {
                "type": "string",
                "fieldName": "title",
                "label": "Title - Provide a great name for your mapping app!",
@@ -16,9 +27,13 @@
                "tooltip": "Provide some additional information for users or a call-to-action to help them take the next step. What should they do next?"
             },
             {
+               "type": "subcategory",
+               "label": "About Panel"
+            },
+            {
                "type": "string",
                "fieldName": "abouttext",
-               "label": "About Panel - Provide a additional information about your app or your organization (optional)",
+               "label": "Provide a additional information about your app or your organization (optional)",
                "tooltip": "",
                "stringFieldOption": "richtext",
                "placeHolder": "Tell everyone about your app. Add text, logo and contact info."
@@ -34,20 +49,26 @@
                "fieldName": "aboutdescription",
                "label": "Add item Description to the About panel (optional)",
                "tooltip": "Append the webmap or webscene Description to the text in the About panel"
+            },
+            {
+               "type": "appproxies"
             }
          ]
       },
       {
-         "category": "Colors",
+         "category": "Theme",
          "fields": [{
+               "type": "subcategory",
+               "label": "Default"
+            },{
                "type": "paragraph",
-               "value": "Select the application and widget base colors:"
+               "value": "Select the application and widget theme:"
             },
             {
                "type": "options",
                "fieldName": "theme",
-               "label": "App Theme",
-               "tooltip": "Select a base color for the entire app (navbar and panel).",
+               "label": "Application",
+               "tooltip": "Select a base color for the header and panels.",
                "options": [{
                      "label": "Light",
                      "value": "light"
@@ -65,7 +86,7 @@
             {
                "type": "options",
                "fieldName": "widgettheme",
-               "label": "Widget Theme",
+               "label": "Widgets",
                "tooltip": "Set the color for the widget and popup.",
                "options": [{
                      "label": "Light",
@@ -78,21 +99,17 @@
                ]
             },
             {
-               "type": "paragraph",
-               "value": "<br><hr>"
+               "type": "subcategory",
+               "label": "Custom"
             },
             {
                "type": "paragraph",
-               "value": "<b>Color Override (optional)</b>"
-            },
-            {
-               "type": "paragraph",
-               "value": "Select a custom color for the navbar:"
+               "value": "Select custom colors for the header, panels and text:"
             },
             {
                "type": "options",
                "fieldName": "bgcolor",
-               "label": "Color",
+               "label": "Preset Colors",
                "tooltip": "Select the background color for the main title bar.",
                "options": [{
                      "label": "Default",
@@ -155,7 +172,7 @@
             {
                "type": "color",
                "fieldName": "bgcolor",
-               "label": "Color (custom)",
+               "label": "Custom Colors",
                "tooltip": "Select a custom background color. NOTE: This will override the background color selected above.",
                "sharedThemeProperty": "header.background"
             },
@@ -163,7 +180,7 @@
                "type": "options",
                "fieldName": "opacity",
                "label": "Opacity",
-               "tooltip": "Make the navbar background semi-transparent",
+               "tooltip": "Make the header background semi-transparent",
                "options": [{
                      "label": "1.0 (Solid)",
                      "value": 1
@@ -183,31 +200,9 @@
                ]
             },
             {
-               "type": "paragraph",
-               "value": "&nbsp;"
-            },
-            {
-               "type": "boolean",
-               "fieldName": "themecustom",
-               "label": "Apply color to panels",
-               "tooltip": "Overrides the default theme and applies your color to the panels"
-            },
-            {
-               "type": "paragraph",
-               "value": "<br><hr>"
-            },
-            {
-               "type": "paragraph",
-               "value": "<b>Text Color Override (optional)</b>"
-            },
-            {
-               "type": "paragraph",
-               "value": "Override the text color:"
-            },
-            {
                "type": "options",
                "fieldName": "textcolor",
-               "label": "Color",
+               "label": "Text Color",
                "tooltip": "Select the text color. Your selection will override the default.",
                "options": [{
                      "label": "Default",
@@ -222,106 +217,279 @@
                      "value": "dark"
                   }
                ]
+            },
+            {
+               "type": "boolean",
+               "fieldName": "themecustom",
+               "label": "Apply color to header and panels",
+               "tooltip": "Overrides the default theme and applies your color to the panels"
+            },
+            {
+               "type": "subcategory",
+               "label": "Custom Styles"
+            },
+            {
+               "type": "paragraph",
+               "value": "Add in any CSS styles that you would like to override in the app:"
+            },
+            {
+              "type": "string",
+              "fieldName": "css",
+              "tooltip": "Add styles that will override rules in the app.",
+              "placeholder": "e.g. .esri-widget--button {background: lightgrey}"
             }
          ]
       },
       {
-         "category": "Layout",
-         "fields": [{
+        "category": "Layout",
+        "fields": [
+          {
+             "type": "subcategory",
+             "label": "Main Menu"
+          },
+          {
+             "type": "paragraph",
+             "value": "Select the menu options:"
+          },
+          {
+             "type": "boolean",
+             "fieldName": "menuabout",
+             "tooltip": "Include menu and panel for About information",
+             "label": "About"
+          },
+          {
+             "type": "boolean",
+             "fieldName": "menulegend",
+             "tooltip": "Include menu and panel for legend",
+             "label": "Legend"
+          },
+          {
+             "type": "boolean",
+             "fieldName": "menulayers",
+             "tooltip": "Include menu and panel to show layers",
+             "label": "Layers"
+          },
+          {
+             "type": "boolean",
+             "fieldName": "menubasemaps",
+             "tooltip": "Include menu and panel for basemaps",
+             "label": "Basemaps"
+          },
+          {
+             "type": "boolean",
+             "fieldName": "menuslides",
+             "tooltip": "Include menu and panel for slides/bookmarks. NOTE: Only applies to webmaps and webscenes that have slides and bookmarks previously saved.",
+             "label": "Slides/Bookmarks"
+          },
+          {
+             "type": "boolean",
+             "fieldName": "menushare",
+             "tooltip": "Include menu for sharing out your current map via URL.",
+             "label": "Share"
+          },
+          {
+             "type": "boolean",
+             "fieldName": "menutogglenav",
+             "tooltip": "Include a menu item that can show and hide the title bar",
+             "label": "Full Map Toggle"
+          },
+          {
+             "type": "options",
+             "fieldName": "activepanel",
+             "tooltip": "Select the panel to show when the app starts",
+             "label": "Select a startup panel:",
+             "options": [{
+                   "label": "None",
+                   "value": ""
+                },
+                {
+                   "label": "About",
+                   "value": "about"
+                },
+                {
+                   "label": "Legend",
+                   "value": "legend"
+                },
+                {
+                   "label": "Layers",
+                   "value": "layers"
+                },
+                {
+                   "label": "Basemaps",
+                   "value": "basemaps"
+                },
+                {
+                   "label": "Slides/Bookmarks",
+                   "value": "slides"
+                },
+                {
+                   "label": "Share",
+                   "value": "share"
+                }
+             ]
+          },
+          {
+             "type": "subcategory",
+             "label": "Navbar, Popup and Panels"
+          },
+          {
+             "type": "paragraph",
+             "value": "Set the position and style:"
+          },
+          {
+             "type": "options",
+             "fieldName": "layout",
+             "tooltip": "Set the location of the title bar. Position at the top to make the title stand our more. Position at the bottom to encourage users to interact with the map.",
+             "label": "Header",
+             "options": [{
+                   "label": "Top Small",
+                   "value": "top-small"
+                },
+                {
+                   "label": "Top Medium",
+                   "value": "top-medium"
+                },
+                {
+                   "label": "Top Large",
+                   "value": "top-large"
+                },
+                {
+                   "label": "Bottom Small",
+                   "value": "bottom-small"
+                },
+                {
+                   "label": "Bottom Medium",
+                   "value": "bottom-medium"
+                },
+                {
+                   "label": "Bottom Large",
+                   "value": "bottom-large"
+                }
+             ]
+          },
+          {
+             "type": "options",
+             "fieldName": "menustyledrawer",
+             "tooltip": "Show the main menu as a full sliding drawer",
+             "label": "Menu",
+             "options": [{
+                   "label": "Popup",
+                   "value": false
+                },
+                {
+                   "label": "Drawer",
+                   "value": true
+                }
+             ]
+          },
+          {
+             "type": "options",
+             "fieldName": "widgetslayout",
+             "tooltip": "Set the position for all of the widgets and the panel:",
+             "label": "Widgets and Panels",
+             "options": [{
+                   "label": "Widgets [Top Left] - Panels [Right]",
+                   "value": "top-left"
+                },
+                {
+                   "label": "Widgets [Top Right] - Panels [Left]",
+                   "value": "top-right"
+                },
+                {
+                   "label": "Widgets [Bottom Left] - Panels [Right]",
+                   "value": "bottom-left"
+                },
+                {
+                   "label": "Widgets [Bottom Right] - Panels [Left]",
+                   "value": "bottom-right"
+                }
+             ]
+          },
+          {
+            "type": "conditional",
+            "fieldName": "advancedlayout",
+            "label": "Advanced",
+            "condition": false,
+            "items":
+            [
+              {
                "type": "paragraph",
-               "value": "Set the location of the navbar and the style of the dropdown menu:"
-            },
-            {
-               "type": "options",
-               "fieldName": "layout",
-               "tooltip": "Set the location of the title bar. Position at the top to make the title stand our more. Position at the bottom to encourage users to interact with the map.",
-               "label": "Navbar Position",
-               "options": [{
-                     "label": "Top Small",
-                     "value": "top-small"
-                  },
-                  {
-                     "label": "Top Medium",
-                     "value": "top-medium"
-                  },
-                  {
-                     "label": "Top Large",
-                     "value": "top-large"
-                  },
-                  {
-                     "label": "Bottom Small",
-                     "value": "bottom-small"
-                  },
-                  {
-                     "label": "Bottom Medium",
-                     "value": "bottom-medium"
-                  },
-                  {
-                     "label": "Bottom Large",
-                     "value": "bottom-large"
-                  }
-               ]
-            },
-            {
-               "type": "options",
-               "fieldName": "menustyledrawer",
-               "tooltip": "Show the main menu as a full sliding drawer",
-               "label": "Dropdown Menu Style",
-               "options": [{
-                     "label": "Popup",
-                     "value": false
-                  },
-                  {
-                     "label": "Drawer",
-                     "value": true
-                  }
-               ]
-            },
-            {
-               "type": "paragraph",
-               "value": "<br><hr>"
-            },
-            {
-               "type": "paragraph",
-               "value": "<b>Choose a default layout for all of the widgets:</b>"
-            },
-            {
-               "type": "options",
-               "fieldName": "widgetslayout",
-               "tooltip": "Set the position for all of the widgets and the panel:",
-               "label": "",
-               "options": [{
-                     "label": "Nav [Top Left] - Panels [Right]",
-                     "value": "top-left"
-                  },
-                  {
-                     "label": "Nav [Top Right] - Panels [Left]",
-                     "value": "top-right"
-                  },
-                  {
-                     "label": "Nav [Bottom Left] - Panels [Right]",
-                     "value": "bottom-left"
-                  },
-                  {
-                     "label": "Nav [Bottom Right] - Panels [Left]",
-                     "value": "bottom-right"
-                  }
-               ]
-            },
-            {
-               "type": "paragraph",
-               "value": "<br>"
-            },
-            {
-               "type": "paragraph",
-               "value": "Widget Position Overrides (optional)<br>"
-            },
-            {
-               "type": "options",
-               "fieldName": "zoomin",
-               "tooltip": "Manually position the zoom widget.",
-               "label": "Zoom",
-               "options": [{
+               "value": "Manually override the following:"
+              },
+              {
+                 "type": "options",
+                 "fieldName": "panelslayout",
+                 "tooltip": "Set the position for the panels:",
+                 "label": "Panels",
+                 "options": [{
+                       "label": "Default",
+                       "value": ""
+                    },
+                    {
+                       "label": "Left",
+                       "value": "left"
+                    },
+                    {
+                       "label": "Right",
+                       "value": "right"
+                    }
+                 ]
+              },
+              {
+                "type": "options",
+                "fieldName": "popupdocking",
+                "tooltip": "Set the docking position for the popup:",
+                "label": "Popup Docking",
+                "options": [{
+                    "label": "Default",
+                    "value": "auto"
+                 },
+                 {
+                    "label": "Top Left",
+                    "value": "top-left"
+                 },
+                 {
+                    "label": "Top Center",
+                    "value": "top-center"
+                 },
+                 {
+                    "label": "Top Right",
+                    "value": "top-right"
+                 },
+                 {
+                    "label": "Bottom Right",
+                    "value": "bottom-right"
+                 },
+                 {
+                    "label": "Bottom Center",
+                    "value": "bottom-center"
+                 },
+                 {
+                    "label": "Bottom Left",
+                    "value": "bottom-left"
+                 },
+                 {
+                    "label": "None",
+                    "value": "none"
+                 }
+                ]
+              },
+              {
+                 "type": "paragraph",
+                 "value": "Search"
+              },
+              {
+                 "type": "boolean",
+                 "fieldName": "searchnav",
+                 "tooltip": "Show search widget in nav. NOTE: You can only have one search.",
+                 "label": "Select to show search in header or select a position below to add to the map."
+              },
+              {
+                "type": "options",
+                "fieldName": "search",
+                "tooltip": "Manually position the search widget on the map. This will remove search from navbar.",
+                "label": "",
+                "options": [{
                      "label": "Default",
                      "value": "show"
                   },
@@ -345,546 +513,519 @@
                      "label": "Hide",
                      "value": "hide"
                   }
-               ]
-            },
-            {
-               "type": "options",
-               "fieldName": "home",
-               "tooltip": "Manually position the home widget. This widget will zoom to the default location of the map.",
-               "label": "Home",
-               "options": [{
-                     "label": "Default",
-                     "value": "show"
-                  },
-                  {
-                     "label": "Top Left",
-                     "value": "top-left"
-                  },
-                  {
-                     "label": "Top Right",
-                     "value": "top-right"
-                  },
-                  {
-                     "label": "Bottom Left",
-                     "value": "bottom-left"
-                  },
-                  {
-                     "label": "Bottom Right",
-                     "value": "bottom-right"
-                  },
-                  {
-                     "label": "Hide",
-                     "value": "hide"
-                  }
-               ]
-            },
-            {
-               "type": "options",
-               "fieldName": "navtoggle",
-               "tooltip": "Manually position the NavigationToggle widget. This widget will allow you to rotate and pan 3D views.",
-               "label": "Nav",
-               "options": [{
-                     "label": "Default",
-                     "value": "show"
-                  },
-                  {
-                     "label": "Top Left",
-                     "value": "top-left"
-                  },
-                  {
-                     "label": "Top Right",
-                     "value": "top-right"
-                  },
-                  {
-                     "label": "Bottom Left",
-                     "value": "bottom-left"
-                  },
-                  {
-                     "label": "Bottom Right",
-                     "value": "bottom-right"
-                  },
-                  {
-                     "label": "Hide",
-                     "value": "hide"
-                  }
-               ]
-            },
-            {
-               "type": "options",
-               "fieldName": "locate",
-               "tooltip": "Manually position the locate widget. This widget will navigate to your current geolocation.",
-               "label": "Locate",
-               "options": [{
-                     "label": "Default",
-                     "value": "show"
-                  },
-                  {
-                     "label": "Top Left",
-                     "value": "top-left"
-                  },
-                  {
-                     "label": "Top Right",
-                     "value": "top-right"
-                  },
-                  {
-                     "label": "Bottom Left",
-                     "value": "bottom-left"
-                  },
-                  {
-                     "label": "Bottom Right",
-                     "value": "bottom-right"
-                  },
-                  {
-                     "label": "Hide",
-                     "value": "hide"
-                  }
-               ]
-            },
-            {
-               "type": "options",
-               "fieldName": "track",
-               "tooltip": "Manually position the track widget. This widget will continually navigate to your current geolocation.",
-               "label": "Track",
-               "options": [{
-                     "label": "Default",
-                     "value": "show"
-                  },
-                  {
-                     "label": "Top Left",
-                     "value": "top-left"
-                  },
-                  {
-                     "label": "Top Right",
-                     "value": "top-right"
-                  },
-                  {
-                     "label": "Bottom Left",
-                     "value": "bottom-left"
-                  },
-                  {
-                     "label": "Bottom Right",
-                     "value": "bottom-right"
-                  },
-                  {
-                     "label": "Hide",
-                     "value": "hide"
-                  }
-               ]
-            },
-            {
-               "type": "options",
-               "fieldName": "compass",
-               "tooltip": "Manually position the compass widget. This widget will show you the orientation of the map.",
-               "label": "Compass",
-               "options": [{
-                     "label": "Default",
-                     "value": "show"
-                  },
-                  {
-                     "label": "Top Left",
-                     "value": "top-left"
-                  },
-                  {
-                     "label": "Top Right",
-                     "value": "top-right"
-                  },
-                  {
-                     "label": "Bottom Left",
-                     "value": "bottom-left"
-                  },
-                  {
-                     "label": "Bottom Right",
-                     "value": "bottom-right"
-                  },
-                  {
-                     "label": "Hide",
-                     "value": "hide"
-                  }
-               ]
-            },
-            {
-               "type": "options",
-               "fieldName": "legend",
-               "tooltip": "Manually position the legend widget on the map.",
-               "label": "Legend",
-               "options": [{
-                     "label": "Default",
-                     "value": "show"
-                  },
-                  {
-                     "label": "Top Left",
-                     "value": "top-left"
-                  },
-                  {
-                     "label": "Top Right",
-                     "value": "top-right"
-                  },
-                  {
-                     "label": "Bottom Left",
-                     "value": "bottom-left"
-                  },
-                  {
-                     "label": "Bottom Right",
-                     "value": "bottom-right"
-                  },
-                  {
-                     "label": "Hide",
-                     "value": "hide"
-                  }
-               ]
-            },
-            {
-               "type": "options",
-               "fieldName": "basemaptoggle",
-               "tooltip": "Manually position the basemaptoggle widget. This widget will change the basemap.",
-               "label": "Basemap Toggle",
-               "options": [{
-                     "label": "Default",
-                     "value": "show"
-                  },
-                  {
-                     "label": "Top Left",
-                     "value": "top-left"
-                  },
-                  {
-                     "label": "Top Right",
-                     "value": "top-right"
-                  },
-                  {
-                     "label": "Bottom Left",
-                     "value": "bottom-left"
-                  },
-                  {
-                     "label": "Bottom Right",
-                     "value": "bottom-right"
-                  },
-                  {
-                     "label": "Hide",
-                     "value": "hide"
-                  }
-               ]
-            },
-            {
-               "type": "options",
-               "fieldName": "nextbasemap",
-               "tooltip": "Select a basemap to toggle to.",
-               "label": "Basemap Toggle - secondary basemap",
-               "options": [{
-                     "label": "Streets",
-                     "value": "streets"
-                  },
-                  {
-                     "label": "Satellite",
-                     "value": "satellite"
-                  },
-                  {
-                     "label": "Satellite with Labels",
-                     "value": "hybrid"
-                  },
-                  {
-                     "label": "Terrain",
-                     "value": "terrain"
-                  },
-                  {
-                     "label": "Topography",
-                     "value": "topo"
-                  },
-                  {
-                     "label": "Gray",
-                     "value": "gray"
-                  },
-                  {
-                     "label": "Dark Gray",
-                     "value": "dark-gray"
-                  },
-                  {
-                     "label": "Oceans",
-                     "value": "oceans"
-                  },
-                  {
-                     "label": "National Geographic",
-                     "value": "national-geographic"
-                  },
-                  {
-                     "label": "OpenStreetMap",
-                     "value": "osm"
-                  },
-                  {
-                     "label": "Streets Vector",
-                     "value": "streets-vector"
-                  },
-                  {
-                     "label": "Gray Vector",
-                     "value": "gray-vector"
-                  },
-                  {
-                     "label": "Dark Gray Vector",
-                     "value": "dark-gray-vector"
-                  },
-                  {
-                     "label": "Topo Vector",
-                     "value": "topo-vector"
-                  },
-                  {
-                     "label": "Streets Relief Vector",
-                     "value": "streets-relief-vector"
-                  },
-                  {
-                     "label": "Streets Navigation Vector",
-                     "value": "streets-navigation-vector"
-                  },
-                  {
-                     "label": "Streets Night Vector",
-                     "value": "streets-night-vector"
-                  }
-               ]
-            },
-            {
-               "type": "paragraph",
-               "value": "<br><hr>"
-            },
-            {
-               "type": "paragraph",
-               "value": "<b>Panel position override (optinal):</b>"
-            },
-            {
-               "type": "options",
-               "fieldName": "panelslayout",
-               "tooltip": "Set the position for the panels:",
-               "label": "",
-               "options": [{
-                     "label": "Default",
-                     "value": ""
-                  },
-                  {
-                     "label": "Left",
-                     "value": "left"
-                  },
-                  {
-                     "label": "Right",
-                     "value": "right"
-                  }
-               ]
-            }
-         ]
+                ]
+              },
+              {
+                 "type": "paragraph",
+                 "value": "Widgets"
+              },
+              {
+                 "type": "options",
+                 "fieldName": "zoomin",
+                 "tooltip": "Manually position the zoom widget.",
+                 "label": "Zoom",
+                 "options": [{
+                       "label": "Default",
+                       "value": "show"
+                    },
+                    {
+                       "label": "Top Left",
+                       "value": "top-left"
+                    },
+                    {
+                       "label": "Top Right",
+                       "value": "top-right"
+                    },
+                    {
+                       "label": "Bottom Left",
+                       "value": "bottom-left"
+                    },
+                    {
+                       "label": "Bottom Right",
+                       "value": "bottom-right"
+                    },
+                    {
+                       "label": "Hide",
+                       "value": "hide"
+                    }
+                 ]
+              },
+              {
+                 "type": "options",
+                 "fieldName": "home",
+                 "tooltip": "Manually position the home widget. This widget will zoom to the default location of the map.",
+                 "label": "Home",
+                 "options": [{
+                       "label": "Default",
+                       "value": "show"
+                    },
+                    {
+                       "label": "Top Left",
+                       "value": "top-left"
+                    },
+                    {
+                       "label": "Top Right",
+                       "value": "top-right"
+                    },
+                    {
+                       "label": "Bottom Left",
+                       "value": "bottom-left"
+                    },
+                    {
+                       "label": "Bottom Right",
+                       "value": "bottom-right"
+                    },
+                    {
+                       "label": "Hide",
+                       "value": "hide"
+                    }
+                 ]
+              },
+          {
+             "type": "options",
+             "fieldName": "navtoggle",
+             "tooltip": "Manually position the NavigationToggle widget. This widget will allow you to rotate and pan 3D views.",
+             "label": "Nav",
+             "options": [{
+                   "label": "Default",
+                   "value": "show"
+                },
+                {
+                   "label": "Top Left",
+                   "value": "top-left"
+                },
+                {
+                   "label": "Top Right",
+                   "value": "top-right"
+                },
+                {
+                   "label": "Bottom Left",
+                   "value": "bottom-left"
+                },
+                {
+                   "label": "Bottom Right",
+                   "value": "bottom-right"
+                },
+                {
+                   "label": "Hide",
+                   "value": "hide"
+                }
+             ]
+          },
+              {
+                 "type": "options",
+                 "fieldName": "locate",
+                 "tooltip": "Manually position the locate widget. This widget will navigate to your current geolocation.",
+                 "label": "Locate",
+                 "options": [{
+                       "label": "Default",
+                       "value": "show"
+                    },
+                    {
+                       "label": "Top Left",
+                       "value": "top-left"
+                    },
+                    {
+                       "label": "Top Right",
+                       "value": "top-right"
+                    },
+                    {
+                       "label": "Bottom Left",
+                       "value": "bottom-left"
+                    },
+                    {
+                       "label": "Bottom Right",
+                       "value": "bottom-right"
+                    },
+                    {
+                       "label": "Hide",
+                       "value": "hide"
+                    }
+                 ]
+              },
+              {
+                 "type": "options",
+                 "fieldName": "track",
+                 "tooltip": "Manually position the track widget. This widget will continually navigate to your current geolocation.",
+                 "label": "Track",
+                 "options": [{
+                       "label": "Default",
+                       "value": "show"
+                    },
+                    {
+                       "label": "Top Left",
+                       "value": "top-left"
+                    },
+                    {
+                       "label": "Top Right",
+                       "value": "top-right"
+                    },
+                    {
+                       "label": "Bottom Left",
+                       "value": "bottom-left"
+                    },
+                    {
+                       "label": "Bottom Right",
+                       "value": "bottom-right"
+                    },
+                    {
+                       "label": "Hide",
+                       "value": "hide"
+                    }
+                 ]
+              },
+              {
+                 "type": "options",
+                 "fieldName": "compass",
+                 "tooltip": "Manually position the compass widget. This widget will show you the orientation of the map.",
+                 "label": "Compass",
+                 "options": [{
+                       "label": "Default",
+                       "value": "show"
+                    },
+                    {
+                       "label": "Top Left",
+                       "value": "top-left"
+                    },
+                    {
+                       "label": "Top Right",
+                       "value": "top-right"
+                    },
+                    {
+                       "label": "Bottom Left",
+                       "value": "bottom-left"
+                    },
+                    {
+                       "label": "Bottom Right",
+                       "value": "bottom-right"
+                    },
+                    {
+                       "label": "Hide",
+                       "value": "hide"
+                    }
+                 ]
+              },
+              {
+                 "type": "options",
+                 "fieldName": "measure",
+                 "tooltip": "Manually position the measure widget on the scene.",
+                 "label": "Measure",
+                 "options": [{
+                       "label": "Default",
+                       "value": "show"
+                    },
+                    {
+                       "label": "Top Left",
+                       "value": "top-left"
+                    },
+                    {
+                       "label": "Top Right",
+                       "value": "top-right"
+                    },
+                    {
+                       "label": "Bottom Left",
+                       "value": "bottom-left"
+                    },
+                    {
+                       "label": "Bottom Right",
+                       "value": "bottom-right"
+                    },
+                    {
+                       "label": "Hide",
+                       "value": "hide"
+                    }
+                 ]
+              },
+                {
+                 "type": "options",
+                 "fieldName": "slice",
+                 "tooltip": "Manually position the slice widget on the scene.",
+                 "label": "Slice",
+                 "options": [{
+                       "label": "Default",
+                       "value": "show"
+                    },
+                    {
+                       "label": "Top Left",
+                       "value": "top-left"
+                    },
+                    {
+                       "label": "Top Right",
+                       "value": "top-right"
+                    },
+                    {
+                       "label": "Bottom Left",
+                       "value": "bottom-left"
+                    },
+                    {
+                       "label": "Bottom Right",
+                       "value": "bottom-right"
+                    },
+                    {
+                       "label": "Hide",
+                       "value": "hide"
+                    }
+                 ]
+              },
+              {
+                 "type": "options",
+                 "fieldName": "legend",
+                 "tooltip": "Manually position the legend widget on the map.",
+                 "label": "Legend",
+                 "options": [{
+                       "label": "Default",
+                       "value": "show"
+                    },
+                    {
+                       "label": "Top Left",
+                       "value": "top-left"
+                    },
+                    {
+                       "label": "Top Right",
+                       "value": "top-right"
+                    },
+                    {
+                       "label": "Bottom Left",
+                       "value": "bottom-left"
+                    },
+                    {
+                       "label": "Bottom Right",
+                       "value": "bottom-right"
+                    },
+                    {
+                       "label": "Hide",
+                       "value": "hide"
+                    }
+                 ]
+              },
+              {
+                 "type": "options",
+                 "fieldName": "basemaptoggle",
+                 "tooltip": "Manually position the basemaptoggle widget. This widget will change the basemap.",
+                 "label": "Basemap Toggle",
+                 "options": [{
+                       "label": "Default",
+                       "value": "show"
+                    },
+                    {
+                       "label": "Top Left",
+                       "value": "top-left"
+                    },
+                    {
+                       "label": "Top Right",
+                       "value": "top-right"
+                    },
+                    {
+                       "label": "Bottom Left",
+                       "value": "bottom-left"
+                    },
+                    {
+                       "label": "Bottom Right",
+                       "value": "bottom-right"
+                    },
+                    {
+                       "label": "Hide",
+                       "value": "hide"
+                    }
+                 ]
+              },
+              {
+                 "type": "options",
+                 "fieldName": "nextbasemap",
+                 "tooltip": "Select a basemap to toggle to.",
+                 "label": "Basemap Toggle - secondary basemap",
+                 "options": [{
+                       "label": "Streets",
+                       "value": "streets"
+                    },
+                    {
+                       "label": "Satellite",
+                       "value": "satellite"
+                    },
+                    {
+                       "label": "Satellite with Labels",
+                       "value": "hybrid"
+                    },
+                    {
+                       "label": "Terrain",
+                       "value": "terrain"
+                    },
+                    {
+                       "label": "Topography",
+                       "value": "topo"
+                    },
+                    {
+                       "label": "Gray",
+                       "value": "gray"
+                    },
+                    {
+                       "label": "Dark Gray",
+                       "value": "dark-gray"
+                    },
+                    {
+                       "label": "Oceans",
+                       "value": "oceans"
+                    },
+                    {
+                       "label": "National Geographic",
+                       "value": "national-geographic"
+                    },
+                    {
+                       "label": "OpenStreetMap",
+                       "value": "osm"
+                    },
+                    {
+                       "label": "Streets Vector",
+                       "value": "streets-vector"
+                    },
+                    {
+                       "label": "Gray Vector",
+                       "value": "gray-vector"
+                    },
+                    {
+                       "label": "Dark Gray Vector",
+                       "value": "dark-gray-vector"
+                    },
+                    {
+                       "label": "Topo Vector",
+                       "value": "topo-vector"
+                    },
+                    {
+                       "label": "Streets Relief Vector",
+                       "value": "streets-relief-vector"
+                    },
+                    {
+                       "label": "Streets Navigation Vector",
+                       "value": "streets-navigation-vector"
+                    },
+                    {
+                       "label": "Streets Night Vector",
+                       "value": "streets-night-vector"
+                    }
+                 ]
+              },
+              {
+                 "type": "boolean",
+                 "fieldName": "mapcoords",
+                 "tooltip": "Show map coordinates on the map or scene.",
+                 "label": "Show Coordinates Widget"
+              }
+            ]
+          }
+        ]
+        },
+        {
+          "category": "Search",
+          "fields": [
+          {
+             "type": "subcategory",
+             "label": "Search"
+          },
+          {
+            "type": "search",
+            "fieldName": "searchConfig",
+            "label": "Configure search options"
+          },
+          {
+             "fieldName": "searchtext",
+             "type": "string",
+             "value": null,
+             "label": "Search for this term on startup:",
+             "placeholder": "e.g. NY City"
+          },
+          {
+             "type": "subcategory",
+             "label": "Find Places"
+          },
+          {
+             "type": "boolean",
+             "fieldName": "findplaces",
+             "tooltip": "Allow the app to find places when the user long-taps (holds) on the map. Search cities, neighborhoods, parks, restaurants...",
+             "label": "Find places (long-tap on the map to find neighborhoods, parks, restaurants...)"
+          },
+          {
+             "type": "options",
+             "fieldName": "places",
+             "tooltip": "Select a places category to search on startup.",
+             "label": "Search for places on startup:",
+             "options": [{
+                   "label": "None",
+                   "value": ""
+                },
+                {
+                   "label": "Cities",
+                   "value": "Cities"
+                },
+                {
+                   "label": "Neighborhoods",
+                   "value": "Neighborhoods"
+                },
+                {
+                   "label": "Restaurants",
+                   "value": "Restaurants"
+                },
+                {
+                   "label": "Coffee Shops",
+                   "value": "Coffee Shops"
+                },
+                {
+                   "label": "Gas Stations",
+                   "value": "Gas Stations"
+                },
+                {
+                   "label": "Stores",
+                   "value": "Stores"
+                },
+                {
+                   "label": "Parks",
+                   "value": "Parks"
+                },
+                {
+                   "label": "Hotels",
+                   "value": "Hotels"
+                },
+                {
+                   "label": "Arts and Entertainment",
+                   "value": "Arts and Entertainment"
+                },
+                {
+                   "label": "Travel",
+                   "value": "Travel"
+                },
+                {
+                   "label": "Schools",
+                   "value": "Schools"
+                }
+             ]
+          }
+        ]
       },
       {
-         "category": "Panels",
-         "fields": [{
-               "type": "paragraph",
-               "value": "Select the menus and panels to include:"
+         "category": "Options",
+         "fields": [
+            {
+               "type": "subcategory",
+               "label": "Map"
+            },
+            {
+                "type": "paragraph",
+                "value": "If you are embedding this app into another page you might want to prevent map scroll"
             },
             {
                "type": "boolean",
-               "fieldName": "menuabout",
-               "tooltip": "Include menu and panel for About information",
-               "label": "About"
+               "fieldName": "noscroll",
+               "tooltip": "If you are embedding this app into another page you might want to prevent map scroll.",
+               "label": "Prevent map scroll"
             },
             {
-               "type": "boolean",
-               "fieldName": "menulegend",
-               "tooltip": "Include menu and panel for legend",
-               "label": "Legend"
-            },
-            {
-               "type": "boolean",
-               "fieldName": "menulayers",
-               "tooltip": "Include menu and panel to show layers",
-               "label": "Layers"
-            },
-            {
-               "type": "boolean",
-               "fieldName": "menubasemaps",
-               "tooltip": "Include menu and panel for basemaps",
-               "label": "Basemaps"
-            },
-            {
-               "type": "boolean",
-               "fieldName": "menuslides",
-               "tooltip": "Include menu and panel for slides/bookmarks. NOTE: Only applies to webmaps and webscenes that have slides and bookmarks previously saved.",
-               "label": "Slides/Bookmarks"
-            },
-            {
-               "type": "boolean",
-               "fieldName": "menuprint",
-               "tooltip": "Include menu and panel for printing",
-               "label": "Print"
-            },
-            {
-               "type": "boolean",
-               "fieldName": "menushare",
-               "tooltip": "Include menu for sharing out your current map via URL.",
-               "label": "Share"
-            },
-            {
-               "type": "boolean",
-               "fieldName": "menutogglenav",
-               "tooltip": "Include a menu item that can show and hide the title bar",
-               "label": "Full Map Toggle"
-            },
-            {
-               "type": "options",
-               "fieldName": "activepanel",
-               "tooltip": "Select the panel to show when the app starts",
-               "label": "Show this panel at start up:",
-               "options": [{
-                     "label": "None",
-                     "value": ""
-                  },
-                  {
-                     "label": "About",
-                     "value": "about"
-                  },
-                  {
-                     "label": "Legend",
-                     "value": "legend"
-                  },
-                  {
-                     "label": "Layers",
-                     "value": "layers"
-                  },
-                  {
-                     "label": "Basemaps",
-                     "value": "basemaps"
-                  },
-                  {
-                     "label": "Slides/Bookmarks",
-                     "value": "slides"
-                  },
-                  {
-                     "label": "Share",
-                     "value": "share"
-                  },
-                  {
-                     "label": "Print",
-                     "value": "print"
-                  }
-               ]
-            }
-         ]
-      },
-      {
-         "category": "Search",
-         "fields": [{
-               "type": "paragraph",
-               "value": "Search Settings:"
-            },
-            {
-               "type": "boolean",
-               "fieldName": "searchnav",
-               "tooltip": "Show search widget in nav.",
-               "label": "Show search in navbar"
-            },
-            {
-               "fieldName": "search",
-               "type": "string",
-               "value": null,
-               "label": "Search for this term on startup (optional)",
-               "placeholder": "e.g. NY City"
-            },
-            {
-               "type": "paragraph",
-               "value": "Find Places Settings:"
-            },
-            {
-               "type": "boolean",
-               "fieldName": "findplaces",
-               "tooltip": "Allow the app to find places when the user long-taps (holds) on the map. Search cities, neighborhoods, parks, restaurants...",
-               "label": "Find places (long-tap on the map to find neighborhoods, parks, restaurants...)"
-            },
-            {
-               "type": "options",
-               "fieldName": "places",
-               "tooltip": "Select a places category to search on startup.",
-               "label": "Search for places on startup (optional)",
-               "options": [{
-                     "label": "None",
-                     "value": ""
-                  },
-                  {
-                     "label": "Cities",
-                     "value": "Cities"
-                  },
-                  {
-                     "label": "Neighborhoods",
-                     "value": "Neighborhoods"
-                  },
-                  {
-                     "label": "Restaurants",
-                     "value": "Restaurants"
-                  },
-                  {
-                     "label": "Coffee Shops",
-                     "value": "Coffee Shops"
-                  },
-                  {
-                     "label": "Gas Stations",
-                     "value": "Gas Stations"
-                  },
-                  {
-                     "label": "Stores",
-                     "value": "Stores"
-                  },
-                  {
-                     "label": "Parks",
-                     "value": "Parks"
-                  },
-                  {
-                     "label": "Hotels",
-                     "value": "Hotels"
-                  },
-                  {
-                     "label": "Arts and Entertainment",
-                     "value": "Arts and Entertainment"
-                  },
-                  {
-                     "label": "Travel",
-                     "value": "Travel"
-                  },
-                  {
-                     "label": "Schools",
-                     "value": "Schools"
-                  }
-               ]
-            }
-
-         ]
-      },
-      {
-         "category": "Map Options",
-         "fields": [{
-               "type": "paragraph",
-               "value": "<b>Override the current webmap or webscene (optional)</b><br>"
-            },
-            {
-               "type": "webscene"
-            },
-            {
-               "type": "appproxies"
-            },
-            {
-               "type": "paragraph",
-               "value": "<b>Optional Map Widgets</b><br>"
-            },
-            {
-               "type": "boolean",
-               "fieldName": "mapcoords",
-               "tooltip": "Show map coordinates on the map or scene.",
-               "label": "Show map coordinates"
-            },
-            {
-               "type": "paragraph",
-               "value": "<br><hr>"
-            },
-            {
-               "type": "paragraph",
-               "value": "<b>Override the basemap (optional)</b><br>"
+               "type": "subcategory",
+               "label": "Basemap"
             },
             {
                "type": "options",
                "fieldName": "basemap",
                "tooltip": "Select a basemap that will override the default basemap.",
-               "label": "Basemap",
+               "label": "",
                "options": [{
                      "label": "Default",
                      "value": ""
@@ -952,8 +1093,8 @@
                ]
             },
             {
-               "type": "paragraph",
-               "value": "<b>Override the start up location (optional)</b><br>"
+               "type": "subcategory",
+               "label": "Startup Map Location"
             },
             {
                "fieldName": "lat",
@@ -1003,17 +1144,21 @@
                "value": 0,
                "label": "Heading (0-360)"
             },
+          {
+           "fieldName": "tilt",
+           "type": "number",
+           "value": 45,
+           "label": "Tilt (0-90)"
+        },
             {
-               "fieldName": "tilt",
-               "type": "number",
-               "value": 45,
-               "label": "Tilt (0-90)"
+               "type": "subcategory",
+               "label": "Errors"
             },
             {
                "type": "boolean",
                "fieldName": "showerrors",
                "tooltip": "Show error messages when webmaps or webscenes fail to load completely.",
-               "label": "Show layer load and other errors in a message box (optional)."
+               "label": "Show layer load and other errors in a message box."
             }
          ]
       }
@@ -1037,11 +1182,10 @@
       "menulayers": true,
       "menubasemaps": false,
       "menuslides": true,
-      "menuprint": true,
       "menushare": true,
       "menutogglenav": true,
       "menustyledrawer": false,
-      "popupDocking": "none",
+      "popupdocking": "auto",
       "widgetslayout": "top-left",
       "zoomin": "show",
       "home": "show",
@@ -1050,11 +1194,16 @@
       "track": "hide",
       "compass": "show",
       "legend": "hide",
+      "search": "hide",
+      "measure": "hide",
+      "slice": "hide",
       "scalebar": "hide",
       "basemaptoggle": "show",
       "nextbasemap": "satellite",
       "mapcoords": true,
       "searchnav": true,
+      "searchtext": "",
+      "searchConfig": "",
       "activepanel": "about",
       "findplaces": true,
       "showerrors": true,
@@ -1070,7 +1219,9 @@
       "tilt": null,
       "altitude": null,
       "basemap": "",
-      "search": null,
-      "places": null
+      "places": null,
+      "css": null,
+      "advancedlayout": false,
+      "noscroll": false
    }
 }

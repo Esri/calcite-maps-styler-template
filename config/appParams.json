@@ -103,9 +103,9 @@
     "type": "boolean",
     "values": [true,false]
   },
-  "popupDocking": {
+  "popupdocking": {
     "type": "value",
-    "values": "auto,top-center,top-right,top-left,bottom-right,bottom-left,bottom-center"
+    "values": "auto,top-center,top-right,top-left,bottom-right,bottom-left,bottom-center,none"
   },
   "layout": {
     "type": "value",
@@ -162,6 +162,14 @@
   "nextbasemap": {
     "type": "value",
     "values": "streets,satellite,hybrid,topo,gray,dark-gray,oceans,national-geographic,terrain,osm,dark-gray-vector,gray-vector,streets-vector,topo-vector,streets-night-vector,streets-relief-vector,streets-navigation-vector"
+  },
+  "measure": {
+    "type": "value",
+    "values": "show,hide,top-right,top-left,bottom-right,bottom-left"
+  },
+  "slice": {
+    "type": "value",
+    "values": "show,hide,top-right,top-left,bottom-right,bottom-left"
   },
   "mapcoords": {
     "type": "boolean",

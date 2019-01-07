@@ -1,0 +1,115 @@
+{
+  "environment": {
+    "isEsri": false,
+    "webTierSecurity": false
+  },
+  "localStorage": {
+    "fetch": true
+  },
+  "group": {
+    "default": "908dd46e749d4565a17d2b646ace7b1a",
+    "fetchInfo": false,
+    "fetchItems": false,
+    "itemParams": {
+      "sortField": "modified",
+      "sortOrder": "desc",
+      "num": 9,
+      "start": 0
+    }
+  },
+  "portal": {
+    "fetch": true
+  },
+  "urlParams": [
+    "appid",
+    "basemapUrl",
+    "basemapReferenceUrl",
+    "oauthappid",
+    "portalUrl",
+    "viewpoint",
+    "webmap",
+    "webscene",
+    "title",
+    "subtitle",
+    "abouttext",
+    "aboutdescription",
+    "aboutsummary",
+    "theme",
+    "themecustom",
+    "bgcolor",
+    "opacity",
+    "textcolor",
+    "layout",
+    "panelslayout",
+    "navsize",
+    "widgettheme",
+    "menuabout",
+    "menulegend",
+    "menulayers",
+    "menubasemaps",
+    "menuslides",
+    "menubookmarks",
+    "menuprint",
+    "menushare",
+    "menutogglenav",
+    "menustyledrawer",
+    "popupdocking",
+    "widgetslayout",
+    "zoomin",
+    "home",
+    "compass",
+    "locate",
+    "navtoggle",
+    "track",
+    "legend",
+    "scalebar",
+    "basemaptoggle",
+    "nextbasemap",
+    "measure",
+    "slice",
+    "mapcoords",
+    "searchnav",
+    "searchtext",
+    "activepanel",
+    "findplaces",
+    "search",
+    "places",
+    "showerrors",
+    "lat",
+    "lon",
+    "zoom",
+    "scale",
+    "rotation",
+    "heading",
+    "altitude",
+    "tilt",
+    "basemap",
+    "x",
+    "y",
+    "wkid",
+    "css",
+    "noscroll"
+  ],
+  "webMap": {
+    "default": "df5b4bad631d4209b6ef7a88493dac7d",
+    "fetch": true,
+    "container": "mapViewDiv"
+  },
+  "webScene": {
+    "default": "a5ef8bf91d234aaa93ea61e7ddf0bdf5",
+    "fetch": true,
+    "container": "sceneViewDiv"
+  },
+  "search": {
+    "container": "searchDiv"
+  },
+  "legend": {
+    "container": "legendDiv"
+  },
+  "widgetLayers": {
+    "container": "layersDiv"
+  },
+  "widgetPrint": {
+    "container": "printDiv"
+  }
+}

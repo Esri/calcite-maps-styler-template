@@ -1,0 +1,439 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  /*font-family: Arial, Helvetica, sans-serif;*/
+}
+
+body:lang(ja) {
+  font-family: meiryo, Arial, Helvetica, sans-serif;
+}
+
+.boilerplate-view {
+  top: 0;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.boilerplate-loading-indicator {
+  display: none;
+  height: 100%;
+  width: 100%;
+  z-index: 500;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  background-color: #fff;
+}
+
+.boilerplate--loading .boilerplate-loading-indicator {
+  display: block;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-image: url(../assets/loader-ie9.gif);
+}
+
+.boilerplate--error .boilerplate-loading-indicator {
+  display: block;
+}
+
+.boilerplate-loading-message {
+  background-position: top center;
+  background-repeat: no-repeat;
+  padding-top: 60px;
+  width: 100%;
+  position: absolute;
+  z-index: 2;
+  top: 40%;
+  left: 0;
+  text-align: center;
+}
+
+/* Calcite Maps */
+
+/*.calcite-panels {
+  z-index: 3;
+}*/
+
+/* Search */
+
+.calcite-maps .calcite-search-expander .esri-search__sources-button.esri-widget--button {
+  display: none;
+}
+
+.calcite-maps .calcite-search-expanded .esri-menu.esri-search__sources-menu {
+  display: block !important;
+}
+
+.share-buttons {
+  margin-top: 10px;
+}
+
+.share-buttons .btn {
+  margin-left: 10px;
+}
+
+/* Find Places */
+
+.calcite-popup-content {
+  color: #6e6e6e;
+  font-size: 13px;
+}
+
+.calcite-widgets-dark .calcite-popup-content {
+  color: #f8f8f8;
+}
+
+.calcite-widgets-dark .calcite-popup-filter {
+  border-color: #f8f8f8;
+  color: #0c0c0c;
+}
+
+.calcite-popup-content,
+.calcite-popup-filter {
+  -webkit-user-select: none;
+}
+
+.calcite-title-left-margin {
+  margin-left: 15px;
+}
+
+.panel-body-widget--color {
+  background: white;
+}
+
+/* Navigation (3D) */
+.esri-navigation-toggle__button--rotate {
+  border-top: 0;
+}
+
+/* Measure Expand */
+
+.esri-direct-line-measurement-3d__container,
+.esri-area-measurement-3d__container {
+  background-color: #f5f5f5;
+}
+
+.expand-measure__title {
+  font-size: 14px;
+  padding: 7px 15px;
+  margin: 0 auto 0 0;
+  display: block;
+  word-break: break-word;
+  word-wrap: break-word;
+  background-color: #ececec;
+}
+
+.expand-measure-message--active {
+  background-color: #696969;
+  color: #fff;
+}
+
+.esri-button-distance--clear,
+.esri-button-area--clear {
+  margin: 10px 15px;
+  width: calc(100% - 30px);
+  border: none;
+}
+
+
+/* Slides/Bookmarks */
+
+.slide-map {
+  display: flex;
+  position: static;
+  height: 62px;
+  width: 114px;
+  margin: 0 auto;
+}
+
+#carouselSlides {
+  margin-bottom: 25px;
+}
+
+#carouselSlides .carousel-indicators {
+  bottom: -30px;
+  margin-bottom: 0;
+  width: 100%;
+  margin: 0;
+  left: 0;
+  padding-inline-start: 0;
+}
+
+#carouselSlides .carousel-indicators > li {
+  background-color: #999;
+}
+
+#carouselSlides .carousel-indicators .active {
+  background-color: #4c4c4c;
+}
+
+#carouselSlides .item {
+  padding: 24px 0 0;
+}
+
+#carouselSlides .item img {
+  margin: 0 auto;
+  /*border: 5px solid transparent;*/
+}
+
+#carouselSlides .carousel-caption {
+  top: -23px;
+  left: 0;
+  right: 0;
+  text-shadow: none;
+  font-size: 13px;
+  font-weight: 400;
+}
+
+.carousel-caption {
+  color: #333;
+}
+
+#carouselSlides .carousel-control {
+  margin-top: 25px;
+  background-image: none;
+  z-index: 100;
+}
+
+#carouselSlides .carousel-control > span {
+  /*padding-top: 3px;*/
+  margin: -13px -15px;
+  font-size: 22px;
+}
+
+#carouselSlides .carousel-control {
+  color: #999;
+  opacity: 1;
+}
+
+#carouselSlides .carousel-control:focus,
+#carouselSlides .carousel-control:hover {
+  opacity: 1.0;
+  background: none;
+}
+
+/* Map coords */
+
+.calcite-coords-container {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
+  -webkit-transform: translate(-50%, 0);
+  -ms-transform: translate(-50%, 0);
+  top: auto;
+  bottom: 0;
+  margin: auto;
+  display: block;
+  color: #6e6e6e;
+  font-size: 11px;
+}
+
+.calcite-coords-container.esri-ui.esri-component {
+  overflow: visible;
+  right: auto;
+}
+
+.calcite-coords, .calcite-coords-cursor {
+  order: 1;
+  display: inline-block;
+  width: 100%;
+  overflow: hidden;
+  padding-top: 3px;
+  text-align: center;
+}
+
+/*.calcite-coords-textarea {
+  order: 1;
+  margin: 5px 0 5px 10px;
+  width: 100%;
+  word-break: break-all;
+  border: none;
+  outline: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  -ms-box-shadow: none;
+  box-shadow: none;
+  resize: none;
+}*/
+
+.calcite-share-textarea {
+  width: 100%;
+  word-break: break-all;
+  margin-top: 15px;
+}
+
+.calcite-coords-icon {
+  order: 2;
+  padding: 5px 5px 4px;
+  font-size: 12px;
+}
+
+.calcite-coords-icon.esri-icon-map-pin:focus,
+.calcite-coords-icon.esri-icon-map-pin:hover,
+.calcite-coords-icon.esri-icon-close:focus,
+.calcite-coords-icon.esri-icon-close:hover {
+  color: #2e2e2e;
+  background-color: #e6e6e6;
+}
+
+/* Flip Container */
+
+.coords-flip-container {
+  -webkit-perspective: 1000px;
+  -ms-perspective: 1000px;
+  -moz-perspective: 1000px;
+  -o-perspective: 1000px;
+  perspective: 1000px;
+  -webkit-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+
+.coords-flip-container .flipper {
+  width: 320px;
+  position: relative;
+}
+
+.coords-flip-container,
+.coords-flip-container .front {
+  background: #fff;
+}
+.coords-flip-container .back {
+  background: #fff;
+}
+
+/* Transition and hide back of pane during swap */
+.coords-flip-container .front,
+.coords-flip-container .back {
+  -webkit-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+  position: absolute;
+  display: flex;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 21px;
+  overflow: hidden; /* removes background */
+}
+
+/* Front pane, placed above back */
+.coords-flip-container .front {
+  -webkit-transform: rotateY(0deg);
+  -ms-transform: rotateY(0deg);
+  -moz-transform: rotateY(0deg);
+  -o-transform: rotateY(0deg);
+  transform: rotateY(0deg);
+
+  z-index: 2;
+  text-align: center;
+}
+
+/* Back, initially hidden pane */
+.coords-flip-container .back {
+  -webkit-transform: rotateY(-180deg);
+  -ms-transform: rotateY(-180deg);
+  -moz-transform: rotateY(-180deg);
+  -o-transform: rotateY(-180deg);
+  transform: rotateY(-180deg);
+}
+
+.coords-flip-container.flip .back {
+  -webkit-transform: rotateY(0deg);
+  -ms-transform: rotateY(0deg);
+  -moz-transform: rotateY(0deg);
+  -o-transform: rotateY(0deg);
+  transform: rotateY(0deg);
+
+  /*height: 65px; /* Expand height */
+}
+
+.coords-flip-container.flip .front {
+  -webkit-transform: rotateY(180deg);
+  -ms-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  -o-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+}
+
+
+@media (max-width: 768px) {
+  .coords-flip-container .flipper {
+    width: 170px;
+  }
+}
+
+/* Coords popup */
+.calcite-coords-content {
+  color: #6e6e6e;
+}
+
+.calcite-widgets-dark .calcite-coords-content {
+  color: #e6e6e6;
+}
+
+.text-content-space {
+  margin-top: 7px;
+}
+
+/* Alert */
+
+.calcite-alert {
+  position: absolute;
+  display: flex;
+  top: 45%;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 55px;
+  margin: 0 30px;
+  padding: 7px 10px;
+  border: none;
+  z-index: 2000;
+}
+
+.calcite-alert .alert-left {
+  order: 1;
+  font-size: 17px;
+}
+
+.calcite-alert .alert-message{
+  order: 2;
+  flex-grow: 2;
+  margin-right: -70px;
+  padding: 2px 80px 0 10px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  font-size: 14px;
+}
+
+
+.calcite-alert.alert-dismissible .close {
+  top: auto;
+  right: auto;
+  font-size: 17px;
+  align-self: flex-start;
+}
+
+.calcite-alert .alert-right {
+  order: 3;
+  font-size: 12px;
+}

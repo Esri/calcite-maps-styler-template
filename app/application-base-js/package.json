@@ -1,0 +1,66 @@
+{
+  "_from": "@esri/application-base-js@^0.0.2",
+  "_id": "@esri/application-base-js@0.0.2",
+  "_inBundle": false,
+  "_integrity": "sha1-oyPGQeSFVf8wIfC5a23MBd7a7Os=",
+  "_location": "/@esri/application-base-js",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "range",
+    "registry": true,
+    "raw": "@esri/application-base-js@^0.0.2",
+    "name": "@esri/application-base-js",
+    "escapedName": "@esri%2fapplication-base-js",
+    "scope": "@esri",
+    "rawSpec": "^0.0.2",
+    "saveSpec": null,
+    "fetchSpec": "^0.0.2"
+  },
+  "_requiredBy": [
+    "#DEV:/"
+  ],
+  "_resolved": "https://registry.npmjs.org/@esri/application-base-js/-/application-base-js-0.0.2.tgz",
+  "_shasum": "a323c641e48555ff3021f0b96b6dcc05dedaeceb",
+  "_spec": "@esri/application-base-js@^0.0.2",
+  "_where": "/Users/allan/GitHub/configurable-app-examples-4x-js",
+  "author": {
+    "name": "Matt Driscoll",
+    "email": "mdriscoll@esri.com"
+  },
+  "bugs": {
+    "url": "https://github.com/Esri/application-base-js/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {},
+  "deprecated": false,
+  "description": "A core class for creating a configurable application using JavaScript/TypeScript",
+  "devDependencies": {
+    "@types/arcgis-js-api": "^4.5.0",
+    "dojo-typings": "^1.11.9",
+    "dts-generator": "^2.1.0",
+    "tslint": "^5.7.0",
+    "typescript": "^2.5.3"
+  },
+  "homepage": "https://github.com/Esri/application-base-js",
+  "keywords": [
+    "Esri",
+    "esrijs",
+    "ArcGIS",
+    "gis",
+    "JavaScript",
+    "TypeScript"
+  ],
+  "license": "SEE LICENSE IN license.txt",
+  "main": "ApplicationBase.js",
+  "name": "@esri/application-base-js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Esri/application-base-js.git"
+  },
+  "scripts": {
+    "build": "dts-generator --name ApplicationBase --project ./ --out index.d.ts",
+    "start": "npm run build; npm run watch -s",
+    "watch": "tsc --watch"
+  },
+  "version": "0.0.2"
+}
