@@ -197,7 +197,8 @@ Here are the parameters you can configure in a URL or in a JSON file.
 |mapcoords|Show the map coordinates widget|Boolean|`true`,`false`|
 |searchnav|Show the search widget in the navbar|Boolean|`true`, `false`|
 |search|Search for location|String| e.g. `Los Angeles`|
-|places|Enable long-tap/hold search for restaurants, parks, stores...|Boolean|`true`, `false`|
+|findplaces|Enable long-tap/hold search for restaurants, parks, stores...|Boolean|`true`, `false`|
+|plades|Search for a category|String| `Cities`, `Neighborhoods`, `Restaurants`, `Gas Stations`, `Stores`, `Parks`, `Hotels`, `Arts and Entertainment`, `Travel`, `Schools`|
 |showerrors|Display errors in a window when webmap or webscene have load failures|Boolean|`true`, `false`|
 
 ### JSON Example
