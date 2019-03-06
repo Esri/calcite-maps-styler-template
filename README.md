@@ -196,9 +196,9 @@ Here are the parameters you can configure in a URL or in a JSON file.
 |popup|Position to dock the popup. See ArcGIS JS API|String|`top-right`, `top-center`, `top-left`, `bottom-right`, `bottom-center`, `bottom-left`|
 |mapcoords|Show the map coordinates widget|Boolean|`true`,`false`|
 |searchnav|Show the search widget in the navbar|Boolean|`true`, `false`|
-|search|Search for location|String| e.g. `Los Angeles`|
+|searchtext|Search for location|String| e.g. `Los Angeles`|
 |findplaces|Enable long-tap/hold search for restaurants, parks, stores...|Boolean|`true`, `false`|
-|places|Search for a category|String| `Cities`, `Neighborhoods`, `Restaurants`, `Gas Stations`, `Stores`, `Parks`, `Hotels`, `Arts and Entertainment`, `Travel`, `Schools`|
+|places|Search for a category|String| `cities`, `neighborhoods`, `restaurants`, `gas stations`, `stores`, `parks`, `hotels`, `arts and entertainment`, `travel`, `schools`|
 |showerrors|Display errors in a window when webmap or webscene have load failures|Boolean|`true`, `false`|
 
 ### JSON Example
